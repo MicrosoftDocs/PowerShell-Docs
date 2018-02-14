@@ -17,8 +17,7 @@ Creates a new event.
 
 ```
 New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments] <PSObject[]>]
- [[-MessageData] <PSObject>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [[-MessageData] <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,7 +49,7 @@ PS C:\> function Enable-ProcessCreationEvent
    $Query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
    $ProcessWatcher = New-Object System.Management.ManagementEventWatcher $Query
    $Identifier = "WMI.ProcessCreated"
-   Register-ObjectEvent $ProcessWatcher "EventArrived" -SupportEvent $Identifier -Action 
+   Register-ObjectEvent $ProcessWatcher "EventArrived" -SupportEvent $Identifier -Action
    {
       [void] (New-Event -SourceID "PowerShell.ProcessCreated" -Sender $Args[0] -EventArguments $Args[1].SourceEventArgs.NewEvent.TargetInstance)
    }
@@ -71,37 +70,10 @@ Specifies an object that contains options for the event.
 ```yaml
 Type: PSObject[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -114,7 +86,7 @@ The value of this parameter appears in the **MessageData** property of the event
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -130,7 +102,7 @@ The default is the Windows PowerShell engine.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -148,7 +120,7 @@ The value of this parameter appears in the **SourceIdentifier** property of the 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1

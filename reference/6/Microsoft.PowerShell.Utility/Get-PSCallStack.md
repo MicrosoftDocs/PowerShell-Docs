@@ -16,7 +16,7 @@ Displays the current call stack.
 ## SYNTAX
 
 ```
-Get-PSCallStack [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Get-PSCallStack [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +36,7 @@ Get-Alias | where {$_.definition -like "*$p"} | format-table definition, name -a
 }
 PS C:\ps-test> Set-PSBreakpoint -Command my-alias
 Command    : my-alias
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
@@ -77,33 +77,6 @@ Then, a **Get-PSCallStack** command is used to retrieve the call stack.
 The final command is a Step-Out command (o) that exits the debugger and continues executing the script to completion.
 
 ## PARAMETERS
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).

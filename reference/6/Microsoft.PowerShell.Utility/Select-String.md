@@ -19,24 +19,21 @@ Finds text in strings and files.
 ```
 Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List]
  [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
- [-Context <Int32[]>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### Object
 ```
 Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List]
  [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
- [-Context <Int32[]>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFile
 ```
 Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List]
  [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
- [-Context <Int32[]>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -318,33 +315,6 @@ Wildcards are permitted.
 Type: String[]
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-When Select-String finds more than one match in a line of text, it still emits only one MatchInfo object for the line, but the Matches property of the object contains all of the matches.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-When Select-String finds more than one match in a line of text, it still emits only one MatchInfo object for the line, but the Matches property of the object contains all of the matches.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
 
 Required: False
 Position: Named

@@ -17,20 +17,17 @@ Deletes extended types from the current session.
 
 ### RemoveTypeDataSet (Default)
 ```
-Remove-TypeData -TypeData <TypeData> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-TypeData -TypeData <TypeData> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### RemoveTypeSet
 ```
-Remove-TypeData [-TypeName] <String> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-TypeData [-TypeName] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### RemoveFileSet
 ```
-Remove-TypeData -Path <String[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-TypeData -Path <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,33 +100,6 @@ The command uses the Invoke-Command cmdlet to remove extended type data for all 
 
 ## PARAMETERS
 
-### -InformationAction
-Enter the paths and file names of one or more Types.ps1xml files. Wildcards are not supported. If you omit the path, the default location is the current directory.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-Enter the paths and file names of one or more Types.ps1xml files. Wildcards are not supported. If you omit the path, the default location is the current directory.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Path
 Specifies an array of files that this cmdlet deletes from the session extended type data.
 This parameter is required.
@@ -141,7 +111,7 @@ If you omit the path, the default location is the current directory.
 ```yaml
 Type: String[]
 Parameter Sets: RemoveFileSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -159,7 +129,7 @@ You can also pipe **TypeData** objects to **Remove-TypeData**.
 ```yaml
 Type: TypeData
 Parameter Sets: RemoveTypeDataSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -180,7 +150,7 @@ When you pipe an object to **Remove-TypeData**, **Remove-TypeData** gets the typ
 ```yaml
 Type: String
 Parameter Sets: RemoveTypeSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1

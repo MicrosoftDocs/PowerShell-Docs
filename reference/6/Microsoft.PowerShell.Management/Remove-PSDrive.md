@@ -18,15 +18,13 @@ Deletes temporary Windows PowerShell drives and disconnects mapped network drive
 ### Name (Default)
 ```
 Remove-PSDrive [-Name] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf] [-Confirm] [-UseTransaction]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralName
 ```
 Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf] [-Confirm] [-UseTransaction]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -66,34 +64,7 @@ Removes the current Windows PowerShell drive.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -113,7 +84,7 @@ Single quotation marks instruct Windows PowerShell not to interpret any characte
 ```yaml
 Type: String[]
 Parameter Sets: LiteralName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -129,7 +100,7 @@ Do not type a colon (:) after the drive name.
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -145,7 +116,7 @@ This cmdlet removes and disconnects all of the drives associated with the specif
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -160,7 +131,7 @@ Specifies an index that identifies the scope from which the drive is being remov
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

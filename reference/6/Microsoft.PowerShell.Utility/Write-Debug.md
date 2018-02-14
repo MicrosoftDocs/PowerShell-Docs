@@ -16,8 +16,7 @@ Writes a debug message to the console.
 ## SYNTAX
 
 ```
-Write-Debug [-Message] <String> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+Write-Debug [-Message] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,8 +36,8 @@ Because the value of $DebugPreference is SilentlyContinue, the message is not di
 
 ### Example 2: Use the Debug parameter to override $DebugPreference
 ```
-PS C:\> $DebugPreference 
-SilentlyContinue 
+PS C:\> $DebugPreference
+SilentlyContinue
 PS C:\> Write-Debug "Cannot open file."
 PS C:\>
 PS C:\> Write-Debug "Cannot open file." -Debug
@@ -82,33 +81,6 @@ The fourth command writes a debug message, which appears on the console.
 For more information about $DebugPreference, see about_Preference_Variables.
 
 ## PARAMETERS
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Message
 Specifies the debug message to send to the console.

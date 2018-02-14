@@ -17,14 +17,12 @@ Creates a TimeSpan object.
 
 ### Date (Default)
 ```
-New-TimeSpan [[-Start] <DateTime>] [[-End] <DateTime>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+New-TimeSpan [[-Start] <DateTime>] [[-End] <DateTime>] [<CommonParameters>]
 ```
 
 ### Time
 ```
-New-TimeSpan [-Days <Int32>] [-Hours <Int32>] [-Minutes <Int32>] [-Seconds <Int32>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+New-TimeSpan [-Days <Int32>] [-Hours <Int32>] [-Minutes <Int32>] [-Seconds <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,7 +91,7 @@ The default value is 0.
 ```yaml
 Type: Int32
 Parameter Sets: Time
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -109,7 +107,7 @@ The default value is the current date and time.
 ```yaml
 Type: DateTime
 Parameter Sets: Date
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -125,34 +123,7 @@ The default value is zero.
 ```yaml
 Type: Int32
 Parameter Sets: Time
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -168,7 +139,7 @@ The default value is 0.
 ```yaml
 Type: Int32
 Parameter Sets: Time
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,7 +155,7 @@ The default value is 0.
 ```yaml
 Type: Int32
 Parameter Sets: Time
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

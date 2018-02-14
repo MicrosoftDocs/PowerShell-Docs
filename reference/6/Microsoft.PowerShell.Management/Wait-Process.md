@@ -17,20 +17,17 @@ Waits for the processes to be stopped before accepting more input.
 
 ### Name (Default)
 ```
-Wait-Process [-Name] <String[]> [[-Timeout] <Int32>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Wait-Process [-Name] <String[]> [[-Timeout] <Int32>] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
-Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -101,33 +98,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the processes by submitting process objects.
 Enter a variable that contains the process objects, or type a command or expression that gets the process objects, such as the Get-Process cmdlet.
@@ -135,7 +105,7 @@ Enter a variable that contains the process objects, or type a command or express
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named

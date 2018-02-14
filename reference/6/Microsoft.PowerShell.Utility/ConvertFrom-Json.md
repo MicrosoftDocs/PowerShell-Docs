@@ -17,7 +17,7 @@ Converts a JSON-formatted string to a custom object or a hash table.
 
 ```
 ConvertFrom-Json [-InputObject] <String> [-AsHashtable]
-[-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,33 +90,6 @@ This command shows an example where the `-AsHashtable` switch can overcome limit
 
 ## PARAMETERS
 
-### -InformationAction
-The InputObject parameter is required, but its value can be an empty string. When the input object is an empty string, ConvertFrom-Json does not generate any output. The InputObject value cannot be null ($null).```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-The InputObject parameter is required, but its value can be an empty string. When the input object is an empty string, ConvertFrom-Json does not generate any output. The InputObject value cannot be null ($null).```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the JSON strings to convert to JSON objects.
 Enter a variable that contains the string, or type a command or expression that gets the string.
@@ -129,7 +102,7 @@ The *InputObject* value cannot be $Null.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -144,11 +117,11 @@ There are several scenarios where it can overcome some limitations of the `Conve
 - If the JSON contains a list with keys that only differ in casing. Without the switch, those keys would be seen as identical keys and therefore only the last one would get used.
 - If the JSON contains a key that is an empty string. Without the switch, the cmdlet would throw an error since a `PSCustomObject` does not allow for that but a hash table does. An example use case where this can occurs are `project.lock.json` files.
 - Hash tables can be processed faster for certain data structures.
- 
+
  ```yaml
  Type: SwitchParameter
  Aliases:
- 
+
  Required: False
  Default value: False
  Accept pipeline input: False

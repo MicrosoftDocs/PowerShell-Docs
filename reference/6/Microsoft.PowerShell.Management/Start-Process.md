@@ -20,15 +20,13 @@ Starts one or more processes on the local computer.
 Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-Credential <PSCredential>]
  [-WorkingDirectory <String>] [-LoadUserProfile] [-NoNewWindow] [-PassThru] [-RedirectStandardError <String>]
  [-RedirectStandardInput <String>] [-RedirectStandardOutput <String>] [-WindowStyle <ProcessWindowStyle>]
- [-Wait] [-UseNewEnvironment] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-Wait] [-UseNewEnvironment] [<CommonParameters>]
 ```
 
 ### UseShellExecute
 ```
 Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-WorkingDirectory <String>] [-PassThru]
- [-Verb <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ [-Verb <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,33 +176,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -LoadUserProfile
 Indicates that this cmdlet loads the Windows user profile stored in the **HKEY_USERS** registry key for the current user.
 
@@ -248,7 +219,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -318,7 +289,7 @@ By default, the started process runs with the environment variables specified fo
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Default
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -347,7 +318,7 @@ For details, see the examples.
 ```yaml
 Type: String
 Parameter Sets: UseShellExecute
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -363,7 +334,7 @@ This parameter suppresses the command prompt or retains the window until the pro
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -382,7 +353,7 @@ You cannot use the *WindowStyle* and *NoNewWindow* parameters in the same comman
 ```yaml
 Type: ProcessWindowStyle
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Normal, Hidden, Minimized, Maximized
 
 Required: False
@@ -399,7 +370,7 @@ The default is the folder for the new process.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

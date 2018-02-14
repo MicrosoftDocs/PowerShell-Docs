@@ -17,20 +17,17 @@ Stops one or more running processes.
 
 ### Id (Default)
 ```
-Stop-Process [-Id] <Int32[]> [-PassThru] [-Force] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Process [-Id] <Int32[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Name
 ```
-Stop-Process -Name <String[]> [-PassThru] [-Force] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Process -Name <String[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
-Stop-Process [-InputObject] <Process[]> [-PassThru] [-Force] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Process [-InputObject] <Process[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,8 +54,8 @@ If you were to use the *Id* parameter to stop the same processes, you would have
 ```
 PS C:\> Stop-Process -Id 3952 -Confirm -PassThru
 Confirm
-Are you sure you want to perform this action? 
-Performing operation "Stop-Process" on Target "notepad (3952)". 
+Are you sure you want to perform this action?
+Performing operation "Stop-Process" on Target "notepad (3952)".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
 (default is "Y"):y
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -104,7 +101,7 @@ Stop-Process : Cannot stop process 'lsass (596)' because of the following error:
 At line:1 char:34
 + Get-Process -Name "lsass" | Stop-Process <<<<
 
-[ADMIN]: PS C:\> Get-Process -Name "lsass" | Stop-Process 
+[ADMIN]: PS C:\> Get-Process -Name "lsass" | Stop-Process
 
 Warning!
 Are you sure you want to perform this action?
@@ -136,7 +133,7 @@ To find the owner of a process, use the Get-WmiObject cmdlet to get a **Win32_Pr
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -153,39 +150,12 @@ To find the PID of a process, type `Get-Process`.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -InformationAction
-To find the owner of a process, use the Get-WmiMethod cmdlet to get a Win32_Process object that represents the process, and then use the GetOwner method of the object.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-To find the owner of a process, use the Get-WmiMethod cmdlet to get a Win32_Process object that represents the process, and then use the GetOwner method of the object.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -196,7 +166,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -228,7 +198,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

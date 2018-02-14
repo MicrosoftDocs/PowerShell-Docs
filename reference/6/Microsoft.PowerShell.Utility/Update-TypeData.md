@@ -17,8 +17,7 @@ Updates the extended type data in the session.
 
 ### FileSet (Default)
 ```
-Update-TypeData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-TypeData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DynamicTypeSet
@@ -28,8 +27,8 @@ Update-TypeData [-MemberType <PSMemberTypes>] [-MemberName <String>] [-Value <Ob
  [-TargetTypeForDeserialization <Type>] [-SerializationDepth <Int32>] [-DefaultDisplayProperty <String>]
  [-InheritPropertySerializationSet <Boolean>] [-StringSerializationSource <String>]
  [-DefaultDisplayPropertySet <String[]>] [-DefaultKeyPropertySet <String[]>]
- [-PropertySerializationSet <String[]>] -TypeName <String> [-Force] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PropertySerializationSet <String[]>] -TypeName <String> [-Force]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TypeDataSet
@@ -177,33 +176,6 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PrependPath
 Specifies the path to the optional .ps1xml files.
 The specified files are loaded in the order that they are listed before the built-in files are loaded.
@@ -211,7 +183,7 @@ The specified files are loaded in the order that they are listed before the buil
 ```yaml
 Type: String[]
 Parameter Sets: FileSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -233,7 +205,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -256,7 +228,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -277,7 +249,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -294,7 +266,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: DynamicTypeSet, TypeDataSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -323,7 +295,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Boolean
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -342,7 +314,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -371,7 +343,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSMemberTypes
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 Accepted values: AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods, ParameterizedProperty, MemberSet, Event, Dynamic, All
 
 Required: False
@@ -388,7 +360,7 @@ Use this parameter when the value of the *SerializationMethod* parameter is **Sp
 ```yaml
 Type: String[]
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -415,7 +387,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Object
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -435,7 +407,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Int32
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -451,11 +423,11 @@ The acceptable values for this parameter are:
 
 - AllPublicProperties.
 Serialize all public properties of the type.
-You can use the **SerializationDepth** parameter to determine whether child properties are serialized. 
+You can use the **SerializationDepth** parameter to determine whether child properties are serialized.
 - String.
 Serialize the type as a string.
 You can use the **StringSerializationSource** to specify a property of the type to use as the serialization result.
-Otherwise, the type is serialized by using the **ToString** method of the object. 
+Otherwise, the type is serialized by using the **ToString** method of the object.
 - SpecificProperties.
 Serialize only the specified properties of this type.
 Use the *PropertySerializationSet* parameter to specify the properties of the type that are serialized.
@@ -468,7 +440,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -485,7 +457,7 @@ This parameter is valid only when the value of the *SerializationMethod* paramet
 ```yaml
 Type: String
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -502,7 +474,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Type
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -520,7 +492,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Type
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -540,7 +512,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Type
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -559,7 +531,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: TypeData[]
 Parameter Sets: TypeDataSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -585,7 +557,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -606,7 +578,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Object
 Parameter Sets: DynamicTypeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

@@ -17,8 +17,7 @@ Creates a new alias.
 
 ```
 New-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <ScopedItemOptions>] [-PassThru]
- [-Scope <String>] [-Force] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Scope <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,7 +55,7 @@ If the description includes spaces, enclose it in quotation marks.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -71,34 +70,7 @@ Indicates that the cmdlet acts like Set-Alias if the alias named already exists.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -114,7 +86,7 @@ You can use any alphanumeric characters in an alias, but the first character can
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -129,14 +101,14 @@ The acceptable values for this parameter are:
 
 - None.
 Sets no options.
-(None is the default.) 
+(None is the default.)
 - ReadOnly.
 Can be deleted.
 Cannot be not changed, except by using the *Force* parameter.
 - Constant.
 Cannot be deleted or changed.
 - Private.
-The alias is available only in the current scope. 
+The alias is available only in the current scope.
 - AllScope.
 The alias is copied to any new scopes that are created.
 
@@ -145,7 +117,7 @@ To see the **Options****** property of all aliases in the session, type `Get-Ali
 ```yaml
 Type: ScopedItemOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, ReadOnly, Constant, Private, AllScope, Unspecified
 
 Required: False
@@ -162,7 +134,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -186,7 +158,7 @@ For more information, see about_Scopes.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -201,7 +173,7 @@ Specifies the name of the cmdlet or command element that is being aliased.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2

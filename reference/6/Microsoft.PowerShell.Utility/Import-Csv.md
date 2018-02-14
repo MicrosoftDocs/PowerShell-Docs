@@ -18,15 +18,13 @@ Creates table-like custom objects from the items in a CSV file.
 ### Delimiter (Default)
 ```
 Import-Csv [[-Delimiter] <Char>] [[-Path] <String[]>] [-LiteralPath <String[]>] [-Header <String[]>]
- [-Encoding <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-Encoding <String>] [<CommonParameters>]
 ```
 
 ### UseCulture
 ```
 Import-Csv [[-Path] <String[]>] [-LiteralPath <String[]>] [-UseCulture] [-Header <String[]>]
- [-Encoding <String>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-Encoding <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

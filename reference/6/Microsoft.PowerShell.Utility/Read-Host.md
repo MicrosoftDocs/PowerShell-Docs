@@ -16,8 +16,7 @@ Reads a line of input from the console.
 ## SYNTAX
 
 ```
-Read-Host [[-Prompt] <Object>] [-AsSecureString] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,34 +53,7 @@ When you use this parameter, the output of the **Read-Host** cmdlet is a **Secur
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-When you use this parameter, the output of the Read-Host cmdlet is a SecureString object (System.Security.SecureString).```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-When you use this parameter, the output of the Read-Host cmdlet is a SecureString object (System.Security.SecureString).```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -99,7 +71,7 @@ Windows PowerShell appends a colon (:) to the text that you enter.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1

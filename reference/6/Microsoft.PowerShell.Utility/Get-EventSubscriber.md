@@ -17,14 +17,12 @@ Gets the event subscribers in the current session.
 
 ### BySource (Default)
 ```
-Get-EventSubscriber [[-SourceIdentifier] <String>] [-Force] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-EventSubscriber [[-SourceIdentifier] <String>] [-Force] [<CommonParameters>]
 ```
 
 ### ById
 ```
-Get-EventSubscriber [-SubscriptionId] <Int32> [-Force] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-EventSubscriber [-SubscriptionId] <Int32> [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,15 +44,15 @@ PS C:\> $Timer | Get-Member -Type Event
 TypeName: System.Timers.Timer
 Name     MemberType Definition
 ----     ---------- ----------
-Disposed Event      System.EventHandler Disposed(System.Object, System.EventArgs) 
+Disposed Event      System.EventHandler Disposed(System.Object, System.EventArgs)
 Elapsed  Event      System.Timers.ElapsedEventHandler Elapsed(System.Object, System.Timers.ElapsedEventArgs) PS C:\> Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
 PS C:\> Get-EventSubscriber
 SubscriptionId   : 4
 SourceObject     : System.Timers.Timer
 EventName        : Elapsed
 SourceIdentifier : Timer.Elapsed
-Action           : 
-HandlerDelegate  : 
+Action           :
+HandlerDelegate  :
 SupportEvent     : False
 ForwardEvent     : False
 ```
@@ -84,9 +82,9 @@ PS C:\> ($Subscriber.action).gettype().fullname
 PSEventJob PS C:\> $Subscriber.action | Format-List -Property *
 State         : Running
 Module        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
-StatusMessage : 
+StatusMessage :
 HasMoreData   : True
-Location      : 
+Location      :
 Command       : $random = Get-Random -Min 0 -Max 100
 JobStateInfo  : Running
 Finished      : System.Threading.ManualResetEvent
@@ -137,37 +135,10 @@ Indicates that this cmdlet gets all event subscribers, including subscribers for
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -182,7 +153,7 @@ This parameter is case-sensitive.
 ```yaml
 Type: String
 Parameter Sets: BySource
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1

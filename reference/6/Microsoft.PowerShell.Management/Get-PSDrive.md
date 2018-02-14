@@ -17,14 +17,12 @@ Gets drives in the current session.
 
 ### Name (Default)
 ```
-Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralName
 ```
-Get-PSDrive [-LiteralName] <String[]> [-Scope <String>] [-PSProvider <String[]>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+Get-PSDrive [-LiteralName] <String[]> [-Scope <String>] [-PSProvider <String[]>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,10 +67,10 @@ The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed 
 
 ### Example 2: Get a drive on the computer
 ```
-PS C:\foo> Get-PSDrive D  
+PS C:\foo> Get-PSDrive D
 
-Name           Used (GB)     Free (GB) Provider      Root  
-----           ---------     --------- --------      ----  
+Name           Used (GB)     Free (GB) Provider      Root
+----           ---------     --------- --------      ----
 D                1211.06     123642.32 FileSystem    D:\
 ```
 
@@ -81,11 +79,11 @@ Note that the drive letter in the command is not followed by a colon.
 
 ### Example 3: Get all the drives that are supported by the Windows PowerShell file system provider
 ```
-PS C:\> Get-PSDrive -Provider FileSystem  
-Name           Used (GB)     Free (GB) Provider      Root  
+PS C:\> Get-PSDrive -Provider FileSystem
+Name           Used (GB)     Free (GB) Provider      Root
 ----           ---------     --------- --------      ----
-A                                                    A:\ 
-C                 202.06      23718.91 FileSystem    C:\  
+A                                                    A:\
+C                 202.06      23718.91 FileSystem    C:\
 D                1211.06     123642.32 FileSystem    D:\
 G                 202.06        710.91 FileSystem    \\Music\GratefulDead
 ```
@@ -107,22 +105,22 @@ If it is not, the command uses the `New-PSDrive` cmdlet to create a temporary dr
 
 ### Example 5: Compare the types of files system drives
 ```
-PS C:\> Get-PSDrive -PSProvider FileSystem  
-Name           Used (GB)     Free (GB) Provider      Root    
-----           ---------     --------- --------      ----  
-A                                                    A:\   
-C                 202.06      23718.91 FileSystem    C:\    
-D                1211.06     123642.32 FileSystem    D:\  
-G                 202.06        710.91 FileSystem    \\Music\GratefulDead  
-X                                      Registry      HKLM:\Network  
+PS C:\> Get-PSDrive -PSProvider FileSystem
+Name           Used (GB)     Free (GB) Provider      Root
+----           ---------     --------- --------      ----
+A                                                    A:\
+C                 202.06      23718.91 FileSystem    C:\
+D                1211.06     123642.32 FileSystem    D:\
+G                 202.06        710.91 FileSystem    \\Music\GratefulDead
+X                                      Registry      HKLM:\Network
 
-PS C:\> net use  
-New connections will be remembered.  
-Status       Local     Remote                    Network  
--------------------------------------------------------------------------------  
-OK           G:        \\Server01\Public         Microsoft Windows Network  
+PS C:\> net use
+New connections will be remembered.
+Status       Local     Remote                    Network
+-------------------------------------------------------------------------------
+OK           G:        \\Server01\Public         Microsoft Windows Network
 
-PS C:\> [System.IO.DriveInfo]::GetDrives() | Format-Table 
+PS C:\> [System.IO.DriveInfo]::GetDrives() | Format-Table
 Name DriveType DriveFormat IsReady AvailableFreeSpace TotalFreeSpace TotalSize     RootDirectory VolumeLabel
 ---- --------- ----------- ------- ------------------ -------------- ---------     ------------- -----------
 A:\    Network               False                                                 A:\
@@ -169,33 +167,6 @@ Like **net use**, it returns only the persistent G: drive reated by **New-PSDriv
 
 ## PARAMETERS
 
-### -InformationAction
-The value of LiteralName is used exactly as it is typed. No characters are interpreted as wildcards. If the name includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-The value of LiteralName is used exactly as it is typed. No characters are interpreted as wildcards. If the name includes escape characters, enclose it in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -LiteralName
 Specifies the name of the drive.
 
@@ -207,7 +178,7 @@ Single quotation marks tell Windows PowerShell not to interpret any characters a
 ```yaml
 Type: String[]
 Parameter Sets: LiteralName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -223,7 +194,7 @@ Type the drive name or letter without a colon (:).
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -240,7 +211,7 @@ Type the name of a provider, such as FileSystem, Registry, or Certificate.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -264,7 +235,7 @@ For more information, see about_Scopes (http://go.microsoft.com/fwlink/?LinkID=1
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
