@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-30
+ms.date:  2018-02-14
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -8,11 +8,11 @@ title:  about_pipelines
 
 # About Pipelines
 
-### Short Description
+## Short Description
 
 Combining commands into pipelines in the PowerShell
 
-### Long Description
+## Long Description
 
 A pipeline is a series of commands connected by pipeline operators (`|`)
 (ASCII 124). Each pipeline operator sends the results of the preceding command
@@ -117,7 +117,7 @@ tmp2.txt                   114000
 tmp3.txt                   114000
 ```
 
-### Using Pipelines
+## Using Pipelines
 
 The PowerShell cmdlets were designed to be used in pipelines. For example, you
 can usually pipe the results of a Get cmdlet to an action cmdlet (such as a
@@ -178,7 +178,7 @@ Get-Process winlogon | Format-List -Property *
 With a bit of practice, you'll find that combining simple commands into
 pipelines saves time and typing, and makes your scripting more efficient.
 
-### How Pipelines Work
+## How Pipelines Work
 
 When you "pipe" objects, that is send the objects in the output of one command
 to another command, PowerShell tries to associate the piped objects with one
@@ -209,7 +209,7 @@ objects with a particular parameter. You cannot even suggest a parameter.
 Instead, the logic of the component manages the piping as efficiently as
 possible.
 
-### One-At-A-Time Processing
+## One-At-A-Time Processing
 
 Piping objects to a command is much like using a parameter of the command to
 submit the objects.
@@ -309,7 +309,7 @@ For example,
 This distinction can be important, so remember that when you pipe objects to a
 cmdlet, they are delivered one at a time.
 
-### Accepts Pipeline Input
+## Accepts Pipeline Input
 
 In order to receive objects in a pipeline, the receiving cmdlet must have a
 parameter that accepts pipeline input. You can use a `Get-Help` command with
@@ -366,7 +366,7 @@ This means that you can send objects (PsObjects) through the pipeline to the
 `Where-Object` cmdlet and PowerShell will associate the object with the
 **InputObject** and **Name** parameters.
 
-### Methods Of Accepting Pipeline Input
+## Methods Of Accepting Pipeline Input
 
 Cmdlets parameters can accept pipeline input in one of two different ways:
 
@@ -389,7 +389,7 @@ Cmdlets parameters can accept pipeline input in one of two different ways:
 Some parameters can accept objects by value or by property name. These
 parameters are designed to take input from the pipeline easily.
 
-### Investigating Pipeline Errors
+## Investigating Pipeline Errors
 
 If a command fails because of a pipeline error, you can investigate the
 failure and rewrite the command.
@@ -519,7 +519,7 @@ For example,
 
 ```powershell
 Get-Item -Path HKLM:\software\mycompany\design |
-Move-ItemProperty -Dest HKLM:\software\mycompany\design -Name product
+Move-ItemProperty -Dest HKLM:\software\mycompany\sales -Name product
 ```
 
 To verify that the command worked, use a `Get-ItemProperty` command:
@@ -542,7 +542,7 @@ PSProvider   : Microsoft.PowerShell.Core\Registry
 Product      : 18
 ```
 
-# See Also
+## See Also
 
 [about_objects](about_objects.md)
 
