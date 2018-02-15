@@ -605,6 +605,43 @@ Param
 )
 ```
 
+## ValidateDrive Validation Attribute
+
+The ValidateDrive attribute specifies that the parameter value must represent
+the path, that is referring to allowed drives only. PowerShell generates
+an error if the parameter value refers to drives other than the allowed.
+Existence of the path, except for the drive itself, is not verified.
+
+If you use relative path, the current drive must be in the allowed drive list.
+
+```powershell
+Param
+(
+    [ValidateDrive("C","D","Variable","Function")]
+    [string]$Path
+)
+```
+
+## ValidateUserDrive Validation Attribute
+
+The ValidateUserDrive attribute specifies that the parameter value
+must represent the path, that is referring to `User` drive.
+PowerShell generates an error if the path refers to other drives.
+Existence of the path, except for the drive itself, is not verified.
+
+If you use relative path, the current drive must be `User`.
+
+You can define `User` drive in Just Enough Administration (JEA)
+session configurations.
+
+
+```powershell
+Param
+(
+    [ValidateUserDrive()]
+    [string]$Path
+)
+```
 
 ## Dynamic Parameters
 

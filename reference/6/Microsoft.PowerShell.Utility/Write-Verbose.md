@@ -16,8 +16,7 @@ Writes text to the verbose message stream.
 ## SYNTAX
 
 ```
-Write-Verbose [-Message] <String> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+Write-Verbose [-Message] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,33 +52,6 @@ The default value, SilentlyContinue, suppresses verbose messages.
 The second command writes a verbose message.
 
 ## PARAMETERS
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Message
 Specifies the message to display.

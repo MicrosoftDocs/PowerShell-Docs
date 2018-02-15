@@ -32,7 +32,7 @@ collection of useful snippets is included in the box and you can more by using t
 cmdlet.
 
 **Add-on tools** that add features to the ISE can be created by writing code that interacts with
-the [The Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+[The Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
 
 These tools can display controls in a tabbed pane or work invisibly in the background. The
 **Commands** add-on is a good example and is included with version 3.0 and later that displays a

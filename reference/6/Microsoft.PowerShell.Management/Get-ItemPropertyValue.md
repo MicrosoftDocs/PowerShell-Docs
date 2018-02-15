@@ -18,15 +18,13 @@ Gets the value for one or more properties of a specified item.
 ### Path (Default)
 ```
 Get-ItemPropertyValue [[-Path] <String[]>] [-Name] <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
 Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-UseTransaction] [<CommonParameters>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,35 +52,15 @@ This command gets the value of the LastWriteTime property, or the last time a fi
 ```
 PS C:\> Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Name LastWriteTime,CreationTime,Root
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Wednesday, September 3, 2014 2:53:22 PM
 Wednesday, September 3, 2014 2:53:10 PM
 
-Name              : C:\ 
-Parent            : 
+Name              : C:\
+Parent            :
 Exists            : True
-Root              : C:\ 
-FullName          : C:\ 
-Extension         : 
+Root              : C:\
+FullName          : C:\
+Extension         :
 CreationTime      : 9/1/2014 4:59:45 AM
 CreationTimeUtc   : 9/1/2014 11:59:45 AM
 LastAccessTime    : 9/27/2014 5:22:02 PM
@@ -90,9 +68,9 @@ LastAccessTimeUtc : 9/28/2014 12:22:02 AM
 LastWriteTime     : 9/27/2014 5:22:02 PM
 LastWriteTimeUtc  : 9/28/2014 12:22:02 AM
 Attributes        : Hidden, System, Directory
-BaseName          : C:\ 
-Target            : 
-LinkType          : 
+BaseName          : C:\
+Target            :
+LinkType          :
 Mode              : d--hs-
 ```
 
@@ -111,7 +89,7 @@ This parameter is not supported by any providers that are installed with Windows
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -126,7 +104,7 @@ Specifies, as a string array, an item or items that this cmdlet excludes from th
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -144,7 +122,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -159,34 +137,7 @@ Specifies, as a string array, an item or items that this cmdlet includes in the 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -234,7 +185,7 @@ Specifies the path to the item or items.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1

@@ -17,15 +17,11 @@ Removes a Windows service.
 
 ### Name
 ```
-Remove-Service [-Name] <String> 
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Remove-Service [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 ### InputObject (Default)
 ```
-Remove-Service [-InputObject] <ServiceController[]> 
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Remove-Service [-InputObject] <ServiceController[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,32 +47,6 @@ The pipeline operator (|) pipes the object to **Remove-Service**, which removes 
 
 ## PARAMETERS
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 ### -InputObject
 Specifies **ServiceController** objects that represent the services to stop.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
@@ -84,7 +54,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: ServiceController[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1

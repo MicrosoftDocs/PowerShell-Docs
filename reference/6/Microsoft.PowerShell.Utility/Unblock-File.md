@@ -17,14 +17,12 @@ Unblocks files that were downloaded from the Internet.
 
 ### ByPath (Default)
 ```
-Unblock-File [-Path] <String[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Unblock-File [-Path] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
-Unblock-File -LiteralPath <String[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Unblock-File -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,33 +85,6 @@ This command shows how to find and unblock Windows PowerShell scripts.
 
 ## PARAMETERS
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -LiteralPath
 Specifies the files to unblock.
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
@@ -140,7 +111,7 @@ Wildcard characters are supported.
 ```yaml
 Type: String[]
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1

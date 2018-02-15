@@ -18,13 +18,12 @@ Creates an instance of a Microsoft .NET Framework or COM object.
 ### Net (Default)
 ```
 New-Object [-TypeName] <String> [[-ArgumentList] <Object[]>] [-Property <IDictionary>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Com
 ```
-New-Object [-ComObject] <String> [-Strict] [-Property <IDictionary>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+New-Object [-ComObject] <String> [-Strict] [-Property <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,85 +90,48 @@ PS C:\> $objshell | Get-Member
 
 
 Name                 MemberType Definition
-
 ----                 ---------- ----------
-
 AddToRecent          Method     void AddToRecent (Variant, string)
-
 BrowseForFolder      Method     Folder BrowseForFolder (int, string, int, Variant)
-
 CanStartStopService  Method     Variant CanStartStopService (string)
-
 CascadeWindows       Method     void CascadeWindows ()
-
 ControlPanelItem     Method     void ControlPanelItem (string)
-
 EjectPC              Method     void EjectPC ()
-
 Explore              Method     void Explore (Variant)
-
 ExplorerPolicy       Method     Variant ExplorerPolicy (string)
-
 FileRun              Method     void FileRun ()
-
 FindComputer         Method     void FindComputer ()
-
 FindFiles            Method     void FindFiles ()
-
 FindPrinter          Method     void FindPrinter (string, string, string)
-
 GetSetting           Method     bool GetSetting (int)
-
 GetSystemInformation Method     Variant GetSystemInformation (string)
-
 Help                 Method     void Help ()
-
 IsRestricted         Method     int IsRestricted (string, string)
-
 IsServiceRunning     Method     Variant IsServiceRunning (string)
-
 MinimizeAll          Method     void MinimizeAll ()
-
 NameSpace            Method     Folder NameSpace (Variant)
-
 Open                 Method     void Open (Variant)
-
 RefreshMenu          Method     void RefreshMenu ()
-
 ServiceStart         Method     Variant ServiceStart (string, Variant)
-
 ServiceStop          Method     Variant ServiceStop (string, Variant)
-
 SetTime              Method     void SetTime ()
-
 ShellExecute         Method     void ShellExecute (string, Variant, Variant, Variant, Variant)
-
 ShowBrowserBar       Method     Variant ShowBrowserBar (string, Variant)
-
 ShutdownWindows      Method     void ShutdownWindows ()
-
 Suspend              Method     void Suspend ()
-
 TileHorizontally     Method     void TileHorizontally ()
-
 TileVertically       Method     void TileVertically ()
 ToggleDesktop        Method     void ToggleDesktop ()
-
 TrayProperties       Method     void TrayProperties ()
-
 UndoMinimizeALL      Method     void UndoMinimizeALL ()
-
 Windows              Method     IDispatch Windows ()
-
 WindowsSecurity      Method     void WindowsSecurity ()
-
 WindowSwitcher       Method     void WindowSwitcher ()
-
 Application          Property   IDispatch Application () {get}
-
 Parent               Property   IDispatch Parent () {get}
 
 The third command calls the **ToggleDesktop** method of the object to minimize the open windows on your desktop.
+
 PS C:\> $objshell.ToggleDesktop()
 ```
 
@@ -200,37 +162,10 @@ Specifies the programmatic identifier (ProgID) of the COM object.
 ```yaml
 Type: String
 Parameter Sets: Com
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -248,7 +183,7 @@ If the object is not a **PSObject**, the command generates a non-terminating err
 ```yaml
 Type: IDictionary
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -264,7 +199,7 @@ This feature distinguishes actual COM objects from .NET Framework objects with C
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Com
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -280,7 +215,7 @@ You cannot specify both the *TypeName* parameter and the *ComObject* parameter.
 ```yaml
 Type: String
 Parameter Sets: Net
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1

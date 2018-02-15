@@ -16,8 +16,7 @@ Waits until a particular event is raised before continuing to run.
 ## SYNTAX
 
 ```
-Wait-Event [[-SourceIdentifier] <String>] [-Timeout <Int32>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Wait-Event [[-SourceIdentifier] <String>] [-Timeout <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,7 +57,7 @@ SourceEventArgs  : System.Timers.ElapsedEventArgs
 SourceArgs       : {System.Timers.Timer, System.Timers.ElapsedEventArgs}
 SourceIdentifier : Timer.Elapsed
 TimeGenerated    : 6/10/2008 3:24:18 PM
-MessageData      : 
+MessageData      :
 ForwardEvent     : False
 ```
 
@@ -74,33 +73,6 @@ If the specified time expires, the wait ends.
 
 ## PARAMETERS
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SourceIdentifier
 Specifies the source identifier that this cmdlet waits for events.
 By default, **Wait-Event** waits for any event.
@@ -108,7 +80,7 @@ By default, **Wait-Event** waits for any event.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1

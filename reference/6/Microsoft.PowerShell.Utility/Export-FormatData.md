@@ -18,15 +18,13 @@ Saves formatting data from the current session in a formatting file.
 ### ByPath (Default)
 ```
 Export-FormatData -InputObject <ExtendedTypeDefinition[]> -Path <String> [-Force] [-NoClobber]
- [-IncludeScriptBlock] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-IncludeScriptBlock] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
 Export-FormatData -InputObject <ExtendedTypeDefinition[]> -LiteralPath <String> [-Force] [-NoClobber]
- [-IncludeScriptBlock] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-IncludeScriptBlock] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -101,7 +99,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -118,34 +116,7 @@ Because script blocks contain code and can be used maliciously, they are not exp
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -162,7 +133,7 @@ You can also pipe the objects from **Get-FormatData** to **Export-FormatData**.
 ```yaml
 Type: ExtendedTypeDefinition[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named

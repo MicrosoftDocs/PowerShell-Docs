@@ -17,14 +17,12 @@ Converts a path from a Windows PowerShell path to a Windows PowerShell provider 
 
 ### Path (Default)
 ```
-Convert-Path [-Path] <String[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-UseTransaction] [<CommonParameters>]
+Convert-Path [-Path] <String[]> [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Convert-Path -LiteralPath <String[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-UseTransaction] [<CommonParameters>]
+Convert-Path -LiteralPath <String[]> [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,33 +54,6 @@ This command converts the path to the home directory of the current provider, wh
 
 ## PARAMETERS
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -LiteralPath
 Specifies, as a string array, the path to be converted.
 The value of the *LiteralPath* parameter is used exactly as it is typed.
@@ -108,7 +79,7 @@ Specifies the Windows PowerShell path to be converted.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1

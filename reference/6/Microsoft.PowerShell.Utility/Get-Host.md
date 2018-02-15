@@ -16,7 +16,7 @@ Gets an object that represents the current host program.
 ## SYNTAX
 
 ```
-Get-Host [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Get-Host [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -84,9 +84,9 @@ LCID                           : 1033
 KeyboardLayoutId               : 1033
 Name                           : en-US
 IetfLanguageTag                : en-US
-DisplayName                    : English (United States) 
-NativeName                     : English (United States) 
-EnglishName                    : English (United States) 
+DisplayName                    : English (United States)
+NativeName                     : English (United States)
+EnglishName                    : English (United States)
 TwoLetterISOLanguageName       : en
 ThreeLetterISOLanguageName     : eng
 ThreeLetterWindowsLanguageName : ENU
@@ -128,17 +128,17 @@ RFC1123Pattern                   : ddd, dd MMM yyyy HH':'mm':'ss 'GMT'
 ShortDatePattern                 : M/d/yyyy
 ShortTimePattern                 : h:mm tt
 SortableDateTimePattern          : yyyy'-'MM'-'dd'T'HH':'mm':'ss
-TimeSeparator                    : : 
+TimeSeparator                    : :
 UniversalSortableDateTimePattern : yyyy'-'MM'-'dd HH':'mm':'ss'Z'
 YearMonthPattern                 : MMMM, yyyy
-AbbreviatedDayNames              : {Sun, Mon, Tue, Wed...} 
-ShortestDayNames                 : {Su, Mo, Tu, We...} 
-DayNames                         : {Sunday, Monday, Tuesday, Wednesday...} 
-AbbreviatedMonthNames            : {Jan, Feb, Mar, Apr...} 
-MonthNames                       : {January, February, March, April...} 
+AbbreviatedDayNames              : {Sun, Mon, Tue, Wed...}
+ShortestDayNames                 : {Su, Mo, Tu, We...}
+DayNames                         : {Sunday, Monday, Tuesday, Wednesday...}
+AbbreviatedMonthNames            : {Jan, Feb, Mar, Apr...}
+MonthNames                       : {January, February, March, April...}
 IsReadOnly                       : False
 NativeCalendarName               : Gregorian Calendar
-AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...} 
+AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...}
 MonthGenitiveNames               : {January, February, March, April...}
 ```
 
@@ -195,33 +195,6 @@ This command uses the **PrivateData** property of $Host as its ErrorBackgroundCo
 To see all of the properties of the object in the $Host.PrivateData property, type `$host.privatedata | format-list *`.
 
 ## PARAMETERS
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).

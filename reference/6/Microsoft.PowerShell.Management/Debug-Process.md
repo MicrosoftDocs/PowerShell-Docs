@@ -17,20 +17,18 @@ Debugs one or more processes running on the local computer.
 
 ### Name (Default)
 ```
-Debug-Process [-Name] <String[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
+Debug-Process [-Name] <String[]>
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Debug-Process [-Id] <Int32[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Debug-Process [-Id] <Int32[]>  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
-Debug-Process -InputObject <Process[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Process -InputObject <Process[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -135,33 +133,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-To find the process ID of a process, type "get-process".```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-To find the process ID of a process, type "get-process".```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the process objects that represent processes to be debugged.
 Enter a variable that contains the process objects or a command that gets the process objects, such as the Get-Process cmdlet.
@@ -170,7 +141,7 @@ You can also pipe process objects to this cmdlet.
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -181,7 +152,7 @@ Accept wildcard characters: False
 
 ### -Name
 Specifies the names of the processes to be debugged.
-If there is more than one process with the same name, this cmdlet attaches a debugger to all processes with that name. 
+If there is more than one process with the same name, this cmdlet attaches a debugger to all processes with that name.
 The *Name * parameter is optional.
 
 ```yaml

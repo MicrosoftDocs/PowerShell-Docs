@@ -17,26 +17,22 @@ Starts an interactive debugging session with a runspace.
 
 ### RunspaceParameterSet (Default)
 ```
-Debug-Runspace [-Runspace] <Runspace> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Runspace [-Runspace] <Runspace> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameParameterSet
 ```
-Debug-Runspace [-Name] <String> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Runspace [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### IdParameterSet
 ```
-Debug-Runspace [-Id] <Int32> [-InformationAction <ActionPreference>] [-InformationVariable <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Debug-Runspace [-Id] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
 ```
-Debug-Runspace [-InstanceId] <Guid> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Runspace [-InstanceId] <Guid> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,37 +90,10 @@ You can run Get-Runspace to show runspace IDs.
 ```yaml
 Type: Int32
 Parameter Sets: IdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -136,7 +105,7 @@ Specifies a runspace by its instance ID, a GUID that you can show by running **G
 ```yaml
 Type: Guid
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -152,7 +121,7 @@ You can run **Get-Runspace** to show the names of runspaces.
 ```yaml
 Type: String
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -168,7 +137,7 @@ The simplest way to provide a value for this parameter is to specify a variable 
 ```yaml
 Type: Runspace
 Parameter Sets: RunspaceParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
