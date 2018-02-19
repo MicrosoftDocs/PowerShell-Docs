@@ -241,8 +241,6 @@ You cannot pipe input to this cmdlet.
 * **New-Object** provides the most commonly-used functionality of the VBScript CreateObject function. A statement like `Set objShell = CreateObject("Shell.Application")` in VBScript can be translated to `$objShell = New-Object -COMObject "Shell.Application"` in Windows PowerShell.
 * **New-Object** expands upon the functionality available in the Windows Script Host environment by making it easy to work with .NET Framework objects from the command line and within scripts.
 
-*
-
 ## RELATED LINKS
 
 [Compare-Object](Compare-Object.md)
