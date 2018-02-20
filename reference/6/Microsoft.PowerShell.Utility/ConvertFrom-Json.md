@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  2017-06-09
 schema:  2.0.0
 locale:  en-us
@@ -118,7 +118,9 @@ There are several scenarios where it can overcome some limitations of the `Conve
 - If the JSON contains a key that is an empty string. Without the switch, the cmdlet would throw an error since a `PSCustomObject` does not allow for that but a hash table does. An example use case where this can occurs are `project.lock.json` files.
 - Hash tables can be processed faster for certain data structures.
 
- ```yaml
+ 
+
+```yaml
  Type: SwitchParameter
  Aliases:
 
