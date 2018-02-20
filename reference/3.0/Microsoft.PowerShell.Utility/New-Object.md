@@ -268,7 +268,6 @@ New-Object returns the object that is created.
 
 * New-Object expands upon the functionality available in the Windows Script Host environment by making it easy to work with .NET Framework objects from the command line and within scripts.
 
-*
 ## RELATED LINKS
 
 [Compare-Object](Compare-Object.md)
