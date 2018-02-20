@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  2017-06-09
 schema:  2.0.0
 locale:  en-us
@@ -89,7 +89,9 @@ Stream is a dynamic parameter that the FileSystem provider adds to the Remove-It
 
 You can use the Remove-Item cmdlet to delete an alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
 
-This parameter is introduced in Windows PowerShell 3.0.```yaml
+This parameter is introduced in Windows PowerShell 3.0.
+
+```yaml
 Type: String[]
 Parameter Sets: (All)
 Aliases: 
