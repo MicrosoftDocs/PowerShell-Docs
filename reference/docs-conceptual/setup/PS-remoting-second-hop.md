@@ -110,7 +110,7 @@ module into your session:
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
 
-PS C:\> Import-Module ActiveDirector
+PS C:\> Import-Module ActiveDirectory
 ```
 Several available cmdlets now have a **PrincipalsAllowedToDelegateToAccount** parameter:
 

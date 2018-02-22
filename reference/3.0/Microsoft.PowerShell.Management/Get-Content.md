@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  2017-06-09
 schema:  2.0.0
 locale:  en-us
@@ -89,7 +89,9 @@ Valid values are:
 
 Encoding is a dynamic parameter that the FileSystem provider adds to the Get-Content cmdlet. This parameter works only in file system drives.
 
-When reading from and writing to binary files, use a value of Byte for the Encoding dynamic parameter and a value of 0 for the ReadCount parameter.  A ReadCount value of 0 reads the entire file in a single read operation and converts it into a single object (PSObject).  The default ReadCount value, 1, reads one byte in each read operation and converts each byte into a separate object, which causes errors when you use the Set-Content cmdlet to write the bytes to a file. For more information, see the examples.```yaml
+When reading from and writing to binary files, use a value of Byte for the Encoding dynamic parameter and a value of 0 for the ReadCount parameter.  A ReadCount value of 0 reads the entire file in a single read operation and converts it into a single object (PSObject).  The default ReadCount value, 1, reads one byte in each read operation and converts each byte into a separate object, which causes errors when you use the Set-Content cmdlet to write the bytes to a file. For more information, see the examples.
+
+```yaml
 Type: FileSystemCmdletProviderEncoding
 Parameter Sets: (All)
 Aliases: 
@@ -115,7 +117,9 @@ You can use this parameter to split a large file into smaller files by specifyin
 
 Delimiter is a dynamic parameter that the FileSystem provider adds to the Get-Content cmdlet. This parameter works only in file system drives.
 
-Troubleshooting Note: Currently, when the value of the Delimiter parameter is an empty string, Get-Content does not return anything. This is a known issue. To force Get-Content to return the entire file as a single, undelimited string, enter a value that does not exist in the file.```yaml
+Troubleshooting Note: Currently, when the value of the Delimiter parameter is an empty string, Get-Content does not return anything. This is a known issue. To force Get-Content to return the entire file as a single, undelimited string, enter a value that does not exist in the file.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: 
@@ -148,7 +152,9 @@ Ignores newline characters and returns the entire contents of a file in one stri
 
 Raw is a dynamic parameter that the FileSystem provider adds to the Get-Content cmdlet. This parameter works only in file system drives.
 
-This parameter is introduced in Windows PowerShell 3.0.```yaml
+This parameter is introduced in Windows PowerShell 3.0.
+
+```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
@@ -163,7 +169,9 @@ Accept wildcard characters: False
 ### -Wait
 Waits for the cmdlet to get the content before returning the command prompt. While waiting, Get-Content checks the file once each second until you interrupt it, such as by pressing CTRL+C.
 
-Wait is a dynamic parameter that the FileSystem provider adds to the Get-Content cmdlet. This parameter works only in file system drives.```yaml
+Wait is a dynamic parameter that the FileSystem provider adds to the Get-Content cmdlet. This parameter works only in file system drives.
+
+```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
@@ -180,7 +188,9 @@ Gets the contents of the specified alternate NTFS file stream from the file. Ent
 
 Stream is a dynamic parameter that the FileSystem provider adds to the Get-Content cmdlet. This parameter works only in file system drives.
 
-This parameter is introduced in Windows PowerShell 3.0.```yaml
+This parameter is introduced in Windows PowerShell 3.0.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: 

@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  2017-06-09
 schema:  2.0.0
 locale:  en-us
@@ -97,7 +97,9 @@ For example, you can use Test-Path to test the path to a registry key, but if yo
 ### -OlderThan
 Returns "True" when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the Get-Date cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".
 
-OlderThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.```yaml
+OlderThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.
+
+```yaml
 Type: DateTime
 Parameter Sets: (All)
 Aliases: 
@@ -112,7 +114,9 @@ Accept wildcard characters: False
 ### -NewerThan
 Returns "True" when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the Get-Date cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".
 
-NewerThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.```yaml
+NewerThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.
+
+```yaml
 Type: DateTime
 Parameter Sets: (All)
 Aliases: 
