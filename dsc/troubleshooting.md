@@ -17,7 +17,7 @@ Windows PowerShell Desired State Configuration (DSC) depends on WinRM. WinRM is 
 
 ## Using Get-DscConfigurationStatus
 
-The [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) cmdlet gets information about configuration status from a target node. 
+The [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet gets information about configuration status from a target node. 
 A rich object is returned that includes high-level information about whether or not the configuration run was successful or not. You can dig into the object to discover details about the configuration run such as:
 
 * All of the resources that failed
@@ -626,5 +626,5 @@ onlyProperty                            PSComputerName
 * [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 ### Other Resources
-* [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
 

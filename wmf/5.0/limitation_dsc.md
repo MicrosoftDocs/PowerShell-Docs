@@ -12,7 +12,7 @@ Breaking Change: Certificates used to encrypt/decrypt passwords in DSC configura
 
 In WMF 4.0 and WMF 5.0 Preview releases, DSC would not allow passwords in the configuration to be of length more than 121 characters. DSC was forcing to use short passwords even if lengthy and strong password was desired. This breaking change allows passwords to be of arbitrary length in the DSC configuration.
 
-**Resolution:** Re-create the certificate with Data Encipherment or Key Encipherment Key usage, and Document Encryption Enhanced Key usage (1.3.6.1.4.1.311.80.1). Technet article <https://technet.microsoft.com/en-us/library/dn807171.aspx> has more information.
+**Resolution:** Re-create the certificate with Data Encipherment or Key Encipherment Key usage, and Document Encryption Enhanced Key usage (1.3.6.1.4.1.311.80.1). Technet article <https://technet.microsoft.com/library/dn807171.aspx> has more information.
 
 
 DSC cmdlets may fail after installing WMF 5.0 RTM

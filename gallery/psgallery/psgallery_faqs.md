@@ -14,7 +14,7 @@ A PowerShell module is a reusable package containing some PowerShell functionali
 
 ## What is a PowerShell script?
 
-A PowerShell script is a series of commands that are stored in a .ps1 file to enable reuse and sharing. PowerShell workflows are also PowerShell scripts, which outline a set of tasks and provide sequencing for those tasks. For more information, please visit [Getting Started with PowerShell Workflow](https://technet.microsoft.com/en-us/library/jj134242.aspx).
+A PowerShell script is a series of commands that are stored in a .ps1 file to enable reuse and sharing. PowerShell workflows are also PowerShell scripts, which outline a set of tasks and provide sequencing for those tasks. For more information, please visit [Getting Started with PowerShell Workflow](https://technet.microsoft.com/library/jj134242.aspx).
 
 ## How are PowerShell Scripts different from PowerShell Modules?
 
@@ -44,7 +44,7 @@ This error can occur for the following reasons:
 
 ## Why can't I sign in with my personal account, but I could sign in yesterday?
 
-Please be aware that your gallery account does not accommodate changes to your primary email alias. For more information, see [Microsoft Email Aliases](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account).
+Please be aware that your gallery account does not accommodate changes to your primary email alias. For more information, see [Microsoft Email Aliases](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## Why don't I see all the gallery items when I select all the Category checkboxes on the Items tab?
 
@@ -152,7 +152,7 @@ Therefore, **PowerShellGet** requires one of the following operating systems:
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** also  requires .NET Framework 4.5 or above. You can install .NET Framework 4.5 or above from [here](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx).
+**PowerShellGet** also  requires .NET Framework 4.5 or above. You can install .NET Framework 4.5 or above from [here](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## Is it possible to reserve names for items that will be published in future?
 

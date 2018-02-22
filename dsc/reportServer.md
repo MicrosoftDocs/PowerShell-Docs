@@ -98,7 +98,7 @@ PullClientConfig
 Reports sent to the pull server are entered into a database on the server. The reports are available through calls to the web service. To retrieve reports for a specific node, 
 send an HTTP request to the report web service in the following form:
 `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` 
-where `MyNodeAgentId` is the AgentId of the node for which you want to get reports. You can get the AgentID for a node by calling [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx)
+where `MyNodeAgentId` is the AgentId of the node for which you want to get reports. You can get the AgentID for a node by calling [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
 on that node.
 
 The reports are returned as an array of JSON objects.

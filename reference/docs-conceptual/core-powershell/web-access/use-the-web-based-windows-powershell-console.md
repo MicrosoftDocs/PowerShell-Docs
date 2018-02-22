@@ -72,7 +72,7 @@ the name or IP address of the remote computer that you want to manage.
 You must be an authorized user on the remote computer, and it must be
 configured to allow remote management.
 For more information about configuring your computer to allow remote
-management, see [Enable and Use Remote Commands in Windows PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting).
+management, see [Enable and Use Remote Commands in Windows PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting).
 
 The simplest method of configuring your computer to allow remote management
 is to run the **Enable-PSRemoting -force** cmdlet on the computer,
@@ -91,7 +91,7 @@ rights (**Run as Administrator**).
     > - If the destination computer is the gateway server, you can specify `localhost` in the Computer name field
     > - If the destination computer is the gateway server, and the gateway server is in a workgroup, you must use `<workgroup name>\<user_name>` in the user name filed. You can use `localhost` in the Computer name field.
 
-1. The **Optional Connection Settings** section relates to the authorization requirements of the remote computer that you want to manage. For more information about the parameters that are equivalent to optional connection settings, see the [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet help.
+1. The **Optional Connection Settings** section relates to the authorization requirements of the remote computer that you want to manage. For more information about the parameters that are equivalent to optional connection settings, see the [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet help.
 
     Typically, the credentials you use to pass through the Windows PowerShell Web Access gateway are the same that are recognized by the remote computer that you want to manage. However, if you want to use different credentials to manage the remote computer that you specified in step 2, expand the **Optional Connection Settings** section, and provide the alternate credentials. Otherwise, skip to step 6.
 

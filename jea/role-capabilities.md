@@ -82,7 +82,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> The [common PowerShell parameters](https://technet.microsoft.com/en-us/library/hh847884.aspx) are always allowed, even if you restrict the available parameters.
+> The [common PowerShell parameters](https://technet.microsoft.com/library/hh847884.aspx) are always allowed, even if you restrict the available parameters.
 > You should not explicitly list them in the Parameters field.
 
 The table below describes the various ways you can customize a visible cmdlet or function.
@@ -107,7 +107,7 @@ You cannot apply both a ValidatePattern and ValidateSet to the same cmdlet or fu
 
 If you do, the ValidatePattern will override the ValidateSet.
 
-For more information about ValidatePattern, check out [this *Hey, Scripting Guy!* post](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) and the [PowerShell Regular Expressions](https://technet.microsoft.com/en-us/library/hh847880.aspx) reference content.
+For more information about ValidatePattern, check out [this *Hey, Scripting Guy!* post](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) and the [PowerShell Regular Expressions](https://technet.microsoft.com/library/hh847880.aspx) reference content.
 
 ### Allowing external commands and PowerShell scripts
 
@@ -124,7 +124,7 @@ Many executables allow you to both read the current state and then change it jus
 For example, consider the role of a file server admin who wants to check which network shares are hosted by the local machine.
 One way to check is to use `net share`.
 However, allowing net.exe is very dangerous becuase the admin could just as easily use the command to gain admin privileges with `net group Administrators unprivilegedjeauser /add`.
-A better approach is to allow [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) which achieves the same result but has a much more limited scope.
+A better approach is to allow [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) which achieves the same result but has a much more limited scope.
 
 When making external commands available to users in a JEA session, always specify the complete path to the executable to ensure a similarly named (and potentially malicous) program placed elsewhere on the system does not get executed instead.
 

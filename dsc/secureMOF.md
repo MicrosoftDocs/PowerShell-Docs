@@ -25,7 +25,7 @@ using the pull service protocol if certificates are not managed,
 to ensure configurations downloaded by the target node can be decrypted and read by the system
 before they are applied
 (for example, the pull service available in Windows Server).
-Nodes registered to [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+Nodes registered to [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 will automatically have certificates installed and managed by the service
 with no administrative overhead required.
 
@@ -280,7 +280,7 @@ configuration CredentialEncryptionExample
 
 ## Setting up decryption
 
-Before [`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
+Before [`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint. This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -329,7 +329,7 @@ configuration CredentialEncryptionExample
 
 At this point, you can run the configuration, which will output two files:
 
- * A *.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using the certificate that is stored on the local machine store and identified by its thumbprint. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) applies the *.meta.mof file.
+ * A *.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using the certificate that is stored on the local machine store and identified by its thumbprint. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) applies the *.meta.mof file.
  * A MOF file that actually applies the configuration. Start-DscConfiguration applies the configuration.
 
 These commands will accomplish those steps:

@@ -18,7 +18,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 ```
 
 For information about installing and using Nano Server, as well as how to manage Nano Server with PowerShell Remoting, see 
-[Getting Started with Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx).
+[Getting Started with Nano Server](https://technet.microsoft.com/library/mt126167.aspx).
 
 
 ## DSC features available on Nano Server
@@ -32,8 +32,8 @@ For information about installing and using Nano Server, as well as how to manage
 * Both push and pull modes
 
 * All DSC cmdlets that exist on a full version of Windows Server, including the following: 
-  * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx)
-  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)  	
+  * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
+  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)  	
   * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
   * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)		
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
@@ -125,5 +125,5 @@ Due to a limited sets of Windows APIs and CLR libraries available on Nano Server
 Complete end-to-end testing before deploying any DSC custom resources to a production environment.
 
 ## See Also
-- [Getting Started with Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx)
+- [Getting Started with Nano Server](https://technet.microsoft.com/library/mt126167.aspx)
 

@@ -9,7 +9,7 @@ title:  Setting up a DSC SMB pull server
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-A DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) pull server is a computer hosting SMB file shares that make DSC configuration files and DSC resources
+A DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) pull server is a computer hosting SMB file shares that make DSC configuration files and DSC resources
 available to target nodes when those nodes ask for them.
 
 To use an SMB pull server for DSC, you have to:
@@ -22,7 +22,7 @@ There are a number of ways to set up an SMB file share, but let's look at how yo
 
 ### Install the xSmbShare resource
 
-Call the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xSmbShare** module.
+Call the [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) cmdlet to install the **xSmbShare** module.
 >**Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0. You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0
 >at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). The **xSmbShare** contains the DSC resource **xSmbShare**, which can be used
 to create an SMB file share.

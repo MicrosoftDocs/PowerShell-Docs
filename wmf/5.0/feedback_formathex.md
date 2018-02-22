@@ -7,7 +7,7 @@ keywords:  wmf,powershell,setup
 
 # Format-Hex
 **Format-Hex** lets you view text or binary data in hexadecimal format;
-see [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
+see [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
 
 ## Example 1
 View the contents of a string in hexadecimal format.

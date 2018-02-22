@@ -43,7 +43,7 @@ WaitForSome [String] #ResourceName
 | RetryCount| The maximum number of times to retry.| 
 | ThrottleLimit| Number of machines to connect simultaneously. Default is new-cimsession default.| 
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
-| PsDscRunAsCredential | See [Using DSC with User Credentials](https://docs.microsoft.com/en-us/powershell/dsc/runasuser) |
+| PsDscRunAsCredential | See [Using DSC with User Credentials](https://docs.microsoft.com/powershell/dsc/runasuser) |
 
 
 ## Example

@@ -22,7 +22,7 @@ Once you have logged in, you will be prompted to create a username for the Power
 Review the Terms of Use and Privacy Policy that are linked in, enter a username, and then click Register.
 
 Note: This account name cannot be changed once it is created.  
-See [Managing Item Owners](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners) for additional 
+See [Managing Item Owners](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) for additional 
 details related to this.
 
 ## Recommended Practices for PowerShell Gallery Accounts
@@ -36,6 +36,6 @@ In many cases that account is not regularly monitored.
 A best practice in that case is to use Outlook Forwarding to send email to another account, typically one within the organization, that will be monitored by the item owner(s).
 
 If there are multiple owners associated with an item, all communications that come from the PowerShell Gallery will go to all owners.
-See [Managing Item Owners](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners) for additional 
+See [Managing Item Owners](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) for additional 
 details on adding owners to an item. 
 

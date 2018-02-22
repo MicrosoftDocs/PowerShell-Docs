@@ -13,7 +13,7 @@ This document describes the business benefits of using PowerShell Desired State 
 
 Windows PowerShell Desired State Configuration (DSC) is a configuration management platform built into Windows that is based on open standards. DSC is flexible enough to function reliably and consistently in each stage of the deployment lifecycle (development, test, pre-production, production), as well as during scale-out. 
 
-DSC centers around "[configurations](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)".
+DSC centers around "[configurations](https://msdn.microsoft.com/powershell/dsc/configurations)".
 A configuration is an easy-to-read document that describes an environment made up of computers ("nodes") with specific characteristics. 
 These characteristics can be as simple as ensuring a specific Windows feature is enabled or as complex as deploying SharePoint. 
 
@@ -41,13 +41,13 @@ DSC was designed with DevOps in mind.
 Having a single configuration define an environment means that developers can encode their requirements into a configuration, 
 check that configuration into source control, and operations teams can easily deploy code without having to go through error-prone manual processes. 
 
-Configurations are also [data-driven](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), 
+Configurations are also [data-driven](https://msdn.microsoft.com/powershell/dsc/configdata), 
 which makes it easier for ops teams to identify and change environments without developer intervention. 
 
 ## Desired State Configuration On- and Off-Premises
 
 DSC can be used to manage both on-premises and off-premises deployments. 
-For on-premises solutions, DSC has a [pull server](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) 
+For on-premises solutions, DSC has a [pull server](https://msdn.microsoft.com/powershell/dsc/pullserver) 
 that can be used to centralize management of machines and report on their status. 
 For cloud solutions, DSC is usable wherever Windows is usable. 
 There are also specific offerings from Azure built on Desired State Configuration, 
