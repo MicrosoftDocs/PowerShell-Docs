@@ -374,7 +374,7 @@ For more information, see about_Group_Policy_Settings (http://go.microsoft.com/f
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases: Path
 
 Required: False
 Position: 1
