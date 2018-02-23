@@ -21,7 +21,7 @@ Out-Null [-InputObject <PSObject>] [<CommonParameters>]
 
 ## DESCRIPTION
 The **Out-Null** cmdlet sends its output to NULL, in effect, removing it from the pipeline and
-preventing the output to be displayed at the screen.
+preventing the output to be displayed at the screen. Please note though that exceptions will be displayed anyway, so this comes very handy when you want to test your command against any errors.
 
 ## EXAMPLES
 
