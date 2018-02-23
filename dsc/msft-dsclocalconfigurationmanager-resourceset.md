@@ -32,7 +32,7 @@ The name of the module that contains the resource to call.
 
 *resourceProperty* \[in\]  
 Specifies the resource property name and its value in a hash table as key and value, respectively. Use the
-[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet to discover resource properties and their types.
+[Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet to discover resource properties and their types.
 
 *RebootRequired* \[out\]  
 On return, this property is set to **true** if the target node needs to be rebooted.

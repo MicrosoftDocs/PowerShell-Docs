@@ -209,7 +209,7 @@ This cmdlet supports the common parameters:
 -OutBuffer,
 and -OutVariable.
 For more information, see
-[about_CommonParameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
+[about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
 
 ## INPUTS
 
@@ -240,7 +240,7 @@ can run. Defining a restricted runspace can prevent users from accessing
 other computers that are not in the allowed Windows PowerShell®
 runspace, thus offering a more secure connection. For more information
 on session configurations, see
-[about_Session_Configurations](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)
+[about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)
 or the [Install and Use Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell

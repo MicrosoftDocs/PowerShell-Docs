@@ -18,8 +18,8 @@ For information on how to configure new virtual machines at initial boot-up in P
 To run these examples, you will need:
 
 - A bootable VHD to work with. You can download an ISO with an evaluation copy of Windows Server 2016 at
-    [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). You can find instructions on how to create a VHD
-    from an ISO image at [Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+    [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). You can find instructions on how to create a VHD
+    from an ISO image at [Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/library/gg318049.aspx).
 - A host computer that has Hyper-V enabled. For information, see [Hyper-V overview](https://technet.microsoft.com/library/hh831531.aspx).
 
 By using DSC, you can automate software installation and configuration for a computer at initial boot-up.

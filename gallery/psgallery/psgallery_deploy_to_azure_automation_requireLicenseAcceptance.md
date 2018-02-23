@@ -18,5 +18,5 @@ If the module being deployed to Azure Automation requires license acceptance, po
 ## More details
 ### [Require License Acceptance in PowerShellGet](../psget/module/RequireLicenseAcceptance.md)
 ### [Require License Acceptance in PowerShell Gallery](psgallery_requires_license_acceptance.md)
-### [Azure Automation website](http://azure.microsoft.com/en-us/services/automation/)
+### [Azure Automation website](http://azure.microsoft.com/services/automation/)
 

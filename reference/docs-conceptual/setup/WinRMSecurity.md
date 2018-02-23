@@ -11,9 +11,9 @@ recommendations, and best practices when using PowerShell Remoting.
 
 ## What is PowerShell Remoting?
 
-PowerShell Remoting uses [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx), which is the Microsoft implementation of the
+PowerShell Remoting uses [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), which is the Microsoft implementation of the
 [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protocol, to allow users to run PowerShell commands on remote
-computers. You can find more information about using PowerShell Remoting at [Running Remote Commands](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+computers. You can find more information about using PowerShell Remoting at [Running Remote Commands](https://technet.microsoft.com/library/dd819505.aspx).
 
 PowerShell Remoting is not the same as using the **ComputerName** parameter of a cmdlet to run it on a remote computer, which uses Remote Procedure Call (RPC)
 as its underlying protocol.
@@ -36,7 +36,7 @@ Remoting connections only from within the same subnet. You have to explicitly ch
 
 ## Process isolation
 
-PowerShell Remoting uses [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) for communication between computers. 
+PowerShell Remoting uses [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) for communication between computers. 
 WinRM runs as a service under the Network Service account, and spawns isolated processes running as user accounts to host PowerShell instances. An instance of PowerShell running as one
 user has no access to a process running an instance of PowerShell as another user.
 
@@ -56,11 +56,11 @@ Regardless of the transport protocol used (HTTP or HTTPS), PowerShell Remoting a
 Authentication confirms the identity of the client to the server - and ideally - the server to the client.
     
 When a client connects to a domain server using its computer name (i.e.: server01, or server01.contoso.com), the default authentication protocol is 
-[Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx).
+[Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
 Kerberos guarantees both the user identity and server identity without sending any sort of reusable credential.
 
 When a client connects to a domain server using its IP address, or connects to a workgroup server, Kerberos authentication is not possible. In that case, PowerShell
-Remoting relies on the [NTLM authentication protocol](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx). The NTLM authentication
+Remoting relies on the [NTLM authentication protocol](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). The NTLM authentication
 protocol guarantees the user identity without sending any sort of delegable credential. To prove user identity, the NTLM protocol requires that both the client
 and server compute a session key from the user's password without ever exchanging the password itself. The server typically does not know the user's password, so it communicates with 
 the domain controller, which does know the user's password and calculates the session key for the server. 

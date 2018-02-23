@@ -7,9 +7,9 @@ keywords:  wmf,powershell,setup
 
 # PowerShellGet Cmdlets for Module Management
 
-- [Find-DscResource](https://technet.microsoft.com/en-us/library/mt654006.aspx)
-- [Find-Module](https://technet.microsoft.com/en-us/library/dn807167.aspx)
-- [Find-Script](https://technet.microsoft.com/en-us/library/mt654001.aspx)
+- [Find-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
+- [Find-Module](https://technet.microsoft.com/library/dn807167.aspx)
+- [Find-Script](https://technet.microsoft.com/library/mt654001.aspx)
 - [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
 - [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
 - [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)

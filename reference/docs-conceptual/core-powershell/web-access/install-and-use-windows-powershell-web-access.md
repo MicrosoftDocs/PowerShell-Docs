@@ -43,7 +43,7 @@ process:
 Before you install and configure Windows PowerShell Web Access, we
 recommend that you read this entire guide, which includes instructions
 about how to install, secure, and uninstall Windows PowerShell Web Access.
-The [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
+The [Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx)
 topic describes how users sign in to the web-based console, and covers
 limitations and differences between the web-based Windows PowerShell
 console and the **powershell.exe** console. End users of the web-based
@@ -334,7 +334,7 @@ security, see
 configurations: Verify that session configurations that you want to use in
 your rules already exist. If they have not yet been created, use
 instructions for creating session configurations in
-[about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+[about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Type the following, and then press **Enter**.
 
@@ -528,7 +528,7 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
 2. ![Security Note](images/SecurityNote.jpeg) Optional step for restricting user access by using session configurations:
 
-    Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+    Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Type the following, and then press **Enter**.
 

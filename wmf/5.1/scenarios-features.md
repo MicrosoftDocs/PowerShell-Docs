@@ -24,7 +24,7 @@ Starting with version 5.1, PowerShell is available in different editions which d
 
 ## Catalog Cmdlets  
 
-Two new cmdlets have been added in the [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) module; these generate and validate Windows catalog files.  
+Two new cmdlets have been added in the [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) module; these generate and validate Windows catalog files.  
 
 ###New-FileCatalog 
 --------------------------------
@@ -67,7 +67,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 This cmdlet compares all the files hashes and their relative paths found in *catalog* with ones on *disk*. 
 If it detects any mismatch between file hashes and paths it returns the status as *ValidationFailed*. 
 Users can retrieve all this information by using the *-Detailed* parameter. 
-It also displays signing status of catalog in *Signature* property which is equivalent to calling [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet on the catalog file. 
+It also displays signing status of catalog in *Signature* property which is equivalent to calling [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet on the catalog file. 
 Users can also skip any file during validation by using the *-FilesToSkip* parameter. 
 
 

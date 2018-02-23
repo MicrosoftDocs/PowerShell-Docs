@@ -68,7 +68,7 @@ Windows 10 users should install the latest feature updates to obtain the current
 ## Enable PowerShell Remoting
 
 PowerShell Remoting provides the foundation on which JEA is built.
-It is therefore necessary to ensure PowerShell Remoting is enabled and [properly secured](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) on your system before you can use JEA.
+It is therefore necessary to ensure PowerShell Remoting is enabled and [properly secured](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity) on your system before you can use JEA.
 
 PowerShell Remoting is enabled by default on Windows Server 2012, 2012 R2, and 2016.
 You can enable PowerShell Remoting by running the following command in an elevated PowerShell window.
@@ -105,6 +105,6 @@ You can also enable system-wide PowerShell transcription through Group Policy.
 
 ## See also
 
-- [Additional information about PowerShell Remoting and WinRM security](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [Additional information about PowerShell Remoting and WinRM security](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 

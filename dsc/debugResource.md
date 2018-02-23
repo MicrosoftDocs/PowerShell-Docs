@@ -12,10 +12,10 @@ title:  Debugging DSC resources
 In PowerShell 5.0, a new feature was introduced in Desired State Configuraiton (DSC) that allows you to debug a DSC resource as a configuration is being applied.
 
 ## Enabling DSC debugging
-Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) cmdlet. 
+Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet. 
 This cmdlet takes a mandatory parameter, **BreakAll**. 
 
-You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx).
+You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).
 
 The following PowerShell output shows the result of enabling debugging:
 
@@ -57,7 +57,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). 
+After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx). 
 The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration. 
 If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.
 
@@ -101,7 +101,7 @@ Remember that every line in the resource script (or class) is set as a break poi
 
 ## Disabling DSC debugging
 
-After calling [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx), all calls to [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
+After calling [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), all calls to [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx)
 will result in the configuration breaking into the debugger. To allow configurations to run normally, you must disable debugging by calling the 
 [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.
 

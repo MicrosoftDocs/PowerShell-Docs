@@ -45,10 +45,10 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ## Windows PowerShell Remoting
 Windows PowerShell remoting, which uses the WS-Management protocol, lets you run any Windows PowerShell command on one or many remote computers. It lets you establish persistent connections, start 1:1 interactive sessions, and run scripts on multiple computers.
 
-To use Windows PowerShell remoting, the remote computer must be configured for remote management. For more information, including instructions, see [About Remote Requirements](https://technet.microsoft.com/en-us/library/dd315349.aspx).
+To use Windows PowerShell remoting, the remote computer must be configured for remote management. For more information, including instructions, see [About Remote Requirements](https://technet.microsoft.com/library/dd315349.aspx).
 
-After you have configured Windows PowerShell remoting, many remoting strategies are available to you. The remainder of this document lists just a few of them. For more information, see [About Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx) and 
-[About Remote FAQ](https://technet.microsoft.com/en-us/library/dd347744.aspx).
+After you have configured Windows PowerShell remoting, many remoting strategies are available to you. The remainder of this document lists just a few of them. For more information, see [About Remote](https://technet.microsoft.com/library/dd347744.aspx) and 
+[About Remote FAQ](https://technet.microsoft.com/library/dd347744.aspx).
 
 ### Start an Interactive Session
 To start an interactive session with a single remote computer, use the [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet.

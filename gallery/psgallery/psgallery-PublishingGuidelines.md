@@ -19,7 +19,7 @@ improving your code with feedback from initial reviewers and [Powershell Script 
 versioning your module, documentation, tests & examples for how to use what you have shared.
 Much of this documentation follows the guidelines for publishing [High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-For the mechanics of publishing an item to the PowerShell Gallery, see [Creating and Publishing an Item](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item).
+For the mechanics of publishing an item to the PowerShell Gallery, see [Creating and Publishing an Item](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item).
 
 Feedback on these guidelines is welcomed. If you do have feedback, please open issues in our [Github documentation repository](https://github.com/powershell/powershell-docs/).
 
@@ -71,7 +71,7 @@ There are several articles available in MSDN on how to provide documentation wit
 * Guidelines for providing help are in [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
 * Creating cmdlet help, which is the best approach for any PowerShell script, function, or cmdlet.
   For information about how to create cmdlet help, start with [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
-  To add help within a script, see [About Comment Based Help](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
+  To add help within a script, see [About Comment Based Help](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Many modules also include documentation in text format, such as MarkDown files.
   This can be particularly helpful when there is a project site in Github, where Markdown is a heavily used format.
   The best practice is to use [Github-flavored Markdown](https://help.github.com/categories/writing-on-github/)

@@ -28,7 +28,7 @@ PS C:\> Install-Module PackageManagement –Force
 ```
 In this case, you will have to re-enter PowerShell session to switch to the new version of PackageManagement.
 
-## [Find-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890709.aspx)
+## [Find-Package Cmdlet](https://technet.microsoft.com/library/dn890709.aspx)
 This cmdlet allows discovery of software packages in available package sources using loaded package providers.
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
@@ -48,7 +48,7 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## [Find-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676544.aspx)
+## [Find-PackageProvider Cmdlet](https://technet.microsoft.com/library/mt676544.aspx)
 The Find-PackageProvider cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet. These are package providers available for installation with the Install-PackageProvider cmdlet. By default, this includes modules available in the PowerShell Gallery with the 'PackageManagement' and 'Provider' Tags. 
 
 Find-PackageProvider also finds matching PackageManagement providers that are available in the PackageManagement azure blob store where we use the PackageManagement boostrapper provider for finding and installing them.
@@ -69,7 +69,7 @@ Install-PackageProvider -Source C:\sharedfolder\Providers\ -Name nuget -force
 	
 ```
 
-## [Get-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890704.aspx)
+## [Get-Package Cmdlet](https://technet.microsoft.com/library/dn890704.aspx)
 This cmdlet returns a list of all software packages that have been installed using PackageManagement.
 ```powershell
 # Get all the packages installed by Programs provider

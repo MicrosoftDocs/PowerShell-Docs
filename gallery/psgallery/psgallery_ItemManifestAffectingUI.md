@@ -4,8 +4,8 @@ This topic provides publishers with summary information on how to modify the man
 This content is organized by where the change will appear, starting with the center section, then the navigation area on the left. There is a detail section covering tags, which identifies important tags, as well as some of the more commonly used tags. 
 There are two topics that provide manifest examples: 
 
-* For modules, see [Update Module Manifest](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest)
-* For scripts, see [Create Script File with Metadata](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+* For modules, see [Update Module Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
+* For scripts, see [Create Script File with Metadata](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
 
 ## PowerShell Gallery Feature Elements Controlled by the Manifest
 
