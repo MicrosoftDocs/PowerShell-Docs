@@ -413,7 +413,7 @@ Accept wildcard characters: False
 ### -System
 Gets only system files and directories (folders).
 
-To get only system files and folders, use the `-System` parameter, its "`as`" alias, or the System value of the `-Attributes` parameter. To exclude system files and folders, use the `-Attributes` parameter.
+To get only system files and folders, use the `-System` parameter, its "`s`" or "`as`" alias, or the System value of the `-Attributes` parameter. To exclude system files and folders, use the `-Attributes` parameter.
 
 ```yaml
 Type: SwitchParameter
