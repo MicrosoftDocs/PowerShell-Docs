@@ -67,7 +67,7 @@ Because *AsJob* creates the job on the local computer and automatically returns 
 
 ### Example 4: Shut down a remote computer
 ```
-PS C:\> Stop-Computer -CompupterName "Server01" -Impersonation anonymous -Authentication PacketIntegrity
+PS C:\> Stop-Computer -ComputerName "Server01" -Impersonation Anonymous -Authentication PacketIntegrity
 ```
 
 This command stops the Server01 remote computer.
