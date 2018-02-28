@@ -141,8 +141,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Management.Automation.Runspaces.RunspaceBase
-You can pipe the results of a **Get-Runspace** command to **Debug-Runspace**.
+### System.Management.Automation.Runspaces.Runspace
+You can pipe the results of a `Get-Runspace` command to `Debug-Runspace`.
 
 ## NOTES
 
