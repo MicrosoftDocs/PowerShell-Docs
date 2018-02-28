@@ -90,17 +90,7 @@ Then, it uses a pipeline operator (|) to send the process ID to the **Debug-Proc
 
 For more information about the $PID automatic variable, see about_Automatic_Variables.
 
-### Example 7: Attach a debugger to the specified process on multiple computers
-```
-PS C:\> Get-Process -ComputerName "Server01", "Server02" -Name "MyApp" | Debug-Process
-```
-
-This command attaches a debugger to the MyApp processes on the Server01 and Server02 computers.
-
-The command uses the **Get-Process** cmdlet to get the MyApp processes on the Server01 and Server02 computers.
-It uses a pipeline operator to send the processes to the Debug-Process cmdlet, which attaches the debuggers.
-
-### Example 8: Attach a debugger to a process that uses the InputObject parameter
+### Example 7: Attach a debugger to a process that uses the InputObject parameter
 ```
 PS C:\> $P = Get-Process "Windows PowerShell"
 PS C:\> Debug-Process -InputObject $P
