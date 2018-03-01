@@ -58,7 +58,7 @@ This class raises an event whenever a process starts.
 
 ### Example 2: Subscribe to creation events for a process
 ```
-PS C:\> Register-WmiEvent -Auery "select * from __instancecreationevent within 5 where targetinstance isa 'win32_process'" -SourceIdentifier "WMIProcess" -MessageData "Test 01" -TimeOut 500
+PS C:\> Register-WmiEvent -Query "select * from __instancecreationevent within 5 where targetinstance isa 'win32_process'" -SourceIdentifier "WMIProcess" -MessageData "Test 01" -TimeOut 500
 ```
 
 This command uses a query to subscribe to Win32_process instance creation events.
