@@ -403,9 +403,6 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 # Add the Microsoft Product feed
 curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
 
-# Update the list of products
-sudo zypper update
-
 # Install PowerShell
 sudo zypper install powershell
 
