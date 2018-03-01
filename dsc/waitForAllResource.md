@@ -33,7 +33,7 @@ WaitForAll [string] #ResourceName
 
 |  Property  |  Description   | 
 |---|---| 
-| ResourceName| The resource name to depend on.| 
+| ResourceName| The resource name to depend on. If this resource belongs to a different configuration, format the name as "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"| 
 | NodeName| The target nodes of the resource to depend on.| 
 | RetryIntervalSec| The number of seconds before retrying. Minimum is 1.| 
 | RetryCount| The maximum number of times to retry.| 
