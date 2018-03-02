@@ -96,23 +96,17 @@ Accept wildcard characters: False
 ```
 
 ### -Option
-Specifies that the cmdlet sets the value of the **Options** property of the alias.
-The acceptable values for this parameter are:
+Specifies the value of the **Options** property of the alias.
+Valid values are:
 
-- None.
-Sets no options.
-(None is the default.)
-- ReadOnly.
-Can be deleted.
-Cannot be not changed, except by using the *Force* parameter.
-- Constant.
-Cannot be deleted or changed.
-- Private.
-The alias is available only in the current scope.
-- AllScope.
-The alias is copied to any new scopes that are created.
+- None: The alias has no constraints (default value)
+- ReadOnly: The alias can be deleted but cannot be changed except by using the **Force** parameter
+- Constant: The alias cannot be deleted or changed
+- Private: The alias is available only in the current scope
+- AllScope: The alias is copied to any new scopes that are created
+- Unspecified: The option is not specified
 
-To see the **Options****** property of all aliases in the session, type `Get-Alias | Format-Table -Property name, options -autosize`.
+To see the **Options** property of all aliases in the session, type `Get-Alias | Format-Table -Property Name, Options -AutoSize`.
 
 ```yaml
 Type: ScopedItemOptions
@@ -122,7 +116,7 @@ Accepted values: None, ReadOnly, Constant, Private, AllScope, Unspecified
 
 Required: False
 Position: Named
-Default value: None
+Default value: [System.Management.Automation.ScopedItemOptions]::None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
