@@ -115,7 +115,7 @@ $Body = @{
     earliest_time = "-2d@d"
     latest_time = "-1d@d"
 }
-Invoke-RestMethod -Method 'Post' -Uri $url -Credential $Cred -Body $body -SkipCertificateCheck -OutFile output.csv
+Invoke-RestMethod -Method 'Post' -Uri $url -Credential $Cred -Body $body -OutFile output.csv
 ```
 
 In the above example, a user runs `Invoke-RestMethod` to perform a POST request on an intranet website in the user's organization.
