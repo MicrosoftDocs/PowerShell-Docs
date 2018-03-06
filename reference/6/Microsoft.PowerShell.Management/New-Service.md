@@ -67,7 +67,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Path
 
 Required: True
 Position: 2
