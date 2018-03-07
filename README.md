@@ -7,7 +7,7 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 
 ## PowerShell Documentation
 
-Welcome to the PowerShell-Docs repository, housing the official Windows PowerShell documentation.
+Welcome to the PowerShell-Docs repository, housing the official PowerShell documentation.
 
 ## Repository Structure
 
