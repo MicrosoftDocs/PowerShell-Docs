@@ -60,7 +60,7 @@ Configuration MyDscConfiguration {
 		}
 	}
 }
-MyDscConfiguration -ComputerName <MyComputer>
+MyDscConfiguration -ComputerName $ComputerName
 
 ```
 
@@ -146,14 +146,14 @@ Configuration DependsOnExample {
 If you ran the previous examples, you might have noticed that you were warned that you were using a resource without explicitly importing it.
 Today, DSC ships with 12 resources as part of the PSDesiredStateConfiguration module. 
 Other resources in external modules must be placed in `$env:PSModulePath` in order to be recognized by the LCM. 
-A new cmdlet, [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), 
+A new cmdlet, [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), 
 can be used to determine what resources are installed on the system and available for use by the LCM. 
-Once these modules have been placed in `$env:PSModulePath` and are properly recognized by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), 
+Once these modules have been placed in `$env:PSModulePath` and are properly recognized by [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), 
 they still need to be loaded within your configuration. 
 **Import-DscResource** is a dynamic keyword that can only be recognized within a **Configuration** block (i.e. it is not a cmdlet). 
 **Import-DscResource** supports two parameters:
 - **ModuleName** is the recommended way of using **Import-DscResource**. It accepts the name of the module that contains the resources to be imported (as well as a string array of module names). 
-- **Name** is the name of the resource to import. This is not the friendly name returned as "Name" by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), but the class name used when defining the resource schema (returned as **ResourceType** by [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
+- **Name** is the name of the resource to import. This is not the friendly name returned as "Name" by [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), but the class name used when defining the resource schema (returned as **ResourceType** by [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)). 
 
 ## See Also
 * [Windows PowerShell Desired State Configuration Overview](overview.md)

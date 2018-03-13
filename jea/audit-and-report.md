@@ -17,7 +17,7 @@ This topic describes the various ways you can audit a JEA endpoint.
 
 ## Find registered JEA sessions on a machine
 
-To check which JEA sessions are registered on a machine, use the [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.
+To check which JEA sessions are registered on a machine, use the [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.
 
 ```powershell
 # Filter for sessions that are configured as 'RestrictedRemoteServer' to find JEA-like session configurations

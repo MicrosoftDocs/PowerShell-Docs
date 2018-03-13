@@ -18,20 +18,17 @@ Configures, starts, and stops a trace of Windows PowerShell components.
 ### optionsSet (Default)
 ```
 Set-TraceSource [-Name] <String[]> [[-Option] <PSTraceSourceOptions>] [-ListenerOption <TraceOptions>]
- [-FilePath <String>] [-Force] [-Debugger] [-PSHost] [-PassThru] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ [-FilePath <String>] [-Force] [-Debugger] [-PSHost] [-PassThru] [<CommonParameters>]
 ```
 
 ### removeAllListenersSet
 ```
-Set-TraceSource [-Name] <String[]> [-RemoveListener <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Set-TraceSource [-Name] <String[]> [-RemoveListener <String[]>] [<CommonParameters>]
 ```
 
 ### removeFileListenersSet
 ```
-Set-TraceSource [-Name] <String[]> [-RemoveFileListener <String[]>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Set-TraceSource [-Name] <String[]> [-RemoveFileListener <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,7 +64,7 @@ This parameter also selects the default trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -100,34 +97,7 @@ Use with the *FilePath* parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -173,7 +143,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -220,7 +190,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: PSTraceSourceOptions
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -236,7 +206,7 @@ This parameter also selects the PSHost trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -252,7 +222,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -268,7 +238,7 @@ Enter the path and file name of the trace output file.
 ```yaml
 Type: String[]
 Parameter Sets: removeFileListenersSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -291,7 +261,7 @@ To remove the file trace listener, use the *RemoveFileListener* parameter.
 ```yaml
 Type: String[]
 Parameter Sets: removeAllListenersSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

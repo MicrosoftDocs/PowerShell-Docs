@@ -20,7 +20,7 @@ WMF 5.1 can be installed on Windows 7, Windows 8.1, Windows Server 2008 R2, 2012
 
 **Important notes:**
 
-- **WMF 5.1 requires the .NET Framework 4.5.2** (or above). Installation will succeed, but key features will fail if .NET 4.5.2 (or above) is not installed. Instructions are available in the [Install and Configure WMF 5.1 ](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure) topic.
+- **WMF 5.1 requires the .NET Framework 4.5.2** (or above). Installation will succeed, but key features will fail if .NET 4.5.2 (or above) is not installed. Instructions are available in the [Install and Configure WMF 5.1 ](https://msdn.microsoft.com/powershell/wmf/5.1/install-configure) topic.
 - WMF 5.1 Preview must be uninstalled before installing WMF 5.1 RTM.
 - WMF 5.1 may be installed directly over WMF 5.0 or WMF 4.0.
 - It is __not required__ to install WMF 4.0 prior to installing WMF 5.1 on Windows 7 and Windows Server 2008 R2. That was an issue for the WMF 5.1 Preview release, and has been resolved.  

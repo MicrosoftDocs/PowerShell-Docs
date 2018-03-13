@@ -17,14 +17,12 @@ Deletes breakpoints from the current console.
 
 ### Breakpoint (Default)
 ```
-Remove-PSBreakpoint [-Breakpoint] <Breakpoint[]> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-PSBreakpoint [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Remove-PSBreakpoint [-Id] <Int32[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-PSBreakpoint [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,7 +91,7 @@ You can also pipe breakpoint objects to **Remove-PSBreakpoint**.
 ```yaml
 Type: Breakpoint[]
 Parameter Sets: Breakpoint
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -108,39 +106,12 @@ Specifies breakpoint IDs for which this cmdlet deletes breakpoints.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

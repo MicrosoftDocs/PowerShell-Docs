@@ -14,7 +14,7 @@ that are contained in the same module folder.
 
 ## Installing multiple resource versions side-by-side
 
-You can use the **MinimumVersion**, **MaximumVersion**, and **RequiredVersion** parameters of the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to specify
+You can use the **MinimumVersion**, **MaximumVersion**, and **RequiredVersion** parameters of the [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) cmdlet to specify
 which version of a module to install. Calling **Install-Module** without specifying a version installs the most recent version.
 
 For example, there are multiple versions of the **xFailOverCluster** module, each of which contains an **xCluster** resouce. The result of calling **Install-Module** without specifying the

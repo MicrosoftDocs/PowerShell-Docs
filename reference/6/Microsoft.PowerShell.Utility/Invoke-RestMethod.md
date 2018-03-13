@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  2017-11-17
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -115,12 +115,12 @@ $Body = @{
     earliest_time = "-2d@d"
     latest_time = "-1d@d"
 }
-Invoke-RestMethod -Method 'Post' -Uri $url -Credential $Cred -Body $body -SkipCertificateCheck -OutFile output.csv 
+Invoke-RestMethod -Method 'Post' -Uri $url -Credential $Cred -Body $body -OutFile output.csv
 ```
 
-In the above example, a user runs `Invoke-RestMethod` to perform a POST request on an intranet website in the user's organization. 
+In the above example, a user runs `Invoke-RestMethod` to perform a POST request on an intranet website in the user's organization.
 
-First, credentials are prompted for and then stored in `$Cred` and the URL that will be access is defined in `$Url`. 
+First, credentials are prompted for and then stored in `$Cred` and the URL that will be access is defined in `$Url`.
 
 Next, The `$Body` variable describes the search criteria, specifies CSV as the output mode, and specifies a time period for returned data that starts two days ago and ends one day ago. The body variable specifies values for parameters that apply to the particular REST API with which `Invoke-RestMethod` is communicating.
 
@@ -165,12 +165,12 @@ Available Authentication Options:
 - **OAuth**: Requires **-Token**. Will send and RFC 6750 `Authorization: Bearer` header with the supplied token. This is an alias for **Bearer**
 
 Supplying **-Authentication** will override any `Authorization` headers supplied to **-Headers** or included in **-WebSession**.
- 
+
 
 ```yaml
 Type: WebAuthenticationType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, Basic, Bearer, OAuth
 
 Required: False
@@ -577,7 +577,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResponseHeadersVariable
-Creates a Response Headers Dictionary and saves it in the value of the specified variable. The the keys of the dictionary will contain the field names of the Response Header returned by the web server and the values will be the respective field values. 
+Creates a Response Headers Dictionary and saves it in the value of the specified variable. The the keys of the dictionary will contain the field names of the Response Header returned by the web server and the values will be the respective field values.
 
 
 ```yaml
@@ -624,7 +624,7 @@ Accept wildcard characters: False
 
 ```
 ### -SkipCertificateCheck
-Skips certificate validation checks. This includes all validations such as expiration, revocation, trusted root authority, etc. 
+Skips certificate validation checks. This includes all validations such as expiration, revocation, trusted root authority, etc.
 
 > **Warning**: Using this parameter is not secure and is not recommended. This switch is only intended to be used against known hosts using a self-signed certificate for testing purposes. Use at your own risk.
 
@@ -670,7 +670,7 @@ Sets the SSL/TLS protocols that are permissible for the web request. By default 
 ```yaml
 Type: WebSslProtocol
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, Tls, Tls11, Tls12
 
 Required: False
@@ -701,7 +701,7 @@ Accept wildcard characters: False
 ```
 
 ### -Token
-The OAuth or Bearer token to include in the request. **-Token** is required by certain **-Authentication** options. It cannot be used independently. 
+The OAuth or Bearer token to include in the request. **-Token** is required by certain **-Authentication** options. It cannot be used independently.
 
 **-Token** takes a `SecureString` containing the token. To supply the token manually use the following:
 
@@ -712,7 +712,7 @@ Invoke-RestMethod -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureStr
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -875,4 +875,3 @@ Some features may not be available on all platforms.
 [ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Invoke-WebRequest](Invoke-WebRequest.md)
-

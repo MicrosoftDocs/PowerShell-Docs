@@ -34,7 +34,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 You can open the session configuration file in any text editor.
 The `-SessionType RestrictedRemoteServer` field indicates that the session configuration will be used by JEA for secure management.
-Sessions configured this way will operate in [NoLanguage mode](https://technet.microsoft.com/en-us/library/dn433292.aspx) and only have the following 8 default commands (and aliases) available:
+Sessions configured this way will operate in [NoLanguage mode](https://technet.microsoft.com/library/dn433292.aspx) and only have the following 8 default commands (and aliases) available:
 
 - Clear-Host (cls, clear)
 - Exit-PSSession (exsn, exit)
@@ -124,7 +124,7 @@ Standard users should have no access to the folder, and a limited set of securit
 ### User drive
 
 If your connecting users will need to copy files to/from the JEA endpoint in order to run a command, you can enable the user drive in the session configuration file.
-The user drive is a [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) that is mapped to a unique folder for each connecting user.
+The user drive is a [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) that is mapped to a unique folder for each connecting user.
 This folder serves as a space for them to copy files to/from the system, without giving them access to the full file system or exposing the FileSystem provider.
 The user drive contents are persistent across sessions to accommodate situations where network connectivity may be interrupted.
 

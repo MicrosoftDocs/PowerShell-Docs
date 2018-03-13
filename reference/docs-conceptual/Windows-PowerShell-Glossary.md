@@ -20,7 +20,7 @@ ms.assetid:  b0f88cbe-cb83-4912-a301-184534cb35c7
 |host|The interface that the Windows PowerShell engine uses to communicate with the user. For example, the host specifies how prompts are handled between Windows PowerShell and the user.|
 |host application|A program that loads the Windows PowerShell engine into its process and uses it to perform operations.|
 |input processing method|A method that a cmdlet can use to process the records it receives as input. The input processing methods include the BeginProcessing method, the ProcessRecord method, the EndProcessing method, and the StopProcessing method.|
-|manifest module|A Windows PowerShell module that has a manifest and whose ModulesToProcess key is empty.|
+|manifest module|A Windows PowerShell module that has a manifest and whose RootModule key is empty.|
 |module manifest|A Windows PowerShell data file (.psd1) that describes the contents of a module and that controls how a module is processed.|
 |module session state|The session state that contains the public and private data of a Windows PowerShell module. The private data in this session state is not available to the user of a Windows PowerShell session.|
 |non-terminating error|An error that does not stop Windows PowerShell from continuing to process the command.|
@@ -29,7 +29,7 @@ ms.assetid:  b0f88cbe-cb83-4912-a301-184534cb35c7
 |pipe|In Windows PowerShell, to send the results of the preceding command as input to the next command in the pipeline.|
 |pipeline|A series of commands connected by pipeline operators (&#124;) (ASCII 124). Each pipeline operator sends the results of the preceding command as input to the next command.|
 |PSSession|A type of Windows PowerShell session that is created, managed, and closed by the user.|
-|root module|The module specified in the ModuleToProcess key in a module manifest.|
+|root module|The module specified in the RootModule key in a module manifest.|
 |runspace|In Windows PowerShell, the operating environment in which each command in a pipeline is executed.|
 |script block|In the Windows PowerShell programming language, a collection of statements or expressions that can be used as a single unit. A script block can accept arguments and return values.|
 |script module|A Windows PowerShell module whose root module is a script module file (.psm1). A script module may or may not include a module manifest.|

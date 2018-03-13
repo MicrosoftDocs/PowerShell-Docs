@@ -16,8 +16,7 @@ Converts a string containing one or more key and value pairs to a hash table.
 ## SYNTAX
 
 ```
-ConvertFrom-StringData [-StringData] <String> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ConvertFrom-StringData [-StringData] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,8 +45,8 @@ Msg3 = The specified variable does not exist.
 PS C:\> ConvertFrom-StringData -StringData $Here
 Name                           Value
 ----                           -----
-Msg3                           The specified variable does not exist. 
-Msg2                           Credentials are required for this command. 
+Msg3                           The specified variable does not exist.
+Msg2                           Credentials are required for this command.
 Msg1                           The string parameter is required.
 ```
 
@@ -163,8 +162,8 @@ PS C:\> $Hash = $Here | ConvertFrom-StringData
 PS C:\> $Hash
 Name     Value
 ----     -----
-Msg3     The specified variable does not exist. 
-Msg2     Credentials are required for this command. 
+Msg3     The specified variable does not exist.
+Msg2     Credentials are required for this command.
 Msg1     The string parameter is required.
 ```
 
@@ -186,10 +185,10 @@ Name  : Angelo
 
 Value : Let there be some more test made of my metal,
         Before so noble and so great a figure
-        Be stamp'd upon it. 
+        Be stamp'd upon it.
 
 Name  : Vincentio
-Value : Heaven doth with us as we with torches do, 
+Value : Heaven doth with us as we with torches do,
         Not light them for themselves; for if our virtues
         Did not go forth of us, 'twere all alike
         As if we had them not.
@@ -201,8 +200,8 @@ In this example, the escape sequence **\n** is used to create new lines within a
 ### Example 8: Use backslash escape character to correctly render a file path
 ```
 PS C:\> ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
-Name                           Value                                                                                                                                     
-----                           -----                                                                                                                                     
+Name                           Value
+----                           -----
 Message                        Look in c:\Windows\System32
 ```
 
@@ -210,41 +209,6 @@ This example shows how to use of the backslash escape character in the string da
 The double backslash ensures that the literal backslash characters render correctly in the hash table output.
 
 ## PARAMETERS
-
-### -InformationAction
-The value of this parameter must be a string that is enclosed in single quotation marks (a single-quoted string) or a string that is enclosed in double quotation marks (a double-quoted string) or a here-string containing one or more key/value pairs. Each key/value pair must be on a separate line, or each pair must be separated by newline characters (`n).
-
-You can include comments in the string, but the comments cannot be on the same line as a key/value pair. The comments are not included in the hash table.
-
-A here-string is a string consisting of one or more lines within which quotation marks are interpreted literally. For more information, see about_Quoting_Rules.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-The value of this parameter must be a string that is enclosed in single quotation marks (a single-quoted string) or a string that is enclosed in double quotation marks (a double-quoted string) or a here-string containing one or more key/value pairs. Each key/value pair must be on a separate line, or each pair must be separated by newline characters (`n).
-
-You can include comments in the string, but the comments cannot be on the same line as a key/value pair. The comments are not included in the hash table.
-
-A here-string is a string consisting of one or more lines within which quotation marks are interpreted literally. For more information, see about_Quoting_Rules.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -StringData
 Specifies the string to be converted.
@@ -263,7 +227,7 @@ For more information, see about_Quoting_Rules.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1

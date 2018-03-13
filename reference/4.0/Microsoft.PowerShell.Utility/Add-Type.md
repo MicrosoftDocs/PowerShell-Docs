@@ -164,12 +164,19 @@ The command uses the **PassThru** parameter to generate objects that represent t
 
 ### Example 4
 ```
-PS C:\> Add-Type -Path c:\ps-test\Hello.vb[VBFromFile]::SayHello(", World")
+PS C:\> Add-Type -Path "c:\ps-test\Hello.vb"
+PS C:\> [VBFromFile]::SayHello(", World")
 
 # From Hello.vb
 
-Public Class VBFromFilePublic Shared Function SayHello(sourceName As String) As StringDim myValue As String = "Hello"return myValue + sourceNameEnd FunctionEnd Class
-PS C:\> [VBFromFile]::SayHello(", World")Hello, World
+Public Class VBFromFile
+  Public Shared Function SayHello(sourceName As String) As String
+    Dim myValue As String = "Hello"
+    return myValue + sourceName
+  End Function
+End Class
+
+Hello, World
 ```
 
 This example uses the **Add-Type** cmdlet to add the VBFromFile class that is defined in the Hello.vb file to the current session.

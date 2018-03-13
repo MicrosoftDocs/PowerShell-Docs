@@ -35,7 +35,7 @@ Service [string] #ResourceName
 
 |  Property  |  Description   | 
 |---|---| 
-| Name| Indicates the service names. Note that sometimes this is different from the display names. You can get a list of the services and their current state with the [Get-Service](https://technet.microsoft.com/en-us/library/hh849804.aspx) cmdlet.|
+| Name| Indicates the service names. Note that sometimes this is different from the display names. You can get a list of the services and their current state with the [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet.|
 | StartupType| Indicates the startup type for the service. The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**|  
 | BuiltInAccount| Indicates the sign-in account to use for the services. The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**.| 
 | State| Indicates the state you want to ensure for the services: **Stopped** or **Running**.| 

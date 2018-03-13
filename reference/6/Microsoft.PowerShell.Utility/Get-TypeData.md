@@ -16,8 +16,7 @@ Gets the extended type data in the current session.
 ## SYNTAX
 
 ```
-Get-TypeData [[-TypeName] <String[]>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+Get-TypeData [[-TypeName] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,17 +69,17 @@ This command gets the script block that creates the value of the EventID propert
 ### Example 4: Get the script block that defines a property for a specified object
 ```
 PS C:\> (Get-TypeData -TypeName System.DateTime).Members["DateTime"].GetScriptBlock
-if ((& { Set-StrictMode -Version 1; $this.DisplayHint }) -ieq  "Date")                    
-{                        
-    "{0}" -f $this.ToLongDateString()                    
+if ((& { Set-StrictMode -Version 1; $this.DisplayHint }) -ieq  "Date")
+{
+    "{0}" -f $this.ToLongDateString()
 }
-elseif ((& { Set-StrictMode -Version 1; $this.DisplayHint }) -ieq "Time")                    
-{                        
-    "{0}" -f  $this.ToLongTimeString()                    
-}                    
-else                    
-{                        
-    "{0} {1}" -f $this.ToLongDateString(), $this.ToLongTimeString()                    
+elseif ((& { Set-StrictMode -Version 1; $this.DisplayHint }) -ieq "Time")
+{
+    "{0}" -f  $this.ToLongTimeString()
+}
+else
+{
+    "{0} {1}" -f $this.ToLongDateString(), $this.ToLongTimeString()
 }
 ```
 
@@ -99,15 +98,15 @@ The output shows the script block that creates the value of the DateTime propert
 ### Example 5: Find the file that adds extended data types to the session
 ```
 PS C:\> dir $pshome\*types.ps1xml -Recurse | Select-String "EventLogEntry"
-C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:180: 
+C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:180:
 <Name>System.Diagnostics.EventLogEntry</Name>
-C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:182: 
+C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:182:
 <TypeName>System.Diagnostics.EventLogEntry</TypeName>
-C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:801: 
+C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:801:
 <Name>System.Diagnostics.EventLogEntry</Name>
-C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:803: 
+C:\WINDOWS\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:803:
 <TypeName>System.Diagnostics.EventLogEntry</TypeName>
-C:\WINDOWS\System32\WindowsPowerShell\v1.0\types.ps1xml:433: 
+C:\WINDOWS\System32\WindowsPowerShell\v1.0\types.ps1xml:433:
 <Name>System.Diagnostics.EventLogEntry</Name>
 ```
 
@@ -116,33 +115,6 @@ This command uses the Get-ChildItem cmdlet (alias = "dir") to perform a recursiv
 The command sends the Types.ps1xml files to the Select-String cmdlet, which does a full-text search for the "**EventLogEntry**" type name in the files and returns the matches.
 
 ## PARAMETERS
-
-### -InformationAction
-Enter type names or a name patterns. Full names (or name patterns with wildcard characters) are required, even for types in the System namespace. Wildcards are supported and the parameter name (-TypeName) is optional. You can also pipe type names to Get-TypeData.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-Enter type names or a name patterns. Full names (or name patterns with wildcard characters) are required, even for types in the System namespace. Wildcards are supported and the parameter name (-TypeName) is optional. You can also pipe type names to Get-TypeData.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -TypeName
 Specifies type data as an array only for the types with the specified names.
@@ -156,7 +128,7 @@ You can also pipe type names to **Get-TypeData**.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1

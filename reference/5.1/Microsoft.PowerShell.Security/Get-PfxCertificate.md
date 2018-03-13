@@ -45,7 +45,7 @@ This command gets information about the Test.pfx certificate on the system.
 
 ### Example 2: Get a .pfx certificate from a remote computer
 ```
-PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-PfxCertificate -FilePath "C:\Text\TestNoPassword.pfx}" -authentication CredSSP
+PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-PfxCertificate -FilePath "C:\Text\TestNoPassword.pfx"} -authentication CredSSP
 ```
 
 This command gets a .pfx certificate file from the Server01 remote computer.

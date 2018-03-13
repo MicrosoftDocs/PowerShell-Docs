@@ -18,20 +18,19 @@ Sets a breakpoint on a line, command, or variable.
 ### Line (Default)
 ```
 Set-PSBreakpoint [-Action <ScriptBlock>] [[-Column] <Int32>] [-Line] <Int32[]> [-Script] <String[]>
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Command
 ```
 Set-PSBreakpoint [-Action <ScriptBlock>] -Command <String[]> [[-Script] <String[]>]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Variable
 ```
 Set-PSBreakpoint [-Action <ScriptBlock>] [[-Script] <String[]>] -Variable <String[]>
- [-Mode <VariableAccessMode>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-Mode <VariableAccessMode>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,7 +62,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 PS C:\> Set-PSBreakpoint -Script "sample.ps1" -Line 5
 Column     : 0
 Line       : 5
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
@@ -80,7 +79,7 @@ When you set a new breakpoint by line number, the **Set-PSBreakpoint** cmdlet ge
 ```
 PS C:\> Set-PSBreakpoint -Command "Increment" -Script "sample.ps1"
 Command    : Increment
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 1
@@ -149,7 +148,7 @@ The debugger breaks when the function is called, not when it is declared.
 PS C:\> Set-PSBreakpoint -Script "sample.ps1" -Line 1, 14, 19 -Column 2 -Action {&(log.ps1)}
 Column     : 2
 Line       : 1
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 6
@@ -159,7 +158,7 @@ ScriptName : C:\ps-test\sample.ps1
 
 Column     : 2
 Line       : 14
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 7
@@ -169,7 +168,7 @@ ScriptName : C:\ps-test\sample.ps1
 
 Column     : 2
 Line       : 19
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 8
@@ -199,7 +198,7 @@ For more information, see about_Script_Blocks, about_Break, and about_Continue.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -223,7 +222,7 @@ If you specify a column that does not exist in the script, an error is not decla
 ```yaml
 Type: Int32
 Parameter Sets: Line
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -252,41 +251,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-If this parameter is omitted, or no action is specified, execution stops at the breakpoint, and the debugger starts.
-
-When the Action parameter is used, the Action script block runs at each breakpoint. Execution does not stop unless the script block includes the Break keyword. If you use the Continue keyword in the script block, execution resumes until the next breakpoint.
-
-For more information, see about_Script_Blocks, about_Break, and about_Continue.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-If this parameter is omitted, or no action is specified, execution stops at the breakpoint, and the debugger starts.
-
-When the Action parameter is used, the Action script block runs at each breakpoint. Execution does not stop unless the script block includes the Break keyword. If you use the Continue keyword in the script block, execution resumes until the next breakpoint.
-
-For more information, see about_Script_Blocks, about_Break, and about_Continue.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Line
 Sets a line breakpoint in a script.
 Enter one or more line numbers, separated by commas.
@@ -299,7 +263,7 @@ If the line is out of range, the breakpoint is never hit.
 ```yaml
 Type: Int32[]
 Parameter Sets: Line
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -327,7 +291,7 @@ Stops execution when the variable is read or written.
 ```yaml
 Type: VariableAccessMode
 Parameter Sets: Variable
-Aliases: 
+Aliases:
 Accepted values: Read, Write, ReadWrite
 
 Required: False
@@ -349,7 +313,7 @@ This parameter is required only when setting a line breakpoint.
 ```yaml
 Type: String[]
 Parameter Sets: Line
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -361,7 +325,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: Command, Variable
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1

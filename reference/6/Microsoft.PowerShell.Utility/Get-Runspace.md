@@ -17,20 +17,17 @@ Gets active runspaces within a Windows PowerShellhost process.
 
 ### NameParameterSet (Default)
 ```
-Get-Runspace [[-Name] <String[]>] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+Get-Runspace [[-Name] <String[]>] [<CommonParameters>]
 ```
 
 ### IdParameterSet
 ```
-Get-Runspace [-Id] <Int32[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+Get-Runspace [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
 ```
-Get-Runspace [-InstanceId] <Guid[]> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+Get-Runspace [-InstanceId] <Guid[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,11 +49,10 @@ The **Get-Runspace** cmdlet gets active runspaces in a Windows PowerShell host p
 
 ### -Id
 
-
 ```yaml
 Type: Int32[]
 Parameter Sets: IdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -65,40 +61,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InstanceId
-
 
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -109,11 +77,10 @@ Accept wildcard characters: False
 
 ### -Name
 
-
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -128,6 +95,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ## OUTPUTS
+
+### System.Management.Automation.Runspaces.Runspace
+You can pipe the results of a `Get-Runspace` command to `Debug-Runspace`.
 
 ## NOTES
 

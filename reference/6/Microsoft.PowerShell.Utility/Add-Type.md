@@ -20,7 +20,7 @@ Adds a Microsoft .NET Framework type (a class) to a Windows PowerShell session.
 Add-Type [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>]
  [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### FromMember
@@ -28,21 +28,21 @@ Add-Type [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerPara
 Add-Type [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>] [-Name] <String>
  [-MemberDefinition] <String[]> [-Namespace <String>] [-UsingNamespace <String[]>] [-Language <Language>]
  [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru]
- [-IgnoreWarnings] [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ### FromLiteralPath
 ```
 Add-Type [-CompilerParameters <CompilerParameters>] -LiteralPath <String[]> [-ReferencedAssemblies <String[]>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### FromPath
 ```
 Add-Type [-CompilerParameters <CompilerParameters>] [-Path] <String[]> [-ReferencedAssemblies <String[]>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### FromAssemblyName
@@ -120,16 +120,16 @@ FindInterfaces                 Method     System.Type[] FindInt... PS C:\> [Basi
 TypeName: BasicTest
 Name            MemberType Definition
 ----            ---------- ----------
-Add             Method     static System.Int32 Add(Int32 a, Int32 b) 
-Equals          Method     static System.Boolean Equals(Object objA, 
+Add             Method     static System.Int32 Add(Int32 a, Int32 b)
+Equals          Method     static System.Boolean Equals(Object objA,
 ReferenceEquals Method     static System.Boolean ReferenceEquals(Obj PS C:\> $basicTestObject | Get-Member
 TypeName: BasicTest
 Name        MemberType Definition
 ----        ---------- ----------
-Equals      Method     System.Boolean Equals(Object obj) 
+Equals      Method     System.Boolean Equals(Object obj)
 GetHashCode Method     System.Int32 GetHashCode()
 GetType     Method     System.Type GetType()
-Multiply    Method     System.Int32 Multiply(Int32 a, Int32 b) 
+Multiply    Method     System.Int32 Multiply(Int32 a, Int32 b)
 ToString    Method     System.String ToString()
 ```
 
@@ -161,9 +161,15 @@ The command uses the *PassThru* parameter to generate objects that represent the
 ```
 PS C:\> Add-Type -Path "c:\ps-test\Hello.vb"
 PS C:\> [VBFromFile]::SayHello(", World")
+
 # From Hello.vb
 
-Public Class VBFromFilePublic Shared Function SayHello(sourceName As String) As String Dim myValue As String = "Hello" return myValue + sourceName End Function End Class
+Public Class VBFromFile
+  Public Shared Function SayHello(sourceName As String) As String
+    Dim myValue As String = "Hello"
+    return myValue + sourceName
+  End Function
+End Class
 
 Hello, World
 ```
@@ -181,7 +187,7 @@ The second command calls the SayHello function as a static method of the VBFromF
 PS C:\> $Signature = @"
 [DllImport("user32.dll")]public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
 "@
-$ShowWindowAsync = Add-Type -MemberDefinition $Signature -Name "Win32ShowWindowAsync" -Namespace Win32Functions -PassThru 
+$ShowWindowAsync = Add-Type -MemberDefinition $Signature -Name "Win32ShowWindowAsync" -Namespace Win32Functions -PassThru
 
 # Minimize the Windows PowerShell console
 
@@ -327,38 +333,7 @@ Use this parameter to prevent **Add-Type** from handling compiler warnings as er
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-Enter the full or simple name (also known as the "partial name") of an assembly. Wildcard characters are permitted in the assembly name. If you enter a simple or partial name, Add-Type resolves it to the full name, and then uses the full name to load the assembly.
-
-This parameter does not accept a path or file name. To enter the path to the assembly dynamic-link library (DLL) file, use the Path parameter.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-Enter the full or simple name (also known as the "partial name") of an assembly. Wildcard characters are permitted in the assembly name. If you enter a simple or partial name, Add-Type resolves it to the full name, and then uses the full name to load the assembly.
-
-This parameter does not accept a path or file name. To enter the path to the assembly dynamic-link library (DLL) file, use the Path parameter.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -383,7 +358,7 @@ CSharp is the default value.
 ```yaml
 Type: Language
 Parameter Sets: FromSource, FromMember
-Aliases: 
+Aliases:
 Accepted values: CSharp, CSharpVersion2, CSharpVersion3, JScript, VisualBasic
 
 Required: False
@@ -422,7 +397,7 @@ For more information, see the examples.
 ```yaml
 Type: String[]
 Parameter Sets: FromMember
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -443,7 +418,7 @@ Otherwise, the command fails.
 ```yaml
 Type: String
 Parameter Sets: FromMember
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -522,7 +497,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -543,7 +518,7 @@ To specify an in-memory assembly or the global assembly cache, use the *Assembly
 ```yaml
 Type: String[]
 Parameter Sets: FromPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -583,7 +558,7 @@ For example, if you define a type called Exception, scripts that use Exception a
 ```yaml
 Type: String
 Parameter Sets: FromSource
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1

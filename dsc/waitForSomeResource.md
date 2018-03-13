@@ -38,12 +38,12 @@ WaitForSome [String] #ResourceName
 |---|---| 
 | NodeCount| The minimum number of nodes that must be in the desired state for this resource to succeed.|
 | NodeName| The target nodes of the resource to depend on.| 
-| ResourceName| The resource name to depend on.| 
+| ResourceName| The resource name to depend on. If this resource belongs to a different configuration, format the name as "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"| 
 | RetryIntervalSec| The number of seconds before retrying. Minimum is 1.| 
 | RetryCount| The maximum number of times to retry.| 
 | ThrottleLimit| Number of machines to connect simultaneously. Default is new-cimsession default.| 
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
-| PsDscRunAsCredential | See [Using DSC with User Credentials](https://docs.microsoft.com/en-us/powershell/dsc/runasuser) |
+| PsDscRunAsCredential | See [Using DSC with User Credentials](https://docs.microsoft.com/powershell/dsc/runasuser) |
 
 
 ## Example

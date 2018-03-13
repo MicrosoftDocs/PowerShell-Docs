@@ -158,7 +158,7 @@ Group [String] #ResourceName
 }
 ```
 
-This example uses a [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) resource
+This example uses a [Group](https://msdn.microsoft.com/powershell/dsc/groupresource) resource
 from the `PSDesiredStateConfiguration` built-in DSC resource module.
 It can create local groups and add or remove members.
 It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.
@@ -238,7 +238,7 @@ This example has two issues:
 
 The first error message has a URL with documentation.
 This link explains how to encrypt passwords
-using a [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)
+using a [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata)
 structure and a certificate.
 For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).
 

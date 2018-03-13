@@ -92,7 +92,7 @@ New-PSSessionConfigurationFile -Path '.\jea.pssc' -SessionType RestrictedRemoteS
 Register-PSSessionConfiguration -Path '.\jea.pssc' -Name 'MyJEAEndpoint'
 ```
 
-You can audit user permissions with the [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.
+You can audit user permissions with the [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.
 
 ```powershell
 PS C:\> Get-PSSessionConfiguration -Name 'MyJEAEndpoint' | Select-Object Permission

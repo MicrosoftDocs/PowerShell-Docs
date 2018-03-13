@@ -16,7 +16,7 @@ Gets the current UI culture settings in the operating system.
 ## SYNTAX
 
 ```
-Get-UICulture [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Get-UICulture [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,33 +60,6 @@ This command displays the short date pattern for the current UI culture.
 To see all of the subproperties of the DateTimeFormat property of the UI culture, type `(Get-UICulture).DateTimeFormat | gm`.
 
 ## PARAMETERS
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).

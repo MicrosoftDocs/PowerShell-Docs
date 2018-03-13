@@ -33,7 +33,7 @@ Failure could occur because of any of the following.
 
   Verify remote management is enabled on the computer to which the user is trying to connect.
 
-  For more information, see [How to Configure Your Computer for Remoting](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  For more information, see [How to Configure Your Computer for Remoting](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## Internal Server Error
 
@@ -156,7 +156,7 @@ Both domain and numerical (with colons) IPv6 addresses are supported as the
 target computer name on the Windows PowerShell Web Access sign-in page,
 but not in authorization rules. 
 
-For more information about IPv6 addresses, see [How IPv6 Works](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx).
+For more information about IPv6 addresses, see [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
 ## See Also
 

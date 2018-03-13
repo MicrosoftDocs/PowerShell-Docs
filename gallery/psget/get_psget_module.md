@@ -10,9 +10,9 @@ Get PowerShellGet Module
 ========================
 
 ### PowerShellGet is an in-box module in the following releases
-- [Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10) or newer
-- [Windows Server 2016](https://technet.microsoft.com/en-us/windows-server-docs/get-started/windows-server-2016) or newer
-- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) or newer
+- [Windows 10](https://www.microsoft.com/windows/get-windows-10) or newer
+- [Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/windows-server-2016) or newer
+- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) or newer
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
 ### Get PowerShellGet module for PowerShell versions 3.0 and 4.0

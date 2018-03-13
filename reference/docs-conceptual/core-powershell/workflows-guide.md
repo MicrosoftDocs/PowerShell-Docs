@@ -10,9 +10,9 @@ This section contains the help topics for the **PSWorkflow** module, which inclu
 ## Help Topics
 [Workflow Cmdlets](http://go.microsoft.com/fwlink/?LinkID=245865)
 
-[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
+[about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 
-[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)
+[about_WorkflowCommonParameters](https://technet.microsoft.com/library/119f968e-618e-439c-b76c-cdd17e6df27c)
 
 [about_ActivityCommonParameters](https://technet.microsoft.com/en-us/library/8ca60664-37c6-4257-a723-e3c41dd10122)
 

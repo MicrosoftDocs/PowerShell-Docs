@@ -17,14 +17,12 @@ Gets the events in the event queue.
 
 ### BySource (Default)
 ```
-Get-Event [[-SourceIdentifier] <String>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Get-Event [[-SourceIdentifier] <String>] [<CommonParameters>]
 ```
 
 ### ById
 ```
-Get-Event [-EventIdentifier] <Int32> [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+Get-Event [-EventIdentifier] <Int32> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,7 +56,7 @@ This command gets events in which the value of the SourceIdentifier property is 
 ```
 PS C:\> $Events = Get-Event
 PS C:\> $Events[0] | Format-List -Property *
-ComputerName     : 
+ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b805917d1b7b
 EventIdentifier  : 1
 Sender           : System.Management.ManagementEventWatcher
@@ -67,7 +65,7 @@ SourceArgs       : {System.Management.ManagementEventWatcher, System.Management.
 SourceIdentifier : ProcessStarted
 TimeGenerated    : 11/13/2008 12:09:32 PM
 MessageData      : PS C:\> Get-Event | Where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
-ComputerName     : 
+ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b8059325d1a0
 EventIdentifier  : 1
 Sender           : System.Management.ManagementEventWatcher
@@ -112,33 +110,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SourceIdentifier
 Specifies source identifiers for which this cmdlet gets events.
 The default is all events in the event queue.
@@ -147,7 +118,7 @@ Wildcards are not permitted.
 ```yaml
 Type: String
 Parameter Sets: BySource
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1

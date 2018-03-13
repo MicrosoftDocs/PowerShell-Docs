@@ -17,14 +17,12 @@ Enables the breakpoints in the current console.
 
 ### Id (Default)
 ```
-Enable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Enable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Breakpoint
 ```
-Enable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Enable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,7 +60,7 @@ PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable Name
 PS C:\> $B | Disable-PSBreakpoint -PassThru
 AccessMode : Write
 Variable   : Name
-Action     : 
+Action     :
 Enabled    : False
 HitCount   : 0
 Id         : 0
@@ -70,7 +68,7 @@ Script     : C:\ps-test\sample.ps1
 ScriptName : C:\ps-test\sample.ps1 PS C:\> $B | Enable-PSBreakpoint -PassThru
 AccessMode : Write
 Variable   : Name
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
@@ -117,7 +115,7 @@ You can also pipe breakpoint objects to **Enable-PSBreakpoint**.
 ```yaml
 Type: Breakpoint[]
 Parameter Sets: Breakpoint
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -136,39 +134,12 @@ To find the ID of a breakpoint, use the Get-PSBreakpoint cmdlet.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -179,7 +150,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

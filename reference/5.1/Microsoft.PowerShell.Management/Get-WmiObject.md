@@ -54,7 +54,7 @@ Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authen
 ```
 
 ## DESCRIPTION
-Starting in Windows PowerShell 3.0, this cmdlet has been superseded by Get-CimInstancehttp://technet.microsoft.com/library/jj590758(v=wps.630).aspx.
+Starting in Windows PowerShell 3.0, this cmdlet has been superseded by [Get-CimInstance](http://technet.microsoft.com/library/jj590758(v=wps.630).aspx).
 
 The **Get-WmiObject** cmdlet gets instances of Windows Management Instrumentation (WMI) classes or information about the available WMI classes.
 To specify a remote computer, use the *ComputerName* parameter.

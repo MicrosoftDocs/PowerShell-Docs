@@ -65,7 +65,7 @@ Notice that the properties are modified by attributes. The meaning of the attrib
 - **DscProperty(NotConfigurable)**: The property is read-only. Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.
 - **DscProperty()**: The property is configurable, but it is not required.
 
-The **$Path** and **$SourcePath** properties are both strings. The **$CreationTime** is a [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) property. The **$Ensure** property is an enumeration type, defined as follows.
+The **$Path** and **$SourcePath** properties are both strings. The **$CreationTime** is a [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) property. The **$Ensure** property is an enumeration type, defined as follows.
 
 ```powershell
 enum Ensure 

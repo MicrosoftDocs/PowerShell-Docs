@@ -4,7 +4,6 @@ ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Configuring the Local Configuration Manager
 ---
-
 # Configuring the Local Configuration Manager
 
 > Applies To: Windows PowerShell 5.0
@@ -22,9 +21,10 @@ It is also responsible for a number of other aspects of DSC, including the follo
 You use a special type of configuration to configure the LCM to specify each of these behaviors.
 The following sections describe how to configure the LCM.
 
-> **Note**: This topic applies to the LCM introduced in Windows PowerShell 5.0.
+Windows PowerShell 5.0 introduced new settings
+for managing Local Configuration Manager.
 For information about configuring the LCM in Windows PowerShell 4.0,
-see [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaconfig4.md).
+see [Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell](metaconfig4.md).
 
 ## Writing and enacting an LCM configuration
 
@@ -81,7 +81,7 @@ The following properties are available in a **Settings** block.
 | CertificateID| string| The thumbprint of a certificate used to secure credentials passed in a configuration. For more information see [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Note:__ this is managed automatically if using Azure Automation DSC pull service.|
 | ConfigurationDownloadManagers| CimInstance[]| Obsolete. Use __ConfigurationRepositoryWeb__ and __ConfigurationRepositoryShare__ blocks to define configuration pull service endpoints.|
 | ConfigurationID| string| For backwards compatibility with older pull service versions. A GUID that identifies the configuration file to get from a pull service. The node will pull configurations on the pull service if the name of the configuration MOF is named ConfigurationID.mof.<br> __Note:__ If you set this property, registering the node with a pull service by using __RegistrationKey__ does not work. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).|
-| ConfigurationMode| string | Specifies how the LCM actually applies the configuration to the target nodes. Possible values are __"ApplyOnly"__,__"ApplyandMonitior"__, and __"ApplyandAutoCorrect"__. <ul><li>__ApplyOnly__: DSC applies the configuration and does nothing further unless a new configuration is pushed to the target node or when a new configuration is pulled from a service. After initial application of a new configuration, DSC does not check for drift from a previously configured state. Note that DSC will attempt to apply the configuration until it is successful before __ApplyOnly__ takes effect. </li><li> __ApplyAndMonitor__: This is the default value. The LCM applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs. Note that DSC will attempt to apply the configuration until it is successful before __ApplyAndMonitor__ takes effect.</li><li>__ApplyAndAutoCorrect__: DSC applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs, and then re-applies the current configuration.</li></ul>|
+| ConfigurationMode| string | Specifies how the LCM actually applies the configuration to the target nodes. Possible values are __"ApplyOnly"__,__"ApplyAndMonitor"__, and __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__: DSC applies the configuration and does nothing further unless a new configuration is pushed to the target node or when a new configuration is pulled from a service. After initial application of a new configuration, DSC does not check for drift from a previously configured state. Note that DSC will attempt to apply the configuration until it is successful before __ApplyOnly__ takes effect. </li><li> __ApplyAndMonitor__: This is the default value. The LCM applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs. Note that DSC will attempt to apply the configuration until it is successful before __ApplyAndMonitor__ takes effect.</li><li>__ApplyAndAutoCorrect__: DSC applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs, and then re-applies the current configuration.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| How often, in minutes, the current configuration is checked and applied. This property is ignored if the ConfigurationMode property is set to ApplyOnly. The default value is 15.|
 | DebugMode| string| Possible values are __None__, __ForceModuleImport__, and __All__. <ul><li>Set to __None__ to use cached resources. This is the default and should be used in production scenarios.</li><li>Setting to __ForceModuleImport__, causes the LCM to reload any DSC resource modules, even if they have been previously loaded and cached. This impacts the performance of DSC operations as each module is reloaded on use. Typically you would use this value while debugging a resource</li><li>In this release, __All__ is same as __ForceModuleImport__</li></ul> |
 | RebootNodeIfNeeded| bool| Set this to __$true__ to automatically reboot the node after a configuration that requires reboot is applied. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is __$false__. To use this setting when a reboot condition is enacted by something other than DSC (such as Windows Installer), combine this setting with the [xPendingReboot](https://github.com/powershell/xpendingreboot) module.|
@@ -94,47 +94,14 @@ The following properties are available in a **Settings** block.
 
 ## Pull service
 
-DSC settings allow a node to be managed by pulling configurations and modules,
-and publishing reporting data, to a remote location.
-The current options for pull service include:
-
-- Azure Automation Desired State Configuration service
-- A pull service instance running on Windows Server
-- An SMB share (does not support publishing reporting data)
-
 LCM configuration supports defining the following types of pull service endpoints:
 
 - **Configuration server**: A repository for DSC configurations. Define configuration servers by using **ConfigurationRepositoryWeb** (for web-based servers) and **ConfigurationRepositoryShare** (for SMB-based servers) blocks.
 - **Resource server**: A repository for DSC resources, packaged as PowerShell modules. Define resource servers by using **ResourceRepositoryWeb** (for web-based servers) and **ResourceRepositoryShare** (for SMB-based servers) blocks.
 - **Report server**: A service that DSC sends report data to. Define report servers by using **ReportServerWeb** blocks. A report server must be a web service.
 
-**The recommended solution**, and the option with the most features available,
-is [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started).
-
-The Azure service can manage nodes on-premises in private datacenters,
-or in public clouds such as Azure and AWS.
-For private environments where servers cannot directly connect to the Internet,
-consider limiting outbound traffic to only the published Azure IP range
-(see [Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
-
-Features of the online service that are not currently available in the pull service on Windows Server include:
-- All data is encrypted in transit and at rest
-- Client certificates are created and managed automatically
-- Secrets store for centrally managing [passwords/credentials](https://docs.microsoft.com/en-us/azure/automation/automation-credentials), or [variables](https://docs.microsoft.com/en-us/azure/automation/automation-variables) such as server names or connection strings
-- Centrally manage node [LCM configuration](metaConfig.md#basic-settings)
-- Centrally assign configurations to client nodes
-- Release configuration changes to "canary groups" for testing before reaching production
-- Graphical reporting
-  - Status detail at the DSC resource level of granularity
-  - Verbose error messages from client machines for troubleshooting
-- [Integration with Azure Log Analytics](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) for alerting, automated tasks, Android/iOS app for reporting and alerting
-
-Alternatively, for information about
-setting up and using HTTP pull service on Windows Server,
-see [Setting up a DSC pull server](pullServer.md).
-Please be advised that it is a limited implementation with only basic
-capabilities of storing configurations/modules and capturing report data
-in to a local database.
+For more details on pull service see,
+[Desired State Configuration Pull Service](pullServer.md).
 
 ## Configuration server blocks
 

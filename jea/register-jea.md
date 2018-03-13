@@ -15,7 +15,7 @@ This process applies the session configuration information to the system and mak
 
 ## Single machine configuration
 
-For small environments, you can deploy JEA by registering the session configuration file using the [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet.
+For small environments, you can deploy JEA by registering the session configuration file using the [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet.
 
 Before you begin, ensure that the following prerequisites have been met:
 - One or more roles has been created and placed in the 'RoleCapabilities' folder of a valid PowerShell module.
@@ -24,7 +24,7 @@ Before you begin, ensure that the following prerequisites have been met:
 
 You will also need to select a name for your JEA endpoint.
 The name of the JEA endpoint will be required when users want to connect to the system using JEA.
-You can use the [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet to check the names of existing endpoints on the system.
+You can use the [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet to check the names of existing endpoints on the system.
 Endpoints that start with 'microsoft' are typically shipped with Windows.
 The 'microsoft.powershell' endpoint is the default endpoint used when connecting to a remote PowerShell endpoint.
 

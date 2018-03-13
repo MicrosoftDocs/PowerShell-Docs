@@ -19,8 +19,7 @@ Imports commands from another session into the current session.
 Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <String[]>] [-AllowClobber]
  [-ArgumentList <Object[]>] [-CommandType <CommandTypes>] [-Module <String[]>]
  [-FullyQualifiedModule <ModuleSpecification[]>] [[-FormatTypeName] <String[]>]
- [-Certificate <X509Certificate2>] [-Session] <PSSession> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+ [-Certificate <X509Certificate2>] [-Session] <PSSession> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -262,7 +261,7 @@ By default, **Import-PSSession** does not import commands that have the same nam
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -352,7 +351,7 @@ Indicates that this cmdlet suppresses the message that warns you when you import
 
 By default, when a module that you import exports cmdlets or functions that have unapproved verbs in their names, the Windows PowerShell displays the following warning message:
 
-"WARNING: Some imported command names include unapproved verbs which might make them less discoverable. 
+"WARNING: Some imported command names include unapproved verbs which might make them less discoverable.
 Use the Verbose parameter for more detail or type Get-Verb to see the list of approved verbs."
 
 This message is only a warning.
@@ -362,7 +361,7 @@ Although the message is displayed to module users, the naming problem should be 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -388,7 +387,7 @@ Similarly, if you use the *CommandName* parameter, the formatting files for the 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -407,38 +406,7 @@ You cannot specify the *FullyQualifiedModule* parameter in the same command as a
 ```yaml
 Type: ModuleSpecification[]
 Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-If you import a command with the same name as a command in the current session, the imported command hides or replaces the original commands. For more information, see about_Command_Precedence.
-
-By default, Import-PSSession does not import commands that have the same name as commands in the current session.```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-If you import a command with the same name as a command in the current session, the imported command hides or replaces the original commands. For more information, see about_Command_Precedence.
-
-By default, Import-PSSession does not import commands that have the same name as commands in the current session.```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -478,7 +446,7 @@ For instance, if you specify the prefix Remote and then import a Get-Date cmdlet
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -496,7 +464,7 @@ This parameter is required.
 ```yaml
 Type: PSSession
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -516,7 +484,7 @@ If the certificate is not valid or does not have sufficient authority, the comma
 ```yaml
 Type: X509Certificate2
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

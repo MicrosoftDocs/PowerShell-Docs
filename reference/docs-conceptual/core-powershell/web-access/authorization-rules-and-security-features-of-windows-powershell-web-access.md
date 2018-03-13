@@ -47,7 +47,7 @@ run the [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/mic
 
 Windows PowerShell Web Access authentication rules are whitelist rules.
 Each rule is a definition of an allowed connection between
-users, target computers, and particular Windows PowerShellÂ [session configurations](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)
+users, target computers, and particular Windows PowerShellÂ [session configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)
 (also referred to as endpoints or _runspaces_) on specified target computers.
 For an explanation on **runspaces** see
 [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
@@ -173,7 +173,7 @@ This layer offers the same security mechanisms
 that would evaluate connection attempts
 if users tried to create a remote Windows PowerShell session to a target computer
 from within Windows PowerShell
-by running the [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) or [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlets.
+by running the [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) or [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlets.
 
 By default,
 Windows PowerShell Web Access uses the primary user name and password

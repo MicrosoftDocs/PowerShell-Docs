@@ -17,10 +17,10 @@ push mode and pull mode.
 ![Push mode](images/pushModel.png "How push mode works")
 
 Push mode refers to a user actively applying a configuration to a target node
-by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.
+by calling the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet.
 
 After creating and compiling a configuration, you can enact it in push mode
-by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet,
+by calling the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet,
 setting the -Path parameter of the cmdlet to the path where the configuration MOF is located.
 For example, if the configuration MOF is located at `C:\DSC\Configurations\localhost.mof`,
 you would apply it to the local machine with the following command:
@@ -53,7 +53,7 @@ For information about configuring the LCM, see
 [Configuring the Local Configuration Manager](metaConfig.md).
 
 The recommended solution for hosting a Pull Service, is the DSC cloud service,
-[Azure Automation](https://azure.microsoft.com/en-us/services/automation/).
+[Azure Automation](https://azure.microsoft.com/services/automation/).
 This is hosted solution provides graphical management, reporting,
 and centralized administration.
 

@@ -32,7 +32,7 @@ PS C:\> Join-Path -Path "C:\win*" -ChildPath "System*"
 ```
 
 This command uses **Join-Path** to combine the C:\Win* path with the System* child path.
-The Windows PowerShell file system provider, FileSystem joins the path and adds the "\" delimiter.
+The Windows PowerShell file system provider, FileSystem joins the path and adds the "\\" delimiter.
 
 ### Example 2: Display files and folders by joining a path with a child path
 ```

@@ -17,15 +17,14 @@ Calculates the numeric properties of objects, and the characters, words, and lin
 
 ### GenericMeasure (Default)
 ```
-Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Sum] [-Average] [-Maximum] [-Minimum]
- [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Sum] [-Average]
+ [-Maximum] [-Minimum] [<CommonParameters>]
 ```
 
 ### TextMeasure
 ```
 Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Line] [-Word] [-Character]
- [-IgnoreWhiteSpace] [-InformationAction <ActionPreference>] [-InformationVariable <String>]
- [<CommonParameters>]
+ [-IgnoreWhiteSpace] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,7 +101,7 @@ Indicates that the cmdlet displays the average value of the specified properties
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +116,7 @@ Indicates that the cmdlet counts the number of characters in the input object.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,34 +132,7 @@ By default, white space is not ignored.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
+Aliases:
 
 Required: False
 Position: Named
@@ -179,7 +151,7 @@ Because *InputObject* cannot return individual properties from an array or colle
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -194,7 +166,7 @@ Indicates that the cmdlet counts the number of lines in the input object.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -209,7 +181,7 @@ Indicates that the cmdlet displays the maximum value of the specified properties
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -224,7 +196,7 @@ Indicates that the cmdlet displays the minimum value of the specified properties
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -240,7 +212,7 @@ The default is the **Count** property of the object.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -255,7 +227,7 @@ Indicates that the cmdlet displays the sum of the values of the specified proper
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -270,7 +242,7 @@ Indicates that the cmdlet counts the number of words in the input object.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named

@@ -22,11 +22,11 @@ You can use partial configurations in push mode, pull mode, or a combination of 
 ## Partial configurations in push mode
 To use partial configurations in push mode, you configure the LCM on the target node to receive the partial configurations. Each partial configuration must be pushed to the 
 target by using the Publish-DSCConfiguration cmdlet. The target node then combines the partial configuration into a single configuration, and you can apply the configuration by 
-calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.
+calling the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet.
 
 ### Configuring the LCM for push-mode partial configurations
 To configure the LCM for partial configurations in push mode, you create a **DSCLocalConfigurationManager** configuration with one **PartialConfiguration** block for each partial 
-configuration. For more information about configuring the LCM, see [Windows Configuring the Local Configuration Manager](https://technet.microsoft.com/en-us/library/mt421188.aspx). 
+configuration. For more information about configuring the LCM, see [Windows Configuring the Local Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx). 
 The following example shows an LCM configuration that expects two partial configurations—one that deploys the OS, and one that deploys and configures SharePoint.
 
 ```powershell
@@ -59,7 +59,7 @@ The **RefreshMode** for each partial configuration is set to "Push". The names o
 
 ### Publishing and starting push-mode partial configurations
 
-You then call [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) for each configuration, passing the folders that contain the configuration 
+You then call [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) for each configuration, passing the folders that contain the configuration 
 documents as the **Path** parameters. `Publish-DSCConfiguration`places the configuration MOF files to the target nodes. After publishing both configurations, you can call 
 `Start-DSCConfiguration –UseExisting` on the target node.
 
@@ -106,7 +106,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Note:** The user running the [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)
+>**Note:** The user running the [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)
 >cmdlet must have administrator privileges on the target node.
 
 ## Partial configurations in pull mode
@@ -415,5 +415,5 @@ SharePointConfig
 **Concepts**
 [Windows PowerShell Desired State Configuration Pull Servers](pullServer.md) 
 
-[Windows Configuring the Local Configuration Manager](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Windows Configuring the Local Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx) 
 
