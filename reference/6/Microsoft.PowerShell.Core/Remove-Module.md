@@ -206,14 +206,14 @@ This cmdlet does not generate any output.
 
 ## NOTES
 When removing a module, there is an event on the module that will execute. This allows a module to react to being removed and maybe free up resources. Example:
-```powershell
+```
 $PSF_OnRemoveScript = {
 	Get-PSFRunspace | Stop-PSFRunspace
 }
 $ExecutionContext.SessionState.Module.OnRemove += $PSF_OnRemoveScript
 ```
 For full consistency, it might be also useful to react to the closing of the powershell process:
-```powershell
+```
 Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Action $PSF_OnRemoveScript
 ```
 
