@@ -37,30 +37,30 @@ This article will provide information about each version of the Azure DSC VM Ext
 - **New features:**
   - After Github's recent move to TLS 1.2, you can't onboard a VM to Azure Automation DSC using DIY Resource Manager templates available on Azure Marketplace or use DSC extension to get any config hosted on Github. You will see an error similar to the following while deploying the extension:
 
-  ```json
-{
-    "code": "DeploymentFailed",
-    "message": "At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.",
-    "details": [{
-        "code": "Conflict",
-        "message": "{
-            \"status\": \"Failed\",
-            \"error\": {
-                \"code\": \"ResourceDeploymentFailure\",
-                \"message\": \"The resource operation completed with terminal provisioning state 'Failed'.\",
-                \"details\": [ {
-                    \"code\": \"VMExtensionProvisioningError\",
-                    \"message\": \"VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'.
-                    Error message: \\\"The DSC Extension failed to execute: Error downloading
-                    https://github.com/Azure/azure-quickstart-templates/raw/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip
-                    after 29 attempts: The request was aborted: Could not create SSL/TLS secure channel..\\nMore information about the failure can
-                    be found in the logs located under 'C:\\\\WindowsAzure\\\\Logs\\\\Plugins\\\\Microsoft.Powershell.DSC\\\\2.74.0.0' on the VM.\\\".\"
-                } ]
-            }
-        }"
-    }]
-}
-  ```json
+    ```json
+    {
+        "code": "DeploymentFailed",
+        "message": "At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.",
+        "details": [{
+            "code": "Conflict",
+            "message": "{
+                \"status\": \"Failed\",
+                \"error\": {
+                    \"code\": \"ResourceDeploymentFailure\",
+                    \"message\": \"The resource operation completed with terminal provisioning state 'Failed'.\",
+                    \"details\": [ {
+                        \"code\": \"VMExtensionProvisioningError\",
+                        \"message\": \"VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'.
+                        Error message: \\\"The DSC Extension failed to execute: Error downloading
+                        https://github.com/Azure/azure-quickstart-templates/raw/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip
+                        after 29 attempts: The request was aborted: Could not create SSL/TLS secure channel..\\nMore information about the failure can
+                        be found in the logs located under 'C:\\\\WindowsAzure\\\\Logs\\\\Plugins\\\\Microsoft.Powershell.DSC\\\\2.74.0.0' on the VM.\\\".\"
+                    } ]
+                }
+            }"
+        }]
+    }
+    ```
 
   - In the new extension version, TLS 1.2 is now enforced. While deploying the extension if you already had the AutoUpgradeMinorVersion = true in the Resource Manager template, then the extension will get autoupgraded to 2.75. For manual updates, specify `TypeHandlerVersion = 2.75` in your Resource Manager template.
 
@@ -245,7 +245,7 @@ This article will provide information about each version of the Azure DSC VM Ext
 
 ## Next steps
 
-- For more information about PowerShell DSC, go to the [PowerShell documentation center](/powershell/dsc/overview.md).
-- Examine the [Resource Manager template for the DSC extension](extensions-dsc-template.md).
+- For more information about PowerShell DSC, go to the [PowerShell documentation center](overview.md).
+- Examine the [Resource Manager template for the DSC extension](/azure/virtual-machines/windows/extensions-dsc-template).
 - For more functionality that you can manage by using PowerShell DSC, and for more DSC resources, browse the [PowerShell gallery](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0).
-- For details about passing sensitive parameters into configurations, see [Manage credentials securely with the DSC extension handler](extensions-dsc-credentials.md).
+- For details about passing sensitive parameters into configurations, see [Manage credentials securely with the DSC extension handler](/azure/virtual-machines/windows/extensions-dsc-credentials).
