@@ -1,0 +1,18 @@
+- name: Overview
+  href: overview.md
+- name: Deploy JEA
+  items:
+  - name: Prerequisites
+    href: prerequisites.md
+  - name: Role Capabilities
+    href: role-capabilities.md
+  - name: Session Configurations
+    href: session-configurations.md
+  - name: Registering JEA
+    href: register-jea.md
+  - name: Using JEA
+    href: using-jea.md
+  - name: Security Considerations
+    href: security-considerations.md
+  - name: Audit and Report on JEA
+    href: audit-and-report.md

@@ -10,7 +10,7 @@
             }
         ],
         "globalMetadata": {
-            "breadcrumb_path": "/powershell/wmf/bread/toc.json",
+            "breadcrumb_path": "/powershell/wmf/bread/toc.yml",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
