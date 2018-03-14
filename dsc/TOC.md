@@ -158,6 +158,8 @@
 
 # [Using DSC on Microsoft Azure](azureDsc.md)
 
+## [DSC Extension History](azureDscexthistory.md)
+
 # DSC MOF Reference
 
 ## [MSFT_DSCLocalConfigurationManager class](msft-dsclocalconfigurationmanager.md)

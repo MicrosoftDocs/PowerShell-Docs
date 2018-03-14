@@ -18,6 +18,7 @@ The Azure DSC extension allows VMs hosted in Microsoft Azure to be managed with 
 - [Azure Desired State Configuration extension handler](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview)
 - [Windows VMSS and Desired State Configuration with Azure Resource Manager templates](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-template)
 - [Passing credentials to the Azure DSC extension handler](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-credentials)
+- [Azure Desired State Configuration extension history](azureDscexthistory.md)
 
 ## Azure Automation DSC
 
