@@ -1,0 +1,221 @@
+- name: Overview
+  href: overview.md
+  items:
+  - name: Desired State Configuration Overview for Decision Makers
+    href: decisionMaker.md
+  - name: Desired State Configuration Overview for Engineers
+    href: DscForEngineers.md
+  - name: DSC quick start
+    href: quickStart.md
+- name: Configurations
+  href: configurations.md
+  items:
+  - name: Enacting configurations
+    href: enactingConfigurations.md
+  - name: Separating configuration and environment data
+    href: separatingEnvData.md
+  - name: Using resources with multiple versions
+    href: sxsResource.md
+  - name: Running DSC with user credentials
+    href: runAsUser.md
+  - name: Specifying cross-node dependencies
+    href: crossNodeDependencies.md
+  - name: Configuration data
+    href: configData.md
+    items:
+    - name: Credential options in configuration data
+      href: configDataCredentials.md
+  - name: Nesting configurations
+    href: compositeConfigs.md
+  - name: Securing the configuration MOF file
+    href: secureMOF.md
+  - name: Partial Configurations
+    href: partialConfigs.md
+  - name: Writing help for DSC configurations
+    href: configHelp.md
+  - name: Configure a virtual machine at initial boot-up by using DSC
+    href: bootstrapDsc.md
+    items:
+    - name: DSCAutomationHostEnabled registry key
+      href: DSCAutomationHostEnabled.md
+- name: Resources
+  href: resources.md
+  items:
+  - name: Built-in resources
+    href: builtInResource.md
+    items:
+    - name: Archive Resource
+      href: archiveResource.md
+    - name: Environment Resource
+      href: environmentResource.md
+    - name: File Resource
+      href: fileResource.md
+    - name: Group Resource
+      href: groupResource.md
+    - name: GroupSet Resource
+      href: groupSetResource.md
+    - name: Log Resource
+      href: logResource.md
+    - name: Package Resource
+      href: packageResource.md
+    - name: ProcessSet Resource
+      href: processSetResource.md
+    - name: Registry Resource
+      href: registryResource.md
+    - name: Script Resource
+      href: scriptResource.md
+    - name: Service Resource
+      href: serviceResource.md
+    - name: ServiceSet Resource
+      href: serviceSetResource.md
+    - name: User Resource
+      href: userResource.md
+    - name: WaitForAllResource
+      href: waitForAllResource.md
+    - name: WaitForAnyResource
+      href: waitForAnyResource.md
+    - name: WaitForSomeResource
+      href: waitForSomeResource.md
+    - name: WindowsFeature Resource
+      href: windowsfeatureResource.md
+    - name: WindowsFeatureSet Resource
+      href: windowsFeatureSetResource.md
+    - name: WindowsOptionalFeature Resource
+      href: windowsOptionalFeatureResource.md
+    - name: WindowsOptionalFeatureSet Resource
+      href: windowsOptionalFeatureSetResource.md
+    - name: WindowsPackageCab Resource
+      href: windowsPackageCabResource.md
+    - name: WindowsProcess Resource
+      href: windowsProcessResource.md
+  - name: Authoring custom resources
+    href: authoringResource.md
+    items:
+    - name: MOF-based custom resources
+      href: authoringResourceMOF.md
+      items:
+      - name: MOF-based resource in C#
+        href: authoringResourceMofCS.md
+    - name: Class-based custom resouces
+      href: authoringResourceClass.md
+    - name: Composite resources
+      href: authoringResourceComposite.md
+    - name: Writing a single-instance DSC resource (best practice)
+      href: singleInstance.md
+    - name: Resource authoring checklist
+      href: resourceAuthoringChecklist.md
+  - name: Debugging DSC resources
+    href: debugResource.md
+  - name: Calling DSC resource methods directly
+    href: directCallResource.md
+- name: Local Configuration Manager
+  items:
+  - name: Configuring the Local Configuration Manager (LCM)
+    href: metaConfig.md
+  - name: Configuring the LCM in PowerShell 4.0
+    href: metaConfig4.md
+- name: The DSC pull model
+  items:
+  - name: DSC Pull Service
+    href: pullServer.md
+  - name: Setting up a DSC SMB pull server
+    href: pullServerSMB.md
+  - name: Setting up a pull client
+    href: pullClient.md
+    items:
+    - name: Setting up a pull client using configuration names
+      href: pullClientConfigNames.md
+    - name: Setting up a pull client using configuration ID
+      href: pullClientConfigID.md
+  - name: Using a DSC report server
+    href: reportServer.md
+  - name: Pull server best practices
+    href: secureServer.md
+- name: DSC examples
+  href: dscExamples.md
+  items:
+  - name: Building a CI/CD pipeline with DSC, Pester, and Visual Studio Team Services
+    href: dscCiCd.md
+  - name: Separating configuration and environment data
+    href: separatingEnvData.md
+- name: Troubleshooting DSC
+  href: troubleshooting.md
+- name: Using DSC on Nano Server
+  href: nanoDsc.md
+- name: DSC on Linux
+  items:
+  - name: Getting started with DSC for Linux
+    href: lnxGettingStarted.md
+  - name: Built-in resources for Linux
+    href: lnxBuiltInResources.md
+    items:
+    - name: nxArchive Resource
+      href: lnxArchiveResource.md
+    - name: nxEnvironment Resource
+      href: lnxEnvironmentResource.md
+    - name: nxFile Resource
+      href: lnxFileResource.md
+    - name: nxFileLine Resource
+      href: lnxFileLineResource.md
+    - name: nxGroup Resource
+      href: lnxGroupResource.md
+    - name: nxPackage Resource
+      href: lnxPackageResource.md
+    - name: nxService Resource
+      href: lnxServiceResource.md
+    - name: nxSshAuthorizedKeys Resource
+      href: lnxSshAuthorizedKeysResource.md
+    - name: nxUser Resource
+      href: lnxUserResource.md
+- name: Using DSC on Microsoft Azure
+  href: azureDsc.md
+  items:
+  - name: DSC Extension History
+    href: azureDscexthistory.md
+- name: DSC MOF Reference
+  items:
+  - name: MSFT_DSCLocalConfigurationManager class
+    href: msft-dsclocalconfigurationmanager.md
+    items:
+    - name: ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-applyconfiguration.md
+    - name: DisableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
+    - name: EnableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
+    - name: GetConfiguration method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-getconfiguration.md
+    - name: GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
+    - name: GetConfigurationStatus method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-getconfigurationstatus.md
+    - name: GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-getmetaconfiguration.md
+    - name: PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
+    - name: RemoveConfiguration method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-removeconfiguration.md
+    - name: ResourceGet method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-resourceget.md
+    - name: ResourceSet method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-resourceset.md
+    - name: ResourceTest method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-resourcetest.md
+    - name: RollBack method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-rollback.md
+    - name: SendConfiguration method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-sendconfiguration.md
+    - name: SendConfigurationApply method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-sendconfigurationapply.md
+    - name: SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
+    - name: SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
+    - name: StopConfiguration method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-stopconfiguration.md
+    - name: TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
+      href: msft-dsclocalconfigurationmanager-testconfiguration.md
+- name: More Resources
+  items:
+  - name: Whitepapers
+    href: whitepapers.md
