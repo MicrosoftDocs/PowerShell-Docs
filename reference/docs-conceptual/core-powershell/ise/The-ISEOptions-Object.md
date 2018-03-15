@@ -355,7 +355,7 @@ Specifies whether the **CTRL+J** list of snippets includes the starter set that 
 
 ```powershell
 # Hide the default snippets from the CTRL+J list.
-$psISe.Options.ShowDefaultSnippets = $false
+$psISE.Options.ShowDefaultSnippets = $false
 ```
 
 ### ShowIntellisenseInConsolePane
@@ -366,7 +366,7 @@ Specifies whether IntelliSense offers syntax, parameter, and value suggestions i
 
 ```powershell
 # Turn off IntelliSense in the console pane.
-$psISe.Options.ShowIntellisenseInConsolePane = $false
+$psISE.Options.ShowIntellisenseInConsolePane = $false
 ```
 
 ### ShowIntellisenseInScriptPane
@@ -377,7 +377,7 @@ Specifies whether IntelliSense offers syntax, parameter, and value suggestions i
 
 ```powershell
 # Turn off IntelliSense in the Script pane.
-$psISe.Options.ShowIntellisenseInScriptPane = $false
+$psISE.Options.ShowIntellisenseInScriptPane = $false
 ```
 
 ### ShowLineNumbers
@@ -388,7 +388,7 @@ Specifies whether the Script pane displays line numbers in the left margin. The 
 
 ```powershell
 # Turn off line numbers in the Script pane.
-$psISe.Options.ShowLineNumbers = $false
+$psISE.Options.ShowLineNumbers = $false
 ```
 
 ### ShowOutlining
@@ -399,7 +399,7 @@ Specifies whether the Script pane displays expandable and collapsible brackets n
 
 ```powershell
 # Turn off outlining in the Script pane.
-$psISe.Options.ShowOutlining = $false
+$psISE.Options.ShowOutlining = $false
 ```
 
 ### ShowToolBar
@@ -410,7 +410,7 @@ Specifies whether the ISE toolbar appears at the top of the Windows PowerShell I
 
 ```powershell
 # Show the toolbar.
-$psISe.Options.ShowToolBar = $true
+$psISE.Options.ShowToolBar = $true
 ```
 
 ### ShowWarningBeforeSavingOnRun

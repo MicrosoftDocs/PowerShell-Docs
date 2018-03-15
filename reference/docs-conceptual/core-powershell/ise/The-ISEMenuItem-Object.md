@@ -19,7 +19,7 @@ The read-only property that gets the display name of the menu item.
 ```powershell
 # Get the display name of the Add-ons menu item
 $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
@@ -32,7 +32,7 @@ The read-only property that gets the block of script. It invokes the action when
 ```powershell
 # Get the action associated with the first submenu item.
 $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 
 # Invoke the script associated with the first submenu item
@@ -48,7 +48,7 @@ The read-only property that gets the Windows input keyboard shortcut for the men
 ```powershell
 # Get the shortcut for the first submenu item.
 $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
@@ -61,7 +61,7 @@ The read-only property that gets the [list of submenus](The-ISEMenuItemCollectio
 ```powershell
 # List the submenus of the Add-ons menu
 $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 ```
 
@@ -76,10 +76,10 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
 
 # Add an Add-ons menu item with an shortcut and fast access key.
 # Note the use of “_”  as opposed to the “&” for mapping to the fast access key letter for the menu item.
-$menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 # Add a nested menu - a parent and a child submenu item.
-$parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("Parent",$null,$null)
-$parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
+$parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('Parent', $null, $null)
+$parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
 ```
 
 ## See Also

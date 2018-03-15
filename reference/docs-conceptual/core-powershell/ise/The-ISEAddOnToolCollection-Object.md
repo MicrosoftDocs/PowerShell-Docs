@@ -58,7 +58,7 @@ The PowerShell tab to select.
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
 # Change the DisplayName of the new PowerShell tab.
-$newTab.DisplayName = "Brand New Tab"
+$newTab.DisplayName = 'Brand New Tab'
 ```
 
 ### Remove\( psTab \)
@@ -73,7 +73,7 @@ The PowerShell tab to remove.
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
 Change the DisplayName of the new PowerShell tab.
-$newTab.DisplayName = "This tab will go away in 5 seconds"
+$newTab.DisplayName = 'This tab will go away in 5 seconds'
 sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```

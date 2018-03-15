@@ -25,13 +25,13 @@ An optional character encoding parameter to be used for the saved file. The defa
 
 ```powershell
 # Save the file using the default encoding (UTF8)
-$psIse.CurrentFile.Save()
+$psISE.CurrentFile.Save()
 
 # Save the file as ASCII.
-$psIse.CurrentFile.Save([System.Text.Encoding]::ASCII)
+$psISE.CurrentFile.Save([System.Text.Encoding]::ASCII)
 
 # Gets the current encoding.
-$myfile = $psIse.CurrentFile
+$myfile = $psISE.CurrentFile
 $myfile.Encoding
 ```
 
@@ -56,9 +56,9 @@ An optional character encoding parameter to be used for the saved file. The defa
 ```powershell
 # Save the file with a full path and name.
 $fullpath = "c:\temp\newname.txt"
-$psIse.CurrentFile.SaveAs($fullPath)
+$psISE.CurrentFile.SaveAs($fullPath)
 # Save the file with a full path and name and explicitly as UTF8.
-$psIse.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
+$psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 ```
 
 ## Properties
@@ -71,7 +71,7 @@ The read-only property that gets the string that contains the display name of th
 
 ```powershell
 # Shows the display name of the file.
-$psIse.CurrentFile.DisplayName
+$psISE.CurrentFile.DisplayName
 ```
 
 ### Editor
@@ -82,7 +82,7 @@ The read-only property that gets the [editor object](The-ISEEditor-Object.md) th
 
 ```powershell
 # Gets the editor and the text.
-$psIse.CurrentFile.Editor.Text
+$psISE.CurrentFile.Editor.Text
 ```
 
 ### Encoding
@@ -93,7 +93,7 @@ The read-only property that gets the original file encoding. This is a **System.
 
 ```powershell
 # Shows the encoding for the file.
-$psIse.CurrentFile.Encoding
+$psISE.CurrentFile.Encoding
 ```
 
 ### FullPath
@@ -104,7 +104,7 @@ The read-only property that gets the string that specifies the full path of the 
 
 ```powershell
 # Shows the full path for the file.
-$psIse.CurrentFile.FullPath
+$psISE.CurrentFile.FullPath
 ```
 
 ### IsSaved
@@ -115,7 +115,7 @@ The read-only Boolean property that returns **$true** if the file has been saved
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
-$myfile=$psIse.CurrentFile
+$myfile = $psISE.CurrentFile
 $myfile.IsSaved
 ```
 

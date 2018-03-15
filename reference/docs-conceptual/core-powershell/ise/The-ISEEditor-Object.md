@@ -193,7 +193,7 @@ $psISE.CurrentFile.Editor.CaretLineText
 
 ### LineCount
 
-Supported in Windows PowerShell ISE 2.0 and later. 
+Supported in Windows PowerShell ISE 2.0 and later.
 
 The read-only property that gets the line count from the editor.
 
@@ -204,7 +204,7 @@ $psISE.CurrentFile.Editor.LineCount
 
 ### SelectedText
 
-Supported in Windows PowerShell ISE 2.0 and later. 
+Supported in Windows PowerShell ISE 2.0 and later.
 
 The read-only property that gets the selected text from the editor.
 
@@ -212,7 +212,7 @@ See the  [Scripting Example](#scripting-example) later in this topic.
 
 ### Text
 
-Supported in Windows PowerShell ISE 2.0 and later. 
+Supported in Windows PowerShell ISE 2.0 and later.
 
 The read/write property that gets or sets the text in the editor.
 
@@ -222,7 +222,7 @@ See the [Scripting Example](#scripting-example) later in this topic.
 
 ```powershell
 # This illustrates how you can use the length of a line to
-# select the entire line and shows how you can make it lowercase. 
+# select the entire line and shows how you can make it lowercase.
 # You must run this in the Console pane. It will not run in the Script pane.
 # Begin by getting a variable that points to the editor.
 $myEditor = $psISE.CurrentFile.Editor
@@ -236,10 +236,10 @@ $myEditor.InsertText("LINE3 `n")
 $myEditor.InsertText("LINE4 `n")
 $myEditor.InsertText("LINE5 `n")
 
-# Use the GetLineLength method to get the length of the third line. 
+# Use the GetLineLength method to get the length of the third line.
 $endColumn = $myEditor.GetLineLength(3)
 # Select the text in the first three lines.
-$myEditor.Select(1,1,3,$endColumn + 1)
+$myEditor.Select(1, 1, 3, $endColumn + 1)
 $selection = $myEditor.SelectedText
 # Clear all the text in the editor.
 $myEditor.Clear()

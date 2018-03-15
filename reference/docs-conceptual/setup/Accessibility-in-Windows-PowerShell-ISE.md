@@ -153,4 +153,4 @@ You can use the following keyboard shortcuts to start the Windows PowerShell con
 
 ## See Also
 
-- [Introducing the Windows PowerShell ISE](../../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+- [Introducing the Windows PowerShell ISE](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
