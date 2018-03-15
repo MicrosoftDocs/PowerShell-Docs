@@ -3,16 +3,17 @@ ms.date:  2017-06-05
 keywords:  powershell,cmdlet
 title:  The ISEEditor Object
 ---
-
 # The ISEEditor Object
-  An **ISEEditor** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The Console pane is an **ISEEditor** object. Each [ISEFile](The-ISEFile-Object.md) object has an associated **ISEEditor** object. The following sections list the methods and properties of an **ISEEditor** object.
+
+An **ISEEditor** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The Console pane is an **ISEEditor** object. Each [ISEFile](The-ISEFile-Object.md) object has an associated **ISEEditor** object. The following sections list the methods and properties of an **ISEEditor** object.
 
 ## Methods
 
 ### Clear\(\)
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Clears the text in the editor.
+Supported in Windows PowerShell ISE 2.0 and later.
+
+Clears the text in the editor.
 
 ```powershell
 # Clears the text in the Console pane.
@@ -20,104 +21,113 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
 
 ### EnsureVisible\(int lineNumber\)
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Scrolls the editor so that the line that corresponds to the specified **lineNumber** parameter value is visible. It throws an exception if the specified line number is outside the range of 1,last line number, which defines the valid line numbers.
+Supported in Windows PowerShell ISE 2.0 and later.
 
- **lineNumber**
- The number of the line that is to be made visible.
+Scrolls the editor so that the line that corresponds to the specified **lineNumber** parameter value is visible. It throws an exception if the specified line number is outside the range of 1,last line number, which defines the valid line numbers.
+
+**lineNumber**
+The number of the line that is to be made visible.
 
 ```powershell
-# Scrolls the text in the Script pane so that the fifth line is in view. 
+# Scrolls the text in the Script pane so that the fifth line is in view.
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
 ### Focus\(\)
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Sets the focus to the editor.
+Supported in Windows PowerShell ISE 2.0 and later.
+
+Sets the focus to the editor.
 
 ```powershell
-# Sets focus to the Console pane. 
+# Sets focus to the Console pane.
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
 ### GetLineLength\(int lineNumber \)
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Gets the line length as an integer for the line that is specified by the line number.
+Supported in Windows PowerShell ISE 2.0 and later.
 
- **lineNumber**
- The number of the line of which to get the length.
+Gets the line length as an integer for the line that is specified by the line number.
 
- **Returns**
- The line length for the line at the specified line number.
+**lineNumber**
+The number of the line of which to get the length.
+
+**Returns**
+The line length for the line at the specified line number.
 
 ```powershell
-# Gets the length of the first line in the text of the Command pane. 
+# Gets the length of the first line in the text of the Command pane.
 $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
 ### GoToMatch\(\)
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace - \(,\[,{ - or immediately after a closing parenthesis, bracket, or brace - \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing.
+Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
+
+Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace - \(,\[,{ - or immediately after a closing parenthesis, bracket, or brace - \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing.
 
 ```powershell
-# Test to see if the caret is next to a parenthesis, bracket, or brace.
+# Goes to the matching character if CanGoToMatch() is $true
+$psISE.CurrentPowerShellTab.ConsolePane.GoToMatch()
 ```
 
 ### InsertText\( text \)
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Replaces the selection with text or inserts text at the current caret position.
+Supported in Windows PowerShell ISE 2.0 and later.
 
- **text** - String
- The text to insert.
+Replaces the selection with text or inserts text at the current caret position.
 
- See the [Scripting Example](#scripting-example) later in this topic.
+**text** - String
+The text to insert.
+
+See the [Scripting Example](#scripting-example) later in this topic.
 
 ### Select\( startLine, startColumn, endLine, endColumn \)
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Selects the text from the **startLine**, **startColumn**, **endLine**, and **endColumn** parameters.
+Supported in Windows PowerShell ISE 2.0 and later.
 
- **startLine** - Integer
- The line where the selection starts.
+Selects the text from the **startLine**, **startColumn**, **endLine**, and **endColumn** parameters.
 
- **startColumn** - Integer
- The column within the start line where the selection starts.
+**startLine** - Integer
+The line where the selection starts.
 
- **endLine** - Integer
- The line where the selection ends.
+**startColumn** - Integer
+The column within the start line where the selection starts.
 
- **endColumn** - Integer
- The column within the end line where the selection ends.
+**endLine** - Integer
+The line where the selection ends.
 
- See the  [Scripting Example](#scripting-example) later in this topic.
+**endColumn** - Integer
+The column within the end line where the selection ends.
+
+See the  [Scripting Example](#scripting-example) later in this topic.
 
 ### SelectCaretLine\(\)
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Selects the entire line of text that currently contains the caret.
+Supported in Windows PowerShell ISE 2.0 and later.
+
+Selects the entire line of text that currently contains the caret.
 
 ```powershell
 # First, set the caret position on line 5.
-$psISE.CurrentFile.Editor.SetCaretPosition(5,1) 
+$psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 # Now select that entire line of text
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
 ### SetCaretPosition\( lineNumber, columnNumber \)
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- Sets the caret position at the line number and the column number. It throws an exception if either the caret line number  or the caret column number  are out of their respective valid ranges.
+Supported in Windows PowerShell ISE 2.0 and later.
 
- **lineNumber** - Integer
- The caret line number.
+Sets the caret position at the line number and the column number. It throws an exception if either the caret line number  or the caret column number  are out of their respective valid ranges.
 
- **columnNumber** - Integer
- The caret column number.
+**lineNumber** - Integer
+The caret line number.
+
+**columnNumber** - Integer
+The caret column number.
 
 ```powershell
 # Set the CaretPosition.
@@ -125,9 +135,10 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
 ### ToggleOutliningExpansion\(\)
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- Causes all the outline sections to expand or collapse.
+Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
+
+Causes all the outline sections to expand or collapse.
 
 ```powershell
 # Toggle the outlining expansion
@@ -137,9 +148,10 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ## Properties
 
 ### CanGoToMatch
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
 
- The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace - \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
+Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
+
+The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace - \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -147,9 +159,10 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
 ### CaretColumn
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read-only property that gets the column number that corresponds to the position of the caret.
+Supported in Windows PowerShell ISE 2.0 and later.
+
+The read-only property that gets the column number that corresponds to the position of the caret.
 
 ```powershell
 # Get the CaretColumn.
@@ -157,9 +170,10 @@ $psISE.CurrentFile.Editor.CaretColumn
 ```
 
 ### CaretLine
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read-only property that gets the number of the line that contains the caret.
+Supported in Windows PowerShell ISE 2.0 and later.
+
+The read-only property that gets the number of the line that contains the caret.
 
 ```powershell
 # Get the CaretLine.
@@ -167,9 +181,10 @@ $psISE.CurrentFile.Editor.CaretLine
 ```
 
 ### CaretLineText
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read-only property that gets the complete line of text that contains the caret.
+Supported in Windows PowerShell ISE 2.0 and later.
+
+The read-only property that gets the complete line of text that contains the caret.
 
 ```powershell
 # Get all of the text on the line that contains the caret.
@@ -177,9 +192,10 @@ $psISE.CurrentFile.Editor.CaretLineText
 ```
 
 ### LineCount
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read-only property that gets the line count from the editor.
+Supported in Windows PowerShell ISE 2.0 and later. 
+
+The read-only property that gets the line count from the editor.
 
 ```powershell
 # Get the LineCount.
@@ -187,18 +203,20 @@ $psISE.CurrentFile.Editor.LineCount
 ```
 
 ### SelectedText
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read-only property that gets the selected text from the editor.
+Supported in Windows PowerShell ISE 2.0 and later. 
 
- See the  [Scripting Example](#scripting-example) later in this topic.
+The read-only property that gets the selected text from the editor.
+
+See the  [Scripting Example](#scripting-example) later in this topic.
 
 ### Text
-  Supported in Windows PowerShell ISE 2.0 and later. 
 
- The read/write property that gets or sets the text in the editor.
+Supported in Windows PowerShell ISE 2.0 and later. 
 
- See the [Scripting Example](#scripting-example) later in this topic.
+The read/write property that gets or sets the text in the editor.
+
+See the [Scripting Example](#scripting-example) later in this topic.
 
 ## Scripting Example
 
@@ -219,7 +237,7 @@ $myEditor.InsertText("LINE4 `n")
 $myEditor.InsertText("LINE5 `n")
 
 # Use the GetLineLength method to get the length of the third line. 
-$endColumn= $myEditor.GetLineLength(3)
+$endColumn = $myEditor.GetLineLength(3)
 # Select the text in the first three lines.
 $myEditor.Select(1,1,3,$endColumn + 1)
 $selection = $myEditor.SelectedText
@@ -230,10 +248,8 @@ $myEditor.InsertText($selection.ToLower())
 ```
 
 ## See Also
-- [The ISEFile Object](The-ISEFile-Object.md) 
-- [The PowerShellTab Object](The-PowerShellTab-Object.md) 
-- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
 
-  
+- [The ISEFile Object](The-ISEFile-Object.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md)
+- [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
