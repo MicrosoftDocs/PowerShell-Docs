@@ -67,5 +67,5 @@ see [How to Save a Script](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShel
 
 ## See Also
 
-- [Introducing the Windows PowerShell ISE](Introducing the Windows PowerShell ISE.md)
+- [Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
 - [How to Use the Console Pane in the Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
