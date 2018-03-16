@@ -1,0 +1,128 @@
+- name: Overview
+  href: readme.md
+  items:
+  - name: Gallery
+    items:
+    - name: Getting started
+      href: psgallery/psgallery_gettingstarted.md
+    - name: Health Status
+      href: psgallery/psgallery_status.md
+    - name: Gallery FAQs
+      href: psgallery/psgallery_faqs.md
+    - name: Gallery Items tab
+      href: psgallery/psgallery_items_tab.md
+    - name: Gallery search syntax
+      href: psgallery/psgallery_search_syntax.md
+    - name: Items with Compatible PSEditions
+      href: psgallery/psgallery_pseditions.md
+    - name: FileList view
+      href: psgallery/psgallery_filelist_feature.md
+    - name: Deploy to Azure Automation
+      href: psgallery/psgallery_deploy_to_azure_automation.md
+    - name: Creating a PowerShellGallery Account
+      href: psgallery/psgallery_creating_an_account.md
+    - name: Creating and publishing items
+      href: psgallery/Creating-and-Publishing-an-item.md
+    - name: Publishing guidelines and best practices
+      href: psgallery/psgallery-PublishingGuidelines.md
+    - name: Item manifest and Gallery UI
+      href: psgallery/psgallery_ItemManifestAffectingUI.md
+    - name: Unlisting items
+      href: psgallery/psgallery_unlist_items.md
+    - name: Deleting items
+      href: psgallery/Deleting-Items.md
+    - name: Managing item owners
+      href: psgallery/Managing-Item-Owners.md
+    - name: Report Abuse
+      href: psgallery/psgallery_report_abuse.md
+    - name: Dispute resolution
+      href: psgallery/psgallery_dispute_resolution.md
+    - name: Contacting item owners
+      href: psgallery/psgallery_contacting_item_owners.md
+    - name: Contacting administrators
+      href: psgallery/psgallery_contacting_administrators.md
+    - name: Providing Feedback via Social Media or Comments
+      href: psgallery/psgallery-SocialMediaFeedback.md
+    - name: Require License Acceptance on Items details
+      href: psgallery/psgallery_requires_license_acceptance.md
+    - name: Require License Acceptance on Deploy to Azure Automation
+      href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
+- name: PowerShellGet
+  href: psget/overview.md
+  items:
+  - name: Get PowerShellGet Module
+    href: psget/get_psget_module.md
+  - name: Module
+    items:
+    - name: Find Modules
+      href: psget/module/psget_find-module.md
+    - name: Find DSC Resources
+      href: psget/module/psget_find-dscresource.md
+    - name: Find Role Capabilities
+      href: psget/module/psget_find-rolecapability.md
+    - name: Find Commands
+      href: psget/module/psget_find-command.md
+    - name: Save
+      href: psget/module/psget_save-module.md
+    - name: Install
+      href: psget/module/psget_install-module.md
+    - name: Update
+      href: psget/module/psget_update-module.md
+    - name: Uninstall
+      href: psget/module/psget_uninstall-module.md
+    - name: Get installed modules
+      href: psget/module/psget_get-installedmodule.md
+    - name: Update module manifest
+      href: psget/module/psget_update-modulemanifest.md
+    - name: Publish
+      href: psget/module/psget_publish-module.md
+    - name: Modules with PSEditions
+      href: psget/module/modulewithpseditionsupport.md
+    - name: Modules Requiring License Acceptance
+      href: psget/module/RequireLicenseAcceptance.md
+    - name: Prerelease Versions
+      href: psget/module/PreReleaseModule.md
+    - name: Troubleshooting
+      href: psget/psget_cmdlets_troubleshooting.md
+  - name: Script
+    items:
+    - name: Find
+      href: psget/script/psget_find-script.md
+    - name: Save
+      href: psget/script/psget_save-script.md
+    - name: Install
+      href: psget/script/psget_install-script.md
+    - name: Update
+      href: psget/script/psget_update-script.md
+    - name: Uninstall
+      href: psget/script/psget_uninstall-script.md
+    - name: Get installed scipts
+      href: psget/script/psget_get-installedscript.md
+    - name: Create script file with metadata
+      href: psget/script/psget_new-scriptfileinfo.md
+    - name: Test script file metadata
+      href: psget/script/psget_test-scriptfileinfo.md
+    - name: Update script file metadata
+      href: psget/script/psget_update-scriptfileinfo.md
+    - name: Publish
+      href: psget/script/psget_publish-script.md
+    - name: Scripts with PSEditions
+      href: psget/script/scriptwithpseditionsupport.md
+    - name: Require License Acceptance for Scripts
+      href: psget/script/script_RequireLicenseAcceptance.md
+    - name: Prerelease Versions
+      href: psget/script/PreReleaseScript.md
+  - name: Repository management
+    items:
+    - name: Bootstrapping NuGet provider and NuGet.exe
+      href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
+    - name: Registering repository
+      href: psget/repository/psget_register-psrepository.md
+    - name: Listing registered repository
+      href: psget/repository/psget_get-psrepository.md
+    - name: Modifying registered repository
+      href: psget/repository/psget_set-psrepository.md
+    - name: Unregistering repository
+      href: psget/repository/psget_unregister-psrepository.md
+  - name: PackageManagement cmdlets
+    href: psget/oneget/PackageManagement_cmdlets.md

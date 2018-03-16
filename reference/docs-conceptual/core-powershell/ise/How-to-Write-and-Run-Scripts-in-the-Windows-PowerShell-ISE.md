@@ -135,5 +135,4 @@ Windows PowerShell ISE supports the following encoding options: ASCII, BigEndian
 Windows PowerShell ISE does not change the encoding of scripts that were created by in other editors, even when you use the Save or Save As commands in Windows PowerShell ISE.
 
 ## See Also
-- [Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [Exploring the Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

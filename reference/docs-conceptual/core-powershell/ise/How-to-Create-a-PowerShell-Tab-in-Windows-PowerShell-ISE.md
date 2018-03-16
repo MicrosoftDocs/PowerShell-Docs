@@ -4,8 +4,8 @@ keywords:  powershell,cmdlet
 title:  How to Create a PowerShell Tab in Windows PowerShell ISE
 ms.assetid:  c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
 ---
-
 # How to Create a PowerShell Tab in Windows PowerShell ISE
+
 Tabs in the Windows PowerShell Integrated Scripting Environment (ISE)
 allow you to simultaneously create and use several execution environments
 within the same application.
@@ -67,6 +67,5 @@ see [How to Save a Script](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShel
 
 ## See Also
 
-- [Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
 - [How to Use the Console Pane in the Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
-
