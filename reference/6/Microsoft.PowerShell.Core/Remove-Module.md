@@ -210,7 +210,7 @@ This event allows a module to react to being removed and perform some cleanup su
 
 $OnRemoveScript = {
 
-  # perform cleanup
+  \# perform cleanup
 
   $cachedSessions | Remove-PSSession
 
