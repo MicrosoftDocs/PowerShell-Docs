@@ -205,6 +205,23 @@ You can pipe module names and module objects to **Remove-Module**.
 This cmdlet does not generate any output.
 
 ## NOTES
+When removing a module, there is an event on the module that will execute.
+This event allows a module to react to being removed and perform some cleanup such as freeing up resources. Example:
+
+$OnRemoveScript = {
+
+  \# perform cleanup
+
+  $cachedSessions | Remove-PSSession
+
+}
+
+$ExecutionContext.SessionState.Module.OnRemove += $OnRemoveScript
+
+For full consistency, it might be also useful to react to the closing of the PowerShell process:
+
+Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Action $OnRemoveScript
+
 
 ## RELATED LINKS
 
