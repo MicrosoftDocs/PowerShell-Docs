@@ -4,8 +4,8 @@ keywords:  powershell,cmdlet
 title:  How to Use the Console Pane in the Windows PowerShell ISE
 ms.assetid:  44d67705-87c7-4a69-a53e-6471fdebb757
 ---
-
 # How to Use the Console Pane in the Windows PowerShell ISE
+
 The Console pane in the Windows PowerShell Integrated Scripting Environment (ISE) operates exactly like the stand-alone Windows PowerShell ISE console window.
 
 To run a command in the Console Pane, type a command, and then press ENTER. To enter multiple commands that you want to execute in sequence, type SHIFT+ENTER between commands. See [How to Use Tab Completion in the Script Pane and Console Pane](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) for help in typing commands.
@@ -21,5 +21,5 @@ Beginning in Windows PowerShell v3, the Output pane was combined with the Consol
 - Clear all the text in the Console pane. To clear the Console pane, you can click the **Clear Console Pane** icon on the toolbar, or run the command **Clear-Host** or its alias, **cls**.
 
 ## See Also
-- [Using the Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 
+- [Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
