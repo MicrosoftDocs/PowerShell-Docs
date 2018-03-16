@@ -64,6 +64,26 @@ This article will provide information about each version of the Azure DSC VM Ext
 
   - In the new extension version, TLS 1.2 is now enforced. While deploying the extension if you already had the AutoUpgradeMinorVersion = true in the Resource Manager template, then the extension will get autoupgraded to 2.75. For manual updates, specify `TypeHandlerVersion = 2.75` in your Resource Manager template.
 
+### Version 2.19
+
+- **Release date:**
+  - June 3, 2016
+- **OS support:**
+  - Windows Server 2016 Technical Preview
+  - Windows Server 2012 R2
+  - Windows Server 2012
+  - Windows Server 2008 R2 SP1
+- **WMF support:**
+  - WMF 5.0 RTM
+  - WMF 4.0 Update
+  - WMF 4.0
+- **Environment:**
+  - Azure
+  - Azure China
+  - Azure Government
+- **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
+- **New features:**
+  - The DSC Extension is now on boarded to Azure China. This version primarily contains fixes for running the Extension on Azure China.
 
 ## Supported Versions
 
