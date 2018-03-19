@@ -16,18 +16,18 @@ Encrypts content by using the Cryptographic Message Syntax format.
 ## SYNTAX
 
 ### ByContent (Default)
-```
+```PowerShell
 Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-Content] <PSObject> [[-OutFile] <String>]
  [<CommonParameters>]
 ```
 
 ### ByPath
-```
+```PowerShell
 Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-Path] <String> [[-OutFile] <String>] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
-```
+```PowerShell
 Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-LiteralPath] <String> [[-OutFile] <String>]
  [<CommonParameters>]
 ```
@@ -49,7 +49,11 @@ For an example of a certificate that would work for document encryption, see Exa
 ## EXAMPLES
 
 ### Example 1: Create a certificate for encrypting content
-```
+
+Before you can run the **Protect-CmsMessage** cmdlet, you must create an encryption certificate.
+Using the following text, change the name in the Subject line to your name, email, or other identifier, and save the certificate in a file (such as DocumentEncryption.inf, as shown in this example).
+
+```PowerShell
 PS C:\> # Create .INF file for certreq
 
 PS C:\> {[Version]
@@ -79,24 +83,24 @@ ValidityPeriodUnits = "1000"
 PS C:\> Certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
-Before you can run the **Protect-CmsMessage** cmdlet, you must create an encryption certificate.
-Using the following text, change the name in the Subject line to your name, email, or other identifier, and save the certificate in a file (such as DocumentEncryption.inf, as shown in this example).
-
 ### Example 2: Encrypt a message sent by email
-```
+
+In the following example, you encrypt a message, Hello World, by saving the message in a variable, and then piping it to the **Protect-CmsMessage** cmdlet.
+
+The *To* parameter uses the value of the Subject line in the certificate.
+
+```PowerShell
 PS C:\> $Protected = "Hello World" | Protect-CmsMessage -To "*youralias@emailaddress.com*"
 ```
 
-In the following example, you encrypt a message, Hello World, by saving the message in a variable, and then piping it to the **Protect-CmsMessage** cmdlet.
-The *To* parameter uses the value of the Subject line in the certificate.
-
 ### Example 3: View document encryption certificates
-```
+
+```PowerShell
 PS C:\> 58 [Cert:\currentuser\my]
 >> Get-ChildItem -DocumentEncryptionCert
 ```
 
-To view document encryption certificates in the certificate provider, you can add the *DocumentEncryptionCert* dynamic parameter of Get-ChildItemhttp://technet.microsoft.com/library/hh847761.aspx, available only when the certificate provider is loaded.
+To view document encryption certificates in the certificate provider, you can add the *DocumentEncryptionCert* dynamic parameter of [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md), available only when the certificate provider is loaded.
 
 ## PARAMETERS
 
