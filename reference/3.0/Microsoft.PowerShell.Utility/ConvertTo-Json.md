@@ -14,7 +14,7 @@ Converts an object to a JSON-formatted string
 ## SYNTAX
 
 ```
-ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [<CommonParameters>]
+ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [-AsArray] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -226,6 +226,21 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -AsArray
+Treats every input as an array and returns Json string surrounded by brackets [].
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
