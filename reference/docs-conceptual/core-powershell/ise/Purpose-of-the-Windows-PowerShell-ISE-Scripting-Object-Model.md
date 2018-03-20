@@ -4,7 +4,6 @@ keywords:  powershell,cmdlet
 title:  Purpose of the Windows PowerShell ISE Scripting Object Model
 ms.assetid:  d176a131-ab0c-43ee-80c1-f824ab8e4a05
 ---
-
 # Purpose of the Windows PowerShell ISE Scripting Object Model
 
 Objects are associated with the form and function of Windows PowerShell Integrated Scripting
@@ -59,4 +58,5 @@ you can:
 You can use the scripting object model to create keyboard shortcuts for frequent operations.
 
 ## See also
+
 - [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)

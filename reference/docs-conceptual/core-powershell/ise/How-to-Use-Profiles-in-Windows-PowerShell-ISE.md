@@ -68,9 +68,9 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 2. Add some items to your profile. The following are a few examples to get you started:
 
-    -   To change the default background color of the Console Pane to blue, in the profile file type: `$psISE.Options.OutputPaneBackground = 'blue'` . For more information about the $psISE variable, see [Windows PowerShell ISE Object Model Reference](The-ISE-Object-Model-Hierarchy.md).
+   - To change the default background color of the Console Pane to blue, in the profile file type: `$psISE.Options.OutputPaneBackground = 'blue'` . For more information about the $psISE variable, see [Windows PowerShell ISE Object Model Reference](The-ISE-Object-Model-Hierarchy.md).
 
-    -   To change font size to 20, in the profile file type: `$psISE.Options.FontSize =20`
+   - To change font size to 20, in the profile file type: `$psISE.Options.FontSize =20`
 
 3. To save your profile file, on the **File** menu, click **Save**. Next time you open the Windows PowerShell ISE, your customizations are applied.
 
