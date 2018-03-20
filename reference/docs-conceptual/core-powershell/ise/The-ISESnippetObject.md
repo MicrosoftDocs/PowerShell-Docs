@@ -11,7 +11,7 @@ ms.assetid:  98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
 ## Properties
 
 ### Author
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
  The read-only property that gets the name of the author of the snippet.
 
@@ -22,7 +22,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 ```
 
 ### CodeFragment
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
  The read-only property that gets the code fragment to be inserted into the editor.
 
@@ -33,7 +33,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 ```
 
 ### Shortcut
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
  The read-only property that gets the Windows keyboard shortcut for the menu item.
 
@@ -45,9 +45,6 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
 ## See Also
-- [The ISESnippetCollection Object](The-ISESnippetCollection-Object.md) 
-- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [The ISESnippetCollection Object](The-ISESnippetCollection-Object.md)
+- [Purpose of the Windows PowerShell ISE Scripting Object Model](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
 - [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
-
-  
