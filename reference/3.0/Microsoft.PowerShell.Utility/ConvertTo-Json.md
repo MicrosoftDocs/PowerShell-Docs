@@ -230,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsArray
-Treats every input as an array and returns Json string surrounded by brackets [].
+Treats every input as an array and returns Json string surrounded by array brackets [].
 
 ```yaml
 Type: SwitchParameter
