@@ -82,17 +82,17 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | F
 5816 powershell  localhost
 ```
 
-This more complex command adds the MachineName property to the standard Get-Process display. The backtick (\`)(ASCII 96) is the Windows PowerShell continuation character.
+This more complex command adds the MachineName property to the standard Get-Process display.
 
 ```
-PS> Get-Process powershell -ComputerName localhost, Server01, Server02 | Format-Table -Property Handles, `
-                    @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}}, `
-                    @{Label="PM(K)";Expression={[int]($_.PM/1024)}}, `
-                    @{Label="WS(K)";Expression={[int]($_.WS/1024)}}, `
-                    @{Label="VM(M)";Expression={[int]($_.VM/1MB)}}, `
-                    @{Label="CPU(s)";Expression={if ($_.CPU -ne $() `
-                    {$_.CPU.ToString("N")}}}, `
-                    Id, ProcessName, MachineName -auto
+PS> Get-Process powershell -ComputerName localhost, Server01, Server02 |
+    Format-Table -Property Handles,
+        @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}},
+        @{Label="PM(K)";Expression={[int]($_.PM/1024)}},
+        @{Label="WS(K)";Expression={[int]($_.WS/1024)}},
+        @{Label="VM(M)";Expression={[int]($_.VM/1MB)}},
+        @{Label="CPU(s)";Expression={if ($_.CPU -ne $() {$_.CPU.ToString("N")}}},
+        Id, ProcessName, MachineName -auto
 
 Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
 -------  ------  ----- ----- ----- ------  -- -----------  -----------
