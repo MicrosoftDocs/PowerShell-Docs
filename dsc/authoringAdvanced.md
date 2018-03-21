@@ -39,7 +39,7 @@ multiple configurations independently.
 This requires LCM to be configured in advance
 with the name of each configuration.
 
-![PartialConfig](images/PartialConfig.jpg)
+![PartialConfiguration](images/PartialConfiguration.jpg)
 
 Partial Configurations provide two, or more, teams complete control
 over configuration of a server,
