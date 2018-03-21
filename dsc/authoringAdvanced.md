@@ -89,7 +89,28 @@ for an application team to safely deploy
 through their release pipeline to production
 after all tests have passed.
 
-![CompositeExample](images/CompositeExample.jpg)
+```PowerShell
+Configuration Name
+{
+  File 1
+  {
+    Ensure = “Present”
+    Path = “c:\inetpub\file1.zip”
+    Source = “http://uri/file1.zip”
+  }
+  Service A
+  {
+    Ensure = “Present”
+    Name = “ServiceA”
+    Status = “Running”
+  }
+  SecurityBaseline Settings
+  {
+    Ensure = “Present”
+    Datacenter = “NorthAmerica”
+  }
+}
+```
 
 Composite resources promote both composition and collaboration
 using a pipeline while building operational maturity
