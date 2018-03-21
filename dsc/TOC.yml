@@ -100,6 +100,8 @@
       href: authoringResourceClass.md
     - name: Composite resources
       href: authoringResourceComposite.md
+    - name: Advanced DSC Authoring for Composition and Collaboration
+      href: advancedAuthoring.md
     - name: Writing a single-instance DSC resource (best practice)
       href: singleInstance.md
     - name: Resource authoring checklist
