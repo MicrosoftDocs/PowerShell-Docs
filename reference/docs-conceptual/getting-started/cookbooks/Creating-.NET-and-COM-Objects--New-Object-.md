@@ -4,11 +4,12 @@ keywords:  powershell,cmdlet
 title:  Creating .NET and COM Objects New Object
 ms.assetid:  2057b113-efeb-465e-8b44-da2f20dbf603
 ---
-
 # Creating .NET and COM Objects (New-Object)
+
 There are software components with .NET Framework and COM interfaces that enable you to perform many system administration tasks. Windows PowerShell lets you use these components, so you are not limited to the tasks that can be performed by using cmdlets. Many of the cmdlets in the initial release of Windows PowerShell do not work against remote computers. We will demonstrate how to get around this limitation when managing event logs by using the .NET Framework **System.Diagnostics.EventLog** class directly from Windows PowerShell.
 
 ### Using New-Object for Event Log Access
+
 The .NET Framework Class Library includes a class named **System.Diagnostics.EventLog** that can be used to manage event logs. You can create a new instance of a .NET Framework class by using the **New-Object** cmdlet with the **TypeName** parameter. For example, the following command creates an event log reference:
 
 ```
@@ -21,6 +22,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 Although the command has created an instance of the EventLog class, the instance does not include any data. That is because we did not specify a particular event log. How do you get a real event log?
 
 #### Using Constructors with New-Object
+
 To refer to a specific event log, you need to specify the name of the log. **New-Object** has an **ArgumentList** parameter. The arguments you pass as values to this parameter are used by a special startup method of the object. The method is called a *constructor* because it is used to construct the object. For example, to get a reference to the Application log, you specify the string 'Application' as an argument:
 
 ```
@@ -35,6 +37,7 @@ Max(K) Retain OverflowAction        Entries Name
 > Since most of the .NET Framework core classes are contained in the System namespace, Windows PowerShell will automatically attempt to find classes you specify in the System namespace if it cannot find a match for the typename you specify. This means that you can specify Diagnostics.EventLog instead of System.Diagnostics.EventLog.
 
 #### Storing Objects in Variables
+
 You might want to store a reference to an object, so you can use it in the current shell. Although Windows PowerShell lets you do a lot of work with pipelines, lessening the need for variables, sometimes storing references to objects in variables makes it more convenient to manipulate those objects.
 
 Windows PowerShell lets you create variables that are essentially named objects. The output from any valid Windows PowerShell command can be stored in a variable. Variable names always begin with $. If you want to store the Application log reference in a variable named $AppLog, type the name of the variable, followed by an equal sign and then type the command used to create the Application log object:
@@ -54,6 +57,7 @@ PS> $AppLog
 ```
 
 #### Accessing a Remote Event Log with New-Object
+
 The commands used in the preceding section target the local computer; the **Get-EventLog** cmdlet can do that. To access the Application log on a remote computer, you must supply both the log name and a computer name (or IP address) as arguments.
 
 ```
@@ -68,6 +72,7 @@ PS> $RemoteAppLog
 Now that we have a reference to an event log stored in the $RemoteAppLog variable, what tasks can we perform on it?
 
 #### Clearing an Event Log with Object Methods
+
 Objects often have methods that can be called to perform tasks. You can use **Get-Member** to display the methods associated with an object. The following command and selected output show some the methods of the EventLog class:
 
 ```
@@ -114,7 +119,7 @@ You can use **New-Object** to work with Component Object Model (COM) components.
 
 You can create the WSH objects by specifying these progids: **WScript.Shell**, **WScript.Network**, **Scripting.Dictionary**, and **Scripting.FileSystemObject**. The following commands create these objects:
 
-```
+```powershell
 New-Object -ComObject WScript.Shell
 New-Object -ComObject WScript.Network
 New-Object -ComObject Scripting.Dictionary
@@ -124,9 +129,10 @@ New-Object -ComObject Scripting.FileSystemObject
 Although most of the functionality of these classes is made available in other ways in Windows PowerShell, a few tasks such as shortcut creation are still easier to do using the WSH classes.
 
 ### Creating a Desktop Shortcut with WScript.Shell
+
 One task that can be performed quickly with a COM object is creating a shortcut. Suppose you want to create a shortcut on your desktop that links to the home folder for Windows PowerShell. You first need to create a reference to **WScript.Shell**, which we will store in a variable named **$WshShell**:
 
-```
+```powershell
 $WshShell = New-Object -ComObject WScript.Shell
 ```
 
@@ -146,7 +152,6 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 
 **Get-Member** has an optional **InputObject** parameter you can use instead of piping to provide input to **Get-Member**. You would get the same output as shown above if you instead used the command **Get-Member -InputObject $WshShell**. If you use **InputObject**, it treats its argument as a single item. This means that if you have several objects in a variable, **Get-Member** treats them as an array of objects. For example:
 
-
 ```
 PS> $a = 1,2,"three"
 PS> Get-Member -InputObject $a
@@ -159,7 +164,7 @@ Count              AliasProperty Count = Length
 
 The **WScript.Shell CreateShortcut** method accepts a single argument, the path to the shortcut file to create. We could type in the full path to the desktop, but there is an easier way. The desktop is normally represented by a folder named Desktop inside the home folder of the current user. Windows PowerShell has a variable **$Home** that contains the path to this folder. We can specify the path to the home folder by using this variable, and then add the name of the Desktop folder and the name for the shortcut to create by typing:
 
-```
+```powershell
 $lnk = $WshShell.CreateShortcut("$Home\Desktop\PSHome.lnk")
 ```
 
@@ -187,17 +192,18 @@ TargetPath       Property     string TargetPath () {get} {set}
 
 We need to specify the **TargetPath**, which is the application folder for Windows PowerShell, and then save the shortcut **$lnk** by calling the **Save** method. The Windows PowerShell application folder path is stored in the variable **$PSHome**, so we can do this by typing:
 
-```
+```powershell
 $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
 ### Using Internet Explorer from Windows PowerShell
+
 Many applications (including the Microsoft Office family of applications and Internet Explorer) can be automated by using COM. Internet Explorer illustrates some of the typical techniques and issues involved in working with COM-based applications.
 
 You create an Internet Explorer instance by specifying the Internet Explorer ProgId, **InternetExplorer.Application**:
 
-```
+```powershell
 $ie = New-Object -ComObject InternetExplorer.Application
 ```
 
@@ -208,25 +214,25 @@ This command starts Internet Explorer, but does not make it visible. If you type
 
 By typing **$ie | Get-Member**, you can view properties and methods for Internet Explorer. To see the Internet Explorer window, set the Visible property to $true by typing:
 
-```
+```powershell
 $ie.Visible = $true
 ```
 
 You can then navigate to a specific Web address by using the Navigate method:
 
-```
+```powershell
 $ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
 ```
 
 Using other members of the Internet Explorer object model, it is possible to retrieve text content from the Web page. The following command will display the HTML text in the body of the current Web page:
 
-```
+```powershell
 $ie.Document.Body.InnerText
 ```
 
 To close Internet Explorer from within PowerShell, call its Quit() method:
 
-```
+```powershell
 $ie.Quit()
 ```
 
@@ -243,7 +249,7 @@ At line:1 char:16
 
 You can either remove the remaining reference with a command like $ie = $null, or completely remove the variable by typing:
 
-```
+```powershell
 Remove-Variable ie
 ```
 
@@ -251,6 +257,7 @@ Remove-Variable ie
 > There is no common standard for whether ActiveX executables exit or continue to run when you remove a reference to one. Depending on circumstances such as whether the application is visible, whether an edited document is running in it, and even whether Windows PowerShell is still running, the application may or may not exit. For this reason, you should test termination behavior for each ActiveX executable you want to use in Windows PowerShell.
 
 ### Getting Warnings About .NET Framework-Wrapped COM Objects
+
 In some cases, a COM object might have an associated .NET Framework *Runtime-Callable Wrapper* or RCW, and this will be used by **New-Object**. Since the behavior of the RCW may be different from the behavior of the normal COM object, **New-Object** has a **Strict** parameter to warn you about RCW access. If you specify the **Strict** parameter and then create a COM object that uses an RCW, you get a warning message:
 
 ```
@@ -265,4 +272,3 @@ At line:1 char:17
 ```
 
 Although the object is still created, you are warned that it is not a standard COM object.
-
