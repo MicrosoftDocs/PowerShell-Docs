@@ -4,13 +4,14 @@ keywords:  powershell,cmdlet
 title:  Getting WMI Objects Get WmiObject
 ms.assetid:  f0ddfc7d-6b5e-4832-82de-2283597ea70d
 ---
-
 # Getting WMI Objects (Get-WmiObject)
 
 ## Getting WMI Objects (Get-WmiObject)
+
 Windows Management Instrumentation (WMI) is a core technology for Windows system administration because it exposes a wide range of information in a uniform manner. Because of how much WMI makes possible, the Windows PowerShell cmdlet for accessing WMI objects, **Get-WmiObject**, is one of the most useful for doing real work. We are going to discuss how to use Get-WmiObject to access WMI objects and then how to use WMI objects to do specific things.
 
 ### Listing WMI Classes
+
 The first problem most WMI users encounter is trying to find out what can be done with WMI. WMI classes describe the resources that can be managed. There are hundreds of WMI classes, some of which contain dozens of properties.
 
 **Get-WmiObject** addresses this problem by making WMI discoverable. You can get a list of the WMI classes available on the local computer by typing:
@@ -44,7 +45,7 @@ The class listing returned by remote computers may vary due to the specific oper
 
 You can even include the ComputerName when connecting to the local system. You can use the local computer's name, its IP address (or the loopback address 127.0.0.1), or the WMI-style '.' as the computer name. If you are running Windows PowerShell on a computer named Admin01 with IP address 192.168.1.90, the following commands will all return the WMI class listing for that computer:
 
-```
+```powershell
 Get-WmiObject -List
 Get-WmiObject -List -ComputerName .
 Get-WmiObject -List -ComputerName Admin01
@@ -64,6 +65,7 @@ __Provider                              __Win32Provider
 ```
 
 ### Displaying WMI Class Details
+
 If you already know the name of a WMI class, you can use it to get information immediately. For example, one of the WMI classes commonly used for retrieving information about a computer is **Win32_OperatingSystem**.
 
 ```
@@ -79,7 +81,7 @@ Version         : 5.1.2600
 
 Although we are showing all of the parameters, the command can be expressed in a more succinct way. The **ComputerName** parameter is not necessary when connecting to the local system. We show it to demonstrate the most general case and remind you about the parameter. The **Namespace** defaults to root/cimv2, and can be omitted as well. Finally, most cmdlets allow you to omit the name of common parameters. With Get-WmiObject, if no name is specified for the first parameter, Windows PowerShell treats it as the **Class** parameter. This means the last command could have been issued by typing:
 
-```
+```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
@@ -101,6 +103,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 
 #### Displaying Non-Default Properties with Format Cmdlets
+
 If you want information contained in the **Win32_OperatingSystem** class that is not displayed by default, you can display it by using the **Format** cmdlets. For example, if you want to display available memory data, type:
 
 ```
@@ -125,4 +128,3 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-
