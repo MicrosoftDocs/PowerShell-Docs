@@ -19,7 +19,7 @@ Saves the file to disk.
 **\[saveEncoding\]** - optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
 An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
 
-**Exceptions**
+### Exceptions
 
 - **System.IO.IOException**: The file could not be saved.
 
@@ -47,7 +47,7 @@ The name to be used to save the file.
 **\[saveEncoding\]** - optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
 An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
 
-**Exceptions**
+### Exceptions
 
 - **System.ArgumentNullException**: The **filename** parameter is null.
 - **System.ArgumentException**: The **filename** parameter is empty.

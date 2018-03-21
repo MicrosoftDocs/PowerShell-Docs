@@ -18,8 +18,8 @@ The read-only property that gets the display name of the menu item.
 
 ```powershell
 # Get the display name of the Add-ons menu item
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, 'Alt+P')
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
@@ -31,8 +31,8 @@ The read-only property that gets the block of script. It invokes the action when
 
 ```powershell
 # Get the action associated with the first submenu item.
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, 'Alt+P')
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 
 # Invoke the script associated with the first submenu item
@@ -47,8 +47,8 @@ The read-only property that gets the Windows input keyboard shortcut for the men
 
 ```powershell
 # Get the shortcut for the first submenu item.
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, 'Alt+P')
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
@@ -60,8 +60,8 @@ The read-only property that gets the [list of submenus](The-ISEMenuItemCollectio
 
 ```powershell
 # List the submenus of the Add-ons menu
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, 'Alt+P')
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 ```
 
@@ -72,13 +72,13 @@ To better understand the use of the Add-ons menu and its scriptable properties, 
 ```powershell
 # This is a scripting example that shows the use of the Add-ons menu.
 # Clear the Add-ons menu if any entries currently exist
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 # Add an Add-ons menu item with an shortcut and fast access key.
 # Note the use of “_”  as opposed to the “&” for mapping to the fast access key letter for the menu item.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 # Add a nested menu - a parent and a child submenu item.
-$parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('Parent', $null, $null)
+$parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('Parent', $null, $null)
 $parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
 ```
 
