@@ -17,8 +17,10 @@ There are some limitations on how Windows PowerShell ISE interacts with console 
 ```powershell
 # List the unsupported commands
 $psUnsupportedConsoleApplications
+
 # Add a command to this list
 $psUnsupportedConsoleApplications.Add('Mycommand')
+
 # Show the augmented list of commands
 $psUnsupportedConsoleApplications
 ```

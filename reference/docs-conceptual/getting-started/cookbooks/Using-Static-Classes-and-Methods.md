@@ -4,7 +4,6 @@ keywords:  powershell,cmdlet
 title:  Using Static Classes and Methods
 ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
 ---
-
 # Using Static Classes and Methods
 Not all .NET Framework classes can be created by using **New-Object**. For example, if you try to create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the following error messages:
 
@@ -14,6 +13,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -84,6 +84,7 @@ TickCount                               ExitCode
 We can now select properties to view from System.Environment.
 
 #### Displaying Static Properties of System.Environment
+
 The properties of System.Environment are also static, and must be specified in a different way than normal properties. We use **::** to indicate to Windows PowerShell that we want to work with a static method or property. To see the command that was used to launch Windows PowerShell, we check the **CommandLine** property by typing:
 
 ```
@@ -109,6 +110,7 @@ False
 ```
 
 ### Doing Math with System.Math
+
 The System.Math static class is useful for performing some mathematical operations. The important members of **System.Math** are mostly methods, which we can display by using **Get-Member**.
 
 > [!NOTE]
@@ -177,4 +179,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

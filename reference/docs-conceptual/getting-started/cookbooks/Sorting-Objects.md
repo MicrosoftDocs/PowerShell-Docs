@@ -4,19 +4,19 @@ keywords:  powershell,cmdlet
 title:  Sorting Objects
 ms.assetid:  8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ---
-
 # Sorting Objects
+
 We can organize displayed data to make it easier to scan by using the **Sort-Object** cmdlet. **Sort-Object** takes the name of one or more properties to sort on, and returns data sorted by the values of those properties.
 
 Consider the problem of listing Win32_SystemDriver instances. If we want to sort by **State** and then by **Name**, we can do it by typing:
 
-```
+```powershell
 Get-WmiObject -Class Win32_SystemDriver | Sort-Object -Property State,Name | Format-Table -Property Name,State,Started,DisplayName -AutoSize -Wrap
 ```
 
 Although this is a lengthy display, you can see items with the same state grouped together:
 
-```
+```output
 Name           State   Started DisplayName
 ----           -----   ------- -----------
 ACPI           Running    True Microsoft ACPI Driver
@@ -45,4 +45,3 @@ wdmaud         Running    True Microsoft WINMM WDM Audio Compatibility Driver
 Wanarp         Running    True Remote Access IP ARP Driver
 ...
 ```
-
