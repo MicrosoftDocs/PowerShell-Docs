@@ -6,12 +6,12 @@ ms.assetid:  0219626a-6da5-4acc-b630-d058e8b29cc6
 ---
 # How to Use Profiles in Windows PowerShell ISE
 
-This topic explains how to use Profiles in Windows PowerShell® Integrated Scripting Environment (ISE). We recommend that before performing the tasks in this section, you review [about_Profiles](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles), or in the Console Pane, type, `Get-Help about_Profiles` and press **ENTER**.
+This topic explains how to use Profiles in Windows PowerShell® Integrated Scripting Environment (ISE). We recommend that before performing the tasks in this section, you review [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles), or in the Console Pane, type, `Get-Help about_Profiles` and press **ENTER**.
 
 A profile is a Windows PowerShell ISE script that runs automatically when you start a new session.  You can create one or more Windows PowerShell profiles for Windows PowerShell ISE and use them to add the configure the Windows PowerShell or Windows PowerShell ISE environment, preparing it for your use, with variables, aliases, functions, and color and font preferences that you want available. A profile affects every Windows PowerShell ISE session that you start.
 
 > [!NOTE]
-> The Windows PowerShell execution policy determines whether you can run scripts and load a profile. The default execution policy, “Restricted,” prevents all scripts from running, including profiles. If you use the “Restricted” policy, the profile cannot load. For more information about execution policy, see [about_Execution_Policies](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+> The Windows PowerShell execution policy determines whether you can run scripts and load a profile. The default execution policy, “Restricted,” prevents all scripts from running, including profiles. If you use the “Restricted” policy, the profile cannot load. For more information about execution policy, see [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
 
 ## Selecting a profile to use in the Windows PowerShell ISE
 
@@ -76,5 +76,5 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 ## See Also
 
-- [about_Profiles](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles)
+- [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)
 - [Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
