@@ -39,7 +39,7 @@ Accepts a base-64-encoded string version of a command. Use this parameter to sub
 
 ### -ExecutionPolicy <ExecutionPolicy>
 
-Sets the default execution policy for the current session and saves it in the $env:PSExecutionPolicyPreference environment variable. This parameter does not change the PowerShell execution policy that is set in the registry. For information about PowerShell execution policies, including a list of valid values, see [about_Execution_Policies](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+Sets the default execution policy for the current session and saves it in the $env:PSExecutionPolicyPreference environment variable. This parameter does not change the PowerShell execution policy that is set in the registry. For information about PowerShell execution policies, including a list of valid values, see [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
 
 ### -File <FilePath> \[<Parameters>]
 
@@ -82,7 +82,7 @@ Determines how output from PowerShell is formatted. Valid values are "Text" (tex
 
 ### -PSConsoleFile <FilePath>
 
-Loads the specified PowerShell console file. Enter the path and name of the console file. To create a console file, use the [Export-Console](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Export-Console) cmdlet in PowerShell.
+Loads the specified PowerShell console file. Enter the path and name of the console file. To create a console file, use the [Export-Console](/powershell/module/Microsoft.PowerShell.Core/Export-Console) cmdlet in PowerShell.
 
 ### -Sta
 
@@ -94,7 +94,7 @@ Starts the specified version of PowerShell. The version that you specify must be
 
 If PowerShell 3.0 is not installed, the only valid value is "2.0". Other values are ignored.
 
-For more information, see "[Installing Windows PowerShell](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell)".
+For more information, see "[Installing Windows PowerShell](../../setup/installing-windows-powershell.md)".
 
 ### -WindowStyle <Window style>
 
