@@ -23,8 +23,6 @@ correspond to the following PowerShell assets:
 - [/wmf](https://docs.microsoft.com/powershell/wmf/readme) contains release notes for the Windows
   Management Framework, the package used to distribute new versions of PowerShell to previous versions of Windows.
 
-
-
 ## Contributing
 
 We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/)
@@ -33,7 +31,7 @@ Please note that before you submit a pull request you must [sign a Contribution 
 to ensure that the community is free to use your submissions.
 
 For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
-There is a draft [style guide](./STYLE.md) to review before making contributions.
+There is a draft [style guide](./contributing/STYLE.md) to review before making contributions.
 Please use the Issue and Pull Request templates to help keep documentation consistent across versions.
 
 ## Licenses
