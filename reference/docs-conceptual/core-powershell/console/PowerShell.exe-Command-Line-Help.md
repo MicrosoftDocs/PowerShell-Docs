@@ -6,7 +6,7 @@ ms.assetid:  1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ---
 # PowerShell.exe Command-Line Help
 
-a Windows PowerShell session. You can use PowerShell.exe to start a PowerShell session from the command line of another tool, such as Cmd.exe, or use it at the PowerShell command line to start a new session. Use the parameters to customize the session.
+You can use PowerShell.exe to start a PowerShell session from the command line of another tool, such as Cmd.exe, or use it at the PowerShell command line to start a new session. Use the parameters to customize the session.
 
 ## Syntax
 
@@ -82,7 +82,7 @@ Determines how output from PowerShell is formatted. Valid values are "Text" (tex
 
 ### -PSConsoleFile <FilePath>
 
-Loads the specified PowerShell console file. Enter the path and name of the console file. To create a console file, use the [Export-Console](/powershell/module/Microsoft.PowerShell.Core/Export-Console) cmdlet in PowerShell.
+Loads the specified PowerShell console file. Enter the path and name of the console file. To create a console file, use the [`Export-Console`](/powershell/module/Microsoft.PowerShell.Core/Export-Console) cmdlet in PowerShell.
 
 ### -Sta
 
