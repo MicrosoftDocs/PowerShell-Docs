@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Setting up a DSC pull client
@@ -18,4 +18,3 @@ The following topics explain how to set up pull clients:
 * [Setting up a pull client using configuration ID](pullClientConfigID.md)
 
 > **Note**: These topics apply to PowerShell 5.0. To set up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md).
-

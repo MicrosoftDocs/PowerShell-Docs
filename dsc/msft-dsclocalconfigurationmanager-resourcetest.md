@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  ResourceTest method of the MSFT_DSCLocalConfigurationManager class
@@ -24,17 +24,17 @@ uint32 ResourceTest(
 Parameters
 ----------
 
-*ResourceType* \[in\]  
+*ResourceType* \[in\]
 The name of the resource to call.
 
-*ModuleName* \[in\]  
+*ModuleName* \[in\]
 The name of the module that contains the resource to call.
 
-*resourceProperty* \[in\]  
+*resourceProperty* \[in\]
 Specifies the resource property name and its value in a hash table as key and value, respectively. Use the
 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet to discover resource properties and their types.
 
-*InDesiredState* \[out\]  
+*InDesiredState* \[out\]
 On return, this property is set to **true** if the target node is in the desired state.
 
 ## Return value
@@ -57,11 +57,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

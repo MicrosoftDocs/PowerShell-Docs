@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  RemoveConfiguration method of the MSFT_DSCLocalConfigurationManager class
@@ -22,7 +22,7 @@ uint32 RemoveConfiguration(
 Parameters
 ----------
 
-*Stage* \[in\]  
+*Stage* \[in\]
 Specifies which configuration document to remove. The following values are valid:
 
 |Value |Description |
@@ -31,7 +31,7 @@ Specifies which configuration document to remove. The following values are valid
 |**2** | The **Pending** configuration document (pending.mof).  |
 |**4** | The **Previous** configuration document (previous.mof). |
 
-*Force* \[in\]  
+*Force* \[in\]
 **true** to force the removal of the configuration.
 
 ## Return value
@@ -54,11 +54,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

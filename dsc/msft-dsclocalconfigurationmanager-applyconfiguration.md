@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class
@@ -7,7 +7,7 @@ title:  ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class
 
 # ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class
 
-Uses the Configuration Agent to apply the configuration that is pending. 
+Uses the Configuration Agent to apply the configuration that is pending.
 
 If there is no configuration pending, this method reapplies the current configuration.
 
@@ -24,7 +24,7 @@ uint32 ApplyConfiguration(
 ## Parameters
 ----------
 
-*force* \[in\]  
+*force* \[in\]
 If this is **true**, the current configuration is reapplied, even if there is a configuration pending.
 
 ## Return value
@@ -47,10 +47,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-
