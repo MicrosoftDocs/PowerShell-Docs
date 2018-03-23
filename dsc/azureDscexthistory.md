@@ -1,6 +1,6 @@
 ---
 description: Learn about the version history for the Desired State Configuration (DSC) extension in Azure.
-ms.date:  2018-03-14
+ms.date:  03/14/2018
 ms.topic:  conceptual
 keywords:  dsc, powershell, azure, extension
 title:  Azure DSC Extension Version History

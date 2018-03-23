@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Credentials Options in Configuration Data

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Writing a custom DSC resource with MOF
@@ -113,7 +113,7 @@ function Get-TargetResource
                                         Protocol = $Website.bindings.Collection.protocol;
                                         Binding = $Website.bindings.Collection.bindingInformation;
                                     }
-  
+
         $getTargetResourceResult;
 }
 ```
@@ -127,7 +127,7 @@ Depending on the values that are specified for the resource properties in the co
 The following example illustrates this.
 
 ```powershell
-# The Set-TargetResource function is used to create, delete or configure a website on the target machine. 
+# The Set-TargetResource function is used to create, delete or configure a website on the target machine.
 function Set-TargetResource
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
@@ -153,7 +153,7 @@ function Set-TargetResource
 
         [string[]]$Protocol
     )
- 
+
     <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
     <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
     <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
@@ -203,15 +203,15 @@ $ApplicationPool
 #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
 
-#Include logic to 
+#Include logic to
 $result = [System.Boolean]
 #Add logic to test whether the website is present and its status mathes the supplied parameter values. If it does, return true. If it does not, return false.
 $result
 }
 ```
 
-**Note**: For easier debugging, use the **Write-Verbose** cmdlet in your implementation of the previous three functions. 
->This cmdlet writes text to the verbose message stream. 
+**Note**: For easier debugging, use the **Write-Verbose** cmdlet in your implementation of the previous three functions.
+>This cmdlet writes text to the verbose message stream.
 >By default, the verbose message stream is not displayed, but you can display it by changing the value of the **$VerbosePreference** variable
 >or by using the **Verbose** parameter in the DSC cmdlets = new.
 
@@ -275,7 +275,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 >**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
 
-The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the 
+The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the
 resource should be run under a specified set of credentials.
 For more information, see [Running DSC with user credentials](runAsUser.md).
 
@@ -288,7 +288,3 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
-
-
-
-

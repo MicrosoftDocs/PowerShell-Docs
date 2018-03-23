@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC PackageManagementSource Resource
@@ -26,14 +26,14 @@ PSModule [string] #ResourceName
 ```
 
 ## Properties
-|  Property  |  Description   | 
-|---|---| 
-| Name| Specifies the name of the package source to be registered or unregistered on your system.| 
-| Ensure| Determines whether the package source is to be registered or unregistered.| 
-| InstallationPolicy| Determines whether you trust the package source. One of: "Untrusted", "Trusted".| 
-| ProviderName| Specifies the name of the OneGet provider through which you can interop with the package source.| 
-| SourceUri| Specifies the URI of the package source.| 
-| SourceCredential| Provides access to the package on a remote source.| 
+|  Property  |  Description   |
+|---|---|
+| Name| Specifies the name of the package source to be registered or unregistered on your system.|
+| Ensure| Determines whether the package source is to be registered or unregistered.|
+| InstallationPolicy| Determines whether you trust the package source. One of: "Untrusted", "Trusted".|
+| ProviderName| Specifies the name of the OneGet provider through which you can interop with the package source.|
+| SourceUri| Specifies the URI of the package source.|
+| SourceCredential| Provides access to the package on a remote source.|
 
 ## Example
 
@@ -41,15 +41,14 @@ This example registers the http://nuget.org package source using the **PackageMa
 
 ```powershell
 Configuration PackageManagementSourceTest
-{    
+{
 	PackageManagementSource SourceRepository
 	{
-		Ensure      = "Present" 
-		Name        = "MyNuget" 
-		ProviderName= "Nuget" 
-		SourceUri   = "http://nuget.org/api/v2/"   
-		InstallationPolicy ="Trusted" 
+		Ensure      = "Present"
+		Name        = "MyNuget"
+		ProviderName= "Nuget"
+		SourceUri   = "http://nuget.org/api/v2/"
+		InstallationPolicy ="Trusted"
 	}
 }
 ```
-
