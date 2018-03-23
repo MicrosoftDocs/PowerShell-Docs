@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -10,8 +10,8 @@ title:  psgallery_unlist_items
 
 **Why is removing an item from PowerShell Gallery not exposed as an option?**
 
-The PowerShell Gallery does not support users permanently deleting their items. 
-This enables others to take dependencies on your items without worrying about possible breaks in the future. 
+The PowerShell Gallery does not support users permanently deleting their items.
+This enables others to take dependencies on your items without worrying about possible breaks in the future.
 For example, if the Pester module depends on the Azure module and the Azure module is removed from the gallery, then user can no longer uses the Pester module.
 
 Instead of removing an item, however, you can unlist it instead.
@@ -33,6 +33,4 @@ Valid deletion scenarios are:
 - Item contains potentially harmful content.
 - Item contains sensitive data.
 
-To submit a Delete Item Request to the PowerShell Gallery Administrators, visit your item's detail page and select Contact Support.  
-
-
+To submit a Delete Item Request to the PowerShell Gallery Administrators, visit your item's detail page and select Contact Support.

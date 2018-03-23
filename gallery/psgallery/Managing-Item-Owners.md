@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -11,11 +11,11 @@ title:  Managing Item Owners
 Ownership of an item in the PowerShell Gallery is defined by who published the item to the gallery.
 Sometimes this metadata needs to be managed beyond the initial item publishing, which means the owner metadata needs to be mutable while the item itself is not.
 
-All item owners are peers. 
-This means any item owner can publish a new version of an item. It also means that any item owner can remove any other item owner. 
-No owner has more authority than other owners.  
+All item owners are peers.
+This means any item owner can publish a new version of an item. It also means that any item owner can remove any other item owner.
+No owner has more authority than other owners.
 
-## Setting an Item's Initial Owner 
+## Setting an Item's Initial Owner
 
 When a new item is published to PowerShell Gallery, the initial owner is defined by the user that published the item. This is determined by whose API key was used in the Publish-Module cmdlet.
 
@@ -76,4 +76,3 @@ We will then follow a process to verify your ownership of the item.
 If we determine you should be an owner of the item, we will use the 'Manage Owners' link for the item ourselves and send you the invite to become an owner.
 We will only do this after verifying that you should be an owner and the process for this varies by circumstances.
 Often times, we will use the item's Project URL to find a way to contact the project owner, but we may also use Twitter, Email, or other means for contacting the project owner.
-
