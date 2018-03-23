@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -35,4 +35,3 @@ Either publish code and get going or concede the name to someone who actually ha
 If you find a item that is in violation of any of these items, click the ‘Report Abuse’ link on the item details page and submit a report.
 
 **This policy is subject to change at the discretion of the PowerShell Gallery.**
-
