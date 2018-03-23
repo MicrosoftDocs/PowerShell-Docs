@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Building a Continuous Integration and Continuous Deployment pipeline with DSC
@@ -10,7 +10,7 @@ title:  Building a Continuous Integration and Continuous Deployment pipeline wit
 This example demonstrates how to build a Continuous Integration/Continuous Deployment (CI/CD) pipeline by using PowerShell,
 DSC, Pester, and Visual Studio Team Foundation Server (TFS).
 
-After the pipeline is built and configured, you can use it to fully deploy, configure and test a DNS server and associated host records. 
+After the pipeline is built and configured, you can use it to fully deploy, configure and test a DNS server and associated host records.
 This process simulates the first part of a pipeline that would be used in a development environment.
 
 An automated CI/CD pipeline helps you update software faster and more reliably, ensuring that all code is tested,
@@ -60,7 +60,7 @@ The computer must be running [Windows Server 2016](https://www.microsoft.com/en-
 ### TestAgent2
 
 This is the computer that hosts the website this example configures.
-The computer must be running [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). 
+The computer must be running [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
 
 ## Add the code to TFS
 
@@ -159,7 +159,7 @@ which is created by the `DevEnv.ps1` script.
 Using configuration data to define nodes is important when doing CI because node information will likely change between environments,
 and using configuration data allows you to easily make changes to node information without changing the configuration code.
 
-In the first resource block, the configuration calls the [WindowsFeature](windowsFeatureResource.md) to ensure that the DNS feature is enabled. 
+In the first resource block, the configuration calls the [WindowsFeature](windowsFeatureResource.md) to ensure that the DNS feature is enabled.
 The resource blocks that follow call resources from the [xDnsServer](https://github.com/PowerShell/xDnsServer) module to configure the primary zone
 and DNS records.
 
@@ -199,17 +199,17 @@ $DevEnvironment = @{
 Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath $OutputPath
 ```
 
-The `New-DscConfigurationDataDocument` function (defined in `\Assets\DscPipelineTools\DscPipelineTools.psm1`) 
-programmatically creates a configuration data document from the hashtable (node data) and array (non-node data) 
+The `New-DscConfigurationDataDocument` function (defined in `\Assets\DscPipelineTools\DscPipelineTools.psm1`)
+programmatically creates a configuration data document from the hashtable (node data) and array (non-node data)
 that are passed as the `RawEnvData` and `OtherEnvData` parameters.
 
 In our case, only the `RawEnvData` parameter is used.
 
 ### The psake build script
 
-The [psake](https://github.com/psake/psake) build script defined in `Build.ps1` (from the root of the Demo_CI repository, `./InfraDNS/Build.ps1`) 
+The [psake](https://github.com/psake/psake) build script defined in `Build.ps1` (from the root of the Demo_CI repository, `./InfraDNS/Build.ps1`)
 defines tasks that are part of the build.
-It also defines which other tasks each task depends on. 
+It also defines which other tasks each task depends on.
 When invoked, the psake script ensures that the specified task (or the task named `Default` if none is specified) runs,
 and that all dependencies also run (this is recursive, so that dependencies of dependencies run, and so on).
 
@@ -275,7 +275,7 @@ and removes any test results, configuration data files, and modules from previou
 
 ### The psake deploy script
 
-The [psake](https://github.com/psake/psake) deployment script defined in `Deploy.ps1` (from the root of the Demo_CI repository, `./InfraDNS/Deploy.ps1`) 
+The [psake](https://github.com/psake/psake) deployment script defined in `Deploy.ps1` (from the root of the Demo_CI repository, `./InfraDNS/Deploy.ps1`)
 defines tasks that deploy and run the configuration.
 
 `Deploy.ps1` defines the following tasks:
@@ -305,7 +305,7 @@ Removes any modules installed in previous runs, and ensures that the test result
 Acceptance, Integration, and Unit tests are defined in scripts in the `Tests` folder (from the root of the Demo_CI repository, `./InfraDNS/Tests`),
 each in files named `DNSServer.tests.ps1` in their respective folders.
 
-The test scripts use [Pester](https://github.com/pester/Pester/wiki) and 
+The test scripts use [Pester](https://github.com/pester/Pester/wiki) and
 [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) syntax.
 
 #### Unit tests
@@ -315,9 +315,9 @@ The unit test script uses [Pester](https://github.com/pester/Pester/wiki).
 
 #### Integration tests
 
-The integration tests test the configuration of the system to ensure that when integrated with other components, 
+The integration tests test the configuration of the system to ensure that when integrated with other components,
 the system is configured as expected. These tests run on the target node after it has been configured with DSC.
-The integration test script uses a mixture of [Pester](https://github.com/pester/Pester/wiki) and 
+The integration test script uses a mixture of [Pester](https://github.com/pester/Pester/wiki) and
 [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) syntax.
 
 #### Acceptance tests
@@ -446,10 +446,3 @@ This example configures the DNS server `TestAgent1` so that the URL `www.contoso
 but it does not actually deploy a website.
 The skeleton for doing so is provided in the repo under the `WebApp` folder.
 You can use the stubs provided to create psake scripts, Pester tests, and DSC configurations to deploy your own website.
-
-
-
-
-
-
-

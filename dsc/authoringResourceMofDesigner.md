@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Using the Resource Designer tool
@@ -17,7 +17,7 @@ Use the [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) cm
 
 ## Creating resource properties
 The first thing we need to do is decide on properties that the resource will expose. For this example, we will define an Active Directory user with the following properties.
- 
+
 Parameter name  Description
 * **UserName**: Key property that uniquely identifies a user.
 * **Ensure**: Specifies whether the user account should be Present or Absent. This parameter will have only two possible values.
