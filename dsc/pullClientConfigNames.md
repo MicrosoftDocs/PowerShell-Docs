@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Setting up a pull client using configuration names
@@ -146,4 +146,3 @@ PullClientConfigNames
 
 * [Setting up a pull client with configuration ID](PullClientConfigNames.md)
 * [Setting up a DSC web pull server](pullServer.md)
-

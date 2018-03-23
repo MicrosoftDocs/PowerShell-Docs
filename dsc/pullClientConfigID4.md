@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Setting up a pull client using configuration ID in PowerShell 4.0
@@ -14,28 +14,28 @@ Each target node has to be told to use pull mode and given the URL where it can 
 The following script configures the LCM to pull configurations from a server named "PullServer":
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-In the script, **DownloadManagerCustomData** passes the URL of the pull server and (for this example) allows an unsecured connection. 
+In the script, **DownloadManagerCustomData** passes the URL of the pull server and (for this example) allows an unsecured connection.
 
 After this script runs, it creates a new output folder called **SimpleMetaConfigurationForPull** and puts a metaconfiguration MOF file there.
 
-To apply the configuration, use **Set-DscLocalConfigurationManager** with parameters for **ComputerName** (use “localhost”) and **Path** (the path to the location of the target node’s localhost.meta.mof file). For example: 
+To apply the configuration, use **Set-DscLocalConfigurationManager** with parameters for **ComputerName** (use “localhost”) and **Path** (the path to the location of the target node’s localhost.meta.mof file). For example:
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -50,20 +50,20 @@ The **DscFileDownloadManager** takes a **SourcePath** property instead of **Serv
 "SmbDscShare" on a server named "CONTOSO-SERVER":
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -71,4 +71,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [Setting up a DSC web pull server](pullServer.md)
 - [Setting up a DSC SMB pull server](pullServerSMB.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
@@ -24,16 +24,16 @@ uint32 TestConfiguration(
 Parameters
 ----------
 
-*configurationData* \[in\]  
+*configurationData* \[in\]
 Environment data for the confuguration.
 
-*InDesiredState* \[out\]  
+*InDesiredState* \[out\]
 On return, specifies whether the managed node is in the state specified by the configuration document.
 
-*ResourcesInDesiredState* \[out\]  
+*ResourcesInDesiredState* \[out\]
 On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.
 
-*ResourcesNotInDesiredState* \[out\]  
+*ResourcesNotInDesiredState* \[out\]
 On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.
 
 ## Return value
@@ -56,11 +56,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-
