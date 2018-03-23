@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -52,4 +52,3 @@ At line:1 char:1
 # Re-register PSGallery repository
 Register-PSRepository -Default
 ```
-

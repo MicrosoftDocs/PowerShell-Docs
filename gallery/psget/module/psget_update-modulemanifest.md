@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -97,19 +97,18 @@ PrivateData = @{
 
 		# A URL to the license for this module.
 		# LicenseUri = ''
-	
+
 		# A URL to the main website for this project.
 		# ProjectUri = ''
-		
+
 		# A URL to an icon representing this module.
 		# IconUri = ''
-		
+
 		# ReleaseNotes of this module
 		# ReleaseNotes = ''
-		
+
 		# External dependent modules of this module
 		# ExternalModuleDependencies = ''
 	} # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-
