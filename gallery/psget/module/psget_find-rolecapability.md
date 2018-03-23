@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -11,7 +11,7 @@ title:  Find-RoleCapability
 Finds role capabilities in modules.
 
 ## Description
-The Find-RoleCapability cmdlet finds PowerShell role capabilities in modules. Find-RoleCapability searches modules in registered repositories. 
+The Find-RoleCapability cmdlet finds PowerShell role capabilities in modules. Find-RoleCapability searches modules in registered repositories.
 For each role capability that this cmdlet finds, it returns a PSGetRoleCapabilityInfo object. You can pass a PSGetRoleCapabilityInfo object to the Install-Module cmdlet to install the module that contains the role capability.
 PowerShell role capabilities define which commands, applications, and so on are available to a user at a Just Enough Administration (JEA) endpoint. Role capabilities are defined by files with a .psrc extension.
 
@@ -75,4 +75,3 @@ Find-RoleCapability -Filter RBAC
 Find-RoleCapability -Tag Azure, DSC
 
 ```
-

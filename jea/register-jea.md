@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  rpsqrd
 ms.topic:  conceptual
 keywords:  jea,powershell,security
@@ -131,4 +131,3 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ## Next steps
 
 - [Test the JEA endpoint](using-jea.md)
-

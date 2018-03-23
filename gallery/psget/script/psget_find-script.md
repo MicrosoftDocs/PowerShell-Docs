@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -20,7 +20,7 @@ Find-Script cmdlet lets you to discover the script files with different search c
 - Find-Script can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.
   - These version parameters are allowed only with the single script name without any wildcards.
-  - If the RequiredVersion parameter is not specified, Find-Script returns the latest version of the script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified. 
+  - If the RequiredVersion parameter is not specified, Find-Script returns the latest version of the script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.
   - If the RequiredVersion parameter is specified, Find-Script only returns the version of script that exactly matches the specified version.
 - Find-Script can filter on script metadata with the -Tag parameter.
 - Find-Script can filter on repository-specific search language with the -Filter parameter.
@@ -57,7 +57,7 @@ Find-Script -Name *Azure*
 # Find all versions of a script
 Find-Script -Name Connect-O365 -AllVersions
 
-# Find a script with -MinimumVersion. 
+# Find a script with -MinimumVersion.
 # With MinimumVersion we can find a script whose version is greate than or equal to the specified MinimumVersion value.
 Find-Script Connect-O365 -MinimumVersion 1.4
 
@@ -151,4 +151,3 @@ Cmdlet                         {}
 
 
 ```
-

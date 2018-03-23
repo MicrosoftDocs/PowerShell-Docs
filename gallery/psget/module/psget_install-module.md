@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -105,7 +105,7 @@ Install-Module ContosoClient -WhatIf
 Install-Module ContosoClient -Force
 
 # Install a module with dependencies
-Install-Module -Name 
+Install-Module -Name
 ```
 
 ## Install-Module cmdlet in pipeline operations
@@ -124,8 +124,8 @@ Find-Module -Name "MyDSC*" | Install-Module -Scope CurrentUser
 Find-Command -Repository "INT" -Name Get-ContosoClient,Get-ContosoServer | Install-Module
 Get-InstalledModule
 
-# This command finds the resource named MyResource and passes it to the Install-Module cmdlet by using the pipeline operator. The Install-Module cmdlet installs the module for the resource. 
-# If you pipe multiple resources to the Install-Module cmdlet from the same module, Install-Module attempts to install the module only once. 
+# This command finds the resource named MyResource and passes it to the Install-Module cmdlet by using the pipeline operator. The Install-Module cmdlet installs the module for the resource.
+# If you pipe multiple resources to the Install-Module cmdlet from the same module, Install-Module attempts to install the module only once.
 Find-DscResource -Name "MyResource" | Install-Module
 Get-InstalledModule
 
@@ -154,7 +154,7 @@ ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
 Install-Module -Name PSScriptAnalyzer -RequiredVersion 1.1.1 -Repository PSGallery
 Get-Module -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
 
-Name       : PSScriptAnalyzer 
+Name       : PSScriptAnalyzer
 Version    : 1.1.1
 ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.1
 Name       : PSScriptAnalyzer
@@ -165,7 +165,7 @@ ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
 Get-InstalledModule -Name PSScriptAnalyzer -AllVersions
 Version    Name                                Repository           Description
 -------    ----                                ----------           -----------
-1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis... 
+1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
 1.1.1      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
 
 
@@ -282,4 +282,3 @@ Install-Module ContosoClient,ContosoServer -RequiredVersion 2.0
 Install-Module ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
-
