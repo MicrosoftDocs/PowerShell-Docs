@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Archive Resource
@@ -48,4 +48,3 @@ Archive ArchiveExample {
     Destination = "C:\Users\Public\Documents\ExtractionPath"
 }
 ```
-

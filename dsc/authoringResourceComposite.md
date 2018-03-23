@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Composite resources--Using a DSC configuration as a resource
@@ -188,7 +188,7 @@ configuration RenameVM
 
 >**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
 
-The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the 
+The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the
 resource should be run under a specified set of credentials.
 For more information, see [Running DSC with user credentials](runAsUser.md).
 
@@ -206,4 +206,3 @@ if ($PsDscContext.RunAsUser) {
 ### Concepts
 * [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
 * [Get Started with Windows PowerShell Desired State Configuration](overview.md)
-
