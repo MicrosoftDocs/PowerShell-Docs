@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -33,7 +33,7 @@ New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
 ### New-ScriptFileInfo cmdlet
-New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. 
+New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc.
 
 ```powershell
 # Create a new script file with minimum required metadata values
@@ -69,11 +69,11 @@ Version Name Author Description
 
 # Add function and workflow to the script file
 Add-Content -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Value @"
-   
+
     Function Demo-ScriptFunction { 'Demo-ScriptFunction' }
-   
+
     Workflow Demo-ScriptWorkflow { 'Demo-ScriptWorkflow' }
-   
+
     Demo-ScriptFunction
     Demo-ScriptWorkflow
 "@
@@ -114,11 +114,11 @@ New-ScriptFileInfo -Path 'C:\ScriptSharingDemo\Demo-ScriptWithCompletePSScriptIn
 
 # Add function and workflow to the script file
 Add-Content -Path 'C:\ScriptSharingDemo\Demo-ScriptWithCompletePSScriptInfo.ps1' -Value @"
-   
+
     Function Demo-ScriptFunction { 'Demo-ScriptFunction' }
-   
+
     Workflow Demo-ScriptWorkflow { 'Demo-ScriptWorkflow' }
-   
+
     Demo-ScriptFunction
     Demo-ScriptWorkflow
 "@
@@ -188,4 +188,3 @@ DefinedCommands : {Demo-ScriptFunction, Demo-ScriptWorkflow}
 DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
-

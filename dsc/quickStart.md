@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Desired State Configuration Quick Start
@@ -10,7 +10,7 @@ title:  Desired State Configuration Quick Start
 # Desired State Configuration Quick Start
 
 This exercise walks through creating and applying a Desired State Configuration (DSC) configuration from start to finish.
-The example we'll use ensures that a server has the `Web-Server` (IIS) feature enabled, 
+The example we'll use ensures that a server has the `Web-Server` (IIS) feature enabled,
 and that the content for a simple "Hello World" website is present in the `intepub\wwwroot` directory of that server.
 
 For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Decision Makers](decisionMaker.md).
@@ -34,7 +34,7 @@ In a text editor, type the following text:
 </body>
 ```
 
-Save this as `index.htm` in the `test` folder you created earlier. 
+Save this as `index.htm` in the `test` folder you created earlier.
 
 ## Write the configuration
 
@@ -122,7 +122,7 @@ Start-DscConfiguration .\WebsiteTest
 ## Test the configuration
 
 You can call the [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
-cmdlet to see whether the configuration succeeded. 
+cmdlet to see whether the configuration succeeded.
 
 You can also test the results directly, in this case by browsing to `http://localhost/` in a web browser.
 You should see the "Hello World" HTML page you created as the first step in this example.
@@ -132,6 +132,3 @@ You should see the "Hello World" HTML page you created as the first step in this
 - Find out more about DSC configurations at [DSC configurations](configurations.md).
 - See what DSC resources are available, and how to create custom DSC resources at [DSC resources](resources.md).
 - Find DSC configurations and resources in the [PowerShell Gallery](https://www.powershellgallery.com/).
-
-
-

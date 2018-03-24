@@ -1,8 +1,8 @@
 # Item manifest values that impact the PowerShell Gallery UI
 
-This topic provides publishers with summary information on how to modify the manifest for their PowerShell Gallery publications so that features of PowerShellGet cmdlets and the PowerShell Gallery UI will be affected. 
-This content is organized by where the change will appear, starting with the center section, then the navigation area on the left. There is a detail section covering tags, which identifies important tags, as well as some of the more commonly used tags. 
-There are two topics that provide manifest examples: 
+This topic provides publishers with summary information on how to modify the manifest for their PowerShell Gallery publications so that features of PowerShellGet cmdlets and the PowerShell Gallery UI will be affected.
+This content is organized by where the change will appear, starting with the center section, then the navigation area on the left. There is a detail section covering tags, which identifies important tags, as well as some of the more commonly used tags.
+There are two topics that provide manifest examples:
 
 * For modules, see [Update Module Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
 * For scripts, see [Create Script File with Metadata](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
@@ -12,7 +12,7 @@ There are two topics that provide manifest examples:
 The table below shows the elements of the PowerShell Gallery item page UI that are controlled by the publisher.
 Each item indicates if it may be controlled by the module or script manifest.
 
-| UI Element | Description | Module | Script | 
+| UI Element | Description | Module | Script |
 | --- | --- | --- | --- |
 | **Title** | This is the name of the item that is published to the Gallery  | No | No |
 | **Version** | The version displayed is the version string in the metadata, and a prerelease if is specified. The primary portion of the version in a Module manifest is the ModuleVersion. For a script, it is identified as .VERSION. If a prerelease version string is specified, it will be appended to the ModuleVersion for modules, or specified as part of .VERSION for scripts. There is documentation for specifying prerelease strings in [modules](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule), and in [scripts](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Yes | Yes |
@@ -51,26 +51,26 @@ The PowerShell Gallery Edit item page allows publishers to change several of the
 * Release notes
 * Require license
 
-This approach is not generally recommended, except when needed to correct what is displayed for an older version of a module. 
-Users who acquire the module will see the metadata does not match what is displayed in the PowerShell Gallery, which raises concerns about the item. 
-This will frequently result in inquiries going to to the item owners to confirm the change. 
-It is strongly recommended that any time this approach is used, a new version of the item should be published with the same changes. 
+This approach is not generally recommended, except when needed to correct what is displayed for an older version of a module.
+Users who acquire the module will see the metadata does not match what is displayed in the PowerShell Gallery, which raises concerns about the item.
+This will frequently result in inquiries going to to the item owners to confirm the change.
+It is strongly recommended that any time this approach is used, a new version of the item should be published with the same changes.
 
 ## Tag Details
 
-Tags are simple strings consumers use to find items. 
-Tags are most valuable when they are used consistently across many items related to the same topic. Using multiple flavors of the same word (for example database and databases, or test and testing) typically provides little benefit. 
-Tags are single-word case-insensitive strings and cannot include blanks. If there is a phrase you believe users will search for, add that to the item description and it will be found in the search results. Use Pascal casing, hyphen, underscore, or period if you are trying to improve readability. Be cautious about creating long, complex, and unusual tags, as they are often misspelled. 
+Tags are simple strings consumers use to find items.
+Tags are most valuable when they are used consistently across many items related to the same topic. Using multiple flavors of the same word (for example database and databases, or test and testing) typically provides little benefit.
+Tags are single-word case-insensitive strings and cannot include blanks. If there is a phrase you believe users will search for, add that to the item description and it will be found in the search results. Use Pascal casing, hyphen, underscore, or period if you are trying to improve readability. Be cautious about creating long, complex, and unusual tags, as they are often misspelled.
 
-There are tags that are important to note, as the PowerShell Gallery and PowerShellGet cmdlets treat them uniquely. PSEdition_Desktop and PSEdition_Core are the specific examples, and are described above. 
+There are tags that are important to note, as the PowerShell Gallery and PowerShellGet cmdlets treat them uniquely. PSEdition_Desktop and PSEdition_Core are the specific examples, and are described above.
 
-As noted above, tags provide the most value when they are specific, and used consistently across many items. 
-As a publisher trying to locate the best tags to use, the easiest approach is to search the PowerShell Gallery for tags you are considering. 
-Ideally, there will be many items returned, and the item descriptions will align with your use of that key word. 
+As noted above, tags provide the most value when they are specific, and used consistently across many items.
+As a publisher trying to locate the best tags to use, the easiest approach is to search the PowerShell Gallery for tags you are considering.
+Ideally, there will be many items returned, and the item descriptions will align with your use of that key word.
 
-For reference, here are some most commonly used tags as of 12/14/2017. 
+For reference, here are some most commonly used tags as of 12/14/2017.
 In some cases, there are similar but perhaps less ideal options listed beside the tag.
-It is a best practice to use the Preferred Tag, as that will result in less noise, and better search results for consumers. 
+It is a best practice to use the Preferred Tag, as that will result in less noise, and better search results for consumers.
 
 
 | **Preferred tag** | **Alternatives and notes** |
@@ -135,5 +135,3 @@ It is a best practice to use the Preferred Tag, as that will result in less nois
 | **MSI** |  |
 | **Mac** |  |
 | **PoshBot** |  |
-
-

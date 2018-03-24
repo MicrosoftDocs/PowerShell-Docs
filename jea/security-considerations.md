@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  rpsqrd
 ms.topic:  conceptual
 keywords:  jea,powershell,security
@@ -150,4 +150,3 @@ It is therefore important to evaluate your JEA users' extended permissions to se
 
 A common practice is to use JEA for regular day-to-day maintenance and have a "just in time" privileged access management solution allow users to temporarily become local admins in emergency situations.
 This helps ensure users are not permanent admins on the system, but can get those rights if, and only when, they complete a workflow that documents their use of those permissions.
-

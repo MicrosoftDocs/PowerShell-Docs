@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell
 title:  RequireLicenseAcceptanceScript
@@ -28,7 +28,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### Example 2: Install Script with dependencies requiring license acceptance and -AcceptLicense

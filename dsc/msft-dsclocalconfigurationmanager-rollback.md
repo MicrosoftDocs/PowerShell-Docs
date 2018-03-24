@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  RollBack method of the MSFT_DSCLocalConfigurationManager class
@@ -21,8 +21,8 @@ uint32 RollBack(
 Parameters
 ----------
 
-*configurationNumber* \[in\]  
-Specifies the requested configuration. 
+*configurationNumber* \[in\]
+Specifies the requested configuration.
 
 ## Return value
 ------------
@@ -44,11 +44,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

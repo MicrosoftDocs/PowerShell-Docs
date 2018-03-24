@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  GetConfigurationStatus method of the MSFT_DSCLocalConfigurationManager class
@@ -22,11 +22,11 @@ uint32 GetConfigurationStatus(
 Parameters
 ----------
 
-*All* \[in\]  
+*All* \[in\]
 **true** if this method should return information about all the configuration runs on the machine, including
 the configuration application and the consistency check.
 
-*configurationStatus* \[out\]  
+*configurationStatus* \[out\]
 On return, contains an embedded instance of the **MSFT_DSCConfigurationStatus** class that defines the settings.
 
 ## Return value
@@ -49,11 +49,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

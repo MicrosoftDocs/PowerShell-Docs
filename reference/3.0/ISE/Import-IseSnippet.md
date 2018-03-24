@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -88,7 +88,7 @@ This parameter is valid only when the **Module** parameter is used in the comman
 ```yaml
 Type: SwitchParameter
 Parameter Sets: FromModule
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -109,7 +109,7 @@ Snippets in a module are not automatically imported with the module, but you can
 ```yaml
 Type: String
 Parameter Sets: FromModule
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -125,7 +125,7 @@ Wildcards characters are supported.
 ```yaml
 Type: String
 Parameter Sets: FromFolder
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -140,7 +140,7 @@ Imports snippets from all subdirectories of the value of the **Path** parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -172,4 +172,3 @@ This cmdlet does not generate output.
 [Get-IseSnippet](Get-IseSnippet.md)
 
 [New-IseSnippet](New-IseSnippet.md)
-

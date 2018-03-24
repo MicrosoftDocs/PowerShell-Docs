@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  rpsqrd
 ms.topic:  conceptual
 keywords:  jea,powershell,security
@@ -276,4 +276,3 @@ Additional information about identifying users' effective permissions can be fou
 ## Next steps
 
 - [Create a session configuration file](session-configurations.md)
-

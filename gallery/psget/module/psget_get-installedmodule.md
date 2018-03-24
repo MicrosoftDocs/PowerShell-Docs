@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -20,7 +20,7 @@ For each installed module, Get-InstalledModule returns a PSRepositoryItemInfo ob
 - Get-InstalledModule can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.
   - These version parameters are allowed only with the single module name without any wildcards.
-  - If the RequiredVersion parameter is not specified, Get-InstalledModule returns the latest version of the installed module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified. 
+  - If the RequiredVersion parameter is not specified, Get-InstalledModule returns the latest version of the installed module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.
   - If the RequiredVersion parameter is specified, Get-InstalledModule only returns the version of installed module that exactly matches the specified version.
 
 ## Cmdlet syntax
@@ -122,4 +122,3 @@ Name          InstalledDate         UpdatedDate
 ----          -------------         -----------
 ContosoServer 2/29/2016 11:59:14 AM 2/29/2016 12:00:15 PM
 ```
-

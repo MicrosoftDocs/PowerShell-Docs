@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -29,4 +29,3 @@ Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the items on P
 ## More details on authoring and finding the items with compatible PowerShell Editions
 ### [Modules with PSEditions](../psget/module/modulewithpseditionsupport.md)
 ### [Scripts with PSEditions](../psget/script/scriptwithpseditionsupport.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-10-17
+ms.date:  10/17/2017
 contributor:  keithb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -53,4 +53,3 @@ This command saves the latest version of the script Fabrikam-ClientScript from G
 ```powershell
 Save-Script -Name Fabrikam-ClientScript -Path C:\ScriptSharingDemo -AllowPrerelease
 ```
-
