@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -101,7 +101,7 @@ You can use the cmdlets that contain the Job noun (the Job cmdlets) to manage th
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 102
@@ -118,7 +118,7 @@ A Class or Query parameter is required in every command.
 ```yaml
 Type: String
 Parameter Sets: class
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -158,7 +158,7 @@ If you type a user name, you will be prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -174,7 +174,7 @@ Use this parameter when you are registering for events on a remote computer or i
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -191,7 +191,7 @@ Users are not automatically unsubscribed, regardless of the number of times the 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -207,7 +207,7 @@ The value of this parameter appears in the MessageData property of all events as
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -237,7 +237,7 @@ Specifies a query in WMI Query Language (WQL) that identifies the WMI event clas
 ```yaml
 Type: String
 Parameter Sets: query
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -256,7 +256,7 @@ The value of this parameter appears in the value of the SourceIdentifier propert
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 101
@@ -274,7 +274,7 @@ To view or cancel a subscription that was created with the SupportEvent paramete
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -332,4 +332,3 @@ If you close the current session, the event queue is discarded and the event sub
 [Unregister-Event](../Microsoft.PowerShell.Utility/Unregister-Event.md)
 
 [Wait-Event](../Microsoft.PowerShell.Utility/Wait-Event.md)
-

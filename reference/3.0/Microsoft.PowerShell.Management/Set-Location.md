@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -98,7 +98,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -113,7 +113,7 @@ This parameter is used to specify the path to a new working location.
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -132,7 +132,7 @@ The Location cmdlets act on the current stack unless you use the StackName param
 ```yaml
 Type: String
 Parameter Sets: Stack
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -173,7 +173,7 @@ Otherwise, this cmdlet does not generate any output.
 * The Set-Location cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get-PSProvider". For more information, see about_Providers.
 
   A "stack" is a last-in, first-out list in which only the most recently added item is accessible.
-You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order. 
+You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order.
 Windows PowerShell lets you store provider locations in location stacks.
 Windows PowerShell creates an unnamed default location stack and you can create multiple named location stacks.
 If you do not specify a stack name, Windows PowerShell uses the current location stack.
@@ -207,4 +207,3 @@ To make the unnamed stack the current stack, use the StackName parameter of the 
 [Push-Location](Push-Location.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -91,7 +91,7 @@ Specifies the name or names of the Windows PowerShell providers about which to r
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -115,4 +115,3 @@ Get-PSProvider returns objects that represent the Windows PowerShell providers i
 ## RELATED LINKS
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

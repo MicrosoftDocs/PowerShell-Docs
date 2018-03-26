@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -142,7 +142,7 @@ For example, if you are in the Certificate: drive, you can use this parameter to
 ```yaml
 Type: String[]
 Parameter Sets: Location
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -161,7 +161,7 @@ For example, if you are in the C: drive, you can use this parameter to find your
 ```yaml
 Type: String[]
 Parameter Sets: Location
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -179,7 +179,7 @@ For information about location stacks, see the Notes.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Stack
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -201,7 +201,7 @@ NOTE: Get-Location cannot display the locations in the unnamed default stack unl
 ```yaml
 Type: String[]
 Parameter Sets: Stack
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -213,7 +213,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see about_transactions. 
+For more information, see about_transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -246,7 +246,7 @@ Some combinations will result in errors, such as specifying both a drive and a p
 If no parameters are specified, Get-Location returns the PathInfo object for the provider that contains the current working location.
 
   A "stack" is a last-in, first-out list in which only the most recently added item is accessible.
-You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order. 
+You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order.
 Windows PowerShell lets you store provider locations in location stacks.
 Windows PowerShell creates an unnamed default location stack and you can create multiple named location stacks.
 If you do not specify a stack name, Windows PowerShell uses the current location stack.
@@ -280,4 +280,3 @@ To make the unnamed stack the current stack, use the StackName parameter of the 
 [Set-Location](Set-Location.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

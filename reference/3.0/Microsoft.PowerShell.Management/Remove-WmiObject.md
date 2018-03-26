@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -91,7 +91,7 @@ The second command pipes the $a variable to the Remove-WMIObject, which deletes 
 ## PARAMETERS
 
 ### -AsJob
-Runs the command as a background job. 
+Runs the command as a background job.
 Use this parameter to run commands that take an extensive time to complete.
 
 Runs the command as a background job.
@@ -116,7 +116,7 @@ For more information about Windows PowerShell background jobs, see  about_Jobs a
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ Valid values are:
 ```yaml
 Type: AuthenticationLevel
 Parameter Sets: class, path, list, WQLQuery, query
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -167,7 +167,7 @@ You cannot include the authority setting when you connect to the local computer.
 ```yaml
 Type: String
 Parameter Sets: class, path, list, WQLQuery, query
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -182,7 +182,7 @@ Specifies the name of a WMI class that you want to delete.
 ```yaml
 Type: String
 Parameter Sets: class
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -223,7 +223,7 @@ When you type a user name, you will be prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: class, path, list, WQLQuery, query
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -238,7 +238,7 @@ Enables all the privileges of the current user before the command makes the WMI 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: class, path, list, WQLQuery, query
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -264,7 +264,7 @@ Valid values are:
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: class, path, list, WQLQuery, query
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -280,7 +280,7 @@ When this parameter is used, all other parameters are ignored.
 ```yaml
 Type: ManagementObject
 Parameter Sets: object
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -296,7 +296,7 @@ The Locale parameter is specified as an array in the MS_\<LCID\> format in the p
 ```yaml
 Type: String
 Parameter Sets: class, path, list, WQLQuery, query
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -326,7 +326,7 @@ Specifies the WMI object path of a WMI class, or specifies the WMI object path o
 ```yaml
 Type: String
 Parameter Sets: path
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -343,7 +343,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -411,4 +411,3 @@ Otherwise, it does not generate any output.
 [New-WSManInstance](../Microsoft.WsMan.Management/New-WSManInstance.md)
 
 [Remove-WSManInstance](../Microsoft.WsMan.Management/Remove-WSManInstance.md)
-

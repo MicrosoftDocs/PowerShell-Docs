@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -98,7 +98,7 @@ This parameter is not supported by any providers installed with Windows PowerShe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -116,7 +116,7 @@ Even using the Force parameter, the cmdlet cannot override security restrictions
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ You can specify the name of the new item in the Name or Path parameter value, an
 ```yaml
 Type: String
 Parameter Sets: nameSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -166,7 +166,7 @@ You can specify the name of the new item in the Name parameter, or include it in
 ```yaml
 Type: String[]
 Parameter Sets: pathSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -178,7 +178,7 @@ Accept wildcard characters: True
 ```yaml
 Type: String[]
 Parameter Sets: nameSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -194,7 +194,7 @@ You can also pipe a value to New-Item.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -284,4 +284,3 @@ New-Item returns the item that it creates.
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
