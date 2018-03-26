@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -24,7 +24,7 @@ Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [-UseTra
 ```
 
 ## DESCRIPTION
-The Push-Location cmdlet adds ("pushes") the current location onto a location stack. 
+The Push-Location cmdlet adds ("pushes") the current location onto a location stack.
 If you specify a path, Push-Location pushes the current location onto a location stack and then changes the current location to the location specified by the path.
 You can use the Pop-Location cmdlet to get locations from the location stack.
 
@@ -98,7 +98,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -116,7 +116,7 @@ The parameter name ("Path") is optional.
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -132,7 +132,7 @@ If the stack does not exist, Push-Location creates it.
 
 Without this parameter, Push-Location adds the location to the current location stack.
 By default, the current location stack is the unnamed default location stack that Windows PowerShell creates.
-To make a location stack the current location stack, use the StackName parameter of the Set-Location cmdlet. 
+To make a location stack the current location stack, use the StackName parameter of the Set-Location cmdlet.
 For more information about location stacks, see the Notes.
 
 NOTE: Push-Location cannot add a location to the unnamed default stack unless it is the current location stack.
@@ -140,7 +140,7 @@ NOTE: Push-Location cannot add a location to the unnamed default stack unless it
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see about_transactions. 
+For more information, see about_transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -219,4 +219,3 @@ For more information, see about_Providers.
 [Set-Location](Set-Location.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

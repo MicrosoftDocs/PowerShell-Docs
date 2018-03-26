@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -109,7 +109,7 @@ When a registry key contains fewer than five entries, by default it is displayed
 
 The second command uses the same Get-ItemProperty command.
 However, this time, the command uses a pipeline operator (|) to send the results of the command to the Format-List cmdlet.
-The Format-List command uses the Property parameter with a value of * (all) to display all of the properties of the objects in a list. 
+The Format-List command uses the Property parameter with a value of * (all) to display all of the properties of the objects in a list.
 The results are shown in the following sample output.
 
 The resulting display shows the Path and ExecutionPolicy registry entries, along with several less familiar properties of the registry key object.
@@ -128,7 +128,7 @@ This parameter is not supported by any providers installed with Windows PowerShe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -144,7 +144,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -162,7 +162,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -177,7 +177,7 @@ Includes the specified items.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -226,7 +226,7 @@ Specifies the path to the item or items.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -285,5 +285,3 @@ For example, in a file system drive, it might return a file or folder.
 [Set-ItemProperty](Set-ItemProperty.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
-
