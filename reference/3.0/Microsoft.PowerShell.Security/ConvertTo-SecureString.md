@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -107,15 +107,15 @@ To use the AsPlainText parameter, the Force parameter must also be included in t
 
 ### -AsPlainText
 Specifies a plain text string to convert to a secure string.
-The secure string cmdlets help protect confidential text. 
+The secure string cmdlets help protect confidential text.
 The text is encrypted for privacy and is deleted from computer memory after it is used.
-If you use this parameter to provide plain text as input,  the system cannot protect that input in this manner. 
+If you use this parameter to provide plain text as input,  the system cannot protect that input in this manner.
 To use this parameter, you must also specify the Force parameter.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PlainText
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -130,7 +130,7 @@ Confirms that you understand the implications of using  the AsPlainText paramete
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PlainText
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -146,7 +146,7 @@ Valid key lengths are 16, 24, and 32 bytes.
 ```yaml
 Type: Byte[]
 Parameter Sets: Open
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -164,7 +164,7 @@ Valid key lengths are 16, 24, and 32 bytes.
 ```yaml
 Type: SecureString
 Parameter Sets: Secure
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -179,7 +179,7 @@ Specifies the string to convert to a secure string.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -205,4 +205,3 @@ ConvertTo-SecureString returns a SecureString object.
 [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
 
 [Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
-
