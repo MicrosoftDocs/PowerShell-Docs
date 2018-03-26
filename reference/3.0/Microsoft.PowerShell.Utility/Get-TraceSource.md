@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -47,7 +47,7 @@ The parameter name ("Name") is optional.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -73,4 +73,3 @@ Get-TraceSource returns objects that represent the trace sources.
 [Set-TraceSource](Set-TraceSource.md)
 
 [Trace-Command](Trace-Command.md)
-

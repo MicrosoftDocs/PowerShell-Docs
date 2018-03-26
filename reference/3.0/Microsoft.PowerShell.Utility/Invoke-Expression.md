@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -92,7 +92,7 @@ The Command parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -123,4 +123,3 @@ In general, it is best to design your script with predefined input options, rath
 ## RELATED LINKS
 
 [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
-
