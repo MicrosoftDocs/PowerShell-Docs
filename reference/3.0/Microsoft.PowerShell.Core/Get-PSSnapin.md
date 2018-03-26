@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -63,7 +63,7 @@ The parameter name ("Name") is optional.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -82,7 +82,7 @@ Without this parameter, Get-PSSnapin gets the Windows PowerShell snap-ins that h
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -111,4 +111,3 @@ Get-PSSnapin returns an object for each snap-in that it gets.
 [Add-PSSnapin](Add-PSSnapin.md)
 
 [Remove-PSSnapin](Remove-PSSnapin.md)
-

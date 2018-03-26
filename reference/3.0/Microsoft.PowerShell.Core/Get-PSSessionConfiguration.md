@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -53,8 +53,8 @@ The command uses the **Name** parameter of **Get-PSSessionConfiguration** to get
 ### Example 3
 ```
 PS C:\> Get-PSSessionConfiguration -Name Full  | Format-List -Property *
- 
-                      
+
+
 Copyright                     : (c) 2011 User01. All rights reserved.
 AliasDefinitions              : {System.Collections.Hashtable}
 SessionType                   : Default
@@ -327,7 +327,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -378,4 +378,3 @@ You cannot pipe input to this cmdlet.
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -61,7 +61,7 @@ Get-PSSession [-Id] <Int32[]> [<CommonParameters>]
 ## DESCRIPTION
 The **Get-PSSession** cmdlet gets the user-managed Windows PowerShell sessions ("PSSessions") on local and remote computers.
 
-Beginning in Windows PowerShell 3.0, sessions are stored on the computers at the remote end of each connection. 
+Beginning in Windows PowerShell 3.0, sessions are stored on the computers at the remote end of each connection.
 You can use the **ComputerName** or **ConnectionUri** parameters of **Get-PSSession** to get the sessions that connect to the local computer or remote computers, even if they were not created in the current session.
 
 Without parameters, **Get-PSSession** gets all sessions that were created in the current session.
@@ -175,7 +175,7 @@ Specifies the mechanism that is used to authenticate credentials for the session
 
 This parameter configures the temporary connection that is created to run a **Get-PSSession** command with the **ComputerName** or **ConnectionUri** parameter.
 
-Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**. 
+Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**.
 The default value is **Default**.
 
 For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
@@ -189,7 +189,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -214,7 +214,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -263,7 +263,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -278,13 +278,13 @@ Type one or more IDs (separated by commas), or use the range operator (..) to sp
 You cannot use the ID parameter with the **ComputerName** parameter.
 
 An ID is an integer that uniquely identifies the user-managed sessions (PSSessions) in the current session.
-It is easier to remember and type than the InstanceId, but it is unique only within the current session. 
+It is easier to remember and type than the InstanceId, but it is unique only within the current session.
 The ID of a session is stored in the ID property of the session.
 
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -304,7 +304,7 @@ The instance ID of a session is stored in the **InstanceID** property of the ses
 ```yaml
 Type: Guid[]
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -334,7 +334,7 @@ The friendly name of a session is stored in the **Name** property of the session
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -346,7 +346,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: ComputerName, ConnectionUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -357,7 +357,7 @@ Accept wildcard characters: False
 
 ### -Port
 Specifies the specified network port that is used for the temporary connection in which the **Get-PSSession** command runs.
-To connect to a remote computer, the remote computer must be listening on the port that the connection uses. 
+To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
@@ -379,7 +379,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName, ComputerInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -403,7 +403,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SessionFilterState
 Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -422,7 +422,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -443,7 +443,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, ComputerInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -463,7 +463,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ConnectionUri, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -485,7 +485,7 @@ It does not change the application that the session uses.
 ```yaml
 Type: String
 Parameter Sets: ComputerName, ComputerInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -509,7 +509,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: String
 Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -553,7 +553,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
-Sets advanced options for the session. 
+Sets advanced options for the session.
 Enter a **SessionOption** object, such as one that you create by using the New-PSSessionOption cmdlet, or a hash table in which the keys are session option names and the values are session option values.
 
 The default values for the options are determined by the value of the **$PSSessionOption** preference variable, if it is set.
@@ -569,7 +569,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: PSSessionOption
 Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -623,4 +623,3 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 [about_PSSessions](About/about_PSSessions.md)
 
 [about_Remote](About/about_Remote.md)
-
