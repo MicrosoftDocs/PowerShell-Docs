@@ -1,5 +1,5 @@
-﻿---
-ms.date:  2017-06-09
+---
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -94,7 +94,7 @@ When reading from and writing to binary files, use a value of Byte for the Encod
 ```yaml
 Type: FileSystemCmdletProviderEncoding
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Unknown, String, Unicode, Byte, BigEndianUnicode, UTF8, UTF7, UTF32, Ascii, Default, Oem
 
 Required: False
@@ -105,11 +105,11 @@ Accept wildcard characters: False
 ```
 
 ### -Delimiter
-Specifies the delimiter that Get-Content uses to divide the file into objects while it reads. 
+Specifies the delimiter that Get-Content uses to divide the file into objects while it reads.
 
-The default is "\n", the end-of-line character. 
+The default is "\n", the end-of-line character.
 
-Therefore, by default, when reading a text file, Get-Content returns a collection of string objects, each of which ends with an end-of-line character. 
+Therefore, by default, when reading a text file, Get-Content returns a collection of string objects, each of which ends with an end-of-line character.
 
 When you enter a delimiter that does not exist in the file, Get-Content returns the entire file as a single, undelimited object.
 
@@ -122,7 +122,7 @@ Troubleshooting Note: Currently, when the value of the Delimiter parameter is an
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -138,7 +138,7 @@ For example, **Force** will override the read-only attribute or create directori
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,7 +157,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -174,7 +174,7 @@ Wait is a dynamic parameter that the FileSystem provider adds to the Get-Content
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
-Gets the contents of the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are not supported. 
+Gets the contents of the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are not supported.
 
 Stream is a dynamic parameter that the FileSystem provider adds to the Get-Content cmdlet. This parameter works only in file system drives.
 
@@ -193,7 +193,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -231,7 +231,7 @@ This parameter is not supported by any providers that are installed with Windows
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -249,7 +249,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -267,7 +267,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -285,7 +285,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -322,7 +322,7 @@ The parameter name ("Path" or "FilePath") is optional.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -343,7 +343,7 @@ This can make a perceptible difference in very large items.
 ```yaml
 Type: Int64
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -413,5 +413,3 @@ The output type depends upon the content that it gets.
 [Set-Content](Set-Content.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
-

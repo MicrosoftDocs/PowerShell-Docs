@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -100,7 +100,7 @@ To prevent a restart and suppress the restart prompt, use the NoServiceRestart p
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,7 +120,7 @@ You can also pipe a session configurations to Unregister-PSSessionConfiguration.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -132,7 +132,7 @@ Accept wildcard characters: True
 ### -NoServiceRestart
 Does not restart the WinRM service, and suppresses the prompt to restart the service.
 
-By default, when you enter an Unregister-PSSessionConfiguration command, you are prompted to restart the WinRM service to make the change effective. 
+By default, when you enter an Unregister-PSSessionConfiguration command, you are prompted to restart the WinRM service to make the change effective.
 Until the WinRM service is restarted, users can still use the unregistered session configuration, even though Get-PSSessionConfiguration does not find it.
 
 To restart the WinRM service without prompting, use the Force parameter.
@@ -141,7 +141,7 @@ To restart the WinRM service manually, use the Restart-Service cmdlet.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -220,4 +220,3 @@ This cmdlet does not return any objects.
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

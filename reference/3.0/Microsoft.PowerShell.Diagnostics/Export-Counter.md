@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,7 +19,7 @@ Export-Counter [-Path] <String> [-FileFormat <String>] [-MaxSize <UInt32>]
 ```
 
 ## DESCRIPTION
-The Export-Counter cmdlet exports performance counter data (PerformanceCounterSampleSet objects) to log files in binary performance log (.blg), comma-separated value (.csv), or tab-separated value (.tsv) format. 
+The Export-Counter cmdlet exports performance counter data (PerformanceCounterSampleSet objects) to log files in binary performance log (.blg), comma-separated value (.csv), or tab-separated value (.tsv) format.
 You can use this cmdlet to log or relog performance counter data.
 
 Export-Counter is designed to export data that is returned by the Get-Counter and Import-Counter cmdlets.
@@ -82,7 +82,7 @@ When you include this parameter, the **MaxSize** parameter is required.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -92,14 +92,14 @@ Accept wildcard characters: False
 ```
 
 ### -FileFormat
-Specifies the output format of the output log file. 
-Valid values are CSV, TSV, and BLG. 
+Specifies the output format of the output log file.
+Valid values are CSV, TSV, and BLG.
 The default value is BLG.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -114,7 +114,7 @@ Overwrites and replaces an existing file if one exists in the location specified
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -130,7 +130,7 @@ Enter a variable that contains the data or a command that gets the data, such as
 ```yaml
 Type: PerformanceCounterSampleSet[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -148,7 +148,7 @@ If the Circular parameter is not specified, then when the log file reaches the s
 ```yaml
 Type: UInt32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -205,4 +205,3 @@ However, if the computer is configured for Windows PowerShell remoting, you can 
 [Get-Counter](Get-Counter.md)
 
 [Import-Counter](Import-Counter.md)
-

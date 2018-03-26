@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -86,7 +86,7 @@ You can use this parameter to submit a HistoryInfo object, such as the ones that
 ```yaml
 Type: PSObject[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -102,7 +102,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -149,4 +149,3 @@ If you intend to pass the objects back to **Add-History**, do not use the **NoTy
 [Invoke-History](Invoke-History.md)
 
 [about_History](About/about_History.md)
-

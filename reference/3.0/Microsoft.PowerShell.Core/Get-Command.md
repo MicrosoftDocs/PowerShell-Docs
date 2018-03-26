@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -215,7 +215,7 @@ In Windows PowerShell 2.0, Get-Command gets all commands by default.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -225,12 +225,12 @@ Accept wildcard characters: False
 ```
 
 ### -ArgumentList
-Gets information about a cmdlet or function when it is used with the specified  parameters ("arguments"). 
+Gets information about a cmdlet or function when it is used with the specified  parameters ("arguments").
 The alias for **ArgumentList** is **Args**.
 
 To detect dynamic parameters that are available only when certain other parameters are used, set the value of ArgumentList to the parameters that trigger the dynamic parameters.
 
-To detect the dynamic parameters that a provider adds to a cmdlet, set the value of the **ArgumentList** parameter to a path in the provider drive, such as "WSMan:", "HKLM:" or "Cert:". 
+To detect the dynamic parameters that a provider adds to a cmdlet, set the value of the **ArgumentList** parameter to a path in the provider drive, such as "WSMan:", "HKLM:" or "Cert:".
 When the command is a Windows PowerShell provider cmdlet, enter only one path in each command; the provider cmdlets return only the dynamic parameters for the first path the value of **ArgumentList**.
 For information about the provider cmdlets, see [about_Providers](About/about_Providers.md).
 
@@ -307,7 +307,7 @@ When two commands have the same name, by default, **Get-Command** gets the comma
 ```yaml
 Type: String[]
 Parameter Sets: AllCommandSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -324,7 +324,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: CmdletSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -344,7 +344,7 @@ Gets only specified data about the command.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -360,7 +360,7 @@ You can use this parameter to limit the output of a command.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -377,7 +377,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: CmdletSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -397,7 +397,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -418,7 +418,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -439,7 +439,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSTypeName[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -485,4 +485,3 @@ Represents functions and filters
 [Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [about_Command_Precedence](About/about_Command_Precedence.md)
-

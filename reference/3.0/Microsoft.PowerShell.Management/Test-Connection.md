@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -131,7 +131,7 @@ For more information about Windows PowerShell background jobs, see about_Jobs an
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Default, Source
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -165,7 +165,7 @@ PacketPrivacy:   Packet Privacy-level COM authentication.
 ```yaml
 Type: AuthenticationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -218,7 +218,7 @@ The default value is 4.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -237,7 +237,7 @@ The credentials do not affect the destination computer.
 ```yaml
 Type: PSCredential
 Parameter Sets: Source
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -252,7 +252,7 @@ Specifies the interval between pings, in seconds.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -278,7 +278,7 @@ Impersonate:  Allows objects to use the credentials of the caller.
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -293,7 +293,7 @@ Suppresses all errors and returns $True if any pings succeeded and $False if all
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Quiet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -328,7 +328,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: Default, Source
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -377,4 +377,3 @@ Otherwise, this cmdlet returns a Win32_PingStatus object for each ping.
 [Restart-Computer](Restart-Computer.md)
 
 [Stop-Computer](Stop-Computer.md)
-

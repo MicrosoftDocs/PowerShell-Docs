@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -50,7 +50,7 @@ The job object contains useful information about the job, but it does not contai
 When the job completes, use the Receive-Job cmdlet to get the results of the job.
 For more information about background jobs, see about_Jobs.
 
-To run a background job on a remote computer, use the AsJob parameter that is available on many cmdlets, or use the Invoke-Command cmdlet to run a **Start-Job** command on the remote computer. 
+To run a background job on a remote computer, use the AsJob parameter that is available on many cmdlets, or use the Invoke-Command cmdlet to run a **Start-Job** command on the remote computer.
 For more information, see about_Remote_Jobs.
 
 Beginning in Windows PowerShell 3.0, **Start-Job** can start instances of custom job types, such as scheduled jobs.
@@ -178,8 +178,8 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
-Specifies the mechanism that is used to authenticate the user's credentials. 
-Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**. 
+Specifies the mechanism that is used to authenticate the user's credentials.
+Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**.
 The default value is **Default**.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
@@ -193,7 +193,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -211,7 +211,7 @@ Type a user name, such as "User01" or "Domain01\User01", or enter a PSCredential
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -230,7 +230,7 @@ When you use this parameter, Windows PowerShell converts the contents of the spe
 ```yaml
 Type: String
 Parameter Sets: FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -249,7 +249,7 @@ For example, you can use it to add functions, snap-ins, and modules to the sessi
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -267,7 +267,7 @@ In the value of the **ScriptBlock** parameter, use the $input automatic variable
 ```yaml
 Type: PSObject
 Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -306,7 +306,7 @@ The default friendly name is Job#, where "#" is an ordinal number that is increm
 ```yaml
 Type: String
 Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -324,7 +324,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Version
 Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunAs32
-Runs the job in a 32-bit process. 
+Runs the job in a 32-bit process.
 Use this parameter to force the job to run in a 32-bit process on a 64-bit operating system.
 
 NOTE: On 64-bit versions of Windows 7 and Windows Server 2008 R2, when the **Start-Job** command includes the **RunAs32** parameter, you cannot use the **Credential** parameter to specify the credentials of another user.
@@ -342,7 +342,7 @@ NOTE: On 64-bit versions of Windows 7 and Windows Server 2008 R2, when the **Sta
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -382,7 +382,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DefinitionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -404,7 +404,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DefinitionName
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -423,7 +423,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DefinitionName
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -472,4 +472,3 @@ For example, you can pipe a FileInfo object from Get-ChildItem to **Start-Job**.
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [about_Jobs](About/about_Jobs.md)
-

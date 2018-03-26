@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -101,13 +101,13 @@ It also shows how to use the Unblock-File cmdlet to unblock scripts, so that you
 ## PARAMETERS
 
 ### -List
-Gets all execution policy values for the session listed in precedence order. 
+Gets all execution policy values for the session listed in precedence order.
 By default, **Get-ExecutionPolicy** gets only the effective execution policy.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-Gets the execution policy in the specified scope. 
+Gets the execution policy in the specified scope.
 By default, **Get-ExecutionPolicy** gets the effective execution policy for the current session.
 
 Valid values are:
@@ -131,7 +131,7 @@ Valid values are:
 ```yaml
 Type: ExecutionPolicyScope
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -170,4 +170,3 @@ The precedence order is Computer Group Policy \> User Group Policy \> Process (s
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-
