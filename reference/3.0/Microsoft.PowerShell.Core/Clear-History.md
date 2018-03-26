@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -68,7 +68,7 @@ If you enter more than one string, Clear-History deletes commands with any of th
 ```yaml
 Type: String[]
 Parameter Sets: CommandLineParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -80,7 +80,7 @@ Accept wildcard characters: True
 ### -Count
 Clears the specified number of  history entries, beginning with the oldest entry in the history.
 
-If you use the Count and Id parameters in the same command, the cmdlet clears the number of entries specified by the Count parameter, beginning with the entry specified by the Id parameter. 
+If you use the Count and Id parameters in the same command, the cmdlet clears the number of entries specified by the Count parameter, beginning with the entry specified by the Id parameter.
 For example, if Count is 10 and Id is 30, Clear-History clears items 21 through 30 inclusive.
 
 If you use the Count and CommandLine parameters in the same command, Clear-History clears the number of entries specified by the Count parameter, beginning with the entry specified by the CommandLine parameter.
@@ -88,7 +88,7 @@ If you use the Count and CommandLine parameters in the same command, Clear-Histo
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -105,7 +105,7 @@ To find the history ID of a command, use Get-History.
 ```yaml
 Type: Int32[]
 Parameter Sets: IDParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -121,7 +121,7 @@ By default, Clear-History deletes the oldest entries in the history.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -186,4 +186,3 @@ This cmdlet does not generate any output.
 [Invoke-History](Invoke-History.md)
 
 [about_History](About/about_History.md)
-
