@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -29,7 +29,7 @@ Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Wait-Process cmdlet waits for one or more running processes to be stopped before accepting input. 
+The Wait-Process cmdlet waits for one or more running processes to be stopped before accepting input.
 In the Windows PowerShell console, this cmdlet suppresses the command prompt until the processes are stopped.
 You can specify a process by process name or process ID (PID), or pipe a process object to Wait-Process.
 
@@ -100,7 +100,7 @@ Enter a variable that contains the process objects, or type a command or express
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -168,4 +168,3 @@ This cmdlet does not generate any output.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-
