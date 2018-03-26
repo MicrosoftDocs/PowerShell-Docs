@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -123,7 +123,7 @@ To get the job results, use a Receive-Job command
 ```
 The first command uses the New-PSSession cmdlet to create a session on the Server01 computer. The command saves the session in the $s variable.The second command gets the session in the $s variable. Notice that the **State** is **Opened** and the **Availability** is **Available**. These values indicate that you are connected to the session and can run commands in the session.
 PS C:\> $s = New-PSSession -ComputerName Server01 -Name AD -ConfigurationName ADEndpoint
-PS C:\> $s 
+PS C:\> $s
 
 Id Name    ComputerName    State         ConfigurationName     Availability
  -- ----    ------------    -----         -----------------     ------------
@@ -155,7 +155,7 @@ Job Id     Name      State         HasMoreData     Location
 The sixth command uses the Get-PSSession cmdlet to check the job state. The output confirms that, in addition to resuming script execution and getting the script results, the **Receive-PSSession** cmdlet reconnected to the AD session, which is now open and available for commands.
 PS C:\> Get-PSSession -ComputerName Server01
 Id Name    ComputerName    State         ConfigurationName     Availability
--- ----    ------------    -----         -----------------     ------------ 
+-- ----    ------------    -----         -----------------     ------------
  1 Backup  Server01        Disconnected  Microsoft.PowerShell          Busy
  8 AD      Server01        Opened        ADEndpoint                Available
 ```
@@ -183,7 +183,7 @@ The fourth command uses the **Receive-PSSession** cmdlet to connect to the sessi
 PS C:\> $Results = Receive-PSSession -Session $s
 PS C:\> $s
  Id Name    ComputerName    State         ConfigurationName     Availability
--- ----    ------------    -----         -----------------     ------------ 
+-- ----    ------------    -----         -----------------     ------------
  1 ITTask  Server01        Opened        ITTasks                  Available
  8 ITTask  Server02        Opened        ITTasks                  Available
  2 ITTask  Server30        Opened        ITTasks                  Available
@@ -216,7 +216,7 @@ Id     Name           State         HasMoreData     Location
 The fourth command disconnects the session in the $s variable.
 PS C:\> $s | Disconnect-PSSession
 Id Name   ComputerName    State         ConfigurationName     Availability
--- ----   ------------    -----         -----------------     ------------ 
+-- ----   ------------    -----         -----------------     ------------
 1  Test   Server01        Disconnected  Microsoft.PowerShell  None
 
 The fifth command shows the effect of disconnecting on the job object in the $j variable. The job state is now Disconnected.
@@ -244,8 +244,8 @@ This example shows what happens to a job that is running in a disconnected sessi
 ## PARAMETERS
 
 ### -Authentication
-Specifies the mechanism that is used to authenticate the user's credentials in the command to reconnect to the disconnected session. 
-Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**. 
+Specifies the mechanism that is used to authenticate the user's credentials in the command to reconnect to the disconnected session.
+Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**.
 The default value is **Default**.
 
 For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
@@ -257,7 +257,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -278,7 +278,7 @@ To get a certificate thumbprint, use a **Get-Item** or **Get-ChildItem** command
 ```yaml
 Type: String
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -319,7 +319,7 @@ If you type a user name, you will be prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -337,7 +337,7 @@ This parameter is valid, but not effective, when the session is stored on the lo
 ```yaml
 Type: Int32
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -356,7 +356,7 @@ The instance ID is stored in the **InstanceID** property of the PSSession.
 ```yaml
 Type: Guid
 Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -368,7 +368,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Guid
 Parameter Sets: InstanceId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -392,7 +392,7 @@ If the default value or explicit value of  the **OutTarget** parameter is not **
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -407,7 +407,7 @@ Specifies the friendly name of the disconnected session.
 ```yaml
 Type: String
 Parameter Sets: ComputerSessionName, ConnectionUriSessionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -419,7 +419,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: SessionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -446,7 +446,7 @@ Typically, the host program displays returned objects at the command line withou
 ```yaml
 Type: OutTarget
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -456,8 +456,8 @@ Accept wildcard characters: False
 ```
 
 ### -Port
-Specifies the network port on the remote computer that is used to reconnect to the session. 
-To connect to a remote computer, the remote computer must be listening on the port that the connection uses. 
+Specifies the network port on the remote computer that is used to reconnect to the session.
+To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
@@ -474,7 +474,7 @@ An alternate port setting might prevent the command from running on all computer
 ```yaml
 Type: Int32
 Parameter Sets: ComputerSessionName, ComputerInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -490,7 +490,7 @@ Enter a variable that contains the PSSession or a command that creates or gets t
 ```yaml
 Type: PSSession
 Parameter Sets: Session
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -511,7 +511,7 @@ If you use this parameter, but SSL is not available on the port used for the com
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerSessionName, ComputerInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -533,7 +533,7 @@ The default value is 5.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ConnectionUriSessionName, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -555,7 +555,7 @@ It does not change the application that the session uses.
 ```yaml
 Type: String
 Parameter Sets: ComputerSessionName, ComputerInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -579,7 +579,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: String
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -591,7 +591,7 @@ Accept wildcard characters: False
 ### -ConnectionUri
 Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint that is used to reconnect to the disconnected session.
 
-The URI must be fully qualified. 
+The URI must be fully qualified.
 The format of this string is as follows:
 
 `\<Transport\>://\<ComputerName\>:\<Port\>/\<ApplicationName\>`
@@ -621,7 +621,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
-Sets advanced options for the session. 
+Sets advanced options for the session.
 Enter a **SessionOption** object, such as one that you create by using the New-PSSessionOption cmdlet, or a hash table in which the keys are session option names and the values are session option values.
 
 The default values for the options are determined by the value of the **$PSSessionOption** preference variable, if it is set.
@@ -637,7 +637,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: PSSessionOption
 Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -764,4 +764,3 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 [about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
-

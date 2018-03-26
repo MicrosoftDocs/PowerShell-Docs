@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -172,7 +172,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Hashtable
 Parameter Sets: FilterParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -193,7 +193,7 @@ To find the ID of a job, type "Get-Job" without parameters.
 ```yaml
 Type: Int32[]
 Parameter Sets: SessionIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -212,7 +212,7 @@ To find the instance ID of a job, use Get-Job.
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -230,7 +230,7 @@ By default, Stop-Job deletes all jobs that were started in the current session.
 ```yaml
 Type: Job[]
 Parameter Sets: JobParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -249,7 +249,7 @@ Because the friendly name is not guaranteed to be unique, use the WhatIf and Con
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -265,7 +265,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -283,7 +283,7 @@ For more information about job states, see [JobState Enumeration](https://msdn.m
 ```yaml
 Type: JobState
 Parameter Sets: StateParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -365,4 +365,3 @@ Otherwise, this cmdlet does not generate any output.
 [about_Jobs](About/about_Jobs.md)
 
 [about_Scopes](About/about_scopes.md)
-

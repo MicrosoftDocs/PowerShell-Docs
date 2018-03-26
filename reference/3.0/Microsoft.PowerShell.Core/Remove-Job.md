@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -166,7 +166,7 @@ Deletes jobs that include the specified words in the command.
 ```yaml
 Type: String[]
 Parameter Sets: CommandParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -188,7 +188,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Hashtable
 Parameter Sets: FilterParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -224,7 +224,7 @@ To find the ID of a job, type "Get-Job" without parameters.
 ```yaml
 Type: Int32[]
 Parameter Sets: SessionIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -242,7 +242,7 @@ To find the instance ID of a job, use Get-Job or display the job object.
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -259,7 +259,7 @@ You can also use a pipeline operator to submit jobs to the **Remove-Job** cmdlet
 ```yaml
 Type: Job[]
 Parameter Sets: JobParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -277,7 +277,7 @@ Because the friendly name is not guaranteed to be unique, even within the sessio
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -294,7 +294,7 @@ To delete jobs with a state of Running, use the **Force** parameter.
 ```yaml
 Type: JobState
 Parameter Sets: StateParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -369,4 +369,3 @@ This cmdlet does not generate any output.
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [about_Jobs](About/about_Jobs.md)
-
