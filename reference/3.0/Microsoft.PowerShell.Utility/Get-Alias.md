@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -65,7 +65,7 @@ Alias           clhy -> Clear-History â€¦
 
 This command gets all aliases in the current session.
 
-The output shows the "\<alias\> -\> \<definition\>" format that was introduced in Windows PowerShell 3.0. 
+The output shows the "\<alias\> -\> \<definition\>" format that was introduced in Windows PowerShell 3.0.
 This format is used only for aliases that do not include hyphens, because aliases with hyphens are typically preferred names for cmdlets and functions, rather than nicknames.
 ### Example 2
 ```powershell
@@ -113,7 +113,7 @@ This parameter is called Definition, because it searches for the item name in th
 ```yaml
 Type: String[]
 Parameter Sets: Definition
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -131,7 +131,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -168,7 +168,7 @@ For more information, see about_Scopes.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -204,4 +204,3 @@ Get-Alias returns the same object for every alias, but Windows PowerShell uses a
 [Alias Provider](../microsoft.powershell.core/providers/alias-provider.md)
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
-
