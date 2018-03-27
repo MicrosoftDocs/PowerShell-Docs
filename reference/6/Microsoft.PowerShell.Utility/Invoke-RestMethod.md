@@ -13,7 +13,7 @@ title:  Invoke-RestMethod
 ## Synopsis
 Sends an HTTP or HTTPS request to a RESTful web service.
 
-## Syntax
+## SYNTAX
 
 ### StandardMethod (Default)
 ```
@@ -24,8 +24,9 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
  [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
- [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### StandardMethodNoProxy
@@ -36,9 +37,9 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
+ [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### CustomMethod
@@ -50,8 +51,9 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
  [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
- [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### CustomMethodNoProxy
@@ -62,9 +64,9 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
+ [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ## Description
