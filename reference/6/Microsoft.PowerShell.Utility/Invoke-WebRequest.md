@@ -23,8 +23,8 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
  [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
  [-Method <WebRequestMethod>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
- [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
- [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
+ [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### StandardMethodNoProxy
@@ -34,8 +34,9 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
  [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
  [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- [-Method <WebRequestMethod>] [-NoProxy] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
- [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Method <WebRequestMethod>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### CustomMethod
@@ -46,8 +47,8 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
  [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
  -CustomMethod <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
- [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
- [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
+ [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### CustomMethodNoProxy
@@ -57,8 +58,9 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
  [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
  [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- -CustomMethod <String> [-NoProxy] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
- [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ -CustomMethod <String> [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ## DESCRIPTION
