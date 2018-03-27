@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -190,7 +190,7 @@ Specifies a script block that runs before processing any input objects.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ScriptBlockSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -220,7 +220,7 @@ Specifies a script block that runs after processing all input objects.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ScriptBlockSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -239,7 +239,7 @@ Because InputObject cannot return individual properties from an array or collect
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -258,7 +258,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: PropertyAndMethodSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -274,7 +274,7 @@ Enter a script block that describes the operation.
 ```yaml
 Type: ScriptBlock[]
 Parameter Sets: ScriptBlockSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -291,7 +291,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: ScriptBlock[]
 Parameter Sets: ScriptBlockSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -333,4 +333,3 @@ The objects that ForEach-Object returns are determined by the input.
 * The **ForEach-Object** cmdlet works much like the **Foreach** statement, except that you cannot pipe input to a **Foreach** statement. For more information about the **Foreach** statement, see about_Foreach (http://go.microsoft.com/fwlink/?LinkID=113229).
 
 ## RELATED LINKS
-
