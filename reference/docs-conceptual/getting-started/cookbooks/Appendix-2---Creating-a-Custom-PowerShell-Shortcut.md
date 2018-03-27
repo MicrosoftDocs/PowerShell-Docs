@@ -4,8 +4,8 @@ keywords:  powershell,cmdlet
 title:  Appendix 2 Creating a Custom PowerShell Shortcut
 ms.assetid:  5d4fd421-5d43-4ec7-86fd-acfe887b066e
 ---
-
 # Appendix 2 - Creating a Custom PowerShell Shortcut
+
 The following procedure describes how to create a shortcut to Windows PowerShell that has several convenient options customized.
 
 1. Create a shortcut that points to Powershell.exe.
@@ -33,4 +33,3 @@ The following procedure describes how to create a shortcut to Windows PowerShell
 11. If you want to place the console at a particular point on the desktop when it is opened, clear the **Let system position window** check box in the **Window position** section, and then change the values in the **Left** and **Top** boxes in the **Window position** section.
 
 12. Click **OK**.
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -12,7 +12,7 @@ Uninstalls a module which was installed using PowerShellGet cmdlets.
 
 ## Description
 
-The Uninstall-Module cmdlet uninstalls the specified module from the local computer. 
+The Uninstall-Module cmdlet uninstalls the specified module from the local computer.
 You cannot uninstall a module if some other modules have a dependency on it.
 The Uninstall-Module cmdlets also validates if the module being uninstalled is in-use or not. An error will be thrown if the module is in use.
 
@@ -123,4 +123,3 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    , Exception
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class
@@ -23,13 +23,13 @@ uint32 SendConfigurationApplyAsync(
 Parameters
 ----------
 
-*ConfigurationData* \[in\]  
+*ConfigurationData* \[in\]
 The environment data for the configuration.
 
-*force* \[in\]  
+*force* \[in\]
 **true** to force the configuration to stop.
 
-*jobId* \[in\]  
+*jobId* \[in\]
 The ID of the job for which to send the configuration.
 
 ## Return value
@@ -52,11 +52,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

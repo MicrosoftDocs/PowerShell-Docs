@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -82,7 +82,7 @@ Gets the status of the most recent system restore operation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: LastStatus
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -99,7 +99,7 @@ By default, Get-ComputerRestorePoint gets all restore points on the local comput
 ```yaml
 Type: Int32[]
 Parameter Sets: ID
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -136,4 +136,3 @@ When you use the LastStatus parameter, this cmdlet returns a string.
 [Restart-Computer](Restart-Computer.md)
 
 [Restore-Computer](Restore-Computer.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Environment Resource
@@ -25,13 +25,13 @@ Environment [string] #ResourceName
 
 ## Properties
 
-|  Property  |  Description   | 
-|---|---| 
-| Name| Indicates the name of the environment variable for which you want to ensure a specific state.| 
-| Ensure| Indicates if a variable exists. Set this property to __Present__ to create the environment variable if it does not exist or to ensure that its value matches what is provided through the __Value__ property if the variable already exists. Set it to __Absent__ to delete the variable if it exists.| 
-| Path| Defines the environment variable that is being configured. Set this property to __$true__ if the variable is the __Path__ variable; otherwise, set it to __$false__. The default is __$false__. If the variable being configured is the __Path__ variable, the value provided through the __Value__ property will be appended to the existing value.| 
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
-| Value| The value to assign to the environment variable.| 
+|  Property  |  Description   |
+|---|---|
+| Name| Indicates the name of the environment variable for which you want to ensure a specific state.|
+| Ensure| Indicates if a variable exists. Set this property to __Present__ to create the environment variable if it does not exist or to ensure that its value matches what is provided through the __Value__ property if the variable already exists. Set it to __Absent__ to delete the variable if it exists.|
+| Path| Defines the environment variable that is being configured. Set this property to __$true__ if the variable is the __Path__ variable; otherwise, set it to __$false__. The default is __$false__. If the variable being configured is the __Path__ variable, the value provided through the __Value__ property will be appended to the existing value.|
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
+| Value| The value to assign to the environment variable.|
 
 ## Example
 
@@ -45,4 +45,3 @@ Environment EnvironmentExample
     Value = "TestValue"
 }
 ```
-

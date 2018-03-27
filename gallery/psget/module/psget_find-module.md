@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -17,7 +17,7 @@ For each module found, Find-Module returns a PSRepositoryItemInfo object which c
 - Find-Module can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.
   - These version parameters are allowed only with the single module name without any wildcards.
-  - If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified. 
+  - If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.
   - If the RequiredVersion parameter is specified, Find-Module only returns the version of module that exactly matches the specified version.
 - Find-Module can filter on module metadata with the -Tag parameter
 - Find-Module can filter on repository-specific search language with the -Filter parameter.
@@ -50,7 +50,7 @@ Find-Module -Name AzureRM*
 # Find all versions of a module
 Find-Module -Name PSReadline -AllVersions
 
-# Find a module with -MinimumVersion. 
+# Find a module with -MinimumVersion.
 # With MinimumVersion we can find a module whose version is greate than or equal to the specified MinimumVersion value.
 Find-Module -Name PSReadline -MinimumVersion 1.0.0.12
 
@@ -138,4 +138,3 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-

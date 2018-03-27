@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -49,7 +49,7 @@ Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nug
 ```
 
 ## [Find-PackageProvider Cmdlet](https://technet.microsoft.com/library/mt676544.aspx)
-The Find-PackageProvider cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet. These are package providers available for installation with the Install-PackageProvider cmdlet. By default, this includes modules available in the PowerShell Gallery with the 'PackageManagement' and 'Provider' Tags. 
+The Find-PackageProvider cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet. These are package providers available for installation with the Install-PackageProvider cmdlet. By default, this includes modules available in the PowerShell Gallery with the 'PackageManagement' and 'Provider' Tags.
 
 Find-PackageProvider also finds matching PackageManagement providers that are available in the PackageManagement azure blob store where we use the PackageManagement boostrapper provider for finding and installing them.
 ```powershell
@@ -66,7 +66,7 @@ Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 
 Find-PackageProvider -Source  C:\sharedfolder\Providers\
 Install-PackageProvider -Source C:\sharedfolder\Providers\ -Name nuget -force
-	
+
 ```
 
 ## [Get-Package Cmdlet](https://technet.microsoft.com/library/dn890704.aspx)
@@ -121,7 +121,7 @@ Get-PackageProvider –ListAvailable
 Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 
-As of the Windows Server Technical Preview(TP5), Install-PackageProvider does install as well as import the provider. Hence after you run find-packageprovider and install-packageprovider, the provider should be ready to use 
+As of the Windows Server Technical Preview(TP5), Install-PackageProvider does install as well as import the provider. Hence after you run find-packageprovider and install-packageprovider, the provider should be ready to use
 ```
 
 ##[ Install-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890711.aspx)
@@ -175,10 +175,10 @@ Find-Package -source c:\test
 ```
 
 ## [Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
-This cmdlet changes information about an existing package source. 
+This cmdlet changes information about an existing package source.
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
-Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2 
+Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2
 ```
 
 ## [Uninstall-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890702.aspx)
@@ -196,4 +196,3 @@ Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Pack
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"
 ```
-

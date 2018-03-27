@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -129,7 +129,7 @@ You can also pipe process objects to Debug-Process.
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 
 ### -Name
 Specifies the names of the processes to be debugged.
-If there is more than one process with the same name, Debug-Process attaches a debugger to all processes with that name. 
+If there is more than one process with the same name, Debug-Process attaches a debugger to all processes with that name.
 The parameter name ("Name") is optional.
 
 ```yaml
@@ -211,4 +211,3 @@ This cmdlet does not generate any output.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-

@@ -1,4 +1,4 @@
-# WS-Management (WSMan) Remoting in PowerShell Core 
+# WS-Management (WSMan) Remoting in PowerShell Core
 
 ## Instructions to Create a Remoting Endpoint
 
@@ -28,19 +28,19 @@ The script must be executed within an Administrator-level PowerShell session and
 
 #### Executed by the instance of PowerShell that it will register
 
-``` powershell
+```powershell
 Install-PowerShellRemoting.ps1
 ```
 
 #### Executed by another instance of PowerShell on behalf of the instance that it will register
 
-``` powershell
+```powershell
 <path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 For Example:
 
-``` powershell
+```powershell
 Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
@@ -51,7 +51,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 
 Create a PowerShell session to the new PowerShell endpoint by specifying `-ConfigurationName "some endpoint name"`. To connect to the PowerShell instance from the example above, use either:
 
-``` powershell
+```powershell
 New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```

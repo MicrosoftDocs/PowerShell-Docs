@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -73,7 +73,7 @@ Specifies the encryption key as a byte array.
 ```yaml
 Type: Byte[]
 Parameter Sets: Open
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -89,7 +89,7 @@ The secure string value is converted to a byte array before being used as the ke
 ```yaml
 Type: SecureString
 Parameter Sets: Secure
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -104,7 +104,7 @@ Specifies the secure string to convert to an encrypted standard string.
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -136,4 +136,3 @@ Similarly, 192-bit and 256-bit keys correspond to byte arrays of 24 and 32 digit
 [ConvertTo-SecureString](ConvertTo-SecureString.md)
 
 [Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
-

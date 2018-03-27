@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -15,4 +15,3 @@ What are the steps to contribute to the gallery
 Where and when can I see my contribution to the the gallery
 
 THANK YOU FOR CONTRIBUTING TO THE POWERSHELL GALLERY.
-

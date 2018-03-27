@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -12,7 +12,7 @@ Gets the registered repositories on a computer.
 
 ## Description
 
-The Register-PSRepository cmdlet registers the online repository for PowerShell modules. After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets. The registered repository becomes the default repository in Find-Module and Install-Module. 
+The Register-PSRepository cmdlet registers the online repository for PowerShell modules. After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets. The registered repository becomes the default repository in Find-Module and Install-Module.
 
 Registered repositories are user-specific. They are not registered in a system-wide context.
 
@@ -29,7 +29,7 @@ Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ## Example commands
 
 ### Register a PowerShell Repository
-You can configure PowerShellGet to work against internal repositories. 
+You can configure PowerShellGet to work against internal repositories.
 After a repository is registered, you can use Find-Module and Install-Module to work with it.
 
 ```powershell
@@ -111,4 +111,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

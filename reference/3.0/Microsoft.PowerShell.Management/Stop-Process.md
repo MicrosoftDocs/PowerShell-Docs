@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -30,10 +30,10 @@ Stop-Process [-InputObject] <Process[]> [-PassThru] [-Force] [-WhatIf] [-Confirm
 
 ## DESCRIPTION
 The Stop-Process cmdlet stops one or more running processes.
-You can specify a process by process name or process ID (PID), or pass a process object to Stop-Process. 
+You can specify a process by process name or process ID (PID), or pass a process object to Stop-Process.
 Stop-Process works only on processes running on the local computer.
 
-On Windows Vista and later versions of Windows, to stop a process that is not owned by the current user, you must start Windows PowerShell with the "Run as administrator" option. 
+On Windows Vista and later versions of Windows, to stop a process that is not owned by the current user, you must start Windows PowerShell with the "Run as administrator" option.
 Also, you are will not be prompted for confirmation unless you specify the *Confirm* parameter.
 ## EXAMPLES
 
@@ -123,7 +123,7 @@ To find the owner of a process, use the Get-WmiMethod cmdlet to get a Win32_Proc
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -141,7 +141,7 @@ The parameter name ("Id") is optional.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -157,7 +157,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -189,7 +189,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -261,4 +261,3 @@ In an extreme case, stopping a process can stop Windows.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-

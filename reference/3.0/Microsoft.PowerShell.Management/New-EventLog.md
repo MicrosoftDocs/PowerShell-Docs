@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -44,7 +44,7 @@ The command requires that the NewTestApp.dll file is located on the Server01 com
 ## PARAMETERS
 
 ### -CategoryResourceFile
-Specifies the path to the file that contains category strings for the source events. 
+Specifies the path to the file that contains category strings for the source events.
 This file is also known as the Category Message File.
 
 The file must be present on the computer on which the event log is being created.
@@ -195,4 +195,3 @@ The file name is the first eight characters of the Log property with an .evt fil
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-

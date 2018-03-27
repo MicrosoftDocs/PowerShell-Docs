@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -34,21 +34,21 @@ PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
 
 {
 
-    "MinSupportedDateTime":  "\/Date(-62135568000000)\/", 
+    "MinSupportedDateTime":  "\/Date(-62135568000000)\/",
 
-    "MaxSupportedDateTime":  "\/Date(253402300799999)\/", 
+    "MaxSupportedDateTime":  "\/Date(253402300799999)\/",
 
-    "AlgorithmType":  1, 
+    "AlgorithmType":  1,
 
-    "CalendarType":  1, 
+    "CalendarType":  1,
 
     "Eras":  [
 
                  1
 
-             ], 
+             ],
 
-    "TwoDigitYearMax":  2029, 
+    "TwoDigitYearMax":  2029,
 
     "IsReadOnly":  false
 
@@ -71,53 +71,53 @@ PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 
 {
 
-    "DisplayHint":  2, 
+    "DisplayHint":  2,
 
     "DateTime":  "Friday, January 13, 2012 8:06:16 PM",
 
-    "Date":  "\/Date(1326441600000)\/", 
+    "Date":  "\/Date(1326441600000)\/",
 
-    "Day":  13, 
+    "Day":  13,
 
-    "DayOfWeek":  5, 
+    "DayOfWeek":  5,
 
-    "DayOfYear":  13, 
+    "DayOfYear":  13,
 
-    "Hour":  20, 
+    "Hour":  20,
 
-    "Kind":  2, 
+    "Kind":  2,
 
-    "Millisecond":  221, 
+    "Millisecond":  221,
 
-    "Minute":  6, 
+    "Minute":  6,
 
-    "Month":  1, 
+    "Month":  1,
 
-    "Second":  16, 
+    "Second":  16,
 
-    "Ticks":  634620819762218083, 
+    "Ticks":  634620819762218083,
 
     "TimeOfDay":  {
 
-                      "Ticks":  723762218083, 
+                      "Ticks":  723762218083,
 
-                      "Days":  0, 
+                      "Days":  0,
 
-                      "Hours":  20, 
+                      "Hours":  20,
 
-                      "Milliseconds":  221, 
+                      "Milliseconds":  221,
 
-                      "Minutes":  6, 
+                      "Minutes":  6,
 
-                      "Seconds":  16, 
+                      "Seconds":  16,
 
-                      "TotalDays":  0.83768775241087956, 
+                      "TotalDays":  0.83768775241087956,
 
-                      "TotalHours":  20.104506057861109, 
+                      "TotalHours":  20.104506057861109,
 
-                      "TotalMilliseconds":  72376221.8083, 
+                      "TotalMilliseconds":  72376221.8083,
 
-                      "TotalMinutes":  1206.2703634716668, 
+                      "TotalMinutes":  1206.2703634716668,
 
                       "TotalSeconds":  72376.22180829999
 
@@ -127,7 +127,7 @@ PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 
 }
 
-The second command uses ConvertFrom-Json to convert the JSON string to a JSON object. 
+The second command uses ConvertFrom-Json to convert the JSON string to a JSON object.
 PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 
 DisplayHint : 2
@@ -183,7 +183,7 @@ Omits white space and indented formatting in the output string.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -199,7 +199,7 @@ The default value is 2.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -220,7 +220,7 @@ When the input object is an empty string, **ConvertTo-Json** returns an empty st
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -251,4 +251,3 @@ You can pipe any object to **ConvertTo-Json**.
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
-

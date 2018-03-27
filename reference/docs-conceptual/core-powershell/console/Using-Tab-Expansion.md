@@ -4,8 +4,8 @@ keywords:  powershell,cmdlet
 title:  Using Tab Expansion
 ms.assetid:  c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 ---
-
 # Using Tab Expansion
+
 Command-line shells often provide a way to complete the names of long files or commands automatically, speeding up command entry and providing . Windows PowerShell allows you to fill in file names and cmdlet names by pressing the **Tab** key.
 
 > [!NOTE]
@@ -41,4 +41,3 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > One limitation of the tab expansion process is that tabs are always interpreted as attempts to complete a word. If you copy and paste command examples into a PowerShell console, make sure that the sample does not contain tabs; if it does, the results will be unpredictable and will almost certainly not be what you intended.
-

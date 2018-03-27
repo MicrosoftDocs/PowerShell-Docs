@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -22,4 +22,3 @@ Install-PackageProvider NuGet -MinimumVersion 2.8.5.206 -Force
 Launch new PowerShell Console
 Update-Module Azure -Verbose
 ```
-

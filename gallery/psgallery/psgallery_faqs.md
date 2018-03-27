@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -165,4 +165,3 @@ Check out [Managing Item Owners on PowerShellGallery.com](Managing-Item-Owners.m
 ## How do I deal with an item owner who is violating my item license?
 
 We encourage the PowerShell community to work together to resolve any disputes that may arise between item owners and the owners of other items.  We have crafted a [dispute resolution process](psgallery_dispute_resolution.md) that we ask you to follow before PowerShellGallery.com administrators intercede.
-

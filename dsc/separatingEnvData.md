@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Separating configuration and environment data
@@ -23,19 +23,19 @@ For a detailed description of the **ConfigurationData** hashtable, see [Using co
 
 ## A simple example
 
-Let's look at a very simple example to see how this works. 
-We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others: 
+Let's look at a very simple example to see how this works.
+We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:
 
 ```powershell
 Configuration MyDscConfiguration {
-    
+
 	Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
 		WindowsFeature IISInstall {
 			Ensure = 'Present'
 			Name   = 'Web-Server'
 		}
-		
+
 	}
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
@@ -46,7 +46,7 @@ Configuration MyDscConfiguration {
     }
 }
 
-$MyData = 
+$MyData =
 @{
     AllNodes =
     @(
@@ -73,14 +73,14 @@ The result is that two MOF files are created:
     Directory: C:\DscTests\MyDscConfiguration
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:09 PM           1968 VM-1.mof                                                                                                                
--a----        3/31/2017   5:09 PM           1970 VM-2.mof  
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:09 PM           1968 VM-1.mof
+-a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
- 
+
 `$MyData` specifies two different nodes, each with
-its own `NodeName` and `Role`. The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection 
+its own `NodeName` and `Role`. The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection
 against the `Role` property..
 
 ## Using configuration data to define development and production environments
@@ -130,9 +130,9 @@ We'll define the development and production environment data in a file namd `Dev
 
 ### Configuration script file
 
-Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), 
-and configure them accordingly. 
-The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes. 
+Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both),
+and configure them accordingly.
+The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.
 The site contents is also different, as specified by the `SiteContents` properties.
 
 At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.
@@ -152,7 +152,7 @@ Configuration MyWebApp
    {
         # Install prerequisites
         WindowsFeature installdotNet35
-        {            
+        {
             Ensure      = "Present"
             Name        = "Net-Framework-Core"
             Source      = "c:\software\sxs"
@@ -187,7 +187,7 @@ Configuration MyWebApp
         }
 
         # Stop the default website
-        xWebsite DefaultSite 
+        xWebsite DefaultSite
         {
             Ensure       = 'Present'
             Name         = 'Default Web Site'
@@ -208,7 +208,7 @@ Configuration MyWebApp
             Type            = 'Directory'
             DependsOn       = '[WindowsFeature]AspNet45'
 
-        }       
+        }
 
 
         # Create the new Website
@@ -237,10 +237,10 @@ When you run this configuration, three MOF files are created (one for each named
     Directory: C:\DscTests\MyWebApp
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof                                                                                                            
--a----        3/31/2017   5:47 PM           6994 Dev.mof                                                                                                                 
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof
+-a----        3/31/2017   5:47 PM           6994 Dev.mof
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
@@ -262,39 +262,39 @@ In this example, `ConfigFileContents` is accessed with the line:
 
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName           = “*”
             LogPath            = “C:\Logs”
         },
- 
+
         @{
             NodeName = “VM-1”
             SiteContents = “C:\Site1”
             SiteName = “Website1”
         },
- 
-        
+
+
         @{
             NodeName = “VM-2”;
             SiteContents = “C:\Site2”
             SiteName = “Website2”
         }
     );
- 
-    NonNodeData = 
+
+    NonNodeData =
     @{
         ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }   
-} 
- 
+     }
+}
+
 configuration WebsiteConfig
 {
     Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
- 
+
     node $AllNodes.NodeName
     {
         xWebsite Site
@@ -303,14 +303,14 @@ configuration WebsiteConfig
             PhysicalPath = $Node.SiteContents
             Ensure       = “Present”
         }
- 
+
         File ConfigFile
         {
             DestinationPath = $Node.SiteContents + “\\config.xml”
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
-} 
+}
 ```
 
 
@@ -318,4 +318,3 @@ configuration WebsiteConfig
 - [Using configuration data](configData.md)
 - [Credentials Options in Configuration Data](configDataCredentials.md)
 - [DSC Configurations](configurations.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  rpsqrd
 ms.topic:  conceptual
 keywords:  jea,powershell,security
@@ -140,7 +140,7 @@ For each command a user runs, a "CommandInvocation" line will be written, descri
 ParameterBindings follow each CommandInvocation to tell you about each parameter and value that was supplied with the command.
 In the above example, you can see that the parameter "Name" was supplied the value "Dns" for the "Get-Service" cmdlet.
 
-The output of each command will also trigger a CommandInvocation, usually to Out-Default. 
+The output of each command will also trigger a CommandInvocation, usually to Out-Default.
 The InputObject of Out-Default is the PowerShell object returned from the command.
 The details of that object are printed a few lines below, closely mimicking what the user would have seen.
 
@@ -148,4 +148,3 @@ The details of that object are printed a few lines below, closely mimicking what
 
 - [Audit user actions in a JEA session](audit-and-report.md)
 - [*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

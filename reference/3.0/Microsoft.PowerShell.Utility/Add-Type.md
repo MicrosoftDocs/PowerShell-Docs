@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -293,7 +293,7 @@ Accept wildcard characters: False
 ### -CodeDomProvider
 Specifies a code generator or compiler.
 **Add-Type** uses the specified compiler to compile the source code.
-The default is the CSharp compiler. 
+The default is the CSharp compiler.
 Use this parameter if you are using a language that cannot be specified by using the Language parameter.
 The CodeDomProvider that you specify must be able to generate assemblies from source code.
 
@@ -337,7 +337,7 @@ Use this parameter to prevent **Add-Type** from handling compiler warnings as er
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -355,7 +355,7 @@ Valid values are "CSharp", "CSharpVersion3", "VisualBasic", and "JScript".
 ```yaml
 Type: Language
 Parameter Sets: FromSource, FromMember
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -393,7 +393,7 @@ For more information, see the examples.
 ```yaml
 Type: String[]
 Parameter Sets: FromMember
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -414,7 +414,7 @@ Otherwise, the command fails.
 ```yaml
 Type: String
 Parameter Sets: FromMember
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -487,7 +487,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -508,7 +508,7 @@ To specify an in-memory assembly or the global assembly cache, use the **Assembl
 ```yaml
 Type: String[]
 Parameter Sets: FromPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -548,7 +548,7 @@ For example, if you define a type called "Exception", scripts that use "Exceptio
 ```yaml
 Type: String
 Parameter Sets: FromSource
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -591,7 +591,7 @@ Otherwise, this cmdlet does not generate any output.
 ## NOTES
 * The types that you add exist only in the current session.  To use the types in all sessions, add them to your Windows PowerShell profile. For more information about the profile, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 
-  Type names (and namespaces) must be unique within a session. 
+  Type names (and namespaces) must be unique within a session.
 You cannot unload a type or change it.
 If you need to change the code for a type, you must change the name or start a new Windows PowerShell session.
 Otherwise, the command fails.
@@ -606,4 +606,3 @@ For more information about this class, see the Microsoft .NET Framework SDK.
 [Add-Member](Add-Member.md)
 
 [New-Object](New-Object.md)
-

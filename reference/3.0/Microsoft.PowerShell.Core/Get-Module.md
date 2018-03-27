@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -330,7 +330,7 @@ Without the **All** parameter, Get-Module gets only the default module in each m
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Loaded, Available
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -350,7 +350,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: CimSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -370,7 +370,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Uri
 Parameter Sets: CimSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -388,7 +388,7 @@ Without this parameter, **Get-Module** gets only the modules that are both liste
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Available
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -400,7 +400,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PsSession, CimSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -417,7 +417,7 @@ You can also pipe the names to **Get-Module**.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -441,7 +441,7 @@ However, you can import only CIM-based and Cmdlet Definition XML (CDXML)-based m
 ```yaml
 Type: CimSession
 Parameter Sets: CimSession
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -463,7 +463,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSSession
 Parameter Sets: PsSession
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -486,7 +486,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Available, PsSession, CimSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -541,4 +541,3 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 [New-PSSession](New-PSSession.md)
 
 [Remove-Module](Remove-Module.md)
-

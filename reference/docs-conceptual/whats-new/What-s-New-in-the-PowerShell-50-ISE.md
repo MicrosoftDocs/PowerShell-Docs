@@ -218,7 +218,7 @@ Show-Command is new Windows PowerShell ISE 3.0.
 ## See also
 For more information about using Windows PowerShell ISE in Windows PowerShell, see the following links.
 
-- [Using the Windows PowerShell Integrated Scripting Environment](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Exploring the Windows PowerShell Integrated Scripting Environment](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [ISE on the TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Script Center](http://technet.microsoft.com/scriptcenter/default)
 

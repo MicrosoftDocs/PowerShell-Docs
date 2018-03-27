@@ -4,13 +4,14 @@ keywords:  powershell,cmdlet
 title:  Removing Objects from the Pipeline Where Object
 ms.assetid:  01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ---
-
 # Removing Objects from the Pipeline (Where-Object)
+
 In Windows PowerShell, you often generate and pass along more objects to a pipeline than you want. You can specify the properties of particular objects to display by using the **Format** cmdlets, but this does not help with the problem of removing entire objects from the display. You may want to filter objects before the end of a pipeline, so you can perform actions on only a subset of the initially-generated objects.
 
 Windows PowerShell includes a **Where-Object** cmdlet that allows you to test each object in the pipeline and only pass it along the pipeline if it meets a particular test condition. Objects that do not pass the test are removed from the pipeline. You supply the test condition as the value of the **Where-ObjectFilterScript** parameter.
 
 ### Performing Simple Tests with Where-Object
+
 The value of **FilterScript** is a *script block* -  one or more Windows PowerShell commands surrounded by braces {} - that evaluates to true or false. These script blocks can be very simple, but creating them requires knowing about another Windows PowerShell concept, comparison operators. A comparison operator compares the items that appear on each side of it. Comparison operators begin with a '-' character and are followed by a name. Basic comparison operators work on almost any kind of object. The more advanced comparison operators might only work on text or arrays.
 
 > [!NOTE]
@@ -40,12 +41,13 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 ```
 
 ### Filtering Based on Object Properties
+
 Since $_ refers to the current pipeline object, we can access its properties for our tests.
 
 As an example, we can look at the Win32_SystemDriver class in WMI. There might be hundreds of system drivers on a particular system, but you might only be interested in a particular set of the system drivers, such as those which are currently running. If you use Get-Member to view Win32_SystemDriver members (**Get-WmiObject -Class Win32_SystemDriver | Get-Member -MemberType Property**) you will see that the relevant property is State, and that it has a value of "Running" when the driver is running. You can filter the system drivers, selecting only the running ones by typing:
 
-```
-Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq "Running"}
+```powershell
+Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq 'Running'}
 ```
 
 This still produces a long list. You may want to filter to only select the drivers set to start automatically by testing the StartMode value as well:
@@ -85,8 +87,8 @@ mssmbios                                Microsoft System Management BIOS Driver
 
 There are two Where-Object elements in the above command, but they can be expressed in a single Where-Object element by using the -and logical operator, like this:
 
-```
-Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State -eq "Running") -and ($_.StartMode -eq "Manual") } | Format-Table -Property Name,DisplayName
+```powershell
+Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State -eq 'Running') -and ($_.StartMode -eq 'Manual') } | Format-Table -Property Name,DisplayName
 ```
 
 The standard logical operators are listed in the following table.
@@ -97,4 +99,3 @@ The standard logical operators are listed in the following table.
 |-or|Logical or; true if either side is true|(1 -eq 1) -or (1 -eq 2)|
 |-not|Logical not; reverses true and false|-not (1 -eq 2)|
 |\!|Logical not; reverses true and false|\!(1 -eq 2)|
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  StopConfiguration method of the MSFT_DSCLocalConfigurationManager class
@@ -21,7 +21,7 @@ uint32 StopConfiguration(
 Parameters
 ----------
 
-*force* \[in\]  
+*force* \[in\]
 **true** to force the configuration to stop.
 
 ## Return value
@@ -44,11 +44,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-
