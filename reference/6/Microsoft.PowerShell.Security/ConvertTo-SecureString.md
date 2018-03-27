@@ -48,11 +48,13 @@ If the standard string being converted was encrypted with **ConvertFrom-SecureSt
 ```
 PS C:\> $Secure = Read-Host -AsSecureString
 PS C:\> $Secure
-System.Security.SecureString PS C:\> $Encrypted = ConvertFrom-SecureString -SecureString $Secure
+System.Security.SecureString 
+PS C:\> $Encrypted = ConvertFrom-SecureString -SecureString $Secure
 PS C:\> $Encrypted
 01000000d08c9ddf0115d1118c7a00c04fc297eb010000001a114d45b8dd3f4aa11ad7c0abdae9800000000002000000000003660000a8000000100000005df63cea84bfb7d70bd6842e7
 efa79820000000004800000a000000010000000f10cd0f4a99a8d5814d94e0687d7430b100000008bf11f1960158405b2779613e9352c6d14000000e6b7bf46a9d485ff211b9b2a2df3bd
-6eb67aae41 PS C:\> $Secure2 = ConvertTo-SecureString -String $Encrypted
+6eb67aae41 
+PS C:\> $Secure2 = ConvertTo-SecureString -String $Encrypted
 PS C:\> $Secure2
 System.Security.SecureString
 ```
