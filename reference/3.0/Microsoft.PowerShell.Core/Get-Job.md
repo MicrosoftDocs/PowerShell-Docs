@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -241,7 +241,7 @@ The first command uses the **Workflow** keyword to create the "WFProcess" workfl
 PS C:\> Workflow WFProcess {Get-Process}
 
 The second command uses the **AsJob** parameter of the WFProcess workflow to run the workflow as a background job. It uses the **JobName** parameter of the workflow to specify a name for the job, and the **PSPrivateMetadata** parameter of the workflow to specify a custom ID.
-PS C:\> WFProcess -AsJob -JobName WFProcessJob -PSPrivateMetadata @{MyCustomId = 92107} 
+PS C:\> WFProcess -AsJob -JobName WFProcessJob -PSPrivateMetadata @{MyCustomId = 92107}
 
 The third command uses the **Filter** parameter of **Get-Job** to get the job by custom ID that was specified in the **PSPrivateMetadata** parameter.
 PS C:\> Get-Job -Filter @{MyCustomId = 92107}
@@ -295,7 +295,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 The fifth command uses the **JobStateInfo** property of jobs and its **Reason** property to find out why Job5 failed.
 PS C:\> (Get-Job -Name Job5).JobStateInfo.Reason
-Connecting to remote server Server01 failed with the following error message : 
+Connecting to remote server Server01 failed with the following error message :
 Access is denied.
 For more information, see the about_Remote_Troubleshooting Help topic.
 ```
@@ -312,7 +312,7 @@ You can use wildcards to specify a command pattern.
 ```yaml
 Type: String[]
 Parameter Sets: CommandParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -334,7 +334,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Hashtable
 Parameter Sets: FilterParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -354,7 +354,7 @@ To find the ID of a job, type "**Get-Job**" without parameters.
 ```yaml
 Type: Int32[]
 Parameter Sets: SessionIdParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -373,7 +373,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: SessionIdParameterSet, CommandParameterSet, StateParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -392,7 +392,7 @@ To find the instance ID of a job, use **Get-Job**.
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -409,7 +409,7 @@ By default, **Get-Job** gets all jobs in the current session.
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -428,7 +428,7 @@ For more information about job states, see [JobState Enumeration](https://msdn.m
 ```yaml
 Type: JobState
 Parameter Sets: StateParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -450,7 +450,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: DateTime
 Parameter Sets: SessionIdParameterSet, CommandParameterSet, StateParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -472,7 +472,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: DateTime
 Parameter Sets: SessionIdParameterSet, CommandParameterSet, StateParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -494,7 +494,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: JobState
 Parameter Sets: SessionIdParameterSet, CommandParameterSet, StateParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -525,7 +525,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Boolean
 Parameter Sets: SessionIdParameterSet, CommandParameterSet, StateParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -546,7 +546,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Int32
 Parameter Sets: SessionIdParameterSet, CommandParameterSet, StateParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -600,4 +600,3 @@ You cannot pipe input to this cmdlet.
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [about_Scheduled_Jobs](../PSScheduledJob/About/about_Scheduled_Jobs.md)
-

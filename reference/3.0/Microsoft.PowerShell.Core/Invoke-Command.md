@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -414,7 +414,7 @@ The default value is 5.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: FilePathUri, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -438,7 +438,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 ```yaml
 Type: String
 Parameter Sets: ComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -480,7 +480,7 @@ Runs the command as a background job on a remote computer.
 Use this parameter to run commands that take an extensive time to complete.
 
 When you use **AsJob**, the command returns an object that represents the job, and then displays the command prompt.
-You can continue to work in the session while the job completes. 
+You can continue to work in the session while the job completes.
 To manage the job, use the Job cmdlets.
 To get the job results, use the Receive-Job cmdlet.
 
@@ -492,7 +492,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, FilePathUri, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -502,8 +502,8 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
-Specifies the mechanism that is used to authenticate the user's credentials. 
-Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**. 
+Specifies the mechanism that is used to authenticate the user's credentials.
+Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**.
 The default value is **Default**.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
@@ -517,7 +517,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerName, FilePathComputerName, FilePathUri, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -538,7 +538,7 @@ To get a certificate, use the Get-Item or Get-ChildItem commands in the Windows 
 ```yaml
 Type: String
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -591,7 +591,7 @@ For more information, see about_preference_variables.
 ```yaml
 Type: String
 Parameter Sets: ComputerName, FilePathComputerName, FilePathUri, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -642,7 +642,7 @@ When you type a user name, you will be prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerName, FilePathComputerName, FilePathUri, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -675,7 +675,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, FilePathComputerName, FilePathUri, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -766,7 +766,7 @@ When using InputObject, use the $input automatic variable in the value of the Sc
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -786,7 +786,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 ```yaml
 Type: String
 Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, FilePathUri, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -797,7 +797,7 @@ Accept wildcard characters: False
 
 ### -Port
 Specifies the network port  on the remote computer used for this command.
-To connect to a remote computer, the remote computer must be listening on the port that the connection uses. 
+To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, configure the WinRM listener on the remote computer to listen at that port.
@@ -814,7 +814,7 @@ An alternate port setting might prevent the command from running on all computer
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -860,7 +860,7 @@ For more information, see about_PSSessions.
 ```yaml
 Type: PSSession[]
 Parameter Sets: Session, FilePathRunspace
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -870,7 +870,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
-Sets advanced options for the session. 
+Sets advanced options for the session.
 Enter a **SessionOption** object, such as one that you create by using the New-PSSessionOption cmdlet, or a hash table in which the keys are session option names and the values are session option values.
 
 The default values for the options are determined by the value of the **$PSSessionOption** preference variable, if it is set.
@@ -886,7 +886,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: PSSessionOption
 Parameter Sets: ComputerName, FilePathComputerName, FilePathUri, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -904,7 +904,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, FilePathUri, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -925,7 +925,7 @@ If you use this parameter, but SSL is not available on the port used for the com
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -945,7 +945,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: InProcess
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -964,7 +964,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: ComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -1038,4 +1038,3 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 [about_Remote_Variables](About/about_Remote_Variables.md)
 
 [about_Scopes](About/about_scopes.md)
-

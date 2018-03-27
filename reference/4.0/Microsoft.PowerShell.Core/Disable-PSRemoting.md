@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -251,7 +251,7 @@ By default, you are prompted to confirm each operation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -334,4 +334,3 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
 [WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
-

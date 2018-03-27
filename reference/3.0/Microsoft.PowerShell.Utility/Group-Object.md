@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -211,7 +211,7 @@ The AsString parameter does not convert the objects in the groups to strings.
 ## PARAMETERS
 
 ### -AsHashTable
-Returns the group as a hash table. 
+Returns the group as a hash table.
 The keys of the hash table are the property values by which the objects are grouped.
 The values of the hash table are the objects that have that property value.
 
@@ -238,7 +238,7 @@ This parameter is valid only when used with the AsHashTable parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -254,7 +254,7 @@ Without this parameter, the property values of objects in a group might have dif
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -269,7 +269,7 @@ Specifies the culture to use when comparing strings.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -290,7 +290,7 @@ To group the objects in a collection, pipe the objects to Group-Object.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -305,7 +305,7 @@ Omits the members of a group from the results.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -324,7 +324,7 @@ To create a calculated, property, create a hash table with an Expression key tha
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -361,4 +361,3 @@ Ungroupable objects appear in the final GroupInfo object output in a group named
 
 *
 ## RELATED LINKS
-

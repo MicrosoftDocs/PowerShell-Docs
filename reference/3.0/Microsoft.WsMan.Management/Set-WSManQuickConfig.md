@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -52,7 +52,7 @@ Sets the configuration without first prompting the user.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -75,7 +75,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -95,7 +95,7 @@ If you specify this parameter, but SSL is not available on the port used for the
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -141,4 +141,3 @@ This cmdlet does not generate any output.
 [New-WSManSessionOption](New-WSManSessionOption.md)
 
 [Test-WSMan](Test-WSMan.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-01
+ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -528,4 +528,3 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value Server01
 [Invoke-Command](../Invoke-Command.md)
 
 [New-PSSession](../New-PSSession.md)
-

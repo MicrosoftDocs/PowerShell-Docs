@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -173,13 +173,13 @@ For information about snippets, see **New-IseSnippet**.
 ## PARAMETERS
 
 ### -Content
-Specifies a string that contains the XML to search. 
+Specifies a string that contains the XML to search.
 You can also pipe strings to Select-Xml.
 
 ```yaml
 Type: String[]
 Parameter Sets: Content
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -199,7 +199,7 @@ In the XPath statement, prefix each node name with the namespace name and a colo
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -209,13 +209,13 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path and file names of the XML files to search. 
+Specifies the path and file names of the XML files to search.
 Wildcards are permitted.
 
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -232,7 +232,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -294,4 +294,3 @@ You can pipe a path or XML node to Select-Xml.
 ## RELATED LINKS
 
 [ConvertTo-Xml](ConvertTo-Xml.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -171,7 +171,7 @@ __SERVER              : Server01
 __NAMESPACE           : root\cimv2
 
 __PATH                : \\SERVER01\root\cimv2:Win32_BIOS.Name="Phoenix ROM BIOS
- 
+
 BiosCharacteristics   : {7, 9, 10, 11...}
 
 BIOSVersion           : {DELL   - 15, Phoenix ROM BIOS PLUS Version 1.10 A05}
@@ -220,7 +220,7 @@ Version               : DELL   - 15
 Scope                 : System.Management.ManagementScope
 
 Path                  : \\SERVER01\root\cimv2:Win32_BIOS.Name="Phoenix ROM BIOS
- 
+
 Options               : System.Management.ObjectGetOptions
 
 ClassPath             : \\JUNE-PC\root\cimv2:Win32_BIOS
@@ -256,7 +256,7 @@ Typically, amended information is localizable information, such as object and pr
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -284,7 +284,7 @@ For more information about Windows PowerShell background jobs, see  about_Jobs a
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -316,7 +316,7 @@ Valid values are:
 ```yaml
 Type: AuthenticationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -335,7 +335,7 @@ You cannot include the authority setting when you connect to the local computer.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -405,7 +405,7 @@ When you type a user name, you are prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -420,7 +420,7 @@ Specifies whether direct access to the WMI provider is requested for the specifi
 ```yaml
 Type: SwitchParameter
 Parameter Sets: query, WQLQuery
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -435,7 +435,7 @@ Enables all the privileges of the current user before the command makes the WMI 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -458,7 +458,7 @@ For example, the following commands return only the logical disks that have a **
 ```yaml
 Type: String
 Parameter Sets: query
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -490,7 +490,7 @@ Allows objects to permit other objects to use the credentials of the caller.
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -508,7 +508,7 @@ This cmdlet does not use the **Default Namespace** registry entry in the  HKEY_L
 ```yaml
 Type: SwitchParameter
 Parameter Sets: list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -524,7 +524,7 @@ Enter a value in MS_\<LCID\> format.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -556,7 +556,7 @@ Enter the property names.
 ```yaml
 Type: String[]
 Parameter Sets: query
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -572,7 +572,7 @@ This parameter does not support event queries.
 ```yaml
 Type: String
 Parameter Sets: WQLQuery
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -587,7 +587,7 @@ Searches the current namespace and all other namespaces for the class name that 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -603,7 +603,7 @@ This parameter is valid only when the **AsJob** parameter is used in the command
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -644,4 +644,3 @@ To get all properties of a WMI object, use the Get-Member or Format-List   cmdle
 [New-WSManInstance](../Microsoft.WsMan.Management/New-WSManInstance.md)
 
 [Remove-WSManInstance](../Microsoft.WsMan.Management/Remove-WSManInstance.md)
-

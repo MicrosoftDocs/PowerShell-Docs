@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -162,7 +162,7 @@ Enter a DateTime object, such as the one returned by the Get-Date cmdlet.
 ```yaml
 Type: DateTime
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -180,7 +180,7 @@ To see the effect of this parameter, pipe the events to the Get-Member cmdlet an
 ```yaml
 Type: SwitchParameter
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -195,7 +195,7 @@ Returns the output as strings, instead of objects.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: List
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -211,7 +211,7 @@ Enter a DateTime object, such as the one returned by the Get-Date cmdlet.
 ```yaml
 Type: DateTime
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -265,7 +265,7 @@ Gets only events with the specified index values.
 ```yaml
 Type: Int32[]
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -280,7 +280,7 @@ Gets only events with the specified instance IDs.
 ```yaml
 Type: Int64[]
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -295,7 +295,7 @@ Gets a list of event logs on the computer.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: List
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
-Specifies the event log. 
+Specifies the event log.
 Enter the log name (the value of the Log property; not the LogDisplayName) of one event log.
 Wildcard characters are not permitted.
 This parameter is required.
@@ -346,7 +346,7 @@ Get-EventLog gets the specified number of events, beginning with the newest even
 ```yaml
 Type: Int32
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -379,7 +379,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -419,4 +419,3 @@ If both the List and AsString parameters are specified, the output is a collecti
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-

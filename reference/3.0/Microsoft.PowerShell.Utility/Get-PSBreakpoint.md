@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -155,7 +155,7 @@ Enter the command names, such as the name of a cmdlet or function.
 ```yaml
 Type: String[]
 Parameter Sets: Command
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -172,7 +172,7 @@ You can also pipe breakpoint IDs to Get-PSBreakpoint.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -189,7 +189,7 @@ If you omit the path, the default location is the current directory.
 ```yaml
 Type: String[]
 Parameter Sets: Script
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: Type, Command, Variable
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -219,7 +219,7 @@ You can also pipe breakpoint types to Get-PSBreakpoint.
 ```yaml
 Type: BreakpointType[]
 Parameter Sets: Type
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -235,7 +235,7 @@ Enter the variable names without dollar signs.
 ```yaml
 Type: String[]
 Parameter Sets: Variable
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -269,4 +269,3 @@ Get-PSBreakPoint returns objects that represent the breakpoints in the session.
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -120,7 +120,7 @@ X          FileSystem    X:\
 The output of the Get-Member cmdlet shows that the drives have the same object type, System.Management.Automation.PSDriveInfo.
 PS C:\> Get-PSDrive PSDrive, x | Get-Member
 TypeName: System.Management.Automation.PSDriveInfo
- 
+
 
 
 Name                MemberType Definition
@@ -170,7 +170,7 @@ This parameter is not supported by all Windows PowerShell providers.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -189,7 +189,7 @@ To see the description of a particular drives, type "`(Get-PSDrive \<DriveName\>
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -206,7 +206,7 @@ For temporary Windows PowerShell drives, type any valid string; you are not limi
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -237,7 +237,7 @@ Mapped network drives that you create in sessions that are started with the "Run
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -260,7 +260,7 @@ To see a list of the providers in your Windows PowerShell session, use the Get-P
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -280,7 +280,7 @@ Mapped network drives can be associated only with a file system location on a re
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -298,7 +298,7 @@ For more information, see about_Scopes (http://go.microsoft.com/fwlink/?LinkID=1
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -375,5 +375,3 @@ You cannot pipe input to this cmdlet.
 [Remove-PSDrive](Remove-PSDrive.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
-

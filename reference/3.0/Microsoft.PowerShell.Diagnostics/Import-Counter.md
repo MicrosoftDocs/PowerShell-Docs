@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -187,7 +187,7 @@ Notice that each path is enclosed in quotation marks and that the paths are sepa
 
 ### -Counter
 Imports data only for the specified performance counters.
-By default, Import-Counter imports all data from all counters in the input files. 
+By default, Import-Counter imports all data from all counters in the input files.
 Enter one or more counter paths.
 Wildcards are permitted in the Instance part of the path.
 
@@ -205,7 +205,7 @@ For example:
 ```yaml
 Type: String[]
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -222,7 +222,7 @@ By default, Import-Counter imports all counter data in the files specified by th
 ```yaml
 Type: DateTime
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -236,13 +236,13 @@ Gets the performance counter sets that are represented in the exported files.
 Commands with this parameter do not import any data.
 
 Enter one or more counter set names.
-Wildcards are permitted. 
+Wildcards are permitted.
 To get all counter sets in the file, type "import-counter -listset *".
 
 ```yaml
 Type: String[]
 Parameter Sets: ListSetSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -258,7 +258,7 @@ By default, Get-Counter imports all of the data in the files specified by the Pa
 ```yaml
 Type: Int64
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -295,7 +295,7 @@ By default, Import-Counter imports all counter data in the files specified by th
 ```yaml
 Type: DateTime
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -310,7 +310,7 @@ Gets a summary of the imported data, instead of getting individual counter data 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: SummarySet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -340,4 +340,3 @@ If you use the Summary parameter, Import-Command returns a Microsoft.PowerShell.
 [Export-Counter](Export-Counter.md)
 
 [Get-Counter](Get-Counter.md)
-

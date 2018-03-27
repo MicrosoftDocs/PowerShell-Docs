@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -28,7 +28,7 @@ Clear-Item -LiteralPath <String[]> [-Force] [-Filter <String>] [-Include <String
 ## DESCRIPTION
 The Clear-Item cmdlet deletes the value of an item, but it does not delete the item.
 For example, Clear-Item can delete the value of a variable, but it does not delete the variable.
-The value that used to represent a cleared item is defined by each Windows PowerShell provider. 
+The value that used to represent a cleared item is defined by each Windows PowerShell provider.
 Clear-Item is similar to Clear-Content, but it works on aliases and variables, instead of files.
 ## EXAMPLES
 
@@ -77,7 +77,7 @@ This parameter is not supported by any providers installed with Windows PowerShe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -95,7 +95,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -113,7 +113,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ Even using the Force parameter, the cmdlet cannot override security restrictions
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -150,7 +150,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -186,7 +186,7 @@ This parameter is required, but the parameter name ("Path") is optional.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -286,5 +286,3 @@ For more information, see about_Providers.
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
-

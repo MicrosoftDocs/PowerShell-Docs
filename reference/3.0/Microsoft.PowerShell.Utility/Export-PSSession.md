@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -138,7 +138,7 @@ The default behavior is designed to prevent command name conflicts.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -222,7 +222,7 @@ The default is "UTF-8".
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -237,7 +237,7 @@ Overwrites one or more existing output files, even if the file has the read-only
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -261,7 +261,7 @@ Similarly, if you use the CommandName parameter, the formatting files for the co
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -310,14 +310,14 @@ Accept wildcard characters: False
 ```
 
 ### -Session
-Specifies the PSSession from which the commands are exported. 
+Specifies the PSSession from which the commands are exported.
 Enter a variable that contains a session object or a command that gets a session object, such as a Get-PSSession command.
 This parameter is required.
 
 ```yaml
 Type: PSSession
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -336,7 +336,7 @@ If the certificate is not valid or does not have sufficient authority, the comma
 ```yaml
 Type: X509Certificate2
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -402,4 +402,3 @@ If the command does not import formatting data, any formatting files that are cr
 [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)
 
 [about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
-
