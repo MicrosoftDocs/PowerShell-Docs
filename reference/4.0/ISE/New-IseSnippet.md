@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -43,8 +43,8 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ### Example 1
 ```
 PS C:\> New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
-    .SYNOPSIS             
-    .DESCRIPTION            
+    .SYNOPSIS
+    .DESCRIPTION
     .PARAMETER  <Parameter-Name>
     .INPUTS
     .OUTPUTS
@@ -93,7 +93,7 @@ The author field appears in the snippet file, but it does not appear when you cl
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -CaretOffset
-Places the cursor on the specified character of the snippet text. 
+Places the cursor on the specified character of the snippet text.
 Enter an integer that represents the cursor position, with "1" representing the first character of text.
 The default value, 0 (zero), places the cursor immediately before the first character of text.
 This parameter does not indent the snippet text.
@@ -111,7 +111,7 @@ This parameter does not indent the snippet text.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -128,7 +128,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -144,7 +144,7 @@ By default, **New-ISESnippet** does not overwrite files.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -161,7 +161,7 @@ This parameter is mandatory.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -178,7 +178,7 @@ This parameter is mandatory.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -216,11 +216,10 @@ To use the new snippet (and other unsigned user-created snippets), change the ex
 
 - You can create a snippet that has the same name as a built-in snippet. Both snippets appear in the snippet menu in Windows PowerShell ISE.
 
-  
+
 
 ## RELATED LINKS
 
 [Get-IseSnippet](Get-IseSnippet.md)
 
 [Import-IseSnippet](Import-IseSnippet.md)
-
