@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -96,4 +96,3 @@ while (++$a -lt 10)
 [about_Break](about_Break.md)
 
 [about_Continue](about_Continue.md)
-

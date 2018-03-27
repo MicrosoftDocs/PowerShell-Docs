@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -85,7 +85,7 @@ Specifies a command that is being processed during the trace.
 ```yaml
 Type: String
 Parameter Sets: commandSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -102,7 +102,7 @@ This parameter also selects the default trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -118,7 +118,7 @@ Enclose the expression in braces ({}).
 ```yaml
 Type: ScriptBlock
 Parameter Sets: expressionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -151,7 +151,7 @@ Even using the Force parameter, the cmdlet cannot override security restrictions
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -168,7 +168,7 @@ You can enter a variable that represents the input that the expression accepts, 
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -196,7 +196,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: TraceOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack
 
 Required: False
@@ -215,7 +215,7 @@ To find the trace sources on your computer, type "Get-TraceSource".
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -241,7 +241,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: PSTraceSourceOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -257,7 +257,7 @@ This parameter also selects the PSHost trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -303,4 +303,3 @@ If you include the parameter names, the parameters can appear in any order.
 [Get-TraceSource](Get-TraceSource.md)
 
 [Set-TraceSource](Set-TraceSource.md)
-
