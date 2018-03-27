@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -65,4 +65,3 @@ Configures the local computer for remote management.
 
 ### [Test-WSMan](Test-WSMan.md)
 Tests whether the WinRM service is running on a local or remote computer.
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -133,4 +133,3 @@ It does not generate any other output.
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
 
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
-

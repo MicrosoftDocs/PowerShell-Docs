@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -74,7 +74,7 @@ Enter names (optional) and the e-mail address, such as "Name \<someone@example.c
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -89,7 +89,7 @@ Specifies the body (content) of the e-mail message.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -120,7 +120,7 @@ Enter names (optional) and the e-mail address, such as "Name \<someone@example.c
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -139,7 +139,7 @@ Or, enter a PSCredential object, such as one from the Get-Credential cmdlet.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ### -DeliveryNotificationOption
 Specifies the delivery notification options for the e-mail message.
 You can specify multiple values.
-"None" is the default value. 
+"None" is the default value.
 The alias for this parameter is "dno".
 
 The delivery notifications are sent in an e-mail message to the address specified in the value of the To parameter.
@@ -201,7 +201,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -218,7 +218,7 @@ This parameter is available in Windows PowerShell 3.0 and newer releases.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -235,7 +235,7 @@ Normal is the default.
 ```yaml
 Type: MailPriority
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -286,7 +286,7 @@ This parameter is required.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -302,7 +302,7 @@ By default, SSL is not used.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -324,4 +324,3 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-
