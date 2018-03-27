@@ -595,6 +595,46 @@ Accept wildcard characters: False
 
 ```
 
+### -Resume
+Performs a best effort attempt to resume downloading a partial file.
+`-Resume` requires `-OutFile`.
+
+`-Resume` only operates on the size of the local file and remote file
+and performs no other validation that the local file and the remote file are the same.
+
+If the local file size is smaller than the remote file size,
+then the cmdlet will attempt to resume downloading the file
+and append the remaining bytes to the end of the file.
+
+If the local file size is the same as the remote file size,
+then no action is taken and the cmdlet assumes the download already complete.
+
+If the local file size is larger than the remote file size,
+then the local file will be overwritten and the entire remote file will be completely re-downloaded.
+This behavior is the same as using `-OutFile` without `-Resume`.
+
+If the remote server does not support download resuming,
+then the local file will be overwritten and the entire remote file will be completely re-downloaded.
+This behavior is the same as using `-OutFile` without `-Resume`.
+
+If the local file does not exist,
+then the local file will be created and the entire remote file will be completely downloaded.
+This behavior is the same as using `-OutFile` without `-Resume`.
+
+This feature was added in PowerShell 6.1.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SessionVariable
 Specifies a variable for which this cmdlet creates a web request session and saves it in the value.
 Enter a variable name without the dollar sign (`$`) symbol.
