@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -103,7 +103,7 @@ Specifies values for the parameters of the script that is specified by the **Fil
 ```yaml
 Type: Object[]
 Parameter Sets: ScriptBlock, FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -113,8 +113,8 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
-Specifies the mechanism that is used to authenticate the user's credentials. 
-Valid values are Default, Basic, Credssp, Digest, Kerberos, Negotiate, and NegotiateWithImplicitCredential. 
+Specifies the mechanism that is used to authenticate the user's credentials.
+Valid values are Default, Basic, Credssp, Digest, Kerberos, Negotiate, and NegotiateWithImplicitCredential.
 The default value is Default.
 For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
@@ -125,7 +125,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ScriptBlock, FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -147,7 +147,7 @@ To manage the number of job results that are saved, use the **MaxResultCount** p
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Execution
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -166,7 +166,7 @@ If you enter only a user name, you will be prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: ScriptBlock, FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,7 +184,7 @@ Every scheduled job must have either a **ScriptBlock** or **FilePath** value.
 ```yaml
 Type: String
 Parameter Sets: FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -205,7 +205,7 @@ If the initialization script generates an error (even a non-terminating error), 
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ScriptBlock, FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -224,7 +224,7 @@ If you specify multiple scheduled jobs, **Set-ScheduledJob** makes the same chan
 ```yaml
 Type: ScheduledJobDefinition
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -252,7 +252,7 @@ To delete the current execution history and job results, use the **ClearExecutio
 ```yaml
 Type: Int32
 Parameter Sets: ScriptBlock, FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -273,7 +273,7 @@ It affects only job instances that are started after this command completes.
 ```yaml
 Type: String
 Parameter Sets: ScriptBlock, FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -289,7 +289,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -304,7 +304,7 @@ Runs the scheduled job in a 32-bit process.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ScriptBlock, FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -331,7 +331,7 @@ In the following hash table, the keys are shown with their default values.
 ```yaml
 Type: ScheduledJobOptions
 Parameter Sets: ScriptBlock, FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -350,7 +350,7 @@ Every **Register-ScheduledJob** command must use either the **ScriptBlock** or *
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ScriptBlock
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -381,7 +381,7 @@ User="Domain1\User01 (or any valid user; used only with the AtLogon frequency va
 ```yaml
 Type: ScheduledJobTrigger[]
 Parameter Sets: ScriptBlock, FilePath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -438,4 +438,3 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-

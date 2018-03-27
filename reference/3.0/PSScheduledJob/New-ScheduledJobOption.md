@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -84,7 +84,7 @@ The following command creates a scheduled job object that requires the network a
 The output shows that the **RequireNetwork** parameter changed the value of the **RunWithoutNetwork** property to false and the **StartIfOnBattery** parameter changed the value of the **StartIfOnBatteries** property to True.
 ### Example 3: Set options for a new scheduled job
 ```
-The first command creates a **ScheduledJobOptions** object with the **RunElevated** parameter. It saves the object in the $RunAsAdmin variable. 
+The first command creates a **ScheduledJobOptions** object with the **RunElevated** parameter. It saves the object in the $RunAsAdmin variable.
 PS C:\> $RunAsAdmin = New-ScheduledJobOption -RunElevated
 
 The second command uses the Register-ScheduledJob cmdlet to create a new scheduled job. The value of the **ScheduledJobOption** parameter is the option object in the value of the $RunAsAdmin variable.
@@ -118,7 +118,7 @@ Name                       Value
 DoNotAllowDemandStart      False
 IdleDuration            00:10:00
 IdleTimeout             01:00:00
-JobDefinition                   
+JobDefinition
 MultipleInstancePolicy IgnoreNew
 RestartOnIdleResume        False
 RunElevated                False
@@ -151,7 +151,7 @@ The **ContinueIfGoingOnBattery** parameter sets the value of the **StopIfGoingOn
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -172,7 +172,7 @@ The **DoNotAllowDemandStart** parameter sets the value of the **DoNotAllowDemand
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -193,7 +193,7 @@ The **HideInTaskScheduler** parameter sets the value of the **ShowInTaskSchedule
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -215,7 +215,7 @@ By default, the **StartIfNotIdle** property of scheduled jobs is set to True and
 ```yaml
 Type: TimeSpan
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -237,7 +237,7 @@ By default, the **StartIfNotIdle** property of scheduled jobs is set to True and
 ```yaml
 Type: TimeSpan
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -263,7 +263,7 @@ For example, if the conditions that are set by the **RequireNetwork**, **IdleDur
 ```yaml
 Type: TaskMultipleInstancePolicy
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -282,7 +282,7 @@ The **RequireNetwork** parameter sets the value of the **RunWithoutNetwork** pro
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -300,7 +300,7 @@ The **RestartOnIdleResume** parameter sets the value of the **RestartOnIdleResum
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -319,7 +319,7 @@ The **RunElevated** parameter sets the value of the **RunElevated** property of 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -340,7 +340,7 @@ The **StartIfIdle** parameter sets the value of the **StartIfNotIdle** property 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -358,7 +358,7 @@ The **StartIfOnBattery** parameter sets the value of the **StartIfOnBatteries** 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -378,7 +378,7 @@ The **StopIfGoingOffIdle** parameter sets the value of the **StopIfGoingOffIdle*
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -396,7 +396,7 @@ The **WakeToRun** parameter sets the value of the **WakeToRun** property of sche
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -456,4 +456,3 @@ You cannot pipe input to this cmdlet.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
