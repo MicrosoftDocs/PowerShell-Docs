@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -101,7 +101,7 @@ WinRM service need to be restarted to make the changes effective. Do you want to
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 
 
-The fifth command attempts to use the MaintenanceShell session configuration in a session. It uses the New-PSSession cmdlet to create a new session and the ConfigurationName parameter to specify the MaintenanceShell configuration.The results show that the  **New-PSSession** command fails because the user is denied access to the configuration. 
+The fifth command attempts to use the MaintenanceShell session configuration in a session. It uses the New-PSSession cmdlet to create a new session and the ConfigurationName parameter to specify the MaintenanceShell configuration.The results show that the  **New-PSSession** command fails because the user is denied access to the configuration.
 PS C:\> new-pssession -computername localhost -configurationName MaintenanceShell
 [localhost] Connecting to remote server failed with the following error message : Access is denied. For more information, see the about_Remote_Troubl
 eshooting Help topic.
@@ -135,7 +135,7 @@ By default, you are prompted to confirm each operation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -155,7 +155,7 @@ If you omit this parameter, Disable-PSSessionConfiguration disables the Microsof
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -223,4 +223,3 @@ This cmdlet does not return any objects.
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-
