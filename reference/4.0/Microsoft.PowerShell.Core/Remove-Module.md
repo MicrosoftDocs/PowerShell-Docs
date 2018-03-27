@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -52,20 +52,20 @@ This command removes all modules from the current session.
 ### Example 3
 ```
 PS C:\> "FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
-VERBOSE: Performing operation "Remove-Module" on Target "filetransfer (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\filetransfer\filetransfer.psd1')". 
+VERBOSE: Performing operation "Remove-Module" on Target "filetransfer (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\filetransfer\filetransfer.psd1')".
 VERBOSE: Performing operation "Remove-Module" on Target "Microsoft.BackgroundIntelligentTransfer.Management (Path: 'C:\Windows\assembly\GAC_MSIL\Microsoft.BackgroundIntelligentTransfer.Management\1.0.0.0__31bf3856ad364e35\Microsoft.BackgroundIntelligentTransfe
 r.Management.dll')".
-VERBOSE: Performing operation "Remove-Module" on Target "psdiagnostics (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\psdiagnostics\psdiagnostics.psd1')". 
-VERBOSE: Removing imported function 'Start-Trace'. 
-VERBOSE: Removing imported function 'Stop-Trace'. 
-VERBOSE: Removing imported function 'Enable-WSManTrace'. 
-VERBOSE: Removing imported function 'Disable-WSManTrace'. 
-VERBOSE: Removing imported function 'Enable-PSWSManCombinedTrace'. 
-VERBOSE: Removing imported function 'Disable-PSWSManCombinedTrace'. 
-VERBOSE: Removing imported function 'Set-LogProperties'. 
-VERBOSE: Removing imported function 'Get-LogProperties'. 
-VERBOSE: Removing imported function 'Enable-PSTrace'. 
-VERBOSE: Removing imported function 'Disable-PSTrace'. 
+VERBOSE: Performing operation "Remove-Module" on Target "psdiagnostics (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\psdiagnostics\psdiagnostics.psd1')".
+VERBOSE: Removing imported function 'Start-Trace'.
+VERBOSE: Removing imported function 'Stop-Trace'.
+VERBOSE: Removing imported function 'Enable-WSManTrace'.
+VERBOSE: Removing imported function 'Disable-WSManTrace'.
+VERBOSE: Removing imported function 'Enable-PSWSManCombinedTrace'.
+VERBOSE: Removing imported function 'Disable-PSWSManCombinedTrace'.
+VERBOSE: Removing imported function 'Set-LogProperties'.
+VERBOSE: Removing imported function 'Get-LogProperties'.
+VERBOSE: Removing imported function 'Enable-PSTrace'.
+VERBOSE: Removing imported function 'Disable-PSTrace'.
 VERBOSE: Performing operation "Remove-Module" on Target "PSDiagnostics (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\psdiagnostics\PSDiagnostics.psm1')".
 ```
 
@@ -112,7 +112,7 @@ The **ReadOnly** and **ReadWrite** values are stored in **AccessMode** property 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -129,7 +129,7 @@ You can also pipe module objects to **Remove-Module**.
 ```yaml
 Type: PSModuleInfo[]
 Parameter Sets: ModuleInfo
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -139,14 +139,14 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies the names of modules to remove. 
+Specifies the names of modules to remove.
 Wildcards are permitted.
 You can also pipe name strings to **Remove-Module**.
 
 ```yaml
 Type: String[]
 Parameter Sets: name
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -195,4 +195,3 @@ Remove-Module does not generate any output.
 [about_Modules](About/about_Modules.md)
 
 [about_modules](About/about_Modules.md)
-
