@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -139,7 +139,7 @@ This parameter is not supported by any providers installed with parameter is not
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -155,7 +155,7 @@ An absolute path has a length greater than zero and does not use a dot (.) to in
 ```yaml
 Type: SwitchParameter
 Parameter Sets: IsAbsoluteSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -171,7 +171,7 @@ For example, in the path `C:\Test\Logs\Pass1.log`, it returns only Pass1.log.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: LeafSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -207,7 +207,7 @@ For example, in the path `C:\Test\Logs\Pass1.log`, it returns only \Test\Logs\Pa
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NoQualifierSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -224,7 +224,7 @@ The *Parent* parameter is the default split location parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ParentSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -242,7 +242,7 @@ You can also pipe a path to this cmdlet.
 ```yaml
 Type: String[]
 Parameter Sets: ParentSet, LeafSet, QualifierSet, NoQualifierSet, IsAbsoluteSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -258,7 +258,7 @@ For the FileSystem or registry providers, the qualifier is the drive of the prov
 ```yaml
 Type: SwitchParameter
 Parameter Sets: QualifierSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -273,7 +273,7 @@ Indicates that this cmdlet displays the items that are referenced by the resulti
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -340,5 +340,3 @@ For more information, see about_Providers.
 [Resolve-Path](Resolve-Path.md)
 
 [Test-Path](Test-Path.md)
-
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -41,9 +41,9 @@ This command sets the user preference for the shell execution policy to RemoteSi
 ### Example 2: Set a shell execution policy that conflicts with the group policy
 ```
 PS C:\> Set-ExecutionPolicy -ExecutionPolicy Restricted
-Set-ExecutionPolicy : Windows PowerShell updated your local preference successfully, but the setting is 
-overridden by the group policy applied to your system. Due to the override, your shell will retain its current 
-effective execution policy of "AllSigned". Contact your group policy administrator for more information. 
+Set-ExecutionPolicy : Windows PowerShell updated your local preference successfully, but the setting is
+overridden by the group policy applied to your system. Due to the override, your shell will retain its current
+effective execution policy of "AllSigned". Contact your group policy administrator for more information.
 At line:1 char:20
 + Set-ExecutionPolicy  <<<< restricted
 ```
@@ -117,9 +117,9 @@ RemoteSigned
 
 The third command shows what happens when you run a blocked script in a Windows PowerShell session in which the execution policy is RemoteSigned. The RemoteSigned policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
 PS C:\> .\Start-ActivityTracker.ps1
-.\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded. The file .\Start-ActivityTracker.ps1 
-is not digitally signed. The script will not execute on the system. For more information, see about_Execution_Policies 
-at http://go.microsoft.com/fwlink/?LinkID=135170. 
+.\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded. The file .\Start-ActivityTracker.ps1
+is not digitally signed. The script will not execute on the system. For more information, see about_Execution_Policies
+at http://go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:1
 + .\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -179,7 +179,7 @@ This parameter will not remove an execution policy that is set in a Group Policy
 ```yaml
 Type: ExecutionPolicy
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Unrestricted, RemoteSigned, AllSigned, Restricted, Default, Bypass, Undefined
 
 Required: True
@@ -196,7 +196,7 @@ By default, **Set-ExecutionPolicy** displays a warning whenever you change the e
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -222,7 +222,7 @@ You cannot change the execution policy of the process by editing the variable.
 ```yaml
 Type: ExecutionPolicyScope
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Process, CurrentUser, LocalMachine, UserPolicy, MachinePolicy
 
 Required: False
@@ -280,4 +280,3 @@ You cannot use **Set-ExecutionPolicy** to override a Group Policy, even if the u
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

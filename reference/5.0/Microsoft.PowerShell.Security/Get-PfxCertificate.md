@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -35,9 +35,9 @@ A .pfx file includes both the certificate and a private key.
 ```
 PS C:\> Get-PfxCertificate -FilePath "C:\windows\system32\Test.pfx"
 Password: ******
-Signer Certificate:      David Chew (Self Certificate) 
-Time Certificate: 
-Time Stamp: 
+Signer Certificate:      David Chew (Self Certificate)
+Time Certificate:
+Time Stamp:
 Path:                    C:\windows\system32\zap.pfx
 ```
 
@@ -62,7 +62,7 @@ If you specify a value for this parameter, it is not necessary to type `-FilePat
 ```yaml
 Type: String[]
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -115,4 +115,3 @@ You can pipe a string that contains a file path to **Get-PfxCertificate**.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

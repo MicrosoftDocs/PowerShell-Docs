@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -81,7 +81,7 @@ If you enter multiple names, this cmdlet opens control panel items that match an
 ```yaml
 Type: String[]
 Parameter Sets: CanonicalName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -97,7 +97,7 @@ Enter a variable that contains control panel item objects, or type a command or 
 ```yaml
 Type: ControlPanelItem[]
 Parameter Sets: ControlPanelItem
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -114,7 +114,7 @@ If you enter multiple names, this cmdlet opens control panel items that match an
 ```yaml
 Type: String[]
 Parameter Sets: RegularName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -141,4 +141,3 @@ This cmdlet does not return any output.
 ## RELATED LINKS
 
 [Get-ControlPanelItem](Get-ControlPanelItem.md)
-

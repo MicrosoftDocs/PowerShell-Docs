@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -47,7 +47,7 @@ This command renames the file daily_file.txt to monday_file.txt.
 ```
 The first command attempts to rename the project.txt file in the current directory to old-project.txt in the D:\Archive directory. The result is the error shown in the output.
 PS C:\> Rename-Item -Path "project.txt" -NewName "d:\archive\old-project.txt"
-Rename-Item : Cannot rename because the target specified represents a path or device name. 
+Rename-Item : Cannot rename because the target specified represents a path or device name.
 At line:1 char:12
 + rename-item <<<<  -path project.txt -newname d:\archive\old-project.txt
 + CategoryInfo          : InvalidArgument: (:) [Rename-Item], PSArgumentException
@@ -122,7 +122,7 @@ This parameter is not supported by any providers installed with Windows PowerShe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -142,7 +142,7 @@ Even using the *Force* parameter, the cmdlet cannot override security restrictio
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,7 +184,7 @@ For more information about the Replace operator, see about_Comparison_Operators.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -200,7 +200,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -215,7 +215,7 @@ Specifies the path of the item to rename.
 ```yaml
 Type: String
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -297,5 +297,3 @@ Otherwise, this cmdlet does not generate any output.
 [Rename-ItemProperty](Rename-ItemProperty.md)
 
 [Set-Item](Set-Item.md)
-
-

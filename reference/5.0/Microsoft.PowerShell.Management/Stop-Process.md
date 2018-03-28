@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -54,8 +54,8 @@ If you were to use the *Id* parameter to stop the same processes, you would have
 ```
 PS C:\> Stop-Process -Id 3952 -Confirm -PassThru
 Confirm
-Are you sure you want to perform this action? 
-Performing operation "Stop-Process" on Target "notepad (3952)". 
+Are you sure you want to perform this action?
+Performing operation "Stop-Process" on Target "notepad (3952)".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
 (default is "Y"):y
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -101,7 +101,7 @@ Stop-Process : Cannot stop process 'lsass (596)' because of the following error:
 At line:1 char:34
 + Get-Process -Name "lsass" | Stop-Process <<<<
 
-[ADMIN]: PS C:\> Get-Process -Name "lsass" | Stop-Process 
+[ADMIN]: PS C:\> Get-Process -Name "lsass" | Stop-Process
 
 Warning!
 Are you sure you want to perform this action?
@@ -148,7 +148,7 @@ To find the owner of a process, use the Get-WmiObject cmdlet to get a **Win32_Pr
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -165,7 +165,7 @@ To find the PID of a process, type `Get-Process`.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -181,7 +181,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -213,7 +213,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -274,4 +274,3 @@ In an extreme case, stopping a process can stop Windows.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-

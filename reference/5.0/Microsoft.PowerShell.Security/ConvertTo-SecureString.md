@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -118,7 +118,7 @@ To use this parameter, you must also specify the *Force* parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PlainText
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -133,7 +133,7 @@ Confirms that you understand the implications of using the *AsPlainText* paramet
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PlainText
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -149,7 +149,7 @@ Valid key lengths are 16, 24, and 32 bytes.
 ```yaml
 Type: Byte[]
 Parameter Sets: Open
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -167,7 +167,7 @@ Valid key lengths are 16, 24, and 32 bytes.
 ```yaml
 Type: SecureString
 Parameter Sets: Secure
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -182,7 +182,7 @@ Specifies the string to convert to a secure string.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -211,4 +211,3 @@ ConvertTo-SecureString returns a **SecureString** object.
 [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
 
 [Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)
-
