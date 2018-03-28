@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -376,7 +376,7 @@ In this case, IIS hosts Web Services for Management (WS-Management) for efficien
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -392,7 +392,7 @@ You can use this parameter only when the Dialect parameter is set to a value of 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Enumerate
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -448,7 +448,7 @@ Accept wildcard characters: False
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
-Certificates are used in client certificate-based authentication. 
+Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
 To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
@@ -456,7 +456,7 @@ To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in th
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -540,7 +540,7 @@ The following aliases can be used for the dialect URI:
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -555,7 +555,7 @@ Returns all of the instances of a management resource.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Enumerate
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -580,7 +580,7 @@ If the Dialect parameter is set to Association, the Filter parameter must contai
 ```yaml
 Type: String
 Parameter Sets: Enumerate
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -596,7 +596,7 @@ For example, to get the status of a spooler service, specify "-Fragment Status".
 ```yaml
 Type: String
 Parameter Sets: GetInstance
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -637,7 +637,7 @@ The SkipCNCheck parameter should be used only for trusted computers.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -708,7 +708,7 @@ The following example shows how to enter a value for this parameter:
 ```yaml
 Type: Hashtable
 Parameter Sets: GetInstance
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -741,7 +741,7 @@ If this switch is not specified, instances of the base class that is specified i
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Enumerate
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -810,4 +810,3 @@ The Get-WSManInstance cmdlet generates an XMLElement object.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-
