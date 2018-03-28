@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -152,7 +152,7 @@ The default value is 5.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -176,7 +176,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 ```yaml
 Type: String
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -189,13 +189,13 @@ Accept wildcard characters: False
 Specifies the mechanism that is used to authenticate the user's credentials.
 The acceptable values for this parameter are:
 
-- Default 
-- Basic 
-- Credssp 
-- Digest 
-- Kerberos 
-- Negotiate 
-- NegotiateWithImplicitCredential 
+- Default
+- Basic
+- Credssp
+- Digest
+- Kerberos
+- Negotiate
+- NegotiateWithImplicitCredential
 
 The default value is Default.
 
@@ -210,7 +210,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
 Required: False
@@ -232,7 +232,7 @@ To get a certificate, use the Get-Item or Get-ChildItem command in the Windows P
 ```yaml
 Type: String
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -284,7 +284,7 @@ For more information, see about_Preference_Variables.
 ```yaml
 Type: String
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -335,7 +335,7 @@ When you type a user name, this cmdlet prompts you for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: VMId, VMName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -377,7 +377,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -395,7 +395,7 @@ To find the ID of a session, use the Get-PSSession cmdlet.
 ```yaml
 Type: Int32
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -416,7 +416,7 @@ Or, you can use the *ComputerName* parameter to start a temporary session.
 ```yaml
 Type: Guid
 Parameter Sets: InstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -438,7 +438,7 @@ To establish a friendly name for a session, use the *Name* parameter of the **Ne
 ```yaml
 Type: String
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -468,7 +468,7 @@ An alternate port setting might prevent the command from running on all computer
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -492,7 +492,7 @@ When you use **Exit-PSSession** or the **EXIT** keyword, the interactive session
 ```yaml
 Type: PSSession
 Parameter Sets: Session
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -518,7 +518,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: PSSessionOption
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -539,7 +539,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -554,7 +554,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Guid
 Parameter Sets: VMId
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -569,7 +569,7 @@ Specifies the name of a virtual machine.
 ```yaml
 Type: String
 Parameter Sets: VMName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -621,4 +621,3 @@ The cmdlet does not return any output.
 [about_PSSessions](About/about_PSSessions.md)
 
 [about_Remote](About/about_Remote.md)
-
