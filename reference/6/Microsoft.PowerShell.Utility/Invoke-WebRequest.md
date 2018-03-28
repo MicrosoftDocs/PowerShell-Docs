@@ -151,6 +151,40 @@ $Response = Invoke-WebRequest -Body $MultipartContent -Method 'POST' -Uri 'https
 
 This example uses the `Invoke-WebRequest` cmdlet upload a file as a `multipart/form-data` submission. The file `c:\document.txt` will be submitted as the form field `document` with the `Content-Type` of `text/plain`.
 
+### Example 5: Simplified Multipart/Form-Data Submission
+```powershell
+$Uri = 'https://api.contoso.com/v2/profile'
+$Form = @{
+    firstName  = 'John'
+    lastName   = 'Doe'
+    email      = 'john.doe@contoso.com'
+    avatar     = Get-Item -Path 'c:\Pictures\jdoe.png'
+    birthday   = '1980-10-15'
+    hobbies    = 'Hiking','Fishing','Jogging'
+}
+$Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
+```
+
+Some APIs require `multipart/form-data` submissions to upload files and mixed content.
+This example demonstrates updating a user profile.
+The profile form requires these fields:
+`firstName`, `lastName`, `email`, `avatar`, `birthday`, and `hobbies`.
+The API is expecting an image for the user profile pic to be supplied in the `avatar` field.
+The API will also accept multiple `hobbies` entries to be submitted in the same form.
+
+When creating the `$Form` HashTable, the key names are used as form field names.
+By default, the values of the HashTable will be converted to strings.
+If a `System.IO.FileInfo` value is present, the file contents will be submitted.
+If a collection such as arrays or lists are present,
+the form field will be submitted will be submitted multiple times.
+
+By using `Get-Item` on the `avatar` key, the `FileInfo` object will be set as the value.
+The result is that the image data for `jdoe.png` will be submitted.
+
+By supplying a list to the `hobbies` key,
+the `hobbies` field will be present in the submissions
+once for each list item.
+
 ## PARAMETERS
 
 ### -AllowUnencryptedAuthentication
@@ -338,6 +372,60 @@ By default, **KeepAlive** is True.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Form
+Converts a dictionary to a `multipart/form-data` submission.
+`-Form` may not be used with `-Body`.
+If `-ContentType` will be ignored.
+
+The keys of the dictionary will be used as the form field names.
+By default, form values will be converted to string values.
+
+If the value is a `System.IO.FileInfo` object,
+then the binary file contents will be submitted.
+The name of the file will be submitted as the `filename`.
+The MIME will be set as `application/octet-stream`.
+`Get-Item` can be used to simplify supplying the `System.IO.FileInfo` object.
+
+```powershell
+$Form = @{
+    resume = Get-Item 'c:\Users\jdoe\Documents\John Doe.pdf'
+}
+```
+
+If the value is a collection type,
+such Arrays or Lists,
+the for field will be submitted multiple times.
+The values of the the list will be treated as strings by default.
+If the value is a `System.IO.FileInfo` object,
+then the binary file contents will be submitted.
+Nested collections are not supported.
+
+```powershell
+$Form = @{
+    tags     = 'Vacation', 'Italy', '2017'
+    pictures = Get-ChildItem 'c:\Users\jdoe\Pictures\2017-Italy\'
+}
+```
+
+In the above example the `tags` field will be supplied 3 times in the form,
+once for each of `Vacation`, `Italy`, and `2017`.
+The `pictures` field will also be submitted once for each file in the `2017-Italy` folder.
+The binary contents of the files in that folder will be submitted as the values.
+
+This feature was added in PowerShell 6.1.0.
+
+```yaml
+Type: IDictionary
+Parameter Sets: (All)
+Aliases: 
 
 Required: False
 Position: Named
