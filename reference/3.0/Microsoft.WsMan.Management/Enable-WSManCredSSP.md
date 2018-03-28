@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -120,7 +120,7 @@ If the Role parameter specifies Server, the DelegateComputer parameter is not al
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -135,7 +135,7 @@ Enables CredSSP without first prompting the user.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Role
-Accepts one of two possible values: Client or Server. 
+Accepts one of two possible values: Client or Server.
 These values specify whether CredSSP should be enabled as a client or as a server.
 
 If the Role parameter specifies Client, the cmdlet performs the following:
@@ -162,7 +162,7 @@ If the Role parameter specifies the Server, the cmdlet performs the following:
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -208,4 +208,3 @@ If CredSSP authentication is successfully enabled, this cmdlet generates an XMLE
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

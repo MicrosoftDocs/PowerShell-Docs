@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -90,7 +90,7 @@ Specifies a command that is being processed during the trace.
 ```yaml
 Type: String
 Parameter Sets: commandSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -107,7 +107,7 @@ This parameter also selects the default trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -123,7 +123,7 @@ Enclose the expression in braces ({}).
 ```yaml
 Type: ScriptBlock
 Parameter Sets: expressionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -156,7 +156,7 @@ Even using the *Force* parameter, the cmdlet cannot override security restrictio
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -173,7 +173,7 @@ You can enter a variable that represents the input that the expression accepts, 
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -201,7 +201,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: TraceOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack
 
 Required: False
@@ -220,7 +220,7 @@ To find the trace sources on your computer, type `Get-TraceSource`.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -256,7 +256,7 @@ The acceptable values for this parameter are:
 
 All is the default.
 
-The following values are combinations of other values: 
+The following values are combinations of other values:
 
 - ExecutionFlow: (Constructor, Dispose, Finalizer, Method, Delegates, Events, and Scope)
 - Data: (Constructor, Dispose, Finalizer, Property, Verbose, and WriteLine)
@@ -267,7 +267,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: PSTraceSourceOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, Constructor, Dispose, Finalizer, Method, Property, Delegates, Events, Exception, Lock, Error, Errors, Warning, Verbose, WriteLine, Data, Scope, ExecutionFlow, Assert, All
 
 Required: False
@@ -284,7 +284,7 @@ This parameter also selects the PSHost trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -335,4 +335,3 @@ You can elect to send the trace data to a user-mode or kernel-mode debugger, to 
 [Set-TraceSource](Set-TraceSource.md)
 
 [Show-Command](Show-Command.md)
-

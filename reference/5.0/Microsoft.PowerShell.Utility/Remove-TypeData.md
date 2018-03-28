@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -126,7 +126,7 @@ If you omit the path, the default location is the current directory.
 ```yaml
 Type: String[]
 Parameter Sets: RemoveFileSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -144,7 +144,7 @@ You can also pipe **TypeData** objects to **Remove-TypeData**.
 ```yaml
 Type: TypeData
 Parameter Sets: RemoveTypeDataSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -165,7 +165,7 @@ When you pipe an object to **Remove-TypeData**, **Remove-TypeData** gets the typ
 ```yaml
 Type: String
 Parameter Sets: RemoveTypeSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -217,4 +217,3 @@ This cmdlet does not generate any output.
 [Update-TypeData](Update-TypeData.md)
 
 [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md)
-

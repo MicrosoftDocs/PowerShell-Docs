@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -179,7 +179,7 @@ For more information, see the examples.
 ```yaml
 Type: String[]
 Parameter Sets: DefaultParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -189,7 +189,7 @@ Accept wildcard characters: True
 ```
 
 ### -ExpandProperty
-Specifies a property to select, and indicates that an attempt should be made to expand that property. 
+Specifies a property to select, and indicates that an attempt should be made to expand that property.
 Wildcards are permitted in the property name.
 
 For example, if the specified property is an array, each value of the array is included in the output.
@@ -198,7 +198,7 @@ If the property contains an object, the properties of that object are displayed 
 ```yaml
 Type: String
 Parameter Sets: DefaultParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -213,7 +213,7 @@ Specifies the number of objects to select from the beginning of an array of inpu
 ```yaml
 Type: Int32
 Parameter Sets: DefaultParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -231,7 +231,7 @@ Indexes in an array begin with 0, where 0 represents the first value and (n-1) r
 ```yaml
 Type: Int32[]
 Parameter Sets: IndexParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -250,7 +250,7 @@ Because InputObject cannot return individual properties from an array or collect
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -265,7 +265,7 @@ Specifies the number of objects to select from the end of an array of input obje
 ```yaml
 Type: Int32
 Parameter Sets: DefaultParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -288,7 +288,7 @@ Valid keys are:
 ```yaml
 Type: Object[]
 Parameter Sets: DefaultParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -306,7 +306,7 @@ Unlike the **Index** parameter, which starts counting at 0, the **Skip** paramet
 ```yaml
 Type: Int32
 Parameter Sets: DefaultParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -324,7 +324,7 @@ As a result, strings that differ only in character casing are considered to be u
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -343,7 +343,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -375,4 +375,3 @@ You can pipe any object to Select-Object.
 [Sort-Object](Sort-Object.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-

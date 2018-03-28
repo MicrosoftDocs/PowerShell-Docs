@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -76,7 +76,7 @@ The value of the **Trigger** parameter is a New-JobTrigger command that creates 
 ### Example 3: Copy a job trigger
 ```
 PS C:\> $t = Get-JobTrigger -Name BackupArchives
-                       
+
 PS C:\> Add-JobTrigger -Name TestBackup, BackupLogs -Trigger $t
 ```
 
@@ -98,7 +98,7 @@ To get the identification number of scheduled jobs on the local computer or a re
 ```yaml
 Type: Int32[]
 Parameter Sets: JobDefinitionId
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -115,7 +115,7 @@ You can also pipe **ScheduledJob** objects to **Add-JobTrigger**.
 ```yaml
 Type: ScheduledJobDefinition[]
 Parameter Sets: JobDefinition
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -134,7 +134,7 @@ To get the names of scheduled jobs on the local computer or a remote computer, u
 ```yaml
 Type: String[]
 Parameter Sets: JobDefinitionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -151,7 +151,7 @@ You can also pipe **ScheduledJobTrigger** objects to **Add-JobTrigger**.
 ```yaml
 Type: ScheduledJobTrigger[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -210,4 +210,3 @@ This cmdlet does not return any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-

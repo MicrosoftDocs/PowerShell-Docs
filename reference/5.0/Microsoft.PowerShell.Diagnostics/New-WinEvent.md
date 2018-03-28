@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -41,7 +41,7 @@ Specifies an event ID that was registered through an instrumentation manifest.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -59,7 +59,7 @@ When the specified payload does not match the payload in the event definition, W
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -75,7 +75,7 @@ An ETW event provider is a logical entity that writes events to ETW sessions.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -94,7 +94,7 @@ This parameter lets you specify an event when different versions of the same eve
 ```yaml
 Type: Byte
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -123,4 +123,3 @@ This cmdlet does not generate any output.
 ## RELATED LINKS
 
 [Get-WinEvent](Get-WinEvent.md)
-

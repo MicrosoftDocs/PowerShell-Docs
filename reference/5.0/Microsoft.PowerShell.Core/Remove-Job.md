@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -181,7 +181,7 @@ This cmdlet deletes jobs that include the specified words.
 ```yaml
 Type: String[]
 Parameter Sets: CommandParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -219,7 +219,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Hashtable
 Parameter Sets: FilterParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -255,7 +255,7 @@ To find the ID of a job, type `Get-Job`.
 ```yaml
 Type: Int32[]
 Parameter Sets: SessionIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -273,7 +273,7 @@ To find the instance ID of a job, use the **Get-Job** cmdlet or display the job 
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -290,7 +290,7 @@ You can also use a pipeline operator to submit jobs to this cmdlet.
 ```yaml
 Type: Job[]
 Parameter Sets: JobParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -308,7 +308,7 @@ Because the friendly name is not guaranteed to be unique, even in the session, u
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -321,15 +321,15 @@ Accept wildcard characters: False
 Specifies the state of jobs to delete.
 The acceptable values for this parameter are:
 
-- NotStarted 
-- Running 
-- Completed 
-- Failed 
-- Stopped 
-- Blocked 
-- Disconnected 
-- Suspending 
-- Stopping 
+- NotStarted
+- Running
+- Completed
+- Failed
+- Stopped
+- Blocked
+- Disconnected
+- Suspending
+- Stopping
 - Suspended
 
 To delete jobs with a state of Running, use the *Force* parameter.
@@ -337,7 +337,7 @@ To delete jobs with a state of Running, use the *Force* parameter.
 ```yaml
 Type: JobState
 Parameter Sets: StateParameterSet
-Aliases: 
+Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
 
 Required: True
@@ -401,4 +401,3 @@ This cmdlet does not generate any output.
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [about_Jobs](About/about_Jobs.md)
-

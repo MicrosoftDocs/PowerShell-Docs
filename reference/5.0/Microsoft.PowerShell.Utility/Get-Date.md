@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -266,7 +266,7 @@ For example, "`Get-Date -Month 2 -Day 31`" displays "March 3", not "February 31"
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -290,7 +290,7 @@ This parameter does not affect the **DateTime** object that `Get-Date` gets.
 ```yaml
 Type: DisplayHintType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Date, Time, DateTime
 
 Required: False
@@ -321,7 +321,7 @@ Starting in Windows PowerShell 5.0, you can use the following additional formats
 ```yaml
 Type: String
 Parameter Sets: net
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -338,7 +338,7 @@ The default is the current hour.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -357,7 +357,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -374,7 +374,7 @@ The default value is the current minutes.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -391,7 +391,7 @@ The default is the current month.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -408,7 +408,7 @@ The default is the current second.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -427,7 +427,7 @@ As a result, some of the properties and methods of **DateTime** objects might no
 ```yaml
 Type: String
 Parameter Sets: UFormat
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -444,7 +444,7 @@ The default is the current year.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -479,10 +479,10 @@ Otherwise, it returns a **DateTime** object.
     `Get-Date -UFormat %\<value\>`
 
     For example,
-    
+
     `Get-Date -UFormat %d`
 
-    
+
      * Date-Time:
 
        Date and time - full
@@ -587,4 +587,3 @@ Otherwise, it returns a **DateTime** object.
 [New-TimeSpan](New-TimeSpan.md)
 
 [Set-Date](Set-Date.md)
-

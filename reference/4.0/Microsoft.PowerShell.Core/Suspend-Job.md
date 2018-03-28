@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -75,7 +75,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ### Example 1: Suspend a workflow job by name
 ```
 The first command creates the Get-SystemLog workflow. The workflow uses the CheckPoint-Workflow activity to define a checkpoint in the workflow.
-#Sample Workflow                  
+#Sample Workflow
 Workflow Get-SystemLog
 {
     $Events = Get-WinEvent -LogName System
@@ -177,7 +177,7 @@ Enter a hash table where the keys are workflow job properties and the values are
 ```yaml
 Type: Hashtable
 Parameter Sets: FilterParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -216,7 +216,7 @@ To find the ID of a job, use the Get-Job cmdlet.
 ```yaml
 Type: Int32[]
 Parameter Sets: SessionIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -235,7 +235,7 @@ To find the instance ID of a job, use the Get-Job cmdlet.
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -252,7 +252,7 @@ You can also pipe workflow jobs to the **Suspend-Job** cmdlet.
 ```yaml
 Type: Job[]
 Parameter Sets: JobParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -269,7 +269,7 @@ Wildcards are supported.
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -287,7 +287,7 @@ For more information about job states, see [JobState Enumeration](https://msdn.m
 ```yaml
 Type: JobState
 Parameter Sets: StateParameterSet
-Aliases: 
+Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping
 
 Required: True
@@ -306,7 +306,7 @@ The **Wait** parameter is equivalent to piping a **Suspend-Job** command to the 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -371,4 +371,3 @@ However, if **Suspend-Job** gets a job of an unsupported type, it throws a termi
 [Suspend-Job](Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -88,30 +88,30 @@ __PATH                         : \\SYSTEM01\root\cimv2:Win32_WMISetting=@
 ASPScriptDefaultNamespace      : \\root\cimv2
 ASPScriptEnabled               : False
 AutorecoverMofs                : {%windir%\system32\wbem\cimwin32.mof, %windir%\system32\wbem\ncprov.mof, %windir%\syst
-em32\wbem\wmipcima.mof, %windir%\system32\wbem\secrcw32.mof...} 
-AutoStartWin9X                 : 
-BackupInterval                 : 
-BackupLastTime                 : 
+em32\wbem\wmipcima.mof, %windir%\system32\wbem\secrcw32.mof...}
+AutoStartWin9X                 :
+BackupInterval                 :
+BackupLastTime                 :
 BuildVersion                   : 6001.18000
-Caption                        : 
+Caption                        :
 DatabaseDirectory              : C:\Windows\system32\wbem\repository
-DatabaseMaxSize                : 
-Description                    : 
-EnableAnonWin9xConnections     : 
+DatabaseMaxSize                :
+Description                    :
+EnableAnonWin9xConnections     :
 EnableEvents                   : False
 EnableStartupHeapPreallocation : False
-HighThresholdOnClientObjects   : 
+HighThresholdOnClientObjects   :
 HighThresholdOnEvents          : 20000000
 InstallationDirectory          : C:\Windows\system32\wbem
-LastStartupHeapPreallocation   : 
+LastStartupHeapPreallocation   :
 LoggingDirectory               : C:\Windows\system32\wbem\Logs\
 LoggingLevel                   : 2
-LowThresholdOnClientObjects    : 
+LowThresholdOnClientObjects    :
 LowThresholdOnEvents           : 10000000
 MaxLogFileSize                 : 65536
-MaxWaitOnClientObjects         : 
+MaxWaitOnClientObjects         :
 MaxWaitOnEvents                : 2000
-MofSelfInstallDirectory        : 
+MofSelfInstallDirectory        :
 SettingID                      :
 ```
 
@@ -135,7 +135,7 @@ __NAMESPACE      : root\cimv2
 __PATH           : \\SYSTEM01\root\cimv2:Win32_Environment.Name="testvar",UserName="<SYSTEM>"
 Caption          : <SYSTEM>\testvar
 Description      : <SYSTEM>\testvar
-InstallDate      : 
+InstallDate      :
 Name             : testvar
 Status           : OK
 SystemVariable   : True
@@ -163,31 +163,31 @@ __PATH                         : \\SYSTEM01\root\cimv2:Win32_WMISetting=@
 ASPScriptDefaultNamespace      : \\root\cimv2
 ASPScriptEnabled               : False
 AutorecoverMofs                : {%windir%\system32\wbem\cimwin32.mof, %windir%\system32\wbem\ncprov.mof, %windir%\syst
-em32\wbem\wmipcima.mof, %windir%\system32\wbem\secrcw32.mof...} 
-AutoStartWin9X                 : 
-BackupInterval                 : 
-BackupLastTime                 : 
+em32\wbem\wmipcima.mof, %windir%\system32\wbem\secrcw32.mof...}
+AutoStartWin9X                 :
+BackupInterval                 :
+BackupLastTime                 :
 BuildVersion                   : 6001.18000
-Caption                        : 
+Caption                        :
 DatabaseDirectory              : C:\Windows\system32\wbem\repository
-DatabaseMaxSize                : 
-Description                    : 
-EnableAnonWin9xConnections     : 
+DatabaseMaxSize                :
+Description                    :
+EnableAnonWin9xConnections     :
 EnableEvents                   : False
 EnableStartupHeapPreallocation : False
-HighThresholdOnClientObjects   : 
+HighThresholdOnClientObjects   :
 HighThresholdOnEvents          : 20000000
 InstallationDirectory          : C:\Windows\system32\wbem
-LastStartupHeapPreallocation   : 
+LastStartupHeapPreallocation   :
 LoggingDirectory               : C:\Windows\system32\wbem\Logs\
 LoggingLevel                   : 2
-LowThresholdOnClientObjects    : 
+LowThresholdOnClientObjects    :
 LowThresholdOnEvents           : 10000000
 MaxLogFileSize                 : 65536
-MaxWaitOnClientObjects         : 
+MaxWaitOnClientObjects         :
 MaxWaitOnEvents                : 2000
-MofSelfInstallDirectory        : 
-SettingID                      : 
+MofSelfInstallDirectory        :
+SettingID                      :
 ...
 ```
 
@@ -237,7 +237,7 @@ For more information about Windows PowerShell background jobs, see about_Jobs an
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -250,25 +250,25 @@ Accept wildcard characters: False
 Specifies the authentication level that must be used with the WMI connection.
 The acceptable values for this parameter are:
 
-- -1: Unchanged. 
-- 0: Default. 
+- -1: Unchanged.
+- 0: Default.
 - 1: None.
-No authentication in performed. 
+No authentication in performed.
 - 2: Connect.
-Authentication is performed only when the client establishes a relationship with the application. 
+Authentication is performed only when the client establishes a relationship with the application.
 - 3: Call.
-Authentication is performed only at the start of each call when the application receives the request. 
+Authentication is performed only at the start of each call when the application receives the request.
 - 4: Packet.
-Authentication is performed on all the data that is received from the client. 
+Authentication is performed on all the data that is received from the client.
 - 5: PacketIntegrity.
-All the data that is transferred between the client and the application is authenticated and verified. 
+All the data that is transferred between the client and the application is authenticated and verified.
 - 6: PacketPrivacy.
 The properties of the other authentication levels are used, and all the data is encrypted.
 
 ```yaml
 Type: AuthenticationLevel
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
 
 Required: False
@@ -288,7 +288,7 @@ You cannot include the authority setting when you connect to the local computer.
 ```yaml
 Type: String
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -303,7 +303,7 @@ Specifies the name of a WMI class.
 ```yaml
 Type: String
 Parameter Sets: class
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -361,7 +361,7 @@ This parameter is not supported by any providers installed with parameter is not
 ```yaml
 Type: PSCredential
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -376,7 +376,7 @@ Indicates that this cmdlet enables all the permissions of the current user befor
 ```yaml
 Type: SwitchParameter
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -392,18 +392,18 @@ The acceptable values for this parameter are:
 - 0: Default.
 Reads the local registry for the default impersonation level, which is usually set to 3: Impersonate.
 - 1: Anonymous.
-Hides the credentials of the caller. 
+Hides the credentials of the caller.
 - 2: Identify.
-Allows objects to query the credentials of the caller. 
+Allows objects to query the credentials of the caller.
 - 3: Impersonate.
-Allows objects to use the credentials of the caller. 
+Allows objects to use the credentials of the caller.
 - 4: Delegate.
 Allows objects to permit other objects to use the credentials of the caller.
 
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
 
 Required: False
@@ -420,7 +420,7 @@ When this parameter is used, all other parameters ,except the *Arguments* parame
 ```yaml
 Type: ManagementObject
 Parameter Sets: object
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -436,7 +436,7 @@ The *Locale* parameter is specified in an array in the MS_\<LCID\> format in the
 ```yaml
 Type: String
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -466,7 +466,7 @@ Specifies a WMI object path of the instance that you want to create or update.
 ```yaml
 Type: String
 Parameter Sets: path
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -480,16 +480,16 @@ Indicates whether to create or update the WMI instance.
 The acceptable values for this parameter are:
 
 - UpdateOnly.
-Updates an existing WMI instance. 
+Updates an existing WMI instance.
 - CreateOnly.
-Creates a new WMI instance. 
+Creates a new WMI instance.
 - UpdateOrCreate.
 Updates the WMI instance if it exists or creates a new instance if an instance does not exist.
 
 ```yaml
 Type: PutType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, UpdateOnly, CreateOnly, UpdateOrCreate
 
 Required: False
@@ -507,7 +507,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -554,4 +554,3 @@ This cmdlet does not generate output.
 [Invoke-WmiMethod](Invoke-WmiMethod.md)
 
 [Remove-WmiObject](Remove-WmiObject.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -84,9 +84,9 @@ LCID                           : 1033
 KeyboardLayoutId               : 1033
 Name                           : en-US
 IetfLanguageTag                : en-US
-DisplayName                    : English (United States) 
-NativeName                     : English (United States) 
-EnglishName                    : English (United States) 
+DisplayName                    : English (United States)
+NativeName                     : English (United States)
+EnglishName                    : English (United States)
 TwoLetterISOLanguageName       : en
 ThreeLetterISOLanguageName     : eng
 ThreeLetterWindowsLanguageName : ENU
@@ -128,17 +128,17 @@ RFC1123Pattern                   : ddd, dd MMM yyyy HH':'mm':'ss 'GMT'
 ShortDatePattern                 : M/d/yyyy
 ShortTimePattern                 : h:mm tt
 SortableDateTimePattern          : yyyy'-'MM'-'dd'T'HH':'mm':'ss
-TimeSeparator                    : : 
+TimeSeparator                    : :
 UniversalSortableDateTimePattern : yyyy'-'MM'-'dd HH':'mm':'ss'Z'
 YearMonthPattern                 : MMMM, yyyy
-AbbreviatedDayNames              : {Sun, Mon, Tue, Wed...} 
-ShortestDayNames                 : {Su, Mo, Tu, We...} 
-DayNames                         : {Sunday, Monday, Tuesday, Wednesday...} 
-AbbreviatedMonthNames            : {Jan, Feb, Mar, Apr...} 
-MonthNames                       : {January, February, March, April...} 
+AbbreviatedDayNames              : {Sun, Mon, Tue, Wed...}
+ShortestDayNames                 : {Su, Mo, Tu, We...}
+DayNames                         : {Sunday, Monday, Tuesday, Wednesday...}
+AbbreviatedMonthNames            : {Jan, Feb, Mar, Apr...}
+MonthNames                       : {January, February, March, April...}
 IsReadOnly                       : False
 NativeCalendarName               : Gregorian Calendar
-AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...} 
+AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...}
 MonthGenitiveNames               : {January, February, March, April...}
 ```
 
@@ -225,4 +225,3 @@ You cannot pipe input to this cmdlet.
 [Read-Host](Read-Host.md)
 
 [Write-Host](Write-Host.md)
-

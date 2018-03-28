@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -75,15 +75,15 @@ PS C:\> # Sends a sign-in request by running the Invoke-WebRequest cmdlet. The c
 
 $r=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable fb
 
-# Use the session variable that you created in Example 1. Output displays values for Headers, Cookies, Credentials, etc. 
+# Use the session variable that you created in Example 1. Output displays values for Headers, Cookies, Credentials, etc.
 
 $fb
 
-# Gets the first form in the Forms property of the HTTP response object in the $r variable, and saves it in the $form variable. 
+# Gets the first form in the Forms property of the HTTP response object in the $r variable, and saves it in the $form variable.
 
 $form = $r.Forms[0]
 
-# Pipes the form properties that are stored in the $forms variable into the Format-List cmdlet, to display those properties in a list. 
+# Pipes the form properties that are stored in the $forms variable into the Format-List cmdlet, to display those properties in a list.
 
 $form | Format-List
 
@@ -91,12 +91,12 @@ $form | Format-List
 
 $form.fields
 
-# The next two commands populate the values of the "email" and "pass" keys of the hash table in the Fields property of the form. Of course, you can replace the email and password with values that you want to use. 
+# The next two commands populate the values of the "email" and "pass" keys of the hash table in the Fields property of the form. Of course, you can replace the email and password with values that you want to use.
 
 $form.Fields["email"] = "User01@Fabrikam.com"
 $form.Fields["pass"] = "P@ssw0rd"
 
-# The final command uses the Invoke-WebRequest cmdlet to sign in to the Facebook web service. 
+# The final command uses the Invoke-WebRequest cmdlet to sign in to the Facebook web service.
 
 $r=Invoke-WebRequest -Uri ("https://www.facebook.com" + $form.Action) -WebSession $fb -Method POST -Body $form.Fields
 
@@ -143,7 +143,7 @@ For example:
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -162,7 +162,7 @@ If the certificate is not valid or does not have sufficient authority, the comma
 ```yaml
 Type: X509Certificate
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -183,7 +183,7 @@ To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in th
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -201,7 +201,7 @@ Otherwise, the content type is not specified in the call.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -219,7 +219,7 @@ Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredenti
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -236,7 +236,7 @@ KeepAlive establishes a persistent connection to the server to facilitate subseq
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -255,7 +255,7 @@ You cannot use this parameter to specify UserAgent or cookie headers.
 ```yaml
 Type: IDictionary
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -273,7 +273,7 @@ If you omit the path, the default is the current location.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -290,7 +290,7 @@ A value of 0 (zero) prevents all redirection.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -306,7 +306,7 @@ Valid values are Default, Delete, Get, Head, Merge, Options, Patch, Post, Put, a
 ```yaml
 Type: WebRequestMethod
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -326,7 +326,7 @@ To send the results to a file and to the pipeline, use the **Passthru** paramete
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -342,7 +342,7 @@ This parameter is valid only when the **OutFile** parameter is also used in the 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -358,7 +358,7 @@ Enter the URI of a network proxy server.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -379,7 +379,7 @@ You cannot use the **ProxyCredential** and **ProxyUseDefaultCredentials** parame
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -397,7 +397,7 @@ You cannot use the **ProxyCredential** and **ProxyUseDefaultCredentials** parame
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -447,7 +447,7 @@ If your request contains a host name that requires resolution, and you set Timeo
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -463,7 +463,7 @@ Valid values are Chunked, Compress, Deflate, GZip and Identity.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -483,7 +483,7 @@ The parameter name (-Uri) is optional.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -500,7 +500,7 @@ This parameter is required when Internet Explorer is not installed on the comput
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -515,7 +515,7 @@ Uses the credentials of the current user to send the web request.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -538,7 +538,7 @@ For example, the following command uses the user agent string for Internet
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -567,7 +567,7 @@ You cannot use the **SessionVariable** and **WebSession** parameters in the same
 ```yaml
 Type: WebRequestSession
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -597,4 +597,3 @@ You can pipe the body of a web request to Invoke-WebRequest
 [ConvertFrom-Json](ConvertFrom-Json.md)
 
 [ConvertTo-Json](ConvertTo-Json.md)
-

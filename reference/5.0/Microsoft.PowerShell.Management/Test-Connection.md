@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -142,7 +142,7 @@ For more information about Windows PowerShell background jobs, see about_Jobs an
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Default, Source
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,9 +157,9 @@ Specifies the authentication level that this cmdlet uses with WMI.
 The acceptable values for this parameter are:
 
 - Default.
-Windows Authentication 
+Windows Authentication
 - None.
-No COM authentication 
+No COM authentication
 - Connect.
 Connect-level COM authentication
 - Call.
@@ -167,9 +167,9 @@ Call-level COM authentication
 - Packet .
 Packet-level COM authentication
 - PacketIntegrity.
-Packet Integrity-level COM authentication 
+Packet Integrity-level COM authentication
 - PacketPrivacy.
-Packet Privacy-level COM authentication 
+Packet Privacy-level COM authentication
 - Unchanged.
 Same as the previous command
 
@@ -180,7 +180,7 @@ For more information about the values of this parameter, see [AuthenticationLeve
 ```yaml
 Type: AuthenticationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
 
 Required: False
@@ -234,7 +234,7 @@ The default value is 4.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -253,7 +253,7 @@ The credentials do not affect the destination computer.
 ```yaml
 Type: PSCredential
 Parameter Sets: Source
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -268,7 +268,7 @@ Specifies the interval between pings, in seconds.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -283,20 +283,20 @@ Specifies the impersonation level to use when this cmdlet calls WMI.
 The acceptable values for this parameter are:
 
 - Default.
-Default impersonation. 
+Default impersonation.
 - Anonymous.
-Hides the identity of the caller. 
+Hides the identity of the caller.
 - Identify.
-Allows objects to query the credentials of the caller. 
+Allows objects to query the credentials of the caller.
 - Impersonate.
-Allows objects to use the credentials of the caller. 
+Allows objects to use the credentials of the caller.
 
 The default value is Impersonate.
 
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
 
 Required: False
@@ -314,7 +314,7 @@ If all pings fail, this cmdlet returns $False.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Quiet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -349,7 +349,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: Default, Source
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -402,4 +402,3 @@ Otherwise, this cmdlet returns a **Win32_PingStatus** object for each ping.
 [Restart-Computer](Restart-Computer.md)
 
 [Stop-Computer](Stop-Computer.md)
-

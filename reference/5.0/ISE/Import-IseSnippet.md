@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -93,7 +93,7 @@ Specifies the path to the snippets directory in which this cmdlet imports snippe
 ```yaml
 Type: String
 Parameter Sets: FromFolder
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -108,7 +108,7 @@ Indicate that this cmdlet imports snippets from all subdirectories of the value 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -128,7 +128,7 @@ Snippets in a module are not automatically imported with the module, but you can
 ```yaml
 Type: String
 Parameter Sets: FromModule
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -146,7 +146,7 @@ This parameter is valid only when the *Module* parameter is used in the command.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: FromModule
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,4 +184,3 @@ This cmdlet does not generate output.
 [New-IseSnippet](New-IseSnippet.md)
 
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
-

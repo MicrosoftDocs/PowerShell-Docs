@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -101,7 +101,7 @@ Indicates that the cmdlet displays the average value of the specified properties
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -116,7 +116,7 @@ Indicates that the cmdlet counts the number of characters in the input object.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ By default, white space is not ignored.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -151,7 +151,7 @@ Because *InputObject* cannot return individual properties from an array or colle
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -166,7 +166,7 @@ Indicates that the cmdlet counts the number of lines in the input object.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -181,7 +181,7 @@ Indicates that the cmdlet displays the maximum value of the specified properties
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -196,7 +196,7 @@ Indicates that the cmdlet displays the minimum value of the specified properties
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -212,7 +212,7 @@ The default is the **Count** property of the object.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -227,7 +227,7 @@ Indicates that the cmdlet displays the sum of the values of the specified proper
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -242,7 +242,7 @@ Indicates that the cmdlet counts the number of words in the input object.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -284,4 +284,3 @@ Otherwise, it returns a **GenericMeasureInfo** object.
 [Tee-Object](Tee-Object.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-

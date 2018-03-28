@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -103,7 +103,7 @@ Enter the cmdlet or function name, such as Update-Help, Set-ExecutionPolicy, or 
 ```yaml
 Type: String
 Parameter Sets: Command
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,7 +120,7 @@ If the expression includes spaces or special characters, enclose the expression 
 ```yaml
 Type: String
 Parameter Sets: Expression
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -138,7 +138,7 @@ For information about hash tables, see about_Hash_Tables (http://go.microsoft.co
 ```yaml
 Type: Hashtable
 Parameter Sets: Command
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -189,4 +189,3 @@ However, it runs the workflow, which might generate output.
 [Windows PowerShell Workflow Module](../PSWorkflow/PSWorkflow.md)
 
 [Windows PowerShell Workflow Utility Module](PSWorkflowUtility.md)
-

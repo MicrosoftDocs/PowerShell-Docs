@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -94,7 +94,7 @@ You can use this parameter to find the unique values of object properties, such 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: AsString
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -113,7 +113,7 @@ Because the collection is a single item, input submitted by using InputObject is
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -128,7 +128,7 @@ Returns only one object of each type.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UniqueByType
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -163,4 +163,3 @@ You can also use the Unique parameter of Sort-Object to find the unique items in
 [Select-Object](Select-Object.md)
 
 [Sort-Object](Sort-Object.md)
-

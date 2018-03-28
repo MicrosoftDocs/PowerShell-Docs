@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -42,7 +42,7 @@ To add a property to all objects of a particular type, modify the Types.ps1xml f
 ### Example 1: Add a registry entry
 ```
 PS C:\> New-ItemProperty -Path "HKLM:\Software\MyCompany" -Name "NoOfEmployees" -Value 822
-PS C:\> Get-ItemProperty "HKLM:\Software\MyCompany" 
+PS C:\> Get-ItemProperty "HKLM:\Software\MyCompany"
 
 PSPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software\mycompany
 PSParentPath  : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\software
@@ -103,7 +103,7 @@ This parameter is not supported by any providers installed with Windows PowerShe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -119,7 +119,7 @@ Wildcard characters are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -138,7 +138,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -155,7 +155,7 @@ For more information, see about_Providers.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -173,7 +173,7 @@ Wildcard characters are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -224,7 +224,7 @@ This parameter identifies the item to which this cmdlet adds the new property.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -239,22 +239,22 @@ The acceptable values for this parameter are:
 
 - String.
 Specifies a null-terminated string.
-Equivalent to REG_SZ. 
+Equivalent to REG_SZ.
 - ExpandString.
 Specifies a null-terminated string that contains unexpanded references to environment variables that are expanded when the value is retrieved.
-Equivalent to REG_EXPAND_SZ. 
+Equivalent to REG_EXPAND_SZ.
 - Binary.
 Specifies binary data in any form.
-Equivalent to REG_BINARY. 
+Equivalent to REG_BINARY.
 - DWord.
 Specifies a 32-bit binary number.
-Equivalent to REG_DWORD. 
+Equivalent to REG_DWORD.
 - MultiString.
 Specifies an array of null-terminated strings terminated by two null characters.
-Equivalent to REG_MULTI_SZ. 
+Equivalent to REG_MULTI_SZ.
 - Qword.
 Specifies a 64-bit binary number.
-Equivalent to REG_QWORD. 
+Equivalent to REG_QWORD.
 - Unknown.
 Indicates an unsupported registry data type, such as REG_RESOURCE_LIST.
 
@@ -294,7 +294,7 @@ If the property is a registry entry, this parameter specifies the value of the e
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -352,5 +352,3 @@ You cannot pipe input to this cmdlet.
 [Rename-ItemProperty](Rename-ItemProperty.md)
 
 [Set-ItemProperty](Set-ItemProperty.md)
-
-

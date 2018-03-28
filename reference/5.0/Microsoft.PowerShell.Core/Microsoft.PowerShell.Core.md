@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -261,4 +261,3 @@ Suppresses the command prompt until one or all of the Windows PowerShell backgro
 
 ### [Where-Object](Where-Object.md)
 Selects objects from a collection based on their property values.
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -63,7 +63,7 @@ The **Enable-RunspaceDebug** cmdlet enables debugging on runspaces where any bre
 ```yaml
 Type: String[]
 Parameter Sets: ProcessNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: RunspaceNameParameterSet, RunspaceParameterSet, RunspaceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: ProcessNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -109,7 +109,7 @@ The simplest way to provide a value for this parameter is to specify a variable 
 ```yaml
 Type: Runspace[]
 Parameter Sets: RunspaceParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Int32[]
 Parameter Sets: RunspaceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Guid[]
 Parameter Sets: RunspaceInstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: RunspaceNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -177,4 +177,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Disable-RunspaceDebug](Disable-RunspaceDebug.md)
 
 [Get-RunspaceDebug](Get-RunspaceDebug.md)
-

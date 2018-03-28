@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -133,7 +133,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 ```yaml
 Type: SwitchParameter
 Parameter Sets: AsJobSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -173,7 +173,7 @@ Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredenti
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -194,7 +194,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Int16
 Parameter Sets: DefaultSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -220,7 +220,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: WaitForServiceTypes
 Parameter Sets: DefaultSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -258,7 +258,7 @@ Valid values are:
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -276,7 +276,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: AsJobSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -320,7 +320,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: DefaultSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -370,7 +370,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DefaultSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -395,7 +395,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DefaultSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -471,4 +471,3 @@ Otherwise, it does not generate any output.
 [Stop-Computer](Stop-Computer.md)
 
 [Test-Connection](Test-Connection.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -44,15 +44,15 @@ PS C:\> $Timer | Get-Member -Type Event
 TypeName: System.Timers.Timer
 Name     MemberType Definition
 ----     ---------- ----------
-Disposed Event      System.EventHandler Disposed(System.Object, System.EventArgs) 
+Disposed Event      System.EventHandler Disposed(System.Object, System.EventArgs)
 Elapsed  Event      System.Timers.ElapsedEventHandler Elapsed(System.Object, System.Timers.ElapsedEventArgs) PS C:\> Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
 PS C:\> Get-EventSubscriber
 SubscriptionId   : 4
 SourceObject     : System.Timers.Timer
 EventName        : Elapsed
 SourceIdentifier : Timer.Elapsed
-Action           : 
-HandlerDelegate  : 
+Action           :
+HandlerDelegate  :
 SupportEvent     : False
 ForwardEvent     : False
 ```
@@ -82,9 +82,9 @@ PS C:\> ($Subscriber.action).gettype().fullname
 PSEventJob PS C:\> $Subscriber.action | Format-List -Property *
 State         : Running
 Module        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
-StatusMessage : 
+StatusMessage :
 HasMoreData   : True
-Location      : 
+Location      :
 Command       : $random = Get-Random -Min 0 -Max 100
 JobStateInfo  : Running
 Finished      : System.Threading.ManualResetEvent
@@ -135,7 +135,7 @@ Indicates that this cmdlet gets all event subscribers, including subscribers for
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -153,7 +153,7 @@ This parameter is case-sensitive.
 ```yaml
 Type: String
 Parameter Sets: BySource
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -216,4 +216,3 @@ If you close the current session, the event queue is discarded and the event sub
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

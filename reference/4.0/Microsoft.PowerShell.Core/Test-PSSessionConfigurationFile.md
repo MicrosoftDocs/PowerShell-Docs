@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -53,15 +53,15 @@ The path to the session configuration file is stored in the value of the **Confi
 
 ### Example 3: Test all session configuration files
 ```
-PS C:\>                     
+PS C:\>
 function Test-AllConfigFiles
 {
     Get-PSSessionConfiguration | ForEach-Object { if ($_.ConfigFilePath)
     {$_.ConfigFilePath; Test-PSSessionConfigurationFile -Verbose `
      -Path $_.ConfigFilePath }}
 }
- 
-                      
+
+
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\Empty_6fd77bf6-e084-4372-bd8a-af3e207354d3.psscTrueC:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\Full_1e9cb265-dae0-4bd3-89a9-8338a47698a1.psscVERBOSE: The member 'AliasDefinitions' must contain the required key 'Description'. Add the require key to the fileC:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\Full_1e9cb265-dae0-4bd3-89a9-8338a47698a1.pssc.FalseC:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\NoLanguage_0c115179-ff2a-4f66-a5eb-e56e5692ba22.psscTrueC:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\RestrictedLang_b6bd9474-0a6c-4e06-8722-c2c95bb10d3e.psscTrueC:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\RRS_3fb29420-2c87-46e5-a402-e21436331efc.psscTrue
 ```
 
@@ -87,7 +87,7 @@ You can also pipe a session configuration file path to **Test-PSSessionConfigura
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -135,4 +135,3 @@ You can pipe a session configuration file path to **Test-PSSessionConfigurationF
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

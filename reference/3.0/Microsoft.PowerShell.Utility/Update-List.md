@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -105,7 +105,7 @@ Enter the values in the order that they should appear in the collection.
 ```yaml
 Type: Object[]
 Parameter Sets: AddRemoveSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -121,7 +121,7 @@ You can also pipe the object to be updated to Update-List.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -137,7 +137,7 @@ If you omit this parameter, Update-List returns an object that represents the ch
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -152,7 +152,7 @@ Specifies the property values to be removed from the collection.
 ```yaml
 Type: Object[]
 Parameter Sets: AddRemoveSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -168,7 +168,7 @@ This parameter replaces all items in the original collection with the items spec
 ```yaml
 Type: Object[]
 Parameter Sets: ReplaceSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -192,4 +192,3 @@ Update-List returns the updated object, or it returns an object that represents 
 ## RELATED LINKS
 
 [Select-Object](Select-Object.md)
-

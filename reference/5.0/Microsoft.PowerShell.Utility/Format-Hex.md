@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -54,7 +54,7 @@ This command returns the hexadecimal representation of the string Hello World.
 PS C:\> Format-Hex -Path "C:\temp\temp.t7f"
            00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
-00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????. 
+00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????.
 00000010   0A 31 20 30 20 6F 62 6A 0D 0A 3C 3C 2F 54 79 70  .1 0 obj..<</Typ
 00000020   65 2F 43 61 74 61 6C 6F 67 2F 50 61 67 65 73 20  e/Catalog/Pages
 ```
@@ -69,11 +69,11 @@ The first few bytes of the header contain that information.
 Specifies the type of character encoding used in the file that this cmdlet formats as hexadecimal.
 The acceptable values for this parameter are:
 
-- Ascii 
-- UTF32 
-- UTF7 
-- UTF8 
-- BigEndianUnicode 
+- Ascii
+- UTF32
+- UTF7
+- UTF8
+- BigEndianUnicode
 - Unicode
 
 The default value is Unicode.
@@ -81,7 +81,7 @@ The default value is Unicode.
 ```yaml
 Type: String
 Parameter Sets: ByInputObject
-Aliases: 
+Aliases:
 Accepted values: Ascii, UTF32, UTF7, UTF8, BigEndianUnicode, Unicode
 
 Required: False
@@ -98,7 +98,7 @@ Enter a variable that contains the objects or type a command or expression that 
 ```yaml
 Type: Object
 Parameter Sets: ByInputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -138,7 +138,7 @@ Use the wildcard character (*) to specify all the items in the current location.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -174,4 +174,3 @@ If you specify the *Path* or *LiteralPath* parameter, the object also contains t
 [Format-Table](Format-Table.md)
 
 [Format-Wide](Format-Wide.md)
-
