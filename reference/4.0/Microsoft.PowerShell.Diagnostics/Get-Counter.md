@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -27,7 +27,7 @@ Get-Counter [-ListSet] <String[]> [-ComputerName <String[]>] [<CommonParameters>
 ```
 
 ## DESCRIPTION
-The Get-Counter cmdlet gets live, real-time performance counter data directly from the performance monitoring instrumentation in Windows. 
+The Get-Counter cmdlet gets live, real-time performance counter data directly from the performance monitoring instrumentation in Windows.
 You can use it to get performance data from the local or remote computers at the sample interval that you specify.
 
 Without parameters, a "Get-Counter" command gets counter data for a set of system counters.
@@ -161,7 +161,7 @@ DefaultScale     : 0
 TimeBase         : 10000000
 ```
 
-This example shows the property values in the **PerformanceCounterSample** object that represents each data sample. 
+This example shows the property values in the **PerformanceCounterSample** object that represents each data sample.
 You can use the properties of the CounterSamples object to examine, select, sort,  and group the data.
 
 ### Example 10
@@ -315,7 +315,7 @@ You can use the SampleInterval parameter to set the interval for continuous samp
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -349,7 +349,7 @@ For a demonstration, see the examples.
 ```yaml
 Type: String[]
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -367,7 +367,7 @@ You can also pipe counter set names to Get-Counter.
 ```yaml
 Type: String[]
 Parameter Sets: ListSetSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -387,7 +387,7 @@ For more information, see about_Jobs and Start-Job.
 ```yaml
 Type: Int64
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -403,7 +403,7 @@ The minimum value and the default value are 1 second.
 ```yaml
 Type: Int32
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -424,7 +424,7 @@ You can pipe counter paths and counter set (ListSet) names to Get-Counter.
 
 ### Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample
 The ListSet parameter gets Microsoft.PowerShell.Commands.GetCounter.CounterSet objects.
-The Counter parameter gets Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet objects. 
+The Counter parameter gets Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet objects.
 Each counter value is a Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample object.
 
 ## NOTES
@@ -443,4 +443,3 @@ To set different values for different counters, enter separate Get-Counter comma
 [Export-Counter](Export-Counter.md)
 
 [Import-Counter](Import-Counter.md)
-

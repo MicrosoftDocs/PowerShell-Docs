@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -92,7 +92,7 @@ Because these modules are in the $pshome\Modules directory, to run this command,
 ### Example 3: Update help in different  languages
 ```
 PS C:\> Update-Help -UICulture ja-JP, en-US
-Update-Help : Failed to update Help for the module(s) 'ServerManager' with UI culture(s) {ja-JP} : 
+Update-Help : Failed to update Help for the module(s) 'ServerManager' with UI culture(s) {ja-JP} :
 The specified culture is not supported: ja-JP. Specify a culture from the following list: {en-US}.
 ```
 
@@ -170,7 +170,7 @@ Param
          [parameter(Mandatory=$False)]
          [String[]]
          $Module
-      )      
+      )
 $HelpInfoNamespace = @{helpInfo="http://schemas.microsoft.com/powershell/help/2010/05"}
 
 if ($Module) { $Modules = Get-Module $Module -ListAvailable | where {$_.HelpInfoUri} }
@@ -188,7 +188,7 @@ foreach ($mModule in $Modules)
         {
             $mCulture=$mNode.Node.UICultureName
             $mVer=$mNode.Node.UICultureVersion
-            
+
             [PSCustomObject]@{"ModuleName"=$mName; "Culture"=$mCulture; "Version"=$mVer}
         }
     }
@@ -231,7 +231,7 @@ By providing explicit credentials, you can run the command on a remote computer 
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -252,7 +252,7 @@ To update help for a module in multiple UI cultures without the **Force** parame
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -319,7 +319,7 @@ This parameter is valid only when the **SourcePath** parameter is used in the co
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -344,7 +344,7 @@ For more information, see about_Group_Policy_Settings (http://go.microsoft.com/f
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -367,7 +367,7 @@ If the command fails because the specified UI culture is not supported, the erro
 ```yaml
 Type: CultureInfo[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -385,7 +385,7 @@ This parameter is effective only when the web download uses NTLM, negotiate, or 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -414,7 +414,7 @@ You can pipe a module object from the Get-Module cmdlet to  **Update-Help**.
 * To update help for the Windows PowerShell Core modules (which contain the commands that are installed with Windows PowerShell) or any module in the $pshome\Modules directory, start Windows PowerShell with the "Run as administrator" option.
 
   Only  members of the Administrators group on the computer can update help for the for the Windows PowerShell Core modules (the commands that are installed with Windows PowerShell) and for modules in the $pshome\Modules directory.
-If you do not have permission to update help files, you might be able to read the help topics online. 
+If you do not have permission to update help files, you might be able to read the help topics online.
 To open the online version of any cmdlet help topic, type "`Get-Help \<cmdlet-name\> -Online `".
 
 * Modules are the smallest unit of updatable help. You cannot update help for a particular cmdlet; only for all cmdlets in module. To find the module that contains a particular cmdlet, use the **ModuleName** property of the Get-Command cmdlet, for example, `(Get-Command \<cmdlet-name\>).ModuleName`
@@ -446,4 +446,3 @@ To open the online version of any cmdlet help topic, type "`Get-Help \<cmdlet-na
 [Start-Job](Start-Job.md)
 
 [Save-Help](Save-Help.md)
-
