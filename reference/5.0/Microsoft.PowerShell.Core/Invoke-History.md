@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -95,7 +95,7 @@ To find the ID number of a command, use the **Get-History** cmdlet.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -150,4 +150,3 @@ For more information, see about_Aliases (http://go.microsoft.com/fwlink/?LinkID=
 [Get-History](Get-History.md)
 
 [about_History](About/about_History.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -65,7 +65,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ```
 PS C:\> Disconnect-PSSession -Name UpdateSession
 Id Name            ComputerName    State         ConfigurationName     Availability
--- ----            ------------    -----         -----------------     ------------ 
+-- ----            ------------    -----         -----------------     ------------
 1  UpdateSession   Server01        Disconnected  Microsoft.PowerShell          None
 ```
 
@@ -79,7 +79,7 @@ The session state is **Disconnected** and the **Availability** is None, which in
 ```
 PS C:\> Get-PSSession -ComputerName Server12 -Name ITTask | Disconnect-PSSession -OutputBufferingMode Drop -IdleTimeoutSec 86400
 Id Name            ComputerName    State         ConfigurationName     Availability
--- ----            ------------    -----         -----------------     ------------ 
+-- ----            ------------    -----         -----------------     ------------
 1  ITTask          Server12        Disconnected  ITTasks               None
 ```
 
@@ -104,7 +104,7 @@ PS C:\> Invoke-Command $s -FilePath \\Server01\Scripts\Get-PatchStatus.ps1
 The script running on the Srv1 computer generates unexpected errors. The technician contacts his manager and asks for assistance. The manager directs the technician to disconnect from the session so he can investigate.The second command uses the Get-PSSession cmdlet to get the ITTask session on the Srv1 computer and **Disconnect-PSSession** to disconnect it. This command does not affect the ITTask sessions on  the other computers.
 PS C:\> Get-PSSession -Name ITTask -ComputerName Srv1 | Disconnect-PSSession
 Id Name            ComputerName    State         ConfigurationName     Availability
--- ----            ------------    -----         -----------------     ------------ 
+-- ----            ------------    -----         -----------------     ------------
 1 ITTask           Srv1            Disconnected  Microsoft.PowerShell          None
 
 The third command uses the **Get-PSSession** cmdlet to get the ITTask sessions. The output shows that the ITTask sessions on the Srv2 and Srv30 computers were not affected by the command to disconnect.
@@ -269,7 +269,7 @@ The instance ID is stored in the **ID** property of the session.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -298,7 +298,7 @@ The default value of **MaxIdleTimeoutMs** is 12 hours (43200000 milliseconds).
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -319,7 +319,7 @@ The instance ID is stored in the **InstanceID** property of the session.
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -338,7 +338,7 @@ The friendly name is stored in the **Name** property of the session.
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -358,14 +358,14 @@ When using the Drop value, redirect the command output to a file on disk.
 
 The acceptable values for this parameter are:
 
-- Block. When the output buffer is full, execution is suspended until the buffer is clear. 
+- Block. When the output buffer is full, execution is suspended until the buffer is clear.
 - Drop. When the output buffer is full, execution continues. As new output is saved, the oldest output is discarded.
 - None. No output buffering mode is specified. The value of the *OutputBufferingMode* property of the session configuration is used for the disconnected session.
 
 ```yaml
 Type: OutputBufferingMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, Drop, Block
 
 Required: False
@@ -388,7 +388,7 @@ If you pipe other **PSSession** objects to **Disconnect-PSSession**, the **Disco
 ```yaml
 Type: PSSession[]
 Parameter Sets: Session
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -408,7 +408,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -494,4 +494,3 @@ A value of **Busy** indicates that you cannot connect to the **PSSession** becau
 [about_Remote](About/about_Remote.md)
 
 [about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
-

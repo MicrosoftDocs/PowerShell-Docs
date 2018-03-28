@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -102,8 +102,8 @@ This command gets all of the exported files for all available modules.
 ### Example 4: Get a module by its fully qualified name
 ```
 PS C:\> Get-Module -FullyQualifiedName @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"} | Format-Table -Property Name,Version
-Name                                                                                 Version                                                                             
-----                                                                                 -------                                                                             
+Name                                                                                 Version
+----                                                                                 -------
 Microsoft.PowerShell.Management                                                      3.1.0.0
 ```
 
@@ -299,7 +299,7 @@ Without this parameter, **Get-Module** gets only the default module in each modu
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Loaded, Available
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -319,7 +319,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: CimSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -339,7 +339,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Uri
 Parameter Sets: CimSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -363,7 +363,7 @@ However, you can import only CIM-based and Cmdlet Definition XML (CDXML)-based m
 ```yaml
 Type: CimSession
 Parameter Sets: CimSession
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -375,10 +375,10 @@ Accept wildcard characters: False
 ### -FullyQualifiedName
 Specifies names of modules in the form of **ModuleSpecification** objects.
 These objects are described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290) in the MSDN library.
-For example, the *FullyQualifiedName* parameter accepts a module name that is specified in the following formats: 
+For example, the *FullyQualifiedName* parameter accepts a module name that is specified in the following formats:
 
 @{ModuleName = "modulename"; ModuleVersion = "version_number"}
-@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}. 
+@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}.
 
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional.
 
@@ -387,7 +387,7 @@ You cannot specify the *FullyQualifiedName* parameter in the same command as a *
 ```yaml
 Type: ModuleSpecification[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -399,13 +399,13 @@ Accept wildcard characters: False
 ### -ListAvailable
 Indicates that this cmdlet gets all installed modules.
 **Get-Module** gets modules in paths listed in the **PSModulePath** environment variable.
-Without this parameter, **Get-Module** gets only the modules that are both listed in the **PSModulePath** environment variable, and that are loaded in the current session. 
+Without this parameter, **Get-Module** gets only the modules that are both listed in the **PSModulePath** environment variable, and that are loaded in the current session.
 *ListAvailable* does not return information about modules that are not found in the **PSModulePath** environment variable, even if those modules are loaded in the current session.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CimSession, PsSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -417,7 +417,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Available
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -438,7 +438,7 @@ To return modules by specifying a GUID, use *FullyQualifiedName* instead.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -460,7 +460,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSSession
 Parameter Sets: PsSession
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -483,7 +483,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CimSession, Available, PsSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -544,4 +544,3 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 [New-PSSession](New-PSSession.md)
 
 [Remove-Module](Remove-Module.md)
-
