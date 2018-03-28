@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -194,7 +194,7 @@ Because the **Maximum** parameter has position 0, you can omit the parameter nam
 ```
 PS C:\> Get-Random -Minimum ([Int64]::MinValue)3738173363251507200
 PS C:\> Get-Random -Minimum ([Int32]::MaxValue)
-Minimum (2147483647) cannot be greater than or equal to Maximum (2147483647). 
+Minimum (2147483647) cannot be greater than or equal to Maximum (2147483647).
     + CategoryInfo          : InvalidArgument: (:) [Get-Random], ArgumentException
     + FullyQualifiedErrorId : MinGreaterThanOrEqualMax,Microsoft.PowerShell.Commands.GetRandomCommand
 ```
@@ -215,7 +215,7 @@ If the value of *Count* exceeds the number of objects in the collection, **Get-R
 ```yaml
 Type: Int32
 Parameter Sets: RandomListItemParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -233,7 +233,7 @@ You can also pipe a collection of objects to **Get-Random**.
 ```yaml
 Type: Object[]
 Parameter Sets: RandomListItemParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -261,7 +261,7 @@ Otherwise, the default value is Int64.MaxValue.
 ```yaml
 Type: Object
 Parameter Sets: RandomNumberParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -282,7 +282,7 @@ If the value of *Maximum* or *Minimum* is a floating-point number, **Get-Random*
 ```yaml
 Type: Object
 Parameter Sets: RandomNumberParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -303,7 +303,7 @@ Because *SetSeed* results in non-random behavior, it is typically used only when
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -331,4 +331,3 @@ You can pipe one or more objects to **Get-Random**.
 * Beginning in Windows PowerShell 3.0, **Get-Random** supports 64-bit integers. In Windows PowerShell 2.0, all values are cast to System.Int32.
 
 ## RELATED LINKS
-

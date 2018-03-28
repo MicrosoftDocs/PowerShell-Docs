@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -60,7 +60,7 @@ PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable Name
 PS C:\> $B | Disable-PSBreakpoint -PassThru
 AccessMode : Write
 Variable   : Name
-Action     : 
+Action     :
 Enabled    : False
 HitCount   : 0
 Id         : 0
@@ -68,7 +68,7 @@ Script     : C:\ps-test\sample.ps1
 ScriptName : C:\ps-test\sample.ps1 PS C:\> $B | Enable-PSBreakpoint -PassThru
 AccessMode : Write
 Variable   : Name
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
@@ -115,7 +115,7 @@ You can also pipe breakpoint objects to **Enable-PSBreakpoint**.
 ```yaml
 Type: Breakpoint[]
 Parameter Sets: Breakpoint
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -149,7 +149,7 @@ To find the ID of a breakpoint, use the Get-PSBreakpoint cmdlet.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -165,7 +165,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -225,4 +225,3 @@ You do not need to enable newly created breakpoints.
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
-

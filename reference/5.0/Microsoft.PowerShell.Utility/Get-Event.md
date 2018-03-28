@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -56,7 +56,7 @@ This command gets events in which the value of the SourceIdentifier property is 
 ```
 PS C:\> $Events = Get-Event
 PS C:\> $Events[0] | Format-List -Property *
-ComputerName     : 
+ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b805917d1b7b
 EventIdentifier  : 1
 Sender           : System.Management.ManagementEventWatcher
@@ -65,7 +65,7 @@ SourceArgs       : {System.Management.ManagementEventWatcher, System.Management.
 SourceIdentifier : ProcessStarted
 TimeGenerated    : 11/13/2008 12:09:32 PM
 MessageData      : PS C:\> Get-Event | Where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
-ComputerName     : 
+ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b8059325d1a0
 EventIdentifier  : 1
 Sender           : System.Management.ManagementEventWatcher
@@ -118,7 +118,7 @@ Wildcards are not permitted.
 ```yaml
 Type: String
 Parameter Sets: BySource
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -201,4 +201,3 @@ In the value of the *Action* parameter, the MessageData property of the $Event a
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -39,32 +39,32 @@ Name                      MemberType    Definition
 Name                      AliasProperty Name = ServiceName
 Close                     Method        System.Void Close()
 Continue                  Method        System.Void Continue()
-CreateObjRef              Method        System.Runtime.Remoting.ObjRef CreateObjRef(Type requestedType) 
+CreateObjRef              Method        System.Runtime.Remoting.ObjRef CreateObjRef(Type requestedType)
 Dispose                   Method        System.Void Dispose()
-Equals                    Method        System.Boolean Equals(Object obj) 
-ExecuteCommand            Method        System.Void ExecuteCommand(Int32 command) 
+Equals                    Method        System.Boolean Equals(Object obj)
+ExecuteCommand            Method        System.Void ExecuteCommand(Int32 command)
 GetHashCode               Method        System.Int32 GetHashCode()
 GetLifetimeService        Method        System.Object GetLifetimeService()
 GetType                   Method        System.Type GetType()
 InitializeLifetimeService Method        System.Object InitializeLifetimeService()
 Pause                     Method        System.Void Pause()
 Refresh                   Method        System.Void Refresh()
-Start                     Method        System.Void Start(), System.Void Start(String[] args) 
+Start                     Method        System.Void Start(), System.Void Start(String[] args)
 Stop                      Method        System.Void Stop()
 ToString                  Method        System.String ToString()
-WaitForStatus             Method        System.Void WaitForStatus(ServiceControllerStatus desiredStatus), System.Voi... 
-CanPauseAndContinue       Property      System.Boolean CanPauseAndContinue {get;} 
-CanShutdown               Property      System.Boolean CanShutdown {get;} 
-CanStop                   Property      System.Boolean CanStop {get;} 
-Container                 Property      System.ComponentModel.IContainer Container {get;} 
-DependentServices         Property      System.ServiceProcess.ServiceController[] DependentServices {get;} 
-DisplayName               Property      System.String DisplayName {get;set;} 
-MachineName               Property      System.String MachineName {get;set;} 
-ServiceHandle             Property      System.Runtime.InteropServices.SafeHandle ServiceHandle {get;} 
-ServiceName               Property      System.String ServiceName {get;set;} 
-ServicesDependedOn        Property      System.ServiceProcess.ServiceController[] ServicesDependedOn {get;} 
-ServiceType               Property      System.ServiceProcess.ServiceType ServiceType {get;} 
-Site                      Property      System.ComponentModel.ISite Site {get;set;} 
+WaitForStatus             Method        System.Void WaitForStatus(ServiceControllerStatus desiredStatus), System.Voi...
+CanPauseAndContinue       Property      System.Boolean CanPauseAndContinue {get;}
+CanShutdown               Property      System.Boolean CanShutdown {get;}
+CanStop                   Property      System.Boolean CanStop {get;}
+Container                 Property      System.ComponentModel.IContainer Container {get;}
+DependentServices         Property      System.ServiceProcess.ServiceController[] DependentServices {get;}
+DisplayName               Property      System.String DisplayName {get;set;}
+MachineName               Property      System.String MachineName {get;set;}
+ServiceHandle             Property      System.Runtime.InteropServices.SafeHandle ServiceHandle {get;}
+ServiceName               Property      System.String ServiceName {get;set;}
+ServicesDependedOn        Property      System.ServiceProcess.ServiceController[] ServicesDependedOn {get;}
+ServiceType               Property      System.ServiceProcess.ServiceType ServiceType {get;}
+Site                      Property      System.ComponentModel.ISite Site {get;set;}
 Status                    Property      System.ServiceProcess.ServiceControllerStatus Status {get;}
 ```
 
@@ -128,7 +128,7 @@ PS C:\> ForEach ($Cmdlet in $A) {Invoke-Command $Cmdlet | Get-Member -Name Machi
 TypeName: System.Diagnostics.Process
 Name        MemberType Definition
 ----        ---------- ----------
-MachineName Property   System.String MachineName {get;} 
+MachineName Property   System.String MachineName {get;}
 TypeName: System.ServiceProcess.ServiceController
 Name        MemberType Definition
 ----        ---------- ----------
@@ -152,7 +152,7 @@ TypeName: System.Object[]
 Name               MemberType    Definition
 ----               ----------    ----------
 Count              AliasProperty Count = Length
-Address            Method        System.Object& Address(Int32 ) 
+Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
 ... PS C:\> $A.Count
 1
@@ -221,8 +221,8 @@ Count          AliasProperty Count = Length
 Address        Method        System.Object&, mscorlib, Version=2.0.0.0, Cultu
 Clone          Method        System.Object Clone()
 CopyTo         Method        System.Void CopyTo(array array, int index), Syst
-Equals         Method        bool Equals(System.Object obj) 
-Get            Method        System.Object Get(int ) 
+Equals         Method        bool Equals(System.Object obj)
+Get            Method        System.Object Get(int )
 GetEnumerator  Method        System.Collections.IEnumerator GetEnumerator()
 GetHashCode    Method        int GetHashCode()
 ...
@@ -258,7 +258,7 @@ The following list describes the properties that are added when you use the *For
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -279,7 +279,7 @@ The differences are as follows:
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -343,7 +343,7 @@ To get a static member by name, use the *Static* parameter with the *Name* param
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -363,7 +363,7 @@ If you use the *Static* parameter with the *MemberType* parameter, **Get-Member*
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -393,7 +393,7 @@ If you use the *Static* and *View* parameters in the same command, the *View* pa
 ```yaml
 Type: PSMemberViewTypes
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Extended, Adapted, Base, All
 
 Required: False
@@ -442,4 +442,3 @@ For more information about the $This variable, see about_Automatic_Variables.
 [about_Methods](../Microsoft.PowerShell.Core/About/about_Methods.md)
 
 [about_Objects](../Microsoft.PowerShell.Core/About/about_Objects.md)
-
