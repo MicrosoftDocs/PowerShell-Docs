@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -84,7 +84,7 @@ Specifies the name or fully qualified name of the module for which to view the D
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -99,7 +99,7 @@ Specifies an array of names of the DSC resource to view.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -115,7 +115,7 @@ The returned syntax shows how to use the resources in aWindows PowerShell script
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -142,4 +142,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Find-DscResource](../PowershellGet/Find-DscResource.md)
 
 [Invoke-DscResource](Invoke-DscResource.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -85,7 +85,7 @@ After running this command, if you search the information stream for messages ta
 ### Example 3: Write information to a file
 ```
 PS C:\> function Test-Info
-       { 
+       {
          Get-Process P*
          Write-Information "Here you go"
        }
@@ -121,7 +121,7 @@ This parameter works similarly to the *Tags* parameter in New-ModuleManifest.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -135,7 +135,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 **Write-Information** does not accept piped input.
 
 ## OUTPUTS
@@ -167,4 +167,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Write-Warning](Write-Warning.md)
 
 [Write-Output](Write-Output.md)
-

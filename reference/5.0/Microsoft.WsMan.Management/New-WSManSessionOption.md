@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -22,7 +22,7 @@ New-WSManSessionOption [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthenticatio
 ```
 
 ## DESCRIPTION
-The **New-WSManSessionOption** cmdlet creates a WSMan Session option hash table which can be passed to WSMan cmdlets: 
+The **New-WSManSessionOption** cmdlet creates a WSMan Session option hash table which can be passed to WSMan cmdlets:
 
 - Get-WSManInstance
 - Set-WSManInstance
@@ -68,7 +68,7 @@ It must be enabled in the local configuration.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -97,21 +97,21 @@ Specifies the mechanism by which the proxy server is located.
 The acceptable values for this parameter are:
 
 - ProxyIEConfig.
-Use the Internet Explorer proxy configuration for the current user. 
+Use the Internet Explorer proxy configuration for the current user.
 - ProxyWinHttpConfig.
-The WSMan client uses the proxy settings configured for WinHTTP, using the ProxyCfg.exe utility. 
+The WSMan client uses the proxy settings configured for WinHTTP, using the ProxyCfg.exe utility.
 - ProxyAutoDetect.
-Force auto-detection of a proxy server. 
+Force auto-detection of a proxy server.
 - ProxyNoProxyServer.
 Do not use a proxy server.
-Resolve all host names locally. 
+Resolve all host names locally.
 
 The default value is ProxyIEConfig.
 
 ```yaml
 Type: ProxyAccessType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: ProxyIEConfig, ProxyWinHttpConfig, ProxyAutoDetect, ProxyNoProxyServer
 
 Required: False
@@ -126,19 +126,19 @@ Specifies the authentication method to use at the proxy.
 The acceptable values for this parameter are:
 
 - Basic.
-Basic is a scheme in which the user name and password are sent in clear-text to the server or proxy. 
+Basic is a scheme in which the user name and password are sent in clear-text to the server or proxy.
 - Digest.
-Digest is a challenge-response scheme that uses a server-specified data string for the challenge. 
+Digest is a challenge-response scheme that uses a server-specified data string for the challenge.
 - Negotiate.
 Negotiate is a challenge-response scheme that negotiates with the server or proxy to determine which scheme to use for authentication.
-Examples are the Kerberos protocol and NTLM. 
+Examples are the Kerberos protocol and NTLM.
 
 The default value is Negotiate.
 
 ```yaml
 Type: ProxyAuthentication
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Negotiate, Basic, Digest
 
 Required: False
@@ -154,7 +154,7 @@ Specifies a user account that has permission to gain access through an intermedi
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -170,7 +170,7 @@ An SPN is used when the authentication mechanism is Kerberos or Negotiate.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -186,7 +186,7 @@ Use this option only when the remote computer is trusted by another method, for 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -203,7 +203,7 @@ This option should only be used for trusted computers.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -218,7 +218,7 @@ Indicates that the connection does not validate the revocation status on the ser
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -234,7 +234,7 @@ The default is UTF8 encoding.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -279,4 +279,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

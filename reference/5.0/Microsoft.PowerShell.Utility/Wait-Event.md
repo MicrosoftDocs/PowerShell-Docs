@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -55,7 +55,7 @@ SourceEventArgs  : System.Timers.ElapsedEventArgs
 SourceArgs       : {System.Timers.Timer, System.Timers.ElapsedEventArgs}
 SourceIdentifier : Timer.Elapsed
 TimeGenerated    : 6/10/2008 3:24:18 PM
-MessageData      : 
+MessageData      :
 ForwardEvent     : False
 ```
 
@@ -78,7 +78,7 @@ By default, **Wait-Event** waits for any event.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -142,4 +142,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-
