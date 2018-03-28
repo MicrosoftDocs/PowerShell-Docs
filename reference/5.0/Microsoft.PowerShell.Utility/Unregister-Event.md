@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -90,7 +90,7 @@ Cancels all event subscriptions, including subscriptions that were hidden by usi
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -107,7 +107,7 @@ A *SourceIdentifier* or *SubscriptionId* parameter must be included in every com
 ```yaml
 Type: String
 Parameter Sets: BySource
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -124,7 +124,7 @@ A *SourceIdentifier* or *SubscriptionId* parameter must be included in every com
 ```yaml
 Type: Int32
 Parameter Sets: ById
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -189,4 +189,3 @@ To delete a custom event from the session, you must remove it programmatically o
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

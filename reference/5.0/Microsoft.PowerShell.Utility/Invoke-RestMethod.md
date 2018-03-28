@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -43,8 +43,8 @@ Format-Table -Property Title, pubDate
 ```
 
 ```
-Title                                                                pubDate                        
------                                                                -------                        
+Title                                                                pubDate
+-----                                                                -------
 Join the PowerShell 10th Anniversary Celebration!                    Tue, 08 Nov 2016 23:00:04 +0000
 DSC Resource Kit November 2016 Release                               Thu, 03 Nov 2016 00:19:07 +0000
 PSScriptAnalyzer Community Call - Oct 18, 2016                       Thu, 13 Oct 2016 17:52:35 +0000
@@ -625,4 +625,3 @@ If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that
 [ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Invoke-WebRequest](Invoke-WebRequest.md)
-

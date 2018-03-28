@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -59,8 +59,8 @@ PS C:\> $Events = Get-EventLog -LogName "system" -Newest 1000
 PS C:\> $Events | Group-Object -Property eventID
 Count Name                      Group
 ----- ----                      -----
-44    Information               {System.Diagnostics.EventLogEntry, 
-5     Error                     {System.Diagnostics.EventLogEntry, 
+44    Information               {System.Diagnostics.EventLogEntry,
+5     Error                     {System.Diagnostics.EventLogEntry,
 1     Warning                   {System.Diagnostics.EventLogEntry}
 ```
 
@@ -183,13 +183,13 @@ PS C:\> $A = Get-Command get-*, set-* -Type cmdlet | Group-Object -Property verb
 PS C:\> $A
 Name    Value
 ----    -----
-Get     {Get-PSCallStack, Get-PSBreakpoint, Get-PSDrive, Get-PSSession...} 
+Get     {Get-PSCallStack, Get-PSBreakpoint, Get-PSDrive, Get-PSSession...}
 Set     {Set-Service, Set-StrictMode, Set-PSDebug, Set-PSSessionConfiguration...} PS C:\> $A.get
 CommandType     Name                 Definition
 -----------     ----                 ----------
-Cmdlet          Get-PSCallStack      Get-PSCallStack [-Verbose] [-Debug] [-ErrorAction <ActionPrefer... 
-Cmdlet          Get-PSBreakpoint     Get-PSBreakpoint [[-Id] <Int32[]>] [-Verbose] [-Debug] [-ErrorA... 
-Cmdlet          Get-PSDrive          Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider... 
+Cmdlet          Get-PSCallStack      Get-PSCallStack [-Verbose] [-Debug] [-ErrorAction <ActionPrefer...
+Cmdlet          Get-PSBreakpoint     Get-PSBreakpoint [[-Id] <Int32[]>] [-Verbose] [-Debug] [-ErrorA...
+Cmdlet          Get-PSDrive          Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider...
 ...
 ```
 
@@ -237,7 +237,7 @@ This parameter is valid only when used with the *AsHashTable* parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -253,7 +253,7 @@ Without this parameter, the property values of objects in a group might have dif
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -268,7 +268,7 @@ Specifies the culture to use when comparing strings.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -289,7 +289,7 @@ To group the objects in a collection, pipe the objects to **Group-Object**.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -304,7 +304,7 @@ Indicates that this cmdlet omits the members of a group from the results.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -323,7 +323,7 @@ To create a calculated, property, create a hash table with an Expression key tha
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -383,4 +383,3 @@ Ungroupable objects appear in the final **GroupInfo** object output in a group n
 [Sort-Object](Sort-Object.md)
 
 [Tee-Object](Tee-Object.md)
-
