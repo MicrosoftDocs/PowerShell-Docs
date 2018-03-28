@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -169,7 +169,7 @@ You can use the following abbreviations for commonly used attributes:
 ```yaml
 Type: System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,7 +184,7 @@ This parameter, added in Powershell 5.0 enables you to control the depth of recu
 ```yaml
 Type: UInt32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -194,9 +194,9 @@ Accept wildcard characters: False
 ```
 
 ### -Directory
-Gets directories (folders).  
+Gets directories (folders).
 
-To get only directories, use the `-Directory` parameter and omit the `-File` parameter. To exclude directories, use the `-File` parameter and omit the `-Directory` parameter, or use the `-Attributes` parameter. 
+To get only directories, use the `-Directory` parameter and omit the `-File` parameter. To exclude directories, use the `-File` parameter and omit the `-Directory` parameter, or use the `-Attributes` parameter.
 
 To get directories, use the Directory parameter, its "`ad`" alias, or the Directory attribute of the `-Attributes` parameter.
 
@@ -221,7 +221,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -231,7 +231,7 @@ Accept wildcard characters: True
 ```
 
 ### -File
-Gets files. 
+Gets files.
 
 To get only files, use the `-File` parameter and omit the Directory parameter. To exclude files, use the `-Directory` parameter and omit the `-File` parameter, or use the `-Attributes` parameter.
 
@@ -258,7 +258,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -277,7 +277,7 @@ Even when using the `-Force` parameter, the cmdlet cannot override security rest
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -314,7 +314,7 @@ The `-Include` parameter is effective only when the command includes the `-Recur
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -349,7 +349,7 @@ If you pipe the output of this command to another command, only the item names a
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -366,7 +366,7 @@ The default location is the current directory (`.`).
 ```yaml
 Type: String[]
 Parameter Sets: Items
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -376,7 +376,7 @@ Accept wildcard characters: True
 ```
 
 ### -ReadOnly
-Gets only read-only files and directories (folders).  
+Gets only read-only files and directories (folders).
 
 To get only read-only items, use the `-ReadOnly` parameter, its "`ar`" alias, or the ReadOnly value of the `-Attributes` parameter. To exclude read-only items, use the `-Attributes` parameter.
 

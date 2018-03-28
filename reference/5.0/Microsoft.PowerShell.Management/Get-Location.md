@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -167,7 +167,7 @@ For instance, if you are in the Certificate: drive, you can use this parameter t
 ```yaml
 Type: String[]
 Parameter Sets: Location
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -186,7 +186,7 @@ For example, if you are in the C: drive, you can use this parameter to find your
 ```yaml
 Type: String[]
 Parameter Sets: Location
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -204,7 +204,7 @@ For information about location stacks, see the Notes.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Stack
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -226,7 +226,7 @@ This cmdlet cannot display the locations in the unnamed default stack unless it 
 ```yaml
 Type: String[]
 Parameter Sets: Stack
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -307,5 +307,3 @@ To make the unnamed stack the current stack, use the *StackName* parameter of th
 [Push-Location](Push-Location.md)
 
 [Set-Location](Set-Location.md)
-
-
