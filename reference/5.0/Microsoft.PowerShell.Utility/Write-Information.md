@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821877
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Write-Information
 ---
-
 # Write-Information
 
 ## SYNOPSIS
+
 Specifies how Windows PowerShell handles information stream data for a command.
 
 ## SYNTAX
@@ -20,6 +20,7 @@ Write-Information [-MessageData] <Object> [[-Tags] <String[]>] [<CommonParameter
 ```
 
 ## DESCRIPTION
+
 The **Write-Information** cmdlet specifies how Windows PowerShell handles information stream data for a command.
 
 Windows PowerShell 5.0 introduces a new, structured information stream (number 6 in Windows PowerShell streams) that you can use to transmit structured data between a script and its callers (or hosting environment).
@@ -39,6 +40,7 @@ Information streams also work for **PowerShell.Streams**, jobs, scheduled jobs, 
 ## EXAMPLES
 
 ### Example 1: Write information for Get- results
+
 ```
 PS C:\> Get-WindowsFeature -Name p*; Write-Information -MessageData "Got your features!" -InformationAction Continue
 Display Name                                            Name                       Install State
@@ -61,6 +63,7 @@ Because the $InformationPreference variable is still set to its default, Silentl
 The *InformationAction* value is Continue, which means that your message is shown, but the script or command continues, if it is not yet finished.
 
 ### Example 2: Write information and tag it
+
 ```
 PS C:\> Get-WindowsFeature -Name p*; Write-Information -MessageData "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet." -Tags "Instructions" -InformationAction Continue
 Display Name                                            Name                       Install State
@@ -83,9 +86,10 @@ The example adds the tag Instructions to the informational message.
 After running this command, if you search the information stream for messages tagged Instructions, the message specified here would be among the results.
 
 ### Example 3: Write information to a file
+
 ```
 PS C:\> function Test-Info
-       { 
+       {
          Get-Process P*
          Write-Information "Here you go"
        }
@@ -98,6 +102,7 @@ When you open the Info.txt file, you see the text, "Here you go."
 ## PARAMETERS
 
 ### -MessageData
+
 Specifies an informational message that you want to display to users as they run a script or command.
 For best results, enclose the informational message in quotation marks.
 An example is "Test complete."
@@ -115,13 +120,14 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
+
 Specifies a simple string that you can use to sort and filter messages that you have added to the information stream with **Write-Information**.
 This parameter works similarly to the *Tags* parameter in New-ModuleManifest.
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -131,11 +137,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-###  
+### None
+
 **Write-Information** does not accept piped input.
 
 ## OUTPUTS
@@ -167,4 +175,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Write-Warning](Write-Warning.md)
 
 [Write-Output](Write-Output.md)
-

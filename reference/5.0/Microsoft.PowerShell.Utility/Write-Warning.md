@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -50,8 +50,8 @@ PS C:\> Write-Warning "This is only a test warning."
 PS C:\>
 PS C:\> $warningpreference = "Stop"
 PS C:\> Write-Warning "This is only a test warning."
-WARNING: This is only a test message. 
-Write-Warning : Command execution stopped because the shell variable "WarningPreference" is set to Stop. 
+WARNING: This is only a test message.
+Write-Warning : Command execution stopped because the shell variable "WarningPreference" is set to Stop.
 At line:1 char:14
      + Write-Warning <<<<  "This is only a test message."
 ```
@@ -70,9 +70,9 @@ For more information about the $WarningPreference variable, see about_Preference
 ### Example 4: Set the WarningAction parameter and write a warning
 ```
 PS C:\> Write-Warning "This is only a test warning." -WarningAction Inquire
-WARNING: This is only a test warning. 
+WARNING: This is only a test warning.
 Confirm
-Continue with this operation? 
+Continue with this operation?
  [Y] Yes  [A] Yes to All  [H] Halt Command  [S] Suspend  [?] Help (default is "Y"):
 ```
 
@@ -142,4 +142,3 @@ It does not generate any other output.
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
 
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
-
