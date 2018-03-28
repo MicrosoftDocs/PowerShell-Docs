@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-04
+ms.date:  12/04/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -262,7 +262,7 @@ You can also pipe objects to `Export-CSV`.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -422,4 +422,3 @@ It contains a comma-separated list of the names of all the properties of the fir
 [Select-Object](Select-Object.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-

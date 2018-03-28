@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -179,7 +179,7 @@ If you omit this parameter, you are prompted for a user name and a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: CredentialSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -199,7 +199,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: MessageSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -222,7 +222,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: MessageSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -255,4 +255,3 @@ For information about the effect of the **ConsolePrompting** registry entry, see
 * The **Credential** parameter is not supported by all providers that are installed with Windows PowerShell. Beginning in Windows PowerShell 3.0, it is supported on selected cmdlet, such as the Get-WmiObject and New-PSDrive cmdlets.
 
 ## RELATED LINKS
-
