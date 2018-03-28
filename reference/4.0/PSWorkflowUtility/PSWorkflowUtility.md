@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -17,4 +17,3 @@ This section contains the help topics for the commands that the Windows PowerShe
 ## PSWorkflowUtility Cmdlets
 ### [Invoke-AsWorkflow](Invoke-AsWorkflow.md)
 Runs a command or expression as a Windows PowerShell Workflow.
-

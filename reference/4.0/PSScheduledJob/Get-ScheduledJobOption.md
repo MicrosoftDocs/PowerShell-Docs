@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -171,7 +171,7 @@ To get the identification numbers of scheduled jobs on the local computer or a r
 ```yaml
 Type: Int32
 Parameter Sets: JobDefinitionId
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -188,7 +188,7 @@ You can also pipe a **ScheduledJob** object to **Get-ScheduledJobOption**.
 ```yaml
 Type: ScheduledJobDefinition
 Parameter Sets: JobDefinition
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -207,7 +207,7 @@ To get the names of scheduled jobs on the local computer or a remote computer, u
 ```yaml
 Type: String
 Parameter Sets: JobDefinitionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -265,4 +265,3 @@ You can pipe a scheduled job from Get-ScheduledJob to **Get-ScheduledJobOption**
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
