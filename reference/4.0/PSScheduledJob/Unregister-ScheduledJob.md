@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -61,8 +61,8 @@ This command deletes the TestJob scheduled job on the local computer.
 ### Example 2: Delete all scheduled jobs
 ```
 PS C:\> Get-ScheduledJob | Unregister-ScheduledJob -Force
- 
-                      
+
+
 PS C:\> Unregister-ScheduledJob -Name * -Force
 ```
 
@@ -92,7 +92,7 @@ By default, **Unregister-ScheduledJob** does not interrupt running jobs.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -108,7 +108,7 @@ Enter the IDs of scheduled jobs on the computer.
 ```yaml
 Type: Int32[]
 Parameter Sets: DefinitionId
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -125,7 +125,7 @@ You can also pipe **ScheduledJob** objects to **Unregister-JobTrigger**.
 ```yaml
 Type: ScheduledJobDefinition[]
 Parameter Sets: Definition
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -142,7 +142,7 @@ Wildcards are supported.
 ```yaml
 Type: String[]
 Parameter Sets: DefinitionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -232,4 +232,3 @@ This cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
