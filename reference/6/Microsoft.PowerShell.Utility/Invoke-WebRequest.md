@@ -380,6 +380,60 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Form
+Converts a dictionary to a `multipart/form-data` submission.
+`-Form` may not be used with `-Body`.
+If `-ContentType` will be ignored.
+
+The keys of the dictionary will be used as the form field names.
+By default, form values will be converted to string values.
+
+If the value is a `System.IO.FileInfo` object,
+then the binary file contents will be submitted.
+The name of the file will be submitted as the `filename`.
+The MIME will be set as `application/octet-stream`.
+`Get-Item` can be used to simplify supplying the `System.IO.FileInfo` object.
+
+```powershell
+$Form = @{
+    resume = Get-Item 'c:\Users\jdoe\Documents\John Doe.pdf'
+}
+```
+
+If the value is a collection type,
+such Arrays or Lists,
+the for field will be submitted multiple times.
+The values of the the list will be treated as strings by default.
+If the value is a `System.IO.FileInfo` object,
+then the binary file contents will be submitted.
+Nested collections are not supported.
+
+```powershell
+$Form = @{
+    tags     = 'Vacation', 'Italy', '2017'
+    pictures = Get-ChildItem 'c:\Users\jdoe\Pictures\2017-Italy\'
+}
+```
+
+In the above example the `tags` field will be supplied 3 times in the form,
+once for each of `Vacation`, `Italy`, and `2017`.
+The `pictures` field will also be submitted once for each file in the `2017-Italy` folder.
+The binary contents of the files in that folder will be submitted as the values.
+
+This feature was added in PowerShell 6.1.0.
+
+```yaml
+Type: IDictionary
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Headers
 Specifies the headers of the web request.
 Enter a hash table or dictionary.
