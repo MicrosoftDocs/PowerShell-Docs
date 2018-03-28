@@ -151,6 +151,40 @@ $Response = Invoke-WebRequest -Body $MultipartContent -Method 'POST' -Uri 'https
 
 This example uses the `Invoke-WebRequest` cmdlet upload a file as a `multipart/form-data` submission. The file `c:\document.txt` will be submitted as the form field `document` with the `Content-Type` of `text/plain`.
 
+### Example 5: Simplified Multipart/Form-Data Submission
+```powershell
+$Uri = 'https://api.contoso.com/v2/profile'
+$Form = @{
+    firstName  = 'John'
+    lastName   = 'Doe'
+    email      = 'john.doe@contoso.com'
+    avatar     = Get-Item -Path 'c:\Pictures\jdoe.png'
+    birthday   = '1980-10-15'
+    hobbies    = 'Hiking','Fishing','Jogging'
+}
+$Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
+```
+
+Some APIs require `multipart/form-data` submissions to upload files and mixed content.
+This example demonstrates updating a user profile.
+The profile form requires these fields:
+`firstName`, `lastName`, `email`, `avatar`, `birthday`, and `hobbies`.
+The API is expecting an image for the user profile pic to be supplied in the `avatar` field.
+The API will also accept multiple `hobbies` entries to be submitted in the same form.
+
+When creating the `$Form` HashTable, the key names are used as form field names.
+By default, the values of the HashTable will be converted to strings.
+If a `System.IO.FileInfo` value is present, the file contents will be submitted.
+If a collection such as arrays or lists are present,
+the form field will be submitted will be submitted multiple times.
+
+By using `Get-Item` on the `avatar` key, the `FileInfo` object will be set as the value.
+The result is that the image data for `jdoe.png` will be submitted.
+
+By supplying a list to the `hobbies` key,
+the `hobbies` field will be present in the submissions
+once for each list item.
+
 ## PARAMETERS
 
 ### -AllowUnencryptedAuthentication
