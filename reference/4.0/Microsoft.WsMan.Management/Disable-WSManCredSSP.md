@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -61,7 +61,7 @@ This command disables CredSSP on the server, which prevents delegation from clie
 ## PARAMETERS
 
 ### -Role
-Accepts one of two possible values: Client or Server. 
+Accepts one of two possible values: Client or Server.
 These values specify whether CredSSP should be disabled as a client or as a server.
 
 If the cmdlet is used to disable CredSSP on the client by specifying Client in the Role parameter, then the cmdlet performs the following:
@@ -76,7 +76,7 @@ If the cmdlet is used to disable CredSSP on the server by specifying Server in t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -128,4 +128,3 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-
