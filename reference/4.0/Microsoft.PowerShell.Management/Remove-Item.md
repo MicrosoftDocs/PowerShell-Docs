@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -102,7 +102,7 @@ This parameter is not supported by any providers installed with Windows PowerShe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,7 +120,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -138,7 +138,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -149,7 +149,7 @@ Accept wildcard characters: True
 
 ### -Force
 Allows the cmdlet to remove items that cannot otherwise be changed, such as hidden or read-only files or read-only aliases or variables.
-The cmdlet cannot remove constant aliases or variables. 
+The cmdlet cannot remove constant aliases or variables.
 Implementation varies from provider to provider.
 For more information, see about_Providers.
 Even using the Force parameter, the cmdlet cannot override security restrictions.
@@ -157,7 +157,7 @@ Even using the Force parameter, the cmdlet cannot override security restrictions
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -175,7 +175,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -211,7 +211,7 @@ The parameter name ("-Path") is optional.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -229,7 +229,7 @@ This is a known issue; as a workaround, try piping results of the Get-ChildItem 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -308,7 +308,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -360,4 +360,3 @@ For more information, see about_Providers.
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

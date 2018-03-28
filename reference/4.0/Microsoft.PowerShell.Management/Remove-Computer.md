@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -93,7 +93,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: Remote
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -109,7 +109,7 @@ By default, **Remove-Computer** prompts you for confirmation before removing eac
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSCredential
 Parameter Sets: Remote
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ Otherwise, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -166,7 +166,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -221,7 +221,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -295,4 +295,3 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Computer](Stop-Computer.md)
 
 [Test-Connection](Test-Connection.md)
-

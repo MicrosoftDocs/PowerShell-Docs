@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -79,7 +79,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -97,7 +97,7 @@ If you type a user name, you will be prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -113,7 +113,7 @@ To enter multiple service names, use a comma to separate the names.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -128,7 +128,7 @@ Specifies a description of the service.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -143,7 +143,7 @@ Specifies a display name for the service.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartupType
-Sets the startup type of the service. 
+Sets the startup type of the service.
 "Automatic" is the default.
 
 Valid values are:
@@ -181,7 +181,7 @@ Valid values are:
 ```yaml
 Type: ServiceStartMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -256,4 +256,3 @@ New-Service returns an object that represents the new service.
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-
