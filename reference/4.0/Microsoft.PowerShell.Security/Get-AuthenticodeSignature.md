@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -72,7 +72,7 @@ The parameter name ("FilePath") is optional.
 ```yaml
 Type: String[]
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -129,4 +129,3 @@ Get-AuthenticodeSignature returns a signature object for each signature that it 
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

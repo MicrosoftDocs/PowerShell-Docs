@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -172,4 +172,3 @@ To use a transaction again, you must start a new transaction.
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
 [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
-

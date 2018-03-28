@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -12,7 +12,7 @@ Module Name:  Microsoft.PowerShell.Security
 
 # Microsoft.PowerShell.Security Module
 ## Description
-This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Security module. 
+This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Security module.
 The Security module contains cmdlets and providers that manage the basic security features of Windows.
 
 ## Microsoft.PowerShell.Security Cmdlets
@@ -54,4 +54,3 @@ Adds an Authenticode signature to a Windows PowerShell script or other file.
 
 ### [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
 Changes the user preference for the Windows PowerShell execution policy.
-

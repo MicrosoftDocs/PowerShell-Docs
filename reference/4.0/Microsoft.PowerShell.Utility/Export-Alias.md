@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -28,7 +28,7 @@ Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru] [-As <Export
 ```
 
 ## DESCRIPTION
-The `Export-Alias` cmdlet exports the aliases in the current session to a file. 
+The `Export-Alias` cmdlet exports the aliases in the current session to a file.
 If the output file does not exist, the cmdlet will create it.
 
 Export-Alias can export the aliases in a particular scope or all scopes, it can generate the data in CSV format or as a series of Set-Alias commands that you can add to a session or to a Windows PowerShell profile.
@@ -91,7 +91,7 @@ Appends the output to the specified file, rather than overwriting the existing c
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -112,7 +112,7 @@ Valid values are:
 ```yaml
 Type: ExportAliasFormat
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -128,7 +128,7 @@ The description appears as a comment at the top of the file, following the heade
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ The **Force** parameter cannot force Export-Alias to overwrite files with the hi
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -185,7 +185,7 @@ By default, `Export-Alias` exports all aliases in the session or scope.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -221,7 +221,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -238,7 +238,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -257,7 +257,7 @@ For more information, see about_Scopes.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -323,4 +323,3 @@ Otherwise, this cmdlet does not generate any output.
 [New-Alias](New-Alias.md)
 
 [Set-Alias](Set-Alias.md)
-

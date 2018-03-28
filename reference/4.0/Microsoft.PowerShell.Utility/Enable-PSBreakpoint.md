@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -119,7 +119,7 @@ You can also pipe breakpoint objects to Enable-PSBreakpoint.
 ```yaml
 Type: Breakpoint[]
 Parameter Sets: Breakpoint
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -137,7 +137,7 @@ Enter the IDs or a variable that contains the IDs.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -153,7 +153,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,4 +227,3 @@ You do not need to enable newly created breakpoints.
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
-
