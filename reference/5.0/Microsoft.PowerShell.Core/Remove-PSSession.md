@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -170,7 +170,7 @@ To find the ID of a **PSSession**, run the Get-PSSession cmdlet without paramete
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -192,7 +192,7 @@ To find the **InstanceID** of the **PSSessions** in the current session, type `G
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -211,7 +211,7 @@ Because the friendly name of a **PSSession** might not be unique, when you use t
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -228,7 +228,7 @@ You can also pipe one or more session objects to **Remove-PSSession**.
 ```yaml
 Type: PSSession[]
 Parameter Sets: Session
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -292,4 +292,3 @@ This cmdlet does not return any objects.
 [about_PSSessions](About/about_PSSessions.md)
 
 [about_Remote](About/about_Remote.md)
-

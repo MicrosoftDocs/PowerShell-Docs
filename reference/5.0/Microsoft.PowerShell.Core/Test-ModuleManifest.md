@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -42,7 +42,7 @@ This command tests the TestModule.psd1 module manifest.
 ```
 PS C:\> "$pshome\Modules\TestModule.psd1" | test-modulemanifest
 Test-ModuleManifest : The specified type data file 'C:\Windows\System32\Wi
-ndowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml' could not be processed because the file was not found. Please correct the path and try again. 
+ndowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml' could not be processed because the file was not found. Please correct the path and try again.
 At line:1 char:34
 + "$pshome\Modules\TestModule.psd1" | test-modulemanifest <<<<
 + CategoryInfo          : ResourceUnavailable: (C:\Windows\System32\WindowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml:String) [Test-ModuleManifest], FileNotFoundException
@@ -50,12 +50,12 @@ At line:1 char:34
 
 Name              : TestModule
 Path              : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\TestModule\TestModule.psd1
-Description       : 
+Description       :
 Guid              : 6f0f1387-cd25-4902-b7b4-22cff6aefa7b
 Version           : 1.0
 ModuleBase        : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\TestModule
 ModuleType        : Manifest
-PrivateData       : 
+PrivateData       :
 AccessMode        : ReadWrite
 ExportedAliases   : {}
 ExportedCmdlets   : {}
@@ -102,7 +102,7 @@ You can also pipe a path to **Test-ModuleManifest**.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -142,4 +142,3 @@ It returns this object even if the manifest has errors.
 [Remove-Module](Remove-Module.md)
 
 [about_Modules](About/about_Modules.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -52,7 +52,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -115,4 +115,3 @@ Please try again later."`
 [Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
 [Restore-Computer](Restore-Computer.md)
-
