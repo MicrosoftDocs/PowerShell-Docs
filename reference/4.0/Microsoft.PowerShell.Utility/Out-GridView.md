@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -145,13 +145,13 @@ Without the **Wait** parameter, Windows PowerShell would exit as soon as the **O
 ### -InputObject
 Accepts input for **Out-GridView**.
 
-When you use the **InputObject** parameter to send a collection (more than one) of objects to **Out-GridView**, **Out-GridView** treats the collection as one collection object, and it displays one row that represents the collection. 
+When you use the **InputObject** parameter to send a collection (more than one) of objects to **Out-GridView**, **Out-GridView** treats the collection as one collection object, and it displays one row that represents the collection.
 To display the each object in the collection, use a pipeline operator (|) to send objects to **Out-GridView**.
 
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -168,7 +168,7 @@ By default, the title bar displays the command that invokes **Out-GridView**.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -193,7 +193,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: OutputModeOption
 Parameter Sets: OutputMode
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -215,7 +215,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PassThru
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -236,7 +236,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Wait
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -452,4 +452,3 @@ To remove it, change the value.
   - To delete all criteria, click the "Clear All" button.
 
 ## RELATED LINKS
-

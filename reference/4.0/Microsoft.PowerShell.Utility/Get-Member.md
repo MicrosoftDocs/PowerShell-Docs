@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -273,7 +273,7 @@ The following list describes the properties that are added when you use the Forc
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -294,7 +294,7 @@ The differences are as follows:
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -340,7 +340,7 @@ To get a static member by name, use the Static parameter with the Name parameter
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -360,7 +360,7 @@ If you use the Static parameter with the MemberType parameter, Get-Member gets o
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -390,7 +390,7 @@ If you use the Static and View parameters in the same command, the View paramete
 ```yaml
 Type: PSMemberViewTypes
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -438,4 +438,3 @@ For more information about the $this variable, see about_Automatic_Variables.
 [about_Methods](../Microsoft.PowerShell.Core/About/about_Methods.md)
 
 [about_Objects](../Microsoft.PowerShell.Core/About/about_Objects.md)
-

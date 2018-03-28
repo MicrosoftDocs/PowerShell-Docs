@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -138,7 +138,7 @@ For security reasons, MD5 and SHA1, which are no longer considered secure, shoul
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: SHA1, SHA256, SHA384, SHA512, MACTripleDES, MD5, RIPEMD160
 
 Required: False
@@ -154,7 +154,7 @@ Specifies the input stream.
 ```yaml
 Type: Stream
 Parameter Sets: Stream
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -189,7 +189,7 @@ Wildcard characters are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -216,4 +216,3 @@ You can pipe a string to the **Get-FileHash** cmdlet that contains a path to one
 ## RELATED LINKS
 
 [Format-List](Format-List.md)
-

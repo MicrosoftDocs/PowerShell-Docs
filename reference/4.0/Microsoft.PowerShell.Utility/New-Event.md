@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -49,7 +49,7 @@ PS C:\> function Enable-ProcessCreationEvent
    $query = New-Object System.Management.WqlEventQuery "__InstanceCreationEvent", (New-Object TimeSpan 0,0,1), "TargetInstance isa 'Win32_Process'"
    $processWatcher = New-Object System.Management.ManagementEventWatcher $query
    $identifier = "WMI.ProcessCreated"
-   Register-ObjectEvent $processWatcher "EventArrived" -SupportEvent $identifier -Action 
+   Register-ObjectEvent $processWatcher "EventArrived" -SupportEvent $identifier -Action
    {
       [void] (New-Event -sourceID "PowerShell.ProcessCreated" -Sender $args[0] -EventArguments $args[1].SourceEventArgs.NewEvent.TargetInstance)
    }
@@ -70,7 +70,7 @@ Specifies an object that contains options for the event.
 ```yaml
 Type: PSObject[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -86,7 +86,7 @@ The value of this parameter appears in the MessageData property of the event obj
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -102,7 +102,7 @@ The default is the Windows PowerShell engine.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -120,7 +120,7 @@ The value of this parameter appears in the SourceIdentifier property of the even
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -161,4 +161,3 @@ You cannot pipe input to this cmdlet.
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-
