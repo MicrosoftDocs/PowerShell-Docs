@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -79,7 +79,7 @@ You can use the Job cmdlets to manage the event job.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 101
@@ -95,7 +95,7 @@ Use this parameter when you are registering for events on a remote computer or i
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -116,7 +116,7 @@ You can use the Job cmdlets to manage the event job.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ The value of this parameter appears in the **MessageData** property of the event
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -153,7 +153,7 @@ Supported EngineEvent values include PowerShell.Exiting, PowerShell.OnIdle, and 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 100
@@ -171,7 +171,7 @@ To view or cancel a subscription that was created with the *SupportEvent* parame
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -222,4 +222,3 @@ Otherwise, it does not generate any output.
 [Wait-Event](Wait-Event.md)
 
 [Wait-Job](../Microsoft.PowerShell.Core/Wait-Job.md)
-
