@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -98,7 +98,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -126,4 +126,3 @@ You cannot pipe input to this cmdlet.
 [Export-FormatData](Export-FormatData.md)
 
 [Update-FormatData](Update-FormatData.md)
-

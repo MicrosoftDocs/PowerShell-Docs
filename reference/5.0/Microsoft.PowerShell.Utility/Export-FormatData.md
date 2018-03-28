@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -99,7 +99,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -116,7 +116,7 @@ Because script blocks contain code and can be used maliciously, they are not exp
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +133,7 @@ You can also pipe the objects from **Get-FormatData** to **Export-FormatData**.
 ```yaml
 Type: ExtendedTypeDefinition[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -228,4 +228,3 @@ It generates a file and saves it in the specified path.
 [Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
 
 [Update-FormatData](Update-FormatData.md)
-
