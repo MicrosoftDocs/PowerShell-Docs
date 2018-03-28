@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -261,7 +261,7 @@ By default, **Import-PSSession** does not import commands that have the same nam
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -343,7 +343,7 @@ Suppresses the message that warns you when you import a cmdlet or function whose
 
 By default,  when a module that you import exports cmdlets or functions that have unapproved verbs in their names, the Windows PowerShell displays the following warning message:
 
-"WARNING: Some imported command names include unapproved verbs which might make them less discoverable. 
+"WARNING: Some imported command names include unapproved verbs which might make them less discoverable.
 Use the Verbose parameter for more detail or type Get-Verb to see the list of approved verbs."
 
 This message is only a warning.
@@ -353,7 +353,7 @@ Although the message is displayed to module users, the naming problem should be 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -379,7 +379,7 @@ Similarly, if you use the **CommandName** parameter, the formatting files for th
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -419,7 +419,7 @@ For example, if you specify the prefix "Remote" and then import a Get-Date cmdle
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -437,7 +437,7 @@ This parameter is required.
 ```yaml
 Type: PSSession
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -457,7 +457,7 @@ If the certificate is not valid or does not have sufficient authority, the comma
 ```yaml
 Type: X509Certificate2
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -505,4 +505,3 @@ To create a permanent module on disk, use the Export-PSSession cmdlet.
 [about_PSSessions](../Microsoft.PowerShell.Core/About/about_PSSessions.md)
 
 [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md)
-

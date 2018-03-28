@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -33,7 +33,7 @@ Set-PSBreakpoint [-Action <ScriptBlock>] [[-Script] <String[]>] -Variable <Strin
 ```
 
 ## DESCRIPTION
-The Set-PSBreakpoint cmdlet sets a breakpoint in a script or in any command run in the current session. 
+The Set-PSBreakpoint cmdlet sets a breakpoint in a script or in any command run in the current session.
 You can use Set-PSBreakpoint to set a breakpoint before executing a script or running a command, or during debugging, when stopped at another breakpoint.
 
 Note: Set-PSBreakpoint cannot set a breakpoint on a remote computer.
@@ -200,7 +200,7 @@ For more information, see about_Script_Blocks, about_Break, and about_Continue.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -224,7 +224,7 @@ If you specify a column that does not exist in the script, an error is not decla
 ```yaml
 Type: Int32
 Parameter Sets: Line
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -265,7 +265,7 @@ If the line is out of range, the breakpoint is never hit.
 ```yaml
 Type: Int32[]
 Parameter Sets: Line
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -290,7 +290,7 @@ Valid values are:
 ```yaml
 Type: VariableAccessMode
 Parameter Sets: Variable
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -311,7 +311,7 @@ This parameter is required only when setting a line breakpoint.
 ```yaml
 Type: String[]
 Parameter Sets: Line
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -323,7 +323,7 @@ Accept wildcard characters: True
 ```yaml
 Type: String[]
 Parameter Sets: Command, Variable
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -386,4 +386,3 @@ Set-PSBreakpoint returns an object that represents each breakpoint that it sets.
 [Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
-
