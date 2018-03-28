@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -105,7 +105,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,7 +120,7 @@ Specify the path of a new working location.
 ```yaml
 Type: String
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -139,7 +139,7 @@ The **Location** cmdlets act on the current stack unless you use the *StackName*
 ```yaml
 Type: String
 Parameter Sets: Stack
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -190,7 +190,7 @@ You can create multiple named location stacks.
 If you do not specify a stack name, Windows PowerShell uses the current location stack.
 By default, the unnamed default location is the current location stack, but you can use the **Set-Location** cmdlet to change the current location stack.
 
-  To manage location stacks, use the Windows PowerShell Location cmdlets, as follows: 
+  To manage location stacks, use the Windows PowerShell Location cmdlets, as follows:
 
 - To add a location to a location stack, use the Push-Location cmdlet.
 - To get a location from a location stack, use the Pop-Location cmdlet.
@@ -213,5 +213,3 @@ To make the unnamed stack the current stack, use the *StackName* parameter of **
 [Pop-Location](Pop-Location.md)
 
 [Push-Location](Push-Location.md)
-
-

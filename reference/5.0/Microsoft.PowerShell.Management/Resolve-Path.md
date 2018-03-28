@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -70,7 +70,7 @@ This command resolves a Universal Naming Convention (UNC) path and returns the s
 ```
 PS C:\> Resolve-Path -Path "c:\prog*" -Relative
 ..\Program Files
-..\Program Files (x86) 
+..\Program Files (x86)
 ..\programs.txt
 ```
 
@@ -98,7 +98,7 @@ This parameter is not supported by any providers installed with Windows PowerShe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -134,7 +134,7 @@ You can also pipe a path string to **Resolve-Path**.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -149,7 +149,7 @@ Indicates that this cmdlet returns a relative path.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -203,5 +203,3 @@ Otherwise, it returns a **PathInfo** object.
 [Split-Path](Split-Path.md)
 
 [Test-Path](Test-Path.md)
-
-
