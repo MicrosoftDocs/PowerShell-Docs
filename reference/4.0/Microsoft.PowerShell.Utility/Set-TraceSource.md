@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -64,7 +64,7 @@ This parameter also selects the default trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -97,7 +97,7 @@ Use with the FilePath parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -143,7 +143,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -169,7 +169,7 @@ To specify multiple options, separate them with commas, but with no spaces, and 
 ```yaml
 Type: PSTraceSourceOptions
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -185,7 +185,7 @@ This parameter also selects the PSHost trace listener.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -201,7 +201,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: optionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -217,7 +217,7 @@ Enter the path and file name of the trace output file.
 ```yaml
 Type: String[]
 Parameter Sets: removeFileListenersSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -240,7 +240,7 @@ To remove the file trace listener, use the RemoveFileListener parameter.
 ```yaml
 Type: String[]
 Parameter Sets: removeAllListenersSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -298,4 +298,3 @@ The trace sources for each module are loaded automatically when the component is
 [Set-PSDebug](../Microsoft.PowerShell.Core/Set-PSDebug.md)
 
 [Trace-Command](Trace-Command.md)
-

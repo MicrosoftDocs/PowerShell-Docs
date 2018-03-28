@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -128,7 +128,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -196,7 +196,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -220,7 +220,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -238,7 +238,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 
 ### -OUPath
 Specifies an organizational unit (OU) for the domain account.
-Enter the full distinguished name of the OU in quotation marks. 
+Enter the full distinguished name of the OU in quotation marks.
 The default value is the default OU for machine objects in the domain.
 
 ```yaml
@@ -271,7 +271,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -289,7 +289,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -331,7 +331,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSCredential
 Parameter Sets: Domain
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -365,7 +365,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: JoinOptions
 Parameter Sets: Domain
-Aliases: 
+Aliases:
 Accepted values: AccountCreate, DeferSPNSet, InstallInvoke, JoinReadOnly, JoinWithNewName, PasswordPass, UnsecuredJoin, Win9XUpgrade
 
 Required: False
@@ -381,7 +381,7 @@ Performs an unsecure join to the specified domain.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Domain
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -469,4 +469,3 @@ Otherwise, this cmdlet does not generate any output.
 [Stop-Computer](Stop-Computer.md)
 
 [Test-Connection](Test-Connection.md)
-

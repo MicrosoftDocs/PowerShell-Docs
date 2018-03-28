@@ -158,7 +158,7 @@ Next we create a configuration that calls the composite resource. This configura
 configuration RenameVM
 {
 
-    Import-DscResource -Module TestCompositeResource
+    Import-DscResource -Module xVirtualMachine
     Node localhost
     {
         xVirtualMachine VM

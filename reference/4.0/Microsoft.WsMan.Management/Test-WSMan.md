@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -100,7 +100,7 @@ In this case, IIS hosts Web Services for Management (WS-Management)  for efficie
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
-Specifies the authentication mechanism to be used at the server. 
+Specifies the authentication mechanism to be used at the server.
 Possible values are:
 
 - Basic: Basic is a scheme in which the user name and password are sent in clear text to the server or proxy.
@@ -124,8 +124,8 @@ Caution: CredSSP delegates the user's credentials from the local computer to a r
 This practice increases the security risk of the remote operation.
 If the remote computer is compromised, when credentials are passed to it, the credentials can be used to control the network session.
 
-Important: If the authentication parameter is not specified, then the Test-WSMan request will be sent to the remote machine anonymously (without using authentication). 
-If the Test-WSMan request is made anonymously, it does not return any information that is specific to the operating-system version. 
+Important: If the authentication parameter is not specified, then the Test-WSMan request will be sent to the remote machine anonymously (without using authentication).
+If the Test-WSMan request is made anonymously, it does not return any information that is specific to the operating-system version.
 Instead, Test-WSMan displays null values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
 
 ```yaml
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
-Certificates are used in client certificate-based authentication. 
+Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
 To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
@@ -152,7 +152,7 @@ To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in th
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -208,7 +208,7 @@ When you use HTTPS as the transport, the value of the ComputerName parameter mus
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -228,7 +228,7 @@ If SSL is not available on the port that is used for the connection and you spec
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -280,4 +280,3 @@ This cmdlet does not generate any output object.
 [Set-WSManInstance](Set-WSManInstance.md)
 
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
-

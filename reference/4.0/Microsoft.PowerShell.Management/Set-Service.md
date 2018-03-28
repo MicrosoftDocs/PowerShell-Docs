@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -170,7 +170,7 @@ To see the service description, use Get-WmiObject to get a Win32_Service object 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -202,7 +202,7 @@ You can also pipe a service object to Set-Service.
 ```yaml
 Type: ServiceController
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies the service name of the service to be changed. 
+Specifies the service name of the service to be changed.
 Wildcards are not permitted.
 You can also pipe a service name to Set-Service.
 
@@ -235,7 +235,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Starts, stops, or suspends (pauses) the services. 
+Starts, stops, or suspends (pauses) the services.
 Valid values are:
 
 - Running: Starts the service.
@@ -275,7 +275,7 @@ Valid values are:
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -349,4 +349,3 @@ To find the service names and display names of the services on your system, type
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-

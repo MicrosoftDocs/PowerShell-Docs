@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -98,7 +98,7 @@ The default is the current session on the local computer.
 ```yaml
 Type: CimSession[]
 Parameter Sets: CimSessionAndUseExistingSet, CimSessionAndPathSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -131,7 +131,7 @@ For more information, type `Get-Help Get-Credential`.
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerNameAndPathSet, ComputerNameAndUseExistingSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -147,7 +147,7 @@ If the **RefreshMode** property of the Local Configuration Manager is set to **P
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -167,7 +167,7 @@ If you specify the **Wait** parameter, do not specify this parameter.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -183,7 +183,7 @@ The cmdlet publishes and applies this configuration to computers specified by th
 ```yaml
 Type: String
 Parameter Sets: ComputerNameAndPathSet, CimSessionAndPathSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -200,7 +200,7 @@ The throttle limit applies only to the current cmdlet, not to the session or to 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -217,7 +217,7 @@ Before you specify this parameter for this cmdlet, review the information in Wha
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerNameAndUseExistingSet, CimSessionAndUseExistingSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -234,7 +234,7 @@ If you specify this parameter, do not specify the **JobName** parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -296,4 +296,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Test-DscConfiguration](Test-DscConfiguration.md)
 
 [Update-DscConfiguration](Update-DscConfiguration.md)
-

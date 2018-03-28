@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -12,7 +12,7 @@ Module Name:  Microsoft.PowerShell.Management
 
 # Microsoft.PowerShell.Management Module
 ## Description
-This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Management module. 
+This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Management module.
 The Management module contains cmdlets that help you manage Windows in Windows PowerShell.
 
 ## Microsoft.PowerShell.Management Cmdlets
@@ -342,4 +342,3 @@ Waits for the processes to be stopped before accepting more input.
 
 ### [Write-EventLog](Write-EventLog.md)
 Writes an event to an event log.
-

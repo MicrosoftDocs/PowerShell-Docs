@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -92,7 +92,7 @@ For more information, see about_Types.ps1xml.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -109,7 +109,7 @@ Unicode is the default.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -119,13 +119,13 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Causes the cmdlet to clear the read-only attribute of the output file if necessary. 
+Causes the cmdlet to clear the read-only attribute of the output file if necessary.
 The cmdlet will attempt to reset the read-only attribute when the command completes.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -142,7 +142,7 @@ You can also pipe objects to Export-Clixml.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -173,7 +173,7 @@ Specifies the path to the file where the XML representation of the object will b
 ```yaml
 Type: String
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -260,4 +260,3 @@ Export-Clixml creates a file that contains the XML.
 [Export-Csv](Export-Csv.md)
 
 [Import-Clixml](Import-Clixml.md)
-

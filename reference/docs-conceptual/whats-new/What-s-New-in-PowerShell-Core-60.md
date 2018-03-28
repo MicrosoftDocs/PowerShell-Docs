@@ -239,7 +239,7 @@ For more information about PowerShell jobs, see [about_Jobs](https://msdn.micros
     On released builds, it will likely be the same as `PSVersion`.
   - `OS`: This is an OS version string returned by `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: This is returned by `[System.Environment]::OSVersion.Platform`
-    It is set to `Win32NT` on Windows, `MacOSX` on macOS, and `Unix` on Linux.
+    It is set to `Win32NT` on Windows, `Unix` on macOS, and `Unix` on Linux.
 - Removed the `BuildVersion` property from `$PSVersionTable`.
   This property was strongly tied to the Windows build version.
   Instead, we recommend that you use `GitCommitId` to retrieve the exact build version of PowerShell Core. (#3877) (Thanks to @iSazonov!)
