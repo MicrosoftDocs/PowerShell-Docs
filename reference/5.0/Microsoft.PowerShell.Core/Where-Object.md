@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -317,7 +317,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveContainsSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -335,7 +335,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveEqualSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -353,7 +353,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveGreaterOrEqualSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -371,7 +371,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveGreaterThanSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -398,7 +398,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveInSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -416,7 +416,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveLessOrEqualSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -434,7 +434,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveLessThanSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -454,7 +454,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveLikeSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -475,7 +475,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveMatchSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -493,7 +493,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveNotEqualSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -516,7 +516,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveNotContainsSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -541,7 +541,7 @@ For example, the following statements are true.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveNotInSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -561,7 +561,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveNotLikeSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -582,7 +582,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: CaseSensitiveNotMatchSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -638,7 +638,7 @@ The parameter name, *FilterScript*, is optional.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ScriptBlockSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -716,7 +716,7 @@ Because *InputObject* cannot return individual properties from an array or colle
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -736,7 +736,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: IsSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -755,7 +755,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: IsNotSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -949,7 +949,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: EqualSet, LessOrEqualSet, CaseSensitiveGreaterOrEqualSet, CaseSensitiveLessOrEqualSet, CaseSensitiveInSet, GreaterOrEqualSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, MatchSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, LikeSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -968,7 +968,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Object
 Parameter Sets: EqualSet, LessOrEqualSet, CaseSensitiveGreaterOrEqualSet, CaseSensitiveLessOrEqualSet, CaseSensitiveInSet, GreaterOrEqualSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, MatchSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, LikeSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -1024,4 +1024,3 @@ This cmdlet returns selected items from the input object set.
 [Sort-Object](../Microsoft.PowerShell.Utility/Sort-Object.md)
 
 [Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -621,4 +621,3 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 [Sort-Object](../Microsoft.PowerShell.Utility/Sort-Object.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-
