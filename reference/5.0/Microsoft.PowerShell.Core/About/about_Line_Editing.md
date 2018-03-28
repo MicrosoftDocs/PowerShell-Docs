@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -52,4 +52,3 @@ is displayed is not what you want, press the TAB key again.
 [about_Command_Syntax](about_Command_Syntax.md)
 
 [about_Path_Syntax](about_Path_Syntax.md)
-
