@@ -18,7 +18,7 @@ Read more about Microsoft Privacy policy at [Trust Center](https://www.microsoft
 
 The PowerShell Gallery meets GDPR requirements. 
 
-The Powershell Gallery stores the following information that may be provided by users, which may contain End User Identifiable Information (EUII):
+The Powershell Gallery stores the following information that may be provided by users, which may contain personal information:
 
 * PowerShell Gallery account 
 * Items published to the PowerShell Gallery
@@ -28,7 +28,7 @@ Most users do not create a PowerShell Gallery account, as it is not required unl
 The PowerShell Gallery does not store EUII data for users who have not created a PowerShell Gallery account, other than email correspondence initiated by the user. 
 
 Users who create a PowerShell Gallery account can publish items to the PowerShell Gallery. 
-Those items are expected to be PowerShell code, but may contain other information. The information below will show how you can get all the items you have published to the PowerShell Gallery.
+Those items are expected to be PowerShell code, but may contain other information including personal information. The information below will show how you can get all the items you have published to the PowerShell Gallery.
 
 
 ## DSR Export of PowerShell Gallery Data
@@ -51,7 +51,7 @@ Users may request copies of all emails that sent within the previous 90 days to 
 
 __PowerShell Gallery Account Information__
 
-If you have created a PowerShell Gallery account, you can find all information that has been stored in PowerShell Gallery by taking the following steps: 
+If you have created a PowerShell Gallery account, you can find all personal information that has been stored in PowerShell Gallery by taking the following steps: 
 
 1. Sign in to the PowerShell Gallery, then click on your username
 2. The next page displayed is the Account page, which shows the email address used for the PowerShell Gallery account
@@ -60,7 +60,7 @@ If you have created more than one account in the PowerShell Gallery, you will ne
 
 __Items in the PowerShell Gallery__
 
-To facilitate exporting all versions of all items, users may download the script "GetPSGalleryItemsForAuthor" from the PowerShell Gallery, or from https://github.com/powershell/powershellgallery. This script will export a copy of every version of every item put onto the PowerShell Gallery based on the author information stored in the item. It is important to note that the Author is stored in the item manifest when you publish your item,and is not guaranteed to be the same as the account you use in the PowerShell Gallery. If you use some other value in the Author field, you will need to supply that value when using this script.
+To facilitate exporting all versions of all items published to the PowerShell Gallery by an user, users may download the script "GetPSGalleryItemsForAuthor" from the PowerShell Gallery, or from https://github.com/powershell/powershellgallery. This script will export a copy of every version of every item put onto the PowerShell Gallery based on the author information stored in the item. It is important to note that the Author is stored in the item manifest when you publish your item,and is not guaranteed to be the same as the account you use in the PowerShell Gallery. If you use some other value in the Author field, you will need to supply that value when using this script.
 
 You may download the script by using the following PowerShell command:
 
@@ -70,5 +70,15 @@ You can then run the script directly, by running the following PowerShell comman
 cd <local folder location supplied previously>
 .\GetPSGalleryItemsForAuthor 
 
-You will be prompted to supply the Author and a folder on your system where you want the items to be saved.
+You will be prompted to supply the Author and a folder on your system where you want the items to be saved. 
+
+## Deleting Personal Data From The PowerShell Gallery
+
+Users who wish to delete either their PowerShell Gallery account or an item in the PowerShell Gallery must send email to cgadmin with the title: "GDPR Request for items relating to this account", and stating in the body what they are seeking, for example: 
+
+* Please delete version x.y.z of my item "item name"  _or_ 
+* Please delete all versions of my item "item name"  _or_ 
+* Please delete my PowerShell Gallery account
+
+The PowerShell Gallery administrators will reply to the email within 7 business days, and items specified will be deleted within 30 days after the request is sent. 
 
