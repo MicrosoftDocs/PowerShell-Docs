@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -100,7 +100,7 @@ Overwrites an existing output file, even if the file has the read-only attribute
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +117,7 @@ Because script blocks contain code and can be used maliciously, they are not exp
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -134,7 +134,7 @@ You can also pipe the objects from Get-FormatData to Export-FormatData.
 ```yaml
 Type: ExtendedTypeDefinition[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies a location for the output file. 
+Specifies a location for the output file.
 Enter a path (optional) and file name with a format.ps1xml file name extension.
 If you omit the path, Export-FormatData creates the file in the current directory.
 
@@ -227,4 +227,3 @@ It generates a file and saves it in the specified path.
 [Get-FormatData](Get-FormatData.md)
 
 [Update-FormatData](Update-FormatData.md)
-

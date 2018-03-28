@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -26,11 +26,11 @@ ForEach -Parallel is valid only in a  Windows PowerShell Workflow.
 
 
 ```
-ForEach -Parallel ($<item> in $<collection>)  
-{  
-    [<Activity1>]  
-    [<Activity2>]  
-    ...  
+ForEach -Parallel ($<item> in $<collection>)
+{
+    [<Activity1>]
+    [<Activity2>]
+    ...
 }
 ```
 
@@ -49,41 +49,41 @@ The following workflow contains a ForEach -Parallel statement that processes the
 
 
 ```
-workflow Test-Workflow  
-{  
-    $Disks = Get-Disk  
-  
-    # The disks are processed in parallel.  
-    ForEach -Parallel ($Disk in $Disks)  
-    {  
-        # The commands run sequentially on each disk.   
-        $DiskPath = $Disk.Path     
-        $Disk | Initialize-Disk  
-        Set-Disk -Path $DiskPath  
-    }  
-}  
-  
-workflow Test-Workflow  
-{  
-    #Run commands in parallel.  
-    Parallel  
-    {  
-        Get-Process  
-        Get-Service  
-    }  
-  
-   $Disks = Get-Disk  
-  
-   # The disks are processed in parallel.  
-   ForEach -Parallel ($Disk in $Disks)  
-   {  
-       # The commands run in parallel on each disk.   
-       Parallel  
-       {  
-           Initialize-Disk  
-           InlineScript {.\Get-DiskInventory}  
-       }  
-   }  
+workflow Test-Workflow
+{
+    $Disks = Get-Disk
+
+    # The disks are processed in parallel.
+    ForEach -Parallel ($Disk in $Disks)
+    {
+        # The commands run sequentially on each disk.
+        $DiskPath = $Disk.Path
+        $Disk | Initialize-Disk
+        Set-Disk -Path $DiskPath
+    }
+}
+
+workflow Test-Workflow
+{
+    #Run commands in parallel.
+    Parallel
+    {
+        Get-Process
+        Get-Service
+    }
+
+   $Disks = Get-Disk
+
+   # The disks are processed in parallel.
+   ForEach -Parallel ($Disk in $Disks)
+   {
+       # The commands run in parallel on each disk.
+       Parallel
+       {
+           Initialize-Disk
+           InlineScript {.\Get-DiskInventory}
+       }
+   }
 }
 ```
 
@@ -99,5 +99,3 @@ about_Language_Keywords
 about_Parallel
 
 about_Workflows
-
-

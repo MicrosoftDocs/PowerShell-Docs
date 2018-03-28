@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -84,4 +84,3 @@ This cmdlet returns a **FileInfo** object that represents the temporary file.
 ## RELATED LINKS
 
 [about_Environment_Variables](../Microsoft.PowerShell.Core/About/about_Environment_Variables.md)
-

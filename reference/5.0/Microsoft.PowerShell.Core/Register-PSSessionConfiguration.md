@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -209,11 +209,11 @@ The acceptable values for this parameter are:
 
 - Disabled.
 Disables the session configuration.
-It cannot be used for remote or local access to the computer. 
+It cannot be used for remote or local access to the computer.
 - Local.
-Allows users of the local computer to use the session configuration to create a local loopback session on the same computer, but denies access to remote users. 
+Allows users of the local computer to use the session configuration to create a local loopback session on the same computer, but denies access to remote users.
 - Remote.
-Allows local and remote users to use the session configuration to create sessions and run commands on this computer. 
+Allows local and remote users to use the session configuration to create sessions and run commands on this computer.
 
 The default value is Remote.
 
@@ -225,7 +225,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSSessionConfigurationAccessMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Disabled, Local, Remote
 
 Required: False
@@ -243,7 +243,7 @@ The default is the current directory.
 ```yaml
 Type: String
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -261,7 +261,7 @@ This parameter is required when you specify the *ConfigurationTypeName* paramete
 ```yaml
 Type: String
 Parameter Sets: AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -283,7 +283,7 @@ If you omit this parameter, the **DefaultRemotePowerShellConfiguration** class i
 ```yaml
 Type: String
 Parameter Sets: AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -316,7 +316,7 @@ To prevent a restart and suppress the restart prompt, specify the *NoServiceRest
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -335,7 +335,7 @@ If a data size limit is defined in the configuration type that is specified in t
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -354,7 +354,7 @@ If an object size limit is defined in the configuration type that is specified i
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -377,7 +377,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Object[]
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -393,7 +393,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -414,7 +414,7 @@ To restart the **WinRM** service manually, use the Restart-Service cmdlet.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -451,7 +451,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: SessionConfigurationFile
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -490,7 +490,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -516,7 +516,7 @@ For more information about the WSMan provider, type `Get-Help wsman`.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -531,13 +531,13 @@ The acceptable values for this parameter are:
 
 - Empty.
 No modules or snap-ins are added to session by default.
-Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session. 
+Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.
 - Default.
 Adds the Microsoft.PowerShell.Core snap-in to the session.
-This module includes the Import-Module and Add-PSSnapin cmdlets that users can use to import other modules and snap-ins unless you explicitly prohibit the use of the cmdlets. 
+This module includes the Import-Module and Add-PSSnapin cmdlets that users can use to import other modules and snap-ins unless you explicitly prohibit the use of the cmdlets.
 - RestrictedRemoteServer.
 Includes only the following cmdlets: Exit-PSSession, Get-Command, Get-FormatData, Get-Help, Measure-Object, Out-Default, and Select-Object.
-Use a script or assembly, or the keys in the session configuration file, to add modules, functions, scripts, and other features to the session. 
+Use a script or assembly, or the keys in the session configuration file, to add modules, functions, scripts, and other features to the session.
 
 The default value is Default.
 
@@ -548,7 +548,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSSessionType
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 Accepted values: DefaultRemoteShell, Workflow
 
 Required: False
@@ -571,7 +571,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSSessionTypeOption
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -591,7 +591,7 @@ You cannot use the *SecurityDescriptorSDDL* parameter and this parameter in the 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -610,7 +610,7 @@ If the script generates an error, even a non-terminating error, the session is n
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -627,7 +627,7 @@ The default value is Unknown.
 ```yaml
 Type: ApartmentState
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: STA, MTA, Unknown
 
 Required: False
@@ -641,10 +641,10 @@ Accept wildcard characters: False
 Specifies how threads are created and used when a command runs in the session.
 The acceptable values for this parameter are:
 
-- Default 
-- ReuseThread 
-- UseCurrentThread 
-- UseNewThread 
+- Default
+- ReuseThread
+- UseCurrentThread
+- UseNewThread
 
 The default value is UseCurrentThread.
 
@@ -653,7 +653,7 @@ For more information, see "PSThreadOptions Enumeration" in the Microsoft Develop
 ```yaml
 Type: PSThreadOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, UseNewThread, ReuseThread, UseCurrentThread
 
 Required: False
@@ -671,7 +671,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSTransportOption
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -689,7 +689,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -752,4 +752,3 @@ You cannot pipe input to this cmdlet.
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

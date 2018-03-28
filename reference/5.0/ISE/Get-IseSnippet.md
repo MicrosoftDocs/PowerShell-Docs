@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -130,4 +130,3 @@ This cmdlet returns a file object that represents the snippet file.
 [Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
 
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
-

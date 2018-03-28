@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -54,7 +54,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: ClipboardFormat
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Text, FileDropList, Image, Audio
 
 Required: False
@@ -70,7 +70,7 @@ Indicates that this cmdlet ignores newline characters and gets the entire conten
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -92,7 +92,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: TextDataFormat
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Text, UnicodeText, Rtf, Html, CommaSeparatedValue
 
 Required: False
@@ -116,4 +116,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Set-Clipboard](Set-Clipboard.md)
-

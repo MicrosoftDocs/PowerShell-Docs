@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -30,7 +30,7 @@ You can change locations into the drive, by using Set-Location, **cd**, or **chd
 
 However, because temporary drives are known only to Windows PowerShell, you cannot access them by using File Explorer, Windows Management Instrumentation (WMI), Component Object Model (COM), or the Microsoft .NET Framework, or by using tools such as Net Use.
 
-The following features are added to **New-PSDrive** in Windows PowerShell 3.0: 
+The following features are added to **New-PSDrive** in Windows PowerShell 3.0:
 
 - Mapped network drives.
 You can use the *Persist* parameter of **New-PSDrive** to create Windows mapped network drives.
@@ -39,15 +39,15 @@ They are saved in Windows and they can be managed by using standard Windows tool
 Mapped network drives must have a drive-letter name and be connected to a remote file system location.
 When your command is scoped locally (no dot-sourcing), the *Persist* parameter does not persist the creation of a **PSDrive** beyond the scope in which the command is running.
 If you are running **New-PSDrive** inside a script, and you want the drive to persist indefinitely, you must dot-source the script.
-For best results, to force a new drive to persist indefinitely, add the *Scope* parameter to your command, and set its value to Global. 
+For best results, to force a new drive to persist indefinitely, add the *Scope* parameter to your command, and set its value to Global.
 - External drives.
 When an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive.
 You do not have to restart Windows PowerShell.
-Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the **PSDrive** that represents the removed drive. 
+Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the **PSDrive** that represents the removed drive.
 - External drives.
 When an external drive is connected to the computer, Windows PowerShell automatically adds a **PSDrive** to the file system that represents the new drive.
 You do not have to restart Windows PowerShell.
-Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the **PSDrive** that represents the removed drive. 
+Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the **PSDrive** that represents the removed drive.
 - Credentials for UNC Paths.
 When the value of the *Root* parameter is a UNC path, such as \\\\Server\Share, the credential specified in the value of the *Credential* parameter is used to create the **PSDrive**.
 Otherwise, *Credential* is not effective when you are creating new file system drives.
@@ -143,7 +143,7 @@ X          FileSystem    X:\
 The output of the Get-Member cmdlet shows that the drives have the same object type, System.Management.Automation.PSDriveInfo.
 PS C:\> Get-PSDrive "PSDrive", "x" | Get-Member
 TypeName: System.Management.Automation.PSDriveInfo
- 
+
 
 
 Name                MemberType Definition
@@ -208,7 +208,7 @@ This parameter is not supported by all Windows PowerShell providers.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,7 +227,7 @@ To see the description of a particular drives, type `(Get-PSDrive \<DriveName\>)
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -244,7 +244,7 @@ For temporary Windows PowerShell drives, type any valid string; you are not limi
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -267,7 +267,7 @@ To see a list of the providers in your Windows PowerShell session, use the Get-P
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -298,7 +298,7 @@ Mapped network drives that you create in sessions that are started by using the 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -318,7 +318,7 @@ Mapped network drives can be associated only with a file system location on a re
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -336,7 +336,7 @@ For more information, see about_Scopes (http://go.microsoft.com/fwlink/?LinkID=1
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -399,5 +399,3 @@ You cannot pipe input to this cmdlet.
 [Get-PSDrive](Get-PSDrive.md)
 
 [Remove-PSDrive](Remove-PSDrive.md)
-
-

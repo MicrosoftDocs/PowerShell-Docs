@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -81,4 +81,3 @@ Tests whether the actual configuration on the nodes matches the desired configur
 
 ### [Update-DscConfiguration](Update-DscConfiguration.md)
 Checks the pull server for an updated configuration and applies it.
-

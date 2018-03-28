@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -125,7 +125,7 @@ Use this parameter to add a file that formats a .NET object that is also referen
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -173,4 +173,3 @@ The cmdlet does not return any output.
 [Get-FormatData](Get-FormatData.md)
 
 [Export-FormatData](Export-FormatData.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -97,7 +97,7 @@ The **State** of the session is Opened and the **Availability** is Available, wh
 
 ### Example 2: Effect of disconnecting and reconnecting
 ```
-PS C:\> Get-PSSession 
+PS C:\> Get-PSSession
 
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
@@ -208,7 +208,7 @@ The default value is 5.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ConnectionUriGuid, ConnectionUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -231,7 +231,7 @@ It does not change the application that the session uses.
 ```yaml
 Type: String
 Parameter Sets: ComputerNameGuid, ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -244,13 +244,13 @@ Accept wildcard characters: False
 Specifies the mechanism that is used to authenticate user credentials in the command to reconnect to the disconnected session.
 The acceptable values for this parameter are:
 
-- Default 
-- Basic 
-- Credssp 
-- Digest 
-- Kerberos 
-- Negotiate 
-- NegotiateWithImplicitCredential 
+- Default
+- Basic
+- Credssp
+- Digest
+- Kerberos
+- Negotiate
+- NegotiateWithImplicitCredential
 
 The default value is Default.
 
@@ -263,7 +263,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
-Aliases: 
+Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
 Required: False
@@ -286,7 +286,7 @@ To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the 
 ```yaml
 Type: String
 Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -331,7 +331,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: String
 Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -398,7 +398,7 @@ If you type a user name, this cmdlet prompts you for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -416,7 +416,7 @@ This parameter is valid, but not effective, when the session is stored on the lo
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -435,7 +435,7 @@ The instance ID is stored in the **InstanceID** property of the **PSSession**.
 ```yaml
 Type: Guid[]
 Parameter Sets: ComputerNameGuid, ConnectionUriGuid, InstanceId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -450,7 +450,7 @@ Specifies the friendly names of the disconnected sessions.
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -462,7 +462,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: ComputerName, ConnectionUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -490,7 +490,7 @@ An alternate port setting might prevent the command from running on all computer
 ```yaml
 Type: Int32
 Parameter Sets: ComputerNameGuid, ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -506,7 +506,7 @@ Enter a variable that contains the **PSSession** objects or a command that creat
 ```yaml
 Type: PSSession[]
 Parameter Sets: Session
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -532,7 +532,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: PSSessionOption
 Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -550,7 +550,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -571,7 +571,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerNameGuid, ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -660,4 +660,3 @@ Disconnected sessions are considered to be idle from the moment that they are di
 [about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -97,11 +97,11 @@ PS C:\> $Timer.Interval = 500
 PS C:\> $Job = Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Random -Action {$Random = Get-Random -Min 0 -Max 100}
 PS C:\> $Job.gettype().fullnameSystem.Management.Automation.PSEventJob
 PS C:\> $Job | Format-List -Property *
-State         : 
+State         :
 RunningModule        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
-StatusMessage : 
+StatusMessage :
 HasMoreData   : True
-Location      : 
+Location      :
 Command       : $Random= Get-Random -Min 0 -Max 100
 JobStateInfo  : Running
 Finished      : System.Threading.ManualResetEvent
@@ -158,7 +158,7 @@ You can use the Job cmdlets to manage the event job.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 101
@@ -180,7 +180,7 @@ To find the event name of an event, use the Get-Member cmdlet.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -196,7 +196,7 @@ Use this parameter when you are registering for events on a remote computer or i
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -213,7 +213,7 @@ This parameter is required.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -234,7 +234,7 @@ You can use the Job cmdlets to manage the event job.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -250,7 +250,7 @@ The value of this parameter appears in the MessageData property of all events as
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -269,7 +269,7 @@ The value of this parameter appears in the value of the SourceIdentifier propert
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 100
@@ -287,7 +287,7 @@ To view or cancel a subscription that was created with the *SupportEvent* parame
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -329,4 +329,3 @@ This cmdlet does not generate any output.
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -96,7 +96,7 @@ Because these modules are in the $pshome\Modules folder, to run this command, st
 ### Example 3: Update help in different languages
 ```
 PS C:\> Update-Help -UICulture ja-JP, en-US
-Update-Help : Failed to update Help for the module(s) 'ServerManager' with UI culture(s) {ja-JP} : 
+Update-Help : Failed to update Help for the module(s) 'ServerManager' with UI culture(s) {ja-JP} :
 The specified culture is not supported: ja-JP. Specify a culture from the following list: {en-US}.
 ```
 
@@ -175,7 +175,7 @@ Param
          [parameter(Mandatory=$False)]
          [String[]]
          $Module
-      )      
+      )
 $HelpInfoNamespace = @{helpInfo="http://schemas.microsoft.com/powershell/help/2010/05"}
 
 if ($Module) { $Modules = Get-Module $Module -ListAvailable | where {$_.HelpInfoUri} }
@@ -193,7 +193,7 @@ foreach ($mModule in $Modules)
         {
             $mCulture=$mNode.Node.UICultureName
             $mVer=$mNode.Node.UICultureVersion
-            
+
             [PSCustomObject]@{"ModuleName"=$mName; "Culture"=$mCulture; "Version"=$mVer}
         }
     }
@@ -242,7 +242,7 @@ By providing explicit credentials, you can run the command on a remote computer 
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -263,7 +263,7 @@ To update help for a module in multiple UI cultures without the *Force* paramete
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -283,7 +283,7 @@ You cannot specify the *FullyQualifiedModule* parameter in the same command as a
 ```yaml
 Type: ModuleSpecification[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -351,7 +351,7 @@ This parameter is valid only when *SourcePath* is used in the command.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -376,7 +376,7 @@ For more information, see about_Group_Policy_Settings (http://go.microsoft.com/f
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -399,7 +399,7 @@ If the command fails because the specified UI culture is not supported, the erro
 ```yaml
 Type: CultureInfo[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -417,7 +417,7 @@ This parameter is effective only when the Web download uses NTLM, negotiate, or 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -484,4 +484,3 @@ To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-nam
 [Get-Module](Get-Module.md)
 
 [Save-Help](Save-Help.md)
-

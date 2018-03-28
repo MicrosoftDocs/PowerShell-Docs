@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -118,7 +118,7 @@ For more information about Windows PowerShell background jobs, see about_Jobs an
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -131,25 +131,25 @@ Accept wildcard characters: False
 Specifies the authentication level to use for the WMI connection.
 The acceptable values for this parameter are:
 
-- -1: Unchanged. 
-- 0: Default. 
+- -1: Unchanged.
+- 0: Default.
 - 1: None.
-No authentication in performed. 
+No authentication in performed.
 - 2: Connect.
-Authentication is performed only when the client establishes a relationship with the application. 
+Authentication is performed only when the client establishes a relationship with the application.
 - 3: Call.
-Authentication is performed only at the start of each call when the application receives the request. 
+Authentication is performed only at the start of each call when the application receives the request.
 - 4: Packet.
-Authentication is performed on all the data that is received from the client. 
+Authentication is performed on all the data that is received from the client.
 - 5: PacketIntegrity.
-All the data that is transferred between the client and the application is authenticated and verified. 
+All the data that is transferred between the client and the application is authenticated and verified.
 - 6: PacketPrivacy.
 The properties of the other authentication levels are used, and all the data is encrypted.
 
 ```yaml
 Type: AuthenticationLevel
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
 
 Required: False
@@ -169,7 +169,7 @@ You cannot include the authority setting when you connect to the local computer.
 ```yaml
 Type: String
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,7 +184,7 @@ Specifies the name of a WMI class that this cmdlet deletes.
 ```yaml
 Type: String
 Parameter Sets: class
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -240,7 +240,7 @@ If you type a user name, this cmdlet prompts you for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -255,7 +255,7 @@ Indicates that this cmdlet enables all the permissions of the current user befor
 ```yaml
 Type: SwitchParameter
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -271,18 +271,18 @@ The acceptable values for this parameter are:
 - 0: Default.
 Reads the local registry for the default impersonation level, which is usually set to 3: Impersonate.
 - 1: Anonymous.
-Hides the credentials of the caller. 
+Hides the credentials of the caller.
 - 2: Identify.
-Allows objects to query the credentials of the caller. 
+Allows objects to query the credentials of the caller.
 - 3: Impersonate.
-Allows objects to use the credentials of the caller. 
+Allows objects to use the credentials of the caller.
 - 4: Delegate.
 Allows objects to permit other objects to use the credentials of the caller.
 
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
 
 Required: False
@@ -299,7 +299,7 @@ When this parameter is used, all other parameters are ignored.
 ```yaml
 Type: ManagementObject
 Parameter Sets: object
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -315,7 +315,7 @@ The *Locale* parameter is specified as an array in the MS_\<LCID\> format in the
 ```yaml
 Type: String
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -345,7 +345,7 @@ Specifies the WMI object path of a WMI class, or specifies the WMI object path o
 ```yaml
 Type: String
 Parameter Sets: path
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -362,7 +362,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -410,4 +410,3 @@ Otherwise, it does not generate any output.
 [Invoke-WmiMethod](Invoke-WmiMethod.md)
 
 [Set-WmiInstance](Set-WmiInstance.md)
-

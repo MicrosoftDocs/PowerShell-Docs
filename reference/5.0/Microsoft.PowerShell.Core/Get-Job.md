@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -236,7 +236,7 @@ The first command uses the **Workflow** keyword to create the WFProcess workflow
 PS C:\> Workflow WFProcess {Get-Process}
 
 The second command uses the *AsJob* parameter of the WFProcess workflow to run the workflow as a background job. It uses the *JobName* parameter of the workflow to specify a name for the job, and the *PSPrivateMetadata* parameter of the workflow to specify a custom ID.
-PS C:\> WFProcess -AsJob -JobName WFProcessJob -PSPrivateMetadata @{MyCustomId = 92107} 
+PS C:\> WFProcess -AsJob -JobName WFProcessJob -PSPrivateMetadata @{MyCustomId = 92107}
 
 The third command uses the *Filter* parameter of **Get-Job** to get the job by custom ID that was specified in the *PSPrivateMetadata* parameter.
 PS C:\> Get-Job -Filter @{MyCustomId = 92107}
@@ -289,7 +289,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 The fifth command uses the **JobStateInfo** property of jobs and its **Reason** property to discover why Job5 failed.
 PS C:\> (Get-Job -Name Job5).JobStateInfo.Reason
-Connecting to remote server Server01 failed with the following error message: 
+Connecting to remote server Server01 failed with the following error message:
 Access is denied.
 For more information, see the about_Remote_Troubleshooting Help topic.
 ```
@@ -311,7 +311,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: DateTime
 Parameter Sets: SessionIdParameterSet, StateParameterSet, CommandParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -333,7 +333,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: DateTime
 Parameter Sets: SessionIdParameterSet, StateParameterSet, CommandParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -366,7 +366,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: JobState
 Parameter Sets: SessionIdParameterSet, StateParameterSet, CommandParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
 
 Required: False
@@ -385,7 +385,7 @@ You can use wildcard characters to specify a command pattern.
 ```yaml
 Type: String[]
 Parameter Sets: CommandParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -408,7 +408,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Hashtable
 Parameter Sets: FilterParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -439,7 +439,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Boolean
 Parameter Sets: SessionIdParameterSet, StateParameterSet, CommandParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -459,7 +459,7 @@ To find the ID of a job, type `Get-Job` without parameters.
 ```yaml
 Type: Int32[]
 Parameter Sets: SessionIdParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -478,7 +478,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: SessionIdParameterSet, StateParameterSet, CommandParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -497,7 +497,7 @@ To find the instance ID of a job, use **Get-Job**.
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -514,7 +514,7 @@ By default, **Get-Job** gets all jobs in the current session.
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -535,7 +535,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Int32
 Parameter Sets: SessionIdParameterSet, StateParameterSet, CommandParameterSet, InstanceIdParameterSet, NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -549,16 +549,16 @@ Specifies a job state.
 This cmdlet gets only jobs in the specified state.
 The acceptable values for this parameter are:
 
-- NotStarted  
-- Running 
-- Completed 
-- Failed 
-- Stopped 
-- Blocked 
-- Suspended 
-- Disconnected 
-- Suspending 
-- Stopping 
+- NotStarted
+- Running
+- Completed
+- Failed
+- Stopped
+- Blocked
+- Suspended
+- Disconnected
+- Suspending
+- Stopping
 
 By default, **Get-Job** gets all the jobs in the current session.
 
@@ -567,7 +567,7 @@ For more information about job states, see [JobState Enumeration](https://msdn.m
 ```yaml
 Type: JobState
 Parameter Sets: StateParameterSet
-Aliases: 
+Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
 
 Required: True
@@ -627,4 +627,3 @@ Job started by using the *AsJob* common parameter of workflows.
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [about_Scheduled_Jobs](../PSScheduledJob/About/about_Scheduled_Jobs.md)
-

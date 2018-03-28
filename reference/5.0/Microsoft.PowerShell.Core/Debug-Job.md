@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -55,24 +55,24 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
           Hit Line breakpoint on 'C:\TestWFDemo1.ps1:8'
 
           At C:\TestWFDemo1.ps1:8 char:5
-          +     Write-Output -InputObject "Now writing output:" 
+          +     Write-Output -InputObject "Now writing output:"
           +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
           [DBG:PowerShellIx]: PS C:\> > list
 
-              3: 
+              3:
               4:  workflow SampleWorkflowTest
               5:  {
-              6:      param ($MyOutput) 
-              7: 
-              8:*     Write-Output -InputObject "Now writing output:" 
+              6:      param ($MyOutput)
+              7:
+              8:*     Write-Output -InputObject "Now writing output:"
               9:      Write-Output -Input $MyOutput
-             10: 
-             11:      Write-Output -InputObject "Get PowerShell process:" 
+             10:
+             11:      Write-Output -InputObject "Get PowerShell process:"
              12:      Get-Process -Name powershell
-             13: 
-             14:      Write-Output -InputObject "Workflow function complete." 
+             13:
+             14:      Write-Output -InputObject "Workflow function complete."
              15:  }
-             16: 
+             16:
              17:  # Call workflow function
              18:  SampleWorkflowTest -MyOutput "Hello"
 ```
@@ -103,7 +103,7 @@ To get the ID number of a job, run the Get-Job cmdlet.
 ```yaml
 Type: Int32
 Parameter Sets: JobIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -114,14 +114,14 @@ Accept wildcard characters: False
 
 ### -InstanceId
 Specifies the instance ID GUID of a running job.
-To get the *InstanceId* of a job, run the **Get-Job** cmdlet, piping the results into a **Format-*** cmdlet, as shown in the following example: 
+To get the *InstanceId* of a job, run the **Get-Job** cmdlet, piping the results into a **Format-*** cmdlet, as shown in the following example:
 
 `Get-Job | Format-List -Property Id,Name,InstanceId,State`
 
 ```yaml
 Type: Guid
 Parameter Sets: JobInstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -137,7 +137,7 @@ The simplest way to use this parameter is to save the results of a **Get-Job** c
 ```yaml
 Type: Job
 Parameter Sets: JobParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -153,7 +153,7 @@ When you start a job, you can specify a job name by adding the *JobName* paramet
 ```yaml
 Type: String
 Parameter Sets: JobNameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -216,4 +216,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [about_Scheduled_Jobs](../PSScheduledJob/About/about_Scheduled_Jobs.md)
-

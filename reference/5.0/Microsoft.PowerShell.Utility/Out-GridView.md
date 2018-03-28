@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -151,7 +151,7 @@ To display the each object in the collection, use a pipeline operator (|) to sen
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -176,7 +176,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: OutputModeOption
 Parameter Sets: OutputMode
-Aliases: 
+Aliases:
 Accepted values: None, Single, Multiple
 
 Required: False
@@ -199,7 +199,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PassThru
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -216,7 +216,7 @@ By default, the title bar displays the command that invokes **Out-GridView**.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -237,7 +237,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Wait
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -439,4 +439,3 @@ To remove it, change the value.
 [Out-Printer](Out-Printer.md)
 
 [Out-String](Out-String.md)
-

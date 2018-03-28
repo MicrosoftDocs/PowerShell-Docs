@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -31,7 +31,7 @@ When you use the local variable in the script to display a user message, the mes
 You can use the parameters of **Import-LocalizedData** to specify an alternate UI culture, path, and file name, to add supported commands, and to suppress the error message that appears if the .psd1 files are not found.
 
 The **Import-LocalizedData** cmdlet supports the script internationalization initiative that was introduced in Windows PowerShell 2.0.
-This initiative aims to better serve users worldwide by making it easy for scripts to display user messages in the UI language of the current user. 
+This initiative aims to better serve users worldwide by making it easy for scripts to display user messages in the UI language of the current user.
 For more information about this and about the format of the .psd1 files, see about_Script_Internationalization (http://go.microsoft.com/fwlink/?LinkID=113262).
 
 ## EXAMPLES
@@ -111,15 +111,15 @@ The output shows that it displays the correct user message in the UI language se
 
 ### Example 5
 ```
-PS C:\> # In TestScript.ps1$UserMessages = DATA 
+PS C:\> # In TestScript.ps1$UserMessages = DATA
 
 {    ConvertFrom-StringData @'
 
     # English strings
 
-        Msg1 = "Enter a name." 
-        Msg2 = "Enter your employee ID." 
-        Msg3 = "Enter your building number." 
+        Msg1 = "Enter a name."
+        Msg2 = "Enter your employee ID."
+        Msg3 = "Enter your building number."
 '@ }
 Import-LocalizedData -BindingVariable UserMessages
 $UserMessages.Msg1...
@@ -148,7 +148,7 @@ PS C:\> Import-LocalizedData -BindingVariable DayDay.MessageDate
 PS C:\> Import-LocalizedData -BindingVariable Day -ErrorAction:SilentlyContinue
 Day.MessageDate
 PS C:\> .\Day1.ps1
-Import-LocalizedData : Cannot find PowerShell data file 'Day1.psd1' in directory 'C:\ps-test\fr-BE\' or any parent culture directories. 
+Import-LocalizedData : Cannot find PowerShell data file 'Day1.psd1' in directory 'C:\ps-test\fr-BE\' or any parent culture directories.
 At C:\ps-test\Day1.ps1:17 char:21+ Import-LocalizedData <<<<  Day
 Today is Tuesday
 PS C:\> .\Day2.ps1
@@ -177,7 +177,7 @@ The default is the directory where the script is located.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -226,7 +226,7 @@ For example, if the Filename is omitted and the script name is FindFiles.ps1, **
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -244,7 +244,7 @@ For more information, see about_Script_Internationalization.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -267,7 +267,7 @@ If it cannot find the subdirectory or .psd1 file, the command fails and the data
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -315,4 +315,3 @@ Then, when you display a message from the hash table in the variable, the locali
 ## RELATED LINKS
 
 [about_Script_Internationalization](../Microsoft.PowerShell.Core/About/about_Script_Internationalization.md)
-

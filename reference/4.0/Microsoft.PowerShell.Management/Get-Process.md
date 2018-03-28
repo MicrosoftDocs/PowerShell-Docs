@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -288,7 +288,7 @@ Specifies that the UserName value of the Process object is returned with results
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NameWithUserName, IdWithUserName, InputObjectWithUserName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -304,7 +304,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: Process[]
 Parameter Sets: InputObjectWithUserName, InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -330,7 +330,7 @@ When you use both the Module and FileVersionInfo parameters in the same command,
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Name, Id, InputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -368,7 +368,7 @@ You can pipe a process object to Get-Process.
 
 ### System.Diagnostics.Process, System.Diagnotics.FileVersionInfo, System.Diagnostics.ProcessModule
 By default, Get-Process returns a System.Diagnostics.Process object.
-If you use the FileVersionInfo parameter, it returns a System.Diagnotics.FileVersionInfo object. 
+If you use the FileVersionInfo parameter, it returns a System.Diagnotics.FileVersionInfo object.
 If you use the Module parameter (without the FileVersionInfo parameter), it returns a System.Diagnostics.ProcessModule object.
 
 ## NOTES
@@ -410,4 +410,3 @@ Virtual memory includes storage in the paging files on disk.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -71,7 +71,7 @@ Note: Unencrypted traffic is not allowed by default and must be enabled in the l
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -96,10 +96,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyAccessType
-Specifies the mechanism by which the proxy server is located. 
+Specifies the mechanism by which the proxy server is located.
 Possible values are:
 
-ProxyIEConfig - Use the Internet Explorer proxy configuration for the current user. 
+ProxyIEConfig - Use the Internet Explorer proxy configuration for the current user.
 This is the default setting.
 
 ProxyWinHttpConfig - The WSMan client uses the proxy settings configured for WinHTTP, using the ProxyCfg.exe utility.
@@ -112,7 +112,7 @@ All all host names will be resolved locally.
 ```yaml
 Type: ProxyAccessType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ Possible values are:
 ```yaml
 Type: ProxyAuthentication
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -147,7 +147,7 @@ Specifies a user account that has permission to gain access through an intermedi
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,13 +157,13 @@ Accept wildcard characters: False
 ```
 
 ### -SPNPort
-Specifies a port number to append to the connection Service Principal Name \<SPN\> of the remote server. 
+Specifies a port number to append to the connection Service Principal Name \<SPN\> of the remote server.
 An SPN is used when the authentication mechanism is Kerberos or Negotiate.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -179,7 +179,7 @@ Use this option only when the remote computer is trusted by other means, for exa
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -196,7 +196,7 @@ This option should only be used for trusted computers.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -211,7 +211,7 @@ Do not validate the revocation status on the server certificate.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,7 +227,7 @@ The default is UTF8 encoding.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -272,4 +272,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

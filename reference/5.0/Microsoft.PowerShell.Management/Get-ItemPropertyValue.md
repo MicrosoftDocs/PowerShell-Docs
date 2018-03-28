@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -75,12 +75,12 @@ PS C:\> Get-ItemPropertyValue -Path C:\Users\Test\Documents\ModuleToAssembly -Na
 Wednesday, September 3, 2014 2:53:22 PM
 Wednesday, September 3, 2014 2:53:10 PM
 
-Name              : C:\ 
-Parent            : 
+Name              : C:\
+Parent            :
 Exists            : True
-Root              : C:\ 
-FullName          : C:\ 
-Extension         : 
+Root              : C:\
+FullName          : C:\
+Extension         :
 CreationTime      : 9/1/2014 4:59:45 AM
 CreationTimeUtc   : 9/1/2014 11:59:45 AM
 LastAccessTime    : 9/27/2014 5:22:02 PM
@@ -88,9 +88,9 @@ LastAccessTimeUtc : 9/28/2014 12:22:02 AM
 LastWriteTime     : 9/27/2014 5:22:02 PM
 LastWriteTimeUtc  : 9/28/2014 12:22:02 AM
 Attributes        : Hidden, System, Directory
-BaseName          : C:\ 
-Target            : 
-LinkType          : 
+BaseName          : C:\
+Target            :
+LinkType          :
 Mode              : d--hs-
 ```
 
@@ -109,7 +109,7 @@ This parameter is not supported by any providers that are installed with Windows
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -124,7 +124,7 @@ Specifies, as a string array, an item or items that this cmdlet excludes from th
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -142,7 +142,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,7 +157,7 @@ Specifies, as a string array, an item or items that this cmdlet includes in the 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -205,7 +205,7 @@ Specifies the path to the item or items.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -268,5 +268,3 @@ For example, in a file system drive, the cmdlet might return a file or folder.
 [Set-ItemProperty](Set-ItemProperty.md)
 
 [Get-PSProvider](Get-PSProvider.md)
-
-
