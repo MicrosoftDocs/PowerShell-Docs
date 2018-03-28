@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -165,13 +165,13 @@ Closes the PSSessions with the specified IDs.
 Type one or more IDs (separated by commas) or use the range operator (..) to specify a range of IDs
 
 An ID is an integer that uniquely identifies the PSSession in the current session.
-It is easier to remember and type than the InstanceId, but it is unique only within the current session. 
+It is easier to remember and type than the InstanceId, but it is unique only within the current session.
 To find the ID of a PSSession, use Get-PSSession without parameters.
 
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -192,7 +192,7 @@ To find the InstanceID of the PSSessions in the current session, type "get-psses
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -210,7 +210,7 @@ Because the friendly name of a PSSession might not be unique, when using the Nam
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -220,14 +220,14 @@ Accept wildcard characters: False
 ```
 
 ### -Session
-Specifies the session objects of the PSSessions to close. 
+Specifies the session objects of the PSSessions to close.
 Enter a variable that contains the PSSessions or a command that creates or gets the PSSessions, such as a New-PSSession or Get-PSSession command.
 You can also pipe one or more session objects to Remove-PSSession.
 
 ```yaml
 Type: PSSession[]
 Parameter Sets: Session
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -298,4 +298,3 @@ When you end a session, the PSSessions that you created in that session are forc
 [about_PSSessions](About/about_PSSessions.md)
 
 [about_Remote](About/about_Remote.md)
-
