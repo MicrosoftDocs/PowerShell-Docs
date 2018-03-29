@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -113,7 +113,7 @@ For more information about automatic variables, see http://technet.microsoft.com
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 102
@@ -130,7 +130,7 @@ For more information, see about_CimSessions.
 ```yaml
 Type: CimSession
 Parameter Sets: ClassNameSessionSet, QueryExpressionSessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -140,13 +140,13 @@ Accept wildcard characters: False
 ```
 
 ### -ClassName
-Specifies the indication class to which you are subscribing. 
+Specifies the indication class to which you are subscribing.
 NOTE: You can use tab completion to browse the list of classes, because wps_2 gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
 Type: String
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -185,7 +185,7 @@ Use this parameter when you are registering for events on a remote computer or i
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -202,7 +202,7 @@ The value of this parameter appears in the MessageData property of all the event
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -214,13 +214,13 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace for the CIM operation.
 
-The default namespace is root/cimv2. 
+The default namespace is root/cimv2.
 NOTE: You can use tab completion to browse the list of namespaces, because wps_2 gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -259,7 +259,7 @@ If the value specified uses the WQL LIKE operator, then you must escape the foll
 ```yaml
 Type: String
 Parameter Sets: QueryExpressionSessionSet, QueryExpressionComputerSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -277,7 +277,7 @@ The default value is WQL.
 ```yaml
 Type: String
 Parameter Sets: QueryExpressionSessionSet, QueryExpressionComputerSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -297,7 +297,7 @@ The value of this parameter appears in the value of the SourceIdentifier propert
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 101
@@ -314,7 +314,7 @@ Use this parameter when the current subscription is part of a more complex event
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -363,4 +363,3 @@ This cmdlet outputs a PS EventSubscription object.
 [Get-CimSession](Get-CimSession.md)
 
 [New-CimSession](New-CimSession.md)
-
