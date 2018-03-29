@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -78,21 +78,21 @@ However, the default culture can be overridden using the Culture parameter.
 Specifies the user interface culture to use for the CIM session.
 Specify the value for this parameter using one of the following formats:
 
-Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US". 
+Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US".
 
 
-                        
-A variable that contains a CultureInfo object. 
+
+A variable that contains a CultureInfo object.
 
 
-                        
+
 A command that gets a CultureInfo object, such as Get-Culture.
 For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
 
 ```yaml
 Type: CultureInfo
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -108,7 +108,7 @@ This type of connection is not common.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -125,7 +125,7 @@ psdx_paramvalues Default, Utf8, or Utf16.
 ```yaml
 Type: PacketEncoding
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -143,7 +143,7 @@ By default, the value of this parameter is /wsman.
 ```yaml
 Type: Uri
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -155,23 +155,23 @@ Accept wildcard characters: False
 ### -Impersonation
 Creates a DCOM session to Windows Management Instrumentation (WMI) using impersonation.
 
-Valid values for this parameter are: 
+Valid values for this parameter are:
 
 
-                        
--- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm. 
 
-                        
+-- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm.
+
+
 -- None: The client is anonymous to the server.
-The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used. 
+The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used.
 
-                        
--- Identify: Allows objects to query the credentials of the caller. 
 
-                        
--- Impersonate: Allows objects to use the credentials of the caller. 
+-- Identify: Allows objects to query the credentials of the caller.
 
-                        
+
+-- Impersonate: Allows objects to use the credentials of the caller.
+
+
 -- Delegate: Allows objects to permit other objects to use the credentials of the caller.
 
 If Impersonation is not specified, the New-CimSession cmdlet uses the value of 3: Impersonate
@@ -179,7 +179,7 @@ If Impersonation is not specified, the New-CimSession cmdlet uses the value of 3
 ```yaml
 Type: ImpersonationType
 Parameter Sets: DcomParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -194,7 +194,7 @@ Specifies the size limit of WsMan XML messages for either direction.
 ```yaml
 Type: UInt32
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -209,7 +209,7 @@ Specifies that data encryption is turned off.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -225,7 +225,7 @@ For enhanced security, by default all CIM sessions created using DCOM have the P
 ```yaml
 Type: SwitchParameter
 Parameter Sets: DcomParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -241,7 +241,7 @@ For enhanced security, by default all CIM sessions created using DCOM have the P
 ```yaml
 Type: SwitchParameter
 Parameter Sets: DcomParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -258,7 +258,7 @@ psdx_paramvaluesDCOM or WinRM.
 ```yaml
 Type: ProtocolType
 Parameter Sets: ProtocolTypeSet
-Aliases: 
+Aliases:
 Accepted values: Dcom, Default, Wsman
 
 Required: True
@@ -276,7 +276,7 @@ psdx_paramvaluesDefault, Digest, Negotiate, Basic, Kerberos, NtlmDomain, or Cred
 ```yaml
 Type: PasswordAuthenticationMechanism
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -299,7 +299,7 @@ For more information about Get-Item, see http://technet.microsoft.com/library/hh
 ```yaml
 Type: String
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -310,13 +310,13 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 Specifies the credentials to use for proxy authentication.
-Enter one of the following: 
+Enter one of the following:
 
 
-                        
--- A variable that contains a PSCredential object. 
 
-                        
+-- A variable that contains a PSCredential object.
+
+
 -- A command that gets a PSCredential object, such as Get-Credential
 
 If this option is not set, then you cannot specify any credentials.
@@ -324,7 +324,7 @@ If this option is not set, then you cannot specify any credentials.
 ```yaml
 Type: PSCredential
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -343,7 +343,7 @@ By default, the value of this parameter is InternetExplorer.
 ```yaml
 Type: ProxyType
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -360,7 +360,7 @@ Use this parameter only when the remote computer is trusted using another mechan
 ```yaml
 Type: SwitchParameter
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -379,7 +379,7 @@ Note: use this parameter only for trusted computers.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -396,7 +396,7 @@ Note: use this parameter only for trusted computers.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -409,21 +409,21 @@ Accept wildcard characters: False
 Specifies the user interface culture to use for the CIM session.
 Specify the value for this parameter using one of the following formats:
 
-Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US". 
+Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US".
 
 
-                        
-A variable that contains a CultureInfo object. 
+
+A variable that contains a CultureInfo object.
 
 
-                        
+
 A command that gets a CultureInfo object, such as Get-Culture.
 For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
 
 ```yaml
 Type: CultureInfo
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -445,7 +445,7 @@ It is recommended that you use this parameter only when the PacketPrivacy parame
 ```yaml
 Type: SwitchParameter
 Parameter Sets: WSManParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -477,4 +477,3 @@ This cmdlet returns an object that contains CIM session options information.
 [Get-Item](../microsoft.powershell.management/get-item.md)
 
 [New-CimSession](New-CimSession.md)
-

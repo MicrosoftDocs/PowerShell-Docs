@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -437,7 +437,7 @@ for each element of the array.
 The following example shows how use the foreach method. In this case the
 intent is to generate the square value of the elements in the array.
 
-Please note this method was added in PowerShell v4 and is not available in versions below this. 
+Please note this method was added in PowerShell v4 and is not available in versions below this.
 For prior versions please use the Pipelining method to the ForEach-Object Cmdlet
 
 ```powershell
@@ -481,7 +481,7 @@ the element to show after the `Where`
 
 The following example shows how to select all odd numbers from the array.
 
-Please note this method was added in PowerShell v4 and is not available in versions below this. 
+Please note this method was added in PowerShell v4 and is not available in versions below this.
 For prior versions please use the Pipelining method to the Where-Object Cmdlet
 
 ```powershell
