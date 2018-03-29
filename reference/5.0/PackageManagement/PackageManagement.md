@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -52,4 +52,3 @@ Uninstalls one or more software packages.
 
 ### [Unregister-PackageSource](Unregister-PackageSource.md)
 Removes a registered package source.
-
