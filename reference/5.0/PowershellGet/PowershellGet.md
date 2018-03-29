@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -53,4 +53,3 @@ Unregisters a repository.
 
 ### [Update-Module](Update-Module.md)
 Downloads and installs the newest version of specified modules from an online gallery to the local computer.
-
