@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -115,7 +115,7 @@ The *ContinueIfGoingOnBattery* parameter sets the value of the StopIfGoingOnBatt
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -136,7 +136,7 @@ The *DoNotAllowDemandStart* parameter sets the value of the DoNotAllowDemandStar
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,7 +157,7 @@ The *HideInTaskScheduler* parameter sets the value of the ShowInTaskScheduler pr
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -179,7 +179,7 @@ By default, the StartIfNotIdle property of scheduled jobs is set to $True and Wi
 ```yaml
 Type: TimeSpan
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -201,7 +201,7 @@ By default, the StartIfNotIdle property of scheduled jobs is set to $True and Wi
 ```yaml
 Type: TimeSpan
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -218,7 +218,7 @@ You can also pipe a **ScheduledJobOptions** object to **Set-ScheduledJobOption**
 ```yaml
 Type: ScheduledJobOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -233,7 +233,7 @@ The acceptable values for this parameter are:
 
 - IgnoreNew.
 The new job instance is ignored.
-This is the default value. 
+This is the default value.
 - Parallel.
 The new job instance starts immediately.
 - Queue.
@@ -247,7 +247,7 @@ For example, if the conditions that are set by the *RequireNetwork*, *IdleDurati
 ```yaml
 Type: TaskMultipleInstancePolicy
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, IgnoreNew, Parallel, Queue, StopExisting
 
 Required: False
@@ -264,7 +264,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -283,7 +283,7 @@ The *RequireNetwork* parameter sets the value of the RunWithoutNetwork property 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -301,7 +301,7 @@ The *RestartOnIdleResume* parameter sets the value of the RestartOnIdleResume pr
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -320,7 +320,7 @@ The **RunElevated** parameter sets the value of the **RunElevated** property of 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -341,7 +341,7 @@ The *StartIfIdle* parameter sets the value of the **StartIfNotIdle** property of
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -359,7 +359,7 @@ The *StartIfOnBattery* parameter sets the value of the **StartIfOnBatteries** pr
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -379,7 +379,7 @@ The *StopIfGoingOffIdle* parameter sets the value of the StopIfGoingOffIdle prop
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -397,7 +397,7 @@ The *WakeToRun* parameter sets the value of the WakeToRun property of scheduled 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -455,4 +455,3 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-
