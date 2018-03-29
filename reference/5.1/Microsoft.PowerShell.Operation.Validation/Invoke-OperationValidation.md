@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -193,7 +193,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 You can pipe the output of **Get-OperationValidation** to this cmdlet.
 
 ## OUTPUTS
@@ -206,4 +206,3 @@ The **PSCustomObject** describes whether the validation was successful.
 ## RELATED LINKS
 
 [Get-OperationValidation](Get-OperationValidation.md)
-
