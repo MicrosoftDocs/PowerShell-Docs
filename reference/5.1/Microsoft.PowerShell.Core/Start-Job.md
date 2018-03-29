@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -189,13 +189,13 @@ Accept wildcard characters: False
 Specifies the mechanism that is used to authenticate user credentials.
 The acceptable values for this parameter are:
 
-- Default 
-- Basic 
-- Credssp 
-- Digest 
-- Kerberos 
-- Negotiate  
-- NegotiateWithImplicitCredential 
+- Default
+- Basic
+- Credssp
+- Digest
+- Kerberos
+- Negotiate
+- NegotiateWithImplicitCredential
 
 The default value is Default.
 
@@ -210,7 +210,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
-Aliases: 
+Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
 Required: False
@@ -229,7 +229,7 @@ Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential**
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -252,7 +252,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DefinitionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -274,7 +274,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DefinitionName
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -293,7 +293,7 @@ When you use this parameter, Windows PowerShell converts the contents of the spe
 ```yaml
 Type: String
 Parameter Sets: FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -312,7 +312,7 @@ For example, you can use it to add functions, snap-ins, and modules to the sessi
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -330,7 +330,7 @@ In the value of the *ScriptBlock* parameter, use the $Input automatic variable t
 ```yaml
 Type: PSObject
 Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -369,7 +369,7 @@ The default friendly name is Job#, where # is an ordinal number that is incremen
 ```yaml
 Type: String
 Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -388,7 +388,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Version
 Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -406,7 +406,7 @@ On 64-bit versions of Windows 7 and Windows Server 2008 R2, when the **Start-Job
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -442,7 +442,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: DefinitionName
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -487,4 +487,3 @@ This cmdlet returns an object that represents the job that it started.
 [Suspend-Job](Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)
-
