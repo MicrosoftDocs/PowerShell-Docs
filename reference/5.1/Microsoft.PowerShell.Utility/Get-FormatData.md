@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -53,7 +53,7 @@ PS C:\> $F
 ```Output
 TypeName        FormatViewDefinition
 --------        --------------------
-HelpInfoShort   {help , TableControl} 
+HelpInfoShort   {help , TableControl}
 ```
 ```powershell
 PS C:\> $F.FormatViewDefinition[0].control
@@ -156,7 +156,7 @@ TypeNames                               FormatViewDefinition
 {Microsoft.Powershell.Utility.FileHash} {Microsoft.Powershell.Utility.FileHash}
 ```
 
-This example shows how to use **Get-FormatData** to get format data for a specified TypeName and a 
+This example shows how to use **Get-FormatData** to get format data for a specified TypeName and a
 specified PowerShell version.
 
 ## PARAMETERS
@@ -168,7 +168,7 @@ Enter a two digit number seperated by a period.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -185,7 +185,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -213,4 +213,3 @@ You cannot pipe input to this cmdlet.
 [Export-FormatData](Export-FormatData.md)
 
 [Update-FormatData](Update-FormatData.md)
-

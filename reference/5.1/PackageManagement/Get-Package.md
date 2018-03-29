@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -97,7 +97,7 @@ Specifies additional arguments.
 ```yaml
 Type: String[]
 Parameter Sets: msi
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -113,7 +113,7 @@ By default, **Get-Package** only returns the newest available version.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -173,7 +173,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -188,7 +188,7 @@ Indicates that this cmdlet forces Package Management to automatically install th
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -203,7 +203,7 @@ Indicates that this cmdlet includes system components in the results.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Programs
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -218,7 +218,7 @@ Indicates that this cmdlet includes the Windows Installer in the results.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Programs
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -233,7 +233,7 @@ Indicates that this cmdlet installs updates.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -249,7 +249,7 @@ If you do not add this parameter, **Get-Package** finds the highest available ve
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -265,7 +265,7 @@ If you do not add this parameter, **Find-Package** finds the highest available v
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -281,7 +281,7 @@ Separate multiple package names with commas.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -296,7 +296,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -311,7 +311,7 @@ Specifies the name of the Package Management provider.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -344,7 +344,7 @@ If you do not add this parameter, **Find-Package** finds the highest available v
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -359,7 +359,7 @@ Specifies the search scope for the package.
 ```yaml
 Type: String
 Parameter Sets: NuGet, PowerShellGet
-Aliases: 
+Aliases:
 Accepted values: CurrentUser, AllUsers
 
 Required: False
@@ -375,7 +375,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -390,7 +390,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -405,7 +405,7 @@ Specifies whether to search for packages with a module, a script, or either.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 Accepted values: Module, Script, All
 
 Required: False
@@ -437,4 +437,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Save-Package](Save-Package.md)
 
 [Uninstall-Package](Uninstall-Package.md)
-

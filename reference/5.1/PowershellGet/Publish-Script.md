@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -42,35 +42,35 @@ PS C:\> Get-Content -Path "D:\ScriptSharingDemo\Demo-Script.ps1"
 
 .AUTHOR pattif@microsoft.com
 
-.COMPANYNAME 
+.COMPANYNAME
 
-.COPYRIGHT 
+.COPYRIGHT
 
-.TAGS 
+.TAGS
 
-.LICENSEURI 
+.LICENSEURI
 
-.PROJECTURI 
+.PROJECTURI
 
-.ICONURI 
+.ICONURI
 
-.EXTERNALMODULEDEPENDENCIES 
+.EXTERNALMODULEDEPENDENCIES
 
-.REQUIREDSCRIPTS 
+.REQUIREDSCRIPTS
 
-.EXTERNALSCRIPTDEPENDENCIES 
+.EXTERNALSCRIPTDEPENDENCIES
 
 .RELEASENOTES
 
 
 #>
 
-<# 
+<#
 
-.DESCRIPTION 
- my test script file description goes here 
+.DESCRIPTION
+ my test script file description goes here
 
-#> 
+#>
 Param() PS C:\> Add-Content -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Value @"
 
 Function Demo-ScriptFunction { 'Demo-ScriptFunction' }
@@ -81,12 +81,12 @@ Demo-ScriptFunction
 Demo-ScriptWorkflow
 "@
 PS C:\> Test-ScriptFileInfo -Path "D:\ScriptSharingDemo\Demo-Script.ps1"
-Version    Name                      Author               Description                                                                                
--------    ----                      ------               -----------                                                                                
+Version    Name                      Author               Description
+-------    ----                      ------               -----------
 1.0        Demo-Script               pattif@microsoft.com my test script file description goes here PS C:\> Publish-Script -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Repository "LocalRepo1"
 PS C:\> Find-Script -Repository "LocalRepo1" -Name "Demo-Script"
-Version    Name                                Type       Repository           Description                                                           
--------    ----                                ----       ----------           -----------                                                           
+Version    Name                                Type       Repository           Description
+-------    ----                                ----       ----------           -----------
 1.0        Demo-Script                         Script     LocalRepo1           my test script file description goes here
 ```
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -140,7 +140,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -159,7 +159,7 @@ Single quotation marks tell Windows PowerShell not to interpret any characters a
 ```yaml
 Type: String
 Parameter Sets: LiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -176,7 +176,7 @@ The API key is NuGet-specific functionality.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -193,7 +193,7 @@ The default location is the current directory (.).
 ```yaml
 Type: String
 Parameter Sets: PathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -208,7 +208,7 @@ Specifies the friendly name of a repository that has been registered by running 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -253,4 +253,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Save-Script](Save-Script.md)
 
 [Update-Script](Update-Script.md)
-

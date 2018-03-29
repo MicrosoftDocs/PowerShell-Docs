@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see about_transactions. 
+For more information, see about_transactions.
 
 ```yaml
 Type: SwitchParameter
@@ -213,4 +213,3 @@ Otherwise, this cmdlet does not generate any output.
 [Pop-Location](Pop-Location.md)
 
 [Set-Location](Set-Location.md)
-

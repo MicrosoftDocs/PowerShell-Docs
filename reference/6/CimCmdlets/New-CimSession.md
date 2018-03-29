@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -113,7 +113,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: PasswordAuthenticationMechanism
 Parameter Sets: CredentialParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -135,7 +135,7 @@ For more information about using the wps_2 Certificate provider, type Get-Help C
 ```yaml
 Type: String
 Parameter Sets: CertificatePrameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -146,22 +146,22 @@ Accept wildcard characters: False
 
 ### -ComputerName
 Specifies the name of the computer to which to create the CIM session.
-Specify either a single computer name, or multiple computer names separated by a comma. 
+Specify either a single computer name, or multiple computer names separated by a comma.
 
 
-                        
+
 If ComputerName is not specified, a CIM session to the local computer is created.
 
-You can specify the value for computer name in one of the following formats: 
+You can specify the value for computer name in one of the following formats:
 
 
-                        
-One or more NetBIOS names 
 
-                        
-One or more IP addresses 
+One or more NetBIOS names
 
-                        
+
+One or more IP addresses
+
+
 One or more fully qualified domain names.
 
 If the computer is in a different domain than the user, you must specify the fully qualified domain name.
@@ -184,17 +184,17 @@ Accept wildcard characters: False
 Specifies a user account that has permission to perform this action.
 If Credential is not specified, the current user account is used.
 
-Specify the value for Credential by using one of the following formats: 
+Specify the value for Credential by using one of the following formats:
 
-A user name: "User01" 
+A user name: "User01"
 
-                        
-A domain name and a user name: "Domain01\User01" 
 
-                        
-A user principal name: "User@Domain.com" 
+A domain name and a user name: "Domain01\User01"
 
-                        
+
+A user principal name: "User@Domain.com"
+
+
 A PSCredential object, such as one returned by the Get-Credential cmdlet.
 
 When you type a user name, you are prompted for a password.
@@ -202,7 +202,7 @@ When you type a user name, you are prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: CredentialParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -220,7 +220,7 @@ The name is not required to be unique to the computer or the current session.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -254,14 +254,14 @@ To connect to a remote computer, the remote computer must be listening on the po
 The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
-Use the following commands to configure the listener: 
+Use the following commands to configure the listener:
 
 
-                        
+
  1.
-winrm delete winrm/config/listener?Address=*+Transport=HTTP 
+winrm delete winrm/config/listener?Address=*+Transport=HTTP
 
-                        
+
  2.
 winrm create winrm/config/listener?Address=*+Transport=HTTP @{Port="\<port-number\>"}
 
@@ -272,7 +272,7 @@ An alternate port setting might prevent the command from running on all computer
 ```yaml
 Type: UInt32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -288,7 +288,7 @@ Enter the name of a CimSessionOption object created by using the New-CimSessionO
 ```yaml
 Type: CimSessionOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -305,7 +305,7 @@ You can add the SkipTestConnection switch parameter if the remote WS-Management 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -338,4 +338,3 @@ This cmdlet accepts no inputs.
 [Remove-CimSession](remove-cimsession.md)
 
 [New-CimSessionOption](new-cimsessionoption.md)
-

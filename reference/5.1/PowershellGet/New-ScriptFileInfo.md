@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -88,11 +88,11 @@ PS C:\> New-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1" -Verb
 >> -ExternalScriptDependencies Stop-ContosoServerScript -Tags @('Tag1', 'Tag2', 'Tag3') `
 >> -ProjectUri https://contoso.com -LicenseUri "https://contoso.com/License" -IconUri 'https://contoso.com/Icon' `
 >> -Verbose -PassThru `
->> -ReleaseNotes @('contoso script now supports following features', 
->>          'Feature 1', 
->>          'Feature 2', 
->>          'Feature 3', 
->>          'Feature 4', 
+>> -ReleaseNotes @('contoso script now supports following features',
+>>          'Feature 1',
+>>          'Feature 2',
+>>          'Feature 3',
+>>          'Feature 4',
 >>          'Feature 5') `
 >> -RequiredModules "1","2",RequiredModule1,@{ModuleName='RequiredModule2';ModuleVersion='1.0'},@{ModuleName='RequiredModule3';RequiredVersion='2.0'},ExternalModule1 `
 >>
@@ -108,7 +108,7 @@ VERBOSE: Performing the operation "Creating the 'C:\temp\temp_scripts\New-Script
 
 .COMPANYNAME Microsoft Corporation
 
-.COPYRIGHT Â© 2015 Microsoft Corporation. All rights reserved. 
+.COPYRIGHT Â© 2015 Microsoft Corporation. All rights reserved.
 
 .TAGS Tag1 Tag2 Tag3
 
@@ -161,7 +161,7 @@ Specifies the script author.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -176,7 +176,7 @@ Specifies the company or vendor who created the script.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -206,7 +206,7 @@ Specifies a copyright statement for the script.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -221,7 +221,7 @@ Specifies a description for the script.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -236,7 +236,7 @@ Specifies an array of external module dependencies.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -251,7 +251,7 @@ Specifies an array of external script dependencies.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -266,7 +266,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -281,7 +281,7 @@ Specifies a unique ID for the script.
 ```yaml
 Type: Guid
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -297,7 +297,7 @@ The specified icon is displayed on the gallery web page for the script.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -312,7 +312,7 @@ Specifies the URL of licensing terms.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -328,7 +328,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -345,7 +345,7 @@ The default location is the current directory (.)
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -360,7 +360,7 @@ Specifies the URL of a web page about this project.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -375,7 +375,7 @@ Specifies a string array that contains release notes or comments that you want t
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -391,7 +391,7 @@ If the required modules are not in the global session state, Windows PowerShell 
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -406,7 +406,7 @@ Specifies an array of required scripts.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -421,7 +421,7 @@ Specifies an array of tags.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -436,7 +436,7 @@ Specifies the version of the script.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -475,4 +475,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Test-ScriptFileInfo](Test-ScriptFileInfo.md)
 
 [Update-ScriptFileInfo](Update-ScriptFileInfo.md)
-

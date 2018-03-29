@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -49,7 +49,7 @@ This command deletes the WS-Management HTTP listener on a computer.
 ### -ApplicationName
 Specifies the application name in the connection.
 The default value of the *ApplicationName* parameter is WSMAN.
-The complete identifier for the remote endpoint is in the following format: 
+The complete identifier for the remote endpoint is in the following format:
 
 \<transport\>://\<server\>:\<port\>/\<ApplicationName\>
 
@@ -63,7 +63,7 @@ In this case, IIS hosts Web Services for Management (WS-Management) for efficien
 ```yaml
 Type: String
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -77,17 +77,17 @@ Specifies the authentication mechanism to be used at the server.
 The acceptable values for this parameter are:
 
 - Basic.
-Basic is a scheme in which the user name and password are sent in clear text to the server or proxy. 
+Basic is a scheme in which the user name and password are sent in clear text to the server or proxy.
 - Default.
 Use the authentication method implemented by the WS-Management protocol.
-This is the default. 
+This is the default.
 - Digest.
-Digest is a challenge-response scheme that uses a server-specified data string for the challenge. 
+Digest is a challenge-response scheme that uses a server-specified data string for the challenge.
 - Kerberos.
-The client computer and the server mutually authenticate by using Kerberos certificates. 
+The client computer and the server mutually authenticate by using Kerberos certificates.
 - Negotiate.
 Negotiate is a challenge-response scheme that negotiates with the server or proxy to determine the scheme to use for authentication.
-For example, this parameter value allows for negotiation to determine whether the Kerberos protocol or NTLM is used. 
+For example, this parameter value allows for negotiation to determine whether the Kerberos protocol or NTLM is used.
 - CredSSP.
 Use Credential Security Support Provider (CredSSP) authentication, which lets the user delegate credentials.
 This option is designed for commands that run on one remote computer but collect data from or run additional commands on other remote computers.
@@ -121,7 +121,7 @@ To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in th
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -152,11 +152,11 @@ Accept wildcard characters: False
 
 ### -ConnectionURI
 Specifies the connection endpoint.
-The format of this string is as follows: 
+The format of this string is as follows:
 
 \<Transport\>://\<Server\>:\<Port\>/\<ApplicationName\>
 
-The following string is a correctly formatted value for this parameter: 
+The following string is a correctly formatted value for this parameter:
 
 `http://Server01:8080/WSMAN`
 
@@ -165,7 +165,7 @@ The URI must be fully qualified.
 ```yaml
 Type: Uri
 Parameter Sets: URI
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -226,7 +226,7 @@ The *SkipCNCheck* parameter should be used only for trusted computers.
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -270,7 +270,7 @@ The following example shows how to enter a value for this parameter:
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -359,4 +359,3 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

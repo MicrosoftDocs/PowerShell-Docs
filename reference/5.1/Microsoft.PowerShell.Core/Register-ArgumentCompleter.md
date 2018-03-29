@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -65,7 +65,7 @@ Specifies the name of the command as an array.
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: NativeSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -92,7 +92,7 @@ Indicates that the argument completer is for a native command where Windows Powe
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NativeSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -107,7 +107,7 @@ Specifies the name of the parameter whose argument is being completed.
 ```yaml
 Type: String
 Parameter Sets: PowerShellSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -124,7 +124,7 @@ This parameter is required.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -149,4 +149,3 @@ This cmdlet returns no output.
 ## NOTES
 
 ## RELATED LINKS
-

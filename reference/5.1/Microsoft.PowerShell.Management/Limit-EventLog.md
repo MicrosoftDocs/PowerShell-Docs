@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 
 ### -LogName
 Specifies the event logs.
-Enter the log name (the value of the Log property; not the LogDisplayName) of one or more event logs, separated by commas. 
+Enter the log name (the value of the Log property; not the LogDisplayName) of one or more event logs, separated by commas.
 Wildcard characters are not permitted.
 This parameter is required.
 
@@ -136,7 +136,7 @@ This parameter specifies the value of the **MaximumKilobytes** property of the *
 ```yaml
 Type: Int64
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -238,4 +238,3 @@ To see the current settings of the event log properties, type `Get-EventLog -Lis
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-

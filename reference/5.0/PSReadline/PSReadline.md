@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -33,4 +33,3 @@ Binds keys to user-defined or PSReadline-provided key handlers.
 
 ### [Set-PSReadlineOption](Set-PSReadlineOption.md)
 Customizes the behavior of command line editing in PSReadline.
-

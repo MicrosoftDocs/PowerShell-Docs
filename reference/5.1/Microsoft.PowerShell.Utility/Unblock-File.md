@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -126,7 +126,7 @@ Wildcard characters are supported.
 ```yaml
 Type: String[]
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -172,4 +172,3 @@ This cmdlet does not generate any output.
 ## RELATED LINKS
 
 [Out-File](Out-File.md)
-

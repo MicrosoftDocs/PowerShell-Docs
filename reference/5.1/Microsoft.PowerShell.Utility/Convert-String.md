@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -82,7 +82,7 @@ Note that the last entry has no middle name.
 
 The second command formats the names according to the example.
 It puts the **middle name** first in the output, followed by the first name.
-The last entry in **$Composers** is skipped, because it doesn't match the 
+The last entry in **$Composers** is skipped, because it doesn't match the
 sample pattern: it has no middle name.
 
 ### Example 4: Caution with beauty spaces
@@ -110,13 +110,13 @@ Also, note the leading space in the output.
 
 ```powershell
 $ExamplePatterns = @(
-    @{before='"Hello","World"'; after='World: Hello'}, 
+    @{before='"Hello","World"'; after='World: Hello'},
     @{before='"Hello","1"'; after='1: Hello'},
     @{before='"Hello-World","22"'; after='22: Hello-World'},
     @{before='"hello world","333"'; after='333: hello world'}
 )
 $Processes = Get-Process   | Select-Object -Property ProcessName, Id | ConvertTo-Csv -NoTypeInformation
-$Processes | Convert-String -Example $ExamplePatterns 
+$Processes | Convert-String -Example $ExamplePatterns
 ```
 
 ```output
@@ -171,14 +171,14 @@ _On the output: place the number first, without quotes, then a single space,_
 _and then the words with the space in between, without quotes._
 
 The first command gets all processes by using the Get-Process cmdlet.
-The command passes them to the Select-Object cmdlet, which selects the process 
+The command passes them to the Select-Object cmdlet, which selects the process
 name and process ID. At the end of the pipeline, the command converts the
 output to comma separated values, without type information, by using the
 ConvertTo-Csv cmdlet.
 The command stores the results in the **$Processes** variable.
 **$Processes** now contains process names and PID.
 
-The second command specifies an example variable that changes the order of the 
+The second command specifies an example variable that changes the order of the
 input items.
 The command coverts each string in **$Processes**.
 
@@ -230,7 +230,7 @@ Specifies a string to format.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -265,4 +265,3 @@ This cmdlet returns a string.
 [Out-String](Out-String.md)
 
 [Select-Object](Select-Object.md)
-

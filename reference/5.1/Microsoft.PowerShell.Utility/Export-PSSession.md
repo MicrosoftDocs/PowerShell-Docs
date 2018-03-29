@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -148,7 +148,7 @@ The default behavior is designed to prevent command name conflicts.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,7 +184,7 @@ If the certificate is not valid or does not have sufficient authority, the comma
 ```yaml
 Type: X509Certificate2
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -223,7 +223,7 @@ Use *CommandType* or its alias, *Type*.
 
 The acceptable values for this parameter are:
 
-- Alias: All Windows PowerShell aliases in the current session. 
+- Alias: All Windows PowerShell aliases in the current session.
 - All: All command types.
 It is the equivalent of "get-command *".
 - Application.
@@ -269,7 +269,7 @@ The default value is UTF-8.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, OEM
 
 Required: False
@@ -285,7 +285,7 @@ Overwrites one or more existing output files, even if the file has the read-only
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -309,7 +309,7 @@ Similarly, if you use the *CommandName* parameter, the formatting files for the 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -328,7 +328,7 @@ You cannot specify the *FullyQualifiedModule* parameter in the same command as a
 ```yaml
 Type: ModuleSpecification[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -384,7 +384,7 @@ This parameter is required.
 ```yaml
 Type: PSSession
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -444,4 +444,3 @@ If the command does not import formatting data, any formatting files that are cr
 ## RELATED LINKS
 
 [Import-PSSession](Import-PSSession.md)
-

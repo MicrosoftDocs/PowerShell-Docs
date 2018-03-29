@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -84,7 +84,7 @@ Specifies an encrypted string, or a variable containing an encrypted string.
 ```yaml
 Type: String
 Parameter Sets: ByContent
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -103,7 +103,7 @@ Single quotation marks tell Windows PowerShell not to interpret enclosed charact
 ```yaml
 Type: String
 Parameter Sets: ByLiteralPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -118,7 +118,7 @@ Specifies the path to encrypted content that you want to decrypt.
 ```yaml
 Type: String
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -143,4 +143,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Protect-CmsMessage](Protect-CmsMessage.md)
 
 [Unprotect-CmsMessage](Unprotect-CmsMessage.md)
-

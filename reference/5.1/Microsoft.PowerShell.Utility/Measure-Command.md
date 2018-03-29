@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -86,7 +86,7 @@ The parameter name ("**Expression**") is optional.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -102,7 +102,7 @@ Enter a variable that contains the objects or type a command or expression that 
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -127,7 +127,7 @@ You can pipe an object to `Measure-Command`.
 ## Notes
 - For more information, type: `Get-Help Measure-Command -Detailed`
 - For technical information, type: `Get-Help Measure-Command -Full`
-- When specifying multiple values for a parameter, use commas to separate the values. For 
+- When specifying multiple values for a parameter, use commas to separate the values. For
   example, `<parameter-name> <value1>, <value2>`.
 
 ## Related Links

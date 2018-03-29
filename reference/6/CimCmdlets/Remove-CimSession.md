@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -74,7 +74,7 @@ For more information, see about_CimSessions.
 ```yaml
 Type: CimSession[]
 Parameter Sets: CimSessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -117,7 +117,7 @@ For more information about the range operator, see about_Operators.
 ```yaml
 Type: UInt32[]
 Parameter Sets: SessionIdSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -137,7 +137,7 @@ The InstanceID is stored in the InstanceID property of the object that represent
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -153,7 +153,7 @@ You can use wildcard characters with this parameter.
 ```yaml
 Type: String[]
 Parameter Sets: NameSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -209,4 +209,3 @@ This cmdlet returns an object that contains CIM session information.
 [Get-CimSession](Get-CimSession.md)
 
 [New-CimSession](New-CimSession.md)
-

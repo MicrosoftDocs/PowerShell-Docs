@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -62,17 +62,17 @@ Name filtering is performed by setting the *ValidatePattern* parameter to the re
 
 ### -AliasDefinitions
 Adds the specified aliases to sessions that use the role capability file.
-Enter a hash table with the following keys: 
+Enter a hash table with the following keys:
 
 - Name.
 Name of the alias.
-This key is required. 
+This key is required.
 - Value.
 The command that the alias represents.
-This key is required. 
+This key is required.
 - Description.
 A text string that describes the alias.
-This key is optional. 
+This key is optional.
 - Options.
 Alias options.
 This key is optional.
@@ -84,7 +84,7 @@ For example: `@{Name="hlp";Value="Get-Help";Description="Gets help";Options="Rea
 ```yaml
 Type: IDictionary[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -99,7 +99,7 @@ Specifies the assemblies to load into the sessions that use the role capability 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -114,7 +114,7 @@ Specifies the user that created the role capability file.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -130,7 +130,7 @@ The default value is Unknown.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -146,7 +146,7 @@ If you omit this parameter, **New-PSRoleCapabilityFile** generates a copyright s
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -161,7 +161,7 @@ Specifies a description for the role capability file.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -179,7 +179,7 @@ For example: `EnvironmentVariables=@{TestShare="\\\\Server01\TestShare"}`
 ```yaml
 Type: IDictionary
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -195,7 +195,7 @@ The value of this parameter must be a full or absolute path of the formatting fi
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -206,15 +206,15 @@ Accept wildcard characters: False
 
 ### -FunctionDefinitions
 Adds the specified functions to sessions that expose the role capability.
-Enter a hash table with the following keys: 
+Enter a hash table with the following keys:
 
 - Name.
 Name of the function.
-This key is required. 
+This key is required.
 - ScriptBlock.
 Function body.
 Enter a script block.
-This key is required. 
+This key is required.
 - Options.
 Function options.
 This key is optional.
@@ -226,7 +226,7 @@ For example: `@{Name="Get-PowerShellProcess";ScriptBlock={Get-Process PowerShell
 ```yaml
 Type: IDictionary[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -243,7 +243,7 @@ To create a new GUID in Windows PowerShell, type `\[guid\]::NewGuid()`.
 ```yaml
 Type: Guid
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -270,7 +270,7 @@ Any combination of strings and hash tables, in any order, is valid.
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -286,7 +286,7 @@ The file must have a .psrc file name extension.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -303,7 +303,7 @@ The value of this parameter must be a full or absolute path of the script file n
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -320,7 +320,7 @@ The value of this parameter must be a full or absolute path of the type file nam
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -331,14 +331,14 @@ Accept wildcard characters: False
 
 ### -VariableDefinitions
 Specifies variables to add to sessions that use the role capability file.
-Enter a hash table with the following keys: 
+Enter a hash table with the following keys:
 
 - Name.
 Name of the variable.
-This key is required. 
+This key is required.
 - Value.
 Variable value.
-This key is required. 
+This key is required.
 - Options.
 Variable options.
 This key is optional.
@@ -350,7 +350,7 @@ For example: `@{Name="WarningPreference";Value="SilentlyContinue";Options="AllSc
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -371,7 +371,7 @@ When any *Visible* parameter is included in the role capability file, Windows Po
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -393,7 +393,7 @@ When any *Visible* parameter is included in the session configuration file, Wind
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -413,7 +413,7 @@ When any *Visible* parameter is included in the session configuration file, Wind
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -434,7 +434,7 @@ When any *Visible* parameter is included in the session configuration file, Wind
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -455,7 +455,7 @@ When any *Visible* parameter is included in the session configuration file, Wind
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -478,4 +478,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
 [Get-PSSessionCapability](Get-PSSessionCapability.md)
-
