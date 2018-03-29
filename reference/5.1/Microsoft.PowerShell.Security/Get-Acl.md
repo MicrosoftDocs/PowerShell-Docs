@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -106,7 +106,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -121,7 +121,7 @@ Gets the audit data for the security descriptor from the system access control l
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -139,7 +139,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,7 +157,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -175,7 +175,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -196,7 +196,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSObject
 Parameter Sets: ByInputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -237,7 +237,7 @@ It is not necessary to type `Path` when you specify a value for this parameter.
 ```yaml
 Type: String[]
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -280,7 +280,7 @@ The object type depends upon the ACL type.
 ## NOTES
 * By default, **Get-Acl** displays the Windows PowerShell path to the resource (\<provider\>::\<resource-path\>), the owner of the resource, and Access, a list (array) of the access control entries in the discretionary access control list (DACL) for the resource. The DACL list is controlled by the resource owner.
 
-  When you format the result as a list, ("`Get-Acl | Format-List`"), in addition to the path, owner, and access list, Windows PowerShell displays the following properties and property values: 
+  When you format the result as a list, ("`Get-Acl | Format-List`"), in addition to the path, owner, and access list, Windows PowerShell displays the following properties and property values:
 
 - Group.
 The security group of the owner.
@@ -296,5 +296,3 @@ Windows PowerShell uses the GetSddlForm method of security descriptors to get th
 ## RELATED LINKS
 
 [Set-Acl](Set-Acl.md)
-
-
