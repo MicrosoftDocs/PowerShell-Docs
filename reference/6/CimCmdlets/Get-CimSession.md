@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -50,32 +50,32 @@ PS C:\> New-CimSession -ComputerName Server01,Server02
 
 
 
-PS C:\> 
+PS C:\>
 Get-CimSession
-Id           : 1 
+Id           : 1
 
-Name         : CimSession1 
+Name         : CimSession1
 
-InstanceId   : d1413bc3-162a-4cb8-9aec-4d2c61253d59 
+InstanceId   : d1413bc3-162a-4cb8-9aec-4d2c61253d59
 
-ComputerName : Server01 
+ComputerName : Server01
 
-Protocol     : WSMAN 
-
-
-Id           : 2 
+Protocol     : WSMAN
 
 
-
-Name         : CimSession2 
+Id           : 2
 
 
 
-InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710 
+Name         : CimSession2
 
 
 
-ComputerName : Server02 
+InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
+
+
+
+ComputerName : Server02
 
 
 
@@ -87,16 +87,16 @@ This command first creates CIM sessions by using New-CimSession, and then gets t
 ### Example 2: Get the CIM sessions from a specific computer
 ```
 PS C:\>Get-CimSession -ComputerName Server02
-Id           : 2 
+Id           : 2
 
 
-Name         : CimSession2 
+Name         : CimSession2
 
 
-InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710 
+InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
 
 
-ComputerName : Server02 
+ComputerName : Server02
 
 
 Protocol     : WSMAN
@@ -114,30 +114,30 @@ This command gets all of the CIM sessions in the current wps_2 session, and then
 ### Example 4: Get all the CIM sessions that have specific names
 ```
 PS C:\>Get-CimSession -ComputerName Serv*
-Id           : 1 
+Id           : 1
 
 
-Name         : CimSession1 
+Name         : CimSession1
 
 
-InstanceId   : d1413bc-162a-4cb8-9aec-4d2c61253d59 
+InstanceId   : d1413bc-162a-4cb8-9aec-4d2c61253d59
 
 
-ComputerName : Server01 
+ComputerName : Server01
 
 
-Protocol     : WSMAN 
+Protocol     : WSMAN
 
-Id           : 2 
-
-
-Name         : CimSession2 
+Id           : 2
 
 
-InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710 
+Name         : CimSession2
 
 
-ComputerName : Server02 
+InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
+
+
+ComputerName : Server02
 
 
 Protocol     : WSMAN
@@ -182,7 +182,7 @@ For more information about the range operator, see about_Operators.
 ```yaml
 Type: UInt32[]
 Parameter Sets: SessionIdSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -202,7 +202,7 @@ The InstanceID is stored in the InstanceID property of the object that represent
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -218,7 +218,7 @@ Wildcard characters are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: NameSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -244,4 +244,3 @@ Accept wildcard characters: True
 [New-CimSession](New-CimSession.md)
 
 [Remove-CimSession](remove-cimsession.md)
-

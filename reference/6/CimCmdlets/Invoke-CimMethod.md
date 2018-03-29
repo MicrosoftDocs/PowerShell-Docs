@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -78,14 +78,14 @@ Invoke-CimMethod -Query <String> [-QueryDialect <String>] -CimSession <CimSessio
 ## DESCRIPTION
 The Invoke-CimMethod cmdlet invokes a method of a CIM class or CIM instance using the name-value pairs specified by the Arguments parameter.
 
-If the InputObject parameter is not specified, the cmdlet works in one of the following ways: 
+If the InputObject parameter is not specified, the cmdlet works in one of the following ways:
 
---If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session. 
+--If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session.
 --If either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet works against the CIM server specified by either the ComputerName parameter or the CimSession parameter.
 
-If the InputObject parameter is specified, the cmdlet works in one of the following ways: 
+If the InputObject parameter is specified, the cmdlet works in one of the following ways:
 
---If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet uses the CIM session or computer name from the input object. 
+--If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet uses the CIM session or computer name from the input object.
 --If the either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet uses the either the CimSession parameter value or ComputerName parameter value.
 Note: This is not very common.
 
@@ -146,7 +146,7 @@ The order of the values entered is not important.
 ```yaml
 Type: IDictionary
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -166,7 +166,7 @@ Using this parameter results in better client side schema validations.
 ```yaml
 Type: CimClass
 Parameter Sets: CimClassComputerSet, CimClassSessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -183,7 +183,7 @@ For more information, see about_CimSessions.
 ```yaml
 Type: CimSession[]
 Parameter Sets: ClassNameSessionSet, CimInstanceSessionSet, CimClassSessionSet, QuerySessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```yaml
 Type: CimSession[]
 Parameter Sets: ResourceUriSessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 
 ### -ClassName
 Specifies the name of the CIM class for which to perform the operation.
-This parameter is only used for static methods. 
+This parameter is only used for static methods.
 NOTE: You can use tab completion to browse the list of classes, because wps_2 gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
@@ -294,13 +294,13 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace for the CIM operation.
 
-The default namespace is root/cimv2. 
+The default namespace is root/cimv2.
 NOTE: You can use tab completion to browse the list of namespaces, because wps_2 gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriComputerSet, ResourceUriSessionSet, QueryComputerSet, QuerySessionSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -340,7 +340,7 @@ If the value specified uses the WQL LIKE operator, then you must escape the foll
 ```yaml
 Type: String
 Parameter Sets: QueryComputerSet, QuerySessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -358,7 +358,7 @@ The default value is WQL.
 ```yaml
 Type: String
 Parameter Sets: QueryComputerSet, QuerySessionSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -372,13 +372,13 @@ Specifies the resource uniform resource identifier (URI) of the resource class o
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
-For example: 
+For example:
 
  HYPERLINK "http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk" http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
  HYPERLINK "http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings" http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
 
 
-                        
+
 By default, if you do not specify this parameter, the DMTF standard resource URI http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/ is used and the class name is appended to it.
 
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying the ComputerName parameter, which creates a CIM session using WSMan.
@@ -389,7 +389,7 @@ If both the ResourceUri parameter and the Filter parameter are specified, the Fi
 ```yaml
 Type: Uri
 Parameter Sets: ResourceUriComputerSet, ResourceUriSessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -401,7 +401,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -464,4 +464,3 @@ This cmdlet returns an object.
 [Get-CimSession](Get-CimSession.md)
 
 [New-CimSession](New-CimSession.md)
-

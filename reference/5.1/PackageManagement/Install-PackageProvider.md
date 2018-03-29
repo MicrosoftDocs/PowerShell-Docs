@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -102,7 +102,7 @@ By default, **Install-PackageProvider** only returns the highest available versi
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ Specifies a user account that has permission to install package providers.
 ```yaml
 Type: PSCredential
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ Currently, this means the *Force* parameter acts the same as the *ForceBootstrap
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -163,7 +163,7 @@ Indicates that this cmdlet automatically installs the package provider.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -179,7 +179,7 @@ Use the **Find-PackageProvider** cmdlet to obtain a **SoftwareIdentity** object 
 ```yaml
 Type: SoftwareIdentity[]
 Parameter Sets: PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -195,7 +195,7 @@ If you do not add this parameter, **Install-PackageProvider** installs the highe
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -211,7 +211,7 @@ If you do not add this parameter, **Install-PackageProvider** installs the highe
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -228,7 +228,7 @@ Wildcard characters are not supported.
 ```yaml
 Type: String[]
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -243,7 +243,7 @@ Specifies a proxy server for the request, rather than connecting directly to the
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -258,7 +258,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -274,7 +274,7 @@ If you do not add this parameter, **Install-PackageProvider** installs the highe
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -296,7 +296,7 @@ By default, this is **$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies.**
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: CurrentUser, AllUsers
 
 Required: False
@@ -313,7 +313,7 @@ Use the Get-PackageSource cmdlet to get a list of available package sources.
 ```yaml
 Type: String[]
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -358,4 +358,3 @@ Use Find-PackageProvider to get a **SoftwareIdentity** object that can be piped 
 [Get-PackageProvider](Get-PackageProvider.md)
 
 [Import-PackageProvider](Import-PackageProvider.md)
-

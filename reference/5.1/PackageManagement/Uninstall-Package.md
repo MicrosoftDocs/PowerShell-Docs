@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -106,7 +106,7 @@ Specifies additional arguments.
 ```yaml
 Type: String[]
 Parameter Sets: msi:PackageByInputObject, msi:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -121,7 +121,7 @@ Indicates that this cmdlet uninstalls all versions of the package.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: NuGet:PackageByInputObject, NuGet:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NuGet:PackageByInputObject, NuGet:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -196,7 +196,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -211,7 +211,7 @@ Forces Package Management to automatically install the package provider for the 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -226,7 +226,7 @@ Specifies that this cmdlet uninstalls system components.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -241,7 +241,7 @@ Indicates that this cmdlet uninstalls the package through Windows Installer.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Programs:PackageByInputObject, Programs:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -256,7 +256,7 @@ Specifies a package by using the package's SoftwareIdentity type, which is shown
 ```yaml
 Type: SoftwareIdentity[]
 Parameter Sets: PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -271,7 +271,7 @@ Indicates that this cmdlet uninstalls updates.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -287,7 +287,7 @@ If you do not specify this parameter, this cmdlet uninstalls the highest-numbere
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -303,7 +303,7 @@ If you do not add this parameter, **Uninstall-Package** uninstalls the newest av
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -319,7 +319,7 @@ Multiple names must be separated by commas.
 ```yaml
 Type: String[]
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -349,7 +349,7 @@ Specifies the Package Management provider.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -382,7 +382,7 @@ If you do not add this parameter, this cmdlet installs the newest available vers
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -401,7 +401,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: String
 Parameter Sets: NuGet:PackageByInputObject, NuGet:PackageBySearch, PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
-Aliases: 
+Aliases:
 Accepted values: CurrentUser, AllUsers
 
 Required: False
@@ -417,7 +417,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NuGet:PackageByInputObject, NuGet:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -432,7 +432,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -452,7 +452,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
-Aliases: 
+Aliases:
 Accepted values: Module, Script, All
 
 Required: False
@@ -483,12 +483,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
-###  
+###
 This cmdlet does not generate any output.
 
 ## NOTES
@@ -504,4 +504,3 @@ This cmdlet does not generate any output.
 [Install-Package](Install-Package.md)
 
 [Save-Package](Save-Package.md)
-
