@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -102,7 +102,7 @@ Specifies the description of the variable.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,7 +120,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -138,7 +138,7 @@ For more information, see the *Option* parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -156,7 +156,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -171,7 +171,7 @@ Specifies the variable name.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -205,7 +205,7 @@ To see the **Options** property of all variables in the session, type `Get-Varia
 ```yaml
 Type: ScopedItemOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, ReadOnly, Constant, Private, AllScope, Unspecified
 
 Required: False
@@ -222,7 +222,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -246,7 +246,7 @@ For more information, see about_Scopes.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -261,7 +261,7 @@ Specifies the value of the variable.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -275,7 +275,7 @@ Determines whether the variable is visible outside of the session in which it wa
 This parameter is designed for use in scripts and commands that will be delivered to other users.
 The acceptable values for this parameter are:
 
-- Public. 
+- Public.
 The variable is visible.
 (Public is the default.)
 - Private.
@@ -288,7 +288,7 @@ However, the user can run commands that use a private variable if the commands w
 ```yaml
 Type: SessionStateEntryVisibility
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Public, Private
 
 Required: False
@@ -339,4 +339,3 @@ Otherwise, this cmdlet does not generate any output.
 [New-Variable](New-Variable.md)
 
 [Remove-Variable](Remove-Variable.md)
-

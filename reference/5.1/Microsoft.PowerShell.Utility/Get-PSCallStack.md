@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -36,7 +36,7 @@ Get-Alias | where {$_.definition -like "*$p"} | format-table definition, name -a
 }
 PS C:\ps-test> Set-PSBreakpoint -Command my-alias
 Command    : my-alias
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
@@ -106,4 +106,3 @@ You cannot pipe objects to this cmdlet.
 [Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
-
