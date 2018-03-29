@@ -64,11 +64,17 @@ To facilitate exporting all versions of all items published to the PowerShell Ga
 
 You may download the script by using the following PowerShell command:
 
+```powershell
 Save-Script GetPSGalleryItemsForAuthor -path <local folder location> -repository psgallery 
+```
+
 
 You can then run the script directly, by running the following PowerShell commands:
+
+```powershell
 cd <local folder location supplied previously>
 .\GetPSGalleryItemsForAuthor 
+```
 
 You will be prompted to supply the Author and a folder on your system where you want the items to be saved. 
 
