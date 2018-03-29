@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -52,7 +52,7 @@ Specifies the method of the resource that this cmdlet invokes. The acceptable va
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Get, Set, Test
 
 Required: True
@@ -68,7 +68,7 @@ Specifies the name of the module from which this cmdlet invokes the specified re
 ```yaml
 Type: ModuleSpecification
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -83,7 +83,7 @@ Specifies the name of the DSC resource to start.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -98,7 +98,7 @@ Specifies the resource property name and its value in a hash table as key and va
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -135,4 +135,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-DscConfiguration](Start-DscConfiguration.md)
 
 [Test-DscConfiguration](Test-DscConfiguration.md)
-
