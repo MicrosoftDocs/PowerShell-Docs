@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -93,7 +93,7 @@ DayOfWeek    : Monday
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -118,7 +118,7 @@ Displays the properties of the collection object and the properties of objects i
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: CoreOnly, EnumOnly, Both
 
 Required: False
@@ -136,7 +136,7 @@ By default, when an error object is written to the error or display streams, onl
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -151,7 +151,7 @@ Enter an expression or a property of the output.
 
 The value of the *GroupBy* parameter can be a new calculated property.
 To create a calculated, property, use a hash table.
-Valid keys are: 
+Valid keys are:
 
 - Name (or Label) \<string\>
 - Expression \<string\> or \<script block\>
@@ -160,7 +160,7 @@ Valid keys are:
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -176,7 +176,7 @@ Enter a variable that contains the objects or type a command or expression that 
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -195,7 +195,7 @@ You cannot use the *Property* and *View* parameters in the same command.
 
 The value of the *Property* parameter can be a new calculated property.
 To create a calculated property, use a hash table.
-Valid keys are: 
+Valid keys are:
 
 - Expression \<string\> or \<script block\>
 - Depth \<int32\>
@@ -203,7 +203,7 @@ Valid keys are:
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -229,7 +229,7 @@ Failed to evaluate expression " $_ / $null ".
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -245,7 +245,7 @@ You cannot use the *Property* and *View* parameters in the same command.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -296,4 +296,3 @@ If the alternate view is neither a list nor a table, use Format-Custom.
 [Format-Table](Format-Table.md)
 
 [Format-Wide](Format-Wide.md)
-
