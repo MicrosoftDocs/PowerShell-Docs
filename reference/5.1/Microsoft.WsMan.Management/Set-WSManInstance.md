@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -48,10 +48,10 @@ lang                  : en-US
 Address               : *
 Transport             : HTTPS
 Port                  : 443
-Hostname              : 
+Hostname              :
 Enabled               : false
 URLPrefix             : wsman
-CertificateThumbprint : 
+CertificateThumbprint :
 ListeningOn           : {127.0.0.1, 172.30.168.171, ::1, 2001:4898:0:fff:0:5efe:172.30.168.171...}
 ```
 
@@ -92,10 +92,10 @@ lang                  : en-US
 Address               : *
 Transport             : HTTPS
 Port                  : 443
-Hostname              : 
+Hostname              :
 Enabled               : false
 URLPrefix             : wsman
-CertificateThumbprint : 
+CertificateThumbprint :
 ListeningOn           : {127.0.0.1, 172.30.168.172, ::1, 2001:4898:0:fff:0:5efe:172.30.168.172...}
 ```
 
@@ -108,7 +108,7 @@ Important: *ValueSet* is case-sensitive when matching the properties specified.
 ### -ApplicationName
 Specifies the application name in the connection.
 The default value of the *ApplicationName* parameter is WSMAN.
-The complete identifier for the remote endpoint is in the following format: 
+The complete identifier for the remote endpoint is in the following format:
 
 \<transport\>://\<server\>:\<port\>/\<ApplicationName\>
 
@@ -122,7 +122,7 @@ In this case, IIS hosts Web Services for Management (WS-Management) for efficien
 ```yaml
 Type: String
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -136,17 +136,17 @@ Specifies the authentication mechanism to be used at the server.
 The acceptable values for this parameter are:
 
 - Basic.
-Basic is a scheme in which the user name and password are sent in clear text to the server or proxy. 
+Basic is a scheme in which the user name and password are sent in clear text to the server or proxy.
 - Default.
 Use the authentication method implemented by the WS-Management protocol.
-This is the default. 
+This is the default.
 - Digest.
-Digest is a challenge-response scheme that uses a server-specified data string for the challenge. 
+Digest is a challenge-response scheme that uses a server-specified data string for the challenge.
 - Kerberos.
-The client computer and the server mutually authenticate by using Kerberos certificates. 
+The client computer and the server mutually authenticate by using Kerberos certificates.
 - Negotiate.
 Negotiate is a challenge-response scheme that negotiates with the server or proxy to determine the scheme to use for authentication.
-For example, this parameter value allows for negotiation to determine whether the Kerberos protocol or NTLM is used. 
+For example, this parameter value allows for negotiation to determine whether the Kerberos protocol or NTLM is used.
 - CredSSP.
 Use Credential Security Support Provider (CredSSP) authentication, which lets the user delegate credentials.
 This option is designed for commands that run on one remote computer but collect data from or run additional commands on other remote computers.
@@ -180,7 +180,7 @@ To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in th
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -211,11 +211,11 @@ Accept wildcard characters: False
 
 ### -ConnectionURI
 Specifies the connection endpoint.
-The format of this string is as follows: 
+The format of this string is as follows:
 
 \<Transport\>://\<Server\>:\<Port\>/\<ApplicationName\>
 
-The following string is a correctly formatted value for this parameter: 
+The following string is a correctly formatted value for this parameter:
 
 `http://Server01:8080/WSMAN`
 
@@ -224,7 +224,7 @@ The URI must be fully qualified.
 ```yaml
 Type: Uri
 Parameter Sets: URI
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -255,19 +255,19 @@ Accept wildcard characters: False
 ### -Dialect
 Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
-The following aliases can be used for the dialect URI: 
+The following aliases can be used for the dialect URI:
 
 - WQL.
-http://schemas.microsoft.com/wbem/wsman/1/WQL 
+http://schemas.microsoft.com/wbem/wsman/1/WQL
 - Selector.
-http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter 
+http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter
 - Association.
 http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter
 
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -283,7 +283,7 @@ You specify the management resource by using the *ResourceURI* parameter and the
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -294,14 +294,14 @@ Accept wildcard characters: False
 
 ### -Fragment
 Specifies a section inside the instance that is to be updated or retrieved for the specified operation.
-For example, to get the status of a spooler service, specify the following: 
+For example, to get the status of a spooler service, specify the following:
 
 `-Fragment Status`
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -343,7 +343,7 @@ The *SkipCNCheck* parameter should be used only for trusted computers.
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -387,7 +387,7 @@ The following example shows how to enter a value for this parameter:
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -441,7 +441,7 @@ The value of the *ValueSet* parameter must be a hash table.
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -490,4 +490,3 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-
