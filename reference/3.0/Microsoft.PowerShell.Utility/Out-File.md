@@ -40,7 +40,7 @@ You can use this cmdlet instead of the redirection operator (\>) when you need t
 ### Example 1: Send output to a file
 
 ```powershell
-PS C:\> Get-Process | Out-File -filepath C:\Test1\process.txt
+PS C:\> Get-Process | Out-File -FilePath C:\Test1\process.txt
 ```
 
 This command sends a list of processes on the computer to the Process.txt file.
