@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -296,4 +296,3 @@ $(Get-WMIObject win32_Directory)
 [about_Join](about_Join.md)
 
 [about_Redirection](about_Redirection.md)
-
