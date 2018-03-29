@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -42,8 +42,8 @@ This command binds the up arrow key to the function HistorySearchBackward, which
 
 ### Example 2: Bind a key to a script block
 ```powershell
-Set-PSReadlineKeyHandler -Chord Ctrl+Shift+B -ScriptBlock { 
-	[Microsoft.PowerShell.PSConsoleReadLine]::RevertLine() 
+Set-PSReadlineKeyHandler -Chord Ctrl+Shift+B -ScriptBlock {
+	[Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
 	[Microsoft.PowerShell.PSConsoleReadLine]::Insert('build')
 	[Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
@@ -61,7 +61,7 @@ You can get this from the output of the Get-PSReadlineKeyHandler cmdlet.
 ```yaml
 Type: String
 Parameter Sets: ScriptBlock
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -73,9 +73,9 @@ Accept wildcard characters: False
 ### -Chord
 Specifies an array of keys or sequences of keys to be bound to a function or script block.
 Use a single string to specify a single binding.
-If the binding is a sequence of keys, separate the keys by a comma, as in the following example: 
+If the binding is a sequence of keys, separate the keys by a comma, as in the following example:
 
-"Ctrl+X,Ctrl+L" 
+"Ctrl+X,Ctrl+L"
 
 This parameter accepts multiple strings.
 Each string is a separate binding, not a sequence of keys for a single binding.
@@ -117,7 +117,7 @@ To see a complete list of these values, type `Get-Help Set-PSReadlineKeyHandler 
 ```yaml
 Type: String
 Parameter Sets: Function
-Aliases: 
+Aliases:
 Accepted values: Abort, AcceptAndGetNext, AcceptLine, AddLine, BackwardChar, BackwardDeleteChar, BackwardDeleteLine, BackwardDeleteWord, BackwardKillLine, BackwardKillWord, BackwardWord, BeginningOfHistory, BeginningOfLine, CancelLine, CaptureScreen, CharacterSearch, CharacterSearchBackward, ClearHistory, ClearScreen, Complete, Copy, CopyOrCancelLine, Cut, DeleteChar, DeleteCharOrExit, DeleteEndOfWord, DeleteLine, DeleteLineToFirstChar, DeleteToEnd, DeleteWord, DigitArgument, EndOfHistory, EndOfLine, ExchangePointAndMark, ForwardChar, ForwardDeleteLine, ForwardSearchHistory, ForwardWord, GotoBrace, GotoColumn, GotoFirstNonBlankOfLine, HistorySearchBackward, HistorySearchForward, InsertLineAbove, InsertLineBelow, InvertCase, InvokePrompt, KillLine, KillRegion, KillWord, MenuComplete, MoveToEndOfLine, NextHistory, NextLine, NextWord, NextWordEnd, Paste, PasteAfter, PasteBefore, PossibleCompletions, PrependAndAccept, PreviousHistory, PreviousLine, Redo, RepeatLastCharSearch, RepeatLastCharSearchBackwards, RepeatLastCommand, RepeatSearch, RepeatSearchBackward, ReverseSearchHistory, RevertLine, ScrollDisplayDown, ScrollDisplayDownLine, ScrollDisplayToCursor, ScrollDisplayTop, ScrollDisplayUp, ScrollDisplayUpLine, SearchChar, SearchCharBackward, SearchCharBackwardWithBackoff, SearchCharWithBackoff, SearchForward, SelectAll, SelectBackwardChar, SelectBackwardsLine, SelectBackwardWord, SelectForwardChar, SelectForwardWord, SelectLine, SelectNextWord, SelectShellBackwardWord, SelectShellForwardWord, SelectShellNextWord, SelfInsert, SetMark, ShellBackwardKillWord, ShellBackwardWord, ShellForwardWord, ShellKillWord, ShellNextWord, ShowKeyBindings, SwapCharacters, TabCompleteNext, TabCompletePrevious, Undo, UndoAll, UnixWordRubout, ValidateAndAcceptLine, ViAcceptLine, ViAcceptLineOrExit, ViAppendLine, ViBackwardDeleteGlob, ViBackwardGlob, ViBackwardWord, ViCommandMode, ViDeleteBrace, ViDeleteEndOfGlob, ViDeleteGlob, ViDigitArgumentInChord, ViEditVisually, ViExit, ViGotoBrace, ViInsertAtBegining, ViInsertAtEnd, ViInsertLine, ViInsertMode, ViInsertWithAppend, ViInsertWithDelete, ViJoinLines, ViNextWord, ViSearchHistoryBackward, ViTabCompleteNext, ViTabCompletePrevious, ViYankBeginningOfLine, ViYankEndOfGlob, ViYankEndOfWord, ViYankLeft, ViYankLine, ViYankNextGlob, ViYankNextWord, ViYankPercent, ViYankPreviousGlob, ViYankPreviousWord, ViYankRight, ViYankToEndOfLine, ViYankToFirstChar, WhatIsKey, Yank, YankLastArg, YankNthArg, YankPop
 
 Required: True
@@ -136,7 +136,7 @@ The second argument could be any object depending on the context.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ScriptBlock
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ```yaml
 Type: ViMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Insert, Command
 
 Required: False
@@ -166,7 +166,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
@@ -182,4 +182,3 @@ You cannot pipe objects to this cmdlet.
 [Get-PSReadlineOption](Get-PSReadlineOption.md)
 
 [Set-PSReadlineOption](Set-PSReadlineOption.md)
-

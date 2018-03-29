@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -32,9 +32,9 @@ If you specify *Unbound*, but not *Bound*, the cmdlet returns only unbound keys.
 PS C:\> Get-PSReadlineKeyHandler
 Key                   Function                Description
 ---                   --------                -----------
-Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token. 
+Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token.
 Shift+Enter           AddLine                 Move the cursor to the next line without attempting to execute the input
-Escape                RevertLine              Equivalent to undo all edits (clears the line except lines imported from history) 
+Escape                RevertLine              Equivalent to undo all edits (clears the line except lines imported from history)
 LeftArrow             BackwardChar            Move the cursor back one character
 RightArrow            ForwardChar             Move the cursor forward one character
 Ctrl+LeftArrow        BackwardWord            Move the cursor to the beginning of the current or previous word
@@ -51,11 +51,11 @@ Shift+Home            SelectBackwardsLine     Adjust the current selection to in
 Shift+End             SelectLine              Adjust the current selection to include from the cursor to the start of the line
 Delete                DeleteChar              Delete the character under the cursor
 Backspace             BackwardDeleteChar      Delete the charcter before the cursor
-Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o... 
+Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o...
 Tab                   TabCompleteNext         Complete the input using the next completion
 Shift+Tab             TabCompletePrevious     Complete the input using the previous completion
 Ctrl+a                SelectAll               Select the entire line. Moves the cursor to the end of the line
-Ctrl+c                CopyOrCancelLine        Either copy selected text to the clipboard, or if no text is selected, cancel editing the line with Cancel... 
+Ctrl+c                CopyOrCancelLine        Either copy selected text to the clipboard, or if no text is selected, cancel editing the line with Cancel...
 Ctrl+C                Copy                    Copy selected region to the system clipboard.  If no region is selected, copy the whole line
 Ctrl+l                ClearScreen             Clear the screen and redraw the current line at the top of the screen
 Ctrl+r                ReverseSearchHistory    Search history backwards interactively
@@ -69,9 +69,9 @@ This command returns all key mappings, bound and unbound.
 PS C:\> Get-PSReadlineKeyHandler -Bound
 Key                   Function                Description
 ---                   --------                -----------
-Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token. 
+Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token.
 Shift+Enter           AddLine                 Move the cursor to the next line without attempting to execute the input
-Escape                RevertLine              Equivalent to undo all edits (clears the line except lines imported from history) 
+Escape                RevertLine              Equivalent to undo all edits (clears the line except lines imported from history)
 LeftArrow             BackwardChar            Move the cursor back one character
 RightArrow            ForwardChar             Move the cursor forward one character
 Ctrl+LeftArrow        BackwardWord            Move the cursor to the beginning of the current or previous word
@@ -88,7 +88,7 @@ Shift+Home            SelectBackwardsLine     Adjust the current selection to in
 Shift+End             SelectLine              Adjust the current selection to include from the cursor to the start of the line
 Delete                DeleteChar              Delete the character under the cursor
 Backspace             BackwardDeleteChar      Delete the charcter before the cursor
-Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o... 
+Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o...
 Tab                   TabCompleteNext         Complete the input using the next completion
 â€¦
 ```
@@ -103,7 +103,7 @@ Indicates that this cmdlet returns functions that are bound.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -118,7 +118,7 @@ Indicates that this cmdlet returns functions that are unbound.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
@@ -151,4 +151,3 @@ This cmdlet returns one entry for each key binding, or chord, for bound function
 [Set-PSReadlineOption](Set-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
-

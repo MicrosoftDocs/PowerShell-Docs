@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -63,7 +63,7 @@ Specifies a **ScriptBlock** that controls which commands get added to PSReadline
 ```yaml
 Type: System.Func`2[System.String,System.Boolean]
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -77,27 +77,27 @@ Specifies the background color for the token kind that is specified by the *Toke
 
 The acceptable values for this parameter are:
 
-- Black 
-- DarkBlue 
-- DarkGreen 
-- DarkCyan 
-- DarkRed 
-- DarkMagenta 
-- DarkYellow 
-- Gray 
-- DarkGray 
-- Blue 
-- Green 
-- Cyan 
-- Red 
-- Magenta 
-- Yellow 
+- Black
+- DarkBlue
+- DarkGreen
+- DarkCyan
+- DarkRed
+- DarkMagenta
+- DarkYellow
+- Gray
+- DarkGray
+- Blue
+- Green
+- Cyan
+- Red
+- Magenta
+- Yellow
 - White
 
 ```yaml
 Type: ConsoleColor
 Parameter Sets: ColorSet
-Aliases: 
+Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
@@ -113,16 +113,16 @@ If you do not specify this parameter, the default response is Audible.
 The acceptable values for this parameter are:
 
 - None.
-No feedback. 
+No feedback.
 - Visual.
-Text flashes briefly. 
+Text flashes briefly.
 - Audible.
 A short beep.
 
 ```yaml
 Type: BellStyle
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: None, Visual, Audible
 
 Required: False
@@ -141,7 +141,7 @@ A validation handler can also change the command line, such as to correct common
 ```yaml
 Type: System.Action`1[System.Management.Automation.Language.CommandAst]
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -158,7 +158,7 @@ The default maximum number is 100.
 ```yaml
 Type: Int32
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -175,7 +175,7 @@ The empty string is valid.
 ```yaml
 Type: String
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -192,7 +192,7 @@ The acceptable values for this parameter are: the same values as for the *Backgr
 ```yaml
 Type: ConsoleColor
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
@@ -210,7 +210,7 @@ The acceptable values for this parameter are: the same values as for *Background
 ```yaml
 Type: ConsoleColor
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
@@ -227,7 +227,7 @@ If you do not specify this parameter, and *BellStyle* is set to Audible, the def
 ```yaml
 Type: Int32
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -244,7 +244,7 @@ If you do not specify this parameter, and *Bellstyle* is Audible, the default to
 ```yaml
 Type: Int32
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -260,7 +260,7 @@ The *EditMode* parameter resets any key bindings that you have set by running Se
 ```yaml
 Type: EditMode
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: Windows, Emacs, Vi
 
 Required: False
@@ -278,7 +278,7 @@ The acceptable values for this parameter are: the same values as for *Background
 ```yaml
 Type: ConsoleColor
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
@@ -296,7 +296,7 @@ The acceptable values for this parameter are: the same values as for *Background
 ```yaml
 Type: ConsoleColor
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
@@ -314,7 +314,7 @@ The acceptable values for this parameter are: the same values as for *Background
 ```yaml
 Type: ConsoleColor
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
@@ -332,7 +332,7 @@ The acceptable values for this parameter are: the same values as for *Background
 ```yaml
 Type: ConsoleColor
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
@@ -349,7 +349,7 @@ Specify a value for this parameter if your prompt spans more than one line, and 
 ```yaml
 Type: Int32
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -366,7 +366,7 @@ The acceptable values for this parameter are: the same values as for *Background
 ```yaml
 Type: ConsoleColor
 Parameter Sets: ColorSet
-Aliases: 
+Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
@@ -382,7 +382,7 @@ Specifies that duplicate commands not added to PSReadline history.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -398,7 +398,7 @@ If you do not add this parameter, the default path is ~\AppData\Roaming\PSReadli
 ```yaml
 Type: String
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -414,7 +414,7 @@ To avoid unexpected behavior with command history, if you do not want to use the
 ```yaml
 Type: HistorySaveStyle
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: SaveIncrementally, SaveAtExit, SaveNothing
 
 Required: False
@@ -430,7 +430,7 @@ Indicates that the searching history is case sensitive in functions such as Reve
 ```yaml
 Type: SwitchParameter
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -453,7 +453,7 @@ To turn off this option, you can run either of the following commands:
 ```yaml
 Type: SwitchParameter
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -469,7 +469,7 @@ PSReadline history not the same thing as Windows PowerShell history.
 ```yaml
 Type: Int32
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -484,7 +484,7 @@ Specifies the maximum number of items stored in the kill ring.
 ```yaml
 Type: Int32
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -499,7 +499,7 @@ Indicates that this cmdlet restores token colors to default settings.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -514,7 +514,7 @@ Indicates that when you are displaying possible completions tooltips are shown i
 ```yaml
 Type: SwitchParameter
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -527,22 +527,22 @@ Accept wildcard characters: False
 Specifies the kind of token when you are setting token coloring options with the *ForegroundColor* and *BackgroundColor* parameters.
 The acceptable values for this parameter are:
 
-- None 
-- Comment 
-- Keyword 
-- String 
-- Operator 
-- Variable 
-- Command 
-- Parameter 
-- Type 
-- Number 
+- None
+- Comment
+- Keyword
+- String
+- Operator
+- Variable
+- Command
+- Parameter
+- Type
+- Number
 - Member
 
 ```yaml
 Type: TokenClassification
 Parameter Sets: ColorSet
-Aliases: 
+Aliases:
 Accepted values: None, Comment, Keyword, String, Operator, Variable, Command, Parameter, Type, Number, Member
 
 Required: True
@@ -558,7 +558,7 @@ Accept wildcard characters: False
 ```yaml
 Type: ViModeStyle
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 Accepted values: None, Prompt, Cursor
 
 Required: False
@@ -575,7 +575,7 @@ The default value is the following list of characters: \>;:,.\[\]{}()/\|^&*-=+
 ```yaml
 Type: String
 Parameter Sets: OptionsSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -589,12 +589,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-###  
+###
 This cmdlet does not generate output.
 
 ## NOTES
@@ -608,4 +608,3 @@ This cmdlet does not generate output.
 [Get-PSReadlineOption](Get-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
-

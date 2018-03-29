@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -38,9 +38,9 @@ The Ctrl+Shift+B chord is created in the `Set-PSReadlineKeyHandler` topic.
 ### -Chord
 Specifies an array of  keys or sequences of keys to be removed.
 A single binding is specified by using a single string.
-If the binding is a sequence of keys, separate the keys by a comma, as in the following example: 
+If the binding is a sequence of keys, separate the keys by a comma, as in the following example:
 
-"Ctrl+X,Ctrl+L" 
+"Ctrl+X,Ctrl+L"
 
 This parameter accepts multiple strings.
 Each string is a separate binding, not a sequence of keys for a single binding.
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```yaml
 Type: ViMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Insert, Command
 
 Required: False
@@ -78,7 +78,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
@@ -94,4 +94,3 @@ You cannot pipe objects to this cmdlet.
 [Set-PSReadlineOption](Set-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
-

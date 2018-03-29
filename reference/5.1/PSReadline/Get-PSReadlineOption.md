@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -34,9 +34,9 @@ ContinuationPrompt                     : >>>
 ContinuationPromptForegroundColor      : DarkYellow
 ContinuationPromptBackgroundColor      : DarkMagenta
 ExtraPromptLineCount                   : 0
-AddToHistoryHandler                    : 
-CommandValidationHandler               : 
-CommandsToValidateScriptBlockArguments : {ForEach-Object, %, Invoke-Command, icm...} 
+AddToHistoryHandler                    :
+CommandValidationHandler               :
+CommandsToValidateScriptBlockArguments : {ForEach-Object, %, Invoke-Command, icm...}
 HistoryNoDuplicates                    : False
 MaximumHistoryCount                    : 4096
 MaximumKillRingCount                   : 10
@@ -44,7 +44,7 @@ HistorySearchCursorMovesToEnd          : False
 ShowToolTips                           : False
 DingTone                               : 1221
 CompletionQueryItems                   : 100
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+--- 
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+---
 DingDuration                           : 50
 BellStyle                              : Audible
 HistorySearchCaseSensitive             : False
@@ -87,7 +87,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
@@ -103,4 +103,3 @@ You cannot pipe objects to this cmdlet.
 [Set-PSReadlineOption](Set-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
-

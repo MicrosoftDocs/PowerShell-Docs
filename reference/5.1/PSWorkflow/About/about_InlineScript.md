@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -94,7 +94,7 @@ workflow Test-Workflow {
   ##  Changes to the InlineScript variable value do not
   ##  change the workflow variable.
   InlineScript {
-    $a = $using:a+1; 
+    $a = $using:a+1;
     "Inline A = $a"
   }
   "Workflow A = $a"
@@ -154,5 +154,3 @@ workflow Test-Workflow
 
 Test-Workflow
 ```
-
-
