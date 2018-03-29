@@ -73,7 +73,7 @@ You can then run the script directly, by running the following PowerShell comman
 
 ```powershell
 cd <local folder location supplied previously>
-.\GetPSGalleryItemsForAuthor 
+.\GetPSGalleryItemsForAuthor.ps1 
 ```
 
 You will be prompted to supply the Author and a folder on your system where you want the items to be saved. 
