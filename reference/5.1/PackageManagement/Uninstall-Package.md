@@ -7,21 +7,23 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=517142
 external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
 title:  Uninstall-Package
 ---
-
 # Uninstall-Package
 
 ## SYNOPSIS
+
 Uninstalls one or more software packages.
 
 ## SYNTAX
 
 ### PackageByInputObject
+
 ```
 Uninstall-Package [-InputObject] <SoftwareIdentity[]> [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### PackageBySearch
+
 ```
 Uninstall-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
  [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
@@ -29,12 +31,14 @@ Uninstall-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersio
 ```
 
 ### msi:PackageByInputObject
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
  [-AdditionalArguments <String[]>] [<CommonParameters>]
 ```
 
 ### msi:PackageBySearch
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
  [-AdditionalArguments <String[]>] [<CommonParameters>]
@@ -47,12 +51,14 @@ Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
 ```
 
 ### NuGet:PackageBySearch
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Destination <String>]
  [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageByInputObject
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>]
  [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate]
@@ -60,6 +66,7 @@ Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
 ```
 
 ### PowerShellGet:PackageBySearch
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>]
  [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate]
@@ -67,23 +74,27 @@ Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
 ```
 
 ### Programs:PackageByInputObject
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
  [-IncludeSystemComponent] [<CommonParameters>]
 ```
 
 ### Programs:PackageBySearch
+
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
  [-IncludeSystemComponent] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Uninstall-Package** cmdlet uninstalls one or more software packages from the local computer.
 
 ## EXAMPLES
 
 ### Example 1: Uninstall a package
+
 ```
 PS C:\> Uninstall-Package -Name "DSCAccelerator"
 ```
@@ -91,6 +102,7 @@ PS C:\> Uninstall-Package -Name "DSCAccelerator"
 This command uninstalls a package named DSCAccelerator.
 
 ### Example 2: Uninstall a package by piping results of Get-Package
+
 ```
 PS C:\> Get-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Uninstall-Package -Force
 ```
@@ -101,6 +113,7 @@ The *Force* parameter ensures that you are not prompted to confirm that you want
 ## PARAMETERS
 
 ### -AdditionalArguments
+
 Specifies additional arguments.
 
 ```yaml
@@ -116,6 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllVersions
+
 Indicates that this cmdlet uninstalls all versions of the package.
 
 ```yaml
@@ -132,7 +146,6 @@ Accept wildcard characters: False
 
 ### -AllowClobber
 
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
@@ -146,6 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -161,6 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -Destination
+
 {{Fill Destination Description}}
 
 ```yaml
@@ -176,6 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludeVersion
+
 {{Fill ExcludeVersion Description}}
 
 ```yaml
@@ -191,6 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -206,6 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -ForceBootstrap
+
 Forces Package Management to automatically install the package provider for the specified package.
 
 ```yaml
@@ -221,6 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeSystemComponent
+
 Specifies that this cmdlet uninstalls system components.
 
 ```yaml
@@ -236,6 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeWindowsInstaller
+
 Indicates that this cmdlet uninstalls the package through Windows Installer.
 
 ```yaml
@@ -251,6 +271,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a package by using the package's SoftwareIdentity type, which is shown in the results of the Get-Package cmdlet.
 
 ```yaml
@@ -266,6 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstallUpdate
+
 Indicates that this cmdlet uninstalls updates.
 
 ```yaml
@@ -281,6 +303,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
+
 Specifies the maximum allowed version of the package that you want to uninstall.
 If you do not specify this parameter, this cmdlet uninstalls the highest-numbered available version of the package on the computer.
 
@@ -297,6 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
+
 Specifies the minimum allowed version of the package that you want to uninstall.
 If you do not add this parameter, **Uninstall-Package** uninstalls the newest available version of the package that also satisfies any maximum version specified by the *MaximumVersion* parameter.
 
@@ -313,6 +337,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies one or more package names.
 Multiple names must be separated by commas.
 
@@ -330,7 +355,6 @@ Accept wildcard characters: False
 
 ### -NoPathUpdate
 
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
@@ -344,6 +368,7 @@ Accept wildcard characters: False
 ```
 
 ### -PackageManagementProvider
+
 Specifies the Package Management provider.
 
 ```yaml
@@ -359,6 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderName
+
 Specifies one or more package provider names to which to scope your package search.
 You can get package provider names by running the Get-PackageProvider cmdlet.
 
@@ -376,6 +402,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact allowed version of the package that you want to uninstall.
 If you do not add this parameter, this cmdlet installs the newest available version of the package (subject to any maximum specified version, if you've added the *MaximumVersion* parameter).
 
@@ -392,6 +419,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the scope at which to uninstall the package.
 The acceptable values for this parameter are:
 
@@ -412,6 +440,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipDependencies
+
 {{Fill SkipDependencies Description}}
 
 ```yaml
@@ -428,7 +457,6 @@ Accept wildcard characters: False
 
 ### -SkipPublisherCheck
 
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
@@ -442,6 +470,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
+
 Specifies whether to search for packages with a module, a script, or both.
 The acceptable values for this parameter are:
 
@@ -463,6 +492,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -479,16 +509,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-###
+### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
-###
+### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
