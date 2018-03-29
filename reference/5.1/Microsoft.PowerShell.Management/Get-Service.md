@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -164,8 +164,8 @@ PS C:\> Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server
 
 MachineName    Status  Name  DisplayName
 ------------   ------  ----  -----------
-localhost      Running WinRM Windows Remote Management (WS-Management) 
-Server01       Running WinRM Windows Remote Management (WS-Management) 
+localhost      Running WinRM Windows Remote Management (WS-Management)
+Server01       Running WinRM Windows Remote Management (WS-Management)
 Server02       Running WinRM Windows Remote Management (WS-Management)
 ```
 
@@ -241,7 +241,7 @@ By default, this cmdlet gets all services on the computer.
 ```yaml
 Type: String[]
 Parameter Sets: DisplayName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -259,7 +259,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -277,7 +277,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -294,7 +294,7 @@ You can also pipe a service object to this cmdlet.
 ```yaml
 Type: ServiceController[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -382,4 +382,3 @@ The sort is based on the integer value, not the name.
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-

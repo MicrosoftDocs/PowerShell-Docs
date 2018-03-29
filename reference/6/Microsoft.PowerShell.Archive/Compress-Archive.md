@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -103,9 +103,9 @@ Faster compression requires less time to create the file, but can result in larg
 The acceptable values for this parameter are:
 
 - Fastest.
-Use the fastest compression method available to decrease processing time; this can result in larger file sizes. 
+Use the fastest compression method available to decrease processing time; this can result in larger file sizes.
 - NoCompression.
-Do not compress the source files. 
+Do not compress the source files.
 - Optimal.
 Processing time is dependent on file size.
 
@@ -114,7 +114,7 @@ If this parameter is not specified, the command uses the default value, Optimal.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ If the file name specified in **DestinationPath** does not have a .zip file name
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -169,7 +169,7 @@ To specify multiple paths, and include files in multiple locations in your outpu
 ```yaml
 Type: String[]
 Parameter Sets: Path, PathWithUpdate, PathWithForce
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -185,7 +185,7 @@ You can also add this parameter to add files to an existing archive.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PathWithUpdate, LiteralPathWithUpdate
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PathWithForce, LiteralPathWithForce
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -255,4 +255,3 @@ You can pipe a string that contains a path to one or more files.
 ## NOTES
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -135,7 +135,7 @@ The value must have the Domain\User or ComputerName\User format.
 PS C:\> Get-Credential -Message "Credentials are required for access to the \\Server1\Scripts file share." -UserName "Server01\PowerUsers"
 Windows PowerShell
 
-Credentials are required for access to the \\Server1\Scripts file share. 
+Credentials are required for access to the \\Server1\Scripts file share.
 
 Password for user ntdev\pattif:
 ```
@@ -149,10 +149,10 @@ In this case, the message tells the user why credentials are needed and gives th
 PS C:\> Invoke-Command -ComputerName "Server01" {Get-Credential Domain01\User02}
 Windows PowerShell Credential Request : Windows PowerShell Credential Request
 Warning: This credential is being requested by a script or application on the SERVER01 remote computer. Enter your credentials only if you
-trust the remote computer and the application or script requesting it. 
+trust the remote computer and the application or script requesting it.
 
 
-Enter your credentials. 
+Enter your credentials.
 
 Password for user Domain01\User02: ***************
 
@@ -183,7 +183,7 @@ If you omit this parameter, you are prompted for a user name and a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: CredentialSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -203,7 +203,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: MessageSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -226,7 +226,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: MessageSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -259,4 +259,3 @@ For information about the effect of the **ConsolePrompting** registry entry, see
 * The *Credential* parameter is not supported by all providers that are installed with Windows PowerShell. Beginning in Windows PowerShell 3.0, it is supported on selected cmdlets, such as Get-WmiObject and New-PSDrive.
 
 ## RELATED LINKS
-

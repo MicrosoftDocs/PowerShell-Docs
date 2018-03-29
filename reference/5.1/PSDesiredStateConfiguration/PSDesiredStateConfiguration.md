@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -12,7 +12,7 @@ Module Name:  PSDesiredStateConfiguration
 
 # PSDesiredStateConfiguration Module
 ## Description
-Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. This reference topic for the information technology (IT) professional provides assistance in utilizing the Windows PowerShell cmdlets to script and automate tasks. 
+Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. This reference topic for the information technology (IT) professional provides assistance in utilizing the Windows PowerShell cmdlets to script and automate tasks.
 
 ## PSDesiredStateConfiguration Cmdlets
 ### [Disable-DscDebug](Disable-DscDebug.md)
@@ -77,4 +77,3 @@ Tests whether the actual configuration on the nodes matches the desired configur
 
 ### [Update-DscConfiguration](Update-DscConfiguration.md)
 Checks the pull server for an updated configuration and applies it.
-

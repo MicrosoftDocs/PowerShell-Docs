@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -66,7 +66,7 @@ To obtain a user account, use the Get-LocalUser cmdlet.
 ```yaml
 Type: LocalUser
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -81,7 +81,7 @@ Specifies the name of the user account that this cmdlet renames.
 ```yaml
 Type: String
 Parameter Sets: Default
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -96,7 +96,7 @@ Specifies a new name for the user account.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -111,7 +111,7 @@ Specifies the security ID (SID) of a user accounts that this cmdlet renames.
 ```yaml
 Type: SecurityIdentifier
 Parameter Sets: SecurityIdentifier
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -150,12 +150,12 @@ You can pipe a local user, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows: 
+* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
-- Local 
-- Active Directory 
-- Azure Active Directory group 
-- Microsoft Account 
+- Local
+- Active Directory
+- Azure Active Directory group
+- Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
@@ -172,4 +172,3 @@ This cmdlet does not generate any output.
 [Remove-LocalUser](Remove-LocalUser.md)
 
 [Set-LocalUser](Set-LocalUser.md)
-

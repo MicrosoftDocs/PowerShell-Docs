@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -22,14 +22,14 @@ The Parallel keyword runs workflow activities in parallel. This keyword is valid
 
 
 ```
-workflow <Verb-Noun>  
-{  
-     Parallel  
-     {  
-          [<Activity>]  
-          [<Activity>]  
-        ...  
-     }  
+workflow <Verb-Noun>
+{
+     Parallel
+     {
+          [<Activity>]
+          [<Activity>]
+        ...
+     }
  }
 ```
 
@@ -42,13 +42,13 @@ For example, the following workflow includes a Parallel script block that runs a
 
 
 ```
-workflow Test-Workflow  
-{  
-    Parallel  
-    {  
-         Get-Process  
-         Get-Service  
-    }  
+workflow Test-Workflow
+{
+    Parallel
+    {
+         Get-Process
+         Get-Service
+    }
 }
 ```
 
@@ -72,4 +72,3 @@ about_Language_Keywords
 about_Sequence
 
 about_Workflows
-
