@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -106,7 +106,7 @@ Specifies one or more additional arguments for installation.
 ```yaml
 Type: String[]
 Parameter Sets: msi:PackageBySearch, msi:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -122,7 +122,7 @@ By default, **Install -Package** only installs the newest available version.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -137,7 +137,7 @@ Specifies one or more commands for which **Find-Package** searches.
 ```yaml
 Type: String[]
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -167,7 +167,7 @@ Specifies a user account that has rights to install a package for a specified pa
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -197,7 +197,7 @@ Specifies one or more Desired State Configuration (DSC) resources for which **Fi
 ```yaml
 Type: String[]
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -212,7 +212,7 @@ Specifies terms to search for within the **Name** and **Description** properties
 ```yaml
 Type: String
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,7 +227,7 @@ Indicates that this cmdlet overrides restrictions that prevent the command from 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -242,7 +242,7 @@ Forces PackageManagement to automatically install the package provider for the s
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -257,7 +257,7 @@ Indicates that this cmdlet includes system components in the results.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Programs:PackageBySearch, Programs:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -272,7 +272,7 @@ Indicates that this cmdlet includes the Windows installer in the results.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Programs:PackageBySearch, Programs:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -293,7 +293,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: String[]
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 Accepted values: DscResource, Cmdlet, Function
 
 Required: False
@@ -309,7 +309,7 @@ Specifies a package by using the package's SoftwareIdentity type, which is shown
 ```yaml
 Type: SoftwareIdentity[]
 Parameter Sets: PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -324,7 +324,7 @@ Indicates that this cmdlet installs updates.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -339,7 +339,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -370,7 +370,7 @@ If you do not specify this parameter, **Install-Package** installs the finds the
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -386,7 +386,7 @@ If you do not add this parameter, **Install-Package** finds the highest availabl
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -402,7 +402,7 @@ Multiple names must be separated by commas.
 ```yaml
 Type: String[]
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -417,7 +417,7 @@ Specifies the name of the Package Management provider.
 ```yaml
 Type: String
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -449,7 +449,7 @@ Specifies a location for publishing the package.
 ```yaml
 Type: String
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -465,7 +465,7 @@ If you do not add this parameter, **Install-Package** installs the newest availa
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -484,7 +484,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: String
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 Accepted values: CurrentUser, AllUsers
 
 Required: False
@@ -502,7 +502,7 @@ You can get package source names by running the Get-PackageSource cmdlet.
 ```yaml
 Type: String[]
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -517,7 +517,7 @@ Specifies one or more strings to search for in the package metadata.
 ```yaml
 Type: String[]
 Parameter Sets: PSModule:PackageBySearch, PSModule:PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -564,4 +564,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Save-Package](Save-Package.md)
 
 [Uninstall-Package](Uninstall-Package.md)
-
