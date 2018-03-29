@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -91,7 +91,7 @@ Indicates that this cmdlet appends the output to the specified file, rather than
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -106,7 +106,7 @@ CSV is the default.
 The acceptable values for this parameter are:
 
 - CSV.
-Comma-separated value (CSV) format. 
+Comma-separated value (CSV) format.
 - Script.
 Creates a `Set-Alias` command for each exported alias.
 If you name the output file with a .ps1 file name extension, you can run it as a script to add the aliases to any session.
@@ -114,7 +114,7 @@ If you name the output file with a .ps1 file name extension, you can run it as a
 ```yaml
 Type: ExportAliasFormat
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Csv, Script
 
 Required: False
@@ -146,7 +146,7 @@ The description appears as a comment at the top of the file, following the heade
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -168,7 +168,7 @@ The **Force** parameter cannot force `Export-Alias` to overwrite files with the 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -205,7 +205,7 @@ By default, `Export-Alias` exports all aliases in the session or scope.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -241,7 +241,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -257,7 +257,7 @@ Wildcards are permitted, but the resulting path value must resolve to a single f
 ```yaml
 Type: String
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -281,7 +281,7 @@ For more information, see about_Scopes.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -332,4 +332,3 @@ Otherwise, this cmdlet does not generate any output.
 [New-Alias](New-Alias.md)
 
 [Set-Alias](Set-Alias.md)
-
