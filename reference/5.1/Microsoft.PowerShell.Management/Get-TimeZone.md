@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -46,9 +46,9 @@ This command gets the current time zone.
 ### Example 2: Get time zones that match a specified string
 ```
 PS C:\> Get-TimeZone -Name "*pac*"
-Pacific Standard Time (Mexico) 
+Pacific Standard Time (Mexico)
 
-(UTC-08:00) Pacific Time (US &amp; Canada) 
+(UTC-08:00) Pacific Time (US &amp; Canada)
 
 Pacific Standard Time
 
@@ -78,7 +78,7 @@ Specifies, as a string array, the ID or IDs of the time zones that this cmdlet g
 ```yaml
 Type: String[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -93,7 +93,7 @@ Indicates that this cmdlet gets all available time zones.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ListAvailable
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -108,7 +108,7 @@ Specifies, as a string array, the name or names of the time zones that this cmdl
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -133,4 +133,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Set-TimeZone](Set-TimeZone.md)
-

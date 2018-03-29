@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -69,11 +69,11 @@ The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed 
 
 ### Example 2: Get a drive on the computer
 ```
-PS C:\foo> Get-PSDrive D  
+PS C:\foo> Get-PSDrive D
 
-Name           Used (GB)     Free (GB) Provider      Root  
-----           ---------     --------- --------      ----  
-D                1211.06     123642.32 FileSystem    D:\  
+Name           Used (GB)     Free (GB) Provider      Root
+----           ---------     --------- --------      ----
+D                1211.06     123642.32 FileSystem    D:\
 
 ```
 
@@ -82,11 +82,11 @@ Note that the drive letter in the command is not followed by a colon.
 
 ### Example 3: Get all the drives that are supported by the Windows PowerShell file system provider
 ```
-PS C:\> Get-PSDrive -Provider FileSystem  
-Name           Used (GB)     Free (GB) Provider      Root  
+PS C:\> Get-PSDrive -Provider FileSystem
+Name           Used (GB)     Free (GB) Provider      Root
 ----           ---------     --------- --------      ----
-A                                                    A:\ 
-C                 202.06      23718.91 FileSystem    C:\  
+A                                                    A:\
+C                 202.06      23718.91 FileSystem    C:\
 D                1211.06     123642.32 FileSystem    D:\
 G                 202.06        710.91 FileSystem    \\Music\GratefulDead
 ```
@@ -108,22 +108,22 @@ If it is not, the command uses the `New-PSDrive` cmdlet to create a temporary dr
 
 ### Example 5: Compare the types of files system drives
 ```
-PS C:\> Get-PSDrive -PSProvider FileSystem  
-Name           Used (GB)     Free (GB) Provider      Root    
-----           ---------     --------- --------      ----  
-A                                                    A:\   
-C                 202.06      23718.91 FileSystem    C:\    
-D                1211.06     123642.32 FileSystem    D:\  
-G                 202.06        710.91 FileSystem    \\Music\GratefulDead  
-X                                      Registry      HKLM:\Network  
+PS C:\> Get-PSDrive -PSProvider FileSystem
+Name           Used (GB)     Free (GB) Provider      Root
+----           ---------     --------- --------      ----
+A                                                    A:\
+C                 202.06      23718.91 FileSystem    C:\
+D                1211.06     123642.32 FileSystem    D:\
+G                 202.06        710.91 FileSystem    \\Music\GratefulDead
+X                                      Registry      HKLM:\Network
 
-PS C:\> net use  
-New connections will be remembered.  
-Status       Local     Remote                    Network  
--------------------------------------------------------------------------------  
-OK           G:        \\Server01\Public         Microsoft Windows Network  
+PS C:\> net use
+New connections will be remembered.
+Status       Local     Remote                    Network
+-------------------------------------------------------------------------------
+OK           G:        \\Server01\Public         Microsoft Windows Network
 
-PS C:\> [System.IO.DriveInfo]::GetDrives() | Format-Table 
+PS C:\> [System.IO.DriveInfo]::GetDrives() | Format-Table
 Name DriveType DriveFormat IsReady AvailableFreeSpace TotalFreeSpace TotalSize     RootDirectory VolumeLabel
 ---- --------- ----------- ------- ------------------ -------------- ---------     ------------- -----------
 A:\    Network               False                                                 A:\
@@ -290,5 +290,3 @@ This cmdlet returns objects that represent the drives in the session.
 [Get-WmiObject](Get-WmiObject.md)
 
 [Get-PSProvider](Get-PSProvider.md)
-
-
