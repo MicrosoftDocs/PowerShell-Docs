@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -75,7 +75,7 @@ Specifies the security group to which this cmdlet adds members.
 ```yaml
 Type: LocalGroup
 Parameter Sets: Group
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -91,7 +91,7 @@ You can specify users or groups by name, security ID (SID), or **LocalPrincipal*
 ```yaml
 Type: LocalPrincipal[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -106,7 +106,7 @@ Specifies the name of the security group to which this cmdlet adds members.
 ```yaml
 Type: String
 Parameter Sets: Default
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -121,7 +121,7 @@ Specifies the security ID of the security group to which this cmdlet adds member
 ```yaml
 Type: SecurityIdentifier
 Parameter Sets: SecurityIdentifier
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -160,12 +160,12 @@ You can pipe a local principal, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows: 
+* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
-- Local 
-- Active Directory 
-- Azure Active Directory group 
-- Microsoft Account 
+- Local
+- Active Directory
+- Azure Active Directory group
+- Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
@@ -176,4 +176,3 @@ This cmdlet does not generate any output.
 [New-LocalGroup](New-LocalGroup.md)
 
 [Remove-LocalGroupMember](Remove-LocalGroupMember.md)
-

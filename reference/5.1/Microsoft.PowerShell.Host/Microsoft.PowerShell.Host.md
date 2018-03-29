@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -21,4 +21,3 @@ Creates a record of all or part of a Windows PowerShell session to a text file.
 
 ### [Stop-Transcript](Stop-Transcript.md)
 Stops a transcript.
-

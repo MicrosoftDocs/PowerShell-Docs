@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -71,7 +71,7 @@ You can use the wildcard character.
 ```yaml
 Type: String[]
 Parameter Sets: Default
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -86,7 +86,7 @@ Specifies an array of security IDs (SIDs) of user accounts that this cmdlet gets
 ```yaml
 Type: SecurityIdentifier[]
 Parameter Sets: SecurityIdentifier
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -109,12 +109,12 @@ You can pipe a string or SID to this cmdlet.
 This cmdlet returns local user accounts.
 
 ## NOTES
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows: 
+* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
-- Local 
-- Active Directory 
-- Azure Active Directory group 
-- Microsoft Account 
+- Local
+- Active Directory
+- Azure Active Directory group
+- Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
@@ -131,4 +131,3 @@ This cmdlet returns local user accounts.
 [Rename-LocalUser](Rename-LocalUser.md)
 
 [Set-LocalUser](Set-LocalUser.md)
-
