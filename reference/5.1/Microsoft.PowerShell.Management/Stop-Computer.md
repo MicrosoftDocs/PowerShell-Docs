@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -108,7 +108,7 @@ For more information about Windows PowerShell background jobs, see about_Jobs an
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -163,7 +163,7 @@ Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential**
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -178,9 +178,9 @@ Specifies the authentication level that this cmdlet uses with WMI.
 The acceptable values for this parameter are:
 
 - Default.
-Windows Authentication 
+Windows Authentication
 - None.
-No COM authentication 
+No COM authentication
 - Connect.
 Connect-level COM authentication
 - Call.
@@ -188,9 +188,9 @@ Call-level COM authentication
 - Packet .
 Packet-level COM authentication
 - PacketIntegrity.
-Packet Integrity-level COM authentication 
+Packet Integrity-level COM authentication
 - PacketPrivacy.
-Packet Privacy-level COM authentication 
+Packet Privacy-level COM authentication
 - Unchanged.
 Same as the previous command
 
@@ -217,7 +217,7 @@ Forces an immediate shut down of the computers.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -232,20 +232,20 @@ Specifies the impersonation level to use when this cmdlet calls WMI.
 The acceptable values for this parameter are:
 
 - Default.
-Default impersonation. 
+Default impersonation.
 - Anonymous.
-Hides the identity of the caller. 
+Hides the identity of the caller.
 - Identify.
-Allows objects to query the credentials of the caller. 
+Allows objects to query the credentials of the caller.
 - Impersonate.
-Allows objects to use the credentials of the caller. 
+Allows objects to use the credentials of the caller.
 
 The default value is Impersonate.
 
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
 
 Required: False
@@ -265,7 +265,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: DCOM, WSMan
 
 Required: False
@@ -284,7 +284,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -313,12 +313,12 @@ Accept wildcard characters: False
 Specifies the mechanism that is used to authenticate the user credentials when this cmdlet uses the WSMan protocol.
 The acceptable values for this parameter are:
 
-- Basic 
-- CredSSP 
-- Default 
-- Digest 
-- Kerberos 
-- Negotiate. 
+- Basic
+- CredSSP
+- Default
+- Digest
+- Kerberos
+- Negotiate.
 
 The default value is Default.
 
@@ -333,7 +333,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, Basic, Negotiate, CredSSP, Digest, Kerberos
 
 Required: False
@@ -376,4 +376,3 @@ Otherwise, it does not generate any output.
 [Restore-Computer](Restore-Computer.md)
 
 [Test-Connection](Test-Connection.md)
-

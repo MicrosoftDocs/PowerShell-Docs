@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -40,8 +40,8 @@ This command restores the local computer to the restore point that has sequence 
 ```
 PS C:\> Restore-Computer -RestorePoint 255 -Confirm
 Confirm
-Are you sure you want to perform this action? 
-Performing operation "Restore-Computer" . 
+Are you sure you want to perform this action?
+Performing operation "Restore-Computer" .
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -RestorePoint
-Specifies the sequence number of the restore point. 
+Specifies the sequence number of the restore point.
 To find the sequence number, use the Get-ComputerRestorePoint cmdlet.
 This parameter is required.
 
@@ -142,4 +142,3 @@ This cmdlet does not generate any output.
 [Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
 [Restart-Computer](Restart-Computer.md)
-

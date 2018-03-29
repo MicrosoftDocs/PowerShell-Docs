@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -179,7 +179,7 @@ Enter a hash table where the keys are job properties and the values are job prop
 ```yaml
 Type: Hashtable
 Parameter Sets: FilterParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -218,7 +218,7 @@ To find the ID of a job, use the Get-Job cmdlet.
 ```yaml
 Type: Int32[]
 Parameter Sets: SessionIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -237,7 +237,7 @@ To find the instance ID of a job, use **Get-Job**.
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -254,7 +254,7 @@ You can also pipe workflow jobs to the **Suspend-Job** cmdlet.
 ```yaml
 Type: Job[]
 Parameter Sets: JobParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -271,7 +271,7 @@ Wildcard characters are supported.
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -285,15 +285,15 @@ Specifies a job state.
 This cmdlet stops only jobs in the specified state.
 The acceptable values for this parameter are:
 
-- NotStarted 
-- Running 
-- Completed 
-- Failed 
-- Stopped 
-- Blocked 
-- Suspended 
-- Disconnected 
-- Suspending 
+- NotStarted
+- Running
+- Completed
+- Failed
+- Stopped
+- Blocked
+- Suspended
+- Disconnected
+- Suspending
 - Stopping
 
 **Suspend-Job** suspends only workflow jobs in the **Running** state.
@@ -303,7 +303,7 @@ For more information about job states, see [JobState Enumeration](https://msdn.m
 ```yaml
 Type: JobState
 Parameter Sets: StateParameterSet
-Aliases: 
+Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
 
 Required: True
@@ -322,7 +322,7 @@ The *Wait* parameter is equivalent to piping a **Suspend-Job** command to the **
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -387,4 +387,3 @@ This cmdlet returns the jobs that it suspended.
 [Suspend-Job](Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)
-

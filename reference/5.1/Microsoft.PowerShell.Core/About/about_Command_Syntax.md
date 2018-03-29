@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-27
+ms.date:  06/27/2017
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Command_Syntax

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -45,8 +45,8 @@ Msg3 = The specified variable does not exist.
 PS C:\> ConvertFrom-StringData -StringData $Here
 Name                           Value
 ----                           -----
-Msg3                           The specified variable does not exist. 
-Msg2                           Credentials are required for this command. 
+Msg3                           The specified variable does not exist.
+Msg2                           Credentials are required for this command.
 Msg1                           The string parameter is required.
 ```
 
@@ -162,8 +162,8 @@ PS C:\> $Hash = $Here | ConvertFrom-StringData
 PS C:\> $Hash
 Name     Value
 ----     -----
-Msg3     The specified variable does not exist. 
-Msg2     Credentials are required for this command. 
+Msg3     The specified variable does not exist.
+Msg2     Credentials are required for this command.
 Msg1     The string parameter is required.
 ```
 
@@ -185,10 +185,10 @@ Name  : Angelo
 
 Value : Let there be some more test made of my metal,
         Before so noble and so great a figure
-        Be stamp'd upon it. 
+        Be stamp'd upon it.
 
 Name  : Vincentio
-Value : Heaven doth with us as we with torches do, 
+Value : Heaven doth with us as we with torches do,
         Not light them for themselves; for if our virtues
         Did not go forth of us, 'twere all alike
         As if we had them not.
@@ -200,8 +200,8 @@ In this example, the escape sequence **\n** is used to create new lines within a
 ### Example 8: Use backslash escape character to correctly render a file path
 ```
 PS C:\> ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
-Name                           Value                                                                                                                                     
-----                           -----                                                                                                                                     
+Name                           Value
+----                           -----
 Message                        Look in c:\Windows\System32
 ```
 
@@ -227,7 +227,7 @@ For more information, see about_Quoting_Rules.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -257,4 +257,3 @@ This cmdlet returns a hash table that it creates from the key/value pairs.
 
 
 ## RELATED LINKS
-

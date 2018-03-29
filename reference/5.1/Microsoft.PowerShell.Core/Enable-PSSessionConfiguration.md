@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -95,7 +95,7 @@ To prevent a restart and suppress the restart prompt, use the *NoServiceRestart*
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -116,7 +116,7 @@ If you omit this parameter, **Enable-PSSessionConfiguration** enables the Micros
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -131,7 +131,7 @@ Indicates that the cmdlet does not restart the service.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ If you omit this parameter, **Enable-PSSessionConfiguration** only deletes the d
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -174,7 +174,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -234,4 +234,3 @@ This cmdlet does not return any objects.
 [Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
-

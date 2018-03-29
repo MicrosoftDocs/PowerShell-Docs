@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -39,7 +39,7 @@ Write-Error -ErrorRecord <ErrorRecord> [-RecommendedAction <String>] [-CategoryA
 The **Write-Error** cmdlet declares a non-terminating error.
 By default, errors are sent in the error stream to the host program to be displayed, along with output.
 
-To write a non-terminating error, enter an error message string, an **ErrorRecord** object, or an **Exception** object. 
+To write a non-terminating error, enter an error message string, an **ErrorRecord** object, or an **Exception** object.
 Use the other parameters of **Write-Error** to populate the error record.
 
 Non-terminating errors write an error to the error stream, but they do not stop command processing.
@@ -132,7 +132,7 @@ For information about the error categories, see [ErrorCategory Enumeration](http
 ```yaml
 Type: ErrorCategory
 Parameter Sets: NoException, WithException
-Aliases: 
+Aliases:
 Accepted values: NotSpecified, OpenError, CloseError, DeviceError, DeadlockDetected, InvalidArgument, InvalidData, InvalidOperation, InvalidResult, InvalidType, MetadataError, NotImplemented, NotInstalled, ObjectNotFound, OperationStopped, OperationTimeout, SyntaxError, ParserError, PermissionDenied, ResourceBusy, ResourceExists, ResourceUnavailable, ReadError, WriteError, FromStdErr, SecurityError, ProtocolError, ConnectionError, AuthenticationError, LimitsExceeded, QuotaExceeded, NotEnabled
 
 Required: False
@@ -209,7 +209,7 @@ The string should be unique to the error.
 ```yaml
 Type: String
 Parameter Sets: NoException, WithException
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,7 +227,7 @@ To create an error record object, use the New-Object cmdlet or get an error reco
 ```yaml
 Type: ErrorRecord
 Parameter Sets: ErrorRecord
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -245,7 +245,7 @@ To create an exception object, use a hash table or use the New-Object cmdlet.
 ```yaml
 Type: Exception
 Parameter Sets: WithException
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -289,7 +289,7 @@ Specifies the action that the user should take to resolve or prevent the error.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -305,7 +305,7 @@ Enter the object, a variable that contains the object, or a command that gets th
 ```yaml
 Type: Object
 Parameter Sets: NoException, WithException
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -343,4 +343,3 @@ It does not return any objects.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-

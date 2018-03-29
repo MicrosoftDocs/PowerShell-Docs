@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -107,7 +107,7 @@ You can use the cmdlets that contain the **Job** noun (the **Job** cmdlets) to m
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 101
@@ -124,7 +124,7 @@ A *Class* or *Query* parameter is required in every command.
 ```yaml
 Type: String
 Parameter Sets: class
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -165,7 +165,7 @@ If you type a user name, this cmdlet prompts you for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -181,7 +181,7 @@ Use this parameter when you are registering for events on a remote computer or i
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -196,7 +196,7 @@ Specifies the maximum trigger count.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -212,7 +212,7 @@ The value of this parameter appears in the **MessageData** property of all event
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -242,7 +242,7 @@ Specifies a query in WMI Query Language (WQL) that identifies the WMI event clas
 ```yaml
 Type: String
 Parameter Sets: query
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -261,7 +261,7 @@ The value of this parameter appears in the value of the **SourceIdentifier** pro
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 100
@@ -279,7 +279,7 @@ To view or cancel a subscription that was created by using the *SupportEvent* pa
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -327,4 +327,3 @@ If you close the current session, the event queue is discarded and the event sub
 *
 
 ## RELATED LINKS
-

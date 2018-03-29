@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -108,7 +108,7 @@ You can also use the Get-Content cmdlet to get the contents of a file, such as a
 ```yaml
 Type: PSObject
 Parameter Sets: ByContent
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -127,7 +127,7 @@ Single quotation marks tell Windows PowerShell not to interpret any characters a
 ```yaml
 Type: String
 Parameter Sets: ByLiteralPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -142,7 +142,7 @@ Specifies the path and file name of a file to which you want to send the encrypt
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -157,7 +157,7 @@ Specifies the path to content that you want to encrypt.
 ```yaml
 Type: String
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -167,9 +167,9 @@ Accept wildcard characters: False
 ```
 
 ### -To
-Specifies one or more CMS message recipients, identified in any of the following formats. 
+Specifies one or more CMS message recipients, identified in any of the following formats.
 
-- An actual certificate (as retrieved from the certificate provider). 
+- An actual certificate (as retrieved from the certificate provider).
 - Path to the file containing the certificate.
 - Path to a directory containing the certificate.
 - Thumbprint of the certificate (used to look in the certificate store).
@@ -178,7 +178,7 @@ Specifies one or more CMS message recipients, identified in any of the following
 ```yaml
 Type: CmsMessageRecipient[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -203,4 +203,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-CmsMessage](Get-CmsMessage.md)
 
 [Unprotect-CmsMessage](Unprotect-CmsMessage.md)
-

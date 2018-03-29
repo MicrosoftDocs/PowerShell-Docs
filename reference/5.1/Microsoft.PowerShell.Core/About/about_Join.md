@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -109,4 +109,3 @@ a b c
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Split](about_Split.md)
-

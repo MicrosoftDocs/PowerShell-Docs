@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -33,4 +33,3 @@ Imports performance counter log files and creates the objects that represent eac
 
 ### [New-WinEvent](New-WinEvent.md)
 Creates an ETW event for the specified event provider.
-
