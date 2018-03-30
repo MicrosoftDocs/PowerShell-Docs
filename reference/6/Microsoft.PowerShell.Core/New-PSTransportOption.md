@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -65,7 +65,7 @@ The output shows that the cmdlet generates a transport option object that has nu
 
 ### Example 2: Get session configuration options
 ```
-The first command uses the **New-PSTransportOption** cmdlet to create a transport options object, which it saves in the $t variable. The command uses the *MaxSessions* parameter to increase the maximum number of sessions to 40. 
+The first command uses the **New-PSTransportOption** cmdlet to create a transport options object, which it saves in the $t variable. The command uses the *MaxSessions* parameter to increase the maximum number of sessions to 40.
 PS C:\> $t = New-PSTransportOption -MaxSessions 40
 
 The second command uses the **Register-PSSessionConfiguration** cmdlet create the ITTasks session configuration. The command uses the *TransportOption* parameter to specify the transport options object in the $t variable.
@@ -157,7 +157,7 @@ To set the value of the **MaxIdleTimeoutMs** property, use the *MaxIdleTimeoutSe
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -175,7 +175,7 @@ The *MaxConcurrentCommandsPerSession* parameter corresponds to the **MaxConcurre
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -191,7 +191,7 @@ The default value is 5.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -212,7 +212,7 @@ The *MaxIdleTimeoutSec* parameter corresponds to the **MaxIdleTimeoutMs** proper
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -231,7 +231,7 @@ The *MaxMemoryPerSessionMB* parameter corresponds to the **MaxMemoryPerShellMB**
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -249,7 +249,7 @@ The *MaxProcessesPerSession* parameter corresponds to the **MaxProcessesPerShell
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -267,7 +267,7 @@ The *MaxSessions* parameter corresponds to the **MaxShells** property of a sessi
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -287,7 +287,7 @@ The *MaxSessionsPerUser* parameter corresponds to the **MaxShellsPerUser** prope
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -301,10 +301,10 @@ Determines how command output is managed in disconnected sessions when the outpu
 The acceptable values for this parameter are:
 
 - Block.
-When the output buffer is full, execution is suspended until the buffer is clear. 
+When the output buffer is full, execution is suspended until the buffer is clear.
 - Drop.
 When the output buffer is full, execution continues.
-As new output is saved, the oldest output is discarded. 
+As new output is saved, the oldest output is discarded.
 - None.
 No output buffering mode is specified.
 
@@ -313,7 +313,7 @@ The default value of the **OutputBufferingMode** property of sessions is Block.
 ```yaml
 Type: OutputBufferingMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, Drop, Block
 
 Required: False
@@ -333,7 +333,7 @@ For example, the **Microsoft.PowerShell.Workflow** session configuration has a p
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -347,7 +347,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-###  
+###
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
@@ -366,4 +366,3 @@ You cannot pipe input to this cmdlet.
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
 [Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -245,7 +245,7 @@ The default value is 5.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -269,7 +269,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 ```yaml
 Type: String
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -282,13 +282,13 @@ Accept wildcard characters: False
 Specifies the mechanism that is used to authenticate the user's credentials.
 The acceptable values for this parameter are:
 
-- Default 
-- Basic 
-- Credssp 
-- Digest  
-- Kerberos  
-- Negotiate 
-- NegotiateWithImplicitCredential 
+- Default
+- Basic
+- Credssp
+- Digest
+- Kerberos
+- Negotiate
+- NegotiateWithImplicitCredential
 
 The default value is Default.
 
@@ -301,7 +301,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
 Required: False
@@ -323,7 +323,7 @@ To get a certificate, use the Get-Item or Get-ChildItem command in the Windows P
 ```yaml
 Type: String
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -377,7 +377,7 @@ For more information, see [about_Preference_Variables](About/about_Preference_Va
 ```yaml
 Type: String
 Parameter Sets: ComputerName, VMName, Uri, VMId, ContainerId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -428,7 +428,7 @@ When you type a user name, this cmdlet prompts you for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -440,7 +440,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: VMName, VMId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -473,7 +473,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, Uri, Session
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -491,7 +491,7 @@ The name is not required to be unique to the computer or the current session.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -529,7 +529,7 @@ To connect to a remote computer, the remote computer must be configured with the
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName, HostName, SSHConnection
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -549,7 +549,7 @@ The resulting **PSSession** objects have the same computer name, application nam
 ```yaml
 Type: PSSession[]
 Parameter Sets: Session
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -575,7 +575,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: PSSessionOption
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -593,7 +593,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -614,7 +614,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -631,7 +631,7 @@ To see the containers that are available to you, use the **Get-Container** cmdle
 ```yaml
 Type: String[]
 Parameter Sets: ContainerId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -646,7 +646,7 @@ Indicates that the **PSSession** runs as administrator.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ContainerId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -658,7 +658,7 @@ Accept wildcard characters: False
 ### -VMId
 Specifies an array of ID of virtual machines.
 This cmdlet starts an interactive session with each of the specified virtual machines.
-To see the virtual machines that are available to you, use the following command: 
+To see the virtual machines that are available to you, use the following command:
 
 `Get-VM | Select-Object -Property Name, ID`
 
@@ -682,7 +682,7 @@ To see the virtual machines that are available to you, use the **Get-VM** cmdlet
 ```yaml
 Type: String[]
 Parameter Sets: VMName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -807,7 +807,7 @@ You can pipe a string, URI, or session object to this cmdlet.
 * To create a **PSSession** on the local computer, start Windows PowerShell with the Run as administrator option.
 * When you are finished with the **PSSession**, use the Remove-PSSession cmdlet to delete the **PSSession** and release its resources.
 * The **HostName** and **SSHConnection** parameter sets were included starting with PowerShell 6.0. They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported.
-For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting). 
+For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
 
 ## RELATED LINKS
 
@@ -826,4 +826,3 @@ For more information about how to set up PowerShell SSH remoting see (https://gi
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-
