@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Sorting Objects
 ms.assetid:  8530caa8-3ed4-4c56-aed7-1295dd9ba199

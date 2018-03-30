@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working With Files Folders and Registry Keys
 ms.assetid:  e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc

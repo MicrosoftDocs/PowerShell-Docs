@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Using Format Commands to Change Output View
 ms.assetid:  63515a06-a6f7-4175-a45e-a0537f4f6d05

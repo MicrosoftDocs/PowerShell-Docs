@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Creating a Custom Input Box
 ms.assetid:  0b12e56c-299f-40ee-afbf-d30d23ed2565

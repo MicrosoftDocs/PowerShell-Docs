@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Managing Current Location
 ms.assetid:  a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a

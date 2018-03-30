@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Software Installations
 ms.assetid:  51a12fe9-95f6-4ffc-81a5-4fa72a5bada9

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Scripting with Windows PowerShell
 ms.assetid:  c425d27a-bb41-4947-8d73-ba5480bc8ee0
@@ -19,4 +19,3 @@ Windows PowerShell includes the following features:
 - Simplified, command-based navigation of the operating system, which lets users navigate the registry and other data stores by using the same techniques that they use to navigate the file system.
 - Powerful object manipulation capabilities. Objects can be directly manipulated or sent to other tools or databases.
 - Extensible interface. Independent software vendors and enterprise developers can build custom tools and utilities to administer their software.
-
