@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -185,7 +185,7 @@ To find the ID of a **PSSession**, run the Get-PSSession cmdlet without paramete
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -207,7 +207,7 @@ To find the **InstanceID** of the **PSSessions** in the current session, type `G
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -226,7 +226,7 @@ Because the friendly name of a **PSSession** might not be unique, when you use t
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -243,7 +243,7 @@ You can also pipe one or more session objects to **Remove-PSSession**.
 ```yaml
 Type: PSSession[]
 Parameter Sets: Session
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -276,7 +276,7 @@ To see the containers that are available to you, use the **Get-Container** cmdle
 ```yaml
 Type: String[]
 Parameter Sets: ContainerId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 ### -VMId
 Specifies an array of ID of virtual machines.
 This cmdlet starts an interactive session with each of the specified virtual machines.
-To see the virtual machines that are available to you, use the following command: 
+To see the virtual machines that are available to you, use the following command:
 
 `Get-VM | Select-Object -Property Name, ID`
 
@@ -312,7 +312,7 @@ To see the virtual machines that are available to you, use the **Get-VM** cmdlet
 ```yaml
 Type: String[]
 Parameter Sets: VMName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -356,4 +356,3 @@ This cmdlet does not return any objects.
 [New-PSSession](New-PSSession.md)
 
 [Receive-PSSession](Receive-PSSession.md)
-

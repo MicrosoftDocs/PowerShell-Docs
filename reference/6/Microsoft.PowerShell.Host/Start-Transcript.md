@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -70,7 +70,7 @@ Use the **Path** parameter to specify the file.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -87,7 +87,7 @@ The cmdlet cannot override security restrictions when this parameter is used.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -102,7 +102,7 @@ Indicates that this cmdlet logs the time stamp when commands are run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -134,7 +134,7 @@ Windows PowerShell automatically assigns the transcript name.
 ```yaml
 Type: String
 Parameter Sets: ByOutputDirectory
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -156,7 +156,7 @@ If any of the directories in the path do not exist, the command fails.
 ```yaml
 Type: String
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -239,4 +239,3 @@ For more information, see about_Profiles.
 ## RELATED LINKS
 
 [Stop-Transcript](Stop-Transcript.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -43,7 +43,7 @@ PS C:\> {{ Add example code here }}
 ```yaml
 Type: Ast
 Parameter Sets: AstInputSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -58,7 +58,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Int32
 Parameter Sets: ScriptInputSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: ScriptInputSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```yaml
 Type: IScriptPosition
 Parameter Sets: AstInputSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Token[]
 Parameter Sets: AstInputSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -139,4 +139,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-
