@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Accessibility in Windows PowerShell ISE
 ms.assetid:  a078f9d1-dd6b-4323-b16d-0622cd993aa8

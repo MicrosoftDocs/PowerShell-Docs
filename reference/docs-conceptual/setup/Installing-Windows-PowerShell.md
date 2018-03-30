@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-08-09
+ms.date:  08/09/2017
 keywords:  powershell,cmdlet,download,install,setup,windows 10, windows 8.1, windows 8.0,windows 7
 title:  Installing Windows PowerShell
 ---
@@ -37,10 +37,10 @@ Windows 7 SP1 | Click left lower corner Windows icon, on the search box start ty
 
 ## Finding PowerShell in Windows Server versions
 
-Starting with Windows Server 2008 R2, 
-Windows operating system can be installed 
+Starting with Windows Server 2008 R2,
+Windows operating system can be installed
 without the graphical user interface (GUI).
-Editions of Windows Server without GUI are named **Core** editions, 
+Editions of Windows Server without GUI are named **Core** editions,
 and editions with the GUI are named **Desktop**.
 
 ### Windows Server Core editions
@@ -49,7 +49,7 @@ In all Core editions,
 when you log to the server you get a Windows command prompt window.
 
 Type `powershell` and press **ENTER** to start PowerShell
-inside the command prompt session. 
+inside the command prompt session.
 Type `exit` to terminate the PowerShell session and return to command prompt.
 
 ### Windows Server Desktop editions
@@ -58,9 +58,9 @@ In all desktop editions,
 click the left lower corner Windows icon, start typing PowerShell.
 You get both console and ISE options.
 
-The only exception to the above rule is the ISE 
+The only exception to the above rule is the ISE
 in Windows Server 2008 R2 SP1;
-in this case, click the left lower corner Windows icon, 
+in this case, click the left lower corner Windows icon,
 type PowerShell ISE.
 
 ## How to check the version of PowerShell

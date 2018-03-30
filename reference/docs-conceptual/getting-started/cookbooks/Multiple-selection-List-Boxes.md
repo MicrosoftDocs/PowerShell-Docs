@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Multiple selection List Boxes
 ms.assetid:  f74cd5d9-da57-4802-b614-0b194a7bc8f8
@@ -43,7 +43,7 @@ $label.Size = New-Object System.Drawing.Size(280,20)
 $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 
-$listBox = New-Object System.Windows.Forms.Listbox 
+$listBox = New-Object System.Windows.Forms.Listbox
 $listBox.Location = New-Object System.Drawing.Point(10,40)
 $listBox.Size = New-Object System.Drawing.Size(260,20)
 

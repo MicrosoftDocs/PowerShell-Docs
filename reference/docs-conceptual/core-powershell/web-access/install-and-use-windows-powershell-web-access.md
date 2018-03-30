@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-08-23
+ms.date:  08/23/2017
 keywords:  powershell,cmdlet
 title:  install and use windows powershell web access
 ---
@@ -33,7 +33,7 @@ Windows PowerShell console by using a web browser. When users open the
 secured Windows PowerShell Web Access website, they can run a web-based
 Windows PowerShell console after successful authentication.
 
-Windows PowerShell Web Access setup and configuration is a three-step 
+Windows PowerShell Web Access setup and configuration is a three-step
 process:
 
 1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access)
@@ -109,7 +109,7 @@ are not officially tested.
 
 ### Browser requirements
 
-To use the Windows PowerShell Web Access web-based console, 
+To use the Windows PowerShell Web Access web-based console,
 browsers must do the following.
 
 - Allow cookies from the Windows PowerShell Web Access gateway website.
@@ -148,7 +148,7 @@ elevated user rights.
    >**![Note](images/note.jpeg) Note**
    >
    >Installing Windows PowerShell Web Access by using Windows PowerShell cmdlets does not add Web Server (IIS) management tools by default. If you want to install the management tools on the same server as the Windows PowerShell Web Access gateway, add the `-IncludeManagementTools` parameter to the installation command (as provided in this step). If you are managing the Windows PowerShell Web Access website from a remote computer, install the IIS Manager snap-in by installing [Remote Server Administration Toolsfor Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145) or [Remote Server Administration Tools for Windows 8](http://go.microsoft.com/fwlink/p/?LinkID=238560) on the computer from which you want to manage the gateway.
-   
+
    To install roles and features on an offline VHD, you must add both the `-ComputerName` parameter and the `-VHD` parameter. The `-ComputerName` parameter contains the name of the server on which to mount the VHD, and the `-VHD` parameter contains the path to the VHD file on the specified server.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
@@ -191,9 +191,9 @@ that are available for web applications, such as changing the port number
 or the Secure Sockets Layer (SSL) certificate.
 
 >**![Security Note](images/securitynote.jpeg) Security Note**
-> 
+>
 >We strongly recommend that administrators configure
-the gateway to use a valid certificate that has been signed by a CA. 
+the gateway to use a valid certificate that has been signed by a CA.
 
 #### To configure the Windows PowerShell Web Access gateway with a test certificate by using Install-PswaWebApplication
 
@@ -235,12 +235,12 @@ these manually in the IIS Manager console, if desired.
 In this example, the resulting website for Windows PowerShell Web Access is
 https://\<*server_name*\>/myWebApp.
 
->**![Note](images/note.jpeg) Note** 
-> 
+>**![Note](images/note.jpeg) Note**
+>
 >You cannot sign in until users have
 been granted access to the website by adding authorization rules. For more
-information, see 
-[configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule) 
+information, see
+[configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
 and [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 #### To configure the Windows PowerShell Web Access gateway with a genuine certificate by using Install-PswaWebApplication and IIS Manager
@@ -289,21 +289,21 @@ Web Access web application. In the **Actions** pane, click **Bindings**.
 7. In the **Add Site Binding** dialog box, in the **Type** field, select **https**.
 
 8. In the **SSL certificate** field, select your signed certificate from
-the drop-down menu. Click **OK**. See 
+the drop-down menu. Click **OK**. See
 [To configure an SSL certificate in IIS Manager](#to-configure-an-ssl-certificate-in-iis-Manager)
 in this topic for more information about how to
 obtain a certificate.
 
-    The Windows PowerShell Web Access web application is now configured to 
+    The Windows PowerShell Web Access web application is now configured to
     use your signed SSL certificate.
 
-    You can access Windows PowerShell Web Access by opening 
+    You can access Windows PowerShell Web Access by opening
     **https://\<server_name\>/pswa** in a browser window.
 
->**![Note](images/note.jpeg) Note** 
-> 
->You cannot sign in until users have been granted access to the website 
->by adding authorization rules. 
+>**![Note](images/note.jpeg) Note**
+>
+>You cannot sign in until users have been granted access to the website
+>by adding authorization rules.
 >For more information, see [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule), in this topic, and [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### Configure a restrictive authorization rule
@@ -315,11 +315,11 @@ access explicitly. Windows PowerShell Web Access access control is managed
 by using the set of Windows PowerShell cmdlets described in the following
 table. There is no comparable GUI for adding or managing authorization
 rules. For more detailed information about Windows PowerShell Web Access
-cmdlets, see the cmdlet reference topics, 
+cmdlets, see the cmdlet reference topics,
 [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
 
-For more detail about Windows PowerShell Web Access authorization rules and 
-security, see 
+For more detail about Windows PowerShell Web Access authorization rules and
+security, see
 [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 #### To add a restrictive authorization rule
@@ -344,7 +344,7 @@ instructions for creating session configurations in
    the network to which they typically have access, with access to a specific
    session configuration that is scoped to the user's typical scripting and
    cmdlet needs.
-   
+
    In the following example, a user named `JSmith` in the
    `Contoso` domain is granted access to manage the computer `Contoso_214`,
    and use a session configuration named `NewAdminsOnly`.
@@ -385,7 +385,7 @@ IIS Manager.
 
 6. Note that you are prompted to add required features, such as .NET Framework 4.5, and role services of Web Server (IIS). Add required features and continue.
 
-    >**![Note](images/note.jpeg) Note** 
+    >**![Note](images/note.jpeg) Note**
     >
     >Installing Windows PowerShell Web Access by using the Add Roles and Features Wizard also installs Web Server (IIS), including the IIS Manager snap-in. The snap-in and other IIS management tools are installed by default if you use Add Roles and Features Wizard. If you install Windows PowerShell Web Access by using Windows PowerShell cmdlets as described in the following procedure, management tools are not added by default.
 
@@ -419,21 +419,21 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
 
 8. In the **Physical path** field, browse for the location of the application. You can use the default location, %windir%/Web/PowerShellWebAccess/wwwroot. Click **OK**.
 
-9. Follow the steps in the procedure 
+9. Follow the steps in the procedure
 To configure an SSL certificate in IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager)
 in this topic.
 
 10. ![](images/SecurityNote.jpeg) Optional security step:
 
-    With the website selected in the tree pane, double-click **SSL Settings** in the content pane. 
-Select **Require SSL**, and then in the **Actions** pane, click **Apply**. 
-Optionally, in the **SSL Settings** pane, you can require that users 
-connecting to the Windows PowerShell Web Access website have client 
-certificates. Client certificates help to verify the identity of a client 
-device user. 
-For more information about how requiring client certificates can increase the 
-security of Windows PowerShell Web Access, see 
-[Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) 
+    With the website selected in the tree pane, double-click **SSL Settings** in the content pane.
+Select **Require SSL**, and then in the **Actions** pane, click **Apply**.
+Optionally, in the **SSL Settings** pane, you can require that users
+connecting to the Windows PowerShell Web Access website have client
+certificates. Client certificates help to verify the identity of a client
+device user.
+For more information about how requiring client certificates can increase the
+security of Windows PowerShell Web Access, see
+[Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md)
 in this guide.
 
 11. Open a browser session on a client device. For more information about supported browsers and devices, see [Browser and client device support](#browser-and-client-device-support) in this topic.
@@ -442,10 +442,10 @@ in this guide.
 
     The browser should display the Windows PowerShell Web Access console sign-in page.
 
-    >**![Note](images/note.jpeg) Note** 
-    > 
-    >You cannot sign in until users have been granted access to the website 
-    >by adding authorization rules. 
+    >**![Note](images/note.jpeg) Note**
+    >
+    >You cannot sign in until users have been granted access to the website
+    >by adding authorization rules.
     >For more information, see [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule), in this topic, and [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 13. In a Windows PowerShell session that has been opened with elevated user rights (Run as Administrator), run the following script, in which *application_pool_name* represents the name of the application pool that you created in step 3, to give the application pool access rights to the authorization file.
@@ -506,10 +506,10 @@ in this guide.
 
     Because the root website points to the Windows PowerShell Web Access folder, the browser should display the Windows PowerShell Web Access sign-in page when you open **https://\<*gateway_server_name*\>**. You should not need to add **/pswa** to the URL.
 
-    >**![Note](images/note.jpeg) Note** 
-    > 
-    >You cannot sign in until users have been granted access to the website 
-    >by adding authorization rules. 
+    >**![Note](images/note.jpeg) Note**
+    >
+    >You cannot sign in until users have been granted access to the website
+    >by adding authorization rules.
     >For more information, see [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule), in this topic, and [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### Configure a restrictive authorization rule
@@ -534,13 +534,13 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user'™s typical scripting and cmdlet needs. 
-    
+    This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user'™s typical scripting and cmdlet needs.
+
     In the following example, a user named `JSmith` in the `Contoso` domain is granted access to manage the computer `Contoso_214`, and use a session configuration named `NewAdminsOnly`.
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. Verify that the rule has been created by running either the `Get-PswaAuthorizationRule` cmdlet, or `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`. 
+4. Verify that the rule has been created by running either the `Get-PswaAuthorizationRule` cmdlet, or `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
     For example, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 

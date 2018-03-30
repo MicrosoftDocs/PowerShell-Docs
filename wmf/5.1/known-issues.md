@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -17,14 +17,14 @@ Reopen the shortcut as non-administrator and the shortcut now works even as admi
 ## Pester
 In this release, there are two issues you should be aware of when using Pester on Nano Server:
 
-* Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR. In particular, the Validate method is not available on the XmlDocument type. Six tests which attempt to validate the schema of the NUnit output logs are known to fail. 
+* Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR. In particular, the Validate method is not available on the XmlDocument type. Six tests which attempt to validate the schema of the NUnit output logs are known to fail.
 * One Code Coverage test fails currently because the *WindowsFeature* DSC Resource does not exist in Nano Server. However, these failures are generally benign and can safely be ignored.
 
-## Operation Validation 
+## Operation Validation
 
 * Update-Help fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI
 
-## DSC after uninstall WMF 
+## DSC after uninstall WMF
 * Uninstalling WMF does not delete DSC MOF documents from the configuration folder. DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems. In this case, run the following script from elevated PowerShell console to to clean up the DSC states.
  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -34,7 +34,7 @@ In this release, there are two issues you should be aware of when using Pester o
            )
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```  
+ ```
 
 ## JEA Virtual Accounts
 JEA endpoints and session configurations configured to use virtual accounts in WMF 5.0 will not be configured to use a virtual account after upgrading to WMF 5.1.
@@ -57,4 +57,3 @@ Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
 # Ensure the access policies remain the same
 Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
 ```
-

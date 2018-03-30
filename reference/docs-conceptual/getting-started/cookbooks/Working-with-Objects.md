@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Objects
 ms.assetid:  7ecc94a4-015c-4459-ae58-85289ea09030

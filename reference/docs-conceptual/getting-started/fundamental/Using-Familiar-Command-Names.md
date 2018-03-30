@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Using Familiar Command Names
 ms.assetid:  021e2424-c64e-4fa5-aa98-aa6405758d5d
@@ -63,4 +63,3 @@ Set-Alias : Alias is not writeable because alias gi is read-only or constant and
 At line:1 char:10
 + Set-Alias  <<<< -Name gi -Value Get-Item
 ```
-

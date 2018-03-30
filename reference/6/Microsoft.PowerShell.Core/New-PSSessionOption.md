@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -51,18 +51,18 @@ NoCompression                     : False
 NoMachineProfile                  : False
 ProxyAccessType                   : IEConfig
 ProxyAuthentication               : Negotiate
-ProxyCredential                   : 
+ProxyCredential                   :
 SkipCACheck                       : False
 SkipCNCheck                       : False
 SkipRevocationCheck               : False
 OperationTimeout                  : 00:03:00
 NoEncryption                      : False
 UseUTF16                          : False
-Culture                           : 
-UICulture                         : 
-MaximumReceivedDataSizePerCommand : 
-MaximumReceivedObjectSize         : 
-ApplicationArguments              : 
+Culture                           :
+UICulture                         :
+MaximumReceivedDataSizePerCommand :
+MaximumReceivedObjectSize         :
+ApplicationArguments              :
 OpenTimeout                       : 00:03:00
 CancelTimeout                     : 00:01:00
 IdleTimeout                       : 00:04:00
@@ -234,7 +234,7 @@ For more information, see about_Hash_Tables (http://go.microsoft.com/fwlink/?Lin
 ```yaml
 Type: PSPrimitiveDictionary
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -271,7 +271,7 @@ The default value is $Null, and the culture that is set in the operating system 
 ```yaml
 Type: CultureInfo
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -335,7 +335,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -353,7 +353,7 @@ This parameter was added for PowerShell version 5.0.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -372,7 +372,7 @@ This option is designed to protect the resources on the client computer.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -392,7 +392,7 @@ Beginning in Windows PowerShell 3.0, if you omit this parameter, the default val
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -411,7 +411,7 @@ This option is used in the session only when the *AllowRedirection* parameter is
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -427,7 +427,7 @@ Compression uses more processor cycles, but it makes transmission faster.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -442,7 +442,7 @@ Turns off data encryption.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -458,7 +458,7 @@ As a result, the session might be created faster, but user-specific registry set
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -518,10 +518,10 @@ A value of Block or Drop overrides the output buffering mode transport option se
 The acceptable values for this parameter are:
 
 - Block.
-When the output buffer is full, execution is suspended until the buffer is clear. 
+When the output buffer is full, execution is suspended until the buffer is clear.
 - Drop.
 When the output buffer is full, execution continues.
-As new output is saved, the oldest output is discarded. 
+As new output is saved, the oldest output is discarded.
 - None.
 No output buffering mode is specified.
 
@@ -532,7 +532,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: OutputBufferingMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, Drop, Block
 
 Required: False
@@ -546,11 +546,11 @@ Accept wildcard characters: False
 Determines which mechanism is used to resolve the host name.
 The acceptable values for this parameter are:
 
-- IEConfig 
-- WinHttpConfig 
-- AutoDetect 
-- NoProxyServer 
-- None 
+- IEConfig
+- WinHttpConfig
+- AutoDetect
+- NoProxyServer
+- None
 
 The default value is None.
 
@@ -559,7 +559,7 @@ For information about the values of this parameter, see [ProxyAccessType Enumera
 ```yaml
 Type: ProxyAccessType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, IEConfig, WinHttpConfig, AutoDetect, NoProxyServer
 
 Required: False
@@ -579,7 +579,7 @@ For more information about the values of this parameter, see [AuthenticationMech
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
 Required: False
@@ -597,7 +597,7 @@ If this option is not set, no credentials are specified.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -614,7 +614,7 @@ Use this option only when the remote computer is trusted by using another mechan
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -632,7 +632,7 @@ Use this option only for trusted computers.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -647,7 +647,7 @@ Does not validate the revocation status of the server certificate.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -666,7 +666,7 @@ The default value is $Null, and the UI culture that is set in the operating syst
 ```yaml
 Type: CultureInfo
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -681,7 +681,7 @@ Indicates that this cmdlet encodes the request in UTF16 format instead of UTF8 f
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -713,4 +713,3 @@ You cannot pipe input to this cmdlet.
 [Invoke-Command](Invoke-Command.md)
 
 [New-PSSession](New-PSSession.md)
-

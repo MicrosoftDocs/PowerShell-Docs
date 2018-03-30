@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISEFileCollection Object
 ms.assetid:  0f86a427-ea38-4bce-85f8-06c98d30d508

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -64,7 +64,7 @@ Copy a few examples into a file, which you will use as your template:
 
     Renton, WA
 
-   
+
 
 Put curly braces around data that you want to extract, giving it a name as you do so. Because the **Name** property (and its associated other properties) can appear multiple times, use an asterisk (\*) to indicate that this results in multiple records (rather than extracting a bunch of properties into one record):
 
@@ -92,4 +92,3 @@ From this set of examples, **ConvertFrom-String** can now automatically extract 
 > Hanna Moos...                  Hanna Moos         Puyallup WA
 
 To do additional data manipulation on extracted text, the **ExtentText** property captures the raw text from which the record was extracted. To provide feedback on this feature, or to share content for which you are having difficulty writing examples, please email <psdmfb@microsoft.com>.
-

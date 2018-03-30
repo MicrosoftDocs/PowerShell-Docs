@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Installing the Windows PowerShell 2.0 Engine
 ms.assetid:  82928f2b-f96a-4ae6-a0d0-6e7b181da308
@@ -74,4 +74,3 @@ The Windows Management Framework 3.0 package that installs Windows PowerShell 3.
 - [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Starting Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 - [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -29,4 +29,3 @@ wusa /uninstall /kb:3134760
 2.	Open **Programs**, then open **Uninstall a program.**
 3.	Click **View installed updates.**
 4.	Select **Windows Management Framework 5.0** from the list of installed updates. This corresponds to *KB3134758*, *KB3134759*, or *KB3134760*. Click **Uninstall.**
-

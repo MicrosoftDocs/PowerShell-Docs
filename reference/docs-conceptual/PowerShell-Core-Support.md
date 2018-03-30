@@ -72,7 +72,7 @@ you can append the Windows PowerShell `PSModulePath` to your PowerShell Core `PS
 First, install the `WindowsPSModulePath` module from the PowerShell Gallery:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 

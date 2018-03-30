@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -68,7 +68,7 @@ The second command gets registered repositories and displays the results.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Trusted, Untrusted
 
 Required: False
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PSGalleryParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -204,7 +204,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -244,4 +244,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-PSRepository](Set-PSRepository.md)
 
 [Unregister-PSRepository](Unregister-PSRepository.md)
-

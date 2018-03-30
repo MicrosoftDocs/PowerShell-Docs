@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -41,7 +41,7 @@ This command uses the **New-WinEvent** cmdlet to create event 45090 for the Micr
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Byte
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -115,4 +115,3 @@ This cmdlet does not generate any output.
 ## RELATED LINKS
 
 [Get-WinEvent](Get-WinEvent.md)
-

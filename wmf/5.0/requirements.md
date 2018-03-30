@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -51,7 +51,7 @@ Ensure following prerequisites have been met:
 Windows Server 2008 R2 SP1 and Windows 7 SP1 systems have built-in PowerShell 2.0, WinRM, and WMI. WMF 3.0 and WMF 4.0 packages, which updates these built-in components, were released after the release of Windows Server 2008 R2 SP1 and Windows 7 SP1. Installing/Uninstalling WMF 3.0 and WMF 4.0 packages uncovered some issues in the following upgrade path:
 
 - Built-in --> WMF 4.0
-- Built-in --> WMF 3.0 --> WMF4.0. 
+- Built-in --> WMF 3.0 --> WMF4.0.
 
 We fixed all these issues in WMF 4.0 packages. Hence, there is a prerequisite of WMF 4.0 for installing WMF 5.0 on Windows Server 2008 R2 SP1 and Windows 7 SP1. Below are the specific issues you might encounter if you do not install WMF 4.0 before upgrading to WMF 5.0:
 
@@ -92,4 +92,3 @@ wusa /uninstall /kb:3134760
 3.	Click **View installed updates.**
 
 4.	Select **Windows Management Framework 5.0** from the list of installed updates. This corresponds to *KB3134758*, *KB3134759*, or *KB3134760*. Click **Uninstall.**
-

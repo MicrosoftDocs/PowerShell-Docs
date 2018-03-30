@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Appendix 2 Creating a Custom PowerShell Shortcut
 ms.assetid:  5d4fd421-5d43-4ec7-86fd-acfe887b066e

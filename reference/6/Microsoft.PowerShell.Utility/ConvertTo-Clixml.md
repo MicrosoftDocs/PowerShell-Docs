@@ -1,9 +1,9 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  
+online version:
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertTo-Clixml
 ---
@@ -81,7 +81,7 @@ For more information, see about_Types.ps1xml.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -108,7 +108,7 @@ The default value is Unicode.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, OEM
 
 Required: False
@@ -126,7 +126,7 @@ You can also pipe objects to **ConvertTo-Clixml**.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Removing Objects from the Pipeline Where Object
 ms.assetid:  01df8b22-2d22-4e2c-a18d-c004cd3cc284

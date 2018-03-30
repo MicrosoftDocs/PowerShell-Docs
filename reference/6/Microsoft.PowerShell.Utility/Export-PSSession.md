@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -444,4 +444,3 @@ If the command does not import formatting data, any formatting files that are cr
 ## RELATED LINKS
 
 [Import-PSSession](Import-PSSession.md)
-
