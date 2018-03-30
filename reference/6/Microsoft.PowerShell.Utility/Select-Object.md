@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -179,7 +179,7 @@ This parameter is effective only when the command also includes the *Property* p
 ```yaml
 Type: String[]
 Parameter Sets: DefaultParameter, SkipLastParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -198,7 +198,7 @@ If the property contains an object, the properties of that object are displayed 
 ```yaml
 Type: String
 Parameter Sets: DefaultParameter, SkipLastParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -216,7 +216,7 @@ Indexes in an array begin with 0, where 0 represents the first value and (n-1) r
 ```yaml
 Type: Int32[]
 Parameter Sets: IndexParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -235,7 +235,7 @@ Because *InputObject* cannot return individual properties from an array or colle
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -250,7 +250,7 @@ Specifies the number of objects to select from the end of an array of input obje
 ```yaml
 Type: Int32
 Parameter Sets: DefaultParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -273,7 +273,7 @@ Valid keys are:
 ```yaml
 Type: Object[]
 Parameter Sets: DefaultParameter, SkipLastParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Int32
 Parameter Sets: SkipLastParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -306,7 +306,7 @@ As a result, strings that differ only in character casing are considered to be u
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -324,7 +324,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: DefaultParameter, IndexParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -340,7 +340,7 @@ Enter the number of objects to get.
 ```yaml
 Type: Int32
 Parameter Sets: DefaultParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -356,7 +356,7 @@ Enter the number of objects to skip.
 ```yaml
 Type: Int32
 Parameter Sets: DefaultParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -386,4 +386,3 @@ You can pipe any object to **Select-Object**.
 [Group-Object](Group-Object.md)
 
 [Sort-Object](Sort-Object.md)
-

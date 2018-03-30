@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -28,10 +28,10 @@ When you use CredSSP authentication, the user credentials are passed to a remote
 This type of authentication is designed for commands that create a remote session from another remote session.
 For example, if you want to run a background job on a remote computer, use this kind of authentication.
 
-The cmdlet performs the following actions: 
+The cmdlet performs the following actions:
 
-- Gets the WS-Management CredSSP setting on the client (**\<localhost|computername\>\Client\Auth\CredSSP**). 
-- Gets the Windows CredSSP policy setting **AllowFreshCredentials**. 
+- Gets the WS-Management CredSSP setting on the client (**\<localhost|computername\>\Client\Auth\CredSSP**).
+- Gets the Windows CredSSP policy setting **AllowFreshCredentials**.
 - Gets the WS-Management CredSSP setting on the server (**\<localhost|computername\>\Service\Auth\CredSSP**).
 
 Caution: CredSSP authentication delegates the user credentials from the local computer to a remote computer.
@@ -49,11 +49,11 @@ This command displays CredSSP configuration information for both the client and 
 
 The output identifies that this computer is or is not configured for CredSSP.
 
-If the computer is configured for CredSSP, this is the output: 
+If the computer is configured for CredSSP, this is the output:
 
 `The machine is configured to allow delegating fresh credentials to the following target(s): wsman/server02.accounting.fabrikam.com`
 
-If the computer is not configured for CredSSP, this is the output: 
+If the computer is not configured for CredSSP, this is the output:
 
 `The machine is not configured to allow delegating fresh credentials.`
 
@@ -100,4 +100,3 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-
