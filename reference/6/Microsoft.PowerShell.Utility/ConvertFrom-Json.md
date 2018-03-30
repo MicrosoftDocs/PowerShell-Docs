@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821753
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertFrom-Json
 ---
-
 # ConvertFrom-Json
 
 ## SYNOPSIS
@@ -32,7 +31,7 @@ See other examples below.
 
 To generate a JSON string from any object, use the ConvertTo-Json cmdlet.
 
-This cmdlet was introduced in Windows PowerShell 3.0.
+This cmdlet was introduced in PowerShell 3.0.
 
 ## EXAMPLES
 
@@ -67,7 +66,9 @@ and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string to a JSON
 ### Example 2: Get JSON strings from a web service and convert them to Windows PowerShell objects
 
 ```powershell
-PS C:\> $j = Invoke-WebRequest -Uri http://search.twitter.com/search.json?q=PowerShell | ConvertFrom-Json
+# Ensures that Invoke-WebRequest uses TLS 1.2
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' | ConvertFrom-Json
 ```
 
 This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service
@@ -79,7 +80,7 @@ You can also use the Invoke-RestMethod cmdlet, which automatically converts JSON
 ### Example 3: Convert a JSON string to a custom object
 
 ```powershell
-PS C:\> (Get-Content JsonFile.JSON) -join "`n" | ConvertFrom-Json
+(Get-Content JsonFile.JSON) -join '`n' | ConvertFrom-Json
 ```
 
 This example shows how to use the `ConvertFrom-Json` cmdlet to convert a JSON file to a PowerShell custom object.
@@ -95,7 +96,7 @@ The Join operator is required, because the `ConvertFrom-Json` cmdlet expects a s
 ### Example 4: Convert a JSON string to a hash table
 
 ```powershell
-PS C:\> '{ "key":"value1", "Key":"value2" }' | ConvertFrom-Json -AsHashtable
+'{ "key":"value1", "Key":"value2" }' | ConvertFrom-Json -AsHashtable
 ```
 
 This command shows an example where the `-AsHashtable` switch can overcome limitations of the command.
@@ -127,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsHashtable
+
 Converts the JSON to a hash table object. This switch was introduced in PowerShell 6.0.
 There are several scenarios where it can overcome some limitations of the `ConvertFrom-Json` cmdlet.
 
@@ -148,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction,
 -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and
 -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
@@ -155,6 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
+
 You can pipe a JSON string to `ConvertFrom-Json`.
 
 ## OUTPUTS
