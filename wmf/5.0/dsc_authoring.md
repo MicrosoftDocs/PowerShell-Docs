@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -15,4 +15,3 @@ Authoring DSC configurations in Windows PowerShell ISE is much easier, thanks to
 - Better tab completion of resource property values.
 
 **Note:** You must have an empty string for resource property values before you can use Ctrl+Space to list the options. Pressing **Tab** cycles through options.
-

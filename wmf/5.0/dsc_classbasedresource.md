@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -9,7 +9,7 @@ keywords:  wmf,powershell,setup
 
 ## Defining DSC resources with classes
 
-Based on feedback, we’ve made authoring class-based DSC resources simpler and easier to understand. 
+Based on feedback, we’ve made authoring class-based DSC resources simpler and easier to understand.
 The major differences between a class-based DSC resource and a cmdlet DSC resource provider are:
 
 * A MOF file for the schema is not required.
@@ -17,4 +17,3 @@ The major differences between a class-based DSC resource and a cmdlet DSC resour
 * A PowerShell module file can contain multiple DSC resource classes.
 
 For more information, see [Writing a custom DSC resource with PowerShell classes](https://msdn.microsoft.com/powershell/dsc/authoringresource).
-

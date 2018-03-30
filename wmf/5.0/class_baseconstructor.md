@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -10,7 +10,7 @@ keywords:  wmf,powershell,setup
 To call a base class constructor from a subclass, use the keyword **base**:
 
 ```powershell
-class A 
+class A
 {
 	[int]$a
 
@@ -36,4 +36,3 @@ class C : B
 	C([int]$c) {}
 }
 ```
-

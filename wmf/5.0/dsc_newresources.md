@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -7,11 +7,11 @@ keywords:  wmf,powershell,setup
 
 # New built-in DSC resources
 
-WMF 5.0 RTM has 4 new DSC resources: 
+WMF 5.0 RTM has 4 new DSC resources:
 * WindowsFeatureSet
 * WindowsOptionalFeatureSet
 * ServiceSet
-* ProcessSet 
+* ProcessSet
 
 These resources provide an easy way to configure multiple instances using a single resource call.
 
@@ -33,7 +33,7 @@ WindowsFeatureSet [String] #ResourceName
 }
 ```
 
-## WindowsOptionalFeatureSet 
+## WindowsOptionalFeatureSet
 
 ```powershell
 # Get the syntax of WindowsOptionalFeatureSet resource
@@ -52,7 +52,7 @@ WindowsOptionalFeatureSet [String] #ResourceName
 }
 ```
 
-## ServiceSet 
+## ServiceSet
 
 ```powershell
 # Get the syntax of ServiceSet resource
@@ -70,7 +70,7 @@ ServiceSet [String] #ResourceName
 }
 ```
 
-## ProcessSet 
+## ProcessSet
 
 ```powershell
 # Get the syntax of ProcessSet resource
@@ -88,4 +88,3 @@ ProcessSet [String] #ResourceName
     [WorkingDirectory = [String]]
 }
 ```
-
