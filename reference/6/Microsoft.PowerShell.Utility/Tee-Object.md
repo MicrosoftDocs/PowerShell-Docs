@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -91,7 +91,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: File
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -106,7 +106,7 @@ Specifies a file that this cmdlet saves the object to Wildcard characters are pe
 ```yaml
 Type: String
 Parameter Sets: File
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -126,7 +126,7 @@ Because *InputObject* cannot return individual properties from an array or colle
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -142,7 +142,7 @@ Enter a variable name without the preceding dollar sign ($).
 ```yaml
 Type: String
 Parameter Sets: Variable
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -200,4 +200,3 @@ You can pipe objects to **Tee-Object**.
 [Select-Object](Select-Object.md)
 
 [Sort-Object](Sort-Object.md)
-

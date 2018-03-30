@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -194,7 +194,7 @@ You can also pipe strings to **Select-Xml**.
 ```yaml
 Type: String[]
 Parameter Sets: Content
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -214,7 +214,7 @@ In the XPath statement, prefix each node name with the namespace name and a colo
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -230,7 +230,7 @@ Wildcard characters are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -247,7 +247,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -311,4 +311,3 @@ You can pipe a path or XML node to this cmdlet.
 ## RELATED LINKS
 
 [ConvertTo-Xml](ConvertTo-Xml.md)
-
