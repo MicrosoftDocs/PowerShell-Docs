@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -204,4 +204,3 @@ You can pipe a **DateTime** object that represents that start time to **New-Time
 [Get-Date](Get-Date.md)
 
 [Set-Date](Set-Date.md)
-

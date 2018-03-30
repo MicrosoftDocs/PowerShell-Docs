@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -104,4 +104,3 @@ You can pipe the results of a `Get-Runspace` command to `Debug-Runspace`.
 ## RELATED LINKS
 
 [Debug-Runspace](Debug-Runspace.md)
-
