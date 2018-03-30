@@ -776,7 +776,7 @@ Indicates the cmdlet should add headers to the request without validation.
 
 This switch should be used for sites that require header values that do not conform to standards. Specifying this switch disables validation to allow the value to be passed unchecked.  When specified, all headers are added without validation.
 
-This will disable validation for values passed to both the **-Headers** and **-UserAgent** parameters.
+This will disable validation for values passed to the **-ContentType**, **-Headers** and **-UserAgent** parameters.
 
 ```yaml
 Type: SwitchParameter
