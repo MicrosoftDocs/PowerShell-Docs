@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821451
 external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
 title:  Remove-PSReadlineKeyHandler
 ---
-
 # Remove-PSReadlineKeyHandler
 
 ## SYNOPSIS
+
 Removes a key binding.
 
 ## SYNTAX
@@ -20,12 +20,14 @@ Remove-PSReadlineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParam
 ```
 
 ## DESCRIPTION
+
 The **Remove-PSReadlineKeyHandler** cmdlet removes a specified key binding.
 Create a key binding by running the Set-PSReadlineKeyHandler cmdlet.
 
 ## EXAMPLES
 
 ### Example 1: Remove a binding
+
 ```powershell
 Remove-PSReadlineKeyHandler -Chord Ctrl+Shift+B
 ```
@@ -36,6 +38,7 @@ The Ctrl+Shift+B chord is created in the `Set-PSReadlineKeyHandler` topic.
 ## PARAMETERS
 
 ### -Chord
+
 Specifies an array of  keys or sequences of keys to be removed.
 A single binding is specified by using a single string.
 If the binding is a sequence of keys, separate the keys by a comma, as in the following example:
@@ -58,6 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -ViMode
+
 {{Fill ViMode Description}}
 
 ```yaml
@@ -74,11 +78,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-###
+### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS

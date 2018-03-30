@@ -7,26 +7,29 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=821452
 external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
 title:  Set-PSReadlineKeyHandler
 ---
-
 # Set-PSReadlineKeyHandler
 
 ## SYNOPSIS
+
 Binds keys to user-defined or PSReadline-provided key handlers.
 
 ## SYNTAX
 
 ### ScriptBlock
+
 ```
 Set-PSReadlineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String>] [-Description <String>]
  [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
 ```
 
 ### Function
+
 ```
 Set-PSReadlineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Set-PSReadlineKeyHandler** cmdlet customizes the result when a particular key or sequence of keys is pressed while PSReadline is reading input.
 By using user-defined key bindings, you can do almost anything that is possible from within a Windows PowerShell script.
 Typically, you might modify the command line in a new way, but because the handlers are just Windows PowerShell scripts, you can do interesting things such as change directories or open applications.
@@ -34,6 +37,7 @@ Typically, you might modify the command line in a new way, but because the handl
 ## EXAMPLES
 
 ### Example 1: Bind the arrow key to a function
+
 ```
 PS C:\> Set-PSReadlineKeyHandler -Chord UpArrow -Function HistorySearchBackward
 ```
@@ -41,6 +45,7 @@ PS C:\> Set-PSReadlineKeyHandler -Chord UpArrow -Function HistorySearchBackward
 This command binds the up arrow key to the function HistorySearchBackward, which uses the currently-entered command line as the start of the search string when it is searching through command history.
 
 ### Example 2: Bind a key to a script block
+
 ```powershell
 Set-PSReadlineKeyHandler -Chord Ctrl+Shift+B -ScriptBlock {
 	[Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
@@ -55,6 +60,7 @@ The example shows how a single key can be used to run a command.
 ## PARAMETERS
 
 ### -BriefDescription
+
 A brief description of the key binding.
 You can get this from the output of the Get-PSReadlineKeyHandler cmdlet.
 
@@ -71,6 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Chord
+
 Specifies an array of keys or sequences of keys to be bound to a function or script block.
 Use a single string to specify a single binding.
 If the binding is a sequence of keys, separate the keys by a comma, as in the following example:
@@ -93,6 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies a more detailed description of the key binding that is visible in the output of the **Get-PSReadlineKeyHandler** cmdlet.
 
 ```yaml
@@ -108,6 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -Function
+
 Specifies the name of an existing key handler provided by PSReadline.
 This parameter lets you rebind existing key bindings, or bind a handler that is provided by PSReadline and is currently unbound.
 By adding the *ScriptBlock* parameter, you can get equivalent functionality by calling the method directly from the script block.
@@ -128,6 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
+
 Specifies a script block value that is called when the chord is entered.
 The script block is passed one, or sometimes two, arguments.
 The first argument is the key pressed, a **ConsoleKeyInfo** object..
@@ -146,6 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -ViMode
+
 {{Fill ViMode Description}}
 
 ```yaml
@@ -162,11 +173,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-###
+### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS

@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821450
 external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
 title:  Get-PSReadlineOption
 ---
-
 # Get-PSReadlineOption
 
 ## SYNOPSIS
+
 Gets values for the options that can be configured.
 
 ## SYNTAX
@@ -20,6 +20,7 @@ Get-PSReadlineOption [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-PSReadlineOption** returns the current state of the settings that can be configured by using the Set-PSReadlineOption cmdlet.
 You can use the object that **Get-PSReadlineOption** returns to change PSReadline options.
 This provides a slightly simpler way to set syntax coloring options for multiple kinds of tokens.
@@ -27,6 +28,7 @@ This provides a slightly simpler way to set syntax coloring options for multiple
 ## EXAMPLES
 
 ### Example 1: Get options and their values
+
 ```
 PS C:\> Get-PSReadlineOption
 EditMode                               : Windows
@@ -83,11 +85,13 @@ This command returns the list of available PSReadline options and their current 
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-###
+### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS

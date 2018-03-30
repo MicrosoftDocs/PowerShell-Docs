@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=821449
 external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
 title:  Get-PSReadlineKeyHandler
 ---
-
 # Get-PSReadlineKeyHandler
 
 ## SYNOPSIS
+
 Gets the key bindings for the PSReadline module.
 
 ## SYNTAX
@@ -20,6 +20,7 @@ Get-PSReadlineKeyHandler [-Bound] [-Unbound] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-PSReadlineKeyHandler** cmdlet gets key bindings.
 If you specify the *Bound* and *Unbound* parameters, this cmdlet returns all bound keys and unbound functions.
 If you specify *Bound*, but not *Unbound*, the cmdlet returns only bound keys.
@@ -28,6 +29,7 @@ If you specify *Unbound*, but not *Bound*, the cmdlet returns only unbound keys.
 ## EXAMPLES
 
 ### Example 1: Get all key mappings
+
 ```
 PS C:\> Get-PSReadlineKeyHandler
 Key                   Function                Description
@@ -65,6 +67,7 @@ Ctrl+r                ReverseSearchHistory    Search history backwards interacti
 This command returns all key mappings, bound and unbound.
 
 ### Example 2: Get bound keys
+
 ```
 PS C:\> Get-PSReadlineKeyHandler -Bound
 Key                   Function                Description
@@ -98,6 +101,7 @@ This command returns only bound keys and key combinations.
 ## PARAMETERS
 
 ### -Bound
+
 Indicates that this cmdlet returns functions that are bound.
 
 ```yaml
@@ -113,6 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -Unbound
+
 Indicates that this cmdlet returns functions that are unbound.
 
 ```yaml
@@ -128,16 +133,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-###
+### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### PSConsoleUtilities.KeyHandler
+
 This cmdlet returns one entry for each key binding, or chord, for bound functions and one entry for each unbound function.
 
 ## NOTES
