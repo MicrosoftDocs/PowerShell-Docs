@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  PowerShell.exe Command Line Help
 ms.assetid:  1ab7b93b-6785-42c6-a1c9-35ff686a958f
@@ -17,13 +17,13 @@ PowerShell[.exe]
        [-EncodedCommand <Base64EncodedCommand>]
        [-ExecutionPolicy <ExecutionPolicy>]
        [-File <FilePath> [<Args>]]
-       [-InputFormat {Text | XML}] 
+       [-InputFormat {Text | XML}]
        [-Mta]
        [-NoExit]
        [-NoLogo]
-       [-NonInteractive] 
-       [-NoProfile] 
-       [-OutputFormat {Text | XML}] 
+       [-NonInteractive]
+       [-NoProfile]
+       [-OutputFormat {Text | XML}]
        [-PSConsoleFile <FilePath> | -Version <PowerShell version>]
        [-Sta]
        [-WindowStyle <style>]

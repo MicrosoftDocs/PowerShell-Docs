@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-27
+ms.date:  06/27/2017
 keywords:  powershell,cmdlet
 title:  Authorization Rules and Security Features of Windows PowerShell Web Access
 ---

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The PowerShellTabCollection Object
 ms.assetid:  81f4bf4a-83bf-415e-8378-1703792fbb58
@@ -40,7 +40,7 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 ### SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
 
-Supported in Windows PowerShell ISE 2.0 and later. 
+Supported in Windows PowerShell ISE 2.0 and later.
 
 Selects the PowerShell tab that is specified by the **psTab** parameter to make it the currently active PowerShell tab.
 

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -80,7 +80,7 @@ Forces the update of each specified module, regardless of the current version of
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -99,7 +99,7 @@ If you add wildcard characters to the name that you specify, but no matches are 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -116,7 +116,7 @@ The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +133,7 @@ If the online gallery does not have this version of the specified module, an err
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -242,4 +242,3 @@ You can only run **Update-Module** on modules that you installed from the online
 [Publish-Module](Publish-Module.md)
 
 [Uninstall-Module](Uninstall-Module.md)
-

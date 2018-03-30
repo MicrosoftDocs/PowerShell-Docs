@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -54,7 +54,7 @@ It can remove aliases from the list of exported aliases, but it cannot add alias
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -69,7 +69,7 @@ Specifies the module author.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -84,7 +84,7 @@ Specifies the minimum version of the Common Language Runtime (CLR) of the Micros
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -103,7 +103,7 @@ It can remove cmdlets from the list of exported cmdlets, but it cannot add cmdle
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -118,7 +118,7 @@ Specifies the company or vendor who created the module.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +133,7 @@ Specifies a copyright statement for the module.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ Specifies the default command prefix.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -163,7 +163,7 @@ Specifies a description of the module.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -178,7 +178,7 @@ Specifies the minimum version of the Microsoft .NET Framework that the module re
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -194,7 +194,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -209,7 +209,7 @@ Specifies an array of external module dependencies.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -224,7 +224,7 @@ Specifies all items that are included in the module.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -242,7 +242,7 @@ Because formatting files are not scoped, they affect all session states in the s
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -261,7 +261,7 @@ It can remove functions from the list of exported aliases, but it cannot add fun
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -277,7 +277,7 @@ The GUID can be used to distinguish among modules with the same name.
 ```yaml
 Type: Guid
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -298,7 +298,7 @@ For information about the HelpInfo XML file, see [Supporting Updatable Help](htt
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -314,7 +314,7 @@ The specified icon is displayed on the gallery web page for the module.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -329,7 +329,7 @@ Specifies the URL of licensing terms for the module.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -351,7 +351,7 @@ The modules that are listed in the value of this key are not automatically proce
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -366,7 +366,7 @@ Specifies the version of the module.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -386,7 +386,7 @@ You can combine strings and hash tables in the parameter value.
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -401,7 +401,7 @@ Specifies an array of package management providers.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -417,7 +417,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -440,7 +440,7 @@ To use a variable, include the **Path** parameter in the command.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -459,7 +459,7 @@ To find the name of a host program, in the program, type `$host.name`.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -475,7 +475,7 @@ Enter a version number, such as 1.1.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -491,7 +491,7 @@ For example, you can specify 3.0, 4.0, or 5.0 as the value of this parameter.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -506,7 +506,7 @@ Specifies data that is passed to the module when it is imported.
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -529,7 +529,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: ProcessorArchitecture
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, MSIL, X86, IA64, Amd64, Arm
 
 Required: False
@@ -545,7 +545,7 @@ Specifies the URL of a web page about this project.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -560,7 +560,7 @@ Specifies a string array that contains release notes or comments that you want t
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -579,7 +579,7 @@ Use this parameter to specify all of the assemblies that the module requires, in
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -596,7 +596,7 @@ If the required modules are not available, the `Import-Module` command fails.
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -620,7 +620,7 @@ Note: In Windows PowerShell 2.0, this key was called **ModuleToProcess**.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -638,7 +638,7 @@ To specify scripts that run in the module's session state, use the **NestedModul
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -653,7 +653,7 @@ Specifies an array of tags.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -671,7 +671,7 @@ Because type files are not scoped, they affect all session states in the session
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -690,7 +690,7 @@ It can remove variables from the list of exported variables, but it cannot add v
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -737,7 +737,7 @@ For information about PSEdition, see [Modules with compatible PowerShell Edition
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Desktop, Core
 
 Required: False
@@ -757,4 +757,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
