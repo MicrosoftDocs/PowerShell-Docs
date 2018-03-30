@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Getting Ready to Use Windows PowerShell
 ms.assetid:  6dc7052d-cc5a-4220-950f-98f963a2b587
@@ -21,4 +21,3 @@ When Windows PowerShell is installed and started, consider the following setup o
 ## See Also
 - [Installing Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 - [Starting Windows PowerShell](/powershell/scripting/setup/starting-windows-powershell)
-

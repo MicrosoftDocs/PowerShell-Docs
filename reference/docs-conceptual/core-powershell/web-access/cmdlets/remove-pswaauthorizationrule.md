@@ -1,9 +1,9 @@
 ---
-description:  
+description:
 ms.topic:  article
 ms.prod:  powershell
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+ms.date:  12/12/2016
 title:  remove pswaauthorizationrule
 ms.technology:  powershell
 ---
@@ -39,7 +39,7 @@ Access.
 Runs the cmdlet without prompting for confirmation. By default the
 cmdlet asks for confirmation before proceeding.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -52,7 +52,7 @@ cmdlet asks for confirmation before proceeding.
 
 Specifies the identifiers (IDs) of one or more rules to remove.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |
@@ -65,7 +65,7 @@ Specifies the identifiers (IDs) of one or more rules to remove.
 
 Specifies the rules to remove.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |
@@ -78,7 +78,7 @@ Specifies the rules to remove.
 
 Prompts you for confirmation before running the cmdlet.
 
-|||  
+|||
 |-|-|
 | Required?                            | false                                |
 | Position?                            | named                                |
@@ -90,7 +90,7 @@ Prompts you for confirmation before running the cmdlet.
 
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
-|||  
+|||
 |-|-|
 | Required?                            | false                                |
 | Position?                            | named                                |

@@ -1,9 +1,9 @@
 ---
-description:  
+description:
 ms.topic:  article
 ms.prod:  powershell
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+ms.date:  12/12/2016
 title:  test pswaauthorizationrule
 ms.technology:  powershell
 ---
@@ -48,7 +48,7 @@ PowerShell® Web Access sign-on page.
 
 Specifies the name of the computer to test.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |
@@ -62,7 +62,7 @@ Specifies the name of the computer to test.
 Specifies the name of the Windows PowerShell session configuration, also
 known as endpoint or runspace, to test.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -75,7 +75,7 @@ known as endpoint or runspace, to test.
 
 Specifies the connection URI to test.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |
@@ -93,7 +93,7 @@ account. To get a **PSCredential** object, which is required to test
 authorization rules remotely, run the
 [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936) cmdlet.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -107,7 +107,7 @@ authorization rules remotely, run the
 Specifies a subset of rules to test. If this parameter is not specified,
 then this cmdlet tests against all authorization rules.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -120,7 +120,7 @@ then this cmdlet tests against all authorization rules.
 
 Specifies the name of the user to test.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |

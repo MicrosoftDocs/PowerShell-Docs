@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Getting Information About Commands
 ms.assetid:  56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
@@ -73,4 +73,3 @@ To display scripts in Windows PowerShell's search path, type:
 ```
 Get-Command -CommandType Script
 ```
-

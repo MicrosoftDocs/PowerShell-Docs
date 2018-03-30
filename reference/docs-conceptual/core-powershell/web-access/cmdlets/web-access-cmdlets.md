@@ -1,9 +1,9 @@
 ---
-description:  
+description:
 ms.topic:  article
 ms.prod:  powershell
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+ms.date:  12/12/2016
 title:  web access cmdlets
 ms.technology:  powershell
 ---
@@ -46,8 +46,8 @@ Uninstalls the Windows PowerShell web application from IIS.
 > `Get-Command –Module PowerShellWebAccess` cmdlet.
 
 For more information about, or for the syntax of,
-any of the cmdlets, use:  
-`Get-Help `*&lt;cmdlet name&gt;*  
+any of the cmdlets, use:
+`Get-Help `*&lt;cmdlet name&gt;*
 where *&lt;cmdlet name&gt;*
  is the name of the cmdlet that you want to research.
 
@@ -63,4 +63,3 @@ you can run any of the following cmdlets:
 For more information about PowerShell Web Access, see the following:
 
 - [Install and Use Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md)
-

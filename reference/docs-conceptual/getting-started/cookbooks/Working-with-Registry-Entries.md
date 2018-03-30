@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Registry Entries
 ms.assetid:  fd254570-27ac-4cc9-81d4-011afd29b7dc
