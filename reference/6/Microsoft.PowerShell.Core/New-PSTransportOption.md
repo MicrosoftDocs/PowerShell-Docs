@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821501
 external help file:  System.Management.Automation.dll-Help.xml
 title:  New-PSTransportOption
 ---
-
 # New-PSTransportOption
 
 ## SYNOPSIS
+
 Creates an object that contains advanced options for a session configuration.
 
 ## SYNTAX
@@ -23,6 +23,7 @@ New-PSTransportOption [-MaxIdleTimeoutSec <Int32>] [-ProcessIdleTimeoutSec <Int3
 ```
 
 ## DESCRIPTION
+
 The **New-PSTransportOption** cmdlet creates an object that contains transport options for session configurations.
 You can use the object as the value of the *TransportOption* parameter of cmdlets that create or change a session configuration, such as the Register-PSSessionConfiguration and Set-PSSessionConfiguration cmdlets.
 
@@ -46,6 +47,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Generate a default transport option
+
 ```
 PS C:\> New-PSTransportOption
 ProcessIdleTimeoutSec           :
@@ -64,12 +66,13 @@ This command runs the **New-PSTransportOption** without parameters.
 The output shows that the cmdlet generates a transport option object that has null values for all properties.
 
 ### Example 2: Get session configuration options
+
 ```
 The first command uses the **New-PSTransportOption** cmdlet to create a transport options object, which it saves in the $t variable. The command uses the *MaxSessions* parameter to increase the maximum number of sessions to 40.
 PS C:\> $t = New-PSTransportOption -MaxSessions 40
 
 The second command uses the **Register-PSSessionConfiguration** cmdlet create the ITTasks session configuration. The command uses the *TransportOption* parameter to specify the transport options object in the $t variable.
-PS C:\> Register-PSSessionConfiguration -Name ITTaska -TransportOption $t
+PS C:\> Register-PSSessionConfiguration -Name ITTasks -TransportOption $t
 
 The third command uses the Get-PSSessionConfiguration cmdlet to get the ITTasks session configurations and the Format-List cmdlet to display all of the properties of the session configuration object in a list. The output shows that the value of the **MaxShells** property of the session configuration is 40.
 PS C:\> Get-PSSessionConfiguration -Name ITTasks | Format-List -Property *
@@ -106,6 +109,7 @@ Permission                    :
 This example shows how to use a transport options object to set session configuration options.
 
 ### Example 3: Setting a transport option
+
 ```
 The first command uses the **New-PSTransportOption** cmdlet to create a transport option object. The command uses the *IdleTimeoutSec* parameter to set the **IdleTimeoutSec** property value of the object to one hour (3600 seconds). The command saves the transport objects object in the $t variable.
 PS C:\> $t = New-PSTransportOption -IdleTimeoutSec 3600
@@ -136,6 +140,7 @@ This command shows the effect of setting a transport option in a session configu
 ## PARAMETERS
 
 ### -IdleTimeoutSec
+
 Determines how long each session stays open if the remote computer does not receive any communication from the local computer.
 This includes the heartbeat signal.
 When the interval expires, the session closes.
@@ -167,6 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxConcurrentCommandsPerSession
+
 Limits the number of commands that can run at the same time in each session to the specified value.
 The default value is 1000.
 
@@ -185,6 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxConcurrentUsers
+
 Limits the number of users who can run commands at the same time in each session to the specified value.
 The default value is 5.
 
@@ -201,6 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxIdleTimeoutSec
+
 Limits the idle time-out set for each session to the specified value.
 The default value is \[Int\]::MaxValue (~25 days).
 
@@ -222,6 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxMemoryPerSessionMB
+
 Limits the memory used by each session to the specified value.
 Enter a value in megabytes.
 The default value is 1024 megabytes (1 GB).
@@ -241,6 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxProcessesPerSession
+
 Limits the number of processes running in each session to the specified value.
 The default value is 15.
 
@@ -259,6 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxSessions
+
 Limits the number of sessions that use the session configuration.
 The default value is 25.
 
@@ -277,6 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxSessionsPerUser
+
 Limits the number of sessions that use the session configuration and run with the credentials of a given user to the specified value.
 The default value is 25.
 
@@ -297,6 +309,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputBufferingMode
+
 Determines how command output is managed in disconnected sessions when the output buffer becomes full.
 The acceptable values for this parameter are:
 
@@ -324,6 +337,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessIdleTimeoutSec
+
 Limits the time-out for each host process to the specified value.
 The default value, 0, means that there is no time-out value for the process.
 
@@ -343,11 +357,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-###
+### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
@@ -355,7 +371,8 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.PowerShell.Commands.WSManConfigurationOption
 
 ## NOTES
-* The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
+
+- The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
 
 ## RELATED LINKS
 
