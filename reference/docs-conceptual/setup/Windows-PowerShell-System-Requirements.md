@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Windows PowerShell System Requirements
 ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
@@ -121,4 +121,3 @@ Also, the **WinRM** service is not present on Windows PE.
 - [Getting Started with Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [Installing Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Starting Windows PowerShell](Starting-Windows-PowerShell.md)
-

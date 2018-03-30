@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Using Variables to Store Objects
 ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
@@ -93,4 +93,3 @@ C:\WINDOWS
 ```
 
 You can also create and modify environment variables from within PowerShell. Environment variables accessed from Windows PowerShell conform to the normal rules for environment variables elsewhere in Windows.
-

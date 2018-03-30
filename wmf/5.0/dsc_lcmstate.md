@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -15,4 +15,3 @@ We have made improvements in exposing details about the LCM state. The LCMState 
 * **PendingConfiguration**
 
 We have also added an LCMStateDetail property that contains more information about the state.
-

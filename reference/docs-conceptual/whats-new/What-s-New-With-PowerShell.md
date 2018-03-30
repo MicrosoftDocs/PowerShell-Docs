@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  What s New With PowerShell
 ---
@@ -22,4 +22,3 @@ Windows PowerShell 5.0 is installed by default on Windows Server® 2016 and Wind
 
 - New features in Windows PowerShell 3.0
 -->
-

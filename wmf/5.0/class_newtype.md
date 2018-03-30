@@ -1,17 +1,17 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
 ---
 
-# New language features in PowerShell 5.0 
+# New language features in PowerShell 5.0
 
 PowerShell 5.0 introduces the following new language elements in Windows PowerShell:
 
 ## Class keyword
 
-The **class** keyword defines a new class. This is a true .NET Framework type. 
+The **class** keyword defines a new class. This is a true .NET Framework type.
 Class members are public, but only public within the module scope.
 You can't refer to the type name as a string (for example, `New-Object` doesn't work), and in this release, you can't use a type literal (for example, `[MyClass]`) outside the script/module file in which the class is defined.
 
@@ -61,11 +61,11 @@ PowerShell parses the specified module’s root module, searching for classes th
 
 ## ImplementingAssembly
 
-A new field, **ImplementingAssembly**, has been added to ModuleInfo. It is set to the dynamic assembly created for a script module if the script defines classes, or the loaded assembly for binary modules. It is not set when ModuleType = Manifest. 
+A new field, **ImplementingAssembly**, has been added to ModuleInfo. It is set to the dynamic assembly created for a script module if the script defines classes, or the loaded assembly for binary modules. It is not set when ModuleType = Manifest.
 
 Reflection on the **ImplementingAssembly** field discovers resources in a module. This means you can discover resources written in either PowerShell or other managed languages.
 
-Fields with initializers:      
+Fields with initializers:
 
 ```powershell
 [int] $i = 5
@@ -83,11 +83,11 @@ A type is optional.
 $s = "hello"
 ```
 
-All members are public. 
+All members are public.
 
 ## Constructors and instantiation
 
-Windows PowerShell classes can have constructors; they have the same name as their class. Constructors can be overloaded. Static constructors are supported. Properties with initialization expressions are initialized before running any code in a constructor. Static properties are initialized before the body of a static constructor, and instance properties are initialized before the body of the non-static constructor. Currently, there is no syntax for calling a constructor from another constructor (like the C\# syntax ": this()"). The workaround is to define a common Init method. 
+Windows PowerShell classes can have constructors; they have the same name as their class. Constructors can be overloaded. Static constructors are supported. Properties with initialization expressions are initialized before running any code in a constructor. Static properties are initialized before the body of a static constructor, and instance properties are initialized before the body of the non-static constructor. Currently, there is no syntax for calling a constructor from another constructor (like the C\# syntax ": this()"). The workaround is to define a common Init method.
 
 The following are ways of instantiating classes in this release.
 
@@ -148,12 +148,12 @@ Method invocation:
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 Overloaded methods--that is, those that are named the same as an existing method, but differentiated by their specified values--are also supported.
 
-## Properties 
+## Properties
 
 All properties are public. Properties require either a newline or semicolon. If no object type is specified, the property type is object.
 
@@ -207,7 +207,7 @@ $v -eq $d # true
 
 ## End-to-End Example
 
-The following example creates several new, custom classes to implement an HTML dynamic style sheet language (DSL). 
+The following example creates several new, custom classes to implement an HTML dynamic style sheet language (DSL).
 Then, the example adds helper functions to create specific element types as part of the element class, such as heading styles and tables, because types cannot be used outside the scope of a module.
 
 ```powershell
@@ -218,7 +218,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -332,4 +332,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

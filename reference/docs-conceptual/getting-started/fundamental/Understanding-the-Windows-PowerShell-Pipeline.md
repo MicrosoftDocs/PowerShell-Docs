@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Understanding the Windows PowerShell Pipeline
 ms.assetid:  6be50926-7943-4ef7-9499-4490d72a63fb
@@ -57,4 +57,3 @@ In fact, the heading information output by the **Get-Location** cmdlet is added 
 Given that there may be more information output from a Windows PowerShell command than what we see displayed in the console window, how can you retrieve the non-visible elements? How do you view the extra data? And what if you want to view the data in a format different than the one Windows PowerShell normally uses?
 
 The rest of this chapter discusses how you can discover the structure of specific Windows PowerShell objects, selecting specific items and formatting them for easier display, and how to send this information to alternative output locations such as files and printers.
-

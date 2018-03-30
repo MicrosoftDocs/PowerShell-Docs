@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Understanding Important Windows PowerShell Concepts
 ms.assetid:  3e601e38-4520-4578-a48d-b6779f1d35ee
@@ -39,4 +39,3 @@ It is important to understand that the Help features of Windows PowerShell are a
 Windows PowerShell has syntax features and keywords that are very similar to those used in the C# programming language, because Windows PowerShell is based on the .NET Framework. Learning Windows PowerShell will make it much easier to learn C#, if you are interested in the language.
 
 If you are not a C# programmer, this similarity is not important. However, if you are already familiar with C#, the similarities can make learning Windows PowerShell much easier.
-
