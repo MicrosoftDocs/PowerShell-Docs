@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Keyboard Shortcuts for the Windows PowerShell ISE
 ms.assetid:  8328b946-0f02-4ef4-ac28-2743a1b4043b

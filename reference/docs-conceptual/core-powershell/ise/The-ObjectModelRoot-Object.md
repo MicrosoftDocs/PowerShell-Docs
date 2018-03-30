@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-08-25
+ms.date:  08/25/2017
 keywords:  powershell,cmdlet
 title:  The ObjectModelRoot Object
 ---

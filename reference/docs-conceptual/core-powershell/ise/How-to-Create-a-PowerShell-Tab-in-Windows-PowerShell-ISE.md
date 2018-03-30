@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  How to Create a PowerShell Tab in Windows PowerShell ISE
 ms.assetid:  c10c18c7-9ece-4fd0-83dc-a19c53d4fd83

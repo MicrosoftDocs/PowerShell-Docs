@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Running Remote Commands
 ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
@@ -68,7 +68,7 @@ To end the interactive session, type:
 Exit-PSSession
 ```
 
-For more information about the Enter-PSSession and Exit-PSSession cmdlets, see [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) 
+For more information about the Enter-PSSession and Exit-PSSession cmdlets, see [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477)
 and [Exit-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478).
 
 ### Run a Remote Command
