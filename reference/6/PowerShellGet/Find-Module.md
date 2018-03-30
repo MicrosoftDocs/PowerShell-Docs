@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -81,7 +81,7 @@ PS C:\> Register-PSRepository -Name "MySource" -SourceLocation "https://www.myge
 PS C:\> Find-Module -Name "Contoso" -Repository "PSGallery","MySource"
 Repository    Version   Name                 Description
 ----------    -------   ----                 -----------
-PSGallery     2.0.0.0   ContosoServer        Cmdlets and DSC resources for managing Contoso Server products. 
+PSGallery     2.0.0.0   ContosoServer        Cmdlets and DSC resources for managing Contoso Server products.
 MySource      1.2.0.0   ContosoClient        Cmdlets and DSC resources for managing Contoso Client products.
 ```
 
@@ -97,8 +97,8 @@ This command returns **PSGetItemInfo** objects that represent modules that conta
 ### Example 8: Find a module using a filter
 ```
 PS C:\> Find-Module -Filter "App Domain" -Includes "DscResource"
-Repository                Version      Name                                     Description                                                 
-----------                -------      ----                                     -----------                                                 
+Repository                Version      Name                                     Description
+----------                -------      ----                                     -----------
 PSGallery                 1.0.0.0      AppDomainConfig                          Manipulate AppDomain configuration...
 ```
 
@@ -114,7 +114,7 @@ You cannot use the *AllVersions* parameter with the *MinimumVersion*, *MaximumVe
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -130,7 +130,7 @@ A command can be a function or workflow.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -146,7 +146,7 @@ Per Windows PowerShell conventions, performs an OR search when you provide multi
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -162,7 +162,7 @@ For NuGet modules, this is the equivalent of searching by using the Search bar o
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -177,7 +177,7 @@ Indicates that this operation includes all modules that are dependent upon the m
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -199,7 +199,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: DscResource, Cmdlet, Function, RoleCapability
 
 Required: False
@@ -216,7 +216,7 @@ The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -232,7 +232,7 @@ The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -251,7 +251,7 @@ If you use wildcard characters, but do not find matching results, no error is re
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -266,7 +266,7 @@ Specifies the friendly name of a repository that has been registered by running 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -282,7 +282,7 @@ The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -297,7 +297,7 @@ Specifies an array of role capabilities.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -313,7 +313,7 @@ Example tags include DesiredStateConfiguration, DSC, DSCResourceKit, or PSModule
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -328,7 +328,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -343,7 +343,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -358,7 +358,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -390,4 +390,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Module](Uninstall-Module.md)
 
 [Update-Module](Update-Module.md)
-
