@@ -63,7 +63,7 @@ The command uses the Select-Object cmdlet to get all of the properties of the **
 It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a JSON-formatted string
 and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string to a JSON object.
 
-### Example 2: Get JSON strings from a web service and convert them to Windows PowerShell objects
+### Example 2: Get JSON strings from a web service and convert them to PowerShell objects
 
 ```powershell
 # Ensures that Invoke-WebRequest uses TLS 1.2
@@ -73,7 +73,7 @@ $j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issue
 
 This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service
 and then it uses the `ConvertFrom-Json` cmdlet to convert JSON content to objects
-that can be managed in Windows PowerShell.
+that can be managed in PowerShell.
 
 You can also use the Invoke-RestMethod cmdlet, which automatically converts JSON content to objects.
 

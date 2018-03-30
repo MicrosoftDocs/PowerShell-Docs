@@ -26,7 +26,7 @@ JSON is commonly used by web sites to provide a textual representation of object
 
 To generate a JSON string from any object, use the ConvertTo-Json cmdlet.
 
-This cmdlet was introduced in Windows PowerShell 3.0.
+This cmdlet was introduced in PowerShell 3.0.
 
 ## EXAMPLES
 
@@ -71,7 +71,7 @@ This command uses the ConvertTo-Json and **ConvertFrom-Json** cmdlets to convert
 The command uses the Select-Object cmdlet to get all of the properties of the **DateTime** object.
 It uses the **ConvertTo-Json** cmdlet to convert the **DateTime** object to a JSON-formatted string and the **ConvertFrom-Json** cmdlet to convert the JSON-formatted string to a JSON object..
 
-### Example 2: Get JSON strings from a web service and convert them to Windows PowerShell objects
+### Example 2: Get JSON strings from a web service and convert them to PowerShell objects
 
 ```powershell
 # Ensures that Invoke-WebRequest uses TLS 1.2
@@ -79,7 +79,7 @@ It uses the **ConvertTo-Json** cmdlet to convert the **DateTime** object to a JS
 $j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' | ConvertFrom-Json
 ```
 
-This command uses the Invoke-WebRequest cmdlet to get JSON strings from a web service and then it uses the **ConvertFrom-Json** cmdlet to convert JSON content to objects that can be managed in Windows PowerShell.
+This command uses the Invoke-WebRequest cmdlet to get JSON strings from a web service and then it uses the **ConvertFrom-Json** cmdlet to convert JSON content to objects that can be managed in PowerShell.
 
 You can also use the Invoke-RestMethod cmdlet, which automatically converts JSON content to objects.
 
@@ -89,7 +89,7 @@ You can also use the Invoke-RestMethod cmdlet, which automatically converts JSON
 (Get-Content JsonFile.JSON) -Join '`n' | ConvertFrom-Json
 ```
 
-This example shows how to use the **ConvertFrom-Json** cmdlet to convert a JSON file to a Windows PowerShell custom object.
+This example shows how to use the **ConvertFrom-Json** cmdlet to convert a JSON file to a PowerShell custom object.
 
 The command uses Get-Content cmdlet to get the strings in a JSON file.
 It uses the Join operator to join the strings in the file into a single string that is delimited by newline characters (\`n).
