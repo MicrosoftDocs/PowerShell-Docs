@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -199,4 +199,3 @@ _------ ---- ---------- -----------
 1.5 ContosoServer LocalRepo ContosoServer module
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
-

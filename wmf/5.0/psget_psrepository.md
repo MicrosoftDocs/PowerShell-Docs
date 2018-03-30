@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -38,4 +38,3 @@ Install-Module SomeModule
 \#Removing a repository
 Unregister-PSRepository DemoRepo
 ```
-
