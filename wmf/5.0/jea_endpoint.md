@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -9,10 +9,10 @@ keywords:  wmf,powershell,setup
 To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.
 
 ```powershell
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
+New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-This will create a session configuration file that looks like this: 
+This will create a session configuration file that looks like this:
 ```powershell
 @{
 
@@ -48,7 +48,7 @@ RoleDefinitions = @{
     'CONTOSO\NonAdmin_Operators' = @{
         'RoleCapabilities' = 'Maintenance' } }
 
-} 
+}
 ```
 When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:
 1.	SessionType to RestrictedRemoteServer
@@ -60,7 +60,7 @@ When creating a JEA endpoint, the following parameters of the command (and corre
 The RoleDefinitions field defines which groups had access to which Role Capabilities.  A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.  You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.
 
 ```powershell
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
+New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
 This will generate a template role capability that looks like this:
@@ -124,7 +124,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # Assemblies to load when applied to a session
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
-} 
+}
 
 ```
 To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”. A module may have multiple role capability files, if desired.
@@ -134,7 +134,7 @@ To start configuring which cmdlets, functions, aliases, and scripts a user may a
 Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running **Register-PSSessionConfiguration**.
 
 ```powershell
-Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
+Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
 ## Connect to a JEA Endpoint
@@ -144,4 +144,3 @@ Connecting to a JEA Endpoint works the same way connecting to any other PowerShe
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to. If you try to run any command not allowed for your role, you will encounter an error.
-
