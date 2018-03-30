@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -15,10 +15,10 @@ The following notable bugs are fixed in WMF 5.1:
 ### Module auto-discovery fully honors `$env:PSModulePath` ###
 
 Module auto-discovery (loading modules automatically without an explicit Import-Module when calling a command)
-was introduced in WMF 3. 
+was introduced in WMF 3.
 When introduced, PowerShell checked for commands in `$PSHome\Modules` before using `$env:PSModulePath`.
 
-WMF 5.1 changes this behavior to honor `$env:PSModulePath` completely. 
+WMF 5.1 changes this behavior to honor `$env:PSModulePath` completely.
 This allows for a user-authored module that defines commands provided by PowerShell (e.g. `Get-ChildItem`) to be auto-loaded and correctly overriding the built-in command.
 
 ### File redirection no longer hard-codes `-Encoding Unicode` ###
@@ -40,7 +40,7 @@ This bug has been fixed in WMF 5.1.
 
 ### Fixed some issues with COM objects ###
 
-WMF 5.0 introduced a new COM binder for invoking methods on COM objects and accessing properties of COM objects. 
+WMF 5.0 introduced a new COM binder for invoking methods on COM objects and accessing properties of COM objects.
 This new binder improved performance significantly but also introduced some bugs which have been fixed in WMF 5.1.
 
 #### Argument conversions were not always performed correctly ####
@@ -79,8 +79,8 @@ This change also addresses [issue 1752224 on Connect](https://connect.microsoft.
 
 ### `[ordered]` was not allowed inside classes ###
 
-WMF 5.0 introduced classes with validation of type literals used in classes.  
-`[ordered]` looks like a type literal but is not a true .NET type. 
+WMF 5.0 introduced classes with validation of type literals used in classes.
+`[ordered]` looks like a type literal but is not a true .NET type.
 WMF 5.0 incorrectly reported an error on `[ordered]` inside a class:
 
 ```
@@ -102,8 +102,8 @@ to view the real help.
 
 WMF 5.1 fixes this by returning the help for the latest version of the topic.
 
-`Get-Help` does not provide a way to specify which version you want help for. 
-To work around this, navigate to the modules directory and view the help directly with a tool like your favorite editor. 
+`Get-Help` does not provide a way to specify which version you want help for.
+To work around this, navigate to the modules directory and view the help directly with a tool like your favorite editor.
 
 ### powershell.exe reading from STDIN stopped working
 
@@ -117,4 +117,3 @@ PowerShell uses a WMI query to check if it was started via Group Policy to avoid
 The WMI query ends up injecting tzres.mui.dll into every process on the system since the WMI Win32_Process class attempts to retrieve local timezone information.
 This results in a large CPU spike in wmiprvse (the WMI provider host).
 Fix is to use Win32 API calls to get the same information instead of using WMI.
-

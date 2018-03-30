@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -18,4 +18,3 @@ To resolve, set the **ExecutionPolicy** to **RemoteSigned** by running the follo
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
-
