@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -130,7 +130,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: ByPath, ByLiteralPath
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -150,7 +150,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ByPath, ByLiteralPath
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -183,7 +183,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -201,7 +201,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -219,7 +219,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -240,7 +240,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSObject
 Parameter Sets: ByInputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -53,4 +53,3 @@ $list = [MyIntList]::new()
 $list.Add(100)
 $list[0] # return 200
 ```
-

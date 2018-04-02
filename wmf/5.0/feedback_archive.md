@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -12,7 +12,7 @@ Two new cmdlets, **Compress-Archive** and **Expand-Archive**, let you compress a
 ## Compress-Archive
 The **Compress-Archive** cmdlet creates a new archive file from specified files. An archive file allows multiple files to be packaged and optionally compressed into a single file for easier handling and storage. An archive file can be compressed by using a compression algorithm specified in the **-CompressionLevel** parameter.
 ```powershell
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>] 
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>]
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>]
 ```
 
@@ -22,4 +22,3 @@ The **Expand-Archive** cmdlet extracts files from a specified archive file. An a
 Expand-Archive -LiteralPath <String> [-DestinationPath] <String>
 Expand-Archive [-Path] <String> [-DestinationPath] <String>
 ```
-

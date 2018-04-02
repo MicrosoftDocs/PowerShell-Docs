@@ -141,7 +141,7 @@ you can use Windows PowerShell modules by appending the Windows PowerShell `PSMo
 First, install the `WindowsPSModulePath` module from the PowerShell Gallery:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 

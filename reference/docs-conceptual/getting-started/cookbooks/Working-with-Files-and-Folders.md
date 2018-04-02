@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Files and Folders
 ms.assetid:  c0ceb96b-e708-45f3-803b-d1f61a48f4c1
@@ -123,7 +123,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 [operating systems]
 multi(0)disk(0)rdisk(0)partition(1)\WINDOWS="Microsoft Windows XP Professional"
  /noexecute=AlwaysOff /fastdetect
-multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional 
+multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 

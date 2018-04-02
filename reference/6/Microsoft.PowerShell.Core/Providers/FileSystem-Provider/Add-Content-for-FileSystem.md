@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -191,4 +191,3 @@ The command uses the Force parameter so that the command is successful even if t
  [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md)
  [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md)
  [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -22,41 +22,41 @@ Starting with version 5.1, PowerShell is available in different editions which d
 - [Filter Get-Module results by CompatiblePSEditions]()
 - [Prevent script execution unless run on a compatible edition of PowerShell]()
 
-## Catalog Cmdlets  
+## Catalog Cmdlets
 
-Two new cmdlets have been added in the [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) module; these generate and validate Windows catalog files.  
+Two new cmdlets have been added in the [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) module; these generate and validate Windows catalog files.
 
-###New-FileCatalog 
+###New-FileCatalog
 --------------------------------
 
-New-FileCatalog creates a Windows catalog file for set of folders and files. 
-This catalog file contains hashes for all files in specified paths. 
-Users can distribute the set of folders along with corresponding catalog file representing those folders. 
-This information is useful to validate whether any changes have been made to the folders since catalog creation time.    
+New-FileCatalog creates a Windows catalog file for set of folders and files.
+This catalog file contains hashes for all files in specified paths.
+Users can distribute the set of folders along with corresponding catalog file representing those folders.
+This information is useful to validate whether any changes have been made to the folders since catalog creation time.
 
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-Catalog versions 1 and 2 are supported. 
-Version 1 uses the SHA1 hashing algorithm to create file hashes; version 2 uses SHA256. 
-Catalog version 2 is not supported on *Windows Server 2008 R2* or *Windows 7*. 
-You should use catalog version 2 on *Windows 8*, *Windows Server 2012*, and later operating systems.  
+Catalog versions 1 and 2 are supported.
+Version 1 uses the SHA1 hashing algorithm to create file hashes; version 2 uses SHA256.
+Catalog version 2 is not supported on *Windows Server 2008 R2* or *Windows 7*.
+You should use catalog version 2 on *Windows 8*, *Windows Server 2012*, and later operating systems.
 
 ![](../images/NewFileCatalog.jpg)
 
-This creates the catalog file. 
+This creates the catalog file.
 
-![](../images/CatalogFile1.jpg)  
+![](../images/CatalogFile1.jpg)
 
-![](../images/CatalogFile2.jpg) 
+![](../images/CatalogFile2.jpg)
 
-To verify the integrity of catalog file (Pester.cat in above example), sign it using [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.   
+To verify the integrity of catalog file (Pester.cat in above example), sign it using [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.
 
 
-###Test-FileCatalog 
+###Test-FileCatalog
 --------------------------------
 
-Test-FileCatalog validates the catalog representing a set of folders. 
+Test-FileCatalog validates the catalog representing a set of folders.
 
 ```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -64,11 +64,11 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-This cmdlet compares all the files hashes and their relative paths found in *catalog* with ones on *disk*. 
-If it detects any mismatch between file hashes and paths it returns the status as *ValidationFailed*. 
-Users can retrieve all this information by using the *-Detailed* parameter. 
-It also displays signing status of catalog in *Signature* property which is equivalent to calling [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet on the catalog file. 
-Users can also skip any file during validation by using the *-FilesToSkip* parameter. 
+This cmdlet compares all the files hashes and their relative paths found in *catalog* with ones on *disk*.
+If it detects any mismatch between file hashes and paths it returns the status as *ValidationFailed*.
+Users can retrieve all this information by using the *-Detailed* parameter.
+It also displays signing status of catalog in *Signature* property which is equivalent to calling [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet on the catalog file.
+Users can also skip any file during validation by using the *-FilesToSkip* parameter.
 
 
 ## Module Analysis Cache ##
@@ -79,16 +79,16 @@ By default, this cache is stored in the file `${env:LOCALAPPDATA}\Microsoft\Wind
 The cache is typically read at startup while searching for a command
 and is written on a background thread sometime after a module is imported.
 
-To change the default location of the cache, set the `$env:PSModuleAnalysisCachePath` environment variable before starting PowerShell. 
-Changes to this environment variable will only affect children processes. 
-The value should name a full path (including filename) that PowerShell has permission to create and write files. 
+To change the default location of the cache, set the `$env:PSModuleAnalysisCachePath` environment variable before starting PowerShell.
+Changes to this environment variable will only affect children processes.
+The value should name a full path (including filename) that PowerShell has permission to create and write files.
 To disable the file cache, set this value to an invalid location, for example:
 
 ```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
-This sets the path to an invalid device. 
+This sets the path to an invalid device.
 If PowerShell can't write to the path, no error is returned, but you can see error reporting by using a tracer:
 
 ```powershell
@@ -107,13 +107,13 @@ Setting this environment variable will take effect immediately in the current pr
 
 ##Specifying module version
 
-In WMF 5.1, `using module` behaves the same way as other module-related constructions in PowerShell. 
+In WMF 5.1, `using module` behaves the same way as other module-related constructions in PowerShell.
 Previously, you had no way to specify a particular module version; if there were multiple versions present, this resulted in an error.
 
 
 In WMF 5.1:
 
-* You can use [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290). 
+* You can use [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
 This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
 **Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
@@ -122,7 +122,6 @@ This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
 
 ##Improvements to Pester
-In WMF 5.1, the version of Pester that ships with PowerShell has been updated from 3.3.5 to 3.4.0, with the addition of commit https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, which enables better behavior for Pester on Nano Server. 
+In WMF 5.1, the version of Pester that ships with PowerShell has been updated from 3.3.5 to 3.4.0, with the addition of commit https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, which enables better behavior for Pester on Nano Server.
 
 You can review the changes in versions 3.3.5 to 3.4.0 by inspecting the ChangeLog.md file at: https://github.com/pester/Pester/blob/master/CHANGELOG.md
-

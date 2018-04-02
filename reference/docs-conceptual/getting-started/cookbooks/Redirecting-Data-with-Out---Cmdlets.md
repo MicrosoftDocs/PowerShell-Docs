@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Redirecting Data with Out Cmdlets
 ms.assetid:  2a4acd33-041d-43a5-a3e9-9608a4c52b0c

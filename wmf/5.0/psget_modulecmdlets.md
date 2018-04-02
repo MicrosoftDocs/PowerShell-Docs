@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -44,13 +44,13 @@ keywords:  wmf,powershell,setup
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
-Version    Name                     Repository    Description                  
--------    ----                     ----------    -----------                  
-2.5        NestedRequiredModule1    LocalRepo     NestedRequiredModule1 module 
-2.5        NestedRequiredModule2    LocalRepo     NestedRequiredModule2 module 
-2.0        NestedRequiredModule3    LocalRepo     NestedRequiredModule3 module 
-2.5        RequiredModule1          LocalRepo     RequiredModule1 module  
-2.5        RequiredModule2          LocalRepo     RequiredModule2 module  
+Version    Name                     Repository    Description
+-------    ----                     ----------    -----------
+2.5        NestedRequiredModule1    LocalRepo     NestedRequiredModule1 module
+2.5        NestedRequiredModule2    LocalRepo     NestedRequiredModule2 module
+2.0        NestedRequiredModule3    LocalRepo     NestedRequiredModule3 module
+2.5        RequiredModule1          LocalRepo     RequiredModule1 module
+2.5        RequiredModule2          LocalRepo     RequiredModule2 module
 2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
@@ -77,16 +77,16 @@ Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -Nu
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
-Version    Name                                Repository  Description 
--------    ----                                ----------  -----------  
-1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module  
-2.5        RequiredModule1                     LocalRepo   RequiredModule1 module      
-2.5        RequiredModule2                     LocalRepo   RequiredModule2 module      
-2.0        RequiredModule3                     LocalRepo   RequiredModule3 module      
+Version    Name                                Repository  Description
+-------    ----                                ----------  -----------
+1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
+2.5        RequiredModule1                     LocalRepo   RequiredModule1 module
+2.5        RequiredModule2                     LocalRepo   RequiredModule2 module
+2.0        RequiredModule3                     LocalRepo   RequiredModule3 module
 2.5        NestedRequiredModule1               LocalRepo   NestedRequiredModule1 module
 2.5        NestedRequiredModule2               LocalRepo   NestedRequiredModule2 module
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
-``` 
+```
 
 ### Use Find-Module metadata to find the module dependencies.
 ```powershell
@@ -132,14 +132,14 @@ CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
 
-Version    Name                    Repository   Description                 
--------    ----                    ----------   -----------                 
+Version    Name                    Repository   Description
+-------    ----                    ----------   -----------
 1.0        NestedRequiredModule1   LocalRepo    NestedRequiredModule1 module
 2.5        NestedRequiredModule2   LocalRepo    NestedRequiredModule2 module
 2.0        NestedRequiredModule3   LocalRepo    NestedRequiredModule3 module
-1.0        RequiredModule1         LocalRepo    RequiredModule1 module      
-2.5        RequiredModule2                    LocalRepo    RequiredModule2 module 
-2.0        RequiredModule3                    LocalRepo    RequiredModule3 module 
+1.0        RequiredModule1         LocalRepo    RequiredModule1 module
+2.5        RequiredModule2                    LocalRepo    RequiredModule2 module
+2.0        RequiredModule3                    LocalRepo    RequiredModule3 module
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
@@ -268,20 +268,19 @@ PrivateData = @{
 
 		# A URL to the license for this module.
 		# LicenseUri = ''
-	
+
 		# A URL to the main website for this project.
 		# ProjectUri = ''
-		
+
 		# A URL to an icon representing this module.
 		# IconUri = ''
-		
+
 		# ReleaseNotes of this module
 		# ReleaseNotes = ''
-		
+
 		# External dependent modules of this module
 		# ExternalModuleDependencies = ''
 	} # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
 ***Note:*** DscResourcesToExport is only supported on the latest PowerShell version 5.0. We won’t be able to update the field if you are running on previous PowerShell version.
-

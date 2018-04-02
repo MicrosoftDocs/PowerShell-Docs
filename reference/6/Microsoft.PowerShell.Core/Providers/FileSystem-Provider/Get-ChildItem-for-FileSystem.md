@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -279,4 +279,3 @@ This command retrieves only the names of items in the current directory.
  [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md)
  [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md)
  [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md)
-

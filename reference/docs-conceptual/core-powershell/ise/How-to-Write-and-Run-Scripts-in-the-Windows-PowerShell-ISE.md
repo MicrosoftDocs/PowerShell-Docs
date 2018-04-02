@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  How to Write and Run Scripts in the Windows PowerShell ISE
 ms.assetid:  62f916d9-b3a1-484a-bdfb-41f57112c22b

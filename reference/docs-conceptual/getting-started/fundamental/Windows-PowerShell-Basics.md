@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Windows PowerShell Basics
 ms.assetid:  6b3cbbc8-060c-4877-b00b-7300dbbe4e28

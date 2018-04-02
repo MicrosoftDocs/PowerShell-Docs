@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -149,10 +149,10 @@ PS C:\> $Event = Get-EventLog -LogName System -Newest 1
 PS C:\> $Event.TimeWritten | Get-MemberTypeName: System.DateTime
 Name                 MemberType     Definition
 ----                 ----------     ----------
-Add                  Method         System.DateTime Add(System.TimeSpan value) 
-AddDays              Method         System.DateTime AddDays(double value) 
-AddHours             Method         System.DateTime AddHours(double value) 
-AddMilliseconds      Method         System.DateTime AddMilliseconds(double value) 
+Add                  Method         System.DateTime Add(System.TimeSpan value)
+AddDays              Method         System.DateTime AddDays(double value)
+AddHours             Method         System.DateTime AddHours(double value)
+AddMilliseconds      Method         System.DateTime AddMilliseconds(double value)
 AddMinutes           Method         System.DateTime AddMinutes(double value)...
 
 PS C:\> Add-Member -InputObject $Event -MemberType AliasProperty -Name When -Value TimeWritten -SecondValue System.String
@@ -161,7 +161,7 @@ PS C:\> $Event.When | Get-MemberTypeName: System.String
 Name             MemberType            Definition
 ----             ----------            ----------
 Clone            Method                System.Object Clone()
-CompareTo        Method                int CompareTo(System.Object value), int CompareTo(string strB) 
+CompareTo        Method                int CompareTo(System.Object value), int CompareTo(string strB)
 Contains         Method                bool Contains(string value)
 ```
 
@@ -245,7 +245,7 @@ You cannot use the *Force* parameter to replace a standard member of a type.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: MemberSet, NotePropertySingleMemberSet, NotePropertyMultiMemberSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -261,7 +261,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -306,7 +306,7 @@ Specifies the name of the member that this cmdlet adds.
 ```yaml
 Type: String
 Parameter Sets: MemberSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -329,7 +329,7 @@ Use the *PassThru* parameter to create an output object for any object that has 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -351,7 +351,7 @@ The second ScriptBlock, specified in the *SecondValue* parameter, is used to set
 ```yaml
 Type: Object
 Parameter Sets: MemberSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -367,7 +367,7 @@ If you add an **AliasProperty**, **CodeProperty**, **ScriptProperty** or **CodeM
 ```yaml
 Type: Object
 Parameter Sets: MemberSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -387,7 +387,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: IDictionary
 Parameter Sets: NotePropertyMultiMemberSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -407,7 +407,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: NotePropertySingleMemberSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -427,7 +427,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Object
 Parameter Sets: NotePropertySingleMemberSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -440,7 +440,7 @@ Accept wildcard characters: False
 Specifies a name for the type.
 
 When the type is a class in the System namespace or a type that has a type accelerator, you can enter the short name of the type.
-Otherwise, the full type name is required. 
+Otherwise, the full type name is required.
 This parameter is effective only when the input object is a **PSObject**.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -448,7 +448,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: TypeNameSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -460,7 +460,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: MemberSet, NotePropertySingleMemberSet, NotePropertyMultiMemberSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -503,4 +503,3 @@ For more information about the $this variable, see about_Automatic_Variables.
 [Import-Clixml](Import-Clixml.md)
 
 [New-Object](New-Object.md)
-

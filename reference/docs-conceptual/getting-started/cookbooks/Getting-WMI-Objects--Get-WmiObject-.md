@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Getting WMI Objects Get WmiObject
 ms.assetid:  f0ddfc7d-6b5e-4832-82de-2283597ea70d

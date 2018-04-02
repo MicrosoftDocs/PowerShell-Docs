@@ -1,9 +1,9 @@
 ---
-description:  
+description:
 ms.topic:  article
 ms.prod:  powershell
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+ms.date:  12/12/2016
 title:  uninstall pswawebapplication
 ms.technology:  powershell
 ---
@@ -41,7 +41,7 @@ with the same name as
 the one created by the **Install-PswaWebApplication** cmdlet
 is removed.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -54,7 +54,7 @@ is removed.
 
 Specifies the name of the web application to uninstall.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -68,7 +68,7 @@ Specifies the name of the web application to uninstall.
 Specifies the name of the web site
 where the web application is installed.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -81,7 +81,7 @@ where the web application is installed.
 
 Prompts you for confirmation before running the cmdlet.
 
-|||  
+|||
 |-|-|
 | Required?                            | false                                |
 | Position?                            | named                                |
@@ -94,7 +94,7 @@ Prompts you for confirmation before running the cmdlet.
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
-|||  
+|||
 |-|-|
 | Required?                            | false                                |
 | Position?                            | named                                |

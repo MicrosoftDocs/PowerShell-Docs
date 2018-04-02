@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISEMenuItem Object
 ms.assetid:  a16660bd-0aee-46fd-ac17-3f022165d089

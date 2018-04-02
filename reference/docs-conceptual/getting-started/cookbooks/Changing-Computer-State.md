@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Changing Computer State
 ms.assetid:  8093268b-27f8-4a49-8871-142c5cc33f01

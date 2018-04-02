@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -34,13 +34,13 @@ The **Import-PowerShellDataFile** cmdlet returns a hashtable consisting of the k
 ```
 PS C:\> $content = Import-PowerShellDataFile .\Configuration.psd1
 PS C:\> $content
-Name                           Value                                                                          
-----                           -----                                                                          
-key1                           value1                                                                         
+Name                           Value
+----                           -----
+key1                           value1
 key2                           value2
 ```
 
-This examples retrieves the key-value pairs stored in the hashtable kept inside the Configuration.psd1 file. 
+This examples retrieves the key-value pairs stored in the hashtable kept inside the Configuration.psd1 file.
 
 ## PARAMETERS
 
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -80,4 +80,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-

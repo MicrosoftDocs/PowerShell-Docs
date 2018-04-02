@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -164,7 +164,7 @@ Indicates that this cmdlet preserves container objects during the copy operation
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -185,7 +185,7 @@ This parameter is not supported by any providers installed with Windows PowerShe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -201,7 +201,7 @@ To rename a copied item, include the new name in the value.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -217,7 +217,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -235,7 +235,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -250,7 +250,7 @@ Indicates that this cmdlet will copy items that cannot otherwise be changed, suc
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -265,7 +265,7 @@ Specifies, as a string array, only those items upon which the cmdlet will act, e
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -300,7 +300,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -315,7 +315,7 @@ Specifies, as a string array, the path to the items to copy.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -330,7 +330,7 @@ Indicates that this cmdlet performs a recursive copy.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -396,7 +396,7 @@ When you use this parameter, the *Path* and *LiteralPath* parameters refer to th
 ```yaml
 Type: PSSession
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -412,7 +412,7 @@ When you use this parameter, the *Path* and *LiteralPath* parameters refer to th
 ```yaml
 Type: PSSession
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -463,4 +463,3 @@ For more information, see about_Providers.
 [Set-Item](Set-Item.md)
 
 [Get-PSProvider](Get-PSProvider.md)
-

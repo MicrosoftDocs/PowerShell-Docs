@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Starting Windows PowerShell
 ms.assetid:  59b649a2-c90c-4cf4-bf95-a740c59148e7

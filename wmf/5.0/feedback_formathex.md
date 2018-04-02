@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -27,9 +27,8 @@ PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet"
 00000010   6F 6E 67 20 6C 69 6E 65 20 74 6F 20 66 6F 72 63  ong line to forc
 00000020   65 20 74 68 65 20 6C 69 6E 65 20 66 6F 6C 64 69  e the line foldi
 00000030   6E 67 20 69 6E 20 46 6F 72 6D 61 74 2D 48 65 78  ng in Format-Hex
-00000040   20 63 6D 64 6C 65 74                              cmdlet         
+00000040   20 63 6D 64 6C 65 74                              cmdlet
 
 
 PS C:\>
 ```
-

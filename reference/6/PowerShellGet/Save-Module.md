@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -105,7 +105,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -124,7 +124,7 @@ Windows PowerShell does not interpret any characters that are enclosed in single
 ```yaml
 Type: String
 Parameter Sets: NameAndLiteralPathParameterSet, InputOjectAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -140,7 +140,7 @@ The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; yo
 ```yaml
 Type: Version
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,7 +157,7 @@ The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; yo
 ```yaml
 Type: Version
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -172,7 +172,7 @@ Specifies an array of names of modules to save.
 ```yaml
 Type: String[]
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -189,7 +189,7 @@ The parameter accepts piped values from Get-Module.
 ```yaml
 Type: String
 Parameter Sets: NameAndPathParameterSet, InputOjectAndPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -204,7 +204,7 @@ Specifies the friendly name of a repository that has been registered by running 
 ```yaml
 Type: String[]
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -219,7 +219,7 @@ Specifies the exact version number of the module to save.
 ```yaml
 Type: Version
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -280,7 +280,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSObject[]
 Parameter Sets: InputOjectAndLiteralPathParameterSet, InputOjectAndPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -295,7 +295,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -310,7 +310,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -337,4 +337,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Module](Uninstall-Module.md)
 
 [Update-Module](Update-Module.md)
-

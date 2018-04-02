@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISEAddOnToolCollection Object
 ms.assetid:  634eab89-0845-4016-974b-361b09bb8f7b
@@ -63,7 +63,7 @@ $newTab.DisplayName = 'Brand New Tab'
 
 ### Remove\( psTab \)
 
-Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
 Removes the PowerShell tab that the **psTab** parameter specifies.
 

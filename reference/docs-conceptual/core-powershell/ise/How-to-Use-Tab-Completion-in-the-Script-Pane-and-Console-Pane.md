@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  How to Use Tab Completion in the Script Pane and Console Pane
 ms.assetid:  3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84

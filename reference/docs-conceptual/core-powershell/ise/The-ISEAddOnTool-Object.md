@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISEAddOnTool Object
 ms.assetid:  ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3

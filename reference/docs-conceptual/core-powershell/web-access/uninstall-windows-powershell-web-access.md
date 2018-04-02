@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-08-23
+ms.date:  08/23/2017
 keywords:  powershell,cmdlet
 title:  uninstall windows powershell web access
 ---
@@ -15,7 +15,7 @@ and corresponding application from the gateway server where it is installed.
 
 ## Notify users
 
-Before you begin, notify users of the web-based console that you are 
+Before you begin, notify users of the web-based console that you are
 removing the website.
 
 Uninstalling Windows PowerShell Web Access does not uninstall IIS or any
@@ -31,7 +31,7 @@ Procedures in this section help you uninstall both:
 
 - the Windows PowerShell Web Access web application, and
 - the Windows PowerShell Web Access feature
- 
+
 by using Windows PowerShell cmdlets.
 
 ### Step 1: Delete the web application using cmdlets
@@ -98,9 +98,9 @@ Procedures in this section help you uninstall both the Windows PowerShell Web Ac
 
 > ![Warning note](images/SecurityNote.jpeg)**Note**:
 >
-> The certificate is not deleted during uninstallation. 
+> The certificate is not deleted during uninstallation.
 >
-> If you created a self-signed certificate or used a test certificate and want to remove it, delete the certificate in IIS Manager. 
+> If you created a self-signed certificate or used a test certificate and want to remove it, delete the certificate in IIS Manager.
 
 ### Step 2: Uninstall Windows PowerShell Web Access using the Remove Roles and Features Wizard
 

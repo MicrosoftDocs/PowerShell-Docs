@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-08-23
+ms.date:  08/23/2017
 keywords:  powershell,cmdlet
 title:  troubleshooting access problems in windows powershell web access
 ---
@@ -37,7 +37,7 @@ Failure could occur because of any of the following.
 
 ## Internal Server Error
 
-When users try to sign in to Windows PowerShell Web Access in an Internet 
+When users try to sign in to Windows PowerShell Web Access in an Internet
 Explorer window, they are shown an **Internal Server Error** page,
 or *Internet Explorer* stops responding.
 
@@ -75,8 +75,8 @@ parameter is added to the cmdlet.
 
 For an example, see [To install Windows PowerShell Web Access by using Windows PowerShell cmdlets](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets).
 
-You can add the IIS Manager console, 
-and other IIS management tools that you need, 
+You can add the IIS Manager console,
+and other IIS management tools that you need,
 by selecting the tools in an **Add Roles and Features Wizard** session that
 is targeted at the gateway server.
 The Add Roles and Features Wizard is opened from within Server Manager.
@@ -88,7 +88,7 @@ you can add the Windows PowerShell Web Access website to the list of trusted
 sites.
 
 A less recommended approach, due to security risks, is to disable IE ESC.
-You can disable IE ESC in the Properties tile on the Local Server page in 
+You can disable IE ESC in the Properties tile on the Local Server page in
 Server Manager.
 
 ## An authorization failure occurred. Verify that you are authorized to connect to the destination computer.
@@ -154,7 +154,7 @@ use the original IPv6 address (that contains colons) in the authorization
 rule.
 Both domain and numerical (with colons) IPv6 addresses are supported as the
 target computer name on the Windows PowerShell Web Access sign-in page,
-but not in authorization rules. 
+but not in authorization rules.
 
 For more information about IPv6 addresses, see [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 

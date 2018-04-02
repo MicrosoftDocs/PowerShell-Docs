@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Selecting Parts of Objects Select Object
 ms.assetid:  72e64b1a-d351-4500-9da3-24d8a71d7a92

@@ -1,12 +1,12 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  more powershell learning
 ---
 
 # More PowerShell Learning
 
-Other sources to learn PowerShell  
+Other sources to learn PowerShell
 
 ## Resources for Windows PowerShell users
 
@@ -47,4 +47,3 @@ The following resources provide resources to help developers create their own Wi
 
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595). Provides reference content.
 - [Windows PowerShell Programmer's Guide](http://go.microsoft.com/fwlink/p/?LinkID=89596). Provides tutorials. Also contains information about fundamental Windows PowerShell concepts.
-

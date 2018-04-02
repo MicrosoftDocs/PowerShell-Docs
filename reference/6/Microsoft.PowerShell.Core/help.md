@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -137,31 +137,31 @@ NAME
 
 
 SYNTAX
-   
+
  Get-Command [[-Name] <string[]>] [-CommandType {Alias | Function | Filter | Cmdlet | ExternalScript | Application |
 
     Script | All}] [[-ArgumentList] <Object[]>] [-Module <string[]>] [-Syntax] [-TotalCount <int>] [<CommonParameters>]
 
 
-    Get-Command [-Noun <string[]>] [-Verb <string[]>] [[-ArgumentList] <Object[]>] [-Module <string[]>] [-Syntax] 
+    Get-Command [-Noun <string[]>] [-Verb <string[]>] [[-ArgumentList] <Object[]>] [-Module <string[]>] [-Syntax]
 
     [-TotalCount <int>] [<CommonParameters>]
 
 
 
 ALIASES
-    gcm 
+    gcm
 
 
 REMARKS
     Get-Help cannot find the help files for this cmdlet on this computer.
     It is displaying only partial help. To download and install help files
-    for this cmdlet, use **Update-Help**. 
+    for this cmdlet, use **Update-Help**.
 
 The second command runs the **Update-Help** cmdlet without parameters. This command downloads help files from the Internet for all of the modules in the current session and installs them on the local computer.This command works only when the local computer is connected to the Internet. If your computer is not connected to the Internet, you might be able to install help files from a network share. For more information, see Save-Help.
 PS C:\>Update-Help
 
-Now that the help files are downloaded, we can repeat the first command in the sequence. This command gets help for the **Get-Command** cmdlet. The cmdlet now gets more extensive help for **Get-Command** and you can use the *Detailed*, *Full*, *Example*, and *Parameter* parameters of **Get-Help** to customize the displays.You can use the **Get-Help** cmdlet as soon as the **Update-Help** command finishes. You do not have to restart Windows PowerShell. 
+Now that the help files are downloaded, we can repeat the first command in the sequence. This command gets help for the **Get-Command** cmdlet. The cmdlet now gets more extensive help for **Get-Command** and you can use the *Detailed*, *Full*, *Example*, and *Parameter* parameters of **Get-Help** to customize the displays.You can use the **Get-Help** cmdlet as soon as the **Update-Help** command finishes. You do not have to restart Windows PowerShell.
 PS C:\>Get-Help Get-Command
 ```
 
@@ -333,7 +333,7 @@ Conceptual topics are in the HelpFile category.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Alias, Cmdlet, Provider, General, FAQ, Glossary, HelpFile, ScriptCommand, Function, Filter, ExternalScript, All, DefaultHelp, Workflow, DscResource, Class, Configuration
 
 Required: False
@@ -352,7 +352,7 @@ This parameter has no effect on displays of conceptual ("About_") help.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -370,7 +370,7 @@ It has no effect on displays of conceptual ("About_") help.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: DetailedView
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -389,7 +389,7 @@ It has no effect on displays of conceptual ("About_") help.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Examples
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -408,7 +408,7 @@ It has no effect on displays of conceptual ("About_") help.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: AllUsersView
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -427,7 +427,7 @@ This parameter has no effect on displays of conceptual ("About_") help.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -452,7 +452,7 @@ The names of conceptual topics, such as \`about_Objects\`, must be entered in En
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -471,7 +471,7 @@ For information about supporting this feature in help topics that you write, see
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Online
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -489,7 +489,7 @@ This parameter has no effect on displays of conceptual ("About_") help.
 ```yaml
 Type: String
 Parameter Sets: Parameters
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -515,7 +515,7 @@ For more information about Windows PowerShell providers, see [about_Providers](A
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -536,7 +536,7 @@ This parameter has no effect on help for the core cmdlets.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -558,7 +558,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ShowWindow
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -590,7 +590,7 @@ To download and install the help files that Get-Help reads, use the Update-Help 
 You can use the Update-Help * cmdlet to download and install help files for the core commands that come with Windows PowerShell and for any modules that you install.
 You can also use it to update the help files so that the help on your computer is never outdated.
 
-You can also read the help topics about the commands that come with Windows PowerShell online starting at Scripting with Windows PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116). 
+You can also read the help topics about the commands that come with Windows PowerShell online starting at Scripting with Windows PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116).
 Get-Help displays help in the locale set for the Windows operating system or in the fallback language for that locale.
 If you do not have help files for the primary or fallback locale, Get-Help * behaves as if there are no help files on the computer.
 To get help for a different locale, use Region and Language in Control Panel to change the settings.
@@ -615,4 +615,3 @@ To get help for a different locale, use Region and Language in Control Panel to 
 [about_Comment_Based_Help](About/about_Comment_Based_Help.md)
 
 [about_Parameters](About/about_Parameters.md)
-
