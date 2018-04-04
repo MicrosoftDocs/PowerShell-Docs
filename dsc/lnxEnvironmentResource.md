@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC for Linux nxEnvironment Resource
@@ -25,13 +25,13 @@ nxEnvironment <string> #ResourceName
 
 ## Properties
 
-|  Property |  Description | 
+|  Property |  Description |
 |---|---|
-| Name| Indicates the name of the environment variable for which you want to ensure a specific state.| 
-| Value| The value to assign to the environment variable.| 
-| Ensure| Determines whether to check if the variable exists. Set this property to "Present" to ensure the variable exists. Set it to "Absent" to ensure the variable does not exist. The default value is "Present".| 
-| Path| Defines the environment variable that is being configured. Set this property to **$true** if the variable is the **Path** variable; otherwise, set it to **$false**. The default is **$false**. If the variable being configured is the **Path** variable, the value provided through the **Value** property will be appended to the existing value.| 
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
+| Name| Indicates the name of the environment variable for which you want to ensure a specific state.|
+| Value| The value to assign to the environment variable.|
+| Ensure| Determines whether to check if the variable exists. Set this property to "Present" to ensure the variable exists. Set it to "Absent" to ensure the variable does not exist. The default value is "Present".|
+| Path| Defines the environment variable that is being configured. Set this property to **$true** if the variable is the **Path** variable; otherwise, set it to **$false**. The default is **$false**. If the variable being configured is the **Path** variable, the value provided through the **Value** property will be appended to the existing value.|
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## Additional Information
 
@@ -43,7 +43,7 @@ nxEnvironment <string> #ResourceName
 The following example shows how to use the **nxEnvironment** resource to ensure that **TestEnvironmentVariable** is present and has the value "Test-Value". If **TestEnvironmentVariable** is not present, it will be created.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 
 nxEnvironment EnvironmentExample
@@ -53,5 +53,3 @@ nxEnvironment EnvironmentExample
     Value = “TestValue”
 }
 ```
-
-

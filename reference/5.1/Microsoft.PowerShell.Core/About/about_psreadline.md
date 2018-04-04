@@ -1,5 +1,5 @@
 ---
-ms.date:  2018-01-04
+ms.date:  01/04/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet

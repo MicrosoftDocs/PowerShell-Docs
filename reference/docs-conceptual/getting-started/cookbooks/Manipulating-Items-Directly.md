@@ -1,11 +1,11 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Manipulating Items Directly
 ms.assetid:  8cbd4867-917d-41ea-9ff0-b8e765509735
 ---
-
 # Manipulating Items Directly
+
 The elements that you see in Windows PowerShell drives, such as the files and folders in the file system drives, and the registry keys in the Windows PowerShell registry drives, are called *items* in Windows PowerShell. The cmdlets for working with them item have the noun **Item** in their names.
 
 The output of the **Get-Command -Noun Item** command shows that there are nine Windows PowerShell item cmdlets.
@@ -27,6 +27,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
 ### Creating New Items (New-Item)
+
 To create a new item in the file system, use the **New-Item** cmdlet. Include the **Path** parameter with path to the item, and the **ItemType** parameter with a value of "file" or "directory".
 
 For example, to create a new directory named "New.Directory"in the C:\\Temp directory,  type:
@@ -69,6 +70,7 @@ SKC  VC Name                           Property
 When typing a registry path, be sure to include the colon (**:**) in the Windows PowerShell drive names, HKLM: and HKCU:. Without the colon, Windows PowerShell does not recognize the drive name in the path.
 
 ### Why Registry Values are not Items
+
 When you use the **Get-ChildItem** cmdlet to find the items in a registry key, you will never see actual registry entries or their values.
 
 For example, the registry key **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run** usually contains several registry entries that represent applications that run when the system starts.
@@ -77,6 +79,7 @@ However, when you use **Get-ChildItem** to look for child items in the key, all 
 
 ```
 PS> Get-ChildItem HKLM:\Software\Microsoft\Windows\CurrentVersion\Run
+
    Hive: Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Micros
 oft\Windows\CurrentVersion\Run
 SKC  VC Name                           Property
@@ -87,10 +90,11 @@ SKC  VC Name                           Property
 Although it would be convenient to treat registry entries as items, you cannot specify a path to a registry entry in a way that ensures that it is unique. The path notation does not distinguish between the registry subkey named **Run** and the **(Default)** registry entry in the **Run** subkey. Furthermore, because registry entry names can contain the backslash character (**\\**), if regsitry entries were items, then you could not use the path notation to distinguish a registry entry named **Windows\\CurrentVersion\\Run** from the subkey that is located in that path.
 
 ### Renaming Existing Items (Rename-Item)
+
 To change the name of a file or folder, use the **Rename-Item** cmdlet. The following command changes the name of the **file1.txt** file to **fileOne.txt**.
 
-```
-PS> Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
+```powershell
+Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
 ```
 
 The **Rename-Item** cmdlet can change the name of a file or a folder, but it cannot move an item. The following command fails because it attempts to move the file from the New.Directory directory to the Temp directory.
@@ -103,6 +107,7 @@ At line:1 char:12
 ```
 
 ### Moving Items (Move-Item)
+
 To move a file or folder, use the **Move-Item** cmdlet.
 
 For example, the following command moves the New.Directory directory from the C:\\temp directory to the root of the C: drive. To verify that the item was moved, include the **PassThru** parameter of the **Move-Item** cmdlet. Without **Passthru**, the **Move-Item** cmdlet does not display any results.
@@ -118,12 +123,13 @@ d----        2006-05-18  12:14 PM            New.Directory
 ```
 
 ### Copying Items (Copy-Item)
+
 If you are familiar with the copy operations in other shells, you might find the behavior of the **Copy-Item** cmdlet in Windows PowerShell to be unusual. When you copy an item from one location to another, Copy-Item does not copy its contents by default.
 
 For example, if you copy the **New.Directory** directory from the C: drive to the C:\\temp directory, the command succeeds, but the files in the New.Directory directory are not copied.
 
-```
-PS> Copy-Item -Path C:\New.Directory -Destination C:\temp
+```powershell
+Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
 If you display the contents of **C:\\temp\\New.Directory**, you will find that it contains no files:
@@ -141,6 +147,7 @@ To copy all of the contents of a folder, include the **Recurse** parameter of th
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp -Recurse -Force -Passthru
+
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\temp
 
 Mode                LastWriteTime     Length Name
@@ -155,6 +162,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 ### Deleting Items (Remove-Item)
+
 To delete files and folders, use the **Remove-Item** cmdlet. Windows PowerShell cmdlets, such as **Remove-Item**, that can make significant, irreversible changes will often prompt for confirmation when you enter its commands. For example, if you try to remove the **New.Directory** folder, you will be prompted to confirm the command, because the folder contains files:
 
 ```
@@ -170,26 +178,26 @@ specified. If you continue, all children will be removed with the item. Are you
 
 Because **Yes** is the default response, to delete the folder and its files, press the **Enter** key. To remove the folder without confirming, use the **-Recurse** parameter.
 
-```
-PS> Remove-Item C:\temp\New.Directory -Recurse
+```powershell
+Remove-Item C:\temp\New.Directory -Recurse
 ```
 
 ### Executing Items (Invoke-Item)
+
 Windows PowerShell uses the **Invoke-Item** cmdlet to perform a default action for a file or folder. This default action is determined by the default application handler in the registry; the effect is the same as if you double-click the item in File Explorer.
 
 For example, suppose you run the following command:
 
-```
-PS> Invoke-Item C:\WINDOWS
+```powershell
+Invoke-Item C:\WINDOWS
 ```
 
 An Explorer window that is located in C:\\Windows appears, just as if you had double-clicked the C:\\Windows folder.
 
 If you invoke the **Boot.ini** file on a system prior to Windows Vista:
 
-```
-PS> Invoke-Item C:\boot.ini
+```powershell
+Invoke-Item C:\boot.ini
 ```
 
 If the .ini file type is associated with Notepad, the boot.ini file opens in Notepad.
-

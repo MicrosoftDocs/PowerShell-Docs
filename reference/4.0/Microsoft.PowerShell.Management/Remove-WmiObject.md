@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -118,7 +118,7 @@ For more information about Windows PowerShell background jobs, see  about_Jobs a
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -150,7 +150,7 @@ Valid values are:
 ```yaml
 Type: AuthenticationLevel
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
 
 Required: False
@@ -170,7 +170,7 @@ You cannot include the authority setting when you connect to the local computer.
 ```yaml
 Type: String
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -185,7 +185,7 @@ Specifies the name of a WMI class that you want to delete.
 ```yaml
 Type: String
 Parameter Sets: class
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -226,7 +226,7 @@ When you type a user name, you will be prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -241,7 +241,7 @@ Enables all the privileges of the current user before the command makes the WMI 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -267,7 +267,7 @@ Valid values are:
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
 
 Required: False
@@ -284,7 +284,7 @@ When this parameter is used, all other parameters are ignored.
 ```yaml
 Type: ManagementObject
 Parameter Sets: object
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -300,7 +300,7 @@ The Locale parameter is specified as an array in the MS_\<LCID\> format in the p
 ```yaml
 Type: String
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -330,7 +330,7 @@ Specifies the WMI object path of a WMI class, or specifies the WMI object path o
 ```yaml
 Type: String
 Parameter Sets: path
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -347,7 +347,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -418,4 +418,3 @@ Otherwise, it does not generate any output.
 [Invoke-WmiMethod](Invoke-WmiMethod.md)
 
 [Set-WmiInstance](Set-WmiInstance.md)
-

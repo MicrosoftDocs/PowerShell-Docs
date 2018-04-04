@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -119,16 +119,16 @@ FindInterfaces                 Method     System.Type[] FindInt... PS C:\> [Basi
 TypeName: BasicTest
 Name            MemberType Definition
 ----            ---------- ----------
-Add             Method     static System.Int32 Add(Int32 a, Int32 b) 
-Equals          Method     static System.Boolean Equals(Object objA, 
+Add             Method     static System.Int32 Add(Int32 a, Int32 b)
+Equals          Method     static System.Boolean Equals(Object objA,
 ReferenceEquals Method     static System.Boolean ReferenceEquals(Obj PS C:\> $BasicTestObject | Get-Member
 TypeName: BasicTest
 Name        MemberType Definition
 ----        ---------- ----------
-Equals      Method     System.Boolean Equals(Object obj) 
+Equals      Method     System.Boolean Equals(Object obj)
 GetHashCode Method     System.Int32 GetHashCode()
 GetType     Method     System.Type GetType()
-Multiply    Method     System.Int32 Multiply(Int32 a, Int32 b) 
+Multiply    Method     System.Int32 Multiply(Int32 a, Int32 b)
 ToString    Method     System.String ToString()
 ```
 
@@ -186,7 +186,7 @@ The second command calls the SayHello function as a static method of the VBFromF
 PS C:\> $Signature = @"
 [DllImport("user32.dll")]public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
 "@
-$ShowWindowAsync = Add-Type -MemberDefinition $Signature -Name "Win32ShowWindowAsync" -Namespace Win32Functions -PassThru 
+$ShowWindowAsync = Add-Type -MemberDefinition $Signature -Name "Win32ShowWindowAsync" -Namespace Win32Functions -PassThru
 
 # Minimize the Windows PowerShell console
 
@@ -332,7 +332,7 @@ Use this parameter to prevent **Add-Type** from handling compiler warnings as er
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -357,7 +357,7 @@ CSharp is the default value.
 ```yaml
 Type: Language
 Parameter Sets: FromSource, FromMember
-Aliases: 
+Aliases:
 Accepted values: CSharp, CSharpVersion3, CSharpVersion2, VisualBasic, JScript
 
 Required: False
@@ -396,7 +396,7 @@ For more information, see the examples.
 ```yaml
 Type: String[]
 Parameter Sets: FromMember
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -417,7 +417,7 @@ Otherwise, the command fails.
 ```yaml
 Type: String
 Parameter Sets: FromMember
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -497,7 +497,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -518,7 +518,7 @@ To specify an in-memory assembly or the global assembly cache, use the *Assembly
 ```yaml
 Type: String[]
 Parameter Sets: FromPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -558,7 +558,7 @@ For instance, if you define a type called Exception, scripts that use Exception 
 ```yaml
 Type: String
 Parameter Sets: FromSource
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -620,4 +620,3 @@ Otherwise, this cmdlet does not generate any output.
 [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 
 [about_Profiles](../Microsoft.PowerShell.Core/About/about_profiles.md)
-

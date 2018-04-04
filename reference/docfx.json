@@ -49,7 +49,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "breadcrumb_path": "/powershell/bread-pscore/toc.json",
+      "breadcrumb_path": "/powershell/bread-pscore/toc.yml",
       "uhfHeaderId": "MSDocsHeader-Powershell",
       "apiPlatform": "powershell",
       "ms.devlang": "powershell",

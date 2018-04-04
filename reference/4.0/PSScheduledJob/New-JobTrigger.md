@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -45,7 +45,7 @@ New-JobTrigger [-RandomDelay <TimeSpan>] [-AtStartup] [<CommonParameters>]
 ## DESCRIPTION
 The **New-JobTrigger** cmdlet creates a "job trigger" that starts a scheduled job on a one-time or recurring schedule, or when an event occurs.
 
-You can use the **ScheduledJobTrigger** object that **New-JobTrigger** returns to set a job trigger for a new or existing scheduled job. 
+You can use the **ScheduledJobTrigger** object that **New-JobTrigger** returns to set a job trigger for a new or existing scheduled job.
 You can also create a job trigger by using the Get-JobTrigger cmdlet to get the job trigger of an existing scheduled job, or by using a hash table value to represent a job trigger.
 
 When creating a job trigger, review the default values of the options specified by the New-ScheduledJobOption cmdlet.
@@ -178,7 +178,7 @@ Because the default date in a **DateTime** object is the current date, if you sp
 ```yaml
 Type: DateTime
 Parameter Sets: Once, Daily, Weekly
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -194,7 +194,7 @@ To specify a user, use the **User** parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: AtLogon
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -209,7 +209,7 @@ Starts the scheduled job when Windows starts.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: AtStartup
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -225,7 +225,7 @@ Use the other parameters in the Daily parameter set to specify the schedule deta
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Daily
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -242,7 +242,7 @@ The default value is 1.
 ```yaml
 Type: Int32
 Parameter Sets: Daily
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -264,7 +264,7 @@ For example, "Monday, Tuesday" (1, 2) results in a value of "Wednesday" (3).
 ```yaml
 Type: DayOfWeek[]
 Parameter Sets: Weekly
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -280,7 +280,7 @@ To create a repeating schedule, use the **Once** parameter with the **Repetition
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Once
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -299,7 +299,7 @@ Enter a timespan object, such as one returned by the New-TimeSpan cmdlet, or ent
 ```yaml
 Type: TimeSpan
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -314,7 +314,7 @@ This parameter, available starting in Windows PowerShell 4.0, eliminates the nec
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Once
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -339,7 +339,7 @@ This parameter is valid only when the **Once**, **At** and **RepetitionInterval*
 ```yaml
 Type: TimeSpan
 Parameter Sets: Once
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -360,7 +360,7 @@ This parameter is valid only when the **Once**, **At**, and **RepetitionDuration
 ```yaml
 Type: TimeSpan
 Parameter Sets: Once
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -377,7 +377,7 @@ The default value is all users.
 ```yaml
 Type: String
 Parameter Sets: AtLogon
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -393,7 +393,7 @@ Use the other parameters in the Weekly parameter set to specify the schedule det
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Weekly
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -410,7 +410,7 @@ The default value is 1.
 ```yaml
 Type: Int32
 Parameter Sets: Weekly
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -480,4 +480,3 @@ User="Domain1\User01 (or any valid user; used only with the AtLogon frequency va
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-

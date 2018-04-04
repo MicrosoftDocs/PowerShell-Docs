@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -225,7 +225,7 @@ For more information, see about_Hash_Tables (http://go.microsoft.com/fwlink/?Lin
 ```yaml
 Type: PSPrimitiveDictionary
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -262,7 +262,7 @@ The default value is $null, and the culture that is set in the operating system 
 ```yaml
 Type: CultureInfo
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -319,7 +319,7 @@ This option is designed to protect the resources on the client computer.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -339,7 +339,7 @@ Beginning in Windows PowerShell 3.0, if you omit this parameter, the default val
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -358,7 +358,7 @@ This option is used in the session only when the AllowRedirection parameter is u
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -374,7 +374,7 @@ Compression uses more processor cycles, but it makes transmission faster.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -389,7 +389,7 @@ Turns off data encryption.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -405,7 +405,7 @@ As a result, the session might be created faster, but user-specific registry set
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -476,7 +476,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: OutputBufferingMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -495,7 +495,7 @@ For information about the values of this parameter, see [ProxyAccessType Enumera
 ```yaml
 Type: ProxyAccessType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -514,7 +514,7 @@ For more information about the values of this parameter, see [AuthenticationMech
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -531,7 +531,7 @@ If this option is not set, no credentials are specified.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -548,7 +548,7 @@ Use this option only when the remote computer is trusted by using another mechan
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -566,7 +566,7 @@ Use this option only for trusted computers.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -581,7 +581,7 @@ Does not validate the revocation status of the server certificate.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -600,7 +600,7 @@ The default value is $null, and the UI culture that is set in the operating syst
 ```yaml
 Type: CultureInfo
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -615,7 +615,7 @@ Encode the request in UTF16 format rather than UTF8 format.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -640,7 +640,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -669,4 +669,3 @@ You cannot pipe input to this cmdlet.
 [Invoke-Command](Invoke-Command.md)
 
 [New-PSSession](New-PSSession.md)
-

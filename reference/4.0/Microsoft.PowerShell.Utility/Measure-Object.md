@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -102,7 +102,7 @@ Displays the average value of the specified properties.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +117,7 @@ Counts the number of characters in the input object.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +133,7 @@ By default, white space is not ignored.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -152,7 +152,7 @@ Because InputObject cannot return individual properties from an array or collect
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -167,7 +167,7 @@ Counts the number of lines in the input object.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -182,7 +182,7 @@ Displays the maximum value of the specified properties.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -197,7 +197,7 @@ Displays the minimum value of the specified properties.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -213,7 +213,7 @@ The default is the Count (Length) property of the object.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -228,7 +228,7 @@ Displays the sum of the values of the specified properties.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GenericMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -243,7 +243,7 @@ Counts the number of words in the input object.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: TextMeasure
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -285,4 +285,3 @@ Otherwise, it returns a GenericMeasureInfo object.
 [Tee-Object](Tee-Object.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-

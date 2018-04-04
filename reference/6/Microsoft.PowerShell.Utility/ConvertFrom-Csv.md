@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -80,7 +80,7 @@ PS C:\> $Header = "MoreData","StatusMessage","Location","Command","State","Finis
 PS C:\> $J = $J[0], $J[2..($J.count - 1)]
 PS C:\> $J | ConvertFrom-Csv -Header $Header
 MoreData      : True
-StatusMessage : 
+StatusMessage :
 Location      : localhost
 Command       : get-process
 State         : Running
@@ -88,13 +88,13 @@ Finished      : System.Threading.ManualResetEvent
 InstanceId    : 6fcb6578-7f42-4d93-9f23-9937f6aac1a2
 SessionId     : 1
 Name          : Job1
-ChildJobs     : System.Collections.Generic.List`1[System.Management.Automation.Job] 
-Output        : System.Management.Automation.PSDataCollection`1[System.Management.Automation.PSObject] 
-Error         : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ErrorRecord] 
-Progress      : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ProgressRecord] 
-Verbose       : System.Management.Automation.PSDataCollection`1[System.String] 
-Debug         : System.Management.Automation.PSDataCollection`1[System.String] 
-Warning       : System.Management.Automation.PSDataCollection`1[System.String] 
+ChildJobs     : System.Collections.Generic.List`1[System.Management.Automation.Job]
+Output        : System.Management.Automation.PSDataCollection`1[System.Management.Automation.PSObject]
+Error         : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ErrorRecord]
+Progress      : System.Management.Automation.PSDataCollection`1[System.Management.Automation.ProgressRecord]
+Verbose       : System.Management.Automation.PSDataCollection`1[System.String]
+Debug         : System.Management.Automation.PSDataCollection`1[System.String]
+Warning       : System.Management.Automation.PSDataCollection`1[System.String]
 StateChanged  :
 ```
 
@@ -141,7 +141,7 @@ Instead, it returns the strings.
 ```yaml
 Type: Char
 Parameter Sets: Delimiter
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -166,7 +166,7 @@ Otherwise, this cmdlet  creates an extra object from the items in the header row
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -183,7 +183,7 @@ You can also pipe the CSV strings to **ConvertFrom-CSV**.
 ```yaml
 Type: PSObject[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -203,7 +203,7 @@ Instead, it returns the strings.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UseCulture
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -241,4 +241,3 @@ This cmdlet  does not export the methods of the object.
 [Export-Csv](Export-Csv.md)
 
 [Import-Csv](Import-Csv.md)
-

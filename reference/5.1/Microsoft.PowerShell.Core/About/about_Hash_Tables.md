@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-28
+ms.date:  11/28/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -500,4 +500,3 @@ For more information about here-strings, see [about_Quoting_Rules](about_Quoting
 [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
 
 [System.Collections.Hashtable](http://msdn.microsoft.com/en-us/library/system.collections.hashtable\(v=vs.110\).aspx) on MSDN
-

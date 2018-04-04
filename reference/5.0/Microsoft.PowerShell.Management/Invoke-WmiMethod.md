@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -100,28 +100,28 @@ To invoke WMI in PowerShell 3.0 differs from alternate methods, and requires tha
 PS C:\> ([Wmiclass]'Win32_Process').GetMethodParameters('Create')
 __GENUS                   : 2
 __CLASS                   : __PARAMETERS
-__SUPERCLASS              : 
+__SUPERCLASS              :
 __DYNASTY                 : __PARAMETERS
-__RELPATH                 : 
+__RELPATH                 :
 __PROPERTY_COUNT          : 3
 __DERIVATION              : {}
-__SERVER                  : 
-__NAMESPACE               : 
-__PATH                    : 
-CommandLine               : 
-CurrentDirectory          : 
-ProcessStartupInformation : 
+__SERVER                  :
+__NAMESPACE               :
+__PATH                    :
+CommandLine               :
+CurrentDirectory          :
+ProcessStartupInformation :
 PSComputerName            : PS C:\> Invoke-WmiMethod -Path win32_process -Name create -ArgumentList notepad.exe
 __GENUS          : 2
 __CLASS          : __PARAMETERS
-__SUPERCLASS     : 
+__SUPERCLASS     :
 __DYNASTY        : __PARAMETERS
-__RELPATH        : 
+__RELPATH        :
 __PROPERTY_COUNT : 2
 __DERIVATION     : {}
-__SERVER         : 
-__NAMESPACE      : 
-__PATH           : 
+__SERVER         :
+__NAMESPACE      :
+__PATH           :
 ProcessId        : 11312
 ReturnValue      : 0
 PSComputerName   :
@@ -136,14 +136,14 @@ The **ReturnValue** property is populated with a 0, and the **ProcessId** proper
 PS C:\> Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
 __GENUS          : 2
 __CLASS          : __PARAMETERS
-__SUPERCLASS     : 
+__SUPERCLASS     :
 __DYNASTY        : __PARAMETERS
-__RELPATH        : 
+__RELPATH        :
 __PROPERTY_COUNT : 1
 __DERIVATION     : {}
-__SERVER         : 
-__NAMESPACE      : 
-__PATH           : 
+__SERVER         :
+__NAMESPACE      :
+__PATH           :
 ReturnValue      : 0
 ```
 
@@ -204,7 +204,7 @@ For more information about Windows PowerShell background jobs, see about_Jobs an
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -236,7 +236,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: AuthenticationLevel
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
 
 Required: False
@@ -256,7 +256,7 @@ You cannot include the authority setting when you connect to the local computer.
 ```yaml
 Type: String
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -271,7 +271,7 @@ Specifies the WMI class that contains a static method to call.
 ```yaml
 Type: String
 Parameter Sets: class
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -327,7 +327,7 @@ When you type a user name, you will be prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -342,7 +342,7 @@ Indicates that this cmdlet enables all the privileges of the current user before
 ```yaml
 Type: SwitchParameter
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -368,7 +368,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
 
 Required: False
@@ -385,7 +385,7 @@ When this parameter is used, all other parameters except the *Flag* and *Argumen
 ```yaml
 Type: ManagementObject
 Parameter Sets: object
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -401,7 +401,7 @@ Specify the value of the Locale parameter as an array in the MS_\<LCID\> format 
 ```yaml
 Type: String
 Parameter Sets: class, path, WQLQuery, query, list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -417,7 +417,7 @@ This parameter is mandatory and cannot be null or empty.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -448,7 +448,7 @@ The class or the instance that you specify must contain the method that is speci
 ```yaml
 Type: String
 Parameter Sets: path
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -465,7 +465,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -520,4 +520,3 @@ This cmdlet does not generate any output.
 [Remove-WmiObject](Remove-WmiObject.md)
 
 [Set-WmiInstance](Set-WmiInstance.md)
-

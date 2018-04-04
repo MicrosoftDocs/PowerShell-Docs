@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-09
+ms.date:  11/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -231,4 +231,3 @@ However, the host might display the objects that `Write-Host` sends to it.
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-

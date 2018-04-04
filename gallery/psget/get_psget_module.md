@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -16,7 +16,7 @@ Get PowerShellGet Module
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
 ### Get PowerShellGet module for PowerShell versions 3.0 and 4.0
-- [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409) 
+- [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
 ### Get the latest version from PowerShell Gallery
 
@@ -26,7 +26,7 @@ Install-PackageProvider Nuget –Force
 Exit
 ```
 
-#### For systems with PowerShell 5.0 (or newer) you can install the latest PowerShellGet 
+#### For systems with PowerShell 5.0 (or newer) you can install the latest PowerShellGet
 - To do this on Windows 10, Windows Server 2016, any system with WMF 5.0 or 5.1 installed, or any system with PowerShell 6, run the following commands from an elevated PowerShell session.
 ```powershell
 Install-Module –Name PowerShellGet –Force
@@ -55,3 +55,4 @@ Exit
 ```powershell
 Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
 Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+```

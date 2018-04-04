@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class
@@ -21,7 +21,7 @@ uint32 GetMetaConfiguration(
 Parameters
 ----------
 
-*MetaConfiguration* \[out\]  
+*MetaConfiguration* \[out\]
 On return, contains an embedded instance of the **MSFT_DSCMetaConfiguration** class that defines the settings.
 
 ## Return value
@@ -44,11 +44,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

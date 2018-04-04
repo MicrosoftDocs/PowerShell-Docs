@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-28
+ms.date:  11/28/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -193,4 +193,3 @@ about_Functions_CmdletBinding_Attribute
 [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-

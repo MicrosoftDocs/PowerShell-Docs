@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -89,7 +89,7 @@ When you include this parameter, the *MaxSize* parameter is required.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -112,7 +112,7 @@ The default value is BLG.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -127,7 +127,7 @@ Overwrites and replaces an existing file if one exists in the location specified
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -143,7 +143,7 @@ Enter a variable that contains the data or a command that gets the data, such as
 ```yaml
 Type: PerformanceCounterSampleSet[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -161,7 +161,7 @@ If the *Circular* parameter is not specified, then when the log file reaches the
 ```yaml
 Type: UInt32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -225,4 +225,3 @@ However, if the computer is configured for remote Windows PowerShell Windows Pow
 [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -92,7 +92,7 @@ For more information, see Set-StrictMode.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: off
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -110,7 +110,7 @@ Note: Specifying the Step parameter automatically sets a Trace level of 1.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: on
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -128,7 +128,7 @@ For more information, see Set-StrictMode.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: on
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -149,7 +149,7 @@ Specifies the trace level:
 ```yaml
 Type: Int32
 Parameter Sets: on
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -181,4 +181,3 @@ This cmdlet does not return any output.
 [Write-Debug](../microsoft.powershell.utility/write-debug.md)
 
 [about_Debuggers](About/about_Debuggers.md)
-

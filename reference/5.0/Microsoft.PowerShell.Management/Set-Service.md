@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -186,7 +186,7 @@ To see the service description, use Get-WmiObject to get a **Win32_Service** obj
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -218,7 +218,7 @@ You can also pipe a service object to Set-Service.
 ```yaml
 Type: ServiceController
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -251,7 +251,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Specifies the status for the service. 
+Specifies the status for the service.
 The acceptable values for this parameter are:
 
 - Running.
@@ -298,7 +298,7 @@ Suspends the service.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Running, Stopped, Paused
 
 Required: False
@@ -357,4 +357,3 @@ This cmdlet does not return any objects.
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-

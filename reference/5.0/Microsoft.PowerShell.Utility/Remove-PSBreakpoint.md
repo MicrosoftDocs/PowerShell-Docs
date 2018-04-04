@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -91,7 +91,7 @@ You can also pipe breakpoint objects to **Remove-PSBreakpoint**.
 ```yaml
 Type: Breakpoint[]
 Parameter Sets: Breakpoint
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -121,7 +121,7 @@ Specifies breakpoint IDs for which this cmdlet deletes breakpoints.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -174,4 +174,3 @@ The cmdlet does not generate any output.
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
-

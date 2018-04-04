@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -42,8 +42,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ### Example 1: Create a Comment-BasedHelp snippet
 ```
 PS C:\> New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
-    .SYNOPSIS             
-    .DESCRIPTION            
+    .SYNOPSIS
+    .DESCRIPTION
     .PARAMETER  <Parameter-Name>
     .INPUTS
     .OUTPUTS
@@ -93,7 +93,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -110,7 +110,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -127,7 +127,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -143,7 +143,7 @@ The author field appears in the snippet file, but it does not appear when you cl
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -161,7 +161,7 @@ This parameter does not indent the snippet text.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -177,7 +177,7 @@ By default, **New-ISESnippet** does not overwrite files.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -215,11 +215,10 @@ To use the new snippet (and other unsigned user-created snippets), change the ex
 
 - You can create a snippet that has the same name as a built-in snippet. Both snippets appear in the snippet menu in Windows PowerShell ISE.
 
-  
+
 
 ## RELATED LINKS
 
 [Get-IseSnippet](Get-IseSnippet.md)
 
 [Import-IseSnippet](Import-IseSnippet.md)
-

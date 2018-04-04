@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -99,7 +99,7 @@ PS C:\> $job = Register-ObjectEvent -inputObject $timer -eventName Elapsed -sour
 PS C:\> $job.gettype().fullnameSystem.Management.Automation.PSEventJob
 PS C:\> $job | format-list -property *
 
-State         : 
+State         :
 RunningModule        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
 StatusMessage :
 HasMoreData   : True
@@ -162,7 +162,7 @@ You can use the Job cmdlets to manage the event job.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 102
@@ -183,7 +183,7 @@ For example, the ManagementEventWatcher class has events named "EventArrived" an
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -199,7 +199,7 @@ Use this parameter when you are registering for events on a remote computer or i
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -216,7 +216,7 @@ This parameter is required.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -232,7 +232,7 @@ The value of this parameter appears in the MessageData property of all events as
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -251,7 +251,7 @@ The value of this parameter appears in the value of the SourceIdentifier propert
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 101
@@ -269,7 +269,7 @@ To view or cancel a subscription that was created with the SupportEvent paramete
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -290,7 +290,7 @@ You can use the Job cmdlets to manage the event job.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -332,4 +332,3 @@ This cmdlet does not generate any output.
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

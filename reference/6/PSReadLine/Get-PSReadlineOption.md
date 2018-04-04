@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821450
 external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
 title:  Get-PSReadlineOption
 ---
-
 # Get-PSReadlineOption
 
 ## SYNOPSIS
+
 Gets values for the options that can be configured.
 
 ## SYNTAX
@@ -20,6 +20,7 @@ Get-PSReadlineOption [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-PSReadlineOption** returns the current state of the settings that can be configured by using the Set-PSReadlineOption cmdlet.
 You can use the object that **Get-PSReadlineOption** returns to change PSReadline options.
 This provides a slightly simpler way to set syntax coloring options for multiple kinds of tokens.
@@ -27,6 +28,7 @@ This provides a slightly simpler way to set syntax coloring options for multiple
 ## EXAMPLES
 
 ### Example 1: Get options and their values
+
 ```
 PS C:\> Get-PSReadlineOption
 EditMode                               : Windows
@@ -34,9 +36,9 @@ ContinuationPrompt                     : >>>
 ContinuationPromptForegroundColor      : DarkYellow
 ContinuationPromptBackgroundColor      : DarkMagenta
 ExtraPromptLineCount                   : 0
-AddToHistoryHandler                    : 
-CommandValidationHandler               : 
-CommandsToValidateScriptBlockArguments : {ForEach-Object, %, Invoke-Command, icm...} 
+AddToHistoryHandler                    :
+CommandValidationHandler               :
+CommandsToValidateScriptBlockArguments : {ForEach-Object, %, Invoke-Command, icm...}
 HistoryNoDuplicates                    : False
 MaximumHistoryCount                    : 4096
 MaximumKillRingCount                   : 10
@@ -44,7 +46,7 @@ HistorySearchCursorMovesToEnd          : False
 ShowToolTips                           : False
 DingTone                               : 1221
 CompletionQueryItems                   : 100
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+--- 
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+---
 DingDuration                           : 50
 BellStyle                              : Audible
 HistorySearchCaseSensitive             : False
@@ -83,11 +85,13 @@ This command returns the list of available PSReadline options and their current 
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-###  
+### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
@@ -103,4 +107,3 @@ You cannot pipe objects to this cmdlet.
 [Set-PSReadlineOption](Set-PSReadlineOption.md)
 
 [Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
-

@@ -1,15 +1,15 @@
-﻿---
-ms.date:  2017-06-05
+---
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  The ISE Object Model Hierarchy
 ---
-
 # The ISE Object Model Hierarchy
-This topic shows the hierarchy of objects that are part of 
-Windows PowerShell Integrated Scripting Environment (ISE). 
-Windows PowerShell ISE is included in Windows PowerShell 3.0 
-and in Windows PowerShell 4.0. 
-Click an object to take you to the reference documentation 
+
+This topic shows the hierarchy of objects that are part of
+Windows PowerShell Integrated Scripting Environment (ISE).
+Windows PowerShell ISE is included in Windows PowerShell 3.0
+and in Windows PowerShell 4.0.
+Click an object to take you to the reference documentation
 for the class that defines the object.
 
 ## $psISE Object
@@ -39,7 +39,7 @@ edge of the Windows PowerShell ISE window.
 
 The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the
 [ISEAddOnTool](The-ISEAddOnTool-Object.md) class.
-It represents the installed add-on tool that is currently docked to the 
+It represents the installed add-on tool that is currently docked to the
 right-hand edge of the Windows PowerShell ISE window.
 
 ## [$psISE.Options](The-ISEOptions-Object.md)
@@ -55,11 +55,12 @@ It is an instance of the Microsoft.PowerShell.Host.ISE.ISEOptions class.
 The **$psISE.PowerShellTabs** object is an instance of the
 [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) class.
 It is a collection of all the currently open PowerShell tabs that represent
-the available Windows PowerShell run environments on the local computer 
-or on connected remote computers. 
+the available Windows PowerShell run environments on the local computer
+or on connected remote computers.
 Each member in the collection is an instance of the
 [PowerShellTab](The-PowerShellTab-Object.md) class.
 
 ## See Also
-- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
+
+- [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)

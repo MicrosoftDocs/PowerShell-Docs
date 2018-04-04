@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -118,10 +118,10 @@ Status   Name               DisplayName
 Running  ALG                Application Layer Gateway Service
 Running  Ati HotKey Poller  Ati HotKey Poller
 Running  wuauserv           Automatic Updates
-Running  BITS               Background Intelligent Transfer Ser... 
+Running  BITS               Background Intelligent Transfer Ser...
 Running  Client for NFS     Client for NFS
-... 
-Stopped  clr_optimizatio... .NET Runtime Optimization Service v... 
+...
+Stopped  clr_optimizatio... .NET Runtime Optimization Service v...
 Stopped  Alerter            Alerter
 Stopped  AppMgmt            Application Management
 Stopped  aspnet_state       ASP.NET State Service
@@ -183,7 +183,7 @@ By default, sorting is not case sensitive.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -198,7 +198,7 @@ Specifies the cultural configuration to use when sorting.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -217,7 +217,7 @@ To sort by some properties in ascending order and others in descending order, yo
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -237,7 +237,7 @@ To sort objects, pipe them **to Sort-Object**.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -260,7 +260,7 @@ If you do not specify properties, the cmdlet sorts based on default properties f
 
 The value of the *Property* parameter can be a calculated property.
 To create a calculated, property, use a hash table.
-Valid keys are: 
+Valid keys are:
 
 - Expression \<string\> or \<script block\>
 - Ascending \<Boolean\>
@@ -269,7 +269,7 @@ Valid keys are:
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -288,7 +288,7 @@ As a result, strings that differ only in character casing are considered to be t
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -334,4 +334,3 @@ You can pipe the objects to be sorted to **Sort-Object**.
 [Tee-Object](Tee-Object.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-

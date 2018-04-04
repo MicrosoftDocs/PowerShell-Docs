@@ -1,12 +1,12 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
 ---
 
 # PowerShell Module Discovery, Install and Inventory with PowerShellGet
- 
+
 PowerShellGet is included in this release of WMF:
 -   Find-Module can filter on module metadata with the -Tag parameter
 -   Find-Module can filter on repository-specific search language with the -Filter parameter
@@ -56,4 +56,3 @@ Find-Module -Filter RBAC -Repository PSGallery
     -   Get-InstalledModule
     -   Uninstall-Module
     -   Save-Module
-    

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell
 title:  RequireLicenseAcceptance
@@ -13,7 +13,7 @@ Legal departments for some module publishers require that customers must explici
 ## Publish Requirements for Modules
 
 Modules that would like to require users to accept license should fulfill following requirements:
-	
+
 - PSData section of module manifest should include RequireLicenseAcceptance = $True.
 - Module should contain license.txt file in root directory.
 - Module manifest should contain License Uri.
@@ -27,13 +27,13 @@ Modules that would like to require users to accept license should fulfill follow
     - **Save-Module:** the module will be copied to the user&#39;s system
     - **Install-Module:** the module will be copied to the user&#39;s system to the proper folder (based on scope)
     - **Update-Module:** the module will be updated.
-  - If the license is declined. 
+  - If the license is declined.
     - Operation will be cancelled.
 - All cmdlets will check for the metadata(requireLicenseAcceptance and Format Version) that says a license acceptance is required
   - If format version of client is older than 2.0, operation will fail and ask the user to update the client.
   - If module was published with format version older than 2.0, requireLicenseAcceptance flag will be ignored.
 
-    
+
  ## Module Dependencies
 - During Install/Save/Update operation, if a dependent module(something else depends on the module) requires license acceptance, then the license acceptance behavior (above) will be required.
 - If the module version is already listed in the local catalog as being installed on the system, we would bypass the license checking.
@@ -55,7 +55,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
     } # End of PSData hashtable
-    
+
  } # End of PrivateData hashtable
 ```
 This command updates the manifest file and sets the RequireLicenseAcceptance flag to true.
@@ -74,7 +74,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
 ```
 This command shows the license from license.txt file and prompts the user to accept the license.
@@ -113,7 +113,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### Example 6: Install Module with dependencies requiring license acceptance and -AcceptLicense
@@ -143,7 +143,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 This command shows the license from license.txt file and prompts the user to accept the license.
 
@@ -168,7 +168,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 This command shows the license from license.txt file and prompts the user to accept the license.
 

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-30
+ms.date:  11/30/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -295,4 +295,3 @@ profiles. For more information about profiles, see about_Profiles.
 [about_Debuggers](about_Debuggers.md)
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
-

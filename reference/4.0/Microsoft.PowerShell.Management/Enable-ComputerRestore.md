@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -24,7 +24,7 @@ The Enable-ComputerRestore cmdlet turns on the System Restore feature on one or 
 As a result, you can use tools, such as the Restore-Computer cmdlet, to restore the computer to a previous state.
 
 By default, System Restore is enabled on all eligible drives, but you can disable it, such as by using the Disable-ComputerRestore cmdlet.
-To enable (or re-enable) System Restore on any drive, it must be enabled on the system drive, either first or concurrently. 
+To enable (or re-enable) System Restore on any drive, it must be enabled on the system drive, either first or concurrently.
 To find the state of System Restore for each drive, use Rstrui.exe.
 
 System restore points and the ComputerRestore cmdlets are supported only on client operating systems, such as Windows 7, Windows Vista, and Windows XP.
@@ -49,7 +49,7 @@ This command enables System Restore on the C: and D: drives of the local compute
 
 ### -Drive
 Specifies the file system drives.
-Enter one or more file system drive letters, each followed by a colon and a backslash and enclosed in quotation marks, such as "C:\" or "D:\". 
+Enter one or more file system drive letters, each followed by a colon and a backslash and enclosed in quotation marks, such as "C:\" or "D:\".
 This parameter is required.
 
 You cannot use this cmdlet to enable System Restore on a remote network drive, even if the drive is mapped to the local computer, and you cannot enable System Restore on drives that are not eligible for System Restore, such as external drives.
@@ -59,7 +59,7 @@ To enable System Restore on any drive, System Restore must be enabled on the sys
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -133,4 +133,3 @@ To open this tab in Windows PowerShell, type "SystemPropertiesProtection".
 [Restart-Computer](Restart-Computer.md)
 
 [Restore-Computer](Restore-Computer.md)
-

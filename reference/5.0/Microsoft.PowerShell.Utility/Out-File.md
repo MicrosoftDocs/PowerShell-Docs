@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-09
+ms.date:  11/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -263,7 +263,7 @@ No newline is added after the last output string.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -354,4 +354,3 @@ If you pipe the output of `Out-File` to `Get-Member`, `Get-Member` reports that 
 [Out-String](Out-String.md)
 
 [Tee-Object](Tee-Object.md)
-

@@ -1,9 +1,9 @@
 ---
-description:  
+description:
 ms.topic:  article
 ms.prod:  powershell
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+ms.date:  12/12/2016
 title:  get pswaauthorizationrule
 ms.technology:  powershell
 ---
@@ -41,7 +41,7 @@ Specifies the identifiers (IDs) of the rules that this cmdlet should
 get. If no IDs are specified, then this cmdlet returns all authorization
 rules.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -56,7 +56,7 @@ Specifies the names of authorization rules to retrieve. This parameter
 returns any rules that exactly match the rule names of the strings in
 this array.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |

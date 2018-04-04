@@ -1,11 +1,11 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Log Resource
 ---
 
-# DSC Log Resource 
+# DSC Log Resource
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -28,10 +28,10 @@ See the following article.
 [Where are DSC Event Logs?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
 
 ## Properties
-|  Property  |  Description   | 
-|---|---| 
-| Message| Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log.| 
-| DependsOn | Indicates that the configuration of another resource must run before this log message gets written. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
+|  Property  |  Description   |
+|---|---|
+| Message| Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log.|
+| DependsOn | Indicates that the configuration of another resource must run before this log message gets written. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## Example
 
@@ -39,7 +39,7 @@ The following example shows how to include a message in the Microsoft-Windows-De
 
 > **Note**: if you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with this resource configured, it will always return **$false**.
 
-```powershell 
+```powershell
 Configuration logResourceTest
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
@@ -54,4 +54,3 @@ Configuration logResourceTest
     }
 }
 ```
-

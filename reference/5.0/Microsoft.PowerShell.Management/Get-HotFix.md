@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -99,7 +99,7 @@ If you type a user name, you will be prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -116,7 +116,7 @@ The default is all hotfixes on the computer.
 ```yaml
 Type: String[]
 Parameter Sets: Description
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -166,4 +166,3 @@ This cmdlet returns objects that represent the hotfixes on the computer.
 [Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
 [Add-Content](Add-Content.md)
-

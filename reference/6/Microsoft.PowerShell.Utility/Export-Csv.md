@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-04
+ms.date:  12/04/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -440,4 +440,3 @@ It contains a comma-separated list of the names of all the properties of the fir
 [Import-Csv](Import-Csv.md)
 
 [Select-Object](Select-Object.md)
-

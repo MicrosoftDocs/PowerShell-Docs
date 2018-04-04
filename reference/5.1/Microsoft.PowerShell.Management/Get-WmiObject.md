@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -205,7 +205,7 @@ Typically, amended information is localizable information, such as object and pr
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -233,7 +233,7 @@ For more information about Windows PowerShellbackground jobs, see about_Jobs and
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -265,7 +265,7 @@ The acceptable values for this parameter are:
 ```yaml
 Type: AuthenticationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
 
 Required: False
@@ -285,7 +285,7 @@ You cannot include the authority setting when you connect to the local computer.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -355,7 +355,7 @@ When you type a user name, you are prompted for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -370,7 +370,7 @@ Specifies whether direct access to the WMI provider is requested for the specifi
 ```yaml
 Type: SwitchParameter
 Parameter Sets: query, WQLQuery
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -385,7 +385,7 @@ Indicates that this cmdlet enables all the privileges of the current user before
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -408,7 +408,7 @@ For example, the following commands return only the logical disks that have a **
 ```yaml
 Type: String
 Parameter Sets: query
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -440,7 +440,7 @@ Allows objects to permit other objects to use the credentials of the caller.
 ```yaml
 Type: ImpersonationLevel
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
 
 Required: False
@@ -459,7 +459,7 @@ This cmdlet does not use the **Default Namespace** registry entry in the HKEY_LO
 ```yaml
 Type: SwitchParameter
 Parameter Sets: list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -475,7 +475,7 @@ Enter a value in MS_\<LCID\> format.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -507,7 +507,7 @@ Enter the property names.
 ```yaml
 Type: String[]
 Parameter Sets: query
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -523,7 +523,7 @@ This parameter does not support event queries.
 ```yaml
 Type: String
 Parameter Sets: WQLQuery
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -538,7 +538,7 @@ Indicates that this cmdlet searches the current namespace and all other namespac
 ```yaml
 Type: SwitchParameter
 Parameter Sets: list
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -554,7 +554,7 @@ This parameter is valid only when the *AsJob* parameter is used in the command.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -599,4 +599,3 @@ To get all properties of a WMI object, use the Get-Member or Format-List cmdlets
 [Remove-WmiObject](Remove-WmiObject.md)
 
 [Set-WmiInstance](Set-WmiInstance.md)
-

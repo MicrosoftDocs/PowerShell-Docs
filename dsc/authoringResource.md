@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Build Custom Windows PowerShell Desired State Configuration Resources
@@ -20,4 +20,3 @@ A DSC resource is a Windows PowerShell module. The module contains both the sche
 * [Writing a custom DSC resource with PowerShell classes](authoringResourceClass.md)
 * [Composite resources: Using a DSC configuration as a resource](authoringResourceComposite.md)
 * [Using the Resource Designer tool](authoringResourceMofDesigner.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -46,7 +46,7 @@ PS C:\> Set-StrictMode -Version 1.0
 PS C:\> $a -gt 5
 False
 
-The variable $a cannot be retrieved because it has not been set yet. 
+The variable $a cannot be retrieved because it has not been set yet.
 
 At line:1 char:3
 
@@ -117,7 +117,7 @@ This parameter also turns off `Set-PSDebug -Strict`.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Off
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -180,4 +180,3 @@ This cmdlet does not return any output.
 ## RELATED LINKS
 
 [Set-PSDebug](Set-PSDebug.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC WindowsFeatureSet Resource
@@ -19,28 +19,28 @@ Use this resource when you want to configure a number of Windows Features to the
 ```
 WindowsFeatureSet [string] #ResourceName
 {
-    Name = [string[]] 
+    Name = [string[]]
     [ Ensure = [string] { Absent | Present }  ]
     [ Source = [string] ]
     [ IncludeAllSubFeature = [bool] ]
     [ Credential = [PSCredential] ]
     [ LogPath = [string] ]
     [ DependsOn = [string[]] ]
-    
+
 }
 ```
 
 ## Properties
 
-|  Property  |  Description   | 
-|---|---| 
-| Name| The names of the roles or features that you want to ensure are added or removed. This is the same as the **Name** property of the [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet, and not the display name of the roles or features.| 
-| Credential| The credentials to use to add or remove the roles or features.| 
-| Ensure| Indicates whether the roles or features are added. To ensure that the roles or features are added, set this property to "Present" To ensure that the roles or features are removed, set the property to "Absent".| 
-| IncludeAllSubFeature| Set this property to **$true** to include all required subfeatures with of the features you specify with the **Name** property.| 
-| LogPath| The path to a log file where you want the resource provider to log the operation.| 
-| DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
-| Source| Indicates the location of the source file to use for installation, if necessary.| 
+|  Property  |  Description   |
+|---|---|
+| Name| The names of the roles or features that you want to ensure are added or removed. This is the same as the **Name** property of the [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet, and not the display name of the roles or features.|
+| Credential| The credentials to use to add or remove the roles or features.|
+| Ensure| Indicates whether the roles or features are added. To ensure that the roles or features are added, set this property to "Present" To ensure that the roles or features are removed, set the property to "Absent".|
+| IncludeAllSubFeature| Set this property to **$true** to include all required subfeatures with of the features you specify with the **Name** property.|
+| LogPath| The path to a log file where you want the resource provider to log the operation.|
+| DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
+| Source| Indicates the location of the source file to use for installation, if necessary.|
 
 ## Example
 
@@ -58,8 +58,7 @@ configuration FeatureSetTest
             Name                    = @("SMTP-Server", "Web-Server")
             Ensure                  = 'Present'
             IncludeAllSubFeature    = $true
-        } 
+        }
     }
 }
 ```
-

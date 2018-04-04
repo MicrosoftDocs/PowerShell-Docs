@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -99,7 +99,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSObject[]
 Parameter Sets: InputOjectAndLiteralPathParameterSet, InputOjectAndPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -133,7 +133,7 @@ Single quotation marks tell Windows PowerShell not to interpret any characters a
 ```yaml
 Type: String
 Parameter Sets: NameAndLiteralPathParameterSet, InputOjectAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -149,7 +149,7 @@ The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; yo
 ```yaml
 Type: Version
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -165,7 +165,7 @@ The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive
 ```yaml
 Type: Version
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -180,7 +180,7 @@ Specifies an array of names of scripts to save.
 ```yaml
 Type: String[]
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -197,7 +197,7 @@ The default location is the current directory (.).
 ```yaml
 Type: String
 Parameter Sets: NameAndPathParameterSet, InputOjectAndPathParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -212,7 +212,7 @@ Specifies a proxy server for the request, rather than connecting directly to the
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,7 +227,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -242,7 +242,7 @@ Specifies the friendly name of a repository that has been registered by running 
 ```yaml
 Type: String[]
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -257,7 +257,7 @@ Specifies the exact version number of the script to save.
 ```yaml
 Type: Version
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -302,4 +302,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Uninstall-Script](Uninstall-Script.md)
 
 [Update-Script](Update-Script.md)
-

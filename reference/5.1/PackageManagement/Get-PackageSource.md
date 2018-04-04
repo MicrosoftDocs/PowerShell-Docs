@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -64,7 +64,7 @@ This command gets all package sources for the PSModule provider by piping the re
 ```yaml
 Type: String
 Parameter Sets: NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -79,7 +79,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -94,7 +94,7 @@ Indicates that this cmdlet forces Package Management to automatically install th
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -109,7 +109,7 @@ Specifies the location of the Package Management source or repository.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -124,7 +124,7 @@ Specifies the name of the Package Management source.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -139,7 +139,7 @@ Specifies the Package Management provider.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -177,7 +177,7 @@ Specifies the publish location for the package source.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -192,7 +192,7 @@ Specifies the script publish location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -207,7 +207,7 @@ Specifies the script source location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -252,4 +252,3 @@ Specifies one or more package sources.
 [Set-PackageSource](Set-PackageSource.md)
 
 [Unregister-PackageSource](Unregister-PackageSource.md)
-

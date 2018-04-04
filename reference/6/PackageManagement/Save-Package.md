@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -110,7 +110,7 @@ By default, **Save-Package** only returns the newest available version.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -125,7 +125,7 @@ Specifies one or more commands included in the package.
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -140,7 +140,7 @@ Specifies a user account that has rights to save a package from a specified pack
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -155,7 +155,7 @@ Specifies one or more Desired State Configuration (DSC) resources for the packag
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -170,7 +170,7 @@ Specifies a filter for the package.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -185,7 +185,7 @@ Indicates that this cmdlet overrides restrictions that prevent the command from 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -200,7 +200,7 @@ Indicates that this cmdlet forces Package Management to automatically install th
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -215,7 +215,7 @@ Indicates the resources that the package includes.
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 Accepted values: DscResource, Cmdlet, Function, Workflow
 
 Required: False
@@ -232,7 +232,7 @@ Software IDs are part of the results of the Find-Package cmdlet.
 ```yaml
 Type: SoftwareIdentity
 Parameter Sets: PackageByInputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -248,7 +248,7 @@ You cannot add both this parameter and the *DestinationPath* parameter to the sa
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -264,7 +264,7 @@ If you do not add this parameter, **Save-Package** saves the highest available v
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -280,7 +280,7 @@ If you do not add this parameter, **Find-Package** finds the highest available v
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -295,7 +295,7 @@ Specifies one or more package names.
 ```yaml
 Type: String[]
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -310,7 +310,7 @@ Specifies the Package Management provider.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -325,7 +325,7 @@ Specifies the path at which to save the package.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -356,7 +356,7 @@ Specifies the publish location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -372,7 +372,7 @@ If you do not add this parameter, **Save-Package** finds the highest available v
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -387,7 +387,7 @@ Specifies the script publish location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -402,7 +402,7 @@ Specifies the script source location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -417,7 +417,7 @@ Specifies one or more package sources.
 ```yaml
 Type: String[]
 Parameter Sets: PackageBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -432,7 +432,7 @@ Specifies a tag to search for within the package metadata.
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -447,7 +447,7 @@ Specifies whether to search for packages with a module, a script, or either.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 Accepted values: Module, Script, All
 
 Required: False
@@ -494,7 +494,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -509,7 +509,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -524,7 +524,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -539,7 +539,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -554,7 +554,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -569,7 +569,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -584,7 +584,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -599,7 +599,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -614,7 +614,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -647,4 +647,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Save-Package](Save-Package.md)
 
 [Uninstall-Package](Uninstall-Package.md)
-

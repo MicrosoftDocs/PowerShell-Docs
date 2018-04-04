@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -49,14 +49,14 @@ The objects are expanded to a depth of three levels.
 ## PARAMETERS
 
 ### -As
-Determines the output format. 
+Determines the output format.
 The acceptable values for this parameter are:
 
-- String. 
-Returns a single string. 
-- Stream. 
+- String.
+Returns a single string.
+- Stream.
 Returns an array of strings.
-- Document. 
+- Document.
 Returns an **XmlDocument** object.
 
 The default value is Document.
@@ -64,7 +64,7 @@ The default value is Document.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Stream, String, Document
 
 Required: False
@@ -86,7 +86,7 @@ For more information, see about_Types.ps1xml.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -103,7 +103,7 @@ You can also pipe objects to **ConvertTo-XML**.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -118,7 +118,7 @@ Omits the Type attribute from the object nodes.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -153,4 +153,3 @@ The value of the *As* parameter determines the type of object that **ConvertTo-X
 [Get-Date](Get-Date.md)
 
 [Import-Clixml](Import-Clixml.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -15,4 +15,3 @@ PackageManagement (aka OneGet) is a new way to discover and install software pac
 -   Seamlessly install, uninstall, and inventory packages from one or more software repositories
 
 For more details, see http://oneget.org/.
-

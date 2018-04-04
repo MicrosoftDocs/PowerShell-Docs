@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -35,7 +35,7 @@ The **Get-Runspace** cmdlet gets active runspaces in a Windows PowerShell host p
 
 ## EXAMPLES
 
-### Example 1: Get runspaces 
+### Example 1: Get runspaces
 ```powershell
 PS C:\> Get-Runspace
 ```
@@ -83,8 +83,8 @@ PS C:\> Get-Runspace -InstanceId $activeRunspace.InstanceId
   1 Runspace1       localhost       Local         Opened        Busy
 ```
 
-In this example, we identify an available runspace using the `Name` parameter and we store the return object to a new 
-variable named `$activeRunspace`.  The second example, we call `Get-Runspace` with the `InstanceId` parameter and pass 
+In this example, we identify an available runspace using the `Name` parameter and we store the return object to a new
+variable named `$activeRunspace`.  The second example, we call `Get-Runspace` with the `InstanceId` parameter and pass
 in the `$activeRunspace` variable but we specify the `InstanceId` property on our reuturn object.
 
 ## PARAMETERS
@@ -95,7 +95,7 @@ Specifies the Id of a runspace
 ```yaml
 Type: Int32[]
 Parameter Sets: IdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -110,7 +110,7 @@ Specifies the instance ID GUID of a running job.
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -125,7 +125,7 @@ Specifies the Name of a runspace
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -149,4 +149,3 @@ You can pipe the results of a `Get-Runspace` command to `Debug-Runspace`.
 ## RELATED LINKS
 
 [Debug-Runspace](Debug-Runspace.md)
-

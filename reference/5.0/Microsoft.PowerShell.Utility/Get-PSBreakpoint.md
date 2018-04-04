@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -60,9 +60,9 @@ This command gets all breakpoints set on all scripts and functions in the curren
 ### Example 2: Get breakpoints by ID
 ```
 PS C:\> Get-PSBreakpoint -Id 2
-Function   : 
-IncrementAction     : 
-Enabled    : 
+Function   :
+IncrementAction     :
+Enabled    :
 TrueHitCount   : 0
 Id         : 2
 Script     : C:\ps-test\sample.ps1
@@ -133,7 +133,7 @@ Enter the command names, such as the name of a cmdlet or function.
 ```yaml
 Type: String[]
 Parameter Sets: Command
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -150,7 +150,7 @@ You can also pipe breakpoint IDs to **Get-PSBreakpoint**.
 ```yaml
 Type: Int32[]
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -167,7 +167,7 @@ If you omit the path, the default location is the current directory.
 ```yaml
 Type: String[]
 Parameter Sets: Script
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: Type, Command, Variable
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -202,7 +202,7 @@ You can also pipe breakpoint types to **Get-PSBreakPoint**.
 ```yaml
 Type: BreakpointType[]
 Parameter Sets: Type
-Aliases: 
+Aliases:
 Accepted values: Line, Variable, Command
 
 Required: True
@@ -219,7 +219,7 @@ Enter the variable names without dollar signs.
 ```yaml
 Type: String[]
 Parameter Sets: Variable
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -257,4 +257,3 @@ You can pipe breakpoint IDs and breakpoint types to **Get-PSBreakPoint**.
 [Set-PSBreakpoint](Set-PSBreakpoint.md)
 
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
-

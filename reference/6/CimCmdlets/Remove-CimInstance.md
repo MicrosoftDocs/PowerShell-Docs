@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -42,9 +42,9 @@ The Remove-CimInstance cmdlet removes a CIM instance from a CIM server.
 
 You can specify the CIM instance to remove by using either a CIM instance object retrieved by the Get-CimInstance cmdlet, or by specifying a query.
 
-If the InputObject parameter is not specified, the cmdlet works in one of the following ways: 
+If the InputObject parameter is not specified, the cmdlet works in one of the following ways:
 
---If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session. 
+--If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session.
 --If either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet works against the CIM server specified by either the ComputerName parameter or the CimSession parameter.
 
 ## EXAMPLES
@@ -82,7 +82,7 @@ For more information, see about_CimSessions.
 ```yaml
 Type: CimSession[]
 Parameter Sets: CimInstanceSessionSet, QuerySessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies a CIM instance object to be removed from the CIM server. 
+Specifies a CIM instance object to be removed from the CIM server.
 Note: The input object passed to the cmdlet is not changed, only the instance in the CIM server is removed.
 
 ```yaml
@@ -144,13 +144,13 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace for the CIM operation.
 
-The default namespace is root/cimv2. 
+The default namespace is root/cimv2.
 NOTE: You can use tab completion to browse the list of namespaces, because wps_2 gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
 Parameter Sets: QuerySessionSet, QueryComputerSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -188,7 +188,7 @@ If the value specified uses the WQL LIKE operator, then you must escape the foll
 ```yaml
 Type: String
 Parameter Sets: QuerySessionSet, QueryComputerSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -207,7 +207,7 @@ The default value is WQL.
 ```yaml
 Type: String
 Parameter Sets: QuerySessionSet, QueryComputerSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -221,13 +221,13 @@ Specifies the resource uniform resource identifier (URI) of the resource class o
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
-For example: 
+For example:
 
 http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
 http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
 
 
-                        
+
 By default, if you do not specify this parameter, the DMTF standard resource URI http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/ is used and the class name is appended to it.
 
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying the ComputerName parameter, which creates a CIM session using WSMan.
@@ -238,7 +238,7 @@ If both the ResourceUri parameter and the Filter parameter are specified, the Fi
 ```yaml
 Type: Uri
 Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -296,4 +296,3 @@ This cmdlet produces no outputs.
 [Get-CimInstance](get-ciminstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)
-

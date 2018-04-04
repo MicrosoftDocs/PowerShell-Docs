@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -48,7 +48,7 @@ When you use this parameter, the output of the Read-Host cmdlet is a SecureStrin
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -66,7 +66,7 @@ Windows PowerShell appends a colon (:) to the text that you enter.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -99,4 +99,3 @@ Otherwise, it returns a string.
 [Out-Host](../microsoft.powershell.core/out-host.md)
 
 [Write-Host](Write-Host.md)
-

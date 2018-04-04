@@ -141,7 +141,7 @@ you can use Windows PowerShell modules by appending the Windows PowerShell `PSMo
 First, install the `WindowsPSModulePath` module from the PowerShell Gallery:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -172,7 +172,7 @@ and you can use your existing SSH-based authenticate mechanisms (like passwords 
 For more information on configuring and using SSH-based remoting,
 see [PowerShell Remoting over SSH][ssh-remoting].
 
-## Default encoding is UTF-8 without a BOM
+## Default encoding is UTF-8 without a BOM except for New-ModuleManifest
 
 In the past, Windows PowerShell cmdlets like `Get-Content`, `Set-Content` used different encodings, such as ASCII and UTF-16.
 The variance in encoding defaults created problems when mixing cmdlets without specifying an encoding.
@@ -191,7 +191,6 @@ The following cmdlets are affected by this change:
 - Format-Hex
 - Get-Content
 - Import-Csv
-- New-ModuleManifest
 - Out-File
 - Select-String
 - Send-MailMessage
@@ -202,6 +201,8 @@ These cmdlets have also been updated so that the `-Encoding` parameter universal
 The default value of `$OutputEncoding` has also been changed to UTF-8.
 
 As a best practice, you should explicitly set encodings in scripts using the `-Encoding` parameter to produce deterministic behavior across platforms.
+
+`New-ModuleManifest` cmdlet does not have **Encoding** parameter. The encoding of the module manifest (.psd1) file created with `New-ModuleManifest` cmdlet depends on environment: if it is PowerShell Core running on Linux then encoding is UTF-8 (no BOM); otherwise encoding is UTF-16 (with BOM). (#3940)
 
 ## Support backgrounding of pipelines with ampersand (`&`) (#3360)
 
@@ -238,7 +239,7 @@ For more information about PowerShell jobs, see [about_Jobs](https://msdn.micros
     On released builds, it will likely be the same as `PSVersion`.
   - `OS`: This is an OS version string returned by `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: This is returned by `[System.Environment]::OSVersion.Platform`
-    It is set to `Win32NT` on Windows, `MacOSX` on macOS, and `Unix` on Linux.
+    It is set to `Win32NT` on Windows, `Unix` on macOS, and `Unix` on Linux.
 - Removed the `BuildVersion` property from `$PSVersionTable`.
   This property was strongly tied to the Windows build version.
   Instead, we recommend that you use `GitCommitId` to retrieve the exact build version of PowerShell Core. (#3877) (Thanks to @iSazonov!)

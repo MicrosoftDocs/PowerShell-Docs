@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -65,20 +65,20 @@ Customized sessions that include the cmdlets, functions and scripts that technic
 ```
 The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the **LanguageMode** parameter, the session configuration files are equivalent.
 PS C:\> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
- 
-                        
+
+
 PS C:\> New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
 
 The second pair of commands uses the configuration files to create session configurations on the local computer.
 PS C:\> Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
- 
-                        
+
+
 PS C:\> Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 
 The third pair of commands creates two sessions, each of which uses one of the session configurations that were created in the previous command pair.
 PS C:\> $NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
- 
-                        
+
+
 PS C:\> $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
@@ -154,8 +154,8 @@ PS C:\> New-PSSessionConfigurationFile
 -VisibleAliases "c*","g*","i*","s*" `-VisibleCmdlets "Get*"
 -VisibleFunctions "Get*"
 -VisibleProviders "FileSystem","Function","Variable"
- 
-                      
+
+
 @{
 # Version number of the schema used for this configuration file
 SchemaVersion = '1.0.0.0'
@@ -221,8 +221,8 @@ AliasDefinitions = @(
     Name='hlp'
     Options='AllScope'
     Value='Get-Help'
-}, 
-@{ 
+},
+@{
     Description='Updates help'
     Name='Update'
     Options='ReadOnly'
@@ -282,7 +282,7 @@ For example: `@{Name="hlp";Value="Get-Help";Description="Gets help";Options="Rea
 ```yaml
 Type: Hashtable[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -297,7 +297,7 @@ Specifies the assemblies to load into the sessions that use the session configur
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -314,7 +314,7 @@ The value of this parameter is visible in the session configuration file, but it
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -331,7 +331,7 @@ The value of this parameter is visible in the session configuration file, but it
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -349,7 +349,7 @@ If you omit this parameter, **New-PSSessionConfigurationFile** generates a copyr
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -365,7 +365,7 @@ The value of this parameter is visible in the session configuration file, but it
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -383,7 +383,7 @@ For example: `EnvironmentVariables=@{TestShare="\\\\Server01\TestShare"}`
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -400,7 +400,7 @@ For information about execution policies in Windows PowerShell, see about_Execut
 ```yaml
 Type: ExecutionPolicy
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Unrestricted, RemoteSigned, AllSigned, Restricted, Default, Bypass, Undefined
 
 Required: False
@@ -417,7 +417,7 @@ The value of this parameter must be a full or absolute path to the formatting fi
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -439,7 +439,7 @@ For example: `@{Name="Get-PowerShellProcess";ScriptBlock={Get-Process PowerShell
 ```yaml
 Type: Hashtable[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -456,7 +456,7 @@ To create a new GUID in Windows PowerShell, type "`\[guid\]::NewGuid()`".
 ```yaml
 Type: Guid
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -485,7 +485,7 @@ The default value of the **LanguageMode** parameter depends on the value of the 
 ```yaml
 Type: PSLanguageMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: FullLanguage, RestrictedLanguage, NoLanguage, ConstrainedLanguage
 
 Required: False
@@ -515,7 +515,7 @@ The value of the **ModulesToImport** parameter of the Register-PSSessionConfigur
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -531,7 +531,7 @@ The file must have a **.pssc** file name extension.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -550,7 +550,7 @@ The value of the **PSVersion** parameter of the Register-PSSessionConfiguration 
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -566,7 +566,7 @@ The default value is "1.0.0.0".
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -583,7 +583,7 @@ The value of this parameter must be a full or absolute path to script file names
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -604,7 +604,7 @@ Valid values are:
 ```yaml
 Type: SessionType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Empty, RestrictedRemoteServer, Default
 
 Required: False
@@ -622,7 +622,7 @@ The value of this parameter must be a full or absolute path to type file names.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -644,7 +644,7 @@ For example: `@{Name="WarningPreference";Value="SilentlyContinue";Options="AllSc
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -665,7 +665,7 @@ When any **Visible** parameter is included in the session configuration file, Wi
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -686,7 +686,7 @@ When any **Visible** parameter is included in the session configuration file, Wi
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -707,7 +707,7 @@ When any **Visible** parameter is included in the session configuration file, Wi
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -728,7 +728,7 @@ When any **Visible** parameter is included in the session configuration file, Wi
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -785,4 +785,3 @@ The changes that you make affect all new sessions that use the session configura
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC for Linux nxService Resource
@@ -24,13 +24,13 @@ nxService <string> #ResourceName
 ```
 
 ## Properties
-|  Property |  Description | 
+|  Property |  Description |
 |---|---|
-| Name| The name of the service/daemon to configure.| 
-| Controller| The type of service controller to use when configuring the service.| 
-| Enabled| Indicates whether the service starts on boot.| 
-| State| Indicates whether the service is running. Set this property to "Stopped" to ensure that the service is not running. Set it to "Running" to ensure that the service is not running.| 
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
+| Name| The name of the service/daemon to configure.|
+| Controller| The type of service controller to use when configuring the service.|
+| Enabled| Indicates whether the service starts on boot.|
+| State| Indicates whether the service is running. Set this property to "Stopped" to ensure that the service is not running. Set it to "Running" to ensure that the service is not running.|
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 ## Additional Information
@@ -42,11 +42,11 @@ The **nxService** resource will not create a service definition or script for th
 The following example shows configuration of the “httpd” service (for Apache HTTP Server), registered with the **SystemD** service controller.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 #Apache Service
-nxService ApacheService 
+nxService ApacheService
 {
 Name = "httpd"
 State = "running"
@@ -55,4 +55,3 @@ Controller = "systemd"
 }
 }
 ```
-

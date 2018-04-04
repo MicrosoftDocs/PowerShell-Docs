@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -131,7 +131,7 @@ The read-only attribute is changed and is not reset when the command finishes.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -230,4 +230,3 @@ For more information, see about_Profiles.
 [Get-PSSnapin](Get-PSSnapin.md)
 
 [Remove-PSSnapin](Remove-PSSnapin.md)
-

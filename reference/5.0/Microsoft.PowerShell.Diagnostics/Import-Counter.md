@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -196,7 +196,7 @@ Notice that each path is enclosed in quotation marks and that the paths are sepa
 
 ### -Counter
 Specifies, as a string array, the performance counters.
-By default, **Import-Counter** imports all data from all counters in the input files. 
+By default, **Import-Counter** imports all data from all counters in the input files.
 Enter one or more counter paths.
 Wildcards are permitted in the Instance part of the path.
 
@@ -209,7 +209,7 @@ For instance:
 ```yaml
 Type: String[]
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -226,7 +226,7 @@ By default, **Import-Counter** imports all counter data in the files specified b
 ```yaml
 Type: DateTime
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -240,13 +240,13 @@ Specifies the performance counter sets that are represented in the exported file
 Commands with this parameter do not import any data.
 
 Enter one or more counter set names.
-Wildcards are permitted. 
+Wildcards are permitted.
 To get all counter sets in the file, type `Import-Counter -ListSet *`.
 
 ```yaml
 Type: String[]
 Parameter Sets: ListSetSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -262,7 +262,7 @@ By default, **Get-Counter** imports all of the data in the files specified by th
 ```yaml
 Type: Int64
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -299,7 +299,7 @@ By default, **Import-Counter** imports all counter data in the files specified b
 ```yaml
 Type: DateTime
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -314,7 +314,7 @@ Indicates that this cmdlet gets a summary of the imported data, instead of getti
 ```yaml
 Type: SwitchParameter
 Parameter Sets: SummarySet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -352,4 +352,3 @@ If you use the *Summary* parameter, this cmdlet returns a **Microsoft.PowerShell
 [Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
 
 [Get-Date](../Microsoft.PowerShell.Utility/Get-Date.md)
-

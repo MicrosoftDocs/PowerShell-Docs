@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -97,7 +97,7 @@ You can type an adjustment in standard date and time format for your locale or u
 ```yaml
 Type: TimeSpan
 Parameter Sets: Adjust
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -117,7 +117,7 @@ If you specify only a time, it does not change the date.
 ```yaml
 Type: DateTime
 Parameter Sets: Date
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -141,7 +141,7 @@ It does not affect the DateTime object that Get-Date retrieves.
 ```yaml
 Type: DisplayHintType
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -204,4 +204,3 @@ Set-Date returns an object that represents the date that it set.
 [Get-Date](Get-Date.md)
 
 [New-TimeSpan](New-TimeSpan.md)
-

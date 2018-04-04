@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -227,7 +227,7 @@ By default, you are prompted to confirm each operation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -301,7 +301,7 @@ This setting prevents all users from creating user-managed sessions ("PSSessions
 In Windows PowerShell 3.0, Disable-PSRemoting adds a "Network_Deny_All" entry to the security descriptors of all session configurations.
 This setting prevents users on other computers from creating user-managed sessions on the local computer, but allows users of the local computer to create user-managed "loopback" sessions.
 
-  In Windows PowerShell 2.0, **Disable-PSRemoting** is the equivalent of "`Disable-PSSessionConfiguration -name *`". 
+  In Windows PowerShell 2.0, **Disable-PSRemoting** is the equivalent of "`Disable-PSSessionConfiguration -name *`".
 In Windows PowerShell 3.0, **Disable-PSRemoting** is the equivalent of "`Set-PSSessionConfiguration -Name \<Configuration name\> -AccessMode Local`"
 
   In Windows PowerShell 2.0, **Disable-PSRemoting** is a function.
@@ -321,4 +321,3 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
 [WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
-

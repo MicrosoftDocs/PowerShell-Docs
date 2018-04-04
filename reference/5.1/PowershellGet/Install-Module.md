@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -87,7 +87,7 @@ This example installs the newest version of the module ContosoServer to $home\Do
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +117,7 @@ Specifies a user account that has rights to install a module for a specified pac
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +133,7 @@ If a module of the same name and version already exists on the computer, this pa
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSObject[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -165,7 +165,7 @@ The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive
 ```yaml
 Type: Version
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -185,7 +185,7 @@ For example, if you try to install the ContosoServer module with a minimum versi
 ```yaml
 Type: Version
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -204,7 +204,7 @@ If you use wildcard characters, but do not find matching results, no error is re
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -219,7 +219,7 @@ Specifies a proxy server for the request, rather than connecting directly to the
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -234,7 +234,7 @@ Specifies a user account that has permission to use the proxy server that is spe
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -249,7 +249,7 @@ Specifies the friendly name of a repository that has been registered by running 
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -266,7 +266,7 @@ The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive
 ```yaml
 Type: Version
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -286,7 +286,7 @@ The CurrentUser scope lets modules be installed only to $home\Documents\WindowsP
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: CurrentUser, AllUsers
 
 Required: False
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -365,4 +365,3 @@ As a security best practice, evaluate module code before running any cmdlets or 
 [Uninstall-Module](Uninstall-Module.md)
 
 [Update-Module](Update-Module.md)
-

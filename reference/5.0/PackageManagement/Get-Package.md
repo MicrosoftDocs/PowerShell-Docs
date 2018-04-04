@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -90,7 +90,7 @@ Specifies additional arguments.
 ```yaml
 Type: String[]
 Parameter Sets: msi
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: PSModule
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,7 +120,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -135,7 +135,7 @@ Indicates that this cmdlet forces Package Management to automatically install th
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -150,7 +150,7 @@ Indicates that this cmdlet includes system components in the results.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Programs
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -165,7 +165,7 @@ Indicates that this cmdlet includes the Windows Installer in the results.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Programs
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -180,7 +180,7 @@ Indicates that this cmdlet installs updates.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PSModule
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: PSModule
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: PSModule
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -226,7 +226,7 @@ If you do not add this parameter, **Get-Package** finds the highest available ve
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -258,7 +258,7 @@ Separate multiple package names with commas.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -273,7 +273,7 @@ Specifies the name of the Package Management provider.
 ```yaml
 Type: String
 Parameter Sets: PSModule
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -306,7 +306,7 @@ If you do not add this parameter, **Find-Package** finds the highest available v
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -341,4 +341,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Enter-PSSession](../Microsoft.PowerShell.Core/Enter-PSSession.md)
-

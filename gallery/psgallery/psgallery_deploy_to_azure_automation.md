@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -23,4 +23,3 @@ If you deploy a module, it will appear in the Modules section of Azure Automatio
 The Deploy to Azure Automation button can be disabled by adding the AzureAutomationNotSupported tag to the item metadata.
 
 To learn more about Azure Automation, see the Azure Automation website [Azure Automation website](http://azure.microsoft.com/services/automation/).
-

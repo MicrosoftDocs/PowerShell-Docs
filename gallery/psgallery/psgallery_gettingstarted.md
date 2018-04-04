@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -47,7 +47,7 @@ provider is not in one of the following locations:
 Or, you can run `Install-PackageProvider -Name NuGet -Force` to
 automate the download and installation of the NuGet provider.
 
-  
+
 If you have a version older than 2.8.5.201 of NuGet, you will need to call the following
 PowerShell cmdlets to install and switch to the latest version of NuGet.
 
@@ -57,7 +57,7 @@ PowerShell cmdlets to install and switch to the latest version of NuGet.
 
 For more information, see <http://oneget.org/> .
 
-  
+
 Note: Due to changes in packaging formats, we recommend you update to
 the latest version of PowerShellGet and PackageManagement to install
 items that have been updated recently. PowerShellGet is included in
@@ -221,4 +221,3 @@ PowerShell Gallery, run the
 [Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790)
 cmdlet. This command lists all of the scripts you have on your system
 that were installed directly from the PowerShell Gallery.
-

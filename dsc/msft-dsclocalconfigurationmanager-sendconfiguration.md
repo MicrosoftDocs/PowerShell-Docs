@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  SendConfiguration method of the MSFT_DSCLocalConfigurationManager class
@@ -22,10 +22,10 @@ uint32 SendConfiguration(
 Parameters
 ----------
 
-*ConfigurationData* \[in\]  
+*ConfigurationData* \[in\]
 The environment data for the configuration.
 
-*force* \[in\]  
+*force* \[in\]
 **true** to force the configuration to stop.
 
 ## Return value
@@ -48,11 +48,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

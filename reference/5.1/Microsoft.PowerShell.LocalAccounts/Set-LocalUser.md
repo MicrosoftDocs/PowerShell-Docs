@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -75,7 +75,7 @@ If you do not want the account to expire, specify the *AccountNeverExpires* para
 ```yaml
 Type: DateTime
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -90,7 +90,7 @@ Indicates that the account does not expire.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -121,7 +121,7 @@ The maximum length is 48 characters.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -137,7 +137,7 @@ The full name differs from the user name of the user account.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -153,7 +153,7 @@ To obtain a user account, use the Get-LocalUser cmdlet.
 ```yaml
 Type: LocalUser
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -168,7 +168,7 @@ Specifies the name of the user account that this cmdlet changes.
 ```yaml
 Type: String
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -188,7 +188,7 @@ If you omit the *Password* and *NoPassword* parameters, **Set-LocalUser** prompt
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -203,7 +203,7 @@ Indicates whether the password expires.
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -218,7 +218,7 @@ Specifies the security ID (SID) of the user account that this cmdlet changes.
 ```yaml
 Type: SecurityIdentifier
 Parameter Sets: SecurityIdentifier
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -233,7 +233,7 @@ Indicates that the user can change the password on the user account.
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -272,12 +272,12 @@ You can pipe a local user, a string, or a SID to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
-* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows: 
+* The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects that describes the source of the object. The possible sources are as follows:
 
-- Local 
-- Active Directory 
-- Azure Active Directory group 
-- Microsoft Account 
+- Local
+- Active Directory
+- Azure Active Directory group
+- Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the Windows operating system. For earlier versions, the property is blank.
 
@@ -294,4 +294,3 @@ This cmdlet does not generate any output.
 [Remove-LocalUser](Remove-LocalUser.md)
 
 [Rename-LocalUser](Rename-LocalUser.md)
-

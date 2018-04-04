@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -97,7 +97,7 @@ It uses the TriggerID parameter to get only the second trigger.
 PS C:\> Get-ScheduledJob | Get-JobTrigger | For mat-Table -Property ID, Frequency, At, DaysOfWeek, Enabled, @{Label="ScheduledJob";Expression={$_.JobDefinition.Name}} -AutoSize
 Id Frequency At                    DaysOfWeek Enabled ScheduledJob
 -- --------- --                    ---------- ------- ------------
-1    Weekly  9/28/2011 3:00:00 AM  {Monday}      True Backup 
+1    Weekly  9/28/2011 3:00:00 AM  {Monday}      True Backup
 1    Daily  9/27/2011 11:00:00 PM                True Test-HelpFiles
 ```
 
@@ -156,7 +156,7 @@ To get the identification number of scheduled jobs on the local computer or a re
 ```yaml
 Type: Int32
 Parameter Sets: JobDefinitionId
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -173,7 +173,7 @@ You can also pipe **ScheduledJob** objects to **Get-JobTrigger**.
 ```yaml
 Type: ScheduledJobDefinition
 Parameter Sets: JobDefinition
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -192,7 +192,7 @@ To get the names of scheduled jobs on the local computer or a remote computer, u
 ```yaml
 Type: String
 Parameter Sets: JobDefinitionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -209,7 +209,7 @@ Use this parameter when the scheduled job that is specified by the **Name**, **I
 ```yaml
 Type: Int32[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -267,4 +267,3 @@ You can pipe a scheduled job from Get-ScheduledJob to **Get-JobTrigger**.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-

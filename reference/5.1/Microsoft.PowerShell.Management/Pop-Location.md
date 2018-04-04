@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -69,7 +69,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -91,7 +91,7 @@ To make a location stack the current location stack, use the *StackName* paramet
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -134,13 +134,13 @@ Otherwise, this cmdlet does not generate any output.
 ## NOTES
 * A stack is a last-in, first-out list in which only the most recently added item can be accessed. You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order. Windows PowerShell lets you store provider locations in location stacks.
 * Windows PowerShell lets you store provider locations in location stacks. Windows PowerShell creates an unnamed default location stack and you can create multiple named location stacks. If you do not specify a stack name, Windows PowerShell uses the current location stack. By default, the unnamed default location is the current location stack, but you can use the Set-Location cmdlet to change the current location stack.
-* To manage location stacks, use the Windows PowerShell**Location** cmdlets, as follows: 
+* To manage location stacks, use the Windows PowerShell**Location** cmdlets, as follows:
 
-- To add a location to a location stack, use the **Push-Location** cmdlet. 
-- To get a location from a location stack, use the **Pop-Location** cmdlet. 
-- To display the locations in the current location stack, use the *Stack* parameter of the **Get-Location** cmdlet. 
-- To display the locations in a named location stack, use the *StackName* parameter of the **Get-Location** cmdlet. 
-- To create a new location stack, use the *StackName* parameter of the **Push-Location** cmdlet. If you specify a stack that does not exist, **Push-Location** creates the stack. 
+- To add a location to a location stack, use the **Push-Location** cmdlet.
+- To get a location from a location stack, use the **Pop-Location** cmdlet.
+- To display the locations in the current location stack, use the *Stack* parameter of the **Get-Location** cmdlet.
+- To display the locations in a named location stack, use the *StackName* parameter of the **Get-Location** cmdlet.
+- To create a new location stack, use the *StackName* parameter of the **Push-Location** cmdlet. If you specify a stack that does not exist, **Push-Location** creates the stack.
 - To make a location stack the current location stack, use the *StackName* parameter of the **Set-Location** cmdlet.
 * The unnamed default location stack is fully available only when it is the current location stack. If you make a named location stack the current location stack, you can no longer use **Push-Location** or **Pop-Location** cmdlets add or get items from the default stack or use a **Get-Location** command to display the locations in the unnamed stack. To make the unnamed stack the current stack, use the *StackName* parameter of **Set-Location** with a value of $Null or an empty string ("").
 * You can also refer to **Pop-Location** by its built-in alias, **popd**. For more information, see about_Aliases.
@@ -153,5 +153,3 @@ Otherwise, this cmdlet does not generate any output.
 [Push-Location](Push-Location.md)
 
 [Set-Location](Set-Location.md)
-
-

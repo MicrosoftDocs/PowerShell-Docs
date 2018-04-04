@@ -1,21 +1,23 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Working with Software Installations
 ms.assetid:  51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ---
-
 # Working with Software Installations
+
 Applications that are designed to use Windows Installer can be accessed through WMI's **Win32_Product** class, but not all applications in use today use the Windows Installer. Because the Windows Installer provides the widest range of standard techniques for working with installable applications, we will focus primarily on those applications. Applications that use alternate setup routines will generally not be managed by the Windows Installer. Specific techniques for working with those applications will depend on the installer software and decisions made by the application developer.
 
 > [!NOTE]
 > Applications that are installed by copying the application files to the computer usually cannot be managed by using techniques discussed here. You can manage these applications as files and folders by using the techniques discussed in the "Working With Files and Folders" section.
 
 ### Listing Windows Installer Applications
+
 To list the applications installed with the Windows Installer on a local or remote system, use the following simple WMI query:
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName .
+
 IdentifyingNumber : {7131646D-CD3C-40F4-97B9-CD9E4E6262EF}
 Name              : Microsoft .NET Framework 2.0
 Vendor            : Microsoft Corporation
@@ -27,6 +29,7 @@ To display all of the properties of the Win32_Product object to the display, use
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Microsoft .NET Framework 2.0"} | Format-List -Property *
+
 Name              : Microsoft .NET Framework 2.0
 Version           : 2.0.50727
 InstallState      : 5
@@ -43,13 +46,13 @@ Vendor            : Microsoft Corporation
 
 Or, you could use the **Get-WmiObject Filter** parameter to select only Microsoft .NET Framework 2.0. Because the filter used in this command is a WMI filter, it uses WMI Query Language (WQL) syntax, not Windows PowerShell syntax. Instead,:
 
-```
+```powershell
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
 ```
 
 Note that WQL queries frequently use characters, such as spaces or equal signs, that have a special meaning in Windows PowerShell. For this reason, it is prudent to always enclose the value of the Filter parameter in quotation marks. You can also use the Windows PowerShell escape character, a backtick (\`), although it may not improve readability. The following command is equivalent to the previous command and returns the same results, but uses the backtick to escape special characters, instead of quoting the entire filter string.
 
-```
+```powershell
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter Name`=`'Microsoft` .NET` Framework` 2.0`' | Format-List -Property *
 ```
 
@@ -70,13 +73,14 @@ IdentifyingNumber : {FCE65C4E-B0E8-4FBD-AD16-EDCBE6CD591F}
 
 Finally, to find only the names of installed applications, a simple **Format-Wide** statement simplifies the output:
 
-```
+```powershell
 Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 ```
 
 Although we now have several ways to look at applications that used the Windows Installer for installation, we have not considered other applications. Because most standard applications register their uninstaller with Windows, we can work with those locally by finding them in the Windows registry.
 
 ### Listing All Uninstallable Applications
+
 Although there is no guaranteed way to find every application on a system, it is possible to find all programs with listings displayed in the Add or Remove Programs dialog box. Add or Remove Programs finds these applications in the following registry key:
 
 **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**.
@@ -84,7 +88,7 @@ Although there is no guaranteed way to find every application on a system, it is
 We can also examine this key to find applications. To make it easier to view the Uninstall key, we can map a Windows PowerShell drive to this registry location:
 
 ```
-PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall    
+PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
@@ -103,7 +107,7 @@ PS> (Get-ChildItem -Path Uninstall:).Count
 
 We can search this list of applications further by using a variety of techniques, beginning with **Get-ChildItem**. To get a list of applications and save them in the **$UninstallableApplications** variable, use the following command:
 
-```
+```powershell
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
@@ -114,8 +118,8 @@ To display the values of the registry entries in the registry keys under Uninsta
 
 For example, to find the display names of applications in the Uninstall key, use the following command:
 
-```
-PS> Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue("DisplayName") }
+```powershell
+Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('DisplayName') }
 ```
 
 There is no guarantee that these values are unique. In the following example, two installed items appear as "Windows Media Encoder 9 Series":
@@ -133,6 +137,7 @@ SKC  VC Name                           Property
 ```
 
 ### Installing Applications
+
 You can use the **Win32_Product** class to install Windows Installer packages, remotely or locally.
 
 > [!NOTE]
@@ -140,37 +145,38 @@ You can use the **Win32_Product** class to install Windows Installer packages, r
 
 When installing remotely, use a Universal Naming Convention (UNC) network path to specify the path to the .msi package, because the WMI subsystem does not understand Windows PowerShell paths. For example, to install the NewPackage.msi package located in the network share \\\\AppServ\\dsp on the remote computer PC01, type the following command at the Windows PowerShell prompt:
 
-```
-(Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq "Win32_Product"}).Install(\\AppSrv\dsp\NewPackage.msi)
+```powershell
+(Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq 'Win32_Product'}).Install(\\AppSrv\dsp\NewPackage.msi)
 ```
 
 Applications that do not use Windows Installer technology may have application-specific methods available for automated deployment. To determine whether there is a method for deployment automation, check the documentation for the application or consult the application vendor's support system. In some cases, even if the application vendor did not specifically design the application for installation automation, the installer software manufacturer may have some techniques for automation.
 
 ### Removing Applications
+
 Removing a Windows Installer package by using Windows PowerShell works in approximately the same way as installing a package. Here is an example that selects the package to uninstall based on its name; in some cases it may be easier to filter with the **IdentifyingNumber**:
 
-```
+```powershell
 (Get-WmiObject -Class Win32_Product -Filter "Name='ILMerge'" -ComputerName . ).Uninstall()
 ```
 
 Removing other applications is not quite so simple, even when done locally. We can find the command line uninstallation strings for these applications by extracting the **UninstallString** property. This method works for Windows Installer applications and for older programs appearing under the Uninstall key:
 
-```
-Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue("UninstallString") }
+```powershell
+Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
 You can filter the output by the display name, if you like:
 
-```
-Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("DisplayName") -like "Win*"} | ForEach-Object -Process { $_.GetValue("UninstallString") }
+```powershell
+Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('DisplayName') -like 'Win*'} | ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
 However, these strings may not be directly usable from the Windows PowerShell prompt without some modification.
 
 ### Upgrading Windows Installer Applications
+
 To upgrade an application, you need to know the name of the application and the path to the application upgrade package. With that information, you can upgrade an application with a single Windows PowerShell command:
 
-```
+```powershell
 (Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='OldAppName'").Upgrade(\\AppSrv\dsp\OldAppUpgrade.msi)
 ```
-

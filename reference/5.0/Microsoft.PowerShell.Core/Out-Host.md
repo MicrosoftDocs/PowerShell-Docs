@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -58,7 +58,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -75,7 +75,7 @@ The page size is determined by the characteristics of the host.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,4 +120,3 @@ However, the host might display the objects that **Out-Host** sends to it.
 [Out-String](../Microsoft.PowerShell.Utility/Out-String.md)
 
 [Write-Host](../Microsoft.PowerShell.Utility/Write-Host.md)
-

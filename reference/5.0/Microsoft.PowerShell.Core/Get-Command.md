@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -236,7 +236,7 @@ In Windows PowerShell 2.0, **Get-Command** gets all commands by default.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -310,7 +310,7 @@ The two parameters are mutually exclusive.
 ```yaml
 Type: ModuleSpecification[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -330,7 +330,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -373,7 +373,7 @@ When two commands have the same name, by default, **Get-Command** gets the comma
 ```yaml
 Type: String[]
 Parameter Sets: AllCommandSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -391,7 +391,7 @@ Wildcard characters are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: CmdletSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -413,7 +413,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -435,7 +435,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSTypeName[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -457,7 +457,7 @@ In Windows PowerShell 2.0, **Get-Command** gets all commands by default.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -477,7 +477,7 @@ Indicates that this cmdlet gets only the following specified data about the comm
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -493,7 +493,7 @@ You can use this parameter to limit the output of a command.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -511,7 +511,7 @@ Wildcard characters are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: CmdletSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -566,4 +566,3 @@ Represents workflows.
 [Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [about_Command_Precedence](About/about_Command_Precedence.md)
-

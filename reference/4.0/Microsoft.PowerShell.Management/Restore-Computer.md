@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -70,7 +70,7 @@ Because the Restore-Computer command forces a restart, this command would be ent
 ## PARAMETERS
 
 ### -RestorePoint
-Specifies the sequence number of the restore point. 
+Specifies the sequence number of the restore point.
 To find the sequence number, use Get-ComputerRestorePoint.
 This parameter is required.
 
@@ -148,4 +148,3 @@ This cmdlet does not generate any output.
 [Get-ComputerRestorePoint](Get-ComputerRestorePoint.md)
 
 [Restart-Computer](Restart-Computer.md)
-

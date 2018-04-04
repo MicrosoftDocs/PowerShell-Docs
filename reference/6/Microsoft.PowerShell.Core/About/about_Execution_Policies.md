@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -380,4 +380,3 @@ For more information, see [about_Signing](about_Signing.md),
 [Unblock-File](../../Microsoft.PowerShell.Utility/Unblock-File.md)
 
 [PowerShell.exe Console Help](http://go.microsoft.com/fwlink/?LinkID=113439)
-

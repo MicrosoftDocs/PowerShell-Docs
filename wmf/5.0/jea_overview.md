@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -15,4 +15,3 @@ JEA works by allowing you to create specially-configured constrained endpoints. 
 1. Users connecting to them “run as” a privileged Virtual Account that exists only for the duration of this remote session.  By default, this Virtual Account is a member of the built-in Administrators group, as well as a Domain Administrators on domain controllers (note: these permissions are configurable). By connecting as one user and running as a different, privileged user, you can allow non-privileged users to perform specific administrative tasks without giving them administrative rights on your systems.
 2. The endpoint is locked down.  This means PowerShell runs in No Language mode.  Only specific commands, scripts, and executables are visible to the user.
 3. Different users connecting are presented with a different set of capabilities based on group membership.  You can provide different roles different capabilities at the same endpoint.
-

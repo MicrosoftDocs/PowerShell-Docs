@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -28,4 +28,3 @@ keywords:  wmf,powershell,setup
 - Microsoft Lync Server 2013
 - Microsoft Lync Server 2010
 - System Center 2012 R2 Service Management Automation
-

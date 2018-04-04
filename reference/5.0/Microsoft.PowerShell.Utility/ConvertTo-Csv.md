@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -95,7 +95,7 @@ Otherwise, it will be interpreted as the command delimiter.
 ```yaml
 Type: Char
 Parameter Sets: Delimiter
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -112,7 +112,7 @@ You can also pipe objects to `ConvertTo-CSV`.
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -147,7 +147,7 @@ To find the list separator for a culture, use the following command: `(Get-Cultu
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UseCulture
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -192,4 +192,3 @@ It contains a comma-separated list of the names of all the properties of the fir
 [Export-Csv](Export-Csv.md)
 
 [Import-Csv](Import-Csv.md)
-

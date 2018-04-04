@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Windows PowerShell Glossary
 ms.assetid:  b0f88cbe-cb83-4912-a301-184534cb35c7
@@ -51,4 +51,3 @@ ms.assetid:  b0f88cbe-cb83-4912-a301-184534cb35c7
 |Windows PowerShell script file|A file that has the .ps1 extension and that contains a script that is written in the Windows PowerShell language.|
 |Windows PowerShell snap-in|A resource that defines a set of cmdlets, providers, and Microsoft .NET Framework types that can be added to the Windows PowerShell environment.|
 |Windows PowerShell Workflow|A workflow is a sequence of programmed, connected steps that perform long-running tasks or require the coordination of multiple steps across multiple devices or managed nodes. Windows PowerShell Workflow lets IT pros and developers author sequences of multi-device management activities, or single tasks within a workflow, as workflows. Windows PowerShell Workflow lets you adapt and run both Windows PowerShell scripts and XAML files as workflows.|
-

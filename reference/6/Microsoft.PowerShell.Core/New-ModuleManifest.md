@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -980,4 +980,3 @@ Typically, it refers to the global session state, but when a module imports nest
 [Remove-Module](Remove-Module.md)
 
 [Test-ModuleManifest](Test-ModuleManifest.md)
-

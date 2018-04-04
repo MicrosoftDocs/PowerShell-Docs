@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -80,8 +80,8 @@ RemoteSigned
 
 The second command shows what happens when you run a blocked script in a Windows PowerShell session in which the execution policy is RemoteSigned. The RemoteSigned policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
 PS C:\> .\Start-ActivityTracker.ps1
-.\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded. The file .\Start-ActivityTracker.ps1 is not digitally signed. The script will not execute 
-on the system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170. 
+.\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded. The file .\Start-ActivityTracker.ps1 is not digitally signed. The script will not execute
+on the system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:1
 + .\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,7 +112,7 @@ By default, **Get-ExecutionPolicy** gets only the effective execution policy.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -122,14 +122,14 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-Gets the execution policy in the specified scope. 
+Gets the execution policy in the specified scope.
 By default, **Get-ExecutionPolicy** gets the effective execution policy for the current session.
 The acceptable values for this parameter are:
 
 - MachinePolicy.
 The execution policy set by a Group Policy for all users of the computer.
 - UserPolicy.
-The execution policy set by a Group Policy for the current user of the computer. 
+The execution policy set by a Group Policy for the current user of the computer.
 - Process.
 The execution policy that is set for the current Windows PowerShell process.
 - CurrentUser.
@@ -140,7 +140,7 @@ The execution policy that is set for all users of the computer.
 ```yaml
 Type: ExecutionPolicyScope
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Process, CurrentUser, LocalMachine, UserPolicy, MachinePolicy
 
 Required: False
@@ -177,4 +177,3 @@ The precedence order is Computer Group Policy \> User Group Policy \> Process (s
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
-

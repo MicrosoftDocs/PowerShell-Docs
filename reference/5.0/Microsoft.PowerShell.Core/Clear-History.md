@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -76,7 +76,7 @@ If you enter more than one string, **Clear-History** deletes commands that have 
 ```yaml
 Type: String[]
 Parameter Sets: CommandLineParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -111,7 +111,7 @@ If you use the *Count* and *CommandLine* parameters in the same command, **Clear
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -128,7 +128,7 @@ To find the history ID of a command, use the Get-History cmdlet.
 ```yaml
 Type: Int32[]
 Parameter Sets: IDParameter
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -144,7 +144,7 @@ By default, **Clear-History** deletes the oldest entries in the history.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -197,4 +197,3 @@ This cmdlet does not generate any output.
 [Invoke-History](Invoke-History.md)
 
 [about_History](About/about_History.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -65,7 +65,7 @@ This command deletes only the third trigger (ID = 3) from the BackupArchive sche
 
 ### Example 3: Delete AtStartup job triggers from all scheduled jobs
 ```
-PS C:\>                
+PS C:\>
 function Delete-AtStartup
 {
     Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.Frequency -eq "AtStartup"} | ForEach-Object { Remove-JobTrigger -InputObject $_.JobDefinition -TriggerID $_.ID}
@@ -109,7 +109,7 @@ To get the identification number of scheduled jobs on the local computer or a re
 ```yaml
 Type: Int32[]
 Parameter Sets: JobDefinitionId
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -126,7 +126,7 @@ You can also pipe **ScheduledJob** objects to **Remove-JobTrigger**.
 ```yaml
 Type: ScheduledJobDefinition[]
 Parameter Sets: JobDefinition
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -145,7 +145,7 @@ To get the names of scheduled jobs on the local computer or a remote computer, u
 ```yaml
 Type: String[]
 Parameter Sets: JobDefinitionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -165,7 +165,7 @@ If you specify multiple scheduled jobs, Remove-JobTrigger deletes the job trigge
 ```yaml
 Type: Int32[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -224,4 +224,3 @@ The cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -108,7 +108,7 @@ PS C:\>
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSHostProcessInfo
 Parameter Sets: PSHostProcessInfoParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -139,7 +139,7 @@ To get a process ID, run the Get-Process cmdlet.
 ```yaml
 Type: Int32
 Parameter Sets: ProcessIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -156,7 +156,7 @@ You can also get process names from the Properties dialog box of a process in Ta
 ```yaml
 Type: String
 Parameter Sets: ProcessNameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -172,7 +172,7 @@ The simplest way to use this parameter is to save the results of a **Get-Process
 ```yaml
 Type: Process
 Parameter Sets: ProcessParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -209,4 +209,3 @@ That is, they have loaded the Windows PowerShell engine.
 [Enable-RunspaceDebug](../Microsoft.PowerShell.Utility/Enable-RunspaceDebug.md)
 
 [about_Debuggers](About/about_Debuggers.md)
-

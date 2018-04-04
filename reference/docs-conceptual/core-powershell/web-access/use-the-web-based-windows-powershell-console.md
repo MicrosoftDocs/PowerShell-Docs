@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-08-23
+ms.date:  08/23/2017
 keywords:  powershell,cmdlet
 title:  use the web based windows powershell console
 ---
@@ -10,30 +10,30 @@ Updated: June 24, 2013
 
 Applies To: Windows Server 2012 R2, Windows Server 2012
 
-Windows PowerShell Web Access lets users sign in to a secured website; 
+Windows PowerShell Web Access lets users sign in to a secured website;
 in order to use Windows PowerShell sessions, cmdlets, and scripts to manage
 a remote computer.
 
-Because the Windows PowerShell console runs in a web browser, it can be 
+Because the Windows PowerShell console runs in a web browser, it can be
 opened from a wide variety of client devices;
 almost all devices with a web browser work.
 
-The web-based Windows PowerShell console is targeted at a remote computer 
-that is specified by users as part of the sign-in process. 
+The web-based Windows PowerShell console is targeted at a remote computer
+that is specified by users as part of the sign-in process.
 
 This topic describes how to sign in to and start using the Windows PowerShell Web Access web-based console.
 
 This topic does not describe how to use Windows PowerShell or run cmdlets
-or scripts. 
+or scripts.
 For information about how to use Windows PowerShell, and scripting
 resources, see the [See Also](#see-also) section at the end of this topic.
 
 ## Supported browsers and client devices
 
-Windows PowerShell Web Access supports the following Internet browsers. 
-Although mobile browsers are not officially supported, many may be able to 
-run the web-based Windows PowerShell console. 
-Other browsers that accept cookies, run JavaScript, and run HTTPS websites 
+Windows PowerShell Web Access supports the following Internet browsers.
+Although mobile browsers are not officially supported, many may be able to
+run the web-based Windows PowerShell console.
+Other browsers that accept cookies, run JavaScript, and run HTTPS websites
 are expected to work, but are not officially tested.
 
 ### Supported desktop computer browsers
@@ -53,7 +53,7 @@ are expected to work, but are not officially tested.
 
 ### Browser requirements
 
-To use the Windows PowerShell Web Access web-based console, 
+To use the Windows PowerShell Web Access web-based console,
 browsers must do the following.
 
 - Allow cookies from the Windows PowerShell Web Access gateway website.
@@ -62,12 +62,12 @@ browsers must do the following.
 
 ## Signing in to Windows PowerShell Web Access
 
-Your Windows PowerShell Web Access administrator should provide you with a 
+Your Windows PowerShell Web Access administrator should provide you with a
 URL that is the address of your organizations Windows PowerShell Web Access
 gateway website.
 By default, this website address is *https://\<server_name\>/pswa*.
 
-Before you sign in to Windows PowerShell Web Access, be sure that you have 
+Before you sign in to Windows PowerShell Web Access, be sure that you have
 the name or IP address of the remote computer that you want to manage.
 You must be an authorized user on the remote computer, and it must be
 configured to allow remote management.

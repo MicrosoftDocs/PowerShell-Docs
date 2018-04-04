@@ -1,13 +1,12 @@
 ---
-ms.date:  2017-08-25
+ms.date:  08/25/2017
 keywords:  powershell,cmdlet
 title:  The ObjectModelRoot Object
 ---
-
 # The ObjectModelRoot Object
 
 The **$psISE** object, which is the principal root object in
-Windows PowerShell® Integrated Scripting Environment (ISE) 
+Windows PowerShell® Integrated Scripting Environment (ISE)
 is an instance of the Microsoft.PowerShell.Host.ISE.ObjectModelRoot class.
 This topic describes the properties of the **ObjectModelRoot** object.
 
@@ -15,7 +14,7 @@ This topic describes the properties of the **ObjectModelRoot** object.
 
 ### CurrentFile
 
-> Supported in Windows PowerShell ISE 2.0 and later. 
+> Supported in Windows PowerShell ISE 2.0 and later.
 
 The read-only property that gets the file, which is associated with this host object that currently has the focus.
 
@@ -29,30 +28,29 @@ The read-only property that gets the PowerShell tab that has the focus.
 
 > Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the currently visible 
-Windows PowerShell ISE add-on tool that is located in 
+The read-only property that gets the currently visible
+Windows PowerShell ISE add-on tool that is located in
 the horizontal tool pane at the bottom of the editor.
 
 ### CurrentVisibleVerticalTool
 
-> Supported in Windows PowerShell ISE 2.0 and later. 
+> Supported in Windows PowerShell ISE 2.0 and later.
 
 The read-only property that gets the currently visible Windows PowerShell ISE add-on tool that is located in the vertical tool pane on the right side of the editor.
 
 ### Options
 
-> Supported in Windows PowerShell ISE 2.0 and later. 
+> Supported in Windows PowerShell ISE 2.0 and later.
 
 The read-only property that gets the various options that can change settings in Windows PowerShell ISE.
 
 ### PowerShellTabs
 
-> Supported in Windows PowerShell ISE 2.0 and later. 
+> Supported in Windows PowerShell ISE 2.0 and later.
 
 The read-only property that gets the collection of the PowerShell tabs, which are open in Windows PowerShell ISE. By default, this object contains one PowerShell tab. However, you can add more PowerShell tabs to this object by using scripts or by using the menus in Windows PowerShell ISE.
 
 ## See Also
 
-- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md)
+- [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)

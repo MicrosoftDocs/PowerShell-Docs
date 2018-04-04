@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -93,7 +93,7 @@ The default is 0.
 ```yaml
 Type: Int32
 Parameter Sets: Time
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -109,7 +109,7 @@ The default is the current date and time.
 ```yaml
 Type: DateTime
 Parameter Sets: Date
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -125,7 +125,7 @@ The default is zero.
 ```yaml
 Type: Int32
 Parameter Sets: Time
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -141,7 +141,7 @@ The default is 0.
 ```yaml
 Type: Int32
 Parameter Sets: Time
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,7 +157,7 @@ The default is 0.
 ```yaml
 Type: Int32
 Parameter Sets: Time
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 
 ### -Start
 Indicates the start of a time span.
-Enter a string that represents the date and time, such as "3/15/09" or a DateTime object, such as one from a Get-Date command. 
+Enter a string that represents the date and time, such as "3/15/09" or a DateTime object, such as one from a Get-Date command.
 The default is the current date and time.
 
 You can use Start or its alias, LastWriteTime.
@@ -206,4 +206,3 @@ New-TimeSpan returns an object that represents the time span.
 [Get-Date](Get-Date.md)
 
 [Set-Date](Set-Date.md)
-

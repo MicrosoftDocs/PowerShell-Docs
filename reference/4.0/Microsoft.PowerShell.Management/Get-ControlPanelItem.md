@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -42,12 +42,12 @@ It works only on Windows 8 and Windows Server 2012.
 PS C:\> Get-ControlPanelItem
 Name                          CanonicalName                 Category                      Description
 ----                          -------------                 --------                      -----------
-Action Center                 Microsoft.ActionCenter        {System and Security}         Review recent messages and... 
-Administrative Tools          Microsoft.AdministrativeTools {System and Security}         Configure administrative s... 
-AutoPlay                      Microsoft.AutoPlay            {Hardware}                    Change default settings fo... 
-BitLocker Drive Encryption    Microsoft.BitLockerDriveEn... {System and Security}         Protect your computer usin... 
-Color Management              Microsoft.ColorManagement     {All Control Panel Items}     Change advanced color mana... 
-Credential Manager            Microsoft.CredentialManager   {User Accounts}               Manage your Windows Creden... 
+Action Center                 Microsoft.ActionCenter        {System and Security}         Review recent messages and...
+Administrative Tools          Microsoft.AdministrativeTools {System and Security}         Configure administrative s...
+AutoPlay                      Microsoft.AutoPlay            {Hardware}                    Change default settings fo...
+BitLocker Drive Encryption    Microsoft.BitLockerDriveEn... {System and Security}         Protect your computer usin...
+Color Management              Microsoft.ColorManagement     {All Control Panel Items}     Change advanced color mana...
+Credential Manager            Microsoft.CredentialManager   {User Accounts}               Manage your Windows Creden...
 Date and Time                 Microsoft.DateAndTime         {Clock, Language, and Region} Set the date, time, and ti...
 ```
 
@@ -88,8 +88,8 @@ It uses the Invoke-Command cmdlet to run the Get-ControlPanelItem cmdlet remotel
 PS C:\> Get-ControlPanelItem | Where-Object {$_.Description -like "*device*"}
 Name                          CanonicalName                 Category                      Description
 ----                          -------------                 --------                      -----------
-AutoPlay                      Microsoft.AutoPlay            {Hardware}                    Change default settings fo... 
-Devices and Printers          Microsoft.DevicesAndPrinters  {Hardware}                    View and manage devices, p... 
+AutoPlay                      Microsoft.AutoPlay            {Hardware}                    Change default settings fo...
+Devices and Printers          Microsoft.DevicesAndPrinters  {Hardware}                    View and manage devices, p...
 Sound                         Microsoft.Sound               {Hardware}                    Configure your audio devic...
 ```
 
@@ -108,7 +108,7 @@ By default, **Get-ControlPanelItem** gets all control panel items in the system.
 ```yaml
 Type: String[]
 Parameter Sets: CanonicalName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -127,7 +127,7 @@ By default, **Get-ControlPanelItem** gets all control panel items in the system.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -144,7 +144,7 @@ You can also pipe a name or name pattern to the **Get-ControlPanelItem** cmdlet.
 ```yaml
 Type: String[]
 Parameter Sets: RegularName
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -170,4 +170,3 @@ You can pipe a name or name pattern to the Get-ControlPanelItem cmdlet.
 ## RELATED LINKS
 
 [Show-ControlPanelItem](Show-ControlPanelItem.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -189,4 +189,3 @@ You can pipe a date to **Set-Date**.
 [Get-Date](Get-Date.md)
 
 [New-TimeSpan](New-TimeSpan.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -88,7 +88,7 @@ When you add this parameter and specify a user name, you are prompted to provide
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -103,7 +103,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -118,7 +118,7 @@ Indicates that this cmdlet forces Package Management to automatically install th
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -133,7 +133,7 @@ Specifies a package source by using the package source's object, which is shown 
 ```yaml
 Type: PackageSource[]
 Parameter Sets: SourceByInputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -149,7 +149,7 @@ The value of this parameter can be a URI, a file path, or any other destination 
 ```yaml
 Type: String
 Parameter Sets: SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -164,7 +164,7 @@ Specifies the Package Management provider.
 ```yaml
 Type: String
 Parameter Sets: PSModule:SourceByInputObject, PSModule:SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -195,7 +195,7 @@ Specifies the publish location.
 ```yaml
 Type: String
 Parameter Sets: PSModule:SourceByInputObject, PSModule:SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: PSModule:SourceByInputObject, PSModule:SourceBySearch
-Aliases: 
+Aliases:
 Accepted values: CurrentUser, AllUsers
 
 Required: False
@@ -275,4 +275,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-PackageSource](Set-PackageSource.md)
 
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
-

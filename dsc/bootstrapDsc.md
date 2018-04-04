@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Configure a virtual machines at initial boot-up by using DSC
@@ -89,7 +89,7 @@ Rename and move that file into the proper location on the VHD as `Pending.mof` b
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. Create a VM by using the VHD where you installed the DSC MOF document. 
+7. Create a VM by using the VHD where you installed the DSC MOF document.
 After intial boot-up and operating system installation, IIS will be installed.
 You can verify this by calling the [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet.
 
@@ -205,4 +205,3 @@ so set the value of this key to 0:
 - [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md)
 - [Configuring the Local Configuration Manager (LCM)](metaConfig.md)
 - [Setting up a DSC web pull server](pullServer.md)
-
