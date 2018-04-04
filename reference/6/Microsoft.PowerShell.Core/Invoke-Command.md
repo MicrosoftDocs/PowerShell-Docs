@@ -116,27 +116,27 @@ Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [
 
 ### HostName
 ```
-Invoke-Command -ScriptBlock <scriptblock> -HostName <string[]> [-Port <int>] [-AsJob] 
-[-HideComputerName] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug] 
+Invoke-Command -ScriptBlock <scriptblock> -HostName <string[]> [-Port <int>] [-AsJob]
+[-HideComputerName] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug]
 [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathHostName
 ```
-Invoke-Command -FilePath <string> -HostName <string[]> [-Port <int>] [-AsJob] [-HideComputerName] 
-[-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug] [-InputObject <psobject>] 
+Invoke-Command -FilePath <string> -HostName <string[]> [-Port <int>] [-AsJob] [-HideComputerName]
+[-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug] [-InputObject <psobject>]
 [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### SSHConnection
 ```
-Invoke-Command -ScriptBlock <scriptblock> -SSHConnection <hashtable[]> [-AsJob] [-HideComputerName] 
+Invoke-Command -ScriptBlock <scriptblock> -SSHConnection <hashtable[]> [-AsJob] [-HideComputerName]
 [-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathSSHConnection
 ```
-Invoke-Command -FilePath <string> -SSHConnection <hashtable[]> [-AsJob] [-HideComputerName] 
+Invoke-Command -FilePath <string> -SSHConnection <hashtable[]> [-AsJob] [-HideComputerName]
 [-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
@@ -491,21 +491,21 @@ To get the results of commands and scripts that run in disconnected sessions, us
 
 ### Example 17: Run a command on a remote computer using SSH
 ```
-PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * } 
+PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * }
 ```
 
 This example shows how to run a command on a remote computer using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt. Otherwise you will have to use SSH key based user authentication.
 
 ### Example 18: Run a command on a remote computer using SSH and specify a user authentication key
 ```
-PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
+PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to run a command on a remote computer using SSH and specifying a key file for user authentication. You will not get a password prompt unless the key authentication fails and the remote computer is configured to allow basic password authentication.
 
 ### Example 19: Run a script file on multiple remote computers using SSH as a job
 ```
-PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="LinuxServer5"; UserName="UserB"; KeyFilePath="c:\UserB\<path>\id_rsa }
+PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa }
 PS C:\> $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
 ```
 
@@ -526,7 +526,7 @@ The default value is 5.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Uri, FilePathUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -550,7 +550,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 ```yaml
 Type: String
 Parameter Sets: ComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -604,7 +604,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId, HostName, FilePathHostName, SSHConnection, FilePathSSHConnection
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -617,13 +617,13 @@ Accept wildcard characters: False
 Specifies the mechanism that is used to authenticate the user's credentials.
 The acceptable values for this parameter are:
 
-- Default 
-- Basic 
-- Credssp 
-- Digest 
-- Kerberos 
-- Negotiate 
-- NegotiateWithImplicitCredential 
+- Default
+- Basic
+- Credssp
+- Digest
+- Kerberos
+- Negotiate
+- NegotiateWithImplicitCredential
 
 The default value is Default.
 
@@ -638,7 +638,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
-Aliases: 
+Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
 Required: False
@@ -660,7 +660,7 @@ To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the 
 ```yaml
 Type: String
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -713,7 +713,7 @@ For more information, see about_Preference_Variables.
 ```yaml
 Type: String
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -765,7 +765,7 @@ If you type a user name, this cmdlet prompts you for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -777,7 +777,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: VMId, VMName, FilePathVMId, FilePathVMName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -811,7 +811,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -904,7 +904,7 @@ When using the *InputObject* parameter, use the $Input automatic variable in the
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -924,7 +924,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 ```yaml
 Type: String
 Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, ContainerId, FilePathContainerId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -944,7 +944,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: InProcess
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -955,7 +955,7 @@ Accept wildcard characters: False
 
 ### -Port
 Specifies the network port on the remote computer that is used for this command.
-To connect to a remote computer, the remote computer must be listening on the port that the connection uses. 
+To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.
 
 Before using an alternate port, configure the WinRM listener on the remote computer to listen at that port.
@@ -972,7 +972,7 @@ An alternate port setting might prevent the command from running on all computer
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName, FilePathComputerName, HostName, FilePathHostName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -1013,7 +1013,7 @@ For more information, see about_PSSessions.
 ```yaml
 Type: PSSession[]
 Parameter Sets: Session, FilePathRunspace
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -1032,7 +1032,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: ComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -1058,7 +1058,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: PSSessionOption
 Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -1076,7 +1076,7 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -1097,7 +1097,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, FilePathComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -1112,7 +1112,7 @@ Specifies an array of names of virtual machines.
 ```yaml
 Type: String[]
 Parameter Sets: VMName, FilePathVMName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -1127,7 +1127,7 @@ Specifies an array of container IDs.
 ```yaml
 Type: String[]
 Parameter Sets: ContainerId, FilePathContainerId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -1142,7 +1142,7 @@ Indicates that this cmdlet invokes a command as an Administrator.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ContainerId, FilePathContainerId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -1168,6 +1168,10 @@ Accept wildcard characters: False
 
 ### -HostName
 Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to the ComputerName parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
+This parameter supports specifying the user name and/or port as part of the host name parameter value using
+the form `user@hostname:port`.
+The user name and/or port specified as part of the host name takes precedent over the `-UserName` and `-Port` parameters, if specified.
+This allows passing multiple computer names to this parameter where some have specific user names and/or ports, while others use the user name and/or port from the `-UserName` and `-Port` parameters.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -1248,6 +1252,7 @@ Accept wildcard characters: False
 This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath).
 
 The hashtable connection parameters are the same as defined for the HostName parameter set.
+Note that the order of the keys in the hashtable result in user name and port being used for the connection where the last one specified is used.  For example, if you use `@{UserName="first";HostName="second@host"}`, then the user name `second` will be used.  However, if you use `@{HostName="second@host:22";Port=23}`, then port 23 will be used.
 
 The SSHConnection parameter is useful for creating multiple sessions where each session requires different connection information.
 
