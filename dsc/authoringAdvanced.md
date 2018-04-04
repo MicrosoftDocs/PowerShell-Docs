@@ -12,7 +12,7 @@ and a central team releasing changes to security baselines.
 The nuances of each approach including the benefits and risks
 are detailed here.
 
-![Pipeline](images/Pipeline.jpg)
+<img src=".\media\Pipeline.jpg" width="500">
 
 ## Types of Collaborative Authoring Techniques
 
@@ -36,10 +36,12 @@ of using each approach.
 When using Partial Configurations,
 Local Configuration Manager is configured to manage
 multiple configurations independently.
+Configurations are compiled independently
+and then assigned to the node.
 This requires LCM to be configured in advance
 with the name of each configuration.
 
-![PartialConfiguration](images/PartialConfiguration.jpg)
+<img src=".\media\PartialConfig.jpg" width="300">
 
 Partial Configurations provide two, or more, teams complete control
 over configuration of a server,
@@ -51,9 +53,10 @@ and ultimately loss of true configuration control of the asset.
 
 Additionally, customers have provided feedback
 that when using this model,
-each controlling teams configuration changes
-are unlikely to be fully tested through a release pipeline,
-leading to unexpected results in production.
+each controlling teams' configuration changes
+are unlikely to be fully tested through a release pipeline that includes
+all of the partial configurations and tests across all teams,
+which could lead to unexpected results in production.
 
 **It is critical that a single pipeline be used to evaluate
 all changes release to servers.**
@@ -65,7 +68,7 @@ with both configurations applied.
 In this model, only one authority has permission
 to make changes in production.
 
-![PartialSinglePipeline](images/PartialSinglePipeline.jpg)
+<img src=".\media\PartialSinglePipeline.jpg" width="300">
 
 When changes are required from Team B,
 they should submit a Pull Request against Team A's source control environment.
@@ -79,8 +82,10 @@ A composite resource is simply a DSC Configuration
 packaged as a resource.
 There are no special requirements for configuring LCM
 to accept composite resources.
+The resources are used within a new configuration
+and a single compilation results in one MOF file.
 
-![CompositeResource](images/CompositeResource.jpg)
+<img src=".\media\CompositeResource.jpg" width="300">
 
 There are two common scenarios for composite resources.
 The first is to reduce complexity and abstract unique concepts.
@@ -89,28 +94,7 @@ for an application team to safely deploy
 through their release pipeline to production
 after all tests have passed.
 
-```PowerShell
-Configuration Name
-{
-  File 1
-  {
-    Ensure = “Present”
-    Path = “c:\inetpub\file1.zip”
-    Source = “http://uri/file1.zip”
-  }
-  Service A
-  {
-    Ensure = “Present”
-    Name = “ServiceA”
-    Status = “Running”
-  }
-  SecurityBaseline Settings
-  {
-    Ensure = “Present”
-    Datacenter = “NorthAmerica”
-  }
-}
-```
+<img src=".\media\CompositeExample.jpg" width="300">
 
 Composite resources promote both composition and collaboration
 using a pipeline while building operational maturity
