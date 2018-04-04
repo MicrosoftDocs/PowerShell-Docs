@@ -12,7 +12,7 @@ and a central team releasing changes to security baselines.
 The nuances of each approach including the benefits and risks
 are detailed here.
 
-<img src="images/Pipeline.jpg" width="500">
+![Pipeline](images/Pipeline.jpg)
 
 ## Types of Collaborative Authoring Techniques
 
@@ -41,7 +41,7 @@ and then assigned to the node.
 This requires LCM to be configured in advance
 with the name of each configuration.
 
-<img src="images/PartialConfig.jpg" width="300">
+![PartialConfiguration](images/PartialConfiguration.jpg)
 
 Partial Configurations provide two, or more, teams complete control
 over configuration of a server,
@@ -53,10 +53,9 @@ and ultimately loss of true configuration control of the asset.
 
 Additionally, customers have provided feedback
 that when using this model,
-each controlling teams' configuration changes
-are unlikely to be fully tested through a release pipeline that includes
-all of the partial configurations and tests across all teams,
-which could lead to unexpected results in production.
+each controlling teams configuration changes
+are unlikely to be fully tested through a release pipeline,
+leading to unexpected results in production.
 
 **It is critical that a single pipeline be used to evaluate
 all changes release to servers.**
@@ -68,7 +67,7 @@ with both configurations applied.
 In this model, only one authority has permission
 to make changes in production.
 
-<img src="images/PartialSinglePipeline.jpg" width="300">
+![PartialSinglePipeline](images/PartialSinglePipeline.jpg)
 
 When changes are required from Team B,
 they should submit a Pull Request against Team A's source control environment.
@@ -85,7 +84,7 @@ to accept composite resources.
 The resources are used within a new configuration
 and a single compilation results in one MOF file.
 
-<img src="images/CompositeResource.jpg" width="300">
+![CompositeResource](images/CompositeResource.jpg)
 
 There are two common scenarios for composite resources.
 The first is to reduce complexity and abstract unique concepts.
@@ -94,7 +93,28 @@ for an application team to safely deploy
 through their release pipeline to production
 after all tests have passed.
 
-<img src="images/CompositeExample.jpg" width="300">
+```PowerShell
+Configuration Name
+{
+  File 1
+  {
+    Ensure = “Present”
+    Path = “c:\inetpub\file1.zip”
+    Source = “http://uri/file1.zip”
+  }
+  Service A
+  {
+    Ensure = “Present”
+    Name = “ServiceA”
+    Status = “Running”
+  }
+  SecurityBaseline Settings
+  {
+    Ensure = “Present”
+    Datacenter = “NorthAmerica”
+  }
+}
+```
 
 Composite resources promote both composition and collaboration
 using a pipeline while building operational maturity
