@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -102,7 +102,7 @@ ps_cimcommon_cimsession
 ```yaml
 Type: CimSession[]
 Parameter Sets: SessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -112,13 +112,13 @@ Accept wildcard characters: False
 ```
 
 ### -ClassName
-Specifies the name of the CIM class for which to perform the operation. 
+Specifies the name of the CIM class for which to perform the operation.
 NOTE: You can use tab completion to browse the list of classes, because wps_2 gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -157,7 +157,7 @@ You can use wildcard characters with this parameter.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -169,13 +169,13 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace for CIM operation.
 
-The default namespace is root/cimv2. 
+The default namespace is root/cimv2.
 NOTE: You can use tab completion to browse the list of namespaces, because wps_2 gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -211,7 +211,7 @@ You can use wildcard characters with this parameter.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,7 +227,7 @@ You can use wildcard characters with this parameter.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -251,4 +251,3 @@ This cmdlet returns a CIM class object.
 ## RELATED LINKS
 
 [New-CimSession](New-CimSession.md)
-

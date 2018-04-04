@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -35,14 +35,14 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ```
 PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
 {
-    "MinSupportedDateTime":  "\/Date(-62135568000000)\/", 
-    "MaxSupportedDateTime":  "\/Date(253402300799999)\/", 
-    "AlgorithmType":  1, 
-    "CalendarType":  1, 
+    "MinSupportedDateTime":  "\/Date(-62135568000000)\/",
+    "MaxSupportedDateTime":  "\/Date(253402300799999)\/",
+    "AlgorithmType":  1,
+    "CalendarType":  1,
     "Eras":  [
                  1
-             ], 
-    "TwoDigitYearMax":  2029, 
+             ],
+    "TwoDigitYearMax":  2029,
     "IsReadOnly":  false
 }
 ```
@@ -63,30 +63,30 @@ The compression affects only the appearance of the string, not its validity.
 PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 {
 
-    "DisplayHint":  2,  
+    "DisplayHint":  2,
     "DateTime":  "Friday, January 13, 2012 8:06:16 PM",
-    "Date":  "\/Date(1326441600000)\/", 
-    "Day":  13,  
-    "DayOfWeek":  5,  
-    "DayOfYear":  13,  
-    "Hour":  20,  
-    "Kind":  2,  
-    "Millisecond":  221, 
-    "Minute":  6, 
-    "Month":  1,  
-    "Second":  16, 
-    "Ticks":  634620819762218083, 
+    "Date":  "\/Date(1326441600000)\/",
+    "Day":  13,
+    "DayOfWeek":  5,
+    "DayOfYear":  13,
+    "Hour":  20,
+    "Kind":  2,
+    "Millisecond":  221,
+    "Minute":  6,
+    "Month":  1,
+    "Second":  16,
+    "Ticks":  634620819762218083,
     "TimeOfDay":  {
-                      "Ticks":  723762218083, 
-                      "Days":  0,  
-                      "Hours":  20, 
-                      "Milliseconds":  221, 
-                      "Minutes":  6, 
-                      "Seconds":  16, 
-                      "TotalDays":  0.83768775241087956, 
-                      "TotalHours":  20.104506057861109, 
-                      "TotalMilliseconds":  72376221.8083, 
-                      "TotalMinutes":  1206.2703634716668, 
+                      "Ticks":  723762218083,
+                      "Days":  0,
+                      "Hours":  20,
+                      "Milliseconds":  221,
+                      "Minutes":  6,
+                      "Seconds":  16,
+                      "TotalDays":  0.83768775241087956,
+                      "TotalHours":  20.104506057861109,
+                      "TotalMilliseconds":  72376221.8083,
+                      "TotalMinutes":  1206.2703634716668,
                       "TotalSeconds":  72376.22180829999
                   },
     "Year":  2012
@@ -104,10 +104,10 @@ Minute      : 6
 Month       : 1
 Second      : 31
 Ticks       : 634620819914009002
-TimeOfDay   : @{Ticks=723914009002; Days=0; Hours=20; Milliseconds=400; 
- Minutes=6; Seconds=31; TotalDays=0.83786343634490734; 
-               TotalHours=20.108722472277776; TotalMilliseconds=72391400.900200009; 
- TotalMinutes=1206.5233483366667; 
+TimeOfDay   : @{Ticks=723914009002; Days=0; Hours=20; Milliseconds=400;
+ Minutes=6; Seconds=31; TotalDays=0.83786343634490734;
+               TotalHours=20.108722472277776; TotalMilliseconds=72391400.900200009;
+ TotalMinutes=1206.5233483366667;
               TotalSeconds=72391.4009002}
 Year        : 2012
 ```
@@ -136,7 +136,7 @@ Omits white space and indented formatting in the output string.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -152,7 +152,7 @@ The default value is 2.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -173,7 +173,7 @@ When the input object is an empty string, **ConvertTo-Json** returns an empty st
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -208,4 +208,3 @@ You can pipe any object to **ConvertTo-Json**.
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -226,4 +226,3 @@ It generates a file and saves it in the specified path.
 [Get-FormatData](Get-FormatData.md)
 
 [Update-FormatData](Update-FormatData.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2018-02-02
+ms.date:  02/02/2018
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Pull Service
@@ -80,7 +80,7 @@ included in the xPSDesiredStateConfiguration module.
 The following steps explain how to use the resource
 in a configuration that sets up the web service.
 
-1. Call the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xPSDesiredStateConfiguration** module. **Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0. You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). 
+1. Call the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xPSDesiredStateConfiguration** module. **Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0. You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 1. Get an SSL certificate for the DSC Pull server from a trusted Certificate Authority, either within your organization or a public authority. The certificate received from the authority is usually in the PFX format. Install the certificate on the node that will become the DSC Pull server in the default location which should be CERT:\LocalMachine\My. Make a note of the certificate thumbprint.
 1. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the following at the PS prompt and press enter: '``` [guid]::newGuid()```' or '```New-Guid```'. This key will be used by client nodes as a shared key to authenticate during registration. For more information see the Registration Key section below.
 1. In the PowerShell ISE, start (F5) the following configuration script (included in the Example folder of the  **xPSDesiredStateConfiguration** module as Sample_xDscWebService.ps1). This script sets up the pull server.
@@ -140,7 +140,7 @@ in a configuration that sets up the web service.
 1. Run the configuration, passing the thumbprint of the SSL certificate as the **certificateThumbPrint** parameter and a GUID registration key as the **RegistrationKey** parameter:
 
 ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
     # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
     dir Cert:\LocalMachine\my
 
@@ -155,7 +155,7 @@ in a configuration that sets up the web service.
 #### Registration Key
 
 To allow client nodes to register with the server so that they can use configuration names instead of a configuration ID, a registration key which was created by the above configuration is saved in a file named `RegistrationKeys.txt` in `C:\Program Files\WindowsPowerShell\DscService`. The registration key functions as a shared secret used during the initial registration by the client with the pull server. The client will generate a self-signed certificate which is used to uniquely authenticate to the pull server once registration is successfully completed. The thumbprint of this certificate is stored locally and associated with the URL of the pull server.
-> **Note**: Registration keys are not supported in PowerShell 4.0. 
+> **Note**: Registration keys are not supported in PowerShell 4.0.
 
 In order to configure a node to authenticate with the pull server the registration key needs to be in the metaconfiguration for any target node that will be registering with this pull server. Note that the **RegistrationKey** in the metaconfiguration below is removed after the target machine has successfully registered, and that the value '140a952b-b9d6-406b-b416-e0f759c9c0e4' must match the value stored in the RegistrationKeys.txt file on the pull server. Always treat the registration key value securely, because knowing it allows any target machine to register with the pull server.
 
@@ -168,7 +168,7 @@ configuration PullClientConfigID
         Settings
         {
             RefreshMode          = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded   = $true
         }
 
@@ -238,7 +238,7 @@ for the newly-added module.
 
 A configuration MOF file needs to be paired with a checksum file
 so that an LCM on a target node can validate the configuration.
-To create a checksum, call the 
+To create a checksum, call the
 [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet.
 The cmdlet takes a **Path** parameter that specifies the folder
 where the configuration MOF is located.
@@ -261,8 +261,8 @@ in the latest version of the xPSDesiredStateConfiguration module:
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @("xWebAdministration", "xPhp") 
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
+         $moduleList = @("xWebAdministration", "xPhp")
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
          # Example 2 - Package modules and mof documents from c:\LocalDepot
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force

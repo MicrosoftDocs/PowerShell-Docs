@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -157,7 +157,7 @@ This parameter is not supported by any providers installed with parameter is not
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -172,7 +172,7 @@ Specifies those items upon which the cmdlet does not act, and includes all other
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -190,7 +190,7 @@ Filters are more efficient than other parameters, because the provider applies t
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -207,7 +207,7 @@ For more information, see about_Providers.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -222,7 +222,7 @@ Specifies only those items upon which the cmdlet acts, which excludes all others
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -238,7 +238,7 @@ Enter a variable that contains the object or a command that gets the object.
 ```yaml
 Type: PSObject
 Parameter Sets: propertyPSObjectPathSet, propertyPSObjectLiteralPathSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -288,7 +288,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -303,7 +303,7 @@ Specifies the path of the items with the property to modify.
 ```yaml
 Type: String[]
 Parameter Sets: propertyValuePathSet, propertyPSObjectPathSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -335,7 +335,7 @@ Specifies the value of the property.
 ```yaml
 Type: Object
 Parameter Sets: propertyValuePathSet, propertyValueLiteralPathSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -394,5 +394,3 @@ Otherwise, this cmdlet does not generate any output.
 [Remove-ItemProperty](Remove-ItemProperty.md)
 
 [Rename-ItemProperty](Rename-ItemProperty.md)
-
-

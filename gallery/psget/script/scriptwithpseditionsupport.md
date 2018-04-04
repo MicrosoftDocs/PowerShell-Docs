@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -61,4 +61,3 @@ Find-Script -Tag PSEditon_Core
 ## More details
 ### [Modules with PSEditions](../module/modulewithpseditionsupport.md)
 ### [PSEditions support on PowerShellGallery](../../psgallery/psgallery_pseditions.md)
-

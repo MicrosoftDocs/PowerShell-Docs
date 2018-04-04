@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -51,7 +51,7 @@ Specifies a process by the process ID. To get a process ID, run the **Get-Proces
 ```yaml
 Type: Int32[]
 Parameter Sets: ProcessIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -66,7 +66,7 @@ Specifies a process by the process name. To get a process name, run the **Get-Pr
 ```yaml
 Type: String[]
 Parameter Sets: ProcessNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -81,7 +81,7 @@ Specifies a process by the process object. The simplest way to use this paramete
 ```yaml
 Type: Process[]
 Parameter Sets: ProcessParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -100,4 +100,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-

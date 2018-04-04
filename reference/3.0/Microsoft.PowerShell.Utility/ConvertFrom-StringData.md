@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -183,10 +183,10 @@ Name  : Angelo
 
 Value : Let there be some more test made of my metal,
         Before so noble and so great a figure
-        Be stamp'd upon it. 
+        Be stamp'd upon it.
 
 Name  : Vincentio
-Value : Heaven doth with us as we with torches do, 
+Value : Heaven doth with us as we with torches do,
         Not light them for themselves; for if our virtues
         Did not go forth of us, 'twere all alike
         As if we had them not.
@@ -197,8 +197,8 @@ In this example, the escape sequence **\n** is used to create new lines within a
 ### Example 8
 ```
 PS C:\> ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
-Name                           Value                                                                                                                                     
-----                           -----                                                                                                                                     
+Name                           Value
+----                           -----
 Message                        Look in c:\Windows\System32
 ```
 
@@ -223,7 +223,7 @@ For more information, see about_Quoting_Rules.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -255,4 +255,3 @@ ConvertFrom-StringData returns a hash table that it creates from the key/value p
 [about_Script_Internationalization](../Microsoft.PowerShell.Core/About/about_Script_Internationalization.md)
 
 [about_Data_Sections](../Microsoft.PowerShell.Core/About/about_Data_Sections.md)
-

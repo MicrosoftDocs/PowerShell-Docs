@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  EnableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
@@ -21,7 +21,7 @@ uint32 EnableDebugConfiguration(
 Parameters
 ----------
 
-*BreakAll* \[in\]  
+*BreakAll* \[in\]
 Sets a breakpoint at every line in the resource script.
 
 ## Return value
@@ -44,9 +44,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
- 
-
- 
-
-
-

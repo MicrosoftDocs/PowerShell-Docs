@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -92,7 +92,7 @@ If the certificate is not valid or does not have code-signing authority, the com
 ```yaml
 Type: X509Certificate2
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -122,7 +122,7 @@ Specifies the path to a file that is being signed.
 ```yaml
 Type: String[]
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -138,7 +138,7 @@ Even using the *Force* parameter, the cmdlet cannot override security restrictio
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -157,7 +157,7 @@ Files that are signed with a different hashing algorithm might not be recognized
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -172,7 +172,7 @@ NotRoot is the default.
 The acceptable values for this parameter are:
 
 - Signer.
-Includes only the signer's certificate. 
+Includes only the signer's certificate.
 - NotRoot.
 Includes all of the certificates in the certificate chain, except for the root authority.
 - All.
@@ -181,7 +181,7 @@ Includes all the certificates in the certificate chain.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: signer, notroot, all
 
 Required: False
@@ -220,7 +220,7 @@ A time stamp prevents the script from failing if the certificate expires because
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -272,4 +272,3 @@ You can pipe a string that contains the file path to **Set-AuthenticodeSignature
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

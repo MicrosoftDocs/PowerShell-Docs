@@ -1,9 +1,8 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Introducing the Windows PowerShell ISE
 ---
-
 # Introducing the Windows PowerShell ISE
 
 The Windows PowerShell Integrated Scripting Environment (ISE) is a host application for Windows
@@ -28,7 +27,7 @@ The Windows PowerShell ISE lets you customize some aspects of its appearance. It
 Windows PowerShell profile, where you can store functions, aliases, variables, and commands you use
 in the Windows PowerShell ISE.
 
-### To start the Windows PowerShell ISE
+## To start the Windows PowerShell ISE
 
 Do one of the following:
 
@@ -36,7 +35,7 @@ Do one of the following:
   **Windows PowerShell ISE**.
 - In the Windows PowerShell console Cmd.exe, or in the Run box, type, **powershell_ise.exe**.
 
-### To get Help in the Windows PowerShell ISE
+## To get Help in the Windows PowerShell ISE
 
 On the **Help** menu, click **Windows PowerShell Help**. Or, press F1. The file that opens
 describes Windows PowerShell ISE and Windows PowerShell, including all of the help available from

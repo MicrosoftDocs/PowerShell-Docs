@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -129,7 +129,7 @@ Enter the ID of a scheduled job.
 ```yaml
 Type: Int32
 Parameter Sets: DefinitionId
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -146,7 +146,7 @@ You can also pipe a **ScheduledJobDefinition** object to **Disable-ScheduledJob*
 ```yaml
 Type: ScheduledJobDefinition
 Parameter Sets: Definition
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -163,7 +163,7 @@ Wildcards are supported.
 ```yaml
 Type: String
 Parameter Sets: DefinitionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -179,7 +179,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -271,4 +271,3 @@ Otherwise, this cmdlet does not generate any output.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-

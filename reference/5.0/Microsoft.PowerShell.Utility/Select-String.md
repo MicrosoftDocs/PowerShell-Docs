@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -507,4 +507,3 @@ If you use the *Quiet* parameter, the output is a Boolean value indicating wheth
 [about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md)
 
 [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md)
-

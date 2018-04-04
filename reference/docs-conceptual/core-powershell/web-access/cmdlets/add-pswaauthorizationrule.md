@@ -1,9 +1,9 @@
 ---
-description:  
+description:
 ms.topic:  article
 ms.prod:  powershell
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+ms.date:  12/12/2016
 title:  add pswaauthorizationrule
 ms.technology:  powershell
 schema:   2.0.0
@@ -84,7 +84,7 @@ section of the sign-in page). For an example of this, see Example 6.
 Specifies the name of a computer group in Active Directory Domain
 Services (AD DS) or local groups to which this rule grants access.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |
@@ -97,7 +97,7 @@ Services (AD DS) or local groups to which this rule grants access.
 
 Specifies the computer name to which this rule grants access.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |
@@ -111,7 +111,7 @@ Specifies the computer name to which this rule grants access.
 Specifies the name of the Windows PowerShell session configuration, also
 known as runspace, to which this rule grants access.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |
@@ -129,7 +129,7 @@ account. To get a **PSCredential** object, which is required to add
 authorization rules remotely, run the
 [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -147,7 +147,7 @@ fully qualified). Confirmation is requested for security reasons, so
 that you can use the simple name to add a computer only if the computer
 is in a workgroup.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -160,7 +160,7 @@ is in a workgroup.
 
 Specifies the friendly name for this rule.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -174,7 +174,7 @@ Specifies the friendly name for this rule.
 Specifies the name of one or more user groups in AD DS or local groups
 to which this rule grants access.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |
@@ -190,7 +190,7 @@ name can be a local user account on the gateway computer or a user in AD
 DS.
 The format is `domain\user` or `computer\user`.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | true                                 |
@@ -272,9 +272,9 @@ This example illustrates how all parameters take values from pipeline by
 property name.
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

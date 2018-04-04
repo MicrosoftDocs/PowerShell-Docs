@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -177,7 +177,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSSessionConfigurationAccessMode
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Disabled, Local, Remote
 
 Required: False
@@ -193,7 +193,7 @@ Specifies the path to the assembly file (*.dll) that is specified in the value o
 ```yaml
 Type: String
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -211,7 +211,7 @@ If you enter only the name, you can enter the path in the value of the **Applica
 ```yaml
 Type: String
 Parameter Sets: AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -229,7 +229,7 @@ This parameter is required when you specify an assembly name.
 ```yaml
 Type: String
 Parameter Sets: AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -262,7 +262,7 @@ To prevent a restart and suppress the restart prompt, use the NoServiceRestart p
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -281,7 +281,7 @@ If a data size limit is defined in the configuration type that is specified in t
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -300,7 +300,7 @@ If an object size limit is defined in the configuration type that is specified i
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -325,7 +325,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -342,7 +342,7 @@ You cannot use this parameter to change the name of the session configuration.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 ### -NoServiceRestart
 Does not restart the WinRM service, and suppresses the prompt to restart the service.
 
-By default, when you enter a Set-PSSessionConfiguration command, you are prompted to restart the WinRM service to make the new session configuration effective. 
+By default, when you enter a Set-PSSessionConfiguration command, you are prompted to restart the WinRM service to make the new session configuration effective.
 Until the WinRM service is restarted, the new session configuration is not effective.
 
 To restart the WinRM service without prompting, use the Force parameter.
@@ -363,7 +363,7 @@ To restart the WinRM service manually, use the Restart-Service cmdlet.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -402,7 +402,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: SessionConfigurationFile
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -420,7 +420,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -444,7 +444,7 @@ You cannot use both parameters in the same command.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -454,7 +454,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionTypeOption
-Sets type-specific options for the session configuration. 
+Sets type-specific options for the session configuration.
 Enter a session type options object, such as the **PSWorkflowExecutionOption** object that the New-PSWorkflowExecutionOption cmdlet returns.
 
 The options of sessions that use the session configuration are determined by the values of session options and the session configuration options.
@@ -466,7 +466,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSSessionTypeOption
 Parameter Sets: NameParameterSet, AssemblyNameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -486,7 +486,7 @@ You cannot use the SecurityDescriptorSDDL parameter and this parameter in the sa
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -508,7 +508,7 @@ If the script generates an error (even a non-terminating error), the session is 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -525,7 +525,7 @@ Unknown is the default.
 ```yaml
 Type: ApartmentState
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: STA, MTA, Unknown
 
 Required: False
@@ -546,7 +546,7 @@ For more information, see "PSThreadOptions Enumeration" in MSDN.
 ```yaml
 Type: PSThreadOptions
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Default, UseNewThread, ReuseThread, UseCurrentThread
 
 Required: False
@@ -557,7 +557,7 @@ Accept wildcard characters: False
 ```
 
 ### -TransportOption
-Sets transport options for the session configuration. 
+Sets transport options for the session configuration.
 Enter a transport options object, such as the **WSManConfigurationOption** object that the New-PSTransportOption cmdlet returns.
 
 The options of sessions that use the session configuration are determined by the values of session options and the session configuration options.
@@ -569,7 +569,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSTransportOption
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -587,7 +587,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -660,4 +660,3 @@ You cannot pipe input to this cmdlet.
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

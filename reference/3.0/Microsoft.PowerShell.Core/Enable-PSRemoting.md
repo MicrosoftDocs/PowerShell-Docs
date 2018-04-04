@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -50,13 +50,13 @@ The commands might appear to succeed, but the remoting is not configured correct
 Remote commands, and later attempts to enable and disable remoting, are likely to fail.
 ## EXAMPLES
 
-###  Example 1 
+###  Example 1
 ```
 PS C:\> Enable-PSRemoting
 ```
 
 This command configures the computer to receive remote commands.
-###  Example 2 
+###  Example 2
 ```
 PS C:\> Enable-PSRemoting -Force
 ```
@@ -91,7 +91,7 @@ By default, you are prompted to confirm each operation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -115,7 +115,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -204,4 +204,3 @@ When the current network location is public, **Enable-PSRemoting** returns the f
 [about_Remote](About/about_Remote.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
-

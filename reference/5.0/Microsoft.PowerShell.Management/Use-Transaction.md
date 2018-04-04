@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -120,7 +120,7 @@ This parameter is required.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -173,5 +173,3 @@ This cmdlet returns the result of the transaction.
 [Start-Transaction](Start-Transaction.md)
 
 [Undo-Transaction](Undo-Transaction.md)
-
-

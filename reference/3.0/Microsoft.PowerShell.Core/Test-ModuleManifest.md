@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -84,7 +84,7 @@ You can use this function in conditional statements, such as those that might pr
 ## PARAMETERS
 
 ### -Path
-Specifies the path to the module manifest file. 
+Specifies the path to the module manifest file.
 Enter a path (optional) and the name of the module manifest file with the .psd1 file name extension.
 The default location is the current directory.
 Wildcards are supported, but must resolve to a single module manifest file.
@@ -95,7 +95,7 @@ You can also pipe a path to Test-ModuleManifest.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -132,4 +132,3 @@ It returns this object even if the manifest has errors.
 [Remove-Module](Remove-Module.md)
 
 [about_Modules](About/about_Modules.md)
-

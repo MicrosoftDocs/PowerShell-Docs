@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -76,7 +76,7 @@ To disable System Restore on any drive, System Restore must be disabled on the s
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -135,4 +135,3 @@ To open this tab in Windows PowerShell, type `SystemPropertiesProtection`.
 [Restart-Computer](Restart-Computer.md)
 
 [Restore-Computer](Restore-Computer.md)
-

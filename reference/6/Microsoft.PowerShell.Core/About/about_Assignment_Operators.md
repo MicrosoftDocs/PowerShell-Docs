@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-27
+ms.date:  11/27/2017
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Assignment_Operators

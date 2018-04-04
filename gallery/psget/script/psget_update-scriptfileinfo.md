@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -98,7 +98,7 @@ PS C:\WINDOWS\system32> $content = @'
 PS C:\WINDOWS\system32>
 PS C:\WINDOWS\system32> Set-Content -Value $content -Path C:\temp\ScriptFileWithoutMetadata.ps1 -Force
 PS C:\WINDOWS\system32> Test-ScriptFileInfo c:\temp\ScriptFileWithoutMetadata.ps1
-Test-ScriptFileInfo : PSScriptInfo is not specified in the script file 'C:\temp\ScriptFileWithoutMetadata.ps1', use the Update-ScriptFileInfo with -Force 
+Test-ScriptFileInfo : PSScriptInfo is not specified in the script file 'C:\temp\ScriptFileWithoutMetadata.ps1', use the Update-ScriptFileInfo with -Force
 or New-ScriptFileInfo cmdlet to add the PSScriptInfo to the script file.
 At line:1 char:1
 + Test-ScriptFileInfo c:\temp\ScriptFileWithoutMetadata.ps1
@@ -108,7 +108,7 @@ At line:1 char:1
 
 PS C:\WINDOWS\system32> # Should Fail
 PS C:\WINDOWS\system32> Update-ScriptFileInfo c:\temp\ScriptFileWithoutMetadata.ps1
-Test-ScriptFileInfo : PSScriptInfo is not specified in the script file 'C:\temp\ScriptFileWithoutMetadata.ps1', use the Update-ScriptFileInfo with -Force 
+Test-ScriptFileInfo : PSScriptInfo is not specified in the script file 'C:\temp\ScriptFileWithoutMetadata.ps1', use the Update-ScriptFileInfo with -Force
 or New-ScriptFileInfo cmdlet to add the PSScriptInfo to the script file.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm1:4704 char:29
 + ...      $psscriptInfo = Test-ScriptFileInfo -LiteralPath $scriptFilePath
@@ -184,4 +184,3 @@ Function foo
 Foo
 
 ```
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -68,7 +68,7 @@ _------ ---- ---------- -----------
 ### Create a module with dependencies and version range specified in RequiredModules property of its module manifest.
 
 **Note:**
-  - \* is supported only in MaximumVersion and also it should be at the end of version string. 
+  - \* is supported only in MaximumVersion and also it should be at the end of version string.
   - \* is replaced with 999999999 in the version object.
 
 ```powershell
@@ -176,4 +176,3 @@ If 'SnippetPx' is not available on the repository, below error will be thrown.
 ```powershell
 Publish-PSArtifactUtility : PowerShellGet cannot resolve the module dependency 'SnippetPx' of the module 'TypePx' on the repository 'LocalRepo'. Verify that the dependent module 'SnippetPx' is available in the repository 'LocalRepo'. If this dependent 'SnippetPx' is managed externally, add it to the ExternalModuleDependencies entry in the PSData section of the module manifest.
 ```
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -112,7 +112,7 @@ Get-EventLog -LogName "Windows PowerShell" -Newest 5
 
 These commands use the Invoke-Expression cmdlet to run the string in the $c variable. The first command uses the full cmdlet name. The second command uses the "iex" alias for the Invoke-Expression cmdlet. These commands are equivalent and you can use them interchangeably.The output shows the five newest events in the Windows PowerShell event log.
 PS C:\> Invoke-Expression $c
-                         
+
 PS C:\> iex $c
    Index Time          EntryType   Source                 InstanceID Message
    ----- ----          ---------   ------                 ---------- -------
@@ -127,7 +127,7 @@ This command shows how to run the command string that you get when you use the *
 This strategy lets you see the command and use it.
 ### Example 8
 ```
-The first command runs the **Show-Command** cmdlet with the **ErrorPopup** parameter. In addition to displaying errors in a window, **ErrorPopup** returns command output to the current command, instead of creating a new command.When you run this command, the **Show-Command** window opens. You can use the window features to set parameter values. To run the command, click the **Run** button in the **Show-Command** window. 
+The first command runs the **Show-Command** cmdlet with the **ErrorPopup** parameter. In addition to displaying errors in a window, **ErrorPopup** returns command output to the current command, instead of creating a new command.When you run this command, the **Show-Command** window opens. You can use the window features to set parameter values. To run the command, click the **Run** button in the **Show-Command** window.
 PS C:\> $p = Show-Command Get-Process -ErrorPopup
 
 The second command displays the value in the $p variable.
@@ -152,7 +152,7 @@ For a **Show-Command** command that includes the **Name** parameter, the default
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -185,7 +185,7 @@ By default, the Common Parameters appear in an expandable section at the bottom 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -203,7 +203,7 @@ The default width is 300 pixels.
 ```yaml
 Type: Double
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -220,7 +220,7 @@ To run the command string, copy and paste it at the command prompt or save it in
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -239,7 +239,7 @@ You can use this feature to save the command results in a variable.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -262,4 +262,3 @@ When you use the **ErrorPopup** parameter, **Show-Command** returns the command 
 ## NOTES
 * **Show-Command** does not work in remote sessions.
 ## RELATED LINKS
-

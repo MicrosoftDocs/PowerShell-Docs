@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -10,4 +10,3 @@ keywords:  wmf,powershell,setup
 - [Enhanced Transcription Options](audit_transcript.md)
 - [Script Tracing and Logging](audit_script.md)
 - [Cryptographic Message Syntax (CMS) cmdlets](audit_cms.md)
-

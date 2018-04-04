@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821753
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertFrom-Json
 ---
-
 # ConvertFrom-Json
 
 ## SYNOPSIS
+
 Converts a JSON-formatted string to a custom object.
 
 ## SYNTAX
@@ -20,16 +20,18 @@ ConvertFrom-Json [-InputObject] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **ConvertFrom-Json** cmdlet converts a JavaScript Object Notation (JSON) formatted string to a custom **PSCustomObject** object that has a property for each field in the JSON string.
 JSON is commonly used by web sites to provide a textual representation of objects.
 
 To generate a JSON string from any object, use the ConvertTo-Json cmdlet.
 
-This cmdlet was introduced in Windows PowerShell 3.0.
+This cmdlet was introduced in PowerShell 3.0.
 
 ## EXAMPLES
 
 ### Example 1: Convert a DateTime object to a JSON object
+
 ```
 PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 
@@ -69,21 +71,25 @@ This command uses the ConvertTo-Json and **ConvertFrom-Json** cmdlets to convert
 The command uses the Select-Object cmdlet to get all of the properties of the **DateTime** object.
 It uses the **ConvertTo-Json** cmdlet to convert the **DateTime** object to a JSON-formatted string and the **ConvertFrom-Json** cmdlet to convert the JSON-formatted string to a JSON object..
 
-### Example 2: Get JSON strings from a web service and convert them to Windows PowerShell objects
-```
-PS C:\> $J = Invoke-WebRequest -Uri http://search.twitter.com/search.json?q=PowerShell | ConvertFrom-Json
+### Example 2: Get JSON strings from a web service and convert them to PowerShell objects
+
+```powershell
+# Ensures that Invoke-WebRequest uses TLS 1.2
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' | ConvertFrom-Json
 ```
 
-This command uses the Invoke-WebRequest cmdlet to get JSON strings from a web service and then it uses the **ConvertFrom-Json** cmdlet to convert JSON content to objects that can be managed in Windows PowerShell.
+This command uses the Invoke-WebRequest cmdlet to get JSON strings from a web service and then it uses the **ConvertFrom-Json** cmdlet to convert JSON content to objects that can be managed in PowerShell.
 
 You can also use the Invoke-RestMethod cmdlet, which automatically converts JSON content to objects.
 
 ### Example 3: Convert a JSON string to a custom object
-```
-PS C:\> (Get-Content JsonFile.JSON) -Join "`n" | ConvertFrom-Json
+
+```powershell
+(Get-Content JsonFile.JSON) -Join '`n' | ConvertFrom-Json
 ```
 
-This example shows how to use the **ConvertFrom-Json** cmdlet to convert a JSON file to a Windows PowerShell custom object.
+This example shows how to use the **ConvertFrom-Json** cmdlet to convert a JSON file to a PowerShell custom object.
 
 The command uses Get-Content cmdlet to get the strings in a JSON file.
 It uses the Join operator to join the strings in the file into a single string that is delimited by newline characters (\`n).
@@ -94,6 +100,7 @@ The Join operator is required, because the **ConvertFrom-Json** cmdlet expects a
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies the JSON strings to convert to JSON objects.
 Enter a variable that contains the string, or type a command or expression that gets the string.
 You can also pipe a string to **ConvertFrom-Json**.
@@ -105,7 +112,7 @@ The InputObject value cannot be $null.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -115,11 +122,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a JSON string to **ConvertFrom-Json**.
 
 ## OUTPUTS
@@ -127,7 +136,8 @@ You can pipe a JSON string to **ConvertFrom-Json**.
 ### PSCustomObject
 
 ## NOTES
-* The **ConvertFrom-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
+
+- The **ConvertFrom-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS
 
@@ -138,4 +148,3 @@ You can pipe a JSON string to **ConvertFrom-Json**.
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
-

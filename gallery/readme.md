@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery,psget
@@ -67,4 +67,3 @@ Therefore, **PowerShellGet** requires one of the following operating systems:
 ## Got a question? Have feedback?
 
 More information about the PowerShell Gallery and PowerShellGet can be found in the [Getting Started](psgallery/psgallery_gettingstarted.md) page. Please provide feedback and report issues using [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -114,7 +114,7 @@ EventID            : 7036
 MachineName        : Server01
 Data               : {}
 Index              : 10238
-Category           : (0) 
+Category           : (0)
 CategoryNumber     : 0
 EntryType          : Information
 Message            : The description for Event ID
@@ -123,8 +123,8 @@ ReplacementStrings : {WinHTTP Web Proxy Auto-Disco
 InstanceId         : 1073748860
 TimeGenerated      : 4/11/2008 9:56:05 PM
 TimeWritten        : 4/11/2008 9:56:05 PM
-UserName           : 
-Site               : 
+UserName           :
+Site               :
 Container          :
 ```
 
@@ -174,7 +174,7 @@ Enter a **DateTime** object, such as the one returned by the Get-Date cmdlet.
 ```yaml
 Type: DateTime
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -192,7 +192,7 @@ To see the effect of this parameter, pipe the events to the Get-Member cmdlet an
 ```yaml
 Type: SwitchParameter
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -207,7 +207,7 @@ Indicates that this cmdlet returns the output as strings, instead of objects.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: List
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -223,7 +223,7 @@ Enter a **DateTime** object, such as the one returned by the **Get-Date** cmdlet
 ```yaml
 Type: DateTime
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -285,7 +285,7 @@ Specifies the index values that this cmdlet gets events from.
 ```yaml
 Type: Int32[]
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -300,7 +300,7 @@ Specifies the instance IDs that this cmdlet gets events from.
 ```yaml
 Type: Int64[]
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -315,7 +315,7 @@ Indicates that this cmdlet gets a list of event logs on the computer.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: List
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -366,7 +366,7 @@ This cmdlet gets the specified number of events, beginning with the newest event
 ```yaml
 Type: Int32
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -399,7 +399,7 @@ Wildcards are permitted.
 ```yaml
 Type: String[]
 Parameter Sets: LogName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -441,4 +441,3 @@ If both the *List* and *AsString* parameters are specified, the output is a coll
 [Show-EventLog](Show-EventLog.md)
 
 [Write-EventLog](Write-EventLog.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -87,7 +87,7 @@ When you add this parameter and specify a user name, you are prompted to provide
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -102,7 +102,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -117,7 +117,7 @@ Indicates that this cmdlet forces Package Management to automatically install th
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -132,7 +132,7 @@ Specifies a package source by using the package source's object, which is shown 
 ```yaml
 Type: PackageSource[]
 Parameter Sets: SourceByInputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -148,7 +148,7 @@ The value of this parameter can be a URI, a file path, or any other destination 
 ```yaml
 Type: String
 Parameter Sets: SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -163,7 +163,7 @@ Specifies the Package Management provider.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -194,7 +194,7 @@ Specifies the publish location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -209,7 +209,7 @@ Specifies the script publish location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -224,7 +224,7 @@ Specifies the script source location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -331,4 +331,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Register-PackageSource](Register-PackageSource.md)
 
 [Set-PackageSource](Set-PackageSource.md)
-

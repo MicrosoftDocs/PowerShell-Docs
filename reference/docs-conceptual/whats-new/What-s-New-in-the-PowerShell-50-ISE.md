@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  What s New in the PowerShell 50 ISE
 ms.assetid:  38648d47-7c27-4b37-a40e-ad29948519c2
@@ -218,7 +218,6 @@ Show-Command is new Windows PowerShell ISE 3.0.
 ## See also
 For more information about using Windows PowerShell ISE in Windows PowerShell, see the following links.
 
-- [Using the Windows PowerShell Integrated Scripting Environment](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Exploring the Windows PowerShell Integrated Scripting Environment](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [ISE on the TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Script Center](http://technet.microsoft.com/scriptcenter/default)
-

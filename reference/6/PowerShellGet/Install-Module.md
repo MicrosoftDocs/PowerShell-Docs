@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -88,7 +88,7 @@ If a module of the same name and version already exists on the computer, this pa
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -105,7 +105,7 @@ The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive
 ```yaml
 Type: Version
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -125,7 +125,7 @@ For example, if you try to install the ContosoServer module with a minimum versi
 ```yaml
 Type: Version
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -144,7 +144,7 @@ If you use wildcard characters, but do not find matching results, no error is re
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -159,7 +159,7 @@ Specifies the friendly name of a repository that has been registered by running 
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -176,7 +176,7 @@ The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive
 ```yaml
 Type: Version
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -196,7 +196,7 @@ The CurrentUser scope lets modules be installed only to $home\Documents\WindowsP
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: CurrentUser, AllUsers
 
 Required: False
@@ -243,7 +243,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -258,7 +258,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -273,7 +273,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSObject[]
 Parameter Sets: InputObject
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -365,4 +365,3 @@ As a security best practice, evaluate module code before running any cmdlets or 
 [Uninstall-Module](Uninstall-Module.md)
 
 [Update-Module](Update-Module.md)
-

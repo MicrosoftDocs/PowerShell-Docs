@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -24,9 +24,9 @@ The Checkpoint-Workflow activity is valid only in a workflow.
 
 
 ```
-Workflow <Verb-Noun>  
-{  
-    Checkpoint-Workflow  
+Workflow <Verb-Noun>
+{
+    Checkpoint-Workflow
 }
 ```
 
@@ -65,16 +65,16 @@ The following workflow includes a call to the Checkpoint-Workflow activity after
 
 
 ```
-Workflow Test-Workflow  
-{  
-    $a = Invoke-LongRunningFunction  
-    InlineScript { \\Server\Share\Get-DataPacks.ps1 $Using:a}      
-    Checkpoint-Workflow  
-  
-    Invoke-LongRunningFunction  
-    {  
-        ...  
-    }  
+Workflow Test-Workflow
+{
+    $a = Invoke-LongRunningFunction
+    InlineScript { \\Server\Share\Get-DataPacks.ps1 $Using:a}
+    Checkpoint-Workflow
+
+    Invoke-LongRunningFunction
+    {
+        ...
+    }
 }
 ```
 
@@ -82,4 +82,3 @@ Workflow Test-Workflow
 
 ## SEE ALSO
 How to Add Checkpoints to a Workflow (http:\/\/go.microsoft.com\/fwlink\/?LinkId\=261993)
-

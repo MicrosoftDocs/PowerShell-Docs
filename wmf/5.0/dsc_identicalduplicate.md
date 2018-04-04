@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -7,8 +7,8 @@ keywords:  wmf,powershell,setup
 
 # Allowing for Identical Duplicate Resources in a Configuration
 
-DSC does not allow or handle conflicting resource definitions within a configuration. Instead of trying to resolve the conflict, it simply fails. As configuration reuse becomes more 
-utilized through composite resources, etc. conflicts will occur more often. When conflicting resource definitions are identical, DSC should be smart and allow this. With this release, we 
+DSC does not allow or handle conflicting resource definitions within a configuration. Instead of trying to resolve the conflict, it simply fails. As configuration reuse becomes more
+utilized through composite resources, etc. conflicts will occur more often. When conflicting resource definitions are identical, DSC should be smart and allow this. With this release, we
 support having multiple resource instances that have identical definitions:
 
 ```powershell
@@ -50,7 +50,7 @@ Configuration WebApplication
 }
 ```
 
-In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed. Notice that *all* of the properties that are being configured are identical in these two configurations. Since *all* of the properties in these two resources are identical, this will result in a successful compilation now. 
+In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed. Notice that *all* of the properties that are being configured are identical in these two configurations. Since *all* of the properties in these two resources are identical, this will result in a successful compilation now.
 
 If any of the properties are different between the two resources, they will not be considered identical and compilation will fail:
 
@@ -94,4 +94,3 @@ Configuration WebApplication
 ```
 
 This very similar configuration will fail because the WindowsFeature FE_IIS and the WindowsFeature Worker_IIS resources are no longer identical and therefore conflict.
-

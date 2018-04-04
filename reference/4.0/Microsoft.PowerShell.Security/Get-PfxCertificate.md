@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -62,7 +62,7 @@ The parameter name ("FilePath") is optional.
 ```yaml
 Type: String[]
 Parameter Sets: ByPath
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -115,4 +115,3 @@ Get-PfxCertificate returns an object for each certificate that it gets.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

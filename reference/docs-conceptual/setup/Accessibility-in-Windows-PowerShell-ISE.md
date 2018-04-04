@@ -1,11 +1,11 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Accessibility in Windows PowerShell ISE
 ms.assetid:  a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ---
-
 # Accessibility in Windows PowerShell ISE
+
 This topic describes the accessibility features of Windows PowerShell Integrated Scripting Environment (ISE) that you might find helpful.
 
 * [How to change the size and location of the Console and Script Panes](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
@@ -27,6 +27,7 @@ Windows PowerShell ISE supports high contrast mode. For the visually impaired, b
 - Text Size Change
 
 ## How to change the size and location of the Console and Script Panes
+
 You can use the following steps to change the size and location of the Console Pane and the Script Pane. When you open the Windows PowerShell ISE again, the size and location changes you made will be retained.
 
 ### To resize the Script Pane and Console Pane
@@ -36,6 +37,7 @@ You can use the following steps to change the size and location of the Console P
 2. When the mouse pointer changes to a two-headed arrow, drag the border to change the size of the pane.
 
 ### To move the Script Pane and Console Pane
+
 Do one of the following:
 
 - To move the Script Pane above the Console Pane, press **CTRL+1** or, on the toolbar, click the **Show Script Pane Top** icon, or in the **View** menu, click **Show Script Pane Top**.
@@ -49,6 +51,7 @@ Do one of the following:
 - To display the Script Pane when the Console Pane is maximized, on the far right edge of the row of tabs, click the **Show Script Pane** icon, or in the **View** menu, click to select the **Show Script Pane** menu option.
 
 ## Keyboard shortcuts for editing text
+
 You can use the following keyboard shortcuts when you edit text.
 
 |Action|Keyboard Shortcuts|Use in|
@@ -66,6 +69,7 @@ You can use the following keyboard shortcuts when you edit text.
 |**Undo**|CTRL+Z|Script Pane, Console Pane|
 
 ## Keyboard shortcuts for running scripts
+
 You can use the following keyboard shortcuts when you run scripts in the Script Pane.
 
 |Action|Keyboard Shortcut|
@@ -79,6 +83,7 @@ You can use the following keyboard shortcuts when you run scripts in the Script 
 |**Tab** (to previous script)|CTRL+SHIFT+TAB **Note:** Tab to previous script works when you have only one PowerShell tab open, or if you have more  than one PowerShell tab open, and the focus is in the Script Pane.|
 
 ## Keyboard shortcuts for customizing the view
+
 You can use the following keyboard shortcuts to customize the view in Windows PowerShell ISE. They are accessible from all the panes in the application.
 
 |Action|Keyboard Shortcut|
@@ -95,6 +100,7 @@ You can use the following keyboard shortcuts to customize the view in Windows Po
 |**Zoom Out**|CTRL+MINUS SIGN|
 
 ## Keyboard shortcuts for debugging scripts
+
 You can use the following keyboard shortcuts when you debug scripts.
 
 |Action|Keyboard Shortcut|Use in|
@@ -126,6 +132,7 @@ You can use the following keyboard shortcuts when you debug scripts.
 |**Display Console Debugging Commands**|H or ?|Console Pane, when debugging a script|
 
 ## Keyboard shortcuts for Windows PowerShell tabs
+
 You can use the following keyboard shortcuts when you use Windows PowerShell tabs.
 
 |Action|Keyboard Shortcut|
@@ -136,6 +143,7 @@ You can use the following keyboard shortcuts when you use Windows PowerShell tab
 |**Next Windows PowerShell tab**|CTRL+TAB. This shortcut works only when no files are open on any PowerShell tab.|
 
 ## Keyboard shortcuts for starting and exiting
+
 You can use the following keyboard shortcuts to start the Windows PowerShell console (PowerShell.exe) or to exit Windows PowerShell ISE.
 
 |Action|Keyboard Shortcut|
@@ -144,5 +152,5 @@ You can use the following keyboard shortcuts to start the Windows PowerShell con
 |**Start PowerShell.exe** (Windows PowerShell console)|CTRL+SHIFT+P|
 
 ## See Also
-- [Using the Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+- [Introducing the Windows PowerShell ISE](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)

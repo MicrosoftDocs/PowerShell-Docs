@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -64,7 +64,7 @@ Removes the current Windows PowerShell drive.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -84,7 +84,7 @@ Single quotation marks instruct Windows PowerShell not to interpret any characte
 ```yaml
 Type: String[]
 Parameter Sets: LiteralName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -100,7 +100,7 @@ Do not type a colon (:) after the drive name.
 ```yaml
 Type: String[]
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -115,7 +115,7 @@ Removes and disconnects all of the drives associated with the specified Windows 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -130,7 +130,7 @@ Accepts an index that identifies the scope from which the drive is being removed
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -212,5 +212,3 @@ This cmdlet does not return any output.
 [New-PSDrive](New-PSDrive.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
-

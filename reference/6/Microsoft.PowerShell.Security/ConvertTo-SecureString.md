@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -48,11 +48,13 @@ If the standard string being converted was encrypted with **ConvertFrom-SecureSt
 ```
 PS C:\> $Secure = Read-Host -AsSecureString
 PS C:\> $Secure
-System.Security.SecureString PS C:\> $Encrypted = ConvertFrom-SecureString -SecureString $Secure
+System.Security.SecureString
+PS C:\> $Encrypted = ConvertFrom-SecureString -SecureString $Secure
 PS C:\> $Encrypted
 01000000d08c9ddf0115d1118c7a00c04fc297eb010000001a114d45b8dd3f4aa11ad7c0abdae9800000000002000000000003660000a8000000100000005df63cea84bfb7d70bd6842e7
 efa79820000000004800000a000000010000000f10cd0f4a99a8d5814d94e0687d7430b100000008bf11f1960158405b2779613e9352c6d14000000e6b7bf46a9d485ff211b9b2a2df3bd
-6eb67aae41 PS C:\> $Secure2 = ConvertTo-SecureString -String $Encrypted
+6eb67aae41
+PS C:\> $Secure2 = ConvertTo-SecureString -String $Encrypted
 PS C:\> $Secure2
 System.Security.SecureString
 ```
@@ -118,7 +120,7 @@ To use this parameter, you must also specify the *Force* parameter.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PlainText
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -133,7 +135,7 @@ Confirms that you understand the implications of using the *AsPlainText* paramet
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PlainText
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -149,7 +151,7 @@ Valid key lengths are 16, 24, and 32 bytes.
 ```yaml
 Type: Byte[]
 Parameter Sets: Open
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -167,7 +169,7 @@ Valid key lengths are 16, 24, and 32 bytes.
 ```yaml
 Type: SecureString
 Parameter Sets: Secure
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -182,7 +184,7 @@ Specifies the string to convert to a secure string.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -209,4 +211,3 @@ ConvertTo-SecureString returns a **SecureString** object.
 ## RELATED LINKS
 
 [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
-

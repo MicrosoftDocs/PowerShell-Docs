@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -430,7 +430,7 @@ This parameter lets you select from among the exported aliases.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -468,7 +468,7 @@ You can save the custom object in a variable and use dot notation to invoke the 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -490,7 +490,7 @@ Use this parameter for debugging and testing the module, or when you are instruc
 ```yaml
 Type: Assembly[]
 Parameter Sets: Assembly
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -510,7 +510,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: CimSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -530,7 +530,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Uri
 Parameter Sets: CimSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -553,7 +553,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: CimSession
 Parameter Sets: CimSession
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -572,7 +572,7 @@ This parameter lets you select from among the exported cmdlets.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -586,7 +586,7 @@ Indicates that this cmdlet suppresses the message that warns you when you import
 
 By default, when a module that you import exports cmdlets or functions that have unapproved verbs in their names, Windows PowerShell displays the following warning message:
 
-"WARNING: Some imported command names include unapproved verbs which might make them less discoverable. 
+"WARNING: Some imported command names include unapproved verbs which might make them less discoverable.
 Use the Verbose parameter for more detail or type Get-Verb to see the list of approved verbs."
 
 This message is only a warning.
@@ -596,7 +596,7 @@ Although the message is displayed to module users, the naming problem should be 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -611,7 +611,7 @@ Indicates that this cmdlet re-imports a module and its members, even if the modu
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -626,7 +626,7 @@ Specifies the fully qualified name of the module specification.
 ```yaml
 Type: ModuleSpecification[]
 Parameter Sets: FullyQualifiedName, FullyQualifiedNameAndPSSession
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -645,7 +645,7 @@ This parameter lets you select from among the exported functions.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -664,7 +664,7 @@ The *Global* parameter is equivalent to the *Scope* parameter with a value of Gl
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -707,7 +707,7 @@ You can also pipe module objects to **Import-Module**.
 ```yaml
 Type: PSModuleInfo[]
 Parameter Sets: ModuleInfo
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -732,7 +732,7 @@ If the module contains other files, they are not imported, and you might be miss
 ```yaml
 Type: String[]
 Parameter Sets: Name, PSSession, CimSession
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -781,7 +781,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: PSSession
 Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -797,7 +797,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -821,7 +821,7 @@ The value of this parameter takes precedence over the **DefaultCommandPrefix** p
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -847,7 +847,7 @@ This is because Windows PowerShell module version numbers in future releases of 
 ```yaml
 Type: Version
 Parameter Sets: Name, PSSession, CimSession
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -871,7 +871,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Local, Global
 
 Required: False
@@ -892,7 +892,7 @@ This parameter lets you select from among the exported variables.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -961,4 +961,3 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 [Get-Verb](Functions/Get-Verb.md)
 
 [about_Modules](About/about_Modules.md)
-

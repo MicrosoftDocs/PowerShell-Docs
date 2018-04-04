@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -98,7 +98,7 @@ Specifies the name or names of the Windows PowerShell providers about which this
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -123,4 +123,3 @@ This cmdlet returns objects that represent the Windows PowerShell providers in t
 ## NOTES
 
 ## RELATED LINKS
-

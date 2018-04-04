@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -87,7 +87,7 @@ WARNING: Some important logging information
 PS C:\Users\demo>
 PS C:\Users\demo> ## All output includes useful properties that you would expect
 PS C:\Users\demo> ## of a generic event stream
-PS C:\Users\demo> $ivOutput.Process 
+PS C:\Users\demo> $ivOutput.Process
 MessageData     : System.Diagnostics.Process (powershell)
 Source          : c:\temp\OutputGusher.ps1
 TimeGenerated   : 2/9/2015 5:08:52 PM
@@ -100,7 +100,7 @@ ManagedThreadId : 8
 
 PS C:\Users\demo> ## And of course, this works from hosting applications.
 PS C:\Users\demo> $ps = [PowerShell]::Create()
-PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke() 
+PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke()
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -119,4 +119,3 @@ ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
 ```
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -279,7 +279,7 @@ However, because only one transaction can be active at a time, you must complete
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -301,7 +301,7 @@ Valid values are:
 ```yaml
 Type: RollbackSeverity
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -383,4 +383,3 @@ This cmdlet does not generate any output.
 [Use-Transaction](Use-Transaction.md)
 
 [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
-

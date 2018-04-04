@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -225,7 +225,7 @@ By default, **Wait-Job** waits until all of the specified jobs are complete befo
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -248,7 +248,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: Hashtable
 Parameter Sets: FilterParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -259,12 +259,12 @@ Accept wildcard characters: False
 
 ### -Force
 Indicates that this cmdlet continues to wait for jobs in the Suspended or Disconnected state.
-By default, **Wait-Job** returns, or ends  the wait, when jobs are in one of the following states: 
+By default, **Wait-Job** returns, or ends  the wait, when jobs are in one of the following states:
 
-- Completed 
-- Failed 
-- Stopped 
-- Suspended 
+- Completed
+- Failed
+- Stopped
+- Suspended
 - Disconnected
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -272,7 +272,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -292,7 +292,7 @@ To find the ID of a job, type `Get-Job`.
 ```yaml
 Type: Int32[]
 Parameter Sets: SessionIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -311,7 +311,7 @@ To find the instance ID of a job, use **Get-Job**.
 ```yaml
 Type: Guid[]
 Parameter Sets: InstanceIdParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -329,7 +329,7 @@ By default, **Wait-Job** waits for all jobs created in the current session.
 ```yaml
 Type: Job[]
 Parameter Sets: JobParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -344,7 +344,7 @@ Specifies friendly names of jobs for which this cmdlet waits.
 ```yaml
 Type: String[]
 Parameter Sets: NameParameterSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -358,15 +358,15 @@ Specifies a job state.
 This cmdlet waits only for jobs in the specified state.
 The acceptable values for this parameter are:
 
-- NotStarted 
-- Running 
-- Completed 
-- Failed 
-- Stopped 
-- Blocked 
-- Suspended 
-- Disconnected 
-- Suspending 
+- NotStarted
+- Running
+- Completed
+- Failed
+- Stopped
+- Blocked
+- Suspended
+- Disconnected
+- Suspending
 - Stopping
 
 For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
@@ -374,7 +374,7 @@ For more information about job states, see [JobState Enumeration](https://msdn.m
 ```yaml
 Type: JobState
 Parameter Sets: StateParameterSet
-Aliases: 
+Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
 
 Required: True
@@ -386,7 +386,7 @@ Accept wildcard characters: False
 
 ### -Timeout
 Specifies the maximum wait time for each background job, in seconds.
-The default value, -1, indicates that the cmdlet waits until the job finishes. 
+The default value, -1, indicates that the cmdlet waits until the job finishes.
 The timing starts when you submit the **Wait-Job** command, not the **Start-Job** command.
 
 If this time is exceeded, the wait ends and the command prompt returns, even if the job is still running.
@@ -419,12 +419,12 @@ This cmdlet returns job objects that represent the completed jobs.
 If the wait ends because the value of the *Timeout* parameter is exceeded, **Wait-Job** does not return any objects.
 
 ## NOTES
-* By default, **Wait-Job** returns, or ends the wait, when jobs are in one of the following states: 
+* By default, **Wait-Job** returns, or ends the wait, when jobs are in one of the following states:
 
-- Completed 
-- Failed 
-- Stopped 
-- Suspended 
+- Completed
+- Failed
+- Stopped
+- Suspended
 - Disconnected To direct **Wait-Job** to continue to wait for Suspended and Disconnected jobs, use the *Force* parameter.
 
 ## RELATED LINKS
@@ -452,4 +452,3 @@ If the wait ends because the value of the *Timeout* parameter is exceeded, **Wai
 [about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [about_Remote_Variables](About/about_Remote_Variables.md)
-

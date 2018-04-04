@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -7,13 +7,13 @@ contributor:  vaibch
 title:  Network Switch Manager cmdlets failure
 ---
 
-The Network Switch Manager cmdlets can be used to manage network switches over WSMAN. 
-A few cmdlets of this module are capable of accepting values from pipelines. 
+The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.
+A few cmdlets of this module are capable of accepting values from pipelines.
 In WMF 5.1 Preview, the cmdlets that can accept value from pipeline fail to execute when the values are not passed through pipelines.
 
 If "InputObject" parameter is not used, the cmdlet should continue to execute without failures.
 
-Here is the list of affected cmdlets i.e. these cmdlets can accept value for "InputObject" parameter from pipeline. 
+Here is the list of affected cmdlets i.e. these cmdlets can accept value for "InputObject" parameter from pipeline.
 If this value is not passed from pipeline the execution of cmdlet will fail.
 
 - Disable-NetworkSwitchEthernetPort
@@ -81,4 +81,3 @@ $properties = @{Caption = "New Caption"}
 $vlan = Get-CimInstance -ClassName CIM_NetworkVlan -Namespace root/interop -CimSession $cimSession | Select-Object -First 1
 $vlan | Set-NetworkSwitchVlanProperty -Property $properties -CimSession $cimSession
 ```
-

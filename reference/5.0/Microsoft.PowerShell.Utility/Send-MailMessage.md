@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -80,7 +80,7 @@ Enter names (optional) and the email address, such as Name \<someone@example.com
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -95,7 +95,7 @@ Specifies the body of the email message.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -126,7 +126,7 @@ Enter names (optional) and the email address, such as Name \<someone@example.com
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -145,7 +145,7 @@ Or, enter a **PSCredential** object, such as one from the Get-Credential cmdlet.
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -222,7 +222,7 @@ This parameter is required.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -239,7 +239,7 @@ This parameter is available in Windows PowerShell 3.0 and newer releases.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -261,7 +261,7 @@ Normal is the default.
 ```yaml
 Type: MailPriority
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Normal, Low, High
 
 Required: False
@@ -313,7 +313,7 @@ This parameter is required.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -329,7 +329,7 @@ By default, SSL is not used.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -354,4 +354,3 @@ This cmdlet does not generate any output.
 ## NOTES
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -18,7 +18,7 @@ The following shows some use cases of the new capabilities:
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
 cd C:\Temp
-New-Item -ItemType SymbolicLink -Name MySymLinkFile.txt -Target $pshome\profile.ps1 
+New-Item -ItemType SymbolicLink -Name MySymLinkFile.txt -Target $pshome\profile.ps1
 
 # Target is an alias to the Value parameter
 # All 3 commands below are equivalent to above
@@ -33,7 +33,7 @@ New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\p
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
 # ItemType is the same for files and directories - autodetect based on specified target
 cd C:\Temp
-New-Item -ItemType SymbolicLink -Name MySymLinkDir -Target $pshome 
+New-Item -ItemType SymbolicLink -Name MySymLinkDir -Target $pshome
 
 # Target is an alias to the Value parameter
 # Similar to above, any combination of Path and Name also works
@@ -120,4 +120,3 @@ Remove-Item C:\Temp\MySymLinkDir
 # Removes the files in the target directory and MySymLinkDir
 Remove-Item C:\Temp\MySymLinkDir -Force
 ```
-

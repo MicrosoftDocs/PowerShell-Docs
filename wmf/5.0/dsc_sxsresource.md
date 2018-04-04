@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  JKeithB
 ms.topic:  reference
 keywords:  wmf,powershell,setup
@@ -16,4 +16,3 @@ For more information, see [Using resources with multiple versions](https://msdn.
 In this release, the following are known issues of side-by-side installation:
 
 -   Using two different versions of the DSC resource within the same configuration is not supported.
-

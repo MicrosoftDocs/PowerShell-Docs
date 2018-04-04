@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -21,7 +21,7 @@ Search will do its best effort to find relevant documents containing all 3 keywo
     "azure sql" deployment
 
 Entering a phrase between quotation marks ("") change the search to look for the particular phrase instead of separate keywords.
-Matching documents should usually contain the exact phrase "azure sql", including variations on capitalization e.g. 
+Matching documents should usually contain the exact phrase "azure sql", including variations on capitalization e.g.
 "Azure SQL", and also usually contain the word 'deployment'.
 
 ## Filtering on fields
@@ -46,7 +46,7 @@ is another way to find items with "AzureRM.Profile" in their ID field.
 The 'Id' filter is a substring match, so if you search for the following:
 
     Id:"azure"
-    
+
 You'll get results like 'AzureRM.Profile' and 'Azure.Storage'.
 
 You can also search for multiple keywords in a single field. Or mix and match fields.
@@ -68,7 +68,7 @@ To search all items with the specified function.
     Functions:"Update-AzureRM"
 
 To search all items with the specified cmdlet.
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 To search all items with the specified DSC Resource name.
@@ -85,8 +85,7 @@ To search all items with the specified PowerShellVersion
 Finally, if you use a field we don't support, such as 'commands', we'll just ignore it and search all the fields. So the following query
 
     commands:blobs storage
-    
+
 Is interpreted exactly the same as this query:
 
     blobs storage
-

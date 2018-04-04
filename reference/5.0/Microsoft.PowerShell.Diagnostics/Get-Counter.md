@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -161,7 +161,7 @@ DefaultScale     : 0
 TimeBase         : 10000000
 ```
 
-This example shows the property values in the **PerformanceCounterSample** object that represents each data sample. 
+This example shows the property values in the **PerformanceCounterSample** object that represents each data sample.
 You can use the properties of the **CounterSamples** object to examine, select, sort, and group the data.
 
 ### Example 10: Get performance counter data as a background job
@@ -311,7 +311,7 @@ You can use the *SampleInterval* parameter to set the interval for continuous sa
 ```yaml
 Type: SwitchParameter
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -344,7 +344,7 @@ For a demonstration, see the examples.
 ```yaml
 Type: String[]
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -361,7 +361,7 @@ You can also pipe counter set names to this cmdlet.
 ```yaml
 Type: String[]
 Parameter Sets: ListSetSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -381,7 +381,7 @@ For more information, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_
 ```yaml
 Type: Int64
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -397,7 +397,7 @@ The minimum value and the default value are 1 second.
 ```yaml
 Type: Int32
 Parameter Sets: GetCounterSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -441,4 +441,3 @@ To set different values for different counters, enter separate **Get-Counter** c
 [Start-Job](../Microsoft.PowerShell.Core/Start-Job.md)
 
 [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md)
-

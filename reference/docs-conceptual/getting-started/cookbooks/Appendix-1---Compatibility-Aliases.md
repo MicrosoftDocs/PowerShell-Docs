@@ -1,11 +1,11 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Appendix 1 Compatibility Aliases
 ms.assetid:  96ad921e-1a57-463e-8e60-424faf8b6ef8
 ---
-
 # Appendix 1 - Compatibility Aliases
+
 Windows PowerShell has several transition aliases that allow UNIX and Cmd users to use familiar command names in Windows PowerShell. The most common aliases are shown in the table below, along with the Windows PowerShell command behind the alias and the standard Windows PowerShell alias if one exists.
 
 You can find the Windows PowerShell command that any alias points to from within Windows PowerShell by using the Get-Alias cmdlet. For example, type **get-alias cls**.
@@ -29,4 +29,3 @@ Alias           cls                             Clear-Host
 |**md**|**mkdir**|**New-Item**|**ni**|
 |**pushd**|**pushd**|**Push-Location**|**pushd**|
 |**popd**|**popd**|**Pop-Location**|**popd**|
-

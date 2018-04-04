@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -113,15 +113,15 @@ The output shows that it displays the correct user message in the UI language se
 ### Example 5: Replace default text strings in a script
 ```
 PS C:\> # In TestScript.ps1
-$UserMessages = DATA 
+$UserMessages = DATA
 
 {    ConvertFrom-StringData @'
 
     # English strings
 
-        Msg1 = "Enter a name." 
-        Msg2 = "Enter your employee ID." 
-        Msg3 = "Enter your building number." 
+        Msg1 = "Enter a name."
+        Msg2 = "Enter your employee ID."
+        Msg3 = "Enter your building number."
 '@ }
 Import-LocalizedData -BindingVariable "UserMessages"
 $UserMessages.Msg1...
@@ -150,7 +150,7 @@ Import-LocalizedData -BindingVariable "Day"
 Import-LocalizedData -BindingVariable "Day" -ErrorAction:SilentlyContinue
 
 PS C:\> .\Day1.ps1
-Import-LocalizedData : Cannot find PowerShell data file 'Day1.psd1' in directory 'C:\ps-test\fr-BE\' or any parent culture directories. 
+Import-LocalizedData : Cannot find PowerShell data file 'Day1.psd1' in directory 'C:\ps-test\fr-BE\' or any parent culture directories.
 At C:\ps-test\Day1.ps1:17 char:21+ Import-LocalizedData <<<<  Day
 Today is Tuesday PS C:\> .\Day2.ps1
 Today is Tuesday
@@ -178,7 +178,7 @@ The default is the directory where the script is located.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -227,7 +227,7 @@ For example, if the *FileName* is omitted and the script name is FindFiles.ps1, 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -245,7 +245,7 @@ For more information, see about_Script_Internationalization.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -268,7 +268,7 @@ If it cannot find the subdirectory or .psd1 file, the command fails and the data
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -320,4 +320,3 @@ Then, when you display a message from the hash table in the variable, the locali
 [Write-Host](Write-Host.md)
 
 [Import-PowerShellDataFile](Import-powershelldatafile.md)
-

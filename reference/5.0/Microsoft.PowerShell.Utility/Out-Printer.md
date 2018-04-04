@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -65,7 +65,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -130,4 +130,3 @@ If you pipe the output of **Out-Printer** to Get-Member, **Get-Member** reports 
 [Out-Null](../Microsoft.PowerShell.Core/Out-Null.md)
 
 [Out-String](Out-String.md)
-

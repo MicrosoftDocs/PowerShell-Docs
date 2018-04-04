@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -141,7 +141,7 @@ Valid values are:
 ```yaml
 Type: ExecutionPolicy
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -157,7 +157,7 @@ By default, **Set-ExecutionPolicy** displays a warning whenever you change the e
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,7 +184,7 @@ You cannot change the execution policy of the process by editing the variable.
 ```yaml
 Type: ExecutionPolicyScope
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -252,4 +252,3 @@ You cannot use **Set-ExecutionPolicy** to override a Group Policy, even if the u
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -157,4 +157,3 @@ You can pipe type names to **Get-TypeData**.
 [Remove-TypeData](Remove-TypeData.md)
 
 [Update-TypeData](Update-TypeData.md)
-

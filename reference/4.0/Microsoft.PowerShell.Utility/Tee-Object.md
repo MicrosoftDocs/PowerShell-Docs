@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -93,7 +93,7 @@ This parameter is introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: File
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -109,7 +109,7 @@ Wildcard characters are permitted, but must resolve to a single file.
 ```yaml
 Type: String
 Parameter Sets: File
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -129,7 +129,7 @@ Because InputObject cannot return individual properties from an array or collect
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -145,7 +145,7 @@ Enter a variable name without the preceding dollar sign ($).
 ```yaml
 Type: String
 Parameter Sets: Variable
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -195,4 +195,3 @@ Tee-Object returns the object that it redirects.
 [Select-Object](Select-Object.md)
 
 [about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
-

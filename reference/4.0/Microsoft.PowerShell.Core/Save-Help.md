@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -166,7 +166,7 @@ By providing explicit credentials, you can run the command on a remote computer 
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -183,7 +183,7 @@ Do not specify a file name or file name extension.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -204,7 +204,7 @@ To save help for a module in multiple UI cultures without the **Force** paramete
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -276,7 +276,7 @@ If you use the **UICulture** parameter, **Save-Help** looks for help only for th
 ```yaml
 Type: CultureInfo[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -294,7 +294,7 @@ This parameter is effective only when the web download uses NTLM, negotiate, or 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -339,4 +339,3 @@ You can pipe a module object from the Get-Module cmdlet to the **Module** parame
 [Get-UICulture](../Microsoft.PowerShell.Utility/Get-UICulture.md)
 
 [Update-Help](Update-Help.md)
-

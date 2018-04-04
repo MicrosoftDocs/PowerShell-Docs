@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -192,7 +192,7 @@ Specifies a script block that runs before this cmdlet processes any input object
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ScriptBlockSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -222,7 +222,7 @@ Specifies a script block that runs after this cmdlet processes all input objects
 ```yaml
 Type: ScriptBlock
 Parameter Sets: ScriptBlockSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -243,7 +243,7 @@ Because *InputObject* cannot return individual properties from an array or colle
 ```yaml
 Type: PSObject
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -263,7 +263,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: PropertyAndMethodSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -279,7 +279,7 @@ Enter a script block that describes the operation.
 ```yaml
 Type: ScriptBlock[]
 Parameter Sets: ScriptBlockSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -296,7 +296,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: ScriptBlock[]
 Parameter Sets: ScriptBlockSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -352,4 +352,3 @@ This cmdlet returns objects that are determined by the input.
 [Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
 [Set-ItemProperty](../Microsoft.PowerShell.Management/Set-ItemProperty.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -126,7 +126,7 @@ Using this parameter results in better client side schema validations.
 ```yaml
 Type: CimClass
 Parameter Sets: CimClassSessionSet, CimClassComputerSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -143,7 +143,7 @@ For more information, see about_CimSessions.
 ```yaml
 Type: CimSession[]
 Parameter Sets: ClassNameSessionSet, ResourceUriSessionSet, CimClassSessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -153,13 +153,13 @@ Accept wildcard characters: False
 ```
 
 ### -ClassName
-Specifies the name of the CIM class of which the operation creates an instance. 
+Specifies the name of the CIM class of which the operation creates an instance.
 NOTE: You can use tab completion to browse the list of classes, because wps_2 gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
 Type: String
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -213,7 +213,7 @@ CimSession and ComputerName cannot be used when Key is specified.
 ```yaml
 Type: String[]
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriSessionSet, ResourceUriComputerSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -225,13 +225,13 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace of the class for the new instance.
 
-The default namespace is root/cimv2. 
+The default namespace is root/cimv2.
 NOTE: You can use tab completion to browse the list of namespaces, because wps_2 gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
 Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriSessionSet, ResourceUriComputerSet
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -282,13 +282,13 @@ Specifies the resource uniform resource identifier (URI) of the resource class o
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
-For example: 
+For example:
 
 http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
 http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
 
 
-                        
+
 By default, if you do not specify this parameter, the DMTF standard resource URI http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/ is used and the class name is appended to it.
 
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying the ComputerName parameter, which creates a CIM session using WSMan.
@@ -299,7 +299,7 @@ If both the ResourceUri parameter and the Filter parameter are specified, the Fi
 ```yaml
 Type: Uri
 Parameter Sets: ResourceUriSessionSet, ResourceUriComputerSet
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -359,4 +359,3 @@ This cmdlet returns an object that contains the CIM instance information.
 [Remove-CimInstance](remove-ciminstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)
-

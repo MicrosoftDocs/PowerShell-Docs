@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -85,7 +85,7 @@ By default, **Get-ScheduledJob** gets all scheduled jobs on the computer.
 ```yaml
 Type: Int32[]
 Parameter Sets: DefinitionId
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -103,7 +103,7 @@ By default, **Get-ScheduledJob** gets all scheduled jobs on the computer.
 ```yaml
 Type: String[]
 Parameter Sets: DefinitionName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -164,4 +164,3 @@ You cannot pipe input to **Get-ScheduledJob**.
 [Set-ScheduledJobOption](Set-ScheduledJobOption.md)
 
 [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
-

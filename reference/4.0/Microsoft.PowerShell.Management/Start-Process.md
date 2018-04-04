@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -30,7 +30,7 @@ Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-WorkingDirecto
 ```
 
 ## DESCRIPTION
-Starts one or more processes on the local computer. 
+Starts one or more processes on the local computer.
 To specify the program that runs in the process, enter an executable file or script file, or a file that can be opened by using a program on the computer.
 If you specify a non-executable file, Start-Process starts the program that is associated with the file, much like the Invoke-Item cmdlet.
 
@@ -221,7 +221,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -288,7 +288,7 @@ By default, the started process runs with the environment variables specified fo
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Default
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -317,7 +317,7 @@ For details, see the examples.
 ```yaml
 Type: String
 Parameter Sets: UseShellExecute
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -333,7 +333,7 @@ This parameter suppresses the command prompt or retains the window until the pro
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -352,7 +352,7 @@ You cannot use the **WindowStyle** and **NoNewWindow** parameters in the same co
 ```yaml
 Type: ProcessWindowStyle
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -362,13 +362,13 @@ Accept wildcard characters: False
 ```
 
 ### -WorkingDirectory
-Specifies the location of the executable file or document that runs in the process. 
+Specifies the location of the executable file or document that runs in the process.
 The default is the folder for the new process.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -405,4 +405,3 @@ Otherwise, this cmdlet does not return any output.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-

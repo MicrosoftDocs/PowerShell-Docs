@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-04
+ms.date:  12/04/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell
@@ -37,7 +37,7 @@ before logged events can appear in the event log.  For PowerShell, this is
 accomplished by running the `RegisterManifest.ps1` from an elevated
 PowerShell prompt.
 
-The script is located in the the $PSHOME directory and should be run from 
+The script is located in the the $PSHOME directory and should be run from
 that location.
 
 ### Unregistering the PowerShell event provider on Windows
@@ -59,7 +59,7 @@ syslog contents may be used.
 The format of the log entries uses the following template:
 
 ```
-TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID) 
+TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID)
   [EVENTID:TASK.OPCODE.LEVEL] MESSAGE
 ```
 
@@ -129,7 +129,7 @@ Console application.
 * Peform the operations
 * Optionally save the search for future use.
 
-To filter on a specific process instance of PowerShell in the Console, the 
+To filter on a specific process instance of PowerShell in the Console, the
 variable $pid contains the process id.
 * Enter the pid (Process Id) in the Search field.
 * Change search filter PID
@@ -137,7 +137,7 @@ variable $pid contains the process id.
 
 ### Viewing PowerShell log output from a command-line
 
-The `log` command can be used to view PowerShell log entries from the 
+The `log` command can be used to view PowerShell log entries from the
 command-line.
 
 ```
@@ -146,27 +146,27 @@ sudo log stream --predicate 'process == "pwsh"' --info
 
 ## Configuring Logging on non-Windows systems
 
-On Windows, logging is configured by creating ETW trace listeners or by using 
-the Event Viewer to enable Analytic logging. On Linux and MacOS, logging is 
-configured using the file `powershell.config.json`. The rest of this section 
+On Windows, logging is configured by creating ETW trace listeners or by using
+the Event Viewer to enable Analytic logging. On Linux and MacOS, logging is
+configured using the file `powershell.config.json`. The rest of this section
 will discuss configuring PowerShell logging on non-Windows system.
 
-By default, PowerShell enables informational logging to the operational 
-channel. What this means is any log output produced by PowerShell that is 
-marked as operational and has a log (trace) level greater then informational 
-will be logged.  Occasionally, diagnoses may require additional log output, 
+By default, PowerShell enables informational logging to the operational
+channel. What this means is any log output produced by PowerShell that is
+marked as operational and has a log (trace) level greater then informational
+will be logged.  Occasionally, diagnoses may require additional log output,
 such as verbose log output or enabling analytic log output.
 
-The file `powershell.config.json` is a JSON formatted file residing in the 
-PowerShell $PSHOME directory. Each installation of PowerShell uses it's own 
-copy of this file. For normal operation, this file is left unchanged but it 
-can be useful for diagnosis or for distinguishing between multiple PowerShell 
-versions on the same system or even multiple copies of the same version 
+The file `powershell.config.json` is a JSON formatted file residing in the
+PowerShell $PSHOME directory. Each installation of PowerShell uses it's own
+copy of this file. For normal operation, this file is left unchanged but it
+can be useful for diagnosis or for distinguishing between multiple PowerShell
+versions on the same system or even multiple copies of the same version
 (See LogIdentity in the table below).
 
 The properties for configuring PowerShell logging are listed in the following
 table.
-Values marked with an asterick, such as `Operational*`, indicate the default 
+Values marked with an asterick, such as `Operational*`, indicate the default
 value when no value is provided in the file.
 
 |Property   |Values        |Description                                  |

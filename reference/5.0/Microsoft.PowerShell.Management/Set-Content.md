@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-11-09
+ms.date:  11/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -421,4 +421,3 @@ For more information, see about_Providers.
 [Get-Content](Get-Content.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

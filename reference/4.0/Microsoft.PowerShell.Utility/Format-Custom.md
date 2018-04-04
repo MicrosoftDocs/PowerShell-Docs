@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -99,7 +99,7 @@ Valid values are:
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: CoreOnly, EnumOnly, Both
 
 Required: False
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -View
-Specifies the name of an alternate format or "view." 
+Specifies the name of an alternate format or "view."
 If you omit this parameter, `Format-Custom` uses a default custom view.
 You cannot use the Property and View parameters in the same command.
 
@@ -275,4 +275,3 @@ Before using `Format-Custom` to group the objects, use `Sort-Object` to sort the
 [Format-Wide](Format-Wide.md)
 
 [Get-Process](../Microsoft.PowerShell.Management/Get-Process.md)
-

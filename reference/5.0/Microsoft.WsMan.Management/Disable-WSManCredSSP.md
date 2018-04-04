@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -72,7 +72,7 @@ If you specify Server, this cmdlet performs the following action:
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Client, Server
 
 Required: True
@@ -125,4 +125,3 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

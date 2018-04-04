@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -73,7 +73,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -95,7 +95,7 @@ NOTE: Pop-Location cannot pop a location from the unnamed default stack unless i
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -179,5 +179,3 @@ For more information, see about_Providers.
 [Set-Location](Set-Location.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
-

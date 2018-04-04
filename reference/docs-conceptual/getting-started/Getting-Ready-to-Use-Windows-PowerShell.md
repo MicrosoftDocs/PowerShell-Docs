@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Getting Ready to Use Windows PowerShell
 ms.assetid:  6dc7052d-cc5a-4220-950f-98f963a2b587
@@ -8,7 +8,7 @@ ms.assetid:  6dc7052d-cc5a-4220-950f-98f963a2b587
 # Getting Ready to Use Windows PowerShell
 When Windows PowerShell is installed and started, consider the following setup options. You can perform these tasks at any time.
 
-- **Install help files.** The cmdlets that are included in Windows PowerShell 3.0 do not come with help files. However, you can use the [Update-Help](/powershell/module/microsoft.powershell.core/update-help) cmdlet to download and install the newest help files on your computer. When the files are installed, you can use the [Get-Help](/powershell/module/microsoft.powershell.core/get-help) cmdlet to display them right at the command line. For more information, see [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+- **Install help files.** The cmdlets that are included in Windows PowerShell 3.0 do not come with help files. However, you can use the [Update-Help](/powershell/module/microsoft.powershell.core/update-help) cmdlet to download and install the newest help files on your computer. When the files are installed, you can use the [Get-Help](/powershell/module/microsoft.powershell.core/get-help) cmdlet to display them right at the command line. For more information, see [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_updatable_help).
 
     If you decide not to install the help files, you can still read the help topics online. To find the online version of any cmdlet help topic, type: `Get-Help <CmdletName> -Online`. To browse the Windows PowerShell help topics see the [PowerShell documentation](/powershell/scripting).
 
@@ -21,4 +21,3 @@ When Windows PowerShell is installed and started, consider the following setup o
 ## See Also
 - [Installing Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 - [Starting Windows PowerShell](/powershell/scripting/setup/starting-windows-powershell)
-

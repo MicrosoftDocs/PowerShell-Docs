@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-12-06
+ms.date:  12/06/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -195,9 +195,9 @@ For the word "fourteen" to match a case you must use the **-Wildcard** or
            "fo*" {"That's too many."}
        }
  ```
- 
+
  Result:
- 
+
  ```Output
 That's too many.
 ```

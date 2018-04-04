@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -305,7 +305,7 @@ However, because only one transaction can be active at a time, you must complete
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -319,18 +319,18 @@ Specifies the conditions under which a transaction is automatically rolled back.
 The acceptable values for this parameter are:
 
 - Error.
-The transaction is rolled back automatically if a terminating or non-terminating error occurs. 
+The transaction is rolled back automatically if a terminating or non-terminating error occurs.
 - TerminatingError.
-The transaction is rolled back automatically if a terminating error occurs. 
+The transaction is rolled back automatically if a terminating error occurs.
 - Never.
-The transaction is never rolled back automatically. 
+The transaction is never rolled back automatically.
 
 The default value is Error.
 
 ```yaml
 Type: RollbackSeverity
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Error, TerminatingError, Never
 
 Required: False
@@ -399,4 +399,3 @@ This cmdlet does not generate any output.
 [Undo-Transaction](Undo-Transaction.md)
 
 [Use-Transaction](Use-Transaction.md)
-

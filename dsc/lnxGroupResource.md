@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC for Linux nxGroup Resource
@@ -26,22 +26,22 @@ nxGroup <string> #ResourceName
 
 ## Properties
 
-|  Property |  Description | 
+|  Property |  Description |
 |---|---|
-| GroupName| Specifies the name of the group for which you want to ensure a specific state.| 
-| Ensure| Determines whether to check if the group exists. Set this property to "Present" to ensure the group exists. Set it to "Absent" to ensure the group does not exist. The default value is "Present".| 
-| Members| Specifies the members that form the group.| 
-| MembersToInclude| Specifies the users who you want to ensure are members of the group.| 
-| MembersToExclude| Specifies the users who you want to ensure are not members of the group.| 
-| PreferredGroupID| Sets the group id to the provided value if possible. If the group id is currently in use, the next available group id is used.| 
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
+| GroupName| Specifies the name of the group for which you want to ensure a specific state.|
+| Ensure| Determines whether to check if the group exists. Set this property to "Present" to ensure the group exists. Set it to "Absent" to ensure the group does not exist. The default value is "Present".|
+| Members| Specifies the members that form the group.|
+| MembersToInclude| Specifies the users who you want to ensure are members of the group.|
+| MembersToExclude| Specifies the users who you want to ensure are not members of the group.|
+| PreferredGroupID| Sets the group id to the provided value if possible. If the group id is currently in use, the next available group id is used.|
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## Example
 
 The following example ensures that the user “monuser” exists and is a member of the group "DBusers".
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 
@@ -52,13 +52,12 @@ nxUser UserExample{
    Ensure = "Present"
    HomeDirectory = "/home/monuser"
 }
- 
+
 nxGroup GroupExample{
    GroupName = "DBusers"
    Ensure = "Present"
    MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"            
+   DependsOn = "[nxUser]UserExample"
 }
 }
 ```
-

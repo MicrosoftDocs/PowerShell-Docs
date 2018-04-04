@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -82,4 +82,3 @@ In Windows PowerShell 2.0, it returns a **VistaCultureInfo** object.
 *
 
 ## RELATED LINKS
-

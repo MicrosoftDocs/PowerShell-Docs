@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -292,4 +292,3 @@ If the alternate view is neither a list nor a table, use Format-Custom.
 [Format-List](Format-List.md)
 
 [Format-Table](Format-Table.md)
-

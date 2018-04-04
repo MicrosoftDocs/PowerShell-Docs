@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -142,7 +142,7 @@ Instead, it returns the strings.
 ```yaml
 Type: Char
 Parameter Sets: Delimiter
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -167,7 +167,7 @@ Otherwise, ConvertFrom-CSV creates an extra object from the items in the header 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -184,7 +184,7 @@ You can also pipe the CSV strings to ConvertFrom-CSV.
 ```yaml
 Type: PSObject[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -204,7 +204,7 @@ Instead, it returns the strings.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: UseCulture
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -242,4 +242,3 @@ ConvertTo-Csv does not export the methods of the object.
 [Export-Csv](Export-Csv.md)
 
 [Import-Csv](Import-Csv.md)
-

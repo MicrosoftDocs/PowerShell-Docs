@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -63,7 +63,7 @@ In this case, IIS hosts Web Services for Management (WS-Management) for efficien
 ```yaml
 Type: String
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
-Certificates are used in client certificate-based authentication. 
+Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
 To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
@@ -111,7 +111,7 @@ To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in th
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -198,7 +198,7 @@ The file, Input.xml, contains the following content:
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -239,7 +239,7 @@ The SkipCNCheck parameter should be used only for trusted computers.
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -283,7 +283,7 @@ The following example shows how to enter a value for this parameter:
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -320,7 +320,7 @@ If SSL is not available on the port that is used for the connection and you spec
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -337,7 +337,7 @@ The value of the ValueSet parameter must be a hash table.
 ```yaml
 Type: Hashtable
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -385,4 +385,3 @@ This cmdlet does not generate any output.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

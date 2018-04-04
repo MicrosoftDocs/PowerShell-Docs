@@ -1,9 +1,9 @@
 ---
-description:  
+description:
 ms.topic:  article
 ms.prod:  powershell
 keywords:  powershell,cmdlet
-ms.date:  2016-12-12
+ms.date:  12/12/2016
 title:  install pswawebapplication
 ms.technology:  powershell
 ---
@@ -41,7 +41,7 @@ HTTPS requests. If this parameter is set to false, then no certificate
 or binding is created. Set this value to false if another certificate is
 used for Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -55,7 +55,7 @@ used for Windows PowerShell Web Access.
 Specifies the name for your web application. This is displayed as the
 last part of the Windows PowerShell Web Access URL.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -69,7 +69,7 @@ last part of the Windows PowerShell Web Access URL.
 Specifies the name of the Web Server (IIS) website on which to install
 this Windows PowerShell Web Access web application.
 
-|||  
+|||
 |-|-|
 | Aliases                              | none                                 |
 | Required?                            | false                                |
@@ -82,7 +82,7 @@ this Windows PowerShell Web Access web application.
 
 Prompts you for confirmation before running the cmdlet.
 
-|||  
+|||
 |-|-|
 | Required?                            | false                                |
 | Position?                            | named                                |
@@ -95,7 +95,7 @@ Prompts you for confirmation before running the cmdlet.
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
-|||  
+|||
 |-|-|
 | Required?                            | false                                |
 | Position?                            | named                                |

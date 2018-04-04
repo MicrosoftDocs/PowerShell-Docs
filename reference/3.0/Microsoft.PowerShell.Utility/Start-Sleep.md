@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -49,7 +49,7 @@ The parameter can be abbreviated as **m**.
 ```yaml
 Type: Int32
 Parameter Sets: Milliseconds
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -65,7 +65,7 @@ You can omit the parameter name (**Seconds**), or you can abbreviate it as **s**
 ```yaml
 Type: Int32
 Parameter Sets: Seconds
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -91,4 +91,3 @@ This cmdlet does not return any output.
 * You can also refer to Start-Sleep by its built-in alias, `sleep`. For more information, see about_Aliases.
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Examples
@@ -11,4 +11,3 @@ This section contains DSC examples:
 
 - [Building a CI-CD pipeline with DSC, Pester, and Visual Studio Team Services](dscCiCd.md)
 - [Separating configuration and environment data](separatingEnvData.md)
-

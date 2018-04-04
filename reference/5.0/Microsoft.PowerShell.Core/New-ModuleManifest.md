@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -149,8 +149,8 @@ For information about the HelpInfo XML file, see "Supporting Updatable Help" in 
 ```
 PS C:\> Get-Module PSScheduledJob -List | Format-List -Property *
 
-LogPipelineExecutionDetails : 
-FalseName                        : 
+LogPipelineExecutionDetails :
+FalseName                        :
 PSScheduledJobPath                        : C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob\PSScheduledJob.psd1
 Definition                  :
 Description                 :
@@ -159,7 +159,7 @@ HelpInfoUri                 : http://go.microsoft.com/fwlink/?LinkID=223911
 ModuleBase                  : C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob
 PrivateData                 :
 Version                     : 1.0.0.0
-ModuleType                  : 
+ModuleType                  :
 BinaryAuthor                      : Microsoft Corporation
 AccessMode                  : ReadWrite
 ClrVersion                  : 4.0
@@ -236,7 +236,7 @@ If you omit this parameter, **New-ModuleManifest** creates an **AliasesToExport*
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -253,7 +253,7 @@ If you omit this parameter, **New-ModuleManifest** creates an **Author** key wit
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -268,7 +268,7 @@ Specifies the minimum version of the Common Language Runtime (CLR) of the Micros
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -289,7 +289,7 @@ If you omit this parameter, **New-ModuleManifest** creates a **CmdletsToExport**
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -306,7 +306,7 @@ If you omit this parameter, **New-ModuleManifest** creates a **CompanyName** key
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -339,7 +339,7 @@ All rights reserved." where \<year\> is the current year and \<username\> is the
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -359,7 +359,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -374,7 +374,7 @@ Describes the contents of the module.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -389,7 +389,7 @@ Specifies the minimum version of the Microsoft .NET Framework that the module re
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -399,13 +399,13 @@ Accept wildcard characters: False
 ```
 
 ### -DscResourcesToExport
-Specifies the DSC resources that the module exports. 
+Specifies the DSC resources that the module exports.
 Wildcards are permitted.
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -422,7 +422,7 @@ This key is designed to act as a module inventory. The files listed in the key a
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -440,7 +440,7 @@ Because formatting files are not scoped, they affect all session states in the s
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -461,7 +461,7 @@ If you omit this parameter, **New-ModuleManifest** creates an **FunctionsToExpor
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -481,7 +481,7 @@ To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid()".
 ```yaml
 Type: Guid
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -504,7 +504,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -519,7 +519,7 @@ Specifies the URL of an icon for the module. The specified icon is displayed on 
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -534,7 +534,7 @@ Specifies the URL of licensing terms for the module.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -557,7 +557,7 @@ The modules that are listed in the value of this key are not automatically proce
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -575,7 +575,7 @@ If you omit this parameter, **New-ModuleManifest** creates a **ModuleVersion** k
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -604,7 +604,7 @@ To run a script in the caller's session state, list the script file name in the 
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -620,7 +620,7 @@ By default, this cmdlet does not generate any output.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -644,7 +644,7 @@ To use a variable, include the **Path** parameter in the command.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -663,7 +663,7 @@ To find the name of a host program, in the program, type `$host.name`.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -679,7 +679,7 @@ Enter a version number, such as 1.1.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -695,7 +695,7 @@ For example, you can enter 3.0, 4.0, or 5.0 as the value of this parameter.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -710,7 +710,7 @@ Specifies data that is passed to the module when it is imported.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -727,7 +727,7 @@ None indicates unknown or unspecified.
 ```yaml
 Type: ProcessorArchitecture
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: None, MSIL, X86, IA64, Amd64, Arm
 
 Required: False
@@ -743,7 +743,7 @@ Specifies the URL of a web page about this project.
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -758,7 +758,7 @@ Specifies release notes.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -778,7 +778,7 @@ This includes assemblies that must be loaded to update any formatting or type fi
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -803,7 +803,7 @@ It just verifies that the required modules are in the global session state.
 ```yaml
 Type: Object[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -846,7 +846,7 @@ To specify scripts that run in the module's session state, use the **NestedModul
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -861,7 +861,7 @@ Specifies an array of tags.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -879,7 +879,7 @@ Because type files are not scoped, they affect all session states in the session
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -900,7 +900,7 @@ If you omit this parameter, **New-ModuleManifest** creates a **VariablesToExport
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -963,4 +963,3 @@ Typically, it refers to the global session state, but when a module imports nest
 [Test-ModuleManifest](Test-ModuleManifest.md)
 
 [about_Modules](About/about_Modules.md)
-

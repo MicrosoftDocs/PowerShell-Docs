@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class
@@ -21,7 +21,7 @@ uint32 PerformRequiredConfigurationChecks(
 Parameters
 ----------
 
-*Flags* \[in\]  
+*Flags* \[in\]
 A bitmask that specifies the type of consistency check to run. The following values are valid, and can be combined by using a bitwise **OR** operation:
 
 |Value |Description |
@@ -51,11 +51,3 @@ This is a static method.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -61,7 +61,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 PS C:\> Set-PSBreakpoint -Script "sample.ps1" -Line 5
 Column     : 0
 Line       : 5
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
@@ -78,7 +78,7 @@ When you set a new breakpoint by line number, the **Set-PSBreakpoint** cmdlet ge
 ```
 PS C:\> Set-PSBreakpoint -Command "Increment" -Script "sample.ps1"
 Command    : Increment
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 1
@@ -147,7 +147,7 @@ The debugger breaks when the function is called, not when it is declared.
 PS C:\> Set-PSBreakpoint -Script "sample.ps1" -Line 1, 14, 19 -Column 2 -Action {&(log.ps1)}
 Column     : 2
 Line       : 1
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 6
@@ -157,7 +157,7 @@ ScriptName : C:\ps-test\sample.ps1
 
 Column     : 2
 Line       : 14
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 7
@@ -167,7 +167,7 @@ ScriptName : C:\ps-test\sample.ps1
 
 Column     : 2
 Line       : 19
-Action     : 
+Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 8
@@ -197,7 +197,7 @@ For more information, see about_Script_Blocks, about_Break, and about_Continue.
 ```yaml
 Type: ScriptBlock
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -221,7 +221,7 @@ If you specify a column that does not exist in the script, an error is not decla
 ```yaml
 Type: Int32
 Parameter Sets: Line
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -262,7 +262,7 @@ If the line is out of range, the breakpoint is never hit.
 ```yaml
 Type: Int32[]
 Parameter Sets: Line
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -290,7 +290,7 @@ Stops execution when the variable is read or written.
 ```yaml
 Type: VariableAccessMode
 Parameter Sets: Variable
-Aliases: 
+Aliases:
 Accepted values: Read, Write, ReadWrite
 
 Required: False
@@ -312,7 +312,7 @@ This parameter is required only when setting a line breakpoint.
 ```yaml
 Type: String[]
 Parameter Sets: Line
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -324,7 +324,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String[]
 Parameter Sets: Variable, Command
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -383,4 +383,3 @@ You cannot pipe input to **Set-PSBreakpoint**.
 [Remove-PSBreakpoint](Remove-PSBreakpoint.md)
 
 [about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md)
-

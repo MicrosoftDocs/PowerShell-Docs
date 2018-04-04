@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 author:  rpsqrd
 ms.topic:  conceptual
 keywords:  jea,powershell,security
@@ -248,4 +248,3 @@ When you re-register the JEA session configuration, use an updated PowerShell se
 
 - [Register a JEA configuration](register-jea.md)
 - [Author JEA roles](role-capabilities.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -13,4 +13,3 @@ You can find the list of rules we are running on ScriptAnalyzer [GitHub page](ht
 If you have any concerns regarding the rules we are running, please contact PowerShell Gallery Administrators, or open an issue for ScriptAnalzyer.
 
 ScriptAnalyzer results will be displayed on each individual item page in Gallery in the coming release. We encourage item owners to check their items to make sure there are no severe errors in published items.
-

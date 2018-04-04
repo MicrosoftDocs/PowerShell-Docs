@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -243,7 +243,7 @@ Indicates that the UserName value of the **Process** object is returned with res
 ```yaml
 Type: SwitchParameter
 Parameter Sets: NameWithUserName, IdWithUserName, InputObjectWithUserName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -259,7 +259,7 @@ Enter a variable that contains the objects, or type a command or expression that
 ```yaml
 Type: Process[]
 Parameter Sets: InputObject, InputObjectWithUserName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -284,7 +284,7 @@ When you use both the *Module* and *FileVersionInfo* parameters in the same comm
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Name, Id, InputObject
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -364,4 +364,3 @@ Virtual memory includes storage in the paging files on disk.
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -51,7 +51,7 @@ type                    : p:Win32_Service_Type
 lang                    : en-US
 AcceptPause             : false
 AcceptStop              : true
-Caption                 : Windows Remote Management (WS-Management) 
+Caption                 : Windows Remote Management (WS-Management)
 CheckPoint              : 0
 CreationClassName       : Win32_Service
 Description             : Windows Remote Management (WinRM) service implements the WS-Management protocol for remote
@@ -64,9 +64,9 @@ collection and subscription to events require that the service is running. WinRM
 use HTTP and HTTPS as transports. The WinRM service does not depend on IIS but is
 preconfigured to share a port with IIS on the same computer.  The WinRM service reserves the
 /wsman URL prefix. To prevent conflicts with IIS, administrators should ensure that any
-websites hosted on IIS do not use the /wsman URL prefix. 
+websites hosted on IIS do not use the /wsman URL prefix.
 DesktopInteract         : false
-DisplayName             : Windows Remote Management (WS-Management) 
+DisplayName             : Windows Remote Management (WS-Management)
 ErrorControl            : Normal
 ExitCode                : 0
 InstallDate             : InstallDate
@@ -111,7 +111,7 @@ CheckPoint              : 0
 CreationClassName       : Win32_Service
 Description             : Allows members of the Administrators group to remotely debug server applications using Visual
 Studio 2008. Use the Visual Studio 2008 Remote Debugging Configuration Wizard to enable this
-service. 
+service.
 DesktopInteract         : false
 DisplayName             : Visual Studio 2008 Remote Debugger
 ErrorControl            : Ignore
@@ -150,7 +150,7 @@ Caption                 : Windows Media Center Service Launcher
 CheckPoint              : 0
 CreationClassName       : Win32_Service
 Description             : Starts Windows Media Center Scheduler and Windows Media Center Receiver services
-at startup if TV is enabled within Windows Media Center. 
+at startup if TV is enabled within Windows Media Center.
 DesktopInteract         : false
 DisplayName             : Windows Media Center Service Launcher
 ErrorControl            : Ignore
@@ -173,7 +173,7 @@ WaitHint                : 0
 ...
 ```
 
-This command lists all of the services that meet the following criteria on the remote Server01 computer: 
+This command lists all of the services that meet the following criteria on the remote Server01 computer:
 
 - The startup type of the service is Automatic.
 - The service is stopped.
@@ -187,10 +187,10 @@ lang                  : en-US
 Address               : *
 Transport             : HTTP
 Port                  : 80
-Hostname              : 
+Hostname              :
 Enabled               : true
 URLPrefix             : wsman
-CertificateThumbprint : 
+CertificateThumbprint :
 ListeningOn           : {100.0.0.1, 123.123.123.123, ::1, 2001:4898:0:fff:0:5efe:123.123.123.123...}
 ```
 
@@ -205,10 +205,10 @@ lang                  : en-US
 Address               : *
 Transport             : HTTP
 Port                  : 80
-Hostname              : 
+Hostname              :
 Enabled               : true
 URLPrefix             : wsman
-CertificateThumbprint : 
+CertificateThumbprint :
 ListeningOn           : {100.0.0.1, 123.123.123.124, ::1, 2001:4898:0:fff:0:5efe:123.123.123.124...}
 ```
 
@@ -245,7 +245,7 @@ InfraredSupported         : false
 InstallDate               : InstallDate
 KeyboardPasswordStatus    : 2
 LastLoadInfo              : LastLoadInfo
-Manufacturer              : Dell Inc. 
+Manufacturer              : Dell Inc.
 Model                     : OptiPlex 745
 Name                      : SERVER01
 NameFormat                : NameFormat
@@ -282,14 +282,14 @@ type                    : p:Win32_Service_Type
 lang                    : en-US
 AcceptPause             : false
 AcceptStop              : false
-Caption                 : Remote Procedure Call (RPC) 
+Caption                 : Remote Procedure Call (RPC)
 CheckPoint              : 0
 CreationClassName       : Win32_Service
 Description             : Serves as the endpoint mapper and COM Service Control Manager. If this service is stopped
 or disabled, programs using COM or Remote Procedure Call (RPC) services will not function
-properly. 
+properly.
 DesktopInteract         : false
-DisplayName             : Remote Procedure Call (RPC) 
+DisplayName             : Remote Procedure Call (RPC)
 ErrorControl            : Normal
 ExitCode                : 0
 InstallDate             : InstallDate
@@ -329,7 +329,7 @@ ServiceSpecificExitCode : 0
 ServiceType             : Kernel Driver
 Started                 : true
 StartMode               : Manual
-StartName               : 
+StartName               :
 State                   : Running
 Status                  : OK
 SystemCreationClassName : Win32_ComputerSystem
@@ -356,7 +356,7 @@ You must enclose the filter in quotation marks, as shown in the example.
 ### -ApplicationName
 Specifies the application name in the connection.
 The default value of the *ApplicationName* parameter is WSMAN.
-The complete identifier for the remote endpoint is in the following format: 
+The complete identifier for the remote endpoint is in the following format:
 
 \<transport\>://\<server\>:\<port\>/\<ApplicationName\>
 
@@ -370,7 +370,7 @@ In this case, IIS hosts WS-Management for efficiency.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -386,7 +386,7 @@ You can use this parameter only when the *Dialect* parameter has a value of Asso
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Enumerate
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -396,21 +396,21 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
-Specifies the authentication mechanism to be used at the server. 
+Specifies the authentication mechanism to be used at the server.
 The acceptable values for this parameter are:
 
 - Basic.
-Basic is a scheme in which the user name and password are sent in clear text to the server or proxy. 
+Basic is a scheme in which the user name and password are sent in clear text to the server or proxy.
 - Default.
 Use the authentication method implemented by the WS-Management protocol.
-This is the default. 
+This is the default.
 - Digest.
-Digest is a challenge-response scheme that uses a server-specified data string for the challenge. 
+Digest is a challenge-response scheme that uses a server-specified data string for the challenge.
 - Kerberos.
-The client computer and the server mutually authenticate by using Kerberos certificates. 
+The client computer and the server mutually authenticate by using Kerberos certificates.
 - Negotiate.
 Negotiate is a challenge-response scheme that negotiates with the server or proxy to determine the scheme to use for authentication.
-For example, this parameter value allows for negotiation to determine whether the Kerberos protocol or NTLM is used. 
+For example, this parameter value allows for negotiation to determine whether the Kerberos protocol or NTLM is used.
 - CredSSP.
 Use Credential Security Support Provider (CredSSP) authentication, which lets the user delegate credentials.
 This option is designed for commands that run on one remote computer but collect data from or run additional commands on other remote computers.
@@ -460,7 +460,7 @@ To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in th
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -491,11 +491,11 @@ Accept wildcard characters: False
 
 ### -ConnectionURI
 Specifies the connection endpoint.
-The format of this string is as follows: 
+The format of this string is as follows:
 
 \<Transport\>://\<Server\>:\<Port\>/\<ApplicationName\>
 
-The following string is a correctly formatted value for this parameter: 
+The following string is a correctly formatted value for this parameter:
 
 `http://Server01:8080/WSMAN`
 
@@ -535,19 +535,19 @@ Accept wildcard characters: False
 ### -Dialect
 Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
-The following aliases can be used for the dialect URI: 
+The following aliases can be used for the dialect URI:
 
 - WQL.
-http://schemas.microsoft.com/wbem/wsman/1/WQL 
+http://schemas.microsoft.com/wbem/wsman/1/WQL
 - Selector.
-http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter 
+http://schemas.microsoft.com/wbem/wsman/1/wsman/SelectorFilter
 - Association.
 http://schemas.dmtf.org/wbem/wsman/1/cimbinding/associationFilter
 
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -562,7 +562,7 @@ Indicates that this cmdlet returns all of the instances of a management resource
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Enumerate
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -587,7 +587,7 @@ If *Dialect* is Association, *Filter* must contain a string, and the string must
 ```yaml
 Type: String
 Parameter Sets: Enumerate
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -598,14 +598,14 @@ Accept wildcard characters: False
 
 ### -Fragment
 Specifies a section inside the instance that is to be updated or retrieved for the specified operation.
-For example, to get the status of a spooler service, specify the following: 
+For example, to get the status of a spooler service, specify the following:
 
 `-Fragment Status`
 
 ```yaml
 Type: String
 Parameter Sets: GetInstance
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -647,7 +647,7 @@ The *SkipCNCheck* parameter should be used only for trusted computers.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -683,7 +683,7 @@ Accept wildcard characters: False
 Specifies the type of data to be returned.
 The acceptable values for this parameter are:
 
-- Object 
+- Object
 - EPR
 - ObjectAndEPR
 
@@ -719,7 +719,7 @@ The following example shows how to enter a value for this parameter:
 ```yaml
 Type: Hashtable
 Parameter Sets: GetInstance
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -752,7 +752,7 @@ If you do not specify this parameter,, this cmdlet returns instances of the base
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Enumerate
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -821,4 +821,3 @@ This cmdlet generates an **XMLElement** object.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

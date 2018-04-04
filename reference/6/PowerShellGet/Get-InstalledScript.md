@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -40,7 +40,7 @@ This command gets all installed scripts.
 
 ### Example 2: Get installed scripts by name
 ```
-PS C:\> Get-InstalledScript -Name "Required-Scri*" 
+PS C:\> Get-InstalledScript -Name "Required-Scri*"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
 2.5        Required-Script1                    Script     local1               Description for the Required-Script1 script
@@ -59,7 +59,7 @@ The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; yo
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -75,7 +75,7 @@ The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; yo
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -91,7 +91,7 @@ Wildcards are accepted.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -106,7 +106,7 @@ Specifies the exact version of a script to get.
 ```yaml
 Type: Version
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -129,4 +129,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Install-Script](Install-Script.md)
 
 [Uninstall-Script](Uninstall-Script.md)
-

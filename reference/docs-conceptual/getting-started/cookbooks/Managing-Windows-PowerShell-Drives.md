@@ -1,11 +1,11 @@
 ---
-ms.date:  2017-06-05
+ms.date:  06/05/2017
 keywords:  powershell,cmdlet
 title:  Managing Windows PowerShell Drives
 ms.assetid:  bd809e38-8de9-437a-a250-f30a667d11b4
 ---
-
 # Managing Windows PowerShell Drives
+
 A *Windows PowerShell drive* is a data store location that you can access like a file system drive in Windows PowerShell. The Windows PowerShell providers create some drives for you, such as the file system drives (including C: and D:), the registry drives (HKCU: and HKLM:), and the certificate drive (Cert:), and you can create your own Windows PowerShell drives. These drives are very useful, but they are available only within Windows PowerShell. You cannot access them by using other Windows tools, such as File Explorer or Cmd.exe.
 
 Windows PowerShell uses the noun, **PSDrive**, for commands that work with Windows PowerShell drives. For a list of the Windows PowerShell drives in your Windows PowerShell session, use the **Get-PSDrive** cmdlet.
@@ -35,6 +35,7 @@ To see the syntax of the **Get-PSDrive** cmdlet, type a **Get-Command** command 
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
+
 Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>] [-V
 erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
@@ -54,26 +55,34 @@ D          FileSystem    D:\
 
 To view the Windows PowerShell drives that represent registry hives, use the **PSProvider** parameter to display only the Windows PowerShell drives that are supported by the Windows PowerShell Registry provider:
 
-<pre>PS> Get-PSDrive -PSProvider Registry
+```
+PS> Get-PSDrive -PSProvider Registry
+
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 HKCU       Registry      HKEY_CURRENT_USER
-HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
+HKLM       Registry      HKEY_LOCAL_MACHINE
+```
 
 You can also use the standard Location cmdlets with the Windows PowerShell drives:
 
-<pre>PS> Set-Location HKLM:\SOFTWARE
+```
+PS> Set-Location HKLM:\SOFTWARE
 PS> Push-Location .\Microsoft
 PS> Get-Location
+
 Path
 ----
-HKLM:\SOFTWARE\Microsoft</pre>
+HKLM:\SOFTWARE\Microsoft
+```
 
 ### Adding New Windows PowerShell Drives (New-PSDrive)
+
 You can add your own Windows PowerShell drives by using the **New-PSDrive** command. To get the syntax for the **New-PSDrive** command, enter the **Get-Command** command with the **Syntax** parameter:
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
+
 New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Descript
 ion <String>] [-Scope <String>] [-Credential <PSCredential>] [-Verbose] [-Debug
 ] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-OutVariable <St
@@ -106,11 +115,14 @@ You refer to the new Windows PowerShell drive as you do all Windows PowerShell d
 
 A Windows PowerShell drive can make many tasks much simpler. For example, some of the most important keys in the Windows registry have extremely long paths, making them cumbersome to access and difficult to remember. Critical configuration information resides under **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. To view and change items in the CurrentVersion registry key, you can create a Windows PowerShell drive that is rooted in that key by typing:
 
-<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
+```
+PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
 indows\CurrentVersion
+
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
-cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
+cvkey      Registry      HKLM\Software\Microsoft\Windows\...
+```
 
 You can then change location to the **cvkey:** drive as you would any other drive:``
 
@@ -118,26 +130,30 @@ You can then change location to the **cvkey:** drive as you would any other driv
 
 or:
 
-<pre>PS> Set-Location cvkey: -PassThru
+```
+PS> Set-Location cvkey: -PassThru
+
 Path
 ----
-cvkey:\</pre>
+cvkey:\
+```
 
 The New-PsDrive cmdlet adds the new drive only to the current Windows PowerShell session. If you close the Windows PowerShell window, the new drive is lost. To save a Windows PowerShell drive, use the Export-Console cmdlet to export the current Windows PowerShell session, and then use the PowerShell.exe **PSConsoleFile** parameter to import it. Or, add the new drive to your Windows PowerShell profile.
 
 ### Deleting Windows PowerShell Drives (Remove-PSDrive)
+
 You can delete drives from Windows PowerShell by using the **Remove-PSDrive** cmdlet. The **Remove-PSDrive** cmdlet is easy to use; to delete a specific Windows PowerShell drive, you just supply the Windows PowerShell drive name.
 
 For example, if you added the **Office:** Windows PowerShell drive, as shown in the **New-PSDrive** topic, you can delete it by typing:
 
-```
-PS> Remove-PSDrive -Name Office
+```powershell
+Remove-PSDrive -Name Office
 ```
 
 To delete the **cvkey:** Windows PowerShell drive, also shown in the **New-PSDrive** topic, use the following command:
 
-```
-PS> Remove-PSDrive -Name cvkey
+```powershell
+Remove-PSDrive -Name cvkey
 ```
 
 It's easy to delete a Windows PowerShell drive, but you can't delete it while you are in the drive. For example:
@@ -151,5 +167,5 @@ At line:1 char:15
 ```
 
 ### Adding and Removing Drives Outside Windows PowerShell
-Windows PowerShell detects file system drives that are added or removed in Windows, including network drives that are mapped, USB drives that are attached, and drives that are deleted by using either the **net use** command or the **WScript.NetworkMapNetworkDrive** and **RemoveNetworkDrive** methods from a Windows Script Host (WSH) script.
 
+Windows PowerShell detects file system drives that are added or removed in Windows, including network drives that are mapped, USB drives that are attached, and drives that are deleted by using either the **net use** command or the **WScript.NetworkMapNetworkDrive** and **RemoveNetworkDrive** methods from a Windows Script Host (WSH) script.

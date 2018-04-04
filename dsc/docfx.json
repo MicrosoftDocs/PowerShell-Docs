@@ -10,7 +10,7 @@
             }
         ],
         "globalMetadata": {
-            "breadcrumb_path":"bread/toc.json",
+            "breadcrumb_path":"~/bread/toc.yml",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "layout": "conceptual",
             "ROBOTS": "INDEX, FOLLOW",
@@ -19,8 +19,8 @@
             "manager": "carmonm",
             "ms.devlang": "powershell",
             "ms.tgt_pltfr": "windows",
-            "ms.author": "migreene",
-            "author": "mgreenegit"
+            "ms.author": "dacoulte",
+            "author": "dcthegeek"
         },
         "resource": [
             {

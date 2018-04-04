@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Using resources with multiple versions
@@ -43,7 +43,7 @@ PowerShell      xCluster                  xFailOverCluster               1.2.0.0
 
 ## Specifying a resource version in a configuration
 
-If you have multiple resources installed on a computer, you must specify the version of that resource when you use it in a configuration. You do this by specifying the **ModuleVersion** 
+If you have multiple resources installed on a computer, you must specify the version of that resource when you use it in a configuration. You do this by specifying the **ModuleVersion**
 parameter of the **Import-DscResource** keyword. If you fail to specify the version of a resource module of a resource of which you have more than one version installed, the configuration
 generates an error.
 
@@ -63,10 +63,10 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
->Note: The ModuleVersion parameter of Import-DscResource is not available in PowerShell 4.0. In PowerShell 4.0, you can specify a module version by passing a module specification 
+>Note: The ModuleVersion parameter of Import-DscResource is not available in PowerShell 4.0. In PowerShell 4.0, you can specify a module version by passing a module specification
 >object to the ModuleName parameter of Import-DscResource. A module specification object is a hash table that contains ModuleName and RequiredVersion  keys. For example:
 
 ```powershell
@@ -83,7 +83,7 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
 This will also work in PowerShell 5.0, but it is recommended that you use the **ModuleVersion** parameter.
@@ -91,4 +91,3 @@ This will also work in PowerShell 5.0, but it is recommended that you use the **
 ## See also
 * [DSC Configurations](configurations.md)
 * [DSC Resources](resources.md)
-

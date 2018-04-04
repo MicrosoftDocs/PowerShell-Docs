@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -137,4 +137,3 @@ It does not generate any other output.
 [Write-Progress](Write-Progress.md)
 
 [Write-Verbose](Write-Verbose.md)
-

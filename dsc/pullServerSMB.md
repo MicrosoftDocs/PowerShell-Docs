@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Setting up a DSC SMB pull server
@@ -36,19 +36,19 @@ Configuration SmbShare {
 
 Import-DscResource -ModuleName PSDesiredStateConfiguration
 Import-DscResource -ModuleName xSmbShare
- 
+
     Node localhost {
- 
+
         File CreateFolder {
- 
+
             DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
- 
+
         }
- 
+
         xSMBShare CreateShare {
- 
+
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
             FullAccess = 'admininstrator'
@@ -56,11 +56,11 @@ Import-DscResource -ModuleName xSmbShare
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
- 
+
         }
-        
+
     }
- 
+
 }
 ```
 
@@ -81,19 +81,19 @@ Configuration DSCSMB {
 Import-DscResource -ModuleName PSDesiredStateConfiguration
 Import-DscResource -ModuleName xSmbShare
 Import-DscResource -ModuleName cNtfsAccessControl
- 
+
     Node localhost {
- 
+
         File CreateFolder {
- 
+
             DestinationPath = 'DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
- 
+
         }
- 
+
         xSMBShare CreateShare {
- 
+
             Name = 'DscSmbShare'
             Path = 'DscSmbShare'
             FullAccess = 'administrator'
@@ -101,11 +101,11 @@ Import-DscResource -ModuleName cNtfsAccessControl
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
- 
+
         }
 
         cNtfsPermissionEntry PermissionSet1 {
-            
+
         Ensure = 'Present'
         Path = 'C:\DSCSMB'
         Principal = 'myDomain\Contoso-Server$'
@@ -119,12 +119,12 @@ Import-DscResource -ModuleName cNtfsAccessControl
             }
         )
         DependsOn = '[File]CreateFolder'
-        
+
         }
- 
-        
+
+
     }
- 
+
 }
 ```
 
@@ -137,17 +137,17 @@ setting up pull clients, see [Setting up a pull client using configuration ID](p
 
 >**Note:** You must use configuration IDs if you are using an SMB pull server. Configuration names are not supported for SMB.
 
-Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version 
-of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip 
-file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with 
-pull server you need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is 
-'{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Before packaging up for the pull server simply remove the **{Module version}** folder so the path becomes 
-'{Module Folder}\DscResources\{DSC Resource Folder}\'. With this change, zip the folder as described above and place these zip files in the SMB share folder. 
+Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version
+of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip
+file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with
+pull server you need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is
+'{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'. Before packaging up for the pull server simply remove the **{Module version}** folder so the path becomes
+'{Module Folder}\DscResources\{DSC Resource Folder}\'. With this change, zip the folder as described above and place these zip files in the SMB share folder.
 
 ## Creating the MOF checksum
-A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration. 
-To create a checksum, call the [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. The cmdlet takes a **Path** parameter that specifies the folder 
-where the configuration MOF is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file. 
+A configuration MOF file needs to be paired with a checksum file so that an LCM on a target node can validate the configuration.
+To create a checksum, call the [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. The cmdlet takes a **Path** parameter that specifies the folder
+where the configuration MOF is located. The cmdlet creates a checksum file named `ConfigurationMOFName.mof.checksum`, where `ConfigurationMOFName` is the name of the configuration mof file.
 If there are more than one configuration MOF files in the specified folder, a checksum is created for each configuration in the folder.
 
 The checksum file must be present in the same directory as the configuration MOF file (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` by default), and have the same name with the `.checksum` extension appended.
@@ -156,7 +156,7 @@ The checksum file must be present in the same directory as the configuration MOF
 
 ## Setting up a pull client for SMB
 
-To set up a client that pulls configurations and/or resources from an SMB share, you configure the client's Local Configuration Manager (LCM) with **ConfigurationRepositoryShare** and 
+To set up a client that pulls configurations and/or resources from an SMB share, you configure the client's Local Configuration Manager (LCM) with **ConfigurationRepositoryShare** and
 **ResourceRepositoryShare** blocks that specify the share from which to pull configurations and DSC resources.
 
 For more information about configuring the LCM, see [Setting up a pull client using configuration ID](pullClientConfigID.md).
@@ -178,12 +178,12 @@ configuration SmbCredTest
         Settings
         {
             RefreshMode = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
             ConfigurationID    = '16db7357-9083-4806-a80c-ebbaf4acd6c1'
         }
-         
-         ConfigurationRepositoryShare SmbConfigShare      
+
+         ConfigurationRepositoryShare SmbConfigShare
         {
             SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
             Credential = $mycreds
@@ -193,8 +193,8 @@ configuration SmbCredTest
         {
             SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
             Credential = $mycreds
-            
-        }      
+
+        }
     }
 }
 
@@ -212,7 +212,7 @@ $ConfigurationData = @{
 
         })
 
-        
+
 
 }
 ```
@@ -228,5 +228,3 @@ Special thanks to the following:
 - [Windows PowerShell Desired State Configuration Overview](overview.md)
 - [Enacting configurations](enactingConfigurations.md)
 - [Setting up a pull client using configuration ID](pullClientConfigID.md)
-
- 

@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-09
+ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -26,19 +26,19 @@ This type of authentication is designed for commands that create a remote sessio
 For example, if you want to run a background job on a remote computer, use this kind of authentication.
 
 Use this cmdlet to enable CredSSP on the client by specifying Client in the *Role* parameter.
-This cmdlet performs the following actions: 
+This cmdlet performs the following actions:
 
 - Enables CredSSP on the client.
-This cmdlet sets the WS-Management setting **\<localhost|computername\>\Client\Auth\CredSSP** to true. 
-- Sets the Windows CredSSP policy **AllowFreshCredentials** to WSMan/Delegate on the client. 
+This cmdlet sets the WS-Management setting **\<localhost|computername\>\Client\Auth\CredSSP** to true.
+- Sets the Windows CredSSP policy **AllowFreshCredentials** to WSMan/Delegate on the client.
 
 These settings allow the client to delegate explicit credentials to a server when server authentication is achieved.
 
 Use this cmdlet enable CredSSP on the server by specifying Server in *Role*.
-This cmdlet performs the following action: 
+This cmdlet performs the following action:
 
 - Enables CredSSP on the server.
-This cmdlet sets the WS-Management setting **\<localhost|computername\>\Service\Auth\CredSSP** to true. 
+This cmdlet sets the WS-Management setting **\<localhost|computername\>\Service\Auth\CredSSP** to true.
 
 This policy setting allows the server to act as a delegate for clients.
 
@@ -131,7 +131,7 @@ If *Role* is Server, do not specify this parameter.
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -146,7 +146,7 @@ Forces the command to run without asking for user confirmation.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -159,25 +159,25 @@ Accept wildcard characters: False
 Specifies whether to enable CredSSP as a client or as a server.
 The acceptable values for this parameter are: Client and Server.
 
-If you specify Client, this cmdlet performs the following actions: 
+If you specify Client, this cmdlet performs the following actions:
 
 - Enables CredSSP on the client.
-This cmdlet sets the WS-Management setting **\<localhost|computername\>\Client\Auth\CredSSP** to true. 
-- Sets the Windows CredSSP policy **AllowFreshCredentials** to WSMan/Delegate on the client. 
+This cmdlet sets the WS-Management setting **\<localhost|computername\>\Client\Auth\CredSSP** to true.
+- Sets the Windows CredSSP policy **AllowFreshCredentials** to WSMan/Delegate on the client.
 
 These settings allow the client to delegate explicit credentials to a server when server authentication is achieved.
 
-If you specify Server, the cmdlet performs the following actions: 
+If you specify Server, the cmdlet performs the following actions:
 
 - Enables CredSSP on the server.
-This cmdlet sets the WS-Management setting **\<localhost|computername\>\Service\Auth\CredSSP** to true. 
+This cmdlet sets the WS-Management setting **\<localhost|computername\>\Service\Auth\CredSSP** to true.
 
 This policy setting allows the server to act as a delegate for clients.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Client, Server
 
 Required: True
@@ -228,4 +228,3 @@ If CredSSP authentication is successfully enabled, this cmdlet generates an **XM
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

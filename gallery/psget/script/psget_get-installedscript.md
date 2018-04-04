@@ -1,5 +1,5 @@
 ---
-ms.date:  2017-06-12
+ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
@@ -20,7 +20,7 @@ For each installed script, Get-InstalledScript returns a PSRepositoryItemInfo ob
 - Get-InstalledScript can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.
   - These version parameters are allowed only with the single script name without any wildcards.
-  - If the RequiredVersion parameter is not specified, Get-InstalledScript returns the latest version of the installed script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified. 
+  - If the RequiredVersion parameter is not specified, Get-InstalledScript returns the latest version of the installed script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.
   - If the RequiredVersion parameter is specified, Get-InstalledScript only returns the version of installed script that exactly matches the specified version.
 
 ## Cmdlet syntax
@@ -94,4 +94,3 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 
 
 ```
-
