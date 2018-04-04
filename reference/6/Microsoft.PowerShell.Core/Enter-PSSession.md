@@ -154,14 +154,14 @@ You can also use the **Exit** keyword to end the interactive session.
 
 ### Example 6: Start an interactive session using SSH
 ```
-PS C:\> Enter-PSSession -HostName LinuxServer01 -UserName UserA
+PS C:\> Enter-PSSession -HostName UserA@LinuxServer01
 ```
 
 This example shows how to start an interactive session using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt.  Otherwise you will have to use SSH key based user authentication.
 
 ### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
 ```
-PS C:\> Enter-PSSession -HostName LinuxServer02 -UserName UserA -Port 22 -KeyFilePath c:\<path>\userAKey_rsa
+PS C:\> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to start an interactive session using SSH. It uses the *Port* parameter to specify the port to use and the *KeyFilePath* parameter to specify an RSA key used to authenticate the user on the remote computer.
@@ -182,7 +182,7 @@ The default value is 5.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -206,7 +206,7 @@ The value of this parameter should match the value of the **URLPrefix** property
 ```yaml
 Type: String
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -219,13 +219,13 @@ Accept wildcard characters: False
 Specifies the mechanism that is used to authenticate the user's credentials.
 The acceptable values for this parameter are:
 
-- Default 
-- Basic 
-- Credssp 
-- Digest 
-- Kerberos 
-- Negotiate 
-- NegotiateWithImplicitCredential 
+- Default
+- Basic
+- Credssp
+- Digest
+- Kerberos
+- Negotiate
+- NegotiateWithImplicitCredential
 
 The default value is Default.
 
@@ -240,7 +240,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 ```yaml
 Type: AuthenticationMechanism
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
 Required: False
@@ -262,7 +262,7 @@ To get a certificate, use the Get-Item or Get-ChildItem command in the Windows P
 ```yaml
 Type: String
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -314,7 +314,7 @@ For more information, see about_Preference_Variables.
 ```yaml
 Type: String
 Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -365,7 +365,7 @@ When you type a user name, this cmdlet prompts you for a password.
 ```yaml
 Type: PSCredential
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -377,7 +377,7 @@ Accept wildcard characters: False
 ```yaml
 Type: PSCredential
 Parameter Sets: VMId, VMName
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -407,7 +407,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -417,8 +417,12 @@ Accept wildcard characters: False
 ```
 
 ### -HostName
-Specifies a computer name for a Secure Shell (SSH) based connection. 
+Specifies a computer name for a Secure Shell (SSH) based connection.
 This is similar to the *ComputerName* parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
+This parameter supports specifying the user name and/or port as part of the host name parameter value using
+the form `user@hostname:port`.
+The user name and/or port specified as part of the host name takes precedent over the `-UserName` and `-Port` parameters, if specified.
+This allows passing multiple computer names to this parameter where some have specific user names and/or ports, while others use the user name and/or port from the `-UserName` and `-Port` parameters.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -443,7 +447,7 @@ To find the ID of a session, use the Get-PSSession cmdlet.
 ```yaml
 Type: Int32
 Parameter Sets: Id
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -464,7 +468,7 @@ Or, you can use the *ComputerName* parameter to start a temporary session.
 ```yaml
 Type: Guid
 Parameter Sets: InstanceId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -505,7 +509,7 @@ To establish a friendly name for a session, use the *Name* parameter of the **Ne
 ```yaml
 Type: String
 Parameter Sets: Name
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -543,7 +547,7 @@ The default port for SSH is 22.
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName, HostName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -567,7 +571,7 @@ When you use **Exit-PSSession** or the **EXIT** keyword, the interactive session
 ```yaml
 Type: PSSession
 Parameter Sets: Session
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -593,7 +597,7 @@ For more information about session configurations, see about_Session_Configurati
 ```yaml
 Type: PSSessionOption
 Parameter Sets: ComputerName, Uri
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -603,7 +607,7 @@ Accept wildcard characters: False
 ```
 
 ### -SSHTransport
-Indicates that the remote connection is established using Secure Shell (SSH). 
+Indicates that the remote connection is established using Secure Shell (SSH).
 
 By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
 
@@ -656,7 +660,7 @@ If you use this parameter, but SSL is not available on the port that is used for
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -671,7 +675,7 @@ Specifies the name of a virtual machine.
 ```yaml
 Type: String
 Parameter Sets: VMName
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -686,7 +690,7 @@ Specifies the ID of a container.
 ```yaml
 Type: String
 Parameter Sets: ContainerId
-Aliases: 
+Aliases:
 
 Required: True
 Position: Named
@@ -701,7 +705,7 @@ Indicates that the **PSSession** runs as administrator.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ContainerId
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
