@@ -4,10 +4,15 @@ ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Setting up a pull client using configuration ID
 ---
-
 # Setting up a pull client using configuration ID
 
 > Applies To: Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> The Pull Server (Windows Feature *DSC-Service*) will be deprecated in a future version of Windows Server.  It is recommended to
+> begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
+> (includes features beyond Pull Server on Windows Server) or one of the community solutions
+> listed [here](pullserver.md#community-solutions-for-pull-service).
 
 Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).
 
