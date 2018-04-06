@@ -124,8 +124,8 @@ or
 
 ```powershell
 <#
-.< help keyword>
-< help content>
+.<help keyword>
+<help content>
 #>
 function Get-Function { }
 ```
@@ -138,7 +138,7 @@ locations in the script.
 - At the beginning of the script file. Script help can be preceded in the
   script only by comments and blank lines.
 
-- If the first item in the script body (after the help) is a function
+  If the first item in the script body (after the help) is a function
   declaration, there must be at least two blank lines between the end of the
   script help and the function declaration. Otherwise, the help is interpreted
   as being help for the function, not help for the script.
@@ -154,6 +154,7 @@ For example:
 .<help keyword>
 <help content>
 #>
+
 
 function Get-Function { }
 ```
@@ -180,11 +181,10 @@ XML-based help files for the functions in a script module, you must add an
 "ExternalHelp" comment to each function.
 
 ```powershell
-.ExternalHelp <XML-file-name>
+# .ExternalHelp <XML-file-name>
 function <function-name>
 {
-# ...
-
+  ...
 }
 ```
 
