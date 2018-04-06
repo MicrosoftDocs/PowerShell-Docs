@@ -165,8 +165,8 @@ or
 function Get-Function { }
 
 <#
-.< help keyword>
-< help content>
+.<help keyword>
+<help content>
 #>
 ```
 
