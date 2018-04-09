@@ -55,7 +55,7 @@ If you do not add the *Trusted* parameter, by default, the package is not truste
 ## PARAMETERS
 
 ### -Credential
-Specifies a user account that has permission to install package providers.
+Specifies a user account that has permission to access the authenticated location.
 
 ```yaml
 Type: PSCredential
