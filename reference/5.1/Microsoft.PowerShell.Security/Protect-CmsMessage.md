@@ -92,11 +92,11 @@ The *To* parameter uses the value of the Subject line in the certificate.
 
 ### Example 3: View document encryption certificates
 ```
-PS C:\> 58 [Cert:\currentuser\my]
->> Get-ChildItem -DocumentEncryptionCert
+PS C:\> cd Cert:\currentuser\my
+Get-ChildItem -DocumentEncryptionCert
 ```
 
-To view document encryption certificates in the certificate provider, you can add the *DocumentEncryptionCert* dynamic parameter of Get-ChildItemhttp://technet.microsoft.com/library/hh847761.aspx, available only when the certificate provider is loaded.
+To view document encryption certificates in the certificate provider, you can add the *DocumentEncryptionCert* dynamic parameter of [Get-ChildItem](Providers/get-childitem-for-certificate.md), available only when the certificate provider is loaded.
 
 ## PARAMETERS
 

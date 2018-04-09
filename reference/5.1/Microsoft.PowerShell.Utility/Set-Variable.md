@@ -241,7 +241,7 @@ Specifies the scope of the variable.The acceptable values for this parameter are
 
 Local is the default.
 
-For more information, see about_Scopes.
+For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_scopes.md).
 
 ```yaml
 Type: String

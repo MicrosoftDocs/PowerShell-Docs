@@ -4,10 +4,15 @@ ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Pull server best practices
 ---
-
 # Pull server best practices
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> The Pull Server (Windows Feature *DSC-Service*) will be deprecated in a future version of Windows Server.  It is recommended to
+> begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
+> (includes features beyond Pull Server on Windows Server) or one of the community solutions
+> listed [here](pullserver.md#community-solutions-for-pull-service).
 
 Summary: This document is intended to include process and extensibility to assist engineers who are preparing for the solution. Details should provide best practices as identified by
 customers and then validated by the product team to ensure recommendations are future facing and considered stable.
