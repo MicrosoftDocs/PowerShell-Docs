@@ -57,7 +57,8 @@ New-PSSession [-Name <String[]>] [-ConfigurationName <String>] -ContainerId <Str
 
 ### HostName
 ```
-New-PSSession [-HostName] <string[]> [-Name <string[]>] [-Port <int>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
+New-PSSession [-HostName] <string[]> [-Name <string[]>] [-Port <int>] [-UserName <string>] [-KeyFilePath <string>
+ [-ConfigurationName <String>] [-SSHTransport] [<CommonParameters>]
 ```
 
 ### SSHConnection
@@ -367,6 +368,9 @@ Specifies the session configuration that is used for the new **PSSession**.
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended: http://schemas.microsoft.com/PowerShell.
 
+When used with SSH, this specifies the subsystem to use on the target as defined in sshd_config.
+The default value for SSH is the `powershell` subsystem.
+
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
 
@@ -376,7 +380,7 @@ For more information, see [about_Preference_Variables](About/about_Preference_Va
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, VMName, Uri, VMId, ContainerId
+Parameter Sets: ComputerName, VMName, Uri, VMId, ContainerId, HostName
 Aliases:
 
 Required: False
@@ -770,7 +774,7 @@ Accept wildcard characters: False
 ```
 
 ### -SSHConnection
-This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath).
+This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath, Subsystem).
 
 The hashtable connection parameters are the same as defined for the **HostName** parameter set.
 
