@@ -158,6 +158,8 @@ If the job has more results, the job is still deleted, but **Receive-Job** displ
 This parameter works only on custom job types.
 It is designed for instances of job types that save the job or the type outside of the session, such as instances of scheduled jobs.
 
+This parameter cannot be used without the **Wait** parameter.
+
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
