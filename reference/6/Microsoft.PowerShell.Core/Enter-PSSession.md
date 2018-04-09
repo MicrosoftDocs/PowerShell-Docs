@@ -68,7 +68,8 @@ Enter-PSSession -ContainerId <String> [-ConfigurationName <String>] [-RunAsAdmin
 
 ### HostName
 ```
-Enter-PSSession [-HostName] <string> [-Port <int>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
+Enter-PSSession [-HostName] <string> [-Port <int>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport]
+ [-ConfigurationName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -304,6 +305,9 @@ Specifies the session configuration that is used for the interactive session.
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended: http://schemas.microsoft.com/powershell.
 
+When used with SSH, this specifies the subsystem to use on the target as defined in sshd_config.
+The default value for SSH is the `powershell` subsystem.
+
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
 
@@ -313,7 +317,7 @@ For more information, see about_Preference_Variables.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
+Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId, HostName
 Aliases:
 
 Required: False
