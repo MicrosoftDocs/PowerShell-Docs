@@ -317,7 +317,7 @@ For more information, see about_Preference_Variables.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
+Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId, HostName
 Aliases:
 
 Required: False
