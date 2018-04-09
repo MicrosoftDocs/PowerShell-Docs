@@ -4,10 +4,15 @@ ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Setting up a DSC SMB pull server
 ---
-
 # Setting up a DSC SMB pull server
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> The Pull Server (Windows Feature *DSC-Service*) will be deprecated in a future version of Windows Server.  It is recommended to
+> begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
+> (includes features beyond Pull Server on Windows Server) or one of the community solutions
+> listed [here](pullserver.md#community-solutions-for-pull-service).
 
 A DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) pull server is a computer hosting SMB file shares that make DSC configuration files and DSC resources
 available to target nodes when those nodes ask for them.

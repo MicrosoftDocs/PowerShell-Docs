@@ -727,7 +727,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseBasicParsing
-This parameter has been deprecated. Beginning with PowerShell 6.0.0, all Web requests use basic parsing only. This parameter is included for backwards compatibility only and any use of it will have no affect on the operation of the cmdlet.
+This parameter has been deprecated. Beginning with PowerShell 6.0.0, all Web requests use basic parsing only. This parameter is included for backwards compatibility only and any use of it will have no effect on the operation of the cmdlet.
 
 ```yaml
 Type: SwitchParameter

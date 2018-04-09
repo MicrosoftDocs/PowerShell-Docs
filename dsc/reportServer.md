@@ -4,10 +4,15 @@ ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Using a DSC report server
 ---
-
 # Using a DSC report server
 
 > Applies To: Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> The Pull Server (Windows Feature *DSC-Service*) will be deprecated in a future version of Windows Server.  It is recommended to
+> begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
+> (includes features beyond Pull Server on Windows Server) or one of the community solutions
+> listed [here](pullserver.md#community-solutions-for-pull-service).
 
 >**Note:** The report server described in this topic is not available in PowerShell 4.0.
 
