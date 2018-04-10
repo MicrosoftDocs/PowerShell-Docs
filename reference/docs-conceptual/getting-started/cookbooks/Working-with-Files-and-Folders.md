@@ -6,20 +6,20 @@ ms.assetid:  c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 ---
 # Working with Files and Folders
 
-Navigating through Windows PowerShell drives and manipulating the items on them is similar to manipulating files and folders on Windows physical disk drives. We will discuss how to deal with specific file and folder manipulation tasks in this section.
+Navigating through Windows PowerShell drives and manipulating the items on them is similar to manipulating files and folders on Windows physical disk drives. This section discusses how to deal with specific file and folder manipulation tasks using PowerShell.
 
 ### Listing All the Files and Folders Within a Folder
 
 You can get all items directly within a folder by using **Get-ChildItem**. Add the optional **Force** parameter to display hidden or system items. For example, this command displays the direct contents of Windows PowerShell Drive C (which is the same as the Windows physical drive C):
 
 ```powershell
-Get-ChildItem -Force C:\
+Get-ChildItem -Path C:\ -Force
 ```
 
 The command lists only the directly contained items, much like using Cmd.exe's **DIR** command or **ls** in a UNIX shell. In order to show contained items, you need to specify the **-Recurse** parameter as well. (This can take an extremely long time to complete.) To list everything on the C drive:
 
 ```powershell
-Get-ChildItem -Force C:\ -Recurse
+Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
 **Get-ChildItem** can filter items with its **Path**, **Filter**, **Include**, and **Exclude** parameters, but those are typically based only on name. You can perform complex filtering based on other properties of items by using **Where-Object**.
@@ -35,33 +35,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 Copying is done with **Copy-Item**. The following command backs up C:\\boot.ini to C:\\boot.bak:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-If the destination file already exists, the copy attempt fails. To overwrite a pre-existing destination, use the Force parameter:
+If the destination file already exists, the copy attempt fails. To overwrite a pre-existing destination, use the **Force** parameter:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
 This command works even when the destination is read-only.
 
-Folder copying works the same way. This command copies the folder C:\\temp\\test1 to the new folder c:\\temp\\DeleteMe recursively:
+Folder copying works the same way. This command copies the folder C:\\temp\\test1 to the new folder C:\\temp\\DeleteMe recursively:
 
 ```powershell
-Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
+Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
 You can also copy a selection of items. The following command copies all .txt files contained anywhere in c:\\data to c:\\temp\\text:
 
 ```powershell
-Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
+Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
 You can still use other tools to perform file system copies. XCOPY, ROBOCOPY, and COM objects, such as the **Scripting.FileSystemObject,** all work in Windows PowerShell. For example, you can use the Windows Script Host **Scripting.FileSystem COM** class to back up C:\\boot.ini to C:\\boot.bak:
 
 ```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('c:\boot.ini', 'c:\boot.bak')
+(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
 ### Creating Files and Folders
@@ -85,7 +85,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 You can remove contained items using **Remove-Item**, but you will be prompted to confirm the removal if the item contains anything else. For example, if you attempt to delete the folder C:\\temp\\DeleteMe that contains other items, Windows PowerShell prompts you for confirmation before deleting the folder:
 
 ```
-Remove-Item C:\temp\DeleteMe
+Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
 The item at C:\temp\DeleteMe has children and the -recurse parameter was not
@@ -98,7 +98,7 @@ sure you want to continue?
 If you do not want to be prompted for each contained item, specify the **Recurse** parameter:
 
 ```powershell
-Remove-Item C:\temp\DeleteMe -Recurse
+Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
 ### Mapping a Local Folder as a Windows Accessible Drive
