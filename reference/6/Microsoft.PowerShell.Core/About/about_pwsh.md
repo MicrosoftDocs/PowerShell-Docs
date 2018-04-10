@@ -31,6 +31,7 @@ pwsh[.exe]
 [-NoProfile]
 [-OutputFormat {Text | XML}]
 [-WindowStyle <style>]
+[-WorkingDirectory <DirectoryPath>]
 [-File <FilePath> [<Args>]]
 [-Command { - | <script-block> [-args <arg-array>]
 | <string> [<CommandParameters>] } ]
@@ -107,6 +108,12 @@ Determines how output from PowerShell is formatted. Valid values are "Text"
 Sets the window style for the session. Valid values are Normal, Minimized,
 Maximized and Hidden.
 
+#### -WorkingDirectory <DirectoryPath>
+
+Sets the initial working directory when starting PowerShell.  Any valid
+PowerShell file path is supported.
+
+To start PowerShell in your home directory, use: pwsh -WorkingDirectory ~
 #### -Command
 
 Executes the specified commands (and any parameters) as though they were typed
@@ -147,4 +154,6 @@ pwsh -Version
 pwsh -Command {Get-Command -Name Get-Command}
 
 pwsh -Command "& {Get-Command -Name Get-Command}"
+
+pwsh -WorkingDirectory ~/Downloads
 ```
