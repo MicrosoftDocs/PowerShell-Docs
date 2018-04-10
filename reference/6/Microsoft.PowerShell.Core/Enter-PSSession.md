@@ -155,14 +155,14 @@ You can also use the **Exit** keyword to end the interactive session.
 
 ### Example 6: Start an interactive session using SSH
 ```
-PS C:\> Enter-PSSession -HostName LinuxServer01 -UserName UserA
+PS C:\> Enter-PSSession -HostName UserA@LinuxServer01
 ```
 
 This example shows how to start an interactive session using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt.  Otherwise you will have to use SSH key based user authentication.
 
 ### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
 ```
-PS C:\> Enter-PSSession -HostName LinuxServer02 -UserName UserA -Port 22 -KeyFilePath c:\<path>\userAKey_rsa
+PS C:\> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to start an interactive session using SSH. It uses the *Port* parameter to specify the port to use and the *KeyFilePath* parameter to specify an RSA key used to authenticate the user on the remote computer.
@@ -423,6 +423,10 @@ Accept wildcard characters: False
 ### -HostName
 Specifies a computer name for a Secure Shell (SSH) based connection.
 This is similar to the *ComputerName* parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
+This parameter supports specifying the user name and/or port as part of the host name parameter value using
+the form `user@hostname:port`.
+The user name and/or port specified as part of the host name takes precedent over the `-UserName` and `-Port` parameters, if specified.
+This allows passing multiple computer names to this parameter where some have specific user names and/or ports, while others use the user name and/or port from the `-UserName` and `-Port` parameters.
 
 This parameter was introduced in PowerShell 6.0.
 

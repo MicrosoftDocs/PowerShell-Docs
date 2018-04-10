@@ -491,21 +491,21 @@ To get the results of commands and scripts that run in disconnected sessions, us
 
 ### Example 17: Run a command on a remote computer using SSH
 ```
-PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * }
+PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * }
 ```
 
 This example shows how to run a command on a remote computer using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt. Otherwise you will have to use SSH key based user authentication.
 
 ### Example 18: Run a command on a remote computer using SSH and specify a user authentication key
 ```
-PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
+PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to run a command on a remote computer using SSH and specifying a key file for user authentication. You will not get a password prompt unless the key authentication fails and the remote computer is configured to allow basic password authentication.
 
 ### Example 19: Run a script file on multiple remote computers using SSH as a job
 ```
-PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="LinuxServer5"; UserName="UserB"; KeyFilePath="c:\UserB\<path>\id_rsa }
+PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa }
 PS C:\> $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
 ```
 
@@ -1171,6 +1171,10 @@ Accept wildcard characters: False
 
 ### -HostName
 Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to the ComputerName parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
+This parameter supports specifying the user name and/or port as part of the host name parameter value using
+the form `user@hostname:port`.
+The user name and/or port specified as part of the host name takes precedent over the `-UserName` and `-Port` parameters, if specified.
+This allows passing multiple computer names to this parameter where some have specific user names and/or ports, while others use the user name and/or port from the `-UserName` and `-Port` parameters.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -1251,6 +1255,7 @@ Accept wildcard characters: False
 This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath, Subsystem).
 
 The hashtable connection parameters are the same as defined for the HostName parameter set.
+Note that the order of the keys in the hashtable result in user name and port being used for the connection where the last one specified is used.  For example, if you use `@{UserName="first";HostName="second@host"}`, then the user name `second` will be used.  However, if you use `@{HostName="second@host:22";Port=23}`, then port 23 will be used.
 
 The SSHConnection parameter is useful for creating multiple sessions where each session requires different connection information.
 
