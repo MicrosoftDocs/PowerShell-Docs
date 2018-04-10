@@ -501,7 +501,7 @@ administrative tasks, such as renaming files. For example, the following
 command changes the file name extensions of all .gif files to .jpg:
 
 ```powershell
-Get-ChildItem | Rename-Item -NewName { $_ -replace '.gif$','.jpg$' }
+Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
 The syntax of the `-replace` operator is as follows, where the \<original>
