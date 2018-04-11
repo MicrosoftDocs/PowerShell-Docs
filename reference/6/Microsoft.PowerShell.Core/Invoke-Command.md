@@ -1173,7 +1173,7 @@ Accept wildcard characters: False
 Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to the ComputerName parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
 This parameter supports specifying the user name and/or port as part of the host name parameter value using
 the form `user@hostname:port`.
-The user name and/or port specified as part of the host name takes precedent over the `-UserName` and `-Port` parameters, if specified.
+The user name and/or port specified as part of the host name takes precedence over the `-UserName` and `-Port` parameters, if specified.
 This allows passing multiple computer names to this parameter where some have specific user names and/or ports, while others use the user name and/or port from the `-UserName` and `-Port` parameters.
 
 This parameter was introduced in PowerShell 6.0.
