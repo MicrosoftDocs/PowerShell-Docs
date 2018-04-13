@@ -144,6 +144,32 @@ command-line.
 sudo log stream --predicate 'process == "pwsh"' --info
 ```
 
+### Persisting PowerShell log output
+
+By default, PowerShell uses the default memory-only logging on MacOS. This can be changed to enable persistance using the `log config` command.
+
+The following enables info level logging and persistence
+```
+log config --subsystem com.microsoft.powershell --mode=persist:info,level:info
+```
+
+The following command reverts PowerShell logging to the default state
+```
+log config --subsystem com.microsoft.powershell --mode=persist:default,level:default
+```
+
+Once persistence is enabled, the `log show` can be used to export log items. The command provides options for exporting the last N items, items since a given time, or items within a given time span.
+
+For example, the following command exports items since 9am on April 5th of 2018:
+```
+log show --info --start "2018-04-05 09:00:00" --predicate "process = 'pwsh'"
+```
+See ```log show --help``` for additional details.
+
+```
+TIP: When executing any of the log commands from a PowerShell prompt or script, use double quotes around the entire predicate string and single quotes within. This avoids the need to escape double quote characters within the predicate string.
+```
+
 ## Configuring Logging on non-Windows systems
 
 On Windows, logging is configured by creating ETW trace listeners or by using
