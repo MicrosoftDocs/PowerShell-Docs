@@ -34,30 +34,40 @@ In addition you will need to enable password authentication and optionally key b
 
 ## Setup on Windows Machine
 
-1. [Install the latest version of PowerShell Core for Windows][]
+1. Install the latest version of [PowerShell Core for Windows]
     - You can tell if it has the SSH remoting support by looking at the parameter sets for New-PSSession
+
     ```powershell
     PS> Get-Command New-PSSession -syntax
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
+
 1. Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions
 1. Edit the sshd_config file at the location where you installed Win32 OpenSSH
     - Make sure password authentication is enabled
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Add a PowerShell subsystem entry, replace `c:/program files/powershell/6.0.0/pwsh.exe` with the correct path to the version you want to use
-    ```none
+
+    ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+
     - Optionally enable key authentication
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Restart the sshd service
+
     ```powershell
     Restart-Service sshd
     ```
+
 1. Add the path where OpenSSH is installed to your Path Env Variable
     - This should be along the lines of `C:\Program Files\OpenSSH\`
     - This allows for the ssh.exe to be found
@@ -66,24 +76,33 @@ In addition you will need to enable password authentication and optionally key b
 
 1. Install the latest [PowerShell for Linux] build from GitHub
 1. Install [Ubuntu SSH] as needed
+
     ```bash
     sudo apt install openssh-client
     sudo apt install openssh-server
     ```
+
 1. Edit the sshd_config file at location /etc/ssh
     - Make sure password authentication is enabled
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Add a PowerShell subsystem entry
-    ```none
+
+    ```
     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
     ```
+
     - Optionally enable key authentication
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Restart the sshd service
+
     ```bash
     sudo service sshd restart
     ```
@@ -98,22 +117,31 @@ In addition you will need to enable password authentication and optionally key b
       - Allow access to appropriate users
 1. Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`
     - Use your favorite editor or
+
     ```bash
     sudo nano /private/etc/ssh/sshd_config
     ```
+
     - Make sure password authentication is enabled
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Add a PowerShell subsystem entry
-    ```none
+
+    ```
     Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
     ```
+
     - Optionally enable key authentication
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Restart the sshd service
+
     ```bash
     sudo launchctl stop com.openssh.sshd
     sudo launchctl start com.openssh.sshd
@@ -213,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo command does not work in remote session to Linux machine.
 
-[PowerShell for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[PowerShell Core for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
 [installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell for Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell for MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012
+[PowerShell for MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
