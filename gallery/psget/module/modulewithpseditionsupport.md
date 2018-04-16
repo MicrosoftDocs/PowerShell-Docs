@@ -226,10 +226,10 @@ Modules without PSEdition_Desktop and PSEdition_Core tags are considered to work
 ```powershell
 
 # Find modules supported on PowerShell Desktop edition
-Find-Module -Tag PSEditon_Desktop
+Find-Module -Tag PSEdition_Desktop
 
 # Find modules supported on PowerShell Core editions
-Find-Module -Tag PSEditon_Core
+Find-Module -Tag PSEdition_Core
 
 ```
 
