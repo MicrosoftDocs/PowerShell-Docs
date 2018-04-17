@@ -73,17 +73,17 @@ The DotNetTypes.format.ps1xml formatting file also contains a Priority view for 
 
 ### Example 4: Format services
 ```powershell
-PS C:\> Get-Service | Format-Table -Property Name, DependentServices
+Get-Service | Format-Table -Property Name, DependentServices
 ```
 
 This command displays all of the services on the computer in a table with two columns, Name and DependentServices.
-The command uses the Get-Service cmdlet to get all of the services on the computer.
+The `Get-Service` cmdlet gets all of the services on the computer.
 The pipeline operator (|) sends the results to the `Format-Table` cmdlet, which formats the output in a table.
 The **Property** parameter specifies the properties that appear in the table as columns.
-The name of the **Property** parameter is optional, so you can omit it, for example `format-table name, dependentservices`.
+The name of the **Property** parameter is optional, so you can omit it, for example `Format-Table Name, DependentServices`.
 
 Name and DependentServices are just two of the properties of service objects.
-To view all of the properties, type `get-service | get-member`.
+To view all of the properties, type `Get-Service | Get-Member -MemberType Properties`.
 
 ### Example 5: Format a process and calculate its running time
 ```powershell
