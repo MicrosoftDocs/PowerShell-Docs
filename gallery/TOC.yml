@@ -47,8 +47,6 @@
       href: psgallery/psgallery_requires_license_acceptance.md
     - name: Require License Acceptance on Deploy to Azure Automation
       href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
-    - name: PowerShell Gallery GDPR Compliance
-      href: psgallery/psgallery_gdpr_dsr.md
 - name: PowerShellGet
   href: psget/overview.md
   items:
