@@ -22,7 +22,7 @@ also log details about PowerShell commands.
 
 The location of PowerShell logs is dependent on the target platform.
 On Windows, PowerShell logs to the event log, on Linux, PowerShell logs
-to syslog, and on MacOS, the os_log logging system is used.
+to syslog, and on macOS, the os_log logging system is used.
 
 ## Viewing the PowerShell event log on Windows
 
@@ -32,7 +32,7 @@ The associated ETW provider guid is `{f90714a8-5509-434a-bf6d-b1624c8a19a2}`
 
 ### Registering the PowerShell event provider on Windows
 
-Unlike Linux or MacOS, Windows requires the event provider to be registered
+Unlike Linux or macOS, Windows requires the event provider to be registered
 before logged events can appear in the event log.  For PowerShell, this is
 accomplished by running the `RegisterManifest.ps1` from an elevated
 PowerShell prompt.
@@ -117,9 +117,9 @@ chown root:root /etc/rsyslog.d/40-powershell.conf
 chmod 644 /etc/rsyslog.d/40-powershell.conf
 ```
 
-## Viewing PowerShell log output on MacOS
+## Viewing PowerShell log output on macOS
 
-The easiest method for viewing PowerShell log output on MacOS is using the
+The easiest method for viewing PowerShell log output on macOS is using the
 Console application.
 
 * Search for the Console application and launch it
@@ -144,10 +144,34 @@ command-line.
 sudo log stream --predicate 'process == "pwsh"' --info
 ```
 
+### Persisting PowerShell log output
+
+By default, PowerShell uses the default memory-only logging on macOS. This can be changed to enable persistance using the `log config` command.
+
+The following enables info level logging and persistence
+```
+log config --subsystem com.microsoft.powershell --mode=persist:info,level:info
+```
+
+The following command reverts PowerShell logging to the default state
+```
+log config --subsystem com.microsoft.powershell --mode=persist:default,level:default
+```
+
+Once persistence is enabled, the `log show` command can be used to export log items. The command provides options for exporting the last N items, items since a given time, or items within a given time span.
+
+For example, the following command exports items since 9am on April 5th of 2018:
+```
+log show --info --start "2018-04-05 09:00:00" --predicate "process = 'pwsh'"
+```
+See ```log show --help``` for additional details.
+
+> TIP: When executing any of the log commands from a PowerShell prompt or script, use double quotes around the entire predicate string and single quotes within. This avoids the need to escape double quote characters within the predicate string.
+
 ## Configuring Logging on non-Windows systems
 
 On Windows, logging is configured by creating ETW trace listeners or by using
-the Event Viewer to enable Analytic logging. On Linux and MacOS, logging is
+the Event Viewer to enable Analytic logging. On Linux and macOS, logging is
 configured using the file `powershell.config.json`. The rest of this section
 will discuss configuring PowerShell logging on non-Windows system.
 
