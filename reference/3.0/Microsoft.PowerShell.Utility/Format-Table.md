@@ -30,17 +30,17 @@ To add a calculated property, use the **Property** or **GroupBy** parameter.
 
 ## EXAMPLES
 
-### Example 1: Format PowerShell snap-ins
+### Example 1: Format PowerShell host
 ```powershell
-PS C:\> Get-PSSnapin | Format-Table -Auto
+Get-Host | Format-Table -AutoSize
 ```
 
-This command formats information about Windows PowerShell snap-ins in a table.
+This command displays information about the host program for PowerShell in a table.
 By default, they are formatted in a list.
-The Get-PSSnapin cmdlet gets objects representing the snap-ins.
-The pipeline operator (|) passes the object to the `Format-Table` command.
-`Format-Table` formats the objects in a table.
-The **Autosize** parameter adjusts the column widths to minimize truncation.
+The `Get-Host` cmdlet gets objects representing the host.
+The pipeline operator (|) passes the object to the `Format-Table` cmdlet.
+The `Format-Table` cmdlet formats the objects in a table.
+The **AutoSize** parameter adjusts the column widths to minimize truncation.
 
 ### Example 2: Format processes by BasePriority
 ```powershell
