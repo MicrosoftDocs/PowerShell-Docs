@@ -69,7 +69,7 @@ Enter-PSSession -ContainerId <String> [-ConfigurationName <String>] [-RunAsAdmin
 ### HostName
 ```
 Enter-PSSession [-HostName] <string> [-Port <int>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport]
- [-ConfigurationName <String>] [<CommonParameters>]
+ [-Subsystem <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -317,7 +317,7 @@ For more information, see about_Preference_Variables.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId, HostName
+Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
 Aliases:
 
 Required: False
@@ -626,6 +626,30 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Subsystem
+Specifies the SSH subsystem used for the new **PSSession**.
+
+This specifies the subsystem to use on the target as defined in sshd_config.
+
+The session configuration for a session is located on the remote computer.
+If the specified session configuration does not exist on the remote computer, the command fails.
+
+The default value is the value of the $PSSessionConfigurationName preference variable on the local computer.
+If this preference variable is not set, the default is the 'powershell' subsystem.
+For more information, see about_Preference_Variables.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: powershell
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
