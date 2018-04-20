@@ -71,7 +71,7 @@ $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 $Credential = Import-CliXml $CredXmlPath
 ```
 
-The **Export-CliXml** cmdlet encrypts credential objects by using the Windows Data Protection APIhttp://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
+The **Export-CliXml** cmdlet encrypts credential objects by using the [Windows Data Protection API](http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
 This ensures that only your user account on only that computer can decrypt the contents of the credential object. The exported CliXml file can neither be used on a different computer nor by a different user.
 
 In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-CliXml** cmdlet to save the credential to disk. In the example, the file in which the credential is stored is represented by TestScript.ps1.credential.
