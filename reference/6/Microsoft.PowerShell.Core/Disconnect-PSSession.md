@@ -45,6 +45,8 @@ The **Disconnect-PSSession** cmdlet disconnects a Windows PowerShell session (**
 As a result, the **PSSession** is in a disconnected state.
 You can connect to the disconnected **PSSession** from the current session or from another session on the local computer or a different computer.
 
+Note that this capability only works with PSSessions using the WSMan transport.
+
 The **Disconnect-PSSession** cmdlet disconnects only open **PSSessions** that are connected to the current session.
 **Disconnect-PSSession** cannot disconnect broken or closed **PSSession** objects, or interactive **PSSession** objects started by using the Enter-PSSession cmdlet, and it cannot disconnect **PSSession** objects that are connected to other sessions.
 
