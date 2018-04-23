@@ -147,6 +147,15 @@ In addition you will need to enable password authentication and optionally key b
     sudo launchctl start com.openssh.sshd
     ```
 
+## Authentication
+
+PowerShell remoting over SSH relies on the authentication exchange between the SSH client and SSH service and does not implement any authentication schemes itself.
+This means that any configured authentication schemes including multi-factor authentication is handled by SSH and independent of PowerShell.
+For example, you can configure the SSH service to require public key authentication as well as a one-time password for added security.
+Configuration of multi-factor authentication is outside the scope of this documentation.
+Refer to documentation for SSH on how to correctly configure multi-factor authentication and validate it works outside of PowerShell
+before attempting to use it with PowerShell remoting.
+
 ## PowerShell Remoting Example
 
 The easiest way to test remoting is to just try it on a single machine.
