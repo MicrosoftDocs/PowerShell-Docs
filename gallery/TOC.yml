@@ -1,30 +1,30 @@
 - name: Overview
   href: readme.md
   items:
-  - name: Gallery
-    items:
+- name: Gallery
+  items:
     - name: Getting Started
       href: psgallery/psgallery_gettingstarted.md
     - name: Health Status
       href: psgallery/psgallery_status.md
     - name: Publishing to the Gallery
       items:
-      - name: Creating a PowerShellGallery Account
-        href: psgallery/psgallery_creating_an_account.md
-      - name: Creating and publishing items
-        href: psgallery/Creating-and-Publishing-an-item.md
-      - name: Publishing guidelines and best practices
-        href: psgallery/psgallery-PublishingGuidelines.md
-      - name: Item manifest and Gallery UI
-        href: psgallery/psgallery_ItemManifestAffectingUI.md
-      - name: Unlisting items
-        href: psgallery/psgallery_unlist_items.md
-      - name: Deleting items
-        href: psgallery/Deleting-Items.md
-      - name: Managing item owners
-        href: psgallery/Managing-Item-Owners.md
+        - name: Creating a PowerShellGallery Account
+          href: psgallery/psgallery_creating_an_account.md
+        - name: Creating and publishing items
+          href: psgallery/Creating-and-Publishing-an-item.md
+        - name: Publishing guidelines and best practices
+          href: psgallery/psgallery-PublishingGuidelines.md
+        - name: Item manifest and Gallery UI
+          href: psgallery/psgallery_ItemManifestAffectingUI.md
+        - name: Unlisting items
+          href: psgallery/psgallery_unlist_items.md
+        - name: Deleting items
+          href: psgallery/Deleting-Items.md
+        - name: Managing item owners
+          href: psgallery/Managing-Item-Owners.md
     - name: Finding Items in the Gallery
-      items: 
+      items:
         - name: Searching Syntax
           href: psgallery/psgallery_search_syntax.md
         - name: Gallery Items tab
@@ -36,7 +36,7 @@
         - name: Deploy to Azure Automation
           href: psgallery/psgallery_deploy_to_azure_automation.md
     - name: Support
-      items:   
+      items:
         - name: Report Abuse
           href: psgallery/psgallery_report_abuse.md
         - name: Dispute resolution
@@ -47,28 +47,26 @@
           href: psgallery/psgallery_contacting_administrators.md
         - name: Providing Feedback via Social Media or Comments
           href: psgallery/psgallery-SocialMediaFeedback.md
-      - name: Licensing
-        items:
-        - name: Require License Acceptance on Items details
-          href: psgallery/psgallery_requires_license_acceptance.md
-        - name: Require License Acceptance on Deploy to Azure Automation
-          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
+    - name: Licensing
+      items:
+      - name: Require License Acceptance on Items details
+        href: psgallery/psgallery_requires_license_acceptance.md
+      - name: Require License Acceptance on Deploy to Azure Automation
+        href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
     - name: Gallery FAQs
       href: psgallery/psgallery_faqs.md
 - name: PowerShellGet
   href: psget/overview.md
   items:
-  - name: Script
-    items:
-    - name: Scripts with PSEditions
-      href: psget/script/scriptwithpseditionsupport.md
-    - name: Require License Acceptance for Scripts
-      href: psget/script/script_RequireLicenseAcceptance.md
-    - name: Prerelease Versions
-      href: psget/script/PreReleaseScript.md
-  - name: Repository management
-    items:
-    - name: Bootstrapping NuGet provider and NuGet.exe
-      href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
-  - name: PackageManagement cmdlets
-    href: psget/oneget/PackageManagement_cmdlets.md
+    - name: Script
+      items:
+      - name: Scripts with PSEditions
+        href: psget/script/scriptwithpseditionsupport.md
+      - name: Require License Acceptance for Scripts
+        href: psget/script/script_RequireLicenseAcceptance.md
+      - name: Prerelease Versions
+        href: psget/script/PreReleaseScript.md
+    - name: Repository management
+      items:
+      - name: Bootstrapping NuGet provider and NuGet.exe
+        href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
