@@ -75,7 +75,7 @@ providers in your session that support transactions, use the following command
 to find the "Transactions" value in the Capabilities property of providers:
 
 ```powershell
-get-psprovider | where {$_.Capabilities -like "transactions"}
+get-psprovider | where {$_.Capabilities -like "*transactions*"}
 ```
 
 For more information about a provider, see the Help for the provider. To get
