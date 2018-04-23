@@ -69,7 +69,7 @@ In this example, you specify the name of the node by passing it as the **Compute
 ## Compiling the configuration
 
 Before you can enact a configuration, you have to compile it into a MOF document.
-You do this by calling the configuration like you would a PowerShell function.
+You do this by calling the configuration like you would call a PowerShell function.
 The last line of the example containing only the name of the configuration, calls the configuration.
 
 >**Note:** To call a configuration, the function must be in global scope (as with any other PowerShell function).
