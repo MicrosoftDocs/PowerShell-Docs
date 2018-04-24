@@ -115,7 +115,7 @@ TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory F
 ```
 
 > [!NOTE]
-> Wildcards work with property names in **Format-Table**, so the final pipeline element can be reduced to **Format-Table -Property Total,Free**
+> Wildcards work with property names in **Format-Table**, so the final pipeline element can be reduced to `Format-Table -Property Total,Free`
 
 The memory data might be more readable if you format it as a list by typing:
 
