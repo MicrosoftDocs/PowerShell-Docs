@@ -273,7 +273,7 @@ Accept wildcard characters: False
 Specifies the  types of commands that this cmdlet gets.
 Enter one or more command types.
 Use *CommandType* or its alias, *Type*.
-By default, **Get-Command** gets all cmdlets, functions, workflows and aliases.
+By default, **Get-Command** gets all cmdlets, functions, workflows, and aliases.
 
 The acceptable values for this parameter are:
 
