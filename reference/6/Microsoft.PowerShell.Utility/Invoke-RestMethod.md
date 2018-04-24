@@ -984,7 +984,7 @@ This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-Err
 ## Inputs
 
 ### System.Object
-You can pipe the body of a web request to `Invoke-Rest-Method`.
+You can pipe the body of a web request to `Invoke-RestMethod`.
 
 ## Outputs
 

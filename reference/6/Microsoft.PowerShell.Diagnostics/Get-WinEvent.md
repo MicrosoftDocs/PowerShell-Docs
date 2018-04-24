@@ -603,7 +603,3 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 * **Get-WinEvent** runs on Windows Vista, Windows Server 2008 R2, and later versions of Windows.
 * This cmdlet is designed to replace the Get-EventLog cmdlet on computers running Windows Vista and later versions of Windows. **Get-EventLog** gets events only in classic event logs. Get-EventLog is retained in Windows PowerShell for backward compatibility.
 * The **Get-WinEvent** and **Get-EventLog** cmdlets are not supported in Windows Preinstallation Environment (Windows PE).
-
-## RELATED LINKS
-
-[Get-Counter](Get-Counter.md)
