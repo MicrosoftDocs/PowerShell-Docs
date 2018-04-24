@@ -22,12 +22,9 @@ ConvertFrom-SddlString [-Sddl] <String> [-Type <Object>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `ConvertFrom-SddlString` cmdlet converts a Security Descriptor Definition Language string
-to a custom **PSCustomObject** object with the following properties:
-Owner, Group, DiscretionaryAcl, SystemAcl and RawDescriptor.
+The `ConvertFrom-SddlString` cmdlet converts a Security Descriptor Definition Language string to a custom **PSCustomObject** object with the following properties: Owner, Group, DiscretionaryAcl, SystemAcl and RawDescriptor.
 
-Owner, Group, DiscretionaryAcl and SystemAcl properties contain a readable text representation
-of the access rights specified in a SDDL string.
+Owner, Group, DiscretionaryAcl and SystemAcl properties contain a readable text representation of the access rights specified in a SDDL string.
 
 This cmdlet was introduced in PowerShell 5.0.
 
@@ -40,11 +37,9 @@ $acl = Get-Acl -Path C:\Windows
 ConvertFrom-SddlString -Sddl $acl.Sddl
 ```
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor for the C:\Windows folder
-and saves it in the variable.
+The first command uses the `Get-Acl` cmdlet to get the security descriptor for the C:\Windows folder and saves it in the variable.
 
-The second command uses the `ConvertFrom-SddlString` cmdlet to get the text representation of the SDDL string,
-contained in the Sddl property of the object representing the security descriptor.
+The second command uses the `ConvertFrom-SddlString` cmdlet to get the text representation of the SDDL string, contained in the Sddl property of the object representing the security descriptor.
 
 ### Example 2: Convert registry access rights SDDL to a PSCustomObject
 
@@ -53,11 +48,9 @@ $acl = Get-Acl HKLM:\SOFTWARE\Microsoft\
 ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights
 ```
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor for the HKLM:\SOFTWARE\Microsoft\ key
-and saves it in the variable.
+The first command uses the `Get-Acl` cmdlet to get the security descriptor for the HKLM:\SOFTWARE\Microsoft\ key and saves it in the variable.
 
-The second command uses the `ConvertFrom-SddlString` cmdlet to get the text representation of the SDDL string,
-contained in the Sddl property of the object representing the security descriptor.
+The second command uses the `ConvertFrom-SddlString` cmdlet to get the text representation of the SDDL string, contained in the Sddl property of the object representing the security descriptor.
 
 It uses the `-Type` parameter to specify that SDDL string represents a registry security descriptor.
 
@@ -68,27 +61,20 @@ $acl = Get-Acl -Path HKLM:\SOFTWARE\Microsoft\
 
 ConvertFrom-SddlString -Sddl $acl.Sddl | Foreach-Object {$_.DiscretionaryAcl[0]}
 
-BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateDirectories, Delete, ExecuteKey, FullControl,
-GenericExecute, GenericWrite, ListDirectory, ReadExtendedAttributes, ReadPermissions, TakeOwnership,
-Traverse, WriteData, WriteExtendedAttributes, WriteKey)
+BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateDirectories, Delete, ExecuteKey, FullControl, GenericExecute, GenericWrite, ListDirectory, ReadExtendedAttributes, ReadPermissions, TakeOwnership, Traverse, WriteData, WriteExtendedAttributes, WriteKey)
 
 ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights | Foreach-Object {$_.DiscretionaryAcl[0]}
 
-BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateLink, CreateSubKey, Delete, EnumerateSubKeys,
-ExecuteKey, FullControl, GenericExecute, GenericWrite, Notify, QueryValues, ReadPermissions, SetValue,
-TakeOwnership, WriteKey)
+BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateLink, CreateSubKey, Delete, EnumerateSubKeys, ExecuteKey, FullControl, GenericExecute, GenericWrite, Notify, QueryValues, ReadPermissions, SetValue, TakeOwnership, WriteKey)
 ```
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor for the HKLM:\SOFTWARE\Microsoft\ key
-and saves it in the variable.
+The first command uses the `Get-Acl` cmdlet to get the security descriptor for the HKLM:\SOFTWARE\Microsoft\ key and saves it in the variable.
 
-The second command uses the `ConvertFrom-SddlString` cmdlet to get the text representation of the SDDL string,
-contained in the Sddl property of the object representing the security descriptor.
+The second command uses the `ConvertFrom-SddlString` cmdlet to get the text representation of the SDDL string, contained in the Sddl property of the object representing the security descriptor.
 
 It doesn't use the `-Type` parameter, so the access rights shown are for file system.
 
-The third command uses the `ConvertFrom-SddlString` cmdlet with the `-Type` parameter, so the access rights
-returned are for registry.
+The third command uses the `ConvertFrom-SddlString` cmdlet with the `-Type` parameter, so the access rights returned are for registry.
 
 ## PARAMETERS
 
