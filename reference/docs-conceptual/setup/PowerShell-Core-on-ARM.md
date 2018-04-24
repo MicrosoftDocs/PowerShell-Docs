@@ -5,7 +5,7 @@ PowerShell Core for ARM is an experimental release that is unsupported.
 
 For more information on installing these experimental builds, see the installation instructions for
 [Windows 10 IoT](installing-powershell-core-on-windows.md#deploying-on-windows-iot)
-and [Raspbian](installing-powershell-core-on-linux.md.md#raspbian).
+and [Raspbian](installing-powershell-core-on-linux.md#raspbian).
 
 More information will be available here as our ARM64 story progresses.
 
