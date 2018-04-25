@@ -188,13 +188,11 @@ Version         Name                                Repository           Descrip
 
 ```
 
-
-
 ## More details
 ### [Prerelease Script Versions](../script/PrereleaseScript.md)
-### [Find-Module](./psget_find-module.md)
-### [Install-Module](./psget_install-module.md)
-### [Save-Module](./psget_save-module.md)
-### [Update-Module](./psget_update-module.md)
-### [Get-InstalledModule](./psget_get-installedmodule.md)
-### [UnInstall-Module](./psget_uninstall-module.md)
+### [Find-Module](/powershell/module/powershellget/find-module)
+### [Install-Module](/powershell/module/powershellget/install-module)
+### [Save-Module](/powershell/module/powershellget/save-module)
+### [Update-Module](/powershell/module/powershellget/Update-Module)
+### [Get-InstalledModule](/powershell/module/powershellget/get-installedmodule)
+### [UnInstall-Module](/powershell/module/powershellget/psget_uninstall-module)
