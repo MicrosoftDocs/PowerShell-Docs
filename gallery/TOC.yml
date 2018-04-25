@@ -67,6 +67,8 @@
   items:
     - name: Script with PSEditions Support
       href: psget/script/scriptwithpseditionsupport.md
+    - name: Modules with PSEdition Support
+      href: psget/modules/moduleswithpseditionsupport.md
     - name: Require License Acceptance for Scripts
       href: psget/script/script_RequireLicenseAcceptance.md
     - name: Prerelease Versions
