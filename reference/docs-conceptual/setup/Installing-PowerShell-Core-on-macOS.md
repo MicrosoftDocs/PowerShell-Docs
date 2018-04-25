@@ -1,7 +1,8 @@
 # Installing PowerShell Core on macOS
 
-PowerShell Core supports macOS 10.12 and higher. All packages are available on our GitHub [releases][] page. Once the package is installed,
-run `pwsh` from a terminal.
+PowerShell Core supports macOS 10.12 and higher.
+All packages are available on our GitHub [releases][] page.
+Once the package is installed, run `pwsh` from a terminal.
 
 ### Installation via Homebrew on macOS 10.12
 

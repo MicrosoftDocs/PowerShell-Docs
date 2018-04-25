@@ -50,7 +50,8 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-As superuser, Register the Microsoft repository. From then on, you just need to use `sudo apt-get upgrade powershell` to update the installation.
+As superuser, register the Microsoft repository. From then on, you just need to use
+`sudo apt-get upgrade powershell` to update the installation.
 
 ### Installation via Direct Download - Ubuntu 14.04
 
@@ -595,7 +596,7 @@ wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libs
 sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
 
 # Install PowerShell
-dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 
 # Start PowerShell
 pwsh
@@ -617,14 +618,14 @@ chmod a+x powershell-6.0.2-x86_64.AppImage
 ### Uninstallation - Kali
 
 ```sh
-dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
+sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 ```
 
 ## Raspbian
 
 Currently, PowerShell is only supported on Raspbian Stretch.
 
-Also CoreCLR (and thus PowerShell Core) will only work on Pi 2 and Pi 3 devices as other devices, 
+Also CoreCLR (and thus PowerShell Core) will only work on Pi 2 and Pi 3 devices as other devices,
 like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.
 
 Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.
