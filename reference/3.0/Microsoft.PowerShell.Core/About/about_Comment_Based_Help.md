@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell,cmdlet
@@ -515,17 +515,17 @@ or file name.
 
 .EXAMPLE
 
-C:\PS> extension -name "File"
+PS> extension -name "File"
 File.txt
 
 .EXAMPLE
 
-C:\PS> extension -name "File" -extension "doc"
+PS> extension -name "File" -extension "doc"
 File.doc
 
 .EXAMPLE
 
-C:\PS> extension "File" "doc"
+PS> extension "File" "doc"
 File.doc
 
 .LINK
@@ -600,17 +600,17 @@ file name.
 
 Example 1
 
-C:\PS> extension -name "File"
+PS> extension -name "File"
 File.txt
 
 Example 2
 
-C:\PS> extension -name "File" -extension "doc"
+PS> extension -name "File" -extension "doc"
 File.doc
 
 Example 3
 
-C:\PS> extension "File" "doc"
+PS> extension "File" "doc"
 File.doc
 
 RELATED LINKS
@@ -664,17 +664,17 @@ file name.
 
 .EXAMPLE
 
-C:\PS> extension -name "File"
+PS> extension -name "File"
 File.txt
 
 .EXAMPLE
 
-C:\PS> extension -name "File" -extension "doc"
+PS> extension -name "File" -extension "doc"
 File.doc
 
 .EXAMPLE
 
-C:\PS> extension "File" "doc"
+PS> extension "File" "doc"
 File.doc
 
 .LINK
@@ -726,15 +726,15 @@ None. Update-Month.ps1 does not generate any output.
 
 .EXAMPLE
 
-C:\PS> .\Update-Month.ps1
+PS> .\Update-Month.ps1
 
 .EXAMPLE
 
-C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
 .EXAMPLE
 
-C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath `
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath `
 C:\Reports\2009\January.csv
 #>
 
@@ -809,15 +809,15 @@ None. Update-Month.ps1 does not generate any output.
 
 Example 1
 
-C:\PS> .\Update-Month.ps1
+PS> .\Update-Month.ps1
 
 Example 2
 
-C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
 Example 3
 
-C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
 C:\Reports\2009\January.csv
 
 # RELATED LINKS

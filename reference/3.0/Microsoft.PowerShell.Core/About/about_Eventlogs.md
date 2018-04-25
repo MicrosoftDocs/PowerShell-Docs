@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/27/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Eventlogs
 ---
-
 # About Eventlogs
 
 ## Short Description
@@ -109,10 +108,10 @@ The following table lists the event log preference variables.
 
 By default, only the following event types are enabled:
 
-* $LogEngineLifeCycleEvent
-* $LogEngineHealthEvent
-* $LogProviderLifeCycleEvent
-* $LogProviderHealthEvent
+- $LogEngineLifeCycleEvent
+- $LogEngineHealthEvent
+- $LogProviderLifeCycleEvent
+- $LogProviderHealthEvent
 
 To enable an event type, set the preference variable for that event type to
 $true. For example, to enable command life-cycle events, type:
