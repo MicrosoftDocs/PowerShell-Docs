@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Types.ps1xml
 ---
-
 # About Types.ps1xml
 
 # SHORT DESCRIPTION
@@ -40,7 +39,7 @@ For example, Windows PowerShell adds a `DateTime` property to all
 returns.
 
 ```powershell
-PS C:> (Get-Date).DateTime
+PS> (Get-Date).DateTime
 Sunday, January 29, 2012 9:43:57 AM
 ```
 
@@ -131,21 +130,18 @@ Address    Method        System.Object& Address(Int32)
 Clone      Method        System.Object Clone()
 CopyTo     Method        System.Void CopyTo(Array array, Int32 index):
 Equals     Method        System.Boolean Equals(Object obj)
-Get        Method        System.Object Get(Int32)
-# ...
+Get        Method        System.Object Get(Int32)# ...
 ```
 
 As a result, you can use either the Count property or the Length property
 of arrays in Windows PowerShell. For example:
 
 ```powershell
-C:\PS> (1, 2, 3, 4).count
-# 4
+PS> (1, 2, 3, 4).count# 4
 ```
 
 ```powershell
-C:\PS> (1, 2, 3, 4).length
-# 4
+PS> (1, 2, 3, 4).length# 4
 ```
 
 ## Creating New Types.ps1xml Files
@@ -251,7 +247,7 @@ information about `Update-TypeData`, see
 [Update-TypeData](../../Microsoft.PowerShell.Utility/Update-TypeData.md).)
 
 ```powershell
-Update-Typedata -PrependPath $PSHOME\MyTypes.ps1xml
+Update-TypeData -PrependPath $PSHOME\MyTypes.ps1xml
 ```
 
 To test the change, run a `Get-ChildItem` command to get the
@@ -271,8 +267,7 @@ PSIsContainer     : False
 Age               : 16
 VersionInfo       : File:             C:\WINDOWS\system32\WindowsPow...
 InternalName:     POWERSHELL
-OriginalFilename: PowerShell.EXE
-# ...
+OriginalFilename: PowerShell.EXE# ...
 ```
 
 You can also display the `Age` property of the file by using the following

@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Get-Item for FileSystem
 ---
-
 # Get-Item for FileSystem
+
 Gets files and folders.
 
 ## Syntax
@@ -17,6 +17,7 @@ Get-Item [-Stream <string>] [<CommonParameters>]
 ```
 
 ## Description
+
  In the file system, the [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet gets files and folders.
 
  Note: This custom cmdlet help file explains how the [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet works in a file system drive. For information about the [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md) -Path $null" or see [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md) at http://go.microsoft.com/fwlink/?LinkID=113319.
@@ -24,6 +25,7 @@ Get-Item [-Stream <string>] [<CommonParameters>]
 ## Parameters
 
 ### -Stream <string\>
+
  Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are supported. To get all streams, use an asterisk (*). This parameter is not valid on folders.
 
  Stream is a dynamic parameter that the FileSystem provider adds to the [Get-Item](../../../Microsoft.PowerShell.Management/Get-Item.md) cmdlet. This parameter works only in file system drives.
@@ -39,9 +41,11 @@ Get-Item [-Stream <string>] [<CommonParameters>]
 |Accept Wildcard Characters?|false|
 
 ### <CommonParameters\>
+
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).
 
 ## Inputs and Outputs
+
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.
 
 |||
@@ -52,7 +56,7 @@ Get-Item [-Stream <string>] [<CommonParameters>]
 ## Example 1
 
 ```
-C:\PS>Get-Item C:\Users\User01\Downloads\InternetFile.docx -Stream *
+PS>Get-Item C:\Users\User01\Downloads\InternetFile.docx -Stream *
 
    FileName: C:\Users\User01\Downloads\InternetFile.docx
 
@@ -72,7 +76,7 @@ The Stream parameter is introduced in Windows PowerShell 3.0.
 ## Example 2
 
 ```
-C:\PS>Get-Item C:\ps-test\* -Stream Zone.Identifier -ErrorAction SilentlyContinue
+PS>Get-Item C:\ps-test\* -Stream Zone.Identifier -ErrorAction SilentlyContinue
 
    FileName: C:\ps-test\Copy-Script.ps1
 
@@ -97,7 +101,7 @@ The Stream parameter is introduced in Windows PowerShell 3.0.
 ## Example 3
 
 ```
-C:\PS>Get-Item .
+PS>Get-Item .
 
 Directory: C:\
 
@@ -114,7 +118,7 @@ This command gets the current directory. The dot (.) represents the item at the 
 ## Example 4
 
 ```
-C:\PS>Get-Item *
+PS>Get-Item *
 
 Directory: C:\ps-test
 
@@ -136,7 +140,7 @@ This command gets the current directory of the C: drive. The object that is retr
 ## Example 5
 
 ```
-C:\PS>Get-Item C:\
+PS>Get-Item C:\
 
 Description
 -----------
@@ -149,7 +153,7 @@ In Windows PowerShell, use a single asterisk (*) to get contents, instead of the
 ## Example 6
 
 ```
-C:\PS>(Get-Item C:\Windows).LastAccessTime
+PS>(Get-Item C:\Windows).LastAccessTime
 
 Description
 -----------
@@ -160,7 +164,7 @@ This command gets the LastAccessTime property of the C:\Windows directory. LastA
 ## Example 7
 
 ```
-C:\PS>Get-Item C:\Windows\*.* -Exclude w*
+PS>Get-Item C:\Windows\*.* -Exclude w*
 
 Description
 -----------
@@ -169,6 +173,7 @@ This command gets items in the Windows directory with names that include a dot (
 ```
 
 ## See Also
+
  [FileSystem Provider](../FileSystem-Provider.md)
  [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md)
  [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)

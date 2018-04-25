@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Get-ChildItem for FileSystem
 ---
-
 # Get-ChildItem for FileSystem
+
 Gets the files and folders in a file system drive.
 
 ## Syntax
@@ -17,6 +17,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 ```
 
 ## Description
+
  In a file system drive, the [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet gets the directories, subdirectories, and files. In a file system directory, it gets subdirectories and files.
 
  By default, [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets non-hidden items, but you can use the Directory, File, Hidden, ReadOnly, and System parameters to get only items with these attributes. To create a complex attribute search, use the Attributes parameter. If you use these parameters, [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets only the items that meet all search conditions, as though the parameters were connected by an AND operator.
@@ -26,6 +27,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 ## Parameters
 
 ### -Attributes <FileAttributes]>
+
  Gets files and folders with the specified attributes. This parameter supports all attributes and lets you specify complex combinations of attributes.
 
  For example, to get non-system files (not directories) that are encrypted or compressed, type:
@@ -65,6 +67,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|
 
 ### -Directory
+
  Gets directories (folders).
 
  To get only directories, use the Directory parameter and omit the File parameter. To exclude directories, use the File parameter and omit the Directory parameter, or use the Attributes parameter.
@@ -80,6 +83,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|
 
 ### -File
+
  Gets files.
 
  To get only files, use the File parameter and omit the Directory parameter. To exclude files, use the Directory parameter and omit the File parameter, or use the Attributes parameter.
@@ -95,6 +99,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|
 
 ### -Hidden
+
  Gets only hidden files and directories (folders).  By default, [Get-ChildItem](../../../Microsoft.PowerShell.Management/Get-ChildItem.md) gets only non-hidden items, but you can use the Force parameter to include hidden items in the results.
 
  To get only hidden items, use the Hidden parameter, its "h" or "ah" aliases, or the Hidden value of the Attributes parameter. To exclude hidden items, omit the Hidden parameter or use the Attributes parameter.
@@ -108,6 +113,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|
 
 ### -ReadOnly
+
  Gets only read-only files and directories (folders).
 
  To get only read-only items, use the ReadOnly parameter, its "ar" alias, or the ReadOnly value of the Attributes parameter. To exclude read-only items, use the Attributes parameter.
@@ -121,6 +127,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|
 
 ### -System
+
  Gets only system files and directories (folders).
 
  To get only system files and folders, use the System parameter, its "as" alias, or the System value of the Attributes parameter. To exclude system files and folders, use the Attributes parameter.
@@ -134,6 +141,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|
 
 ### -Force
+
  Gets hidden files and folders. By default, hidden files and folder are excluded. You can also get hidden files and folders by using the Hidden parameter or the Hidden value of the Attributes parameter.
 
 |||
@@ -145,6 +153,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|
 
 ### -UseTransaction
+
  Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../../About/about_Transactions.md).
 
 |||
@@ -156,9 +165,11 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Accept Wildcard Characters?|false|
 
 ### <CommonParameters\>
+
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).
 
 ## Inputs and Outputs
+
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.
 
 |||
@@ -167,6 +178,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 |Outputs|System.IO.DirectoryInfo, System.IO.FileInfo, System.String|
 
 ## Notes
+
  The Attributes, Directory, File, Hidden, ReadOnly, and System parameters were introduced in Windows PowerShell 3.0 and
 
  are effective only in file system drives.
@@ -190,7 +202,7 @@ Get-ChildItem [-Attributes <FileAttributes]>] [-Directory] [-File] [-Force] [-Hi
 ## Example 1
 
 ```
-C:\PS>Get-ChildItem
+PS>Get-ChildItem
 
 Description
 -----------
@@ -201,7 +213,7 @@ This command gets the files and subdirectories in the current directory. If the 
 ## Example 2
 
 ```
-C:\PS>Get-Childitem -System -File -Recurse
+PS>Get-Childitem -System -File -Recurse
 
 Description
 -----------
@@ -212,9 +224,9 @@ This command gets system files in the current directory and its subdirectories.
 ## Example 3
 
 ```
-C:\PS>Get-ChildItem -Attributes !Directory,!Directory+Hidden
+PS>Get-ChildItem -Attributes !Directory,!Directory+Hidden
 
-C:\PS> dir -att !d,!d+h
+PS> dir -att !d,!d+h
 
 Description
 -----------
@@ -225,7 +237,7 @@ These command get all files, including hidden files, in the current directory, b
 ## Example 4
 
 ```
-C:\PS>dir -ad
+PS>dir -ad
 
 Description
 -----------
@@ -236,7 +248,7 @@ This command gets the subdirectories in the current directory. It uses the "dir"
 ## Example 5
 
 ```
-C:\PS>Get-ChildItem -File -Attributes !ReadOnly -path C:\ps-test
+PS>Get-ChildItem -File -Attributes !ReadOnly -path C:\ps-test
 
 Description
 -----------
@@ -247,7 +259,7 @@ This command gets read-write files in the C:\ps-test directory.
 ## Example 6
 
 ```
-C:\PS>get-childitem . -include *.txt -recurse -force
+PS>get-childitem . -include *.txt -recurse -force
 
 Description
 -----------
@@ -260,7 +272,7 @@ The dot (.) represents the current directory. The Include parameter specifies th
 ## Example 7
 
 ```
-C:\PS>get-childitem c:\windows\logs\* -include *.txt -exclude A*
+PS>get-childitem c:\windows\logs\* -include *.txt -exclude A*
 
 Description
 -----------
@@ -271,7 +283,7 @@ This command gets the .txt files in the Logs subdirectory, except for those whos
 ## Example 8
 
 ```
-C:\PS>get-childitem -name
+PS>get-childitem -name
 
 Description
 -----------
@@ -280,6 +292,7 @@ This command retrieves only the names of items in the current directory.
 ```
 
 ## See Also
+
  [FileSystem Provider](../FileSystem-Provider.md)
  [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)
  [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)

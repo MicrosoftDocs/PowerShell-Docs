@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,10 @@ online version:  http://technet.microsoft.com/library/hh852689(v=wps.630).aspx
 external help file:  System.Management.Automation.dll-help.xml
 title:  Clear-Host
 ---
-
 # Clear-Host
 
 ## SYNOPSIS
+
 Clears the display in the host program.
 
 ## SYNTAX
@@ -20,6 +20,7 @@ Clear-Host
 ```
 
 ## DESCRIPTION
+
 The Clear-Host function removes all text from the current display, including commands and output that might have accumulated.
 When complete, it displays the command prompt.
 You can use the function name or its alias, CLS.
@@ -33,12 +34,13 @@ Because the behavior of the Clear-Host function is determined by the host progra
 ## EXAMPLES
 
 ### Example 1
+
 ```
 cls
 
 # Before
 
-PS C:\> Get-Process
+PS> Get-Process
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -63,10 +65,10 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     258      15     6804      12156    50     2.65    536 services
 ...
 
-PS C:\> cls
+PS> cls
 #After
 
-PS C:>
+PS>
 ```
 
 Description
@@ -80,14 +82,17 @@ This command uses the CLS alias of Clear-Host to clear the current display.
 ## INPUTS
 
 ### None
+
 You cannot pipe input to Clear-Host.
 
 ## OUTPUTS
 
 ### None
+
 Clear-Host does not generate any output
 
 ## NOTES
+
 Clear-Host is a simple function, not an advanced function.
 As such, you cannot use common parameters, such as -Debug, in a Clear-Host command.
 

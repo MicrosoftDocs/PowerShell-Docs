@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Test-Path for FileSystem
 ---
-
 # Test-Path for FileSystem
+
 Determines whether all elements of a file or directory path exist.
 
 ## Syntax
@@ -17,6 +17,7 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 ```
 
 ## Description
+
  In a file system drive, [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) can tell whether a path is valid, whether all elements of the path exist, or report whether a path leads to a file or a directory. It can also tell whether a file was changed before or after a particular date.
 
  Note: This custom cmdlet help file explains how the [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) cmdlet works in a file system drive. For information about the [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) -Path $null" or see [Test-Path](../../../Microsoft.PowerShell.Management/Test-Path.md) at http://go.microsoft.com/fwlink/?LinkID=113418.
@@ -24,6 +25,7 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 ## Parameters
 
 ### -OlderThan <DateTime\>
+
  Returns "True" when the LastWriteTime value of a file is less than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](../../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".
 
  OlderThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.
@@ -37,6 +39,7 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 |Accept Wildcard Characters?|false|
 
 ### -NewerThan <DateTime\>
+
  Returns "True" when the LastWriteTime value of a file is greater than the specified date. Otherwise, it returns "False". Enter a DateTime object, such as one that the [Get-Date](../../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet returns, or a string that can be converted to a DateTime object, such as "August 10, 2011 2:00 PM".
 
  NewerThan is a dynamic parameter that works only on file system paths. It was introduced in Windows PowerShell 3.0.
@@ -50,9 +53,11 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 |Accept Wildcard Characters?|false|
 
 ### <CommonParameters\>
+
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).
 
 ## Inputs and Outputs
+
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.
 
 |||
@@ -63,7 +68,7 @@ Test-Path [-NewerThan <DateTime>] [-OlderThan <DateTime>] [<CommonParameters>]
 ## Example 1
 
 ```
-C:\PS>Test-Path -Path "C:\Documents and Settings\NicoleH"
+PS>Test-Path -Path "C:\Documents and Settings\NicoleH"
 
 Description
 -----------
@@ -74,9 +79,9 @@ This command tells whether all elements in the path exist, that is, the C: direc
 ## Example 2
 
 ```
-C:\PS>Test-Path -Path $profile
+PS>Test-Path -Path $profile
 
-C:\PS>Test-Path -Path $profile -IsValid
+PS>Test-Path -Path $profile -IsValid
 
 Description
 -----------
@@ -91,7 +96,7 @@ For more information about automatic variables, see about_Automatic_Variables.
 ## Example 3
 
 ```
-C:\PS>Test-Path -Path "C:\CAD\Commercial Buildings\*" -Exclude *.dwg
+PS>Test-Path -Path "C:\CAD\Commercial Buildings\*" -Exclude *.dwg
 
 Description
 -----------
@@ -108,7 +113,7 @@ In this case, because the directory contains only .dwg files, the result is FALS
 ## Example 4
 
 ```
-C:\PS>Test-Path -Path $profile -PathType Leaf
+PS>Test-Path -Path $profile -PathType Leaf
 
 Description
 -----------
@@ -119,11 +124,11 @@ This command tells whether the path stored in the $profile variable leads to a f
 ## Example 5
 
 ```
-C:\PS>Test-Path -Path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
+PS>Test-Path -Path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
 
 TRUE
 
-C:\PS> Test-Path -Path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy
+PS> Test-Path -Path HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy
 FALSE
 
 Description
@@ -139,7 +144,7 @@ Test-Path does not work correctly with all Windows PowerShell providers. For exa
 ## Example 6
 
 ```
-C:\PS>Test-Path $pshome\PowerShell.exe -NewerThan "July 13, 2009"
+PS>Test-Path $pshome\PowerShell.exe -NewerThan "July 13, 2009"
 
 Description
 -----------
@@ -150,6 +155,7 @@ The NewerThan parameter works only in file system drives.
 ```
 
 ## See Also
+
  [FileSystem Provider](../FileSystem-Provider.md)
  [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)
  [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)

@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,34 +7,41 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=141552
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Get-Module
 ---
-
 # Get-Module
+
 ## SYNOPSIS
+
 Gets the modules that have been imported or that can be imported into the current session.
+
 ## SYNTAX
 
 ### Loaded (Default)
+
 ```
 Get-Module [[-Name] <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Available
+
 ```
 Get-Module [[-Name] <String[]>] [-All] [-ListAvailable] [-Refresh] [<CommonParameters>]
 ```
 
 ### PsSession
+
 ```
 Get-Module [[-Name] <String[]>] [-ListAvailable] [-Refresh] -PSSession <PSSession> [<CommonParameters>]
 ```
 
 ### CimSession
+
 ```
 Get-Module [[-Name] <String[]>] [-ListAvailable] [-Refresh] -CimSession <CimSession> [-CimResourceUri <Uri>]
  [-CimNamespace <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Module** cmdlet gets the Windows PowerShell modules that have been imported, or that can be imported, into a Windows PowerShell session.
 The module object that **Get-Module** returns contains valuable information about the module.
 You can also pipe the module objects to other cmdlets, such as the Import-Module and Remove-Module cmdlets.
@@ -65,32 +72,40 @@ Begin by creating a "CIM session" on the remote computer; a connection  to Windo
 Then use the **CIMSession** parameter of **Get-Module** to get CIM modules from the CIM session.
 When you import a CIM module (by using the **Import-Module** cmdlet) and then run the imported commands, the commands run implicitly on the remote computer.
 You can use this WMI and CIM strategy to manage the remote computer.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> Get-Module
+PS> Get-Module
 ```
 
 This command gets modules that have been imported into the current session.
+
 ### Example 2
+
 ```
-PS C:\> Get-Module -ListAvailable
+PS> Get-Module -ListAvailable
 ```
 
 This command gets the modules that are installed on the computer and can be imported into the current session.
 
 **Get-Module** looks for available modules in the path specified by the **$env:PSModulePath** environment variable.
 For more information about **PSModulePath**, see about_Modules and about_Environment_Variables.
+
 ### Example 3
+
 ```
-PS C:\> Get-Module -ListAvailable -All
+PS> Get-Module -ListAvailable -All
 ```
 
 This command gets all of the exported files for all available modules.
+
 ### Example 4
+
 ```
-PS C:\> Get-Module | Get-Member -MemberType Property | Format-Table Name
+PS> Get-Module | Get-Member -MemberType Property | Format-Table Name
 
 Name
 
@@ -182,8 +197,9 @@ For more information about the properties, see [PSModuleInfo Properties](http://
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
 
 ### Example 5
+
 ```
-PS C:\> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
+PS> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
 
    Name: AppLocker
 
@@ -234,13 +250,15 @@ BitsTransfer   Manifest C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsT
 
 This command gets all module files (imported and available) and groups them by module name.
 This lets you see the module files that each script is exporting.
+
 ### Example 6
+
 ```
 The first command gets the **PSModuleInfo** object that represents BitsTransfer module. It saves the object in the $m variable.
-PS C:\> $m = Get-Module -list -Name BitsTransfer
+PS> $m = Get-Module -list -Name BitsTransfer
 
 The second command uses the Get-Content cmdlet to get the content of the manifest file in the specified path. It uses dot notation to get the path to the manifest file, which is stored in the **Path** property of the object.The output shows the contents of the module manifest.
-PS C:\> Get-Content $m.Path
+PS> Get-Content $m.Path
 
 @{
 GUID="{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
@@ -261,9 +279,11 @@ These commands display the contents of the module manifest for the Windows Power
 
 Modules are not required to have manifest files and, when they do have a manifest file, the manifest file is required only to include a version number.
 However, manifest files often provide useful information about a module, its requirements, and its contents.
+
 ### Example 7
+
 ```
-PS C:\> dir (Get-Module -ListAvailable FileTransfer).ModuleBase
+PS> dir (Get-Module -ListAvailable FileTransfer).ModuleBase
 Directory: C:\Windows\system32\WindowsPowerShell\v1.0\Modules\FileTransfer
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -276,11 +296,13 @@ d----        12/16/2008  12:36 PM            en-US
 This command lists the files in the module's directory.
 This is another way to determine what is in a module before you import it.
 Some modules might have help files or ReadMe files that describe the module.
-### Example 8
-```
-PS C:\> $s = New-PSSession -ComputerName Server01
 
-PS C:\> Get-Module -PSSession $s -ListAvailable
+### Example 8
+
+```
+PS> $s = New-PSSession -ComputerName Server01
+
+PS> Get-Module -PSSession $s -ListAvailable
 ```
 
 These commands get the modules that are installed on the Server01 computer.
@@ -294,16 +316,18 @@ If you pipe modules from other sessions to the **Import-Module** cmdlet, **Impor
 This is equivalent to using the  Import-PSSession cmdlet.
 You can use the cmdlets from the module in the current session, but commands that use these cmdlets actually run the remote session.
 For more information, see Import-Module and Import-PSSession.
+
 ### Example 9
+
 ```
 The first command uses the **New-CimSession** cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
-PS C:\> $cs = New-CimSession -ComputerName RSDGF03
+PS> $cs = New-CimSession -ComputerName RSDGF03
 
 The second command uses in the CIM session in the $cs variable to run a **Get-Module** command on the RSDGF03 computer. The command uses the **Name** parameter to specify the Storage module.The command uses a pipeline operator (|) to send the Storage module to the **Import-Module** cmdlet, which imports it into the local session.
-PS C:\> Get-Module -CimSession $cs -Name Storage | Import-Module
+PS> Get-Module -CimSession $cs -Name Storage | Import-Module
 
 The third command runs the **Get-Command** cmdlet on the **Get-Disk** command in the Storage module.When you import a CIM module into the local session, Windows PowerShell converts the CDXML files that represent in the CIM module into Windows PowerShell scripts, which appear as functions in the local session.
-PS C:\> Get-Command Get-Disk
+PS> Get-Command Get-Disk
 CommandType     Name                  ModuleName
 
 -----------     ----                  ----------
@@ -311,7 +335,7 @@ CommandType     Name                  ModuleName
 Function        Get-Disk              Storage
 
 The fourth command runs the **Get-Disk** command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported.The command gets objects from the remote computer and returns them to the local session.
-PS C:\> Get-Disk
+PS> Get-Disk
 Number Friendly Name              OperationalStatus          Total Size Partition Style
 
 ------ -------------              -----------------          ---------- ---------------
@@ -321,9 +345,11 @@ Number Friendly Name              OperationalStatus          Total Size Partitio
 
 The commands in this example enable you to manage the storage systems of a remote computer that is not running a Windows operating system.
 In this example, because the administrator of the computer has installed the Module Discovery WMI provider, the CIM commands can use the default values, which are designed for the provider.
+
 ## PARAMETERS
 
 ### -All
+
 Gets all modules in each module folder, including nested modules, manifest (.psd1) files, script module (.psm1) files, and binary module (.dll) files.
 Without the **All** parameter, Get-Module gets only the default module in each module folder.
 
@@ -340,6 +366,7 @@ Accept wildcard characters: False
 ```
 
 ### -CimNamespace
+
 Specifies the namespace of an alternate CIM provider that exposes CIM modules.
 The default value is the namespace of the Module Discovery WMI provider.
 
@@ -360,6 +387,7 @@ Accept wildcard characters: False
 ```
 
 ### -CimResourceUri
+
 Specifies an alternate location for CIM modules.
 The default value is the  resource URI of the Module Discovery WMI provider on the remote computer.
 
@@ -380,6 +408,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListAvailable
+
 Gets all installed modules.
 **Get-Module** gets modules in paths listed in the **PSModulePath** environment variable.
 Without this parameter, **Get-Module** gets only the modules that are both listed in the **PSModulePath** environment variable, and that are loaded in the current session.
@@ -410,6 +439,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Gets only modules with the specified names or name patterns.
 Wildcards are permitted.
 You can also pipe the names to **Get-Module**.
@@ -427,6 +457,7 @@ Accept wildcard characters: True
 ```
 
 ### -CimSession
+
 Specifies a CIM session on the remote computer.
 Enter a variable that contains the CIM session or a command that gets the CIM session, such as a [Get-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession) command.
 
@@ -451,6 +482,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSSession
+
 Gets the modules in the specified user-managed Windows PowerShell session (PSSession).
 Enter a variable that contains the session, a command that gets the session, such as a Get-PSSession command, or a command that creates the session, such as a New-PSSession command.
 
@@ -473,6 +505,7 @@ Accept wildcard characters: False
 ```
 
 ### -Refresh
+
 Refreshes the cache of installed commands.
 The command cache is created when the session starts.
 It enables the Get-Command cmdlet to get commands from modules that are not imported into the session.
@@ -496,34 +529,42 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.String
+
 You can pipe module names to **Get-Module**.
+
 ## OUTPUTS
 
 ### System.Management.Automation.PSModuleInfo
+
 Get-Module returns objects that represent modules.
 When you use the **ListAvailable** parameter, Get-Module returns a **ModuleInfoGrouping** object, which is a type of **PSModuleInfo** object that has the same properties and methods.
+
 ## NOTES
-* Beginning in Windows PowerShell 3.0, the core commands that are included in Windows PowerShell are packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a snap-in (PSSnapin). By default, only the **Microsoft.PowerShell.Core** snap-in is added to the session by default. Modules are imported automatically on first use and you can use the Import-Module cmdlet to import them.
-* Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins ("PSSnapins"). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
+
+- Beginning in Windows PowerShell 3.0, the core commands that are included in Windows PowerShell are packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a snap-in (PSSnapin). By default, only the **Microsoft.PowerShell.Core** snap-in is added to the session by default. Modules are imported automatically on first use and you can use the Import-Module cmdlet to import them.
+- Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins ("PSSnapins"). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
 
   For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
 
-* **Get-Module** only gets modules in locations that are stored in the value of the **PSModulePath** environment variable ($env:PSModulePath). You can use the **Path** parameter of the Import-Module cmdlet to import modules in other locations, but you cannot use the **Get-Module** cmdlet to get them.
-* Also, beginning in Windows PowerShell 3.0, new properties have been added to the object that **Get-Module** returns that make it easier to learn about modules even before they are imported. All properties are populated before importing, including the **ExportedCommands**, **ExportedCmdlets** and **ExportedFunctions** properties that list the commands that the module exports.
-* The **ListAvailable** parameter gets only well-formed modules, that is, folders that contain at least one file whose base name (the name without the file name extension) is the same as the name of the module folder. Folders that contain files with different names are considered to be containers, but not modules.
+- **Get-Module** only gets modules in locations that are stored in the value of the **PSModulePath** environment variable ($env:PSModulePath). You can use the **Path** parameter of the Import-Module cmdlet to import modules in other locations, but you cannot use the **Get-Module** cmdlet to get them.
+- Also, beginning in Windows PowerShell 3.0, new properties have been added to the object that **Get-Module** returns that make it easier to learn about modules even before they are imported. All properties are populated before importing, including the **ExportedCommands**, **ExportedCmdlets** and **ExportedFunctions** properties that list the commands that the module exports.
+- The **ListAvailable** parameter gets only well-formed modules, that is, folders that contain at least one file whose base name (the name without the file name extension) is the same as the name of the module folder. Folders that contain files with different names are considered to be containers, but not modules.
 
   To get modules that are implemented as .dll files, but are not enclosed in a module folder, use both the **ListAvailable** and **All** parameters.
 
-* To use the CIM session feature, the remote computer must have WS-Management remoting and Windows Management Instrumentation (WMI), which is the Microsoft implementation of the Common Information Model (CIM) standard. The computer must also have the Module Discovery WMI provider or an alternate WMI provider that has the same basic features.
+- To use the CIM session feature, the remote computer must have WS-Management remoting and Windows Management Instrumentation (WMI), which is the Microsoft implementation of the Common Information Model (CIM) standard. The computer must also have the Module Discovery WMI provider or an alternate WMI provider that has the same basic features.
 
   You can use the CIM session feature on computers that are not running a Windows operating system and on Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
 
   You can also use the CIM parameters to get CIM modules from computers that have Windows PowerShell remoting enabled, including the local computer.
 When you create a CIM session on the local computer, Windows PowerShell uses DCOM, instead of WMI, to create the session.
+
 ## RELATED LINKS
 
 [Get-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession)

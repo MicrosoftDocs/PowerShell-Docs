@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Set-Content for FileSystem
 ---
-
 # Set-Content for FileSystem
+
 Replaces the contents of a file with contents that you specify.
 
 ## Syntax
@@ -17,6 +17,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ```
 
 ## Description
+
  In file system drives, the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet overwrites or replaces the content of one or more files with the content that you specify. This cmdlet is not valid on folders.
 
  Note: This custom cmdlet help file explains how the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet works in a file system drive. For information about the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) -Path $null" or see [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113392.
@@ -24,6 +25,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ## Parameters
 
 ### -Encoding <FileSystemCmdletProviderEncoding\>
+
  Specifies the file encoding. The default is ASCII.
 
  Valid values are:
@@ -55,6 +57,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -Force
+
  Replaces the contents of a file, even if the file is read-only. Without this parameter, read-only files are not changed.
 
 |||
@@ -66,6 +69,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -Stream <string\>
+
  Creates or replaces the content in the specified alternate data stream. If the stream does not yet exist, [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) creates it. Enter the stream name. Wildcards are not supported.
 
  Stream is a dynamic parameter that the FileSystem provider adds to the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet. This parameter works only in file system drives.
@@ -83,6 +87,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -Confirm
+
  Prompts you for confirmation before executing the command.
 
 |||
@@ -94,6 +99,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -WhatIf
+
  Describes what would happen if you executed the command without actually executing the command.
 
 |||
@@ -105,6 +111,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -UseTransaction
+
  Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../../About/about_Transactions.md).
 
 |||
@@ -116,9 +123,11 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### <CommonParameters\>
+
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).
 
 ## Inputs and Outputs
+
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.
 
 |||
@@ -129,7 +138,7 @@ Set-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ## Example 1
 
 ```
-C:\PS>Set-Content -Path C:\Test1\test*.txt -Value "Hello, World"
+PS>Set-Content -Path C:\Test1\test*.txt -Value "Hello, World"
 
 Description
 -----------
@@ -140,7 +149,7 @@ This command replaces the contents of all files in the Test1 directory that have
 ## Example 2
 
 ```
-C:\PS>Get-Date | Set-Content C:\Test1\date.csv
+PS>Get-Date | Set-Content C:\Test1\date.csv
 
 Description
 -----------
@@ -153,7 +162,7 @@ If the Test1 directory does not exist, the command fails, but if the file does n
 ## Example 3
 
 ```
-C:\PS>Get-Content Notice.txt | ForEach-Object {$_ -replace "Warning", "Caution"} | Set-Content Notice.txt
+PS>Get-Content Notice.txt | ForEach-Object {$_ -replace "Warning", "Caution"} | Set-Content Notice.txt
 
 Description
 -----------
@@ -170,7 +179,7 @@ The parentheses around the Get-Content command ensure that the Get operation is 
 ## Example 4
 
 ```
-C:\PS>Get-Content test.xml | Set-Content final.xml -Force -Encoding UTF8
+PS>Get-Content test.xml | Set-Content final.xml -Force -Encoding UTF8
 
 Description
 -----------
@@ -181,6 +190,7 @@ The command uses the Force parameter so that the command is successful even if t
 ```
 
 ## See Also
+
  [FileSystem Provider](../FileSystem-Provider.md)
  [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)
  [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)

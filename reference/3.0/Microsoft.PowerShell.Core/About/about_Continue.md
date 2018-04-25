@@ -1,10 +1,9 @@
----
+﻿---
 ms.date:  06/25/2017
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Continue
 ---
-
 # About Continue
 
 ## SHORT DESCRIPTION

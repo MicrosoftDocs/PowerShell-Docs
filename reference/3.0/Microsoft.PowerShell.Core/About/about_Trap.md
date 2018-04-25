@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Trap
 ---
-
 # About Trap
 
 ## SHORT DESCRIPTION
@@ -65,7 +64,7 @@ This function includes a nonsense string that causes an error. Running this
 function returns the following:
 
 ```powershell
-C:\PS> TrapTest
+PS> TrapTest
 Error found.
 ```
 
@@ -82,7 +81,7 @@ function TrapTest {
 Running this version of the function returns the following:
 
 ```powershell
-C:\PS> TrapTest
+PS> TrapTest
 Error found: The term 'nonsenseString' is not recognized as the name
 of a cmdlet, function, script file, or operable program. Check the
 spelling of the name, or if a path was included verify that the path
@@ -144,7 +143,7 @@ The term 'nonsenseString' is not recognized as the name of a cmdlet,
 function, script file, or operable program. Check the spelling of
 the name, or if a path was included verify that the path is correct,
 and then try again.
-At C:\PS>testScript1.ps1:3 char:19
+At PS>testScript1.ps1:3 char:19
 +     nonsenseString <<<<
 ```
 
@@ -205,7 +204,7 @@ The term 'NonsenseString' is not recognized as the name of a cmdlet,
 function, script file, or operable program. Check the spelling of the
 name, or if a path was included verify that the path is correct, and
 then try again.
-At C:\PS>TestScript1.ps1:3 char:19
+At PS>TestScript1.ps1:3 char:19
 +     NonsenseString <<<<
 
 function1 was completed
@@ -238,7 +237,7 @@ The term 'NonsenseString' is not recognized as the name of a cmdlet,
 function, script file, or operable program. Check the spelling of the
 name, or if a path was included verify that the path is correct, and
 then try again.
-At C:\PS>TestScript2.ps1:4 char:19
+At PS>TestScript2.ps1:4 char:19
 +     NonsenseString <<<<
 ```
 
@@ -258,13 +257,13 @@ PowerShell stops the function or script. The following sample function uses
 the Break keyword in a Trap statement:
 
 ```powershell
-C:\PS> function break_example {
+PS> function break_example {
     trap {"Error trapped"; break;}
     1/$null
     "Function completed."
     }
 
-C:\PS> break_example
+PS> break_example
 Error trapped
 Attempted to divide by zero.
 At line:4 char:7
@@ -282,12 +281,12 @@ The following sample function uses the Continue keyword in a Trap
 statement:
 
 ```powershell
-C:\PS> function continue_example {
+PS> function continue_example {
     trap {"Error trapped"; continue;}
     1/$null
     "Function completed."}
 
-C:\PS> continue_example
+PS> continue_example
 Error trapped
 Function completed.
 ```

@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/29/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Modules
 ---
-
 # About Modules
 
 ## Short Description
@@ -43,6 +42,7 @@ gets all commands in all installed modules, even if they are not yet in the
 session, so you can find a command and use it without importing.
 
 Any of the following commands will import a module into your session.
+
 ### Run the Command
 
 ```powershell
@@ -109,7 +109,7 @@ Create a Modules directory for the current user if one does not exist. To
 create a Modules directory, type:
 
 ```powershell
-New-Item -Type Directory -Path $HOME\Documents\WindowsPowerShell\Modules
+New-Item -ItemType Directory -Path $HOME\Documents\WindowsPowerShell\Modules
 ```
 
 Copy the entire module folder into the Modules directory. You can use any
@@ -486,17 +486,17 @@ NOTE: Remote sessions, including sessions that are started by using the
 commands are packaged in snap-ins.
 
 The following modules (or snap-ins) are installed with PowerShell.
-* Microsoft.PowerShell.Core
-* Microsoft.PowerShell.Diagnostics
-* Microsoft.PowerShell.Host
-* Microsoft.PowerShell.Management
-* Microsoft.PowerShell.Security
-* Microsoft.PowerShell.Utility
-* Microsoft.WSMan.Management
-* PSScheduledJob
-* PSWorkflow
-* PSWorkflowUtility
-* ISE
+- Microsoft.PowerShell.Core
+- Microsoft.PowerShell.Diagnostics
+- Microsoft.PowerShell.Host
+- Microsoft.PowerShell.Management
+- Microsoft.PowerShell.Security
+- Microsoft.PowerShell.Utility
+- Microsoft.WSMan.Management
+- PSScheduledJob
+- PSWorkflow
+- PSWorkflowUtility
+- ISE
 
 ## Logging Module Events
 

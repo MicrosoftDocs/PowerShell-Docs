@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Add-Content for FileSystem
 ---
-
 # Add-Content for FileSystem
+
 Appends content, such as words or data, to a file.
 
 ## Syntax
@@ -17,6 +17,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ```
 
 ## Description
+
  In file system drives, the [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) cmdlet appends the content you specify to the end of a file. This cmdlet is not valid on folders.
 
  Note: This custom cmdlet help file explains how the [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) cmdlet works in a file system drive. For information about the [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) -Path $null" or see [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113278.
@@ -24,6 +25,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ## Parameters
 
 ### -Encoding <FileSystemCmdletProviderEncoding\>
+
  Specifies the file encoding. The default is ASCII.
 
  Valid values are:
@@ -55,6 +57,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -Force
+
  Adds contents to files even if they are read-only. Without this parameter, read-only files are not affected.
 
 |||
@@ -66,6 +69,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -Stream <string\>
+
  Adds the content to the specified alternate data stream. If the stream does not yet, exist, [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) creates it. Enter the stream name. Wildcards are not supported.
 
  Stream is a dynamic parameter that the FileSystem provider adds to the [Add-Content](../../../Microsoft.PowerShell.Management/Add-Content.md) cmdlet. This parameter works only in file system drives.
@@ -81,6 +85,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -Confirm
+
  Prompts you for confirmation before executing the command.
 
 |||
@@ -92,6 +97,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -WhatIf
+
  Describes what would happen if you executed the command without actually executing the command.
 
 |||
@@ -103,6 +109,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### -UseTransaction
+
  Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../../About/about_Transactions.md).
 
 |||
@@ -114,9 +121,11 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 |Accept Wildcard Characters?|false|
 
 ### <CommonParameters\>
+
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).
 
 ## Inputs and Outputs
+
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.
 
 |||
@@ -127,7 +136,7 @@ Add-Content [-Encoding {<Unknown> | <String> | <Unicode> | <Byte> | <BigEndianUn
 ## Example 1
 
 ```
-C:\PS>Add-Content -Path *.txt -Exclude help* -Value "END"
+PS>Add-Content -Path *.txt -Exclude help* -Value "END"
 
 Description
 -----------
@@ -138,7 +147,7 @@ This command adds "END" to all text files in the current directory, except for t
 ## Example 2
 
 ```
-C:\PS>Add-Content -Path file1.log, file2.log -Value (get-date) -PassThru
+PS>Add-Content -Path file1.log, file2.log -Value (get-date) -PassThru
 
 Description
 -----------
@@ -151,7 +160,7 @@ The command uses the Get-Date cmdlet to get the date, and it uses the Value para
 ## Example 3
 
 ```
-C:\PS>Add-Content -Path monthly.txt -Value (Get-Content c:\rec1\weekly.txt)
+PS>Add-Content -Path monthly.txt -Value (Get-Content c:\rec1\weekly.txt)
 
 Description
 -----------
@@ -164,7 +173,7 @@ You can also copy the content of Weekly.txt to a variable, such as $w, and then 
 ## Example 4
 
 ```
-C:\PS>Add-Content -Value (Get-Content test.log) -Path C:\tests\test134\logs\test134.log
+PS>Add-Content -Value (Get-Content test.log) -Path C:\tests\test134\logs\test134.log
 
 Description
 -----------
@@ -181,7 +190,7 @@ The Force parameter is not required for this command. Add-Content creates direct
 ## Example 5
 
 ```
-C:\PS>Get-Content test.xml | Add-Content final.xml -Force -Encoding UTF8
+PS>Get-Content test.xml | Add-Content final.xml -Force -Encoding UTF8
 
 Description
 -----------
@@ -192,6 +201,7 @@ The command uses the Force parameter so that the command is successful even if t
 ```
 
 ## See Also
+
  [FileSystem Provider](../FileSystem-Provider.md)
  [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)
  [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)

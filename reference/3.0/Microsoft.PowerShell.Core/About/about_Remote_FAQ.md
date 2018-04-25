@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_FAQ
 ---
-
 # About Remote FAQ
 
 ## SHORT DESCRIPTION
@@ -468,7 +467,8 @@ changes.
 
   You can use the following Windows PowerShell command to add this entry:
 
-    ```powershell
+
+```powershell
     $parameters = @{
       Path='HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
       Name='LocalAccountTokenFilterPolicy'

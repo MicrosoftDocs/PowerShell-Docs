@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/28/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Hash_Tables
 ---
-
 # About Hash Tables
 
 ## SHORT DESCRIPTION
@@ -109,7 +108,7 @@ place the ordered attribute before the variable name, the command fails with
 the following error message.
 
 ```powershell
-PS C:\> [ordered]$hash = @{}
+PS> [ordered]$hash = @{}
 At line:1 char:1
 + [ordered]$hash = @{}
 + [!INCLUDE[]()]
@@ -122,7 +121,7 @@ eption
 To correct the expression, move the [ordered] attribute.
 
 ```powershell
-PS C:\> $hash = [ordered]@{}
+PS> $hash = [ordered]@{}
 ```
 
 You can cast an ordered dictionary to a hash table, but you cannot recover the
@@ -130,9 +129,9 @@ ordered attribute, even if you clear the variable and enter new values. To
 re-establish the order, you must remove and recreate the variable.
 
 ```
-PS C:\> [hashtable]$hash = [ordered]@{
+PS> [hashtable]$hash = [ordered]@{
 >> Number = 1; Shape = "Square"; Color = "Blue"}
-PS C:\> $hash
+PS> $hash
 
 Name                           Value
 ----                           -----
@@ -148,7 +147,7 @@ By default, a hash tables is displayed as a table with one column for keys and
 one for values.
 
 ```powershell
-C:\PS> $hash
+PS> $hash
 
 Name                           Value
 ----                           -----
@@ -161,12 +160,12 @@ Hash tables have Keys and Values properties. Use dot notation to display all
 of the keys or all of the values.
 
 ```powershell
-C:\PS> $hash.keys
+PS> $hash.keys
 Number
 Shape
 Color
 
-C:\PS> $hash.values
+PS> $hash.values
 1
 Square
 Blue
@@ -184,10 +183,10 @@ $hashtable.<key>
 For example:
 
 ```powershell
-C:\PS> $hash.Number
+PS> $hash.Number
 1
 
-C:\PS> $hash.Color
+PS> $hash.Color
 Blue
 ```
 
@@ -203,7 +202,7 @@ Hash tables have a Count property that indicates the number of key-value pairs
 in the hash table.
 
 ```powershell
-C:\PS> $hash.count
+PS> $hash.count
 3
 ```
 
@@ -214,7 +213,7 @@ If the key is a string value, enclose the key name in quotation marks.
 For example:
 
 ```powershell
-C:\PS> $hash["Number"]
+PS> $hash["Number"]
 1
 ```
 
@@ -296,28 +295,28 @@ The following statement creates a hash table of process name strings and
 process object values and saves it in the \$p variable.
 
 ```powershell
-$p = @{"PowerShell" = (get-process PowerShell);
-"Notepad" = (get-process notepad)}
+$p = @{"PowerShell" = (Get-Process PowerShell);
+"Notepad" = (Get-Process notepad)}
 ```
 
 You can display the hash table in \$p and use the key-name properties to
 display the values.
 
 ```powershell
-C:\PS> $p
+PS> $p
 
 Name                           Value
 ----                           -----
 PowerShell                     System.Diagnostics.Process (PowerShell)
 Notepad                        System.Diagnostics.Process (notepad)
 
-C:\PS> $p.PowerShell
+PS> $p.PowerShell
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     441      24    54196      54012   571     5.10   1788 PowerShell
 
-C:\PS> $p.keys | foreach {$p.$_.handles}
+PS> $p.keys | ForEach-Object {$p.$_.handles}
 441
 251
 ```
@@ -328,14 +327,14 @@ Service object that represents the WinRM service, and the value is the current
 status of the service.
 
 ```powershell
-C:\PS> $p = $p + @{(Get-Service WinRM) = ((Get-Service WinRM).Status)}
+PS> $p = $p + @{(Get-Service WinRM) = ((Get-Service WinRM).Status)}
 ```
 
 You can display and access the new key/value pair by using the same methods
 that you use for other pairs in the hash table.
 
 ```powershell
-C:\PS> $p
+PS> $p
 
 Name                           Value
 ----                           -----
@@ -343,7 +342,7 @@ PowerShell                     System.Diagnostics.Process (PowerShell)
 Notepad                        System.Diagnostics.Process (notepad)
 System.ServiceProcess.Servi... Running
 
-C:\PS> $p.keys
+PS> $p.keys
 PowerShell
 Notepad
 
@@ -351,7 +350,7 @@ Status   Name               DisplayName
 ------   ----               -----------
 Running  winrm              Windows Remote Management (WS-Manag...
 
-C:\PS> $p.keys | foreach {$_.name}
+PS> $p.keys | ForEach-Object {$_.name}
 winrm
 ```
 
@@ -361,13 +360,13 @@ in which the key is a string, Hash2, and the value is a hash table with three
 key/value pairs.
 
 ```powershell
-C:\PS> $p = $p + @{"Hash2"= @{a=1; b=2; c=3}}
+PS> $p = $p + @{"Hash2"= @{a=1; b=2; c=3}}
 ```
 
 You can display and access the new values by using the same methods.
 
 ```powershell
-C:\PS> $p
+PS> $p
 
 Name                           Value
 ----                           -----
@@ -376,7 +375,7 @@ Notepad                        System.Diagnostics.Process (notepad)
 System.ServiceProcess.Servi... Running
 Hash2                          {a, b, c}
 
-C:\PS> $p.Hash2
+PS> $p.Hash2
 
 Name                           Value
 ----                           -----
@@ -384,7 +383,7 @@ a                              1
 b                              2
 c                              3
 
-C:\PS> $p.Hash2.b
+PS> $p.Hash2.b
 2
 ```
 
@@ -401,7 +400,7 @@ For example, the following commands enumerate the keys and values in the hash
 table in the \$p variable and then sort the keys in alphabetical order.
 
 ```powershell
-C:\PS> $p.GetEnumerator() | Sort-Object -Property key
+PS> $p.GetEnumerator() | Sort-Object -Property key
 
 Name                           Value
 ----                           -----
@@ -414,7 +413,7 @@ The following command uses the same procedure to sort the hash values in
 descending order.
 
 ```powershell
-C:\PS> $p.getenumerator() | Sort-Object -Property Value -Descending
+PS> $p.getenumerator() | Sort-Object -Property Value -Descending
 
 Name                           Value
 ----                           -----
@@ -463,7 +462,7 @@ The following command creates a here-string of the key/value pairs and then
 saves it in the \$string variable.
 
 ```powershell
-C:\PS> $string = @"
+PS> $string = @"
 Msg1 = Type "Windows".
 Msg2 = She said, "Hello, World."
 Msg3 = Enter an alias (or "nickname").
@@ -474,7 +473,7 @@ This command uses the ConvertFrom-StringData cmdlet to convert the here-string
 into a hash table.
 
 ```powershell
-C:\PS> ConvertFrom-StringData $string
+PS> ConvertFrom-StringData $string
 
 Name                           Value
 ----                           -----

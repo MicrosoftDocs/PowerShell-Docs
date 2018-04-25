@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Jobs
 ---
-
 # About Remote Jobs
 
 ## SHORT DESCRIPTION
@@ -65,7 +64,7 @@ session (PSSession).
 The following command starts an interactive session on the Server01 computer.
 
 ```powershell
-C:\PS> Enter-PSSession -computername Server01
+PS> Enter-PSSession -computername Server01
 ```
 
 The command prompt changes to show that you are now connected to the Server01
@@ -87,7 +86,7 @@ This command saves the job object in the \$job variable.
 
 ```powershell
 Server01\C:> $job = start-job -scriptblock {
-  get-eventlog "Windows PowerShell"
+  Get-EventLog "Windows PowerShell"
 }
 ```
 
@@ -134,7 +133,7 @@ computer.
 
 ```powershell
 Server01\C:> Exit-PSSession
-C:\PS>
+PS>
 ```
 
 #### STEP 6: INVOKE-COMMAND: GET-CONTENT
@@ -151,9 +150,9 @@ to run a Get-Content command in the PSSession to view the contents of the
 file.
 
 ```powershell
-$s = new-pssession -computername Server01
-invoke-command -session $s -scriptblock {
-  get-content c:\logs\pslog.txt}
+$s = New-PSSession -ComputerName Server01
+Invoke-Command -Session $s -ScriptBlock {
+  Get-Content c:\logs\pslog.txt}
 ```
 
 ### START A REMOTE JOB THAT RETURNS THE RESULTS TO THE LOCAL COMPUTER \(ASJOB\)
@@ -180,8 +179,8 @@ that gets the events in the System log. You can use the JobName parameter to
 assign a display name to the job.
 
 ```powershell
-invoke-command -computername Server01 -scriptblock {
-  get-eventlog system} -asjob
+Invoke-Command -ComputerName Server01 -ScriptBlock {
+  Get-EventLog system} -AsJob
 ```
 
 The results of the command resemble the following sample output.
@@ -210,7 +209,7 @@ To determine whether the job is complete, use a Get-Job command. The following
 command gets all of the jobs that were started in the current session.
 
 ```powershell
-get-job
+Get-Job
 ```
 
 Because the remote job was started in the current session, a local Get-Job
@@ -234,7 +233,7 @@ job. It uses the session ID to identify the job. This command saves the job
 results in the $results variable. You can also redirect the results to a file.
 
 ```powershell
-$results = receive-job -id 1
+$results = Receive-Job -Id 1
 ```
 
 ### START A REMOTE JOB THAT KEEPS THE RESULTS ON THE REMOTE COMPUTER
@@ -264,7 +263,7 @@ is connected to the Server01 computer. The command saves the PSSession in the
 \$s variable.
 
 ```powershell
-$s = new-pssession -computername Server01
+$s = New-PSSession -ComputerName Server01
 ```
 
 The next command uses the Invoke-Command cmdlet to run a Start-Job command in
@@ -272,8 +271,8 @@ the PSSession. The Start-Job command and the Get-Eventlog command are enclosed
 in braces.
 
 ```powershell
-invoke-command -session $s -scriptblock {
-  start-job -scriptblock {get-eventlog system}}
+Invoke-Command -Session $s -ScriptBlock {
+  Start-Job -ScriptBlock {Get-EventLog system}}
 ```
 
 The results resemble the following sample output.
@@ -303,7 +302,7 @@ To see if the job is complete, use an Invoke-Command command to run a Get-Job
 command in the PSSession that is connected to the Server01 computer.
 
 ```powershell
-invoke-command -session $s -scriptblock {get-job}
+Invoke-Command -Session $s -ScriptBlock {Get-Job}
 ```
 
 The command returns a job object. The State property of the job object shows
@@ -327,8 +326,8 @@ results in the \$results variable. It uses the Keep parameter of Receive-Job
 to keep the result in the job cache on the remote computer.
 
 ```powershell
-$results = invoke-command -session $s -scriptblock {
-  receive-job -sessionid 2 -keep}
+$results = Invoke-Command -Session $s -ScriptBlock {
+  Receive-Job -Sessionid 2 -Keep}
 ```
 
 You can also redirect the results to a file on the local or remote computer.
@@ -336,8 +335,8 @@ The following command uses a redirection operator to save the results in a
 file on the Server01 computer.
 
 ```powershell
-invoke-command -session $s -command {
-  receive-job -sessionid 2 > c:\logs\pslog.txt}
+Invoke-Command -Session $s -ScriptBlock {
+  Receive-Job -Sessionid 2 > c:\logs\pslog.txt}
 ```
 
 ## SEE ALSO

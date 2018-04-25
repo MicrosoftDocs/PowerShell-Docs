@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Environment_Variables
 ---
-
 # About Environment Variables
 
 ## SHORT DESCRIPTION
@@ -92,7 +91,7 @@ by the name of the variable. For example, to display the value of the
 COMPUTERNAME environment variable, type:
 
 ```powershell
-Get-Childitem Env:Computername
+Get-ChildItem Env:Computername
 ```
 
 To display the values of all the environment variables, type:
@@ -220,7 +219,7 @@ more information about preference variables, see
 
 The environment variables that store preferences include:
 
-* PSExecutionPolicyPreference
+- PSExecutionPolicyPreference
 
   Stores the execution policy set for the current session. This environment
   variable exists only when you set an execution policy for a single session.
@@ -235,7 +234,7 @@ The environment variables that store preferences include:
 
     For more information, see [about_Execution_Policies](about_Execution_Policies.md).
 
-* PSModulePath
+- PSModulePath
 
   Stores the paths to the default module directories. Windows PowerShell looks
   for modules in the specified directories when you do not specify a full path

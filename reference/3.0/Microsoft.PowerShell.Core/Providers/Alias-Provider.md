@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/15/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Alias Provider
 ---
-
 # *Alias* provider
 
 ## Provider name

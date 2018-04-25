@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Transactions
 ---
-
 # About Transactions
 
 ## SHORT DESCRIPTION
@@ -50,13 +49,13 @@ PowerShell includes several cmdlets designed for managing transactions.
 For a list of transaction cmdlets, type:
 
 ```powershell
-get-command *transaction
+Get-Command *transaction
 ```
 
 For detailed information about the cmdlets, type:
 
 ```powershell
-get-help use-transaction -detailed
+Get-Help use-transaction -Detailed
 ```
 
 ## TRANSACTION-ENABLED ELEMENTS
@@ -75,7 +74,7 @@ providers in your session that support transactions, use the following command
 to find the "Transactions" value in the Capabilities property of providers:
 
 ```powershell
-get-psprovider | where {$_.Capabilities -like "transactions"}
+Get-PSProvider | Where-Object {$_.Capabilities -like "transactions"}
 ```
 
 For more information about a provider, see the Help for the provider. To get
@@ -88,7 +87,7 @@ get-help <provider-name>
 For example, to get Help for the Registry provider, type:
 
 ```powershell
-get-help registry
+Get-Help registry
 ```
 
 ## THE USETRANSACTION PARAMETER
@@ -104,7 +103,7 @@ there is no active transaction, the command fails.
 To find cmdlets with the UseTransaction parameter, type:
 
 ```powershell
-get-help * -parameter UseTransaction
+Get-Help * -Parameter UseTransaction
 ```
 
 In PowerShell core, all of the cmdlets designed to work with PowerShell
@@ -222,7 +221,7 @@ To create a transaction, use the Start-Transaction cmdlet. The following
 command starts a transaction with the default settings.
 
 ```powershell
-start-transaction
+Start-Transaction
 ```
 
 To include commands in the transaction, use the UseTransaction parameter of
@@ -240,7 +239,7 @@ UseTransaction parameter of the New-Item cmdlet to include the command in the
 active transaction.
 
 ```powershell
-new-item MyCompany -UseTransaction
+New-Item MyCompany -UseTransaction
 ```
 
 The command returns an object that represents the new key, but because the
@@ -258,7 +257,7 @@ To commit the transaction, use the Complete-Transaction cmdlet. Because it
 always affects the active transaction, you cannot specify the transaction.
 
 ```powershell
-complete-transaction
+Complete-Transaction
 ```
 
 As a result, the MyCompany key is added to the registry.
@@ -282,7 +281,7 @@ To create a transaction, use the Start-Transaction cmdlet. The following
 command starts a transaction with the default settings.
 
 ```powershell
-start-transaction
+Start-Transaction
 ```
 
 The following command, which creates the MyOtherCompany key, uses the
@@ -290,7 +289,7 @@ UseTransaction parameter of the New-Item cmdlet to include the command in the
 active transaction.
 
 ```powershell
-new-item MyOtherCompany -UseTransaction
+New-Item MyOtherCompany -UseTransaction
 ```
 
 The command returns an object that represents the new key, but because the
@@ -308,7 +307,7 @@ To roll back the transaction, use the Undo-Transaction cmdlet. Because it
 always affects the active transaction, you do not specify the transaction.
 
 ```powershell
-Undo-transaction
+Undo-Transaction
 ```
 
 The result is that the MyOtherCompany key is not added to the registry.
@@ -339,7 +338,7 @@ The following example shows how to use the Get-ChildItem command (the alias is
 The following command starts a transaction.
 
 ```powershell
-start-transaction
+Start-Transaction
 ```
 
 The following command uses the New-ItemProperty cmdlet to add the MyKey
@@ -347,7 +346,7 @@ registry entry to the MyCompany key. The command uses the UseTransaction
 parameter to include the command in the transaction.
 
 ```powershell
-new-itemproperty -path MyCompany -Name MyKey -value 123 -UseTransaction
+New-ItemProperty -Path MyCompany -Name MyKey -Value 123 -UseTransaction
 ```
 
 The command returns an object representing the new registry entry, but the
@@ -405,7 +404,7 @@ commands affect the data immediately, but they do not affect the transaction.
 The following command starts a transaction in the HKCU:\Software registry key.
 
 ```powershell
-start-transaction
+Start-Transaction
 ```
 
 The next three commands use the New-Item cmdlet to add keys to the registry.
@@ -415,9 +414,9 @@ the second command is not included in the transaction, it is effective
 immediately.
 
 ```powershell
-new-item MyCompany1 -UseTransaction
-new-item MyCompany2
-new-item MyCompany3 -UseTransaction
+New-Item MyCompany1 -UseTransaction
+New-Item MyCompany2
+New-Item MyCompany3 -UseTransaction
 ```
 
 To view the current state of the registry, use a Get-ChildItem ("dir") command
@@ -444,7 +443,7 @@ SKC  VC Name                           Property
 The following command commits the transaction.
 
 ```powershell
-complete-transaction
+Complete-Transaction
 ```
 
 Now, the keys that were added as part of the transaction appear in the
@@ -477,7 +476,7 @@ expected and should terminate the transaction.
 The first command starts a transaction in the HKCU:\Software registry key.
 
 ```powershell
-start-transaction
+Start-Transaction
 ```
 
 The following command uses the New-Item cmdlet to add the MyCompany key to the
@@ -515,7 +514,7 @@ The following command starts a transaction with a
 rollback preference of "Never".
 
 ```powershell
-start-transaction -rollbackpreference Never
+Start-Transaction -RollbackPreference Never
 ```
 
 In this case, when the command fails, the transaction is not automatically
@@ -549,7 +548,7 @@ Microsoft.PowerShell.Commands.Management.TransactedString class.
 The following command starts a transaction.
 
 ```powershell
-start-transaction
+Start-Transaction
 ```
 
 The following New-Object command creates an instance of the TransactedString
@@ -573,7 +572,7 @@ set as the value of the ScriptBlock parameter of Use-Transaction. The
 UseTransaction parameter (UseTx) is required.
 
 ```powershell
-use-transaction {$t.append(" PowerShell")} -usetx
+Use-Transaction {$t.append(" PowerShell")} -usetx
 ```
 
 To see the current content of the transacted string in $t, use the ToString
@@ -593,7 +592,7 @@ To see the current content of the transacted string in $t from within the
 transaction, embed the expression in a Use-Transaction command.
 
 ```powershell
-use-transaction {$s.tostring()} -usetx
+Use-Transaction {$s.tostring()} -usetx
 ```
 
 The output shows the transaction view.
@@ -605,7 +604,7 @@ PowerShell
 The following command commits the transaction.
 
 ```powershell
-complete-transaction
+Complete-Transaction
 ```
 
 To see the final string:
@@ -626,14 +625,14 @@ This example shows how to view and manage a multi-subscriber transaction.
 Begin by starting a transaction in the HKCU:\Software key.
 
 ```powershell
-start-transaction
+Start-Transaction
 ```
 
 The following command uses the Get-Transaction command to get the active
 transaction.
 
 ```powershell
-get-transaction
+Get-Transaction
 ```
 
 The result shows the object that represents the active transaction.
@@ -648,7 +647,7 @@ The following command adds the MyCompany key to the registry. The command uses
 the UseTransaction parameter to include the command in the transaction.
 
 ```powershell
-new-item MyCompany -UseTransaction
+New-Item MyCompany -UseTransaction
 ```
 
 The following command uses the Start-Transaction command to start a
@@ -657,7 +656,7 @@ scenario is more likely to happen when you run a script that contains a
 transaction.
 
 ```powershell
-start-transaction
+Start-Transaction
 ```
 
 A Get-Transaction command shows that the subscriber count on the transaction
@@ -674,7 +673,7 @@ entry to the MyCompany key. It uses the UseTransaction parameter to include
 the command in the transaction.
 
 ```powershell
-new-itemproperty -path MyCompany -name MyKey -UseTransaction
+New-ItemProperty -Path MyCompany -Name MyKey -UseTransaction
 ```
 
 The MyCompany key does not exist in the registry, but this command succeeds
@@ -684,7 +683,7 @@ The following command commits the transaction. If it rolled back the
 transaction, the transaction would be rolled back for all the subscribers.
 
 ```powershell
-complete-transaction
+Complete-Transaction
 ```
 
 A Get-Transaction command shows that the subscriber count on the transaction
@@ -701,7 +700,7 @@ command. To commit a multi-subscriber transaction, you must enter one
 Complete-Transaction command for each Start-Transaction command.
 
 ```powershell
-complete-transaction
+Complete-Transaction
 ```
 
 Another Get-Transaction command shows that the transaction has been committed.
@@ -724,14 +723,14 @@ new transaction the active transaction.
 Begin by starting a transaction in the HKCU:\\Software key.
 
 ```powershell
-start-transaction
+Start-Transaction
 ```
 
 The following command uses the Get-Transaction command to get the active
 transaction.
 
 ```powershell
-get-transaction
+Get-Transaction
 ```
 
 The result shows the object that represents the active transaction.
@@ -747,7 +746,7 @@ transaction. It uses the UseTransaction parameter (UseTx) to include the
 command in the active transaction.
 
 ```powershell
-new-item MyCompany -use
+New-Item MyCompany -use
 ```
 
 The following command starts a new transaction. The command uses the
@@ -755,7 +754,7 @@ Independent parameter to indicate that this transaction is not a subscriber to
 the active transaction.
 
 ```powershell
-start-transaction -independent
+Start-Transaction -Independent
 ```
 
 When you create an independent transaction, the new (most-recently created)
@@ -763,7 +762,7 @@ transaction becomes the active transaction. You can use a Get-Transaction
 command to get the active transaction.
 
 ```powershell
-get-transaction
+Get-Transaction
 ```
 
 Note that the SubscriberCount of the transaction is 1, indicating that there
@@ -783,7 +782,7 @@ UseTransaction parameter (UseTx) to include the command in the active
 transaction.
 
 ```powershell
-new-item MyOtherCompany -usetx
+New-Item MyOtherCompany -usetx
 ```
 
 Now, roll back the transaction. If there were a single transaction with two
@@ -795,14 +794,14 @@ transaction cancels the registry changes and makes the original transaction
 the active transaction.
 
 ```powershell
-undo-transaction
+Undo-Transaction
 ```
 
 A Get-Transaction command confirms that the original transaction is still
 active in the session.
 
 ```powershell
-get-transaction
+Get-Transaction
 ```
 
 ```output
@@ -814,7 +813,7 @@ Error                1                 Active
 The following command commits the active transaction.
 
 ```powershell
-complete-transaction
+Complete-Transaction
 ```
 
 A Get-ChildItem command shows that the registry has been changed.

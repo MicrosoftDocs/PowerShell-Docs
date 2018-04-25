@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -85,7 +85,7 @@ Get-ChildItem -Path Function:
  The `-Wrap` parameter directs text that does not fit on the line onto the next line. The `-Autosize` parameter resizes the table columns to accommodate the text.
 
 ```powershell
-Get-Item -Path man | Format-Table -Wrap -Autosize
+Get-Item -Path man | Format-Table -Wrap -AutoSize
 ```
 
  If you are in a different drive, add the drive name (`Function:`) to the path.
@@ -98,7 +98,7 @@ Get-Item -Path man | Format-Table -Wrap -Autosize
  Because the name ends in a colon, which is the syntax for a drive, you must qualify the path with the drive name. Within the `Function:` drive, you can use either format. In the second command, the dot (`.`) represents the current location.
 
 ```
-c:\PS> Get-Item -Path Function:c:
+PS> Get-Item -Path Function:c:
 PS Function> Get-Item -Path .\c:
 ```
 

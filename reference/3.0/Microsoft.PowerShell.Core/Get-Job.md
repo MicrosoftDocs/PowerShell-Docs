@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,48 +7,57 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113328
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Get-Job
 ---
-
 # Get-Job
+
 ## SYNOPSIS
+
 Gets Windows PowerShell background jobs that are running in the current session.
+
 ## SYNTAX
 
 ### SessionIdParameterSet (Default)
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [[-Id] <Int32[]>] [<CommonParameters>]
 ```
 
 ### CommandParameterSet
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [-Command <String[]>] [<CommonParameters>]
 ```
 
 ### StateParameterSet
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [-State] <JobState> [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [-InstanceId] <Guid[]> [<CommonParameters>]
 ```
 
 ### NameParameterSet
+
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [-Name] <String[]> [<CommonParameters>]
 ```
 
 ### FilterParameterSet
+
 ```
 Get-Job [-Filter] <Hashtable> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Job** cmdlet gets objects that represent the background jobs that were started in the current session.
 You can use **Get-Job** to get jobs that were started by using the Start-Job cmdlet, or by using the **AsJob** parameter of any cmdlet.
 
@@ -67,83 +76,97 @@ To find the job type of a job, use the **PSJobTypeName** property of the job.
 
 To enable **Get-Job** to get a custom job type, import the module that supports the custom job type into the session before running a **Get-Job** command, either by using the Import-Module cmdlet or by using or getting a cmdlet in the module.
 For information about a particular custom job type, see the documentation of the custom job type feature.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> Get-Job
+PS> Get-Job
 ```
 
 This command gets all background jobs started in the current session.
 It does not include jobs created in other sessions, even if the jobs run on the local computer.
+
 ### Example 2
+
 ```
 The first command uses the **Get-Job** cmdlet to get a job. It uses the Name parameter to identify the job. The command stores the job object that **Get-Job** returns in the $j variable. In this example, there is only one job with the specified name.
-PS C:\> $j = Get-Job -Name Job1
+PS> $j = Get-Job -Name Job1
 
 The second command gets the **InstanceId** property of the object in the $j variable and stores it in the $ID variable.
-PS C:\> $ID = $j.InstanceID
+PS> $ID = $j.InstanceID
 
 The third command displays the value of the $ID variable.
-PS C:\> $ID
+PS> $ID
 
 Guid
 ----
 03c3232e-1d23-453b-a6f4-ed73c9e29d55
 
 The fourth command uses Stop-Job cmdlet to stop the job. It uses the **InstanceId** parameter to identify the job and $ID variable to represent the instance ID of the job.
-PS C:\> Stop-Job -InstanceId $ID
+PS> Stop-Job -InstanceId $ID
 ```
 
 These commands show how to get the instance ID of a job and then use it to stop a job.
 Unlike the name of a job, which is not unique, the instance ID is unique.
+
 ### Example 3
+
 ```
-PS C:\> Get-Job -Command "*get-process*"
+PS> Get-Job -Command "*get-process*"
 ```
 
 This command gets the jobs on the system that include a Get-Process command.
 The command uses the **Command** parameter of **Get-Job** to limit the jobs retrieved.
 The command uses wildcard characters (*) to get jobs that include a **Get-Process** command anywhere within the command string.
+
 ### Example 4
+
 ```
-PS C:\> "*get-process*" | Get-Job
+PS> "*get-process*" | Get-Job
 ```
 
 Like the command in the  previous example, this command gets the jobs on the system that include a Get-Process command.
 The command uses a pipeline operator (|) to send a string (in quotation marks) to the **Get-Job** cmdlet.
 It is the equivalent of the previous command.
+
 ### Example 5
+
 ```
-PS C:\> Get-Job -State NotStarted
+PS> Get-Job -State NotStarted
 ```
 
 This command gets only those jobs that have been created but have not yet been started.
 This includes jobs that are scheduled to run in the future and those not yet scheduled.
+
 ### Example 6
+
 ```
-PS C:\> Get-Job -name Job*
+PS> Get-Job -name Job*
 ```
 
 This command gets all jobs that have job names beginning with "job".
 Because "job\<number\>" is the default name for a job, this command gets all jobs that do not have an explicitly assigned name.
+
 ### Example 7
+
 ```
 The first command uses the Start-Jobcmdlet to start a background job that runs a **Get-Process** command on the local computer. The command uses the **Name** parameter of **Start-Job** to assign a friendly name to the job.
-PS C:\> Start-Job -ScriptBlock {Get-Process} -Name MyJob
+PS> Start-Job -ScriptBlock {Get-Process} -Name MyJob
 
 The second command uses Get-Job to get the job. It uses the **Name** parameter of **Get-Job** to identify the job. The command saves the resulting job object in the $j variable.
-PS C:\>
+PS>
 $j = Get-Job -Name MyJob
 
 The third command displays the value of the job object in the $j variable. The value of the **State** property shows that the job is complete. The value of the **HasMoreData** property shows that there are results available from the job that have not yet been retrieved.
-PS C:\> $j
+PS> $j
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 6      MyJob           BackgroundJob   Completed     True            localhost            Get-Process
 
 The fourth command uses the Receive-Job cmdlet to get the results of the job. It uses the job object in the $j variable to represent the job. You can also use a pipeline operator to send a job object to Receive-Job.
-PS C:\> Receive-Job -Job $j
+PS> Receive-Job -Job $j
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     124       4    13572      12080    59            1140 audiodg
@@ -153,47 +176,51 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 This example shows how to use **Get-Job** to get a job object, and then it shows how to use the job object to represent the job in a command.
+
 ### Example 8
+
 ```
 The first command uses the Start-Job cmdlet to start a job on the local computer.
-PS C:\> Start-Job -ScriptBlock {Get-EventLog System}
+PS> Start-Job -ScriptBlock {Get-EventLog System}
 
 The second command uses the **AsJob** parameter of the Invoke-Command cmdlet to start a job on the S1 computer. Even though the commands in the job run on the remote computer, the job object is created on the local computer, so you use local commands to manage the job.
-PS C:\> Invoke-Command -ComputerName S1 -ScriptBlock {Get-EventLog System} -AsJob
+PS> Invoke-Command -ComputerName S1 -ScriptBlock {Get-EventLog System} -AsJob
 
 The third command uses the **Invoke-Command** cmdlet to run a **Start-Job** command on the S2 computer. With this method, the job object is created on the remote computer, so you use remote commands to manage the job.
-PS C:\> Invoke-Command -ComputerName S2 -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
+PS> Invoke-Command -ComputerName S2 -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
 
 The fourth command uses **Get-Job** to get the jobs stored on the local computer. The **PSJobTypeName** property of jobs, introduced in Windows PowerShell 3.0, shows that the local job started by using the Start-Job cmdlet is a background job and the job started in a remote session by using the Invoke-Command cmdlet is a remote job..
-PS C:\> Get-Job
+PS> Get-Job
 Id     Name       PSJobTypeName   State         HasMoreData     Location        Command
 --     ----       -------------   -----         -----------     --------        -------
 1      Job1       BackgroundJob   Running       True            localhost       Get-EventLog System
 2      Job2       RemoteJob       Running       True            S1              Get-EventLog System
 
 The fifth command uses **Invoke-Command** to run a **Get-Job** command on the S2 computer.The sample output shows the results of the Get-Job command. On the S2 computer, the job appears to be a local job. The computer name is "localhost" and the job type is a background job.For more information about running background jobs on remote computers, see about_Remote_Jobs.
-PS C:\> Invoke-Command -ComputerName S2 -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
+PS> Invoke-Command -ComputerName S2 -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
 Id    Name     PSJobTypeName  State      HasMoreData   Location   Command
 --    ----     -------------  -----      -----------   -------    -------
 4     Job4     BackgroundJob  Running    True          localhost  Get-Eventlog System
 ```
 
 This example demonstrates that the Get-Job cmdlet can get all of the jobs that were started in the current session, even if they were started by using different methods.
+
 ### Example 9
+
 ```
 The first command uses the Start-Job cmdlet to start a job on the local computer. The job object that **Start-Job** returns shows that the job failed. The value of the **State** property is "Failed".
-PS C:\> Start-Job -ScriptBlock {Get-Process}
+PS> Start-Job -ScriptBlock {Get-Process}
 Id     Name       PSJobTypeName   State       HasMoreData     Location             Command
 --     ----       -------------   -----       -----------     --------             -------
 1      Job1       BackgroundJob   Failed      False           localhost            Get-Process
 
 The second command uses the **Get-Job** cmdlet to get the job. The command uses the dot method to get the value of the **JobStateInfo** property of the object. It uses a pipeline operator to send the object in the **JobStateInfo** property to the Format-List cmdlet, which formats all of the properties of the object (*) in a list.The result of the **Format-List** command shows that the value of the **Reason** property of the job is blank.
-PS C:\> (Get-Job).JobStateInfo | Format-List -Property *
+PS> (Get-Job).JobStateInfo | Format-List -Property *
 State  : Failed
 Reason :
 
 The third command investigates further. It uses a **Get-Job** command to get the job and then uses a pipeline operator to send the entire job object to the **Format-List** cmdlet, which displays all of the properties of the job in a list.The display of all properties in the job object shows that the job contains a child job named "Job2".
-PS C:\> Get-Job | Format-List -Property *
+PS> Get-Job | Format-List -Property *
 HasMoreData   : False
 
 StatusMessage :
@@ -229,22 +256,24 @@ Warning       : {}
 StateChanged  :
 
 The fourth command uses **Get-Job** to get the job object that represents the Job2 child job. This is the job in which the command actually ran. It uses the dot method to get the **Reason** property of the **JobStateInfo** property.The result shows that the job failed because of an "Access Denied" error. In this case, the user forgot to use the "Run as administrator" option when opening Windows PowerShell.Because background jobs use the remoting features of Windows PowerShell, the computer must be configured for remoting to run a job, even when the job runs on the local computer.For information about requirements for remoting in Windows PowerShell, see about_Remote_Requirements. For troubleshooting tips, see about_Remote_Troubleshooting.
-PS C:\> (Get-Job -Name job2).JobStateInfo.Reason
+PS> (Get-Job -Name job2).JobStateInfo.Reason
 Connecting to remote server using WSManCreateShellEx api failed. The async callback gave the following error message : Access is denied.
 ```
 
 This command shows how to use the job object that Get-Job returns to investigate why a job failed.
 It also shows how to get the child jobs of each job.
+
 ### Example 10
+
 ```
 The first command uses the **Workflow** keyword to create the "WFProcess" workflow.
-PS C:\> Workflow WFProcess {Get-Process}
+PS> Workflow WFProcess {Get-Process}
 
 The second command uses the **AsJob** parameter of the WFProcess workflow to run the workflow as a background job. It uses the **JobName** parameter of the workflow to specify a name for the job, and the **PSPrivateMetadata** parameter of the workflow to specify a custom ID.
-PS C:\> WFProcess -AsJob -JobName WFProcessJob -PSPrivateMetadata @{MyCustomId = 92107}
+PS> WFProcess -AsJob -JobName WFProcessJob -PSPrivateMetadata @{MyCustomId = 92107}
 
 The third command uses the **Filter** parameter of **Get-Job** to get the job by custom ID that was specified in the **PSPrivateMetadata** parameter.
-PS C:\> Get-Job -Filter @{MyCustomId = 92107}
+PS> Get-Job -Filter @{MyCustomId = 92107}
 Id     Name            State         HasMoreData     Location             Command
 
 --     ----            -----         -----------     --------             -------
@@ -254,10 +283,12 @@ Id     Name            State         HasMoreData     Location             Comman
 
 This example shows how to use the **Filter** parameter to get a workflow job.
 The **Filter** parameter, introduced in Windows PowerShell 3.0 is valid only on custom job types, such as workflow jobs and scheduled jobs.
+
 ### Example 11
+
 ```
 The first command gets the jobs in the current session. The output includes a background job, a remote job and several instances of a scheduled job. The remote job, Job4, appears to have failed.
-PS C:\> Get-Job
+PS> Get-Job
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 2      Job2            BackgroundJob   Completed     True            localhost            .\Get-Archive.ps1
@@ -268,7 +299,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 10     UpdateHelpJob   PSScheduledJob  Completed     True            localhost            Update-Help
 
 The second command uses the **IncludeChildJob** parameter of **Get-Job**. The output adds the child jobs of all jobs that have child jobs.In this case, the revised output shows that only the Job5 child job of Job4 failed.
-PS C:\> Get-Job -IncludeChildJob
+PS> Get-Job -IncludeChildJob
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 2      Job2            BackgroundJob   Completed     True            localhost           .\Get-Archive.ps1
@@ -282,7 +313,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 10     UpdateHelpJob   PSScheduledJob  Completed     True            localhost            Update-Help
 
 The third command uses the **ChildJobState** parameter with a value of **Failed**.The output includes all parent jobs and only the child jobs that failed.
-PS C:\> Get-Job -Name Job4 -ChildJobState Failed
+PS> Get-Job -Name Job4 -ChildJobState Failed
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 2      Job2            BackgroundJob   Completed     True            localhost           .\Get-Archive.ps1
@@ -294,16 +325,18 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 10     UpdateHelpJob   PSScheduledJob  Completed     True            localhost            Update-Help
 
 The fifth command uses the **JobStateInfo** property of jobs and its **Reason** property to find out why Job5 failed.
-PS C:\> (Get-Job -Name Job5).JobStateInfo.Reason
+PS> (Get-Job -Name Job5).JobStateInfo.Reason
 Connecting to remote server Server01 failed with the following error message :
 Access is denied.
 For more information, see the about_Remote_Troubleshooting Help topic.
 ```
 
 This example shows the effect of using the **IncludeChildJob** and **ChildJobState** parameters of the **Get-Job** cmdlet.
+
 ## PARAMETERS
 
 ### -Command
+
 Gets the jobs that include the specified command.
 The default is all jobs.
 Enter a command (as a string).
@@ -322,6 +355,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Gets jobs that satisfy all of the conditions established in the associated hash table.
 Enter a hash table where the keys are job properties and the values are job property values.
 
@@ -344,6 +378,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Gets only jobs with the specified IDs.
 
 The ID is an integer that uniquely identifies the job within the current session.
@@ -364,6 +399,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeChildJob
+
 Returns child jobs, in addition to parent jobs.
 
 This parameter is particularly useful for investigating workflow jobs, for which **Get-Job** returns a container parent job, and job failures, because the reason for the failure is saved in a property of the child job.
@@ -383,6 +419,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Gets jobs with the specified instance IDs.
 The default is all jobs.
 
@@ -402,6 +439,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Gets the job with the specified friendly names.
 Enter a job name, or use wildcard characters to enter a job name pattern.
 By default, **Get-Job** gets all jobs in the current session.
@@ -419,6 +457,7 @@ Accept wildcard characters: False
 ```
 
 ### -State
+
 Gets only jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping.
 By default, **Get-Job** gets all the jobs in the current session.
@@ -438,6 +477,7 @@ Accept wildcard characters: False
 ```
 
 ### -After
+
 Gets completed jobs that ended after the specified date and time.
 Enter a **DateTime** object, such as one returned by the Get-Date cmdlet or a string that can be converted to a **DateTime** object, such as "Dec 1, 2012 2:00 AM" or "11/06".
 
@@ -460,6 +500,7 @@ Accept wildcard characters: False
 ```
 
 ### -Before
+
 Gets completed jobs that ended before the specified date and time.
 Enter a **DateTime** object, such as one returned by the Get-Date cmdlet or a string that can be converted to a **DateTime** object, such as "Dec 1, 2012 2:00 AM" or "11/06".
 
@@ -482,6 +523,7 @@ Accept wildcard characters: False
 ```
 
 ### -ChildJobState
+
 Gets only the child jobs that have the specified state.
 Valid values are: **NotStarted**, **Running**, **Completed**, **Failed**, **Stopped**, **Blocked**, **Suspended**, **Disconnected**, **Suspending**, and **Stopping**.
 
@@ -504,6 +546,7 @@ Accept wildcard characters: False
 ```
 
 ### -HasMoreData
+
 Gets only jobs with the specified **HasMoreData** property value.
 The **HasMoreData** property indicates whether all job results have been received in the current session.
 To get jobs that have more results, type `-HaveMoreData:true`.
@@ -535,6 +578,7 @@ Accept wildcard characters: False
 ```
 
 ### -Newest
+
 Gets the jobs that ended most recently.
 Enter the number of jobs to return.
 
@@ -556,23 +600,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### System.Management.Automation.RemotingJob
+
 **Get-Job** returns objects that represent the jobs in the session.
+
 ## NOTES
-* The **PSJobTypeName** property of jobs indicates the job type of the job. The property value is determined by the job type author. The following list shows common job types.
+
+- The **PSJobTypeName** property of jobs indicates the job type of the job. The property value is determined by the job type author. The following list shows common job types.
 
   -  **BackgroundJob**: Local job started by using the Start-Job cmdlet.
 
   - **RemoteJob**: Job started in a PSSession by using the **AsJob** parameter of the Invoke-Command cmdlet.
 
   - **PSWorkflowJob**: Job started by using the **AsJob** common parameter of workflows.
+
 ## RELATED LINKS
 
 [Invoke-Command](Invoke-Command.md)

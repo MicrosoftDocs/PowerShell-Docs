@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -113,7 +113,7 @@ $WhatIfPreference
  This command uses the `-LiteralPath` parameter of [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) to get the value of the `?` variable from within the `Variable:` drive. [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) does not attempt to resolve any wildcards in the values of the `-LiteralPath` parameter.
 
 ```powershell
-Get-ChildItem -Literalpath ?
+Get-ChildItem -LiteralPath ?
 ```
 
  To display the value of a variable with a special character name without a cmdlet, type a dollar sign (`$`) and the variable name. For example, to display the value of the `?` variable, type `$?`.
