@@ -17,10 +17,11 @@ Starting with version 5.1, PowerShell is available in different editions which d
 - **Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.
 
 **Learn more about using PowerShell Editions**
-- [Determine running edition of PowerShell]()
-- [Declare a module's compatibility to specific PowerShell versions]()
-- [Filter Get-Module results by CompatiblePSEditions]()
-- [Prevent script execution unless run on a compatible edition of PowerShell]()
+
+- [Determine running edition of PowerShell using $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
+- [Filter Get-Module results by CompatiblePSEditions using PSEdition parameter](/powershell/module/microsoft.powershell.core/get-module)
+- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/gallery/psget/script/scriptwithpseditionsupport)
+- [Declare a module's compatibility to specific PowerShell versions](/powershell/gallery/psget/module/modulewithpseditionsupport)
 
 ## Catalog Cmdlets
 
