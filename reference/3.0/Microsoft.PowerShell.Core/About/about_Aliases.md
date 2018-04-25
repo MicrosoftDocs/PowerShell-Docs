@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/27/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Aliases
 ---
-
 # About Aliases
 
 ## SHORT DESCRIPTION
@@ -148,7 +147,7 @@ Get-Alias returns only one type of object, an AliasInfo object
 include a hyphen, such as "cd" are displayed in the following format:
 
 ```powershell
-PS C:\> Get-Alias ac
+PS> Get-Alias ac
 
 CommandType     Name                    Version    Source
 -----------     ----                    -------    ------
@@ -177,7 +176,7 @@ For example, the following command creates the syslog function. This function
 represents the `Get-Eventlog -LogName System` command:
 
 ```powershell
-function Get-SystemEventlog {Get-Eventlog -LogName System}
+function Get-SystemEventlog {Get-EventLog -LogName System}
 Set-Alias -Name syslog -Value Get-SystemEventlog
 ```
 

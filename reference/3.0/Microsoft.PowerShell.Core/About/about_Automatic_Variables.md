@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/21/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Automatic_Variables
 ---
-
 # About Automatic Variables
 
 ## SHORT DESCRIPTION
@@ -286,13 +285,13 @@ profile in commands. For example, you can use it in a command to determine
 whether a profile has been created:
 
 ```powershell
-test-path $profile
+Test-Path $profile
 ```
 
 Or, you can use it in a command to create a profile:
 
 ```powershell
-new-item -type file -path $pshome -force
+New-Item -ItemType file -Path $pshome -Force
 ```
 
 You can also use it in a command to open the profile in Notepad:
@@ -460,6 +459,7 @@ this variable can also be found in the Sender property of the PSEventArgs
 Contains the identifier of the current shell.
 
 ### $STACKTRACE
+
 Contains a stack trace for the most recent error.
 
 ### $THIS
