@@ -8,9 +8,6 @@ title:  psget_cmdlets_troubleshooting
 
 ## How to resolve "WARNING: Package 'your package name' failed to download" issue?
 
-
-
-
 It is reported that Install-Module or Update-Module sometimes fails on some machines.
 Based on our investigation, it is something to do with the networking connection.
 Recently we updated NuGet provider so that it can reliably download packages.
