@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/29/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Jobs
 ---
-
 # About Jobs
 
 ## SHORT DESCRIPTION
@@ -81,7 +80,7 @@ returns all of the jobs that were started in the current session.
 For example, the following command gets the jobs in the current session.
 
 ```powershell
-PS C:> Get-Job
+PS> Get-Job
 
 Id  Name  PSJobTypeName State      HasMoreData  Location   Command
 --  ----  ------------- -----      -----------  --------   -------
@@ -165,14 +164,14 @@ The following commands show the results of `Receive-Job` commands run
 before the job is complete.
 
 ```powershell
-C:\PS> Receive-Job -Job $job
+PS> Receive-Job -Job $job
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     103       4    11328       9692    56            1176 audiodg
     804      14    12228      14108   100   101.74   1740 CcmExec
 
-C:\PS> Receive-Job -Job $job
+PS> Receive-Job -Job $job
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -190,14 +189,14 @@ The following commands show the effect of using the Keep parameter on a job
 that is not yet complete.
 
 ```powershell
-C:\PS> Receive-Job -Job $job -Keep
+PS> Receive-Job -Job $job -Keep
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     103       4    11328       9692    56            1176 audiodg
     804      14    12228      14108   100   101.74   1740 CcmExec
 
-C:\PS> Receive-Job -Job $job -Keep
+PS> Receive-Job -Job $job -Keep
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -253,7 +252,7 @@ for any of the jobs to be completed.
 The following command uses the Wait-Job cmdlet to wait for a job with ID 10.
 
 ```powershell
-Wait-Job -ID 10
+Wait-Job -Id 10
 ```
 
 As a result, the PowerShell prompt is suppressed until the job is completed.
@@ -264,7 +263,7 @@ expires, the command prompt returns, but the job continues to run in the
 background.
 
 ```powershell
-Wait-Job -ID 10 -Timeout 120
+Wait-Job -Id 10 -Timeout 120
 ```
 
 ## STOPPING A JOB
@@ -274,7 +273,7 @@ starts a job to get every entry in the System event log. It saves the job
 object in the \$job variable.
 
 ```powershell
-$job = Start-Job -ScriptBlock {Get-EventLog -Log System}
+$job = Start-Job -ScriptBlock {Get-EventLog -LogNameName System}
 ```
 
 The following command stops the job. It uses a pipeline operator (|) to

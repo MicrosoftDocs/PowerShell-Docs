@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_WMI_Cmdlets
 ---
-
 # About WMI Cmdlets
 
 ## SHORT DESCRIPTION
@@ -54,10 +53,11 @@ The following WMI cmdlets are included.
 |Set-WmiInstance  |Creates or modifies instances of WMI classes. |
 
 ### SAMPLE COMMANDS
+
 The following command displays the BIOS information for the local computer.
 
 ```powershell
-C:\PS> get-wmiobject win32_bios | format-list *
+PS> get-wmiobject win32_bios | Format-List *
 ```
 
 The following command displays information about the WinRM service for three
@@ -65,16 +65,16 @@ remote computers.
 
 ```powershell
 $wql = "select * from win32_service where name='WinRM'"
-get-wmiobject -query $wql -computername server01, server01, server03
+Get-WmiObject -Query $wql -ComputerName server01, server01, server03
 ```
 
 The following more complex command exits all instances of a program.
 
 ```powershell
-C:\PS> notepad.exe
-C:\PS> $wql = "select * from win32_process where name='notepad.exe'"
-C:\PS> $np = get-wmiobject -query $wql
-C:\PS> $np | remove-wmiobject
+PS> notepad.exe
+PS> $wql = "select * from win32_process where name='notepad.exe'"
+PS> $np = get-wmiobject -query $wql
+PS> $np | Remove-WmiObject
 ```
 
 ### WMI-BASED REMOTING
@@ -108,7 +108,7 @@ For example:
 
 ```powershell
 PS> $s = [WmiSearcher]'Select * from Win32_Process where Handlecount > 1000'
-PS> $s.Get() |sort handlecount |ft handlecount,__path,name -auto
+PS> $s.Get() |Sort-Object handlecount |Format-Table handlecount,__path,name -AutoSize
 
 count  __PATH                                              name
 -----  ------                                              ----
@@ -128,7 +128,7 @@ For example:
 
 ```powershell
 PS> $c = [WMICLASS]"root\cimv2:WIn32_Process"
-PS> $c |fl *
+PS> $c |Format-List *
 Name             : Win32_Process
 __GENUS          : 1
 __CLASS          : Win32_Process

@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Clear-Content for FileSystem
 ---
-
 # Clear-Content for FileSystem
+
 Deletes the contents of an item, but does not delete the item.
 
 ## Syntax
@@ -17,6 +17,7 @@ Clear-Content [-Stream <string>] [<CommonParameters>]
 ```
 
 ## Description
+
  In the file system, [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) clears the content in a file, but does not delete the file. It has no effect on folders.
 
  Note: This custom cmdlet help file explains how the [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) cmdlet works in a file system drive. For information about the [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) -Path $null" or see [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113282.
@@ -24,6 +25,7 @@ Clear-Content [-Stream <string>] [<CommonParameters>]
 ## Parameters
 
 ### -Stream <string\>
+
  Deletes the content in the specified alternate data stream, but does not delete the alternate data stream. Enter the stream name. Wildcards are not supported.
 
  Stream is a dynamic parameter that the FileSystem provider adds to the [Set-Content](../../../Microsoft.PowerShell.Management/Set-Content.md) cmdlet. This parameter works only in file system drives.
@@ -41,9 +43,11 @@ Clear-Content [-Stream <string>] [<CommonParameters>]
 |Accept Wildcard Characters?|false|
 
 ### <CommonParameters\>
+
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).
 
 ## Inputs and Outputs
+
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.
 
 |||
@@ -54,15 +58,15 @@ Clear-Content [-Stream <string>] [<CommonParameters>]
 ## Example 1
 
 ```
-C:\PS>Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+PS>Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
 [ZoneTransfer]
 ZoneId=3
 
-C:\PS>Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+PS>Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
-C:\PS>Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
-C:\PS>
+PS>Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+PS>
 
 Description
 -----------
@@ -81,7 +85,7 @@ You can use a method like this one to clear the content of an alternate data str
 ## Example 2
 
 ```
-C:\PS>Clear-Content ..\SmpUsers\*\init.txt
+PS>Clear-Content ..\SmpUsers\*\init.txt
 
 Description
 -----------
@@ -92,7 +96,7 @@ This command deletes all of the content from the "init.txt" files in all subdire
 ## Example 3
 
 ```
-C:\PS>Clear-Content -Path * -Filter *.log -Force
+PS>Clear-Content -Path * -Filter *.log -Force
 
 Description
 -----------
@@ -103,7 +107,7 @@ This command deletes the contents of all files in the current directory with the
 ## Example 4
 
 ```
-C:\PS>Clear-Content c:\Temp\* -Include Smp* -Exclude *2* -WhatIf
+PS>Clear-Content c:\Temp\* -Include Smp* -Exclude *2* -WhatIf
 
 Description
 -----------
@@ -112,6 +116,7 @@ This command requests a prediction of what would happen if you submitted the com
 ```
 
 ## See Also
+
  [FileSystem Provider](../FileSystem-Provider.md)
  [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)
  [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)

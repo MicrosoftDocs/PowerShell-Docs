@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Language_Modes
 ---
-
 # About Language Modes
 
 ## SHORT DESCRIPTION
@@ -198,7 +197,7 @@ the session configuration has a LanguageMode property. You can find the
 language mode by getting the value of the LanguageMode property.
 
 ```powershell
-PS C:\> (Get-PSSessionConfiguration -Name Test).LanguageMode
+PS> (Get-PSSessionConfiguration -Name Test).LanguageMode
 FullLanguage
 ```
 
@@ -215,7 +214,7 @@ state.
 For example:
 
 ```powershell
-PS C:> $ExecutionContext.SessionState.LanguageMode
+PS> $ExecutionContext.SessionState.LanguageMode
 ConstrainedLanguage
 ```
 

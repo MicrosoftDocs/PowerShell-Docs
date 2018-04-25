@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,10 @@ online version:  http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
 external help file:  System.Management.Automation.dll-help.xml
 title:  Get-Verb
 ---
-
 # Get-Verb
 
 ## SYNOPSIS
+
 Gets approved Windows PowerShell verbs.
 
 ## SYNTAX
@@ -20,6 +20,7 @@ Get-Verb [[-verb] <String[]>]
 ```
 
 ## DESCRIPTION
+
 The Get-Verb function gets verbs that are approved for use in Windows PowerShell commands.
 
 
@@ -36,6 +37,7 @@ For an updated list of approved Windows PowerShell verbs with descriptions, see 
 ## EXAMPLES
 
 ### Example 1
+
 ```
 get-verb
 ```
@@ -47,6 +49,7 @@ Description
 This command gets all approved verbs.
 
 ### Example 2
+
 ```
 get-verb un*
 
@@ -68,8 +71,9 @@ Description
 This command gets all approved verbs that begin with "un".
 
 ### Example 3
+
 ```powershell
-PS C:\> Get-Verb | Where-Object Group -EQ Security
+PS> Get-Verb | Where-Object Group -EQ Security
 
 Verb      Group
 ----      -----
@@ -84,6 +88,7 @@ Unprotect Security
 This command gets all approved verbs in the Security group.
 
 ### Example 4
+
 ```powershell
 Get-Command -Module Microsoft.PowerShell.Utility | where Verb -NotIn (Get-Verb).Verb
 # CommandType     Name            Version    Source
@@ -97,6 +102,7 @@ This command finds all commands in a module that have unapproved verbs.
 ## PARAMETERS
 
 ### -verb
+
 Gets only the specified verbs.
 Enter the name of a verb or a name pattern.
 Wildcards are permitted.
@@ -122,6 +128,7 @@ Accept wildcard characters: True
 ### Selected.Microsoft.PowerShell.Commands.MemberDefinition
 
 ## NOTES
+
 Get-Verb returns a modified version of a Microsoft.PowerShell.Commands.MemberDefinition object.
 The object does not have the standard properties of a MemberDefinition object.
 Instead it has Verb and Group properties.

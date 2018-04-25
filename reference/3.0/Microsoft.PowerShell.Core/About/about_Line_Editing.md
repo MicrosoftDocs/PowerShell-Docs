@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Line_Editing
 ---
-
 # About Line Editing
+
 ## about_Line_Editing
 
 
@@ -35,6 +35,7 @@ To delete the character in front of the cursor, press the DELETE key.
 
 Delete the Remainder of a Line
 To delete all the characters in the line after the cursor, press
+
 # CTRL+END.
 
 

@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Scripts
 ---
-
 # About Scripts
 
 ## SHORT DESCRIPTION
@@ -133,7 +132,7 @@ path is in your Path environment variable, you can omit the path.
 For example, to get help for the ServicesLog.ps1 script, type:
 
 ```powershell
-get-help C:\admin\scripts\ServicesLog.ps1
+Get-Help C:\admin\scripts\ServicesLog.ps1
 ```
 
 ### HOW TO WRITE A SCRIPT
@@ -152,8 +151,8 @@ running on the current system and saves them to a log file. The log file name
 is created from the current date.
 
 ```powershell
-$date = (get-date).dayofyear
-get-service | out-file "$date.log"
+$date = (Get-Date).dayofyear
+Get-Service | Out-File "$date.log"
 ```
 
 To create this script, open a text editor or a script editor, type these
@@ -182,21 +181,21 @@ param ($ComputerName = $(throw "ComputerName parameter is required."))
 
 function CanPing {
    $error.clear()
-   $tmp = test-connection $computername -erroraction SilentlyContinue
+   $tmp = Test-Connection $computername -ErrorAction SilentlyContinue
 
    if (!$?)
-       {write-host "Ping failed: $ComputerName."; return $false}
+       {Write-Host "Ping failed: $ComputerName."; return $false}
    else
-       {write-host "Ping succeeded: $ComputerName"; return $true}
+       {Write-Host "Ping succeeded: $ComputerName"; return $true}
 }
 
 function CanRemote {
-    $s = new-pssession $computername -erroraction SilentlyContinue
+    $s = New-PSSession $computername -ErrorAction SilentlyContinue
 
     if ($s -is [System.Management.Automation.Runspaces.PSSession])
-        {write-host "Remote test succeeded: $ComputerName."}
+        {Write-Host "Remote test succeeded: $ComputerName."}
     else
-        {write-host "Remote test failed: $ComputerName."}
+        {Write-Host "Remote test failed: $ComputerName."}
 }
 
 if (CanPing $computername) {CanRemote $computername}
@@ -205,7 +204,7 @@ if (CanPing $computername) {CanRemote $computername}
 To run this script, type the parameter name after the script name. For example:
 
 ```powershell
-C:\PS> .\test-remote.ps1 -computername Server01
+PS> .\test-remote.ps1 -computername Server01
 
 Ping succeeded: Server01
 Remote test failed: Server01
@@ -281,12 +280,12 @@ and the $ProfileName variable.
 function New-Profile
 {
   Write-Host "Running New-Profile function"
-  $profileName = split-path $profile -leaf
+  $profileName = Split-Path $profile -Leaf
 
-  if (test-path $profile)
-    {write-error "Profile $profileName already exists on this computer."}
+  if (Test-Path $profile)
+    {Write-Error "Profile $profileName already exists on this computer."}
   else
-    {new-item -type file -path $profile -force }
+    {New-Item -ItemType file -Path $profile -Force }
 }
 ```
 
@@ -296,9 +295,9 @@ is running. When the script exits, the function and variable are removed, as
 shown in the following example.
 
 ```powershell
-C:\PS> .\UtilityFunctions.ps1
+PS> .\UtilityFunctions.ps1
 
-C:\PS> New-Profile
+PS> New-Profile
 The term 'new-profile' is not recognized as a cmdlet, function, operable
 program, or script file. Verify the term and try again.
 At line:1 char:12
@@ -306,8 +305,8 @@ At line:1 char:12
    + CategoryInfo          : ObjectNotFound: (new-profile:String) [],
    + FullyQualifiedErrorId : CommandNotFoundException
 
-C:\PS> $profileName
-C:\PS>
+PS> $profileName
+PS>
 ```
 
 When you dot source the script and run it, the script creates the New-Profile
@@ -316,9 +315,9 @@ the script runs, you can use the New-Profile function in your session, as
 shown in the following example.
 
 ```powershell
-C:\PS> . .\UtilityFunctions.ps1
+PS> . .\UtilityFunctions.ps1
 
-C:\PS> New-Profile
+PS> New-Profile
 
     Directory: C:\Users\juneb\Documents\WindowsPowerShell
 
@@ -326,7 +325,7 @@ C:\PS> New-Profile
     ----    -------------     ------ ----
     -a---   1/14/2009 3:08 PM      0 Microsoft.PowerShellISE_profile.ps1
 
-C:\PS> $profileName
+PS> $profileName
 Microsoft.PowerShellISE_profile.ps1
 ```
 

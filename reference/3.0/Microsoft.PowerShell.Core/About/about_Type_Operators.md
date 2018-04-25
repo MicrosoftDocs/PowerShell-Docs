@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/091/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Type_Operators
 ---
-
 # About Type Operators
 
 ## SHORT DESCRIPTION
@@ -76,11 +75,12 @@ property of this method. For example, the following statement gets the type
 of the return value of a Get-Culture command:
 
 ```powershell
-PS> (get-culture).gettype().fullname
+PS> (Get-Culture).gettype().fullname
 System.Globalization.CultureInfo
 ```
 
 ## EXAMPLES
+
 The following examples show some uses of the Type operators:
 
 ```powershell
@@ -90,7 +90,7 @@ False
 PS> 32 -is "int"
 True
 
-PS> (get-date) -is [DateTime]
+PS> (Get-Date) -is [DateTime]
 True
 
 PS> "12/31/2007" -is [DateTime]
@@ -99,10 +99,10 @@ False
 PS> "12/31/2007" -is [String]
 True
 
-PS> (get-process PowerShell)[0] -is [System.Diagnostics.Process]
+PS> (Get-Process PowerShell)[0] -is [System.Diagnostics.Process]
 True
 
-PS> (get-command get-member) -is [System.Management.Automation.CmdletInfo]
+PS> (Get-Command get-member) -is [System.Management.Automation.CmdletInfo]
 True
 ```
 
@@ -115,25 +115,25 @@ return System.Globalization.CultureInfo objects, a collection of these
 objects is a System.Object array.
 
 ```powershell
-PS> (get-culture) -is [System.Globalization.CultureInfo]
+PS> (Get-Culture) -is [System.Globalization.CultureInfo]
 True
 
-PS> (get-uiculture) -is [System.Globalization.CultureInfo]
+PS> (Get-UICulture) -is [System.Globalization.CultureInfo]
 True
 
-PS> (get-culture), (get-uiculture) -is [System.Globalization.CultureInfo]
+PS> (Get-Culture), (Get-UICulture) -is [System.Globalization.CultureInfo]
 False
 
-PS> (get-culture), (get-uiculture) -is [Array]
+PS> (Get-Culture), (Get-UICulture) -is [Array]
 True
 
-PS> (get-culture), (get-uiculture) | foreach {
+PS> (Get-Culture), (Get-UICulture) | ForEach-Object {
   $_ -is [System.Globalization.CultureInfo])
 }
 True
 True
 
-PS> (get-culture), (get-uiculture) -is [Object]
+PS> (Get-Culture), (Get-UICulture) -is [Object]
 True
 ```
 
@@ -148,7 +148,7 @@ Monday, December 31, 2007 12:00:00 AM
 
 PS> $date = "12/31/07" -as [DateTime]
 
-C:\PS>$a -is [DateTime]
+PS>$a -is [DateTime]
 True
 
 PS> 1031 -as [System.Globalization.CultureInfo]

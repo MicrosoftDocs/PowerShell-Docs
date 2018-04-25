@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Get-Content for FileSystem
 ---
-
 # Get-Content for FileSystem
+
 Gets the contents of a file.
 
 ## Syntax
@@ -17,6 +17,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 ```
 
 ## Description
+
  In file system drives, you can use the [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) cmdlet to get content that you display at the command line, save in a variable for processing, or write to another file. It is not valid on folders.
 
  Note: This custom cmdlet help file explains how the [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) cmdlet works in a file system drive. For information about the [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) cmdlet in all drives, type "[Get-Help](../../Get-Help.md)[Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) -Path $null" or see [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) at http://go.microsoft.com/fwlink/?LinkID=113310.
@@ -24,6 +25,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 ## Parameters
 
 ### -Encoding <FileSystemCmdletProviderEncoding\>
+
  Specifies the file encoding. The default is ASCII.
 
  Valid values are:
@@ -57,6 +59,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Wildcard Characters?|false|
 
 ### -Delimiter <string\>
+
  Specifies the delimiter that [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) uses to divide the file into objects while it reads.
 
  The default is "\n", the end-of-line character.
@@ -80,6 +83,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Wildcard Characters?|false|
 
 ### -Force
+
  Gets the contents of all files, including hidden files. By default, [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) does not get the contents of hidden files unless you specify the hidden file by name.
 
 |||
@@ -91,6 +95,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Wildcard Characters?|false|
 
 ### -Raw <switch\>
+
  Ignores newline characters and returns the entire contents of a file in one string. By default, the contents of a file is returned as a array of strings that is delimited by the newline character.
 
  Raw is a dynamic parameter that the FileSystem provider adds to the [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) cmdlet. This parameter works only in file system drives.
@@ -106,6 +111,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Wildcard Characters?|false|
 
 ### -Wait
+
  Waits for the cmdlet to get the content before returning the command prompt. While waiting, [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) checks the file once each second until you interrupt it, such as by pressing CTRL+C.
 
  Wait is a dynamic parameter that the FileSystem provider adds to the [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) cmdlet. This parameter works only in file system drives.
@@ -119,6 +125,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Wildcard Characters?|false|
 
 ### -Stream <string\>
+
  Gets the contents of the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are not supported.
 
  Stream is a dynamic parameter that the FileSystem provider adds to the [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md) cmdlet. This parameter works only in file system drives.
@@ -134,6 +141,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Wildcard Characters?|false|
 
 ### -UseTransaction
+
  Includes the command in the active transaction. This parameter is valid only when a transaction is in progress. For more information, see [about_Transactions](../../About/about_Transactions.md).
 
 |||
@@ -145,9 +153,11 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 |Accept Wildcard Characters?|false|
 
 ### <CommonParameters\>
+
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).
 
 ## Inputs and Outputs
+
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.
 
 |||
@@ -158,7 +168,7 @@ Get-Content [-Delimiter <string>] [-Encoding {<Unknown> | <String> | <Unicode> |
 ## Example 1
 
 ```
-C:\PS>Get-Content -Path C:\Chapters\chapter1.txt
+PS>Get-Content -Path C:\Chapters\chapter1.txt
 
 Description
 -----------
@@ -171,7 +181,7 @@ Get-Content actually passes the content down the pipeline, but because there are
 ## Example 2
 
 ```
-C:\PS>Get-Content C:\Logs\Log060912.txt -TotalCount 50 | Set-Content Sample.txt
+PS>Get-Content C:\Logs\Log060912.txt -TotalCount 50 | Set-Content Sample.txt
 
 Description
 -----------
@@ -184,7 +194,7 @@ The command uses the Get-Content cmdlet to get the text in the file. (The name o
 ## Example 3
 
 ```
-C:\PS>(Get-Content Cmdlets.txt -TotalCount 5)[-1]
+PS>(Get-Content Cmdlets.txt -TotalCount 5)[-1]
 
 Description
 -----------
@@ -195,7 +205,7 @@ This command gets the fifth line of the Cmdlets.txt text file. It uses the Total
 ## Example 4
 
 ```
-C:\PS>Get-Content .\DataSets\*.csv -Delimiter "*---*" -Force -Encoding UTF8
+PS>Get-Content .\DataSets\*.csv -Delimiter "*---*" -Force -Encoding UTF8
 
 Description
 -----------
@@ -208,7 +218,7 @@ The command also uses the Delimiter parameter to divide the returned content int
 ## Example 5
 
 ```
-C:\PS>Get-Content .\Copy-Scripts.ps1 -Stream Zone.Identifier
+PS>Get-Content .\Copy-Scripts.ps1 -Stream Zone.Identifier
 
 [ZoneTransfer]
 ZoneId=3
@@ -224,11 +234,11 @@ The Stream parameter is introduced in Windows PowerShell 3.0.
 ## Example 6
 
 ```
-C:\PS>$Manifest = (Get-Module -List PSScheduledJob).Path
+PS>$Manifest = (Get-Module -List PSScheduledJob).Path
 
-C:\PS>$Hash = Invoke-Expression (Get-Content $Manifest -Raw)
+PS>$Hash = Invoke-Expression (Get-Content $Manifest -Raw)
 
-C:\PS>$Hash
+PS>$Hash
 
 Name                           Value
 ----                           -----
@@ -245,7 +255,7 @@ TypesToProcess                 PSScheduledJob.types.ps1xml
 HelpInfoURI                    http://go.microsoft.com/fwlink/?LinkID=223911
 ModuleVersion                  1.0.0.0
 
-C:\PS>$Hash.ModuleToProcess
+PS>$Hash.ModuleToProcess
 Microsoft.PowerShell.ScheduledJob.dll
 
 Description
@@ -267,7 +277,7 @@ The fourth command uses the ModuleToProcess property of the hash table to get th
 ## Example 7
 
 ```
-C:\PS>$a = Get-Content -Path .\Download.zip -Encoding Byte -ReadCount 0
+PS>$a = Get-Content -Path .\Download.zip -Encoding Byte -ReadCount 0
 
 Set-Content -Path \\Server\Share\Download.zip -Encoding Byte -Value $a
 
@@ -300,6 +310,7 @@ The fourth command uses the Set-Content cmdlet to write the bytes in the $b vari
 ```
 
 ## See Also
+
  [FileSystem Provider](../FileSystem-Provider.md)
  [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)
  [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)

@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Properties
 ---
-
 # About Properties
 
 ## SHORT DESCRIPTION
@@ -102,7 +101,7 @@ are accessed. The `Get-ChildItem` command is followed by a dot and the name of
 the CreationTime property, as follows:
 
 ```powershell
-C:\PS> (Get-ChildItem $pshome\PowerShell.exe).creationtime
+PS> (Get-ChildItem $pshome\PowerShell.exe).creationtime
 Tuesday, March 18, 2008 12:07:52 AM
 ```
 
@@ -110,8 +109,8 @@ You can also save an object in a variable and then get its properties by using
 the dot method, as shown in the following example:
 
 ```powershell
-C:\PS> $a = Get-ChildItem $pshome\PowerShell.exe
-C:\PS> $a.CreationTime
+PS> $a = Get-ChildItem $pshome\PowerShell.exe
+PS> $a.CreationTime
 Tuesday, March 18, 2008 12:07:52 AM
 ```
 
@@ -125,7 +124,7 @@ For example, the following command displays the values of all the properties
 of the PowerShell.exe file.
 
 ```powershell
-C:\PS> Get-ChildItem $pshome\PowerShell.exe | Format-List -property *
+PS> Get-ChildItem $pshome\PowerShell.exe | Format-List -Property *
 ```
 
 ```Output
@@ -248,7 +247,7 @@ For example, each service has a DisplayName property. The following command
 gets the value of the DisplayName property of the Audiosrv service.
 
 ```powershell
-PS C:\> (Get-Service Audiosrv).DisplayName
+PS> (Get-Service Audiosrv).DisplayName
 Windows Audio
 ```
 
@@ -257,15 +256,15 @@ The following command tries to get the DisplayName property of all services in
 PowerShell 2.0.
 
 ```powershell
-PS C:\> (Get-Service).DisplayName
-PS C:\>
+PS> (Get-Service).DisplayName
+PS>
 ```
 
 Beginning in PowerShell 3.0, the same command returns the value of the
 **DisplayName** property of every service that `Get-Service` returns.
 
 ```powershell
-PS C:\> (Get-Service).DisplayName
+PS> (Get-Service).DisplayName
 Application Experience
 Application Layer Gateway Service
 Windows All-User Install Agent
@@ -278,7 +277,7 @@ Conversely, a collection of two or more services has a **Count** property,
 which contains the number of objects in the collection.
 
 ```powershell
-PS C:\> (Get-Service).Count
+PS> (Get-Service).Count
 176
 ```
 
@@ -286,14 +285,14 @@ Individual services do not have a Count or Length property, as shown in this
 command in PowerShell 2.0.
 
 ```powershell
-PS C:\> (Get-Service Audiosrv).Count
-PS C:\>
+PS> (Get-Service Audiosrv).Count
+PS>
 ```
 
 Beginning in PowerShell 3.0, the command returns the correct Count value.
 
 ```powershell
-PS C:\> (Get-Service Audiosrv).Count
+PS> (Get-Service Audiosrv).Count
 1
 ```
 

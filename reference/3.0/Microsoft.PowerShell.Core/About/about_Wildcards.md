@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Wildcards
 ---
-
 # About Wildcards
 
 ## SHORT DESCRIPTION
@@ -72,7 +71,7 @@ value of the CreationTime property of the restore point to a log file.
 $p = Get-ComputerRestorePoint
 foreach ($point in $p) {
   if ($point.description -like "*PowerShell*") {
-    add-content -path C:\TechDocs\RestoreLog.txt "$($point.CreationTime)"
+    Add-Content -Path C:\TechDocs\RestoreLog.txt "$($point.CreationTime)"
   }
 }
 ```

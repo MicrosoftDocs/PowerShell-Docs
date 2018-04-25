@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Variables
 ---
-
 # About Variables
 
 ## SHORT DESCRIPTION
@@ -134,7 +133,7 @@ PS> remove-item -path variable:\myvariable
 To get a list of all of the variables in your  PowerShell session, type:
 
 ```powershell
-get-variable
+Get-Variable
 ```
 
 ### TYPES OF VARIABLES
@@ -253,8 +252,8 @@ For example, the following command creates and then displays a variable named
 "save-items".
 
 ```powershell
-C:\PS> ${save-items} = "a", "b", "c"
-C:\PS> ${save-items}
+PS> ${save-items} = "a", "b", "c"
+PS> ${save-items}
 a
 b
 c
@@ -264,7 +263,7 @@ The following command gets the child items in the directory that is
 represented by the "ProgramFiles(x86)" environment variable.
 
 ```powershell
-C:\PS> Get-childitem ${env:ProgramFiles(x86)}
+PS> Get-childitem ${env:ProgramFiles(x86)}
 ```
 
 To refer to a variable name that includes braces, enclose the variable name in
@@ -272,8 +271,8 @@ braces, and use the backtick (escape) character to escape the braces. For
 example, to create a variable named "this{value}is" with a value of 1, type:
 
 ```powershell
-C:\PS> ${this`{value`}is} = 1
-C:\PS> ${this`{value`}is}
+PS> ${this`{value`}is} = 1
+PS> ${this`{value`}is}
 1
 ```
 
@@ -325,7 +324,7 @@ their values.
 To change to the variable: drive, type:
 
 ```powershell
-set-location variable:
+Set-Location variable:
 
  (or "cd variable:")
 ```
@@ -334,7 +333,7 @@ To list the items (variables) in the Variable: drive, use the Get-Item or
 Get-ChildItem cmdlets. For example:
 
 ```powershell
-get-childitem variable:
+Get-ChildItem variable:
 ```
 
 To get the value of a particular variable, use file system notation to specify
@@ -342,7 +341,7 @@ the name of the drive and the name of the variable. For example, to get the
 \$PSCulture automatic variable, use the following command.
 
 ```powershell
-get-item variable:\PSCulture
+Get-Item variable:\PSCulture
 
 Name                           Value
 ----                           -----

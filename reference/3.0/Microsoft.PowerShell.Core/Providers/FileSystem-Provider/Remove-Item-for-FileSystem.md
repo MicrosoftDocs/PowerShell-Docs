@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Remove-Item for FileSystem
 ---
-
 # Remove-Item for FileSystem
+
 Deletes files and folders.
 
 ## Syntax
@@ -17,6 +17,7 @@ Remove-Item [-Stream <string>] [<CommonParameters>]
 ```
 
 ## Description
+
  In file system drives, the [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md) cmdlet deletes files and folders.
 
  If you use the Stream dynamic parameter, it deletes the specified alternate data stream, but does not delete the file.
@@ -26,6 +27,7 @@ Remove-Item [-Stream <string>] [<CommonParameters>]
 ## Parameters
 
 ### -Stream <string\>
+
  Deletes the specified alternate data stream from a file, but does not delete the file. Enter the stream name. Wildcards are supported. This parameter is not valid on folders.
 
  Stream is a dynamic parameter that the FileSystem provider adds to the [Remove-Item](../../../Microsoft.PowerShell.Management/Remove-Item.md) cmdlet. This parameter works only in file system drives.
@@ -43,9 +45,11 @@ Remove-Item [-Stream <string>] [<CommonParameters>]
 |Accept Wildcard Characters?|false|
 
 ### <CommonParameters\>
+
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../About/about_CommonParameters.md).
 
 ## Inputs and Outputs
+
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.
 
 |||
@@ -56,7 +60,7 @@ Remove-Item [-Stream <string>] [<CommonParameters>]
 ## Example 1
 
 ```
-C:\PS>Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+PS>Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
    FileName: \\C:\Test\Copy-Script.ps1
 
@@ -64,9 +68,9 @@ Stream                   Length
 ------                   ------
 Zone.Identifier              26
 
-C:\PS>Remove-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+PS>Remove-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
-C:\PS>Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+PS>Get-Item C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
 get-item : Could not open alternate data stream 'Zone.Identifier' of file 'C:\Test\Copy-Script.ps1'.
 At line:1 char:1
@@ -76,7 +80,7 @@ At line:1 char:1
    xception
     + FullyQualifiedErrorId : AlternateDataStreamNotFound,Microsoft.PowerShell.Commands.GetItemCommand
 
-C:\PS>Get-Item C:\Test\Copy-Script.ps1
+PS>Get-Item C:\Test\Copy-Script.ps1
 
     Directory: C:\Test
 
@@ -101,7 +105,7 @@ The fourth command Get-Item cmdlet without the Stream parameter to verify that t
 ## Example 2
 
 ```
-C:\PS>Remove-Item C:\Test\*.*
+PS>Remove-Item C:\Test\*.*
 
 Description
 -----------
@@ -112,7 +116,7 @@ This command deletes all of the files with names that include a dot (.) from the
 ## Example 3
 
 ```
-C:\PS>Remove-Item * -Include *.doc -Exclude *1*
+PS>Remove-Item * -Include *.doc -Exclude *1*
 
 Description
 -----------
@@ -123,7 +127,7 @@ This command deletes from the current directory all files with a .doc file name 
 ## Example 4
 
 ```
-C:\PS>Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
+PS>Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 
 Description
 -----------
@@ -134,7 +138,7 @@ This command deletes a file that is both hidden and read-only. It uses the Path 
 ## Example 5
 
 ```
-C:\PS>Get-ChildItem * -Include *.csv -Recurse | Remove-Item
+PS>Get-ChildItem * -Include *.csv -Recurse | Remove-Item
 
 Description
 -----------
@@ -149,6 +153,7 @@ If you try to specify the file type in the path, such as "-path *.csv", the cmdl
 ```
 
 ## See Also
+
  [FileSystem Provider](../FileSystem-Provider.md)
  [Clear-Content](../../../Microsoft.PowerShell.Management/Clear-Content.md)
  [Get-Content](../../../Microsoft.PowerShell.Management/Get-Content.md)

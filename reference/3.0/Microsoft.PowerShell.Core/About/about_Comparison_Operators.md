@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Comparison_Operators
 ---
-
 # About Comparison Operators
 
 ## SHORT DESCRIPTION
@@ -94,13 +93,13 @@ False
 
 C:PS> 1,2,3 -eq 2
 2
-PS C:\> "abc" -eq "abc"
+PS> "abc" -eq "abc"
 True
 
-PS C:\> "abc" -eq "abc", "def"
+PS> "abc" -eq "abc", "def"
 False
 
-PS C:\> "abc", "def" -eq "abc"
+PS> "abc", "def" -eq "abc"
 abc
 ```
 
@@ -109,17 +108,18 @@ abc
 Description: Not equal to. Includes a different value.
 
 Example:
+
 ```powershell
-PS C:\> "abc" -ne "def"
+PS> "abc" -ne "def"
 True
 
-PS C:\> "abc" -ne "abc"
+PS> "abc" -ne "abc"
 False
 
-PS C:\> "abc" -ne "abc", "def"
+PS> "abc" -ne "abc", "def"
 True
 
-PS C:\> "abc", "def" -ne "abc"
+PS> "abc", "def" -ne "abc"
 def
 ```
 
@@ -130,10 +130,10 @@ Description: Greater-than.
 Example:
 
 ```powershell
-PS C:\> 8 -gt 6
+PS> 8 -gt 6
 True
 
-PS C:\> 7, 8, 9 -gt 8
+PS> 7, 8, 9 -gt 8
 9
 ```
 
@@ -144,10 +144,10 @@ Description: Greater-than or equal to.
 Example:
 
 ```powershell
-PS C:\> 8 -ge 8
+PS> 8 -ge 8
 True
 
-PS C:\> 7, 8, 9 -ge 8
+PS> 7, 8, 9 -ge 8
 8
 9
 ```
@@ -160,10 +160,10 @@ Example:
 
 ```powershell
 
-PS C:\> 8 -lt 6
+PS> 8 -lt 6
 False
 
-PS C:\> 7, 8, 9 -lt 8
+PS> 7, 8, 9 -lt 8
 7
 ```
 
@@ -174,10 +174,10 @@ Description: Less-than or equal to.
 Example:
 
 ```powershell
-PS C:\> 6 -le 8
+PS> 6 -le 8
 True
 
-PS C:\> 7, 8, 9 -le 8
+PS> 7, 8, 9 -le 8
 7
 8
 ```
@@ -217,10 +217,10 @@ Description: Match using the wildcard character (\*).
 Example:
 
 ```powershell
-PS C:\> "PowerShell" -like "*shell"
+PS> "PowerShell" -like "*shell"
 True
 
-PS C:\> "PowerShell", "Server" -like "*shell"
+PS> "PowerShell", "Server" -like "*shell"
 PowerShell
 ```
 
@@ -231,10 +231,10 @@ Description: Does not match using the wildcard character (\*).
 Example:
 
 ```powershell
-PS C:\> "PowerShell" -notlike "*shell"
+PS> "PowerShell" -notlike "*shell"
 False
 
-PS C:\> "PowerShell", "Server" -notlike "*shell"
+PS> "PowerShell", "Server" -notlike "*shell"
 Server
 ```
 
@@ -255,11 +255,11 @@ For example, the following command submits a collection of strings to the
 that match. It does not populate the `$Matches` automatic variable.
 
 ```powershell
-PS C:\> "Sunday", "Monday", "Tuesday" -match "sun"
+PS> "Sunday", "Monday", "Tuesday" -match "sun"
 Sunday
 
-PS C:\> $matches
-PS C:\>
+PS> $matches
+PS>
 ```
 
 In contrast, the following command submits a single string to the `-match`
@@ -267,10 +267,10 @@ operator. The `-match` operator returns a Boolean value and populates the
 `$Matches` automatic variable.
 
 ```powershell
-PS C:\> "Sunday" -match "sun"
+PS> "Sunday" -match "sun"
 True
 
-PS C:\> $matches
+PS> $matches
 
 Name                           Value
 ----                           -----
@@ -281,16 +281,16 @@ The `-notmatch` operator populates the `$Matches` automatic variable when the
 input is scalar and the result is False, that it, when it detects a match.
 
 ```powershell
-PS C:\> "Sunday" -notmatch "rain"
+PS> "Sunday" -notmatch "rain"
 True
 
-PS C:\> $matches
-PS C:\>
+PS> $matches
+PS>
 
-PS C:\> "Sunday" -notmatch "day"
+PS> "Sunday" -notmatch "day"
 False
 
-PS C:\> $matches
+PS> $matches
 
 Name                           Value
 ----                           -----
@@ -305,15 +305,15 @@ is scalar, it populates the `$Matches` automatic variable.
 Example:
 
 ```powershell
-PS C:\> "Sunday" -notmatch "sun"
+PS> "Sunday" -notmatch "sun"
 False
 
-PS C:\> $matches
+PS> $matches
 Name Value
 ---- -----
 0    sun
 
-PS C:\> "Sunday", "Monday" -notmatch "sun"
+PS> "Sunday", "Monday" -notmatch "sun"
 Monday
 ```
 
@@ -348,23 +348,23 @@ Syntax:
 Examples:
 
 ```powershell
-PS C:\> "abc", "def" -contains "def"
+PS> "abc", "def" -contains "def"
 True
 
-PS C:\> "Windows", "PowerShell" -contains "Shell"
+PS> "Windows", "PowerShell" -contains "Shell"
 False  #Not an exact match
 
 # Does the list of computers in $DomainServers include $ThisComputer?
-PS C:\> $DomainServers -contains $thisComputer
+PS> $DomainServers -contains $thisComputer
 True
 
-PS C:\> "abc", "def", "ghi" -contains "abc", "def"
+PS> "abc", "def", "ghi" -contains "abc", "def"
 False
 
-PS C:\> $a = "abc", "def"
-PS C:\> "abc", "def", "ghi" -contains $a
+PS> $a = "abc", "def"
+PS> "abc", "def", "ghi" -contains $a
 False
-PS C:\> $a, "ghi" -contains $a
+PS> $a, "ghi" -contains $a
 True
 ```
 
@@ -385,7 +385,7 @@ Syntax:
 Examples:
 
 ```powershell
-PS C:\> "Windows", "PowerShell" -notcontains "Shell"
+PS> "Windows", "PowerShell" -notcontains "Shell"
 True  #Not an exact match
 
 # Get cmdlet parameters, but exclude common parameters
@@ -402,9 +402,9 @@ function get-parms ($cmdlet)
 }
 
 # Find unapproved verbs in the functions in my module
-PS C:\> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS C:\> $myVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-PS C:\> $myVerbs | where {$ApprovedVerbs -notcontains $_}
+PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
+PS> $myVerbs = Get-Command -Module MyModule | foreach {$_.verb}
+PS> $myVerbs | where {$ApprovedVerbs -notcontains $_}
 ForEach
 Sort
 Tee
@@ -430,24 +430,24 @@ Syntax:
 Examples:
 
 ```powershell
-PS C:\> "def" -in "abc", "def"
+PS> "def" -in "abc", "def"
 True
 
-PS C:\> "Shell" -in "Windows", "PowerShell"
+PS> "Shell" -in "Windows", "PowerShell"
 False  #Not an exact match
 
-PS C:\> "Windows" -in "Windows", "PowerShell"
+PS> "Windows" -in "Windows", "PowerShell"
 True  #An exact match
 
-PS C:\> "Windows", "PowerShell" -in "Windows", "PowerShell", "ServerManager"
+PS> "Windows", "PowerShell" -in "Windows", "PowerShell", "ServerManager"
 False  #Using reference equality
 
-PS C:\> $a = "Windows", "PowerShell"
-PS C:\> $a -in $a, "ServerManager"
+PS> $a = "Windows", "PowerShell"
+PS> $a -in $a, "ServerManager"
 True  #Using reference equality
 
-# Does the list of computers in $domainServers include $thisComputer?
-PS C:\> $thisComputer -in  $domainServers
+# Does the list of computers in $DomainServers include $ThisComputer?
+PS> $thisComputer -in  $domainServers
 True
 ```
 
@@ -470,23 +470,23 @@ Syntax:
 Examples:
 
 ```powershell
-PS C:\> "def" -notin "abc", "def"
+PS> "def" -notin "abc", "def"
 False
 
-PS C:\> "ghi" -notin "abc", "def"
+PS> "ghi" -notin "abc", "def"
 True
 
-PS C:\> "Shell" -notin "Windows", "PowerShell"
+PS> "Shell" -notin "Windows", "PowerShell"
 True  #Not an exact match
 
-PS C:\> "Windows" -notin "Windows", "PowerShell"
+PS> "Windows" -notin "Windows", "PowerShell"
 False  #An exact match
 
 # Find unapproved verbs in the functions in my module
-PS C:\> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS C:\> $MyVerbs = Get-Command -Module MyModule | foreach {$_.verb}
+PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
+PS> $MyVerbs = Get-Command -Module MyModule | foreach {$_.verb}
 
-PS C:\> $MyVerbs | where {$_ -notin $ApprovedVerbs}
+PS> $MyVerbs | where {$_ -notin $ApprovedVerbs}
 ForEach
 Sort
 Tee
@@ -515,17 +515,17 @@ sensitive, use `-creplace`. To make it explicitly case-insensitive, use
 `-ireplace`. Consider the following examples:
 
 ```powershell
-PS C:\> "book" -replace "B", "C"
+PS> "book" -replace "B", "C"
 Cook
 ```
 
 ```powershell
-PS C:\> "book" -ireplace "B", "C"
+PS> "book" -ireplace "B", "C"
 Cook
 ```
 
 ```powershell
-PS C:\> "book" -creplace "B", "C"
+PS> "book" -creplace "B", "C"
 book
 ```
 
@@ -543,11 +543,11 @@ Syntax:
 Example:
 
 ```powershell
-PS C:\> $a = 1
-PS C:\> $b = "1"
-PS C:\> $a -is [int]
+PS> $a = 1
+PS> $b = "1"
+PS> $a -is [int]
 True
-PS C:\> $a -is $b.GetType()
+PS> $a -is $b.GetType()
 False
 ```
 
@@ -560,11 +560,11 @@ Syntax:
 Example:
 
 ```powershell
-PS C:\> $a = 1
-PS C:\> $b = "1"
-PS C:\> $a -isnot $b.GetType()
+PS> $a = 1
+PS> $b = "1"
+PS> $a -isnot $b.GetType()
 True
-PS C:\> $b -isnot [int]
+PS> $b -isnot [int]
 True
 ```
 

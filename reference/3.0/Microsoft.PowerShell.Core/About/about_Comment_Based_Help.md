@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell,cmdlet
@@ -50,8 +50,7 @@ or
 ```
 <#
 .<help keyword>
-<help content>
-#>
+<help content>#>
 ```
 
 Comment-based help is written as a series of comments. You can type a comment
@@ -74,8 +73,7 @@ script.
 ```
 <#
 .Description
-Get-Function displays the name and syntax of all functions in the session.
-#>
+Get-Function displays the name and syntax of all functions in the session.#>
 ```
 
 The comment block must contain at least one keyword. Some of the keywords,
@@ -99,9 +97,7 @@ function Get-Function
 {
 <#
 .<help keyword>
-<help content>
-#>
-
+<help content>#>
 <function commands>
 }
 ```
@@ -115,8 +111,7 @@ function Get-Function
 
 <#
 .<help keyword>
-<help content>
-#>
+<help content>#>
 }
 ```
 
@@ -125,8 +120,7 @@ or
 ```powershell
 <#
 .<help keyword>
-<help content>
-#>
+<help content>#>
 function Get-Function { }
 ```
 
@@ -152,8 +146,7 @@ For example:
 ```powershell
 <#
 .<help keyword>
-<help content>
-#>
+<help content>#>
 
 
 function Get-Function { }
@@ -166,8 +159,7 @@ function Get-Function { }
 
 <#
 .<help keyword>
-<help content>
-#>
+<help content>#>
 ```
 
 ## SYNTAX FOR COMMENT-BASED HELP IN SCRIPT MODULES
@@ -421,8 +413,7 @@ For example, the following function has comment-based help.
 <#
 .SYNOPSIS
 
-Adds a file name extension to a supplied name.
-#>
+Adds a file name extension to a supplied name.#>
 function Add-Extension
 {
 param ([string]$Name,[string]$Extension = "txt")
@@ -439,8 +430,7 @@ the following example.
 <#
 .SYNOPSIS
 
-Adds a file name extension to a supplied name.
-#>
+Adds a file name extension to a supplied name.#>
 "@
 
 function Add-Extension
@@ -460,8 +450,7 @@ $x = @"
 <#
 .SYNOPSIS
 
-Adds a file name extension to a supplied name.
-#>
+Adds a file name extension to a supplied name.#>
 "@
 
 function Add-Extension
@@ -515,17 +504,17 @@ or file name.
 
 .EXAMPLE
 
-C:\PS> extension -name "File"
+PS> extension -name "File"
 File.txt
 
 .EXAMPLE
 
-C:\PS> extension -name "File" -extension "doc"
+PS> extension -name "File" -extension "doc"
 File.doc
 
 .EXAMPLE
 
-C:\PS> extension "File" "doc"
+PS> extension "File" "doc"
 File.doc
 
 .LINK
@@ -534,8 +523,7 @@ http://www.fabrikam.com/extension.html
 
 .LINK
 
-Set-Item
-#>
+Set-Item#>
 }
 ```
 
@@ -600,17 +588,17 @@ file name.
 
 Example 1
 
-C:\PS> extension -name "File"
+PS> extension -name "File"
 File.txt
 
 Example 2
 
-C:\PS> extension -name "File" -extension "doc"
+PS> extension -name "File" -extension "doc"
 File.doc
 
 Example 3
 
-C:\PS> extension "File" "doc"
+PS> extension "File" "doc"
 File.doc
 
 RELATED LINKS
@@ -664,17 +652,17 @@ file name.
 
 .EXAMPLE
 
-C:\PS> extension -name "File"
+PS> extension -name "File"
 File.txt
 
 .EXAMPLE
 
-C:\PS> extension -name "File" -extension "doc"
+PS> extension -name "File" -extension "doc"
 File.doc
 
 .EXAMPLE
 
-C:\PS> extension "File" "doc"
+PS> extension "File" "doc"
 File.doc
 
 .LINK
@@ -683,8 +671,7 @@ http://www.fabrikam.com/extension.html
 
 .LINK
 
-Set-Item
-#>
+Set-Item#>
 }
 ```
 
@@ -726,18 +713,16 @@ None. Update-Month.ps1 does not generate any output.
 
 .EXAMPLE
 
-C:\PS> .\Update-Month.ps1
+PS> .\Update-Month.ps1
 
 .EXAMPLE
 
-C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
 .EXAMPLE
 
-C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath `
-C:\Reports\2009\January.csv
-#>
-
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath `
+C:\Reports\2009\January.csv#>
 param ([string]$InputPath, [string]$OutPutPath)
 
 function Get-Data { }
@@ -809,15 +794,15 @@ None. Update-Month.ps1 does not generate any output.
 
 Example 1
 
-C:\PS> .\Update-Month.ps1
+PS> .\Update-Month.ps1
 
 Example 2
 
-C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
 Example 3
 
-C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
 C:\Reports\2009\January.csv
 
 # RELATED LINKS
@@ -894,8 +879,7 @@ function help
 
 <#
 .FORWARDHELPTARGETNAME Get-Help
-.FORWARDHELPCATEGORY Cmdlet
-#>
+.FORWARDHELPCATEGORY Cmdlet#>
 [CmdletBinding(DefaultParameterSetName='AllUsersView')]
 param(
 [Parameter(Position=0, ValueFromPipelineByPropertyName=$true)]

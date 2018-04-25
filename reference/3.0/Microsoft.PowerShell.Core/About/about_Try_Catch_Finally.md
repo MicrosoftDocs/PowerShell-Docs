@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Try_Catch_Finally
 ---
-
 # About Try Catch Finally
 
 ## SHORT DESCRIPTION
@@ -135,7 +134,7 @@ two Catch blocks:
 ```powershell
 try
 {
-   $wc = new-object System.Net.WebClient
+   $wc = New-Object System.Net.WebClient
    $wc.DownloadFile("http://www.contoso.com/MyDoc.doc")
 }
 catch [System.Net.WebException],[System.IO.IOException]
