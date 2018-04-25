@@ -4,8 +4,6 @@
   href: psgallery/psgallery_gettingstarted.md
 - name: Health Status
   href: psgallery/psgallery_status.md
-- name: PSScriptAnalyzer
-  href: psgallery/psgallery_scriptanalyzer_rule_profile.md
 - name: Publishing to the Gallery
   items:
     - name: Creating a PowerShellGallery Account
@@ -22,6 +20,8 @@
       href: psgallery/Deleting-Items.md
     - name: Managing item owners
       href: psgallery/Managing-Item-Owners.md
+    - name: PSScriptAnalyzer
+      href: psgallery/psgallery_scriptanalyzer_rule_profile.md
 - name: Finding Items in the Gallery
   items:
     - name: Searching Syntax
@@ -34,6 +34,12 @@
       href: psgallery/psgallery_filelist_feature.md
     - name: Deploy to Azure Automation
       href: psgallery/psgallery_deploy_to_azure_automation.md
+- name: Licensing
+  items:
+    - name: Require License Acceptance on Items details
+      href: psgallery/psgallery_requires_license_acceptance.md
+    - name: Require License Acceptance on Deploy to Azure Automation
+      href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
 - name: Support
   items:
     - name: Report Abuse
@@ -48,18 +54,12 @@
       href: psgallery/psgallery-SocialMediaFeedback.md
     - name: Troubleshooting
       href: psget/psget_cmdlets_troubleshooting.md
-- name: Licensing
+- name: What's new
   items:
-  - name: Require License Acceptance on Items details
-    href: psgallery/psgallery_requires_license_acceptance.md
-  - name: Require License Acceptance on Deploy to Azure Automation
-    href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
-- name: PSEdition support
-  href: psget/module/modulewithpseditionsupport.md
-- name: PreRelease Modules
-  href: psget/module/PreReleaseModule.md
-- name: Setting up a local Gallery
-  href: psgallery/Setting-Up-Local-Gallery.md
+    - name: PSEdition support
+      href: psget/module/modulewithpseditionsupport.md
+    - name: PreRelease Modules
+      href: psget/module/PreReleaseModule.md
 - name: Gallery FAQs
   href: psgallery/psgallery_faqs.md
 - name: PowerShellGet
@@ -68,12 +68,11 @@
     - name: Script with PSEditions Support
       href: psget/script/scriptwithpseditionsupport.md
     - name: Modules with PSEdition Support
-      href: psget/modules/moduleswithpseditionsupport.md
+      href: psget/modules/modulewithpseditionsupport.md
     - name: Require License Acceptance for Scripts
       href: psget/script/script_RequireLicenseAcceptance.md
     - name: Prerelease Versions
       href: psget/script/PreReleaseScript.md
     - name: Bootstrapping NuGet provider and NuGet.exe
       href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
-- name: Contributing to PowerShell Gallery Documentation
-  href: psgallery/contributing_to_psgallery_documentation.md
+
