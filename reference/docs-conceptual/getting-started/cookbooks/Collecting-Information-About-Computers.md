@@ -27,7 +27,7 @@ This returns information for all desktops, whether they are in use or not.
 Get-WmiObject -Class Win32_Desktop -ComputerName . | Select-Object -Property [a-z]*
 ```
 
-To filter out the metadata, use a pipeline operator (|) to send the results of the Get-WmiObject command to **Select-Object -Property [a-z]***.
+To filter out the metadata, use a pipeline operator (|) to send the results of the Get-WmiObject command to **Select-Object -Property [a-z]**.
 
 ### Listing BIOS Information
 
