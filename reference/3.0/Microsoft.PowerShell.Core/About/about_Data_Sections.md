@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Data_Sections
 ---
-
 # About Data Sections
+
 ## about_Data_Sections
 
 
@@ -39,6 +39,7 @@ sections will not run in Windows PowerShell 1.0 without revision.
 ### Syntax
 
 The syntax for a Data section is as follows:
+
 ```powershell
 DATA [-supportedCommand <cmdlet-name>] {
     <Permitted content>
@@ -83,6 +84,8 @@ a
 ```powershell
 @( "red", "green", "blue" )
 ```
+
+
 ```powershell
 @{ a = 0x1; b = "great"; c ="script" }
 ```
@@ -179,7 +182,7 @@ A single-quoted here-string that uses the ConvertFrom-StringData cmdlet:
 
 ```powershell
 DATA {
-    ConvertFrom-StringData -stringdata @'
+    ConvertFrom-StringData -StringData @'
 Text001 = Windows 7
 Text002 = Windows Server 2008 R2
 '@
@@ -190,7 +193,7 @@ A double-quoted here-string that uses the ConvertFrom-StringData cmdlet:
 
 ```powershell
 DATA  {
-    ConvertFrom-StringData -stringdata @"
+    ConvertFrom-StringData -StringData @"
 Msg1 = To start, press any key.
 Msg2 = To exit, type "quit".
 "@

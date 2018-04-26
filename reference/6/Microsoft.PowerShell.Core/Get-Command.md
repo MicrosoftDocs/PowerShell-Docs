@@ -31,11 +31,11 @@ Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <Mo
 ```
 
 ## DESCRIPTION
-The **Get-Command** cmdlet gets all commands that are installed on the computer, including cmdlets, aliases, functions, workflows, filters, scripts, and applications.
+The **Get-Command** cmdlet gets all commands that are installed on the computer, including cmdlets, aliases, functions, filters, scripts, and applications.
 **Get-Command** gets the commands from Windows PowerShell modules and snap-ins and commands that were imported from other sessions.
 To get only commands that have been imported into the current session, use the *ListImported* parameter.
 
-Without parameters, a **Get-Command** command gets all of the cmdlets, functions, workflows and aliases installed on the computer.
+Without parameters, a **Get-Command** command gets all of the cmdlets, functions, and aliases installed on the computer.
 A `Get-Command *` command gets all types of commands, including all of the non-Windows PowerShell files in the Path environment variable ($env:path), which it lists in the Application command type.
 
 A **Get-Command** command that uses the exact name of the command, without wildcard characters, automatically imports the module that contains the command so that you can use the command immediately.
@@ -154,7 +154,7 @@ Alias           dir -> Get-ChildItem
 ```
 
 This example shows how to use the **Get-Command** cmdlet with an alias.
-Although it is typically used on cmdlets and functions, **Get-Command** also gets scripts, functions, aliases, workflows, and executable files.
+Although it is typically used on cmdlets and functions, **Get-Command** also gets scripts, functions, aliases, and executable files.
 
 The output of the command shows the special view of the **Name** property value for aliases.
 The view shows the alias and the full command name.
@@ -273,7 +273,7 @@ Accept wildcard characters: False
 Specifies the  types of commands that this cmdlet gets.
 Enter one or more command types.
 Use *CommandType* or its alias, *Type*.
-By default, **Get-Command** gets all cmdlets, functions, and workflows, and aliases.
+By default, **Get-Command** gets all cmdlets, functions, and aliases.
 
 The acceptable values for this parameter are:
 
@@ -284,13 +284,12 @@ The acceptable values for this parameter are:
 - ExternalScript. Gets all .ps1 files in the paths listed in the **Path** environment variable ($env:path).
 - Filter and Function. Gets all Windows PowerShell advanced and simple functions and filters.
 - Script. Gets all script blocks. To get Windows PowerShell scripts (.ps1 files), use the ExternalScript value.
-- Workflow. Gets all workflows. For more information about workflows, see Introducing Windows PowerShell Workflow.
 
 ```yaml
 Type: CommandTypes
 Parameter Sets: AllCommandSet
 Aliases: Type
-Accepted values: Alias, Function, Filter, Cmdlet, ExternalScript, Application, Script, Workflow, Configuration, All
+Accepted values: Alias, Function, Filter, Cmdlet, ExternalScript, Application, Script, Configuration, All
 
 Required: False
 Position: Named
@@ -384,7 +383,7 @@ Accept wildcard characters: False
 
 ### -Noun
 Specifies an array of command nouns.
-This cmdlet gets commands, which include cmdlets, functions, workflows, and aliases, that have names that include the specified noun.
+This cmdlet gets commands, which include cmdlets, functions, and aliases, that have names that include the specified noun.
 Enter one or more nouns or noun patterns.
 Wildcard characters are permitted.
 
@@ -504,7 +503,7 @@ Accept wildcard characters: False
 
 ### -Verb
 Specifies an array of command verbs.
-This cmdlet gets commands, which include cmdlets, functions, workflows, and aliases, that have names that include the specified verb.
+This cmdlet gets commands, which include cmdlets, functions, and aliases, that have names that include the specified verb.
 Enter one or more verbs or verb patterns.
 Wildcard characters are permitted.
 
@@ -545,9 +544,6 @@ Represents cmdlets.
 
 ### System.Management.Automation.FunctionInfo
 Represents functions and filters.
-
-### System.Management.Automation.WorkflowInfo
-Represents workflows.
 
 ## NOTES
 * When more than one command that has the same name is available to the session, **Get-Command** returns the command that runs when you type the command name. To get commands that have the same name, listed in run order, use the *All* parameter. For more information, see about_Command_Precedence.

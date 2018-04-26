@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Execution_Policies
 ---
-
 # About Execution Policies
 
 ## Short Description
@@ -41,6 +40,7 @@ The Windows PowerShell execution policies are as follows:
 "Restricted" is the default policy.
 
 ### Restricted
+
 - Default execution policy in Windows 8,
 Windows Server 2012, and Windows 8.1.
 
@@ -53,6 +53,7 @@ script files (.psm1), and Windows PowerShell
 profiles (.ps1).
 
 ### AllSigned
+
 - Scripts can run.
 
 - Requires that all scripts and configuration files
@@ -66,6 +67,7 @@ untrusted.
 - Risks running signed, but malicious, scripts.
 
 ### RemoteSigned
+
 - Scripts can run. This is the default execution
 policy in Windows Server 2012 R2.
 
@@ -86,6 +88,7 @@ as by using the Unblock-File cmdlet.
 than the Internet and signed, but malicious, scripts.
 
 ### Unrestricted
+
 - Unsigned scripts can run. (This risks running malicious
 scripts.)
 
@@ -93,6 +96,7 @@ scripts.)
 files that are downloaded from the Internet.
 
 ### Bypass
+
 - Nothing is blocked and there are no warnings or
 prompts.
 
@@ -103,6 +107,7 @@ Windows PowerShell is the foundation for a program
 that has its own security model.
 
 ### Undefined
+
 - There is no execution policy set in the current scope.
 
 - If the execution policy in all scopes is Undefined, the
@@ -125,6 +130,7 @@ execution policy.
 The Scope values are listed in precedence order.
 
 ### Process
+
 The execution policy affects only the current session
 (the current Windows PowerShell process).
 
@@ -135,10 +141,12 @@ session is closed. You cannot change the policy by
 editing the variable value.
 
 ### CurrentUser
+
 The execution policy affects only the current user. It
 is stored in the HKEY_CURRENT_USER registry subkey.
 
 ### LocalMachine
+
 The execution policy affects all users on the current
 computer. It is stored in the HKEY_LOCAL_MACHINE
 registry subkey.
@@ -221,6 +229,7 @@ Set-ExecutionPolicy -ExecutionPolicy <PolicyName>
 ```
 
 For example:
+
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
@@ -232,6 +241,7 @@ Set-ExecutionPolicy -ExecutionPolicy <PolicyName> -Scope <scope>
 ```
 
 For example:
+
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
@@ -254,6 +264,7 @@ the local computer, type:
 ```powershell
 Set-ExecutionPolicy Undefined
 ```
+
 Or, type:
 
 ```powershell
@@ -275,6 +286,7 @@ the **ExecutionPolicy** parameter of powershell.exe to set the execution
 policy.
 
 For example:
+
 ```powershell
 powershell.exe -ExecutionPolicy AllSigned
 ```

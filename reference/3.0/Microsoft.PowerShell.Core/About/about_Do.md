@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Do
 ---
-
 # About Do
 
 ## SHORT DESCRIPTION
@@ -56,9 +55,9 @@ The following example of a Do statement counts the items in an array until
 it reaches an item with a value of 0.
 
 ```powershell
-C:\PS> $x = 1,2,78,0
-C:\PS> do { $count++; $a++; } while ($x[$a] -ne 0)
-C:\PS> $count
+PS> $x = 1,2,78,0
+PS> do { $count++; $a++; } while ($x[$a] -ne 0)
+PS> $count
 3
 ```
 
@@ -66,9 +65,9 @@ The following example uses the Until keyword. Notice that the not equal to
 operator (`-ne`) is replaced by the equal to operator (`-eq`).
 
 ```powershell
-C:\PS> $x = 1,2,78,0
-C:\PS> do { $count++; $a++; } until ($x[$a] -eq 0)
-C:\PS> $count
+PS> $x = 1,2,78,0
+PS> do { $count++; $a++; } until ($x[$a] -eq 0)
+PS> $count
 3
 ```
 
