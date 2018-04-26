@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/06/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  README
 ---
-
 # PowerShell Reference
 
 Reference material is organized into release versions. The content for each
