@@ -26,7 +26,7 @@ Starting with version 5.1, PowerShell is available in different editions which d
 
 ## Catalog Cmdlets
 
-Two new cmdlets have been added in the [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/?view=powershell-5.1) module; these generate and validate Windows catalog files.
+Two new cmdlets have been added in the [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) module; these generate and validate Windows catalog files.
 
 ### New-FileCatalog
 --------------------------------
