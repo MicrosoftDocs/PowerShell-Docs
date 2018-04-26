@@ -221,7 +221,7 @@ To use the new snippet (and other unsigned user-created snippets), change the ex
 
   For more information about Windows PowerShell execution policies, see about_Execution_Policies.
 
-- - To change a snippet, edit the snippet file. You can edit snippet files in the Script pane of Windows PowerShell ISE.
+- To change a snippet, edit the snippet file. You can edit snippet files in the Script pane of Windows PowerShell ISE.
 
 - To delete a snippet that you added, delete the snippet file.
 
