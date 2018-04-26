@@ -198,4 +198,4 @@ This cmdlet does not generate output.
 
 [Get-IseSnippet](Get-IseSnippet.md)
 
-New-IseSnippet.md
+[New-IseSnippet](New-IseSnippet.md)
