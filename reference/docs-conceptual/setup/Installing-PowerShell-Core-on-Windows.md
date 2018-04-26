@@ -36,45 +36,45 @@ you need to make sure the [prerequisites](#prerequisites) are met.
 
 Windows IoT already comes with Windows PowerShell which we will use to deploy PowerShell Core 6.
 
-- Create `PSSession` to target device
+1. Create `PSSession` to target device
 
-  ```powershell
-  $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
-  ```
+   ```powershell
+   $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
+   ```
 
-- Copy the zip package to the device
+2. Copy the ZIP package to the device
 
-  ```powershell
-  # change the destination to however you had partitioned it with sufficient
-  # space for the zip and the unzipped contents
-  # the path should be local to the device
-  Copy-Item .\PowerShell-6.0.2-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
-  ```
+   ```powershell
+   # change the destination to however you had partitioned it with sufficient
+   # space for the zip and the unzipped contents
+   # the path should be local to the device
+   Copy-Item .\PowerShell-6.0.2-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
+   ```
 
-- Connect to the device and expand the archive
+3. Connect to the device and expand the archive
 
-  ```powershell
-  Enter-PSSession $s
-  cd u:\users\administrator\downloads
-  Expand-Archive .\PowerShell-6.0.2-win-arm32.zip
-  ```
+   ```powershell
+   Enter-PSSession $s
+   cd u:\users\administrator\downloads
+   Expand-Archive .\PowerShell-6.0.2-win-arm32.zip
+   ```
 
-- Setup remoting to PowerShell Core 6
+4. Setup remoting to PowerShell Core 6
 
-  ```powershell
-  cd .\PowerShell-6.0.2-win-arm32
-  # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
-  # endpoint with Windows PowerShell 5.1
-  .\Install-PowerShellRemoting.ps1 -PowerShellHome .
-  # You'll get an error message and will be disconnected from the device because it has to restart WinRM
-  ```
+   ```powershell
+   cd .\PowerShell-6.0.2-win-arm32
+   # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
+   # endpoint with Windows PowerShell 5.1
+   .\Install-PowerShellRemoting.ps1 -PowerShellHome .
+   # You'll get an error message and will be disconnected from the device because it has to restart WinRM
+   ```
 
-- Connect to PowerShell Core 6 endpoint on device
+5. Connect to PowerShell Core 6 endpoint on device
 
-  ```powershell
-  # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
-  Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.0.2
-  ```
+   ```powershell
+   # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
+   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.0.2
+   ```
 
 ## Deploying on Nano Server
 
@@ -85,14 +85,14 @@ Nano Server is a "headless" OS. Core binaries can be deploy using two different 
 1. Offline - Mount the Nano Server VHD and unzip the contents of the zip file to your chosen location within the mounted image.
 2. Online - Transfer the zip file over a PowerShell Session and unzip it in your chosen location.
 
-In both cases, you will need the Windows 10 x64 Zip release package and will need to run the commands within an "Administrator" PowerShell instance.
+In both cases, you will need the Windows 10 x64 ZIP release package and will need to run the commands within an "Administrator" PowerShell instance.
 
 ### Offline Deployment of PowerShell Core
 
 1. Use your favorite zip utility to unzip the package to a directory within the mounted Nano Server image.
 2. Unmount the image and boot it.
 3. Connect to the inbox instance of Windows PowerShell.
-4. Follow the instructions to create a remoting endpoint using the [another instance technique](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+4. Follow the instructions to create a remoting endpoint using the ["another instance technique"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
 ### Online Deployment of PowerShell Core
 
@@ -116,7 +116,7 @@ The following steps guide you through the deployment of PowerShell Core to a run
   Enter-PSSession $session
   ```
 
-- Extract the Zip file
+- Extract the ZIP file
 
   ```powershell
   # Insert the appropriate version.
@@ -140,8 +140,8 @@ We publish an archive with CoreCLR bits on every CI build with [AppVeyor][].
 
 To install PowerShell Core from the CoreCLR Artifact:
 
-1. Download zip package from **artifacts** tab of the particular build.
-2. Unblock zip file: right-click in File Explorer -> Properties ->
+1. Download ZIP package from **artifacts** tab of the particular build.
+2. Unblock ZIP file: right-click in File Explorer -> Properties ->
    check 'Unblock' box -> apply
 3. Extract zip file to `bin` directory
 4. `./bin/pwsh.exe`

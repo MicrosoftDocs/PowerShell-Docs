@@ -50,8 +50,8 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-As superuser, register the Microsoft repository. From then on, you just need to use
-`sudo apt-get upgrade powershell` to update the installation.
+As superuser, register the Microsoft repository.
+From then on, you just need to use `sudo apt-get upgrade powershell` to update the installation.
 
 ### Installation via Direct Download - Ubuntu 14.04
 
