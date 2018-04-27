@@ -335,13 +335,13 @@ This cmdlet accepts no inputs.
 
 ## RELATED LINKS
 
-[Get-ChildItem]
+[Get-ChildItem](../Microsoft.Powershell.Management/Get-ChildItem.md)
 
-[Get-Credential]
+[Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
 
-[Get-Item]
+[Get-Item](../microsoft.powershell.management/get-item.md)
 
-[Get-CimSession]
+[Get-CimSession](Get-CimSession.md)
 
 [Remove-CimSession](Remove-CimSession.md)
 
