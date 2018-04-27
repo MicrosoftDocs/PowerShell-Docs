@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,13 +7,16 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=135237
 external help file:  System.Management.Automation.dll-Help.xml
 title:  New-PSSession
 ---
-
 # New-PSSession
+
 ## SYNOPSIS
+
 Creates a persistent connection to a local or remote computer.
+
 ## SYNTAX
 
 ### ComputerName (Default)
+
 ```
 New-PSSession [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Name <String[]>]
  [-EnableNetworkAccess] [-Port <Int32>] [-UseSSL] [-ConfigurationName <String>] [-ApplicationName <String>]
@@ -22,6 +25,7 @@ New-PSSession [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Name <
 ```
 
 ### Uri
+
 ```
 New-PSSession [-Credential <PSCredential>] [-Name <String[]>] [-EnableNetworkAccess]
  [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-ConnectionUri] <Uri[]> [-AllowRedirection]
@@ -30,12 +34,14 @@ New-PSSession [-Credential <PSCredential>] [-Name <String[]>] [-EnableNetworkAcc
 ```
 
 ### Session
+
 ```
 New-PSSession [[-Session] <PSSession[]>] [-Name <String[]>] [-EnableNetworkAccess] [-ThrottleLimit <Int32>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **New-PSSession** cmdlet creates a Windows PowerShell session (PSSession) on a local or remote computer.
 When you create a PSSession, Windows PowerShell establishes a persistent connection to the remote computer.
 
@@ -46,28 +52,34 @@ For more information, see about_PSSessions (http://go.microsoft.com/fwlink/?Link
 
 You can run commands on a remote computer without creating a PSSession by using the **ComputerName** parameters of **Enter-PSSession** or **Invoke-Command**.
 When you use the **ComputerName** parameter, Windows PowerShell creates a temporary connection that is used for the command and is then closed.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> $s = New-PSSession
+PS> $s = New-PSSession
 ```
 
 This command creates a new PSSession on the local computer and saves the PSSession in the $s variable.
 
 You can now use this PSSession to run commands on the local computer.
+
 ### Example 2
+
 ```
-PS C:\> $Server01 = New-PSSession -ComputerName Server01
+PS> $Server01 = New-PSSession -ComputerName Server01
 ```
 
 This command creates a new PSSession on the Server01 computer and saves it in the $Server01 variable.
 
 When creating multiple PSSessions, assign them to variables with useful names.
 This will help you manage the PSSessions in subsequent commands.
+
 ### Example 3
+
 ```
-PS C:\> $s1, $s2, $s3 = New-PSSession -ComputerName Server1,Server2,Server3
+PS> $s1, $s2, $s3 = New-PSSession -ComputerName Server1,Server2,Server3
 ```
 
 This command creates three new PSSessions, one on each of the computers specified by the ComputerName parameter.
@@ -78,9 +90,11 @@ It assigns the Server01 PSSession to $s1, the Server02 PSSession to $s2, and the
 When you assign multiple objects to an array of variables, Windows PowerShell assigns each object to a variable in the array respectively.
 If there are more objects than variables, all remaining objects are assigned to the last variable.
 If there are more variables than objects, the remaining variables are empty (null).
+
 ### Example 4
+
 ```
-PS C:\> New-PSSession -ComputerName Server01 -Port 8081 -UseSSL -ConfigurationName E12
+PS> New-PSSession -ComputerName Server01 -Port 8081 -UseSSL -ConfigurationName E12
 ```
 
 This command creates a new PSSession on the Server01 computer that connects to server port 8081 and uses the SSL protocol.
@@ -88,9 +102,11 @@ The new PSSession uses an alternate session configuration called "E12".
 
 Before setting the port, you must configure the WinRM listener on the remote computer to listen on port 8081.
 For more information, see the description of the **Port** parameter.
+
 ### Example 5
+
 ```
-PS C:\> New-PSSession -Session $s -Credential Domain01\User01
+PS> New-PSSession -Session $s -Credential Domain01\User01
 ```
 
 This command creates a new PSSession with the same properties as an existing PSSession.
@@ -98,9 +114,11 @@ You can use this command format when the resources of an existing PSSession are 
 
 The command uses the **Session** parameter of **New-PSSession** to specify the PSSession saved in the $s variable.
 It uses the credentials of the Domain1\Admin01 user to complete the command.
+
 ### Example 6
+
 ```
-PS C:\> $global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
+PS> $global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
 ```
 
 This example shows how to create a PSSession with a global scope on a computer in a different domain.
@@ -112,27 +130,33 @@ In this case, the $s variable is cast to a global scope.
 
 The command uses the **ComputerName** parameter to specify the remote computer.
 Because the computer is in a different domain than the user account, the full name of the computer is specified along with the credentials of the user.
+
 ### Example 7
+
 ```
-PS C:\> $rs = Get-Content C:\Test\Servers.txt | New-PSSession -ThrottleLimit 50
+PS> $rs = Get-Content C:\Test\Servers.txt | New-PSSession -ThrottleLimit 50
 ```
 
 This command creates a PSSession on each of the 200 computers listed in the Servers.txt file and it stores the resulting PSSession in the $rs variable.
 The PSSessions have a throttle limit of 50.
 
 You can use this command format when the names of computers are stored in a database, spreadsheet, text file, or other text-convertible format.
+
 ### Example 8
+
 ```
-PS C:\> $s = New-PSSession -URI http://Server01:91/NewSession -Credential Domain01\User01
+PS> $s = New-PSSession -URI http://Server01:91/NewSession -Credential Domain01\User01
 ```
 
 This command creates a PSSession on the Server01 computer and stores it in the $s variable.
 It uses the URI parameter to specify the transport protocol, the remote computer, the port, and an alternate session configuration.
 It also uses the **Credential** parameter to specify a user account with permission to create a session on the remote computer.
+
 ### Example 9
+
 ```
-PS C:\> $s = New-PSSession -ComputerName (Get-Content Servers.txt) -Credential Domain01\Admin01 -ThrottleLimit 16
-PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
+PS> $s = New-PSSession -ComputerName (Get-Content Servers.txt) -Credential Domain01\Admin01 -ThrottleLimit 16
+PS> Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
 ```
 
 These commands create a set of PSSessions and then run a background job in each of the PSSessions.
@@ -146,18 +170,21 @@ The command saves the PSSessions in the $s variable.
 
 The second command uses the **AsJob** parameter of the Invoke-Command cmdlet to start a background job that runs a "Get-Process PowerShell" command in each of the PSSessions in $s.
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
+For more information about Windows PowerShell background jobs, see About/about_Jobs.md and About/about_Remote_Jobs.md.
 
 ### Example 10
+
 ```
-PS C:\> New-PSSession -ConnectionURI https://management.exchangelabs.com/Management
+PS> New-PSSession -ConnectionURI https://management.exchangelabs.com/Management
 ```
 
 This command creates a new PSSession that connects to a computer that is specified by a URI instead of a computer name.
+
 ### Example 11
+
 ```
-PS C:\> $so = New-PSSessionOption -SkipCACheck
-PS C:\> New-PSSession -ConnectionUri https://management.exchangelabs.com/Management -SessionOption $so -Credential Server01\Admin01
+PS> $so = New-PSSessionOption -SkipCACheck
+PS> New-PSSession -ConnectionUri https://management.exchangelabs.com/Management -SessionOption $so -Credential Server01\Admin01
 ```
 
 This example shows how to create a session option object and use the  **SessionOption** parameter.
@@ -168,9 +195,11 @@ It saves the resulting **SessionOption** object in the $so parameter.
 The second command uses the option in a new session.
 The command uses the **New-PSSession** cmdlet to create a new session.
 The value of the SessionOption parameter is the **SessionOption** object in the $so variable.
+
 ## PARAMETERS
 
 ### -AllowRedirection
+
 Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 
 When you use the **ConnectionURI** parameter, the remote destination can return an instruction to redirect to a different URI.
@@ -193,13 +222,14 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
+
 Specifies the application name segment of the connection URI.
 Use this parameter to specify the application name when you are not using the **ConnectionURI** parameter in the command.
 
 The default value is the value of the **$PSSessionApplicationName** preference variable on the local computer.
 If this preference variable is not defined, the default value is "WSMAN".
 This value is appropriate for most uses.
-For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
+For more information, see About/about_Preference_Variables.md.
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on the remote computer.
@@ -217,11 +247,12 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the mechanism that is used to authenticate the user's credentials.
 Valid values are "**Default**", "**Basic**", "**Credssp**", "**Digest**", "**Kerberos**", "**Negotiate**", and "**NegotiateWithImplicitCredential**".
 The default value is "**Default**".
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+For more information about the values of this parameter, see https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism in the MSDN library.
 
 Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -240,6 +271,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
@@ -261,6 +293,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Creates a persistent connection (PSSession) to the specified computer.
 If you enter multiple computer names, **New-PSSession** creates multiple PSSessions, one for each computer.
 The default is the local computer.
@@ -289,6 +322,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationName
+
 Specifies the session configuration that is used for the new PSSession.
 
 Enter a configuration name or the fully qualified resource Uniform Resource Identifier (URI) for a session configuration.
@@ -299,7 +333,7 @@ If the specified session configuration does not exist on the remote computer, th
 
 The default value is the value of the **$PSSessionConfigurationName** preference variable on the local computer.
 If this preference variable is not set, the default is Microsoft.PowerShell.
-For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
+For more information, see About/about_Preference_Variables.md.
 
 ```yaml
 Type: String
@@ -314,6 +348,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
+
 Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint for the session.
 The URI must be fully qualified.
 The format of this string is as follows:
@@ -345,6 +380,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -365,6 +401,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
+
 Adds an interactive security token to loopback sessions.
 The interactive token lets you run commands in the loopback session that get data from other computers.
 For example, you can run a command in the session that copies XML files from a remote computer to the local computer.
@@ -398,6 +435,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a friendly name for the PSSession.
 
 You can use the name to refer to the PSSession when using other cmdlets, such as Get-PSSession and Enter-PSSession.
@@ -416,6 +454,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
+
 Specifies the network port on the remote computer that is used for this connection.
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
@@ -446,6 +485,7 @@ Accept wildcard characters: False
 ```
 
 ### -Session
+
 Uses the specified PSSession as a model for the new PSSession.
 This parameter creates new PSSessions with the same properties as the specified PSSessions.
 
@@ -466,6 +506,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
+
 Sets advanced options for the session.
 Enter a **SessionOption** object, such as one that you create by using the New-PSSessionOption cmdlet, or a hash table in which the keys are session option names and the values are session option values.
 
@@ -476,7 +517,7 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
+For information about the **$PSSessionOption** preference variable, see About/about_Preference_Variables.md.
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
@@ -492,6 +533,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent connections that can be established to run this command.
 If you omit this parameter or enter a value of 0  (zero), the default value, 32, is used.
 
@@ -510,6 +552,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
+
 Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
@@ -531,39 +574,45 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.String, System.URI, System.Management.Automation.Runspaces.PSSession
+
 You can pipe a computer name (string), ConnectionURI (URI), or session (PSSession) object to **New-PSSession**.
+
 ## OUTPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
 ## NOTES
-* This cmdlet uses the Windows PowerShell remoting infrastructure. To use this cmdlet, the local computer and any remote computers must be configured for Windows PowerShell remoting. For more information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
-* To create a PSSession on the local computer, start Windows PowerShell with the "Run as administrator" option.
-* When you are finished with the PSSession, use the Remove-PSSession cmdlet to delete the PSSession and release its resources.
 
-*
+- This cmdlet uses the Windows PowerShell remoting infrastructure. To use this cmdlet, the local computer and any remote computers must be configured for Windows PowerShell remoting. For more information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
+- To create a PSSession on the local computer, start Windows PowerShell with the "Run as administrator" option.
+- When you are finished with the PSSession, use the Remove-PSSession cmdlet to delete the PSSession and release its resources.
+
+- 
+
 ## RELATED LINKS
 
-[Connect-PSSession](Connect-PSSession.md)
+Connect-PSSession.md
 
-[Disconnect-PSSession](Disconnect-PSSession.md)
+Disconnect-PSSession.md
 
-[Enter-PSSession](Enter-PSSession.md)
+Enter-PSSession.md
 
-[Exit-PSSession](Exit-PSSession.md)
+Exit-PSSession.md
 
-[Get-PSSession](Get-PSSession.md)
+Get-PSSession.md
 
-[Invoke-Command](Invoke-Command.md)
+Invoke-Command.md
 
-[Receive-PSSession](Receive-PSSession.md)
+Receive-PSSession.md
 
-[Remove-PSSession](Remove-PSSession.md)
+Remove-PSSession.md
 
-[about_PSSessions](About/about_PSSessions.md)
+About/about_PSSessions.md
 
-[about_Remote](About/about_Remote.md)
+About/about_Remote.md

@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=144301
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Enable-PSSessionConfiguration
 ---
-
 # Enable-PSSessionConfiguration
+
 ## SYNOPSIS
+
 Enables the session configurations on the local computer.
+
 ## SYNTAX
 
 ```
@@ -19,6 +21,7 @@ Enable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-SecurityDescriptor
 ```
 
 ## DESCRIPTION
+
 The **Enable-PSSessionConfiguration** cmdlet enables registered session configurations that have been disabled, such as by using the Disable-PSSessionConfiguration or Disable-PSRemoting cmdlets, or the **AccessMode** parameter of Register-PSSessionConfiguration.
 This is an advanced cmdlet that is designed to be used by system administrators to manage customized session configurations for their users.
 
@@ -31,39 +34,49 @@ However,  **Enable-PSSessionConfiguration** does not remove or change the "Netwo
 The **Enable-PSSessionConfiguration** cmdlet calls the **Set-WSManQuickConfig** cmdlet.
 However, it should not be used to enable remoting on the computer.
 Instead, use the more comprehensive cmdlet, Enable-PSRemoting.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> Enable-PSSessionConfiguration
+PS> Enable-PSSessionConfiguration
 ```
 
 This command re-enables the Microsoft.PowerShell default session configuration on the computer.
+
 ### Example 2
+
 ```
-PS C:\> Enable-PSSessionConfiguration -name MaintenanceShell, AdminShell
+PS> Enable-PSSessionConfiguration -name MaintenanceShell, AdminShell
 ```
 
 This command re-enables the MaintenanceShell and AdminShell session configurations on the computer.
+
 ### Example 3
+
 ```
-PS C:\> Enable-PSSessionConfiguration -name *
-PS C:\> Get-PSSessionConfiguration | Enable-PSSessionConfiguration
+PS> Enable-PSSessionConfiguration -name *
+PS> Get-PSSessionConfiguration | Enable-PSSessionConfiguration
 ```
 
 These commands re-enable all session configurations on the computer.
 The commands are equivalent, so you can use either one.
 
 Enable-PSSessionConfiguration does not generate an error if you enable a session configuration that is already enabled.
+
 ### Example 4
+
 ```
-PS C:\> Enable-PSSessionConfiguration -name MaintenanceShell -securityDescriptorSDDL "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100496)S:P"
+PS> Enable-PSSessionConfiguration -name MaintenanceShell -securityDescriptorSDDL "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100496)S:P"
 ```
 
 This command re-enables the MaintenanceShell session configuration and specifies a new security descriptor for the configuration.
+
 ## PARAMETERS
 
 ### -Force
+
 Suppresses all user prompts, and restarts the WinRM service without prompting.
 Restarting the service makes the configuration change effective.
 
@@ -82,6 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names of session configurations to enable.
 Enter one or more configuration names.
 Wildcards are permitted.
@@ -103,6 +117,7 @@ Accept wildcard characters: True
 ```
 
 ### -SecurityDescriptorSddl
+
 Replaces the security descriptor on the session configuration with the specified security descriptor.
 
 If you omit this parameter, Enable-PSSessionConfiguration just deletes the "deny all" item from the security descriptor.
@@ -120,6 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipNetworkProfileCheck
+
 Enables the session configuration when the computer is on a public network.
 This parameter enables a firewall rule for public networks that allows remote access only from computers in the same local subnet.
 By default, **Enable-PSSessionConfiguration** fails on a public network.
@@ -146,6 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -161,6 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -177,41 +195,49 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration, System.String
+
 You can pipe a session configuration object or a string that contains the name of a session configuration to Enable-PSSessionConfiguration.
+
 ## OUTPUTS
 
 ### None
-This cmdlet does not return any objects.
-## NOTES
-* To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of Windows, you must start Windows PowerShell with the "Run as administrator" option.
 
-*
+This cmdlet does not return any objects.
+
+## NOTES
+
+- To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of Windows, you must start Windows PowerShell with the "Run as administrator" option.
+
+- 
+
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
+Disable-PSSessionConfiguration.md
 
-[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
+Enable-PSSessionConfiguration.md
 
-[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
+Get-PSSessionConfiguration.md
 
-[New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
+New-PSSessionConfigurationFile.md
 
-[New-PSSessionOption](New-PSSessionOption.md)
+New-PSSessionOption.md
 
-[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
+Register-PSSessionConfiguration.md
 
-[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
+Set-PSSessionConfiguration.md
 
-[Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
+Test-PSSessionConfigurationFile.md
 
-[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
+Unregister-PSSessionConfiguration.md
 
-[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
+../microsoft.wsman.management/provider/wsman-provider.md
 
-[about_Session_Configurations](About/about_Session_Configurations.md)
+About/about_Session_Configurations.md
 
-[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
+About/about_Session_Configuration_Files.md

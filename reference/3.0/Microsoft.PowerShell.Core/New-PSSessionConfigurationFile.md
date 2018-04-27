@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=217036
 external help file:  System.Management.Automation.dll-Help.xml
 title:  New-PSSessionConfigurationFile
 ---
-
 # New-PSSessionConfigurationFile
+
 ## SYNOPSIS
+
 Creates a file that defines a session configuration.
+
 ## SYNTAX
 
 ```
@@ -25,6 +27,7 @@ New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Gui
 ```
 
 ## DESCRIPTION
+
 The **New-PSSessionConfigurationFile** cmdlet creates a file of settings that define a session configuration and the environment of sessions that are created by using the session configuration.
 To use the file in a session configuration, use the **Path** parameters of the Register-PSSessionConfiguration or Set-PSSessionConfiguration cmdlets.
 
@@ -44,11 +47,13 @@ The settings in the file are used in addition to the optional startup script and
 For more information about session configurations and session configuration files, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152) and about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
+
 ## EXAMPLES
 
 ### Example 1: Designing a specialized session
+
 ```
-PS C:\> New-PSSessionConfigurationFile -ModulesToImport DMSCmdlets, *Microsoft* -ScriptsToProcess \\Server01\Scripts\Get-DMSServers.ps1
+PS> New-PSSessionConfigurationFile -ModulesToImport DMSCmdlets, *Microsoft* -ScriptsToProcess \\Server01\Scripts\Get-DMSServers.ps1
 ```
 
 The following command creates a session configuration file for IT technical sessions on a cloud-based document management server.
@@ -57,28 +62,30 @@ You can use the resulting file to create a customized session configuration on t
 The ACLs on the session configuration determine who can use the session configuration to create a session on the server.
 
 Customized sessions that include the cmdlets, functions and scripts that technical users need make it easier for those users to write scripts that automate common tasks.
+
 ### Example 2: Restricting Language in a Session
+
 ```
 The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the **LanguageMode** parameter, the session configuration files are equivalent.
-PS C:\> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
+PS> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
 
 
-PS C:\> New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
+PS> New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
 
 The second pair of commands uses the configuration files to create session configurations on the local computer.
-PS C:\> Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
+PS> Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
 
 
-PS C:\> Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
+PS> Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 
 The third pair of commands creates two sessions, each of which uses one of the session configurations that were created in the previous command pair.
-PS C:\> $NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
+PS> $NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
 
 
-PS C:\> $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
+PS> $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
-PS C:\> Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+PS> Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 The syntax is not supported by this runspace. This might be because it is in no-language mode.
     + CategoryInfo          : ParserError: (if ((Get-Date) ...") {"Before"}  :String) [], ParseException
     + FullyQualifiedErrorId : ScriptsNotAllowed
@@ -86,7 +93,7 @@ The syntax is not supported by this runspace. This might be because it is in no-
 
 
 The eighth command uses the **Invoke-Command** cmdlet to run the same If statement in the restricted-language session. Because these language elements are permitted in the restricted-language session, the command succeeds.
-PS C:\> Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+PS> Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 Before
 ```
 
@@ -95,36 +102,42 @@ The example shows the effect of using the **LanguageMode** parameter of **New-PS
 
 To run the commands in this example, start Windows PowerShell with the "Run as administrator" option.
 This option is required to run the Register-PSSessionConfiguration cmdlet.
+
 ### Example 3: Changing a Session Configuration File
+
 ```
 The first command uses the **New-PSSessionConfigurationFile** cmdlet to create a session configuration file that imports the required modules.
-PS C:\> New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
+PS> New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
 
 The second command uses the Set-PSSessionConfiguration cmdlet to replace the current .pssc file with the new one. Changes to the session configuration affects all sessions created after the change completes.
-PS C:\> Set-PSSessionConfiguration -Name  ITTasks -Path .\New-ITTasks.pssc
+PS> Set-PSSessionConfiguration -Name  ITTasks -Path .\New-ITTasks.pssc
 ```
 
 This example shows how to change the session configuration file that is used in a session configuration.
 In this scenario, the administrator wants to add the PSScheduledJob module to sessions created with the ITTasks session configuration.
 Previously, these sessions had only the core modules and an internal "ITTasks" module.
+
 ### Example 4: Editing a Session Configuration File
+
 ```
 The first command uses the Get-PSSessionConfiguration command to get the path to the configuration file for the ITConfig session configuration. The path is stored in the **ConfigFilePath** property of the session configuration.
-PS C:\> (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
+PS> (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\ITConfig_1e9cb265-dae0-4bd3-89a9-8338a47698a1.pssc
 
 To edit the session configuration copy of the configuration file, you might need to edit the file permissions.In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click **Properties**. On the **Security** tab, click **Edit**, and then click **Add**. Add the user, and then, in the **Full control** column, click **Allow**.Now the user can edit the file. A new "slst" alias for the Select-String cmdlet is added to the file.
-PS C:\> AliasDefinitions = @(@{Name='slst';Value='Select-String'})
+PS> AliasDefinitions = @(@{Name='slst';Value='Select-String'})
 
 The second command uses the Test-PSSessionConfigurationFile cmdlet to test the edited file. The command uses the **Verbose** parameter, which displays the file errors that the cmdlet detects, if any.In this case, the cmdlet returns True ($true), which indicates that it did not detect any errors in the file.
-PS C:\> Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
+PS> Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 True
 ```
 
 This example shows how to change a session configuration by editing the active session configuration copy of the configuration file.
+
 ### Example 5: Sample Configuration File
+
 ```
-PS C:\> New-PSSessionConfigurationFile
+PS> New-PSSessionConfigurationFile
 -Path .\SampleFile.pssc
 -Schema "1.0.0.0"
 -Author "User01"
@@ -253,14 +266,17 @@ This example displays a **New-PSSessionConfigurationFile** command that uses all
 It is included to show the correct input format for each parameter.
 
 The resulting SampleFile.pssc is displayed in the output.
+
 ### 1:
+
 ```
-PS C:\>
+PS>
 ```
 
 ## PARAMETERS
 
 ### -AliasDefinitions
+
 Adds the specified aliases to sessions that use the session configuration.
 Enter a hash table with the following keys:
 
@@ -284,6 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -AssembliesToLoad
+
 Specifies the assemblies to load into the sessions that use the session configuration.
 
 ```yaml
@@ -299,6 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -Author
+
 Identifies the author of the session configuration or the configuration file.
 The default is the current user.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
@@ -316,6 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompanyName
+
 Identifies the company that created the session configuration or the configuration file.
 The default value is "**Unknown**".
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
@@ -333,6 +352,7 @@ Accept wildcard characters: False
 ```
 
 ### -Copyright
+
 Adds a copyright to the session configuration file.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
 
@@ -351,6 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Describes the session configuration or the session configuration file.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
 
@@ -367,6 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnvironmentVariables
+
 Adds environment variables to the session.
 Enter a hash table in which the keys are the environment variable names and the values are the environment variable values.
 
@@ -385,6 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExecutionPolicy
+
 Specifies the execution policy of sessions that use the session configuration.
 If you omit this parameter, the value of the **ExecutionPolicy** key in the session configuration file is "Restricted".
 For information about execution policies in Windows PowerShell, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
@@ -402,6 +425,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatsToProcess
+
 Specifies the formatting files (.ps1xml) that run in sessions that use the session configuration.
 The value of this parameter must be a full or absolute path to the formatting files.
 
@@ -418,6 +442,7 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionDefinitions
+
 Adds the specified functions to sessions that use the session configuration.
 Enter a hash table with the following keys:
 
@@ -440,6 +465,7 @@ Accept wildcard characters: False
 ```
 
 ### -Guid
+
 Specifies a unique identifier for the session configuration file.
 If you omit this parameter, **New-PSSessionConfigurationFile** generates a GUID for the file.
 To create a new GUID in Windows PowerShell, type "`\[guid\]::NewGuid()`".
@@ -457,6 +483,7 @@ Accept wildcard characters: False
 ```
 
 ### -LanguageMode
+
 Determines which elements of the Windows PowerShell language are permitted in sessions that use this session configuration.
 You can use this parameter to restrict the commands that particular users can run on the computer.
 
@@ -486,6 +513,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModulesToImport
+
 Specifies the modules and snap-ins that are automatically imported into sessions that use the session configuration.
 
 By default, only the Microsoft.PowerShell.Core snap-in is imported into remote sessions, but unless the cmdlets are excluded, users can use the Import-Module and Add-PSSnapin cmdlets to add modules and snap-ins to the session.
@@ -515,6 +543,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path and file name of the session configuration file.
 The file must have a **.pssc** file name extension.
 
@@ -531,6 +560,7 @@ Accept wildcard characters: False
 ```
 
 ### -PowerShellVersion
+
 Specifies the version of the Windows PowerShell engine in sessions that use the session configuration.
 Valid values are 2.0 and 3.0.
 If you omit this parameter, the PowerShellVersion key is commented-out and newest version of Windows PowerShell runs in the session.
@@ -550,6 +580,7 @@ Accept wildcard characters: False
 ```
 
 ### -SchemaVersion
+
 Specifies the version of the session configuration file schema.
 The default value is "1.0.0.0".
 
@@ -566,6 +597,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptsToProcess
+
 Adds the specified scripts to sessions that use the session configuration.
 Enter the path and file names of the scripts.
 The value of this parameter must be a full or absolute path to script file names.
@@ -583,6 +615,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionType
+
 Specifies the type of session that is created by using the session configuration.
 The default value is **Default**.
 Valid values are:
@@ -604,6 +637,7 @@ Accept wildcard characters: False
 ```
 
 ### -TypesToProcess
+
 Adds the specified type files (.ps1xml) to sessions that use the session configuration.
 Enter the type file names.
 The value of this parameter must be a full or absolute path to type file names.
@@ -621,6 +655,7 @@ Accept wildcard characters: False
 ```
 
 ### -VariableDefinitions
+
 Adds the specified variables to sessions that use the session configuration.
 Enter a hash table with the following keys:
 
@@ -643,6 +678,7 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleAliases
+
 Limits the aliases in the session to those specified in the value of this parameter, plus any aliases that you define in the **AliasDefinition** parameter.
 Wildcards are supported.
 By default, all aliases that are defined by the Windows PowerShell engine and all aliases that modules export are visible in the session.
@@ -664,6 +700,7 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleCmdlets
+
 Limits the cmdlets in the session to those specified in the value of this parameter.
 Wildcards are supported.
 
@@ -685,6 +722,7 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleFunctions
+
 Limits the functions in the session to those specified in the value of this parameter, plus any functions that you define in the **FunctionDefinition** parameter.
 Wildcards are supported.
 
@@ -706,6 +744,7 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleProviders
+
 Limits the Windows PowerShell providers in the session to those specified in the value of this parameter.
 Wildcards are supported.
 
@@ -727,46 +766,54 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 This cmdlet does not take input from the pipeline.
+
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
+
 ## NOTES
-* The Visible parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the session. Instead, they select from among the items imported into the session. For example, if the value of the **VisibleProviders** parameter is the Certificate provider, but the **ModulesToImport** parameter doesn't specify the Microsoft.PowerShell.Security module that contains the Certificate provider, the Certificate provider is not visible in the session.
-* **New-PSSessionConfigurationFile** creates a session configuration file with a .pssc file name extension in the path that you specify in the **Path** parameter. When you use the session configuration file to create a session configuration, the Register-PSSessionConfiguration cmdlet copies the configuration file and saves an active copy of the file in the **SessionConfig** subdirectory of the $pshome directory.
+
+- The Visible parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the session. Instead, they select from among the items imported into the session. For example, if the value of the **VisibleProviders** parameter is the Certificate provider, but the **ModulesToImport** parameter doesn't specify the Microsoft.PowerShell.Security module that contains the Certificate provider, the Certificate provider is not visible in the session.
+- **New-PSSessionConfigurationFile** creates a session configuration file with a .pssc file name extension in the path that you specify in the **Path** parameter. When you use the session configuration file to create a session configuration, the Register-PSSessionConfiguration cmdlet copies the configuration file and saves an active copy of the file in the **SessionConfig** subdirectory of the $pshome directory.
 
   The **ConfigFilePath** property of the session configuration contains the fully qualified path to the active session configuration file.
 You can edit the active configuration file in the $pshome directory at any time, either by using Windows PowerShell ISE or any text editor.
 The changes that you make affect all new sessions that use the session configuration, but not existing sessions.
 
   Before using an edited session configuration file, use the Test-PSSessionConfigurationFile cmdlet to verify that the configuration file entries are valid.
+
 ## RELATED LINKS
 
-[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
+Disable-PSSessionConfiguration.md
 
-[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
+Enable-PSSessionConfiguration.md
 
-[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
+Get-PSSessionConfiguration.md
 
-[New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
+New-PSSessionConfigurationFile.md
 
-[New-PSSessionOption](New-PSSessionOption.md)
+New-PSSessionOption.md
 
-[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
+Register-PSSessionConfiguration.md
 
-[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
+Set-PSSessionConfiguration.md
 
-[Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
+Test-PSSessionConfigurationFile.md
 
-[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
+Unregister-PSSessionConfiguration.md
 
-[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
+../microsoft.wsman.management/provider/wsman-provider.md
 
-[about_Session_Configurations](About/about_Session_Configurations.md)
+About/about_Session_Configurations.md
 
-[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
+About/about_Session_Configuration_Files.md
