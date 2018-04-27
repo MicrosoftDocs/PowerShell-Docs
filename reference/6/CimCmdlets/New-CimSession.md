@@ -147,7 +147,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the [Get-Item](../Microsoft.Powershell.Management/Get-Item.md) or [Get-ChildItem] cmdlets in the PowerShell [Certificate Provider](../Microsoft.PowerShell.Security/Providers/Certificate-Provider.md).
+To get a certificate thumbprint, use the [Get-Item](../Microsoft.Powershell.Management/Get-Item.md) or [Get-ChildItem](../Microsoft.Powershell.Management/Get-ChildItem.md) cmdlets in the PowerShell [Certificate Provider](../Microsoft.PowerShell.Security/Providers/Certificate-Provider.md).
 For more information about using the PowerShell Certificate provider, type Get-Help Certificate, or see [Certificate Provider](../Microsoft.PowerShell.Security/Providers/Certificate-Provider.md) on docs.microsoft.com.
 
 ```yaml
@@ -346,5 +346,3 @@ This cmdlet accepts no inputs.
 [Remove-CimSession](Remove-CimSession.md)
 
 [New-CimSessionOption](New-CimSessionOption.md)
-
-[Get-ChildItem]: (../Microsoft.Powershell.Management/Get-ChildItem.md)
