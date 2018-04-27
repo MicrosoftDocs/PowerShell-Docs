@@ -74,7 +74,7 @@ Protocol     : WSMAN
 
 This command first creates CIM sessions by using New-CimSession, and then gets the CIM sessions by using Get-CimSession.
 
-### Example 2: Get the CIM sessions from a specific computer
+### Example 2: Get the CIM sessions to a specific computer
 
 ```powershell
 PS C:\> Get-CimSession -ComputerName Server02
@@ -139,7 +139,7 @@ This command gets the CIM session that has an ID of 2.
 
 ### -ComputerName
 
-Specifies the name of the computer from which to get CIM sessions.
+Specifies the name of the computer to get CIM sessions connected to.
 Wildcard characters are permitted.
 
 ```yaml
