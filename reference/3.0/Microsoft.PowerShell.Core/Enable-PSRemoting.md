@@ -209,20 +209,20 @@ When the current network location is public, **Enable-PSRemoting** returns the f
 
 ## RELATED LINKS
 
-Disable-PSSessionConfiguration.md
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-Enable-PSSessionConfiguration.md
+[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
-Get-PSSessionConfiguration.md
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-Register-PSSessionConfiguration.md
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-Set-PSSessionConfiguration.md
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-Disable-PSRemoting.md
+[Disable-PSRemoting](Disable-PSRemoting.md)
 
-../microsoft.wsman.management/provider/wsman-provider.md
+[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
-About/about_Remote.md
+[about_Remote](About/about_Remote.md)
 
-About/about_Session_Configurations.md
+[about_Session_Configurations](About/about_Session_Configurations.md)

@@ -335,16 +335,16 @@ Beginning in Windows PowerShell 3.0, it is a cmdlet.
 
 ## RELATED LINKS
 
-Disable-PSSessionConfiguration.md
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-Enable-PSRemoting.md
+[Enable-PSRemoting](Enable-PSRemoting.md)
 
-Get-PSSessionConfiguration.md
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-Register-PSSessionConfiguration.md
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-Set-PSSessionConfiguration.md
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-Unregister-PSSessionConfiguration.md
+[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-../microsoft.wsman.management/provider/wsman-provider.md
+[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)

@@ -170,7 +170,7 @@ The command saves the PSSessions in the $s variable.
 
 The second command uses the **AsJob** parameter of the Invoke-Command cmdlet to start a background job that runs a "Get-Process PowerShell" command in each of the PSSessions in $s.
 
-For more information about Windows PowerShell background jobs, see About/about_Jobs.md and About/about_Remote_Jobs.md.
+For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ### Example 10
 
@@ -229,7 +229,7 @@ Use this parameter to specify the application name when you are not using the **
 The default value is the value of the **$PSSessionApplicationName** preference variable on the local computer.
 If this preference variable is not defined, the default value is "WSMAN".
 This value is appropriate for most uses.
-For more information, see About/about_Preference_Variables.md.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on the remote computer.
@@ -252,7 +252,7 @@ Specifies the mechanism that is used to authenticate the user's credentials.
 Valid values are "**Default**", "**Basic**", "**Credssp**", "**Digest**", "**Kerberos**", "**Negotiate**", and "**NegotiateWithImplicitCredential**".
 The default value is "**Default**".
 
-For more information about the values of this parameter, see https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -333,7 +333,7 @@ If the specified session configuration does not exist on the remote computer, th
 
 The default value is the value of the **$PSSessionConfigurationName** preference variable on the local computer.
 If this preference variable is not set, the default is Microsoft.PowerShell.
-For more information, see About/about_Preference_Variables.md.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
 Type: String
@@ -517,7 +517,7 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the **$PSSessionOption** preference variable, see About/about_Preference_Variables.md.
+For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
@@ -597,22 +597,22 @@ You can pipe a computer name (string), ConnectionURI (URI), or session (PSSessio
 
 ## RELATED LINKS
 
-Connect-PSSession.md
+[Connect-PSSession](Connect-PSSession.md)
 
-Disconnect-PSSession.md
+[Disconnect-PSSession](Disconnect-PSSession.md)
 
-Enter-PSSession.md
+[Enter-PSSession](Enter-PSSession.md)
 
-Exit-PSSession.md
+[Exit-PSSession](Exit-PSSession.md)
 
-Get-PSSession.md
+[Get-PSSession](Get-PSSession.md)
 
-Invoke-Command.md
+[Invoke-Command](Invoke-Command.md)
 
-Receive-PSSession.md
+[Receive-PSSession](Receive-PSSession.md)
 
-Remove-PSSession.md
+[Remove-PSSession](Remove-PSSession.md)
 
-About/about_PSSessions.md
+[about_PSSessions](About/about_PSSessions.md)
 
-About/about_Remote.md
+[about_Remote](About/about_Remote.md)

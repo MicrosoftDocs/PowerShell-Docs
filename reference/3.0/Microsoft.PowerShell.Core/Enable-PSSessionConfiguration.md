@@ -218,26 +218,26 @@ This cmdlet does not return any objects.
 
 ## RELATED LINKS
 
-Disable-PSSessionConfiguration.md
+[Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
-Enable-PSSessionConfiguration.md
+[Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
-Get-PSSessionConfiguration.md
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-New-PSSessionConfigurationFile.md
+[New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-New-PSSessionOption.md
+[New-PSSessionOption](New-PSSessionOption.md)
 
-Register-PSSessionConfiguration.md
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-Set-PSSessionConfiguration.md
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
-Test-PSSessionConfigurationFile.md
+[Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
 
-Unregister-PSSessionConfiguration.md
+[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-../microsoft.wsman.management/provider/wsman-provider.md
+[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
-About/about_Session_Configurations.md
+[about_Session_Configurations](About/about_Session_Configurations.md)
 
-About/about_Session_Configuration_Files.md
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)

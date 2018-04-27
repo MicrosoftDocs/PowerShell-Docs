@@ -66,7 +66,7 @@ The modules that you import must be installed on the local computer or a remote 
 Beginning in Windows PowerShell 3.0, installed modules are automatically imported to the session when you use any commands or providers in the module.
 However, you can still use the **Import-Module** command to import a module and you can enable and disable automatic module importing by using the **$PSModuleAutoloadingPreference** preference variable.
 For more information about modules, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
-For more information about the **$PSModuleAutoloadingPreference** variable, see About/about_Preference_Variables.md.
+For more information about the **$PSModuleAutoloadingPreference** variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 A module is a package that contains members (such as cmdlets, providers, scripts, functions, variables, and other tools and files) that can be used in Windows PowerShell.
 After a module is imported, you can use the module members in your session.
@@ -781,7 +781,7 @@ Accept wildcard characters: True
 ### -CimSession
 
 Specifies a CIM session on the remote computer.
-Enter a variable that contains the CIM session or a command that gets the CIM session, such as a https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession command.
+Enter a variable that contains the CIM session or a command that gets the CIM session, such as a [Get-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession) command.
 
 **Import-Module** uses the CIM session connection to import modules from the remote computer into the current session.
 When you use the commands from the imported module in the current session, the commands actually run on the remote computer.
@@ -937,7 +937,7 @@ However, commands that use the cmdlets in these modules actually run in the remo
 - To update the formatting data for commands that have been imported from a module, use the Update-FormatData cmdlet. **Update-FormatData** also updates the formatting data for commands in the session that were imported from modules. If the formatting file for a module changes, you can run an **Update-FormatData** command to update the formatting data for imported commands. You do not need to import the module again.
 - Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins ("PSSnapins"). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
 
-  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2 in the MSDN library.
+  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
 
 - **Import-Module** cannot import Windows PowerShell Core modules from another session. The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
 - In Windows PowerShell 2.0, some of the property values of the module object, such as the **ExportedCmdlets** and **NestedModules** property values, were not populated until the module was imported and were not available on the module object that the **PassThru** parameter returns. In Windows PowerShell 3.0, all module property values are populated.
@@ -966,8 +966,8 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 [New-Module](New-Module.md)
 
-Remove-Module.md
+[Remove-Module](Remove-Module.md)
 
 [Get-Verb](functions/get-verb.md)
 
-About/about_Modules.md
+[about_Modules](About/about_Modules.md)

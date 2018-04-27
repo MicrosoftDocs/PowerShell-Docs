@@ -895,16 +895,16 @@ Typically, it refers to the global session state, but when a module imports nest
 
 ## RELATED LINKS
 
-Export-ModuleMember.md
+[Export-ModuleMember](Export-ModuleMember.md)
 
-Get-Module.md
+[Get-Module](Get-Module.md)
 
-Import-Module.md
+[Import-Module](Import-Module.md)
 
-New-Module.md
+[New-Module](New-Module.md)
 
-Remove-Module.md
+[Remove-Module](Remove-Module.md)
 
-Test-ModuleManifest.md
+[Test-ModuleManifest](Test-ModuleManifest.md)
 
-About/about_Modules.md
+[about_Modules](About/about_Modules.md)

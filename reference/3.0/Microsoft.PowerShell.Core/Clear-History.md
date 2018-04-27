@@ -209,10 +209,10 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-Add-History.md
+[Add-History](Add-History.md)
 
-Get-History.md
+[Get-History](Get-History.md)
 
-Invoke-History.md
+[Invoke-History](Invoke-History.md)
 
-About/about_History.md
+[about_History](About/about_History.md)

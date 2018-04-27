@@ -158,10 +158,10 @@ For more information, see about_Aliases (http://go.microsoft.com/fwlink/?LinkID=
 
 ## RELATED LINKS
 
-Add-History.md
+[Add-History](Add-History.md)
 
-Clear-History.md
+[Clear-History](Clear-History.md)
 
 [Get-History](Get-History.md)
 
-About/about_History.md
+[about_History](About/about_History.md)

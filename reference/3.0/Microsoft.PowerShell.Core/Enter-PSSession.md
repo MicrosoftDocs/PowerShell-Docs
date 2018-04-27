@@ -198,7 +198,7 @@ The default value is "Default".
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -506,7 +506,7 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the **$PSSessionOption** preference variable, see About/about_Preference_Variables.md.
+For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
@@ -571,22 +571,22 @@ The cmdlet does not return any output.
 
 ## RELATED LINKS
 
-Exit-PSSession.md
+[Exit-PSSession](Exit-PSSession.md)
 
-Get-PSSession.md
+[Get-PSSession](Get-PSSession.md)
 
-Invoke-Command.md
+[Invoke-Command](Invoke-Command.md)
 
-New-PSSession.md
+[New-PSSession](New-PSSession.md)
 
-Remove-PSSession.md
+[Remove-PSSession](Remove-PSSession.md)
 
-Connect-PSSession.md
+[Connect-PSSession](Connect-PSSession.md)
 
-Disconnect-PSSession.md
+[Disconnect-PSSession](Disconnect-PSSession.md)
 
-Receive-PSSession.md
+[Receive-PSSession](Receive-PSSession.md)
 
-About/about_PSSessions.md
+[about_PSSessions](About/about_PSSessions.md)
 
-About/about_Remote.md
+[about_Remote](About/about_Remote.md)

@@ -212,7 +212,7 @@ Specifies the mechanism that is used to authenticate the user's credentials in t
 Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**.
 The default value is **Default**.
 
-For more information about the values of this parameter, see https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -420,7 +420,7 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the **$PSSessionOption** preference variable, see About/about_Preference_Variables.md.
+For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
@@ -639,9 +639,9 @@ You can pipe a session (PSSession) to the **Connect-PSSession** cmdlet.
   An **Availability** value of **None** indicates that you can connect to the session.
 A value of **Busy** indicates that you cannot connect to the PSSession because it is connected to another session.
 
-  For more information about the values of the **State** property of sessions, see https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate in the MSDN library.
+  For more information about the values of the **State** property of sessions, see [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability in the MSDN library.
+  For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
 - You cannot change the idle timeout value of a PSSession when you connect to the PSSession. The **SessionOption** parameter of **Connect-PSSession** takes a **SessionOption** object that has an **IdleTimeout** value. However, the **IdleTimeout** value of the **SessionOption** object and the **IdleTimeout** value of the **$PSSessionOption** variable are ignored when connecting to a PSSession.
 
@@ -652,34 +652,34 @@ Disconnected sessions are considered to be idle from the moment that they are di
 
 ## RELATED LINKS
 
-Connect-PSSession.md
+[Connect-PSSession](Connect-PSSession.md)
 
-Disconnect-PSSession.md
+[Disconnect-PSSession](Disconnect-PSSession.md)
 
-Enter-PSSession.md
+[Enter-PSSession](Enter-PSSession.md)
 
-Exit-PSSession.md
+[Exit-PSSession](Exit-PSSession.md)
 
-Get-PSSession.md
+[Get-PSSession](Get-PSSession.md)
 
-Get-PSSessionConfiguration.md
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-New-PSSession.md
+[New-PSSession](New-PSSession.md)
 
-New-PSSessionOption.md
+[New-PSSessionOption](New-PSSessionOption.md)
 
-New-PSTransportOption.md
+[New-PSTransportOption](New-PSTransportOption.md)
 
-Receive-PSSession.md
+[Receive-PSSession](Receive-PSSession.md)
 
-Register-PSSessionConfiguration.md
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-Remove-PSSession.md
+[Remove-PSSession](Remove-PSSession.md)
 
-About/about_PSSessions.md
+[about_PSSessions](About/about_PSSessions.md)
 
-About/about_Remote.md
+[about_Remote](About/about_Remote.md)
 
-About/about_Remote_Disconnected_Sessions.md
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
-About/about_Session_Configurations.md
+[about_Session_Configurations](About/about_Session_Configurations.md)

@@ -475,7 +475,7 @@ Use this parameter to specify the application name when you are not using the **
 The default value is the value of the **$PSSessionApplicationName** preference variable on the local computer.
 If this preference variable is not defined, the default value is WSMAN.
 This value is appropriate for most uses.
-For more information, see About/about_Preference_Variables.md.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on the remote computer.
@@ -534,7 +534,7 @@ To get the job results, use the Receive-Job cmdlet.
 The **AsJob** parameter is similar to using the **Invoke-Command** cmdlet to run a Start-Job command remotely.
 However, with **AsJob**, the job is created on the local computer, even though the job runs on a remote computer, and the results of the remote job are automatically returned to the local computer.
 
-For more information about Windows PowerShell background jobs, see About/about_Jobs.md and About/about_Remote_Jobs.md.
+For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -556,7 +556,7 @@ The default value is **Default**.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -840,7 +840,7 @@ By default, jobs are named "Job\<n\>", where \<n\> is an ordinal number.
 
 If you use the JobName parameter in a command, the command is run as a job, and Invoke-Command returns a job object, even if you do not include the AsJob parameter in the command.
 
-For more information about Windows PowerShell background jobs, see About/about_Jobs.md.
+For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md).
 
 ```yaml
 Type: String
@@ -943,7 +943,7 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the **$PSSessionOption** preference variable, see About/about_Preference_Variables.md.
+For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
@@ -1083,29 +1083,29 @@ To determine whether you can connect or reconnect to the session, use the **Avai
   An **Availability** value of **None** indicates that you can connect to the session.
 A value of **Busy** indicates that you cannot connect to the PSSession because it is connected to another session.
 
-  For more information about the values of the **State** property of sessions, see https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate in the MSDN library.
+  For more information about the values of the **State** property of sessions, see [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability in the MSDN library.
+  For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
 ## RELATED LINKS
 
-Enter-PSSession.md
+[Enter-PSSession](Enter-PSSession.md)
 
-Exit-PSSession.md
+[Exit-PSSession](Exit-PSSession.md)
 
-Get-PSSession.md
+[Get-PSSession](Get-PSSession.md)
 
 [Invoke-Item](../Microsoft.PowerShell.Management/Invoke-Item.md)
 
-New-PSSession.md
+[New-PSSession](New-PSSession.md)
 
-Remove-PSSession.md
+[Remove-PSSession](Remove-PSSession.md)
 
-../microsoft.wsman.management/provider/wsman-provider.md
+[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
-About/about_PSSessions.md
+[about_PSSessions](About/about_PSSessions.md)
 
-About/about_Remote.md
+[about_Remote](About/about_Remote.md)
 
 [about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 

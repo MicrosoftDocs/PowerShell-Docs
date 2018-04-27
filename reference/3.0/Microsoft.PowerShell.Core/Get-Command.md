@@ -42,7 +42,7 @@ A "`Get-Command *`" command gets all types of commands, including all of the non
 
 A **Get-Command** command that uses the exact name of the command (without wildcard characters) automatically imports the module that contains the command so you can use the command immediately.
 To enable, disable, and configure automatic importing of modules, use the **$PSModuleAutoLoadingPreference** preference variable.
-For more information, see About/about_Preference_Variables.md.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 **Get-Command** gets its data directly from the command code, unlike Get-Help, which gets its information from help topics.
 
@@ -97,7 +97,7 @@ It also imports the **AppLocker** module, which adds all of the commands in the 
 When a module is imported automatically, the effect is the same as using the Import-Module cmdlet.
 The module can add commands, types and formatting files, and run scripts in the session.
 To enable, disable, and configuration automatic importing of modules, use the **$PSModuleAutoLoadingPreference** preference variable.
-For more information, see About/about_Preference_Variables.md.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ### Example 6
 
@@ -532,18 +532,18 @@ Represents functions and filters
 ## NOTES
 
 - When more than one command with the same name is available to the session, **Get-Command** returns the command that runs when you type the command name. To get commands with the same name (listed in execution order), use the **All** parameter. For more information, see about_Command_Precedence.
-- When a module is imported automatically, the effect is the same as using the Import-Module cmdlet. The module can add commands, types and formatting files, and run scripts in the session. To enable, disable, and configuration automatic importing of modules, use the **$PSModuleAutoLoadingPreference** preference variable. For more information, see About/about_Preference_Variables.md.
+- When a module is imported automatically, the effect is the same as using the Import-Module cmdlet. The module can add commands, types and formatting files, and run scripts in the session. To enable, disable, and configuration automatic importing of modules, use the **$PSModuleAutoLoadingPreference** preference variable. For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ## RELATED LINKS
 
 [Export-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 
-Get-Help.md
+[Get-Help](Get-Help.md)
 
 [Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
 
 [Get-PSDrive](../microsoft.powershell.management/get-psdrive.md)
 
-../Microsoft.PowerShell.Utility/Import-PSSession.md
+[Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [about_Command_Precedence](About/about_Command_Precedence.md)

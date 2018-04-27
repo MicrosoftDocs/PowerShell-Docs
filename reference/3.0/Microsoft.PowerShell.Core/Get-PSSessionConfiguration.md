@@ -335,7 +335,7 @@ This command is useful when setting the value of the $PSSessionConfigurationName
 
 The $PSSessionConfiguationName variable specifies the default configuration that is used when you create a session.
 This variable is set on the local computer, but it specifies a configuration on the remote computer.
-For more information about the $PSSessionConfiguration variable, see About/about_Preference_Variables.md.
+For more information about the $PSSessionConfiguration variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ## PARAMETERS
 

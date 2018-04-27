@@ -480,36 +480,36 @@ To determine whether you can connect or reconnect to the session, use the **Avai
   An **Availability** value of **None** indicates that you can connect to the session.
 A value of **Busy** indicates that you cannot connect to the PSSession because it is connected to another session.
 
-  For more information about the values of the **State** property of sessions, see https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate in the MSDN library.
+  For more information about the values of the **State** property of sessions, see [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability in the MSDN library.
+  For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
 ## RELATED LINKS
 
-Connect-PSSession.md
+[Connect-PSSession](Connect-PSSession.md)
 
-Enter-PSSession.md
+[Enter-PSSession](Enter-PSSession.md)
 
-Exit-PSSession.md
+[Exit-PSSession](Exit-PSSession.md)
 
-Get-PSSession.md
+[Get-PSSession](Get-PSSession.md)
 
-Get-PSSessionConfiguration.md
+[Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
-New-PSSession.md
+[New-PSSession](New-PSSession.md)
 
-New-PSSessionOption.md
+[New-PSSessionOption](New-PSSessionOption.md)
 
-New-PSTransportOption.md
+[New-PSTransportOption](New-PSTransportOption.md)
 
-Receive-PSSession.md
+[Receive-PSSession](Receive-PSSession.md)
 
-Register-PSSessionConfiguration.md
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
-Remove-PSSession.md
+[Remove-PSSession](Remove-PSSession.md)
 
-About/about_PSSessions.md
+[about_PSSessions](About/about_PSSessions.md)
 
-About/about_Remote.md
+[about_Remote](About/about_Remote.md)
 
-About/about_Remote_Disconnected_Sessions.md
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)

@@ -166,10 +166,10 @@ If you intend to pass the objects back to **Add-History**, do not use the **NoTy
 
 ## RELATED LINKS
 
-Clear-History.md
+[Clear-History](Clear-History.md)
 
-Get-History.md
+[Get-History](Get-History.md)
 
-Invoke-History.md
+[Invoke-History](Invoke-History.md)
 
-About/about_History.md
+[about_History](About/about_History.md)

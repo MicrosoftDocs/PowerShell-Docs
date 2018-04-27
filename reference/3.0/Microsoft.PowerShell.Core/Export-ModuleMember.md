@@ -254,10 +254,10 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-Get-Module.md
+[Get-Module](Get-Module.md)
 
-Import-Module.md
+[Import-Module](Import-Module.md)
 
-Remove-Module.md
+[Remove-Module](Remove-Module.md)
 
-About/about_Modules.md
+[about_Modules](About/about_Modules.md)

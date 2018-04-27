@@ -522,7 +522,7 @@ To see the custom cmdlet help for a provider path, go to the provider path locat
 You can also find custom cmdlet help online in the provider help section of the help topics.
 For example, you can find help for the **New-Item** cmdlet in the Wsman:\*\ClientCertificate path (http://go.microsoft.com/fwlink/?LinkID=158676).
 
-For more information about Windows PowerShell providers, see About/about_Providers.md.
+For more information about Windows PowerShell providers, see [about_Providers](About/about_Providers.md).
 
 ```yaml
 Type: String
@@ -638,11 +638,11 @@ When the parameter name is used, the parameter can appear anywhere in the comman
 
 [about_Command_Syntax](About/about_Command_Syntax.md)
 
-Get-Command.md
+[Get-Command](Get-Command.md)
 
-../Microsoft.PowerShell.Utility/Get-Member.md
+[Get-Member](../Microsoft.PowerShell.Utility/Get-Member.md)
 
-../microsoft.powershell.management/get-psdrive.md
+[Get-PSDrive](../microsoft.powershell.management/get-psdrive.md)
 
 [about_Comment_Based_Help](About/about_Comment_Based_Help.md)
 

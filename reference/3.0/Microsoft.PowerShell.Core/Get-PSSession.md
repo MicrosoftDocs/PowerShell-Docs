@@ -604,7 +604,7 @@ The session option values take precedence over default values for sessions set i
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see New-PSSessionOption.
-For information about the **$PSSessionOption** preference variable, see About/about_Preference_Variables.md.
+For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 
 ```yaml
@@ -660,9 +660,9 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 
 [Exit-PSSession](Exit-PSSession.md)
 
-Invoke-Command.md
+[Invoke-Command](Invoke-Command.md)
 
-New-PSSession.md
+[New-PSSession](New-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
 
