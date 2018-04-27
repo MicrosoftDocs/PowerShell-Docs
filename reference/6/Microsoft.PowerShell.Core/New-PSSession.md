@@ -804,13 +804,10 @@ Accept wildcard characters: False
 Specifies the SSH subsystem used for the new **PSSession**.
 
 This specifies the subsystem to use on the target as defined in sshd_config.
+The subsystem starts a specific version of PowerShell with predefined parameters.
+If the specified subsystem does not exist on the remote computer, the command fails.
 
-The session configuration for a session is located on the remote computer.
-If the specified session configuration does not exist on the remote computer, the command fails.
-
-The default value is the value of the $PSSessionConfigurationName preference variable on the local computer.
-If this preference variable is not set, the default is the 'powershell' subsystem.
-For more information, see about_Preference_Variables.
+If this parameter is not used, the default is the 'powershell' subsystem.
 
 ```yaml
 Type: String
