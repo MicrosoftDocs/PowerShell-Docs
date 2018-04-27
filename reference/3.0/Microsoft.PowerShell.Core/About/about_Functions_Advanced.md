@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/28/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions_Advanced
 ---
-
 # About Functions Advanced
 
 # SHORT DESCRIPTION
@@ -51,7 +50,7 @@ function Send-Greeting
 
     Process
     {
-        write-host ("Hello " + $Name + "!")
+        Write-Host ("Hello " + $Name + "!")
     }
 }
 ```
