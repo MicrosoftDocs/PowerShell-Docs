@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,38 +7,46 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=135250
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Remove-PSSession
 ---
-
 # Remove-PSSession
+
 ## SYNOPSIS
+
 Closes one or more Windows PowerShell sessions (PSSessions).
+
 ## SYNTAX
 
 ### Id (Default)
+
 ```
 Remove-PSSession [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Session
+
 ```
 Remove-PSSession [-Session] <PSSession[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceId
+
 ```
 Remove-PSSession -InstanceId <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Name
+
 ```
 Remove-PSSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ComputerName
+
 ```
 Remove-PSSession [-ComputerName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Remove-PSSession cmdlet closes Windows PowerShell sessions (PSSessions) in the current session.
 It stops any commands that are running in the PSSessions, ends the PSSession, and releases the resources that the PSSession was using.
 If the PSSession is connected to a remote computer, Remove-PSSession also closes the connection between the local and remote computers.
@@ -46,47 +54,57 @@ If the PSSession is connected to a remote computer, Remove-PSSession also closes
 To remove a PSSession, enter the Name, ComputerName, ID, or InstanceID of the session.
 
 If you have saved the PSSession in a variable, the session object remains in the variable, but the state of the PSSession is "Closed."
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> remove-pssession -id 1, 2
+PS> remove-pssession -id 1, 2
 ```
 
 This command removes the PSSessions that have IDs 1 and 2.
+
 ### Example 2
+
 ```
-PS C:\> get-pssession | remove-pssession
+PS> get-pssession | remove-pssession
 
 - or -
 
-PS C:\> remove-pssession -session (get-pssession)
+PS> remove-pssession -session (get-pssession)
 
 - or -
 
-PS C:\> $s = get-pssession
-PS C:\> remove-pssession -session $s
+PS> $s = get-pssession
+PS> remove-pssession -session $s
 ```
 
 These commands remove all of the PSSessions in the current session.
 Although the three command formats look different, they have the same effect.
+
 ### Example 3
+
 ```
-PS C:\> $r = get-pssession -computername Serv*
+PS> $r = get-pssession -computername Serv*
 $r | remove-pssession
 ```
 
 These commands close the PSSessions that are connected to computers that have names that begin with "Serv".
+
 ### Example 4
+
 ```
-PS C:\> get-pssession | where {$_.port -eq 90} | remove-pssession
+PS> get-pssession | where {$_.port -eq 90} | remove-pssession
 ```
 
 This command closes the PSSessions that are connected to port 90.
 You can use this command format to identify PSSessions by properties other than ComputerName, Name, InstanceID, and ID.
+
 ### Example 5
+
 ```
-PS C:\> get-pssession | ft computername, instanceID  -auto
+PS> get-pssession | ft computername, instanceID  -auto
 
 ComputerName InstanceId
 ------------ ----------------
@@ -96,7 +114,7 @@ Server02     4699cdbc-61d5-4e0d-b916-84f82ebede1f
 Server03     4e5a3245-4c63-43e4-88d0-a7798bfc2414
 TX-TEST-01   fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 
-PS C:\> remove-pssession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
+PS> remove-pssession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 ```
 
 These commands show how to close a PSSession based on its instance ID (RemoteRunspaceID).
@@ -108,16 +126,20 @@ The AutoSize parameter ("auto") compresses the columns for display.
 From the resulting display, the administrator can identify the PSSession to be closed, and copy and paste the InstanceID of that PSSession into the second command.
 
 The second command uses the Remove-PSSession cmdlet to remove the PSSession with the specified instance ID.
+
 ### Example 6
+
 ```
-PS C:\> function EndPSS { get-pssession | remove-pssession }
+PS> function EndPSS { get-pssession | remove-pssession }
 ```
 
 This function deletes all of the PSSessions in the current session.
 After you add this function to your Windows Powershell profile, to delete all sessions, just type "endpss".
+
 ## PARAMETERS
 
 ### -ComputerName
+
 Closes the PSSessions that are connected to the specified computers.
 Wildcards are permitted.
 
@@ -137,6 +159,7 @@ Accept wildcard characters: True
 ```
 
 ### -Id
+
 Closes the PSSessions with the specified IDs.
 Type one or more IDs (separated by commas) or use the range operator (..) to specify a range of IDs
 
@@ -157,6 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Closes the PSSessions with the specified instance IDs.
 
 The instance ID is a GUID that uniquely identifies a PSSession in the current session.
@@ -178,6 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Closes the PSSessions with the specified friendly names.
 Wildcards are permitted.
 
@@ -196,6 +221,7 @@ Accept wildcard characters: True
 ```
 
 ### -Session
+
 Specifies the session objects of the PSSessions to close.
 Enter a variable that contains the PSSessions or a command that creates or gets the PSSessions, such as a New-PSSession or Get-PSSession command.
 You can also pipe one or more session objects to Remove-PSSession.
@@ -213,6 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -228,6 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -244,17 +272,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
+
 You can pipe a session object to Remove-PSSession.
+
 ## OUTPUTS
 
 ### None
+
 Remove-PSSession does not return any objects.
+
 ## NOTES
-* The ID parameter is mandatory. You cannot type "remove-pssession" without parameters. To delete all the PSSessions in the current session, type "get-pssession | remove-pssession".
+
+- The ID parameter is mandatory. You cannot type "remove-pssession" without parameters. To delete all the PSSessions in the current session, type "get-pssession | remove-pssession".
 
   A PSSession uses a persistent connection to a remote computer.
 Create a PSSession to run a series of commands that share data.
@@ -263,25 +298,26 @@ For more information, see about_PSSessions.
   PSSessions are specific to the current session.
 When you end a session, the PSSessions that you created in that session are forcibly closed.
 
-*
+- 
+
 ## RELATED LINKS
 
-[Connect-PSSession](Connect-PSSession.md)
+Connect-PSSession.md
 
 [Disconnect-PSSession](Disconnect-PSSession.md)
 
-[Enter-PSSession](Enter-PSSession.md)
+Enter-PSSession.md
 
-[Exit-PSSession](Exit-PSSession.md)
+Exit-PSSession.md
 
-[Get-PSSession](Get-PSSession.md)
+Get-PSSession.md
 
-[Invoke-Command](Invoke-Command.md)
+Invoke-Command.md
 
-[New-PSSession](New-PSSession.md)
+New-PSSession.md
 
-[Receive-PSSession](Receive-PSSession.md)
+Receive-PSSession.md
 
-[about_PSSessions](About/about_PSSessions.md)
+About/about_PSSessions.md
 
-[about_Remote](About/about_Remote.md)
+About/about_Remote.md

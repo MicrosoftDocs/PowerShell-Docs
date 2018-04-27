@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,13 +7,16 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=144306
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Register-PSSessionConfiguration
 ---
-
 # Register-PSSessionConfiguration
+
 ## SYNOPSIS
+
 Creates and registers a new session configuration.
+
 ## SYNTAX
 
 ### NameParameterSet (Default)
+
 ```
 Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-SessionType <PSSessionType>]
  [-Name] <String> [-ApplicationBase <String>] [-RunAsCredential <PSCredential>]
@@ -26,6 +29,7 @@ Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-SessionType 
 ```
 
 ### AssemblyNameParameterSet
+
 ```
 Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <String> [-AssemblyName] <String>
  [-ApplicationBase <String>] [-ConfigurationTypeName] <String> [-RunAsCredential <PSCredential>]
@@ -38,6 +42,7 @@ Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <Strin
 ```
 
 ### SessionConfigurationFile
+
 ```
 Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <String>
  [-RunAsCredential <PSCredential>] [-ThreadApartmentState <ApartmentState>] [-ThreadOptions <PSThreadOptions>]
@@ -48,6 +53,7 @@ Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <Strin
 ```
 
 ## DESCRIPTION
+
 The **Register-PSSessionConfiguration** cmdlet creates and registers a  new session configuration on the local computer.
 This is an advanced cmdlet that is designed to be used by system administrators to create custom sessions for remote users.
 
@@ -63,11 +69,13 @@ Beginning in Windows PowerShell 3.0, you can also use a session configuration fi
 
 For information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
 For information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> Register-PSSessionConfiguration -Name NewShell -ApplicationBase c:\MyShells\ -AssemblyName MyShell.dll -ConfigurationTypeName MyClass
+PS> Register-PSSessionConfiguration -Name NewShell -ApplicationBase c:\MyShells\ -AssemblyName MyShell.dll -ConfigurationTypeName MyClass
 ```
 
 This command registers the NewShell session configuration.
@@ -75,9 +83,11 @@ It uses the **AssemblyName** and **ApplicationBase** parameters to specify the l
 It also uses the **ConfigurationTypeName** parameter to specify a new class that further configures the session.
 
 To use this configuration, type "new-pssession -configurationname newshell".
+
 ### Example 2
+
 ```
-PS C:\> Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
+PS> Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
 ```
 
 This command registers the MaintenanceShell configuration on the local computer.
@@ -86,10 +96,12 @@ The command uses the **StartupScript** parameter to specify the Maintenance.ps1 
 When a user uses a New-PSSession command and selects the MaintenanceShell configuration, the Maintenance.ps1 script runs in the new session.
 The script can configure the session, including importing modules, adding Windows PowerShell snap-ins, and setting the execution policy for the session.
 If the script generates any errors, including non-terminating errors, the **New-PSSession** command fails.
+
 ### Example 3
+
 ```
-PS C:\> $sddl = "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;FA;SA;GWGX;;WD)"
-PS C:\> Register-PSSessionConfiguration -name AdminShell -SecurityDescriptorSDDL $sddl -MaximumReceivedObjectSizeMB 20 -StartupScript C:\scripts\AdminShell.ps1
+PS> $sddl = "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;FA;SA;GWGX;;WD)"
+PS> Register-PSSessionConfiguration -name AdminShell -SecurityDescriptorSDDL $sddl -MaximumReceivedObjectSizeMB 20 -StartupScript C:\scripts\AdminShell.ps1
 ```
 
 This example registers the AdminShell session configuration.
@@ -102,13 +114,15 @@ It also uses the **StartupScript** parameter to specify a script that configures
 
 As an alternative to using the **SecurityDescriptorSDDL** parameter, you can use the **ShowSecurityDescriptorUI** parameter, which displays a property sheet that you can use to set permissions for the session configuration.
 When you click "OK" in the property sheet, the tool generates an SDDL for the session configuration.
+
 ### Example 4
+
 ```
 The first command uses the **Register-PSSessionConfiguration** cmdlet to register the MaintenanceShell configuration. It saves the object that the cmdlet returns in the $s variable.
-PS C:\> $s = Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
+PS> $s = Register-PSSessionConfiguration -name MaintenanceShell -StartupScript C:\ps-test\Maintenance.ps1
 
 The second command displays the contents of the $s variable.
-PS C:\> $s
+PS> $s
 
 WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin
 Name                      Type                 Keys
@@ -117,13 +131,13 @@ MaintenanceShell          Container            {Name=MaintenanceShell}
 
 
 The third command uses the **GetType** method and its **FullName** property to display the type name of the object that **Register-PSSessionConfiguration** returns.
-PS C:\> $s.GetType().FullName
+PS> $s.GetType().FullName
 
 TypeName: Microsoft.WSMan.Management.WSManConfigContainerElement
 
 
 The fourth command uses the Format-List cmdlet to display all the properties of the object that Register-PSSessionConfiguration returns in a list. The **PSPath** property shows that the object is stored in a directory of the WSMan: drive.
-PS C:\> $s | Format-List -Property *
+PS> $s | Format-List -Property *
 
 PSPath            : Microsoft.WSMan.Management\WSMan::localhost\Plugin\MaintenanceShell
 PSParentPath      : Microsoft.WSMan.Management\WSMan::localhost\Plugin
@@ -137,7 +151,7 @@ TypeNameOfElement : Container
 
 
 The fifth command uses the Get-ChildItem cmdlet to display the items in the WSMan:\LocalHost\PlugIn path. These include the new MaintenanceShell configuration and the two default configurations that come with Windows PowerShell.
-PS C:\> dir WSMan:\LocalHost\Plugin
+PS> dir WSMan:\LocalHost\Plugin
 
 Name                      Type                 Keys
 ----                      ----                 ----
@@ -148,9 +162,11 @@ microsoft.powershell32    Container            {Name=microsoft.powershell32}
 
 This example shows that a Register-PSSessionConfiguration command returns a WSManConfigContainerElement.
 It also shows how to find the container elements in the WSMan: drive.
+
 ### Example 5
+
 ```
-PS C:\> Register-PSSessionConfiguration -Name WithProfile -StartupScript Add-Profile.ps1
+PS> Register-PSSessionConfiguration -Name WithProfile -StartupScript Add-Profile.ps1
 
 # Add-Profile.ps1
 . c:\users\admin01\documents\windowspowershell\profile.ps1
@@ -164,22 +180,24 @@ The script contains a single command that uses dot sourcing to run the user's **
 
 For more information about profiles, see about_Profiles.
 For more information about dot sourcing, see about_Scopes.
+
 ### Example 6
+
 ```
 The first pair of commands use the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-Language file. The second command creates a restricted-language file. Other than the value of the **LanguageMode** parameter, the session configuration files are equivalent.
-PS C:\> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
-PS C:\> New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode Restricted
+PS> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
+PS> New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode Restricted
 
 The second pair of commands use the configuration files to create session configurations on the local computer.
-PS C:\> Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
-PS C:\> Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
+PS> Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
+PS> Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 
 The third pair of command creates two sessions, each of which uses one of the session configurations that was created in the previous command pair.
-PS C:\> $NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
-PS C:\> $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
+PS> $NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
+PS> $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
-PS C:\> Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+PS> Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 The syntax is not supported by this runspace. This might be because it is in no-language mode.
     + CategoryInfo          : ParserError: (if ((Get-Date) ...") {"Before"}  :String) [], ParseException
     + FullyQualifiedErrorId : ScriptsNotAllowed
@@ -187,7 +205,7 @@ The syntax is not supported by this runspace. This might be because it is in no-
 
 
 The eighth command uses the **Invoke-Command** cmdlet to run the same If statement in the restricted-language session. Because these language elements are permitted in the restricted-language session, the command succeeds.
-PS C:\> Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+PS> Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 Before
 ```
 
@@ -196,9 +214,11 @@ The example shows the effect of using the **LanguageMode** parameter of **New-PS
 
 To run the commands in this example, start Windows PowerShell with the "Run as administrator" option.
 This option is required to run the Register-PSSessionConfiguration cmdlet .
+
 ## PARAMETERS
 
 ### -AccessMode
+
 Enables and disables the session configuration and determines whether it can be used for remote or local sessions on the computer.
 **Remote** is the default.
 
@@ -226,6 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationBase
+
 Specifies the path to the assembly file (*.dll) that is specified in the value of the **AssemblyName** parameter.
 Use this parameter when the value of the **AssemblyName** parameter does not include a path.
 The default is the current directory.
@@ -243,6 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -AssemblyName
+
 Specifies the name of an assembly file (*.dll) in which the configuration type is defined.
 You can specify the path to the .dll in this parameter or in the value of the **ApplicationBase** parameter.
 
@@ -261,6 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationTypeName
+
 Specifies the fully qualified name of the Microsoft .NET Framework type that is used for this configuration.
 The type that you specify must implement the **System.Management.Automation.Remoting.PSSessionConfiguration** class.
 
@@ -283,6 +306,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Suppresses all users prompts and restarts the WinRM service without prompting.
 Restarting the service makes the configuration change effective.
 
@@ -301,6 +325,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumReceivedDataSizePerCommandMB
+
 Limits the amount of data that can be sent to this computer in any single remote command.
 Enter the data size in megabytes (MB).
 The default is 50 MB.
@@ -320,6 +345,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumReceivedObjectSizeMB
+
 Limits the amount of data that can be sent to this computer in any single object.
 Enter the data size in megabytes (MB).
 The default is 10 MB.
@@ -339,6 +365,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a name for the session configuration.
 This parameter is required.
 
@@ -355,6 +382,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoServiceRestart
+
 Does not restart the WinRM service, and suppresses the prompt to restart the service.
 
 By default, when you enter a **Register-PSSessionConfiguration** command, you are prompted to restart the WinRM service to make the new session configuration effective.
@@ -376,6 +404,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path and file name of a session configuration file (.pssc), such as one created by the New-PSSessionConfigurationFile cmdlet.
 If you omit the path, the default is the current directory.
 
@@ -394,6 +423,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessorArchitecture
+
 Determines whether a 32-bit or 64-bit version of the Windows PowerShell process is started in sessions that use this session configuration.
 Valid values are x86 (32-bit) and AMD64 (64-bit).
 The default value is determined by the processor architecture of the computer that hosts the session configuration.
@@ -414,6 +444,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSVersion
+
 Specifies the version of Windows PowerShell in sessions that use this session configuration.
 
 The value of this parameter takes precedence over the value of the **PowerShellVersion** key in the session configuration file.
@@ -433,6 +464,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunAsCredential
+
 Runs commands in the session with the permissions of the specified user.
 By default, commands run with the permissions of the current user.
 
@@ -451,6 +483,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityDescriptorSddl
+
 Specifies a Security Descriptor Definition Language (SDDL) string for the configuration.
 
 This string determines the permissions that are required to use the new session configuration.
@@ -477,6 +510,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionType
+
 Specifies the type of session that is created by using the session configuration.
 The default value is **Default**.
 Valid values are:
@@ -502,6 +536,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionTypeOption
+
 Sets type-specific options for the session configuration.
 Enter a session type options object, such as the **PSWorkflowExecutionOption** object that the New-PSWorkflowExecutionOption cmdlet returns.
 
@@ -524,6 +559,7 @@ Accept wildcard characters: False
 ```
 
 ### -ShowSecurityDescriptorUI
+
 Displays a property sheet that helps you to create the SDDL for the session configuration.
 The property sheet appears after you enter the **Register-PSSessionConfiguration** command and then restart the WinRM service.
 
@@ -544,6 +580,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartupScript
+
 Specifies the fully qualified path to a Windows PowerShell script.
 The specified script runs in the new session that uses the session configuration.
 
@@ -563,6 +600,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThreadApartmentState
+
 Determines the apartment state of the threads in the session.
 Valid values are **STA**, **MTA**, and **Unknown**.
 **Unknown** is the default.
@@ -580,6 +618,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThreadOptions
+
 Defines how threads are created and used when a command is executed in the session.
 Valid values are **Default**, **ReuseThread**, **UseCurrentThread**, and **UseNewThread**.
 **UseCurrentThread** is the default.
@@ -599,6 +638,7 @@ Accept wildcard characters: False
 ```
 
 ### -TransportOption
+
 This parameter is introduced in Windows PowerShell 3.0.
 
 ```yaml
@@ -614,6 +654,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSharedProcess
+
 Use only one process to host all sessions that are started by the same user  and use the same session configuration.
 By default, each session is hosted in its own process.
 
@@ -632,6 +673,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModulesToImport
+
 Specifies the modules and snap-ins that are automatically imported into sessions that use the session configuration.
 
 By default, only the **Microsoft.PowerShell.Core** snap-in is imported into sessions, but unless the cmdlets are excluded, users can use the Import-Module and Add-PSSnapin cmdlets to add modules and snap-ins to the session.
@@ -654,6 +696,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -669,6 +712,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -685,21 +729,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### Microsoft.WSMan.Management.WSManConfigContainerElement
 
 ## NOTES
-* To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of Windows, start Windows PowerShell with the "Run as administrator" option.
+
+- To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of Windows, start Windows PowerShell with the "Run as administrator" option.
 
   This cmdlet generates XML that represents a Web Services for Management (WS-Management) plug-in configuration and sends the XML to WS-Management, which registers the plug-in on the local computer ("new-item wsman:\localhost\plugin").
 
-* The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
+- The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
+
 ## RELATED LINKS
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
@@ -710,7 +760,7 @@ You cannot pipe input to this cmdlet.
 
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-[New-PSSessionOption](New-PSSessionOption.md)
+New-PSSessionOption.md
 
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
@@ -722,6 +772,6 @@ You cannot pipe input to this cmdlet.
 
 [WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
-[about_Session_Configurations](About/about_Session_Configurations.md)
+About/about_Session_Configurations.md
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
