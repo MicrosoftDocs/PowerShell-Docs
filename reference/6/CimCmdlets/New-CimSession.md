@@ -357,4 +357,4 @@ This cmdlet accepts no inputs.
 
 [Get-CimSession]: Get-CimSession.md
 
-[New-CimSessionOption]: new-cimsessionoption.md
+[New-CimSessionOption]: New-CimSessionOption.md
