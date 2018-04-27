@@ -67,7 +67,7 @@ This command creates a CIM session to each of the computers specified by Compute
 
 ### Example 4: Create a CIM session with a friendly name
 
-You can use the friendly name of a CIM session to easily refer to the session in other CIM cmdlets, for example, [Get-CimSession].
+You can use the friendly name of a CIM session to easily refer to the session in other CIM cmdlets, for example, [Get-CimSession](Get-CimSession.md).
 
 ```powershell
 PS C:\> New-CimSession -ComputerName Server01,Server02 -Name FileServers
@@ -85,7 +85,7 @@ PS C:\> New-CimSession -ComputerName Server01 -Credential $cred -Authentication 
 
 This command creates a CIM session to the computer specified by ComputerName, using the PSCredential object specified by Credential, and the authentication type specified by Authentication.
 
-You can create a PSCredential object by using the [Get-Credential] cmdlet.
+You can create a PSCredential object by using the [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md) cmdlet.
 
 ### Example 6: Create a CIM session to a computer using a specific port
 
@@ -147,8 +147,8 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the [Get-Item] or [Get-ChildItem] cmdlets in the PowerShell [Certificate Provider].
-For more information about using the PowerShell Certificate provider, type Get-Help Certificate, or see [Certificate Provider] on docs.microsoft.com.
+To get a certificate thumbprint, use the [Get-Item](../Microsoft.Powershell.Management/Get-Item.md) or [Get-ChildItem] cmdlets in the PowerShell [Certificate Provider](../Microsoft.PowerShell.Security/Providers/Certificate-Provider.md).
+For more information about using the PowerShell Certificate provider, type Get-Help Certificate, or see [Certificate Provider](../Microsoft.PowerShell.Security/Providers/Certificate-Provider.md) on docs.microsoft.com.
 
 ```yaml
 Type: String
@@ -201,7 +201,7 @@ Specify the value for Credential by using one of the following formats:
 - A user name: "User01"
 - A domain name and a user name: "Domain01\User01"
 - A user principal name: "User@Domain.com"
-- A PSCredential object, such as one returned by the [Get-Credential] cmdlet.
+- A PSCredential object, such as one returned by the [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md) cmdlet.
 
 When you type a user name, you are prompted for a password.
 
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 
 Specifies a friendly name for the CIM session.
 
-You can use the name to refer to the CIM session when using other cmdlets, such as the [Get-CimSession] cmdlet.
+You can use the name to refer to the CIM session when using other cmdlets, such as the [Get-CimSession](Get-CimSession.md) cmdlet.
 The name is not required to be unique to the computer or the current session.
 
 ```yaml
@@ -289,7 +289,7 @@ Accept wildcard characters: False
 ### -SessionOption
 
 Sets advanced options for the new CIM session.
-Enter the name of a CimSessionOption object created by using the [New-CimSessionOption] cmdlet.
+Enter the name of a CimSessionOption object created by using the [New-CimSessionOption](New-CimSessionOption.md) cmdlet.
 
 ```yaml
 Type: CimSessionOptions
@@ -339,7 +339,7 @@ This cmdlet accepts no inputs.
 
 [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
 
-[Get-Item](../microsoft.powershell.management/get-item.md)
+[Get-Item](../Microsoft.Powershell.Management/Get-Item.md)
 
 [Get-CimSession](Get-CimSession.md)
 
@@ -347,14 +347,4 @@ This cmdlet accepts no inputs.
 
 [New-CimSessionOption](New-CimSessionOption.md)
 
-[Certificate Provider]: ../Microsoft.PowerShell.Security/Providers/Certificate-Provider.md
-
-[Get-ChildItem]: ../Microsoft.Powershell.Management/Get-ChildItem.md
-
-[Get-Credential]: ../Microsoft.PowerShell.Security/Get-Credential.md
-
-[Get-Item]: ../microsoft.powershell.management/get-item.md
-
-[Get-CimSession]: Get-CimSession.md
-
-[New-CimSessionOption]: New-CimSessionOption.md
+[Get-ChildItem]: (../Microsoft.Powershell.Management/Get-ChildItem.md)
