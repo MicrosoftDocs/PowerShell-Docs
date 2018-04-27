@@ -345,7 +345,7 @@ This cmdlet accepts no inputs.
 
 [Remove-CimSession](Remove-CimSession.md)
 
-[New-CimSessionOption]
+[New-CimSessionOption](New-CimSessionOption.md)
 
 [Certificate Provider]: ../Microsoft.PowerShell.Security/Providers/Certificate-Provider.md
 
