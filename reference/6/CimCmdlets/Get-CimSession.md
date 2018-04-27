@@ -9,145 +9,128 @@ external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 # Get-CimSession
 
 ## SYNOPSIS
+
 Gets the CIM session objects from the current session.
 
 ## SYNTAX
 
 ### ComputerNameSet (Default)
-```
+
+```powershell
 Get-CimSession [[-ComputerName] <String[]>]
 ```
 
 ### SessionIdSet
-```
+
+```powershell
 Get-CimSession [-Id] <UInt32[]>
 ```
 
 ### InstanceIdSet
-```
+
+```powershell
 Get-CimSession -InstanceId <Guid[]>
 ```
 
 ### NameSet
-```
+
+```powershell
 Get-CimSession -Name <String[]>
 ```
 
 ## DESCRIPTION
-The Get-CimSession cmdlet gets the CIM session objects created in the current wps_1 session.
 
-If used without any parameters, the cmdlet gets all of the CIM sessions created in the current wps_2 session.
+The Get-CimSession cmdlet gets the CIM session objects created in the current PowerShell session.
+
+If used without any parameters, the cmdlet gets all of the CIM sessions created in the current PowerShell session.
 You can use the parameters of Get-CimSession to get the sessions that are for particular computers, or you can identify sessions by their names, IDs, or instance IDs.
 
-For more information about wps_2 sessions, see about_CimSessions
+For more information about PowerShell sessions, see about_CimSession.
 
 ## EXAMPLES
 
-### Example 1: Get CIM sessions from the current wps_2 session
-```
-By default, Get-CimSession only gets information about the CIM sessions that exist in the current wps_2 session. Get-CimSession does not get CIM sessions that were created in other wps_2 sessions or that were created on other computers.
+### Example 1: Get CIM sessions from the current PowerShell session
+
+By default, Get-CimSession only gets information about the CIM sessions that exist in the current PowerShell session.
+Get-CimSession does not get CIM sessions that were created in other PowerShell sessions or that were created on other computers.
+
+```powershell
 PS C:\> New-CimSession -ComputerName Server01,Server02
 
+PS C:\> Get-CimSession
 
-
-PS C:\>
-Get-CimSession
 Id           : 1
-
 Name         : CimSession1
-
 InstanceId   : d1413bc3-162a-4cb8-9aec-4d2c61253d59
-
 ComputerName : Server01
-
 Protocol     : WSMAN
 
-
 Id           : 2
-
-
-
 Name         : CimSession2
-
-
-
 InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
-
-
-
 ComputerName : Server02
-
-
-
 Protocol     : WSMAN
 ```
 
 This command first creates CIM sessions by using New-CimSession, and then gets the CIM sessions by using Get-CimSession.
 
-### Example 2: Get the CIM sessions from a specific computer
-```
-PS C:\>Get-CimSession -ComputerName Server02
+### Example 2: Get the CIM sessions to a specific computer
+
+```powershell
+PS C:\> Get-CimSession -ComputerName Server02
+
 Id           : 2
-
-
 Name         : CimSession2
-
-
 InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
-
-
 ComputerName : Server02
-
-
 Protocol     : WSMAN
 ```
 
 This command gets the CIM sessions that are connected to the computer named Server02.
 
 ### Example 3: Get a list of CIM sessions and then format the list
-```
-PS C:\>Get-CimSession | Format-Table -Property ComputerName,InstanceID
+
+```powershell
+PS C:\> Get-CimSession | Format-Table -Property ComputerName,InstanceId
+
+ComputerName InstanceId
+------------ ----------
+Server01     d1413bc3-162a-4cb8-9aec-4d2c61253d59
+Server02     c0095981-52c5-4e7f-a5bb-c4c680541710
 ```
 
-This command gets all of the CIM sessions in the current wps_2 session, and then formats the list in a table containing only the ComputerName and InstanceID parameters.
+This command gets all of the CIM sessions in the current PowerShell session, and then formats the list in a table containing only the ComputerName and InstanceID parameters.
 
 ### Example 4: Get all the CIM sessions that have specific names
-```
-PS C:\>Get-CimSession -ComputerName Serv*
+
+```powershell
+PS C:\> Get-CimSession -ComputerName Serv*
+
 Id           : 1
-
-
 Name         : CimSession1
-
-
 InstanceId   : d1413bc-162a-4cb8-9aec-4d2c61253d59
-
-
 ComputerName : Server01
-
-
 Protocol     : WSMAN
 
 Id           : 2
-
-
 Name         : CimSession2
-
-
 InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
-
-
 ComputerName : Server02
-
-
 Protocol     : WSMAN
 ```
 
 This command gets all of the CIM sessions that have names that begin with the characters serv.
 
 ### Example 5: Get a specific CIM session
-```
-PS C:\>Get-CimSession -ID 2
+
+```powershell
+PS C:\> Get-CimSession -ID 2
+
+Id           : 2
+Name         : CimSession2
+InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
+ComputerName : Server02
+Protocol     : WSMAN
 ```
 
 This command gets the CIM session that has an ID of 2.
@@ -155,7 +138,8 @@ This command gets the CIM session that has an ID of 2.
 ## PARAMETERS
 
 ### -ComputerName
-Specifies the name of the computer from which to get CIM sessions.
+
+Specifies the name of the computer to get CIM sessions connected to.
 Wildcard characters are permitted.
 
 ```yaml
@@ -171,13 +155,14 @@ Accept wildcard characters: True
 ```
 
 ### -Id
+
 Specifies the identifier (ID) of the CIM session to get.
 For one or more IDs, use commas to separate the IDs, or use the range operator (..) to specify a range of IDs.
 
-An ID is an integer that uniquely identifies the CIM session in the current wps_2 session.
-It is easier to remember and type than InstanceId, but it is unique only within the current wps_2 session.
+An ID is an integer that uniquely identifies the CIM session in the current PowerShell session.
+It is easier to remember and type than InstanceId, but it is unique only within the current PowerShell session.
 
-For more information about the range operator, see about_Operators.
+For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
 ```yaml
 Type: UInt32[]
@@ -192,12 +177,13 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies the instance IDs of the CIM session to get.
 
-InstanceID is a GUID that uniquely identifies a CIM session.
-The InstanceID is unique, even when you have multiple sessions running in wps_2.
+InstanceId is a GUID that uniquely identifies a CIM session.
+The InstanceId is unique, even when you have multiple sessions running in PowerShell.
 
-The InstanceID is stored in the InstanceID property of the object that represents a CIM session.
+The InstanceId is stored in the InstanceId property of the object that represents a CIM session.
 
 ```yaml
 Type: Guid[]
@@ -212,6 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Gets one or more CIM sessions which contain the specified friendly names.
 Wildcard characters are permitted.
 
