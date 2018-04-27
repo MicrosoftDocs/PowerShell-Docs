@@ -494,6 +494,19 @@ Accept wildcard characters: False
 
 ### -PSEdition
 
+Gets the modules that support specified edition of PowerShell.
+
+The acceptable values for this parameter are:
+
+- Desktop
+- Core
+
+The Get-Module cmdlet checks **CompatiblePSEditions** property of **PSModuleInfo** object for the specified value and returns only those modules that have it set.
+
+> [!NOTE]
+> - **Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.
+> - **Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.
+
 
 ```yaml
 Type: String
