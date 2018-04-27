@@ -802,7 +802,7 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 
 [Get-PSSession](Get-PSSession.md)
 
-Invoke-Command.md
+[Invoke-Command](Invoke-Command.md)
 
 [New-PSSession](New-PSSession.md)
 

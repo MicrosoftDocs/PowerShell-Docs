@@ -206,7 +206,7 @@ The default value is **Default**.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -491,26 +491,26 @@ For example, you can pipe a FileInfo object from Get-ChildItem to **Start-Job**.
 
 ## RELATED LINKS
 
-Get-Job.md
+[Get-Job](Get-Job.md)
 
-Invoke-Command.md
+[Invoke-Command](Invoke-Command.md)
 
-Receive-Job.md
+[Receive-Job](Receive-Job.md)
 
-Remove-Job.md
+[Remove-Job](Remove-Job.md)
 
-Resume-Job.md
+[Resume-Job](Resume-Job.md)
 
-Start-Job.md
+[Start-Job](Start-Job.md)
 
-Stop-Job.md
+[Stop-Job](Stop-Job.md)
 
-Suspend-Job.md
+[Suspend-Job](Suspend-Job.md)
 
-Wait-Job.md
+[Wait-Job](Wait-Job.md)
 
-About/about_Job_Details.md
+[about_Job_Details](About/about_Job_Details.md)
 
-About/about_Remote_Jobs.md
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
 
-About/about_Jobs.md
+[about_Jobs](About/about_Jobs.md)

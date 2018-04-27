@@ -303,7 +303,7 @@ You can pipe a module object from the Get-Module cmdlet to the **Module** parame
 
 [Get-Help](Get-Help.md)
 
-Get-Module.md
+[Get-Module](Get-Module.md)
 
 [Get-UICulture](../Microsoft.PowerShell.Utility/Get-UICulture.md)
 

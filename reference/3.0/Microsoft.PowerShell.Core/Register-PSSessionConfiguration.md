@@ -760,7 +760,7 @@ You cannot pipe input to this cmdlet.
 
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
-New-PSSessionOption.md
+[New-PSSessionOption](New-PSSessionOption.md)
 
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
@@ -772,6 +772,6 @@ New-PSSessionOption.md
 
 [WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
 
-About/about_Session_Configurations.md
+[about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
