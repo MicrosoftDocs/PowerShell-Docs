@@ -202,15 +202,13 @@ This lets you see the module files that each script is exporting.
 
 ### Example 6: Display the contents of a module manifest
 
-The first command gets the **PSModuleInfo** object that represents **BitsTransfer** module. It saves the object in the $m variable.
-
 ```powershell
+The first command gets the PSModuleInfo object that represents BitsTransfer module. It saves the object in the $m variable.
+
 PS> $m = Get-Module -list -Name BitsTransfer
-```
 
-The second command uses the `Get-Content` cmdlet to get the content of the manifest file in the specified path. It uses dot notation to get the path to the manifest file, which is stored in the **Path** property of the object. The output shows the contents of the module manifest.
+The second command uses the Get-Content cmdlet to get the content of the manifest file in the specified path. It uses dot notation to get the path to the manifest file, which is stored in the Path property of the object. The output shows the contents of the module manifest.
 
-```powershell
 PS> Get-Content $m.Path
 ```
 
