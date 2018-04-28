@@ -275,37 +275,27 @@ For more information, see [`Import-Module`](Import-Module.md) and [`Import-PSSes
 
 ### Example 9: Manage a computer that does not run the Windows operating system
 
-The first command uses the `New-CimSession` cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
-
 ```powershell
+The first command uses the New-CimSession cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
+
 PS> $cs = New-CimSession -ComputerName RSDGF03
-```
 
-The second command uses the CIM session in the $cs variable to run a `Get-Module` command on the RSDGF03 computer. The command uses the **Name** parameter to specify the **Storage** module. The command uses a pipeline operator (|) to send the **Storage** module to the `Import-Module` cmdlet, which imports it into the local session.
+The second command uses the CIM session in the $cs variable to run a Get-Module command on the RSDGF03 computer. The command uses the Name parameter to specify the Storage module. The command uses a pipeline operator (|) to send the Storage module to the Import-Module cmdlet, which imports it into the local session.
 
-```powershell
 PS> Get-Module -CimSession $cs -Name Storage | Import-Module
-```
 
-The third command runs the `Get-Command` cmdlet on the `Get-Disk` command in the **Storage** module. When you import a CIM module into the local session, Windows PowerShell converts the CDXML files that represent the CIM module into Windows PowerShell scripts, which appear as functions in the local session.
+The third command runs the Get-Command cmdlet on the Get-Disk command in the Storage module. When you import a CIM module into the local session, Windows PowerShell converts the CDXML files that represent the CIM module into Windows PowerShell scripts, which appear as functions in the local session.
 
-```powershell
 PS> Get-Command Get-Disk
-```
 
-```output
 CommandType     Name                  ModuleName
 -----------     ----                  ----------
 Function        Get-Disk              Storage
-```
 
-The fourth command runs the `Get-Disk` command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported. The command gets objects from the remote computer and returns them to the local session.
+The fourth command runs the Get-Disk command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported. The command gets objects from the remote computer and returns them to the local session.
 
-```powershell
 PS> Get-Disk
-```
 
-```output
 Number Friendly Name              OperationalStatus          Total Size Partition Style
 ------ -------------              -----------------          ---------- ---------------
 0      Virtual HD ATA Device      Online                          40 GB MBR
