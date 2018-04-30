@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,49 +7,58 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113372
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Receive-Job
 ---
-
 # Receive-Job
+
 ## SYNOPSIS
+
 Gets the results of the Windows PowerShell background jobs in the current session.
+
 ## SYNTAX
 
 ### Location (Default)
+
 ```
 Receive-Job [-Job] <Job[]> [[-Location] <String[]>] [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob]
  [-WriteEvents] [-WriteJobInResults] [<CommonParameters>]
 ```
 
 ### ComputerName
+
 ```
 Receive-Job [-Job] <Job[]> [[-ComputerName] <String[]>] [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob]
  [-WriteEvents] [-WriteJobInResults] [<CommonParameters>]
 ```
 
 ### Session
+
 ```
 Receive-Job [-Job] <Job[]> [[-Session] <PSSession[]>] [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob]
  [-WriteEvents] [-WriteJobInResults] [<CommonParameters>]
 ```
 
 ### NameParameterSet
+
 ```
 Receive-Job [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob] [-WriteEvents] [-WriteJobInResults]
  [-Name] <String[]> [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
+
 ```
 Receive-Job [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob] [-WriteEvents] [-WriteJobInResults]
  [-InstanceId] <Guid[]> [<CommonParameters>]
 ```
 
 ### SessionIdParameterSet
+
 ```
 Receive-Job [-Keep] [-NoRecurse] [-Force] [-Wait] [-AutoRemoveJob] [-WriteEvents] [-WriteJobInResults]
  [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Receive-Job** cmdlet gets the results of Windows PowerShell background jobs, such as those started by using the Start-Job cmdlet or the **AsJob** parameter of any cmdlet.
 You can get the results of all jobs or identify jobs by their name, ID, instance ID, computer name, location, or session, or by submitting a job object.
 
@@ -68,12 +77,14 @@ To delete the job results, run the **Receive-Job** command again (without the **
 Beginning in Windows PowerShell 3.0, **Receive-Job** also gets the results of custom job types, such as workflow jobs and instances of scheduled jobs.
 To enable **Receive-Job** to get the results a custom job type, import the module that supports the custom job type into the session before running a **Receive-Job** command, either by using the Import-Module cmdlet or by using or getting a cmdlet in the module.
 For information about a particular custom job type, see the documentation of the custom job type feature.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> $job = Start-Job -ScriptBlock {Get-Process}
-PS C:\> Receive-Job -Job $job
+PS> $job = Start-Job -ScriptBlock {Get-Process}
+PS> Receive-Job -Job $job
 ```
 
 These commands use the **Job** parameter of **Receive-Job** to get the results of a particular job.
@@ -83,24 +94,28 @@ The command uses the assignment operator (=) to save the resulting job object in
 
 The second command uses the **Receive-Job** cmdlet to get the results of the job.
 It uses the **Job** parameter to specify the job.
+
 ### Example 2
+
 ```
-PS C:\> $job = Start-Job -ScriptBlock {Get-Process}
-PS C:\> $job | Receive-Job
+PS> $job = Start-Job -ScriptBlock {Get-Process}
+PS> $job | Receive-Job
 ```
 
 This example is the same as Example 2, except that the command uses a pipeline operator (|) to send the job object to **Receive-Job**.
 As a result, the command does not need a **Job** parameter to specify the job.
+
 ### Example 3
+
 ```
 The first command uses the Invoke-Command cmdlet to start a background job that runs a Get-Service command on three remote computers. The command uses the **AsJob** parameter to run the command as a background job. The command saves the resulting job object in the $j variable.When you use the **AsJob** parameter of **Invoke-Command** to start a job, the job object is created on the local computer, even though the job runs on the remote computers. As a result, you use local commands to manage the job.Also, when you use **AsJob**, Windows PowerShell returns one job object that contains a child job for each job that was started. In this case, the job object contains three child jobs, one for each job on each remote computer.
-PS C:\>
+PS>
 
 
-PS C:\> $j = Invoke-Command -ComputerName Server01, Server02, Server03 -ScriptBlock {Get-Service} -AsJob
+PS> $j = Invoke-Command -ComputerName Server01, Server02, Server03 -ScriptBlock {Get-Service} -AsJob
 
 The second command uses the dot method to display the value of the **ChildJobs** property of the job object in $j. The display shows that the command created three child jobs, one for the job on each remote computer.
-PS C:\> $j.ChildJobs
+PS> $j.ChildJobs
 
 Id   Name     State      HasMoreData   Location       Command
 --   ----     -----      -----------   --------       -------
@@ -109,7 +124,7 @@ Id   Name     State      HasMoreData   Location       Command
 4    Job4     Completed  True          Server03       Get-Service
 
 The third command uses the **Receive-Job** cmdlet to get the results of the Job3 child job that ran on the Server02 computer. It uses the Name parameter to specify the name of the child job and the Keep parameter to save the job results even after they are received.
-PS C:\> Receive-Job -Name Job3 -Keep
+PS> Receive-Job -Name Job3 -Keep
 
 Status  Name        DisplayName                        PSComputerName
 ------  ----------- -----------                        --------------
@@ -120,16 +135,18 @@ Running AppMgmt     Application Management             Server02
 ```
 
 These commands get the results of one of several background jobs run on remote computers.
+
 ### Example 4
+
 ```
 The first command uses the New-PSSession cmdlet to create three user-managed sessions ("PSSessions), one on each of the servers specified in the command. It saves the sessions in the $s variable.
-PS C:\> $s = new-pssession -computername Server01, Server02, Server03
+PS> $s = new-pssession -computername Server01, Server02, Server03
 
 The second command uses the Invoke-Command cmdlet to run a Start-Job command in each of the PSSessions in the $s variable. The job runs a Get-Eventlog command that gets the events in the System log. The command saves the results in the $j variable.Because the command used Invoke-Command to run the Start-Job command, the command actually started three independent jobs on each of the three computers. As a result, the command returned three job objects representing three jobs run locally on three different computers.
-PS C:\> $j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog -logname system}}
+PS> $j = invoke-command -session $s -scriptblock {start-job -scriptblock {get-eventlog -logname system}}
 
 The third command displays the three job objects in $j.
-PS C:\> $j
+PS> $j
 
 Id   Name     State      HasMoreData   Location   Command
 --   ----     -----      -----------   --------   -------
@@ -139,13 +156,15 @@ Id   Name     State      HasMoreData   Location   Command
 
 
 The fourth command uses Invoke-Command to run a **Receive-Job** command in each of the sessions in $s and save the results in the $Results variable.Because $j is a local variable, the script block uses the **Using** scope modifier to identify the $j variable. For more information about the **Using** scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
-PS C:\> $results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
+PS> $results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
 ```
 
 This example shows how to get the results of background jobs run on three remote computers.
+
 ## PARAMETERS
 
 ### -ComputerName
+
 Gets the results of jobs that were run on the specified computers.
 Enter the computer names.
 Wildcards are supported.
@@ -168,6 +187,7 @@ Accept wildcard characters: True
 ```
 
 ### -Id
+
 Gets the results of jobs with the specified IDs.
 The default is all jobs in the current session.
 
@@ -189,6 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Gets the results of jobs with the specified instance IDs.
 The default is all jobs in the current session.
 
@@ -208,6 +229,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
+
 Specifies the job for which results are being retrieved.
 This parameter is required in a **Receive-Job** command.
 Enter a variable that contains the job or a command that gets the job.
@@ -226,6 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -Keep
+
 Saves the job results in the system, even after you have received them.
 By default, the job results are deleted when they are retrieved.
 
@@ -244,6 +267,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
+
 Gets only the results of jobs with the specified location.
 The default is all jobs in the current session.
 
@@ -260,6 +284,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Gets the results of jobs with the specified friendly name.
 Wildcards are supported.
 The default is all jobs in the current session.
@@ -277,6 +302,7 @@ Accept wildcard characters: True
 ```
 
 ### -NoRecurse
+
 Gets results only from the specified job.
 By default, **Receive-Job** also gets the results of all child jobs of the specified job.
 
@@ -293,6 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### -Session
+
 Gets the results of jobs that were run in the specified Windows Powershell session (PSSession).
 Enter a variable that contains the PSSession or a command that gets the PSSession, such as a Get-PSSession command.
 The default is all jobs in the current session.
@@ -310,6 +337,7 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
+
 Suppresses the command prompt until all job results are received.
 By default, **Receive-Job** immediately returns the available results.
 
@@ -331,6 +359,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoRemoveJob
+
 Deletes the job after returning the job results.
 If the job has more results, the job is still deleted, but **Receive-Job** displays a message.
 
@@ -354,6 +383,7 @@ Accept wildcard characters: False
 ```
 
 ### -WriteEvents
+
 Reports changes in the job state while waiting for the job to complete.
 
 This parameter is valid only when the **Wait** parameter is used in the command and the **Keep** parameter is omitted.
@@ -373,6 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### -WriteJobInResults
+
 Returns the job object followed by the results.
 
 This parameter is valid only when the **Wait** parameter is used in the command and the **Keep** parameter is omitted.
@@ -392,6 +423,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Continues waiting if jobs are in the **Suspended** or **Disconnected** state.
 By default, the **Wait** parameter of **Receive-Job** returns (terminates the wait) when jobs are in one of the following states: Completed, Failed, Stopped, Suspended, or Disconnected.
 
@@ -412,15 +444,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Management.Automation.Job
+
 You can pipe job objects to **Receive-Job**.
+
 ## OUTPUTS
 
 ### PSObject
+
 **Receive-Job** returns the results of the commands in the job.
+
 ## NOTES
 
 ## RELATED LINKS

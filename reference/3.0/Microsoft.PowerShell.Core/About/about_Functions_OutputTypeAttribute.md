@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions_OutputTypeAttribute
 ---
-
 # About Functions OutputTypeAttribute
 
 ## SHORT DESCRIPTION
@@ -121,7 +120,7 @@ function Send-Greeting
 To see the resulting output type property, use the Get-Command cmdlet.
 
 ```
-PS C:> (Get-Command Send-Greeting).OutputType
+PS> (Get-Command Send-Greeting).OutputType
 
 Name                                               Type
 ----                                               ----
@@ -178,7 +177,7 @@ function Get-Time
 The Get-Type method confirms that the function returns a string.
 
 ```
-PS C:> (Get-Time -DateTime (Get-Date)).Gettype().FullName
+PS> (Get-Time -DateTime (Get-Date)).Gettype().FullName
 System.String
 ```
 
@@ -186,7 +185,7 @@ However, the OutputType property, which gets its value from the OutputType
 attribute, reports that the function returns a DateTime object.
 
 ```
-PS C:> (Get-Command Get-Time).OutputType
+PS> (Get-Command Get-Time).OutputType
 
 Name                                      Type
 ----                                      ----

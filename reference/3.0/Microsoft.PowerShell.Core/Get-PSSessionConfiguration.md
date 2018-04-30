@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=144304
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Get-PSSessionConfiguration
 ---
-
 # Get-PSSessionConfiguration
+
 ## SYNOPSIS
+
 Gets the registered session configurations on the computer.
+
 ## SYNTAX
 
 ```
@@ -18,6 +20,7 @@ Get-PSSessionConfiguration [[-Name] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-PSSessionConfiguration** cmdlet gets the session configurations that have been registered on the local computer.
 This is an advanced cmdlet that is designed to be used by system administrators to manage customized session configurations for their users.
 
@@ -30,17 +33,21 @@ These properties make it easier for users and session configuration authors to e
 
 To create and register a session configuration, use the Register-PSSessionConfiguration cmdlet.
 For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> Get-PSSessionConfiguration
+PS> Get-PSSessionConfiguration
 ```
 
 This command gets the session configurations on the local computer.
+
 ### Example 2
+
 ```
-PS C:\> Get-PSSessionConfiguration -Name Microsoft*
+PS> Get-PSSessionConfiguration -Name Microsoft*
 
 Name                      PSVersion  StartupScript        Permission
 ----                      ---------  -------------        ----------
@@ -50,9 +57,11 @@ microsoft.powershell32    2.0                             BUILTIN\Administrators
 
 This command gets the two default session configurations that come with Windows PowerShell.
 The command uses the **Name** parameter of **Get-PSSessionConfiguration** to get only the session configurations with names that begin with "Microsoft".
+
 ### Example 3
+
 ```
-PS C:\> Get-PSSessionConfiguration -Name Full  | Format-List -Property *
+PS> Get-PSSessionConfiguration -Name Full  | Format-List -Property *
 
 
 Copyright                     : (c) 2011 User01. All rights reserved.
@@ -105,9 +114,11 @@ The output of this command has very useful information, including the author of 
 
 This view of a session configuration is used for sessions that include a session configuration file.
 For more information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
+
 ### Example 4
+
 ```
-PS C:\> (Get-PSSessionConfiguration Microsoft.PowerShell.Workflow).PSObject.Properties | Select-Object Name,Value | Sort-Object Name
+PS> (Get-PSSessionConfiguration Microsoft.PowerShell.Workflow).PSObject.Properties | Select-Object Name,Value | Sort-Object Name
 
 Name                                                                                                              Value
 
@@ -220,9 +231,11 @@ This command gets the properties of the Microsoft.PowerShell.Worfklow session co
 You can use this command format in a function to get this display for any session configuration.
 
 This example was contributed by Shay Levy, a Windows PowerShell MVP from Sderot, Israel.
+
 ### Example 5
+
 ```
-PS C:\> dir wsman:\localhost\plugin
+PS> dir wsman:\localhost\plugin
 Type            Keys                                Name
 ----            ----                                ----
 Container       {Name=Event Forwarding Plugin}      Event Forwarding Plugin
@@ -238,13 +251,15 @@ This command uses the Get-ChildItem cmdlet (alias = dir) in the WSMan: provider 
 This is another way to look at the session configurations on the computer.
 
 The **PlugIn** node contains **ContainerElement** objects (Microsoft.WSMan.Management.WSManConfigContainerElement) that represent the registered Windows PowerShell session configurations, along with other plug-ins for WS-Management.
+
 ### Example 6
+
 ```
 The first command uses the Connect-WSMan cmdlet to connect to the WinRM service on the Server01 remote computer.
-PS C:\> Connect-WSMan -ComputerName Server01
+PS> Connect-WSMan -ComputerName Server01
 
 The second command uses the Get-ChildItem cmdlet ("dir") in the WSMan: drive to get the items in the Server01\Plugin path.The output shows the items in the Plugin directory on the Server01 computer. The items include the session configurations, which are a type of WSMan plug-in, along with other types of plug-ins on the computer.
-PS C:\> dir WSMan:\Server01\Plugin
+PS> dir WSMan:\Server01\Plugin
    WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin
 
 Type            Keys                                Name
@@ -264,7 +279,7 @@ Container       {Name=WithProfile}                  WithProfile
 Container       {Name=WMI Provider}                 WMI Provider
 
 The third command returns the names of the plugins that are session configurations. The command searches for a value of **Shell** in the **Capability** property, which is in the Plugin\Resources\<ResourceNumber> path in the WSMan: drive.
-PS C:\> dir WSMan:\Server01\Plugin\*\Resources\Resource*\Capability | where {$_.Value -eq "Shell"} | foreach {($_.PSPath.split("\"))[3] }
+PS> dir WSMan:\Server01\Plugin\*\Resources\Resource*\Capability | where {$_.Value -eq "Shell"} | foreach {($_.PSPath.split("\"))[3] }
 Empty
 Full
 microsoft.powershell
@@ -279,19 +294,21 @@ WithProfile
 
 This example shows how to use the WSMan provider to view the session configurations on a remote computer.
 This method does not provide as much information as a **Get-PSSessionConfiguration** command, but the user does not need to be a member of the Administrators group to run this command.
+
 ### Example 7
+
 ```
 The first command uses the Enable-WSManCredSSP cmdlet to enable **CredSSP** delegation from the Server01 local computer to the Server02 remote computer. This configures the **CredSSP** client setting on the local computer.
-PS C:\> Enable-WSManCredSSP -Delegate Server02
+PS> Enable-WSManCredSSP -Delegate Server02
 
 The second command uses the Connect-WSMan cmdlet to connect to the Server02 computer. This action adds a node for the Server02 computer to the WSMan: drive on the local computer, allowing you to view and change the WS-Management settings on the Server02 computer.
-PS C:\> Connect-WSMan Server02
+PS> Connect-WSMan Server02
 
 The third command uses the Set-Item cmdlet to change the value of the **CredSSP** item in the Service node of the Server02 computer to True. This configures the service settings on the remote computer.
-PS C:\> Set-Item WSMan:\Server02*\Service\Auth\CredSSP -Value $true
+PS> Set-Item WSMan:\Server02*\Service\Auth\CredSSP -Value $true
 
 The fourth command uses the Invoke-Command cmdlet to run a **Get-PSSessionConfiguration** command on the Server02 computer. The command uses the **Credential** parameter, and it uses the **Authentication** parameter with a value of **CredSSP**.The output shows the session configurations on the Server02 remote computer.
-PS C:\> Invoke-Command -ScriptBlock {Get-PSSessionConfiguration} -ComputerName Server02 -Authentication CredSSP -Credential Domain01\Admin01
+PS> Invoke-Command -ScriptBlock {Get-PSSessionConfiguration} -ComputerName Server02 -Authentication CredSSP -Credential Domain01\Admin01
 
 Name                      PSVersion  StartupScript        Permission                          PSComputerName
 ----                      ---------  -------------        ----------                          --------------
@@ -304,9 +321,11 @@ This example shows how to run a **Get-PSSessionConfiguration** command on a remo
 The command requires that CredSSP delegation be enabled in the client settings on the local computer and in the service settings on the remote computer.
 
 To run the commands in this example, you must be a member of the Administrators group on the local computer and the remote computer and you must start Windows PowerShell with the "Run as administrator" option.
+
 ### Example 8
+
 ```
-PS C:\> (Get-PSSessionConfiguration -Name CustomShell).resourceURI
+PS> (Get-PSSessionConfiguration -Name CustomShell).resourceURI
 http://schemas.microsoft.com/powershell/microsoft.CustomShell
 ```
 
@@ -317,9 +336,11 @@ This command is useful when setting the value of the $PSSessionConfigurationName
 The $PSSessionConfiguationName variable specifies the default configuration that is used when you create a session.
 This variable is set on the local computer, but it specifies a configuration on the remote computer.
 For more information about the $PSSessionConfiguration variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
+
 ## PARAMETERS
 
 ### -Name
+
 Gets only the session configurations with the specified name or name pattern.
 Enter one or more session configuration names.
 Wildcards are permitted.
@@ -337,22 +358,28 @@ Accept wildcard characters: True
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration
 
 ## NOTES
-* To run this cmdlet, start Windows PowerShell with the "Run as administrator" option.
-* To view the session configurations on the computer, you must be a member of the Administrators group on the computer.
-* To run a **Get-PSSessionConfiguration** command on a remote computer, Credential Security Service Provider (CredSSP) authentication must be enabled in the client settings on the local computer (by using the Enable-WSManCredSSP cmdlet) and in the service settings on the remote computer, and you must use the **CredSSP** value of the **Authentication** parameter when establishing the remote session. Otherwise, access is denied.
-* The note properties of the object that **Get-PSSessionConfiguration** returns appear on the object only when they have a value. Only session configurations that were created by using a session configuration file have all of the defined properties.
-* The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
-* You can use commands in the WSMan: drive to change the properties of session configurations. However, you cannot use the WSMan: drive in Windows PowerShell 2.0 to change session configuration properties that are introduced in Windows PowerShell 3.0, such as **OutputBufferingMode**. Windows PowerShell 2.0 commands do not generate an error, but they are ineffective. To change  properties introduced in Windows PowerShell 3.0, use the WSMan: drive in Windows PowerShell 3.0.
+
+- To run this cmdlet, start Windows PowerShell with the "Run as administrator" option.
+- To view the session configurations on the computer, you must be a member of the Administrators group on the computer.
+- To run a **Get-PSSessionConfiguration** command on a remote computer, Credential Security Service Provider (CredSSP) authentication must be enabled in the client settings on the local computer (by using the Enable-WSManCredSSP cmdlet) and in the service settings on the remote computer, and you must use the **CredSSP** value of the **Authentication** parameter when establishing the remote session. Otherwise, access is denied.
+- The note properties of the object that **Get-PSSessionConfiguration** returns appear on the object only when they have a value. Only session configurations that were created by using a session configuration file have all of the defined properties.
+- The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
+- You can use commands in the WSMan: drive to change the properties of session configurations. However, you cannot use the WSMan: drive in Windows PowerShell 2.0 to change session configuration properties that are introduced in Windows PowerShell 3.0, such as **OutputBufferingMode**. Windows PowerShell 2.0 commands do not generate an error, but they are ineffective. To change  properties introduced in Windows PowerShell 3.0, use the WSMan: drive in Windows PowerShell 3.0.
+
 ## RELATED LINKS
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
