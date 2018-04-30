@@ -87,5 +87,5 @@ are completed only when you exit the prompt level.)
 
 - [about_Line_Editing](about_Line_Editing.md)
 - [about_Preference_Variables](about_Preference_Variables.md)
-- [about_Profiles](http://go.microsoft.com/fwlink/?LinkID=113729)
+- [about_Profiles](about_Profiles.md)
 - [about_Variables](about_Variables.md)

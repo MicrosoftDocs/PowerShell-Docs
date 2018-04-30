@@ -360,7 +360,7 @@ Id         Name            JobTriggers     Command       Enabled
 
 [about_Scheduled_Jobs](../../psscheduledjob/about/about_scheduled_jobs.md)
 
-[Invoke-Command](../../Microsoft.PowerShell.Core/Invoke-Command.md)
+[Invoke-Command](../Invoke-Command.md)
 
 [Start-Job](../Start-Job.md)
 
