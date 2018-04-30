@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/27/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Arithmetic_Operators
 ---
-
 # About Arithmetic Operators
 
 ## SHORT DESCRIPTION
@@ -364,7 +363,7 @@ The following examples show how to use the arithmetic operators in
 expressions with PowerShell commands:
 
 ```powershell
-(get-date) + (new-timespan -day 1)
+(Get-Date) + (New-TimeSpan -Days 1)
 ```
 
 The parenthesis operator forces the evaluation of the `get-date` cmdlet and
@@ -456,7 +455,7 @@ For example, the binary complement of 0 is -1, the maximum unsigned integer
 (0xffffffff), and the binary complement of -1 is 0.
 
 ```powershell
-PS C:\> -bNot 10
+PS> -bNot 10
 -11
 ```
 
@@ -509,11 +508,11 @@ right operand determine how many bits of the left operand are shifted.
 
 ## SEE ALSO
 
-* [about_arrays](about_Arrays.md)
-* [about_assignment_operators](about_Assignment_Operators.md)
-* [about_comparison_operators](about_Comparison_Operators.md)
-* [about_hash_tables](about_Hash_Tables.md)
-* [about_operators](about_Operators.md)
-* [about_variables](about_Variables.md)
-* [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
-* [New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)
+- [about_arrays](about_Arrays.md)
+- [about_assignment_operators](about_Assignment_Operators.md)
+- [about_comparison_operators](about_Comparison_Operators.md)
+- [about_hash_tables](about_Hash_Tables.md)
+- [about_operators](about_Operators.md)
+- [about_variables](about_Variables.md)
+- [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
+- [New-TimeSpan](../../Microsoft.PowerShell.Utility/New-TimeSpan.md)

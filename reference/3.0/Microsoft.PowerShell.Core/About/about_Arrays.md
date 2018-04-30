@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Arrays
 ---
-
 # About Arrays
 
 # SHORT DESCRIPTION
@@ -89,12 +88,12 @@ You can use the array operator to create an array of zero or one object. For
 example:
 
 ```powershell
-PS C:\> $a = @("Hello World")
-PS C:\> $a.Count
+PS> $a = @("Hello World")
+PS> $a.Count
 1
 
-PS C:\> $b = @()
-PS C:\> $b.Count
+PS> $b = @()
+PS> $b.Count
 0
 ```
 
