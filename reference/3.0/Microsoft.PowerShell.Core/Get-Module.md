@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=141552
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Get-Module
 ---
-
 # Get-Module
 
 ## SYNOPSIS
