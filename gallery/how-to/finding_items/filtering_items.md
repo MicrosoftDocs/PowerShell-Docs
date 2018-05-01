@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  psgallery_items_tab
 ---
-
 # Items Tab
 
 The [Items tab](https://www.powershellgallery.com/items) displays all available items in the PowerShell Gallery.
@@ -16,16 +15,16 @@ To see more details about a particular item, click the item.
 ## Filter By
 
 The drop-down under "Filter By" allows users to filter the results by:
-* Include Prerelease
-* Stable Only
+- Include Prerelease
+- Stable Only
 
 For information about "Prerelease" and "Stable", see [Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) in the PowerShell Team Blog.
 
 The checkboxes under the drop-down allow users to filter the results by:
-* Item Types
+- Item Types
   - Module
   - Script
-* Categories
+- Categories
   - Cmdlet
   - DSC Resource
   - Function
@@ -45,11 +44,11 @@ Similarly, to see only scripts in the PowerShell Gallery, check Script in the It
 ## Sort By
 
 The Sort By drop-down allows users to sort the results by:
-* Popularity - Popularity is determined by Download Count
-* A-Z - Alphabetically by item name
-* Recent - Items appear in order of publish date
+- Popularity - Popularity is determined by Download Count
+- A-Z - Alphabetically by item name
+- Recent - Items appear in order of publish date
 
 ## Search Box
 
 The Search Box allows users to search the items on keywords.
-For more information, see [Gallery Search Syntax](psgallery_search_syntax.md).
+For more information, see [Gallery Search Syntax](search_syntax.md).

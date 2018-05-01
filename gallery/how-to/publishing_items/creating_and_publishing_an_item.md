@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  Creating and Publishing an item
 ---
-
 # Creating and Publishing an Item
+
 The PowerShell Gallery is the place to publish and share stable PowerShell modules, scripts,
 and DSC resources with the broader PowerShell user community.
 
@@ -16,16 +16,17 @@ to understand how to ensure that the items you publish will be more widely accep
 
 The minimum requirements to publish an item to the PowerShell Gallery are:
 
-* Have a PowerShell Gallery account, and the API Key associated with it
-* Ensure Required Metadata is in your item
-* Use the pre-validation tools to ensure your item is ready to publish
-* Publish the item to the PowerShell Gallery using the Publish-Module and Publish-Script commands
-* Responding to questions or concerns about your item
+- Have a PowerShell Gallery account, and the API Key associated with it
+- Ensure Required Metadata is in your item
+- Use the pre-validation tools to ensure your item is ready to publish
+- Publish the item to the PowerShell Gallery using the Publish-Module and Publish-Script commands
+- Responding to questions or concerns about your item
 
 The PowerShell Gallery accepts PowerShell modules and PowerShell scripts.
 When we refer to scripts, we mean a PowerShell script that is a single file, and not part of a larger module.
 
 ## PowerShell Gallery Account and API Key
+
 See [Creating a PowerShell Gallery Account](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account)
 for how to set up your PowerShell Gallery account.
 
@@ -56,11 +57,11 @@ PrivateData supports adding new keys, so the elements specific to the PowerShell
 
 Manifest elements that are most important to fill in for item you publish to the PowerShell Gallery are:
 
-* Script or Module Name - Those are drawn from the names of the .PS1 for a script, or the .PSD1 for a module.
-* Version - this is a required primary key, format should follow SemVer guidelines (see Best Practices for details)
-* Author - this is a required primary key, and contains the name to be associated with the item (see Authors and Owners, below)
-* Description - this is a required primary key, used to briefly explain what this item does and any requirements for using it
-* ProjectURI - this is a strongly recommended URI field in PSData that provides a link to a Github repo or similar location where you do development on the item
+- Script or Module Name - Those are drawn from the names of the .PS1 for a script, or the .PSD1 for a module.
+- Version - this is a required primary key, format should follow SemVer guidelines (see Best Practices for details)
+- Author - this is a required primary key, and contains the name to be associated with the item (see Authors and Owners, below)
+- Description - this is a required primary key, used to briefly explain what this item does and any requirements for using it
+- ProjectURI - this is a strongly recommended URI field in PSData that provides a link to a Github repo or similar location where you do development on the item
 
 Authors and Owners of PowerShell Gallery items are related concepts, but do not always match.
 Item Owners are users with PowerShell Gallery accounts that have permission to maintain the item. There may be many Owners who can update any item.
@@ -68,17 +69,17 @@ The Owner is only available from the PowerShell Gallery, and is lost if the item
 Author is a string that is built into the manifest data, so it is always part of the item.
 The recommendations for items from Microsoft products are:
 
-* Have multiple owners, with at least one being the name of the team that produces the item;
-* Have the Author be a well-known team name (such as Azure SDK Team), or Microsoft Corporation.
+- Have multiple owners, with at least one being the name of the team that produces the item;
+- Have the Author be a well-known team name (such as Azure SDK Team), or Microsoft Corporation.
 
 
 ## Pre-Validate Your Item
 
 There are a few tools you need to run against your code before publishing your item to the PowerShell Gallery:
 
-* [PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/), which is in the PowerShell Gallery
-* For modules, Test-ModuleManifest which is part of PowerShell
-* For scripts, Test-ScriptFileInfo which comes with PowerShell Get
+- [PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/), which is in the PowerShell Gallery
+- For modules, Test-ModuleManifest which is part of PowerShell
+- For scripts, Test-ScriptFileInfo which comes with PowerShell Get
 
 [PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) is a static code analysis tool that
 will scan your code to ensure it meets basic PowerShell coding guidelines. This tool will identify common and critical issues in your
@@ -103,8 +104,8 @@ You must use the [Publish-Script](https://msdn.microsoft.com/en-us/powershell/ga
 [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) to publish items to the PowerShell Gallery.
 These commands both require
 
-* The path to the item you will publish. For a module, use the folder named for your module. If you specify a folder that contains multiple versions of the same module, you must specify RequiredVersion.
-* A Nuget API key. This is the API key found in the My Account page on the PowerShell Gallery.
+- The path to the item you will publish. For a module, use the folder named for your module. If you specify a folder that contains multiple versions of the same module, you must specify RequiredVersion.
+- A Nuget API key. This is the API key found in the My Account page on the PowerShell Gallery.
 
 Most of the other options in the command line should be in the manifest data for the item you are publishing, so you should not need to specify them in the command.
 
@@ -122,9 +123,9 @@ Any issues that arise at that time will be sent back to the publisher for resolu
 
 Once you have published an item to the PowerShell Gallery, you will need to watch for feedback on your item.
 
-* Ensure you monitor the email address associated with the account used to publish.
+- Ensure you monitor the email address associated with the account used to publish.
 Users, and the PowerShell Gallery Operations team will provide feedback via that account, including issues from the PSSA or antivirus scans.
 If the email account is invalid, or if serious issues are reported to the account and left unresolved for a long time, items can be considered abandoned and will be removed from the PowerShell Gallery as described in our [Terms of Use](https://www.powershellgallery.com/policies/Terms).
-* We recommend you subscribe to Comments for each PowerShell Gallery item you publish.
+- We recommend you subscribe to Comments for each PowerShell Gallery item you publish.
 This allows you to be notified if anyone comments on your items in the PowerShell Gallery.
 This is optional, as it requires creating an account with LiveFyre.

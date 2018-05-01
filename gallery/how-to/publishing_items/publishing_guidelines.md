@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
@@ -6,7 +6,6 @@ keywords:  gallery,powershell,cmdlet,psgallery
 description:  Guidelines for Publishers
 title:  PowerShell Gallery Publishing Guidelines and Best Practices
 ---
-
 # PowerShellGallery Publishing Guidelines and Best Practices
 
 This topic describes recommended steps used by Microsoft teams to ensure the items published to
@@ -28,17 +27,17 @@ Feedback on these guidelines is welcomed. If you do have feedback, please open i
 The following best practices are what the users of PowerShell Gallery items say is important, and are listed in nominal priority order.
 Items that follow these guidelines are far more likely to be downloaded and adopted by others.
 
-* Use PSScriptAnalyzer
-* Include documentation and examples
-* Be responsive to feedback
-* Provide modules rather than scripts
-* Provide links to a project site
-* Include tests with your modules
-* Include and/or link to license terms
-* Sign your code
-* Follow [SemVer](http://semver.org/) guidelines for versioning
-* Use common tags, as documented in Common PowerShell Gallery tags
-* Test publishing using a local repository
+- Use PSScriptAnalyzer
+- Include documentation and examples
+- Be responsive to feedback
+- Provide modules rather than scripts
+- Provide links to a project site
+- Include tests with your modules
+- Include and/or link to license terms
+- Sign your code
+- Follow [SemVer](http://semver.org/) guidelines for versioning
+- Use common tags, as documented in Common PowerShell Gallery tags
+- Test publishing using a local repository
 
 Each of these is covered briefly in the sections below.
 
@@ -53,8 +52,8 @@ The best practice is to run `Invoke-ScriptAnalyzer` with `-Recurse` and `-Severi
 
 Review the results, and ensure that:
 
-* All Errors are corrected or addressed in your documentation
-* All Warnings are reviewed, and addressed where applicable
+- All Errors are corrected or addressed in your documentation
+- All Warnings are reviewed, and addressed where applicable
 
 Users who acquire items from the PowerShell Gallery are strongly encouraged to run PSScriptAnalyzer and evaluate all Errors and Warnings.
 Users are very likely to contact item owners if they see that there is an error reported by PSScriptAnalyzer.
@@ -68,11 +67,11 @@ Documentation is the most helpful thing to include in items published to the Pow
 Users will generally bypass items without documentation, as the alternative is to read the code to understand what the item is and how to use it.
 There are several articles available in MSDN on how to provide documentation with PowerShell items, including:
 
-* Guidelines for providing help are in [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
-* Creating cmdlet help, which is the best approach for any PowerShell script, function, or cmdlet.
+- Guidelines for providing help are in [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
+- Creating cmdlet help, which is the best approach for any PowerShell script, function, or cmdlet.
   For information about how to create cmdlet help, start with [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
   To add help within a script, see [About Comment Based Help](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
-* Many modules also include documentation in text format, such as MarkDown files.
+- Many modules also include documentation in text format, such as MarkDown files.
   This can be particularly helpful when there is a project site in Github, where Markdown is a heavily used format.
   The best practice is to use [Github-flavored Markdown](https://help.github.com/categories/writing-on-github/)
 
@@ -91,11 +90,11 @@ Users who provide constructive feedback are important to respond to, as they are
 
 There are two feedback methods available in the PowerShell Gallery:
 
-* Contact Owner: This allows a user to send an email to the item owner(s). As an item owner, is important to monitor the email address used with the PowerShell Gallery items, and respond to issues that are raised. The one disadvantage to this method is that only the user and owner will ever see the communication, so the owner may have to answer the same question many times.
-* Comments: At the bottom of the item page is a Comment field.
+- Contact Owner: This allows a user to send an email to the item owner(s). As an item owner, is important to monitor the email address used with the PowerShell Gallery items, and respond to issues that are raised. The one disadvantage to this method is that only the user and owner will ever see the communication, so the owner may have to answer the same question many times.
+- Comments: At the bottom of the item page is a Comment field.
   The advantage to this system is that other users can see the comments and responses, which reduces the number of times any single question must be answered.
   As an item owner, it is strongly recommended that you Follow the comments made for each item.
-See [Providing Feedback via Social Media or Comments](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-SocialMediaFeedback) for details on how to do that.
+See [Providing Feedback via Social Media or Comments](../working_with_items/social_media_feedback.md) for details on how to do that.
 
 Owners who respond to feedback constructively are appreciated by the community.
 Use the opportunity in the report to request more information if needed, provide a workaround, or identify if an update fixes a problem.
@@ -169,8 +168,8 @@ Code signing provides users with the highest level of assurance for who publishe
 To learn more about code signing generally, see [Introduction to Code Signing](http://go.microsoft.com/fwlink/?LinkId=106296).
 PowerShell supports validation of code signing through two primary approaches:
 
-* Signing script files
-* Catalog signing a module
+- Signing script files
+- Catalog signing a module
 
 Signing PowerShell files is a well-established approach to ensuring that the code being executed was produced by a reliable source, and has not been modified.
 Details on how to sign PowerShell script files is covered in the [About Signing](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) topic.
@@ -189,17 +188,17 @@ Catalog signing works with, but does not replace signing script files. PowerShel
 [SemVer](http://semver.org/) is a public convention that describes how to structure and change a version to allow easy intepretation of changes.
 The version for your item must be included in the manifest data.
 
-* The version should be structured as 3 numeric blocks separated by periods, as in 0.1.1 or 4.11.192
-* Versions starting with "0" indicate that the item is not yet production ready, and the first number should only begin with "0" if that is the only number used
-* Changes in the first number (1.9.9999 to 2.0.0) indicate major and breaking changes between the versions
-* Changes to the second number (1.01 to 1.02) indicate feature-level changes, such as adding new cmdlets to a module
-* Changes to the third number indicate non-breaking changes, such as new parameters, updated samples, or new tests
-* When listing versions, PowerShell will sort the versions as strings, so 1.01.0 will be treated as greater than 1.001.0
+- The version should be structured as 3 numeric blocks separated by periods, as in 0.1.1 or 4.11.192
+- Versions starting with "0" indicate that the item is not yet production ready, and the first number should only begin with "0" if that is the only number used
+- Changes in the first number (1.9.9999 to 2.0.0) indicate major and breaking changes between the versions
+- Changes to the second number (1.01 to 1.02) indicate feature-level changes, such as adding new cmdlets to a module
+- Changes to the third number indicate non-breaking changes, such as new parameters, updated samples, or new tests
+- When listing versions, PowerShell will sort the versions as strings, so 1.01.0 will be treated as greater than 1.001.0
 
 PowerShell was created before SemVer was published, so it provides support for most but not all elements of SemVer, specifically:
 
-* It does not support prerelease strings in version numbers. This is useful when a publisher wishes to deliver a preview release of a new major version after providing a version 1.0.0. This will be supported in a future release of the PowerShell Gallery and PowerShellGet cmdlets.
-* PowerShell and the PowerShell Gallery allow version strings with 1, 2, and 4 segments. Many early modules did not follow the guidelines, and product releases from Microsoft include build information as a 4th block of numbers (for example 5.1.14393.1066). From a versioning standpoint, these differences are ignored.
+- It does not support prerelease strings in version numbers. This is useful when a publisher wishes to deliver a preview release of a new major version after providing a version 1.0.0. This will be supported in a future release of the PowerShell Gallery and PowerShellGet cmdlets.
+- PowerShell and the PowerShell Gallery allow version strings with 1, 2, and 4 segments. Many early modules did not follow the guidelines, and product releases from Microsoft include build information as a 4th block of numbers (for example 5.1.14393.1066). From a versioning standpoint, these differences are ignored.
 
 ## Test using a local repository
 
@@ -207,9 +206,9 @@ The PowerShell Gallery is not designed to be a target for testing the publishing
 The best way to test out the end-to-end process of publishing to the PowerShell Gallery is to set up and use your own local repository.
 This can be done in a few ways, including:
 
-* Set up a local PowerShell Gallery instance, using the [PS Private Gallery project](https://github.com/PowerShell/PSPrivateGallery) in Github. This preview project will help you set up an instance of the PowerShell Gallery that you can control, and use for your tests.
-* Set up an [internal Nuget repository](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). This will require more work to set up, but will have the advantage of validating a few more of the requirements, notably validating use of an API key, and whether or not dependencies are present in the target when you publish.
-* Set up a file share as the test “repository”. This is easy to set up, but since it is a file share, the validations noted above will not take place. One potential advantage in this case is that the file share does not check the (required) API key, so you can use the same key you would to publish to the PowerShell Gallery.
+- Set up a local PowerShell Gallery instance, using the [PS Private Gallery project](https://github.com/PowerShell/PSPrivateGallery) in Github. This preview project will help you set up an instance of the PowerShell Gallery that you can control, and use for your tests.
+- Set up an [internal Nuget repository](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). This will require more work to set up, but will have the advantage of validating a few more of the requirements, notably validating use of an API key, and whether or not dependencies are present in the target when you publish.
+- Set up a file share as the test “repository”. This is easy to set up, but since it is a file share, the validations noted above will not take place. One potential advantage in this case is that the file share does not check the (required) API key, so you can use the same key you would to publish to the PowerShell Gallery.
 
 With any of these solutions, use Register-PSRepository to define a new "repository", which you use in the -Repository property for Publish-Module.
 
@@ -220,13 +219,13 @@ For that reason, we do not support the PowerShell Gallery as a testing target, a
 
 The most successful approach we have found for items published to the PowerShell Gallery is this:
 
-* Do initial development in a an open-source project site. The PowerShell Team uses Github.
-* Use feedback from reviewers and [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer) to get the code to stable state
-* Include documentation, so others know how to use your work
-* Test out the publishing action using a local repository.
-* Publish a stable or Alpha release to the PowerShell Gallery, making sure to include the documentation and link to your project site
-* Gather feedback and iterate on the code in your project site, then publish stable updates to the PowerShell Gallery
-* Add examples and Pester tests in your project and your module
-* Decide if you want to code sign your item
-* When you feel the project is ready to use in a production environment, publish a 1.0.0 version to the PowerShell Gallery
-* Continue to gather feedback and iterate on your code based on user input
+- Do initial development in a an open-source project site. The PowerShell Team uses Github.
+- Use feedback from reviewers and [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer) to get the code to stable state
+- Include documentation, so others know how to use your work
+- Test out the publishing action using a local repository.
+- Publish a stable or Alpha release to the PowerShell Gallery, making sure to include the documentation and link to your project site
+- Gather feedback and iterate on the code in your project site, then publish stable updates to the PowerShell Gallery
+- Add examples and Pester tests in your project and your module
+- Decide if you want to code sign your item
+- When you feel the project is ready to use in a production environment, publish a 1.0.0 version to the PowerShell Gallery
+- Continue to gather feedback and iterate on your code based on user input

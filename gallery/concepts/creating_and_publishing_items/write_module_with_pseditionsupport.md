@@ -1,18 +1,19 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
 title:  modulewithpseditionsupport
 ---
-
 # Modules with compatible PowerShell Editions
+
 Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.
 
 - **Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.
 - **Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.
 
 ## The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.
+
 ```powershell
 $PSVersionTable
 
@@ -29,6 +30,7 @@ SerializationVersion           1.1.0.1
 ```
 
 ## Module authors can declare their modules to be compatible with one or more PowerShell editions using the CompatiblePSEditions module manifest key. This key is only supported on PowerShell 5.1 or later.
+
 *NOTE* Once a module manifest is specified with the CompatiblePSEditions key, it can not be imported on lower versions of PowerShell.
 
 ```powershell
@@ -47,7 +49,9 @@ Name                 MemberType Definition
 CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] CompatiblePSEditions {get;}
 
 ```
+
 When getting a list of available modules, you can filter the list by PowerShell edition.
+
 ```powershell
 Get-Module -ListAvailable -PSEdition Desktop
 
@@ -73,6 +77,7 @@ Here are the couple of options to package your module with logic for loading pro
 ### Option 1: Packaging a module for targeting multiple versions and multiple editions of PowerShell
 
 #### Module folder contents
+
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - PSScriptAnalyzer.psd1
@@ -110,6 +115,7 @@ ModuleVersion = '1.6.1'
 ```
 
 #### Contents of PSScriptAnalyzer.psm1 file
+
 Below logic loads the required assemblies depending on the current edition or version.
 
 ```powershell
@@ -221,6 +227,7 @@ Mode                LastWriteTime         Length Name
 ```
 
 ## PowerShell Gallery users can find the list of modules supported on a specific PowerShell Edition using tags PSEdition_Desktop and PSEdition_Core.
+
 Modules without PSEdition_Desktop and PSEdition_Core tags are considered to work fine on PowerShell Desktop editions.
 
 ```powershell
@@ -235,6 +242,9 @@ Find-Module -Tag PSEdition_Core
 
 
 ## More details
-### [Scripts with PSEditions](../script/scriptwithpseditionsupport.md)
-### [PSEditions support on PowerShellGallery](../../psgallery/psgallery_pseditions.md)
+
+### [Scripts with PSEditions](write_script_with_pseditionsupport.md)
+
+### [PSEditions support on PowerShellGallery](pseditions.md)
+
 ### [Update module manifest] (/powershell/module/powershellget/update-modulemanifest)

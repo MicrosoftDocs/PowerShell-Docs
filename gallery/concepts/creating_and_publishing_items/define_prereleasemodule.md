@@ -1,21 +1,21 @@
----
+﻿---
 ms.date:  09/26/2017
 contributor:  keithb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
 title:  PrereleaseModule
 ---
-
 # Prerelease Module Versions
-Starting with version 1.6.0, PowerShellGet and the PowerShell Gallery provide support for tagging versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease items were limited to having a version beginning with 0. The goal of these features is to provide greater support for [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking backwards compatibility with PowerShell versions 3 and above, or existing versions of PowerShellGet. This topic focuses on the module-specific features. The equivalent features for scripts are in the [Prerelease Versions of Scripts](../script/PrereleaseScript.md) topic. Using these features, publishers can identify a module or script as version 2.5.0-alpha, and later release a production-ready version 2.5.0 that supersedes the prerelease version.
+
+Starting with version 1.6.0, PowerShellGet and the PowerShell Gallery provide support for tagging versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease items were limited to having a version beginning with 0. The goal of these features is to provide greater support for [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking backwards compatibility with PowerShell versions 3 and above, or existing versions of PowerShellGet. This topic focuses on the module-specific features. The equivalent features for scripts are in the [Prerelease Versions of Scripts](define_prereleasescript.md) topic. Using these features, publishers can identify a module or script as version 2.5.0-alpha, and later release a production-ready version 2.5.0 that supersedes the prerelease version.
 
 At a high level, the prerelease module features include:
 
-* Adding a Prerelease string to the PSData section of the module manifest identifies the module as a prerelease version.
+- Adding a Prerelease string to the PSData section of the module manifest identifies the module as a prerelease version.
 When the module is published to the PowerShell Gallery, this data is extracted from the manifest, and used to identify prerelease items.
-* Acquiring prerelease items requires adding -AllowPrerelease flag to the PowerShellGet commands Find-Module, Install-Module, Update-Module, and Save-Module.
+- Acquiring prerelease items requires adding -AllowPrerelease flag to the PowerShellGet commands Find-Module, Install-Module, Update-Module, and Save-Module.
 If the flag is not specified, prerelease items will not be shown.
-* Module versions displayed by Find-Module, Get-InstalledModule, and in the PowerShell Gallery will be displayed as a single string with the Prerelease string appended, as in 2.5.0-alpha.
+- Module versions displayed by Find-Module, Get-InstalledModule, and in the PowerShell Gallery will be displayed as a single string with the Prerelease string appended, as in 2.5.0-alpha.
 
 Details for the features are included below.
 
@@ -25,11 +25,12 @@ These changes do not affect the module version support that is built into PowerS
 
 PowerShellGet support for prerelease versions requires the use of two fields within the Module Manifest:
 
-* The ModuleVersion included in the module manifest must be a 3-part version if a prerelease version is used, and must comply with existing PowerShell versioning. The version format would be A.B.C, where A, B, and C are all integers.
-* The Prerelease string is specified in the module manifest, in the PSData section of PrivateData.
+- The ModuleVersion included in the module manifest must be a 3-part version if a prerelease version is used, and must comply with existing PowerShell versioning. The version format would be A.B.C, where A, B, and C are all integers.
+- The Prerelease string is specified in the module manifest, in the PSData section of PrivateData.
 Detailed requirements on the Prerelease string are below.
 
 An example section of a module manifest that defines a module as a prerelease would look like the following:
+
 ```powershell
 @{
     ModuleVersion = '2.5.0'
@@ -44,11 +45,11 @@ An example section of a module manifest that defines a module as a prerelease wo
 
 The detailed requirements for Prerelease string are:
 
-* Prerelease string may only be specified when the ModuleVersion is 3 segments for Major.Minor.Build. This aligns with SemVer v1.0.0.
-* A hyphen is the delimiter between the Build number and the Prerelease string. A hyphen may be included in the Prerelease string as the first character, only.
-* The Prerelease string may contain only ASCII alphanumerics [0-9A-Za-z-]. It is a best practice to begin the Prerelease string with an alpha character, as it will be easier to identify that this is a prerelease version when scanning a list of items.
-* Only SemVer v1.0.0 prerelease strings are supported at this time. Prerelease string __must not__ contain either period or + [.+], which are allowed in SemVer 2.0.
-* Examples of supported Prerelease string are: -alpha, -alpha1, -BETA, -update20171020
+- Prerelease string may only be specified when the ModuleVersion is 3 segments for Major.Minor.Build. This aligns with SemVer v1.0.0.
+- A hyphen is the delimiter between the Build number and the Prerelease string. A hyphen may be included in the Prerelease string as the first character, only.
+- The Prerelease string may contain only ASCII alphanumerics [0-9A-Za-z-]. It is a best practice to begin the Prerelease string with an alpha character, as it will be easier to identify that this is a prerelease version when scanning a list of items.
+- Only SemVer v1.0.0 prerelease strings are supported at this time. Prerelease string __must not__ contain either period or + [.+], which are allowed in SemVer 2.0.
+- Examples of supported Prerelease string are: -alpha, -alpha1, -BETA, -update20171020
 
 __Prerelease versioning impact on sort order and installation folders__
 
@@ -67,10 +68,11 @@ If -AllowPrerelease flag is not specified, prerelease items will not be shown.
 
 The only exceptions to this in the PowerShellGet module commands are Get-InstalledModule, and some cases with Uninstall-Module.
 
-* Get-InstalledModule always will automatically show the prerelease information in the version string for modules.
-* Uninstall-Module will by default uninstall the most recent version of a module, if __no version__ is specified. That behavior has not changed. However, if a prerelease version is specified using -RequiredVersion, -AllowPrerelease will be required.
+- Get-InstalledModule always will automatically show the prerelease information in the version string for modules.
+- Uninstall-Module will by default uninstall the most recent version of a module, if __no version__ is specified. That behavior has not changed. However, if a prerelease version is specified using -RequiredVersion, -AllowPrerelease will be required.
 
 ## Examples
+
 ```powershell
 # Assume the PowerShell Gallery has TestPackage module versions 1.8.0 and 1.9.0-alpha. If -AllowPrerelease is not specified, only version 1.8.0 will be returned.
 C:\windows\system32> find-module TestPackage
@@ -189,10 +191,17 @@ Version         Name                                Repository           Descrip
 ```
 
 ## More details
-### [Prerelease Script Versions](../script/PrereleaseScript.md)
+
+### [Prerelease Script Versions](define_prereleasescript.md)
+
 ### [Find-Module](/powershell/module/powershellget/find-module)
+
 ### [Install-Module](/powershell/module/powershellget/install-module)
+
 ### [Save-Module](/powershell/module/powershellget/save-module)
+
 ### [Update-Module](/powershell/module/powershellget/Update-Module)
+
 ### [Get-InstalledModule](/powershell/module/powershellget/get-installedmodule)
+
 ### [UnInstall-Module](/powershell/module/powershellget/psget_uninstall-module)

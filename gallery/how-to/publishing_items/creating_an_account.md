@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  Creating a PowerShell Gallery Account
 ---
-
 ## Creating a PowerShell Gallery Account
 
 A PowerShell Gallery account must be established before publishing anything to the PowerShell Gallery.
@@ -13,7 +12,7 @@ The PowerShell Gallery accounts must be linked to an Azure Active Directory emai
 
 To create a PowerShell Gallery account, go to https://PowerShellGallery.com and click on "Register" (see the image below).
 
-![Register new account](./images/CreatingAccount-Register.png)
+![Register new account](../../Images/CreatingAccount-Register.png)
 
 In the next page, to use an Azure Active Directory account, select "Work or School Account", and log in with your account.
 To use a Microsoft account - such as one in a Hotmail.com or Outlook.com domain - choose "Personal Account", and log in.

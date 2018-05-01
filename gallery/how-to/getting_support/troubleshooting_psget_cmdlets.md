@@ -1,3 +1,4 @@
+﻿
 ---
 ms.date:  06/12/2017
 contributor:  manikb
@@ -5,7 +6,6 @@ ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
 title:  psget_cmdlets_troubleshooting
 ---
-
 ## How to resolve "WARNING: Package 'your package name' failed to download" issue?
 
 It is reported that Install-Module or Update-Module sometimes fails on some machines.

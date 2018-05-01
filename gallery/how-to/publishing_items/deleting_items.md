@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  Deleting Items
 ---
-
 # Deleting items
 
 The PowerShell Gallery does not support permanent deletion of items, because that would break anyone who is depending on it remaining available.

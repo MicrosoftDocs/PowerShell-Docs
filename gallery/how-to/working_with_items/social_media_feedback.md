@@ -1,19 +1,19 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  Providing Feedback via Social Media or Comments
 ---
-
 # Providing Feedback via Social Media or Comments
 
 The Powershell Gallery supports two approaches for users to provide public feedback on an item:
 
-* Use the links on the left edge to "share" an item in Facebook, LinkedIn, or Twitter social media sites;
-* Use the Comment feature to post comments on an item, and to allow Authors to watch for comments on items they publish.
+- Use the links on the left edge to "share" an item in Facebook, LinkedIn, or Twitter social media sites;
+- Use the Comment feature to post comments on an item, and to allow Authors to watch for comments on items they publish.
 
 ## Social Media Feedback
+
 On the left side of the page for each item in the PowerShell Gallery there are links for Facebook, LinkedIn, and Twitter.
 Clicking on these links will open the social media site, and allow quickly sharing a link to the item.
 
@@ -25,6 +25,7 @@ Since this shows only the count of times something has been shared, it will be i
 
 
 ## Comments
+
 The PowerShell Gallery uses the LiveFyre service to allow users to comment on items.
 Users who have recommendations or feedback can use this feature to provide feedback that is visible to anyone who visits the item page.
 Item owners can Follow this feedback, and be notified when someone posts a comment.

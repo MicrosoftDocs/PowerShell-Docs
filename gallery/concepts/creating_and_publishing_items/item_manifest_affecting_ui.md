@@ -1,11 +1,12 @@
+﻿
 # Item manifest values that impact the PowerShell Gallery UI
 
 This topic provides publishers with summary information on how to modify the manifest for their PowerShell Gallery publications so that features of PowerShellGet cmdlets and the PowerShell Gallery UI will be affected.
 This content is organized by where the change will appear, starting with the center section, then the navigation area on the left. There is a detail section covering tags, which identifies important tags, as well as some of the more commonly used tags.
 There are two topics that provide manifest examples:
 
-* For modules, see [Update Module Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
-* For scripts, see [Create Script File with Metadata](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+- For modules, see [Update Module Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
+- For scripts, see [Create Script File with Metadata](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
 
 ## PowerShell Gallery Feature Elements Controlled by the Manifest
 
@@ -40,16 +41,16 @@ Each item indicates if it may be controlled by the module or script manifest.
 
 The PowerShell Gallery Edit item page allows publishers to change several of the fields displayed for an item, specifically:
 
-* Title
-* Description
-* Summary
-* Icon URL
-* Project home page URL
-* Authors
-* Copyright
-* Tags
-* Release notes
-* Require license
+- Title
+- Description
+- Summary
+- Icon URL
+- Project home page URL
+- Authors
+- Copyright
+- Tags
+- Release notes
+- Require license
 
 This approach is not generally recommended, except when needed to correct what is displayed for an older version of a module.
 Users who acquire the module will see the metadata does not match what is displayed in the PowerShell Gallery, which raises concerns about the item.

@@ -1,10 +1,9 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell
 title:  RequireLicenseAcceptanceScript
 ---
-
 # Requiring License Acceptance for Scripts
 
 License Acceptance is not supported for scripts. However, the scenario where a script depends on a module that requires license acceptance is supported.
@@ -14,9 +13,11 @@ Script commands(Install-Script/Save-Script/Update-Script) support a new paramete
 ## EXAMPLES
 
 ### Example 1: Install Script with dependencies requiring license acceptance
+
 Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. User is prompted to Accept License.
+
 ```PowerShell
-PS C:\> Install-Script -Name ScriptRequireLicenseAcceptance
+PS> Install-Script -Name ScriptRequireLicenseAcceptance
 
 License Acceptance
 MIT License 2.0
@@ -32,13 +33,16 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 ```
 
 ### Example 2: Install Script with dependencies requiring license acceptance and -AcceptLicense
+
 Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. User is not prompted to accept license as -AcceptLicense is specified.
+
 ```PowerShell
-PS C:\> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
+PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ```
 
 ## More details
-### [Require License Acceptance support for Modules](../module/RequireLicenseAcceptance.md)
+
+### [Require License Acceptance support for Modules](module_requirelicenseacceptance.md)
 
 ### [Require License Acceptance support on PowerShellGallery](../../psgallery/psgallery_requires_license_acceptance.md)
 

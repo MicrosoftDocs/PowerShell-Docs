@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  Managing Item Owners
 ---
-
 # Managing Item Owners
 
 Ownership of an item in the PowerShell Gallery is defined by who published the item to the gallery.
@@ -39,6 +38,7 @@ Note that the "Authors" metadata is purely freeform text; only "Owners" are cont
 
 
 ## Removing Owners
+
 When an item has multiple owners and one needs to be removed, the process is simple:
 
 1. [Log on](https://powershellgallery.com/users/account/LogOn) to PowerShell Gallery with the account that is the current owner of an item;
@@ -49,6 +49,7 @@ When an item has multiple owners and one needs to be removed, the process is sim
 
 
 ## Transferring Item Ownership
+
 We sometimes get support requests to transfer item ownership from one user to another, but you can almost always accomplish this yourself.
 Transferring ownership from one user to another is simply a combination of the two features above.
 
@@ -57,18 +58,19 @@ Transferring ownership from one user to another is simply a combination of the t
 
 This request has come in under a couple forms but the process works the same.
 
-* The item ownership is changing from one developer to another
-* The item was accidentally published using the wrong account
+- The item ownership is changing from one developer to another
+- The item was accidentally published using the wrong account
 
 
 ## Orphaned Items
+
 One last scenario has occurred, but not many times.
 Items have become orphans and the only item owner account cannot be used to add new owners.
 Here are some examples of this scenario:
 
-* The owner's account is associated with an email address that no longer exists and the user has forgotten their password
-* The registered owner has left the company that produces the item and cannot be reached to update the item ownership
-* Due to a bug that has only affected a handful of items, the item is somehow ownerless on the gallery
+- The owner's account is associated with an email address that no longer exists and the user has forgotten their password
+- The registered owner has left the company that produces the item and cannot be reached to update the item ownership
+- Due to a bug that has only affected a handful of items, the item is somehow ownerless on the gallery
 
 The PowerShell Gallery Administrators can access the 'Manage Owners' link for any item.
 If you are the rightful owner of a item and cannot reach the current owner to gain ownership permissions, then use the 'Report Abuse' link on the gallery to reach the PowerShell Gallery Administrators.

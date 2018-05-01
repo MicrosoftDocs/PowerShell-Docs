@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  psgallery_search_syntax
 ---
-
 # Gallery Search Syntax
 
 PowerShell Gallery offers a text searchbox where you can use words, phrases and keyword expressions to narrow down search results.

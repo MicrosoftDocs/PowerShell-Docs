@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  psgallery_gettingstarted
 ---
-
 # Get Started with the PowerShell Gallery
 
 ## What is the PowerShell Gallery?
@@ -32,8 +31,7 @@ items from the PowerShell Gallery.
 - [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkId=398175)
 - [MSI Installer (for PowerShell 3 and 4)](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
-PowerShellGet also requires the [NuGet
-provider](http://go.microsoft.com/fwlink/?LinkId=722208) to work with
+PowerShellGet also requires the [NuGet provider](http://go.microsoft.com/fwlink/?LinkId=722208) to work with
 the PowerShell Gallery. You will be prompted to install the NuGet
 provider automatically upon first use of PowerShellGet if the NuGet
 provider is not in one of the following locations:

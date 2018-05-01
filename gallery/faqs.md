@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  psgallery_faqs
 ---
-
 # Frequently Asked Questions
 
 ## What is a PowerShell module?
@@ -156,12 +155,12 @@ Therefore, **PowerShellGet** requires one of the following operating systems:
 
 ## Is it possible to reserve names for items that will be published in future?
 
-It is not possible to squat item names. If you feel that an existing item has taken the name which suits your item more, try [contacting the owner of the item](psgallery_contacting_item_owners.md). If you didnt get response within a couple of weeks, you can contact support and the PowerShell Gallery team will look in to it.
+It is not possible to squat item names. If you feel that an existing item has taken the name which suits your item more, try [contacting the owner of the item](contacting_item_owners.md). If you didnt get response within a couple of weeks, you can contact support and the PowerShell Gallery team will look in to it.
 
 ## How do I claim ownership for items ?
 
-Check out [Managing Item Owners on PowerShellGallery.com](Managing-Item-Owners.md) for details.
+Check out [Managing Item Owners on PowerShellGallery.com](managing_item_owners.md) for details.
 
 ## How do I deal with an item owner who is violating my item license?
 
-We encourage the PowerShell community to work together to resolve any disputes that may arise between item owners and the owners of other items.  We have crafted a [dispute resolution process](psgallery_dispute_resolution.md) that we ask you to follow before PowerShellGallery.com administrators intercede.
+We encourage the PowerShell community to work together to resolve any disputes that may arise between item owners and the owners of other items.  We have crafted a [dispute resolution process](dispute_resolution.md) that we ask you to follow before PowerShellGallery.com administrators intercede.

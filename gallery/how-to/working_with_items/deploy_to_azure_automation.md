@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
@@ -9,7 +9,7 @@ title:  psgallery_deploy_to_azure_automation
 
 The Deploy to Azure Automation button on the item details page will deploy the item from the PowerShell Gallery to Azure Automation.
 
-![Deploy to Azure Automation Button](Images/DeployToAzureAutomationButton.png)
+![Deploy to Azure Automation Button](../../Images/DeployToAzureAutomationButton.png)
 
 When clicked, it will redirect you to the Azure Management Portal, where you sign in using your Azure account credentials.
 If the item includes dependencies, all the dependencies will be deployed to Azure Automation as well.
