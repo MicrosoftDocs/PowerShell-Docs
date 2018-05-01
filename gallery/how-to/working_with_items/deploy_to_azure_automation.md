@@ -5,9 +5,7 @@ ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  psgallery_deploy_to_azure_automation
 ---
-
-Deploy to Azure Automation
-===========================
+#Deploy to Azure Automation
 
 The Deploy to Azure Automation button on the item details page will deploy the item from the PowerShell Gallery to Azure Automation.
 

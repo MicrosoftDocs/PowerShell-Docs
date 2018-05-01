@@ -5,9 +5,8 @@ ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  psgallery_status
 ---
+# PowerShell Gallery Status
 
-PowerShell Gallery Status
-=========================
 ## 10/10/2017 - PowerShell Gallery unavailable for 2 hours 10/10/17
 
 __Summary of Impact__: The PowerShell Gallery experienced a period of very high latency, resulting in intermittent connection issues, beginning approximately 5pm (PDT) 10/10/17. While resolving the issue, the site was taken offline for 2 hours starting approximately 10pm (PDT). The site was restored shortly before midnight 10/10/2017.
