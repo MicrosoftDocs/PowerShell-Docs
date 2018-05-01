@@ -1,79 +1,84 @@
 - name: Overview
   href: readme.md
 - name: Getting Started
-  href: psgallery/psgallery_gettingstarted.md
-- name: Health Status
-  href: psgallery/psgallery_status.md
-- name: PSScriptAnalyzer
-  href: psgallery/psgallery_scriptanalyzer_rule_profile.md
-- name: Publishing to the Gallery
-  items:
-    - name: Creating a PowerShellGallery Account
-      href: psgallery/psgallery_creating_an_account.md
-    - name: Creating and publishing items
-      href: psgallery/Creating-and-Publishing-an-item.md
-    - name: Publishing guidelines and best practices
-      href: psgallery/psgallery-PublishingGuidelines.md
-    - name: Item manifest and Gallery UI
-      href: psgallery/psgallery_ItemManifestAffectingUI.md
-    - name: Unlisting items
-      href: psgallery/psgallery_unlist_items.md
-    - name: Deleting items
-      href: psgallery/Deleting-Items.md
-    - name: Managing item owners
-      href: psgallery/Managing-Item-Owners.md
-- name: Finding Items in the Gallery
-  items:
-    - name: Searching Syntax
-      href: psgallery/psgallery_search_syntax.md
-    - name: Gallery Items tab
-      href: psgallery/psgallery_items_tab.md
-    - name: Items with Compatible PSEditions
-      href: psgallery/psgallery_pseditions.md
-    - name: FileList view
-      href: psgallery/psgallery_filelist_feature.md
-    - name: Deploy to Azure Automation
-      href: psgallery/psgallery_deploy_to_azure_automation.md
-- name: Support
-  items:
-    - name: Report Abuse
-      href: psgallery/psgallery_report_abuse.md
-    - name: Dispute resolution
-      href: psgallery/psgallery_dispute_resolution.md
-    - name: Contacting item owners
-      href: psgallery/psgallery_contacting_item_owners.md
-    - name: Contacting administrators
-      href: psgallery/psgallery_contacting_administrators.md
-    - name: Providing Feedback via Social Media or Comments
-      href: psgallery/psgallery-SocialMediaFeedback.md
-    - name: Troubleshooting
-      href: psget/psget_cmdlets_troubleshooting.md
-- name: Licensing
-  items:
-  - name: Require License Acceptance on Items details
-    href: psgallery/psgallery_requires_license_acceptance.md
-  - name: Require License Acceptance on Deploy to Azure Automation
-    href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
-- name: PSEdition support
-  href: psget/module/modulewithpseditionsupport.md
-- name: PreRelease Modules
-  href: psget/module/PreReleaseModule.md
-- name: Setting up a local Gallery
-  href: psgallery/Setting-Up-Local-Gallery.md
+  href: gettingstarted.md
+- name: How-To
+- items:  
+  - name: Finding Items in the Gallery
+    items:
+      - name: Searching For Items
+        href: search_syntax.md
+      - name: Filtering Search Results
+        href: filtering_items.md
+      - name: Items with Compatible PSEditions
+        href: pseditions.md
+      - name: Finding PreRelease Items
+        href: psget/module/PreReleaseModule.md
+  - name: Publishing to the Gallery
+    items:
+      - name: Creating a PowerShellGallery Account
+        href: creating_an_account.md
+      - name: Creating and publishing items
+        href: Creating-and-Publishing-an-item.md
+      - name: Publishing guidelines and best practices
+        href: PublishingGuidelines.md
+      - name: Unlisting items
+        href: unlist_items.md
+      - name: Deleting items
+        href: Deleting-Items.md
+      - name: Managing item owners
+        href: Managing-Item-Owners.md
+      - name: Defining a Module as PreRelease
+        href: psget/module/PreReleaseModule.md
+      - name: Defining a Script as PreRelease
+        href: psget/script/PreReleaseScript.md
+  - name: Working with Items
+    items:
+      - name: FileList view
+        href: filelist_view.md
+      - name: Deploy to Azure Automation
+        href: deploy_to_azure_automation.md
+      - name: Items that Require License Acceptance
+        href: requires_license_acceptance.md
+      - name: Deploy to Azure Automation License Acceptance (Merge Above)
+        href: deploy_to_azure_automation_requireLicenseAcceptance.md
+      - name: Contacting item owners
+        href: contacting_item_owners.md
+      - name: Providing Feedback via Social Media or Comments
+        href: psgallery-SocialMediaFeedback.md
+  - name: Getting Support
+    items:
+      - name: Health Status
+        href: health_status.md
+      - name: Report Abuse
+        href: report_abuse.md
+      - name: Dispute resolution
+        href: dispute_resolution.md
+      - name: Contacting administrators
+        href: contacting_administrators.md
+      - name: Troubleshooting
+        href: psget/psget_cmdlets_troubleshooting.md
+      - name: Bootstrapping NuGet provider and NuGet.exe
+        href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
 - name: Gallery FAQs
-  href: psgallery/psgallery_faqs.md
-- name: PowerShellGet
-  href: psget/get_psget_module.md
+  href: faqs.md
+- name: Concepts
   items:
-    - name: Script with PSEditions Support
-      href: psget/script/scriptwithpseditionsupport.md
-    - name: Modules with PSEdition Support
-      href: psget/modules/moduleswithpseditionsupport.md
-    - name: Require License Acceptance for Scripts
-      href: psget/script/script_RequireLicenseAcceptance.md
-    - name: Prerelease Versions
-      href: psget/script/PreReleaseScript.md
-    - name: Bootstrapping NuGet provider and NuGet.exe
-      href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
+    - name: Creating and Publishing Items
+      items:
+      - name: PSScriptAnalyzer Rule Profile
+        href: scriptanalyzer_rule_profile.md
+      - name: Item manifest and Gallery UI
+        href: ItemManifestAffectingUI.md  
+      - name: Writing Scripts with PSEditions Support
+        href: psget/script/scriptwithpseditionsupport.md
+      - name: Writing Modules with PSEdition support
+        href: psget/module/modulewithpseditionsupport.md
+      - name: Requiring License Acceptance for Scripts
+        href: psget/script/script_RequireLicenseAcceptance.md
+    - name: Setting up a local Gallery
+      href: Setting-Up-Local-Gallery.md
+- name: What's New
+  href: whats_new.md
 - name: Contributing to PowerShell Gallery Documentation
-  href: psgallery/contributing_to_psgallery_documentation.md
+  href: contributing_to_documentation.md
