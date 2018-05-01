@@ -1,4 +1,5 @@
 ﻿
+
 # Item manifest values that impact the PowerShell Gallery UI
 
 This topic provides publishers with summary information on how to modify the manifest for their PowerShell Gallery publications so that features of PowerShellGet cmdlets and the PowerShell Gallery UI will be affected.

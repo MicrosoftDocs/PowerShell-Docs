@@ -31,6 +31,6 @@ Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the items on P
 
 ## More details on authoring and finding the items with compatible PowerShell Editions
 
-### [Modules with PSEditions](../psget/module/modulewithpseditionsupport.md)
+### [Modules with PSEditions](../../concepts/write-module-with-pseditionsupport.md)
 
-### [Scripts with PSEditions](../psget/script/scriptwithpseditionsupport.md)
+### [Scripts with PSEditions](../../concepts/write-scripts-with-pseditionsupport.md)

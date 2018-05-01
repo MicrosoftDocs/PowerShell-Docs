@@ -182,8 +182,7 @@ dependencies will deploy all the dependencies to Azure Automation. The
 'Deploy to Azure Automation' button can be disabled by adding the
 **AzureAutomationNotSupported** tag to your item metadata.
 
-To learn more about Azure Automation, see the [Azure Automation
-website](http://azure.microsoft.com/services/automation/).
+To learn more about Azure Automation, see the [Azure Automation website](http://azure.microsoft.com/services/automation/).
 
 ## Updating items from the PowerShell Gallery
 

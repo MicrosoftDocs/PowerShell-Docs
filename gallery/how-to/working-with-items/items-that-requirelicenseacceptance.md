@@ -21,6 +21,6 @@ If the module being deployed to Azure Automation requires license acceptance, po
 
 ## More details
 
-[Require License Acceptance in PowerShellGet](module-requirelicenseacceptance.md)
+[Require License Acceptance in PowerShellGet](../../concepts/module-requirelicenseacceptance.md)
 [Require License Acceptance in PowerShell Gallery](items-that-requirelicenseacceptance.md)
 [Azure Automation website](http://azure.microsoft.com/services/automation/)
