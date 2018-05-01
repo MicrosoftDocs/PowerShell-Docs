@@ -38,22 +38,6 @@
           href: how-to/working-with-items/contacting-item-owners.md
         - name: Providing Feedback via Social Media or Comments
           href: how-to/working-with-items/social-media-feedback.md
-- name: Getting Support
-  items:
-    - name: Health Status
-      href: how-to/getting-support/health-status.md
-    - name: Report Abuse
-      href: how-to/getting-support/report-abuse.md
-    - name: Dispute resolution
-      href: how-to/getting-support/dispute-resolution.md
-    - name: Contacting administrators
-      href: how-to/getting-support/contacting-administrators.md
-    - name: Troubleshooting
-      href: how-to/getting-support/troubleshooting-psget-cmdlets.md
-    - name: Bootstrapping NuGet provider and NuGet.exe
-      href: how-to/getting-support/bootstrapping-nuget-proivder-and-exe.md
-    - name: GDPR Compliance
-      href: how-to/getting-support/psgallery-gdpr-dsr.md
 - name: Concepts
   items:
     - name: Requiring Specific PSEditions
@@ -78,6 +62,22 @@
       href: concepts/scriptanalyzer-rule-profile.md
     - name: Item manifest and Gallery UI
       href: concepts/item-manifest-affecting-ui.md
+- name: Getting Support
+  items:
+    - name: Health Status
+      href: how-to/getting-support/health-status.md
+    - name: Report Abuse
+      href: how-to/getting-support/report-abuse.md
+    - name: Dispute resolution
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Contacting administrators
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Troubleshooting
+      href: how-to/getting-support/troubleshooting-psget-cmdlets.md
+    - name: Bootstrapping NuGet provider and NuGet.exe
+      href: how-to/getting-support/bootstrapping-nuget-proivder-and-exe.md
+    - name: GDPR Compliance
+      href: how-to/getting-support/psgallery-gdpr-dsr.md
 - name: Gallery FAQs
   href: faqs.md
 - name: PowerShellGet cmdlets
