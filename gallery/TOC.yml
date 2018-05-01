@@ -82,5 +82,3 @@
             href: concepts/define-prereleasemodule.md
           - name: Defining a Script as PreRelease
             href: concepts/define-prereleasescript.md
-- name: What's New
-  href: whats-new.md

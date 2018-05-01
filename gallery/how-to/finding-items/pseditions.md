@@ -33,4 +33,4 @@ Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the items on P
 
 ### [Modules with PSEditions](../../concepts/write-module-with-pseditionsupport.md)
 
-### [Scripts with PSEditions](../../concepts/write-scripts-with-pseditionsupport.md)
+### [Scripts with PSEditions](../../concepts/write-script-with-pseditionssupport.md)

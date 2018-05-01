@@ -204,4 +204,4 @@ Version         Name                                Repository           Descrip
 
 ### [Get-InstalledModule](/powershell/module/powershellget/get-installedmodule)
 
-### [UnInstall-Module](/powershell/module/powershellget/psget_uninstall-module)
+### [UnInstall-Module](/powershell/gallery/psget/module/psget_uninstall-module)
