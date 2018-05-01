@@ -18,8 +18,6 @@
           href: how-to/publishing-items/creating-an-account.md
         - name: Creating and publishing items
           href: how-to/publishing-items/creating-and-publishing-an-item.md
-        - name: Publishing guidelines and best practices
-          href: how-to/publishing-items/publishing-guidelines.md
         - name: Unlisting items
           href: how-to/publishing-items/unlisting-items.md
         - name: Deleting items
@@ -40,6 +38,8 @@
           href: how-to/working-with-items/social-media-feedback.md
 - name: Concepts
   items:
+    - name: Publishing guidelines and best practices
+      href: how-to/publishing-items/publishing-guidelines.md
     - name: Requiring Specific PSEditions
       items:
         - name: Writing Scripts with PSEditions Support
