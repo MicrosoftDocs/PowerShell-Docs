@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,13 +7,16 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113405
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Start-Job
 ---
-
 # Start-Job
+
 ## SYNOPSIS
+
 Starts a Windows PowerShell background job.
+
 ## SYNTAX
 
 ### ComputerName (Default)
+
 ```
 Start-Job [-Name <String>] [-ScriptBlock] <ScriptBlock> [-Credential <PSCredential>]
  [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
@@ -21,11 +24,13 @@ Start-Job [-Name <String>] [-ScriptBlock] <ScriptBlock> [-Credential <PSCredenti
 ```
 
 ### DefinitionName
+
 ```
 Start-Job [-DefinitionName] <String> [[-DefinitionPath] <String>] [[-Type] <String>] [<CommonParameters>]
 ```
 
 ### LiteralFilePathComputerName
+
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
  [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
@@ -33,6 +38,7 @@ Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
 ```
 
 ### FilePathComputerName
+
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
  [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
@@ -40,6 +46,7 @@ Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
 ```
 
 ## DESCRIPTION
+
 The **Start-Job** cmdlet starts a Windows PowerShell background job on the local computer.
 
 A Windows PowerShell background job runs a command "in the background" without interacting with the current session.
@@ -55,11 +62,13 @@ For more information, see about_Remote_Jobs.
 
 Beginning in Windows PowerShell 3.0, **Start-Job** can start instances of custom job types, such as scheduled jobs.
 For information about using **Start-Job** to start jobs with custom types, see the help topics for the job type feature.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> start-job -scriptblock {get-process}
+PS> start-job -scriptblock {get-process}
 
 Id    Name  State    HasMoreData  Location   Command
 ---   ----  -----    -----------  --------   -------
@@ -69,9 +78,11 @@ Id    Name  State    HasMoreData  Location   Command
 This command starts a background job that runs a Get-Process command.
 The command returns a job object with information about the job.
 The command prompt returns immediately so that you can work in the session while the job runs in the background.
+
 ### Example 2
+
 ```
-PS C:\> $jobWRM = invoke-command -computerName (get-content servers.txt) -scriptblock {get-service winrm} -jobname WinRM -throttlelimit 16 -AsJob
+PS> $jobWRM = invoke-command -computerName (get-content servers.txt) -scriptblock {get-service winrm} -jobname WinRM -throttlelimit 16 -AsJob
 ```
 
 This command uses the Invoke-Command cmdlet and its AsJob parameter to start a background job that runs a "get-service winrm" command on numerous computers.
@@ -81,10 +92,12 @@ The command uses the ComputerName parameter to specify the computers on which th
 The value of the ComputerName parameter is a Get-Content command that gets the text in the Servers.txt file, a file of computer names in a domain.
 
 The command uses the ScriptBlock parameter to specify the command and the JobName parameter to specify a friendly name for the job.
+
 ### Example 3
+
 ```
-PS C:\> $j = start-job -scriptblock {get-eventlog -log system} -credential domain01\user01
-PS C:\> $j | format-list -property *
+PS> $j = start-job -scriptblock {get-eventlog -log system} -credential domain01\user01
+PS> $j | format-list -property *
 
 HasMoreData   : True
 StatusMessage :
@@ -104,10 +117,10 @@ Debug         : {}
 Warning       : {}
 StateChanged  :
 
-PS C:\> $j.JobStateInfo.state
+PS> $j.JobStateInfo.state
 Completed
-PS C:\> $results = receive-job -job $j
-PS C:\> $results
+PS> $results = receive-job -job $j
+PS> $results
 
 Index Time          Type        Source                EventID Message
 ----- ----          ----        ------                ------- -------
@@ -136,31 +149,39 @@ The fourth command uses the Receive-Job cmdlet to get the results of the job.
 It stores the results in the $results variable.
 
 The final command displays the contents of the $results variable.
+
 ### Example 4
+
 ```
-PS C:\> start-job -filepath c:\scripts\sample.ps1
+PS> start-job -filepath c:\scripts\sample.ps1
 ```
 
 This command runs the Sample.ps1 script as a background job.
+
 ### Example 5
+
 ```
-PS C:\> start-job -name WinRm -scriptblock {get-process winrm}
+PS> start-job -name WinRm -scriptblock {get-process winrm}
 ```
 
 This command runs a background job that gets the WinRM process on the local computer.
 The command uses the ScriptBlock parameter to specify the command that runs in the background job.
 It uses the Name parameter to specify a friendly name for the new job.
+
 ### Example 6
+
 ```
-PS C:\> start-job -name GetMappingFiles -initializationScript {import-module MapFunctions} -scriptblock {Get-Map -name * | set-content D:\Maps.tif} -runAs32
+PS> start-job -name GetMappingFiles -initializationScript {import-module MapFunctions} -scriptblock {Get-Map -name * | set-content D:\Maps.tif} -runAs32
 ```
 
 This command starts a job that collects a large amount of data and saves it in a .tif file.
 The command uses the InitializationScript parameter to run a script block that imports a required module.
 It also uses the RunAs32 parameter to run the job in a 32-bit process even if the computer has a 64-bit operating system.
+
 ## PARAMETERS
 
 ### -ArgumentList
+
 Specifies the arguments (parameter values) for the script that is specified by the **FilePath** parameter.
 
 Because all of the values that follow the ArgumentList parameter name are interpreted as being values of ArgumentList, the ArgumentList parameter should be the last parameter in the command.
@@ -178,6 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the mechanism that is used to authenticate the user's credentials.
 Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**.
 The default value is **Default**.
@@ -203,6 +225,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -221,6 +244,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilePath
+
 Runs the specified local script as a background job.
 Enter the path and file name of the script or pipe a script path to **Start-Job**.
 The script must reside on the local computer or in a directory that the local computer can access.
@@ -240,6 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -InitializationScript
+
 Specifies commands that run before the job starts.
 Enclose the commands in braces ( { } ) to create a script block.
 
@@ -259,6 +284,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies input to the command.
 Enter a variable that contains the objects, or type a command or expression that generates the objects.
 
@@ -277,6 +303,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Runs the specified local script as a background job.
 Enter the path to a script on the local computer.
 
@@ -298,6 +325,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a friendly name for the new job.
 You can use the name to identify the job to other job cmdlets, such as Stop-Job.
 
@@ -316,6 +344,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSVersion
+
 Runs the job with the specified version of Windows PowerShell.
 Valid values are 2.0 and 3.0.
 
@@ -334,6 +363,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunAs32
+
 Runs the job in a 32-bit process.
 Use this parameter to force the job to run in a 32-bit process on a 64-bit operating system.
 
@@ -352,6 +382,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
+
 Specifies the commands to run in the background job.
 Enclose the commands in braces ( { } ) to create a script block.
 This parameter is required.
@@ -369,6 +400,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefinitionName
+
 Starts the job with the specified job definition name.
 Use this parameter to start custom job types that have a definition name, such as scheduled jobs.
 
@@ -392,6 +424,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefinitionPath
+
 Starts the job at the specified path location.
 Enter the definition path.
 The concatenation of the values of the **DefinitionPath** and **DefinitionName** parameters should be the fully-qualified path to the job definition.
@@ -414,6 +447,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
+
 Starts only jobs of the specified custom type.
 Enter a custom job type name, such as PSScheduledJob for scheduled jobs or PSWorkflowJob for workflows jobs.
 This parameter is not valid for standard background jobs.
@@ -433,20 +467,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.String
+
 You can pipe an object with the Name property to the Name parameter.
 For example, you can pipe a FileInfo object from Get-ChildItem to **Start-Job**.
+
 ## OUTPUTS
 
 ### System.Management.Automation.PSRemotingJob
-**Start-Job** returns an object that represents the job that it started.
-## NOTES
-* To run in the background, **Start-Job** runs in its own session within the current session. When you use the Invoke-Command cmdlet to run a **Start-Job** command in a session on a remote computer, **Start-Job** runs in a session within the remote session.
 
-*
+**Start-Job** returns an object that represents the job that it started.
+
+## NOTES
+
+- To run in the background, **Start-Job** runs in its own session within the current session. When you use the Invoke-Command cmdlet to run a **Start-Job** command in a session on a remote computer, **Start-Job** runs in a session within the remote session.
+
+- 
+
 ## RELATED LINKS
 
 [Get-Job](Get-Job.md)

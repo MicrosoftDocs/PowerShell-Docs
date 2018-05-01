@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/27/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Debuggers
 ---
-
 # About Debuggers
 
 ## SHORT DESCRIPTION
@@ -223,7 +222,7 @@ For example, the following command gets the variables in the local (script)
 scope:
 
 ```powershell
-get-variable -scope 0
+Get-Variable -Scope 0
 ```
 
 You can abbreviate the command as:
@@ -273,13 +272,13 @@ debugger steps into the workflow function, the debugger prompt changes to
 [WFDBG].
 
 ```powershell
-PS C:> Set-PSBreakpoint -Script C:\TestWFDemo1.ps1 -Line 8
+PS> Set-PSBreakpoint -Script C:\TestWFDemo1.ps1 -Line 8
 
 ID Script           Line Command    Variable     Action
 -- ------           ---- -------    --------     ------
 0 TestWFDemo1.ps1   8
 
-PS C:> C:\TestWFDemo1.ps1
+PS> C:\TestWFDemo1.ps1
 Entering debug mode. Use h or ? for help.
 
 Hit Line breakpoint on 'C:\TestWFDemo1.ps1:8'
@@ -288,69 +287,60 @@ At C:\TestWFDemo1.ps1:8 char:5
 +     Write-Output -InputObject "Now writing output:"
 # +!INCLUDE[]~~~~~
 
-[WFDBG:localhost]: PS C:>> list
+[WFDBG:localhost]: PS>> list
 
 # 3:
 
 4:  workflow SampleWorkflowTest
 5:  {
-6:      param ($MyOutput)
-# 7:
+6:      param ($MyOutput)# 7:
 
 8:*     Write-Output -InputObject "Now writing output:"
-9:      Write-Output -Input $MyOutput
-# 10:
+9:      Write-Output -Input $MyOutput# 10:
 
 11:      Write-Output -InputObject "Get PowerShell process:"
-12:      Get-Process -Name powershell
-# 13:
+12:      Get-Process -Name powershell# 13:
 
 14:      Write-Output -InputObject "Workflow function complete."
-15:  }
-# 16:
+15:  }# 16:
 
 17:  # Call workflow function
 18:  SampleWorkflowTest -MyOutput "Hello"
 
-[WFDBG:localhost]: PS C:>> $MyOutput
+[WFDBG:localhost]: PS>> $MyOutput
 Hello
-[WFDBG:localhost]: PS C:>> stepOver
+[WFDBG:localhost]: PS>> stepOver
 Now writing output:
 At C:\TestWFDemo1.ps1:9 char:5
 +     Write-Output -Input $MyOutput
 # +!INCLUDE[]~
 
-[WFDBG:localhost]: PS C:>> list
+[WFDBG:localhost]: PS>> list
 
 4:  workflow SampleWorkflowTest
 5:  {
-6:      param ($MyOutput)
-# 7:
+6:      param ($MyOutput)# 7:
 
 8:      Write-Output -InputObject "Now writing output:"
-9:*     Write-Output -Input $MyOutput
-# 10:
+9:*     Write-Output -Input $MyOutput# 10:
 
 11:      Write-Output -InputObject "Get PowerShell process:"
-12:      Get-Process -Name powershell
-# 13:
+12:      Get-Process -Name powershell# 13:
 
 14:      Write-Output -InputObject "Workflow function complete."
-15:  }
-# 16:
+15:  }# 16:
 
 17:  # Call workflow function
-18:  SampleWorkflowTest -MyOutput "Hello"
-# 19:
+18:  SampleWorkflowTest -MyOutput "Hello"# 19:
 
 
-[WFDBG:localhost]: PS C:>> stepOver
+[WFDBG:localhost]: PS>> stepOver
 Hello
 At C:\TestWFDemo1.ps1:11 char:5
 +     Write-Output -InputObject "Get PowerShell process:"
 # +!INCLUDE[]~~~~~~~~~
 
-[WFDBG:localhost]: PS C:>> stepOut
+[WFDBG:localhost]: PS>> stepOut
 Get PowerShell process:
 
 Handles  NPM(K)    PM(K)    WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -371,19 +361,19 @@ For example:
 ```powershell
 function test-cmdlet {
     begin {
-        write-output "Begin"
+        Write-Output "Begin"
     }
     process {
-        write-output "Process"
+        Write-Output "Process"
     }
     end {
-        write-output "End"
+        Write-Output "End"
     }
 }
 
-C:\PS> set-psbreakpoint -command test-cmdlet
+PS> set-psbreakpoint -command test-cmdlet
 
-C:\PS> test-cmdlet
+PS> test-cmdlet
 
 Begin
 Entering debug mode. Use h or ? for help.
@@ -392,7 +382,7 @@ Hit Command breakpoint on 'prompt:test-cmdlet'
 
 test-cmdlet
 
-[DBG]: C:\PS> c
+[DBG]: PS> c
 Process
 Entering debug mode. Use h or ? for help.
 
@@ -400,7 +390,7 @@ Hit Command breakpoint on 'prompt:test-cmdlet'
 
 test-cmdlet
 
-[DBG]: C:\PS> c
+[DBG]: PS> c
 End
 Entering debug mode. Use h or ? for help.
 
@@ -408,7 +398,7 @@ Hit Command breakpoint on 'prompt:test-cmdlet'
 
 test-cmdlet
 
-# [DBG]: C:\PS>
+# [DBG]: PS>
 ```
 
 ## Debugging Remote Scripts
@@ -427,7 +417,7 @@ on which the session is running, and the DBG prompt that lets you know you are
 in debugging mode.
 
 ```powershell
-Enter-Pssession -Cn localhost
+Enter-PSSession -ComputerName localhost
 [localhost]: PS C:\psscripts> Set-PSBreakpoint .\ttest19.ps1 6,11,22,25
 
 ID Script          Line     Command          Variable          Action
@@ -441,27 +431,24 @@ ID Script          Line     Command          Variable          Action
 Hit Line breakpoint on 'C:\psscripts\ttest19.ps1:11'
 
 At C:\psscripts\ttest19.ps1:11 char:1
-+ $winRMName = "WinRM"
-# + ~
++ $winRMName = "WinRM"# + ~
 
 [localhost]: [DBG]: PS C:\psscripts>> list
 
-6:      1..5 | foreach { sleep 1; Write-Output "hello2day $_" }
+6:      1..5 | ForEach-Object { Start-Sleep 1; Write-Output "hello2day $_" }
 7:  }
 # 8:
 
 9:  $count = 10
 10:  $psName = "PowerShell"
 11:* $winRMName = "WinRM"
-12:  $myVar = 102
-# 13:
+12:  $myVar = 102# 13:
 
 14:  for ($i=0; $i -lt $count; $i++)
 15:  {
-16:      sleep 1
+16:      Start-Sleep 1
 17:      Write-Output "Loop iteration is: $i"
-18:      Write-Output "MyVar is $myVar"
-# 19:
+18:      Write-Output "MyVar is $myVar"# 19:
 
 20:      hello2day
 # 21:
@@ -469,8 +456,7 @@ At C:\psscripts\ttest19.ps1:11 char:1
 
 [localhost]: [DBG]: PS C:\psscripts>> stepover
 At C:\psscripts\ttest19.ps1:12 char:1
-+ $myVar = 102
-# + ~
++ $myVar = 102# + ~
 
 [localhost]: [DBG]: PS C:\psscripts>> quit
 [localhost]: PS C:\psscripts> Exit-PSSession
@@ -552,8 +538,7 @@ Entering debug mode. Use h or ? for help.
 
 Hit Line breakpoint on 'C:\ps-test\test.ps1:1'
 
-test.ps1:1   function psversion {
-# DBG>
+test.ps1:1   function psversion {# DBG>
 ```
 
 Use the Step command (s) to execute the first statement in the script and to
@@ -571,8 +556,7 @@ verify the value of the variable by displaying its value. In this case,
 the value is \$null.
 
 ```powershell
-DBG> $scriptname
-# DBG>
+DBG> $scriptname# DBG>
 ```
 
 Use another Step command (s) to execute the current statement and to
@@ -610,7 +594,7 @@ steps to the next statement in the script.
 ```powershell
 DBG> o
 Windows PowerShell 2.0
-Have you run a background job today (start-job)?
+Have you run a background job today (Start-Job)?
 test.ps1:13  "Done $scriptname"
 ```
 
@@ -669,15 +653,13 @@ PS C:\ps-test> .\test.ps1
 Hit Variable breakpoint on 'C:\ps-test\test.ps1:$scriptname'
 (Write access)
 
-test.ps1:11  $scriptname = $MyInvocation.mycommand.path
-# DBG>
+test.ps1:11  $scriptname = $MyInvocation.mycommand.path# DBG>
 ```
 
 Display the current value of the \$scriptname variable, which is \$null.
 
 ```powershell
-DBG> $scriptname
-# DBG>
+DBG> $scriptname# DBG>
 ```
 
 Use a Step command (s) to execute the statement that populates the variable.
@@ -703,7 +685,7 @@ displayed, but it is not executed.
 ```powershell
 DBG> v
 Windows PowerShell 2.0
-Have you run a background job today (start-job)?
+Have you run a background job today (Start-Job)?
 test.ps1:13  "Done $scriptname"
 ```
 
@@ -742,8 +724,7 @@ Now, run the script.
 PS C:\ps-test> .\test.ps1
 Hit Command breakpoint on 'C:\ps-test\test.ps1:psversion'
 
-test.ps1:12  psversion
-# DBG>
+test.ps1:12  psversion# DBG>
 ```
 
 The script reaches the breakpoint at the function call. At this point, the
@@ -759,10 +740,10 @@ read-only, so you cannot add an action to the current breakpoint.)
 ```powershell
 DBG> c
 Windows PowerShell 2.0
-Have you run a background job today (start-job)?
+Have you run a background job today (Start-Job)?
 Done C:\ps-test\test.ps1
 
-PS C:\ps-test> get-psbreakpoint | remove-psbreakpoint
+PS C:\ps-test> get-psbreakpoint | Remove-PSBreakpoint
 PS C:\ps-test>
 ```
 
@@ -774,8 +755,8 @@ line-continuation character.)
 
 ```powershell
 PS C:\ps-test> set-psbreakpoint -command psversion -script test.ps1  `
--action { add-content "The value of `$scriptname is $scriptname." `
--path action.log}
+-action { Add-Content "The value of `$scriptname is $scriptname." `
+-Path action.log}
 ```
 
 You can also add actions that set conditions for the breakpoint. In the
@@ -785,7 +766,7 @@ you to run scripts. (The backtick (`) is the continuation character.)
 
 ```powershell
 PS C:\ps-test> set-psbreakpoint -script test.ps1 -command psversion `
--action { if ((get-executionpolicy) -eq "RemoteSigned") { break }}
+-action { if ((Get-ExecutionPolicy) -eq "RemoteSigned") { break }}
 ```
 
 The Break keyword in the action directs the debugger to execute the

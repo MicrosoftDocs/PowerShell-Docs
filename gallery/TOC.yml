@@ -61,30 +61,26 @@
     - name: Creating and Publishing Items
       items:
       - name: PSScriptAnalyzer Rule Profile
-        href: concepts/creating_and_publishing_items/scriptanalyzer_rule_profile.md
+        href: concepts/scriptanalyzer_rule_profile.md
       - name: Item manifest and Gallery UI
-        href: concepts/creating_and_publishing_items/item_manifest_affecting_ui.md  
+        href: concepts/item_manifest_affecting_ui.md
       - name: Requiring Specific PSEditions
         items:
         - name: Writing Scripts with PSEditions Support
-          href: concepts/creating_and_publishing_items/write_script_with_pseditionsupport.md
+          href: concepts/write_script_with_pseditionsupport.md
         - name: Writing Modules with PSEdition support
-          href: concepts/creating_and_publishing_items/write_module_with_pseditionsupport.md
+          href: concepts/write_module_with_pseditionsupport.md
       - name: Requiring License Acceptance
         items:
           - name: Requiring License Acceptance for Scripts
-            href: concepts/creating_and_publishing_items/script_requirelicenseacceptance.md
+            href: concepts/script_requirelicenseacceptance.md
           - name: Requiring License Acceptance for Modules
-            href: concepts/creating_and_publishing_items/module_requirelicenseacceptance.md
+            href: concepts/module_requirelicenseacceptance.md
       - name: Defining Items as PreRelease
         items: 
           - name: Defining a Module as PreRelease
-            href: concepts/creating_and_publishing_items/define_prereleasemodule.md
+            href: concepts/define_prereleasemodule.md
           - name: Defining a Script as PreRelease
-            href: concepts/creating_and_publishing_items/define_prereleasescript.md
-    - name: Setting up a local Gallery
-      href: concepts/setting_up_a_local_gallery.md
+            href: concepts/define_prereleasescript.md
 - name: What's New
   href: whats_new.md
-- name: Contributing to PowerShell Gallery Documentation
-  href: contributing_to_documentation.md

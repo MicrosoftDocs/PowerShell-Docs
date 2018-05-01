@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/28/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Format.ps1xml
 ---
-
 # About Format.ps1xml
 
 ## Short Description
@@ -279,7 +278,7 @@ To test the change, type `Get-Culture`, and then review the output, which
 includes the Calendar property.
 
 ```powershell
-PS C:\> Get-Culture
+PS> Get-Culture
 
 LCID Name  Calendar                               DisplayName
 ---- ----  --------                               -----------
@@ -292,11 +291,11 @@ The ViewDefinitions section of each Format.ps1xml file contains the `<View>`
 tags that define each view. A typical `<View>` tag includes the following
 tags:
 
-* `<Name>` identifies the name of the view
-* `<ViewSelectedBy>` specifies the object type or types to which the view
+- `<Name>` identifies the name of the view
+- `<ViewSelectedBy>` specifies the object type or types to which the view
   applies
-* `<GroupBy>` specifies how items in the view will be combined in groups
-* `<TableControl>`, `<ListControl>`, `<WideControl>`, and `<CustomControl>`
+- `<GroupBy>` specifies how items in the view will be combined in groups
+- `<TableControl>`, `<ListControl>`, `<WideControl>`, and `<CustomControl>`
   contain the tags that specify how each item will be displayed
 
 The `<ViewSelectedBy>` tag can contain a `<TypeName>` tag for each object type
@@ -367,9 +366,9 @@ The default displays of some basic object types are defined in the
 Types.ps1xml file in the `$PSHOME` directory. The nodes are named
 PsStandardMembers, and the subnodes use one of the following tags:
 
-* `<DefaultDisplayProperty>`
-* `<DefaultDisplayPropertySet>`
-* `<DefaultKeyPropertySet>`
+- `<DefaultDisplayProperty>`
+- `<DefaultDisplayPropertySet>`
+- `<DefaultKeyPropertySet>`
 
 For more information, see [about_Types.ps1xml](about_Types.ps1xml.md).
 
@@ -379,9 +378,9 @@ To detect errors in the loading or application of Format.ps1xml files, use the
 `Trace-Command` cmdlet with any of the following format components as the
 value of the **Name** parameter:
 
-* FormatFileLoading
-* FormatViewBinding
-* UpdateFormatData
+- FormatFileLoading
+- FormatViewBinding
+- UpdateFormatData
 
 For more information,
 see [Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md)
