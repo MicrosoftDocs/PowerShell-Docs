@@ -1,9 +1,9 @@
-﻿- name: Overview
+- name: Overview
   href: readme.md
 - name: Getting Started
   href: getting_started.md
 - name: How-To
-- items:
+  items:
     - name: Finding Items in the Gallery
       items:
         - name: Searching For Items
