@@ -203,8 +203,8 @@ Module is updated without any prompt to accept license.
 
 ## More details
 
-### [Require License Acceptance for Scripts](./script_requirelicenseacceptance.md)
+### [Require License Acceptance for Scripts](./script-requirelicenseacceptance.md)
 
-### [Require License Acceptance support on PowerShellGallery](items_that_requirelicenseacceptance.md)
+### [Require License Acceptance support on PowerShellGallery](items-that-requirelicenseacceptance.md)
 
-### [Require License Acceptance on Deploy to Azure Automation](items_that_requirelicenseacceptance.md)
+### [Require License Acceptance on Deploy to Azure Automation](items-that-requirelicenseacceptance.md)

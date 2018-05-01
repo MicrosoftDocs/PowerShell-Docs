@@ -44,7 +44,7 @@ module, you can:
 -   Add your own custom repository with
     [Register-PSRepository](https://go.microsoft.com/fwlink/?LinkId=821668)
 
-Check out the [Getting Started](getting_started.md) page for more information on how to use PowerShellGet commands with the Gallery. You can also run *Update-Help -Module PowerShellGet* to install local help for these commands.
+Check out the [Getting Started](getting-started.md) page for more information on how to use PowerShellGet commands with the Gallery. You can also run *Update-Help -Module PowerShellGet* to install local help for these commands.
 
 ## Supported Operating Systems
 
@@ -65,4 +65,4 @@ Therefore, **PowerShellGet** requires one of the following operating systems:
 
 ## Got a question? Have feedback?
 
-More information about the PowerShell Gallery and PowerShellGet can be found in the [Getting Started](getting_started.md) page. Please provide feedback and report issues using [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
+More information about the PowerShell Gallery and PowerShellGet can be found in the [Getting Started](getting-started.md) page. Please provide feedback and report issues using [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

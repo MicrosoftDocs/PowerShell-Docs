@@ -1,4 +1,4 @@
-- name: Overview
+﻿- name: Overview
   href: readme.md
 - name: Getting Started
   href: gettingstarted.md
@@ -7,53 +7,53 @@
   - name: Finding Items in the Gallery
     items:
       - name: Searching For Items
-        href: how-to/finding_items/search_syntax.md
+        href: how-to/finding-items/search-syntax.md
       - name: Filtering Search Results
-        href: how-to/finding_items/filtering_items.md
+        href: how-to/finding-items/filtering-items.md
       - name: Items with Compatible PSEditions
-        href: how-to/finding_items/pseditions.md
+        href: how-to/finding-items/pseditions.md
   - name: Publishing to the Gallery
     items:
       - name: Creating a PowerShellGallery Account
-        href: how-to/publishing_items/creating_an_account.md
+        href: how-to/publishing-items/creating-an-account.md
       - name: Creating and publishing items
-        href: how-to/publishing_items/creating_and_publishing_an_item.md
+        href: how-to/publishing-items/creating-and-publishing-an-item.md
       - name: Publishing guidelines and best practices
-        href: how-to/publishing_items/publishing_guidelines.md
+        href: how-to/publishing-items/publishing-guidelines.md
       - name: Unlisting items
-        href: how-to/publishing_items/unlisting_items.md
+        href: how-to/publishing-items/unlisting-items.md
       - name: Deleting items
-        href: how-to/publishing_items/deleting_items.md
+        href: how-to/publishing-items/deleting-items.md
       - name: Managing item owners
-        href: how-to/publishing_items/managing_item_owners.md
+        href: how-to/publishing-items/managing-item-owners.md
   - name: Working with Items
     items:
       - name: FileList view
-        href: how-to/working_with_items/filelist_view.md
+        href: how-to/working-with-items/filelist-view.md
       - name: Deploy to Azure Automation
-        href: how-to/working_with_items/deploy_to_azure_automation.md
+        href: how-to/working-with-items/deploy-to-azure-automation.md
       - name: Items that Require License Acceptance
-        href: how-to/working_with_items/items_that_requireslicenseacceptance.md
+        href: how-to/working-with-items/items-that-requirelicenseacceptance.md
       - name: Deploy to Azure Automation License Acceptance (Merge Above)
-        href: how-to/working_with_items/deploy_to_azure_automation_requireLicenseacceptance.md
+        href: how-to/working-with-items/deploy-to-azure-automation-requireLicenseacceptance.md
       - name: Contacting item owners
-        href: how-to/working_with_items/contacting_item_owners.md
+        href: how-to/working-with-items/contacting-item-owners.md
       - name: Providing Feedback via Social Media or Comments
-        href: how-to/working_with_items/social_media_feedback.md
+        href: how-to/working-with-items/social-media-feedback.md
   - name: Getting Support
     items:
       - name: Health Status
-        href: how-to/getting_support/health_status.md
+        href: how-to/getting-support/health-status.md
       - name: Report Abuse
-        href: how-to/getting_support/report_abuse.md
+        href: how-to/getting-support/report-abuse.md
       - name: Dispute resolution
-        href: how-to/getting_support/dispute_resolution.md
+        href: how-to/getting-support/dispute-resolution.md
       - name: Contacting administrators
-        href: how-to/getting_support/contacting_administrators.md
+        href: how-to/getting-support/contacting-administrators.md
       - name: Troubleshooting
-        href: how-to/getting_support/troubleshooting_psget_cmdlets.md
+        href: how-to/getting-support/troubleshooting-psget-cmdlets.md
       - name: Bootstrapping NuGet provider and NuGet.exe
-        href: how-to/getting_support/bootstrapping_nuget_proivder_and_exe.md
+        href: how-to/getting-support/bootstrapping-nuget-proivder-and-exe.md
 - name: Gallery FAQs
   href: faqs.md
 - name: Concepts
@@ -61,26 +61,26 @@
     - name: Creating and Publishing Items
       items:
       - name: PSScriptAnalyzer Rule Profile
-        href: concepts/scriptanalyzer_rule_profile.md
+        href: concepts/scriptanalyzer-rule-profile.md
       - name: Item manifest and Gallery UI
-        href: concepts/item_manifest_affecting_ui.md
+        href: concepts/item-manifest-affecting-ui.md
       - name: Requiring Specific PSEditions
         items:
         - name: Writing Scripts with PSEditions Support
-          href: concepts/write_script_with_pseditionsupport.md
+          href: concepts/write-script-with-pseditionsupport.md
         - name: Writing Modules with PSEdition support
-          href: concepts/write_module_with_pseditionsupport.md
+          href: concepts/write-module-with-pseditionsupport.md
       - name: Requiring License Acceptance
         items:
           - name: Requiring License Acceptance for Scripts
-            href: concepts/script_requirelicenseacceptance.md
+            href: concepts/script-requirelicenseacceptance.md
           - name: Requiring License Acceptance for Modules
-            href: concepts/module_requirelicenseacceptance.md
+            href: concepts/module-requirelicenseacceptance.md
       - name: Defining Items as PreRelease
         items: 
           - name: Defining a Module as PreRelease
-            href: concepts/define_prereleasemodule.md
+            href: concepts/define-prereleasemodule.md
           - name: Defining a Script as PreRelease
-            href: concepts/define_prereleasescript.md
+            href: concepts/define-prereleasescript.md
 - name: What's New
-  href: whats_new.md
+  href: whats-new.md

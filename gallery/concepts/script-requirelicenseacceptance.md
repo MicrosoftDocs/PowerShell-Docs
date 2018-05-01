@@ -42,8 +42,8 @@ PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 
 ## More details
 
-### [Require License Acceptance support for Modules](module_requirelicenseacceptance.md)
+### [Require License Acceptance support for Modules](module-requirelicenseacceptance.md)
 
-### [Require License Acceptance support on PowerShellGallery](../../psgallery/psgallery_requires_license_acceptance.md)
+### [Require License Acceptance support on PowerShellGallery](../how-to/working-with-items/items-that-requirelicenseacceptance.md)
 
-### [Require License Acceptance on Deploy to Azure Automation](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
+### [Require License Acceptance on Deploy to Azure Automation](../how-to/working-with-items/items-that-requirelicenseacceptance.md)

@@ -51,4 +51,4 @@ The Sort By drop-down allows users to sort the results by:
 ## Search Box
 
 The Search Box allows users to search the items on keywords.
-For more information, see [Gallery Search Syntax](search_syntax.md).
+For more information, see [Gallery Search Syntax](search-syntax.md).

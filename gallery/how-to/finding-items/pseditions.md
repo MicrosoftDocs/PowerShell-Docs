@@ -27,7 +27,7 @@ Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the items on P
 
 ### Use Tags:"PSEdition_Desktop" to search items compatible with PowerShell Desktop Edition.
 
-![Search results for items compatible with Desktop PSEdition](../../Images/SearchResultsWithPSEdition_Desktop.PNG)
+![Search results for items compatible with Desktop PSEdition](../../Images/SearchResultsWithPSEdition-Desktop.PNG)
 
 ## More details on authoring and finding the items with compatible PowerShell Editions
 
