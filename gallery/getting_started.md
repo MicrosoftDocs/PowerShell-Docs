@@ -28,12 +28,9 @@ PowerShellGet
 module in any of the following. You do not need to sign in to download
 items from the PowerShell Gallery.
 
--   [Windows
-    10](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)
--   [Windows Management Framework
-    5.0](http://go.microsoft.com/fwlink/?LinkId=398175)
--   [MSI Installer (for PowerShell 3
-    and 4)](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
+- [Windows 10](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)
+- [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkId=398175)
+- [MSI Installer (for PowerShell 3 and 4)](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
 PowerShellGet also requires the [NuGet
 provider](http://go.microsoft.com/fwlink/?LinkId=722208) to work with
