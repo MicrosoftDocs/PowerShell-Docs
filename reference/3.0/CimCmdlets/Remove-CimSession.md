@@ -1,15 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # Remove-CimSession
 
 ## SYNOPSIS
-
 Removes one or more CIM sessions.
 
 ## SYNTAX
@@ -40,7 +38,6 @@ Remove-CimSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-
 The Remove-CimSession cmdlet removes one or more CIM session objects from the local PowerShell session.
 
 ## EXAMPLES
@@ -107,12 +104,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-
 Specifies the ID of the CIM session to remove.
 Specify one or more IDs separated by commas, or use the range operator (..) to specify a range of IDs.
 
-An ID is an integer that uniquely identifies the CIM session in the current PowerShell session.
-It is easier to remember and type than InstanceId, but it is unique only within the current PowerShell session.
+An ID is an integer that uniquely identifies the CIM session in the current Windows PowerShell session.
+It is easier to remember and type than InstanceId, but it is unique only within the current Windows PowerShell session.
 
 For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
@@ -205,13 +201,11 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 ## INPUTS
 
 ### None
-
 This cmdlet accepts no input objects.
 
 ## OUTPUTS
 
 ### System.Object
-
 This cmdlet returns an object that contains CIM session information.
 
 ## NOTES

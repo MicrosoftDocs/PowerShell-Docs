@@ -1,37 +1,32 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # New-CimSession
 
 ## SYNOPSIS
-
 Creates a CIM session.
 
 ## SYNTAX
 
 ### CredentialParameterSet (Default)
-
-```powershell
+```
 New-CimSession [-Authentication <PasswordAuthenticationMechanism>] [[-Credential] <PSCredential>]
  [[-ComputerName] <String[]>] [-Name <String>] [-OperationTimeoutSec <UInt32>] [-SkipTestConnection]
  [-Port <UInt32>] [-SessionOption <CimSessionOptions>] [<CommonParameters>]
 ```
 
 ### CertificatePrameterSet
-
-```powershell
+```
 New-CimSession [-CertificateThumbprint <String>] [[-ComputerName] <String[]>] [-Name <String>]
  [-OperationTimeoutSec <UInt32>] [-SkipTestConnection] [-Port <UInt32>] [-SessionOption <CimSessionOptions>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-
 The New-CimSession cmdlet creates a CIM session.
 A CIM session is a client-side object representing a connection to a local computer or a remote computer.
 The CIM session contains information about the connection, such as ComputerName, the protocol used for the connection, session ID and instance ID.
@@ -41,8 +36,7 @@ This cmdlet returns a CIM session object that can be used by all other CIM cmdle
 ## EXAMPLES
 
 ### Example 1: Create a CIM session with default options
-
-```powershell
+```
 PS C:\> New-CimSession
 ```
 
@@ -50,8 +44,7 @@ This command creates a local CIM session with default options.
 If ComputerName is not specified, New-CimSession creates a DCOM session to the local computer.
 
 ### Example 2: Create a CIM session to a specific computer
-
-```powershell
+```
 PS C:\> New-CimSession -ComputerName Server01
 ```
 
@@ -59,49 +52,47 @@ This command creates a CIM session to the computer specified by ComputerName.
 By default, New-CimSession creates a WsMan session when ComputerName is specified.
 
 ### Example 3: Create a CIM session to multiple computers
-
-```powershell
-PS C:\> New-CimSession -ComputerName Server01,Server02,Server03
+```
+PS C:\>New-CimSession -ComputerName Server01,Server02,Server03
 ```
 
 This command creates a CIM session to each of the computers specified by ComputerName, in the comma separated list.
 
 ### Example 4: Create a CIM session with a friendly name
+```
+Then you can use the friendly name of a CIM session to easily refer to the session in other CIM cmdlets, for example, Get-CimSession.
+PS C:\>New-CimSession -ComputerName Server01,Server02 -Name FileServers
 
-You can use the friendly name of a CIM session to easily refer to the session in other CIM cmdlets, for example, [Get-CimSession](Get-CimSession.md).
 
-```powershell
-PS C:\> New-CimSession -ComputerName Server01,Server02 -Name FileServers
 
-PS C:\> Get-CimSession -Name File*
+PS C:\>Get-CimSession -Name File*
 ```
 
-This command creates a remote CIM session to each of the computers specified by ComputerName, in the comma separated list, and assigns a friendly name to the new sessions, by specifying Name.
+This command creates a remote CIM session on each of the computer specified by ComptuerName, in the comma separated list, and assigns a friendly name to the new sessions, by specifying Name.
 
 ### Example 5: Create a CIM session to a computer using a PSCredential object
-
-```powershell
-PS C:\> New-CimSession -ComputerName Server01 -Credential $cred -Authentication Negotiate
+```
+PS C:\>New-CimSession -ComputerName Server01 -Credential $cred -Authentication Negotiate
 ```
 
 This command creates a CIM session to the computer specified by ComputerName, using the PSCredential object specified by Credential, and the authentication type specified by Authentication.
 
-You can create a PSCredential object by using the [Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md) cmdlet.
+You can create a PSCredential object by using the Get-Credential cmdlet.
 
 ### Example 6: Create a CIM session to a computer using a specific port
-
-```powershell
-PS C:\> New-CimSession -ComputerName Server01 -Port 1234
+```
+PS C:\>New-CimSession -ComputerName Server01 -Port 1234
 ```
 
 This command creates a CIM session to the computer specified by ComputerName using the TCP port specified by Port.
 
 ### Example 7: Create a CIM session using DCOM
+```
+PS C:\>$so = New-CimSessionOption -Protocol DCOM
 
-```powershell
-PS C:\> $so = New-CimSessionOption -Protocol DCOM
 
-PS C:\> New-CimSession -ComputerName Server1 -SessionOption $so
+
+PS C:\>New-CimSession -ComputerName Server1 -SessionOption $so
 ```
 
 This command creates a CIM session by using the Distributed COM (DCOM) protocol instead of WSMan.
@@ -109,7 +100,6 @@ This command creates a CIM session by using the Distributed COM (DCOM) protocol 
 ## PARAMETERS
 
 ### -Authentication
-
 Specifies the authentication type used for the user's credentials.
 The acceptable values for this parameter are:
 
@@ -141,7 +131,6 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-
 Specifies the digital public key certificate (X.509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
@@ -164,13 +153,14 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-
 Specifies the name of the computer to which to create the CIM session.
-Specify either a single computer name, or multiple computer names separated by a comma.
+Specify either a single computer name, or multiple computer names separated by a comma. 
 
+
+                        
 If ComputerName is not specified, a CIM session to the local computer is created.
 
-You can specify the value for computer name in one of the following formats:
+You can specify the value for computer name in one of the following formats: 
 
 - One or more NetBIOS names
 - One or more IP addresses
@@ -193,11 +183,10 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-
 Specifies a user account that has permission to perform this action.
 If Credential is not specified, the current user account is used.
 
-Specify the value for Credential by using one of the following formats:
+Specify the value for Credential by using one of the following formats: 
 
 - A user name: "User01"
 - A domain name and a user name: "Domain01\User01"
@@ -219,7 +208,6 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-
 Specifies a friendly name for the CIM session.
 
 You can use the name to refer to the CIM session when using other cmdlets, such as the [Get-CimSession](Get-CimSession.md) cmdlet.
@@ -238,7 +226,6 @@ Accept wildcard characters: False
 ```
 
 ### -OperationTimeoutSec
-
 Duration for which the cmdlet waits for a response from the server.
 
 By default, the value of this parameter is 0, which means that the cmdlet uses the default timeout value for the server.
@@ -258,13 +245,12 @@ Accept wildcard characters: False
 ```
 
 ### -Port
-
 Specifies the network port on the remote computer that is used for this connection.
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
-Use the following commands to configure the listener:
+Use the following commands to configure the listener: 
 
 ```
  winrm delete winrm/config/listener?Address=*+Transport=HTTP
@@ -288,7 +274,6 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
-
 Sets advanced options for the new CIM session.
 Enter the name of a CimSessionOption object created by using the [New-CimSessionOption](New-CimSessionOption.md) cmdlet.
 
@@ -305,7 +290,6 @@ Accept wildcard characters: False
 ```
 
 ### -SkipTestConnection
-
 By default, the New-CimSession cmdlet establishes a connection with a remote WS-Management endpoint for two reasons: to verify that the remote server is listening on the port number that is specified by using the Port parameter, and to verify the specified account credentials.
 The verification is accomplished by using a standard WS-Identity operation.
 You can add the SkipTestConnection switch parameter if the remote WS-Management endpoint cannot use WS-Identify, or if you want to reduce some data transmission time.

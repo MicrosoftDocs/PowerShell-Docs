@@ -1,15 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # Get-CimSession
 
 ## SYNOPSIS
-
 Gets the CIM session objects from the current session.
 
 ## SYNTAX
@@ -35,13 +33,12 @@ Get-CimSession -Name <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+The Get-CimSession cmdlet gets the CIM session objects created in the current Windows PowerShell® session.
 
-The Get-CimSession cmdlet gets the CIM session objects created in the current PowerShell session.
-
-If used without any parameters, the cmdlet gets all of the CIM sessions created in the current PowerShell session.
+If used without any parameters, the cmdlet gets all of the CIM sessions created in the current Windows PowerShell session.
 You can use the parameters of Get-CimSession to get the sessions that are for particular computers, or you can identify sessions by their names, IDs, or instance IDs.
 
-For more information about PowerShell sessions, see about_CimSession.
+For more information about Windows PowerShell sessions, see about_CimSessions
 
 ## EXAMPLES
 
@@ -194,7 +191,6 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-
 Gets one or more CIM sessions which contain the specified friendly names.
 Wildcard characters are permitted.
 
