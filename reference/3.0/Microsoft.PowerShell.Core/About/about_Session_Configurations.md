@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/091/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Session_Configurations
 ---
-
 # About Session Configurations
 
 ## SHORT DESCRIPTION
@@ -102,7 +101,7 @@ Get-PSSessionConfiguration cmdlet.
 For example, type:
 
 ```powershell
-PS C:> Get-PSSessionConfiguration | Format-List -Property Name, Permission
+PS> Get-PSSessionConfiguration | Format-List -Property Name, Permission
 
 Name       : microsoft.powershell
 Permission : BUILTIN\Administrators AccessAllowed
@@ -122,7 +121,7 @@ For example, to see all of the properties of a session configuration
 object, type:
 
 ```powershell
-PS C:> Get-PSSessionConfiguration | Format-List -Property *
+PS> Get-PSSessionConfiguration | Format-List -Property *
 ```
 
 You can also use the WSMan provider in PowerShell to view session
@@ -136,7 +135,7 @@ For example, to view the session configurations on the local computer,
 type:
 
 ```powershell
-PS C:> dir wsman:\localhost\plugin\microsoft*
+PS> dir wsman:\localhost\plugin\microsoft*
 
 WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin
 
@@ -157,7 +156,7 @@ For example, the following command adds a node for the Server01 remote
 computer to the WSMAN: drive on the local computer.
 
 ```powershell
-PS C:> Connect-WSMan server01.corp.fabrikam.com
+PS> Connect-WSMan server01.corp.fabrikam.com
 ```
 
 When the command is complete, you can navigate to the node for the Server01
@@ -166,7 +165,7 @@ computer to view the session configurations.
 For example:
 
 ```powershell
-PS C:> cd wsman:
+PS> cd wsman:
 
 PS WSMan:> dir
 
@@ -212,7 +211,7 @@ the security descriptor for the Microsoft.PowerShell default session
 configuration.
 
 ```powershell
-Set-PSSessionConfiguration -name Microsoft.PowerShell `
+Set-PSSessionConfiguration -Name Microsoft.PowerShell `
   -ShowSecurityDescriptorUI
 ```
 
@@ -221,7 +220,7 @@ use the Disable-PSSessionConfiguration cmdlet. For example, the following
 command disables the default session configurations on the computer.
 
 ```powershell
-PS C:> Disable-PSSessionConfiguration -Name Microsoft.PowerShell
+PS> Disable-PSSessionConfiguration -Name Microsoft.PowerShell
 ```
 
 To prevent remote users from connecting to the computer, but allow local users
@@ -229,7 +228,7 @@ to connect, use the Disable-PSRemoting cmdlet. Disable-PSRemoting adds a
 "Network_Deny_All" entry to all session configurations on the computer.
 
 ```powershell
-PS C:> Disable-PSRemoting
+PS> Disable-PSRemoting
 ```
 
 To allow remote users to use all session configurations on the computer, use
@@ -238,7 +237,7 @@ the following command enables remote access to the built-in session
 configurations.
 
 ```powershell
-PS C:> Enable-PSSessionConfiguration -name Microsoft.Power*
+PS> Enable-PSSessionConfiguration -name Microsoft.Power*
 ```
 
 To make other changes to the security descriptor of a session configuration,
@@ -283,7 +282,7 @@ Unregister-PSSessionConfiguration cmdlet. For example, the following command
 removes the NewConfig session configuration from the computer.
 
 ```powershell
-PS C:> Unregister-PSSessionConfiguration -Name NewConfig
+PS> Unregister-PSSessionConfiguration -Name NewConfig
 ```
 
 For more information, see Unregister-PSSessionConfiguration.
@@ -312,7 +311,7 @@ on the Server01 computer. The command uses the ConfigurationName parameter to
 select the WithProfile configuration on the Server01 computer.
 
 ```powershell
-PS C:> New-PSSession -ComputerName Server01 -ConfigurationName WithProfile
+PS> New-PSSession -ComputerName Server01 -ConfigurationName WithProfile
 ```
 
 This command will succeed only if the current user has permission to use the

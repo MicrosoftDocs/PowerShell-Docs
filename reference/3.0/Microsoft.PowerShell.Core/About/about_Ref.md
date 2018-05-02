@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Ref
 ---
-
 # About Ref
 
 ## SHORT DESCRIPTION
@@ -52,8 +51,8 @@ PS C:\ps-test> function double
 >>     param ([ref]$x) $x.value = $x.value * 2
 >> }
 
-PS C:> $number = 8
-PS C:> $number
+PS> $number = 8
+PS> $number
 8
 PS C> double ([ref]$number)
 PS C> $number
