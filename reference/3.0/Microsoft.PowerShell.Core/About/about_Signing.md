@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Signing
 ---
-
 # About Signing
 
 ## SHORT DESCRIPTION
@@ -186,7 +185,7 @@ will not find a certificate file in the file system directory.)
 At the PowerShell prompt, type:
 
 ```powershell
-get-childitem cert:\CurrentUser\my -codesigning
+Get-ChildItem cert:\CurrentUser\my -codesigning
 ```
 
 This command uses the PowerShell Certificate provider to view information
