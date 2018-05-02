@@ -178,7 +178,7 @@ a TableControl view.
 
 Delete the remainder of the file, except for the opening `<?xml>`,
 `<Configuration>`, and `<ViewDefinitions>` tags and the closing
-`<ViewDefintions>` and `<Configuration>` tags. You must also delete the
+`<ViewDefinitions>` and `<Configuration>` tags. You must also delete the
 digital signature whenever you change the file.
 
 ```xml

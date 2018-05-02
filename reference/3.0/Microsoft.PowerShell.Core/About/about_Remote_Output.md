@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Output
 ---
-
 # About Remote Output
 
 # SHORT DESCRIPTION
@@ -35,7 +34,7 @@ below, includes the names of the remote computers on which the command
 ran.
 
 ```powershell
-C:\PS> invoke-command -script {get-culture} -comp Server01, Server02
+PS> invoke-command -script {Get-Culture} -comp Server01, Server02
 
 LCID  Name    DisplayName                PSComputerName
 ----  ----    -----------                --------------
@@ -52,7 +51,7 @@ remote computer. It uses the HideComputerName parameter to hide the
 PSComputerName property and related properties.
 
 ```powershell
-C:\PS> invoke-command -scr {get-culture} -comp Server01 -HideComputerName
+PS> invoke-command -scr {Get-Culture} -comp Server01 -HideComputerName
 
 LCID             Name             DisplayName
 ----             ----             -----------
@@ -66,9 +65,8 @@ For example, the following commands use the Format-Table cmdlet to add
 the PSComputerName property to the output of a remote Get-Date command.
 
 ```powershell
-$dates = invoke-command -script {get-date} -computername Server01, Server02
-$dates | format-table DateTime, PSComputerName -auto
-
+$dates = Invoke-Command -ScriptBlock {Get-Date} -ComputerName Server01, Server02
+$dates | Format-Table DateTime, PSComputerName -AutoSize
 DateTime                            PSComputerName
 --------                            --------------
 Monday, July 21, 2008 7:16:58 PM    Server01
@@ -92,7 +90,7 @@ Server02 remote computers. The default display does not include the
 MachineName property.
 
 ```powershell
-C:\PS> get-process PowerShell -computername server01, server02
+PS> get-process PowerShell -computername server01, server02
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -110,9 +108,8 @@ Format-Table command. The command uses the Property parameter of
 Format-Table to include the MachineName property in the display.
 
 ```powershell
-C:\PS> $p = get-process PowerShell -comp Server01, Server02
-C:\PS> $P | format-table -property ID, ProcessName, MachineName -auto
-
+PS> $p = get-process PowerShell -comp Server01, Server02
+PS> $P | Format-Table -Property ID, ProcessName, MachineName -AutoSize
 Id ProcessName MachineName
 -- ----------- -----------
 2648 PowerShell  Server02
@@ -127,16 +124,15 @@ properties. Fortunately, you do not have to understand it to use it.
 (Note that the backtick [`] is the continuation character.)
 
 ```powershell
-C:\PS> $p = get-process PowerShell -comp Server01, Server02
+PS> $p = get-process PowerShell -comp Server01, Server02
 
-C:\PS> $p | format-table -property Handles, `
+PS> $p | Format-Table -Property Handles, `
 @{Label="NPM(K)";Expression={int}}, `
 @{Label="PM(K)";Expression={int}}, `
 @{Label="WS(K)";Expression={int}}, `
 @{Label="VM(M)";Expression={int}}, `
 @{Label="CPU(s)";Expression={if ($.CPU -ne $()){ $.CPU.ToString("N")}}}, `
-Id, ProcessName, MachineName -auto
-
+Id, ProcessName, MachineName -AutoSize
 Handles NPM(K) PM(K)  WS(K) VM(M) CPU(s)   Id ProcessName MachineName
 ------- ------ -----  ----- ----- ------   -- ----------- -----------
 920     38 97560 114532   576        2648 PowerShell  Server02

@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,23 +7,28 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113450
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Set-StrictMode
 ---
-
 # Set-StrictMode
+
 ## SYNOPSIS
+
 Establishes and enforces coding rules in expressions, scripts, and script blocks.
+
 ## SYNTAX
 
 ### Version (Default)
+
 ```
 Set-StrictMode -Version <Version> [<CommonParameters>]
 ```
 
 ### Off
+
 ```
 Set-StrictMode [-Off] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Set-StrictMode cmdlet configures strict mode for the current scope (and all child scopes) and turns it on and off.
 When strict mode is on, Windows PowerShell generates a terminating error when the content of an expression, script, or script block violates basic best-practice coding rules.
 
@@ -34,12 +39,14 @@ Unlike the Set-PSDebug cmdlet, Set-StrictMode affects only the current scope and
 When Set-StrictMode is off, uninitialized variables (Version 1) are assumed to have a value of 0 (zero) or $null, depending on type.
 References to non-existent properties return $null, and the results of function syntax that is not valid vary with the error.
 Unnamed variables are not permitted.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> set-strictmode -version 1.0
-PS C:\> $a -gt 5
+PS> set-strictmode -version 1.0
+PS> $a -gt 5
 False
 The variable $a cannot be retrieved because it has not been set yet.
 At line:1 char:3
@@ -52,19 +59,21 @@ This command turns strict mode on and sets it to version 1.0.
 As a result, attempts to reference variables that are not initialized will fail.
 
 The sample output shows the effect of version 1.0 strict mode.
+
 ### Example 2
+
 ```
-PS C:\> # set-strictmode -version 2.0
+PS> # set-strictmode -version 2.0
 # Strict mode is off by default.
 
-PS C:\> function add ($a, $b) {$a + $b}
-PS C:\> add 3 4
+PS> function add ($a, $b) {$a + $b}
+PS> add 3 4
 7
-PS C:\> add(3,4)
+PS> add(3,4)
 3
 4
-PS C:\> set-strictmode -version 2.0
-PS C:\> add(3,4)
+PS> set-strictmode -version 2.0
+PS> add(3,4)
 
 The function or command was called like a method. Parameters should be separated by spaces, as described in 'Get-Help about_Parameter.'
 At line:1 char:4
@@ -72,13 +81,13 @@ At line:1 char:4
 + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
 + FullyQualifiedErrorId : StrictModeFunctionCallWithParens
 
-PS C:\> set-strictmode -off
-PS C:\> $string = "This is a string."
-PS C:\> $string.Month
-PS C:\>
-PS C:\> set-strictmode -version 2.0
-PS C:\> $string = "This is a string."
-PS C:\> $string.Month
+PS> set-strictmode -off
+PS> $string = "This is a string."
+PS> $string.Month
+PS>
+PS> set-strictmode -version 2.0
+PS> $string = "This is a string."
+PS> $string.Month
 
 Property 'month' cannot be found on this object; make sure it exists.
 At line:1 char:9
@@ -97,9 +106,11 @@ With version 2.0 strict mode, it is correctly interpreted as faulty syntax for s
 
 Without version 2.0, the reference to the non-existent Month property of a string returns only null.
 With version 2.0, it is interpreted correctly as a reference error.
+
 ## PARAMETERS
 
 ### -Off
+
 Turns strict mode off.
 This parameter also turns off "Set-PSDebug -Strict".
 
@@ -116,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Version
+
 Specifies the conditions that cause an error in strict mode.
 This parameter is required.
 
@@ -150,19 +162,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### None
-This cmdlet does not return any output.
-## NOTES
-* Set-StrictMode is similar to the Strict parameter of Set-PSDebug. "Set-Strictmode -version 1" is equivalent to "Set-PSDebug -strict", except that Set-PSDebug is effective in all scopes. Set-StrictMode is effective only in the scope in which it is set and in its child scopes. For more information about scopes in Windows PowerShell, see about_Scopes.
 
-*
+This cmdlet does not return any output.
+
+## NOTES
+
+- Set-StrictMode is similar to the Strict parameter of Set-PSDebug. "Set-Strictmode -version 1" is equivalent to "Set-PSDebug -strict", except that Set-PSDebug is effective in all scopes. Set-StrictMode is effective only in the scope in which it is set and in its child scopes. For more information about scopes in Windows PowerShell, see about_Scopes.
+
+- 
+
 ## RELATED LINKS
 
 [Set-PSDebug](Set-PSDebug.md)

@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/28/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Group_Policy_Settings
 ---
-
 # About Group Policy Settings
 
 # SHORT DESCRIPTION
@@ -101,8 +100,8 @@ The module must be imported into the session and the setting is effective
 only in the current session.
 
 ```powershell
-PS C:> Import-Module <Module-Name>
-PS C:> (Get-Module <Module-Name>).LogPipelineExecutionDetails = $true
+PS> Import-Module <Module-Name>
+PS> (Get-Module <Module-Name>).LogPipelineExecutionDetails = $true
 ```
 
 To turn on module logging for all sessions on a particular computer,
