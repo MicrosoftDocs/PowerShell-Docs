@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Operators
 ---
-
 # About Operators
 
 ## SHORT DESCRIPTION
@@ -113,7 +112,7 @@ Returns the result of one or more statements as an array. If there is only
 one item, the array has only one member.
 
 ```powershell
-@(Get-WMIObject win32_logicalDisk)
+@(Get-WmiObject win32_logicalDisk)
 ```
 
 `&` Call operator
@@ -209,7 +208,7 @@ $a[-1]
 ```
 
 ```powershell
-(get-hotfix | sort installedOn)[-1]
+(Get-HotFix | Sort-Object installedOn)[-1]
 ```
 
 ```powershell
@@ -235,8 +234,8 @@ that follows it. When the output includes more than one object (a
 "collection"), the pipeline operator sends the objects one at a time.
 
 ```powershell
-get-process | get-member
-get-pssnapin | where {$_.vendor -ne "Microsoft"}
+Get-Process | Get-Member
+Get-PSSnapin | Where-Object {$_.vendor -ne "Microsoft"}
 ```
 
 `.` Property dereference operator
@@ -245,7 +244,7 @@ Accesses the properties and methods of an object.
 
 ```powershell
 $myProcess.peakWorkingSet
-(get-process PowerShell).kill()
+(Get-Process PowerShell).kill()
 ```
 
 `..` Range operator
@@ -256,7 +255,7 @@ lower boundary.
 ```powershell
 1..10
 10..1
-foreach ($a in 1..$max) {write-host $a}
+foreach ($a in 1..$max) {Write-Host $a}
 ```
 
 `::` Static member operator
@@ -276,7 +275,7 @@ a scalar. For multiple results, returns an array.
 
 ```powershell
 $($x * 23)
-$(Get-WMIObject win32_Directory)
+$(Get-WmiObject win32_Directory)
 ```
 
 ## SEE ALSO

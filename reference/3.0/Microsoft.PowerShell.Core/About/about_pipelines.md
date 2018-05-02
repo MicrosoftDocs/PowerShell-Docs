@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  02/14/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_pipelines
 ---
-
 # About Pipelines
 
 ## Short Description
@@ -42,6 +41,7 @@ Here is a simple example. The following command gets the Notepad process and
 then stops it.
 
 For example,
+
 ```powershell
 Get-Process notepad | Stop-Process
 ```
@@ -130,6 +130,7 @@ be restarted in this way).
 This command pipeline starts the WMI service on the computer:
 
 For example,
+
 ```powershell
 Get-Service wmi | Start-Service
 ```
@@ -143,6 +144,7 @@ This command adds a new registry entry, NoOfEmployees, with a value of 8124,
 to the MyCompany registry key.
 
 For example,
+
 ```powershell
 Get-Item -Path HKLM:\Software\MyCompany |
   New-ItemProperty -Name NoOfEmployees -Value 8124
@@ -519,14 +521,15 @@ For example,
 
 ```powershell
 Get-Item -Path HKLM:\software\mycompany\design |
-Move-ItemProperty -Dest HKLM:\software\mycompany\sales -Name product
+Move-ItemProperty -Destination HKLM:\software\mycompany\sales -Name product
 ```
 
 To verify that the command worked, use a `Get-ItemProperty` command:
 
 For example,
+
 ```powershell
-Get-Itemproperty HKLM:\software\mycompany\sales
+Get-ItemProperty HKLM:\software\mycompany\sales
 ```
 
 The results show that the Product registry entry was moved to the Sales key.
