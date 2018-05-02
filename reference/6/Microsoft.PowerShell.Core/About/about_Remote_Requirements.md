@@ -225,6 +225,41 @@ In general, before you connect and as you are establishing the connection, the
 policies on the local computer are in effect. When you are using the
 connection, the policies on the remote computer are in effect.
 
+## Basic Authentication Limitations on Linux and macOs
+
+When connecting from a Linux or macOs system to Windows, Basic Authentication
+over HTTP is not supported. Basic Authentication can be used over HTTPS by
+installing a certificate on the target server.  the certificate must have a
+CN name that matches the hostname, is not expired, revoke.  A self-signed
+certificate used for testing purposes.
+
+See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/en-us/help/2019527/how-to-configure-winrm-for-https)
+for additonal details.
+
+The following command, run from an elevated command prompt, will configure the HTTPS listener with the installed certificate.
+```
+winrm create winrm/config/Listener?Address=*+Transport=HTTPS @{Hostname="<SERVER_DNS_NAME>"; CertificateThumbprint="<CERTIFICATE_THUMBPRINT>"}
+```
+
+On the Linux or macOs side, select Basic for authentication and -useSSl.
+
+```powershell
+# The specified user must have administrator rights on the target machine.
+PS> $cred = Get-Credential username@hostname
+PS> $session = New-PSSession -Computer <hostname> -Credential $cred -Authentication Basic -UseSSL
+```
+
+An alternative to Basic Authentication over HTTPS is Negotiate. The results in NTLM authentication with client and server payload encryption over HTTP.  the following illustrates using Negotiate with New-PSSession:
+
+```powershell
+# The specified user must have administrator rights on the target machine.
+PS> $cred = Get-Credential username@hostname
+PS> $session = New-PSSession -Computer <hostname> -Credential $cred -Authentication Negotiate
+```
+
+> Note: Windows Server requires an additional registry setting to enable administrators, other than the built in administrator, to connect using NTLM. Refer to the LocalAccountTokenFilterPolicy registry setting under Negotiate Authentication in [Authentication for Remote Connections](https://msdn.microsoft.com/en-us/library/aa384295(v=vs.85).aspx)
+
+
 # SEE ALSO
 
 [about_Remote](about_Remote.md)
