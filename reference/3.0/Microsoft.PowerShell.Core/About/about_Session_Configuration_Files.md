@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Session_Configuration_Files
 ---
-
 # About Session Configuration Files
 
 ## SHORT DESCRIPTION
@@ -354,7 +353,7 @@ session configurations.
 
 ```powershell
 Get-PSSessionConfiguration |
-where {$_.ExecutionPolicy -eq "RemoteSigned"}
+Where-Object {$_.ExecutionPolicy -eq "RemoteSigned"}
 ```
 
 The following command gets session configurations in which the RunAsUser is
@@ -362,7 +361,7 @@ the Exchange administrator.
 
 ```powershell
  Get-PSSessionConfiguration |
-where {$_.RunAsUser -eq "Exchange01\Admin01"}
+Where-Object {$_.RunAsUser -eq "Exchange01\Admin01"}
 ```
 
 To view information about the role definitions associated with a configuration

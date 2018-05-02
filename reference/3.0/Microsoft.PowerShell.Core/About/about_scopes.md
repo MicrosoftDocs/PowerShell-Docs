@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/08/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_scopes
 ---
-
 # About Scopes
 
 about_Scopes
@@ -99,13 +98,13 @@ Get-Variable or Get-Alias.
 For example, to get all the variables in the local scope, type:
 
 ```powershell
-get-variable -scope local
+Get-Variable -Scope local
 ```
 
 To get all the variables in the global scope, type:
 
 ```powershell
-get-variable -scope global
+Get-Variable -Scope global
 ```
 
 ## Scope Modifiers
@@ -156,7 +155,7 @@ definition creates a function in the global scope:
 
 ```powershell
 function global:Hello {
-  write-host "Hello, World"
+  Write-Host "Hello, World"
 }
 ```
 
@@ -197,7 +196,7 @@ change) items in a particular scope. Use the following command to find all the
 cmdlets in your session that have a Scope parameter:
 
 ```powershell
-get-help * -parameter scope
+Get-Help * -Parameter scope
 ```
 
 To find the variables that are visible in a particular scope, use the Scope
@@ -208,7 +207,7 @@ For example, the following command gets the variables that are visible in the
 local scope:
 
 ```powershell
-get-variable -scope local
+Get-Variable -Scope local
 ```
 
 To create a variable in a particular scope, use a scope modifier or the Scope
@@ -216,7 +215,7 @@ parameter of Set-Variable. The following command creates a variable in the
 global scope:
 
 ```powershell
-new-variable -scope global -name a -value "One"
+New-Variable -Scope global -Name a -Value "One"
 ```
 
 You can also use the Scope parameter of the New-Alias, Set-Alias, or Get-Alias
@@ -224,7 +223,7 @@ cmdlets to specify the scope. The following command creates an alias in the
 global scope:
 
 ```powershell
-new-alias -scope global -name np -value Notepad.exe
+New-Alias -Scope global -Name np -Value Notepad.exe
 ```
 
 To get the functions in a particular scope, use the Get-Item cmdlet when you
@@ -349,7 +348,7 @@ First, to display the value of the \$ConfirmPreference variable in the local
 scope, use the following command:
 
 ```
-C:\PS> $ConfirmPreference
+PS> $ConfirmPreference
 High
 ```
 
@@ -372,7 +371,7 @@ Next, test the current value of the \$ConfirmPreference variable in the current
 scope.
 
 ```
-C:\PS> $ConfirmPreference
+PS> $ConfirmPreference
 High
 ```
 
@@ -413,7 +412,7 @@ When the script is complete, only the global value of \$test is defined in the
 session.
 
 ```
-C:\PS> $test
+PS> $test
 Global
 ```
 
@@ -442,7 +441,7 @@ $global:test = "Local"
 When the script is complete, the global value of \$test is changed.
 
 ```
-C:\PS> $test
+PS> $test
 Local
 ```
 
@@ -462,11 +461,11 @@ New-Variable -Name ptest -Value 1 -Option private
 You can display and change the value of \$ptest in the local scope.
 
 ```
-C:\PS> $ptest
+PS> $ptest
 1
 
-C:\PS> $ptest = 2
-C:\PS> $ptest
+PS> $ptest = 2
+PS> $ptest
 2
 ```
 

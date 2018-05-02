@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_FAQ
 ---
-
 # About Remote FAQ
 
 ## SHORT DESCRIPTION
@@ -53,7 +52,7 @@ session on the local computer.
 
 To transmit the commands and receive the output, Windows PowerShell uses the
 WS-Management protocol. For information about the WS-Management protocol, see
-[WS-Management Protocol](http://go.microsoft.com\/fwlink/?LinkId=144634) in
+[WS-Management Protocol](http://go.microsoft.com/fwlink/?LinkId=144634) in
 the MSDN library.
 
 Beginning in Windows PowerShell 3.0, remote sessions are stored on the remote
@@ -468,7 +467,8 @@ changes.
 
   You can use the following Windows PowerShell command to add this entry:
 
-    ```powershell
+
+```powershell
     $parameters = @{
       Path='HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
       Name='LocalAccountTokenFilterPolicy'

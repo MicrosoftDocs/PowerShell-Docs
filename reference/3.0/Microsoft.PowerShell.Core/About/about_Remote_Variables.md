@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Variables
 ---
-
 # About Remote Variables
 
 ## SHORT DESCRIPTION
@@ -105,7 +104,7 @@ parameter name and the local variable, $ps, as its value.
 $ps = "Windows PowerShell"
 Invoke-Command -ComputerName S1 -ScriptBlock {
   param($log)
-  Get-WinEvent -logname $log
+  Get-WinEvent -LogName $log
 } -ArgumentList $ps
 ```
 

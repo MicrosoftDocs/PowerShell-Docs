@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Troubleshooting
 ---
-
 # About Remote Troubleshooting
 
 ## SHORT DESCRIPTION
@@ -220,8 +219,8 @@ Servers.txt file and then sets the startup type of the WinRM service on all
 of the computers to Automatic.
 
 ```powershell
-C:\PS> $servers = Get-Content servers.txt
-C:\PS> Set-Service WinRM -ComputerName $servers -startuptype Automatic
+PS> $servers = Get-Content servers.txt
+PS> Set-Service WinRM -ComputerName $servers -startuptype Automatic
 ```
 
 To see the results use the Get-WMIObject cmdlet with the Win32_Service object.
@@ -339,7 +338,7 @@ To change the policy, use the following command to set the value of the
 LocalAccountTokenFilterPolicy registry entry to 1.
 
 ```powershell
-C:\PS> New-ItemProperty -Name LocalAccountTokenFilterPolicy -Path `
+PS> New-ItemProperty -Name LocalAccountTokenFilterPolicy -Path `
 HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System `
 -PropertyType DWord -Value 1
 ```
@@ -555,10 +554,10 @@ For example, the following command creates a session option object with
 proxy session options and then uses the object to create a remote session.
 
 ```powershell
-C:\PS> $SessionOption = New-PSSessionOption -ProxyAccessType IEConfig `
+PS> $SessionOption = New-PSSessionOption -ProxyAccessType IEConfig `
 -ProxyAuthentication Negotiate -ProxyCredential Domain01\User01
 
-C:\PS> New-PSSession -ConnectionURI https://www.fabrikam.com
+PS> New-PSSession -ConnectionURI https://www.fabrikam.com
 ```
 
 For more information about the New-PSSessionOption cmdlet, see
@@ -597,8 +596,8 @@ following command finds the processor architecture of the session in the
 \$s variable.
 
 ```powershell
-$s = New-PSSession -ComputerName Server01 -configurationName CustomShell
-invoke-command -session $s {$env:PROCESSOR_ARCHITECTURE}
+$s = New-PSSession -ComputerName Server01 -ConfigurationName CustomShell
+Invoke-Command -Session $s {$env:PROCESSOR_ARCHITECTURE}
 x86
 ```
 
@@ -732,9 +731,9 @@ create a session option object with an OperationTimeout value of 4 minutes
 (in MS) and then use the session option object to create a remote session.
 
 ```powershell
-C:\PS> $pso = New-PSSessionoption -OperationTimeout 240000
+PS> $pso = New-PSSessionoption -OperationTimeout 240000
 
-C:\PS> New-PSSession -ComputerName Server01 -sessionOption $pso
+PS> New-PSSession -ComputerName Server01 -sessionOption $pso
 ```
 
 For more information about the WS-Management timeouts, see the Help topic for
