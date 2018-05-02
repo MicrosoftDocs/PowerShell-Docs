@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Throw
 ---
-
 # About Throw
 
 ## SHORT DESCRIPTION
@@ -38,7 +37,7 @@ not appear in a Catch block, and it does not include an expression, it
 generates a ScriptHalted error.
 
 ```powershell
-C:\PS> throw
+PS> throw
 
 ScriptHalted
 At line:1 char:6
@@ -57,7 +56,7 @@ The optional expression in a Throw statement can be a string, as shown in the
 following example:
 
 ```powershell
-C:\PS> throw "This is an error."
+PS> throw "This is an error."
 
 This is an error.
 At line:1 char:6
@@ -73,11 +72,11 @@ The expression can also be an object that throws the object that represents
 the PowerShell process, as shown in the following example:
 
 ```powershell
-C:\PS> throw (get-process PowerShell)
+PS> throw (Get-Process PowerShell)
 
 System.Diagnostics.Process (PowerShell)
 At line:1 char:6
-+ throw <<<<  (get-process PowerShell)
++ throw <<<<  (Get-Process PowerShell)
 + CategoryInfo          : OperationStopped: (System.Diagnostics.Process (Pow
 erShell):Process) [],
 RuntimeException
@@ -88,7 +87,7 @@ You can use the TargetObject property of the ErrorRecord object in the
 $error automatic variable to examine the error.
 
 ```powershell
-C:\PS> $error[0].targetobject
+PS> $error[0].targetobject
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -100,9 +99,9 @@ exception. The following example uses the Throw keyword to throw a
 System.FormatException object.
 
 ```powershell
-C:\PS> $formatError = new-object system.formatexception
+PS> $formatError = new-object system.formatexception
 
-C:\PS> throw $formatError
+PS> throw $formatError
 
 One of the identified items was in an invalid format.
 At line:1 char:6
@@ -145,7 +144,7 @@ function Get-XMLFiles
   param ($path = $(throw "The Path parameter is required."))
   dir -path $path\*.xml -recurse |
     sort lastwritetime |
-      ft lastwritetime, attributes, name  -auto
+      Format-Table lastwritetime, attributes, name  -AutoSize
 }
 ```
 
