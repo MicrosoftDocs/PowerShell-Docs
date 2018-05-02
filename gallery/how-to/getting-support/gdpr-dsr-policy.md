@@ -35,7 +35,7 @@ The information below will show how you can get all the items you have published
 
 ## DSR Export of PowerShell Gallery Data
 
-The following sections describe how the PowerShell Gallery supports data subject requests (DSR).
+The following sections describe how the PowerShell Gallery supports data subject requests (DSR),
 by explaining how to export information stored in the PowerShell Gallery, and how to request deletion of this information.
 
 ### Email

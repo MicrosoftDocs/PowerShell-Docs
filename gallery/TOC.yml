@@ -8,16 +8,16 @@
       items:
         - name: Searching For Items
           href: how-to/finding-items/search-syntax.md
+        - name: Seaching by PSEdition
+          href: how-to/finding-items/seaching-by-psedition.md
         - name: Filtering Search Results
           href: how-to/finding-items/filtering-items.md
-        - name: Items with Compatible PSEditions
-          href: how-to/finding-items/pseditions.md
     - name: Publishing to the Gallery
       items:
         - name: Creating a PowerShellGallery Account
           href: how-to/publishing-items/creating-an-account.md
         - name: Creating and publishing items
-          href: how-to/publishing-items/creating-and-publishing-an-item.md
+          href: how-to/publishing-items/publishing-an-item.md
         - name: Unlisting items
           href: how-to/publishing-items/unlisting-items.md
         - name: Deleting items
@@ -31,7 +31,7 @@
         - name: Deploy to Azure Automation
           href: how-to/working-with-items/deploy-to-azure-automation.md
         - name: Items that Require License Acceptance
-          href: how-to/working-with-items/items-that-requirelicenseacceptance.md
+          href: how-to/working-with-items/items-that-require-license-acceptance.md
         - name: Contacting item owners
           href: how-to/working-with-items/contacting-item-owners.md
         - name: Providing Feedback via Social Media or Comments
@@ -39,25 +39,25 @@
 - name: Concepts
   items:
     - name: Publishing guidelines and best practices
-      href: how-to/publishing-items/publishing-guidelines.md
+      href: concepts/publishing-guidelines.md
     - name: Requiring Specific PSEditions
       items:
         - name: Writing Scripts with PSEditions Support
-          href: concepts/write-script-with-pseditionsupport.md
+          href: concepts/script-psedition-support.md
         - name: Writing Modules with PSEdition support
-          href: concepts/write-module-with-pseditionsupport.md
+          href: concepts/module-psedition-support.md
     - name: Requiring License Acceptance
       items:
         - name: Requiring License Acceptance for Scripts
-          href: concepts/script-requirelicenseacceptance.md
+          href: concepts/script-license-acceptance.md
         - name: Requiring License Acceptance for Modules
-          href: concepts/module-requirelicenseacceptance.md
+          href: concepts/module-license-acceptance.md
     - name: Defining Items as PreRelease
       items:
         - name: Defining a Module as PreRelease
-          href: concepts/define-prereleasemodule.md
+          href: concepts/module-prerelease-support.md
         - name: Defining a Script as PreRelease
-          href: concepts/define-prereleasescript.md
+          href: concepts/script-prerelease-support.md
     - name: PSScriptAnalyzer Rule Profile
       href: concepts/scriptanalyzer-rule-profile.md
     - name: Item manifest and Gallery UI
@@ -73,12 +73,12 @@
     - name: Contacting administrators
       href: how-to/getting-support/contacting-administrators.md
     - name: Troubleshooting
-      href: how-to/getting-support/troubleshooting-psget-cmdlets.md
+      href: how-to/getting-support/troubleshooting-cmdlets.md
     - name: Bootstrapping NuGet provider and NuGet.exe
-      href: how-to/getting-support/bootstrapping-nuget-proivder-and-exe.md
+      href: how-to/getting-support/bootstrapping-nuget.md
     - name: GDPR Compliance
-      href: how-to/getting-support/psgallery-gdpr-dsr.md
+      href: how-to/getting-support/gdpr-dsr-policy.md
 - name: Gallery FAQs
   href: faqs.md
 - name: PowerShellGet cmdlets
-  href: https://docs.microsoft.com/powershell/module/powershellget/
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
