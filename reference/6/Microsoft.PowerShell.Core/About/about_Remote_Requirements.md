@@ -244,8 +244,9 @@ winrm create winrm/config/Listener?Address=*+Transport=HTTPS @{Hostname="<SERVER
 On the Linux or macOs side, select Basic for authentication and -useSSl.
 
 ```powershell
-# The specified user must have administrator rights on the target machine.
-PS> $cred = Get-Credential username@hostname
+# The specified local user must have administrator rights on the target machine.
+# Specify the unqualified username.
+PS> $cred = Get-Credential username
 PS> $session = New-PSSession -Computer <hostname> -Credential $cred -Authentication Basic -UseSSL
 ```
 
