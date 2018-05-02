@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113362
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Out-Default
 ---
-
 # Out-Default
+
 ## SYNOPSIS
+
 Sends the output to the default formatter and to the default output cmdlet.
+
 ## SYNTAX
 
 ```
@@ -18,12 +20,15 @@ Out-Default [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Out-Default** cmdlet sends output to the default formatter and the default output cmdlet.
 This cmdlet has no effect on the formatting or output of Windows PowerShell commands.
 It is a placeholder that lets you write your own **Out-Default** function or cmdlet.
+
 ## EXAMPLES
 
 ### 1:
+
 ```
 
 ```
@@ -31,6 +36,7 @@ It is a placeholder that lets you write your own **Out-Default** function or cmd
 ## PARAMETERS
 
 ### -InputObject
+
 Accepts input to the cmdlet.
 
 ```yaml
@@ -46,7 +52,9 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS

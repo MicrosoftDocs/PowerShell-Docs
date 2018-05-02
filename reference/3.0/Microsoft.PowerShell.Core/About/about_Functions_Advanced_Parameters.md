@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/28/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions_Advanced_Parameters
 ---
-
 # About Functions Advanced Parameters
 
 # SHORT DESCRIPTION
@@ -514,7 +513,7 @@ greater than or equal to the current date.
 Param
 (
     [parameter()]
-    [ValidateScript({$_ -ge (get-date)})]
+    [ValidateScript({$_ -ge (Get-Date)})]
     [DateTime]
     $EventDate
 )
@@ -524,7 +523,7 @@ In the following example, the value of the variable $date must be greater than
 or equal to the current date and time.
 
 ```powershell
-[DateTime][ValidateScript({$_ -ge (get-date)})]$date = (get-date)
+[DateTime][ValidateScript({$_ -ge (Get-Date)})]$date = (Get-Date)
 ```
 
 ## ValidateSet Attribute
@@ -660,19 +659,19 @@ function Get-Sample {
   {
     if ($path -match ".HKLM.:")
     {
-      $attributes = new-object -Type `
+      $attributes = New-Object -Type `
         System.Management.Automation.ParameterAttribute
       $attributes.ParameterSetName = "__AllParameterSets"
       $attributes.Mandatory = $false
-      $attributeCollection = new-object `
+      $attributeCollection = New-Object `
         -Type System.Collections.ObjectModel.Collection[System.Attribute]
       $attributeCollection.Add($attributes)
 
-      $dynParam1 = new-object -Type `
+      $dynParam1 = New-Object -Type `
         System.Management.Automation.RuntimeDefinedParameter("dp1", [Int32],
           $attributeCollection)
 
-      $paramDictionary = new-object `
+      $paramDictionary = New-Object `
         -Type System.Management.Automation.RuntimeDefinedParameterDictionary
       $paramDictionary.Add("dp1", $dynParam1)
       return $paramDictionary

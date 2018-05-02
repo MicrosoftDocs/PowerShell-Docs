@@ -6,11 +6,12 @@ keywords:  wmf,powershell,setup
 title:  New Scenarios and Features in WMF 5.1
 ---
 
-# New Scenarios and Features in WMF 5.1 #
+# New Scenarios and Features in WMF 5.1
 
 > Note: This information is preliminary and subject to change.
 
-## PowerShell Editions ##
+## PowerShell Editions
+
 Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.
 
 - **Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.
@@ -25,9 +26,9 @@ Starting with version 5.1, PowerShell is available in different editions which d
 
 ## Catalog Cmdlets
 
-Two new cmdlets have been added in the [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) module; these generate and validate Windows catalog files.
+Two new cmdlets have been added in the [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) module; these generate and validate Windows catalog files.
 
-###New-FileCatalog
+### New-FileCatalog
 --------------------------------
 
 New-FileCatalog creates a Windows catalog file for set of folders and files.
@@ -38,6 +39,7 @@ This information is useful to validate whether any changes have been made to the
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
 Catalog versions 1 and 2 are supported.
 Version 1 uses the SHA1 hashing algorithm to create file hashes; version 2 uses SHA256.
 Catalog version 2 is not supported on *Windows Server 2008 R2* or *Windows 7*.
@@ -53,8 +55,7 @@ This creates the catalog file.
 
 To verify the integrity of catalog file (Pester.cat in above example), sign it using [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.
 
-
-###Test-FileCatalog
+### Test-FileCatalog
 --------------------------------
 
 Test-FileCatalog validates the catalog representing a set of folders.
@@ -71,8 +72,8 @@ Users can retrieve all this information by using the *-Detailed* parameter.
 It also displays signing status of catalog in *Signature* property which is equivalent to calling [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet on the catalog file.
 Users can also skip any file during validation by using the *-FilesToSkip* parameter.
 
+## Module Analysis Cache
 
-## Module Analysis Cache ##
 Starting with WMF 5.1, PowerShell provides control
 over the file that is used to cache data about a module, such as the commands it exports.
 
@@ -106,23 +107,22 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 Setting this environment variable will take effect immediately in the current process.
 
-##Specifying module version
+## Specifying module version
 
 In WMF 5.1, `using module` behaves the same way as other module-related constructions in PowerShell.
 Previously, you had no way to specify a particular module version; if there were multiple versions present, this resulted in an error.
 
-
 In WMF 5.1:
 
-* You can use [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
+- You can use [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
 This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
 **Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-* If there are multiple versions of the module, PowerShell uses the **same resolution logic** as `Import-Module` and doesn't return an error--the same behavior as `Import-Module` and `Import-DscResource`.
+- If there are multiple versions of the module, PowerShell uses the **same resolution logic** as `Import-Module` and doesn't return an error--the same behavior as `Import-Module` and `Import-DscResource`.
 
+## Improvements to Pester
 
-##Improvements to Pester
 In WMF 5.1, the version of Pester that ships with PowerShell has been updated from 3.3.5 to 3.4.0, with the addition of commit https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, which enables better behavior for Pester on Nano Server.
 
 You can review the changes in versions 3.3.5 to 3.4.0 by inspecting the ChangeLog.md file at: https://github.com/pester/Pester/blob/master/CHANGELOG.md

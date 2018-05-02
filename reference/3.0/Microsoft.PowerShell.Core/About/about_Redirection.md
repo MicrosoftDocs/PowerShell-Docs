@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords: PowerShell,cmdlet
 title:  about_Redirection
 ---
-
 # About Redirection
 
 ## SHORT DESCRIPTION
@@ -38,7 +37,7 @@ The PowerShell redirection operators use the following characters to represent
 each output type:
 
 ```
-*   All output
+-   All output
 1   Success output
 2   Errors
 3   Warning messages

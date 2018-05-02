@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Script_Blocks
 ---
-
 # About Script Blocks
 
 ## SHORT DESCRIPTION
@@ -55,7 +54,7 @@ block parameter values. For example, the `Invoke-Command` cmdlet has a
 example:
 
 ```powershell
-PS C:\> Invoke-Command -ScriptBlock { Get-Process }
+PS> Invoke-Command -ScriptBlock { Get-Process }
 
 Handles  NPM(K)    PM(K)     WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----     ----- -----   ------     -- -----------
@@ -68,7 +67,7 @@ The script block that is used as a value can be more complicated, as
 shown in the following example:
 
 ```powershell
-PS C:\> Invoke-Command -ScriptBlock { Param($uu = "Parameter");
+PS> Invoke-Command -ScriptBlock { Param($uu = "Parameter");
 "$uu assigned." }
 Parameter assigned.
 ```
@@ -79,7 +78,7 @@ the **Args** parameter of the `Invoke-Command` cmdlet to assign a different
 value to the parameter:
 
 ```powershell
-PS C:\> Invoke-Command -ScriptBlock { Param($uu = "Parameter");
+PS> Invoke-Command -ScriptBlock { Param($uu = "Parameter");
 "$uu assigned."} -Args "Other value"
 Other value assigned.
 ```
@@ -95,7 +94,7 @@ You can use the variable with a cmdlet such as `Invoke-Command`, as shown
 in the following example:
 
 ```powershell
-PS C:\> Invoke-Command -ScriptBlock $a -Args "Other value"
+PS> Invoke-Command -ScriptBlock $a -Args "Other value"
 Other value assigned.
 ```
 
@@ -103,7 +102,7 @@ You can run a script block that is assigned to a variable by using the
 call operator (&), as shown in the following example:
 
 ```powershell
-PS C:\> & $a
+PS> & $a
 Parameter assigned.
 ```
 
@@ -111,7 +110,7 @@ You can also provide a parameter to the script block, as shown in the
 following example:
 
 ```powershell
-PS C:\> & $a "Other value"
+PS> & $a "Other value"
 Other value assigned.
 ```
 
@@ -120,8 +119,8 @@ variable, use the call operator to run the script block directly, as
 shown in the following example:
 
 ```powershell
-PS C:\> $a = & { Param($uu = "Parameter"); "$uu assigned." }
-PS C:\> $a
+PS> $a = & { Param($uu = "Parameter"); "$uu assigned." }
+PS> $a
 Parameter assigned.
 ```
 

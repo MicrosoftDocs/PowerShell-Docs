@@ -1,10 +1,9 @@
----
+﻿---
 ms.date:  06/27/2017
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Command_Precedence
 ---
-
 # About Command Precedence
 
 ## SHORT DESCRIPTION
@@ -210,7 +209,7 @@ For example, if you have a function named "Map" that is hidden by an alias
 named "Map", use the following command to run the function.
 
 ```powershell
-&(Get-Command -Name Map -Type Function)
+&(Get-Command -Name Map -CommandType Function)
 ```
 
 or
@@ -225,7 +224,7 @@ For example, the following command saves the "Map" function in the "$myMap"
 variable and then uses the `Call` operator to run it.
 
 ```powershell
-$myMap = (Get-Command -Name map -Type function)
+$myMap = (Get-Command -Name map -CommandType function)
 &($myMap)
 ```
 
