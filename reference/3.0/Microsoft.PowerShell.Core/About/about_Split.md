@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/20/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Split
 ---
-
 # About Split
 
 ## SHORT DESCRIPTION
@@ -18,14 +17,14 @@ substrings.
 The Split operator splits one or more strings into substrings. You can
 change the following elements of the Split operation:
 
-* Delimiter. The default is whitespace, but you can specify characters,
+- Delimiter. The default is whitespace, but you can specify characters,
   strings, patterns, or script blocks that specify the delimiter. The Split
   operator in Windows PowerShell uses a regular expression in the delimiter,
   rather than a simple character.
-* Maximum number of substrings. The default is to return all substrings. If
+- Maximum number of substrings. The default is to return all substrings. If
   you specify a number less than the number of substrings, the remaining
   substrings are concatenated in the last substring.
-* Options that specify the conditions under which the delimiter is matched,
+- Options that specify the conditions under which the delimiter is matched,
   such as SimpleMatch and Multiline.
 
 ## SYNTAX
@@ -188,28 +187,28 @@ The syntax for the Options parameter is:
 
 The SimpleMatch options are:
 
-* **SimpleMatch**: Use simple string comparison when evaluating the
+- **SimpleMatch**: Use simple string comparison when evaluating the
   delimiter. Cannot be used with RegexMatch.
-* **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
+- **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
   operator is specified.
 
 The RegexMatch options are:
 
-* **RegexMatch**: Use regular expression matching to evaluate the
+- **RegexMatch**: Use regular expression matching to evaluate the
   delimiter. This is the default behavior. Cannot be used with
   SimpleMatch.
-* **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
+- **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
   operator is specified.
-* **CultureInvariant**: Ignores cultural differences in language
+- **CultureInvariant**: Ignores cultural differences in language
   when evaluting the delimiter. Valid only with RegexMatch.
-* IgnorePatternWhitespace: Ignores unescaped whitespace and
+- IgnorePatternWhitespace: Ignores unescaped whitespace and
   comments marked with the number sign (#). Valid only with
   RegexMatch.
-* **Multiline**: Multiline mode recognizes the start and end of lines
+- **Multiline**: Multiline mode recognizes the start and end of lines
   and strings. Valid only with RegexMatch. Singleline is the default.
-* **Singleline**: Singleline mode recognizes only the start and end of
+- **Singleline**: Singleline mode recognizes only the start and end of
   strings. Valid only with RegexMatch. Singleline is the default.
-* **ExplicitCapture**: Ignores non-named match groups so that only
+- **ExplicitCapture**: Ignores non-named match groups so that only
   explicit capture groups are returned in the result list. Valid
   only with RegexMatch.
 

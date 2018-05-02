@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Return
 ---
-
 # About Return
 
 ## SHORT DESCRIPTION
@@ -102,7 +101,7 @@ The "Please wait. Working on calculation..." string is not displayed. Instead,
 it is assigned to the $a variable, as in the following example:
 
 ```output
-C:\PS> $a
+PS> $a
 Please wait. Working on calculation...
 87
 ```
