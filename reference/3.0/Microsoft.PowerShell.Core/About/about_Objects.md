@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/30/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Objects
 ---
-
 # About Objects
 
 ## Short Description
@@ -49,7 +48,7 @@ The following example demonstrates how objects are passed from one
 command to the next:
 
 ```powershell
-Get-ChildItem C: | where { $_.PsIsContainer -eq $false } | Format-List
+Get-ChildItem C: | Where-Object { $_.PsIsContainer -eq $false } | Format-List
 ```
 
 The first command `Get-ChildItem C:` returns a file or directory object

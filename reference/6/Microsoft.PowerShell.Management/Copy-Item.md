@@ -44,7 +44,7 @@ To rename an item and not copy it, use the Rename-Item cmdlet.
 ## EXAMPLES
 
 ### Example 1: Copy a file to the specified directory
-```
+```powershell
 PS C:\> Copy-Item "C:\Wabash\Logfiles\mar1604.log.txt" -Destination "C:\Presentation"
 ```
 
@@ -52,17 +52,17 @@ This command copies the mar1604.log.txt file to the C:\Presentation directory.
 The command does not delete the original file.
 
 ### Example 2: Copy the contents of a directory to another directory
-```
+```powershell
 PS C:\> Copy-Item "C:\Logfiles" -Destination "C:\Drawings" -Recurse
 ```
 
 This command copies the entire contents of the Logfiles directory into the Drawings directory.
-If the LogFiles directory contains files in subdirectories, those subdirectories will be copied with their file trees intact.
+If the LogFiles directory contains files in subdirectories, those subdirectories are copied with their file trees intact.
 The *Container* parameter is set to true by default.
 This preserves the directory structure.
 
 ### Example 3: Copy the contents of a directory to another directory and create the destination directory if it does not exist
-```
+```powershell
 PS C:\> Copy-Item C:\Logfiles -Destination C:\Drawings\Logs -Recurse
 ```
 
@@ -70,7 +70,7 @@ This command copies the contents of the C:\Logfiles directory to the C:\Drawings
 It creates the \Logs subdirectory if it does not already exist.
 
 ### Example 4: Copy a file to the specified directory and rename the file
-```
+```powershell
 PS C:\> Copy-Item "\\Server01\Share\Get-Widget.ps1" -Destination "\\Server12\ScriptArchive\Get-Widget.ps1.txt"
 ```
 
@@ -78,7 +78,7 @@ This command uses the **Copy-Item** cmdlet to copy the Get-Widget.ps1 script fro
 As part of the copy operation, the command also changes the item name from Get-Widget.ps1 to Get-Widget.ps1.txt, so it can be attached to email messages.
 
 ### Example 5: Copy a file to a remote computer
-```
+```powershell
 PS C:\> $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "D:\Folder001\test.log" -Destination "C:\Folder001_Copy\" -ToSession $Session
 ```
@@ -89,7 +89,7 @@ The second command uses the **Copy-Item** cmdlet to copy test.log from the D:\Fo
 This command does not delete the original file.
 
 ### Example 6: Copy the entire contents of a folder to a remote computer
-```
+```powershell
 PS C:\> $Session = New-PSSession -ComputerName "Server02" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "D:\Folder002\" -Destination "C:\Folder002_Copy\" -ToSession $Session
 ```
@@ -97,10 +97,10 @@ PS C:\> Copy-Item "D:\Folder002\" -Destination "C:\Folder002_Copy\" -ToSession $
 The first command creates a session to the remote computer named Server01 with the credential of Contoso\PattiFul and stores the results in the variable named $Session.
 
 The second command uses the **Copy-Item** cmdlet to copy the entire contents from the D:\Folder002 folder to the C:\Folder002_Copy directory on the remote computer using the session information stored in the $Session variable.
-The subfolders will be copied with their file trees intact.
+The subfolders are copied with their file trees intact.
 
 ### Example 7: Recursively copy the entire contents of a folder to a remote computer
-```
+```powershell
 PS C:\> $Session = New-PSSession -ComputerName "Server04" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "D:\Folder003\" -Destination "C:\Folder003_Copy\" -ToSession $Session -Recurse
 ```
@@ -108,11 +108,11 @@ PS C:\> Copy-Item "D:\Folder003\" -Destination "C:\Folder003_Copy\" -ToSession $
 The first command creates a session to the remote computer named Server01 with the credential of Contoso\PattiFul and stores the results in the variable named $Session.
 
 The second command uses the **Copy-Item** cmdlet to copy the entire contents from the D:\Folder003 folder to the C:\Folder003_Copy directory on the remote computer using the session information stored in the $Session variable.
-The subfolders will be copied with their file trees intact.
-Since this command uses the *Recurse* parameter, the operation will create the Folder003_Copy folder if it does not already exist.
+The subfolders are copied with their file trees intact.
+Since this command uses the *Recurse* parameter, the operation creates the Folder003_Copy folder if it does not already exist.
 
 ### Example 8: Copy a file to a remote computer and then rename the file
-```
+```powershell
 PS C:\> $Session = New-PSSession -ComputerName "Server04" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "D:\Folder004\scriptingexample.ps1" -Destination "C:\Folder004_Copy\scriptingexample_copy.ps1" -ToSession $Session
 ```
@@ -124,7 +124,7 @@ As part of the copy operation, the command also changes the item name from scrip
 This command does not delete the original file.
 
 ### Example 9: Copy a remote file to the local computer
-```
+```powershell
 PS C:\> $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "C:\MyRemoteData\test.log" -Destination "D:\MyLocalData\" -FromSession $Session
 ```
@@ -135,7 +135,7 @@ The second command uses the **Copy-Item** cmdlet to copy test.log from the remot
 This command does not delete the original file.
 
 ### Example 10: Copy the entire contents of a remote folder to the local computer
-```
+```powershell
 PS C:\> $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
 PS C:\> Copy-Item "C:\MyRemoteData\scripts" -Destination "D:\MyLocalData\" -FromSession $Session
 ```
@@ -143,18 +143,18 @@ PS C:\> Copy-Item "C:\MyRemoteData\scripts" -Destination "D:\MyLocalData\" -From
 The first command creates a session to the remote computer named Server01 with the credential of Contoso\PattiFul and stores the results in the variable named $Session.
 
 The second command uses the **Copy-Item** cmdlet to copy the entire contents from the remote C:\MyRemoteData\scripts folder to the local D:\MyLocalData folder using the session information stored in the $Session variable.
-If the scripts folder contains files in subfolders, those subfolders will be copied with their file trees intact.
+If the scripts folder contains files in subfolders, those subfolders are copied with their file trees intact.
 
 ### Example 11: Recursively copy the entire contents of a remote folder to the local computer
-```
+```powershell
 PS C:\> $Session = New-PSSession -ComputerName "Server01" -Credential "Contoso\PattiFul"
-PS C:\> Copy-Item "C:\MyRemoteData\scripts" -Destination "D:\MyLocalData\scripts" -FromSession $Session
+PS C:\> Copy-Item "C:\MyRemoteData\scripts" -Destination "D:\MyLocalData\scripts" -FromSession $Session -Recurse
 ```
 
 The first command creates a session to the remote computer named Server01 with the credential of Contoso\PattiFul and stores the results in the variable named $Session.
 
 The second command uses the **Copy-Item** cmdlet to copy the entire contents from the remote C:\MyRemoteData\scripts folder to the local D:\MyLocalData\scripts folder using the session information stored in the $Session variable.
-Since this command uses the *Recurse* parameter, the operation will create the scripts folder if it does not already exist .If the scripts folder contains files in subfolders, those subfolders will be copied with their file trees intact.
+Since this command uses the *Recurse* parameter, the operation creates the scripts folder if it does not already exist. If the scripts folder contains files in subfolders, those subfolders are copied with their file trees intact.
 
 ## PARAMETERS
 
@@ -178,7 +178,7 @@ Specifies a user account that has permission to perform this action.
 The default is the current user.
 
 Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential** object, such as one generated by the Get-Credential cmdlet.
-If you type a user name, you will be prompted for a password.
+If you type a user name, you are prompted for a password.
 
 This parameter is not supported by any providers installed with Windows PowerShell.
 
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Indicates that this cmdlet will copy items that cannot otherwise be changed, such as copying over a read-only file or alias.
+Indicates that this cmdlet copies items that cannot otherwise be changed, such as copying over a read-only file or alias.
 
 ```yaml
 Type: SwitchParameter
@@ -260,7 +260,7 @@ Accept wildcard characters: False
 ```
 
 ### -Include
-Specifies, as a string array, only those items upon which the cmdlet will act, excluding all others.
+Specifies, as a string array, only those items upon which the cmdlet acts, excluding all others.
 
 ```yaml
 Type: String[]

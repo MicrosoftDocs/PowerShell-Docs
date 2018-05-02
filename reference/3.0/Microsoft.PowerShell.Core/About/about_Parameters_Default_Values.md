@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/30/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Parameters_Default_Values
 ---
-
 # About Parameters Default Values
 
 ## SHORT DESCRIPTION
@@ -142,7 +141,7 @@ braces, the enclosed script block is passed to the `Invoke-Command` cmdlet.
 
 ```powershell
 $PSDefaultParameterValues=@{
-  "Invoke-Command:ScriptBlock"={{Get-EventLog -Log System}}
+  "Invoke-Command:ScriptBlock"={{Get-EventLog -LogName System}}
 }
 ```
 
@@ -173,7 +172,7 @@ For example, the first command sets the value of \$PSDefaultParameterValues.
 The second command gets the value of \$PSDefaultParameterValues.
 
 ```powershell
-PS C:\> $PSDefaultParameterValues = @{
+PS> $PSDefaultParameterValues = @{
   "Send-MailMessage:SmtpServer"="Server01AB234x5"
   "Get-WinEvent:LogName"="Microsoft-Windows-PrintService/Operational"
   "Get-*:Verbose"=$true
@@ -181,7 +180,7 @@ PS C:\> $PSDefaultParameterValues = @{
 ```
 
 ```powershell
-PS C:\> $PSDefaultParameterValues
+PS> $PSDefaultParameterValues
 
 Name                           Value
 ----                           -----
@@ -200,7 +199,7 @@ $PSDefaultParameterValues["<CmdletName:ParameterName>"]
 For example:
 
 ```powershell
-PS C:\> $PSDefaultParameterValues["Send-MailMessage:SmtpServer"]
+PS> $PSDefaultParameterValues["Send-MailMessage:SmtpServer"]
 Server01AB234x5
 ```
 
@@ -241,7 +240,7 @@ $PSDefaultParameterValues.Add("Get-Process:Name", "PowerShell")
 The following example shows the effect of this command.
 
 ```powershell
-PS C:\> $PSDefaultParameterValues
+PS> $PSDefaultParameterValues
 
 Name                           Value
 ----                           -----
@@ -251,11 +250,11 @@ Get*:Verbose                   True
 ```
 
 ```powershell
-PS C:\> $PSDefaultParameterValues.Add("Get-Process:Name", "PowerShell")
+PS> $PSDefaultParameterValues.Add("Get-Process:Name", "PowerShell")
 ```
 
 ```powershell
-PS C:\> $PSDefaultParameterValues
+PS> $PSDefaultParameterValues
 
 Name                           Value
 ----                           -----
@@ -293,7 +292,7 @@ $PSDefaultParameterValues.Remove("Get-Process:Name")
 The following example shows the effect of this command.
 
 ```powershell
-PS C:\> $PSDefaultParameterValues
+PS> $PSDefaultParameterValues
 
 Name                           Value
 ----                           -----
@@ -304,11 +303,11 @@ Get*:Verbose                   True
 ```
 
 ```powershell
-PS C:\> $PSDefaultParameterValues.Remove("Get-Process:Name")
+PS> $PSDefaultParameterValues.Remove("Get-Process:Name")
 ```
 
 ```powershell
-PS C:\> $PSDefaultParameterValues
+PS> $PSDefaultParameterValues
 
 Name                           Value
 ----                           -----
@@ -377,7 +376,7 @@ The other values in \$PSDefaultParameterValues are preserved, but not
 effective.
 
 ```powershell
-PS C:\> $PSDefaultParameterValues
+PS> $PSDefaultParameterValues
 
 Name                           Value
 ----                           -----

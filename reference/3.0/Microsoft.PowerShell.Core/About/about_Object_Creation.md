@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/30/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Object_Creation
 ---
-
 # About Object Creation
 
 ## SHORT DESCRIPTION
@@ -43,8 +42,8 @@ ProgID of a COM object.
 For example, the following command creates a Version object.
 
 ```powershell
-PS C:\> $v = New-Object -TypeName System.Version -ArgumentList 2.0.0.1
-PS C:\> $v
+PS> $v = New-Object -TypeName System.Version -ArgumentList 2.0.0.1
+PS> $v
 ```
 
 ```Output
@@ -54,7 +53,7 @@ Major  Minor  Build  Revision
 ```
 
 ```powershell
-PS C:\> $v | Get-Member
+PS> $v | Get-Member
 
     TypeName: System.Version
 ```
@@ -118,7 +117,7 @@ The output of this function is a collection of custom objects formatted as a
 table by default.
 
 ```powershell
-PS C:\> Test-Object
+PS> Test-Object
 
 ModuleName        UICulture      Version
 ---------         ---------      -------
@@ -130,7 +129,7 @@ Users can manage the properties of the custom objects just as they do with
 standard objects.
 
 ```powershell
-PS C:\> (Test-Object).ModuleName
+PS> (Test-Object).ModuleName
  PSScheduledJob
  PSWorkflow
 ```
@@ -202,8 +201,8 @@ AssetID, Name, OS, Department
 ```
 
 ```powershell
-PS C:\> $a = Import-Csv Servers.csv
-PS C:\> $a
+PS> $a = Import-Csv Servers.csv
+PS> $a
 
 AssetID        Name           OS                    Department
 -------        ----           --                    ----------
@@ -215,7 +214,7 @@ AssetID        Name           OS                    Department
 Use the Get-Member cmdlet to confirm the object type.
 
 ```powershell
-PS C:\> $a | Get-Member
+PS> $a | Get-Member
 ```
 
 ```Output
@@ -236,7 +235,7 @@ OS          NoteProperty System.String OS=Windows Server 2012
 You can use the custom objects just as you would standard objects.
 
 ```powershell
-PS C:\> $a | where {$_.OS -eq "Windows 8"}
+PS> $a | Where-Object {$_.OS -eq "Windows 8"}
 ```
 
 ```output
