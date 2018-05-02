@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Quoting_Rules
 ---
-
 # About Quoting Rules
 
 ## SHORT DESCRIPTION
@@ -175,7 +174,7 @@ PowerShell does not recognize the escape character. Instead, it interprets the
 second quotation mark as the end of the string.
 
 ```output
-PS C:\> 'Use a quotation mark (`') to begin a string.'
+PS> 'Use a quotation mark (`') to begin a string.'
 Unexpected token ')' in expression or statement.
 At line:1 char:27
 + 'Use a quotation mark (`') <<<<  to begin a string.'
@@ -214,6 +213,7 @@ Double-quotes:
 ```
 
 Single-quotes:
+
 ```
 @'<Enter>
 <string> [string] ...<Enter>

@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Methods
 ---
-
 # About methods
 
 ## SHORT DESCRIPTION
@@ -30,7 +29,7 @@ To get the methods of any object, use the `Get-Member` cmdlet. Use its
 the methods of process objects.
 
 ```powershell
-PS C:\> Get-Process | Get-Member -MemberType Method
+PS> Get-Process | Get-Member -MemberType Method
 ```
 
 ```output
@@ -68,8 +67,8 @@ takes a delimiter character argument that tells the method where to split the
 string.
 
 ```powershell
-PS C:\> $a = "Try-Catch-Finally"
-PS C:\> $a.Split("-")
+PS> $a = "Try-Catch-Finally"
+PS> $a.Split("-")
 Try
 Catch
 Finally
@@ -155,15 +154,15 @@ command uses the `Get-Process` command to get all three instance of the Notepad
 process and save them in the \$p variable.
 
 ```powershell
-PS C:\> Notepad; Notepad; Notepad
-PS C:\> $p = Get-Process Notepad
+PS> Notepad; Notepad; Notepad
+PS> $p = Get-Process Notepad
 ```
 
 The third command uses the Count property of all collections to verify that
 there are three processes in the \$p variable.
 
 ```powershell
-PS C:\> $p.Count
+PS> $p.Count
 3
 ```
 
@@ -174,18 +173,18 @@ This command works even though a collection of processes does not have a `Kill`
 method.
 
 ```
-PS C:\> $p.Kill()
+PS> $p.Kill()
 ```
 
 The fifth command uses the Get-Process command to confirm that the `Kill`
 command worked.
 
 ```powershell
-PS C:\> Get-Process Notepad
+PS> Get-Process Notepad
 Get-Process : Cannot find a process with the name "notepad". Verify the proc
 ess name and call the cmdlet again.
 At line:1 char:12
-+ get-process <<<<  notepad
++ Get-Process <<<<  notepad
     + CategoryInfo          : ObjectNotFound: (notepad:String) [Get-Process]
 , ProcessCommandException
     + FullyQualifiedErrorId : NoProcessFoundForGivenName,Microsoft.PowerShel
@@ -196,7 +195,7 @@ To perform the same task on PowerShell 2.0, use the `Foreach-Object` cmdlet to
 run the method on each object in the collection.
 
 ```powershell
-PS C:\> $p | Foreach-Object {$_.Kill()}
+PS> $p | ForEach-Object {$_.Kill()}
 ```
 
 ## SEE ALSO

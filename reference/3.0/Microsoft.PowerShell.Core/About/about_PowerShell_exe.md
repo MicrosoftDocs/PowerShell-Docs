@@ -1,3 +1,4 @@
+﻿
 ---
 ms.date:  01/03/2018
 schema:  2.0.0
@@ -5,7 +6,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PowerShell_exe
 ---
-
 # About PowerShell.exe
 
 ## SHORT DESCRIPTION

@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Script_Internationalization
 ---
-
 # About Script Internationalization
 
 ## Short Description
@@ -30,24 +29,24 @@ tables to facilitate translation.
 To support international Help text, Windows PowerShell includes the following
 features:
 
-* A Data section that separates text strings from code instructions. For more
+- A Data section that separates text strings from code instructions. For more
   information about the Data section, see
   [aout_Data_Sections](about_Data_Sections.md).
 
-* New automatic variables, \$PSCulture and \$PSUICulture. \$PSCulture stores the
+- New automatic variables, \$PSCulture and \$PSUICulture. \$PSCulture stores the
   name of the UI language used on the system for elements such as the date,
   time, and currency. The $PSUICulture variable stores the name of the UI
   language used on the system for user interface elements such as menus and text
   strings.
 
-* A cmdlet, `ConvertFrom-StringData`, that converts text strings into
+- A cmdlet, `ConvertFrom-StringData`, that converts text strings into
   dictionary-like hash tables to facilitate translation. For more information,
   see [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md).
 
-* A new file type, .psd1, that stores translated text strings. The .psd1 files
+- A new file type, .psd1, that stores translated text strings. The .psd1 files
   are stored in language-specific subdirectories of the script directory.
 
-* A cmdlet, `Import-LocalizedData`, that imports translated text strings for a
+- A cmdlet, `Import-LocalizedData`, that imports translated text strings for a
   specified language into a script at runtime. This cmdlet recognizes and
   imports strings in any Windows-supported language. For more information see
   [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md).
@@ -211,7 +210,7 @@ $a = $Day.d0, $Day.d1, $Day.d2, $Day.d3, $Day.d4, $Day.d5, $Day.d6
 # Index into $a to get the name of the day.
 # Use string formatting to build a sentence.
 
-"{0} {1}" -f $Day.messageDate, $a[(Get-Date -uformat %u)] | Out-Host
+"{0} {1}" -f $Day.messageDate, $a[(Get-Date -UFormat %u)] | Out-Host
 ```
 
 The .psd1 files that support the script are saved in subdirectories of
@@ -242,9 +241,9 @@ Today is Friday (in German)
 
 ## See also
 
-* [about_Data_Sections](about_Data_Sections.md)
-* [about_Automatic_Variables](about_Automatic_Variables.md)
-* [about_Hash_Tables](about_Hash_Tables.md)
-* [about_Quoting_Rules](about_Quoting_Rules.md)
-* [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
-* [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
+- [about_Data_Sections](about_Data_Sections.md)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Hash_Tables](about_Hash_Tables.md)
+- [about_Quoting_Rules](about_Quoting_Rules.md)
+- [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+- [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
