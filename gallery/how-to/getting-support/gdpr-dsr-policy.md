@@ -10,14 +10,21 @@ title:  PowerShell Gallery GDPR Compliance
 
 ## Overview
 
-In May 2018, a European privacy law, the General Data Protection Regulation (GDPR), will take effect.
-The GDPR imposes new rules on companies, government agencies, non-profits,
-and other organizations that offer goods and services to people in the European Union (EU),
-or that collect and analyze data tied to EU residents. The GDPR applies no matter where you are located.
+In May 2018, a European privacy law, the General Data Protection Regulation (GDPR), takes effect.
+The GDPR imposes new rules on companies, government agencies, non-profits, and other organizations
+that offer goods and services to people in the European Union (EU),
+or that collect and analyze data tied to EU residents.
+The GDPR applies no matter where you are located.
 
-Read more about Microsoft Privacy policy at [Trust Center](https://www.microsoft.com/trustcenter).
+> [!NOTE]
+> This article provides steps for how to delete personal data from the PowerShell Gallery
+> and can be used to support your obligations under the GDPR. If you’re looking for general info about GDPR,
+> see the [GDPR section of the Service Trust portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
-The PowerShell Gallery stores the following information that may be provided by users, which may contain personal information:
+## Personally identifiable data
+
+The PowerShell Gallery stores the following information that may be provided by users, which may
+contain personal information:
 
 * PowerShell Gallery account
 * Items published to the PowerShell Gallery
@@ -35,8 +42,9 @@ The information below will show how you can get all the items you have published
 
 ## DSR Export of PowerShell Gallery Data
 
-The following sections describe how the PowerShell Gallery supports data subject requests (DSR),
-by explaining how to export information stored in the PowerShell Gallery, and how to request deletion of this information.
+The following sections describe how the PowerShell Gallery supports data subject requests (DSR), by
+explaining how to export information stored in the PowerShell Gallery, and how to request deletion
+of this information.
 
 ### Email
 
