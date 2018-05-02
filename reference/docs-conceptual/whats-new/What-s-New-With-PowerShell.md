@@ -1,10 +1,10 @@
 ---
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
-title:  What s New With PowerShell
+title:  What's New With PowerShell 5.0
 ---
 
-# What&#39;s New With PowerShell
+# What's New With PowerShell 5.0
 Windows PowerShell® 5.0 includes significant new features that extend its use, improve its usability, and allow you to control and manage Windows-based environments more easily and comprehensively.  The major improvements are in the areas of Desired State Configuration, security, performance, remoting, and language enhancements.
 
 Windows PowerShell 5.0 is backward-compatible. Cmdlets, providers, modules, snap-ins, scripts, functions, and profiles that were designed for Windows PowerShell 4.0, Windows PowerShell 3.0, and Windows PowerShell 2.0 generally work in Windows PowerShell 5.0 without changes.
