@@ -296,7 +296,8 @@ windows) on the same computer. Note the changing values of the State and
 Availability properties in each session as the PSSession is disconnected and
 reconnected.
 
-```powershell# Session 1
+```powershell
+# Session 1
 PS> New-PSSession -ComputerName Server30 -Name Test
 
 Id Name   ComputerName    State         ConfigurationName     Availability
@@ -308,7 +309,9 @@ PS> Get-PSSession -ComputerName Server30 -Name Test
 
 Id Name   ComputerName    State         ConfigurationName     Availability
 -- ----   ------------    -----         -----------------     ------------
-1 Test    Server30        Disconnected  Microsoft.PowerShell          Busy# Session 1
+1 Test    Server30        Disconnected  Microsoft.PowerShell          Busy
+
+# Session 1
 PS> Get-PSSession -ComputerName Server30 -Name Test |
 >> Disconnect-PSSession
 
