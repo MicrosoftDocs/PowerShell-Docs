@@ -164,7 +164,7 @@ You can pipe a name or name pattern to this cmdlet.
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.ControlPanelItem
-This cmdlet does not generate any output.
+This cmdlet gets control panel items on the local computer.
 
 ## NOTES
 
