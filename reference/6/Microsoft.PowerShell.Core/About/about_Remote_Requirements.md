@@ -238,8 +238,10 @@ for additonal details.
 
 The following command, run from an elevated command prompt, will configure the
 HTTPS listener with the installed certificate.
-```
-winrm create winrm/config/Listener?Address=*+Transport=HTTPS @{Hostname="<SERVER_DNS_NAME>"; CertificateThumbprint="<CERTIFICATE_THUMBPRINT>"}
+
+```powershell
+$hostinfo = '@{Hostname="<DNS_NAME>"; CertificateThumbprint="<THUMBPRINT>"}'
+winrm create winrm/config/Listener?Address=*+Transport=HTTPS $hostinfo
 ```
 
 On the Linux or macOs side, select Basic for authentication and -UseSSl.
@@ -247,8 +249,9 @@ On the Linux or macOs side, select Basic for authentication and -UseSSl.
 ```powershell
 # The specified local user must have administrator rights on the target machine.
 # Specify the unqualified username.
-PS> $cred = Get-Credential username
-PS> $session = New-PSSession -Computer <hostname> -Credential $cred -Authentication Basic -UseSSL
+$cred = Get-Credential username
+$session = New-PSSession -Computer <hostname> -Credential $cred `
+  -Authentication Basic -UseSSL
 ```
 
 An alternative to Basic Authentication over HTTPS is Negotiate. This results
@@ -258,14 +261,17 @@ over HTTP.
 The following illustrates using Negotiate with New-PSSession:
 ```powershell
 # The specified user must have administrator rights on the target machine.
-PS> $cred = Get-Credential username@hostname
-PS> $session = New-PSSession -Computer <hostname> -Credential $cred -Authentication Negotiate
+$cred = Get-Credential username@hostname
+$session = New-PSSession -Computer <hostname> -Credential $cred `
+  -Authentication Negotiate
 ```
 
-> Note: Windows Server requires an additional registry setting to enable
-administrators, other than the built in administrator, to connect using
-NTLM. Refer to the LocalAccountTokenFilterPolicy registry setting under
-Negotiate Authentication in [Authentication for Remote Connections](https://msdn.microsoft.com/en-us/library/aa384295(v=vs.85).aspx)
+> [!NOTE]
+> Windows Server requires an additional registry setting to enable
+> administrators, other than the built in administrator, to connect using NTLM.
+> Refer to the LocalAccountTokenFilterPolicy registry setting under Negotiate
+> Authentication in
+> [Authentication for Remote Connections](https://msdn.microsoft.com/en-us/library/aa384295(v=vs.85).aspx)
 
 
 # SEE ALSO
