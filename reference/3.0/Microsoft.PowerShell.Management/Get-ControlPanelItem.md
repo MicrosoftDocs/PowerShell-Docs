@@ -150,9 +150,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 You can pipe a name or name pattern to the Get-ControlPanelItem cmdlet.
+
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.ControlPanelItem
+This cmdlet gets control panel items on the local computer.
 
 ## NOTES
 
