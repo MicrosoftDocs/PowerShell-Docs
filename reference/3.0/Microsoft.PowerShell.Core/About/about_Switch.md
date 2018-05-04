@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/06/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Switch
 ---
-
 # About Switch
 
 ## SHORT DESCRIPTION
@@ -198,7 +197,8 @@ For the word "fourteen" to match a case you must use the **-Wildcard** or
 
  Result:
 
- ```Output
+
+```Output
 That's too many.
 ```
 

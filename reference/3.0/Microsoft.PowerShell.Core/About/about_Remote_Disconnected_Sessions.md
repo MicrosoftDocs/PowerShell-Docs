@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Disconnected_Sessions
 ---
-
 # About Remote Disconnected Sessions
 
 ## Short Description
@@ -44,12 +43,12 @@ location.
 
 The following cmdlets support the Disconnected Sessions feature:
 
-* `Connect-PSSession`: Connects to a disconnected PSSession
-* `Disconnect-PSSession`: Disconnects a PSSession
-* `Get-PSSession`: Gets PSSessions on the local computer or on remote computers
-* `Receive-PSSession`: Gets the results of commands that ran in disconnected
+- `Connect-PSSession`: Connects to a disconnected PSSession
+- `Disconnect-PSSession`: Disconnects a PSSession
+- `Get-PSSession`: Gets PSSessions on the local computer or on remote computers
+- `Receive-PSSession`: Gets the results of commands that ran in disconnected
   sessions
-* `Invoke-Command`: **InDisconnectedSession** parameter creates a PSSession and
+- `Invoke-Command`: **InDisconnectedSession** parameter creates a PSSession and
   disconnects immediately
 
 ## How the Disconnected Sessions Feature Works
@@ -113,7 +112,7 @@ The first command creates a session to the Server01 computer. The session
 resides on the Server01 computer.
 
 ```powershell
-PS C:\> New-PSSession -ComputerName Server01
+PS> New-PSSession -ComputerName Server01
 
 Id Name      ComputerName  State    ConfigurationName     Availability
 -- ----      ------------  -----    -----------------     ------------
@@ -124,7 +123,7 @@ To get the session, use the **ComputerName** parameter of `Get-PSSession`
 with a value of Server01.
 
 ```powershell
-PS C:\> Get-PSSession -ComputerName Server01
+PS> Get-PSSession -ComputerName Server01
 
 Id Name      ComputerName  State    ConfigurationName     Availability
 -- ----      ------------  -----    -----------------     ------------
@@ -137,8 +136,8 @@ maintained on the local computer. It does not get PSSessions on the Server01
 computer, even if they were started on the local computer.
 
 ```powershell
-PS C:\> Get-PSSession -ComputerName localhost
-PS C:\>
+PS> Get-PSSession -ComputerName localhost
+PS>
 ```
 
 To get sessions that were created in the current session, use the
@@ -146,7 +145,7 @@ To get sessions that were created in the current session, use the
 that was created in the current session and connects to the Server01 computer.
 
 ```powershell
-PS C:\> Get-PSSession
+PS> Get-PSSession
 
 Id Name      ComputerName  State    ConfigurationName     Availability
 -- ----      ------------  -----    -----------------     ------------
@@ -164,7 +163,7 @@ Notice that the value of the State property is Disconnected and the
 Availability is None.
 
 ```powershell
-PS C:\> Get-PSSession -ComputerName Server01 | Disconnect-PSSession
+PS> Get-PSSession -ComputerName Server01 | Disconnect-PSSession
 
 Id Name      ComputerName  State         ConfigurationName     Availability
 -- ----      ------------  -----         -----------------     ------------
@@ -179,7 +178,7 @@ The following command runs a `Get-WinEvent` command in a disconnected session
 on the Server02 remote computer.
 
 ```powershell
-PS C:\> Invoke-Command -ComputerName Server02 -InDisconnectedSession `
+PS> Invoke-Command -ComputerName Server02 -InDisconnectedSession `
 -ScriptBlock { Get-WinEvent -LogName "Windows PowerShell" }
 
 Id Name      ComputerName  State         ConfigurationName     Availability
@@ -207,7 +206,7 @@ The following command gets the sessions on the Server02 computer. The output
 includes two disconnected sessions, both of which are available.
 
 ```powershell
-PS C:\> Get-PSSession -ComputerName Server02
+PS> Get-PSSession -ComputerName Server02
 
 Id Name      ComputerName   State         ConfigurationName     Availability
 -- ----      ------------   -----         -----------------     ------------
@@ -219,7 +218,7 @@ The following command connects to Session2. The PSSession is now open and
 available.
 
 ```powershell
-PS C:\> Connect-PSSession -ComputerName Server02 -Name Session2
+PS> Connect-PSSession -ComputerName Server02 -Name Session2
 
 Id Name      ComputerName    State    ConfigurationName     Availability
 -- ----      ------------    -----    -----------------     ------------
@@ -250,7 +249,7 @@ command that ran in the Session3 session. The command uses the **OutTarget**
 parameter to get the results in a job.
 
 ```powershell
-PS C:\> Receive-PSSession  -ComputerName Server02 -Name Session3 `
+PS> Receive-PSSession  -ComputerName Server02 -Name Session3 `
  -OutTarget Job
 
 Id   Name   PSJobTypeName   State         HasMoreData     Location
@@ -261,7 +260,7 @@ Id   Name   PSJobTypeName   State         HasMoreData     Location
 To get the results of the job, use the `Receive-Job` cmdlet.
 
 ```powershell
-PS C:\> Get-Job | Receive-Job -Keep
+PS> Get-Job | Receive-Job -Keep
 
 ProviderName: PowerShell
 
@@ -299,21 +298,21 @@ reconnected.
 
 ```powershell
 # Session 1
-PS C:\> New-PSSession -ComputerName Server30 -Name Test
+PS> New-PSSession -ComputerName Server30 -Name Test
 
 Id Name   ComputerName    State         ConfigurationName     Availability
 -- ----   ------------    -----         -----------------     ------------
 1  Test   Server30        Opened        Microsoft.PowerShell     Available
 
 # Session 2
-PS C:\> Get-PSSession -ComputerName Server30 -Name Test
+PS> Get-PSSession -ComputerName Server30 -Name Test
 
 Id Name   ComputerName    State         ConfigurationName     Availability
 -- ----   ------------    -----         -----------------     ------------
 1 Test    Server30        Disconnected  Microsoft.PowerShell          Busy
 
 # Session 1
-PS C:\> Get-PSSession -ComputerName Server30 -Name Test |
+PS> Get-PSSession -ComputerName Server30 -Name Test |
 >> Disconnect-PSSession
 
 Id Name   ComputerName    State         ConfigurationName     Availability
@@ -321,21 +320,19 @@ Id Name   ComputerName    State         ConfigurationName     Availability
 1 Test    Server30        Disconnected  Microsoft.PowerShell          None
 
 # Session 2
-PS C:\> Get-PSSession -ComputerName Server30
+PS> Get-PSSession -ComputerName Server30
 
 Id Name   ComputerName    State         ConfigurationName     Availability
 -- ----   ------------    -----         -----------------     ------------
 1 Test    Server30        Disconnected  Microsoft.PowerShell          None
 
 # Session 2
-PS C:\> Connect-PSSession -ComputerName Server01 -Name Test
+PS> Connect-PSSession -ComputerName Server01 -Name Test
 
 Id Name   ComputerName    State         ConfigurationName     Availability
 -- ----   ------------    -----         -----------------     ------------
-3 Test    Server30        Opened        Microsoft.PowerShell     Available
-
-# Session 1
-PS C:\> Get-PSSession -ComputerName Server30
+3 Test    Server30        Opened        Microsoft.PowerShell     Available# Session 1
+PS> Get-PSSession -ComputerName Server30
 
 Id Name   ComputerName    State         ConfigurationName     Availability
 -- ----   ------------    -----         -----------------     ------------
@@ -398,7 +395,7 @@ in SessionOption object and the IdleTimeout value in the $PSSessionOption
 preference variable do not change the value of the IdleTimeout of the
 PSSession in a `Connect-PSSession` or `Receive-PSSession` command.
 
-* To create a PSSession with a particular idle timeout value, create
+- To create a PSSession with a particular idle timeout value, create
   a $PSSessionOption preference variable. Set the value of the
   IdleTimeout property to the desired value (in milliseconds).
 
@@ -411,7 +408,7 @@ PSSession in a `Connect-PSSession` or `Receive-PSSession` command.
 $PSSessionOption = New-PSSessionOption -IdleTimeoutMSec 172800000
 ```
 
-* To create a PSSession with a particular idle timeout value, use
+- To create a PSSession with a particular idle timeout value, use
   the **IdleTimeoutMSec** parameter of the `New-PSSessionOption` cmdlet.
   Then, use the session option in the value of the **SessionOption**
   parameter of the `New-PSSession` or `Invoke-Command` cmdlets.
@@ -427,7 +424,7 @@ $o = New-PSSessionOption -IdleTimeoutMSec 172800000
 New-PSSession -SessionOption $o
 ```
 
-* To change a the idle timeout of a PSSession when disconnecting,
+- To change a the idle timeout of a PSSession when disconnecting,
   use the **IdleTimeoutSec** parameter of the `Disconnect-PSSession`
   cmdlet.
 
@@ -437,7 +434,7 @@ New-PSSession -SessionOption $o
 Disconnect-PSSession -IdleTimeoutSec 172800
 ```
 
-* To create a session configuration with a particular idle timeout
+- To create a session configuration with a particular idle timeout
   and maximum idle timeout, use the **IdleTimeoutSec** and **MaxIdleTimeoutSec**
   parameters of the `New-PSTransportOption` cmdlet. Then, use the
   transport option in the value of the **TransportOption** parameter
@@ -450,7 +447,7 @@ $o = New-PSTransportOption -IdleTimeoutSec 172800 -MaxIdleTimeoutSec 259200
 Register-PSSessionConfiguration -Name Test -TransportOption $o
 ```
 
-* To change the default idle timeout and maximum idle timeout of
+- To change the default idle timeout and maximum idle timeout of
   a session configuration, use the **IdleTimeoutSec** and **MaxIdleTimeoutSec**
   parameters of the `New-PSTransportOption` cmdlet. Then, use the
   transport option in the value of the **TransportOption** parameter
@@ -473,12 +470,12 @@ whether the command continues to run while the session is disconnected.
 
 Valid values:
 
-* Block
+- Block
 
   When the output buffer is full, execution is suspended until the buffer is
   clear.
 
-* Drop
+- Drop
 
   When the output buffer is full, execution continues. As new output is
   generated, the oldest output is discarded.
@@ -513,7 +510,7 @@ If you are a member of the Administrators group on the remote computer, you
 can also create and change the output buffering mode of session
 configurations.
 
-* To create a PSSession with an output buffering mode of Drop, create
+- To create a PSSession with an output buffering mode of Drop, create
   a $PSSessionOption preference variable in which the value of the
   OutputBufferingMode property is Drop.
 
@@ -526,7 +523,7 @@ configurations.
 $PSSessionOption = New-PSSessionOption -OutputBufferingMode Drop
 ```
 
-* To create a PSSession with an output buffering mode of Drop, use
+- To create a PSSession with an output buffering mode of Drop, use
   the **OutputBufferingMode** parameter of the `New-PSSessionOption`
   cmdlet to create a session option with a value of Drop. Then, use
   the session option in the value of the **SessionOption** parameter of
@@ -543,7 +540,7 @@ $o = New-PSSessionOption -OutputBufferingMode Drop
 New-PSSession -SessionOption $o
 ```
 
-* To change a the output buffering mode of a PSSession when
+- To change a the output buffering mode of a PSSession when
   disconnecting, use the **OutputBufferingMode** parameter of the
   `Disconnect-PSSession` cmdlet.
 
@@ -553,7 +550,7 @@ New-PSSession -SessionOption $o
 Disconnect-PSSession -OutputBufferingMode Drop
 ```
 
-* To change a the output buffering mode of a PSSession when
+- To change a the output buffering mode of a PSSession when
   reconnecting, use the **OutputBufferingMode** parameter of the
   `New-PSSessionOption` cmdlet to create a session option with
   a value of Drop. Then, use the session option in the value of the
@@ -563,10 +560,10 @@ Disconnect-PSSession -OutputBufferingMode Drop
 
 ```powershell
 $o = New-PSSessionOption -OutputBufferingMode Drop
-Connect-PSSession -Cn Server01 -Name Test -SessionOption $o
+Connect-PSSession -ComputerName Server01 -Name Test -SessionOption $o
 ```
 
-* To create a session configuration with a default output buffering
+- To create a session configuration with a default output buffering
   mode of Drop, use the **OutputBufferingMode** parameter of the
   `New-PSTransportOption` cmdlet to create a transport option object
   with a value of Drop. Then, use the transport option in the value of
@@ -579,7 +576,7 @@ $o = New-PSTransportOption -OutputBufferingMode Drop
 Register-PSSessionConfiguration -Name Test -TransportOption $o
 ```
 
-* To change the default output buffering mode of a session
+- To change the default output buffering mode of a session
   configuration, use the **OutputBufferingMode** parameter of the
   `New-PSTransportOption` cmdlet to create a transport option with a
   value of Drop. Then, use the Transport option in the value of the

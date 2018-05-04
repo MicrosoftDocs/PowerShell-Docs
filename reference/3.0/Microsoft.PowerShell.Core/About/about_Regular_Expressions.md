@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Regular_Expressions
 ---
-
 # About Regular Expressions
 
 ## SHORT DESCRIPTION
@@ -106,6 +105,7 @@ Logic:   Matches any nondigit. Equivalent to \P{Nd} for Unicode and [^0-9]
          for non-Unicode behavior.
 Example: "abcd" -match "\D+"
 ```
+
 Windows PowerShell supports the quantifiers available in .NET Framework
 regular expressions. The following are some examples of quantifiers.
 

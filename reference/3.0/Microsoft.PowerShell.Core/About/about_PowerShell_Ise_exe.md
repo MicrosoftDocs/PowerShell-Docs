@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PowerShell_Ise_exe
 ---
-
 # About PowerShell Ise.exe
+
 ## about_PowerShell_Ise.exe
 
 
@@ -74,6 +74,7 @@ and can be used interchangeably.
 
 PS C:> PowerShell_ISE.exe
 PS C:> PowerShell_ISE
+
 # PS C:>ISE
 
 

@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Providers
 ---
-
 # About Providers
 
 ## SHORT DESCRIPTION
@@ -81,7 +80,7 @@ longer available in that session.
 To view the Windows PowerShell providers on your computer, type:
 
 ```powershell
-get-psprovider
+Get-PSProvider
 ```
 
 The output lists the built-in providers and the providers that you added to
@@ -191,7 +190,7 @@ cmdlets. Type the drive name followed by a colon (:). For example, to
 view the contents of the Alias: drive, type:
 
 ```powershell
-get-item alias:
+Get-Item alias:
 ```
 
 You can view and manage the data in any drive from another drive by
@@ -199,7 +198,7 @@ including the drive name in the path. For example, to view the
 HKLM\Software registry key in the HKLM: drive from another drive, type:
 
 ```powershell
-get-childitem hklm:\software
+Get-ChildItem hklm:\software
 ```
 
 To open the drive, use the Set-Location cmdlet. Remember the colon
@@ -207,13 +206,13 @@ when you specify the drive path. For example, to change your location
 to the root directory of the Cert: drive, type:
 
 ```powershell
-set-location cert:
+Set-Location cert:
 ```
 
 Then, to view the contents of the Cert: drive, type:
 
 ```powershell
-get-childitem
+Get-ChildItem
 ```
 
 ## MOVING THROUGH HIERARCHICAL DATA
@@ -230,7 +229,7 @@ For example, to change your location to the HKLM\Software registry key,
 type a Set-Location command, such as:
 
 ```powershell
-set-location hklm:\software
+Set-Location hklm:\software
 ```
 
 You can also use relative references to locations. A dot (.) represents the
@@ -239,7 +238,7 @@ registry key, and you want to list the registry subkeys in the
 HKLM:\Software\Microsoft\PowerShell key, type the following command:
 
 ```powershell
-get-childitem .\PowerShell
+Get-ChildItem .\PowerShell
 ```
 
 ## FINDING DYNAMIC PARAMETERS
@@ -262,7 +261,7 @@ get-help <provider-name>
 For example:
 
 ```powershell
-get-help certificate
+Get-Help certificate
 ```
 
 ## LEARNING ABOUT PROVIDERS
@@ -281,13 +280,13 @@ get-help <ProviderName>
 For example:
 
 ```powershell
-get-help registry
+Get-Help registry
 ```
 
 For a list of Help topics about the providers, type:
 
 ```powershell
-get-help * -category provider
+Get-Help * -Category provider
 ```
 
 ## SEE ALSO

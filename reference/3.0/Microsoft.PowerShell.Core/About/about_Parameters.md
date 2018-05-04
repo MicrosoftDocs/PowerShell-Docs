@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  01/03/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Parameters
 ---
-
 # About Parameters
 
 ## SHORT DESCRIPTION
@@ -140,10 +139,10 @@ you can use any of the following commands:
 
 
 ```powershell
-Get-ChildItem -path c:\techdocs -exclude *.ppt
-Get-ChildItem c:\techdocs -exclude *.ppt
-Get-ChildItem -exclude *.ppt -path c:\techdocs
-Get-ChildItem -exclude *.ppt c:\techdocs
+Get-ChildItem -Path c:\techdocs -Exclude *.ppt
+Get-ChildItem c:\techdocs -Exclude *.ppt
+Get-ChildItem -Exclude *.ppt -Path c:\techdocs
+Get-ChildItem -Exclude *.ppt c:\techdocs
 ```
 
 If you were to include another positional parameter without including the
@@ -178,12 +177,12 @@ For example, the ServiceName parameter of the Get-Service cmdlet accepts
 multiple values. The following commands are both valid:
 
 ```powershell
-get-service -servicename winrm, netlogon
+Get-Service -servicename winrm, netlogon
 ```
 
 ```powershell
 $s = "winrm", "netlogon"
-get-service -servicename $s
+Get-Service -servicename $s
 ```
 
 #### Accepts Pipeline Input?

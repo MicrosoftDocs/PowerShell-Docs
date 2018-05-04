@@ -155,7 +155,7 @@ The following example:
  1. creates a certificate on the **Authoring node**.
  2. exports the certificate including the private key on the **Authoring node**.
  3. removes the private key from the **Authoring node**, but keeps the public key certificate in the **my** store.
- 4. imports the private key certificate into the root certificate store on the **Target node**.
+ 4. imports the private key certificate into the My(Personal) certificate store on the **Target node**.
    - it must be added to the root store so that it will be trusted by the **Target node**.
 
 #### On the Authoring Node: create and export the certificate

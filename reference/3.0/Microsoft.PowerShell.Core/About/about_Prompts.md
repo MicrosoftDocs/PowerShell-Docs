@@ -1,11 +1,10 @@
----
+﻿---
 ms.date:  11/30/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Prompts
 ---
-
 # About Prompts
 
 ## SHORT DESCRIPTION
@@ -19,7 +18,7 @@ The PowerShell command prompt indicates that PowerShell is ready to run a
 command:
 
 ```
-PS C:\>
+PS>
 ```
 
 The PowerShell prompt is determined by the built-in Prompt function. You can
@@ -46,7 +45,7 @@ For example, the following prompt function returns a "Hello, World" string
 followed by a caret (>).
 
 ```powershell
-PS C:\> function prompt {"Hello, World > "}
+PS> function prompt {"Hello, World > "}
 Hello, World >
 ```
 
@@ -58,7 +57,7 @@ cmdlet in the Function drive.
 For example:
 
 ```powershell
-PS C:\> Get-Command Prompt
+PS> Get-Command Prompt
 
 CommandType     Name      ModuleName
 -----------     ----      ----------
@@ -71,7 +70,7 @@ the ScriptBlock property of the Prompt function.
 For example:
 
 ```powershell
-PS C:\> (Get-Command Prompt).ScriptBlock
+PS> (Get-Command Prompt).ScriptBlock
 
 "PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPr
 omptLevel + 1)) "
@@ -103,7 +102,7 @@ For example, the following command sets the Prompt function to $null, which is
 invalid. As a result, the default prompt appears.
 
 ```powershell
-PS C:\> function prompt {$null}
+PS> function prompt {$null}
 PS>
 ```
 
@@ -116,7 +115,7 @@ PowerShell includes a built-in prompt function.
 
 ```powershell
 function prompt {
-    $(if (test-path variable:/PSDebugContext) { '[DBG]: ' }
+    $(if (Test-Path variable:/PSDebugContext) { '[DBG]: ' }
     else { '' }) + 'PS ' + $(Get-Location) `
     + $(if ($nestedpromptlevel -ge 1) { '>>' }) + '> '
 }
@@ -199,7 +198,7 @@ PS [Server01] >
 The following prompt function includes the current date and time:
 
 ```powershell
-function prompt {"$(get-date)> "}
+function prompt {"$(Get-Date)> "}
 ```
 
 The prompt resembles the following prompt:
@@ -219,7 +218,7 @@ function prompt {
   $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
   $principal = [Security.Principal.WindowsPrincipal] $identity
 
-  $(if (test-path variable:/PSDebugContext) { '[DBG]: ' }
+  $(if (Test-Path variable:/PSDebugContext) { '[DBG]: ' }
     elseif($principal.IsInRole([Security.Principal.WindowsBuiltInRole]
       "Administrator")) { "[ADMIN]: " }
     else { '' }
@@ -241,7 +240,7 @@ view the command history, use the `Get-History` cmdlet.
 ```powershell
 function prompt {
    # The at sign creates an array in case only one history item exists.
-   $history = @(get-history)
+   $history = @(Get-History)
    if($history.Count -gt 0)
    {
       $lastItem = $history[$history.Count - 1]
@@ -249,7 +248,7 @@ function prompt {
    }
 
    $nextCommand = $lastId + 1
-   $currentDirectory = get-location
+   $currentDirectory = Get-Location
    "PS: $nextCommand $currentDirectory >"
 }
 ```
@@ -261,8 +260,8 @@ Return statement. Without it, PowerShell uses the default prompt, "PS>".
 
 ```powershell
 function prompt {
-    $color = Get-Random -Min 1 -Max 16
-    Write-Host ("PS " + $(Get-Location) +">") -NoNewLine `
+    $color = Get-Random -Minimum 1 -Maximum 16
+    Write-Host ("PS " + $(Get-Location) +">") -NoNewline `
      -ForegroundColor $Color
     return " "
 }
