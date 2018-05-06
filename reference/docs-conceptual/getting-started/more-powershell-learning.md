@@ -1,10 +1,10 @@
 ---
 ms.date:  06/05/2017
 keywords:  powershell,cmdlet
-title:  more powershell learning
+title:  More PowerShell learning
 ---
 
-# More PowerShell Learning
+# More PowerShell learning
 
 Other sources to learn PowerShell
 
