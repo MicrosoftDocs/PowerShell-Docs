@@ -32,7 +32,7 @@ Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>] [-Cred
 
 ## DESCRIPTION
 The **Add-Computer** cmdlet adds the local computer or remote computers to a domain or workgroup, or moves them from one domain to another.
-It also creates a domain account if the computer is added to the domain without an account.
+It also creates a domain computer account if the computer is added to the domain without an account.
 
 You can use the parameters of this cmdlet to specify an organizational unit (OU) and domain controller or to perform an unsecure join.
 
