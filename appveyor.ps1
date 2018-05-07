@@ -7,6 +7,33 @@ param(
 $global:ProgressPreference = 'SilentlyContinue'
 if($ShowProgress){$ProgressPreference = 'Continue'}
 
+function Get-ContentWithoutHeader {
+    param(
+      $path
+    )
+
+    $doc = Get-Content $path -Encoding UTF8
+    $start = $end = -1
+
+    for ($x = 0; $x -lt 30; $x++) {
+      if ($doc[$x] -eq '---') {
+        if ($start -eq -1) {
+          $start = $x
+        } else {
+          if ($end -eq -1) {
+            $end = $x+1
+            break
+          }
+        }
+      }
+    }
+    if ($end -gt $start) {
+      Write-Output ($doc[$end..$($doc.count)] -join "`r`n")
+    } else {
+      Write-Output ($doc -join "`r`n")
+    }
+  }
+
 # Pandoc source URL
 $panDocVersion = "2.0.6"
 $pandocSourceURL = "https://github.com/jgm/pandoc/releases/download/$panDocVersion/pandoc-$panDocVersion-windows.zip"
@@ -41,7 +68,7 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping', 
         {
             New-Item $MamlOutputFolder -ItemType Directory -Force > $null
         }
-        
+
         # Process the about topics if any
         $AboutFolder = Join-Path $ModulePath "About"
 
@@ -53,15 +80,14 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping', 
                 $aboutFileOutputFullName = Join-Path $MamlOutputFolder $aboutFileOutputName
 
                 $pandocArgs = @(
-                    "--from=markdown",
+                    "--from=gfm",
                     "--to=plain+multiline_tables+inline_code_attributes",
                     "--columns=75",
                     "--output=$aboutFileOutputFullName",
-                    $aboutFileFullName,
                     "--quiet"
                 )
 
-                & $pandocExePath $pandocArgs
+                Get-ContentWithoutHeader $aboutFileFullName | & $pandocExePath $pandocArgs
             }
         }
 
