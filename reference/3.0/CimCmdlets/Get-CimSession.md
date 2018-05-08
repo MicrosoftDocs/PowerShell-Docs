@@ -1,15 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # Get-CimSession
 
 ## SYNOPSIS
-
 Gets the CIM session objects from the current session.
 
 ## SYNTAX
@@ -35,28 +33,25 @@ Get-CimSession -Name <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+The Get-CimSession cmdlet gets the CIM session objects created in the current Windows PowerShell® session.
 
-The Get-CimSession cmdlet gets the CIM session objects created in the current PowerShell session.
+If used without any parameters, the cmdlet gets all of the CIM sessions created in the current Windows PowerShell session.
+You can use the parameters of Get-CimSession to get the sessions that are for particular computers, or you can identify sessions by their names, IDs, or instance IDs.
 
-If used without any parameters, the cmdlet gets all of the CIM sessions created in the current PowerShell session.
-You can use the parameters of `Get-CimSession` to get the sessions that are for particular computers, or you can identify sessions by their names, IDs, or instance IDs.
-
-For more information about PowerShell sessions, see [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+For more information about Windows PowerShell sessions, see about_CimSessions
 
 ## EXAMPLES
 
 ### Example 1: Get CIM sessions from the current PowerShell session
 
-By default, `Get-CimSession` only gets information about the CIM sessions that exist in the current PowerShell session.
+By default, Get-CimSession only gets information about the CIM sessions that exist in the current PowerShell session.
 Get-CimSession does not get CIM sessions that were created in other PowerShell sessions or that were created on other computers.
 
 ```powershell
-New-CimSession -ComputerName Server01,Server02
+PS C:\> New-CimSession -ComputerName Server01,Server02
 
-Get-CimSession
-```
+PS C:\> Get-CimSession
 
-```Output
 Id           : 1
 Name         : CimSession1
 InstanceId   : d1413bc3-162a-4cb8-9aec-4d2c61253d59
@@ -70,15 +65,13 @@ ComputerName : Server02
 Protocol     : WSMAN
 ```
 
-This command first creates CIM sessions by using [`New-CimSession`](New-CimSession.md), and then gets the CIM sessions by using `Get-CimSession`.
+This command first creates CIM sessions by using New-CimSession, and then gets the CIM sessions by using Get-CimSession.
 
 ### Example 2: Get the CIM sessions to a specific computer
 
 ```powershell
-Get-CimSession -ComputerName Server02
-```
+PS C:\> Get-CimSession -ComputerName Server02
 
-```Output
 Id           : 2
 Name         : CimSession2
 InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
@@ -91,25 +84,21 @@ This command gets the CIM sessions that are connected to the computer named Serv
 ### Example 3: Get a list of CIM sessions and then format the list
 
 ```powershell
-Get-CimSession | Format-Table -Property ComputerName,InstanceId
-```
+PS C:\> Get-CimSession | Format-Table -Property ComputerName,InstanceId
 
-```Output
 ComputerName InstanceId
 ------------ ----------
 Server01     d1413bc3-162a-4cb8-9aec-4d2c61253d59
 Server02     c0095981-52c5-4e7f-a5bb-c4c680541710
 ```
 
-This command gets all of the CIM sessions in the current PowerShell session, and then formats the list in a table containing only the **ComputerName** and **InstanceID** properties.
+This command gets all of the CIM sessions in the current PowerShell session, and then formats the list in a table containing only the ComputerName and InstanceID parameters.
 
 ### Example 4: Get all the CIM sessions that have specific names
 
 ```powershell
-Get-CimSession -ComputerName Serv*
-```
+PS C:\> Get-CimSession -ComputerName Serv*
 
-```Output
 Id           : 1
 Name         : CimSession1
 InstanceId   : d1413bc-162a-4cb8-9aec-4d2c61253d59
@@ -128,10 +117,8 @@ This command gets all of the CIM sessions that have names that begin with the ch
 ### Example 5: Get a specific CIM session
 
 ```powershell
-Get-CimSession -ID 2
-```
+PS C:\> Get-CimSession -ID 2
 
-```Output
 Id           : 2
 Name         : CimSession2
 InstanceId   : c0095981-52c5-4e7f-a5bb-c4c680541710
@@ -145,10 +132,8 @@ This command gets the CIM session that has an ID of 2.
 
 ### -ComputerName
 
-Specifies an array of names of computers.
-Gets the CIM sessions that connect to the specified computers.
-
-You can specify a fully qualified domain name (FQDN) or a NetBIOS name.
+Specifies the name of the computer to get CIM sessions connected to.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -206,7 +191,6 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-
 Gets one or more CIM sessions which contain the specified friendly names.
 Wildcard characters are permitted.
 
@@ -243,5 +227,3 @@ For more information, see about_CommonParameters (http://go.microsoft.com/fwlink
 [New-CimSession](New-CimSession.md)
 
 [Remove-CimSession](remove-cimsession.md)
-
-[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)

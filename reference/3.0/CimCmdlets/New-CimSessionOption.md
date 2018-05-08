@@ -1,9 +1,8 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # New-CimSessionOption
@@ -79,14 +78,14 @@ However, the default culture can be overridden using the Culture parameter.
 Specifies the user interface culture to use for the CIM session.
 Specify the value for this parameter using one of the following formats:
 
-Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US".
+Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US". 
 
 
+                        
+A variable that contains a CultureInfo object. 
 
-A variable that contains a CultureInfo object.
 
-
-
+                        
 A command that gets a CultureInfo object, such as Get-Culture.
 For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
 
@@ -156,7 +155,7 @@ Accept wildcard characters: False
 ### -Impersonation
 Creates a DCOM session to Windows Management Instrumentation (WMI) using impersonation.
 
-Valid values for this parameter are:
+Valid values for this parameter are: 
 
 - Default: DCOM can choose the impersonation level using its normal security negotiation algorithm. 
 - None: The client is anonymous to the server.

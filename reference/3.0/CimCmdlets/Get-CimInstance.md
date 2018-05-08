@@ -1,9 +1,8 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # Get-CimInstance
@@ -69,14 +68,14 @@ You can specify either the class name or a query for this cmdlet.
 
 This cmdlet returns one or more CIM instance objects representing a snapshot of the CIM instances present on the CIM server.
 
-If the InputObject parameter is not specified, the cmdlet works in one of the following ways:
+If the InputObject parameter is not specified, the cmdlet works in one of the following ways: 
 
---If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session.
+--If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session. 
 --If either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet works against the CIM server specified by either the ComputerName parameter or the CimSession parameter.
 
-If the InputObject parameter is specified, the cmdlet works in one of the following ways:
+If the InputObject parameter is specified, the cmdlet works in one of the following ways: 
 
---If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet uses the CIM session or computer name from the input object.
+--If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet uses the CIM session or computer name from the input object. 
 --If the either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet uses the either the CimSession parameter value or ComputerName parameter value.
 Note: This is not very common.
 
@@ -188,7 +187,7 @@ For more information, see about_CimSessions.
 
 ```yaml
 Type: CimSession[]
-Parameter Sets: ResourceUriSessionSet, QuerySessionSet, ClassNameSessionSet, CimInstanceSessionSet
+Parameter Sets: CimInstanceSessionSet, ResourceUriSessionSet, QuerySessionSet, ClassNameSessionSet
 Aliases:
 
 Required: True
@@ -200,7 +199,7 @@ Accept wildcard characters: False
 
 ### -ClassName
 Specifies the name of the CIM class for which to retrieve the CIM instances. 
-NOTE: You can use tab completion to browse the list of classes, because PowerShell gets a list of classes from the local WMI server to provide a list of class names.
+NOTE: You can use tab completion to browse the list of classes, because Windows PowerShell gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
 Type: String
@@ -309,7 +308,7 @@ Accept wildcard characters: False
 Specifies the namespace of CIM class.
 
 The default namespace is root/cimv2. 
-NOTE: You can use tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
+NOTE: You can use tab completion to browse the list of namespaces, because Windows PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
@@ -411,7 +410,7 @@ Specifies the resource uniform resource identifier (URI) of the resource class o
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
-For example:
+For example: 
 
 http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
 http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
@@ -425,13 +424,25 @@ If both the ResourceUri parameter and the Filter parameter are specified, the Fi
 
 ```yaml
 Type: Uri
+Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: Uri
 Parameter Sets: ResourceUriSessionSet, ResourceUriComputerSet
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -443,19 +454,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Uri
-Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

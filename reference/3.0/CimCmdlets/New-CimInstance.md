@@ -1,9 +1,8 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # New-CimInstance
@@ -39,16 +38,16 @@ New-CimInstance -ResourceUri <Uri> [-Key <String[]>] [[-Property] <IDictionary>]
  [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CimClassSessionSet
-```
-New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
- -CimSession <CimSession[]> [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
 ### CimClassComputerSet
 ```
 New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
  [-ComputerName <String[]>] [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CimClassSessionSet
+```
+New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
+ -CimSession <CimSession[]> [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -127,7 +126,7 @@ Using this parameter results in better client side schema validations.
 
 ```yaml
 Type: CimClass
-Parameter Sets: CimClassSessionSet, CimClassComputerSet
+Parameter Sets: CimClassComputerSet, CimClassSessionSet
 Aliases:
 
 Required: True
@@ -156,7 +155,7 @@ Accept wildcard characters: False
 
 ### -ClassName
 Specifies the name of the CIM class of which the operation creates an instance. 
-NOTE: You can use tab completion to browse the list of classes, because PowerShell gets a list of classes from the local WMI server to provide a list of class names.
+NOTE: You can use tab completion to browse the list of classes, because Windows PowerShell gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
 Type: String
@@ -176,7 +175,7 @@ You can use this parameter to create an in-memory CIM instance for use in subseq
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, CimClassSessionSet, CimClassComputerSet
+Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, CimClassComputerSet, CimClassSessionSet
 Aliases: Local
 
 Required: False
@@ -284,13 +283,13 @@ Specifies the resource uniform resource identifier (URI) of the resource class o
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
-For example:
+For example: 
 
 http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
 http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
 
 
-
+                        
 By default, if you do not specify this parameter, the DMTF standard resource URI http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/ is used and the class name is appended to it.
 
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying the ComputerName parameter, which creates a CIM session using WSMan.
