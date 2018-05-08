@@ -82,10 +82,7 @@ following keys. The value can be a combination of strings and hash tables.
 For example,
 
 ```powershell
-#Requires -Modules PSWorkflow @{
-  ModuleName="PSScheduledJob"
-  ModuleVersion="1.0.0.0"
-}
+#Requires -Modules PSWorkflow, @{ ModuleName="PSScheduledJob"; ModuleVersion="1.0.0.0" }
 ```
 
 -ShellId
