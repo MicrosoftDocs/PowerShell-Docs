@@ -1,9 +1,8 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # Register-CimIndicationEvent
@@ -27,18 +26,18 @@ Register-CimIndicationEvent [-Namespace <String>] [-ClassName] <String> [-Operat
  [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>] [<CommonParameters>]
 ```
 
-### QueryExpressionSessionSet
-```
-Register-CimIndicationEvent [-Namespace <String>] [-Query] <String> [-QueryDialect <String>]
- [-OperationTimeoutSec <UInt32>] -CimSession <CimSession> [[-SourceIdentifier] <String>]
- [[-Action] <ScriptBlock>] [-MessageData <PSObject>] [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>]
- [<CommonParameters>]
-```
-
 ### QueryExpressionComputerSet
 ```
 Register-CimIndicationEvent [-Namespace <String>] [-Query] <String> [-QueryDialect <String>]
  [-OperationTimeoutSec <UInt32>] [-ComputerName <String>] [[-SourceIdentifier] <String>]
+ [[-Action] <ScriptBlock>] [-MessageData <PSObject>] [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>]
+ [<CommonParameters>]
+```
+
+### QueryExpressionSessionSet
+```
+Register-CimIndicationEvent [-Namespace <String>] [-Query] <String> [-QueryDialect <String>]
+ [-OperationTimeoutSec <UInt32>] -CimSession <CimSession> [[-SourceIdentifier] <String>]
  [[-Action] <ScriptBlock>] [-MessageData <PSObject>] [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>]
  [<CommonParameters>]
 ```
@@ -275,7 +274,7 @@ If the value specified uses the WQL LIKE operator, then you must escape the foll
 
 ```yaml
 Type: String
-Parameter Sets: QueryExpressionSessionSet, QueryExpressionComputerSet
+Parameter Sets: QueryExpressionComputerSet, QueryExpressionSessionSet
 Aliases:
 
 Required: True
@@ -293,7 +292,7 @@ The default value is WQL.
 
 ```yaml
 Type: String
-Parameter Sets: QueryExpressionSessionSet, QueryExpressionComputerSet
+Parameter Sets: QueryExpressionComputerSet, QueryExpressionSessionSet
 Aliases:
 
 Required: False
