@@ -1,9 +1,8 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # Set-CimInstance
@@ -19,17 +18,16 @@ Set-CimInstance [-ComputerName <String[]>] [-ResourceUri <Uri>] [-OperationTimeo
  [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+### CimInstanceSessionSet
+```
+Set-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
+ [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ### QuerySessionSet
 ```
 Set-CimInstance -CimSession <CimSession[]> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
  [-Query] <String> [-QueryDialect <String>] -Property <IDictionary> [-PassThru] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### CimInstanceSessionSet
-```
-Set-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -43,14 +41,14 @@ Set-CimInstance [-ComputerName <String[]>] [-Namespace <String>] [-OperationTime
 ## DESCRIPTION
 The Set-CimInstance cmdlet modifies a CIM instance on a CIM server.
 
-If the InputObject parameter is not specified, the cmdlet works in one of the following ways:
+If the InputObject parameter is not specified, the cmdlet works in one of the following ways: 
 
---If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session.
+--If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session. 
 --If either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet works against the CIM server specified by either the ComputerName parameter or the CimSession parameter.
 
-If the InputObject parameter is specified, the cmdlet works in one of the following ways:
+If the InputObject parameter is specified, the cmdlet works in one of the following ways: 
 
---If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet uses the CIM session or computer name from the input object.
+--If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet uses the CIM session or computer name from the input object. 
 --If the either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet uses the either the CimSession parameter value or ComputerName parameter value.
 Note: This is not very common.
 
@@ -136,7 +134,7 @@ Enter a computer name or a session object, such as the output of a New-CimSessio
 
 ```yaml
 Type: CimSession[]
-Parameter Sets: QuerySessionSet, CimInstanceSessionSet
+Parameter Sets: CimInstanceSessionSet, QuerySessionSet
 Aliases:
 
 Required: True
@@ -319,13 +317,13 @@ Specifies the resource uniform resource identifier (URI) of the resource class o
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
-For example:
+For example: 
 
  HYPERLINK "http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk" http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
  HYPERLINK "http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings" http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
 
 
-
+                        
 By default, if you do not specify this parameter, the DMTF standard resource URI http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/ is used and the class name is appended to it.
 
 ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying the ComputerName parameter, which creates a CIM session using WSMan.

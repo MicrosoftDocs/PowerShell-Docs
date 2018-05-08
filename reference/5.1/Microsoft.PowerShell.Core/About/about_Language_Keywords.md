@@ -303,7 +303,7 @@ Syntax:
 
 ```powershell
 try {<statement list>}
-catch [<error type] {<statement list>}
+catch [<error type>] {<statement list>}
 finally {<statement list>}
 ```
 
@@ -542,7 +542,7 @@ Syntax:
 
 ```powershell
 try {<statement list>}
-catch [[<error type]] {<statement list>}
+catch [[<error type>]] {<statement list>}
 finally {<statement list>}
 ```
 
