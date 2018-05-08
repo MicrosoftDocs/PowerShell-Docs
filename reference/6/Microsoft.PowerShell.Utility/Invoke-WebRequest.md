@@ -192,6 +192,7 @@ Allows sending of credentials and secrets over unencrypted connections. By defau
 
 > **Warning**: Using this parameter is not secure and is not recommended. It is provided only for compatibility with legacy systems that cannot provide encrypted connections. Use at your own risk.
 
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: SwitchParameter
@@ -217,6 +218,7 @@ Available Authentication Options:
 
 Supplying **-Authentication** will override any `Authorization` headers supplied to **-Headers** or included in **-WebSession**.
 
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: WebAuthenticationType
@@ -241,7 +243,7 @@ The **-Body** parameter can be used to specify a list of query parameters or spe
 When the input is a GET request and the body is an `IDictionary` (typically, a hash table), the body is added to the URI as query parameters.
 For other request types (such as POST), the body is set as the value of the request body in the standard name=value format.
 
-The **-Body** parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for **-Body**, any Content related headers supplied to the **-ContentType**, **-Headers**, or **-WebSession** parameters will be overridden by the Content headers of the `MultipartFormDataContent` object.
+The **-Body** parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for **-Body**, any Content related headers supplied to the **-ContentType**, **-Headers**, or **-WebSession** parameters will be overridden by the Content headers of the `MultipartFormDataContent` object. This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: Object
@@ -261,8 +263,6 @@ Enter a variable that contains a certificate or a command or expression that get
 
 To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate (`Cert:`) drive.
 If the certificate is not valid or does not have sufficient authority, the command fails.
-
-> **Note**: This feature may not work on OS platforms where `libcurl` is configured with a TLS provider other than OpenSSL.
 
 ```yaml
 Type: X509Certificate
@@ -350,6 +350,8 @@ Invoke-WebRequest -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'
 ```
 
 This makes a `TEST` HTTP request to the API.
+
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: String
@@ -526,6 +528,8 @@ Indicates that the cmdlet will not use a proxy to reach the destination.
 
 When you need to bypass the proxy configured in the environment, use this switch.
 
+This feature was added in PowerShell 6.0.0.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: StandardMethodNoProxy, CustomMethodNoProxy
@@ -578,6 +582,8 @@ Accept wildcard characters: False
 Indicates the cmdlet should preserve the `Authorization` header, when present, across redirections.
 
 By default, the cmdlet strips the `Authorization` header before redirecting. Specifying this parameter disables this logic for cases where the header needs to be sent to the redirection location.
+
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: SwitchParameter
@@ -721,6 +727,8 @@ Skips certificate validation checks. This includes all validations such as expir
 
 > **Warning**: Using this parameter is not secure and is not recommended. This switch is only intended to be used against known hosts using a self-signed certificate for testing purposes. Use at your own risk.
 
+This feature was added in PowerShell 6.0.0.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -740,6 +748,8 @@ This switch should be used for sites that require header values that do not conf
 
 This will disable validation for values passed to the **-ContentType**, **-Headers** and **-UserAgent** parameters.
 
+This feature was added in PowerShell 6.0.0.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -757,7 +767,9 @@ Sets the SSL/TLS protocols that are permissible for the web request. By default 
 
 **-SslProtocol** uses the `WebSslProtocol` Flag Enum. It is possible to supply more than one protocol using flag notation or combining multiple `WebSslProtocol` options with `-bor`, however supplying multiple protocols is not supported on all platforms.
 
-> **Note**: This feature may not work on OS platforms where `libcurl` is configured with a TLS provider other than OpenSSL.
+> **Note**: On non-Windows platforms it may not be possible to supply `'Tls, Tls12'` as an option.
+
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: WebSslProtocol
@@ -800,6 +812,8 @@ The OAuth or Bearer token to include in the request. **-Token** is required by c
 ```powershell
 Invoke-WebRequest -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)
 ```
+
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: SecureString
@@ -954,8 +968,6 @@ You can pipe the body of a web request to `Invoke-WebRequest`.
 ### Microsoft.PowerShell.Commands.BasicHtmlWebResponseObject
 
 ## NOTES
-
-Some features may not be available on all platforms.
 
 Beginning with PowerShell 6.0.0 `Invoke-WebRequest` supports basic parsing only.
 
