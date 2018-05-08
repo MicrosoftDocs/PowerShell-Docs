@@ -225,9 +225,9 @@ In general, before you connect and as you are establishing the connection, the
 policies on the local computer are in effect. When you are using the
 connection, the policies on the remote computer are in effect.
 
-## Basic Authentication Limitations on Linux and macOs
+## Basic Authentication Limitations on Linux and macOS
 
-When connecting from a Linux or macOs system to Windows, Basic Authentication
+When connecting from a Linux or macOS system to Windows, Basic Authentication
 over HTTP is not supported. Basic Authentication can be used over HTTPS by
 installing a certificate on the target server. The certificate must have a
 CN name that matches the hostname, is not expired or revoked. A self-signed
@@ -237,14 +237,17 @@ See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/en-us/help
 for additonal details.
 
 The following command, run from an elevated command prompt, will configure the
-HTTPS listener with the installed certificate.
+HTTPS listener on Windows with the installed certificate.
 
 ```powershell
 $hostinfo = '@{Hostname="<DNS_NAME>"; CertificateThumbprint="<THUMBPRINT>"}'
 winrm create winrm/config/Listener?Address=*+Transport=HTTPS $hostinfo
 ```
 
-On the Linux or macOs side, select Basic for authentication and -UseSSl.
+On the Linux or macOS side, select Basic for authentication and -UseSSl.
+
+> NOTE: Basic authentication cannot be used with domain accounts; a local account
+is required and the account must be in the Administrators group.
 
 ```powershell
 # The specified local user must have administrator rights on the target machine.
