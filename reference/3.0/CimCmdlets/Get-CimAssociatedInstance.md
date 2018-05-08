@@ -1,9 +1,8 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Module Name: CimCmdlets
+online version:
+schema: 2.0.0
 ---
 
 # Get-CimAssociatedInstance
@@ -32,9 +31,9 @@ The Get-CimAssociatedInstance cmdlet retrieves the CIM instances connected to a 
 
 In an association, each CIM instance has a named role and the same CIM instance can participate in an association in different roles.
 
-If the InputObject parameter is not specified, the cmdlet works in one of the following ways:
+If the InputObject parameter is not specified, the cmdlet works in one of the following ways: 
 
---If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session.
+--If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session. 
 --If either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet works against the CIM server specified by either the ComputerName parameter or the CimSession parameter.
 
 ## EXAMPLES
@@ -190,7 +189,7 @@ Accept wildcard characters: False
 Specifies the namespace for the CIM operation.
 
 The default namespace is root/cimv2.
-NOTE: You can use tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
+NOTE: You can use tab completion to browse the list of namespaces, because Windows PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
