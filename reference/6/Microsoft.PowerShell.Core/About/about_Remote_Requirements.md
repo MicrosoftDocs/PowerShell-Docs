@@ -225,6 +225,58 @@ In general, before you connect and as you are establishing the connection, the
 policies on the local computer are in effect. When you are using the
 connection, the policies on the remote computer are in effect.
 
+## Basic Authentication Limitations on Linux and macOS
+
+When connecting from a Linux or macOS system to Windows, Basic Authentication
+over HTTP is not supported. Basic Authentication can be used over HTTPS by
+installing a certificate on the target server. The certificate must have a
+CN name that matches the hostname, is not expired or revoked. A self-signed
+certificate may be used for testing purposes.
+
+See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/en-us/help/2019527/how-to-configure-winrm-for-https)
+for additonal details.
+
+The following command, run from an elevated command prompt, will configure the
+HTTPS listener on Windows with the installed certificate.
+
+```powershell
+$hostinfo = '@{Hostname="<DNS_NAME>"; CertificateThumbprint="<THUMBPRINT>"}'
+winrm create winrm/config/Listener?Address=*+Transport=HTTPS $hostinfo
+```
+
+On the Linux or macOS side, select Basic for authentication and -UseSSl.
+
+> NOTE: Basic authentication cannot be used with domain accounts; a local account
+is required and the account must be in the Administrators group.
+
+```powershell
+# The specified local user must have administrator rights on the target machine.
+# Specify the unqualified username.
+$cred = Get-Credential username
+$session = New-PSSession -Computer <hostname> -Credential $cred `
+  -Authentication Basic -UseSSL
+```
+
+An alternative to Basic Authentication over HTTPS is Negotiate. This results
+in NTLM authentication between the client and server and payload is encrypted
+over HTTP.
+
+The following illustrates using Negotiate with New-PSSession:
+```powershell
+# The specified user must have administrator rights on the target machine.
+$cred = Get-Credential username@hostname
+$session = New-PSSession -Computer <hostname> -Credential $cred `
+  -Authentication Negotiate
+```
+
+> [!NOTE]
+> Windows Server requires an additional registry setting to enable
+> administrators, other than the built in administrator, to connect using NTLM.
+> Refer to the LocalAccountTokenFilterPolicy registry setting under Negotiate
+> Authentication in
+> [Authentication for Remote Connections](https://msdn.microsoft.com/en-us/library/aa384295(v=vs.85).aspx)
+
+
 # SEE ALSO
 
 [about_Remote](about_Remote.md)
