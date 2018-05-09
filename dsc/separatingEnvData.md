@@ -91,7 +91,7 @@ file to specify the data for the two different environments.
 
  ### Configuration data file
 
-We'll define the development and production environment data in a file namd `DevProdEnvData.psd1` as follows:
+We'll define the development and production environment data in a file named `DevProdEnvData.psd1` as follows:
 
 ```powershell
 @{
