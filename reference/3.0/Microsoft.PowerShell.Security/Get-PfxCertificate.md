@@ -117,8 +117,6 @@ Get-PfxCertificate returns an object for each certificate that it gets.
 
 - When using the Invoke-Command cmdlet to run a Get-PfxCertificate command remotely, and the .pfx certificate file is not password protected, the value of the Authentication parameter of Invoke-Command must be "CredSSP".
 
-
-
 ## RELATED LINKS
 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)

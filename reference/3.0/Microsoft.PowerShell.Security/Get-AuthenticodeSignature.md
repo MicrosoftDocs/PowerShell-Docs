@@ -128,8 +128,6 @@ Get-AuthenticodeSignature returns a signature object for each signature that it 
 
 - For information about Authenticode signatures in Windows PowerShell, see about_Signing.
 
-
-
 ## RELATED LINKS
 
 [Get-ExecutionPolicy](Get-ExecutionPolicy.md)
