@@ -13,7 +13,7 @@ to having a version beginning with 0. The goal of these features is to provide g
 [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking
 backwards compatibility with PowerShell versions 3 and above, or existing versions of
 PowerShellGet. This topic focuses on the script-specific features. The equivalent features for
-modules are in the [Prerelease Module Versions](define-prerelease-module.md) topic. Using these
+modules are in the [Prerelease Module Versions](module-prerelease-support.md) topic. Using these
 features, publishers can identify a script as version 2.5.0-alpha, and later release a
 production-ready version 2.5.0 that supersedes the prerelease version.
 
@@ -171,7 +171,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
 
 ## More details
 
-- [Prerelease Module Versions](define-prerelease-module.md)
+- [Prerelease Module Versions](module-prerelease-support.md)
 - [Find-script](/powershell/module/powershellget/find-script)
 - [Install-script](/powershell/module/powershellget/install-script)
 - [Save-script](/powershell/module/powershellget/save-script)
