@@ -105,17 +105,21 @@ If it does not, you will need to add an include statement manually.
 
 * Ensure attributes and permissions are set appropriately
 
-```
--rw-r--r-- 1 root root   67 Nov 28 12:51 40-powershell.conf
-```
+  ```
+  -rw-r--r-- 1 root root   67 Nov 28 12:51 40-powershell.conf
+  ```
+
 - Set ownership to root
-```
-chown root:root /etc/rsyslog.d/40-powershell.conf
-```
+
+  ```
+  chown root:root /etc/rsyslog.d/40-powershell.conf
+  ```
+
 - Set access permissions - root has read/write, users have read.
-```
-chmod 644 /etc/rsyslog.d/40-powershell.conf
-```
+
+  ```
+  chmod 644 /etc/rsyslog.d/40-powershell.conf
+  ```
 
 ## Viewing PowerShell log output on macOS
 
@@ -146,29 +150,40 @@ sudo log stream --predicate 'process == "pwsh"' --info
 
 ### Persisting PowerShell log output
 
-By default, PowerShell uses the default memory-only logging on macOS. This can be changed to enable persistance using the `log config` command.
+By default, PowerShell uses the default memory-only logging on macOS. This can
+be changed to enable persistance using the `log config` command.
 
 The following enables info level logging and persistence
+
 ```
 log config --subsystem com.microsoft.powershell --mode=persist:info,level:info
 ```
 
 The following command reverts PowerShell logging to the default state
+
 ```
 log config --subsystem com.microsoft.powershell --mode=persist:default,level:default
 ```
 
-Once persistence is enabled, the `log show` command can be used to export log items. The command provides options for exporting the last N items, items since a given time, or items within a given time span.
+Once persistence is enabled, the `log show` command can be used to export log
+items. The command provides options for exporting the last N items, items
+since a given time, or items within a given time span.
 
 For example, the following command exports items since 9am on April 5th of 2018:
+
 ```
 log show --info --start "2018-04-05 09:00:00" --predicate "process = 'pwsh'"
 ```
+
 See ```log show --help``` for additional details.
 
-> TIP: When executing any of the log commands from a PowerShell prompt or script, use double quotes around the entire predicate string and single quotes within. This avoids the need to escape double quote characters within the predicate string.
+> [!TIP]
+> When executing any of the log commands from a PowerShell prompt or
+> script, use double quotes around the entire predicate string and single
+> quotes within. This avoids the need to escape double quote characters within
+> the predicate string.
 
-## Configuring Logging on non-Windows systems
+## Configuring Logging on non-Windows system
 
 On Windows, logging is configured by creating ETW trace listeners or by using
 the Event Viewer to enable Analytic logging. On Linux and macOS, logging is
@@ -188,10 +203,53 @@ can be useful for diagnosis or for distinguishing between multiple PowerShell
 versions on the same system or even multiple copies of the same version
 (See LogIdentity in the table below).
 
+Here is an example configuration:
+
+```json
+{
+  "Microsoft.PowerShell:ExecutionPolicy": "RemoteSigned",
+  "PowerShellPolicies": {
+    "ScriptExecution": {
+      "ExecutionPolicy": "RemoteSigned",
+      "EnableScripts": true
+    },
+    "ScriptBlockLogging": {
+      "EnableScriptBlockInvocationLogging": true,
+      "EnableScriptBlockLogging": true
+    },
+    "ModuleLogging": {
+      "EnableModuleLogging": false,
+      "ModuleNames": [
+        "PSReadline",
+        "PowerShellGet"
+      ]
+    },
+    "ProtectedEventLogging": {
+      "EnableProtectedEventLogging": false,
+      "EncryptionCertificate": [
+        "Joe"
+      ]
+    },
+    "Transcription": {
+      "EnableTranscripting": true,
+      "EnableInvocationHeader": true,
+      "OutputDirectory": "F:\\tmp\\new"
+    },
+    "UpdatableHelp": {
+      "DefaultSourcePath": "f:\\temp"
+    },
+    "ConsoleSessionConfiguration": {
+      "EnableConsoleSessionConfiguration": false,
+      "ConsoleSessionConfigurationName": "name"
+    }
+  },
+  "LogLevel": "verbose"
+}
+```
+
 The properties for configuring PowerShell logging are listed in the following
-table.
-Values marked with an asterick, such as `Operational*`, indicate the default
-value when no value is provided in the file.
+table. Values marked with an asterisk, such as `Operational*`, indicate the
+default value when no value is provided in the file.
 
 |Property   |Values        |Description                                  |
 |-----------|--------------|---------------------------------------------|
@@ -222,6 +280,7 @@ value when no value is provided in the file.
 |           |ManagedPlugin |                                             |
 
 ## SEE ALSO
+
 - syslog and rsyslog.conf man pages.
 - os_log developer documentation
 - Event Viewer
