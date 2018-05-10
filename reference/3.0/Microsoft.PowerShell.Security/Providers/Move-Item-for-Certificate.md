@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Move-Item for Certificate
 ---
-
 # Move-Item for Certificate
+
 Moves certificates from one certificate store to another certificate store.
 
 ## Syntax
@@ -17,6 +17,7 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 ```
 
 ## Description
+
  In the Cert: drive, [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md) moves certificates from one certificate store to another certificate store. The Windows PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.
 
  Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer (SSL) certificates for web hosting by enabling you to use the [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md) cmdlet to move certificates between certificate stores.  You cannot use this feature to move a certificate to a different certificate store location, such as a move from LocalMachine to CurrentUser, or to move certificate stores. Also, [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md) does not move private keys.
@@ -26,6 +27,7 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 ## Parameters
 
 ### -Destination <string\>
+
  Specifies the path to the location where the items are being moved. The default is the current certificate store. Wildcards
 
  are permitted, but the result must specify a single location.
@@ -41,6 +43,7 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 |Accept Wildcard Characters?|false|
 
 ### -Path <string[]>
+
  Specifies the path to the original location of the certificate.  Wildcards are permitted.
 
 |||
@@ -52,6 +55,7 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 |Accept Wildcard Characters?|false|
 
 ### -Confirm
+
  Prompts you for confirmation before executing the command.
 
 |||
@@ -63,6 +67,7 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 |Accept Wildcard Characters?|false|
 
 ### -WhatIf
+
  Describes what would happen if you executed the command without actually executing the command.
 
 |||
@@ -74,9 +79,11 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 |Accept Wildcard Characters?|false|
 
 ### <CommonParameters\>
+
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable,  -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## Inputs and Outputs
+
  The input type is the type of the objects that you can pipe to the cmdlet. The return type is the type of the objects that the cmdlet returns.
 
 |||
@@ -85,12 +92,13 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 |Outputs|None<br /><br /> This cmdlet does not generate any output.|
 
 ## Notes
+
  -- Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the Cert: drive is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md) Cert:" command.
 
 ## Example 1
 
 ```
-C:\PS>Move-Item -Path cert:\LocalMachine\My\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0 -Destination cert:\LocalMachine\WebHosting
+PS> Move-Item -Path cert:\LocalMachine\My\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0 -Destination cert:\LocalMachine\WebHosting
 
 Description
 -----------
@@ -103,7 +111,7 @@ Because the command uses absolute paths, you can run it from any Windows PowerSh
 ## Example 2
 
 ```
-C:\PS>Get-ChildItem -Path cert:\LocalMachine\My -EKU "Server Authentication" | Move-Item -Destination cert:\LocalMachine\WebHosting
+PS> Get-ChildItem -Path cert:\LocalMachine\My -EKU "Server Authentication" | Move-Item -Destination cert:\LocalMachine\WebHosting
 
 Description
 -----------
@@ -114,6 +122,7 @@ It uses a pipeline operator to send the certificates to the Move-Item cmdlet, wh
 ```
 
 ## See Also
+
  [Certificate Provider](Certificate-Provider.md)
  [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
  [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
