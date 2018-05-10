@@ -1,14 +1,13 @@
 {
   "build_entry_point": "docs",
-  "need_generate_pdf": false,
-  "need_generate_intellisense": false,
   "docsets_to_publish": [
     {
-      "docset_name": "PowerShell_PowerShell-docs_dsc",
-      "build_source_folder": "dsc",
-      "build_output_subfolder": "dsc",
+      "docset_name": "developer-docs",
+      "build_source_folder": "developer",
+      "build_output_subfolder": "developer-docs",
       "locale": "en-us",
-      "version": 0,
+      "monikers": [],
+      "moniker_ranges": [],
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -17,13 +16,27 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
+    },
+    {
+      "docset_name": "PowerShell_PowerShell-docs_dsc",
+      "build_source_folder": "dsc",
+      "build_output_subfolder": "dsc",
+      "locale": "en-us",
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes",
+      "version": 0
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_gallery",
       "build_source_folder": "gallery",
       "build_output_subfolder": "gallery",
       "locale": "en-us",
-      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -31,14 +44,14 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "version": 0
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_jea",
       "build_source_folder": "jea",
       "build_output_subfolder": "jea",
       "locale": "en-us",
-      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -46,14 +59,14 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "version": 0
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_reference",
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
       "locale": "en-us",
-      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -63,7 +76,8 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes",
-       "customized_template_paths": [
+      "version": 0,
+      "customized_template_paths": [
         "_dependentPackages/azurecli.plugins/azurecli"
       ],
       "customized_tasks": {
@@ -80,7 +94,6 @@
       "build_source_folder": "wmf",
       "build_output_subfolder": "wmf",
       "locale": "en-us",
-      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -88,22 +101,28 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "version": 0
     }
   ],
   "notification_subscribers": [],
   "branches_to_filter": [],
-  "need_preview_pull_request": false,
   "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
   "git_repository_branch_open_to_public_contributors": "staging",
   "skip_source_output_uploading": false,
-  "dependent_repositories": [{
+  "need_preview_pull_request": false,
+  "dependent_repositories": [
+    {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
       "branch": "master",
       "branch_mapping": {}
-    } ],
-    "dependent_packages": [
+    }
+  ],
+  "need_generate_pdf_url_template": false,
+  "need_generate_pdf": false,
+  "need_generate_intellisense": false,
+  "dependent_packages": [
     {
       "path_to_root": "_dependentPackages/azurecli.plugins",
       "id": "opbuild.templates.azurecli",
