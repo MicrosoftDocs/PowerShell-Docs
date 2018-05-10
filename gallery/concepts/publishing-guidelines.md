@@ -94,7 +94,7 @@ There are two feedback methods available in the PowerShell Gallery:
 - Comments: At the bottom of the item page is a Comment field.
   The advantage to this system is that other users can see the comments and responses, which reduces the number of times any single question must be answered.
   As an item owner, it is strongly recommended that you Follow the comments made for each item.
-See [Providing Feedback via Social Media or Comments](../working-with-items/social-media-feedback.md) for details on how to do that.
+See [Providing Feedback via Social Media or Comments](../how-to/working-with-items/social-media-feedback.md) for details on how to do that.
 
 Owners who respond to feedback constructively are appreciated by the community.
 Use the opportunity in the report to request more information if needed, provide a workaround, or identify if an update fixes a problem.

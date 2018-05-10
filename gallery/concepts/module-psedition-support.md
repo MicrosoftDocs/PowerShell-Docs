@@ -243,8 +243,6 @@ Find-Module -Tag PSEdition_Core
 
 ## More details
 
-### [Scripts with PSEditions](write-script-with-pseditionsupport.md)
-
-### [PSEditions support on PowerShellGallery](../how-to/finding-items/pseditions.md)
-
-### [Update module manifest] (/powershell/module/powershellget/update-modulemanifest)
+- [Scripts with PSEditions](script-psedition-support.md)
+- [PSEditions support on PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
+- [Update module manifest] (/powershell/module/powershellget/update-modulemanifest)

@@ -7,25 +7,35 @@ title:  Prerelease versions of scripts
 ---
 # Prerelease versions of scripts
 
-Starting with version 1.6.0, PowerShellGet and the PowerShell Gallery provide support for tagging versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease items were limited to having a version beginning with 0. The goal of these features is to provide greater support for [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking backwards compatibility with PowerShell versions 3 and above, or existing versions of PowerShellGet.
-This topic focuses on the script-specific features. The equivalent features for modules are in the [Prerelease Module Versions](define-prereleasemodule.md) topic. Using these features, publishers can identify a script as version 2.5.0-alpha, and later release a production-ready version 2.5.0 that supersedes the prerelease version.
+Starting with version 1.6.0, PowerShellGet and the PowerShell Gallery provide support for tagging
+versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease items were limited
+to having a version beginning with 0. The goal of these features is to provide greater support for
+[SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking
+backwards compatibility with PowerShell versions 3 and above, or existing versions of
+PowerShellGet. This topic focuses on the script-specific features. The equivalent features for
+modules are in the [Prerelease Module Versions](define-prerelease-module.md) topic. Using these
+features, publishers can identify a script as version 2.5.0-alpha, and later release a
+production-ready version 2.5.0 that supersedes the prerelease version.
 
 At a high level, the prerelease script features include:
 
-- Adding a PrereleaseString suffix to the version string in the script manifest.
-When the scripts is published to the PowerShell Gallery, this data is extracted from the manifest, and used to identify prerelease items.
-- Acquiring prerelease items requires adding -AllowPrerelease flag to the PowerShellGet commands Find-Script, Install-Script, Update-Script, and Save-Script.
-If the flag is not specified, prerelease items will not be shown.
-- Script versions displayed by Find-Script, Get-InstalledScript, and in the PowerShell Gallery will be displayed with the PrereleaseString, as in 2.5.0-alpha.
+- Adding a PrereleaseString suffix to the version string in the script manifest. When the scripts
+  is published to the PowerShell Gallery, this data is extracted from the manifest, and used to
+  identify prerelease items.
+- Acquiring prerelease items requires adding -AllowPrerelease flag to the PowerShellGet commands
+  Find-Script, Install-Script, Update-Script, and Save-Script. If the flag is not specified,
+  prerelease items will not be shown.
+- Script versions displayed by Find-Script, Get-InstalledScript, and in the PowerShell Gallery will
+  be displayed with the PrereleaseString, as in 2.5.0-alpha.
 
 Details for the features are included below.
 
-
 ## Identifying a script version as a prerelease
 
-PowerShellGet support for prerelease versions is easier for scripts than modules.
-Script versioning is only supported by PowerShellGet, so there are no compatibility issues caused by adding the prerelease string.
-To identify a script in the PowerShell Gallery as a prerelease, add a prerelease suffix to a properly-formatted version string in the script metadata.
+PowerShellGet support for prerelease versions is easier for scripts than modules. Script versioning
+is only supported by PowerShellGet, so there are no compatibility issues caused by adding the
+prerelease string. To identify a script in the PowerShell Gallery as a prerelease, add a prerelease
+suffix to a properly-formatted version string in the script metadata.
 
 An example section of a script manifest with a prerelease version would look like the following:
 
@@ -44,36 +54,51 @@ An example section of a script manifest with a prerelease version would look lik
 
 To use a prerelease suffix, the version string must meet the following requirements:
 
-- A prerelease suffix may only be specified when the Version is 3 segments for Major.Minor.Build. This aligns with SemVer v1.0.0
-- The prerelease suffix is a string which begins with a hyphen, and may contain ASCII alphanumerics [0-9A-Za-z-]
-- Only SemVer v1.0.0 prerelease strings are supported at this time, so the prerelease suffix __must not__ contain either period or + [.+], which are allowed in SemVer 2.0
+- A prerelease suffix may only be specified when the Version is 3 segments for Major.Minor.Build.
+  This aligns with SemVer v1.0.0
+- The prerelease suffix is a string which begins with a hyphen, and may contain ASCII alphanumerics
+  [0-9A-Za-z-]
+- Only SemVer v1.0.0 prerelease strings are supported at this time, so the prerelease suffix
+  __must not__ contain either period or + [.+], which are allowed in SemVer 2.0
 - Examples of supported PrereleaseString strings are: -alpha, -alpha1, -BETA, -update20171020
 
 __Prerelease versioning impact on sort order and installation folders__
 
-Sort order changes when using a prerelease version, which is important when publishing to the PowerShell Gallery, and when installing scripts using PowerShellGet commands.
-If two scripts versions with the version number exist, the sort order is based on the string portion following the hyphen. So, version 2.5.0-alpha is less than 2.5.0-beta, which is less than 2.5.0-gamma.
-If two scripts have the same version number, and only one has a PrereleaseString, the script __without__ the prerelease suffix is assumed to be the production-ready version and will be sorted as a greater version than the prerelease version.
-As an example, when comparing releases 2.5.0 and 2.5.0-beta, the 2.5.0 version will be considered the greater of the two.
+Sort order changes when using a prerelease version, which is important when publishing to the
+PowerShell Gallery, and when installing scripts using PowerShellGet commands. If two scripts
+versions with the version number exist, the sort order is based on the string portion following the
+hyphen. So, version 2.5.0-alpha is less than 2.5.0-beta, which is less than 2.5.0-gamma. If two
+scripts have the same version number, and only one has a PrereleaseString, the script __without__
+the prerelease suffix is assumed to be the production-ready version and will be sorted as a greater
+version than the prerelease version. As an example, when comparing releases 2.5.0 and 2.5.0-beta,
+the 2.5.0 version will be considered the greater of the two.
 
-When publishing to the PowerShell Gallery, by default the version of the script being published must have a greater version than any previously-published version that is in the PowerShell Gallery.
-A publisher may update version 2.5.0-alpha with 2.5.0-beta, or with 2.5.0 (with no prerelease suffix).
+When publishing to the PowerShell Gallery, by default the version of the script being published
+must have a greater version than any previously-published version that is in the PowerShell
+Gallery. A publisher may update version 2.5.0-alpha with 2.5.0-beta, or with 2.5.0 (with no
+prerelease suffix).
 
 ## Finding and acquiring prerelease items using PowerShellGet commands
 
-Dealing with prerelease items using PowerShellGet Find-Script, Install-Script, Update-Script, and Save-Script commands requires adding the -AllowPrerelease flag.
-If -AllowPrerelease is specified, prerelease items will be included if they are present.
-If -AllowPrerelease flag is not specified, prerelease items will not be shown.
+Dealing with prerelease items using PowerShellGet Find-Script, Install-Script, Update-Script, and
+Save-Script commands requires adding the -AllowPrerelease flag. If -AllowPrerelease is specified,
+prerelease items will be included if they are present. If -AllowPrerelease flag is not specified,
+prerelease items will not be shown.
 
-The only exceptions to this in the PowerShellGet script commands are Get-InstalledScript, and some cases with Uninstall-Script.
+The only exceptions to this in the PowerShellGet script commands are Get-InstalledScript, and some
+cases with Uninstall-Script.
 
-- Get-InstalledScript always will automatically show the prerelease information in the version string if it is present.
-- Uninstall-Script will by default uninstall the most recent version of a script, if __no version__ is specified. That behavior has not changed. However, if a prerelease version is specified using -RequiredVersion, -AllowPrerelease will be required.
+- Get-InstalledScript always will automatically show the prerelease information in the version
+  string if it is present.
+- Uninstall-Script will by default uninstall the most recent version of a script, if __no version__
+  is specified. That behavior has not changed. However, if a prerelease version is specified using
+  -RequiredVersion, -AllowPrerelease will be required.
 
 ## Examples
 
 ```powershell
-# Assume the PowerShell Gallery has TestPackage versions 1.8.0 and 1.9.0-alpha. If -AllowPrerelease is not specified, only version 1.8.0 will be returned.
+# Assume the PowerShell Gallery has TestPackage versions 1.8.0 and 1.9.0-alpha.
+# If -AllowPrerelease is not specified, only version 1.8.0 will be returned.
 C:\windows\system32> Find-Script TestPackage
 
 Version        Name                                Repository           Description
@@ -142,22 +167,14 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : ObjectNotFound: (Microsoft.Power...lets.GetPackage:GetPackage) [Get-Package], Exception
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
-
-
 ```
 
 ## More details
 
-### [Prerelease Module Versions](define-prereleasemodule.md)
-
-### [Find-script](/powershell/module/powershellget/find-script)
-
-### [Install-script](/powershell/module/powershellget/install-script)
-
-### [Save-script](/powershell/module/powershellget/save-script)
-
-### [Update-script](/powershell/module/powershellget/update-script)
-
-### [Get-Installedscript](/powershell/module/powershellget/get-installedscript)
-
-### [UnInstall-script](/powershell/module/powershellget/uninstall-script)
+- [Prerelease Module Versions](define-prerelease-module.md)
+- [Find-script](/powershell/module/powershellget/find-script)
+- [Install-script](/powershell/module/powershellget/install-script)
+- [Save-script](/powershell/module/powershellget/save-script)
+- [Update-script](/powershell/module/powershellget/update-script)
+- [Get-Installedscript](/powershell/module/powershellget/get-installedscript)
+- [UnInstall-script](/powershell/module/powershellget/uninstall-script)
