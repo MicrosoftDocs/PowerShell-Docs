@@ -17,36 +17,38 @@ Creates a CIM instance.
 ```
 New-CimInstance [-ClassName] <String> [-Key <String[]>] [[-Property] <IDictionary>] [-Namespace <String>]
  [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-ClientOnly] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### ClassNameSessionSet
 ```
 New-CimInstance [-ClassName] <String> [-Key <String[]>] [[-Property] <IDictionary>] [-Namespace <String>]
  [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-ClientOnly] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### ResourceUriSessionSet
 ```
 New-CimInstance -ResourceUri <Uri> [-Key <String[]>] [[-Property] <IDictionary>] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-WhatIf] [-Confirm]
+ [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResourceUriComputerSet
 ```
 New-CimInstance -ResourceUri <Uri> [-Key <String[]>] [[-Property] <IDictionary>] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-WhatIf] [-Confirm]
+ [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassSessionSet
 ```
 New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
- -CimSession <CimSession[]> [-ClientOnly] [-WhatIf] [-Confirm]
+ -CimSession <CimSession[]> [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassComputerSet
 ```
 New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
- [-ComputerName <String[]>] [-ClientOnly] [-WhatIf] [-Confirm]
+ [-ComputerName <String[]>] [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,8 +155,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClassName
-Specifies the name of the CIM class of which the operation creates an instance.
-NOTE: You can use tab completion to browse the list of classes, because wps_2 gets a list of classes from the local WMI server to provide a list of class names.
+Specifies the name of the CIM class of which the operation creates an instance. 
+NOTE: You can use tab completion to browse the list of classes, because PowerShell gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
 Type: String
@@ -169,8 +171,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClientOnly
-Indicates that the instance is only created in wps_1 without going to the CIM server.
-You can use this parameter to create an in-memory CIM instance for use in subsequent wps_2 operations.
+Indicates that the instance is only created in PowerShell without going to the CIM server.
+You can use this parameter to create an in-memory CIM instance for use in subsequent Windows PowerShell operations.
 
 ```yaml
 Type: SwitchParameter
@@ -225,8 +227,8 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace of the class for the new instance.
 
-The default namespace is root/cimv2.
-NOTE: You can use tab completion to browse the list of namespaces, because wps_2 gets a list of namespaces from the local WMI server to provide the list of namespaces.
+The default namespace is root/cimv2. 
+NOTE: You can use tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
@@ -309,7 +311,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-psdx_confirmdesc
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -324,7 +326,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-psdx_whatifdesc
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -337,6 +340,10 @@ Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
