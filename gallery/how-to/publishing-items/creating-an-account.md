@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  Creating a PowerShell Gallery Account
+title:  Creating a PowerShell Gallery account
 ---
-## Creating a PowerShell Gallery Account
+## Creating a PowerShell Gallery account
 
 A PowerShell Gallery account must be established before publishing anything to the PowerShell Gallery.
 The PowerShell Gallery accounts must be linked to an Azure Active Directory email-enabled account, or a Microsoft email account (with a domain of outlook.com, hotmail.com, etc.)

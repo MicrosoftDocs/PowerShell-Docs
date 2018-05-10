@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  Creating and Publishing an item
+title:  Creating and publishing an item
 ---
-# Creating and Publishing an Item
+# Creating and publishing an item
 
 The PowerShell Gallery is the place to publish and share stable PowerShell modules, scripts,
 and DSC resources with the broader PowerShell user community.

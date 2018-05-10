@@ -2,9 +2,9 @@
 ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell
-title:  RequireLicenseAcceptanceScript
+title:  Requiring license acceptance for scripts
 ---
-# Requiring License Acceptance for Scripts
+# Requiring license acceptance for scripts
 
 License Acceptance is not supported for scripts. However, the scenario where a script depends on a module that requires license acceptance is supported.
 

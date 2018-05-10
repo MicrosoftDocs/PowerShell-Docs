@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  psgallery_contacting_administrators
+title:  Contact Gallery administrators
 ---
-# Contact Gallery Administrators
+# Contact Gallery administrators
 
 ## When to Contact Gallery Administrators
 

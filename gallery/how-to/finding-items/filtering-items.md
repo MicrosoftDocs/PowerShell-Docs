@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  psgallery_items_tab
+title:  Filtering search results
 ---
-# Items Tab
+# Filtering search results
 
 The [Items tab](https://www.powershellgallery.com/items) displays all available items in the PowerShell Gallery.
 

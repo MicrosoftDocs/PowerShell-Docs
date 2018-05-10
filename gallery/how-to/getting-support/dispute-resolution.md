@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  psgallery_dispute_resolution
+title:  Dispute resolution
 ---
-# Dispute Resolution
+# Dispute resolution
 
 This document is a recommended dispute resolution process for community members to help resolve disputes with other PowerShell Gallery publishers.
 

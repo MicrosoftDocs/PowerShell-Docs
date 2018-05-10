@@ -2,7 +2,7 @@
 ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell
-title:  RequireLicenseAcceptance
+title:  Modules Requiring License Acceptance
 ---
 # Modules Requiring License Acceptance
 

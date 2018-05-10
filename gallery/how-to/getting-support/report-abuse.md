@@ -3,8 +3,8 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  psgallery_report_abuse
+title:  Report abuse
 ---
-# Report Abuse
+# Report abuse
 
 If you find a item that is in violation of any of these items, click the **Report Abuse** link on the item details page and submit a report.

@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  psgallery_contacting_item_owners
+title:  Contacting item owners
 ---
-# Contacting Item Owners
+# Contacting item owners
 
 To contact owner of a particular item, navigate to the item detail page.
 There is a contact Owners link in the left menu bar.

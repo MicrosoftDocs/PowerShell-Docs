@@ -5,9 +5,9 @@ ms.date
 contributor:  manikb
 ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
-title:  Bootstrapping NuGet Provider and EXE
+title:  Bootstrapping NuGet
 ---
-# Bootstrap both NuGet provider and NuGet.exe or bootstrap only NuGet provider
+# Bootstrap the NuGet provider and NuGet.exe
 
 NuGet.exe is not included in the latest NuGet provider.
 For publish operations of either a module or script, PowerShellGet requires the binary executable NuGet.exe.

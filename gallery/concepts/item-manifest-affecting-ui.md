@@ -1,4 +1,9 @@
-﻿
+﻿---
+ms.date:  06/09/2017
+schema:  2.0.0
+keywords:  powershell
+title:  Item manifest values that impact the PowerShell Gallery UI
+---
 
 # Item manifest values that impact the PowerShell Gallery UI
 

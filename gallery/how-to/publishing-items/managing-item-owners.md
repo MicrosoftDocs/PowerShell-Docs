@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  Managing Item Owners
+title:  Managing item owners
 ---
-# Managing Item Owners
+# Managing item owners
 
 Ownership of an item in the PowerShell Gallery is defined by who published the item to the gallery.
 Sometimes this metadata needs to be managed beyond the initial item publishing, which means the owner metadata needs to be mutable while the item itself is not.

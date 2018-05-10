@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  psgallery_filelist_feature
+title:  FileList feature in the Gallery
 ---
-# FileList Feature in the Gallery
+# FileList feature in the Gallery
 
 You are able to view the contents in all items published in the gallery.
 

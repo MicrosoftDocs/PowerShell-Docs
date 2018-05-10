@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  Farehar
 ms.topic:  conceptual
 keywords:  gallery,powershell,psgallery
-title:  psgallery_require_license_acceptance
+title:  Require license acceptance
 ---
-# Require License Acceptance
+# Require license acceptance
 
 Require License Acceptance text shows up on item details page for modules that require license acceptance. License for module can be viewed by clicking on 'View License.txt' link.
 

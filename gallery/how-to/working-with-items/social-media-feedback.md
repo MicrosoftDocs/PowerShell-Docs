@@ -3,9 +3,9 @@ ms.date:  06/12/2017
 contributor:  JKeithB
 ms.topic:  conceptual
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  Providing Feedback via Social Media or Comments
+title:  Providing Feedback via social media or comments
 ---
-# Providing Feedback via Social Media or Comments
+# Providing Feedback via social media or comments
 
 The Powershell Gallery supports two approaches for users to provide public feedback on an item:
 
