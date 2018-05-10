@@ -10,8 +10,8 @@
       items:
         - name: Searching For Items
           href: how-to/finding-items/search-syntax.md
-        - name: Seaching by PSEdition
-          href: how-to/finding-items/seaching-by-psedition.md
+        - name: Searching by PSEdition
+          href: how-to/finding-items/searching-by-psedition.md
         - name: Filtering Search Results
           href: how-to/finding-items/filtering-items.md
     - name: Publishing to the Gallery
