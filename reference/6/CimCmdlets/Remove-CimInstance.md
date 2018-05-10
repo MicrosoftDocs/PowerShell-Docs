@@ -16,25 +16,25 @@ Removes a CIM instance from a computer.
 ### CimInstanceComputerSet (Default)
 ```
 Remove-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [-WhatIf] [-Confirm]
+ [-InputObject] <CimInstance> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimInstanceSessionSet
 ```
 Remove-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [-WhatIf] [-Confirm]
+ [-InputObject] <CimInstance> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### QuerySessionSet
 ```
 Remove-CimInstance -CimSession <CimSession[]> [[-Namespace] <String>] [-OperationTimeoutSec <UInt32>]
- [-Query] <String> [-QueryDialect <String>] [-WhatIf] [-Confirm]
+ [-Query] <String> [-QueryDialect <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### QueryComputerSet
 ```
 Remove-CimInstance [-ComputerName <String[]>] [[-Namespace] <String>] [-OperationTimeoutSec <UInt32>]
- [-Query] <String> [-QueryDialect <String>] [-WhatIf] [-Confirm]
+ [-Query] <String> [-QueryDialect <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,8 +144,8 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace for the CIM operation.
 
-The default namespace is root/cimv2.
-NOTE: You can use tab completion to browse the list of namespaces, because wps_2 gets a list of namespaces from the local WMI server to provide the list of namespaces.
+The default namespace is root/cimv2. 
+NOTE: You can use tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ### -QueryDialect
 Specifies the query language used for the Query parameter.
 
-psdx_paramvalues WQL or CQL.
+The acceptable values for this parameter are:  WQL or CQL.
 
 The default value is WQL.
 
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-psdx_confirmdesc
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -263,7 +263,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-psdx_whatifdesc
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -276,6 +277,10 @@ Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

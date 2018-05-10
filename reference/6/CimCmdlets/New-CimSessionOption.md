@@ -16,6 +16,7 @@ Specifies advanced options for the New-CimSession cmdlet.
 ### ProtocolTypeSet (Default)
 ```
 New-CimSessionOption [-Protocol] <ProtocolType> [-UICulture <CultureInfo>] [-Culture <CultureInfo>]
+ [<CommonParameters>]
 ```
 
 ### WSManParameterSet
@@ -24,13 +25,13 @@ New-CimSessionOption [-NoEncryption] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocat
  [-EncodePortInServicePrincipalName] [-Encoding <PacketEncoding>] [-HttpPrefix <Uri>]
  [-MaxEnvelopeSizeKB <UInt32>] [-ProxyAuthentication <PasswordAuthenticationMechanism>]
  [-ProxyCertificateThumbprint <String>] [-ProxyCredential <PSCredential>] [-ProxyType <ProxyType>] [-UseSsl]
- [-UICulture <CultureInfo>] [-Culture <CultureInfo>]
+ [-UICulture <CultureInfo>] [-Culture <CultureInfo>] [<CommonParameters>]
 ```
 
 ### DcomParameterSet
 ```
 New-CimSessionOption [-Impersonation <ImpersonationType>] [-PacketIntegrity] [-PacketPrivacy]
- [-UICulture <CultureInfo>] [-Culture <CultureInfo>]
+ [-UICulture <CultureInfo>] [-Culture <CultureInfo>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,7 +121,7 @@ Accept wildcard characters: False
 ### -Encoding
 Specifies the encoding used for the WsMan protocol.
 
-psdx_paramvalues Default, Utf8, or Utf16.
+The acceptable values for this parameter are:  Default, Utf8, or Utf16.
 
 ```yaml
 Type: PacketEncoding
@@ -157,22 +158,12 @@ Creates a DCOM session to Windows Management Instrumentation (WMI) using imperso
 
 Valid values for this parameter are:
 
-
-
--- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm.
-
-
--- None: The client is anonymous to the server.
-The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used.
-
-
--- Identify: Allows objects to query the credentials of the caller.
-
-
--- Impersonate: Allows objects to use the credentials of the caller.
-
-
--- Delegate: Allows objects to permit other objects to use the credentials of the caller.
+- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm. 
+- None: The client is anonymous to the server.
+  The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used. 
+- Identify: Allows objects to query the credentials of the caller. 
+- Impersonate: Allows objects to use the credentials of the caller. 
+- Delegate: Allows objects to permit other objects to use the credentials of the caller.
 
 If Impersonation is not specified, the New-CimSession cmdlet uses the value of 3: Impersonate
 
@@ -253,7 +244,7 @@ Accept wildcard characters: False
 ### -Protocol
 Specifies the protocol to use.
 
-psdx_paramvaluesDCOM or WinRM.
+The acceptable values for this parameter are: DCOM or WinRM.
 
 ```yaml
 Type: ProtocolType
@@ -271,7 +262,7 @@ Accept wildcard characters: False
 ### -ProxyAuthentication
 Specifies the authentication method to use for proxy resolution.
 
-psdx_paramvaluesDefault, Digest, Negotiate, Basic, Kerberos, NtlmDomain, or CredSsp.
+The acceptable values for this parameter are: Default, Digest, Negotiate, Basic, Kerberos, NtlmDomain, or CredSsp.
 
 ```yaml
 Type: PasswordAuthenticationMechanism
@@ -292,8 +283,8 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can only be mapped to local user accounts and they do not work with domain accounts.
 
-To get a certificate thumbprint, use the Get-Item or Get-ChildItem cmdlets in the wps_2 Cert: drive.
-For more information about the Get-ChildItem cmdlet for the wps_2 Cert: drive, see http://technet.microsoft.com/library/hh847761.aspx.
+To get a certificate thumbprint, use the Get-Item or Get-ChildItem cmdlets in the PowerShell Cert: drive.
+For more information about the Get-ChildItem cmdlet for the PowerShell Cert: drive, see http://technet.microsoft.com/library/hh847761.aspx.
 For more information about Get-Item, see http://technet.microsoft.com/library/hh849788.aspx
 
 ```yaml
@@ -312,12 +303,8 @@ Accept wildcard characters: False
 Specifies the credentials to use for proxy authentication.
 Enter one of the following:
 
-
-
--- A variable that contains a PSCredential object.
-
-
--- A command that gets a PSCredential object, such as Get-Credential
+- A variable that contains a PSCredential object. 
+- A command that gets a PSCredential object, such as Get-Credential
 
 If this option is not set, then you cannot specify any credentials.
 
@@ -336,7 +323,7 @@ Accept wildcard characters: False
 ### -ProxyType
 Specifies the host name resolution mechanism to use.
 
-psdx_paramvaluesNone, WinHttp, Auto, or InternetExplorer.
+The acceptable values for this parameter are: None, WinHttp, Auto, or InternetExplorer.
 
 By default, the value of this parameter is InternetExplorer.
 
@@ -409,16 +396,10 @@ Accept wildcard characters: False
 Specifies the user interface culture to use for the CIM session.
 Specify the value for this parameter using one of the following formats:
 
-Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US".
-
-
-
-A variable that contains a CultureInfo object.
-
-
-
-A command that gets a CultureInfo object, such as Get-Culture.
-For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
+- Enter a culture name in \<languagecode2\>-\<country/regioncode2\> format such as "EN-US".
+- A variable that contains a CultureInfo object.
+- A command that gets a CultureInfo object, such as Get-Culture.
+  For more information about Get-Culture, see http://technet.microsoft.com/library/hh849930.aspx.
 
 ```yaml
 Type: CultureInfo
@@ -453,6 +434,10 @@ Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -17,14 +17,14 @@ Retrieves the CIM instances that are connected to a specific CIM instance by an 
 ```
 Get-CimAssociatedInstance [[-Association] <String>] [-ResultClassName <String>] [-InputObject] <CimInstance>
  [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ResourceUri <Uri>] [-ComputerName <String[]>]
- [-KeyOnly]
+ [-KeyOnly] [<CommonParameters>]
 ```
 
 ### SessionSet
 ```
 Get-CimAssociatedInstance [[-Association] <String>] [-ResultClassName <String>] [-InputObject] <CimInstance>
  [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ResourceUri <Uri>] -CimSession <CimSession[]>
- [-KeyOnly]
+ [-KeyOnly] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -154,7 +154,8 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-ps_common_inputobject
+Specifies the input to this cmdlet.
+You can use this parameter, or you can pipe the input to this cmdlet.
 
 ```yaml
 Type: CimInstance
@@ -189,7 +190,7 @@ Accept wildcard characters: False
 Specifies the namespace for the CIM operation.
 
 The default namespace is root/cimv2.
-NOTE: You can use tab completion to browse the list of namespaces, because wps_2 gets a list of namespaces from the local WMI server to provide the list of namespaces.
+NOTE: You can use tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
@@ -274,6 +275,10 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

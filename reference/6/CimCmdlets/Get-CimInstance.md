@@ -17,48 +17,50 @@ Gets the CIM instances of a class from a CIM server.
 ```
 Get-CimInstance [-ClassName] <String> [-ComputerName <String[]>] [-KeyOnly] [-Namespace <String>]
  [-OperationTimeoutSec <UInt32>] [-QueryDialect <String>] [-Shallow] [-Filter <String>] [-Property <String[]>]
+ [<CommonParameters>]
+```
+
+### CimInstanceSessionSet
+```
+Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
+ [-InputObject] <CimInstance> [<CommonParameters>]
 ```
 
 ### ResourceUriSessionSet
 ```
 Get-CimInstance -CimSession <CimSession[]> -ResourceUri <Uri> [-KeyOnly] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>]
+ [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### QuerySessionSet
 ```
 Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] -Query <String> [-QueryDialect <String>] [-Shallow]
+ [-OperationTimeoutSec <UInt32>] -Query <String> [-QueryDialect <String>] [-Shallow] [<CommonParameters>]
 ```
 
 ### ClassNameSessionSet
 ```
 Get-CimInstance -CimSession <CimSession[]> [-ClassName] <String> [-KeyOnly] [-Namespace <String>]
  [-OperationTimeoutSec <UInt32>] [-QueryDialect <String>] [-Shallow] [-Filter <String>] [-Property <String[]>]
-```
-
-### CimInstanceSessionSet
-```
-Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance>
-```
-
-### CimInstanceComputerSet
-```
-Get-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance>
+ [<CommonParameters>]
 ```
 
 ### ResourceUriComputerSet
 ```
 Get-CimInstance -ResourceUri <Uri> [-ComputerName <String[]>] [-KeyOnly] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>]
+ [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>] [<CommonParameters>]
+```
+
+### CimInstanceComputerSet
+```
+Get-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-OperationTimeoutSec <UInt32>]
+ [-InputObject] <CimInstance> [<CommonParameters>]
 ```
 
 ### QueryComputerSet
 ```
 Get-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] -Query <String> [-QueryDialect <String>] [-Shallow]
+ [-OperationTimeoutSec <UInt32>] -Query <String> [-QueryDialect <String>] [-Shallow] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -197,8 +199,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClassName
-Specifies the name of the CIM class for which to retrieve the CIM instances.
-NOTE: You can use tab completion to browse the list of classes, because wps_2 gets a list of classes from the local WMI server to provide a list of class names.
+Specifies the name of the CIM class for which to retrieve the CIM instances. 
+NOTE: You can use tab completion to browse the list of classes, because PowerShell gets a list of classes from the local WMI server to provide a list of class names.
 
 ```yaml
 Type: String
@@ -306,8 +308,8 @@ Accept wildcard characters: False
 ### -Namespace
 Specifies the namespace of CIM class.
 
-The default namespace is root/cimv2.
-NOTE: You can use tab completion to browse the list of namespaces, because wps_2 gets a list of namespaces from the local WMI server to provide the list of namespaces.
+The default namespace is root/cimv2. 
+NOTE: You can use tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
@@ -388,7 +390,7 @@ Accept wildcard characters: False
 ### -QueryDialect
 Specifies the query language used for the Query parameter.
 
-psdx_paramvalues WQL or CQL.
+The acceptable values for this parameter are:  WQL or CQL.
 
 The default value is WQL.
 
@@ -474,6 +476,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### CIM Instance
@@ -490,15 +496,15 @@ This cmdlet returns one or more CIM instance objects representing a snapshot of 
 
 [Format-Table](../microsoft.powershell.utility/format-table.md)
 
-[Get-CimAssociatedInstance" Get-CimAssociatedInstance]()
+[Get-CimAssociatedInstance](Get-CimAssociatedInstance.md)
 
-[Get-CimClass" Get-CimClass]()
+[Get-CimClass](Get-CimClass.md)
 
 [Invoke-CimMethod](invoke-cimmethod.md)
 
 [New-CimInstance](New-CimInstance.md)
 
-[Register-CimIndicationEvent" Register-CimIndicationEvent]()
+[Register-CimIndicationEvent](Register-CimIndicationEvent.md)
 
 [Remove-CimInstance](remove-ciminstance.md)
 
