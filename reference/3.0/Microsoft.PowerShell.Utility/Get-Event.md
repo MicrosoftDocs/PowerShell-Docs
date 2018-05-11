@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,23 +7,28 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113453
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Event
 ---
-
 # Get-Event
+
 ## SYNOPSIS
+
 Gets the events in the event queue.
+
 ## SYNTAX
 
 ### BySource (Default)
+
 ```
 Get-Event [[-SourceIdentifier] <String>] [<CommonParameters>]
 ```
 
 ### ById
+
 ```
 Get-Event [-EventIdentifier] <Int32> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Get-Event cmdlet gets events in the Windows PowerShell event queue for the current session.
 You can get all events or use the EventIdentifier or SourceIdentifier parameters to specify the events.
 
@@ -33,24 +38,30 @@ You can use Get-Event or Wait-Event to get the events.
 
 This cmdlet does not get events from the Event Viewer logs.
 To get those events, use Get-WinEvent or Get-EventLog.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> get-event
+
+```powershell
+Get-Event
 ```
 
 This command gets all events in the event queue.
+
 ### Example 2
-```
-PS C:\> get-event -sourceIdentifier "PowerShell.ProcessCreated"
+
+```powershell
+Get-Event -SourceIdentifier "PowerShell.ProcessCreated"
 ```
 
 This command gets events in which the value of the SourceIdentifier property is "PowerShell.ProcessCreated".
+
 ### Example 3
+
 ```
-PS C:\> $events = get-event
-PS C:\> $events[0] | format-list -property *
+PS> $events = get-event
+PS> $events[0] | format-list -property *
 
 ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b805917d1b7b
@@ -62,7 +73,7 @@ SourceIdentifier : ProcessStarted
 TimeGenerated    : 11/13/2008 12:09:32 PM
 MessageData      :
 
-PS C:\> get-event | where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
+PS> get-event | Where-Object {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
 
 ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b8059325d1a0
@@ -86,15 +97,19 @@ This allows you to examine the properties of the event object.
 The third command shows how to use the Where-Object cmdlet to get an event
 
 based on the time that it was generated.
+
 ### Example 4
-```
-PS C:\> get-event -eventIdentifier 2
+
+```powershell
+Get-Event -EventIdentifier 2
 ```
 
 This command gets the event with an event identifier of 2.
+
 ## PARAMETERS
 
 ### -EventIdentifier
+
 Gets only the events with the specified event identifier.
 
 ```yaml
@@ -110,6 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Gets only events with the specified source identifier.
 The default is all events in the event queue.
 Wildcards are not permitted.
@@ -127,18 +143,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### System.Management.Automation.PSEventArgs
+
 Get-Event returns a PSEventArgs object for each event.
 To see a description of this object, type "get-help get-event -full" and see the Notes section of the help topic.
+
 ## NOTES
-* Events, event subscriptions, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
+
+- Events, event subscriptions, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
   The Get-Event cmdlet returns a PSEventArgs object (System.Management.Automation.PSEventArgs) with the following properties.
 
@@ -171,7 +194,6 @@ In the value of the Action parameter, the TimeGenerated property of the $Event a
 Users specify this data when they register an event.
 In the value of the Action parameter, the MessageData property of the $Event automatic variable contains this value.
 
-*
 ## RELATED LINKS
 
 [New-Event](New-Event.md)
