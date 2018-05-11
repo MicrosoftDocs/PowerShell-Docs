@@ -150,7 +150,7 @@ Get-ChildItem [-CodeSigningCert] [-DnsName <string>] [-EKU <string>] [-ExpiringI
 ## Example 1
 
 ```
-PS> PS cert:\> Get-ChildItem
+PS cert:\> Get-ChildItem
 
 Location   : CurrentUser
 StoreNames : {TrustedPublisher, ClientAuthIssuer, Root, UserDS...}
@@ -167,7 +167,7 @@ At the root of the Cert: drive, the Get-ChildItem cmdlet gets certificate store 
 ## Example 2
 
 ```
-PS> PS cert:\LocalMachine\> Get-ChildItem
+PS cert:\LocalMachine\> Get-ChildItem
 
 Name : TrustedPublisher
 
@@ -208,7 +208,7 @@ In a certificate store location in Cert: drive, the Get-ChildItem cmdlet gets ce
 ## Example 3
 
 ```
-C:\PS>PS cert:\LocalMachine\My\> Get-ChildItem
+PS cert:\LocalMachine\My\> Get-ChildItem
 
 Thumbprint                                Subject
 ----------                                -------
@@ -227,7 +227,7 @@ In a certificate store in Cert: drive, the Get-ChildItem cmdlet gets certificate
 ## Example 4
 
 ```
-C:\PS>PS cert:\LocalMachine\My\> Get-ChildItem -Path D259F7B1DA04D41451866A2D464EC4A71BCBEDCD | Format-List -Property *
+PS cert:\LocalMachine\My\> Get-ChildItem -Path D259F7B1DA04D41451866A2D464EC4A71BCBEDCD | Format-List -Property *
 
 PSPath               : Certificate::LocalMachine\my\5B047DCA542A9E46C0EC7BF1AD7889612CADAA2E
 PSParentPath         : Certificate::LocalMachine\my
