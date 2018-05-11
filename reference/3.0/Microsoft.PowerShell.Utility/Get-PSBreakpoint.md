@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,49 +7,59 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113325
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-PSBreakpoint
 ---
-
 # Get-PSBreakpoint
+
 ## SYNOPSIS
+
 Gets the breakpoints that are set in the current session.
+
 ## SYNTAX
 
 ### Script (Default)
+
 ```
 Get-PSBreakpoint [[-Script] <String[]>] [<CommonParameters>]
 ```
 
 ### Type
+
 ```
 Get-PSBreakpoint [[-Script] <String[]>] [-Type] <BreakpointType[]> [<CommonParameters>]
 ```
 
 ### Command
+
 ```
 Get-PSBreakpoint [[-Script] <String[]>] -Command <String[]> [<CommonParameters>]
 ```
 
 ### Variable
+
 ```
 Get-PSBreakpoint [[-Script] <String[]>] -Variable <String[]> [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Get-PSBreakpoint [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Get-PSBreakPoint cmdlet gets the breakpoints that are set in the current session.
 You can use the cmdlet parameters to get particular breakpoints.
 
 A breakpoint is a point in a command or script where execution stops temporarily so that you can examine the instructions.
 Get-PSBreakpoint is one of several cmdlets designed for debugging Windows PowerShell scripts and commands.
 For more information about the Windows PowerShell debugger, see about_Debuggers.
+
 ## EXAMPLES
 
 ### Example 1
-```
-C:\PS>get-psbreakpoint
+
+```powershell
+Get-PSBreakpoint
 ```
 
 Description
@@ -57,9 +67,11 @@ Description
 -----------
 
 This command gets all breakpoints set on all scripts and functions in the current session.
+
 ### Example 2
+
 ```
-C:\PS>get-psbreakpoint -Id 2
+PS> get-psbreakpoint -Id 2
 
 Function   : Increment
 Action     :
@@ -75,10 +87,12 @@ Description
 -----------
 
 This command gets the breakpoint with breakpoint ID 2.
+
 ### Example 3
-```
-C:\PS>$b = set-psbreakpoint -script sample.ps1 -function increment
-PS C:\> $b.Id | get-psbreakpoint
+
+```powershell
+$b = Set-PSBreakpoint -Script sample.ps1 -function increment
+$b.Id | Get-PSBreakpoint
 ```
 
 Description
@@ -94,9 +108,11 @@ The second command uses the dot operator (.) to get the Id property of the break
 It uses a pipeline operator (|) to send the ID to the Get-PSBreakpoint cmdlet.
 
 As a result, Get-PSBreakpoint gets the breakpoint with the specified ID.
+
 ### Example 4
-```
-C:\PS>get-psbreakpoint -script Sample.ps1, SupportScript.ps1
+
+```powershell
+Get-PSBreakpoint -Script Sample.ps1, SupportScript.ps1
 ```
 
 Description
@@ -106,9 +122,11 @@ Description
 This command gets all of the breakpoints in the Sample.ps1 and SupportScript.ps1 files.
 
 This command does not get other breakpointS that might be set in other scripts or on functions in the session.
+
 ### Example 5
-```
-C:\PS>get-psbreakpoint -command Read-Host, Write-Host -script Sample.ps1
+
+```powershell
+Get-PSBreakpoint -Command Read-Host, Write-Host -Script Sample.ps1
 ```
 
 Description
@@ -116,9 +134,11 @@ Description
 -----------
 
 This command gets all Command breakpoints that are set on Read-Host or Write-Host commands in the Sample.ps1 file.
+
 ### Example 6
-```
-C:\PS>get-psbreakpoint -type Command -script Sample.ps1
+
+```powershell
+Get-PSBreakpoint -Type Command -Script Sample.ps1
 ```
 
 Description
@@ -126,9 +146,11 @@ Description
 -----------
 
 This command gets all Command breakpoints in the Sample.ps1 file.
+
 ### Example 7
-```
-C:\PS>get-psbreakpoint -variable Index, Swap
+
+```powershell
+Get-PSBreakpoint -Variable Index, Swap
 ```
 
 Description
@@ -136,9 +158,11 @@ Description
 -----------
 
 This command gets breakpoints that are set on the $index and $swap variables in the current session.
+
 ### Example 8
-```
-C:\PS>get-psbreakpoint -type line, variable -script Sample.ps1
+
+```powershell
+Get-PSBreakpoint -Type line, variable -Script Sample.ps1
 ```
 
 Description
@@ -146,9 +170,11 @@ Description
 -----------
 
 This command gets all line and variable breakpoints in the Sample.ps1 script.
+
 ## PARAMETERS
 
 ### -Command
+
 Gets command breakpoints that are set on the specified command names.
 Enter the command names, such as the name of a cmdlet or function.
 
@@ -165,6 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Gets the breakpoints with the specified breakpoint IDs.
 Enter the IDs in a comma-separated list.
 You can also pipe breakpoint IDs to Get-PSBreakpoint.
@@ -182,6 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -Script
+
 Gets only the breakpoints in the specified scripts.
 Enter the  path (optional) and names of one or more script files.
 If you omit the path, the default location is the current directory.
@@ -211,6 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
+
 Gets only breakpoints of the specified types.
 Enter one or more types.
 Valid values are Line, Command, and Variable.
@@ -229,6 +258,7 @@ Accept wildcard characters: False
 ```
 
 ### -Variable
+
 Gets variable breakpoints that are set on the specified variable names.
 Enter the variable names without dollar signs.
 
@@ -245,17 +275,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Int32, Microsoft.PowerShell.Commands.BreakpointType
+
 You can pipe breakpoint IDs and breakpoint types to Get-PSBreakpoint.
+
 ## OUTPUTS
 
 ### System.Management.Automation.Breakpoint
+
 Get-PSBreakPoint returns objects that represent the breakpoints in the session.
+
 ## NOTES
-* You can use Get-PSBreakpoint or its alias, "gbp".
+
+- You can use Get-PSBreakpoint or its alias, "gbp".
+
 ## RELATED LINKS
 
 [Disable-PSBreakpoint](Disable-PSBreakpoint.md)

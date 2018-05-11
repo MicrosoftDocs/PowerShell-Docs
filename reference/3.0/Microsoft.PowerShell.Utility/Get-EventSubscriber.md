@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,37 +7,44 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=135155
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-EventSubscriber
 ---
-
 # Get-EventSubscriber
+
 ## SYNOPSIS
+
 Gets the event subscribers in the current session.
+
 ## SYNTAX
 
 ### BySource (Default)
+
 ```
 Get-EventSubscriber [[-SourceIdentifier] <String>] [-Force] [<CommonParameters>]
 ```
 
 ### ById
+
 ```
 Get-EventSubscriber [-SubscriptionId] <Int32> [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Get-EventSubscriber cmdlet gets the event subscribers in the current session.
 
 When you subscribe to an event by using a Register event cmdlet, an event subscriber is added to your Windows PowerShell session, and the events to which you subscribed are added to your event queue whenever they are raised.
 To cancel an event subscription, delete the event subscriber by using the Unregister-Event cmdlet.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> $timer = New-Object Timers.Timer
-PS C:\> $timer | Get-Member -Type Event
-PS C:\> Register-ObjectEvent -inputObject $timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
-PS C:\> Get-EventSubscriber
-PS C:\> $timer = New-Object Timers.Timer
-PS C:\> $timer | Get-Member -Type Event
+PS> $timer = New-Object Timers.Timer
+PS> $timer | Get-Member -Type Event
+PS> Register-ObjectEvent -inputObject $timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
+PS> Get-EventSubscriber
+PS> $timer = New-Object Timers.Timer
+PS> $timer | Get-Member -Type Event
 TypeName: System.Timers.Timer
 
 Name     MemberType Definition
@@ -45,8 +52,8 @@ Name     MemberType Definition
 Disposed Event      System.EventHandler Disposed(System.Object, System.EventArgs)
 Elapsed  Event      System.Timers.ElapsedEventHandler Elapsed(System.Object, System.Timers.ElapsedEventArgs)
 
-PS C:\> Register-ObjectEvent -InputObject $timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
-PS C:\> Get-EventSubscriber
+PS> Register-ObjectEvent -InputObject $timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
+PS> Get-EventSubscriber
 
 SubscriptionId   : 4
 SourceObject     : System.Timers.Timer
@@ -69,22 +76,24 @@ The command uses the Type parameter of the Get-Member cmdlet with a value of Eve
 The third command uses the Register-ObjectEvent cmdlet to register for the Elapsed event on the timer object.
 
 The fourth command uses the Get-EventSubscriber cmdlet to get the event subscriber for the Elapsed event.
+
 ### Example 2
+
 ```
-PS C:\> $timer  = New-Object Timers.Timer
-PS C:\> $timer.Interval = 500
-PS C:\> Register-ObjectEvent -inputObject $timer -eventName Elapsed -sourceIdentifier Timer.Random -Action { $random = Get-Random -Min 0 -Max 100 }
+PS> $timer  = New-Object Timers.Timer
+PS> $timer.Interval = 500
+PS> Register-ObjectEvent -inputObject $timer -eventName Elapsed -sourceIdentifier Timer.Random -Action { $random = Get-Random -Min 0 -Max 100 }
 
 Id  Name           State      HasMoreData  Location  Command
 --  ----           -----      -----------  --------  -------
 3   Timer.Random   NotStarted False                  $random = Get-Random ...
 
-PS C:\> $timer.Enabled = $true
-PS C:\> $subscriber = Get-EventSubcriber -sourceIdentifer Timer.Random
-PS C:\> ($subscriber.action).gettype().fullname
+PS> $timer.Enabled = $true
+PS> $subscriber = Get-EventSubcriber -sourceIdentifer Timer.Random
+PS> ($subscriber.action).gettype().fullname
 PSEventJob
 
-PS C:\> $subscriber.action | format-list -property *
+PS> $subscriber.action | format-list -property *
 
 State         : Running
 Module        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
@@ -99,10 +108,10 @@ Id            : 1
 Name          : Timer.Random
 ChildJobs     : {}
 ...
-PS C:\> & $subscriber.action.module {$random}
+PS> & $subscriber.action.module {$random}
 96
 
-PS C:\> & $subscriber.action.module {$random}
+PS> & $subscriber.action.module {$random}
 23
 ```
 
@@ -135,9 +144,11 @@ You can use the call operator to invoke any command in a module, including comma
 In this case, the commands show the random number that is being generated when the Elapsed event occurs.
 
 For more information about modules, see about_Modules.
+
 ## PARAMETERS
 
 ### -Force
+
 Gets all event subscribers, including subscribers for events that are hidden by using the SupportEvent parameter of Register-ObjectEvent, Register-WmiEvent, and Register-EngineEvent.
 
 ```yaml
@@ -153,6 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Gets only the event subscribers with the specified SourceIdentifier property value.
 By default, Get-EventSubscriber gets all event subscribers in the session.
 Wildcards are not permitted.
@@ -171,6 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
+
 Gets only the specified subscription identifier.
 By default, Get-EventSubscriber gets all event subscribers in the session.
 
@@ -187,22 +200,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### System.Management.Automation.PSEventSubscriber
+
 Get-EventSubscriber returns an object that represents each event subscriber.
+
 ## NOTES
-* The New-Event cmdlet, which creates a custom event, does not generate a subscriber. Therefore, the Get-EventSubscriber cmdlet will not find a subscriber object for these events. However, if you use the Register-EngineEvent cmdlet to subscribe to a custom event (in order to forward the event or to specify an action), Get-EventSubscriber will find the subscriber that Register-EngineEvent generates.
+
+- The New-Event cmdlet, which creates a custom event, does not generate a subscriber. Therefore, the Get-EventSubscriber cmdlet will not find a subscriber object for these events. However, if you use the Register-EngineEvent cmdlet to subscribe to a custom event (in order to forward the event or to specify an action), Get-EventSubscriber will find the subscriber that Register-EngineEvent generates.
 
   Events, event subscriptions, and the event queue exist only in the current session.
 If you close the current session, the event queue is discarded and the event subscription is canceled.
 
-*
 ## RELATED LINKS
 
 [Get-Event](Get-Event.md)

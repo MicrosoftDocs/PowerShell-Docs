@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113303
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Format-Table
 ---
-
 # Format-Table
 
 ## SYNOPSIS
+
 Formats the output as a table.
 
 ## SYNTAX
@@ -22,6 +22,7 @@ Format-Table [-AutoSize] [-HideTableHeaders] [-Wrap] [[-Property] <Object[]>] [-
 ```
 
 ## DESCRIPTION
+
 The `Format-Table` cmdlet formats the output of a command as a table with the selected properties of the object in each column.
 The object type determines the default layout and properties that are displayed in each column, but you can use the **Property** parameter to select the properties that you want to see.
 
@@ -31,6 +32,7 @@ To add a calculated property, use the **Property** or **GroupBy** parameter.
 ## EXAMPLES
 
 ### Example 1: Format PowerShell host
+
 ```powershell
 Get-Host | Format-Table -AutoSize
 ```
@@ -43,6 +45,7 @@ The `Format-Table` cmdlet formats the objects in a table.
 The **AutoSize** parameter adjusts the column widths to minimize truncation.
 
 ### Example 2: Format processes by BasePriority
+
 ```powershell
 PS C:\> Get-Process | Sort-Object -Property basepriority | Format-Table -GroupBy basepriority -Wrap
 ```
@@ -57,6 +60,7 @@ The **GroupBy** parameter arranges the data about the processes into groups base
 The **Wrap** parameter ensures that data is not truncated.
 
 ### Example 3: Format processes by start date
+
 ```powershell
 PS C:\> Get-Process | Sort-Object starttime | Format-Table -View starttime
 ```
@@ -72,6 +76,7 @@ This view converts the StartTime of the process to a short date and then groups 
 The DotNetTypes.format.ps1xml formatting file also contains a Priority view for processes, and you can create your own format.ps1xml files with customized views.
 
 ### Example 4: Format services
+
 ```powershell
 Get-Service | Format-Table -Property Name, DependentServices
 ```
@@ -86,6 +91,7 @@ Name and DependentServices are just two of the properties of service objects.
 To view all of the properties, type `Get-Service | Get-Member -MemberType Properties`.
 
 ### Example 5: Format a process and calculate its running time
+
 ```powershell
 PS C:\> Get-Process Notepad | Format-Table ProcessName, @{Label="TotalRunningTime"; Expression={(Get-Date) - $_.StartTime}}
 ```
@@ -103,6 +109,7 @@ The calculation is assigned to the Expression key.
 The expression gets the StartTime property of each process object and subtracts it from the result of a `Get-Date` command, which gets the current date and time.
 
 ### Example 6: Format Notepad processes
+
 ```powershell
 PS C:\> $Processes = Get-WmiObject -ComputerName "Server01" -Class win32_process -Filter "name='notepad.exe'"
 PS C:\> $Processes | Format-Table ProcessName, @{ Label = "Total  Running Time"; Expression={(Get-Date) - $_.ConvertToDateTime($_.CreationDate)}}
@@ -125,6 +132,7 @@ The result is the value of Total Running Time.
 ## PARAMETERS
 
 ### -AutoSize
+
 Indicates that the cmdlet adjusts the column size and number of columns based on the width of the data.
 By default, the column size and number are determined by the view.
 
@@ -141,6 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayError
+
 Indicates that the cmdlet displays errors at the command line.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Table` command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the DisplayError parameter with an expression.
@@ -165,6 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Expand
+
 Specifies the format of the collection object, as well as the objects in the collection.
 This parameter is designed to format objects that support the ICollection (System.Collections) interface.
 The default value is EnumOnly.
@@ -188,6 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that the cmdlet directs the cmdlet to display all of the error information.
 Use with the **DisplayError** or **ShowError** parameter.
 By default, when an error object is written to the error or display streams, only some of the error information is displayed.
@@ -205,6 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupBy
+
 Specifies sorted output in separate tables based on a property value.
 For example, you can use **GroupBy** to list services in separate tables based on their status.
 
@@ -232,6 +244,7 @@ Accept wildcard characters: False
 ```
 
 ### -HideTableHeaders
+
 Omits the column headings from the table.
 
 ```yaml
@@ -247,6 +260,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the objects to format.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -263,6 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies the object properties that appear in the display and the order in which they appear.
 Type one or more property names (separated by commas), or use a hash table to display a calculated property.
 Wildcards are permitted.
@@ -294,6 +309,7 @@ Accept wildcard characters: False
 ```
 
 ### -ShowError
+
 Sends errors through the pipeline.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Table` command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **ShowError** parameter with an expression.
@@ -322,6 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -View
+
 Specifies the name of an alternate table format or view.
 You cannot use the **Property** and **View** parameters in the same command.
 
@@ -338,6 +355,7 @@ Accept wildcard characters: False
 ```
 
 ### -Wrap
+
 Displays text that exceeds the column width on the next line.
 By default, text that exceeds the column width is truncated.
 
@@ -354,16 +372,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any object to `Format-Table`.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.Internal.Format
+
 `Format-Table` returns format objects that represent the table.
 
 ## NOTES
