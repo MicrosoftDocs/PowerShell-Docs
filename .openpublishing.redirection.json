@@ -14503,6 +14503,301 @@
             "source_path": "reference/virtual-directory/setup/Installing-PowerShell-Core-on-macOS-and-Linux.md",
             "redirect_url": "/powershell/scripting/setup/installing-powershell-core-on-linux",
             "redirect_document_id": "False"
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_ItemManifestAffectingUI.md",
+            "redirect_url": "/powershell/gallery/concepts/item-manifest-affecting-ui",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/RequireLicenseAcceptance.md",
+            "redirect_url": "/powershell/gallery/concepts/module-license-acceptance",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/PreReleaseModule.md",
+            "redirect_url": "/powershell/gallery/concepts/module-prerelease-support",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/modulewithpseditionsupport.md",
+            "redirect_url": "/powershell/gallery/concepts/module-psedition-support",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery-PublishingGuidelines.md",
+            "redirect_url": "/powershell/gallery/concepts/publishing-guidelines",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/script_RequireLicenseAcceptance.md",
+            "redirect_url": "/powershell/gallery/concepts/script-license-acceptance",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/PreReleaseScript.md",
+            "redirect_url": "/powershell/gallery/concepts/script-prerelease-support",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/scriptwithpseditionsupport.md",
+            "redirect_url": "/powershell/gallery/concepts/script-psedition-support",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_faqs.md",
+            "redirect_url": "/powershell/gallery/faqs",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_gettingstarted.md",
+            "redirect_url": "/powershell/gallery/getting-started",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_items_tab.md",
+            "redirect_url": "/powershell/gallery/how-to/finding-items/filtering-items",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_pseditions.md",
+            "redirect_url": "/powershell/gallery/how-to/finding-items/seaching-by-psedition",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_search_syntax.md",
+            "redirect_url": "/powershell/gallery/how-to/finding-items/search-syntax",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/repository/bootstrapping_nuget_proivder_and_exe.md",
+            "redirect_url": "/powershell/gallery/how-to/getting-support/bootstrapping-nuget",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_contacting_administrators.md",
+            "redirect_url": "/powershell/gallery/how-to/getting-support/contacting-administrators",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_dispute_resolution.md",
+            "redirect_url": "/powershell/gallery/how-to/getting-support/dispute-resolution",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/get_psget_module.md",
+            "redirect_url": "/powershell/gallery/how-to/getting-support/health-status",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_status.md",
+            "redirect_url": "/powershell/gallery/how-to/getting-support/health-status",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_report_abuse.md",
+            "redirect_url": "/powershell/gallery/how-to/getting-support/report-abuse",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/psget_cmdlets_troubleshooting.md",
+            "redirect_url": "/powershell/gallery/how-to/getting-support/troubleshooting-cmdlets",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_creating_an_account.md",
+            "redirect_url": "/powershell/gallery/how-to/publishing-items/creating-an-account",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/Deleting-Items.md",
+            "redirect_url": "/powershell/gallery/how-to/publishing-items/deleting-items",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/Managing-Item-Owners.md",
+            "redirect_url": "/powershell/gallery/how-to/publishing-items/managing-item-owners",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/Creating-and-Publishing-an-item.md",
+            "redirect_url": "/powershell/gallery/how-to/publishing-items/publishing-an-item",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_unlist_items.md",
+            "redirect_url": "/powershell/gallery/how-to/publishing-items/unlisting-items",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_contacting_item_owners.md",
+            "redirect_url": "/powershell/gallery/how-to/working-with-items/contacting-item-owners",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_deploy_to_azure_automation.md",
+            "redirect_url": "/powershell/gallery/how-to/working-with-items/deploy-to-azure-automation",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md",
+            "redirect_url": "/powershell/gallery/how-to/working-with-items/deploy-to-azure-automation",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_filelist_feature.md",
+            "redirect_url": "/powershell/gallery/how-to/working-with-items/filelist-view",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery_requires_license_acceptance.md",
+            "redirect_url": "/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psgallery/psgallery-SocialMediaFeedback.md",
+            "redirect_url": "/powershell/gallery/how-to/working-with-items/social-media-feedback",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/readme.md",
+            "redirect_url": "/powershell/gallery/overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/oneget/PackageManagement_cmdlets.md",
+            "redirect_url": "/powershell/module/packagemanagement/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/overview.md",
+            "redirect_url": "/powershell/module/powershellget/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_find-command.md",
+            "redirect_url": "/powershell/module/powershellget/Find-Command",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_find-dscresource.md",
+            "redirect_url": "/powershell/module/powershellget/Find-DscResource",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_find-module.md",
+            "redirect_url": "/powershell/module/powershellget/Find-Module",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_find-rolecapability.md",
+            "redirect_url": "/powershell/module/powershellget/Find-RoleCapability",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_find-script.md",
+            "redirect_url": "/powershell/module/powershellget/Find-Script",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_get-installedmodule.md",
+            "redirect_url": "/powershell/module/powershellget/Get-InstalledModule",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_get-installedscript.md",
+            "redirect_url": "/powershell/module/powershellget/Get-InstalledScript",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/repository/psget_get-psrepository.md",
+            "redirect_url": "/powershell/module/powershellget/Get-PSRepository",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_install-module.md",
+            "redirect_url": "/powershell/module/powershellget/Install-Module",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_install-script.md",
+            "redirect_url": "/powershell/module/powershellget/Install-Script",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_new-scriptfileinfo.md",
+            "redirect_url": "/powershell/module/powershellget/New-ScriptFileInfo",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_publish-module.md",
+            "redirect_url": "/powershell/module/powershellget/Publish-Module",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_publish-script.md",
+            "redirect_url": "/powershell/module/powershellget/Publish-Script",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/repository/psget_register-psrepository.md",
+            "redirect_url": "/powershell/module/powershellget/Register-PSRepository",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_save-module.md",
+            "redirect_url": "/powershell/module/powershellget/Save-Module",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_save-script.md",
+            "redirect_url": "/powershell/module/powershellget/Save-Script",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/repository/psget_set-psrepository.md",
+            "redirect_url": "/powershell/module/powershellget/Set-PSRepository",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_test-scriptfileinfo.md",
+            "redirect_url": "/powershell/module/powershellget/Test-ScriptFileInfo",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_uninstall-module.md",
+            "redirect_url": "/powershell/module/powershellget/Uninstall-Module",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_uninstall-script.md",
+            "redirect_url": "/powershell/module/powershellget/Uninstall-Script",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/repository/psget_unregister-psrepository.md",
+            "redirect_url": "/powershell/module/powershellget/Unregister-PSRepository",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_update-module.md",
+            "redirect_url": "/powershell/module/powershellget/Update-Module",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/module/psget_update-modulemanifest.md",
+            "redirect_url": "/powershell/module/powershellget/Update-ModuleManifest",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_update-script.md",
+            "redirect_url": "/powershell/module/powershellget/Update-Script",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "gallery/psget/script/psget_update-scriptfileinfo.md",
+            "redirect_url": "/powershell/module/powershellget/Update-ScriptFileInfo",
+            "redirect_document_id": false
         }
     ]
 }

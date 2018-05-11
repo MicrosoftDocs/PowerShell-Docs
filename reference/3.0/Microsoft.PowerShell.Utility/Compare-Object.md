@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113286
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Compare-Object
 ---
-
 # Compare-Object
+
 ## SYNOPSIS
+
 Compares two sets of objects.
+
 ## SYNTAX
 
 ```
@@ -20,34 +22,41 @@ Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]> 
 ```
 
 ## DESCRIPTION
+
 The Compare-Object cmdlet compares two sets of objects.
 One set of objects is the "reference set," and the other set is the "difference set."
 
 The result of the comparison indicates whether a property value appeared only in the object from the reference set (indicated by the \<= symbol), only in the object from the difference set (indicated by the =\> symbol) or, if the **IncludeEqual** parameter is specified, in both objects (indicated by the == symbol).
 
 NOTE:  If the reference set or the difference set is null ($null), Compare-Object generates a terminating error.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> compare-object -referenceobject $(get-content C:\test\testfile1.txt) -differenceobject $(get-content C:\test\testfile2.txt)
+
+```powershell
+Compare-Object -ReferenceObject $(Get-Content C:\test\testfile1.txt) -DifferenceObject $(Get-Content C:\test\testfile2.txt)
 ```
 
 This command compares the contents of two text files.
 It displays only the lines that appear in one file or in the other file, not lines that appear in both files.
+
 ### Example 2
-```
-PS C:\> compare-object -referenceobject $(get-content C:\Test\testfile1.txt) -differenceobject $(get-content C:\Test\testfile2.txt) -includeequal
+
+```powershell
+Compare-Object -ReferenceObject $(Get-Content C:\Test\testfile1.txt) -DifferenceObject $(Get-Content C:\Test\testfile2.txt) -includeequal
 ```
 
 This command compares each line of content in two text files.
 It displays all lines of content from both files, indicating whether each line appears in only Textfile1.txt or Textfile2.txt or whether each line appears in both files.
+
 ### Example 3
+
 ```
-PS C:\> $processes_before = get-process
-PS C:\> notepad
-PS C:\> $processes_after  = get-process
-PS C:\> compare-object -referenceobject $processes_before -differenceobject $processes_after
+PS> $processes_before = get-process
+PS> notepad
+PS> $processes_after  = get-process
+PS> compare-object -referenceobject $processes_before -differenceobject $processes_after
 ```
 
 These commands compare two sets of process objects.
@@ -61,9 +70,11 @@ The third command uses the Get-Process cmdlet again and stores the resulting pro
 
 The fourth command uses the Compare-Object cmdlet to compare the two sets of process objects.
 It displaysthe differences between them, which include the new instance of Notepad.
+
 ## PARAMETERS
 
 ### -CaseSensitive
+
 Indicates that comparisons should be case-sensitive.
 
 ```yaml
@@ -79,6 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -Culture
+
 Specifies the culture to use for comparisons.
 
 ```yaml
@@ -94,6 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -DifferenceObject
+
 Specifies the objects that are compared to the reference objects.
 
 ```yaml
@@ -109,6 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludeDifferent
+
 Displays only the characteristics of compared objects that are equal.
 
 ```yaml
@@ -124,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeEqual
+
 Displays characteristics of compared objects that are equal.
 By default, only characteristics that differ between the reference and difference objects are displayed.
 
@@ -140,6 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Passes the objects that differed to the pipeline.
 By default, this cmdlet does not generate any output.
 
@@ -156,6 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies the properties of the reference and difference objects to compare.
 
 ```yaml
@@ -171,6 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReferenceObject
+
 Objects used as a reference for comparison.
 
 ```yaml
@@ -186,6 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncWindow
+
 Specifies the number of adjacent objects that Compare-Object inspects while looking for an match in a collection of objects.
 Compare-Object examines adjacent objects when it doesn't find the object in the same position in a collection.
 The default value is \[Int32\]::MaxValue, which means that Compare-Object examines the entire object collection.
@@ -203,16 +222,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe a DifferenceObject object to Compare-Object.
+
 ## OUTPUTS
 
 ### None, or the objects that are different
+
 When you use the PassThru parameter, Compare-Object returns the objects that differed.
 Otherwise, this cmdlet does not generate any output.
+
 ## NOTES
 
 ## RELATED LINKS
