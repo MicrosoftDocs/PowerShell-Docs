@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113312
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Culture
 ---
-
 # Get-Culture
+
 ## SYNOPSIS
+
 Gets the current culture set in the operating system.
+
 ## SYNTAX
 
 ```
@@ -18,23 +20,28 @@ Get-Culture [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Get-Culture cmdlet gets information about the current culture settings.
 This includes information about the current language settings on the system, such as the keyboard layout, and the display format of items such as numbers, currency, and dates.
 
-You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the [Set-Culture](http://go.microsoft.com/fwlink/?LinkID=242258) cmdlet in the International module.
+You can also use the Get-UICulture cmdlet, which gets the current user interface culture on the system, and the [Set-Culture](/powershell/module/internationalcmdlets/set-culture) cmdlet in the International module.
 The user-interface (UI) culture determines which text strings are used for user interface elements, such as menus and messages.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> get-culture
+
+```powershell
+Get-Culture
 ```
 
 This command displays information about the regional settings on the computer.
+
 ### Example 2
+
 ```
-PS C:\> $c = get-culture
-PS C:\> $c | format-list -property *
+PS> $c = get-culture
+PS> $c | format-list -property *
 
 Parent                         : en
 LCID                           : 1033
@@ -58,7 +65,7 @@ OptionalCalendars              : {System.Globalization.GregorianCalendar, System
 UseUserOverride                : True
 IsReadOnly                     : False
 
-PS C:\> $c.calendar
+PS> $c.calendar
 
 MinSupportedDateTime : 1/1/0001 12:00:00 AM
 MaxSupportedDateTime : 12/31/9999 11:59:59 PM
@@ -68,7 +75,7 @@ Eras                 : {1}
 TwoDigitYearMax      : 2029
 IsReadOnly           : False
 
-PS C:\> $c.datetimeformat
+PS> $c.datetimeformat
 
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
@@ -97,7 +104,7 @@ NativeCalendarName               : Gregorian Calendar
 AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...}
 MonthGenitiveNames               : {January, February, March, April...}
 
-PS C:\> $c.datetimeformat.firstdayofweek
+PS> $c.datetimeformat.firstdayofweek
 Sunday
 ```
 
@@ -121,24 +128,32 @@ The fourth command uses dot notation to display the value of the DataTimeFormat 
 
 Many object properties have properties.
 The fifth command uses dot notation to display the value of the FirstDayOfWeek property of the DateTimeFormat property.
+
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### System.Globalization.CultureInfo
+
 Get-Culture returns an object that represents the current culture.
+
 ## NOTES
-* You can also use the $PsCulture and $PsUICulture variables. The $PsCulture variable stores the name of the current culture and the $PsUICulture variable stores the name of the current UI culture.
+
+- You can also use the $PsCulture and $PsUICulture variables. The $PsCulture variable stores the name of the current culture and the $PsUICulture variable stores the name of the current UI culture.
 
 
 ## RELATED LINKS
 
-[Set-Culture]()
+[Set-Culture](/powershell/module/internationalcmdlets/set-culture)
 
 [Get-UICulture](Get-UICulture.md)
