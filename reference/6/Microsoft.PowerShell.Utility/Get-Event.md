@@ -179,12 +179,11 @@ In the value of the *Action* parameter, the SourceIdentifier property of the $Ev
 A **DateTime** object that represents the time at which the event was generated.
 In the value of the *Action* parameter, the TimeGenerated property of the $Event automatic variable contains this value.
 
-  --MessageData.
+  - MessageData.
 Data associated with the event subscription.
 Users specify this data when they register an event.
 In the value of the *Action* parameter, the MessageData property of the $Event automatic variable contains this value.
 
-*
 
 ## RELATED LINKS
 

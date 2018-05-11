@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,13 +7,16 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=135195
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Add-Type
 ---
-
 # Add-Type
+
 ## SYNOPSIS
+
 Adds a Microsoft .NET Framework type (a class) to a Windows PowerShell session.
+
 ## SYNTAX
 
 ### FromSource (Default)
+
 ```
 Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
  [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>] [-OutputAssembly <String>]
@@ -21,6 +24,7 @@ Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblie
 ```
 
 ### FromMember
+
 ```
 Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>] [-UsingNamespace <String[]>]
  [-Language <Language>] [-ReferencedAssemblies <String[]>] [-CodeDomProvider <CodeDomProvider>]
@@ -29,6 +33,7 @@ Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>] [
 ```
 
 ### FromPath
+
 ```
 Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-CompilerParameters <CompilerParameters>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
@@ -36,6 +41,7 @@ Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-CompilerParamet
 ```
 
 ### FromLiteralPath
+
 ```
 Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-CompilerParameters <CompilerParameters>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
@@ -43,11 +49,13 @@ Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-CompilerPa
 ```
 
 ### FromAssemblyName
+
 ```
 Add-Type -AssemblyName <String[]> [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Add-Type** cmdlet lets you define a .NET Framework class in your Windows PowerShell session.
 You can then instantiate objects (by using the New-Object cmdlet) and use the objects, just as you would use any .NET Framework object.
 If you add an **Add-Type** command to your Windows PowerShell profile, the class is available in all Windows PowerShell sessions.
@@ -58,11 +66,13 @@ You can use this feature to make Platform Invoke (P/Invoke) calls to unmanaged f
 If you specify source code, **Add-Type** compiles the specified source code and generates an in-memory assembly that contains the new .NET Framework types.
 
 You can use the parameters of **Add-Type** to specify an alternate language and compiler (CSharp is the default), compiler options, assembly dependencies, the class namespace, the names of the type, and the resulting assembly.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> $source = @"
+PS> $source = @"
 public class BasicTest
 {
   public static int Add(int a, int b)
@@ -75,10 +85,10 @@ public class BasicTest
   }
 }
 "@
-PS C:\> Add-Type -TypeDefinition $source
-PS C:\> [BasicTest]::Add(4, 3)
-PS C:\> $basicTestObject = New-Object BasicTest
-PS C:\> $basicTestObject.Multiply(5, 2)
+PS> Add-Type -TypeDefinition $source
+PS> [BasicTest]::Add(4, 3)
+PS> $basicTestObject = New-Object BasicTest
+PS> $basicTestObject.Multiply(5, 2)
 ```
 
 These commands add the BasicTest class to the session by specifying source code that is stored in a variable.
@@ -98,12 +108,14 @@ The fourth command uses the **New-Object** cmdlet to instantiate an instance of 
 It saves the new object in the $basicTestObject variable.
 
 The fifth command uses the Multiply method of $basicTestObject.
+
 ### Example 2
+
 ```
-PS C:\> [BasicTest] | Get-Member
-PS C:\> [BasicTest] | Get-Member -Static
-PS C:\> $basicTestObject | Get-Member
-PS C:\> [BasicTest] | Get-Member
+PS> [BasicTest] | Get-Member
+PS> [BasicTest] | Get-Member -Static
+PS> $basicTestObject | Get-Member
+PS> [BasicTest] | Get-Member
 TypeName: System.RuntimeType
 
 Name                           MemberType Definition
@@ -112,7 +124,7 @@ Clone                          Method     System.Object Clone()
 Equals                         Method     System.Boolean Equals
 FindInterfaces                 Method     System.Type[] FindInt
 ...
-PS C:\> [BasicTest] | Get-Member -static
+PS> [BasicTest] | Get-Member -static
 TypeName: BasicTest
 
 Name            MemberType Definition
@@ -121,7 +133,7 @@ Add             Method     static System.Int32 Add(Int32 a, Int32 b)
 Equals          Method     static System.Boolean Equals(Object objA,
 ReferenceEquals Method     static System.Boolean ReferenceEquals(Obj
 
-PS C:\> $basicTestObject | Get-Member
+PS> $basicTestObject | Get-Member
 TypeName: BasicTest
 
 Name        MemberType Definition
@@ -145,9 +157,11 @@ The third command uses the **Get-Member** cmdlet to get the members of the objec
 This was the object instance that was created by using the **New-Object** cmdlet with the $BasicType class.
 
 The output reveals that the value of the $BasicTestObject variable is an instance of the BasicTest class and that it includes a member called Multiply.
+
 ### Example 3
-```
-PS C:\> $accType = Add-Type -AssemblyName accessib* -PassThru
+
+```powershell
+$accType = Add-Type -AssemblyName accessib* -PassThru
 ```
 
 This command adds the classes from the Accessibility assembly to the current session.
@@ -155,10 +169,12 @@ The command uses the **AssemblyName** parameter to specify the name of the assem
 The wildcard character allows you to get the correct assembly even when you are not sure of the name or its spelling.
 
 The command uses the **PassThru** parameter to generate objects that represent the classes that are added to the session, and it saves the objects in the $accType variable.
+
 ### Example 4
+
 ```
-PS C:\> Add-Type -Path "c:\ps-test\Hello.vb"
-PS C:\> [VBFromFile]::SayHello(", World")
+PS> Add-Type -Path "c:\ps-test\Hello.vb"
+PS> [VBFromFile]::SayHello(", World")
 
 # From Hello.vb
 
@@ -179,9 +195,11 @@ The first command uses the **Add-Type** cmdlet to add the type defined in the He
 The command uses the **Path** parameter to specify the source file.
 
 The second command calls the SayHello function as a static method of the VBFromFile class.
+
 ### Example 5
+
 ```
-PS C:\> $signature = @"
+PS> $signature = @"
 [DllImport("user32.dll")]
 public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
 "@
@@ -200,7 +218,7 @@ The commands in this example demonstrate how to call native Windows APIs in Wind
 **Add-Type** uses the Platform Invoke (P/Invoke) mechanism to call a function in User32.dll from Windows PowerShell.
 
 The first command stores the C# signature of the **ShowWindowAsync** function in the $signature variable.
-(For more information, see [ShowWindowAsync function](https://go.microsoft.com/fwlink/?LinkId=143643) in the MSDN library.)
+(For more information, see [ShowWindowAsync function](https://msdn.microsoft.com/en-us/library/ms633549(VS.85).aspx) in the MSDN library.)
 To ensure that the resulting method will be visible in a Windows PowerShell session, the "public" keyword has been added to the standard signature.
 
 The second command uses the **Add-Type** cmdlet to add the ShowWindowAsync function to the Windows PowerShell session as a static method of a class that **Add-Type** creates.
@@ -218,28 +236,32 @@ Then it uses the **MainWindowHandle** property of the current process and a valu
 
 To restore the window, the fourth command use a value of "4" for the window position, which represents the SW_RESTORE value.
 (SW_MAXIMIZE is 3.)
+
 ### Example 6
-```
-PS C:\> Add-Type -MemberDefinition $jsMethod -Name "PrintInfo" -Language JScript
+
+```powershell
+Add-Type -MemberDefinition $jsMethod -Name "PrintInfo" -Language JScript
 ```
 
 This command uses the **Add-Type** cmdlet to add a method from inline JScript code to the Windows PowerShell session.
 It uses the **MemberDefinition** parameter to submit source code stored in the $jsMethod variable.
 It uses the **Name** parameter to specify a name for the class that **Add-Type** creates for the method and the **Language** parameter to specify the JScript language.
+
 ### Example 7
+
 ```
-PS C:\> Add-Type -Path FSharp.Compiler.CodeDom.dll
-PS C:\> Add-Type -Path FSharp.Compiler.CodeDom.dll
-PS C:\> $Provider = New-Object Microsoft.FSharp.Compiler.CodeDom.FSharpCodeProvider
-PS C:\> $fSharpCode = @"
+PS> Add-Type -Path FSharp.Compiler.CodeDom.dll
+PS> Add-Type -Path FSharp.Compiler.CodeDom.dll
+PS> $Provider = New-Object Microsoft.FSharp.Compiler.CodeDom.FSharpCodeProvider
+PS> $fSharpCode = @"
 let rec loop n =
 if n <= 0 then () else begin
 print_endline (string_of_int n);
 loop (n-1)
 end
 "@
-PS C:\> $fsharpType = Add-Type -TypeDefinition $fSharpCode -CodeDomProvider $Provider -PassThru | where { $_.IsPublic }
-PS C:\> $fsharpType::loop(4)
+PS> $fsharpType = Add-Type -TypeDefinition $fSharpCode -CodeDomProvider $Provider -PassThru | Where-Object { $_.IsPublic }
+PS> $fsharpType::loop(4)
 4
 3
 2
@@ -264,9 +286,11 @@ The **PassThru** parameter directs **Add-Type** to return a **Runtime** object t
 The **Where-Object** cmdlet is used because the FSharp provider generates non-public types to support the resulting public type.
 
 The fifth command calls the Loop method as a static method of the type stored in the $fSharpType variable.
+
 ## PARAMETERS
 
 ### -AssemblyName
+
 Specifies the name of an assembly that includes the types.
 **Add-Type** takes the types from the specified assembly.
 This parameter is required when you are creating types based on an assembly name.
@@ -291,6 +315,7 @@ Accept wildcard characters: False
 ```
 
 ### -CodeDomProvider
+
 Specifies a code generator or compiler.
 **Add-Type** uses the specified compiler to compile the source code.
 The default is the CSharp compiler.
@@ -310,6 +335,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompilerParameters
+
 Specifies the options for the source code compiler.
 These options are sent to the compiler without revision.
 
@@ -331,6 +357,7 @@ Accept wildcard characters: False
 ```
 
 ### -IgnoreWarnings
+
 Ignores compiler warnings.
 Use this parameter to prevent **Add-Type** from handling compiler warnings as errors.
 
@@ -347,6 +374,7 @@ Accept wildcard characters: False
 ```
 
 ### -Language
+
 Specifies the language that is used in the source code.
 The **Add-Type** cmdlet uses the value of this parameter to select the appropriate CodeDomProvider.
 Valid values are "CSharp", "CSharpVersion3", "VisualBasic", and "JScript".
@@ -365,6 +393,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the path to source code files or assembly DLL files that contain the types.
 Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -384,6 +413,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberDefinition
+
 Specifies new properties or methods for the class.
 **Add-Type** generates the template code that is required to support the properties or methods.
 
@@ -403,6 +433,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the class to create.
 This parameter is required when generating a type from a member definition.
 
@@ -424,6 +455,7 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
+
 Specifies a namespace for the type.
 
 If this parameter is not included in the command, the type is created in the **Microsoft.PowerShell.Commands.AddType.AutoGeneratedTypes** namespace.
@@ -442,6 +474,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputAssembly
+
 Generates a DLL file for the assembly with the specified name in the location.
 Enter a path (optional) and file name.
 Wildcard characters are permitted.
@@ -460,9 +493,10 @@ Accept wildcard characters: False
 ```
 
 ### -OutputType
+
 Specifies the output type of the output assembly.
 Valid values are **Library**, **ConsoleApplication**, and **WindowsApplication**.
-For more information about the values, see [OutputAssemblyType Enumeration](https://msdn.microsoft.com/library/microsoft.powershell.commands.outputassemblytype) in the MSDN library.
+For more information about the values, see [OutputAssemblyType Enumeration](/dotnet/api/microsoft.powershell.commands) in the MSDN library.
 
 By default, no output type is specified.
 
@@ -481,6 +515,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns a **System.Runtime** object that represents the types that were added.
 By default, this cmdlet does not generate any output.
 
@@ -497,6 +532,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path to source code files or assembly DLL files that contain the types.
 
 If you submit source code files, **Add-Type** compiles the code in the files and creates an in-memory assembly of the types.
@@ -518,6 +554,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReferencedAssemblies
+
 Specifies the assemblies upon which the type depends.
 By default, **Add-Type** references System.dll and System.Management.Automation.dll.
 The assemblies that you specify by using this parameter are referenced in addition to the default assemblies.
@@ -537,6 +574,7 @@ Accept wildcard characters: False
 ```
 
 ### -TypeDefinition
+
 Specifies the source code that contains the type definitions.
 Enter the source code in a string or here-string, or enter a variable that contains the source code.
 For more information about here-strings, see about_Quoting_Rules (http://go.microsoft.com/fwlink/?LinkID=113253).
@@ -558,6 +596,7 @@ Accept wildcard characters: False
 ```
 
 ### -UsingNamespace
+
 Specifies other namespaces that are required for the class.
 This is much like the Using keyword in C#.
 
@@ -578,18 +617,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to Add-Type.
+
 ## OUTPUTS
 
 ### None or System.Type
+
 When you use the **PassThru** parameter, **Add-Type** returns a **System.Type** object that represents the new type.
 Otherwise, this cmdlet does not generate any output.
+
 ## NOTES
-* The types that you add exist only in the current session.  To use the types in all sessions, add them to your Windows PowerShell profile. For more information about the profile, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
+
+- The types that you add exist only in the current session.  To use the types in all sessions, add them to your Windows PowerShell profile. For more information about the profile, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 
   Type names (and namespaces) must be unique within a session.
 You cannot unload a type or change it.
@@ -601,6 +647,7 @@ As a result, types written in these languages cannot be used with **Add-Type**.
 
   This cmdlet is based on the **CodeDomProvider** class.
 For more information about this class, see the Microsoft .NET Framework SDK.
+
 ## RELATED LINKS
 
 [Add-Member](Add-Member.md)

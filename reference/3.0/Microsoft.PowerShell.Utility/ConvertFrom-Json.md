@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -33,7 +33,7 @@ This cmdlet is introduced in PowerShell 3.0.
 ### Example 1
 
 ```
-PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+PS> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 
 DisplayHint : 2
 
@@ -141,7 +141,7 @@ You can pipe a JSON string to **ConvertFrom-Json**.
 
 ## RELATED LINKS
 
-[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](http://msdn.microsoft.com/library/bb299886.aspx)
+[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](https://msdn.microsoft.com/library/bb299886.aspx)
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

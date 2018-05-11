@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=217032
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertTo-Json
 ---
-
 # ConvertTo-Json
+
 ## SYNOPSIS
+
 Converts an object to a JSON-formatted string
+
 ## SYNTAX
 
 ```
@@ -18,6 +20,7 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [<CommonPara
 ```
 
 ## DESCRIPTION
+
 The **ConvertTo-Json** cmdlet converts any object to a string in JavaScript Object Notation (JSON) format.
 The properties are converted to field names, the field values are converted to property values, and the methods are removed.
 
@@ -26,11 +29,13 @@ You can then use the ConvertFrom-Json cmdlet to convert a JSON-formatted string 
 Many web sites use JSON instead of XML to serialize data for communication between servers and web-based apps.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
+PS> (Get-UICulture).Calendar | ConvertTo-Json
 
 {
 
@@ -56,18 +61,22 @@ PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
 ```
 
 This command uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
+
 ### Example 2
+
 ```
-PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json - Compress
+PS> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json - Compress
 {"Admin":"True","Account":"User01","Domain":"Domain01"}
 ```
 
 This command shows the effect of using the Compress parameter of **ConvertTo-Json**.
 The compression affects only the appearance of the string, not its validity.
+
 ### Example 3
+
 ```
 The first command uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the Get-Date cmdlet to a JSON-formatted string. The command uses the Select-Object cmdlet to get all (*) of the properties of the **DateTime** object.The output shows the JSON string that **ConvertTo-Json** returned.
-PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
+PS> Get-Date | Select-Object -Property * | ConvertTo-Json
 
 {
 
@@ -128,7 +137,7 @@ PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 }
 
 The second command uses ConvertFrom-Json to convert the JSON string to a JSON object.
-PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+PS> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 
 DisplayHint : 2
 
@@ -168,16 +177,20 @@ Year        : 2012
 ```
 
 This command shows how to use the ConvertTo-Json and ConvertFrom-Json cmdlet to convert an object to a JSON string and a JSON object.
+
 ### Example 4
-```
-PS C:\> $JsonSecurityHelp = Get-Content $pshome\Modules\Microsoft.PowerShell.Security\en-US\Microsoft.PowerShell.Security.dll-Help.xml | ConvertTo-Json
+
+```powershell
+$JsonSecurityHelp = Get-Content $pshome\Modules\Microsoft.PowerShell.Security\en-US\Microsoft.PowerShell.Security.dll-Help.xml | ConvertTo-Json
 ```
 
 This command uses the **ConvertTo-Json** cmdlet to convert a Windows PowerShell help file from XML format to JSON format.
 You can use a command like this to use the help topic content in a web service application.
+
 ## PARAMETERS
 
 ### -Compress
+
 Omits white space and indented formatting in the output string.
 
 ```yaml
@@ -193,6 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -Depth
+
 Specifies how many levels of contained objects are included in the JSON representation.
 The default value is 2.
 
@@ -209,6 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the objects to convert to JSON format.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 You can also pipe an object to **ConvertTo-Json**.
@@ -230,17 +245,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Object
+
 You can pipe any object to **ConvertTo-Json**.
+
 ## OUTPUTS
 
 ### System.String
 
 ## NOTES
-* The **ConvertTo-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
+
+- The **ConvertTo-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS
 
