@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113326
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-PSCallStack
 ---
-
 # Get-PSCallStack
+
 ## SYNOPSIS
+
 Displays the current call stack.
+
 ## SYNTAX
 
 ```
@@ -18,18 +20,21 @@ Get-PSCallStack [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Get-PSCallStack cmdlet displays the current call stack.
 
 Although it is designed to be used with the Windows PowerShell debugger, you can use this cmdlet to display the call stack in a script or function outside of the debugger.
 
 To run a Get-PSCallStack command while in the debugger,  type "k" or "get-pscallstack".
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> function my-alias {
+PS> function my-alias {
 $p = $args[0]
-get-alias | where {$_.definition -like "*$p"} | ft definition, name -auto
+get-alias | Where-Object {$_.definition -like "*$p"} | Format-Table definition, name -auto
 }
 PS C:\ps-test> set-psbreakpoint -command my-alias
 
@@ -49,7 +54,7 @@ my-alias get-content
 $p = $args[0]
 DEBUG: Stepped to ':    $p = $args[0]    '
 [DBG]: PS C:\ps-test> s
-get-alias | Where {$_.Definition -like "*$p*"} | ft Definition,
+get-alias | Where-Object {$_.Definition -like "*$p*"} | Format-Table Definition,
 [DBG]: PS C:\ps-test>get-pscallstack
 Name        CommandLineParameters         UnboundArguments              Location
 ----        ---------------------         ----------------              --------
@@ -79,18 +84,25 @@ Two consecutive step-into (s) commands begin executing the function line by line
 Then, a Get-PSCallStack command is used to retrieve the call stack.
 
 The final command is a Step-Out command (o) that exits the debugger and continues executing the script to completion.
+
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
+
 ## OUTPUTS
 
 ### System.Management.Automation.CallStackFrame
+
 Get-PSCallStack returns an object that represents the items in the call stack.
+
 ## NOTES
 
 ## RELATED LINKS

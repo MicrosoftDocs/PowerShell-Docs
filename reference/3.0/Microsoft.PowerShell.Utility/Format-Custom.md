@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113301
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Format-Custom
 ---
-
 # Format-Custom
 
 ## SYNOPSIS
+
 Uses a customized view to format the output.
 
 ## SYNTAX
@@ -21,6 +21,7 @@ Format-Custom [[-Property] <Object[]>] [-Depth <Int32>] [-GroupBy <Object>] [-Vi
 ```
 
 ## DESCRIPTION
+
 The `Format-Custom` cmdlet formats the output of a command as defined in an alternate view.
 `Format-Custom` is designed to display views that are not just tables or just lists.
 You can use the views defined in the *format.PS1XML files in the Windows PowerShell directory, or you can create your own views in new PS1XML files and use the Update-FormatData cmdlet to add them to Windows PowerShell.
@@ -28,6 +29,7 @@ You can use the views defined in the *format.PS1XML files in the Windows PowerSh
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
 PS C:\> Get-Command Start-Transcript | Format-Custom -View MyView
 ```
@@ -36,6 +38,7 @@ This command formats information about the `Start-Transcript` cmdlet in the form
 To run this command successfully, you must first create a new PS1XML file, define the MyView view, and then use the Update-FormatData command to add the PS1XML file to Windows PowerShell.
 
 ### Example 2
+
 ```powershell
 PS C:\> Get-Process Winlogon | Format-Custom
 ```
@@ -46,6 +49,7 @@ Because the command does not use the **View** parameter, `Format-Custom` uses a 
 ## PARAMETERS
 
 ### -Depth
+
 Specifies the number of columns in the display.
 
 ```yaml
@@ -61,6 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayError
+
 Displays errors at the command line.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a Format-Custom command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **DisplayError** parameter with an expression.
@@ -86,6 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -Expand
+
 Formats the collection object, as well as the objects in the collection.
 This parameter is designed to format objects that support the ICollection (System.Collections) interface.
 The default value is **EnumOnly**.
@@ -109,6 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Directs the cmdlet to display all of the error information.
 Use with the DisplayError or ShowError parameters.
 By default, when an error object is written to the error or display streams, only some of the error information is displayed.
@@ -126,6 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupBy
+
 Formats the output in groups based on a shared property or value.
 Enter an expression or a property of the output.
 
@@ -150,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the objects to be formatted.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
@@ -166,6 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies the object properties that appear in the display and the order in which they appear.
 Wildcards are permitted.
 
@@ -193,6 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -ShowError
+
 Sends errors through the pipeline.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a Format-Custom command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **ShowError** parameter with an expression.
@@ -221,6 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -View
+
 Specifies the name of an alternate format or "view." If you omit this parameter, `Format-Custom` uses a default custom view.
 You cannot use the Property and View parameters in the same command.
 

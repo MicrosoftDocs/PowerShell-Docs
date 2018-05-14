@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  12/04/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113299
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Export-Csv
 ---
-
 # Export-Csv
 
 ## SYNOPSIS
@@ -18,7 +17,7 @@ Converts objects into a series of comma-separated (CSV) strings and saves the st
 
 ### Delimiter (Default)
 
-```powershell
+```
 Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
  [-Encoding <String>] [-Append] [[-Delimiter] <Char>] [-NoTypeInformation] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -26,7 +25,7 @@ Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-
 
 ### UseCulture
 
-```powershell
+```
 Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
  [-Encoding <String>] [-Append] [-UseCulture] [-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -59,7 +58,7 @@ Get-Process | Export-Csv -Path "processes.csv"
 Get-Content -Path "processes.csv"
 ```
 
-```Output
+```output
 #TYPE System.Diagnostics.Process
 __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,...
 Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS...
@@ -76,7 +75,7 @@ Get-Process | Export-Csv -Path "processes.csv" -Delimiter ";"
 Get-Content -Path "processes.csv"
 ```
 
-```Output
+```output
 #TYPE System.Diagnostics.Process
 __NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;...
 Process;powershell;626;201666560;76058624;61943808;11960;C:\WINDOWS...
@@ -103,7 +102,7 @@ Get-Process | Export-Csv -Path "processes.csv" -NoTypeInformation
 Get-Content -Path "processes.csv"
 ```
 
-```Output
+```output
 __NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,...
 Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS...
 Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
@@ -136,7 +135,7 @@ Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear | Export-
 Get-Content -Path "Date.csv"
 ```
 
-```Output
+```output
 "DateTime","Day","DayOfWeek","DayOfYear"
 "Tuesday, October 05, 2010 2:45:13 PM","5","Tuesday","278"
 ```
@@ -174,7 +173,7 @@ The resulting CSV file is not useful.
 Get-Process | Export-Csv -Path ReadOnly.csv
 ```
 
-```Output
+```output
 Export-Csv : Access to the path 'C:\ReadOnly.csv' is denied.
 At line:1 char:15
 + Get-Process | Export-Csv -Path ReadOnly.csv
@@ -202,7 +201,7 @@ $AdditionalContent = [PSCustomObject]@{Name = 'Windows PowerShell'; Edition = 'D
 $AdditionalContent | Export-Csv -Path file.csv -Append
 ```
 
-```Output
+```output
 Export-Csv : Cannot append CSV content to the following file: file.csv. The appended object does not have a property that corresponds to the following column: Version. To continue with mismatched properties, add the -Force parameter, and then retry the command.
 At line:1 char:22
 + $AdditionalContent | Export-Csv -Path file.csv -Append
@@ -217,7 +216,7 @@ $AdditionalContent | Export-Csv -Path file.csv -Append -Force
 Import-Csv -Path file.csv
 ```
 
-```Output
+```output
 Name               Version
 ----               -------
 PowerShell Core    6.0
