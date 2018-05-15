@@ -15,12 +15,12 @@
             "ms.tgt_pltfr": "windows, macos, linux"
         },
         "fileMetadata": {
-            "ms.prod": "powershell",
-            "ms.technology": "powershell-gallery",
-            "ms.topic": "conceptual",
-            "manager": "carmonm",
-            "author": "JKeithB",
-            "ms.author": "keithb"
+            "ms.prod": { "**/**.md": "powershell" },
+            "ms.technology": { "**/**.md": "powershell-gallery" },
+            "ms.topic": { "**/**.md": "conceptual" },
+            "manager": { "**/**.md": "carmonm" },
+            "author": { "**/**.md": "JKeithB" },
+            "ms.author": { "**/**.md": "keithb" }
         },
         "resource": [{
             "files": [

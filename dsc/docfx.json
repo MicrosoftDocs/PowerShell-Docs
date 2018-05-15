@@ -16,12 +16,12 @@
             "ms.tgt_pltfr": "windows"
         },
         "fileMetadata": {
-            "ms.prod": "powershell",
-            "ms.technology": "powershell-dsc",
-            "ms.topic": "conceptual",
-            "manager": "carmonm",
-            "ms.author": "dacoulte",
-            "author": "dcthegeek"
+            "ms.prod": { "**/**.md": "powershell" },
+            "ms.technology": { "**/**.md": "powershell-dsc" },
+            "ms.topic": { "**/**.md": "conceptual" },
+            "manager": { "**/**.md": "carmonm" },
+            "ms.author": { "**/**.md": "dacoulte" },
+            "author": { "**/**.md": "dcthegeek" }
         },
         "resource": [{
             "files": [

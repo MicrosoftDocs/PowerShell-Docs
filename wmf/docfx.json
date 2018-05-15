@@ -14,12 +14,12 @@
             "ms.tgt_pltfr": "windows"
         },
         "fileMetadata": {
-            "ms.prod": "powershell",
-            "ms.technology": "powershell-wmf",
-            "ms.topic": "reference",
-            "manager": "carmonm",
-            "author": "JKeithB",
-            "ms.author": "keithb"
+            "ms.prod": { "**/**.md": "powershell" },
+            "ms.technology": { "**/**.md": "powershell-wmf" },
+            "ms.topic": { "**/**.md": "reference" },
+            "manager": { "**/**.md": "carmonm" },
+            "author": { "**/**.md": "JKeithB" },
+            "ms.author": { "**/**.md": "keithb" }
         },
         "resource": [{
             "files": [
