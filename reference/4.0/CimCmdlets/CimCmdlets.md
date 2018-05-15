@@ -3,10 +3,9 @@ ms.date:  06/09/2017
 schema:  2.0.0
 Module Name: CimCmdlets
 keywords:  powershell,cmdlet
-Help Version:  3.0
+Help Version:  4.0
 Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
 Download Help Link: {{Please enter FwLink manually}}
-Help Version: {{Please enter version of help manually (X.X.X.X) format}}
 Locale: en-US
 ---
 

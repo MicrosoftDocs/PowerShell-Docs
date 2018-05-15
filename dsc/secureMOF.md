@@ -1,6 +1,5 @@
 ---
 ms.date:  10/31/2017
-ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Securing the MOF File
 ---

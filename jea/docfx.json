@@ -1,33 +1,33 @@
 {
     "build": {
-        "content": [
-            {
-                "files": [
-                    "**/**.md",
-                    "**/**.yml"
-                ],
-                "exclude": ["**/obj/**"]
-            }
-        ],
+        "content": [{
+            "files": [
+                "**/**.md",
+                "**/**.yml"
+            ],
+            "exclude": ["**/obj/**"]
+        }],
         "globalMetadata": {
             "breadcrumb_path": "bread/toc.yml",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "ROBOTS": "INDEX, FOLLOW",
-            "ms.prod": "powershell",
-            "ms.technology": "jea",
-            "manager": "carmonm",
             "ms.devlang": "powershell",
-            "ms.tgt_pltfr": "windows",
-            "ms.author": "sewhee"
+            "ms.tgt_pltfr": "windows, macos, linux"
         },
-        "resource": [
-            {
-                "files": [
-                    "**/images/**"
-                ],
-                "exclude": ["**/obj/**"]
-            }
-        ],
+        "fileMetadata": {
+            "ms.prod": "powershell",
+            "ms.technology": "powershell-jea",
+            "ms.topic": "conceptual",
+            "manager": "carmonm",
+            "author": "JKeithB",
+            "ms.author": "keithb"
+        },
+        "resource": [{
+            "files": [
+                "**/images/**"
+            ],
+            "exclude": ["**/obj/**"]
+        }],
         "template": "op.html",
         "dest": "jea"
     }

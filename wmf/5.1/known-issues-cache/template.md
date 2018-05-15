@@ -1,8 +1,7 @@
 ---
 ms.date:  06/12/2017
-author:  JKeithB
-ms.topic:  reference
 keywords:  wmf,powershell,setup
+ms.topic: conceptual
 title:  example template of a known issue or limitation writeup
 ---
 
