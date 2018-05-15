@@ -1,6 +1,5 @@
 ---
 ms.date:  10/16/2017
-ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Enacting configurations
 ---

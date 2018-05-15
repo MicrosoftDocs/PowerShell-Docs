@@ -1,6 +1,5 @@
 ---
 ms.date:  03/15/2018
-ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Using DSC on Microsoft Azure
 ---

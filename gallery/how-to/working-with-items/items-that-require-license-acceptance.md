@@ -1,7 +1,6 @@
 ﻿---
 ms.date:  06/12/2017
 contributor:  Farehar
-ms.topic:  conceptual
 keywords:  gallery,powershell,psgallery
 title:  Require license acceptance
 ---
