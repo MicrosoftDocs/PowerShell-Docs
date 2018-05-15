@@ -1,7 +1,6 @@
 ﻿---
 ms.date:  09/26/2017
 contributor:  keithb
-ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
 title:  Prerelease Module Versions
 ---

@@ -2,12 +2,11 @@
 ---
 ms.date:  06/12/2017
 contributor:  manikb
-ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
 title:  Installing PowerShellGet
 ---
 
-# Get PowerShellGet module
+# Installing PowerShellGet
 
 ## PowerShellGet is an in-box module in the following releases
 

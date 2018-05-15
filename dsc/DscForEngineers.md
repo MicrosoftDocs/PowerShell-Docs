@@ -1,6 +1,5 @@
 ---
 ms.date:  10/13/2017
-ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Desired State Configuration Overview for Decision Makers
 ---
