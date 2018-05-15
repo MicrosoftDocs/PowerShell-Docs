@@ -309,7 +309,6 @@ For on-premises environments, these offer pull service capabilities
 and an opportunity to contribute back to the community
 with incremental enhancements.
 
-- [Tug](https://github.com/powershellorg/tug)
 - [DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
 
 ## Pull client configuration
