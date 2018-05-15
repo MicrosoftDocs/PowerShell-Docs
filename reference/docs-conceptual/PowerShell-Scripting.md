@@ -25,18 +25,18 @@ Windows PowerShell is designed to improve the command-line and scripting environ
 ### Discoverability
 Windows PowerShell makes it easy to discover its features. For example, to find a list of cmdlets that view and change Windows services, type:
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 After discovering which cmdlet accomplishes a task, you can learn more about the cmdlet by using the Get-Help cmdlet. For example, to display help about the Get-Service cmdlet, type:
 
-```
+```powershell
 Get-Help Get-Service
 ```
 Most cmdlets emit objects which can be manipulated and then rendered into text for display. To fully understand the output of that cmdlet, pipe its output to the Get-Member cmdlet. For example, the following command displays information about the members of the object output by the Get-Service cmdlet.
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 
