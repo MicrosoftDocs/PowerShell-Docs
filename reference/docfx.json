@@ -53,7 +53,7 @@
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "apiPlatform": "powershell",
             "ms.devlang": "powershell",
-            "ROBOTS": "INDEX, FOLLOW",
+            "ROBOTS": "INDEX, FOLLOW"
         },
         "fileMetadata": {
             "ms.prod": "powershell",

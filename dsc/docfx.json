@@ -13,7 +13,7 @@
             "layout": "conceptual",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.devlang": "powershell",
-            "ms.tgt_pltfr": "windows",
+            "ms.tgt_pltfr": "windows"
         },
         "fileMetadata": {
             "ms.prod": "powershell",
