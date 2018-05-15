@@ -1,6 +1,5 @@
 ---
 ms.date:  06/12/2017
-ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Building a Continuous Integration and Continuous Deployment pipeline with DSC
 ---

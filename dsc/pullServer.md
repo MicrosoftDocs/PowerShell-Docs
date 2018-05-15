@@ -1,6 +1,5 @@
 ---
 ms.date:  04/11/2018
-ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Pull Service
 ---

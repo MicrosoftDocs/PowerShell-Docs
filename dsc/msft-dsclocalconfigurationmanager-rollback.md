@@ -1,6 +1,5 @@
 ---
 ms.date:  06/12/2017
-ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  RollBack method of the MSFT_DSCLocalConfigurationManager class
 ---

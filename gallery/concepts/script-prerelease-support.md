@@ -1,7 +1,6 @@
 ﻿---
 ms.date:  10/17/2017
 contributor:  keithb
-ms.topic:  reference
 keywords:  gallery,powershell,cmdlet,psget
 title:  Prerelease versions of scripts
 ---

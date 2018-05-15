@@ -1,6 +1,5 @@
 ---
 ms.date:  10/11/2017
-ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Configuring the Local Configuration Manager
 ---

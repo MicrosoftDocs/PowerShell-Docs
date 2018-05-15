@@ -1,6 +1,5 @@
 ---
 ms.date:  06/12/2017
-ms.topic:  conceptual
 keywords:  dsc,powershell,configuration,setup
 title:  Writing a single-instance DSC resource (best practice)
 ---

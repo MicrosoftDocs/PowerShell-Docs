@@ -1,11 +1,8 @@
 ---
-description:
-ms.topic:  article
-ms.prod:  powershell
+ms.topic:  reference
 keywords:  powershell,cmdlet
 ms.date:  12/12/2016
-title:  remove pswaauthorizationrule
-ms.technology:  powershell
+title:  Remove-PswaAuthorizationRule
 ---
 
 # Remove-PswaAuthorizationRule
