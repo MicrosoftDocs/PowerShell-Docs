@@ -1,6 +1,6 @@
 ---
 description: Learn about the version history for the Desired State Configuration (DSC) extension in Azure.
-ms.date:  05/09/2018
+ms.date:  05/16/2018
 keywords:  dsc, powershell, azure, extension
 title:  Azure DSC Extension Version History
 ---
@@ -30,30 +30,11 @@ This article will provide information about each version of the Azure DSC VM Ext
   - WMF 4.0
 - **Environment:**
   - Azure
+  - Azure China
+  - Azure Government
 - **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
 - **New features:**
   - Improvement in extension metadata for substatus and other minor bug fixes.
-
-### Version 2.19
-
-- **Release date:**
-  - June 3, 2016
-- **OS support:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF support:**
-  - WMF 5.0 RTM
-  - WMF 4.0 Update
-  - WMF 4.0
-- **Environment:**
-  - Azure
-  - Azure China
-  - Azure Government
-- **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
-- **New features:**
-  - The DSC Extension is now on boarded to Azure China. This version primarily contains fixes for running the Extension on Azure China.
 
 ## Supported Versions
 
