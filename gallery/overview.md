@@ -1,4 +1,4 @@
-﻿---
+ and ﻿---
 ms.date:  06/12/2017
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery,psget
@@ -29,9 +29,9 @@ install local help for these commands.
 
 ## Supported Operating Systems
 
-The **PowerShellGet** module requires **PowerShell 3.0 or newer**.
+The **PowerShellGet** module requires **Windows PowerShell 3.0 or newer**, or **PowerShell Core 6.0 or newer**.
 
-Therefore, **PowerShellGet** requires one of the following operating systems:
+A suitable version of **Windows PowerShell** is available for these operating systems:
 
 - Windows 10
 - Windows 8.1 Pro
@@ -43,6 +43,10 @@ Therefore, **PowerShellGet** requires one of the following operating systems:
 
 **PowerShellGet** also requires .NET Framework 4.5 or above. You can install .NET Framework 4.5 or
 above from [here](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+
+**PowerShell Core** supports many operating systems. See [this article](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) for a full list.
+
+Many modules hosted in the gallery will support different OSes and have additional requirements. Please refer to the documentation for the modules for more information.
 
 ## Got a question? Have feedback?
 
