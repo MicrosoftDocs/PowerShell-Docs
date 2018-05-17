@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113348
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Measure-Command
 ---
-
 # Measure-Command
 
 ## Synopsis
+
 Measures the time it takes to run script blocks and cmdlets.
 
 ## Syntax
@@ -21,6 +21,7 @@ Measure-Command [-Expression] <ScriptBlock> [-InputObject <PSObject>]
 ```
 
 ## Description
+
 The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the operation, and returns the execution time.
 
 ## Examples
@@ -80,6 +81,7 @@ These commands show the value of using a provider-specific filter in Windows Pow
 ## Parameters
 
 ### -Expression
+
 Specifies the expression that is being timed.
 Enclose the expression in braces ({}).
 The parameter name ("**Expression**") is optional.
@@ -97,6 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies objects representing the expressions to be measured.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
@@ -113,18 +116,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## Inputs
 
 ### System.Management.Automation.PSObject
+
 You can pipe an object to `Measure-Command`.
 
 ## Outputs
 
 ### System.TimeSpan
+
 `Measure-Command` returns a time span object that represents the result.
 
 ## Notes
+
 - For more information, type: `Get-Help Measure-Command -Detailed`
 
 - For technical information, type: `Get-Help Measure-Command -Full`

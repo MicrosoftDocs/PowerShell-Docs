@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113361
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  New-Variable
 ---
-
 # New-Variable
+
 ## SYNOPSIS
+
 Creates a new variable.
+
 ## SYNTAX
 
 ```
@@ -20,37 +22,44 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Opti
 ```
 
 ## DESCRIPTION
+
 The New-Variable cmdlet creates a new variable in Windows PowerShell.
 You can assign a value to the variable while creating it or assign or change the value after it is created.
 
 You can use the parameters of New-Variable to set the properties of the variable (such as those that create read-only or constant variables), set the scope of a variable, and determine whether variables are public or private.
 
 Typically, you create a new variable by typing the variable name and its value, such as "$var = 3", but you can use the New-Variable cmdlet to use its parameters.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> new-variable days
+
+```powershell
+New-Variable days
 ```
 
 This command creates a new variable named "days".
 It has no value immediately following the command.
+
 ### Example 2
-```
-PS C:\> new-variable zipcode -value 98033
+
+```powershell
+New-Variable zipcode -Value 98033
 ```
 
 This command creates a variable named "zipcode" and assigns it the value "98033".
+
 ### Example 3
+
 ```
-PS C:\> new-variable -name max -value 256 -option readonly
-PS C:\> new-variable -name max -value 1024
+PS> new-variable -name max -value 256 -option readonly
+PS> new-variable -name max -value 1024
 
 New-Variable : A variable with name 'max' already exists.
 At line:1 char:13
 + new-variable <<<<  -name max -value 1024
 
-PS C:\> new-variable -name max -value 1024 -force
+PS> new-variable -name max -value 1024 -force
 ```
 
 This example shows how to use the ReadOnly option of New-Variable to protect a variable from being overwritten.
@@ -63,13 +72,15 @@ This command returns an error, because the read-only option is set on the variab
 
 The third command uses the Force parameter to override the read-only protection on the variable.
 In this case, the command to create a new variable with the same name succeeds.
+
 ### Example 4
+
 ```
-PS C:\> new-variable -name counter -visibility private
+PS> new-variable -name counter -visibility private
 
 #Effect of private variable in a module.
 
-PS C:\> get-variable c*
+PS> get-variable c*
 
 Name                           Value
 ----                           -----
@@ -78,11 +89,11 @@ ConsoleFileName
 ConfirmPreference              High
 CommandLineParameters          {}
 
-PS C:\> $counter
+PS> $counter
 
 "Cannot access the variable '$counter' because it is a private variable"
 
-PS C:\> Get-Counter
+PS> Get-Counter
 
 Name         Value
 ----         -----
@@ -96,9 +107,11 @@ The command uses the Visibility parameter with a value of "Private" to create th
 
 The sample output shows the behavior of a private variable.
 The user who has loaded the module cannot view or change the value of the Counter variable, but the Counter variable can be read and changed by the commands in the module.
+
 ## PARAMETERS
 
 ### -Description
+
 Specifies a description of the variable.
 
 ```yaml
@@ -114,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Allows you to create a new variable with the same name as an existing read-only variable.
 
 By default, you can overwrite a variable unless the variable has an option value of ReadOnly or Constant.
@@ -132,6 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a name for the new variable.
 
 ```yaml
@@ -147,6 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -Option
+
 Sets the value of the Options property of the variable.
 
 Valid values are:
@@ -172,6 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the new variable.
 By default, this cmdlet does not generate any output.
 
@@ -188,6 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Determines the scope of the new variable.
 Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
@@ -206,6 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 Specifies the initial value of the variable.
 
 ```yaml
@@ -221,6 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -Visibility
+
 Determines whether the variable is visible outside of the session in which it was created.
 This parameter is designed for  use in scripts and commands that will be delivered to other users.
 
@@ -246,6 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -261,6 +282,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -277,16 +299,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Object
+
 You can pipe a value to New-Variable.
+
 ## OUTPUTS
 
 ### None or System.Management.Automation.PSVariable
+
 When you use the PassThru parameter, New-Variable generates a System.Management.Automation.PSVariable object representing the new variable.
 Otherwise, this cmdlet does not generate any output.
+
 ## NOTES
 
 ## RELATED LINKS
