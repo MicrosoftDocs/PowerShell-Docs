@@ -64,8 +64,8 @@ The first command takes an array of integers typed at the command line, pipes th
 
 ### Example 3
 
-```
-PS> get-childitem | sort-object {$_.GetType()} |  unique -OnType
+```powershell
+Get-ChildItem | Sort-Object {$_.GetType()} | Get-Unique -OnType
 ```
 
 This command uses the Get-ChildItem cmdlet to retrieve the contents of the local directory, which includes files and directories.
