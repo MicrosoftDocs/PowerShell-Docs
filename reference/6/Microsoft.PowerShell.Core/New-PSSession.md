@@ -59,7 +59,7 @@ New-PSSession [-Name <String[]>] [-ConfigurationName <String>] -ContainerId <Str
 ### SSHHost
 ```
 New-PSSession [-HostName] <string[]> [-Name <string[]>] [-Port <int>] [-UserName <string>] [-KeyFilePath <string>
- [-ConfigurationName <String>] [-SSHTransport] [<CommonParameters>]
+ [-Subsystem <String>] [-SSHTransport] [<CommonParameters>]
 ```
 
 ### SSHHostHashParam
@@ -384,7 +384,7 @@ For more information, see [about_Preference_Variables](About/about_Preference_Va
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, VMName, Uri, VMId, ContainerId, HostName
+Parameter Sets: ComputerName, VMName, Uri, VMId, ContainerId
 Aliases:
 
 Required: False
@@ -901,6 +901,27 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Subsystem
+Specifies the SSH subsystem used for the new **PSSession**.
+
+This specifies the subsystem to use on the target as defined in sshd_config.
+The subsystem starts a specific version of PowerShell with predefined parameters.
+If the specified subsystem does not exist on the remote computer, the command fails.
+
+If this parameter is not used, the default is the 'powershell' subsystem.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: powershell
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
