@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,28 +7,34 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113364
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Out-GridView
 ---
-
 # Out-GridView
+
 ## SYNOPSIS
+
 Sends output to an interactive table in a separate window.
+
 ## SYNTAX
 
 ### PassThru (Default)
+
 ```
 Out-GridView [-InputObject <PSObject>] [-Title <String>] [-PassThru] [<CommonParameters>]
 ```
 
 ### Wait
+
 ```
 Out-GridView [-InputObject <PSObject>] [-Title <String>] [-Wait] [<CommonParameters>]
 ```
 
 ### OutputMode
+
 ```
 Out-GridView [-InputObject <PSObject>] [-Title <String>] [-OutputMode <OutputModeOption>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Out-GridView** cmdlet sends the output from a command to a grid view window where the output is displayed in an interactive table.
 
 Because this cmdlet requires a user interface, it does not work on Server Core installations of Windows Server.
@@ -42,18 +48,22 @@ You can use the following features of the table to examine your data:
 - Copy and paste. To copy rows of data from Out-GridView, press CTRL+C (copy). You can paste the data into any text or spreadsheet program.
 
 For instructions for using these features, type "Get-Help Out-GridView -Full" and see "How to Use the Grid View Window Features" in the NOTES section.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Get-Process | Out-GridView
+
+```powershell
+Get-Process | Out-GridView
 ```
 
 This command gets the processes running on the local computer and sends them to a grid view window.
+
 ### Example 2
-```
-PS C:\> $p = Get-Process
-PS C:\> $p | Out-GridView
+
+```powershell
+$p = Get-Process
+$p | Out-GridView
 ```
 
 This command also gets the processes running on the local computer and sends them to a grid view window.
@@ -61,9 +71,11 @@ This command also gets the processes running on the local computer and sends the
 The first command uses the Get-Process cmdlet to get the processes on the computer and then saves the process objects in the $p variable.
 
 The second command uses a pipeline operator to send the $p variable to **Out-GridView**.
+
 ### Example 3
-```
-PS C:\> Get-Process | Select-Object -Property Name, WorkingSet, PeakWorkingSet | Sort-Object -Property WorkingSet -Descending | Out-GridView
+
+```powershell
+Get-Process | Select-Object -Property Name, WorkingSet, PeakWorkingSet | Sort-Object -Property WorkingSet -Descending | Out-GridView
 ```
 
 This command displays a formatted table in a grid view window.
@@ -78,9 +90,11 @@ Another pipeline operator sends the filtered objects to the Sort-Object cmdlet, 
 The final part of the command uses a pipeline operator (|) to send the formatted table to **Out-GridView**.
 
 You can now use the features of the grid view to search, sort, and filter the data.
+
 ### Example 4
-```
-PS C:\> ($a = Get-ChildItem -Path $pshome -Recurse) | Out-GridView
+
+```powershell
+($a = Get-ChildItem -Path $pshome -Recurse) | Out-GridView
 ```
 
 This command saves its output in a variable and sends it to **Out-GridView**.
@@ -92,17 +106,21 @@ The command uses the assignment operator (=) to save the output in the $a variab
 
 The parentheses in the command establish the order of operations.
 As a result, the output from the Get-ChildItem command is saved in the $a variable before it is sent to **Out-GridView**.
+
 ### Example 5
-```
-PS C:\> Get-Process -ComputerName Server01| ogv -Title "Processes - Server01"
+
+```powershell
+Get-Process -ComputerName Server01| ogv -Title "Processes - Server01"
 ```
 
 This command displays the processes that are running on the Server01 computer in a grid view window.
 
 The command uses "ogv," which is the built-in alias for the **Out-GridView** cmdlet, it uses the **Title** parameter to specify the window title.
+
 ### Example 6
-```
-PS C:\> Invoke-Command -ComputerName S1, S2, S3 -ScriptBlock {Get-Culture} | Out-GridView
+
+```powershell
+Invoke-Command -ComputerName S1, S2, S3 -ScriptBlock {Get-Culture} | Out-GridView
 ```
 
 This example shows the correct format for sending data collected from remote computers to the **Out-GridView** cmdlet.
@@ -112,9 +130,11 @@ It uses a pipeline operator to send the data that is returned to the **Out-GridV
 
 Notice that the script block that contains the commands that are run remotely does not include the **Out-GridView** command.
 If it did, the command would fail when it tried to open a grid view window on each of the remote computers.
+
 ### Example 7
-```
-PS C:\> Get-Process | Out-GridView -PassThru | Export-Csv -Path .\ProcessLog.csv
+
+```powershell
+Get-Process | Out-GridView -PassThru | Export-Csv -Path .\ProcessLog.csv
 ```
 
 This command lets you select multiple processes from the **Out-GridView** window.
@@ -122,16 +142,20 @@ The processes that you select are passed to the **Export-Csv** command and writt
 
 The command uses the **PassThru** parameter of **Out-GridView**, which lets you send multiple items down the pipeline.
 The **PassThru** parameter is equivalent to using the **Multiple** value of the **OutputMode** parameter.
+
 ### Example 8
+
 ```
-PS C:\> Powershell.exe -Command "Get-Service | Out-GridView -Wait"
+PS> Powershell.exe -Command "Get-Service | Out-GridView -Wait"
 ```
 
 This command shows how to use the **Wait** parameter of **Out-GridView** to create a Windows shortcut to the **Out-GridView** window.
 Without the **Wait** parameter, Windows PowerShell would exit as soon as the **Out-GridView** window opened, which would close the **Out-GridView** window almost immediately.
+
 ## PARAMETERS
 
 ### -InputObject
+
 Accepts input for **Out-GridView**.
 
 When you use the **InputObject** parameter to send a collection (more than one) of objects to **Out-GridView**, **Out-GridView** treats the collection as one collection object, and it displays one row that represents the collection.
@@ -150,6 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
+
 Specifies the text that appears in the title bar of the **Out-GridView** window.
 
 By default, the title bar displays the command that invokes **Out-GridView**.
@@ -167,6 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputMode
+
 Send items from the interactive window down the pipeline as input to other commands.
 By default, this cmdlet does not generate any output.
 To send items from the interactive window down the pipeline, click to select the items and then click OK.
@@ -192,6 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Sends items from the interactive window down the pipeline as input to other commands.
 By default, this cmdlet does not generate any output.
 This parameter is equivalent to using the **Multiple** value of the **OutputMode** parameter.
@@ -214,6 +241,7 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
+
 Suppresses the command prompt and prevents Windows PowerShell from closing until the  **Out-GridView** window is closed.
 By default, the command prompt returns when the Out-GridView window opens.
 
@@ -235,21 +263,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can send any object to **Out-GridView**.
+
 ## OUTPUTS
 
 ### None
+
 **Out-GridView** does not return any objects.
+
 ## NOTES
-* In Windows PowerShell 2.0, the **Out-GridView** cmdlet is installed by default on client versions of Windows, but is an optional feature on Server versions of Windows. In Windows PowerShell 3.0, it is installed on all systems by default. However, if you turn off or remove the Windows PowerShell ISE feature, the Out-GridView cmdlet is also turned off or removed.
-* You cannot use a remote command to open a grid view window on another computer.
-* The command output that you send to Out-GridView cannot be formatted, such as by using the Format-Table or Format-Wide cmdlets. To select properties, use the Select-Object cmdlet.
-* Deserialized output from remote commands might not be formatted correctly in the grid view window.
-* KEYBOARD SHORTCUTS FOR OUT-GRIDVIEW
+
+- In Windows PowerShell 2.0, the **Out-GridView** cmdlet is installed by default on client versions of Windows, but is an optional feature on Server versions of Windows. In Windows PowerShell 3.0, it is installed on all systems by default. However, if you turn off or remove the Windows PowerShell ISE feature, the Out-GridView cmdlet is also turned off or removed.
+- You cannot use a remote command to open a grid view window on another computer.
+- The command output that you send to Out-GridView cannot be formatted, such as by using the Format-Table or Format-Wide cmdlets. To select properties, use the Select-Object cmdlet.
+- Deserialized output from remote commands might not be formatted correctly in the grid view window.
+- KEYBOARD SHORTCUTS FOR OUT-GRIDVIEW
 
   -----------------------------------
 

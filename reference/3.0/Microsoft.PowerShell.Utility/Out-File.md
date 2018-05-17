@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  11/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113363
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Out-File
 ---
-
 # Out-File
 
 ## SYNOPSIS
@@ -118,6 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -238,6 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
+
 Indicates that the cmdlet will not overwrite an existing file.
 By default, if a file exists in the specified path, `Out-File` overwrites the file without warning.
 If both *Append* and *NoClobber* are used, the output is appended to the existing file.
@@ -272,6 +273,7 @@ Accept wildcard characters: False
 ```
 
 ### -Width
+
 Specifies the number of characters in each line of output.
 Any additional characters are truncated, not wrapped.
 If you omit this parameter, the width is determined by the characteristics of the host.
