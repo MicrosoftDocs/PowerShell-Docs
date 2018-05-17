@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,34 +7,41 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113335
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Unique
 ---
-
 # Get-Unique
+
 ## SYNOPSIS
+
 Returns unique items from a sorted list.
+
 ## SYNTAX
 
 ### AsString (Default)
+
 ```
 Get-Unique [-InputObject <PSObject>] [-AsString] [<CommonParameters>]
 ```
 
 ### UniqueByType
+
 ```
 Get-Unique [-InputObject <PSObject>] [-OnType] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Unique** cmdlet compares each item in a sorted list to the next item, eliminates duplicates, and returns only one instance of each item.
 The list must be sorted for the cmdlet to work properly.
 
 **Get-Unique** is case-sensitive.
 As a result, strings that differ only in character casing are considered to be unique.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> $a = $(foreach ($line in get-content C:\Test1\File1.txt) {$line.tolower().split(" ")}) | sort | get-unique
-PS C:\> $a.count
+
+```powershell
+$a = $(foreach ($line in Get-Content C:\Test1\File1.txt) {$line.tolower().split(" ")}) | sort | get-unique
+$a.count
 ```
 
 These commands find the number of unique words in a text file.
@@ -45,16 +52,20 @@ Then, it sorts the resulting list alphabetically (the default) and uses the Get-
 The results are stored in the $a variable.
 
 The second command uses the Count property of the collection of strings in $a to determine how many items are in $a.
+
 ### Example 2
-```
-PS C:\> 1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | sort-object | Get-Unique
+
+```powershell
+1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | Sort-Object | Get-Unique
 ```
 
 This command finds the unique members of the set of integers.
 The first command takes an array of integers typed at the command line, pipes them to the Sort-Object cmdlet to be sorted, and then pipes them to Get-Unique, which eliminates duplicate entries.
+
 ### Example 3
-```
-PS C:\> get-childitem | sort-object {$_.GetType()} |  unique -OnType
+
+```powershell
+Get-ChildItem | Sort-Object {$_.GetType()} | Get-Unique -OnType
 ```
 
 This command uses the Get-ChildItem cmdlet to retrieve the contents of the local directory, which includes files and directories.
@@ -63,9 +74,11 @@ The "$_.GetType()" statement applies the GetType method to each file or director
 Then, Sort-Object sorts the items by type.
 Another pipeline operator sends the results to Get-Unique.
 The OnType parameter directs Get-Unique to return only one object of each type.
+
 ### Example 4
-```
-PS C:\> get-process | sort-object | select processname | get-unique -asstring
+
+```powershell
+Get-Process | Sort-Object | select processname | Get-Unique -asstring
 ```
 
 This command gets the names of processes running on the computer with duplicates eliminated.
@@ -77,9 +90,11 @@ The results are then piped to Get-Unique to eliminate duplicates.
 
 The AsString parameter tells Get-Unique to treat the ProcessName values as strings.
 Without this parameter, Get-Unique treats the ProcessName values as objects and returns only one instance of the object, that is, the first process name in the list.
+
 ## PARAMETERS
 
 ### -AsString
+
 Treats the data as a string.
 Without this parameter, data is treated as an object, so when you submit a collection of objects of the same type to Get-Unique, such as a collection of files, it returns just one (the first).
 You can use this parameter to find the unique values of object properties, such as the file names.
@@ -97,6 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Accepts input for Get-Unique.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
@@ -116,6 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnType
+
 Returns only one object of each type.
 
 ```yaml
@@ -131,22 +148,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any type of object to Get-Unique.
+
 ## OUTPUTS
 
 ### System.Management.Automation.PSObject
+
 The type of object that Get-Unique returns is determined by the input.
+
 ## NOTES
-* You can also refer to Get-Unique by its built-in alias, "gu". For more information, see about_Aliases.
+
+- You can also refer to Get-Unique by its built-in alias, "gu". For more information, see about_Aliases.
 
   To sort a list, use Sort-Object.
 You can also use the Unique parameter of Sort-Object to find the unique items in a list.
-
-*
 ## RELATED LINKS
 
 [Select-Object](Select-Object.md)

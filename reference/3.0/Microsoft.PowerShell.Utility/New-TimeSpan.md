@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,53 +7,66 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113360
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  New-TimeSpan
 ---
-
 # New-TimeSpan
+
 ## SYNOPSIS
+
 Creates a TimeSpan object.
+
 ## SYNTAX
 
 ### Date (Default)
+
 ```
 New-TimeSpan [[-Start] <DateTime>] [[-End] <DateTime>] [<CommonParameters>]
 ```
 
 ### Time
+
 ```
 New-TimeSpan [-Days <Int32>] [-Hours <Int32>] [-Minutes <Int32>] [-Seconds <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The New-TimeSpan cmdlet creates a TimeSpan object that represents a time interval You can use a TimeSpan object to add or subtract time from DateTime objects.
 
 Without parameters, a "New-Timespan" command returns a timespan object that represents a time interval of zero.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> $timespan = new-timespan -hour 1 -minute 25
+
+```powershell
+$timespan = New-TimeSpan -Hours 1 -Minutes 25
 ```
 
 This command creates a TimeSpan object with a duration of 1 hour and 25 minutes and stores it in a variable named $timespan.
 It displays a representation of the TimeSpan object.
+
 ### Example 2
-```
-PS C:\> new-timespan -end (get-date -year 2010 -month 1 -day 1)
+
+```powershell
+New-TimeSpan -End (Get-Date -Year 2010 -Month 1 -Day 1)
 ```
 
 This example creates a new TimeSpan object that represents the interval between the time that the command is run and January 1, 2010.
 
 This command does not require the Start parameter, because the default value of the Start parameter is the current date and time.
+
 ### Example 3
-```
-PS C:\> $90days = new-timespan -days 90
-PS C:\> (get-date) + $90days
+
+```powershell
+$90days = New-TimeSpan -Days 90
+(get-date) + $90days
 ```
 
 These commands return the date that is 90 days after the current date.
+
 ### Example 4
+
 ```
-PS C:\> dir $pshome\en-us\about_remote.help.txt | new-timespan
+PS> Get-ChildItem $pshome\en-us\about_remote.help.txt | new-timespan
 
 Days              : 321
 Hours             : 21
@@ -69,7 +82,7 @@ TotalMilliseconds : 27813562312.7728
 
 # Equivalent to:
 
-PS C:\> new-timespan -start (dir $pshome\en-us\about_remote.help.txt).lastwritetime
+PS> new-timespan -start (Get-ChildItem $pshome\en-us\about_remote.help.txt).lastwritetime
 ```
 
 This command tells you how long it has been since the about_remote.help.txt file was last updated.
@@ -77,9 +90,11 @@ You can use this command format on any file, and on any other object that has a 
 
 This command works because the Start parameter of New-TimeSpan has an alias of LastWriteTime.
 When you pipe an object that has a LastWriteTime property to New-TimeSpan, Windows PowerShell uses the value of the LastWriteTime property as the value of the Start parameter.
+
 ## PARAMETERS
 
 ### -Days
+
 Indicates the days in the time span.
 The default is 0.
 
@@ -96,6 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -End
+
 Indicates the end of a time span.
 The default is the current date and time.
 
@@ -112,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Hours
+
 Indicates the hours in the time span.
 The default is zero.
 
@@ -128,6 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Minutes
+
 Indicates the minutes in the time span.
 The default is 0.
 
@@ -144,6 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -Seconds
+
 Indicates the length of the time span in seconds.
 The default is 0.
 
@@ -160,6 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -Start
+
 Indicates the start of a time span.
 Enter a string that represents the date and time, such as "3/15/09" or a DateTime object, such as one from a Get-Date command.
 The default is the current date and time.
@@ -180,15 +200,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.DateTime
+
 You can pipe a DateTime object that represents that start time to New-TimeSpan.
+
 ## OUTPUTS
 
 ### System.TimeSpan
+
 New-TimeSpan returns an object that represents the time span.
+
 ## NOTES
 
 ## RELATED LINKS
