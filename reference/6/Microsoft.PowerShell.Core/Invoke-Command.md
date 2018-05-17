@@ -116,7 +116,7 @@ Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [
 
 ### HostName
 ```
-Invoke-Command [-ConfigurationName <String>] -ScriptBlock <scriptblock> -HostName <string[]> [-Port <int>]
+Invoke-Command [-Subsystem <String>] -ScriptBlock <scriptblock> -HostName <string[]> [-Port <int>]
  [-AsJob] [-HideComputerName] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug]
  [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
@@ -715,7 +715,7 @@ For more information, see about_Preference_Variables.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId, HostName
+Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
 Aliases:
 
 Required: False
@@ -1225,6 +1225,27 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Subsystem
+Specifies the SSH subsystem used for the new **PSSession**.
+
+This specifies the subsystem to use on the target as defined in sshd_config.
+The subsystem starts a specific version of PowerShell with predefined parameters.
+If the specified subsystem does not exist on the remote computer, the command fails.
+
+If this parameter is not used, the default is the 'powershell' subsystem.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: powershell
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
