@@ -160,9 +160,9 @@
           href: whats-new/what-s-new-in-powershell-core-60.md
           items:
             - name: Breaking changes in PowerShell Core 6.0
-              href: breaking-changes-ps6.md
+              href: whats-new/breaking-changes-ps6.md
             - name: Known issues in PowerShell Core 6.0
-              href: known-issues-ps6.md
+              href: whats-new/known-issues-ps6.md
         - name: What's new with PowerShell 5.0
           href: whats-new/what-s-new-with-powershell.md
           items:
