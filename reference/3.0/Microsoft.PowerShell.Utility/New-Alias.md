@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113352
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  New-Alias
 ---
-
 # New-Alias
+
 ## SYNOPSIS
+
 Creates a new alias.
+
 ## SYNTAX
 
 ```
@@ -19,30 +21,37 @@ New-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <S
 ```
 
 ## DESCRIPTION
+
 The New-Alias cmdlet creates a new alias in the current Windows PowerShell session.
 Aliases created by using New-Alias are not saved after you exit the session or close Windows PowerShell.
 You can use the Export-Alias cmdlet to save your alias information to a file.
 You can later use Import-Alias to retrieve that saved alias information.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> new-alias list get-childitem
+
+```powershell
+New-Alias list get-childitem
 ```
 
 This command creates an alias named "list" to represent the Get-ChildItem cmdlet.
+
 ### Example 2
-```
-PS C:\> new-alias -name w -value get-wmiobject -description "quick wmi alias" -option ReadOnly
-PS C:\> get-alias -name w | format-list *
+
+```powershell
+New-Alias -Name w -Value get-wmiobject -Description "quick wmi alias" -Option ReadOnly
+Get-Alias -Name w | Format-List *
 ```
 
 This command creates an alias named "w" to represent the Get-WMIObject cmdlet.
 It creates a description, "quick wmi alias", for the alias and makes it read only.
 The last line of the command uses Get-Alias to get the new alias and pipes it to Format-List to display all of the information about it.
+
 ## PARAMETERS
 
 ### -Description
+
 Specifies a description of the alias.
 You can type any string.
 If the description includes spaces, enclose it in quotation marks.
@@ -60,6 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 If set, act like set-alias if the alias named already exists.
 
 ```yaml
@@ -75,6 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the new alias.
 You can use any alphanumeric characters in an alias, but the first character cannot be a number.
 
@@ -91,6 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -Option
+
 Specifies the value of the **Options** property of the alias.
 Valid values are:
 
@@ -117,6 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the new alias.
 By default, this cmdlet does not generate any output.
 
@@ -133,6 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the scope of the new alias.
 Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
@@ -151,6 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 Specifies the name of the cmdlet or command element that is being aliased.
 
 ```yaml
@@ -166,6 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -181,6 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -197,20 +214,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### None or System.Management.Automation.AliasInfo
+
 When you use the Passthru parameter, New-Alias generates a System.Management.Automation.AliasInfo object representing the new alias.
 Otherwise, this cmdlet does not generate any output.
-## NOTES
-* To create a new alias, use Set-Alias or New-Alias. To change an alias, use Set-Alias. To delete an alias, use Remove-Item.
 
-*
+## NOTES
+
+- To create a new alias, use Set-Alias or New-Alias. To change an alias, use Set-Alias. To delete an alias, use Remove-Item.
 ## RELATED LINKS
 
 [Export-Alias](Export-Alias.md)

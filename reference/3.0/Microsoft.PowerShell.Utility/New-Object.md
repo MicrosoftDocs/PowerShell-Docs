@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,33 +7,40 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113355
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  New-Object
 ---
-
 # New-Object
+
 ## SYNOPSIS
+
 Creates an instance of a Microsoft .NET Framework or COM object.
+
 ## SYNTAX
 
 ### Net (Default)
+
 ```
 New-Object [-TypeName] <String> [[-ArgumentList] <Object[]>] [-Property <IDictionary>] [<CommonParameters>]
 ```
 
 ### Com
+
 ```
 New-Object [-ComObject] <String> [-Strict] [-Property <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The New-Object cmdlet creates an instance of a .NET Framework or COM object.
 
 You can specify either the type of a .NET Framework class or a ProgID of a COM object.
 By default, you type the fully qualified name of a .NET Framework class and the cmdlet returns a reference to an instance of that class.
 To create an instance of a COM object, use the ComObject parameter and specify the ProgID of the object as its value.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> New-Object -TypeName System.Version -ArgumentList "1.2.3.4"
+PS> New-Object -TypeName System.Version -ArgumentList "1.2.3.4"
 Major  Minor  Build  Revision
 
 -----  -----  -----  --------
@@ -43,9 +50,11 @@ Major  Minor  Build  Revision
 
 This command creates a System.Version object.
 It uses a "1.2.3.4" string as the constructor.
+
 ### Example 2
-```
-PS C:\> $ie = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $true}
+
+```powershell
+$ie = New-Object -ComObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $true}
 ```
 
 This command creates an instance of the COM object that represents the Internet Explorer application.
@@ -58,9 +67,11 @@ This command is the equivalent of the following:
 `$ie.Navigate2("www.microsoft.com")`
 
 `$ie.Visible = $true`
+
 ### Example 3
+
 ```
-PS C:\> $a=New-Object -COMObject Word.Application -Strict -Property @{Visible=$true}
+PS> $a=New-Object -COMObject Word.Application -Strict -Property @{Visible=$true}
 New-Object : The object written to the pipeline is an instance of the type
 "Microsoft.Office.Interop.Word.ApplicationClass" from the component's primary
 interop assembly. If this type exposes different members than the IDispatch
@@ -72,13 +83,15 @@ At line:1 char:14
 ```
 
 This example demonstrates that adding the **Strict** parameter causes the **New-Object** cmdlet to generate a non-terminating error when the COM object uses an interop assembly.
+
 ### Example 4
+
 ```
 The first command uses the **ComObject** parameter of the **New-Object** cmdlet to create a COM object with the "Shell.Application" ProgID. It stores the resulting object in the $objShell variable.
-PS C:\> $objshell = New-Object -COMObject "Shell.Application"
+PS> $objshell = New-Object -COMObject "Shell.Application"
 
 The second command pipes the $objShell variable to the **Get-Member** cmdlet, which displays the properties and methods of the COM object. Among the methods is the ToggleDesktop method.
-PS C:\> $objshell | Get-Member
+PS> $objshell | Get-Member
    TypeName: System.__ComObject#{866738b9-6cf2-4de8-8767-f794ebe74f4e}
 
 
@@ -162,13 +175,15 @@ Application          Property   IDispatch Application () {get}
 Parent               Property   IDispatch Parent () {get}
 
 The third command calls the **ToggleDesktop** method of the object to minimize the open windows on your desktop.
-PS C:\> $objshell.ToggleDesktop()
+PS> $objshell.ToggleDesktop()
 ```
 
 This example shows how to create and use a COM object to manage your Windows desktop.
+
 ## PARAMETERS
 
 ### -ArgumentList
+
 Specifies a list of arguments to pass to the constructor of the .NET Framework class.
 Separate elements in the list by using commas (,).
 The alias for ArgumentList is Args.
@@ -186,6 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComObject
+
 Specifies the programmatic identifier (ProgID) of the COM object.
 
 ```yaml
@@ -201,6 +217,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Sets property values and invokes methods of the new object.
 
 Enter a hash table in which the keys are the names of properties or methods and the values are property values or method arguments.
@@ -222,6 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -Strict
+
 Generates a non-terminating error when a COM object that you attempt to create uses an interop assembly.
 This feature distinguishes actual COM objects from .NET Framework objects with COM-callable wrappers.
 
@@ -238,6 +256,7 @@ Accept wildcard characters: False
 ```
 
 ### -TypeName
+
 Specifies the fully qualified name of the .NET Framework class.
 You cannot specify both the TypeName parameter and the ComObject parameter.
 
@@ -254,19 +273,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### Object
-New-Object returns the object that is created.
-## NOTES
-* New-Object provides the most commonly-used functionality of the VBScript CreateObject function. A statement like Set objShell = CreateObject("Shell.Application") in VBScript can be translated to $objShell = New-Object -COMObject "Shell.Application" in Windows PowerShell.
 
-* New-Object expands upon the functionality available in the Windows Script Host environment by making it easy to work with .NET Framework objects from the command line and within scripts.
+New-Object returns the object that is created.
+
+## NOTES
+
+- New-Object provides the most commonly-used functionality of the VBScript CreateObject function. A statement like Set objShell = CreateObject("Shell.Application") in VBScript can be translated to $objShell = New-Object -COMObject "Shell.Application" in Windows PowerShell.
+
+- New-Object expands upon the functionality available in the Windows Script Host environment by making it easy to work with .NET Framework objects from the command line and within scripts.
 
 ## RELATED LINKS
 
