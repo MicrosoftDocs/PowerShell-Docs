@@ -111,6 +111,23 @@ This command adds the computers that are listed in the Servers.txt file to the D
 It uses the *Options* parameter to specify the **Win9xUpgrade** option.
 The *Restart* parameter restarts all of the newly added computers after the join operation completes.
 
+### Example 9: Add a computer to a domain using predefined computer credentials
+This first command should be run by an administrator from a computer that is already joined to domain `Domain03`:
+```
+PS C:\> New-ADComputer -Name "Server02" -AccountPassword (ConvertTo-SecureString -String 'TempJoinPA$$' -AsPlainText -Force)
+```
+Then this command is run from `Server02` which is not yet domain-joined:
+```
+PS C:\> $joinCred = New-Object pscredential -ArgumentList ([pscustomobject]@{
+    UserName = $null
+    Password = (ConvertTo-SecureString -String 'TempJoinPA$$' -AsPlainText -Force)[0]
+})
+PS C:\> Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential $joinCred
+```
+
+This combination of commands creates a new computer account with a predefined name and temporary join password in a domain using an existing domain-joined computer.  Then separately, a computer with the predefined name joins the domain using only the computer name and the temporary join password.
+The predefined password is only used to support the join operation and is replaced as part of normal computer account procedures after the computer completes the join.
+
 ## PARAMETERS
 
 ### -ComputerName
