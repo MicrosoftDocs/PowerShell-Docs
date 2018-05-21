@@ -19,7 +19,7 @@ The representation of LCM state and DSC operation status are revisited and unifi
 
 The table below illustrates the resultant state and status related properties under a few typical scenarios.
 
-| **Scenario**                    | **LCMState\***       | **Status** | **Reboot Requested**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| **Scenario**                    | **LCMState**\*       | **Status** | **Reboot Requested**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Idle                 | Success    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Failure    | $false        | $null                        | F                              |
