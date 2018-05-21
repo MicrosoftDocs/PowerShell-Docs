@@ -112,13 +112,13 @@
     "need_preview_pull_request": false,
     "dependent_repositories": [{
             "path_to_root": "_themes",
-            "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples",
+            "url": "https://github.com/Microsoft/templates.docs.msft",
             "branch": "master",
             "branch_mapping": {}
         },
         {
             "path_to_root": "powershell-sdk-samples",
-            "url": "https://github.com/Microsoft/templates.docs.msft",
+            "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples",
             "branch": "master"
         }
     ],
