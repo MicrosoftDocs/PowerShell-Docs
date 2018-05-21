@@ -1,33 +1,33 @@
 ---
 ms.date:  06/12/2017
-author:  JKeithB
-ms.topic:  reference
+ms.topic: conceptual
 keywords:  wmf,powershell,setup
 title:  DSC Improvements in WMF 5.1
 ---
-
 # Improvements in Desired State Configuration (DSC) in WMF 5.1
 
 ## DSC class resource improvements
 
 In WMF 5.1, we have fixed the following known issues:
-* Get-DscConfiguration may return empty values (null) or errors if a complex/hash table type is returned by Get() function of a class-based DSC resource.
-* Get-DscConfiguration returns error if RunAs credential is used in DSC configuration.
-* Class-based resource cannot be used in a composite configuration.
-* Start-DscConfiguration hangs if class-based resource has a property of its own type.
-* Class-based resource cannot be used as an exclusive resource.
 
+- Get-DscConfiguration may return empty values (null) or errors if a complex/hash table type is returned by Get() function of a class-based DSC resource.
+- Get-DscConfiguration returns error if RunAs credential is used in DSC configuration.
+- Class-based resource cannot be used in a composite configuration.
+- Start-DscConfiguration hangs if class-based resource has a property of its own type.
+- Class-based resource cannot be used as an exclusive resource.
 
 ## DSC resource debugging improvements
+
 In WMF 5.0, the PowerShell debugger did not stop at the class-based resource method (Get/Set/Test) directly.
 In WMF 5.1, the debugger stops at the class-based resource method in the same way as for MOF-based resources methods.
 
 ## DSC pull client supports TLS 1.1 and TLS 1.2
+
 Previously, the DSC pull client only supported SSL3.0 and TLS1.0 over HTTPS connections.
 When forced to use more secure protocols, the pull client would stop functioning.
 In WMF 5.1, the DSC pull client no longer supports SSL 3.0 and adds support for the more secure TLS 1.1 and TLS 1.2 protocols.
 
-## Improved pull server registration ##
+## Improved pull server registration
 
 In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull server while using the ESENT database would lead to LCM failing to register and/or report.
 In such cases, the event logs on the pull server has the error "Instance Name already in use."
@@ -37,7 +37,9 @@ Concurrent registrations or reporting (involving ESENT database) works fine in W
 This issue is applicable only to the ESENT database and does not apply to the OLEDB database.
 
 ## Enable Circular log on ESENT database instance
-In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging. In this release, you have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging is set to TRUE.
+
+In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver because the database instance was being created without circular logging. In this release, you have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging is set to TRUE.
+
 ```
 <appSettings>
     <add key="dbprovider" value="ESENT" />
@@ -46,16 +48,18 @@ In eariler version of DSC-PullServer, the ESENT database log files were filling 
     <add key="UseCircularESENTLogs" value="TRUE" />
   </appSettings>
 ```
+
 ## Pull partial configuration naming convention
+
 In the previous release, the naming convention for a partial configuration was that the MOF file name in the pull server/service should match the partial configuration name specified in the local configuration manager settings that in turn must match the configuration name embedded in the MOF file.
 
 See the snapshots below:
 
-•	Local configuration settings which defines a partial configuration that a node is allowed to receive.
+- Local configuration settings which defines a partial configuration that a node is allowed to receive.
 
 ![Sample metaconfiguration](../images/MetaConfigPartialOne.png)
 
-•	Sample partial configuration definition
+- Sample partial configuration definition
 
 ```powershell
 Configuration PartialOne
@@ -72,11 +76,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-•	'ConfigurationName' embedded in the generated MOF file.
+- 'ConfigurationName' embedded in the generated MOF file.
 
 ![Sample generated mof file](../images/PartialGeneratedMof.png)
 
-•	FileName in the pull configuration repository
+- FileName in the pull configuration repository
 
 ![FileName in Configuration Repository](../images/PartialInConfigRepository.png)
 
@@ -107,42 +111,42 @@ This naming flexibility allows you to manage your nodes partially by Azure Autom
 The metaconfiguration below sets up a node to be managed both locally as well as by Azure Automation service.
 
 ```powershell
-  [DscLocalConfigurationManager()]
-   Configuration RegistrationMetaConfig
-   {
-        Settings
-        {
-            RefreshFrequencyMins = 30
-            RefreshMode = "PULL"
-        }
+[DscLocalConfigurationManager()]
+Configuration RegistrationMetaConfig
+{
+    Settings
+    {
+        RefreshFrequencyMins = 30
+        RefreshMode = "PULL"
+    }
 
-        ConfigurationRepositoryWeb web
-        {
-            ServerURL =  $endPoint
-            RegistrationKey = $registrationKey
-            ConfigurationNames = $configurationName
-        }
+    ConfigurationRepositoryWeb web
+    {
+        ServerURL =  $endPoint
+        RegistrationKey = $registrationKey
+        ConfigurationNames = $configurationName
+    }
 
-        # Partial configuration managed by Azure Automation service.
-        PartialConfiguration PartialConfigurationManagedByAzureAutomation
-        {
-            ConfigurationSource = "[ConfigurationRepositoryWeb]Web"
-        }
+    # Partial configuration managed by Azure Automation service.
+    PartialConfiguration PartialConfigurationManagedByAzureAutomation
+    {
+        ConfigurationSource = "[ConfigurationRepositoryWeb]Web"
+    }
 
-        # This partial configuration is managed locally.
-        PartialConfiguration OnPremisesConfig
-        {
-            RefreshMode = "PUSH"
-            ExclusiveResources = @("Script")
-        }
+    # This partial configuration is managed locally.
+    PartialConfiguration OnPremisesConfig
+    {
+        RefreshMode = "PUSH"
+        ExclusiveResources = @("Script")
+    }
 
-   }
+}
 
-   RegistrationMetaConfig
-   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
- ```
+RegistrationMetaConfig
+Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
+```
 
-# Using PsDscRunAsCredential with DSC composite resources
+## Using PsDscRunAsCredential with DSC composite resources
 
 We have added support for using [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) with DSC [Composite](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) resources.
 
@@ -154,16 +158,13 @@ If any resource inside a composite resource specifies its own value for PsDscRun
 
 This example shows usage with [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) composite resource included in PSDesiredStateConfiguration module.
 
-
-
 ```powershell
-
 Configuration InstallWindowsFeature
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     Node $AllNodes.NodeName
-	{
+    {
         WindowsFeatureSet features
         {
             Name = @("Telnet-Client","SNMP-Service")
@@ -172,7 +173,6 @@ Configuration InstallWindowsFeature
             PsDscRunAsCredential = Get-Credential
         }
     }
-
 }
 
 $configData = @{
@@ -186,21 +186,19 @@ $configData = @{
     )
 }
 
-
 InstallWindowsFeature -ConfigurationData $configData
-
 ```
 
-##DSC module and configuration signing validations
+## DSC module and configuration signing validations
+
 In DSC, configurations and modules are distributed to managed computers from the pull server.
 If the pull server is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed nodes, compromising all of them.
 
- In WMF 5.1, DSC supports validating the digital signatures on catalog and configuration (.MOF) files.
- This feature prevents nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer.
+In WMF 5.1, DSC supports validating the digital signatures on catalog and configuration (.MOF) files.
+This feature prevents nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer.
 
+### How to sign configuration and module
 
-
-###How to sign configuration and module
 ***
 * Configuration Files (.MOFs):
 The existing PowerShell cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) is extended to support signing of MOF files.
@@ -214,9 +212,10 @@ Use [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.a
     3. Place the catalog file inside the module folder.
 By convention, module catalog file should be placed under the module folder with the same name as the module.
 
-###LocalConfigurationManager settings to enable signing validations
+### LocalConfigurationManager settings to enable signing validations
 
-####Pull
+#### Pull
+
 The LocalConfigurationManager of a node performs signing validation of modules and configurations based on its current settings.
 By default, signature validation is disabled.
 Signature validation can enabled by adding the ‘SignatureValidation’ block to the meta-configuration definition of the node as shown below:
@@ -237,7 +236,7 @@ Configuration EnableSignatureValidation
       RegistrationKey = 'd6750ff1-d8dd-49f7-8caf-7471ea9793fc' # Replace this with correct registration key.
     }
     SignatureValidation validations{
-        # By default, LCM uses the default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM uses this custom store for retrieving the trusted publishers to validate the content.
+        # If the TrustedStorePath property is provided then LCM will use the custom path. Otherwise, the LCM will use default trusted store path (Cert:\LocalMachine\DSCStore) to find the signing certificate.
         TrustedStorePath = 'Cert:\LocalMachine\DSCStore'
         SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.
     }
@@ -245,7 +244,7 @@ Configuration EnableSignatureValidation
 }
 EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
- ```
+```
 
 Setting the above metaconfiguration on a node enables signature validation on downloaded configurations and modules.
 The Local Configuration Manager performs the following steps to verify the digital signatures.
@@ -271,12 +270,13 @@ Similarly, pulling a module whose catalog is not signed results in the following
 
 ![Sample Error Output Module](../images/PullUnisgnedCatalog.png)
 
-####Push
+#### Push
+
 A configuration delivered by using push might be tampered with at its source before it delivered to the node.
 The Local Configuration Manager performs similar signature validation steps for pushed or published configuration(s).
 Below is a complete example of signature validation for push.
 
-* Enable signature validation on the node.
+- Enable signature validation on the node.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -295,7 +295,8 @@ Configuration EnableSignatureValidation
 EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ```
-* Create a sample configuration file.
+
+- Create a sample configuration file.
 
 ```powershell
 # Sample configuration
@@ -311,17 +312,18 @@ Configuration Test
 Test
 ```
 
-* Try pushing the unsigned configuration file in to the node.
+- Try pushing the unsigned configuration file in to the node.
 
 ```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ```
+
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
 
-* Sign the configuration file using code-signing certificate.
+- Sign the configuration file using code-signing certificate.
 
 ![SignMofFile](../images/SignMofFile.png)
 
-* Try pushing the signed MOF file.
+- Try pushing the signed MOF file.
 
 ![SignMofFile](../images/PushSignedMof.png)

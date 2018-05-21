@@ -1,7 +1,6 @@
 ---
 ms.date:  06/12/2017
-author:  JKeithB
-ms.topic:  reference
+ms.topic: conceptual
 keywords:  wmf,powershell,setup
 title:  Catalog cmdlets
 ---

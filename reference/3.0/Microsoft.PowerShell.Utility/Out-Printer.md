@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113367
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Out-Printer
 ---
-
 # Out-Printer
+
 ## SYNOPSIS
+
 Sends output to a printer.
+
 ## SYNTAX
 
 ```
@@ -18,12 +20,15 @@ Out-Printer [[-Name] <String>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Out-Printer cmdlet sends output to the default printer or to an alternate printer, if one is specified.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> get-content $pshome\about_signing.help.txt | Out-Printer
+
+```powershell
+Get-Content $pshome\about_signing.help.txt | Out-Printer
 ```
 
 This command prints the content of the about_Signing Help topic to the default printer.
@@ -32,27 +37,33 @@ This example shows you how to print a file, even though Out-Printer does not hav
 The command uses the Get-Content cmdlet to get the contents of the Help topic.
 The path includes $pshome, a built-in variable that stores the installation directory for Windows PowerShell.
 A pipeline operator (|) passes the results to Out-Printer, which sends it to the default printer.
+
 ### Example 2
-```
-PS C:\> "Hello, World" | out-printer -name "\\Server01\Prt-6B Color"
+
+```powershell
+"Hello, World" | Out-Printer -Name "\\Server01\Prt-6B Color"
 ```
 
 This command prints "Hello, World" to the "Prt-6B Color" printer on Server01.
 This command uses the Name parameter to specify the alternate printer.
 Because the parameter name is optional, you can omit it.
+
 ### Example 3
-```
-PS C:\> $h = get-help -full get-wmiobject
-PS C:\> out-printer -inputobject $h
+
+```powershell
+$h = Get-Help -Full get-wmiobject
+Out-Printer -InputObject $h
 ```
 
 These commands print the full version of the Help topic for Get-WmiObject.
 The first command uses the Get-Help cmdlet to get the full version of the Help topic for Get-WmiObject and stores it in the $h variable.
 The second command sends the content to the default printer.
 It uses the InputObject parameter to pass the value of the $h variable to Out-Printer.
+
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies the objects to be sent to the printer.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -69,6 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the  alternate printer.
 The parameter name ("Name") is optional.
 
@@ -85,17 +97,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any object to Out-Printer.
+
 ## OUTPUTS
 
 ### None
+
 Out-Printer does not return any objects.
+
 ## NOTES
-* You can also refer to Out-Printer by its built-in alias, "lp". For more information, see about_Aliases.
+
+- You can also refer to Out-Printer by its built-in alias, "lp". For more information, see about_Aliases.
 
   The cmdlets that contain the Out verb (the Out cmdlets) do not format objects; they just render them and send them to the specified display destination.
 If you send an unformatted object to an Out cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
@@ -107,8 +126,6 @@ For more information, see the examples.
 
   Out-Printer sends data, but it does not emit any output objects.
 If you pipe the output of Out-Printer to Get-Member, Get-Member reports that no objects have been specified.
-
-*
 ## RELATED LINKS
 
 [Out-Default](../Microsoft.PowerShell.Core/Out-Default.md)
