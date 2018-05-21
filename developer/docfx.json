@@ -2,8 +2,8 @@
     "build": {
         "content": [{
             "files": [
-                "**/**.yml",
-                "**/**.md"
+                "**/*.md",
+                "**/*.yml"
             ],
             "exclude": [
                 "**/obj/**",
