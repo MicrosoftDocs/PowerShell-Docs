@@ -82,7 +82,7 @@ However, you can also use a session that you create by using the New-PSSession c
 However, you cannot use the Disconnect-PSSession, Connect-PSSession, or Receive-PSSession cmdlets to disconnect from or re-connect to an interactive session.
 
 Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to a remote computer, if SSH is available on the local computer and the remote computer is configured with a PowerShell SSH endpoint. The benefit an SSH based PowerShell remote session is that it works across multiple platforms (Windows, Linux, macOS). For SSH based remoting you use the **HostName** parameter set to specify the remote computer and relevant connection information.
-For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
+For more information about how to set up PowerShell SSH remoting see the [PowerShell remoting over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core) topic.
 
 To end the interactive session and disconnect from the remote computer, use the Exit-PSSession cmdlet, or type `exit`.
 
