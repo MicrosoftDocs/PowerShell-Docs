@@ -54,7 +54,7 @@ Because this list includes external files in your search path, it may contain th
 To get native commands of other types, use the **CommandType** parameter of the **Get-Command** cmdlet.
 
 > [!NOTE]
-> The asterisk (\*) is used for wildcard matching in Windows PowerShell command arguments. The \* means "match one or more of any characters". You can type **Get-Command a\&#42;** to find all commands that begin with the letter "a". Unlike wildcard matching in Cmd.exe, Windows PowerShell's wildcard will also match a period.
+> The asterisk (\*) is used for wildcard matching in Windows PowerShell command arguments. The \* means "match one or more of any characters". You can type **Get-Command a\*** to find all commands that begin with the letter "a". Unlike wildcard matching in Cmd.exe, Windows PowerShell's wildcard will also match a period.
 
 To get command aliases, which are the assigned nicknames of commands, type:
 
