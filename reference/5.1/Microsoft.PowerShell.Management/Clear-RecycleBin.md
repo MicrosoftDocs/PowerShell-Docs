@@ -12,6 +12,8 @@ title:  Clear-RecycleBin
 
 ## SYNOPSIS
 
+Clears the contents of a recycle bin.
+
 ## SYNTAX
 
 ```
@@ -19,6 +21,8 @@ Clear-RecycleBin [[-DriveLetter] <String[]>] [-Force] [-WhatIf] [-Confirm] [<Com
 ```
 
 ## DESCRIPTION
+
+The Clear-RecycleBin cmdlet deletes the content of a recycle bin. Running this cmdlet is equivalent to the "Empty Recycle Bin" action.
 
 ## EXAMPLES
 
@@ -69,8 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -DriveLetter
-If specified the cmdlet will clear the recycle bin of the given drive letter.
-If not specified all drive letters will have their recycle bins cleared.
+Specifies an array of drive letters for which this cmdlet clears the recycle bin.
 
 ```yaml
 Type: String[]
