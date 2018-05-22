@@ -134,7 +134,8 @@ $joinCred = New-Object pscredential -ArgumentList ([pscustomobject]@{
 Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential $joinCred
 ```
 
-This combination of commands creates a new computer account with a predefined name and temporary join password in a domain using an existing domain-joined computer.  Then separately, a computer with the predefined name joins the domain using only the computer name and the temporary join password.
+This combination of commands creates a new computer account with a predefined name and temporary join password in a domain using an existing domain-joined computer.
+Then separately, a computer with the predefined name joins the domain using only the computer name and the temporary join password.
 The predefined password is only used to support the join operation and is replaced as part of normal computer account procedures after the computer completes the join.
 
 ## PARAMETERS
