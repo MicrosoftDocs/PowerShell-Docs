@@ -17,7 +17,7 @@ There are several ways to address this problem. In this topic, we'll look at sev
 
 ## CredSSP
 
-You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) for authentication. CredSSP caches credentials
+You can use the [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) for authentication. CredSSP caches credentials
 on the remote server (_ServerB_), so using it opens you up to credential theft attacks. If the remote computer is compromised, the attacker has access to the user's credentials. CredSSP is disabled by
 default on both client and server computers. You should enable CredSSP only in the most trusted environments. For example, a domain administrator connecting to a domain controller
 because the domain controller is highly trusted.
@@ -188,7 +188,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 ```
 
 In this example, the `$using` variable is used to make the `$ServerC` variable visible to _ServerB_. For more information about the `$using` variable, see
-[about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).
+[about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
 To allow multiple servers to delegate credentials to _ServerC_, set the value of the **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to an array:
 
@@ -225,8 +225,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication](http://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)
-- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)
+- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Resource Based Kerberos Constrained Delegation](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
@@ -250,7 +250,7 @@ For information about using PSSessionConfiguration and RunAs to solve the second
 
 JEA allows you to restrict what commands an administrator can run during a PowerShell session. It can be used to solve the second hop problem.
 
-For information about JEA, see [Just Enough Administration](https://docs.microsoft.com/en-us/powershell/jea/overview).
+For information about JEA, see [Just Enough Administration](https://docs.microsoft.com/powershell/jea/overview).
 
 ### Pros
 
@@ -264,7 +264,7 @@ For information about JEA, see [Just Enough Administration](https://docs.microso
 ## Pass credentials inside an Invoke-Command script block
 
 You can pass credentials inside the **ScriptBlock** parameter of a call to the
-[Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
+[Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
 
 ### Pros
 
