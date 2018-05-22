@@ -42,7 +42,8 @@ The policies are as follows:
   Updatable Help to a directory, not the Internet.
 
 To download spreadsheets that list all of the Group Policy settings for
-each version of Windows, see [Group Policy Settings Reference for Windows and Windows Server](http://go.microsoft.com/fwlink/?LinkId=261775) in the Microsoft Download Center.
+each version of Windows, see http://go.microsoft.com/fwlink/?LinkId=261775 in
+the Microsoft Download Center.
 
 ## TURN ON SCRIPT EXECUTION
 
@@ -117,8 +118,8 @@ setting prevents users from using the `Update-Help` cmdlet to download help
 files from the Internet.
 
 NOTE: The "Set the default source path for Update-Help" Group Policy setting
-appears under 'Computer Configuration' and 'User Configuration'. However, only the
-Group Policy setting under 'Computer Configuration' is effective. The Group
+appears under 'Computer Configuration' and 'User Configuration'. However, only
+the Group Policy setting under 'Computer Configuration' is effective. The Group
 Policy setting under 'User Configuration' is ignored.
 
 The `Update-Help` cmdlet downloads and installs the newest help files for
@@ -129,11 +130,12 @@ the module.
 However, you can use the `Save-Help` cmdlet to download the newest help files to
 a file system location, such as a network share, and then use the `Update-Help`
 cmdlet to get the help files from the file system location and install them on
-the computer. The **SourcePath** parameter of the `Update-Help` cmdlet specifies the
-file system location.
+the computer. The **SourcePath** parameter of the `Update-Help` cmdlet specifies
+the file system location.
 
 By providing a default value for the **SourcePath** parameter, this Group Policy
-setting implicitly adds the **SourcePath** parameter to all `Update-Help` commands.
+setting implicitly adds the **SourcePath** parameter to all `Update-Help`
+commands.
 Users can override the particular file system location specified as the
 default value by entering a different file system location. But they cannot
 remove the **SourcePath** parameter from the `Update-Help` command.
