@@ -42,8 +42,9 @@ The policies are as follows:
   Updatable Help to a directory, not the Internet.
 
 To download spreadsheets that list all of the Group Policy settings for
-each version of Windows, see http://go.microsoft.com/fwlink/?LinkId=261775 in
-the Microsoft Download Center.
+each version of Windows, see
+[Group Policy Settings Reference for Windows and Windows Server](http://go.microsoft.com/fwlink/?LinkId=261775)
+in the Microsoft Download Center.
 
 ## TURN ON SCRIPT EXECUTION
 
