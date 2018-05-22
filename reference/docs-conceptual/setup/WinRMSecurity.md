@@ -86,7 +86,7 @@ Instead, you should consider the TrustedHosts setting to be the list of hosts fo
 
 ### Ongoing Communication
 
-Once initial authentication is complete, the [PowerShell Remoting Protocol](https://msdn.microsoft.com/en-us/library/dd357801.aspx) encrypts all ongoing communication
+Once initial authentication is complete, the [PowerShell Remoting Protocol](https://msdn.microsoft.com/library/dd357801.aspx) encrypts all ongoing communication
 with a per-session AES-256 symmetric key.
 
 
