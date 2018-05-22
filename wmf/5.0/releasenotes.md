@@ -7,6 +7,10 @@ keywords:  wmf,powershell,setup
 
 # Windows Management Framework (WMF) 5.0 RTM Release Notes Overview
 
+**WMF 5.0 is superceeded by WMF 5.1.
+Users with WMF 5.0 must upgrade to WMF 5.1 to receive support.
+Please follow the [installation intructions of WMF 5.1](../5.1/install-configure.md)**
+
 Windows Management Framework (WMF) 5.0 RTM brings functionality that has been updated from WMF 4.0. WMF 5.0 RTM is available for installation only on **Windows Server 2012 R2**, **Windows Server 2012**, **Windows Server 2008 R2**, **Windows 8.1**, and **Windows 7 SP1** and contains updated versions or introduction of the following features:
 
 - Windows PowerShell

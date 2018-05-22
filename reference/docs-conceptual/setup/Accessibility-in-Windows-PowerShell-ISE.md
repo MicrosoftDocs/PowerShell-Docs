@@ -22,7 +22,7 @@ Windows PowerShell ISE supports high contrast mode. For the visually impaired, b
 
 - Keyboard Shortcuts
 
-- Syntax Coloring Table and the ability to modify several other color settings using the [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting object.
+- Syntax Coloring Table and the ability to modify several other color settings using the [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting object.
 
 - Text Size Change
 
