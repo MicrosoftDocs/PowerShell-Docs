@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=238268
 external help file:  PSWorkflow-help.xml
 title:  New-PSWorkflowSession
 ---
-
 # New-PSWorkflowSession
+
 ## SYNOPSIS
+
 Creates a workflow session.
+
 ## SYNTAX
 
 ```
@@ -21,6 +23,7 @@ New-PSWorkflowSession [[-ComputerName] <String[]>] [-Credential <Object>] [-Name
 ```
 
 ## DESCRIPTION
+
 The **New-PSWorkflowSession** cmdlet creates a user-managed session ("PSSession") that is especially designed for running Windows PowerShell workflows.
 It uses the Microsoft.PowerShell.Workflow session configuration, which includes scripts, type and formatting files, and options that are required for workflows.
 
@@ -30,18 +33,22 @@ You can also add workflow common parameters to this command.
 For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719(v=wps.620).aspx.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> New-PSWorkflowSession -ComputerName ServerNode01 -Name WorkflowTests -SessionOption (New-PSSessionOption -OutputBufferingMode Drop)
+
+```powershell
+New-PSWorkflowSession -ComputerName ServerNode01 -Name WorkflowTests -SessionOption (New-PSSessionOption -OutputBufferingMode Drop)
 ```
 
 This command creates the WorkflowTests session on the ServerNode01 remote computer.
 The value of the **SessionOption** parameter is a **New-PSSessionOption** command that sets the output buffering mode in the session to Drop.
+
 ### Example 2
-```
-PS C:\> "ServerNode01", "Server12" | New-PSWorkflowSession -Name WorkflowSession -Credential Domain01\Admin01 -ThrottleLimit 150
+
+```powershell
+"ServerNode01", "Server12" | New-PSWorkflowSession -Name WorkflowSession -Credential Domain01\Admin01 -ThrottleLimit 150
 ```
 
 This command creates workflow sessions on the ServerNode01 and Server12 computers.
@@ -49,9 +56,11 @@ The command uses the **Credential** parameter to run with the permissions of the
 
 The command uses the **ThrottleLimit** parameter to increase the per-command throttle limit to 150.
 This value takes precedence over the default throttle limit of 100 that is set in the Microsoft.PowerShell.Workflow session configuration.
+
 ## PARAMETERS
 
 ### -ApplicationName
+
 Specifies the application name segment of the connection URI.
 
 The default value is the value of the **$PSSessionApplicationName** preference variable on the local computer.
@@ -75,6 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the mechanism that is used to authenticate the user's credentials.
 Valid values are "Default", "Basic", "Credssp", "Digest", "Kerberos", "Negotiate", and "NegotiateWithImplicitCredential".
 The default value is "Default".
@@ -101,6 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
@@ -122,6 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Creates a persistent connection (PSSession) to the specified computer.
 If you enter multiple computer names, Windows PowerShell creates multiple PSSessions, one for each computer.
 The default is the local computer.
@@ -148,6 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -168,6 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
+
 Adds an interactive security token to loopback sessions.
 The interactive token lets you run commands in the loopback session that get data from other computers.
 For example, you can run a command in the session that copies XML files from a remote computer to the local computer.
@@ -201,6 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a friendly name for the workflow session.
 
 You can use the name to refer to the session when using other cmdlets, such as Get-PSSession and Enter-PSSession.
@@ -219,6 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
+
 Specifies the network port on the remote computer that is used for this connection.
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
@@ -249,6 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
+
 Sets advanced options for the session.
 Enter a **SessionOption** object, such as one that you create by using the New-PSSessionOption cmdlet.
 
@@ -275,6 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent connections that can be established to run this command.
 If you omit this parameter or enter a value of 0  (zero), the default value for the Microsoft.PowerShellWorkflow session configuration, 100, is used.
 
@@ -293,6 +311,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
+
 Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
@@ -314,17 +333,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession[], System.String
+
 You can pipe a session or a computer name to **New-PSWorkflowSession**.
+
 ## OUTPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
 ## NOTES
-* A **New-PSWorkflowSession** command is equivalent to the following command: `New-PSSession -ConfigurationName Microsoft.PowerShell.Workflow`
+
+- A **New-PSWorkflowSession** command is equivalent to the following command: `New-PSSession -ConfigurationName Microsoft.PowerShell.Workflow`
+
 ## RELATED LINKS
 
 [New-PSSession](../Microsoft.PowerShell.Core/New-PSSession.md)

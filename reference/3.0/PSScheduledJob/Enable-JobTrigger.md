@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=223917
 external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 title:  Enable-JobTrigger
 ---
-
 # Enable-JobTrigger
+
 ## SYNOPSIS
+
 Enables the job triggers of scheduled jobs
+
 ## SYNTAX
 
 ```
@@ -18,6 +20,7 @@ Enable-JobTrigger [-InputObject] <ScheduledJobTrigger[]> [-WhatIf] [-Confirm] [<
 ```
 
 ## DESCRIPTION
+
 The **Enable-JobTrigger** cmdlet re-enables job triggers of scheduled jobs, such as those that were disabled by using the Disable-JobTrigger cmdlet.
 Enabled and re-enabled job triggers can start scheduled jobs immediately; there is no need to restart Windows or Windows PowerShell.
 
@@ -32,28 +35,34 @@ For more information about Scheduled Jobs, see the About topics in the PSSchedul
 Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see about_Scheduled_Jobs.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
+
 ## EXAMPLES
 
 ### Example 1: Enable a job trigger
-```
-PS C:\> Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Enable-JobTrigger
+
+```powershell
+Get-JobTrigger -Name Backup-Archives -TriggerId 1 | Enable-JobTrigger
 ```
 
 This command enables the first trigger (ID=1) of the Backup-Archives scheduled job on the local computer.
 
 The command uses the Get-JobTrigger cmdlet to get the job trigger.
 A pipeline operator sends the job trigger to the **Enable-JobTrigger** cmdlet, which enables it.
+
 ### Example 2: Enable all job triggers
-```
-PS C:\> Get-ScheduledJob | Get-JobTrigger | Enable-JobTrigger
+
+```powershell
+Get-ScheduledJob | Get-JobTrigger | Enable-JobTrigger
 ```
 
 The command uses the Get-ScheduledJob cmdlet to get  the scheduled jobs on the local computer.
 A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs.
 Another pipeline operator sends the job triggers to the **Enable-JobTrigger** cmdlet, which enables them.
+
 ### Example 3: Enable the job trigger of a scheduled job on a remote computer.
-```
-PS C:\> Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "AtLogon"} | Enable-JobTrigger}
+
+```powershell
+Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "AtLogon"} | Enable-JobTrigger}
 ```
 
 This command re-enables the AtLogon job triggers on the DeployPackage scheduled job on the Server01 remote computer.
@@ -62,9 +71,14 @@ The command uses the Invoke-Command cmdlet to run the commands on the Server01 c
 The remote command uses the Get-JobTrigger cmdlet to get the job triggers of the DeployPackage scheduled job.
 A pipeline operator sends the job triggers to the Where-Object cmdlet which returns only AtLogon job triggers.
 A pipeline operator sends the AtLogon job triggers to the **Enable-JobTrigger** cmdlets which Enables them.
+
 ### Example 4: Display disabled job triggers
+
+```powershell
+Get-ScheduledJob | Get-JobTrigger | Where-Object {!$_.Enabled} | Format-Table Id, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}}
 ```
-PS C:\> Get-ScheduledJob | Get-JobTrigger | where {!$_.Enabled} | Format-Table Id, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}}
+
+```output
 Id Frequency At                     DaysOfWeek Enabled JobName
 -- --------- --                     ---------- ------- -------
  1    Weekly 9/28/2011 3:00:00 AM   {Monday}     False Backup-Archive
@@ -82,9 +96,11 @@ Another pipeline operator sends the job triggers to the Where-Object cmdlet, whi
 
 Another pipeline operator sends the disabled job triggers to the Format-Table cmdlet, which displays the selected properties of the job triggers in a table.
 The properties include a new **JobName** property that displays the name of the scheduled job in the **JobDefinition** property of the job trigger.
+
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies the job trigger to be enabled.
 Enter a variable that contains  **ScheduledJobTrigger** objects or type a command or expression that gets **ScheduledJobTriger** objects, such as a Get-JobTrigger command.
 You can also pipe a **ScheduledJobTrigger** object to **Enable-JobTrigger**.
@@ -102,6 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -117,6 +134,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -133,17 +151,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
+
 You can pipe job triggers to **Enable-JobTrigger**.
+
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
+
 ## NOTES
-* **Enable-JobTrigger** does not generate errors or warnings if you enable a job trigger that is already enabled.
+
+- **Enable-JobTrigger** does not generate errors or warnings if you enable a job trigger that is already enabled.
+
 ## RELATED LINKS
 
 [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)
