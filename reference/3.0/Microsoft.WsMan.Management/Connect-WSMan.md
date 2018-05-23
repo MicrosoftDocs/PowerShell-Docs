@@ -47,15 +47,9 @@ For information about how to disconnect from the WinRM service on a remote compu
 ### Example 1
 
 ```
-Connect-WSMan -ComputerName server01
+PS C:\Users\testuser> Connect-WSMan -ComputerName server01
 PS C:\Users\testuser> cd wsman:
-```
-
-```output
 PS WSMan:\>
-```
-
-```
 PS WSMan:\> dir
 WSManConfig: Microsoft.WSMan.Management\WSMan::WSMan
 
