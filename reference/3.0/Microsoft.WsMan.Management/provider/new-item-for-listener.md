@@ -23,7 +23,6 @@ New-Item -Address <string> -Transport <string> [-Hostname <string>] [-Enabled] [
  New-Item can also set the value of the items that it creates. For example, when creating a new file, [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) can add initial content to the file.
 
 ## Parameters
-
 ### -Address <string\>
 
  Specifies the address for which this listener was created. The value can be one of the following:
@@ -147,13 +146,10 @@ New-Item -Address <string> -Transport <string> [-Hostname <string>] [-Enabled] [
 
 ## Example 1
 
-```powershell
-New-Item -Path WSMan:\localhost\Listener -Address * -Transport HTTP -force
-```
-
-```output
 This command creates an HTTP listener on any IP address on the computer.
 
+```powershell
+New-Item -Path WSMan:\localhost\Listener -Address * -Transport HTTP -force
 ```
 
 ## See Also
