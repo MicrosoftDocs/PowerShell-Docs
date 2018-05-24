@@ -86,7 +86,7 @@ microsoft.powershell   BUILTIN\Administrators AccessAllowed
 microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 ```
 
-#### Disabling a PSSessionConfiguration
+### Disabling a PSSessionConfiguration
 
 **Disable-PSSessionConfiguration** cmdlet disables the MaintenanceShell session configuration. The command uses the **Force** parameter to suppress all user prompts.
 
@@ -103,7 +103,7 @@ microsoft.powershell   BUILTIN\Administrators AccessAllowed
 microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 ```
 
-#### Using Set-PSSessionConfiguration
+### Using Set-PSSessionConfiguration
 
 The fourth command uses the Set-PSSessionConfiguration cmdlet to increase the MaximumDataSizePerCommandMB setting on the MaintenanceShell session configuration to 60. The results show that the command was successful even though everyone is denied access to the configuration.
 
@@ -120,7 +120,7 @@ WinRM service need to be restarted to make the changes effective. Do you want to
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 ```
 
-#### Creating a Session using the Configuration
+### Creating a Session using the Configuration
 
 The fifth command attempts to use the MaintenanceShell session configuration in a session. It uses the New-PSSession cmdlet to create a new session and the ConfigurationName parameter to specify the MaintenanceShell configuration.The results show that the  **New-PSSession** command fails because the user is denied access to the configuration.
 
