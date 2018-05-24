@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  11/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113426
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Write-Host
 ---
-
 # Write-Host
 
 ## SYNOPSIS
@@ -16,7 +15,7 @@ Writes customized output to a host.
 
 ## SYNTAX
 
-```powershell
+```
 Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundColor <ConsoleColor>]
  [-BackgroundColor <ConsoleColor>] [<CommonParameters>]
 ```
@@ -33,7 +32,10 @@ The particular result depends on the program that is hosting PowerShell.
 ### Example 1: Write to the console without adding a new line
 
 ```powershell
-PS C:\> Write-Host "no newline test " -NoNewline
+Write-Host "no newline test " -NoNewline
+```
+
+```output
 no newline test PS C:\>
 ```
 
@@ -42,7 +44,10 @@ This command displays the input to the console, but because of the NoNewline par
 ### Example 2: Write to the console and include a separator
 
 ```powershell
-PS C:\> Write-Host (2,4,6,8,10,12) -Separator ", +2= "
+Write-Host (2,4,6,8,10,12) -Separator ", +2= "
+```
+
+```output
 2, +2= 4, +2= 6, +2= 8, +2= 10, +2= 12
 ```
 
@@ -52,7 +57,7 @@ The Separator parameter is used to add the string , +2= (comma, space, +, 2, =, 
 ### Example 3: Write with different text and background colors
 
 ```powershell
-PS C:\> Write-Host (2,4,6,8,10,12) -Separator ", -> " -ForegroundColor DarkGreen -BackgroundColor White
+Write-Host (2,4,6,8,10,12) -Separator ", -> " -ForegroundColor DarkGreen -BackgroundColor White
 ```
 
 This command displays the even numbers from 2 through 12.
@@ -61,7 +66,10 @@ It uses the ForegroundColor parameter to output dark green text and the Backgrou
 ### Example 4: Write with different text and background colors
 
 ```powershell
-PS C:\> Write-Host "Red on white text." -ForegroundColor red -BackgroundColor white
+Write-Host "Red on white text." -ForegroundColor red -BackgroundColor white
+```
+
+```output
 Red on white text.
 ```
 
@@ -177,6 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -Separator
+
 Specifies a separator string to insert between objects displayed by the host.
 
 ```yaml
@@ -196,7 +205,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](..\Microsoft.PowerShell.Core\About\about_CommonParameters.md).
 
 ## INPUTS
 
