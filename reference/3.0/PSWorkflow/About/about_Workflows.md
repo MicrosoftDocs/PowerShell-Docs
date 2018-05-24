@@ -9,14 +9,12 @@ title:  about_Workflows
 
 ## about_Workflows
 
-
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Provides a brief introduction to the Windows
 PowerShell Workflow feature.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 Windows PowerShell Workflow brings the benefits of
 Windows Workflow Foundation to Windows PowerShell
@@ -27,13 +25,10 @@ Windows PowerShell Workflow is introduced in Windows
 PowerShell 3.0.
 
 For detailed information about Windows PowerShell
-Workflow, see "Introducing Windows PowerShell Workflow"
-in the TechNet Library at
-http://go.microsoft.com/fwlink/?LinkID=252592
-and "Writing a Windows PowerShell Workflow" in the MSDN
-Library at http://go.microsoft.com/fwlink/?LinkID=246399.
+Workflow, see ["Introducing Windows PowerShell Workflow"](http://go.microsoft.com/fwlink/?LinkID=252592)
+and ["Writing a Windows PowerShell Workflow"](http://go.microsoft.com/fwlink/?LinkID=246399)
 
-# ABOUT WORKFLOWS
+## ABOUT WORKFLOWS
 
 Workflows are commands that consist of an ordered sequence of
 related activities. Typically, they run for an extended period
@@ -63,7 +58,7 @@ which the workflow cannot recover, you can use  the persisted
 data and resume from the last persistence point, instead of
 rerunning an extensive workflow from the beginning.
 
-# REQUIREMENTS AND CONFIGURATION
+## REQUIREMENTS AND CONFIGURATION
 
 A Windows PowerShell Workflow configuration consists of
 the following elements.
@@ -74,7 +69,7 @@ on a remote computer.
 -- Managed nodes, the target computers that are affected by
 the workflow activities.
 
-# NOTE:
+## NOTE:
 
 The workflow session is not required, but is recommended.
 PSSessions can take advantage of the robust recovery and
@@ -102,7 +97,7 @@ For more information about system requirements and configuration,
 see "Introducing Windows PowerShell Workflow" in the TechNet Library
 at http://go.microsoft.com/fwlink/?LinkID=252592.
 
-# HOW TO GET WORKFLOWS
+## HOW TO GET WORKFLOWS
 
 Workflows are typically packaged in modules. To import the module
 that includes a workflow, use any command in the module or use the
@@ -114,7 +109,7 @@ CommandType parameter of the Get-Command cmdlet.
 
 PS C:> Get-Command -CommandType Workflow
 
-# HOW TO RUN WORKFLOWS
+## HOW TO RUN WORKFLOWS
 
 To run a workflow, use the following procedure.
 
@@ -214,7 +209,7 @@ PS C:> Invoke-Command -Session $ws {Test-Workflow -PSComputerName $Using:Servers
 For more information about the Using scope modifier, see
 about_Remote_Variables at http://go.microsoft.com/fwlink/?LinkID=252653
 
-# USING WORKFLOW COMMON PARAMETERS
+## USING WORKFLOW COMMON PARAMETERS
 
 The workflow common parameters are a set of parameters that
 Windows PowerShell adds automatically to all workflows.
@@ -226,62 +221,75 @@ For example, the following very simple workflow defines no
 parameters. However, when you run the workflow, it has both
 the CommonParameters and WorkflowCommonParameters.
 
-PS C:> workflow Test-Workflow {Get-Process}
-PS C:> Get-Command Test-Workflow -Syntax
+```powershell
+workflow Test-Workflow {Get-Process}
+Get-Command Test-Workflow -Syntax
+```
 
+```output
 Test-Workflow [<WorkflowCommonParameters>] [<CommonParameters>]
+```
+
+## PsComputerName
 
 The workflow common parameters include several parameters that
 are essential to running workflows. For example, the PSComputerName
 common parameter specifies the managed nodes that the workflow affects.
 
-PS C:> Invoke-Command -Session $ws `
-{Test-Workflow -PSComputerName Server01, Server02}
+```powershell
+PS C:> Invoke-Command -Session $ws {Test-Workflow -PSComputerName Server01, Server02}
+```
+
+## PsPersist
 
 The PSPersist workflow common parameter determines when workflow
 data is persisted. It enables you to add persistence point between
 activities to workflows that do not define persistence points.
 
-PS C:> Invoke-Command -Session $ws `
-{Test-Workflow -PSComputerName Server01, Server02 -PSPersist:$True}
+```powershell
+Invoke-Command -Session $ws {Test-Workflow -PSComputerName Server01, Server02 -PSPersist:$True}
+```
+
+## PsPort
 
 Other workflow common parameters let you specify the
 characteristics of the remote connection to the managed nodes.
 Their names and functionality are very similar to the parameters
 of remoting cmdlets, including Invoke-Command.
 
-PS C:> Invoke-Command -Session $ws `
-{Test-Workflow -PSComputerName Server01, Server02 -PSPort 443}
+```powershell
+Invoke-Command -Session $ws `{Test-Workflow -PSComputerName Server01, Server02 -PSPort 443}
+```
+
+## ConfigurationName vs PSConfigurationName
 
 Take care to distinguish the remoting parameters that define the
 connection for the workflow session from the PS-prefixed workflow
 common parameters that define the connection to the managed nodes.
-
-PS C:> $ws = New-PSSession -ComputerName Server01 `
--ConfigurationName Microsoft.PowerShell.Workflow
-
-PS C:> Invoke-Command -Session $ws `
-{Test-Workflow -PSComputerName Server01, Server02 `
--PSConfigurationName Microsoft.PowerShell.Workflow}
 
 Some workflow common parameters are unique to workflows, such
 as the PSParameterCollection parameter that lets you specify
 different workflow common parameter values for different remote
 nodes.
 
-For a list and description of the workflow common parameters,
-see about_WorkflowCommonParameters at
-http://go.microsoft.com/fwlink/?LinkID=222527.
+```powershell
+$ws = New-PSSession -ComputerName Server01 -ConfigurationName Microsoft.PowerShell.Workflow
+```
 
-# SEE ALSO
+```powershell
+Invoke-Command -Session $ws {Test-Workflow -PSComputerName Server01, Server02 -PSConfigurationName Microsoft.PowerShell.Workflow}
+```
 
-Invoke-AsWorkflow
-New-PSSessionExecutionOption
-New-PSWorkflowSession
-about_WorkflowCommonParameters
+## SEE ALSO
 
-"Getting Started with Windows PowerShell Workflow"
-(http://go.microsoft.com/fwlink/?LinkID=252592)
+[Invoke-AsWorkflow](Invoke-AsWorkflow.md)
 
-"Writing a Windows PowerShell Workflow"
-(http://go.microsoft.com/fwlink/?LinkID=246399)
+[New-PSSessionExecutionOption](New-PSSessionExecutionOption.md)
+
+[New-PSWorkflowSession](New-PSWorkflowSession.md)
+
+[about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
+
+["Getting Started with Windows PowerShell Workflow"](http://go.microsoft.com/fwlink/?LinkID=252592)
+
+["Writing a Windows PowerShell Workflow"](http://go.microsoft.com/fwlink/?LinkID=246399)

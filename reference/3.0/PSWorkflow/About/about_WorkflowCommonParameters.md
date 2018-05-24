@@ -9,16 +9,14 @@ title:  about_WorkflowCommonParameters
 
 ## about_WorkflowCommonParameters
 
-
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 This topic describes the parameters that are valid on all Windows
 PowerShell workflow commands. Because the Windows PowerShell engine
 adds them to workflows, you can use these parameters on any workflow
 and they are automatically enabled on the workflows that you author.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 Windows PowerShell Workflow common parameters are a set of cmdlet
 parameters that you can use with all Windows PowerShell workflows
@@ -44,7 +42,25 @@ knowledge that you developed in remoting and jobs to manage workflows.
 
 Workflows are introduced in Windows PowerShell 3.0.
 
-# PARAMETER DESCRIPTIONS
+## PARAMETER DESCRIPTIONS
+
+        ### -Expression
+        
+        Runs the specified expression as a workflow.
+        Enter the expression as a string, such as "ipconfig /all".
+        If the expression includes spaces or special characters, enclose the expression in quotation marks.
+        
+        ```yaml
+        Type: String
+        Parameter Sets: Expression
+        Aliases:
+        
+        Required: False
+        Position: Named
+        Default value: None
+        Accept pipeline input: False
+        Accept wildcard characters: False
+        ```
 
 This section describes the workflow common parameters.
 

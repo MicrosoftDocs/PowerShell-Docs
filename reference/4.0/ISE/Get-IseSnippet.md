@@ -70,7 +70,7 @@ function Parse-Snippet
 }
 ```
 
-# Sample Output
+## Sample Output
 
 ```output
 Title: Mandatory

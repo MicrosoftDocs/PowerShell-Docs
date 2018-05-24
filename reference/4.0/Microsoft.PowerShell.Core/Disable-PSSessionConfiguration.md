@@ -86,15 +86,12 @@ microsoft.powershell   BUILTIN\Administrators AccessAllowed
 microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 ```
 
-The second command uses the **Disable-PSSessionConfiguration** cmdlet to disable the MaintenanceShell session configuration. The command uses the **Force** parameter to suppress all user prompts.
+#### Disabling a PSSessionConfiguration
+
+**Disable-PSSessionConfiguration** cmdlet disables the MaintenanceShell session configuration. The command uses the **Force** parameter to suppress all user prompts.
 
 ```powershell
 Disable-PSSessionConfiguration -Name MaintenanceShell -force
-```
-
-The third command repeats the first command. The results show that you can still get the object that represents the MaintenanceShell session configuration even though everyone is denied access to it. The "AccessDenied" entry takes precedence over all other entries in the security descriptor.
-
-```powershell
 Get-PSSessionConfiguration | Format-Table -Property Name, Permission -AutoSize
 ```
 
@@ -105,6 +102,8 @@ MaintenanceShell       Everyone AccessDenied, BUILTIN\Administrators AccessAllow
 microsoft.powershell   BUILTIN\Administrators AccessAllowed
 microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 ```
+
+#### Using Set-PSSessionConfiguration
 
 The fourth command uses the Set-PSSessionConfiguration cmdlet to increase the MaximumDataSizePerCommandMB setting on the MaintenanceShell session configuration to 60. The results show that the command was successful even though everyone is denied access to the configuration.
 
@@ -121,6 +120,8 @@ WinRM service need to be restarted to make the changes effective. Do you want to
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 ```
 
+#### Creating a Session using the Configuration
+
 The fifth command attempts to use the MaintenanceShell session configuration in a session. It uses the New-PSSession cmdlet to create a new session and the ConfigurationName parameter to specify the MaintenanceShell configuration.The results show that the  **New-PSSession** command fails because the user is denied access to the configuration.
 
 ```powershell
@@ -133,8 +134,6 @@ eshooting Help topic.
 + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException
 + FullyQualifiedErrorId : PSSessionOpenFailed
 ```
-
-This example shows the effect of disabling a session configuration.
 
 ## PARAMETERS
 

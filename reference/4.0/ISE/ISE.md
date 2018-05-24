@@ -21,11 +21,9 @@ This section contains the help topics for the cmdlets that are installed with th
 
 Gets snippets that the user created.
 
-
 ### [Import-IseSnippet](Import-IseSnippet.md)
 
 Imports ISE snippets into the current session
-
 
 ### [New-IseSnippet](New-IseSnippet.md)
 

@@ -9,7 +9,6 @@ title:  about_Sequence
 
 ## about_Sequence
 
-
 # SHORT DESCRIPTION
 
 Describes the Sequence keyword, which runs selected
@@ -36,34 +35,33 @@ sequentially.
 
 # SYNTAX
 
-
+```
 workflow <Verb-Noun>
 {
-Sequence
-{
-[<Activity>]
-[<Activity>]
-
-# ...
-
+    Sequence
+    {
+        [<Activity>]
+        [<Activity>]
+        # ...
+    }
 }
-}
+```
 
+```
 workflow <Verb-Noun>
 {
-Parallel
-{
-[<Activity>]
-Sequence
-{
-[<Activity>]
-[<Activity>]
-
-# ...
-
+    Parallel
+    {
+        [<Activity>]
+        Sequence
+        {
+            [<Activity>]
+            [<Activity>]
+            # ...
+        }
+    }
 }
-}
-}
+```
 
 # DETAILED DESCRIPTION
 
@@ -96,26 +94,28 @@ are independent of each other and can run concurrently or
 in any order, but the command that gets the hotfix information
 must run before the command that uses it.
 
+```powershell
 workflow Test-Workflow
 {
-Parallel
-{
-Get-Process
-Get-Service
+    Parallel
+    {
+    Get-Process
+    Get-Service
 
-Sequence
-{
-$Hotfix = Get-Content D:\HotFixes\Required.txt
-Foreach ($h in $Hotfix} {D:\Scripts\Verify-Hotfix -Hotfix $h}
+    Sequence
+    {
+        $Hotfix = Get-Content D:\HotFixes\Required.txt
+        Foreach ($h in $Hotfix} {D:\Scripts\Verify-Hotfix -Hotfix $h}
+        }
+    }
 }
-}
-}
+```
 
 # SEE ALSO
 
-"Writing a Script Workflow" (http://go.microsoft.com/fwlink/?LinkID=262872)
-about_ForEach
-about_ForEach-Parallel
-about_Language_Keywords
-about_Parallel
-about_Workflows
+["Writing a Script Workflow"](http://go.microsoft.com/fwlink/?LinkID=262872)
+[about_ForEach](about_ForEach.md)
+[about_ForEach-Parallel](about_ForEach-Parallel.md)
+[about_Language_Keywords](about_Language_Keywords.md)
+[about_Parallel](about_Parallel.md)
+[about_Workflows](about_Workflows.md)

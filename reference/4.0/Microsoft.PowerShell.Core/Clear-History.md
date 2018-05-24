@@ -204,6 +204,7 @@ This cmdlet does not generate any output.
 - The session history is a list of the commands entered during the session. You can view the history, add and delete commands, and run commands from the history. For more information, see about_History.
 
   Deleting a command from the history does not change the history IDs of the remaining items in the command history.
+
 ## RELATED LINKS
 
 [Add-History](Add-History.md)

@@ -47,7 +47,7 @@ an InlineScript script block do not have the workflow features
 such as checkpointing ("persistence) and workflow or activity
 common parameters.
 
-# VARIABLES IN INLINESCRIPT
+## VARIABLES IN INLINESCRIPT
 
 By default, the variables that are defined in a workflow are
 not visible to the commands in the InlineScript script block.
@@ -78,6 +78,8 @@ Test-Workflow
 Inline A0 =
 Inline A1 = 3
 ```
+
+## RETURNING VARIABLES IN INLINESCRIPT
 
 InlineScript commands can change the value of the variable
 that was imported from workflow scope, but the changes are
@@ -112,11 +114,12 @@ Workflow A = 3
 Workflow New A = 4
 ```
 
-Troubleshooting Note:  A statement with the $Using scope modifier
-should appear before any use of the variable in the InlineScript
-script block.
+> [!NOTE]
+> Troubleshooting Note:  A statement with the $Using scope modifier
+> should appear before any use of the variable in the InlineScript
+> script block.
 
-# RUNNING IN-PROCESS
+## RUNNING IN-PROCESS
 
 To improve reliability, the commands in the InlineScript script
 block run in their own process, outside of the  process in which
@@ -130,7 +133,7 @@ such as by using the New-PSWorkflowExecutionOption cmdlet.
 
 For more information, see [How to Run Windows PowerShell Commandsin a Workflow](https://technet.microsoft.com/en-us/library/bb978525).
 
-# EXAMPLES
+## EXAMPLES
 
 The InlineScript in the following workflow includes commands
 that are not valid in workflows, including the use of the

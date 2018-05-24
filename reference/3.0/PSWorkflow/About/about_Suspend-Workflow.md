@@ -9,13 +9,12 @@ title:  about_Suspend Workflow
 
 ## about_Suspend-Workflow
 
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes the Suspend-Workflow activity, which suspends
 the workflow in which the activity appears.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The Suspend-Workflow activity stops workflow processing
 temporarily from within the workflow. Before suspending,
@@ -27,15 +26,16 @@ To resume the workflow, the user running the workflow
 uses the Resume-Job cmdlet. You cannot resume a workflow
 from within the workflow.
 
-# SYNTAX
+## SYNTAX
 
-
+```
 workflow <Verb-Noun>
 {
-Suspend-Workflow
+    Suspend-Workflow
 }
+```
 
-# DETAILED DESCRIPTION
+## DETAILED DESCRIPTION
 
 The Suspend-Workflow stops the  workflow temporarily and
 returns a job object that represents the workflow job. A
@@ -56,23 +56,28 @@ and then suspends the workflow, and returns a job object
 that represents the suspended workflow. The job type is
 PSWorkflowJob.
 
-Workflow Test-Suspend
-{
-$a = Get-Date
-Suspend-Workflow
-(Get-Date)- $a
-}
-
-PS C:> Test-Suspend
-
-Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
---     ----            -------------   -----         -----------     --------             -------
-8      Job8            PSWorkflowJob   Suspended     True            localhost            Test-Suspend
-
 You can use the job cmdlets, such as Get-Job, to manage
 the workflow job.
 
-Resuming a Workflow Job
+```powershell
+Workflow Test-Suspend
+{
+    $a = Get-Date
+    Suspend-Workflow
+    (Get-Date)- $a
+}
+
+Test-Suspend
+```
+
+```output
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+8      Job8            PSWorkflowJob   Suspended     True            localhost            Test-Suspend
+```
+
+## Resuming a Workflow Job
+
 To resume the workflow job, use the Resume-Job cmdlet.
 The Resume-Job cmdlet returns the workflow job object
 immediately, even though it might not yet be resumed.
@@ -80,19 +85,27 @@ To wait for the job to be resumed, use the Wait
 parameter, or use the Get-Job cmdlet to get the current
 job object.
 
-PS C:> Resume-Job -Name Job8
+```powershell
+Resume-Job -Name Job8
+```
 
+```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 8      Job8            PSWorkflowJob   Suspended     True            localhost            Test-Suspend
+```
 
-PS C:> Get-Job -Name Job8
+```powershell
+Get-Job -Name Job8
+```
 
+```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 8      Job8            PSWorkflowJob   Completed     True            localhost            Test-Suspend
+```
 
-Getting the Output of a Workflow Job
+## Getting the Output of a Workflow Job
 
 To get the output of a workflow job, use the Receive-Job
 cmdlet. The output shows that the workflow resumed at the
@@ -100,8 +113,11 @@ command that followed the Suspend-Workflow cmdlet. The value
 of the $a variable, which was populated before the suspension,
 is available to the workflow when it resumes.
 
-PS C:> Get-Job -Name Job8 | Receive-Job
+```powershell
+Get-Job -Name Job8 | Receive-Job
+```
 
+```output
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -114,6 +130,7 @@ TotalMinutes      : 0.330383401666667
 TotalSeconds      : 19.8230041
 TotalMilliseconds : 19823.0041
 PSComputerName    : localhost
+```
 
 # SEE ALSO
 

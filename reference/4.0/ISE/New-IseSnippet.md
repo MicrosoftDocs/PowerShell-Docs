@@ -229,8 +229,6 @@ To use the new snippet (and other unsigned user-created snippets), change the ex
 
 - You can create a snippet that has the same name as a built-in snippet. Both snippets appear in the snippet menu in Windows PowerShell ISE.
 
-
-
 ## RELATED LINKS
 
 [Get-IseSnippet](Get-IseSnippet.md)
