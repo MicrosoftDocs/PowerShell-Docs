@@ -36,7 +36,7 @@ Workflows are designed for long-running commands that collect critical data, but
 For more information, see about_Workflows.
 
 You can also add workflow common parameters to this command.
-For more information about workflow common parameters, see about_WorkflowCommonParametershttp://technet.microsoft.com/library/jj129719(v=wps.620).aspx.
+For more information about workflow common parameters, see [about_WorkflowCommonParameters](http://technet.microsoft.com/library/jj129719(v=wps.620).aspx.)
 
 This workflow is introduced in Windows PowerShell 3.0.
 
