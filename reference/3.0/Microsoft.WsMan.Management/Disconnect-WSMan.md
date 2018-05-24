@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=141439
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  Disconnect-WSMan
 ---
-
 # Disconnect-WSMan
+
 ## SYNOPSIS
+
 Disconnects the client from the WinRM service on a remote computer.
+
 ## SYNTAX
 
 ```
@@ -18,15 +20,18 @@ Disconnect-WSMan [[-ComputerName] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Disconnect-WSMan cmdlet disconnects the client from the WinRM service on a remote computer.
 If you saved the WS-Management session in a variable, the session object remains in the variable, but the state of the WS-Management session is "Closed".
 You can use this cmdlet within the context of the WSMan provider to disconnect the client from the WinRM service on a remote computer.
 However, you can also use this cmdlet to disconnect from the WinRM service on remote computers before you change to the WSMan provider.
 
 For more information about how to connect to the WinRM service on a remote computer, see Connect-WSMan.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
 PS C:\> Disconnect-WSMan -computer server01
 PS C:\> cd WSMan:
@@ -43,9 +48,11 @@ This command deletes the connection to the remote server01 computer.
 This cmdlet is generally used within the context of the WSMan provider to disconnect from a remote computer, in this case the server01 computer.
 However, you can also use the Disconnect-WSMan cmdlet to remove connections to remote computers before you  change to the WSMan provider.
 Those connections will not appear in the ComputerName list.
+
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies the computer from which you want to disconnect.
 The value can be a fully qualified domain name, a NetBIOS name, or an IP address.
 Use the local computer name, use localhost, or use a dot (.) to specify the local computer.
@@ -69,15 +76,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 This cmdlet does not accept any input.
+
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
+
 ## NOTES
 
 ## RELATED LINKS
