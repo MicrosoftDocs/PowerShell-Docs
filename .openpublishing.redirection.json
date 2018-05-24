@@ -15,6 +15,11 @@
             "redirect_document_id": "False"
         },
         {
+            "source_path": "developer/index.md",
+            "redirect_url": "/powershell/developer/windows-powershell",
+            "redirect_document_id": "False"
+        },
+        {
             "source_path": "reference/virtual-directory/core-powershell/core-powershell.md",
             "redirect_url": "/powershell/scripting/powershell-scripting",
             "redirect_document_id": "False"
