@@ -41,7 +41,7 @@ This command exports the names of Windows PowerShell snap-ins in the current ses
 ### Example 2
 
 ```powershell
-export-console
+Export-Console
 ```
 
 This command exports the names of Windows PowerShell snap-ins from current session to the Windows PowerShell console file that was most recently used in the current session.

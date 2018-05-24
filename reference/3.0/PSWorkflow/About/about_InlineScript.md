@@ -1,12 +1,12 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_InlineScript
 ---
-
 # About InlineScript
+
 ## about_InlineScript
 
 
@@ -132,7 +132,7 @@ OutOfProcessActivity property of the session configuration,
 such as by using the New-PSWorkflowExecutionOption cmdlet.
 
 For more information, see [How to Run Windows PowerShell Commands
-in a Workflow](http://go.microsoft.com/fwlink/?LinkId=261983).
+in a Workflow](https://technet.microsoft.com/en-us/library/bb978525).
 
 # EXAMPLES
 
@@ -144,7 +144,7 @@ New-Object cmdlet with the ComObject parameter.
 workflow Test-Workflow
 {
   $ie = InlineScript {
-    $ie = New-Object -ComObject InternetExplorer.Application -property @{navigate2="www.microsoft.com"}
+    $ie = New-Object -ComObject InternetExplorer.Application -Property @{navigate2="www.microsoft.com"}
 
     $ie.Visible = $true
   }

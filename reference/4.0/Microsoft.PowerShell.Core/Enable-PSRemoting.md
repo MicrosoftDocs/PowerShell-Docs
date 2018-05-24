@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/p/?linkid=289576
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Enable-PSRemoting
 ---
-
 # Enable-PSRemoting
 
 ## SYNOPSIS
+
 Configures the computer to receive remote commands.
 
 ## SYNTAX
@@ -20,6 +20,7 @@ Enable-PSRemoting [-Force] [-SkipNetworkProfileCheck] [-WhatIf] [-Confirm] [<Com
 ```
 
 ## DESCRIPTION
+
 The **Enable-PSRemoting** cmdlet configures the computer to receive Windows PowerShell remote commands that are sent by using the WS-Management technology.
 
 On Windows Server® 2012, Windows PowerShell remoting is enabled by default.
@@ -34,7 +35,7 @@ For more information, see the description of the **SkipNetworkProfileCheck** par
 
 The **Enable-PSRemoting** cmdlet performs the following operations:
 
-- Runs the [Set-WSManQuickConfig](http://go.microsoft.com/fwlink/?LinkID=141463) cmdlet, which performs the following tasks:
+- Runs the [Set-WSManQuickConfig](..\Microsoft.WsMan.Management\Set-WSManQuickConfig.md) cmdlet, which performs the following tasks:
  - Starts the WinRM service.
  - Sets the startup type on the WinRM service to Automatic.
  - Creates a listener to accept requests on any IP address.
@@ -54,25 +55,28 @@ Remote commands, and later attempts to enable and disable remoting, are likely t
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Enable-PSRemoting
+
+```powershell
+Enable-PSRemoting
 ```
 
 This command configures the computer to receive remote commands.
 
 ### Example 2
-```
-PS C:\> Enable-PSRemoting -Force
+
+```powershell
+Enable-PSRemoting -Force
 ```
 
 This command configures the computer to receive remote commands.
 It uses the Force parameter to suppress the user prompts.
 
 ### Example 3
-```
-PS C:\> Enable-PSRemoting -SkipNetworkProfileCheck -Force
 
-PS C:\> Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
+```powershell
+Enable-PSRemoting -SkipNetworkProfileCheck -Force
+
+Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 ```
 
 This example shows how to allow remote access from public networks on client versions of Windows.
@@ -91,6 +95,7 @@ The command uses the **Set-NetFirewallRule** cmdlet in the **NetSecurity** modul
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -106,6 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Suppresses all user prompts.
 By default, you are prompted to confirm each operation.
 
@@ -122,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipNetworkProfileCheck
+
 Enables remoting on client versions of Windows when the computer is on a public network.
 This parameter enables a firewall rule for public networks that allows remote access only from computers in the same local subnet.
 
@@ -146,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -162,20 +170,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
+
 Enable-PSRemoting returns strings that describe its results.
 
 ## NOTES
-* In Windows PowerShell 3.0, **Enable-PSRemoting** creates the following firewall exceptions for WS-Management communications.
+
+- In Windows PowerShell 3.0, **Enable-PSRemoting** creates the following firewall exceptions for WS-Management communications.
 
   On server versions of Windows, **Enable-PSRemoting** creates firewall rules  for private and domain networks that allow remote access, and creates a firewall rule for public networks that allows remote access only from computers in the same local subnet.
 
@@ -184,7 +196,7 @@ To create a firewall rule for public networks that allows remote access from the
 
   On client or server versions of Windows, to create a firewall rule for public networks that removes the local subnet restriction and allows remote access , use the **Set-NetFirewallRule** cmdlet in the NetSecurity module to run the following command: `Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any`
 
-* In Windows PowerShell 2.0, **Enable-PSRemoting** creates the following firewall exceptions for WS-Management communications.
+- In Windows PowerShell 2.0, **Enable-PSRemoting** creates the following firewall exceptions for WS-Management communications.
 
   On server versions of Windows, it creates firewall rules for all networks that allow remote access.
 
@@ -192,8 +204,8 @@ To create a firewall rule for public networks that allows remote access from the
 To minimize security risks, **Enable-PSRemoting** does not create a firewall rule for public networks on client versions of Windows.
 When the current network location is public, **Enable-PSRemoting** returns the following message: "Unable to check the status of the firewall."
 
-* Beginning in Windows PowerShell 3.0, **Enable-PSRemoting** enables all session configurations by setting the value of the **Enabled** property of all session configurations (WSMan:\\\<ComputerName\>\Plugin\\\<SessionConfigurationName\>\Enabled) to True ($true).
-* In Windows PowerShell 2.0, **Enable-PSRemoting** removes the Deny_All setting from the security descriptor of session configurations. In Windows PowerShell 3.0, **Enable-PSRemoting** removes the Deny_All and Network_Deny_All settings, thereby providing remote access to session configurations that were reserved for local use.
+- Beginning in Windows PowerShell 3.0, **Enable-PSRemoting** enables all session configurations by setting the value of the **Enabled** property of all session configurations (WSMan:\\\<ComputerName\>\Plugin\\\<SessionConfigurationName\>\Enabled) to True ($true).
+- In Windows PowerShell 2.0, **Enable-PSRemoting** removes the Deny_All setting from the security descriptor of session configurations. In Windows PowerShell 3.0, **Enable-PSRemoting** removes the Deny_All and Network_Deny_All settings, thereby providing remote access to session configurations that were reserved for local use.
 
 ## RELATED LINKS
 
