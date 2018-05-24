@@ -59,7 +59,12 @@ This topic describes how to create a Windows PowerShell navigation provider that
 ##  <a name="definecmdletprovidernavigation"></a> Define the Windows PowerShell provider
  A Windows PowerShell navigation provider must create a .NET class that derives from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class. Here is the class definition for the navigation provider described in this section.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov05#accessdbprov05ProviderDeclaration](Msh_samplesaccessdbprov05#accessdbprov05ProviderDeclaration)]  -->
+```csharp
+[CmdletProvider("AccessDB", ProviderCapabilities.None)]
+public class AccessDBProvider : NavigationCmdletProvider
+```
+
+[!code-csharp[AccessDBProviderSample05.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
 
  Note that in this provider, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no Windows PowerShell specific capabilities that are added.
 
@@ -81,7 +86,7 @@ This topic describes how to create a Windows PowerShell navigation provider that
 
  This navigation provider does not implement this method. However, the following code is the default implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermakepath](Msh_samplestestcmdlets#testprovidermakepath)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermakepath](Msh_samplestestcmdlets#testprovidermakepath)]  -->
 
 #### Things to Remember About Implementing MakePath
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath):
@@ -96,7 +101,7 @@ This topic describes how to create a Windows PowerShell navigation provider that
 
  The sample navigation provider does not override this method, but uses the default implementation. It accepts paths that use both "/" and "\\" as path separators. It first normalizes the path to have only "\\" separators, then splits the parent path off at the last "\\" and returns the parent path.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
 
 #### To Remember About Implementing GetParentPath
  Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) method should split the path lexically on the path separator for the provider namespace. For example, the filesystem provider uses this method to look for the last "\\" and returns everything to the left of the separator.
@@ -106,7 +111,7 @@ This topic describes how to create a Windows PowerShell navigation provider that
 
  The sample navigation provider does not override this method. The default implementation is shown below. It accepts paths that use both "/" and "\\" as path separators. It first normalizes the path to have only "\\" separators, then splits the parent path off at the last "\\" and returns the name of the child path part.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchildname](Msh_samplestestcmdlets#testprovidergetchildname)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchildname](Msh_samplestestcmdlets#testprovidergetchildname)]  -->
 
 #### Things to Remember About Implementing GetChildName
  Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) method should split the path lexically on the path separator. If the supplied path contains no path separators, the method should return the path unmodified.
@@ -119,7 +124,36 @@ This topic describes how to create a Windows PowerShell navigation provider that
 
  The following code shows the [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) implementation in our sample navigation provider. The method verifies that  the specified path is correct and if the table exists, and returns true if the path indicates a container.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov05#accessdbprov05isitemcontainer](Msh_samplesaccessdbprov05#accessdbprov05isitemcontainer)]  -->
+```csharp
+protected override bool IsItemContainer(string path)
+{
+    if (PathIsDrive(path)) 
+    { 
+        return true; 
+    }
+    
+    string[] pathChunks = ChunkPath(path);
+    string tableName;
+    int rowNumber;
+
+    PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
+    
+    if (type == PathType.Table)
+    {
+    foreach (DatabaseTableInfo ti in GetTables())
+    {
+        if (string.Equals(ti.Name, tableName, StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+    } // foreach (DatabaseTableInfo...
+    } // if (pathChunks...
+
+    return false;
+} // IsItemContainer
+```
+
+[!code-csharp[AccessDBProviderSample05.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L847-L872 "AccessDBProviderSample05.cs")]
 
 #### Things to Remember About Implementing IsItemContainer
  Your navigation provider .NET class might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In this case, the implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) needs to ensure that the path passed meets requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) property.
@@ -129,7 +163,7 @@ This topic describes how to create a Windows PowerShell navigation provider that
 
  The sample navigation provider does not override the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method. The following is the default implementation.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitem](Msh_samplestestcmdlets#testprovidermoveitem)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitem](Msh_samplestestcmdlets#testprovidermoveitem)]  -->
 
 #### Things to Remember About Implementing MoveItem
  Your navigation provider .NET class might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In this case, the implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) must ensure that the path passed meets requirements. To do this, the method should access the appropriate property, for example, the **CmdletProvider.Exclude** property.
@@ -145,14 +179,14 @@ This topic describes how to create a Windows PowerShell navigation provider that
 
  This navigation provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters).
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters](Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters](Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters)]  -->
 
 ##  <a name="normalizerelativepath"></a> Normalizing a Relative Path
  Your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) method to normalize the fully-qualified path indicated in the `path` parameter as being relative to the path specified by the `basePath` parameter. The method returns a string representation of the normalized path. It writes an error if the `path` parameter specifies a nonexistent path.
 
  The sample navigation provider does not override this method. The following is the default implementation.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidernormalizepath](Msh_samplestestcmdlets#testprovidernormalizepath)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidernormalizepath](Msh_samplestestcmdlets#testprovidernormalizepath)]  -->
 
 #### Things to Remember About Implementing NormalizeRelativePath
  Your implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) should parse the `path` parameter, but it does not have to use purely syntactical parsing. You are encouraged to design this method to use the path to look up the path information in the data store and create a path that matches the casing and standardized path syntax.

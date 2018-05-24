@@ -122,7 +122,8 @@ namespace Sample
 
 ```
 
-<!-- TODO: review snippet reference  [!CODE [PSSample_Powershell02#PowerShell02All](PSSample_Powershell02#PowerShell02All)]  -->
+[!code-csharp[PowerShell02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/PowerShell02/PowerShell02.cs#L11-L96 "PowerShell02.cs")]
 
 ## See Also
+
  [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)

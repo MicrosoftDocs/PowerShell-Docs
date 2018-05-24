@@ -66,7 +66,13 @@ This topic describes how to create a Windows PowerShell provider that can manipu
 ##  <a name="derivefromitemcmdletprovider"></a> Defining the Windows PowerShell Item Provider Class
  A Windows PowerShell item provider must define a .NET class that derives from the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. The following is the class definition for the item provider described in this section.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov03#accessdbprov03providerdeclaration](Msh_samplesaccessdbprov03#accessdbprov03providerdeclaration)]  -->
+```csharp
+[CmdletProvider("AccessDB", ProviderCapabilities.None)]
+
+public class AccessDBProvider : ItemCmdletProvider
+```
+
+[!code-csharp[AccessDBProviderSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L34-L36 "AccessDBProviderSample03.cs")]
 
  Note that in this class definition, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no added Windows PowerShell specific capabilities.
 
@@ -83,14 +89,84 @@ This topic describes how to create a Windows PowerShell provider that can manipu
 
  Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) method for this provider. Note that this implementation calls a NormalizePath helper method to convert all separators in the path to a uniform one.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov03#accessdbprov03isvalidpathmethod](Msh_samplesaccessdbprov03#accessdbprov03isvalidpathmethod)]  -->
+```csharp
+protected override bool IsValidPath(string path)
+{
+    bool result = true;
+
+    // check if the path is null or empty
+    if (String.IsNullOrEmpty(path))
+    {
+        result = false;
+    }
+
+    // convert all separators in the path to a uniform one
+    path = NormalizePath(path);
+
+    // split the path into individual chunks
+    string[] pathChunks = path.Split(pathSeparator.ToCharArray());
+
+    foreach (string pathChunk in pathChunks)
+    {
+        if (pathChunk.Length == 0)
+        {
+            result = false;
+        }
+    }
+    return result;
+} // IsValidPath
+```
+
+[!code-csharp[AccessDBProviderSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L274-L298 "AccessDBProviderSample03.cs")]
 
 ##  <a name="determineifitemexists"></a> Determining if an Item Exists
  After verifying the path, the Windows PowerShell runtime must determine if an item of data exists at that path. To support this type of query, the Windows PowerShell item provider implements the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) method. This method returns `true` an item is found at the specified path and `false` (default) otherwise.
 
  Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) method for this provider. Note that this method calls the PathIsDrive, ChunkPath, and GetTable helper methods, and uses a provider defined DatabaseTableInfo object.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov03#accessdbprov03ItemExists](Msh_samplesaccessdbprov03#accessdbprov03ItemExists)]  -->
+```csharp
+protected override bool ItemExists(string path)
+{
+    // check if the path represented is a drive
+    if (PathIsDrive(path))
+    {
+        return true;
+    }
+
+    // Obtain type, table name and row number from path
+    string tableName;
+    int rowNumber;
+
+    PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
+
+    DatabaseTableInfo table = GetTable(tableName);
+
+    if (type == PathType.Table)
+    {
+        // if specified path represents a table then DatabaseTableInfo
+        // object for the same should exist
+        if (table != null)
+        {
+            return true;
+        }
+    }
+    else if (type == PathType.Row)
+    {
+        // if specified path represents a row then DatabaseTableInfo should
+        // exist for the table and then specified row number must be within
+        // the maximum row count in the table
+        if (table != null && rowNumber < table.RowCount)
+        {
+            return true;
+        }
+    }
+
+    return false;
+
+} // ItemExists
+```
+
+[!code-csharp[AccessDBProviderSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L229-L267 "AccessDBProviderSample03.cs")]
 
 #### Things to Remember About Implementing ItemExists
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists):
@@ -104,14 +180,49 @@ This topic describes how to create a Windows PowerShell provider that can manipu
 
  This Windows PowerShell item provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovideritemexistdynamicparameters](Msh_samplestestcmdlets#testprovideritemexistdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovideritemexistdynamicparameters](Msh_samplestestcmdlets#testprovideritemexistdynamicparameters)]  -->
 
 ##  <a name="retrieveitem"></a> Retrieving an Item
  To retrieve an item, the Windows PowerShell item provider must override [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method to support calls from the Get-Item cmdlet. This method writes the item using the [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) method.
 
  Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method for this provider. Note that this method uses the GetTable and GetRow helper methods to retrieve items that are either tables in the Access database or rows in a data table.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov03#accessdbprov03getitemmethod](Msh_samplesaccessdbprov03#accessdbprov03getitemmethod)]  -->
+```csharp
+protected override void GetItem(string path)
+{
+  // check if the path represented is a drive
+  if (PathIsDrive(path))
+  {
+      WriteItemObject(this.PSDriveInfo, path, true);
+      return;
+  }// if (PathIsDrive...
+
+    // Get table name and row information from the path and do 
+    // necessary actions
+    string tableName;
+    int rowNumber;
+
+    PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
+
+    if (type == PathType.Table)
+    {
+        DatabaseTableInfo table = GetTable(tableName);
+        WriteItemObject(table, path, true);
+    }
+    else if (type == PathType.Row)
+    {
+        DatabaseRowInfo row = GetRow(tableName, rowNumber);
+        WriteItemObject(row, path, false);
+    }
+    else
+    {
+        ThrowTerminatingInvalidPathException(path);
+    }
+
+} // GetItem
+```
+
+[!code-csharp[AccessDBProviderSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L132-L163 "AccessDBProviderSample03.cs")]
 
 #### Things to Remember About Implementing GetItem
  The following conditions may apply to an implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem):
@@ -125,14 +236,14 @@ This topic describes how to create a Windows PowerShell provider that can manipu
 
  This provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetitemdynamicparameters](Msh_samplestestcmdlets#testprovidergetitemdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetitemdynamicparameters](Msh_samplestestcmdlets#testprovidergetitemdynamicparameters)]  -->
 
 ##  <a name="setitem"></a> Setting an Item
  To set an item, the Windows PowerShell item provider must override the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method to support calls from the Set-Item cmdlet. This method sets the value of the item at the specified path.
 
  This provider does not provide an override for the  [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method. However, the following is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitem](Msh_samplestestcmdlets#testprovidersetitem)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitem](Msh_samplestestcmdlets#testprovidersetitem)]  -->
 
 #### Things to Remember About Implementing SetItem
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem):
@@ -150,14 +261,14 @@ This topic describes how to create a Windows PowerShell provider that can manipu
 
  This provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitemdynamicparameters](Msh_samplestestcmdlets#testprovidersetitemdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitemdynamicparameters](Msh_samplestestcmdlets#testprovidersetitemdynamicparameters)]  -->
 
 ##  <a name="clearitem"></a> Clearing an Item
  To clear an item, the Windows PowerShell item provider implements the [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) method to support calls from the Clear-Item cmdlet. This method erases the data item at the specified path.
 
  This provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitem](Msh_samplestestcmdlets#testproviderclearitem)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitem](Msh_samplestestcmdlets#testproviderclearitem)]  -->
 
 #### Things to Remember About Implementing ClearItem
  The following conditions may apply to an implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem):
@@ -175,14 +286,14 @@ This topic describes how to create a Windows PowerShell provider that can manipu
 
  This item provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitemdynamicparameters](Msh_samplestestcmdlets#testproviderclearitemdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitemdynamicparameters](Msh_samplestestcmdlets#testproviderclearitemdynamicparameters)]  -->
 
 ##  <a name="invokedefaultaction"></a> Performing a Default Action for an Item
  A Windows PowerShell item provider can implement the [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) method to support calls from the Invoke-Item cmdlet, which allows the provider to perform a default action for the item at the specified path. For example, the FileSystem provider might use this method to call ShellExecute for a specific item.
 
  This provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultaction](Msh_samplestestcmdlets#testproviderinvokedefaultaction)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultaction](Msh_samplestestcmdlets#testproviderinvokedefaultaction)]  -->
 
 #### Things to Remember About Implementing InvokeDefaultAction
  The following conditions may apply to an implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction):
@@ -196,7 +307,7 @@ This topic describes how to create a Windows PowerShell provider that can manipu
 
  This item provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters](Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters](Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters)]  -->
 
 ##  <a name="implementhelpermethodsandclasses"></a> Implementing Helper Methods and Classes
  This item provider implements several helper methods and classes that are used by the public override methods defined by Windows PowerShell. The code for these helper methods and classes are shown in the [Code Sample](#codesampleitemaccessdb3) section.

@@ -57,25 +57,25 @@ create sessions that use the Windows PowerShell 2.0 Engine.
 This is an advanced task that is typically performed by a system administrator.
 
 The following procedure uses the **PSVersion** parameter of the
-[Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea)
+[Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea)
 cmdlet to create a session configuration that uses the Windows PowerShell 2.0 Engine. You can also
 use the **PowerShellVersion** parameter of the
-[New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866)
+[New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)
 cmdlet to create a session configuration file for a session that loads the Windows PowerShell 2.0
 Engine and you can use the **PSVersion** parameter of the
-[Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea)
+[Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea)
 parameter to change a session configuration to use the Windows PowerShell 2.0 Engine.
 
 For more information about session configuration files, see
-[about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8).For
+[about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8).For
 information about session configurations, including setup and security, see
-[about_Session_Configurations[v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
+[about_Session_Configurations[v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
 
 #### To start a remote Windows PowerShell 2.0 session
 
 1. To create a session configuration that requires the Windows PowerShell 2.0 Engine, use the
    **PSVersion** parameter of the
-   [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea)
+   [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea)
    cmdlet with a value of "2.0". Run this command on the computer at the "server side" or receiving
    end of the connection.
 
@@ -89,7 +89,7 @@ information about session configurations, including setup and security, see
 
 2. To create a session on the Server01 computer that uses the PS2 session configuration, use the
    **ConfigurationName** parameter of cmdlets that create a remote session, such as the
-   [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f)
+   [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f)
    cmdlet.
 
    When a session that uses the session configuration starts, the Windows PowerShell 2.0 Engine is
@@ -106,7 +106,7 @@ information about session configurations, including setup and security, see
 
 To start a background job with the Windows PowerShell 2.0 Engine, use the **PSVersion** parameter
 of the
-[Start-Job](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442)
+[Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442)
 cmdlet.
 
 The following command starts a background job with the Windows PowerShell 2.0 Engine

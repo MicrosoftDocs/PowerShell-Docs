@@ -56,7 +56,12 @@ This topic describes how to create a Windows PowerShell provider that enables th
 ##  <a name="definecmdletprovidercontent"></a> Define the Windows PowerShell Content Provider Class
  A Windows PowerShell content provider must create a .NET class that supports the [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) interface. Here is the class definition for the item provider described in this section.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov06#accessdbprov06providerdeclaration](Msh_samplesaccessdbprov06#accessdbprov06providerdeclaration)]  -->
+```csharp
+[CmdletProvider("AccessDB", ProviderCapabilities.None)]
+public class AccessDBProvider : NavigationCmdletProvider, IContentCmdletProvider
+```
+
+[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33 "AccessDBProviderSample06.cs")]
 
  Note that in this class definition, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no added Windows PowerShell specific capabilities.
 
@@ -76,19 +81,316 @@ This topic describes how to create a Windows PowerShell provider that enables th
 ##  <a name="implementcontentreader"></a> Implementing a Content Reader
  To read content from an item, a provider must implements a content reader class that derives from [System.Management.Automation.Provider.Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader). The content reader for this provider allows access to the contents of a row in a data table. The content reader class defines a **Read** method that retrieves the data from the indicated row and returns a list representing that data, a **Seek** method that moves the content reader, a **Close** method that closes the content reader, and a **Dispose** method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov06#accessdbprov06contentreader](Msh_samplesaccessdbprov06#accessdbprov06contentreader)]  -->
+```csharp
+public class AccessDBContentReader : IContentReader
+{
+    // A provider instance is required so as to get "content"
+    private AccessDBProvider provider;
+    private string path;
+    private long currentOffset;
+
+    internal AccessDBContentReader(string path, AccessDBProvider provider)
+    {
+        this.path = path;
+        this.provider = provider;
+    }
+
+    /// <summary>
+    /// Read the specified number of rows from the source.
+    /// </summary>
+    /// <param name="readCount">The number of items to 
+    /// return.</param>
+    /// <returns>An array of elements read.</returns>
+    public IList Read(long readCount)
+    {
+        // Read the number of rows specified by readCount and increment
+        // offset
+        string tableName;
+        int rowNumber;
+        PathType type = provider.GetNamesFromPath(path, out tableName, out rowNumber);
+
+        Collection<DatabaseRowInfo> rows =
+            provider.GetRows(tableName);
+        Collection<DataRow> results = new Collection<DataRow>();
+
+        if (currentOffset < 0 || currentOffset >= rows.Count)
+        {
+            return null;
+        }
+
+        int rowsRead = 0;
+
+        while (rowsRead < readCount && currentOffset < rows.Count)
+        {
+            results.Add(rows[(int)currentOffset].Data);
+            rowsRead++;
+            currentOffset++;
+        }
+
+        return results;
+    } // Read
+
+    /// <summary>
+    /// Moves the content reader specified number of rows from the 
+    /// origin
+    /// </summary>
+    /// <param name="offset">Number of rows to offset</param>
+    /// <param name="origin">Starting row from which to offset</param>
+    public void Seek(long offset, System.IO.SeekOrigin origin)
+    {
+        // get the number of rows in the table which will help in
+        // calculating current position
+        string tableName;
+        int rowNumber;
+
+        PathType type = provider.GetNamesFromPath(path, out tableName, out rowNumber);
+
+        if (type == PathType.Invalid)
+        {
+            throw new ArgumentException("Path specified must represent a table or a row :" + path);
+        }
+
+        if (type == PathType.Table)
+        {
+            Collection<DatabaseRowInfo> rows = provider.GetRows(tableName);
+
+            int numRows = rows.Count;
+
+            if (offset > rows.Count)
+            {
+                throw new
+                        ArgumentException(
+                            "Offset cannot be greater than the number of rows available"
+                                        );
+            }
+
+            if (origin == System.IO.SeekOrigin.Begin)
+            {
+                // starting from Beginning with an index 0, the current offset
+                // has to be advanced to offset - 1
+                currentOffset = offset - 1;
+            }
+            else if (origin == System.IO.SeekOrigin.End)
+            {
+                // starting from the end which is numRows - 1, the current
+                // offset is so much less than numRows - 1
+                currentOffset = numRows - 1 - offset;
+            }
+            else
+            {
+                // calculate from the previous value of current offset
+                // advancing forward always
+                currentOffset += offset;
+            }
+        } // if (type...
+        else
+        {
+            // for row, the offset will always be set to 0
+            currentOffset = 0;
+        }
+
+    } // Seek
+
+    /// <summary>
+    /// Closes the content reader, so all members are reset
+    /// </summary>
+    public void Close()
+    {
+        Dispose();
+    } // Close
+
+    /// <summary>
+    /// Dispose any resources being used
+    /// </summary>
+    public void Dispose()
+    {
+        Seek(0, System.IO.SeekOrigin.Begin);
+        GC.SuppressFinalize(this);
+    } // Dispose
+} // AccessDBContentReader
+```
+
+[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241 "AccessDBProviderSample06.cs")]
 
 ##  <a name="implementcontentwriter"></a> Implementing a Content Writer
  To write content to an item, a provider must implement a content writer class derives from [System.Management.Automation.Provider.Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter). The content writer class defines a **Write** method that writes the specified row content, a **Seek** method that moves the content writer, a **Close** method that closes the content writer, and a **Dispose** method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov06#accessdbprov06contentwriter](Msh_samplesaccessdbprov06#accessdbprov06contentwriter)]  -->
+```csharp
+public class AccessDBContentWriter : IContentWriter
+{
+    // A provider instance is required so as to get "content"
+    private AccessDBProvider provider;
+    private string path;
+    private long currentOffset;
+
+    internal AccessDBContentWriter(string path, AccessDBProvider provider)
+    {
+        this.path = path;
+        this.provider = provider;
+    }
+
+    /// <summary>
+    /// Write the specified row contents in the source
+    /// </summary>
+    /// <param name="content"> The contents to be written to the source.
+    /// </param>
+    /// <returns>An array of elements which were successfully written to 
+    /// the source</returns>
+    /// 
+    public IList Write(IList content)
+    {
+        if (content == null)
+        {
+            return null;
+        }
+
+        // Get the total number of rows currently available it will 
+        // determine how much to overwrite and how much to append at
+        // the end
+        string tableName;
+        int rowNumber;
+        PathType type = provider.GetNamesFromPath(path, out tableName, out rowNumber);
+
+        if (type == PathType.Table)
+        {
+            OdbcDataAdapter da = provider.GetAdapterForTable(tableName);
+            if (da == null)
+            {
+                return null;
+            }
+
+            DataSet ds = provider.GetDataSetForTable(da, tableName);
+            DataTable table = provider.GetDataTable(ds, tableName);
+
+            string[] colValues = (content[0] as string).Split(',');
+
+            // set the specified row
+            DataRow row = table.NewRow();
+
+            for (int i = 0; i < colValues.Length; i++)
+            {
+                if (!String.IsNullOrEmpty(colValues[i]))
+                {
+                    row[i] = colValues[i];
+                }
+            }
+
+            //table.Rows.InsertAt(row, rowNumber);
+            // Update the table
+            table.Rows.Add(row);
+            da.Update(ds, tableName);
+        }
+        else
+        {
+            throw new InvalidOperationException("Operation not supported. Content can be added only for tables");
+        }
+
+        return null;
+    } // Write
+
+    /// <summary>
+    /// Moves the content reader specified number of rows from the 
+    /// origin
+    /// </summary>
+    /// <param name="offset">Number of rows to offset</param>
+    /// <param name="origin">Starting row from which to offset</param>
+    public void Seek(long offset, System.IO.SeekOrigin origin)
+    {
+        // get the number of rows in the table which will help in
+        // calculating current position
+        string tableName;
+        int rowNumber;
+
+        PathType type = provider.GetNamesFromPath(path, out tableName, out rowNumber);
+
+        if (type == PathType.Invalid)
+        {
+            throw new ArgumentException("Path specified should represent either a table or a row : " + path);
+        }
+
+        Collection<DatabaseRowInfo> rows =
+                provider.GetRows(tableName);
+
+        int numRows = rows.Count;
+
+        if (offset > rows.Count)
+        {
+            throw new
+                    ArgumentException(
+                        "Offset cannot be greater than the number of rows available"
+                                            );
+        }
+
+        if (origin == System.IO.SeekOrigin.Begin)
+        {
+            // starting from Beginning with an index 0, the current offset
+            // has to be advanced to offset - 1
+            currentOffset = offset - 1;
+        }
+        else if (origin == System.IO.SeekOrigin.End)
+        {
+            // starting from the end which is numRows - 1, the current
+            // offset is so much less than numRows - 1
+            currentOffset = numRows - 1 - offset;
+        }
+        else
+        {
+            // calculate from the previous value of current offset
+            // advancing forward always
+            currentOffset += offset;
+        }
+
+    } // Seek
+
+    /// <summary>
+    /// Closes the content reader, so all members are reset
+    /// </summary>
+    public void Close()
+    {
+        Dispose();
+    } // Close
+
+    /// <summary>
+    /// Dispose any resources being used
+    /// </summary>
+    public void Dispose()
+    {
+        Seek(0, System.IO.SeekOrigin.Begin);
+
+        GC.SuppressFinalize(this);
+    } // Dispose
+} // AccessDBContentWriter
+```
+
+[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2250-L2394 "AccessDBProviderSample06.cs")]
 
 ##  <a name="retrievecontentreader"></a> Retrieving the Content Reader
  To get content from an item, the provider must implement the [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) to support the Get-Content cmdlet. This method returns the content reader for the item located at the specified path. The reader object can then be opened to read the content.
 
  Here is the implementation of [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) for this method for this provider.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov06#accessdbprov06getcontentreader](Msh_samplesaccessdbprov06#accessdbprov06getcontentreader)]  -->
+```csharp
+public IContentReader GetContentReader(string path)
+{
+    string tableName;
+    int rowNumber;
+
+    PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
+
+    if (type == PathType.Invalid)
+    {
+        ThrowTerminatingInvalidPathException(path);
+    }
+    else if (type == PathType.Row)
+    {
+        throw new InvalidOperationException("contents can be obtained only for tables");
+    }
+
+    return new AccessDBContentReader(path, this);
+} // GetContentReader
+```
+
+[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1829-L1846 "AccessDBProviderSample06.cs")]
 
 #### Things to Remember About Implementing GetContentReader
  The following conditions may apply to an implementation of [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader):
@@ -102,14 +404,42 @@ This topic describes how to create a Windows PowerShell provider that enables th
 
  This Windows PowerShell container provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov06#accessdbprov06getcontentreaderdynamicparameters](Msh_samplesaccessdbprov06#accessdbprov06getcontentreaderdynamicparameters)]  -->
+```csharp
+public object GetContentReaderDynamicParameters(string path)
+{
+    return null;
+}
+```
+
+[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1853-L1856 "AccessDBProviderSample06.cs")]
 
 ##  <a name="retrievecontentwriter"></a> Retrieving the Content Writer
  To write content to an item, the provider must implement the [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) to support the Set-Content and Add-Content cmdlets. This method returns the content writer for the item located at the specified path.
 
  Here is the implementation of [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) for this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov06#accessdbprov06getcontentwriter](Msh_samplesaccessdbprov06#accessdbprov06getcontentwriter)]  -->
+```csharp
+public IContentWriter GetContentWriter(string path)
+{
+    string tableName;
+    int rowNumber;
+
+    PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
+
+    if (type == PathType.Invalid)
+    {
+        ThrowTerminatingInvalidPathException(path);
+    }
+    else if (type == PathType.Row)
+    {
+        throw new InvalidOperationException("contents can be added only to tables");
+    }
+
+    return new AccessDBContentWriter(path, this);
+}
+```
+
+[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1863-L1880 "AccessDBProviderSample06.cs")]
 
 #### Things to Remember About Implementing GetContentWriter
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter):
@@ -123,14 +453,62 @@ This topic describes how to create a Windows PowerShell provider that enables th
 
  This Windows PowerShell container provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov06#accessdbprov06getcontentreaderdynamicparameters](Msh_samplesaccessdbprov06#accessdbprov06getcontentreaderdynamicparameters)]  -->
+```csharp
+public object GetContentWriterDynamicParameters(string path)
+{
+    return null;
+}
+```
+
+[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1887-L1890 "AccessDBProviderSample06.cs")]
 
 ##  <a name="clearcontent"></a> Clearing Content
  Your content provider implements the [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) method in support of the Clear-Content cmdlet. This method removes the contents of the item at the specified path, but leaves the item intact.
 
  Here is the implementation of the [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) method for this provider.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov06#accessdbprov06clearcontent](Msh_samplesaccessdbprov06#accessdbprov06clearcontent)]  -->
+```csharp
+public void ClearContent(string path)
+{
+    string tableName;
+    int rowNumber;
+
+    PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
+
+    if (type != PathType.Table)
+    {
+        WriteError(new ErrorRecord(
+            new InvalidOperationException("Operation not supported. Content can be cleared only for table"),
+                "NotValidRow", ErrorCategory.InvalidArgument,
+                    path));
+        return;
+    }
+
+    OdbcDataAdapter da = GetAdapterForTable(tableName);
+
+    if (da == null)
+    {
+        return;
+    }
+
+    DataSet ds = GetDataSetForTable(da, tableName);
+    DataTable table = GetDataTable(ds, tableName);
+
+    // Clear contents at the specified location
+    for (int i = 0; i < table.Rows.Count; i++)
+    {
+        table.Rows[i].Delete();
+    }
+
+    if (ShouldProcess(path, "ClearContent"))
+    {
+        da.Update(ds, tableName);
+    }
+
+} // ClearContent
+```
+
+[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1775-L1812 "AccessDBProviderSample06.cs")]
 
 #### Things to Remember About Implementing ClearContent
  The following conditions may apply to an implementation of [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent):
@@ -148,7 +526,14 @@ This topic describes how to create a Windows PowerShell provider that enables th
 
  This Windows PowerShell container provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov06#accessdbprov06clearcontentdynamicparameters](Msh_samplesaccessdbprov06#accessdbprov06clearcontentdynamicparameters)]  -->
+```csharp
+public object ClearContentDynamicParameters(string path)
+{
+    return null;
+}
+```
+
+[!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1819-L1822 "AccessDBProviderSample06.cs")]
 
 ##  <a name="codesampleprovidercontent"></a> Code Sample
  For complete sample code, see [AccessDbProviderSample06 Code Sample](./accessdbprovidersample06-code-sample.md).

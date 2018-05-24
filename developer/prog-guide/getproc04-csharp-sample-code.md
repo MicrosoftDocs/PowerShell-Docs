@@ -19,8 +19,101 @@ The following code shows the implementation of a Get-Process cmdlet that reports
 >  The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
 ## Code Sample
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesgetproc04#GetProc04All](Msh_samplesgetproc04#GetProc04All)]  -->
+
+```csharp
+namespace Microsoft.Samples.PowerShell.Commands
+{
+    using System;
+    using System.Diagnostics;
+    using System.Management.Automation;      // Windows PowerShell namespace.
+   #region GetProcCommand
+
+   /// <summary>
+   /// This class implements the get-proc cmdlet.
+   /// </summary>
+   [Cmdlet(VerbsCommon.Get, "Proc")]
+   public class GetProcCommand : Cmdlet
+   {
+      #region Parameters
+
+       /// <summary>
+       /// The names of the processes to act on.
+       /// </summary>
+       private string[] processNames;
+
+      /// <summary>
+      /// Gets or sets the list of process names on 
+      /// which the Get-Proc cmdlet will work.
+      /// </summary>
+      [Parameter(
+         Position = 0,
+         ValueFromPipeline = true,
+         ValueFromPipelineByPropertyName = true)]
+      [ValidateNotNullOrEmpty]
+      public string[] Name
+      {
+         get { return this.processNames; }
+         set { this.processNames = value; }
+      }
+      
+      #endregion Parameters
+
+      #region Cmdlet Overrides
+
+      /// <summary>
+      /// The ProcessRecord method calls the Process.GetProcesses 
+      /// method to retrieve the processes specified by the Name 
+      /// parameter. Then, the WriteObject method writes the 
+      /// associated processes to the pipeline.
+      /// </summary>
+      protected override void ProcessRecord()
+      {        
+          // If no process names are passed to cmdlet, get all 
+          // processes.
+          if (this.processNames == null)
+          {
+              WriteObject(Process.GetProcesses(), true);
+          }
+          else
+          {
+              // If process names are passed to the cmdlet, get and write 
+              // the associated processes.
+              // If a nonterminating error occurs while retrieving processes, 
+              // call the WriteError method to send an error record to the 
+              // error stream.
+              foreach (string name in this.processNames)
+              {
+                  Process[] processes;
+
+                  try
+                  {
+                      processes = Process.GetProcessesByName(name);
+                  }
+                  catch (InvalidOperationException ex)
+                  {
+                      WriteError(new ErrorRecord(
+                         ex,
+                         "UnableToAccessProcessByName",
+                         ErrorCategory.InvalidOperation,
+                         name));
+                      continue;
+                  }
+
+                  WriteObject(processes, true);
+              } // foreach (string name...
+          } // else
+      } // ProcessRecord
+
+      #endregion Overrides
+    } // End GetProcCommand class.
+
+   #endregion GetProcCommand
+}
+```
+
+[!code-csharp[GetProcessSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample04/GetProcessSample04.cs#L11-L98 "GetProcessSample04.cs")]
 
 ## See Also
+
  [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
  [Windows PowerShell SDK](../windows-powershell-reference.md)

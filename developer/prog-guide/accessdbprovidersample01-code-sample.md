@@ -20,7 +20,31 @@ The following code shows the implementation of the Windows PowerShell provider d
 >  For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
 ## Code Sample
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01all](Msh_samplesaccessdbprov01#accessdbprov01all)]  -->
+
+```csharp
+using System.Management.Automation;
+using System.Management.Automation.Provider;
+using System.ComponentModel;
+
+
+namespace Microsoft.Samples.PowerShell.Providers
+{
+   #region AccessDBProvider
+
+    /// <summary>
+   /// Simple provider.
+   /// </summary>
+   [CmdletProvider("AccessDB", ProviderCapabilities.None)]
+   public class AccessDBProvider : CmdletProvider
+   {
+
+   }
+
+   #endregion AccessDBProvider
+}
+```
+
+[!code-csharp[AccessDBProviderSample01.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L11-L30 "AccessDBProviderSample01.cs")]
 
 ## See Also
  [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)

@@ -73,7 +73,12 @@ This topic describes how to create a Windows PowerShell provider that can work o
 ##  <a name="definecmdletprovidercontainer"></a> Defining a Windows PowerShell Container Provider Class
  A Windows PowerShell container provider must define a .NET class that derives from the [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) base class. Here is the class definition for the Windows PowerShell container provider described in this section.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov04#accessdbprov04providerdeclaration](Msh_samplesaccessdbprov04#accessdbprov04providerdeclaration)]  -->
+```csharp
+   [CmdletProvider("AccessDB", ProviderCapabilities.None)]
+   public class AccessDBProvider : ContainerCmdletProvider
+```
+
+[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
 
  Notice that in this class definition, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no Windows PowerShell specific capabilities that are added.
 
@@ -91,7 +96,62 @@ This topic describes how to create a Windows PowerShell provider that can work o
 
  Here is the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) method for this provider. Notice that this method retrieves the child items in all database tables when the path indicates the Access database, and retrieves the child items from the rows of that table if the path indicates a data table.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov04#accessdbprov04getchilditemsmethod](Msh_samplesaccessdbprov04#accessdbprov04getchilditemsmethod)]  -->
+```csharp
+protected override void GetChildItems(string path, bool recurse)
+{
+    // If path represented is a drive then the children in the path are 
+    // tables. Hence all tables in the drive represented will have to be
+    // returned
+    if (PathIsDrive(path))
+    {
+        foreach (DatabaseTableInfo table in GetTables())
+        {
+            WriteItemObject(table, path, true);
+
+            // if the specified item exists and recurse has been set then 
+            // all child items within it have to be obtained as well
+            if (ItemExists(path) && recurse)
+            {
+                GetChildItems(path + pathSeparator + table.Name, recurse);
+            }
+        } // foreach (DatabaseTableInfo...
+    } // if (PathIsDrive...
+    else
+    {
+        // Get the table name, row number and type of path from the
+        // path specified
+        string tableName;
+        int rowNumber;
+
+        PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
+
+        if (type == PathType.Table)
+        {
+            // Obtain all the rows within the table
+            foreach (DatabaseRowInfo row in GetRows(tableName))
+            {
+                WriteItemObject(row, path + pathSeparator + row.RowNumber,
+                        false);
+            } // foreach (DatabaseRowInfo...
+        }
+        else if (type == PathType.Row)
+        {
+            // In this case the user has directly specified a row, hence
+            // just give that particular row
+            DatabaseRowInfo row = GetRow(tableName, rowNumber);
+            WriteItemObject(row, path + pathSeparator + row.RowNumber,
+                        false);
+        }
+        else
+        {
+            // In this case, the path specified is not valid
+            ThrowTerminatingInvalidPathException(path);
+        }
+    } // else
+} // GetChildItems
+```
+
+[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L311-L362 "AccessDBProviderSample04.cs")]
 
 #### Things to Remember About Implementing GetChildItems
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems):
@@ -109,14 +169,60 @@ This topic describes how to create a Windows PowerShell provider that can work o
 
  This Windows PowerShell container provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchilditemsdynamicparameters](Msh_samplestestcmdlets#testprovidergetchilditemsdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchilditemsdynamicparameters](Msh_samplestestcmdlets#testprovidergetchilditemsdynamicparameters)]  -->
 
 ##  <a name="retrievechildnamescontainer"></a> Retrieving Child Item Names
  To retrieve the names of child items, the Windows PowerShell container provider must override the [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) method to support calls from the Get-ChildItem cmdlet when its `Name` parameter is specified. This method retrieves the names of the child items for the specified path or child item names for all containers if the `returnAllContainers` parameter of the cmdlet is specified. A child name is the leaf portion of a path. For example, the child name for the path c:\windows\system32\abc.dll is "abc.dll". The child name for the directory c:\windows\system32 is "system32".
 
  Here is the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) method for this provider. Notice that the method retrieves table names if the specified path indicates the Access database (drive) and row numbers if the path indicates a table.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov04#accessdbprov04getchildnamesmethod](Msh_samplesaccessdbprov04#accessdbprov04getchildnamesmethod)]  -->
+```csharp
+protected override void GetChildNames(string path,
+                            ReturnContainers returnContainers)
+{
+    // If the path represented is a drive, then the child items are
+    // tables. get the names of all the tables in the drive.
+    if (PathIsDrive(path))
+    {
+        foreach (DatabaseTableInfo table in GetTables())
+        {
+            WriteItemObject(table.Name, path, true);
+        } // foreach (DatabaseTableInfo...
+    } // if (PathIsDrive...
+    else
+    {
+        // Get type, table name and row number from path specified
+        string tableName;
+        int rowNumber;
+
+        PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
+
+        if (type == PathType.Table)
+        {
+            // Get all the rows in the table and then write out the 
+            // row numbers.
+            foreach (DatabaseRowInfo row in GetRows(tableName))
+            {
+                WriteItemObject(row.RowNumber, path, false);
+            } // foreach (DatabaseRowInfo...
+        }
+        else if (type == PathType.Row)
+        {
+            // In this case the user has directly specified a row, hence
+            // just give that particular row
+            DatabaseRowInfo row = GetRow(tableName, rowNumber);
+
+            WriteItemObject(row.RowNumber, path, false);
+        }
+        else
+        {
+            ThrowTerminatingInvalidPathException(path);
+        }
+    } // else
+} // GetChildNames
+```
+
+[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L369-L411 "AccessDBProviderSample04.cs")]
 
 #### Things to Remember About Implementing GetChildNames
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems):
@@ -135,14 +241,14 @@ This topic describes how to create a Windows PowerShell provider that can work o
 
  This provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchildnamesdynamicparameters](Msh_samplestestcmdlets#testprovidergetchildnamesdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchildnamesdynamicparameters](Msh_samplestestcmdlets#testprovidergetchildnamesdynamicparameters)]  -->
 
 ##  <a name="renameitemcontainer"></a> Renaming Items
  To rename an item, a Windows PowerShell container provider must override the [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) method to support calls from the Rename-Item cmdlet. This method changes the name of the item at the specified path to the new name provided. The new name must always be relative to the parent item (container).
 
  This provider does not override the [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) method. However, the following is the default implementation.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderrenameitem](Msh_samplestestcmdlets#testproviderrenameitem)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderrenameitem](Msh_samplestestcmdlets#testproviderrenameitem)]  -->
 
 #### Things to Remember About Implementing RenameItem
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem):
@@ -162,14 +268,34 @@ This topic describes how to create a Windows PowerShell provider that can work o
 
  This container provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderrenameitemdynamicparameters](Msh_samplestestcmdlets#testproviderrenameitemdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderrenameitemdynamicparameters](Msh_samplestestcmdlets#testproviderrenameitemdynamicparameters)]  -->
 
 ##  <a name="setnewitemcontainer"></a> Creating New Items
  To create new items, a container provider must implement the [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method to support calls from the New-Item cmdlet. This method creates a data item located at the specified path. The `type` parameter of the cmdlet contains the provider-defined type for the new item. For example, the FileSystem provider uses a `type` parameter with a value of "file" or "directory". The `newItemValue` parameter of the cmdlet specifies a provider-specific value for the new item.
 
  Here is the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method for this provider.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov04#accessdbprov04newitemmethod](Msh_samplesaccessdbprov04#accessdbprov04newitemmethod)]  -->
+```csharp
+protected override void NewItem( string path, string type,
+                                 object newItemValue )
+{
+    // Create the new item here after
+    // performing necessary validations
+    //
+    // WriteItemObject(newItemValue, path, false);
+
+    // Example 
+    //
+    // if (ShouldProcess(path, "new item"))
+    // {
+    //      // Create a new item and then call WriteObject
+    //      WriteObject(newItemValue, path, false);
+    // }
+
+} // NewItem
+```
+
+[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L939-L955 "AccessDBProviderSample04.cs")]
 
 #### Things to Remember About Implementing NewItem
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem):
@@ -185,14 +311,14 @@ This topic describes how to create a Windows PowerShell provider that can work o
 
  This provider does not implement this method. However, the following code is the default implementation of this method.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidernewitemdynamicparameters](Msh_samplestestcmdlets#testprovidernewitemdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidernewitemdynamicparameters](Msh_samplestestcmdlets#testprovidernewitemdynamicparameters)]  -->
 
 ##  <a name="removeitemcontainer"></a> Removing Items
  To remove items, the Windows PowerShell provider must override the [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) method to support calls from the Remove-Item cmdlet. This method deletes an item from the data store at the specified path. If the `recurse` parameter of the Remove-Item cmdlet is set to `true`, the method removes all child items regardless of their level. If the parameter is set to `false`, the method removes only a single item at the specified path.
 
  This provider does not support item removal. However, the following code is the default implementation of [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem).
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderremoveitem](Msh_samplestestcmdlets#testproviderremoveitem)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderremoveitem](Msh_samplestestcmdlets#testproviderremoveitem)]  -->
 
 #### Things to Remember About Implementing RemoveItem
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem):
@@ -210,14 +336,21 @@ This topic describes how to create a Windows PowerShell provider that can work o
 
  This container provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters).
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderremoveitemdynamicparameters](Msh_samplestestcmdlets#testproviderremoveitemdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderremoveitemdynamicparameters](Msh_samplestestcmdlets#testproviderremoveitemdynamicparameters)]  -->
 
 ##  <a name="queryforchilditemscontainer"></a> Querying for Child Items
  To check to see if child items exist at the specified path, the Windows PowerShell container provider must override the [System.Management.Automation.Provider.Containercmdletprovider.Haschilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) method. This method returns `true` if the item has children, and `false` otherwise. For a null or empty path, the method considers any items in the data store to be children and returns `true`.
 
  Here is the override for the [System.Management.Automation.Provider.Containercmdletprovider.Haschilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) method. If there are more than two path parts created by the ChunkPath helper method, the method returns `false`, since only a database container and a table container are defined. For more information about this helper method, see the ChunkPath method is discussed in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov04#accessdbprov04HasChildItems](Msh_samplesaccessdbprov04#accessdbprov04HasChildItems)]  -->
+```csharp
+protected override bool HasChildItems( string path )
+{
+    return false;
+} // HasChildItems
+```
+
+[!code-csharp[AccessDBProviderSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L1094-L1097 "AccessDBProviderSample04.cs")]
 
 #### Things to Remember About Implementing HasChildItems
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Haschilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems):
@@ -229,7 +362,7 @@ This topic describes how to create a Windows PowerShell provider that can work o
 
  This provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem).
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidercopyitem](Msh_samplestestcmdlets#testprovidercopyitem)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidercopyitem](Msh_samplestestcmdlets#testprovidercopyitem)]  -->
 
 #### Things to Remember About Implementing CopyItem
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem):
@@ -247,7 +380,7 @@ This topic describes how to create a Windows PowerShell provider that can work o
 
  This provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters).
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidercopyitemdynamicparameters](Msh_samplestestcmdlets#testprovidercopyitemdynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidercopyitemdynamicparameters](Msh_samplestestcmdlets#testprovidercopyitemdynamicparameters)]  -->
 
 ##  <a name="codesamplecontaineraccessdb4"></a> Code Sample
  For complete sample code, see [AccessDbProviderSample04 Code Sample](./accessdbprovidersample04-code-sample.md).
