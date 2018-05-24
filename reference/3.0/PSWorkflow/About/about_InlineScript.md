@@ -9,7 +9,6 @@ title:  about_InlineScript
 
 ## about_InlineScript
 
-
 # SHORT DESCRIPTION
 
 Describes the InlineScript activity, which runs Windows
@@ -76,7 +75,6 @@ Test-Workflow
 ```
 
 ```output
-PS C:> Test-Workflow
 Inline A0 =
 Inline A1 = 3
 ```
@@ -109,7 +107,6 @@ Test-Workflow
 ```
 
 ```output
-PS C:> test-workflow
 Inline A = 4
 Workflow A = 3
 Workflow New A = 4
@@ -131,8 +128,7 @@ the workflow process, remove the InlineScript value from the
 OutOfProcessActivity property of the session configuration,
 such as by using the New-PSWorkflowExecutionOption cmdlet.
 
-For more information, see [How to Run Windows PowerShell Commands
-in a Workflow](https://technet.microsoft.com/en-us/library/bb978525).
+For more information, see [How to Run Windows PowerShell Commandsin a Workflow](https://technet.microsoft.com/en-us/library/bb978525).
 
 # EXAMPLES
 
