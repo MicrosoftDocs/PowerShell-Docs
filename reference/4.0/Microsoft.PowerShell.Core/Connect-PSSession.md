@@ -174,7 +174,7 @@ The first command uses the New-PSSession cmdlet to create the ITTask session on 
 
 The second command **Invoke-Command** cmdlet to start a background job in the session in the $s variable. It uses the **FilePath** parameter to run the script in the background job.
 
-#### Using Disconnect-PSSession
+### Using Disconnect-PSSession
 
 The third command uses the Disconnect-PSSession cmdlet to disconnect from the session in the $s variable. The command uses the **OutputBufferingMode** parameter with a value of **Drop** to prevent the script from being blocked by having to deliver output to the session. It uses the **IdleTimeoutSec** parameter to extend the session timeout to 15 hours.When the command completes, the administrator locks her computer and goes home for the evening.
 
@@ -188,7 +188,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  1 ITTask          Server01        Disconnected  ITTasks               None
 ```
 
-#### Reconnecting to a Disconnected Session
+### Reconnecting to a Disconnected Session
 
 Later that evening, the administrator starts her home computer, logs on to the corporate network, and starts Windows PowerShell. The fourth command uses the  Get-PSSession cmdlet to get the sessions on the Server01 computer. The command finds the ITTask session.The fifth command uses the **Connect-PSSession** cmdlet to connect to the ITTask session. The command saves the session in the $s variable.
 
@@ -212,7 +212,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  1 ITTask          Server01        Opened        ITTasks               Available
 ```
 
-#### Executing Commands against a Session
+### Executing Commands against a Session
 
 The sixth command uses the Invoke-Command cmdlet to run a Get-Job command in the session in the $s variable. The output shows that the job completed successfully.The seventh command uses the **Invoke-Command** cmdlet to run a Receive-Job command in the session in the $s variable in the session. The command saves the results in the $BackupSpecs variable.The eighth command uses the **Invoke-Command** cmdlet to runs another script in the session. The command uses the value of the $BackupSpecs variable in the session as input to the script.
 
@@ -242,7 +242,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  1 ITTask          Server01        Disconnected  ITTasks               None
 ```
 
-#### Summary
+### Summary
 
 This series of commands shows how the **Connect-PSSession** cmdlet might be used in an enterprise scenario.
 In this case, a system administrator starts a long-running job in a session on a remote computer.

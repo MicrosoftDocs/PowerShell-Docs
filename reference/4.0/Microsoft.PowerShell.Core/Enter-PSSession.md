@@ -90,50 +90,17 @@ The first command uses the Enter-PSSession cmdlet to start an interactive sessio
 
 ```powershell
 Enter-PSSession -ComputerName Server01
-```
-
-```output
 [Server01]: PS C:\>
-```
-
-The second command gets the PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
-
-```
 [Server01]: PS> Get-Process Powershell > C:\ps-test\Process.txt
-```
-
-The third command uses the Exit keyword to end the interactive session and close the connection.
-
-```
 [Server01]: PS> exit
-```
-
-```output
 PS C:\>
 ```
-
-The fourth command confirms that the Process.txt file is on the remote computer. A Get-ChildItem ("dir") command on the local computer cannot find the file.
-
-```powershell
-dir C:\ps-test\process.txt
-```
-
-```output
-Get-ChildItem : Cannot find path 'C:\ps-test\process.txt' because it does not exist.
-At line:1 char:4
-+ dir <<<<  c:\ps-test\process.txt
-```
-
-This command shows how to work in an interactive session with a remote computer.
 
 ### Example 3
 
 ```powershell
 $s = New-PSSession -ComputerName Server01
 Enter-PSSession -Session $s
-```
-
-```output
 [Server01]: PS C:\>
 ```
 
@@ -143,9 +110,6 @@ These commands use the Session parameter of Enter-PSSession to run the interacti
 
 ```powershell
 Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
-```
-
-```output
 [Server01]: PS C:\>
 ```
 
@@ -156,13 +120,7 @@ It uses the Port parameter to specify the port and the Credential parameter to s
 
 ```powershell
 Enter-PSSession -ComputerName Server01
-```
-
-```
 [Server01]: PS> Exit-PSSession
-```
-
-```output
 PS C:\>
 ```
 
