@@ -28,7 +28,7 @@ caps.latest.revision: 4
 ## Example
  This is the optional description for a Code Example.
 
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->
 
  Optional comments.
 

@@ -22,7 +22,7 @@ Windows PowerShell uses parameter sets to enable you to write a single cmdlet th
  In the following illustration, the left column shows three valid parameter sets. Parameter A is unique to the first parameter set, parameter B is unique to the second parameter set, and parameter C is unique to the third parameter set. However, in the right column, the parameter sets do not have a unique parameter.
 
  ![](../media/ps-parametersets.gif)
- ![](../SDK/media/ps-parametersets.gif "ps_parametersets")
+ ![](../media/ps-parametersets.gif "ps_parametersets")
 
 ## Parameter Set Requirements
  The following requirements apply to all parameter sets.

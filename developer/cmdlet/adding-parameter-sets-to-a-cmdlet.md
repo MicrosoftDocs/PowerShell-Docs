@@ -87,7 +87,7 @@ public string[] Name
 private string[] processNames;
 ```
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesstopproc04#stopproc04nameparameter](Msh_samplesstopproc04#stopproc04nameparameter)]  -->
+[!code-csharp[StopProcessSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L44-L58 "StopProcessSample04.cs")]
 
 ```vb
 <Parameter(Position:=0, ParameterSetName:="ProcessName", _

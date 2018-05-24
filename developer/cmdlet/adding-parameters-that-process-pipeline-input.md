@@ -68,10 +68,9 @@ public string[] Name
   get { return processNames; }
   set { processNames = value; }
 }
-private string[] processNames;
 ```
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesgetproc03#GetProc03NameParameter](Msh_samplesgetproc03#GetProc03NameParameter)]  -->
+[!code-csharp[GetProcessSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L35-L44 "GetProcessSample03.cs")]
 
 ```vb
 <Parameter(Position:=0, ValueFromPipeline:=True, _
@@ -88,7 +87,7 @@ Public Property Name() As String()
 End Property
 ```
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesgetproc03#GetProc03VBNameParameter](Msh_samplesgetproc03#GetProc03VBNameParameter)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc03#GetProc03VBNameParameter](Msh_samplesgetproc03#GetProc03VBNameParameter)]  -->
 
  The previous declaration sets the `ValueFromPipeline` keyword to `true` so that the Windows PowerShell runtime will bind the parameter to the incoming object if the object is the same type as the parameter, or if it can be coerced to the same type. The `ValueFromPipelineByPropertyName` keyword is also set to `true` so that the Windows PowerShell runtime will check the incoming object for a `Name` property. If the incoming object has such a property, the runtime will bind the `Name` parameter to the `Name` property of the incoming object.
 
