@@ -77,7 +77,7 @@ $s = Import-Csv .\Servers.csv -Header ServerName, ServerID
 The second command uses the **Invoke-AsWorkflow** workflow to run a **Get-ExecutionPolicy** command on the computers in the Servers.csv file.The command uses the **CommandName** parameter of **Invoke-AsWorkflow**  to specify the command to run in the workflow. It uses the **Parameter** parameter of **Invoke-AsWorkflow** to specify the **Scope** parameter of the **Get-ExecutionPolicy** cmdlet with a value of **Process**.The command also uses the **PSConnectionRetryCount** workflow common parameter to limit the command to five attempts on each computer and the **PSComputerName** workflow common parameter to specify the names of the remote nodes (target computers). The value of the **PSComputerName** parameter is an expression that gets the **ServerName** property of every object in the $s variable.
 
 ```powershell
-Invoke-AsWorkflow -CommandName Get-ExecutionPolicy -Parameter @{Scope="Process"} -PSComputerName {$s.ServerName}-PSConnectionRetryCount 5
+Invoke-AsWorkflow -CommandName Get-ExecutionPolicy -Parameter @{Scope="Process"} -PSComputerName {$s.ServerName} -PSConnectionRetryCount 5
 ```
 
 These commands run a Get-ExecutionPolicy command as a workflow on hundreds of computers.
