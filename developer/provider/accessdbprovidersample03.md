@@ -44,8 +44,6 @@ This sample shows how to overwrite the [System.Management.Automation.Provider.It
 ## Example
  This sample shows how to overwrite the methods needed to get and set items in a Microsoft Access data base.
 
-<!-- TODO!!!: review snippet reference  [!CODE [PSSample_Provider03#AccessDBProviderSample03All](PSSample_Provider03#AccessDBProviderSample03All)]  -->
-
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
 {
@@ -1098,7 +1096,10 @@ namespace Microsoft.Samples.PowerShell.Providers
 }
 ```
 
+[!code-csharp[AccessDBProviderSample03.cs](../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L976 "AccessDBProviderSample03.cs")]
+
 ## See Also
+
  [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
  [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
  [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)

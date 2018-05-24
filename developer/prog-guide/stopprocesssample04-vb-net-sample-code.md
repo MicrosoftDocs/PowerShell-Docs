@@ -10,6 +10,7 @@ ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
 caps.latest.revision: 5
 ---
 # StopProcessSample04 (VB.NET) Sample Code
+
 Here is the complete VB.NET sample code for the StopProc04 sample cmdlet. This is the code for the Stop-Process cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). The Stop-Process cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
@@ -469,7 +470,7 @@ ContinueForEach1:
 End Namespace
 ```
 
-[!code-csharp[StopProcessSample04.vb](../../powershell-sdk-samples/SDK-2.0/vb/StopProcessSample04/StopProcessSample04.vb#L09-L456 "StopProcessSample04.vb")]
+<!-- TODO!!!: [!code-csharp[StopProcessSample04.vb](../../powershell-sdk-samples/SDK-2.0/vb/StopProcessSample04/StopProcessSample04.vb#L09-L456 "StopProcessSample04.vb")] -->
 
 ## See Also
  [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)

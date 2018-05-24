@@ -36,8 +36,6 @@ This sample shows how to overwrite container methods to support calls to the Cop
 ## Example
  This sample shows how to overwrite the methods needed to copy, create, and remove items, as well as methods for getting the child items of a parent item.
 
-<!-- TODO!!!: review snippet reference  [!CODE [PSSample_Provider04#AccessDBProviderSample04All](PSSample_Provider04#AccessDBProviderSample04All)]  -->
-
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
 {
@@ -1734,7 +1732,10 @@ namespace Microsoft.Samples.PowerShell.Providers
 }
 ```
 
+[!code-csharp[AccessDBProviderSample04.cs](../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L1635 "AccessDBProviderSample04.cs")]
+
 ## See Also
+
  [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
  [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
  [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)

@@ -77,7 +77,7 @@ Namespace Microsoft.Samples.PowerShell.Runspaces
 End Namespace
 ```
 
-[!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")]
+<!-- TODO!!!: [!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")] -->
 
 ## See Also
 
