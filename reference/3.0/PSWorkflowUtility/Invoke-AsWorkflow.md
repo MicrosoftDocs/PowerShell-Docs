@@ -45,7 +45,7 @@ This workflow is introduced in Windows PowerShell 3.0.
 ### Example 1: Run a cmdlet as a workflow
 
 ```powershell
-Invoke-AsWorkflow -CommandName Get-ExecutionPolicy -PSComputerName (Get-Content Servers.txt)
+Invoke-AsWorkflow -PSComputerName (Get-Content Servers.txt) -CommandName Get-ExecutionPolicy
 ```
 
 ```output
