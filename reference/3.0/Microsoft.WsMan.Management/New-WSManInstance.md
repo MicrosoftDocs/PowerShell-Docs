@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,13 +7,16 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=141448
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  New-WSManInstance
 ---
-
 # New-WSManInstance
+
 ## SYNOPSIS
+
 Creates a new instance of a management resource.
+
 ## SYNTAX
 
 ### ComputerName (Default)
+
 ```
 New-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-FilePath <String>]
  [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet] <Hashtable>
@@ -22,6 +25,7 @@ New-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-FilePat
 ```
 
 ### URI
+
 ```
 New-WSManInstance [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hashtable>] [-ResourceURI] <Uri>
  [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>] [-ValueSet <Hashtable>]
@@ -30,21 +34,26 @@ New-WSManInstance [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hasht
 ```
 
 ## DESCRIPTION
+
 The New-WSManInstance cmdlet creates a new instance of a management resource.
 It uses a resource URI and a value set or input file to create the new instance of the management resource.
 
 This cmdlet uses the WinRM connection/transport layer to create the management resource instance.
+
 ## EXAMPLES
 
 ### Example 1
+
 ```
-PS C:\> New-WSManInstance winrm/config/Listener -SelectorSet @{Transport=HTTPS} -ValueSet @{Hostname="HOST";CertificateThumbprint="XXXXXXXXXX"}
+PS> New-WSManInstance winrm/config/Listener -SelectorSet @{Transport=HTTPS} -ValueSet @{Hostname="HOST";CertificateThumbprint="XXXXXXXXXX"}
 ```
 
 This command creates an instance of a WS-Management HTTPS listener on all IP addresses.
+
 ## PARAMETERS
 
 ### -ApplicationName
+
 Specifies the application name in the connection.
 The default value of the ApplicationName parameter is "WSMAN".
 The complete identifier for the remote endpoint is in the following format:
@@ -73,6 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the authentication mechanism to be used at the server.
 Possible values are:
 
@@ -100,6 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
@@ -121,6 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the computer against which you want to run the management operation.
 The value can be a fully qualified domain name, a NetBIOS name, or an IP address.
 Use the local computer name, use localhost, or use a dot (.) to specify the local computer.
@@ -141,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionURI
+
 Specifies the connection endpoint.
 The format of this string is:
 
@@ -165,6 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 Type a user name, such as "User01", "Domain01\User01", or "User@Domain.com".
@@ -184,6 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilePath
+
 Specifies the path of a file that is used to create a management resource.
 You specify the management resource by using the ResourceURI parameter and the SelectorSet parameter .
 For example, the following command uses the File parameter:
@@ -208,6 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -OptionSet
+
 Passes a set of switches to a service to modify or refine the nature of the request.
 These are similar to switches used in command-line shells because they are service specific.
 Any number of options   can be specified.
@@ -229,6 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
+
 Specifies the port to use when the client connects to the WinRM service.
 When the transport is HTTP, the default port is 80.
 When the transport is HTTPS, the default port is 443.
@@ -249,6 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceURI
+
 Contains the Uniform Resource Identifier (URI) of the resource class or instance.
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
@@ -272,6 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -SelectorSet
+
 Specifies a set of value pairs that are used to select particular management resource instances.
 The SelectorSet parameter is used when more than one instance of the resource exists.
 The value of the SelectorSet parameter must be a hash table.
@@ -293,6 +312,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
+
 Defines a set of extended options for the WS-Management session.
 Enter a SessionOption object that you create by using the New-WSManSessionOption cmdlet.
 For more information about the options that are available, see New-WSManSessionOption.
@@ -310,6 +330,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
+
 Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connection to the remote computer.
 By default, SSL is not used.
 
@@ -330,6 +351,7 @@ Accept wildcard characters: False
 ```
 
 ### -ValueSet
+
 Specifies a hash table that helps modify a management resource.
 You specify the management resource by using the ResourceURI parameter and the SelectorSet parameter.
 The value of the ValueSet parameter must be a hash table.
@@ -347,19 +369,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 This cmdlet does not accept any input.
+
 ## OUTPUTS
 
 ### None
-This cmdlet does not generate any output.
-## NOTES
-* The Set-WmiInstance cmdlet, a Windows Management Instrumentation (WMI) cmdlet, is similar. Set-WmiInstance uses the DCOM connection/transport layer to create or update WMI instances.
 
-*
+This cmdlet does not generate any output.
+
+## NOTES
+
+- The Set-WmiInstance cmdlet, a Windows Management Instrumentation (WMI) cmdlet, is similar. Set-WmiInstance uses the DCOM connection/transport layer to create or update WMI instances.
 ## RELATED LINKS
 
 [Connect-WSMan](Connect-WSMan.md)
