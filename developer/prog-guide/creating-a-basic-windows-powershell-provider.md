@@ -48,7 +48,12 @@ This topic is the starting point for learning how to create a Windows PowerShell
 
  Here is the class definition for this basic provider:
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderDeclaration](Msh_samplesaccessdbprov01#accessdbprov01ProviderDeclaration)]  -->
+```csharp
+   [CmdletProvider("AccessDB", ProviderCapabilities.None)]
+   public class AccessDBProvider : CmdletProvider
+```
+
+[!code-csharp[AccessDBProviderSample01.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L23-L24 "AccessDBProviderSample01.cs")]
 
  Right before the class definition, you must declare the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute, with the syntax [CmdletProvider()].
 
@@ -67,7 +72,7 @@ This topic is the starting point for learning how to create a Windows PowerShell
 
  This basic provider does not override this method. However, the following code shows the default implementation of this method:
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
  The provider can maintain the state of provider-specific information as described in [Defining Provider-specific Data State](#defineproviderdatastate). In this case, your implementation must override the [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) method to return an instance of the derived class.
 
@@ -76,14 +81,14 @@ This topic is the starting point for learning how to create a Windows PowerShell
 
  This basic provider does not override this method. However, the following code shows the default implementation of this method:
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderDynamicParameters](Msh_samplesaccessdbprov01#accessdbprov01ProviderDynamicParameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderDynamicParameters](Msh_samplesaccessdbprov01#accessdbprov01ProviderDynamicParameters)]  -->
 
 ##  <a name="uninitializeprovider"></a> Uninitializing the Provider
  To free resources that the Windows PowerShell provider uses, your provider should implement its own [System.Management.Automation.Provider.Cmdletprovider.Stop*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Stop) method. This method is called by the Windows PowerShell runtime to uninitialize the provider at the close of a session.
 
  This basic provider does not override this method. However, the following code shows the default implementation of this method:
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStop](Msh_samplesaccessdbprov01#accessdbprov01ProviderStop)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStop](Msh_samplesaccessdbprov01#accessdbprov01ProviderStop)]  -->
 
 ##  <a name="codesampleprovideraccessdb1"></a> Code Sample
  For complete sample code, see [AccessDbProviderSample01 Code Sample](./accessdbprovidersample01-code-sample.md).

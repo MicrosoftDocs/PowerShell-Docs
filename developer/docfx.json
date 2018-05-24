@@ -2,23 +2,13 @@
     "build": {
         "content": [{
             "files": [
-                "**/*.md",
-                "**/*.yml"
+                "**/**.yml",
+                "**/**.md"
             ],
-            "exclude": [
-                "**/obj/**",
-                "**/includes/**",
-                "_themes/**",
-                "_themes.pdf/**",
-                "README.md",
-                "LICENSE",
-                "LICENSE-CODE",
-                "ThirdPartyNotices"
-            ]
+            "exclude": ["**/obj/**"]
         }],
         "globalMetadata": {
-            "breadcrumb_path": "/PowerShell/developer/breadcrumb/toc.json",
-            "extendBreadcrumb": true,
+            "breadcrumb_path": "/powershell/developer/bread/toc.yml",
             "ROBOTS": "INDEX, FOLLOW",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "ms.prod": "powershell",
@@ -31,21 +21,11 @@
         },
         "resource": [{
             "files": [
-                "**/*.png",
-                "**/*.jpg"
+                "**/images/**"
             ],
-            "exclude": [
-                "**/obj/**",
-                "**/includes/**",
-                "_themes/**",
-                "_themes.pdf/**"
-            ]
+            "exclude": ["**/obj/**"]
         }],
         "template": "op.html",
-        "overwrite": [],
-        "externalReference": [],
-        "fileMetadata": {},
-        "dest": "developer-docs",
-        "markdownEngineName": "markdig"
+        "dest": "developer"
     }
 }

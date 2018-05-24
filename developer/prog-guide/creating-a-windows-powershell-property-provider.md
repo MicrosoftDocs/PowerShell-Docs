@@ -49,7 +49,7 @@ This topic describes how to create a provider that enables the user to manipulat
 ##  <a name="definecmdletproviderproperty"></a> Defining the Windows PowerShell provider
  A property provider must create a .NET class that supports the [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface. Here is the default class declaration from the TemplateProvider.cs file provided by Windows PowerShell.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclassdeclaration](Msh_samplestestcmdlets#testcmdletspropertyproviderclassdeclaration)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclassdeclaration](Msh_samplestestcmdlets#testcmdletspropertyproviderclassdeclaration)]  -->
 
 ##  <a name="definefunctionalityofbaseclassproperty"></a> Defining Base Functionality
  The [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface can be attached to any of the provider base classes, with the exception of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class. Add the base functionality that is required by the base class you are using. For more information about base classes, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
@@ -63,7 +63,7 @@ This topic describes how to create a provider that enables the user to manipulat
 
  Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidergetproperty)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidergetproperty)]  -->
 
 #### Things to Remember About Implementing GetProperty
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty):
@@ -77,14 +77,14 @@ This topic describes how to create a provider that enables the user to manipulat
 
  Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) from the TemplateProvider.cs file provided by Windows PowerShell.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters)]  -->
 
 ##  <a name="setproperties"></a> Setting Properties
  To set properties, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method to support calls from the Set-ItemProperty cmdlet. This method sets one or more properties of the item at the specified path, and overwrites the supplied properties as required. [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) also writes an instance of a [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) object that represents a property bag of the updated properties.
 
  Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty)]  -->
 
 #### Things to Remember About Implementing Set-ItemProperty
  The following conditions may apply to an implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty):
@@ -102,14 +102,14 @@ This topic describes how to create a provider that enables the user to manipulat
 
  Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) from the TemplateProvider.cs file provided by Windows PowerShell.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidersetpropertydynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidersetpropertydynamicparameters)]  -->
 
 ##  <a name="clearproperty"></a> Clearing Properties
  To clear properties, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method to support calls from the Clear-ItemProperty cmdlet. This method sets one or more properties for the item located at the specified path.
 
  Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclearproperty](Msh_samplestestcmdlets#testcmdletspropertyproviderclearproperty)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclearproperty](Msh_samplestestcmdlets#testcmdletspropertyproviderclearproperty)]  -->
 
 #### Thing to Remember About Implementing ClearProperty
  The following conditions may apply to your implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty):
@@ -127,7 +127,7 @@ This topic describes how to create a provider that enables the user to manipulat
 
  Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) from the TemplateProvider.cs file provided by Windows PowerShell.
 
-<!-- TODO: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclearpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyproviderclearpropertydynamicparameters)]  -->
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclearpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyproviderclearpropertydynamicparameters)]  -->
 
 ##  <a name="buildproviderproperty"></a> Building the Windows PowerShell provider
  See [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
