@@ -127,7 +127,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 1 ITTask           Srv1            Disconnected  Microsoft.PowerShell          None
 ```
 
-#### Reconnecting to a Disconnected Session
+### Reconnecting to a Disconnected Session
 
 The manager logs on to his home computer, connects to his corporate network, starts Windows PowerShell, and uses the Get-PSSession cmdlet to get the ITTask session on the Srv1 computer. He uses the credentials of the technician to access the session.
 
@@ -147,7 +147,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 $s = Connect-PSSession -ComputerName Srv1 -Name ITTask -Credential Domain01\User01
 ```
 
-#### Invoking Commands against a Session
+### Invoking Commands against a Session
 
 ```powershell
 Invoke-Command -Session $s {dir $home\Scripts\PatchStatusOutput.ps1}
@@ -171,7 +171,7 @@ $Timeout = New-PSSessionOption -IdleTimeout 172800000
 $s = New-PSSession -ComputerName Server01 -Name ITTask -SessionOption $Timeout
 ```
 
-#### Attempting to Disconnect the Session
+### Attempting to Disconnect the Session
 
 ```powershell
 Disconnect-PSSession -Session $s
@@ -186,7 +186,7 @@ value that is within the allowed range and try again.
 
 The third command disconnects the ITTask session in the $s variable. The command fails because the idle timeout value of the session exceeds the **MaxIdleTimeoutMs** quota in the session configuration. Because the idle timeout is not used until the session is disconnected, this violation can go undetected while the session is in use.
 
-#### View the Session Configuration properties
+### View the Session Configuration properties
 
 The fourth command uses the Invoke-Command cmdlet to run a Get-PSSessionConfiguration command for the Microsoft.PowerShell session configuration on the Server01 computer. The command uses the Format-List cmdlet to display all properties of the session configuration in a list.The output shows that the  **MaxIdleTimeoutMS** property, which establishes the maximum permitted **IdleTimeout** value for sessions that use the session configuration, is 43200000 milliseconds (12 hours).
 
@@ -231,7 +231,7 @@ RunspaceId                    : aea84310-6dbf-4c21-90ac-13980039925a
 PSShowComputerName            : True
 ```
 
-#### Modifying Session Options through the Session object
+### Modifying Session Options through the Session object
 
 ```powershell
 $s.Runspace.ConnectionInfo
