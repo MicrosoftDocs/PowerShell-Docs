@@ -95,10 +95,10 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 ## Need Azure PowerShell
 
 If you're looking for **Azure PowerShell**,
-you could start with [Overview of Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure).
+you could start with [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure).
 
 Otherwise, what you might need is
-[Install and configure Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps)
+[Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps)
 
 ## See Also
 

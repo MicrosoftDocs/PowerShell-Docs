@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=141449
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  New-WSManSessionOption
 ---
-
 # New-WSManSessionOption
+
 ## SYNOPSIS
+
 Creates a WS-Management session option hash table to use as input parameters to the following WS-Management cmdlets: Get-WSManInstance Set-WSManInstance Invoke-WSManAction Connect-WSMan
+
 ## SYNTAX
 
 ```
@@ -20,6 +22,7 @@ New-WSManSessionOption [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthenticatio
 ```
 
 ## DESCRIPTION
+
 Creates a WSMan Session option hashtable which can be passed into WSMan cmdlets:
 
 Get-WSManInstance
@@ -29,11 +32,16 @@ Set-WSManInstance
 Invoke-WSManAction
 
 Connect-WSMan
+
 ## EXAMPLES
 
 ### Example 1
+
+```powershell
+$a = New-WSManSessionOption -OperationTimeout 30000
 ```
-PS C:\> $a = New-WSManSessionOption -operationtimeout 30000
+
+```output
 Connect-WSMan -computer server01 -sessionoption $a
 PS C:\Users\testuser> cd wsman:
 PS WSMan:\>
@@ -57,9 +65,11 @@ Then, Connect-WSMan connects to the remote server01 computer by using the specif
 The Connect-WSMan cmdlet is generally used within the context of the WSMan provider to connect to a remote computer, in this case the server01 computer.
 However, you can use the cmdlet to establish connections to remote computers before you change to the WSMan provider.
 Those connections will appear in the ComputerName list.
+
 ## PARAMETERS
 
 ### -NoEncryption
+
 Do not use encryption when doing remote operations over HTTP.
 
 Note: Unencrypted traffic is not allowed by default and must be enabled in the local configuration.
@@ -77,6 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -OperationTimeout
+
 Defines the timeout in milliseconds for the WS-Management operation.
 
 ```yaml
@@ -92,6 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyAccessType
+
 Specifies the mechanism by which the proxy server is located.
 Possible values are:
 
@@ -118,6 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyAuthentication
+
 Specifies the authentication method to use at the proxy.
 Possible values are:
 
@@ -138,6 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
 Specifies a user account that has permission to gain access through an intermediate web proxy.
 
 ```yaml
@@ -153,6 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -SPNPort
+
 Specifies a port number to append to the connection Service Principal Name \<SPN\> of the remote server.
 An SPN is used when the authentication mechanism is Kerberos or Negotiate.
 
@@ -169,6 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCACheck
+
 Specifies that when connecting over HTTPS, the client does not validate that the server certificate is signed by a trusted certificate authority (CA).
 Use this option only when the remote computer is trusted by other means, for example, if the remote computer is part of a network that is physically secure and isolated or the remote computer is listed as a trusted host in the WS-Management configuration.
 
@@ -185,6 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCNCheck
+
 Specifies that the certificate common name (CN) of the server does not need to match the hostname of the server.
 This is used only in remote operations using HTTPS.
 This option should only be used for trusted computers.
@@ -202,6 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipRevocationCheck
+
 Do not validate the revocation status on the server certificate.
 
 ```yaml
@@ -217,6 +235,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseUTF16
+
 Encode the request in UTF16 format rather than UTF8 format.
 The default is UTF8 encoding.
 
@@ -233,7 +252,9 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ## OUTPUTS
