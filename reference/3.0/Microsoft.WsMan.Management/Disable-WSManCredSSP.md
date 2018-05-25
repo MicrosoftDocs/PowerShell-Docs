@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=141438
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  Disable-WSManCredSSP
 ---
-
 # Disable-WSManCredSSP
+
 ## SYNOPSIS
+
 Disables Credential Security Support Provider (CredSSP) authentication on a client computer.
+
 ## SYNTAX
 
 ```
@@ -18,6 +20,7 @@ Disable-WSManCredSSP [-Role] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Disable-WSManCredSPP cmdlet disables CredSSP authentication on a client or on a server computer.
 When CredSSP authentication is used, the user's credentials are passed to a remote computer to be authenticated.
 This type of authentication is designed for commands that create a remote session from within another remote session.
@@ -39,23 +42,29 @@ This practice increases the security risk of the remote operation.
 If the remote computer is compromised, when credentials are passed to it, the credentials can be used to control the network session.
 
 To disable CredSSP authentication, use the Disable-WSManCredSSP cmdlet.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Disable-WSManCredSSP -Role Client
+
+```powershell
+Disable-WSManCredSSP -Role Client
 ```
 
 This command disables CredSSP on the client, which prevents delegation to servers.
+
 ### Example 2
-```
-PS C:\> Disable-WSManCredSSP -Role Server
+
+```powershell
+Disable-WSManCredSSP -Role Server
 ```
 
 This command disables CredSSP on the server, which prevents delegation from clients.
+
 ## PARAMETERS
 
 ### -Role
+
 Accepts one of two possible values: Client or Server.
 These values specify whether CredSSP should be disabled as a client or as a server.
 
@@ -81,19 +90,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 This cmdlet does not accept any input.
+
 ## OUTPUTS
 
 ### None
-This cmdlet does not generate any output.
-## NOTES
-* To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 
-*
+This cmdlet does not generate any output.
+
+## NOTES
+
+- To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
 ## RELATED LINKS
 
 [Connect-WSMan](Connect-WSMan.md)
