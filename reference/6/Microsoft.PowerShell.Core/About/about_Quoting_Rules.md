@@ -220,7 +220,8 @@ Single-quotes:
 '@
 ```
 
-In either format, the closing quotation mark can be the first character in the line or it can be indented with spaces.
+In either format, the closing quotation mark can be the first character in
+the line or it can be indented with spaces.
 
 A here-string contains all the text between the two hidden characters. In the
 here-string, all quotation marks are interpreted literally. For example:
