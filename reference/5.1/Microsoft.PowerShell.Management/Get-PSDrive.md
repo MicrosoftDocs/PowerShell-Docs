@@ -82,7 +82,7 @@ Note that the drive letter in the command is not followed by a colon.
 
 ### Example 3: Get all the drives that are supported by the Windows PowerShell file system provider
 ```
-PS C:\> Get-PSDrive -Provider FileSystem
+PS C:\> Get-PSDrive -PSProvider FileSystem
 Name           Used (GB)     Free (GB) Provider      Root
 ----           ---------     --------- --------      ----
 A                                                    A:\
