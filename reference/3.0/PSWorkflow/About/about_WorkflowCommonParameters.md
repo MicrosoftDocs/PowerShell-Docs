@@ -305,7 +305,7 @@ session uses the values specified in the session configuration.
 For a description of the session options, including the default values,
 see the help topic for the New-PSSessionOption cmdlet
 [New-PSSessionOption](
-..\..\Microsoft.PowerShell.Core\New-PSSessionOption.md).
+../../Microsoft.PowerShell.Core/New-PSSessionOption.md).
 
 For information about the $PSSessionOption preference variable,
 see [about_Preference_Variables](
@@ -324,6 +324,6 @@ is not available on the port used for the command, the command fails.
 
 [about_ActivityCommonParameters](about_ActivityCommonParameters.md)
 [about_Workflows](about_Workflows.md)
-[Invoke-AsWorkflow](..\..\PSWorkflowUtility\Invoke-AsWorkflow.md)
-[New-PSWorkflowExecutionOption](..\New-PSWorkflowExecutionOption.md)
-[New-PSWorkflowSession](..\New-PSWorkflowSession.md)
+[Invoke-AsWorkflow](../../PSWorkflowUtility/Invoke-AsWorkflow.md)
+[New-PSWorkflowExecutionOption](../New-PSWorkflowExecutionOption.md)
+[New-PSWorkflowSession](../New-PSWorkflowSession.md)

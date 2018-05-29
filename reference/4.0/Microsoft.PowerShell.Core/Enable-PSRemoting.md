@@ -35,7 +35,7 @@ For more information, see the description of the **SkipNetworkProfileCheck** par
 
 The **Enable-PSRemoting** cmdlet performs the following operations:
 
-- Runs the [Set-WSManQuickConfig](..\Microsoft.WsMan.Management\Set-WSManQuickConfig.md) cmdlet, which performs the following tasks:
+- Runs the [Set-WSManQuickConfig](../Microsoft.WsMan.Management/Set-WSManQuickConfig.md) cmdlet, which performs the following tasks:
  - Starts the WinRM service.
  - Sets the startup type on the WinRM service to Automatic.
  - Creates a listener to accept requests on any IP address.

@@ -58,11 +58,11 @@ To run a Parallel script block on items in a collection, use the ForEach or ForE
 
 ["Writing a Script Workflow"](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574157(v=ws.11))
 
-[about_ForEach](..\..\Microsoft.PowerShell.Core\About\about_Foreach.md)
+[about_ForEach](../../Microsoft.PowerShell.Core/About/about_Foreach.md)
 
 [about_ForEach-Parallel](about_ForEach-Parallel.md)
 
-[about_Language_Keywords](..\..\Microsoft.PowerShell.Core\About\about_Language_Keywords.md)
+[about_Language_Keywords](../../Microsoft.PowerShell.Core/About/about_Language_Keywords.md)
 
 [about_Sequence](about_Sequence.md)
 

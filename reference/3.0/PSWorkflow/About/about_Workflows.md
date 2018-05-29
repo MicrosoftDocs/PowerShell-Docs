@@ -69,7 +69,7 @@ on a remote computer.
 -- Managed nodes, the target computers that are affected by
 the workflow activities.
 
-## NOTE:
+## NOTE
 
 The workflow session is not required, but is recommended.
 PSSessions can take advantage of the robust recovery and
@@ -135,12 +135,12 @@ on the client computer) or on any managed nodes that are
 running Windows PowerShell 3.0.
 
 To enable remoting, use the Enable-PSRemoting cmdlet.
-[Enable-PSremoting](..\..\Microsoft.PowerShell.Core\Enable-PSRemoting.md)
+[Enable-PSremoting](../../Microsoft.PowerShell.Core/Enable-PSRemoting.md)
 
 You can also enable remoting by using the "Turn on Script
 Execution" Group Policy setting. For more information, see
-[about_Group_Policy_Settings](..\..\Microsoft.PowerShell.Core\About\about_Group_Policy_Settings.md)
-and [about_Execution_Policies](..\..\Microsoft.PowerShell.Core\About\about_Execution_Policies.md).
+[about_Group_Policy_Settings](../../Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md)
+and [about_Execution_Policies](../../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
 3. Create the workflow session. Use the New-PSWorkflowSession
 or New-PSSession cmdlets.
@@ -152,7 +152,7 @@ configuration includes scripts, type and formatting files,
 and options that are designed for workflows.
 
 For more, See:
-[New-PSWorkflowSession](..\New-PSWorkflowSession.md)
+[New-PSWorkflowSession](../New-PSWorkflowSession.md)
 
 Or, use the New-PSSession cmdlet. Use the ConfigurationName parameter
 to specify the Microsoft.PowerShell.Workflow session configuration.
@@ -177,7 +177,7 @@ PSComputerName workflow common parameter.
 The following commands run the Test-Workflow workflow.
 
 For more information about the Using scope modifier, see
-[about_Remote_Variables](..\..\Microsoft.PowerShell.Core\About\about_Remote_Variables.md)
+[about_Remote_Variables](../../Microsoft.PowerShell.Core/About/about_Remote_Variables.md)
 
 ```powershell
 # On the current host
@@ -270,11 +270,11 @@ Invoke-Command -Session $ws {Test-Workflow -PSComputerName Server01, Server02 -P
 
 ## SEE ALSO
 
-[Invoke-AsWorkflow](..\..\PSWorkflowUtility\Invoke-AsWorkflow.md)
+[Invoke-AsWorkflow](../../PSWorkflowUtility/Invoke-AsWorkflow.md)
 
-[New-PSWorkflowExecutionOption](..\New-PSWorkflowExecutionOption.md)
+[New-PSWorkflowExecutionOption](../New-PSWorkflowExecutionOption.md)
 
-[New-PSWorkflowSession](..\New-PSWorkflowSession.md)
+[New-PSWorkflowSession](../New-PSWorkflowSession.md)
 
 [about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)
 

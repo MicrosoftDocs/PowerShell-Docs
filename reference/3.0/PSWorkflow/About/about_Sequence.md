@@ -111,8 +111,8 @@ workflow Test-Workflow
 ## SEE ALSO
 
 ["Writing a Script Workflow"](http://go.microsoft.com/fwlink/?LinkID=262872)
-[about_ForEach](..\..\Microsoft.PowerShell.Core\About\about_Foreach.md)
+[about_ForEach](../../Microsoft.PowerShell.Core/About/about_Foreach.md)
 [about_ForEach-Parallel](about_ForEach-Parallel.md)
-[about_Language_Keywords](..\..\Microsoft.PowerShell.Core\About\about_Language_Keywords.md)
+[about_Language_Keywords](../../Microsoft.PowerShell.Core/About/about_Language_Keywords.md)
 [about_Parallel](about_Parallel.md)
 [about_Workflows](about_Workflows.md)
