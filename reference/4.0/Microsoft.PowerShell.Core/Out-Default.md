@@ -49,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -Transcript
-
+Causes output to be written to the Transcript only.
 
 ```yaml
 Type: SwitchParameter
