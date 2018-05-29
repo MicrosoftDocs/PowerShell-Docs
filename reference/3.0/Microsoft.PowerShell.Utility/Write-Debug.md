@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113424
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Write-Debug
 ---
-
 # Write-Debug
+
 ## SYNOPSIS
+
 Writes a debug message to the console.
+
 ## SYNTAX
 
 ```
@@ -18,25 +20,45 @@ Write-Debug [-Message] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Write-Debug cmdlet writes debug messages to the console from a script or command.
 
 By default, debug messages are not displayed in the console, but you can display them by using the Debug parameter or the $DebugPreference variable.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Write-Debug "Cannot open file."
+
+```powershell
+Write-Debug "Cannot open file."
 ```
 
 This command writes a debug message.
 Because the value of $DebugPreference is "SilentlyContinue", the message is not displayed in the console.
+
 ### Example 2
+
+```powershell
+$DebugPreference
 ```
-PS C:\> $DebugPreference
+
+```output
 SilentlyContinue
-PS C:\> Write-Debug "Cannot open file."
-PS C:\>
-PS C:\> Write-Debug "Cannot open file." -debug
+```
+
+```powershell
+Write-Debug "Cannot open file."
+```
+
+```output
+PS>
+```
+
+```powershell
+Write-Debug "Cannot open file." -debug
+```
+
+```output
 DEBUG: Cannot open file.
 ```
 
@@ -52,14 +74,31 @@ It uses the Debug common parameter to override the value of $DebugPreference and
 As a result, even though the value of $DebugPreference is "SilentlyContinue", the debug message appears.
 
 For more information about the Debug common parameter, see about_CommonParameters.
+
 ### Example 3
+
+```powershell
+$DebugPreference
 ```
-PS C:\> $DebugPreference
+
+```output
 SilentlyContinue
-PS C:\> Write-Debug "Cannot open file."
-PS C:\>
-PS C:\> $DebugPreference = "Continue"
-PS C:\> Write-Debug "Cannot open file."
+```
+
+```powershell
+Write-Debug "Cannot open file."
+```
+
+```output
+PS>
+```
+
+```powershell
+$DebugPreference = "Continue"
+Write-Debug "Cannot open file."
+```
+
+```output
 DEBUG: Cannot open file.
 ```
 
@@ -74,9 +113,11 @@ The third command assigns a value of "Continue" to the $DebugPreference variable
 The fourth command writes a debug message, which appears on the console.
 
 For more information about $DebugPreference, see about_Preference_Variables.
+
 ## PARAMETERS
 
 ### -Message
+
 Specifies the debug message to send to the console.
 
 ```yaml
@@ -92,16 +133,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains a debug message to Write-Debug.
+
 ## OUTPUTS
 
 ### None
+
 Write-Debug writes only to the debug stream.
 It does not return any output.
+
 ## NOTES
 
 ## RELATED LINKS
