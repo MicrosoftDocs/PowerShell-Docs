@@ -123,6 +123,8 @@ location).
 
 ## SEE ALSO
 
-- Set-Location
-- about_Providers
-- about_Path_Syntax
+[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
+
+[about_Providers](about_Providers.md)
+
+[about_Path_Syntax](about_Path_Syntax.md)
