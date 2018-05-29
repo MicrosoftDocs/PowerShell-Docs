@@ -656,3 +656,7 @@ The cmdlet does not return any output.
 [Disconnect-PSSession](Disconnect-PSSession.md)
 
 [Receive-PSSession](Receive-PSSession.md)
+
+[about_PSSessions](About/about_PSSessions.md)
+
+[about_Remote](About/about_Remote.md)

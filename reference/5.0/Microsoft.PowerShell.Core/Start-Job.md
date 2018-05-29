@@ -471,37 +471,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VMGuid
-{{Fill VMGuid Description}}
-
-```yaml
-Type: Guid[]
-Parameter Sets: FilePathVMId, VMId
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -VMName
-Specifies an array of names of virtual machines.
-This cmdlet starts an interactive session with each of the specified virtual machines.
-
-```yaml
-Type: String[]
-Parameter Sets: FilePathVMName, VMName
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
