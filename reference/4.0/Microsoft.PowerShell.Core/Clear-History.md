@@ -35,7 +35,7 @@ Without parameters, Clear-History deletes all commands from the session history,
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Clear all commands from the history
 
 ```powershell
 clear-history
@@ -43,7 +43,7 @@ clear-history
 
 Deletes all commands from the session history.
 
-### Example 2
+### Example 2: Clear specific commands from the history
 
 ```powershell
 Clear-History -Id 23, 25
@@ -51,7 +51,7 @@ Clear-History -Id 23, 25
 
 Deletes the commands with history IDs 23 and 25.
 
-### Example 3
+### Example 3: Clear commands from the history using wildcards
 
 ```powershell
 Clear-History -CommandLine *help*, *command
@@ -59,7 +59,7 @@ Clear-History -CommandLine *help*, *command
 
 Deletes commands that include "help" or end in "command".
 
-### Example 4
+### Example 4: Clear the newest commands from the history, based on a specific entry
 
 ```powershell
 Clear-History -Count 10 -newest
@@ -67,7 +67,7 @@ Clear-History -Count 10 -newest
 
 Deletes the 10 newest commands from the history.
 
-### Example 5
+### Example 5: Clear the oldest commands from the history, based on a specific entry
 
 ```powershell
 Clear-History -Id 10 -Count 3

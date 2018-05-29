@@ -7,24 +7,24 @@ title:  about_InlineScript
 ---
 # About InlineScript
 
-## about_InlineScript
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes the InlineScript activity, which runs Windows
 PowerShell commands in a workflow.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The InlineScript activity runs commands in a shared
 Windows PowerShell session in a workflow. This activity
 is valid only in workflows.
 
-# SYNTAX
+## SYNTAX
 
-InlineScript {\<script block\>} \<ActivityCommonParameters\>
+```
+InlineScript {<script block>} <ActivityCommonParameters>
+```
 
-# DETAILED DESCRIPTION
+## DETAILED DESCRIPTION
 
 The InlineScript activity runs commands in a shared
 Windows PowerShell session. You can include it in a
@@ -130,8 +130,6 @@ To direct Windows PowerShell to run the InlineScript activity in
 the workflow process, remove the InlineScript value from the
 OutOfProcessActivity property of the session configuration,
 such as by using the New-PSWorkflowExecutionOption cmdlet.
-
-For more information, see [How to Run Windows PowerShell Commandsin a Workflow](https://technet.microsoft.com/en-us/library/bb978525).
 
 ## EXAMPLES
 

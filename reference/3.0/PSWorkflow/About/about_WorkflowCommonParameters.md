@@ -7,8 +7,6 @@ title:  about_WorkflowCommonParameters
 ---
 # About WorkflowCommonParameters
 
-## about_WorkflowCommonParameters
-
 ## SHORT DESCRIPTION
 
 This topic describes the parameters that are valid on all Windows
@@ -44,24 +42,6 @@ Workflows are introduced in Windows PowerShell 3.0.
 
 ## PARAMETER DESCRIPTIONS
 
-        ### -Expression
-        
-        Runs the specified expression as a workflow.
-        Enter the expression as a string, such as "ipconfig /all".
-        If the expression includes spaces or special characters, enclose the expression in quotation marks.
-        
-        ```yaml
-        Type: String
-        Parameter Sets: Expression
-        Aliases:
-        
-        Required: False
-        Position: Named
-        Default value: None
-        Accept pipeline input: False
-        Accept wildcard characters: False
-        ```
-
 This section describes the workflow common parameters.
 
 -AsJob <SwitchParameter>
@@ -70,7 +50,7 @@ immediately returns an object that represents a parent job. The
 parent job contains the child jobs that are running on each of
 the target computers. To manage the job, use the Job
 cmdlets. To get the job results, use the Receive-Job cmdlet
-(http://go.microsoft.com/fwlink/?LinkID=113372).
+[Receive-Job](http://go.microsoft.com/fwlink/?LinkID=113372).
 
 -JobName <String>
 Specifies a friendly name for the workflow job. By default, jobs are
@@ -80,7 +60,8 @@ If you use the JobName parameter in a workflow command, the workflow is run
 as a job and the workflow command returns a job object, even if you do not
 include the AsJob parameter in the command.
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
+For more information about Windows PowerShell background jobs, see
+[about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
 -PSAllowRedirection <SwitchParameter>
 Allows redirection of the connection to the target computers.
@@ -97,8 +78,8 @@ $PSSessionOption preference variable, or the
 MaximumConnectionRedirectionCount property of the value of the
 PSSessionOption parameter. The default value is 5. For more information,
 see the description of the PSSessionOption parameter and
-the New-PSSessionOption cmdlet
-(http://go.microsoft.com/fwlink/?LinkID=135237).
+the New-PSSessionOption cmdlet:
+[New-PSSessionOption](http://go.microsoft.com/fwlink/?LinkID=135237).
 
 -PSApplicationName <String>
 Specifies the application name segment of the connection URI that is used
@@ -109,7 +90,8 @@ command.
 The default value is the value of the $PSSessionApplicationName preference
 variable on the local computer. If this preference variable is not defined,
 the default value is WSMAN. This value is appropriate for most uses. For
-more information, see [about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+more information, see [about_Preference_Variables](
+../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service
 the connection request. The value of this parameter should match the value
@@ -158,9 +140,9 @@ Certificates are used in client certificate-based authentication. They can
 only be mapped to local user accounts; they do not work with domain
 accounts.
 
-To get a certificate, use the Get-Item
-(http://go.microsoft.com/fwlink/?LinkID=113319) or
-Get-ChildItem (http://go.microsoft.com/fwlink/?LinkID=113308) cmdlets
+To get a certificate, use the [Get-Item](
+http://go.microsoft.com/fwlink/?LinkID=113319) or
+[Get-ChildItem](http://go.microsoft.com/fwlink/?LinkID=113308) cmdlets
 in the Windows PowerShell Cert: drive.
 
 -PSComputerName <String[]>
@@ -184,8 +166,8 @@ command must include the PSCredential parameter. Also, the computer must be
 configured for HTTPS transport or the IP address of the remote computer
 must be included in the WinRM TrustedHosts list on the local computer. For
 instructions for adding a computer name to the TrustedHosts list, see "How
-to Add a Computer to the Trusted Host List" in about_Remote_Troubleshooting
-(http://go.microsoft.com/fwlink/?LinkID=135188).
+to Add a Computer to the Trusted Host List" [about_Remote_Troubleshooting](
+http://go.microsoft.com/fwlink/?LinkID=135188).
 
 -PSConfigurationName <String>
 Specifies the session configurations that are used to configure sessions on
@@ -322,9 +304,12 @@ session uses the values specified in the session configuration.
 
 For a description of the session options, including the default values,
 see the help topic for the New-PSSessionOption cmdlet
-(http://go.microsoft.com/fwlink/?LinkID=144305).
+[New-PSSessionOption](
+..\..\Microsoft.PowerShell.Core\New-PSSessionOption.md).
+
 For information about the $PSSessionOption preference variable,
-see [about_Preference_Variables](../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+see [about_Preference_Variables](
+../../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 -PSUseSSL <SwitchParameter>
 Uses the Secure Sockets Layer (SSL) protocol to establish a connection
@@ -335,14 +320,10 @@ the network. UseSSL is an additional protection that sends the data
 across an HTTPS, instead of HTTP. If you use this parameter, but SSL
 is not available on the port used for the command, the command fails.
 
-# KEYWORDS
+## SEE ALSO
 
-about_Workflow_CommonParameters
-
-# SEE ALSO
-
-about_ActivityCommonParameters
-about_Workflows
-Invoke-AsWorkflow
-New-PSWorkflowExecutionOption
-New-PSWorkflowSession
+[about_ActivityCommonParameters](about_ActivityCommonParameters.md)
+[about_Workflows](about_Workflows.md)
+[Invoke-AsWorkflow](..\..\PSWorkflowUtility\Invoke-AsWorkflow.md)
+[New-PSWorkflowExecutionOption](..\New-PSWorkflowExecutionOption.md)
+[New-PSWorkflowSession](..\New-PSWorkflowSession.md)

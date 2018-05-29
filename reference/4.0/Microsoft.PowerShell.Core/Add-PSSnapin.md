@@ -33,7 +33,7 @@ Modules are imported automatically on first use and you can use the Import-Modul
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Add a Snap-In
 
 ```powershell
 Add-PSSnapin Microsoft.Exchange, Microsoft.Windows.AD
@@ -41,7 +41,7 @@ Add-PSSnapin Microsoft.Exchange, Microsoft.Windows.AD
 
 This command adds the Microsoft Exchange and Active Directory snap-ins to the current session.
 
-### Example 2
+### Example 2: Add All Snap-Ins
 
 ```powershell
 Get-PSSnapin -Registered | Add-PSSnapin -passthru
@@ -52,49 +52,30 @@ It uses the Get-PSSnapin cmdlet with the Registered parameter to get objects rep
 The pipeline operator (|) passes the result to Add-PSSnapin, which adds them to the session.
 The PassThru parameter returns objects that represent each of the added snap-ins.
 
-### Example 3
+### Example 3: Install and Add a Snap-In
 
 ```powershell
-# Gets snap-ins that have been added to the current session. ManagementFeatures is not returned.
-Get-PSSnapin
+# Get registered Snap-Ins to note that ManagementFeatures does NOT appear.
+Get-PSSnapin -registered
 ```
-
-```powershell
-# Gets snap-ins that have been registered on your system (including those that have already been added to the session).
-Get-PSSnapin -Registered
-```
-
-### Registering a Snap-In
-
-The third command creates an alias, "installutil", for the path to the InstallUtil tool in .NET Framework.
 
 ```powershell
 # Create an alias "installutil", for the path to the InstallUtil tool in .NET Framework.
 Set-Alias installutil $env:windir\Microsoft.NET\Framework\v2.0.50727\installutil.exe
+
+# Use the alias to install the ManagementFeatures Snap-In.
 installutil "C:\Dev\Management\ManagementCmdlets.dll"
 ```
 
-Installutil registers the snap-in. The command specifies the path to ManagementCmdlets.dll, the file name or "module name" of the snap-in.
-
-### Ensure the Snap-In is registered.
-
 ```powershell
+# Get registered Snap-Ins to ensure that ManagementFeatures now appears.
 Get-PSSnapin -registered
 ```
 
-### Add the Snap-In
-
 ```powershell
+# Finally, add the new Snap-In and retrieve the available commands.
 Add-PSSnapin ManagementFeatures
 Get-Command -Module ManagementFeatures
-```
-
-### Determining the ogirinating Snap-In of a command
-
-You can also use the PSSnapin property of the object that the Get-Command cmdlet returns to find the snap-in or module in which a cmdlet originated. The eighth command uses dot notation to find the value of the PSSnapin property of the Set-Alias cmdlet.
-
-```powershell
-(Get-Command set-alias).pssnapin
 ```
 
 ## PARAMETERS

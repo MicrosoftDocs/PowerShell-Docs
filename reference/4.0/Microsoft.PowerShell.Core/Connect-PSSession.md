@@ -90,7 +90,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Connect to a PSSession
 
 ```powershell
 Connect-PSSession -ComputerName Server01 -Name ITTask
@@ -107,9 +107,10 @@ This command reconnects to the ITTask session on the Server01 computer.
 The output shows that the command was successful.
 The **State** of the session is **Opened** and the **Availability** is **Available**, indicating that you can run commands in the session.
 
-### Example 2
+### Example 2: Disconnect a session and Reconnect
 
 ```powershell
+# Retrieve available sessions.
 Get-PSSession
 ```
 
@@ -120,6 +121,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 ```
 
 ```powershell
+# Disconnect the Backup session.
 Get-PSSession | Disconnect-PSSession
 ```
 
@@ -130,6 +132,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 ```
 
 ```powershell
+# Reconnect to the backup session.
 Get-PSSession | Connect-PSSession
 ```
 
@@ -157,11 +160,12 @@ The **State** of the session is **Opened** and the **Availability** is **Availab
 
 If you use the **Connect-PSSession** cmdlet on a session that is not disconnected, the command has no effect on the session and it does not generate any errors.
 
-### Example 3
+### Example 3: Long running jobs with disconnected sessions
 
 ```powershell
 $s = New-PSSession -ComputerName Server01 -Name ITTask -ConfigurationName ITTasks
 Invoke-Command -Session $s {Start-Job -FilePath \\Server30\Scripts\Backup-SQLDatabase.ps1}
+Disconnect-PSSession -Session $s -OutputBufferingMode Drop -IdleTimeoutSec 60*60*15
 ```
 
 ```output
@@ -170,40 +174,10 @@ Id     Name            State         HasMoreData     Location             Comman
 2      Job2            Running       True            Server01             \\Server30\Scripts\Backup...
 ```
 
-The first command uses the New-PSSession cmdlet to create the ITTask session on the Server01 remote computer. The command uses the **ConfigurationName** parameter to specify the ITTasks session configuration. The command saves the sessions in the $s variable.
-
-The second command **Invoke-Command** cmdlet to start a background job in the session in the $s variable. It uses the **FilePath** parameter to run the script in the background job.
-
-### Using Disconnect-PSSession
-
-The third command uses the Disconnect-PSSession cmdlet to disconnect from the session in the $s variable. The command uses the **OutputBufferingMode** parameter with a value of **Drop** to prevent the script from being blocked by having to deliver output to the session. It uses the **IdleTimeoutSec** parameter to extend the session timeout to 15 hours.When the command completes, the administrator locks her computer and goes home for the evening.
-
-```powershell
-Disconnect-PSSession -Session $s -OutputBufferingMode Drop -IdleTimeoutSec 60*60*15
-```
-
-```output
-Id Name            ComputerName    State         ConfigurationName     Availability
--- ----            ------------    -----         -----------------     ------------
- 1 ITTask          Server01        Disconnected  ITTasks               None
-```
-
-### Reconnecting to a Disconnected Session
-
-Later that evening, the administrator starts her home computer, logs on to the corporate network, and starts Windows PowerShell. The fourth command uses the  Get-PSSession cmdlet to get the sessions on the Server01 computer. The command finds the ITTask session.The fifth command uses the **Connect-PSSession** cmdlet to connect to the ITTask session. The command saves the session in the $s variable.
-
-```powershell
-Get-PSSession -ComputerName Server01 -Name ITTask
-```
-
-```output
-Id Name            ComputerName    State         ConfigurationName     Availability
--- ----            ------------    -----         -----------------     ------------
- 1 ITTask          Server01        Disconnected  ITTasks               None
-```
-
 ```powershell
 $s = Connect-PSSession -ComputerName Server01 -Name ITTask
+Invoke-Command -Session $s {Get-Job}
+Invoke-Command -Session $s {$BackupSpecs = Receive-Job -JobName Job2}
 ```
 
 ```output
@@ -212,12 +186,8 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  1 ITTask          Server01        Opened        ITTasks               Available
 ```
 
-### Executing Commands against a Session
-
-The sixth command uses the Invoke-Command cmdlet to run a Get-Job command in the session in the $s variable. The output shows that the job completed successfully.The seventh command uses the **Invoke-Command** cmdlet to run a Receive-Job command in the session in the $s variable in the session. The command saves the results in the $BackupSpecs variable.The eighth command uses the **Invoke-Command** cmdlet to runs another script in the session. The command uses the value of the $BackupSpecs variable in the session as input to the script.
-
 ```powershell
-Invoke-Command -Session $s {Get-Job}
+Invoke-Command -Session $s {"\\Server30\Scripts\New-SQLDatabase.ps1" -InitData $BackupSpecs.Initialization}
 ```
 
 ```output
@@ -227,12 +197,6 @@ Id     Name            State         HasMoreData     Location             Comman
 ```
 
 ```powershell
-Invoke-Command -Session $s {$BackupSpecs = Receive-Job -JobName Job2}
-Invoke-Command -Session $s {"\\Server30\Scripts\New-SQLDatabase.ps1" -InitData $BackupSpecs.Initialization}
-```
-
-```powershell
-# Disconnect the session.
 Disconnect-PSSession -Session $s -OutputBufferingMode Drop -IdleTimeoutSec 60*60*15
 ```
 
@@ -242,7 +206,13 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  1 ITTask          Server01        Disconnected  ITTasks               None
 ```
 
-### Summary
+The example above shows the process of creating a new PSSession and starting a job within it.
+
+Later that evening, the administrator starts her home computer, logs on to the corporate network, and starts Windows PowerShell.
+
+She then connects to the previous PSSession, checks, and receives the job shes started earlier.
+
+Lastly, she executes one final script against the session and disconnects for the evening.
 
 This series of commands shows how the **Connect-PSSession** cmdlet might be used in an enterprise scenario.
 In this case, a system administrator starts a long-running job in a session on a remote computer.

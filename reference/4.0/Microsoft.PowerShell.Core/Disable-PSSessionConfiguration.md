@@ -35,23 +35,15 @@ To disable all session configurations on the computer, use Disable-PSRemoting.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Disable the default PSSession Configuration
 
 ```powershell
 Disable-PSSessionConfiguration
 ```
 
-This command disables the Microsoft.PowerShell session configuration.
+This command disables the default Microsoft.PowerShell session configuration.
 
-### Example 2
-
-```powershell
-Disable-PSSessionConfiguration -Name *
-```
-
-This command disables all registered session configurations on the computer.
-
-### Example 3
+### Example 2: Disable PSSession Configurations using Wildcards.
 
 ```powershell
 Disable-PSSessionConfiguration -Name Microsoft* -Force
@@ -60,7 +52,15 @@ Disable-PSSessionConfiguration -Name Microsoft* -Force
 This command disables all session configurations that have names that begin with "Microsoft".
 The command uses the **Force** parameter to suppress all user prompts from the command.
 
-### Example 4
+### Example 3: Disable all PSSession Configurations
+
+```powershell
+Disable-PSSessionConfiguration -Name *
+```
+
+This command disables all registered session configurations on the computer.
+
+### Example 4: Using the pipeline to Disable PSSesion Configurations
 
 ```powershell
 Get-PSSessionConfiguration -Name MaintenanceShell, AdminShell | Disable-PSSessionConfiguration
@@ -70,9 +70,7 @@ This command disables the MaintenanceShell and AdminShell session configurations
 
 The command uses a pipeline operator (|) to send the results of a Get-PSSessionConfiguration command to Disable-PSSessionConfiguration.
 
-### Example 5
-
-The first command uses the Get-PSSessionConfiguration and Format-Table cmdlets to display only the **Name** and **Permission** properties of the session configuration objects. This table format makes it easier to see the values of the objects. The results show that members of the Administrators group are permitted to use the session configurations.
+### Example 5: Viewing disabled PSSession Configurations
 
 ```powershell
 Get-PSSessionConfiguration | Format-Table -Property Name, Permission -AutoSize
@@ -85,10 +83,6 @@ MaintenanceShell       BUILTIN\Administrators AccessAllowed
 microsoft.powershell   BUILTIN\Administrators AccessAllowed
 microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 ```
-
-### Disabling a PSSessionConfiguration
-
-**Disable-PSSessionConfiguration** cmdlet disables the MaintenanceShell session configuration. The command uses the **Force** parameter to suppress all user prompts.
 
 ```powershell
 Disable-PSSessionConfiguration -Name MaintenanceShell -force
@@ -103,11 +97,14 @@ microsoft.powershell   BUILTIN\Administrators AccessAllowed
 microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 ```
 
-### Using Set-PSSessionConfiguration
+The first command uses the Get-PSSessionConfiguration and Format-Table cmdlets to display only the **Name** and **Permission** properties of the session configuration objects. This table format makes it easier to see the values of the objects. The results show that members of the Administrators group are permitted to use the session configurations.
 
-The fourth command uses the Set-PSSessionConfiguration cmdlet to increase the MaximumDataSizePerCommandMB setting on the MaintenanceShell session configuration to 60. The results show that the command was successful even though everyone is denied access to the configuration.
+**Disable-PSSessionConfiguration** cmdlet disables the MaintenanceShell session configuration. The command uses the **Force** parameter to suppress all user prompts.
+
+### Example 6: Setting PSSession configuration settings on disabled configurations
 
 ```powershell
+Disable-PSSessionConfiguration -Name MaintenanceShell -force
 Set-PSSessionConfiguration -Name MaintenanceShell -MaximumReceivedDataSizePerCommandMB 60
 ```
 
@@ -115,14 +112,11 @@ Set-PSSessionConfiguration -Name MaintenanceShell -MaximumReceivedDataSizePerCom
 ParamName            ParamValue
 ---------            ----------
 psmaximumreceived... 60
+
 "Restart WinRM service"
 WinRM service need to be restarted to make the changes effective. Do you want to run the command "restart-service winrm"?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 ```
-
-### Creating a Session using the Configuration
-
-The fifth command attempts to use the MaintenanceShell session configuration in a session. It uses the New-PSSession cmdlet to create a new session and the ConfigurationName parameter to specify the MaintenanceShell configuration.The results show that the  **New-PSSession** command fails because the user is denied access to the configuration.
 
 ```powershell
 New-PSSession -ComputerName localhost -ConfigurationName MaintenanceShell
@@ -134,6 +128,10 @@ eshooting Help topic.
 + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException
 + FullyQualifiedErrorId : PSSessionOpenFailed
 ```
+
+The first command uses the Set-PSSessionConfiguration cmdlet to increase the MaximumDataSizePerCommandMB setting on the MaintenanceShell session configuration to 60. The results show that the command was successful even though everyone is denied access to the configuration.
+
+The second command attempts to use the MaintenanceShell session configuration in a session. It uses the New-PSSession cmdlet to create a new session and the ConfigurationName parameter to specify the MaintenanceShell configuration.The results show that the  **New-PSSession** command fails because the user is denied access to the configuration.
 
 ## PARAMETERS
 

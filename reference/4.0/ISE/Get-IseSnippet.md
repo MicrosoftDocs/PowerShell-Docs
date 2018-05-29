@@ -33,7 +33,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Get all snippets
 
 ```powershell
 Get-ISESnippet
@@ -41,7 +41,7 @@ Get-ISESnippet
 
 This command gets all user-define snippets in the Snippets directory.
 
-### Example 2
+### Example 2: Copy all snippets to a remote directory
 
 ```powershell
 Invoke-Command -ComputerName (Get-Content Servers.txt) {Get-IseSnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
@@ -52,7 +52,7 @@ This command copies all of the user-created snippets from a group of remote comp
 The command uses the Invoke-Command cmdlet to run a **Get-ISESnippet** command on the computers in the Servers.txt file.
 A pipeline operator (|) sends the snippet files to the Copy-Item cmdlet, which copies them to the directory that is specified by the **Destination** parameter.
 
-### Example 3
+### Example 3. Display Title and Text of each snippet
 
 ```powershell
 function Parse-Snippet
@@ -86,7 +86,7 @@ Text:  (c) Fabrikam, Inc. 2012
 
 This function uses the **Get-ISESnippet** and Select-Xml cmdlets to display the Title and Text of each snippet on the local computer.
 
-### Example 4
+### Example 4: Retrieve Snippet information from the ISE object model
 
 ```powershell
 $psISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description

@@ -7,14 +7,12 @@ title:  about_Sequence
 ---
 # About Sequence
 
-## about_Sequence
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes the Sequence keyword, which runs selected
 activities sequentially.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The Sequence keyword runs selected workflow activities
 sequentially, that is, they run in the order in which
@@ -33,7 +31,7 @@ The Sequence script block lets you run more commands
 in parallel by allowing you to run dependent commands
 sequentially.
 
-# SYNTAX
+## SYNTAX
 
 ```
 workflow <Verb-Noun>
@@ -63,8 +61,7 @@ workflow <Verb-Noun>
 }
 ```
 
-# DETAILED DESCRIPTION
-
+## DETAILED DESCRIPTION
 
 The commands in a Parallel script block can run concurrently.
 The order in which they run is not determined. This feature
@@ -104,18 +101,18 @@ workflow Test-Workflow
 
     Sequence
     {
-        $Hotfix = Get-Content D:\HotFixes\Required.txt
-        Foreach ($h in $Hotfix} {D:\Scripts\Verify-Hotfix -Hotfix $h}
+        $Hotfix = Get-Content 'D:\HotFixes\Required.txt'
+        Foreach ($h in $Hotfix} {'D:\Scripts\Verify-Hotfix' -Hotfix $h}
         }
     }
 }
 ```
 
-# SEE ALSO
+## SEE ALSO
 
 ["Writing a Script Workflow"](http://go.microsoft.com/fwlink/?LinkID=262872)
-[about_ForEach](about_ForEach.md)
+[about_ForEach](..\..\Microsoft.PowerShell.Core\About\about_Foreach.md)
 [about_ForEach-Parallel](about_ForEach-Parallel.md)
-[about_Language_Keywords](about_Language_Keywords.md)
+[about_Language_Keywords](..\..\Microsoft.PowerShell.Core\About\about_Language_Keywords.md)
 [about_Parallel](about_Parallel.md)
 [about_Workflows](about_Workflows.md)

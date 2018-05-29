@@ -216,12 +216,12 @@ This cmdlet does not generate any output.
 
 - **New-IseSnippet** stores new user-created snippets in unsigned .ps1xml files. As such, Windows PowerShell cannot add them to a session in which the execution policy is **AllSigned** or **Restricted**. In a **Restricted** or **AllSigned** session, you can create, get, and import unsigned user-created snippets, but you cannot use them in the session.
 
-  If you use the **New-IseSnippet** cmdlet in a  **Restricted** or **AllSigned** session, the snippet is created, but an error message appears when Windows PowerShell tries to add the newly created snippet to the session.
+If you use the **New-IseSnippet** cmdlet in a  **Restricted** or **AllSigned** session, the snippet is created, but an error message appears when Windows PowerShell tries to add the newly created snippet to the session.
 To use the new snippet (and other unsigned user-created snippets), change the execution policy, and then restart Windows PowerShell ISE.
 
-  For more information about Windows PowerShell execution policies, see about_Execution_Policies.
+For more information about Windows PowerShell execution policies, see about_Execution_Policies.
 
-- - To change a snippet, edit the snippet file. You can edit snippet files in the Script pane of Windows PowerShell ISE.
+- To change a snippet, edit the snippet file. You can edit snippet files in the Script pane of Windows PowerShell ISE.
 
 - To delete a snippet that you added, delete the snippet file.
 
