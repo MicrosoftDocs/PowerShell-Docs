@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/p/?linkid=289573
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Disable-PSRemoting
 ---
-
 # Disable-PSRemoting
 
 ## SYNOPSIS
+
 Prevents remote users from running commands on the local computer.
 
 ## SYNTAX
@@ -20,6 +20,7 @@ Disable-PSRemoting [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Disable-PSRemoting** cmdlet prevents users on other computers from running commands on the local computer.
 
 **Disable-PSRemoting** blocks remote access to all session configurations on the local computer.
@@ -43,33 +44,43 @@ Remote commands, and later attempts to enable and disable remoting, are likely t
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Disable-PSRemoting
+
+```powershell
+Disable-PSRemoting
 ```
 
 This command prevents remote access to all session configurations on the computer.
 
 ### Example 2
-```
-PS C:\> Disable-PSRemoting -Force
+
+```powershell
+Disable-PSRemoting -Force
 ```
 
 This command prevents remote access all session configurations on the computer without prompting.
 
 ### Example 3
-```
+
+```powershell
 PS C:\> Disable-PSRemoting -Force
+```
 
+```
+[ADMIN] PS> New-PSSession -ComputerName localhost
+```
 
-[ADMIN] PS C:\> New-PSSession -ComputerName localhost
-
-
+```output
 Id Name       ComputerName    State    Configuration         Availability
 -- ----       ------------    -----    -------------         ------------
 1 Session1   Server02...     Opened   Microsoft.PowerShell     Available
-# On Server02 remote computer:
-PS C:\> New-PSSession -ComputerName Server01
+```
 
+```powershell
+# On Server02 remote computer:
+New-PSSession -ComputerName Server01
+```
+
+```output
 [SERVER01] Connecting to remote server failed with the following error
 message : Access is denied. For more information, see the about_Remote_Troubleshooting Help topic.
 + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException
@@ -89,11 +100,16 @@ The command uses the **New-PSSession** cmdlet to create a session to the Server0
 Because remote access is disabled, the command fails.
 
 ### Example 4
+
+```powershell
+Disable-PSRemoting -force
 ```
-PS C:\> Disable-PSRemoting -force
 
-[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+```
+[ADMIN] PS> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+```
 
+```output
 Name                          Permission
 ----                          ----------
 microsoft.powershell          NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
@@ -101,14 +117,22 @@ microsoft.powershell.workflow NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Adminis
 microsoft.powershell32        NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
 microsoft.ServerManager       NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
 WithProfile                   NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
+```
 
+```
+[ADMIN] PS> Enable-PSRemoting -Force
+```
 
-[ADMIN] PS C:\> Enable-PSRemoting -Force
+```output
 WinRM already is set up to receive requests on this machine.
 WinRM already is set up for remote management on this machine.
+```
 
-[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+```
+[ADMIN] PS> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -AutoSize
+```
 
+```output
 Name                          Permission
 ----                          ----------
 microsoft.powershell          BUILTIN\Administrators AccessAllowed
@@ -137,31 +161,42 @@ The fourth command uses the Get-PSSessionConfiguration and Format-Table cmdlets 
 The results show that the "AccessDenied" security descriptors have been removed from all session configurations.
 
 ### Example 5
+
+```powershell
+Register-PSSessionConfiguration -Name Test -FilePath .\TestEndpoint.pssc -ShowSecurityDescriptorUI
 ```
-PS C:\> Register-PSSessionConfiguration -Name Test -FilePath .\TestEndpoint.pssc -ShowSecurityDescriptorUI
 
-[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Wrap
+```
+[ADMIN] PS> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Wrap
+```
 
+```output
 Name                          Permission
 ----                          ----------
 microsoft.powershell          BUILTIN\Administrators AccessAllowed
 Test                          NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators AccessAllowed,
 DOMAIN01\User01 AccessAllowed
+```
 
-[ADMIN] PS C:\> Disable-PSRemoting -Force
+```
+[ADMIN] PS> Disable-PSRemoting -Force
+[ADMIN] PS> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Wrap
+```
 
-
-[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Wrap
-
+```output
 Name                          Permission
 ----                          ----------
 microsoft.powershell          NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
 Test                          NT AUTHORITY\NETWORK AccessDenied, NTAUTHORITY\INTERACTIVE AccessAllowed,
 BUILTIN\Administrators AccessAllowed, DOMAIN01\User01 AccessAllowed
+```
 
+```powershell
 # Domain01\User01
+New-PSSession -ComputerName Server01 -ConfigurationName Test
+```
 
-PS C:\> New-PSSession -ComputerName Server01 -ConfigurationName Test
+```output
 [Server01] Connecting to remote server failed with the following error message : Access is denied. For more information, see the about_Rem
 ote_Troubleshooting Help topic.
 + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException
@@ -186,12 +221,16 @@ Although the other security desriptors are not changed, the "network_deny_all" s
 The fifth command shows that the **Disable-PSRemoting** command prevents even the Domain01\User01 user with special permissions to the Test session configuration from using the Test session configuration to connect to the computer remotely.
 
 ### Example 6
+
+```powershell
+Disable-PSRemoting -Force
 ```
-PS C:\> Disable-PSRemoting -Force
 
+```
+[ADMIN] PS> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -AutoSize
+```
 
-[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
-
+```output
 Name                          Permission
 ----                          ----------
 microsoft.powershell          NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
@@ -199,11 +238,14 @@ microsoft.powershell.workflow NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Adminis
 microsoft.powershell32        NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
 microsoft.ServerManager       NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
 WithProfile                   NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
+```
 
-[ADMIN] PS C:\> Set-PSSessionConfiguration -Name Microsoft.ServerManager -AccessMode Remote -Force
+```
+[ADMIN] PS> Set-PSSessionConfiguration -Name Microsoft.ServerManager -AccessMode Remote -Force
+[ADMIN] PS> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+```
 
-[ADMIN] PS C:\> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
-
+```output
 Name                          Permission
 ----                          ----------
 microsoft.powershell          NT AUTHORITY\NETWORK AccessDenied, BUILTIN\Administrators AccessAllowed
@@ -230,6 +272,7 @@ The output shows that the AccessDenied security descriptor for all network users
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -245,6 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Suppresses all user prompts.
 By default, you are prompted to confirm each operation.
 
@@ -261,6 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -277,32 +322,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any object.
 
 ## NOTES
-* Disabling the session configurations does not undo all the changes made by the Enable-PSRemoting or Enable-PSSessionConfiguration cmdlets. You might have to undo the following changes manually.
 
-  1.
-Stop and disable the WinRM service.
+- Disabling the session configurations does not undo all the changes made by the Enable-PSRemoting or Enable-PSSessionConfiguration cmdlets. You might have to undo the following changes manually.
 
-  2.
-Delete the listener that accepts requests on any IP address.
+  1. Stop and disable the WinRM service.
 
-  3.
-Disable the firewall exceptions for WS-Management communications.
+  2. Delete the listener that accepts requests on any IP address.
 
-  4.
-Restore the value of the LocalAccountTokenFilterPolicy to 0, which restricts remote access to members of the Administrators group on the computer.
+  3. Disable the firewall exceptions for WS-Management communications.
+
+  4. Restore the value of the LocalAccountTokenFilterPolicy to 0, which restricts remote      access to members of the Administrators group on the computer.
 
   A session configuration is a group of settings that define the environment for a session.
 Every session that connects to the computer must use one of the session configurations that are registered on the computer.
