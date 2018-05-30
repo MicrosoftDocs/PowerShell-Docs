@@ -312,31 +312,6 @@ For a description of the scheduled job options, including the default values, se
 To submit a hash table, use the following keys.
 In the following hash table, the keys are shown with their default values.
 
-<!--
-```powershell
-@{
-    # Power Settings
-    StartIfOnBattery=$False
-    StopIfGoingOnBattery=$True
-    WakeToRun=$False
-    # Idle Settings
-    StartIfNotIdle=$False
-    IdleDuration="00:10:00"
-    IdleTimeout="01:00:00"
-    StopIfGoingOffIdle=$True
-    RestartOnIdleResume=$False
-    # Security settings
-    ShowInTaskScheduler=$True
-    RunElevated=$False
-    # Misc
-    RunWithoutNetwork=$False
-    DoNotAllowDemandStart=$False
-    # Can be IgnoreNew, Parallel, Queue, StopExisting
-    MultipleInstancePolicy=IgnoreNew
-}
-```
--->
-
 ```yaml
 Type: ScheduledJobOptions
 Parameter Sets: (All)
@@ -380,21 +355,6 @@ The trigger can specify a one-time or recurring scheduled or an event, such as w
 The **Trigger** parameter is optional.
 You can add a trigger when you create the scheduled job,  use the Add-JobTrigger, Set-JobTrigger, or Set-ScheduledJob cmdlets to add or change job triggers later, or use the Start-Job cmdlet to start the scheduled job immediately.
 You can also create and maintain a scheduled job without a trigger that is used as a template.
-
-To submit a hash table, use the following keys.
-
-<!--
-```powershell
-@{
-    Frequency="Once" # (or Daily, Weekly, AtStartup, AtLogon)
-    At="3am" # (or any valid time string)
-    DaysOfWeek="Monday", "Wednesday" # (or any combination of day names)
-    Interval=2 # (or any valid frequency interval)
-    RandomDelay="30minutes" # (or any valid timespan string)
-    User="Domain1\User01" #(or any valid user. used only with the AtLogon frequency value)
-}
-```
--->
 
 ```yaml
 Type: ScheduledJobTrigger[]
