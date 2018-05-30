@@ -105,8 +105,6 @@ A pipeline operator (|) sends the scheduled jobs to the **Get-ScheduledJobOption
 
 ### Example 3: Get selected job options
 
-The first command gets job options in which the **RunElevated** property has a value of "True" ($true) and the **RunWithoutNetwork** property has a value of "False" ($false) The output shows the job options object that was selected.
-
 ```powershell
 Get-ScheduledJob | Get-ScheduledJobOption | Where-Object {$_.RunElevated -and !$_.WaketoRun}
 ```
@@ -141,8 +139,6 @@ MultipleInstancePolicy : Ignore
 NewJobDefinition       : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 ```
 
-The second command shows how to find to which scheduled job the job options belong. This command uses a pipeline operator (|) to send the selected job options to the ForEach-Object cmdlet which gets the **JobDefinition** property of each options object. The **JobDefinition** property contains the originating job object. The results show that the selected options came from the "DeployPkg" scheduled job.
-
 ```powershell
 Get-ScheduledJob | Get-ScheduledJobOption | Where-Object {$_.RunElevated -and !$_.WaketoRun} | ForEach-Object {$_.JobDefinition}
 ```
@@ -154,6 +150,10 @@ Id         Name            Triggers        Command                              
 ```
 
 This example shows how to find job options object with particular values.
+
+The first command gets job options in which the **RunElevated** property has a value of "True" ($true) and the **RunWithoutNetwork** property has a value of "False" ($false) The output shows the job options object that was selected.
+
+The second command shows how to find to which scheduled job the job options belong. This command uses a pipeline operator (|) to send the selected job options to the ForEach-Object cmdlet which gets the **JobDefinition** property of each options object. The **JobDefinition** property contains the originating job object. The results show that the selected options came from the "DeployPkg" scheduled job.
 
 ### Example 4: Use job options to create a new job
 
@@ -240,7 +240,7 @@ Accept wildcard characters: True
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

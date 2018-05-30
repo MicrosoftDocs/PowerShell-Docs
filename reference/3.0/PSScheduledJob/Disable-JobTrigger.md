@@ -55,13 +55,9 @@ A pipeline operator sends the job trigger to the **Disable-JobTrigger** cmdlet, 
 
 ### Example 2: Disable all job triggers
 
-The first command uses the Get-ScheduledJob cmdlet to get the Backup-Archives and Inventory scheduled jobs. A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs. Another pipeline operator sends the job triggers to the **Disable-JobTrigger** cmdlet, which disables them.The first command uses the **Get-ScheduledJob** cmdlet to get the jobs, because its **Name** parameter takes multiple names.
-
 ```powershell
 Get-ScheduledJob -Name Backup-Archives, Inventory | Get-JobTrigger | Disable-JobTrigger
 ```
-
-The second command displays the results. The command repeats the **Get-ScheduledJob** and **Get-JobTrigger** command. A pipeline operator sends the job triggers to the Format-Table cmdlet, which displays the job triggers in a table. The **Format-Table** command adds a **JobName** property that displays the value of the **Name** property of the scheduled job in the **JobDefinition** property of the job trigger object.
 
 ```powershell
 Get-ScheduledJob -Name Backup-Archives, Inventory | Get-JobTrigger | Format-Table -Property ID, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}} -AutoSize
@@ -77,6 +73,10 @@ Id Frequency At                     DaysOfWeek Enabled JobName
 ```
 
 These commands disable all job triggers on two scheduled jobs and display the results.
+
+The first command uses the Get-ScheduledJob cmdlet to get the Backup-Archives and Inventory scheduled jobs. A pipeline operator (|) sends the scheduled jobs to the Get-JobTrigger cmdlet, which gets all job triggers of the scheduled jobs. Another pipeline operator sends the job triggers to the **Disable-JobTrigger** cmdlet, which disables them.The first command uses the **Get-ScheduledJob** cmdlet to get the jobs, because its **Name** parameter takes multiple names.
+
+The second command displays the results. The command repeats the **Get-ScheduledJob** and **Get-JobTrigger** command. A pipeline operator sends the job triggers to the Format-Table cmdlet, which displays the job triggers in a table. The **Format-Table** command adds a **JobName** property that displays the value of the **Name** property of the scheduled job in the **JobDefinition** property of the job trigger object.
 
 ### Example 3: Disable job trigger of a scheduled job on a remote computer.
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

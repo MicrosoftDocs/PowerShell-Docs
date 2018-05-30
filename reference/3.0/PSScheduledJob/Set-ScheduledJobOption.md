@@ -50,8 +50,6 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Change job options
 
-The first command uses the Get-ScheduledJobOption cmdlet to get the job options of the DeployPackage scheduled job. The output shows that the WakeToRun and RunElevated properties are set to False.This command is not required; it is included only to show the effect of the option change.
-
 ```powershell
 Get-ScheduledJobOption -Name DeployPackage
 ```
@@ -72,8 +70,6 @@ DoNotAllowDemandStart  : False
 MultipleInstancePolicy : IgnoreNew
 JobDefinition          :
 ```
-
-The second command uses the **Set-ScheduledJobOpton** cmdlet to change the job options so the values of the **WakeToRun** and **RunWithoutNetwork** properties are True. The command uses the **Passthru** parameter to return the trigger after the change.
 
 ```powershell
 Get-ScheduledJobOption -Name DeployPackage | Set-ScheduledJobOption -WakeToRun -RequireNetwork:$False -Passthru
@@ -428,7 +424,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

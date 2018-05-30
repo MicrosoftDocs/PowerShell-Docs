@@ -65,8 +65,6 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ### Example 1: Change the script that a job runs
 
-The first command uses the Get-ScheduledJob cmdlet to get the Inventory scheduled job. The output shows that the job runs the Get-Inventory.ps1 script.This command is not required; it is included only to show the effect of the script change.
-
 ```powershell
 Get-ScheduledJob -Name Inventory
 ```
@@ -76,8 +74,6 @@ Id         Name            Triggers        Command                              
 --         ----            --------        -------                                  -------
 1          Inventory       {1}             C:\Scripts\Get-Inventory.ps1             True
 ```
-
-The second command uses the Get-ScheduledJob cmdlet to get the Inventory scheduled job. A pipeline operator (|) sends the scheduled job to the **Set-ScheduledJob** cmdlet. The Set-ScheduledJob command uses the Script parameter to specify a new script, Get-FullInventory.ps1. The command uses the **Passthru** parameter to return the scheduled job after the change.
 
 ```powershell
 Get-ScheduledJob -Name Inventory | Set-ScheduledJob -FilePath C:\Scripts\Get-FullInventory.ps1 -Passthru
@@ -90,6 +86,10 @@ Id         Name            Triggers        Command                              
 ```
 
 This example shows how to change the script that is run in a scheduled job.
+
+The first command uses the Get-ScheduledJob cmdlet to get the Inventory scheduled job. The output shows that the job runs the Get-Inventory.ps1 script.This command is not required; it is included only to show the effect of the script change.
+
+The second command uses the Get-ScheduledJob cmdlet to get the Inventory scheduled job. A pipeline operator (|) sends the scheduled job to the **Set-ScheduledJob** cmdlet. The Set-ScheduledJob command uses the Script parameter to specify a new script, Get-FullInventory.ps1. The command uses the **Passthru** parameter to return the scheduled job after the change.
 
 ### Example 2: Delete the execution history of a scheduled job
 
@@ -361,7 +361,28 @@ For a description of the scheduled job options, including the default values, se
 To submit a hash table, use the following keys.
 In the following hash table, the keys are shown with their default values.
 
-@{# Power SettingsStartIfOnBattery=$False;StopIfGoingOnBattery=$True; WakeToRun=$False; # Idle SettingsStartIfNotIdle=$False; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$True; RestartOnIdleResume=$False;# Security settingsShowInTaskScheduler=$TrueRunElevated=$False;# MiscRunWithoutNetwork=$False;DoNotAllowDemandStart=$False;MultipleInstancePolicy=IgnoreNew# Can be IgnoreNew, Parallel, Queue, StopExisting}
+```powershell
+@{
+    # Power Settings
+    StartIfOnBattery=$False
+    StopIfGoingOnBattery=$True
+    WakeToRun=$False
+    # Idle Settings
+    StartIfNotIdle=$False
+    IdleDuration="00:10:00"
+    IdleTimeout="01:00:00"
+    StopIfGoingOffIdle=$True
+    RestartOnIdleResume=$False
+    # Security settings
+    ShowInTaskScheduler=$True
+    RunElevated=$False
+    # Misc
+    RunWithoutNetwork=$False
+    DoNotAllowDemandStart=$False
+    # Can be IgnoreNew, Parallel, Queue, StopExisting
+    MultipleInstancePolicy=IgnoreNew
+}
+```
 
 ```yaml
 Type: ScheduledJobOptions
@@ -408,12 +429,16 @@ You can also create and maintain a scheduled job that has no job triggers.
 
 To submit a hash table, use the following keys.
 
-@{Frequency="Once" (or Daily, Weekly, AtStartup, AtLogon);At="3am" (or any valid time string);
-DaysOfWeek="Monday", "Wednesday" (or any combination of day names);
-Interval=2 (or any valid frequency interval);
-RandomDelay="30minutes" (or any valid timespan string);
-User="Domain1\User01 (or any valid user; used only with the AtLogon frequency value)
+```powershell
+@{
+    Frequency="Once" # (or Daily, Weekly, AtStartup, AtLogon)
+    At="3am" # (or any valid time string)
+    DaysOfWeek="Monday", "Wednesday" # (or any combination of day names)
+    Interval=2 # (or any valid frequency interval)
+    RandomDelay="30minutes" # (or any valid timespan string)
+    User="Domain1\User01" #(or any valid user. used only with the AtLogon frequency value)
 }
+```
 
 ```yaml
 Type: ScheduledJobTrigger[]
@@ -429,7 +454,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

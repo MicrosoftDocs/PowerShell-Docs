@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -36,7 +36,7 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Create a new workflow session
 
 ```powershell
 New-PSWorkflowSession -ComputerName ServerNode01 -Name WorkflowTests -SessionOption (New-PSSessionOption -OutputBufferingMode Drop)
@@ -45,7 +45,7 @@ New-PSWorkflowSession -ComputerName ServerNode01 -Name WorkflowTests -SessionOpt
 This command creates the WorkflowTests session on the ServerNode01 remote computer.
 The value of the **SessionOption** parameter is a **New-PSSessionOption** command that sets the output buffering mode in the session to Drop.
 
-### Example 2
+### Example 2: Create workflow sessions on remote computers
 
 ```powershell
 "ServerNode01", "Server12" | New-PSWorkflowSession -Name WorkflowSession -Credential Domain01\Admin01 -ThrottleLimit 150
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

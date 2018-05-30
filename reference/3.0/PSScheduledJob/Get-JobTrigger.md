@@ -64,8 +64,6 @@ The command uses the **Name** parameter of Get-JobTrigger to get the job trigger
 
 ### Example 2: Get a job trigger by ID
 
-The first command uses the Get-ScheduledJob cmdlet to display the scheduled jobs on the local computer. The display includes the IDs of the scheduled jobs.
-
 ```powershell
 Get-ScheduledJob
 ```
@@ -79,13 +77,19 @@ Id         Name            Triggers        Command                              
 4          TestJob         {}              \\Server\Share\Run-AllTests.ps1          True
 ```
 
-The second command uses the **Get-JobTrigger** cmdlet to get the job trigger for the Test-HelpFiles job (ID = 3)
-
 ```powershell
 Get-JobTrigger -Id 3
 ```
 
-The example uses the **ID** parameter of Get-JobTrigger to get the job triggers of a scheduled job.
+```output
+Id         Name            Triggers        Command                                  Enabled
+--         ----            --------        -------                                  -------
+3          Test-HelpFiles  {1}             \\Server\Share\Test-HelpFiles.ps1        True
+```
+
+The first command uses the Get-ScheduledJob cmdlet to display the scheduled jobs on the local computer. The display includes the IDs of the scheduled jobs.
+
+The second command uses the **Get-JobTrigger** cmdlet to get the job trigger for the Test-HelpFiles job (ID = 3)
 
 ### Example 3: Get job triggers by piping a job
 
@@ -129,13 +133,9 @@ In addition to the job trigger properties that are displayed by default, the com
 
 ### Example 6: Get the job trigger property of a scheduled job
 
-The command uses the Get-ScheduledJob cmdlet to get the Test-HelpFiles scheduled job. Then it uses the dot method (.) to get the **JobTriggers** property of the Test-HelpFiles scheduled job.
-
 ```powershell
 (Get-ScheduledJob Test-HelpFiles).JobTriggers
 ```
-
-The second command uses the Get-ScheduledJob cmdlet to get all scheduled jobs on the local computer. It uses the Foreach-Object cmdlet to get the value of the JobTrigger property of each scheduled job.
 
 ```powershell
 Get-ScheduledJob | ForEach-Object {$_.JobTriggers}
@@ -145,9 +145,11 @@ The job triggers of a scheduled job are stored in the **JobTriggers** property o
 This example shows alternatives to using the Get-JobTrigger cmdlet to get job triggers.
 The results are identical to using the **Get-JobTrigger** cmdlet and the techniques can be used interchangeably.
 
-### Example 7: Compare job triggers
+The first command uses the Get-ScheduledJob cmdlet to get the Test-HelpFiles scheduled job. Then it uses the dot method (.) to get the **JobTriggers** property of the Test-HelpFiles scheduled job.
 
-The first command gets the job trigger of the ArchiveProjects scheduled job. The command pipes the job trigger to the Tee-Object cmdlet, which saves the job trigger in the $t1 variable and displays it at the command line.
+The second command uses the Get-ScheduledJob cmdlet to get all scheduled jobs on the local computer. It uses the Foreach-Object cmdlet to get the value of the JobTrigger property of each scheduled job.
+
+### Example 7: Compare job triggers
 
 ```powershell
 Get-ScheduledJob -Name ArchiveProjects | Get-JobTrigger | Tee-Object -Variable t1
@@ -159,8 +161,6 @@ Id         Frequency       Time                   DaysOfWeek              Enable
 0          Daily           9/26/2011 3:00:00 AM                           True
 ```
 
-The second command gets the job trigger of the Test-HelpFiles scheduled job. The command pipes the job trigger to the Tee-Object cmdlet, which saves the job trigger in the $t2 variable and displays it at the command line.
-
 ```powershell
 Get-ScheduledJob -Name Test-HelpFiles | Get-JobTrigger | Tee-Object -Variable t2
 ```
@@ -170,8 +170,6 @@ Id         Frequency       Time                   DaysOfWeek              Enable
 --         ---------       ----                   ----------              -------
 0          Daily           9/26/2011 3:00:00 AM                           True
 ```
-
-The third command compares the job triggers in the $t1 and $t2 variables. It uses the Get-Member cmdlet to get the properties of the job trigger in the $t1 variable. It pipes the properties to the ForEach-Object cmdlet, which compares each property to the properties of the job trigger in the $t2 variable by name. The command then pipes the differing properties to the Format-List cmdlet, which displays them in a list.The output indicates that, although the job triggers appear to be the same, the HelpFiles job trigger includes a random delay of three (3) minutes.
 
 ```powershell
 $t1 | Get-Member -MemberType property | ForEach-Object { Compare-Object $t1 $t2 -Property $_.Name}
@@ -185,6 +183,12 @@ RandomDelay                                                 SideIndicator
 ```
 
 This example shows how to compare the job triggers of two scheduled jobs.
+
+The first command gets the job trigger of the ArchiveProjects scheduled job. The command pipes the job trigger to the Tee-Object cmdlet, which saves the job trigger in the $t1 variable and displays it at the command line.
+
+The second command gets the job trigger of the Test-HelpFiles scheduled job. The command pipes the job trigger to the Tee-Object cmdlet, which saves the job trigger in the $t2 variable and displays it at the command line.
+
+The third command compares the job triggers in the $t1 and $t2 variables. It uses the Get-Member cmdlet to get the properties of the job trigger in the $t1 variable. It pipes the properties to the ForEach-Object cmdlet, which compares each property to the properties of the job trigger in the $t2 variable by name. The command then pipes the differing properties to the Format-List cmdlet, which displays them in a list.The output indicates that, although the job triggers appear to be the same, the HelpFiles job trigger includes a random delay of three (3) minutes.
 
 ## PARAMETERS
 
@@ -265,7 +269,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

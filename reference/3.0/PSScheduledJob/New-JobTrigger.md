@@ -133,19 +133,16 @@ When setting the delay value, review the effective and default values of the New
 
 ### Example 6: Create a Job Trigger for a New Scheduled Job
 
-The first command uses the **New-JobTrigger** cmdlet to create a job trigger that starts a job every Monday, Wednesday, and Friday at 12:01 a.m. The command saves the job trigger in the $t variable.
-
 ```powershell
 $t = New-JobTrigger -Weekly -DaysOfWeek 1,3,5 -At 12:01AM
-```
-
-The second command uses the Register-ScheduledJob cmdlet to create a scheduled job that starts a job every Monday, Wednesday, and Friday at 12:01 a.m. The value of the **Trigger** parameter is the trigger that is stored in the $t variable.
-
-```powershell
 Register-ScheduledJob -Name Test-HelpFiles -FilePath C:\Scripts\Test-HelpFiles.ps1 -Trigger $t
 ```
 
 These commands use a job trigger to create a new scheduled job.
+
+The first command uses the **New-JobTrigger** cmdlet to create a job trigger that starts a job every Monday, Wednesday, and Friday at 12:01 a.m. The command saves the job trigger in the $t variable.
+
+The second command uses the Register-ScheduledJob cmdlet to create a scheduled job that starts a job every Monday, Wednesday, and Friday at 12:01 a.m. The value of the **Trigger** parameter is the trigger that is stored in the $t variable.
 
 ### Example 7: Add a Job Trigger to a Scheduled Job
 
@@ -185,7 +182,7 @@ To prevent the job from repeating, the command uses the Get-JobTrigger to get th
 New-JobTrigger -Once -At "9/21/2012 0am" -RepetitionInterval (New-TimeSpan -Hours 12) -RepetitionDuration ([TimeSpan]::MaxValue)
 ```
 
-The following command creates a job trigger that runs a scheduled job once every 12 hours for an indefinite period of time.
+The previous command creates a job trigger that runs a scheduled job once every 12 hours for an indefinite period of time.
 The schedule begins tomorrow (9/21/2012) at midnight (0:00 AM).
 
 ## PARAMETERS
@@ -444,7 +441,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -464,12 +461,16 @@ You cannot pipe input to this cmdlet.
 
   To submit a hash table, use the following keys.
 
-  @{Frequency="Once" (or Daily, Weekly, AtStartup, AtLogon);At="3am" (or any valid time string);
-DaysOfWeek="Monday", "Wednesday" (or any combination of day names);
-Interval=2 (or any valid frequency interval);
-RandomDelay="30minutes" (or any valid timespan string);
-User="Domain1\User01 (or any valid user; used only with the AtLogon frequency value)
+```powershell
+@{
+    Frequency="Once" # (or Daily, Weekly, AtStartup, AtLogon)
+    At="3am" # (or any valid time string)
+    DaysOfWeek="Monday", "Wednesday" # (or any combination of day names)
+    Interval=2 # (or any valid frequency interval)
+    RandomDelay="30minutes" # (or any valid timespan string)
+    User="Domain1\User01" #(or any valid user. used only with the AtLogon frequency value)
 }
+```
 
 ## RELATED LINKS
 

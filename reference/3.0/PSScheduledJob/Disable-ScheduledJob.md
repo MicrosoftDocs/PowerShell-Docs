@@ -116,8 +116,6 @@ The command uses the **Name** parameter of **Disable-ScheduledJob** to select th
 
 ### Example 5: Disable a scheduled job by its global ID
 
-The first command demonstrates one way of finding the GlobalID of a scheduled job. The command uses the Get-ScheduledJob cmdlet to get the scheduled jobs on the computer. A pipeline operator (|) sends the scheduled jobs to the Format-Table cmdlet which displays the **Name**, **GlobalID**, and **Command** properties of each job in a table.
-
 ```powershell
 Get-ScheduledJob | Format-Table -Property Name, GlobalID, Command -Autosize
 ```
@@ -132,8 +130,6 @@ Test-HelpFiles   d77020ca-f20d-42be-86c8-fc64df97db90 .\Test-HelpFiles.ps1
 Test-HelpFiles   2f1606d2-c6cf-4bef-8b1c-ae36a9cc9934 .\Test-DomainHelpFiles.ps1
 ```
 
-The second command uses the  Get-ScheduledJob cmdlet to get the scheduled jobs on the computer. A pipeline operator (|) sends the scheduled jobs to the Where-Object cmdlet, which selects the scheduled job with the specified global ID. Another pipeline operator sends the job to the Disable-ScheduledJob cmdlet, which disables it.
-
 ```powershell
 Get-ScheduledJob | Where-Object {$_.GlobalID = d77020ca-f20d-42be-86c8-fc64df97db90} | Disable-ScheduledJob
 ```
@@ -141,6 +137,10 @@ Get-ScheduledJob | Where-Object {$_.GlobalID = d77020ca-f20d-42be-86c8-fc64df97d
 This examples shows how to disable a scheduled job by using its global identifier.
 The value of the GlobalID property of a scheduled job is a unique identifier (GUID).
 Use the GlobalID value when precision is required, such as when you are disabling scheduled jobs on multiple computers.
+
+The first command demonstrates one way of finding the GlobalID of a scheduled job. The command uses the Get-ScheduledJob cmdlet to get the scheduled jobs on the computer. A pipeline operator (|) sends the scheduled jobs to the Format-Table cmdlet which displays the **Name**, **GlobalID**, and **Command** properties of each job in a table.
+
+The second command uses the  Get-ScheduledJob cmdlet to get the scheduled jobs on the computer. A pipeline operator (|) sends the scheduled jobs to the Where-Object cmdlet, which selects the scheduled job with the specified global ID. Another pipeline operator sends the job to the Disable-ScheduledJob cmdlet, which disables it.
 
 ## PARAMETERS
 
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

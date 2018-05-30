@@ -79,25 +79,19 @@ You can use add job triggers later, use the Start-Job cmdlet to start the job on
 
 ### Example 2: Create a scheduled job with triggers and custom options
 
-The first command uses the New-ScheduledJobOption cmdlet to create a job option object, which it saves in the $o parameter. The options start the scheduled job even if the computer is not idle, wake the computer to run the job, if necessary, and allows multiple instances of the job to run in a series.
-
 ```powershell
 $o = New-ScheduledJobOption -WakeToRun -StartIfNotIdle -MultipleInstancesPolicy Queue
-```
-
-The second command uses the New-JobTrigger cmdlet to create job trigger that starts a job every other Monday at 9:00 p.m.
-
-```powershell
 $t = New-JobTrigger -Weekly -At "9:00 PM" -DaysOfWeek Monday -WeeksInterval 2
-```
-
-This command creates the UpdateVersion scheduled job, which runs the UpdateVersion.ps1 script every Monday at 9:00 p.m. The command uses the **FilePath** parameter to specify the script that the job runs. It uses the **Trigger** parameter to specify the job triggers in the $t variable and the **ScheduledJobOption** parameter to specify the option object in the $o variable.
-
-```powershell
 Register-ScheduledJob -Name UpdateVersion -FilePath \\Srv01\Scripts\UpdateVersion.ps1 -Trigger $t -ScheduledJobOption $o
 ```
 
 This example shows how to create a scheduled job that has a job trigger and custom job options.
+
+The first command uses the New-ScheduledJobOption cmdlet to create a job option object, which it saves in the $o parameter. The options start the scheduled job even if the computer is not idle, wake the computer to run the job, if necessary, and allows multiple instances of the job to run in a series.
+
+The second command uses the New-JobTrigger cmdlet to create job trigger that starts a job every other Monday at 9:00 p.m.
+
+The third command creates the UpdateVersion scheduled job, which runs the UpdateVersion.ps1 script every Monday at 9:00 p.m. The command uses the **FilePath** parameter to specify the script that the job runs. It uses the **Trigger** parameter to specify the job triggers in the $t variable and the **ScheduledJobOption** parameter to specify the option object in the $o variable.
 
 ### Example 3: Use hash tables to specify a trigger and job options
 
@@ -318,7 +312,28 @@ For a description of the scheduled job options, including the default values, se
 To submit a hash table, use the following keys.
 In the following hash table, the keys are shown with their default values.
 
-@{StartIfOnBattery=$False; StopIfGoingOnBattery=$True; WakeToRun=$False; StartIfNotIdle=$False; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$True; RestartOnIdleResume=$False; ShowInTaskScheduler=$True; RunElevated=$False; RunWithoutNetwork=$False; DoNotAllowDemandStart=$False; MultipleInstancePolicy=IgnoreNew}
+```powershell
+@{
+    # Power Settings
+    StartIfOnBattery=$False
+    StopIfGoingOnBattery=$True
+    WakeToRun=$False
+    # Idle Settings
+    StartIfNotIdle=$False
+    IdleDuration="00:10:00"
+    IdleTimeout="01:00:00"
+    StopIfGoingOffIdle=$True
+    RestartOnIdleResume=$False
+    # Security settings
+    ShowInTaskScheduler=$True
+    RunElevated=$False
+    # Misc
+    RunWithoutNetwork=$False
+    DoNotAllowDemandStart=$False
+    # Can be IgnoreNew, Parallel, Queue, StopExisting
+    MultipleInstancePolicy=IgnoreNew
+}
+```
 
 ```yaml
 Type: ScheduledJobOptions
@@ -366,12 +381,16 @@ You can also create and maintain a scheduled job without a trigger that is used 
 
 To submit a hash table, use the following keys.
 
-@{Frequency="Once" (or Daily, Weekly, AtStartup, AtLogon);At="3am" (or any valid time string);
-DaysOfWeek="Monday", "Wednesday" (or any combination of day names);
-Interval=2 (or any valid frequency interval);
-RandomDelay="30minutes" (or any valid timespan string);
-User="Domain1\User01 (or any valid user; used only with the AtLogon frequency value)
+```powershell
+@{
+    Frequency="Once" # (or Daily, Weekly, AtStartup, AtLogon)
+    At="3am" # (or any valid time string)
+    DaysOfWeek="Monday", "Wednesday" # (or any combination of day names)
+    Interval=2 # (or any valid frequency interval)
+    RandomDelay="30minutes" # (or any valid timespan string)
+    User="Domain1\User01" #(or any valid user. used only with the AtLogon frequency value)
 }
+```
 
 ```yaml
 Type: ScheduledJobTrigger[]
@@ -420,7 +439,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

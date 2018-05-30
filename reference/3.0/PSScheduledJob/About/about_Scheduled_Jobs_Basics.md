@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,21 +7,17 @@ title:  about_Scheduled_Jobs_Basics
 ---
 # About Scheduled Jobs Basics
 
-## about_Scheduled_Jobs_Basics
-
-
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Explains how to create and manage scheduled jobs.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 This topic shows how to perform basic tasks of creating and
 managing scheduled jobs. For information about more advanced
 tasks, see about_Scheduled_Jobs_Advanced.
 
-# HOW TO CREATE A SCHEDULED JOB
+### HOW TO CREATE A SCHEDULED JOB
 
 To create a scheduled job, use the Register-ScheduledJob
 cmdlet. The cmdlet requires a name and the commands or
@@ -38,14 +34,17 @@ The following command creates the ProcessJob, which runs a
 Get-Process command. This scheduled job has the default job
 options and no job trigger.
 
-PS C:> Register-ScheduledJob -Name ProcessJob -ScriptBlock { Get-Process }
+```powershell
+Register-ScheduledJob -Name ProcessJob -ScriptBlock { Get-Process }
+```
 
+```output
 Id         Name            Triggers        Command       Enabled
 --         ----            --------        -------       -------
 8          ProcessJob      {}              Get-Process   True
+```
 
-# HOW TO CREATE A JOB TRIGGER
-
+### HOW TO CREATE A JOB TRIGGER
 
 Job triggers start a scheduled job automatically. A job trigger
 can be one-time or recurring schedule or an event, such as when
@@ -57,15 +56,17 @@ following command creates a job trigger that starts a job every
 Monday and Thursday at 5:00 AM. The command saves the job
 trigger in the $t variable.
 
+
+```powershell
 $t = New-JobTrigger -Weekly -DaysOfWeek "Monday", "Thursday" -At "5:00 AM"
+```
 
 Job triggers are optional. You can start a scheduled job at
 any time by adding the RunNow parameter to your
 Register-ScheduledJob command, or by using the Start-Job
 cmdlets.
 
-# HOW TO ADD A JOB TRIGGER
-
+### HOW TO ADD A JOB TRIGGER
 
 When you add a job trigger to a scheduled job, the job trigger
 is added to the scheduled job XML file for the scheduled job
@@ -83,19 +84,22 @@ The following command uses the Register-ScheduledJob cmdlet
 to create the process job. It uses the Trigger parameter to
 specify the job trigger in the $t variable.
 
+```powershell
 Register-ScheduledJob -Name ProcessJob -ScriptBlock {Get-Command} -Trigger $t
+```
 
 You can also add a job trigger to an existing scheduled job
 at any time. The following command adds the job trigger in the
 $t variable to the  ProcessJob scheduled job.
 
+```powershell
 Add-JobTrigger -Name ProcessJob -Trigger $t
+```
 
 As a result of this command, the job trigger starts the
 ProcessJob automatically every Monday and Thursday at 5:00 AM.
 
-# HOW TO GET A JOB TRIGGER
-
+### HOW TO GET A JOB TRIGGER
 
 To get the job trigger of a scheduled job, use the
 Get-JobTrigger cmdlet. Use the Name, ID, and InputObject parameters
@@ -103,14 +107,17 @@ to specify the scheduled job (not the job trigger).
 
 The following command gets the job trigger of the ProcessJob.
 
-PS C:> Get-JobTrigger -Name ProcessJob
+```powershell
+Get-JobTrigger -Name ProcessJob
+```
 
+```output
 Id   Frequency       Time                   DaysOfWeek              Enabled
 --   ---------       ----                   ----------              -------
 1    Weekly          11/7/2011 5:00:00 AM   {Monday, Thursday}      True
+```
 
-# HOW TO CREATE JOB OPTIONS
-
+### HOW TO CREATE JOB OPTIONS
 
 Job options establish conditions for starting and running the
 job. Every job has the default job options unless you change
@@ -122,7 +129,7 @@ Windows PowerShell uses the same job options that Task Scheduler
 uses. For detailed information about the job options, see the
 help topic for the New-ScheduledJobOption cmdlet. Type "Get-Help
 New-ScheduledJobOption" or see the help topic online at
-http://go.microsoft.com/fwlink/?LinkID=223915.
+[New-ScheduledJobOption](../Get-JobTrigger.md).
 
 Job options are stored in the scheduled job XML file. You can
 set job options when you create a scheduled job or change them at
@@ -134,10 +141,11 @@ option runs the scheduled job even if the computer is in the Sleep
 or Hibernate state at the scheduled start time. The command saves
 the job options in the $o variable.
 
+```powershell
 $o = New-ScheduledJobOption -WakeToRun
+```
 
-# HOW TO GET JOB OPTIONS
-
+### HOW TO GET JOB OPTIONS
 
 To get the job options of a scheduled job, use the
 Get-ScheduledJobOption cmdlet. Use the Name, ID, and
@@ -146,8 +154,11 @@ the job options).
 
 The following command gets the job options of the ProcessJob.
 
-PS C:> Get-ScheduledJobOption -Name ProcessJob
+```powershell
+Get-ScheduledJobOption -Name ProcessJob
+```
 
+```output
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -162,18 +173,20 @@ RunWithoutNetwork      : True
 DoNotAllowDemandStart  : False
 MultipleInstancePolicy : IgnoreNew
 JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+```
 
-# HOW TO CHANGE JOB OPTIONS
-
+### HOW TO CHANGE JOB OPTIONS
 
 You can change the job options of a scheduled job when you
 create a scheduled job or at any time thereafter.
 
-The following command uses the Register-JobTrigger cmdlet
+The following command uses the Add-JobTrigger cmdlet
 to create the process job. It uses the ScheduledJobOption
 parameter to specify the job options in the $o variable.
 
-Register-JobTrigger -Name ProcessJob -ScriptBlock {Get-Process} -ScheduledJobOption $o
+```powershell
+Add-JobTrigger -Name ProcessJob -ScriptBlock {Get-Process} -ScheduledJobOption $o
+```
 
 You can also change the job options to an existing scheduled
 job at any time. The following command uses the
@@ -191,10 +204,11 @@ ProcessJob. It uses the Get-ScheduledJobOption cmdlet to get the
 job options in the ProcessJob and the Set-ScheduledJobOption cmdlet
 to change the WakeToRun job option in the ProcessJob to True.
 
+```powershell
 Get-ScheduledJob -Name ProcessJob | Get-ScheduledJobOption | Set-ScheduledJobOption -WakeToRun
+```
 
-# HOW TO GET SCHEDULED JOB INSTANCES
-
+### HOW TO GET SCHEDULED JOB INSTANCES
 
 When a scheduled job is started, Windows PowerShell creates a
 job instance that is similar to a standard Windows PowerShell
@@ -212,15 +226,19 @@ all active standard jobs), use the Get-Job cmdlet. The following
 command imports the PSScheduledJob module and then gets all jobs on
 the local computer.
 
-PS C:> Import-Module PSScheduledJob
-
-PS C:> Get-Job
+```powershell
+Import-Module PSScheduledJob
+Get-Job
+```
 
 The following command gets all instances of the ProcessJob on
 the local computer.
 
-PS C:> Get-Job -Name ProcessJob
+```powershell
+Get-Job -Name ProcessJob
+```
 
+```output
 Id     Name        PSJobTypeName  State    HasMoreData   Location   Command
 --     ----        ------------   -----    -----------   --------   -------
 45     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
@@ -230,6 +248,7 @@ Id     Name        PSJobTypeName  State    HasMoreData   Location   Command
 49     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
 50     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
 51     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
+```
 
 The default display does not show the start time, which typically
 distinguishes instances of the same scheduled job.
@@ -237,8 +256,11 @@ distinguishes instances of the same scheduled job.
 The following command uses the Format-Table cmdlet to display the Name,
 ID, and BeginTime  properties of the scheduled job.
 
-PS C:> Get-Job ProcessJob | Format-Table -Property Name, ID, BeginTime
+```powershell
+Get-Job ProcessJob | Format-Table -Property Name, ID, BeginTime
+```
 
+```output
 Name       Id BeginTime
 ----       -- ---------
 ProcessJob 43 11/2/2011 3:00:02 AM
@@ -249,9 +271,9 @@ ProcessJob 47 11/6/2011 3:00:02 AM
 ProcessJob 48 11/7/2011 12:00:01 AM
 ProcessJob 49 11/7/2011 3:00:02 AM
 ProcessJob 50 11/8/2011 3:00:02 AM
+```
 
-# GET SCHEDULED JOB RESULTS
-
+### GET SCHEDULED JOB RESULTS
 
 To get the results of an instance of a scheduled job, use the
 Receive-Job cmdlet.
@@ -265,9 +287,10 @@ as Get-ScheduledJob.
 The following command gets the results of the newest instance of
 the ProcessJob scheduled job (ID = 51)
 
-PS C:> Import-Module PSScheduledJob
-
-PS C:> Receive-Job -ID 51 -Keep
+```powershell
+Import-Module PSScheduledJob
+Receive-Job -Id 51 -Keep
+```
 
 The results of scheduled jobs are saved on disk, so the Keep parameter
 of Receive-Job is not required. However, without the Keep parameter,
@@ -275,8 +298,8 @@ you can get the results of a scheduled job only once in each Windows
 PowerShell session. To start a new Windows PowerShell session, type
 "PowerShell" or open a new Windows PowerShell window.
 
-# SEE ALSO
+## SEE ALSO
 
-about_Scheduled_Jobs
-about_Scheduled_Jobs_Advanced
-about_Scheduled_Jobs_Troubleshooting
+[about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+[about_Scheduled_Jobs_Advanced](about_Scheduled_Jobs_Advanced.md)
+[about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)

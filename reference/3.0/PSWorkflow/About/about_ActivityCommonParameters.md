@@ -9,8 +9,6 @@ title:  about_ActivityCommonParameters
 
 ## about_ActivityCommonParameters
 
-
-
 # SHORT DESCRIPTION
 
 Describes the parameters that Windows PowerShell
@@ -644,11 +642,11 @@ if ($Log) ...
 
 # KEYWORDS
 
-about_Activity_Common_Parameters
-about_Activity_Parameters
-about_ActivityParameters
+[about_Activity_Common_Parameters](about_Activity_Common_Parameters.md)
+<!-- [about_Activity_Parameters](about_Activity_Parameters.md) -->
+<!-- [about_ActivityParameters]()about_ActivityParameters.md) -->
 
 # SEE ALSO
 
-about_Workflows
-about_WorkflowCommonParameters
+[about_Workflows](about_workflows.md)
+[about_WorkflowCommonParameters](about_WorkflowCommonParameters.md)

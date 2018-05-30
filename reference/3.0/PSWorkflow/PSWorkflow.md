@@ -21,7 +21,6 @@ This section contains the help topics for the cmdlets that are installed with Wi
 
 Creates an object that contains session configuration options for workflow sessions.
 
-
 ### [New-PSWorkflowSession](New-PSWorkflowSession.md)
 
 Creates a workflow session.

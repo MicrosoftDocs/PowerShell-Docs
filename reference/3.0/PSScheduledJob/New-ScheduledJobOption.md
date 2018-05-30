@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -98,21 +98,9 @@ The output shows that the **RequireNetwork** parameter changed the value of the 
 
 ### Example 3: Set options for a new scheduled job
 
-The first command creates a **ScheduledJobOptions** object with the **RunElevated** parameter. It saves the object in the $RunAsAdmin variable.
-
 ```powershell
 $RunAsAdmin = New-ScheduledJobOption -RunElevated
-```
-
-The second command uses the Register-ScheduledJob cmdlet to create a new scheduled job. The value of the **ScheduledJobOption** parameter is the option object in the value of the $RunAsAdmin variable.
-
-```powershell
 Register-ScheduledJob -Name Backup -FilePath D:\Scripts\Backup.ps1 -Trigger $Mondays -ScheduledJobOption $RunAsAdmin
-```
-
-The third command uses the Get-ScheduledJobOption cmdlet to get the job options of the Backup scheduled job.The cmdlet output shows that the **RunElevated** property is set to True and the **JobDefinition** property of the job option object is now populated with the scheduled job  object for the Backup scheduled job.
-
-```powershell
 Get-ScheduledJobOption -Name Backup
 ```
 
@@ -133,6 +121,12 @@ JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinitio
 ```
 
 This example shows how to use the **ScheduledJobOptions** object that **New-ScheduledJobOption** returns to set the options for a new scheduled job.
+
+The first command creates a **ScheduledJobOptions** object with the **RunElevated** parameter. It saves the object in the $RunAsAdmin variable.
+
+The second command uses the Register-ScheduledJob cmdlet to create a new scheduled job. The value of the **ScheduledJobOption** parameter is the option object in the value of the $RunAsAdmin variable.
+
+The third command uses the Get-ScheduledJobOption cmdlet to get the job options of the Backup scheduled job.The cmdlet output shows that the **RunElevated** property is set to True and the **JobDefinition** property of the job option object is now populated with the scheduled job  object for the Backup scheduled job.
 
 ### Example 4: Sort the properties of a scheduled job option object
 
@@ -450,7 +444,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -466,9 +460,16 @@ You cannot pipe input to this cmdlet.
 
 - You can use the **ScheduledJobOptions** object that **New-ScheduledJobOption** creates as the value of the **ScheduledJobOption** parameter of the Register-ScheduledJob cmdlet. However, the **ScheduledJobOption** parameter can also take a hash table value that specifies the properties of the ScheduledJobOptions object and their values, such as:
 
-  `@{ShowInTaskScheduler=$False; RunElevated=$True; IdleDuration="00:05"}`
 
-  For more information, see Register-ScheduledJob.
+```powershell
+    @{
+        ShowInTaskScheduler=$False
+        RunElevated=$True
+        IdleDuration="00:05"
+     }
+```
+
+ For more information, see [Register-ScheduledJob](Register-ScheduledJob.md)
 
 ## RELATED LINKS
 
