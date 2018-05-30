@@ -460,17 +460,6 @@ You cannot pipe input to this cmdlet.
 - The Register-ScheduledJob cmdlet accepts a ScheduledJobTrigger object, such as one returned by the **New-JobTrigger** or Get-JobTrigger cmdlets, or a hash table with trigger values.
   To submit a hash table, use the following keys.
 
-<!--```powershell
-@{
-    Frequency="Once" # (or Daily, Weekly, AtStartup, AtLogon)
-    At="3am" # (or any valid time string)
-    DaysOfWeek="Monday", "Wednesday" # (or any combination of day names)
-    Interval=2 # (or any valid frequency interval)
-    RandomDelay="30minutes" # (or any valid timespan string)
-    User="Domain1\User01" #(or any valid user. used only with the AtLogon frequency value)
-}
-``` -->
-
 ## RELATED LINKS
 
 [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)
