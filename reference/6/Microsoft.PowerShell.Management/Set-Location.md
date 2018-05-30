@@ -116,7 +116,7 @@ Accept wildcard characters: False
 
 ### -Path
 Specify the path of a new working location.
-If no path is provided, `Set-Location` will default to the current user's home directory.ƒ
+If no path is provided, `Set-Location` will default to the current user's home directory.
 
 ```yaml
 Type: String
