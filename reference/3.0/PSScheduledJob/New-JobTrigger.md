@@ -458,10 +458,9 @@ You cannot pipe input to this cmdlet.
 - Job triggers are not saved to disk. However, scheduled jobs are saved to disk, and you can use the Get-JobTrigger to get the job trigger of any scheduled job.
 - **New-JobTrigger** does not prevent you from creating a job trigger that will not run a scheduled job, such as one-time trigger for a date in the past.
 - The Register-ScheduledJob cmdlet accepts a ScheduledJobTrigger object, such as one returned by the **New-JobTrigger** or Get-JobTrigger cmdlets, or a hash table with trigger values.
-
   To submit a hash table, use the following keys.
 
-```powershell
+<!--```powershell
 @{
     Frequency="Once" # (or Daily, Weekly, AtStartup, AtLogon)
     At="3am" # (or any valid time string)
@@ -470,7 +469,7 @@ You cannot pipe input to this cmdlet.
     RandomDelay="30minutes" # (or any valid timespan string)
     User="Domain1\User01" #(or any valid user. used only with the AtLogon frequency value)
 }
-```
+``` -->
 
 ## RELATED LINKS
 

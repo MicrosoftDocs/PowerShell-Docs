@@ -312,6 +312,7 @@ For a description of the scheduled job options, including the default values, se
 To submit a hash table, use the following keys.
 In the following hash table, the keys are shown with their default values.
 
+<!--
 ```powershell
 @{
     # Power Settings
@@ -334,6 +335,7 @@ In the following hash table, the keys are shown with their default values.
     MultipleInstancePolicy=IgnoreNew
 }
 ```
+-->
 
 ```yaml
 Type: ScheduledJobOptions
@@ -381,6 +383,7 @@ You can also create and maintain a scheduled job without a trigger that is used 
 
 To submit a hash table, use the following keys.
 
+<!--
 ```powershell
 @{
     Frequency="Once" # (or Daily, Weekly, AtStartup, AtLogon)
@@ -391,6 +394,7 @@ To submit a hash table, use the following keys.
     User="Domain1\User01" #(or any valid user. used only with the AtLogon frequency value)
 }
 ```
+-->
 
 ```yaml
 Type: ScheduledJobTrigger[]
