@@ -100,6 +100,42 @@ Register-ScheduledJob -FilePath \\Srv01\Scripts\Update-Version.ps1 -Trigger @{Fr
 MultipleInstancesPolicy="Queue"}
 ```
 
+```powershell
+# Here are the default hashtables for -Trigger and -ScheduledJobOption
+
+# -Trigger
+@{
+    Frequency="Once" # (or Daily, Weekly, AtStartup, AtLogon)
+    At="3am" # (or any valid time string)
+    DaysOfWeek="Monday", "Wednesday" # (or any combination of day names)
+    Interval=2 # (or any valid frequency interval)
+    RandomDelay="30minutes" # (or any valid timespan string)
+    User="Domain1\User01" #(or any valid user. used only with the AtLogon frequency value)
+}
+
+# -ScheduledJobOption
+@{
+    # Power Settings
+    StartIfOnBattery=$False
+    StopIfGoingOnBattery=$True
+    WakeToRun=$False
+    # Idle Settings
+    StartIfNotIdle=$False
+    IdleDuration="00:10:00"
+    IdleTimeout="01:00:00"
+    StopIfGoingOffIdle=$True
+    RestartOnIdleResume=$False
+    # Security settings
+    ShowInTaskScheduler=$True
+    RunElevated=$False
+    # Misc
+    RunWithoutNetwork=$False
+    DoNotAllowDemandStart=$False
+    # Can be IgnoreNew, Parallel, Queue, StopExisting
+    MultipleInstancePolicy=IgnoreNew
+}
+```
+
 This command is has the same effect as the command in Example 2.
 It creates a scheduled job, but it uses hash tables to specify the values of the **Trigger** and **ScheduledJobOption** parameters.
 
