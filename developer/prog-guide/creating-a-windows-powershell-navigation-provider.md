@@ -59,11 +59,6 @@ This topic describes how to create a Windows PowerShell navigation provider that
 ##  <a name="definecmdletprovidernavigation"></a> Define the Windows PowerShell provider
  A Windows PowerShell navigation provider must create a .NET class that derives from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class. Here is the class definition for the navigation provider described in this section.
 
-```csharp
-[CmdletProvider("AccessDB", ProviderCapabilities.None)]
-public class AccessDBProvider : NavigationCmdletProvider
-```
-
 [!code-csharp[AccessDBProviderSample05.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
 
  Note that in this provider, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no Windows PowerShell specific capabilities that are added.
@@ -123,35 +118,6 @@ public class AccessDBProvider : NavigationCmdletProvider
  The navigation provider can implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) method to determine if the specified path indicates a container. It returns true if the path represents a container, and false otherwise. The user needs this method to be able to use the Test-Path cmdlet for the supplied path.
 
  The following code shows the [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) implementation in our sample navigation provider. The method verifies that  the specified path is correct and if the table exists, and returns true if the path indicates a container.
-
-```csharp
-protected override bool IsItemContainer(string path)
-{
-    if (PathIsDrive(path)) 
-    { 
-        return true; 
-    }
-    
-    string[] pathChunks = ChunkPath(path);
-    string tableName;
-    int rowNumber;
-
-    PathType type = GetNamesFromPath(path, out tableName, out rowNumber);
-    
-    if (type == PathType.Table)
-    {
-    foreach (DatabaseTableInfo ti in GetTables())
-    {
-        if (string.Equals(ti.Name, tableName, StringComparison.OrdinalIgnoreCase))
-        {
-            return true;
-        }
-    } // foreach (DatabaseTableInfo...
-    } // if (pathChunks...
-
-    return false;
-} // IsItemContainer
-```
 
 [!code-csharp[AccessDBProviderSample05.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L847-L872 "AccessDBProviderSample05.cs")]
 

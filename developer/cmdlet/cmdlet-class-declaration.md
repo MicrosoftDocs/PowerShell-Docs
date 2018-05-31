@@ -38,11 +38,6 @@ A Microsoft .NET Framework class is declared as a cmdlet by specifying the **Cmd
 ## Cmdlet Class Definition
  The following code is the definition for a GetProc cmdlet class. Notice that Pascal casing is used and that the name of the class includes the verb and noun of the cmdlet.
 
-```csharp
-[Cmdlet(VerbsCommon.Get, "Proc")]
-public class GetProcCommand : Cmdlet
-```
-
 [!code-csharp[GetProcessSample01.cs](../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L33-L34 "GetProcessSample01.cs")]
 
 ## Pascal Casing

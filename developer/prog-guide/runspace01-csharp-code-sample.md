@@ -21,61 +21,6 @@ Here are the code samples for the runspace described in [Creating a Console Appl
 
 ## Code Sample
 
-```csharp
-namespace Microsoft.Samples.PowerShell.Runspaces
-{
-  using System;
-  using System.Management.Automation;
-  using PowerShell = System.Management.Automation.PowerShell;
-  
-  /// <summary>
-  /// This class contains the Main entry point for this host application.
-  /// </summary>
-  internal class Runspace01
-  {
-    /// <summary>
-    /// This sample uses the PowerShell class to execute
-    /// the get-process cmdlet synchronously. The name and
-    /// handlecount are then extracted from the PSObjects
-    /// returned and displayed.
-    /// </summary>
-    /// <param name="args">Parameter not used.</param>
-    /// <remarks>
-    /// This sample demonstrates the following:
-    /// 1. Creating a PowerShell object to run a command.
-    /// 2. Adding a command to the pipeline of the PowerShell object.
-    /// 3. Running the command synchronously.
-    /// 4. Using PSObject objects to extract properties from the objects
-    ///    returned by the command.
-    /// </remarks>
-    private static void Main(string[] args)
-    {
-      // Create a PowerShell object. Creating this object  takes care of 
-      // building all of the other data structures needed to run the command.
-      using (PowerShell powershell = PowerShell.Create().AddCommand("get-process"))
-      {
-        Console.WriteLine("Process              HandleCount");
-        Console.WriteLine("--------------------------------");
-          
-        // Invoke the command synchronously and display the  
-        // ProcessName and HandleCount properties of the 
-        // objects that are returned.
-        foreach (PSObject result in powershell.Invoke())
-        {
-          Console.WriteLine(
-                      "{0,-20} {1}",
-                      result.Members["ProcessName"].Value,
-                      result.Members["HandleCount"].Value);
-        }
-      }
-      
-      System.Console.WriteLine("Hit any key to exit...");
-      System.Console.ReadKey();
-    }
-  }
-}
-```
-
 [!code-csharp[Runspace01.cs](../../powershell-sdk-samples/SDK-2.0/csharp/Runspace01/Runspace01.cs#L11-L62 "Runspace01.cs")]
 
 ## See Also
