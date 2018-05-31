@@ -333,7 +333,7 @@ Accept wildcard characters: False
 Specifies that if a subset of the input objects has identical properties and values, only a single member of the subset will be selected.
 
 This parameter is case-sensitive.
-As a result, strings that differ only in character casing are considered to be unique.
+As a result, strings that differ in character casing are NOT considered to be unique.
 
 ```yaml
 Type: SwitchParameter
