@@ -41,11 +41,6 @@ This topic describes how to create a Windows PowerShell drive provider that prov
 ##  <a name="definecmdletproviderdrive"></a> Defining the Windows PowerShell Provider Class
  Your drive provider must define a .NET class that derives from the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) base class. Here is the class definition for this drive provider:
 
-```csharp
-[CmdletProvider("AccessDB", ProviderCapabilities.None)]
-public class AccessDBProvider : DriveCmdletProvider
-```
-
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
 
  Notice that in this example, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute specifies a user-friendly name for the provider and the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. The possible values for the provider capabilities are defined by the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. This drive provider does not support any of these capabilities.
@@ -58,80 +53,10 @@ public class AccessDBProvider : DriveCmdletProvider
 
  For this drive provider, state information includes the connection to the database that is kept as part of the drive information. Here is code that shows how this information is stored in the [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object that describes the drive:
 
-```csharp
-internal class AccessDBPSDriveInfo : PSDriveInfo
-{
-    private OdbcConnection connection;
-
-    /// <summary>
-    /// ODBC connection information.
-    /// </summary>
-    public OdbcConnection Connection
-    {
-        get { return connection; }
-        set { connection = value; }
-    }
-
-    /// <summary>
-    /// Constructor that takes one argument
-    /// </summary>
-    /// <param name="driveInfo">Drive provided by this provider</param>
-    public AccessDBPSDriveInfo(PSDriveInfo driveInfo)
-        : base(driveInfo)
-    { }
-
-} // class AccessDBPSDriveInfo
-```
-
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
 ##  <a name="createdrive"></a> Creating a Drive
  To allow the Windows PowerShell runtime to create a drive, the drive provider must implement the [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) method. The following code shows the implementation of the [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) method for this drive provider:
-
-```csharp
-protected override PSDriveInfo NewDrive(PSDriveInfo drive)
-{
-    // check if drive object is null
-    if (drive == null)
-    {
-        WriteError(new ErrorRecord(
-            new ArgumentNullException("drive"), 
-            "NullDrive",
-            ErrorCategory.InvalidArgument, 
-            null)
-        );
-    
-        return null;
-    }
-
-    // check if drive root is not null or empty
-    // and if its an existing file
-    if (String.IsNullOrEmpty(drive.Root) || (File.Exists(drive.Root) == false))
-    {
-        WriteError(new ErrorRecord(
-            new ArgumentException("drive.Root"), 
-            "NoRoot",
-            ErrorCategory.InvalidArgument, 
-            drive)
-        );
-
-        return null;
-    }
-
-    // create a new drive and create an ODBC connection to the new drive
-    AccessDBPSDriveInfo accessDBPSDriveInfo = new AccessDBPSDriveInfo(drive);
-
-    OdbcConnectionStringBuilder builder = new OdbcConnectionStringBuilder();
-
-    builder.Driver = "Microsoft Access Driver (*.mdb)";
-    builder.Add("DBQ", drive.Root);
-    OdbcConnection conn = new OdbcConnection(builder.ConnectionString);
-    conn.Open();
-    accessDBPSDriveInfo.Connection = conn;
-
-    return accessDBPSDriveInfo;
-} // NewDrive
-```
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L42-L84 "AccessDBProviderSample02.cs")]
 
@@ -160,34 +85,6 @@ protected override PSDriveInfo NewDrive(PSDriveInfo drive)
  To close the database connection, the drive provider must implement the [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) method. This method closes the connection to the drive after cleaning up any provider-specific information.
 
  The following code shows the implementation of the [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) method for this drive provider:
-
-```csharp
-protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)
-{
-    // check if drive object is null
-    if (drive == null)
-    {
-        WriteError(new ErrorRecord(
-            new ArgumentNullException("drive"), 
-            "NullDrive",
-            ErrorCategory.InvalidArgument, 
-            drive)
-        );
-
-        return null;
-    }
-
-    // close ODBC connection to the drive
-    AccessDBPSDriveInfo accessDBPSDriveInfo = drive as AccessDBPSDriveInfo;
-
-    if (accessDBPSDriveInfo == null)
-    {
-        return null;
-    }
-    accessDBPSDriveInfo.Connection.Close();
-    return accessDBPSDriveInfo;
-}
-```
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L91-L116 "AccessDBProviderSample02.cs")]
 

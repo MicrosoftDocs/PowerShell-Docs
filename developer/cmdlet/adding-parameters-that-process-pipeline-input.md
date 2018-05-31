@@ -56,20 +56,6 @@ Public Class GetProcCommand
 
  Here is the parameter declaration for the `Name` parameter of this Get-Proc cmdlet that accepts pipeline input.
 
-```csharp
-[Parameter(
-           Position = 0,
-           ValueFromPipeline = true,
-           ValueFromPipelineByPropertyName = true
-)]
-[ValidateNotNullOrEmpty]
-public string[] Name
-{
-  get { return processNames; }
-  set { processNames = value; }
-}
-```
-
 [!code-csharp[GetProcessSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L35-L44 "GetProcessSample03.cs")]
 
 ```vb

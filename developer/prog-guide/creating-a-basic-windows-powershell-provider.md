@@ -48,11 +48,6 @@ This topic is the starting point for learning how to create a Windows PowerShell
 
  Here is the class definition for this basic provider:
 
-```csharp
-   [CmdletProvider("AccessDB", ProviderCapabilities.None)]
-   public class AccessDBProvider : CmdletProvider
-```
-
 [!code-csharp[AccessDBProviderSample01.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L23-L24 "AccessDBProviderSample01.cs")]
 
  Right before the class definition, you must declare the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute, with the syntax [CmdletProvider()].

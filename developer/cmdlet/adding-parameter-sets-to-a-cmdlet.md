@@ -69,24 +69,6 @@ Public Class StopProcCommand
 ### Declaring the Name Parameter
  This input parameter allows the user to specify the names of the processes to be stopped. Note that the `ParameterSetName` attribute keyword of the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute specifies the `ProcessName` parameter set for this parameter.
 
-```csharp
-[Parameter(
-           Position = 0,
-           ParameterSetName = "ProcessName",
-           Mandatory = true,
-           ValueFromPipeline = true,
-           ValueFromPipelineByPropertyName = true,
-           HelpMessage = "The name of one or more processes to stop. Wildcards are permitted."
-)]
-[Alias("ProcessName")]
-public string[] Name
-{
-  get { return processNames; }
-  set { processNames = value; }
-}
-private string[] processNames;
-```
-
 [!code-csharp[StopProcessSample04.cs](../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L44-L58 "StopProcessSample04.cs")]
 
 ```vb
