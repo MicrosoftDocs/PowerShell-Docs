@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=223919
 external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 title:  New-ScheduledJobOption
 ---
-
 # New-ScheduledJobOption
+
 ## SYNOPSIS
+
 Creates an object that contains advanced options for a scheduled job.
+
 ## SYNTAX
 
 ```
@@ -21,6 +23,7 @@ New-ScheduledJobOption [-RunElevated] [-HideInTaskScheduler] [-RestartOnIdleResu
 ```
 
 ## DESCRIPTION
+
 The **New-ScheduledJobOption** cmdlet creates an object that contains advanced options for a scheduled job.
 
 You can use the **ScheduledJobOptions** object that **New-ScheduledJobOption** returns to set job options for a new or existing scheduled job.
@@ -38,11 +41,16 @@ For more information about Scheduled Jobs, see the About topics in the PSSchedul
 Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see about_Scheduled_Jobs.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
+
 ## EXAMPLES
 
 ### Example 1: Create a scheduled job option object with default values
+
+```powershell
+New-ScheduledJobOption
 ```
-PS C:\> New-ScheduledJobOption
+
+```output
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -60,9 +68,14 @@ NewJobDefinition       :
 ```
 
 This command creates a scheduled job option object that has all of the default values.
+
 ### Example 2: Create a scheduled job option object with custom values
+
+```powershell
+New-ScheduledJobOption -RequireNetwork -StartIfOnBattery
 ```
-PS C:\> New-ScheduledJobOption -RequireNetwork -StartIfOnBattery
+
+```output
 StartIfOnBatteries     : True
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -82,16 +95,16 @@ NewJobDefinition       :
 The following command creates a scheduled job object that requires the network and runs the scheduled job even if the computer is not connected to AC power.
 
 The output shows that the **RequireNetwork** parameter changed the value of the **RunWithoutNetwork** property to false and the **StartIfOnBattery** parameter changed the value of the **StartIfOnBatteries** property to True.
+
 ### Example 3: Set options for a new scheduled job
+
+```powershell
+$RunAsAdmin = New-ScheduledJobOption -RunElevated
+Register-ScheduledJob -Name Backup -FilePath D:\Scripts\Backup.ps1 -Trigger $Mondays -ScheduledJobOption $RunAsAdmin
+Get-ScheduledJobOption -Name Backup
 ```
-The first command creates a **ScheduledJobOptions** object with the **RunElevated** parameter. It saves the object in the $RunAsAdmin variable.
-PS C:\> $RunAsAdmin = New-ScheduledJobOption -RunElevated
 
-The second command uses the Register-ScheduledJob cmdlet to create a new scheduled job. The value of the **ScheduledJobOption** parameter is the option object in the value of the $RunAsAdmin variable.
-PS C:\> Register-ScheduledJob -Name Backup -FilePath D:\Scripts\Backup.ps1 -Trigger $Mondays -ScheduledJobOption $RunAsAdmin
-
-The third command uses the Get-ScheduledJobOption cmdlet to get the job options of the Backup scheduled job.The cmdlet output shows that the **RunElevated** property is set to True and the **JobDefinition** property of the job option object is now populated with the scheduled job  object for the Backup scheduled job.
-PS C:\> Get-ScheduledJobOption -Name Backup
+```output
 StartIfOnBatteries     : False
 StopIfGoingOnBatteries : True
 WakeToRun              : False
@@ -108,11 +121,21 @@ JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinitio
 ```
 
 This example shows how to use the **ScheduledJobOptions** object that **New-ScheduledJobOption** returns to set the options for a new scheduled job.
-### Example 4: Sort the properties of a scheduled job option object
-```
-PS C:\> $Options = New-ScheduledJobOption -WakeToRun
 
-PS C:\> $Options.PSObject.Properties | Sort-Object -Property Name | Format-Table -Property Name, Value -Autosize
+The first command creates a **ScheduledJobOptions** object with the **RunElevated** parameter. It saves the object in the $RunAsAdmin variable.
+
+The second command uses the Register-ScheduledJob cmdlet to create a new scheduled job. The value of the **ScheduledJobOption** parameter is the option object in the value of the $RunAsAdmin variable.
+
+The third command uses the Get-ScheduledJobOption cmdlet to get the job options of the Backup scheduled job.The cmdlet output shows that the **RunElevated** property is set to True and the **JobDefinition** property of the job option object is now populated with the scheduled job  object for the Backup scheduled job.
+
+### Example 4: Sort the properties of a scheduled job option object
+
+```powershell
+$Options = New-ScheduledJobOption -WakeToRun
+$Options.PSObject.Properties | Sort-Object -Property Name | Format-Table -Property Name, Value -Autosize
+```
+
+```output
 Name                       Value
 ----                       -----
 DoNotAllowDemandStart      False
@@ -140,9 +163,11 @@ To get the properties of $Options as objects, the second command uses the **PSOb
 The command then pipes the property objects to the Sort-Object cmdlet, which sorts the properties in alphabetical order by name, and then to the Format-Table cmdlet, which displays the names and values of the properties in a table.
 
 This format makes it much easier to find the **WakeToRun** property of the **ScheduledJobOptions** object in $Options and to verify that its value was changed from False to True.
+
 ## PARAMETERS
 
 ### -ContinueIfGoingOnBattery
+
 Do not stop the scheduled job if the computer switches to battery power (disconnects from AC power) while the job is running.
 By default, scheduled jobs stop when the computer disconnects from AC power.
 
@@ -161,6 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -DoNotAllowDemandStart
+
 Start the job only when it is triggered.
 Users cannot start the job manually, such as by using the Run feature in Task Scheduler.
 
@@ -182,6 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -HideInTaskScheduler
+
 Do not display the job in Task Scheduler.
 This value affects only the computer on which the job runs.
 By default, scheduled tasks appear in Task Scheduler.
@@ -203,6 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdleDuration
+
 Specifies how long the computer must be idle before the job starts.
 The default value is 10 minutes.
 If the computer is not idle for the specified duration before the value of **IdleTimeout** expires, the scheduled job does not run until the next scheduled time, if any.
@@ -225,6 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdleTimeout
+
 Specifies how long the scheduled job waits for the computer to be idle.
 If this timeout expires before the computer remains idle for the time period that is specified by the **IdleDuration** parameter, the job does not run until the next scheduled time, if any.
 The default value is one hour.
@@ -247,6 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### -MultipleInstancePolicy
+
 Determines how the system responds to a request to start an instance of a scheduled job while another instance of the job is running.
 The default value is **IgnoreNew**.
 
@@ -273,6 +303,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequireNetwork
+
 Runs the scheduled job only when network connections are available.
 
 If you specify this parameter and the network is not available at the scheduled start time, the job does not run until the next scheduled start time, if any.
@@ -292,6 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -RestartOnIdleResume
+
 Restarts a scheduled job when the computer becomes idle.
 This parameter works with the **StopIfGoingOffIdle** parameter, which suspends a running scheduled job if the computer becomes active (leaves the idle state).
 
@@ -310,6 +342,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunElevated
+
 Runs the scheduled job with the permissions of a member of the Administrators group on the computer on which the job runs.
 
 To enable a scheduled job to run with Administrator permissions, use the **Credential** parameter of Register-ScheduledJob to provide explicit credential for the job.
@@ -329,6 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartIfIdle
+
 Starts the scheduled job if the computer has been idle for the time specified by the **IdleDuration** parameter before the time specified by the **IdleTimeout** parameter expires.
 
 By default, the **IdleDuration** and **IdleTimeout** parameters are ignored and the job starts at the scheduled start time even if the computer is busy.
@@ -350,6 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartIfOnBattery
+
 Starts the scheduled job even if the computer is running on batteries at the scheduled start time.
 The default value is False.
 
@@ -368,6 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### -StopIfGoingOffIdle
+
 Suspends a running scheduled job if the computer becomes active (not idle) while the job is running.
 
 By default, a scheduled job that is suspended when the computer becomes active resumes when the computer becomes idle again.
@@ -388,6 +424,7 @@ Accept wildcard characters: False
 ```
 
 ### -WakeToRun
+
 Wakes the computer from a Hibernate or Sleep state at the scheduled start time so it can run the job.
 By default, if the computer is in a Hibernate or Sleep state at the scheduled start time, the job does not run.
 
@@ -406,21 +443,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
+
 ## OUTPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
 
 ## NOTES
-* You can use the **ScheduledJobOptions** object that **New-ScheduledJobOption** creates as the value of the **ScheduledJobOption** parameter of the Register-ScheduledJob cmdlet. However, the **ScheduledJobOption** parameter can also take a hash table value that specifies the properties of the ScheduledJobOptions object and their values, such as:
 
-  `@{ShowInTaskScheduler=$False; RunElevated=$True; IdleDuration="00:05"}`
+- You can use the **ScheduledJobOptions** object that **New-ScheduledJobOption** creates as the value of the **ScheduledJobOption** parameter of the Register-ScheduledJob cmdlet. However, the **ScheduledJobOption** parameter can also take a hash table value that specifies the properties of the ScheduledJobOptions object and their values, such as:
 
-  For more information, see Register-ScheduledJob.
+ For more information, see [Register-ScheduledJob](Register-ScheduledJob.md)
+
 ## RELATED LINKS
 
 [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)

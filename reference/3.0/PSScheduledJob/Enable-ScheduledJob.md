@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,29 +7,35 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=223926
 external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 title:  Enable-ScheduledJob
 ---
-
 # Enable-ScheduledJob
+
 ## SYNOPSIS
+
 Enables a scheduled job
+
 ## SYNTAX
 
 ### Definition (Default)
+
 ```
 Enable-ScheduledJob [-InputObject] <ScheduledJobDefinition> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### DefinitionId
+
 ```
 Enable-ScheduledJob [-Id] <Int32> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DefinitionName
+
 ```
 Enable-ScheduledJob [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Enable-ScheduledJob** cmdlet re-enables scheduled jobs that are disabled, such as those that are disabled by using the Disable-ScheduledJob cmdlet.
 Enabled jobs run automatically when triggered.
 
@@ -41,11 +47,16 @@ For more information about Scheduled Jobs, see the About topics in the PSSchedul
 Import the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see about_Scheduled_Jobs.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
+
 ## EXAMPLES
 
 ### Example 1: Enable a scheduled job
+
+```powershell
+Enable-ScheduledJob -Id 2 -Passthru
 ```
-PS C:\> Enable-ScheduledJob -ID 2 -Passthru
+
+```output
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 2          Inventory       {1, 2}          \\Srv01\Scripts\Get-FullInventory.ps1    True
@@ -53,9 +64,14 @@ Id         Name            Triggers        Command                              
 
 This command enables the scheduled job with ID 2 on the local computer.
 The output shows the effect of the command.
+
 ### Example 2: Enable  all scheduled jobs
+
+```powershell
+Get-ScheduledJob | Enable-ScheduledJob -Passthru
 ```
-PS C:\> Get-ScheduledJob | Enable-ScheduledJob -Passthru
+
+```output
 Id         Name            Triggers        Command                                  Enabled
 --         ----            --------        -------                                  -------
 1          ArchiveProje... {}              C:\Scripts\Archive-DxProjects.ps1        True
@@ -68,9 +84,11 @@ This command enables all scheduled jobs on the local computer.
 It uses the Get-ScheduledJob cmdlet to get all scheduled job and the **Enable-ScheduledJob** cmdlet to enable them.
 
 **Enable-ScheduledJob** does not generate warnings or errors if you enable a scheduled job that is already enabled, so you can enable all scheduled jobs without conditions.
+
 ### Example 3: Enable selected scheduled jobs
-```
-PS C:\> Get-ScheduledJob | Get-ScheduledJobOption | Where-Object {$_.RunWithoutNetwork} | ForEach-Object {Enable-ScheduledJob -InputObject $_.JobDefinition}
+
+```powershell
+Get-ScheduledJob | Get-ScheduledJobOption | Where-Object {$_.RunWithoutNetwork} | ForEach-Object {Enable-ScheduledJob -InputObject $_.JobDefinition}
 ```
 
 This command enables scheduled jobs that do not require a network connection.
@@ -82,18 +100,22 @@ The **JobDefinition** property is used to complete the command.
 
 The command uses a pipeline operator (|) to send the job options to the  Where-Object cmdlet, which selects scheduled job option objects in which the **RunWithoutNetwork** property has a value of True ($true).
 Another pipeline operator sends the selected scheduled job options objects to the ForEach-Object cmdlet which runs an **Enable-ScheduledJob** command on the scheduled job in the value of the **JobDefinition** property of each job options object.
+
 ### Example 4: Enable scheduled jobs on a remote computer
-```
-PS C:\> Invoke-Command -ComputerName Srv01, Srv10 -ScriptBlock {Enable-ScheduledJob -Name Inventory}
+
+```powershell
+Invoke-Command -ComputerName Srv01, Srv10 -ScriptBlock {Enable-ScheduledJob -Name Inventory}
 ```
 
 This command enables scheduled jobs that have "test" in their names on two remote computers, Srv01 and Srv10.
 
 The command uses the Invoke-Command cmdlet to run an **Enable-ScheduledJob** command on the Srv01 and Srv10 computers.
 The command uses the **Name** parameter of **Enable-ScheduledJob** to enable the Inventory scheduled job on each computer.
+
 ## PARAMETERS
 
 ### -Id
+
 Enables the scheduled job with the specified identification number (ID).
 Enter the ID of a scheduled job.
 
@@ -110,6 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the scheduled job to be enabled.
 Enter a variable that contains  **ScheduledJobDefinition** objects or type a command or expression that gets **ScheduledJobDefinition** objects, such as a Get-ScheduledJob command.
 You can also pipe a **ScheduledJobDefinition** object to **Enable-ScheduledJob**.
@@ -127,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Enables the scheduled jobs with the specified names.
 Enter the name of a scheduled job.
 Wildcards are supported.
@@ -144,6 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns the scheduled jobs that were enabled.
 By default, this cmdlet does not generate any output.
 
@@ -160,6 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -175,6 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -191,18 +218,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 You can pipe a scheduled job to **Enable-ScheduledJob**.
+
 ## OUTPUTS
 
 ### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
 If you use the **Passthru** parameter, **Enable-ScheduledJob** returns the scheduled job that was enabled.
 Otherwise, this cmdlet does not generate any output.
+
 ## NOTES
-* **Enable-ScheduledJob** does not generate warnings or errors if you use it to enable a scheduled job that is already enabled.
+
+- **Enable-ScheduledJob** does not generate warnings or errors if you use it to enable a scheduled job that is already enabled.
+
 ## RELATED LINKS
 
 [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md)
