@@ -146,10 +146,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-You cannot pipe input to this cmdlet.
+### String
 
-## OUTPUTS
+You can pipe one or more computer names to Get-HotFix.
 
 ### System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering
 This cmdlet returns objects that represent the hotfixes on the computer.
