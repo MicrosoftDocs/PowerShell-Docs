@@ -146,8 +146,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-You cannot pipe input to Get-HotFix.
+### String
+
+You can pipe one or more computer names to Get-HotFix.
 
 ## OUTPUTS
 
