@@ -13,6 +13,7 @@ ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
 ---
 # Adding Parameters that Process Pipeline Input
+
 One source of input for a cmdlet is an object on the pipeline that originates from an upstream cmdlet. This section describes how to add a parameter to the Get-Proc cmdlet (described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)) so that the cmdlet can process pipeline objects.
 
  This Get-Proc cmdlet uses a `Name` parameter that accepts input from a pipeline object, retrieves process information from the local computer based on the supplied names, and then displays information about the processes at the command line.
@@ -33,7 +34,8 @@ One source of input for a cmdlet is an object on the pipeline that originates fr
 
 -   [Testing the Cmdlet](#testcmdletgetproc3)
 
-##  <a name="definecmdletgetproc3"></a> Defining the Cmdlet Class
+## Defining the Cmdlet Class
+
  The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. This cmdlet retrieves process information, so the verb name chosen here is "Get". (Almost any sort of cmdlet that is capable of retrieving information can process command-line input.) For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
  The following is the definition for this Get-Proc cmdlet. Details of this definition are given in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
@@ -49,7 +51,8 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-##  <a name="defineinputfrompipeline"></a> Defining Input from the Pipeline
+## Defining Input from the Pipeline
+
  This section describes how to define input from the pipeline for a cmdlet. This Get-Proc cmdlet defines a property that represents the `Name` parameter as described in [Adding Parameters that Process Command Line Input](./adding-parameters-that-process-command-line-input.md). (See that topic for general information about declaring parameters.)
 
  However, when a cmdlet needs to process pipeline input, it must have its parameters bound to input values by the Windows PowerShell runtime. To do this, you must add the `ValueFromPipeline` keyword or add the `ValueFromPipelineByProperty` keyword to the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute declaration. Specify the `ValueFromPipeline` keyword if the cmdlet accesses the complete input object. Specify the `ValueFromPipelineByProperty` if the cmdlet accesses only a property of the object.
@@ -80,10 +83,11 @@ End Property
 > [!NOTE]
 >  The setting of the `ValueFromPipeline` attribute keyword for a parameter takes precedence over the setting for the `ValueFromPipelineByPropertyName` keyword.
 
-##  <a name="providepipelineinputprocmethod"></a> Overriding an Input Processing Method
+## Overriding an Input Processing Method
+
  If your cmdlet is to handle pipeline input, it needs to override the appropriate input processing methods. The basic input processing methods are introduced in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
- This Get-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to handle the `Name` parameter input provided by the user or a script. This method will get the processes for each requested process name or all processes if no name is provided. Notice that within [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), the call to [System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) is the output mechanism for sending output objects to the pipeline. The second parameter of this call, `enumerateCollection`, is set to `true` to tell the Windows PowerShell runtime to enumerate the array of process objects, and write one process at a time to the command line.
+ This Get-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to handle the `Name` parameter input provided by the user or a script. This method will get the processes for each requested process name or all processes if no name is provided. Notice that within [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), the call to [System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) is the output mechanism for sending output objects to the pipeline. The second parameter of this call, `enumerateCollection`, is set to `true` to tell the Windows PowerShell runtime to enumerate the array of process objects, and write one process at a time to the command line.
 
 ```csharp
 protected override void ProcessRecord()
@@ -130,30 +134,36 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord
 ```
 
-##  <a name="codesamplepipelineinputgetproc3"></a> Code Sample
+## Code Sample
+
  For the complete C# sample code, see [GetProcessSample03 Sample](./getprocesssample03-sample.md).
 
-##  <a name="defineobjecttypesformattinggetproc3"></a> Defining Object Types and Formatting
+## Defining Object Types and Formatting
+
  Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
  Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
-##  <a name="buildcmdletgetproc3"></a> Building the Cmdlet
+## Building the Cmdlet
+
  After implementing a cmdlet it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
  After implementing a cmdlet it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-##  <a name="testcmdletgetproc3"></a> Testing the Cmdlet
+## Testing the Cmdlet
+
  When your cmdlet has been registered with Windows PowerShell, test it by running it on the command line. For example, test the code for the sample cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell &#91;OLD MSDN&#93;](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
- When your cmdlet has been registered with Windows PowerShell, test it by running it on the command line. For example, test the code for the sample cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell &#91;OLD MSDN&#93;](http://msdn.microsoft.com/en-us/69555d95-b481-43e1-86e7-b46d68b3e2dd).
+ When your cmdlet has been registered with Windows PowerShell, test it by running it on the command line. For example, test the code for the sample cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell &#91;OLD MSDN&#93;](https://msdn.microsoft.com/en-us/69555d95-b481-43e1-86e7-b46d68b3e2dd).
 
 -   At the Windows PowerShell prompt, enter the following commands to retrieve the process names through the pipeline.
 
-    ```powershell
-    PS> type ProcessNames | get-proc
+
+```powershell
+    type ProcessNames | get-proc
     ```
 
      The following output appears.
 
-    ```
+
+```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
     -------  ------  -----   ----- -----   ------    --  -----------
         809      21  40856    4448    147    9.50  2288  iexplore
@@ -162,15 +172,17 @@ End Sub 'ProcessRecord
        3927      62  71836   26984    467  195.19  1848  OUTLOOK
     ```
 
--   Enter the following lines to get the process objects that have a `Name` property from the processes called "IEXPLORE". This example uses the Get-Process cmdlet (provided by Windows PowerShell) as an upstream command to retrieve the "IEXPLORE" processes.
+-   Enter the following lines to get the process objects that have a `Name` property from the processes called "IEXPLORE". This example uses the `Get-Process` cmdlet (provided by Windows PowerShell) as an upstream command to retrieve the "IEXPLORE" processes.
 
-    ```powershell
-    PS> get-process iexplore | get-proc
+
+```powershell
+    Get-Process iexplore | get-proc
     ```
 
      The following output appears.
 
-    ```
+
+```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
     -------  ------  -----      ----- -----   ------     -- -----------
         801      21  40720    6544    142    9.52  2288  iexplore
@@ -180,11 +192,26 @@ End Sub 'ProcessRecord
     ```
 
 ## See Also
+
  [Adding Parameters that Process Command Line Input](./adding-parameters-that-process-command-line-input.md)
+
+
  [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
+
+
  [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+
+
  [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+
+
  [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+
+
  [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+
+
  [Windows PowerShell Reference](../windows-powershell-reference.md)
+
+
  [Cmdlet Samples](./cmdlet-samples.md)

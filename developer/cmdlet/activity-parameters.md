@@ -10,6 +10,7 @@ ms.assetid: 6e4e0cf6-19e0-44b8-8b40-d6f6075276cf
 caps.latest.revision: 5
 ---
 # Activity Parameters
+
 The following table lists the recommended names and functionality for activity parameters.
 
  Append
@@ -223,6 +224,25 @@ The following table lists the recommended names and functionality for activity p
  Implement this parameter so that the user can specify the duration (in seconds) that the cmdlet will wait for user input when the `Wait` parameter is specified.
 
 ## See Also
+
  [Cmdlet Parameters](./cmdlet-parameters.md)
+
+
+
+
+
+
+
+
+
  [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+
+
+
+
+
+
+
+
  [Windows PowerShell SDK](../windows-powershell-reference.md)
