@@ -107,7 +107,7 @@ Mode                LastWriteTime         Length Name
 -a----         6/1/2018  12:19 PM           1283 myFile[2].txt
 -a----         6/1/2018  12:19 PM           1432 myFile[3].txt
 
-PS C:\temp\Downloads> Get-ChildItem | Where-Object Name -Like '*`[*' | %{ Remove-Item -LiteralPath $_.Name }
+PS C:\temp\Downloads> Get-ChildItem | Where-Object Name -Like '*`[*' | ForEach-Object { Remove-Item -LiteralPath $_.Name }
 PS C:\temp\Downloads> Get-ChildItem
 
     Directory: C:\temp\Downloads
