@@ -13,9 +13,11 @@ ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
 caps.latest.revision: 14
 ---
 # Cmdlet Attributes
+
 Windows PowerShell defines several attributes that you can use to add common functionality to your cmdlets without implementing that functionality within your own code. This includes the Cmdlet attribute that identifies a Microsoft .NET Framework class as a cmdlet class, the OutputType attribute that specifies the .NET Framework types returned by the cmdlet, the Parameter attribute that identifies public properties as cmdlet parameters, and more.
 
 ## In This Section
+
  [Attributes in Cmdlet Code](./attributes-in-cmdlet-code.md)
  Describes the benefit of using attributes in cmdlet code.
 
@@ -53,4 +55,5 @@ Windows PowerShell defines several attributes that you can use to add common fun
  Describes how to define the possible values for a parameter argument.
 
 ## Reference
+
  [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

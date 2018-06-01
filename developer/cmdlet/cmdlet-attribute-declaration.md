@@ -14,6 +14,7 @@ ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
 caps.latest.revision: 12
 ---
 # Cmdlet Attribute Declaration
+
 The Cmdlet attribute identifies a Microsoft .NET Framework class as a cmdlet and specifies the verb and noun used to invoke the cmdlet.
 
 ## Syntax
@@ -24,6 +25,7 @@ The Cmdlet attribute identifies a Microsoft .NET Framework class as a cmdlet and
 ```
 
 #### Parameters
+
  `VerbName` ([System.String](/dotnet/api/System.String))
  Required. Specifies the cmdlet verb. This verb specifies the action taken by the cmdlet. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md) and [Required Development Guidelines](./required-development-guidelines.md).
 
@@ -57,6 +59,7 @@ The Cmdlet attribute identifies a Microsoft .NET Framework class as a cmdlet and
      The `Confirm` and `WhatIf` cmdlet parameters are available only for cmdlets that support [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) calls.
 
 ## Example
+
  The following class definition uses the Cmdlet attribute to identify the .NET Framework class for a **Get-Proc** cmdlet that retrieves information about the processes running on the local computer.
 
 ```csharp
@@ -67,4 +70,5 @@ public class GetProcCommand : Cmdlet
  For more information about the **Get-Proc** cmdlet, see [GetProc Tutorial](./getproc-tutorial.md).
 
 ## See Also
+
  [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
