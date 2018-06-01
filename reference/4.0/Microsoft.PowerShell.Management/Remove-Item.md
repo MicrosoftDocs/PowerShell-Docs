@@ -104,7 +104,7 @@ Mode                LastWriteTime         Length Name
 -a----         6/1/2018  12:19 PM           1283 myFile[2].txt
 -a----         6/1/2018  12:19 PM           1432 myFile[3].txt
 
-PS C:\temp\Downloads> Get-ChildItem | where name -like '*`[*'
+PS C:\temp\Downloads> Get-ChildItem | Where-Object Name -Like '*`[*'
 
     Directory: C:\temp\Downloads
 
