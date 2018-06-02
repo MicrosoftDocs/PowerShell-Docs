@@ -10,12 +10,12 @@ The Azure Desired State Configuration (DSC) VM Extension is updated as-needed to
 
 This article will provide information about each version of the Azure DSC VM Extension, what environments it supports, and comments and remarks on new features or changes.
 
-## Latest Versions
+## Latest Version
 
 ### Version 2.76
 
 - **Release date:**
-  - May 9, 2018
+  - May 9, 2018 (Azure) | June x, 2018 (Azure China, Azure Government)
 - **OS support:**
   - Windows Server 2016
   - Windows Server 2012 R2
