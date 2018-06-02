@@ -61,7 +61,6 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 The `Get-Help` cmdlet displays information about PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers, aliases and scripts.
 
 To get help for a PowerShell command, type "Get-Help" followed by the command name, such as: `Get-Help Get-Process`.
-To get a list of all help topics on your system, type: `Get-Help *`.
 You can display the entire help topic or use the parameters of the `Get-Help` cmdlet to get selected parts of the topic, such as the syntax, parameters, or examples.
 
 Conceptual help topics in PowerShell begin with "about_", such as "about_Comparison_Operators".
@@ -109,12 +108,11 @@ PS> Get-Help
 This command displays help about the Windows PowerShell help system.
 
 ### Example 2
-
+```powershell
+Get-Help *
 ```
-PS> Get-Help *
-```
 
-This command displays a list of the available help topics.
+This command displays a list of all help topics available on your system.
 
 ### Example 3
 
