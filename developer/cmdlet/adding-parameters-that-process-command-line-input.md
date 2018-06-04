@@ -194,13 +194,13 @@ End Sub 'ProcessRecord
 
 ## Defining Object Types and Formatting
 
- Windows PowerShell passes information between cmdlets by using .NET Framework objects. Consequently, a cmdlet might need to define its own type, or a cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting &#91;ps&#93;](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
- Windows PowerShell passes information between cmdlets by using .NET Framework objects. Consequently, a cmdlet might need to define its own type, or a cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting &#91;ps&#93;](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+ Windows PowerShell passes information between cmdlets by using .NET Framework objects. Consequently, a cmdlet might need to define its own type, or a cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+ Windows PowerShell passes information between cmdlets by using .NET Framework objects. Consequently, a cmdlet might need to define its own type, or a cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## Building the Cmdlet
 
- After you implement a cmdlet, you must register it with Windows PowerShell by using a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
- After you implement a cmdlet, you must register it with Windows PowerShell by using a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ After you implement a cmdlet, you must register it with Windows PowerShell by using a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ After you implement a cmdlet, you must register it with Windows PowerShell by using a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## Testing the Cmdlet
 
@@ -251,16 +251,16 @@ End Sub 'ProcessRecord
  [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
 
- [Extending Object Types and Formatting &#91;ps&#93;](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+ [Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
 
- [Extending Object Types and Formatting &#91;ps&#93;](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+ [Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
 
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 
  [Windows PowerShell Reference](../windows-powershell-reference.md)

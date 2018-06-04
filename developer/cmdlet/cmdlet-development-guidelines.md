@@ -18,14 +18,14 @@ The topics in this section provide development guidelines that you can use to pr
 
 ## In This Section
 
--   [Required Development Guidelines](./required-development-guidelines.md)
+- [Required Development Guidelines](./required-development-guidelines.md)
 
--   [Strongly Encouraged Development Guidelines](./strongly-encouraged-development-guidelines.md)
+- [Strongly Encouraged Development Guidelines](./strongly-encouraged-development-guidelines.md)
 
--   [Advisory Development Guidelines](./advisory-development-guidelines.md)
+- [Advisory Development Guidelines](./advisory-development-guidelines.md)
 
 ## See Also
 
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
 
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

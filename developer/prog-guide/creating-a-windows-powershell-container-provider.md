@@ -18,8 +18,8 @@ This topic describes how to create a Windows PowerShell provider that can work o
  Providers that can work on multi-level data stores are referred to as Windows PowerShell container providers. However, be aware that a Windows PowerShell container provider can be used only when there is one container (no nested containers) with items in it. If there are nested containers, then you must implement a Windows PowerShell navigation provider. For more information about implementing Windows PowerShell navigation provider, see [Creating a Windows PowerShell Navigation Provider](./creating-a-windows-powershell-navigation-provider.md).
 
 > [!NOTE]
->  You can download the C# source file (AccessDBSampleProvider04.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK &#91;delete&#93;](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
->  You can download the C# source file (AccessDBSampleProvider04.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK &#91;delete&#93;](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+>  You can download the C# source file (AccessDBSampleProvider04.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+>  You can download the C# source file (AccessDBSampleProvider04.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
 >
 >  The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
@@ -386,8 +386,8 @@ protected override bool HasChildItems( string path )
  For complete sample code, see [AccessDbProviderSample04 Code Sample](./accessdbprovidersample04-code-sample.md).
 
 ##  <a name="buildcmdletprovidercontainer"></a> Building the Windows PowerShell Provider
- See [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
- See [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ##  <a name="testcmdletprovidercontainer"></a> Testing the Windows PowerShell Provider
  When your Windows PowerShell provider has been registered with Windows PowerShell, you can test it by running the supported cmdlets on the command line. Be aware that the following example output uses a fictitious Access database.
@@ -501,7 +501,7 @@ protected override bool HasChildItems( string path )
  [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md)
  [Implementing an Item Windows PowerShell Provider](./creating-a-windows-powershell-item-provider.md)
  [Implementing a Navigation Windows PowerShell Provider](./creating-a-windows-powershell-navigation-provider.md)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
  [Windows PowerShell SDK](../windows-powershell-reference.md)
  [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
