@@ -34,4 +34,4 @@ You can host Windows PowerShell in your application. The host application can de
  This section includes samples of complete host applications.
 
 ## See Also
- [Windows PowerShell &#91;MSDN&#93;](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
+ [Windows PowerShell](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
