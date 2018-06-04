@@ -73,13 +73,13 @@ The Parameter attribute identifies a public property of the cmdlet class as a cm
 
     -   Multiple parameters can define `ValueFromPipelineByPropertyName = true`.
 
--   For more information about the guidelines for parameter names, see [Cmdlet Parameter Names &#91;old&#93;](http://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb).
--   For more information about the guidelines for parameter names, see [Cmdlet Parameter Names &#91;old&#93;](http://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb).
+-   For more information about the guidelines for parameter names, see [Cmdlet Parameter Names](http://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb).
+-   For more information about the guidelines for parameter names, see [Cmdlet Parameter Names](http://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb).
 
 -   The parameter attribute is defined by the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) class.
 
 ## See Also
  [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
- [Cmdlet Parameter Names &#91;old&#93;](http://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)
- [Cmdlet Parameter Names &#91;old&#93;](http://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)
+ [Cmdlet Parameter Names](http://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)
+ [Cmdlet Parameter Names](http://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)
  [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

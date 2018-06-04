@@ -141,14 +141,14 @@ if (!wildcard.IsMatch(processName))
  For the complete C# sample code, see [StopProcessSample03 Sample](./stopprocesssample03-sample.md).
 
 ##  <a name="defineobjecttypesformattingstopproc3"></a> Define Object Types and Formatting
- Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+ Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ##  <a name="buildcmdletstopproc3"></a> Building the Cmdlet
- After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ##  <a name="testcmdletstopproc3"></a> Testing the Cmdlet
- When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell &#91;OLD MSDN&#93;](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
- When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell &#91;OLD MSDN&#93;](http://msdn.microsoft.com/en-us/69555d95-b481-43e1-86e7-b46d68b3e2dd).
+ When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+ When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](http://msdn.microsoft.com/en-us/69555d95-b481-43e1-86e7-b46d68b3e2dd).
 
 -   Start Windows PowerShell and use Stop-Proc to stop a process using the ProcessName alias for the `Name` parameter.
 
@@ -217,10 +217,10 @@ if (!wildcard.IsMatch(processName))
 
 ## See Also
  [Create a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
- [How to Create a Windows PowerShell Cmdlet &#91;delete&#93;](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
- [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
- [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Create a Windows PowerShell Cmdlet](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+ [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+ [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
  [Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md)
  [Windows PowerShell SDK](../windows-powershell-reference.md)

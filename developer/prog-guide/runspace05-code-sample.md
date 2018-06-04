@@ -10,11 +10,11 @@ ms.assetid: 9688cd69-07ea-4ea0-8822-0a4850bcf86c
 caps.latest.revision: 7
 ---
 # RunSpace05 Code Sample
-Here is the source code for the Runspace05 sample that is described in [Configuring a Runspace Using RunspaceConfiguration &#91;ps&#93;](http://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2). This sample shows how to create the runspace configuration information, create a runspace, create a pipeline with a single command, and then execute the pipeline. The command that is executed is the Get-Process cmdlet.
+Here is the source code for the Runspace05 sample that is described in [Configuring a Runspace Using RunspaceConfiguration](http://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2). This sample shows how to create the runspace configuration information, create a runspace, create a pipeline with a single command, and then execute the pipeline. The command that is executed is the Get-Process cmdlet.
 
 > [!NOTE]
->  You can download the C# source file (runspace05.cs) by using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK &#91;delete&#93;](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
->  You can download the C# source file (runspace05.cs) by using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK &#91;delete&#93;](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+>  You can download the C# source file (runspace05.cs) by using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+>  You can download the C# source file (runspace05.cs) by using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
 >
 >  The downloaded source files are available in the **\<PowerShell Samples>** directory.
 

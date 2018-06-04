@@ -1091,8 +1091,8 @@ namespace Microsoft.Samples.PowerShell.Commands
 ```
 
 ##  <a name="buildcmdletselectstr"></a> Building the Cmdlet
- After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
- After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ##  <a name="testcmdletselectstr"></a> Testing the Cmdlet
  When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. The following procedure can be used to test the sample Select-Str cmdlet.
@@ -1214,13 +1214,13 @@ namespace Microsoft.Samples.PowerShell.Commands
     ```
 
 ## See Also
- [How to Create a Windows PowerShell Cmdlet &#91;delete&#93;](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
- [How to Create a Windows PowerShell Cmdlet &#91;delete&#93;](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+ [How to Create a Windows PowerShell Cmdlet](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+ [How to Create a Windows PowerShell Cmdlet](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
  [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
  [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
  [Design Your Windows PowerShell Provider](../prog-guide/designing-your-windows-powershell-provider.md)
  [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
  [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
  [Windows PowerShell SDK](../windows-powershell-reference.md)

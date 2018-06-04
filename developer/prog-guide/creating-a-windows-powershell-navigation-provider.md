@@ -16,8 +16,8 @@ caps.latest.revision: 5
 This topic describes how to create a Windows PowerShell navigation provider that can navigate the data store. This type of provider supports recursive commands, nested containers, and relative paths.
 
 > [!NOTE]
->  You can download the C# source file (AccessDBSampleProvider05.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK &#91;delete&#93;](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
->  You can download the C# source file (AccessDBSampleProvider05.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK &#91;delete&#93;](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+>  You can download the C# source file (AccessDBSampleProvider05.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+>  You can download the C# source file (AccessDBSampleProvider05.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
 >
 >  The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
@@ -161,12 +161,12 @@ This topic describes how to create a Windows PowerShell navigation provider that
  For complete sample code, see [AccessDbProviderSample05 Code Sample](./accessdbprovidersample05-code-sample.md).
 
 ##  <a name="defineobjecttypesformattingnavigationprovider"></a> Defining Object Types and Formatting
- It is possible for a provider to add members to existing objects or define new objects. For more information, see[Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
- It is possible for a provider to add members to existing objects or define new objects. For more information, see[Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+ It is possible for a provider to add members to existing objects or define new objects. For more information, see[Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+ It is possible for a provider to add members to existing objects or define new objects. For more information, see[Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ##  <a name="buildprovidernavigation"></a> Building the Windows PowerShell provider
- For more information, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
- For more information, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ For more information, see [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ For more information, see [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ##  <a name="testprovidernavigation"></a> Testing the Windows PowerShell provider
  When your Windows PowerShell provider has been registered with Windows PowerShell, you can test it by running the supported cmdlets on the command line, including cmdlets made available by derivation. This example will test the sample navigation provider.
@@ -277,10 +277,10 @@ This topic describes how to create a Windows PowerShell navigation provider that
 ## See Also
  [Creating Windows PowerShell providers](./how-to-create-a-windows-powershell-provider.md)
  [Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
- [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
- [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+ [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+ [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
  [Implement a Container Windows PowerShell provider](./creating-a-windows-powershell-container-provider.md)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
  [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
  [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -22,7 +22,7 @@ A binary module can be any assembly (.dll) that contains cmdlet classes. By defa
 
 2.  If necessary, create the rest of your solution: (additional cmdlets, XML files, and so on) and describe them with a module manifest.
 
-     In addition to describing the cmdlet assemblies in your solution, a module manifest can describe how you want your module exported and imported, what cmdlets will be exposed, and what additional files will go into the module. As stated previously however, PowerShell can treat a binary cmdlet like a module with no additional effort. As such, a module manifest is useful mainly for combining multiple files into a single package, or for explicitly controlling publication for a given assembly. For more information, see [How to Write a PowerShell Module Manifest &#91;archive&#93;](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+     In addition to describing the cmdlet assemblies in your solution, a module manifest can describe how you want your module exported and imported, what cmdlets will be exposed, and what additional files will go into the module. As stated previously however, PowerShell can treat a binary cmdlet like a module with no additional effort. As such, a module manifest is useful mainly for combining multiple files into a single package, or for explicitly controlling publication for a given assembly. For more information, see [How to Write a PowerShell Module Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
 
      The following code is an extremely simple C# code block that contains three cmdlets in the same file that can be used as a module.
 
@@ -76,8 +76,8 @@ A binary module can be any assembly (.dll) that contains cmdlet classes. By defa
 ## Importing Snap-in Assemblies as Modules
  Cmdlets and providers that exist in snap-in assemblies can be loaded as binary modules. When the snap-in assemblies are loaded as binary modules, the cmdlets and providers in the snap-in are available to the user, but the snap-in class in the assembly is ignored, and the snap-in is not registered. As a result, the snap-in cmdlets provided by Windows PowerShell cannot detect the snap-in even though the cmdlets and providers are available to the session.
 
- In addition, any formatting or types files that are referenced by the snap-in cannot be imported as part of a binary module. To import the formatting and types files you must create a module manifest. See, [How to Write a PowerShell Module Manifest &#91;archive&#93;](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
- In addition, any formatting or types files that are referenced by the snap-in cannot be imported as part of a binary module. To import the formatting and types files you must create a module manifest. See, [How to Write a PowerShell Module Manifest &#91;archive&#93;](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+ In addition, any formatting or types files that are referenced by the snap-in cannot be imported as part of a binary module. To import the formatting and types files you must create a module manifest. See, [How to Write a PowerShell Module Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+ In addition, any formatting or types files that are referenced by the snap-in cannot be imported as part of a binary module. To import the formatting and types files you must create a module manifest. See, [How to Write a PowerShell Module Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
 
 ## See Also
  [Writing a Windows PowerShell Module](./writing-a-windows-powershell-module.md)
