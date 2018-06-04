@@ -77,7 +77,7 @@ Gets the results of the Windows PowerShell background jobs in the current sessio
 
 Deletes a Windows PowerShell background job.
 
-[Start-Job](http://technet.microsoft.com/library/hh849698.aspx)
+[Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job)
 
 Starts a Windows PowerShell background job.
 

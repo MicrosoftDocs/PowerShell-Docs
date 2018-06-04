@@ -3,7 +3,6 @@ title: Scheduling Jobs with the Windows PowerShell API
 ms.date: 09/13/2016
 ms.topic: "article"
 ---
-
 # Scheduling Jobs with the Windows PowerShell API
 
 You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a
