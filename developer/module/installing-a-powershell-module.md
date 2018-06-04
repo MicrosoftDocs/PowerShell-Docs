@@ -234,6 +234,6 @@ PS C:\>Microsoft.PowerShell.Utility\Get-Date
  Users can use the **Prefix** parameter of the **Import-Module** cmdlet to use an alternate prefix. The value of the **Prefix** parameter takes precedence over the value of the **DefaultCommandPrefix** key.
 
 ## See Also
- [about_Command_Precedence &#91;v4&#93;](/powershell/module/microsoft.powershell.core/about/about_command_precedence)
- [about_Command_Precedence &#91;v4&#93;](http://msdn.microsoft.com/en-us/fb14a05e-d461-432d-a253-e9371b54bd2e)
+ [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)
+ [about_Command_Precedence](http://msdn.microsoft.com/en-us/fb14a05e-d461-432d-a253-e9371b54bd2e)
  [Writing a Windows PowerShell Module](./writing-a-windows-powershell-module.md)
