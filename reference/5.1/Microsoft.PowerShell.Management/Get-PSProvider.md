@@ -104,7 +104,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters
@@ -112,8 +112,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-You cannot pipe objects to this cmdlet.
+### String[]
+
+You can pipe one or more provider name strings to this cmdlet.
 
 ## OUTPUTS
 
