@@ -136,10 +136,13 @@ Accept wildcard characters: False
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
-### None
-You cannot pipe input to Get-HotFix.
+### String
+
+You can pipe one or more computer names to Get-HotFix.
+
 ## OUTPUTS
 
 ### System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering
