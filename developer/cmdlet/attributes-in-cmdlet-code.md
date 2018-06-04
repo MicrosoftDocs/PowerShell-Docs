@@ -10,7 +10,8 @@ ms.assetid: aea8d293-c45b-41eb-8385-548f7c9b280b
 caps.latest.revision: 10
 ---
 # Attributes in Cmdlet Code
-To use the common functionality provided by Windows PowerShell, the classes and public properties defined in the cmdlet code are decorated with attributes. For example, the following class definition uses the Cmdlet attribute to identify the Microsoft .NET Framework class in which the **Get-Proc** cmdlet is implemented. (This cmdlet is used as an example in this document, and is similar to the **Get-Process** cmdlet provided by Windows PowerShell.)
+
+To use the common functionality provided by Windows PowerShell, the classes and public properties defined in the cmdlet code are decorated with attributes. For example, the following class definition uses the Cmdlet attribute to identify the Microsoft .NET Framework class in which the **Get-Proc** cmdlet is implemented. (This cmdlet is used as an example in this document, and is similar to the `Get-Process` cmdlet provided by Windows PowerShell.)
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "Proc")]
@@ -24,5 +25,7 @@ public class GetProcCommand : Cmdlet
  For more information about the different attributes that can be declared in your cmdlets, see [Attribute Types](./attribute-types.md).
 
 ## See Also
+
  [Attribute Types](./attribute-types.md)
+
  [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

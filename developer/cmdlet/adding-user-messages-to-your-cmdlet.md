@@ -33,6 +33,7 @@ ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
 ---
 # Adding User Messages to Your Cmdlet
+
 Cmdlets can write several kinds of messages that can be displayed to the user by the Windows PowerShell runtime. These messages include the following types:
 
 -   Verbose messages that contain general user information.
@@ -46,6 +47,7 @@ Cmdlets can write several kinds of messages that can be displayed to the user by
  There are no limits to the number of messages that your cmdlet can write or the type of messages that your cmdlet writes. Each message is written by making a specific call from within the input processing method of your cmdlet.
 
 ## The StopProc Cmdlet
+
  Topics in this section include the following:
 
 -   [Defining the Cmdlet](#definecmdletstopproc2)
@@ -70,7 +72,8 @@ Cmdlets can write several kinds of messages that can be displayed to the user by
 
 -   [Testing the Cmdlet](#testcmdletstopproc2)
 
-##  <a name="definecmdletstopproc2"></a> Defining the Cmdlet
+## Defining the Cmdlet
+
  The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Any sort of cmdlet can write user notifications from its input processing methods; so, in general, you can name this cmdlet using any verb that indicates what system modifications the cmdlet performs. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
  The Stop-Proc cmdlet is designed to modify the system; therefore, the [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) declaration for the .NET class must include the `SupportsShouldProcess` attribute keyword and be set to `true`.
@@ -83,7 +86,8 @@ Cmdlets can write several kinds of messages that can be displayed to the user by
 public class StopProcCommand : Cmdlet
 ```
 
-##  <a name="defineparametersforsystemmodstopproc2"></a> Defining Parameters for System Modification
+## Defining Parameters for System Modification
+
  The Stop-Proc cmdlet defines three parameters: `Name`, `Force`, and `PassThru`. For more information about defining these parameters, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
  Here is the parameter declaration for the Stop-Proc cmdlet.
@@ -129,13 +133,15 @@ public SwitchParameter PassThru
 private bool passThru;
 ```
 
-##  <a name="provideinputprocessingstopproc2"></a> Overriding an Input Processing Method
+## Overriding an Input Processing Method
+
  Your cmdlet must override an input processing method, most often it will be [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). This Stop-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) input processing method. In this implementation of the Stop-Proc cmdlet, calls are made to write verbose messages, debug messages, and warning messages.
 
 > [!NOTE]
 >  For more information about how this method calls the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
-##  <a name="writeverbosenotification"></a> Writing a Verbose Message
+## Writing a Verbose Message
+
  The [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method is used to write general user-level information that is unrelated to specific error conditions. The system administrator can then use that information to continue processing other commands. In addition, any information written using this method should be localized as needed.
 
  The following code from this Stop-Proc cmdlet shows two calls to the [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method from the override of the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
@@ -152,7 +158,8 @@ message = String.Format("Stopped process \"{0}\", pid {1}.",
 WriteVerbose(message);
 ```
 
-##  <a name="writedebugnotification"></a> Writing a Debug Message
+## Writing a Debug Message
+
  The [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method is used to write debug messages that can be used to troubleshoot the operation of the cmdlet. The call is made from an input processing method.
 
 > [!NOTE]
@@ -183,7 +190,8 @@ WriteObject(process);
 
  **PS> trace-expression stop-proc -file proc.log -command stop-proc notepad**
 
-##  <a name="writewarningnotification"></a> Writing a Warning Message
+## Writing a Warning Message
+
  The [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method is used to write a warning when the cmdlet is about to perform an operation that might have an unexpected result, for example, overwriting a read-only file.
 
  The following code from the sample Stop-Proc cmdlet shows the call to the [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method from the override of the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
@@ -198,7 +206,8 @@ WriteObject(process);
 } // if (criticalProcess...
 ```
 
-##  <a name="writeprogressnotification"></a> Writing a Progress Message
+## Writing a Progress Message
+
  The [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) is used to write progress messages when cmdlet operations take an extended amount of time to complete. A call to [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) passes a [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) object that is sent to the hosting application for rendering to the user.
 
 > [!NOTE]
@@ -217,30 +226,36 @@ pr.RecordType = ProgressRecordType.Completed;
 WriteProgress(pr);
 ```
 
-##  <a name="codesampleusernotificationsstopproc2"></a> Code Sample
+## Code Sample
+
  For the complete C# sample code, see [StopProcessSample02 Sample](./stopprocesssample02-sample.md).
 
-##  <a name="defineobjecttypesformattingstopproc2"></a> Define Object Types and Formatting
- Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
- Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+## Define Object Types and Formatting
 
-##  <a name="buildcmdletstopproc2"></a> Building the Cmdlet
- After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
- After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+ Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
-##  <a name="testcmdletstopproc2"></a> Testing the Cmdlet
+## Building the Cmdlet
+
+ After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+
+## Testing the Cmdlet
+
  When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell &#91;OLD MSDN&#93;](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
  When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell &#91;OLD MSDN&#93;](http://msdn.microsoft.com/en-us/69555d95-b481-43e1-86e7-b46d68b3e2dd).
 
 -   The following command-line entry uses Stop-Proc to stop the process named "NOTEPAD", provide verbose notifications, and print debug information.
 
-    ```powershell
-    PS> stop-proc -Name notepad -Verbose -Debug
+
+```powershell
+    stop-proc -Name notepad -Verbose -Debug
     ```
 
      The following output appears.
 
-    ```
+
+```
     VERBOSE: Attempting to stop process " notepad ".
     DEBUG: Acquired name for pid 5584 : "notepad"
 
@@ -256,11 +271,26 @@ WriteProgress(pr);
     ```
 
 ## See Also
+
  [Create a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
- [How to Create a Windows PowerShell Cmdlet &#91;delete&#93;](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
- [How to Create a Windows PowerShell Cmdlet &#91;delete&#93;](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
- [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
- [Extending Object Types and Formatting &#91;ps&#93;](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
- [How to Register Cmdlets, Providers, and Host Applications &#91;ps&#93;](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+
+
+ [How to Create a Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+
+
+ [How to Create a Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+
+
+ [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+
+
+ [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+
+
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+
+
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+
+
  [Windows PowerShell SDK](../windows-powershell-reference.md)

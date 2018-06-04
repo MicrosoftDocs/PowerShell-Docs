@@ -3,7 +3,6 @@ title: Installing the Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: "article"
 ---
-
 # Installing the Windows PowerShell SDK
 
 Applies To: Windows PowerShell 2.0, Windows PowerShell 3.0
@@ -102,11 +101,11 @@ description of what each sample does.
 
 #### Hosting application samples
 
-- Runspace01 - Shows how to use the PowerShell class to run the Get-Process cmdlet synchronously.
-  The Get-Process cmdlet returns Process objects for each process running on the local computer.
-- Runspace02 - Shows how to use the PowerShell class to run the Get-Process and Sort-Object cmdlets
-  synchronously. The Get-Process cmdlet returns Process objects for each process running on the local
-  computer, and the Sort-Object sorts the objects based on their Id property. The results of these
+- Runspace01 - Shows how to use the PowerShell class to run the `Get-Process` cmdlet synchronously.
+  The `Get-Process` cmdlet returns Process objects for each process running on the local computer.
+- Runspace02 - Shows how to use the PowerShell class to run the `Get-Process` and `Sort-Object` cmdlets
+  synchronously. The `Get-Process` cmdlet returns Process objects for each process running on the local
+  computer, and the `Sort-Object` sorts the objects based on their Id property. The results of these
   commands is displayed by using a DataGridView control.
 - Runspace03 - Shows how to use the PowerShell class to run a script synchronously, and how to
   handle non-terminating errors. The script receives a list of process names and then retrieves those
@@ -146,7 +145,7 @@ description of what each sample does.
   results.
 - Host02 - Shows how to write a host application that uses the Windows PowerShell runtime along
   with a custom host implementation. The host application sets the host culture to German, runs the
-  Get-Process cmdlet and displays the results as you would see them by using pwrsh.exe, and then
+  `Get-Process` cmdlet and displays the results as you would see them by using pwrsh.exe, and then
   prints out the current data and time in German.
 - Host03 - Shows how to build an interactive console-based host application that reads commands
   from the command line, executes the commands, and then displays the results to the console.
@@ -155,8 +154,8 @@ description of what each sample does.
   host application also supports displaying prompts that allow the user to specify multiple choices.
 - Host05 - Shows how to build an interactive console-based host application that reads commands
   from the command line, executes the commands, and then displays the results to the console. This
-  host application also supports calls to remote computers by using the Enter-PsSession and
-  Exit-PsSession cmdlets.
+  host application also supports calls to remote computers by using the `Enter-PsSession` and
+  `Exit-PsSession` cmdlets.
 - Host06 - Shows how to build an interactive console-based host application that reads commands
   from the command line, executes the commands, and then displays the results to the console. In
   addition, this sample uses the Tokenizer APIs to specify the color of the text that is entered by
@@ -168,25 +167,25 @@ description of what each sample does.
   CmdletProvider class. It is included here only for completeness.
 
 - AccessDBProviderSample02 - Shows how to overwrite the NewDrive and RemoveDrive methods to support
-  calls to the New-PSDrive and Remove-PSDrive cmdlets. The provider class in this sample derives from
+  calls to the `New-PSDrive` and `Remove-PSDrive` cmdlets. The provider class in this sample derives from
   the DriveCmdletProvider class.
 
 - AccessDBProviderSample03 - Shows how to overwrite the GetItem and SetItem methods to support
-  calls to the Get-Item and Set-Item cmdlets. The provider class in this sample derives from the
+  calls to the `Get-Item` and `Set-Item` cmdlets. The provider class in this sample derives from the
   ItemCmdletProvider class.
 
 - AccessDBProviderSample04 - Shows how to overwrite container methods to support calls to the
-  Copy-Item, Get-ChildItem, New-Item, and Remove-Item cmdlets. These methods should be implemented
+  `Copy-Item`, `Get-ChildItem`, `New-Item`, and `Remove-Item` cmdlets. These methods should be implemented
   when the data store contains items that are containers. A container is a group of child items under
   a common parent item. The provider class in this sample derives from the ItemCmdletProvider class.
 
 - AccessDBProviderSample05 - Shows how to overwrite container methods to support calls to the
-  Move-Item and Join-Path cmdlets. These methods should be implemented when the user needs to move
+  `Move-Item` and `Join-Path` cmdlets. These methods should be implemented when the user needs to move
   items within a container and if the data store contains nested containers. The provider class in
   this sample derives from the NavigationCmdletProvider class.
 
 - AccessDBProviderSample06 - Shows how to overwrite content methods to support calls to the
-  Clear-Content, Get-Content, and Set-Content cmdlets. These methods should be implemented when the
+  `Clear-Content`, `Get-Content`, and `Set-Content` cmdlets. These methods should be implemented when the
   user needs to manage the content of the items in the data store. The provider class in this sample
   derives from the NavigationCmdletProvider class, and it implements the IContentCmdletProvider
   interface.
