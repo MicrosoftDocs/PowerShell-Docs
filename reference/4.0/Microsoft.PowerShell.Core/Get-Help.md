@@ -52,41 +52,40 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 ```
 
 ## DESCRIPTION
-The **Get-Help** cmdlet displays information about Windows PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers, aliases and scripts.
+The `Get-Help` cmdlet displays information about PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers, aliases and scripts.
 
-To get help for a Windows PowerShell command, type "Get-Help" followed by the command name, such as: `Get-Help Get-Process`.
-To get a list of all help topics on your system, type: `Get-Help *`.
-You can display the entire help topic or use the parameters of the **Get-Help** cmdlet to get selected parts of the topic, such as the syntax, parameters, or examples.
+To get help for a PowerShell command, type "Get-Help" followed by the command name, such as: `Get-Help Get-Process`.
+You can display the entire help topic or use the parameters of the `Get-Help` cmdlet to get selected parts of the topic, such as the syntax, parameters, or examples.
 
-Conceptual help topics in Windows PowerShell begin with "about_", such as "about_Comparison_Operators".
-To see all "about_" topics, type: `Get-Help about_*`.
-To see a particular topic, type: `Get-Help about_\<topic-name\>`, such as `Get-Help about_Comparison_Operators`.
+Conceptual help topics in PowerShell begin with "about_", such as "about_Comparison_Operators".
+To see all "about_" topics, type `Get-Help about_*`.
+To see a particular topic, type `Get-Help about_<topic-name>`, such as `Get-Help about_Comparison_Operators`.
 
-To get help for a Windows PowerShell provider, type "Get-Help" followed by the provider name.
-For example, to get help for the Certificate provider, type: `Get-Help Certificate`.
+To get help for a PowerShell provider, type `Get-Help` followed by the provider name.
+For example, to get help for the Certificate provider, type `Get-Help Certificate`.
 
-In addition to "Get-Help", you can also type "help" or "man", which displays one screen of text at a time, or "\<cmdlet-name\> -?", which is identical to **Get-Help** but works only for commands.
+In addition to "Get-Help", you can also type `help` or `man`, which displays one screen of text at a time, or `<cmdlet-name> -?`, which is identical to `Get-Help` but works only for commands.
 
-**Get-Help** gets the help content that it displays from help files on your computer.
-Without the help files, **Get-Help** displays only basic information about commands.
-Some Windows PowerShell modules come with help files.
+`Get-Help` gets the help content that it displays from help files on your computer.
+Without the help files, `Get-Help` displays only basic information about commands.
+Some PowerShell modules come with help files.
 However, beginning in Windows PowerShell 3.0, the modules that come with Windows do not include help files.
-To download or update the help files for a module in Windows PowerShell 3.0, use the Update-Help cmdlet.
+To download or update the help files for a module in Windows PowerShell 3.0, use the `Update-Help` cmdlet.
 
-You can also view the help topics for Windows PowerShell online in the TechNet Library.
+You can also view the help topics for PowerShell online in the Microsoft Docs.
 To get the online version of a help topic, use the **Online** parameter, such as: `Get-Help Get-Process -Online`.
-You can read all of the help topics beginning at: http://go.microsoft.com/fwlink/?LinkID=107116http://go.microsoft.com/fwlink/?LinkID=107116.
+To read all of the help topics, see [PowerShell Documentation](https://go.microsoft.com/fwlink/?LinkID=107116) in the Microsoft Docs.
 
-If you type "Get-Help" followed by the exact name of a help topic, or by a word unique to a help topic, **Get-Help** displays the topic contents.
-If you enter a word or word pattern that appears in several help topic titles, **Get-Help** displays a list of the matching titles.
-If you enter a word that does not appear in any help topic titles, **Get-Help** displays a list of topics that include that word in their contents.
+If you type "Get-Help" followed by the exact name of a help topic, or by a word unique to a help topic, `Get-Help` displays the topic contents.
+If you enter a word or word pattern that appears in several help topic titles, `Get-Help` displays a list of the matching titles.
+If you enter a word that does not appear in any help topic titles, `Get-Help` displays a list of topics that include that word in their contents.
 
-**Get-Help** can get help topics for all supported languages and locales.
-**Get-Help** first looks for help files in the locale set for Windows, then in the parent locale (such as "pt" for "pt-BR"), and then in a fallback locale.
-Beginning in Windows PowerShell 3.0, if **Get-Help** does not find help in the fallback locale, it looks for help topics in English ("en-US") before returning an error message or displaying auto-generated help.
+`Get-Help` can get help topics for all supported languages and locales.
+`Get-Help` first looks for help files in the locale set for Windows, then in the parent locale (such as "pt" for "pt-BR"), and then in a fallback locale.
+Beginning in Windows PowerShell 3.0, if `Get-Help` does not find help in the fallback locale, it looks for help topics in English ("en-US") before returning an error message or displaying auto-generated help.
 
-For information about the symbols that **Get-Help** displays in the command syntax diagram, see about_Command_Syntaxhttp://go.microsoft.com/fwlink/?LinkID=113215.
-For information about parameter attributes, such as **Required** and **Position**, see about_Parametershttp://go.microsoft.com/fwlink/?LinkID=113243.
+For information about the symbols that `Get-Help` displays in the command syntax diagram, see [about_Command_Syntax](About/about_Command_Syntax.md).
+For information about parameter attributes, such as **Required** and **Position**, see [about_Parameters](About/about_Parameters.md).
 
 **TROUBLESHOOTING NOTE**: In Windows PowerShell 3.0 and 4.0, **Get-Help** cannot find About topics in modules unless the module is imported into the current session.
 This is a known issue.
@@ -102,11 +101,11 @@ PS C:\> Get-Help
 This command displays help about the Windows PowerShell help system.
 
 ### Example 2
-```
-PS C:\> Get-Help *
+```powershell
+Get-Help *
 ```
 
-This command displays a list of the available help topics.
+This command displays a list of all help topics available on your system.
 
 ### Example 3
 ```

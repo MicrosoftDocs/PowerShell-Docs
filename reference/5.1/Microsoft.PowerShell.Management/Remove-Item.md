@@ -88,6 +88,42 @@ The path is specified, but the optional parameter name (*Path*) is omitted.
 The *Recurse* parameter deletes all of the contents of the OldApp key recursively.
 If the key contains subkeys and you omit the *Recurse* parameter, you are prompted to confirm that you want to delete the contents of the key.
 
+### Example 6 - Deleting files with special characters
+
+The following example shows how to delete files that contain special characters like brackets or parentheses.
+
+```
+PS C:\temp\Downloads> Get-ChildItem
+
+    Directory: C:\temp\Downloads
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         6/1/2018  12:19 PM           1362 myFile.txt
+-a----         6/1/2018  12:30 PM           1132 myFile[1].txt
+-a----         6/1/2018  12:19 PM           1283 myFile[2].txt
+-a----         6/1/2018  12:19 PM           1432 myFile[3].txt
+
+PS C:\temp\Downloads> Get-ChildItem | Where-Object Name -Like '*`[*'
+
+    Directory: C:\temp\Downloads
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         6/1/2018  12:30 PM           1132 myFile[1].txt
+-a----         6/1/2018  12:19 PM           1283 myFile[2].txt
+-a----         6/1/2018  12:19 PM           1432 myFile[3].txt
+
+PS C:\temp\Downloads> Get-ChildItem | Where-Object Name -Like '*`[*' | ForEach-Object { Remove-Item -LiteralPath $_.Name }
+PS C:\temp\Downloads> Get-ChildItem
+
+    Directory: C:\temp\Downloads
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         6/1/2018  12:19 PM           1362 myFile.txt
+```
+
 ## PARAMETERS
 
 ### -Confirm

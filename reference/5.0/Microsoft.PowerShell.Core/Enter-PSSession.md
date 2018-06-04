@@ -127,6 +127,7 @@ It uses the *Port* parameter to specify the port and the *Credential* parameter 
 ```
 PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\> Exit-PSSession
+PS C:\>
 ```
 
 This example shows how to start and stop an interactive session.
@@ -549,7 +550,7 @@ Accept wildcard characters: False
 ```
 
 ### -VMGuid
-{{Fill VMGuid Description}}
+Specifies the ID of a virtual machine.
 
 ```yaml
 Type: Guid
