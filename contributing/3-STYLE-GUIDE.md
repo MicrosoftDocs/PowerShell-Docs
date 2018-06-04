@@ -1,5 +1,11 @@
 # Style guide for PowerShell-Docs
 
+This articles some style guidance specific to the PowerShell-Docs content.
+There is some limited guidance on specific Markdown formatting.
+Markdown specifics are covered in the [Next steps](#next-steps).
+
+For other writing style guidance, see the [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/).
+
 ## Product Terminology
 
 There are several variants of PowerShell.
@@ -46,28 +52,6 @@ For a good explanation of semantic line breaks, see [Semantic Linefeeds by Rhode
 This is not currently adopted across all of PowerShell-Docs, but we will be working towards it over time.
 Feel free to help out.
 
-## Blank lines & Spaces vs Tabs
-
-Remove duplicate blank lines.
-Multiple blank lines render as a single blank line in HTML.
-Blank lines can also signal the end of a block in Markdown.
-There should be a single blank between Markdown blocks of different types (for example,
-between a paragraph and a list).
-
-**NOTE:** Spacing is significant in Markdown.
-Always uses spaces instead of hard tabs.
-Remove extra spaces at the end of lines.
-
-## Titles/Headings
-
-Only use [ATX headings][atx] (# style, as opposed to = or \- style headers).
-
-* Titles/headings should be surrounded by blank lines
-* Only the first letter of a title and any proper nouns in that title should be capitalized
-* Only one H1 per document
-
-When editing reference content, the H2s are prescribed by [platyPS][platyPS] and must not be added or removed.
-Adding or removing H2 causes a build break.
 
 ## Formatting syntax elements
 
@@ -84,38 +68,14 @@ Adding or removing H2 causes a build break.
 
   This [`Write-Host`](..\reference\6\Microsoft.PowerShell.Utility\Write-Host.md) cmdlet uses the **-Object** parameter to ...
 
-## Lists
-
-* Do not end list items with a period (unless they contain multiple sentences)
-* If your list contains multiple sentences, consider using a header 3/4/5 (as applicable) underneath your primary idea.
-
-If you want multiple lines within a single list element, format your list as follows:
-
-```markdown
-1. For the first element (like this one), insert a space after the 1.
-
-   To include a second element (like this one), insert a line break after the first and align indentations.
-   The indentation of the second element must line up with the first character after the numbered list marker.
-
-1. The next numbered item starts here.
-```
-
-to get this output:
-
-1. For the first element (like this one), insert a space after the 1.
-
-   To include a second element (like this one), insert a line break after the first and align indentations.
-   The indentation of the second element must line up with the first character after the numbered list marker.
-
-1. The next numbered item starts here.
-
 ## Links
 
-* Avoid using bare URLs. Links should use MarkDown syntax `[friendlyname](url-or-path)`
-  * **Exception**: Links to non-Microsoft sites can be bare URLs for transparency
-* Links must have a friendly name, usually the title of the linked topic
-* All items in the "related links" section at the bottom should be hyperlinked.
-* Use relative links when linking to other content that is hosted on **docs.microsoft.com**.
+- Avoid using bare URLs. Links should use MarkDown syntax `[friendlyname](url-or-path)`
+ -* **Exception**: Links to non-Microsoft sites can be bare URLs for transparency
+- Links must have a friendly name, usually the title of the linked topic
+- All items in the "related links" section at the bottom should be hyperlinked.
+- Use relative links when linking to other content that is hosted on **docs.microsoft.com**.
+-
 
 ### Structure of links on docs.microsoft.com
 
@@ -141,7 +101,7 @@ https://docs.microsoft.com/en-us/powershell/azure/overview?view=azurermps-5.1.1
 
 ### Linking to content in the same repo
 
-When the content is in the same repo, the relative links are simple to calculate.
+When the content is in the same DocSet, the relative links are simple to calculate.
 The link target must be the path to the _Markdown file_ in the repo.
 For example, the following markdown links to the about_Arrays topic in this repo.
 
@@ -157,7 +117,7 @@ Note that the live link works within the GitHub view of this content.
 
 ### Linking to content in a different repo
 
-When the content is in a different repo, the relative links are more complicated.
+When the content is in a different DocSet, the relative links are more complicated.
 The link target must be the URL path to the _published article_ on **docs.microsoft.com**.
 The relative link starts with the **\<product-service>** portion of the URL as described above.
 You should omit the **[?view=\<view-name>]** portion unless you need to link to a specific version of the content.
@@ -175,34 +135,8 @@ Here is the live link:
 Note that the live link does not resolve within the GitHub view of this content.
 This link only works on the webpage published to **docs.microsoft.com**.
 
-## Markdown extensions supported by Open Publishing
-The following sections describe supported extensions in Open Publishing.
-
-### Note, warning, tip, important
-Use specific syntax inside a block quote to indicate that the content is a type of note.
-
-```Markdown
-> [!NOTE]
-> This is a note.
-
-> [!WARNING]
-> This is a warning.
-
-> [!TIP]
-> This is a tip.
-
-> [!IMPORTANT]
-> This is important.
-
-```
-
-And it will be rendered like this:
-
-![alert boxes](./images/alert-boxes.png)
-
-## Next steps
-
-See [Formatting code blocks](FORMATTING-CODE.md).
+## Next Steps
+See [Markdown Specifics](4-MARKDOWN-SPECIFICS.md)
 
 <!-- External URLs -->
 [pascal-case]: https://en.wikipedia.org/wiki/PascalCase

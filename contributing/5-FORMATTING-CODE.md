@@ -82,23 +82,23 @@ Output emitted by PowerShell commands should be enclosed in a **Output** code bl
       ```
 
       ```Output
-      CommandType     Name                                               Version    Source
-      -----------     ----                                               -------    ------
-      Cmdlet          ConvertFrom-SecureString                           3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          ConvertTo-SecureString                             3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-Acl                                            3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-AuthenticodeSignature                          3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-CmsMessage                                     3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-Credential                                     3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-ExecutionPolicy                                3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Get-PfxCertificate                                 3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          New-FileCatalog                                    3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Protect-CmsMessage                                 3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Set-Acl                                            3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Set-AuthenticodeSignature                          3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Set-ExecutionPolicy                                3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Test-FileCatalog                                   3.0.0.0    Microsoft.PowerShell.Security
-      Cmdlet          Unprotect-CmsMessage                               3.0.0.0    Microsoft.PowerShell.Security
+      CommandType  Name                        Version    Source
+      -----------  ----                        -------    ------
+      Cmdlet       ConvertFrom-SecureString    3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       ConvertTo-SecureString      3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Get-Acl                     3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Get-AuthenticodeSignature   3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Get-CmsMessage              3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Get-Credential              3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Get-ExecutionPolicy         3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Get-PfxCertificate          3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       New-FileCatalog             3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Protect-CmsMessage          3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Set-Acl                     3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Set-AuthenticodeSignature   3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Set-ExecutionPolicy         3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Test-FileCatalog            3.0.0.0    Microsoft.PowerShell.Security
+      Cmdlet       Unprotect-CmsMessage        3.0.0.0    Microsoft.PowerShell.Security
       ```
 
 The **Output** code label is not an official "language" supported by the syntax highlighting system.
@@ -169,3 +169,7 @@ See the general guidelines, in the next section, for the appropriate use of prom
                                      GameDVR_HonorUserFSEBehaviorMode      : 0
                                      GameDVR_DXGIHonorFSEWindowsCompatible : 0
       ```
+
+## Next Steps
+
+See the [Updating Reference](6-UPDATING-REFERENCE.md) article.
