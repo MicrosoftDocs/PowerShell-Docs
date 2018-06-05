@@ -17,40 +17,40 @@ This example shows how to define dynamic parameters that are added to the cmdlet
 
 1. In the cmdlet class declaration, add the [System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) interface as shown.
 
-    ```csharp
-    public class SendGreetingCommand : Cmdlet, IDynamicParameters
-    ```
+   ```csharp
+   public class SendGreetingCommand : Cmdlet, IDynamicParameters
+   ```
 
 2. Call the [System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) method, which returns the object in which the dynamic parameters are defined. In this example, the method is called when the `Employee` parameter is specified.
 
-    ```csharp
-     public object GetDynamicParameters()
-     {
+   ```csharp
+   public object GetDynamicParameters()
+   {
        if (employee)
        {
          context= new SendGreetingCommandDynamicParameters();
          return context;
        }
        return null;
-    }
-    private SendGreetingCommandDynamicParameters context;
-    ```
+   }
+   private SendGreetingCommandDynamicParameters context;
+   ```
 
 3. Declare a class that defines the dynamic parameters to be added. You can use the attributes that you used to declare the static cmdlet parameters to declare the dynamic parameters.
 
-    ```csharp
-    public class SendGreetingCommandDynamicParameters
-    {
-      [Parameter]
-      [ValidateSet ("Marketing", "Sales", "Development")]
-      public string Department
-      {
-        get { return department; }
-        set { department = value; }
-      }
-      private string department;
-    }
-    ```
+   ```csharp
+   public class SendGreetingCommandDynamicParameters
+   {
+     [Parameter]
+     [ValidateSet ("Marketing", "Sales", "Development")]
+     public string Department
+     {
+       get { return department; }
+       set { department = value; }
+     }
+     private string department;
+   }
+   ```
 
 ## Example
 

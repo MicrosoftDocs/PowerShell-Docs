@@ -21,7 +21,7 @@ This sample shows how to implement a cmdlet that retrieves the processes on the 
 
 3. In the **Build** menu, select **Build Solution**.
 
-   The library for the sample will be built in the default \bin or \bin\debug folders.
+  The library for the sample will be built in the default \bin or \bin\debug folders.
 
 ### How to run the sample
 

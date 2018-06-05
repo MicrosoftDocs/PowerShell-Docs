@@ -17,19 +17,19 @@ This sample shows a complete version of the Get-Proc cmdlet.
 
 1. Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.
 
-    With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.
+   With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.
 
 2. Double-click the icon for the solution (.sln) file. This opens the sample project in Visual Studio.
 
 3. In the **Build** menu, select **Build Solution**.
 
-    The library for the sample will be built in the default \bin or \bin\debug directories.
+   The library for the sample will be built in the default \bin or \bin\debug directories.
 
 ### How to run the sample
 
 1. Create the following module folder:
 
-    `[user]/documents/windowspowershell/modules/GetProcessSample05`
+   `[user]/documents/windowspowershell/modules/GetProcessSample05`
 
 2. Copy the sample assembly to the module folder.
 
@@ -37,11 +37,11 @@ This sample shows a complete version of the Get-Proc cmdlet.
 
 4. Run the following command to load the assembly into Windows PowerShell:
 
-    `Import-module getprossessample05`
+   `Import-module getprossessample05`
 
 5. Run the following command to run the cmdlet:
 
-    `get-proc`
+   `get-proc`
 
 ## Requirements
 

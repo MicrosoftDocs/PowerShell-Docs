@@ -20,7 +20,7 @@ This topic describes how to import cmdlets to a Windows PowerShell session by us
 
 1. Create a module folder that has the same name as the assembly file in which the cmdlets are implemented. In this procedure, the module folder is created in the `system32` folder.
 
-    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
+   `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
 2. Make sure that the `PSModulePath` environment variable includes the path to your new module folder. By default, the system folder is already added to the `PSModulePath` environment variable.
 
@@ -28,9 +28,9 @@ This topic describes how to import cmdlets to a Windows PowerShell session by us
 
 4. Run the following command to add the cmdlets to the session:
 
-    `import-module [Module_Name]`
+   `import-module [Module_Name]`
 
-    This procedure can be used to test your cmdlets. It adds all the cmdlets in the assembly to the session. For more information about modules, the different types of modules, the different ways to load modules, and how to restrict the elements of a module that are exported, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).
+   This procedure can be used to test your cmdlets. It adds all the cmdlets in the assembly to the session. For more information about modules, the different types of modules, the different ways to load modules, and how to restrict the elements of a module that are exported, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).
 
 ## See Also
 

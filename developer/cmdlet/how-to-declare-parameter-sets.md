@@ -20,42 +20,42 @@ This example shows how to define two parameter sets when you declare the paramet
 
 1. Add the `ParameterSet` keyword to the Parameter attribute for the unique parameter of the first parameter set.
 
-    ```csharp
-    [Parameter(Position = 0, Mandatory = true,
-               ParameterSetName = "Test01")]
-    public string UserName
-    {
-      get { return userName; }
-      set { userName = value; }
-    }
-    private string userName;
-    ```
+   ```csharp
+   [Parameter(Position = 0, Mandatory = true,
+              ParameterSetName = "Test01")]
+   public string UserName
+   {
+     get { return userName; }
+     set { userName = value; }
+   }
+   private string userName;
+   ```
 
 2. Add the `ParameterSet` keyword to the Parameter attribute for the unique parameter of the second parameter set.
 
-    ```csharp
-    [Parameter(Position = 0, Mandatory = true,
-               ParameterSetName = "Test02")]
-    public string ComputerName
-    {
-      get { return computerName; }
-      set { computerName = value; }
-    }
-    private string computerName;
-    ```
+   ```csharp
+   [Parameter(Position = 0, Mandatory = true,
+              ParameterSetName = "Test02")]
+   public string ComputerName
+   {
+     get { return computerName; }
+     set { computerName = value; }
+   }
+   private string computerName;
+   ```
 
 3. For the parameter that belongs to both parameter sets, add a Parameter attribute for each parameter set and then add the `ParameterSet` keyword to each set. In each Parameter attribute, you can specify how that parameter is defined. A parameter can be optional in one set and mandatory in another.
 
-    ```csharp
-    [Parameter(Mandatory= true, ParameterSetName = "Test01")]
-    [Parameter(ParameterSetName = "Test02")]
-    public string SharedParam
-    {
-        get { return sharedParam; }
-        set { sharedParam = value; }
-    }
-    private string sharedParam;
-    ```
+   ```csharp
+   [Parameter(Mandatory= true, ParameterSetName = "Test01")]
+   [Parameter(ParameterSetName = "Test02")]
+   public string SharedParam
+   {
+       get { return sharedParam; }
+       set { sharedParam = value; }
+   }
+   private string sharedParam;
+   ```
 
 ## See Also
 
