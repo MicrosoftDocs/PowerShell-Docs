@@ -10,9 +10,10 @@ ms.assetid: def37479-7b6e-40cf-bc81-0f7cbc651b31
 caps.latest.revision: 11
 ---
 # AutoSize Element for WideControl (Format)
+
 Specifies whether the column size and the number of columns are adjusted based on the size of the data.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 WideControl Element (Format)
@@ -25,13 +26,16 @@ Autosize Element for WideControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `AutoSize` element.
+
+The following sections describe attributes, child elements, and the parent element of the `AutoSize` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None
+
+None
 
 ### Parent Elements
 
@@ -40,14 +44,19 @@ Autosize Element for WideControl (Format)
 |[WideControl Element (Format)](./widecontrol-element-format.md)|Defines a wide (single value) list format for the view.|
 
 ## Remarks
- When defining a wide view, you can add the `AutoSize` element or the [ColumnNumber](./columnnumber-element-for-widecontrol-format.md) element, but you cannot add both.
 
- For more information about the components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
+When defining a wide view, you can add the `AutoSize` element or the [ColumnNumber](./columnnumber-element-for-widecontrol-format.md) element, but you cannot add both.
 
- For an example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).
+For more information about the components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
+
+For an example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).
 
 ## See Also
- [ColumnNumber Element for WideControl (Format)](./columnnumber-element-for-widecontrol-format.md)
- [Creating a Wide View](./creating-a-wide-view.md)
- [WideControl Element (Format)](./widecontrol-element-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ColumnNumber Element for WideControl (Format)](./columnnumber-element-for-widecontrol-format.md)
+
+[Creating a Wide View](./creating-a-wide-view.md)
+
+[WideControl Element (Format)](./widecontrol-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

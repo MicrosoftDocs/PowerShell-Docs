@@ -10,9 +10,10 @@ ms.assetid: d46df0cb-50b7-4b81-82ba-37186a7b7a7f
 caps.latest.revision: 28
 ---
 # Configuration Element (Format)
+
 Represents the top-level element of a formatting file.
 
- Configuration Element
+Configuration Element
 
 ## Syntax
 
@@ -27,10 +28,12 @@ Represents the top-level element of a formatting file.
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and the parent element of the `Configuration` element. This element must be the root element for each formatting file, and this element must contain at least one child element.
+
+The following sections describe the attributes, child elements, and the parent element of the `Configuration` element. This element must be the root element for each formatting file, and this element must contain at least one child element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -42,14 +45,21 @@ Represents the top-level element of a formatting file.
 |[ViewDefinitions Element (Format)](./viewdefinitions-element-format.md)|Optional element.<br /><br /> Defines the views used to display objects.|
 
 ### Parent Elements
- None.
+
+None.
 
 ## Remarks
- Formatting files define how objects are displayed. In most cases, this root element contains a [ViewDefinitions](./viewdefinitions-element-format.md) element that defines the table, list, and wide views of the formatting file. In addition to the view definitions, the formatting file can define common selection sets, settings, and controls that those views can use.
+
+Formatting files define how objects are displayed. In most cases, this root element contains a [ViewDefinitions](./viewdefinitions-element-format.md) element that defines the table, list, and wide views of the formatting file. In addition to the view definitions, the formatting file can define common selection sets, settings, and controls that those views can use.
 
 ## See Also
- [Controls Element for Configuration (Format)](./controls-element-for-configuration-format.md)
- [DefaultSettings Element (Format)](./defaultsettings-element-format.md)
- [SelectionSets Element (Format)](./selectionsets-element-format.md)
- [ViewDefinitions Element (Format)](./viewdefinitions-element-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Controls Element for Configuration (Format)](./controls-element-for-configuration-format.md)
+
+[DefaultSettings Element (Format)](./defaultsettings-element-format.md)
+
+[SelectionSets Element (Format)](./selectionsets-element-format.md)
+
+[ViewDefinitions Element (Format)](./viewdefinitions-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

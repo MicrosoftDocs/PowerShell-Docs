@@ -14,9 +14,10 @@ ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
 caps.latest.revision: 12
 ---
 # ValidateSet Attribute Declaration
+
 The ValidateSetAttribute attribute specifies a set of possible values for a cmdlet parameter argument. This attribute can also be used by Windows PowerShell functions.
 
- When this attribute is specified, the Windows PowerShell runtime determines whether the supplied argument for the cmdlet parameter matches an element in the supplied element set. The cmdlet is run only if the parameter argument matches an element in the set. If no match is found, an error is thrown by the Windows PowerShell runtime.
+When this attribute is specified, the Windows PowerShell runtime determines whether the supplied argument for the cmdlet parameter matches an element in the supplied element set. The cmdlet is run only if the parameter argument matches an element in the set. If no match is found, an error is thrown by the Windows PowerShell runtime.
 
 ## Syntax
 
@@ -26,25 +27,28 @@ The ValidateSetAttribute attribute specifies a set of possible values for a cmdl
 ```
 
 #### Parameters
- `ValidValues` ([System.String](/dotnet/api/System.String))
- Required. Specifies the valid parameter element values. The following sample shows how to specify one element or multiple elements.
 
-```
+`ValidValues` ([System.String](/dotnet/api/System.String))
+Required. Specifies the valid parameter element values. The following sample shows how to specify one element or multiple elements.
+
+```csharp
 [ValidateSetAttribute("Steve")]
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
- `IgnoreCase` ([System.Boolean](/dotnet/api/System.Boolean))
- Optional named parameter. The default value of `true` indicates that case is ignored. A value of `false` makes the cmdlet case-sensitive.
+`IgnoreCase` ([System.Boolean](/dotnet/api/System.Boolean))
+Optional named parameter. The default value of `true` indicates that case is ignored. A value of `false` makes the cmdlet case-sensitive.
 
 ## Remarks
 
--   This attribute can be used only once per parameter.
+- This attribute can be used only once per parameter.
 
--   If the parameter value is an array, every element of the array must match an element of the attribute set.
+- If the parameter value is an array, every element of the array must match an element of the attribute set.
 
--   The ValidateSetAttribute attribute is defined by the [System.Management.Automation.Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute) class.
+- The ValidateSetAttribute attribute is defined by the [System.Management.Automation.Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute) class.
 
 ## See Also
- [System.Management.Automation.Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[System.Management.Automation.Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

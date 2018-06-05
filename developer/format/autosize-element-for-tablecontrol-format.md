@@ -10,9 +10,10 @@ ms.assetid: 1df5de23-9ffc-427e-bb34-f5efe073f3fe
 caps.latest.revision: 11
 ---
 # AutoSize Element for TableControl (Format)
+
 Specifies whether the column size and the number of columns are adjusted based on the size of the data.
 
- ViewDefinitions Element (Format)
+ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
 AutoSize Element for TableControl (Format)
@@ -24,13 +25,16 @@ AutoSize Element for TableControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `AutoSize` element.
+
+The following sections describe attributes, child elements, and the parent element of the `AutoSize` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -39,9 +43,13 @@ AutoSize Element for TableControl (Format)
 |[TableControl Element (Format)](./tablecontrol-element-format.md)|Defines a table format for a view.|
 
 ## Remarks
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [TableControl Element (Format)](./tablecontrol-element-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[TableControl Element (Format)](./tablecontrol-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
