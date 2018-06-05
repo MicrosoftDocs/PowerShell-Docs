@@ -71,7 +71,7 @@ You can also use the Invoke-RestMethod cmdlet, which automatically converts JSON
 ### Example 3: Convert a JSON string to a custom object
 
 ```powershell
-(Get-Content JsonFile.JSON) -join '`n' | ConvertFrom-Json
+(Get-Content JsonFile.JSON) -join "`n" | ConvertFrom-Json
 ```
 
 This example shows how to use the **ConvertFrom-Json** cmdlet to convert a JSON file to a PowerShell custom object.
