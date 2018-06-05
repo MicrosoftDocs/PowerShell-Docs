@@ -10,11 +10,13 @@ ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
 ---
 # Defining Default Member Sets for Objects
+
 The PSStandardMembers member set is used by Windows PowerShell to define the default property sets for an object. The default property sets can be used by commands such as the formatting cmdlets to display only those properties that are defined by the property set. The default property sets include DefaultDisplayProperty, DefaultDisplayPropertySet, and DefaultKeyPropertySet. Windows PowerShell ignores all other member sets and any other property sets added to the PSStandardMembers member set.
 
 ## Member Set for System.Diagnostics.Process
- In the following example, the PSStandardMembers member set defines the DefaultDisplayPropertySet property set for [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects. This property set is used by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.
- In the following example, the PSStandardMembers member set defines the DefaultDisplayPropertySet property set for [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects. This property set is used by the [Format-List](http://go.microsoft.com/fwlink/?LinkId=113302) cmdlet.
+
+In the following example, the PSStandardMembers member set defines the DefaultDisplayPropertySet property set for [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects. This property set is used by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.
+In the following example, the PSStandardMembers member set defines the DefaultDisplayPropertySet property set for [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects. This property set is used by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.
 
 ```xml
 <Type>
@@ -36,12 +38,14 @@ The PSStandardMembers member set is used by Windows PowerShell to define the def
   </MemberSet>
 ```
 
- The following output shows the default properties returned by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Only the `Id`, `Handles`, `CPU`, and `Name` properties are returned for each process object.
- The following output shows the default properties returned by the [Format-List](http://go.microsoft.com/fwlink/?LinkId=113302) cmdlet. Only the `Id`, `Handles`, `CPU`, and `Name` properties are returned for each process object.
+The following output shows the default properties returned by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Only the `Id`, `Handles`, `CPU`, and `Name` properties are returned for each process object.
+The following output shows the default properties returned by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Only the `Id`, `Handles`, `CPU`, and `Name` properties are returned for each process object.
 
 ```powershell
-PS> get-process | format-list
+Get-Process | format-list
+```
 
+```output
 Id      : 2036
 Handles : 27
 CPU     :
@@ -55,4 +59,5 @@ Name    : agrsmsvc
 ```
 
 ## See Also
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

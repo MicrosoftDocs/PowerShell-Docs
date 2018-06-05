@@ -56,7 +56,7 @@ PS> (1, 2, 3, 4).count
 4
 ```
 
-```powershell
+```python
 (1, 2, 3, 4).length
 ```
 

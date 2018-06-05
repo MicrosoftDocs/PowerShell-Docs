@@ -10,22 +10,24 @@ ms.assetid: bcf0739e-920e-4dd8-afca-2c6d6927bc2a
 caps.latest.revision: 10
 ---
 # Cmdlet Sets
+
 When you design your cmdlets, you might encounter cases in which you need to perform several actions on the same piece of data. For example, you might need to get and set data or start and stop a process. Although you will need to create separate cmdlets to perform each action, your cmdlet design should include a base class from which the classes for the individual cmdlets are derived.
 
- Keep the following things in mind when implementing a base class.
+Keep the following things in mind when implementing a base class.
 
--   Declare any common parameters used by all the derived cmdlets in the base class.
+- Declare any common parameters used by all the derived cmdlets in the base class.
 
--   Add cmdlet-specific parameters to the appropriate cmdlet class.
+- Add cmdlet-specific parameters to the appropriate cmdlet class.
 
--   Override the appropriate input processing method in the base class.
+- Override the appropriate input processing method in the base class.
 
--   Declare the [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.
+- Declare the [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.
 
--   Implement a [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.
+- Implement a [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.
 
 ## Example
- The following example shows the implementation of a base class that is used by Get-Proc and Stop-Proc cmdlet that derive from the same base class.
+
+The following example shows the implementation of a base class that is used by Get-Proc and Stop-Proc cmdlet that derive from the same base class.
 
 ```csharp
 using System;
@@ -163,4 +165,5 @@ namespace Microsoft.Samples.PowerShell.Commands
 ```
 
 ## See Also
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
