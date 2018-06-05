@@ -1,46 +1,31 @@
 {
-  "build": {
-    "content": [
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "_themes/**",
-          "_themes.pdf/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
-        ]
-      }
-    ],
-    "resource": [
-      {
-        "files": [
-          "**/*.png",
-          "**/*.jpg"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "_themes/**",
-          "_themes.pdf/**"
-        ]
-      }
-    ],
-    "overwrite": [],
-    "externalReference": [],
-    "globalMetadata": {
-      "breadcrumb_path": "/PowerShell/developer/breadcrumb/toc.json",
-      "extendBreadcrumb": true
-    },
-    "fileMetadata": {},
-    "template": [],
-    "dest": "developer-docs",
-    "markdownEngineName": "markdig"
-  }
+    "build": {
+        "content": [{
+            "files": [
+                "**/**.yml",
+                "**/**.md"
+            ],
+            "exclude": ["**/obj/**"]
+        }],
+        "globalMetadata": {
+            "breadcrumb_path": "/powershell/developer/bread/toc.yml",
+            "ROBOTS": "INDEX, FOLLOW",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
+            "ms.prod": "powershell",
+            "ms.technology": "developer",
+            "manager": "carmonm",
+            "ms.devlang": "powershell",
+            "ms.tgt_pltfr": "windows, macos, linux",
+            "author": "joeyaiello",
+            "ms.author": "jaiello"
+        },
+        "resource": [{
+            "files": [
+                "**/images/**"
+            ],
+            "exclude": ["**/obj/**"]
+        }],
+        "template": "op.html",
+        "dest": "developer"
+    }
 }

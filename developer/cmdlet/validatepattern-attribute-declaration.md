@@ -1,0 +1,51 @@
+---
+title: "ValidatePattern Attribute Declaration | Microsoft Docs"
+ms.custom: ""
+ms.date: "09/13/2016"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords:
+  - "attributes, ValidatePattern"
+  - "ValidatePattern attribute, described"
+  - "ValidatePattern attribute"
+ms.assetid: 87b811be-6d93-4e7d-b9d0-c567a19bb0ef
+caps.latest.revision: 13
+---
+# ValidatePattern Attribute Declaration
+
+The ValidatePattern attribute specifies a regular expression pattern that validates the argument of a cmdlet parameter. This attribute can also be used by Windows PowerShell functions.
+
+When ValidatePattern is invoked within a cmdlet, the Windows PowerShell runtime converts the argument of the cmdlet parameter to a string and then compares that string to the pattern supplied by the ValidatePattern attribute. The cmdlet is run only if the converted string representation of the argument and the supplied pattern match. If they do not match, an error is thrown by the Windows PowerShell runtime.
+
+## Syntax
+
+```csharp
+[ValidatePattern(string regexString)]
+[ValidatePattern(string regexString, Named Parameters)]
+```
+
+#### Parameters
+
+`RegexString` ([System.String](/dotnet/api/System.String))
+Required. Specifies a regular expression that validates the parameter argument.
+
+Options ([System.Text.Regularexpressions.Regexoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions))
+Optional named parameter. Specifies a bitwise combination of [System.Text.Regularexpressions.Regexoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions) flags that specify regular expression options.
+
+## Remarks
+
+- This attribute can be used only once per parameter.
+
+- You can use the `Option` parameter of the attribute to further define the pattern. For example, you can make the pattern case sensitive.
+
+- If this attribute is applied to a collection, each element in the collection must match the pattern.
+
+- The ValidatePattern attribute is defined by the [System.Management.Automation.Validatepatternattribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute) class.
+
+## See Also
+
+[System.Management.Automation.Validatepatternattribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
