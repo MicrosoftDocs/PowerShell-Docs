@@ -60,7 +60,6 @@ This is a list that contain sub-elements under a bullet item.
 
 - Second bullet item
 - Third bullet item
-
 ```
 
 This is a list that contains sub-elements under a bullet item.

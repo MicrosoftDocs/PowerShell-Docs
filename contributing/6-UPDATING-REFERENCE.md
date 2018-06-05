@@ -28,7 +28,7 @@ add a title for each example. For example:
 Get-Command
 ```
 
-This command gets the  PowerShell cmdlets, functions, and aliases that are installed on the
+This command gets the PowerShell cmdlets, functions, and aliases that are installed on the
 computer.
 
 ### Example 2: Get commands in the current session
