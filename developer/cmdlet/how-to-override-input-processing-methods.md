@@ -19,7 +19,7 @@ These examples show how to overwrite the input processing methods within a cmdle
 
 - The [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method is used to perform one-time post processing operations. The Windows PowerShell runtime calls this method only once.
 
-### To override the BeginProcessing method
+## To override the BeginProcessing method
 
 - Declare a protected override of the [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method.
 
@@ -42,7 +42,7 @@ public class TestBeginProcessingClassTemplate : Cmdlet
 }
 ```
 
-### To override the ProcessRecord method
+## To override the ProcessRecord method
 
 - Declare a protected override of the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
 
@@ -66,7 +66,7 @@ public class TestProcessRecordClassTemplate : Cmdlet
 
 ```
 
-### To override the EndProcessing method
+## To override the EndProcessing method
 
 - Declare a protected override of the [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method.
 

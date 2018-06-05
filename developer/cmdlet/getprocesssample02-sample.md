@@ -13,7 +13,7 @@ caps.latest.revision: 7
 
 This sample shows how to write a cmdlet that retrieves the processes on the local computer. It provides a `Name` parameter that can be used to specify the processes to be retrieved. This cmdlet is a simplified version of the `Get-Process` cmdlet provided by Windows PowerShell 2.0.
 
-### How to build the sample using Visual Studio.
+## How to build the sample using Visual Studio.
 
 1. With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample02 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample02.
 

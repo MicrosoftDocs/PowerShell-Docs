@@ -18,7 +18,7 @@ This example shows how to specify a validation rule that the Windows PowerShell 
 > [!NOTE]
 > For more information about the class that defines this attribute, see [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute).
 
-### To validate the argument length
+## To validate the argument length
 
 - Add the Validate attribute as shown in the following code. This example specifies that the length of the argument should have a length of 0 to 10 characters.
 

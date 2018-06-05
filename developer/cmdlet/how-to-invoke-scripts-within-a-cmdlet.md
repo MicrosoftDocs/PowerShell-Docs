@@ -13,7 +13,7 @@ caps.latest.revision: 9
 
 This example shows how to invoke a script that is supplied to a cmdlet. The script is executed by the cmdlet, and its results are returned to the cmdlet as a collection of [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects.
 
-### To invoke a script block
+## To invoke a script block
 
 1. The command verifies that a script block was supplied to the cmdlet. If a script block was supplied, the command invokes the script block with its required parameters.
 

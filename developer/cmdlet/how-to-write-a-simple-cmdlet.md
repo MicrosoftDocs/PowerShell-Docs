@@ -13,7 +13,7 @@ caps.latest.revision: 9
 
 This topic shows how to write a simple cmdlet (the **Send-Greeting** cmdlet) that takes a single user name as input  and then writes a greeting to that user. Although the cmdlet does not do much work, this example demonstrates the major sections of a cmdlet.
 
-### To Write a Simple Cmdlet
+## To Write a Simple Cmdlet
 
 1. Use the Cmdlet attribute to declare the class as a cmdlet. This attribute specifies the verb and the noun for the cmdlet name.
 

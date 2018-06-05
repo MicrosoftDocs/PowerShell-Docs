@@ -13,7 +13,7 @@ caps.latest.revision: 9
 
 This example shows how to support jobs when you write cmdlets. If you want users to run your cmdlet as a background job, you must include the code described in the following procedure. For more information about background jobs, see [Background Jobs](./background-jobs.md).
 
-### To support jobs
+## To support jobs
 
 1. Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.
 

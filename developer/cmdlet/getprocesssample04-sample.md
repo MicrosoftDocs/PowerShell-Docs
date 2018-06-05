@@ -13,7 +13,7 @@ caps.latest.revision: 6
 
 This sample shows how to implement a cmdlet that retrieves the processes on the local computer. It generates a nonterminating error if an error occurs while retrieving a process. This cmdlet is a simplified version of the `Get-Process` cmdlet provided by Windows PowerShell 2.0.
 
-### How to build the sample using Visual Studio.
+## How to build the sample using Visual Studio.
 
 1. With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample04 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample04.
 

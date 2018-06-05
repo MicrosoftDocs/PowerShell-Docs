@@ -13,7 +13,7 @@ caps.latest.revision: 10
 
 These examples show how to declare named, positional, required, optional, and switch parameters. These examples also show how to define a parameter alias.
 
-### How to Declare a Named Parameter
+## How to Declare a Named Parameter
 
 - Define a public property as shown in the following code. When you add the Parameter attribute, omit the `Position` keyword from the attribute.
 
@@ -29,7 +29,7 @@ These examples show how to declare named, positional, required, optional, and sw
 
 For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).
 
-### How to Declare a Positional Parameter
+## How to Declare a Positional Parameter
 
 - Define a public property as shown in the following code. When you add the Parameter attribute, set the `Position` keyword to the argument position. A value of 0 indicates the first position.
 
@@ -45,7 +45,7 @@ For more information about the Parameter attribute, see [Parameter Attribute Dec
 
 For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).
 
-### How to Declare a Mandatory Parameter
+## How to Declare a Mandatory Parameter
 
 - Define a public property as shown in the following code. When you add the Parameter attribute, set the `Mandatory` keyword to `true`.
 
@@ -61,7 +61,7 @@ For more information about the Parameter attribute, see [Parameter Attribute Dec
 
 For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).
 
-### How to Declare an Optional Parameter
+## How to Declare an Optional Parameter
 
 - Define a public property as shown in the following code. When you add the Parameter attribute, omit the `Mandatory` keyword.
 
@@ -75,7 +75,7 @@ For more information about the Parameter attribute, see [Parameter Attribute Dec
     private string userName;
     ```
 
-### How to Declare a Switch Parameter
+## How to Declare a Switch Parameter
 
 - Define a public property as type [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter), and then declare the Parameter attribute.
 
@@ -91,7 +91,7 @@ For more information about the Parameter attribute, see [Parameter Attribute Dec
 
 For more information about the Parameter attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).
 
-### How to Declare a Parameter with Aliases
+## How to Declare a Parameter with Aliases
 
 - Define a public property as shown in the following code. Add an Alias attribute that lists the aliases for the parameter. In this example, three aliases are defined for the same parameter. The first alias provides a shortcut. The second and third aliases provide names you can use for different scenarios.
 

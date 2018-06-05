@@ -26,7 +26,6 @@ The `Filter` parameter specifies a filter that is not expressed in the standard 
 ## Filtering If No Set of Input Objects Is Specified
 
 If no set of input objects is specified, this typically means to filter against all objects. For more information, see[Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process).
-If no set of input objects is specified, this typically means to filter against all objects. For more information, see[Get-Process](http://go.microsoft.com/fwlink/?LinkID=113324).
 
 ## See Also
 

@@ -18,7 +18,7 @@ This example shows how to specify a validation rule that the Windows PowerShell 
 > [!NOTE]
 > For more information about the class that defines this attribute, see [System.Management.Automation.Validatecountattribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute).
 
-### To validate an argument count
+## To validate an argument count
 
 - Add the Validate attribute as shown in the following code. This example specifies that the parameter will accept one argument or as many as three arguments.
 

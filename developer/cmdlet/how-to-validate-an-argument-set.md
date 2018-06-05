@@ -18,7 +18,7 @@ This example shows how to specify a validation rule that the Windows PowerShell 
 > [!NOTE]
 > For more information about the class that defines this attribute, see [System.Management.Automation.Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute).
 
-### To validate an argument set
+## To validate an argument set
 
 - Add the ValidateSet attribute as shown in the following code. This example specifies a set of three possible values for the `UserName` parameter.
 

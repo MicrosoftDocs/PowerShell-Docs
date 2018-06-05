@@ -13,7 +13,7 @@ caps.latest.revision: 6
 
 This sample shows a complete version of the Get-Proc cmdlet.
 
-### How to build the sample using Visual Studio.
+## How to build the sample using Visual Studio.
 
 1. Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.
 

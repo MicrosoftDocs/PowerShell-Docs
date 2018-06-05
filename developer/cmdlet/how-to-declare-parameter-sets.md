@@ -16,7 +16,7 @@ This example shows how to define two parameter sets when you declare the paramet
 > [!IMPORTANT]
 > Whenever possible, define the unique parameter of a parameter set as a required parameter. However, if you want your cmdlet to run without specifying any parameters, the unique parameter can be an optional parameter. For example, the unique parameter of the `Get-Command` cmdlet is optional.
 
-### How to Define Two Parameter Sets
+## How to Define Two Parameter Sets
 
 1. Add the `ParameterSet` keyword to the Parameter attribute for the unique parameter of the first parameter set.
 

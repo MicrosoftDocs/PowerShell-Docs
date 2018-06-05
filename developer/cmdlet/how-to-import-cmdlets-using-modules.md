@@ -16,7 +16,7 @@ This topic describes how to import cmdlets to a Windows PowerShell session by us
 > [!NOTE]
 > The members of modules can include cmdlets, providers, functions, variables, aliases, and much more. Snap-ins can contain only cmdlets and providers.
 
-### How to load cmdlets using a module
+## How to load cmdlets using a module
 
 1. Create a module folder that has the same name as the assembly file in which the cmdlets are implemented. In this procedure, the module folder is created in the `system32` folder.
 

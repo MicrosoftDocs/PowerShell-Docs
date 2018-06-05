@@ -16,7 +16,7 @@ This example shows how to call the [System.Management.Automation.Cmdlet.Shouldpr
 > [!IMPORTANT]
 > For more information about how Windows PowerShell handles these requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
 
-### To request confirmation
+## To request confirmation
 
 1. Ensure that the `SupportsShouldProcess` parameter of the Cmdlet attribute is set to `true`. (For functions this is a parameter of the CmdletBinding attribute.)
 

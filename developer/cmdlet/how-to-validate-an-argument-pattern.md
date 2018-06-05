@@ -18,7 +18,7 @@ This example shows how to specify a validation rule that the Windows PowerShell 
 > [!NOTE]
 > For more information about the class that defines this attribute, see [System.Management.Automation.Validatepatternattribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute).
 
-### To validate an argument pattern
+## To validate an argument pattern
 
 - Add the Validate attribute as shown in the following code. This example specifies a pattern of four digits, where each digit has a value of 0 through 9.
 

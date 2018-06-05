@@ -17,7 +17,7 @@ This example shows the basic code elements that add support for transactions to 
 > For more information about how Windows PowerShell handles transactions, see [Windows PowerShell Transactions](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
 > For more information about how Windows PowerShell handles transactions, see [Windows PowerShell Transactions](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
 
-### To support transactions
+## To support transactions
 
 1. When you declare the Cmdlet attribute, specify that the cmdlet supports transactions. When the cmdlet supports transactions, Windows PowerShell adds the `UseTransaction` parameter to the cmdlet when it is run.
 
