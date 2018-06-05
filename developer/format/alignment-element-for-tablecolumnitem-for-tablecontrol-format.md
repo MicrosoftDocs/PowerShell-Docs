@@ -10,9 +10,10 @@ ms.assetid: b07a53df-64f1-49b0-8cea-c993b3f1f76b
 caps.latest.revision: 10
 ---
 # Alignment Element for TableColumnItem for TableControl (Format)
+
 Defines how the data in a column of the row is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
@@ -29,13 +30,16 @@ Alignment Element for TableColumnItem (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent element of the `Alignment` element.
+
+The following sections describe the attributes, child elements, and parent element of the `Alignment` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,20 +48,24 @@ Alignment Element for TableColumnItem (Format)
 |[TableColumnItem Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Defines a label, the width, and the alignment of the data for a column of the table.|
 
 ## Text Value
- Specify one of the following values. (These values are not case-sensitive.)
 
- Left
- Shifts the data displayed in the column to the left. (This is the default if this element is not specified.)
+Specify one of the following values. (These values are not case-sensitive.)
 
- Right
- Shifts the data displayed in the column to the right.
+Left
+Shifts the data displayed in the column to the left. (This is the default if this element is not specified.)
 
- Center
- Centers the data displayed in the column.
+Right
+Shifts the data displayed in the column to the right.
+
+Center
+Centers the data displayed in the column.
 
 ## Remarks
- For more information about the components of a table view, see [Table View](./creating-a-table-view.md).
+
+For more information about the components of a table view, see [Table View](./creating-a-table-view.md).
 
 ## See Also
- [Table View](./creating-a-table-view.md)
- [TableColumnItem Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
+
+[Table View](./creating-a-table-view.md)
+
+[TableColumnItem Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)

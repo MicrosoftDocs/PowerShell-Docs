@@ -10,52 +10,54 @@ ms.assetid: 7b3ef3f4-c626-4679-884f-406a37412b3e
 caps.latest.revision: 16
 ---
 # Windows PowerShell Cmdlet Concepts
+
 This section describes how cmdlets work.
 
 ## In This Section
- This section includes the following topics.
 
- [Cmdlet Development Guidelines](./cmdlet-development-guidelines.md)
- This topic provides development guidelines that can be used to produce well-formed cmdlets.
+This section includes the following topics.
 
- [Cmdlet Class Declaration](./cmdlet-class-declaration.md)
- This topic describes cmdlet class declaration.
+[Cmdlet Development Guidelines](./cmdlet-development-guidelines.md)
+This topic provides development guidelines that can be used to produce well-formed cmdlets.
 
- [Approved Verbs for Windows PowerShell Commands](./approved-verbs-for-windows-powershell-commands.md)
- This topic lists the predefined cmdlet verbs that you can use when you declare a cmdlet class.
+[Cmdlet Class Declaration](./cmdlet-class-declaration.md)
+This topic describes cmdlet class declaration.
 
- [Cmdlet Input Processing Methods](./cmdlet-input-processing-methods.md)
- This topic describes the methods that allow a cmdlet to perform preprocessing operations, input processing operations, and post processing operations.
+[Approved Verbs for Windows PowerShell Commands](./approved-verbs-for-windows-powershell-commands.md)
+This topic lists the predefined cmdlet verbs that you can use when you declare a cmdlet class.
 
- [Cmdlet Parameters](./cmdlet-parameters.md)
- This section describes the different types of parameters that you can add to cmdlets.
+[Cmdlet Input Processing Methods](./cmdlet-input-processing-methods.md)
+This topic describes the methods that allow a cmdlet to perform preprocessing operations, input processing operations, and post processing operations.
 
- [Cmdlet Attributes](./cmdlet-attributes.md)
- This section describes the attributes that are used to declare .NET Framework classes as cmdlets, to declare fields as cmdlet parameters, and to declare input validation rules for parameters.
+[Cmdlet Parameters](./cmdlet-parameters.md)
+This section describes the different types of parameters that you can add to cmdlets.
 
- [Cmdlet Aliases](./cmdlet-aliases.md)
- This topic describes cmdlet aliases.
+[Cmdlet Attributes](./cmdlet-attributes.md)
+This section describes the attributes that are used to declare .NET Framework classes as cmdlets, to declare fields as cmdlet parameters, and to declare input validation rules for parameters.
 
- [Cmdlet Output](./cmdlet-output.md)
- This section describes the type of output that cmdlets can return and how to define and display the objects that are returned by cmdlets.
+[Cmdlet Aliases](./cmdlet-aliases.md)
+This topic describes cmdlet aliases.
 
- [Registering Cmdlets](./modules-and-snap-ins.md)
- This section describes how to register cmdlets by using modules and snap-ins.
+[Cmdlet Output](./cmdlet-output.md)
+This section describes the type of output that cmdlets can return and how to define and display the objects that are returned by cmdlets.
 
- [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md)
- This section describes how cmdlets request confirmation from a user before they make a change to the system.
+[Registering Cmdlets](./modules-and-snap-ins.md)
+This section describes how to register cmdlets by using modules and snap-ins.
 
- [Windows PowerShell Error Reporting](./error-reporting-concepts.md)
- This section describes how cmdlets report terminating errors and non-terminating errors, and it describes how to interpret error records.
+[Requesting Confirmation](./requesting-confirmation-from-cmdlets.md)
+This section describes how cmdlets request confirmation from a user before they make a change to the system.
 
- [Background Jobs](./background-jobs.md)
- This topic describes how cmdlets can perform their work within background jobs that do not interfere with the commands that are executing in the current session.
+[Windows PowerShell Error Reporting](./error-reporting-concepts.md)
+This section describes how cmdlets report terminating errors and non-terminating errors, and it describes how to interpret error records.
 
- [Invoking Cmdlets and Scripts Within a Cmdlet](./invoking-cmdlets-and-scripts-within-a-cmdlet.md)
- This topic describes how cmdlets can invoke other cmdlets and scripts from within their input processing methods.
+[Background Jobs](./background-jobs.md)
+This topic describes how cmdlets can perform their work within background jobs that do not interfere with the commands that are executing in the current session.
 
- [Cmdlet Sets](./cmdlet-sets.md)
- This topic describes using base classes to create sets of cmdlets.
+[Invoking Cmdlets and Scripts Within a Cmdlet](./invoking-cmdlets-and-scripts-within-a-cmdlet.md)
+This topic describes how cmdlets can invoke other cmdlets and scripts from within their input processing methods.
 
- [Windows PowerShell Session State](./windows-powershell-session-state.md)
- This topic describes Windows PowerShell session state.
+[Cmdlet Sets](./cmdlet-sets.md)
+This topic describes using base classes to create sets of cmdlets.
+
+[Windows PowerShell Session State](./windows-powershell-session-state.md)
+This topic describes Windows PowerShell session state.

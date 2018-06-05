@@ -10,9 +10,10 @@ ms.assetid: 1fd53f55-698d-4df5-bb9a-fe28dc3193e1
 caps.latest.revision: 11
 ---
 # Control Element for Controls for View  (Format)
+
 Defines a control that can be used by the view and the name that is used to reference the control.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element (Format)
@@ -28,10 +29,12 @@ Control Element for Controls for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and the parent element of the `Control` element.
+
+The following sections describe the attributes, child elements, and the parent element of the `Control` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -47,22 +50,31 @@ Control Element for Controls for View (Format)
 |[Controls Element (Format)](./controls-element-for-view-format.md)|Defines the view controls that can be used by a specific view.|
 
 ## Remarks
- This control can be specified by the following elements:
 
--   [CustomControlName Element for ExpressionBinding for Controls for View (Format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
+This control can be specified by the following elements:
 
--   [CustomControlName Element for ExpressionBinding for CustomControl for View (Format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+- [CustomControlName Element for ExpressionBinding for Controls for View (Format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
 
--   [CustomControlName Element for ExpressionBinding for GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+- [CustomControlName Element for ExpressionBinding for CustomControl for View (Format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
 
--   [CustomControlName Element for GroupBy (Format)](./customcontrolname-element-for-groupby-format.md)
+- [CustomControlName Element for ExpressionBinding for GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+
+- [CustomControlName Element for GroupBy (Format)](./customcontrolname-element-for-groupby-format.md)
 
 ## See Also
- [CustomControl Element for Control for Controls for View (Format)](./customcontrol-element-for-control-for-controls-for-view-format.md)
- [CustomControlName Element for ExpressionBinding for Controls for View (Format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
- [CustomControlName Element for ExpressionBinding for CustomControl for View (Format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
- [CustomControlName Element for ExpressionBinding for GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
- [CustomControlName Element for ExpressionBinding for GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
- [Controls Element (Format)](./controls-element-for-view-format.md)
- [Name Element for Control for Controls for View (Format)](./name-element-for-control-for-controls-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomControl Element for Control for Controls for View (Format)](./customcontrol-element-for-control-for-controls-for-view-format.md)
+
+[CustomControlName Element for ExpressionBinding for Controls for View (Format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
+
+[CustomControlName Element for ExpressionBinding for CustomControl for View (Format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+
+[CustomControlName Element for ExpressionBinding for GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+
+[CustomControlName Element for ExpressionBinding for GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+
+[Controls Element (Format)](./controls-element-for-view-format.md)
+
+[Name Element for Control for Controls for View (Format)](./name-element-for-control-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
