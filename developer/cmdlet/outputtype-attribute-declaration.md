@@ -10,6 +10,7 @@ ms.assetid: a97a98ee-ffc0-42f0-a9a6-b0717b39c798
 caps.latest.revision: 5
 ---
 # OutputType Attribute Declaration
+
 The `OutputType` attribute identifies the .NET Framework types returned by a cmdlet, function, or script.
 
 ## Syntax
@@ -22,14 +23,16 @@ The `OutputType` attribute identifies the .NET Framework types returned by a cmd
 ```
 
 #### Parameters
- Type (`string[]` or `Type[]`)
- Required. Specifies the types returned by the cmdlet function, or script.
 
- ParameterSetName (string[])
- Optional. Specifies the parameter sets that return the types specified in the `type` parameter.
+Type (`string[]` or `Type[]`)
+Required. Specifies the types returned by the cmdlet function, or script.
 
- providerCmdlet
- Optional. Specifies the provider cmdlet that returns the types specified in the `type` parameter.
+ParameterSetName (string[])
+Optional. Specifies the parameter sets that return the types specified in the `type` parameter.
+
+providerCmdlet
+Optional. Specifies the provider cmdlet that returns the types specified in the `type` parameter.
 
 ## See Also
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

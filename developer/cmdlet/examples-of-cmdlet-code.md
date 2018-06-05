@@ -10,44 +10,47 @@ ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
 caps.latest.revision: 9
 ---
 # Examples of Cmdlet Code
+
 This section contains examples of cmdlet code that you can use to start writing your own cmdlets.
 
 > [!IMPORTANT]
->  If you want step-by-step instructions for writing cmdlets, see [Tutorials for Writing Cmdlets](./tutorials-for-writing-cmdlets.md).
+> If you want step-by-step instructions for writing cmdlets, see [Tutorials for Writing Cmdlets](./tutorials-for-writing-cmdlets.md).
 
 ## In This Section
- [How to Write a Simple Cmdlet](./how-to-write-a-simple-cmdlet.md)
- This example shows the basic structure of cmdlet code.
 
- [How to Declare Cmdlet Parameters](./how-to-declare-cmdlet-parameters.md)
- This example shows how to declare the different types of parameters.
+[How to Write a Simple Cmdlet](./how-to-write-a-simple-cmdlet.md)
+This example shows the basic structure of cmdlet code.
 
- [How to Declare Parameter Sets](./how-to-declare-parameter-sets.md)
- This example shows how to declare sets of parameters that can change the action a cmdlet performs.
+[How to Declare Cmdlet Parameters](./how-to-declare-cmdlet-parameters.md)
+This example shows how to declare the different types of parameters.
 
- [How to Validate Parameter Input](./how-to-validate-parameter-input.md)
- These examples show how to validate parameter input.
+[How to Declare Parameter Sets](./how-to-declare-parameter-sets.md)
+This example shows how to declare sets of parameters that can change the action a cmdlet performs.
 
- [How to Declare Dynamic Parameters](./how-to-declare-dynamic-parameters.md)
- This example shows how to declare a parameter that is added at runtime.
+[How to Validate Parameter Input](./how-to-validate-parameter-input.md)
+These examples show how to validate parameter input.
 
- [How to Invoke Scripts Within a Cmdlet](./how-to-invoke-scripts-within-a-cmdlet.md)
- This example shows how to invoke a script that is supplied to a cmdlet.
+[How to Declare Dynamic Parameters](./how-to-declare-dynamic-parameters.md)
+This example shows how to declare a parameter that is added at runtime.
 
- [How To Override Input Processing Methods](./how-to-override-input-processing-methods.md)
- These examples show the basic structure used to override the BeginProcessing, ProcessRecord, and EndProcessing methods.
+[How to Invoke Scripts Within a Cmdlet](./how-to-invoke-scripts-within-a-cmdlet.md)
+This example shows how to invoke a script that is supplied to a cmdlet.
 
- [How to Support ShouldProcess Calls](./how-to-request-confirmations.md)
- This example shows how the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods should be called from within a cmdlet.
+[How To Override Input Processing Methods](./how-to-override-input-processing-methods.md)
+These examples show the basic structure used to override the BeginProcessing, ProcessRecord, and EndProcessing methods.
 
- [How to Support Transactions](./how-to-support-transactions.md)
- This example shows how to indicate that the cmdlet supports transactions and how to implement the action that is taken when the cmdlet is used within a transaction.
+[How to Support ShouldProcess Calls](./how-to-request-confirmations.md)
+This example shows how the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods should be called from within a cmdlet.
 
- [How to Support Jobs](./how-to-support-jobs.md)
- This example shows how to support jobs when you write cmdlets.
+[How to Support Transactions](./how-to-support-transactions.md)
+This example shows how to indicate that the cmdlet supports transactions and how to implement the action that is taken when the cmdlet is used within a transaction.
 
- [How to Invoke a Cmdlet From Within a Cmdlet](./how-to-invoke-a-cmdlet-from-within-a-cmdlet.md)
- This example shows how to invoke a cmdlet from within another cmdlet, which allows you to add the functionality of the invoked cmdlet to the cmdlet you are developing.
+[How to Support Jobs](./how-to-support-jobs.md)
+This example shows how to support jobs when you write cmdlets.
+
+[How to Invoke a Cmdlet From Within a Cmdlet](./how-to-invoke-a-cmdlet-from-within-a-cmdlet.md)
+This example shows how to invoke a cmdlet from within another cmdlet, which allows you to add the functionality of the invoked cmdlet to the cmdlet you are developing.
 
 ## See Also
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
