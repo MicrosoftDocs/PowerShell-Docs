@@ -492,11 +492,11 @@
       - name: CustomControl Element for View (Format)
         href: ./format/customcontrol-element-for-view-format.md
       - name: CustomControlName Element for ExpressionBinding for Controls for Configuration (Format)
-        href: ./format/c5242935-2782-4d23-84f5-2446b2b7ba83.md
+        href: ./format/customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md
       - name: CustomControlName Element for ExpressionBinding for Controls for View (Format)
         href: ./format/customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md
       - name: CustomControlName Element for ExpressionBinding for CustomControl for View (Format)
-        href: ./format/ea821e8b-4d65-4263-b7e4-6aeca9f534c2.md
+        href: ./format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
       - name: CustomControlName Element for ExpressionBinding for GroupBy (Format)
         href: ./format/customcontrolname-element-for-expressionbinding-for-groupby-format.md
       - name: CustomControlName Element for GroupBy (Format)
@@ -550,11 +550,11 @@
       - name: EnumerableExpansions Element (Format)
         href: ./format/enumerableexpansions-element-format.md
       - name: EnumerateCollection Element for ExpressionBinding for Controls for Configuration (Format)
-        href: ./format/d5027c99-9f88-4c59-87ce-8793ef1d2fe3.md
+        href: ./format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
       - name: EnumerateCollection Element for ExpressionBinding for Controls for View (Format)
         href: ./format/enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md
       - name: EnumerateCollection Element for ExpressionBinding for CustomControl for View (Format)
-        href: ./format/3182c0c5-ba43-4d00-b3e0-27f24d272b2f.md
+        href: ./format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
       - name: EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
         href: ./format/enumeratecollection-element-for-expressionbinding-for-groupby-format.md
       - name: Expand Element (Format)
@@ -602,9 +602,9 @@
       - name: HideTableHeaders Element (Format)
         href: ./format/hidetableheaders-element-format.md
       - name: ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration (Format)
-        href: ./format/fd3ddc33-b21c-4464-b3f2-a78dbe0062a8.md
+        href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
       - name: ItemSelectionCondition Element for ExpressionBinding for Controls for View (Format)
-        href: ./format/82c15014-2440-410d-b02d-b7f1a49240a0.md
+        href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
       - name: ItemSelectionCondition Element for ExpressionBinding for CustomControl (Format)
         href: ./format/itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md
       - name: ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format)
@@ -654,7 +654,7 @@
       - name: PropertyCountForTable Element (Format)
         href: ./format/propertycountfortable-element-format.md
       - name: PropertyName Element for ExpressionBinding for Controls for Configuration (Format)
-        href: ./format/f4da7f70-acfb-4cae-9dc9-e15d8fe19d63.md
+        href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
       - name: PropertyName Element for ExpressionBinding for Controls for View (Format)
         href: ./format/propertyname-element-for-expressionbinding-for-controls-for-view-format.md
       - name: PropertyName Element for ExpressionBinding for CustomControl for View (Format)
@@ -664,11 +664,11 @@
       - name: PropertyName Element for GroupBy (Format)
         href: ./format/propertyname-element-for-groupby-format.md
       - name: PropertyName Element for ItemSeclectionCondition for Controls for Configuration (Format)
-        href: ./format/ad8ab181-c559-492e-a0cf-299e381fdcc3.md
+        href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
       - name: PropertyName Element for ItemSelectionCondition for Controls for View (Format)
         href: ./format/propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md
       - name: PropertyName Element for ItemSelectionCondition for CustomControl for View (Format)
-        href: ./format/f2b12006-8d52-486b-91a3-e6224ca80e56.md
+        href: ./format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
       - name: PropertyName Element for ItemSelectionCondition for GroupBy (Format)
         href: ./format/propertyname-element-for-itemselectioncondition-for-groupby-format.md
       - name: PropertyName Element for ItemSelectionCondition for ListControl (Format)
@@ -676,21 +676,21 @@
       - name: PropertyName Element for ListItem for ListControl (Format)
         href: ./format/propertyname-element-for-listitem-for-listcontrol-format.md
       - name: PropertyName Element for SelectionCondition for Controls for Configuration (Format)
-        href: ./format/ec048408-e1c6-41ef-b39b-72f4c2dcf2ac.md
+        href: ./format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
       - name: PropertyName Element for SelectionCondition for Controls for View (Format)
         href: ./format/propertyname-element-for-selectioncondition-for-controls-for-view-format.md
       - name: PropertyName Element for SelectionCondition for CustomControl for View (Format)
         href: ./format/propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md
       - name: PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
-        href: ./format/9ae11924-0072-451e-bf70-c5ffb25dccc0.md
+        href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
       - name: PropertyName Element for SelectionCondition for GroupBy (Format)
         href: ./format/propertyname-element-for-selectioncondition-for-groupby-format.md
       - name: PropertyName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
-        href: ./format/71c3f1f6-6fe2-42f1-8260-6974d3871748.md
+        href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
       - name: PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)
-        href: ./format/ba3b4d9b-2b8c-4a3a-8887-6c606eb9d490.md
+        href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md
       - name: PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)
-        href: ./format/340abb12-6df1-42f4-bdae-b0509c90952c.md
+        href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md
       - name: PropertyName Element for TableColumnItem for TableControl (Format)
         href: ./format/propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md
       - name: PropertyName Element for WideItem for WideControl (Format)
@@ -714,11 +714,11 @@
       - name: ScriptBlock Element for GroupBy (Format)
         href: ./format/scriptblock-element-for-groupby-format.md
       - name: ScriptBlock Element for ItemSeclectionCondition for Controls for Configuration (Format)
-        href: ./format/51f7aec9-7b01-4370-84f4-1e58508a851f.md
+        href: ./format/scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md
       - name: ScriptBlock Element for ItemSelectionCondition for Controls for View (Format)
         href: ./format/scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md
       - name: ScriptBlock Element for ItemSelectionCondition for CustomControl for View (Format)
-        href: ./format/946cd2b5-ac37-4a13-bb49-29fbc70ec8d7.md
+        href: ./format/scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
       - name: ScriptBlock Element for ItemSelectionCondition for GroupBy (Format)
         href: ./format/scriptblock-element-for-itemselectioncondition-for-groupby-format.md
       - name: ScriptBlock Element for ItemSelectionCondition for ListControl (Format)
@@ -726,27 +726,27 @@
       - name: ScriptBlock Element for ListItem for ListControl (Format)
         href: ./format/scriptblock-element-for-listitem-for-listcontrol-format.md
       - name: ScriptBlock Element for SelectionCondition for Controls for Configuration (Format)
-        href: ./format/bb032dfc-9ef6-403c-b557-5858617e3483.md
+        href: ./format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
       - name: ScriptBlock Element for SelectionCondition for Controls for View (Format)
         href: ./format/scriptblock-element-for-selectioncondition-for-controls-for-view-format.md
       - name: ScriptBlock Element for SelectionCondition for CustomControl for View (Format)
         href: ./format/scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md
       - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
-        href: ./format/4126b799-c43d-4175-8513-6d761c65437e.md
+        href: ./format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
       - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for GroupBy (Format)
-        href: ./format/e01344bd-ad69-4789-8e9f-2e79880c3a33.md
+        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
       - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
-        href: ./format/4a1adad7-e864-4892-9d26-a6476a9698d2.md
+        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
       - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
-        href: ./format/2b11fbcf-3426-48ae-9319-2c847969f723.md
+        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
       - name: ScriptBlock Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
-        href: ./format/5ec68309-7826-4643-a521-e29c996663fb.md
+        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
       - name: ScriptBlock Element for TableColumnItem for TableControl (Format)
         href: ./format/scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md
       - name: ScriptBlock Element for WideItem for WideControl (Format)
         href: ./format/scriptblock-element-for-wideitem-for-widecontrol-format.md
       - name: SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)
-        href: ./format/f23ef405-0f1e-4607-b3f4-4017b7ead106.md
+        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
       - name: SelectionCondition Element for EntrySelectedBy for Controls for View (Format)
         href: ./format/selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md
       - name: SelectionCondition Element for EntrySelectedBy for CustomControl (Format)
@@ -764,7 +764,7 @@
       - name: SelectionSet Element (Format)
         href: ./format/selectionset-element-format.md
       - name: SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)
-        href: ./format/42143d1e-7cda-4c4a-b568-fa1951bb9417.md
+        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
       - name: SelectionSetName Element for EntrySelectedBy for Controls for View (Format)
         href: ./format/selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md
       - name: SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)
@@ -780,21 +780,21 @@
       - name: SelectionSetName Element for EntrySelectedBy for WideControl (Format)
         href: ./format/selectionsetname-element-for-entryselectedby-for-widecontrol-format.md
       - name: SelectionSetName Element for SelectionCondition for Controls for Configuration (Format)
-        href: ./format/7dcaeadb-4e79-47a0-96e2-8952af26abbe.md
+        href: ./format/selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md
       - name: SelectionSetName Element for SelectionCondition for Controls for View (Format)
         href: ./format/selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md
       - name: SelectionSetName Element for SelectionCondition for CustomControl for View (Format)
-        href: ./format/a52b05a9-762e-4f1c-ad57-9d1710149722.md
+        href: ./format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
       - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
-        href: ./format/7b7af0b2-68e6-43c3-adcc-7c58007fced8.md
+        href: ./format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
       - name: SelectionSetName Element for SelectionCondition for GroupBy (Format)
         href: ./format/selectionsetname-element-for-selectioncondition-for-groupby-format.md
       - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)
-        href: ./format/eae67e47-6c60-4741-8430-78d2cb6067b1.md
+        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
       - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
-        href: ./format/17ae4d6b-dc95-4a1d-8e32-31ff084a951f.md
+        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
       - name: SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)
-        href: ./format/a13a429c-a31b-4e29-828c-c0c0917b5415.md
+        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
       - name: SelectionSetName Element for ViewSelectedBy (Format)
         href: ./format/selectionsetname-element-for-viewselectedby-format.md
       - name: SelectionSets Element (Format)
@@ -846,15 +846,15 @@
       - name: TypeName Element for SelectionCondition for CustomControl for View  (Format)
         href: ./format/typename-element-for-selectioncondition-for-customcontrol-for-view-format.md
       - name: TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
-        href: ./format/d9100ab7-fbdc-4c0d-bb56-57669ef42b95.md
+        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
       - name: TypeName Element for SelectionCondition for GroupBy (Format)
         href: ./format/typename-element-for-selectioncondition-for-groupby-format.md
       - name: TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)
-        href: ./format/bd025a3a-3780-40db-a068-873e7df38015.md
+        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
       - name: TypeName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
-        href: ./format/e97d56fb-4e35-447a-9282-26f10d0a4609.md
+        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
       - name: TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
-        href: ./format/6d6d43fa-c900-4e2f-952d-deccd584236f.md
+        href: ./format/typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
       - name: TypeName Element for Types (Format)
         href: ./format/typename-element-for-types-format.md
       - name: TypeName Element for ViewSelectedBy (Format)
