@@ -10,54 +10,58 @@ ms.assetid: b7bed607-369b-4507-87fa-f6011c2f1970
 caps.latest.revision: 9
 ---
 # StopProcessSample01 Sample
-This sample shows how to write a cmdlet that requests feedback from the user before it attempts to stop a process, and how to implement a `PassThru` parameter indicating that the user wants the cmdlet to return an object. This cmdlet is similar to the Stop-Process cmdlet provided by Windows PowerShell 2.0.
+
+This sample shows how to write a cmdlet that requests feedback from the user before it attempts to stop a process, and how to implement a `PassThru` parameter indicating that the user wants the cmdlet to return an object. This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.
 
 ### How to build the sample by using Visual Studio.
 
-1.  With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample01 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.
+1. With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample01 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.
 
-2.  Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
+2. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
 
-3.  In the **Build** menu, select **Build Solution**.
+3. In the **Build** menu, select **Build Solution**.
 
- The library for the sample will be built in the default \bin or \bin\debug folders.
+    The library for the sample will be built in the default \bin or \bin\debug folders.
 
 ### How to run the sample
 
-1.  Create the following module folder:
+1. Create the following module folder:
 
-     `[user]/documents/windowspowershell/modules/StopProcessSample01`
+    `[user]/documents/windowspowershell/modules/StopProcessSample01`
 
-2.  Copy the sample assembly to the module folder.
+2. Copy the sample assembly to the module folder.
 
-3.  Start Windows PowerShell.
+3. Start Windows PowerShell.
 
-4.  Run the following command to load the assembly into Windows PowerShell:
+4. Run the following command to load the assembly into Windows PowerShell:
 
-     `import-module stopprossessample01`
+    `import-module stopprossessample01`
 
-5.  Run the following command to run the cmdlet:
+5. Run the following command to run the cmdlet:
 
-     `stop-proc`
+    `stop-proc`
 
 ## Requirements
- This sample requires Windows PowerShell 2.0.
+
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Declaring a cmdlet class by using the Cmdlet attribute.
+This sample demonstrates the following.
 
--   Declaring a cmdlet parameters by using the Parameter attribute.
+- Declaring a cmdlet class by using the Cmdlet attribute.
 
--   Calling the ShouldProcess method to request confirmation.
+- Declaring a cmdlet parameters by using the Parameter attribute.
 
--   Implementing a `PassThru` parameter that indicates if the user wants the cmdlet to return an object. By default, this cmdlet does not return an object to the pipeline.
+- Calling the ShouldProcess method to request confirmation.
+
+- Implementing a `PassThru` parameter that indicates if the user wants the cmdlet to return an object. By default, this cmdlet does not return an object to the pipeline.
 
 ## Example
- This sample shows how to implement a `PassThru` parameter that indicates that the user wants the cmdlet to return an object, and how to request user feedback by calls to the `ShouldProcess` and `ShouldContinue` methods.
 
-```
+This sample shows how to implement a `PassThru` parameter that indicates that the user wants the cmdlet to return an object, and how to request user feedback by calls to the `ShouldProcess` and `ShouldContinue` methods.
+
+```csharp
 using System;
 using System.Diagnostics;
 using System.Collections;
@@ -254,4 +258,5 @@ namespace Microsoft.Samples.PowerShell.Commands
 ```
 
 ## See Also
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
