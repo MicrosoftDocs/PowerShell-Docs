@@ -10,25 +10,26 @@ ms.assetid: 137543d8-0012-4cba-bcd6-98b25aac83bb
 caps.latest.revision: 9
 ---
 # How to Write a Simple Cmdlet
+
 This topic shows how to write a simple cmdlet (the **Send-Greeting** cmdlet) that takes a single user name as input  and then writes a greeting to that user. Although the cmdlet does not do much work, this example demonstrates the major sections of a cmdlet.
 
 ### To Write a Simple Cmdlet
 
-1.  Use the Cmdlet attribute to declare the class as a cmdlet. This attribute specifies the verb and the noun for the cmdlet name.
+1. Use the Cmdlet attribute to declare the class as a cmdlet. This attribute specifies the verb and the noun for the cmdlet name.
 
-     For more information about how to declare the Cmdlet attribute, see [CmdletAttribute Declaration](./cmdlet-attribute-declaration.md).
+    For more information about how to declare the Cmdlet attribute, see [CmdletAttribute Declaration](./cmdlet-attribute-declaration.md).
 
-2.  Specify the name of the class.
+2. Specify the name of the class.
 
-3.  Specify that the cmdlet derives from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) or [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class.
+3. Specify that the cmdlet derives from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) or [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class.
 
-4.  Use the Parameter attribute to define the parameters for the cmdlet. In this case, only one required parameter is specified.
+4. Use the Parameter attribute to define the parameters for the cmdlet. In this case, only one required parameter is specified.
 
-     For more information about how to declare the Parameter attribute, see [ParameterAttribute Declaration](./parameter-attribute-declaration.md).
+    For more information about how to declare the Parameter attribute, see [ParameterAttribute Declaration](./parameter-attribute-declaration.md).
 
-5.  Override the input processing method that will process the input. In this case, the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method is overridden.
+5. Override the input processing method that will process the input. In this case, the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method is overridden.
 
-6.  Use the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to write the following greeting: "Hello [UserName]!".
+6. Use the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to write the following greeting: "Hello [UserName]!".
 
 ## Example
 
@@ -64,10 +65,17 @@ namespace SendGreeting
 ```
 
 ## See Also
- [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)
- [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)
- [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
- [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)
- [CmdletAttribute Declaration](./cmdlet-attribute-declaration.md)
- [ParameterAttribute Declaration](./parameter-attribute-declaration.md)
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)
+
+[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)
+
+[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
+
+[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)
+
+[CmdletAttribute Declaration](./cmdlet-attribute-declaration.md)
+
+[ParameterAttribute Declaration](./parameter-attribute-declaration.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
