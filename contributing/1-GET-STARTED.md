@@ -52,7 +52,7 @@ Here is the workflow for making major edits to existing documentation:
 
 ## Next steps
 
-See [Writing PowerShell documentation](WRITING.md).
+See [Writing PowerShell documentation](2-WRITING.md).
 
 <!-- External URLs -->
 [git-help]: https://help.github.com/

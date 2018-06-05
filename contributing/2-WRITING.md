@@ -11,7 +11,6 @@ Creating new articles is as easy as writing a simple text file by using your fav
 Here are some Markdown editors you can try out:
 
 * [Visual Studio Code](https://code.visualstudio.com)
-* [Markdown Pad](http://markdownpad.com/)
 * [Atom](https://atom.io/)
 * [Sublime Text](http://www.sublimetext.com/)
 
@@ -21,9 +20,9 @@ To get started using Markdown, see GitHub's Help topics for [Writing on GitHub][
 
 **NOTE:** GitHub recently adopted the CommonMark specification (with GFM extensions) for its Markdown syntax.
 In the new specification, many spacing rules have changed.
-Spaces are significant in GFM.
+Spaces are significant in Markdown.
 Do not use hard tabs in Markdown.
-For more detailed information about the Markdown specification, see the [GitHub Flavored Markdown Spec][gfm-spec].
+For more detailed information about the Markdown specification, see the [Markdown Specifics](4-MARKDOWN-SPECIFICS.md) article.
 
 DocFX, used by OPS, supports DocFX Flavored Markdown (DFM).
 DFM is highly compatible with GitHub Flavored Markdown (GFM) and adds some functionality, including cross-reference and file inclusion.
@@ -38,7 +37,7 @@ If no one seems to be working on what you have planned:
 * Open a new issue and label it as "in progress" (if you are a member of the PowerShell organization)
   or add "in progress" as a comment to tell others what you're working on.
 * Follow the same workflow as described above for making major edits to existing topics.
-* Do not edit the `TOC.md` or `TOC.yml` files (located in the top-level folder for each documentation set).
+* Do not edit the `TOC.yml` files (located in the top-level folder for each documentation set).
 * Create an issue requesting that your new article be added table of contents.
   Include a suggestion about where you think it show appear in the TOC.
   Someone on the PowerShell documentation team will make the appropriate changes to the TOC files.
@@ -54,11 +53,10 @@ you must apply the appropriate change to each version of the file.
 
 ## Next Steps
 
-Read the [Style Guide](STYLE.md).
+Read the [Style Guide](3-STYLE-GUIDE.md).
 
 <!-- External URLs -->
 [gfm-help]: https://help.github.com/categories/writing-on-github/
-[gfm-spec]: https://github.github.com/gfm/
 [labels]: https://github.com/PowerShell/PowerShell-Docs/labels/in%20progress
 [gfm-task]: https://github.github.com/gfm/#task-list-items-extension-
 [dfm-diffs]: http://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#differences-between-dfm-and-gfm
