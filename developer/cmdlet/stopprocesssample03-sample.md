@@ -10,52 +10,56 @@ ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
 caps.latest.revision: 8
 ---
 # StopProcessSample03 Sample
-This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters. This cmdlet is similar to the Stop-Process cmdlet provided by Windows PowerShell 2.0.
+
+This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters. This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.
 
 ### How to build the sample by using Visual Studio.
 
-1.  With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.
+1. With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.
 
-2.  Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
+2. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
 
-3.  In the **Build** menu, select **Build Solution**.
+3. In the **Build** menu, select **Build Solution**.
 
- The library for the sample will be built in the default \bin or \bin\debug folders.
+    The library for the sample will be built in the default \bin or \bin\debug folders.
 
 ### How to run the sample
 
-1.  Create the following module folder:
+1. Create the following module folder:
 
-     `[user]/documents/windowspowershell/modules/StopProcessSample03`
+    `[user]/documents/windowspowershell/modules/StopProcessSample03`
 
-2.  Copy the sample assembly to the module folder.
+2. Copy the sample assembly to the module folder.
 
-3.  Start Windows PowerShell.
+3. Start Windows PowerShell.
 
-4.  Run the following command to load the assembly into Windows PowerShell:
+4. Run the following command to load the assembly into Windows PowerShell:
 
-     `import-module stopprossessample03`
+    `import-module stopprossessample03`
 
-5.  Run the following command to run the cmdlet:
+5. Run the following command to run the cmdlet:
 
-     `stop-proc`
+    `stop-proc`
 
 ## Requirements
- This sample requires Windows PowerShell 2.0.
+
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Declaring a cmdlet class by using the Cmdlet attribute.
+This sample demonstrates the following.
 
--   Declaring a cmdlet parameters by using the Parameter attribute.
+- Declaring a cmdlet class by using the Cmdlet attribute.
 
--   Adding aliases to parameter declarations..
+- Declaring a cmdlet parameters by using the Parameter attribute.
 
--   Adding wildcard support to parameters.
+- Adding aliases to parameter declarations..
+
+- Adding wildcard support to parameters.
 
 ## Example
- This sample shows how to declare parameter aliases and support wildcards.
+
+This sample shows how to declare parameter aliases and support wildcards.
 
 ```
 using System;
@@ -341,4 +345,5 @@ namespace Microsoft.Samples.PowerShell.Commands
 ```
 
 ## See Also
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

@@ -10,58 +10,62 @@ ms.assetid: ac4903f5-fd40-4f1c-b1d1-18923c16ce45
 caps.latest.revision: 8
 ---
 # StopProcessSample04 Sample
-This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object. This cmdlet is similar to the Stop-Process cmdlet provided by Windows PowerShell 2.0.
+
+This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object. This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.
 
 ### How to build the sample by using Visual Studio.
 
-1.  With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.
+1. With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.
 
-2.  Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
+2. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
 
-3.  In the **Build** menu, select **Build Solution**.
+3. In the **Build** menu, select **Build Solution**.
 
- The library for the sample will be built in the default \bin or \bin\debug folders.
+    The library for the sample will be built in the default \bin or \bin\debug folders.
 
 ### How to run the sample
 
-1.  Create the following module folder:
+1. Create the following module folder:
 
-     `[user]/documents/windowspowershell/modules/StopProcessSample04`
+    `[user]/documents/windowspowershell/modules/StopProcessSample04`
 
-2.  Copy the sample assembly to the module folder.
+2. Copy the sample assembly to the module folder.
 
-3.  Start Windows PowerShell.
+3. Start Windows PowerShell.
 
-4.  Run the following command to load the assembly into Windows PowerShell:
+4. Run the following command to load the assembly into Windows PowerShell:
 
-     `import-module stopprossessample04`
+    `import-module stopprossessample04`
 
-5.  Run the following command to run the cmdlet:
+5. Run the following command to run the cmdlet:
 
-     `stop-proc`
+    `stop-proc`
 
 ## Requirements
- This sample requires Windows PowerShell 2.0.
+
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Declaring a cmdlet class by using the Cmdlet attribute.
+This sample demonstrates the following.
 
--   Declaring a cmdlet parameters by using the Parameter attribute.
+- Declaring a cmdlet class by using the Cmdlet attribute.
 
--   Adding a parameter that accepts input object.
+- Declaring a cmdlet parameters by using the Parameter attribute.
 
--   Adding parameters to parameter sets
+- Adding a parameter that accepts input object.
 
--   Specifying the default parameter set.
+- Adding parameters to parameter sets
+
+- Specifying the default parameter set.
 
 ## Example
- The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.
 
- This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.
+The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.
 
-```
+This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.
+
+```csharp
 using System;
 using System.Diagnostics;
 using System.Collections;
@@ -481,4 +485,5 @@ namespace Microsoft.Samples.PowerShell.Commands
 ```
 
 ## See Also
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
