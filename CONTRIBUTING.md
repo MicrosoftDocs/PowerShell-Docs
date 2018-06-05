@@ -9,4 +9,4 @@ The following topics explain how to contribute to the PowerShell documentation.
 3. [Style Guide](./contributing/3-STYLE-GUIDE.md)
 4. [Markdown Specifics](./contributing/4-MARKDOWN-SPECIFICS.md)
 5. [Formatting Code blocks](./contributing/5-FORMATTING-CODE.md)
-6. [Updating Reference](6-UPDATING-REFERENCE.md)
+6. [Updating Reference](./contributing/6-UPDATING-REFERENCE.md)

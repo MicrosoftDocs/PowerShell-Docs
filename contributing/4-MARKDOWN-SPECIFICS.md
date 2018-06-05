@@ -63,7 +63,7 @@ This is a list that contain sub-elements under a bullet item.
 
 ```
 
-This is a list that contain sub-elements under a bullet item.
+This is a list that contains sub-elements under a bullet item.
 
 - First bullet item
 
@@ -118,7 +118,6 @@ Use specific syntax inside a block quote to indicate that the content is a type 
 
 > [!IMPORTANT]
 > This is important.
-
 ```
 
 And it will be rendered like this:

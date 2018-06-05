@@ -1,10 +1,10 @@
 # Style guide for PowerShell-Docs
 
-This articles some style guidance specific to the PowerShell-Docs content.
+This article provides some style guidance specific to the PowerShell-Docs content.
 There is some limited guidance on specific Markdown formatting.
 Markdown specifics are covered in the [Next steps](#next-steps).
 
-For other writing style guidance, see the [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/).
+For other writing style guidance, see the [Microsoft Style Guide](https://docs.microsoft.com/style-guide/welcome/).
 
 ## Product Terminology
 
@@ -21,6 +21,7 @@ In general, references to "Windows PowerShell" in documentation can be changed t
 "Windows PowerShell" should **not** be changed when Windows-specific technology is being discussed.
 
 ## About_ file formatting
+
 We are changing the way we process about_ files.
 About_* files are being reformatted for the best compatibility across PowerShell versions and our publishing tools.
 For details, see [issue #1806][issue1806].
@@ -42,9 +43,9 @@ Basic formatting guidelines:
 Add a single newline after each sentence or a clause boundary near the 100 character limit.
 This simplifies the command-line output of diffs and history.
 
-* You must include semantic line breaks
-* Limit lines to 100 characters
-* If a sentence is longer than 100 characters, break the line at a clause boundary
+- You must include semantic line breaks
+- Limit lines to 100 characters
+- If a sentence is longer than 100 characters, break the line at a clause boundary
   near the 100 character limit
 
 For a good explanation of semantic line breaks, see [Semantic Linefeeds by Rhodes Mill][semantics].
@@ -55,14 +56,14 @@ Feel free to help out.
 
 ## Formatting syntax elements
 
-* PowerShell cmdlets are "[Pascal Cased][pascal-case]".
+- PowerShell cmdlets are "[Pascal Cased][pascal-case]".
   Verbs are seperated from nouns by a hyphen.
 
-* When talking about a cmdlet in paragraph, use \` to highlight cmdlet names
+- When talking about a cmdlet in paragraph, use \` to highlight cmdlet names
 
-* Property names and parameter names should be in **bold**
+- Property names and parameter names should be in **bold**
 
-* When writing an article (as opposed to reference content), the first instance of a cmdlet name should be a link to the cmdlet documentation.
+- When writing an article (as opposed to reference content), the first instance of a cmdlet name should be a link to the cmdlet documentation.
 
   For example:
 
@@ -136,7 +137,8 @@ Note that the live link does not resolve within the GitHub view of this content.
 This link only works on the webpage published to **docs.microsoft.com**.
 
 ## Next Steps
-See [Markdown Specifics](4-MARKDOWN-SPECIFICS.md)
+
+See [Markdown Specifics](4-MARKDOWN-SPECIFICS.md).
 
 <!-- External URLs -->
 [pascal-case]: https://en.wikipedia.org/wiki/PascalCase

@@ -6,7 +6,7 @@ MAML help files used by the `Get-Help` cmdlet.
 
 PlatyPS has a hardcoded schema for cmdlet reference that is written into the code. The
 [platyPS.schema.md] document attempts to describe this structure. When updating cmdlet reference,
-if you don't follow this schema you can cause a build errors that must be fixed before we can
+if you don't follow this schema you can cause build errors that must be fixed before we can
 accept your contribution.
 
 ## Guidelines
@@ -14,7 +14,7 @@ accept your contribution.
 - Do not remove any of the header structures. PlatyPS expect a specific set of headers.
 - The **Input type** and **Output type** headers must have a type.
   If the cmdlet does not take input or return a value then use the value "None".
-- Fenced code blocks are only allows in the **Examples** section.
+- Fenced code blocks are only allowed in the **Examples** section.
 - Inline code spans can be used in any paragraph.
 
 ## Writing examples
@@ -28,7 +28,7 @@ add a title for each example. For example:
 Get-Command
 ```
 
-This command gets the Windows PowerShell cmdlets, functions, and aliases that are installed on the
+This command gets the  PowerShell cmdlets, functions, and aliases that are installed on the
 computer.
 
 ### Example 2: Get commands in the current session
