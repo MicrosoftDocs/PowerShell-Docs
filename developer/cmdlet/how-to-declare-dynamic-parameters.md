@@ -10,49 +10,51 @@ ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
 ---
 # How to Declare Dynamic Parameters
+
 This example shows how to define dynamic parameters that are added to the cmdlet at runtime. In this example, the `Department` parameter is added to the cmdlet whenever the user specifies the `Employee` switch parameter. For more information about dynamic parameters, see [Cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).
 
-### To define dynamic parameters
+## To define dynamic parameters
 
-1.  In the cmdlet class declaration, add the [System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) interface as shown.
+1. In the cmdlet class declaration, add the [System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) interface as shown.
 
-    ```csharp
-    public class SendGreetingCommand : Cmdlet, IDynamicParameters
-    ```
+   ```csharp
+   public class SendGreetingCommand : Cmdlet, IDynamicParameters
+   ```
 
-2.  Call the [System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) method, which returns the object in which the dynamic parameters are defined. In this example, the method is called when the `Employee` parameter is specified.
+2. Call the [System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) method, which returns the object in which the dynamic parameters are defined. In this example, the method is called when the `Employee` parameter is specified.
 
-    ```csharp
-     public object GetDynamicParameters()
-     {
+   ```csharp
+   public object GetDynamicParameters()
+   {
        if (employee)
        {
          context= new SendGreetingCommandDynamicParameters();
          return context;
        }
        return null;
-    }
-    private SendGreetingCommandDynamicParameters context;
-    ```
+   }
+   private SendGreetingCommandDynamicParameters context;
+   ```
 
-3.  Declare a class that defines the dynamic parameters to be added. You can use the attributes that you used to declare the static cmdlet parameters to declare the dynamic parameters.
+3. Declare a class that defines the dynamic parameters to be added. You can use the attributes that you used to declare the static cmdlet parameters to declare the dynamic parameters.
 
-    ```csharp
-    public class SendGreetingCommandDynamicParameters
-    {
-      [Parameter]
-      [ValidateSet ("Marketing", "Sales", "Development")]
-      public string Department
-      {
-        get { return department; }
-        set { department = value; }
-      }
-      private string department;
-    }
-    ```
+   ```csharp
+   public class SendGreetingCommandDynamicParameters
+   {
+     [Parameter]
+     [ValidateSet ("Marketing", "Sales", "Development")]
+     public string Department
+     {
+       get { return department; }
+       set { department = value; }
+     }
+     private string department;
+   }
+   ```
 
 ## Example
- In this example, the `Department` parameter is added whenever the user specifies the `Employee` parameter. The `Department` parameter is an optional parameter, and the ValidateSet attribute is used to specify the allowed arguments.
+
+In this example, the `Department` parameter is added whenever the user specifies the `Employee` parameter. The `Department` parameter is an optional parameter, and the ValidateSet attribute is used to specify the allowed arguments.
 
 ```csharp
 using System;
@@ -128,7 +130,11 @@ namespace SendGreeting
 ```
 
 ## See Also
- [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)
- [System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
- [Cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md)
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+
+[System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)
+
+[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
+
+[Cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md)
+
+[Windows PowerShell SDK](../windows-powershell-reference.md)

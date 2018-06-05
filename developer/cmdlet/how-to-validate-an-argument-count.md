@@ -12,14 +12,15 @@ ms.assetid: 4e6b6ac4-1003-4e7e-9d4a-9f1cf74fc4af
 caps.latest.revision: 8
 ---
 # How to Validate an Argument Count
+
 This example shows how to specify a validation rule that the Windows PowerShell runtime can use to check the number of arguments (the count) that a parameter accepts before the cmdlet is run. You set this validation rule by declaring the ValidateCount attribute.
 
 > [!NOTE]
->  For more information about the class that defines this attribute, see [System.Management.Automation.Validatecountattribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute).
+> For more information about the class that defines this attribute, see [System.Management.Automation.Validatecountattribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute).
 
-### To validate an argument count
+## To validate an argument count
 
--   Add the Validate attribute as shown in the following code. This example specifies that the parameter will accept one argument or as many as three arguments.
+- Add the Validate attribute as shown in the following code. This example specifies that the parameter will accept one argument or as many as three arguments.
 
     ```csharp
     [ValidateCount(1, 3)]
@@ -33,8 +34,10 @@ This example shows how to specify a validation rule that the Windows PowerShell 
     private string[] userNames;
     ```
 
- For more information about how to declare this attribute, see [ValidateCount Attribute Declaration](./validatecount-attribute-declaration.md).
+For more information about how to declare this attribute, see [ValidateCount Attribute Declaration](./validatecount-attribute-declaration.md).
 
 ## See Also
- [ValidateCount Attribute Declaration](./validatecount-attribute-declaration.md)
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[ValidateCount Attribute Declaration](./validatecount-attribute-declaration.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

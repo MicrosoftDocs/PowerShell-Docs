@@ -10,16 +10,19 @@ ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
 ---
 # How to Invoke a Cmdlet from Within a Cmdlet
-This example shows how to invoke a cmdlet from within another cmdlet, which allows you to add the functionality of the invoked cmdlet to the cmdlet you are developing. In this example, the **Get-Process** cmdlet is invoked to get the processes that are running on the local computer. The call to the **Get-Process** cmdlet is equivalent to the following command. This command retrieves all the processes whose names start with the characters "a" through "t".
 
- **PS>get-process -name [a-t]\***
+This example shows how to invoke a cmdlet from within another cmdlet, which allows you to add the functionality of the invoked cmdlet to the cmdlet you are developing. In this example, the `Get-Process` cmdlet is invoked to get the processes that are running on the local computer. The call to the `Get-Process` cmdlet is equivalent to the following command. This command retrieves all the processes whose names start with the characters "a" through "t".
+
+```powershell
+Get-Process -name [a-t]
+```
 
 > [!IMPORTANT]
->  You can invoke only those cmdlets that derive directly from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class. You cannot invoke a cmdlet that derives from the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class.
+> You can invoke only those cmdlets that derive directly from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class. You cannot invoke a cmdlet that derives from the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class.
 
-### To invoke a cmdlet from within a cmdlet
+## To invoke a cmdlet from within a cmdlet
 
-1.  Ensure that the assembly that defines the cmdlet to be invoked is referenced and that the appropriate `using` statement is added. In this example, the following namespaces are added.
+1. Ensure that the assembly that defines the cmdlet to be invoked is referenced and that the appropriate `using` statement is added. In this example, the following namespaces are added.
 
     ```csharp
     using System.Diagnostics;
@@ -27,14 +30,14 @@ This example shows how to invoke a cmdlet from within another cmdlet, which allo
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2.  In the input processing method of the cmdlet, create a new instance of the cmdlet to be invoked. In this example, an object of type [Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) is created along with the string that contains the arguments that are used when the cmdlet is invoked.
+2. In the input processing method of the cmdlet, create a new instance of the cmdlet to be invoked. In this example, an object of type [Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) is created along with the string that contains the arguments that are used when the cmdlet is invoked.
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
     gp.Name = new string[] { "[a-t]*" };
     ```
 
-3.  Call the [System.Management.Automation.Cmdlet.Invoke*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) method to invoke the **Get-Process** cmdlet.
+3. Call the [System.Management.Automation.Cmdlet.Invoke*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) method to invoke the `Get-Process` cmdlet.
 
     ```csharp
       foreach (Process p in gp.Invoke<Process>())
@@ -45,7 +48,8 @@ This example shows how to invoke a cmdlet from within another cmdlet, which allo
     ```
 
 ## Example
- In this example, the **Get-Process** cmdlet is invoked from within the [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method of a cmdlet.
+
+In this example, the `Get-Process` cmdlet is invoked from within the [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method of a cmdlet.
 
 ```csharp
 using System;
@@ -94,4 +98,5 @@ namespace SendGreeting
 ```
 
 ## See Also
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

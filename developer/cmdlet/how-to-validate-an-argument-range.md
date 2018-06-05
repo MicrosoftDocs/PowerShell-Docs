@@ -12,14 +12,15 @@ ms.assetid: 3cba3ab7-c3b6-4d17-aa17-88377496551b
 caps.latest.revision: 9
 ---
 # How to Validate an Argument Range
+
 This example shows how to specify a validation rule that the Windows PowerShell runtime can use to check the minimum and maximum values of the parameter argument before the cmdlet is run. You set this validation rule by declaring the ValidateRange attribute.
 
 > [!NOTE]
->  For more information about the class that defines this attribute, see [System.Management.Automation.Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute).
+> For more information about the class that defines this attribute, see [System.Management.Automation.Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute).
 
 ### To validate an argument range
 
--   Add the ValidateRange attribute as shown in the following code. This example specifies a range of 0 to 5 for the `InputData` parameter.
+- Add the ValidateRange attribute as shown in the following code. This example specifies a range of 0 to 5 for the `InputData` parameter.
 
     ```csharp
     [ValidateRange(0, 5)]
@@ -32,8 +33,10 @@ This example shows how to specify a validation rule that the Windows PowerShell 
     private int inputData;
     ```
 
- For more information about how to declare this attribute, see [ValidateRange Attribute Declaration](./validaterange-attribute-declaration.md).
+For more information about how to declare this attribute, see [ValidateRange Attribute Declaration](./validaterange-attribute-declaration.md).
 
 ## See Also
- [ValidateRange Attribute Declaration](./validaterange-attribute-declaration.md)
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[ValidateRange Attribute Declaration](./validaterange-attribute-declaration.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

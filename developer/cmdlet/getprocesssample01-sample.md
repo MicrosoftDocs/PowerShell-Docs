@@ -10,64 +10,73 @@ ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
 ---
 # GetProcessSample01 Sample
-This sample shows how to implement a cmdlet that retrieves the processes on the local computer. This cmdlet is a simplified version of the Get-Process cmdlet that is provided by Windows PowerShell 2.0.
 
-### How to build the sample by using Visual Studio.
+This sample shows how to implement a cmdlet that retrieves the processes on the local computer. This cmdlet is a simplified version of the `Get-Process` cmdlet that is provided by Windows PowerShell 2.0.
 
-1.  With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample01 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01.
+## How to build the sample by using Visual Studio.
 
-2.  Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
+1. With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample01 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01.
 
-3.  In the **Build** menu, select **Build Solution**.
+2. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
 
- The library for the sample will be built in the default \bin or \bin\debug folders.
+3. In the **Build** menu, select **Build Solution**.
+
+  The library for the sample will be built in the default \bin or \bin\debug folders.
 
 ### How to run the sample
 
-1.  Open a Command Prompt window.
+1. Open a Command Prompt window.
 
-2.  Navigate to the directory containing the sample .dll file.
+2. Navigate to the directory containing the sample .dll file.
 
-3.  Run installutil "GetProcessSample01.dll".
+3. Run installutil "GetProcessSample01.dll".
 
-4.  Start Windows PowerShell.
+4. Start Windows PowerShell.
 
-5.  Run the following command to add the snap-in to the shell.
+5. Run the following command to add the snap-in to the shell.
 
-     `Add-PSSnapin GetProcPSSnapIn01`
+   `Add-PSSnapin GetProcPSSnapIn01`
 
-6.  Enter the following command to run the cmdlet. `get-proc`
+6. Enter the following command to run the cmdlet. `get-proc`
 
-     `get-proc`
+   `get-proc`
 
- This is a sample output that results from following these steps.
+   This is a sample output that results from following these steps.
 
-```
-Id              Name            State      HasMoreData     Location             Command
---              ----            -----      -----------     --------             -------
-1               26932870-d3b... NotStarted False                                 Write-Host "A f...
+   ```output
+   Id              Name            State      HasMoreData     Location             Command
+   --              ----            -----      -----------     --------             -------
+   1               26932870-d3b... NotStarted False                                 Write-Host "A f...
 
-PS> Set-Content $env:temp\test.txt "This is a test file"
-A file was created in the TEMP directory
-PS>
-```
+   ```
+
+   ```powershell
+   Set-Content $env:temp\test.txt "This is a test file"
+   ```
+
+   ```output
+   A file was created in the TEMP directory
+   ```
 
 ## Requirements
- This sample requires Windows PowerShell 1.0 or later.
+
+This sample requires Windows PowerShell 1.0 or later.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Creating a basic sample cmdlet.
+This sample demonstrates the following.
 
--   Defining a cmdlet class by using the Cmdlet attribute.
+- Creating a basic sample cmdlet.
 
--   Creating a snap-in that works with both Windows PowerShell 1.0 and Windows PowerShell 2.0. Subsequent samples use modules instead of snap-ins so they require Windows PowerShell 2.0.
+- Defining a cmdlet class by using the Cmdlet attribute.
+
+- Creating a snap-in that works with both Windows PowerShell 1.0 and Windows PowerShell 2.0. Subsequent samples use modules instead of snap-ins so they require Windows PowerShell 2.0.
 
 ## Example
- This sample shows how to create a simple cmdlet and its snap-in.
 
-```
+This sample shows how to create a simple cmdlet and its snap-in.
+
+```csharp
 using System;
 using System.Diagnostics;
 using System.Management.Automation;             //Windows PowerShell namespace
@@ -178,4 +187,5 @@ namespace Microsoft.Samples.PowerShell.Commands
 ```
 
 ## See Also
- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
