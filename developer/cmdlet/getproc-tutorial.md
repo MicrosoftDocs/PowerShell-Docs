@@ -12,7 +12,6 @@ caps.latest.revision: 6
 # GetProc Tutorial
 
 This section provides a tutorial for creating a Get-Proc cmdlet that is very similar to the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet provided by Windows PowerShell. This tutorial provides fragments of code that illustrate how cmdlets are implemented, and an explanation of the code.
-This section provides a tutorial for creating a Get-Proc cmdlet that is very similar to the [Get-Process](https://www.msn.com/?ocid=NEFLS000) cmdlet provided by Windows PowerShell. This tutorial provides fragments of code that illustrate how cmdlets are implemented, and an explanation of the code.
 
 ## Topics in this Tutorial
 

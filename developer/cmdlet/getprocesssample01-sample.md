@@ -21,7 +21,7 @@ This sample shows how to implement a cmdlet that retrieves the processes on the 
 
 3. In the **Build** menu, select **Build Solution**.
 
-    The library for the sample will be built in the default \bin or \bin\debug folders.
+   The library for the sample will be built in the default \bin or \bin\debug folders.
 
 ### How to run the sample
 
@@ -35,28 +35,28 @@ This sample shows how to implement a cmdlet that retrieves the processes on the 
 
 5. Run the following command to add the snap-in to the shell.
 
-    `Add-PSSnapin GetProcPSSnapIn01`
+   `Add-PSSnapin GetProcPSSnapIn01`
 
 6. Enter the following command to run the cmdlet. `get-proc`
 
-    `get-proc`
+   `get-proc`
 
-    This is a sample output that results from following these steps.
+   This is a sample output that results from following these steps.
 
-    ```output
-    Id              Name            State      HasMoreData     Location             Command
-    --              ----            -----      -----------     --------             -------
-    1               26932870-d3b... NotStarted False                                 Write-Host "A f...
+   ```output
+   Id              Name            State      HasMoreData     Location             Command
+   --              ----            -----      -----------     --------             -------
+   1               26932870-d3b... NotStarted False                                 Write-Host "A f...
 
-    ```
+   ```
 
-    ```powershell
-    Set-Content $env:temp\test.txt "This is a test file"
-    ```
+   ```powershell
+   Set-Content $env:temp\test.txt "This is a test file"
+   ```
 
-    ```output
-    A file was created in the TEMP directory
-    ```
+   ```output
+   A file was created in the TEMP directory
+   ```
 
 ## Requirements
 
