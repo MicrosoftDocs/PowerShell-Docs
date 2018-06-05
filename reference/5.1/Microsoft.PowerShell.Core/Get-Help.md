@@ -177,28 +177,22 @@ To download and install the help files for the commands that come with Windows P
 If you are not a member of the Administrators group on the computer, you cannot download help for these modules.
 However, you can use the *Online* parameter to open the online version of help for a command, and you can read the help for Windows PowerShell in the TechNet library starting at Scripting with Windows PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116).
 
-### Example 6: Display detailed help
-```
-PS C:\> Get-Help ls -Detailed
-```
-
-This command displays detailed help for the Get-ChildItem cmdlet by specifying one of its aliases, ls.
-The *Detailed* parameter of **Get-Help** gets the detailed view of the help topic, which includes parameter descriptions and examples.
-To see the complete help topic for a cmdlet, use the *Full* parameter.
-
-The *Full* and *Detailed* parameters are effective only when help files for the command are installed on the computer.
-
-### Example 7: Display full information for a cmdlet
-```
-PS C:\> Get-Help Format-Table -Full
+### Example 6: Display more information for a cmdlet
+```powershell
+Get-Help Format-Table -Detailed
+Get-Help Format-Table -Full
 ```
 
-This command uses the *Full* parameter of **Get-Help** to display the full view help for the Format-Table cmdlet.
-The full view of help includes parameter descriptions, examples, and a table of technical details about the parameters.
+These commands display more information about the `Format-Table` cmdlet than usual.
 
-The *Full* parameter is effective only when help files for the command are installed on the computer.
+The **Detailed** parameter displays the detailed view of the help topic, which includes parameter descriptions and examples.
 
-### Example 8: Display examples for a cmdlet
+The **Full** parameter displays the full view of the help topic, which includes parameter descriptions, examples, input and output object types, and additional notes.
+
+The **Detailed** and **Full** parameters are effective only for the commands whose help files are installed on the computer.
+They are not effective for the conceptual ("about_") help topics.
+
+### Example 7: Display examples for a cmdlet
 ```
 PS C:\> Get-Help Start-Service -Examples
 ```
@@ -208,7 +202,7 @@ It uses the *Examples* parameter of **Get-Help** to display only the Examples se
 
 The *Examples* parameter is effective only when help files for the command are installed on the computer.
 
-### Example 9: Display parameter help
+### Example 8: Display parameter help
 ```
 PS C:\> Get-Help Format-List -Parameter GroupBy
 ```
@@ -216,7 +210,7 @@ PS C:\> Get-Help Format-List -Parameter GroupBy
 This command uses the *Parameter* parameter of **Get-Help** to display a detailed description of the *GroupBy* parameter of the Format-List cmdlet.
 For detailed descriptions of all parameters of the **Format-List** cmdlet, type `Get-Help Format-List -Parameter *`.
 
-### Example 10: Search for a word in cmdlet help
+### Example 9: Search for a word in cmdlet help
 ```
 PS C:\> Get-Help Add-Member -Full | Out-String -Stream | Select-String -Pattern Clixml
 ```
@@ -226,14 +220,14 @@ This command searches for the word Clixml in the full version of the help topic 
 
 Because the **Get-Help** cmdlet generates a **MamlCommandHelpInfo** object, not a string, you have to use a cmdlet that transforms the help topic content into a string, such as Out-String or Out-File.
 
-### Example 11: Display online version of help
+### Example 10: Display online version of help
 ```
 PS C:\> Get-Help Get-Member -Online
 ```
 
 This command displays the online version of the help topic for the Get-Member cmdlet.
 
-### Example 12: Display a list of topics that include a word
+### Example 11: Display a list of topics that include a word
 ```
 PS C:\> Get-Help remoting
 ```
@@ -242,7 +236,7 @@ This command displays a list of topics that include the word remoting.
 
 When you enter a word that does not appear in any topic title, **Get-Help** displays a list of topics that include that word.
 
-### Example 13: Display provider specific help
+### Example 12: Display provider specific help
 ```
 The first command uses the *Path* parameter of **Get-Help** to specify the provider path. This command can be entered at any path location.
 PS C:\> Get-Help Get-Item -Path SQLSERVER:\DataCollection
@@ -298,7 +292,7 @@ The example shows two ways of getting the provider-specific help for **Get-Item*
 You can also get provider-specific help for cmdlets online in the section that describes the provider.
 For example, for provider-specific online help for the **New-Item** cmdlet in each WSMan provider path, see New-Item for ClientCertificatehttp://go.microsoft.com/fwlink/?LinkID=158676 in the TechNet library.
 
-### Example 14: Display help for a script
+### Example 13: Display help for a script
 ```
 PS C:\> Get-Help C:\PS-Test\MyScript.ps1
 ```
