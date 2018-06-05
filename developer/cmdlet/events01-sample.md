@@ -21,13 +21,13 @@ This sample shows how to create a cmdlet that allows the user to register for ev
 
 3. In the **Build** menu, select **Build Solution**.
 
-The library for the sample will be built in the default \bin or \bin\debug folders.
+    The library for the sample will be built in the default \bin or \bin\debug folders.
 
 ### How to run the sample
 
 1. Create the following module folder:
 
-`[user]/documents/windowspowershell/modules/events01`
+    `[user]/documents/windowspowershell/modules/events01`
 
 2. Copy the library file for the sample to the module folder.
 
@@ -35,15 +35,15 @@ The library for the sample will be built in the default \bin or \bin\debug folde
 
 4. Run the following command to load the cmdlet into Windows PowerShell:
 
-```powershell
-import-module events01
-```
+    ```powershell
+    import-module events01
+    ```
 
 5. Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.
 
-```powershell
-Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
-```
+    ```powershell
+    Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
+    ```
 
 6. Create a file under the TEMP directory and note that the action is executed (the message is displayed).
 

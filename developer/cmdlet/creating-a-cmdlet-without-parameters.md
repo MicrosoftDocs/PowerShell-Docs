@@ -167,7 +167,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     get-proc
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -191,7 +191,7 @@ The following output appears.
     $p.length
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     63
@@ -203,7 +203,7 @@ The following output appears.
     $p[6]
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id    ProcessName
@@ -217,7 +217,7 @@ The following output appears.
     $p[6].starttime
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     Tuesday, July 26, 2005 9:34:15 AM
@@ -237,7 +237,7 @@ The following output appears.
     $p | Where-Object {$_.HandleCount -gt 500 } | Sort-Object HandleCount
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -259,7 +259,7 @@ The following output appears.
         TypeName: System.Diagnostics.Process
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     Name                     MemberType Definition

@@ -1115,7 +1115,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
@@ -1136,7 +1136,7 @@ The following output appears.
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
@@ -1157,7 +1157,7 @@ The following output appears.
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
@@ -1178,7 +1178,7 @@ The following output appears.
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     IgnoreCase   : False
@@ -1199,7 +1199,7 @@ The following output appears.
     select-str -Path * -Pattern "[0-9]"
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
@@ -1215,7 +1215,7 @@ The following output appears.
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-The following output appears.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
