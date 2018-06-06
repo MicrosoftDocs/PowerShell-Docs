@@ -10,26 +10,28 @@ ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
 caps.latest.revision: 8
 ---
 # RemoteRunspacePool01 Sample
+
 This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.
 
 ## Requirements
+
  This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.
+- Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.
 
--   Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.
+- Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.
 
--   Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.
+- Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.
 
--   Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](http://go.microsoft.com/fwlink/?LinkId=113332) cmdlets concurrently by using the remote runspace pool.
--   Running the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) and [Get-Service](http://go.microsoft.com/fwlink/?LinkId=113332) cmdlets concurrently by using the remote runspace pool.
+- Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlets concurrently by using the remote runspace pool.
+- Running the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) and [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlets concurrently by using the remote runspace pool.
 
--   Closing the remote runspace pool to release the remote connection.
+- Closing the remote runspace pool to release the remote connection.
 
 ## Example
+
  This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.
 
 ```csharp
@@ -126,4 +128,3 @@ namespace Samples
 ```
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)

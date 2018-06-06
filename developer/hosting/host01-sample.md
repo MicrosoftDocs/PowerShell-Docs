@@ -10,25 +10,27 @@ ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
 caps.latest.revision: 14
 ---
 # Host01 Sample
+
 This sample shows how to implement a host application that uses a custom host. In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit." The host application then looks at the output of the script and prints out the results.
 
  This sample uses the default UI features provided by Windows PowerShell. For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).
 
 ## Requirements
+
  This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Creating a custom host class that derives from the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class.
+- Creating a custom host class that derives from the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class.
 
--   Creating a runspace that uses the custom host class.
+- Creating a runspace that uses the custom host class.
 
--   Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.
 
--   Verifying that the correct exit code was used in the exit process.
+- Verifying that the correct exit code was used in the exit process.
 
 ## Example
+
  The following code shows an implementation of a host application that uses a simple custom host interface.
 
 ```csharp
@@ -130,6 +132,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## Example
+
  The following code is the implementation of the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
 
 ```csharp
@@ -300,4 +303,3 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)

@@ -10,6 +10,7 @@ ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
 ---
 # Creating a constrained runspace
+
 For performance or security reasons, you might want to restrict the Windows PowerShell commands available to your host application. To do this you create an empty [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) by calling the [System.Management.Automation.Runspaces.Initialsessionstate.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add only the commands you want available.
 
  Using a runspace that loads only the commands that you specify provides significantly improved performance.
@@ -19,9 +20,10 @@ For performance or security reasons, you might want to restrict the Windows Powe
  You can also make commands private. Private commands can be used by the host application, but not by users of the application.
 
 ## Adding commands to an empty runspace
+
  The following example demonstrates how to create an empty InitialSessionState and add commands to it.
 
-```
+```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
 {
   using System;
@@ -100,10 +102,11 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ```
 
 ## Making commands private
- You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private). The host application and other commands can call that command, but the user of the application cannot. In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.
- You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private). The host application and other commands can call that command, but the user of the application cannot. In the following example, the [Get-ChildItem](http://msdn.microsoft.com/en-us/75cf79bb-4db6-4a67-8c36-3d20754e2190) command is private.
 
-```
+ You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private). The host application and other commands can call that command, but the user of the application cannot. In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.
+ You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private). The host application and other commands can call that command, but the user of the application cannot. In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.
+
+```csharp
 defaultSessionState = InitialSessionState.CreateDefault();
 commandIndex = GetIndexOfEntry(defaultSessionState.Commands, "get-childitem");
 defaultSessionState.Commands[commandIndex].Visibility = SessionStateEntryVisibility.Private;
@@ -113,5 +116,5 @@ this.runspace.Open();
 ```
 
 ## See Also
+
  [Creating an InitialSessionState](./creating-an-initialsessionstate.md)
- [Creating multiple runspaces](./creating-multiple-runspaces.md)
