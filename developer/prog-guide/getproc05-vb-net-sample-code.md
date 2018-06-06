@@ -73,9 +73,9 @@ Namespace Microsoft.Samples.PowerShell.Commands
         End Property
 
         ''' <summary>
-        ''' If the input is a stream of [collections of] Process 
-        ''' objects, we bypass the ProcessName and Id parameters and 
-        ''' read the Process objects directly.  This allows us to deal 
+        ''' If the input is a stream of [collections of] Process
+        ''' objects, we bypass the ProcessName and Id parameters and
+        ''' read the Process objects directly.  This allows us to deal
         ''' with processes which have wildcard characters in their name.
         ''' <value>Process objects</value>
         ''' </summary>
@@ -146,7 +146,7 @@ Namespace Microsoft.Samples.PowerShell.Commands
             Dim allProcesses As List(Of Process) = _
                 New List(Of Process)(Process.GetProcesses())
 
-            ' The keys dictionary will be used for rapid lookup of 
+            ' The keys dictionary will be used for rapid lookup of
             ' processes already in the matchingProcesses list.
             Dim keys As Dictionary(Of Integer, Byte) = _
                 New Dictionary(Of Integer, Byte)()
@@ -173,14 +173,14 @@ Namespace Microsoft.Samples.PowerShell.Commands
                             Dim processName As String = _
                                 SafeGetProcessName(process)
 
-                            ' Remove the process from the allProcesses list 
+                            ' Remove the process from the allProcesses list
                             ' so that it's not tested again.
                             If processName.Length = 0 Then
                                 allProcesses.Remove(process)
                             End If
 
-                            ' Perform a wildcard search on this particular 
-                            ' process and check whehter this matches the 
+                            ' Perform a wildcard search on this particular
+                            ' process and check whehter this matches the
                             ' pattern specified.
                             If Not wildcard.IsMatch(processName) Then
                                 GoTo ContinueForEach2
@@ -192,7 +192,7 @@ Namespace Microsoft.Samples.PowerShell.Commands
                             ' We have found a match.
                             found = True
 
-                            ' Store the process ID so that we don't add the 
+                            ' Store the process ID so that we don't add the
                             ' same one twice.
                             keys.Add(process.Id, 0)
 
@@ -219,7 +219,7 @@ ContinueForEach2:
         ''' Returns the name of a process.  If an error occurs, a blank
         ''' string will be returned.
         ''' </summary>
-        ''' <param name="process">The process whose name will be 
+        ''' <param name="process">The process whose name will be
         ''' returned.</param>
         ''' <returns>The name of the process.</returns>
         Protected Shared Function SafeGetProcessName(ByVal process As Process) _
@@ -279,7 +279,7 @@ ContinueForEach2:
 
             If Not (processIds Is Nothing) Then
 
-                ' The keys dictionary will be used for rapid lookup of 
+                ' The keys dictionary will be used for rapid lookup of
                 ' processes already in the matchingProcesses list.
                 Dim keys As Dictionary(Of Integer, Byte) = _
                     New Dictionary(Of Integer, Byte)()
@@ -324,7 +324,7 @@ ContinueForEach1:
             Dim matchingProcesses As List(Of Process) = New List(Of Process)()
 
             If Not (Nothing Is Input) Then
-                ' The keys dictionary will be used for rapid lookup of 
+                ' The keys dictionary will be used for rapid lookup of
                 ' processes already in the matchingProcesses list.
                 Dim keys As Dictionary(Of Integer, Byte) = _
                     New Dictionary(Of Integer, Byte)()
@@ -357,7 +357,7 @@ ContinueForEach1:
 
 #End Region
 
-    End Class 'GetProcCommand 
+    End Class 'GetProcCommand
 
 #End Region
 
@@ -399,8 +399,8 @@ ContinueForEach1:
         End Property
 
         ''' <summary>
-        ''' Gets resource information for vendor. This is a string of format: 
-        ''' resourceBaseName,resourceName. 
+        ''' Gets resource information for vendor. This is a string of format:
+        ''' resourceBaseName,resourceName.
         ''' </summary>
 
         Public Overrides ReadOnly Property VendorResource() As String
