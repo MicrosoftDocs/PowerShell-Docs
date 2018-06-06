@@ -10,9 +10,10 @@ ms.assetid: c693ff46-d1ad-4dc7-93ac-41ff2fc6c103
 caps.latest.revision: 9
 ---
 # Label Element for ListItem for ListControl (Format)
+
 Specifies the label that is displayed to the left of the property or script value in the row.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 ListControl Element (Format)
@@ -29,13 +30,16 @@ Label Element for ListItem for ListControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and the parent element of the `Label` element.
+
+The following sections describe the attributes, child elements, and the parent element of the `Label` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,15 +48,18 @@ Label Element for ListItem for ListControl (Format)
 |[ListItem Element for ListItems for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)|Defines the property or script whose value is displayed in a row of the list view.|
 
 ## Text Value
- Specify the label to be display to the left of the property or script value.
+
+Specify the label to be display to the left of the property or script value.
 
 ## Remarks
- If a label is not specified, the name of the property or the script is displayed. For more information about using labels in a list view, see [Creating a List View](./creating-a-list-view.md).
+
+If a label is not specified, the name of the property or the script is displayed. For more information about using labels in a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ## Example
- The following example shows how to add a label to a row.
 
-```
+The following example shows how to add a label to a row.
+
+```xml
 <ListItem>
   <Label>Property1: </Label>
   <PropertyName>DotNetProperty1</PropertyName>
@@ -61,6 +68,9 @@ Label Element for ListItem for ListControl (Format)
 ```
 
 ## See Also
- [Creating a List View](./creating-a-list-view.md)
- [ListItem Element (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a List View](./creating-a-list-view.md)
+
+[ListItem Element (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

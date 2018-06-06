@@ -10,9 +10,10 @@ ms.assetid: 8e37477e-cf2c-4ebd-85d1-eb923e2f4eea
 caps.latest.revision: 6
 ---
 # NewLine Element for CustomItem for GroupBy (Format)
+
 Adds a blank line to the display of the control. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -29,13 +30,16 @@ NewLine Element for CustomItem for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `NewLine` element.
+
+The following sections describe attributes, child elements, and the parent element of the `NewLine` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -46,5 +50,7 @@ NewLine Element for CustomItem for GroupBy (Format)
 ## Remarks
 
 ## See Also
- [CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

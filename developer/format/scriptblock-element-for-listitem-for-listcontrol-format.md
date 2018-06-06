@@ -10,9 +10,10 @@ ms.assetid: 74e30938-00ef-46fd-84e5-f0a83706a50e
 caps.latest.revision: 11
 ---
 # ScriptBlock Element for ListItem for ListControl (Format)
+
 Specifies the script whose value is displayed in the row.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 ListControl Element (Format)
@@ -29,13 +30,16 @@ ScriptBlock Element for ListItem for ListControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and the parent element of the `ScriptBlock` element.
+
+The following sections describe the attributes, child elements, and the parent element of the `ScriptBlock` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,17 +48,20 @@ ScriptBlock Element for ListItem for ListControl (Format)
 |[ListItem Element (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)|Defines the property or script whose value is displayed in a row of the list view.|
 
 ## Text Value
- Specify the script whose value is displayed in the row.
+
+Specify the script whose value is displayed in the row.
 
 ## Remarks
- When this element is specified, you cannot specify the [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) element.
 
- For more information about specifying scripts in a list view, see [List View](./creating-a-list-view.md).
+When this element is specified, you cannot specify the [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) element.
+
+For more information about specifying scripts in a list view, see [List View](./creating-a-list-view.md).
 
 ## Example
- The following example shows how to specify the property whose value is displayed.
 
-```
+The following example shows how to specify the property whose value is displayed.
+
+```xml
 <ListItem>
   <ScriptBlock>$_.ProcessName + ":" $_.Id</ScriptBlock>
 </ListItem>
@@ -62,7 +69,11 @@ ScriptBlock Element for ListItem for ListControl (Format)
 ```
 
 ## See Also
- [PropertyName Element for ListItem for ListControl (Format)](./propertyname-element-for-listitem-for-listcontrol-format.md)
- [Creating a List View](./creating-a-list-view.md)
- [ListItem Element for ListItems for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[PropertyName Element for ListItem for ListControl (Format)](./propertyname-element-for-listitem-for-listcontrol-format.md)
+
+[Creating a List View](./creating-a-list-view.md)
+
+[ListItem Element for ListItems for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

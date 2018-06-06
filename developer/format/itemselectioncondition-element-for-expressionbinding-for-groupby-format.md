@@ -10,9 +10,10 @@ ms.assetid: 6af3be7d-921e-4cf7-bd5a-d87aa0b4efbd
 caps.latest.revision: 7
 ---
 # ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format)
+
 Defines the condition that must exist for this control to be used. There is no limit to the number of selection conditions that can be specified for a control item. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -33,10 +34,12 @@ ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ItemSelectionCondition` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ItemSelectionCondition` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -52,8 +55,11 @@ ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format)
 |[ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)|Defines the data that is displayed by the control.|
 
 ## Remarks
- You can specify one property name or a script for this condition but cannot specify both.
+
+You can specify one property name or a script for this condition but cannot specify both.
 
 ## See Also
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
- [ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)

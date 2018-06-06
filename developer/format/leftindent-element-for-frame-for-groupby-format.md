@@ -10,9 +10,10 @@ ms.assetid: 72f272db-455f-44db-9ab4-6475390a83c4
 caps.latest.revision: 6
 ---
 # LeftIndent Element for Frame for GroupBy (Format)
+
 Specifies how many characters the data is shifted away from the left margin. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -30,13 +31,16 @@ LeftIndent Element for Frame for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent element of the `LeftIndent` element.
+
+The following sections describe attributes, child elements, and parent element of the `LeftIndent` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -45,10 +49,13 @@ LeftIndent Element for Frame for GroupBy (Format)
 |[Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)|Defines how the data is displayed, such as shifting the data to the left or right.|
 
 ## Text Value
- Specify the number of characters that you want to shift the data to the left.
+
+Specify the number of characters that you want to shift the data to the left.
 
 ## Remarks
 
 ## See Also
- [Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

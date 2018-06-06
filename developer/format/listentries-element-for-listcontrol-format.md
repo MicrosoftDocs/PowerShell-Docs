@@ -10,9 +10,10 @@ ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
 caps.latest.revision: 12
 ---
 # ListEntries Element for ListControl (Format)
+
 Provides the definitions of the list view. The list view must specify one or more definitions.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 ListControl Element (Format)
@@ -27,10 +28,12 @@ ListEntries Element (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and the parent element of the `ListEntries` element. At least one child element must be specified.
+
+The following sections describe the attributes, child elements, and the parent element of the `ListEntries` element. At least one child element must be specified.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -45,12 +48,14 @@ ListEntries Element (Format)
 |[ListControl Element (Format)](./listcontrol-element-format.md)|Defines a list format for the view.|
 
 ## Remarks
- For more information about list views, see [List View](./creating-a-list-view.md).
+
+For more information about list views, see [List View](./creating-a-list-view.md).
 
 ## Example
- This example shows the XML elements that define the list view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object.
 
-```
+This example shows the XML elements that define the list view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object.
+
+```xml
 <View>
   <Name>System.ServiceProcess.ServiceController</Name>
   <ViewSelectedBy>
@@ -67,7 +72,11 @@ ListEntries Element (Format)
 ```
 
 ## See Also
- [ListControl Element (Format)](./listcontrol-element-format.md)
- [ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
- [List View](./creating-a-list-view.md)
- [Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+
+[ListControl Element (Format)](./listcontrol-element-format.md)
+
+[ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
+
+[List View](./creating-a-list-view.md)
+
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)

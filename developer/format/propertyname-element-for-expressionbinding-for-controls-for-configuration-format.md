@@ -10,9 +10,10 @@ ms.assetid: f4da7f70-acfb-4cae-9dc9-e15d8fe19d63
 caps.latest.revision: 6
 ---
 # PropertyName Element for ExpressionBinding for Controls for Configuration (Format)
+
 Specifies the .NET Framework property whose value is displayed by the common control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -29,13 +30,16 @@ PropertyName Element for ExpressionBinding for Controls for Configuration (Forma
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,10 +48,13 @@ PropertyName Element for ExpressionBinding for Controls for Configuration (Forma
 |[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Defines the data that is displayed by the control.|
 
 ## Text Value
- Specify the name of the .NET Framework property whose value is displayed by the control.
+
+Specify the name of the .NET Framework property whose value is displayed by the control.
 
 ## Remarks
 
 ## See Also
- [ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

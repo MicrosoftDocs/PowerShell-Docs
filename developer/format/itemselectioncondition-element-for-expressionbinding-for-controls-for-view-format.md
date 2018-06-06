@@ -10,9 +10,10 @@ ms.assetid: 82c15014-2440-410d-b02d-b7f1a49240a0
 caps.latest.revision: 7
 ---
 # ItemSelectionCondition Element for ExpressionBinding for Controls for View (Format)
+
 Defines the condition that must exist for this control to be used. This element is used when defining controls that can be used by a view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element (Format)
@@ -34,10 +35,12 @@ ItemSelectionCondition Element of ExpressionBinding for Controls for View (Forma
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ItemSelectionCondition` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ItemSelectionCondition` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -53,10 +56,15 @@ ItemSelectionCondition Element of ExpressionBinding for Controls for View (Forma
 |[ExpressionBinding Element for CustomItem for Controls for View (Format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)|Defines the data that is displayed by the control.|
 
 ## Remarks
- You can specify one property name or a script for this condition but cannot specify both.
+
+You can specify one property name or a script for this condition but cannot specify both.
 
 ## See Also
- [PropertyName Element for ItemSelectionCondition for Controls for View (Format)](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md)
- [ScriptBlock Element for ItemSelectionCondition for Controls for View (Format)](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md)
- [ExpressionBinding Element for CustomItem for Controls for View (Format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[PropertyName Element for ItemSelectionCondition for Controls for View (Format)](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md)
+
+[ScriptBlock Element for ItemSelectionCondition for Controls for View (Format)](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md)
+
+[ExpressionBinding Element for CustomItem for Controls for View (Format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

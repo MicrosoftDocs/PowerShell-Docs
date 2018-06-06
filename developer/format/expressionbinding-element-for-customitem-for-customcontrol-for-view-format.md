@@ -10,9 +10,10 @@ ms.assetid: 7f5ebea5-ee9c-4b90-a116-12a1daa28fc7
 caps.latest.revision: 7
 ---
 # ExpressionBinding Element for CustomItem for CustomControl for View (Format)
+
 Defines the data that is displayed by the control. This element is used when defining a custom control view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 CustomControl Element for View (Format)
@@ -35,10 +36,12 @@ ExpressionBinding Element for CustomItem for CustomControl for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ExpressionBinding` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ExpressionBinding` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -60,10 +63,17 @@ ExpressionBinding Element for CustomItem for CustomControl for View (Format)
 ## Remarks
 
 ## See Also
- [CustomControlName Element for ExpressionBinding for CustomControl for View (Format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
- [EnumerateCollection Element for ExpressionBinding for CustomControl for View (Format)](./enumeratecollection-element-for-expressionbinding-for-customcontrol-for-view-format.md)
- [ItemSelectionCondition Element for ExpressionBinding for CustomControl for View (Format)](./itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md)
- [PropertyName Element for ExpressionBinding for CustomControl for View (Format)](./propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
- [ScriptBlock Element for ExpressionBinding for CustomControl for View (Format)](./scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md)
- [CustomItem Element for CustomEntry for CustomControl for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomControlName Element for ExpressionBinding for CustomControl for View (Format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+
+[EnumerateCollection Element for ExpressionBinding for CustomControl for View (Format)](./enumeratecollection-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+
+[ItemSelectionCondition Element for ExpressionBinding for CustomControl for View (Format)](./itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md)
+
+[PropertyName Element for ExpressionBinding for CustomControl for View (Format)](./propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+
+[ScriptBlock Element for ExpressionBinding for CustomControl for View (Format)](./scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+
+[CustomItem Element for CustomEntry for CustomControl for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

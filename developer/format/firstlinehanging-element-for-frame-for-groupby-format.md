@@ -10,9 +10,10 @@ ms.assetid: 1cdcf66e-96a5-47b5-9269-b4330bde29f2
 caps.latest.revision: 6
 ---
 # FirstLineHanging Element for Frame for GroupBy (Format)
+
 Specifies how many characters the first line of data is shifted to the left. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -30,13 +31,16 @@ FirstLineHanging Element for Frame for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent element of the `FirstLineHanging` element.
+
+The following sections describe attributes, child elements, and parent element of the `FirstLineHanging` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -45,12 +49,17 @@ FirstLineHanging Element for Frame for GroupBy (Format)
 |[Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)|Defines how the data is displayed, such as shifting the data to the left or right.|
 
 ## Text Value
- Specify the number of characters that you want to shift the first line of the data.
+
+Specify the number of characters that you want to shift the first line of the data.
 
 ## Remarks
- If this element is specified, you cannot specify the [FirstLineIndent](./firstlineindent-element-for-frame-for-groupby-format.md) element.
+
+If this element is specified, you cannot specify the [FirstLineIndent](./firstlineindent-element-for-frame-for-groupby-format.md) element.
 
 ## See Also
- [FirstLineIndent Element for Frame for GroupBy (Format)](./firstlineindent-element-for-frame-for-groupby-format.md)
- [Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[FirstLineIndent Element for Frame for GroupBy (Format)](./firstlineindent-element-for-frame-for-groupby-format.md)
+
+[Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

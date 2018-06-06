@@ -10,9 +10,10 @@ ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
 caps.latest.revision: 10
 ---
 # TableRowEntry Element for TableRowEntroes for TableControl (Format)
+
 Defines the data that is displayed in a row of the table.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
@@ -30,10 +31,12 @@ TableRowEntry Element for TableRowEntries for TableControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent element of the `TableRowEntry` element.
+
+The following sections describe attributes, child elements, and parent element of the `TableRowEntry` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -50,14 +53,16 @@ TableRowEntry Element for TableRowEntries for TableControl (Format)
 |[TableRowEntries Element for TableControl (Format)](./tablerowentries-element-for-tablecontrol-format.md)|Defines the rows of the table.|
 
 ## Remarks
- One `TableColumnItems` element and one `EntrySelectedBy` element must be specified.
 
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+One `TableColumnItems` element and one `EntrySelectedBy` element must be specified.
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## Example
- The following example shows a `TableRowEntry` element that defines a row that displays the values of two properties of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
 
-```
+The following example shows a `TableRowEntry` element that defines a row that displays the values of two properties of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
+
+```xml
 <TableRowEntry>
   <EntrySelectedBy>
     <TypeName>System.Diagnostics.Process</TypeName>
@@ -74,10 +79,17 @@ TableRowEntry Element for TableRowEntries for TableControl (Format)
 ```
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [EntrySelectedBy Element for TableRowEntry for TableControl (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
- [TableColumnItems Element for TableRowEntry for TableControl (Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
- [TableRowEntries Element for TableControl (Format)](./tablerowentries-element-for-tablecontrol-format.md)
- [TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
- [Wrap Element for TableRowEntry for TableCntrol (Format)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[EntrySelectedBy Element for TableRowEntry for TableControl (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
+
+[TableColumnItems Element for TableRowEntry for TableControl (Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
+
+[TableRowEntries Element for TableControl (Format)](./tablerowentries-element-for-tablecontrol-format.md)
+
+[TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+
+[Wrap Element for TableRowEntry for TableCntrol (Format)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

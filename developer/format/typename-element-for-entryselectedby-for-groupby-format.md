@@ -10,9 +10,10 @@ ms.assetid: b8b6739b-770c-432a-95ab-551c7507c51f
 caps.latest.revision: 6
 ---
 # TypeName Element for EntrySelectedBy for GroupBy (Format)
+
 Specifies a .NET Framework type that uses this definition of the custom control. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -29,13 +30,16 @@ TypeName Element for EntrySelectedBy for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,14 +48,19 @@ TypeName Element for EntrySelectedBy for GroupBy (Format)
 |[EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
- Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+
+Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
- Each control definition must have at least one type name, selection set, or selection condition defined.
 
- For more information about the components of a custom control view, see [Creating Custom Controls](./creating-custom-controls.md).
+Each control definition must have at least one type name, selection set, or selection condition defined.
+
+For more information about the components of a custom control view, see [Creating Custom Controls](./creating-custom-controls.md).
 
 ## See Also
- [Creating Custom Controls](./creating-custom-controls.md)
- [EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating Custom Controls](./creating-custom-controls.md)
+
+[EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

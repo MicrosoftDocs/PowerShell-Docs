@@ -10,9 +10,10 @@ ms.assetid: c6649d07-4762-4602-9b4b-d9e2e9e63312
 caps.latest.revision: 13
 ---
 # ExpressionBinding Element for CustomItem for Controls for Configuration (Format)
+
 Defines the data that is displayed by the control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -35,10 +36,12 @@ ExpressionBinding Element for CustomItem for Controls for Configuration (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ExpressionBinding` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ExpressionBinding` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -60,5 +63,7 @@ ExpressionBinding Element for CustomItem for Controls for Configuration (Format)
 ## Remarks
 
 ## See Also
- [CustomItem Element for CustomEntry for Controls for Configuration](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomItem Element for CustomEntry for Controls for Configuration](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

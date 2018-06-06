@@ -10,9 +10,10 @@ ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
 ---
 # TableColumnItem Element for TableColumnItems for TableControl (Format)
+
 Defines the property or script whose value is displayed in the column of the row.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
@@ -32,10 +33,12 @@ TableColumnItem Element for TableColumnItems for TableControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent element of the `TableColumnItem` element.
+
+The following sections describe the attributes, child elements, and parent element of the `TableColumnItem` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -53,14 +56,16 @@ TableColumnItem Element for TableColumnItems for TableControl (Format)
 |[TableColumnItems Element for TableControlEntry for TableControl (Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|Defines the properties or scripts whose values are displayed in the row.|
 
 ## Remarks
- You can specify a property of an object or a script in each column of the row. If no child elements are specified, the item is a placeholder, and no data is displayed.
 
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+You can specify a property of an object or a script in each column of the row. If no child elements are specified, the item is a placeholder, and no data is displayed.
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## Example
- This example shows a `TableColumnItem` element that displays the value of the `Status` property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
 
-```
+This example shows a `TableColumnItem` element that displays the value of the `Status` property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
+
+```xml
 <TableColumnItem>
    <Alignment>Centered</Alignment>
   <PropertyName>Status</PropertyName>
@@ -69,10 +74,17 @@ TableColumnItem Element for TableColumnItems for TableControl (Format)
 ```
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [Alignment Element for TableColumnItem for TableControl (Format)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)
- [TableColumnItems Element (Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
- [FormatString Element for TableColumnItem for TableControl (Format)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)
- [PropertyName Element for TableColumnItem for TableControl (Format)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)
- [ScriptBlock Element for TableColumnItem for TableControl (Format)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[Alignment Element for TableColumnItem for TableControl (Format)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)
+
+[TableColumnItems Element (Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
+
+[FormatString Element for TableColumnItem for TableControl (Format)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)
+
+[PropertyName Element for TableColumnItem for TableControl (Format)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)
+
+[ScriptBlock Element for TableColumnItem for TableControl (Format)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

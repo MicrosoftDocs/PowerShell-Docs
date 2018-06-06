@@ -10,9 +10,10 @@ ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
 caps.latest.revision: 6
 ---
 # Frame Element for CustomItem for CustomControl for View (Format)
+
 Defines how the data is displayed, such as shifting the data to the left or right. This element is used when defining a custom control view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 CustomControl Element (Format)
@@ -34,10 +35,12 @@ Frame Element for CustomItem for CustomControl for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `Frame` element.
+
+The following sections describe attributes, child elements, and the parent element of the `Frame` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -56,12 +59,19 @@ Frame Element for CustomItem for CustomControl for View (Format)
 |[CustomItem Element for CustomEntry for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|Defines what data is displayed by the control and how it is displayed.|
 
 ## Remarks
- You cannot specify the [FirstLineHanging](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md) and the [FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md) elements in the same `Frame` element.
+
+You cannot specify the [FirstLineHanging](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md) and the [FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md) elements in the same `Frame` element.
 
 ## See Also
- [FirstLineHanging Element](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md)
- [FirstLineIndent Element](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)
- [LeftIndent Element](./leftindent-element-for-frame-for-customcontrol-for-view-format.md)
- [RightIndent Element](./rightindent-element-for-frame-for-customcontrol-for-view-format.md)
- [CustomItem Element for CustomEntry for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[FirstLineHanging Element](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md)
+
+[FirstLineIndent Element](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)
+
+[LeftIndent Element](./leftindent-element-for-frame-for-customcontrol-for-view-format.md)
+
+[RightIndent Element](./rightindent-element-for-frame-for-customcontrol-for-view-format.md)
+
+[CustomItem Element for CustomEntry for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

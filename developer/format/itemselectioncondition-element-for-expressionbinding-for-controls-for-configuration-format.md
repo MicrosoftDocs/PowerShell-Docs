@@ -10,9 +10,10 @@ ms.assetid: fd3ddc33-b21c-4464-b3f2-a78dbe0062a8
 caps.latest.revision: 8
 ---
 # ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration (Format)
+
 Defines the condition that must exist for this control to be used. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -32,10 +33,12 @@ ItemSelectionCondition Element for ExpressionBinding for Controls for Configurat
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ItemSelectionCondition` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ItemSelectionCondition` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -51,10 +54,15 @@ ItemSelectionCondition Element for ExpressionBinding for Controls for Configurat
 |[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Defines the data that is displayed by the control.|
 
 ## Remarks
- You can specify one property name or a script for this condition but cannot specify both.
+
+You can specify one property name or a script for this condition but cannot specify both.
 
 ## See Also
- [PropertyName Element for ItemSelectionCondition for Controls for Configuration (Format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
- [ScriptBlock Element for ItemSelectionCondition for Controls for Configuration (Format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
- [ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[PropertyName Element for ItemSelectionCondition for Controls for Configuration (Format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+
+[ScriptBlock Element for ItemSelectionCondition for Controls for Configuration (Format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
+
+[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

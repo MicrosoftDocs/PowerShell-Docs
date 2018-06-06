@@ -10,9 +10,10 @@ ms.assetid: c4d7cad3-4740-468f-9ef8-fae51ab1d581
 caps.latest.revision: 6
 ---
 # PropertyName Element for ExpressionBinding for GroupBy (Format)
+
 Specifies the .NET Framework property whose value is displayed by the control. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -30,13 +31,16 @@ PropertyName Element for ExpressionBinding for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -45,10 +49,13 @@ PropertyName Element for ExpressionBinding for GroupBy (Format)
 |[ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)|Defines the data that is displayed by the control.|
 
 ## Text Value
- Specify the name of the .NET Framework property whose value is displayed by the control.
+
+Specify the name of the .NET Framework property whose value is displayed by the control.
 
 ## Remarks
 
 ## See Also
- [ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

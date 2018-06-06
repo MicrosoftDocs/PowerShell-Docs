@@ -10,9 +10,10 @@ ms.assetid: f7c517aa-24f5-41ae-b82d-cb0fac81a245
 caps.latest.revision: 7
 ---
 # CustomItem Element for CustomEntry for GroupBy (Format)
+
 Defines what data is displayed by the custom control view and how it is displayed. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -32,10 +33,12 @@ CustomItem Element for CustomEntry for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `CustomItem` element.
+
+The following sections describe attributes, child elements, and the parent element of the `CustomItem` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -55,9 +58,15 @@ CustomItem Element for CustomEntry for GroupBy (Format)
 ## Remarks
 
 ## See Also
- [CustomEntry Element for CustomControl for GroupBy (Format)](./customentry-element-for-customcontrol-for-groupby-format.md)
- [ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
- [Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)
- [NewLine Element for CustomItem for GroupBy (Format)](./newline-element-for-customitem-for-groupby-format.md)
- [Text Element for CustomItem for GroupBy (Format)](./text-element-for-customitem-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomEntry Element for CustomControl for GroupBy (Format)](./customentry-element-for-customcontrol-for-groupby-format.md)
+
+[ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
+
+[Frame Element for CustomItem for GroupBy (Format)](./frame-element-for-customitem-for-groupby-format.md)
+
+[NewLine Element for CustomItem for GroupBy (Format)](./newline-element-for-customitem-for-groupby-format.md)
+
+[Text Element for CustomItem for GroupBy (Format)](./text-element-for-customitem-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

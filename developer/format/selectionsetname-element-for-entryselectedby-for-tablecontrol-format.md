@@ -10,9 +10,10 @@ ms.assetid: 5dd0bd5d-f206-4cc6-a0f8-70700ee2c4b7
 caps.latest.revision: 8
 ---
 # SelectionSetName Element for EntrySelectedBy for TableControl (Format)
+
 Specifies a set of .NET Framework types the use this entry of the table view. There is no limit to the number of selection sets that can be specified for an entry.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
@@ -28,13 +29,16 @@ SelectionSetName Element for EntrySelectedBy for TableRowEntry (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent elements.
+
+The following sections describe attributes, child elements, and parent elements.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -43,17 +47,23 @@ SelectionSetName Element for EntrySelectedBy for TableRowEntry (Format)
 |[EntrySelectedBy Element (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Defines the .NET Framework types that use this entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
- Specify the name of the selection set.
+
+Specify the name of the selection set.
 
 ## Remarks
- Selection sets are typically used when you want to define a group of objects that are used in multiple views. For example, you might want to create a table view and a list view for the same set of objects. For more information about defining selection sets, see [Defining Sets of objects for a View](./defining-selection-sets.md).
 
- If you specify a selection set for an entry, you cannot specify a type name. For more information about how to specify a .NET Framework type, see [TypeName Element for EntrySelectedBy for TableRowEntry (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md).
+Selection sets are typically used when you want to define a group of objects that are used in multiple views. For example, you might want to create a table view and a list view for the same set of objects. For more information about defining selection sets, see [Defining Sets of objects for a View](./defining-selection-sets.md).
 
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+If you specify a selection set for an entry, you cannot specify a type name. For more information about how to specify a .NET Framework type, see [TypeName Element for EntrySelectedBy for TableRowEntry (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md).
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## See Also
- [EntrySelectedBy Element (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
- [Defining Sets of objects for a View](./defining-selection-sets.md)
- [Creating a Table View](./creating-a-table-view.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[EntrySelectedBy Element (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
+
+[Defining Sets of objects for a View](./defining-selection-sets.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
