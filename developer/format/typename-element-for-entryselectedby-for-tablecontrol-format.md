@@ -10,9 +10,10 @@ ms.assetid: fd872ada-d476-4c4d-a788-ccac3f983070
 caps.latest.revision: 10
 ---
 # TypeName Element for EntrySelectedBy for TableControl (Format)
+
 Specifies a .NET Framework type that uses this entry of the table view. There is no limit to the number of types that can be specified for a table entry.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
@@ -28,13 +29,16 @@ TypeName Element for EntrySelectedBy for TableRowEntry (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -43,14 +47,19 @@ TypeName Element for EntrySelectedBy for TableRowEntry (Format)
 |[EntrySelectedBy Element (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Defines the .NET Framework types that use this entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
- Specify the name of the .NET Framework type.
+
+Specify the name of the .NET Framework type.
 
 ## Remarks
- Each list entry must have at least one type name, selection set, or selection condition defined.
 
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+Each list entry must have at least one type name, selection set, or selection condition defined.
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [EntrySelectedBy Element (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[EntrySelectedBy Element (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

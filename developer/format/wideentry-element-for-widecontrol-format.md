@@ -10,9 +10,10 @@ ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ---
 # WideEntry Element for WideControl (Format)
+
 Provides a definition of the wide view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 WideControl Element (Format)
@@ -29,10 +30,12 @@ WideEntry Element (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and the parent element of the `WideEntry` element. You must specify a single `WideItem` child element.
+
+The following sections describe the attributes, child elements, and the parent element of the `WideEntry` element. You must specify a single `WideItem` child element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -48,12 +51,14 @@ WideEntry Element (Format)
 |[WideEntries Element (Format)](./wideentries-element-for-widecontrol-format.md)|Provides the definitions of the wide view.|
 
 ## Remarks
- A wide view is a list format that displays a single property value or script value for each object. Unlike other types of views, you can specify only one item element for each view definition. For more information about the other components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
+
+A wide view is a list format that displays a single property value or script value for each object. Unlike other types of views, you can specify only one item element for each view definition. For more information about the other components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
 
 ## Example
- The following example shows a `WideEntry` element that defines a single `WideItem` element. The `WideItem` element defines the property whose value is displayed in the view.
 
-```
+The following example shows a `WideEntry` element that defines a single `WideItem` element. The `WideItem` element defines the property whose value is displayed in the view.
+
+```xml
 <WideEntries>
   <WideEntry>
     <WideItem>
@@ -64,13 +69,20 @@ WideEntry Element (Format)
 
 ```
 
- For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).
+For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).
 
 ## See Also
- [Creating a Wide View](./creating-a-wide-view.md)
- [SelectionCondition Element for WideEntry (Format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)
- [SelectionSetName Element for WideEntry (Format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
- [TypeName Element for WideEntry (Format)](./typename-element-for-entryselectedby-for-wideentry-format.md)
- [WideEntries Element (Format)](./wideentries-element-for-widecontrol-format.md)
- [WideItem Element (Format)](./wideitem-element-for-widecontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Wide View](./creating-a-wide-view.md)
+
+[SelectionCondition Element for WideEntry (Format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)
+
+[SelectionSetName Element for WideEntry (Format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
+
+[TypeName Element for WideEntry (Format)](./typename-element-for-entryselectedby-for-wideentry-format.md)
+
+[WideEntries Element (Format)](./wideentries-element-for-widecontrol-format.md)
+
+[WideItem Element (Format)](./wideitem-element-for-widecontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

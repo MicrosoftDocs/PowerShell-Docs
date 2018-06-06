@@ -10,9 +10,10 @@ ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
 caps.latest.revision: 15
 ---
 # TableHeaders Element (Format)
+
 Defines the headers for the columns of a table.
 
- ViewDefinitions Element (Format)
+ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
 TableHeaders Element for TableControl (Format)
@@ -27,10 +28,12 @@ TableHeaders Element for TableControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent elements of the `TableHeaders` element. There must be a child element for each property of the object that is to be displayed. The column header information is displayed in the order that the child elements are specified.
+
+The following sections describe the attributes, child elements, and parent elements of the `TableHeaders` element. There must be a child element for each property of the object that is to be displayed. The column header information is displayed in the order that the child elements are specified.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -45,12 +48,14 @@ TableHeaders Element for TableControl (Format)
 |[TableControl Element (Format)](./tablecontrol-element-format.md)|Defines a table format for a view.|
 
 ## Remarks
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## Example
- This example shows a `TableHeaders` element that defines two column headers.
 
-```
+This example shows a `TableHeaders` element that defines two column headers.
+
+```xml
 <TableHeaders>
   <TableColumnHeader>
     <Label>Column 1</Label)
@@ -66,7 +71,11 @@ TableHeaders Element for TableControl (Format)
 ```
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [TableColumnHeader Element (Format)](./tablecolumnheader-element-format.md)
- [TableControl Element (Format)](./tablecontrol-element-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[TableColumnHeader Element (Format)](./tablecolumnheader-element-format.md)
+
+[TableControl Element (Format)](./tablecontrol-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

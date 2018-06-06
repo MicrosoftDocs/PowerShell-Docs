@@ -10,9 +10,10 @@ ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
 caps.latest.revision: 11
 ---
 # Wrap Element for TableRowEntry for TableContrl  (Format)
+
 Specifies that text that exceeds the column width is displayed on the next line. By default, text that exceeds the column width is truncated.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
@@ -27,13 +28,16 @@ Wrap Element for TableRowEntry for TableControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent elements of the `Wrap` element.
+
+The following sections describe attributes, child elements, and parent elements of the `Wrap` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -42,9 +46,13 @@ Wrap Element for TableRowEntry for TableControl (Format)
 |[TableRowEntry Element for TabbleRowEntries for TablControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Defines the data that is displayed in a row of the table.|
 
 ## Remarks
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

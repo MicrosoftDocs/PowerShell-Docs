@@ -10,9 +10,10 @@ ms.assetid: 66d8c63c-6ce4-480d-ad65-e777052c3818
 caps.latest.revision: 6
 ---
 # Text Element for CustomItem for GroupBy (Format)
+
 Specifies text that is added to the data that is displayed by the control, such as a label, brackets to enclose the data, and spaces to indent the data. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -29,13 +30,16 @@ Text Element for CustomItem for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `Text` element.
+
+The following sections describe attributes, child elements, and the parent element of the `Text` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,10 +48,13 @@ Text Element for CustomItem for GroupBy (Format)
 |[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)|Defines a control for the custom control view.|
 
 ## Text Value
- Specify the text of a control for data that you want to display.
+
+Specify the text of a control for data that you want to display.
 
 ## Remarks
 
 ## See Also
- [CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

@@ -10,9 +10,10 @@ ms.assetid: 47358eca-7719-4d77-9e49-676b78e25aec
 caps.latest.revision: 7
 ---
 # WrapTables Element (Format)
+
 Specifies that data in a table cell is moved to the next line if the data is longer than the width of the column.
 
- Configuration Element (Format)
+Configuration Element (Format)
 DefaultSettings Element (Format)
 WrapTables Element (Format)
 
@@ -23,13 +24,16 @@ WrapTables Element (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `WrapTables` element.
+
+The following sections describe attributes, child elements, and the parent element of the `WrapTables` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -40,4 +44,5 @@ WrapTables Element (Format)
 ## Remarks
 
 ## See Also
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

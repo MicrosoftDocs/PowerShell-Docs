@@ -10,9 +10,10 @@ ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
 caps.latest.revision: 18
 ---
 # WideItem Element for WideControl (Format)
+
 Defines the property or script whose value is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 WideControl Element (Format)
@@ -31,10 +32,12 @@ WideItem Element (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and the parent element of the `WideItem` element. The `FormatString` element is optional. However, you must specify a `PropertyName` or `ScriptBlock` element, but you cannot specify both.
+
+The following sections describe the attributes, child elements, and the parent element of the `WideItem` element. The `FormatString` element is optional. However, you must specify a `PropertyName` or `ScriptBlock` element, but you cannot specify both.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -51,12 +54,14 @@ WideItem Element (Format)
 |[WideEntry Element (Format)](./wideentry-element-for-widecontrol-format.md)|Provides a definition of the wide view.|
 
 ## Remarks
- For more information about the components of a wide view, see [Wide View](./creating-a-wide-view.md).
+
+For more information about the components of a wide view, see [Wide View](./creating-a-wide-view.md).
 
 ## Example
- The following example shows a `WideEntry` element that defines a single `WideItem` element. The `WideItem` element defines the property or script whose value is displayed in the view.
 
-```
+The following example shows a `WideEntry` element that defines a single `WideItem` element. The `WideItem` element defines the property or script whose value is displayed in the view.
+
+```xml
 <WideEntry>
   <WideItem>
     <PropertyName>ProcessName</PropertyName>
@@ -64,11 +69,16 @@ WideItem Element (Format)
 </WideEntry>
 ```
 
- For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).
+For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).
 
 ## See Also
- [FormatString Element for WideItem for WideControl (Format)](./formatstring-element-for-wideitem-for-widecontrol-format.md)
- [PropertyName Element for WideItem (Format)](./propertyname-element-for-wideitem-for-widecontrol-format.md)
- [ScriptBlock Element for WideItem (Format)](./scriptblock-element-for-wideitem-for-widecontrol-format.md)
- [WideEntry Element (Format)](./wideentry-element-for-widecontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[FormatString Element for WideItem for WideControl (Format)](./formatstring-element-for-wideitem-for-widecontrol-format.md)
+
+[PropertyName Element for WideItem (Format)](./propertyname-element-for-wideitem-for-widecontrol-format.md)
+
+[ScriptBlock Element for WideItem (Format)](./scriptblock-element-for-wideitem-for-widecontrol-format.md)
+
+[WideEntry Element (Format)](./wideentry-element-for-widecontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

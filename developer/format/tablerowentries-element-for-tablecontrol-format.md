@@ -10,9 +10,10 @@ ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
 ---
 # TableRowEntries Element for TableControl (Format)
+
 Defines the rows of the table.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
@@ -27,10 +28,12 @@ TableRowEntries Element for TableControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent element of the `TableRowEntries` element.
+
+The following sections describe the attributes, child elements, and parent element of the `TableRowEntries` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -45,14 +48,16 @@ TableRowEntries Element for TableControl (Format)
 |[TableControl Element (Format)](./tablecontrol-element-format.md)|Defines a table format for a view.|
 
 ## Remarks
- You must specify one or more `TableRowEntry` elements for the table view. There is no maximum limit to the number of `TableRowEntry` elements that can be added nor is their order significant.
 
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+You must specify one or more `TableRowEntry` elements for the table view. There is no maximum limit to the number of `TableRowEntry` elements that can be added nor is their order significant.
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## Example
- The following example shows a `TableRowEntries` element that defines a row that displays the values of two properties of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
 
-```
+The following example shows a `TableRowEntries` element that defines a row that displays the values of two properties of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
+
+```xml
 <TableRowEntries>
   <TableRowEntry>
     <EntrySelectedBy>
@@ -72,7 +77,11 @@ TableRowEntries Element for TableControl (Format)
 ```
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [TableControl Element (Format)](./tablecontrol-element-format.md)
- [TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[TableControl Element (Format)](./tablecontrol-element-format.md)
+
+[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

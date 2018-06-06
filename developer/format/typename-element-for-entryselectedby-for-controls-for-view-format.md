@@ -10,9 +10,10 @@ ms.assetid: 52003450-07ca-41e5-b075-8b6b03fc6e88
 caps.latest.revision: 6
 ---
 # TypeName Element for EntrySelectedBy for Controls for View (Format)
+
 Specifies a .NET Framework type that uses this definition of the control. This element is used when defining controls that can be used by a view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element (Format)
@@ -30,13 +31,16 @@ TypeName Element for EntrySelectedBy for Controls for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -45,10 +49,13 @@ TypeName Element for EntrySelectedBy for Controls for View (Format)
 |[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
- Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+
+Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 
 ## See Also
- [EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
