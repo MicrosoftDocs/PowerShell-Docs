@@ -27,17 +27,14 @@ Because **Out-Host** is the default, you do not have to specify it unless you wa
 ## EXAMPLES
 
 ### Example 1: Display system processes one page at a time
-```
-PS C:\> Get-Process | Out-Host -Paging
+```powershell
+Get-Process | Out-Host -Paging
 ```
 
 This command displays the processes on the system one page at a time.
-It uses the Get-Process cmdlet to get the processes on the system.
-The pipeline operator sends the results to **Out-Host**, which displays them at the console.
-The *Paging* parameter displays one page of data at a time.
-
-The same command format is used for the Help function that is built into Windows PowerShell.
-That function gets data from the Get-Help cmdlet and then uses the *Paging* parameter of **Out-Host** to display the data one page at a time by using this command format: `Get-Help $Args\[0\] | Out-Host -Paging`.
+It uses the `Get-Process` cmdlet to get the processes on the system.
+The pipeline operator sends the results to `Out-Host` cmdlet, which displays them at the console.
+The **Paging** parameter displays one page of data at a time.
 
 ### Example 2: Display session history
 ```
