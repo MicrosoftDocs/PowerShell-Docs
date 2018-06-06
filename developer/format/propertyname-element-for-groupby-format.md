@@ -10,9 +10,10 @@ ms.assetid: ddcecc46-ac75-43fa-b03a-802a68524ec3
 caps.latest.revision: 10
 ---
 # PropertyName Element for GroupBy (Format)
+
 Specifies the .NET Framework property that starts a new group whenever its value changes.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -25,13 +26,16 @@ PropertyName Element for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -40,17 +44,20 @@ PropertyName Element for GroupBy (Format)
 |[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Defines how a group of .NET Framework objects is displayed.|
 
 ## Text Value
- Specify the .NET Framework property name.
+
+Specify the .NET Framework property name.
 
 ## Remarks
- Windows PowerShell starts a new group whenever the value of this property changes.
 
- When this element is specified, you cannot specify the [ScriptBlock](./scriptblock-element-for-groupby-format.md) element to start a new group.
+Windows PowerShell starts a new group whenever the value of this property changes.
+
+When this element is specified, you cannot specify the [ScriptBlock](./scriptblock-element-for-groupby-format.md) element to start a new group.
 
 ## Example
- The following example shows how to start a new group when the value of a property changes.
 
-```
+The following example shows how to start a new group when the value of a property changes.
+
+```xml
 <GroupBy>
   <Label>Service Type</Label>
   <PropertyName>ServiceType</PropertyName>
@@ -58,9 +65,12 @@ PropertyName Element for GroupBy (Format)
 
 ```
 
- For an example of a complete formatting file that includes this element, see [Wide View (GroupBy)](./wide-view-groupby.md).
+For an example of a complete formatting file that includes this element, see [Wide View (GroupBy)](./wide-view-groupby.md).
 
 ## See Also
- [GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
- [ScriptBlock Element for GroupBy (Format)](./scriptblock-element-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
+
+[ScriptBlock Element for GroupBy (Format)](./scriptblock-element-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

@@ -10,9 +10,10 @@ ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
 ---
 # ScriptBlock Element for GroupBy (Format)
+
 Specifies the script that starts a new group whenever its value changes.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -25,13 +26,16 @@ ScriptBlock Element for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -40,14 +44,19 @@ ScriptBlock Element for GroupBy (Format)
 |[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Defines how a group of .NET Framework objects is displayed.|
 
 ## Text Value
- Specify the script that is evaluated.
+
+Specify the script that is evaluated.
 
 ## Remarks
- Windows PowerShell starts a new group whenever the value of this script changes.
 
- When this element is specified, you cannot specify the [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676) element to start a new group.
+Windows PowerShell starts a new group whenever the value of this script changes.
+
+When this element is specified, you cannot specify the [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676) element to start a new group.
 
 ## See Also
- [PropertyName Element for GroupBy (Format)](./propertyname-element-for-groupby-format.md)
- [GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[PropertyName Element for GroupBy (Format)](./propertyname-element-for-groupby-format.md)
+
+[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

@@ -10,9 +10,10 @@ ms.assetid: 1ca84152-c2b7-492c-8a2e-d0587ab9d7b9
 caps.latest.revision: 9
 ---
 # NewLine Element for CustomItem for CustomControl for View (Format)
+
 Adds a blank line to the display of the control. This element is used when defining a custom control view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 CustomControl Element (Format)
@@ -28,13 +29,16 @@ NewLine Element for CustomItem (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `NewLine` element.
+
+The following sections describe attributes, child elements, and the parent element of the `NewLine` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -45,5 +49,7 @@ NewLine Element for CustomItem (Format)
 ## Remarks
 
 ## See Also
- [CustomItem Element for CustomEntry for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomItem Element for CustomEntry for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
