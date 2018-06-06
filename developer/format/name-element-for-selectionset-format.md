@@ -10,9 +10,10 @@ ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
 caps.latest.revision: 15
 ---
 # Name Element for SelectionSet (Format)
+
 Specifies the name used to reference the selection set.
 
- Configuration Element (Format)
+Configuration Element (Format)
 SelectionSets Element (Format)
 SelectionSet Element (Format)
 Name Element of SelectionSet (Format)
@@ -24,13 +25,16 @@ Name Element of SelectionSet (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent element of the `Name` Element.
+
+The following sections describe the attributes, child elements, and parent element of the `Name` Element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -39,15 +43,18 @@ Name Element of SelectionSet (Format)
 |[SelectionSet Element (Format)](./selectionset-element-format.md)|Defines a single set of .NET Framework objects that can be referenced by the name of the set.|
 
 ## Text Value
- Specify the name to reference the selection set. There are no restrictions as to what characters can be used.
+
+Specify the name to reference the selection set. There are no restrictions as to what characters can be used.
 
 ## Remarks
- The name specified here is used in the `SelectionSetName` element. The selection set that can be used by a view, by a definition of a view (views can have multiple definitions), or when specifying a selection condition. For more information about selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
+
+The name specified here is used in the `SelectionSetName` element. The selection set that can be used by a view, by a definition of a view (views can have multiple definitions), or when specifying a selection condition. For more information about selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
 
 ## Example
- This example shows a `SelectionSet` element that defines four .NET Framework types. The name of the selection set is "FileSystemTypes".
 
-```
+This example shows a `SelectionSet` element that defines four .NET Framework types. The name of the selection set is "FileSystemTypes".
+
+```xml
 <SelectionSets>
   <SelectionSet>
     <Name>FileSystemTypes</Name>
@@ -62,6 +69,9 @@ Name Element of SelectionSet (Format)
 ```
 
 ## See Also
- [Defining Selection Sets](./defining-selection-sets.md)
- [SelectionSet Element (Format)](./selectionset-element-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Defining Selection Sets](./defining-selection-sets.md)
+
+[SelectionSet Element (Format)](./selectionset-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

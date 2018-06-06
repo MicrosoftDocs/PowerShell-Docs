@@ -10,9 +10,10 @@ ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
 caps.latest.revision: 9
 ---
 # ListItems Element for ListEntry for ListControl (Format)
+
 Defines the properties and scripts whose values are displayed in the rows of the list view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 ListControl Element (Format)
@@ -29,10 +30,12 @@ ListItems Element for ListControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent element of the `ListItems` element. There is no limit to the number of child elements that can be specified. The order of the child elements defines the order that values are displayed in the list view.
+
+The following sections describe the attributes, child elements, and parent element of the `ListItems` element. There is no limit to the number of child elements that can be specified. The order of the child elements defines the order that values are displayed in the list view.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -47,12 +50,14 @@ ListItems Element for ListControl (Format)
 |[ListEntry Element for ListControl (Format)](./listentry-element-for-listcontrol-format.md)|Provides a definition of the list view.|
 
 ## Remarks
- For more information about this type of view, see [Creating a List View](./creating-a-list-view.md).
+
+For more information about this type of view, see [Creating a List View](./creating-a-list-view.md).
 
 ## Example
- This example shows the XML elements that define three rows of the list view.
 
-```
+This example shows the XML elements that define three rows of the list view.
+
+```xml
 <ListEntry>
     <ListItems>
       <ListItem>
@@ -69,7 +74,11 @@ ListItems Element for ListControl (Format)
 ```
 
 ## See Also
- [ListEntry Element for ListControl (Format)](./listentry-element-for-listcontrol-format.md)
- [ListItem Element for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
- [Creating a List View](./creating-a-list-view.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ListEntry Element for ListControl (Format)](./listentry-element-for-listcontrol-format.md)
+
+[ListItem Element for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
+
+[Creating a List View](./creating-a-list-view.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

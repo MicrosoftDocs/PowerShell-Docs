@@ -10,9 +10,10 @@ ms.assetid: d2668aea-37e9-4753-a4e9-7980ae5ec2eb
 caps.latest.revision: 10
 ---
 # ItemSelectionCondition Element for ListItem for ListControl (Format)
+
 Defines the condition that must exist for this list item to be used.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 ListControl Element (Format)
@@ -32,10 +33,12 @@ ItemSelectionCondition Element for ListItem for ListControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ItemSelectionCondition` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ItemSelectionCondition` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -51,10 +54,15 @@ ItemSelectionCondition Element for ListItem for ListControl (Format)
 |[ListItem Element for ListItems for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)|Defines the property or script whose value is displayed in a row of the list view.|
 
 ## Remarks
- You can specify one property name or a script for this condition but cannot specify both.
+
+You can specify one property name or a script for this condition but cannot specify both.
 
 ## See Also
- [ListItem Element for ListItems for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
- [PropertyName Element for ItemSelectionCondition for ListControl (Format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
- [ScriptBlock Element for ItemSelectionCondition for ListControl (Format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ListItem Element for ListItems for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
+
+[PropertyName Element for ItemSelectionCondition for ListControl (Format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
+
+[ScriptBlock Element for ItemSelectionCondition for ListControl (Format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

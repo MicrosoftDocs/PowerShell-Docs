@@ -10,9 +10,10 @@ ms.assetid: 37beeb0b-7a81-4747-becb-e309e17278fb
 caps.latest.revision: 12
 ---
 # ListControl Element (Format)
+
 Defines a list format for the view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 ListControl Element (Format)
@@ -27,10 +28,12 @@ ListControl Element (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and the parent element of the `ListControl` element. This element must contain only a single child element.
+
+The following sections describe the attributes, child elements, and the parent element of the `ListControl` element. This element must contain only a single child element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -45,10 +48,12 @@ ListControl Element (Format)
 |[View Element (Format)](./view-element-format.md)|Defines a view that is used to display the members of one or more objects.|
 
 ## Remarks
- For more information about creating a list view, see [Creating a List View](./creating-a-list-view.md).
+
+For more information about creating a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ## Example
- This example shows a list view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object.
+
+This example shows a list view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object.
 
 ```
 <View>
@@ -65,7 +70,11 @@ ListControl Element (Format)
 ```
 
 ## See Also
- [View Element (Format)](./view-element-format.md)
- [ListEntries Element (Format)](./listentries-element-for-listcontrol-format.md)
- [Creating a List View](./creating-a-list-view.md)
- [Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+
+[View Element (Format)](./view-element-format.md)
+
+[ListEntries Element (Format)](./listentries-element-for-listcontrol-format.md)
+
+[Creating a List View](./creating-a-list-view.md)
+
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
