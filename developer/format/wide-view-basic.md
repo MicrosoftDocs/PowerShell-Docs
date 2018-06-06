@@ -10,32 +10,35 @@ ms.assetid: 9abb63b8-6d02-4e24-9c0e-2d15a04e9051
 caps.latest.revision: 8
 ---
 # Wide View (Basic)
-This example shows how to implement a basic wide view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the Get-Service cmdlet. For more information about the components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
+
+This example shows how to implement a basic wide view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the `Get-Service` cmdlet. For more information about the components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
 
 ### To load this formatting file
 
-1.  Copy the XML from the Example section of this topic into a text file.
+1. Copy the XML from the Example section of this topic into a text file.
 
-2.  Save the text file. Be sure to add the `format.ps1xml` extension to the file to identify it as a formatting file.
+2. Save the text file. Be sure to add the `format.ps1xml` extension to the file to identify it as a formatting file.
 
-3.  Open Windows PowerShell, and run the following command to load the formatting file into the current session: `Update-formatdata -prependpath PathToFormattingFile`.
+3. Open Windows PowerShell, and run the following command to load the formatting file into the current session: `Update-formatdata -prependpath PathToFormattingFile`.
 
-    > [!WARNING]
-    >  This formatting file defines the display of an object that is already defined by a Windows PowerShell formatting file. You must use the `prependPath` parameter when you run the cmdlet, and you cannot load this formatting file as a module.
+   > [!WARNING]
+   > This formatting file defines the display of an object that is already defined by a Windows PowerShell formatting file. You must use the `prependPath` parameter when you run the cmdlet, and you cannot load this formatting file as a module.
 
 ## Demonstrates
- This formatting file demonstrates the following XML elements:
 
--   The [Name](./name-element-for-view-format.md) element for the view.
+This formatting file demonstrates the following XML elements:
 
--   The [ViewSelectedBy](./viewselectedby-element-format.md) element that defines what objects are displayed by the view.
+- The [Name](./name-element-for-view-format.md) element for the view.
 
--   The [WideItem](./wideitem-element-for-widecontrol-format.md) element that defines what property is displayed by the view.
+- The [ViewSelectedBy](./viewselectedby-element-format.md) element that defines what objects are displayed by the view.
+
+- The [WideItem](./wideitem-element-for-widecontrol-format.md) element that defines what property is displayed by the view.
 
 ## Example
- The following XML defines a wide view that displays the value of the [System.Serviceprocess.Servicecontroller.Servicename%2A?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController.ServiceName%2A?displayProperty=fullName) property.
 
-```
+The following XML defines a wide view that displays the value of the [System.Serviceprocess.Servicecontroller.Servicename%2A?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController.ServiceName%2A?displayProperty=fullName) property.
+
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 
 <Configuration>
@@ -59,10 +62,13 @@ This example shows how to implement a basic wide view that displays the [System.
 </Configuration>
 ```
 
- The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects after this format file is loaded.
+The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects after this format file is loaded.
 
+```powershell
+Get-Service f*
 ```
-PS> get-service f*
+
+```output
 Fax                      FCSAM
 fdPHost                  FDResPub
 FontCache                FontCache3.0.0.0
@@ -70,5 +76,7 @@ FSysAgent                FwcAgent
 ```
 
 ## See Also
- [Examples of Formatting Files](./examples-of-formatting-files.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Examples of Formatting Files](./examples-of-formatting-files.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

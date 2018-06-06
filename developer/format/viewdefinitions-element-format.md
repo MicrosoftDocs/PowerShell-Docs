@@ -10,9 +10,10 @@ ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ---
 # ViewDefinitions Element (Format)
+
 Defines the views used to display .NET Framework objects. These views can display the properties and script values of an object  in a table format, list format, wide format, and custom control format.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions (Format XML) Element
 
 ## Syntax
@@ -25,10 +26,12 @@ ViewDefinitions (Format XML) Element
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent element of the `ViewDefinitions` element. There is no limit to the number of views that can be defined in a formatting file, and they can be added in any order.
+
+The following sections describe the attributes, child elements, and parent element of the `ViewDefinitions` element. There is no limit to the number of views that can be defined in a formatting file, and they can be added in any order.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -43,20 +46,22 @@ ViewDefinitions (Format XML) Element
 |[Configuration Element (Format)](./configuration-element-format.md)|Represents the top-level element of a formatting file.|
 
 ## Remarks
- For more information about the components of the different types of views, see the following topics:
 
--   [Creating a Table View](./creating-a-table-view.md)
+For more information about the components of the different types of views, see the following topics:
 
--   [Creating a List View](./creating-a-list-view.md)
+- [Creating a Table View](./creating-a-table-view.md)
 
--   [Creating a Wide View](./creating-a-wide-view.md)
+- [Creating a List View](./creating-a-list-view.md)
 
--   [Custom Controls](./creating-custom-controls.md)
+- [Creating a Wide View](./creating-a-wide-view.md)
+
+- [Custom Controls](./creating-custom-controls.md)
 
 ## Example
- This example shows a `ViewDefinitions` element that contains the parent elements for a table view and a list view.
 
-```
+This example shows a `ViewDefinitions` element that contains the parent elements for a table view and a list view.
+
+```xml
 <Configuration>
   <ViewDefinitions>
     <View>
@@ -70,10 +75,17 @@ ViewDefinitions (Format XML) Element
 ```
 
 ## See Also
- [Configuration Element (Format)](./configuration-element-format.md)
- [View Element (Format)](./view-element-format.md)
- [Creating a Table View](./creating-a-table-view.md)
- [Creating a List View](./creating-a-list-view.md)
- [Creating a Wide View](./creating-a-wide-view.md)
- [Custom Controls](./creating-custom-controls.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Configuration Element (Format)](./configuration-element-format.md)
+
+[View Element (Format)](./view-element-format.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[Creating a List View](./creating-a-list-view.md)
+
+[Creating a Wide View](./creating-a-wide-view.md)
+
+[Custom Controls](./creating-custom-controls.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

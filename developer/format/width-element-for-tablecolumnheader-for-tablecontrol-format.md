@@ -10,9 +10,10 @@ ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
 caps.latest.revision: 18
 ---
 # Width Element for TableColumnHeader for TableControl (Format)
+
 Defines the width (in characters) of a column.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
@@ -27,13 +28,16 @@ Width Element for TableColumnHeader for TableControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent element of the `Width` element used when defining column headers.
+
+The following sections describe the attributes, child elements, and parent element of the `Width` element used when defining column headers.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -42,15 +46,18 @@ Width Element for TableColumnHeader for TableControl (Format)
 |[TableColumnHeader Element for TableHeaders for TbleControl (Format)](./tablecolumnheader-element-format.md)|Defines a label, width, and alignment of the data for a column of the table.|
 
 ## Text Value
- When at all possible, specify a width (in characters) that is greater than the length of the displayed property values.
+
+When at all possible, specify a width (in characters) that is greater than the length of the displayed property values.
 
 ## Remarks
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## Example
- The following example shows a `TableColumnHeader` element whose width is 16 characters.
 
-```
+The following example shows a `TableColumnHeader` element whose width is 16 characters.
+
+```xml
 <TableColumnHeader>
   <Label>Column 1</Label)
   <Width>16</Width>
@@ -59,6 +66,9 @@ Width Element for TableColumnHeader for TableControl (Format)
 ```
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [TableColumnHeader Element for TableHeader for TableControl (Format)](./tablecolumnheader-element-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[TableColumnHeader Element for TableHeader for TableControl (Format)](./tablecolumnheader-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

@@ -10,9 +10,10 @@ ms.assetid: fab6c0f4-ba55-48ae-9c16-f9a998169239
 caps.latest.revision: 9
 ---
 # Text Element for CustomItem for CustomView for View (Format)
+
 Specifies text that is added to the data that is displayed by the control, such as a label, brackets to enclose the data, and spaces to indent the data. This element is used when defining a custom control view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 CustomControl Element (Format)
@@ -28,13 +29,16 @@ Text Element for CustomItem (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `Text` element.
+
+The following sections describe attributes, child elements, and the parent element of the `Text` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -43,10 +47,13 @@ Text Element for CustomItem (Format)
 |[CustomItem Element for CustomEntry for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|Defines a control for the custom control view.|
 
 ## Text Value
- Specify the text of a control for data that you want to display.
+
+Specify the text of a control for data that you want to display.
 
 ## Remarks
 
 ## See Also
- [CustomItem Element for CustomEntry for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomItem Element for CustomEntry for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

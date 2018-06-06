@@ -10,9 +10,10 @@ ms.assetid: 477c8711-fffc-4f92-af45-6d4f80990474
 caps.latest.revision: 7
 ---
 # TypeName Element for SelectionCondition for Controls for Configuration (Format)
+
 Specifies a .NET Framework type that triggers the condition. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -30,13 +31,16 @@ TypeName Element for SelectionCondition for Controls for Configuration (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `TypeName` Element.
+
+The following sections describe attributes, child elements, and the parent element of the `TypeName` Element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -45,10 +49,13 @@ TypeName Element for SelectionCondition for Controls for Configuration (Format)
 |[SelectionCondition Element for EntrySelectedBy for CustomEntry for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Defines a condition that must exist for the control definition to be used.|
 
 ## Text Value
- Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+
+Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 
 ## See Also
- [SelectionCondition Element for EntrySelectedBy for CustomEntry for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[SelectionCondition Element for EntrySelectedBy for CustomEntry for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

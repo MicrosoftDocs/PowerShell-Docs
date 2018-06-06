@@ -10,9 +10,10 @@ ms.assetid: 290d38e3-b9bd-4382-9671-2e28b32b7260
 caps.latest.revision: 6
 ---
 # TypeName Element for SelectionCondition for GroupBy (Format)
+
 Specifies a .NET Framework type that triggers the condition. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -31,13 +32,16 @@ TypeName Element for SelectionCondition for GroupBy  (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `TypeName` Element.
+
+The following sections describe attributes, child elements, and the parent element of the `TypeName` Element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -46,11 +50,15 @@ TypeName Element for SelectionCondition for GroupBy  (Format)
 |[SelectionCondition Element for EntrySelectedBy for GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Defines a condition that must exist for the control definition to be used.|
 
 ## Text Value
- Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+
+Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
- When this element is specified, you cannot specify the `SelectionSetName` element. For more information about defining selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+
+When this element is specified, you cannot specify the `SelectionSetName` element. For more information about defining selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 ## See Also
- [SelectionCondition Element for EntrySelectedBy for GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[SelectionCondition Element for EntrySelectedBy for GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
