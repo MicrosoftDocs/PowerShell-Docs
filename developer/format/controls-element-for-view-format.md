@@ -10,9 +10,10 @@ ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
 caps.latest.revision: 14
 ---
 # Controls Element for View (Format)
+
 Defines the view controls that can be used by a specific view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element for View (Format)
@@ -26,10 +27,12 @@ Controls Element for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent elements of the `Controls` element. This element must have at least one child element. There is no maximum number of child elements, nor is their order significant.
+
+The following sections describe the attributes, child elements, and parent elements of the `Controls` element. This element must have at least one child element. There is no maximum number of child elements, nor is their order significant.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -46,6 +49,9 @@ Controls Element for View (Format)
 ## Remarks
 
 ## See Also
- [Control Element (Format)](./control-element-for-controls-for-view-format.md)
- [View Element (Format)](./view-element-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Control Element (Format)](./control-element-for-controls-for-view-format.md)
+
+[View Element (Format)](./view-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

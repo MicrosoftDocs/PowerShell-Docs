@@ -10,9 +10,10 @@ ms.assetid: 2edac16c-0b30-4985-ac84-0821aa9a9f6d
 caps.latest.revision: 12
 ---
 # CustomControl Element for View (Format)
+
 Defines a custom control format for the view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 CustomControl Element (Format)
@@ -26,10 +27,12 @@ CustomControl Element (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `CustomControl` element. You must specify one child element.
+
+The following sections describe attributes, child elements, and the parent element of the `CustomControl` element. You must specify one child element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -44,9 +47,13 @@ CustomControl Element (Format)
 |[View Element (Format)](./view-element-format.md)|Defines a view that is used to display one or more .NET Framework objects.|
 
 ## Remarks
- In most cases, only one definition is required for each control view, but it is possible to provide multiple definitions if you want to use the same view to display different .NET Framework objects. In those cases, you can provide a separate definition for each object or set of objects.
+
+In most cases, only one definition is required for each control view, but it is possible to provide multiple definitions if you want to use the same view to display different .NET Framework objects. In those cases, you can provide a separate definition for each object or set of objects.
 
 ## See Also
- [CustomEntries Element for CustomControl for View (Format)](./customentries-element-for-customcontrol-for-view-format.md)
- [View Element (Format)](./view-element-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomEntries Element for CustomControl for View (Format)](./customentries-element-for-customcontrol-for-view-format.md)
+
+[View Element (Format)](./view-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

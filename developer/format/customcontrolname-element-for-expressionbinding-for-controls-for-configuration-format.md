@@ -10,9 +10,10 @@ ms.assetid: c5242935-2782-4d23-84f5-2446b2b7ba83
 caps.latest.revision: 8
 ---
 # CustomControlName Element for ExpressionBinding for Controls for Configuration (Format)
+
 Specifies the name of a common control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -29,13 +30,16 @@ CustomControlName Element for ExpressionBinding for Controls for Configuration (
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `CustomControlName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `CustomControlName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,17 +48,23 @@ CustomControlName Element for ExpressionBinding for Controls for Configuration (
 |[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Defines the data that is displayed by the control.|
 
 ## Text Value
- Specify the name of the control.
+
+Specify the name of the control.
 
 ## Remarks
- You can create common controls that can be used by all the views of a formatting file, and you can create view controls that can be used by a specific view. The following elements specify the names of these controls:
 
--   [Name Element for Control for Controls for Configuration (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
+You can create common controls that can be used by all the views of a formatting file, and you can create view controls that can be used by a specific view. The following elements specify the names of these controls:
 
--   [Name Element for Control for Controls for View (Format)](./name-element-for-control-for-controls-for-view-format.md)
+- [Name Element for Control for Controls for Configuration (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
+
+- [Name Element for Control for Controls for View (Format)](./name-element-for-control-for-controls-for-view-format.md)
 
 ## See Also
- [Name Element for Control for Controls for Configuration (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
- [Name Element for Control for Controls for View (Format)](./name-element-for-control-for-controls-for-view-format.md)
- [ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Name Element for Control for Controls for Configuration (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
+
+[Name Element for Control for Controls for View (Format)](./name-element-for-control-for-controls-for-view-format.md)
+
+[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
