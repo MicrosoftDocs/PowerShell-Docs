@@ -10,9 +10,10 @@ ms.assetid: 67a2b061-2a4a-4ad1-84f9-cdbefb64aaab
 caps.latest.revision: 8
 ---
 # GroupBy Element for View (Format)
+
 Defines how a new group of objects is displayed. This element is used when defining a table, list, wide, or custom control view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -30,10 +31,12 @@ GroupBy Element for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent elements.
+
+The following sections describe attributes, child elements, and parent elements.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -52,12 +55,19 @@ GroupBy Element for View (Format)
 |[View Element (Format)](./view-element-format.md)|Defines a view that displays one or more .NET Framework objects.|
 
 ## Remarks
- When defining how a new group of objects is displayed, you must specify the property or script that will start the new group; however, you cannot specify both.
+
+When defining how a new group of objects is displayed, you must specify the property or script that will start the new group; however, you cannot specify both.
 
 ## See Also
- [CustomControlName Element for GroupBy (Format)](./customcontrolname-element-for-groupby-format.md)
- [Label Element for GroupBy (Format)](./label-element-for-groupby-format.md)
- [PropertyName Element for GroupBy (Format)](./propertyname-element-for-groupby-format.md)
- [ScriptBlock Element for GroupBy (Format)](./scriptblock-element-for-groupby-format.md)
- [View Element (Format)](./view-element-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomControlName Element for GroupBy (Format)](./customcontrolname-element-for-groupby-format.md)
+
+[Label Element for GroupBy (Format)](./label-element-for-groupby-format.md)
+
+[PropertyName Element for GroupBy (Format)](./propertyname-element-for-groupby-format.md)
+
+[ScriptBlock Element for GroupBy (Format)](./scriptblock-element-for-groupby-format.md)
+
+[View Element (Format)](./view-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

@@ -10,9 +10,10 @@ ms.assetid: ec63f4f9-8858-4529-8646-ffbbc278f83e
 caps.latest.revision: 7
 ---
 # FirstLineIndent Element for Frame for Controls for View (Format)
+
 Specifies how many characters the first line of data is shifted to the right. This element is used when defining controls that can be used by a view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element (Format)
@@ -31,13 +32,16 @@ FirstLineIndent Element of Frame of Controls of View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent element of the `FirstLineIndent` element.
+
+The following sections describe attributes, child elements, and parent element of the `FirstLineIndent` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -46,12 +50,17 @@ FirstLineIndent Element of Frame of Controls of View (Format)
 |[Frame Element for CustomItem for Controls for View (Format)](./frame-element-for-customitem-for-controls-for-view-format.md)|Defines how the data is displayed, such as shifting the data to the left or right.|
 
 ## Text Value
- Specify the number of characters that you want to shift the first line of the data.
+
+Specify the number of characters that you want to shift the first line of the data.
 
 ## Remarks
- If this element is specified, you cannot specify the [FirstLineHanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md) element.
+
+If this element is specified, you cannot specify the [FirstLineHanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md) element.
 
 ## See Also
- [FirstLineHanging Element for Frame for Controls for View (Format)](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)
- [Frame Element for CustomItem for Controls for View (Format)](./frame-element-for-customitem-for-controls-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[FirstLineHanging Element for Frame for Controls for View (Format)](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)
+
+[Frame Element for CustomItem for Controls for View (Format)](./frame-element-for-customitem-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
