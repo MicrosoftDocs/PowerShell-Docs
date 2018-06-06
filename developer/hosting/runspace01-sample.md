@@ -10,24 +10,26 @@ ms.assetid: 42c1c59c-6da5-4cda-9562-e8059177fee1
 caps.latest.revision: 11
 ---
 # Runspace01 Sample
+
 This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously. The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer. The values of the [System.Diagnostics.Process.Processname*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.
 This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet synchronously. The [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer. The values of the [System.Diagnostics.Process.Processname*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.
 
 ## Requirements
+
  This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to run a command.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to run a command.
 
--   Adding a command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+- Adding a command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
 
--   Running the command synchronously.
+- Running the command synchronously.
 
--   Using [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects to extract properties from the objects returned by the command.
+- Using [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects to extract properties from the objects returned by the command.
 
 ## Example
+
  This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously in the default runspace provided by Windows PowerShell.
  This sample runs the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet synchronously in the default runspace provided by Windows PowerShell.
 
@@ -87,4 +89,3 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ```
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
