@@ -10,9 +10,10 @@ ms.assetid: 9e5d4cab-6d93-4d59-80cf-9ca0c0633309
 caps.latest.revision: 6
 ---
 # EnumerateCollection Element for ExpressionBinding for Controls for View (Format)
+
 Specified that the elements of collections are displayed. This element is used when defining controls that can be used by a view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element (Format)
@@ -31,13 +32,16 @@ EnumerateCollection Element for ExpressionBinding for Controls for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `EnumerateCollection` element.
+
+The following sections describe attributes, child elements, and the parent element of the `EnumerateCollection` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -48,5 +52,7 @@ EnumerateCollection Element for ExpressionBinding for Controls for View (Format)
 ## Remarks
 
 ## See Also
- [ExpressionBinding Element for CustomItem for Controls for View (Format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ExpressionBinding Element for CustomItem for Controls for View (Format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

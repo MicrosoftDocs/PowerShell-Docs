@@ -10,9 +10,10 @@ ms.assetid: 98708c1d-6f39-4a76-b454-31153a6ade8c
 caps.latest.revision: 12
 ---
 # CustomItem Element for CustomEntry for CustomControl for View (Format)
+
 Defines what data is displayed by the custom control view and how it is displayed. This element is used when defining a custom control view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 CustomControl Element (Format)
@@ -32,10 +33,12 @@ CustomItem Element for CustomEntry for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `CustomItem` element.
+
+The following sections describe attributes, child elements, and the parent element of the `CustomItem` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -55,9 +58,15 @@ CustomItem Element for CustomEntry for View (Format)
 ## Remarks
 
 ## See Also
- [CustomEntry Element for CustomEntries for View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)
- [ExpressionBinding Element for CustomItem for CustomControl for View (Format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
- [Frame Element for CustomItem for CustomControl for View (Format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
- [NewLine Element for CustomItem for CustomControl for View (Format)](./newline-element-for-customitem-for-customcontrol-for-view-format.md)
- [Text Element for CustomItem for CustomControl for View (Format)](./text-element-for-customitem-for-customview-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomEntry Element for CustomEntries for View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)
+
+[ExpressionBinding Element for CustomItem for CustomControl for View (Format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
+
+[Frame Element for CustomItem for CustomControl for View (Format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
+
+[NewLine Element for CustomItem for CustomControl for View (Format)](./newline-element-for-customitem-for-customcontrol-for-view-format.md)
+
+[Text Element for CustomItem for CustomControl for View (Format)](./text-element-for-customitem-for-customview-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
