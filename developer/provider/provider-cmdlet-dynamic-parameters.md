@@ -10,9 +10,11 @@ ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
 ---
 # Provider cmdlet dynamic parameters
-Providers can define dynamic parameters that are added to a provider cmdlet when the user specifies a certain value for one of the static parameters of the cmdlet. For example, a provider can add different dynamic parameters based on what path the user specifies when they call the Get-Item or Set-Item provider cmdlets.
+
+Providers can define dynamic parameters that are added to a provider cmdlet when the user specifies a certain value for one of the static parameters of the cmdlet. For example, a provider can add different dynamic parameters based on what path the user specifies when they call the `Get-Item` or `Set-Item` provider cmdlets.
 
 ## Dynamic Parameter Methods
+
  Dynamic parameters are defined by implementing one of the dynamic parameter methods, such as the [System.Management.Automation.Provider.Itemcmdletprovider.Getitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) and [System.Management.Automation.Provider.Itemcmdletprovider.Setitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)s methods. These methods return an object that has public properties that are decorated with attributes similar to those of stand-alone cmdlets. Here is an example of an implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Getitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) method taken from the Certificate provider:
 
 ```csharp
@@ -54,6 +56,7 @@ internal sealed class CertificateProviderDynamicParameters
 ```
 
 ## Dynamic Parameters
+
  Here is a list of the static parameters that can be used to add dynamic parameters.
 
  Clear-Content cmdlet
@@ -120,4 +123,5 @@ internal sealed class CertificateProviderDynamicParameters
  You can define dynamic parameters that are triggered by the `Path` parameter of the Test-Path cmdlet by implementing the [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultactiondynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) method.
 
 ## See Also
+
  [Writing a Windows PowerShell Provider](./writing-a-windows-powershell-provider.md)
