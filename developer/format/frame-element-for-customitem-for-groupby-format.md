@@ -10,9 +10,10 @@ ms.assetid: ab2a5379-299d-4c97-86a2-b639ea890fae
 caps.latest.revision: 6
 ---
 # Frame Element for CustomItem for GroupBy (Format)
+
 Defines how the data is displayed, such as shifting the data to the left or right. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -35,10 +36,12 @@ Frame Element for CustomItem for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `Frame` element.
+
+The following sections describe attributes, child elements, and the parent element of the `Frame` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -57,12 +60,19 @@ Frame Element for CustomItem for GroupBy (Format)
 |[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)|Defines what data is displayed by the control and how it is displayed.|
 
 ## Remarks
- You cannot specify the [FirstLineHanging](./firstlinehanging-element-for-frame-for-groupby-format.md) and the [FirstLineIndent](./firstlineindent-element-for-frame-for-groupby-format.md) elements in the same `Frame` element.
+
+You cannot specify the [FirstLineHanging](./firstlinehanging-element-for-frame-for-groupby-format.md) and the [FirstLineIndent](./firstlineindent-element-for-frame-for-groupby-format.md) elements in the same `Frame` element.
 
 ## See Also
- [FirstLineHanging Element for Frame for GroupBy (Format)](./firstlinehanging-element-for-frame-for-groupby-format.md)
- [FirstLineIndent Element for Frame for GroupBy (Format)](./firstlineindent-element-for-frame-for-groupby-format.md)
- [LeftIndent Element for Frame for GroupBy (Format)](./leftindent-element-for-frame-for-groupby-format.md)
- [RightIndent Element for Frame for GroupBy (Format)](./rightindent-element-for-frame-for-groupby-format.md)
- [CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[FirstLineHanging Element for Frame for GroupBy (Format)](./firstlinehanging-element-for-frame-for-groupby-format.md)
+
+[FirstLineIndent Element for Frame for GroupBy (Format)](./firstlineindent-element-for-frame-for-groupby-format.md)
+
+[LeftIndent Element for Frame for GroupBy (Format)](./leftindent-element-for-frame-for-groupby-format.md)
+
+[RightIndent Element for Frame for GroupBy (Format)](./rightindent-element-for-frame-for-groupby-format.md)
+
+[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

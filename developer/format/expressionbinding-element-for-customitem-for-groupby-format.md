@@ -10,9 +10,10 @@ ms.assetid: 5eae5088-7605-4ef2-a703-faf3e5a5fc94
 caps.latest.revision: 8
 ---
 # ExpressionBinding Element for CustomItem for GroupBy (Format)
+
 Defines the data that is displayed by the control. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -36,10 +37,12 @@ ExpressionBinding Element for CustomItem for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ExpressionBinding` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ExpressionBinding` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -59,10 +62,17 @@ ExpressionBinding Element for CustomItem for GroupBy (Format)
 |[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)|Defines what data is displayed by the custom control view and how it is displayed.|
 
 ## See Also
- [CustomControlName Element for ExpressionBinding for GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
- [EnumerateCollection Element for ExpressionBinding for GroupBy (Format)](./enumeratecollection-element-for-expressionbinding-for-groupby-format.md)
- [ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)
- [PropertyName Element for ExpressionBinding for GroupBy (Format)](./propertyname-element-for-expressionbinding-for-groupby-format.md)
- [ScriptBlock Element for ExpressionBinding for GroupBy (Format)](./scriptblock-element-for-expressionbinding-for-groupby-format.md)
- [CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomControlName Element for ExpressionBinding for GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+
+[EnumerateCollection Element for ExpressionBinding for GroupBy (Format)](./enumeratecollection-element-for-expressionbinding-for-groupby-format.md)
+
+[ItemSelectionCondition Element for ExpressionBinding for GroupBy (Format)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)
+
+[PropertyName Element for ExpressionBinding for GroupBy (Format)](./propertyname-element-for-expressionbinding-for-groupby-format.md)
+
+[ScriptBlock Element for ExpressionBinding for GroupBy (Format)](./scriptblock-element-for-expressionbinding-for-groupby-format.md)
+
+[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

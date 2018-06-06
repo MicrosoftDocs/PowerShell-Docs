@@ -10,9 +10,10 @@ ms.assetid: a20eaa3d-2bca-4a1f-8d40-fe038631d778
 caps.latest.revision: 11
 ---
 # HideTableHeaders Element (Format)
+
 Specifies that the headers of the table are not displayed.
 
- ViewDefinitions Element (Format)
+ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
 HideTableHeaders Element for TableControl (Format)
@@ -24,13 +25,16 @@ HideTableHeaders Element for TableControl (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent element of the `HideTableHeaders` element.
+
+The following sections describe the attributes, child elements, and parent element of the `HideTableHeaders` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -39,11 +43,15 @@ HideTableHeaders Element for TableControl (Format)
 |[TableControl Element (Format)](./tablecontrol-element-format.md)|Defines a table format for a view.|
 
 ## Text Value
- Specify `true` to hide the headers of the table.
+
+Specify `true` to hide the headers of the table.
 
 ## Remarks
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [TableControl Element (Format)](./tablecontrol-element-format.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[TableControl Element (Format)](./tablecontrol-element-format.md)
