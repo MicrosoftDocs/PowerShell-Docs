@@ -10,9 +10,10 @@ ms.assetid: 2623407e-fa10-4d27-a804-204f6d50ef22
 caps.latest.revision: 6
 ---
 # SelectionCondition Element for EntrySelectedBy for Controls for View (Format)
+
 Defines a condition that must exist for the control definition to be used. This element is used when defining controls that can be used by a view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element (Format)
@@ -35,10 +36,12 @@ SelectionCondition Element for EntrySelectedBy for Controls for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `SelectionCondition` element.
+
+The following sections describe attributes, child elements, and the parent element of the `SelectionCondition` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -56,18 +59,25 @@ SelectionCondition Element for EntrySelectedBy for Controls for View (Format)
 |[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Remarks
- When you are defining a selection condition, the following requirements apply:
 
--   The selection condition must specify a least one property name or a script block, but cannot specify both.
+When you are defining a selection condition, the following requirements apply:
 
--   The selection condition can specify any number of .NET Framework types or selection sets, but cannot specify both.
+- The selection condition must specify a least one property name or a script block, but cannot specify both.
 
- For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
+- The selection condition can specify any number of .NET Framework types or selection sets, but cannot specify both.
+
+For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
 ## See Also
- [PropertyName Element for SelectionCondition for Controls for View (Format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)
- [ScriptBlock Element for SelectionCondition for Controls for View (Format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)
- [SelectionSetName Element for SelectionCondition for Controls for View (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
- [TypeName Element for SelectionCondition for Controls for View (Format)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)
- [EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[PropertyName Element for SelectionCondition for Controls for View (Format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)
+
+[ScriptBlock Element for SelectionCondition for Controls for View (Format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)
+
+[SelectionSetName Element for SelectionCondition for Controls for View (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
+
+[TypeName Element for SelectionCondition for Controls for View (Format)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)
+
+[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

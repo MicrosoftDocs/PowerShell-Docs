@@ -10,9 +10,10 @@ ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
 ---
 # SelectionCondition Element for EntrySelectedBy for ListControl (Format)
+
 Defines the condition that must exist to use this definition of the list view. There is no limit to the number of selection conditions that can be specified for a list definition.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 ListControl Element (Format)
@@ -33,10 +34,12 @@ SelectionCondition Element for EntrySelectedBy for ListEntry (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `SelectionCondition` element.
+
+The following sections describe attributes, child elements, and the parent element of the `SelectionCondition` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -54,20 +57,27 @@ SelectionCondition Element for EntrySelectedBy for ListEntry (Format)
 |[EntrySelectedBy Element for TableRowEntry (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Defines the .NET Framework types that use this table entry or the condition that must exist for this entry to be used.|
 
 ## Remarks
- lWhen you are defining a selection condition, the following requirements apply:
 
--   The selection condition must specify a least one property name or a script block, but cannot specify both.
+lWhen you are defining a selection condition, the following requirements apply:
 
--   The selection condition can specify any number of .NET Framework types or selection sets, but cannot specify both.
+- The selection condition must specify a least one property name or a script block, but cannot specify both.
 
- For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
+- The selection condition can specify any number of .NET Framework types or selection sets, but cannot specify both.
 
- For more information about other components of a list view, see [Creating a List View](./creating-a-list-view.md).
+For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
+
+For more information about other components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ## See Also
- [Creating a List View](./creating-a-list-view.md)
- [Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
- [ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
- [SelectionSetName Element for EnrtySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
- [TypeName Element for EntrySelectedBy for ListEntry (Format)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a List View](./creating-a-list-view.md)
+
+[Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
+
+[ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
+
+[SelectionSetName Element for EnrtySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+
+[TypeName Element for EntrySelectedBy for ListEntry (Format)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

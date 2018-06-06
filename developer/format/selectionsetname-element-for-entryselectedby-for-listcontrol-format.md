@@ -10,9 +10,10 @@ ms.assetid: cff7763c-5ce0-49c1-a480-1249c9f57a13
 caps.latest.revision: 11
 ---
 # SelectionSetName Element for EntrySelectedBy for ListControl (Format)
+
 Specifies a set of .NET Framework objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 ListControl Element (Format)
@@ -28,13 +29,16 @@ SelectionSetName Element for EntrySelectedBy for ListEntry (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent element of the `SelectionSetName` element.
+
+The following sections describe attributes, child elements, and parent element of the `SelectionSetName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -43,19 +47,22 @@ SelectionSetName Element for EntrySelectedBy for ListEntry (Format)
 |[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Defines the .NET Framework types that use this list entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
- Specify the name of the selection set.
+
+Specify the name of the selection set.
 
 ## Remarks
- Each list entry must have at least one type name, selection set, or selection condition defined.
 
- Selection sets are typically used when you want to define a group of objects that are used in multiple views. For example, you might want to create a table view and a list view for the same set of objects. For more information about defining selection sets, see [Defining Sets of objects for a View](./defining-selection-sets.md).
+Each list entry must have at least one type name, selection set, or selection condition defined.
 
- For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
+Selection sets are typically used when you want to define a group of objects that are used in multiple views. For example, you might want to create a table view and a list view for the same set of objects. For more information about defining selection sets, see [Defining Sets of objects for a View](./defining-selection-sets.md).
+
+For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ## Example
- The following example shows how to specify a selection set for an entry of a list view.
 
-```
+The following example shows how to specify a selection set for an entry of a list view.
+
+```xml
 <ListEntry>
   <EntrySelectedBy>
     <SelectionSetName>NameofSelectionSet</SelectionSetName>
@@ -65,6 +72,9 @@ SelectionSetName Element for EntrySelectedBy for ListEntry (Format)
 ```
 
 ## See Also
- [Creating a List View](./creating-a-list-view.md)
- [EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a List View](./creating-a-list-view.md)
+
+[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
