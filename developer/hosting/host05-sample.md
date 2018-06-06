@@ -10,37 +10,39 @@ ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
 ---
 # Host05 Sample
+
 This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console. This host application also supports calls to remote computers by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](http://go.microsoft.com/fwlink/?LinkId=135212) cmdlets.
 This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console. This host application also supports calls to remote computers by using the [Enter-PsSession](http://go.microsoft.com/fwlink/?LinkId=135210) and [Exit-PsSession](http://go.microsoft.com/fwlink/?LinkId=135212) cmdlets.
 
 ## Requirements
 
--   This sample requires Windows PowerShell 2.0.
+- This sample requires Windows PowerShell 2.0.
 
--   This application must be run in elevated mode (Run as administrator).
+- This application must be run in elevated mode (Run as administrator).
 
 ## Demonstrates
 
--   Creating a custom host whose classes derive from the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.
+- Creating a custom host whose classes derive from the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.
 
--   Building a console application that uses these host classes to build an interactive Windows PowerShell shell.
+- Building a console application that uses these host classes to build an interactive Windows PowerShell shell.
 
--   Creating a $profile variable and loading the following profiles.
+- Creating a `$profile` variable and loading the following profiles.
 
-    -   current user, current host
+  - current user, current host
 
-    -   current user, all hosts
+  - current user, all hosts
 
-    -   all users, current host
+  - all users, current host
 
-    -   all users, all hosts
+  - all users, all hosts
 
--   Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.
+- Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.
 
--   Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](http://go.microsoft.com/fwlink/?LinkId=135212) cmdlets.
--   Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](http://go.microsoft.com/fwlink/?LinkId=135210) and [Exit-PsSession](http://go.microsoft.com/fwlink/?LinkId=135212) cmdlets.
+- Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](http://go.microsoft.com/fwlink/?LinkId=135212) cmdlets.
+- Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](http://go.microsoft.com/fwlink/?LinkId=135210) and [Exit-PsSession](http://go.microsoft.com/fwlink/?LinkId=135212) cmdlets.
 
 ## Example
+
  This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.
 
 ```csharp
@@ -396,6 +398,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## Example
+
  The following code is the implementation of the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
 
 ```csharp
@@ -628,6 +631,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## Example
+
  The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.
 
 ```csharp
@@ -1146,6 +1150,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## Example
+
  The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
 
 ```csharp
@@ -1357,7 +1362,9 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## See Also
+
  [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost)
+
  [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+
  [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
