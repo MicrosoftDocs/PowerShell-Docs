@@ -10,6 +10,7 @@ ms.assetid: 432798e4-5d69-46b1-9517-ff09bffaa4be
 caps.latest.revision: 7
 ---
 # How to Add Input Types to a Cmdlet Help Topic
+
 This section describes how to add an INPUTS section to a Windows PowerShell® cmdlet Help topic. The INPUTS section lists the .NET classes of objects that the cmdlet accepts as input from the pipeline, either by value or by property name.
 
  There is no limit to the number of classes that you can add to an INPUTS section. The input types are enclosed in a \<command:inputTypes> node, with each class enclosed in a  \<command:inputType> element.
