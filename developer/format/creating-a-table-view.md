@@ -18,7 +18,14 @@ A table view displays data in one or more columns. Each row in the table represe
 The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object that is returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. For this object, Windows PowerShell has defined a table view that displays the `Status` property, the `Name` property (this property is an alias property for the `ServiceName` property), and the `DisplayName` property. Each row in the table represents an object returned by the cmdlet.
 The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object that is returned by the [Get-Service](http://go.microsoft.com/fwlink/?LinkId=113332) cmdlet. For this object, Windows PowerShell has defined a table view that displays the `Status` property, the `Name` property (this property is an alias property for the `ServiceName` property), and the `DisplayName` property. Each row in the table represents an object returned by the cmdlet.
 
-**Status   Name               DisplayName------   ----               -----------Running  AEADIFilters       Andrea ADI Filters ServiceRunning  AeLookupSvc        Application ExperienceRunning  AgereModemAudio    Agere Modem Call Progress AudioStopped  ALG                Application Layer Gateway ServiceRunning  Appinfo            Application Information**
+```output
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  AJRouter           AllJoyn Router Service
+Stopped  ALG                Application Layer Gateway Service
+Stopped  AppIDSvc           Application Identity
+Running  Appinfo            Application Information
+```
 
 ## Defining the Table View
 
