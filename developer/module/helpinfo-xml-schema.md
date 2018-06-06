@@ -1,4 +1,4 @@
-﻿---
+---
 title: "HelpInfo XML Schema | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/12/2016"
@@ -10,12 +10,14 @@ ms.assetid: 74dcb396-c295-4457-b84c-4432bdaa8df3
 caps.latest.revision: 7
 ---
 # HelpInfo XML Schema
+
 This topic contains the XML schema for Updatable Help Information files, commonly known as "HelpInfo XML files."
 
 ## HelpInfo XML Schema
+
  HelpInfo XML files are based on the following XML schema.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <schema targetNamespace="http://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
   <element name="HelpInfo">
@@ -43,6 +45,7 @@ This topic contains the XML schema for Updatable Help Information files, commonl
 ```
 
 ## HelpInfo XML Elements
+
  The HelpInfo XML file includes the following elements.
 
  HelpContentURI

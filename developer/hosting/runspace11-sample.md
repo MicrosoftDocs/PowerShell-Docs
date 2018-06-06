@@ -10,31 +10,33 @@ ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
 caps.latest.revision: 8
 ---
 # Runspace11 Sample
+
 This sample shows how to use the [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters. The proxy command is then added to an initial session state that is used to create a constrained runspace. This means that the user can access the functionality of the cmdlet only through the proxy command.
 
 ## Requirements
+
  This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Creating a [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.
+- Creating a [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.
 
--   Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
--   Modifying the cmdlet metadata to remove a parameter of the cmdlet.
+- Modifying the cmdlet metadata to remove a parameter of the cmdlet.
 
--   Adding the cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.
+- Adding the cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.
 
--   Creating a proxy function that calls the existing cmdlet, but exposes only a restricted set of parameters.
+- Creating a proxy function that calls the existing cmdlet, but exposes only a restricted set of parameters.
 
--   Adding the proxy function to the initial session state.
+- Adding the proxy function to the initial session state.
 
--   Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
 
--   Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to demonstrate the constrained runspace.
+- Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to demonstrate the constrained runspace.
 
 ## Example
+
  This creates a proxy command for a private cmdlet to demonstrate a constrained runspace.
 
 ```csharp
@@ -235,4 +237,5 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ```
 
 ## See Also
+
  [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
