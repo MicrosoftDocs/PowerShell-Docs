@@ -10,9 +10,10 @@ ms.assetid: 7dcaeadb-4e79-47a0-96e2-8952af26abbe
 caps.latest.revision: 7
 ---
 # SelectionSetName Element for SelectionCondition for Controls for Configuration (Format)
+
 Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -29,13 +30,16 @@ SelectionSetName Element for SelectionCondition for Controls for Configuration (
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,15 +48,21 @@ SelectionSetName Element for SelectionCondition for Controls for Configuration (
 |[SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Defines a condition that must exist for the control definition to be used.|
 
 ## Text Value
- Specify the name of the selection set.
+
+Specify the name of the selection set.
 
 ## Remarks
- Selection sets are common groups of .NET Framework objects that can be used by any view that the formatting file defines. For more information about creating and referencing selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
 
- The selection condition can specify a selection set or .NET Framework type, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+Selection sets are common groups of .NET Framework objects that can be used by any view that the formatting file defines. For more information about creating and referencing selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
+
+The selection condition can specify a selection set or .NET Framework type, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 ## See Also
- [SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
- [Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
- [Defining Selection Sets](./defining-selection-sets.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
+
+[Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
+
+[Defining Selection Sets](./defining-selection-sets.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

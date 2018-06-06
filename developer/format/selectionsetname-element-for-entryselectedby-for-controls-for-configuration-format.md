@@ -10,9 +10,10 @@ ms.assetid: 42143d1e-7cda-4c4a-b568-fa1951bb9417
 caps.latest.revision: 6
 ---
 # SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)
+
 Specifies a set of .NET Framework types that use this definition of the control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -29,13 +30,16 @@ SelectionSetName Element for EntrySelectedBy for Controls for Configuration (For
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.
 
 ### Attributes
- None
+
+None
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,13 +48,17 @@ SelectionSetName Element for EntrySelectedBy for Controls for Configuration (For
 |[EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
- Specify the name of the selection set.
+
+Specify the name of the selection set.
 
 ## Remarks
- Each control definition must have at least one type name, selection set, or selection condition defined.
 
- Selection sets are typically used when you want to define a group of objects that are used in multiple views. For more information about defining selection sets, see [Defining Selection Sets](./defining-selection-sets.md).
+Each control definition must have at least one type name, selection set, or selection condition defined.
+
+Selection sets are typically used when you want to define a group of objects that are used in multiple views. For more information about defining selection sets, see [Defining Selection Sets](./defining-selection-sets.md).
 
 ## See Also
- [EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
