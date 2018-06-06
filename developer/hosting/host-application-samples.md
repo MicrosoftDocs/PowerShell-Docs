@@ -10,12 +10,14 @@ ms.assetid: 2b4a41cc-2e22-49a0-b375-2e2447967751
 caps.latest.revision: 11
 ---
 # Host Application Samples
+
 This section includes sample code that is provided in the Windows PowerShell 2.0 SDK.
 
- You can copy the full sample code from the topics in this section, or use the source files installed with the SDK. The [Windows PowerShell 2.0 Software Development Kit (SDK)](http://www.microsoft.com/download/details.aspx?id=2560) provides ReadMe files, source files, and Visual Studio project files for each sample.
- You can copy the full sample code from the topics in this section, or use the source files installed with the SDK. The [Windows PowerShell 2.0 Software Development Kit (SDK)](http://www.microsoft.com/download/details.aspx?id=2560) provides ReadMe files, source files, and Visual Studio project files for each sample.
+ You can copy the full sample code from the topics in this section, or use the source files installed with the SDK. The [Windows PowerShell 2.0 Software Development Kit (SDK)](https://www.microsoft.com/download/details.aspx?id=2560) provides ReadMe files, source files, and Visual Studio project files for each sample.
+ You can copy the full sample code from the topics in this section, or use the source files installed with the SDK. The [Windows PowerShell 2.0 Software Development Kit (SDK)](https://www.microsoft.com/download/details.aspx?id=2560) provides ReadMe files, source files, and Visual Studio project files for each sample.
 
 ## In This Section
+
  [PowerShell API Samples](./windows-powershell-api-samples.md)
  This section includes sample code that shows how to create runspaces that restrict functionality, and how to asynchronously run commands using a runspace pool to supply the runspaces.
 
@@ -31,4 +33,3 @@ This section includes sample code that is provided in the Windows PowerShell 2.0
  This section includes sample code that shows how to create runspaces that can be used to connect to a computer by using WS-Management-based Windows PowerShell remoting.
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
