@@ -10,28 +10,30 @@ ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ---
 # Deploying a Management OData web service
+
 After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.
 
 ## Deploying the web service
+
  Complete the following steps to deploy the Management OData web service.
 
-1.  Create a directory for you web application under your IIS `WWWRoot` directory.
+1. Create a directory for you web application under your IIS `WWWRoot` directory.
 
-2.  Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.
+2. Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.
 
-3.  Create a site ID.
+3. Create a site ID.
 
-4.  Create and configure an app pool.
+4. Create and configure an app pool.
 
-5.  Configure authentication for the site.
+5. Configure authentication for the site.
 
-6.  Configure the firewall.
+6. Configure the firewall.
 
-7.  Start the site.
+7. Start the site.
 
  The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.
 
-```
+```powershell
 # Test for presence of Microsoft.Samples.Management.OData.RoleBasedPlugins.dll
 $assemblyName = ".\Microsoft.Samples.Management.OData.RoleBasedPlugins.dll"
 
@@ -68,7 +70,7 @@ Write-Host "Setting up web service endpoint..."
 Write-Host "Web Service endpoint is setup. The source root URI is http://localhost:7000/MODataSvc/Microsoft.Management.Odata.svc"
 ```
 
-```
+```powershell
 ###############################################################################
 # Script to setup IIS endpoint
 ###############################################################################
@@ -203,7 +205,7 @@ function IsIIsInstalled
             Log "IIS ServerManager Object .. OK"
         }
 
-        if ( (get-service w3svc).Status -ne "running")
+        if ( (Get-Service w3svc).Status -ne "running")
         {
             Log "ERROR: service W3SVC is not running"
             exit
@@ -418,9 +420,15 @@ Start-Sleep 10
 ```
 
 ## See Also
+
  [Implementing Custom Authorization for a Management OData web service](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+
  [Implementing SessionConfiguration for a Management OData web service](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+
  [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+
  [Authoring the XML schema file for a Management OData web service](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+
  [Authoring the Web.config file for a Management OData web service](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+
  [Creating a Management OData Web Service](./creating-a-management-odata-web-service.md)

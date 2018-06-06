@@ -10,12 +10,14 @@ ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ---
 # Scheduling Jobs with the Windows PowerShell API
+
 You can use the objects exposed by the [Microsoft.Powershell.Scheduledjob](/dotnet/api/Microsoft.PowerShell.ScheduledJob) namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.
 
 ## Triggering the Job
+
  The first step in creating a scheduled job is specifying when the job should run. Do this by creating and configuring a [Microsoft.Powershell.Scheduledjob.Scheduledjobtrigger](/dotnet/api/Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger)object. The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.
 
-```
+```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
                     DateTime.Now.AddSeconds(20),        // Create trigger to start job 20 seconds after now.
                     TimeSpan.Zero,                      // No random delay
@@ -27,6 +29,7 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 ```
 
 ## Defining the Job
+
  You define a Windows PowerShell job by creating a parameter dictionary. The following parameters are supported.
 
 |Parameter Name|Description|
@@ -40,7 +43,7 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
  The following code creates a parameter dictionary object and sets the `Name` and `ScriptBlock` parameters.
 
-```
+```csharp
 string schedJobDefName = "MySampleSchedJob";
                 Dictionary<string, object> jobDefParameters = new Dictionary<string, object>();
                 jobDefParameters.Add("Name", schedJobDefName);      // Unique name is requiried.
@@ -52,9 +55,10 @@ string schedJobDefName = "MySampleSchedJob";
 ```
 
 ## Creating the Invocation and Job Definition Objects
+
  You then create ScheduledJobInvicationInfo and SheduledJobDefinition objects to run the job. The following code demonstrates this.
 
-```
+```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
                     new JobDefinition(typeof(ScheduledJobSourceAdapter), scriptBlock.ToString(), schedJobDefName),
                     jobDefParameters);
@@ -69,9 +73,10 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 ```
 
 ## Registering the Job with the Task Scheduler
- The following code registers the job with the [Windows Task Scheduler](http://go.microsoft.com/fwlink/?LinkId=251817).
 
-```
+ The following code registers the job with the [Windows Task Scheduler](https://msdn.microsoft.com/en-us/library/windows/desktop/aa383614.aspx).
+
+```csharp
 schedJobDefinition.Register();
                 registrationSucceeded = true;
                 Console.WriteLine("Scheduled job has been registered.  Waiting 30 seconds for it to be started and run.");
@@ -79,9 +84,10 @@ schedJobDefinition.Register();
 ```
 
 ## Complete Code Example
+
  The following is the complete code example from which the previous snippets were taken.
 
-```
+```csharp
 using System;
 using System.Threading;
 using System.Collections.Generic;
@@ -241,4 +247,5 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
     }
 }
 
-```
+```
+

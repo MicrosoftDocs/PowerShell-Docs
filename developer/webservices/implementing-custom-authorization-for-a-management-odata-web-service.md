@@ -10,12 +10,14 @@ ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
 ---
 # Implementing Custom Authorization for a Management OData web service
+
 Using the Windows PowerShell Web Service requires a third party to implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface to expose Windows PowerShell cmdlets. This interface performs user authorization to the web service. After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.
 
 ## Pass-through authorization
+
  The simplest way to implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface is a pass-through implementation that authorizes all users. This example provides no security, and s provided only as an llustration of how to implement the interface. An implementation of the  [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface must override two methods: [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). In this example, the [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) always returns the **System.Security.Principal.WindowsIdentity** object associated with the current user.
 
-```
+```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
 
 {
@@ -125,9 +127,10 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 ```
 
 ### Role-based authorization
+
  The following example implements a role-based authorization policy. The policy is defined in an XML file that resides in the main application directory with the web.config and MOF and XML mapping schema files. For information about how to configure the authorization schema file, see [Configuring Role-based Authorization](./configuring-role-based-authorization.md). The first part of the sample implements the [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) methods. In this case, the interface methods call methods in the `RbacSystem` class (defined below) that do the actual work of checking the permissions for the user.
 
-```
+```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 {
     using System;
@@ -182,7 +185,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
  The following example creates a class that parses authorization policy in the XML file.
 
-```
+```csharp
 //-----------------------------------------------------------------------
 // <copyright file="RbacConfiguration.cs" company="Microsoft Corporation">
 //     Copyright (C) 2011 Microsoft Corporation
@@ -367,7 +370,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
  The following classes represent groups and users, respectively.
 
-```
+```csharp
 //-----------------------------------------------------------------------
 // <copyright file="RbacGroup.cs" company="Microsoft Corporation">
 //     Copyright (C) 2011 Microsoft Corporation
@@ -542,7 +545,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-```
+```csharp
 //-----------------------------------------------------------------------
 // <copyright file="RbacUser.cs" company="Microsoft Corporation">
 //     Copyright (C) 2011 Microsoft Corporation

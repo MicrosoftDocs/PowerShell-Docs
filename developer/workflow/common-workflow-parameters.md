@@ -10,6 +10,7 @@ ms.assetid: d5891467-8e13-484d-b7af-32e6bffab35d
 caps.latest.revision: 4
 ---
 # Common Workflow Parameters
+
 A workflow activity generated from a Windows PowerShell cmdlet  defines a number of parameters that common to all activities. A subset of these parameters can be specified at authoring time so that workflow authors can customize activities. Another subset of these parameters can be specified by the user when calling the activity.
 
  The common workflow parameters are grouped into several categories as follows.

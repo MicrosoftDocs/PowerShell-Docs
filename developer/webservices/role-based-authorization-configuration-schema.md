@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Role-Based Authorization Configuration Schema | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/12/2016"
@@ -10,9 +10,10 @@ ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
 ---
 # Role-Based Authorization Configuration Schema
+
 The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy. The following XSD defines the schema used for these files.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
    <xs:element name="RbacConfiguration">
@@ -81,4 +82,5 @@ The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample
        <xs:attribute name="GroupName" type="xs:string" use="required"/>
    </xs:complexType>
 </xs:schema>
-```
+```
+

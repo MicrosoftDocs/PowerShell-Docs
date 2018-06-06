@@ -10,9 +10,11 @@ ms.assetid: a54ce657-e0e0-4b3e-b9dc-aed39876f933
 caps.latest.revision: 11
 ---
 # Writing a Windows PowerShell Provider
+
 "Writing a Windows PowerShell Provider" is for program managers who are designing Windows PowerShell providers and for developers who are implementing provider code. It will help you understand how Windows PowerShell providers work, and it provides sample code that you can use to start designing or writing your own providers.
 
 ## In This Section
+
  [Windows PowerShell Provider QuickStart](./windows-powershell-provider-quickstart.md)
  Example code and walkthrough of a very basic provider.
 
@@ -32,4 +34,5 @@ caps.latest.revision: 11
  This section provides samples of providers.
 
 ## See Also
+
  [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -10,8 +10,7 @@ ms.assetid: d603de38-6dfe-4fd9-898c-21fbcb686645
 caps.latest.revision: 8
 ---
 # Management OData IIS Extension Schema Files
-Management OData web services use MOF files to define resources and XML files to define resource mapping. The following topics describe the schemas for those files.
 
--   [Resource Mapping Schema](./resource-mapping-schema.md)
+- [Resource Mapping Schema](./resource-mapping-schema.md)
 
--   [Public Resource Schema](./public-resource-schema.md)
+- [Public Resource Schema](./public-resource-schema.md)
