@@ -10,9 +10,10 @@ ms.assetid: df90dfe1-991f-43cb-a522-4cab7e8daa49
 caps.latest.revision: 6
 ---
 # ScriptBlock Element for ExpressionBinding for Controls for Configuration (Format)
+
 Specifies the script whose value is displayed by the common control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -29,13 +30,16 @@ ScriptBlock Element for ExpressionBinding for Controls for Configuration (Format
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,10 +48,13 @@ ScriptBlock Element for ExpressionBinding for Controls for Configuration (Format
 |[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Defines the data that is displayed by the common control.|
 
 ## Text Value
- Specify the script whose value is displayed by the control.
+
+Specify the script whose value is displayed by the control.
 
 ## Remarks
 
 ## See Also
- [ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

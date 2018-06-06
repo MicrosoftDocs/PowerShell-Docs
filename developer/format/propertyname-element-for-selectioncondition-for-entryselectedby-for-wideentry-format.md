@@ -10,9 +10,10 @@ ms.assetid: 340abb12-6df1-42f4-bdae-b0509c90952c
 caps.latest.revision: 11
 ---
 # PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)
+
 Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 WideControl Element (Format)
@@ -33,13 +34,16 @@ PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (F
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -48,16 +52,23 @@ PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (F
 |[SelectionCondition Element for EntrySelectedBy for WideEntry (Format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Defines the condition that must exist for this definition to be used.|
 
 ## Text Value
- Specify the .NET Framework property name.
+
+Specify the .NET Framework property name.
 
 ## Remarks
- The selection condition must specify at least one property name or a script to evaluate, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
- For more information about other components of a wide view, see [Wide View](./creating-a-wide-view.md).
+The selection condition must specify at least one property name or a script to evaluate, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
+
+For more information about other components of a wide view, see [Wide View](./creating-a-wide-view.md).
 
 ## See Also
- [Creating a Wide View](./creating-a-wide-view.md)
- [Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
- [ScriptBlock Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
- [SelectionCondition Element for EntrySelectedBy for WideEntry (Format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Wide View](./creating-a-wide-view.md)
+
+[Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
+
+[ScriptBlock Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
+
+[SelectionCondition Element for EntrySelectedBy for WideEntry (Format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

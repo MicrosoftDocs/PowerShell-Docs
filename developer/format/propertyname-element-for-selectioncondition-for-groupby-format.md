@@ -10,9 +10,10 @@ ms.assetid: d1707317-6c26-4866-bcc1-8924103c9014
 caps.latest.revision: 6
 ---
 # PropertyName Element for SelectionCondition for GroupBy (Format)
+
 Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -30,13 +31,16 @@ PropertyName Element for SelectionCondition for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -45,11 +49,15 @@ PropertyName Element for SelectionCondition for GroupBy (Format)
 |[SelectionCondition Element for EntrySelectedBy for GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Defines a condition that must exist for the control definition to be used.|
 
 ## Text Value
- Specify the .NET Framework property name.
+
+Specify the .NET Framework property name.
 
 ## Remarks
- The selection condition must specify a least one property name or a script, but cannot specify both. For more information about how selection conditions can be used, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+
+The selection condition must specify a least one property name or a script, but cannot specify both. For more information about how selection conditions can be used, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 ## See Also
- [SelectionCondition Element for EntrySelectedBy for GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[SelectionCondition Element for EntrySelectedBy for GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

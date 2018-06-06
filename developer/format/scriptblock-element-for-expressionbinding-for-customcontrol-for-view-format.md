@@ -10,9 +10,10 @@ ms.assetid: d52d020c-3271-40d5-b4bb-7a5ef0caec8f
 caps.latest.revision: 6
 ---
 # ScriptBlock Element for ExpressionBinding for CustomControl for View (Format)
+
 Specifies the script whose value is displayed by the control. This element is used when defining a custom control view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 CustomControl Element for View (Format)
@@ -29,13 +30,16 @@ ScriptBlock Element for ExpressionBinding for CustomCustomControl for View (Form
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.
+
+The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,10 +48,13 @@ ScriptBlock Element for ExpressionBinding for CustomCustomControl for View (Form
 |[ExpressionBinding Element for CustomItem for CustomControl for View (Format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Defines the data that is displayed by the control.|
 
 ## Text Value
- Specify the script whose value is displayed by the control.
+
+Specify the script whose value is displayed by the control.
 
 ## Remarks
 
 ## See Also
- [ExpressionBinding Element for CustomItem for CustomControl for View (Format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ExpressionBinding Element for CustomItem for CustomControl for View (Format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

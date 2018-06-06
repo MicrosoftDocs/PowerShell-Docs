@@ -10,9 +10,10 @@ ms.assetid: 3a6cedcc-0437-4312-961e-0845cc249532
 caps.latest.revision: 8
 ---
 # RightIndent Element for Frame for Controls for Configuration (Format)
+
 Specifies how many characters the data is shifted away from the right margin. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -29,13 +30,16 @@ RightIndent Element for Frame for Controls for Configuration (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent element of the `RightIndent` element.
+
+The following sections describe attributes, child elements, and parent element of the `RightIndent` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,10 +48,13 @@ RightIndent Element for Frame for Controls for Configuration (Format)
 |[Frame Element for CustomItem for Controls for Configuration (Format)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|Defines how the data is displayed, such as shifting the data to the left or right.|
 
 ## Text Value
- Specify the number of characters that you want to shift the data to the right.
+
+Specify the number of characters that you want to shift the data to the right.
 
 ## Remarks
 
 ## See Also
- [Frame Element for CustomItem for Controls for Configuration (Format)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Frame Element for CustomItem for Controls for Configuration (Format)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

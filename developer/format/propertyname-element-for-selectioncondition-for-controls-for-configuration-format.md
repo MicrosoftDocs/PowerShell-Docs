@@ -10,9 +10,10 @@ ms.assetid: ec048408-e1c6-41ef-b39b-72f4c2dcf2ac
 caps.latest.revision: 6
 ---
 # PropertyName Element for SelectionCondition for Controls for Configuration (Format)
+
 Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the entry is used. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -29,13 +30,16 @@ PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (F
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
+
+The following sections describe attributes, child elements, and the parent element of the `PropertyName` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -44,11 +48,15 @@ PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (F
 |[SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Defines a condition that must exist for a common control definition to be used.|
 
 ## Text Value
- Specify the .NET Framework property name.
+
+Specify the .NET Framework property name.
 
 ## Remarks
- The selection condition must specify a least one property name or a script, but cannot specify both. For more information about how selection conditions can be used, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+
+The selection condition must specify a least one property name or a script, but cannot specify both. For more information about how selection conditions can be used, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 ## See Also
- [SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
