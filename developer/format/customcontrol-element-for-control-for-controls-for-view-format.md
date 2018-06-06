@@ -10,9 +10,10 @@ ms.assetid: eee505c3-ff2c-4bfb-b48a-037ec34bce72
 caps.latest.revision: 8
 ---
 # CustomControl Element for Control for Controls for View (Format)
+
 Defines a control that is used by the view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element (Format)
@@ -28,10 +29,12 @@ CustomControl Element for Control for Controls for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `CustomControl` element. You must specify only one child element.
+
+The following sections describe attributes, child elements, and the parent element of the `CustomControl` element. You must specify only one child element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -48,6 +51,9 @@ CustomControl Element for Control for Controls for View (Format)
 ## Remarks
 
 ## See Also
- [CustomEntries Element for CustomControl for View (Format)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
- [Control Element for Controls for View (Format)](./control-element-for-controls-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomEntries Element for CustomControl for View (Format)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
+
+[Control Element for Controls for View (Format)](./control-element-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

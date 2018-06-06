@@ -10,9 +10,10 @@ ms.assetid: 73fb11ee-0ebd-477a-ac36-acdfbb32e70d
 caps.latest.revision: 7
 ---
 # CustomItem Element for CustomEntry for Controls for Configuration (Format)
+
 Defines what data is displayed by the control and how it is displayed. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -32,10 +33,12 @@ CustomItem Element for CustomEntry for Controls for Configuration
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `CustomItem` element. For more information, see Remarks.
+
+The following sections describe attributes, child elements, and the parent element of the `CustomItem` element. For more information, see Remarks.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -53,17 +56,23 @@ CustomItem Element for CustomEntry for Controls for Configuration
 |[CustomEntry Element for CustomControl for Controls for Configuration (Format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|Provides a definition of the control.|
 
 ## Remarks
- When specifying the child elements of the `CustomItem` element, keep the following in mind:
 
--   The child elements must be added in the following sequence: `ExpressionBinding`, `NewLine`, `Text`, and `Frame`.
+When specifying the child elements of the `CustomItem` element, keep the following in mind:
 
--   There is no maximum limit to the number of sequences that you can specify.
+- The child elements must be added in the following sequence: `ExpressionBinding`, `NewLine`, `Text`, and `Frame`.
 
--   In each sequence, there is no maximum limit to the number of `ExpressionBinding` elements that you can use.
+- There is no maximum limit to the number of sequences that you can specify.
+
+- In each sequence, there is no maximum limit to the number of `ExpressionBinding` elements that you can use.
 
 ## See Also
- [ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
- [Frame Element for CustomItem for Controls for Configuration (Format)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
- [NewLine Element for CustomItem for Controls for Configuration (Format)](./newline-element-for-customitem-for-controls-for-configuration-format.md)
- [Text Element for CustomItem for Controls for Configuration (Format)](./text-element-for-customitem-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+
+[Frame Element for CustomItem for Controls for Configuration (Format)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
+
+[NewLine Element for CustomItem for Controls for Configuration (Format)](./newline-element-for-customitem-for-controls-for-configuration-format.md)
+
+[Text Element for CustomItem for Controls for Configuration (Format)](./text-element-for-customitem-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
