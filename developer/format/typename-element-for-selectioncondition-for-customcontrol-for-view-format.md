@@ -1,0 +1,61 @@
+---
+title: "TypeName Element for SelectionCondition for CustomControl for View  (Format) | Microsoft Docs"
+ms.custom: ""
+ms.date: "09/13/2016"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: d2c65171-4d4c-46a9-a545-591df058acd1
+caps.latest.revision: 7
+---
+# TypeName Element for SelectionCondition for CustomControl for View  (Format)
+
+Specifies a .NET Framework type that triggers the condition. This element is used when defining a custom control view.
+
+Configuration Element (Format)
+ViewDefinitions Element (Format)
+View Element (Format)
+CustomControl Element for View (Format)
+CustomEntries Element for CustomControl for View (Format)
+CustomEntry Element for CustomEntries for CustomControl for View (Format)
+CustomItem Element for CustomEntry for CustomControl for View (Format)
+SelectionCondition Element for EntrySelectedBy for CustomControl for View (Format)
+TypeName Element for SelectionCondition for CustomControl for View  (Format)
+
+## Syntax
+
+```xml
+<TypeName>Nameof.NetType</TypeName>
+
+```
+
+## Attributes and Elements
+
+The following sections describe attributes, child elements, and the parent element of the `TypeName` Element.
+
+### Attributes
+
+None.
+
+### Child Elements
+
+None.
+
+### Parent Elements
+
+|Element|Description|
+|-------------|-----------------|
+|[SelectionCondition Element for EntrySelectedBy for CustomControl for View (Format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|Defines a condition that must exist for the control definition to be used.|
+
+## Text Value
+
+Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+
+## Remarks
+
+## See Also
+
+[SelectionCondition Element for EntrySelectedBy for CustomControl for View (Format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
