@@ -10,9 +10,10 @@ ms.assetid: c6739205-2bc9-4507-b2af-d19d548c2057
 caps.latest.revision: 6
 ---
 # CustomEntry Element for CustomEntries for Controls for View (Format)
+
 Provides a definition of the control. This element is used when defining controls that can be used by a view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element (Format)
@@ -31,10 +32,12 @@ CustomEntry Element for CustomEntries for Controls for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent elements of the `CustomEntry` element.
+
+The following sections describe attributes, child elements, and the parent elements of the `CustomEntry` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -52,5 +55,7 @@ CustomEntry Element for CustomEntries for Controls for View (Format)
 ## Remarks
 
 ## See Also
- [CustomEntries Element for CustomControl for View (Format)](./customentries-element-for-customcontrol-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomEntries Element for CustomControl for View (Format)](./customentries-element-for-customcontrol-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

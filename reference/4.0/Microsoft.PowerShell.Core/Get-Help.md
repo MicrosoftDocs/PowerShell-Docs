@@ -94,11 +94,11 @@ To get About topics in a module, import the module, either by using the Import-M
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Get-Help
+```powershell
+Get-Help
 ```
 
-This command displays help about the Windows PowerShell help system.
+The `Get-Help` cmdlet without parameters displays information about the PowerShell help system.
 
 ### Example 2
 ```powershell
@@ -562,7 +562,6 @@ If you get a conceptual help topic, **Get-Help** returns it as a string.
 If you get a command that has a help file, **Get-Help** returns a **MamlCommandHelpInfo** object.
 
 ## NOTES
-* Without parameters, "Get-Help" displays information about the Windows PowerShell help system.
 * Windows PowerShell 3.0 does not come with help files. To download and install the help files that **Get-Help** reads, use the Update-Help cmdlet. You can use the **Update-Help** cmdlet to download and install help files for the core commands that come with Windows PowerShell  and for any modules that you install. You can also use it to update the help files so that the help on your computer is never outdated.
 
   You can also read the help topics about the commands that come with Windows PowerShell online beginning at http://go.microsoft.com/fwlink/?LinkID=107116.

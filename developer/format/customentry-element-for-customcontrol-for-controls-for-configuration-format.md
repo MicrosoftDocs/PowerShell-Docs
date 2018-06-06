@@ -10,9 +10,10 @@ ms.assetid: 9dfba86f-29b2-473c-9e98-9d679176acce
 caps.latest.revision: 11
 ---
 # CustomEntry Element for CustomControl for Controls for Configuration (Format)
+
 Provides a definition of the common control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -30,10 +31,12 @@ CustomEntry Element for CustomControl for Controls for Configuration (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `CustomEntry` element. You must specify the items displayed by the definition.
+
+The following sections describe attributes, child elements, and the parent element of the `CustomEntry` element. You must specify the items displayed by the definition.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -49,9 +52,13 @@ CustomEntry Element for CustomControl for Controls for Configuration (Format)
 |[CustomEntries Element for CustomControl for Configuration (Format)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)|Provides the definitions of the common control.|
 
 ## Remarks
- In most cases, only one definition is required for each common custom control, but it is possible to have multiple definitions if you want to use the same control to display different .NET Framework objects. In those cases, you can provide a separate definition for each object or set of objects.
+
+In most cases, only one definition is required for each common custom control, but it is possible to have multiple definitions if you want to use the same control to display different .NET Framework objects. In those cases, you can provide a separate definition for each object or set of objects.
 
 ## See Also
- [CustomEntries Element for CustomControl for Configuration (Format)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
- [CustomItem Element for CustomEntry for Controls for Configuration](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomEntries Element for CustomControl for Configuration (Format)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
+
+[CustomItem Element for CustomEntry for Controls for Configuration](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
