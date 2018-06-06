@@ -10,9 +10,10 @@ ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
 caps.latest.revision: 11
 ---
 # Label Element for GroupBy (Format)
+
 Specifies a label that is displayed when a new group is encountered.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -25,13 +26,16 @@ Label Element for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe the attributes, child elements, and parent element of the `Label` element.
+
+The following sections describe the attributes, child elements, and parent element of the `Label` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -40,15 +44,18 @@ Label Element for GroupBy (Format)
 |[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Defines how a new group of objects is displayed.|
 
 ## Text Value
- Specify the text that is displayed whenever Windows PowerShell encounters a new property or script value.
+
+Specify the text that is displayed whenever Windows PowerShell encounters a new property or script value.
 
 ## Remarks
- In addition to the text specified by this element, Windows PowerShell displays the new value that starts the group, and adds a blank line before and after the group.
+
+In addition to the text specified by this element, Windows PowerShell displays the new value that starts the group, and adds a blank line before and after the group.
 
 ## Example
- The following example shows the label for a new group. The displayed label would look similar to this: `Service Type: NewValueofProperty`
 
-```
+The following example shows the label for a new group. The displayed label would look similar to this: `Service Type: NewValueofProperty`
+
+```xml
 <GroupBy>
   <Label>Service Type</Label>
   <PropertyName>ServiceType</PropertyName>
@@ -56,8 +63,10 @@ Label Element for GroupBy (Format)
 
 ```
 
- For an example of a complete formatting file that includes this element, see [Wide View (GroupBy)](./wide-view-groupby.md).
+For an example of a complete formatting file that includes this element, see [Wide View (GroupBy)](./wide-view-groupby.md).
 
 ## See Also
- [GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
