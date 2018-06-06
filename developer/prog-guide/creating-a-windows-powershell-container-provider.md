@@ -378,8 +378,8 @@ protected override bool HasChildItems( string path )
 
 ## Building the Windows PowerShell Provider
 
- See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
- See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+ See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## Testing the Windows PowerShell Provider
 
@@ -465,9 +465,9 @@ protected override bool HasChildItems( string path )
 
 6. Verify the correctness of the new item operation as follows.
 
-   ```powershell
-   Set-Location Customers
-   (Get-Item 3).data
+   ```none
+   PS mydb:\> cd Customers
+   PS mydb:\Customers> (Get-Item 3).data
    ```
 
    The following output appears.
@@ -497,9 +497,9 @@ protected override bool HasChildItems( string path )
 
  [Implementing a Navigation Windows PowerShell Provider](./creating-a-windows-powershell-navigation-provider.md)
 
- [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
- [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+ [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
  [Windows PowerShell SDK](../windows-powershell-reference.md)
 

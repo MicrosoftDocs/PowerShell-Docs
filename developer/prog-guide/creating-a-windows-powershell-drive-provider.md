@@ -1,15 +1,6 @@
----
-title: "Creating a Windows PowerShell Drive Provider | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords:
-  - "drive providers [PowerShell Programmer's Guide]"
-  - "providers [PowerShell Programmer's Guide], drive provider"
-  - "drives [PowerShell Programmer's Guide]"
+- "drive providers [PowerShell Programmer's Guide]"
+- "providers [PowerShell Programmer's Guide], drive provider"
+- "drives [PowerShell Programmer's Guide]"
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
 ---
@@ -126,7 +117,7 @@ caps.latest.revision: 6
 
 3. Create a new drive using the sample drive provider:
 
-   **PS> `new-psdrive` -name mydb -root c:\ps\northwind.mdb -psprovider AccessDb**
+   **PS> new-psdrive -name mydb -root c:\ps\northwind.mdb -psprovider AccessDb**
 
    The following output appears:
 
@@ -159,7 +150,7 @@ caps.latest.revision: 6
 
 5. Remove the drive and exit the shell:
 
-   **PS> `remove-psdrive` mydb**
+   **PS> remove-psdrive mydb**
 
    **PS> exit**
 

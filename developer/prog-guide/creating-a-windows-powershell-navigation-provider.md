@@ -224,7 +224,7 @@ caps.latest.revision: 5
 5. Now use the `Get-Childitem` cmdlet piped to the `Format-Table` cmdlet. This set of cmdlets retrieves the items for the Employees data table, which are the table rows. They are formatted as specified by the `Format-Table` cmdlet.
 
    ```powershell
-   PS> get-childitem | Format-Table rownumber,psiscontainer,data -auto
+   Get-ChildItem | Format-Table rownumber,psiscontainer,data -auto
    ```
 
    ```output
