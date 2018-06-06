@@ -27,39 +27,39 @@ Before you start to code the XML for the syntax diagram in the cmdlet Help file,
 
 - Required
 
-    - If true, the parameter must appear in all commands that use the parameter set.
+  - If true, the parameter must appear in all commands that use the parameter set.
 
-    - If false, the parameter is optional in all commands that use the parameter set.
+  - If false, the parameter is optional in all commands that use the parameter set.
 
 - Position
 
-    - If named, the parameter name is required.
+  - If named, the parameter name is required.
 
-    - If positional, the parameter name is optional. When it is omitted, the parameter value must be in the specified position in the command. For example, if the value is position="1", the parameter value must be the first or only unnamed parameter value in the command.
+  - If positional, the parameter name is optional. When it is omitted, the parameter value must be in the specified position in the command. For example, if the value is position="1", the parameter value must be the first or only unnamed parameter value in the command.
 
 - Pipeline Input
 
-    - If true (ByValue), you can pipe input to the parameter. The input is associated with ("bound to") the parameter even if the property name and the object type do not match the expected type. The Windows PowerShell® parameter binding components try to convert the input to the correct type and fail the command only when the type cannot be converted. Only one parameter in a parameter set can be associated by value.
+  - If true (ByValue), you can pipe input to the parameter. The input is associated with ("bound to") the parameter even if the property name and the object type do not match the expected type. The Windows PowerShell? parameter binding components try to convert the input to the correct type and fail the command only when the type cannot be converted. Only one parameter in a parameter set can be associated by value.
 
-    - If true (ByPropertyName), you can pipe input to the parameter. However, the input is associated with the parameter only when the parameter name matches the name of a property of the input object. For example, if the parameter name is `Path`, objects piped to the cmdlet are associated with that parameter only when the object has a property named path.
+  - If true (ByPropertyName), you can pipe input to the parameter. However, the input is associated with the parameter only when the parameter name matches the name of a property of the input object. For example, if the parameter name is `Path`, objects piped to the cmdlet are associated with that parameter only when the object has a property named path.
 
-    - If true (ByValue, ByPropertyName), you can pipe input to the parameter either by property name or by value. Only one parameter in a parameter set can be associated by value.
+  - If true (ByValue, ByPropertyName), you can pipe input to the parameter either by property name or by value. Only one parameter in a parameter set can be associated by value.
 
-    - If false, you cannot pipe input to this parameter.
+  - If false, you cannot pipe input to this parameter.
 
 - Globbing
 
-    - If true, the text that the user types for the parameter value can include wildcard characters.
+  - If true, the text that the user types for the parameter value can include wildcard characters.
 
-    - If false, the text that the user types for the parameter value cannot include wildcard characters.
+  - If false, the text that the user types for the parameter value cannot include wildcard characters.
 
 ### Parameter Value Attributes
 
 - Required
 
-    - If true, the specified value must be used whenever using the parameter in a command.
+  - If true, the specified value must be used whenever using the parameter in a command.
 
-    - If false, the parameter value is optional. Typically, a value is optional only when it is one of several valid values for a parameter, such as in an enumerated type.
+  - If false, the parameter value is optional. Typically, a value is optional only when it is one of several valid values for a parameter, such as in an enumerated type.
 
 The Required attribute of a parameter value is different from the Required attribute of a parameter.
 
@@ -96,7 +96,7 @@ Typically, parameter values that are placeholders are required and parameter val
 
    Do not list the common parameters (such as Verbose, Debug, and ErrorAction) in your syntax diagram. The `Get-Help` cmdlet adds that information for you when it displays the Help topic.
 
-3. Add the parameter values. In Windows PowerShell®, parameter values are represented by their .NET type. However, the type name can be abbreviated, such as "string" for System.String.
+3. Add the parameter values. In Windows PowerShell?, parameter values are represented by their .NET type. However, the type name can be abbreviated, such as "string" for System.String.
 
    ```
    SYNTAX
@@ -202,7 +202,7 @@ The following example includes a syntax node that has syntax item nodes for two 
 
 ### Adding Parameters
 
-Each parameter added to the syntax item node is specified within a pair of \<command:parameter> tags. You need a pair of \<command:parameter> tags for each parameter included in the parameter set, with the exception of the common parameters that are provided by Windows PowerShell®.
+Each parameter added to the syntax item node is specified within a pair of \<command:parameter> tags. You need a pair of \<command:parameter> tags for each parameter included in the parameter set, with the exception of the common parameters that are provided by Windows PowerShell?.
 
 The attributes of the opening \<command:parameter> tag determine how the parameter appears in the syntax diagram. For information on parameter attributes, see [Parameter Attributes](#ParameterAttributes).
 
