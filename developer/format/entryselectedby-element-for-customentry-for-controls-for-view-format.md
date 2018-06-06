@@ -10,9 +10,10 @@ ms.assetid: b3d80a7d-3797-4c46-ae74-ae5cda79b24f
 caps.latest.revision: 8
 ---
 # EntrySelectedBy Element for CustomEntry for Controls for View (Format)
+
 Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used. This element is used when defining controls that can be used by a view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 Controls Element (Format)
@@ -33,10 +34,12 @@ EntrySelectedBy Element for CustomEntry for Controls for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent element of the `EntrySelectedBy` element. You must specify at least one type, selection set, or selection condition for a definition. There is no maximum limit to the number of child elements that you can use.
+
+The following sections describe attributes, child elements, and parent element of the `EntrySelectedBy` element. You must specify at least one type, selection set, or selection condition for a definition. There is no maximum limit to the number of child elements that you can use.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -53,8 +56,11 @@ EntrySelectedBy Element for CustomEntry for Controls for View (Format)
 |[CustomEntry Element for CustomEntries for Controls for View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)|Provides a definition of the control.|
 
 ## Remarks
- Selection conditions are used to define a condition that must exist for the definition to be used, such as when an object has a specific property or when a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
+
+Selection conditions are used to define a condition that must exist for the definition to be used, such as when an object has a specific property or when a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
 
 ## See Also
- [CustomEntry Element for CustomEntries for Controls for View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomEntry Element for CustomEntries for Controls for View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

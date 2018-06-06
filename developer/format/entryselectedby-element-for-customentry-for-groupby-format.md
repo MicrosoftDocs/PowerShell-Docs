@@ -10,9 +10,10 @@ ms.assetid: a317d482-73cc-4c98-a002-1357fa879cd7
 caps.latest.revision: 7
 ---
 # EntrySelectedBy Element for CustomEntry for GroupBy (Format)
+
 Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -32,10 +33,12 @@ EntrySelectedBy Element for CustomEntry for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent element of the `EntrySelectedBy` element. You must specify at least one type, selection set, or selection condition for a definition. There is no maximum limit to the number of child elements that you can use.
+
+The following sections describe attributes, child elements, and parent element of the `EntrySelectedBy` element. You must specify at least one type, selection set, or selection condition for a definition. There is no maximum limit to the number of child elements that you can use.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -52,11 +55,17 @@ EntrySelectedBy Element for CustomEntry for GroupBy (Format)
 |[CustomEntry Element for CustomControl for GroupBy (Format)](./customentry-element-for-customcontrol-for-groupby-format.md)|Provides a definition of the control.|
 
 ## Remarks
- Selection conditions are used to define a condition that must exist for the definition to be used, such as when an object has a specific property or when a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
+
+Selection conditions are used to define a condition that must exist for the definition to be used, such as when an object has a specific property or when a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
 
 ## See Also
- [SelectionCondition Element for EntrySelectedBy for GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
- [SelectionSetName Element for EntrySelectedBy for GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
- [TypeName Element for EntrySelectedBy for GroupBy (Format)](./typename-element-for-entryselectedby-for-groupby-format.md)
- [CustomEntry Element for CustomEntries for Controls for View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[SelectionCondition Element for EntrySelectedBy for GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
+
+[SelectionSetName Element for EntrySelectedBy for GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
+
+[TypeName Element for EntrySelectedBy for GroupBy (Format)](./typename-element-for-entryselectedby-for-groupby-format.md)
+
+[CustomEntry Element for CustomEntries for Controls for View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
