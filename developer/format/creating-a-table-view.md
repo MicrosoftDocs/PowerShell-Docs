@@ -10,15 +10,26 @@ ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
 ---
 # Creating a Table View
+
 A table view displays data in one or more columns. Each row in the table represents a .NET Framework object, and each column of the table represents a property of the object or a script value. You can define a table view that displays all the properties of an object or a subset of the properties of an object.
 
 ## A Table View Display
- The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object that is returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. For this object, Windows PowerShell has defined a table view that displays the `Status` property, the `Name` property (this property is an alias property for the `ServiceName` property), and the `DisplayName` property. Each row in the table represents an object returned by the cmdlet.
- The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object that is returned by the [Get-Service](http://go.microsoft.com/fwlink/?LinkId=113332) cmdlet. For this object, Windows PowerShell has defined a table view that displays the `Status` property, the `Name` property (this property is an alias property for the `ServiceName` property), and the `DisplayName` property. Each row in the table represents an object returned by the cmdlet.
 
- **Status   Name               DisplayName------   ----               -----------Running  AEADIFilters       Andrea ADI Filters ServiceRunning  AeLookupSvc        Application ExperienceRunning  AgereModemAudio    Agere Modem Call Progress AudioStopped  ALG                Application Layer Gateway ServiceRunning  Appinfo            Application Information**
+The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object that is returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. For this object, Windows PowerShell has defined a table view that displays the `Status` property, the `Name` property (this property is an alias property for the `ServiceName` property), and the `DisplayName` property. Each row in the table represents an object returned by the cmdlet.
+The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object that is returned by the [Get-Service](http://go.microsoft.com/fwlink/?LinkId=113332) cmdlet. For this object, Windows PowerShell has defined a table view that displays the `Status` property, the `Name` property (this property is an alias property for the `ServiceName` property), and the `DisplayName` property. Each row in the table represents an object returned by the cmdlet.
+
+```output
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  AJRouter           AllJoyn Router Service
+Stopped  ALG                Application Layer Gateway Service
+Stopped  AppIDSvc           Application Identity
+Running  Appinfo            Application Information
+```
+
 ## Defining the Table View
- The following XML shows the table view schema for displaying the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) object. You must specify each property that you want displayed in the table view.
+
+The following XML shows the table view schema for displaying the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) object. You must specify each property that you want displayed in the table view.
 
 ```xml
 <View>
@@ -57,58 +68,41 @@ A table view displays data in one or more columns. Each row in the table represe
 </View>
 ```
 
- The following XML elements are used to define a list view:
+The following XML elements are used to define a list view:
 
--   The [View](./view-element-format.md) element is the parent element of the table view. (This is the same parent element for the list, wide, and custom control views.)
+- The [View](./view-element-format.md) element is the parent element of the table view. (This is the same parent element for the list, wide, and custom control views.)
 
--   The [Name](./name-element-for-view-format.md) element specifies the name of the view. This element is required for all views.
+- The [Name](./name-element-for-view-format.md) element specifies the name of the view. This element is required for all views.
 
--   The [ViewSelectedBy](./viewselectedby-element-format.md) element defines the objects that use the view. This element is required.
+- The [ViewSelectedBy](./viewselectedby-element-format.md) element defines the objects that use the view. This element is required.
 
--   The [GroupBy](./groupby-element-for-view-format.md) element (not shown in this example) defines when a new group of objects is displayed. A new group is started whenever the value of a specific property or script changes. This element is optional.
+- The [GroupBy](./groupby-element-for-view-format.md) element (not shown in this example) defines when a new group of objects is displayed. A new group is started whenever the value of a specific property or script changes. This element is optional.
 
--   The [Controls](./controls-element-for-view-format.md) element (not shown in this example) defines the custom controls that are defined by the table view. Controls give you a way to further specify how the data is displayed. This element is optional. A view can define its own custom controls, or it can use common controls that can be used by any view in the formatting file. For more information about custom controls, see [Creating Custom Controls](./creating-custom-controls.md).
+- The [Controls](./controls-element-for-view-format.md) element (not shown in this example) defines the custom controls that are defined by the table view. Controls give you a way to further specify how the data is displayed. This element is optional. A view can define its own custom controls, or it can use common controls that can be used by any view in the formatting file. For more information about custom controls, see [Creating Custom Controls](./creating-custom-controls.md).
 
--   The [HideTableHeaders](a20eaa3d-2bca-4a1f-8d40-fe038631d778HideTableHeaders) element (not show in this example) specifies that the table will not show any labels at the top of the table. This element is optional.
+- The [HideTableHeaders](a20eaa3d-2bca-4a1f-8d40-fe038631d778HideTableHeaders) element (not show in this example) specifies that the table will not show any labels at the top of the table. This element is optional.
 
--   The [TableControl](./tablecontrol-element-format.md) element that defines the header and row information of the table. Similar to all other views, a table view can display the values of object properties or values generated by scripts.
+- The [TableControl](./tablecontrol-element-format.md) element that defines the header and row information of the table. Similar to all other views, a table view can display the values of object properties or values generated by scripts.
 
 ## Defining Column Headers
- The following XML shows how the column headers of the table are defined. You can specify the text that is displayed, how that text is displayed in the header, and the width of the column. (If you do not want your table view to display headers, specify the [HideTableHeaders](a20eaa3d-2bca-4a1f-8d40-fe038631d778HideTableHeaders) element.)
 
-```xml
-<TableHeaders>
-  <TableColumnHeader>
-    <Label>Column 1</Label)
-    <Width>16</Width>
-    <Alignment>Left</Alignment>
-  </TableColumnHeader>
-  <TableColumnHeader>
-    <Label>Column 2</Label)
-    <Width>10</Width>
-    <Alignment>Centered</Alignment>
-  </TableColumnHeader>
-</TableHeaders>
-```
+1. The [TableHeaders](./tableheaders-element-format.md) element and its child elements define what is displayed at the top of the table.
 
- The following XML elements are used to define a list view:
+2. The [TableColumnHeader](./tablecolumnheader-element-format.md) element defines what is displayed at the top of a column of the table. Specify these elements in the order that you want the headers displayed.
 
-1.  The [TableHeaders](./tableheaders-element-format.md) element and its child elements define what is displayed at the top of the table.
+   There is no limit to the number of these element that you can use, but the number of [TableColumnHeader](./tablecolumnheader-element-format.md) elements in your table view must equal the number of [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) elements that you use.
 
-2.  The [TableColumnHeader](./tablecolumnheader-element-format.md) element defines what is displayed at the top of a column of the table. Specify these elements in the order that you want the headers displayed.
+3. The [Label](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) element specifies the text that is displayed. This element is optional.
 
-     There is no limit to the number of these element that you can use, but the number of [TableColumnHeader](./tablecolumnheader-element-format.md) elements in your table view must equal the number of [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) elements that you use.
+4. The [Width](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) element specifies the width (in characters) of the column. This element is optional.
 
-3.  The [Label](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) element specifies the text that is displayed. This element is optional.
-
-4.  The [Width](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) element specifies the width (in characters) of the column. This element is optional.
-
-5.  The [Alignment](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md) element specifies how the label is displayed. The label can be aligned to the left, to the right, or centered. This element is optional.
+5. The [Alignment](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md) element specifies how the label is displayed. The label can be aligned to the left, to the right, or centered. This element is optional.
 
 ## Defining the Table Rows
- Table views can provide one or more definitions that specify what data is displayed in the rows of the table by using the child elements of the [TableRowEntries](./tablerowentries-element-for-tablecontrol-format.md) element. Notice that you can specify multiple definitions for the rows of the table, but the headers for the rows remains the same, regardless of what row definition is used. Typically, a table will have only one definition.
 
- In the following example, the view provides a single definition that displays the values of several properties of the [System.Diagnostics.Process?Displayproperty=Fullname](/dotnet/api/System.Diagnostics.Process?displayProperty=fullName) object. A table view can display the value of a property or the value of a script (not shown in the example) in its rows.
+Table views can provide one or more definitions that specify what data is displayed in the rows of the table by using the child elements of the [TableRowEntries](./tablerowentries-element-for-tablecontrol-format.md) element. Notice that you can specify multiple definitions for the rows of the table, but the headers for the rows remains the same, regardless of what row definition is used. Typically, a table will have only one definition.
+
+In the following example, the view provides a single definition that displays the values of several properties of the [System.Diagnostics.Process?Displayproperty=Fullname](/dotnet/api/System.Diagnostics.Process?displayProperty=fullName) object. A table view can display the value of a property or the value of a script (not shown in the example) in its rows.
 
 ```xml
 <TableRowEntries>
@@ -129,32 +123,33 @@ A table view displays data in one or more columns. Each row in the table represe
 
 ```
 
- The following XML elements can be used to provide definitions for a row:
+The following XML elements can be used to provide definitions for a row:
 
--   The [TableRowEntries](./tablerowentries-element-for-tablecontrol-format.md) element and its child elements define what is displayed in the rows of the table.
+- The [TableRowEntries](./tablerowentries-element-for-tablecontrol-format.md) element and its child elements define what is displayed in the rows of the table.
 
--   The [TableRowEntry](./listentry-element-for-listcontrol-format.md) element provides a definition of the row. At least one [TableRowEntry](./listentry-element-for-listcontrol-format.md) is required; however, there is no maximum limit to the number of elements that you can add. In most cases, a view will have only one definition.
+- The [TableRowEntry](./listentry-element-for-listcontrol-format.md) element provides a definition of the row. At least one [TableRowEntry](./listentry-element-for-listcontrol-format.md) is required; however, there is no maximum limit to the number of elements that you can add. In most cases, a view will have only one definition.
 
--   The [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element specifies the objects that are displayed by a specific definition. This element is optional and is needed only when you define multiple [TableRowEntry](./listentry-element-for-listcontrol-format.md) elements that display different objects.
+- The [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element specifies the objects that are displayed by a specific definition. This element is optional and is needed only when you define multiple [TableRowEntry](./listentry-element-for-listcontrol-format.md) elements that display different objects.
 
--   The [Wrap](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) element specifies that text that exceeds the column width is displayed on the next line. By default, text that exceeds the column width is truncated.
+- The [Wrap](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) element specifies that text that exceeds the column width is displayed on the next line. By default, text that exceeds the column width is truncated.
 
--   The [TableColumnItems](d2c1da6d-acc7-4fe8-9e7d-d43684ce-7c3d-4d14-8dbd-061c111ee805) element defines the properties or scripts whose values are displayed in the row.
+- The [TableColumnItems](d2c1da6d-acc7-4fe8-9e7d-d43684ce-7c3d-4d14-8dbd-061c111ee805) element defines the properties or scripts whose values are displayed in the row.
 
--   The [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element defines the property or script whose value is displayed in the column of the row. A [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element is required for each column of the row. The first entry is displayed in first column, the second entry in the second column, and so on.
+- The [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element defines the property or script whose value is displayed in the column of the row. A [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element is required for each column of the row. The first entry is displayed in first column, the second entry in the second column, and so on.
 
--   The [PropertyName](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies the property whose value is displayed in the row. You must specify either a property or a script, but you cannot specify both.
+- The [PropertyName](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies the property whose value is displayed in the row. You must specify either a property or a script, but you cannot specify both.
 
--   The [ScriptBlock](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies the script whose value is displayed in the row. You must specify either a script or a property, but you cannot specify both.
+- The [ScriptBlock](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies the script whose value is displayed in the row. You must specify either a script or a property, but you cannot specify both.
 
--   The [FormatString](./label-element-for-listitem-for-listcontrol-format.md) element specifies a format pattern that defines how the property or script value is displayed. This element is optional.
+- The [FormatString](./label-element-for-listitem-for-listcontrol-format.md) element specifies a format pattern that defines how the property or script value is displayed. This element is optional.
 
--   The [Alignment](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies how the value of the property or script is displayed. The value can be aligned to the left, to the right, or centered. This element is optional.
+- The [Alignment](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies how the value of the property or script is displayed. The value can be aligned to the left, to the right, or centered. This element is optional.
 
 ## Defining the Objects That Use the Table View
- There are two ways to define which .NET Framework objects use the table view. You can use the [ViewSelectedBy](./viewselectedby-element-format.md) element to define the objects that can be displayed by all the definitions of the view, or you can use the [EntrySelectedBy](./entryselectedby-element-for-listentry-for-listcontrol-format.md) element to define which objects are displayed by a specific definition of the view. In most cases, a view has only one definition, so objects are typically defined by the [ViewSelectedBy](./viewselectedby-element-format.md) element.
 
- The following example shows how to define the objects that are displayed by the table view using the [ViewSelectedBy](./viewselectedby-element-format.md) and [TypeName](./typename-element-for-viewselectedby-format.md) elements. There is no limit to the number of [TypeName](./typename-element-for-viewselectedby-format.md) elements that you can specify, and their order is not significant.
+There are two ways to define which .NET Framework objects use the table view. You can use the [ViewSelectedBy](./viewselectedby-element-format.md) element to define the objects that can be displayed by all the definitions of the view, or you can use the [EntrySelectedBy](./entryselectedby-element-for-listentry-for-listcontrol-format.md) element to define which objects are displayed by a specific definition of the view. In most cases, a view has only one definition, so objects are typically defined by the [ViewSelectedBy](./viewselectedby-element-format.md) element.
+
+The following example shows how to define the objects that are displayed by the table view using the [ViewSelectedBy](./viewselectedby-element-format.md) and [TypeName](./typename-element-for-viewselectedby-format.md) elements. There is no limit to the number of [TypeName](./typename-element-for-viewselectedby-format.md) elements that you can specify, and their order is not significant.
 
 ```xml
 <View>
@@ -166,13 +161,13 @@ A table view displays data in one or more columns. Each row in the table represe
 </View>
 ```
 
- The following XML elements can be used to specify the objects that are used by the table view:
+The following XML elements can be used to specify the objects that are used by the table view:
 
--   The [ViewSelectedBy](./viewselectedby-element-format.md) element defines which objects are displayed by the list view.
+- The [ViewSelectedBy](./viewselectedby-element-format.md) element defines which objects are displayed by the list view.
 
--   The [TypeName](./typename-element-for-viewselectedby-format.md) element specifies the .NET Framework object that is displayed by the view. The fully qualified .NET Framework type name is required. You must specify at least one type or selection set for the view, but there is no maximum number of elements that can be specified.
+- The [TypeName](./typename-element-for-viewselectedby-format.md) element specifies the .NET Framework object that is displayed by the view. The fully qualified .NET Framework type name is required. You must specify at least one type or selection set for the view, but there is no maximum number of elements that can be specified.
 
- The following example uses the [ViewSelectedBy](./viewselectedby-element-format.md) and [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md) elements. Use selection sets where you have a related set of objects that are displayed using multiple views, such as when you define a list view and a table view for the same objects. For more information about how to create a selection set, see [Defining Selection Sets](./defining-selection-sets.md).
+The following example uses the [ViewSelectedBy](./viewselectedby-element-format.md) and [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md) elements. Use selection sets where you have a related set of objects that are displayed using multiple views, such as when you define a list view and a table view for the same objects. For more information about how to create a selection set, see [Defining Selection Sets](./defining-selection-sets.md).
 
 ```xml
 <View>
@@ -184,16 +179,16 @@ A table view displays data in one or more columns. Each row in the table represe
 </View>
 ```
 
- The following XML elements can be used to specify the objects that are used by the list view:
+The following XML elements can be used to specify the objects that are used by the list view:
 
--   The [ViewSelectedBy](./viewselectedby-element-format.md) element defines which objects are displayed by the list view.
+- The [ViewSelectedBy](./viewselectedby-element-format.md) element defines which objects are displayed by the list view.
 
--   The [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md) element specifies a set of objects that can be displayed by the view. You must specify at least one selection set or type for the view, but there is no maximum number of elements that can be specified.
+- The [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md) element specifies a set of objects that can be displayed by the view. You must specify at least one selection set or type for the view, but there is no maximum number of elements that can be specified.
 
- The following example shows how to define the objects displayed by a specific definition of the table view using the [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element. Using this element, you can specify the .NET Framework type name of the object, a selection set of objects, or a selection condition that specifies when the definition is used. For more information about how to create a selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+The following example shows how to define the objects displayed by a specific definition of the table view using the [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element. Using this element, you can specify the .NET Framework type name of the object, a selection set of objects, or a selection condition that specifies when the definition is used. For more information about how to create a selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 > [!NOTE]
->  When creating multiple definitions of the table view you cannot specify different column headers. You can specify only what is displayed in the rows of the table, such as what objects are displayed.
+> When creating multiple definitions of the table view you cannot specify different column headers. You can specify only what is displayed in the rows of the table, such as what objects are displayed.
 
 ```xml
 <TableRowEntry>
@@ -203,18 +198,19 @@ A table view displays data in one or more columns. Each row in the table represe
 </TableRowEntry>
 ```
 
- The following XML elements can be used to specify the objects that are used by a specific definition of the list view:
+The following XML elements can be used to specify the objects that are used by a specific definition of the list view:
 
--   The [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element defines which objects are displayed by the definition.
+- The [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element defines which objects are displayed by the definition.
 
--   The [TypeName](./typename-element-for-entryselectedby-for-listcontrol-format.md) element specifies the .NET Framework object that is displayed by the definition. When using this element, the fully qualified .NET Framework type name is required. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
+- The [TypeName](./typename-element-for-entryselectedby-for-listcontrol-format.md) element specifies the .NET Framework object that is displayed by the definition. When using this element, the fully qualified .NET Framework type name is required. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
 
--   The [SelectionSetName](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md) element (not shown) specifies a set of objects that can be displayed by this definition. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
+- The [SelectionSetName](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md) element (not shown) specifies a set of objects that can be displayed by this definition. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
 
--   The [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md) element (not shown) specifies a condition that must exist for this definition to be used. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified. For more information about defining selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+- The [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md) element (not shown) specifies a condition that must exist for this definition to be used. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified. For more information about defining selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 ## Using Format Strings
- Formatting strings can be added to a view to further define how the data is displayed. The following example shows how to define a formatting string for the value of the `StartTime` property.
+
+Formatting strings can be added to a view to further define how the data is displayed. The following example shows how to define a formatting string for the value of the `StartTime` property.
 
 ```xml
 <TableColumnItem>
@@ -223,15 +219,15 @@ A table view displays data in one or more columns. Each row in the table represe
 </TableColumnItem>
 ```
 
- The following XML elements can be used to specify a format pattern:
+The following XML elements can be used to specify a format pattern:
 
--   The [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element defines the property or script whose value is displayed in the column of the row. A [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element is required for each column of the row. The first entry is displayed in first column, the second entry in the second column, and so on.
+- The [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element defines the property or script whose value is displayed in the column of the row. A [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element is required for each column of the row. The first entry is displayed in first column, the second entry in the second column, and so on.
 
--   The [PropertyName](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies the property whose value is displayed in the row. You must specify either a property or a script, but you cannot specify both.
+- The [PropertyName](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies the property whose value is displayed in the row. You must specify either a property or a script, but you cannot specify both.
 
--   The [FormatString](./label-element-for-listitem-for-listcontrol-format.md) element specifies a format pattern that defines how the property or script value is displayed.
+- The [FormatString](./label-element-for-listitem-for-listcontrol-format.md) element specifies a format pattern that defines how the property or script value is displayed.
 
- In the following example, the `ToString` method is called to format the value of the script. Scripts can call any method of an object. Therefore, if an object has a method, such as `ToString`, that has formatting parameters, the script can call that method to format the output value of the script.
+In the following example, the `ToString` method is called to format the value of the script. Scripts can call any method of an object. Therefore, if an object has a method, such as `ToString`, that has formatting parameters, the script can call that method to format the output value of the script.
 
 ```xml
 <ListItem>
@@ -242,11 +238,12 @@ A table view displays data in one or more columns. Each row in the table represe
 </ListItem>
 ```
 
- The following XML element can be used to calling the `ToString` method:
+The following XML element can be used to calling the `ToString` method:
 
--   The [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element defines the property or script whose value is displayed in the column of the row. A [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element is required for each column of the row. The first entry is displayed in first column, the second entry in the second column, and so on.
+- The [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element defines the property or script whose value is displayed in the column of the row. A [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element is required for each column of the row. The first entry is displayed in first column, the second entry in the second column, and so on.
 
--   The [ScriptBlock](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies the script whose value is displayed in the row. You must specify either a script or a property, but you cannot specify both.
+- The [ScriptBlock](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies the script whose value is displayed in the row. You must specify either a script or a property, but you cannot specify both.
 
 ## See Also
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

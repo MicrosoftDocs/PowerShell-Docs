@@ -10,9 +10,10 @@ ms.assetid: 7828b45b-eabf-4432-b127-131b4ef0c800
 caps.latest.revision: 8
 ---
 # EntrySelectedBy Element for CustomEntry for CustomControl for View (Format)
+
 Defines the .NET Framework types that use this custom entry or the condition that must exist for this entry to be used.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 CustomControl Element (Format)
@@ -31,10 +32,12 @@ EntrySelectedBy Element for CustomEntry for View (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `EntrySelectedBy` element.
+
+The following sections describe attributes, child elements, and the parent element of the `EntrySelectedBy` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -51,16 +54,23 @@ EntrySelectedBy Element for CustomEntry for View (Format)
 |[CustomEntry Element for CustomEntries for View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|Defines the controls used by specific .NET Framework objects.|
 
 ## Remarks
- You must specify at least one type, selection set, or selection condition for an entry. There is no maximum limit to the number of child elements that you can use.
 
- Selection conditions are used to define a condition that must exist for the entry to be used, such as when an object has a specific property or when a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
+You must specify at least one type, selection set, or selection condition for an entry. There is no maximum limit to the number of child elements that you can use.
 
- For more information about the components of a custom control view, see [Custom Control View](./creating-custom-controls.md).
+Selection conditions are used to define a condition that must exist for the entry to be used, such as when an object has a specific property or when a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
+
+For more information about the components of a custom control view, see [Custom Control View](./creating-custom-controls.md).
 
 ## See Also
- [SelectionCondition Element for EntrySelectedBy for CustomEntry (Format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
- [SelectionSetName Element for EntrySelectedBy for CustomEntry (Format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
- [TypeName Element for EntrySelectedBy for CustomEntry (Format)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)
- [CustomEntry Element for CustomEntries for View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)
- [Custom Control View](./creating-custom-controls.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[SelectionCondition Element for EntrySelectedBy for CustomEntry (Format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
+
+[SelectionSetName Element for EntrySelectedBy for CustomEntry (Format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
+
+[TypeName Element for EntrySelectedBy for CustomEntry (Format)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+
+[CustomEntry Element for CustomEntries for View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)
+
+[Custom Control View](./creating-custom-controls.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

@@ -10,9 +10,10 @@ ms.assetid: a4544c0b-2347-4f3f-9bdb-ed2714bee048
 caps.latest.revision: 6
 ---
 # EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
+
 Specifies that the elements of collections are displayed. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -30,13 +31,16 @@ EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `EnumerateCollection` element.
+
+The following sections describe attributes, child elements, and the parent element of the `EnumerateCollection` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
- None.
+
+None.
 
 ### Parent Elements
 
@@ -47,5 +51,7 @@ EnumerateCollection Element for ExpressionBinding for GroupBy (Format)
 ## Remarks
 
 ## See Also
- [ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

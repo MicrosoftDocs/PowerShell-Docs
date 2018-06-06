@@ -10,9 +10,10 @@ ms.assetid: af83c0f6-7fdd-4aa0-af12-efc62f632974
 caps.latest.revision: 7
 ---
 # CustomEntries Element for CustomControl for GroupBy (Format)
+
 Provides the definitions for the control. This element is used when defining how a new group of objects is displayed.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 GroupBy Element for View (Format)
@@ -28,10 +29,12 @@ CustomEntries Element for CustomControl for GroupBy (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and parent elements of the `CustomEntries` element. There is no maximum limit to the number of child elements that can be specified.
+
+The following sections describe attributes, child elements, and parent elements of the `CustomEntries` element. There is no maximum limit to the number of child elements that can be specified.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -46,9 +49,13 @@ CustomEntries Element for CustomControl for GroupBy (Format)
 |[CustomControl Element for GroupBy (Format)](./customcontrol-element-for-groupby-format.md)|Defines the custom control that displays the new group.|
 
 ## Remarks
- In most cases, a control has only one definition, which is specified in a single `CustomEntry` element. However, it is possible to provide multiple definitions if you want to use the same control to display different groups. In those cases, you can define a `CustomEntry` element for a group.
+
+In most cases, a control has only one definition, which is specified in a single `CustomEntry` element. However, it is possible to provide multiple definitions if you want to use the same control to display different groups. In those cases, you can define a `CustomEntry` element for a group.
 
 ## See Also
- [CustomEntry Element for CustomEntries for Controls for View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
- [CustomControl Element for GroupBy (Format)](./customcontrol-element-for-groupby-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[CustomEntry Element for CustomEntries for Controls for View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
+
+[CustomControl Element for GroupBy (Format)](./customcontrol-element-for-groupby-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
