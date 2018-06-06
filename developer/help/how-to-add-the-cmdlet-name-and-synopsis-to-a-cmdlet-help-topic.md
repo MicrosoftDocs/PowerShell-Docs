@@ -33,3 +33,5 @@ This section describes how to add content that is displayed in the NAME and SYNO
 - Avoid the verb "display" when describing cmdlets that get objects. Although Windows PowerShell displays cmdlet data, it is important to introduce users to the concept that the cmdlet returns .NET Framework objects whose data may not be displayed. If you emphasize the display, the user might not realize that the cmdlet may have returned many other useful properties and methods that are not displayed.
 
 ## See Also
+
+ [Windows PowerShell SDK](../windows-powershell-reference.md)

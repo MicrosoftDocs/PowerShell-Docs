@@ -52,5 +52,4 @@ function Ping { Test-Connection -ComputerName $ComputerName }
 This script performs a series of network connection tests.
 #>
 
-```
-
+```

@@ -46,5 +46,4 @@ This section describes the syntax of comment-based help.
     .Description
     The Get-Function function displays the name and syntax of all functions in the session.
 #>
-```
-
+```
