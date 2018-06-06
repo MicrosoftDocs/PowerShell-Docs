@@ -170,5 +170,4 @@ protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)
 
       return accessDBPSDriveInfo;
     }
-```
-
+```

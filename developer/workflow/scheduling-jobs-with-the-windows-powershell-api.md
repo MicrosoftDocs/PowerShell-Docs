@@ -247,5 +247,4 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
     }
 }
 
-```
-
+```

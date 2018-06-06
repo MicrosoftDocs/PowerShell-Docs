@@ -198,5 +198,4 @@ Management OData IIS Extension uses XML files to define resource mapping. The fo
     </xs:all>
   </xs:complexType>
 </xs:schema>
-```
-
+```
