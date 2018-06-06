@@ -51,6 +51,4 @@ The following XML shows an example of using the \<maml:inputTypes> node to docum
     <maml:description>
   </command:inputType>
 </command:inputTypes>
-```
-
-
+```
