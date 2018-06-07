@@ -10,23 +10,26 @@ ms.assetid: 9ab83bcb-2d31-4744-a8bc-2ee22e48fc1b
 caps.latest.revision: 17
 ---
 # Host02 Sample
+
 This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation. The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.
 This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation. The host application sets the host culture to German, runs the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.
 
 ## Requirements
+
  This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
 
--   Creating a custom host whose classes derive from the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.
+- Creating a custom host whose classes derive from the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.
 
--   Creating a runspace that uses the custom host.
+- Creating a runspace that uses the custom host.
 
--   Setting the host culture to German.
+- Setting the host culture to German.
 
--   Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.
 
 ## Example
+
  The following code shows an implementation of a host application that uses the custom host.
 
 ```csharp
@@ -125,6 +128,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## Example
+
  The following code is the implementation of the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
 
 ```csharp
@@ -306,6 +310,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## Example
+
  The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.
 
 ```csharp
@@ -556,6 +561,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## Example
+
  The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
 
 ```csharp
@@ -774,8 +780,11 @@ namespace Microsoft.Samples.PowerShell.Host
 ```
 
 ## See Also
+
  [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell)
+
  [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost)
+
  [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+
  [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
