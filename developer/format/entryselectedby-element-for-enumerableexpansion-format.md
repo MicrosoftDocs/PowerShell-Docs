@@ -10,9 +10,10 @@ ms.assetid: 3af6aff8-4c2d-4f08-9bb1-e1f3ed3e583e
 caps.latest.revision: 11
 ---
 # EntrySelectedBy Element for EnumerableExpansion (Format)
+
 Defines the .NET Framework types that use this definition or the condition that must exist for this definition to be used.
 
- Configuration Element (Format)
+Configuration Element (Format)
 DefaultSettings Element (Format)
 EnumerableExpansions Element (Format)
 EnumerableExpansion Element (Format)
@@ -29,10 +30,12 @@ EntrySelectedBy Element for EnumerableExpansion (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `EntrySelectedBy` element.
+
+The following sections describe attributes, child elements, and the parent element of the `EntrySelectedBy` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -49,14 +52,21 @@ EntrySelectedBy Element for EnumerableExpansion (Format)
 |[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Defines how specific .NET Framework collection objects are expanded when they are displayed in a view.|
 
 ## Remarks
- You must specify at least one type, selection set, or selection condition for a definition entry. There is no maximum limit to the number of child elements that you can use.
 
- Selection conditions are used to define a condition that must exist for the definition to be used, such as when an object has a specific property or that a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+You must specify at least one type, selection set, or selection condition for a definition entry. There is no maximum limit to the number of child elements that you can use.
+
+Selection conditions are used to define a condition that must exist for the definition to be used, such as when an object has a specific property or that a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 ## See Also
- [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md)
- [EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)
- [SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
- [SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
- [TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md)
+
+[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)
+
+[SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
+
+[SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
+
+[TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

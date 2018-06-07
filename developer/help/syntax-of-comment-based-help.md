@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Syntax of Comment-Based Help | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/12/2016"
@@ -10,9 +10,11 @@ ms.assetid: e8adc997-1a71-48e9-9383-513ef13da7cf
 caps.latest.revision: 4
 ---
 # Syntax of Comment-Based Help
+
 This section describes the syntax of comment-based help.
 
 ## Syntax Diagram
+
  The syntax for comment-based Help is as follows:
 
 ```
@@ -28,6 +30,7 @@ This section describes the syntax of comment-based help.
 ```
 
 ## Syntax Description
+
  Comment-based Help is written as a series of comments. You can type a comment symbol (#) before each line of comments, or you can use the "\<#" and "#>" symbols to create a comment block. All the lines within the comment block are interpreted as comments.
 
  Each section of comment-based Help is defined by a keyword and each keyword is preceded by a dot (.). The keywords can appear in any order. The keyword names are not case-sensitive.
@@ -38,7 +41,7 @@ This section describes the syntax of comment-based help.
 
  For example, the following comment-based help topic contains the .Description keyword and its value, which is a description of a function or script.
 
-```
+```powershell
 <#
     .Description
     The Get-Function function displays the name and syntax of all functions in the session.

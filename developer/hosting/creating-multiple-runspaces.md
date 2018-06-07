@@ -10,12 +10,14 @@ ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
 caps.latest.revision: 4
 ---
 # Creating multiple runspaces
+
 If you create a large number of runspaces, you might consider creating a runspace pool. Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.
 
 ## Creating and using a runspace pool.
+
  The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.
 
-```
+```csharp
 namespace HostRunspacePool
 {
   using System;
@@ -72,5 +74,5 @@ namespace HostRunspacePool
 ```
 
 ## See Also
+
  [Creating an InitialSessionState](./creating-an-initialsessionstate.md)
- [Creating a constrained runspace](./creating-a-constrained-runspace.md)

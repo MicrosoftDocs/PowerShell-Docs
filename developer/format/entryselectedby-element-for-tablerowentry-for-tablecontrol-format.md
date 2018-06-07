@@ -10,9 +10,10 @@ ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
 caps.latest.revision: 15
 ---
 # EntrySelectedBy Element for TableRowEntry  for TableControl (Format)
+
 Defines the .NET Framework types that use this definition of the table view or the condition that must exist for this definition to be used.
 
- Configuration Element (Format)
+Configuration Element (Format)
 ViewDefinitions Element (Format)
 View Element (Format)
 TableControl Element (Format)
@@ -31,10 +32,12 @@ EntrySelectedBy Element (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `EntrySelectedBy` element.
+
+The following sections describe attributes, child elements, and the parent element of the `EntrySelectedBy` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -51,16 +54,18 @@ EntrySelectedBy Element (Format)
 |[TableRowEntry Element for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Defines the data that is displayed in a row of the table.|
 
 ## Remarks
- You must specify at least one type, selection set, or selection condition for a table view definition. There is no maximum limit to the number of child elements that you can use.
 
- Selection conditions are used to define a condition that must exist for the definition to be used, such as when an object has a specific property or that a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
+You must specify at least one type, selection set, or selection condition for a table view definition. There is no maximum limit to the number of child elements that you can use.
 
- For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
+Selection conditions are used to define a condition that must exist for the definition to be used, such as when an object has a specific property or that a specific property value or script evaluates to `true`. For more information about selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
+
+For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
 ## Example
- The following example shows a `TableRowEntry` element that is used to display the properties of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
 
-```
+The following example shows a `TableRowEntry` element that is used to display the properties of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
+
+```xml
 <TableRowEntry>
   <EntrySelectedBy>
     <TypeName>System.Diagnostics.Process</TypeName>
@@ -77,9 +82,15 @@ EntrySelectedBy Element (Format)
 ```
 
 ## See Also
- [Creating a Table View](./creating-a-table-view.md)
- [SelectionCondition Element for EntrySelectedBy for TableControl (Format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
- [SelectionSetName Element for EntrySelectedBy for TableControl (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
- [TableRowEntry Element for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
- [TypeName Element for EntrySelectedBy for TableControl (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Creating a Table View](./creating-a-table-view.md)
+
+[SelectionCondition Element for EntrySelectedBy for TableControl (Format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
+
+[SelectionSetName Element for EntrySelectedBy for TableControl (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
+
+[TableRowEntry Element for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+
+[TypeName Element for EntrySelectedBy for TableControl (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

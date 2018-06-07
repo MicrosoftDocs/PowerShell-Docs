@@ -10,9 +10,10 @@ ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
 caps.latest.revision: 10
 ---
 # EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)
+
 Defines the .NET Framework types that use the definition of the common control or the condition that must exist for this control to be used. This element is used when defining a common control that can be used by all the views in the formatting file.
 
- Configuration Element (Format)
+Configuration Element (Format)
 Controls Element of Configuration (Format)
 Control Element for Controls for Configuration (Format)
 CustomControl Element for Control for Configuration (Format)
@@ -31,10 +32,12 @@ EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `EntrySelectedBy` element.
+
+The following sections describe attributes, child elements, and the parent element of the `EntrySelectedBy` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -51,11 +54,17 @@ EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)
 |[CustomEntry Element for CustomControl for Controls for Configuration (Format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|Provides a definition of the common control.|
 
 ## Remarks
- At a minimum, each definition must have at least one .NET Framework type, selection set, or selection condition specified. There is no maximum limit to the number of types, selection sets, or selection conditions that you can specify.
+
+At a minimum, each definition must have at least one .NET Framework type, selection set, or selection condition specified. There is no maximum limit to the number of types, selection sets, or selection conditions that you can specify.
 
 ## See Also
- [SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
- [SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
- [CustomEntry Element for CustomControl for Controls for Configuration (Format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
- [TypeName Element for EntrySelectdBy for Controls for Configuration (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
+
+[SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
+
+[CustomEntry Element for CustomControl for Controls for Configuration (Format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
+
+[TypeName Element for EntrySelectdBy for Controls for Configuration (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

@@ -10,9 +10,10 @@ ms.assetid: 93d27173-9ae4-46e5-bb78-90525915cd70
 caps.latest.revision: 9
 ---
 # EnumerableExpansion Element (Format)
+
 Defines how specific .NET Framework collection objects are expanded when they are displayed in a view.
 
- Configuration Element (Format)
+Configuration Element (Format)
 DefaultSettings Element (Format)
 EnumerableExpansions Element (Format)
 EnumerableExpansion Element (Format)
@@ -27,10 +28,12 @@ EnumerableExpansion Element (Format)
 ```
 
 ## Attributes and Elements
- The following sections describe attributes, child elements, and the parent element of the `EnumerableExpansion` element.
+
+The following sections describe attributes, child elements, and the parent element of the `EnumerableExpansion` element.
 
 ### Attributes
- None.
+
+None.
 
 ### Child Elements
 
@@ -46,9 +49,11 @@ EnumerableExpansion Element (Format)
 |[EnumerableExpansions Element (Format)](./enumerableexpansions-element-format.md)|Defines the different ways that .NET Framework collection objects are expanded when they are displayed in a view.|
 
 ## Remarks
- This element is used to define how collection objects and the objects in the collection are displayed. In this case, a collection object refers to any object that supports the  **System.Collections.ICollection** interface.
 
- The default behavior is to display only the properties of the objects in the collection.
+This element is used to define how collection objects and the objects in the collection are displayed. In this case, a collection object refers to any object that supports the  **System.Collections.ICollection** interface.
+
+The default behavior is to display only the properties of the objects in the collection.
 
 ## See Also
- [Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
