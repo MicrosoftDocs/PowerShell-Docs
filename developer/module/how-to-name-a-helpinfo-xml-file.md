@@ -10,9 +10,11 @@ ms.assetid: 64e85b53-5aeb-4d6c-903c-af4ab62f11c1
 caps.latest.revision: 7
 ---
 # How to Name a HelpInfo XML File
+
 This topic explains the required name format for the Updatable Help Information files, commonly known as HelpInfo XML files.
 
 ## How to Name a HelpInfo XML File
+
  A HelpInfo XML file must have a name with the following format.
 
  `<ModuleName>_<ModuleGUID>_HelpInfo.xml`
@@ -21,7 +23,7 @@ This topic explains the required name format for the Updatable Help Information 
 
  ModuleName
  The value of the **Name** property of the **ModuleInfo** object that the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet returns.
- The value of the **Name** property of the **ModuleInfo** object that the [Get-Module](http://msdn.microsoft.com/en-us/2cccd4c4-9a21-4c77-b691-984ee57242e1) cmdlet returns.
+ The value of the **Name** property of the **ModuleInfo** object that the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet returns.
 
  ModuleGUID
  The value of the **GUID** key in the module manifest.

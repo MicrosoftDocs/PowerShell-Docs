@@ -10,9 +10,11 @@ ms.assetid: de302da0-c17a-4d31-a8ef-14a626738993
 caps.latest.revision: 7
 ---
 # How to Name an Updatable Help CAB File
+
 This topic explains the required name format for the Updatable Help cabinet (.CAB) files.
 
 ## How to Name an Updatable Help CAB File
+
  A Updatable cabinet (.CAB) file must have a name with the following format.
 
  `<ModuleName>_<ModuleGUID>_<UICulture>_HelpContent.cab`

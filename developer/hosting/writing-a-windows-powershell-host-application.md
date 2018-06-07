@@ -10,11 +10,13 @@ ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
 ---
 # Writing a Windows PowerShell Host Application
+
 You can host Windows PowerShell in your application. The host application can define the runspace where commands are run, open sessions on a local or remote computer, and invoke the commands either synchronously or asynchronously based on the needs of the application.
 
  The following topics explain how to create an application that hosts
 
 ## In This Section
+
  [Windows PowerShell Host Quickstart](./windows-powershell-host-quickstart.md)
  Provides instructions and code samples to get you started creating host applications.
 
@@ -34,4 +36,5 @@ You can host Windows PowerShell in your application. The host application can de
  This section includes samples of complete host applications.
 
 ## See Also
- [Windows PowerShell](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
+
+ [Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
