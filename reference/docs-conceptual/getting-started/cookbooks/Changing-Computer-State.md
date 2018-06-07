@@ -44,16 +44,16 @@ For more information, and to find other features of the Win32Shutdown method, se
 
 Shutting down and restarting computers are generally the same types of task. Tools that shut down a computer will generally restart it as well—and vice versa. There are two straightforward options for restarting a computer from Windows PowerShell. Use either Tsshutdn.exe or Shutdown.exe with appropriate arguments. You can get detailed usage information from **tsshutdn.exe /?** or **shutdown.exe /?**.
 
-You can also perform shutdown and restart operations by using **Win32_OperatingSystem** directly from Windows PowerShell as well.
+You can also perform shutdown and restart operations directly from Windows PowerShell as well.
 
-To shut down the computer, use the Win32Shutdown method with the **1** flag.
+To shut down the computer, use the restart-computer command
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(1)
+stop-computer
 ```
 
-To restart the operating system, use the Win32Shutdown method with the **2** flag.
+To restart the operating system, use the restart-computer command
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
+restart-computer
 ```
