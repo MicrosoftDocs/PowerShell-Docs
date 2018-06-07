@@ -16,7 +16,6 @@ This topic explains how Updatable Help processes the HelpInfo XML file and CAB f
 ## The Update-Help Process
 
 The following list describes the actions of the [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet when a user runs a command to update the help files for a module in a particular UI culture.
-The following list describes the actions of the [Update-Help](http://go.microsoft.com/fwlink/?LinkID=210614) cmdlet when a user runs a command to update the help files for a module in a particular UI culture.
 
 1. `Update-Help` gets the remote HelpInfo XML file from the location specified by the value of the **HelpInfoURI** key in the module manifest and validates the file against the schema. (To view the schema, see [HelpInfo XML Schema](./helpinfo-xml-schema.md).) Then `Update-Help` looks for a local HelpInfo XML file for the module in the module directory on the user's computer.
 
@@ -30,8 +29,7 @@ The following list describes the actions of the [Update-Help](http://go.microsof
 
 ## The Save-Help Process
 
-The following list describes the actions of the [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) and [Update-Help](http://go.microsoft.com/fwlink/?LinkID=210614) cmdlets when a user runs commands to update the help files in a file share, and then use those files to update the help files on the user's computer.
-The following list describes the actions of the [Save-Help](http://go.microsoft.com/fwlink/?LinkID=210612) and [Update-Help](http://go.microsoft.com/fwlink/?LinkID=210614) cmdlets when a user runs commands to update the help files in a file share, and then use those files to update the help files on the user's computer.
+The following list describes the actions of the [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) and [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlets when a user runs commands to update the help files in a file share, and then use those files to update the help files on the user's computer.
 
 The `Save-Help` cmdlet performs the following actions in response to a command to save the help files for a module in a file share that is specified by the **DestinationPath** parameter.
 
@@ -44,7 +42,7 @@ The `Save-Help` cmdlet performs the following actions in response to a command t
 4. `Save-Help` downloads the CAB file and saves it in the **DestinationPath** directory. (It does not create any language-specific subdirectories.)
 
 5. `Save-Help` creates a local HelpInfo XML file by copying the remote HelpInfo XML file. It edits the local HelpInfo XML file so that it includes elements only for the CAB file that it saved. Then it saves the local HelpInfo XML file in the  **DestinationPath** directory and concludes the update.
-6. 
+
 The `Update-Help` cmdlet performs the following actions in response to a command to update the help files on a user's computer from the files in a file share that is specified by the **SourcePath** parameter.
 
 1. `Update-Help` gets the remote HelpInfo XML file from the **SourcePath** directory. Then it looks for a local HelpInfo XML file in the module directory on the user's computer.
