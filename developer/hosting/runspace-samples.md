@@ -10,20 +10,21 @@ ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
 caps.latest.revision: 17
 ---
 # Runspace Samples
+
 This section includes sample code that shows how to use different types of runspaces to run commands synchronously and asynchronously. You can use Microsoft Visual Studio to create a console application and then copy the code from the topics in this section into your host application.
 
 ## In This Section
 
 > [!NOTE]
->  For samples of host applications that create custom host interfaces, see [Custom Host Samples](./custom-host-samples.md).
+> For samples of host applications that create custom host interfaces, see [Custom Host Samples](./custom-host-samples.md).
 
  [Runspace01 Sample](./runspace01-sample.md)
  This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously and display its output in a console window.
  This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet synchronously and display its output in a console window.
 
  [Runspace02 Sample](./runspace02-sample.md)
- This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](http://go.microsoft.com/fwlink/?LinkID=113403) cmdlets synchronously. The results of these commands is displayed by using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.
- This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) and [Sort-Object](http://go.microsoft.com/fwlink/?LinkID=113403) cmdlets synchronously. The results of these commands is displayed by using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.
+ This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously. The results of these commands is displayed by using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.
+ This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously. The results of these commands is displayed by using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.
 
  [Runspace03 Sample](./runspace03-sample.md)
  This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run a script synchronously, and how to handle non-terminating errors. The script receives a list of process names and then retrieves those processes. The results of the script, including any non-terminating errors that were generated when running the script, are displayed in a console window.
@@ -53,4 +54,3 @@ This section includes sample code that shows how to use different types of runsp
  This shows how to use the [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters. The proxy command is then added to an initial session state that is used to create a constrained runspace. This means that the user can access the functionality of the cmdlet only through the proxy command.
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
