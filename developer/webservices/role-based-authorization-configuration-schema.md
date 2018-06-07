@@ -11,7 +11,7 @@ caps.latest.revision: 7
 ---
 # Role-Based Authorization Configuration Schema
 
-The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy. The following XSD defines the schema used for these files.
+The [PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a) sample uses XML files to configure the authorization policy. The following XSD defines the schema used for these files.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -83,4 +83,5 @@ The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample
    </xs:complexType>
 </xs:schema>
 ```
+
 

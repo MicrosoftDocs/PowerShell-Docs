@@ -15,7 +15,7 @@ Management OData IIS Extension uses XML files to define resource mapping. The fo
 
 ## Resource Mapping File XSD
 
- The following XSD defines the schema for Management OData IIS Extension resource mapping files.
+The following XSD defines the schema for Management OData IIS Extension resource mapping files.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -198,4 +198,6 @@ Management OData IIS Extension uses XML files to define resource mapping. The fo
     </xs:all>
   </xs:complexType>
 </xs:schema>
-```
+```
+
+

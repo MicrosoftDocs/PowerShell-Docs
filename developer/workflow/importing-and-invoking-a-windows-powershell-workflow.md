@@ -13,7 +13,7 @@ caps.latest.revision: 5
 
 Windows PowerShell 3, allows you to import and invoke a workflow that is packaged as a Windows PowerShell module. For information about Windows PowerShell modules, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).
 
- The [System.Management.Automation.Psjobproxy](/dotnet/api/System.Management.Automation.PSJobProxy)class is used as a client side proxy for workflow objects on the server. The following procedure explains how to use a [System.Management.Automation.Psjobproxy](/dotnet/api/System.Management.Automation.PSJobProxy)object to invoke a workflow.
+The [System.Management.Automation.Psjobproxy](/dotnet/api/System.Management.Automation.PSJobProxy)class is used as a client side proxy for workflow objects on the server. The following procedure explains how to use a [System.Management.Automation.Psjobproxy](/dotnet/api/System.Management.Automation.PSJobProxy)object to invoke a workflow.
 
 ### Creating a PSJobProxy object to execute workflow commands on a remote server.
 
@@ -31,9 +31,9 @@ Windows PowerShell 3, allows you to import and invoke a workflow that is package
 
 ## Example
 
- The following code example demonstrates how to invoke a workflow by using Windows PowerShell.
+The following code example demonstrates how to invoke a workflow by using Windows PowerShell.
 
- This example requires Windows PowerShell 3.
+This example requires Windows PowerShell 3.
 
 ```csharp
 using System;
@@ -136,4 +136,6 @@ class Program
     }
 }
 
-```
+```
+
+

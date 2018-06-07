@@ -13,13 +13,13 @@ caps.latest.revision: 8
 
 This topic demonstrates how to configure the role-based authorization policy for the sample implementation of the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface described in [Implementing Custom Authorization for Management OData IIS Extension](./implementing-custom-authorization-for-a-management-odata-web-service.md).
 
- In this example, you will configure an XML file that is used by the sample Management OData application to define the authorization policy. You will create two roles and associate different Windows PowerShell modules that contain workflows with those roles. The schema that defines the XML file is listed at [Role-Based Authorization Configuration Schema](./role-based-authorization-configuration-schema.md).
+In this example, you will configure an XML file that is used by the sample Management OData application to define the authorization policy. You will create two roles and associate different Windows PowerShell modules that contain workflows with those roles. The schema that defines the XML file is listed at [Role-Based Authorization Configuration Schema](./role-based-authorization-configuration-schema.md).
 
 ## Modifying the RBacConfiguration.xml File
 
- This file defines the authorization policy for the application. Roles are defined by using `Group` nodes. A `Group` node defines the Windows PowerShell commands that users assigned to that group can run. Users are assigned to groups by using `User` nodes.
+This file defines the authorization policy for the application. Roles are defined by using `Group` nodes. A `Group` node defines the Windows PowerShell commands that users assigned to that group can run. Users are assigned to groups by using `User` nodes.
 
- In these examples, you will add a module to the Administrator `Group` node, and add a user to each group.
+In these examples, you will add a module to the Administrator `Group` node, and add a user to each group.
 
 #### Adding a Module to a Group Node
 
@@ -104,4 +104,5 @@ This topic demonstrates how to configure the role-based authorization policy for
    ```xml
    <User Name="UserName" GroupName="NonAdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>
    ```
+
    

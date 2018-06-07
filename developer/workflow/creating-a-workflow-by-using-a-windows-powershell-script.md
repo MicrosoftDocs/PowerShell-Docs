@@ -18,15 +18,15 @@ You can create a workflow by writing a Windows PowerShell script. To create a wo
 workflow Invoke-HelloWorld {"Hello World from workflow"}
 ```
 
- You find the workflow in the same way you would any other Windows PowerShell command.
+You find the workflow in the same way you would any other Windows PowerShell command.
 
 ## Implementing Parallel and Sequence
 
- [Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx) supports execution of activities in parallel. To implement this capability in a Windows PowerShell script, use the `parallel` keyword in front of a script block. You can also use the `foreach -parallel` construction to iterate through a collection of objects in parallel. To execute a group of activities in sequential order within a parallel block, enclose that group of activities in a script block and precede the block with the sequence keyword.
+[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx) supports execution of activities in parallel. To implement this capability in a Windows PowerShell script, use the `parallel` keyword in front of a script block. You can also use the `foreach -parallel` construction to iterate through a collection of objects in parallel. To execute a group of activities in sequential order within a parallel block, enclose that group of activities in a script block and precede the block with the sequence keyword.
 
 ## Joining Computers to a Domain
 
- The following script creates a workflow that checks the domain status of a group of user-specified computers, joins them to a domain if they are not already joined, and then checks the status again. This is a script version of the XAML workflow explained in [Creating a Workflow with Windows PowerShell Activities](./creating-a-workflow-with-windows-powershell-activities.md).
+The following script creates a workflow that checks the domain status of a group of user-specified computers, joins them to a domain if they are not already joined, and then checks the status again. This is a script version of the XAML workflow explained in [Creating a Workflow with Windows PowerShell Activities](./creating-a-workflow-with-windows-powershell-activities.md).
 
 ```powershell
 workflow Join-Domain
@@ -44,4 +44,6 @@ workflow Join-Domain
     }
  }
 
-```
+```
+
+

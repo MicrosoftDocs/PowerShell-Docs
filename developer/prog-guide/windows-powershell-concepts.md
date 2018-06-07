@@ -28,4 +28,4 @@ This section contains conceptual information that will help you understand Windo
 
 ## See Also
 
- [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)

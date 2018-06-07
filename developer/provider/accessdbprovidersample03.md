@@ -15,6 +15,17 @@ This sample shows how to overwrite the [System.Management.Automation.Provider.It
 
 ## Demonstrates
 
+> [!IMPORTANT]
+> Your provider class will most likely derive from one of the following classes and possibly implement other provider interfaces:
+>
+> -   [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) class.
+> -   [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) class. See [AccessDBProviderSample04](./accessdbprovidersample04.md).
+> -   [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class. See [AccessDBProviderSample05](./accessdbprovidersample05.md).
+>
+> For more information about choosing which provider class to derive from based on provider features, see [Designing Your Windows PowerShell Provider](./provider-types.md).
+
+This sample demonstrates the following:
+
 - Declaring the `CmdletProvider` attribute.
 
 - Defining a provider class that derives from the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) class.
@@ -33,16 +44,16 @@ This sample shows how to overwrite the [System.Management.Automation.Provider.It
 
 ## Example
 
- This sample shows how to overwrite the methods needed to get and set items in a Microsoft Access data base.
+This sample shows how to overwrite the methods needed to get and set items in a Microsoft Access data base.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L976 "AccessDBProviderSample03.cs")]
 
 ## See Also
 
- [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
+[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 
- [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
+[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
 
- [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
+[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 
- [Designing Your Windows PowerShell Provider](./provider-types.md)
+[Designing Your Windows PowerShell Provider](./provider-types.md)
