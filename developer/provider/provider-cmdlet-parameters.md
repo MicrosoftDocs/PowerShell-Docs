@@ -10,9 +10,11 @@ ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
 ---
 # Provider cmdlet parameters
+
 Provider cmdlets come with a set of static parameters that are available to all providers that support the cmdlet, as well as dynamic parameters that are added when the user specifies a certain value for certain static parameters of the provider cmdlet.
 
 ## Provider Cmdlet Static Parameters
+
  Static parameters are defined by Windows PowerShell. A large set of these parameters is implemented by Windows PowerShell to provide consistency across all the providers and to provide a simpler development experience. Examples of these parameters include the `literalPath`, `exclude`, and `include` parameters of the Get-Item cmdlet. A smaller set of these parameters can be overwritten to provide actions that are specific to your provider. Examples of these parameters include the `Path` and `Value` parameter of the Set-Item cmdlet. Here is a list of the parameters that can be overwritten for the provider cmdlets.
 
  Clear-Content cmdlet
@@ -78,8 +80,11 @@ Provider cmdlets come with a set of static parameters that are available to all 
  In addition, you cannot specify the characteristics of these parameters, such as whether they are optional or required, nor can you give these parameters an alias or specify any of the validation attributes. In contrast, you can specify parameter characteristics in stand-alone cmdlets by using attributes such as the `Parameters` attribute.
 
 ## Provider Cmdlet Dynamic Parameters
+
  Dynamic parameters for cmdlet providers are similar to dynamic providers for stand-alone cmdlets. In both cases, the parameters are added to the cmdlet when the user specifies a certain value for one of the default parameters, such as the `path` parameter. However, not all of the static parameters can be used to trigger the addition of dynamic parameters. For more information about dynamic parameters, see [Provider Cmdlet Dynamic Parameters](./provider-cmdlet-dynamic-parameters.md).
 
 ## See Also
+
  [Provider Cmdlet Dynamic Parameters](./provider-cmdlet-dynamic-parameters.md)
+
  [Writing a Windows PowerShell Provider](./writing-a-windows-powershell-provider.md)

@@ -10,16 +10,18 @@ ms.assetid: 4174e84f-d516-4aca-b418-273047dcfb07
 caps.latest.revision: 7
 ---
 # Creating a Workflow Activity from a Windows PowerShell Cmdlet
+
 Any Windows PowerShell module or cmdlet can be packaged as a Workflow activity by using the methods of the [Microsoft.Powershell.Activities.Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) class. Use the [Microsoft.Powershell.Activities.Activitygenerator.Generatefrommoduleinfo*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo), [Microsoft.Powershell.Activities.Activitygenerator.Generatefromcommandinfo*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo), and [Microsoft.Powershell.Activities.Activitygenerator.Generatefromname*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName) methods of the [Microsoft.Powershell.Activities.Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) class to generate C# code that represents an activity. You can then compile the resulting C# code into an assembly that can be added to a project as an activity.
 
- You can then compile the resulting C# code into an assembly that can be added to a project as an activity by using a command line with the following form.
+You can then compile the resulting C# code into an assembly that can be added to a project as an activity by using a command line with the following form.
 
- **csc /nologo /out:AssemblyName /target:library /reference:System.Activities.Activity /reference:Microsoft.PowerShell.Activities codefile.cs**
+**csc /nologo /out:AssemblyName /target:library /reference:System.Activities.Activity /reference:Microsoft.PowerShell.Activities codefile.cs**
 
 ## Example
- The following example demonstrates how to generate C# code for an activity from a Windows PowerShell module.
 
-```
+The following example demonstrates how to generate C# code for an activity from a Windows PowerShell module.
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,9 +66,10 @@ namespace MakeActivity
 ```
 
 ## Example
- The following example demonstrates how to generate C# code for an activity from a Windows PowerShell cmdlet.
 
-```
+The following example demonstrates how to generate C# code for an activity from a Windows PowerShell cmdlet.
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,4 +118,6 @@ namespace MakeActivity
     }
 }
 
-```
+```
+
+

@@ -10,12 +10,14 @@ ms.assetid: 0b2a7ce2-3c33-469c-a4a4-b8fe3bd05324
 caps.latest.revision: 5
 ---
 # Implementing SessionConfiguration for a Management OData web service
+
 Using the Windows PowerShell Web Service requires a third party to implement the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface to expose Windows PowerShell cmdlets. This interface provides access to information about the remote session that the web service uses to run the cmdlets on the server. After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.
 
 ## Implementation of PSSessionConfiguration interface
+
  The following code implements the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface.
 
-```
+```csharp
 //-----------------------------------------------------------------------
 // <copyright file="SessionConfiguration.cs" company="Microsoft Corporation">
 //     Copyright (C) 2011 Microsoft Corporation
@@ -107,4 +109,5 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 ```
 
 ## See Also
+
  [Implementing Custom Authorization for a Management OData web service](./implementing-custom-authorization-for-a-management-odata-web-service.md)
