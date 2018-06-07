@@ -8,9 +8,9 @@
             "exclude": ["**/obj/**"]
         }],
         "globalMetadata": {
-            "breadcrumb_path": "/powershell/developer/bread/toc.yml",
-            "ROBOTS": "INDEX, FOLLOW",
+            "breadcrumb_path": "bread/toc.yml",
             "uhfHeaderId": "MSDocsHeader-Powershell",
+            "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
             "ms.technology": "developer",
             "manager": "carmonm",
