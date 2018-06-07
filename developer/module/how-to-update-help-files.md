@@ -15,6 +15,10 @@ This topic explains how to update help files for a module that supports Updatabl
 
 ## Updating Help Files
 
+There are many reasons to update help files, such as correcting errors, clarifying a concept, answering a frequently-asked question, adding new files, or adding new and better examples.
+
+To update a help file:
+
 1. Change the files.
 
 2. Translate the files into other UI cultures.
