@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Resource Mapping Schema | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/12/2016"
@@ -10,12 +10,14 @@ ms.assetid: a7b2cc4d-292f-4714-888b-3b81536bef5d
 caps.latest.revision: 7
 ---
 # Resource Mapping Schema
+
 Management OData IIS Extension uses XML files to define resource mapping. The following XSD defines the schema used for these files.
 
 ## Resource Mapping File XSD
- The following XSD defines the schema for Management OData IIS Extension resource mapping files.
 
-```
+The following XSD defines the schema for Management OData IIS Extension resource mapping files.
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns="http://schemas.microsoft.com/powershell-web-services/2010/09" targetNamespace="http://schemas.microsoft.com/powershell-web-services/2010/09" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:element name="ResourceMetadata">

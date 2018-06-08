@@ -10,6 +10,7 @@ ms.assetid: 3dd5608e-50b6-4c6a-aee3-dde0e86032bc
 caps.latest.revision: 7
 ---
 # Windows PowerShell Concepts
+
 This section contains conceptual information that will help you understand Windows PowerShell from the viewpoint of a developer.
 
 |Topic Name|Description|
@@ -26,4 +27,5 @@ This section contains conceptual information that will help you understand Windo
 |[Windows PowerShell Extended Type System (ETS)](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353)|Programmatically extending objects.|
 
 ## See Also
- [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
