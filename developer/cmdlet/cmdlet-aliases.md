@@ -13,7 +13,7 @@ caps.latest.revision: 11
 
 You can use cmdlet aliases to improve the cmdlet user experience. You can add aliases to frequently used cmdlets to reduce typing and to make it easier to complete tasks quickly. You can include built-in aliases in your cmdlets, or users can define their own custom aliases.
 
-For example, the [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet has a built-in `gcm` alias. You can also use aliases to add command names from other languages so that users do not have to learn new commands.
+For example, the [Get-Command](/powershell/module/microsoft.powershell.core/get-command) cmdlet has a built-in `gcm` alias. You can also use aliases to add command names from other languages so that users do not have to learn new commands.
 
 ## Alias Guidelines
 

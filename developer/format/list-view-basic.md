@@ -11,8 +11,8 @@ caps.latest.revision: 7
 ---
 # List View (Basic)
 
-This example shows how to implement a basic list view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
-This example shows how to implement a basic list view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
+This example shows how to implement a basic list view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
+This example shows how to implement a basic list view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ### To load this formatting file
 

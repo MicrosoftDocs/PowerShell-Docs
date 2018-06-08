@@ -11,7 +11,7 @@ caps.latest.revision: 7
 ---
 # Runspace08 Sample
 
-This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object and how to run the commands synchronously.
+This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.
 
 ## Requirements
 
@@ -23,9 +23,9 @@ This sample demonstrates the following.
 
 - Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the runspace.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.
 
-- Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+- Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
 
 - Running the cmdlets synchronously.
 
@@ -33,8 +33,8 @@ This sample demonstrates the following.
 
 ## Example
 
-This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
-This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

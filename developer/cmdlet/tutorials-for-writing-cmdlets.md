@@ -27,8 +27,8 @@ This tutorial describes how to define a cmdlet and add functionality such as use
 This tutorial describes how to define a cmdlet and add functionality such as user prompts, wildcard support, and the use of parameter sets. The cmdlet described here performs the same task as the [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet provided by Windows PowerShell.
 
 [SelectStr Tutorial](./selectstr-tutorial.md)
-This tutorial describes how to define a cmdlet that accesses a data store. The cmdlet described here performs the same task as the [Select-String](/powershell/module/Microsoft.PowerShell.Utility/Select-String) cmdlet provided by Windows PowerShell.
-This tutorial describes how to define a cmdlet that accesses a data store. The cmdlet described here performs the same task as the [Select-String](/powershell/module/Microsoft.PowerShell.Utility/Select-String) cmdlet provided by Windows PowerShell.
+This tutorial describes how to define a cmdlet that accesses a data store. The cmdlet described here performs the same task as the [Select-String](/powershell/module/microsoft.powershell.utility/select-string) cmdlet provided by Windows PowerShell.
+This tutorial describes how to define a cmdlet that accesses a data store. The cmdlet described here performs the same task as the [Select-String](/powershell/module/microsoft.powershell.utility/select-string) cmdlet provided by Windows PowerShell.
 
 ## See Also
 

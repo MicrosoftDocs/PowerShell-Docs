@@ -11,19 +11,19 @@ caps.latest.revision: 5
 ---
 # How to Add Examples to a Cmdlet Help Topic
 
-- [Things to Know about Examples in Cmdlet Help](#aboutcmdleexamples)
+- [Things to Know about Examples in Cmdlet Help](#Things-to-Know-about-Examples-in-Cmdlet-Help)
 
-- [Help Views that Display Examples](#viewexamples)
+- [Help Views that Display Examples](#Help-Views-that-Display-Examples)
 
-- [Adding an Examples Node](#addexamplenode)
+- [Adding an Examples Node](#Adding-an-Examples-Node)
 
-- [Adding Preceding Characters](#addprecedingchareacters)
+- [Adding Preceding Characters](#Adding-Preceding-Characters)
 
-- [Adding the Command](#addcommand)
+- [Adding the Command](#Adding-the-Command)
 
-- [Adding a Description](#adddescription)
+- [Adding a Description](#Adding-a-Description)
 
-- [Adding Example Output](#addoutput)
+- [Adding Example Output](#Adding-Example-Output)
 
 ## Things to Know about Examples in Cmdlet Help
 

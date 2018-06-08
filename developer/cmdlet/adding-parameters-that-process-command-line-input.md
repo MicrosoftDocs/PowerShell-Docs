@@ -22,21 +22,21 @@ One source of input for a cmdlet is the command line. This topic describes how t
 
 The following sections are in this topic:
 
-- [Defining the Cmdlet Class](#definecmdletgetproc1)
+- [Defining the Cmdlet Class](#Defining-the-Cmdlet-Class)
 
-- [Declaring Parameters](#declareparameters)
+- [Declaring Parameters](#Declaring-Parameters)
 
-- [Supporting Parameter Validation](#supportparametervalidation)
+- [Supporting Parameter Validation](#Supporting-Parameter-Validation)
 
-- [Overriding an Input Processing Method](#provideinputprocmethod)
+- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
 
-- [Code Sample](#codesamplecommandlineinputgetproc2)
+- [Code Sample](#Code-Sample)
 
-- [Defining Object Types and Formatting](#defineobjecttypesformattinggetproc2)
+- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
 
-- [Building the Cmdlet](#buildcmdletgetproc2)
+- [Building the Cmdlet](#Building-the-Cmdlet)
 
-- [Testing the Cmdlet](#testcmdletgetproc2)
+- [Testing the Cmdlet](#Testing-the-Cmdlet)
 
 ## Defining the Cmdlet Class
 

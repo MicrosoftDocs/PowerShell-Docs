@@ -15,8 +15,8 @@ A list view displays data in a single column (in sequential order). The data dis
 
 ## A List View Display
 
-The following output shows how Windows PowerShell displays the properties of [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects that are returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. In this example, three objects were returned, with each object separated from the preceding object by a blank line.
-The following output shows how Windows PowerShell displays the properties of [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects that are returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. In this example, three objects were returned, with each object separated from the preceding object by a blank line.
+The following output shows how Windows PowerShell displays the properties of [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects that are returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. In this example, three objects were returned, with each object separated from the preceding object by a blank line.
+The following output shows how Windows PowerShell displays the properties of [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects that are returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. In this example, three objects were returned, with each object separated from the preceding object by a blank line.
 
 ```powershell
 Get-Service | format-list

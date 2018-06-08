@@ -25,10 +25,10 @@ The ValidateRange attribute specifies the minimum and maximum values (the range)
 
 #### Parameters
 
-`MinRange` ([System.Object](/dotnet/api/System.Object))
+`MinRange` ([System.Object](/dotnet/api/system.object))
 Required. Specifies the minimum value allowed.
 
-`MaxRange` ([System.Object](/dotnet/api/System.Object))
+`MaxRange` ([System.Object](/dotnet/api/system.object))
 Required. Specifies the maximum value allowed.
 
 ## Remarks

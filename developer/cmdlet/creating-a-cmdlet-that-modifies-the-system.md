@@ -39,25 +39,25 @@ This topic describes a Stop-Proc cmdlet that attempts to stop processes that are
 
 Topics in this section include the following:
 
-- [Defining the Cmdlet](#definecmdletforsystemmod)
+- [Defining the Cmdlet](#Defining-the-Cmdlet)
 
-- [Defining Parameters for System Modification](#defineparametersforsystemmod)
+- [Defining Parameters for System Modification](#Defining-Parameters-for-System-Modification)
 
-- [Overriding an Input Processing Method](#provideinputprocessingmethodshouldprocess)
+- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
 
-- [Calling the ShouldProcess Method](#callshouldprocess)
+- [Calling the ShouldProcess Method](#Calling-the-ShouldProcess-Method)
 
-- [Calling the ShouldContinue Method](#callshouldcontinue)
+- [Calling the ShouldContinue Method](#Calling-the-ShouldContinue-Method)
 
-- [Stopping Input Processing](#stopprocessing)
+- [Stopping Input Processing](#Stopping-Input-Processing)
 
-- [Code Sample](#codesampleshouldprocess)
+- [Code Sample](#Code-Sample)
 
-- [Defining Object Types and Formatting](#defineobjecttypesformattingshouldprocess)
+- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
 
-- [Building the Cmdlet](#buildcmdletshouldprocess)
+- [Building the Cmdlet](#Building-the-Cmdlet)
 
-- [Testing the Cmdlet](#testcmdletshouldprocess)
+- [Testing the Cmdlet](#Testing-the-Cmdlet)
 
 ## Defining the Cmdlet
 

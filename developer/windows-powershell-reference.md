@@ -26,7 +26,8 @@ The Windows PowerShell Software Development Kit (SDK) is written for command dev
 In addition to the Windows PowerShell SDK, the following resources provide more information.
 
 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)
-[Getting Started with Windows PowerShell](http://msdn.microsoft.com/en-us/b0e2ad92-875f-421d-b612-f624e644aa69)
+
+[Getting Started with Windows PowerShell](https://msdn.microsoft.com/en-us/mt707506?redirectUrl=https://msdn.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell)
 Provides an introduction to Windows PowerShell: the language, the cmdlets, the providers, and the use of objects.
 
 [Writing a Windows PowerShell Module](./module/writing-a-windows-powershell-module.md)
@@ -35,10 +36,10 @@ Provides information and examples for administrators, script developers, and cmd
 [Writing a Windows PowerShell Cmdlet](./cmdlet/writing-a-windows-powershell-cmdlet.md)
 Provides information and code examples for program managers who are designing cmdlets and for developers who are implementing cmdlet code.
 
-[Windows PowerShell Team Blog](http://go.microsoft.com/fwlink/?LinkID=83147)
+[Windows PowerShell Team Blog](https://blogs.msdn.microsoft.com/PowerShell/)
 The best resource for learning from and collaborating with other Windows PowerShell users. Read the Windows PowerShell Team blog, and then join the Windows PowerShell User Forum (microsoft.public.windows.powershell). Use Windows Live Search to find other Windows PowerShell blogs and resources. Then, as you develop your expertise, freely contribute your ideas.
 
-[Windows PowerShell TechNet Library](http://go.microsoft.com/fwlink/?LinkID=107116)
+[Windows PowerShell TechNet Library](/powershell/scripting/powershell-scripting)
 Provides the latest versions of the command-line Help topics.
 
 ## Class Libraries

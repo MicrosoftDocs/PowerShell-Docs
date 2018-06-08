@@ -11,8 +11,8 @@ caps.latest.revision: 11
 ---
 # Runspace01 Sample
 
-This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously. The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer. The values of the [System.Diagnostics.Process.Processname*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.
-This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet synchronously. The [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer. The values of the [System.Diagnostics.Process.Processname*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.
+This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously. The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer. The values of the [System.Diagnostics.Process.Processname*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.
+This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously. The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer. The values of the [System.Diagnostics.Process.Processname*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.
 
 ## Requirements
 
@@ -20,9 +20,9 @@ This sample shows how to use the [System.Management.Automation.Powershell](/dotn
 
 ## Demonstrates
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to run a command.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run a command.
 
-- Adding a command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+- Adding a command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
 
 - Running the command synchronously.
 
@@ -31,7 +31,7 @@ This sample shows how to use the [System.Management.Automation.Powershell](/dotn
 ## Example
 
  This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously in the default runspace provided by Windows PowerShell.
- This sample runs the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet synchronously in the default runspace provided by Windows PowerShell.
+ This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously in the default runspace provided by Windows PowerShell.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

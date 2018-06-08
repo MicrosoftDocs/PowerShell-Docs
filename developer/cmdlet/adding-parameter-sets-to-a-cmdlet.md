@@ -17,21 +17,21 @@ This section describes how to add parameter sets to the Stop-Proc cmdlet (descri
 
 Topics in this section include the following:
 
-- [Things to Know About Parameter Sets](#parametersets)
+- [Things to Know About Parameter Sets](#Adding-Parameter-Sets-to-a-Cmdlet)
 
-- [Declaring the Cmdlet Class](#definecmdletstopproc04)
+- [Declaring the Cmdlet Class](#Declaring-the-Cmdlet-Class)
 
-- [Declaring the Parameters of the Cmdlet](#defineparametersforsystemmodstopproc04)
+- [Declaring the Parameters of the Cmdlet](#Declaring-the-Parameters-of-the-Cmdlet)
 
-- [Overriding an Input Processing Method](#provideinputprocessingstopproc04)
+- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
 
-- [Code Sample](#codesampleparametersetsstopproc04)
+- [Code Sample](#Declaring-the-Parameters-of-the-Cmdlet)
 
-- [Defining Object Types and Formatting](#defineobjecttypesandformattingstopproc04)
+- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
 
-- [Building the Cmdlet](#buildcmdletstopproc04)
+- [Building the Cmdlet](#Building-the-Cmdlet)
 
-- [Testing the Cmdlet](#testcmdletstopproc04)
+- [Testing the Cmdlet](#Testing-the-Cmdlet)
 
 ## Things to Know About Parameter Sets
 

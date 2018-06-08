@@ -12,7 +12,7 @@ caps.latest.revision: 17
 # Host02 Sample
 
 This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation. The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.
-This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation. The host application sets the host culture to German, runs the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.
+This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation. The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ This sample shows how to write a host application that uses the Windows PowerShe
 
 - Setting the host culture to German.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.
 
 ## Example
 
@@ -781,7 +781,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
 ## See Also
 
- [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell)
+ [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)
 
  [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost)
 
