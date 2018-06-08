@@ -29,7 +29,7 @@ Running  Appinfo            Application Information
 
 ## Defining the Table View
 
-The following XML shows the table view schema for displaying the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) object. You must specify each property that you want displayed in the table view.
+The following XML shows the table view schema for displaying the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) object. You must specify each property that you want displayed in the table view.
 
 ```xml
 <View>
@@ -102,7 +102,7 @@ The following XML elements are used to define a list view:
 
 Table views can provide one or more definitions that specify what data is displayed in the rows of the table by using the child elements of the [TableRowEntries](./tablerowentries-element-for-tablecontrol-format.md) element. Notice that you can specify multiple definitions for the rows of the table, but the headers for the rows remains the same, regardless of what row definition is used. Typically, a table will have only one definition.
 
-In the following example, the view provides a single definition that displays the values of several properties of the [System.Diagnostics.Process?Displayproperty=Fullname](/dotnet/api/System.Diagnostics.Process?displayProperty=fullName) object. A table view can display the value of a property or the value of a script (not shown in the example) in its rows.
+In the following example, the view provides a single definition that displays the values of several properties of the [System.Diagnostics.Process?Displayproperty=Fullname](/dotnet/api/System.Diagnostics.Process) object. A table view can display the value of a property or the value of a script (not shown in the example) in its rows.
 
 ```xml
 <TableRowEntries>

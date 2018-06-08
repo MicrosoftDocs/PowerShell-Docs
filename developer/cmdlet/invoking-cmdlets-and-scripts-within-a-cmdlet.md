@@ -15,14 +15,14 @@ A cmdlet can invoke other cmdlets and scripts from within the input processing m
 
 ## The Invoke Method
 
-All cmdlets can invoke an existing cmdlet by calling the [System.Management.Automation.Cmdlet.Invoke%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.Invoke%2A?displayProperty=fullName) method from within an input processing method, such as [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), that is overridden by the cmdlet. However, you can invoke only those cmdlets that derive directly from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class. You cannot invoke a cmdlet that derives from the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class.
+All cmdlets can invoke an existing cmdlet by calling the [System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) method from within an input processing method, such as [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), that is overridden by the cmdlet. However, you can invoke only those cmdlets that derive directly from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class. You cannot invoke a cmdlet that derives from the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class.
 
 The [System.Management.Automation.Cmdlet.Invoke*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) method has the following variants.
 
-[System.Management.Automation.Cmdlet.Invoke%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.Invoke%2A?displayProperty=fullName)
+[System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)
 This variant invokes the cmdlet object and returns a collection of "T" type objects.
 
-[System.Management.Automation.Cmdlet.Invoke%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.Invoke%2A?displayProperty=fullName)
+[System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)
 This variant invokes the cmdlet object and returns a strongly typed emumerator. This variant allows the user to use the objects in the collection to perform custom operations.
 
 ## Examples

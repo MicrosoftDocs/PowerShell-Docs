@@ -11,8 +11,8 @@ caps.latest.revision: 7
 ---
 # List View (Basic)
 
-This example shows how to implement a basic list view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
-This example shows how to implement a basic list view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
+This example shows how to implement a basic list view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
+This example shows how to implement a basic list view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ### To load this formatting file
 
@@ -41,7 +41,7 @@ This formatting file demonstrates the following XML elements:
 
 ## Example
 
-The following XML defines a list view that displays four properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) object. In each row, the name of the property is displayed followed by the value of the property.
+The following XML defines a list view that displays four properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) object. In each row, the name of the property is displayed followed by the value of the property.
 
 ```xml
 <Configuration>
@@ -74,7 +74,7 @@ The following XML defines a list view that displays four properties of the [Syst
 </Configuration>
 ```
 
-The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects after this format file is loaded.
+The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects after this format file is loaded.
 
 ```powershell
 Get-Service f*

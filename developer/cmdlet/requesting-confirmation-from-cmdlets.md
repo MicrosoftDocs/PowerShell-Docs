@@ -78,11 +78,11 @@ If the cmdlet or provider must send a message but not request confirmation, it c
 
 Cmdlets and providers first call the following methods to request confirmation before they attempt to perform an operation that changes a system outside of Windows PowerShell:
 
-- [System.Management.Automation.Cmdlet.Shouldprocess%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess%2A?displayProperty=fullName)
+- [System.Management.Automation.Cmdlet.Shouldprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
 
-- [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess%2A?displayProperty=fullName)
+- [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)
 
-They do so by calling the [System.Management.Automation.Cmdlet.Shouldprocess%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess%2A?displayProperty=fullName) method, which prompts the user to confirm the operation based on how the user invoked the command.
+They do so by calling the [System.Management.Automation.Cmdlet.Shouldprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method, which prompts the user to confirm the operation based on how the user invoked the command.
 
 ## See Also
 

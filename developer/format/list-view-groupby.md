@@ -11,8 +11,8 @@ caps.latest.revision: 6
 ---
 # List View (GroupBy)
 
-This example shows how to implement a list view that separates the rows of the list into groups. This list view displays the properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
-This example shows how to implement a list view that separates the rows of the list into groups. This list view displays the properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
+This example shows how to implement a list view that separates the rows of the list into groups. This list view displays the properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
+This example shows how to implement a list view that separates the rows of the list into groups. This list view displays the properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ### To load this formatting file
 
@@ -43,7 +43,7 @@ This formatting file demonstrates the following XML elements:
 
 ## Example
 
-The following XML defines a list view that starts a new group whenever the value of the [System.Serviceprocess.Servicecontroller.Status%2A?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController.Status%2A?displayProperty=fullName) property changes. When each group is started, a custom label is displayed that includes the new value of the property.
+The following XML defines a list view that starts a new group whenever the value of the [System.Serviceprocess.Servicecontroller.Status](/dotnet/api/System.ServiceProcess.ServiceController.Status) property changes. When each group is started, a custom label is displayed that includes the new value of the property.
 
 ```xml
 <Configuration>
@@ -79,7 +79,7 @@ The following XML defines a list view that starts a new group whenever the value
 </Configuration>
 ```
 
-The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects after this format file is loaded. The blank lines added before and after the group label are automatically added by Windows PowerShell.
+The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects after this format file is loaded. The blank lines added before and after the group label are automatically added by Windows PowerShell.
 
 ```powershell
 Get-Service f*

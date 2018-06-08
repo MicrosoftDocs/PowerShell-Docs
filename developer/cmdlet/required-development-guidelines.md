@@ -129,9 +129,9 @@ If your cmdlet is used interactively, always provide a Force parameter to overri
 
 - [System.Management.Automation.Host.Pshostuserinterface.Prompt*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.Prompt)
 
-- [System.Management.Automation.Host.Pshostuserinterface.Promptforchoice%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForChoice%2A?displayProperty=fullName)
+- [System.Management.Automation.Host.Pshostuserinterface.Promptforchoice](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForChoice)
 
-- [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection.Promptforchoice%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice%2A?displayProperty=fullName)
+- [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection.Promptforchoice](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice)
 
 - [System.Management.Automation.Host.Pshostuserinterface.Promptforcredential*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
 
@@ -171,13 +171,13 @@ For more information about how to declare the cmdlet attribute, see [CmdletAttri
 
 For the cmdlet to participate in the Windows PowerShell environment, it must override at least one of the following *input processing methods*.
 
-[System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing%2A?displayProperty=fullName)
+[System.Management.Automation.Cmdlet.Beginprocessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 This method is called one time, and it is used to provide pre-processing functionality.
 
-[System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord%2A?displayProperty=fullName)
+[System.Management.Automation.Cmdlet.Processrecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 This method is called multiple times, and it is used to provide record-by-record functionality.
 
-[System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing%2A?displayProperty=fullName)
+[System.Management.Automation.Cmdlet.Endprocessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 This method is called one time, and it is used to provide post-processing functionality.
 
 ### Specify the OutputType Attribute (RC04)

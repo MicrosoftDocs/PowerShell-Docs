@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # Wide View (GroupBy)
 
-This example shows how to implement a wide view that displays groups of [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects returned by the `Get-Service` cmdlet. For more information about the components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
+This example shows how to implement a wide view that displays groups of [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects returned by the `Get-Service` cmdlet. For more information about the components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
 
 ### To load this formatting file
 
@@ -38,7 +38,7 @@ This formatting file demonstrates the following XML elements:
 
 ## Example
 
-The following XML defines a wide view that displays groups of objects. Each new group is started when the value of the [System.Serviceprocess.Servicecontroller.Servicetype%2A?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType%2A?displayProperty=fullName) property changes.
+The following XML defines a wide view that displays groups of objects. Each new group is started when the value of the [System.Serviceprocess.Servicecontroller.Servicetype](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType) property changes.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -68,7 +68,7 @@ The following XML defines a wide view that displays groups of objects. Each new 
 </Configuration>
 ```
 
-The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController?displayProperty=fullName) objects after this format file is loaded.
+The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects after this format file is loaded.
 
 ```powershell
 Get-Service f*

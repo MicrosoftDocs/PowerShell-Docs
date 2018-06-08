@@ -77,13 +77,13 @@ The following XML elements are used to define a wide view:
 
 - The [Controls](./controls-element-for-view-format.md) elements defines the custom controls that are defined by the wide view. Controls give you a way to further specify how the data is displayed. This element is optional. A view can define its own custom controls, or it can use common controls that can be used by any view in the formatting file. For more information about custom controls, see [Creating Custom Controls](./creating-custom-controls.md).
 
-- The [WideControl](./widecontrol-element-format.md) element and its child elements define what is displayed in the view. In the preceding example, the view is designed to display the [System.Diagnostics.Process.Processname%2A?Displayproperty=Fullname](/dotnet/api/System.Diagnostics.Process.ProcessName%2A?displayProperty=fullName) property.
+- The [WideControl](./widecontrol-element-format.md) element and its child elements define what is displayed in the view. In the preceding example, the view is designed to display the [System.Diagnostics.Process.Processname](/dotnet/api/System.Diagnostics.Process.ProcessName) property.
 
 For an example of a complete formatting file that defines a simple wide view, see [Wide View (Basic)](./wide-view-basic.md).
 
 ## Providing Definitions for Your Wide View
 
-Wide views can provide one or more definitions by using the child elements of the [WideControl](./widecontrol-element-format.md) element. Typically, a view will have only one definition. In the following example, the view provides a single definition that displays the value of the [System.Diagnostics.Process.Processname%2A?Displayproperty=Fullname](/dotnet/api/System.Diagnostics.Process.ProcessName%2A?displayProperty=fullName) property. A wide view can display the value of a property or the value of a script (not shown in the example).
+Wide views can provide one or more definitions by using the child elements of the [WideControl](./widecontrol-element-format.md) element. Typically, a view will have only one definition. In the following example, the view provides a single definition that displays the value of the [System.Diagnostics.Process.Processname](/dotnet/api/System.Diagnostics.Process.ProcessName) property. A wide view can display the value of a property or the value of a script (not shown in the example).
 
 ```xml
 <WideControl>
@@ -187,7 +187,7 @@ The following XML elements can be used to specify the objects that are used by a
 
 ## Displaying Groups of objects in a Wide View
 
-You can separate the objects that are displayed by the wide view into groups. This does not mean that you define a group, only that Windows PowerShell starts a new group whenever the value of a specific property or script changes. In the following example, a new group is started whenever the value of the [System.Serviceprocess.Servicecontroller.Servicetype%2A?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType%2A?displayProperty=fullName) property changes.
+You can separate the objects that are displayed by the wide view into groups. This does not mean that you define a group, only that Windows PowerShell starts a new group whenever the value of a specific property or script changes. In the following example, a new group is started whenever the value of the [System.Serviceprocess.Servicecontroller.Servicetype](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType) property changes.
 
 ```xml
 <GroupBy>

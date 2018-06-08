@@ -169,15 +169,15 @@ The Windows PowerShell path is the mechanism for normalizing access to namespace
 
 If your cmdlet allows the user to specify a file or a data source, it should define a parameter of type [System.String](/dotnet/api/System.String). If more than one drive is supported, the type should be an array. The name of the parameter should be `Path`, with an alias of `PSPath`. Additionally, the `Path` parameter should support wildcard characters. If support for wildcard characters is not required, define a `LiteralPath` parameter.
 
-If the data that the cmdlet reads or writes has to be a file, the cmdlet should accept Windows PowerShell path input, and the cmdlet should use the [System.Management.Automation.Sessionstate.Path%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.SessionState.Path%2A?displayProperty=fullName) property to translate the Windows PowerShell paths into paths that the file system recognizes. The specific mechanisms include the following methods:
+If the data that the cmdlet reads or writes has to be a file, the cmdlet should accept Windows PowerShell path input, and the cmdlet should use the [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) property to translate the Windows PowerShell paths into paths that the file system recognizes. The specific mechanisms include the following methods:
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath%2A?displayProperty=fullName)
+- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath%2A?displayProperty=fullName)
+- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath%2A?displayProperty=fullName)
+- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath%2A?displayProperty=fullName)
+- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
 If the data that the cmdlet reads or writes is only a set of strings instead of a file, the cmdlet should use the provider content information (`Content` member) to read and write. This information is obtained from the [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) property. These mechanisms allow other data stores to participate in the reading and writing of data.
 
@@ -232,7 +232,7 @@ To accept all the records from the preceding cmdlet in the pipeline, your cmdlet
 
 ### Write Single Records to the Pipeline (SC03)
 
-When a cmdlet returns objects, the cmdlet should write the objects immediately as they are generated. The cmdlet should not hold them in order to buffer them into a combined array. The cmdlets that receive the objects as input will then be able to process, display, or process and display the output objects without delay. A cmdlet that generates output objects one at a time should call the [System.Management.Automation.Cmdlet.Writeobject%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%2A?displayProperty=fullName) method. A cmdlet that generates output objects in batches (for example, because an underlying API returns an array of output objects) should call the [System.Managemet.Automation.Cmdlet.Writeobject%2A?Displayproperty=Fullname](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject%2A?displayProperty=fullName) Method with its second parameter set to `true`.
+When a cmdlet returns objects, the cmdlet should write the objects immediately as they are generated. The cmdlet should not hold them in order to buffer them into a combined array. The cmdlets that receive the objects as input will then be able to process, display, or process and display the output objects without delay. A cmdlet that generates output objects one at a time should call the [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method. A cmdlet that generates output objects in batches (for example, because an underlying API returns an array of output objects) should call the [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) Method with its second parameter set to `true`.
 
 ### Make Cmdlets Case-Insensitive and Case-Preserving (SC04)
 

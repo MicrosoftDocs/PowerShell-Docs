@@ -44,9 +44,9 @@ Cmdlets can access session-state data either indirectly through the [System.Mana
 
 ## See Also
 
-[System.Management.Automation.Pscmdlet.Sessionstate%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState%2A?displayProperty=fullName)
+[System.Management.Automation.Pscmdlet.Sessionstate](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)
 
-[System.Management.Automation.Sessionstate?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.SessionState?displayProperty=fullName)
+[System.Management.Automation.Sessionstate?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.SessionState)
 
 [Windows PowerShell Cmdlets](./cmdlet-overview.md)
 
