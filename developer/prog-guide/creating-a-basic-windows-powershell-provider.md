@@ -23,23 +23,23 @@ As mentioned previously, the basic provider described here implements methods fo
 
 The sections in this topic include the following:
 
-- [Defining the Windows PowerShell Provider Class](#defineproviderbasic)
+- [Defining the Windows PowerShell Provider Class](#Defining-the-Windows-PowerShell-Provider-Class)
 
-- [Defining Provider-Specific State Information](#defineproviderdatastate)
+- [Defining Provider-Specific State Information](#Defining-Provider-Specific-State-Information)
 
-- [Initializing the Provider](#initializeprovider)
+- [Initializing the Provider](#Initializing-the-Provider)
 
-- [Start Dynamic Parameters](#startdynamicparameters)
+- [Start Dynamic Parameters](#Start-Dynamic-Parameters)
 
-- [Uninitializing the Provider](#uninitializeprovider)
+- [Uninitializing the Provider](#Uninitializing-the-Provider)
 
-- [Code Sample](#codesampleprovideraccessdb1)
+- [Code Sample](#Code-Sample)
 
-- [Define Object Types and Formatting](#defineobjecttypesformattingbasicprovider)
+- [Define Object Types and Formatting](None)
 
-- [Testing the Windows PowerShell Provider](#testproviderbasicaccessdb1)
+- [Testing the Windows PowerShell Provider](#Testing-the-Windows-PowerShell-Provider)
 
-##  <a name="defineproviderbasic"></a> Defining the Windows PowerShell Provider Class
+## Defining the Windows PowerShell Provider Class
 
 The first step in creating a Windows PowerShell provider is to define its .NET class. This basic provider defines a class called `AccessDBProvider` that derives from the [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) base class.
 
@@ -59,13 +59,13 @@ You can set attribute keywords to further declare the class if necessary. Notice
 > [!NOTE]
 > The fully qualified name of the Windows PowerShell provider includes the assembly name and other attributes determined by Windows PowerShell upon registration of the provider.
 
-##  <a name="defineproviderdatastate"></a> Defining Provider-Specific State Information
+## Defining Provider-Specific State Information
 
 The [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) base class and all derived classes are considered stateless because the Windows PowerShell runtime creates provider instances only as required. Therefore, if your provider requires full control and state maintenance for provider-specific data, it must derive a class from the [System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo) class. Your derived class should define the members necessary to maintain the state so that the provider-specific data can be accessed when the Windows PowerShell runtime calls the [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) method to initialize the provider.
 
 A Windows PowerShell provider can also maintain connection-based state. For more information about maintaining connection state, see [Creating a PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
 
-##  <a name="initializeprovider"></a> Initializing the Provider
+## Initializing the Provider
 
 To initialize the provider, the Windows PowerShell runtime calls the [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) method when Windows PowerShell is started. For the most part, your provider can use the default implementation of this method, which simply returns the [System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo) object that describes your provider. However, in the case where you want to add additional initialization information, you should implement your own [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) method that returns a modified version of the [System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo) object that is passed to your provider. In general, this method should return the provided [System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo) object passed to it or a modified [System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo) object that contains other initialization information.
 
@@ -73,9 +73,9 @@ This basic provider does not override this method. However, the following code s
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-The provider can maintain the state of provider-specific information as described in [Defining Provider-specific Data State](#defineproviderdatastate). In this case, your implementation must override the [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) method to return an instance of the derived class.
+The provider can maintain the state of provider-specific information as described in [Defining Provider-specific Data State](#Defining-Provider-Specific-State-Information). In this case, your implementation must override the [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) method to return an instance of the derived class.
 
-##  <a name="startdynamicparameters"></a> Start Dynamic Parameters
+## Start Dynamic Parameters
 
 Your provider implementation of the [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) method might require additional parameters. In this case, the provider should override the [System.Management.Automation.Provider.Cmdletprovider.Startdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters) method and return an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object.
 
@@ -83,7 +83,7 @@ This basic provider does not override this method. However, the following code s
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderDynamicParameters](Msh_samplesaccessdbprov01#accessdbprov01ProviderDynamicParameters)]  -->
 
-##  <a name="uninitializeprovider"></a> Uninitializing the Provider
+## Uninitializing the Provider
 
 To free resources that the Windows PowerShell provider uses, your provider should implement its own [System.Management.Automation.Provider.Cmdletprovider.Stop*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Stop) method. This method is called by the Windows PowerShell runtime to uninitialize the provider at the close of a session.
 
@@ -91,11 +91,11 @@ This basic provider does not override this method. However, the following code s
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStop](Msh_samplesaccessdbprov01#accessdbprov01ProviderStop)]  -->
 
-##  <a name="codesampleprovideraccessdb1"></a> Code Sample
+## Code Sample
 
 For complete sample code, see [AccessDbProviderSample01 Code Sample](./accessdbprovidersample01-code-sample.md).
 
-##  <a name="testproviderbasicaccessdb1"></a> Testing the Windows PowerShell Provider
+## Testing the Windows PowerShell Provider
 
 Once your Windows PowerShell provider has been registered with Windows PowerShell, you can test it by running the supported cmdlets on the command line. For this basic provider, run the new shell and use the `Get-PSProvider` cmdlet to retrieve the list of providers and ensure that the AccessDb provider is present.
 
@@ -119,4 +119,5 @@ Registry             ShouldProcess                 {HKLM, HKCU}
 ## See Also
 
 [Creating Windows PowerShell Providers](./how-to-create-a-windows-powershell-provider.md)
+
 [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md)
