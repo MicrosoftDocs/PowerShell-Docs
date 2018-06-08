@@ -10,14 +10,16 @@ ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
 ---
 # Authoring the MOF schema file for a Management OData web service
+
 You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema. Each resource is defined as a class in the file, and properties are defined as class members. For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).
 
 ## Example MOF file
- The following file defines Service and Process resources. Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet. The properties correspond to parameters used by those cmdlets.
 
- Each of the two resources contains properties that are of complex type. The complex types are defined as classes modified with the `ComplexType` qualifier.
+The following file defines Service and Process resources. Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet. The properties correspond to parameters used by those cmdlets.
 
-```
+Each of the two resources contains properties that are of complex type. The complex types are defined as classes modified with the `ComplexType` qualifier.
+
+```csharp
 
 class PswsTest_Service
 {
@@ -202,5 +204,7 @@ class PswsTest_Stream
 ```
 
 ## See Also
- [Creating a Management OData Web Service](./creating-a-management-odata-web-service.md)
- [Public Resource Schema](./public-resource-schema.md)
+
+[Creating a Management OData Web Service](./creating-a-management-odata-web-service.md)
+
+[Public Resource Schema](./public-resource-schema.md)
