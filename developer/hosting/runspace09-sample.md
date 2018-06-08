@@ -10,26 +10,30 @@ ms.assetid: f19f12c0-82e9-42f6-a7df-76c45b733855
 caps.latest.revision: 8
 ---
 # Runspace09 Sample
+
 This sample shows how to add a script to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object and how to run the script asynchronously. Events are used to handle the output of the script.
 
 ## Requirements
- This sample requires Windows PowerShell 2.0.
+
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the runspace.
+This sample demonstrates the following.
 
--   Adding a script the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the runspace.
 
--   Using the [System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) method to run the pipeline asynchronously.
+- Adding a script the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
 
--   Using the events of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to process the output of the script.
+- Using the [System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) method to run the pipeline asynchronously.
 
--   Using the [System.Management.Automation.Powershell.Stop*](/dotnet/api/System.Management.Automation.PowerShell.Stop) method to interrupt the invocation of the pipeline.
+- Using the events of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to process the output of the script.
+
+- Using the [System.Management.Automation.Powershell.Stop*](/dotnet/api/System.Management.Automation.PowerShell.Stop) method to interrupt the invocation of the pipeline.
 
 ## Example
- This sample runs to run a script that generates the numbers from 1 to 10 with delays between each number. The script is run asynchronously and events are used to handle the output.
+
+This sample runs to run a script that generates the numbers from 1 to 10 with delays between each number. The script is run asynchronously and events are used to handle the output.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -139,4 +143,5 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ```
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
+
+[Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)

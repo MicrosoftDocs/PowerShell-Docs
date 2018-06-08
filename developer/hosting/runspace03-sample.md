@@ -10,28 +10,32 @@ ms.assetid: 31df99d7-6954-4fdc-b6f5-06ecba094f43
 caps.latest.revision: 8
 ---
 # Runspace03 Sample
+
 This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run a script synchronously, and how to handle non-terminating errors. The script receives a list of process names and then retrieves those processes. The results of the script, including any non-terminating errors that were generated when running the script, are displayed in a console window.
 
 ## Requirements
- This sample requires Windows PowerShell 2.0.
+
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to run a script.
+This sample demonstrates the following.
 
--   Adding a script to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to run a script.
 
--   Passing input objects to the script from the calling program.
+- Adding a script to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
 
--   Running the script synchronously.
+- Passing input objects to the script from the calling program.
 
--   Using [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the script.
+- Running the script synchronously.
 
--   Retrieving and displaying error records that were generated when the script was run.
+- Using [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the script.
+
+- Retrieving and displaying error records that were generated when the script was run.
 
 ## Example
- This sample runs a script synchronously in the default runspace provided by Windows PowerShell. The output of the script and any non-terminating errors that were generated are displayed in a console window.
+
+This sample runs a script synchronously in the default runspace provided by Windows PowerShell. The output of the script and any non-terminating errors that were generated are displayed in a console window.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -119,4 +123,5 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ```
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
+
+[Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
