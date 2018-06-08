@@ -10,18 +10,21 @@ ms.assetid: 60873d0f-c5f1-4d5b-ade1-49ad0df43245
 caps.latest.revision: 5
 ---
 # StopProc01 Code Samples
-Here is the code sample for the StopProc01 sample cmdlet. This is the Stop-Process cmdlet sample described in [Creating a Cmdlet that Modifies the System](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md). The Stop-Process cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+
+Here is the code sample for the StopProc01 sample cmdlet. This is the `Stop-Process` cmdlet sample described in [Creating a Cmdlet that Modifies the System](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md). The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
->  You can download the C# (stopproc01.cs) source file for the Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
->  You can download the C# (stopproc01.cs) source file for the Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+> You can download the C# (stopproc01.cs) source file for the Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+> You can download the C# (stopproc01.cs) source file for the Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
 >
->  The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
 |Language|Topic|
 |--------------|-----------|
 |C#|[StopProc01 (C#) Sample Code](./stopproc01-csharp-sample-code.md)|
 
 ## See Also
- [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+
+[Windows PowerShell SDK](../windows-powershell-reference.md)
