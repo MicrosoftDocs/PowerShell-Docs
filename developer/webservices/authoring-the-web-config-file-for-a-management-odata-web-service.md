@@ -10,12 +10,14 @@ ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
 ---
 # Authoring the Web.config file for a Management OData web service
+
 Before you can deploy your Management OData web service, you must configure the web.config file to point to the XML schema files and the DLLs that implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and  [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces.
 
 ## Sample config file
- The following is an example of what the web.config file for your web service looks like.
 
-```
+The following is an example of what the web.config file for your web service looks like.
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
    <configSections>
@@ -54,8 +56,13 @@ Before you can deploy your Management OData web service, you must configure the 
 ```
 
 ## See Also
- [Implementing Custom Authorization for a Management OData web service](./implementing-custom-authorization-for-a-management-odata-web-service.md)
- [Implementing SessionConfiguration for a Management OData web service](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
- [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
- [Authoring the XML schema file for a Management OData web service](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
- [Creating a Management OData Web Service](./creating-a-management-odata-web-service.md)
+
+[Implementing Custom Authorization for a Management OData web service](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+
+[Implementing SessionConfiguration for a Management OData web service](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+
+[Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+
+[Authoring the XML schema file for a Management OData web service](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+
+[Creating a Management OData Web Service](./creating-a-management-odata-web-service.md)

@@ -10,20 +10,23 @@ ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
 ---
 # Writing a navigation provider
+
 This topic describes how to implement the methods of a Windows PowerShell provider that support nested containers (multi-level data stores), moving items, and relative paths. A navigation provider must derive from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class.
 
- The provider in the examples in this topic uses an Access database as its data store. There are several helper methods and classes that are used to interact with the database. For the complete sample that includes the helper methods, see [AccessDBProviderSample05](./accessdbprovidersample05.md).
+The provider in the examples in this topic uses an Access database as its data store. There are several helper methods and classes that are used to interact with the database. For the complete sample that includes the helper methods, see [AccessDBProviderSample05](./accessdbprovidersample05.md).
 
- For more information about Windows PowerShell providers, see [Windows PowerShell Provider Overview](./windows-powershell-provider-overview.md).
+For more information about Windows PowerShell providers, see [Windows PowerShell Provider Overview](./windows-powershell-provider-overview.md).
 
 ## Implementing navigation methods
- The [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class implements methods that support nested containers, relative paths, and moving items. For a complete list of these methods, see [NavigationCmdletProvider Methods](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx).
+
+The [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class implements methods that support nested containers, relative paths, and moving items. For a complete list of these methods, see [NavigationCmdletProvider Methods](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx).
 
 > [!NOTE]
->  This topic builds on the information in [Windows PowerShell Provider QuickStart](./windows-powershell-provider-quickstart.md). This topic does not cover the basics of how to set up a provider project, or how to implement the methods inherited from the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class that create and remove drives. This topic also does not cover how to implement methods exposed by the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) or [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) classes. For an example that shows how to implement item cmdlets, see [Writing an item provider](./writing-an-item-provider.md). For an example that shows how to implement container cmdlets, see [Writing a container provider](./writing-a-container-provider.md).
+> This topic builds on the information in [Windows PowerShell Provider QuickStart](./windows-powershell-provider-quickstart.md). This topic does not cover the basics of how to set up a provider project, or how to implement the methods inherited from the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class that create and remove drives. This topic also does not cover how to implement methods exposed by the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) or [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) classes. For an example that shows how to implement item cmdlets, see [Writing an item provider](./writing-an-item-provider.md). For an example that shows how to implement container cmdlets, see [Writing a container provider](./writing-a-container-provider.md).
 
 ### Declaring the provider class
- Declare the provider to derive from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class, and decorate it with the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute).
+
+Declare the provider to derive from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class, and decorate it with the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute).
 
 ```
 [CmdletProvider("AccessDB", ProviderCapabilities.None)]
@@ -34,9 +37,10 @@ This topic describes how to implement the methods of a Windows PowerShell provid
 ```
 
 ### Implementing IsItemContainer
- The [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) method checks whether the item at the specified path is a container.
 
-```
+The [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) method checks whether the item at the specified path is a container.
+
+```csharp
 protected override bool IsItemContainer(string path)
       {
          if (PathIsDrive(path))
@@ -66,9 +70,10 @@ protected override bool IsItemContainer(string path)
 ```
 
 ### Implementing GetChildName
- The [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) method gets the name property of the child item at the specified path. If the item at the specified path is not a child of a container, then this method should return the path.
 
-```
+The [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) method gets the name property of the child item at the specified path. If the item at the specified path is not a child of a container, then this method should return the path.
+
+```csharp
 protected override string GetChildName(string path)
        {
            if (PathIsDrive(path))
@@ -99,9 +104,10 @@ protected override string GetChildName(string path)
 ```
 
 ### Implementing GetParentPath
- The [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) method gets the path of the parent of the item at the specified path. If the item at the specified path is the root of the data store (so it has no parent), then this method should return the root path.
 
-```
+The [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) method gets the path of the parent of the item at the specified path. If the item at the specified path is the root of the data store (so it has no parent), then this method should return the root path.
+
+```csharp
 protected override string GetParentPath(string path, string root)
        {
            // If root is specified then the path has to contain
@@ -119,9 +125,10 @@ protected override string GetParentPath(string path, string root)
 ```
 
 ### Implementing MakePath
- The [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method joins a specified parent path and a specified child path to create a provider-internal path (for information about path types that providers can support, see [Windows PowerShell Provider Overview](./windows-powershell-provider-overview.md). The PowerShell engine calls this method when a user calls the [Microsoft.Powershell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet.
 
-```
+The [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method joins a specified parent path and a specified child path to create a provider-internal path (for information about path types that providers can support, see [Windows PowerShell Provider Overview](./windows-powershell-provider-overview.md). The PowerShell engine calls this method when a user calls the [Microsoft.Powershell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet.
+
+```csharp
 protected override string MakePath(string parent, string child)
        {
            string result;
@@ -177,9 +184,10 @@ protected override string MakePath(string parent, string child)
 ```
 
 ### Implementing NormalizeRelativePath
- The [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) method takes `path` and `basepath` parameters, and returns a normalized path that is equivalent to the `path` parameter and relative to the `basepath` parameter.
 
-```
+The [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) method takes `path` and `basepath` parameters, and returns a normalized path that is equivalent to the `path` parameter and relative to the `basepath` parameter.
+
+```csharp
 protected override string NormalizeRelativePath(string path,
                                                             string basepath)
        {
@@ -206,9 +214,10 @@ protected override string NormalizeRelativePath(string path,
 ```
 
 ### Implementing MoveItem
- The [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method moves an item from the specified path to the specified destination path. The PowerShell engine calls this method when a user calls the [Microsoft.Powershell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet.
 
-```
+The [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method moves an item from the specified path to the specified destination path. The PowerShell engine calls this method when a user calls the [Microsoft.Powershell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet.
+
+```csharp
 protected override void MoveItem(string path, string destination)
        {
            // Get type, table name and rowNumber from the path
@@ -284,5 +293,7 @@ protected override void MoveItem(string path, string destination)
 ```
 
 ## See Also
- [Writing a container provider](./writing-a-container-provider.md)
- [Windows PowerShell Provider Overview](./windows-powershell-provider-overview.md)
+
+[Writing a container provider](./writing-a-container-provider.md)
+
+[Windows PowerShell Provider Overview](./windows-powershell-provider-overview.md)

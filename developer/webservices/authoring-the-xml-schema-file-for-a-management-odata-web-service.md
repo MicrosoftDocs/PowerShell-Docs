@@ -10,12 +10,14 @@ ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
 ---
 # Authoring the XML schema file for a Management OData web service
+
 After you define the resources your web service will expose (see [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), you map those resources to the underlying Windows PowerShell cmdlets that implement the supported operations for each resource by creating an XML file that conforms to the [Resource Mapping Schema](./resource-mapping-schema.md). The XML file also specifies the URLs that are used by the client to access the resources.
 
 ## Mappng resources to URLs
- The first part of the XML file maps the resources defined in the MOF schema file to the URLs that are used to access them. The following example shows that mapping.
 
-```
+The first part of the XML file maps the resources defined in the MOF schema file to the URLs that are used to access them. The following example shows that mapping.
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <ResourceMetadata xmlns="http://schemas.microsoft.com/powershell-web-services/2010/09">
     <SchemaNamespace>PswsTest</SchemaNamespace>
@@ -33,7 +35,8 @@ After you define the resources your web service will expose (see [Authoring the 
 ```
 
 ## Mapping cmdlets to CRUD operations
- You then specify the cmdlets that correspond to the CRUD (create, read, update, and delete) operations that the resources support. In the Management OData [Resource Mapping Schema](./resource-mapping-schema.md), the CRUD operations are mapped as follows.
+
+You then specify the cmdlets that correspond to the CRUD (create, read, update, and delete) operations that the resources support. In the Management OData [Resource Mapping Schema](./resource-mapping-schema.md), the CRUD operations are mapped as follows.
 
 |CRUD command|XML element|
 |------------------|-----------------|
@@ -42,9 +45,9 @@ After you define the resources your web service will expose (see [Authoring the 
 |Update|Update|
 |Delete|Delete|
 
- The following example shows the mappings for the Create, Read, and Update operations on the `Service` resource.
+The following example shows the mappings for the Create, Read, and Update operations on the `Service` resource.
 
-```
+```xml
 <ClassImplementations>
         <Class>
             <Name>PswsTest_Service</Name>
@@ -149,6 +152,9 @@ After you define the resources your web service will expose (see [Authoring the 
 ```
 
 ## See Also
- [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
- [Resource Mapping Schema](./resource-mapping-schema.md)
- [Creating a Management OData Web Service](./creating-a-management-odata-web-service.md)
+
+[Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+
+[Resource Mapping Schema](./resource-mapping-schema.md)
+
+[Creating a Management OData Web Service](./creating-a-management-odata-web-service.md)
