@@ -82,5 +82,4 @@ The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample
        <xs:attribute name="GroupName" type="xs:string" use="required"/>
    </xs:complexType>
 </xs:schema>
-```
-
+```

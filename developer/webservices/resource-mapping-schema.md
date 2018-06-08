@@ -198,5 +198,4 @@ The following XSD defines the schema for Management OData IIS Extension resource
     </xs:all>
   </xs:complexType>
 </xs:schema>
-```
-
+```
