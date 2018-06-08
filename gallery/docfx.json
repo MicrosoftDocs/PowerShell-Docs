@@ -1,34 +1,55 @@
 {
-    "build": {
-        "content": [{
-            "files": [
-                "**/**.yml",
-                "**/**.md"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
-        "globalMetadata": {
-            "breadcrumb_path": "/powershell/gallery/bread/toc.yml",
-            "ROBOTS": "INDEX, FOLLOW",
-            "uhfHeaderId": "MSDocsHeader-Powershell",
-            "ms.devlang": "powershell",
-            "ms.tgt_pltfr": "windows, macos, linux"
-        },
-        "fileMetadata": {
-            "ms.prod": { "**/**.md": "powershell" },
-            "ms.technology": { "**/**.md": "powershell-gallery" },
-            "ms.topic": { "**/**.md": "conceptual" },
-            "manager": { "**/**.md": "carmonm" },
-            "author": { "**/**.md": "JKeithB" },
-            "ms.author": { "**/**.md": "keithb" }
-        },
-        "resource": [{
-            "files": [
-                "**/images/**"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
-        "template": "op.html",
-        "dest": "gallery"
-    }
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/**.yml",
+          "**/**.md"
+        ],
+        "exclude": [
+          "**/obj/**"
+        ]
+      }
+    ],
+    "globalMetadata": {
+      "breadcrumb_path": "/powershell/gallery/bread/toc.yml",
+      "ROBOTS": "INDEX, FOLLOW",
+      "uhfHeaderId": "MSDocsHeader-Powershell",
+      "ms.devlang": "powershell",
+      "ms.tgt_pltfr": "windows, macos, linux"
+    },
+    "fileMetadata": {
+      "ms.prod": {
+        "**/**.md": "powershell"
+      },
+      "ms.technology": {
+        "**/**.md": "powershell-gallery"
+      },
+      "ms.topic": {
+        "**/**.md": "conceptual"
+      },
+      "manager": {
+        "**/**.md": "carmonm"
+      },
+      "author": {
+        "**/**.md": "JKeithB"
+      },
+      "ms.author": {
+        "**/**.md": "keithb"
+      }
+    },
+    "resource": [
+      {
+        "files": [
+          "**/images/**"
+        ],
+        "exclude": [
+          "**/obj/**"
+        ]
+      }
+    ],
+    "template": "op.html",
+    "dest": "gallery",
+    "markdownEngineName": "markdig"
+  }
 }

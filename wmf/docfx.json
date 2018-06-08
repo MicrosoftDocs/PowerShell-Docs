@@ -1,33 +1,54 @@
 {
-    "build": {
-        "content": [{
-            "files": [
-                "**/**.yml",
-                "**/**.md"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
-        "globalMetadata": {
-            "breadcrumb_path": "/powershell/wmf/bread/toc.yml",
-            "uhfHeaderId": "MSDocsHeader-Powershell",
-            "ROBOTS": "INDEX, FOLLOW",
-            "ms.tgt_pltfr": "windows"
-        },
-        "fileMetadata": {
-            "ms.prod": { "**/**.md": "powershell" },
-            "ms.technology": { "**/**.md": "powershell-wmf" },
-            "ms.topic": { "**/**.md": "reference" },
-            "manager": { "**/**.md": "carmonm" },
-            "author": { "**/**.md": "JKeithB" },
-            "ms.author": { "**/**.md": "keithb" }
-        },
-        "resource": [{
-            "files": [
-                "**/images/**"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
-        "template": "op.html",
-        "dest": "wmf"
-    }
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/**.yml",
+          "**/**.md"
+        ],
+        "exclude": [
+          "**/obj/**"
+        ]
+      }
+    ],
+    "globalMetadata": {
+      "breadcrumb_path": "/powershell/wmf/bread/toc.yml",
+      "uhfHeaderId": "MSDocsHeader-Powershell",
+      "ROBOTS": "INDEX, FOLLOW",
+      "ms.tgt_pltfr": "windows"
+    },
+    "fileMetadata": {
+      "ms.prod": {
+        "**/**.md": "powershell"
+      },
+      "ms.technology": {
+        "**/**.md": "powershell-wmf"
+      },
+      "ms.topic": {
+        "**/**.md": "reference"
+      },
+      "manager": {
+        "**/**.md": "carmonm"
+      },
+      "author": {
+        "**/**.md": "JKeithB"
+      },
+      "ms.author": {
+        "**/**.md": "keithb"
+      }
+    },
+    "resource": [
+      {
+        "files": [
+          "**/images/**"
+        ],
+        "exclude": [
+          "**/obj/**"
+        ]
+      }
+    ],
+    "template": "op.html",
+    "dest": "wmf",
+    "markdownEngineName": "markdig"
+  }
 }
