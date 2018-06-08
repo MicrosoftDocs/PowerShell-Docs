@@ -10,9 +10,10 @@ ms.assetid: f85487d6-ef50-40b9-b60d-8bb65506627e
 caps.latest.revision: 6
 ---
 # GetProc01 Code Samples
-Here are the code samples for the GetProc01 sample cmdlet. This is the basic Get-Process cmdlet sample described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md). A Get-Process cmdlet is designed to retrieve information about all the processes running on the local computer.
 
- For complete sample code, see the following topics.
+Here are the code samples for the GetProc01 sample cmdlet. This is the basic `Get-Process` cmdlet sample described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md). A `Get-Process` cmdlet is designed to retrieve information about all the processes running on the local computer.
+
+For complete sample code, see the following topics.
 
 |Language|Topic|
 |--------------|-----------|
@@ -20,5 +21,7 @@ Here are the code samples for the GetProc01 sample cmdlet. This is the basic Get
 |VB.NET|[GetProc01 (VB.NET) Sample Code](./getproc01-vb-net-sample-code.md)|
 
 ## See Also
- [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+
+[Windows PowerShell SDK](../windows-powershell-reference.md)
