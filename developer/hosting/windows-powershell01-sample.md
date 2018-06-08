@@ -10,28 +10,32 @@ ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
 caps.latest.revision: 9
 ---
 # Windows PowerShell01 Sample
+
 This sample shows how to use an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace. The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more. This sample concentrates on how to restrict the runspace programmatically. Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.
 
 ## Requirements
- This sample requires Windows PowerShell 2.0.
+
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following:
 
--   Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode%2A?displayProperty=fullName) property.
+This sample demonstrates the following:
 
--   Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry?displayProperty=fullName) object.
+- Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode%2A?displayProperty=fullName) property.
 
--   Marking commands as private.
+- Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry?displayProperty=fullName) object.
 
--   Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers%2A?displayProperty=fullName) property.
+- Marking commands as private.
 
--   Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands%2A?displayProperty=fullName) property.
+- Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers%2A?displayProperty=fullName) property.
 
--   Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands%2A?displayProperty=fullName) property.
+
+- Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
 ## Example
- This sample shows several ways to limit the functionality of a runspace.
+
+This sample shows several ways to limit the functionality of a runspace.
 
 ```csharp
 namespace Sample
@@ -248,4 +252,5 @@ namespace Sample
 ```
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
+
+[Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
