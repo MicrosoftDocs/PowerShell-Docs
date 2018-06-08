@@ -11,13 +11,13 @@ caps.latest.revision: 5
 ---
 # StopProcessSample04 (VB.NET) Sample Code
 
-Here is the complete VB.NET sample code for the StopProc04 sample cmdlet. This is the code for the Stop-Process cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). The Stop-Process cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+Here is the complete VB.NET sample code for the StopProc04 sample cmdlet. This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
->  You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
->  You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+> You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+> You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
 >
->  The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
 ```vb
 Imports System
@@ -168,7 +168,7 @@ Namespace Microsoft.Samples.PowerShell.Commands
         ''' <param name="processName">
         ''' The name of the process(es) to return
         ''' </param>
-        ''' <param name="allProcesses">An array of all 
+        ''' <param name="allProcesses">An array of all
         ''' machine processes.</param>
         ''' <returns>An array of matching processes.</returns>
         Friend Function SafeGetProcessesByName(ByVal processName As String, _
@@ -189,7 +189,7 @@ Namespace Microsoft.Samples.PowerShell.Commands
                 Try
                     processNameToMatch = process.ProcessName
                 Catch e As Win32Exception
-                    ' Remove the process from the list so that it is not 
+                    ' Remove the process from the list so that it is not
                     ' checked again.
                     allProcesses.Remove(process)
 
@@ -252,18 +252,18 @@ ContinueForEach1:
                     "should not be stopped. " & _
                     "Are you sure you wish to stop the process?", processName)
 
-                ' It is possible that ProcessRecord is called multiple 
+                ' It is possible that ProcessRecord is called multiple
                 ' when objects are recieved as inputs from a pipeline.
-                ' So, to retain YesToAll and NoToAll input that the 
-                ' user may enter across mutilple calls to this 
-                ' function, they are stored as private members of the 
+                ' So, to retain YesToAll and NoToAll input that the
+                ' user may enter across mutilple calls to this
+                ' function, they are stored as private members of the
                 ' Cmdlet.
                 If Not ShouldContinue(message, "Warning!", yesToAll, noToAll) Then
                     Return
                 End If
             End If
 
-            ' Display a warning information if stopping a critical 
+            ' Display a warning information if stopping a critical
             ' process
             If criticalProcess Then
                 message = String.Format(CultureInfo.CurrentCulture, _
@@ -287,8 +287,8 @@ ContinueForEach1:
                 End If
             End Try
 
-            ' Write a user-level message to the pipeline. These are 
-            ' intended to give the user detailed information on the 
+            ' Write a user-level message to the pipeline. These are
+            ' intended to give the user detailed information on the
             ' operations performed by the Cmdlet. These messages will
             ' appear with the -Verbose option.
             message = String.Format(CultureInfo.CurrentCulture, _
@@ -327,13 +327,13 @@ ContinueForEach1:
                     ErrorCategory.InvalidOperation, Nothing))
             End Try
 
-            ' If a name parameter is passed to cmdlet, get 
-            ' the associated process(es). 
+            ' If a name parameter is passed to cmdlet, get
+            ' the associated process(es).
             ' Write a non-terminating error for failure to
             ' retrieve a process
             Dim name As String
             For Each name In processNames
-                ' The allProcesses array list is passed as a reference because 
+                ' The allProcesses array list is passed as a reference because
                 ' any process whose name cannot be obtained will be removed
                 ' from the list so that its not compared the next time.
                 Dim processes As ArrayList = SafeGetProcessesByName(name, _
@@ -397,7 +397,7 @@ ContinueForEach1:
         Private yesToAll, noToAll As Boolean
 
         ''' <summary>
-        ''' Partial list of critical processes that should not be 
+        ''' Partial list of critical processes that should not be
         ''' stopped.  Lower case is used for case insensitive matching.
         ''' </summary>
         Private criticalProcessNames As New ArrayList( _
@@ -405,7 +405,7 @@ ContinueForEach1:
 
 #End Region
 
-    End Class 'StopProcCommand 
+    End Class 'StopProcCommand
 
 #End Region
 
@@ -445,8 +445,8 @@ ContinueForEach1:
         End Property
 
         ''' <summary>
-        ''' Gets resource information for vendor. This is a string of format: 
-        ''' resourceBaseName,resourceName. 
+        ''' Gets resource information for vendor. This is a string of format:
+        ''' resourceBaseName,resourceName.
         ''' </summary>
         Public Overrides ReadOnly Property VendorResource() As String
             Get
@@ -473,5 +473,7 @@ End Namespace
 <!-- TODO!!!: [!code-csharp[StopProcessSample04.vb](../../powershell-sdk-samples/SDK-2.0/vb/StopProcessSample04/StopProcessSample04.vb#L09-L456 "StopProcessSample04.vb")] -->
 
 ## See Also
- [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+
+[Windows PowerShell SDK](../windows-powershell-reference.md)
