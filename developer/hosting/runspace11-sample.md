@@ -33,9 +33,9 @@ This sample demonstrates the following.
 
 - Adding the proxy function to the initial session state.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
 
-- Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to demonstrate the constrained runspace.
+- Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to demonstrate the constrained runspace.
 
 ## Example
 

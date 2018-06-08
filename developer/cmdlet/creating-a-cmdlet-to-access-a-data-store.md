@@ -19,21 +19,21 @@ The cmdlet is designed to use any Windows PowerShell provider that derives from 
 
 Topics in this section include the following:
 
-- [Defining the Cmdlet Class](#definecmdletselectstr)
+- [Defining the Cmdlet Class](#Defining-the-Cmdlet-Class)
 
-- [Defining Parameters for Data Access](#declareparametersdataaccess)
+- [Defining Parameters for Data Access](#Declaring-the-Path-Parameter)
 
-- [Overriding Input Processing Methods](#provideinputprocessingmethods)
+- [Overriding Input Processing Methods](#Overriding-Input-Processing-Methods)
 
-- [Accessing Content](#accesscontent)
+- [Accessing Content](#Accessing-Content)
 
-- [Code Sample](#codesampleselectstr)
+- [Code Sample](#Code-Sample)
 
-- [Defining Object Types and Formatting](#defineobjecttypesformattingselectstr)
+- [Defining Object Types and Formatting](#Declaring-Search-Support-Parameters)
 
-- [Building the Cmdlet](#buildcmdletselectstr)
+- [Building the Cmdlet](#Building-the-Cmdlet)
 
-- [Testing the Cmdlet](#testcmdletselectstr)
+- [Testing the Cmdlet](#Testing-the-Cmdlet)
 
 ## Defining the Cmdlet Class
 
@@ -391,7 +391,7 @@ This sample Select-Str cmdlet uses the [System.Management.Automation.Providerint
 
 ## Code Sample
 
-The following code shows the implementation of this version of this Select-Str cmdlet. Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet. For more information about registering the cmdlet, see [Building the Cmdlet](#buildcmdletselectstr).
+The following code shows the implementation of this version of this Select-Str cmdlet. Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet. For more information about registering the cmdlet, see [Building the Cmdlet](#Building-the-Cmdlet).
 
 ```csharp
 //

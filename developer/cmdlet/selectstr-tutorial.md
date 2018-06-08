@@ -11,8 +11,8 @@ caps.latest.revision: 5
 ---
 # SelectStr Tutorial
 
-This section provides a tutorial for creating the Select-Str cmdlet, which is very similar to the [Select-String](/powershell/module/Microsoft.PowerShell.Utility/Select-String) cmdlet provided by Windows PowerShell. This tutorial provides fragments of code that illustrate how cmdlets are implemented, and an explanation of the code.
-This section provides a tutorial for creating the Select-Str cmdlet, which is very similar to the [Select-String](/powershell/module/Microsoft.PowerShell.Utility/Select-String) cmdlet provided by Windows PowerShell. This tutorial provides fragments of code that illustrate how cmdlets are implemented, and an explanation of the code.
+This section provides a tutorial for creating the Select-Str cmdlet, which is very similar to the [Select-String](/powershell/module/microsoft.powershell.utility/select-string) cmdlet provided by Windows PowerShell. This tutorial provides fragments of code that illustrate how cmdlets are implemented, and an explanation of the code.
+This section provides a tutorial for creating the Select-Str cmdlet, which is very similar to the [Select-String](/powershell/module/microsoft.powershell.utility/select-string) cmdlet provided by Windows PowerShell. This tutorial provides fragments of code that illustrate how cmdlets are implemented, and an explanation of the code.
 
 ## Topic in this Tutorial
 

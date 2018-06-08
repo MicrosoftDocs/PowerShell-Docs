@@ -11,17 +11,17 @@ caps.latest.revision: 9
 ---
 # Windows PowerShell Host Quickstart
 
-To host Windows PowerShell in your application, you use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class. This class provides methods that create a pipeline of commands and then execute those commands in a runspace. The simplest way to create a host application is to use the default runspace. The default runspace contains all of the core Windows PowerShell commands. If you want your application to expose only a subset of the Windows PowerShell commands, you must create a custom runspace.
+To host Windows PowerShell in your application, you use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class. This class provides methods that create a pipeline of commands and then execute those commands in a runspace. The simplest way to create a host application is to use the default runspace. The default runspace contains all of the core Windows PowerShell commands. If you want your application to expose only a subset of the Windows PowerShell commands, you must create a custom runspace.
 
 ## Using the default runspace
 
-To start, we'll use the default runspace, and use the methods of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to add commands, parameters, statements, and scripts to a pipeline.
+To start, we'll use the default runspace, and use the methods of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to add commands, parameters, statements, and scripts to a pipeline.
 
 ### AddCommand
 
-You use the [System.Management.Automation.Powershell.Addcommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to add commands to the pipeline. For example, suppose you want to get the list of running processes on the machine. The way to run this command is as follows.
+You use the [System.Management.Automation.Powershell.Addcommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to add commands to the pipeline. For example, suppose you want to get the list of running processes on the machine. The way to run this command is as follows.
 
-1. Create a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+1. Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
 
    ```csharp
    PowerShell ps = PowerShell.Create();

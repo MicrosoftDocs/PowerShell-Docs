@@ -15,11 +15,11 @@ After creating a runspace, you can add Windows PowerShellcommands and scripts to
 
 ## Creating a pipeline
 
- The [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class provides several methods to add commands, parameters, and scripts to the pipeline. You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.
+ The [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class provides several methods to add commands, parameters, and scripts to the pipeline. You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.
 
 ### AddCommand
 
-1. Create a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+1. Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
 
    ```csharp
    PowerShell ps = PowerShell.Create();

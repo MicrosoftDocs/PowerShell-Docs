@@ -11,7 +11,7 @@ caps.latest.revision: 8
 ---
 # Runspace03 Sample
 
-This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to run a script synchronously, and how to handle non-terminating errors. The script receives a list of process names and then retrieves those processes. The results of the script, including any non-terminating errors that were generated when running the script, are displayed in a console window.
+This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run a script synchronously, and how to handle non-terminating errors. The script receives a list of process names and then retrieves those processes. The results of the script, including any non-terminating errors that were generated when running the script, are displayed in a console window.
 
 ## Requirements
 
@@ -21,9 +21,9 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object to run a script.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run a script.
 
-- Adding a script to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+- Adding a script to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
 
 - Passing input objects to the script from the calling program.
 

@@ -50,27 +50,27 @@ There are no limits to the number of messages that your cmdlet can write or the 
 
 Topics in this section include the following:
 
-- [Defining the Cmdlet](#definecmdletstopproc2)
+- [Defining the Cmdlet](#Defining-the-Cmdlet)
 
-- [Defining Parameters for System Modification](#defineparametersforsystemmodstopproc2)
+- [Defining Parameters for System Modification](#Defining-Parameters-for-System-Modification)
 
-- [Overriding an Input Processing Method](#provideinputprocessingstopproc2)
+- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
 
-- [Writing a Verbose Message](#writeverbosenotification)
+- [Writing a Verbose Message](#Writing-a-Verbose-Message)
 
-- [Writing a Debug Message](#writedebugnotification)
+- [Writing a Debug Message](#Writing-a-Debug-Message)
 
-- [Writing a Warning Message](#writewarningnotification)
+- [Writing a Warning Message](#Writing-a-Warning-Message)
 
-- [Writing a Progress Message](#writeprogressnotification)
+- [Writing a Progress Message](#Writing-a-Progress-Message)
 
-- [Code Sample](#codesampleusernotificationsstopproc2)
+- [Code Sample](#Code-Sample)
 
-- [Define Object Types and Formatting](#defineobjecttypesformattingstopproc2)
+- [Define Object Types and Formatting](#Define-Object-Types-and-Formatting)
 
-- [Building the Cmdlet](#buildcmdletstopproc2)
+- [Building the Cmdlet](#Building-the-Cmdlet)
 
-- [Testing the Cmdlet](#testcmdletstopproc2)
+- [Testing the Cmdlet](#Testing-the-Cmdlet)
 
 ## Defining the Cmdlet
 

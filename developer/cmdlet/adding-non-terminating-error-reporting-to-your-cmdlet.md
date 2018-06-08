@@ -19,21 +19,21 @@ For more information about error records, see [Windows PowerShell Error Records]
 
 Topics in this section include the following:
 
-- [Defining the Cmdlet](#definecmdletgetproc4)
+- [Defining the Cmdlet](#Defining-the-Cmdlet)
 
-- [Defining Parameters](#defineparametersgetproc4)
+- [Defining Parameters](#Defining-Parameters)
 
-- [Overriding Input Processing Methods](#provideinputprocmethodgetproc4)
+- [Overriding Input Processing Methods](#Overriding-Input-Processing-Methods)
 
-- [Reporting Nonterminating Errors](#reportnonterminatingfromcmdlet)
+- [Reporting Nonterminating Errors](#Reporting-Nonterminating-Errors)
 
-- [Code Sample](#codesampleerrorreportinggetproc4)
+- [Code Sample](#Code-Sample)
 
-- [Defining Object Types and Formatting](#defineobjecttypesformattinggetproc4)
+- [Defining Object Types and Formatting](#Define-Object-Types-and-Formatting)
 
-- [Building the Cmdlet](#buildcmdletgetproc4)
+- [Building the Cmdlet](#Building-the-Cmdlet)
 
-- [Testing the Cmdlet](#testcmdletgetproc4)
+- [Testing the Cmdlet](#Testing-the-Cmdlet)
 
 ## Defining the Cmdlet
 

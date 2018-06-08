@@ -17,25 +17,25 @@ This Stop-Proc cmdlet attempts to stop processes that are retrieved using the Ge
 
 Topics in this section include the following:
 
-- [Defining the Cmdlet](#definecmdletstopproc3)
+- [Defining the Cmdlet](#Defining-the-Cmdlet)
 
-- [Defining Parameters for System Modification](#defineparametersforsystemmodstopproc3)
+- [Defining Parameters for System Modification](#Defining-Parameters-for-System-Modification)
 
-- [Defining a Parameter Alias](#defineparameteralias)
+- [Defining a Parameter Alias](#Defining-a-Parameter-Alias)
 
-- [Creating Help for Parameters](#createhelpforparameters)
+- [Creating Help for Parameters](#Creating-Help-for-Parameters)
 
-- [Overriding an Input Processing Method](#provideinputprocessingstopproc3)
+- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
 
-- [Supporting Wildcard Expansion](#supportexpansion)
+- [Supporting Wildcard Expansion](#Supporting-Wildcard-Expansion)
 
-- [Code Sample](#codesamplealiasesstopproc3)
+- [Code Sample](#Defining-a-Parameter-Alias)
 
-- [Defining Object Types and Formatting](#defineobjecttypesformattingstopproc3)
+- [Defining Object Types and Formatting](#Define-Object-Types-and-Formatting)
 
-- [Building the Cmdlet](#buildcmdletstopproc3)
+- [Building the Cmdlet](#Building-the-Cmdlet)
 
-- [Testing the Cmdlet](#testcmdletstopproc3)
+- [Testing the Cmdlet](#Testing-the-Cmdlet)
 
 ## Defining the Cmdlet
 

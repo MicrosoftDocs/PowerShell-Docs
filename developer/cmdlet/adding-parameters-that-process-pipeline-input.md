@@ -20,19 +20,19 @@ This Get-Proc cmdlet uses a `Name` parameter that accepts input from a pipeline 
 
 Topics in this section include the following:
 
-- [Defining the Cmdlet Class](#definecmdletgetproc3)
+- [Defining the Cmdlet Class](#Defining-the-Cmdlet-Class)
 
-- [Defining Input from the Pipeline](#defineinputfrompipeline)
+- [Defining Input from the Pipeline](#Defining-Input-from-the-Pipeline)
 
-- [Overriding an Input Processing Method](#providepipelineinputprocmethod)
+- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
 
-- [Code Sample](#codesamplepipelineinputgetproc3)
+- [Code Sample](#Code-Sample)
 
-- [Defining Object Types and Formatting](#defineobjecttypesformattinggetproc3)
+- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
 
-- [Building the Cmdlet](#buildcmdletgetproc3)
+- [Building the Cmdlet](#Building-the-Cmdlet)
 
-- [Testing the Cmdlet](#testcmdletgetproc3)
+- [Testing the Cmdlet](#Testing-the-Cmdlet)
 
 ## Defining the Cmdlet Class
 

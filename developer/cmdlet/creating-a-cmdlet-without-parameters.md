@@ -18,19 +18,19 @@ This section describes how to create a cmdlet that retrieves information from th
 
 Topics in this section include the following:
 
-- [Naming the Cmdlet](#namecmdlet)
+- [Naming the Cmdlet](#Naming-the-Cmdlet)
 
-- [Defining the Cmdlet Class](#definecmdletclass)
+- [Defining the Cmdlet Class](#Defining-the-Cmdlet-Class)
 
-- [Overriding an Input Processing Method](#provideinputprocessingmethodgetproc1)
+- [Overriding an Input Processing Method](#Overriding-an-Input-Processing-Method)
 
-- [Code Sample](#codesamplegetproc1)
+- [Code Sample](#Code-Sample)
 
-- [Defining Object Types and Formatting](#defineobjecttypesformattinggetproc1)
+- [Defining Object Types and Formatting](#Defining-Object-Types-and-Formatting)
 
-- [Building the Cmdlet](#buildcmdletgetproc1)
+- [Building the Cmdlet](#Building-the-Cmdlet)
 
-- [Testing the Cmdlet](#testcmdletgetproc1)
+- [Testing the Cmdlet](#Testing-the-Cmdlet)
 
 > [!NOTE]
 > Be aware that when writing cmdlets, the Windows PowerShell® reference assemblies are downloaded onto disk (by default at C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0).They are not installed in the Global Assembly Cache (GAC).
