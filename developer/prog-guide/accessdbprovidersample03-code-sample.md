@@ -10,15 +10,16 @@ ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
 caps.latest.revision: 5
 ---
 # AccessDbProviderSample03 Code Sample
+
 The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md). This provider that can manipulate the data in a data store.
 
 > [!NOTE]
->  You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
->  You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
+> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](http://msdn.microsoft.com/en-us/3ef7402e-fc80-432d-aaf7-c4a43fc09e68).
 >
->  The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
->  For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
 ## Code Sample
 
@@ -97,7 +98,7 @@ namespace Microsoft.Samples.PowerShell.Providers
            builder.Driver = "Microsoft Access Driver (*.mdb)";
            builder.Add("DBQ", drive.Root);
 
-           OdbcConnection conn = new OdbcConnection(builder.ConnectionString); 
+           OdbcConnection conn = new OdbcConnection(builder.ConnectionString);
            conn.Open();
            accessDBPSDriveInfo.Connection = conn;
 
@@ -153,7 +154,7 @@ namespace Microsoft.Samples.PowerShell.Providers
               return;
           }// if (PathIsDrive...
 
-           // Get table name and row information from the path and do 
+           // Get table name and row information from the path and do
            // necessary actions
            string tableName;
            int rowNumber;
@@ -325,7 +326,7 @@ namespace Microsoft.Samples.PowerShell.Providers
       /// </returns>
       private bool PathIsDrive(string path)
       {
-          // Remove the drive name and first path separator.  If the 
+          // Remove the drive name and first path separator.  If the
           // path is reduced to nothing, it is a drive. Also if its
           // just a drive then there wont be any path separators
           if (String.IsNullOrEmpty(
@@ -353,7 +354,7 @@ namespace Microsoft.Samples.PowerShell.Providers
           // Normalize the path before splitting
           string normalPath = NormalizePath(path);
 
-          // Return the path with the drive name and first path 
+          // Return the path with the drive name and first path
           // separator character removed, split by the path separator.
           string pathNoDrive = normalPath.Replace(this.PSDriveInfo.Root
                                          + pathSeparator, "");
@@ -380,11 +381,11 @@ namespace Microsoft.Samples.PowerShell.Providers
       } // NormalizePath
 
       /// <summary>
-      /// Chunks the path and returns the table name and the row number 
+      /// Chunks the path and returns the table name and the row number
       /// from the path
       /// </summary>
       /// <param name="path">Path to chunk and obtain information</param>
-      /// <param name="tableName">Name of the table as represented in the 
+      /// <param name="tableName">Name of the table as represented in the
       /// path</param>
       /// <param name="rowNumber">Row number obtained from the path</param>
       /// <returns>what the path represents</returns>
@@ -528,7 +529,7 @@ namespace Microsoft.Samples.PowerShell.Providers
       /// <summary>
       /// Return row information from a specified table.
       /// </summary>
-      /// <param name="tableName">The name of the database table from 
+      /// <param name="tableName">The name of the database table from
       /// which to retrieve rows.</param>
       /// <returns>Collection of row information objects.</returns>
       private Collection<DatabaseRowInfo> GetRows(string tableName)
@@ -569,7 +570,7 @@ namespace Microsoft.Samples.PowerShell.Providers
       /// <summary>
       /// Retrieve information about a single table.
       /// </summary>
-      /// <param name="tableName">The table for which to retrieve 
+      /// <param name="tableName">The table for which to retrieve
       /// data.</param>
       /// <returns>Table information.</returns>
       private DatabaseTableInfo GetTable(string tableName)
@@ -588,7 +589,7 @@ namespace Microsoft.Samples.PowerShell.Providers
       /// <summary>
       /// Obtain a data adapter for the specified Table
       /// </summary>
-      /// <param name="tableName">Name of the table to obtain the 
+      /// <param name="tableName">Name of the table to obtain the
       /// adapter for</param>
       /// <returns>Adapter object for the specified table</returns>
       /// <remarks>An adapter serves as a bridge between a DataSet (in memory
@@ -615,11 +616,11 @@ namespace Microsoft.Samples.PowerShell.Providers
 
               // Create a odbc command builder object. This will create sql
               // commands automatically for a single table, thus
-              // eliminating the need to create new sql statements for 
+              // eliminating the need to create new sql statements for
               // every operation to be done.
               OdbcCommandBuilder cmd = new OdbcCommandBuilder(da);
 
-              // Open the connection if its not already open                 
+              // Open the connection if its not already open
               if (connection.State != ConnectionState.Open)
               {
                   connection.Open();
@@ -638,9 +639,9 @@ namespace Microsoft.Samples.PowerShell.Providers
       /// Gets the DataSet (in memory representation) for the table
       /// for the specified adapter
       /// </summary>
-      /// <param name="adapter">Adapter to be used for obtaining 
+      /// <param name="adapter">Adapter to be used for obtaining
       /// the table</param>
-      /// <param name="tableName">Name of the table for which a 
+      /// <param name="tableName">Name of the table for which a
       /// DataSet is required</param>
       /// <returns>The DataSet with the filled in schema</returns>
       private DataSet GetDataSetForTable(OdbcDataAdapter adapter, string tableName)
@@ -648,8 +649,8 @@ namespace Microsoft.Samples.PowerShell.Providers
           Debug.Assert(adapter != null);
 
           // Create a dataset object which will provide an in-memory
-          // representation of the data being worked upon in the 
-          // data source. 
+          // representation of the data being worked upon in the
+          // data source.
           DataSet ds = new DataSet();
 
           // Create a table named "Table" which will contain the same
@@ -668,9 +669,9 @@ namespace Microsoft.Samples.PowerShell.Providers
       /// <param name="ds">DataSet object which contains the tables
       /// schema</param>
       /// <param name="tableName">Name of the table</param>
-      /// <returns>Corresponding DataTable object representing 
+      /// <returns>Corresponding DataTable object representing
       /// the table</returns>
-      /// 
+      ///
       private DataTable GetDataTable(DataSet ds, string tableName)
       {
           Debug.Assert(ds != null);
@@ -685,7 +686,7 @@ namespace Microsoft.Samples.PowerShell.Providers
       /// <summary>
       /// Retrieves a single row from the named table.
       /// </summary>
-      /// <param name="tableName">The table that contains the 
+      /// <param name="tableName">The table that contains the
       /// numbered row.</param>
       /// <param name="row">The index of the row to return.</param>
       /// <returns>The specified table row.</returns>
@@ -693,7 +694,7 @@ namespace Microsoft.Samples.PowerShell.Providers
       {
           Collection<DatabaseRowInfo> di = GetRows(tableName);
 
-          // if the row is invalid write an appropriate error else return the 
+          // if the row is invalid write an appropriate error else return the
           // corresponding row information
           if (row < di.Count && row >= 0)
           {
@@ -713,10 +714,10 @@ namespace Microsoft.Samples.PowerShell.Providers
       } // GetRow
 
       /// <summary>
-      /// Method to safely convert a string representation of a row number 
+      /// Method to safely convert a string representation of a row number
       /// into its Int32 equivalent
       /// </summary>
-      /// <param name="rowNumberAsStr">String representation of the row 
+      /// <param name="rowNumberAsStr">String representation of the row
       /// number</param>
       /// <remarks>If there is an exception, -1 is returned</remarks>
       private int SafeConvertRowNumber(string rowNumberAsStr)
@@ -996,4 +997,5 @@ namespace Microsoft.Samples.PowerShell.Providers
 ## See Also
 
 [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+
 [Windows PowerShell SDK](../windows-powershell-reference.md)

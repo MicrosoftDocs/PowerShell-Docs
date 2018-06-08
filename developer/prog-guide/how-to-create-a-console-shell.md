@@ -12,9 +12,11 @@ ms.assetid: 6c24dd44-a8ec-421d-ac86-90912e1a8cc6
 caps.latest.revision: 5
 ---
 # How to Create a Console Shell
+
 Windows PowerShell provides a Make-Shell tool, also referred to as the "make-kit", that is used to create a console shell that is not extensible. Shells created with this new tool cannot be extended later through a Windows PowerShell snap-in.
 
 ## Syntax
+
  Here is the syntax used to run Make-Shell from within a make-file.
 
 ```
@@ -36,10 +38,11 @@ make-shell
 ```
 
 ## Parameters
+
  Here is a brief description of the parameters of Make-Shell.
 
 > [!CAUTION]
->  UNC paths to assemblies are not supported by Make-Shell.
+> UNC paths to assemblies are not supported by Make-Shell.
 
 |Parameter|Description|
 |---------------|-----------------|
@@ -60,5 +63,7 @@ make-shell
 |-verbose|Displays detailed information while the shell is being created.|
 
 ## See Also
+
  [Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+
  [Windows PowerShell SDK](../windows-powershell-reference.md)
