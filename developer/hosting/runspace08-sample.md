@@ -10,27 +10,31 @@ ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
 ---
 # Runspace08 Sample
+
 This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object and how to run the commands synchronously.
 
 ## Requirements
- This sample requires Windows PowerShell 2.0.
+
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.
+This sample demonstrates the following.
 
--   Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the runspace.
+- Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.
 
--   Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the runspace.
 
--   Running the cmdlets synchronously.
+- Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
 
--   Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.
+- Running the cmdlets synchronously.
+
+- Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.
 
 ## Example
- This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](http://go.microsoft.com/fwlink/?LinkID=113403) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
- This sample runs the [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) and [Sort-Object](http://go.microsoft.com/fwlink/?LinkID=113403) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+
+This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -112,4 +116,5 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ```
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
+
+[Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)

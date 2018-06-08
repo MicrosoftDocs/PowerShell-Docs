@@ -12,15 +12,17 @@ ms.assetid: a8f48736-c9fa-4e07-bd18-dd813e11f774
 caps.latest.revision: 6
 ---
 # How to Prepare Updatable Help CAB Files
+
 This topic explains the contents and use of cabinet (.CAB) files in Windows PowerShell Updatable Help.
 
- This section includes the following topics.
+This section includes the following topics.
 
--   [How to Create and Upload CAB Files](./how-to-create-and-upload-cab-files.md)
+- [How to Create and Upload CAB Files](./how-to-create-and-upload-cab-files.md)
 
--   [How to Name an Updatable Help CAB File](./how-to-name-an-updatable-help-cab-file.md)
+- [How to Name an Updatable Help CAB File](./how-to-name-an-updatable-help-cab-file.md)
 
--   [File Types Permitted in an Updatable Help CAB File](./file-types-permitted-in-an-updatable-help-cab-file.md)
+- [File Types Permitted in an Updatable Help CAB File](./file-types-permitted-in-an-updatable-help-cab-file.md)
 
 ## See Also
- [Supporting Updatable Help](./supporting-updatable-help.md)
+
+[Supporting Updatable Help](./supporting-updatable-help.md)

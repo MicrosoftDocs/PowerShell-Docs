@@ -10,30 +10,34 @@ ms.assetid: 471c85f3-9287-45c2-b4bc-833caa1b7634
 caps.latest.revision: 8
 ---
 # Runspace06 Sample
+
 This sample shows how to add a module to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the module is loaded when the runspace is opened. The module provides a Get-Proc cmdlet (defined by the [GetProcessSample02 Sample](../cmdlet/getprocesssample02-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
 
 ## Requirements
- This sample requires Windows PowerShell 2.0.
+
+This sample requires Windows PowerShell 2.0.
 
 ## Demonstrates
- This sample demonstrates the following.
 
--   Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+This sample demonstrates the following.
 
--   Adding the module to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
--   Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Adding the module to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
--   Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the runspace.
+- Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
--   Adding the module's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
+- Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that uses the runspace.
 
--   Running the command synchronously.
+- Adding the module's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object.
 
--   Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.
+- Running the command synchronously.
+
+- Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.
 
 ## Example
- This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened. In this sample, a module that defines a Get-Proc cmdlet is added to the initial session state.
+
+This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened. In this sample, a module that defines a Get-Proc cmdlet is added to the initial session state.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -116,4 +120,5 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ```
 
 ## See Also
- [Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
+
+[Writing a Windows PowerShell Host Application](./writing-a-windows-powershell-host-application.md)
