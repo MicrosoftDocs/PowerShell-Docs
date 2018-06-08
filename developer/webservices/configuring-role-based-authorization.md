@@ -103,5 +103,4 @@ In these examples, you will add a module to the Administrator `Group` node, and 
 
    ```xml
    <User Name="UserName" GroupName="NonAdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>
-   ```
-   
+   ```

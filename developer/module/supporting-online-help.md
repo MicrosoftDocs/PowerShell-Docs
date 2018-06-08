@@ -107,5 +107,4 @@ The following code shows the .ExternalHelp directive in a workflow file.
 
 ```powershell
 # .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"
-```
-
+```
