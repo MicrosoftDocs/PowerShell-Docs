@@ -168,5 +168,4 @@ When run, the output of this code will look as follows.
 ```powershell
 Get-Command
 Import-Module
-```
-
+```
