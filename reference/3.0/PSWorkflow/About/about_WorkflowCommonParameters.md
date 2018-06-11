@@ -346,8 +346,8 @@ the port used for the command, the command fails.
 
 ## SEE ALSO
 
-[about_ActivityCommonParameters](about_ActivityCommonParameters.md)
-[about_Workflows](about_Workflows.md)
-[Invoke-AsWorkflow](../../PSWorkflowUtility/Invoke-AsWorkflow.md)
-[New-PSWorkflowExecutionOption](../New-PSWorkflowExecutionOption.md)
-[New-PSWorkflowSession](../New-PSWorkflowSession.md)
+- [about_ActivityCommonParameters](about_ActivityCommonParameters.md)
+- [about_Workflows](about_Workflows.md)
+- [Invoke-AsWorkflow](../../PSWorkflowUtility/Invoke-AsWorkflow.md)
+- [New-PSWorkflowExecutionOption](../New-PSWorkflowExecutionOption.md)
+- [New-PSWorkflowSession](../New-PSWorkflowSession.md)
