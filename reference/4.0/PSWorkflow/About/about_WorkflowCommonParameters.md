@@ -350,4 +350,4 @@ the port used for the command, the command fails.
 - [about_Workflows](about_Workflows.md)
 - [Invoke-AsWorkflow](../../PSWorkflowUtility/Invoke-AsWorkflow.md)
 - [New-PSWorkflowExecutionOption](../New-PSWorkflowExecutionOption.md)
-[New-PSWorkflowSession](../New-PSWorkflowSession.md)
+- [New-PSWorkflowSession](../New-PSWorkflowSession.md)
