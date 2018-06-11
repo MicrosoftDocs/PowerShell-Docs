@@ -1,7 +1,6 @@
 ---
 ms.date:  06/12/2017
-author:  JKeithB
-ms.topic:  reference
+ms.topic: conceptual
 keywords:  wmf,powershell,setup
 contributor:  ryanpu
 title:  Improvements to Just Enough Administration (JEA)

@@ -16,7 +16,7 @@ This section contains the help topics for the cmdlets that are installed with Wi
 
 ## Microsoft.PowerShell.Security Cmdlets
 ### [Certificate-Provider](Providers/Certificate-Provider.md)
-{{Manually Enter certificate-provider Description Here}}
+Provides access to X.509 certificate stores and certificates in Windows PowerShell.
 
 ### [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
 Converts a secure string to an encrypted standard string.
@@ -35,7 +35,7 @@ Gets information about the Authenticode signature for a file.
 
 
 ### [Get-ChildItem-for-Certificate](Providers/et-ChildItem-for-Certificate.md)
-{{Manually Enter get-childitem-for-certificate Description Here}}
+Gets certificate store locations, certificate stores, and certificates in the Windows PowerShell certificate store.
 
 ### [Get-Credential](Get-Credential.md)
 Gets a credential object based on a user name and password.
@@ -46,19 +46,19 @@ Gets the execution policies for the current session.
 
 
 ### [Move-Item-for-Certificate](Providers/Move-Item-for-Certificate.md)
-{{Manually Enter move-item-for-certificate Description Here}}
+Moves certificates from one certificate store to another certificate store.
 
 
 ### [New-FileCatalog](New-FileCatalog.md)
-{{Manually Enter New-FileCatalog Description Here}}###
+Creates a Windows catalog file containing cryptographic hashes for files and folders in specified paths.
 
 
 ###[New-Item-for-Certificate](Providers/New-Item-for-Certificate.md)
-{{Manually Enter new-item-for-certificate Description Here}}
+Creates new certificate stores in the LocalMachine store location.
 
 
 ### [Remove-Item-for-Certificate](Remove-Item-for-Certificate.md)
-{{Manually Enter remove-item-for-certificate Description Here}}
+Deletes certificate stores, certificates, and private keys.
 
 
 ### [Set-Acl](Set-Acl.md)
@@ -74,4 +74,4 @@ Changes the user preference for the Windows PowerShell execution policy.
 
 
 ### [Test-FileCatalog](Test-FileCatalog.md)
-{{Manually Enter Test-FileCatalog Description Here}}
+Validates files and folders by comparing their path-sensitive hashes against those recorded in a catalog.

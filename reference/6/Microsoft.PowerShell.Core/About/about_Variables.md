@@ -172,8 +172,8 @@ contain only DateTime objects.
 
 ```powershell
 PS> [int]$number = 8
-PS> $a = "12345" (The string is converted to an integer.)
-PS> $a = "Hello"
+PS> $number = "12345" (The string is converted to an integer.)
+PS> $number = "Hello"
 Cannot convert value "Hello" to type "System.Int32". Error: "Input string
  was not in a correct format."
 At line:1 char:3

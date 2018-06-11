@@ -1043,7 +1043,7 @@ Accept wildcard characters: False
 ```
 
 ### -VMGuid
-{{Fill VMGuid Description}}
+Specifies an array of IDs of virtual machines.
 
 ```yaml
 Type: Guid[]

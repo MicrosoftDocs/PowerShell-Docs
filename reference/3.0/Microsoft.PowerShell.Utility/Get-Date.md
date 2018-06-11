@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,15 +7,16 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113313
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Date
 ---
-
 # Get-Date
 
 ## Synopsis
+
 Gets the current date and time.
 
 ## Syntax
 
 ### Net (Default)
+
 ```powershell
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-Format <String>]
@@ -23,6 +24,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
 ```
 
 ### UFormat
+
 ```powershell
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-UFormat <String>]
@@ -30,6 +32,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
 ```
 
 ## Description
+
 The `Get-Date` cmdlet gets a **DateTime** object that represents the current date or a date that you specify.
 It can format the date and time in several Windows and UNIX formats.
 You can use `Get-Date` to generate a date or time character string, and then send the string to other cmdlets or programs.
@@ -81,7 +84,7 @@ In this case, the format includes the full year (`%Y`), the two-digit numeric mo
 (Get-Date -Year 2000 -Month 12 -Day 31).DayOfYear
 ```
 
-```
+```output
 366
 ```
 
@@ -89,6 +92,7 @@ This command displays the day of the year for the current date.
 For example, December 31 is the 365th day of 2006, but it is the 366th day of 2000.
 
 ### Example 5
+
 ```powershell
 $a = Get-Date
 $a.IsDaylightSavingTime()
@@ -124,7 +128,7 @@ Then, it uses the **ToUniversalTime** method on the object in $a.
 ### Example 7
 
 ```powershell
-$a = Get-WmiObject Win32_Bios -Computer Server01
+$a = Get-WmiObject Win32_Bios -ComputerName Server01
 $a | Format-List -Property Name, @{Label="BIOS Age";Expression={(Get-Date) - $_.ConvertToDateTime($_.ReleaseDate)}}
 ```
 
@@ -166,6 +170,8 @@ This command gets a **DateTime** object and displays the current date and time i
 ```powershell
 Get-Date
 ```
+
+
 ```
 Tuesday, September 26, 2006 11:25:31 AM
 ```
@@ -204,6 +210,7 @@ When you use the `-Format` or `-UFormat` parameters, `Get-Date` generates a stri
 Then, when you send the string to `Add-Content`, it adds the string to the Test.txt file without changing it.
 
 ### Example 10
+
 ```powershell
 Get-Date -Format o
 ```
@@ -240,6 +247,7 @@ This example shows how to use the `Get-Date` cmdlet to create a timestamp and ho
 ## Parameters
 
 ### -Date
+
 Specifies a date and time.
 By default, `Get-Date` gets the current system date and time.
 
@@ -258,6 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -Day
+
 Specifies the day of the month that is displayed.
 Enter a value from 1 to 31.
 The default is the current day.
@@ -278,6 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayHint
+
 Determines which elements of the date and time are displayed.
 
 Valid values are:
@@ -302,9 +312,10 @@ Accept wildcard characters: False
 ```
 
 ### -Format
+
 Displays the date and time in the Microsoft .NET Framework format indicated by the format specifier.
 Enter a format specifier.
-For a list of available format specifiers, see [DateTimeFormatInfo Class](http://go.microsoft.com/fwlink/?LinkId=143638) in the MSDN (Microsoft Developer Network) library.
+For a list of available format specifiers, see [DateTimeFormatInfo Class](https://msdn.microsoft.com/en-us/library/system.globalization.datetimeformatinfo(VS.85).aspx) in the MSDN (Microsoft Developer Network) library.
 
 When you use the `-Format` parameter, Windows PowerShell gets only the properties of the **DateTime** object that it needs to display the date in the format that you specify.
 As a result, some of the properties and methods of **DateTime** objects might not be available.
@@ -322,6 +333,7 @@ Accept wildcard characters: False
 ```
 
 ### -Hour
+
 Specifies the hour that is displayed.
 Enter a value from 0 to 23.
 The default is the current hour.
@@ -339,6 +351,7 @@ Accept wildcard characters: False
 ```
 
 ### -Millisecond
+
 Specifies the milliseconds in the date.
 Enter a value from 0 to 999.
 The default is the current number of milliseconds.
@@ -358,6 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### -Minute
+
 Specifies the minute that is displayed.
 Enter a value from 0 to 59.
 The default value is the current minutes.
@@ -375,6 +389,7 @@ Accept wildcard characters: False
 ```
 
 ### -Month
+
 Specifies the month that is displayed.
 Enter a value from 1 to 12.
 The default is the current month.
@@ -392,6 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -Second
+
 Specifies the second that is displayed.
 Enter a value from 0 to 59.
 The default is the current second.
@@ -409,6 +425,7 @@ Accept wildcard characters: False
 ```
 
 ### -UFormat
+
 Displays the date and time in UNIX format.
 For a list of the format specifiers, see the Notes section.
 
@@ -428,6 +445,7 @@ Accept wildcard characters: False
 ```
 
 ### -Year
+
 Specifies the year that is displayed.
 Enter a value from 1 to 9999.
 The default is the current year.
@@ -445,25 +463,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](..\Microsoft.PowerShell.Core\About\about_CommonParameters.md).
 
 ## Inputs
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## Outputs
 
 ### System.DateTime or System.String
+
 When you use the `-Format` or `-UFormat` parameters, `Get-Date` returns a string.
 Otherwise, it returns a **DateTime** object.
 
 ## NOTES
-* By default, the date-time is displayed in long-date and long-time formats for the system locale.
+
+- By default, the date-time is displayed in long-date and long-time formats for the system locale.
 
   When you pipe a date to cmdlets that expect string input, such as the Add-Content cmdlet, Windows PowerShell converts the **DateTime** object to a string before adding it to the file. The default `ToString()` format is short date and long time. To specify an alternate format, use the `-Format` or `-UFormat` parameters of `Get-Date`.
 
-  * Uformat Values:
+  - Uformat Values:
 
     The following are the values of the `-UFormat` parameter. The format for the command is:
 
@@ -474,7 +496,7 @@ Otherwise, it returns a **DateTime** object.
     `Get-Date -UFormat %d`
 
 
-     * Date-Time:
+     - Date-Time:
 
        Date and time - full
 
@@ -482,13 +504,13 @@ Otherwise, it returns a **DateTime** object.
 
        `c` : Date and time - abbreviated (Fri Jun 16 10:31:27 2006)
 
-      * Date:
+      - Date:
 
         `D` : Date in mm/dd/yy format (06/14/06)
 
         `x` : Date in standard format for locale (09/12/07 for English-US)
 
-      * Year:
+      - Year:
 
         `C` : Century (20 for 2006)
 
@@ -500,7 +522,7 @@ Otherwise, it returns a **DateTime** object.
 
         `g` : Same as 'y'
 
-      * Month:
+      - Month:
 
         `b` : Month name - abbreviated (Jan)
 
@@ -510,7 +532,7 @@ Otherwise, it returns a **DateTime** object.
 
         `m` : Month number (06)
 
-      * Week:
+      - Week:
 
         `W` : Week of the year (00-52)
 
@@ -518,7 +540,7 @@ Otherwise, it returns a **DateTime** object.
 
         `U` : Same as 'W'
 
-      * Day:
+      - Day:
 
         `a` : Day of the week - abbreviated name (Mon)
 
@@ -534,7 +556,7 @@ Otherwise, it returns a **DateTime** object.
 
         `w` : Same as 'u'
 
-      * Time:
+      - Time:
 
         `p` : AM or PM
 
@@ -548,7 +570,7 @@ Otherwise, it returns a **DateTime** object.
 
         `Z` : Time zone offset from Universal Time Coordinate (UTC) (-07)
 
-      * Hour:
+      - Hour:
 
         `H` :  Hour in 24-hour format (17)
 
@@ -558,7 +580,7 @@ Otherwise, it returns a **DateTime** object.
 
         `l` :   Same as 'I' (Upper-case I = Lower-case L)
 
-      * Minutes & Seconds:
+      - Minutes & Seconds:
 
         `M` : Minutes (35)
 
@@ -566,7 +588,7 @@ Otherwise, it returns a **DateTime** object.
 
         `s` : Seconds elapsed since January 1, 1970 00:00:00 (1150451174.95705)
 
-      * Special Characters:
+      - Special Characters:
 
         `n` : newline character (\n)
 

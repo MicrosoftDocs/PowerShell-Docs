@@ -14798,6 +14798,11 @@
             "source_path": "gallery/psget/script/psget_update-scriptfileinfo.md",
             "redirect_url": "/powershell/module/powershellget/Update-ScriptFileInfo",
             "redirect_document_id": false
-        }
+        },
+                     {
+            "source_path": "wmf/5.0/install.md",
+            "redirect_url": "/powershell/wmf/5.0/requirements",
+            "redirect_document_id": false
+                     }
     ]
 }

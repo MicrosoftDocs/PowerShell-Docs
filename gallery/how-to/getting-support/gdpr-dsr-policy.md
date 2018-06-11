@@ -1,7 +1,6 @@
 ---
 ms.date:  03/27/2018
 contributor:  JKeithB
-ms.topic:  conceptual
 keywords:  gallery,powershell,psgallery,GDPR
 title:  PowerShell Gallery GDPR compliance
 ---

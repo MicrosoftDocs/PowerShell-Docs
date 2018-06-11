@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113368
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Out-String
 ---
-
 # Out-String
+
 ## SYNOPSIS
+
 Sends objects to the host as a series of strings.
+
 ## SYNTAX
 
 ```
@@ -18,32 +20,39 @@ Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParamete
 ```
 
 ## DESCRIPTION
+
 The **Out-String** cmdlet converts the objects that Windows PowerShell manages into an array of strings.
 By default, **Out-String** accumulates the strings and returns them as a single string, but you can use the stream parameter to direct **Out-String** to return one string at a time.
 This cmdlet lets you search and manipulate string output as you would in traditional shells when object manipulation is less convenient.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> get-content C:\test1\testfile2.txt | out-string
+
+```powershell
+Get-Content C:\test1\testfile2.txt | out-string
 ```
 
 This command sends the content of the Testfile2.txt file to the console as a single string.
 It uses the Get-Content cmdlet to get the content of the file.
 The pipeline operator (|) sends the content to **Out-String**, which sends the content to the console as a string.
+
 ### Example 2
+
 ```
 The first command uses the Get-Culture cmdlet to get the regional settings. The pipeline operator (|) sends the result to the Select-Object cmdlet, which selects all properties (*) of the culture object that **Get-Culture** returned. The command then stores the results in the $c variable.
-PS C:\> $c = Get-Culture | Select-Object *
+PS> $c = Get-Culture | Select-Object *
 
 The second command uses the **Out-String** cmdlet to convert the **CultureInfo** object to a series of strings (one string for each property). It uses the **InputObject** parameter to pass the $c variable to **Out-String**. The **Width** parameter is set to 100 characters per line to prevent truncation.
-PS C:\> Out-String -InputObject $c -Width 100
+PS> Out-String -InputObject $c -Width 100
 ```
 
 These commands get the regional settings for the current user and convert the data to strings.
+
 ### Example 3
-```
-PS C:\> get-alias | out-string -stream | select-string "Get-Command"
+
+```powershell
+Get-Alias | Out-String -Stream | Select-String "Get-Command"
 ```
 
 This example demonstrates the difference between working with objects and working with strings.
@@ -55,9 +64,11 @@ It uses the **Stream** parameter of **Out-String** to send each string individua
 Another pipeline operator sends the strings to the Select-String cmdlet, which selects the strings that include "Get-Command" anywhere in the string.
 
 If you omit the **Stream** parameter, the command displays all of the aliases, because Select-String finds "Get-Command" in the single string that **Out-String** returns, and the formatter displays the string as a table.
+
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies the objects to be written to a string.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -74,6 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
+
 Sends the strings for each object separately.
 By default, the strings for each object are accumulated and sent as a single string.
 
@@ -92,6 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -Width
+
 Specifies the number of characters in each line of output.
 Any additional characters are truncated, not wrapped.
 If you omit this parameter, the width is determined by the characteristics of the host program.
@@ -110,20 +123,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe objects to Out-String.
+
 ## OUTPUTS
 
 ### System.String
-Out-String returns the string that it creates from the input object.
-## NOTES
-* The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not format objects; they just render them and send them to the specified display destination. If you send an unformatted object to an **Out** cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
-* The **Out** cmdlets do not have parameters that take  names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet. You can also store data in a variable and use the **InputObject** parameter to pass the data to the cmdlet. For more information, see the examples.
 
-*
+Out-String returns the string that it creates from the input object.
+
+## NOTES
+
+- The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not format objects; they just render them and send them to the specified display destination. If you send an unformatted object to an **Out** cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
+- The **Out** cmdlets do not have parameters that take  names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet. You can also store data in a variable and use the **InputObject** parameter to pass the data to the cmdlet. For more information, see the examples.
 ## RELATED LINKS
 
 [Out-Default](../Microsoft.PowerShell.Core/Out-Default.md)

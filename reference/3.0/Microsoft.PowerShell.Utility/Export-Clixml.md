@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,25 +7,30 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113297
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Export-Clixml
 ---
-
 # Export-Clixml
+
 ## SYNOPSIS
+
 Creates an XML-based representation of an object or objects and stores it in a file.
+
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```
 Export-Clixml [-Depth <Int32>] [-Path] <String> -InputObject <PSObject> [-Force] [-NoClobber]
  [-Encoding <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```
 Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-Force] [-NoClobber]
  [-Encoding <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Export-Clixml cmdlet creates an XML-based representation of an object or objects and stores it in a file.
 You can then use the Import-CLIXML cmdlet to re-create the saved object based on the contents of that file.
 
@@ -34,18 +39,22 @@ ConvertTo-XML returns the XML, so you can continue to process it in Windows Powe
 
 A valuable use of Export-Clixml is to export credentials and secure strings securely as XML.
 For an example of how to do this, see Example 3 in this topic.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> "This is a test" | export-clixml sample.xml
+
+```powershell
+"This is a test" | Export-Clixml sample.xml
 ```
 
 This command creates an XML file that stores a representation of the string, "This is a test".
+
 ### Example 2
-```
-PS C:\> get-acl C:\test.txt | export-clixml -Path fileacl.xml
-PS C:\> $fileacl = import-clixml fileacl.xml
+
+```powershell
+Get-Acl C:\test.txt | Export-Clixml -Path fileacl.xml
+$fileacl = Import-Clixml fileacl.xml
 ```
 
 This example shows how to export an object to an XML file and then create an object by importing the XML from the file.
@@ -55,12 +64,14 @@ It uses a pipeline operator to pass the security descriptor to Export-Clixml, wh
 
 The second command uses the Import-Clixml cmdlet to create an object from the XML in the FileACL.xml file.
 Then, it saves the object in the $FileAcl variable.
+
 ### Example 3
-```
-PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-PS C:\> $credential | Export-Clixml $credPath
-PS C:\> $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-PS C:\> $credential = Import-Clixml $credxmlpath
+
+```powershell
+$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
+$credential | Export-Clixml $credPath
+$credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
+$credential = Import-Clixml $credxmlpath
 ```
 
 The Export-Clixml cmdlet encrypts credential objects by using the Windows Data Protection API http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx.
@@ -74,9 +85,11 @@ In the second command, pipe the credential object to Export-Clixml, and save it 
 To import the credential automatically into your script, run the final two commands.
 This time, you are running Import-Clixml to import the secured credential object into your script.
 This eliminates the risk of exposing plain-text passwords in your script.
+
 ## PARAMETERS
 
 ### -Depth
+
 Specifies how many levels of contained objects are included in the XML representation.
 The default value is 2.
 
@@ -96,6 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Encoding
+
 Specifies the type of encoding for the target file.
 Valid values are ASCII, UTF8, UTF7, UTF32, Unicode, BigEndianUnicode, Default, and OEM.
 Unicode is the default.
@@ -113,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Causes the cmdlet to clear the read-only attribute of the output file if necessary.
 The cmdlet will attempt to reset the read-only attribute when the command completes.
 
@@ -129,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the object to be converted.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 You can also pipe objects to Export-Clixml.
@@ -146,6 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
+
 Ensures that the cmdlet does not overwrite the contents of an existing file.
 By default, if a file exists in the specified path, Export-Clixml overwrites the file without warning.
 
@@ -162,6 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path to the file where the XML representation of the object will be stored.
 
 ```yaml
@@ -177,6 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the path to the file where the XML representation of the object will be stored.
 Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -196,6 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -211,6 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -227,20 +248,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any object to Export-Clixml.
+
 ## OUTPUTS
 
 ### System.IO.FileInfo
+
 Export-Clixml creates a file that contains the XML.
+
 ## NOTES
 
 ## RELATED LINKS
 
-[Use PowerShell to Pass Credentials to Legacy Systems](http://blogs.technet.com/b/heyscriptingguy/archive/2011/06/05/use-powershell-to-pass-credentials-to-legacy-systems.aspx)
+[Use PowerShell to Pass Credentials to Legacy Systems](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/05/use-powershell-to-pass-credentials-to-legacy-systems/)
 
 [Securely Store Credentials on Disk](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
 

@@ -42,9 +42,9 @@ profile has the highest precedence.
 
 |Description               | Path                                     |
 |--------------------------|------------------------------------------|
-|Current user, Current Host|$Home\\[My ]Documents\\WindowsPowerShell  |
+|Current user, Current Host|$Home\\[My]Documents\\WindowsPowerShell   |
 |                          |  \\Profile.ps1                           |
-|Current User, All Hosts   |$Home\\[My ]Documents\\Profile.ps1        |
+|Current User, All Hosts   |$Home\\[My]Documents\\Profile.ps1         |
 |All Users, Current Host   |$PsHome\Microsoft.PowerShell_profile.ps1  |
 |All Users, All Hosts      |$PsHome\Profile.ps1                       |
 
@@ -61,7 +61,7 @@ supports the following host-specific profiles.
 
 |Description               | Path                                      |
 |--------------------------|-------------------------------------------|
-|Current user, Current Host|$Home\\[My ]Documents\\WindowsPowerShell   |
+|Current user, Current Host|$Home\\[My]Documents\\WindowsPowerShell    |
 |                          |  \\Microsoft.PowerShellISE_profile.ps1    |
 |All users, Current Host   |$PsHome\Microsoft.PowerShellISE_profile.ps1|
 

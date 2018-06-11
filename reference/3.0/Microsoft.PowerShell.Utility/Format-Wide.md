@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113304
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Format-Wide
 ---
-
 # Format-Wide
 
 ## SYNOPSIS
+
 Formats objects as a wide table that displays only one property of each object.
 
 ## SYNTAX
@@ -21,12 +21,14 @@ Format-Wide [[-Property] <Object>] [-AutoSize] [-Column <Int32>] [-GroupBy <Obje
 ```
 
 ## DESCRIPTION
+
 The `Format-Wide` cmdlet formats objects as a wide table that displays only one property of each object.
 You can use the **Property** parameter to determine which property is displayed.
 
 ## EXAMPLES
 
 ### Example 1: Format names of files in the current directory
+
 ```powershell
 PS C:\> Get-ChildItem | Format-Wide -Column 3
 ```
@@ -37,6 +39,7 @@ The pipeline operator (|) passes the file objects through the pipeline to `Forma
 The **Column** parameter specifies the number of columns.
 
 ### Example 2: Format names of registry keys
+
 ```powershell
 PS C:\> Get-ChildItem HKCU:\software\microsoft | Format-Wide -Property pschildname -AutoSize
 ```
@@ -50,6 +53,7 @@ The **Property** parameter specifies the name of the property, and the **AutoSiz
 ## PARAMETERS
 
 ### -AutoSize
+
 Adjusts the column size and number of columns based on the width of the data.
 By default, the column size and number are determined by the view.
 You cannot use the **AutoSize** and **Column** parameters in the same command.
@@ -67,6 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -Column
+
 Specifies the number of columns in the display.
 You cannot use the **AutoSize** and **Column** parameters in the same command.
 
@@ -83,6 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayError
+
 Displays errors at the command line.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Wide` command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **DisplayError** parameter with an expression.
@@ -107,6 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -Expand
+
 Formats the collection object, as well as the objects in the collection.
 This parameter is designed to format objects that support the ICollection (System.Collections) interface.
 The default value is **EnumOnly**.
@@ -131,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that this cmdlet overrides restrictions that prevent the command from succeeding, just so the changes do not compromise security.
 For example, **Force** will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
 
@@ -147,6 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupBy
+
 Formats the output in groups based on a shared property or value.
 Enter an expression or a property of the output.
 
@@ -171,6 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the objects to format.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -187,6 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies the object properties that appear in the display and the order in which they appear.
 Wildcards are permitted.
 
@@ -214,6 +225,7 @@ Accept wildcard characters: True
 ```
 
 ### -ShowError
+
 Sends errors through the pipeline.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Wide` command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **ShowError** parameter with an expression.
@@ -242,6 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -View
+
 Specifies the name of an alternate table format or view.
 You cannot use the **Property** and **View** parameters in the same command.
 
@@ -258,19 +271,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any object to `Format-Wide`.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.Internal.Format
+
 `Format-Wide` returns format objects that represent the table.
 
 ## NOTES
+
 You can also refer to `Format-Wide` by its built-in alias, `fw`. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 The **GroupBy** parameter assumes that the objects are sorted.
