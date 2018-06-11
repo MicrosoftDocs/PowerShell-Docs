@@ -55,7 +55,6 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 The `Get-Help` cmdlet displays information about PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers, aliases and scripts.
 
 To get help for a PowerShell command, type "Get-Help" followed by the command name, such as: `Get-Help Get-Process`.
-You can display the entire help topic or use the parameters of the `Get-Help` cmdlet to get selected parts of the topic, such as the syntax, parameters, or examples.
 
 Conceptual help topics in PowerShell begin with "about_", such as "about_Comparison_Operators".
 To see all "about_" topics, type `Get-Help about_*`.
@@ -146,24 +145,23 @@ The **Detailed** and **Full** parameters are effective only for the commands who
 They are not effective for the conceptual ("about_") help topics.
 
 ### Example 6
-```
-PS C:\> Get-Help Start-Service -Examples
+```powershell
+Get-Help Format-Table -Examples
+Get-Help Format-Table -Parameter GroupBy
+Get-Help Format-Table -Parameter *
 ```
 
-This command displays examples of using the Start-Service cmdlet.
-It uses the **Examples** parameter of **Get-Help** to display only the Examples section of the cmdlet help topics.
+These commands display selected parts of the `Format-Table` cmdlet help.
 
-The **Examples** parameter is effective only when help files for the command are installed on the computer.
+The **Examples** parameter displays only the NAME, SYNOPSIS, and all Examples.
+You can not specify an Example number because the **Examples** parameter is a switch parameter.
+
+The **Parameter** parameter displays only the descriptions of the specified parameters.
+If you specify only the wildcard character (`*`), it displays the descriptions of all parameters.
+
+These parameters are not effective for the conceptual ("about_") help topics.
 
 ### Example 7
-```
-PS C:\> Get-Help Format-List -Parameter GroupBy
-```
-
-This command uses the **Parameter** parameter of **Get-Help** to display a  detailed description of the **GroupBy** parameter of the Format-List cmdlet.
-For detailed descriptions of all parameters of the **Format-List** cmdlet, type "`Get-Help Format-List -Parameter *`".
-
-### Example 8
 ```
 PS C:\> Get-Help Add-Member -Full | Out-String -Stream | Select-String -Pattern Clixml
 ```
@@ -173,14 +171,14 @@ This command searches for the word "Clixml" in the full version of the help topi
 
 Because the **Get-Help** cmdlet generates a **MamlCommandHelpInfo** object, not a string, you need to use a cmdlet that transforms the help topic content into a string, such as Out-String or Out-File.
 
-### Example 9
+### Example 8
 ```
 PS C:\> Get-Help Get-Member -Online
 ```
 
 This command displays the online version of the help topic for the Get-Member cmdlet.
 
-### Example 10
+### Example 9
 ```
 PS C:\> Get-Help remoting
 ```
@@ -189,7 +187,7 @@ This command displays a list of topics that include the word "remoting."
 
 When you enter a word that does not appear in any topic title, **Get-Help** displays a list of topics that include that word.
 
-### Example 11
+### Example 10
 ```
 The first command uses the **Path** parameter of **Get-Help** to specify the provider path. This command can be entered at any path location.
 PS C:\> Get-Help Get-Item -Path SQLSERVER:\DataCollection
@@ -245,7 +243,7 @@ The example shows two ways of getting the provider-specific help for **Get-Item*
 You can also get provider-specific help for cmdlets online in the section that describes the provider.
 For example, for provider-specific online help for the New-Item cmdlet in each WSMan provider path, see http://go.microsoft.com/fwlink/?LinkID=158676http://go.microsoft.com/fwlink/?LinkID=158676.
 
-### Example 12
+### Example 11
 ```
 PS C:\> Get-Help C:\PS-Test\MyScript.ps1
 ```
