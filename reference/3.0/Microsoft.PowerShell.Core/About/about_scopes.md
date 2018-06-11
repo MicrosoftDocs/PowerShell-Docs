@@ -200,8 +200,8 @@ Get-Help * -Parameter scope
 ```
 
 To find the variables that are visible in a particular scope, use the Scope
-parameter of Get-Variable. The visible parameters include global parameters,
-parameters in the parent scope, and parameters in the current scope.
+parameter of Get-Variable. The visible variables include global variables,
+variables in the parent scope, and variables in the current scope.
 
 For example, the following command gets the variables that are visible in the
 local scope:
