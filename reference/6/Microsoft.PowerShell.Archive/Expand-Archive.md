@@ -7,33 +7,37 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821655
 external help file:  Microsoft.PowerShell.Archive-help.xml
 title:  Expand-Archive
 ---
-
 # Expand-Archive
 
 ## SYNOPSIS
+
 Extracts files from a specified archive (zipped) file.
 
 ## SYNTAX
 
 ### Path (Default)
-```powershell
+
+```
 Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
-```powershell
+
+```
 Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The `Expand-Archive` cmdlet extracts files from a specified zipped archive file to a specified destination folder.
 An archive file allows multiple files to be packaged, and optionally compressed, into a single zipped file for easier distribution and storage.
 
 ## EXAMPLES
 
 ### Example 1: Extract the contents of an archive
+
 ```powershell
 Expand-Archive -LiteralPath C:\Archives\Draft.Zip -DestinationPath C:\Reference
 ```
@@ -41,6 +45,7 @@ Expand-Archive -LiteralPath C:\Archives\Draft.Zip -DestinationPath C:\Reference
 This command extracts the contents of an existing archive file, Draft.zip, into the folder specified by the **DestinationPath** parameter, C:\Reference.
 
 ### Example 2: Extract the contents of an archive in the current folder
+
 ```powershell
 Expand-Archive -Path Draft.Zip -DestinationPath C:\Reference
 ```
@@ -50,6 +55,7 @@ This command extracts the contents of an existing archive file in the current fo
 ## PARAMETERS
 
 ### -DestinationPath
+
 Specifies the path to the folder in which you want the command to save extracted files.
 Enter the path to a folder, but do not specify a file name or file name extension.
 This parameter is required.
@@ -67,6 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -82,6 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the path to an archive file.
 Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
 Wildcard characters are not supported.
@@ -100,6 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path to the archive file.
 
 ```yaml
@@ -115,6 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -130,6 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -146,16 +157,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains a path to an existing archive file.
 
 ## OUTPUTS
 
-### System.IO.FileInfo or System.IO.DirectoryInfo
+### None
 
 ## NOTES
 
