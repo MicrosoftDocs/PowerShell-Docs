@@ -52,71 +52,44 @@ The default is Workstation.
 ### Example 2: Change the startup type of services
 
 ```powershell
-Get-WMIObject win32_service -Filter "name = 'SysmonLog'"
+Set-Service -Name BITS -StartupType Automatic
+Get-Service BITS | Select-Object Name, StartType, Status
 ```
 
 ```Output
-ExitCode  : 0
-Name      : SysmonLog
-ProcessId : 0
-StartMode : Manual
-State     : Stopped
-Status    : OK
-Set-Service -Name "sysmonlog" -StartupType automatic
-Get-WMIObject win32_service -Filter "name = 'SysmonLog'"
-ExitCode  : 0
-Name      : SysmonLog
-ProcessId : 0
-StartMode : Auto
-State     : Stopped
-Status    : OK
-
-```powershell
-Get-WMIObject win32_service | Format-Table Name, StartMode -auto
+Name StartType  Status
+---- ---------  ------
+BITS      Auto Stopped
 ```
 
-```Output
-Name                                  StartMode
-----                                  ---------
-AdtAgent                              Auto
-Alerter                               Disabled
-ALG                                   Manual
-AppMgmt                               Manual
-...
-```
-
-These commands get the startup type of the Performance Logs and Alerts (SysmonLog) service, set the start mode to automatic, and then display the result of the change.
-
-These commands use the **Get-WmiObject** cmdlet to get the **Win32_Service** object for the service, because the **ServiceController** object that **Get-Service** returns does not include the start mode.
-
-The first command uses the **Get-WmiObject** cmdlet to get the Windows Management Instrumentation (WMI) object that represents the **SysmonLog** service.
-The default output of this command displays the start mode of the service.
-
-The second command uses Set-Service to change the start mode to automatic.
-Then, the first command is repeated to display the change.
-
-The final command displays the start mode of all services on the computer.
+These commands get the startup type of the Background Intelligent Transfer Service (BITS) service, set the start mode to automatic, and then display the result of the change.
 
 ### Example 3: Change the description of a service
 
 ```powershell
-Set-Service -Name "Schedule" -Description "Configures and schedules tasks."
-Get-WMIObject win32_service | Where-Object {$_.Name -eq "Schedule"} | Format-List Name, Description
+Get-CimInstance Win32_Service -Filter 'Name = "BITS"'  | Format-List  Name, Description
 ```
 
-These commands change the description of the Task Scheduler service and then display the result.
+```Output
+Name        : BITS
+Description : Transfers files in the background using idle network bandwidth. If the service is
+              disabled, then any applications that depend on BITS, such as Windows Update or MSN
+              Explorer, will be unable to automatically download programs and other information.
+```
 
-These commands use the **Get-WmiObject** cmdlet to get the **Win32_Service** object for the service, because the **ServiceController** object that **Get-Service** returns does not include the service description.
+```powershell
+Set-Service -Name BITS -Description "Transfers files in the background using idle network bandwidth."
+Get-CimInstance Win32_Service -Filter 'Name = "BITS"'  | Format-List  Name, Description
+```
 
-The first command changes the description.
-It identifies the service by using the service name of the service, Schedule.
+```Output
+Name        : BITS
+Description : Transfers files in the background using idle network bandwidth.
+```
 
-The second command uses the **Get-WmiObject** cmdlet to get an instance of the WMI **Win32_Service** that represents the Task Scheduler service.
-The first element in the command gets all instances of the **Win32_service** class.
+These commands change the description of the BITS service and then display the result.
 
-The pipeline operator (|) passes the result to the Where-Object cmdlet, which selects instances with a value of Schedule in the **Name** property.
-
-Another pipeline operator sends the result to the Format-List cmdlet, which formats the output as a list that has only the **Name** and **Description** properties.
+These commands use the **Get-CimInstance** cmdlet to get the **Win32_Service** object for the service, because the **ServiceController** object that **Get-Service** returns does not include the service description.
 
 ### Example 4: Start a service
 
@@ -188,7 +161,7 @@ Specifies a new description for the service.
 
 The service description appears in Services in Computer Management.
 Description is not a property of the **ServiceController** object that Get-Service gets.
-To see the service description, use Get-WmiObject to get a **Win32_Service** object that represents the service.
+To see the service description, use Get-CimInstance to get a **Win32_Service** object that represents the service.
 
 ```yaml
 Type: String
