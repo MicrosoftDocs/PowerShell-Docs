@@ -430,12 +430,12 @@ on the value of a variable.
 ```powershell
 $i = 1
 $c = "LastName, FirstName; Address, City, State, Zip"
-$c -split {if ($i -lt 1) {$-eq ","} else {$-eq ";"}}
+$c -split $(if ($i -lt 1) {","} else {";"})
 ```
 
 ```Output
 LastName, FirstName
-Address, City, State, Zip
+ Address, City, State, Zip
 ```
 
 ## SEE ALSO

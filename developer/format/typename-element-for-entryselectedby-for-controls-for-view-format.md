@@ -1,0 +1,61 @@
+---
+title: "TypeName Element for EntrySelectedBy for Controls for View (Format) | Microsoft Docs"
+ms.custom: ""
+ms.date: "09/13/2016"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: 52003450-07ca-41e5-b075-8b6b03fc6e88
+caps.latest.revision: 6
+---
+# TypeName Element for EntrySelectedBy for Controls for View (Format)
+
+Specifies a .NET Framework type that uses this definition of the control. This element is used when defining controls that can be used by a view.
+
+Configuration Element (Format)
+ViewDefinitions Element (Format)
+View Element (Format)
+Controls Element (Format)
+Control Element for Controls for View (Format)
+CustomControl Element for Control for Controls for View (Format)
+CustomEntries Element for CustomControl for Controls for View (Format)
+CustomEntry Element for CustomEntries for Controls for View (Format)
+TypeName Element for EntrySelectedBy for Controls for View (Format)
+
+## Syntax
+
+```xml
+<TypeName>Nameof.NetType</TypeName>
+
+```
+
+## Attributes and Elements
+
+The following sections describe attributes, child elements, and the parent element of the `TypeName` element.
+
+### Attributes
+
+None.
+
+### Child Elements
+
+None.
+
+### Parent Elements
+
+|Element|Description|
+|-------------|-----------------|
+|[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
+
+## Text Value
+
+Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+
+## Remarks
+
+## See Also
+
+[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

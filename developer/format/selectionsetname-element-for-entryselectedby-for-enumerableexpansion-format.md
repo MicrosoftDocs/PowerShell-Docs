@@ -1,0 +1,64 @@
+---
+title: "SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format) | Microsoft Docs"
+ms.custom: ""
+ms.date: "09/13/2016"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: 936d09f2-2c48-49e8-ab2d-0c8729199a2e
+caps.latest.revision: 8
+---
+# SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)
+
+Specifies the set of .NET Framework types that are expanded by this definition.
+
+Configuration Element (Format)
+DefaultSettings Element (Format)
+EnumerableExpansions Element (Format)
+EnumerableExpansion Element (Format)
+EntrySelectedBy Element for EnumerableExpansion (Format)
+SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)
+
+## Syntax
+
+```xml
+<SelectionSetName>NameofSelectionSet</SelectionSetName>
+
+```
+
+## Attributes and Elements
+
+The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.
+
+### Attributes
+
+None.
+
+### Child Elements
+
+None.
+
+### Parent Elements
+
+|Element|Description|
+|-------------|-----------------|
+|[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Defines the .NET Framework collection objects that are expanded by this definition.|
+
+## Text Value
+
+Specify the name of the selection set.
+
+## Remarks
+
+Each definition must specify one or more type names, a selection set, or a selection condition.
+
+Selection sets are typically used when you want to define a group of objects that are used in multiple views. For example, you might want to create a table view and a list view for the same set of objects. For more information about defining selection sets, see [Defining Sets of Objects for a View](./defining-selection-sets.md).
+
+## See Also
+
+[Defining Selection Sets](./defining-selection-sets.md)
+
+[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
