@@ -1,0 +1,43 @@
+---
+title: "Validating Parameter Input | Microsoft Docs"
+ms.custom: ""
+ms.date: "09/13/2016"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords:
+  - "parameters, validation rules"
+  - "validation, examples"
+  - "validation"
+ms.assetid: 3f15bf20-a068-4a7d-a170-bc43f755d1fe
+caps.latest.revision: 14
+---
+# Validating Parameter Input
+
+Windows PowerShell can validate the arguments passed to cmdlet parameters in several ways. Windows PowerShell can validate the length, the range, and the pattern of the characters of the argument. It can validate the number of arguments available (the count). These validation rules are defined by validation attributes that are declared with the Parameter attribute on public properties of the cmdlet class.
+
+To validate a parameter argument, the Windows PowerShell runtime uses the information provided by the validation attributes to confirm the value of the parameter before the cmdlet is run. If the parameter input is not valid, the user receives an error message. Each validation parameter defines a validation rule that is enforced by Windows PowerShell.
+
+Windows PowerShell enforces the validation rules based on the following attributes.
+
+ValidateCount
+Specifies the minimum and maximum number of arguments that a parameter can accept. For more information about the syntax used to declare this attribute, see [ValidateCount Attribute Declaration](./validatecount-attribute-declaration.md).
+
+ValidateLength
+Specifies the minimum and maximum number of characters in the parameter argument. For more information about the syntax used to declare this attribute, see [ValidateLength Attribute Declaration](./validatelength-attribute-declaration.md).
+
+ValidatePattern
+Specifies a regular expression that validates the parameter argument. For more information about the syntax used to declare this attribute, see [ValidatePattern Attribute Declaration](./validatepattern-attribute-declaration.md).
+
+ValidateRange
+Specifies the minimum and maximum values of the parameter argument. For more information about the syntax used to declare this attribute, see [ValidateRange Attribute Declaration](./validaterange-attribute-declaration.md).
+
+ValidateSet
+Specifies the valid values for the parameter argument. For more information about the syntax used to declare this attribute, see [ValidateSet Attribute Declaration](./validateset-attribute-declaration.md).
+
+## See Also
+
+[How to Validate Parameter Input](./how-to-validate-parameter-input.md)
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
