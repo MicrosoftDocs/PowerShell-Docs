@@ -1,7 +1,7 @@
 {
     "build": {
         "content": [
-            { "files": ["bread-pscore/toc.yml"] },
+            { "files": ["bread/toc.yml"] },
 
             { "files": ["toc.yml"], "src": "docs-conceptual", "version": "powershell-3.0", "dest": "scripting/powershell-3.0" },
             { "files": ["**/*.md"], "src": "docs-conceptual", "version": "powershell-3.0", "dest": "scripting" },
@@ -49,7 +49,7 @@
         "overwrite": [],
         "externalReference": [],
         "globalMetadata": {
-            "breadcrumb_path": "~/bread/toc.yml",
+            "breadcrumb_path": "bread/toc.yml",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "apiPlatform": "powershell",
             "ms.devlang": "powershell",
