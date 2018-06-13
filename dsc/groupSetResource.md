@@ -72,5 +72,5 @@ $cd = @{
 GroupSetTest -ConfigurationData $cd
 ```
 
-> [!NOTE] This example uses plaintext credentials for simplicity. For information about how to encrypt credentials in the configuration MOF file, see
-> [Securing the MOF File](secureMOF.md).
+> [!NOTE] 
+> This example uses plaintext credentials for simplicity. For information about how to encrypt credentials in the configuration MOF file, see [Securing the MOF File](secureMOF.md).
