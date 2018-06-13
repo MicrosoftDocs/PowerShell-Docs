@@ -6,7 +6,6 @@ title:  Add-PswaAuthorizationRule
 schema:   2.0.0
 ---
 
-
 # Add-PswaAuthorizationRule
 
 ## SYNOPSIS
@@ -17,21 +16,25 @@ authorization rule set.
 ## Syntax
 
 ### UserGroupNameComputerGroupName
+
 ```
 Add-PswaAuthorizationRule -ComputerGroupName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
 ### UserGroupNameComputerName
+
 ```
 Add-PswaAuthorizationRule -ComputerName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
 ### UserNameComputerGroupName
+
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> -ComputerGroupName <String> -ConfigurationName <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
 ### UserNameComputerName
+
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-ConfigurationName] <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
@@ -76,7 +79,7 @@ section of the sign-in page). For an example of this, see Example 6.
 
 ## Parameters
 
-### -ComputerGroupName&lt;String&gt;
+### -ComputerGroupName \<String\>
 
 Specifies the name of a computer group in Active Directory Domain
 Services (AD DS) or local groups to which this rule grants access.
@@ -90,7 +93,7 @@ Services (AD DS) or local groups to which this rule grants access.
 | Accept Pipeline Input?               | True (ByPropertyName)                |
 | Accept Wildcard Characters?          | false                                |
 
-### -ComputerName&lt;String&gt;
+### -ComputerName \<String\>
 
 Specifies the computer name to which this rule grants access.
 
@@ -103,7 +106,7 @@ Specifies the computer name to which this rule grants access.
 | Accept Pipeline Input?               | True (ByPropertyName)                |
 | Accept Wildcard Characters?          | false                                |
 
-### -ConfigurationName&lt;String&gt;
+### -ConfigurationName \<String\>
 
 Specifies the name of the Windows PowerShell session configuration, also
 known as runspace, to which this rule grants access.
@@ -117,7 +120,7 @@ known as runspace, to which this rule grants access.
 | Accept Pipeline Input?               | True (ByPropertyName)                |
 | Accept Wildcard Characters?          | false                                |
 
-### -Credential&lt;PSCredential&gt;
+### -Credential  \<PSCredential\>
 
 Specifies a **PSCredential** object for a user account that you want to
 use to change Windows PowerShell Web Access authorization rules. If you
@@ -153,7 +156,7 @@ is in a workgroup.
 | Accept Pipeline Input?               | false                                |
 | Accept Wildcard Characters?          | false                                |
 
-### -RuleName&lt;String&gt;
+### -RuleName \<String\>
 
 Specifies the friendly name for this rule.
 
@@ -166,7 +169,7 @@ Specifies the friendly name for this rule.
 | Accept Pipeline Input?               | True (ByPropertyName)                |
 | Accept Wildcard Characters?          | false                                |
 
-### -UserGroupName&lt;String\[\]&gt;
+### -UserGroupName \<String\[\]\>
 
 Specifies the name of one or more user groups in AD DS or local groups
 to which this rule grants access.
@@ -180,7 +183,7 @@ to which this rule grants access.
 | Accept Pipeline Input?               | True (ByPropertyName)                |
 | Accept Wildcard Characters?          | false                                |
 
-### -UserName&lt;String\[\]&gt;
+### -UserName \<String\[\]\>
 
 Specifies one or more users to which this rule grants access. The user
 name can be a local user account on the gateway computer or a user in AD
@@ -196,7 +199,7 @@ The format is `domain\user` or `computer\user`.
 | Accept Pipeline Input?               | True (ByValue, ByPropertyName)       |
 | Accept Wildcard Characters?          | false                                |
 
-### &lt;CommonParameters&gt;
+###  \<CommonParameters\>
 
 This cmdlet supports the common parameters:
 -Verbose,
@@ -248,7 +251,7 @@ Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\
 
 This example grants access to the default Windows PowerShell session
 configuration, `Microsoft.PowerShell`, on *srv2* for users in the users
-named contoso\\user1, contoso\\user2, and contoso\\user3. This cmdlet
+named `contoso\user1`, `contoso\user2`, and `contoso\user3`. This cmdlet
 creates three rules (1 per person).
 
 ```PowerShell
@@ -259,7 +262,7 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 
 This example illustrates how to input user name values via the pipeline.
 
-```
+```powershell
 "contoso\user1","contoso\user2" | Add-pswaAuthorizationRule –ComputerName srv2.contoso.com –ConfigurationName Microsoft.PowerShell
 ```
 
@@ -280,7 +283,7 @@ $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Micros
 ### EXAMPLE 5
 
 This example adds a rule to allow the local user named
-*PswaServer\\ChrisLocal* access to the server named *srv1.contoso.com*.
+`PswaServer\ChrisLocal` access to the server named **srv1.contoso.com**.
 
 This example illustrates a scenario where the gateway is in a workgroup
 and the destination computer is in a domain. The authorization rule
@@ -291,7 +294,7 @@ area. The gateway server uses the additional set of credentials to
 authenticate the user on the destination computer, a server named
 *srv1.contoso.com*.
 
-````
+````powershell
 Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1.contoso.com –ConfigurationName Microsoft.PowerShell
 ````
 
@@ -309,10 +312,16 @@ Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
 
 ## See Also
 
-- [Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)
-- [Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
-- [Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
-- [Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
-- [Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
-- [New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
-- [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)
+[Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)
+
+[Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
+
+[Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
+
+[Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
+
+[Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
+
+[New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
+
+[Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)

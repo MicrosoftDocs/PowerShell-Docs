@@ -3,8 +3,8 @@ ms.date:  08/09/2017
 keywords:  powershell,cmdlet,download,install,setup,windows 10, windows 8.1, windows 8.0,windows 7
 title:  Installing Windows PowerShell
 ---
-
 # Installing Windows PowerShell
+
 Windows PowerShell comes installed by default in every Windows, starting with Windows 7 SP1 and Windows Server 2008 R2 SP1.
 
 If you are interested in PowerShell 6 and later, you need to install PowerShell Core instead of Windows PowerShell. For that, see [Installing PowerShell Core on Windows](Installing-PowerShell-Core-on-Windows.md).
@@ -86,21 +86,22 @@ Windows 8.1<br/>Windows Server 2012 R2 | - | installed | [WMF 5.0](https://www.m
 Windows 8<br/>Windows Server 2012 | installed | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
-> **Note 1**:
-  >>
-  >> On the initial release of Windows 10, with automatic updates enabled, PowerShell gets updated from version 5.0 to 5.1.
-  >>
-  >> If the original version of Windows 10 is not updated through Windows Updates, the version of PowerShell is 5.0.
+> [!NOTE]
+>
+> On the initial release of Windows 10, with automatic updates enabled, PowerShell gets updated from version 5.0 to 5.1.
+>
+> If the original version of Windows 10 is not updated through Windows Updates, the version of PowerShell is 5.0.
 
 ## Need Azure PowerShell
 
 If you're looking for **Azure PowerShell**,
-you could start with [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure).
+you could start with [Overview of Azure PowerShell](/powershell/azure/overview).
 
 Otherwise, what you might need is
-[Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps)
+[Install and configure Azure PowerShell](/powershell/azure/install-azurerm-ps)
 
 ## See Also
 
-- [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
-- [Starting Windows PowerShell](Starting-Windows-PowerShell.md)
+[Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
+
+[Starting Windows PowerShell](Starting-Windows-PowerShell.md)
