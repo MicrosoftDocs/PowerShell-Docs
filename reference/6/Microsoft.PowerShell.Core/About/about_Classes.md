@@ -616,8 +616,21 @@ You can, however, use interfaces for that purpose.
 
 Inheritance implementation is defined by the `:` operator;
 which means to extend this class or implements these interfaces.
-The base class should always be leftmost in the class declaration;
-interface declarations always come after the base class.
+The derived class should always be leftmost in the class declaration.
+
+### EXAMPLE: SIMPLE INHERITANCE SYNTAX
+
+This example shows the simple PowerShell class inheritance syntax.
+
+```powershell
+Class Derived : Base {...}
+```
+
+This example shows inheritance with interface declaration comeing after the base class.
+
+```powershell
+Class Derived : Base.Interface {...}
+```
 
 ### EXAMPLE: SIMPLE INHERITANCE IN POWERSHELL CLASSES
 

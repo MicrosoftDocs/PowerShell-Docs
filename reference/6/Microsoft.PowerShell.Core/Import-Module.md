@@ -607,7 +607,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Indicates that this cmdlet re-imports a module and its members, even if the module or its members have an access mode of read-only.
+This parameter causes a module to be loaded, or reloaded, over top of the current one
 
 ```yaml
 Type: SwitchParameter
