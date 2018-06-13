@@ -5,7 +5,6 @@ keywords:  wmf,powershell,setup
 contributor:  ryanpu
 title:  Improvements to Just Enough Administration (JEA)
 ---
-
 # Improvements to Just Enough Administration (JEA)
 
 ## Constrained file copy to/from JEA endpoints
@@ -13,7 +12,7 @@ title:  Improvements to Just Enough Administration (JEA)
 You can now remotely copy files to/from a JEA endpoint and rest assured that the connecting user can't copy just *any* file on your system.
 This is possible by configuring your PSSC file to mount a user drive for connecting users.
 The user drive is a new PSDrive that is unique to each connecting user and persists across sessions.
-When Copy-Item is used to copy files to or from a JEA session, it is constrained to only allow access to the user drive.
+When `Copy-Item` is used to copy files to or from a JEA session, it is constrained to only allow access to the user drive.
 Attempts to copy files to any other PSDrive will fail.
 
 To set up the user drive in your JEA session configuration file, use the following new fields:
@@ -25,7 +24,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 The folder backing the user drive will be created at `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-To utilize the user drive and copy files to/from a JEA endpoint configured to expose the User drive, use the `-ToSession` and `-FromSession` parameters on Copy-Item.
+To utilize the user drive and copy files to/from a JEA endpoint configured to expose the User drive, use the `-ToSession` and `-FromSession` parameters on `Copy-Item`.
 
 ```powershell
 # Connect to the JEA endpoint
@@ -59,7 +58,8 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> **Note:** Group Managed Service Accounts do not afford the isolation or limited scope of virtual accounts.
+> [!NOTE]
+> Group Managed Service Accounts do not afford the isolation or limited scope of virtual accounts.
 > Every connecting user will share the same gMSA identity, which may have permissions across your entire enterprise.
 > Be very careful when selecting to use a gMSA, and always prefer virtual accounts which are limited to the local machine when possible.
 
@@ -86,5 +86,6 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ```
 
 ## Fixed: Virtual accounts are now supported on Windows Server 2008 R2
+
 In WMF 5.1, you are now able to use virtual accounts on Windows Server 2008 R2, enabling consistent configurations and feature parity across Windows Server 2008 R2 - 2016.
 Virtual accounts remain unsupported when using JEA on Windows 7.
