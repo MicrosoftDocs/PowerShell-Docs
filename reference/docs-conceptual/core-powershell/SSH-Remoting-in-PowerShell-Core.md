@@ -1,3 +1,4 @@
+
 # PowerShell Remoting Over SSH
 
 ## Overview
@@ -11,9 +12,9 @@ PowerShell SSH remoting lets you do basic PowerShell session remoting between Wi
 This is done by creating a PowerShell hosting process on the target machine as an SSH subsystem.
 Eventually this will be changed to a more general hosting model similar to how WinRM works in order to support endpoint configuration and JEA.
 
-The New-PSSession, Enter-PSSession and Invoke-Command cmdlets now have a new parameter set to facilitate this new remoting connection
+The `New-PSSession`, `Enter-PSSession` and `Invoke-Command` cmdlets now have a new parameter set to facilitate this new remoting connection
 
-```powershell
+```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
@@ -25,7 +26,7 @@ But you also have the option to use SSH key authentication and provide a private
 ## General setup information
 
 SSH is required to be installed on all machines.
-You should install both client (ssh.exe) and server (sshd.exe) so that you can experiment with remoting to and from the machines.
+You should install both client (`ssh.exe`) and server (`sshd.exe`) so that you can experiment with remoting to and from the machines.
 For Windows you will need to install [Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).
 For Linux you will need to install SSH (including sshd server) appropriate to your platform.
 You will also need a recent PowerShell build or package from GitHub having the SSH remoting feature.
@@ -35,117 +36,120 @@ In addition you will need to enable password authentication and optionally key b
 ## Setup on Windows Machine
 
 1. Install the latest version of [PowerShell Core for Windows]
-    - You can tell if it has the SSH remoting support by looking at the parameter sets for New-PSSession
+   - You can tell if it has the SSH remoting support by looking at the parameter sets for `New-PSSession`
 
-    ```powershell
-    PS> Get-Command New-PSSession -syntax
-    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
-    ```
+   ```powershell
+   Get-Command New-PSSession -syntax
+   ```
 
-1. Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions
-1. Edit the sshd_config file at the location where you installed Win32 OpenSSH
-    - Make sure password authentication is enabled
+   ```output
+   New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
+   ```
 
-    ```
-    PasswordAuthentication yes
-    ```
+2. Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions
+3. Edit the sshd_config file at the location where you installed Win32 OpenSSH
+   - Make sure password authentication is enabled
 
-    - Add a PowerShell subsystem entry, replace `c:/program files/powershell/6.0.0/pwsh.exe` with the correct path to the version you want to use
+   ```
+   PasswordAuthentication yes
+   ```
 
-    ```
-    Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+   - Add a PowerShell subsystem entry, replace `c:/program files/powershell/6.0.0/pwsh.exe` with the correct path to the version you want to use
 
-    - Optionally enable key authentication
+   ```
+   Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+   ```
 
-    ```
-    PubkeyAuthentication yes
-    ```
+   - Optionally enable key authentication
 
-1. Restart the sshd service
+   ```
+   PubkeyAuthentication yes
+   ```
 
-    ```powershell
-    Restart-Service sshd
-    ```
+4. Restart the sshd service
 
-1. Add the path where OpenSSH is installed to your Path Env Variable
-    - This should be along the lines of `C:\Program Files\OpenSSH\`
-    - This allows for the ssh.exe to be found
+   ```powershell
+   Restart-Service sshd
+   ```
+
+5. Add the path where OpenSSH is installed to your Path Env Variable
+   - This should be along the lines of `C:\Program Files\OpenSSH\`
+   - This allows for the ssh.exe to be found
 
 ## Setup on Linux (Ubuntu 14.04) Machine
 
 1. Install the latest [PowerShell Core for Linux] build from GitHub
-1. Install [Ubuntu SSH] as needed
+2. Install [Ubuntu SSH] as needed
 
-    ```bash
-    sudo apt install openssh-client
-    sudo apt install openssh-server
-    ```
+   ```bash
+   sudo apt install openssh-client
+   sudo apt install openssh-server
+   ```
 
-1. Edit the sshd_config file at location /etc/ssh
-    - Make sure password authentication is enabled
+3. Edit the sshd_config file at location /etc/ssh
+   - Make sure password authentication is enabled
 
-    ```
-    PasswordAuthentication yes
-    ```
+   ```
+   PasswordAuthentication yes
+   ```
 
-    - Add a PowerShell subsystem entry
+   - Add a PowerShell subsystem entry
 
-    ```
-    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
-    ```
+   ```
+   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
+   ```
 
-    - Optionally enable key authentication
+   - Optionally enable key authentication
 
-    ```
-    PubkeyAuthentication yes
-    ```
+   ```
+   PubkeyAuthentication yes
+   ```
 
-1. Restart the sshd service
+4. Restart the sshd service
 
-    ```bash
-    sudo service sshd restart
-    ```
+   ```bash
+   sudo service sshd restart
+   ```
 
 ## Setup on MacOS Machine
 
 1. Install the latest [PowerShell Core for MacOS] build
-    - Make sure SSH Remoting is enabled by following these steps:
-      - Open `System Preferences`
-      - Click on `Sharing`
-      - Check `Remote Login` - Should say `Remote Login: On`
-      - Allow access to appropriate users
-1. Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`
-    - Use your favorite editor or
+   - Make sure SSH Remoting is enabled by following these steps:
+     - Open `System Preferences`
+     - Click on `Sharing`
+     - Check `Remote Login` - Should say `Remote Login: On`
+     - Allow access to appropriate users
+2. Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`
+   - Use your favorite editor or
 
-    ```bash
-    sudo nano /private/etc/ssh/sshd_config
-    ```
+     ```bash
+     sudo nano /private/etc/ssh/sshd_config
+     ```
 
-    - Make sure password authentication is enabled
+   - Make sure password authentication is enabled
 
-    ```
-    PasswordAuthentication yes
-    ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-    - Add a PowerShell subsystem entry
+   - Add a PowerShell subsystem entry
 
-    ```
-    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
+     ```
 
-    - Optionally enable key authentication
+   - Optionally enable key authentication
 
-    ```
-    PubkeyAuthentication yes
-    ```
+     ```
+     PubkeyAuthentication yes
+     ```
 
-1. Restart the sshd service
+3. Restart the sshd service
 
-    ```bash
-    sudo launchctl stop com.openssh.sshd
-    sudo launchctl start com.openssh.sshd
-    ```
+   ```bash
+   sudo launchctl stop com.openssh.sshd
+   sudo launchctl start com.openssh.sshd
+   ```
 
 ## PowerShell Remoting Example
 
@@ -158,67 +162,107 @@ You can do the same thing on a Windows machine to ensure remoting is working the
 #
 # Linux to Linux
 #
-PS /home/TestUser> $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
+$session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
+```
+
+```output
 The authenticity of host 'UbuntuVM1 (9.129.17.107)' cannot be established.
 ECDSA key fingerprint is SHA256:2kCbnhT2dUE6WCGgVJ8Hyfu1z2wE4lifaJXLO7QJy0Y.
 Are you sure you want to continue connecting (yes/no)?
 TestUser@UbuntuVM1s password:
+```
 
-PS /home/TestUser> $session
+```powershell
+$session
+```
 
+```output
  Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
  -- ----            ------------    ------------    -----         -----------------     ------------
   1 SSH1            UbuntuVM1       RemoteMachine   Opened        DefaultShell             Available
+```
 
-PS /home/TestUser> Enter-PSSession $session
+```powershell
+Enter-PSSession $session
+```
 
+```output
 [UbuntuVM1]: PS /home/TestUser> uname -a
 Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
 [UbuntuVM1]: PS /home/TestUser> Exit-PSSession
+```
 
-PS /home/TestUser> Invoke-Command $session -ScriptBlock { Get-Process powershell }
+```powershell
+Invoke-Command $session -ScriptBlock { Get-Process powershell }
+```
 
+```output
 Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                    PSComputerName
 -------  ------    -----      -----     ------     --  -- -----------                    --------------
       0       0        0         19       3.23  10635 635 powershell                     UbuntuVM1
       0       0        0         21       4.92  11033 017 powershell                     UbuntuVM1
       0       0        0         20       3.07  11076 076 powershell                     UbuntuVM1
+```
 
-
+```powershell
 #
 # Linux to Windows
 #
-PS /home/TestUser> Enter-PSSession -HostName WinVM1 -UserName PTestName
+Enter-PSSession -HostName WinVM1 -UserName PTestName
+```
+
+```output
 PTestName@WinVM1s password:
+```
 
+```powershell
 [WinVM1]: PS C:\Users\PTestName\Documents> cmd /c ver
+```
 
+```output
 Microsoft Windows [Version 10.0.10586]
+```
 
-[WinVM1]: PS C:\Users\PTestName\Documents>
-
+```powershell
 #
 # Windows to Windows
 #
 C:\Users\PSUser\Documents>pwsh.exe
+```
+
+```output
 PowerShell
 Copyright (c) Microsoft Corporation. All rights reserved.
+```
 
-PS C:\Users\PSUser\Documents> $session = New-PSSession -HostName WinVM2 -UserName PSRemoteUser
+```powershell
+$session = New-PSSession -HostName WinVM2 -UserName PSRemoteUser
+```
+
+```output
 The authenticity of host 'WinVM2 (10.13.37.3)' can't be established.
 ECDSA key fingerprint is SHA256:kSU6slAROyQVMEynVIXAdxSiZpwDBigpAF/TXjjWjmw.
 Are you sure you want to continue connecting (yes/no)?
 Warning: Permanently added 'WinVM2,10.13.37.3' (ECDSA) to the list of known hosts.
 PSRemoteUser@WinVM2's password:
-PS C:\Users\PSUser\Documents> $session
+```
 
+```powershell
+$session
+```
+
+```output
  Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
  -- ----            ------------    ------------    -----         -----------------     ------------
   1 SSH1            WinVM2          RemoteMachine   Opened        DefaultShell             Available
+```
 
+```powershell
+Enter-PSSession -Session $session
+```
 
-PS C:\Users\PSUser\Documents> Enter-PSSession -Session $session
+```output
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents> $PSVersionTable
 
 Name                           Value
@@ -239,11 +283,18 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### Known Issues
 
-1. sudo command does not work in remote session to Linux machine.
+- sudo command does not work in remote session to Linux machine.
 
-[PowerShell Core for Windows]: ../setup/installing-powershell-core-on-windows.md#msi
-[PowerShell Core for Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
-[PowerShell Core for MacOS]: ../setup/installing-powershell-core-on-macos.md
-[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
-[installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
+## See Also
+
+[PowerShell Core for Windows](../setup/installing-powershell-core-on-windows.md#msi)
+
+[PowerShell Core for Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
+
+[PowerShell Core for MacOS](../setup/installing-powershell-core-on-macos.md)
+
+[Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
+
+[installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
+
+[Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
