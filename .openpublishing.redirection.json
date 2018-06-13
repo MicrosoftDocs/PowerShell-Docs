@@ -1,7 +1,7 @@
 {
     "redirections": [{
             "source_path": "gallery/index.md",
-            "redirect_url": "/powershell/gallery/readme",
+            "redirect_url": "/powershell/gallery/overview",
             "redirect_document_id": "False"
         },
         {
@@ -14804,10 +14804,10 @@
             "redirect_url": "/powershell/module/powershellget/Update-ScriptFileInfo",
             "redirect_document_id": false
         },
-                     {
+        {
             "source_path": "wmf/5.0/install.md",
             "redirect_url": "/powershell/wmf/5.0/requirements",
             "redirect_document_id": false
-                     }
+        }
     ]
 }
