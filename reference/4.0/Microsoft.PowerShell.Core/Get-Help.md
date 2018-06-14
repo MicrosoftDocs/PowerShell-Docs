@@ -107,13 +107,18 @@ Get-Help *
 This command displays a list of all help topics available on your system.
 
 ### Example 3
-```
-PS C:\> Get-Help Get-Alias
-PS C:\> Get-Alias -?
+```powershell
+Get-Help Format-Table
+Get-Help -Name Format-Table
+Format-Table -?
 ```
 
-These commands display basic information about the Get-Alias cmdlet.
-The "Get-Help" and "-?" commands display the information on a single page.
+These commands display basic information about the `Format-Table` cmdlet.
+
+`Get-Help <name>` is the simplest and default syntax of `Get-Help` cmdlet.
+You can omit the parameter name (**Name**).
+
+`<command-name> -?` works only for commands.
 
 ### Example 4
 ```powershell
