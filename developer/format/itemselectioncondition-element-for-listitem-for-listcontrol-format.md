@@ -1,0 +1,68 @@
+---
+title: "ItemSelectionCondition Element for ListItem for ListControl (Format) | Microsoft Docs"
+ms.custom: ""
+ms.date: "09/13/2016"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: d2668aea-37e9-4753-a4e9-7980ae5ec2eb
+caps.latest.revision: 10
+---
+# ItemSelectionCondition Element for ListItem for ListControl (Format)
+
+Defines the condition that must exist for this list item to be used.
+
+Configuration Element (Format)
+ViewDefinitions Element (Format)
+View Element (Format)
+ListControl Element (Format)
+ListEntries Element for ListControl (Format)
+ListEntry Element for ListEntries for ListControl (Format)
+ListItems Element for ListEntry for ListControl(Format)
+ListItem Element Element for ListItemes for ListControl (Format)
+ItemSelectionCondition Element for ListItem for ListControl (Format)
+
+## Syntax
+
+```xml
+<ItemSelectionCondition>
+  <PropertyName>.NetTypeProperty</PropertyName>
+  <ScriptBlock>ScriptToEvaluate</ScriptBlock>
+</ItemSelectionCondition>
+```
+
+## Attributes and Elements
+
+The following sections describe attributes, child elements, and the parent element of the `ItemSelectionCondition` element.
+
+### Attributes
+
+None.
+
+### Child Elements
+
+|Element|Description|
+|-------------|-----------------|
+|[PropertyName Element for ItemSelectionCondition for ListControl (Format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the .NET Framework property that triggers the condition.|
+|[ScriptBlock Element for ItemSelectionCondition for ListControl (Format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
+
+### Parent Elements
+
+|Element|Description|
+|-------------|-----------------|
+|[ListItem Element for ListItems for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)|Defines the property or script whose value is displayed in a row of the list view.|
+
+## Remarks
+
+You can specify one property name or a script for this condition but cannot specify both.
+
+## See Also
+
+[ListItem Element for ListItems for ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
+
+[PropertyName Element for ItemSelectionCondition for ListControl (Format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
+
+[ScriptBlock Element for ItemSelectionCondition for ListControl (Format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

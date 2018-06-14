@@ -1,6 +1,6 @@
 - name: PowerShell
   tocHref: /powershell/
-  topicHref: /powershell/index
+  topicHref: /powershell
   items:
   - name: Just Enough Administration
     tocHref: /powershell/jea/

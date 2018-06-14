@@ -1,0 +1,43 @@
+---
+title: "How to Support Transactions | Microsoft Docs"
+ms.custom: ""
+ms.date: "09/13/2016"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: 4732e38c-b1a0-4de7-b6de-75dbde850488
+caps.latest.revision: 8
+---
+# How to Support Transactions
+
+This example shows the basic code elements that add support for transactions to a cmdlet.
+
+> [!IMPORTANT]
+> For more information about how Windows PowerShell handles transactions, see [Windows PowerShell Transactions](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
+> For more information about how Windows PowerShell handles transactions, see [Windows PowerShell Transactions](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
+
+## To support transactions
+
+1. When you declare the Cmdlet attribute, specify that the cmdlet supports transactions. When the cmdlet supports transactions, Windows PowerShell adds the `UseTransaction` parameter to the cmdlet when it is run.
+
+    ```csharp
+    [Cmdlet(VerbsCommunications.Send, "GreetingTx",
+            SupportsTransactions=true )]
+    ```
+
+2. Within one of the input processing methods, add an `if` block to determine if a transaction is available. If the `if` statement resolves to `true`, the actions within this statement can be performed within the context of the current transaction.
+
+    ```csharp
+    if (TransactionAvailable())
+    {
+      using (CurrentPSTransaction)
+      {
+        WriteObject("Hello " + name + "  from within a transaction.");
+      }
+    }
+    ```
+
+## See Also
+
+[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
