@@ -19,9 +19,6 @@ PowerShell version, modules, snap-ins, and module and snap-in version
 prerequisites are met. If the prerequisites are not met, Windows PowerShell
 does not run the script.
 
-You can use \#Requires statements in any script. You cannot use them in
-functions, cmdlets, or snap-ins.
-
 ### SYNTAX
 
 ```powershell
@@ -36,8 +33,32 @@ functions, cmdlets, or snap-ins.
 
 - The \#Requires statement must be the first item on a line in a script.
 - A script can include more than one \#Requires statement.
+- A \#Requires statement can be placed within cmdlets, snapins, and functions
+  > [!NOTE]
+  > Placing a \#Requires statement inside a function does **NOT** limit its scope.
+  > All \#Requires statements are always applied globally, and must be met, before
+  > the script can execute
 - The \#Requires statements can appear on any line in a script.
+  > [!WARNING]
+  > Even though a \#Requires statement can appear on any line in a script,
+  > its position in a script does not affect the sequence of its application.
+  >
+  > The global state the \#Requires statement presents must be met before
+  > script execution.
+  
+  Example:
 
+  ```powershell
+  Get-Module Hyper-V | Remove-Module
+  #Requires -Modules Hyper-V
+  ```
+
+  It would seem that the above code should not run because the required module
+  was removed before the \#Requires statement.
+
+  However, the \#Requires state had to be met before the script could even
+  execute. Then the first line of the script invalidated the required
+  state.
 ### PARAMETERS
 
 -Version \<N\>[.\<n\>]
