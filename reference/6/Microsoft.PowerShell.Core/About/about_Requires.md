@@ -5,21 +5,20 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Requires
 ---
-
 # About Requires
 
-## SHORT DESCRIPTION
+## Short description
 
 Prevents a script from running without the required elements.
 
-## LONG DESCRIPTION
+## Long description
 
-The \#Requires statement prevents a script from running unless the Windows
+The `#Requires` statement prevents a script from running unless the Windows
 PowerShell version, modules, snap-ins, and module and snap-in version
 prerequisites are met. If the prerequisites are not met, Windows PowerShell
 does not run the script.
 
-### SYNTAX
+### Syntax
 
 ```powershell
 #Requires -Version <N>[.<n>]
@@ -29,21 +28,19 @@ does not run the script.
 #Requires -RunAsAdministrator
 ```
 
-### RULES FOR USE
+### Rules for use
 
-- The \#Requires statement must be the first item on a line in a script.
-- A script can include more than one \#Requires statement.
-- A \#Requires statement can be placed within cmdlets, snapins, and functions
-  > [!NOTE]
-  > Placing a \#Requires statement inside a function does **NOT** limit its scope.
-  > All \#Requires statements are always applied globally, and must be met, before
-  > the script can execute
-- The \#Requires statements can appear on any line in a script.
+- A script can include more than one `#Requires` statement.
+- The `#Requires` statements can appear on any line in a script.
+  
+  Placing a `#Requires` statement inside a function does NOT limit its scope.
+  All `#Requires` statements are always applied globally, and must be met,
+  before the script can execute.
   > [!WARNING]
-  > Even though a \#Requires statement can appear on any line in a script,
+  > Even though a `#Requires` statement can appear on any line in a script,
   > its position in a script does not affect the sequence of its application.
   >
-  > The global state the \#Requires statement presents must be met before
+  > The global state the `#Requires` statement presents must be met before
   > script execution.
   
   Example:
@@ -53,12 +50,10 @@ does not run the script.
   #Requires -Modules Hyper-V
   ```
 
-  It would seem that the above code should not run because the required module
-  was removed before the \#Requires statement.
-
-  However, the \#Requires state had to be met before the script could even
-  execute. Then the first line of the script invalidated the required
-  state.
+  You might think that the above code should not run because the required
+  module was removed before the `#Requires` statement. However, the `#Requires`
+  state had to be met before the script could even execute. Then the first line
+  of the script invalidated the required state.
 
 ### PARAMETERS
 
@@ -129,11 +124,11 @@ For example,
 #Requires -RunAsAdministrator
 ```
 
-### EXAMPLES
+### Examples
 
-The following script has two \#Requires statements. If the requirements
+The following script has two `#Requires` statements. If the requirements
 specified in both statements are not met, the script does not run. Each
-\#Requires statement must be the first item on a line:
+`#Requires` statement must be the first item on a line:
 
 ```powershell
 #Requires -Modules PSWorkflow
@@ -147,7 +142,7 @@ Param
 ...
 ```
 
-### NOTES
+### Notes
 
 In Windows PowerShell 3.0, the Windows PowerShell Core packages appear as
 modules in sessions started by using the InitialSessionState.CreateDefault2
@@ -155,7 +150,7 @@ method, such as sessions started in the Windows PowerShell console. Otherwise,
 they appear as snap-ins. The exception is Microsoft.PowerShell.Core, which is
 always a snap-in.
 
-## SEE ALSO
+## See also
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 
