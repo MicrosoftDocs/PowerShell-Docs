@@ -109,15 +109,28 @@ This command displays a list of all help topics available on your system.
 ### Example 3
 ```
 PS C:\> Get-Help Get-Alias
-PS C:\> Help Get-Alias
 PS C:\> Get-Alias -?
 ```
 
 These commands display basic information about the Get-Alias cmdlet.
 The "Get-Help" and "-?" commands display the information on a single page.
-The "Help" command displays the information one page at a time.
 
 ### Example 4
+```powershell
+help Format-Table
+man Format-Table
+Get-Help Format-Table | Out-Host -Paging
+```
+
+These commands display basic information about the `Format-Table` cmdlet one page at a time.
+
+The `help` is a function that runs `Get-Help` cmdlet internally and displays the result one page at a time.
+
+The `man` is an alias for the `help` function.
+
+The `Out-Host -Paging` receives the outputs of `Get-Help Format-Table` from pipeline and displays them one page at a time. For more information, see [Out-Host](./Out-Host.md).
+
+### Example 5
 ```
 PS C:\> Get-Help about_*
 ```
@@ -129,7 +142,7 @@ To display a particular help file, type "get-help \<topic-name\>, for example, "
 This command displays the conceptual topics only when the help files for those topics are installed on the computer.
 For information about downloading and installing help files in Windows PowerShell 3.0, see Update-Help.
 
-### Example 5
+### Example 6
 ```powershell
 Get-Help Format-Table -Detailed
 Get-Help Format-Table -Full
@@ -144,7 +157,7 @@ The **Full** parameter displays the full view of the help topic, which includes 
 The **Detailed** and **Full** parameters are effective only for the commands whose help files are installed on the computer.
 They are not effective for the conceptual ("about_") help topics.
 
-### Example 6
+### Example 7
 ```powershell
 Get-Help Format-Table -Examples
 Get-Help Format-Table -Parameter GroupBy
@@ -161,7 +174,7 @@ If you specify only the wildcard character (`*`), it displays the descriptions o
 
 These parameters are not effective for the conceptual ("about_") help topics.
 
-### Example 7
+### Example 8
 ```
 PS C:\> Get-Help Add-Member -Full | Out-String -Stream | Select-String -Pattern Clixml
 ```
@@ -171,14 +184,14 @@ This command searches for the word "Clixml" in the full version of the help topi
 
 Because the **Get-Help** cmdlet generates a **MamlCommandHelpInfo** object, not a string, you need to use a cmdlet that transforms the help topic content into a string, such as Out-String or Out-File.
 
-### Example 8
+### Example 9
 ```
 PS C:\> Get-Help Get-Member -Online
 ```
 
 This command displays the online version of the help topic for the Get-Member cmdlet.
 
-### Example 9
+### Example 10
 ```
 PS C:\> Get-Help remoting
 ```
@@ -187,7 +200,7 @@ This command displays a list of topics that include the word "remoting."
 
 When you enter a word that does not appear in any topic title, **Get-Help** displays a list of topics that include that word.
 
-### Example 10
+### Example 11
 ```
 The first command uses the **Path** parameter of **Get-Help** to specify the provider path. This command can be entered at any path location.
 PS C:\> Get-Help Get-Item -Path SQLSERVER:\DataCollection
@@ -243,7 +256,7 @@ The example shows two ways of getting the provider-specific help for **Get-Item*
 You can also get provider-specific help for cmdlets online in the section that describes the provider.
 For example, for provider-specific online help for the New-Item cmdlet in each WSMan provider path, see http://go.microsoft.com/fwlink/?LinkID=158676http://go.microsoft.com/fwlink/?LinkID=158676.
 
-### Example 11
+### Example 12
 ```
 PS C:\> Get-Help C:\PS-Test\MyScript.ps1
 ```
