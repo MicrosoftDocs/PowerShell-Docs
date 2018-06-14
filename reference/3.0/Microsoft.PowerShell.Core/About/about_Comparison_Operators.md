@@ -512,22 +512,85 @@ placeholder represents the characters that will replace them:
 
 By default, the `-replace` operator is case-insensitive. To make it case
 sensitive, use `-creplace`. To make it explicitly case-insensitive, use
-`-ireplace`. Consider the following examples:
+`-ireplace`.
+
+Consider the following examples:
 
 ```powershell
 PS> "book" -replace "B", "C"
+```
+
+```output
 Cook
 ```
 
 ```powershell
-PS> "book" -ireplace "B", "C"
+"book" -ireplace "B", "C"
+```
+
+```output
 Cook
 ```
 
 ```powershell
-PS> "book" -creplace "B", "C"
+"book" -creplace "B", "C"
+```
+
+```output
 book
 ```
+
+#### Substitutions in Regular Expressions
+
+Additionally, capturing groups can be referenced in the \<substitute\> string.
+This is done by using the `$` character before the group identifier.
+
+Two of the ways to reference capturing groups is by **Number** and by **Name**
+
+- By **Number** -
+  Capturing Groups are numbered from left to right.
+
+  ```powershell
+  "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
+  ```
+
+  ```output
+  John.D.Smith@contoso.com
+  ```
+
+- By **Name** -
+  Capturing Groups can also be referenced by name.
+
+  ```powershell
+  "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
+  ```
+
+  ```output
+  FABRIKOM\Administrator
+  ```
+
+> [!WARNING]
+> Since the `$` character is used in string expansion, you will need to use
+> literal strings with substitution, or escape the `$` character.
+> ```powershell
+> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
+> ```
+>
+> ```output
+> Hello Universe
+> ```
+>
+> Additionally, sicne the `$` character is used in substitution, you will need
+> to escape any instances in your string.
+>
+> ```powershell
+> '5.72' -replace '(.+)', '$$$1'
+> ```
+> ```output
+> $5.72
+> ```
+
+To learn more see [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)
 
 ### Type comparison
 
