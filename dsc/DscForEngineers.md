@@ -1,7 +1,7 @@
 ---
 ms.date:  10/13/2017
 keywords:  dsc,powershell,configuration,setup
-title:  Desired State Configuration Overview for Decision Makers
+title:  Desired State Configuration Overview for Engineers
 ---
 
 # Desired State Configuration Overview for Engineers
