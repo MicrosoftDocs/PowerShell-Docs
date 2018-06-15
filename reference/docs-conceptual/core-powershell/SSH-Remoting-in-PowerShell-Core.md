@@ -56,6 +56,22 @@ In addition you will need to enable password authentication and optionally key b
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
 
+    ** !!! Currently there is a problem in OpenSSH that prevents this from working: **
+    
+    See [subsystem executable paths with "spaces" do not work] (https://github.com/PowerShell/Win32-OpenSSH/issues/784)
+    
+    One solution is to create a symlink to the Powershell installation directory that does not contain spaces:
+    
+    ```powershell
+    PS> mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    and then enter it in the subsystem:
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+    ```
+
     - Optionally enable key authentication
 
     ```
