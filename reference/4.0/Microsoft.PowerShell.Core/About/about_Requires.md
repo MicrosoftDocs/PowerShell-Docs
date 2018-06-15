@@ -89,7 +89,7 @@ If the required modules are not in the current session, Windows PowerShell
 imports them. If the modules cannot be imported, Windows PowerShell throws a
 terminating error.
 
-For each module, type the module name (<String>) or a hash table with the
+For each module, type the module name (\<String\>) or a hash table with the
 following keys. The value can be a combination of strings and hash tables.
 
 - ModuleName. This key is required.
@@ -111,6 +111,8 @@ For example,
 ```powershell
 #Requires -ShellId MyLocalShell
 ```
+
+You can find current ShellId by querying `$ShellId` automatic variable.
 
 -RunAsAdministrator
 
