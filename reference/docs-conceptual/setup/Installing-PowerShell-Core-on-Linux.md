@@ -498,6 +498,8 @@ sudo zypper remove powershell
 
 ## Fedora
 
+> Please note, Fedora 28 is only supported in PowerShell Core 6.1 and newer.
+
 ### Installation via Package Repository (preferred) - Fedora 27, Fedora 28
 
 PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).
