@@ -84,7 +84,7 @@ The commands that you enter run in the new session, and the results are returned
 ### Example 2
 
 ```
-PS> Enter-PSSession -Computer Server01
+PS> Enter-PSSession -ComputerName Server01
 [Server01]: PS>
 [Server01]: PS> Get-Process Powershell > C:\ps-test\Process.txt
 [Server01]: PS> exit
