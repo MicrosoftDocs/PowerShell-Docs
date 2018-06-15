@@ -113,8 +113,8 @@ Configuration Sample_Share
           Ensure      = "Present"
           Name        = "MyShare"
           Path        = "C:\Demo\Temp"
-          ReadAccess  = "Alice"
-          FullAccess  = "Bob"
+          ReadAccess  = "Bob"
+          FullAccess  = "Alice"
           Description = "This is an updated description for this share"
       }
    }
