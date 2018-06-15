@@ -10,7 +10,7 @@ PowerShell Core supports macOS 10.12 and higher.
 All packages are available on our GitHub [releases][] page.
 Once the package is installed, run `pwsh` from a terminal.
 
-### Installation of latest stable release via Homebrew on macOS 10.12 or newer
+### Installation of latest stable release via Homebrew on macOS 10.12 or higher
 
 [Homebrew][brew] is the preferred package manager for macOS.
 From a terminal window, type `brew` to run Homebrew.  If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
@@ -104,7 +104,7 @@ brew cask upgrade powershell-preview
 > but then the PowerShell shell must be exited and restarted to complete the upgrade
 > and refresh the values shown in $PSVersionTable.
 
-### Installation of latest preview release via Homebrew on macOS 10.12 or newer
+### Installation of latest preview release via Homebrew on macOS 10.12 or higher
 
 [Homebrew][brew] is the preferred package manager for macOS.
 If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
