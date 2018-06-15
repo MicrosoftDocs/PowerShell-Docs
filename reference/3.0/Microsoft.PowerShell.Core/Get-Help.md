@@ -198,12 +198,11 @@ This command searches for the word "Clixml" in the full version of the help topi
 Because the **Get-Help** cmdlet generates a **MamlCommandHelpInfo** object, not a string, you need to use a cmdlet that transforms the help topic content into a string, such as Out-String or Out-File.
 
 ### Example 9
-
+```powershell
+Get-Help Format-Table -Online
 ```
-PS> Get-Help Get-Member -Online
-```
 
-This command displays the online version of the help topic for the Get-Member cmdlet.
+This command displays the online version of the help topic for the `Format-Table` cmdlet in your default web browser.
 
 ### Example 10
 
