@@ -1,6 +1,6 @@
 # Installing PowerShell Core on Linux
 
-Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04][u17], [Debian 8][deb8], [Debian 9][deb9],
+Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9],
 [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27][fedora],
 [Fedora 28][fedora], and [Arch Linux][arch].
 
@@ -14,7 +14,7 @@ Once the package is installed, run `pwsh` from a terminal.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1704
+[u17]: #ubuntu-1710
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
@@ -125,9 +125,11 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## Ubuntu 17.04
+## Ubuntu 17.10
 
-### Installation via Package Repository - Ubuntu 17.04
+> Note: Support for Ubuntu 18.04 was added after `6.1.0-preview.2`
+
+### Installation via Package Repository - Ubuntu 17.10
 
 PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).
 This is the preferred method.
@@ -137,7 +139,7 @@ This is the preferred method.
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
 # Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.04/prod.list
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
 
 # Update the list of products
 sudo apt-get update
@@ -152,16 +154,16 @@ pwsh
 After registering the Microsoft repository once as superuser,
 from then on, you just need to use `sudo apt-get upgrade powershell` to update it.
 
-### Installation via Direct Download - Ubuntu 17.04
+### Installation via Direct Download - Ubuntu 17.10
 
 Download the Debian package
-`powershell_6.0.2-1.ubuntu.17.04_amd64.deb`
+`powershell_6.0.2-1.ubuntu.17.10_amd64.deb`
 from the [releases][] page onto the Ubuntu machine.
 
 Then execute the following in the terminal:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.04_amd64.deb
+sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -169,7 +171,59 @@ sudo apt-get install -f
 > the next command, `apt-get install -f` resolves these
 > and then finishes configuring the PowerShell package.
 
-### Uninstallation - Ubuntu 17.04
+### Uninstallation - Ubuntu 17.10
+
+```sh
+sudo apt-get remove powershell
+```
+
+## Ubuntu 18.04
+
+> Note: Support for Ubuntu 18.04 was added after `6.1.0-preview.2`
+
+### Installation via Package Repository - Ubuntu 18.04
+
+PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).
+This is the preferred method.
+
+```sh
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+# Register the Microsoft Ubuntu repository
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+# Start PowerShell
+pwsh
+```
+
+After registering the Microsoft repository once as superuser,
+from then on, you just need to use `sudo apt-get upgrade powershell` to update it.
+
+### Installation via Direct Download - Ubuntu 18.04
+
+Download the Debian package
+`powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb`
+from the [releases][] page onto the Ubuntu machine.
+
+Then execute the following in the terminal:
+
+```sh
+sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
+sudo apt-get install -f
+```
+
+> Please note that `dpkg -i` will fail with unmet dependencies;
+> the next command, `apt-get install -f` resolves these
+> and then finishes configuring the PowerShell package.
+
+### Uninstallation - Ubuntu 17.10
 
 ```sh
 sudo apt-get remove powershell
@@ -444,6 +498,8 @@ sudo zypper remove powershell
 
 ## Fedora
 
+> Please note, Fedora 28 is only supported in PowerShell Core 6.1 and newer.
+
 ### Installation via Package Repository (preferred) - Fedora 27, Fedora 28
 
 PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).
@@ -630,7 +686,8 @@ on different Linux distributions.
 | ------------------ | ------------ |
 | Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl-libs, libicu |
