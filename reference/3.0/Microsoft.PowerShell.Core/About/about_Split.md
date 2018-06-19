@@ -112,9 +112,6 @@ substring become part of the substring.
 
 ```powershell
 'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
-```
-
-```output
 Chocolate
 -
 Vanilla
@@ -207,22 +204,13 @@ The RegexMatch options are:
 - IgnorePatternWhitespace: Ignores unescaped whitespace and
   comments marked with the number sign (#). Valid only with
   RegexMatch.
-- **Multiline**: Multiline mode forces `^` and `$` to match the beginning
-  end of every line instead of the beginning and end of the input string.
-- **Singleline**: Singleline mode treats the input string as a *SingleLine*.
-  It forces the `.` character to match every character (including newlines),
-  instead of matching every character EXCEPT the newline `\n`.
+- **Multiline**: Multiline mode recognizes the start and end of lines
+  and strings. Valid only with RegexMatch. Singleline is the default.
+- **Singleline**: Singleline mode recognizes only the start and end of
+  strings. Valid only with RegexMatch. Singleline is the default.
 - **ExplicitCapture**: Ignores non-named match groups so that only
   explicit capture groups are returned in the result list. Valid
   only with RegexMatch.
-
-> [!NOTE]
-> **Singleline** and **Multiline** cannot be used together with the options
-> parameter, and **SingleLine** is the default.
-> This was resolved in PowerShell 6.0
->
-> **Singleline** and **Multieline** can be combined using a *Mode-Modifier*.
-> You can read more about mode modifiers in [Regular Expression Options](/dotnet/standard/base-types/regular-expression-options)
 
 ## UNARY and BINARY SPLIT OPERATORS
 
@@ -240,31 +228,25 @@ Use one of the following patterns to split more than one string:
 Consider the following example:
 
 ```
-PS> -split "1 2", "a b"
+PS > -split "1 2", "a b"
 1
 2
 a b
-```
 
-```
-PS> "1 2", "a b" -split " "
+PS > "1 2", "a b" -split " "
 1
 2
 a
 b
-```
 
-```
-PS> -split ("1 2", "a b")
+PS > -split ("1 2", "a b")
 1
 2
 a
 b
-```
 
-```
-PS> $a = "1 2", "a b"
-PS> -split $a
+PS > $a = "1 2", "a b"
+PS > -split $a
 1
 2
 a
@@ -279,7 +261,7 @@ The following statement splits the string at whitespace.
 -split "Windows PowerShell 2.0`nWindows PowerShell with remoting"
 ```
 
-```Output
+```output
 
 Windows
 PowerShell
@@ -296,7 +278,7 @@ The following statement splits the string at any comma.
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split ','
 ```
 
-```Output
+```output
 Mercury
 Venus
 Earth
@@ -313,7 +295,7 @@ The following statement splits the string at the pattern "er".
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split 'er'
 ```
 
-```Output
+```output
 M
 cury,Venus,Earth,Mars,Jupit
 ,Saturn,Uranus,Neptune
@@ -325,7 +307,7 @@ The following statement performs a case-sensitive split at the letter "N".
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
 ```
 
-```Output
+```output
 Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,
 eptune
 ```
@@ -336,7 +318,7 @@ The following statement splits the string at "e" and "t".
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[et]'
 ```
 
-```Output
+```output
 M
 rcury,V
 nus,
@@ -356,7 +338,7 @@ resulting substrings to six substrings.
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[er]', 6
 ```
 
-```Output
+```output
 M
 
 cu
@@ -371,7 +353,7 @@ The following statement splits a string into three substrings.
 "a,b,c,d,e,f,g,h" -split ",", 3
 ```
 
-```Output
+```output
 a
 b
 c,d,e,f,g,h
@@ -384,7 +366,7 @@ The following statement splits two strings into three substrings.
 "a,b,c,d", "e,f,g,h" -split ",", 3
 ```
 
-```Output
+```output
 a
 b
 c,d
@@ -410,7 +392,7 @@ $a = @'
 $a -split "^\d", 0, "multiline"
 ```
 
-```Output
+```output
 
 The first line.
 
@@ -435,7 +417,7 @@ specified.
 "This.is.a.test" -split ".", 0, "simplematch"
 ```
 
-```Output
+```output
 This
 is
 a
@@ -451,7 +433,7 @@ $c = "LastName, FirstName; Address, City, State, Zip"
 $c -split $(if ($i -lt 1) {","} else {";"})
 ```
 
-```Output
+```output
 LastName, FirstName
  Address, City, State, Zip
 ```
