@@ -217,14 +217,6 @@ The RegexMatch options are:
   explicit capture groups are returned in the result list. Valid
   only with RegexMatch.
 
-> [!NOTE]
-> **Singleline** and **Multiline** cannot be used together with the options
-> parameter, and **SingleLine** is the default.
-> This was resolved in PowerShell 6.0
->
-> **Singleline** and **Multieline** can be combined using a *Mode-Modifier*.
-> You can read more about mode modifiers in [Regular Expression Options](/dotnet/standard/base-types/regular-expression-options)
-
 ## UNARY and BINARY SPLIT OPERATORS
 
 The unary split operator (`-split <string>`) has higher precedence than a

@@ -218,11 +218,10 @@ The RegexMatch options are:
   only with RegexMatch.
 
 > [!NOTE]
-> **Singleline** and **Multiline** cannot be used together with the options
-> parameter, and **SingleLine** is the default.
-> This was resolved in PowerShell 6.0
->
-> **Singleline** and **Multieline** can be combined using a *Mode-Modifier*.
+> SingleLine is the default behavior. Singleline and Multiline
+> cannot be used together with the options parameter. This was resolved in
+> PowerShell 6.0.
+> The work around is by using *Mode-Modifiers* in your regular expression.
 > You can read more about mode modifiers in [Regular Expression Options](/dotnet/standard/base-types/regular-expression-options)
 
 ## UNARY and BINARY SPLIT OPERATORS
