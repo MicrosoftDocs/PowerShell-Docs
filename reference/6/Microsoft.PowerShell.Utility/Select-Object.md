@@ -222,7 +222,7 @@ $object | Select-Object -ExpandProperty Expand -Property Name | Get-Member
 
 Name        MemberType   Definition
 ----        ----------   ----------
-CompareTo   Method       int CompareTo(System.Object value), int CompareTo(int value), int IComparable.CompareTo(System.Object obj), int IComparable[int].CompareTo(int other)
+CompareTo   Method       int CompareTo(System.Object value), int CompareTo(int value), int IComparable.CompareTo(System.Object obj)...
 Equals      Method       bool Equals(System.Object obj), bool Equals(int obj), bool IEquatable[int].Equals(int other)
 GetHashCode Method       int GetHashCode()
 GetType     Method       type GetType()
@@ -238,7 +238,7 @@ ToInt32     Method       int IConvertible.ToInt32(System.IFormatProvider provide
 ToInt64     Method       long IConvertible.ToInt64(System.IFormatProvider provider)
 ToSByte     Method       sbyte IConvertible.ToSByte(System.IFormatProvider provider)
 ToSingle    Method       float IConvertible.ToSingle(System.IFormatProvider provider)
-ToString    Method       string ToString(), string ToString(string format), string ToString(System.IFormatProvider provider), string ToString(string format, System.IFormatProvider provider), string IFormattable.ToString(string format, System.IFormatProvider formatProvider), str...
+ToString    Method       string ToString(), string ToString(string format), string ToString(System.IFormatProvider provider)...
 ToType      Method       System.Object IConvertible.ToType(type conversionType, System.IFormatProvider provider)
 ToUInt16    Method       uint16 IConvertible.ToUInt16(System.IFormatProvider provider)
 ToUInt32    Method       uint32 IConvertible.ToUInt32(System.IFormatProvider provider)
@@ -274,7 +274,6 @@ Accept wildcard characters: True
 ### -ExpandProperty
 
 Specifies a property to select, and indicates that an attempt should be made to expand that property.
-Wildcards are permitted in the property name.
 
 - If the specified property is an array, each value of the array is included in the output.
 - If the specified property is an object, the objects properties are expanded for every `InputObject`
@@ -287,9 +286,8 @@ If the `Property` parameter is specified, `Select-Object` will attempt to add ea
 > If you receive the error: Select : Property cannot be processed because property `<PropertyName>` already exists, consider the following.
 > Note that when using `-ExpandProperty`, `Select-Object` can not replace an existing property.
 > This means:
-> If the expanded object has a property of the same name, an error will occur.
->
-> If the *Selected* object has a property of the same name as an *Expanded* objects property, an error will occur.
+> - If the expanded object has a property of the same name, an error will occur.
+> - If the *Selected* object has a property of the same name as an *Expanded* objects property, an error will occur.
 
 ```yaml
 Type: String
