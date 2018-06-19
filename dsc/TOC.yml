@@ -162,7 +162,7 @@
     - name: nxPackage Resource
       href: lnxPackageResource.md
     - name: nxScript Resource
-      href: lnxScriptResource.md      
+      href: lnxScriptResource.md
     - name: nxService Resource
       href: lnxServiceResource.md
     - name: nxSshAuthorizedKeys Resource
