@@ -68,16 +68,20 @@ Get-Process Explorer | Select-Object -Property ProcessName -ExpandProperty Modul
 ```
 
 ```output
-ProcessName       : 00THotkey
-Size              : 256
-Company           : TOSHIBA Corporation
-FileVersion       : 1, 0, 0, 27
-ProductVersion    : 6, 2, 0, 0
-Description       : THotkey
-Product           : TOSHIBA THotkey
-ModuleName        : 00THotkey.exe
-FileName          : C:\WINDOWS\system32\00THotkey.exe
-BaseAddress       : 4194304
+ProcessName       : explorer
+ModuleName        : explorer.exe
+FileName          : C:\WINDOWS\explorer.exe
+BaseAddress       : 140697278152704
+ModuleMemorySize  : 3919872
+EntryPointAddress : 140697278841168
+FileVersionInfo   : File:             C:\WINDOWS\explorer.exe
+InternalName:     explorer
+OriginalFilename: EXPLORER.EXE.MUI
+FileVersion:      10.0.17134.1 (WinBuild.160101.0800)
+FileDescription:  Windows Explorer
+Product:          Microsoft® Windows® Operating System
+ProductVersion:   10.0.17134.1
+...
 ```
 
 This command gets information about the modules used by the processes on the computer.
@@ -154,8 +158,8 @@ This command uses the Unique parameter of `Select-Object` to get unique characte
 $a = Get-EventLog -LogName "Windows PowerShell"
 ```
 
-```output
-PS C:\> $A | Select-Object -Index 0, ($A.count - 1)
+```powershell
+$A | Select-Object -Index 0, ($A.count - 1)
 ```
 
 These commands gets the first (newest) and last (oldest) events in the Windows Powershell event log.
