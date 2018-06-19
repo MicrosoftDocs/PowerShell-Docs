@@ -17,17 +17,20 @@ Gets all commands.
 
 ### CmdletSet (Default)
 ```
-Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
- [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
- [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
- [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [[-ArgumentList] <Object[]>]
+ [-Verb <String[]>] [-Noun <String[]>]
+ [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+ [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [-All] [-ListImported]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ### AllCommandSet
 ```
-Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>]
- [-All] [-ListImported] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [[-Name] <String[]>] [[-ArgumentList] <Object[]>]
+ [-CommandType <CommandTypes>]
+ [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+ [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [-All] [-ListImported]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
