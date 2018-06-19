@@ -18,14 +18,14 @@ substrings.
 The Split operator splits one or more strings into substrings. You can
 change the following elements of the Split operation:
 
-* Delimiter. The default is whitespace, but you can specify characters,
+- Delimiter. The default is whitespace, but you can specify characters,
   strings, patterns, or script blocks that specify the delimiter. The Split
   operator in Windows PowerShell uses a regular expression in the delimiter,
   rather than a simple character.
-* Maximum number of substrings. The default is to return all substrings. If
+- Maximum number of substrings. The default is to return all substrings. If
   you specify a number less than the number of substrings, the remaining
   substrings are concatenated in the last substring.
-* Options that specify the conditions under which the delimiter is matched,
+- Options that specify the conditions under which the delimiter is matched,
   such as SimpleMatch and Multiline.
 
 ## SYNTAX
@@ -113,6 +113,9 @@ substring become part of the substring.
 
 ```powershell
 'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
+```
+
+```output
 Chocolate
 -
 Vanilla
@@ -140,7 +143,7 @@ $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split ",", 5
 ```
 
-```Output
+```output
 Mercury
 Venus
 Earth
@@ -160,7 +163,7 @@ $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split {$_ -eq "e" -or $_ -eq "p"}
 ```
 
-```Output
+```output
 M
 rcury,V
 nus,
@@ -188,30 +191,39 @@ The syntax for the Options parameter is:
 
 The SimpleMatch options are:
 
-* **SimpleMatch**: Use simple string comparison when evaluating the
+- **SimpleMatch**: Use simple string comparison when evaluating the
   delimiter. Cannot be used with RegexMatch.
-* **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
+- **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
   operator is specified.
 
 The RegexMatch options are:
 
-* **RegexMatch**: Use regular expression matching to evaluate the
+- **RegexMatch**: Use regular expression matching to evaluate the
   delimiter. This is the default behavior. Cannot be used with
   SimpleMatch.
-* **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
+- **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
   operator is specified.
-* **CultureInvariant**: Ignores cultural differences in language
+- **CultureInvariant**: Ignores cultural differences in language
   when evaluting the delimiter. Valid only with RegexMatch.
-* IgnorePatternWhitespace: Ignores unescaped whitespace and
+- IgnorePatternWhitespace: Ignores unescaped whitespace and
   comments marked with the number sign (#). Valid only with
   RegexMatch.
-* **Multiline**: Multiline mode recognizes the start and end of lines
-  and strings. Valid only with RegexMatch. Singleline is the default.
-* **Singleline**: Singleline mode recognizes only the start and end of
-  strings. Valid only with RegexMatch. Singleline is the default.
-* **ExplicitCapture**: Ignores non-named match groups so that only
+- **Multiline**: Multiline mode forces `^` and `$` to match the beginning
+  end of every line instead of the beginning and end of the input string.
+- **Singleline**: Singleline mode treats the input string as a *SingleLine*.
+  It forces the `.` character to match every character (including newlines),
+  instead of matching every character EXCEPT the newline `\n`.
+- **ExplicitCapture**: Ignores non-named match groups so that only
   explicit capture groups are returned in the result list. Valid
   only with RegexMatch.
+
+> [!NOTE]
+> **Singleline** and **Multiline** cannot be used together with the options
+> parameter, and **SingleLine** is the default.
+> This was resolved in PowerShell 6.0
+>
+> **Singleline** and **Multieline** can be combined using a *Mode-Modifier*.
+> You can read more about mode modifiers in [Regular Expression Options](/dotnet/standard/base-types/regular-expression-options)
 
 ## UNARY and BINARY SPLIT OPERATORS
 
@@ -229,25 +241,31 @@ Use one of the following patterns to split more than one string:
 Consider the following example:
 
 ```
-PS > -split "1 2", "a b"
+PS> -split "1 2", "a b"
 1
 2
 a b
+```
 
-PS > "1 2", "a b" -split " "
+```
+PS> "1 2", "a b" -split " "
 1
 2
 a
 b
+```
 
-PS > -split ("1 2", "a b")
+```
+PS> -split ("1 2", "a b")
 1
 2
 a
 b
+```
 
-PS > $a = "1 2", "a b"
-PS > -split $a
+```
+PS> $a = "1 2", "a b"
+PS> -split $a
 1
 2
 a
