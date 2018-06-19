@@ -28,13 +28,19 @@ The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the
 
 ### Example 1: Measure a command
 
+This command measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.
+
 ```powershell
 Measure-Command { Get-EventLog "windows powershell" }
 ```
 
-This command measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.
-
 ### Example 2: Compare two outputs from Measure-Command
+
+The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the `-Path` parameter to get only .txt files in the C:\Windows directory and its subdirectories.
+
+The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
+
+These commands show the value of using a provider-specific filter in Windows PowerShell commands.
 
 ```powershell
 Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
@@ -72,13 +78,12 @@ TotalSeconds      : 1.1409189
 TotalMilliseconds : 1140.9189
 ```
 
-The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the `-Path` parameter to get only .txt files in the C:\Windows directory and its subdirectories.
-
-The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
-
-These commands show the value of using a provider-specific filter in Windows PowerShell commands.
-
 ### Example 3: Use the InputObject parameter of Measure-Command
+
+This example shows how to use the `InputObject` parameter of `Measure-Command`. The `ScriptBlock` passed to the `Expression` parameter is executed once for each object passed, or piped into the `InputObject` parameter.
+
+> [!NOTE]
+> `Measure-Command` still provides a measurement of overall `ScriptBlock` execution for every element passed to the `InputObject` parameter.
 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
@@ -124,11 +129,6 @@ TotalMinutes      : 0.000189575
 TotalSeconds      : 0.0113745
 TotalMilliseconds : 11.3745
 ```
-
-This example shows how to use the `InputObject` parameter of `Measure-Command`. The `ScriptBlock` passed to the `Expression` parameter is executed once for each object passed, or piped into the `InputObject` parameter.
-
-> [!NOTE]
-> `Measure-Command` still provides a measurement of overall `ScriptBlock` execution for every element passed to the `InputObject` parameter.
 
 ## Parameters
 
@@ -182,15 +182,6 @@ You can pipe an object to `Measure-Command`.
 ### System.TimeSpan
 
 `Measure-Command` returns a time span object that represents the result.
-
-## Notes
-
-- For more information, type: `Get-Help Measure-Command -Detailed`
-
-- For technical information, type: `Get-Help Measure-Command -Full`
-
-- When specifying multiple values for a parameter, use commas to separate the values.
-  For example, `\<parameter-name\> \<value1\>, \<value2\>`.
 
 ## Related Links
 
