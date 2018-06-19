@@ -148,10 +148,7 @@ This command uses the Unique parameter of `Select-Object` to get unique characte
 
 ```powershell
 $a = Get-EventLog -LogName "Windows PowerShell"
-```
-
-```powershell
-$A | Select-Object -Index 0, ($A.count - 1)
+$a | Select-Object -Index 0, ($A.count - 1)
 ```
 
 These commands gets the first (newest) and last (oldest) events in the Windows Powershell event log.

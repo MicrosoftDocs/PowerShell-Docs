@@ -71,7 +71,7 @@ InternalName:     explorer
 OriginalFilename: EXPLORER.EXE.MUI
 FileVersion:      10.0.17134.1 (WinBuild.160101.0800)
 FileDescription:  Windows Explorer
-Product:          Microsoft® Windows® Operating System
+Product:          Microsoftï¿½ Windowsï¿½ Operating System
 ProductVersion:   10.0.17134.1
 ...
 ```
@@ -148,10 +148,7 @@ This command uses the Unique parameter of `Select-Object` to get unique characte
 
 ```powershell
 $a = Get-EventLog -LogName "Windows PowerShell"
-```
-
-```powershell
-$A | Select-Object -Index 0, ($A.count - 1)
+$a | Select-Object -Index 0, ($A.count - 1)
 ```
 
 These commands gets the first (newest) and last (oldest) events in the Windows Powershell event log.
