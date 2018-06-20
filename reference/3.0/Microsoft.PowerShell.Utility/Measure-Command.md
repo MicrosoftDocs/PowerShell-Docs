@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -15,7 +15,7 @@ Measures the time it takes to run script blocks and cmdlets.
 
 ## Syntax
 
-```powershell
+```
 Measure-Command [-Expression] <ScriptBlock> [-InputObject <PSObject>]
  [<CommonParameters>]
 ```
@@ -26,21 +26,27 @@ The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the
 
 ## Examples
 
-### Example 1
+### Example 1: Measure a command
+
+This command measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.
 
 ```powershell
 Measure-Command { Get-EventLog "windows powershell" }
 ```
 
-This command measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.
+### Example 2: Compare two outputs from Measure-Command
 
-### Example 2
+The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the `-Path` parameter to get only .txt files in the C:\Windows directory and its subdirectories.
+
+The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
+
+These commands show the value of using a provider-specific filter in Windows PowerShell commands.
 
 ```powershell
 Measure-Command {Get-ChildItem -Path C:\Windows\*.txt -Recurse}
 ```
 
-```
+```output
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -58,7 +64,7 @@ TotalMilliseconds : 8618.2763
 Measure-Command {Get-ChildItem C:\Windows -Filter "*.txt" -Recurse}
 ```
 
-```
+```output
 Days              : 0
 Hours             : 0
 Minutes           : 0
@@ -72,11 +78,57 @@ TotalSeconds      : 1.1409189
 TotalMilliseconds : 1140.9189
 ```
 
-The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the `-Path` parameter to get only .txt files in the C:\Windows directory and its subdirectories.
+### Example 3: Use the InputObject parameter of Measure-Command
 
-The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
+This example shows how to use the `InputObject` parameter of `Measure-Command`. The `ScriptBlock` passed to the `Expression` parameter is executed once for each object passed, or piped into the `InputObject` parameter.
 
-These commands show the value of using a provider-specific filter in Windows PowerShell commands.
+> [!NOTE]
+> `Measure-Command` still provides a measurement of overall `ScriptBlock` execution for every element passed to the `InputObject` parameter.
+
+```powershell
+# Perform a simple operation to demonstrate the InputObject parameter
+# Note that no output is displayed.
+10, 20, 50 | Measure-Command -Expression {for($i=0; $i - lt $_;$i++) {$i} }
+```
+
+```output
+Days              : 0
+Hours             : 0
+Minutes           : 0
+Seconds           : 0
+Milliseconds      : 12
+Ticks             : 122672
+TotalDays         : 1.41981481481481E-07
+TotalHours        : 3.40755555555556E-06
+TotalMinutes      : 0.000204453333333333
+TotalSeconds      : 0.0122672
+TotalMilliseconds : 12.2672
+```
+
+```powershell
+# Perform the same operation as above adding Out-Default to every execution.
+# This will show that the ScriptBlock is in fact executing for every item.
+10, 20, 50 | Measure-Command -Expression {for($i=0; $i -lt $_;$i++) {$i}; "$($_)" | Out-Default }
+```
+
+```output
+10
+20
+50
+
+
+Days              : 0
+Hours             : 0
+Minutes           : 0
+Seconds           : 0
+Milliseconds      : 11
+Ticks             : 113745
+TotalDays         : 1.31649305555556E-07
+TotalHours        : 3.15958333333333E-06
+TotalMinutes      : 0.000189575
+TotalSeconds      : 0.0113745
+TotalMilliseconds : 11.3745
+```
 
 ## Parameters
 
@@ -100,8 +152,8 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies objects representing the expressions to be measured.
-Enter a variable that contains the objects or type a command or expression that gets the objects.
+Objects bound to the `InputObject` parameter are optional input for the `ScriptBlock` passed to the `Expression` parameter.
+Inside the `ScriptBlock`, `$_` can be used to reference the current object in the pipeline.
 
 ```yaml
 Type: PSObject
@@ -117,7 +169,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## Inputs
 
@@ -130,15 +182,6 @@ You can pipe an object to `Measure-Command`.
 ### System.TimeSpan
 
 `Measure-Command` returns a time span object that represents the result.
-
-## Notes
-
-- For more information, type: `Get-Help Measure-Command -Detailed`
-
-- For technical information, type: `Get-Help Measure-Command -Full`
-
-- When specifying multiple values for a parameter, use commas to separate the values.
-For example, `\<parameter-name\> \<value1\>, \<value2\>`.
 
 ## Related Links
 
