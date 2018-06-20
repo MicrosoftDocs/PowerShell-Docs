@@ -11,7 +11,12 @@
         },
         {
             "source_path": "wmf/index.md",
-            "redirect_url": "/powershell/wmf/readme",
+            "redirect_url": "/powershell/wmf/overview",
+            "redirect_document_id": "False"
+        },
+        {
+            "source_path": "wmf/readme.md",
+            "redirect_url": "/powershell/wmf/overview",
             "redirect_document_id": "False"
         },
         {
