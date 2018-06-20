@@ -92,30 +92,21 @@ To get About topics in a module, import the module, either by using the Import-M
 
 ## EXAMPLES
 
-### Example 1: Display help about the help system
+### Example 1: Display basic information about a command
 ```powershell
-Get-Help
+Get-Help Format-Table
+Get-Help -Name Format-Table
+Format-Table -?
 ```
 
-The `Get-Help` cmdlet without parameters displays information about the PowerShell help system.
+These commands display basic information about the `Format-Table` cmdlet.
 
-### Example 2: Display available help topics
-```powershell
-Get-Help *
-```
+`Get-Help <name>` is the simplest and default syntax of `Get-Help` cmdlet.
+You can omit the parameter name (**Name**).
 
-This command displays a list of all help topics available on your system.
+`<command-name> -?` works only for commands.
 
-### Example 3: Display basic information about a cmdlet
-```
-PS C:\> Get-Help Get-Alias
-PS C:\> Get-Alias -?
-```
-
-These commands display basic information about the Get-Alias cmdlet.
-The **Get-Help** and *?* commands display the information on a single page.
-
-### Example 4: Display basic information one page at a time
+### Example 2: Display basic information one page at a time
 ```powershell
 help Format-Table
 man Format-Table
@@ -130,19 +121,7 @@ The `man` is an alias for the `help` function.
 
 The `Out-Host -Paging` receives the outputs of `Get-Help Format-Table` from pipeline and displays them one page at a time. For more information, see [Out-Host](./Out-Host.md).
 
-### Example 5: Display a list of conceptual topics
-```
-PS C:\> Get-Help about_*
-```
-
-This command displays a list of the conceptual topics included in Windows PowerShell help.
-All of these topics begin with the characters about_.
-To display a particular help file, type get-help \<topic-name\>, for example, `Get-Help about_Signing`.
-
-This command displays the conceptual topics only when the help files for those topics are installed on the computer.
-For information about downloading and installing help files in Windows PowerShell 3.0, see Update-Help.
-
-### Example 6: Display more information for a cmdlet
+### Example 3: Display more information for a cmdlet
 ```powershell
 Get-Help Format-Table -Detailed
 Get-Help Format-Table -Full
@@ -157,7 +136,7 @@ The **Full** parameter displays the full view of the help topic, which includes 
 The **Detailed** and **Full** parameters are effective only for the commands whose help files are installed on the computer.
 They are not effective for the conceptual ("about_") help topics.
 
-### Example 7: Display selected parts of a cmdlet by using parameters
+### Example 4: Display selected parts of a cmdlet by using parameters
 ```powershell
 Get-Help Format-Table -Examples
 Get-Help Format-Table -Parameter GroupBy
@@ -174,7 +153,40 @@ If you specify only the wildcard character (`*`), it displays the descriptions o
 
 These parameters are not effective for the conceptual ("about_") help topics.
 
-### Example 8: Search for a word in cmdlet help
+### Example 5: Display online version of help
+```powershell
+Get-Help Format-Table -Online
+```
+
+This command displays the online version of the help topic for the `Format-Table` cmdlet in your default web browser.
+
+### Example 6: Display help about the help system
+```powershell
+Get-Help
+```
+
+The `Get-Help` cmdlet without parameters displays information about the PowerShell help system.
+
+### Example 7: Display available help topics
+```powershell
+Get-Help *
+```
+
+This command displays a list of all help topics available on your system.
+
+### Example 8: Display a list of conceptual topics
+```
+PS C:\> Get-Help about_*
+```
+
+This command displays a list of the conceptual topics included in Windows PowerShell help.
+All of these topics begin with the characters about_.
+To display a particular help file, type get-help \<topic-name\>, for example, `Get-Help about_Signing`.
+
+This command displays the conceptual topics only when the help files for those topics are installed on the computer.
+For information about downloading and installing help files in Windows PowerShell 3.0, see Update-Help.
+
+### Example 9: Search for a word in cmdlet help
 ```
 PS C:\> Get-Help Add-Member -Full | Out-String -Stream | Select-String -Pattern Clixml
 ```
@@ -183,13 +195,6 @@ This example shows how to search for a word in particular cmdlet help topic.
 This command searches for the word Clixml in the full version of the help topic for the Add-Member cmdlet.
 
 Because the **Get-Help** cmdlet generates a **MamlCommandHelpInfo** object, not a string, you have to use a cmdlet that transforms the help topic content into a string, such as Out-String or Out-File.
-
-### Example 9: Display online version of help
-```
-PS C:\> Get-Help Get-Member -Online
-```
-
-This command displays the online version of the help topic for the Get-Member cmdlet.
 
 ### Example 10: Display a list of topics that include a word
 ```

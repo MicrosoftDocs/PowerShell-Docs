@@ -38,7 +38,7 @@ brew cask upgrade powershell
 
 > [!NOTE]
 > The commands above can be called from within a PowerShell (pwsh) host,
-> but then the PowerShell shell must be exited and restarted to complete the upgrade.
+> but then the PowerShell shell must be exited and restarted to complete the upgrade
 > and refresh the values shown in $PSVersionTable.
 
 [brew]: http://brew.sh/
@@ -105,7 +105,7 @@ and remove the desired the paths using `sudo rm`.
 
 ## Paths
 
-* `$PSHOME` is `/opt/microsoft/powershell/6.0.0/`
+* `$PSHOME` is `/usr/local/microsoft/powershell/6.0.2/`
 * User profiles will be read from `~/.config/powershell/profile.ps1`
 * Default profiles will be read from `$PSHOME/profile.ps1`
 * User modules will be read from `~/.local/share/powershell/Modules`
@@ -119,7 +119,7 @@ So the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps
 PowerShell respects the [XDG Base Directory Specification][xdg-bds] on macOS.
 
 Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`.
-Thus, `$PSHOME` is `/usr/local/microsoft/powershell/6.0.0/`, and the symlink is placed at `/usr/local/bin/pwsh`.
+Thus, `$PSHOME` is `/usr/local/microsoft/powershell/6.0.2/`, and the symlink is placed at `/usr/local/bin/pwsh`.
 
 [releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
