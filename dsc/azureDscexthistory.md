@@ -1,6 +1,6 @@
 ---
 description: Learn about the version history for the Desired State Configuration (DSC) extension in Azure.
-ms.date:  05/16/2018
+ms.date:  06/21/2018
 keywords:  dsc, powershell, azure, extension
 title:  Azure DSC Extension Version History
 ---
@@ -15,7 +15,7 @@ This article will provide information about each version of the Azure DSC VM Ext
 ### Version 2.76
 
 - **Release date:**
-  - May 9, 2018 (Azure) | June x, 2018 (Azure China, Azure Government)
+  - May 9, 2018 (Azure) | June 21, 2018 (Azure China, Azure Government)
 - **OS support:**
   - Windows Server 2016
   - Windows Server 2012 R2
