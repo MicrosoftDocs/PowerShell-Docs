@@ -33,6 +33,7 @@ To build and run this example, you will need an environment with several compute
 This is the computer where you'll do all of the work setting up and running the example.
 
 The client computer must be a Windows computer with the following installed:
+
 - [Git](https://git-scm.com/)
 - a local git repo cloned from https://github.com/PowerShell/Demo_CI
 - a text editor, such as [Visual Studio Code](https://code.visualstudio.com/)
@@ -71,22 +72,23 @@ If you have not already cloned the Demo_CI repository to your client computer, d
 1. On your client computer, navigate to your TFS server in a web browser.
 1. In TFS, [Create a new team project](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project) named Demo_CI.
 
-    Make sure that **Version control** is set to **Git**.
+   Make sure that **Version control** is set to **Git**.
 1. On your client computer, add a remote to the repository you just created in TFS with the following command:
 
-    `git remote add tfs <YourTFSRepoURL>`
+   `git remote add tfs <YourTFSRepoURL>`
 
-    Where `<YourTFSRepoURL>` is the clone URL to the TFS repository you created in the previous step.
+   Where `<YourTFSRepoURL>` is the clone URL to the TFS repository you created in the previous step.
 
-    If you don't know where to find this URL, see [Clone an existing Git repo](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
+   If you don't know where to find this URL, see [Clone an existing Git repo](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
 1. Push the code from your local repository to your TFS repository with the following command:
 
-    `git push tfs --all`
+   `git push tfs --all`
 1. The TFS repository will be populated with the Demo_CI code.
 
->**Note:** This example uses the code in the `ci-cd-example` branch of the Git repo.
->Be sure to specify this branch as the default branch in your TFS project,
->and for the CI/CD triggers you create.
+> [!NOTE]
+> This example uses the code in the `ci-cd-example` branch of the Git repo.
+> Be sure to specify this branch as the default branch in your TFS project,
+> and for the CI/CD triggers you create.
 
 ## Understanding the code
 
@@ -154,6 +156,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 This finds any nodes that were defined as having a role of `DNSServer` in the [configuration data](configData.md),
 which is created by the `DevEnv.ps1` script.
+
+You can read more about the `Where` method in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 
 Using configuration data to define nodes is important when doing CI because node information will likely change between environments,
 and using configuration data allows you to easily make changes to node information without changing the configuration code.
@@ -366,12 +370,12 @@ and stores the results in the `InfraDNS/Tests/Results/*.xml` folder.
 
 1. Add each of the following lines to **Contents**:
 
-    ```
-    initiate.ps1
-    **\deploy.ps1
-    **\Acceptance\**
-    **\Integration\**
-    ```
+   ```
+   initiate.ps1
+   **\deploy.ps1
+   **\Acceptance\**
+   **\Integration\**
+   ```
 
 1. Set **TargetFolder** to `$(Build.ArtifactStagingDirectory)\`
 

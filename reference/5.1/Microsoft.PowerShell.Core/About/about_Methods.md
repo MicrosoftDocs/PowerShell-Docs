@@ -132,7 +132,7 @@ Beginning in PowerShell 3.0, PowerShell tries to prevent scripting errors that
 result from the differing methods of scalar objects and collections.
 
 Beginning in PowerShell 4.0, collection filtering by using a method syntax is
-supported.
+supported. This is documented in [about_arrays](about_arrays.md)
 
 If you submit a collection, but request a method that exists only on single
 ("scalar") objects, PowerShell invokes the method on every object in the
