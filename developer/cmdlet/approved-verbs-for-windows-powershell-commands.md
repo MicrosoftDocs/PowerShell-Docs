@@ -167,7 +167,7 @@ Windows PowerShell uses the [System.Management.Automation.Verbslifecycle](/dotne
 |--------------------|------------|--------------|
 |[Approve](/dotnet/api/System.Management.Automation.VerbsLifecycle.Approve) (ap)|Confirms or agrees to the status of a resource or process.||
 |[Assert](/dotnet/api/System.Management.Automation.VerbsLifecycle.Assert) (as)|Affirms the state of a resource.|For this action, do not use a verb such as Certify.|
-|[System.Management.Automation.Host.Buffercelltype.Complete](/dotnet/api/system.management.automation.host.buffercelltype?view=powershellsdk-1.1.0) (cp)|Concludes an operation.||
+|[Complete](/dotnet/api/system.management.automation.host.buffercelltype?view=powershellsdk-1.1.0) (cp)|Concludes an operation.||
 |[Confirm](/dotnet/api/System.Management.Automation.VerbsLifecycle.Confirm) (cn)|Acknowledges, verifies, or validates the state of a resource or process.|For this action, do not use verbs such as Acknowledge, Agree, Certify, Validate, or Verify.|
 |[Deny](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deny) (dn)|Refuses, objects, blocks, or opposes the state of a resource or process.|For this action, do not use verbs such as Block, Object, Refuse, or Reject.|
 |[Disable](/dotnet/api/System.Management.Automation.VerbsLifecycle.Disable) (d)|Configures a resource to an unavailable or inactive state. For example, the `Disable-PSBreakpoint` cmdlet makes a breakpoint inactive. This verb is paired with `Enable`.|For this action, do not use verbs such as Halt or Hide.|
