@@ -319,7 +319,7 @@ sourcing operator so that profile executes in the current scope on the
 remote computer and not in its own scope.
 
 ```powershell
-Invoke-Command -Session $s -ScriptBlock {. "$home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"}
+Invoke-Command -Session $s -ScriptBlock {. "$env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"}
 ```
 
 After running this command, the commands that the profile adds to the session
