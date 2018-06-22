@@ -55,9 +55,9 @@ does not run the script.
   state had to be met before the script could even execute. Then the first line
   of the script invalidated the required state.
 
-### PARAMETERS
+### Parameters
 
--Version \<N\>[.\<n\>]
+#### -Version \<N\>[.\<n\>]
 
 Specifies the minimum version of Windows PowerShell that the script requires.
 Enter a major version number and optional minor version number.
@@ -68,7 +68,7 @@ For example:
 #Requires -Version 3.0
 ```
 
--PSSnapin \<PSSnapin-Name\> [-Version \<N\>[.\<n\>]]
+#### -PSSnapin \<PSSnapin-Name\> [-Version \<N\>[.\<n\>]]
 
 Specifies a Windows PowerShell snap-in that the script requires. Enter the
 snap-in name and an optional version number.
@@ -79,7 +79,7 @@ For example:
 #Requires -PSSnapin DiskSnapin -Version 1.2
 ```
 
--Modules \<Module-Name\> | \<Hashtable\>
+#### -Modules \<Module-Name\> | \<Hashtable\>
 
 Specifies Windows PowerShell modules that the script requires. Enter the
 module name and an optional version number. The Modules parameter is
@@ -92,17 +92,56 @@ terminating error.
 For each module, type the module name (\<String\>) or a hash table with the
 following keys. The value can be a combination of strings and hash tables.
 
-- ModuleName. This key is required.
-- ModuleVersion. This key is required.
-- GUID. This key is optional.
+- `ModuleName` - __[Required]__ Specifies the *ModuleName*.
+- `GUID` - __[Optional]__ Specifies the *GUID* of the Module.
+- It is also **Required** to specify **one** of the two below keys,
+  they cannot be used together.
+  - `ModuleVersion` - __[Required]__ Specify a Minimum acceptable version.
+  - `RequiredVersion` - __[Required]__ Specify an exact, required version.
+
+> [!NOTE]
+> `RequiredVersion` was added in Windows Powershell 5.0.
 
 For example,
 
+Require that `Hyper-V` (version `1.1.0.0` or greater) is installed
+
 ```powershell
-#Requires -Modules PSWorkflow, @{ ModuleName="PSScheduledJob"; ModuleVersion="1.0.0.0" }
+#Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1.0.0" }
 ```
 
--ShellId
+Requires that `Hyper-V` (**only** version `1.1.0.0`) is installed
+
+```powershell
+#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1.0.0" }
+```
+
+Requires that any version of `PSScheduledJob` and `PSWorkflow`, is installed.
+
+```powershell
+#Requires -Modules PSWorkflow, PSScheduledJob
+```
+
+When using the `RequiredVersion` key, ensure your version string exactly matches
+the version string you wish to require.
+
+```powershell
+Get-Module Hyper-V
+```
+
+```output
+ModuleType Version    Name     ExportedCommands
+---------- -------    ----     ------------------
+Binary     2.0.0.0    hyper-v  {Add-VMAssignableDevice, ...}
+```
+
+This will **FAIL**, because "2.0.0" does not exactly match "2.0.0.0"
+
+```powershell
+#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="2.0.0" }
+```
+
+#### -ShellId
 
 Specifies the shell that the script requires. Enter the shell ID.
 
@@ -114,7 +153,7 @@ For example,
 
 You can find current ShellId by querying `$ShellId` automatic variable.
 
--RunAsAdministrator
+#### -RunAsAdministrator
 
 When this switch parameter is added to your requires statement, it specifies
 that the Windows PowerShell session in which you are running the script must
