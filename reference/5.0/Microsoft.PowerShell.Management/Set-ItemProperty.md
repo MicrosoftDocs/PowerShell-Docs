@@ -54,22 +54,18 @@ For example, you can add a new registry entry to a key and establish or change i
 ## EXAMPLES
 
 ### Example 1: Set a property of a file
-```
-PS C:\> Set-ItemProperty -Path "c:\GroupFiles\final.doc" -Name IsReadOnly -Value $True
+```powershell
+Set-ItemProperty -Path C:\GroupFiles\final.doc -Name IsReadOnly -Value $true
 ```
 
 This command sets the value of the **IsReadOnly** property of the final.doc file to true.
-
-The command uses **Set-ItemProperty** to change the value of the property of the final.doc file.
-It uses *Path* to specify the file.
-It uses *Name* to specify the name of the property and the *Value* parameter to specify the new value.
-
-The $True automatic variable represents a value of TRUE.
-For more information, see about_Automatic_Variables.
+It uses **Path** to specify the file, **Name** to specify the name of the property, and the **Value** parameter to specify the new value.
 
 The file is a **System.IO.FileInfo** object and **IsReadOnly** is just one of its properties.
-To see all of the properties and methods of a FileInfo object, pipe the file to the **Get-Member** cmdlet.
-For example, type `final.doc | Get-Member`.
+To see all of the properties, type `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType Property`.
+
+The `$true` automatic variable represents a value of TRUE.
+For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ### Example 2: Create a registry entry and value
 ```
