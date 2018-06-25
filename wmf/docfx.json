@@ -5,7 +5,7 @@
                 "**/**.yml",
                 "**/**.md"
             ],
-            "exclude": ["**/obj/**"]
+            "exclude": ["**/obj/**", "README.md"]
         }],
         "globalMetadata": {
             "breadcrumb_path": "/powershell/wmf/bread/toc.yml",

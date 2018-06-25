@@ -57,7 +57,7 @@ does not run the script.
 
 ### Parameters
 
--Version \<N\>[.\<n\>]
+#### -Version \<N\>[.\<n\>]
 
 Specifies the minimum version of Windows PowerShell that the script requires.
 Enter a major version number and optional minor version number.
@@ -68,7 +68,7 @@ For example:
 #Requires -Version 3.0
 ```
 
--PSSnapin \<PSSnapin-Name\> [-Version \<N\>[.\<n\>]]
+#### -PSSnapin \<PSSnapin-Name\> [-Version \<N\>[.\<n\>]]
 
 Specifies a Windows PowerShell snap-in that the script requires. Enter the
 snap-in name and an optional version number.
@@ -79,7 +79,7 @@ For example:
 #Requires -PSSnapin DiskSnapin -Version 1.2
 ```
 
--Modules \<Module-Name\> | \<Hashtable\>
+#### -Modules \<Module-Name\> | \<Hashtable\>
 
 Specifies Windows PowerShell modules that the script requires. Enter the
 module name and an optional version number. The Modules parameter is
@@ -92,17 +92,25 @@ terminating error.
 For each module, type the module name (\<String\>) or a hash table with the
 following keys. The value can be a combination of strings and hash tables.
 
-- ModuleName. This key is required.
-- ModuleVersion. This key is required.
-- GUID. This key is optional.
+- `ModuleName` - __[Required]__ Specifies the *ModuleName*.
+- `ModuleVersion` - __[Required]__ Specifies an maximum allowed *ModuleVersion*
+- `GUID` - __[Optional]__ Specifies a required module *GUID*
 
 For example,
 
 ```powershell
-#Requires -Modules PSWorkflow, @{ ModuleName="PSScheduledJob"; ModuleVersion="1.0.0.0" }
+#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1.0.0" }
 ```
 
--ShellId
+Requires that `Hyper-V` (version `1.1.0.0` or **less**) is installed
+
+```powershell
+#Requires -Modules PSWorkflow, PSScheduledJob
+```
+
+Requires that any version of `PSScheduledJob` and `PSWorkflow` are installed.
+
+#### -ShellId
 
 Specifies the shell that the script requires. Enter the shell ID.
 
@@ -114,7 +122,7 @@ For example,
 
 You can find current ShellId by querying `$ShellId` automatic variable.
 
--RunAsAdministrator
+#### -RunAsAdministrator
 
 When this switch parameter is added to your requires statement, it specifies
 that the Windows PowerShell session in which you are running the script must

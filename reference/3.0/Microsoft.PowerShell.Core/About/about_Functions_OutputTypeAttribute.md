@@ -50,7 +50,7 @@ You can use the ParameterSetName parameter to indicate that different
 parameter sets return different types.
 
 ```
-[OutputType([<Type1>], ParameterSetName="<Set1>","<Set2>")]
+[OutputType([<Type1>], ParameterSetName=("<Set1>","<Set2>"))]
 [OutputType([<Type2>], ParameterSetName="<Set3>")]
 ```
 
