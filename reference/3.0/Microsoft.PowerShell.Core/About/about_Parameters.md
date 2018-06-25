@@ -7,11 +7,11 @@ title:  about_Parameters
 ---
 # About Parameters
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to work with command parameters in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Most PowerShell commands, such as cmdlets, functions, and scripts,
 rely on parameters to allow users to select options or provide input. The
@@ -27,10 +27,9 @@ Some parameters do not require or accept a parameter value. Other parameters
 require a value, but do not require the parameter name in the command.
 
 The type of parameters and the requirements for those parameters vary. To find
-information about the parameters of a command, use the Get-Help cmdlet. For
-example, to find information about the parameters of the Get-ChildItem cmdlet,
+information about the parameters of a command, use the `Get-Help` cmdlet. For
+example, to find information about the parameters of the `Get-ChildItem` cmdlet,
 type:
-
 
 ```powershell
 Get-Help Get-ChildItem
@@ -43,24 +42,21 @@ script file. For example:
 Get-Help $home\Documents\Scripts\Get-Function.ps1
 ```
 
-The Get-Help cmdlet returns various details about the command, including a
+The `Get-Help` cmdlet returns various details about the command, including a
 description, the command syntax, information about the parameters, and
 examples showing how to use the parameters in a command.
 
 You can also use the Parameter parameter of the Get-Help cmdlet to find
 information about a particular parameter. Or, you can use the Parameter
-parameter with the wildcard character (\*) value to find information about all
+parameter with the wildcard character ( `*` ) value to find information about all
 parameters of the command. For example, the following command gets information
-about all parameters of the Get-Member cmdlet:
-
+about all parameters of the `Get-Member` cmdlet:
 
 ```powershell
 Get-Help Get-Member -Parameter *
 ```
 
-
-
-### DEFAULT PARAMETER VALUES
+### Default parameter values
 
 Optional parameters have a default value, which is the value that is used or
 assumed when the parameter is not specified in the command.
@@ -76,16 +72,15 @@ You can also set a custom default value for any parameter of a cmdlet or
 advanced function. For information about setting custom default values, see
 [about_Parameters_Default_Values](about_Parameters_Default_Values.md).
 
-### PARAMETER ATTRIBUTE TABLE
+### Parameter attribute table
 
-When you use the Full, Parameter, or Online parameters of the Get-Help cmdlet,
-Get-Help displays a parameter attribute table with detailed information about
-the parameter.
+When you use the `Full`, `Parameter`, or `Online` parameters of the `Get-Help`
+cmdlet, `Get-Help` displays a parameter attribute table with detailed
+information about the parameter.
 
 This information includes the details you need to know to use the parameter.
-For example, the help topic for the Get-ChildItem cmdlet includes the
+For example, the help topic for the `Get-ChildItem` cmdlet includes the
 following details about its Path parameter:
-
 
 ```
 -path <string[]>
@@ -103,40 +98,40 @@ The parameter information includes the parameter syntax, a description of the
 parameter, and the parameter attributes. The following sections describe the
 parameter attributes.
 
-#### Parameter Required?
+#### Parameter Required
 
 This setting indicates whether the parameter is mandatory, that is, whether
 all commands that use this cmdlet must include this parameter. When the value
-is "True" and the parameter is missing from the command, Windows PowerShell
+is **"True"** and the parameter is missing from the command, Windows PowerShell
 prompts you for a value for the parameter.
 
-#### Parameter Position?
+#### Parameter Position
 
 This setting indicates whether you can supply a parameter's value without
-preceding it with the parameter name. If set to "0" or "named," a parameter
-name is required. This type of parameter is referred to as a named parameter.
-A named parameter can be listed in any position after the cmdlet name.
+preceding it with the parameter name. If set to **"0"** or **"named"**, a
+parameter name is required. This type of parameter is referred to as a
+named parameter. A named parameter can be listed in any position after the
+cmdlet name.
 
-If the "Parameter position?" setting is set to an integer other than 0, the
+If the `Parameter position` setting is set to an integer other than **"0"**, the
 parameter name is not required. This type of parameter is referred to as a
 positional parameter, and the number indicates the position in which the
 parameter must appear in relation to other positional parameters. If you
 include the parameter name for a positional parameter, the parameter can be
 listed in any position after the cmdlet name.
 
-For example, the Get-ChildItem cmdlet has Path and Exclude parameters. The
-"Parameter position?" setting for Path is 1, which means that it is a
-positional parameter. The "Parameter position?" setting for Exclude is 0,
+For example, the `Get-ChildItem` cmdlet has Path and Exclude parameters. The
+`Parameter position` setting for `Path` is **"1"**, which means that it is a
+positional parameter. The `Parameter position` setting for `Exclude` is **"0"**,
 which means that it is a named parameter.
 
-This means that Path does not require the parameter name, but its parameter
+This means that `Path` does not require the parameter name, but its parameter
 value must be the first or only unnamed parameter value in the command.
 However, because the Exclude parameter is a named parameter, you can place it
 in any position in the command.
 
-As a result of the "Parameter position?" settings for these two parameters,
+As a result of the `Parameter position` settings for these two parameters,
 you can use any of the following commands:
-
 
 ```powershell
 Get-ChildItem -Path c:\techdocs -Exclude *.ppt
@@ -155,7 +150,7 @@ This setting specifies the Microsoft .NET Framework type of the parameter
 value. For example, if the type is Int32, the parameter value must be an
 integer. If the type is string, the parameter value must be a character
 string. If the string contains spaces, the value must be enclosed in quotation
-marks, or the spaces must be preceded by the escape character (`).
+marks, or the spaces must be preceded by the escape character ( ` ).
 
 #### Default Value
 
@@ -165,7 +160,7 @@ often the current directory. Required parameters never have a default value.
 For many optional parameters, there is no default because the parameter has no
 effect if it is not used.
 
-#### Accepts Multiple Values?
+#### Accepts Multiple Values
 
 This setting indicates whether a parameter accepts multiple parameter values.
 When a parameter accepts multiple values, you can type a comma-separated list
@@ -185,9 +180,9 @@ $s = "winrm", "netlogon"
 Get-Service -servicename $s
 ```
 
-#### Accepts Pipeline Input?
+#### Accepts Pipeline Input
 
-This setting indicates whether you can use the pipeline operator (&#124;) to
+This setting indicates whether you can use the pipeline operator ( `|` ) to
 send a value to the parameter.
 
 ```
@@ -215,9 +210,19 @@ True (by Property Name)  Indicates that you can pipe a value to the
 ```
 
 For example, you can pipe a value to a Name parameter only when the value has
-a property called "Name".
+a property called **"Name"**.
 
-#### Accepts Wildcard Characters?
+> [!NOTE]
+> A parameter that accepts pipeline input (`by Value`) will enable use of
+> **delay-bind** script blocks on all other parameters defined to accept
+> pipeline input. The **delay-bind** script block is run automatically during
+> ParameterBinding. The result is bound to the parameter. Delay binding
+> does **not** work for parameters defined as type `System.Object`, the
+> script block is passed through **without** being invoked.
+>
+> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md)
+
+#### Accepts Wildcard Characters
 
 This setting indicates whether the parameter's value can contain wildcard
 characters so that the parameter value can be matched to more than one
@@ -228,7 +233,7 @@ existing item in the target container.
 Common parameters are parameters that you can use with any cmdlet. For more
 information about common parameters, see [about_CommonParameters](about_CommonParameters.md).
 
-## SEE ALSO
+## See also
 
 [about_Command_syntax](about_Command_syntax.md)
 
