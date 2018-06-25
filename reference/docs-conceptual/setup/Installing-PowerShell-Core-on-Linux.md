@@ -34,12 +34,12 @@ Installing via direct download does not change, other than the file name.
 
 Here is a table of the commands to install the stable and preview packages using the various package managers:
 
-|Stable Command | Preview Command |
-|---------------|-----------------|
-|`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-|`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-|`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
-|`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+|Distrobution(s)|Stable Command | Preview Command |
+|---------------|---------------|-----------------|
+| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| OpenSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
+| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
 ## Ubuntu 14.04
 
@@ -195,7 +195,7 @@ sudo apt-get remove powershell
 
 ## Ubuntu 18.04
 
-> Please note, Support for Ubuntu 18.04 was added after `6.1.0-preview.2`
+> Please note, Support for Ubuntu 17.10 was added after `6.1.0-preview.2`
 
 ### Installation via Package Repository - Ubuntu 18.04
 
