@@ -121,7 +121,7 @@
         {
             "path_to_root": "powershell-sdk-samples",
             "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples",
-            "branch": "master"
+            "branch": "master",
             "branch_mapping": {}
         }
     ],
