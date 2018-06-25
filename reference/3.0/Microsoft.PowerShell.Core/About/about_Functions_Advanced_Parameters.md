@@ -259,6 +259,16 @@ Param
 )
 ```
 
+> [!NOTE]
+> A parameter that accepts pipeline input (`by Value`) will enable use of
+> **delay-bind** script blocks on all other parameters defined to accept
+> pipeline input. The **delay-bind** script block is run automatically during
+> ParameterBinding. The result is bound to parameter. Delay binding
+> does **not** work for parameters defined as type `System.Object`, the
+> script block is passed through **without** being invoked.
+>
+> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md)
+
 ### ValueFromPipelineByPropertyName Argument
 
 The `ValueFromPipelineByPropertyName` argument indicates that the parameter
@@ -282,22 +292,6 @@ Param
     $ComputerName
 )
 ```
-
-> [!NOTE]
-> The `ValueFromPipeline` and `ValueFromPipelineByPropertyName` arguments also
-> enable the parameter to be bound using **delay-bind** script blocks.
->
-> This requires that at least one other parameter be configured to accept
-> pipeline input (`by Value`) or (`by PropertyName`).
->
-> The **delay-bind** script block is run automatically during ParameterBinding.
-> The result will be bound to parameter.
->
-> You can read about **delay-bind** script blocks here [about_Script_Blocks](about_Script_Blocks.md).
-
-> [!WARNING]
-> If the parameter is of type `System.Object` the script block is passed
-> through **without** being invoked.
 
 ### ValueFromRemainingArguments Argument
 
