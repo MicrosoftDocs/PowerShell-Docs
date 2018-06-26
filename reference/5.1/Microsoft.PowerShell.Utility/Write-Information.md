@@ -21,28 +21,34 @@ Write-Information [-MessageData] <Object> [[-Tags] <String[]>] [<CommonParameter
 
 ## DESCRIPTION
 
-The **Write-Information** cmdlet specifies how Windows PowerShell handles information stream data for a command.
+The `Write-Information` cmdlet specifies how Windows PowerShell handles information stream data for a command.
 
 Windows PowerShell 5.0 introduces a new, structured information stream (number 6 in Windows PowerShell streams) that you can use to transmit structured data between a script and its callers (or hosting environment).
-**Write-Information** lets you add an informational message to the stream, and specify how Windows PowerShell handles information stream data for a command.
+`Write-Information` lets you add an informational message to the stream, and specify how Windows PowerShell handles information stream data for a command. Information streams also work for `PowerShell.Streams`, jobs, scheduled jobs, and workflows.
 
-The $InformationPreference preference variable value determines whether the message you provide to **Write-Information** is displayed at the expected point in a script's operation.
-Because the default value of this variable is SilentlyContinue, by default, informational messages are not shown.
-If you don't want to change the value of $InformationPreference, you can override its value by adding the *InformationAction* common parameter to your command.
-For more information, see about_Preference_Variables and about_CommonParameters.
+The `$InformationPreference` preference variable value determines whether the message you provide to `Write-Information` is displayed at the expected point in a script's operation.
+Because the default value of this variable is `SilentlyContinue`, by default, informational messages are not shown.
+If you don't want to change the value of `$InformationPreference`, you can override its value by adding the `InformationAction` common parameter to your command.
+For more information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md) and [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-Starting in Windows PowerShell 5.0, Write-Host is a wrapper for **Write-Information**.
-You can now use **Write-Host** to emit output to the information stream, but the $InformationPreference preference variable and *InformationAction* common parameter do not affect **Write-Host** messages.
-Information streams also work for **PowerShell.Streams**, jobs, scheduled jobs, and workflows.
+> [!NOTE]
+> Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information`
+> This allows you to use `Write-Host` to emit output to the information stream.
+> This enables the **capture** or **suppression** of data written using `Write-Host` while preserving backwards compatibility.
+>
+> The `$InformationPreference` preference variable and `InformationAction` common parameter do not affect `Write-Host` messages.
 
-**Write-Information** is also a supported workflow activity.
+`Write-Information` is also a supported workflow activity.
 
 ## EXAMPLES
 
 ### Example 1: Write information for Get- results
 
+```powershell
+Get-WindowsFeature -Name p*; Write-Information -MessageData "Got your features!" -InformationAction Continue
 ```
-PS C:\> Get-WindowsFeature -Name p*; Write-Information -MessageData "Got your features!" -InformationAction Continue
+
+```output
 Display Name                                            Name                       Install State
 ------------                                            ----                       -------------
 [ ] Print and Document Services                         Print-Services                 Available
@@ -58,14 +64,17 @@ Display Name                                            Name                    
 Got your features!
 ```
 
-In this example, you show an informational message, "Got your features!", after running the **Get-WindowsFeature** command to find all features that have a Name value that starts with p.
-Because the $InformationPreference variable is still set to its default, SilentlyContinue, you add the *InformationAction* parameter to override the $InformationPreference value, and show the message.
-The *InformationAction* value is Continue, which means that your message is shown, but the script or command continues, if it is not yet finished.
+In this example, you show an informational message, "Got your features!", after running the `Get-WindowsFeature` command to find all features that have a Name value that starts with 'p'.
+Because the `$InformationPreference` variable is still set to its default, `SilentlyContinue`, you add the `InformationAction` parameter to override the `$InformationPreference` value, and show the message.
+The `InformationAction` value is Continue, which means that your message is shown, but the script or command continues, if it is not yet finished.
 
 ### Example 2: Write information and tag it
 
+```powershell
+Get-WindowsFeature -Name p*; Write-Information -MessageData "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet." -Tags "Instructions" -InformationAction Continue
 ```
-PS C:\> Get-WindowsFeature -Name p*; Write-Information -MessageData "To filter your results for PowerShell, pipe your results to the Where-Object cmdlet." -Tags "Instructions" -InformationAction Continue
+
+```output
 Display Name                                            Name                       Install State
 ------------                                            ----                       -------------
 [ ] Print and Document Services                         Print-Services                 Available
@@ -81,18 +90,18 @@ Display Name                                            Name                    
 To filter your results for PowerShell, pipe your results to the Where-Object cmdlet.
 ```
 
-In this example, you use **Write-Information** to let users know they'll need to run another command after they're done running the current command.
+In this example, you use `Write-Information` to let users know they'll need to run another command after they're done running the current command.
 The example adds the tag Instructions to the informational message.
 After running this command, if you search the information stream for messages tagged Instructions, the message specified here would be among the results.
 
 ### Example 3: Write information to a file
 
-```
-PS C:\> function Test-Info
-       {
-         Get-Process P*
-         Write-Information "Here you go"
-       }
+```powershell
+function Test-Info
+{
+    Get-Process P*
+    Write-Information "Here you go"
+}
 Test-Info 6> Info.txt
 ```
 
@@ -121,8 +130,8 @@ Accept wildcard characters: False
 
 ### -Tags
 
-Specifies a simple string that you can use to sort and filter messages that you have added to the information stream with **Write-Information**.
-This parameter works similarly to the *Tags* parameter in New-ModuleManifest.
+Specifies a simple string that you can use to sort and filter messages that you have added to the information stream with `Write-Information`.
+This parameter works similarly to the *Tags* parameter in `New-ModuleManifest`.
 
 ```yaml
 Type: String[]
@@ -138,13 +147,13 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### None
 
-**Write-Information** does not accept piped input.
+`Write-Information` does not accept piped input.
 
 ## OUTPUTS
 
