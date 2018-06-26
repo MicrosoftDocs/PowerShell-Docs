@@ -29,7 +29,7 @@ A NuGet package includes the following NuGet-specific elements that are not part
 * A folder named "_rels". This contains a .rels file, which lists the dependencies for the item. 
 * A folder named "package". This folder contains the NuGet-specific data associated with the item.
 * A file named "[content_types].xml". This describes how extensions such as PowerShellGet work with NuGet.
-* A file named "<itemname>.nuspec". This contains the bulk of the metadata associated with the item.
+* A file named "[itemname].nuspec". This contains the bulk of the metadata associated with the item.
 
 ## Installing PowerShell items from a NuGet package
 
@@ -37,7 +37,7 @@ The most direct approach is to remove the elements that are part of the NuGet pa
 
 * Extract the contents of the NuGet package 
 * Delete the Nuget-specific folders and files listed above. What will remain is what the author originally published using PowerShellGet. 
-* Rename the folder. The default folder name for the item will generally be <item name>.<version>, and the version section will include "-prerelease" if the item is tagged as a prerelease. Rename the folder to be just the item name. For example, "azurerm.storage.5.0.4-preview" would become "azurerm.storage". 
+* Rename the folder. The default folder name for the item will generally be [item name].[version], and the version section will include "-prerelease" if the item is tagged as a prerelease. Rename the folder to be just the item name. For example, "azurerm.storage.5.0.4-preview" would become "azurerm.storage". 
 * If the item you downloaded is a module, you can copy the folder to your PSModulePath. If the item is a script, you will want to copy just the script file to your PSModulePath.
 
 As stated in the note above, using manual download does not include dependencies needed to use the item. The dependencies are included in the .rels file, in the rels folder. This file is in xml format, and contains the list of dependencies that would be installed by PowerShellGet. 
