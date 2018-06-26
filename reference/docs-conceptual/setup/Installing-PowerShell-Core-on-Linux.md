@@ -350,8 +350,6 @@ sudo dpkg -i powershell_6.0.2-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-
-
 ### Uninstallation - Debian 9
 
 ```sh
@@ -360,6 +358,7 @@ sudo apt-get remove powershell
 
 ## CentOS 7
 
+> [!NOTE]
 > This package also works on Oracle Linux 7.
 
 ### Installation via Package Repository (preferred) - CentOS 7
@@ -452,24 +451,23 @@ sudo yum remove powershell
 
 ## OpenSUSE 42.2
 
-> [!NOTE]
-> When installing PowerShell Core, `zypper` may report the following error:
->
-> ```Output
-> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
->  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
->  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
-> ```
->
-> In this case, verify that a compatible `libcurl` library is present by checking
-> that the following command shows the `libcurl4` package as installed:
->
-> ```sh
-> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
-> ```
->
-> Then choose the `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` solution
-> when installing the PowerShell package.
+When installing PowerShell Core, `zypper` may report the following error:
+
+```Output
+Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+ Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+ Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+```
+
+In this case, verify that a compatible `libcurl` library is present by checking that the following
+command shows the `libcurl4` package as installed:
+
+```sh
+zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+```
+
+Then choose the `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies`
+solution when installing the PowerShell package.
 
 ### Installation via Package Repository (preferred) - OpenSUSE 42.2
 
