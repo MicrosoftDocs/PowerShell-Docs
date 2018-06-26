@@ -7,11 +7,11 @@ title:  about_Methods
 ---
 # About methods
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to use methods to perform actions on objects in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell uses objects to represent the items in data stores or the state of
 the computer. For example, FileInfo objects represent the files in file system
@@ -29,7 +29,7 @@ To get the methods of any object, use the `Get-Member` cmdlet. Use its
 the methods of process objects.
 
 ```powershell
-PS> Get-Process | Get-Member -MemberType Method
+Get-Process | Get-Member -MemberType Method
 ```
 
 ```output
@@ -67,8 +67,11 @@ takes a delimiter character argument that tells the method where to split the
 string.
 
 ```powershell
-PS> $a = "Try-Catch-Finally"
-PS> $a.Split("-")
+$a = "Try-Catch-Finally"
+$a.Split("-")
+```
+
+```output
 Try
 Catch
 Finally
@@ -80,7 +83,7 @@ you get by using a command or an object in a variable.
 Starting in PowerShell 4.0, method invocation by using dynamic method names is
 supported.
 
-### LEARNING ABOUT METHODS
+### Learning about methods
 
 To find definitions of the methods of an object, go to help topic for the
 object type in MSDN and look for its methods page. For example, the following
@@ -97,12 +100,14 @@ formats of commands to invoke the method.
 For example, the `CopyTo` method of the `FileInfo` class contains the following
 two method signatures:
 
+```
     CopyTo(String destFileName)
     CopyTo(String destFileName, Boolean overwrite)
+```
 
 The first method signature takes the destination file name (and a path). The
-following example use The first `CopyTo` method to copy the Final.txt file to
-the C:\\Bin directory.
+following example use The first `CopyTo` method to copy the `Final.txt` file to
+the `C:\Bin` directory.
 
 ```powershell
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt")
@@ -112,14 +117,14 @@ The second method signature take a destination file name and a Boolean value
 that determines whether the destination file should be overwritten, if it
 already exists.
 
-The following example use The second `CopyTo` method to copy the Final.txt file
-to the C:\\Bin directory, and to overwrite existing files.
+The following example use The second `CopyTo` method to copy the `Final.txt` file
+to the `C:\Bin` directory, and to overwrite existing files.
 
-```
+```powershell
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt", $true)
 ```
 
-### METHODS OF SCALAR OBJECTS AND COLLECTIONS
+### Methods of Scalar objects and Collections
 
 The methods of one ("scalar") object of a particular type are often different
 from the methods of a collection of objects of the same type.
@@ -129,9 +134,6 @@ does not have a Kill method.
 
 Beginning in PowerShell 3.0, PowerShell tries to prevent scripting errors that
 result from the differing methods of scalar objects and collections.
-
-Beginning in PowerShell 4.0, collection filtering by using a method syntax is
-supported.
 
 If you submit a collection, but request a method that exists only on single
 ("scalar") objects, PowerShell invokes the method on every object in the
@@ -143,7 +145,7 @@ PowerShell does not alter the result.
 This feature also works on properties of scalar objects and collections. For
 more information, see [about_Properties](about_Properties.md).
 
-### EXAMPLES
+### Examples
 
 The following example runs the Kill method of individual process objects on a
 collection of process objects. This example works only on PowerShell 3.0 and
@@ -154,15 +156,18 @@ command uses the `Get-Process` command to get all three instance of the Notepad
 process and save them in the \$p variable.
 
 ```powershell
-PS> Notepad; Notepad; Notepad
-PS> $p = Get-Process Notepad
+Notepad; Notepad; Notepad
+$p = Get-Process Notepad
 ```
 
 The third command uses the Count property of all collections to verify that
 there are three processes in the \$p variable.
 
 ```powershell
-PS> $p.Count
+$p.Count
+```
+
+```output
 3
 ```
 
@@ -172,15 +177,18 @@ variable.
 This command works even though a collection of processes does not have a `Kill`
 method.
 
-```
-PS> $p.Kill()
+```powershell
+$p.Kill()
 ```
 
 The fifth command uses the Get-Process command to confirm that the `Kill`
 command worked.
 
 ```powershell
-PS> Get-Process Notepad
+Get-Process Notepad
+```
+
+```output
 Get-Process : Cannot find a process with the name "notepad". Verify the proc
 ess name and call the cmdlet again.
 At line:1 char:12
@@ -195,10 +203,18 @@ To perform the same task on PowerShell 2.0, use the `Foreach-Object` cmdlet to
 run the method on each object in the collection.
 
 ```powershell
-PS> $p | ForEach-Object {$_.Kill()}
+$p | ForEach-Object {$_.Kill()}
 ```
 
-## SEE ALSO
+### ForEach and Where methods
+
+Beginning in PowerShell 4.0, collection filtering by using a method syntax
+is supported. This allows use of two new methods when dealing with collections
+`ForEach` and `Where`.
+
+You can read more about these methods in [about_arrays](about_arrays.md)
+
+## See Also
 
 [about_Objects](about_Objects.md)
 

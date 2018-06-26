@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,15 +7,16 @@ online version:  http://go.microsoft.com/fwlink/p/?linkid=289578
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Enter-PSSession
 ---
-
 # Enter-PSSession
 
 ## SYNOPSIS
+
 Starts an interactive session with a remote computer.
 
 ## SYNTAX
 
 ### ComputerName (Default)
+
 ```
 Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [-Credential <PSCredential>] [-Port <Int32>]
  [-UseSSL] [-ConfigurationName <String>] [-ApplicationName <String>] [-SessionOption <PSSessionOption>]
@@ -23,11 +24,13 @@ Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [-Credential <PS
 ```
 
 ### Session
+
 ```
 Enter-PSSession [[-Session] <PSSession>] [<CommonParameters>]
 ```
 
 ### Uri
+
 ```
 Enter-PSSession [[-ConnectionUri] <Uri>] [-EnableNetworkAccess] [-Credential <PSCredential>]
  [-ConfigurationName <String>] [-AllowRedirection] [-SessionOption <PSSessionOption>]
@@ -35,21 +38,25 @@ Enter-PSSession [[-ConnectionUri] <Uri>] [-EnableNetworkAccess] [-Credential <PS
 ```
 
 ### InstanceId
+
 ```
 Enter-PSSession [-InstanceId <Guid>] [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Enter-PSSession [[-Id] <Int32>] [<CommonParameters>]
 ```
 
 ### Name
+
 ```
 Enter-PSSession [-Name <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Enter-PSSession** cmdlet starts an interactive session with a single remote computer.
 During the session, the commands that you type run on the remote computer, just as though you were typing directly on the remote computer.
 You can have only one interactive session at a time.
@@ -63,8 +70,12 @@ To end the interactive session and disconnect from the remote computer, use the 
 ## EXAMPLES
 
 ### Example 1
+
+```powershell
+Enter-PSSession
 ```
-PS C:\> Enter-PSSession
+
+```output
 [localhost]: PS C:\>
 ```
 
@@ -74,39 +85,31 @@ The command prompt changes to indicate that you are now running commands in a di
 The commands that you enter run in the new session, and the results are returned to the default session as text.
 
 ### Example 2
-```
+
 The first command uses the Enter-PSSession cmdlet to start an interactive session with Server01, a remote computer. When the session starts, the command prompt changes to include the computer name.
-PS C:\> Enter-PSSession -Computer Server01
+
+```powershell
+Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\>
-
-The second command gets the PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
-[Server01]: PS C:\> Get-Process Powershell > C:\ps-test\Process.txt
-
-The third command uses the Exit keyword to end the interactive session and close the connection.
-[Server01]: PS C:\> exit
+[Server01]: PS> Get-Process Powershell > C:\ps-test\Process.txt
+[Server01]: PS> exit
 PS C:\>
-
-The fourth command confirms that the Process.txt file is on the remote computer. A Get-ChildItem ("dir") command on the local computer cannot find the file.
-PS C:\> dir C:\ps-test\process.txt
-Get-ChildItem : Cannot find path 'C:\ps-test\process.txt' because it does not exist.
-At line:1 char:4
-+ dir <<<<  c:\ps-test\process.txt
 ```
-
-This command shows how to work in an interactive session with a remote computer.
 
 ### Example 3
-```
-PS C:\> $s = New-PSSession -ComputerName Server01
-PS C:\> Enter-PSSession -Session $s
+
+```powershell
+$s = New-PSSession -ComputerName Server01
+Enter-PSSession -Session $s
 [Server01]: PS C:\>
 ```
 
 These commands use the Session parameter of Enter-PSSession to run the interactive session in an existing Windows PowerShell session (PSSession).
 
 ### Example 4
-```
-PS C:\> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
+
+```powershell
+Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
 [Server01]: PS C:\>
 ```
 
@@ -114,9 +117,10 @@ This command starts an interactive session with the Server01 computer.
 It uses the Port parameter to specify the port and the Credential parameter to specify the account of a user with permission to connect to the remote computer.
 
 ### Example 5
-```
-PS C:\> Enter-PSSession -ComputerName Server01
-[Server01]: PS C:\> Exit-PSSession
+
+```powershell
+Enter-PSSession -ComputerName Server01
+[Server01]: PS> Exit-PSSession
 PS C:\>
 ```
 
@@ -130,6 +134,7 @@ Exit-PSSession and Exit have the same effect.
 ## PARAMETERS
 
 ### -AllowRedirection
+
 Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 By default, redirection is not allowed.
 
@@ -153,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
+
 Specifies the application name segment of the connection URI.
 Use this parameter to specify the application name when you are not using the ConnectionURI parameter in the command.
 
@@ -177,6 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the mechanism that is used to authenticate the user's credentials.
 Valid values are "Default", "Basic", "Credssp", "Digest", "Kerberos", "Negotiate", and "NegotiateWithImplicitCredential".
 The default value is "Default".
@@ -203,6 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
@@ -224,6 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Starts an interactive session with the specified remote computer.
 Enter only one computer name.
 The default is the local computer.
@@ -250,6 +259,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationName
+
 Specifies the session configuration that is used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
@@ -275,6 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
+
 Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint for the session.
 The URI must be fully qualified.
 The format of this string is as follows:
@@ -306,6 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -326,6 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
+
 Adds an interactive security token to loopback sessions.
 The interactive token lets you run commands in the loopback session that get data from other computers.
 For example, you can run a command in the session that copies XML files from a remote computer to the local computer.
@@ -355,6 +368,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies the ID of an existing session.
 Enter-PSSession uses the specified session for the interactive session.
 
@@ -373,6 +387,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies the instance ID of an existing session.
 Enter-PSSession uses the specified session for the interactive session.
 
@@ -394,6 +409,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the friendly name of an existing session.
 Enter-PSSession uses the specified session for the interactive session.
 
@@ -416,6 +432,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
+
 Specifies the network port  on the remote computer used for this command.
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
@@ -446,6 +463,7 @@ Accept wildcard characters: False
 ```
 
 ### -Session
+
 Specifies a Windows PowerShell session (PSSession) to use for the interactive session.
 This parameter takes a session object.
 You can also use the Name, InstanceID, or ID parameters to specify a PSSession.
@@ -470,6 +488,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
+
 Sets advanced options for the session.
 Enter a **SessionOption** object, such as one that you create by using the New-PSSessionOption cmdlet, or a hash table in which the keys are session option names and the values are session option values.
 
@@ -496,6 +515,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
+
 Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
@@ -517,26 +537,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String or System.Management.Automation.Runspaces.PSSession
+
 You can pipe a computer name (a string) or a session object to Enter-PSSession.
 
 ## OUTPUTS
 
 ### None
+
 The cmdlet does not return any output.
 
 ## NOTES
-* To connect to a remote computer, you must be a member of the Administrators group on the remote computer.
-* In Windows Vista and later versions of Windows, to start an interactive session on the local computer, you must start Windows PowerShell with the "Run as administrator" option.
-* When you use Enter-PSSession, your user profile on the remote computer is used for the interactive session. The commands in the remote user profile, including commands to add Windows PowerShell snap-ins and to change the command prompt, run before the remote prompt is displayed.
-* Enter-PSSession uses the UI culture setting on the local computer for the interactive session. To find the local UI culture, use the $UICulture automatic variable.
-* Enter-PSSession requires the Get-Command, Out-Default, and Exit-PSSession cmdlets. If these cmdlets are not included in the session configuration on the remote computer, the Enter-PSSession commands fails.
-* Unlike Invoke-Command, which parses and interprets the commands before sending them to the remote computer, Enter-PSSession sends the commands directly to the remote computer without interpretation.
-* If the session that you want to enter is busy processing a command, there might be a delay before Windows PowerShell responds to the Enter-PSSession command. You will be connected as soon as the session is available. To cancel the Enter-PSSession command, press CTRL+C.
+
+- To connect to a remote computer, you must be a member of the Administrators group on the remote computer.
+- In Windows Vista and later versions of Windows, to start an interactive session on the local computer, you must start Windows PowerShell with the "Run as administrator" option.
+- When you use Enter-PSSession, your user profile on the remote computer is used for the interactive session. The commands in the remote user profile, including commands to add Windows PowerShell snap-ins and to change the command prompt, run before the remote prompt is displayed.
+- Enter-PSSession uses the UI culture setting on the local computer for the interactive session. To find the local UI culture, use the $UICulture automatic variable.
+- Enter-PSSession requires the Get-Command, Out-Default, and Exit-PSSession cmdlets. If these cmdlets are not included in the session configuration on the remote computer, the Enter-PSSession commands fails.
+- Unlike Invoke-Command, which parses and interprets the commands before sending them to the remote computer, Enter-PSSession sends the commands directly to the remote computer without interpretation.
+- If the session that you want to enter is busy processing a command, there might be a delay before Windows PowerShell responds to the Enter-PSSession command. You will be connected as soon as the session is available. To cancel the Enter-PSSession command, press CTRL+C.
 
 ## RELATED LINKS
 

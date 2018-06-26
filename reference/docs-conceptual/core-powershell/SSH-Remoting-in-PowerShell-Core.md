@@ -55,6 +55,22 @@ In addition you will need to enable password authentication and optionally key b
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+    
+    > [!NOTE]
+    There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.
+    See [this issue on GitHub for more information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    
+    One solution is to create a symlink to the Powershell installation directory that does not contain spaces:
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    and then enter it in the subsystem:
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+    ```
 
     - Optionally enable key authentication
 
@@ -74,7 +90,7 @@ In addition you will need to enable password authentication and optionally key b
 
 ## Setup on Linux (Ubuntu 14.04) Machine
 
-1. Install the latest [PowerShell for Linux] build from GitHub
+1. Install the latest [PowerShell Core for Linux] build from GitHub
 1. Install [Ubuntu SSH] as needed
 
     ```bash
@@ -109,7 +125,7 @@ In addition you will need to enable password authentication and optionally key b
 
 ## Setup on MacOS Machine
 
-1. Install the latest [PowerShell for MacOS] build
+1. Install the latest [PowerShell Core for MacOS] build
     - Make sure SSH Remoting is enabled by following these steps:
       - Open `System Preferences`
       - Click on `Sharing`
@@ -131,7 +147,7 @@ In addition you will need to enable password authentication and optionally key b
     - Add a PowerShell subsystem entry
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - Optionally enable key authentication
@@ -241,9 +257,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo command does not work in remote session to Linux machine.
 
-[PowerShell Core for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[PowerShell Core for Windows]: ../setup/installing-powershell-core-on-windows.md#msi
+[PowerShell Core for Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[PowerShell Core for MacOS]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[PowerShell for Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell for MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012

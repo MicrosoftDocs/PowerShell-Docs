@@ -84,25 +84,27 @@ The commands that you enter run in the new session, and the results are returned
 ### Example 2
 
 ```
-The first command uses the Enter-PSSession cmdlet to start an interactive session with Server01, a remote computer. When the session starts, the command prompt changes to include the computer name.
-PS> Enter-PSSession -Computer Server01
+PS> Enter-PSSession -ComputerName Server01
 [Server01]: PS>
-
-The second command gets the PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
 [Server01]: PS> Get-Process Powershell > C:\ps-test\Process.txt
-
-The third command uses the Exit keyword to end the interactive session and close the connection.
 [Server01]: PS> exit
 PS>
-
-The fourth command confirms that the Process.txt file is on the remote computer. A Get-ChildItem ("dir") command on the local computer cannot find the file.
 PS> dir C:\ps-test\process.txt
+```
+
+```output
 Get-ChildItem : Cannot find path 'C:\ps-test\process.txt' because it does not exist.
 At line:1 char:4
 + dir <<<<  c:\ps-test\process.txt
 ```
 
-This command shows how to work in an interactive session with a remote computer.
+The first command uses the Enter-PSSession cmdlet to start an interactive session with Server01, a remote computer. When the session starts, the command prompt changes to include the computer name.
+
+The second command gets the PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
+
+The third command uses the Exit keyword to end the interactive session and close the connection.
+
+The fourth command confirms that the Process.txt file is on the remote computer. A Get-ChildItem ("dir") command on the local computer cannot find the file.
 
 ### Example 3
 

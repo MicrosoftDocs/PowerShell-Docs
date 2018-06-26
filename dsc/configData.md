@@ -6,7 +6,7 @@ title:  Using configuration data
 
 # Using configuration data in DSC
 
->Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 By using the built-in DSC **ConfigurationData** parameter, you can define data that can be used within a configuration.
 This allows you to create a single configuration that can be used for multiple nodes or for different environments.
@@ -22,11 +22,12 @@ A DSC configuration takes a common parameter, **ConfigurationData**, that you sp
 For information about compiling configurations,
 see [DSC configurations](configurations.md).
 
-The **ConfigurationData** parameter is a hasthtable that must have at least one key named **AllNodes**.
+The **ConfigurationData** parameter is a hashtable that must have at least one key named **AllNodes**.
 It can also have one or more other keys.
 
->**Note:** The examples in this topic use a single additional key (other than the named **AllNodes** key) named `NonNodeData`,
->but you can include any number of additional keys, and name them whatever you want.
+> [!NOTE]
+> The examples in this topic use a single additional key (other than the named **AllNodes** key) named `NonNodeData`,
+> but you can include any number of additional keys, and name them whatever you want.
 
 ```powershell
 $MyData =
@@ -189,6 +190,7 @@ DSC provides three special variables that can be used in a configuration script:
 
 - **$AllNodes** refers to the entire collection of nodes defined in **ConfigurationData**. You can filter the **AllNodes** collection by using **.Where()** and **.ForEach()**.
 - **Node** refers to a particular entry in the **AllNodes** collection after it is filtered by using **.Where()** or **.ForEach()**.
+  - You can read more about these methods in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 - **ConfigurationData** refers to the entire hash table that is passed as the parameter when compiling a configuration.
 
 ## Using non-node data
@@ -200,5 +202,6 @@ However, you can define any number of additional keys, and name them anything yo
 For an example of using non-node data, see [Separating configuration and environment data](separatingEnvData.md).
 
 ## See Also
+
 - [Credentials Options in Configuration Data](configDataCredentials.md)
 - [DSC Configurations](configurations.md)

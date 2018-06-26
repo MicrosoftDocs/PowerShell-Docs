@@ -5,15 +5,14 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Arrays
 ---
-
 # About Arrays
 
-# SHORT DESCRIPTION
+## Short Description
 
 Describes arrays, which are data structures designed to store
 collections of items.
 
-# LONG DESCRIPTION
+## Long Description
 
 An array is a data structure that is designed to store a collection of items.
 The items can be the same type or different types.
@@ -21,7 +20,7 @@ The items can be the same type or different types.
 Beginning in Windows PowerShell 3.0, a collection of zero or one object has
 some properties of arrays.
 
-## CREATING AND INITIALIZING AN ARRAY
+## Creating and initializing an array
 
 To create and initialize an array, assign multiple values to a variable. The
 values stored in the array are delimited with a comma and separated from the
@@ -74,7 +73,7 @@ strongly typed array of process objects, enter the following command:
 [Diagnostics.Process[]]$zz = Get-Process
 ```
 
-## THE ARRAY SUB-EXPRESSION OPERATOR
+## The array sub-expression operator
 
 The array sub-expression operator creates an array, even if it contains zero
 or one object.
@@ -89,12 +88,14 @@ You can use the array operator to create an array of zero or one object. For
 example:
 
 ```powershell
-PS C:\> $a = @("Hello World")
-PS C:\> $a.Count
+PS> $a = @("Hello World")
+PS> $a.Count
 1
+```
 
-PS C:\> $b = @()
-PS C:\> $b.Count
+```powershell
+PS> $b = @()
+PS> $b.Count
 0
 ```
 
@@ -108,19 +109,17 @@ $p = @(Get-Process Notepad)
 For more information about the array sub-expression operator, see
 about_Operators.
 
-## ACCESSING AND USING ARRAY ELEMENTS
+## Accessing and using array elements
 
-### READING AN ARRAY
+### Reading an array
 
 You can refer to an array by using its variable name. To display all the
-elements in the array, type the array name. For example, assuming *$a* is an
+elements in the array, type the array name. For example, assuming `$a` is an
 array containing integers 0, 1, 2, until 9; typing:
 
 ```powershell
 $a
 ```
-
-produces:
 
 ```output
 0
@@ -137,25 +136,21 @@ produces:
 
 You can refer to the elements in an array by using an index, beginning at
 position 0. Enclose the index number in brackets. For example, to display the
-first element in the *$a* array, type:
+first element in the `$a` array, type:
 
 ```powershell
 $a[0]
 ```
 
-produces:
-
 ```output
 0
 ```
 
-To display the third element in the $a array, type:
+To display the third element in the `$a` array, type:
 
 ```powershell
 $a[2]
 ```
-
-produces:
 
 ```output
 2
@@ -168,8 +163,6 @@ type:
 ```powershell
 $a[1..4]
 ```
-
-produces:
 
 ```output
 1
@@ -187,8 +180,6 @@ $a = 0 .. 9
 $a[-3..-1]
 ```
 
-produces:
-
 ```output
 7
 8
@@ -201,8 +192,6 @@ If you type negative indexes in descending order, your output changes.
 $a = 0 .. 9
 $a[-1..-3]
 ```
-
-produces:
 
 ```output
 9
@@ -218,8 +207,6 @@ $a = 0 .. 9
 $a[2..-2]
 ```
 
-produces:
-
 ```output
 2
 1
@@ -228,7 +215,7 @@ produces:
 8
 ```
 
-Also, one common mistake is to assume *$a[0..-2]* refers to all the elements
+Also, one common mistake is to assume `$a[0..-2]` refers to all the elements
 of the array, except for the last one. It refers to the first, last, and
 second-to-last elements in the array.
 
@@ -241,8 +228,6 @@ $a = 0 .. 9
 $a[0,2+4..6]
 ```
 
-produces:
-
 ```output
 0
 2
@@ -253,7 +238,7 @@ produces:
 
 Also, to list multiple ranges and individual elements you can use the plus
 operator. For example, to list elements zero to two, four to six, and the
-element at eighth positionat type:
+element at eighth positional type:
 
 ```powershell
 $a = 0..9
@@ -261,7 +246,6 @@ $a[+0..2+4..6+8]
 ```
 
 ```output
-C:\ >$a[+0..2+4..6+8]
 0
 1
 2
@@ -269,14 +253,13 @@ C:\ >$a[+0..2+4..6+8]
 5
 6
 8
-C:\ >
 ```
 
-### ITERATIONS OVER ARRAY ELEMENTS
+### Iterations over array elements
 
 You can also use looping constructs, such as ForEach, For, and While loops, to
 refer to the elements in an array. For example, to use a ForEach loop to
-display the elements in the $a array, type:
+display the elements in the `$a` array, type:
 
 ```powershell
 $a = 0..9
@@ -296,7 +279,6 @@ foreach ($element in $a) {
 7
 8
 9
-C:\ >
 ```
 
 The Foreach loop iterates through the array and returns each value in the
@@ -319,11 +301,10 @@ for ($i = 0; $i -le ($a.length - 1); $i += 2) {
 4
 6
 8
-C:\ >
 ```
 
 You can use a While loop to display the elements in an array until a defined
-condition is no longer true. For example, to display the elements in the $a
+condition is no longer true. For example, to display the elements in the `$a`
 array while the array index is less than 4, type:
 
 ```powershell
@@ -340,31 +321,28 @@ while($i -lt 4) {
 1
 2
 3
-C:\ >
 ```
 
-## PROPERTIES OF ARRAYS
+## Properties of arrays
 
-### COUNT or LENGTH or LONGLENGTH
+### Count or Length or LongLength
 
-To determine how many items are in an array, use the Length property or its
-Count alias. Longlength is useful if the array contains more than
+To determine how many items are in an array, use the `Length` property or its
+`Count` alias. `Longlength` is useful if the array contains more than
 2,147,483,647 elements.
 
 ```powershell
-$a = 0 .. 9
+$a = 0..9
 $a.Count
 $a.Length
 ```
-
-produces:
 
 ```output
 10
 10
 ```
 
-### RANK
+### Rank
 
 Returns the number of dimensions in the array. Most arrays in PowerShell have
 one dimension, only. Even when you think you are building a multidimensional
@@ -397,9 +375,9 @@ $rank2.rank
 2
 ```
 
-## METHODS OF ARRAYS
+## Methods of arrays
 
-### CLEAR
+### Clear
 
 Removes all elements in the array. The following example shows the effect of
 the clear method.
@@ -419,23 +397,40 @@ Before the clear
 1
 2
 After the clear
-
-C:\ >
 ```
 
 > [!NOTE]
 > The Clear method does not reset the size of the array.
 
-### FOREACH
+### ForEach
 
-Allows to iterate over all elements in the array and execute the given script
+Allows to iterate over all elements in the array and perform a given operation
 for each element of the array.
+
+The ForEach method has several overloads that perform different operations.
+
+```
+ForEach(scriptblock expression)
+ForEach(type convertToType)
+ForEach(string propertyName)
+ForEach(string propertyName, object[] newValue)
+ForEach(string methodName)
+ForEach(string methodName, object[] arguments)
+ForEach(scriptblock expression, object[] arguments)
+```
+
+#### ForEach(scriptblock expression)
+
+#### ForEach(scriptblock expression, object[] arguments)
 
 > [!NOTE]
 > The syntax requires the usage of curly brackets; parenthesis are optional
 
 The following example shows how use the foreach method. In this case the
 intent is to generate the square value of the elements in the array.
+
+Please note this method was added in PowerShell v4 and is not available in versions below this.
+For prior versions please use the Pipelining method to the ForEach-Object Cmdlet
 
 ```powershell
 $a = @(0 .. 3)
@@ -447,8 +442,13 @@ $a.ForEach({ $_ * $_})
 1
 4
 9
-C:\ >
 ```
+
+Just like the `-ArgumentList` parameter of `ForEach-Object`, the `arguments`
+parameter allows the passing of an array of arguments to a script block
+configured to accept them.
+
+#### ForEach(type convertToType)
 
 The `ForEach` method can be used to swiftly cast the elements to a different
 type; the following example shows how to convert a list of string dates to
@@ -463,15 +463,70 @@ type; the following example shows how to convert a list of string dates to
 Sunday, January 1, 2017 12:00:00 AM
 Wednesday, February 1, 2017 12:00:00 AM
 Wednesday, March 1, 2017 12:00:00 AM
-
-C:\ >
 ```
 
-### WHERE
+#### ForEach(string propertyName)
+
+#### ForEach(string propertyName, object[] newValue)
+
+The `ForEach` method can also be used to quickly retrieve, or set property
+values for every item in the collection.
+
+```powershell
+# Set all LastAccessTime properties of files to the current date.
+(dir 'C:\Temp').ForEach('LastAccessTime', (Get-Date))
+# View the newly set LastAccessTime of all items, and find Unique entries.
+(dir 'C:\Temp').ForEach('LastAccessTime') | Get-Unique
+```
+
+```output
+Wednesday, June 20, 2018 9:21:57 AM
+```
+
+#### ForEach(string methodName)
+
+#### ForEach(string methodName, object[] arguments)
+
+Lastly, `ForEach` methods can be used to execute a method on every item in 
+the collection.
+
+```powershell
+("one", "two", "three").ForEach("ToUpper")
+```
+
+```output
+ONE
+TWO
+THREE
+```
+
+Just like the `-ArgumentList` parameter of `ForEach-Object`, the `arguments`
+parameter allows the passing of an array of arguments to a script block
+configured to accept them.
+
+> [!NOTE]
+> Starting in Windows PowerShell 3.0 retrieving properties and executing
+methods for each item in a collection can also be accomplished using
+> "Methods of scalar objects and collections"
+> You can read more about that here [about_methods](about_methods.md)
+
+### Where
 
 Allows to filter or select the elements of the array. The script must evaluate
 to anything different than: zero (0), empty string, `$false` or `$null` for
 the element to show after the `Where`
+
+There is one definition for the `Where` method.
+
+```
+Where(scriptblock expression[, WhereOperatorSelectionMode mode
+                            [, int numberToReturn]])
+```
+
+The `Expression` is scriptblock that is required for filtering, the `mode`
+optional argument allows additional selection capabilities, and the
+`numberToReturn` optional argument allows the ability to limit how many items 
+are returned from the filter.
 
 > [!NOTE]
 > The syntax requires the usage of curly brackets; parenthesis are optional
@@ -479,7 +534,7 @@ the element to show after the `Where`
 The following example shows how to select all odd numbers from the array.
 
 ```powershell
-@(0..9).Where{ $_ % 2 }
+(0..9).Where{ $_ % 2 }
 ```
 
 ```output
@@ -488,10 +543,140 @@ The following example shows how to select all odd numbers from the array.
 5
 7
 9
-C:\ >
 ```
 
-# GET THE MEMBERS OF AN ARRAY
+The following selection modes are available.
+
+#### Default
+
+The `Default` mode filters items using the `Expression` scriptblock.
+
+If a `numberToReturn` is provided, it specifies the maximum number of items
+to return.
+
+```powershell
+# Get the zip files in the current users profile, sorted by LastAccessTime.
+$Zips = dir $env:userprofile -Recurse '*.zip' | Sort-Object LastAccessTime
+# Get the least accessed file over 100MB
+$Zips.Where({$_.Length -gt 100MB}, 'Default', 1)
+```
+
+> [!NOTE]
+> Both the `Default` mode and `First` mode return the first
+> (`numberToReturn`) items, and can be used interchangeably.
+
+#### Last
+
+```powershell
+$h = (Get-Date).AddHours(-1)
+$logs = dir 'C:\' -Recurse '*.log' | Sort-Object CreationTime
+# Find the last 5 log files created in the past hour.
+$logs.Where({$_.CreationTime -gt $h}, 'Last', 5)
+```
+
+#### SkipUntil
+
+The `SkipUntil` mode skips all objects in a collection until an object passes
+the script block expression filter. It then returns **ALL** remaining collection
+items without testing them. *Only one passing item is tested*
+
+This means the returned collection will contain both *passing* and
+*non-passing* items that have NOT been tested.
+
+The number of items returned can be limited by passing a value to the
+`numberToReturn` argument.
+
+```powershell
+$computers = "Server01", "Server02", "Server03", "localhost", "Server04"
+# Find the first available online server.
+$computers.Where({ Test-Connection $_ }, 'SkipUntil', 1)
+```
+
+```output
+localhost
+```
+
+### Until
+
+The `Until` mode inverts the `SkipUntil` mode.  It returns **ALL** items in a
+collection until an item passes the script block expression. Once an item
+*passes* the scriptblock expression, the `Where` method stops processing items.
+
+This means that you will receive the first set of *non-passing* items from the
+`Where` method. *After* one item passes, the rest will NOT be tested nor
+returned.
+
+The number of items returned can be limited by passing a value to the
+`numberToReturn` argument.
+
+```powershell
+# Retrieve the first set of numbers less than or equal to 10.
+(1..50).Where({$_ -gt 10}, 'Until')
+# This would perform the same operation.
+(1..50).Where({$_ -le 10})
+```
+
+```output
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+> [!NOTE]
+> Both `Until` and `SkipUntil` operate under the premise of NOT testing a batch
+> of items.
+>
+> `Until` returns the items **BEFORE** the first *pass*.
+>
+> `SkipUntil` returns all the items **AFTER** the first *pass*, including the
+> first passing item.
+
+#### Split
+
+The `Split` mode splits, or groups collection items into two separate
+collections. Those that pass the scriptblock expression, and those that do not.
+
+If a `numberToReturn` is specified, the first collection, will contain the
+*passing* items, not to exceed the value specified.
+
+The remaining objects, even those that **PASS** the expression filter, will be 
+returned in the second collection.
+
+```powershell
+$running, $stopped = (Get-Service).Where({$_.Status -eq 'Running'}, 'Split')
+$running
+```
+
+```output
+Status   Name               DisplayName
+------   ----               -----------
+Running  Appinfo            Application Information
+Running  AudioEndpointBu... Windows Audio Endpoint Builder
+Running  Audiosrv           Windows Audio
+...
+```
+
+```powershell
+$stopped
+```
+
+```output
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  AJRouter           AllJoyn Router Service
+Stopped  ALG                Application Layer Gateway Service
+Stopped  AppIDSvc           Application Identity
+...
+```
+
+## Get the members of an array
 
 To get the properties and methods of an array, such as the Length property and
 the SetValue method, use the InputObject parameter of the Get-Member cmdlet.
@@ -522,7 +707,7 @@ examples.
 ,(1,2,3) | Get-Member
 ```
 
-# MANIPULATING AN ARRAY
+## Manipulating an array
 
 You can change the elements in an array, add an element to an array, and
 combine the values from two arrays into a third array.
@@ -538,7 +723,7 @@ $a[1] = 10
 ```
 
 You can also use the SetValue method of an array to change a value. The
-following example changes the second value (index position 1) of the $a array
+following example changes the second value (index position 1) of the `$a` array
 to 500:
 
 ```powershell
@@ -561,30 +746,34 @@ $a += 5
 
 It is not easy to delete elements from an array, but you can create a new
 array that contains only selected elements of an existing array. For example,
-to create the $t array with all the elements in the $a array except for the
+to create the `$t` array with all the elements in the `$a` array except for the
 value at index position 2, type:
 
+```powershell
 $t = $a[0,1 + 3..($a.length - 1)]
+```
 
 To combine two arrays into a single array, use the plus operator (+). The
 following example creates two arrays, combines them, and then displays the
 resulting combined array.
 
+```powershell
 $x = 1,3
 $y = 5,9
 $z = $x + $y
+```
 
-As a result, the $z array contains 1, 3, 5, and 9.
+As a result, the `$z` array contains 1, 3, 5, and 9.
 
 To delete an array, assign a value of $null to the array. The following
-command deletes the array in the $a variable.
+command deletes the array in the `$a` variable.
 
-$a = $null
+`$a = $null`
 
-You can also use the Remove-Item cmdlet, but assigning a value of $null is
+You can also use the `Remove-Item` cmdlet, but assigning a value of `$null` is
 faster, especially for large arrays.
 
-# ARRAYS OF ZERO OR ONE
+## Arrays of zero or one
 
 Beginning in Windows PowerShell 3.0, a collection of zero or one object has
 the Count and Length property. Also, you can index into an array of one
@@ -623,7 +812,7 @@ $a[-1]
 4
 ```
 
-# SEE ALSO
+## See also
 
 - [about_Assignment_Operators](about_Assignment_Operators.md)
 - [about_Hash_Tables](about_Hash_Tables.md)

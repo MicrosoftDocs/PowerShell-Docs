@@ -62,15 +62,6 @@ The command stores the password as a secure string in the $Password variable.
 The second command creates a local user account by using the password stored in $Password.
 The command specifies a user name, full name, and description for the user account.
 
-### Example 3: Create a user account that is connected to a Microsoft account
-```
-PS C:\> New-LocalUser -Name "MicrosoftAccount\usr name@Outlook.com" -Description "Description of this account."
-```
-
-This command creates a local user account that is connected to a Microsoft account.
-This example uses a placeholder value for the user name of an account at Outlook.com.
-Because the account is connected to a Microsoft account, do not specify a password.
-
 ## PARAMETERS
 
 ### -AccountExpires
@@ -169,8 +160,6 @@ Accept wildcard characters: False
 
 ### -Name
 Specifies the user name for the user account.
-
-If you create a local user account that is connected to a Microsoft account, specify the user name in the following format: `MicrosoftAccount\\`\<user name\>@`Outlook.com` for a user of a Microsoft account on Outlook.com.
 
 If you create a local user account for the local system, the user name can contain up to 20 uppercase characters or lowercase characters.
 A user name cannot contain the following characters:

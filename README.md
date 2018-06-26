@@ -11,15 +11,16 @@ Welcome to the PowerShell-Docs repository, housing the official PowerShell docum
 
 ## Repository Structure
 
-Each folder in this repo publishes to [Microsoft Docs](https://docs.microsoft.com/powershell). The folders
-correspond to the following PowerShell assets:
+Each of the following top-level folders in this repo contain a DocSet that is published to [Microsoft Docs](https://docs.microsoft.com/powershell).
 
-- [/dsc/](https://docs.microsoft.com/powershell/dsc/) is  for the Desired State Configuration feature
+- [/developer/](https://docs.microsoft.com/powershell/developer/) is the future home of the PowerShell SDK documentation
+  - We are in the process of migrating this content from MSDN
+- [/dsc/](https://docs.microsoft.com/powershell/dsc/) is for the Desired State Configuration feature
 - [/gallery/](https://docs.microsoft.com/powershell/gallery) is for the [PowerShell Gallery](https://www.powershellgallery.com/)
 - [/jea/](https://docs.microsoft.com/powershell/jea/) is for the Just Enough Administration feature
-- [/reference/](https://docs.microsoft.com/powershell/scripting/) is for PowerShell conceptual topics
-  and module reference across versions 3.0, 4.0, 5.0, 5.1, and 6.0
-  - This content will be retrieved by the `Get-Help` cmdlet in the future
+- [/reference/](https://docs.microsoft.com/powershell/scripting/) is for PowerShell conceptual
+  topics and module reference across versions 3.0, 4.0, 5.0, 5.1, and 6.0
+  - This content is also the source of help content retrieved by the `Get-Help` cmdlet
 - [/wmf](https://docs.microsoft.com/powershell/wmf/readme) contains release notes for the Windows
   Management Framework, the package used to distribute new versions of PowerShell to previous versions of Windows.
 
@@ -30,8 +31,9 @@ into the *staging* branch.
 Please note that before you submit a pull request you must [sign a Contribution License Agreement](https://cla.microsoft.com/)
 to ensure that the community is free to use your submissions.
 
-For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
-There is a draft [style guide](./contributing/STYLE.md) to review before making contributions.
+For more information on contributing, read our [contributor's guide](CONTRIBUTING.md).
+The contributor's guide contains detail information about how to contribute documentation,
+suggested tools, and style and formatting requirements.
 Please use the Issue and Pull Request templates to help keep documentation consistent across versions.
 
 ## Licenses

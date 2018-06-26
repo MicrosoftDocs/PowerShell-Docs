@@ -1,31 +1,30 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_InlineScript
 ---
-
 # About InlineScript
-## about_InlineScript
 
-
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes the InlineScript activity, which runs Windows
 PowerShell commands in a workflow.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The InlineScript activity runs commands in a shared
 Windows PowerShell session in a workflow. This activity
 is valid only in workflows.
 
-# SYNTAX
+## SYNTAX
 
-InlineScript {\<script block\>} \<ActivityCommonParameters\>
+```
+InlineScript {<script block>} <ActivityCommonParameters>
+```
 
-# DETAILED DESCRIPTION
+## DETAILED DESCRIPTION
 
 The InlineScript activity runs commands in a shared
 Windows PowerShell session. You can include it in a
@@ -48,7 +47,7 @@ an InlineScript script block do not have the workflow features
 such as checkpointing ("persistence) and workflow or activity
 common parameters.
 
-# VARIABLES IN INLINESCRIPT
+## VARIABLES IN INLINESCRIPT
 
 By default, the variables that are defined in a workflow are
 not visible to the commands in the InlineScript script block.
@@ -76,10 +75,11 @@ Test-Workflow
 ```
 
 ```output
-PS C:> Test-Workflow
 Inline A0 =
 Inline A1 = 3
 ```
+
+## RETURNING VARIABLES IN INLINESCRIPT
 
 InlineScript commands can change the value of the variable
 that was imported from workflow scope, but the changes are
@@ -109,17 +109,17 @@ Test-Workflow
 ```
 
 ```output
-PS C:> test-workflow
 Inline A = 4
 Workflow A = 3
 Workflow New A = 4
 ```
 
-Troubleshooting Note:  A statement with the $Using scope modifier
-should appear before any use of the variable in the InlineScript
-script block.
+> [!NOTE]
+> Troubleshooting Note:  A statement with the $Using scope modifier
+> should appear before any use of the variable in the InlineScript
+> script block.
 
-# RUNNING IN-PROCESS
+## RUNNING IN-PROCESS
 
 To improve reliability, the commands in the InlineScript script
 block run in their own process, outside of the  process in which
@@ -131,10 +131,7 @@ the workflow process, remove the InlineScript value from the
 OutOfProcessActivity property of the session configuration,
 such as by using the New-PSWorkflowExecutionOption cmdlet.
 
-For more information, see [How to Run Windows PowerShell Commands
-in a Workflow](http://go.microsoft.com/fwlink/?LinkId=261983).
-
-# EXAMPLES
+## EXAMPLES
 
 The InlineScript in the following workflow includes commands
 that are not valid in workflows, including the use of the
@@ -144,7 +141,7 @@ New-Object cmdlet with the ComObject parameter.
 workflow Test-Workflow
 {
   $ie = InlineScript {
-    $ie = New-Object -ComObject InternetExplorer.Application -property @{navigate2="www.microsoft.com"}
+    $ie = New-Object -ComObject InternetExplorer.Application -Property @{navigate2="www.microsoft.com"}
 
     $ie.Visible = $true
   }

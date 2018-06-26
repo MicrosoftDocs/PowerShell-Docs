@@ -198,7 +198,7 @@ to determine which users have access to specific endpoints
 for a specific set of users by using authorization rules
 described in this section.
 For more information about restricted runspaces,
-see [Creating a constrained runspace](https://msdn.microsoft.com/en-us/library/dn614668).
+see [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668).
 
 ### Configuring authorization rules
 
@@ -221,7 +221,7 @@ before you add authorization rules that refer to them.
 You cannot use the Windows PowerShell Web Access cmdlets
 to create custom session configurations.
 For more information about creating custom session configurations
-, see [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+, see [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 Windows PowerShell Web Access cmdlets support one wildcard character
 , an asterisk ( \* ).
@@ -251,7 +251,7 @@ in this topic.
 , already exist in your rules .
 If they have not yet been created
 , use instructions for creating session configurations in
-[about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+[about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. This authorization rule allows a specific user access to one computer on the network to which they typically have access, with access to a specific session configuration that is scoped to the user'™s typical scripting and cmdlet needs. Type the following, and then press **Enter**.
 
@@ -462,6 +462,6 @@ period specified by the gateway administrator has lapsed.
 
 ## See Also
 
-- [Install and Use Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [Install and Use Windows PowerShell Web Access](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md)

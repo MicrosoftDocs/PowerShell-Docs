@@ -6,8 +6,6 @@ title:  about_Comment_Based_Help
 ---
 # About Comment Based Help
 
-## about_Comment_Based_Help
-
 ## SHORT DESCRIPTION
 
 Describes how to write comment-based help topics for functions and scripts.
@@ -20,7 +18,7 @@ special help comment keywords.
 The [Get-Help](../Get-Help.md) cmdlet displays comment-based help in the same
 format in which it displays the cmdlet help topics that are generated from XML
 files. Users can use all of the parameters of `Get-Help`, such as
-**Detailed**, **Full**, **Example**, and **Online**, to display the contents
+**Detailed**, **Full**, **Examples**, and **Online**, to display the contents
 of comment-based help.
 
 You can also write XML-based help files for functions and scripts. To
@@ -30,7 +28,7 @@ cannot find XML-based help topics for functions or scripts.
 
 This topic explains how to write help topics for functions and scripts. For
 information about how to display help topics for functions and scripts, see
-`Get-Help`.
+[Get-Help](../Get-Help.md).
 
 The [Update-Help](../Update-Help.md) and [Save-Help](../Save-Help.md) cmdlets
 work only on XML files. Updatable Help does not support comment-based help
@@ -389,7 +387,7 @@ parameters, see [about_CommonParameters](about_CommonParameters.md).
 ### Parameter Attribute Table
 
 `Get-Help` generates the table of parameter attributes that appears when you
-use the **Full** or **Parameter** parameter of `Get-help`. The value of the
+use the **Full** or **Parameter** parameter of `Get-Help`. The value of the
 "Required", "Position", and "Default" value attributes is taken from the
 function or script syntax.
 
@@ -404,7 +402,7 @@ function or script name. You cannot change or affect its content.
 
 ## EXAMPLES
 
-- Comment-based Help for a Function
+### Comment-based Help for a Function
 
 The following sample function includes comment-based help:
 
@@ -546,7 +544,7 @@ http://www.fabrikam.com/extension.html
 Set-Item
 ```
 
-- Parameter Descriptions in Function Syntax
+### Parameter Descriptions in Function Syntax
 
 This example is the same as the previous one, except that the parameter
 descriptions are inserted in the function syntax. This format is most useful
@@ -615,11 +613,11 @@ Set-Item
 }
 ```
 
-- Comment-based Help for a Script
+### Comment-based Help for a Script
 
 The following sample script includes comment-based help. Notice the blank
-lines between the closing "#>" and the "Param" statement. In a script that
-does not have a Param statement, there must be at least two blank lines
+lines between the closing `#>` and the `Param` statement. In a script that
+does not have a `Param` statement, there must be at least two blank lines
 between the final comment in the help topic and the first function
 declaration. Without these blank lines, `Get-Help` associates the help topic
 with the function, not the script.
@@ -750,7 +748,7 @@ C:\Reports\2009\January.csv
 # RELATED LINKS
 ```
 
-- Redirecting to an XML File
+### Redirecting to an XML File
 
 You can write XML-based help topics for functions and scripts. Although
 comment-based help is easier to implement, XML-based help is required for
@@ -806,11 +804,11 @@ $name
 }
 ```
 
-- Redirecting to a Different Help Topic
+### Redirecting to a Different Help Topic
 
 The following code is an excerpt from the beginning of the built-in help
-function in Windows PowerShell, which displays one screen of help text at a
-time. Because the help topic for the `Get-Help` cmdlet describes the help
+function in PowerShell, which displays one screen of help text at a time.
+Because the help topic for the `Get-Help` cmdlet describes the help
 function, the help function uses the "ForwardHelpTargetName" and
 "ForwardHelpCategory" keywords to redirect the user to the `Get-Help` cmdlet
 help topic.

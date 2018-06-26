@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,13 +7,16 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=141444
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  Get-WSManInstance
 ---
-
 # Get-WSManInstance
+
 ## SYNOPSIS
+
 Displays management information for a resource instance specified by a Resource URI.
+
 ## SYNTAX
 
 ### GetInstance (Default)
+
 ```
 Get-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-ConnectionURI <Uri>] [-Dialect <Uri>]
  [-Fragment <String>] [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet <Hashtable>]
@@ -22,6 +25,7 @@ Get-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-Connect
 ```
 
 ### Enumerate
+
 ```
 Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly] [-ComputerName <String>]
  [-ConnectionURI <Uri>] [-Dialect <Uri>] [-Enumerate] [-Filter <String>] [-OptionSet <Hashtable>]
@@ -31,16 +35,22 @@ Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly] [-ComputerNa
 ```
 
 ## DESCRIPTION
+
 The Get-WSManInstance cmdlet retrieves an instance of a management resource that is specified by a resource URI.
 The information that is retrieved can be a complex XML information set  (an object) or a simple value.
 This cmdlet is the equivalent to the standard WS-Management Get command.
 
 This cmdlet uses the WS-Management connection/transport layer to retrieve information.
+
 ## EXAMPLES
 
 ### Example 1
+
+```powershell
+Get-WSManInstance wmicimv2/win32_service -SelectorSet @{name="winrm"} -ComputerName server01
 ```
-PS C:\> get-wsmaninstance wmicimv2/win32_service -selectorset @{name="winrm"} -computername server01
+
+```output
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
 p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -84,16 +94,26 @@ WaitHint                : 0
 ```
 
 This command returns all of the information that Windows Management Instrumentation (WMI) exposes about the WinRM service on the remote server01 computer.
+
 ### Example 2
+
+```powershell
+Get-WSManInstance wmicimv2/win32_service -SelectorSet @{name="spooler"} -Fragment status -ComputerName server01
 ```
-PS C:\> get-wsmaninstance wmicimv2/win32_service -selectorset @{name="spooler"} -fragment status -computername server01
+
+```output
 XmlFragment=OK
 ```
 
 This command returns only the status of the Spooler service on the remote server01 computer.
+
 ### Example 3
+
+```powershell
+Get-WSManInstance -Enumerate wmicimv2/win32_service -ReturnType epr
 ```
-PS C:\> get-wsmaninstance -enumerate wmicimv2/win32_service -returntype epr
+
+```output
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
 p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -130,10 +150,14 @@ WaitHint                : 0
 ```
 
 This command returns endpoint references that correspond to all the services on the local computer.
-### Example 4
-```
-PS C:\> Get-WSManInstance -Enumerate wmicimv2/* -filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -computername server01
 
+### Example 4
+
+```powershell
+Get-WSManInstance -Enumerate wmicimv2/* -Filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -ComputerName server01
+```
+
+```output
 xsi                     : http://www.w3.org/2001/XMLSchema-instance
 p                       : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service
 cim                     : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -172,10 +196,14 @@ This command lists all of the services that meet the following criteria on the r
 
 - The startup type of the service is "Automatic".
 - The service is stopped.
-### Example 5
-```
-PS C:\> get-wsmaninstance winrm/config/listener -selectorset @{Address="*";Transport="http"}
 
+### Example 5
+
+```powershell
+Get-WSManInstance winrm/config/listener -SelectorSet @{Address="*";Transport="http"}
+```
+
+```output
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
@@ -190,10 +218,14 @@ ListeningOn           : {100.0.0.1, 123.123.123.123, ::1, 2001:4898:0:fff:0:5efe
 ```
 
 This command lists the WS-Management listener configuration on the local computer for the listener that matches the criteria in the selector set.
-### Example 6
-```
-PS C:\> get-wsmaninstance winrm/config/listener -selectorset @{Address="*";Transport="http"} -computername server01
 
+### Example 6
+
+```powershell
+Get-WSManInstance winrm/config/listener -SelectorSet @{Address="*";Transport="http"} -ComputerName server01
+```
+
+```output
 cfg                   : http://schemas.microsoft.com/wbem/wsman/1/config/listener
 xsi                   : http://www.w3.org/2001/XMLSchema-instance
 lang                  : en-US
@@ -208,10 +240,14 @@ ListeningOn           : {100.0.0.1, 123.123.123.124, ::1, 2001:4898:0:fff:0:5efe
 ```
 
 This command lists the WS-Management listener configuration on the remote server01 computer for the listener that matches the criteria in the selector set.
-### Example 7
-```
-PS C:\> Get-WSManInstance -Enumerate -Dialect association -filter "{Object=win32_service?name=winrm}" -res wmicimv2/*
 
+### Example 7
+
+```powershell
+Get-WSManInstance -Enumerate -Dialect association -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
+```
+
+```output
 xsi                       : http://www.w3.org/2001/XMLSchema-instance
 p                         : http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_ComputerSystem
 cim                       : http://schemas.dmtf.org/wbem/wscim/1/common
@@ -335,18 +371,22 @@ TagId                   : 0
 This command gets the associated instances that are related to the specified instance (winrm).
 
 Important: You must enclose the filter in quotation marks, as shown in the example.
+
 ### Example 8
-```
-PS C:\> Get-WSManInstance -Enumerate -Dialect association -Associations -filter "{Object=win32_service?name=winrm}" -res wmicimv2/*
+
+```powershell
+Get-WSManInstance -Enumerate -Dialect association -Associations -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
 ```
 
 This command gets association instances that are related to the specified instance (winrm).
 Because the Dialect parameter is set to "association" and the Associations parameter is used, this command returns association instances, not associated instances.
 
 Important: You must enclose the filter in quotation marks, as shown in the example.
+
 ## PARAMETERS
 
 ### -ApplicationName
+
 Specifies the application name in the connection.
 The default value of the ApplicationName parameter is "WSMAN".
 The complete identifier for the remote endpoint is in the following format:
@@ -375,6 +415,7 @@ Accept wildcard characters: False
 ```
 
 ### -Associations
+
 Indicates that association instances (not associated instances) should be retrieved.
 You can use this parameter only when the Dialect parameter is set to a value of "Association".
 
@@ -391,6 +432,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the authentication mechanism to be used at the server.
 Possible values are:
 
@@ -418,6 +460,7 @@ Accept wildcard characters: False
 ```
 
 ### -BasePropertiesOnly
+
 Enumerates only the properties that are part of the base class that is specified by the ResourceURI parameter.
 This parameter has no effect if the Shallow parameter is specified.
 
@@ -434,6 +477,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
@@ -455,6 +499,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the computer against which you want to run the management operation.
 The value can be a fully qualified domain name, a NetBIOS name, or an IP address.
 Use the local computer name, use localhost, or use a dot (.) to specify the local computer.
@@ -475,6 +520,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionURI
+
 Specifies the connection endpoint.
 The format of this string is:
 
@@ -499,6 +545,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 Type a user name, such as "User01", "Domain01\User01", or "User@Domain.com".
@@ -518,6 +565,7 @@ Accept wildcard characters: False
 ```
 
 ### -Dialect
+
 Specifies the dialect to use in the filter predicate.
 This can be any dialect that is supported by the remote service.
 The following aliases can be used for the dialect URI:
@@ -539,6 +587,7 @@ Accept wildcard characters: False
 ```
 
 ### -Enumerate
+
 Returns all of the instances of a management resource.
 
 ```yaml
@@ -554,6 +603,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies the filter expression for the enumeration.
 If you use this parameter, you must also specify the Dialect parameter.
 
@@ -579,6 +629,7 @@ Accept wildcard characters: False
 ```
 
 ### -Fragment
+
 Specifies a section inside the instance that is to be updated or retrieved for the specified operation.
 For example, to get the status of a spooler service, specify "-Fragment Status".
 
@@ -595,6 +646,7 @@ Accept wildcard characters: False
 ```
 
 ### -OptionSet
+
 Passes a set of switches   to a service to modify or refine the nature of the request.
 These are similar to switches used in command-line shells because they are service specific.
 Any number of options can be specified.
@@ -616,6 +668,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
+
 Specifies the port to use when the client connects to the WinRM service.
 When the transport is HTTP, the default port is 80.
 When the transport is HTTPS, the default port is 443.
@@ -636,6 +689,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceURI
+
 Contains the Uniform Resource Identifier (URI) of the resource class or instance.
 The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
 
@@ -659,6 +713,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReturnType
+
 Specifies the type of data to be returned.
 The valid values are:
 
@@ -686,6 +741,7 @@ Accept wildcard characters: False
 ```
 
 ### -SelectorSet
+
 Specifies a set of value pairs that are used to select particular management resource instances.
 The SelectorSet parameter is used when more than one instance of the resource exists.
 The value of the SelectorSet parameter must be a hash table.
@@ -707,6 +763,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
+
 Defines a set of extended options for the WS-Management session.
 Enter a SessionOption object that you create by using the New-WSManSessionOption cmdlet.
 For more information about the options that are available, see New-WSManSessionOption.
@@ -724,6 +781,7 @@ Accept wildcard characters: False
 ```
 
 ### -Shallow
+
 Causes only instances of the base class that is specified in the resource URI to be returned.
 If this switch is not specified, instances of the base class that is specified in the URI and in all its derived classes is returned.
 
@@ -740,6 +798,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
+
 Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connection to the remote computer.
 By default, SSL is not used.
 
@@ -760,15 +819,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 This command does not accept any input.
+
 ## OUTPUTS
 
 ### System.Xml.XmlElement
+
 The Get-WSManInstance cmdlet generates an XMLElement object.
+
 ## NOTES
 
 ## RELATED LINKS

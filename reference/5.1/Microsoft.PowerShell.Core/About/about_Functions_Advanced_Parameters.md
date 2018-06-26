@@ -5,14 +5,13 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions_Advanced_Parameters
 ---
-
 # About Functions Advanced Parameters
 
-# SHORT DESCRIPTION
+## Short description
 
 Explains how to add parameters to advanced functions.
 
-# LONG DESCRIPTION
+## Long description
 
 You can add parameters to the advanced functions that you write, and use
 parameter attributes and arguments to limit the parameter values that function
@@ -55,7 +54,7 @@ Param
 
 This section describes the attributes that you can add to function parameters.
 
-All attributes are optional. However, if you omit the CmdletBinding attribute,
+All attributes are optional. However, if you omit the `CmdletBinding` attribute,
 then to be recognized as an advanced function, the function must include the
 Parameter attribute.
 
@@ -63,22 +62,22 @@ You can add one or multiple attributes in each parameter declaration. There is
 no limit to the number of attributes that you can add to a parameter
 declaration.
 
-## The Parameter Attribute
+### The Parameter Attribute
 
-The Parameter attribute is used to declare the attributes of function
+The `Parameter` attribute is used to declare the attributes of function
 parameters.
 
-The Parameter attribute is optional, and you can omit it if none of the
+The `Parameter` attribute is optional, and you can omit it if none of the
 parameters of your functions need attributes, but to be recognized as an
 advanced function (rather than a simple function), a function must have either
-the CmdletBinding attribute or the Parameter attribute, or both.
+the `CmdletBinding` attribute or the `Parameter` attribute, or both.
 
-The Parameter attribute has arguments that define the characteristics of the
+The `Parameter` attribute has arguments that define the characteristics of the
 parameter, such as whether the parameter is mandatory or optional.
 
 Use the following syntax to declare the Parameter attribute, an argument, and
 an argument value. The parentheses that enclose the argument and its value
-must follow "Parameter" with no intervening space.
+must follow "`Parameter`" with no intervening space.
 
 ```powershell
 Param
@@ -89,7 +88,7 @@ Param
 ```
 
 Use commas to separate arguments within the parentheses. Use the following
-syntax to declare two arguments of the Parameter attribute.
+syntax to declare two arguments of the `Parameter` attribute.
 
 ```powershell
 Param
@@ -99,8 +98,8 @@ Param
 )
 ```
 
-If you use the Parameter attribute without arguments (as an alternative to
-using the CmdletBinding attribute), the parentheses that follow the attribute
+If you use the `Parameter` attribute without arguments (as an alternative to
+using the `CmdletBinding` attribute), the parentheses that follow the attribute
 name are still required.
 
 ```powershell
@@ -111,13 +110,13 @@ Param
 )
 ```
 
-## Mandatory Argument
+### Mandatory Argument
 
-The Mandatory argument indicates that the parameter is required. If this
+The `Mandatory` argument indicates that the parameter is required. If this
 argument is not specified, the parameter is an optional parameter.
 
-The following example declares the ComputerName parameter. It uses the
-Mandatory argument to make the parameter mandatory.
+The following example declares the `ComputerName` parameter. It uses the
+`Mandatory` argument to make the parameter mandatory.
 
 ```powershell
 Param
@@ -128,30 +127,29 @@ Param
 )
 ```
 
-## Position Argument
+### Position Argument
 
-The Position argument determines whether the parameter name is required when
+The `Position` argument determines whether the parameter name is required when
 the parameter is used in a command. When a parameter declaration includes the
-Position argument, the parameter name can be omitted and PowerShell identifies
+`Position` argument, the parameter name can be omitted and PowerShell identifies
 the unnamed parameter value by its position (or order) in the list of unnamed
 parameter values in the command.
 
-If the Position argument is not specified, the parameter name (or a parameter
+If the `Position` argument is not specified, the parameter name (or a parameter
 name alias or abbreviation) must precede the parameter value whenever the
 parameter is used in a command.
 
-By default, all function parameters are positional. PowerShell assigns
-position numbers to parameters in the order in which the parameters are
-declared in the function. To disable this feature, set the value of the
-PositionalBinding argument of the CmdletBinding attribute to $False. The
-Position argument takes precedence over the value of the PositionalBinding
-argument for the parameters on which it is declared. For more information, see
-PositionalBinding in
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
+By default, all function parameters are positional. PowerShell assigns position
+numbers to parameters in the order in which the parameters are declared in the
+function. To disable this feature, set the value of the `PositionalBinding`
+argument of the `CmdletBinding` attribute to `$False`.The `Position` argument
+takes precedence over the value of the `PositionalBinding` argument for the
+parameters on which it is declared. For more information, see
+`PositionalBinding` in [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
 
 The value of the Position argument is specified as an integer. A position
-value of 0 represents the first position in the command, a position value of 1
-represents the second position in the command, and so on.
+value of **"0"** represents the first position in the command, a position value
+of **"1"** represents the second position in the command, and so on.
 
 If a function has no positional parameters, PowerShell assigns positions to
 each parameter based on the order in which the parameters are declared.
@@ -159,7 +157,7 @@ However, as a best practice, do not rely on this assignment. When you want
 parameters to be positional, use the Position argument.
 
 The following example declares the **ComputerName** parameter. It uses the
-Position argument with a value of 0. As a result, when "-ComputerName" is
+Position argument with a value of **"0"**. As a result, when `-ComputerName` is
 omitted from command, its value must be the first or only unnamed parameter
 value in the command.
 
@@ -172,12 +170,14 @@ Param
 )
 ```
 
-NOTE: When the Get-Help cmdlet displays the corresponding "Position?"
-parameter attribute, the position value is incremented by 1. For example, a
-parameter with a Position argument value of 0 has a parameter attribute of
-"Position? 1."
+> [!NOTE]
+> When the Get-Help cmdlet displays the corresponding `Position`
+> parameter attribute, the position value is incremented by one.
+>
+> For example, a parameter with a Position argument value of **"0"**
+> has a parameter attribute of "`Position=1`"
 
-## ParameterSetName Argument
+### ParameterSetName Argument
 
 The ParameterSetName argument specifies the parameter set to which a parameter
 belongs. If no parameter set is specified, the parameter belongs to all the
@@ -185,9 +185,9 @@ parameter sets defined by the function. Therefore, to be unique, each
 parameter set must have at least one parameter that is not a member of any
 other parameter set.
 
-The following example declares a **ComputerName** parameter in the Computer
-parameter set, a UserName parameter in the User parameter set, and a Summary
-parameter in both parameter sets.
+The following example declares a `ComputerName` parameter in the "Computer"
+parameter set, a `UserName` parameter in the "User" parameter set, and a
+`Summary` parameter in both parameter sets.
 
 ```powershell
 Param
@@ -208,14 +208,14 @@ Param
 )
 ```
 
-You can specify only one **ParameterSetName** value in each argument and only
-one ParameterSetName argument in each Parameter attribute. To indicate that a
-parameter appears in more than one parameter set, add additional Parameter
-attributes.
+You can specify only one `ParameterSetName` value in each argument and only
+one `ParameterSetName` argument in each `Parameter` attribute. To indicate
+that a parameter appears in more than one parameter set, add additional
+`Parameter` attributes.
 
-The following example explicitly adds the Summary parameter to the Computer
-and User parameter sets. The Summary parameter is mandatory in one parameter
-set and optional in the other.
+The following example explicitly adds the `Summary` parameter to the Computer
+and User parameter sets. The `Summary` parameter is **Mandatory** in one
+parameter set and **Optional** in the other.
 
 ```powershell
 Param
@@ -238,15 +238,15 @@ Param
 ```
 
 For more information about parameter sets, see "Cmdlet Parameter Sets" in the
-MSDN library at http://go.microsoft.com/fwlink/?LinkId=142183.
+MSDN library at [Cmdlet Parameter Sets](/powershell/developer/cmdlet/cmdlet-parameter-sets)
 
-## ValueFromPipeline Argument
+### ValueFromPipeline Argument
 
-The ValueFromPipeline argument indicates that the parameter accepts input from
+The `ValueFromPipeline` argument indicates that the parameter accepts input from
 a pipeline object. Specify this argument if the function accepts the entire
 object, not just a property of the object.
 
-The following example declares a **ComputerName** parameter that is mandatory
+The following example declares a `ComputerName` parameter that is mandatory
 and accepts an object that is passed to the function from the pipeline.
 
 ```powershell
@@ -259,18 +259,28 @@ Param
 )
 ```
 
-## ValueFromPipelineByPropertyName Argument
+> [!NOTE]
+> A parameter that accepts pipeline input (`by Value`) will enable use of
+> **delay-bind** script blocks on all other parameters defined to accept
+> pipeline input. The **delay-bind** script block is run automatically during
+> ParameterBinding. The result is bound to the parameter. Delay binding
+> does **not** work for parameters defined as type `System.Object`, the
+> script block is passed through **without** being invoked.
+>
+> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md)
 
-The **valueFromPipelineByPropertyName** argument indicates that the parameter
+### ValueFromPipelineByPropertyName Argument
+
+The `ValueFromPipelineByPropertyName` argument indicates that the parameter
 accepts input from a property of a pipeline object. The object property must
 have the same name or alias as the parameter.
 
-For example, if the function has a ComputerName parameter, and the piped
-object has a **ComputerName** property, the value of the **ComputerName**
-property is assigned to the ComputerName parameter of the function.
+For example, if the function has a `ComputerName` parameter, and the piped
+object has a `ComputerName` property, the value of the `ComputerName`
+property is assigned to the `ComputerName` parameter of the function.
 
-The following example declares a **ComputerName** parameter that is mandatory
-and accepts input from the **ComputerName** property of the object that is
+The following example declares a `ComputerName` parameter that is mandatory
+and accepts input from the `ComputerName` property of the object that is
 passed to the function through the pipeline.
 
 ```powershell
@@ -283,14 +293,13 @@ Param
 )
 ```
 
+### ValueFromRemainingArguments Argument
 
-## ValueFromRemainingArguments Argument
-
-The **ValueFromRemainingArguments** argument indicates that the parameter
+The `ValueFromRemainingArguments` argument indicates that the parameter
 accepts all of the parameters values in the command that are not assigned to
 other parameters of the function.
 
-The following example declares a **ComputerName** parameter that is mandatory
+The following example declares a `ComputerName` parameter that is **Mandatory**
 and accepts all the remaining parameter values that were submitted to the
 function.
 
@@ -304,14 +313,14 @@ Param
 )
 ```
 
-## HelpMessage Argument
+### HelpMessage Argument
 
-The **HelpMessage** argument specifies a string that contains a brief
+The `HelpMessage` argument specifies a string that contains a brief
 description of the parameter or its value. PowerShell displays this message in
 the prompt that appears when a mandatory parameter value is missing from a
 command. This argument has no effect on optional parameters.
 
-The following example declares a mandatory **ComputerName** parameter and a
+The following example declares a mandatory `ComputerName` parameter and a
 help message that explains the expected parameter value.
 
 ```powershell
@@ -324,13 +333,13 @@ Param
 )
 ```
 
-## Alias Attribute
+### Alias Attribute
 
-The Alias attribute establishes an alternate name for the parameter. There is
+The `Alias` attribute establishes an alternate name for the parameter. There is
 no limit to the number of aliases that you can assign to a parameter.
 
 The following example shows a parameter declaration that adds the "CN" and
-"MachineName" aliases to the mandatory **ComputerName** parameter.
+"MachineName" aliases to the mandatory `ComputerName` parameter.
 
 ```powershell
 Param
@@ -342,8 +351,7 @@ Param
 )
 ```
 
-
-## Parameter and Variable Validation Attributes
+### Parameter and Variable Validation Attributes
 
 Validation attributes direct PowerShell to test the parameter values that
 users submit when they call the advanced function. If the parameter values
@@ -351,10 +359,10 @@ fail the test, an error is generated and the function is not called. You can
 also use some of the validation attributes to restrict the values that users
 can specify for variables.
 
-## AllowNull Validation Attribute
+### AllowNull Validation Attribute
 
-The AllowNull attribute allows the value of a mandatory parameter to be null
-($null). The following example declares a ComputerName parameter that can have
+The `AllowNull` attribute allows the value of a **Mandatory** parameter to be
+`$null`. The following example declares a `ComputerName` parameter that can have
 a Null value.
 
 ```powershell
@@ -367,11 +375,11 @@ Param
 )
 ```
 
-## AllowEmptyString Validation Attribute
+### AllowEmptyString Validation Attribute
 
-The AllowEmptyString attribute allows the value of a mandatory parameter to be
-an empty string (""). The following example declares a ComputerName parameter
-that can have an empty string value.
+The `AllowEmptyString` attribute allows the value of a **Mandatory** parameter
+to be an empty string (""). The following example declares a `ComputerName`
+parameter that can have an empty string value.
 
 ```powershell
 Param
@@ -383,10 +391,10 @@ Param
 )
 ```
 
-## AllowEmptyCollection Validation Attribute
+### AllowEmptyCollection Validation Attribute
 
-The AllowEmptyCollection attribute allows the value of a mandatory parameter
-to be an empty collection (@()). The following example declares a ComputerName
+The `AllowEmptyCollection` attribute allows the value of a mandatory parameter
+to be an empty collection `@()`. The following example declares a `ComputerName`
 parameter that can have a empty collection value.
 
 ```powershell
@@ -399,15 +407,15 @@ Param
 )
 ```
 
-## ValidateCount Validation Attribute
+### ValidateCount Validation Attribute
 
-The ValidateCount attribute specifies the minimum and maximum number of
+The `ValidateCount` attribute specifies the minimum and maximum number of
 parameter values that a parameter accepts. PowerShell generates an error if
 the number of parameter values in the command that calls the function is
 outside that range.
 
 The following parameter declaration creates a ComputerName parameter that
-takes 1 to 5 parameter values.
+takes one to five parameter values.
 
 ```powershell
 Param
@@ -419,14 +427,14 @@ Param
 )
 ```
 
-## ValidateLength Validation Attribute
+### ValidateLength Validation Attribute
 
-The ValidateLength attribute specifies the minimum and maximum number of
+The `ValidateLength` attribute specifies the minimum and maximum number of
 characters in a parameter or variable value. PowerShell generates an error if
 the length of a value specified for a parameter or a variable is outside of
 the range.
 
-In the following example, each computer name must have one to 10 characters.
+In the following example, each computer name must have one to ten characters.
 
 ```powershell
 Param
@@ -438,21 +446,21 @@ Param
 )
 ```
 
-In the following example, the value of the variable $number must be a minimum
+In the following example, the value of the variable `$number` must be a minimum
 of one character in length, and a maximum of ten characters.
 
 ```powershell
 [Int32][ValidateLength(1,10)]$number = 01
 ```
 
-## ValidatePattern Validation Attribute
+### ValidatePattern Validation Attribute
 
-The ValidatePattern attribute specifies a regular expression that is compared
+The `ValidatePattern` attribute specifies a regular expression that is compared
 to the parameter or variable value. PowerShell generates an error if the value
 does not match the regular expression pattern.
 
 In the following example, the parameter value must be a four-digit number, and
-each digit must be a number 0 to 9.
+each digit must be a number zero to nine.
 
 ```powershell
 Param
@@ -464,20 +472,19 @@ Param
 )
 ```
 
-
 In the following example, the value of the variable $number must be a
-four-digit number, and each digit must be a number 0 to 9.
+four-digit number, and each digit must be a number zero to nine.
 
 ```powershell
 [Int32][ValidatePattern("[0-9][0-9][0-9][0-9]")]$number = 1111
 ```
 
-## ValidateRange Validation Attribute
+### ValidateRange Validation Attribute
 
-The ValidateRange attribute specifies a numeric range for each parameter or
+The `ValidateRange` attribute specifies a numeric range for each parameter or
 variable value. PowerShell generates an error if any value is outside that
-range. In the following example, the value of the Attempts parameter must be
-between 0 and 10.
+range. In the following example, the value of the `Attempts` parameter must be
+between zero and ten.
 
 ```powershell
 Param
@@ -489,50 +496,50 @@ Param
 )
 ```
 
-In the following example, the value of the variable $number must be between 0
-and 10.
+In the following example, the value of the variable $number must be between
+zero and ten.
 
 ```powershell
 [Int32][ValidateRange(0,10)]$number = 5
 ```
 
-## ValidateScript Validation Attribute
+### ValidateScript Validation Attribute
 
-The ValidateScript attribute specifies a script that is used to validate a
+The `ValidateScript` attribute specifies a script that is used to validate a
 parameter or variable value. PowerShell pipes the value to the script, and
-generates an error if the script returns "false" or if the script throws an
+generates an error if the script returns `$false` or if the script throws an
 exception.
 
-When you use the **ValidateScript** attribute, the value that is being
-validated is mapped to the \$_ variable. You can use the \$_ variable to refer
+When you use the `ValidateScript` attribute, the value that is being
+validated is mapped to the `$_` variable. You can use the `$_` variable to refer
 to the value in the script.
 
-In the following example, the value of the **EventDate** parameter must be
+In the following example, the value of the `EventDate` parameter must be
 greater than or equal to the current date.
 
 ```powershell
 Param
 (
     [parameter()]
-    [ValidateScript({$_ -ge (get-date)})]
+    [ValidateScript({$_ -ge (Get-Date)})]
     [DateTime]
     $EventDate
 )
 ```
 
-In the following example, the value of the variable $date must be greater than
+In the following example, the value of the variable `$date` must be greater than
 or equal to the current date and time.
 
 ```powershell
-[DateTime][ValidateScript({$_ -ge (get-date)})]$date = (get-date)
+[DateTime][ValidateScript({$_ -ge (Get-Date)})]$date = (Get-Date)
 ```
 
-## ValidateSet Attribute
+### ValidateSet Attribute
 
-The ValidateSet attribute specifies a set of valid values for a parameter or
+The `ValidateSet` attribute specifies a set of valid values for a parameter or
 variable. PowerShell generates an error if a parameter or variable value does
 not match a value in the set. In the following example, the value of the
-**Detail** parameter can only be "Low," "Average," or "High."
+`Detail` parameter can only be "Low," "Average," or "High."
 
 ```powershell
 Param
@@ -544,8 +551,8 @@ Param
 )
 ```
 
-In the following example, the value of the variable $flavor must be either
-Chocolate, Strawberry, or Vanilla.
+In the following example, the value of the variable `$flavor` must be either
+"Chocolate", "Strawberry", or "Vanilla".
 
 ```powershell
 [ValidateSet("Chocolate", "Strawberry", "Vanilla")]
@@ -565,18 +572,18 @@ Param
 $Message = "bye"
 ```
 
-## ValidateNotNull Validation Attribute
+### ValidateNotNull Validation Attribute
 
-The ValidateNotNull attribute specifies that the parameter value cannot be
-null ($null). PowerShell generates an error if the parameter value is null.
+The `ValidateNotNull` attribute specifies that the parameter value cannot be
+`$null`. PowerShell generates an error if the parameter value is `$null`.
 
-The ValidateNotNull attribute is designed to be used when the type of the
+The `ValidateNotNull` attribute is designed to be used when the type of the
 parameter value is not specified or when the specified type will accept a
-value of Null. (If you specify a type that will not accept a null value, such
-as a string, the null value will be rejected without the ValidateNotNull
-attribute, because it does not match the specified type.)
+value of `$null`. (If you specify a type that will not accept a `$null` value,
+such as a string, the `$null` value will be rejected without the
+`ValidateNotNull` attribute, because it does not match the specified type.)
 
-In the following example, the value of the ID parameter cannot be null.
+In the following example, the value of the `ID` parameter cannot be `$null`.
 
 ```powershell
 Param
@@ -587,13 +594,12 @@ Param
 )
 ```
 
+### ValidateNotNullOrEmpty Validation Attribute
 
-## ValidateNotNullOrEmpty Validation Attribute
-
-The ValidateNotNullOrEmpty attribute specifies that the parameter value cannot
-be null ($null) and cannot be an empty string (""). PowerShell generates an
-error if the parameter is used in a function call, but its value is null, an
-empty string, or an empty array.
+The `ValidateNotNullOrEmpty` attribute specifies that the parameter value cannot
+be `$null` and cannot be an empty string `""`. PowerShell generates an
+error if the parameter is used in a function call, but its value is `$null`,
+an empty string `""`, or an empty array `@()`.
 
 ```powershell
 Param
@@ -643,26 +649,26 @@ Param
 )
 ```
 
-## Dynamic Parameters
+### Dynamic Parameters
 
 Dynamic parameters are parameters of a cmdlet, function, or script that are
 available only under certain conditions.
 
 For example, several provider cmdlets have parameters that are available only
 when the cmdlet is used in the provider drive, or in a particular path of the
-provider drive. For example, the Encoding parameter is available on the
-Add-Content, Get-Content, and Set-Content cmdlets only when it is used in a
-file system drive.
+provider drive. For example, the `Encoding` parameter is available on the
+`Add-Content`, `Get-Content`, and `Set-Content` cmdlets only when it is used
+in a file system drive.
 
 You can also create a parameter that appears only when another parameter is
 used in the function command or when another parameter has a certain value.
 
 Dynamic parameters can be very useful, but use them only when necessary,
 because they can be difficult for users to discover. To find a dynamic
-parameter, the user must be in the provider path, use the ArgumentList
-parameter of the Get-Command cmdlet, or use the Path parameter of Get-Help.
+parameter, the user must be in the provider path, use the `ArgumentList`
+parameter of the `Get-Command` cmdlet, or use the Path parameter of `Get-Help`.
 
-To create a dynamic parameter for a function or script, use the DynamicParam
+To create a dynamic parameter for a function or script, use the `DynamicParam`
 keyword.
 
 The syntax is as follows:
@@ -672,21 +678,21 @@ The syntax is as follows:
 In the statement list, use an If statement to specify the conditions under
 which the parameter is available in the function.
 
-Use the New-Object cmdlet to create a
-System.Management.Automation.RuntimeDefinedParameter object to represent the
+Use the `New-Object` cmdlet to create a
+`System.Management.Automation.RuntimeDefinedParameter` object to represent the
 parameter and specify its name.
 
-You can also use a New-Object command to create a
-System.Management.Automation.ParameterAttribute object to represent attributes
-of the parameter, such as Mandatory, Position, or ValueFromPipeline or its
+You can also use a `New-Object` command to create a
+`System.Management.Automation.ParameterAttribute` object to represent attributes
+of the parameter, such as `Mandatory`, `Position`, or `ValueFromPipeline` or its
 parameter set.
 
 The following example shows a sample function with standard parameters named
-Name and Path, and an optional dynamic parameter named DP1.The DP1 parameter
-is in the PSet1 parameter set and has a type of Int32. The DP1 parameter is
-available in the Sample function only when the value of the Path parameter
-contains "HKLM:", indicating that it is being used in the HKEY_LOCAL_MACHINE
-registry drive.
+`Name` and `Path`, and an optional dynamic parameter named `DP1`.The `DP1`
+parameter is in the `PSet1` parameter set and has a type of `Int32`. The `DP1`
+parameter is available in the Sample function only when the value of the `Path`
+parameter contains "HKLM:", indicating that it is being used in the
+HKEY_LOCAL_MACHINE registry drive.
 
 ```powershell
 function Get-Sample {
@@ -697,19 +703,19 @@ function Get-Sample {
   {
     if ($path -match ".HKLM.:")
     {
-      $attributes = new-object -Type `
+      $attributes = New-Object -Type `
         System.Management.Automation.ParameterAttribute
       $attributes.ParameterSetName = "__AllParameterSets"
       $attributes.Mandatory = $false
-      $attributeCollection = new-object `
+      $attributeCollection = New-Object `
         -Type System.Collections.ObjectModel.Collection[System.Attribute]
       $attributeCollection.Add($attributes)
 
-      $dynParam1 = new-object -Type `
+      $dynParam1 = New-Object -Type `
         System.Management.Automation.RuntimeDefinedParameter("dp1", [Int32],
           $attributeCollection)
 
-      $paramDictionary = new-object `
+      $paramDictionary = New-Object `
         -Type System.Management.Automation.RuntimeDefinedParameterDictionary
       $paramDictionary.Add("dp1", $dynParam1)
       return $paramDictionary
@@ -720,14 +726,14 @@ function Get-Sample {
 
 For more information, see "RuntimeDefinedParameter Class" in the MSDN
 (Microsoft Developer Network) library at
-http://go.microsoft.com/fwlink/?LinkID=145130.
+[RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter)
 
-## Switch Parameters
+### Switch Parameters
 
 Switch parameters are parameters with no parameter value. They are effective
 only when they are used and have only one effect.
 
-For example, the **-NoProfile** parameter of PowerShell.exe is a switch
+For example, the `-NoProfile` parameter of PowerShell.exe is a switch
 parameter.
 
 To create a switch parameter in a function, specify the Switch type in the
@@ -767,7 +773,7 @@ that the parameter name communicates the effect of the parameter to the user,
 and avoid ambiguous terms, such as Filter or Maximum, that might imply that a
 value is required.
 
-# SEE ALSO
+## See also
 
 [about_Functions](about_Functions.md)
 

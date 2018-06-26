@@ -1,4 +1,4 @@
----
+﻿---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,10 +7,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=141443
 external help file:  Microsoft.WSMan.Management.dll-Help.xml
 title:  Get-WSManCredSSP
 ---
-
 # Get-WSManCredSSP
+
 ## SYNOPSIS
+
 Gets the Credential Security Support Provider-related configuration for the client.
+
 ## SYNTAX
 
 ```
@@ -18,6 +20,7 @@ Get-WSManCredSSP [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Get-WSManCredSSP cmdlet gets the Credential Security Support Provider-related configuration of the client and the server.
 The output indicates whether Credential Security Support Provider (CredSSP) authentication is enabled or disabled.
 It also displays configuration information for the AllowFreshCredentials policy of CredSSP.
@@ -37,11 +40,13 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 
 To disable CredSSP authentication, use the Disable-WSManCredSSP cmdlet.
 To enable CredSSP authentication, use the Enable-WSManCredSSP cmdlet.
+
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> get-wsmancredssp
+
+```powershell
+get-wsmancredssp
 ```
 
 This command displays CredSSP configuration information for both the client and server.
@@ -55,18 +60,25 @@ If the computer is configured for CredSSP, this is the output:
 If the computer is not configured for CredSSP, this is the output:
 
 "The machine is not configured to allow delegating fresh credentials."
+
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
+
 This cmdlet does not accept any input.
+
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
+
 ## NOTES
 
 ## RELATED LINKS
