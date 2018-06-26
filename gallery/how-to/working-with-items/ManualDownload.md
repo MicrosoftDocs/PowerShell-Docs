@@ -18,7 +18,7 @@ Each item page has a link for Manual Download, as shown here:
 
 ![Manual Download](../../Images/ManualItemDownload.png)
 
-To download the item manually, click on the text titled: "Download the raw nupkg file". Depending on the browser you are using, you may be able to choose the target folder where the nupkg file is placed. A copy of the item will be placed in the download folder for your browser, with the name <item name>.<item version>.nupkg. 
+To download the item manually, click on the text titled: "Download the raw nupkg file". Depending on the browser you are using, you may be able to choose the target folder where the nupkg file is placed. A copy of the item will be placed in the download folder for your browser, with the name [item name].[item version].nupkg. 
 
 __Note:__ Some browsers, notably Internet Explorer, will automatically rename the nupkg file to .zip during the download. This is part of the NuGet specification. As a result, the downloaded file may be named .nupkg or .zip. 
 
