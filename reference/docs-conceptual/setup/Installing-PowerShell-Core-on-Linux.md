@@ -25,6 +25,22 @@ Once the package is installed, run `pwsh` from a terminal.
 [lai]: #linux-appimage
 [tar]: #binary-archives
 
+## Installing Preview Releases
+
+When installing a PowerShell Core Preview release for Linux via a Package Repository,
+the package name changes from `powershell` to `powershell-preview`.
+
+Installing via direct download does not change, other than the file name.
+
+Here is a table of the commands to install the stable and preview packages using the various package managers:
+
+|Distrobution(s)|Stable Command | Preview Command |
+|---------------|---------------|-----------------|
+| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| OpenSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
+| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+
 ## Ubuntu 14.04
 
 ### Installation via Package Repository - Ubuntu 14.04
@@ -65,9 +81,10 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Please note that `dpkg -i` will fail with unmet dependencies;
-> the next command, `apt-get install -f` resolves these
-> and then finishes configuring the PowerShell package.
+> [!NOTE]
+> The `dpkg -i` command fails with unmet dependencies.
+> The next command, `apt-get install -f` resolves these issues
+> then finishes configuring the PowerShell package.
 
 ### Uninstallation - Ubuntu 14.04
 
@@ -115,9 +132,10 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Please note that `dpkg -i` will fail with unmet dependencies;
-> the next command, `apt-get install -f` resolves these
-> and then finishes configuring the PowerShell package.
+> [!NOTE]
+> The `dpkg -i` command fails with unmet dependencies.
+> The next command, `apt-get install -f` resolves these issues
+> then finishes configuring the PowerShell package.
 
 ### Uninstallation - Ubuntu 16.04
 
@@ -127,7 +145,8 @@ sudo apt-get remove powershell
 
 ## Ubuntu 17.10
 
-> Note: Support for Ubuntu 18.04 was added after `6.1.0-preview.2`
+> [!NOTE]
+> Support for Ubuntu 17.04 was added after `6.1.0-preview.2`
 
 ### Installation via Package Repository - Ubuntu 17.10
 
@@ -167,9 +186,10 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
 sudo apt-get install -f
 ```
 
-> Please note that `dpkg -i` will fail with unmet dependencies;
-> the next command, `apt-get install -f` resolves these
-> and then finishes configuring the PowerShell package.
+> [!NOTE]
+> The `dpkg -i` command fails with unmet dependencies.
+> The next command, `apt-get install -f` resolves these issues
+> then finishes configuring the PowerShell package.
 
 ### Uninstallation - Ubuntu 17.10
 
@@ -179,7 +199,8 @@ sudo apt-get remove powershell
 
 ## Ubuntu 18.04
 
-> Note: Support for Ubuntu 18.04 was added after `6.1.0-preview.2`
+> [!NOTE]
+> Support for Ubuntu 18.04 was added after `6.1.0-preview.2`
 
 ### Installation via Package Repository - Ubuntu 18.04
 
@@ -219,9 +240,10 @@ sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Please note that `dpkg -i` will fail with unmet dependencies;
-> the next command, `apt-get install -f` resolves these
-> and then finishes configuring the PowerShell package.
+> [!NOTE]
+> The `dpkg -i` command fails with unmet dependencies.
+> The next command, `apt-get install -f` resolves these issues
+> then finishes configuring the PowerShell package.
 
 ### Uninstallation - Ubuntu 17.10
 
@@ -274,9 +296,9 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Please note that `dpkg -i` will fail with unmet dependencies.
-> The next command, `apt-get install -f` resolves these
-> and then finishes configuring the PowerShell package.
+> The `dpkg -i` command fails with unmet dependencies.
+> The next command, `apt-get install -f` resolves these issues
+> then finishes configuring the PowerShell package.
 
 ### Uninstallation - Debian 8
 
@@ -328,10 +350,7 @@ sudo dpkg -i powershell_6.0.2-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-> [!NOTE]
-> Please note that `dpkg -i` will fail with unmet dependencies.
-> The next command, `apt-get install -f` resolves these
-> and then finishes configuring the PowerShell package.
+
 
 ### Uninstallation - Debian 9
 
@@ -498,7 +517,8 @@ sudo zypper remove powershell
 
 ## Fedora
 
-> Please note, Fedora 28 is only supported in PowerShell Core 6.1 and newer.
+> [!NOTE]
+> Fedora 28 is only supported in PowerShell Core 6.1 and newer.
 
 ### Installation via Package Repository (preferred) - Fedora 27, Fedora 28
 
@@ -552,6 +572,9 @@ sudo dnf remove powershell
 
 ## Arch Linux
 
+> [!NOTE]
+> Arch support is experimental.
+
 PowerShell is available from the [Arch Linux][] User Repository (AUR).
 
 * It can be compiled with the [latest tagged release][arch-release]
@@ -568,6 +591,9 @@ For more information on installing packages from the AUR, see the [Arch Linux wi
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
 ## Linux AppImage
+
+> [!NOTE]
+> AppImage support is experimental
 
 Using a recent Linux distribution,
 download the AppImage `powershell-6.0.1-x86_64.AppImage`
@@ -588,6 +614,9 @@ This package  is a single binary that works independently of the user's Linux di
 [appimage]: http://appimage.org/
 
 ## Kali
+
+> [!NOTE]
+> Kali support is experimental.
 
 ### Installation
 
@@ -624,6 +653,9 @@ sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 ```
 
 ## Raspbian
+
+> [!NOTE]
+> Raspbian support is experimental.
 
 Currently, PowerShell is only supported on Raspbian Stretch.
 
