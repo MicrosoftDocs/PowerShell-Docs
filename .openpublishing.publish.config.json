@@ -1,6 +1,5 @@
 {
     "build_entry_point": "docs",
-    "need_preview_pull_request": true,
     "docsets_to_publish": [{
             "docset_name": "developer-docs",
             "build_source_folder": "developer",
@@ -106,11 +105,13 @@
         }
     ],
     "notification_subscribers": [],
+    "sync_notification_subscribers": [],
     "branches_to_filter": [],
     "git_repository_url_open_to_public_contributors": "https://github.com/PowerShell/PowerShell-Docs",
     "git_repository_branch_open_to_public_contributors": "staging",
     "skip_source_output_uploading": false,
-    "need_preview_pull_request": false,
+    "need_preview_pull_request": true,
+    "contribution_branch_mappings": {},
     "dependent_repositories": [{
             "path_to_root": "_themes",
             "url": "https://github.com/Microsoft/templates.docs.msft",
@@ -120,10 +121,13 @@
         {
             "path_to_root": "powershell-sdk-samples",
             "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples",
-            "branch": "master"
+            "branch": "master",
+            "branch_mapping": {}
         }
     ],
+    "branch_target_mapping": {},
     "need_generate_pdf_url_template": false,
+    "targets": {},
     "need_generate_pdf": false,
     "need_generate_intellisense": false,
     "dependent_packages": [{
