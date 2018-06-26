@@ -52,7 +52,7 @@ This creates the catalog file.
 
 ![](../images/CatalogFile2.jpg)
 
-To verify the integrity of catalog file (Pester.cat in above example), sign it using [Set-AuthenticodeSignature](powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) cmdlet.
+To verify the integrity of catalog file (Pester.cat in above example), sign it using [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) cmdlet.
 
 ### Test-FileCatalog
 --------------------------------
