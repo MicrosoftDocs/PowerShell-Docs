@@ -26,6 +26,9 @@ The `Write-Information` cmdlet specifies how Windows PowerShell handles informat
 Windows PowerShell 5.0 introduces a new, structured information stream (number 6 in Windows PowerShell streams) that you can use to transmit structured data between a script and its callers (or hosting environment).
 `Write-Information` lets you add an informational message to the stream, and specify how Windows PowerShell handles information stream data for a command. Information streams also work for `PowerShell.Streams`, jobs, scheduled jobs, and workflows.
 
+> [!NOTE]
+> The information stream does not follow the standard convention of prefixing its messages with "[Stream Name]:".  This was intended for brevity and visual cleanliness.
+
 The `$InformationPreference` preference variable value determines whether the message you provide to `Write-Information` is displayed at the expected point in a script's operation.
 Because the default value of this variable is `SilentlyContinue`, by default, informational messages are not shown.
 If you don't want to change the value of `$InformationPreference`, you can override its value by adding the `InformationAction` common parameter to your command.
@@ -35,8 +38,7 @@ For more information, see [about_Preference_Variables](../Microsoft.PowerShell.C
 > Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information`
 > This allows you to use `Write-Host` to emit output to the information stream.
 > This enables the **capture** or **suppression** of data written using `Write-Host` while preserving backwards compatibility.
->
-> The `$InformationPreference` preference variable and `InformationAction` common parameter do not affect `Write-Host` messages.
+> for more information see [Write-Host](Write-Host.md)
 
 `Write-Information` is also a supported workflow activity.
 

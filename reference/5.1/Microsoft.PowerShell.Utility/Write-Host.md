@@ -33,6 +33,7 @@ The particular result depends on the program that is hosting PowerShell.
 > This enables the **capture** or **suppression** of data written using `Write-Host` while preserving backwards compatibility.
 >
 > The `$InformationPreference` preference variable and `InformationAction` common parameter do not affect `Write-Host` messages.
+> The exception to this rule is `-InformationAction Ignore`, which effectively suppresses `Write-Host` output. (see "Example 5")
 
 ## EXAMPLES
 
@@ -85,6 +86,21 @@ Write-Host "Red on white text." -ForegroundColor red -BackgroundColor white
 
 ```output
 Red on white text.
+```
+
+This command displays the string "Red on white text." The text is 'red', as defined by the `ForegroundColor` parameter.
+The background is 'white', as defined by the `BackgroundColor` parameter.
+
+### Example 5: Suppress output from Write-Host
+
+```powershell
+# The following two statements can be used to effectively suppress output from Write-Host
+Write-Host "I won't print" -InformationAction Ignore
+Write-Host "I won't print" 6>$null
+```
+
+```output
+
 ```
 
 This command displays the string "Red on white text." The text is 'red', as defined by the `ForegroundColor` parameter.
