@@ -113,7 +113,7 @@ Previously, you had no way to specify a particular module version; if there were
 
 In WMF 5.1:
 
-- You can use [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctorview=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+- You can use [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
 **Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
