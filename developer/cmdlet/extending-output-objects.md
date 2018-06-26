@@ -33,7 +33,7 @@ The following example shows how Windows PowerShell extends the [System.Array](/d
 To see this new alias property, use a [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) command on any array, as shown in the following example.
 
 ```powershell
-Get-Member -inputobject (1,2,3,4)
+Get-Member -InputObject (1,2,3,4)
 ```
 
 The command returns the following results.
@@ -52,7 +52,7 @@ Length         Property      System.Int32 Length {get;}
 You can use either the `Count` property or the `Length` property to determine how many objects are in an array. For example:
 
 ```powershell
-PS> (1, 2, 3, 4).count
+PS> (1, 2, 3, 4).Count
 ```
 
 ```output
@@ -60,7 +60,7 @@ PS> (1, 2, 3, 4).count
 ```
 
 ```powershell
-(1, 2, 3, 4).length
+PS> (1, 2, 3, 4).Length
 ```
 
 ```output
@@ -69,7 +69,7 @@ PS> (1, 2, 3, 4).count
 
 ## Custom Types Files
 
-To create a custom types file, start by copying an existing types file. The new file can have any name, but it must have a .ps1xml file name extension. When you copy the file, you can place the new file in any directory that is accessible to Windows PowerShell, but it is useful to place the files in the Windows PowerShell installation directory `($pshome`) or in a subdirectory of the installation directory.
+To create a custom types file, start by copying an existing types file. The new file can have any name, but it must have a .ps1xml file name extension. When you copy the file, you can place the new file in any directory that is accessible to Windows PowerShell, but it is useful to place the files in the Windows PowerShell installation directory (`$pshome`) or in a subdirectory of the installation directory.
 
 To add your own extended types to the file, add a types element for each object that you want to extend. The following topics provide examples.
 
@@ -83,7 +83,6 @@ After you define your own extended types, use one of the following methods to ma
 
 - To make your extended types file available to the current session, use the [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) cmdlet to add the new file. If you want your types to take precedence over the types that are defined in other types files (including the Types.ps1xml file), use the `PrependData` parameter of the [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) cmdlet.
 - To make your extended types file available to all future sessions, add the types file to a module, export the current session, or add the [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) command to your Windows PowerShell profile.
-To make your extended types file available to all future sessions, add the types file to a module, export the current session, or add the [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) command to your Windows PowerShell profile.
 
 ## Signing Types Files
 
