@@ -17,7 +17,7 @@ Combines a path and a child path into a single path.
 
 ```
 Join-Path [-Path] <String[]> [-ChildPath] <String>
- [-Resolve] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
+ [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
