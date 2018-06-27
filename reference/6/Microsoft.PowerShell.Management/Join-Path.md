@@ -228,23 +228,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UseTransaction
-
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
