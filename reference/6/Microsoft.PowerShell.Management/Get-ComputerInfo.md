@@ -7,8 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=822226
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-ComputerInfo
 ---
-
 # Get-ComputerInfo
+
+> Version Introduced: Windows PowerShell 5.1
 
 ## SYNOPSIS
 Gets a consolidated object of system and operating system properties.
