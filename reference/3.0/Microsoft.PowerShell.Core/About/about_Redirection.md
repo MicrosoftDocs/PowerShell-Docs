@@ -108,9 +108,6 @@ desired result.
 This example sends all streams output from a script called `script.ps1` to a
 file called `script.log`
 
-This example suppresses all information stream data. To read more about
-**Information** stream cmdlets, see [Write-Host](../../microsoft.powershell.utility/Write-Host.md) and [Write-Information](../../microsoft.powershell.utility/Write-Information.md)
-
 ## Notes
 
 The redirection operators that do not append data (`>` and `n>`) overwrite the
