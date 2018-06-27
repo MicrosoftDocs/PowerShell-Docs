@@ -9,9 +9,10 @@ title:  Get-ComputerInfo
 ---
 # Get-ComputerInfo
 
+## SYNOPSIS
+
 > Version Introduced: Windows PowerShell 5.1
 
-## SYNOPSIS
 Gets a consolidated object of system and operating system properties.
 
 ## SYNTAX
