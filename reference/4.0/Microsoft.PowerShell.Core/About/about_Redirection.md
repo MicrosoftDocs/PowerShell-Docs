@@ -36,10 +36,6 @@ The redirection operators enable you to send streams of data to a file or the
 The PowerShell redirection operators use the following numbers to represent
 the available output streams:
 
-> [!NOTE]
-> There is also a **Progress** stream in PowerShell, but it is not used for
-> redirection.
-
 |Stream # |Description  |Introduced in |
 |---------|---------|---------|
 |1|**Success** Stream|PowerShell 2.0|
@@ -49,11 +45,13 @@ the available output streams:
 |5|**Debug** Stream|PowerShell 3.0|
 |*|All Streams|PowerShell 3.0|
 
-The PowerShell redirection operators are as follows, where `n` represents
-the stream number:
-
 > [!NOTE]
-> The **Success** stream ( `1` ) is the default if no stream is specified.
+> There is also a **Progress** stream in PowerShell, but it is not used for
+> redirection.
+
+The PowerShell redirection operators are as follows, where `n` represents
+the stream number. The **Success** stream ( `1` ) is the default if no stream is
+specified.
 
 |Operator|Description| Syntax|
 |---------|---------|--------|
