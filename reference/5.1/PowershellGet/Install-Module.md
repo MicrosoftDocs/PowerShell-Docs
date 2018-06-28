@@ -83,6 +83,7 @@ This example installs the newest version of the module ContosoServer to $home\Do
 
 ### -AllowClobber
 
+Allows you to install a different version of a module that already exists on your computer.
 
 ```yaml
 Type: SwitchParameter

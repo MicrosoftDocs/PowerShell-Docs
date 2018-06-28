@@ -20,12 +20,12 @@ Starting with version 5.1, PowerShell is available in different editions which d
 
 - [Determine running edition of PowerShell using $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filter Get-Module results by CompatiblePSEditions using PSEdition parameter](/powershell/module/microsoft.powershell.core/get-module)
-- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [Declare a module's compatibility to specific PowerShell versions](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/gallery/concepts/script-psedition-support)
+- [Declare a module's compatibility to specific PowerShell versions](/powershell/gallery/concepts/module-psedition-support)
 
 ## Catalog Cmdlets
 
-Two new cmdlets have been added in the [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) module; these generate and validate Windows catalog files.
+Two new cmdlets have been added in the [Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) module; these generate and validate Windows catalog files.
 
 ### New-FileCatalog
 --------------------------------
@@ -52,7 +52,7 @@ This creates the catalog file.
 
 ![](../images/CatalogFile2.jpg)
 
-To verify the integrity of catalog file (Pester.cat in above example), sign it using [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.
+To verify the integrity of catalog file (Pester.cat in above example), sign it using [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) cmdlet.
 
 ### Test-FileCatalog
 --------------------------------
@@ -68,7 +68,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 This cmdlet compares all the files hashes and their relative paths found in *catalog* with ones on *disk*.
 If it detects any mismatch between file hashes and paths it returns the status as *ValidationFailed*.
 Users can retrieve all this information by using the *-Detailed* parameter.
-It also displays signing status of catalog in *Signature* property which is equivalent to calling [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet on the catalog file.
+It also displays signing status of catalog in *Signature* property which is equivalent to calling [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) cmdlet on the catalog file.
 Users can also skip any file during validation by using the *-FilesToSkip* parameter.
 
 ## Module Analysis Cache
@@ -113,7 +113,7 @@ Previously, you had no way to specify a particular module version; if there were
 
 In WMF 5.1:
 
-- You can use [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
+- You can use [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 This hash table has the same format as `Get-Module -FullyQualifiedName`.
 
 **Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
