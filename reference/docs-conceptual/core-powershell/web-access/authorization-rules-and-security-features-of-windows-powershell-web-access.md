@@ -356,21 +356,21 @@ successful, and allowed by at least one authorization rule.
   format *server_name*\\*user_name* to the authorization rule
 
 2. Authentication on the target computer by using alternate credentials
-  provided on the sign-in page, in the **Optional connection settings** area
+   provided on the sign-in page, in the **Optional connection settings** area
 
-  > [!NOTE]:
-  >
-  > If gateway and target computers are in different workgroups or domains, a
-  > trust relationship must be established between the two workgroup computers,
-  > the two domains, or between the workgroup and the domain. This relationship
-  > cannot be configured by using Windows PowerShell Web Access authorization
-  > rule cmdlets. Authorization rules do not define a trust relationship
-  > between computers; they can only authorize users to connect to specific
-  > target computers and session configurations. For more information about how
-  > to configure a trust relationship between different domains, see 
-  > [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx").
-  > For more information about how to add workgroup computers 
-  > to a trusted hosts list, see [Remote Management with Server Manager](https://technet.microsoft.com/library/dd759202.aspx)
+   > [!NOTE]
+   >
+   > If gateway and target computers are in different workgroups or domains, a
+   > trust relationship must be established between the two workgroup computers,
+   > the two domains, or between the workgroup and the domain. This relationship
+   > cannot be configured by using Windows PowerShell Web Access authorization
+   > rule cmdlets. Authorization rules do not define a trust relationship
+   > between computers; they can only authorize users to connect to specific
+   > target computers and session configurations. For more information about how
+   > to configure a trust relationship between different domains, see
+   > [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx").
+   > For more information about how to add workgroup computers
+   > to a trusted hosts list, see [Remote Management with Server Manager](https://technet.microsoft.com/library/dd759202.aspx)
 
 ### Using a single set of authorization rules for multiple sites
 
