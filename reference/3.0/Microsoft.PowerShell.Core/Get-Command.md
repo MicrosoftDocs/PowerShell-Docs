@@ -16,19 +16,19 @@ Gets all commands.
 ## SYNTAX
 
 ### CmdletSet (Default)
-
 ```
-Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>] [-TotalCount <Int32>] [-Syntax]
- [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
- [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [[-ArgumentList] <Object[]>]
+ [-Verb <String[]>] [-Noun <String[]>]
+ [-Module <String[]>] [-TotalCount <Int32>] [-Syntax] [-All] [-ListImported]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ### AllCommandSet
-
 ```
-Get-Command [[-Name] <String[]>] [-Module <String[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>]
- [-Syntax] [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
- [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [[-Name] <String[]>] [[-ArgumentList] <Object[]>]
+ [-CommandType <CommandTypes>]
+ [-Module <String[]>] [-TotalCount <Int32>] [-Syntax] [-All] [-ListImported]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -276,7 +276,7 @@ Parameter Sets: (All)
 Aliases: Args
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -349,7 +349,7 @@ Parameter Sets: AllCommandSet
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

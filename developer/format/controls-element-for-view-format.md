@@ -1,0 +1,57 @@
+---
+title: "Controls Element for View (Format) | Microsoft Docs"
+ms.custom: ""
+ms.date: "09/13/2016"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
+caps.latest.revision: 14
+---
+# Controls Element for View (Format)
+
+Defines the view controls that can be used by a specific view.
+
+Configuration Element (Format)
+ViewDefinitions Element (Format)
+View Element (Format)
+Controls Element for View (Format)
+
+## Syntax
+
+```xml
+<Controls>
+  <Control>...</Control>
+</Controls>
+```
+
+## Attributes and Elements
+
+The following sections describe the attributes, child elements, and parent elements of the `Controls` element. This element must have at least one child element. There is no maximum number of child elements, nor is their order significant.
+
+### Attributes
+
+None.
+
+### Child Elements
+
+|Element|Description|
+|-------------|-----------------|
+|[Control Element for Controls for View (Format)](./control-element-for-controls-for-view-format.md)|Defines a control that can be used by the view.|
+
+### Parent Elements
+
+|Element|Description|
+|-------------|-----------------|
+|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display the members of one or more .NET Framework objects.|
+
+## Remarks
+
+## See Also
+
+[Control Element (Format)](./control-element-for-controls-for-view-format.md)
+
+[View Element (Format)](./view-element-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

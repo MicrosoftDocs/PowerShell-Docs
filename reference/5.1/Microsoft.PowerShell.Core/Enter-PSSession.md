@@ -94,7 +94,7 @@ The commands that you enter run in the new session, and the results are returned
 ### Example 2: Work with an interactive session
 ```
 The first command uses the **Enter-PSSession** cmdlet to start an interactive session with Server01, a remote computer. When the session starts, the command prompt changes to include the computer name.
-PS C:\> Enter-PSSession -Computer Server01
+PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\>
 
 The second command gets the Windows PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.

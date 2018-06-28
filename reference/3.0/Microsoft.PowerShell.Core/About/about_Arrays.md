@@ -7,12 +7,12 @@ title:  about_Arrays
 ---
 # About Arrays
 
-# SHORT DESCRIPTION
+## Short Description
 
 Describes arrays, which are data structures designed to store
 collections of items.
 
-# LONG DESCRIPTION
+## Long Description
 
 An array is a data structure that is designed to store a collection of items.
 The items can be the same type or different types.
@@ -20,7 +20,7 @@ The items can be the same type or different types.
 Beginning in Windows PowerShell 3.0, a collection of zero or one object has
 some properties of arrays.
 
-## CREATING AND INITIALIZING AN ARRAY
+## Creating and initializing an array
 
 To create and initialize an array, assign multiple values to a variable. The
 values stored in the array are delimited with a comma and separated from the
@@ -73,7 +73,7 @@ strongly typed array of process objects, enter the following command:
 [Diagnostics.Process[]]$zz = Get-Process
 ```
 
-## THE ARRAY SUB-EXPRESSION OPERATOR
+## The array sub-expression operator
 
 The array sub-expression operator creates an array, even if it contains zero
 or one object.
@@ -91,7 +91,9 @@ example:
 PS> $a = @("Hello World")
 PS> $a.Count
 1
+```
 
+```powershell
 PS> $b = @()
 PS> $b.Count
 0
@@ -107,19 +109,17 @@ $p = @(Get-Process Notepad)
 For more information about the array sub-expression operator, see
 about_Operators.
 
-## ACCESSING AND USING ARRAY ELEMENTS
+## Accessing and using array elements
 
-### READING AN ARRAY
+### Reading an array
 
 You can refer to an array by using its variable name. To display all the
-elements in the array, type the array name. For example, assuming *$a* is an
+elements in the array, type the array name. For example, assuming `$a` is an
 array containing integers 0, 1, 2, until 9; typing:
 
 ```powershell
 $a
 ```
-
-produces:
 
 ```output
 0
@@ -136,25 +136,21 @@ produces:
 
 You can refer to the elements in an array by using an index, beginning at
 position 0. Enclose the index number in brackets. For example, to display the
-first element in the *$a* array, type:
+first element in the `$a` array, type:
 
 ```powershell
 $a[0]
 ```
 
-produces:
-
 ```output
 0
 ```
 
-To display the third element in the $a array, type:
+To display the third element in the `$a` array, type:
 
 ```powershell
 $a[2]
 ```
-
-produces:
 
 ```output
 2
@@ -167,8 +163,6 @@ type:
 ```powershell
 $a[1..4]
 ```
-
-produces:
 
 ```output
 1
@@ -186,8 +180,6 @@ $a = 0 .. 9
 $a[-3..-1]
 ```
 
-produces:
-
 ```output
 7
 8
@@ -200,8 +192,6 @@ If you type negative indexes in descending order, your output changes.
 $a = 0 .. 9
 $a[-1..-3]
 ```
-
-produces:
 
 ```output
 9
@@ -217,8 +207,6 @@ $a = 0 .. 9
 $a[2..-2]
 ```
 
-produces:
-
 ```output
 2
 1
@@ -227,7 +215,7 @@ produces:
 8
 ```
 
-Also, one common mistake is to assume *$a[0..-2]* refers to all the elements
+Also, one common mistake is to assume `$a[0..-2]` refers to all the elements
 of the array, except for the last one. It refers to the first, last, and
 second-to-last elements in the array.
 
@@ -240,8 +228,6 @@ $a = 0 .. 9
 $a[0,2+4..6]
 ```
 
-produces:
-
 ```output
 0
 2
@@ -252,7 +238,7 @@ produces:
 
 Also, to list multiple ranges and individual elements you can use the plus
 operator. For example, to list elements zero to two, four to six, and the
-element at eighth positionat type:
+element at eighth positional type:
 
 ```powershell
 $a = 0..9
@@ -260,7 +246,6 @@ $a[+0..2+4..6+8]
 ```
 
 ```output
-C:\ >$a[+0..2+4..6+8]
 0
 1
 2
@@ -268,14 +253,13 @@ C:\ >$a[+0..2+4..6+8]
 5
 6
 8
-C:\ >
 ```
 
-### ITERATIONS OVER ARRAY ELEMENTS
+### Iterations over array elements
 
 You can also use looping constructs, such as ForEach, For, and While loops, to
 refer to the elements in an array. For example, to use a ForEach loop to
-display the elements in the $a array, type:
+display the elements in the `$a` array, type:
 
 ```powershell
 $a = 0..9
@@ -295,7 +279,6 @@ foreach ($element in $a) {
 7
 8
 9
-C:\ >
 ```
 
 The Foreach loop iterates through the array and returns each value in the
@@ -318,11 +301,10 @@ for ($i = 0; $i -le ($a.length - 1); $i += 2) {
 4
 6
 8
-C:\ >
 ```
 
 You can use a While loop to display the elements in an array until a defined
-condition is no longer true. For example, to display the elements in the $a
+condition is no longer true. For example, to display the elements in the `$a`
 array while the array index is less than 4, type:
 
 ```powershell
@@ -339,31 +321,28 @@ while($i -lt 4) {
 1
 2
 3
-C:\ >
 ```
 
-## PROPERTIES OF ARRAYS
+## Properties of arrays
 
-### COUNT or LENGTH or LONGLENGTH
+### Count or Length or LongLength
 
-To determine how many items are in an array, use the Length property or its
-Count alias. Longlength is useful if the array contains more than
+To determine how many items are in an array, use the `Length` property or its
+`Count` alias. `Longlength` is useful if the array contains more than
 2,147,483,647 elements.
 
 ```powershell
-$a = 0 .. 9
+$a = 0..9
 $a.Count
 $a.Length
 ```
-
-produces:
 
 ```output
 10
 10
 ```
 
-### RANK
+### Rank
 
 Returns the number of dimensions in the array. Most arrays in PowerShell have
 one dimension, only. Even when you think you are building a multidimensional
@@ -396,9 +375,9 @@ $rank2.rank
 2
 ```
 
-## METHODS OF ARRAYS
+## Methods of arrays
 
-### CLEAR
+### Clear
 
 Removes all elements in the array. The following example shows the effect of
 the clear method.
@@ -418,79 +397,17 @@ Before the clear
 1
 2
 After the clear
-
-C:\ >
 ```
 
 > [!NOTE]
 > The Clear method does not reset the size of the array.
 
-### FOREACH
+### ForEach and Where methods
 
-Allows to iterate over all elements in the array and execute the given script
-for each element of the array.
+Beginning in Windows PowerShell 4.0 `ForEach` and `Where` methods can be run
+using `.` notation from any collection.
 
-> [!NOTE]
-> The syntax requires the usage of curly brackets; parenthesis are optional
-
-The following example shows how use the foreach method. In this case the
-intent is to generate the square value of the elements in the array.
-
-```powershell
-$a = @(0 .. 3)
-$a.ForEach({ $_ * $_})
-```
-
-```output
-0
-1
-4
-9
-C:\ >
-```
-
-The `ForEach` method can be used to swiftly cast the elements to a different
-type; the following example shows how to convert a list of string dates to
-`[DateTime]` type.
-
-```powershell
-@("1/1/2017", "2/1/2017", "3/1/2017").ForEach([datetime])
-```
-
-```output
-
-Sunday, January 1, 2017 12:00:00 AM
-Wednesday, February 1, 2017 12:00:00 AM
-Wednesday, March 1, 2017 12:00:00 AM
-
-C:\ >
-```
-
-### WHERE
-
-Allows to filter or select the elements of the array. The script must evaluate
-to anything different than: zero (0), empty string, `$false` or `$null` for
-the element to show after the `Where`
-
-> [!NOTE]
-> The syntax requires the usage of curly brackets; parenthesis are optional
-
-The following example shows how to select all odd numbers from the array.
-
-```powershell
-@(0..9).Where{ $_ % 2 }
-```
-
-```output
-1
-3
-5
-7
-9
-C:\ >
-```
-
-# GET THE MEMBERS OF AN ARRAY
+## Get the members of an array
 
 To get the properties and methods of an array, such as the Length property and
 the SetValue method, use the InputObject parameter of the Get-Member cmdlet.
@@ -521,7 +438,7 @@ examples.
 ,(1,2,3) | Get-Member
 ```
 
-# MANIPULATING AN ARRAY
+## Manipulating an array
 
 You can change the elements in an array, add an element to an array, and
 combine the values from two arrays into a third array.
@@ -537,7 +454,7 @@ $a[1] = 10
 ```
 
 You can also use the SetValue method of an array to change a value. The
-following example changes the second value (index position 1) of the $a array
+following example changes the second value (index position 1) of the `$a` array
 to 500:
 
 ```powershell
@@ -560,30 +477,34 @@ $a += 5
 
 It is not easy to delete elements from an array, but you can create a new
 array that contains only selected elements of an existing array. For example,
-to create the $t array with all the elements in the $a array except for the
+to create the `$t` array with all the elements in the `$a` array except for the
 value at index position 2, type:
 
+```powershell
 $t = $a[0,1 + 3..($a.length - 1)]
+```
 
 To combine two arrays into a single array, use the plus operator (+). The
 following example creates two arrays, combines them, and then displays the
 resulting combined array.
 
+```powershell
 $x = 1,3
 $y = 5,9
 $z = $x + $y
+```
 
-As a result, the $z array contains 1, 3, 5, and 9.
+As a result, the `$z` array contains 1, 3, 5, and 9.
 
 To delete an array, assign a value of $null to the array. The following
-command deletes the array in the $a variable.
+command deletes the array in the `$a` variable.
 
-$a = $null
+`$a = $null`
 
-You can also use the Remove-Item cmdlet, but assigning a value of $null is
+You can also use the `Remove-Item` cmdlet, but assigning a value of `$null` is
 faster, especially for large arrays.
 
-# ARRAYS OF ZERO OR ONE
+## Arrays of zero or one
 
 Beginning in Windows PowerShell 3.0, a collection of zero or one object has
 the Count and Length property. Also, you can index into an array of one
@@ -622,7 +543,7 @@ $a[-1]
 4
 ```
 
-# SEE ALSO
+## See also
 
 - [about_Assignment_Operators](about_Assignment_Operators.md)
 - [about_Hash_Tables](about_Hash_Tables.md)

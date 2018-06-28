@@ -43,7 +43,7 @@ PowerShell Core is officially supported on the following platforms:
 * CentOS 7
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
-* Fedora 25, 26
+* Fedora 27, 28
 * macOS 10.12+
 
 Our community has also contributed packages for the following platforms,

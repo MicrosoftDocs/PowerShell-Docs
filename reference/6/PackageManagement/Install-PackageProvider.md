@@ -57,7 +57,7 @@ If your target computer is a Nano server, you need to run **Install-PackageProvi
 4.
 Restart PowerShell to auto-load the package provider.
 Alternatively, run `Get-PackageProvider -ListAvailable` to list all the package providers available on the computer.
-Then use `Import-PackageProvider -Name -RequiredVersion 2.8.5.201` to import the provider to the current Windows PowerShell session.
+Then use `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` to import the provider to the current Windows PowerShell session.
 
 ## EXAMPLES
 

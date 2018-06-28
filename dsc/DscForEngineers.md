@@ -1,7 +1,7 @@
 ---
 ms.date:  10/13/2017
 keywords:  dsc,powershell,configuration,setup
-title:  Desired State Configuration Overview for Decision Makers
+title:  Desired State Configuration Overview for Engineers
 ---
 
 # Desired State Configuration Overview for Engineers
@@ -113,8 +113,8 @@ Configuration Sample_Share
           Ensure      = "Present"
           Name        = "MyShare"
           Path        = "C:\Demo\Temp"
-          ReadAccess  = "Alice"
-          FullAccess  = "Bob"
+          ReadAccess  = "Bob"
+          FullAccess  = "Alice"
           Description = "This is an updated description for this share"
       }
    }

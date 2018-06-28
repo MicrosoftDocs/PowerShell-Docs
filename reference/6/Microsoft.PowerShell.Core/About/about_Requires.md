@@ -5,24 +5,20 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Requires
 ---
-
 # About Requires
 
-## SHORT DESCRIPTION
+## Short description
 
 Prevents a script from running without the required elements.
 
-## LONG DESCRIPTION
+## Long description
 
-The \#Requires statement prevents a script from running unless the Windows
+The `#Requires` statement prevents a script from running unless the Windows
 PowerShell version, modules, snap-ins, and module and snap-in version
 prerequisites are met. If the prerequisites are not met, Windows PowerShell
 does not run the script.
 
-You can use \#Requires statements in any script. You cannot use them in
-functions, cmdlets, or snap-ins.
-
-### SYNTAX
+### Syntax
 
 ```powershell
 #Requires -Version <N>[.<n>]
@@ -32,15 +28,36 @@ functions, cmdlets, or snap-ins.
 #Requires -RunAsAdministrator
 ```
 
-### RULES FOR USE
+### Rules for use
 
-- The \#Requires statement must be the first item on a line in a script.
-- A script can include more than one \#Requires statement.
-- The \#Requires statements can appear on any line in a script.
+- A script can include more than one `#Requires` statement.
+- The `#Requires` statements can appear on any line in a script.
+  
+  Placing a `#Requires` statement inside a function does NOT limit its scope.
+  All `#Requires` statements are always applied globally, and must be met,
+  before the script can execute.
+  > [!WARNING]
+  > Even though a `#Requires` statement can appear on any line in a script,
+  > its position in a script does not affect the sequence of its application.
+  >
+  > The global state the `#Requires` statement presents must be met before
+  > script execution.
+  
+  Example:
 
-### PARAMETERS
+  ```powershell
+  Get-Module Hyper-V | Remove-Module
+  #Requires -Modules Hyper-V
+  ```
 
--Version \<N\>[.\<n\>]
+  You might think that the above code should not run because the required
+  module was removed before the `#Requires` statement. However, the `#Requires`
+  state had to be met before the script could even execute. Then the first line
+  of the script invalidated the required state.
+
+### Parameters
+
+#### -Version \<N\>[.\<n\>]
 
 Specifies the minimum version of Windows PowerShell that the script requires.
 Enter a major version number and optional minor version number.
@@ -51,7 +68,7 @@ For example:
 #Requires -Version 3.0
 ```
 
--PSSnapin \<PSSnapin-Name\> [-Version \<N\>[.\<n\>]]
+#### -PSSnapin \<PSSnapin-Name\> [-Version \<N\>[.\<n\>]]
 
 Specifies a Windows PowerShell snap-in that the script requires. Enter the
 snap-in name and an optional version number.
@@ -62,7 +79,7 @@ For example:
 #Requires -PSSnapin DiskSnapin -Version 1.2
 ```
 
--Modules \<Module-Name\> &#124; \<Hashtable\>
+#### -Modules \<Module-Name\> | \<Hashtable\>
 
 Specifies Windows PowerShell modules that the script requires. Enter the
 module name and an optional version number. The Modules parameter is
@@ -72,20 +89,59 @@ If the required modules are not in the current session, Windows PowerShell
 imports them. If the modules cannot be imported, Windows PowerShell throws a
 terminating error.
 
-For each module, type the module name (<String>) or a hash table with the
+For each module, type the module name (\<String\>) or a hash table with the
 following keys. The value can be a combination of strings and hash tables.
 
-- ModuleName. This key is required.
-- ModuleVersion. This key is required.
-- GUID. This key is optional.
+- `ModuleName` - __[Required]__ Specifies the *ModuleName*.
+- `GUID` - __[Optional]__ Specifies the *GUID* of the Module.
+- It is also **Required** to specify **one** of the two below keys,
+  they cannot be used together.
+  - `ModuleVersion` - __[Required]__ Specify a Minimum acceptable version.
+  - `RequiredVersion` - __[Required]__ Specify an exact, required version.
+
+> [!NOTE]
+> `RequiredVersion` was added in Windows Powershell 5.0.
 
 For example,
 
+Require that `Hyper-V` (version `1.1.0.0` or greater) is installed
+
 ```powershell
-#Requires -Modules PSWorkflow, @{ ModuleName="PSScheduledJob"; ModuleVersion="1.0.0.0" }
+#Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1.0.0" }
 ```
 
--ShellId
+Requires that `Hyper-V` (**only** version `1.1.0.0`) is installed
+
+```powershell
+#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1.0.0" }
+```
+
+Requires that any version of `PSScheduledJob` and `PSWorkflow`, is installed.
+
+```powershell
+#Requires -Modules PSWorkflow, PSScheduledJob
+```
+
+When using the `RequiredVersion` key, ensure your version string exactly matches
+the version string you wish to require.
+
+```powershell
+Get-Module Hyper-V
+```
+
+```output
+ModuleType Version    Name     ExportedCommands
+---------- -------    ----     ------------------
+Binary     2.0.0.0    hyper-v  {Add-VMAssignableDevice, ...}
+```
+
+This will **FAIL**, because "2.0.0" does not exactly match "2.0.0.0"
+
+```powershell
+#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="2.0.0" }
+```
+
+#### -ShellId
 
 Specifies the shell that the script requires. Enter the shell ID.
 
@@ -95,7 +151,9 @@ For example,
 #Requires -ShellId MyLocalShell
 ```
 
--RunAsAdministrator
+You can find current ShellId by querying `$ShellId` automatic variable.
+
+#### -RunAsAdministrator
 
 When this switch parameter is added to your requires statement, it specifies
 that the Windows PowerShell session in which you are running the script must
@@ -107,11 +165,11 @@ For example,
 #Requires -RunAsAdministrator
 ```
 
-### EXAMPLES
+### Examples
 
-The following script has two \#Requires statements. If the requirements
+The following script has two `#Requires` statements. If the requirements
 specified in both statements are not met, the script does not run. Each
-\#Requires statement must be the first item on a line:
+`#Requires` statement must be the first item on a line:
 
 ```powershell
 #Requires -Modules PSWorkflow
@@ -125,7 +183,7 @@ Param
 ...
 ```
 
-### NOTES
+### Notes
 
 In Windows PowerShell 3.0, the Windows PowerShell Core packages appear as
 modules in sessions started by using the InitialSessionState.CreateDefault2
@@ -133,7 +191,7 @@ method, such as sessions started in the Windows PowerShell console. Otherwise,
 they appear as snap-ins. The exception is Microsoft.PowerShell.Core, which is
 always a snap-in.
 
-## SEE ALSO
+## See also
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 

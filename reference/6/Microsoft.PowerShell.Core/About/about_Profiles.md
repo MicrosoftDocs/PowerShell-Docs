@@ -40,13 +40,13 @@ For example, the PowerShell console supports the following basic
 profile files. The profiles are listed in precedence order. The first
 profile has the highest precedence.
 
-|Description               | Path                                     |
-|--------------------------|------------------------------------------|
-|Current user, Current Host|$Home\\[My]Documents\\WindowsPowerShell   |
-|                          |  \\Profile.ps1                           |
-|Current User, All Hosts   |$Home\\[My]Documents\\Profile.ps1         |
-|All Users, Current Host   |$PsHome\Microsoft.PowerShell_profile.ps1  |
-|All Users, All Hosts      |$PsHome\Profile.ps1                       |
+|Description               | Path                                        |
+|--------------------------|---------------------------------------------|
+|Current user, Current Host|$Home\\[My]Documents\\PowerShell             |
+|                          |  \\Microsoft.PowerShell_profile.ps1         |
+|Current User, All Hosts   |$Home\\[My]Documents\\PowerShell\Profile.ps1 |
+|All Users, Current Host   |$PsHome\Microsoft.PowerShell_profile.ps1     |
+|All Users, All Hosts      |$PsHome\Profile.ps1                          |
 
 The profile paths include the following variables:
 
@@ -314,13 +314,12 @@ Invoke-Command -Session $s -FilePath $profile
 
 The following command runs the "Current user, Current Host" profile from the
 remote computer in the session in $s. Because the `$Profile` variable is not
-populated, the command uses the explicit path to the profile.
+populated, the command uses the explicit path to the profile. We use dot
+sourcing operator so that profile executes in the current scope on the
+remote computer and not in its own scope.
 
 ```powershell
-Invoke-Command -SessionName $s -ScriptBlock {
-$path = "$home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
-Invoke-Command -FilePath $path
-}
+Invoke-Command -Session $s -ScriptBlock {. "$env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"}
 ```
 
 After running this command, the commands that the profile adds to the session
@@ -339,5 +338,7 @@ are available in $s.
 [about_Signing](about_Signing.md)
 
 [about_Remote](about_Remote.md)
+
+[about_Scopes](about_Scopes.md)
 
 [Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
