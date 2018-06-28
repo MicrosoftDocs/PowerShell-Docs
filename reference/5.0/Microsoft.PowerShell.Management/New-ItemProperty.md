@@ -91,14 +91,14 @@ It can also contain "quoted" strings
 $newValue.multistring
 ```
 
-This example creates a MultiString value using a Here-String.
-
-### Example 4: Create a MultiString value in the registry using an array
-
 ```output
 This is text which contains newlines
 It can also contain "quoted" strings
 ```
+
+This example creates a MultiString value using a Here-String.
+
+### Example 4: Create a MultiString value in the registry using an array
 
 ```powershell
 $newValue = New-ItemProperty -Path "HKLM:\SOFTWARE\ContosoCompany\" -Name 'MultiString' -PropertyType MultiString -Value ('a','b','c')
