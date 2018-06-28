@@ -81,7 +81,7 @@ The pipeline operator sends the results of the command to `New-ItemProperty`, wh
 This command works because the parameter-binding feature of Windows PowerShell associates the path of the `RegistryKey` object that `Get-Item` returns with the *LiteralPath* parameter of `New-ItemProperty`.
 For more information, see [about_Pipelines](../Microsoft.PowerShell.Core/About/about_pipelines.md).
 
-### Example 3: Create a MultiString value in the registry
+### Example 3: Create a MultiString value in the registry using a Here-String
 
 ```powershell
 $newValue = New-ItemProperty -Path "HKLM:\SOFTWARE\ContosoCompany\" -Name 'HereString' -PropertyType MultiString -Value @"
@@ -90,6 +90,10 @@ It can also contain "quoted" strings
 "@
 $newValue.multistring
 ```
+
+This example creates a MultiString value using a Here-String.
+
+### Example 4: Create a MultiString value in the registry using an array
 
 ```output
 This is text which contains newlines
@@ -105,11 +109,7 @@ $newValue.multistring[0]
 a
 ```
 
-These two examples show two ways to create `MultiString` values with `New-ItemProperty`.
-
-The first example shows the ability to use a Here-String.
-
-The second example shows how to use an array of values to create the `MultiString` value.
+The example shows how to use an array of values to create the `MultiString` value.
 
 ## PARAMETERS
 
