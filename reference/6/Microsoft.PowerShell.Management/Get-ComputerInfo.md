@@ -11,8 +11,6 @@ title:  Get-ComputerInfo
 
 ## SYNOPSIS
 
-> Version Introduced: Windows PowerShell 5.1
-
 Gets a consolidated object of system and operating system properties.
 
 ## SYNTAX
@@ -22,7 +20,8 @@ Get-ComputerInfo [[-Property] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-ComputerInfo** cmdlet gets a consolidated object of system and operating system properties.
+
+The **Get-ComputerInfo** cmdlet gets a consolidated object of system and operating system properties. This cmdlet was introduced in Windows PowerShell 5.1.
 
 ## EXAMPLES
 
