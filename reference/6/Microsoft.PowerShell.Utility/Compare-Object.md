@@ -165,6 +165,8 @@ Accept wildcard characters: False
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
+When you use the **PassThru** parameter, `Compare-Object` omits the `PSCustomObject` wrapper around the compared objects and returns the differing objects, unchanged.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -245,11 +247,9 @@ If the objects are the same, nothing is returned.
 
 ### System.Management.Automation.PSCustomObject
 
-If the objects are different, `Compare-Object` wraps the differing objects in a `PSCustomObject` wrapper with a `SideIndicator` property to reference the differences.
+If the objects are different, `Compare-Object` wraps the differing objects in a `PSCustomObject` wrapper with a **SideIndicator** property to reference the differences.
 
-### Other
-
-When you use the *PassThru* parameter, **Compare-Object** omits the `PSCustomObject` wrapper around the compared objects and returns the differing objects, unchanged.
+When you use the **PassThru** parameter, `Compare-Object` omits the `PSCustomObject` wrapper around the compared objects and returns the differing objects, unchanged.
 
 ## NOTES
 
