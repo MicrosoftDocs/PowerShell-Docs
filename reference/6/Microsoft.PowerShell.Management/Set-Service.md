@@ -56,7 +56,7 @@ Set-Service -Name BITS -StartupType Automatic
 Get-Service BITS | Select-Object Name, StartType, Status
 ```
 
-```Output
+```output
 Name StartType  Status
 ---- ---------  ------
 BITS      Auto Stopped
@@ -70,7 +70,7 @@ These commands get the startup type of the Background Intelligent Transfer Servi
 Get-CimInstance Win32_Service -Filter 'Name = "BITS"'  | Format-List  Name, Description
 ```
 
-```Output
+```output
 Name        : BITS
 Description : Transfers files in the background using idle network bandwidth. If the service is
               disabled, then any applications that depend on BITS, such as Windows Update or MSN
@@ -82,7 +82,7 @@ Set-Service -Name BITS -Description "Transfers files in the background using idl
 Get-CimInstance Win32_Service -Filter 'Name = "BITS"'  | Format-List  Name, Description
 ```
 
-```Output
+```output
 Name        : BITS
 Description : Transfers files in the background using idle network bandwidth.
 ```
