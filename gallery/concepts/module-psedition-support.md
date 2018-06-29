@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/12/2017
 contributor:  manikb
 keywords:  gallery,powershell,cmdlet,psget
@@ -15,7 +15,9 @@ Starting with version 5.1, PowerShell is available in different editions which d
 
 ```powershell
 $PSVersionTable
+```
 
+```output
 Name                           Value
 ----                           -----
 PSVersion                      5.1.14300.1000
@@ -30,41 +32,54 @@ SerializationVersion           1.1.0.1
 
 ## Module authors can declare their modules to be compatible with one or more PowerShell editions using the CompatiblePSEditions module manifest key. This key is only supported on PowerShell 5.1 or later.
 
-*NOTE* Once a module manifest is specified with the CompatiblePSEditions key, it can not be imported on lower versions of PowerShell.
+> [!NOTE]
+> Once a module manifest is specified with the CompatiblePSEditions key, it can not be imported on lower versions of PowerShell.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
 $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
+```
+
+```output
 Desktop
 Core
+```
 
+```powershell
 $ModuleInfo | Get-Member CompatiblePSEditions
+```
 
+```output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
 ----                 ---------- ----------
 CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] CompatiblePSEditions {get;}
-
 ```
 
 When getting a list of available modules, you can filter the list by PowerShell edition.
 
 ```powershell
 Get-Module -ListAvailable -PSEdition Desktop
+```
 
+```output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
+```
 
+```powershell
 Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
+```
+
+```output
 Desktop
 Core
-
 ```
 
 ## Module authors can publish a single module targeting to either or both PowerShell editions (Desktop and Core)
@@ -156,8 +171,8 @@ $PSModule.OnRemove = {
 In PS 5.1 or newer, $PSEdition global variable is allowed in the module manifest file.
 Using this variable, module author can specify the conditional values in the module manifest file. $PSEdition variable can be referenced in restricted language mode or a Data section.
 
-*NOTE* Once a module manifest is specified with the CompatiblePSEditions key or uses $PSEdition variable, it can not be imported on lower versions of PowerShell.
-
+> [!NOTE]
+> Once a module manifest is specified with the CompatiblePSEditions key or uses $PSEdition variable, it can not be imported on lower versions of PowerShell.
 
 #### Sample module manifest file with CompatiblePSEditions key
 
@@ -197,9 +212,10 @@ else # Desktop
 #### Module contents
 
 ```powershell
+dir -Recurse
+```
 
-PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
-
+```output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode                LastWriteTime         Length Name
@@ -239,9 +255,10 @@ Find-Module -Tag PSEdition_Core
 
 ```
 
-
 ## More details
 
-- [Scripts with PSEditions](script-psedition-support.md)
-- [PSEditions support on PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
-- [Update module manifest] (/powershell/module/powershellget/update-modulemanifest)
+[Scripts with PSEditions](script-psedition-support.md)
+
+[PSEditions support on PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
+
+[Update module manifest](/powershell/module/powershellget/update-modulemanifest)

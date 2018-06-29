@@ -5,7 +5,7 @@ title:  Using a DSC report server
 ---
 # Using a DSC report server
 
-> Applies To: Windows PowerShell 5.0
+Applies To: Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server
@@ -13,8 +13,8 @@ title:  Using a DSC report server
 > begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
 > (includes features beyond Pull Server on Windows Server) or one of the community solutions
 > listed [here](pullserver.md#community-solutions-for-pull-service).
-
->**Note:** The report server described in this topic is not available in PowerShell 4.0.
+>
+> **Note** The report server described in this topic is not available in PowerShell 4.0.
 
 The Local Configuration Manager (LCM) of a node can be configured to send reports about its configuration status to a pull server, which can then be queried to retrieve that data. Each time the node checks and applies
 a configuration, it sends a report to the report server. These reports are stored in a database on the server, and can be retrieved by calling the reporting web service. Each report contains
@@ -61,6 +61,7 @@ configuration ReportClientConfig
         }
     }
 }
+
 ReportClientConfig
 ```
 
@@ -96,14 +97,15 @@ configuration PullClientConfig
 PullClientConfig
 ```
 
->**Note:** You can name the web service whatever you want when you set up a pull server, but the **ServerURL** property must match the service name.
+> [!NOTE]
+> You can name the web service whatever you want when you set up a pull server, but the **ServerURL** property must match the service name.
 
 ## Getting report data
 
 Reports sent to the pull server are entered into a database on the server. The reports are available through calls to the web service. To retrieve reports for a specific node,
 send an HTTP request to the report web service in the following form:
-`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports`
-where `MyNodeAgentId` is the AgentId of the node for which you want to get reports. You can get the AgentID for a node by calling [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
+`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+where `MyNodeAgentId` is the AgentId of the node for which you want to get reports. You can get the AgentID for a node by calling [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager)
 on that node.
 
 The reports are returned as an array of JSON objects.
@@ -113,7 +115,12 @@ The following script returns the reports for the node on which it is run:
 ```powershell
 function GetReport
 {
-    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
+    param
+    (
+        $AgentId = "$((glcm).AgentId)", 
+        $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
+    )
+
     $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
@@ -130,8 +137,9 @@ If you set a variable to the result of the **GetReport** function, you can view 
 ```powershell
 $reports = GetReport
 $reports[1]
+```
 
-
+```output
 JobId                : 019dfbe5-f99f-11e5-80c6-001dd8b8065c
 OperationType        : Consistency
 RefreshMode          : Pull
@@ -178,7 +186,9 @@ Notice that the **StatusData** property is an object with a number of properties
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
 $statusData
+```
 
+```output
 StartDate                  : 2016-04-04T11:21:41.2990000-07:00
 IPV6Addresses              : {2001:4898:d8:f2f2:852b:b255:b071:283b, fe80::852b:b255:b071:283b%12, ::2000:0:0:0, ::1...}
 DurationInSeconds          : 25
@@ -216,7 +226,9 @@ a more readable output of just the **ResourcesNotInDesiredState** property:
 
 ```powershell
 $statusData.ResourcesInDesiredState
+```
 
+```output
 SourceInfo        : C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive
 ModuleName        : PSDesiredStateConfiguration
 DurationInSeconds : 2.672
@@ -234,6 +246,9 @@ Note that these examples are meant to give you an idea of what you can do with r
 [Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## See Also
-- [Configuring the Local Configuration Manager](metaConfig.md)
-- [Setting up a DSC web pull server](pullServer.md)
-- [Setting up a pull client using configuration names](pullClientConfigNames.md)
+
+[Configuring the Local Configuration Manager](metaConfig.md)
+
+[Setting up a DSC web pull server](pullServer.md)
+
+[Setting up a pull client using configuration names](pullClientConfigNames.md)

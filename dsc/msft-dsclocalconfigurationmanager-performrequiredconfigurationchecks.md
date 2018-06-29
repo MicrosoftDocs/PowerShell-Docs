@@ -3,13 +3,11 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class
 ---
-
 # PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class
 
 Starts a consistency check by using the Task Scheduler.
 
-Syntax
-------
+## Syntax
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
@@ -17,8 +15,7 @@ uint32 PerformRequiredConfigurationChecks(
 );
 ```
 
-Parameters
-----------
+## Parameters
 
 *Flags* \[in\]
 A bitmask that specifies the type of consistency check to run. The following values are valid, and can be combined by using a bitwise **OR** operation:
@@ -31,7 +28,6 @@ A bitmask that specifies the type of consistency check to run. The following val
 |**8** | Send status to the report server. |
 
 ## Return value
-------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -40,13 +36,11 @@ Returns zero on success; otherwise returns an error code.
 This is a static method.
 
 ## Requirements
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## See also
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

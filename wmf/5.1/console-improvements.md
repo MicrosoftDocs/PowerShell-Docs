@@ -3,22 +3,21 @@ ms.date:  06/12/2017
 keywords:  wmf,powershell,setup
 title:  Console Improvements in WMF 5.1
 ---
-
-# Console Improvements in WMF 5.1#
+# Console Improvements in WMF 5.1
 
 ## PowerShell console improvements
 
 The following changes have been made to powershell.exe in WMF 5.1 to improve the console experience:
 
-###VT100 support
+### VT100 support
 
-Windows 10 added support for [VT100 escape sequences](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx).
+Windows 10 added support for [VT100 escape sequences](/windows/console/console-virtual-terminal-sequences).
 PowerShell will ignore certain VT100 formatting escape sequences when calculating table widths.
 
 PowerShell also added a new API that can be used in formatting code to determine if VT100 is supported.
 For example:
 
-```
+```powershell
 if ($host.UI.SupportsVirtualTerminal)
 {
     $esc = [char]0x1b
@@ -29,7 +28,8 @@ else
     "A default hello"
 }
 ```
-Here is a complete [example](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) that can be used to highlight matches from Select-String.
+
+Here is a complete [example](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) that can be used to highlight matches from `Select-String`.
 Save the example in a file named `MatchInfo.format.ps1xml`, then to use it, in your profile or elsewhere, run `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
 
 Note that VT100 escape sequences are only supported starting with the Windows 10 Anniversary update;

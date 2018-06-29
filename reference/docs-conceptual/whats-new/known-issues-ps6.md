@@ -3,7 +3,6 @@ ms.date:  05/17/2018
 keywords:  powershell,core
 title:  Known Issues for PowerShell 6.0
 ---
-
 # Known Issues for PowerShell 6.0
 
 ## Known Issues for PowerShell on Non-Windows Platforms
@@ -82,8 +81,7 @@ types, methods, etc. As a result, scripts that run on Windows may not run on non
 because of the differences in the frameworks. For more information about .NET Core Framework, see
 <https://dotnetfoundation.org/net-core>
 
-With the advent of [.NET Standard
-2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0
+With the advent of [.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0
 will bring back many of the traditional types and methods present in the full .NET Framework. This
 means that PowerShell Core will be able to load many traditional Windows PowerShell modules without
 modification. You can follow our .NET Standard 2.0 related work
@@ -99,18 +97,20 @@ Use `Get-Content` to write the contents of a file into the pipeline.
 Redirected output will contain the Unicode byte order mark (BOM) when the default UTF-8 encoding is
 used. The BOM will cause problems when working with utilities that do not expect it or when
 appending to a file. Use `-Encoding Ascii` to write ASCII text (which, not being Unicode, will not
-have a BOM). (Note: see [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) to give
-us feedback on improving the encoding experience for PowerShell Core across all platforms. We are
-working to support UTF-8 without a BOM and potentially changing the encoding defaults for various
-cmdlets across platforms.)
+have a BOM).
+
+> [!Note]
+> see [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) to give
+> us feedback on improving the encoding experience for PowerShell Core across all platforms. We are
+> working to support UTF-8 without a BOM and potentially changing the encoding defaults for various
+> cmdlets across platforms.
 
 ### Job Control
 
 There is no job-control support in PowerShell on Linux/macOS.
 The `fg` and `bg` commands are not available.
 
-For the time being, you can use [PowerShell
-jobs](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_jobs)
+For the time being, you can use [PowerShell jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)
 which do work across all platforms.
 
 ### Remoting Support
@@ -124,8 +124,7 @@ The work for WSMan-based remoting is being done in the
 
 PowerShell Core also supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS,
 and Linux). While this is not currently supported in production, you can learn more about setting
-this up
-[here](../core-powershell/ssh-remoting-in-powershell-core.md).
+this up [here](../core-powershell/ssh-remoting-in-powershell-core.md).
 
 ### Just-Enough-Administration (JEA) Support
 
@@ -137,8 +136,8 @@ something we will consider post 6.0 as it requires significant design work.
 
 Because PowerShell runs most commands in memory (like Python or Ruby), you can't use sudo directly
 with PowerShell built-ins. (You can, of course, run `powershell` from sudo.) If it is necessary to
-run a PowerShell cmdlet from within PowerShell with sudo, for example, `sudo Set-Date 8/18/2016`,
-then you would do `sudo powershell Set-Date 8/18/2016`. Likewise, you can't exec a PowerShell
+run a PowerShell cmdlet from within PowerShell with sudo, for example, `sudo `Set-Date` 8/18/2016`,
+then you would do `sudo powershell `Set-Date` 8/18/2016`. Likewise, you can't exec a PowerShell
 built-in directly. Instead you would have to do `exec powershell item_to_exec`.
 
 This issue is currently being tracked as part of #3232.
@@ -155,45 +154,13 @@ problems, fixing the broken cmdlets and adding new ones over time.
 
 The following table lists commands that are known not to work in PowerShell on Linux/macOS.
 
-<table>
-<th>Commands</th><th>Operational State</th><th>Notes</th>
-<tr>
-<td>Get-Service, New-Service, Restart-Service, Resume-Service, Set-Service, Start-Service, Stop-Service, Suspend-Service
-<td>Not available.
-<td>These commands will not be recognized. This should be fixed in a future release.
-</tr>
-<tr>
-<td>Get-Acl, Set-Acl
-<td>Not available.
-<td>These commands will not be recognized. This should be fixed in a future release.
-</tr>
-<tr>
-<td>Get-AuthenticodeSignature, Set-AuthenticodeSignature
-<td>Not available.
-<td>These commands will not be recognized. This should be fixed in a future release.
-</tr>
-<tr>
-<td>Wait-Process
-<td>Available, doesn't work properly. <td>For example `Start-Process gvim -PassThru | Wait-Process` doesn't work; it fails to wait for the process.
-</tr>
-<tr>
-<td>Register-PSSessionConfiguration, Unregister-PSSessionConfiguration, Get-PSSessionConfiguration
-<td>Available but doesn't work.
-<td>Writes an error message indicating that the commands are not working. These should be fixed in a future release.
-</tr>
-<tr>
-<td>Get-Event, New-Event, Register-EngineEvent, Register-WmiEvent, Remove-Event, Unregister-Event
-<td>Available but no event sources are available.
-<td>The PowerShell eventing commands are present but most of the event sources used with the commands (such as System.Timers.Timer) are not available on Linux making the commands useless in the Alpha release.
-</tr>
-<tr>
-<td>Set-ExecutionPolicy
-<td>Available but doesn't work.
-<td>Returns a message saying not supported on this platform. Execution policy is a user-focused "safety belt" that helps prevent the user from making expensive mistakes. It is not a security boundary.
-</tr>
-<tr>
-<td>New-PSSessionOption, New-PSTransportOption
-<td>Available but New-PSSession doesn't work.
-<td>New-PSSessionOption and New-PSTransportOption are not currently verified to work now that New-PSSession works.
-</tr>
-</table>
+|Commands |Operational State | Notes|
+|---------|------------------|------|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Not Available.|These commands will not be recognized. This should be fixed in a future release.|
+|`Get-Acl`, `Set-Acl`|Not available.|These commands will not be recognized. This should be fixed in a future release.|
+|`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Not available.|These commands will not be recognized. This should be fixed in a future release.|
+|`Wait-Process`|Available, doesn't work properly. |For example `Start-Process gvim -PassThru | Wait-Process` doesn't work; it fails to wait for the process.|
+|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Available but doesn't work.|Writes an error message indicating that the commands are not working. These should be fixed in a future release.|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Available but no event sources are available.|The PowerShell eventing commands are present but most of the event sources used with the commands (such as System.Timers.Timer) are not available on Linux making the commands useless in the Alpha release.|
+|`Set-ExecutionPolicy`|Available but doesn't work.|Returns a message saying not supported on this platform. Execution policy is a user-focused "safety belt" that helps prevent the user from making expensive mistakes. It is not a security boundary.|
+|`New-PSSessionOption`, `New-PSTransportOption`|Available but `New-PSSession` doesn't work.|`New-PSSessionOption` and `New-PSTransportOption` are not currently verified to work now that `New-PSSession` works.|
