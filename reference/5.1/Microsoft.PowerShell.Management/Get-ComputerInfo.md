@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=822226
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-ComputerInfo
 ---
-
 # Get-ComputerInfo
 
 ## SYNOPSIS
+
 Gets a consolidated object of system and operating system properties.
 
 ## SYNTAX
@@ -20,7 +20,8 @@ Get-ComputerInfo [[-Property] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-ComputerInfo** cmdlet gets a consolidated object of system and operating system properties.
+
+The **Get-ComputerInfo** cmdlet gets a consolidated object of system and operating system properties. This cmdlet was introduced in Windows PowerShell 5.1. On Windows Servers, it is only supported on Server 2012 and higher.
 
 ## EXAMPLES
 

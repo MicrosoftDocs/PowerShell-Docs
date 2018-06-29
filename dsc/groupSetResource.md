@@ -4,7 +4,6 @@ keywords:  dsc,powershell,configuration,setup
 description:  Provides a mechanism to manage local groups on the target node.
 title:  DSC GroupSet Resource
 ---
-
 # DSC GroupSet Resource
 
 > Applies To: Windows Windows PowerShell 5.0
@@ -14,7 +13,8 @@ The **GroupSet** resource in Windows PowerShell Desired State Configuration (DSC
 
 Use this resource when you want to add and/or remove the same list of members to more than one group, remove more than one group, or add more than one group with the same list of members.
 
-##Syntax##
+## Syntax
+
 ```
 Group [string] #ResourceName
 {
@@ -39,7 +39,7 @@ Group [string] #ResourceName
 | MembersToInclude| Use this property to add members to the existing membership of the group. The value of this property is an array of strings of the form *Domain*\\*UserName*. If you set this property in a configuration, do not use the **Members** property. Doing so will generate an error.|
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"``.|
 
-## Example 1
+## Example 1: Ensuring Groups are present
 
 The following example shows how to ensure that two groups called "myGroup" and "myOtherGroup" are present.
 
@@ -69,9 +69,8 @@ $cd = @{
     )
 }
 
-
 GroupSetTest -ConfigurationData $cd
 ```
 
->**Note:** This example uses plaintext credentials for simplicity. For information about how to encrypt credentials in the configuration MOF file, see
->[Securing the MOF File](secureMOF.md).
+> [!NOTE] 
+> This example uses plaintext credentials for simplicity. For information about how to encrypt credentials in the configuration MOF file, see [Securing the MOF File](secureMOF.md).

@@ -4,7 +4,6 @@ contributor:  JKeithB
 keywords:  gallery,powershell,psgallery,GDPR
 title:  PowerShell Gallery GDPR compliance
 ---
-
 # PowerShell Gallery GDPR compliance
 
 ## Overview
@@ -25,9 +24,9 @@ The GDPR applies no matter where you are located.
 The PowerShell Gallery stores the following information that may be provided by users, which may
 contain personal information:
 
-* PowerShell Gallery account
-* Items published to the PowerShell Gallery
-* Email correspondence with the PowerShell Gallery team
+- PowerShell Gallery account
+- Items published to the PowerShell Gallery
+- Email correspondence with the PowerShell Gallery team
 
 Most users do not create a PowerShell Gallery account.
 An account is not required unless you are going to publish an item
@@ -49,16 +48,16 @@ of this information.
 
 Email correspondence may include any of the following:
 
-* Email sent to the owners of PowerShell Gallery items if the code analysis scans detected an issue with any item they have published to the PowerShell Gallery
-* Email sent by anyone to the PowerShell Gallery team using the email address in the "Contact Us" page (cgadmin@microsoft.com)
-* Registered users who use the "Contact Owner" feature in the PowerShell Gallery to send email to the owner of an item in the PowerShell Gallery
+- Email sent to the owners of PowerShell Gallery items if the code analysis scans detected an issue with any item they have published to the PowerShell Gallery
+- Email sent by anyone to the PowerShell Gallery team using the email address in the "Contact Us" page [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
+- Registered users who use the "Contact Owner" feature in the PowerShell Gallery to send email to the owner of an item in the PowerShell Gallery
 
 Emails sent by or to the PowerShell Gallery have a retention policy of 90 days to support
 possible security investigations should malicious code be discovered on the PowerShell Gallery.
 Emails are deleted by policy after 90 days.
 
 You may request copies of all emails sent to or from your email address and the PowerShell Gallery within the previous 90 days.
-To request this correspondence, send an email to cgadmin@microsoft.com, with the title: "DSR Request for emails relating to this account".
+To request this correspondence, send an email to [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com), with the title: "DSR Request for emails relating to this account".
 In the body of the message, state what information you are requesting (for example: Please send all emails sent to or received from this email address.)
 All emails involving your email address within 90 days of the request will be sent within 7 business days.
 
@@ -86,13 +85,13 @@ on the author information stored in the item.
 You may download the script by using the following PowerShell command:
 
 ```powershell
-Save-Script GetPSGalleryItemsForAuthor -path <local folder location> -repository psgallery
+Save-Script Get-repository psgallery
 ```
 
 You can then run the script directly, by running the following PowerShell commands:
 
 ```powershell
-cd <local folder location >
+# cd <local folder location>
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
@@ -104,9 +103,9 @@ To delete your PowerShell Gallery account or any item you own in the PowerShell 
 send email to cgadmin@microsoft.com with the title: "GDPR Request for items relating to this account".
 In the body of the message state what information you want deleted. For example:
 
-* Please delete version x.y.z of my item "item name"
-* Please delete all versions of my item "item name"
-* Please delete my PowerShell Gallery account
+- Please delete version x.y.z of my item "item name"
+- Please delete all versions of my item "item name"
+- Please delete my PowerShell Gallery account
 
 The PowerShell Gallery administrators will reply within 7 business days.
 The items specified will be deleted within 30 days after the request is sent.
