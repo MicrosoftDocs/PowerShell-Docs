@@ -127,6 +127,7 @@ It uses the *InputObject* parameter to submit the service stored in the `$s` var
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies one or more computers.
 The default is the local computer.
 
@@ -149,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
