@@ -1,18 +1,17 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell
 title:  Item manifest values that impact the PowerShell Gallery UI
 ---
-
 # Item manifest values that impact the PowerShell Gallery UI
 
 This topic provides publishers with summary information on how to modify the manifest for their PowerShell Gallery publications so that features of PowerShellGet cmdlets and the PowerShell Gallery UI will be affected.
 This content is organized by where the change will appear, starting with the center section, then the navigation area on the left. There is a detail section covering tags, which identifies important tags, as well as some of the more commonly used tags.
 There are two topics that provide manifest examples:
 
-- For modules, see [Update Module Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
-- For scripts, see [Create Script File with Metadata](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+- For modules, see [Update Module Manifest](/powershell/module/powershellget/Update-ModuleManifest)
+- For scripts, see [Create Script File with Metadata](/powershell/module/powershellget/New-ScriptFileInfo)
 
 ## PowerShell Gallery Feature Elements Controlled by the Manifest
 
@@ -22,11 +21,11 @@ Each item indicates if it may be controlled by the module or script manifest.
 | UI Element | Description | Module | Script |
 | --- | --- | --- | --- |
 | **Title** | This is the name of the item that is published to the Gallery  | No | No |
-| **Version** | The version displayed is the version string in the metadata, and a prerelease if is specified. The primary portion of the version in a Module manifest is the ModuleVersion. For a script, it is identified as .VERSION. If a prerelease version string is specified, it will be appended to the ModuleVersion for modules, or specified as part of .VERSION for scripts. There is documentation for specifying prerelease strings in [modules](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule), and in [scripts](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Yes | Yes |
+| **Version** | The version displayed is the version string in the metadata, and a prerelease if is specified. The primary portion of the version in a Module manifest is the ModuleVersion. For a script, it is identified as .VERSION. If a prerelease version string is specified, it will be appended to the ModuleVersion for modules, or specified as part of .VERSION for scripts. There is documentation for specifying prerelease strings in [modules](/powershell/gallery/concepts/module-prerelease-support), and in [scripts](/powershell/gallery/concepts/script-prerelease-support) | Yes | Yes |
 | **Description** | This is the Description in the module manifest, and in a script file manifest it is .DESCRIPTION | Yes | Yes |
-| **Require license acceptance** | A module can require that the user accept a license, by modifying the module manifest with RequireLicenseAcceptance = $true, supplying a LicenseURI, and providing a license.txt file in the root of the module folder. Additional information is available in the [Require License Acceptance](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance) topic. | Yes | No |
+| **Require license acceptance** | A module can require that the user accept a license, by modifying the module manifest with RequireLicenseAcceptance = $true, supplying a LicenseURI, and providing a license.txt file in the root of the module folder. Additional information is available in the [Require License Acceptance](/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance) topic. | Yes | No |
 | **Release notes** | For modules, this information is drawn from the ReleaseNotes section, under PSData\PrivateData. In script manifests, it is the .RELEASENOTES element. | Yes | Yes |
-| **Owners** | Owners are the list of users in the PowerShell Gallery who can update an item. The owner list is not included in the item manifest. Additional documentation describes how to [manage item owners](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners). | No | No |
+| **Owners** | Owners are the list of users in the PowerShell Gallery who can update an item. The owner list is not included in the item manifest. Additional documentation describes how to [manage item owners](/powershell/gallery/how-to/publishing-items/managing-item-owners). | No | No |
 | **Author** | This is included in the module manifest as the Author, and in a script manifest as .AUTHOR. The Author field is often used to specify a company or organization associated with an item. | Yes | Yes |
 | **Copyright** | This is the Copyright field in the module manifest, and .COPYRIGHT in a script manifest. | Yes | Yes |
 | **FileList** | The file list is drawn from the package when it is published to the PowerShell Gallery. It is not controllable by the manifest information. Note: there is an additional .nuspec file listed with each item in the PowerShell Gallery that is not present after installing the item on a system. This is the Nuget package manifest for the item, and may be ignored. | No | No |
@@ -36,7 +35,7 @@ Each item indicates if it may be controlled by the module or script manifest.
 | **DSC Resources** | For modules that will be used on PowerShell version 5.0 and above, this is provided in the manifest using DscResourcesToExport. If the module is to be used in PowerShell 4, the DSCResourcesToExport should not be used as it is not a supported manifest key. (DSC was not available prior to PowerShell 4.) | Yes | No |
 | **Workflows** | Workflows are published to the PowerShell Gallery as scripts, and identified as workflows (see [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) for an example) in the code. This is not controlled by the manifest. | No | No |
 | **Role capabilities** | This will be listed when the module published to the PowerShell Gallery contains one or more role capability (.psrc) files, which are used by JEA. See the JEA documentation for more details on [role capabilities](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities). | Yes | No |
-| **PowerShell Editions** | This is specified in a script or module manifest. For modules designed to be used with PowerShell 5.0 and below, this is controlled using Tags. For Desktop, use the tag PSEdition_Desktop, and for core, use the tag PSEdition_Core. For modules that will be used only on PowerShell 5.1 and above, there is a CompatiblePSEditions key in the main manifest. For additional detail, review the PS Edition feature in [the PowerShell Get documentation](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport). | Yes | Yes |
+| **PowerShell Editions** | This is specified in a script or module manifest. For modules designed to be used with PowerShell 5.0 and below, this is controlled using Tags. For Desktop, use the tag PSEdition_Desktop, and for core, use the tag PSEdition_Core. For modules that will be used only on PowerShell 5.1 and above, there is a CompatiblePSEditions key in the main manifest. For additional detail, review the PS Edition feature in [the PowerShell Get documentation](/powershell/gallery/concepts/module-psedition-support). | Yes | Yes |
 | **Dependencies** | Dependencies are the modules in the PowerShell Gallery that are declared in either the module as RequiredModules, or in the script manifest as #Requires –Module (name). | Yes | Yes |
 | **Minimum Powershell version** | This can be specified in a module manifest as PowerShellVersion | Yes | No |
 | **Version History** | The version history reflects the updates made to a module in the PowerShell Gallery. If a version of an item is hidden using the Delete feature, it will not be displayed in the version history, except to the item owners. | No | No |
@@ -78,7 +77,6 @@ Ideally, there will be many items returned, and the item descriptions will align
 For reference, here are some most commonly used tags as of 12/14/2017.
 In some cases, there are similar but perhaps less ideal options listed beside the tag.
 It is a best practice to use the Preferred Tag, as that will result in less noise, and better search results for consumers.
-
 
 | **Preferred tag** | **Alternatives and notes** |
 | --- | --- |

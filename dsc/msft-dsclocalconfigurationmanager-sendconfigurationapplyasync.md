@@ -3,13 +3,11 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class
 ---
-
 # SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class
 
 Sends the configuration document asynchronously to the managed node and uses the Configuration Agent to apply the configuration.
 
-Syntax
-------
+## Syntax
 
 ```mof
 uint32 SendConfigurationApplyAsync(
@@ -19,8 +17,7 @@ uint32 SendConfigurationApplyAsync(
 );
 ```
 
-Parameters
-----------
+## Parameters
 
 *ConfigurationData* \[in\]
 The environment data for the configuration.
@@ -32,7 +29,6 @@ The environment data for the configuration.
 The ID of the job for which to send the configuration.
 
 ## Return value
-------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -41,13 +37,11 @@ Returns zero on success; otherwise returns an error code.
 This is a static method.
 
 ## Requirements
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## See also
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

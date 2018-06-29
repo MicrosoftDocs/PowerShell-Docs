@@ -40,13 +40,13 @@ For example, the PowerShell console supports the following basic
 profile files. The profiles are listed in precedence order. The first
 profile has the highest precedence.
 
-|Description               | Path                                     |
-|--------------------------|------------------------------------------|
-|Current user, Current Host|$Home\\[My]Documents\\WindowsPowerShell   |
-|                          |  \\Profile.ps1                           |
-|Current User, All Hosts   |$Home\\[My]Documents\\Profile.ps1         |
-|All Users, Current Host   |$PsHome\Microsoft.PowerShell_profile.ps1  |
-|All Users, All Hosts      |$PsHome\Profile.ps1                       |
+|Description               | Path                                        |
+|--------------------------|---------------------------------------------|
+|Current user, Current Host|$Home\\[My]Documents\\PowerShell             |
+|                          |  \\Microsoft.PowerShell_profile.ps1         |
+|Current User, All Hosts   |$Home\\[My]Documents\\PowerShell\Profile.ps1 |
+|All Users, Current Host   |$PsHome\Microsoft.PowerShell_profile.ps1     |
+|All Users, All Hosts      |$PsHome\Profile.ps1                          |
 
 The profile paths include the following variables:
 

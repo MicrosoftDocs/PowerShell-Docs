@@ -27,14 +27,14 @@ $psUnsupportedConsoleApplications
 
 ### $psLocalHelp
 
-This is a dictionary object that maintains a context-sensitive mapping between Help topics and their associated links in the local compiled HTML Help file. It is used to locate the local Help for a particular topic. You can add or delete topics from this list. The following code example shows some example key-value pairs that are contained in **$psLocalHelp**.
+This is a dictionary object that maintains a context-sensitive mapping between Help topics and their associated links in the local compiled HTML Help file. It is used to locate the local Help for a particular topic. You can add or delete topics from this list. The following code example shows some example key-value pairs that are contained in `$psLocalHelp`.
 
 ```powershell
 # See the local help map
 $psLocalHelp | Format-List
 ```
 
-### Sample Output
+### $psLocalHelp Sample Output
 
 |||
 |-|-|
@@ -55,14 +55,14 @@ This is a dictionary object that maintains a context-sensitive mapping between t
 $psOnlineHelp | Format-List
 ```
 
-### Sample Output
+## $psOnilneHelp Sample Output
 
 |||
 |-|-|
 |Key : Add-Computer|Value : http://go.microsoft.com/fwlink/p/?LinkID=135194|
 |Key : Add-Content|Value : http://go.microsoft.com/fwlink/p/?LinkID=113278|
 
- The following script adds an entry to the list.
+The following script adds an entry to the list.
 
 ```powershell
 $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
@@ -70,4 +70,4 @@ $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
 
 ## See Also
 
-- [Purpose of the Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[Purpose of the Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
