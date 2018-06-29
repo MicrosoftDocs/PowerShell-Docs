@@ -10,15 +10,15 @@ title:  about_Providers
 
 ## Short description
 
-Describes how Windows PowerShell providers provide access to data and
+Describes how PowerShell providers provide access to data and
 components that would not otherwise be easily accessible at the command line.
 The data is presented in a consistent format that resembles a file system
 drive.
 
 ## Long description
 
-Windows PowerShell providers are Microsoft .NET Framework-based programs that
-make the data in a specialized data store available in Windows PowerShell so
+PowerShell providers are Microsoft .NET Framework-based programs that
+make the data in a specialized data store available in PowerShell so
 that you can view and manage it.
 
 The data that a provider exposes appears in a drive, and you access the data
@@ -32,23 +32,23 @@ provider data.
 
 ## Built-in providers
 
-Windows PowerShell includes a set of built-in providers that you can use to
+PowerShell includes a set of built-in providers that you can use to
 access the different types of data stores.
 
 |Provider    |Drive        |Data store                                 |
 |------------|-------------|-------------------------------------------|
-|Alias       |Alias:       |Windows PowerShell aliases                 |
+|Alias       |Alias:       |PowerShell aliases                 |
 |Certificate |Cert:        |x509 certificates for digital signatures   |
 |Environment |Env:         |Windows environment variables              |
 |FileSystem  |(*)          |File system drives, directories, and files |
-|Function    |Function:    |Windows PowerShell functions               |
+|Function    |Function:    |PowerShell functions               |
 |Registry    |HKLM:, HKCU: |Windows registry                           |
-|Variable    |Variable:    |Windows PowerShell variables               |
+|Variable    |Variable:    |PowerShell variables               |
 |WSMan       |WSMan:       |WS-Management configuration information    |
 
 (*) The FileSystem drives vary on each system.
 
-You can also create your own Windows PowerShell providers, and you can install
+You can also create your own PowerShell providers, and you can install
 providers that others develop. To list the providers that are available in
 your session, type:
 
@@ -58,7 +58,7 @@ Get-PSProvider
 
 ## Installing and removing providers
 
-Windows PowerShell providers are delivered to you in Windows PowerShell
+Windows PowerShell providers are delivered to you in PowerShell
 snap-ins, which are .NET Framework-based programs that are compiled into .dll
 files. The snap-ins can include providers and cmdlets.
 
@@ -80,7 +80,7 @@ longer available in that session.
 
 ## Viewing providers
 
-To view the Windows PowerShell providers on your computer, type:
+To view the PowerShell providers on your computer, type:
 
 ```powershell
 Get-PSProvider
@@ -112,7 +112,7 @@ Get-Help <cmdlet-name> -Detailed
 
 - [Get-ChildItem](Get-ChildItem.md)
 
-### CONTENT CMDLETS
+### Content Cmdlets
 
 - [Add-Content](Add-Content.md)
 - [Clear-Content](Clear-Content.md)
@@ -269,7 +269,7 @@ Certificate
 ```
 
 The **FileSystem** provider is the only provider that has a default value for
-**Home** (it is the same value as `$Home` see [about_Automatic_Variables](about_Automatic_Variables.md))
+**Home**. It is the same value as `$Home` see [about_Automatic_Variables](about_Automatic_Variables.md).
 
 You can set the **Home** directory for a provider, for the current session,
 using its property.
@@ -286,12 +286,14 @@ Cert:\> Set-Location ~
 ```
 
 ```output
-Set-Location : Home location for this provider is not set. To set the home location, call "(get-psprovider 'Certificate').Home = 'path'".
+Set-Location : Home location for this provider is not set. To set the home
+location, call "(get-psprovider 'Certificate').Home = 'path'".
 At line:1 char:1
 + Set-Location ~
 + ~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [Set-Location], PSInvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.SetLocationCommand
+    + CategoryInfo          : InvalidOperation: (:) [Set-Location],
+                              PSInvalidOperationException
+...
 ```
 
 ## Finding dynamic parameters
@@ -324,7 +326,7 @@ move through them, the similarity stops there. The data stores that the
 provider exposes can be as varied as Active Directory locations and Microsoft
 Exchange Server mailboxes.
 
-For information about individual Windows PowerShell providers, type:
+For information about individual PowerShell providers, type:
 
 ```
 Get-Help <ProviderName>
