@@ -3,13 +3,11 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
 ---
-
 # TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
 
 Sends the configuration document to the managed node and verifies the current configuration against the document.
 
-Syntax
-------
+## Syntax
 
 ```mof
 uint32 TestConfiguration(
@@ -20,8 +18,7 @@ uint32 TestConfiguration(
 );
 ```
 
-Parameters
-----------
+## Parameters
 
 *configurationData* \[in\]
 Environment data for the confuguration.
@@ -36,7 +33,6 @@ On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** 
 On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.
 
 ## Return value
-------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -45,13 +41,11 @@ Returns zero on success; otherwise returns an error code.
 This is a static method.
 
 ## Requirements
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## See also
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

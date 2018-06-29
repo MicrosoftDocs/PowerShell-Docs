@@ -3,7 +3,6 @@ ms.date:  06/12/2017
 keywords:  jea,powershell,security
 title:  JEA Prerequisites
 ---
-
 # Prerequisites
 
 > Applies to: Windows PowerShell 5.0
@@ -44,8 +43,10 @@ To get support for these features, update Windows to version 1607 (Anniversary U
 To check which version of PowerShell is installed on your system, check the `$PSVersionTable` variable in a Windows PowerShell prompt.
 
 ```powershell
-PS C:\> $PSVersionTable.PSVersion
+$PSVersionTable.PSVersion
+```
 
+```output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      14393  1000
@@ -57,7 +58,7 @@ For the best experience, and to have access to all the latest features, it is re
 ### Install Windows Management Framework
 
 If you are running an older version of PowerShell, you will need to update your system with the latest Windows Management Framework (WMF) update.
-Update packages and a link to the latest WMF release notes are available in the [Download Center](https://aka.ms/WMF5).
+Update packages and a link to the latest WMF release notes are available in the [Download Center](https://blogs.msdn.microsoft.com/powershell/2016/02/24/windows-management-framework-wmf-5-0-rtm-packages-has-been-republished/).
 
 It is strongly recommended that you test your workload's compatibility with WMF before upgrading all of your servers.
 
@@ -66,7 +67,7 @@ Windows 10 users should install the latest feature updates to obtain the current
 ## Enable PowerShell Remoting
 
 PowerShell Remoting provides the foundation on which JEA is built.
-It is therefore necessary to ensure PowerShell Remoting is enabled and [properly secured](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity) on your system before you can use JEA.
+It is therefore necessary to ensure PowerShell Remoting is enabled and [properly secured](/powershell/scripting/setup/winrmsecurity) on your system before you can use JEA.
 
 PowerShell Remoting is enabled by default on Windows Server 2012, 2012 R2, and 2016.
 You can enable PowerShell Remoting by running the following command in an elevated PowerShell window.
@@ -87,21 +88,23 @@ You can configure the PowerShell Module Logging policy using Group Policy.
 3. Double click on **Turn on Module Logging**
 4. Click **Enabled**
 5. In the Options section, click on **Show** next to Module Names
-6. Type "**\***" in the pop up window. This instructs PowerShell to log commands from all modules.
+6. Type `\*` in the pop up window. This instructs PowerShell to log commands from all modules.
 7. Click **OK** to set the policy
 8. Double click on **Turn on PowerShell Script Block Logging**
 9. Click **Enabled**
 10. Click **OK** to set the policy
-11. (On domain-joined machines only) Run **gpupdate** or wait for Group Policy to process the updated policy and apply the settings
+11. (On domain-joined machines only) Run `gpupdate` or wait for Group Policy to process the updated policy and apply the settings
 
 You can also enable system-wide PowerShell transcription through Group Policy.
 
 ## Next steps
 
-- [Create a role capability file](role-capabilities.md)
-- [Create a session configuration file](session-configurations.md)
+[Create a role capability file](role-capabilities.md)
+
+[Create a session configuration file](session-configurations.md)
 
 ## See also
 
-- [Additional information about PowerShell Remoting and WinRM security](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
-- [*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+[Additional information about PowerShell Remoting and WinRM security](/powershell/scripting/setup/winrmsecurity)
+
+[*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
