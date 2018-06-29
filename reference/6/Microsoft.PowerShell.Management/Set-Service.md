@@ -7,10 +7,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821633
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Set-Service
 ---
-
 # Set-Service
 
 ## SYNOPSIS
+
 Starts, stops, and suspends a service, and changes its properties.
 
 ## SYNTAX
@@ -33,10 +33,10 @@ Set-Service [-DisplayName <String>] [-Description <String>] [-StartupType <Servi
 
 ## DESCRIPTION
 
-The **Set-Service** cmdlet changes the properties of a service.
+The `Set-Service` cmdlet changes the properties of a service.
 This includes the status, description, display name, and start mode.
 You can use this cmdlet to start, stop, or suspend, or pause, a service.
-To identify the service, enter its service name or submit a service object, or pipe a service name or service object to **Set-Service**.
+To identify the service, enter its service name or submit a service object, or pipe a service name or service object to `Set-Service`.
 
 ## EXAMPLES
 
@@ -89,7 +89,7 @@ Description : Transfers files in the background using idle network bandwidth.
 
 These commands change the description of the BITS service and then display the result.
 
-These commands use the **Get-CimInstance** cmdlet to get the **Win32_Service** object for the service, because the **ServiceController** object that **Get-Service** returns does not include the service description.
+These commands use the `Get-CimInstance` cmdlet to get the **Win32_Service** object for the service, because the **ServiceController** object that `Get-Service` returns does not include the service description.
 
 ### Example 4: Start a service
 
@@ -98,7 +98,7 @@ Set-Service -Name "winrm" -Status Running -PassThru
 ```
 
 This command starts the WinRM service.
-The command uses the Status parameter to specify the desired status, which is running, and the *PassThru* parameter to direct **Set-Service** to return an object that represents the WinRM service.
+The command uses the Status parameter to specify the desired status, which is running, and the *PassThru* parameter to direct `Set-Service` to return an object that represents the WinRM service.
 
 ### Example 5: Suspend a service
 
@@ -107,8 +107,8 @@ Get-Service -Name "schedule" | Set-Service -Status paused
 ```
 
 This command suspends the Schedule service.
-It uses **Get-Service** to get the service.
-A pipeline operator (|) sends the service to **Set-Service**, which changes its status to Paused.
+It uses `Get-Service` to get the service.
+A pipeline operator (|) sends the service to `Set-Service`, which changes its status to Paused.
 
 ### Example 6: Stop a service
 
@@ -119,11 +119,11 @@ Set-Service -InputObject $s -Status stopped
 
 These commands stop the Schedule service.
 
-The first command uses **Get-Service** to get the Schedule service.
-The command stores the service in the $s variable.
+The first command uses `Get-Service` to get the Schedule service.
+The command stores the service in the `$s` variable.
 
 The second command changes the status of the Schedule service to Stopped.
-It uses the *InputObject* parameter to submit the service stored in the $s variable, and it uses the *Status* parameter to specify the desired status.
+It uses the *InputObject* parameter to submit the service stored in the `$s` variable, and it uses the *Status* parameter to specify the desired status.
 
 ### Example 7: Stop a service on a remote system
 
@@ -148,8 +148,8 @@ Set-Service -Name "schedule" -Credential $credential
 
 These commands changes credentials of the Schedule service.
 
-The first command uses **Get-Credential** to get the new credentials.
-The command stores the credentials in the $credential variable.
+The first command uses `Get-Credential` to get the new credentials.
+The command stores the credentials in the `$credential` variable.
 
 The second command changes the credentials of the Schedule service.
 
@@ -160,8 +160,8 @@ The second command changes the credentials of the Schedule service.
 Specifies a new description for the service.
 
 The service description appears in Services in Computer Management.
-Description is not a property of the **ServiceController** object that Get-Service gets.
-To see the service description, use Get-CimInstance to get a **Win32_Service** object that represents the service.
+Description is not a property of the **ServiceController** object that `Get-Service` gets.
+To see the service description, use `Get-CimInstance` to get a **Win32_Service** object that represents the service.
 
 ```yaml
 Type: String
@@ -194,8 +194,8 @@ Accept wildcard characters: False
 ### -InputObject
 
 Specifies a **ServiceController** object that represents the service to change.
-Enter a variable that contains the object, or type a command or expression that gets the object, such as a **Get-Service** command.
-You can also pipe a service object to Set-Service.
+Enter a variable that contains the object, or type a command or expression that gets the object, such as a `Get-Service` command.
+You can also pipe a service object to `Set-Service`.
 
 ```yaml
 Type: ServiceController
@@ -213,7 +213,7 @@ Accept wildcard characters: False
 
 Specifies the service name of the service to be changed.
 Wildcard characters are not permitted.
-You can also pipe a service name to **Set-Service**.
+You can also pipe a service name to `Set-Service`.
 
 ```yaml
 Type: String
@@ -256,7 +256,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -267,17 +267,17 @@ Specifies the start mode of the service.
 The acceptable values for this parameter are:
 
 - Automatic.
-Start when the system starts.
+  Start when the system starts.
 - Manual.
-Starts only when started by a user or program.
+  Starts only when started by a user or program.
 - Disabled.
-Cannot be started.
+  Cannot be started.
 
 ```yaml
 Type: ServiceStartMode
 Parameter Sets: (All)
 Aliases: StartMode, SM, ST
-Accepted values: Automatic, Manual, Disabled
+Accepted values: Boot, System, Automatic, Manual, Disabled
 
 Required: False
 Position: Named
@@ -292,11 +292,11 @@ Specifies the status for the service.
 The acceptable values for this parameter are:
 
 - Running.
-Starts the service.
+  Starts the service.
 - Stopped.
-Stops the service.
+  Stops the service.
 - Paused.
-Suspends the service.
+  Suspends the service.
 
 ```yaml
 Type: String
@@ -346,13 +346,13 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
 
-You can pipe a service object or a string that contains a service name to Set-Service.
+You can pipe a service object or a string that contains a service name to `Set-Service`.
 
 ## OUTPUTS
 
@@ -362,8 +362,8 @@ This cmdlet does not return any objects.
 
 ## NOTES
 
-Use of **Set-Service** requires elevated permissions. Start  PowerShell by using the Run as administrator option.
-**Set-Service** can control services only when the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
+Use of `Set-Service` requires elevated permissions. Start  PowerShell by using the Run as administrator option.
+`Set-Service` can control services only when the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
 To find the service names and display names of the services on your system, type `Get-Service`. The service names appear in the **Name** column and the display names appear in the **DisplayName** column.
 
 ## RELATED LINKS
