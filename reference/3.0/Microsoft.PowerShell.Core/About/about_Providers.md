@@ -5,16 +5,17 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Providers
 ---
+
 # About Providers
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how Windows PowerShell providers provide access to data and
 components that would not otherwise be easily accessible at the command line.
 The data is presented in a consistent format that resembles a file system
 drive.
 
-## LONG DESCRIPTION
+## Long description
 
 Windows PowerShell providers are Microsoft .NET Framework-based programs that
 make the data in a specialized data store available in Windows PowerShell so
@@ -29,7 +30,7 @@ The providers can also add dynamic parameters to the built-in cmdlets. These
 are parameters that are available only when you use the cmdlet with the
 provider data.
 
-## BUILT-IN PROVIDERS
+## Built-in providers
 
 Windows PowerShell includes a set of built-in providers that you can use to
 access the different types of data stores.
@@ -51,9 +52,11 @@ You can also create your own Windows PowerShell providers, and you can install
 providers that others develop. To list the providers that are available in
 your session, type:
 
-get-psprovider
+```powershell
+Get-PSProvider
+```
 
-## INSTALLING AND REMOVING PROVIDERS
+## Installing and removing providers
 
 Windows PowerShell providers are delivered to you in Windows PowerShell
 snap-ins, which are .NET Framework-based programs that are compiled into .dll
@@ -61,21 +64,21 @@ files. The snap-ins can include providers and cmdlets.
 
 Before you use the provider features, you have to install the snap-in and
 then add it to your Windows PowerShell session. For more information, see
-about_PSSnapins.
+[about_PSSnapins](about_PSSnapins.md).
 
 You cannot uninstall a provider, although you can remove the Windows
 PowerShell snap-in for the provider from the current session. If you do,
 you will remove all the contents of the snap-in, including its cmdlets.
 
-To remove a provider from the current session, use the Remove-PSSnapin
+To remove a provider from the current session, use the `Remove-PSSnapin`
 cmdlet. This cmdlet does not uninstall the provider, but it makes
 the provider unavailable in the session.
 
-You can also use the Remove-PSDrive cmdlet to remove any drive from the
+You can also use the `Remove-PSDrive` cmdlet to remove any drive from the
 current session. This data on the drive is not affected, but the drive is no
 longer available in that session.
 
-## VIEWING PROVIDERS
+## Viewing providers
 
 To view the Windows PowerShell providers on your computer, type:
 
@@ -86,85 +89,85 @@ Get-PSProvider
 The output lists the built-in providers and the providers that you added to
 the session.
 
-## THE PROVIDER CMDLETS
+## The provider cmdlets
 
 The following cmdlets are designed to work with the data exposed by any
 provider. You can use the same cmdlets in the same way to manage the different
 types of data that providers expose. After you learn to manage the data of one
 provider, you can use the same procedures with the data from any provider.
 
-For example, the New-Item cmdlet creates a new item. In the C: drive that is
-supported by the FileSystem provider, you can use New-Item to create a new
-file or folder. In the drives that are supported by the Registry provider, you
-can use New-Item to create a new registry key. In the Alias: drive, you can
-use New-Item to create a new alias.
+For example, the `New-Item` cmdlet creates a new item. In the `C:` drive that is
+supported by the **FileSystem** provider, you can use `New-Item` to create a new
+file or folder. In the drives that are supported by the **Registry** provider,
+you can use `New-Item` to create a new registry key. In the `Alias:` drive,
+you can use `New-Item` to create a new alias.
 
 For detailed information about any of the following cmdlets, type:
 
 ```
-get-help <cmdlet-name> -detailed
+Get-Help <cmdlet-name> -Detailed
 ```
 
-### CHILDITEM CMDLETS
+### ChildItem cmdlets
 
-- Get-ChildItem
+- [Get-ChildItem](Get-ChildItem.md)
 
-### CONTENT CMDLETS
+### Content Cmdlets
 
-- Add-Content
-- Clear-Content
-- Get-Content
-- Set-Content
+- [Add-Content](Add-Content.md)
+- [Clear-Content](Clear-Content.md)
+- [Get-Content](Get-Content.md)
+- [Set-Content](Set-Content.md)
 
-### ITEM CMDLETS
+### Item Cmdlets
 
-- Clear-Item
-- Copy-Item
-- Get-Item
-- Invoke-Item
-- Move-Item
-- New-Item
-- Remove-Item
-- Rename-Item
-- Set-Item
+- [Clear-Item](Clear-Item.md)
+- [Copy-Item](Copy-Item.md)
+- [Get-Item](Get-Item.md)
+- [Invoke-Item](Invoke-Item.md)
+- [Move-Item](Move-Item.md)
+- [New-Item](New-Item.md)
+- [Remove-Item](Remove-Item.md)
+- [Rename-Item](Rename-Item.md)
+- [Set-Item](Set-Item.md)
 
-### ITEMPROPERTY CMDLETS
+### ItemProperty cmdlets
 
-- Clear-ItemProperty
-- Copy-ItemProperty
-- Get-ItemProperty
-- Move-ItemProperty
-- New-ItemProperty
-- Remove-ItemProperty
-- Rename-ItemProperty
-- Set-ItemProperty
+- [Clear-ItemProperty](Clear-ItemProperty.md)
+- [Copy-ItemProperty](Copy-ItemProperty.md)
+- [Get-ItemProperty](Get-ItemProperty.md)
+- [Move-ItemProperty](Move-ItemProperty.md)
+- [New-ItemProperty](New-ItemProperty.md)
+- [Remove-ItemProperty](Remove-ItemProperty.md)
+- [Rename-ItemProperty](Rename-ItemProperty.md)
+- [Set-ItemProperty](Set-ItemProperty.md)
 
-### LOCATION CMDLETS
+### Location cmdlets
 
-- Get-Location
-- Pop-Location
-- Push-Location
-- Set-Location
+- [Get-Location](Get-Location.md)
+- [Pop-Location](Pop-Location.md)
+- [Push-Location](Push-Location.md)
+- [Set-Location](Set-Location.md)
 
-### PATH CMDLETS
+### Path cmdlets
 
-- Join-Path
-- Convert-Path
-- Split-Path
-- Resolve-Path
-- Test-Path
+- [Join-Path](Join-Path.md)
+- [Convert-Path](Convert-Path.md)
+- [Split-Path](Split-Path.md)
+- [Resolve-Path](Resolve-Path.md)
+- [Test-Path](Test-Path.md)
 
-### PSDRIVE CMDLETS
+### PSDrive cmdlets
 
-- Get-PSDrive
-- New-PSDrive
-- Remove-PSDrive
+- [Get-PSDrive](Get-PSDrive.md)
+- [New-PSDrive](New-PSDrive.md)
+- [Remove-PSDrive](Remove-PSDrive.md)
 
-### PSPROVIDER CMDLETS
+### PSProvider Cmdlets
 
-- Get-PSProvider
+- [Get-PSProvider](Get-PSProvider.md)
 
-## VIEWING PROVIDER DATA
+## Viewing provider data
 
 The primary benefit of a provider is that it exposes its data in a familiar
 and consistent way. The model for data presentation is a file system
@@ -175,12 +178,14 @@ and change it as though it were data on a hard drive. Therefore, the most
 important information about a provider is the name of the drive
 that it supports.
 
-The drive is listed in the default display of the Get-PSProvider cmdlet,
+The drive is listed in the default display of the `Get-PSProvider` cmdlet,
 but you can get information about the provider drive by using the
-Get-PSDrive cmdlet. For example, to get all the properties of the
+`Get-PSDrive` cmdlet. For example, to get all the properties of the
 Function: drive, type:
 
-get-psdrive Function | format-list *
+```powershell
+Get-PSDrive Function | Format-List *
+```
 
 You can view and move through the data in a provider drive just as
 you would on a file system drive.
@@ -198,7 +203,7 @@ including the drive name in the path. For example, to view the
 HKLM\Software registry key in the HKLM: drive from another drive, type:
 
 ```powershell
-Get-ChildItem hklm:\software
+Get-ChildItem HKLM:\SOFTWARE\
 ```
 
 To open the drive, use the Set-Location cmdlet. Remember the colon
@@ -215,7 +220,7 @@ Then, to view the contents of the Cert: drive, type:
 Get-ChildItem
 ```
 
-## MOVING THROUGH HIERARCHICAL DATA
+## Moving through hierarchical data
 
 You can move through a provider drive just as you would a hard disk drive.
 If the data is arranged in a hierarchy of items within items, use a
@@ -229,7 +234,7 @@ For example, to change your location to the HKLM\Software registry key,
 type a Set-Location command, such as:
 
 ```powershell
-Set-Location hklm:\software
+Set-Location HKLM:\SOFTWARE\
 ```
 
 You can also use relative references to locations. A dot (.) represents the
@@ -241,21 +246,69 @@ HKLM:\Software\Microsoft\PowerShell key, type the following command:
 Get-ChildItem .\PowerShell
 ```
 
-## FINDING DYNAMIC PARAMETERS
+## Provider Home
+
+Providers also have a **Home** location.  This location is shared by all
+`PSDrives` backed by the provider. It can be retrieved by viewing the **Home**
+property of the provider.
+
+```powershell
+Get-PSProvider | Format-Table Name, Home
+```
+
+```output
+Name        Home
+----        ----
+Registry
+Alias
+Environment
+FileSystem  C:\Users\robreed
+Function
+Variable
+Certificate
+```
+
+The **FileSystem** provider is the only provider that has a default value for
+**Home** (it is the same value as `$Home` see [about_Automatic_Variables](about_Automatic_Variables.md))
+
+You can set the **Home** directory for a provider, for the current session,
+using its property.
+
+```powershell
+(Get-PSProvider FileSystem).Home = "C:\"
+```
+
+The `~` character can be used to represent the provider's home directory.
+If the provider does not have a **Home** location set, you will see an error.
+
+```powershell
+Cert:\> Set-Location ~
+```
+
+```output
+Set-Location : Home location for this provider is not set. To set the home location, call "(get-psprovider 'Certificate').Home = 'path'".
+At line:1 char:1
++ Set-Location ~
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Set-Location], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.SetLocationCommand
+```
+
+## Finding dynamic parameters
 
 Dynamic parameters are cmdlet parameters that are added to a cmdlet by a
 provider. These parameters are available only when the cmdlet is used with the
 provider that added them.
 
-For example, the Cert: drive adds the CodeSigningCert parameter to the
-Get-Item and Get-ChildItem cmdlets. You can use this parameter only when you
-use Get-Item or Get-ChildItem in the Cert: drive.
+For example, the `Cert:` drive adds the **CodeSigningCert** parameter to the
+`Get-Item` and `Get-ChildItem` cmdlets. You can use this parameter only when you
+use `Get-Item` or `Get-ChildItem` in the `Cert:` drive.
 
 For a list of the dynamic parameters that a provider supports, see the Help
 file for the provider. Type:
 
 ```
-get-help <provider-name>
+Get-Help <provider-name>
 ```
 
 For example:
@@ -264,7 +317,7 @@ For example:
 Get-Help certificate
 ```
 
-## LEARNING ABOUT PROVIDERS
+## Learning about providers
 
 Although all provider data appears in drives, and you use the same methods to
 move through them, the similarity stops there. The data stores that the
@@ -274,7 +327,7 @@ Exchange Server mailboxes.
 For information about individual Windows PowerShell providers, type:
 
 ```
-get-help <ProviderName>
+Get-Help <ProviderName>
 ```
 
 For example:
@@ -286,10 +339,10 @@ Get-Help registry
 For a list of Help topics about the providers, type:
 
 ```powershell
-Get-Help * -Category provider
+Get-Help * -Category Provider
 ```
 
-## SEE ALSO
+## See also
 
 [about_Locations](about_Locations.md)
 
