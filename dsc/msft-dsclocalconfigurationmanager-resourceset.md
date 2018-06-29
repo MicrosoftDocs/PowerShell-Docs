@@ -3,13 +3,11 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  ResourceSet method of the MSFT_DSCLocalConfigurationManager class
 ---
-
 # ResourceSet method of the MSFT_DSCLocalConfigurationManager class
 
 Directly calls the **Set** method of a DSC resource.
 
-Syntax
-------
+## Syntax
 
 ```mof
 uint32 ResourceSet(
@@ -20,8 +18,7 @@ uint32 ResourceSet(
 );
 ```
 
-Parameters
-----------
+## Parameters
 
 *ResourceType* \[in\]
 The name of the resource to call.
@@ -31,13 +28,12 @@ The name of the module that contains the resource to call.
 
 *resourceProperty* \[in\]
 Specifies the resource property name and its value in a hash table as key and value, respectively. Use the
-[Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet to discover resource properties and their types.
+[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet to discover resource properties and their types.
 
 *RebootRequired* \[out\]
 On return, this property is set to **true** if the target node needs to be rebooted.
 
 ## Return value
-------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -46,13 +42,11 @@ Returns zero on success; otherwise returns an error code.
 This is a static method.
 
 ## Requirements
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## See also
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

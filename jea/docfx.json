@@ -1,34 +1,55 @@
 {
-    "build": {
-        "content": [{
-            "files": [
-                "**/**.md",
-                "**/**.yml"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
-        "globalMetadata": {
-            "breadcrumb_path": "bread/toc.yml",
-            "uhfHeaderId": "MSDocsHeader-Powershell",
-            "ROBOTS": "INDEX, FOLLOW",
-            "ms.devlang": "powershell",
-            "ms.tgt_pltfr": "windows, macos, linux"
-        },
-        "fileMetadata": {
-            "ms.prod": { "**/**.md": "powershell" },
-            "ms.technology": { "**/**.md": "powershell-jea" },
-            "ms.topic": { "**/**.md": "conceptual" },
-            "manager": { "**/**.md": "carmonm" },
-            "author": { "**/**.md": "JKeithB" },
-            "ms.author": { "**/**.md": "keithb" }
-        },
-        "resource": [{
-            "files": [
-                "**/images/**"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
-        "template": "op.html",
-        "dest": "jea"
-    }
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/**.md",
+          "**/**.yml"
+        ],
+        "exclude": [
+          "**/obj/**"
+        ]
+      }
+    ],
+    "globalMetadata": {
+      "breadcrumb_path": "bread/toc.yml",
+      "uhfHeaderId": "MSDocsHeader-Powershell",
+      "ROBOTS": "INDEX, FOLLOW",
+      "ms.devlang": "powershell",
+      "ms.tgt_pltfr": "windows, macos, linux"
+    },
+    "fileMetadata": {
+      "ms.prod": {
+        "**/**.md": "powershell"
+      },
+      "ms.technology": {
+        "**/**.md": "powershell-jea"
+      },
+      "ms.topic": {
+        "**/**.md": "conceptual"
+      },
+      "manager": {
+        "**/**.md": "carmonm"
+      },
+      "author": {
+        "**/**.md": "JKeithB"
+      },
+      "ms.author": {
+        "**/**.md": "keithb"
+      }
+    },
+    "resource": [
+      {
+        "files": [
+          "**/images/**"
+        ],
+        "exclude": [
+          "**/obj/**"
+        ]
+      }
+    ],
+    "template": "op.html",
+    "dest": "jea",
+    "markdownEngineName": "markdig"
+  }
 }
