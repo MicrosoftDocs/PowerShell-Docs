@@ -58,17 +58,17 @@ Get-PSProvider
 
 ## Installing and removing providers
 
-Windows PowerShell providers are delivered to you in PowerShell
+PowerShell providers are delivered to you in PowerShell
 snap-ins, which are .NET Framework-based programs that are compiled into .dll
 files. The snap-ins can include providers and cmdlets.
 
 Before you use the provider features, you have to install the snap-in and
-then add it to your Windows PowerShell session. For more information, see
+then add it to your PowerShell session. For more information, see
 [about_PSSnapins](about_PSSnapins.md).
 
-You cannot uninstall a provider, although you can remove the Windows
-PowerShell snap-in for the provider from the current session. If you do,
-you will remove all the contents of the snap-in, including its cmdlets.
+You cannot uninstall a provider, although you can remove the PowerShell snap-in
+for the provider from the current session. If you do, you will remove all the
+contents of the snap-in, including its cmdlets.
 
 To remove a provider from the current session, use the `Remove-PSSnapin`
 cmdlet. This cmdlet does not uninstall the provider, but it makes
