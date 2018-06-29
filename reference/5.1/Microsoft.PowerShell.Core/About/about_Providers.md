@@ -110,62 +110,62 @@ Get-Help <cmdlet-name> -Detailed
 
 ### ChildItem cmdlets
 
-- [Get-ChildItem](Get-ChildItem.md)
+- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 
 ### Content Cmdlets
 
-- [Add-Content](Add-Content.md)
-- [Clear-Content](Clear-Content.md)
-- [Get-Content](Get-Content.md)
-- [Set-Content](Set-Content.md)
+- [Add-Content](../../Microsoft.PowerShell.Management/Add-Content.md)
+- [Clear-Content](../../Microsoft.PowerShell.Management/Clear-Content.md)
+- [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)
+- [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md)
 
 ### Item Cmdlets
 
-- [Clear-Item](Clear-Item.md)
-- [Copy-Item](Copy-Item.md)
-- [Get-Item](Get-Item.md)
-- [Invoke-Item](Invoke-Item.md)
-- [Move-Item](Move-Item.md)
-- [New-Item](New-Item.md)
-- [Remove-Item](Remove-Item.md)
-- [Rename-Item](Rename-Item.md)
-- [Set-Item](Set-Item.md)
+- [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
+- [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
+- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+- [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md)
+- [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- [Rename-Item](../../Microsoft.PowerShell.Management/Rename-Item.md)
+- [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)
 
 ### ItemProperty cmdlets
 
-- [Clear-ItemProperty](Clear-ItemProperty.md)
-- [Copy-ItemProperty](Copy-ItemProperty.md)
-- [Get-ItemProperty](Get-ItemProperty.md)
-- [Move-ItemProperty](Move-ItemProperty.md)
-- [New-ItemProperty](New-ItemProperty.md)
-- [Remove-ItemProperty](Remove-ItemProperty.md)
-- [Rename-ItemProperty](Rename-ItemProperty.md)
-- [Set-ItemProperty](Set-ItemProperty.md)
+- [Clear-ItemProperty](../../Microsoft.PowerShell.Management/Clear-ItemProperty.md)
+- [Copy-ItemProperty](../../Microsoft.PowerShell.Management/Copy-ItemProperty.md)
+- [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
+- [Move-ItemProperty](../../Microsoft.PowerShell.Management/Move-ItemProperty.md)
+- [New-ItemProperty](../../Microsoft.PowerShell.Management/New-ItemProperty.md)
+- [Remove-ItemProperty](../../Microsoft.PowerShell.Management/Remove-ItemProperty.md)
+- [Rename-ItemProperty](../../Microsoft.PowerShell.Management/Rename-ItemProperty.md)
+- [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
 
 ### Location cmdlets
 
-- [Get-Location](Get-Location.md)
-- [Pop-Location](Pop-Location.md)
-- [Push-Location](Push-Location.md)
-- [Set-Location](Set-Location.md)
+- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
+- [Pop-Location](../../Microsoft.PowerShell.Management/Pop-Location.md)
+- [Push-Location](../../Microsoft.PowerShell.Management/Push-Location.md)
+- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
 
 ### Path cmdlets
 
-- [Join-Path](Join-Path.md)
-- [Convert-Path](Convert-Path.md)
-- [Split-Path](Split-Path.md)
-- [Resolve-Path](Resolve-Path.md)
-- [Test-Path](Test-Path.md)
+- [Join-Path](../../Microsoft.PowerShell.Management/Join-Path.md)
+- [Convert-Path](../../Microsoft.PowerShell.Management/Convert-Path.md)
+- [Split-Path](../../Microsoft.PowerShell.Management/Split-Path.md)
+- [Resolve-Path](../../Microsoft.PowerShell.Management/Resolve-Path.md)
+- [Test-Path](../../Microsoft.PowerShell.Management/Test-Path.md)
 
 ### PSDrive cmdlets
 
-- [Get-PSDrive](Get-PSDrive.md)
-- [New-PSDrive](New-PSDrive.md)
-- [Remove-PSDrive](Remove-PSDrive.md)
+- [Get-PSDrive](../../Microsoft.PowerShell.Management/Get-PSDrive.md)
+- [New-PSDrive](../../Microsoft.PowerShell.Management/New-PSDrive.md)
+- [Remove-PSDrive](../../Microsoft.PowerShell.Management/Remove-PSDrive.md)
 
 ### PSProvider Cmdlets
 
-- [Get-PSProvider](Get-PSProvider.md)
+- [Get-PSProvider](../../Microsoft.PowerShell.Management/Get-PSProvider.md)
 
 ## Viewing provider data
 
