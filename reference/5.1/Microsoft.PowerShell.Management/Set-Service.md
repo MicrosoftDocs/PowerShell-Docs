@@ -97,7 +97,7 @@ Set-Service -Name "winrm" -Status Running -PassThru
 ```
 
 This command starts the WinRM service.
-The command uses the Status parameter to specify the desired status, which is running, and the *PassThru* parameter to direct `Set-Service` to return an object that represents the WinRM service.
+The command uses the **Status** parameter to specify the desired status, which is running, and the **PassThru** parameter to direct `Set-Service` to return an object that represents the WinRM service.
 
 ### Example 5: Suspend a service
 
@@ -122,7 +122,7 @@ The first command uses `Get-Service` to get the Schedule service.
 The command stores the service in the `$s` variable.
 
 The second command changes the status of the Schedule service to Stopped.
-It uses the *InputObject* parameter to submit the service stored in the `$s` variable, and it uses the *Status* parameter to specify the desired status.
+It uses the **InputObject** parameter to submit the service stored in the `$s` variable, and it uses the **Status** parameter to specify the desired status.
 
 ## PARAMETERS
 
@@ -135,7 +135,7 @@ Type the NetBIOS name, an IP address, or a fully qualified domain name of a remo
 To specify the local computer, type the computer name, a dot (.), or localhost.
 
 This parameter does not rely on Windows PowerShell remoting.
-You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
+You can use the **ComputerName** parameter even if your computer is not configured to run remote commands.
 
 ```yaml
 Type: String[]
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 Specifies a new description for the service.
 
 The service description appears in Services in Computer Management.
-Description is not a property of the **ServiceController** object that `Get-Service` gets.
+**Description** is not a property of the **ServiceController** object that `Get-Service` gets.
 To see the service description, use `Get-CimInstance` to get a **Win32_Service** object that represents the service.
 
 ```yaml
