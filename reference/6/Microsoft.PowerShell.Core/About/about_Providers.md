@@ -59,7 +59,7 @@ Get-PSProvider
 ## Installing and removing providers
 
 Providers are typically installed via PowerShell modules. Importing the module
-load the provider into your session. You cannot uninstall the built-in
+loads the provider into your session. You cannot uninstall the built-in
 providers. You can uninstall providers loaded by other modules.
 
 You can unload a provider from the current session. You can do this by using the
