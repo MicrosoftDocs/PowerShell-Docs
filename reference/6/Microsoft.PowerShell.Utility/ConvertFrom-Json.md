@@ -96,7 +96,7 @@ The Join operator is required, because the `ConvertFrom-Json` cmdlet expects a s
 ### Example 4: Convert a JSON string to a hash table
 
 ```powershell
-'{ "key":"value1", "Key":"value2" }' | ConvertFrom-Json -AsHashtable
+'{ "key1":"value1", "key2":"value2" }' | ConvertFrom-Json -AsHashtable
 ```
 
 This command shows an example where the `-AsHashtable` switch can overcome limitations of the command.
