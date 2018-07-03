@@ -72,6 +72,7 @@
             "ms.author": { "**/**.md": "sewhee" }
         },
         "template": [],
-        "dest": "pscore-reference"
+        "dest": "pscore-reference",
+        "markdownEngineName": "markdig"
     }
 }
