@@ -26,6 +26,7 @@
             "exclude": ["**/obj/**"]
         }],
         "template": "op.html",
-        "dest": "developer"
+        "dest": "developer",
+        "markdownEngineName": "markdig"
     }
 }
