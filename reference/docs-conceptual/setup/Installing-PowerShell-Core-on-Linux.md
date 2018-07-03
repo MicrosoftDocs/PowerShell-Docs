@@ -218,7 +218,7 @@ sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.c
 sudo apt-get update
 
 # Install PowerShell
-sudo apt-get install -y powershell
+sudo apt-get install -y powershell-preview
 
 # Start PowerShell
 pwsh
