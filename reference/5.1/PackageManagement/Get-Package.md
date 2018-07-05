@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517135
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Get-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517135
+schema: 2.0.0
+title: Get-Package
 ---
 
 # Get-Package
@@ -14,6 +15,13 @@ title:  Get-Package
 Returns a list of all software packages that have been installed by using Package Management.
 
 ## SYNTAX
+
+### Programs
+```
+Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
+ [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
+ [-IncludeWindowsInstaller] [-IncludeSystemComponent] [<CommonParameters>]
+```
 
 ### msi
 ```
@@ -34,14 +42,7 @@ Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <S
 Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
  [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
  [-Scope <String>] [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck]
- [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
-```
-
-### Programs
-```
-Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
- [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
- [-IncludeWindowsInstaller] [-IncludeSystemComponent] [<CommonParameters>]
+ [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,13 +107,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AllVersions
-Indicates that **Get-Package** returns all available versions of the package.
-By default, **Get-Package** only returns the newest available version.
+### -AllowClobber
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: PowerShellGet
 Aliases:
 
 Required: False
@@ -122,12 +121,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AllowClobber
-
+### -AllowPrereleaseVersions
+{{Fill AllowPrereleaseVersions Description}}
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllVersions
+Indicates that **Get-Package** returns all available versions of the package.
+By default, **Get-Package** only returns the newest available version.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -292,7 +307,6 @@ Accept wildcard characters: False
 
 ### -NoPathUpdate
 
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: PowerShellGet
@@ -328,7 +342,7 @@ Separate multiple package provider names with commas.
 Type: String[]
 Parameter Sets: (All)
 Aliases: Provider
-Accepted values: msi, NuGet, msu, Programs, PowerShellGet, psl, chocolatey
+Accepted values: Programs, msi, msu, NuGet, PowerShellGet, psl, chocolatey
 
 Required: False
 Position: Named
@@ -385,7 +399,6 @@ Accept wildcard characters: False
 ```
 
 ### -SkipPublisherCheck
-
 
 ```yaml
 Type: SwitchParameter

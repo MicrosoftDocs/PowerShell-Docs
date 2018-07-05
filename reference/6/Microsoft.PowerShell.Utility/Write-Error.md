@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821875
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Write-Error
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821875
+schema: 2.0.0
+title: Write-Error
 ---
 
 # Write-Error
@@ -19,23 +20,20 @@ Writes an object to the error stream.
 ```
 Write-Error [-Message] <String> [-Category <ErrorCategory>] [-ErrorId <String>] [-TargetObject <Object>]
  [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
- [-CategoryTargetName <String>] [-CategoryTargetType <String>]
- [<CommonParameters>]
+ [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
 ```
 
 ### WithException
 ```
 Write-Error -Exception <Exception> [[-Message] <String>] [-Category <ErrorCategory>] [-ErrorId <String>]
  [-TargetObject <Object>] [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
- [-CategoryTargetName <String>] [-CategoryTargetType <String>]
- [<CommonParameters>]
+ [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
 ```
 
 ### ErrorRecord
 ```
 Write-Error -ErrorRecord <ErrorRecord> [-RecommendedAction <String>] [-CategoryActivity <String>]
- [-CategoryReason <String>] [-CategoryTargetName <String>] [-CategoryTargetType <String>]
- [<CommonParameters>]
+ [-CategoryReason <String>] [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -268,7 +266,7 @@ Parameter Sets: NoException
 Aliases: Msg
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -280,7 +278,7 @@ Parameter Sets: WithException
 Aliases: Msg
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False

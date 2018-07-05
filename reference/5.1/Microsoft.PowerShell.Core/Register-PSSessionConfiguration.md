@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821508
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Register-PSSessionConfiguration
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821508
+schema: 2.0.0
+title: Register-PSSessionConfiguration
 ---
 
 # Register-PSSessionConfiguration
@@ -292,21 +293,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Force
 Suppresses all user prompts and restarts the **WinRM** service without prompting.
 Restarting the service makes the configuration change effective.
@@ -423,25 +409,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PSVersion
-Specifies the version of Windows PowerShell in sessions that use this session configuration.
-
-The value of this parameter takes precedence over the value of the **PowerShellVersion** key in the session configuration file.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: Version
-Parameter Sets: NameParameterSet, AssemblyNameParameterSet
-Aliases: PowerShellVersion
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Path
 Specifies the path and file name of a session configuration file (.pssc), such as one created by the New-PSSessionConfigurationFile cmdlet.
 If you omit the path, the default is the current directory.
@@ -473,6 +440,25 @@ Type: String
 Parameter Sets: (All)
 Aliases: PA
 Accepted values: x86, amd64
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PSVersion
+Specifies the version of Windows PowerShell in sessions that use this session configuration.
+
+The value of this parameter takes precedence over the value of the **PowerShellVersion** key in the session configuration file.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: Version
+Parameter Sets: NameParameterSet, AssemblyNameParameterSet
+Aliases: PowerShellVersion
 
 Required: False
 Position: Named
@@ -694,6 +680,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

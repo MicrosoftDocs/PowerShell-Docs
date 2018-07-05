@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517137
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Get-PackageSource
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517137
+schema: 2.0.0
+title: Get-PackageSource
 ---
 
 # Get-PackageSource
@@ -57,6 +58,21 @@ PS C:\> Get-PackageProvider "PSModule" | Get-PackageSource
 This command gets all package sources for the PSModule provider by piping the results of the **Get-PackageProvider** cmdlet to **Get-PackageSource**.
 
 ## PARAMETERS
+
+### -ConfigFile
+{{Fill ConfigFile Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Force
 Forces the command to run without asking for user confirmation.
@@ -112,7 +128,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -147,7 +163,7 @@ The acceptable values for this parameter are:
 Type: String[]
 Parameter Sets: (All)
 Aliases: Provider
-Accepted values: Programs, msi, msu, PowerShellGet, nuget, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
@@ -192,21 +208,6 @@ Specifies the script source location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConfigFile
-{{Fill ConfigFile Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet
 Aliases:
 
 Required: False

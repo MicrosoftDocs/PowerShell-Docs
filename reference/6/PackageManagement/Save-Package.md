@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517140
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Save-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517140
+schema: 2.0.0
+title: Save-Package
 ---
 
 # Save-Package
@@ -50,18 +51,20 @@ Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ### PowerShellGet
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,6 +106,36 @@ The second command installs the saved package from the C:\temp folder, instead o
 
 ## PARAMETERS
 
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowPrereleaseVersions
+{{Fill AllowPrereleaseVersions Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:PackageByInputObject, NuGet, PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllVersions
 Indicates that this cmdlet saves all available versions of the package.
 By default, **Save-Package** only returns the newest available version.
@@ -125,6 +158,36 @@ Specifies one or more commands included in the package.
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConfigFile
+{{Fill ConfigFile Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet:PackageByInputObject, NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Contains
+{{Fill Contains Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet:PackageByInputObject, NuGet
 Aliases:
 
 Required: False
@@ -179,6 +242,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FilterOnTag
+{{Fill FilterOnTag Description}}
+
+```yaml
+Type: String[]
+Parameter Sets: NuGet:PackageByInputObject, NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 Indicates that this cmdlet overrides restrictions that prevent the command from succeeding, as long as running the command does not compromise security.
 
@@ -209,6 +287,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Headers
+{{Fill Headers Description}}
+
+```yaml
+Type: String[]
+Parameter Sets: NuGet:PackageByInputObject, NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Includes
 Indicates the resources that the package includes.
 
@@ -216,7 +309,7 @@ Indicates the resources that the package includes.
 Type: String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
-Accepted values: DscResource, Cmdlet, Function, Workflow
+Accepted values: DscResource, Cmdlet, Function, Workflow, RoleCapability
 
 Required: False
 Position: Named
@@ -298,7 +391,7 @@ Parameter Sets: PackageBySearch
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -341,12 +434,40 @@ Specifies one or more provider names.
 Type: String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
-Accepted values: Programs, msi, msu, PowerShellGet, nuget, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Proxy
+
+```yaml
+Type: Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProxyCredential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -381,6 +502,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RoleCapability
+
+```yaml
+Type: String[]
+Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ScriptPublishLocation
 Specifies the script publish location.
 
@@ -402,6 +537,21 @@ Specifies the script source location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipValidate
+{{Fill SkipValidate Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:PackageByInputObject, NuGet
 Aliases:
 
 Required: False
@@ -484,141 +634,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllowPrereleaseVersions
-{{Fill AllowPrereleaseVersions Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConfigFile
-{{Fill ConfigFile Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Contains
-{{Fill Contains Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FilterOnTag
-{{Fill FilterOnTag Description}}
-
-```yaml
-Type: String[]
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-{{Fill Headers Description}}
-
-```yaml
-Type: String[]
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Proxy
-
-
-```yaml
-Type: Uri
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProxyCredential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RoleCapability
-
-
-```yaml
-Type: String[]
-Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipValidate
-{{Fill SkipValidate Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

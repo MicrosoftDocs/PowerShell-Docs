@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517143
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Unregister-PackageSource
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517143
+schema: 2.0.0
+title: Unregister-PackageSource
 ---
 
 # Unregister-PackageSource
@@ -77,6 +78,21 @@ This command unregisters a package source named Features for the Nuget provider 
 The *Force* parameter ensures that you are not prompted to confirm that you want to unregister the package.
 
 ## PARAMETERS
+
+### -ConfigFile
+{{Fill ConfigFile Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Credential
 Specifies a user account that has rights to unregister a package source for a specified package provider.
@@ -179,7 +195,7 @@ Specifies the provider name.
 Type: String
 Parameter Sets: SourceBySearch
 Aliases: Provider
-Accepted values: Programs, msi, msu, PowerShellGet, nuget, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
@@ -233,6 +249,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SkipValidate
+{{Fill SkipValidate Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Source
 Specifies the friendly name of the package source.
 
@@ -242,7 +273,7 @@ Parameter Sets: SourceBySearch
 Aliases: Name
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -275,36 +306,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConfigFile
-{{Fill ConfigFile Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipValidate
-{{Fill SkipValidate Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
