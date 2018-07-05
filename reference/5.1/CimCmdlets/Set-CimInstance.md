@@ -35,6 +35,12 @@ Set-CimInstance -CimSession <CimSession[]> [-Namespace <String>] [-OperationTime
  [<CommonParameters>]
 ```
 
+### CimInstanceSessionSet
+```
+Set-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
+ [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ### QueryComputerSet
 
 ```
@@ -151,7 +157,7 @@ output of a New-CimSession or Get-CimSession cmdlet.
 
 ```yaml
 Type: CimSession[]
-Parameter Sets: CimInstanceSessionSet, QuerySessionSet
+Parameter Sets: QuerySessionSet, CimInstanceSessionSet
 Aliases:
 
 Required: True

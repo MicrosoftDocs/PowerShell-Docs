@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821862
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Show-Command
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821862
+schema: 2.0.0
+title: Show-Command
 ---
 
 # Show-Command
@@ -287,5 +288,7 @@ When you use the *ErrorPopup* parameter, **Show-Command** returns the command ou
 
 ## NOTES
 * **Show-Command** does not work in remote sessions.
+
+## RELATED LINKS
 
 ## RELATED LINKS

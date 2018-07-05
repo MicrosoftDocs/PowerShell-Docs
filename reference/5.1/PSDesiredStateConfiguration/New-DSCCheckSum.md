@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821459
-external help file:  PSDesiredStateConfiguration-help.xml
-title:  New-DscChecksum
+external help file: PSDesiredStateConfiguration-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSDesiredStateConfiguration
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821459
+schema: 2.0.0
+title: New-DscChecksum
 ---
 
 # New-DscChecksum
@@ -44,21 +45,6 @@ This command creates new checksum files for all configurations in the path C:\DS
 Specifying the *Force* parameter causes the command to overwrite any checksum files that already exist.
 
 ## PARAMETERS
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Force
 Indicates that the cmdlet overwrites the specified output file if it already exists.
@@ -101,6 +87,21 @@ Aliases: ConfigurationPath
 Required: True
 Position: 0
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

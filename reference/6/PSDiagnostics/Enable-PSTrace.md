@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  PSDiagnostics-help.xml
+external help file: PSDiagnostics-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSDiagnostics
+ms.date: 06/09/2017
+schema: 2.0.0
 ---
 
 # Enable-PSTrace
@@ -14,7 +15,7 @@ external help file:  PSDiagnostics-help.xml
 ## SYNTAX
 
 ```
-Enable-PSTrace [-Force] [-AnalyticOnly]
+Enable-PSTrace [-Force] [-AnalyticOnly] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,15 +62,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
-
 
 ## OUTPUTS
 
 ### System.Object
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

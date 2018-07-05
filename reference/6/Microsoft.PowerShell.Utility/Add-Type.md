@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821749
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Add-Type
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821749
+schema: 2.0.0
+title: Add-Type
 ---
 
 # Add-Type
@@ -29,12 +30,10 @@ Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblie
 ```
 Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>] [-UsingNamespace <String[]>]
  [-Language <Language>] [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
- [<CommonParameters>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ### FromPath
-
 ```
 Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
  [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
@@ -42,7 +41,6 @@ Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly 
 ```
 
 ### FromLiteralPath
-
 ```
 Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
  [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
@@ -256,6 +254,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -CompilerOptions
 
 Specifies the options for the source code compiler.
@@ -277,6 +276,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+=======
+>>>>>>> ran Update-MarkdownHelp on v5.1 and v6 cmdlets
 ### -IgnoreWarnings
 
 Ignores compiler warnings.
@@ -346,7 +347,7 @@ Parameter Sets: FromMember
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -368,7 +369,7 @@ Parameter Sets: FromMember
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -402,7 +403,7 @@ By default, `Add-Type` generates the assembly only in memory.
 
 ```yaml
 Type: String
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OA
 
 Required: False
@@ -429,9 +430,9 @@ This parameter is valid only when an output assembly is specified in the command
 
 ```yaml
 Type: OutputAssemblyType
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OT
-Accepted values: ConsoleApplication, Library, WindowsApplication
+Accepted values: Library, ConsoleApplication, WindowsApplication
 
 Required: False
 Position: Named
@@ -473,7 +474,7 @@ Parameter Sets: FromPath
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -489,7 +490,7 @@ You cannot use the **CompilerOptions** and **ReferencedAssemblies** parameters i
 
 ```yaml
 Type: String[]
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: RA
 
 Required: False
@@ -515,7 +516,7 @@ Parameter Sets: FromSource
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
