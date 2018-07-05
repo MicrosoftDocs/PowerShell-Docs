@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821518
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Start-Job
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821518
+schema: 2.0.0
+title: Start-Job
 ---
 
 # Start-Job
@@ -27,6 +28,13 @@ Start-Job [-Name <String>] [-ScriptBlock] <ScriptBlock> [-Credential <PSCredenti
 Start-Job [-DefinitionName] <String> [[-DefinitionPath] <String>] [[-Type] <String>] [<CommonParameters>]
 ```
 
+### FilePathComputerName
+```
+Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
+ [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
+ [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+```
+
 ### LiteralFilePathComputerName
 ```
 Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
@@ -34,11 +42,9 @@ Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
  [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-### FilePathComputerName
+### SSHHost
 ```
-Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
- [-Authentication <AuthenticationMechanism>] [[-InitializationScript] <ScriptBlock>] [-RunAs32]
- [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+Start-Job [-HostName] <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -175,7 +181,7 @@ Because all of the values that follow the *ArgumentList* parameter name are inte
 
 ```yaml
 Type: Object[]
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases: Args
 
 Required: False
@@ -209,7 +215,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 
 ```yaml
 Type: AuthenticationMechanism
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -228,7 +234,7 @@ Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential**
 
 ```yaml
 Type: PSCredential
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -302,6 +308,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HostName
+{{Fill HostName Description}}
+
+```yaml
+Type: String[]
+Parameter Sets: SSHHost
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InitializationScript
 Specifies commands that run before the job starts.
 Enclose the commands in braces ( { } ) to create a script block.
@@ -311,7 +332,7 @@ For example, you can use it to add functions, snap-ins, and modules to the sessi
 
 ```yaml
 Type: ScriptBlock
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -329,7 +350,7 @@ In the value of the *ScriptBlock* parameter, use the $Input automatic variable t
 
 ```yaml
 Type: PSObject
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -368,7 +389,7 @@ The default friendly name is Job#, where # is an ordinal number that is incremen
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -387,7 +408,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Version
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False
@@ -405,7 +426,7 @@ On 64-bit versions of Windows 7 and Windows Server 2008 R2, when the **Start-Job
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ComputerName, LiteralFilePathComputerName, FilePathComputerName
+Parameter Sets: ComputerName, FilePathComputerName, LiteralFilePathComputerName
 Aliases:
 
 Required: False

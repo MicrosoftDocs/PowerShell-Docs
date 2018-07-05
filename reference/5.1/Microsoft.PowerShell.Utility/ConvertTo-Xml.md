@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821760
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  ConvertTo-Xml
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821760
+schema: 2.0.0
+title: ConvertTo-Xml
 ---
 
 # ConvertTo-Xml
@@ -15,9 +16,9 @@ Creates an XML-based representation of an object.
 
 ## SYNTAX
 
-```powershell
-ConvertTo-Xml [-InputObject] <PSObject> [-Depth <Int32>] [-NoTypeInformation]
- [-As <String>] [<CommonParameters>]
+```
+ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-As <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

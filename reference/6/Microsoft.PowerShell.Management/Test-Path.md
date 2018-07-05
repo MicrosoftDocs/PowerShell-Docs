@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821647
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Test-Path
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821647
+schema: 2.0.0
+title: Test-Path
 ---
 
 # Test-Path
@@ -18,15 +19,15 @@ Determines whether all elements of a path exist.
 ### Path (Default)
 ```
 Test-Path [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
- [-UseTransaction] [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
+ [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>] [-OlderThan <DateTime>]
+ [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
 Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
- [-UseTransaction] [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
+ [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>] [-OlderThan <DateTime>]
+ [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -101,36 +102,6 @@ If PowerShell is installed correctly, the cmdlet returns $True.
 For example, you can use **Test-Path** to test the path of a registry key, but if you use it to test the path of a registry entry, it always returns $False, even if the registry entry is present.
 
 ## PARAMETERS
-
-### -OlderThan
-Specify a time as a **DateTime** object.
-
-```yaml
-Type: DateTime
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NewerThan
-Specify a time as a **DateTime** object.
-
-```yaml
-Type: DateTime
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Credential
 Specifies a user account that has permission to perform this action.
@@ -243,6 +214,36 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -NewerThan
+Specify a time as a **DateTime** object.
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OlderThan
+Specify a time as a **DateTime** object.
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Path
 Specifies a path to be tested.
 Wildcard characters are permitted.
@@ -254,7 +255,7 @@ Parameter Sets: Path
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -282,25 +283,6 @@ Accepted values: Any, Container, Leaf
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

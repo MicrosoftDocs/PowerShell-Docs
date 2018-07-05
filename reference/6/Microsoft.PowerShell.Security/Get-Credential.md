@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821713
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Get-Credential
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821713
+schema: 2.0.0
+title: Get-Credential
 ---
 # Get-Credential
 
@@ -18,13 +19,13 @@ Gets a credential object based on a user name and password.
 ### CredentialSet (Default)
 
 ```
-Get-Credential [-Credential] <PSCredential> [<CommonParameters>]
+Get-Credential [[-Credential] <PSCredential>] [<CommonParameters>]
 ```
 
 ### MessageSet
 
 ```
-Get-Credential -Message <String> [[-UserName] <String>] [<CommonParameters>]
+Get-Credential [-Message <String>] [[-UserName] <String>] [-Title <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -227,7 +228,22 @@ Type: String
 Parameter Sets: MessageSet
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Title
+{{Fill Title Description}}
+
+```yaml
+Type: String
+Parameter Sets: MessageSet
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

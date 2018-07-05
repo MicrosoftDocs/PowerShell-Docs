@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821658
-external help file:  PSModule-help.xml
-title:  Find-Module
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821658
+schema: 2.0.0
+title: Find-Module
 ---
 
 # Find-Module
@@ -16,11 +17,11 @@ Finds modules from an online gallery that match specified criteria.
 ## SYNTAX
 
 ```
-Find-Module [[-Name] <String[]>] [-MinimumVersion <Version>] [-MaximumVersion <Version>]
- [-RequiredVersion <Version>] [-AllVersions] [-IncludeDependencies] [-Filter <String>] [-Tag <String[]>]
+Find-Module [[-Name] <String[]>] [-MinimumVersion <String>] [-MaximumVersion <String>]
+ [-RequiredVersion <String>] [-AllVersions] [-IncludeDependencies] [-Filter <String>] [-Tag <String[]>]
  [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Repository <String[]>] [-Credential <PSCredential>]
- [<CommonParameters>]
+ [-AllowPrerelease] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,6 +108,21 @@ Because this example is operating against a NuGet-based repository, the *Filter*
 
 ## PARAMETERS
 
+### -AllowPrerelease
+{{Fill AllowPrerelease Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllVersions
 Specifies to include all versions of a module in the results.
 You cannot use the *AllVersions* parameter with the *MinimumVersion*, *MaximumVersion*, or *RequiredVersion* parameters.
@@ -140,7 +156,6 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-
 
 ```yaml
 Type: PSCredential
@@ -229,7 +244,7 @@ Specifies the maximum, or latest, version of the module to include in the search
 The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -245,7 +260,7 @@ Specifies the minimum version of the module to include in results.
 The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -272,7 +287,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Proxy
@@ -325,7 +340,7 @@ Specifies the exact version number of the module to include in the results.
 The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 

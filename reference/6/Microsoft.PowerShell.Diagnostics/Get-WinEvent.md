@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821529
-external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-title:  Get-WinEvent
+external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Diagnostics
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821529
+schema: 2.0.0
+title: Get-WinEvent
 ---
 
 # Get-WinEvent
@@ -389,24 +390,7 @@ Parameter Sets: HashQuerySet
 Aliases:
 
 Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FilterXPath
-Specifies an XPath query that this cmdlet select events from one or more logs.
-
-For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
-
-```yaml
-Type: String
-Parameter Sets: GetLogSet, GetProviderSet, FileSet
-Aliases:
-
-Required: False
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -430,7 +414,24 @@ Parameter Sets: XmlQuerySet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilterXPath
+Specifies an XPath query that this cmdlet select events from one or more logs.
+
+For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
+
+```yaml
+Type: String
+Parameter Sets: GetLogSet, GetProviderSet, FileSet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -466,10 +467,10 @@ Parameter Sets: ListLogSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -ListProvider
@@ -486,10 +487,10 @@ Parameter Sets: ListProviderSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -LogName
@@ -504,10 +505,10 @@ Parameter Sets: GetLogSet
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -MaxEvents
@@ -559,10 +560,10 @@ Parameter Sets: FileSet
 Aliases: PSPath
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -ProviderName
@@ -578,10 +579,10 @@ Parameter Sets: GetProviderSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### CommonParameters
@@ -603,3 +604,6 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 * **Get-WinEvent** runs on Windows Vista, Windows Server 2008 R2, and later versions of Windows.
 * This cmdlet is designed to replace the Get-EventLog cmdlet on computers running Windows Vista and later versions of Windows. **Get-EventLog** gets events only in classic event logs. Get-EventLog is retained in PowerShell for backward compatibility.
 * The **Get-WinEvent** and **Get-EventLog** cmdlets are not supported in Windows Preinstallation Environment (Windows PE).
+
+
+## RELATED LINKS

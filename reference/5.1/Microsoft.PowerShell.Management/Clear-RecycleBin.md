@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821571
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Clear-RecycleBin
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821571
+schema: 2.0.0
+title: Clear-RecycleBin
 ---
 
 # Clear-RecycleBin
@@ -30,6 +31,7 @@ The Clear-RecycleBin cmdlet deletes the content of a recycle bin. Running this c
 ```
 PS C:\> Clear-RecycleBin
 ```
+
 This command will clear all recycle bins present on the local computer.
 the command will prompt for user confirmation before execution.
 
@@ -37,6 +39,7 @@ the command will prompt for user confirmation before execution.
 ```
 PS C:\> Clear-RecycleBin -DriveLetter C
 ```
+
 This command will clear the recycle bin on the volume with the C drive letter.
 This command will not work on 
 The command will prompt for user confirmation before execution.
@@ -45,6 +48,7 @@ The command will prompt for user confirmation before execution.
 ```
 PS C:\> Clear-RecycleBin -Force
 ```
+
 This command will clear the recycle bin on the volume with the C drive letter.
 The command will NOT prompt for user confirmation before execution.
 
@@ -52,25 +56,11 @@ The command will NOT prompt for user confirmation before execution.
 ```
 PS C:\> Clear-RecycleBin -Confirm:$false
 ```
+
 This command will clear the recycle bin on the volume with the C drive letter.
 The command will NOT prompt for user confirmation before execution.
 
 ## PARAMETERS
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DriveLetter
 Specifies an array of drive letters for which this cmdlet clears the recycle bin.
@@ -98,6 +88,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
