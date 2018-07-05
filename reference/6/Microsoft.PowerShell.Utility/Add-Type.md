@@ -254,6 +254,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -CompilerOptions
 
 Specifies the options for the source code compiler.
@@ -275,6 +276,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+=======
+>>>>>>> ran Update-MarkdownHelp on v5.1 and v6 cmdlets
 ### -IgnoreWarnings
 
 Ignores compiler warnings.
