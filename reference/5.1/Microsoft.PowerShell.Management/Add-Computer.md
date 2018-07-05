@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821564
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Add-Computer
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821564
+schema: 2.0.0
+title: Add-Computer
 ---
 
 # Add-Computer
@@ -164,21 +165,6 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Credential
 Specifies a user account that has permission to join the computers to a new domain.
 The default is the current user.
@@ -289,23 +275,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -OUPath
-Specifies an organizational unit (OU) for the domain account.
-Enter the full distinguished name of the OU in quotation marks.
-The default value is the default OU for machine objects in the domain.
-
-```yaml
-Type: String
-Parameter Sets: Domain
-Aliases: OU
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Options
 Specifies advanced options for the **Add-Computer** join operation.
 Enter one or more values in a comma-separated string.
@@ -333,6 +302,23 @@ Type: JoinOptions
 Parameter Sets: Domain
 Aliases:
 Accepted values: AccountCreate, Win9XUpgrade, UnsecuredJoin, PasswordPass, DeferSPNSet, JoinWithNewName, JoinReadOnly, InstallInvoke
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OUPath
+Specifies an organizational unit (OU) for the domain account.
+Enter the full distinguished name of the OU in quotation marks.
+The default value is the default OU for machine objects in the domain.
+
+```yaml
+Type: String
+Parameter Sets: Domain
+Aliases: OU
 
 Required: False
 Position: Named
@@ -432,22 +418,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WorkgroupName
 Specifies the name of a workgroup to which the computers are added.
 The default value is "WORKGROUP".
@@ -460,6 +430,37 @@ Aliases: WGN
 Required: True
 Position: 0
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

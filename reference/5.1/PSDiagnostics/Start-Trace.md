@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  PSDiagnostics-help.xml
+external help file: PSDiagnostics-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSDiagnostics
+ms.date: 06/09/2017
+schema: 2.0.0
 ---
 
 # Start-Trace
@@ -16,7 +17,7 @@ external help file:  PSDiagnostics-help.xml
 ```
 Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFilePath] <String>] [-ETS]
  [-Format <Object>] [-MinBuffers <Int32>] [-MaxBuffers <Int32>] [-BufferSizeInKB <Int32>]
- [-MaxLogFileSizeInMB <Int32>]
+ [-MaxLogFileSizeInMB <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -169,15 +170,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
-
 
 ## OUTPUTS
 
 ### System.Object
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

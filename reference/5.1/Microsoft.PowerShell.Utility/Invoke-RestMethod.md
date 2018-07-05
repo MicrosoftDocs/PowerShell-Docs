@@ -1,21 +1,22 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821824
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Invoke-RestMethod
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821824
+schema: 2.0.0
+title: Invoke-RestMethod
 ---
 
 # Invoke-RestMethod
 
-## Synopsis
+## SYNOPSIS
 Sends an HTTP or HTTPS request to a RESTful web service.
 
-## Syntax
+## SYNTAX
 
-```powershell
+```
 Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
  [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-Credential <PSCredential>]
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
@@ -25,7 +26,7 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
  [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational State Transfer (REST) web services that returns richly structured data.
 
 Windows PowerShell formats the response based to the data type.
@@ -34,7 +35,7 @@ For JavaScript Object Notation (JSON) or XML, Windows PowerShell converts (or de
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the PowerShell RSS feed
 ```powershell
@@ -101,11 +102,11 @@ Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile 
 
 ### Example 3: Pass multiple headers
 ```powershell
-$headers = @{ 
+$headers = @{
     'userId' = 'UserIDValue'
     'token' = 'TokenValue'
 }
-Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body 
+Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
 ```
 APIs often require passed headers for authentication, validation etc.
 
@@ -129,20 +130,18 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-```powershell
+
+
 $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
 Invoke-RestMethod http://website.com/service.aspx -Body $R
-```
 
 or
 
-```powershell
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
-```
 
-```yaml
+
+Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
@@ -319,6 +318,7 @@ The acceptable values for this parameter are:
 Type: WebRequestMethod
 Parameter Sets: (All)
 Aliases:
+Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
 
 Required: False
 Position: Named
@@ -521,17 +521,15 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-```powershell
+
+
 $R = Invoke-WebRequest http://website.com/login.aspx $R.Forms\[0\].Name = "MyName" $R.Forms\[0\].Password = "MyPassword" Invoke-RestMethod http://website.com/service.aspx -Body $R
-```
 
 or
 
-```powershell
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]
-```
 
-```yaml
+
+Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -567,11 +565,9 @@ To test a website with the standard user agent string that is used by most Inter
 
 For example, the following command uses the user agent string for Internet
 
-```powershell
-Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
-```
 
-```yaml
+
+Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
@@ -613,14 +609,14 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 You can pipe the body of a web request to `Invoke-RestMethod`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Xml.XmlDocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System.String
 The output of the cmdlet depends upon the format of the content that is retrieved.
@@ -628,9 +624,9 @@ The output of the cmdlet depends upon the format of the content that is retrieve
 ### PSObject
 If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the strings.
 
-## Notes
+## NOTES
 
-## Related Links
+## RELATED LINKS
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

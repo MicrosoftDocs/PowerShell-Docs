@@ -204,7 +204,7 @@ Parameter Sets: (All)
 Aliases: PSProperty
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -220,7 +220,7 @@ Parameter Sets: Path
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

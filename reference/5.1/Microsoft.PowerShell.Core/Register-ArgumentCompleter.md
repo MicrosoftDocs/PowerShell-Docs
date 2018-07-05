@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821507
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Register-ArgumentCompleter
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821507
+schema: 2.0.0
+title: Register-ArgumentCompleter
 ---
 
 # Register-ArgumentCompleter
@@ -15,15 +16,15 @@ Registers a custom argument completer.
 
 ## SYNTAX
 
+### NativeSet
+```
+Register-ArgumentCompleter -CommandName <String[]> -ScriptBlock <ScriptBlock> [-Native] [<CommonParameters>]
+```
+
 ### PowerShellSet
 ```
 Register-ArgumentCompleter [-CommandName <String[]>] -ParameterName <String> -ScriptBlock <ScriptBlock>
  [<CommonParameters>]
-```
-
-### NativeSet
-```
-Register-ArgumentCompleter -CommandName <String[]> -ScriptBlock <ScriptBlock> [-Native] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,10 +65,10 @@ Specifies the name of the command as an array.
 
 ```yaml
 Type: String[]
-Parameter Sets: PowerShellSet
+Parameter Sets: NativeSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -76,10 +77,10 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String[]
-Parameter Sets: NativeSet
+Parameter Sets: PowerShellSet
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -147,5 +148,7 @@ You cannot pipe objects to this cmdlet.
 This cmdlet returns no output.
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

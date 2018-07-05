@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821671
-external help file:  PSModule-help.xml
-title:  Set-PSRepository
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821671
+schema: 2.0.0
+title: Set-PSRepository
 ---
 
 # Set-PSRepository
@@ -44,7 +45,6 @@ This command sets the source location and publish location for myInternalSource 
 ## PARAMETERS
 
 ### -Credential
-
 
 ```yaml
 Type: PSCredential

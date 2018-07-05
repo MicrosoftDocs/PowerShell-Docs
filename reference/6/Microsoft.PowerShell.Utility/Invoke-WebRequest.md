@@ -1,11 +1,12 @@
 ---
-ms.date:  11/17/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821826
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Invoke-WebRequest
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 11/17/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821826
+schema: 2.0.0
+title: Invoke-WebRequest
 ---
 
 # Invoke-WebRequest
@@ -23,8 +24,8 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
  [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
  [-Method <WebRequestMethod>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
- [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
- [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
+ [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
@@ -34,9 +35,9 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
  [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
  [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- [-Method <WebRequestMethod>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Method <WebRequestMethod>] [-NoProxy] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
+ [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [<CommonParameters>]
 ```
 
 ### CustomMethod
@@ -47,8 +48,8 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
  [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
  -CustomMethod <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
- [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
- [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
+ [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
@@ -58,9 +59,9 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
  [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
  [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- -CustomMethod <String> [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ -CustomMethod <String> [-NoProxy] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
+ [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -95,7 +96,6 @@ The call to `$Session` by itself shows the `WebRequestSession` object in the var
 The second call to `Invoke-WebRequest` fetches the user's profile which requires that the user be logged into the site. The session data stored in the `$Session` variable is used to provide session cookies to the site created during the login. The result is saved in the `$ProfileResponse` variable.
 
 The call to `$ProfileResponse` by itself shows the `BasicHtmlWebResponseObject` in the variable.
-
 
 ### Example 2: Get links from a web page
 ```powershell
@@ -345,9 +345,9 @@ Specifies custom method used for the web request. This can be used with the Requ
 
 Example:
 
-```powershell
+
+
 Invoke-WebRequest -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'
-```
 
 This makes a `TEST` HTTP request to the API.
 
@@ -427,7 +427,7 @@ This feature was added in PowerShell 6.1.0.
 ```yaml
 Type: IDictionary
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -474,7 +474,6 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
 
 ### -MaximumRedirection
 Specifies how many times PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
@@ -683,7 +682,7 @@ This feature was added in PowerShell 6.1.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -809,11 +808,7 @@ The OAuth or Bearer token to include in the request. **-Token** is required by c
 
 **-Token** takes a `SecureString` containing the token. To supply the token manually use the following:
 
-```powershell
-Invoke-WebRequest -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)
-```
-
-This feature was added in PowerShell 6.0.0.
+`Invoke-WebRequest -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)`
 
 ```yaml
 Type: SecureString
@@ -864,7 +859,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -910,11 +905,9 @@ To test a website with the standard user agent string that is used by most Inter
 For example, the following command uses the user agent string for Internet Explorer
 
 
-```powershell
-Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
-```
 
-```yaml
+
+Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
@@ -956,7 +949,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**, **-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**, **-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

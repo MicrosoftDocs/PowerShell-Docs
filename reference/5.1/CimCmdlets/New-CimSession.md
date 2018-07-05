@@ -130,6 +130,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 Type: PasswordAuthenticationMechanism
 Parameter Sets: CredentialParameterSet
 Aliases:
+Accepted values: Default, Digest, Negotiate, Basic, Kerberos, NtlmDomain, CredSsp
 
 Required: False
 Position: Named

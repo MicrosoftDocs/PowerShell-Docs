@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821637
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Split-Path
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821637
+schema: 2.0.0
+title: Split-Path
 ---
 
 # Split-Path
@@ -21,6 +22,12 @@ Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>] 
  [<CommonParameters>]
 ```
 
+### NoQualifierSet
+```
+Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
+ [<CommonParameters>]
+```
+
 ### LeafSet
 ```
 Split-Path [-Path] <String[]> [-Leaf] [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
@@ -30,12 +37,6 @@ Split-Path [-Path] <String[]> [-Leaf] [-Resolve] [-Credential <PSCredential>] [-
 ### QualifierSet
 ```
 Split-Path [-Path] <String[]> [-Qualifier] [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
- [<CommonParameters>]
-```
-
-### NoQualifierSet
-```
-Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
  [<CommonParameters>]
 ```
 
@@ -241,7 +242,7 @@ You can also pipe a path to this cmdlet.
 
 ```yaml
 Type: String[]
-Parameter Sets: ParentSet, LeafSet, QualifierSet, NoQualifierSet, IsAbsoluteSet
+Parameter Sets: ParentSet, NoQualifierSet, LeafSet, QualifierSet, IsAbsoluteSet
 Aliases:
 
 Required: True
