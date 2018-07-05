@@ -21,7 +21,6 @@ Modules did not exist in PowerShell 1.0: instead, you had to register and use sn
 ## Importing a Module with Import-Module (PowerShell 2.0)
 
 PowerShell 2.0 uses the appropriately-named [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet to import modules. When this cmdlet is run, Windows PowerShell searches for the specified module within the directories specified in the `PSModulePath` variable. When the specified directory is found, Windows PowerShell searches for files in the following order: module manifest files (.psd1), script module files (.psm1), binary module files (.dll). For more information about adding directories to the search, see [Modifying the PSModulePath Installation Path](./modifying-the-psmodulepath-installation-path.md). The following code describes how to import a module:
-PowerShell 2.0 uses the appropriately-named [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet to import modules. When this cmdlet is run, Windows PowerShell searches for the specified module within the directories specified in the `PSModulePath` variable. When the specified directory is found, Windows PowerShell searches for files in the following order: module manifest files (.psd1), script module files (.psm1), binary module files (.dll). For more information about adding directories to the search, see [Modifying the PSModulePath Installation Path](./modifying-the-psmodulepath-installation-path.md). The following code describes how to import a module:
 
 ```powershell
 Import-Module myModule
@@ -38,19 +37,15 @@ You can also use the -verbose parameter to identify what is being exported out o
 ## Implicitly Importing a Module (PowerShell 3.0)
 
 Beginning in Windows PowerShell 3.0, modules are imported automatically when any cmdlet or function in the module is used in a command. This feature works on any module in a directory that this included in the value of the **PSModulePath** environment variable. If you do not save your module on a valid path however, you can still load them using the explicit [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) option, described above.
-Beginning in Windows PowerShell 3.0, modules are imported automatically when any cmdlet or function in the module is used in a command. This feature works on any module in a directory that this included in the value of the **PSModulePath** environment variable. If you do not save your module on a valid path however, you can still load them using the explicit [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) option, described above.
 
 The following actions trigger automatic importing of a module, also known as "module auto-loading."
 
 - Using a cmdlet in a command. For example, typing `Get-ExecutionPolicy` imports the Microsoft.PowerShell.Security module that contains the `Get-ExecutionPolicy` cmdlet.
 
 - Using the [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet to get the command.  For example, typing `Get-Command Get-JobTrigger` imports the **PSScheduledJob** module that contains the `Get-JobTrigger` cmdlet. A `Get-Command` command that includes wildcard characters is considered to be discovery and does not trigger importing of a module.
-- Using the [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet to get the command.  For example, typing `Get-Command Get-JobTrigger` imports the **PSScheduledJob** module that contains the `Get-JobTrigger` cmdlet. A `Get-Command` command that includes wildcard characters is considered to be discovery and does not trigger importing of a module.
 
 - Using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet to get help for a cmdlet. For example, typing `Get-Help Get-WinEvent` imports the Microsoft.PowerShell.Diagnostics module that contains the `Get-WinEvent` cmdlet.
-- Using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet to get help for a cmdlet. For example, typing `Get-Help Get-WinEvent` imports the Microsoft.PowerShell.Diagnostics module that contains the `Get-WinEvent` cmdlet.
 
-To support automatic importing of modules, the `Get-Command` cmdlet gets all cmdlets and functions in all installed modules, even if the module is not imported into the session. For more information, see the help topic for the [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet.
 To support automatic importing of modules, the `Get-Command` cmdlet gets all cmdlets and functions in all installed modules, even if the module is not imported into the session. For more information, see the help topic for the [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet.
 
 ## The Importing Process
@@ -61,14 +56,11 @@ The metadata of members that are exported from a module have a ModuleName proper
 
 > [!WARNING]
 > If the name of an exported member uses an unapproved verb or if the name of the member uses restricted characters, a warning is displayed when the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet is run.
-> If the name of an exported member uses an unapproved verb or if the name of the member uses restricted characters, a warning is displayed when the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet is run.
 
-By default, the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet does not return any objects to the pipeline. However, the cmdlet supports a `PassThru` parameter that can be used to return a [System.Management.Automation.Psmoduleinfo](/dotnet/api/System.Management.Automation.PSModuleInfo) object for each module that is imported. To send output to the host, users should run the [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet.
 By default, the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet does not return any objects to the pipeline. However, the cmdlet supports a `PassThru` parameter that can be used to return a [System.Management.Automation.Psmoduleinfo](/dotnet/api/System.Management.Automation.PSModuleInfo) object for each module that is imported. To send output to the host, users should run the [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet.
 
 ## Restricting  the Members That Are Imported
 
-When a module is imported by using the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet, by default, all exported module members are imported into the session, including any commands exported to the module by a nested module. By default, variables and aliases are not exported. To restrict the members that are exported, use a [module manifest](./how-to-write-a-powershell-module-manifest.md). To restrict the members that are imported, use the following parameters of the `Import-Module` cmdlet.
 When a module is imported by using the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet, by default, all exported module members are imported into the session, including any commands exported to the module by a nested module. By default, variables and aliases are not exported. To restrict the members that are exported, use a [module manifest](./how-to-write-a-powershell-module-manifest.md). To restrict the members that are imported, use the following parameters of the `Import-Module` cmdlet.
 
 - `Function`: This parameter restricts the functions that are exported. (If you are using a module manifest, see the FunctionsToExport key.)
