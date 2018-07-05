@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821758
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  ConvertTo-Html
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821758
+schema: 2.0.0
+title: ConvertTo-Html
 ---
 
 # ConvertTo-Html
@@ -18,7 +19,8 @@ Converts Microsoft .NET Framework objects into HTML that can be displayed in a W
 ### Page (Default)
 ```
 ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [[-Body] <String[]>] [[-Head] <String[]>]
- [[-Title] <String>] [-As <String>] [-CssUri <Uri>] [-PostContent <String[]>] [-PreContent <String[]>] [-Meta <String[]>] [-Charset <String>] [-Transitional]  [<CommonParameters>]
+ [[-Title] <String>] [-As <String>] [-CssUri <Uri>] [-PostContent <String[]>] [-PreContent <String[]>]
+ [-Meta <Hashtable>] [-Charset <String>] [-Transitional] [<CommonParameters>]
 ```
 
 ### Fragment
@@ -209,7 +211,23 @@ Parameter Sets: Page
 Aliases:
 
 Required: False
-Position: 4
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Charset
+Specifies text to add to the opening \<charset\> tag.
+By default, there is no text in that position.
+
+```yaml
+Type: String
+Parameter Sets: Page
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -258,7 +276,7 @@ Parameter Sets: Page
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -280,6 +298,22 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Meta
+Specifies text to add to the opening \<meta\> tag.
+By default, there is no text in that position.
+
+```yaml
+Type: Hashtable
+Parameter Sets: Page
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -315,33 +349,37 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Meta
-Specifies text to add to the opening \<meta\> tag.
-By default, there is no text in that position.
+### -Property
+Includes the specified properties of the objects in the HTML.
+The value of the *Property* parameter can be a new calculated property.
+To create a calculated property, use a hash table.
+Valid keys are:
+
+- Label \<string\> (unlike with Select-Object or Format-Table, the Name key is not supported)
+- Expression \<string\> or \<script block\>
 
 ```yaml
-Type: Hashtable
-Parameter Sets: (Page)
+Type: Object[]
+Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Charset
-Specifies text to add to the opening \<charset\> tag.
-By default, there is no text in that position.
+### -Title
+Specifies a title for the HTML file, that is, the text that appears between the \<TITLE\> tags.
 
 ```yaml
 Type: String
-Parameter Sets: (Page)
+Parameter Sets: Page
 Aliases:
 
 Required: False
-Position: Named
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -358,42 +396,6 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Property
-Includes the specified properties of the objects in the HTML.
-The value of the *Property* parameter can be a new calculated property.
-To create a calculated property, use a hash table.
-Valid keys are:
-
-- Label \<string\> (unlike with Select-Object or Format-Table, the Name key is not supported)
-- Expression \<string\> or \<script block\>
-
-```yaml
-Type: Object[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Title
-Specifies a title for the HTML file, that is, the text that appears between the \<TITLE\> tags.
-
-```yaml
-Type: String
-Parameter Sets: Page
-Aliases:
-
-Required: False
-Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

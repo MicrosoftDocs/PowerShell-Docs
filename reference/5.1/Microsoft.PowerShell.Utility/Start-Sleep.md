@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821864
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Start-Sleep
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821864
+schema: 2.0.0
+title: Start-Sleep
 ---
 
 # Start-Sleep
@@ -16,12 +17,12 @@ Suspends the activity in a script or session for the specified period of time.
 ## SYNTAX
 
 ### Seconds (Default)
-```powershell
+```
 Start-Sleep [-Seconds] <Int32> [<CommonParameters>]
 ```
 
 ### Milliseconds
-```powershell
+```
 Start-Sleep -Milliseconds <Int32> [<CommonParameters>]
 ```
 
@@ -94,5 +95,7 @@ This cmdlet does not return any output.
 
 ## NOTES
 * You can also refer to `Start-Sleep` by its built-in alias, `sleep`. For more information, see about_Aliases.
+
+## RELATED LINKS
 
 ## RELATED LINKS

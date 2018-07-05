@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821748
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Add-Member
+external help file: Microsoft.PowerShell.Commands.Utility.dll-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821748
+schema: 2.0.0
+title: Add-Member
 ---
 
 # Add-Member
@@ -16,31 +17,26 @@ Adds custom properties and methods to an instance of a Windows PowerShell object
 ## SYNTAX
 
 ### TypeNameSet (Default)
-```powershell
-Add-Member -InputObject <PSObject> -TypeName <String> [-PassThru]
- [<CommonParameters>]
+```
+Add-Member -InputObject <PSObject> -TypeName <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### MemberSet
-```powershell
-Add-Member [-MemberType] <PSMemberTypes> [-Name] <String>
- [[-Value] <Object>] [[-SecondValue] <Object>]
- -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
- [<CommonParameters>]
+```
+Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String> [[-Value] <Object>]
+ [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru] [<CommonParameters>]
 ```
 
 ### NotePropertySingleMemberSet
-```powershell
-Add-Member [-NotePropertyName] <String> [-NotePropertyValue] <Object>
- -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
- [<CommonParameters>]
+```
+Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru] [-NotePropertyName] <String>
+ [-NotePropertyValue] <Object> [<CommonParameters>]
 ```
 
 ### NotePropertyMultiMemberSet
-```powershell
-Add-Member [-NotePropertyMembers] <IDictionary>
- -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
- [<CommonParameters>]
+```
+Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
+ [-NotePropertyMembers] <IDictionary> [<CommonParameters>]
 ```
 
 ## DESCRIPTION

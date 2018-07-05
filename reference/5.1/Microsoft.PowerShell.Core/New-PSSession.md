@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821498
-external help file:  System.Management.Automation.dll-Help.xml
-title:  New-PSSession
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821498
+schema: 2.0.0
+title: New-PSSession
 ---
 
 # New-PSSession
@@ -23,18 +24,18 @@ New-PSSession [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Name <
  [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
-### VMId
-```
-New-PSSession -Credential <PSCredential> [-Name <String[]>] [-ConfigurationName <String>] [-VMId] <Guid[]>
- [-ThrottleLimit <Int32>] [<CommonParameters>]
-```
-
 ### Uri
 ```
 New-PSSession [-Credential <PSCredential>] [-Name <String[]>] [-EnableNetworkAccess]
  [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-ConnectionUri] <Uri[]> [-AllowRedirection]
  [-SessionOption <PSSessionOption>] [-Authentication <AuthenticationMechanism>]
  [-CertificateThumbprint <String>] [<CommonParameters>]
+```
+
+### VMId
+```
+New-PSSession -Credential <PSCredential> [-Name <String[]>] [-ConfigurationName <String>] [-VMId] <Guid[]>
+ [-ThrottleLimit <Int32>] [<CommonParameters>]
 ```
 
 ### VMName
@@ -345,7 +346,7 @@ For more information, see [about_Preference_Variables](About/about_Preference_Va
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, VMId, Uri, VMName, ContainerId
+Parameter Sets: ComputerName, Uri, VMId, VMName, ContainerId
 Aliases:
 
 Required: False

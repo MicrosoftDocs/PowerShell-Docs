@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517135
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Get-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517135
+schema: 2.0.0
+title: Get-Package
 ---
 
 # Get-Package
@@ -15,25 +16,11 @@ Returns a list of all software packages that have been installed by using Packag
 
 ## SYNTAX
 
-### Programs
-```
-Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
- [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
- [-IncludeWindowsInstaller] [-IncludeSystemComponent] [<CommonParameters>]
-```
-
-### msi
-```
-Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
- [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
- [-AdditionalArguments <String[]>] [<CommonParameters>]
-```
-
 ### NuGet
 ```
 Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
  [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
- [-Destination <String>] [-ExcludeVersion] [-Scope <String>] [<CommonParameters>]
+ [-Destination <String>] [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
 ```
 
 ### PowerShellGet
@@ -41,7 +28,7 @@ Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <S
 Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <String>]
  [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
  [-Scope <String>] [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck]
- [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
+ [-InstallUpdate] [-NoPathUpdate] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,12 +78,26 @@ You are prompted to confirm that you want to uninstall the package.
 
 ## PARAMETERS
 
-### -AdditionalArguments
-Specifies additional arguments.
+### -AllowClobber
 
 ```yaml
-Type: String[]
-Parameter Sets: msi
+Type: SwitchParameter
+Parameter Sets: PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowPrereleaseVersions
+{{Fill AllowPrereleaseVersions Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet
 Aliases:
 
 Required: False
@@ -113,6 +114,36 @@ By default, **Get-Package** only returns the newest available version.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Destination
+{{Fill Destination Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExcludeVersion
+{{Fill ExcludeVersion Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet
 Aliases:
 
 Required: False
@@ -143,36 +174,6 @@ Indicates that this cmdlet forces Package Management to automatically install th
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeSystemComponent
-Indicates that this cmdlet includes system components in the results.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Programs
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeWindowsInstaller
-Indicates that this cmdlet includes the Windows Installer in the results.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Programs
 Aliases:
 
 Required: False
@@ -239,7 +240,21 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoPathUpdate
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -268,7 +283,7 @@ Separate multiple package provider names with commas.
 Type: String[]
 Parameter Sets: (All)
 Aliases: Provider
-Accepted values: Programs, msi, msu, PowerShellGet, nuget, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
@@ -298,9 +313,38 @@ Specifies the search scope for the package.
 
 ```yaml
 Type: String
-Parameter Sets: NuGet, PowerShellGet
+Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, AllUsers
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipDependencies
+{{Fill SkipDependencies Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipPublisherCheck
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet
+Aliases:
 
 Required: False
 Position: Named
@@ -317,81 +361,6 @@ Type: String
 Parameter Sets: PowerShellGet
 Aliases:
 Accepted values: Module, Script, All
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllowClobber
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PowerShellGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Destination
-{{Fill Destination Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExcludeVersion
-{{Fill ExcludeVersion Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoPathUpdate
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PowerShellGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipPublisherCheck
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PowerShellGet
-Aliases:
 
 Required: False
 Position: Named

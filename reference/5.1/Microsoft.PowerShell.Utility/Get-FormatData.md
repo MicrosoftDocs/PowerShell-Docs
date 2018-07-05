@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821790
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-FormatData
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821790
+schema: 2.0.0
+title: Get-FormatData
 ---
 
 # Get-FormatData
@@ -50,14 +51,17 @@ This command gets the formatting data items whose names begin with System.Manage
 PS C:\> $F = Get-FormatData -TypeName 'System.Management.Automation.Cmd*'
 PS C:\> $F
 ```
+
 ```Output
 TypeName        FormatViewDefinition
 --------        --------------------
 HelpInfoShort   {help , TableControl}
 ```
+
 ```powershell
 PS C:\> $F.FormatViewDefinition[0].control
 ```
+
 ```Output
 Headers          : {System.Management.Automation.TableControlColumnHeader, System.Management.Automation.TableControlColumnHeader, System.Management.Automation.TableControlColumnHeader,
                    System.Management.Automation.TableControlColumnHeader}
@@ -67,9 +71,11 @@ HideTableHeaders : False
 GroupBy          :
 OutOfBand        : False
 ```
+
 ```powershell
 PS C:\> $F.FormatViewDefinition[0].control.Headers
 ```
+
 ```Output
 Label       Alignment Width
 -----       --------- -----
@@ -88,14 +94,17 @@ PS C:\> Import-Module bitstransfer
 PS C:\> $B = Get-FormatData
 PS C:\> Compare-Object $A $B
 ```
+
 ```Output
 InputObject                                                SideIndicator
 -----------                                                -------------
 Microsoft.BackgroundIntelligentTransfer.Management.BitsJob => PS C:\> Get-FormatData *bits* | Export-FormatData -FilePath c:\test\bits.format.ps1xml
 ```
+
 ```powershell
 PS C:\> Get-Content c:\test\bits.format.ps1xml
 ```
+
 ```Output
 <?xml version="1.0" encoding="utf-8"?><Configuration><ViewDefinitions>
 <View><Name>Microsoft.BackgroundIntelligentTransfer.Management.BitsJob</Name>

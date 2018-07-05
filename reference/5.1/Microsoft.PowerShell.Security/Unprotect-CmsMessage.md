@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821720
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Unprotect-CmsMessage
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821720
+schema: 2.0.0
+title: Unprotect-CmsMessage
 ---
 
 # Unprotect-CmsMessage
@@ -97,7 +98,6 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeContext
-
 
 ```yaml
 Type: SwitchParameter

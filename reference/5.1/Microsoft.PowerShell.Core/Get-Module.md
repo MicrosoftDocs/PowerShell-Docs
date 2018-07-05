@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821486
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-Module
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821486
+schema: 2.0.0
+title: Get-Module
 ---
 
 # Get-Module
@@ -17,28 +18,24 @@ Gets the modules that have been imported or that can be imported into the curren
 ## SYNTAX
 
 ### Loaded (Default)
-
-```powershell
+```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [<CommonParameters>]
 ```
 
 ### Available
-
-```powershell
+```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [-ListAvailable]
  [-PSEdition <String>] [-Refresh] [<CommonParameters>]
 ```
 
 ### PsSession
-
-```powershell
+```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-ListAvailable]
  [-PSEdition <String>] [-Refresh] -PSSession <PSSession> [<CommonParameters>]
 ```
 
 ### CimSession
-
-```powershell
+```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-ListAvailable] [-Refresh]
  -CimSession <CimSession> [-CimResourceUri <Uri>] [-CimNamespace <String>] [<CommonParameters>]
 ```
@@ -187,7 +184,7 @@ PS> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Pa
 ```
 
 ```output
-   Name: AppLocker
+Name: AppLocker
 
 Name      ModuleType Path
 ----      ---------- ----
@@ -570,8 +567,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

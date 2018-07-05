@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821633
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Set-Service
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821633
+schema: 2.0.0
+title: Set-Service
 ---
+
 # Set-Service
 
 ## SYNOPSIS
@@ -16,19 +18,16 @@ Starts, stops, and suspends a service, and changes its properties.
 ## SYNTAX
 
 ### Name (Default)
-
 ```
-Set-Service [-Name] <String> [-DisplayName <String>] [-Description <String>]
- [-StartupType <ServiceStartMode>] [-Status <String>] [-PassThru]
- [-WhatIf] [-Confirm] [-Force] [<CommonParameters>]
+Set-Service [-Name] <String> [-DisplayName <String>] [-Credential <PSCredential>] [-Description <String>]
+ [-StartupType <ServiceStartupType>] [-Status <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
-
 ```
-Set-Service [-DisplayName <String>] [-Description <String>] [-StartupType <ServiceStartMode>]
- [-Status <String>] [-InputObject <ServiceController>] [-PassThru]
- [-WhatIf] [-Confirm] [-Force] [<CommonParameters>]
+Set-Service [-InputObject] <ServiceController> [-DisplayName <String>] [-Credential <PSCredential>]
+ [-Description <String>] [-StartupType <ServiceStartupType>] [-Status <String>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,6 +154,23 @@ The second command changes the credentials of the Schedule service.
 
 ## PARAMETERS
 
+### -Credential
+
+Specifies the credentials under which the service should be run.
+
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Description
 
 Specifies a new description for the service.
@@ -202,8 +218,8 @@ Type: ServiceController
 Parameter Sets: InputObject
 Aliases:
 
-Required: False
-Position: Named
+Required: True
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -221,26 +237,9 @@ Parameter Sets: Name
 Aliases: ServiceName, SN
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -Credential
-
-Specifies the credentials under which the service should be run.
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -274,10 +273,10 @@ The acceptable values for this parameter are:
   Cannot be started.
 
 ```yaml
-Type: ServiceStartMode
+Type: ServiceStartupType
 Parameter Sets: (All)
 Aliases: StartMode, SM, ST
-Accepted values: Boot, System, Automatic, Manual, Disabled
+Accepted values: Automatic, Manual, Disabled, AutomaticDelayedStart, InvalidValue
 
 Required: False
 Position: Named
@@ -364,8 +363,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

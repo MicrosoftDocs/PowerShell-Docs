@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821775
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Format-Table
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821775
+schema: 2.0.0
+title: Format-Table
 ---
 
 # Format-Table
@@ -15,7 +16,7 @@ Formats the output as a table.
 
 ## SYNTAX
 
-```powershell
+```
 Format-Table [-AutoSize] [-HideTableHeaders] [-Wrap] [[-Property] <Object[]>] [-GroupBy <Object>]
  [-View <String>] [-ShowError] [-DisplayError] [-Force] [-Expand <String>] [-InputObject <PSObject>]
  [<CommonParameters>]
@@ -145,14 +146,12 @@ Indicates that the cmdlet displays errors at the command line.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Table` command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the DisplayError parameter with an expression.
 
-```powershell
+
+
 PS \> Get-Date | Format-Table DayOfWeek,{ $_ / $null } -ShowError
 DayOfWeek  $_ / $null
 --------- ------------
-Wednesday #ERR
-```
-
-```yaml
+Wednesday #ERR```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -298,7 +297,8 @@ Sends errors through the pipeline.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Table` command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **ShowError** parameter with an expression.
 
-```powershell
+
+
 PS \> Get-Date | Format-Table DayOfWeek,{ $_ / $null } -ShowError
 DayOfWeek  $_ / $null
 --------- ------------
@@ -306,10 +306,7 @@ Wednesday
 
 Failed to evaluate expression " $_ / $null ".
     + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
-    + FullyQualifiedErrorId : mshExpressionError
-```
-
-```yaml
+    + FullyQualifiedErrorId : mshExpressionError```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
