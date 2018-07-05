@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821710
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Get-Acl
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821710
+schema: 2.0.0
+title: Get-Acl
 ---
 
 # Get-Acl
@@ -17,20 +18,20 @@ Gets the security descriptor for a resource, such as a file or registry key.
 
 ### ByPath (Default)
 ```
-Get-Acl [[-Path] <String[]>] [-Audit] [-AllCentralAccessPolicies] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-UseTransaction] [<CommonParameters>]
+Get-Acl [[-Path] <String[]>] [-Audit] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [<CommonParameters>]
 ```
 
 ### ByInputObject
 ```
-Get-Acl -InputObject <PSObject> [-Audit] [-AllCentralAccessPolicies] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-UseTransaction] [<CommonParameters>]
+Get-Acl -InputObject <PSObject> [-Audit] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
-Get-Acl [-LiteralPath <String[]>] [-Audit] [-AllCentralAccessPolicies] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-UseTransaction] [<CommonParameters>]
+Get-Acl [-LiteralPath <String[]>] [-Audit] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,26 +95,6 @@ PS C:\> Get-Acl -InputObject (Get-StorageSubsystem -Name S087)
 This command uses the *InputObject* parameter of **Get-Acl** to get the security descriptor of a storage subsystem object.
 
 ## PARAMETERS
-
-### -AllCentralAccessPolicies
-Gets information about all central access policies that are enabled on the computer.
-
-Beginning in Windows Server® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
-For more information, see [Dynamic Access Control: Scenario Overview](http://go.microsoft.com/fwlink/?LinkId=238408).
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Audit
 Gets the audit data for the security descriptor from the system access control list (SACL).
@@ -243,25 +224,6 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

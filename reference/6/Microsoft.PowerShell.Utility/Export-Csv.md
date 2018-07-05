@@ -1,11 +1,12 @@
 ---
-ms.date:  12/04/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821769
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Export-Csv
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 12/04/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821769
+schema: 2.0.0
+title: Export-Csv
 ---
 
 # Export-Csv
@@ -17,19 +18,17 @@ Converts objects into a series of comma-separated (CSV) strings and saves the st
 ## SYNTAX
 
 ### Delimiter (Default)
-
-```powershell
+```
 Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <String>] [-Append] [[-Delimiter] <Char>] [-IncludeTypeInformation] [-NoTypeInformation] [-WhatIf]
- [-Confirm]
+ [-Encoding <Encoding>] [-Append] [[-Delimiter] <Char>] [-IncludeTypeInformation] [-NoTypeInformation]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseCulture
-
-```powershell
+```
 Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <String>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation] [-WhatIf]
- [-Confirm]
+ [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -259,22 +258,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Delimiter
 
 Specifies a delimiter to separate the property values.
@@ -311,10 +294,9 @@ The acceptable values for this parameter are:
 The default value is ASCII.
 
 ```yaml
-Type: String
+Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, OEM
 
 Required: False
 Position: Named
@@ -472,6 +454,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 
 Shows what would happen if the cmdlet runs.
@@ -490,7 +488,6 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

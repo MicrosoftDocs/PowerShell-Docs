@@ -1,11 +1,12 @@
 ---
-ms.date:  11/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821839
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Out-File
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 11/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821839
+schema: 2.0.0
+title: Out-File
 ---
 
 # Out-File
@@ -17,16 +18,14 @@ Sends output to a file.
 ## SYNTAX
 
 ### ByPath (Default)
-
-```powershell
-Out-File [-FilePath] <String> [[-Encoding] <String>] [-Append] [-Force] [-NoClobber] [-Width <Int32>]
+```
+Out-File [-FilePath] <String> [[-Encoding] <Encoding>] [-Append] [-Force] [-NoClobber] [-Width <Int32>]
  [-NoNewline] [-InputObject <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
-
-```powershell
-Out-File -LiteralPath <String> [[-Encoding] <String>] [-Append] [-Force] [-NoClobber] [-Width <Int32>]
+```
+Out-File -LiteralPath <String> [[-Encoding] <Encoding>] [-Append] [-Force] [-NoClobber] [-Width <Int32>]
  [-NoNewline] [-InputObject <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -117,21 +116,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Encoding
 
 Specifies the type of character encoding used in the file.
@@ -155,13 +139,12 @@ Unicode is the default.
 "OEM" uses the current original equipment manufacturer code page identifier for the operating system.
 
 ```yaml
-Type: String
+Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: unknown, string, unicode, bigendianunicode, utf8, utf7, utf32, ascii, default, oem
 
 Required: False
-Position: 2
+Position: 1
 Default value: Unicode
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -174,10 +157,10 @@ Specifies the path to the output file.
 ```yaml
 Type: String
 Parameter Sets: ByPath
-Aliases:
+Aliases: Path
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -272,23 +255,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WhatIf
-
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Width
 Specifies the number of characters in each line of output.
 Any additional characters are truncated, not wrapped.
@@ -307,12 +273,40 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

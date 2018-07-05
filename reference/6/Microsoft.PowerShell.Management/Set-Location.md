@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821632
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Set-Location
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821632
+schema: 2.0.0
+title: Set-Location
 ---
 
 # Set-Location
@@ -17,17 +18,17 @@ Sets the current working location to a specified location.
 
 ### Path (Default)
 ```
-Set-Location [[-Path] <String>] [-PassThru] [-UseTransaction] [<CommonParameters>]
+Set-Location [[-Path] <String>] [-PassThru] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Set-Location -LiteralPath <String> [-PassThru] [-UseTransaction] [<CommonParameters>]
+Set-Location -LiteralPath <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### Stack
 ```
-Set-Location [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParameters>]
+Set-Location [-PassThru] [-StackName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,7 +125,7 @@ Parameter Sets: Path
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -146,25 +147,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822343
-external help file:  PSModule-help.xml
-title:  Update-ScriptFileInfo
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822343
+schema: 2.0.0
+title: Update-ScriptFileInfo
 ---
 
 # Update-ScriptFileInfo
@@ -17,20 +18,22 @@ Updates information for a script.
 
 ### PathParameterSet (Default)
 ```
-Update-ScriptFileInfo [-Path] <String> [-Version <Version>] [-Author <String>] [-Guid <Guid>]
+Update-ScriptFileInfo [-Path] <String> [-Version <String>] [-Author <String>] [-Guid <Guid>]
  [-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-RequiredModules <Object[]>]
  [-ExternalModuleDependencies <String[]>] [-RequiredScripts <String[]>]
  [-ExternalScriptDependencies <String[]>] [-Tags <String[]>] [-ProjectUri <Uri>] [-LicenseUri <Uri>]
- [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### LiteralPathParameterSet
 ```
-Update-ScriptFileInfo [-LiteralPath] <String> [-Version <Version>] [-Author <String>] [-Guid <Guid>]
+Update-ScriptFileInfo [-LiteralPath] <String> [-Version <String>] [-Author <String>] [-Guid <Guid>]
  [-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-RequiredModules <Object[]>]
  [-ExternalModuleDependencies <String[]>] [-RequiredScripts <String[]>]
  [-ExternalScriptDependencies <String[]>] [-Tags <String[]>] [-ProjectUri <Uri>] [-LicenseUri <Uri>]
- [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -242,7 +245,7 @@ Parameter Sets: LiteralPathParameterSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -275,9 +278,24 @@ Parameter Sets: PathParameterSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PrivateData
+{{Fill PrivateData Description}}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -361,7 +379,7 @@ Accept wildcard characters: False
 Specifies the version of the script.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 

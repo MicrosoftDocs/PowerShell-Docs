@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821871
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Update-TypeData
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821871
+schema: 2.0.0
+title: Update-TypeData
 ---
 
 # Update-TypeData
@@ -27,14 +28,12 @@ Update-TypeData [-MemberType <PSMemberTypes>] [-MemberName <String>] [-Value <Ob
  [-TargetTypeForDeserialization <Type>] [-SerializationDepth <Int32>] [-DefaultDisplayProperty <String>]
  [-InheritPropertySerializationSet <Boolean>] [-StringSerializationSource <String>]
  [-DefaultDisplayPropertySet <String[]>] [-DefaultKeyPropertySet <String[]>]
- [-PropertySerializationSet <String[]>] -TypeName <String> [-Force]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PropertySerializationSet <String[]>] -TypeName <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### TypeDataSet
 ```
-Update-TypeData [-Force] [-TypeData] <TypeData[]> [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-TypeData [-Force] [-TypeData] <TypeData[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -170,25 +169,9 @@ Parameter Sets: FileSet
 Aliases: PSPath, Path
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -PrependPath
-Specifies the path to the optional .ps1xml files.
-The specified files are loaded in the order that they are listed before the built-in files are loaded.
-
-```yaml
-Type: String[]
-Parameter Sets: FileSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -344,7 +327,23 @@ This parameter was introduced in Windows PowerShell 3.0.
 Type: PSMemberTypes
 Parameter Sets: DynamicTypeSet
 Aliases:
-Accepted values: AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods, ParameterizedProperty, MemberSet, Event, Dynamic, All
+Accepted values: NoteProperty, AliasProperty, ScriptProperty, CodeProperty, ScriptMethod, CodeMethod
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PrependPath
+Specifies the path to the optional .ps1xml files.
+The specified files are loaded in the order that they are listed before the built-in files are loaded.
+
+```yaml
+Type: String[]
+Parameter Sets: FileSet
+Aliases:
 
 Required: False
 Position: Named
@@ -534,7 +533,7 @@ Parameter Sets: TypeDataSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

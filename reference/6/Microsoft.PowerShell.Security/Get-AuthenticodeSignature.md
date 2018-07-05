@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821711
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Get-AuthenticodeSignature
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821711
+schema: 2.0.0
+title: Get-AuthenticodeSignature
 ---
 
 # Get-AuthenticodeSignature
@@ -69,6 +70,20 @@ The results of the **Get-AuthenticodeSignature** command are sent to a Where-Obj
 
 ## PARAMETERS
 
+### -Content
+
+```yaml
+Type: Byte[]
+Parameter Sets: ByContent
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -FilePath
 Specifies the path to the file to examine.
 Wildcards are permitted, but they must lead to a single file.
@@ -105,23 +120,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Content
-
-
-```yaml
-Type: Byte[]
-Parameter Sets: ByContent
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -SourcePathOrExtension
-
 
 ```yaml
 Type: String[]

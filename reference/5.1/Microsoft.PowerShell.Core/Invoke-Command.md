@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821493
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Invoke-Command
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821493
+schema: 2.0.0
+title: Invoke-Command
 ---
 
 # Invoke-Command
@@ -21,17 +22,17 @@ Invoke-Command [-ScriptBlock] <ScriptBlock> [-NoNewScope] [-InputObject <PSObjec
  [<CommonParameters>]
 ```
 
-### Session
-```
-Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- [<CommonParameters>]
-```
-
 ### FilePathRunspace
 ```
 Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
  [-JobName <String>] [-FilePath] <String> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
+ [<CommonParameters>]
+```
+
+### Session
+```
+Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
+ [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
  [<CommonParameters>]
 ```
 
@@ -401,7 +402,7 @@ As a result, if the remote computer specified by *ConnectionURI* returns a redir
 
 ### Example 14: Use a session option
 ```
-PS C:\> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck –SkipRevocationCheck
+PS C:\> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 PS C:\> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
 ```
 
@@ -553,7 +554,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
 Aliases:
 
 Required: False
@@ -814,7 +815,7 @@ It does not change the object.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
 Aliases: HCN
 
 Required: False
@@ -888,7 +889,7 @@ For more information about Windows PowerShell background jobs, see [about_Jobs](
 
 ```yaml
 Type: String
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, ContainerId, FilePathContainerId
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, ContainerId, FilePathContainerId
 Aliases:
 
 Required: False
@@ -992,7 +993,7 @@ For more information, see about_PSSessions.
 
 ```yaml
 Type: PSSession[]
-Parameter Sets: Session, FilePathRunspace
+Parameter Sets: FilePathRunspace, Session
 Aliases:
 
 Required: False
@@ -1055,7 +1056,7 @@ The throttle limit applies only to the current command, not to the session or to
 
 ```yaml
 Type: Int32
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
 Aliases:
 
 Required: False

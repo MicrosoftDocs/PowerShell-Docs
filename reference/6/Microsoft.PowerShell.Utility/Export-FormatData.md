@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821770
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Export-FormatData
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821770
+schema: 2.0.0
+title: Export-FormatData
 ---
 
 # Export-FormatData
@@ -142,6 +143,25 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -LiteralPath
+Specifies a location for the output file.
+Unlike the *Path* parameter, the value of *LiteralPath* is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String
+Parameter Sets: ByLiteralPath
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -NoClobber
 Indicates that the cmdlet does not overwrite existing files.
 By default, **Export-FormatData** overwrites files without warning unless the file has the read-only attribute.
@@ -175,25 +195,6 @@ To prevent files from being overwritten, use the *NoClobber* parameter.
 Type: String
 Parameter Sets: ByPath
 Aliases: FilePath
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-Specifies a location for the output file.
-Unlike the *Path* parameter, the value of *LiteralPath* is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String
-Parameter Sets: ByLiteralPath
-Aliases: PSPath
 
 Required: True
 Position: Named

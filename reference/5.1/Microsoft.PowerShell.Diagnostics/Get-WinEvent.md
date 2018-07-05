@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821529
-external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-title:  Get-WinEvent
+external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Diagnostics
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821529
+schema: 2.0.0
+title: Get-WinEvent
 ---
 
 # Get-WinEvent
@@ -395,23 +396,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FilterXPath
-Specifies an XPath query that this cmdlet select events from one or more logs.
-
-For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
-
-```yaml
-Type: String
-Parameter Sets: GetLogSet, GetProviderSet, FileSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -FilterXml
 Specifies a structured XML query that this cmdlet selects events from one or more event logs.
 
@@ -431,6 +415,23 @@ Aliases:
 
 Required: True
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilterXPath
+Specifies an XPath query that this cmdlet select events from one or more logs.
+
+For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.
+
+```yaml
+Type: String
+Parameter Sets: GetLogSet, GetProviderSet, FileSet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

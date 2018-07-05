@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821637
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Split-Path
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821637
+schema: 2.0.0
+title: Split-Path
 ---
 
 # Split-Path
@@ -17,50 +18,42 @@ Returns the specified part of a path.
 
 ### ParentSet (Default)
 ```
-Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>]
- [-UseTransaction] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### ExtensionSet
 ```
-Split-Path [-Path] <String[]> [-Extension] [-Resolve] [-Credential <PSCredential>]
- [<CommonParameters>]
-```
-
-### LeafBaseSet
-```
-Split-Path [-Path] <String[]> [-LeafBase] [-Resolve] [-Credential <PSCredential>]
- [<CommonParameters>]
+Split-Path [-Path] <String[]> [-Extension] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### LeafSet
 ```
-Split-Path [-Path] <String[]> [-Leaf] [-Resolve] [-Credential <PSCredential>]
- [-UseTransaction] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-Leaf] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+```
+
+### LeafBaseSet
+```
+Split-Path [-Path] <String[]> [-LeafBase] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### QualifierSet
 ```
-Split-Path [-Path] <String[]> [-Qualifier] [-Resolve] [-Credential <PSCredential>]
- [-UseTransaction] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-Qualifier] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### NoQualifierSet
 ```
-Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>]
- [-UseTransaction] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### IsAbsoluteSet
 ```
-Split-Path [-Path] <String[]> [-Resolve] [-IsAbsolute] [-Credential <PSCredential>]
- [-UseTransaction] [<CommonParameters>]
+Split-Path [-Path] <String[]> [-Resolve] [-IsAbsolute] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### LiteralPathSet
 ```
-Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>]
- [-UseTransaction] [<CommonParameters>]
+Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -285,11 +278,11 @@ You can also pipe a path to this cmdlet.
 
 ```yaml
 Type: String[]
-Parameter Sets: ParentSet, LeafSet, QualifierSet, NoQualifierSet, IsAbsoluteSet
+Parameter Sets: ParentSet, ExtensionSet, LeafSet, LeafBaseSet, QualifierSet, NoQualifierSet, IsAbsoluteSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -305,7 +298,7 @@ Parameter Sets: QualifierSet
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -322,25 +315,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

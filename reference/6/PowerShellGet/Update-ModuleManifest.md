@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822341
-external help file:  PSModule-help.xml
-title:  Update-ModuleManifest
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822341
+schema: 2.0.0
+title: Update-ModuleManifest
 ---
 
 # Update-ModuleManifest
@@ -15,7 +16,7 @@ Updates a module manifest file.
 
 ## SYNTAX
 
-```powershell
+```
 Update-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>] [-Author <String>]
  [-CompanyName <String>] [-Copyright <String>] [-RootModule <String>] [-ModuleVersion <Version>]
  [-Description <String>] [-ProcessorArchitecture <ProcessorArchitecture>] [-CompatiblePSEditions <String[]>]
@@ -25,9 +26,9 @@ Update-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>
  [-RequiredAssemblies <String[]>] [-FileList <String[]>] [-ModuleList <Object[]>]
  [-FunctionsToExport <String[]>] [-AliasesToExport <String[]>] [-VariablesToExport <String[]>]
  [-CmdletsToExport <String[]>] [-DscResourcesToExport <String[]>] [-PrivateData <Hashtable>] [-Tags <String[]>]
- [-ProjectUri <Uri>] [-LicenseUri <Uri>] [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-HelpInfoUri <Uri>]
- [-PassThru] [-DefaultCommandPrefix <String>] [-ExternalModuleDependencies <String[]>]
- [-PackageManagementProviders <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ProjectUri <Uri>] [-LicenseUri <Uri>] [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-Prerelease <String>]
+ [-HelpInfoUri <Uri>] [-PassThru] [-DefaultCommandPrefix <String>] [-ExternalModuleDependencies <String[]>]
+ [-PackageManagementProviders <String[]>] [-RequireLicenseAcceptance] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -119,6 +120,23 @@ Specifies the company or vendor who created the module.
 Type: String
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CompatiblePSEditions
+Specifies the compatible PSEditions of the module.
+For information about PSEdition, see [Modules with compatible PowerShell Editions](https://docs.microsoft.com/powershell/gallery/psget/module/modulewithpseditionsupport).
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+Accepted values: Desktop, Core
 
 Required: False
 Position: Named
@@ -443,7 +461,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -490,6 +508,21 @@ For example, you can specify 3.0, 4.0, or 5.0 as the value of this parameter.
 
 ```yaml
 Type: Version
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Prerelease
+{{Fill Prerelease Description}}
+
+```yaml
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -595,6 +628,21 @@ If the required modules are not available, the `Import-Module` command fails.
 
 ```yaml
 Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RequireLicenseAcceptance
+{{Fill RequireLicenseAcceptance Description}}
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -730,23 +778,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CompatiblePSEditions
-Specifies the compatible PSEditions of the module.
-For information about PSEdition, see [Modules with compatible PowerShell Editions](https://docs.microsoft.com/powershell/gallery/psget/module/modulewithpseditionsupport).
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-Accepted values: Desktop, Core
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -755,5 +786,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

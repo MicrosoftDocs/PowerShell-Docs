@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821587
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-Item
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821587
+schema: 2.0.0
+title: Get-Item
 ---
 
 # Get-Item
@@ -18,13 +19,13 @@ Gets the item at the specified location.
 ### Path (Default)
 ```
 Get-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+ [-Credential <PSCredential>] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
 Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+ [-Credential <PSCredential>] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,21 +114,6 @@ This command gets items in the Windows directory with names that include a dot (
 This command works only when the path includes a wildcard character (*) to specify the contents of the item.
 
 ## PARAMETERS
-
-### -Stream
-This parameter is not supported by any providers installed with Windows PowerShell.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Credential
 Specifies a user account that has permission to perform this action.
@@ -260,27 +246,23 @@ Parameter Sets: Path
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
+### -Stream
+This parameter is not supported by any providers installed with Windows PowerShell.
 
 ```yaml
-Type: SwitchParameter
+Type: String[]
 Parameter Sets: (All)
-Aliases: usetx
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

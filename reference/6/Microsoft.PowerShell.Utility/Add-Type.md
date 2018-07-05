@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821749
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Add-Type
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821749
+schema: 2.0.0
+title: Add-Type
 ---
 
 # Add-Type
@@ -17,38 +18,33 @@ Adds a Microsoft .NET Framework type (a class) to a Windows PowerShell session.
 
 ### FromSource (Default)
 ```
-Add-Type [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>]
- [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
+Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
  [<CommonParameters>]
 ```
 
 ### FromMember
 ```
-Add-Type [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerParameters>] [-Name] <String>
- [-MemberDefinition] <String[]> [-Namespace <String>] [-UsingNamespace <String[]>] [-Language <Language>]
- [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru]
- [-IgnoreWarnings] [<CommonParameters>]
-```
-
-### FromLiteralPath
-```
-Add-Type [-CompilerParameters <CompilerParameters>] -LiteralPath <String[]> [-ReferencedAssemblies <String[]>]
- [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [<CommonParameters>]
+Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>] [-UsingNamespace <String[]>]
+ [-Language <Language>] [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ### FromPath
 ```
-Add-Type [-CompilerParameters <CompilerParameters>] [-Path] <String[]> [-ReferencedAssemblies <String[]>]
- [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [<CommonParameters>]
+Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
+```
+
+### FromLiteralPath
+```
+Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ### FromAssemblyName
 ```
-Add-Type -AssemblyName <String[]> [-PassThru] [-IgnoreWarnings] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [<CommonParameters>]
+Add-Type -AssemblyName <String[]> [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -286,46 +282,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CodeDomProvider
-Specifies a code generator or compiler.
-**Add-Type** uses the specified compiler to compile the source code.
-The default is the C# compiler.
-Use this parameter if you are using a language that cannot be specified by using the *Language* parameter.
-The *CodeDomProvider* that you specify must be able to generate assemblies from source code.
-
-```yaml
-Type: CodeDomProvider
-Parameter Sets: FromSource, FromMember
-Aliases: Provider
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CompilerParameters
-Specifies the options for the source code compiler.
-These options are sent to the compiler without revision.
-
-This parameter allows you to direct the compiler to generate an executable file, embed resources, or set command-line options, such as the "/unsafe" option.
-This parameter implements the **CompilerParameters** class (System.CodeDom.Compiler.CompilerParameters).
-
-You cannot use the *CompilerParameters* and *ReferencedAssemblies* parameters in the same command.
-
-```yaml
-Type: CompilerParameters
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
-Aliases: CP
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -IgnoreWarnings
 Ignores compiler warnings.
 Use this parameter to prevent **Add-Type** from handling compiler warnings as errors.
@@ -359,7 +315,7 @@ CSharp is the default value.
 Type: Language
 Parameter Sets: FromSource, FromMember
 Aliases:
-Accepted values: CSharp, CSharpVersion2, CSharpVersion3, JScript, VisualBasic
+Accepted values: CSharp, CSharpVersion7, CSharpVersion6, CSharpVersion5, CSharpVersion4, CSharpVersion3, CSharpVersion2, CSharpVersion1, VisualBasic, JScript
 
 Required: False
 Position: Named
@@ -400,7 +356,7 @@ Parameter Sets: FromMember
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -421,7 +377,7 @@ Parameter Sets: FromMember
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -453,7 +409,7 @@ By default, **Add-Type** generates the assembly only in memory.
 
 ```yaml
 Type: String
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OA
 
 Required: False
@@ -479,9 +435,9 @@ This parameter is valid only when an output assembly is specified in the command
 
 ```yaml
 Type: OutputAssemblyType
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OT
-Accepted values: ConsoleApplication, Library, WindowsApplication
+Accepted values: Library, ConsoleApplication, WindowsApplication
 
 Required: False
 Position: Named
@@ -521,7 +477,7 @@ Parameter Sets: FromPath
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -536,7 +492,7 @@ You cannot use the *CompilerParameters* and *ReferencedAssemblies* parameters in
 
 ```yaml
 Type: String[]
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: RA
 
 Required: False
@@ -561,7 +517,7 @@ Parameter Sets: FromSource
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821749
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Add-Type
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821749
+schema: 2.0.0
+title: Add-Type
 ---
 
 # Add-Type
@@ -31,16 +32,16 @@ Add-Type [-CodeDomProvider <CodeDomProvider>] [-CompilerParameters <CompilerPara
  [-IgnoreWarnings] [<CommonParameters>]
 ```
 
-### FromLiteralPath
+### FromPath
 ```
-Add-Type [-CompilerParameters <CompilerParameters>] -LiteralPath <String[]> [-ReferencedAssemblies <String[]>]
+Add-Type [-CompilerParameters <CompilerParameters>] [-Path] <String[]> [-ReferencedAssemblies <String[]>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
  [<CommonParameters>]
 ```
 
-### FromPath
+### FromLiteralPath
 ```
-Add-Type [-CompilerParameters <CompilerParameters>] [-Path] <String[]> [-ReferencedAssemblies <String[]>]
+Add-Type [-CompilerParameters <CompilerParameters>] -LiteralPath <String[]> [-ReferencedAssemblies <String[]>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
  [<CommonParameters>]
 ```
@@ -315,7 +316,7 @@ You cannot use the *CompilerParameters* and *ReferencedAssemblies* parameters in
 
 ```yaml
 Type: CompilerParameters
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: CP
 
 Required: False
@@ -452,7 +453,7 @@ By default, **Add-Type** generates the assembly only in memory.
 
 ```yaml
 Type: String
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OA
 
 Required: False
@@ -478,7 +479,7 @@ This parameter is valid only when an output assembly is specified in the command
 
 ```yaml
 Type: OutputAssemblyType
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OT
 Accepted values: Library, ConsoleApplication, WindowsApplication
 
@@ -535,7 +536,7 @@ You cannot use the *CompilerParameters* and *ReferencedAssemblies* parameters in
 
 ```yaml
 Type: String[]
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: RA
 
 Required: False

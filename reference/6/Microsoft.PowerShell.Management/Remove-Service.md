@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821608
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Remove-Service
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821608
+schema: 2.0.0
+title: Remove-Service
 ---
 
 # Remove-Service
@@ -15,13 +16,14 @@ Removes a Windows service.
 
 ## SYNTAX
 
-### Name
+### Name (Default)
 ```
 Remove-Service [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-### InputObject (Default)
+
+### InputObject
 ```
-Remove-Service [-InputObject] <ServiceController[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Service [-InputObject <ServiceController>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,12 +54,12 @@ Specifies **ServiceController** objects that represent the services to stop.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
 ```yaml
-Type: ServiceController[]
+Type: ServiceController
 Parameter Sets: InputObject
 Aliases:
 
-Required: True
-Position: 1
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -68,16 +70,17 @@ Specifies the service names of the services to stop.
 Wildcard characters are permitted.
 
 ```yaml
-Type: String[]
-Parameter Sets: Default
-Aliases: ServiceName
+Type: String
+Parameter Sets: Name
+Aliases: ServiceName, SN
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 

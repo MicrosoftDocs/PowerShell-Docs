@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821852
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Select-Object
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821852
+schema: 2.0.0
+title: Select-Object
 ---
+
 # Select-Object
 
 ## SYNOPSIS
@@ -16,26 +18,21 @@ Selects objects or object properties.
 ## SYNTAX
 
 ### DefaultParameter (Default)
-
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <PSObject>]
- [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique]
- [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
+ [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
+ [<CommonParameters>]
 ```
 
 ### SkipLastParameter
-
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <PSObject>]
- [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique]
- [-SkipLast <Int32>] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
+ [-ExpandProperty <String>] [-Unique] [-SkipLast <Int32>] [<CommonParameters>]
 ```
 
 ### IndexParameter
-
 ```
-Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>]
- [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -219,7 +216,7 @@ $object | Select-Object -ExpandProperty Expand -Property Name | Get-Member
 ```
 
 ```output
-   TypeName: System.Int32
+TypeName: System.Int32
 
 Name        MemberType   Definition
 ----        ----------   ----------
@@ -269,7 +266,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -ExpandProperty
@@ -298,6 +295,23 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -First
+
+Gets only the specified number of objects.
+Enter the number of objects to get.
+
+```yaml
+Type: Int32
+Parameter Sets: DefaultParameter
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -378,7 +392,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Skip
@@ -387,6 +401,21 @@ Skips (does not select) the specified number of items.
 By default, the Skip parameter counts from the beginning of the array or list of objects, but if the command uses the Last parameter, it counts from the end of the list or array.
 
 Unlike the **Index** parameter, which starts counting at 0, the **Skip** parameter begins at 1.
+
+```yaml
+Type: Int32
+Parameter Sets: DefaultParameter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipLast
+{{Fill SkipLast Description}}
 
 ```yaml
 Type: Int32
@@ -439,43 +468,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -First
-
-Gets only the specified number of objects.
-Enter the number of objects to get.
-
-```yaml
-Type: Int32
-Parameter Sets: DefaultParameter
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-
-Ignores the specified number of objects and then gets the remaining objects.
-Enter the number of objects to skip.
-
-```yaml
-Type: Int32
-Parameter Sets: DefaultParameter
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

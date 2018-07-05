@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821748
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Add-Member
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821748
+schema: 2.0.0
+title: Add-Member
 ---
 
 # Add-Member
@@ -16,31 +17,26 @@ Adds custom properties and methods to an instance of a Windows PowerShell object
 ## SYNTAX
 
 ### TypeNameSet (Default)
-```powershell
-Add-Member -InputObject <PSObject> -TypeName <String> [-PassThru]
- [<CommonParameters>]
 ```
-
-### MemberSet
-```powershell
-Add-Member [-MemberType] <PSMemberTypes> [-Name] <String>
- [[-Value] <Object>] [[-SecondValue] <Object>]
- -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
- [<CommonParameters>]
-```
-
-### NotePropertySingleMemberSet
-```powershell
-Add-Member [-NotePropertyName] <String> [-NotePropertyValue] <Object>
- -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
- [<CommonParameters>]
+Add-Member -InputObject <PSObject> -TypeName <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### NotePropertyMultiMemberSet
-```powershell
-Add-Member [-NotePropertyMembers] <IDictionary>
- -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
- [<CommonParameters>]
+```
+Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
+ [-NotePropertyMembers] <IDictionary> [<CommonParameters>]
+```
+
+### NotePropertySingleMemberSet
+```
+Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru] [-NotePropertyName] <String>
+ [-NotePropertyValue] <Object> [<CommonParameters>]
+```
+
+### MemberSet
+```
+Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String> [[-Value] <Object>]
+ [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -244,7 +240,7 @@ You cannot use the *Force* parameter to replace a standard member of a type.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: MemberSet, NotePropertySingleMemberSet, NotePropertyMultiMemberSet
+Parameter Sets: NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet
 Aliases:
 
 Required: False
@@ -315,67 +311,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns an object representing the item with which you are working.
-By default, this cmdlet does not generate any output.
-
-For most objects, **Add-Member** adds the new members to the input object.
-However, when the input object is a string, **Add-Member** cannot add the member to the input object.
-For these objects, use the *PassThru* parameter to create an output object.
-
-In Windows PowerShell 2.0, **Add-Member** added members only to the PSObject wrapper of objects, not to the object.
-Use the *PassThru* parameter to create an output object for any object that has a PSObject wrapper.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SecondValue
-Specifies optional additional information about **AliasProperty**, **ScriptProperty**, **CodeProperty**, or **CodeMethod** members.
-If used when adding an AliasProperty, this parameter must be a data type.
-A conversion to the specified data type is added to the value of the AliasProperty.
-For example, if you add an AliasProperty that provides an alternate name for a string property, you can also specify a *SecondValue* parameter of System.Int32 to indicate that the value of that string property should be converted to an integer when accessed by using the corresponding AliasProperty.
-
-You can use the *SecondValue* parameter to specify an additional ScriptBlock when adding a *ScriptProperty* member.
-In that case, the first ScriptBlock, specified in the Value parameter, is used to get the value of a variable.
-The second ScriptBlock, specified in the *SecondValue* parameter, is used to set the value of a variable.
-
-```yaml
-Type: Object
-Parameter Sets: MemberSet
-Aliases:
-
-Required: False
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Value
-Specifies the initial value of the added member.
-If you add an **AliasProperty**, **CodeProperty**, **ScriptProperty** or **CodeMethod** member, you can supply optional, additional information by using the SecondValue parameter.
-
-```yaml
-Type: Object
-Parameter Sets: MemberSet
-Aliases:
-
-Required: False
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -NotePropertyMembers
 Specifies a hash table or ordered dictionary of note property names and values.
 Type a hash table or dictionary in which the keys are note property names and the values are note property values.
@@ -436,6 +371,51 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PassThru
+Returns an object representing the item with which you are working.
+By default, this cmdlet does not generate any output.
+
+For most objects, **Add-Member** adds the new members to the input object.
+However, when the input object is a string, **Add-Member** cannot add the member to the input object.
+For these objects, use the *PassThru* parameter to create an output object.
+
+In Windows PowerShell 2.0, **Add-Member** added members only to the PSObject wrapper of objects, not to the object.
+Use the *PassThru* parameter to create an output object for any object that has a PSObject wrapper.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SecondValue
+Specifies optional additional information about **AliasProperty**, **ScriptProperty**, **CodeProperty**, or **CodeMethod** members.
+If used when adding an AliasProperty, this parameter must be a data type.
+A conversion to the specified data type is added to the value of the AliasProperty.
+For example, if you add an AliasProperty that provides an alternate name for a string property, you can also specify a *SecondValue* parameter of System.Int32 to indicate that the value of that string property should be converted to an integer when accessed by using the corresponding AliasProperty.
+
+You can use the *SecondValue* parameter to specify an additional ScriptBlock when adding a *ScriptProperty* member.
+In that case, the first ScriptBlock, specified in the Value parameter, is used to get the value of a variable.
+The second ScriptBlock, specified in the *SecondValue* parameter, is used to set the value of a variable.
+
+```yaml
+Type: Object
+Parameter Sets: MemberSet
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TypeName
 Specifies a name for the type.
 
@@ -459,11 +439,27 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: MemberSet, NotePropertySingleMemberSet, NotePropertyMultiMemberSet
+Parameter Sets: NotePropertyMultiMemberSet, NotePropertySingleMemberSet, MemberSet
 Aliases:
 
 Required: False
 Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Value
+Specifies the initial value of the added member.
+If you add an **AliasProperty**, **CodeProperty**, **ScriptProperty** or **CodeMethod** member, you can supply optional, additional information by using the SecondValue parameter.
+
+```yaml
+Type: Object
+Parameter Sets: MemberSet
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

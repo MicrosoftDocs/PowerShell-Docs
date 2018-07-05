@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517132
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Find-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517132
+schema: 2.0.0
+title: Find-Package
 ---
+
 # Find-Package
 
 ## SYNOPSIS
@@ -16,7 +18,6 @@ Finds software packages in available package sources.
 ## SYNTAX
 
 ### NuGet
-
 ```
 Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Credential <PSCredential>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String[]>] [-RequiredVersion <String>]
@@ -26,14 +27,14 @@ Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Creden
 ```
 
 ### PowerShellGet
-
 ```
 Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Credential <PSCredential>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String[]>] [-RequiredVersion <String>]
  [-MinimumVersion <String>] [-MaximumVersion <String>] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,6 +97,37 @@ This command finds a matching range of versions of a package named DSCAccelerato
 
 ## PARAMETERS
 
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowPrereleaseVersions
+
+{{Fill AllowPrereleaseVersions Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllVersions
 
 Indicates that **Find-Package** returns all available versions of the package.
@@ -120,6 +152,38 @@ Specifies an array of commands for which this cmdlet searches.
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConfigFile
+
+{{Fill ConfigFile Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Contains
+
+{{Fill Contains Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet
 Aliases:
 
 Required: False
@@ -177,6 +241,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FilterOnTag
+
+{{Fill FilterOnTag Description}}
+
+```yaml
+Type: String[]
+Parameter Sets: NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 
 Forces the command to run without asking for user confirmation.
@@ -200,6 +280,22 @@ Indicates that this cmdlet forces Package Management to automatically install th
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Headers
+
+{{Fill Headers Description}}
+
+```yaml
+Type: String[]
+Parameter Sets: NuGet
 Aliases:
 
 Required: False
@@ -239,7 +335,7 @@ The acceptable values for this parameter are:
 Type: String[]
 Parameter Sets: PowerShellGet
 Aliases:
-Accepted values: DscResource, Cmdlet, Function, Workflow
+Accepted values: DscResource, Cmdlet, Function, Workflow, RoleCapability
 
 Required: False
 Position: Named
@@ -293,7 +389,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -324,12 +420,40 @@ Separate multiple package provider names with commas.
 Type: String[]
 Parameter Sets: (All)
 Aliases: Provider
-Accepted values: Programs, msi, msu, PowerShellGet, nuget, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Proxy
+
+```yaml
+Type: Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProxyCredential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -366,6 +490,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RoleCapability
+
+```yaml
+Type: String[]
+Parameter Sets: PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ScriptPublishLocation
 
 Specifies a script publishing location for the package.
@@ -389,6 +527,22 @@ Specifies a script source location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipValidate
+
+{{Fill SkipValidate Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet
 Aliases:
 
 Required: False
@@ -448,146 +602,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AllowPrereleaseVersions
-
-{{Fill AllowPrereleaseVersions Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConfigFile
-
-{{Fill ConfigFile Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Contains
-
-{{Fill Contains Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FilterOnTag
-
-{{Fill FilterOnTag Description}}
-
-```yaml
-Type: String[]
-Parameter Sets: NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-
-{{Fill Headers Description}}
-
-```yaml
-Type: String[]
-Parameter Sets: NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Proxy
-
-```yaml
-Type: Uri
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProxyCredential
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RoleCapability
-
-```yaml
-Type: String[]
-Parameter Sets: PowerShellGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipValidate
-
-{{Fill SkipValidate Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

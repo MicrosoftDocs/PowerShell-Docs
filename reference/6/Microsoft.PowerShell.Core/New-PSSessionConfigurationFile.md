@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821499
-external help file:  System.Management.Automation.dll-Help.xml
-title:  New-PSSessionConfigurationFile
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821499
+schema: 2.0.0
+title: New-PSSessionConfigurationFile
 ---
 
 # New-PSSessionConfigurationFile
@@ -430,6 +431,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Full
+Indicates that this operation includes all possible configuration properties in the session configuration file.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -FunctionDefinitions
 Adds the specified functions to sessions that use the session configuration.
 Enter a hash table with the following keys:
@@ -451,6 +467,23 @@ For example: `@{Name="Get-PowerShellProcess";ScriptBlock={Get-Process PowerShell
 
 ```yaml
 Type: IDictionary[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GroupManagedServiceAccount
+Configures sessions using this session configuration to run under the context of the specified Group Managed Service Account.
+The machine where this session configuration is registered must have permission to request the gMSA password in order for sessions to be created successfully.
+This field cannot be used in conjunction with the `-RunAsVirtualAccount` parameter.
+
+```yaml
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -543,6 +576,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MountUserDrive
+Configures sessions that use this session configuration to expose the "User:" PSDrive.
+User drives are unique for each connecting user and allow users to copy data to/from PowerShell endpoints even if the File System provider is not exposed.
+User drive roots are created under `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`.
+
+Contents in the user drive persist across user sessions and are not automatically removed.
+By default, users can only store up to 50MB of data in the user drive.
+This can be customized with the `-UserDriveMaximumSize` parameter.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Path
 Specifies the path and file name of the session configuration file.
 The file must have a .pssc file name extension.
@@ -568,254 +622,6 @@ The value of the *PSVersion* parameter of the Register-PSSessionConfiguration cm
 
 ```yaml
 Type: Version
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SchemaVersion
-Specifies the version of the session configuration file schema.
-The default value is "1.0.0.0".
-
-```yaml
-Type: Version
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ScriptsToProcess
-Adds the specified scripts to sessions that use the session configuration.
-Enter the path and file names of the scripts.
-The value of this parameter must be a full or absolute path of script file names.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SessionType
-Specifies the type of session that is created by using the session configuration.
-The default value is Default.
-The acceptable values for this parameter are:
-
-- Empty.
-No modules or snap-ins are added to session by default.
-Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.
-This option is designed for you to create custom sessions by adding selected command.
-If you do not add commands to an empty session, the session is limited to expressions and might not be usable.
-- Default.
-Adds the Microsoft.PowerShell.Core snap-in to the session.
-This snap-in includes the Import-Module and Add-PSSnapin cmdlets that users can use to import other modules and snap-ins unless you explicitly prohibit the use of the cmdlets.
-- RestrictedRemoteServer.
-Includes only the following proxy functions:  Exit-PSSession, Get-Command, Get-FormatData, Get-Help, Measure-Object, Out-Default, and Select-Object.
-Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.
-
-```yaml
-Type: SessionType
-Parameter Sets: (All)
-Aliases:
-Accepted values: Empty, RestrictedRemoteServer, Default
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TypesToProcess
-Adds the specified type files (.ps1xml) to sessions that use the session configuration.
-Enter the type file names.
-The value of this parameter must be a full or absolute path of type file names.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VariableDefinitions
-Adds the specified variables to sessions that use the session configuration.
-Enter a hash table with the following keys:
-
-- Name.
-Name of the variable.
-This key is required.
-- Value.
-Variable value.
-This key is required.
-- Options.
-Variable options.
-This key is optional.
-The default value is None.
-The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
-
-For example: `@{Name="WarningPreference";Value="SilentlyContinue";Options="AllScope"}`
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VisibleAliases
-Limits the aliases in the session to those specified in the value of this parameter, plus any aliases that you define in the *AliasDefinition* parameter.
-Wildcard characters are supported.
-By default, all aliases that are defined by the Windows PowerShell engine and all aliases that modules export are visible in the session.
-
-For example: `VisibleAliases="gcm", "gp"`
-
-When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VisibleCmdlets
-Limits the cmdlets in the session to those specified in the value of this parameter.
-Wildcard characters and Module Qualified Names are supported.
-
-By default, all cmdlets that modules in the session export are visible in the session.
-Use the *SessionType* and *ModulesToImport* parameters to determine which modules and snap-ins are imported into the session.
-If no modules in *ModulesToImport* expose the cmdlet, the appropriate module will attempt to be autoloaded.
-
-When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its ipmo alias from the session.
-
-```yaml
-Type: Object[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VisibleFunctions
-Limits the functions in the session to those specified in the value of this parameter, plus any functions that you define in the *FunctionDefinition* parameter.
-Wildcard characters are supported.
-
-By default, all functions that modules in the session export are visible in the session.
-Use the *SessionType* and *ModulesToImport* parameters to determine which modules and snap-ins are imported into the session.
-
-When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
-
-```yaml
-Type: Object[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VisibleProviders
-Limits the Windows PowerShell providers in the session to those specified in the value of this parameter.
-Wildcard characters are supported.
-
-By default, all providers that modules in the session export are visible in the session.
-Use the *SessionType* and *ModulesToImport* parameters to determine which modules and snap-ins are imported into the session.
-
-When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Full
-Indicates that this operation includes all possible configuration properties in the session configuration file.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupManagedServiceAccount
-Configures sessions using this session configuration to run under the context of the specified Group Managed Service Account.
-The machine where this session configuration is registered must have permission to request the gMSA password in order for sessions to be created successfully.
-This field cannot be used in conjunction with the `-RunAsVirtualAccount` parameter.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MountUserDrive
-Configures sessions that use this session configuration to expose the "User:" PSDrive.
-User drives are unique for each connecting user and allow users to copy data to/from PowerShell endpoints even if the File System provider is not exposed.
-User drive roots are created under `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`.
-
-Contents in the user drive persist across user sessions and are not automatically removed.
-By default, users can only store up to 50MB of data in the user drive.
-This can be customized with the `-UserDriveMaximumSize` parameter.
-
-```yaml
-Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -899,11 +705,91 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SchemaVersion
+Specifies the version of the session configuration file schema.
+The default value is "1.0.0.0".
+
+```yaml
+Type: Version
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScriptsToProcess
+Adds the specified scripts to sessions that use the session configuration.
+Enter the path and file names of the scripts.
+The value of this parameter must be a full or absolute path of script file names.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SessionType
+Specifies the type of session that is created by using the session configuration.
+The default value is Default.
+The acceptable values for this parameter are:
+
+- Empty.
+No modules or snap-ins are added to session by default.
+Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.
+This option is designed for you to create custom sessions by adding selected command.
+If you do not add commands to an empty session, the session is limited to expressions and might not be usable.
+- Default.
+Adds the Microsoft.PowerShell.Core snap-in to the session.
+This snap-in includes the Import-Module and Add-PSSnapin cmdlets that users can use to import other modules and snap-ins unless you explicitly prohibit the use of the cmdlets.
+- RestrictedRemoteServer.
+Includes only the following proxy functions:  Exit-PSSession, Get-Command, Get-FormatData, Get-Help, Measure-Object, Out-Default, and Select-Object.
+Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.
+
+```yaml
+Type: SessionType
+Parameter Sets: (All)
+Aliases:
+Accepted values: Empty, RestrictedRemoteServer, Default
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TranscriptDirectory
 Specifies the directory to place session transcripts for sessions using this session configuration.
 
 ```yaml
 Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TypesToProcess
+Adds the specified type files (.ps1xml) to sessions that use the session configuration.
+Enter the type file names.
+The value of this parameter must be a full or absolute path of type file names.
+
+```yaml
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -932,6 +818,79 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -VariableDefinitions
+Adds the specified variables to sessions that use the session configuration.
+Enter a hash table with the following keys:
+
+- Name.
+Name of the variable.
+This key is required.
+- Value.
+Variable value.
+This key is required.
+- Options.
+Variable options.
+This key is optional.
+The default value is None.
+The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
+
+For example: `@{Name="WarningPreference";Value="SilentlyContinue";Options="AllScope"}`
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VisibleAliases
+Limits the aliases in the session to those specified in the value of this parameter, plus any aliases that you define in the *AliasDefinition* parameter.
+Wildcard characters are supported.
+By default, all aliases that are defined by the Windows PowerShell engine and all aliases that modules export are visible in the session.
+
+For example: `VisibleAliases="gcm", "gp"`
+
+When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VisibleCmdlets
+Limits the cmdlets in the session to those specified in the value of this parameter.
+Wildcard characters and Module Qualified Names are supported.
+
+By default, all cmdlets that modules in the session export are visible in the session.
+Use the *SessionType* and *ModulesToImport* parameters to determine which modules and snap-ins are imported into the session.
+If no modules in *ModulesToImport* expose the cmdlet, the appropriate module will attempt to be autoloaded.
+
+When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the Import-Module cmdlet and its ipmo alias from the session.
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -VisibleExternalCommands
 Limits the external binaries, scripts, and commands that can be executed in the session to those specified in the value of this parameter.
 Wildcard characters are supported.
@@ -939,6 +898,48 @@ Wildcard characters are supported.
 By default, no external commands are visible in the session.
 
 When any *Visible* parameter is included in the session configuration file, Windows PowerShell, removes the **Import-Module** cmdlet and its ipmo alias from the session.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VisibleFunctions
+Limits the functions in the session to those specified in the value of this parameter, plus any functions that you define in the *FunctionDefinition* parameter.
+Wildcard characters are supported.
+
+By default, all functions that modules in the session export are visible in the session.
+Use the *SessionType* and *ModulesToImport* parameters to determine which modules and snap-ins are imported into the session.
+
+When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VisibleProviders
+Limits the Windows PowerShell providers in the session to those specified in the value of this parameter.
+Wildcard characters are supported.
+
+By default, all providers that modules in the session export are visible in the session.
+Use the *SessionType* and *ModulesToImport* parameters to determine which modules and snap-ins are imported into the session.
+
+When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: String[]

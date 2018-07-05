@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: CimCmdlets
+ms.date: 06/09/2017
+schema: 2.0.0
 ---
 
 # Invoke-CimMethod
@@ -31,50 +32,54 @@ Invoke-CimMethod [-ClassName] <String> -CimSession <CimSession[]> [[-Arguments] 
 ```
 Invoke-CimMethod -ResourceUri <Uri> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
  [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### CimInstanceSessionSet
 ```
 Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> -CimSession <CimSession[]>
  [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### CimInstanceComputerSet
 ```
 Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> [-ComputerName <String[]>]
  [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### ResourceUriSessionSet
 ```
 Invoke-CimMethod -ResourceUri <Uri> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
  [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### CimClassComputerSet
 ```
 Invoke-CimMethod [-CimClass] <CimClass> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+ [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassSessionSet
 ```
 Invoke-CimMethod [-CimClass] <CimClass> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+ [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### QueryComputerSet
 ```
 Invoke-CimMethod -Query <String> [-QueryDialect <String>] [-ComputerName <String[]>]
  [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
- [-WhatIf] [-Confirm]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### QuerySessionSet
 ```
 Invoke-CimMethod -Query <String> [-QueryDialect <String>] -CimSession <CimSession[]>
  [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
- [-WhatIf] [-Confirm]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -151,7 +156,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -171,7 +176,7 @@ Parameter Sets: CimClassComputerSet, CimClassSessionSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -217,7 +222,7 @@ Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
 Aliases: Class
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -269,7 +274,7 @@ Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
 Aliases: CimInstance
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -287,7 +292,7 @@ Parameter Sets: (All)
 Aliases: Name
 
 Required: True
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -444,8 +449,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

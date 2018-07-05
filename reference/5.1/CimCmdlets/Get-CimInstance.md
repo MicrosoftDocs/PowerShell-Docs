@@ -19,12 +19,6 @@ Get-CimInstance [-ClassName] <String> [-ComputerName <String[]>] [-KeyOnly] [-Na
  [<CommonParameters>]
 ```
 
-### CimInstanceSessionSet
-```
-Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [<CommonParameters>]
-```
-
 ### ResourceUriSessionSet
 ```
 Get-CimInstance -CimSession <CimSession[]> -ResourceUri <Uri> [-KeyOnly] [-Namespace <String>]
@@ -44,16 +38,22 @@ Get-CimInstance -CimSession <CimSession[]> [-ClassName] <String> [-KeyOnly] [-Na
  [<CommonParameters>]
 ```
 
-### ResourceUriComputerSet
+### CimInstanceSessionSet
 ```
-Get-CimInstance -ResourceUri <Uri> [-ComputerName <String[]>] [-KeyOnly] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>] [<CommonParameters>]
+Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
+ [-InputObject] <CimInstance> [<CommonParameters>]
 ```
 
 ### CimInstanceComputerSet
 ```
 Get-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-OperationTimeoutSec <UInt32>]
  [-InputObject] <CimInstance> [<CommonParameters>]
+```
+
+### ResourceUriComputerSet
+```
+Get-CimInstance -ResourceUri <Uri> [-ComputerName <String[]>] [-KeyOnly] [-Namespace <String>]
+ [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### QueryComputerSet
@@ -187,7 +187,7 @@ For more information, see about_CimSessions.
 
 ```yaml
 Type: CimSession[]
-Parameter Sets: CimInstanceSessionSet, ResourceUriSessionSet, QuerySessionSet, ClassNameSessionSet
+Parameter Sets: ResourceUriSessionSet, QuerySessionSet, ClassNameSessionSet, CimInstanceSessionSet
 Aliases:
 
 Required: True
@@ -424,25 +424,13 @@ If both the ResourceUri parameter and the Filter parameter are specified, the Fi
 
 ```yaml
 Type: Uri
-Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-```yaml
-Type: Uri
 Parameter Sets: ResourceUriSessionSet, ResourceUriComputerSet
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -454,7 +442,19 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: Uri
+Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -476,8 +476,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

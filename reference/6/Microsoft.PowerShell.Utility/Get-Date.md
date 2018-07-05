@@ -1,40 +1,41 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821781
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-Date
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821781
+schema: 2.0.0
+title: Get-Date
 ---
 
 # Get-Date
 
-## Synopsis
+## SYNOPSIS
 Gets the current date and time.
 
-## Syntax
+## SYNTAX
 
-### Net (Default)
-```powershell
+### net (Default)
+```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-Format <String>]
  [<CommonParameters>]
 ```
 
 ### UFormat
-```powershell
+```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-UFormat <String>]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 The `Get-Date` cmdlet gets a **DateTime** object that represents the current date or a date that you specify.
 It can format the date and time in several Windows and UNIX formats.
 You can use `Get-Date` to generate a date or time character string, and then send the string to other cmdlets or programs.
 
-## Examples
+## EXAMPLES
 
 ### Example 1
 
@@ -166,6 +167,7 @@ This command gets a **DateTime** object and displays the current date and time i
 ```powershell
 Get-Date
 ```
+
 ```
 Tuesday, September 26, 2006 11:25:31 AM
 ```
@@ -221,7 +223,7 @@ mkdir C:\ps-test\$timestamp
 ```
 
 ```
-    Directory: C:\ps-test
+Directory: C:\ps-test
 
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -235,7 +237,7 @@ The second command prepares the timestamp to be used in a directory name. The co
 The third command uses the Mkdir function to create a directory with the name in the `$timestamp` variable.
 This example shows how to use the `Get-Date` cmdlet to create a timestamp and how to use the timestamp in or as part of a directory name.
 
-## Parameters
+## PARAMETERS
 
 ### -Date
 Specifies a date and time.
@@ -248,8 +250,8 @@ Type: DateTime
 Parameter Sets: (All)
 Aliases: LastWriteTime
 
+Required: False
 Position: 0
-Default value: None
 Default value: Current date
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -339,37 +341,6 @@ The default is the current hour.
 Type: Int32
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationAction
-Type the date in a format that is standard for the system locale, such as dd-MM-yyyy (German [Germany]) or MM/dd/yyyy (English [United States]).
-
-```yaml
-Type: ActionPreference
-Parameter Sets: (All)
-Aliases: infa
-Accepted values: SilentlyContinue, Stop, Continue, Inquire, Ignore, Suspend
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationVariable
-Type the date in a format that is standard for the system locale, such as dd-MM-yyyy (German [Germany]) or MM/dd/yyyy (English [United States]).
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: iv
 
 Required: False
 Position: Named
@@ -485,14 +456,14 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### None
 You cannot pipe input to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.DateTime or System.String
 When you use the `-Format` or `-UFormat` parameters, `Get-Date` returns a string.
@@ -612,8 +583,7 @@ Otherwise, it returns a **DateTime** object.
 
         `t` : Tab character (\t)
 
-
-## Related Links
+## RELATED LINKS
 
 [New-TimeSpan](New-TimeSpan.md)
 

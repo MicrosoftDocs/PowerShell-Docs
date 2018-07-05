@@ -1,10 +1,11 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
+schema: 2.0.0
 ---
 
 # Get-Verb
@@ -14,7 +15,7 @@ Gets approved Windows PowerShell verbs.
 
 ## SYNTAX
 
-```powershell
+```
 Get-Verb [[-Verb] <String[]>] [[-Group] <String[]>] [<CommonParameters>]
 ```
 
@@ -32,7 +33,7 @@ For an updated list of approved Windows PowerShell verbs with descriptions, see 
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### EXAMPLE 1
 ```
 get-verb
 ```
@@ -43,7 +44,7 @@ Description
 
 This command gets all approved verbs.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### EXAMPLE 2
 ```
 get-verb un*
 
@@ -93,23 +94,6 @@ This command finds all commands in a module that have unapproved verbs.
 
 ## PARAMETERS
 
-### -verb
-Gets only the specified verbs.
-Enter the name of a verb or a name pattern.
-Wildcards are permitted.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: All verbs
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: True
-```
-
 ### -Group
 Gets only the specified groups.
 Enter the name of a group.
@@ -124,9 +108,29 @@ Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Sec
 Required: False
 Position: 1
 Default value: All groups
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
+
+### -Verb
+Gets only the specified verbs.
+Enter the name of a verb or a name pattern.
+Wildcards are permitted.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 0
+Default value: All verbs
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

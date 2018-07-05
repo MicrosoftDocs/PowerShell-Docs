@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821817
-external help file:  Microsoft.PowerShell.Utility-help.xml
-title:  Import-PowerShellDataFile
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821817
+schema: 2.0.0
+title: Import-PowerShellDataFile
 ---
 
 # Import-PowerShellDataFile
@@ -17,12 +18,12 @@ Imports values from a .PSD1 file without invoking its contents
 
 ### ByPath (Default)
 ```
-Import-PowerShellDataFile [[-Path] <String[]>] [<CommonParameters>]
+Import-PowerShellDataFile [-Path] <String[]> [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
-Import-PowerShellDataFile [-LiteralPath <String[]>] [<CommonParameters>]
+Import-PowerShellDataFile [-LiteralPath] <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,8 +51,8 @@ Type: String[]
 Parameter Sets: ByLiteralPath
 Aliases: PSPath
 
-Required: False
-Position: Named
+Required: True
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -63,7 +64,7 @@ Type: String[]
 Parameter Sets: ByPath
 Aliases:
 
-Required: False
+Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
@@ -78,5 +79,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

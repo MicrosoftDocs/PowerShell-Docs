@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: CimCmdlets
+ms.date: 06/09/2017
+schema: 2.0.0
 ---
 
 # Set-CimInstance
@@ -19,17 +20,16 @@ Set-CimInstance [-ComputerName <String[]>] [-ResourceUri <Uri>] [-OperationTimeo
  [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+### CimInstanceSessionSet
+```
+Set-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
+ [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ### QuerySessionSet
 ```
 Set-CimInstance -CimSession <CimSession[]> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
  [-Query] <String> [-QueryDialect <String>] -Property <IDictionary> [-PassThru] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### CimInstanceSessionSet
-```
-Set-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -136,7 +136,7 @@ Enter a computer name or a session object, such as the output of a New-CimSessio
 
 ```yaml
 Type: CimSession[]
-Parameter Sets: QuerySessionSet, CimInstanceSessionSet
+Parameter Sets: CimInstanceSessionSet, QuerySessionSet
 Aliases:
 
 Required: True
@@ -189,7 +189,7 @@ Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
 Aliases: CimInstance
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -290,7 +290,7 @@ Parameter Sets: QuerySessionSet, QueryComputerSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -377,8 +377,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
