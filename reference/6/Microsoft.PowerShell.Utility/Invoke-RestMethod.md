@@ -1046,17 +1046,11 @@ Specifies a user agent string for the web request.
 
 The default user agent is similar to `Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` with slight variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](http://msdn.microsoft.com/library/windows/desktop/hh484857&#40;v=vs.85&#41;) class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
+To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet Explorer.
 
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> ran Update-MarkdownHelp on v5.1 and v6 cmdlets
-Invoke-RestMethod -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)```yaml
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
