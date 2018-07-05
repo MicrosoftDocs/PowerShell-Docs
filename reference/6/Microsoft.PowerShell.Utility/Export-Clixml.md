@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821767
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Export-Clixml
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821767
+schema: 2.0.0
+title: Export-Clixml
 ---
 
 # Export-Clixml
@@ -18,13 +19,13 @@ Creates an XML-based representation of an object or objects and stores it in a f
 ### ByPath (Default)
 ```
 Export-Clixml [-Depth <Int32>] [-Path] <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
 Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,10 +121,9 @@ The acceptable values for this parameter are:
 The default value is Unicode.
 
 ```yaml
-Type: String
+Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, OEM
 
 Required: False
 Position: Named
@@ -167,6 +167,25 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -LiteralPath
+Specifies the path to the file where the XML representation of the object will be stored.
+Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String
+Parameter Sets: ByLiteralPath
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -NoClobber
 Indicates that that the cmdlet does not overwrite the contents of an existing file.
 By default, if a file exists in the specified path, **Export-Clixml** overwrites the file without warning.
@@ -192,26 +211,7 @@ Parameter Sets: ByPath
 Aliases:
 
 Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-Specifies the path to the file where the XML representation of the object will be stored.
-Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String
-Parameter Sets: ByLiteralPath
-Aliases: PSPath
-
-Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

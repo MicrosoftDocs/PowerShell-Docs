@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821487
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-PSHostProcessInfo
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821487
+schema: 2.0.0
+title: Get-PSHostProcessInfo
 ---
 
 # Get-PSHostProcessInfo
@@ -47,7 +48,6 @@ PS C:\>
 
 ### -Id
 
-
 ```yaml
 Type: Int32[]
 Parameter Sets: ProcessIdParameterSet
@@ -62,7 +62,6 @@ Accept wildcard characters: False
 
 ### -Name
 
-
 ```yaml
 Type: String[]
 Parameter Sets: ProcessNameParameterSet
@@ -76,7 +75,6 @@ Accept wildcard characters: False
 ```
 
 ### -Process
-
 
 ```yaml
 Type: Process[]
@@ -98,5 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

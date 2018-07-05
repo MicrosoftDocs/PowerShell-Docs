@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821666
-external help file:  PSModule-help.xml
-title:  Publish-Module
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821666
+schema: 2.0.0
+title: Publish-Module
 ---
 
 # Publish-Module
@@ -16,14 +17,15 @@ Publishes a specified module from the local computer to an online gallery.
 ## SYNTAX
 
 ### ModuleNameParameterSet (Default)
-```powershell
-Publish-Module -Name <String> [-RequiredVersion <Version>] [-NuGetApiKey <String>] [-Repository <String>]
+```
+Publish-Module -Name <String> [-RequiredVersion <String>] [-NuGetApiKey <String>] [-Repository <String>]
  [-Credential <PSCredential>] [-FormatVersion <Version>] [-ReleaseNotes <String[]>] [-Tags <String[]>]
- [-LicenseUri <Uri>] [-IconUri <Uri>] [-ProjectUri <Uri>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-LicenseUri <Uri>] [-IconUri <Uri>] [-ProjectUri <Uri>] [-Force] [-AllowPrerelease] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### ModulePathParameterSet
-```powershell
+```
 Publish-Module -Path <String> [-NuGetApiKey <String>] [-Repository <String>] [-Credential <PSCredential>]
  [-FormatVersion <Version>] [-ReleaseNotes <String[]>] [-Tags <String[]>] [-LicenseUri <Uri>] [-IconUri <Uri>]
  [-ProjectUri <Uri>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -62,12 +64,39 @@ If MyDscModule is not a valid manifest module that specifies a name, version, de
 
 ## PARAMETERS
 
-### -IconUri
-Specifies the URL of an icon for the module.
-The specified icon is displayed on the gallery webpage for the module.
+### -AllowPrerelease
+{{Fill AllowPrerelease Description}}
 
 ```yaml
-Type: Uri
+Type: SwitchParameter
+Parameter Sets: ModuleNameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Credential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Force
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -80,9 +109,25 @@ Accept wildcard characters: False
 
 ### -FormatVersion
 
-
 ```yaml
 Type: Version
+Parameter Sets: (All)
+Aliases:
+Accepted values: 2.0
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IconUri
+Specifies the URL of an icon for the module.
+The specified icon is displayed on the gallery webpage for the module.
+
+```yaml
+Type: Uri
 Parameter Sets: (All)
 Aliases:
 
@@ -210,7 +255,7 @@ Accept wildcard characters: False
 Specifies the exact version of a single module to publish.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: ModuleNameParameterSet
 Aliases:
 
@@ -265,36 +310,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Credential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Force
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

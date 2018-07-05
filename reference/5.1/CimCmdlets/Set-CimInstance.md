@@ -18,17 +18,17 @@ Set-CimInstance [-ComputerName <String[]>] [-ResourceUri <Uri>] [-OperationTimeo
  [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CimInstanceSessionSet
-```
-Set-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
 ### QuerySessionSet
 ```
 Set-CimInstance -CimSession <CimSession[]> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
  [-Query] <String> [-QueryDialect <String>] -Property <IDictionary> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### CimInstanceSessionSet
+```
+Set-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
+ [-InputObject] <CimInstance> [-Property <IDictionary>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### QueryComputerSet
@@ -134,7 +134,7 @@ Enter a computer name or a session object, such as the output of a New-CimSessio
 
 ```yaml
 Type: CimSession[]
-Parameter Sets: CimInstanceSessionSet, QuerySessionSet
+Parameter Sets: QuerySessionSet, CimInstanceSessionSet
 Aliases:
 
 Required: True
@@ -375,8 +375,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

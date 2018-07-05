@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821829
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Measure-Object
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821829
+schema: 2.0.0
+title: Measure-Object
 ---
 
 # Measure-Object
@@ -17,8 +18,8 @@ Calculates the numeric properties of objects, and the characters, words, and lin
 
 ### GenericMeasure (Default)
 ```
-Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Sum] [-Average]
- [-Maximum] [-Minimum] [<CommonParameters>]
+Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Sum] [-Average] [-Maximum] [-Minimum]
+ [<CommonParameters>]
 ```
 
 ### TextMeasure
@@ -215,7 +216,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821532
-external help file:  Microsoft.PowerShell.ConsoleHost.dll-Help.xml
-title:  Start-Transcript
+external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Host
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821532
+schema: 2.0.0
+title: Start-Transcript
 ---
 
 # Start-Transcript
@@ -16,20 +17,20 @@ Creates a record of all or part of a Windows PowerShell session to a text file.
 ## SYNTAX
 
 ### ByPath (Default)
-```powershell
+```
 Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
-```powershell
+```
 Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### ByOutputDirectory
-```powershell
-Start-Transcript [-OutputDirectory <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader]
+```
+Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -111,6 +112,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LiteralPath
+Specifies a location to the transcript file.
+Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks inform Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String
+Parameter Sets: ByLiteralPath
+Aliases: PSPath
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -NoClobber
 Indicates that this cmdlet will not overwrite of an existing file.
 By default, if a transcript file exists in the specified path, `Start-Transcript` overwrites the file without warning.
@@ -137,7 +157,7 @@ Parameter Sets: ByOutputDirectory
 Aliases:
 
 Required: False
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -159,26 +179,7 @@ Parameter Sets: ByPath
 Aliases:
 
 Required: False
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-Specifies a location to the transcript file.
-Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks inform Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String
-Parameter Sets: ByLiteralPath
-Aliases: PSPath
-
-Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

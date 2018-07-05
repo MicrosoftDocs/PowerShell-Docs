@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821721
-external help file:  Microsoft.PowerShell.Workflow.ServiceCore.dll-Help.xml
-title:  New-PSWorkflowExecutionOption
+external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSWorkflow
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821721
+schema: 2.0.0
+title: New-PSWorkflowExecutionOption
 ---
 
 # New-PSWorkflowExecutionOption
@@ -312,12 +313,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PersistWithEncryption
-Indicates that the workflow encrypts the data in the persistence store.
-Consider using this feature when storing persistence data in a network share.
+### -PersistencePath
+Specifies the location on disk where workflow state and data are stored.
+Storing the workflow state and data allows for workflows to be suspended and resumed, and to recover from interruptions and network failures.
+
+The default value is $env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS
 
 ```yaml
-Type: SwitchParameter
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -328,14 +331,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PersistencePath
-Specifies the location on disk where workflow state and data are stored.
-Storing the workflow state and data allows for workflows to be suspended and resumed, and to recover from interruptions and network failures.
-
-The default value is $env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS
+### -PersistWithEncryption
+Indicates that the workflow encrypts the data in the persistence store.
+Consider using this feature when storing persistence data in a network share.
 
 ```yaml
-Type: String
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

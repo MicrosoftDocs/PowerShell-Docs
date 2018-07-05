@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821784
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-Event
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821784
+schema: 2.0.0
+title: Get-Event
 ---
 
 # Get-Event
@@ -104,7 +105,7 @@ Parameter Sets: ById
 Aliases: Id
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -121,7 +122,7 @@ Parameter Sets: BySource
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -183,7 +184,6 @@ In the value of the *Action* parameter, the TimeGenerated property of the $Event
 Data associated with the event subscription.
 Users specify this data when they register an event.
 In the value of the *Action* parameter, the MessageData property of the $Event automatic variable contains this value.
-
 
 ## RELATED LINKS
 

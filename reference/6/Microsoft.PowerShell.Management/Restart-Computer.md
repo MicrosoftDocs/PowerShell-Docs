@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821625
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Restart-Computer
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821625
+schema: 2.0.0
+title: Restart-Computer
 ---
 
 # Restart-Computer
@@ -15,19 +16,10 @@ Restarts ("reboots") the operating system on local and remote computers.
 
 ## SYNTAX
 
-### DefaultSet (Default)
 ```
-Restart-Computer [-DcomAuthentication <AuthenticationLevel>] [-Impersonation <ImpersonationLevel>]
- [-WsmanAuthentication <String>] [-Protocol <String>] [[-ComputerName] <String[]>]
- [[-Credential] <PSCredential>] [-Force] [-Wait] [-Timeout <Int32>] [-For <WaitForServiceTypes>]
- [-Delay <Int16>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### AsJobSet
-```
-Restart-Computer [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-Impersonation <ImpersonationLevel>]
- [[-ComputerName] <String[]>] [[-Credential] <PSCredential>] [-Force] [-ThrottleLimit <Int32>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Restart-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>] [[-Credential] <PSCredential>]
+ [-Force] [-Wait] [-Timeout <Int32>] [-For <WaitForServiceTypes>] [-Delay <Int16>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,32 +107,6 @@ These settings are designed for enterprises in which DCOM-based restarts fail be
 
 ## PARAMETERS
 
-### -AsJob
-Indicates that this cmdlet runs as a background job.
-
-To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell by using the Run as administrator option.
-For more information, see [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
-
-When you specify the *AsJob* parameter, the command immediately returns an object that represents the background job.
-You can continue to work in the session while the job finishes.
-The job is created on the local computer and the results from remote computers are automatically returned to the local computer.
-To manage the job, use the **Job** cmdlets.
-To get the job results, use the Receive-Job cmdlet.
-
-For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: AsJobSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ComputerName
 Specifies one or more computers.
 The default is the local computer.
@@ -157,7 +123,7 @@ Parameter Sets: (All)
 Aliases: CN, __SERVER, Server, IPAddress
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -175,7 +141,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -192,7 +158,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Int16
-Parameter Sets: DefaultSet
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -221,9 +187,9 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: WaitForServiceTypes
-Parameter Sets: DefaultSet
+Parameter Sets: (All)
 Aliases:
-Accepted values: PowerShell, WinRM, Wmi
+Accepted values: Wmi, WinRM, PowerShell
 
 Required: False
 Position: Named
@@ -247,53 +213,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Impersonation
-Specifies the impersonation level that this cmdlet uses to call WMI.
-**Restart-Computer** uses WMI.
-The acceptable values for this parameter are:
-
- -- Default.
-Default impersonation.
-- Anonymous.
-Hides the identity of the caller.
-- Identify.
-Allows objects to query the credentials of the caller.
-- Impersonate.
-Allows objects to use the credentials of the caller.
-
-The default value is Impersonate.
-
-```yaml
-Type: ImpersonationLevel
-Parameter Sets: (All)
-Aliases:
-Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ThrottleLimit
-Specifies the maximum number of concurrent connections that can be established to run this command.
-If you omit this parameter or enter a value of 0, the default value, 32, is used.
-
-The throttle limit applies only to the current command, not to the session or to the computer.
-
-```yaml
-Type: Int32
-Parameter Sets: AsJobSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Timeout
 Specifies the duration of the wait, in seconds.
 When the time-out elapses, **Restart-Computer** returns the command prompt, even if the computers are not restarted.
@@ -305,7 +224,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Int32
-Parameter Sets: DefaultSet
+Parameter Sets: (All)
 Aliases: TimeoutSec
 
 Required: False
@@ -328,68 +247,8 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: DefaultSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DcomAuthentication
-Specifies the authentication level that is used for the WMI connection.
-The acceptable values for this parameter are:
-
-- Call.
-Call-level COM authentication
-- Connect.
-Connect-level COM authentication
-- Default.
-Windows Authentication
-- None.
-No COM authentication
-- Packet.
-Packet-level COM authentication
-- PacketIntegrity.
-Packet Integrity-level COM authentication
-- PacketPrivacy.
-Packet Privacy-level COM authentication
-- Unchanged.
-The authentication level is the same as the previous command
-
-The default value is Packet.
-
-For more information about the values of this parameter, see [AuthenticationLevel Enumeration](https://msdn.microsoft.com/library/system.management.authenticationlevel) in the MSDN library.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: AuthenticationLevel
 Parameter Sets: (All)
-Aliases: Authentication
-Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Protocol
-Specifies which protocol to use to restart the computers.
-The acceptable values for this parameter are: WSMan and DCOM.
-The default value is DCOM.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String
-Parameter Sets: DefaultSet
 Aliases:
-Accepted values: DCOM, WSMan
 
 Required: False
 Position: Named
@@ -413,7 +272,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
-Parameter Sets: DefaultSet
+Parameter Sets: (All)
 Aliases:
 Accepted values: Default, Basic, Negotiate, CredSSP, Digest, Kerberos
 

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822413
-external help file:  Microsoft.PowerShell.Utility-help.xml
-title:  Get-FileHash
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822413
+schema: 2.0.0
+title: Get-FileHash
 ---
 
 # Get-FileHash
@@ -17,17 +18,17 @@ Computes the hash value for a file by using a specified hash algorithm.
 
 ### Path (Default)
 ```
-Get-FileHash [-Path] <String[]> [-Algorithm <String>] [<CommonParameters>]
+Get-FileHash [-Path] <String[]> [[-Algorithm] <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Get-FileHash -LiteralPath <String[]> [-Algorithm <String>] [<CommonParameters>]
+Get-FileHash [-LiteralPath] <String[]> [[-Algorithm] <String>] [<CommonParameters>]
 ```
 
-### Stream
+### StreamParameterSet
 ```
-Get-FileHash -InputStream <Stream> [-Algorithm <String>] [<CommonParameters>]
+Get-FileHash [-InputStream] <Stream> [[-Algorithm] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -139,7 +140,7 @@ Aliases:
 Accepted values: SHA1, SHA256, SHA384, SHA512, MD5
 
 Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -150,11 +151,11 @@ Specifies the input stream.
 
 ```yaml
 Type: Stream
-Parameter Sets: Stream
+Parameter Sets: StreamParameterSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -173,7 +174,7 @@ Parameter Sets: LiteralPath
 Aliases: PSPath
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -191,7 +192,7 @@ Aliases:
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 

@@ -1,19 +1,20 @@
 ---
-ms.date:  11/17/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821824
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Invoke-RestMethod
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 11/17/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821824
+schema: 2.0.0
+title: Invoke-RestMethod
 ---
 
 # Invoke-RestMethod
 
-## Synopsis
+## SYNOPSIS
 Sends an HTTP or HTTPS request to a RESTful web service.
 
-## Syntax
+## SYNTAX
 
 ### StandardMethod (Default)
 ```
@@ -26,6 +27,7 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-ProxyUseDefaultCredentials] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
  [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
@@ -38,7 +40,20 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
  [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
+```
+
+### CustomMethodNoProxy
+```
+Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
+ [-ResponseHeadersVariable <String>] [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### CustomMethod
@@ -52,22 +67,10 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-ProxyUseDefaultCredentials] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
  [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [<CommonParameters>]
 ```
 
-### CustomMethodNoProxy
-```
-Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
- [-ResponseHeadersVariable <String>] [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
- [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
- [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
- [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
-```
-
-## Description
+## DESCRIPTION
 The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational State Transfer (REST) web services that returns richly structured data.
 
 PowerShell formats the response based to the data type.
@@ -76,7 +79,7 @@ For JavaScript Object Notation (JSON) or XML, PowerShell converts (or deserializ
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the PowerShell RSS feed
 ```powershell
@@ -134,7 +137,7 @@ Invoke-RestMethod $url -FollowRelLink -MaximumFollowRelLink 2
 
 Some REST APIs support pagination via Relation Links per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6). Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you. This example returns the first two pages of issues from the PowerShell GitHub repository
 
-## Parameters
+## PARAMETERS
 
 ### -AllowUnencryptedAuthentication
 Allows sending of credentials and secrets over unencrypted connections. By default, supplying **-Credential** or any **-Authentication** option with a **-Uri** that does not begin with `https://` will result in an error and the request will abort to prevent unintentionally communicating secrets in plain text over unencrypted connections. To override this behavior at your own risk, supply the **-AllowUnencryptedAuthentication** parameter.
@@ -296,18 +299,18 @@ Specifies custom method used for the web request. This can be used with the Requ
 
 Example:
 
-```powershell
+
+
 Invoke-WebRequest -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'
-```
 
 This makes a `TEST` HTTP request to the API.
 
 ```yaml
 Type: String
-Parameter Sets: StandardMethod, CustomMethod
-Aliases:
+Parameter Sets: CustomMethodNoProxy, CustomMethod
+Aliases: CM
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -339,7 +342,7 @@ To set how many times to follow relation links, use the **-MaximumFollowRelLink*
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: FL
 
 Required: False
 Position: Named
@@ -396,7 +399,7 @@ A value of 0 (zero) prevents following relation links.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases:
+Aliases: ML
 
 Required: False
 Position: Named
@@ -440,7 +443,7 @@ The **-CustomMethod** parameter can be used for Request Methods not listed above
 
 ```yaml
 Type: WebRequestMethod
-Parameter Sets: (All)
+Parameter Sets: StandardMethod, StandardMethodNoProxy
 Aliases:
 Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
 
@@ -527,7 +530,7 @@ Enter the URI of a network proxy server.
 
 ```yaml
 Type: Uri
-Parameter Sets: (All)
+Parameter Sets: StandardMethod, CustomMethod
 Aliases:
 
 Required: False
@@ -590,7 +593,6 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
-
 ```
 
 ### -SessionVariable
@@ -621,8 +623,8 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
-
 ```
+
 ### -SkipCertificateCheck
 Skips certificate validation checks. This includes all validations such as expiration, revocation, trusted root authority, etc.
 
@@ -705,11 +707,9 @@ The OAuth or Bearer token to include in the request. **-Token** is required by c
 
 **-Token** takes a `SecureString` containing the token. To supply the token manually use the following:
 
-```powershell
-Invoke-RestMethod -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)
-```
 
-```yaml
+
+Invoke-RestMethod -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)```yaml
 Type: SecureString
 Parameter Sets: (All)
 Aliases:
@@ -803,11 +803,9 @@ To test a website with the standard user agent string that is used by most Inter
 For example, the following command uses the user agent string for Internet Explorer
 
 
-```powershell
-Invoke-RestMethod -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
-```
 
-```yaml
+
+Invoke-RestMethod -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
@@ -849,14 +847,14 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**, **-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**, **-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 You can pipe the body of a web request to `Invoke-RestMethod`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Int64, System.String, System.Xml.XmlDocument
 The output of the cmdlet depends upon the format of the content that is retrieved.
@@ -864,11 +862,11 @@ The output of the cmdlet depends upon the format of the content that is retrieve
 ### PSObject
 If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the strings.
 
-## Notes
+## NOTES
 
 Some features may not be available on all platforms.
 
-## Related Links
+## RELATED LINKS
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

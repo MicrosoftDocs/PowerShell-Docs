@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821853
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Select-String
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821853
+schema: 2.0.0
+title: Select-String
 ---
 
 # Select-String
@@ -18,21 +19,21 @@ Finds text in strings and files.
 ### File (Default)
 ```
 Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List]
- [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
  [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### Object
 ```
 Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List]
- [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
  [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFile
 ```
 Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List]
- [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <Encoding>]
  [-Context <Int32[]>] [<CommonParameters>]
 ```
 
@@ -275,10 +276,9 @@ Default is the encoding of the system's current ANSI code page.
 OEM is the current original equipment manufacturer code page identifier for the operating system.
 
 ```yaml
-Type: String
+Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: unicode, utf7, utf8, utf32, ascii, bigendianunicode, default, oem
 
 Required: False
 Position: Named
@@ -361,6 +361,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LiteralPath
+Specifies the path to the files to be searched.
+Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String[]
+Parameter Sets: LiteralFile
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -NotMatch
 Indicates that the cmdlet finds text that does not match the specified pattern.
 
@@ -390,7 +409,7 @@ Parameter Sets: File
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -409,7 +428,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -448,25 +467,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LiteralPath
-Specifies the path to the files to be searched.
-Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String[]
-Parameter Sets: LiteralFile
-Aliases: PSPath
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -501,5 +501,7 @@ If you use the *Quiet* parameter, the output is a Boolean value indicating wheth
 * To find the properties of a **MatchInfo** object, type the following:
 
   `Select-String -Path test.txt -Pattern "test" | Get-Member | Format-List -Property *`
+
+## RELATED LINKS
 
 ## RELATED LINKS

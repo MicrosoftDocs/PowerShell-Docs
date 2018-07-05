@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821855
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Select-Xml
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821855
+schema: 2.0.0
+title: Select-Xml
 ---
 
 # Select-Xml
@@ -16,27 +17,23 @@ Finds text in an XML string or document.
 ## SYNTAX
 
 ### Xml (Default)
-```powershell
-Select-Xml [-XPath] <String> [-Xml] <XmlNode[]> [-Namespace <Hashtable>]
- [<CommonParameters>]
+```
+Select-Xml [-Xml] <XmlNode[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
 ### Path
-```powershell
-Select-Xml [-XPath] <String> [-Path] <String[]> [-Namespace <Hashtable>]
- [<CommonParameters>]
+```
+Select-Xml [-Path] <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
 ### LiteralPath
-```powershell
-Select-Xml [-XPath] <String> -LiteralPath <String[]> [-Namespace <Hashtable>]
- [<CommonParameters>]
+```
+Select-Xml -LiteralPath <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
 ### Content
-```powershell
-Select-Xml [-XPath] <String> -Content <String[]> [-Namespace <Hashtable>]
- [<CommonParameters>]
+```
+Select-Xml -Content <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -203,6 +200,25 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -LiteralPath
+Specifies the paths and file names of the XML files to search.
+Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String[]
+Parameter Sets: LiteralPath
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Namespace
 Specifies a hash table of the namespaces used in the XML.
 Use the format @{\<namespaceName\> = \<namespaceValue\>}.
@@ -239,23 +255,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -XPath
-Specifies an XPath search query.
-The query language is case-sensitive.
-This parameter is required.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Xml
 Specifies one or more XML nodes.
 
@@ -274,22 +273,20 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -LiteralPath
-Specifies the paths and file names of the XML files to search.
-Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+### -XPath
+Specifies an XPath search query.
+The query language is case-sensitive.
+This parameter is required.
 
 ```yaml
-Type: String[]
-Parameter Sets: LiteralPath
-Aliases: PSPath
+Type: String
+Parameter Sets: (All)
+Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

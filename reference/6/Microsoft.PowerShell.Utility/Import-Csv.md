@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821815
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Import-Csv
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821815
+schema: 2.0.0
+title: Import-Csv
 ---
 
 # Import-Csv
@@ -18,13 +19,13 @@ Creates table-like custom objects from the items in a CSV file.
 ### Delimiter (Default)
 ```
 Import-Csv [[-Delimiter] <Char>] [[-Path] <String[]>] [-LiteralPath <String[]>] [-Header <String[]>]
- [-Encoding <String>] [<CommonParameters>]
+ [-Encoding <Encoding>] [<CommonParameters>]
 ```
 
 ### UseCulture
 ```
 Import-Csv [[-Path] <String[]>] [-LiteralPath <String[]>] [-UseCulture] [-Header <String[]>]
- [-Encoding <String>] [<CommonParameters>]
+ [-Encoding <Encoding>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -268,7 +269,7 @@ Parameter Sets: Delimiter
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -293,10 +294,9 @@ The default is ASCII.
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: String
+Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, OEM
 
 Required: False
 Position: Named
@@ -362,7 +362,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False

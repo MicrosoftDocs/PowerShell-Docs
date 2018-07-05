@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821583
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-Content
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821583
+schema: 2.0.0
+title: Get-Content
 ---
 
 # Get-Content
@@ -16,22 +17,17 @@ Gets the content of the item at the specified location.
 ## SYNTAX
 
 ### Path (Default)
-```powershell
-Get-Content [-Path] <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
- [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Force] [-Credential <PSCredential>] [-UseTransaction]
- [-Delimiter <String>] [-Wait] [-Raw]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
- [<CommonParameters>]
+```
+Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <String[]> [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-Delimiter <String>]
+ [-Wait] [-Raw] [-Encoding <Encoding>] [-AsByteStream] [-Stream <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
-```powershell
-Get-Content -LiteralPath <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
- [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Force] [-Credential <PSCredential>] [-UseTransaction]
- [-Delimiter <String>] [-Wait] [-Raw]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
+```
+Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralPath <String[]>
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
+ [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <Encoding>] [-AsByteStream] [-Stream <String>]
  [<CommonParameters>]
 ```
 
@@ -80,39 +76,8 @@ The command uses the *Tail* parameter and the *Head* alias of the *TotalCount* p
 
 ## PARAMETERS
 
-### -Encoding
-This parameter is not supported by any providers that are installed with Windows PowerShell.
-
-```yaml
-Type: FileSystemCmdletProviderEncoding
-Parameter Sets: (All)
-Aliases:
-Accepted values: Unknown, String, Unicode, Byte, BigEndianUnicode, UTF8, UTF7, UTF32, Ascii, Default, Oem, BigEndianUTF32
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Delimiter
-This parameter is not supported by any providers that are installed with Windows PowerShell.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Force
-Forces the command to run without asking for user confirmation.
+### -AsByteStream
+{{Fill AsByteStream Description}}
 
 ```yaml
 Type: SwitchParameter
@@ -122,70 +87,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Raw
-This parameter is not supported by any providers that are installed with Windows PowerShell.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Wait
-This parameter is not supported by any providers that are installed with Windows PowerShell.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Stream
-This parameter is not supported by any providers that are installed with Windows PowerShell.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -208,6 +109,36 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Delimiter
+This parameter is not supported by any providers that are installed with Windows PowerShell.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Encoding
+This parameter is not supported by any providers that are installed with Windows PowerShell.
+
+```yaml
+Type: Encoding
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -237,6 +168,21 @@ Filters are more efficient than other parameters, because the provider applies t
 
 ```yaml
 Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+Forces the command to run without asking for user confirmation.
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -301,6 +247,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -Raw
+This parameter is not supported by any providers that are installed with Windows PowerShell.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ReadCount
 Specifies how many lines of content are sent through the pipeline at a time.
 The default value is 1.
@@ -314,6 +275,40 @@ This can make a perceptible difference in very large items.
 Type: Int64
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Stream
+This parameter is not supported by any providers that are installed with Windows PowerShell.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tail
+Specifies the number of lines from the end of a file or other item.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+You can use the *Tail* parameter name or its alias, Last.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: Last
 
 Required: False
 Position: Named
@@ -340,22 +335,18 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tail
-Specifies the number of lines from the end of a file or other item.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-You can use the *Tail* parameter name or its alias, Last.
+### -Wait
+This parameter is not supported by any providers that are installed with Windows PowerShell.
 
 ```yaml
-Type: Int32
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: Last
+Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

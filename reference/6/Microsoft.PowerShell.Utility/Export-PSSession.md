@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821771
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Export-PSSession
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821771
+schema: 2.0.0
+title: Export-PSSession
 ---
 
 # Export-PSSession
@@ -16,7 +17,7 @@ Imports commands from another session and saves them in a Windows PowerShell mod
 ## SYNTAX
 
 ```
-Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <String>] [[-CommandName] <String[]>]
+Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <Encoding>] [[-CommandName] <String[]>]
  [-AllowClobber] [-ArgumentList <Object[]>] [-CommandType <CommandTypes>] [-Module <String[]>]
  [-FullyQualifiedModule <ModuleSpecification[]>] [[-FormatTypeName] <String[]>]
  [-Certificate <X509Certificate2>] [-Session] <PSSession> [<CommonParameters>]
@@ -174,6 +175,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Certificate
+Specifies the client certificate that is used to sign the format files (*.Format.ps1xml) or script module files (.psm1) in the module that **Export-PSSession** creates.
+Enter a variable that contains a certificate or a command or expression that gets the certificate.
+
+To find a certificate, use the Get-PfxCertificate cmdlet or use the Get-ChildItem cmdlet in the Certificate (Cert:) drive.
+If the certificate is not valid or does not have sufficient authority, the command fails.
+
+```yaml
+Type: X509Certificate2
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CommandName
 Exports only the commands with the specified names or name patterns.
 Wildcards are permitted.
@@ -192,7 +212,7 @@ Parameter Sets: (All)
 Aliases: Name
 
 Required: False
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -248,10 +268,9 @@ The acceptable values for this parameter are:
 The default value is UTF-8.
 
 ```yaml
-Type: String
+Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, OEM
 
 Required: False
 Position: Named
@@ -293,7 +312,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -351,7 +370,7 @@ Parameter Sets: (All)
 Aliases: PSPath, ModuleName
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -368,26 +387,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Certificate
-Specifies the client certificate that is used to sign the format files (*.Format.ps1xml) or script module files (.psm1) in the module that **Export-PSSession** creates.
-Enter a variable that contains a certificate or a command or expression that gets the certificate.
-
-To find a certificate, use the Get-PfxCertificate cmdlet or use the Get-ChildItem cmdlet in the Certificate (Cert:) drive.
-If the certificate is not valid or does not have sufficient authority, the command fails.
-
-```yaml
-Type: X509Certificate2
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

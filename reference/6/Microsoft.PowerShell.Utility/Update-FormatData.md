@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821869
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Update-FormatData
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821869
+schema: 2.0.0
+title: Update-FormatData
 ---
 
 # Update-FormatData
@@ -16,7 +17,8 @@ Updates the formatting data in the current session.
 ## SYNTAX
 
 ```
-Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,7 +93,7 @@ Parameter Sets: (All)
 Aliases: PSPath, Path
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821531
-external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-title:  New-WinEvent
+external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Diagnostics
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821531
+schema: 2.0.0
+title: New-WinEvent
 ---
 
 # New-WinEvent
@@ -37,39 +38,8 @@ This command uses the **New-WinEvent** cmdlet to create event 45090 for the Micr
 
 ### -Id
 
-
 ```yaml
 Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Payload
-
-
-```yaml
-Type: Object[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProviderName
-
-
-```yaml
-Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -80,8 +50,35 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Version
+### -Payload
 
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProviderName
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Version
 
 ```yaml
 Type: Byte

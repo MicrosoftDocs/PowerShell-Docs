@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821607
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  New-PSDrive
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821607
+schema: 2.0.0
+title: New-PSDrive
 ---
 
 # New-PSDrive
@@ -176,21 +177,6 @@ This example shows the difference between a persistent mapped network drive and 
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Credential
 Specifies a user account that has permission to perform this action.
 The default is the current user.
@@ -249,29 +235,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -PSProvider
-Specifies the Windows PowerShell provider that supports drives of this kind.
-
-For example, if the drive is associated with a network share or file system directory, the Windows PowerShell provider is FileSystem.
-If the drive is associated with a registry key, the provider is Registry.
-
-Temporary Windows PowerShell drives can be associated with any Windows PowerShell provider.
-Mapped network drives can be associated only with the FileSystem provider.
-
-To see a list of the providers in your Windows PowerShell session, use the Get-PSProvider cmdlet.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -Persist
 Indicates that this cmdlet creates a Windows mapped network drive.
 Mapped network drives are saved in Windows on the local computer.
@@ -298,6 +261,29 @@ Aliases:
 
 Required: False
 Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PSProvider
+Specifies the Windows PowerShell provider that supports drives of this kind.
+
+For example, if the drive is associated with a network share or file system directory, the Windows PowerShell provider is FileSystem.
+If the drive is associated with a registry key, the provider is Registry.
+
+Temporary Windows PowerShell drives can be associated with any Windows PowerShell provider.
+Mapped network drives can be associated only with the FileSystem provider.
+
+To see a list of the providers in your Windows PowerShell session, use the Get-PSProvider cmdlet.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -350,6 +336,21 @@ For more information, see about_Transactions.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named

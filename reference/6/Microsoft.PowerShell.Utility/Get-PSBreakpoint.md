@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821797
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-PSBreakpoint
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821797
+schema: 2.0.0
+title: Get-PSBreakpoint
 ---
 
 # Get-PSBreakpoint
@@ -17,22 +18,22 @@ Gets the breakpoints that are set in the current session.
 
 ### Script (Default)
 ```
-Get-PSBreakpoint [[-Script] <String[]>] [<CommonParameters>]
-```
-
-### Type
-```
-Get-PSBreakpoint [[-Script] <String[]>] [-Type] <BreakpointType[]> [<CommonParameters>]
-```
-
-### Command
-```
-Get-PSBreakpoint [[-Script] <String[]>] -Command <String[]> [<CommonParameters>]
+Get-PSBreakpoint [-Script <String[]>] [<CommonParameters>]
 ```
 
 ### Variable
 ```
-Get-PSBreakpoint [[-Script] <String[]>] -Variable <String[]> [<CommonParameters>]
+Get-PSBreakpoint [-Script <String[]>] -Variable <String[]> [<CommonParameters>]
+```
+
+### Command
+```
+Get-PSBreakpoint [-Script <String[]>] -Command <String[]> [<CommonParameters>]
+```
+
+### Type
+```
+Get-PSBreakpoint [-Script <String[]>] [-Type] <BreakpointType[]> [<CommonParameters>]
 ```
 
 ### Id
@@ -126,74 +127,6 @@ This command gets all line and variable breakpoints in the Sample.ps1 script.
 
 ## PARAMETERS
 
-### -Script
-Specifies an array of scripts that contain the breakpoints.
-Enter the path (optional) and names of one or more script files.
-If you omit the path, the default location is the current directory.
-
-```yaml
-Type: String[]
-Parameter Sets: Script
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: String[]
-Parameter Sets: Type, Command, Variable
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Variable
-Specifies an array of variable breakpoints that are set on the specified variable names.
-Enter the variable names without dollar signs.
-
-```yaml
-Type: String[]
-Parameter Sets: Variable
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Type
-Specifies an array of breakpoint types that this cmdlet gets.
-Enter one or more types.
-The acceptable values for this parameter are:
-
-- Line
-- Command
-- Variable
-
-You can also pipe breakpoint types to **Get-PSBreakPoint**.
-
-```yaml
-Type: BreakpointType[]
-Parameter Sets: Type
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Command
 Specifies an array of command breakpoints that are set on the specified command names.
 Enter the command names, such as the name of a cmdlet or function.
@@ -224,6 +157,75 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Script
+Specifies an array of scripts that contain the breakpoints.
+Enter the path (optional) and names of one or more script files.
+If you omit the path, the default location is the current directory.
+
+```yaml
+Type: String[]
+Parameter Sets: Script
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: String[]
+Parameter Sets: Variable, Command, Type
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Type
+Specifies an array of breakpoint types that this cmdlet gets.
+Enter one or more types.
+The acceptable values for this parameter are:
+
+- Line
+- Command
+- Variable
+
+You can also pipe breakpoint types to **Get-PSBreakPoint**.
+
+```yaml
+Type: BreakpointType[]
+Parameter Sets: Type
+Aliases:
+Accepted values: Line, Variable, Command
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Variable
+Specifies an array of variable breakpoints that are set on the specified variable names.
+Enter the variable names without dollar signs.
+
+```yaml
+Type: String[]
+Parameter Sets: Variable
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

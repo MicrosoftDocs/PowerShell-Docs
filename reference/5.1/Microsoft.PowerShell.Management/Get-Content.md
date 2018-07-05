@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821583
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-Content
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821583
+schema: 2.0.0
+title: Get-Content
 ---
 
 # Get-Content
@@ -16,23 +17,19 @@ Gets the content of the item at the specified location.
 ## SYNTAX
 
 ### Path (Default)
-```powershell
-Get-Content [-Path] <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
- [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Force] [-Credential <PSCredential>] [-UseTransaction]
- [-Delimiter <String>] [-Wait] [-Raw]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
+```
+Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <String[]> [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-UseTransaction]
+ [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
-```powershell
-Get-Content -LiteralPath <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
- [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Force] [-Credential <PSCredential>] [-UseTransaction]
- [-Delimiter <String>] [-Wait] [-Raw]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
- [<CommonParameters>]
+```
+Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralPath <String[]>
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
+ [-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>]
+ [-Stream <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

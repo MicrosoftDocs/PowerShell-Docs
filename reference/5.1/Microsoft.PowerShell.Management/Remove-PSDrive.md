@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821618
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Remove-PSDrive
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821618
+schema: 2.0.0
+title: Remove-PSDrive
 ---
 
 # Remove-PSDrive
@@ -57,21 +58,6 @@ This command disconnects the X: mapped network drive that was created in File Ex
 The command uses the Get-PSDrive cmdlet to get the drives and **Remove-PSDrive** to disconnect them.
 
 ## PARAMETERS
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Force
 Removes the current Windows PowerShell drive.
@@ -164,6 +150,21 @@ For more information, see about_Transactions.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821774
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Format-List
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821774
+schema: 2.0.0
+title: Format-List
 ---
 
 # Format-List
@@ -82,15 +83,13 @@ Indicates that this cmdlet displays errors at the command line.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-List` command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **DisplayError** parameter with an expression.
 
-```powershell
+
+
 PS C:\> Get-Date | Format-List DayOfWeek, { $_ / $null } -DisplayError
 
 
 DayOfWeek    : Monday
- $_ / $null  : #ERR
-```
-
-```yaml
+ $_ / $null  : #ERR```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -209,7 +208,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -ShowError

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821654
-external help file:  Microsoft.PowerShell.Archive-help.xml
-title:  Compress-Archive
+external help file: Microsoft.PowerShell.Archive-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Archive
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821654
+schema: 2.0.0
+title: Compress-Archive
 ---
 
 # Compress-Archive
@@ -16,39 +17,39 @@ Creates an archive, or zipped file, from specified files and folders.
 ## SYNTAX
 
 ### Path (Default)
-```powershell
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+```
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithUpdate
-```powershell
+```
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Update]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithForce
-```powershell
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Force] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+```
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Force]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithUpdate
-```powershell
+```
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Update]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithForce
-```powershell
+```
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Force]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
-```powershell
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+```
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,6 +116,7 @@ If this parameter is not specified, the command uses the default value, Optimal.
 Type: String
 Parameter Sets: (All)
 Aliases:
+Accepted values: Optimal, NoCompression, Fastest
 
 Required: False
 Position: Named
@@ -135,7 +137,21 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PathWithForce, LiteralPathWithForce
+Aliases:
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -160,6 +176,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -PassThru
+{{Fill PassThru Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Path
 Specifies the path or paths to the files that you want to add to the archive zipped file.
 This parameter can accept wildcard characters.
@@ -172,7 +203,7 @@ Parameter Sets: Path, PathWithUpdate, PathWithForce
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -225,21 +256,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PathWithForce, LiteralPathWithForce
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -253,5 +269,7 @@ You can pipe a string that contains a path to one or more files.
 ### System.IO.FileInfo
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS
