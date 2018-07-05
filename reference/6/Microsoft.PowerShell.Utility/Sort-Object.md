@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821863
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Sort-Object
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821863
+schema: 2.0.0
+title: Sort-Object
 ---
 
 # Sort-Object
@@ -15,18 +16,16 @@ Sorts objects by property values.
 
 ## SYNTAX
 
-### Default
+### Default (Default)
 ```
-Sort-Object [[-Property] <Object[]>] [-Descending] [-Unique] [-Top <Int32>]
- [-InputObject <PSObject>] [-Culture <String>] [-CaseSensitive]
- [<CommonParameters>]
+Sort-Object [-Descending] [-Unique] [-Top <Int32>] [-InputObject <PSObject>] [[-Property] <Object[]>]
+ [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
 ### Bottom
 ```
-Sort-Object [[-Property] <Object[]>] -Bottom <Int32> [-Descending] [-Unique]
- [-InputObject <PSObject>] [-Culture <String>] [-CaseSensitive]
- [<CommonParameters>]
+Sort-Object [-Descending] [-Unique] -Bottom <Int32> [-InputObject <PSObject>] [[-Property] <Object[]>]
+ [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -193,7 +192,7 @@ Type: Int32
 Parameter Sets: Bottom
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821671
-external help file:  PSModule-help.xml
-title:  Set-PSRepository
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821671
+schema: 2.0.0
+title: Set-PSRepository
 ---
 
 # Set-PSRepository
@@ -16,9 +17,10 @@ Sets values for a registered repository.
 ## SYNTAX
 
 ```
-Set-PSRepository -Name <String> [-SourceLocation <Uri>] [-PublishLocation <Uri>] [-ScriptSourceLocation <Uri>]
- [-ScriptPublishLocation <Uri>] [-Credential <PSCredential>] [-InstallationPolicy <String>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-PackageManagementProvider <String>] [<CommonParameters>]
+Set-PSRepository [-Name] <String> [[-SourceLocation] <Uri>] [-PublishLocation <Uri>]
+ [-ScriptSourceLocation <Uri>] [-ScriptPublishLocation <Uri>] [-Credential <PSCredential>]
+ [-InstallationPolicy <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-PackageManagementProvider <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,6 +43,20 @@ PS C:\> Set-PSRepository -Name "myInternalSource" -SourceLocation 'http://someNu
 This command sets the source location and publish location for myInternalSource to the specified URIs.
 
 ## PARAMETERS
+
+### -Credential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
 
 ### -InstallationPolicy
 Specifies the installation policy.
@@ -68,7 +84,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -86,6 +102,34 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Proxy
+
+```yaml
+Type: Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProxyCredential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -107,7 +151,6 @@ Accept wildcard characters: False
 
 ### -ScriptPublishLocation
 
-
 ```yaml
 Type: Uri
 Parameter Sets: (All)
@@ -121,7 +164,6 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptSourceLocation
-
 
 ```yaml
 Type: Uri
@@ -145,54 +187,9 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Credential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Proxy
-
-
-```yaml
-Type: Uri
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ProxyCredential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

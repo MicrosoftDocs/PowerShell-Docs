@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517132
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Find-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517132
+schema: 2.0.0
+title: Find-Package
 ---
+
 # Find-Package
 
 ## SYNOPSIS
@@ -16,7 +18,6 @@ Finds software packages in available package sources.
 ## SYNTAX
 
 ### NuGet
-
 ```
 Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Credential <PSCredential>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String[]>] [-RequiredVersion <String>]
@@ -26,14 +27,14 @@ Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Creden
 ```
 
 ### PowerShellGet
-
 ```
 Find-Package [-IncludeDependencies] [-AllVersions] [-Source <String[]>] [-Credential <PSCredential>]
  [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String[]>] [-RequiredVersion <String>]
  [-MinimumVersion <String>] [-MaximumVersion <String>] [-Force] [-ForceBootstrap] [-ProviderName <String[]>]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,14 +97,12 @@ This command finds a matching range of versions of a package named DSCAccelerato
 
 ## PARAMETERS
 
-### -AllVersions
-
-Indicates that **Find-Package** returns all available versions of the package.
-By default, **Find-Package** only returns the newest available version.
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: PowerShellGet
 Aliases:
 
 Required: False
@@ -119,7 +118,24 @@ Accept wildcard characters: False
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: NuGet
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllVersions
+
+Indicates that **Find-Package** returns all available versions of the package.
+By default, **Find-Package** only returns the newest available version.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -404,7 +420,7 @@ Separate multiple package provider names with commas.
 Type: String[]
 Parameter Sets: (All)
 Aliases: Provider
-Accepted values: msi, NuGet, msu, Programs, PowerShellGet, psl, chocolatey
+Accepted values: Programs, msi, msu, NuGet, PowerShellGet, psl, chocolatey
 
 Required: False
 Position: Named
@@ -593,7 +609,6 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

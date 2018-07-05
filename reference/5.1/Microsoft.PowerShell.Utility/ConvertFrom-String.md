@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822386
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  ConvertFrom-String
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822386
+schema: 2.0.0
+title: ConvertFrom-String
 ---
 
 # ConvertFrom-String
@@ -219,7 +220,7 @@ Notice the difference in alignment for the age column between both examples.
 
 ### Example 5A: Get to know the generated object
 
- ```
+```
 $template = @'
 {[string]Name*:Phoebe Cat}, {[string]phone:425-123-6789}, {[int]age:6}
 {[string]Name*:Lucky Shot}, {[string]phone:(206) 987-4321}, {[int]age:12}
@@ -354,17 +355,15 @@ If a property, such as the Name property and its associated other properties,
 appears multiple times, you can add an asterisk (\*) to indicate that this results in multiple records.
 This avoids extracting multiple properties into a single record.
 
-```
+
+
 {Name*:David Chew}
 
 {City:Redmond}, {State:WA}
 
 {Name*:Evan Narvaez}    {Name*:Antonio Moreno}
 
-{City:Issaquah}, {State:WA}
-```
-
-```yaml
+{City:Issaquah}, {State:WA}```yaml
 Type: String[]
 Parameter Sets: TemplateParsing
 Aliases: TF
@@ -394,11 +393,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters:
--Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable,
--OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction,
-and -WarningVariable.
-For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

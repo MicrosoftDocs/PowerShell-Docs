@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821776
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Format-Wide
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821776
+schema: 2.0.0
+title: Format-Wide
 ---
 
 # Format-Wide
@@ -15,7 +16,7 @@ Formats objects as a wide table that displays only one property of each object.
 
 ## SYNTAX
 
-```powershell
+```
 Format-Wide [[-Property] <Object>] [-AutoSize] [-Column <Int32>] [-GroupBy <Object>] [-View <String>]
  [-ShowError] [-DisplayError] [-Force] [-Expand <String>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
@@ -87,14 +88,12 @@ Displays errors at the command line.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Wide` command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **DisplayError** parameter with an expression.
 
-```powershell
+
+
 PS \> Get-Date | Format-Wide DayOfWeek,{ $_ / $null } -ShowError
 DayOfWeek  $_ / $null
 --------- ------------
-Wednesday #ERR
-```
-
-```yaml
+Wednesday #ERR```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -207,10 +206,10 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -ShowError
@@ -218,7 +217,8 @@ Sends errors through the pipeline.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a `Format-Wide` command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **ShowError** parameter with an expression.
 
-```powershell
+
+
 PS \> Get-Date | Format-Wide DayOfWeek,{ $_ / $null } -ShowError
 DayOfWeek  $_ / $null
 --------- ------------
@@ -226,10 +226,7 @@ Wednesday
 
 Failed to evaluate expression " $_ / $null ".
     + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
-    + FullyQualifiedErrorId : mshExpressionError
-```
-
-```yaml
+    + FullyQualifiedErrorId : mshExpressionError```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:

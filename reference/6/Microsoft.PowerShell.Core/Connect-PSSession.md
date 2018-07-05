@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821471
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Connect-PSSession
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821471
+schema: 2.0.0
+title: Connect-PSSession
 ---
 
 # Connect-PSSession
@@ -25,14 +26,6 @@ Connect-PSSession -Name <String[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm]
 Connect-PSSession [-Session] <PSSession[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ComputerName
-```
-Connect-PSSession -ComputerName <String[]> [-ApplicationName <String>] [-ConfigurationName <String>]
- [-Name <String[]>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
- [-CertificateThumbprint <String>] [-Port <Int32>] [-UseSSL] [-SessionOption <PSSessionOption>]
- [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
 ### ComputerNameGuid
 ```
 Connect-PSSession -ComputerName <String[]> [-ApplicationName <String>] [-ConfigurationName <String>]
@@ -41,11 +34,12 @@ Connect-PSSession -ComputerName <String[]> [-ApplicationName <String>] [-Configu
  [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ConnectionUri
+### ComputerName
 ```
-Connect-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri[]> [-AllowRedirection] [-Name <String[]>]
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
- [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Connect-PSSession -ComputerName <String[]> [-ApplicationName <String>] [-ConfigurationName <String>]
+ [-Name <String[]>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <String>] [-Port <Int32>] [-UseSSL] [-SessionOption <PSSessionOption>]
+ [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ConnectionUriGuid
@@ -54,6 +48,13 @@ Connect-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri[]> [-Allow
  -InstanceId <Guid[]> [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
  [-CertificateThumbprint <String>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
+```
+
+### ConnectionUri
+```
+Connect-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri[]> [-AllowRedirection] [-Name <String[]>]
+ [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+ [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceId
@@ -207,7 +208,7 @@ The default value is 5.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ConnectionUri, ConnectionUriGuid
+Parameter Sets: ConnectionUriGuid, ConnectionUri
 Aliases:
 
 Required: False
@@ -230,7 +231,7 @@ It does not change the application that the session uses.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, ComputerNameGuid
+Parameter Sets: ComputerNameGuid, ComputerName
 Aliases:
 
 Required: False
@@ -262,7 +263,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 
 ```yaml
 Type: AuthenticationMechanism
-Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
+Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -285,7 +286,7 @@ To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the 
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
+Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
 Aliases:
 
 Required: False
@@ -306,7 +307,7 @@ To specify the local computer, type the computer name, localhost, or a dot (.)
 
 ```yaml
 Type: String[]
-Parameter Sets: ComputerName, ComputerNameGuid
+Parameter Sets: ComputerNameGuid, ComputerName
 Aliases: Cn
 
 Required: True
@@ -330,28 +331,13 @@ For more information about session configurations, see [about_Session_Configurat
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
+Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -377,7 +363,7 @@ If the destination computer redirects the connection to a different URI, PowerSh
 
 ```yaml
 Type: Uri[]
-Parameter Sets: ConnectionUri, ConnectionUriGuid
+Parameter Sets: ConnectionUriGuid, ConnectionUri
 Aliases: URI, CU
 
 Required: True
@@ -397,7 +383,7 @@ If you type a user name, this cmdlet prompts you for a password.
 
 ```yaml
 Type: PSCredential
-Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
+Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
 Aliases:
 
 Required: False
@@ -489,7 +475,7 @@ An alternate port setting might prevent the command from running on all computer
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName, ComputerNameGuid
+Parameter Sets: ComputerNameGuid, ComputerName
 Aliases:
 
 Required: False
@@ -531,7 +517,7 @@ For more information about session configurations, see [about_Session_Configurat
 
 ```yaml
 Type: PSSessionOption
-Parameter Sets: ComputerName, ComputerNameGuid, ConnectionUri, ConnectionUriGuid
+Parameter Sets: ComputerNameGuid, ComputerName, ConnectionUriGuid, ConnectionUri
 Aliases:
 
 Required: False
@@ -570,12 +556,27 @@ If you use this parameter, but SSL is not available on the port that is used for
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ComputerName, ComputerNameGuid
+Parameter Sets: ComputerNameGuid, ComputerName
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

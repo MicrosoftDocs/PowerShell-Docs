@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517137
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Get-PackageSource
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517137
+schema: 2.0.0
+title: Get-PackageSource
 ---
 
 # Get-PackageSource
@@ -162,7 +163,7 @@ The acceptable values for this parameter are:
 Type: String[]
 Parameter Sets: (All)
 Aliases: Provider
-Accepted values: msi, NuGet, msu, Programs, PowerShellGet, psl, chocolatey
+Accepted values: Programs, msi, msu, NuGet, PowerShellGet, psl, chocolatey
 
 Required: False
 Position: Named

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821477
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Enter-PSSession
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821477
+schema: 2.0.0
+title: Enter-PSSession
 ---
 
 # Enter-PSSession
@@ -17,10 +18,16 @@ Starts an interactive session with a remote computer.
 
 ### ComputerName (Default)
 ```
-Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [-Credential <PSCredential>]
+Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [[-Credential] <PSCredential>]
  [-ConfigurationName <String>] [-Port <Int32>] [-UseSSL] [-ApplicationName <String>]
  [-SessionOption <PSSessionOption>] [-Authentication <AuthenticationMechanism>]
  [-CertificateThumbprint <String>] [<CommonParameters>]
+```
+
+### SSHHost
+```
+Enter-PSSession [-HostName] <String> [-Port <Int32>] [-UserName <String>] [-KeyFilePath <String>]
+ [-SSHTransport] [<CommonParameters>]
 ```
 
 ### Session
@@ -30,7 +37,7 @@ Enter-PSSession [[-Session] <PSSession>] [<CommonParameters>]
 
 ### Uri
 ```
-Enter-PSSession [[-ConnectionUri] <Uri>] [-EnableNetworkAccess] [-Credential <PSCredential>]
+Enter-PSSession [[-ConnectionUri] <Uri>] [-EnableNetworkAccess] [[-Credential] <PSCredential>]
  [-ConfigurationName <String>] [-AllowRedirection] [-SessionOption <PSSessionOption>]
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
@@ -52,24 +59,19 @@ Enter-PSSession [-Name <String>] [<CommonParameters>]
 
 ### VMId
 ```
-Enter-PSSession -VMId <Guid> -Credential <PSCredential> [-ConfigurationName <String>] [<CommonParameters>]
+Enter-PSSession [-VMId] <Guid> [-Credential] <PSCredential> [-ConfigurationName <String>] [<CommonParameters>]
 ```
 
 ### VMName
 ```
-Enter-PSSession [-VMName] <String> -Credential <PSCredential> [-ConfigurationName <String>]
+Enter-PSSession [-VMName] <String> [-Credential] <PSCredential> [-ConfigurationName <String>]
  [<CommonParameters>]
 ```
 
 ### ContainerId
 ```
-Enter-PSSession -ContainerId <String> [-ConfigurationName <String>] [-RunAsAdministrator] [<CommonParameters>]
-```
-
-### HostName
-```
-Enter-PSSession [-HostName] <string> [-Port <int>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport]
- [-Subsystem <String>] [<CommonParameters>]
+Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdministrator]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -358,6 +360,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -ContainerId
+Specifies the ID of a container.
+
+```yaml
+Type: String
+Parameter Sets: ContainerId
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
 ### -Credential
 Specifies a user account that has permission to perform this action.
 The default is the current user.
@@ -372,7 +389,7 @@ Parameter Sets: ComputerName, Uri
 Aliases:
 
 Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -384,7 +401,7 @@ Parameter Sets: VMId, VMName
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -432,13 +449,13 @@ This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: String
-Parameter Sets: HostName
+Parameter Sets: SSHHost
 Aliases:
 
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: True
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -490,8 +507,8 @@ This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: String
-Parameter Sets: HostName
-Aliases:
+Parameter Sets: SSHHost
+Aliases: IdentityFilePath
 
 Required: False
 Position: Named
@@ -550,7 +567,22 @@ The default port for SSH is 22.
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName, HostName
+Parameter Sets: ComputerName, SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RunAsAdministrator
+Indicates that the **PSSession** runs as administrator.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ContainerId
 Aliases:
 
 Required: False
@@ -619,8 +651,9 @@ This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: HostName
+Parameter Sets: SSHHost
 Aliases:
+Accepted values: true
 
 Required: False
 Position: Named
@@ -663,7 +696,7 @@ This parameter was introduced in PowerShell 6.0.
 
 ```yaml
 Type: String
-Parameter Sets: HostName
+Parameter Sets: SSHHost
 Aliases:
 
 Required: False
@@ -694,6 +727,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -VMId
+Specifies the ID of a virtual machine.
+
+```yaml
+Type: Guid
+Parameter Sets: VMId
+Aliases: VMGuid
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
 ### -VMName
 Specifies the name of a virtual machine.
 
@@ -704,51 +752,6 @@ Aliases:
 
 Required: True
 Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -ContainerId
-Specifies the ID of a container.
-
-```yaml
-Type: String
-Parameter Sets: ContainerId
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -RunAsAdministrator
-Indicates that the **PSSession** runs as administrator.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: ContainerId
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VMId
-Specifies the ID of a virtual machine.
-
-```yaml
-Type: Guid
-Parameter Sets: VMId
-Aliases: VMGuid
-
-Required: True
-Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

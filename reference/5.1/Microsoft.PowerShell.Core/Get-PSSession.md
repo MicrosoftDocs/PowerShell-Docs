@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821488
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-PSSession
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821488
+schema: 2.0.0
+title: Get-PSSession
 ---
 
 # Get-PSSession
@@ -50,12 +51,6 @@ Get-PSSession [-ConnectionUri] <Uri[]> [-ConfigurationName <String>] [-AllowRedi
  [-ThrottleLimit <Int32>] [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
 ```
 
-### VMIdInstanceId
-```
-Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>] -VMId <Guid[]>
- [<CommonParameters>]
-```
-
 ### ContainerId
 ```
 Get-PSSession [-ConfigurationName <String>] [-Name <String[]>] [-State <SessionFilterState>]
@@ -71,6 +66,12 @@ Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <Sessio
 ### VMId
 ```
 Get-PSSession [-ConfigurationName <String>] [-Name <String[]>] [-State <SessionFilterState>] -VMId <Guid[]>
+ [<CommonParameters>]
+```
+
+### VMIdInstanceId
+```
+Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>] -VMId <Guid[]>
  [<CommonParameters>]
 ```
 
@@ -364,7 +365,7 @@ For more information about session configurations, see [about_Session_Configurat
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri, VMIdInstanceId, ContainerId, ContainerIdInstanceId, VMId, VMName, VMNameInstanceId
+Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName, VMNameInstanceId
 Aliases:
 
 Required: False
@@ -484,7 +485,7 @@ The instance ID of a session is stored in the **InstanceID** property of the ses
 
 ```yaml
 Type: Guid[]
-Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, VMIdInstanceId, ContainerIdInstanceId, VMNameInstanceId
+Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, ContainerIdInstanceId, VMIdInstanceId, VMNameInstanceId
 Aliases:
 
 Required: True
@@ -610,7 +611,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SessionFilterState
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri, VMIdInstanceId, ContainerId, ContainerIdInstanceId, VMId, VMName, VMNameInstanceId
+Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName, VMNameInstanceId
 Aliases:
 Accepted values: All, Opened, Disconnected, Closed, Broken
 
@@ -670,7 +671,7 @@ To see the virtual machines that are available to you, use the following command
 
 ```yaml
 Type: Guid[]
-Parameter Sets: VMIdInstanceId, VMId
+Parameter Sets: VMId, VMIdInstanceId
 Aliases: VMGuid
 
 Required: True

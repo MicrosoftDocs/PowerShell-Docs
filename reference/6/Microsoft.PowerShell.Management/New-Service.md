@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821608
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  New-Service
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821608
+schema: 2.0.0
+title: New-Service
 ---
 
 # New-Service
@@ -17,8 +18,8 @@ Creates a new Windows service.
 
 ```
 New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] [-Description <String>]
- [-StartupType <ServiceStartMode>] [-Credential <PSCredential>] [-DependsOn <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-StartupType <ServiceStartupType>] [-Credential <PSCredential>] [-DependsOn <String[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,7 +71,7 @@ Parameter Sets: (All)
 Aliases: Path
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -150,7 +151,7 @@ Parameter Sets: (All)
 Aliases: ServiceName
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -171,10 +172,10 @@ The service is disabled and cannot be started by a user or application.
  The default value is Automatic.
 
 ```yaml
-Type: ServiceStartMode
+Type: ServiceStartupType
 Parameter Sets: (All)
 Aliases:
-Accepted values: Automatic, Manual, Disabled
+Accepted values: Automatic, Manual, Disabled, AutomaticDelayedStart, InvalidValue
 
 Required: False
 Position: Named

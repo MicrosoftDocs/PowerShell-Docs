@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517138
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Install-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517138
+schema: 2.0.0
+title: Install-Package
 ---
 
 # Install-Package
@@ -30,38 +31,12 @@ Install-Package [-InputObject] <SoftwareIdentity[]> [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
-### Programs:PackageBySearch
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller] [-IncludeSystemComponent]
- [<CommonParameters>]
-```
-
-### Programs:PackageByInputObject
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller] [-IncludeSystemComponent]
- [<CommonParameters>]
-```
-
-### msi:PackageBySearch
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AdditionalArguments <String[]>] [<CommonParameters>]
-```
-
-### msi:PackageByInputObject
-```
-Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AdditionalArguments <String[]>] [<CommonParameters>]
-```
-
 ### NuGet:PackageBySearch
 ```
 Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
  [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>]
  [-FilterOnTag <String[]>] [-Contains <String>] [-AllowPrereleaseVersions] [-Destination <String>]
- [-ExcludeVersion] [-Scope <String>] [<CommonParameters>]
+ [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
 ```
 
 ### NuGet:PackageByInputObject
@@ -69,27 +44,27 @@ Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <P
 Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
  [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>]
  [-FilterOnTag <String[]>] [-Contains <String>] [-AllowPrereleaseVersions] [-Destination <String>]
- [-ExcludeVersion] [-Scope <String>] [<CommonParameters>]
+ [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageBySearch
 ```
 Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>] [-PackageManagementProvider <String>]
- [-PublishLocation <String>] [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>]
- [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
- [-RoleCapability <String[]>] [-Command <String[]>] [-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate]
- [-NoPathUpdate] [<CommonParameters>]
+ [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions] [-Scope <String>]
+ [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
+ [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
+ [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [-AllowClobber]
+ [-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageByInputObject
 ```
 Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
- [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>] [-PackageManagementProvider <String>]
- [-PublishLocation <String>] [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>]
- [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
- [-RoleCapability <String[]>] [-Command <String[]>] [-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate]
- [-NoPathUpdate] [<CommonParameters>]
+ [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-AllowPrereleaseVersions] [-Scope <String>]
+ [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
+ [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
+ [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [-AllowClobber]
+ [-SkipPublisherCheck] [-InstallUpdate] [-NoPathUpdate] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,12 +97,41 @@ The command installs the newest version of the package, within a range of versio
 
 ## PARAMETERS
 
-### -AdditionalArguments
-Specifies one or more additional arguments for installation.
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
 
 ```yaml
-Type: String[]
-Parameter Sets: msi:PackageBySearch, msi:PackageByInputObject
+Type: SwitchParameter
+Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowClobber
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowPrereleaseVersions
+{{Fill AllowPrereleaseVersions Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject, PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
 Required: False
@@ -168,12 +172,57 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ConfigFile
+{{Fill ConfigFile Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Contains
+{{Fill Contains Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Credential
 Specifies a user account that has rights to install a package for a specified package provider or source.
 
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Destination
+{{Fill Destination Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
 Required: False
@@ -198,12 +247,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ExcludeVersion
+{{Fill ExcludeVersion Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Filter
 Specifies terms to search for within the **Name** and **Description** properties.
 
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilterOnTag
+{{Fill FilterOnTag Description}}
+
+```yaml
+Type: String[]
+Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
 Required: False
@@ -243,6 +322,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Headers
+{{Fill Headers Description}}
+
+```yaml
+Type: String[]
+Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Includes
 Specifies whether **Find-Package** should find all packages with DSC resources, cmdlets, functions, or workflows.
 The acceptable values for this parameter are:
@@ -256,37 +350,7 @@ The acceptable values for this parameter are:
 Type: String[]
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
-Accepted values: DscResource, Cmdlet, Function, Workflow
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeSystemComponent
-Indicates that this cmdlet includes system components in the results.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Programs:PackageBySearch, Programs:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeWindowsInstaller
-Indicates that this cmdlet includes the Windows installer in the results.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Programs:PackageBySearch, Programs:PackageByInputObject
-Aliases:
+Accepted values: DscResource, Cmdlet, Function, Workflow, RoleCapability
 
 Required: False
 Position: Named
@@ -304,7 +368,7 @@ Parameter Sets: PackageByInputObject
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -367,7 +431,21 @@ Parameter Sets: PackageBySearch
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoPathUpdate
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -396,12 +474,40 @@ You can get package provider names by running the Get-PackageProvider cmdlet.
 Type: String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
-Accepted values: Programs, msi, msu, PowerShellGet, nuget, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Proxy
+
+```yaml
+Type: Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProxyCredential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -427,6 +533,20 @@ If you do not add this parameter, **Install-Package** installs the newest availa
 ```yaml
 Type: String
 Parameter Sets: PackageBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RoleCapability
+
+```yaml
+Type: String[]
+Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
 Aliases:
 
 Required: False
@@ -477,6 +597,50 @@ Specifies the script source location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipDependencies
+{{Fill SkipDependencies Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipPublisherCheck
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipValidate
+{{Fill SkipValidate Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
 Aliases:
 
 Required: False
@@ -566,216 +730,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllowClobber
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllowPrereleaseVersions
-{{Fill AllowPrereleaseVersions Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConfigFile
-{{Fill ConfigFile Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Contains
-{{Fill Contains Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Destination
-{{Fill Destination Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExcludeVersion
-{{Fill ExcludeVersion Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FilterOnTag
-{{Fill FilterOnTag Description}}
-
-```yaml
-Type: String[]
-Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-{{Fill Headers Description}}
-
-```yaml
-Type: String[]
-Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoPathUpdate
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Proxy
-
-
-```yaml
-Type: Uri
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProxyCredential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RoleCapability
-
-
-```yaml
-Type: String[]
-Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipPublisherCheck
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PowerShellGet:PackageBySearch, PowerShellGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipValidate
-{{Fill SkipValidate Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet:PackageBySearch, NuGet:PackageByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517141
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Set-PackageSource
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517141
+schema: 2.0.0
+title: Set-PackageSource
 ---
 
 # Set-PackageSource
@@ -74,6 +75,21 @@ This command changes the friendly name of a package source for the PSModule prov
 It also changes the package source to be trusted, so that users who install packages from this source are not prompted to verify that they trust the source.
 
 ## PARAMETERS
+
+### -ConfigFile
+{{Fill ConfigFile Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Credential
 Specifies a user account that has permission to install package providers.
@@ -161,7 +177,7 @@ Parameter Sets: SourceBySearch
 Aliases: SourceName
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -220,12 +236,40 @@ Specifies the provider name.
 Type: String
 Parameter Sets: SourceBySearch
 Aliases: Provider
-Accepted values: Programs, msi, msu, PowerShellGet, nuget, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Proxy
+
+```yaml
+Type: Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProxyCredential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -265,6 +309,21 @@ Specifies the script source location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:SourceByInputObject, PowerShellGet:SourceBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipValidate
+{{Fill SkipValidate Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
 Aliases:
 
 Required: False
@@ -317,66 +376,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConfigFile
-{{Fill ConfigFile Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Proxy
-
-
-```yaml
-Type: Uri
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProxyCredential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipValidate
-{{Fill SkipValidate Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet:SourceByInputObject, NuGet:SourceBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

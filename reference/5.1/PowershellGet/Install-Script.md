@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822327
-external help file:  PSModule-help.xml
-title:  Install-Script
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822327
+schema: 2.0.0
+title: Install-Script
 ---
 
 # Install-Script
@@ -17,16 +18,16 @@ Installs a script.
 
 ### NameParameterSet (Default)
 ```
-Install-Script [-Name] <String[]> [-MinimumVersion <Version>] [-MaximumVersion <Version>]
- [-RequiredVersion <Version>] [-Repository <String[]>] [-Scope <String>] [-NoPathUpdate] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Install-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+ [-RequiredVersion <String>] [-Repository <String[]>] [-Scope <String>] [-NoPathUpdate] [-Proxy <Uri>]
+ [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease] [-AcceptLicense]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
 Install-Script [-InputObject] <PSObject[]> [-Scope <String>] [-NoPathUpdate] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm]
+ [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -179,17 +180,32 @@ The final command gets installed scripts and displays the results.
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowPrerelease
+{{Fill AllowPrerelease Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -245,7 +261,7 @@ The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; yo
 This parameter accepts the wildcard character (*).
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -261,7 +277,7 @@ Specifies the minimum version of the script to install.
 The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -288,7 +304,6 @@ Accept wildcard characters: False
 ```
 
 ### -NoPathUpdate
-
 
 ```yaml
 Type: SwitchParameter
@@ -352,7 +367,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the script to install.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -384,6 +399,21 @@ Accepted values: CurrentUser, AllUsers
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

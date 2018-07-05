@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?linkid=821590
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-Process
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?linkid=821590
+schema: 2.0.0
+title: Get-Process
 ---
 
 # Get-Process
@@ -17,8 +18,7 @@ Gets the processes that are running on the local computer.
 
 ### Name (Default)
 ```
-Get-Process [[-Name] <String[]>] [-Module] [-FileVersionInfo]
- [<CommonParameters>]
+Get-Process [[-Name] <String[]>] [-Module] [-FileVersionInfo] [<CommonParameters>]
 ```
 
 ### NameWithUserName
@@ -26,20 +26,19 @@ Get-Process [[-Name] <String[]>] [-Module] [-FileVersionInfo]
 Get-Process [[-Name] <String[]>] [-IncludeUserName] [<CommonParameters>]
 ```
 
-### Id
-```
-Get-Process -Id <Int32[]> [-Module] [-FileVersionInfo] [<CommonParameters>]
-```
-
 ### IdWithUserName
 ```
 Get-Process -Id <Int32[]> [-IncludeUserName] [<CommonParameters>]
 ```
 
+### Id
+```
+Get-Process -Id <Int32[]> [-Module] [-FileVersionInfo] [<CommonParameters>]
+```
+
 ### InputObject
 ```
-Get-Process -InputObject <Process[]> [-Module] [-FileVersionInfo]
- [<CommonParameters>]
+Get-Process -InputObject <Process[]> [-Module] [-FileVersionInfo] [<CommonParameters>]
 ```
 
 ### InputObjectWithUserName
@@ -227,7 +226,7 @@ To find the PID of a process, type `Get-Process`.
 
 ```yaml
 Type: Int32[]
-Parameter Sets: Id, IdWithUserName
+Parameter Sets: IdWithUserName, Id
 Aliases: PID
 
 Required: True
@@ -304,7 +303,7 @@ Parameter Sets: Name, NameWithUserName
 Aliases: ProcessName
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
