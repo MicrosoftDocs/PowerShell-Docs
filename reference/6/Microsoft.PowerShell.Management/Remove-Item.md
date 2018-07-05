@@ -384,7 +384,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: String[]
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 

@@ -101,6 +101,7 @@ Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile 
 ```
 
 ### Example 3: Pass multiple headers
+
 ```powershell
 $headers = @{
     'userId' = 'UserIDValue'
