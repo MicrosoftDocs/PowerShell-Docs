@@ -11,8 +11,7 @@ title: Invoke-RestMethod
 
 # Invoke-RestMethod
 
-## Synopsis
-
+## SYNOPSIS
 Sends an HTTP or HTTPS request to a RESTful web service.
 
 ## SYNTAX
@@ -1053,6 +1052,10 @@ For example, the following command uses the user agent string for Internet Explo
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ran Update-MarkdownHelp on v5.1 and v6 cmdlets
 Invoke-RestMethod -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)```yaml
 Type: String
 Parameter Sets: (All)
