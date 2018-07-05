@@ -122,6 +122,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 Type: PasswordAuthenticationMechanism
 Parameter Sets: CredentialParameterSet
 Aliases:
+Accepted values: Default, Digest, Negotiate, Basic, Kerberos, NtlmDomain, CredSsp
 
 Required: False
 Position: Named
@@ -252,10 +253,10 @@ The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port fo
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
 Use the following commands to configure the listener: 
 
-```
- winrm delete winrm/config/listener?Address=*+Transport=HTTP
+
+
+winrm delete winrm/config/listener?Address=*+Transport=HTTP
  winrm create winrm/config/listener?Address=*+Transport=HTTP @{Port="\<port-number\>"}
-```
 
 Do not use the Port parameter unless you must.
 The port setting in the command applies to all computers or sessions on which the command runs.
@@ -307,8 +308,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

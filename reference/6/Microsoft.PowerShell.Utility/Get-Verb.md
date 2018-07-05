@@ -15,7 +15,7 @@ Gets approved PowerShell verbs.
 
 ## SYNTAX
 
-```powershell
+```
 Get-Verb [[-Verb] <String[]>] [[-Group] <String[]>] [<CommonParameters>]
 ```
 
@@ -36,8 +36,6 @@ warning message.
 > PowerShell verbs with descriptions, see
 > [Approved Verbs](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands) in
 > the Microsoft Docs.
-
-## EXAMPLES
 
 ### Example 1 - Get a list of all verbs
 
@@ -106,12 +104,13 @@ Wildcards are allowed.
 Type: String[]
 Parameter Sets: (All)
 Aliases:
+Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
 
 Required: False
 Position: 1
-Default value: All verbs
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: True
+Default value: All groups
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
 ```
 
 ### -Group
@@ -124,14 +123,16 @@ Wildcards are not allowed.
 Type: String[]
 Parameter Sets: (All)
 Aliases:
-Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
 
 Required: False
-Position: 1
-Default value: All groups
-Accept pipeline input: True (ByPropertyName)
+Position: 0
+Default value: All verbs
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -150,8 +151,8 @@ You can use any approved verb for any type of command.
 Each PowerShell verb is assigned to one of the following groups.
 
 - Common: Define generic actions that can apply to almost any cmdlet, such as Add.
-- Communications:  Define actions that apply to communications, such as Connect.
-- Data:  Define actions that apply to data handling, such as Backup.
+- Communications: Define actions that apply to communications, such as Connect.
+- Data: Define actions that apply to data handling, such as Backup.
 - Diagnostic: Define actions that apply to diagnostics, such as Debug.
 - Lifecycle: Define actions that apply to the lifecycle of a cmdlet, such as Complete.
 - Security: Define actions that apply to security, such as Revoke.

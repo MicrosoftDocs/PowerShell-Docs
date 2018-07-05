@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517142
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Uninstall-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517142
+schema: 2.0.0
+title: Uninstall-Package
 ---
+
 # Uninstall-Package
 
 ## SYNOPSIS
@@ -16,29 +18,37 @@ Uninstalls one or more software packages.
 ## SYNTAX
 
 ### PackageByInputObject
-
 ```
 Uninstall-Package [-InputObject] <SoftwareIdentity[]> [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### PackageBySearch
-
 ```
 Uninstall-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
  [-MaximumVersion <String>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
  [-ProviderName <String[]>] [<CommonParameters>]
 ```
 
-### msi:PackageByInputObject
+### Programs:PackageByInputObject
+```
+Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
+ [-IncludeSystemComponent] [<CommonParameters>]
+```
 
+### Programs:PackageBySearch
+```
+Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
+ [-IncludeSystemComponent] [<CommonParameters>]
+```
+
+### msi:PackageByInputObject
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
  [-AdditionalArguments <String[]>] [<CommonParameters>]
 ```
 
 ### msi:PackageBySearch
-
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
  [-AdditionalArguments <String[]>] [<CommonParameters>]
@@ -51,40 +61,23 @@ Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
 ```
 
 ### NuGet:PackageBySearch
-
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Destination <String>]
  [-ExcludeVersion] [-Scope <String>] [-SkipDependencies] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageByInputObject
-
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>]
  [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate]
- [-NoPathUpdate] [<CommonParameters>]
+ [-NoPathUpdate] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageBySearch
-
 ```
 Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-Scope <String>]
  [-PackageManagementProvider <String>] [-Type <String>] [-AllowClobber] [-SkipPublisherCheck] [-InstallUpdate]
- [-NoPathUpdate] [<CommonParameters>]
-```
-
-### Programs:PackageByInputObject
-
-```
-Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
- [-IncludeSystemComponent] [<CommonParameters>]
-```
-
-### Programs:PackageBySearch
-
-```
-Uninstall-Package [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-IncludeWindowsInstaller]
- [-IncludeSystemComponent] [<CommonParameters>]
+ [-NoPathUpdate] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,22 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AllVersions
-
-Indicates that this cmdlet uninstalls all versions of the package.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -AllowClobber
 
 ```yaml
@@ -158,18 +135,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
+### -AllowPrereleaseVersions
+{{Fill AllowPrereleaseVersions Description}}
 
-Prompts you for confirmation before running the cmdlet.
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet:PackageBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllVersions
+
+Indicates that this cmdlet uninstalls all versions of the package.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -392,7 +384,7 @@ You can get package provider names by running the Get-PackageProvider cmdlet.
 Type: String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
-Accepted values: msi, NuGet, msu, Programs, PowerShellGet, psl, chocolatey
+Accepted values: Programs, msi, msu, NuGet, PowerShellGet, psl, chocolatey
 
 Required: False
 Position: Named
@@ -491,6 +483,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 
 Shows what would happen if the cmdlet runs.
@@ -509,7 +517,6 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821668
-external help file:  PSModule-help.xml
-title:  Register-PSRepository
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821668
+schema: 2.0.0
+title: Register-PSRepository
 ---
 
 # Register-PSRepository
@@ -17,7 +18,7 @@ Registers a PowerShell repository.
 
 ### NameParameterSet (Default)
 ```
-Register-PSRepository -Name <String> -SourceLocation <Uri> [-PublishLocation <Uri>]
+Register-PSRepository [-Name] <String> [-SourceLocation] <Uri> [-PublishLocation <Uri>]
  [-ScriptSourceLocation <Uri>] [-ScriptPublishLocation <Uri>] [-Credential <PSCredential>]
  [-InstallationPolicy <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-PackageManagementProvider <String>] [<CommonParameters>]
@@ -62,8 +63,35 @@ The second command gets registered repositories and displays the results.
 
 ## PARAMETERS
 
-### -InstallationPolicy
+### -Credential
 
+```yaml
+Type: PSCredential
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Default
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PSGalleryParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InstallationPolicy
 
 ```yaml
 Type: String
@@ -80,14 +108,13 @@ Accept wildcard characters: False
 
 ### -Name
 
-
 ```yaml
 Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -95,7 +122,6 @@ Accept wildcard characters: False
 
 ### -PackageManagementProvider
 
-
 ```yaml
 Type: String
 Parameter Sets: NameParameterSet
@@ -108,98 +134,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PublishLocation
-
-
-```yaml
-Type: Uri
-Parameter Sets: NameParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ScriptPublishLocation
-
-
-```yaml
-Type: Uri
-Parameter Sets: NameParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ScriptSourceLocation
-
-
-```yaml
-Type: Uri
-Parameter Sets: NameParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SourceLocation
-
-
-```yaml
-Type: Uri
-Parameter Sets: NameParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Credential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: NameParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Default
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PSGalleryParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Proxy
-
 
 ```yaml
 Type: Uri
@@ -215,7 +150,6 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
@@ -225,6 +159,62 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PublishLocation
+
+```yaml
+Type: Uri
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScriptPublishLocation
+
+```yaml
+Type: Uri
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScriptSourceLocation
+
+```yaml
+Type: Uri
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SourceLocation
+
+```yaml
+Type: Uri
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

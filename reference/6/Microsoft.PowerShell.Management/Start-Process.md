@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821638
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Start-Process
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821638
+schema: 2.0.0
+title: Start-Process
 ---
 
 # Start-Process
@@ -20,13 +21,13 @@ Starts one or more processes on the local computer.
 Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-Credential <PSCredential>]
  [-WorkingDirectory <String>] [-LoadUserProfile] [-NoNewWindow] [-PassThru] [-RedirectStandardError <String>]
  [-RedirectStandardInput <String>] [-RedirectStandardOutput <String>] [-WindowStyle <ProcessWindowStyle>]
- [-Wait] [-UseNewEnvironment] [<CommonParameters>]
+ [-Wait] [-UseNewEnvironment] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseShellExecute
 ```
 Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-WorkingDirectory <String>] [-PassThru]
- [-Verb <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [<CommonParameters>]
+ [-Verb <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -118,6 +119,7 @@ This is the same as starting PowerShell by using the Run as administrator option
 PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
+
 Both commands start the Windows command interpreter, issueing a dir command on the 'Program Files' folder.
 Because this foldername contains a space, the value needs surrounded with escaped quotes.
 Note that the first command specifies a string as ArgumentList. The second command a string array.
@@ -134,7 +136,7 @@ Parameter Sets: (All)
 Aliases: Args
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -170,7 +172,7 @@ Parameter Sets: (All)
 Aliases: PSPath, Path
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -371,6 +373,36 @@ The default is the folder for the new process.
 Type: String
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named

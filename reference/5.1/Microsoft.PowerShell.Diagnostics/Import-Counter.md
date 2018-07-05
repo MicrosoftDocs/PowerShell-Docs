@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821530
-external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-title:  Import-Counter
+external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Diagnostics
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821530
+schema: 2.0.0
+title: Import-Counter
 ---
 
 # Import-Counter
@@ -215,7 +216,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -EndTime
@@ -252,7 +253,7 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -MaxSamples
@@ -285,10 +286,10 @@ Parameter Sets: (All)
 Aliases: PSPath
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -StartTime

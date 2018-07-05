@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821710
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Get-Acl
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821710
+schema: 2.0.0
+title: Get-Acl
 ---
 # Get-Acl
 
@@ -18,22 +19,22 @@ Gets the security descriptor for a resource, such as a file or registry key.
 ### ByPath (Default)
 
 ```
-Get-Acl [[-Path] <String[]>] [-Audit] [-AllCentralAccessPolicies] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-UseTransaction] [<CommonParameters>]
+Get-Acl [[-Path] <String[]>] [-Audit] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [<CommonParameters>]
 ```
 
 ### ByInputObject
 
 ```
-Get-Acl -InputObject <PSObject> [-Audit] [-AllCentralAccessPolicies] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-UseTransaction] [<CommonParameters>]
+Get-Acl -InputObject <PSObject> [-Audit] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Get-Acl [-LiteralPath <String[]>] [-Audit] [-AllCentralAccessPolicies] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-UseTransaction] [<CommonParameters>]
+Get-Acl [-LiteralPath <String[]>] [-Audit] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -266,21 +267,23 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -UseTransaction
+### -Path
+Specifies the path to a resource.
+**Get-Acl** gets the security descriptor of the resource indicated by the path.
+Wildcards are permitted.
+If you omit the *Path* parameter, **Get-Acl** gets the security descriptor of the current directory.
 
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see about_Transactions.
+It is not necessary to type `Path` when you specify a value for this parameter.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
+Type: String[]
+Parameter Sets: ByPath
+Aliases:
 
 Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
