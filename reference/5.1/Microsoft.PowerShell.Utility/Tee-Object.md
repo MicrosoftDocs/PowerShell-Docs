@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821865
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Tee-Object
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821865
+schema: 2.0.0
+title: Tee-Object
 ---
 
 # Tee-Object
@@ -17,20 +18,17 @@ Saves command output in a file or variable and also sends it down the pipeline.
 
 ### File (Default)
 ```
-Tee-Object [-FilePath] <String> [-InputObject <PSObject>] [-Append]
- [<CommonParameters>]
+Tee-Object [-InputObject <PSObject>] [-FilePath] <String> [-Append] [<CommonParameters>]
 ```
 
 ### LiteralFile
 ```
-Tee-Object -LiteralPath <String> [-InputObject <PSObject>]
- [<CommonParameters>]
+Tee-Object [-InputObject <PSObject>] -LiteralPath <String> [<CommonParameters>]
 ```
 
 ### Variable
 ```
-Tee-Object -Variable <String> [-InputObject <PSObject>]
- [<CommonParameters>]
+Tee-Object [-InputObject <PSObject>] -Variable <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821797
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-PSBreakpoint
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821797
+schema: 2.0.0
+title: Get-PSBreakpoint
 ---
 
 # Get-PSBreakpoint

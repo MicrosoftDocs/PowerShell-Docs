@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822511
-external help file:  Microsoft.Powershell.LocalAccounts.dll-Help.xml
-title:  Get-LocalGroup
+external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.LocalAccounts
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822511
+schema: 2.0.0
+title: Get-LocalGroup
 ---
 
 # Get-LocalGroup

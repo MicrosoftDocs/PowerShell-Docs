@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822243
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Invoke-Item
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822243
+schema: 2.0.0
+title: Invoke-Item
 ---
 
 # Invoke-Item
@@ -52,21 +53,6 @@ Each spreadsheet is opened in a new instance of Excel.
 In this case, opening in Excel is the default action for .xls files.
 
 ## PARAMETERS
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Credential
 Specifies a user account that has permission to perform this action.
@@ -186,6 +172,21 @@ For more information, see about_transactions.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named

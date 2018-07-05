@@ -1,35 +1,35 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821481
-external help file:  System.Management.Automation.dll-Help.xml
-title:  ForEach-Object
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821481
+schema: 2.0.0
+title: ForEach-Object
 ---
+
 # ForEach-Object
 
-## Synopsis
+## SYNOPSIS
 
 Performs an operation against each item in a collection of input objects.
 
 ## SYNTAX
 
 ### ScriptBlockSet (Default)
-
 ```
 ForEach-Object [-InputObject <PSObject>] [-Begin <ScriptBlock>] [-Process] <ScriptBlock[]> [-End <ScriptBlock>]
  [-RemainingScripts <ScriptBlock[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PropertyAndMethodSet
-
 ```
 ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <Object[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 The **ForEach-Object** cmdlet performs an operation on each item in a collection of input objects.
 The input objects can be piped to the cmdlet or specified by using the *InputObject* parameter.
@@ -59,7 +59,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
   The Begin script block, which is the value of the *Begin* parameter, runs before this cmdlet processes the first input object.
   The End script block, which is the value of the *End* parameter, runs after this cmdlet processes the last input object.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Divide integers in an array
 
@@ -186,7 +186,7 @@ The output of these three commands, shown below, is identical.
 **Split** is just one of many useful methods of strings.
 To see all of the properties and methods of strings, pipe a string to the `Get-Member` cmdlet.
 
-## Parameters
+## PARAMETERS
 
 ### -ArgumentList
 
@@ -218,22 +218,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -332,6 +316,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 
 Shows what would happen if the cmdlet runs.
@@ -350,28 +350,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
-
-## Inputs
+## INPUTS
 
 ### System.Management.Automation.PSObject
 
 You can pipe any object to this cmdlet.
 
-## Outputs
+## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
 This cmdlet returns objects that are determined by the input.
 
-## Notes
+## NOTES
 
 - The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe input to a **Foreach** statement. For more information about the **Foreach** statement, see [about_Foreach](./About/about_Foreach.md) in the Microsoft TechNet library.
 - Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections.
   - You can read more about these new methods here [about_arrays](./About/about_Arrays.md)
   
-## Related Links
+
+## RELATED LINKS
 
 [Compare-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
 

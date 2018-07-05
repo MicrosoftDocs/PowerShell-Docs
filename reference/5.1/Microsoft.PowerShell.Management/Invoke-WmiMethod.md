@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821598
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Invoke-WmiMethod
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821598
+schema: 2.0.0
+title: Invoke-WmiMethod
 ---
 
 # Invoke-WmiMethod
@@ -37,14 +38,6 @@ Invoke-WmiMethod -Path <String> [-Name] <String> [-ArgumentList <Object[]>] [-As
  [-ComputerName <String[]>] [-Namespace <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### list
-```
-Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
- [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
- [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
 ### WQLQuery
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
@@ -54,6 +47,14 @@ Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
 ```
 
 ### query
+```
+Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
+ [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
+ [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### list
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -235,7 +236,7 @@ The acceptable values for this parameter are:
 
 ```yaml
 Type: AuthenticationLevel
-Parameter Sets: class, path, list, WQLQuery, query
+Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
 
@@ -255,7 +256,7 @@ You cannot include the authority setting when you connect to the local computer.
 
 ```yaml
 Type: String
-Parameter Sets: class, path, list, WQLQuery, query
+Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
 Required: False
@@ -292,27 +293,12 @@ You can use the *ComputerName* parameter even if your computer is not configured
 
 ```yaml
 Type: String[]
-Parameter Sets: class, path, list, WQLQuery, query
+Parameter Sets: class, path, WQLQuery, query, list
 Aliases: Cn
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -326,7 +312,7 @@ When you type a user name, you will be prompted for a password.
 
 ```yaml
 Type: PSCredential
-Parameter Sets: class, path, list, WQLQuery, query
+Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
 Required: False
@@ -341,7 +327,7 @@ Indicates that this cmdlet enables all the privileges of the current user before
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: class, path, list, WQLQuery, query
+Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
 Required: False
@@ -367,7 +353,7 @@ The acceptable values for this parameter are:
 
 ```yaml
 Type: ImpersonationLevel
-Parameter Sets: class, path, list, WQLQuery, query
+Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
 
@@ -400,7 +386,7 @@ Specify the value of the Locale parameter as an array in the MS_\<LCID\> format 
 
 ```yaml
 Type: String
-Parameter Sets: class, path, list, WQLQuery, query
+Parameter Sets: class, path, WQLQuery, query, list
 Aliases:
 
 Required: False
@@ -431,7 +417,7 @@ When used with the *Class* parameter, this parameter specifies the WMI repositor
 
 ```yaml
 Type: String
-Parameter Sets: class, path, list, WQLQuery, query
+Parameter Sets: class, path, WQLQuery, query, list
 Aliases: NS
 
 Required: False
@@ -470,6 +456,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

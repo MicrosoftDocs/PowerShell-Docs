@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821735
-external help file:  Microsoft.WSMan.Management.dll-Help.xml
-title:  Remove-WSManInstance
+external help file: Microsoft.WSMan.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.WSMan.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821735
+schema: 2.0.0
+title: Remove-WSManInstance
 ---
 
 # Remove-WSManInstance
@@ -100,6 +101,7 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 Type: AuthenticationMechanism
 Parameter Sets: (All)
 Aliases: auth, am
+Accepted values: None, Default, Digest, Negotiate, Basic, Kerberos, ClientCertificate, Credssp
 
 Required: False
 Position: Named
@@ -251,7 +253,7 @@ Parameter Sets: (All)
 Aliases: ruri
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -272,7 +274,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: CimCmdlets
+ms.date: 06/09/2017
+schema: 2.0.0
 ---
 
 # Get-CimInstance
@@ -18,12 +19,6 @@ Gets the CIM instances of a class from a CIM server.
 Get-CimInstance [-ClassName] <String> [-ComputerName <String[]>] [-KeyOnly] [-Namespace <String>]
  [-OperationTimeoutSec <UInt32>] [-QueryDialect <String>] [-Shallow] [-Filter <String>] [-Property <String[]>]
  [<CommonParameters>]
-```
-
-### CimInstanceSessionSet
-```
-Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [<CommonParameters>]
 ```
 
 ### ResourceUriSessionSet
@@ -45,16 +40,22 @@ Get-CimInstance -CimSession <CimSession[]> [-ClassName] <String> [-KeyOnly] [-Na
  [<CommonParameters>]
 ```
 
-### ResourceUriComputerSet
+### CimInstanceSessionSet
 ```
-Get-CimInstance -ResourceUri <Uri> [-ComputerName <String[]>] [-KeyOnly] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>] [<CommonParameters>]
+Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
+ [-InputObject] <CimInstance> [<CommonParameters>]
 ```
 
 ### CimInstanceComputerSet
 ```
 Get-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-OperationTimeoutSec <UInt32>]
  [-InputObject] <CimInstance> [<CommonParameters>]
+```
+
+### ResourceUriComputerSet
+```
+Get-CimInstance -ResourceUri <Uri> [-ComputerName <String[]>] [-KeyOnly] [-Namespace <String>]
+ [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### QueryComputerSet
@@ -208,7 +209,7 @@ Parameter Sets: ClassNameComputerSet, ClassNameSessionSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -281,7 +282,7 @@ Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
 Aliases: CimInstance
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -477,8 +478,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

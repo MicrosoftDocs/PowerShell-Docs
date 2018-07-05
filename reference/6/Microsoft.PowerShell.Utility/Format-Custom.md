@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821772
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Format-Custom
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821772
+schema: 2.0.0
+title: Format-Custom
 ---
 
 # Format-Custom
@@ -65,15 +66,13 @@ Displays errors at the command line.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a Format-Custom command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **DisplayError** parameter with an expression.
 
-```powershell
+
+
 PS \> Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -DisplayError
 
 DayOfWeek  $_ / $null
 --------- ------------
-Wednesday #ERR
-```
-
-```yaml
+Wednesday #ERR```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -198,7 +197,8 @@ Sends errors through the pipeline.
 This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a Format-Custom command, and the expressions do not appear to be working.
 The following shows an example of the results of adding the **ShowError** parameter with an expression.
 
-```powershell
+
+
 PS \> Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -ShowError
 DayOfWeek  $_ / $null
 --------- ------------
@@ -206,10 +206,7 @@ Wednesday
 
 Failed to evaluate expression " $_ / $null ".
     + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
-    + FullyQualifiedErrorId : mshExpressionError
-```
-
-```yaml
+    + FullyQualifiedErrorId : mshExpressionError```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -239,7 +236,6 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

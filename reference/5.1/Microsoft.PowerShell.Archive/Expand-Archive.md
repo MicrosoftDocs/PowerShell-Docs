@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821655
-external help file:  Microsoft.PowerShell.Archive-help.xml
-title:  Expand-Archive
+external help file: Microsoft.PowerShell.Archive-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Archive
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821655
+schema: 2.0.0
+title: Expand-Archive
 ---
+
 # Expand-Archive
 
 ## SYNOPSIS
@@ -16,14 +18,12 @@ Extracts files from a specified archive (zipped) file.
 ## SYNTAX
 
 ### Path (Default)
-
 ```
 Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
-
 ```
 Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -53,22 +53,6 @@ Expand-Archive -Path Draft.Zip -DestinationPath C:\Reference
 This command extracts the contents of an existing archive file in the current folder, Draft.zip, into the folder specified by the **DestinationPath** parameter, C:\Reference.
 
 ## PARAMETERS
-
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DestinationPath
 
@@ -139,6 +123,22 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 
 Shows what would happen if the cmdlet runs.
@@ -157,8 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -171,5 +170,7 @@ You can pipe a string that contains a path to an existing archive file.
 ### None
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS
