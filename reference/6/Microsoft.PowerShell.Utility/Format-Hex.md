@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821773
-external help file:  Microsoft.PowerShell.Utility-help.xml
-title:  Format-Hex
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821773
+schema: 2.0.0
+title: Format-Hex
 ---
 
 # Format-Hex
@@ -15,19 +16,19 @@ Displays a file or other input as hexadecimal.
 
 ## SYNTAX
 
-### Path (Default)
+### Path
 ```
-Format-Hex [-Path] <String[]> [<CommonParameters>]
+Format-Hex [-Path] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Format-Hex -LiteralPath <String[]> [<CommonParameters>]
+Format-Hex -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByInputObject
 ```
-Format-Hex -InputObject <Object> [-Encoding <String>] [-Raw] [<CommonParameters>]
+Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Raw] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,10 +80,9 @@ The acceptable values for this parameter are:
 The default value is Unicode.
 
 ```yaml
-Type: String
+Type: Encoding
 Parameter Sets: ByInputObject
 Aliases:
-Accepted values: Ascii, UTF32, UTF7, UTF8, BigEndianUnicode, Unicode
 
 Required: False
 Position: Named
@@ -96,7 +96,7 @@ Specifies the objects to be formatted.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
 ```yaml
-Type: Object
+Type: PSObject
 Parameter Sets: ByInputObject
 Aliases:
 
@@ -149,11 +149,40 @@ Accept wildcard characters: False
 
 ### -Raw
 
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ByInputObject
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named

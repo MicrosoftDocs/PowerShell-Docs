@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821752
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  ConvertFrom-Csv
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821752
+schema: 2.0.0
+title: ConvertFrom-Csv
 ---
 
 # ConvertFrom-Csv
@@ -16,15 +17,13 @@ Converts object properties in comma-separated value (CSV) format into CSV versio
 ## SYNTAX
 
 ### Delimiter (Default)
-```powershell
-ConvertFrom-Csv [-InputObject] <PSObject[]> [[-Delimiter] <Char>]
- [-Header <String[]>] [<CommonParameters>]
+```
+ConvertFrom-Csv [[-Delimiter] <Char>] [-InputObject] <PSObject[]> [-Header <String[]>] [<CommonParameters>]
 ```
 
 ### UseCulture
-```powershell
-ConvertFrom-Csv [-InputObject] <PSObject[]> -UseCulture
- [-Header <String[]>] [<CommonParameters>]
+```
+ConvertFrom-Csv [-UseCulture] [-InputObject] <PSObject[]> [-Header <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

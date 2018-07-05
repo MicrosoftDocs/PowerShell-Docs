@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821502
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Out-Default
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821502
+schema: 2.0.0
+title: Out-Default
 ---
 
 # Out-Default
@@ -50,7 +51,6 @@ Accept wildcard characters: False
 
 ### -Transcript
 
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -71,5 +71,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

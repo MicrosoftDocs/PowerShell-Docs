@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821616
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Remove-Item
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821616
+schema: 2.0.0
+title: Remove-Item
 ---
 
 # Remove-Item
@@ -18,13 +19,13 @@ Deletes the specified items.
 ### Path (Default)
 ```
 Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+ [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
 Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+ [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,35 +124,6 @@ Mode                LastWriteTime         Length Name
 ```
 
 ## PARAMETERS
-
-### -Stream
-Specifies an alternative data stream from a file that this cmdlet deletes.
-This cmdlet does not delete the file.
-Enter the stream name.
-Wildcard characters are supported.
-
-This parameter is not valid on folders.
-
-The *Stream* parameter is a dynamic parameter that the FileSystem provider adds to **Remove-Item**.
-This parameter works only in file system drives.
-
-You can use **Remove-Item** to delete an alternative data stream.
-However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet.
-If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Credential
 Specifies a user account that has permission to perform this action.
@@ -276,7 +248,7 @@ Parameter Sets: Path
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
@@ -291,6 +263,35 @@ As a workaround, try piping results of the `Get-ChildItem -Recurse` command to *
 
 ```yaml
 Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Stream
+Specifies an alternative data stream from a file that this cmdlet deletes.
+This cmdlet does not delete the file.
+Enter the stream name.
+Wildcard characters are supported.
+
+This parameter is not valid on folders.
+
+The *Stream* parameter is a dynamic parameter that the FileSystem provider adds to **Remove-Item**.
+This parameter works only in file system drives.
+
+You can use **Remove-Item** to delete an alternative data stream.
+However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet.
+If you verify that a downloaded file is safe, use the Unblock-File cmdlet.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -324,25 +325,6 @@ The cmdlet is not run.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
 
 Required: False
 Position: Named

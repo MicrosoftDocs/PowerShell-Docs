@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821496
-external help file:  System.Management.Automation.dll-Help.xml
-title:  New-ModuleManifest
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821496
+schema: 2.0.0
+title: New-ModuleManifest
 ---
 
 # New-ModuleManifest
@@ -317,17 +318,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -CompatiblePSEditions
+Specifies the compatible PSEditions of the module.
+For information about PSEdition, see [Modules with compatible PowerShell Editions](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport).
 
 ```yaml
-Type: SwitchParameter
+Type: String[]
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
+Accepted values: Desktop, Core
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -401,7 +404,6 @@ Accept wildcard characters: False
 ```
 
 ### -DscResourcesToExport
-
 
 ```yaml
 Type: String[]
@@ -517,7 +519,6 @@ Accept wildcard characters: False
 
 ### -IconUri
 
-
 ```yaml
 Type: Uri
 Parameter Sets: (All)
@@ -531,7 +532,6 @@ Accept wildcard characters: False
 ```
 
 ### -LicenseUri
-
 
 ```yaml
 Type: Uri
@@ -741,7 +741,6 @@ Accept wildcard characters: False
 
 ### -ProjectUri
 
-
 ```yaml
 Type: Uri
 Parameter Sets: (All)
@@ -859,7 +858,6 @@ Accept wildcard characters: False
 
 ### -Tags
 
-
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -911,6 +909,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
@@ -923,23 +936,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CompatiblePSEditions
-Specifies the compatible PSEditions of the module.
-For information about PSEdition, see [Modules with compatible PowerShell Editions](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport).
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-Accepted values: Desktop, Core
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

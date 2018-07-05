@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517140
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Save-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517140
+schema: 2.0.0
+title: Save-Package
 ---
 
 # Save-Package
@@ -50,18 +51,20 @@ Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ### PowerShellGet
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,13 +106,12 @@ The second command installs the saved package from the C:\temp folder, instead o
 
 ## PARAMETERS
 
-### -AllVersions
-Indicates that this cmdlet saves all available versions of the package.
-By default, **Save-Package** only returns the newest available version.
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
 Required: False
@@ -124,7 +126,23 @@ Accept wildcard characters: False
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: NuGet:PackageByInputObject, NuGet
+Parameter Sets: NuGet:PackageByInputObject, NuGet, PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllVersions
+Indicates that this cmdlet saves all available versions of the package.
+By default, **Save-Package** only returns the newest available version.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -160,21 +178,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -431,7 +434,7 @@ Specifies one or more provider names.
 Type: String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
-Accepted values: msi, NuGet, msu, Programs, PowerShellGet, psl, chocolatey
+Accepted values: Programs, msi, msu, NuGet, PowerShellGet, psl, chocolatey
 
 Required: False
 Position: Named
@@ -603,6 +606,21 @@ Accepted values: Module, Script, All
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

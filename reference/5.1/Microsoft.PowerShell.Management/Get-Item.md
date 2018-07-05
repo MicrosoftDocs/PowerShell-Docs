@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821587
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-Item
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821587
+schema: 2.0.0
+title: Get-Item
 ---
 
 # Get-Item
@@ -16,13 +17,13 @@ Gets the item at the specified location.
 ## SYNTAX
 
 ### Path (Default)
-```powershell
+```
 Get-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
  [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralPath
-```powershell
+```
 Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
  [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
 ```
@@ -340,7 +341,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Stream

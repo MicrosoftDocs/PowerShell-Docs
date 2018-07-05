@@ -26,18 +26,18 @@ Register-CimIndicationEvent [-Namespace <String>] [-ClassName] <String> [-Operat
  [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>] [<CommonParameters>]
 ```
 
-### QueryExpressionComputerSet
-```
-Register-CimIndicationEvent [-Namespace <String>] [-Query] <String> [-QueryDialect <String>]
- [-OperationTimeoutSec <UInt32>] [-ComputerName <String>] [[-SourceIdentifier] <String>]
- [[-Action] <ScriptBlock>] [-MessageData <PSObject>] [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>]
- [<CommonParameters>]
-```
-
 ### QueryExpressionSessionSet
 ```
 Register-CimIndicationEvent [-Namespace <String>] [-Query] <String> [-QueryDialect <String>]
  [-OperationTimeoutSec <UInt32>] -CimSession <CimSession> [[-SourceIdentifier] <String>]
+ [[-Action] <ScriptBlock>] [-MessageData <PSObject>] [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>]
+ [<CommonParameters>]
+```
+
+### QueryExpressionComputerSet
+```
+Register-CimIndicationEvent [-Namespace <String>] [-Query] <String> [-QueryDialect <String>]
+ [-OperationTimeoutSec <UInt32>] [-ComputerName <String>] [[-SourceIdentifier] <String>]
  [[-Action] <ScriptBlock>] [-MessageData <PSObject>] [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>]
  [<CommonParameters>]
 ```
@@ -274,7 +274,7 @@ If the value specified uses the WQL LIKE operator, then you must escape the foll
 
 ```yaml
 Type: String
-Parameter Sets: QueryExpressionComputerSet, QueryExpressionSessionSet
+Parameter Sets: QueryExpressionSessionSet, QueryExpressionComputerSet
 Aliases:
 
 Required: True
@@ -292,7 +292,7 @@ The default value is WQL.
 
 ```yaml
 Type: String
-Parameter Sets: QueryExpressionComputerSet, QueryExpressionSessionSet
+Parameter Sets: QueryExpressionSessionSet, QueryExpressionComputerSet
 Aliases:
 
 Required: False
@@ -340,8 +340,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
