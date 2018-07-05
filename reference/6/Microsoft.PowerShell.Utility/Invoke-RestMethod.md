@@ -1050,6 +1050,10 @@ To test a website with the standard user agent string that is used by most Inter
 
 For example, the following command uses the user agent string for Internet Explorer.
 
+```powershell
+Invoke-RestMethod -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
+```
+
 ```yaml
 Type: String
 Parameter Sets: (All)
