@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821799
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-Random
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821799
+schema: 2.0.0
+title: Get-Random
 ---
 
 # Get-Random
@@ -16,15 +17,13 @@ Gets a random number, or selects objects randomly from a collection.
 ## SYNTAX
 
 ### RandomNumberParameterSet (Default)
-```powershell
-Get-Random [[-Maximum] <Object>] [-SetSeed <Int32>] [-Minimum <Object>]
- [<CommonParameters>]
+```
+Get-Random [-SetSeed <Int32>] [[-Maximum] <Object>] [-Minimum <Object>] [<CommonParameters>]
 ```
 
 ### RandomListItemParameterSet
-```powershell
-Get-Random [-InputObject] <Object[]> [-SetSeed <Int32>] [-Count <Int32>]
- [<CommonParameters>]
+```
+Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -329,5 +328,7 @@ You can pipe one or more objects to **Get-Random**.
 ## NOTES
 * **Get-Random** sets a default seed for each session based on the system time clock when the session starts.
 * Beginning in Windows PowerShell 3.0, **Get-Random** supports 64-bit integers. In Windows PowerShell 2.0, all values are cast to System.Int32.
+
+## RELATED LINKS
 
 ## RELATED LINKS

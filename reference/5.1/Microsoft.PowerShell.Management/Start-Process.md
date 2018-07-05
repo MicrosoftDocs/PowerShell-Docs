@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821638
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Start-Process
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821638
+schema: 2.0.0
+title: Start-Process
 ---
 
 # Start-Process
@@ -118,6 +119,7 @@ This is the same as starting Windows PowerShell by using the Run as administrato
 PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
+
 Both commands start the Windows command interpreter, issueing a dir command on the 'Program Files' folder.
 Because this foldername contains a space, the value needs surrounded with escaped quotes.
 Note that the first command specifies a string as ArgumentList. The second command a string array.
