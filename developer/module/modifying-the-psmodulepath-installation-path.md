@@ -34,7 +34,6 @@ To add paths to this variable, use one of the following methods:
   `$env:PSModulePath = $env:PSModulePath + ";c:\ModulePath"`
 
   For more information about profiles, see [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) in the Microsoft TechNet library.
-  For more information about profiles, see [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) in the Microsoft TechNet library.
 
 - To add a persistent variable to the registry, create a new user environment variable called `PSModulePath` using the Environment Variables Editor in the **System Properties** dialog box.
 
