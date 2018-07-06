@@ -28,7 +28,6 @@ For simple modules that contain only a single .psm1 or binary assembly, a module
       `'@{ModuleVersion="1.0"}' > myModuleName.psd1`
 
    2. Or, call the [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet, with one or more of the default values passed in as parameters. (Note that the only the name of the file is required to generate a manifest, however.) This will create a module manifest with all the manifest values you supplied explicitly stated, and with the rest containing the appropriate default value.
-   2. Or, call the [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet, with one or more of the default values passed in as parameters. (Note that the only the name of the file is required to generate a manifest, however.) This will create a module manifest with all the manifest values you supplied explicitly stated, and with the rest containing the appropriate default value.
 
       `New-ModuleManifest myModuleName.psd1 -ModuleVersion "2.0" -Author "YourNameHere"`
 
@@ -39,13 +38,11 @@ For simple modules that contain only a single .psm1 or binary assembly, a module
       Generally speaking, this will probably be done in whatever text editor you prefer, such as Notepad. However this technically is a script file that contains code, so you may wish to edit it in an actual scripting or development environment, such as the PowerShell ISE. Again, note that all elements of a manifest file are optional, except for the ModuleVersion number.
 
       For descriptions of the keys and values you can have in a module manifest, see the **Module Manifest Elements** below. For additional information, see the parameter descriptions in the  [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet.
-      For descriptions of the keys and values you can have in a module manifest, see the **Module Manifest Elements** below. For additional information, see the parameter descriptions in the  [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet.
 
    3. Optionally, you can choose to add additional code to your module manifest, to address any scenarios that would not be covered by the base module manifest elements.
 
       Due to security concerns, PowerShell will run only a small subset of the available operations in a module manifest file. Generally, you can use the **if** statement, arithmetic and comparison operators, and the basic PowerShell data types.
 
-   4. Once you have created your module manifest, you can test it (to confirm that any paths described in the manifest are correct) with a call to [Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest).
    4. Once you have created your module manifest, you can test it (to confirm that any paths described in the manifest are correct) with a call to [Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest).
 
       `Test-ModuleManifest myModuleName.psd1`
@@ -54,7 +51,6 @@ For simple modules that contain only a single .psm1 or binary assembly, a module
 
       When you copy your module onto a system and import it, PowerShell will use the module manifest to import your module.
 
-   6. Optionally, you can directly test your module manifest with a call to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) by dot-sourcing the manifest itself.
    6. Optionally, you can directly test your module manifest with a call to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) by dot-sourcing the manifest itself.
 
       `Import-Module .\myModuleName.psd1`
