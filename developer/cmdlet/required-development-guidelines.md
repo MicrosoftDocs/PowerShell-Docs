@@ -69,7 +69,7 @@ The verb specified in the Cmdlet attribute must come from the recognized set of 
 
 For more information about the approved verb names, see [Cmdlet Verbs](./approved-verbs-for-windows-powershell-commands.md).
 
-Users need a set of discoverable and expected cmdlet names. Use the appropriate verb so that the user can make a quick assessment of what a cmdlet does and to easily discover the capabilities of the system. For example, the following command-line command gets a list of all the commands on the system whose names begin with "start": __get-command start-*__. Use the nouns in your cmdlets to differentiate your cmdlets from other cmdlets. The noun indicates the resource on which the operation will be performed. The operation itself is represented by the verb.
+Users need a set of discoverable and expected cmdlet names. Use the appropriate verb so that the user can make a quick assessment of what a cmdlet does and to easily discover the capabilities of the system. For example, the following command-line command gets a list of all the commands on the system whose names begin with "start": `get-command start-*`. Use the nouns in your cmdlets to differentiate your cmdlets from other cmdlets. The noun indicates the resource on which the operation will be performed. The operation itself is represented by the verb.
 
 ### Cmdlet Names: Characters that cannot be Used (RD02)
 
