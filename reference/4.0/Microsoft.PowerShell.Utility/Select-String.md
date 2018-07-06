@@ -11,11 +11,13 @@ title:  Select-String
 # Select-String
 
 ## SYNOPSIS
+
 Finds text in strings and files.
 
 ## SYNTAX
 
 ### File (Default)
+
 ```
 Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List]
  [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
@@ -23,6 +25,7 @@ Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSens
 ```
 
 ### Object
+
 ```
 Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List]
  [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
@@ -30,6 +33,7 @@ Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-Cas
 ```
 
 ### LiteralFile
+
 ```
 Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet] [-List]
  [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
@@ -37,6 +41,7 @@ Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-Cas
 ```
 
 ## DESCRIPTION
+
 The Select-String cmdlet searches for text and text patterns in input strings and files.
 You can use it like Grep in UNIX and Findstr in Windows.
 You can type "Select-String" or its alias, "sls".
@@ -54,7 +59,8 @@ You can also specify that Select-String should expect a particular character enc
 ## EXAMPLES
 
 ### Example 1
-```
+
+```powershell
 PS C:\> "Hello","HELLO" | select-string -pattern "HELLO" -casesensitive
 ```
 
@@ -65,14 +71,16 @@ As a result, Select-String finds only "HELLO", because "Hello" does not match.
 Because each of the quoted strings is treated as a line, without the CaseSensitive parameter, Select-String would recognize both of the strings as matches.
 
 ### Example 2
-```
+
+```powershell
 PS C:\> select-string -path *.xml -pattern "the the"
 ```
 
 This command searches through all files with the .xml file name extension in the current directory and displays the lines in those files that include the string "the the".
 
 ### Example 3
-```
+
+```powershell
 PS C:\> select-string -path $pshome\en-US\*.txt -pattern "@"
 ```
 
@@ -82,7 +90,8 @@ To indicate the path, this command uses the value of the $pshome automatic varia
 In this example, the command searches the en-US subdirectory, which contains the English (US) language Help files for Windows PowerShell.
 
 ### Example 4
-```
+
+```powershell
 PS C:\> function search-help
 {
    $pshelp = "$pshome\es\about_*.txt", "$pshome\en-US\*dll-help.xml"
@@ -98,7 +107,8 @@ To use the function to find a string, such as "psdrive", type search-help psdriv
 To use this function in any Windows PowerShell console, change the path to point to the Windows PowerShell Help files on your system, and then paste the function in your Windows PowerShell profile.
 
 ### Example 5
-```
+
+```powershell
 PS C:\> $events = get-eventlog -logname application -newest 100
 PS C:\> $events | select-string -inputobject {$_.message} -pattern "failed"
 ```
@@ -116,7 +126,8 @@ The current object is represented by the $_ symbol.
 As each event arrives in the pipeline, Select-String searches the value of its Message property for the "failed" string, and then displays any lines that include a match.
 
 ### Example 6
-```
+
+```powershell
 PS C:\> get-childitem c:\windows\system32\*.txt -recurse | select-string -pattern "Microsoft" -casesensitive
 ```
 
@@ -124,14 +135,16 @@ This command examines all files in the subdirectories of C:\Windows\System32 wit
 The CaseSensitive parameter indicates that the "M" in "Microsoft" must be capitalized and that the rest of the characters must be lowercase for Select-String to find a match.
 
 ### Example 7
-```
+
+```powershell
 PS C:\> select-string -path process.txt -pattern idle, svchost -notmatch
 ```
 
 This command finds lines of text in the Process.txt file that do not include the words "idle" or "svchost".
 
 ### Example 8
-```
+
+```powershell
 PS C:\> $f = select-string -path audit.log -pattern "logon failed" -context 2, 3
 PS C:\> $f.count
 PS C:\> ($f)[0].context | format-list
@@ -148,23 +161,29 @@ The output consists of two MatchInfo objects, one for each match detected.
 The context lines are stored in the Context property of the MatchInfo object.
 
 ### Example 9
-```
-PS C:\>
-$a = get-childitem $pshome\en-us\about*.help.txt | select-string -pattern transcript
+
+```powershell
+PS C:\> $a = get-childitem $pshome\en-us\about*.help.txt | select-string -pattern transcript
 PS C:\> $b = get-childitem $pshome\en-us\about*.help.txt | select-string -pattern transcript -allmatches
 PS C:\> $a
-C:\Windows\system32\WindowsPowerShell\v1.0\en-us\about_Pssnapins.help.txt:39:       Start-Transcript and Stop-Transcript.
-PS C:\> $b
+
 C:\Windows\system32\WindowsPowerShell\v1.0\en-us\about_Pssnapins.help.txt:39:       Start-Transcript and Stop-Transcript.
 
-PS C:\> > $a.matches
+PS C:\> $b
+
+C:\Windows\system32\WindowsPowerShell\v1.0\en-us\about_Pssnapins.help.txt:39:       Start-Transcript and Stop-Transcript.
+
+PS C:\> $a.matches
+
 Groups   : {Transcript}
 Success  : True
 Captures : {Transcript}
 Index    : 13
 Length   : 10
 Value    : Transcript
+
 PS C:\> $b.matches
+
 Groups   : {Transcript}
 Success  : True
 Captures : {Transcript}
@@ -196,6 +215,7 @@ The Matches property of the first command contains just one match (that is, one 
 ## PARAMETERS
 
 ### -AllMatches
+
 Searches for more than one match in each line of text.
 Without this parameter, Select-String finds only the first match in each line of text.
 
@@ -214,6 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -CaseSensitive
+
 Makes matches case-sensitive.
 By default, matches are not case-sensitive.
 
@@ -230,6 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -Context
+
 Captures the specified number of lines before and after the line with the match.
 This allows you to view the match in context.
 
@@ -261,6 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -Encoding
+
 Specifies the character encoding that Select-String should assume when searching the file.
 The default is UTF8.
 
@@ -281,6 +304,7 @@ Accept wildcard characters: False
 ```
 
 ### -Exclude
+
 Exclude the specified items.
 The value of this parameter qualifies the Path parameter.
 Enter a path element or pattern, such as "*.txt".
@@ -299,6 +323,7 @@ Accept wildcard characters: True
 ```
 
 ### -Include
+
 Include only the specified items.
 The value of this parameter qualifies the Path parameter.
 Enter a path element or pattern, such as "*.txt".
@@ -317,6 +342,7 @@ Accept wildcard characters: True
 ```
 
 ### -InputObject
+
 Specifies the text to be searched.
 Enter a variable that contains the text, or type a command or expression that gets the text.
 
@@ -339,6 +365,7 @@ Accept wildcard characters: False
 ```
 
 ### -List
+
 Returns only the first match in each input file.
 By default, Select-String returns a MatchInfo object for each match it finds.
 
@@ -355,6 +382,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotMatch
+
 Finds text that does not match the specified pattern.
 
 ```yaml
@@ -370,6 +398,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path to the files to be searched.
 Wildcards are permitted.
 The default location is the local directory.
@@ -390,6 +419,7 @@ Accept wildcard characters: True
 ```
 
 ### -Pattern
+
 Specifies the text to find.
 Type a string or regular expression.
 If you type a string, use the SimpleMatch parameter.
@@ -409,6 +439,7 @@ Accept wildcard characters: False
 ```
 
 ### -Quiet
+
 Returns a Boolean value (true or false), instead of a MatchInfo object.
 The value is "true" if the pattern is found; otherwise, the value is "false".
 
@@ -425,6 +456,7 @@ Accept wildcard characters: False
 ```
 
 ### -SimpleMatch
+
 Uses a simple match rather than a regular expression match.
 In a simple match, Select-String searches the input for the text in the Pattern parameter.
 It does not interpret the value of the Pattern parameter as a regular expression statement.
@@ -442,6 +474,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the path to the files to be searched.
 Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -461,23 +494,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any object that has a ToString method to Select-String.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.MatchInfo or System.Boolean
+
 By default, the output is a set of MatchInfo objects, one for each match found.
 If you use the Quiet parameter, the output is a Boolean value indicating whether the pattern was found.
 
 ## NOTES
-* Select-String is like the Grep command in UNIX and the FindStr command in Windows.
-* The **sst** alias for the Select-String cmdlet was introduced in Windows PowerShell 3.0.
-* To use Select-String, type the text that you want to find as the value of the Pattern parameter.
+
+- Select-String is like the Grep command in UNIX and the FindStr command in Windows.
+- The **sst** alias for the Select-String cmdlet was introduced in Windows PowerShell 3.0.
+- To use Select-String, type the text that you want to find as the value of the Pattern parameter.
 
   To specify the text to be searched, do the following:
 
@@ -487,11 +524,11 @@ If you use the Quiet parameter, the output is a Boolean value indicating whether
 
   - If the text is stored in files, use the Path parameter to specify the path to the files.
 
-* By default, Select-String interprets the value of the Pattern parameter as a regular expression. (For more information, see about_Regular_Expressions.) However, you can use the SimpleMatch parameter to override the regular expression matching. The SimpleMatch parameter finds instances of the value of the Pattern parameter in the input.
-* The default output of Select-String is a MatchInfo object, which includes detailed information about the matches. The information in the object is useful when you are searching for text in files, because MatchInfo objects have properties such as Filename and Line. When the input is not from the file, the value of these parameters is "InputStream".
-* If you do not need the information in the MatchInfo object, use the Quiet parameter, which returns a Boolean value (true or false) to indicate whether it found a match, instead of a MatchInfo object.
-* When matching phrases, Select-String uses the current culture that is set for the system. To find the current culture, use the T:Microsoft.PowerShell.Commands.Get-Culture cmdlet.
-* To find the properties of a MatchInfo object, type the following:
+- By default, Select-String interprets the value of the Pattern parameter as a regular expression. (For more information, see about_Regular_Expressions.) However, you can use the SimpleMatch parameter to override the regular expression matching. The SimpleMatch parameter finds instances of the value of the Pattern parameter in the input.
+- The default output of Select-String is a MatchInfo object, which includes detailed information about the matches. The information in the object is useful when you are searching for text in files, because MatchInfo objects have properties such as Filename and Line. When the input is not from the file, the value of these parameters is "InputStream".
+- If you do not need the information in the MatchInfo object, use the Quiet parameter, which returns a Boolean value (true or false) to indicate whether it found a match, instead of a MatchInfo object.
+- When matching phrases, Select-String uses the current culture that is set for the system. To find the current culture, use the T:Microsoft.PowerShell.Commands.Get-Culture cmdlet.
+- To find the properties of a MatchInfo object, type the following:
 
   select-string -path test.txt -pattern "test" | get-member | format-list -property *
 

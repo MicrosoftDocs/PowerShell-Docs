@@ -1,5 +1,5 @@
 ---
-title: "Approved Verbs for Windows PowerShell Commands | Microsoft Docs"
+title: "Approved Verbs for PowerShell Commands | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/21/2018"
 ms.reviewer: ""
@@ -13,58 +13,70 @@ helpviewer_keywords:
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
 ---
-# Approved Verbs for Windows PowerShell Commands
+# Approved Verbs for PowerShell Commands
 
-Windows PowerShell uses a verb-noun pair for the names of cmdlets and for their derived Microsoft .NET Framework classes. For example, the `Get-Command` cmdlet provided by Windows PowerShell is used to retrieve all the commands that are registered in Windows PowerShell. The verb part of the name identifies the action that the cmdlet performs. The noun part of the name identifies the entity on which the action is performed.
+PowerShell uses a verb-noun pair for the names of cmdlets and for their derived Microsoft .NET Framework classes.
+For example, the `Get-Command` cmdlet provided by PowerShell is used to retrieve all the commands that are registered in PowerShell.
+The verb part of the name identifies the action that the cmdlet performs.
+The noun part of the name identifies the entity on which the action is performed.
 
 > [!NOTE]
-> Windows PowerShell uses the term *verb* to describe a word that implies an action even if that word is not a standard verb in the English language. For example, the term *New* is a valid Windows PowerShell verb name because it implies an action even though it is not a verb in the English language.
+> PowerShell uses the term *verb* to describe a word that implies an action even if that word is not a standard verb in the English language.
+> For example, the term *New* is a valid PowerShell verb name because it implies an action even though it is not a verb in the English language.
 
 ## Verb Naming Rules
 
 The following list provides guidelines to consider when you choose the verb for a cmdlet name:
 
-- When you specify the verb, we recommend that you use one of the predefined verb names provided by Windows PowerShell (aliases for these predefined verbs are included in the following tables). When you use a predefined verb, you ensure consistency between the cmdlets that you create, the cmdlets that are provided by Windows PowerShell, and the cmdlets that are designed by others.
+* When you specify the verb, we recommend that you use one of the predefined verb names provided by PowerShell (aliases for these predefined verbs are included in the following tables).
+  When you use a predefined verb, you ensure consistency between the cmdlets that you create, the cmdlets that are provided by PowerShell, and the cmdlets that are designed by others.
 
-- Use the predefined verbs to describe the general scope of the action, and use parameters to further refine the action of the cmdlet.
+* Use the predefined verbs to describe the general scope of the action, and use parameters to further refine the action of the cmdlet.
 
-- To enforce consistency across cmdlets, do not use a synonym of an approved verb.
+* To enforce consistency across cmdlets, do not use a synonym of an approved verb.
 
-- Use only the form of each verb that is listed in this topic. For example, use "Get", but do not use "Getting" or "Gets".
+* Use only the form of each verb that is listed in this topic.
+  For example, use "Get", but do not use "Getting" or "Gets".
 
-- Use Pascal casing for verbs. In Pascal casing the initial letter of each word is capitalized, such as "ForEach".
+* Use Pascal casing for verbs.
+  In Pascal casing the initial letter of each word is capitalized, such as "ForEach".
 
-- Do not use the following reserved verbs or aliases. These verbs are used by the Windows PowerShell language, or by special case cmdlets provided by Windows PowerShell.
-
-- ForEach (foreach)
-
-- Format (f)
-
-- Group (gp)
-
-- Sort (sr)
-
-- Tee (te)
-
-- Where (wh)
+* Do not use the following reserved verbs or aliases.
+  These verbs are used by the PowerShell language, or by special case cmdlets provided by PowerShell.
+  - ForEach (foreach)
+  - Format (f)
+  - Group (gp)
+  - Sort (sr)
+  - Tee (te)
+  - Where (wh)
 
 ## Similar Verbs for Different Actions
 
 The following similar verbs represent different actions.
 
-- `New` vs. `Set`: The `New` verb is used to create a new resource. The `Set` verb is used to modify an existing resource, optionally creating the resource if it does not exist, such as the `Set-Variable` cmdlet.
+### New vs. Set
+The `New` verb is used to create a new resource.
+The `Set` verb is used to modify an existing resource, optionally creating the resource if it does not exist, such as the `Set-Variable` cmdlet.
 
-- `Find` vs. `Search`: The `Find` verb is used to look for an object. The `Search` verb is used to create a reference to a resource in a container.
+### Find vs. Search
+The `Find` verb is used to look for an object.
+The `Search` verb is used to create a reference to a resource in a container.
 
-- `Get` vs. `Read`: The `Get` verb is used to retrieve a resource, such as a file. The `Read` verb is used to get information from a source, such as a file.
+### Get vs. Read
+The `Get` verb is used to retrieve a resource, such as a file.
+The `Read` verb is used to get information from a source, such as a file.
 
-- `Invoke` vs. `Start`: The `Invoke` verb is used to perform an operation that is generally a synchronous operation, such as running a command. The `Start` verb is used to begin an operation that is generally an asynchronous operation, such as starting a process.
+### Invoke vs. Start
+The `Invoke` verb is used to perform an operation that is generally a synchronous operation, such as running a command.
+The `Start` verb is used to begin an operation that is generally an asynchronous operation, such as starting a process.
 
-- `Ping` vs. `Test`: Use the `Test` verb.
+### Ping vs. Test
+Use the `Test` verb.
 
 ## Common Verbs
 
-Windows PowerShell uses the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) enumeration class to define generic actions that can apply to almost any cmdlet. The following table lists most of the defined verbs.
+PowerShell uses the [System.Management.Automation.VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon) enumeration class to define generic actions that can apply to almost any cmdlet.
+The following table lists most of the defined verbs.
 
 |Verb (alias)|Action|Comments|
 |--------------------|------------|--------------|
@@ -91,7 +103,7 @@ Windows PowerShell uses the [System.Management.Automation.Verbscommon](/dotnet/a
 |[Reset](/dotnet/api/System.Management.Automation.VerbsCommon.Reset) (rs)|Sets a resource back to its original state.||
 |[Search](/dotnet/api/System.Management.Automation.VerbsCommon.Search) (sr)|Creates a reference to a resource in a container.|For this action, do not use verbs such as Find or Locate.|
 |[Select](/dotnet/api/System.Management.Automation.VerbsCommon.Select) (sc)|Locates a resource in a container. For example, the `Select-String` cmdlet finds text in strings and files.|For this action, do not use verbs such as Find or Locate.|
-|[Set](/dotnet/api/System.Management.Automation.VerbsCommon.Set) (s)|Replaces data on an existing resource or creates a resource that contains some data. For example, the `Set-Date` cmdlet changes the system time on the local computer. (The New verb can also be used to create a resource.) This verb is paired with `Get`.|For this action, do not use verbs such as Write, Reset, Assign, or Configure.|
+|[Set](/dotnet/api/System.Management.Automation.VerbsCommon.Set) (s)|Replaces data on an existing resource or creates a resource that contains some data. For example, the `Set-Date` cmdlet changes the system time on the local computer. (The `New` verb can also be used to create a resource.) This verb is paired with `Get`.|For this action, do not use verbs such as Write, Reset, Assign, or Configure.|
 |[Show](/dotnet/api/System.Management.Automation.VerbsCommon.Show) (sh)|Makes a resource visible to the user. This verb is paired with `Hide`.|For this action, do not use verbs such as Display or Produce.|
 |[Skip](/dotnet/api/System.Management.Automation.VerbsCommon.Skip) (sk)|Bypasses one or more resources or points in a sequence.|For this action, do not use a verb such as Bypass or Jump.|
 |[Split](/dotnet/api/System.Management.Automation.VerbsCommon.Split) (sl)|Separates parts of a resource. For example, the `Split-Path` cmdlet returns different parts of a path. This verb is paired with `Join`.|For this action, do not use a verb such Separate.|
@@ -103,7 +115,8 @@ Windows PowerShell uses the [System.Management.Automation.Verbscommon](/dotnet/a
 
 ## Communications Verbs
 
-Windows PowerShell uses the [System.Management.Automation.Verbscommunications](/dotnet/api/System.Management.Automation.VerbsCommunications) class to define actions that apply to communications. The following table lists most of the defined verbs.
+PowerShell uses the [System.Management.Automation.VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications) class to define actions that apply to communications.
+The following table lists most of the defined verbs.
 
 |Verb (alias)|Action|Comments|
 |--------------------|------------|--------------|
@@ -116,7 +129,8 @@ Windows PowerShell uses the [System.Management.Automation.Verbscommunications](/
 
 ## Data Verbs
 
-Windows PowerShell uses the [System.Management.Automation.Verbsdata](/dotnet/api/System.Management.Automation.VerbsData) class to define actions that apply to data handling. The following table lists most of the defined verbs.
+PowerShell uses the [System.Management.Automation.VerbsData](/dotnet/api/System.Management.Automation.VerbsData) class to define actions that apply to data handling.
+The following table lists most of the defined verbs.
 
 |Verb Name (alias)|Action|Comments|
 |-------------------------|------------|--------------|
@@ -143,11 +157,12 @@ Windows PowerShell uses the [System.Management.Automation.Verbsdata](/dotnet/api
 |[Save](/dotnet/api/System.Management.Automation.VerbsData.Save) (sv)|Preserves data to avoid loss.||
 |[Sync](/dotnet/api/System.Management.Automation.VerbsData.Sync) (sy)|Assures that two or more resources are in the same state.|For this action, do not use verbs such as Replicate, Coerce, or Match.|
 |[Unpublish](/dotnet/api/System.Management.Automation.VerbsData.Unpublish) (ub)|Makes a resource unavailable to others. This verb is paired with `Publish`.|For this action, do not use verbs such as Uninstall, Revert, or Hide.|
-|[Update](/dotnet/api/System.Management.Automation.VerbsData.Update) (ud)|Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the `Update-FormatData` cmdlet updates and adds formatting files to the current Windows PowerShell console.|For this action, do not use verbs such as Refresh, Renew, Recalculate, or Re-index.|
+|[Update](/dotnet/api/System.Management.Automation.VerbsData.Update) (ud)|Brings a resource up-to-date to maintain its state, accuracy, conformance, or compliance. For example, the `Update-FormatData` cmdlet updates and adds formatting files to the current PowerShell console.|For this action, do not use verbs such as Refresh, Renew, Recalculate, or Re-index.|
 
 ## Diagnostic Verbs
 
-Windows PowerShell uses the [System.Management.Automation.Verbsdiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic) class to define actions that apply to diagnostics. The following table lists most of the defined verbs.
+PowerShell uses the [System.Management.Automation.VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic) class to define actions that apply to diagnostics.
+The following table lists most of the defined verbs.
 
 |Verb (alias)|Action|Comments|
 |--------------------|------------|--------------|
@@ -161,7 +176,8 @@ Windows PowerShell uses the [System.Management.Automation.Verbsdiagnostic](/dotn
 
 ## Lifecycle Verbs
 
-Windows PowerShell uses the [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) class to define actions that apply to the lifecycle of a resource. The following table lists most of the defined verbs.
+PowerShell uses the [System.Management.Automation.VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) class to define actions that apply to the lifecycle of a resource.
+The following table lists most of the defined verbs.
 
 |Verb (alias)|Action|Comments|
 |--------------------|------------|--------------|
@@ -184,11 +200,12 @@ Windows PowerShell uses the [System.Management.Automation.Verbslifecycle](/dotne
 |[Suspend](/dotnet/api/System.Management.Automation.VerbsLifecycle.Suspend) (ss)|Pauses an activity. For example, the `Suspend-Service` cmdlet pauses a service. This verb is paired with `Resume`.|For this action, do not use a verb such as Pause.|
 |[Uninstall](/dotnet/api/System.Management.Automation.VerbsLifecycle.Uninstall) (us)|Removes a resource from an indicated location. This verb is paired with `Install`.||
 |[Unregister](/dotnet/api/System.Management.Automation.VerbsLifecycle.Unregister) (ur)|Removes the entry for a resource from a repository. This verb is paired with `Register`.|For this action, do not use a verb such as Remove.|
-|[Wait](/dotnet/api/System.Management.Automation.VerbsLifecycle.Wait) (w)|Pauses an operation until a specified event occurs. For example, the **Wait-PSJob** cmdlet pauses operations until one or more of the background jobs are complete.|For this action, do not use verbs such as Sleep or Pause.|
+|[Wait](/dotnet/api/System.Management.Automation.VerbsLifecycle.Wait) (w)|Pauses an operation until a specified event occurs. For example, the `Wait-Job` cmdlet pauses operations until one or more of the background jobs are complete.|For this action, do not use verbs such as Sleep or Pause.|
 
 ## Security Verbs
 
-Windows PowerShell uses the [System.Management.Automation.Verbssecurity](/dotnet/api/System.Management.Automation.VerbsSecurity) class to define actions that apply to security. The following table lists most of the defined verbs.
+PowerShell uses the [System.Management.Automation.VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity) class to define actions that apply to security.
+The following table lists most of the defined verbs.
 
 |Verb (alias)|Action|Comments|
 |--------------------|------------|--------------|
@@ -201,7 +218,7 @@ Windows PowerShell uses the [System.Management.Automation.Verbssecurity](/dotnet
 
 ## Other Verbs
 
-Windows PowerShell uses the [System.Management.Automation.Verbsother](/dotnet/api/System.Management.Automation.VerbsOther) class to define canonical verb names that do not fit into a specific verb name category such as the common, communications, data, lifecycle, or security verb names verbs.
+PowerShell uses the [System.Management.Automation.VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther) class to define canonical verb names that do not fit into a specific verb name category such as the common, communications, data, lifecycle, or security verb names verbs.
 
 |Verb (alias)|Action|Comments|
 |--------------------|------------|--------------|
@@ -209,17 +226,19 @@ Windows PowerShell uses the [System.Management.Automation.Verbsother](/dotnet/ap
 
 ## See Also
 
-[System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)
+[System.Management.Automation.VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)
 
-[System.Management.Automation.Verbscommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
+[System.Management.Automation.VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
 
-[System.Management.Automation.Verbsdata](/dotnet/api/System.Management.Automation.VerbsData)
+[System.Management.Automation.VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
 
-[System.Management.Automation.Verbsdiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
+[System.Management.Automation.VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
 
-[System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+[System.Management.Automation.VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
 
-[System.Management.Automation.Verbssecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
+[System.Management.Automation.VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
+
+[System.Management.Automation.VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
 
 [Cmdlet Declaration](./cmdlet-class-declaration.md)
 
