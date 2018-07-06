@@ -197,33 +197,32 @@ To install multiple versions of the same module, use the following procedure.
 
 3. Add the module root folder path to the value of the **PSModulePath** environment variable, as shown in the following examples.
 
-   To import a particular version of the module, the end-user can use the `MinimumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
+To import a particular version of the module, the end-user can use the `MinimumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
 
-   For example, if the Fabrikam module is available in versions 8.0 and 9.0, the Fabrikam module directory structure might resemble the following.
+For example, if the Fabrikam module is available in versions 8.0 and 9.0, the Fabrikam module directory structure might resemble the following.
 
-   ```
-   C:\Program Files
-   Fabrikam Manager
-    Fabrikam8
-      Fabrikam
-        Fabrikam.psd1 (module manifest: ModuleVersion = "8.0")
-        Fabrikam.dll (module assembly)
-    Fabrikam9
-      Fabrikam
-        Fabrikam.psd1 (module manifest: ModuleVersion = "9.0")
-        Fabrikam.dll (module assembly)
+ ```
+C:\Program Files
+Fabrikam Manager
+  Fabrikam8
+    Fabrikam
+      Fabrikam.psd1 (module manifest: ModuleVersion = "8.0")
+      Fabrikam.dll (module assembly)
+  Fabrikam9
+    Fabrikam
+      Fabrikam.psd1 (module manifest: ModuleVersion = "9.0")
+      Fabrikam.dll (module assembly)
+```
 
-   ```
+The installer adds both of the module paths to the **PSModulePath** environment variable value.
 
-   The installer adds both of the module paths to the **PSModulePath** environment variable value.
+```powershell
+$p = [Environment]::GetEnvironmentVariable("PSModulePath")
+$p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
+[Environment]::SetEnvironmentVariable("PSModulePath",$p)
+```
 
-   ```powershell
-   $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-   $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
-   [Environment]::SetEnvironmentVariable("PSModulePath",$p)
-   ```
-
-   When these steps are complete, the **ListAvailable** parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet gets both of the Fabrikam modules. To import a particular module, use the `MiminumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
+When these steps are complete, the **ListAvailable** parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet gets both of the Fabrikam modules. To import a particular module, use the `MiminumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
 
 If both modules are imported into the same session, and the modules contain cmdlets with the same names, the cmdlets that are imported last are effective in the session.
 
