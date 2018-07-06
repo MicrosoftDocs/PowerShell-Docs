@@ -105,7 +105,7 @@ When you name cmdlets, do not use any of the following special characters.
 
 ### Parameters Names that cannot be Used (RD03)
 
-Windows PowerShell provides a common set a parameters to all cmdlets plus additional parameters that are adding in specific situations. When designing your own cmdlets you cannot use the following names: Confirm, Debug, ErrorAction, ErrorVariable, OutBuffer, OutVariable, WarningAction, WarningVariable, WhatIf, UseTransaction, and Verbose. For more information about these parameters, see [Common Parameter Names](./common-parameter-names.md).
+Windows PowerShell provides a common set a parameters to all cmdlets plus additional parameters that are added in specific situations. When designing your own cmdlets you cannot use the following names: Confirm, Debug, ErrorAction, ErrorVariable, OutBuffer, OutVariable, WarningAction, WarningVariable, WhatIf, UseTransaction, and Verbose. For more information about these parameters, see [Common Parameter Names](./common-parameter-names.md).
 
 ### Support Confirmation Requests (RD04)
 
