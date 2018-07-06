@@ -95,36 +95,22 @@ Regardless, the path of the folder is referred to as the *base* of the module (M
 The following cmdlets and variables are provided by Windows PowerShell for the creation and management of modules.
 
 [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet
-
-[New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet
 This cmdlet creates a new dynamic module that exists only in memory. The module is created from a script block, and its exported members, such as its functions and variables, are immediately available in the session and remain available until the session is closed.
-
-[New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet
 
 [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet
 This cmdlet creates a new module manifest (.psd1) file, populates its values, and saves the manifest file to the specified path. This cmdlet can also be used to create a module manifest template that can be filled in manually.
 
 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet
-
-[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet
 This cmdlet adds one or more modules to the current session.
-
-[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet
 
 [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet
 This cmdlet retrieves information about the modules that have been or that can be imported into the current session.
 
 [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet
-
-[Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet
 This cmdlet specifies the module members (such as cmdlets, functions, variables, and aliases) that are exported from a script module (.psm1) file or from a dynamic module created by using the `New-Module` cmdlet.
 
 [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cmdlet
-
-[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cmdlet
 This cmdlet removes modules from the current session.
-
-[Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) cmdlet
 
 [Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) cmdlet
 This cmdlet verifies that a module manifest accurately describes the components of a module by verifying that the files that are listed in the module manifest file (.psd1) actually exist in the specified paths.

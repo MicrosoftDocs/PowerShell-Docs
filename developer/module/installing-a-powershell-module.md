@@ -95,20 +95,15 @@ If the module is not well-formed and its location is not included in the value o
 - The Module Auto-Loading feature cannot import the module automatically.
 
 - The `ListAvailable` parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet cannot find the module.
-- The `ListAvailable` parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet cannot find the module.
 
-- The [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet cannot find the module. To import the module, you must provide the full path to the root module file or module manifest file.
 - The [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet cannot find the module. To import the module, you must provide the full path to the root module file or module manifest file.
 
   Additional features, such as the following, do not work unless the module is imported into the session. In well-formed modules in the **PSModulePath** environment variable, these features work even when the module is not imported into the session.
 
 - The [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet cannot find commands in the module.
-- The [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet cannot find commands in the module.
 
 - The [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) and [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlets cannot update or save help for the module.
-- The [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) and [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlets cannot update or save help for the module.
 
-- The [Show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) cmdlet cannot find and display the commands in the module.
 - The [Show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) cmdlet cannot find and display the commands in the module.
 
   The commands in the module are missing from the `Show-Command` window in Windows PowerShell Integrated Scripting Environment (ISE).
@@ -198,7 +193,6 @@ To install multiple versions of the same module, use the following procedure.
 3. Add the module root folder path to the value of the **PSModulePath** environment variable, as shown in the following examples.
 
    To import a particular version of the module, the end-user can use the `MinimumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
-   To import a particular version of the module, the end-user can use the `MinimumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
 
    For example, if the Fabrikam module is available in versions 8.0 and 9.0, the Fabrikam module directory structure might resemble the following.
 
@@ -225,7 +219,6 @@ To install multiple versions of the same module, use the following procedure.
    ```
 
    When these steps are complete, the **ListAvailable** parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet gets both of the Fabrikam modules. To import a particular module, use the `MiminumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
-   When these steps are complete, the **ListAvailable** parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet gets both of the Fabrikam modules. To import a particular module, use the `MiminumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
 
 If both modules are imported into the same session, and the modules contain cmdlets with the same names, the cmdlets that are imported last are effective in the session.
 
@@ -246,8 +239,6 @@ To prevent name conflicts, module authors can use the **DefaultCommandPrefix** k
 Users can use the **Prefix** parameter of the `Import-Module` cmdlet to use an alternate prefix. The value of the **Prefix** parameter takes precedence over the value of the **DefaultCommandPrefix** key.
 
 ## See Also
-
-[about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)
 
 [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)
 
