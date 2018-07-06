@@ -127,7 +127,7 @@ The user-specific Modules directory is added to the value of the **PSModulePath*
 If you want a module to be available to all user accounts on the computer, install the module in the Program Files location.
 
 ```
-$EnvProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
+$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
 ```
 
 > [!NOTE]
