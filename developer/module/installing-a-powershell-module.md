@@ -162,7 +162,7 @@ $p += "C:\Program Files\Fabrikam Technolgies\Fabrikam Manager\Modules\"
 
 If a module is used by multiple components of a product or by multiple versions of a product, install the module in a module-specific subdirectory of the %ProgramFiles%\Common Files\Modules subdirectory.
 
-In the following example, the Fabrikam module is installed in a Fabrikam subdirectory of the %ProgramFiles%\WindowsPowerShell\Modules subdirectory. Note that each module resides in its own subdirectory in the Modules subdirectory.
+In the following example, the Fabrikam module is installed in a Fabrikam subdirectory of the %ProgramFiles%\Common Files\Modules subdirectory. Note that each module resides in its own subdirectory in the Modules subdirectory.
 
 ```
 C:\Program Files
@@ -174,12 +174,17 @@ C:\Program Files
 
 ```
 
-Then, the installer adds the subdirectory path to the value of the **PSModulePath** environment variable.
+Then, the installer assures the value of the **PSModulePath** environment variable includes the path of the common files modules subdirectory.
 
 ```powershell
+$m = $env:ProgramFiles + '\Common Files\Modules'
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += ";C:\Program Files\ WindowsPowerShell \Modules\"
-[Environment]::SetEnvironmentVariable("PSModulePath",$p)
+$q = $p -split ';'
+if ($q -notContains $m) {
+    $q += ";$m"
+}
+$p = $q -join ';'
+[Environment]::SetEnvironmentVariable("PSModulePath", $p)
 ```
 
 ## Installing Multiple Versions of a Module
