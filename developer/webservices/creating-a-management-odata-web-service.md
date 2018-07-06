@@ -1,4 +1,4 @@
---
+---
 title: "Creating a Management OData Web Service | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/13/2016"
