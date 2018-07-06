@@ -49,14 +49,14 @@ To support automatic importing of modules, the `Get-Command` cmdlet gets all cmd
 
 ## The Importing Process
 
-When a module is imported, a new session state is created for the module, and a [System.Management.Automation.Psmoduleinfo](/dotnet/api/System.Management.Automation.PSModuleInfo) object is created in memory. A session-state is created for each module that is imported (this includes the root module and any nested modules). The members that are exported from the root module, including any members that were exported to the root module by any nested modules, are then imported into the caller's session state.
+When a module is imported, a new session state is created for the module, and a [System.Management.Automation.PSModuleInfo](/dotnet/api/System.Management.Automation.PSModuleInfo) object is created in memory. A session-state is created for each module that is imported (this includes the root module and any nested modules). The members that are exported from the root module, including any members that were exported to the root module by any nested modules, are then imported into the caller's session state.
 
 The metadata of members that are exported from a module have a ModuleName property. This property is populated with the name of the module that exported them.
 
 > [!WARNING]
 > If the name of an exported member uses an unapproved verb or if the name of the member uses restricted characters, a warning is displayed when the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet is run.
 
-By default, the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet does not return any objects to the pipeline. However, the cmdlet supports a `PassThru` parameter that can be used to return a [System.Management.Automation.Psmoduleinfo](/dotnet/api/System.Management.Automation.PSModuleInfo) object for each module that is imported. To send output to the host, users should run the [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet.
+By default, the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet does not return any objects to the pipeline. However, the cmdlet supports a `PassThru` parameter that can be used to return a [System.Management.Automation.PSModuleInfo](/dotnet/api/System.Management.Automation.PSModuleInfo) object for each module that is imported. To send output to the host, users should run the [Write-Host](/powershell/module/Microsoft.PowerShell.Utility/Write-Host) cmdlet.
 
 ## Restricting  the Members That Are Imported
 
