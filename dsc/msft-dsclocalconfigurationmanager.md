@@ -3,7 +3,6 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  MSFT_DSCLocalConfigurationManager class
 ---
-
 # MSFT_DSCLocalConfigurationManager class
 
 The Local Configuration Manager (LCM) that controls the states of configuration files and uses Configuration Agent to apply the configurations.
@@ -11,9 +10,8 @@ The Local Configuration Manager (LCM) that controls the states of configuration 
 The following syntax is simplified from Managed Object Format (MOF) code and includes all of the inherited properties.
 
 ## Syntax
-------
 
-``` syntax
+```
 [ClassVersion("1.0.0"), dynamic, provider("dsccore"), AMENDMENT]
 class MSFT_DSCLocalConfigurationManager
 {
@@ -21,11 +19,10 @@ class MSFT_DSCLocalConfigurationManager
 ```
 
 ## Members
--------
 
 The **MSFT_DSCLocalConfigurationManager** class has the following members:
 
--   [Methods][]
+- [Methods][]
 
 ### Methods
 
@@ -53,12 +50,8 @@ The **MSFT_DSCLocalConfigurationManager** class has these methods.
 | [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| Stops the configuration that is in progress.|
 | [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| Sends the configuration document to the managed node and verifies the current configuration against the document.|
 
-
-
-
-
 ## Requirements
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
+
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration

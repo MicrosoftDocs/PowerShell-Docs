@@ -3,13 +3,11 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class
 ---
-
 # SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class
 
 Sets the Local Configuration Manager settings that are used to control the Configuration Agent.
 
-Syntax
-------
+## Syntax
 
 ```mof
 uint32 SendMetaConfigurationApply(
@@ -18,8 +16,7 @@ uint32 SendMetaConfigurationApply(
 );
 ```
 
-Parameters
-----------
+## Parameters
 
 *ConfigurationData* \[in\]
 The environment data for the configuration.
@@ -28,7 +25,6 @@ The environment data for the configuration.
 **true** to force the configuration to stop.
 
 ## Return value
-------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -37,13 +33,11 @@ Returns zero on success; otherwise returns an error code.
 This is a static method.
 
 ## Requirements
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## See also
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

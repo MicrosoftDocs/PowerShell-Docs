@@ -3,10 +3,9 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  PowerShell Desired State Configuration partial configurations
 ---
-
 # PowerShell Desired State Configuration partial configurations
 
->Applies To: Windows PowerShell 5.0 and later.
+> Applies To: Windows PowerShell 5.0 and later.
 
 In PowerShell 5.0, Desired State Configuration (DSC) allows configurations to be delivered in fragments and from multiple sources. The Local Configuration Manager (LCM) on the
 target node puts the fragments together before applying them as a single configuration. This capability allows sharing control of configuration between teams or individuals.
@@ -19,13 +18,15 @@ can create its own configuration, without either of them being unnecessarily com
 You can use partial configurations in push mode, pull mode, or a combination of the two.
 
 ## Partial configurations in push mode
+
 To use partial configurations in push mode, you configure the LCM on the target node to receive the partial configurations. Each partial configuration must be pushed to the
-target by using the Publish-DSCConfiguration cmdlet. The target node then combines the partial configuration into a single configuration, and you can apply the configuration by
-calling the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet.
+target by using the `Publish-DSCConfiguration` cmdlet. The target node then combines the partial configuration into a single configuration, and you can apply the configuration by
+calling the [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration) cmdlet.
 
 ### Configuring the LCM for push-mode partial configurations
+
 To configure the LCM for partial configurations in push mode, you create a **DSCLocalConfigurationManager** configuration with one **PartialConfiguration** block for each partial
-configuration. For more information about configuring the LCM, see [Windows Configuring the Local Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx).
+configuration. For more information about configuring the LCM, see [Windows Configuring the Local Configuration Manager](/powershell/dsc/metaConfig).
 The following example shows an LCM configuration that expects two partial configurations—one that deploys the OS, and one that deploys and configures SharePoint.
 
 ```powershell
@@ -35,7 +36,7 @@ configuration PartialConfigDemo
     Node localhost
     {
 
-           PartialConfiguration ServiceAccountConfig
+        PartialConfiguration ServiceAccountConfig
         {
             Description = 'Configuration to add the SharePoint service account to the Administrators group.'
             RefreshMode = 'Push'
@@ -47,46 +48,44 @@ configuration PartialConfigDemo
         }
     }
 }
+
 PartialConfigDemo
 ```
 
 The **RefreshMode** for each partial configuration is set to "Push". The names of the **PartialConfiguration** blocks (in this case, "ServiceAccountConfig" and
 "SharePointConfig") must match exactly the names of the configurations that are pushed to the target node.
 
->**Note:** The named of each **PartialConfiguration** block must match the actual name of the configuration as it is specified in the configuration script, not the name of the MOF file,
->which should be either the name of the target node or `localhost`.
+> [!Note]
+> The named of each **PartialConfiguration** block must match the actual name of the configuration as it is specified in the configuration script, not the name of the MOF file,
+> which should be either the name of the target node or `localhost`.
 
 ### Publishing and starting push-mode partial configurations
 
-You then call [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) for each configuration, passing the folders that contain the configuration
+You then call [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) for each configuration, passing the folders that contain the configuration
 documents as the **Path** parameters. `Publish-DSCConfiguration`places the configuration MOF files to the target nodes. After publishing both configurations, you can call
 `Start-DSCConfiguration –UseExisting` on the target node.
 
 For example, if you have compiled the following configuration MOF documents on the authoring node:
 
 ```powershell
-PS C:\PartialConfigTest> Get-ChildItem -Recurse
+Get-ChildItem -Recurse
+```
 
-
+```output
     Directory: C:\PartialConfigTest
-
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 d-----        8/11/2016   1:55 PM                ServiceAccountConfig
 d-----       11/17/2016   4:14 PM                SharePointConfig
 
-
     Directory: C:\PartialConfigTest\ServiceAccountConfig
-
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 -a----        8/11/2016   2:02 PM           2034 TestVM.mof
 
-
     Directory: C:\DscTests\SharePointConfig
-
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -96,17 +95,20 @@ Mode                LastWriteTime         Length Name
 You would publish and run the configurations as follows:
 
 ```powershell
-PS C:\PartialConfigTest> Publish-DscConfiguration .\ServiceAccountConfig -ComputerName 'TestVM'
-PS C:\PartialConfigTest> Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
-PS C:\PartialConfigTest> Start-DscConfiguration -UseExisting -ComputerName 'TestVM'
+Publish-DscConfiguration .\ServiceAccountConfig -ComputerName 'TestVM'
+Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
+Start-DscConfiguration -UseExisting -ComputerName 'TestVM'
+```
 
+```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Note:** The user running the [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)
->cmdlet must have administrator privileges on the target node.
+> [!Note]
+> The user running the [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
+> cmdlet must have administrator privileges on the target node.
 
 ## Partial configurations in pull mode
 
@@ -159,7 +161,6 @@ Configuration PartialConfigDemoConfigNames
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
             DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
         }
-
 }
 ```
 
@@ -206,7 +207,7 @@ You can pull partial configurations from more than one pull server—you would j
 **PartialConfiguration** block.
 
 After creating the meta-configuration, you must run it to create a configuration document (a MOF file), and then call
-[Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621(v=wps.630).aspx) to configure the LCM.
+[Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) to configure the LCM.
 
 ### Naming and placing the configuration documents on the pull server (ConfigurationNames)
 
@@ -217,15 +218,14 @@ The partial configuration documents must be placed in the folder specified as th
 
 If you are pulling only one partial configuration from an individual pull server, the configuration document can have any name.
 If you are pulling more than one partial configuration from a pull server, the configuration document can be named either `<ConfigurationName>.mof`,
-where _ConfigurationName_ is the name of the partial configuration,
-or `<ConfigurationName>.<NodeName>.mof`, where  _ConfigurationName_ is the name of the partial configuration, and _NodeName_ is the name of the target node.
+where *ConfigurationName* is the name of the partial configuration,
+or `<ConfigurationName>.<NodeName>.mof`, where  *ConfigurationName* is the name of the partial configuration, and *NodeName* is the name of the target node.
 This allows you to pull configurations from Azure Automation DSC pull server.
-
 
 #### Naming configuration documents on the pull server in PowerShell 5.0
 
 The configuration documents must be named as follows: `ConfigurationName.mof`,
-where _ConfigurationName_ is the name of the partial configuration. For our example, the configuration
+where *ConfigurationName* is the name of the partial configuration. For our example, the configuration
 documents should be named as follows:
 
 ```
@@ -238,8 +238,8 @@ SharePointConfig.mof.checksum
 ### Naming and placing the configuration documents on the pull server (ConfigurationID)
 
 The partial configuration documents must be placed in the folder specified as the **ConfigurationPath** in the `web.config` file for the pull server
-(typically `C:\Program Files\WindowsPowerShell\DscService\Configuration`). The configuration documents must be named as follows: _ConfigurationName_. _ConfigurationID_`.mof`,
-where _ConfigurationName_ is the name of the partial configuration and _ConfigurationID_ is the configuration ID defined in the LCM on the target node. For our example, the
+(typically `C:\Program Files\WindowsPowerShell\DscService\Configuration`). The configuration documents must be named as follows: *ConfigurationName*. *ConfigurationID8`.mof`,
+where *ConfigurationName* is the name of the partial configuration and *ConfigurationID* is the configuration ID defined in the LCM on the target node. For our example, the
 configuration documents should be named as follows:
 
 ```
@@ -249,14 +249,12 @@ SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
 SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 ```
 
-
 ### Running partial configurations from a pull server
 
 After the LCM on the target node has been configured, and the configuration documents have been created and properly named on the pull server, the target node will pull the partial
 configurations, combine them, and apply the resulting configuration at regular intervals as specified by the **RefreshFrequencyMins** property of the LCM. If you want to force a
-refresh, you can call the [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx) cmdlet, to pull the configurations, and then
+refresh, you can call the [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration) cmdlet, to pull the configurations, and then
 `Start-DSCConfiguration –UseExisting` to apply them.
-
 
 ## Partial configurations in mixed push and pull modes
 
@@ -344,9 +342,9 @@ PartialConfigDemo
 
 Note that the **RefreshMode** specified in the Settings block is "Pull", but the **RefreshMode** for the `SharePointConfig` partial configuration is "Push".
 
-Name and locate the configuration MOF files as described above for their respective refresh modes. Call **Publish-DSCConfiguration** to publish the `SharePointConfig`
+Name and locate the configuration MOF files as described above for their respective refresh modes. Call `Publish-DSCConfiguration` to publish the `SharePointConfig`
 partial configuration, and either wait for the `ServiceAccountConfig` configuration to be pulled from the pull server, or force a refresh by calling
-[Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
+[Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
 
 ## Example ServiceAccountConfig Partial Configuration
 
@@ -385,7 +383,9 @@ Configuration ServiceAccountConfig
 ServiceAccountConfig
 
 ```
+
 ## Example SharePointConfig Partial Configuration
+
 ```powershell
 Configuration SharePointConfig
 {
@@ -409,9 +409,9 @@ Configuration SharePointConfig
 }
 SharePointConfig
 ```
-##See Also
 
-**Concepts**
+## See Also
+
 [Windows PowerShell Desired State Configuration Pull Servers](pullServer.md)
 
-[Windows Configuring the Local Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx)
+[Windows Configuring the Local Configuration Manager](/powershell/dsc/metaConfig)

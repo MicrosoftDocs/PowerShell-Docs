@@ -3,13 +3,11 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  RemoveConfiguration method of the MSFT_DSCLocalConfigurationManager class
 ---
-
 # RemoveConfiguration method of the MSFT_DSCLocalConfigurationManager class
 
 Removes the configuration files.
 
-Syntax
-------
+## Syntax
 
 ```mof
 uint32 RemoveConfiguration(
@@ -18,8 +16,7 @@ uint32 RemoveConfiguration(
 );
 ```
 
-Parameters
-----------
+## Parameters
 
 *Stage* \[in\]
 Specifies which configuration document to remove. The following values are valid:
@@ -34,7 +31,6 @@ Specifies which configuration document to remove. The following values are valid
 **true** to force the removal of the configuration.
 
 ## Return value
-------------
 
 Returns zero on success; otherwise returns an error code.
 
@@ -43,13 +39,11 @@ Returns zero on success; otherwise returns an error code.
 This is a static method.
 
 ## Requirements
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## See also
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
