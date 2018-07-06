@@ -17,33 +17,33 @@ The following guidelines must be followed when you write your cmdlets. They are 
 
 ### Design Guidelines
 
-- [Use Only Approved Verbs (RD01)](./required-development-guidelines.md#RD01)
+- [Use Only Approved Verbs (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
-- [Cmdlet Names: Characters that cannot be Used (RD02)](./required-development-guidelines.md#RD02)
+- [Cmdlet Names: Characters that cannot be Used (RD02)](./required-development-guidelines.md#cmdlet-names-characters-that-cannot-be-used-rd02)
 
-- [Parameters Names that cannot be Used (RD03)](./required-development-guidelines.md#RD03)
+- [Parameters Names that cannot be Used (RD03)](./required-development-guidelines.md#parameters-names-that-cannot-be-used-rd03)
 
-- [Support Confirmation Requests (RD04)](./required-development-guidelines.md#RD04)
+- [Support Confirmation Requests (RD04)](./required-development-guidelines.md#support-confirmation-requests-rd04)
 
-- [Support Force Parameter for Interactive Sessions (RD05)](./required-development-guidelines.md#RD05)
+- [Support Force Parameter for Interactive Sessions (RD05)](./required-development-guidelines.md#support-force-parameter-for-interactive-sessions-rd05)
 
-- [Document Output Objects (RD06)](./required-development-guidelines.md#RD06)
+- [Document Output Objects (RD06)](./required-development-guidelines.md#document-output-objects-rd06)
 
 ### Code Guidelines
 
-- [Derive from the Cmdlet or PSCmdlet Classes (RC01)](./required-development-guidelines.md#RC01)
+- [Derive from the Cmdlet or PSCmdlet Classes (RC01)](./required-development-guidelines.md#derive-from-the-cmdlet-or-pscmdlet-classes-rc01)
 
-- [Specify the Cmdlet Attribute (RC02)](./required-development-guidelines.md#RC02)
+- [Specify the Cmdlet Attribute (RC02)](./required-development-guidelines.md#specify-the-cmdlet-attribute-rc02)
 
-- [Override an Input Processing Method (RC03)](./required-development-guidelines.md#RC03)
+- [Override an Input Processing Method (RC03)](./required-development-guidelines.md#override-an-input-processing-method-rc03)
 
-- [Specify the OutputType Attribute (RC04)](./required-development-guidelines.md#RC04)
+- [Specify the OutputType Attribute (RC04)](./required-development-guidelines.md#specify-the-outputtype-attribute-rc04)
 
-- [Do Not Retain Handles to Output Objects (RC05)](./required-development-guidelines.md#RC05)
+- [Do Not Retain Handles to Output Objects (RC05)](./required-development-guidelines.md#do-not-retain-handles-to-output-objects-rc05)
 
-- [Handle Errors Robustly (RC06)](./required-development-guidelines.md#RC06)
+- [Handle Errors Robustly (RC06)](./required-development-guidelines.md#handle-errors-robustly-rc06)
 
-- [Use a Windows PowerShell Module to Deploy your Cmdlets (RC07)](./required-development-guidelines.md#RC07)
+- [Use a Windows PowerShell Module to Deploy your Cmdlets (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
 ## Design Guidelines
 
