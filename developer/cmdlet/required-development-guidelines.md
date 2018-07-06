@@ -160,7 +160,7 @@ For a cmdlet to be recognized by Windows PowerShell, its .NET Framework class mu
 
 - The default parameter set that is used when multiple parameter sets are specified. The default parameter set is used when Windows PowerShell does not have enough information to determine which parameter set to use.
 
-- Indicates if the cmdlet supports calls to the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method. This method displays a confirmation message to the user before the cmdlet make a change to the system. For more information about how confirmation requests are made, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
+- Indicates if the cmdlet supports calls to the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method. This method displays a confirmation message to the user before the cmdlet makes a change to the system. For more information about how confirmation requests are made, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
 
 - Indicate the impact level (or severity) of the action associated with the confirmation message. In most cases, the default value of Medium should be used. For more information about how the impact level affects the confirmation requests that are displayed to the user, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
 
