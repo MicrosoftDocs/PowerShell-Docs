@@ -4,7 +4,7 @@ schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  Get-ChildItem for FileSystem
-online version:  http://go.microsoft.com/fwlink/?LinkId=834950
+online version:  https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/providers/filesystem-provider/get-childitem-for-filesystem?view=powershell-5.1
 ---
 
 # Get-ChildItem for FileSystem
