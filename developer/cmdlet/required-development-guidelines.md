@@ -17,33 +17,33 @@ The following guidelines must be followed when you write your cmdlets. They are 
 
 ### Design Guidelines
 
-- [Use Only Approved Verbs (RD01)](./required-development-guidelines.md#RD01)
+- [Use Only Approved Verbs (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
-- [Cmdlet Names: Characters that cannot be Used (RD02)](./required-development-guidelines.md#RD02)
+- [Cmdlet Names: Characters that cannot be Used (RD02)](./required-development-guidelines.md#cmdlet-names-characters-that-cannot-be-used-rd02)
 
-- [Parameters Names that cannot be Used (RD03)](./required-development-guidelines.md#RD03)
+- [Parameters Names that cannot be Used (RD03)](./required-development-guidelines.md#parameters-names-that-cannot-be-used-rd03)
 
-- [Support Confirmation Requests (RD04)](./required-development-guidelines.md#RD04)
+- [Support Confirmation Requests (RD04)](./required-development-guidelines.md#support-confirmation-requests-rd04)
 
-- [Support Force Parameter for Interactive Sessions (RD05)](./required-development-guidelines.md#RD05)
+- [Support Force Parameter for Interactive Sessions (RD05)](./required-development-guidelines.md#support-force-parameter-for-interactive-sessions-rd05)
 
-- [Document Output Objects (RD06)](./required-development-guidelines.md#RD06)
+- [Document Output Objects (RD06)](./required-development-guidelines.md#document-output-objects-rd06)
 
 ### Code Guidelines
 
-- [Derive from the Cmdlet or PSCmdlet Classes (RC01)](./required-development-guidelines.md#RC01)
+- [Derive from the Cmdlet or PSCmdlet Classes (RC01)](./required-development-guidelines.md#derive-from-the-cmdlet-or-pscmdlet-classes-rc01)
 
-- [Specify the Cmdlet Attribute (RC02)](./required-development-guidelines.md#RC02)
+- [Specify the Cmdlet Attribute (RC02)](./required-development-guidelines.md#specify-the-cmdlet-attribute-rc02)
 
-- [Override an Input Processing Method (RC03)](./required-development-guidelines.md#RC03)
+- [Override an Input Processing Method (RC03)](./required-development-guidelines.md#override-an-input-processing-method-rc03)
 
-- [Specify the OutputType Attribute (RC04)](./required-development-guidelines.md#RC04)
+- [Specify the OutputType Attribute (RC04)](./required-development-guidelines.md#specify-the-outputtype-attribute-rc04)
 
-- [Do Not Retain Handles to Output Objects (RC05)](./required-development-guidelines.md#RC05)
+- [Do Not Retain Handles to Output Objects (RC05)](./required-development-guidelines.md#do-not-retain-handles-to-output-objects-rc05)
 
-- [Handle Errors Robustly (RC06)](./required-development-guidelines.md#RC06)
+- [Handle Errors Robustly (RC06)](./required-development-guidelines.md#handle-errors-robustly-rc06)
 
-- [Use a Windows PowerShell Module to Deploy your Cmdlets (RC07)](./required-development-guidelines.md#RC07)
+- [Use a Windows PowerShell Module to Deploy your Cmdlets (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
 ## Design Guidelines
 
@@ -53,19 +53,19 @@ The following guidelines must be followed when designing cmdlets to ensure a con
 
 The verb specified in the Cmdlet attribute must come from the recognized set of verbs provided by Windows PowerShell. It must not be one of the prohibited synonyms. Use the constant strings that are defined by the following enumerations to specify cmdlet verbs:
 
-- [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)
+- [System.Management.Automation.VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)
 
-- [System.Management.Automation.Verbscommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
+- [System.Management.Automation.VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
 
-- [System.Management.Automation.Verbsdata](/dotnet/api/System.Management.Automation.VerbsData)
+- [System.Management.Automation.VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
 
-- [System.Management.Automation.Verbsdiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
+- [System.Management.Automation.VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
 
-- [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+- [System.Management.Automation.VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
 
-- [System.Management.Automation.Verbssecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
+- [System.Management.Automation.VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
 
-- [System.Management.Automation.Verbsother](/dotnet/api/System.Management.Automation.VerbsOther)
+- [System.Management.Automation.VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
 
 For more information about the approved verb names, see [Cmdlet Verbs](./approved-verbs-for-windows-powershell-commands.md).
 
@@ -126,17 +126,17 @@ For more information about supporting these methods, see [Requesting Confirmatio
 
 If your cmdlet is used interactively, always provide a Force parameter to override the interactive actions, such as prompts or reading lines of input). This is important because it allows your cmdlet to be used in non-interactive scripts and hosts. The following methods can be implemented by an interactive host.
 
-- [System.Management.Automation.Host.Pshostuserinterface.Prompt*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.Prompt)
+- [System.Management.Automation.Host.PSHostUserInterface.Prompt*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.Prompt)
 
-- [System.Management.Automation.Host.Pshostuserinterface.Promptforchoice](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForChoice)
+- [System.Management.Automation.Host.Pshostuserinterface.PromptForChoice](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForChoice)
 
-- [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection.Promptforchoice](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice)
+- [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection.PromptForChoice](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice)
 
-- [System.Management.Automation.Host.Pshostuserinterface.Promptforcredential*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
+- [System.Management.Automation.Host.Pshostuserinterface.PromptForCredential*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
 
-- [System.Management.Automation.Host.Pshostuserinterface.Readline*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
+- [System.Management.Automation.Host.Pshostuserinterface.ReadLine*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
 
-- [System.Management.Automation.Host.Pshostuserinterface.Readlineassecurestring*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
+- [System.Management.Automation.Host.Pshostuserinterface.ReadLineAsSecureString*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
 
 ### Document Output Objects (RD06)
 
@@ -148,7 +148,7 @@ The following guidelines must be followed when writing cmdlet code. When you fin
 
 ### Derive from the Cmdlet or PSCmdlet Classes (RC01)
 
-A cmdlet must derive from either the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) or [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class. Cmdlets that derive from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class do not depend on the Windows PowerShell runtime. They can be called directly from any Microsoft .NET Framework language. Cmdlets that derive from the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class depend on the Windows PowerShell runtime. Therefore, they execute within a runspace.
+A cmdlet must derive from either the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) or [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class. Cmdlets that derive from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class do not depend on the Windows PowerShell runtime. They can be called directly from any Microsoft .NET Framework language. Cmdlets that derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class depend on the Windows PowerShell runtime. Therefore, they execute within a runspace.
 
 All cmdlet classes that you implement must be public classes. For more information about these cmdlet classes, see [Cmdlet Overview](./cmdlet-overview.md).
 
@@ -160,7 +160,7 @@ For a cmdlet to be recognized by Windows PowerShell, its .NET Framework class mu
 
 - The default parameter set that is used when multiple parameter sets are specified. The default parameter set is used when Windows PowerShell does not have enough information to determine which parameter set to use.
 
-- Indicates if the cmdlet supports calls to the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method. This method displays a confirmation message to the user before the cmdlet makes a change to the system. For more information about how confirmation requests are made, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
+- Indicates if the cmdlet supports calls to the [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method. This method displays a confirmation message to the user before the cmdlet makes a change to the system. For more information about how confirmation requests are made, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
 
 - Indicate the impact level (or severity) of the action associated with the confirmation message. In most cases, the default value of Medium should be used. For more information about how the impact level affects the confirmation requests that are displayed to the user, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
 
@@ -170,13 +170,13 @@ For more information about how to declare the cmdlet attribute, see [CmdletAttri
 
 For the cmdlet to participate in the Windows PowerShell environment, it must override at least one of the following *input processing methods*.
 
-[System.Management.Automation.Cmdlet.Beginprocessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 This method is called one time, and it is used to provide pre-processing functionality.
 
-[System.Management.Automation.Cmdlet.Processrecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 This method is called multiple times, and it is used to provide record-by-record functionality.
 
-[System.Management.Automation.Cmdlet.Endprocessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 This method is called one time, and it is used to provide post-processing functionality.
 
 ### Specify the OutputType Attribute (RC04)
@@ -185,19 +185,19 @@ The OutputType attribute (introduced in Windows PowerShell 2.0) specifies the .N
 
 ### Do Not Retain Handles to Output Objects (RC05)
 
-Your cmdlet should not retain any handles to the objects that are passed to the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method. These objects are passed to the next cmdlet in the pipeline, or they are used by a script. If you retain the handles to the objects, two entities will own each object, which causes errors.
+Your cmdlet should not retain any handles to the objects that are passed to the [System.Management.Automation.Cmdlet.WriteObject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method. These objects are passed to the next cmdlet in the pipeline, or they are used by a script. If you retain the handles to the objects, two entities will own each object, which causes errors.
 
 ### Handle Errors Robustly (RC06)
 
 An administration environment inherently detects and makes important changes to the system that you are administering. Therefore, it is vital that cmdlets handle errors correctly. For more information about error records, see [Windows PowerShell Error Reporting](./error-reporting-concepts.md).
 
-- When an error prevents a cmdlet from continuing to process any more records, it is a terminating error. The cmdlet must call the [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) method that references an [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object. If an exception is not caught by the cmdlet, the Windows PowerShell runtime itself throws a terminating error that contains less information.
+- When an error prevents a cmdlet from continuing to process any more records, it is a terminating error. The cmdlet must call the [System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) method that references an [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object. If an exception is not caught by the cmdlet, the Windows PowerShell runtime itself throws a terminating error that contains less information.
 
-- For a non-terminating error that does not stop operation on the next record that is coming from the pipeline (for example, a record produced by a different process), the cmdlet must call the [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method that references an [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object. An example of a non-terminating error is the error that occurs if a particular process fails to stop. Calling the [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method allows the user to consistently perform the actions requested and to retain the information for particular actions that fail. Your cmdlet should handle each record as independently as possible.
+- For a non-terminating error that does not stop operation on the next record that is coming from the pipeline (for example, a record produced by a different process), the cmdlet must call the [System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method that references an [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object. An example of a non-terminating error is the error that occurs if a particular process fails to stop. Calling the [System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method allows the user to consistently perform the actions requested and to retain the information for particular actions that fail. Your cmdlet should handle each record as independently as possible.
 
-- The [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object that is referenced by the [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) and [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methods requires an exception at its core. Follow the .NET Framework design guidelines when you determine the exception to use. If the error is semantically the same as an existing exception, use that exception or derive from that exception. Otherwise, derive a new exception or exception hierarchy directly from the [System.Exception](/dotnet/api/System.Exception) type.
+- The [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object that is referenced by the [System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) and [System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methods requires an exception at its core. Follow the .NET Framework design guidelines when you determine the exception to use. If the error is semantically the same as an existing exception, use that exception or derive from that exception. Otherwise, derive a new exception or exception hierarchy directly from the [System.Exception](/dotnet/api/System.Exception) type.
 
-An [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object also requires an error category that groups errors for the user. The user can view errors based on the category by setting the value of the `$ErrorView` shell variable to CategoryView. The possible categories are defined by the [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumeration.
+An [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object also requires an error category that groups errors for the user. The user can view errors based on the category by setting the value of the `$ErrorView` shell variable to CategoryView. The possible categories are defined by the [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumeration.
 
 - If a cmdlet creates a new thread, and if the code that is running in that thread throws an unhandled exception, Windows PowerShell will not catch the error and will terminate the process.
 
