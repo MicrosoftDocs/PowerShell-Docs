@@ -15,25 +15,25 @@ This section describes guidelines that you should follow when you write your cmd
 
 ## Design Guidelines
 
-- [Use a Specific Noun for a Cmdlet Name (SD01)](./strongly-encouraged-development-guidelines.md#SD01)
+- [Use a Specific Noun for a Cmdlet Name (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
-- [Use Pascal Case for Cmdlet Names (SD02)](./strongly-encouraged-development-guidelines.md#SD02)
+- [Use Pascal Case for Cmdlet Names (SD02)](./strongly-encouraged-development-guidelines.md#use-pascal-case-for-cmdlet-names-sd02)
 
-- [Parameter Design Guidelines (SD03)](./strongly-encouraged-development-guidelines.md#SD03)
+- [Parameter Design Guidelines (SD03)](./strongly-encouraged-development-guidelines.md#parameter-design-guidelines-sd03)
 
-- [Provide Feedback to the User (SD04)](./strongly-encouraged-development-guidelines.md#SD04)
+- [Provide Feedback to the User (SD04)](./strongly-encouraged-development-guidelines.md#provide-feedback-to-the-user-sd04)
 
-- [Create a Cmdlet Help File (SD05)](./strongly-encouraged-development-guidelines.md#SD05)
+- [Create a Cmdlet Help File (SD05)](./strongly-encouraged-development-guidelines.md#create-a-cmdlet-help-file-sd05)
 
 ## Code Guidelines
 
-- [Coding Parameters (SC01)](./strongly-encouraged-development-guidelines.md#SC01)
+- [Coding Parameters (SC01)](./strongly-encouraged-development-guidelines.md#coding-parameters-sc01)
 
-- [Support Well Defined Pipeline Input (SC02)](./strongly-encouraged-development-guidelines.md#SC02)
+- [Support Well Defined Pipeline Input (SC02)](./strongly-encouraged-development-guidelines.md#support-well-defined-pipeline-input-sc02)
 
-- [Write Single Records to the Pipeline (SC03)](./strongly-encouraged-development-guidelines.md#SC03)
+- [Write Single Records to the Pipeline (SC03)](./strongly-encouraged-development-guidelines.md#write-single-records-to-the-pipeline-sc03)
 
-- [Make Cmdlets Case-Insensitive and Case-Preserving (SC04)](./strongly-encouraged-development-guidelines.md#SC04)
+- [Make Cmdlets Case-Insensitive and Case-Preserving (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
 ## Design Guidelines
 
