@@ -39,24 +39,26 @@ Our community has also contributed packages for some platforms,
 but they are not officially supported.
 These packages are marked as `Community` in the table.
 
-|                                                   | 6.0       | 6.1       |
-|---------------------------------------------------|-----------|-----------|
-| Windows 7, 8.1, and 10                            | Supported | Supported |
-| Windows Server 2008 R2, 2012 R2, 2016             | Supported | Supported |
-| [Windows Server Semi-Annual Channel][semi-annual] | Supported | Supported |
-| Ubuntu 14.04 and, 16.04                           | Supported | Supported |
-| Ubuntu 17.10, and 18.04                           |           | Supported |
-| Debian 8.7+, and 9                                | Supported | Supported |
-| CentOS 7                                          | Supported | Supported |
-| Red Hat Enterprise Linux 7                        | Supported | Supported |
-| OpenSUSE 42.2                                     | Supported | Supported |
-| Fedora 27                                         | Supported | Supported |
-| Fedora 28                                         |           | Supported |
-| macOS 10.12+                                      | Supported | Supported |
-| Arch                                              | Community | Community |
-| Raspbian                                          | Community | Community |
-| Kali                                              | Community | Community |
-| AppImage  (works on multiple Linux platforms)     | Community | Community |
+Platforms listed as `Experimental` are not officially supported, but is available for experimentation of feedback.
+
+|                                                   | 6.0         | 6.1         |
+|---------------------------------------------------|:-----------:|:-----------:|
+| Windows 7, 8.1, and 10                            | Supported   | Supported   |
+| Windows Server 2008 R2, 2012 R2, 2016             | Supported   | Supported   |
+| [Windows Server Semi-Annual Channel][semi-annual] | Supported   | Supported   |
+| Ubuntu 14.04 and, 16.04                           | Supported   | Supported   |
+| Ubuntu 17.10, and 18.04                           |             | Supported   |
+| Debian 8.7+, and 9                                | Supported   | Supported   |
+| CentOS 7                                          | Supported   | Supported   |
+| Red Hat Enterprise Linux 7                        | Supported   | Supported   |
+| OpenSUSE 42.2                                     | Supported   | Supported   |
+| Fedora 27                                         | Supported   | Supported   |
+| Fedora 28                                         |             | Supported   |
+| macOS 10.12+                                      | Supported   | Supported   |
+| Arch                                              | Community   | Community   |
+| Raspbian                                          | Experimental| Community   |
+| Kali                                              | Community   | Community   |
+| AppImage  (works on multiple Linux platforms)     | Community   | Community   |
 
 ## Platform which are out of support
 
