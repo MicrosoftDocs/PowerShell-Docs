@@ -33,7 +33,11 @@ Eventually, we expect PowerShell Core will adopt the "long-term servicing" appro
 
 ## Supported platforms
 
-Please see the following table to see what platform the version of PowerShell Core you are using is officially supported:
+Please see the following table to see what platform the version of PowerShell Core you are using is officially supported.
+
+Our community has also contributed packages for some platforms,
+but they are not officially supported.
+These packages are marked as `Community` in the table.
 
 |                                                   | 6.0       | 6.1       |
 |---------------------------------------------------|-----------|-----------|
@@ -49,13 +53,10 @@ Please see the following table to see what platform the version of PowerShell Co
 | Fedora 27                                         | Supported | Supported |
 | Fedora 28                                         |           | Supported |
 | macOS 10.12+                                      | Supported | Supported |
-
-Our community has also contributed packages for the following platforms,
-but they are not officially supported:
-
-* Arch Linux
-* Kali Linux
-* AppImage (works on multiple Linux platforms)
+| Arch                                              | Community | Community |
+| Raspbian                                          | Community | Community |
+| Kali                                              | Community | Community |
+| AppImage  (works on multiple Linux platforms)     | Community | Community |
 
 ## Platform which are out of support
 
