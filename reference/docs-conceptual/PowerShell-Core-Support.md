@@ -39,7 +39,7 @@ Our community has also contributed packages for some platforms,
 but they are not officially supported.
 These packages are marked as `Community` in the table.
 
-Platforms listed as `Experimental` are not officially supported, but is available for experimentation of feedback.
+Platforms listed as `Experimental` are not officially supported, but are available for experimentation and feedback.
 
 |                                                   | 6.0         | 6.1         |
 |---------------------------------------------------|:-----------:|:-----------:|
