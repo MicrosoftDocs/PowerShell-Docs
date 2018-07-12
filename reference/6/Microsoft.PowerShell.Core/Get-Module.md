@@ -224,6 +224,7 @@ This lets you see the module files that each script is exporting.
 ### Example 7: Display the contents of a module manifest
 
 The first command gets the PSModuleInfo object that represents BitsTransfer module. It saves the object in the $m variable.
+
 ```powershell
 PS> $m = Get-Module -list -Name BitsTransfer
 ```
