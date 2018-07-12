@@ -111,13 +111,14 @@ This command gets all of the exported files for all available modules.
 ### Example 4: Get a module by its fully qualified name
 
 ```powershell
-PS> Get-Module -FullyQualifiedName @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"} | Format-Table -Property Name,Version
+PS> $FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVersion="3.1.0.0"}
+PS> Get-Module -FullyQualifiedName | Format-Table -Property Name,Version
 ```
 
 ```output
-Name                                                                                 Version
-----                                                                                 -------
-Microsoft.PowerShell.Management                                                      3.1.0.0
+Name                             Version
+----                             -------
+Microsoft.PowerShell.Management  3.1.0.0
 ```
 
 This command gets the **Microsoft.PowerShell.Management** module by specifying the fully qualified name of the module by using the **FullyQualifiedName** parameter.
@@ -222,13 +223,13 @@ This lets you see the module files that each script is exporting.
 
 ### Example 7: Display the contents of a module manifest
 
-```powershell
 The first command gets the PSModuleInfo object that represents BitsTransfer module. It saves the object in the $m variable.
-
+```powershell
 PS> $m = Get-Module -list -Name BitsTransfer
+```
 
 The second command uses the Get-Content cmdlet to get the content of the manifest file in the specified path. It uses dot notation to get the path to the manifest file, which is stored in the Path property of the object. The output shows the contents of the module manifest.
-
+```powershell
 PS> Get-Content $m.Path
 ```
 
@@ -296,25 +297,26 @@ For more information, see [`Import-Module`](Import-Module.md) and [`Import-PSSes
 
 ### Example 10: Manage a computer that does not run the Windows operating system
 
-```powershell
 The first command uses the New-CimSession cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
-
+```powershell
 PS> $cs = New-CimSession -ComputerName RSDGF03
-
+```
 The second command uses the CIM session in the $cs variable to run a Get-Module command on the RSDGF03 computer. The command uses the Name parameter to specify the Storage module. The command uses a pipeline operator (|) to send the Storage module to the Import-Module cmdlet, which imports it into the local session.
-
+```powershell
 PS> Get-Module -CimSession $cs -Name Storage | Import-Module
+```
 
 The third command runs the Get-Command cmdlet on the Get-Disk command in the Storage module. When you import a CIM module into the local session, Windows PowerShell converts the CDXML files that represent the CIM module into Windows PowerShell scripts, which appear as functions in the local session.
-
+```powershell
 PS> Get-Command Get-Disk
 
 CommandType     Name                  ModuleName
 -----------     ----                  ----------
 Function        Get-Disk              Storage
+```
 
 The fourth command runs the Get-Disk command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported. The command gets objects from the remote computer and returns them to the local session.
-
+```powershell
 PS> Get-Disk
 
 Number Friendly Name              OperationalStatus          Total Size Partition Style
