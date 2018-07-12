@@ -223,30 +223,31 @@ This lets you see the module files that each script is exporting.
 
 ### Example 7: Display the contents of a module manifest
 
-The first command gets the PSModuleInfo object that represents BitsTransfer module. It saves the object in the $m variable.
+The first command gets the PSModuleInfo object that represents BitsTransfer module. It saves the object in the `$m` variable.
+
+The second command uses the `Get-Content` cmdlet to get the content of the manifest file in the specified path. It uses dot notation to get the path to the manifest file, which is stored in the Path property of the object. The output shows the contents of the module manifest.
 
 ```powershell
+# First command
 PS> $m = Get-Module -list -Name BitsTransfer
-```
 
-The second command uses the Get-Content cmdlet to get the content of the manifest file in the specified path. It uses dot notation to get the path to the manifest file, which is stored in the Path property of the object. The output shows the contents of the module manifest.
-```powershell
+# Second command
 PS> Get-Content $m.Path
 ```
 
 ```output
-@{
-GUID="{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
-Author="Microsoft Corporation"
-CompanyName="Microsoft Corporation"
-Copyright="© Microsoft Corporation. All rights reserved."
-ModuleVersion="1.0.0.0"
-Description="Windows Powershell File Transfer Module"
-PowerShellVersion="2.0"
-CLRVersion="2.0"
-NestedModules="Microsoft.BackgroundIntelligentTransfer.Management"
-FormatsToProcess="FileTransfer.Format.ps1xml"
-RequiredAssemblies=Join-Path $psScriptRoot "Microsoft.BackgroundIntelligentTransfer.Management.Interop.dll"
+@ {
+    GUID               = "{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
+    Author             = "Microsoft Corporation"
+    CompanyName        = "Microsoft Corporation"
+    Copyright          = "© Microsoft Corporation. All rights reserved."
+    ModuleVersion      = "1.0.0.0"
+    Description        = "Windows Powershell File Transfer Module"
+    PowerShellVersion  = "2.0"
+    CLRVersion         = "2.0"
+    NestedModules      = "Microsoft.BackgroundIntelligentTransfer.Management"
+    FormatsToProcess   = "FileTransfer.Format.ps1xml"
+    RequiredAssemblies = Join-Path $psScriptRoot "Microsoft.BackgroundIntelligentTransfer.Management.Interop.dll"
 }
 ```
 
@@ -298,26 +299,29 @@ For more information, see [`Import-Module`](Import-Module.md) and [`Import-PSSes
 
 ### Example 10: Manage a computer that does not run the Windows operating system
 
-The first command uses the New-CimSession cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
-```powershell
-PS> $cs = New-CimSession -ComputerName RSDGF03
-```
-The second command uses the CIM session in the $cs variable to run a Get-Module command on the RSDGF03 computer. The command uses the Name parameter to specify the Storage module. The command uses a pipeline operator (|) to send the Storage module to the Import-Module cmdlet, which imports it into the local session.
-```powershell
-PS> Get-Module -CimSession $cs -Name Storage | Import-Module
-```
+The first command uses the `New-CimSession` cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the `$cs` variable.
 
-The third command runs the Get-Command cmdlet on the Get-Disk command in the Storage module. When you import a CIM module into the local session, Windows PowerShell converts the CDXML files that represent the CIM module into Windows PowerShell scripts, which appear as functions in the local session.
+The second command uses the CIM session in the `$cs` variable to run a `Get-Module` command on the RSDGF03 computer. The command uses the Name parameter to specify the Storage module. The command uses a pipeline operator (|) to send the Storage module to the `Import-Module` cmdlet, which imports it into the local session.
+
+The third command runs the `Get-Command` cmdlet on the `Get-Disk` command in the Storage module. When you import a CIM module into the local session, Windows PowerShell converts the CDXML files that represent the CIM module into Windows PowerShell scripts, which appear as functions in the local session.
+
+The fourth command runs the `Get-Disk` command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported. The command gets objects from the remote computer and returns them to the local session.
+
 ```powershell
+# First command
+PS> $cs = New-CimSession -ComputerName RSDGF03
+
+# Second command
+PS> Get-Module -CimSession $cs -Name Storage | Import-Module
+
+# Third command
 PS> Get-Command Get-Disk
 
 CommandType     Name                  ModuleName
 -----------     ----                  ----------
 Function        Get-Disk              Storage
-```
 
-The fourth command runs the Get-Disk command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported. The command gets objects from the remote computer and returns them to the local session.
-```powershell
+# Fourth command
 PS> Get-Disk
 
 Number Friendly Name              OperationalStatus          Total Size Partition Style
