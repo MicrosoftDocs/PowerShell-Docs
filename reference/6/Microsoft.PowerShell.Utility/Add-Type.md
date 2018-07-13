@@ -116,13 +116,15 @@ Name                           MemberType Definition
 ----                           ---------- ----------
 Clone                          Method     System.ObjectClone(
 Equals                         Method     System.BooleanEquals
-FindInterfaces                 Method     System.Type[] FindInt... PS C:\> [BasicTest] | Get-Member -Static
+FindInterfaces                 Method     System.Type[] FindInt... 
+PS C:\> [BasicTest] | Get-Member -Static
 TypeName: BasicTest
 Name            MemberType Definition
 ----            ---------- ----------
 Add             Method     static System.Int32 Add(Int32 a, Int32 b)
 Equals          Method     static System.Boolean Equals(Object objA,
-ReferenceEquals Method     static System.Boolean ReferenceEquals(Obj PS C:\> $basicTestObject | Get-Member
+ReferenceEquals Method     static System.Boolean ReferenceEquals(Obj 
+PS C:\> $basicTestObject | Get-Member
 TypeName: BasicTest
 Name        MemberType Definition
 ----        ---------- ----------
