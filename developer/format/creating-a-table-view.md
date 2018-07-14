@@ -134,7 +134,7 @@ The following XML elements can be used to provide definitions for a row:
 
 - The [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md) element defines the properties or scripts whose values are displayed in the row.
 
-- The [TableColumnItem](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md) element defines the property or script whose value is displayed in the column of the row. A [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element is required for each column of the row. The first entry is displayed in first column, the second entry in the second column, and so on.
+- The [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element defines the property or script whose value is displayed in the column of the row. A [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) element is required for each column of the row. The first entry is displayed in first column, the second entry in the second column, and so on.
 
 - The [PropertyName](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md) element specifies the property whose value is displayed in the row. You must specify either a property or a script, but you cannot specify both.
 
