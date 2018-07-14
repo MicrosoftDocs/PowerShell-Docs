@@ -238,8 +238,8 @@ SharePointConfig.mof.checksum
 ### Naming and placing the configuration documents on the pull server (ConfigurationID)
 
 The partial configuration documents must be placed in the folder specified as the **ConfigurationPath** in the `web.config` file for the pull server
-(typically `C:\Program Files\WindowsPowerShell\DscService\Configuration`). The configuration documents must be named as follows: *ConfigurationName*. *ConfigurationID8`.mof`,
-where *ConfigurationName* is the name of the partial configuration and *ConfigurationID* is the configuration ID defined in the LCM on the target node. For our example, the
+(typically `C:\Program Files\WindowsPowerShell\DscService\Configuration`). The configuration documents must be named as follows: _ConfigurationName_. *ConfigurationID8`.mof`,
+where _ConfigurationName_ is the name of the partial configuration and _ConfigurationID_ is the configuration ID defined in the LCM on the target node. For our example, the
 configuration documents should be named as follows:
 
 ```
@@ -360,7 +360,6 @@ Configuration ServiceAccountConfig
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
-
     Node localhost
     {
         Group LocalAdmins
@@ -370,7 +369,6 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-
         }
 
         WindowsFeature Telnet
@@ -381,7 +379,6 @@ Configuration ServiceAccountConfig
     }
 }
 ServiceAccountConfig
-
 ```
 
 ## Example SharePointConfig Partial Configuration

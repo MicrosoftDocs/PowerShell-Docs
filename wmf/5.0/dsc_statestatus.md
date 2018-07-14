@@ -9,11 +9,11 @@ A series of enhancements have been made in this release for automations built LC
 The representation of LCM state and DSC operation status are revisited and unified according to following rules:
 
 1. Notprocessed resource does not impact LCM state and DSC status.
-2. LCM stop processing further resources once it encounters a resource that requests reboot.
-3. A resource that requests reboot is not in desired state until reboot actually happens.
-4. After encountering a resource that fails, LCM keeps processing further resources as long as they are not dependent on the failure one.
-5. The overall status returned by `Get-DscConfigurationStatus` cmdlet is the super set of all resources' status.
-6. The PendingReboot state is a superset of PendingConfiguration state.
+1. LCM stop processing further resources once it encounters a resource that requests reboot.
+1. A resource that requests reboot is not in desired state until reboot actually happens.
+1. After encountering a resource that fails, LCM keeps processing further resources as long as they are not dependent on the failure one.
+1. The overall status returned by `Get-DscConfigurationStatus` cmdlet is the super set of all resources' status.
+1. The PendingReboot state is a superset of PendingConfiguration state.
 
    The table below illustrates the resultant state and status related properties under a few typical scenarios.
 

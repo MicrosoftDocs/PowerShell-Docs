@@ -5,7 +5,6 @@ ms.date:  12/12/2016
 title:  Add-PswaAuthorizationRule
 schema:   2.0.0
 ---
-
 # Add-PswaAuthorizationRule
 
 ## SYNOPSIS
@@ -231,8 +230,8 @@ This cmdlet returns the an authorization rule object.
 
 ### EXAMPLE 1
 
-This example grants access to the session configuration *PSWAEndpoint*,
-a restricted runspace, on *srv2* for users in the *SMAdmins* group.\
+This example grants access to the session configuration _PSWAEndpoint_,
+a restricted runspace, on _srv2_ for users in the _SMAdmins_ group.\
 **Note**: The computer name must be a fully qualified domain name
 (FQDN). Administrators define a restricted session configuration or
 runspace, which is a limited range of cmdlets and tasks that end users
@@ -301,10 +300,12 @@ Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1
 ### EXAMPLE 6
 
 This example allows all users access to all endpoints on all computers.
-This essentially turns off authorization rules.\
-**Note**: Use of the `*` wildcard character is not recommended for
-security-sensitive deployments and should only be considered for test
-environments or used in deployments where security can be relaxed.
+This essentially turns off authorization rules.
+
+> [!NOTE]
+> Use of the `*` wildcard character is not recommended for
+> security-sensitive deployments and should only be considered for test
+> environments or used in deployments where security can be relaxed.
 
 ````PowerShell
 Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *

@@ -6,7 +6,7 @@ ms.assetid:  7a410e4d-514b-4813-ba0c-0d8cef88df31
 ---
 # Managing Services
 
-There are eight core Service cmdlets, designed for a wide range of service tasks . We will look only at listing and changing running state for services, but you can get a list Service cmdlets by using **Get-Help \&#42;-Service**, and you can find information about each Service cmdlet by using **Get-Help<Cmdlet-Name>**, such as **Get-Help New-Service**.
+There are eight core Service cmdlets, designed for a wide range of service tasks . We will look only at listing and changing running state for services, but you can get a list of Service cmdlets by using **Get-Help \*-Service**, and you can find information about each Service cmdlet by using **Get-Help \<Cmdlet-Name\>**, such as **Get-Help New-Service**.
 
 ## Getting Services
 
