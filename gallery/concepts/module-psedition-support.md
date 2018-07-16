@@ -163,7 +163,6 @@ $binaryModule = Import-Module -Name $binaryModulePath -PassThru
 $PSModule.OnRemove = {
     Remove-Module -ModuleInfo $binaryModule
 }
-
 ```
 
 ### Option 2: Use $PSEdition variable in the PSD1 file to load the proper DLLs and Nested/Required modules
@@ -246,13 +245,11 @@ Mode                LastWriteTime         Length Name
 Modules without PSEdition_Desktop and PSEdition_Core tags are considered to work fine on PowerShell Desktop editions.
 
 ```powershell
-
 # Find modules supported on PowerShell Desktop edition
 Find-Module -Tag PSEdition_Desktop
 
 # Find modules supported on PowerShell Core editions
 Find-Module -Tag PSEdition_Core
-
 ```
 
 ## More details

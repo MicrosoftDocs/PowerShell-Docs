@@ -125,8 +125,8 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
+
 To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”. A module may have multiple role capability files, if desired.
 
 To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates. For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).
@@ -138,9 +138,11 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 ```
 
 ## Connect to a JEA Endpoint
+
 Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.  You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
+
 Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to. If you try to run any command not allowed for your role, you will encounter an error.

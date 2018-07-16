@@ -3,7 +3,6 @@ ms.date:  06/27/2017
 keywords:  powershell,cmdlet
 title:  Authorization Rules and Security Features of Windows PowerShell Web Access
 ---
-
 # Authorization Rules and Security Features of Windows PowerShell Web Access
 
 Updated: June 24, 2013
@@ -320,11 +319,10 @@ The following are some examples of this scenario.
   configurations. - This rule is the equivalent of the following:
   `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
-  >[!NOTE]
-  >
-  >This rule is not recommended in a secure environment,
-  >and bypasses the authorization rule layer of security provided
-  >by Windows PowerShell Web Access.
+  > [!NOTE]
+  > This rule is not recommended in a secure environment,
+  > and bypasses the authorization rule layer of security provided
+  > by Windows PowerShell Web Access.
 
 - An administrator must allow users to connect to target computers in an
   environment that includes both workgroups and domains, where workgroup
@@ -355,11 +353,10 @@ successful, and allowed by at least one authorization rule.
 1. Authentication on the workgroup gateway server by adding a user name in the
   format *server_name*\\*user_name* to the authorization rule
 
-2. Authentication on the target computer by using alternate credentials
+1. Authentication on the target computer by using alternate credentials
    provided on the sign-in page, in the **Optional connection settings** area
 
    > [!NOTE]
-   >
    > If gateway and target computers are in different workgroups or domains, a
    > trust relationship must be established between the two workgroup computers,
    > the two domains, or between the workgroup and the domain. This relationship

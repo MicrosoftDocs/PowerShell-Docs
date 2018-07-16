@@ -50,13 +50,11 @@ PowerShell Gallery users can find the list of scripts supported on a specific Po
 Scripts without PSEdition_Desktop and PSEditon_Core are considered to work fine on PowerShell Desktop editions.
 
 ```powershell
-
 # Find scripts supported on PowerShell Desktop edition
 Find-Script -Tag PSEditon_Desktop
 
 # Find scripts supported on PowerShell Core editions
 Find-Script -Tag PSEditon_Core
-
 ```
 
 ## More details
