@@ -3,7 +3,6 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Log Resource
 ---
-
 # DSC Log Resource
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -20,23 +19,22 @@ Log [string] #ResourceName
 }
 ```
 
-NOTE: By default only the Operational logs for DSC are enabled.
-Before the Analytic log will be available or visible, it must be enabled.
-See the following article.
-
-[Where are DSC Event Logs?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
+> [!NOTE]
+> By default only the Operational logs for DSC are enabled. Before the Analytic log will be available or visible, it must be enabled. For more information, see [Where are DSC Event Logs?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs).
 
 ## Properties
+
 |  Property  |  Description   |
 |---|---|
 | Message| Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log.|
-| DependsOn | Indicates that the configuration of another resource must run before this log message gets written. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
+| DependsOn | Indicates that the configuration of another resource must run before this log message gets written. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## Example
 
 The following example shows how to include a message in the Microsoft-Windows-Desired State Configuration/Analytic event log.
 
-> **Note**: if you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with this resource configured, it will always return **$false**.
+> [!NOTE]
+> If you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with this resource configured, it will always return **$false**.
 
 ```powershell
 Configuration logResourceTest
@@ -44,11 +42,10 @@ Configuration logResourceTest
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     Node localhost
-
     {
         Log LogExample
         {
-            Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
+            Message = 'This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log.'
         }
     }
 }

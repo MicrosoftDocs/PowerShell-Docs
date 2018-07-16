@@ -32,7 +32,6 @@ In traditional command development, you are required to write a parameter parser
 Windows PowerShell defines several types of commands that you can use in development. These commands include: functions, filters, scripts, aliases, and executables (applications). The main command type discussed in this guide is a simple, small command called a "cmdlet". Windows PowerShell furnishes a set of cmdlets and fully supports cmdlet customization to suit your environment. The Windows PowerShell runtime processes all command types just as it does cmdlets, using pipelines.
 
 In addition to commands, Windows PowerShell supports various customizable Windows PowerShell providers that make available specific sets of cmdlets. The shell operates within the Windows PowerShell-provided host application (Windows PowerShell.exe), but it is equally accessible from a custom host application that you can develop to meet specific requirements. For more information, see [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
-In addition to commands, Windows PowerShell supports various customizable Windows PowerShell providers that make available specific sets of cmdlets. The shell operates within the Windows PowerShell-provided host application (Windows PowerShell.exe), but it is equally accessible from a custom host application that you can develop to meet specific requirements. For more information, see [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
 ### Windows PowerShell Cmdlets
 
@@ -57,7 +56,6 @@ Only rarely will you need to write your own host application for Windows PowerSh
 ### Windows PowerShell Runtime
 
 The Windows PowerShell runtime is the execution engine that implements command processing. It includes the classes that provide the interface between the host application and Windows PowerShell commands and providers. The Windows PowerShell runtime is implemented as a runspace object for the current Windows PowerShell session, which is the operational environment in which the shell and the commands execute. For operational details, see [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
-The Windows PowerShell runtime is the execution engine that implements command processing. It includes the classes that provide the interface between the host application and Windows PowerShell commands and providers. The Windows PowerShell runtime is implemented as a runspace object for the current Windows PowerShell session, which is the operational environment in which the shell and the commands execute. For operational details, see [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
 ### Windows PowerShell Language
 
@@ -78,7 +76,6 @@ Windows PowerShell provides access to a variety of different objects, such as .N
   Using ETS, you can create flexible new "types" that are compatible with the Windows PowerShell language. If you are a .NET developer, you are able to work with objects using the same semantics as the Windows PowerShell language applies to scripting, for example, to determine if an object evaluates to `true`.
 
   For more information about ETS and how Windows PowerShell uses objects, see [Windows PowerShell Object Concepts](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353).
-  For more information about ETS and how Windows PowerShell uses objects, see [Windows PowerShell Object Concepts](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353).
 
 ## Programming for Windows PowerShell
 
@@ -91,14 +88,12 @@ For reference when developing for Windows PowerShell, see the [Windows PowerShel
 ## Getting Started Using Windows PowerShell
 
 For more information about starting to use the Windows PowerShell shell, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell) shipped with Windows PowerShell. A Quick Reference tri-fold document is also supplied as a primer for cmdlet use.
-For more information about starting to use the Windows PowerShell shell, see the [Getting Started with Windows PowerShell](http://msdn.microsoft.com/en-us/69555d95-b481-43e1-86e7-b46d68b3e2dd) shipped with Windows PowerShell. A Quick Reference tri-fold document is also supplied as a primer for cmdlet use.
 
 ## Contents of This Guide
 
 |Topic|Definition|
 |-----------|----------------|
 |[How to Create a Windows PowerShell Provider](./how-to-create-a-windows-powershell-provider.md)|This section describes how to build a Windows PowerShell provider for Windows PowerShell.|
-|[How to Create a Windows PowerShell Host Application](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|This section describes how to write a host application that manipulates a runspace and how to write a host application that implements its own custom host.|
 |[How to Create a Windows PowerShell Host Application](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|This section describes how to write a host application that manipulates a runspace and how to write a host application that implements its own custom host.|
 |[How to Create a Windows PowerShell Snap-in](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|This section describes how to create a snap-in that is used to register all cmdlets and providers in an assembly and how to create a custom snap-in.|
 |[How to Create a Console Shell](./how-to-create-a-console-shell.md)|This section describes how to create a console shell that is not extensible.|

@@ -3,7 +3,6 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Package Resource
 ---
-
 # DSC Package Resource
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -28,6 +27,7 @@ Package [string] #ResourceName
 ```
 
 ## Properties
+
 |  Property  |  Description   |
 |---|---|
 | Name| Indicates the name of the package for which you want to ensure a specific state.|
