@@ -36,17 +36,12 @@ Registry [string] #ResourceName
 | Hex| Indicates if data will be expressed in hexadecimal format. If specified, the DWORD/QWORD value data is presented in hexadecimal format. Not valid for other types. The default value is **$false**.|
 | DependsOn| Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
 | ValueData| The data for the registry value.|
-| ValueType| Indicates the type of the value. The supported types are:
-- String (REG_SZ)
-- Binary (REG-BINARY)
-- Dword 32-bit (REG_DWORD)
-- Qword 64-bit (REG_QWORD)
-- Multi-string (REG_MULTI_SZ)
-- Expandable string (REG_EXPAND_SZ)
+| ValueType| Indicates the type of the value. The supported types are: String (REG_SZ), Binary (REG-BINARY), Dword 32-bit (REG_DWORD), Qword 64-bit (REG_QWORD), Multi-string (REG_MULTI_SZ), Expandable string (REG_EXPAND_SZ) |
 
 ## Example
 
 This example ensures that a key named "ExampleKey" is present in the **HKEY\_LOCAL\_MACHINE** hive.
+
 ```powershell
 Configuration RegistryTest
 {
@@ -59,5 +54,6 @@ Configuration RegistryTest
     }
 }
 ```
+
 > [!NOTE]
 > Changing a registry setting in the **HKEY\_CURRENT\_USER** hive requires that the configuration runs with user credentials, rather than as the system. You can use the **PsDscRunAsCredential** property to specify user credentials for the configuration. For an example, see [Running DSC with user credentials](runAsUser.md).

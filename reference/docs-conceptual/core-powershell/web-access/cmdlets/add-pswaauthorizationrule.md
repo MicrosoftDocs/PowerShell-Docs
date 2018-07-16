@@ -231,16 +231,18 @@ This cmdlet returns the an authorization rule object.
 ### EXAMPLE 1
 
 This example grants access to the session configuration _PSWAEndpoint_,
-a restricted runspace, on _srv2_ for users in the _SMAdmins_ group.\
-**Note**: The computer name must be a fully qualified domain name
-(FQDN). Administrators define a restricted session configuration or
-runspace, which is a limited range of cmdlets and tasks that end users
-can run. Defining a restricted runspace can prevent users from accessing
-other computers that are not in the allowed Windows PowerShell®
-runspace, thus offering a more secure connection. For more information
-on session configurations, see
-[about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)
-or the [Install and Use Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).
+a restricted runspace, on _srv2_ for users in the _SMAdmins_ group.
+
+> [!NOTE]
+> The computer name must be a fully qualified domain name
+> (FQDN). Administrators define a restricted session configuration or
+> runspace, which is a limited range of cmdlets and tasks that end users
+> can run. Defining a restricted runspace can prevent users from accessing
+> other computers that are not in the allowed Windows PowerShell®
+> runspace, thus offering a more secure connection. For more information
+> on session configurations, see
+> [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)
+> or the [Install and Use Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint

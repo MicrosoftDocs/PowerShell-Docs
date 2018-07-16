@@ -34,12 +34,13 @@ This is a dictionary object that maintains a context-sensitive mapping between H
 $psLocalHelp | Format-List
 ```
 
-### $psLocalHelp Sample Output
+```output
+Key   : Add-Computer
+Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm
 
-|||
-|-|-|
-|Key : Add-Computer|Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
-|Key : Add-Content|Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
+Key   : Add-Content
+Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm
+```
 
 The following script adds an entry to the list.
 
@@ -55,12 +56,13 @@ This is a dictionary object that maintains a context-sensitive mapping between t
 $psOnlineHelp | Format-List
 ```
 
-## $psOnilneHelp Sample Output
+```output
+Key   : Add-Computer
+Value : http://go.microsoft.com/fwlink/p/?LinkID=135194
 
-|Key|Value|
-|-|-|
-|Add-Computer|http://go.microsoft.com/fwlink/p/?LinkID=135194|
-|Add-Content|http://go.microsoft.com/fwlink/p/?LinkID=113278|
+Key   : Add-Content
+Value : http://go.microsoft.com/fwlink/p/?LinkID=113278
+```
 
 The following script adds an entry to the list.
 
