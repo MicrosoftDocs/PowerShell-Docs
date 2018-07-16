@@ -46,8 +46,8 @@ In addition you will need to enable password authentication and optionally key b
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions
-3. Edit the sshd_config file at the location where you installed Win32 OpenSSH
+1. Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions
+1. Edit the sshd_config file at the location where you installed Win32 OpenSSH
    - Make sure password authentication is enabled
 
    ```
@@ -59,8 +59,8 @@ In addition you will need to enable password authentication and optionally key b
     ```
 
     > [!NOTE]
-    There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.
-    See [this issue on GitHub for more information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    > There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.
+    > See [this issue on GitHub for more information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
     One solution is to create a symlink to the Powershell installation directory that does not contain spaces:
 
@@ -84,27 +84,27 @@ In addition you will need to enable password authentication and optionally key b
    PubkeyAuthentication yes
    ```
 
-4. Restart the sshd service
+1. Restart the sshd service
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. Add the path where OpenSSH is installed to your Path Env Variable
+1. Add the path where OpenSSH is installed to your Path Env Variable
    - This should be along the lines of `C:\Program Files\OpenSSH\`
    - This allows for the ssh.exe to be found
 
 ## Setup on Linux (Ubuntu 14.04) Machine
 
 1. Install the latest [PowerShell Core for Linux] build from GitHub
-2. Install [Ubuntu SSH] as needed
+1. Install [Ubuntu SSH] as needed
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Edit the sshd_config file at location /etc/ssh
+1. Edit the sshd_config file at location /etc/ssh
    - Make sure password authentication is enabled
 
    ```
@@ -123,7 +123,7 @@ In addition you will need to enable password authentication and optionally key b
    PubkeyAuthentication yes
    ```
 
-4. Restart the sshd service
+1. Restart the sshd service
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ In addition you will need to enable password authentication and optionally key b
      - Click on `Sharing`
      - Check `Remote Login` - Should say `Remote Login: On`
      - Allow access to appropriate users
-2. Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`
+1. Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`
    - Use your favorite editor or
 
      ```bash
@@ -162,7 +162,7 @@ In addition you will need to enable password authentication and optionally key b
      PubkeyAuthentication yes
      ```
 
-3. Restart the sshd service
+1. Restart the sshd service
 
    ```bash
    sudo launchctl stop com.openssh.sshd

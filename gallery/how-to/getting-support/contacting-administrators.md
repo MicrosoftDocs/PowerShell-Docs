@@ -18,6 +18,6 @@ You should contact gallery administrators when:
 
 ## How to Contact Gallery Administrators
 
-1. Send us an email: cgadmin@microsoft.com.
+1. Send us an email: <cgadmin@microsoft.com>.
 2. If you are reporting abuse of an item, you can find Report Abuse link below the item information on the left panel.
 3. For any other general questions regarding the Gallery, please submit your question to [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)

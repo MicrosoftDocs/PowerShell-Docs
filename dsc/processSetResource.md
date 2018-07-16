@@ -3,7 +3,6 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  DSC ProcessSet Resource
 ---
-
 # DSC WindowsProcess Resource
 
 > Applies To: Windows PowerShell 5.0
@@ -29,6 +28,7 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## Properties
+
 |  Property  |  Description   |
 |---|---|
 | Arguments| A string that contains arguments to pass to the process as-is. If you need to pass several arguments, put them all in this string.|

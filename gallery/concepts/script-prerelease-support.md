@@ -48,7 +48,6 @@ An example section of a script manifest with a prerelease version would look lik
 ...
 
 #>
-
 ```
 
 To use a prerelease suffix, the version string must meet the following requirements:

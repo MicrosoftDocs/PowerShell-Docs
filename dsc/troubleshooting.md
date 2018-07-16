@@ -3,7 +3,6 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  Troubleshooting DSC
 ---
-
 # Troubleshooting DSC
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -19,10 +18,10 @@ Windows PowerShell Desired State Configuration (DSC) depends on WinRM. WinRM is 
 The [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet gets information about configuration status from a target node.
 A rich object is returned that includes high-level information about whether or not the configuration run was successful or not. You can dig into the object to discover details about the configuration run such as:
 
-* All of the resources that failed
-* Any resource that requested a reboot
-* Meta-Configuration settings at time of configuration run
-* Etc.
+- All of the resources that failed
+- Any resource that requested a reboot
+- Meta-Configuration settings at time of configuration run
+- Etc.
 
 The following parameter set returns the status information for the last configuration run:
 
@@ -113,8 +112,8 @@ Consistency engine was run successfully.
 
 DSC events are logged in a particular structure that enables the user to aggregate events from one DSC job. The structure is as follows:
 
-**Job ID : <Guid>**
-**<Event Message>**
+**Job ID : \<Guid\>**
+**\<Event Message\>**
 
 ## Gathering events from a single DSC operation
 
@@ -279,7 +278,6 @@ ComputerName   SequenceId TimeCreated           Result   JobID                  
 SRV1   1          6/23/2016 9:37:52 AM  Failure  9701aadf-395e-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   2          6/23/2016 9:36:54 AM  Failure  7e8e2d6e-395c-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   3          6/23/2016 9:36:54 AM  Success  af72c6aa-3960-11e6-9165-00155d390509  {@{Message=Operati...
-
 ```
 
 You can also specify that you want only results for the most recent operations by using the `Newest` parameter:
@@ -619,10 +617,13 @@ onlyProperty                            PSComputerName
 ## See Also
 
 ### Reference
-* [DSC Log Resource](logResource.md)
+
+- [DSC Log Resource](logResource.md)
 
 ### Concepts
-* [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
+
+- [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 ### Other Resources
-* [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
+
+- [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)

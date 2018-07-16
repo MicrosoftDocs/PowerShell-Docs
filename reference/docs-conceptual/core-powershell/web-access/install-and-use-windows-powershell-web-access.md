@@ -456,29 +456,29 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
 
    - On the Windows **Start** screen, type any part of the name **Internet Information Services (IIS) Manager**. Click the shortcut when it is displayed in the **Apps** results.
 
-2. In the IIS Manager tree pane, expand the node for the server on which Windows PowerShell Web Access is installed until the **Sites** folder is visible. Select the **Sites** folder.
+1. In the IIS Manager tree pane, expand the node for the server on which Windows PowerShell Web Access is installed until the **Sites** folder is visible. Select the **Sites** folder.
 
-3. In the **Actions** pane, click **Add Website**.
+1. In the **Actions** pane, click **Add Website**.
 
-4. Type a name for the website, such as **Windows PowerShell Web Access**.
+1. Type a name for the website, such as **Windows PowerShell Web Access**.
 
-5. An application pool is automatically created for the new website. To use a different application pool, click **Select** to select an application pool to associate with the new website. Select the alternate application pool in the **Select Application Pool** dialog box, and then click **OK**.
+1. An application pool is automatically created for the new website. To use a different application pool, click **Select** to select an application pool to associate with the new website. Select the alternate application pool in the **Select Application Pool** dialog box, and then click **OK**.
 
-6. In the **Physical path** text box, navigate to %*windir*%/Web/PowerShellWebAccess/wwwroot.
+1. In the **Physical path** text box, navigate to %*windir*%/Web/PowerShellWebAccess/wwwroot.
 
-7. In the **Type** field of the **Binding** area, select **https**.
+1. In the **Type** field of the **Binding** area, select **https**.
 
-8. Assign a port number to the website that is not already in use by another site or application. To locate open ports, you can run the **netstat** command in a Command Prompt window. The default port number is 443.
+1. Assign a port number to the website that is not already in use by another site or application. To locate open ports, you can run the **netstat** command in a Command Prompt window. The default port number is 443.
 
    Change the default port if another website is already using 443, or if you have other security reasons for changing the port number. If another website that is running on your gateway server is using your selected port, a warning is displayed when you click **OK** in the **Add Website** dialog box. You must use an unused port to run Windows PowerShell Web Access.
 
-9. Optionally, if needed for your organization, specify a host name that makes sense to your organization and users, such as **www.contoso.com**. Click **OK**.
+1. Optionally, if needed for your organization, specify a host name that makes sense to your organization and users, such as **www.contoso.com**. Click **OK**.
 
-10. For a more secure production environment, we strongly recommend providing a valid certificate that has been signed by a CA. You must provide an SSL certificate, because users can only connect to Windows PowerShell Web Access through an HTTPS website. See [To configure an SSL certificate in IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager) in this topic for more information about how to obtain a certificate.
+1. For a more secure production environment, we strongly recommend providing a valid certificate that has been signed by a CA. You must provide an SSL certificate, because users can only connect to Windows PowerShell Web Access through an HTTPS website. See [To configure an SSL certificate in IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager) in this topic for more information about how to obtain a certificate.
 
-11. Click **OK** to close the **Add Website** dialog box.
+1. Click **OK** to close the **Add Website** dialog box.
 
-12. In a Windows PowerShell session that has been opened with elevated user rights (Run as Administrator), run the following script, in which *application_pool_name* represents the name of the application pool that you created in step 4, to give the application pool access rights to the authorization file.
+1. In a Windows PowerShell session that has been opened with elevated user rights (Run as Administrator), run the following script, in which _application_pool_name_ represents the name of the application pool that you created in step 4, to give the application pool access rights to the authorization file.
 
     ```    
     $applicationPoolName = "<application_pool_name>"
@@ -492,11 +492,11 @@ Instructions in this section are for installing the Windows PowerShell Web Acces
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-13. With the new website selected in the IIS Manager tree pane, click **Start** in the **Actions** pane to start the website.
+1. With the new website selected in the IIS Manager tree pane, click **Start** in the **Actions** pane to start the website.
 
-14. Open a browser session on a client device. For more information about supported browsers and devices, see [Browser and client device support](#browser-and-client-device-support) in this document.
+1. Open a browser session on a client device. For more information about supported browsers and devices, see [Browser and client device support](#browser-and-client-device-support) in this document.
 
-15. Open the new Windows PowerShell Web Access website.
+1. Open the new Windows PowerShell Web Access website.
 
     Because the root website points to the Windows PowerShell Web Access folder, the browser should display the Windows PowerShell Web Access sign-in page when you open **https://\<*gateway_server_name*\>**. You should not need to add **/pswa** to the URL.
 
@@ -520,11 +520,11 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
    - On the Windows **Start** screen, right-click **Windows PowerShell**, and then click **Run as Administrator**.
 
-2. ![Security Note](images/SecurityNote.jpeg) Optional step for restricting user access by using session configurations:
+1. ![Security Note](images/SecurityNote.jpeg) Optional step for restricting user access by using session configurations:
 
    Verify that session configurations that you want to use in your rules already exist. If they have not yet been created, use instructions for creating session configurations in [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
-3. Type the following, and then press **Enter**.
+1. Type the following, and then press **Enter**.
 
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
@@ -534,7 +534,7 @@ For more detail about Windows PowerShell Web Access authorization rules and secu
 
    Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. Verify that the rule has been created by running either the `Get-PswaAuthorizationRule` cmdlet, or `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
+1. Verify that the rule has been created by running either the `Get-PswaAuthorizationRule` cmdlet, or `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
    For example, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -548,9 +548,9 @@ For a secure production environment, always use a valid SSL certificate that has
 
 1. In the IIS Manager tree pane, select the server on which Windows PowerShell Web Access is installed.
 
-2. In the content pane, double click **Server Certificates**.
+1. In the content pane, double click **Server Certificates**.
 
-3. In the **Actions** pane, do one of the following. For more information about configuring server certificates in IIS, see [Configuring Server Certificates in IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
+1. In the **Actions** pane, do one of the following. For more information about configuring server certificates in IIS, see [Configuring Server Certificates in IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Click **Import** to import an existing, valid certificate from a location on your network.
 
@@ -560,11 +560,11 @@ For a secure production environment, always use a valid SSL certificate that has
 
    - Click **Create a Self-Signed Certificate** to create a certificate that you can use immediately, and have signed later by a CA if desired. Specify a friendly name for the self-signed certificate, such as **Windows PowerShell Web Access**. This option is not considered secure, and is recommended only for a private test environment.
 
-4. After creating or obtaining a certificate, select the website to which the certificate is applied (for example, **Default Web Site**) in the IIS Manager tree pane, and then click **Bindings** in the **Actions** pane.
+1. After creating or obtaining a certificate, select the website to which the certificate is applied (for example, **Default Web Site**) in the IIS Manager tree pane, and then click **Bindings** in the **Actions** pane.
 
-5. In the **Add Site Binding** dialog box, add an **https** binding for the site, if one is not already displayed. If you are not using a self-signed certificate, specify the host name from step 3 of this procedure. If you are using a self-signed certificate, this step is not required.
+1. In the **Add Site Binding** dialog box, add an **https** binding for the site, if one is not already displayed. If you are not using a self-signed certificate, specify the host name from step 3 of this procedure. If you are using a self-signed certificate, this step is not required.
 
-6. Select the certificate that you obtained or created in step 3 of this procedure, and then click **OK**.
+1. Select the certificate that you obtained or created in step 3 of this procedure, and then click **OK**.
 
 ## Using the web-based Windows PowerShell console
 
