@@ -44,7 +44,7 @@ You can then write custom functions to process the data stored in the user drive
 
 In some cases, a task a user needs to perform in a JEA session may need to access resources beyond the local machine.
 When a JEA session is configured to use a virtual account, any attempt to reach such resources will appear to come from the local machine's identity, not the virtual account or connected user.
-In TP5, we have enabled support for running JEA under the context of a [Group Managed Service Account](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), making it much easier to access network resources by using a domain identity.
+In TP5, we have enabled support for running JEA under the context of a [Group Managed Service Account](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)), making it much easier to access network resources by using a domain identity.
 
 To configure a JEA session to run under a gMSA account, use the following new key in your PSSC file:
 
