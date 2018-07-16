@@ -223,9 +223,11 @@ This lets you see the module files that each script is exporting.
 
 ### Example 7: Display the contents of a module manifest
 
-The first command gets the PSModuleInfo object that represents BitsTransfer module. It saves the object in the `$m` variable.
+These commands display the contents of the module manifest for the Windows PowerShell **BitsTransfer** module.
 
-The second command uses the `Get-Content` cmdlet to get the content of the manifest file in the specified path. It uses dot notation to get the path to the manifest file, which is stored in the Path property of the object. The output shows the contents of the module manifest.
+Modules are not required to have manifest files.
+When they do have a manifest file, the manifest file is required only to include a version number.
+However, manifest files often provide useful information about a module, its requirements, and its contents.
 
 ```powershell
 # First command
@@ -251,11 +253,9 @@ PS> Get-Content $m.Path
 }
 ```
 
-These commands display the contents of the module manifest for the Windows PowerShell **BitsTransfer** module.
+The first command gets the PSModuleInfo object that represents BitsTransfer module. It saves the object in the `$m` variable.
 
-Modules are not required to have manifest files.
-When they do have a manifest file, the manifest file is required only to include a version number.
-However, manifest files often provide useful information about a module, its requirements, and its contents.
+The second command uses the `Get-Content` cmdlet to get the content of the manifest file in the specified path. It uses dot notation to get the path to the manifest file, which is stored in the Path property of the object. The output shows the contents of the module manifest.
 
 ### Example 8: List files in module directory
 
@@ -299,13 +299,8 @@ For more information, see [`Import-Module`](Import-Module.md) and [`Import-PSSes
 
 ### Example 10: Manage a computer that does not run the Windows operating system
 
-The first command uses the `New-CimSession` cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the `$cs` variable.
-
-The second command uses the CIM session in the `$cs` variable to run a `Get-Module` command on the RSDGF03 computer. The command uses the Name parameter to specify the Storage module. The command uses a pipeline operator (|) to send the Storage module to the `Import-Module` cmdlet, which imports it into the local session.
-
-The third command runs the `Get-Command` cmdlet on the `Get-Disk` command in the Storage module. When you import a CIM module into the local session, Windows PowerShell converts the CDXML files that represent the CIM module into Windows PowerShell scripts, which appear as functions in the local session.
-
-The fourth command runs the `Get-Disk` command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported. The command gets objects from the remote computer and returns them to the local session.
+The commands in this example enable you to manage the storage systems of a remote computer that is not running the Windows operating system.
+In this example, because the administrator of the computer has installed the Module Discovery WMI provider, the CIM commands can use the default values, which are designed for the provider.
 
 ```powershell
 # First command
@@ -329,8 +324,13 @@ Number Friendly Name              OperationalStatus          Total Size Partitio
 0      Virtual HD ATA Device      Online                          40 GB MBR
 ```
 
-The commands in this example enable you to manage the storage systems of a remote computer that is not running the Windows operating system.
-In this example, because the administrator of the computer has installed the Module Discovery WMI provider, the CIM commands can use the default values, which are designed for the provider.
+The first command uses the `New-CimSession` cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the `$cs` variable.
+
+The second command uses the CIM session in the `$cs` variable to run a `Get-Module` command on the RSDGF03 computer. The command uses the Name parameter to specify the Storage module. The command uses a pipeline operator (|) to send the Storage module to the `Import-Module` cmdlet, which imports it into the local session.
+
+The third command runs the `Get-Command` cmdlet on the `Get-Disk` command in the Storage module. When you import a CIM module into the local session, Windows PowerShell converts the CDXML files that represent the CIM module into Windows PowerShell scripts, which appear as functions in the local session.
+
+The fourth command runs the `Get-Disk` command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported. The command gets objects from the remote computer and returns them to the local session.
 
 ## PARAMETERS
 
