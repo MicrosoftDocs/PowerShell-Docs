@@ -34,7 +34,8 @@ standard of the file system; this is exposed through a number of ways, obvious a
   load will fail. This may cause a problem with existing scripts if the name by which the module is
   referenced doesn't match the actual file name.
 - Tab-completion will not auto-complete if the file name case is wrong. The fragment to complete
-  must be cased properly. (Completion is case-insensitive for type name and type member completions.)
+  must be cased properly. (Completion is case-insensitive for type name and type member
+  completions.)
 
 ### .PS1 File Extensions
 
@@ -81,10 +82,10 @@ types, methods, etc. As a result, scripts that run on Windows may not run on non
 because of the differences in the frameworks. For more information about .NET Core Framework, see
 <https://dotnetfoundation.org/net-core>
 
-With the advent of [.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0
-will bring back many of the traditional types and methods present in the full .NET Framework. This
-means that PowerShell Core will be able to load many traditional Windows PowerShell modules without
-modification. You can follow our .NET Standard 2.0 related work
+With the advent of [.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/),
+.NET Core 2.0 will bring back many of the traditional types and methods present in the full .NET
+Framework. This means that PowerShell Core will be able to load many traditional Windows PowerShell
+modules without modification. You can follow our .NET Standard 2.0 related work
 [here](https://github.com/PowerShell/PowerShell/projects/4).
 
 ### Redirection Issues
@@ -154,8 +155,8 @@ problems, fixing the broken cmdlets and adding new ones over time.
 
 The following table lists commands that are known not to work in PowerShell on Linux/macOS.
 
-|Commands |Operational State | Notes|
-|---------|------------------|------|
+|Commands|Operational State|Notes|
+|--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Not Available.|These commands will not be recognized. This should be fixed in a future release.|
 |`Get-Acl`, `Set-Acl`|Not available.|These commands will not be recognized. This should be fixed in a future release.|
 |`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Not available.|These commands will not be recognized. This should be fixed in a future release.|
