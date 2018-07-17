@@ -5,7 +5,7 @@ title:  DSC Package Resource
 ---
 # DSC Package Resource
 
-> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 The **Package** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall packages, such as Windows Installer and setup.exe packages, on a target node.
 
@@ -28,8 +28,8 @@ Package [string] #ResourceName
 
 ## Properties
 
-|  Property  |  Description   |
-|---|---|
+| Property | Description |
+| --- | --- |
 | Name| Indicates the name of the package for which you want to ensure a specific state.|
 | Path| Indicates the path where the package resides.|
 | ProductId| Indicates the product ID that uniquely identifies the package.|
