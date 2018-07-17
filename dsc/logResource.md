@@ -27,7 +27,7 @@ Log [string] #ResourceName
 |  Property  |  Description   |
 |---|---|
 | Message| Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log.|
-| DependsOn | Indicates that the configuration of another resource must run before this log message gets written. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = '[ResourceType]ResourceName'`.|
+| DependsOn | Indicates that the configuration of another resource must run before this log message gets written. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## Example
 

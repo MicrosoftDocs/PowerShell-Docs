@@ -112,8 +112,10 @@ Consistency engine was run successfully.
 
 DSC events are logged in a particular structure that enables the user to aggregate events from one DSC job. The structure is as follows:
 
-**Job ID : \<Guid\>**
-**\<Event Message\>**
+```
+Job ID : <Guid>
+<Event Message>
+```
 
 ## Gathering events from a single DSC operation
 

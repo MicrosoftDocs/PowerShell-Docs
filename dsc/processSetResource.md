@@ -39,4 +39,4 @@ WindowsProcess [string] #ResourceName
 | StandardInputPath| The stream from which the process receives standard input.|
 | StandardOutputPath| The path of the file to which the processes write standard output. Any existing file there will be overwritten.|
 | WorkingDirectory| The location used as the current working directory for the processes.|
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **_ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`` .|
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **_ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"` .|
