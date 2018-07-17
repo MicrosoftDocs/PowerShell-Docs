@@ -21,7 +21,8 @@ nxService <string> #ResourceName
 ```
 
 ## Properties
-|  Property |  Description |
+
+| Property | Description |
 |---|---|
 | Name| The name of the service/daemon to configure.|
 | Controller| The type of service controller to use when configuring the service.|
