@@ -8,4 +8,4 @@ As communicated during the [development](https://blogs.msdn.microsoft.com/powers
 and [release of WMF 5.1](https://blogs.msdn.microsoft.com/powershell/2017/03/28/windows-management-framework-wmf-5-1-now-in-microsoft-update-catalog/),
 starting June 1, 2017, users with WMF 5.0 must upgrade to WMF 5.1 to receive support.
 
-Please follow the [installation instructions of WMF 5.1](..\5.1\install-configure.md)
+Please follow the [installation instructions of WMF 5.1](../5.1/install-configure.md)
