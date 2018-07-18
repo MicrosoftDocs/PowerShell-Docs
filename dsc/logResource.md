@@ -20,7 +20,7 @@ Log [string] #ResourceName
 ```
 
 > [!NOTE]
-> By default only the Operational logs for DSC are enabled. Before the Analytic log will be available or visible, it must be enabled. For more information, see [Where are DSC Event Logs?](troubleshooting#where-are-dsc-event-logs).
+> By default only the Operational logs for DSC are enabled. Before the Analytic log will be available or visible, it must be enabled. For more information, see [Where are DSC Event Logs?](troubleshooting.md#where-are-dsc-event-logs).
 
 ## Properties
 

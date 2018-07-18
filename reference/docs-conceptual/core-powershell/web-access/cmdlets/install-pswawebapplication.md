@@ -9,7 +9,7 @@ title:  Install-PswaWebApplication
 
 ## SYNOPSIS
 
-Configures the Windows PowerShell® Web Access web application in IIS.
+Configures the Windows PowerShell Web Access web application in IIS.
 
 ## SYNTAX
 
@@ -20,23 +20,20 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## DESCRIPTION
 
-The **Install-PswaWebApplication** cmdlet configures Windows PowerShell
-Web Access web application. This cmdlet installs the web application,
-associates it with a web site, and optionally creates a test SSL
-certificate using the **useTestCertificate** parameter. For security
-reasons web administrators should not use a test certificate for
-production environments.
+The **Install-PswaWebApplication** cmdlet configures Windows PowerShell Web Access web application.
+This cmdlet installs the web application, associates it with a web site, and optionally creates a
+test SSL certificate using the **useTestCertificate** parameter. For security reasons web
+administrators should not use a test certificate for production environments.
 
 ## PARAMETERS
 
 ### -UseTestCertificate
 
-Specifies that a test certificate is created. If this parameter is set
-to true, then this cmdlet creates a test certificate and configures the
-Windows PowerShell Web Access web application to use the certificate for
-HTTPS requests. If this parameter is set to false, then no certificate
-or binding is created. Set this value to false if another certificate is
-used for Windows PowerShell Web Access.
+Specifies that a test certificate is created. If this parameter is set to true, then this cmdlet
+creates a test certificate and configures the Windows PowerShell Web Access web application to use
+the certificate for HTTPS requests. If this parameter is set to false, then no certificate or
+binding is created. Set this value to false if another certificate is used for Windows PowerShell
+Web Access.
 
 |||
 |-|-|
@@ -47,10 +44,10 @@ used for Windows PowerShell Web Access.
 | Accept Pipeline Input?               | false                                |
 | Accept Wildcard Characters?          | false                                |
 
-### -WebApplicationName&lt;String&gt;
+### -WebApplicationName
 
-Specifies the name for your web application. This is displayed as the
-last part of the Windows PowerShell Web Access URL.
+Specifies the name for your web application. This is displayed as the last part of the Windows
+PowerShell Web Access URL.
 
 |||
 |-|-|
@@ -61,7 +58,7 @@ last part of the Windows PowerShell Web Access URL.
 | Accept Pipeline Input?               | false                                |
 | Accept Wildcard Characters?          | false                                |
 
-### -WebSiteName&lt;String&gt;
+### -WebSiteName
 
 Specifies the name of the Web Server (IIS) website on which to install
 this Windows PowerShell Web Access web application.
@@ -102,9 +99,8 @@ The cmdlet is not run.
 
 ### &lt;CommonParameters&gt;
 
-This cmdlet supports the common parameters:
--Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable.
-For more information, see
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable,
+-OutBuffer, and -OutVariable. For more information, see
 [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
 
 ## INPUTS
@@ -119,9 +115,8 @@ This cmdlet produces no output.
 
 ### EXAMPLE 1
 
-This example installs the PSWA web application using the default values
-for the **WebApplicationName** (*pswa*) and **WebSiteName** (*Default
-Web Site*) parameters .
+This example installs the PSWA web application using the default values for the
+**WebApplicationName** (*pswa*) and **WebSiteName** (*Default Web Site*) parameters .
 
 ```
 Install-PswaWebApplication
@@ -129,9 +124,8 @@ Install-PswaWebApplication
 
 ### EXAMPLE 2
 
-This example installs the PSWA web application with a test certificate,
-and using the default values for the **WebApplicationName** and
-**WebSiteName** parameters.
+This example installs the PSWA web application with a test certificate, and using the default
+values for the **WebApplicationName** and **WebSiteName** parameters.
 
 ```
 Install-PswaWebApplication -UseTestCertificate
