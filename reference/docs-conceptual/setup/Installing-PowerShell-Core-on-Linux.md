@@ -449,7 +449,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0
 sudo yum remove powershell
 ```
 
-## OpenSUSE 42.2
+## OpenSUSE 42.2/42.3
 
 When installing PowerShell Core, `zypper` may report the following error:
 
@@ -469,7 +469,7 @@ zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 Then choose the `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies`
 solution when installing the PowerShell package.
 
-### Installation via Package Repository (preferred) - OpenSUSE 42.2
+### Installation via Package Repository (preferred) - OpenSUSE 42.2/42.3
 
 PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).
 
@@ -477,8 +477,8 @@ PowerShell Core for Linux is published to official Microsoft repositories for ea
 # Register the Microsoft signature key
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
-# Add the Microsoft Product feed
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
+# Add the Microsoft Repository
+zypper ar https://packages.microsoft.com/rhel/7/prod/
 
 # Update the list of products
 sudo zypper update
