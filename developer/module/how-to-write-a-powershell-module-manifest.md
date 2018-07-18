@@ -19,7 +19,7 @@ A *module manifest* is a Windows PowerShell data file (.psd1) that describes the
 
 For simple modules that contain only a single .psm1 or binary assembly, a module manifest is optional. However, it is recommended that you use a module manifest whenever possible, as they are useful to help you organize your code and to maintain versioning information. In addition, a module manifest is required to export an assembly that is installed in the global assembly cache. A module manifest is also required for modules that support the Updatable Help feature. That is, Updatable Help uses the **HelpInfoUri** key in the module manifest to find the Help information (HelpInfo XML) file that contains the location of the updated help files for the module. For more information about Updatable Help, see [Supporting Updatable Help](./supporting-updatable-help.md).
 
-#### To create and use a module manifest
+### To create and use a module manifest
 
 1. To create a module manifest, you have several options:
 
@@ -33,27 +33,27 @@ For simple modules that contain only a single .psm1 or binary assembly, a module
 
    3. Finally, you can also create an empty .psd1 file, and copy the template at the bottom of this topic into the file, and fill in the relevant values. The only real requirement in this case would be to ensure that the file was named the same as the module.
 
-   2. Add in any additional elements to the manifest that you want to have in the file.
+2. Add in any additional elements to the manifest that you want to have in the file.
 
-      Generally speaking, this will probably be done in whatever text editor you prefer, such as Notepad. However this technically is a script file that contains code, so you may wish to edit it in an actual scripting or development environment, such as the PowerShell ISE. Again, note that all elements of a manifest file are optional, except for the ModuleVersion number.
+   Generally speaking, this will probably be done in whatever text editor you prefer, such as Notepad. However this technically is a script file that contains code, so you may wish to edit it in an actual scripting or development environment, such as the PowerShell ISE. Again, note that all elements of a manifest file are optional, except for the ModuleVersion number.
 
-      For descriptions of the keys and values you can have in a module manifest, see the **Module Manifest Elements** below. For additional information, see the parameter descriptions in the  [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet.
+   For descriptions of the keys and values you can have in a module manifest, see the **Module Manifest Elements** below. For additional information, see the parameter descriptions in the  [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet.
 
-   3. Optionally, you can choose to add additional code to your module manifest, to address any scenarios that would not be covered by the base module manifest elements.
+3. Optionally, you can choose to add additional code to your module manifest, to address any scenarios that would not be covered by the base module manifest elements.
 
-      Due to security concerns, PowerShell will run only a small subset of the available operations in a module manifest file. Generally, you can use the **if** statement, arithmetic and comparison operators, and the basic PowerShell data types.
+   Due to security concerns, PowerShell will run only a small subset of the available operations in a module manifest file. Generally, you can use the **if** statement, arithmetic and comparison operators, and the basic PowerShell data types.
 
-   4. Once you have created your module manifest, you can test it (to confirm that any paths described in the manifest are correct) with a call to [Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest).
+4. Once you have created your module manifest, you can test it (to confirm that any paths described in the manifest are correct) with a call to [Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest).
 
-      `Test-ModuleManifest myModuleName.psd1`
+   `Test-ModuleManifest myModuleName.psd1`
 
-   5. Be sure that your module manifest is located in the top level of the directory that contains your module.
+5. Be sure that your module manifest is located in the top level of the directory that contains your module.
 
-      When you copy your module onto a system and import it, PowerShell will use the module manifest to import your module.
+   When you copy your module onto a system and import it, PowerShell will use the module manifest to import your module.
 
-   6. Optionally, you can directly test your module manifest with a call to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) by dot-sourcing the manifest itself.
+6. Optionally, you can directly test your module manifest with a call to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) by dot-sourcing the manifest itself.
 
-      `Import-Module .\myModuleName.psd1`
+   `Import-Module .\myModuleName.psd1`
 
 ## Module Manifest Elements
 
