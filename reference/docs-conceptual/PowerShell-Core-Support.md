@@ -51,7 +51,7 @@ Platforms listed as `Experimental` are not officially supported, but are availab
 | Debian 8.7+, and 9                                | Supported   | Supported   |
 | CentOS 7                                          | Supported   | Supported   |
 | Red Hat Enterprise Linux 7                        | Supported   | Supported   |
-| OpenSUSE 42.2                                     | Supported   | Supported   |
+| OpenSUSE 42.3                                     | Supported   | Supported   |
 | Fedora 27                                         | Supported   | Supported   |
 | Fedora 28                                         |             | Supported   |
 | macOS 10.12+                                      | Supported   | Supported   |
