@@ -5,9 +5,10 @@ title:  DSC Registry Resource
 ---
 # DSC Registry Resource
 
-> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
-The **Registry** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage registry keys and values on a target node.
+The **Registry** resource in Windows PowerShell Desired State Configuration (DSC) provides a
+mechanism to manage registry keys and values on a target node.
 
 ## Syntax
 
@@ -27,8 +28,8 @@ Registry [string] #ResourceName
 
 ## Properties
 
-|  Property  |  Description   |
-|---|---|
+| Property | Description |
+| --- | --- |
 | Key| Indicates the path of the registry key for which you want to ensure a specific state. This path must include the hive.|
 | ValueName| Indicates the name of the registry value. To add or remove a registry key, specify this property as an empty string without specifying ValueType or ValueData. To modify or remove the default value of a registry key, specify this property as an empty string while also specifying ValueType or ValueData.|
 | Ensure| Indicates if the key and value exist. To ensure that they do, set this property to "Present". To ensure that they do not exist, set the property to "Absent". The default value is "Present".|
@@ -56,4 +57,7 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> Changing a registry setting in the **HKEY\_CURRENT\_USER** hive requires that the configuration runs with user credentials, rather than as the system. You can use the **PsDscRunAsCredential** property to specify user credentials for the configuration. For an example, see [Running DSC with user credentials](runAsUser.md).
+> Changing a registry setting in the `HKEY\CURRENT\USER` hive requires that the configuration runs
+> with user credentials, rather than as the system. You can use the **PsDscRunAsCredential**
+> property to specify user credentials for the configuration. For an example, see
+> [Running DSC with user credentials](runAsUser.md).
