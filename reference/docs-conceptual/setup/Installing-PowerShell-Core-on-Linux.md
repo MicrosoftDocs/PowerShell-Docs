@@ -1,7 +1,7 @@
 # Installing PowerShell Core on Linux
 
 Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9],
-[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2/42.3][opensuse], [Fedora 27][fedora],
+[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27][fedora],
 [Fedora 28][fedora], and [Arch Linux][arch].
 
 For Linux distributions that are not officially supported,
@@ -19,7 +19,7 @@ Once the package is installed, run `pwsh` from a terminal.
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse-422
+[opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
@@ -449,7 +449,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0
 sudo yum remove powershell
 ```
 
-## OpenSUSE 42.2/42.3
+## OpenSUSE 42.3
 
 When installing PowerShell Core, `zypper` may report the following error:
 
@@ -469,7 +469,7 @@ zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 Then choose the `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies`
 solution when installing the PowerShell package.
 
-### Installation via Package Repository (preferred) - OpenSUSE 42.2/42.3
+### Installation via Package Repository (preferred) - OpenSUSE 42.3
 
 PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).
 
@@ -490,7 +490,7 @@ sudo zypper install powershell
 pwsh
 ```
 
-### Installation via Direct Download - OpenSUSE 42.2/42.3
+### Installation via Direct Download - OpenSUSE 42.3
 
 Download the RPM package `powershell-6.0.2-1.rhel.7.x86_64.rpm`
 from the [releases][] page onto the OpenSUSE machine.
@@ -507,7 +507,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### Uninstallation - OpenSUSE 42.2/42.3
+### Uninstallation - OpenSUSE 42.3
 
 ```sh
 sudo zypper remove powershell
@@ -720,7 +720,7 @@ on different Linux distributions.
 | Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2/OpenSUSE 42.3 | libunwind, libcurl, openssl-libs, libicu |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE OpenSUSE 42.3 | libunwind, libcurl, openssl-libs, libicu |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 To deploy PowerShell binaries on Linux distributions that are not officially supported,
