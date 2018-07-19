@@ -222,7 +222,7 @@ sudo apt-get update
 sudo apt-get install -y powershell-preview
 
 # Start PowerShell
-pwsh
+pwsh-preview
 ```
 
 After registering the Microsoft repository once as superuser,
