@@ -69,8 +69,8 @@ PS C:\> Invoke-Expression $Command
 
 This example runs a command string that is saved in the $Command variable.
 
-The command string is enclosed in single quotation marks because it includes a variable, $_, which represents the current object.
-If it were enclosed in double quotation marks, the $_ variable would be replaced by its value before it was saved in the $Command variable.
+The command string is enclosed in single quotation marks because it includes a variable, `$_`, which represents the current object.
+If it were enclosed in double quotation marks, the `$_` variable would be replaced by its value before it was saved in the $Command variable.
 
 ### Example 4: Get and run a cmdlet Help example
 ```
