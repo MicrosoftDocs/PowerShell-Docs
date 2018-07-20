@@ -76,7 +76,6 @@ Feel free to help out.
 - Links must have a friendly name, usually the title of the linked topic
 - All items in the "related links" section at the bottom should be hyperlinked.
 - Use relative links when linking to other content that is hosted on **docs.microsoft.com**.
--
 
 ### Structure of links on docs.microsoft.com
 
