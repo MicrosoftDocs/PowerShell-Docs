@@ -248,11 +248,11 @@ is associated.
 
 # SEE ALSO
 
-about_Scheduled_Jobs_Basics
-about_Scheduled_Jobs_Advanced
-about_Scheduled_Jobs_Troubleshooting
-about_jobs
-Task Scheduler (http://go.microsoft.com/fwlink/?LinkId=232928)
+- [about_Scheduled_Jobs_Basics](about_Scheduled_Jobs_Basics.md)
+- [about_Scheduled_Jobs_Advanced](about_Scheduled_Jobs_Advanced.md)
+- [about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)
+- [about_jobs](about_jobs.md)
+- [Task Scheduler](http://go.microsoft.com/fwlink/?LinkId=232928)
 
 ## RELATED LINKS
 
