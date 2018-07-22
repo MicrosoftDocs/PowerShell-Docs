@@ -63,7 +63,7 @@ Windows PowerShell.
 # SCHEDULED JOB CMDLETS
 
 The PSScheduledJob module contains the following cmdlets.
-
+```
 Register-ScheduledJob:       Creates a scheduled job.
 Get-ScheduledJob:            Gets a scheduled job.
 Set-ScheduledJob:            Changes the properties of a scheduled job
@@ -82,42 +82,42 @@ Remove-JobTrigger:           Deletes a job trigger.
 New-ScheduledJobOption:      Creates a job options object.
 Get-ScheduledJobOption:      Gets the job options of a scheduled job.
 Set-ScheduledJobOption:      Changes the job options of a scheduled job.
-
+```
 # QUICK START
 
 The following commands create a scheduled job that starts
 every day at 3:00 AM and runs the Get-Process cmdlet. The job
 starts even if the computer is running on batteries.
-
+```
 $trigger = New-JobTrigger -Daily -At 3AM
 
 $options = New-ScheduledJobOption -StartIfOnBattery
 
 Register-ScheduledJob -Name ProcessJob -ScriptBlock {Get-Process} `
 -Trigger $trigger -ScheduledJobOption $options
-
+```
 The following command gets the scheduled jobs on the local computer.
-
+```
 PS C:> Get-ScheduledJob
 
 Id         Name            Triggers        Command            Enabled
 --         ----            --------        -------            -------
 7          ProcessJob      {1}             Get-Process        True
-
+```
 The following command gets the job triggers of ProcessJob. The
 input parameters specify the scheduled job, not the trigger,
 because triggers are saved in a scheduled job.
-
+```
 PS C:> Get-JobTrigger -Name ProcessJob
 
 Id         Frequency       Time                   DaysOfWeek              Enabled
 --         ---------       ----                   ----------              -------
 1          Daily           11/5/2011 3:00:00 AM                           True
-
+```
 The following command uses the ContinueIfGoingOnBattery parameter of
 the Set-ScheduledJob cmdlet to change the StopIfGoingOnBatteries property
 of ProcessJob to False.
-
+```
 PS C:> Get-ScheduledJob -Name ProcessJob | Set-ScheduledJobOption `
 -ContinueIfGoingOnBattery -Passthru
 
@@ -135,15 +135,15 @@ RunWithoutNetwork      : True
 DoNotAllowDemandStart  : False
 MultipleInstancePolicy : IgnoreNew
 JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
-
+```
 The following command gets the ProcessJob scheduled job.
-
+```
 PS C:> Get-ScheduledJob ProcessJob
 
 Id         Name            Triggers        Command        Enabled
 --         ----            --------        -------        -------
 7          ProcessJob      {1}             Get-Process    True
-
+```
 The following command uses the Get-Job cmdlet to get all instances
 of the ProcessJob scheduled job that have run thus far. The Get-Job
 cmdlet gets scheduled jobs only when the PSScheduledJob module is
@@ -151,7 +151,7 @@ imported into the current session.
 
 TIP: Notice that you use the ScheduledJob cmdlets to manage scheduled
 jobs, but you use the Job cmdlets to manage instances of scheduled jobs.
-
+```
 PS C:> Get-Job -Name ProcessJob
 
 Id     Name        PSJobTypeName  State    HasMoreData   Location   Command
@@ -163,12 +163,12 @@ Id     Name        PSJobTypeName  State    HasMoreData   Location   Command
 49     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
 50     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
 51     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
-
+```
 The following command gets the results of the most recent instance
 of the ProcessJob scheduled job (ID = 51).
-
+```
 Receive-Job -ID 51
-
+```
 Even though the Receive-Job command did not include the Keep parameter,
 the results of the job are saved on disk until you delete them or the
 maximum number of results are exceeded.
@@ -186,14 +186,14 @@ job. Like all background jobs, these jobs start immediately -- they
 are not subject to job options or affected by job triggers -- and
 their output is not saved in the Output directory of the scheduled
 job directory.
-
+```
 PS C:> Start-Job -DefinitionName ProcessJob
-
+```
 The following command deletes the ProcessJob scheduled job and all
 saved results of its job instances.
-
+```
 PS C:> Remove-ScheduledJob ProcessJob
-
+```
 # SCHEDULED JOBS CONCEPTS
 
 A "scheduled job" runs commands or a script. A scheduled job can
@@ -220,9 +220,7 @@ Use the Windows PowerShell Job cmdlets to view and manage the job
 instance.
 
 Scheduled jobs are saved to disk (hence the cmdlet verb, Register,
-instead of New) in XML files in the
-$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
-directory on the local computer.
+instead of New) in XML files in the `$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the local computer.
 
 Windows PowerShell creates a directory for each scheduled job and
 saves the job commands, job triggers, job options  and job results
@@ -248,28 +246,26 @@ is associated.
 
 # SEE ALSO
 
-about_Scheduled_Jobs_Basics
-about_Scheduled_Jobs_Advanced
-about_Scheduled_Jobs_Troubleshooting
-about_jobs
-Task Scheduler (http://go.microsoft.com/fwlink/?LinkId=232928)
+- [about_Scheduled_Jobs_Basics](about_Scheduled_Jobs_Basics.md)
+- [about_Scheduled_Jobs_Advanced](about_Scheduled_Jobs_Advanced.md)
+- [about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)
+- [Task Scheduler](http://go.microsoft.com/fwlink/?LinkId=232928)
 
-Add-JobTrigger
-Disable-JobTrigger
-Disable-ScheduledJob
-Enable-JobTrigger
-Enable-ScheduledJob
-Get-Job
-Get-JobTrigger
-Get-ScheduledJob
-Get-ScheduledJobOption
-New-JobTrigger
-New-ScheduledJobOption
-Receive-Job
-Register-ScheduledJob
-Remove-JobTrigger
-Set-JobTrigger
-Set-ScheduledJob
-Set-ScheduledJobOption
-Start-Job
-Unregister-ScheduledJob
+## RELATED LINKS
+
+- [Add-JobTrigger](../Add-JobTrigger.md)
+- [Disable-JobTrigger](../Disable-JobTrigger.md)
+- [Disable-ScheduledJob](../Disable-ScheduledJob.md)
+- [Enable-JobTrigger](../Enable-JobTrigger.md)
+- [Enable-ScheduledJob](../Enable-ScheduledJob.md)
+- [Get-JobTrigger](../Get-JobTrigger.md)
+- [Get-ScheduledJob](../Get-ScheduledJob.md)
+- [Get-ScheduledJobOption](../Get-ScheduledJobOption.md)
+- [New-JobTrigger](../New-JobTrigger.md)
+- [New-ScheduledJobOption](../New-ScheduledJobOption.md)
+- [Register-ScheduledJob](../Register-ScheduledJob.md)
+- [Remove-JobTrigger](../Remove-JobTrigger.md)
+- [Set-JobTrigger](../Set-JobTrigger.md)
+- [Set-ScheduledJob](../Set-ScheduledJob.md)
+- [Set-ScheduledJobOption](../Set-ScheduledJobOption.md)
+- [Unregister-ScheduledJob](../Unregister-ScheduledJob.md)
