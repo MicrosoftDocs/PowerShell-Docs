@@ -220,9 +220,7 @@ Use the Windows PowerShell Job cmdlets to view and manage the job
 instance.
 
 Scheduled jobs are saved to disk (hence the cmdlet verb, Register,
-instead of New) in XML files in the
-$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
-directory on the local computer.
+instead of New) in XML files in the `$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the local computer.
 
 Windows PowerShell creates a directory for each scheduled job and
 saves the job commands, job triggers, job options  and job results
