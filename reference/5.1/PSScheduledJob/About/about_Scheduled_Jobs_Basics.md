@@ -275,7 +275,6 @@ PowerShell session. To start a new Windows PowerShell session, type
 
 # SEE ALSO
 
-- [about_Scheduled_Jobs_Basics](about_Scheduled_Jobs_Basics.md)
 - [about_Scheduled_Jobs_Advanced](about_Scheduled_Jobs_Advanced.md)
 - [about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)
 - [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
