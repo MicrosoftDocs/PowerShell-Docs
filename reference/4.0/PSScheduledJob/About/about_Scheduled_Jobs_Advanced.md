@@ -229,7 +229,26 @@ computer and displays them in a table.
 
 # SEE ALSO
 
+- [about_Scheduled_Jobs_Basics](about_Scheduled_Jobs_Basics.md)
+- [about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)
+- [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+- [Task Scheduler](http://go.microsoft.com/fwlink/?LinkId=232928)
 
-about_Scheduled_Jobs
-about_Scheduled_Jobs_Troubleshooting
-about_Jobs
+## RELATED LINKS
+
+- [Add-JobTrigger](../Add-JobTrigger.md)
+- [Disable-JobTrigger](../Disable-JobTrigger.md)
+- [Disable-ScheduledJob](../Disable-ScheduledJob.md)
+- [Enable-JobTrigger](../Enable-JobTrigger.md)
+- [Enable-ScheduledJob](../Enable-ScheduledJob.md)
+- [Get-JobTrigger](../Get-JobTrigger.md)
+- [Get-ScheduledJob](../Get-ScheduledJob.md)
+- [Get-ScheduledJobOption](../Get-ScheduledJobOption.md)
+- [New-JobTrigger](../New-JobTrigger.md)
+- [New-ScheduledJobOption](../New-ScheduledJobOption.md)
+- [Register-ScheduledJob](../Register-ScheduledJob.md)
+- [Remove-JobTrigger](../Remove-JobTrigger.md)
+- [Set-JobTrigger](../Set-JobTrigger.md)
+- [Set-ScheduledJob](../Set-ScheduledJob.md)
+- [Set-ScheduledJobOption](../Set-ScheduledJobOption.md)
+- [Unregister-ScheduledJob](../Unregister-ScheduledJob.md)
