@@ -263,10 +263,10 @@ as Get-ScheduledJob.
 
 The following command gets the results of the newest instance of
 the ProcessJob scheduled job (ID = 51)
-``
+```
 PS C:> Import-Module PSScheduledJob
 PS C:> Receive-Job -ID 51 -Keep
-``
+```
 The results of scheduled jobs are saved on disk, so the Keep parameter
 of Receive-Job is not required. However, without the Keep parameter,
 you can get the results of a scheduled job only once in each Windows
