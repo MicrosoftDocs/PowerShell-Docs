@@ -32,7 +32,7 @@ This topic contains the following sections:
 
 # CANNOT FIND JOB RESULTS
 
-- Basic method for getting job results in Windows PowerShell
+## Basic method for getting job results in Windows PowerShell
 
 When a scheduled job runs, it creates an "instance" of the scheduled job.
 To view, manage, and  get the results of scheduled job instances, use the
@@ -47,6 +47,7 @@ Get-ScheduledJob.
 To get a list of all instances of a scheduled job, use the Get-Job cmdlet.
 
 ```
+
 PS C:> Import-Module PSScheduledJob
 PS C:> Get-Job ProcessJob
 
@@ -60,6 +61,7 @@ Id     Name         PSJobTypeName   State         HasMoreData     Location
 48     ProcessJob   PSScheduledJob  Completed     False           localhost
 49     ProcessJob   PSScheduledJob  Completed     False           localhost
 50     ProcessJob   PSScheduledJob  Completed     False           localhost
+
 ```
 
 The following command uses the Format-Table cmdlet to display the Name, ID, and
@@ -85,9 +87,13 @@ ProcessJob 50 11/8/2011 3:00:02 AM
 To get the results of an instance of a scheduled job, use the
 Receive-Job cmdlet. The following command gets the results of the
 newest instance of the ProcessJob (ID = 50).
+
 ```
+
 PS C:> Receive-Job -ID 50
+
 ```
+
 # Basic method for finding job results on disk
 
 To manage scheduled jobs, use the Job cmdlets, such as Get-Job and
@@ -205,11 +211,13 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 ```
 
-# ...
+# Using Keep parameter to get results more than one time in a session
 
 To get the result of a job instance more than one time in a session,
 use the Keep parameter of the Receive-Job cmdlet.
+
 ```
+
 PS C:> Import-Module PSScheduledJob
 PS C:> Receive-Job -ID 50 -Keep
 
@@ -226,7 +234,9 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 1213      33    12348      21676    88    25.71   1608 CcmExec
 29       4     1168       2920    43     0.02    748 conhost
 46       6     2208       4612    45     0.03   1640 conhost
+
 ```
+
 # The scheduled job might be corrupted.
 
 If a scheduled job becomes corrupted, Windows PowerShell deletes
@@ -261,11 +271,13 @@ scheduled job, use the following command format:
 
 For example, the following command gets the value of the
 ExecutionHistoryLength property of the ProcessJob scheduled job.
+
 ```
 
 PS C:> (Get-ScheduledJob ProcessJob).ExecutionHistoryLength
 
 ```
+
 To set or change the value of the ExecutionHistoryLength property,
 use the MaxResultCount parameter of the Register-ScheduledJob and
 Set-ScheduledJob cmdlets.
@@ -424,7 +436,8 @@ following:
 
 ```
 
-Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational | Where {$_.Message -like "fail"}
+Get-WinEvent -LogName Microsoft-Windows-TaskScheduler/Operational | 
+ Where {$_.Message -like "fail"}
 
 ```
 
@@ -466,7 +479,8 @@ The directory is located at `$env:UserProfile\AppData\Local\Microsoft\Windows\Po
 \ScheduledJobs<ScheduledJobName>`
 
 Typically:
-`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>.`
+`C:\Users<UserName>\AppData\Local\Microsoft\Windows\PowerShell\
+ScheduledJobs<ScheduledJobName>.`
 
 ## Use Task Scheduler to delete the scheduled job. Windows PowerShell
 scheduled tasks appear in the following Task Scheduler path:
