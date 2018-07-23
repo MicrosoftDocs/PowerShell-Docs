@@ -62,6 +62,10 @@ Feel free to help out.
 - In a paragraph, cmdlet names and variable references should be wrapped in backtick (\`) characters. For example:
 
   The following code assigns the output of `Get-ChildItem` to the `$files` variable.
+  
+  ```powershell
+  $files = Get-ChildItem C:\Windows
+  ```
 
 - Property names and parameter names should be in **bold**
 
