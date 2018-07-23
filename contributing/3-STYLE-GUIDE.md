@@ -59,7 +59,9 @@ Feel free to help out.
 - PowerShell cmdlets are "[Pascal Cased][pascal-case]".
   Verbs are seperated from nouns by a hyphen.
 
-- When talking about a cmdlet in paragraph, use \` to highlight cmdlet names
+- In a paragraph, cmdlet names and variable references should be wrapped in backtick (\`) characters. For example:
+
+  The following code assigns the output of `Get-ChildItem` to the `$files` variable.
 
 - Property names and parameter names should be in **bold**
 
