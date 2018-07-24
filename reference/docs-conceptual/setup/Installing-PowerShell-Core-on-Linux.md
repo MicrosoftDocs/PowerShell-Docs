@@ -246,7 +246,7 @@ sudo apt-get install -f
 > The next command, `apt-get install -f` resolves these issues
 > then finishes configuring the PowerShell package.
 
-### Uninstallation - Ubuntu 17.10
+### Uninstallation - Ubuntu 18.04
 
 ```sh
 sudo apt-get remove powershell
