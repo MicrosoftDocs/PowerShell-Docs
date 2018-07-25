@@ -23,7 +23,6 @@ brew tap
 brew update
 ```
 
-
 Once you've installed/updated Homebrew, installing PowerShell is easy.
 
 To install PowerShell:
@@ -43,7 +42,6 @@ To exit PowerShell, and return to bash, use the 'exit' command.
 exit
 ```
 
-
 When new versions of PowerShell are released,
 simply update Homebrew's formulae and upgrade PowerShell:
 
@@ -57,15 +55,17 @@ brew cask upgrade powershell
 > but then the PowerShell shell must be exited and restarted to complete the upgrade
 > and refresh the values shown in $PSVersionTable.
 
-
-
-
 ### Installing Preview via Homebrew on macOS 10.12+
 
-[Homebrew][brew] is the preferred package manager for macOS.
-If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
+Homebrew][brew] is the preferred package manager for macOS.
+From a terminal window, type `brew` to run Homebrew.  If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
 
-Once you've installed Homebrew, installing PowerShell is easy.
+> [!NOTE]
+> If you installed Homebrew in the past, it's always a good idea to run 'brew update-reset' && 'brew update'.
+```sh
+brew update-reset
+brew update
+```
 
 Then, you must tap the `versions` casks repository to get the preview package:
 
@@ -73,7 +73,7 @@ Then, you must tap the `versions` casks repository to get the preview package:
 brew tap homebrew/cask-versions
 ```
 
-Now, you can install PowerShell:
+To install PowerShell Preview:
 
 ```sh
 brew cask install powershell-preview
@@ -86,7 +86,7 @@ pwsh-preview
 ```
 
 When new versions of PowerShell are released,
-simply update Homebrew's formulae and upgrade PowerShell:
+simply update Homebrew's formulae and upgrade PowerShell Preview:
 
 ```sh
 brew update
