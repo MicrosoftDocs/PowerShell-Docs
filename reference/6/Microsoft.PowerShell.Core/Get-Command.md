@@ -34,24 +34,20 @@ Get-Command [[-Name] <String[]>] [[-ArgumentList] <Object[]>]
 ```
 
 ## DESCRIPTION
-The **Get-Command** cmdlet gets all commands that are installed on the computer, including cmdlets, aliases, functions, filters, scripts, and applications.
-**Get-Command** gets the commands from Windows PowerShell modules and snap-ins and commands that were imported from other sessions.
-To get only commands that have been imported into the current session, use the *ListImported* parameter.
+The `Get-Command` cmdlet gets all commands that are installed on the computer, including cmdlets, aliases, functions, filters, scripts, and applications.
+`Get-Command` gets the commands from PowerShell modules and snap-ins and commands that were imported from other sessions.
+To get only commands that have been imported into the current session, use the **ListImported** parameter.
 
-Without parameters, a **Get-Command** command gets all of the cmdlets, functions, and aliases installed on the computer.
-A `Get-Command *` command gets all types of commands, including all of the non-Windows PowerShell files in the Path environment variable ($env:path), which it lists in the Application command type.
+Without parameters, `Get-Command` gets all of the cmdlets, functions, and aliases installed on the computer.
+`Get-Command *` gets all types of commands, including all of the non-PowerShell files in the Path environment variable (`$env:Path`), which it lists in the Application command type.
 
-A **Get-Command** command that uses the exact name of the command, without wildcard characters, automatically imports the module that contains the command so that you can use the command immediately.
-To enable, disable, and configure automatic importing of modules, use the $PSModuleAutoLoadingPreference preference variable.
-For more information, see [about_Preference_Variables](About/about_Preference_Variables.md) in the Microsoft TechNet library.
+`Get-Command` that uses the exact name of the command, without wildcard characters, automatically imports the module that contains the command so that you can use the command immediately.
+To enable, disable, and configure automatic importing of modules, use the `$PSModuleAutoLoadingPreference` preference variable.
+For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
-**Get-Command** gets its data directly from the command code, unlike Get-Help, which gets its information from help topics.
+`Get-Command` gets its data directly from the command code, unlike `Get-Help`, which gets its information from help topics.
 
-In Windows PowerShell 2.0, **Get-Command** gets only commands in current session.
-It does not get commands from modules that are installed, but not imported.
-To limit **Get-Command** in Windows PowerShell 3.0 and later versions to commands in the current session, use the *ListImported* parameter.
-
-Starting in Windows PowerShell 5.0, results of the **Get-Command** cmdlet display a **Version** column by default.
+Starting in Windows PowerShell 5.0, results of the `Get-Command` cmdlet display a **Version** column by default.
 A new **Version** property has been added to the **CommandInfo** class.
 
 ## EXAMPLES
