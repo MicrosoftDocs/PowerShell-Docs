@@ -57,7 +57,7 @@ brew cask upgrade powershell
 
 ### Installing Preview via Homebrew on macOS 10.12+
 
-Homebrew][brew] is the preferred package manager for macOS.
+[Homebrew][brew] is the preferred package manager for macOS.
 From a terminal window, type `brew` to run Homebrew.  If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
 
 > [!NOTE]
