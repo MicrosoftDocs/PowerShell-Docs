@@ -706,10 +706,10 @@ Accept wildcard characters: False
 
 ### -Global
 Indicates that this cmdlet imports modules into the global session state so they are available to all commands in the session.
-By default, when invoked from another module, Import-Module cmdlet imports the commands in a module, including commands from nested modules, into the caller's session state.
 
-Parameter has no meaning, when used outside of the module.
-When called from the command prompt, script file, or scriptblock, all the commands are imported into the global session state.
+By default, when Import-Module cmdlet is called from the command prompt, script file, or scriptblock, all the commands are imported into the global session state.
+
+When invoked from another module, Import-Module cmdlet imports the commands in a module, including commands from nested modules, into the caller's session state.
 
 The **Global** parameter is equivalent to the **Scope** parameter with a value of Global.
 
@@ -935,11 +935,11 @@ The acceptable values for this parameter are:
 - **Global**. Available to all commands in the session. Equivalent to the *Global* parameter.
 - **Local**. Available only in the current scope.
 
-By default, when invoked from another module, Import-Module cmdlet imports the commands in a module, including commands from nested modules, into the caller's session state.
-Specifying **-Scope Global** or **-Global** indicates that this cmdlet imports modules into the global session state so they are available to all commands in the session.
+By default, when Import-Module cmdlet is called from the command prompt, script file, or scriptblock, all the commands are imported into the global session state.
+You can use the **-Scope** parameter with the value of **Local** to import module into the script or scriptblock scope.
 
-Parameter has no meaning, when used outside of the module.
-When called from the command prompt, script file, or scriptblock, all the commands are imported into the global session state.
+When invoked from another module, Import-Module cmdlet imports the commands in a module, including commands from nested modules, into the caller's session state.
+Specifying **-Scope Global** or **-Global** indicates that this cmdlet imports modules into the global session state so they are available to all commands in the session.
 
 The **Global** parameter is equivalent to the **Scope** parameter with a value of Global.
 

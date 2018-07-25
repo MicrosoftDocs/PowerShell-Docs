@@ -35,7 +35,7 @@ Installing via direct download does not change, other than the file name.
 
 Here is a table of the commands to install the stable and preview packages using the various package managers:
 
-|Distrobution(s)|Stable Command | Preview Command |
+|Distribution(s)|Stable Command | Preview Command |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
@@ -246,7 +246,7 @@ sudo apt-get install -f
 > The next command, `apt-get install -f` resolves these issues
 > then finishes configuring the PowerShell package.
 
-### Uninstallation - Ubuntu 17.10
+### Uninstallation - Ubuntu 18.04
 
 ```sh
 sudo apt-get remove powershell
@@ -608,7 +608,7 @@ chmod a+x powershell-6.0.1-x86_64.AppImage
 The [AppImage][] lets you run PowerShell without installing it.
 It is a portable application that bundles PowerShell and its dependencies
 (including .NET Core's system dependencies) into one cohesive package.
-This package  is a single binary that works independently of the user's Linux distribution.
+This package is a single binary that works independently of the user's Linux distribution.
 
 [appimage]: http://appimage.org/
 
