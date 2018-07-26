@@ -936,7 +936,7 @@ The acceptable values for this parameter are:
 - **Local**. Available only in the current scope.
 
 By default, when Import-Module cmdlet is called from the command prompt, script file, or scriptblock, all the commands are imported into the global session state.
-You can use the **-Scope** parameter with the value of **Local** to import module into the script or scriptblock scope.
+You can use the **-Scope** parameter with the value of **Local** to import module content into the script or scriptblock scope.
 
 When invoked from another module, Import-Module cmdlet imports the commands in a module, including commands from nested modules, into the caller's session state.
 Specifying **-Scope Global** or **-Global** indicates that this cmdlet imports modules into the global session state so they are available to all commands in the session.
