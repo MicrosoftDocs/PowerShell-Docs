@@ -41,10 +41,6 @@ When your command is scoped locally (no dot-sourcing), the *Persist* parameter d
 If you are running **New-PSDrive** inside a script, and you want the drive to persist indefinitely, you must dot-source the script.
 For best results, to force a new drive to persist indefinitely, add the *Scope* parameter to your command, and set its value to Global.
 - External drives.
-When an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive.
-You do not have to restart Windows PowerShell.
-Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the **PSDrive** that represents the removed drive.
-- External drives.
 When an external drive is connected to the computer, Windows PowerShell automatically adds a **PSDrive** to the file system that represents the new drive.
 You do not have to restart Windows PowerShell.
 Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the **PSDrive** that represents the removed drive.
