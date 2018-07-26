@@ -27,17 +27,23 @@ New-PSWorkflowExecutionOption [-PersistencePath <String>] [-MaxPersistenceStoreS
 
 ## DESCRIPTION
 
-The **New-PSWorkflowExecutionOption** cmdlet creates an object that contains advanced options for workflow session configurations, that is session configurations designed to run Windows PowerShell Workflow workflows.
+The **New-PSWorkflowExecutionOption** cmdlet creates an object that contains advanced options for
+workflow session configurations, that is session configurations designed to run Windows PowerShell
+Workflow workflows.
 
-You can use the **PSWorkflowExecutionOption** object that **New-PSWorkflowExecutionOption** generates as the value of the **SessionTypeOption** parameter of cmdlets that create or change a session configuration, such as the Register-PSSessionConfiguration and Set-PSSessionConfiguration cmdlets.
+You can use the **PSWorkflowExecutionOption** object that **New-PSWorkflowExecutionOption**
+generates as the value of the **SessionTypeOption** parameter of cmdlets that create or change a
+session configuration, such as the Register-PSSessionConfiguration and Set-PSSessionConfiguration
+cmdlets.
 
-Each parameter of the **New-PSWorkflowExecutionOption** cmdlet represents a property of the workflow session configuration option object that the cmdlet returns.
-If you omit a parameter, the cmdlet creates the object with a default value for the property.
+Each parameter of the **New-PSWorkflowExecutionOption** cmdlet represents a property of the
+workflow session configuration option object that the cmdlet returns. If you omit a parameter, the
+cmdlet creates the object with a default value for the property.
 
 The **New-PSWorkflowExecutionOption** cmdlet is part of the Windows PowerShell Workflow feature.
 
-You can also add workflow common parameters to this command.
-For more information about workflow common parameters, see [about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md).
+You can also add workflow common parameters to this command. For more information about workflow
+common parameters, see [about_WorkflowCommonParameters](About/about_WorkflowCommonParameters.md).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
@@ -68,7 +74,8 @@ RemoteNodeSessionIdleTimeoutSec            : 60
 WorkflowShutdownTimeoutMSec                : 500
 ```
 
-This command uses the **New-PSWorkflowExecutionOption** cmdlet to increase the **MaxSessionsPerWorkflow** value to 10 and decrease the **MaxDisconnectedSessions** value to 200.
+This command uses the **New-PSWorkflowExecutionOption** cmdlet to increase the
+**MaxSessionsPerWorkflow** value to 10 and decrease the **MaxDisconnectedSessions** value to 200.
 
 The output shows the object that the cmdlet returns.
 
@@ -142,7 +149,11 @@ Permission                    :
 
 The first two commands create a new session configuration object and registers it.
 
-The third command uses the Get-PSSessionConfiguration cmdlet to the get the ITWorkflows session configuration and the Format-List to display all properties of the session configuration in a list.The output shows that the workflow options in the session configuration. Specifically, the session configuration has a **MaxSessionsPerWorkflow** property with a value of 10 and a **MaxDisconnectedSessions** property with a value of 200.
+The third command uses the Get-PSSessionConfiguration cmdlet to the get the ITWorkflows session
+configuration and the Format-List to display all properties of the session configuration in a
+list.The output shows that the workflow options in the session configuration. Specifically, the
+session configuration has a **MaxSessionsPerWorkflow** property with a value of 10 and a
+**MaxDisconnectedSessions** property with a value of 200.
 
 ## PARAMETERS
 
@@ -170,9 +181,10 @@ Accept wildcard characters: False
 
 Specifies the activities that are permitted to run in the session.
 
-Enter namespace-qualified activity names, such as "Microsoft.Powershell.HyperV.Activities.*".
-Wildcard characters are supported.
-The default value, **PSDefaultActivities**, includes the built-in Windows Workflow Foundation activities and the activities that represent the Windows PowerShell Core cmdlets.
+Enter namespace-qualified activity names, such as `Microsoft.Powershell.HyperV.Activities.*`.
+Wildcard characters are supported. The default value, **PSDefaultActivities**, includes the
+built-in Windows Workflow Foundation activities and the activities that represent the Windows
+PowerShell Core cmdlets.
 
 ```yaml
 Type: String[]
@@ -190,8 +202,8 @@ Accept wildcard characters: False
 
 Verifies that all workflow activities in the session are included in the allowed activities list.
 
-The default value is True.
-To disable validation, use the following command format: `-EnableValidation:$false`.
+The default value is True. To disable validation, use the following command format:
+`-EnableValidation:$false`.
 
 ```yaml
 Type: SwitchParameter
@@ -207,8 +219,8 @@ Accept wildcard characters: False
 
 ### -MaxActivityProcesses
 
-Specifies the maximum number of processes that can be created in the session to support workflow activities.
-The default value is 5.
+Specifies the maximum number of processes that can be created in the session to support workflow
+activities. The default value is 5.
 
 ```yaml
 Type: Int32
@@ -224,9 +236,8 @@ Accept wildcard characters: False
 
 ### -MaxConnectedSessions
 
-Specifies the maximum number of remote sessions that are in an operational state.
-This quota is applied to sessions connected to all remote nodes (target computers).
-The default value is 100.
+Specifies the maximum number of remote sessions that are in an operational state. This quota is
+applied to sessions connected to all remote nodes (target computers). The default value is 100.
 
 ```yaml
 Type: Int32
@@ -260,9 +271,10 @@ Accept wildcard characters: False
 
 ### -MaxPersistenceStoreSizeGB
 
-Specifies the maximum size, in gigabytes, of the persistence store allocated to workflows that run in the session.
-When the size is exceeded, the persistence store is expanded to save all persisted data, but a warning is displayed and a message is written to the workflow event log.
-The default value is 10.
+Specifies the maximum size, in gigabytes, of the persistence store allocated to workflows that run
+in the session. When the size is exceeded, the persistence store is expanded to save all persisted
+data, but a warning is displayed and a message is written to the workflow event log. The default
+value is 10.
 
 The persistence store contains data for all workflow jobs.
 The ability to store data allows the jobs to resume without losing state.
@@ -298,8 +310,8 @@ Accept wildcard characters: False
 
 ### -MaxSessionsPerRemoteNode
 
-Specifies the maximum number of sessions that can be connected to each remote node (target computer).
-The default value is 5
+Specifies the maximum number of sessions that can be connected to each remote node (target
+computer). The default value is 5.
 
 ```yaml
 Type: Int32
@@ -315,8 +327,8 @@ Accept wildcard characters: False
 
 ### -MaxSessionsPerWorkflow
 
-Specifies the maximum number of session that can be created to support each workflow.
-The default value is 5.
+Specifies the maximum number of session that can be created to support each workflow. The default
+value is 5.
 
 ```yaml
 Type: Int32
@@ -332,8 +344,8 @@ Accept wildcard characters: False
 
 ### -OutOfProcessActivity
 
-Determines which allowed activities (specified by the **AllowedActivities** parameter) run out-of-process.
-The default value is **InlineScript**.
+Determines which allowed activities (specified by the **AllowedActivities** parameter) run
+out-of-process. The default value is **InlineScript**.
 
 ```yaml
 Type: String[]
@@ -367,8 +379,9 @@ Accept wildcard characters: False
 
 ### -PersistencePath
 
-Specifies the location on disk where workflow state and data are stored.
-Storing the workflow state and data allows workflows to be suspended and resumed, and to recover from interruptions and network failures.
+Specifies the location on disk where workflow state and data are stored. Storing the workflow state
+and data allows workflows to be suspended and resumed, and to recover from interruptions and
+network failures.
 
 The default value is $env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS
 
@@ -386,10 +399,10 @@ Accept wildcard characters: False
 
 ### -RemoteNodeSessionIdleTimeoutSec
 
-Specifies how long a session that is connected to a remote node (target computer) is maintained if it is idle.
+Specifies how long a session that is connected to a remote node (target computer) is maintained if
+it is idle.
 
-Enter a value in seconds.
-The default value is 60.
+Enter a value in seconds. The default value is 60.
 
 ```yaml
 Type: Int32
@@ -405,8 +418,8 @@ Accept wildcard characters: False
 
 ### -SessionThrottleLimit
 
-Specifies how many operations are created to support all workflows started in the session.
-The default value is 100.
+Specifies how many operations are created to support all workflows started in the session. The
+default value is 100.
 
 ```yaml
 Type: Int32
@@ -422,8 +435,9 @@ Accept wildcard characters: False
 
 ### -WorkflowShutdownTimeoutMSec
 
-Specifies how long the session is maintained after all workflows in the session are forcibly suspended.
-When the timeout expires, Windows PowerShell closes the session, even if all workflows are not yet suspended.
+Specifies how long the session is maintained after all workflows in the session are forcibly
+suspended. When the timeout expires, Windows PowerShell closes the session, even if all workflows
+are not yet suspended.
 
 Enter a value in milliseconds.
 The default value is 500.
@@ -442,7 +456,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -456,12 +473,20 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 
-- When the maximum value set by an option is exceeded, the command to create another instance in the session fails, unless noted in the parameter description. For example, if the value of **MaxConnectedSessions** is 100. The command to create the 101st session to a remote node (target computer) fails.
-- The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
+When the maximum value set by an option is exceeded, the command to create another instance in the
+session fails, unless noted in the parameter description. For example, if the value of
+**MaxConnectedSessions** is 100. The command to create the 101st session to a remote node (target
+computer) fails.
 
-  In particular, the properties of session configurations that include a **PSWorkflowExecutionOptions** object vary based on the workflow option values.
-For example, if the session configuration includes a **PSWorkflowExecutionOptions** object that sets a non-default value for the **SessionThrottleLimit** property, the session configuration has a **SessionThrottleLimit** property.
-Otherwise, it does not.
+The properties of a session configuration object vary with the options set for the session
+configuration and the values of those options. Also, session configurations that use a session
+configuration file have additional properties.
+
+In particular, the properties of session configurations that include a
+**PSWorkflowExecutionOptions** object vary based on the workflow option values. For example, if the
+session configuration includes a **PSWorkflowExecutionOptions** object that sets a non-default
+value for the **SessionThrottleLimit** property, the session configuration has a
+**SessionThrottleLimit** property. Otherwise, it does not.
 
 ## RELATED LINKS
 

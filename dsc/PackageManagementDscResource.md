@@ -33,8 +33,8 @@ PackageManagement [string] #ResourceName
 
 ## Properties
 
-|  Property  |  Description   |
-|---|---|
+| Property | Description |
+| --- | --- |
 | Name| Specifies the name of the Package to be installed or uninstalled.|
 | AdditionalParameters| Provider specific hashtable of parameters that would be passed to `Get-Package -AdditionalArguments`. For example, for NuGet provider you can pass additional parameters like DestinationPath.|
 | Ensure| Determines whether the package is to be installed or uninstalled.|
@@ -48,10 +48,11 @@ PackageManagement [string] #ResourceName
 ## Additional Parameters
 
 The following table lists options for the AdditionalParameters property.
-|  Parameter  | Description   |
-|---|---|
+
+| Parameter | Description |
+| --- | --- |
 | DestinationPath| Used by providers such as the built-in Nuget Provider. Specifies a file location where you want the package to be installed.|
-| InstallationPolicy| Used by providers such as the built-in Nuget Provider. Determines whether you trust the package's source. One of: "Untrusted", "Trusted".|
+| InstallationPolicy| Used by providers such as the built-in Nuget Provider. Determines whether you trust the package's source. One of: `Untrusted`, `Trusted`.|
 
 ## Example
 

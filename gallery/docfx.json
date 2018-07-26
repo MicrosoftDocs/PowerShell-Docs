@@ -29,6 +29,7 @@
             "exclude": ["**/obj/**"]
         }],
         "template": "op.html",
-        "dest": "gallery"
+        "dest": "gallery",
+        "markdownEngineName": "markdig"
     }
 }

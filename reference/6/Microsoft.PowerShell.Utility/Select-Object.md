@@ -390,6 +390,24 @@ Unlike the **Index** parameter, which starts counting at 0, the **Skip** paramet
 
 ```yaml
 Type: Int32
+Parameter Sets: DefaultParameter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipLast
+
+Skips (does not select) the specified number of items from the end of the list or array. Works in the same way as using **Skip** together with **Last** parameter.
+
+Unlike the **Index** parameter, which starts counting at 0, the **SkipLast** parameter begins at 1.
+
+```yaml
+Type: Int32
 Parameter Sets: SkipLastParameter
 Aliases:
 
@@ -443,23 +461,6 @@ Accept wildcard characters: False
 
 Gets only the specified number of objects.
 Enter the number of objects to get.
-
-```yaml
-Type: Int32
-Parameter Sets: DefaultParameter
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-
-Ignores the specified number of objects and then gets the remaining objects.
-Enter the number of objects to skip.
 
 ```yaml
 Type: Int32

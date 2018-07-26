@@ -5,7 +5,7 @@ title:  DSC Package Resource
 ---
 # DSC Package Resource
 
-> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 The **Package** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall packages, such as Windows Installer and setup.exe packages, on a target node.
 
@@ -28,8 +28,8 @@ Package [string] #ResourceName
 
 ## Properties
 
-|  Property  |  Description   |
-|---|---|
+| Property | Description |
+| --- | --- |
 | Name| Indicates the name of the package for which you want to ensure a specific state.|
 | Path| Indicates the path where the package resides.|
 | ProductId| Indicates the product ID that uniquely identifies the package.|
@@ -37,7 +37,7 @@ Package [string] #ResourceName
 | Credential| Provides access to the package on a remote source. This property is not used to install the package. The package is always installed on the local system.|
 | Ensure| Indicates if the package is installed. Set this property to "Absent" to ensure the package is not installed (or uninstall the package if it is installed). Set it to "Present" (the default value) to ensure the package is installed.|
 | LogPath| Indicates the full path where you want the provider to save a log file to install or uninstall the package.|
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"``.|
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
 | ReturnCode| Indicates the expected return code. If the actual return code does not match the expected value provided here, the configuration will return an error.|
 
 ## Example

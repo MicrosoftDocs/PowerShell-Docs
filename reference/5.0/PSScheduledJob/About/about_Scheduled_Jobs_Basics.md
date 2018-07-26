@@ -38,11 +38,15 @@ The following command creates the ProcessJob, which runs a
 Get-Process command. This scheduled job has the default job
 options and no job trigger.
 
+```
+
 PS C:> Register-ScheduledJob -Name ProcessJob -ScriptBlock { Get-Process }
 
 Id         Name            Triggers        Command       Enabled
 --         ----            --------        -------       -------
 8          ProcessJob      {}              Get-Process   True
+
+```
 
 # HOW TO CREATE A JOB TRIGGER
 
@@ -56,9 +60,9 @@ To create a job trigger, use the New-JobTrigger cmdlet. The
 following command creates a job trigger that starts a job every
 Monday and Thursday at 5:00 AM. The command saves the job
 trigger in the $t variable.
-
+```
 $t = New-JobTrigger -Weekly -DaysOfWeek "Monday", "Thursday" -At "5:00 AM"
-
+```
 Job triggers are optional. You can start a scheduled job at
 any time by adding the RunNow parameter to your
 Register-ScheduledJob command, or by using the Start-Job
@@ -83,13 +87,21 @@ The following command uses the Register-ScheduledJob cmdlet
 to create the process job. It uses the Trigger parameter to
 specify the job trigger in the $t variable.
 
+```
+
 Register-ScheduledJob -Name ProcessJob -ScriptBlock {Get-Command} -Trigger $t
+
+```
 
 You can also add a job trigger to an existing scheduled job
 at any time. The following command adds the job trigger in the
 $t variable to the  ProcessJob scheduled job.
 
+```
+
 Add-JobTrigger -Name ProcessJob -Trigger $t
+
+```
 
 As a result of this command, the job trigger starts the
 ProcessJob automatically every Monday and Thursday at 5:00 AM.
@@ -103,11 +115,15 @@ to specify the scheduled job (not the job trigger).
 
 The following command gets the job trigger of the ProcessJob.
 
+```
+
 PS C:> Get-JobTrigger -Name ProcessJob
 
 Id   Frequency       Time                   DaysOfWeek              Enabled
 --   ---------       ----                   ----------              -------
 1    Weekly          11/7/2011 5:00:00 AM   {Monday, Thursday}      True
+
+```
 
 # HOW TO CREATE JOB OPTIONS
 
@@ -134,7 +150,11 @@ option runs the scheduled job even if the computer is in the Sleep
 or Hibernate state at the scheduled start time. The command saves
 the job options in the $o variable.
 
+```
+
 $o = New-ScheduledJobOption -WakeToRun
+
+```
 
 # HOW TO GET JOB OPTIONS
 
@@ -145,6 +165,8 @@ InputObject parameters to specify the scheduled job (not
 the job options).
 
 The following command gets the job options of the ProcessJob.
+
+```
 
 PS C:> Get-ScheduledJobOption -Name ProcessJob
 
@@ -163,6 +185,8 @@ DoNotAllowDemandStart  : False
 MultipleInstancePolicy : IgnoreNew
 JobDefinition          : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
+```
+
 # HOW TO CHANGE JOB OPTIONS
 
 
@@ -173,7 +197,11 @@ The following command uses the Register-JobTrigger cmdlet
 to create the process job. It uses the ScheduledJobOption
 parameter to specify the job options in the $o variable.
 
+```
+
 Register-JobTrigger -Name ProcessJob -ScriptBlock {Get-Process} -ScheduledJobOption $o
+
+```
 
 You can also change the job options to an existing scheduled
 job at any time. The following command uses the
@@ -191,7 +219,11 @@ ProcessJob. It uses the Get-ScheduledJobOption cmdlet to get the
 job options in the ProcessJob and the Set-ScheduledJobOption cmdlet
 to change the WakeToRun job option in the ProcessJob to True.
 
+```
+
 Get-ScheduledJob -Name ProcessJob | Get-ScheduledJobOption | Set-ScheduledJobOption -WakeToRun
+
+```
 
 # HOW TO GET SCHEDULED JOB INSTANCES
 
@@ -212,12 +244,17 @@ all active standard jobs), use the Get-Job cmdlet. The following
 command imports the PSScheduledJob module and then gets all jobs on
 the local computer.
 
-PS C:> Import-Module PSScheduledJob
+```
 
+PS C:> Import-Module PSScheduledJob
 PS C:> Get-Job
+
+```
 
 The following command gets all instances of the ProcessJob on
 the local computer.
+
+```
 
 PS C:> Get-Job -Name ProcessJob
 
@@ -231,11 +268,15 @@ Id     Name        PSJobTypeName  State    HasMoreData   Location   Command
 50     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
 51     ProcessJob  PSScheduledJob Completed       True   localhost   Get-Process
 
+```
+
 The default display does not show the start time, which typically
 distinguishes instances of the same scheduled job.
 
 The following command uses the Format-Table cmdlet to display the Name,
 ID, and BeginTime  properties of the scheduled job.
+
+```
 
 PS C:> Get-Job ProcessJob | Format-Table -Property Name, ID, BeginTime
 
@@ -249,6 +290,8 @@ ProcessJob 47 11/6/2011 3:00:02 AM
 ProcessJob 48 11/7/2011 12:00:01 AM
 ProcessJob 49 11/7/2011 3:00:02 AM
 ProcessJob 50 11/8/2011 3:00:02 AM
+
+```
 
 # GET SCHEDULED JOB RESULTS
 
@@ -265,9 +308,12 @@ as Get-ScheduledJob.
 The following command gets the results of the newest instance of
 the ProcessJob scheduled job (ID = 51)
 
-PS C:> Import-Module PSScheduledJob
+```
 
+PS C:> Import-Module PSScheduledJob
 PS C:> Receive-Job -ID 51 -Keep
+
+```
 
 The results of scheduled jobs are saved on disk, so the Keep parameter
 of Receive-Job is not required. However, without the Keep parameter,
@@ -277,6 +323,26 @@ PowerShell session. To start a new Windows PowerShell session, type
 
 # SEE ALSO
 
-about_Scheduled_Jobs
-about_Scheduled_Jobs_Advanced
-about_Scheduled_Jobs_Troubleshooting
+- [about_Scheduled_Jobs_Advanced](about_Scheduled_Jobs_Advanced.md)
+- [about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)
+- [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+- [Task Scheduler](http://go.microsoft.com/fwlink/?LinkId=232928)
+
+## RELATED LINKS
+
+- [Add-JobTrigger](../Add-JobTrigger.md)
+- [Disable-JobTrigger](../Disable-JobTrigger.md)
+- [Disable-ScheduledJob](../Disable-ScheduledJob.md)
+- [Enable-JobTrigger](../Enable-JobTrigger.md)
+- [Enable-ScheduledJob](../Enable-ScheduledJob.md)
+- [Get-JobTrigger](../Get-JobTrigger.md)
+- [Get-ScheduledJob](../Get-ScheduledJob.md)
+- [Get-ScheduledJobOption](../Get-ScheduledJobOption.md)
+- [New-JobTrigger](../New-JobTrigger.md)
+- [New-ScheduledJobOption](../New-ScheduledJobOption.md)
+- [Register-ScheduledJob](../Register-ScheduledJob.md)
+- [Remove-JobTrigger](../Remove-JobTrigger.md)
+- [Set-JobTrigger](../Set-JobTrigger.md)
+- [Set-ScheduledJob](../Set-ScheduledJob.md)
+- [Set-ScheduledJobOption](../Set-ScheduledJobOption.md)
+- [Unregister-ScheduledJob](../Unregister-ScheduledJob.md)

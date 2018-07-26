@@ -59,7 +59,13 @@ Feel free to help out.
 - PowerShell cmdlets are "[Pascal Cased][pascal-case]".
   Verbs are seperated from nouns by a hyphen.
 
-- When talking about a cmdlet in paragraph, use \` to highlight cmdlet names
+- In a paragraph, cmdlet names and variable references should be wrapped in backtick (\`) characters. For example:
+
+  The following code assigns the output of `Get-ChildItem` to the `$files` variable.
+  
+  ```powershell
+  $files = Get-ChildItem C:\Windows
+  ```
 
 - Property names and parameter names should be in **bold**
 
@@ -76,7 +82,6 @@ Feel free to help out.
 - Links must have a friendly name, usually the title of the linked topic
 - All items in the "related links" section at the bottom should be hyperlinked.
 - Use relative links when linking to other content that is hosted on **docs.microsoft.com**.
--
 
 ### Structure of links on docs.microsoft.com
 
