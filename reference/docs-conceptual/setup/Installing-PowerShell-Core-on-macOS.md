@@ -4,7 +4,7 @@ PowerShell Core supports macOS 10.12 and higher.
 All packages are available on our GitHub [releases][] page.
 Once the package is installed, run `pwsh` from a terminal.
 
-### Installation via Homebrew on macOS 10.12 and 10.13
+### Installation via Homebrew on macOS 10.12+
 
 [Homebrew][brew] is the preferred package manager for macOS.
 From a terminal window, type `brew` to run Homebrew.  If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
@@ -23,7 +23,6 @@ brew update
 brew tap
 brew update
 ```
-
 
 Once you've installed/updated Homebrew, installing PowerShell is easy.
 
@@ -44,7 +43,6 @@ To exit PowerShell, and return to bash, use the 'exit' command.
 exit
 ```
 
-
 When new versions of PowerShell are released,
 simply update Homebrew's formulae and upgrade PowerShell:
 
@@ -58,8 +56,48 @@ brew cask upgrade powershell
 > but then the PowerShell shell must be exited and restarted to complete the upgrade
 > and refresh the values shown in $PSVersionTable.
 
+### Installing Preview via Homebrew on macOS 10.12+
 
+[Homebrew][brew] is the preferred package manager for macOS.
+From a terminal window, type `brew` to run Homebrew.  If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
 
+> [!NOTE]
+> If you installed Homebrew in the past, it's always a good idea to run 'brew update-reset' && 'brew update'.
+```sh
+brew update-reset
+brew update
+```
+
+Then, you must tap the `versions` casks repository to get the preview package:
+
+```sh
+brew tap homebrew/cask-versions
+```
+
+To install PowerShell Preview:
+
+```sh
+brew cask install powershell-preview
+```
+
+Finally, verify that your install is working properly:
+
+```sh
+pwsh-preview
+```
+
+When new versions of PowerShell are released,
+simply update Homebrew's formulae and upgrade PowerShell Preview:
+
+```sh
+brew update
+brew cask upgrade powershell-preview
+```
+
+> [!NOTE]
+> The commands above can be called from within a PowerShell (pwsh) host,
+> but then the PowerShell shell must be exited and restarted to complete the upgrade
+> and refresh the values shown in $PSVersionTable.
 
 ### Installation of latest preview release via Homebrew on macOS 10.12 or higher
 
