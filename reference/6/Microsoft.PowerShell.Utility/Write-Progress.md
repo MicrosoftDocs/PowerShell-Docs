@@ -70,7 +70,7 @@ This command displays the progress of a command to find the string "bios" in the
 
 In the first line of the command, the Get-EventLog cmdlet gets the events in the System log and stores them in the $Events variable.
 
-In the second line, the events are piped to the ForEach-Object` cmdlet.
+In the second line, the events are piped to the `ForEach-Object` cmdlet.
 Before processing begins, the `Clear-Host` cmdlet is used to clear the screen, the $I counter variable is set to zero, and the $out output variable is set to the empty string.
 
 In the third line, which is the Process script block of the `ForEach-Object` cmdlet, the cmdlet searches the message property of each incoming object for "bios".
