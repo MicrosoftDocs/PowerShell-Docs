@@ -31,7 +31,7 @@ foreach ($<item> in $<collection>){<statement list>}
 
 The part of the `ForEach` statement enclosed in parenthesis represents a
 variable and a collection to iterate. PowerShell creates the variable
-(`$<item>`) automatically when the `Foreach` loop runs. Prior to each
+`$<item>` automatically when the `Foreach` loop runs. Prior to each
 iteration through the loop, the variable is set to a value in the collection.
 The block following a `Foreach` statement `{<statement list>}` contains a set
 of commands to execute against each item in a collection.

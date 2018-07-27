@@ -121,7 +121,7 @@ Then it stores the events in the $events variable.
 The second command uses a pipeline operator (|) to send the objects in the $events variable to Select-String.
 It uses the InputObject parameter to represent the input from the $events variable.
 The value of the InputObject parameter is the Message property of each object as it travels through the pipeline.
-The current object is represented by the $_ symbol.
+The current object is represented by the `$_` symbol.
 
 As each event arrives in the pipeline, Select-String searches the value of its Message property for the "failed" string, and then displays any lines that include a match.
 

@@ -340,7 +340,7 @@ The Begin statement list runs one time only, at the beginning of the function.
 
 The Process statement list runs one time for each object in the pipeline.
 While the Process block is running, each pipeline object is assigned to the
-\$_ automatic variable, one pipeline object at a time.
+`$_` automatic variable, one pipeline object at a time.
 
 After the function receives all the objects in the pipeline, the End statement
 list runs one time. If no Begin, Process, or End keywords are used, all the
