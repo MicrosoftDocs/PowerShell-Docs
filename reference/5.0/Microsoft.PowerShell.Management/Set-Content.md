@@ -71,7 +71,7 @@ This command replaces all instances of "Warning" with "Caution" in the Notice.tx
 
 It uses Get-Content cmdlet to get the content of Notice.txt.
 The pipeline operator sends the results to the ForEach-Object cmdlet, which applies the expression to each line of content in Get-Content.
-The expression uses the "$_" symbol to refer to the current item and the Replace parameter to specify the text to be replaced.
+The expression uses the `$_` symbol to refer to the current item and the Replace parameter to specify the text to be replaced.
 
 Another pipeline operator sends the changed content to Set-Content which replaces the text in Notice.txt with the new content.
 
