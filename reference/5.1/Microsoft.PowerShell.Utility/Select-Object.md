@@ -417,6 +417,9 @@ Accept wildcard characters: False
 
 ### -SkipLast
 
+Skips (does not select) the specified number of items from the end of the list or array. Works in the same way as using **Skip** together with **Last** parameter.
+
+Unlike the **Index** parameter, which starts counting at 0, the **SkipLast** parameter begins at 1.
 
 ```yaml
 Type: Int32
