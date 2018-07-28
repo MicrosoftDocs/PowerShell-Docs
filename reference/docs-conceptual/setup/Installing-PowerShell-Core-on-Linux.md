@@ -198,6 +198,33 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
+## Ubuntu 18.10
+
+> [!NOTE]
+> Support for Ubuntu 18.10 was added after `6.1.0-preview.3`
+> As 18.10 is a daily build, it is only community supported.
+
+### Installation via Snap - Ubuntu 18.10
+
+PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).
+This is the preferred method.
+
+```sh
+# Install PowerShell
+sudo snap install powershell-preview --classic
+
+# Start PowerShell
+pwsh-preview
+```
+
+After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell-preview`.
+
+### Uninstallation - Ubuntu 18.10
+
+```sh
+sudo snap remove powershell-preview
+```
+
 ## Debian 8
 
 ### Installation via Package Repository - Debian 8
