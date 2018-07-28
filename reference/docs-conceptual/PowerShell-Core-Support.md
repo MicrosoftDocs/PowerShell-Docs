@@ -47,7 +47,7 @@ Platforms listed as `Experimental` are not officially supported, but are availab
 | Windows Server 2008 R2, 2012 R2, 2016             | Supported   | Supported   |
 | [Windows Server Semi-Annual Channel][semi-annual] | Supported   | Supported   |
 | Ubuntu 14.04 and, 16.04                           | Supported   | Supported   |
-| Ubuntu 17.10, and 18.04                           |             | Supported   |
+| Ubuntu 18.04                                      |             | Supported   |
 | Debian 8.7+, and 9                                | Supported   | Supported   |
 | CentOS 7                                          | Supported   | Supported   |
 | Red Hat Enterprise Linux 7                        | Supported   | Supported   |
