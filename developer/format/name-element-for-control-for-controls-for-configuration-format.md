@@ -1,0 +1,70 @@
+---
+title: "Name Element for Control for Controls for Configuration (Format) | Microsoft Docs"
+ms.custom: ""
+ms.date: "09/13/2016"
+ms.reviewer: ""
+ms.suite: ""
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: b4371d45-49a4-4303-8384-5b54105bd0d6
+caps.latest.revision: 8
+---
+# Name Element for Control for Controls for Configuration (Format)
+
+Specifies the name of the control. This element is used when defining a common control that can be used by all the views in the formatting file.
+
+Configuration Element (Format)
+Controls Element of Configuration (Format)
+Control Element for Controls for Configuration (Format)
+Name Element for Control for Controls for Configuration (Format)
+
+## Syntax
+
+```xml
+<Name>NameOfControl</Name>
+
+```
+
+## Attributes and Elements
+
+The following sections describe attributes, child elements, and the parent element of the `Name` element.
+
+### Attributes
+
+None.
+
+### Child Elements
+
+None.
+
+### Parent Elements
+
+|Element|Description|
+|-------------|-----------------|
+|[Control Element for Controls for Configuration (Format)](./control-element-for-controls-for-configuration-format.md)|Defines a common control that can be used by all the views of the formatting file and the name that is used to reference the control.|
+
+## Text Value
+
+Specify the name that is used to reference this control.
+
+## Remarks
+
+The name specified here can be used in the following elements to reference this control.
+
+- When creating a table, list, wide or custom control view, the control can be specified by the following element: [GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
+
+- When creating another common control, this control can be specified by the following element: [ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+
+- When creating a control that can be used by a view, this control can be specified by the following element: [ExpressionBinding Element for CustomItem for Controls for View (Format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+
+## See Also
+
+[Control Element for Controls for Configuration (Format)](./control-element-for-controls-for-configuration-format.md)
+
+[ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+
+[ExpressionBinding Element for CustomItem for Controls for View (Format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+
+[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
+
+[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)

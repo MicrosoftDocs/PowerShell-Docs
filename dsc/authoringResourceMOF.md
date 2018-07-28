@@ -1,3 +1,9 @@
+---
+ms.date:  06/12/2017
+keywords:  dsc,powershell,configuration,setup
+title:  Writing a custom DSC resource with MOF
+---
+
 # Writing a custom DSC resource with MOF
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -10,10 +16,10 @@ The schema defines the properties of your resource that can be configured by a D
 
 ### Folder structure for a MOF resource
 
-To implement a DSC custom resource with a MOF schema, create the following folder structure. The MOF schema is defined in the file Demo_IISWebsite.schema.mof, and the resource script is defined in Demo_IISWebsite.ps1. Optionally, you can create a module manifest (psd1) file.
+To implement a DSC custom resource with a MOF schema, create the following folder structure. The MOF schema is defined in the file Demo_IISWebsite.schema.mof, and the resource script is defined in Demo_IISWebsite.psm1. Optionally, you can create a module manifest (psd1) file.
 
 ```
-$env: psmodulepath (folder)
+$env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResources (folder)
         |- DSCResources (folder)
             |- Demo_IISWebsite (folder)
@@ -29,7 +35,7 @@ Note that it is necessary to create a folder named DSCResources under the top-le
 Following is an example MOF file that can be used for a custom website resource. To follow this example, save this schema to a file, and call the file *Demo_IISWebsite.schema.mof*.
 
 ```
-[ClassVersion("1.0.0"), FriendlyName("Website")] 
+[ClassVersion("1.0.0"), FriendlyName("Website")]
 class Demo_IISWebsite : OMI_BaseResource
 {
   [Key] string Name;
@@ -47,11 +53,11 @@ Note the following about the previous code:
 
 * `FriendlyName` defines the name you can use to refer to this custom resource in DSC configuration scripts. In this example, `Website` is equivalent to the friendly name `Archive` for the built-in Archive resource.
 * The class you define for your custom resource must derive from `OMI_BaseResource`.
-* The type qualifier, `[Key]`, on a property indicates that this property will uniquely identify the resource instance. A `[Key]` property is also required.
+* The type qualifier, `[Key]`, on a property indicates that this property will uniquely identify the resource instance. At least one `[Key]` property is required.
 * The `[Required]` qualifier indicates that the property is required (a value must be specified in any configuration script that uses this resource).
 * The `[write]` qualifier indicates that this property is optional when using the custom resource in a configuration script. The `[read]` qualifier indicates that a property cannot be set by a configuration, and is for reporting purposes only.
 * `Values` restricts the values that can be assigned to the property to the list of values defined in `ValueMap`. For more information, see [ValueMap and Value Qualifiers](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
-* Including a property called `Ensure` in your resource is recommended as a way to maintain a consistent style with built-in DSC resources.
+* Including a property called `Ensure` with values `Present` and `Absent` in your resource is recommended as a way to maintain a consistent style with built-in DSC resources.
 * Name the schema file for your custom resource as follows: `classname.schema.mof`, where `classname` is the identifier that follows the `class` keyword in your schema definition.
 
 ### Writing the resource script
@@ -64,10 +70,10 @@ In the **Get-TargetResource** function implementation, use the key resource prop
 
 ```powershell
 # DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
-function Get-TargetResource 
+function Get-TargetResource
 {
-    param 
-    (       
+    param
+    (
         [ValidateSet("Present", "Absent")]
         [string]$Ensure = "Present",
 
@@ -97,7 +103,7 @@ function Get-TargetResource
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
         $getTargetResourceResult = @{
-                                      Name = $Website.Name; 
+                                      Name = $Website.Name;
                                         Ensure = $ensureResult;
                                         PhysicalPath = $Website.physicalPath;
                                         State = $Website.state;
@@ -106,7 +112,7 @@ function Get-TargetResource
                                         Protocol = $Website.bindings.Collection.protocol;
                                         Binding = $Website.bindings.Collection.bindingInformation;
                                     }
-  
+
         $getTargetResourceResult;
 }
 ```
@@ -120,12 +126,12 @@ Depending on the values that are specified for the resource properties in the co
 The following example illustrates this.
 
 ```powershell
-# The Set-TargetResource function is used to create, delete or configure a website on the target machine. 
-function Set-TargetResource 
+# The Set-TargetResource function is used to create, delete or configure a website on the target machine.
+function Set-TargetResource
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
-    param 
-    (       
+    param
+    (
         [ValidateSet("Present", "Absent")]
         [string]$Ensure = "Present",
 
@@ -146,7 +152,7 @@ function Set-TargetResource
 
         [string[]]$Protocol
     )
- 
+
     <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
     <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
     <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
@@ -196,14 +202,17 @@ $ApplicationPool
 #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
 
-#Include logic to 
+#Include logic to
 $result = [System.Boolean]
 #Add logic to test whether the website is present and its status mathes the supplied parameter values. If it does, return true. If it does not, return false.
-$result 
+$result
 }
 ```
 
-**Note**: For easier debugging, use the **Write-Verbose** cmdlet in your implementation of the previous three functions. This cmdlet writes text to the verbose message stream. By default, the verbose message stream is not displayed, but you can display it by changing the value of the **$VerbosePreference** variable or by using the **Verbose** parameter in the DSC cmdlets = new.
+**Note**: For easier debugging, use the **Write-Verbose** cmdlet in your implementation of the previous three functions.
+>This cmdlet writes text to the verbose message stream.
+>By default, the verbose message stream is not displayed, but you can display it by changing the value of the **$VerbosePreference** variable
+>or by using the **Verbose** parameter in the DSC cmdlets = new.
 
 ### Creating the module manifest
 
@@ -258,5 +267,23 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 # HelpInfo URI of this module
 # HelpInfoURI = ''
+}
+```
+
+## Supporting PsDscRunAsCredential
+
+>**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
+
+The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the
+resource should be run under a specified set of credentials.
+For more information, see [Running DSC with user credentials](runAsUser.md).
+
+To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.
+
+For example the following code would write the user context under which the resource is running to the verbose output stream:
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```

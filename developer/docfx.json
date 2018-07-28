@@ -1,0 +1,32 @@
+{
+    "build": {
+        "content": [{
+            "files": [
+                "**/**.yml",
+                "**/**.md"
+            ],
+            "exclude": ["**/obj/**"]
+        }],
+        "globalMetadata": {
+            "breadcrumb_path": "bread/toc.yml",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
+            "ROBOTS": "INDEX, FOLLOW",
+            "ms.prod": "powershell",
+            "ms.technology": "developer",
+            "manager": "carmonm",
+            "ms.devlang": "powershell",
+            "ms.tgt_pltfr": "windows, macos, linux",
+            "author": "joeyaiello",
+            "ms.author": "jaiello"
+        },
+        "resource": [{
+            "files": [
+                "**/images/**"
+            ],
+            "exclude": ["**/obj/**"]
+        }],
+        "template": "op.html",
+        "dest": "developer",
+        "markdownEngineName": "markdig"
+    }
+}

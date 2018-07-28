@@ -5,7 +5,16 @@ obj/
 _site/
 Tools/NuGet/
 _site/
+maml/
+updateablehelp/
+
 
 .openpublishing.build.mdproj
 .openpublishing.buildcore.ps1
 packages.config
+**/.ignore/**
+*.orig
+.vscode/
+_themes/
+dependentPackages/
+

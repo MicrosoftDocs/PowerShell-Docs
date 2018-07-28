@@ -1,3 +1,9 @@
+---
+ms.date:  06/12/2017
+keywords:  dsc,powershell,configuration,setup
+title:  Writing a custom DSC resource with PowerShell classes
+---
+
 # Writing a custom DSC resource with PowerShell classes
 
 > Applies To: Windows Windows PowerShell 5.0
@@ -10,15 +16,17 @@ In this topic, we will create a simple resource named **FileResource** that mana
 
 For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
+>**Note:** Generic collections are not supported in class-based resources.
+
 ## Folder structure for a class resource
 
 To implement a DSC custom resource with a PowerShell class, create the following folder structure. The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.
 
 ```
-$env: psmodulepath (folder)
+$env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1 
-           MyDscResource.psd1 
+        |- MyDscResource.psm1
+           MyDscResource.psd1
 ```
 
 ## Create the class
@@ -56,13 +64,13 @@ Notice that the properties are modified by attributes. The meaning of the attrib
 - **DscProperty(NotConfigurable)**: The property is read-only. Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.
 - **DscProperty()**: The property is configurable, but it is not required.
 
-The **$Path** and **$SourcePath** properties are both strings. The **$CreationTime** is a [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) property. The **$Ensure** property is an enumeration type, defined as follows.
+The **$Path** and **$SourcePath** properties are both strings. The **$CreationTime** is a [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) property. The **$Ensure** property is an enumeration type, defined as follows.
 
 ```powershell
-enum Ensure 
-{ 
-    Absent 
-    Present 
+enum Ensure
+{
+    Absent
+    Present
 }
 ```
 
@@ -70,7 +78,7 @@ enum Ensure
 
 The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.
 
-This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**. 
+This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.
 
 ```powershell
 
@@ -437,7 +445,7 @@ PowerShellVersion = '5.0'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
-} 
+}
 ```
 
 ## Test the resource
@@ -453,10 +461,48 @@ Configuration Test
         Path = "C:\test\test.txt"
         SourcePath = "c:\test.txt"
         Ensure = "Present"
-    } 
+    }
 }
 Test
 Start-DscConfiguration -Wait -Force Test
+```
+
+## Supporting PsDscRunAsCredential
+
+>**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
+
+The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the
+resource should be run under a specified set of credentials.
+For more information, see [Running DSC with user credentials](runAsUser.md).
+
+### Require or disallow PsDscRunAsCredential for your resource
+
+The **DscResource()** attribute takes an optional parameter **RunAsCredential**.
+This parameter takes one of three values:
+
+- `Optional` **PsDscRunAsCredential** is optional for configurations that call this resource. This is the default value.
+- `Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.
+- `NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.
+- `Default` Same as `Optional`.
+
+For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:
+
+```powershell
+[DscResource(RunAsCredential=NotSupported)]
+class FileResource {
+}
+```
+
+### Access the user context
+
+To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.
+
+For example the following code would write the user context under which the resource is running to the verbose output stream:
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $global:PsDscContext.RunAsUser";
+}
 ```
 
 ## See Also

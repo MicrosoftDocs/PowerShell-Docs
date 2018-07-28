@@ -1,0 +1,4 @@
+# https://help.github.com/articles/about-codeowners/
+
+# Area: PowerShellCore Installation Docs
+reference/docs-conceptual/setup/Installing-PowerShell-Core-*.md     @TravisEz13 @daxian-dbw @dantraMSFT

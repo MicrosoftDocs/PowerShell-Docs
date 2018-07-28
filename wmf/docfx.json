@@ -1,25 +1,34 @@
 {
     "build": {
-        "content": [
-            {
-                "files": [
-                    "**/**.md"
-                ],
-                "exclude": ["**/obj/**"]
-            }
-        ],
+        "content": [{
+            "files": [
+                "**/**.yml",
+                "**/**.md"
+            ],
+            "exclude": ["**/obj/**", "README.md"]
+        }],
         "globalMetadata": {
-            "ROBOTS": "INDEX, FOLLOW"
+            "breadcrumb_path": "/powershell/wmf/bread/toc.yml",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
+            "ROBOTS": "INDEX, FOLLOW",
+            "ms.tgt_pltfr": "windows"
         },
-        "resource": [
-            {
-                "files": [
-                    "**/images/**"
-                ],
-                "exclude": ["**/obj/**"]
-            }
-        ],
+        "fileMetadata": {
+            "ms.prod": { "**/**.md": "powershell" },
+            "ms.technology": { "**/**.md": "powershell-wmf" },
+            "ms.topic": { "**/**.md": "reference" },
+            "manager": { "**/**.md": "carmonm" },
+            "author": { "**/**.md": "JKeithB" },
+            "ms.author": { "**/**.md": "keithb" }
+        },
+        "resource": [{
+            "files": [
+                "**/images/**"
+            ],
+            "exclude": ["**/obj/**"]
+        }],
         "template": "op.html",
-        "dest": "wmf"
+        "dest": "wmf",
+        "markdownEngineName": "markdig"
     }
 }

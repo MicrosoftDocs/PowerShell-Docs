@@ -1,0 +1,8 @@
+﻿- name: PowerShell
+  tocHref: /powershell/
+  topicHref: /powershell
+  items:
+  - name: Gallery
+    tocHref: /powershell/gallery/
+    topicHref: /powershell/gallery/index
+

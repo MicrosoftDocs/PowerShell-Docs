@@ -1,25 +1,36 @@
 {
     "build": {
-        "content": [
-            {
-                "files": [
-                    "**/**.md"
-                ],
-                "exclude": ["**/obj/**"]
-            }
-        ],
+        "content": [{
+            "files": [
+                "**/**.md",
+                "**/**.yml"
+            ],
+            "exclude": ["**/obj/**"]
+        }],
         "globalMetadata": {
-            "ROBOTS": "INDEX, FOLLOW"
+            "breadcrumb_path": "~/bread/toc.yml",
+            "uhfHeaderId": "MSDocsHeader-Powershell",
+            "layout": "conceptual",
+            "ROBOTS": "INDEX, FOLLOW",
+            "ms.devlang": "powershell",
+            "ms.tgt_pltfr": "windows"
         },
-        "resource": [
-            {
-                "files": [
-                    "**/images/**"
-                ],
-                "exclude": ["**/obj/**"]
-            }
-        ],
+        "fileMetadata": {
+            "ms.prod": { "**/**.md": "powershell" },
+            "ms.technology": { "**/**.md": "powershell-dsc" },
+            "ms.topic": { "**/**.md": "conceptual" },
+            "manager": { "**/**.md": "carmonm" },
+            "ms.author": { "**/**.md": "dacoulte" },
+            "author": { "**/**.md": "dcthegeek" }
+        },
+        "resource": [{
+            "files": [
+                "**/images/**"
+            ],
+            "exclude": ["**/obj/**"]
+        }],
         "template": "op.html",
-        "dest": "dsc"
+        "dest": "dsc",
+        "markdownEngineName": "markdig"
     }
 }

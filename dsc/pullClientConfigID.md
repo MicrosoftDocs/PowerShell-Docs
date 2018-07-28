@@ -1,8 +1,20 @@
+---
+ms.date:  06/12/2017
+keywords:  dsc,powershell,configuration,setup
+title:  Setting up a pull client using configuration ID
+---
 # Setting up a pull client using configuration ID
 
 > Applies To: Windows PowerShell 5.0
 
-Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, derated with the **DSCLocalConfigurationManager** attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).
+> [!IMPORTANT]
+> The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server
+> however there are no plans to offer new features or capabilities. It is recommended to
+> begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
+> (includes features beyond Pull Server on Windows Server) or one of the community solutions
+> listed [here](pullserver.md#community-solutions-for-pull-service).
+
+Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).
 
 > **Note**: This topic applies to PowerShell 5.0. For information on setting up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md)
 
@@ -17,15 +29,15 @@ configuration PullClientConfigID
         Settings
         {
             RefreshMode = 'Pull'
-            ConfigurationID = 1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
-        }      
+
+        }
     }
 }
 PullClientConfigID
@@ -55,14 +67,14 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
-        ConfigurationRepositoryWeb SMBPullServer
+        ConfigurationRepositoryShare SMBPullServer
         {
             SourcePath = '\\SMBPullServer\PullSource'
-            
-        }     
+
+        }
     }
 }
 PullClientConfigID
@@ -70,10 +82,12 @@ PullClientConfigID
 
 ## Resource and report servers
 
-By default, the client node gets required resources from and reports status to the configuration pull server. However, you can specify different pull servers for resources and reporting.
-To specify a resource server, you use either a **ResourceRepositoryWeb** (for a web pull server) or a **ResourceRepositoryShare** block (for an SMB pull server).
-To specify a report server, you use a **ReportRepositoryWeb** block. A report server cannot be an SMB server.
-The following metaconfiguration configures a pull client to get its configurations from **CONTOSO-PullSrv** and its resources from **CONTOSO-ResourceSrv**, and to send status reports to **CONTOSO-ReportSrv**.
+If you specify only a **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block in your LCM configuration (as in the previous example), the pull client will pull
+resources from the specified server, but it will not send reports to it. You can use a single pull server for configurations, resources, and reporting, but you have to create a
+**ReportRepositoryWeb** block to set up reporting.
+
+The following example shows a metaconfiguration that sets up a client to pull configurations and resources, and send reporting data, to a single
+pull server.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -85,16 +99,51 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
+
+        ReportServerWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+        }
+    }
+}
+PullClientConfigID
+```
+
+You can also specify different pull servers for resources and reporting. To specify a resource server, you use either a **ResourceRepositoryWeb** (for a web pull server) or a
+**ResourceRepositoryShare** block (for an SMB pull server).
+To specify a report server, you use a **ReportRepositoryWeb** block. A report server cannot be an SMB server.
+The following metaconfiguration configures a pull client to get its configurations from **CONTOSO-PullSrv** and its resources from **CONTOSO-ResourceSrv**, and to send status reports to **CONTOSO-ReportSrv**:
+
+```powershell
+[DSCLocalConfigurationManager()]
+configuration PullClientConfigID
+{
+    Node localhost
+    {
+        Settings
+        {
+            RefreshMode = 'Pull'
+            ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
+            RefreshFrequencyMins = 30
+            RebootNodeIfNeeded = $true
+        }
+
+        ConfigurationRepositoryWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+
+        }
+
         ResourceRepositoryWeb CONTOSO-ResourceSrv
         {
             ServerURL = 'https://CONTOSO-REsourceSrv:8080/PSDSCPullServer.svc'

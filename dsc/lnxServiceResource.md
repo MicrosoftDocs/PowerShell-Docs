@@ -1,3 +1,8 @@
+---
+ms.date:  06/12/2017
+keywords:  dsc,powershell,configuration,setup
+title:  DSC for Linux nxService Resource
+---
 # DSC for Linux nxService Resource
 
 The **nxService** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on a Linux node.
@@ -8,23 +13,22 @@ The **nxService** resource in PowerShell Desired State Configuration (DSC) provi
 nxService <string> #ResourceName
 {
     Name = <string>
-    [ Controller = <string> { init | upstart | system }  ]
-    [ Enambled = <bool> ]
+    [ Controller = <string> { init | upstart | systemd } ]
+    [ Enabled = <bool> ]
     [ State = <string> { Running | Stopped } ]
     [ DependsOn = <string[]> ]
-
 }
 ```
 
 ## Properties
-|  Property |  Description | 
-|---|---|
-| Name| The name of the service/daemon to configure.| 
-| Controller| The type of service controller to use when configuring the service.| 
-| Enabled| Indicates whether the service starts on boot.| 
-| State| Indicates whether the service is running. Set this property to "Stopped" to ensure that the service is not running. Set it to "Running" to ensure that the service is not running.| 
-| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.| 
 
+| Property | Description |
+|---|---|
+| Name| The name of the service/daemon to configure.|
+| Controller| The type of service controller to use when configuring the service.|
+| Enabled| Indicates whether the service starts on boot.|
+| State| Indicates whether the service is running. Set this property to "Stopped" to ensure that the service is not running. Set it to "Running" to ensure that the service is not running.|
+| DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## Additional Information
 
@@ -32,19 +36,18 @@ The **nxService** resource will not create a service definition or script for th
 
 ## Example
 
-The following example shows configuration of the “httpd” service (for Apache HTTP Server), registered with the **SystemD** service controller.
+The following example shows configuration of the 'httpd' service (for Apache HTTP Server), registered with the **SystemD** service controller.
 
-```
-Import-DSCResource -Module nx 
+```powershell
+Import-DSCResource -Module nx
 
 Node $node {
-#Apache Service
-nxService ApacheService 
-{
-Name = "httpd"
-State = "running"
-Enabled = $true
-Controller = "systemd"
-}
+    #Apache Service
+    nxService ApacheService {
+        Name = 'httpd'
+        State = 'running'
+        Enabled = $true
+        Controller = 'systemd'
+    }
 }
 ```
