@@ -59,6 +59,10 @@ Platforms listed as `Experimental` are not officially supported, but are availab
 | Raspbian                                          | Experimental| Community   |
 | Kali                                              | Community   | Community   |
 | AppImage  (works on multiple Linux platforms)     | Community   | Community   |
+| [Snap Package](https://snapcraft.io/powershell)   | See note    | See note    |
+
+> [!NOTE]
+> Snap packages will be experimental for a period.  After, we are confident that Snap does not introduce new support issues, the support will follow the distribution you are running the package on.
 
 ## Platform which are out of support
 
