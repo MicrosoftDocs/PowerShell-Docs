@@ -72,13 +72,14 @@ Therefore, support for the following versions was ended by the distribution owne
 
 | OS       | Version | End of Life                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [May 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [August 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| openSUSE | 42.2    | [January 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [May 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | openSUSE | 42.1    | [May 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| openSUSE | 42.2    | [January 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [July 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## Notes on licensing
 
