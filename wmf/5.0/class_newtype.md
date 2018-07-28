@@ -305,7 +305,7 @@ $bodyText += $Properties.foreach{TH $_}
 # Add the rows
 $bodyText += foreach ($row in $Data)
     {
-        TR (-join $Properties.Foreach{ TD ($row.$\_) } )
+        TR (-join $Properties.Foreach{ TD ($row.$_) } )
     }
 
     $table = [Element] @{

@@ -83,7 +83,7 @@ Then, it uses the pipeline operator (|) to send those files to **Rename-Item**.
 
 The value of *NewName* is a script block that runs before the value is submitted to the *NewName* parameter.
 
-In the script block, the $_ automatic variable represents each file object as it comes to the command through the pipeline.
+In the script block, the `$_` automatic variable represents each file object as it comes to the command through the pipeline.
 The command uses the dot format (.) to get the **Name** property of each file object.
 The **Replace** operator replaces the .txt file name extension of each file with .log.
 
