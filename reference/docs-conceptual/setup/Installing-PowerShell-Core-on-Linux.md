@@ -1,11 +1,11 @@
 # Installing PowerShell Core on Linux
 
-Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9],
+Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10][u18], [Debian 8][deb8], [Debian 9][deb9],
 [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27][fedora],
 [Fedora 28][fedora], and [Arch Linux][arch].
 
 For Linux distributions that are not officially supported,
-you can try using the [PowerShell AppImage][lai].
+you can try using the [PowerShell Snap Package][snap].
 You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar],
 but you would need to set up the necessary dependencies based on the OS in separate steps.
 
@@ -14,7 +14,7 @@ Once the package is installed, run `pwsh` from a terminal.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1710
+[u18]: #ubuntu-1810
 [u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
@@ -23,7 +23,7 @@ Once the package is installed, run `pwsh` from a terminal.
 [opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
-[lai]: #linux-appimage
+[snap]: #snap-package
 [tar]: #binary-archives
 
 ## Installing Preview Releases
@@ -201,29 +201,10 @@ sudo apt-get remove powershell
 ## Ubuntu 18.10
 
 > [!NOTE]
-> Support for Ubuntu 18.10 was added after `6.1.0-preview.3`
+> Support for Ubuntu 18.10 was added after `6.1.0-preview.3`.
 > As 18.10 is a daily build, it is only community supported.
 
-### Installation via Snap - Ubuntu 18.10
-
-PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).
-This is the preferred method.
-
-```sh
-# Install PowerShell
-sudo snap install powershell-preview --classic
-
-# Start PowerShell
-pwsh-preview
-```
-
-After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell-preview`.
-
-### Uninstallation - Ubuntu 18.10
-
-```sh
-sudo snap remove powershell-preview
-```
+Installing on 18.10 is supported via `snapd`. See [Snap Package][snap] for full instructions;
 
 ## Debian 8
 
@@ -561,6 +542,33 @@ For more information on installing packages from the AUR, see the [Arch Linux wi
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
+
+## Snap Package
+
+### Getting snapd
+
+`snapd` is required to run snaps.  Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.
+
+### Installation via Snap
+
+PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).
+This is the preferred method.
+
+```sh
+# Install PowerShell
+sudo snap install powershell-preview --classic
+
+# Start PowerShell
+pwsh-preview
+```
+
+After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell-preview`.
+
+### Uninstallation
+
+```sh
+sudo snap remove powershell-preview
+```
 
 ## Linux AppImage
 
