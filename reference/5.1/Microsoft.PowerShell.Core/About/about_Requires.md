@@ -92,28 +92,28 @@ terminating error.
 For each module, type the module name (\<String\>) or a hash table with the
 following keys. The value can be a combination of strings and hash tables.
 
-- `ModuleName` - __[Required]__ Specifies the *ModuleName*.
-- `GUID` - __[Optional]__ Specifies the *GUID* of the Module.
+- `ModuleName` - __[Required]__ Specifies the module name.
+- `GUID` - __[Optional]__ Specifies the GUID of the module.
 - It is also **Required** to specify **one** of the two below keys,
   they cannot be used together.
-  - `ModuleVersion` - __[Required]__ Specify a Minimum acceptable version.
-  - `RequiredVersion` - __[Required]__ Specify an exact, required version.
+  - `ModuleVersion` - __[Required]__ Specifies a minimum acceptable version of the module.
+  - `RequiredVersion` - __[Required]__ Specifies an exact, required version of the module.
 
 > [!NOTE]
-> `RequiredVersion` was added in Windows Powershell 5.0.
+> `RequiredVersion` was added in Windows PowerShell 5.0.
 
 For example,
 
-Require that `Hyper-V` (version `1.1.0.0` or greater) is installed
+Require that `Hyper-V` (version `1.1` or greater) is installed.
 
 ```powershell
-#Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1.0.0" }
+#Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1" }
 ```
 
-Requires that `Hyper-V` (**only** version `1.1.0.0`) is installed
+Requires that `Hyper-V` (**only** version `1.1`) is installed.
 
 ```powershell
-#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1.0.0" }
+#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1" }
 ```
 
 Requires that any version of `PSScheduledJob` and `PSWorkflow`, is installed.
@@ -158,6 +158,7 @@ You can find current ShellId by querying `$ShellId` automatic variable.
 When this switch parameter is added to your requires statement, it specifies
 that the Windows PowerShell session in which you are running the script must
 be started with elevated user rights (Run as Administrator).
+The RunAsAdministrator parameter is introduced in Windows PowerShell 4.0.
 
 For example,
 
