@@ -35,7 +35,6 @@ Adding or removing H2 causes a build break.
 
 If your list contains multiple sentences or paragraphs,
 consider using a sub-level header rather than a list.
-CommonMark
 
 ### Unordered lists
 
@@ -96,6 +95,8 @@ to get this output:
 
    To include a second element (like this one), insert a line break after the first and align indentations.
    The indentation of the second element must line up with the first character after the numbered list marker.
+   For single digit items, like this one, you indent to column 4.
+   For double digits items, for example item number 10, you indent to column 5.
 
 2. The next numbered item starts here.
 
@@ -126,3 +127,6 @@ And it will be rendered like this:
 ## Next steps
 
 See [Formatting code blocks](5-FORMATTING-CODE.md).
+
+<!-- External URLs -->
+[platyPS]: https://github.com/PowerShell/platyPS
