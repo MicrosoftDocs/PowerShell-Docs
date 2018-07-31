@@ -57,7 +57,7 @@ Feel free to help out.
 ## Formatting syntax elements
 
 - PowerShell cmdlets are "[Pascal Cased][pascal-case]".
-  Verbs are seperated from nouns by a hyphen.
+  Verbs are separated from nouns by a hyphen.
 
 - In a paragraph, cmdlet names and variable references should be wrapped in backtick (\`) characters. For example:
 
@@ -77,7 +77,7 @@ Feel free to help out.
 
 ## Links
 
-- Avoid using bare URLs. Links should use MarkDown syntax `[friendlyname](url-or-path)`
+- Avoid using bare URLs. Links should use Markdown syntax `[friendlyname](url-or-path)`
  -* **Exception**: Links to non-Microsoft sites can be bare URLs for transparency
 - Links must have a friendly name, usually the title of the linked topic
 - All items in the "related links" section at the bottom should be hyperlinked.
@@ -99,7 +99,7 @@ https://docs.microsoft.com/en-us/powershell/azure/overview?view=azurermps-5.1.1
 ```
 
 - **\<locale>** - identifies the language of the article (example: en-us or de-de)
-- **\<product-service>** - the name of the product or service being documented (example: powerShell, dotnet, or azure)
+- **\<product-service>** - the name of the product or service being documented (example: powershell, dotnet, or azure)
 - **[\<feature-service>]** - (optional) the name of the product's feature or subservice (for example, csharp or load-balancer)
 - **[\<subfolder>]** - (optional) the name of a subfolder within a feature
 - \<topic> - the name of the article file for the topic (example: load-balancer-overview or overview)
@@ -128,7 +128,7 @@ The link target must be the URL path to the _published article_ on **docs.micros
 The relative link starts with the **\<product-service>** portion of the URL as described above.
 You should omit the **[?view=\<view-name>]** portion unless you need to link to a specific version of the content.
 
-For example, the following markdown links to the Overview topic for Azure PowerShell.
+For example, the following Markdown links to the Overview topic for Azure PowerShell.
 
 ```Markdown
 [Overview of Azure PowerShell](/powershell/azure/overview)
