@@ -75,11 +75,11 @@ This command gets all of the cmdlets, sorts them alphabetically by the noun in t
 This display can help you find the cmdlets for a task.
 
 ### Example 4: Get commands in a module
-```
-PS C:\> Get-Command -Module Microsoft.PowerShell.Security, PSScheduledJob
+```powershell
+Get-Command -Module Microsoft.PowerShell.Security, Microsoft.PowerShell.Utility
 ```
 
-This command uses the *Module* parameter to get the commands in the Microsoft.PowerShell.Security and PSScheduledJob modules.
+This command uses the **Module** parameter to get the commands in the Microsoft.PowerShell.Security and Microsoft.PowerShell.Utility modules.
 
 ### Example 5: Get information about a cmdlet
 ```

@@ -91,17 +91,17 @@ terminating error.
 For each module, type the module name (\<String\>) or a hash table with the
 following keys. The value can be a combination of strings and hash tables.
 
-- `ModuleName` - __[Required]__ Specifies the *ModuleName*.
-- `ModuleVersion` - __[Required]__ Specifies an maximum allowed *ModuleVersion*
-- `GUID` - __[Optional]__ Specifies a required module *GUID*
+- `ModuleName` - __[Required]__ Specifies the module name.
+- `ModuleVersion` - __[Required]__ Specifies a minimum acceptable version of the module.
+- `GUID` - __[Optional]__ Specifies the GUID of the module.
 
 For example,
 
 ```powershell
-#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1.0.0" }
+#Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1" }
 ```
 
-Requires that `Hyper-V` (version `1.1.0.0` or **less**) is installed
+Requires that `Hyper-V` (version `1.1` or greater) is installed.
 
 ```powershell
 #Requires -Modules PSWorkflow, PSScheduledJob

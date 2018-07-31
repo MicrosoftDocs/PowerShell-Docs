@@ -110,7 +110,7 @@ And this "Output" code box has no syntax highlighting.
 OPS also adds a **Copy** button that copies the contents of the code block to the clipboard.
 This allows you to quickly paste the code into a script for testing the code example.
 The **Copy** button also removes PowerShell prompts from the text before copying it to the clipboard.
-The **Copy** button uses the following javascript code to remove the prompts.
+The **Copy** button uses the following JavaScript code to remove the prompts.
 
 ```javascript
 if (language === 'powershell') {
@@ -136,7 +136,7 @@ See the general guidelines, in the next section, for the appropriate use of prom
 - Line continuation in code samples
 
   Avoid using line continuation characters (\`) in PowerShell code examples.
-  These are hard to see and can cause problems if there are extra spaces on the end of the line.
+  These are hard to see and can cause problems if there are extra spaces at the end of the line.
   Use PowerShell splatting to reduce line length for cmdlets that have a lot of parameters.
   Take advantage of PowerShell's natural line break opportunities, like after pipe (\|) characters and opening braces, parentheses, and brackets.
 
@@ -153,7 +153,7 @@ See the general guidelines, in the next section, for the appropriate use of prom
 
       ```
       PS C:\> cd HKCU:\System\
-      PS HKEY_CURRENT_USER\System\> dir
+      PS HKCU:\System\> dir
 
 
           Hive: HKEY_CURRENT_USER\System
