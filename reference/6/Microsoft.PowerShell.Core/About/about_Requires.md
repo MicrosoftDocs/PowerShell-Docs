@@ -170,7 +170,7 @@ You can find current ShellId by querying `$ShellId` automatic variable.
 #### -RunAsAdministrator
 
 When this switch parameter is added to your requires statement, it specifies
-that the Windows PowerShell session in which you are running the script must
+that the PowerShell session in which you are running the script must
 be started with elevated user rights (Run as Administrator).
 The RunAsAdministrator parameter is ignored on a non-Windows operating system.
 
