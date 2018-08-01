@@ -53,15 +53,12 @@ The pipeline operator (|) sends the result to the `Select-Object` cmdlet,
 which selects all properties (*) of the culture object that `Get-Culture` returned.
 The command then stores the results in the `$C` variable.
 
-```powershell
-PS> $C = Get-Culture | Select-Object *
-```
-
 The second command uses the `Out-String` cmdlet to convert the **CultureInfo** object to a series of strings (one string for each property).
 It uses the **InputObject** parameter to pass the `$C` variable to `Out-String`.
 The *Width* parameter is set to 100 characters per line to prevent truncation.
 
 ```powershell
+PS> $C = Get-Culture | Select-Object *
 PS> Out-String -InputObject $C -Width 100
 ```
 
