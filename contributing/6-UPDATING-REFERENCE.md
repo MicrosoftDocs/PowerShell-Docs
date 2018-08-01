@@ -51,7 +51,9 @@ The valid schema is:
 0 or more paragraphs.
 ```
 
-Number the examples and add a title for each example. For example:
+Number the examples and add a title for each example.
+
+For example:
 
 ### Example 1: Get cmdlets, functions, and aliases
 
@@ -67,15 +69,6 @@ computer.
 ```powershell
 Get-Command -ListImported
 ```
-
-The structure of an Example is:
-
-1. H3 header describing the example
-2. One or more fenced code blocks
-3. Zero or more paragraphs describing the code in the example
-
-If you break these rules you will cause a build error. Therefore, you cannot have multiple code
-blocks with paragraphs in between them.
 
 [PlatyPS]: http://github.com/powershell/platyps
 [platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
