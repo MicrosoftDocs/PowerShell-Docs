@@ -13,9 +13,9 @@ Prevents a script from running without the required elements.
 
 ## Long description
 
-The `#Requires` statement prevents a script from running unless the Windows
-PowerShell version, modules, snap-ins, and module and snap-in version
-prerequisites are met. If the prerequisites are not met, Windows PowerShell
+The `#Requires` statement prevents a script from running unless the
+PowerShell version, modules, snap-ins, module and snap-in version, and edition
+prerequisites are met. If the prerequisites are not met, PowerShell
 does not run the script.
 
 ### Syntax
@@ -24,6 +24,7 @@ does not run the script.
 #Requires -Version <N>[.<n>]
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
+#Requires -PSEdition <PSEdition-Name>
 #Requires -ShellId <ShellId>
 #Requires -RunAsAdministrator
 ```
@@ -46,8 +47,8 @@ does not run the script.
   Example:
 
   ```powershell
-  Get-Module Hyper-V | Remove-Module
-  #Requires -Modules Hyper-V
+  Get-Module AzureRM.Netcore | Remove-Module
+  #Requires -Modules AzureRM.Netcore
   ```
 
   You might think that the above code should not run because the required
@@ -59,18 +60,18 @@ does not run the script.
 
 #### -Version \<N\>[.\<n\>]
 
-Specifies the minimum version of Windows PowerShell that the script requires.
+Specifies the minimum version of PowerShell that the script requires.
 Enter a major version number and optional minor version number.
 
 For example:
 
 ```powershell
-#Requires -Version 3.0
+#Requires -Version 6.0
 ```
 
 #### -PSSnapin \<PSSnapin-Name\> [-Version \<N\>[.\<n\>]]
 
-Specifies a Windows PowerShell snap-in that the script requires. Enter the
+Specifies a PowerShell snap-in that the script requires. Enter the
 snap-in name and an optional version number.
 
 For example:
@@ -81,71 +82,84 @@ For example:
 
 #### -Modules \<Module-Name\> | \<Hashtable\>
 
-Specifies Windows PowerShell modules that the script requires. Enter the
-module name and an optional version number. The Modules parameter is
-introduced in Windows PowerShell 3.0.
+Specifies PowerShell modules that the script requires. Enter the
+module name and an optional version number.
 
-If the required modules are not in the current session, Windows PowerShell
-imports them. If the modules cannot be imported, Windows PowerShell throws a
+If the required modules are not in the current session, PowerShell
+imports them. If the modules cannot be imported, PowerShell throws a
 terminating error.
 
 For each module, type the module name (\<String\>) or a hash table with the
 following keys. The value can be a combination of strings and hash tables.
 
-- `ModuleName` - __[Required]__ Specifies the *ModuleName*.
-- `GUID` - __[Optional]__ Specifies the *GUID* of the Module.
+- `ModuleName` - __[Required]__ Specifies the module name.
+- `GUID` - __[Optional]__ Specifies the GUID of the module.
 - It is also **Required** to specify **one** of the two below keys,
   they cannot be used together.
-  - `ModuleVersion` - __[Required]__ Specify a Minimum acceptable version.
-  - `RequiredVersion` - __[Required]__ Specify an exact, required version.
+  - `ModuleVersion` - __[Required]__ Specifies a minimum acceptable version of the module.
+  - `RequiredVersion` - __[Required]__ Specifies an exact, required version of the module.
 
 > [!NOTE]
 > `RequiredVersion` was added in Windows Powershell 5.0.
 
-For example,
+For example:
 
-Require that `Hyper-V` (version `1.1.0.0` or greater) is installed
+Requires that `AzureRM.Netcore` (version `0.12.0` or greater) is installed.
 
 ```powershell
-#Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1.0.0" }
+#Requires -Modules @{ ModuleName="AzureRM.Netcore"; ModuleVersion="0.12.0" }
 ```
 
-Requires that `Hyper-V` (**only** version `1.1.0.0`) is installed
+Requires that `AzureRM.Netcore` (**only** version `0.12.0`) is installed.
 
 ```powershell
-#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1.0.0" }
+#Requires -Modules @{ ModuleName="AzureRM.Netcore"; RequiredVersion="0.12.0" }
 ```
 
-Requires that any version of `PSScheduledJob` and `PSWorkflow`, is installed.
+Requires that any version of `AzureRM.Netcore` and `PowerShellGet` is installed.
 
 ```powershell
-#Requires -Modules PSWorkflow, PSScheduledJob
+#Requires -Modules AzureRM.Netcore, PowerShellGet
 ```
 
 When using the `RequiredVersion` key, ensure your version string exactly matches
 the version string you wish to require.
 
 ```powershell
-Get-Module Hyper-V
+Get-Module AzureRM.Netcore -ListAvailable
 ```
 
 ```output
-ModuleType Version    Name     ExportedCommands
----------- -------    ----     ------------------
-Binary     2.0.0.0    hyper-v  {Add-VMAssignableDevice, ...}
+    Directory: /home/azureuser/.local/share/powershell/Modules
+
+
+ModuleType Version Name            PSEdition ExportedCommands
+---------- ------- ----            --------- ----------------
+Script     0.12.0  AzureRM.Netcore Core
 ```
 
-This will **FAIL**, because "2.0.0" does not exactly match "2.0.0.0"
+This will **FAIL**, because "0.12" does not exactly match "0.12.0"
 
 ```powershell
-#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="2.0.0" }
+#Requires -Modules @{ ModuleName="AzureRM.Netcore"; RequiredVersion="0.12" }
+```
+
+#### -PSEdition \<PSEdition-Name\>
+
+Specifies a PowerShell edition that the script requires.
+Valid values are Core for PowerShell Core and Desktop for Windows PowerShell.
+
+For example:
+
+```powershell
+#Requires -PSEdition Core
 ```
 
 #### -ShellId
 
 Specifies the shell that the script requires. Enter the shell ID.
 
-For example,
+For example:
 
 ```powershell
 #Requires -ShellId MyLocalShell
@@ -156,10 +170,11 @@ You can find current ShellId by querying `$ShellId` automatic variable.
 #### -RunAsAdministrator
 
 When this switch parameter is added to your requires statement, it specifies
-that the Windows PowerShell session in which you are running the script must
+that the PowerShell session in which you are running the script must
 be started with elevated user rights (Run as Administrator).
+The RunAsAdministrator parameter is ignored on a non-Windows operating system.
 
-For example,
+For example:
 
 ```powershell
 #Requires -RunAsAdministrator
@@ -172,8 +187,8 @@ specified in both statements are not met, the script does not run. Each
 `#Requires` statement must be the first item on a line:
 
 ```powershell
-#Requires -Modules PSWorkflow
-#Requires -Version 3
+#Requires -Modules AzureRM.Netcore
+#Requires -Version 6.0
 Param
 (
     [parameter(Mandatory=$true)]
