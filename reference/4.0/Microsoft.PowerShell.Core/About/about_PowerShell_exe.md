@@ -146,7 +146,7 @@ Command is "-", the command text is read from standard input.
 
 Script blocks must be enclosed in braces ({}). You can specify a script block
 only when running PowerShell.exe in PowerShell. If you want to use a script
-block when are running from another shell you must use the format:
+block when running from another shell you must use the format:
 
 "& {<command>}"
 
