@@ -31,7 +31,7 @@ features:
 
 - A Data section that separates text strings from code instructions. For more
   information about the Data section, see
-  [aout_Data_Sections](about_Data_Sections.md).
+  [about_Data_Sections](about_Data_Sections.md).
 
 - New automatic variables, \$PSCulture and \$PSUICulture. \$PSCulture stores the
   name of the UI language used on the system for elements such as the date,
