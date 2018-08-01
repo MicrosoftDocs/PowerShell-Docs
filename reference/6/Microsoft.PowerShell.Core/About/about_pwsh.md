@@ -118,7 +118,7 @@ Command is "-", the command text is read from standard input.
 
 Script blocks must be enclosed in braces ({}). You can specify a script block
 only when running pwsh in PowerShell. If you want to use a script block when
-are running pwsh from another shell you must use the format:
+are running from another shell you must use the format:
 
 "& {<command>}"
 
@@ -126,7 +126,7 @@ where the quotation marks indicate a string and the invoke operator (&) causes
 the command to be executed.
 
 If the value of Command is a string, Command must be the last parameter for
-pwsh.exe, because all arguments following it are interpreted as part of the
+pwsh, because all arguments following it are interpreted as being part of the
 command to execute.
 
 The results are returned to the parent shell as deserialized XML objects, not
