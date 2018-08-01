@@ -141,31 +141,33 @@ Executes the specified commands (and any parameters) as though they were typed
 at the Windows PowerShell command prompt, and then exits, unless the NoExit
 parameter is specified.
 
-The value of Command can be "-", a string. or a script block. If the value of
+The value of Command can be "-", a script block, or a string. If the value of
 Command is "-", the command text is read from standard input.
 
 Script blocks must be enclosed in braces ({}). You can specify a script block
-only when running PowerShell.exe in Windows PowerShell. The results of the
-script are returned to the parent shell as deserialized XML objects, not live
-objects.
-
-If the value of Command is a string, Command must be the last parameter in the
-command , because any characters typed after the command are interpreted as
-the command arguments.
-
-To write a string that runs a Windows PowerShell command, use the
-format:
+only when running PowerShell.exe in PowerShell. If you want to use a script
+block when running from another shell you must use the format:
 
 "& {<command>}"
 
 where the quotation marks indicate a string and the invoke operator (&) causes
 the command to be executed.
 
+The results of the script are returned to the parent shell as deserialized XML
+objects, not live objects.
+
+If the value of Command is a string, Command must be the last parameter for
+PowerShell.exe, because all arguments following it are interpreted as part of
+the command to execute.
+
+The results are returned to the parent shell as deserialized XML objects, not
+live objects.
+
 #### -Help, -?, /?
 
 Displays help for PowerShell.exe. If you are typing a PowerShell.exe command
-in Windows PowerShell, prepend the command parameters with a hyphen (-), not a
-forward slash (/). You can use either a hyphen or forward slash in Cmd.exe.
+in PowerShell, prepend the command parameters with a hyphen (-), not a forward
+slash (/). You can use either a hyphen or forward slash in Cmd.exe.
 
 ### REMARKS
 
