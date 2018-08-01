@@ -20,24 +20,6 @@ This table defines some of the different terms used to discuss PowerShell.
 In general, references to "Windows PowerShell" in documentation can be changed to "PowerShell".
 "Windows PowerShell" should **not** be changed when Windows-specific technology is being discussed.
 
-## About_ file formatting
-
-We are changing the way we process about_ files.
-About_* files are being reformatted for the best compatibility across PowerShell versions and our publishing tools.
-For details, see [issue #1806][issue1806].
-Please do not alter the formatting of about_ files without checking in with a repo maintainer.
-
-Basic formatting guidelines:
-
-- Limit lines to 80 characters
-- Code blocks should be limited to 76 characters
-- Within a paragraph, the following characters must be escaped using a leading `\` character:
-  <code>$</code>, <code>\`</code>, <code>\<</code>
-- Tables need fit withing 76 characters
-  - Manually wrap contents of cells across multiple lines
-  - Use opening and closing `|` characters on each line
-  - See a working example in [about_Comparison_Operators][about-example]
-
 ## Use semantic line breaks
 
 Add a single newline after each sentence or a clause boundary near the 100 character limit.
@@ -53,7 +35,6 @@ For a good explanation of semantic line breaks, see [Semantic Linefeeds by Rhode
 This is not currently adopted across all of PowerShell-Docs, but we will be working towards it over time.
 Feel free to help out.
 
-
 ## Formatting syntax elements
 
 - PowerShell cmdlets are "[Pascal Cased][pascal-case]".
@@ -62,7 +43,7 @@ Feel free to help out.
 - In a paragraph, cmdlet names and variable references should be wrapped in backtick (\`) characters. For example:
 
   The following code assigns the output of `Get-ChildItem` to the `$files` variable.
-  
+
   ```powershell
   $files = Get-ChildItem C:\Windows
   ```
