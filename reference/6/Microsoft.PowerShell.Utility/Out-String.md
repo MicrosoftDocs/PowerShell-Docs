@@ -71,14 +71,14 @@ PS> Get-Alias | Out-String -Stream | Select-String "Get-Command"
 ```
 
 This example demonstrates the difference between working with objects and working with strings.
-The command displays aliases that include the phrase Get-Command.
+The command displays aliases that include the phrase "Get-Command".
 It uses the `Get-Alias` cmdlet to get a set of **AliasInfo** objects (one for each alias in the current session).
 
 The pipeline operator (|) sends the output of the `Get-Alias` cmdlet to the `Out-String` cmdlet, which converts the objects to a series of strings.
 It uses the **Stream** parameter of `Out-String` to send each string individually, instead of concatenating them into a single string.
-Another pipeline operator sends the strings to the `Select-String` cmdlet, which selects the strings that include `Get-Command` anywhere in the string.
+Another pipeline operator sends the strings to the `Select-String` cmdlet, which selects the strings that include "Get-Command" anywhere in the string.
 
-If you omit the **Stream** parameter, the command displays all of the aliases, because `Select-String` finds **Get-Command** in the single string that `Out-String` returns, and the formatter displays the string as a table.
+If you omit the **Stream** parameter, the command displays all of the aliases, because `Select-String` finds "Get-Command" in the single string that `Out-String` returns, and the formatter displays the string as a table.
 
 ### Example 4: Using NoNewLine
 
