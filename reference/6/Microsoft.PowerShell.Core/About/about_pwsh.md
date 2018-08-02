@@ -114,31 +114,31 @@ Sets the initial working directory when starting PowerShell.  Any valid
 PowerShell file path is supported.
 
 To start PowerShell in your home directory, use: pwsh -WorkingDirectory ~
+
 #### -Command
 
 Executes the specified commands (and any parameters) as though they were typed
 at the PowerShell command prompt, and then exits, unless the NoExit parameter
 is specified.
 
-The value of Command can be "-", a string. or a script block. If the value of
+The value of Command can be "-", a script block, or a string. If the value of
 Command is "-", the command text is read from standard input.
 
 Script blocks must be enclosed in braces ({}). You can specify a script block
-only when running pwsh in PowerShell. The results of the script are returned
-to the parent shell as deserialized XML objects, not live objects.
+only when running pwsh in PowerShell. If you want to use a script block when
+running from another shell you must use the format:
 
-If the value of Command is a string, Command must be the last parameter in the
-command , because any characters typed after the command are interpreted as
-the command arguments.
-
-To write a string that runs a PowerShell command, use the format:
-
-```
 "& {<command>}"
-```
 
 where the quotation marks indicate a string and the invoke operator (&) causes
 the command to be executed.
+
+If the value of Command is a string, Command must be the last parameter for
+pwsh, because all arguments following it are interpreted as being part of the
+command to execute.
+
+The results are returned to the parent shell as deserialized XML objects, not
+live objects.
 
 #### -Help, -?, /?
 
@@ -151,9 +151,13 @@ can use either a hyphen or forward slash in Cmd.exe.
 ```powershell
 pwsh -Version
 
-pwsh -Command {Get-Command -Name Get-Command}
+# Example using a script block
+pwsh -Command {Get-Command -Name Get-Item}
 
+# Examples using a string
+pwsh -Command "Get-Command -Name Get-Item"
 pwsh -Command "& {Get-Command -Name Get-Command}"
 
-pwsh -WorkingDirectory ~/Downloads
+# Example using a command as the last parameter
+pwsh -Command Get-Command -Name Get-Item
 ```
