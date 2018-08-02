@@ -201,7 +201,3 @@ You can also store data in a variable and use the **InputObject** parameter to p
 ## RELATED LINKS
 
 [Out-File](Out-File.md)
-
-[Out-GridView](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Utility/Out-GridView)
-
-[Out-Printer](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Utility/Out-Printer)
