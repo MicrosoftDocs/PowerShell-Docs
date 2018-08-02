@@ -120,7 +120,7 @@ Script blocks must be enclosed in braces ({}). You can specify a script block
 only when running pwsh in PowerShell. If you want to use a script block when
 running from another shell you must use the format:
 
-"& {<command>}"
+"& {\<command\>}"
 
 where the quotation marks indicate a string and the invoke operator (&) causes
 the command to be executed.
