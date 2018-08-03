@@ -429,7 +429,7 @@ Alias: cf
 Prompts you for confirmation before executing the command.
 
 The Confirm parameter overrides the value of the $ConfirmPreference variable
-for the current command. The default value is High. For more information, type
+for the current command. The default value is true. For more information, type
 the following command:
 
 ```powershell
