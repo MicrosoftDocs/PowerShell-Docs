@@ -611,7 +611,7 @@ Param
 )
 ```
 
-## ValidateDrive Validation Attribute
+### ValidateDrive Validation Attribute
 
 The ValidateDrive attribute specifies that the parameter value must represent
 the path, that is referring to allowed drives only. PowerShell generates
@@ -628,7 +628,7 @@ Param
 )
 ```
 
-## ValidateUserDrive Validation Attribute
+### ValidateUserDrive Validation Attribute
 
 The ValidateUserDrive attribute specifies that the parameter value
 must represent the path, that is referring to `User` drive.
@@ -649,7 +649,7 @@ Param
 )
 ```
 
-### Dynamic Parameters
+## Dynamic Parameters
 
 Dynamic parameters are parameters of a cmdlet, function, or script that are
 available only under certain conditions.
@@ -728,7 +728,7 @@ For more information, see "RuntimeDefinedParameter Class" in the MSDN
 (Microsoft Developer Network) library at
 [RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter)
 
-### Switch Parameters
+## Switch Parameters
 
 Switch parameters are parameters with no parameter value. They are effective
 only when they are used and have only one effect.
