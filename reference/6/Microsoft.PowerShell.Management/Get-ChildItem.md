@@ -23,9 +23,8 @@ Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-
  [-Depth <UInt32>] [-Force] [-Name] [-Attributes {ReadOnly | Hidden | System | Directory | Archive | Device | Normal | Temporary | SparseFile | ReparsePoint | Compressed | Offline | NotContentIndexed | Encrypted | IntegrityStream | NoScrubData}] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
-### Literal Items
-
 ### LiteralItems
+
 ```
 Get-ChildItem -LiteralPath <String[]> [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>]
  [-Recurse] [-Depth <UInt32>] [-Force] [-Name] [-Attributes {ReadOnly | Hidden | System | Directory |
