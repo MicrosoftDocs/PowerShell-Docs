@@ -18,17 +18,18 @@ Gets the items and child items in one or more specified locations.
 
 ### Items (Default)
 
-```powershell
-Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Attributes {ReadOnly | Hidden | System | Directory |
-Archive | Device | Normal | Temporary | SparseFile | ReparsePoint | Compressed | Offline | NotContentIndexed |
-Encrypted | IntegrityStream | NoScrubData}] [-Depth <UInt32>] [-Directory] [-Exclude <String[]>] [-File] [-Force]
-[-Hidden] [-Include <String[]>] [-Name] [-ReadOnly] [-Recurse] [-System] [-UseTransaction] [<CommonParameters>]
+```
+Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
+ [-Depth <UInt32>] [-Force] [-Name] [-Attributes {ReadOnly | Hidden | System | Directory | Archive | Device | Normal | Temporary | SparseFile | ReparsePoint | Compressed | Offline | NotContentIndexed | Encrypted | IntegrityStream | NoScrubData}] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ### Literal Items
 
-```powershell
-Get-ChildItem -LiteralPath <String[]> [[-Filter] <String>] [-Attributes {ReadOnly | Hidden | System | Directory | Archive | Device | Normal | Temporary | SparseFile | ReparsePoint | Compressed | Offline | NotContentIndexed | Encrypted | IntegrityStream | NoScrubData}] [-Depth <UInt32>] [-Directory] [-Exclude <String[]>] [-File] [-Force] [-Hidden] [-Include <String[]>] [-Name] [-ReadOnly] [-Recurse] [-System] [-UseTransaction] [<CommonParameters>]
+### LiteralItems
+```
+Get-ChildItem -LiteralPath <String[]> [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-Depth <UInt32>] [-Force] [-Name] [-Attributes {ReadOnly | Hidden | System | Directory |
+ Archive | Device | Normal | Temporary | SparseFile | ReparsePoint | Compressed | Offline | NotContentIndexed | Encrypted | IntegrityStream | NoScrubData}] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ## Description
@@ -125,7 +126,7 @@ This command gets all of the items in the C:\Windows directory and its subdirect
 ### Example 8: Get all items in the specified directory and its subdirectories limited by the Depth parameter
 
 ```powershell
-PS C:\> Get-ChildItem -Path C:\Windows -Depth 2
+Get-ChildItem -Path C:\Windows -Depth 2
 ```
 
 This command gets all of the items in the C:\Windows directory and its subdirectories up to 2 level below in depth.
@@ -180,10 +181,12 @@ You can use the following abbreviations for commonly used attributes:
 - `R`   (Read-only)
 - `S`   (System)
 
+
 ```yaml
 Type: System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]
 Parameter Sets: (All)
 Aliases:
+Accepted values: ReadOnly, Hidden, System, Directory, Archive, Device, Normal, Temporary, SparseFile, ReparsePoint, Compressed, Offline, NotContentIndexed, Encrypted, IntegrityStream, NoScrubData
 
 Required: False
 Position: Named
@@ -194,7 +197,8 @@ Accept wildcard characters: False
 
 ### -Depth
 
-This parameter, added in Powershell 5.0 enables you to control the depth of recursion. You use both the `-Recurse` and the `-Depth` parameter to limit the recursion.
+This parameter, added in Powershell 5.0 enables you to control the depth of recursion.
+You use both the `-Recurse` and the `-Depth` parameter to limit the recursion.
 
 ```yaml
 Type: UInt32
@@ -284,6 +288,24 @@ Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
+```
+
+### -FollowSymlink
+
+By default, the `Get-ChildItem` cmdlet displays symbolic links to directories found during recursion, but does not recurse into them.
+Use the **FolowSymlink** switch to search the directories that those symbolic links target.
+The **FollowSymlink** is a dynamic parameter and it is supported only in the FileSystem provider.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Force
@@ -449,24 +471,6 @@ Aliases: as
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see about_Transactions.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
