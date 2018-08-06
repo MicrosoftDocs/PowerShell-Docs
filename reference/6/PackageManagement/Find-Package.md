@@ -48,7 +48,7 @@ The **Find-Package** cmdlet finds matching software packages that are available 
 PS C:\> Find-Package -Provider "PSModule"
 ```
 
-This command finds all available Windows PowerShell module packages from galleries that are registered with the PSModule provider.
+This command finds all available PowerShell module packages from galleries that are registered with the PSModule provider.
 
 ### Example 2: Find a package from a provider that is not yet installed
 
