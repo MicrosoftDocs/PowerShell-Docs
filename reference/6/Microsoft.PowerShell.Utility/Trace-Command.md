@@ -139,7 +139,7 @@ This parameter also selects the file trace listener.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: PSPath, Path
+Aliases: PSPath
 
 Required: False
 Position: Named
