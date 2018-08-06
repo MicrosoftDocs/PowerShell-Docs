@@ -117,7 +117,10 @@
             "PowerShellGet": {},
             "PSDesiredStateConfiguration": {},
             "PSDiagnostics": {},
-            "PSReadLine": {}
+            "PSReadLine": {},
+            "PSScheduledJob": {},
+            "PSWorkflow": {},
+            "PSWorkflowUtility": {}
         }
     }
 }
