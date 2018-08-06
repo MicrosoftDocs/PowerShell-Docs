@@ -22,7 +22,7 @@ Update-Module [[-Name] <String[]>] [-RequiredVersion <Version>] [-MaximumVersion
 ```
 
 ## DESCRIPTION
-The **Update-Module** cmdlet installs a newer version of a Windows PowerShell module that was installed from the online gallery by running Install-Module on the local computer.
+The **Update-Module** cmdlet installs a newer version of a PowerShell module that was installed from the online gallery by running Install-Module on the local computer.
 
 By default, the newest version of the specified module available in online gallery is installed, unless you specify a required version.
 You can update an existing, installed module by specifying the name of the module; **Update-Module** searches $env:PSModulePath for the module that you want to update.

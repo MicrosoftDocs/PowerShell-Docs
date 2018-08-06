@@ -141,7 +141,7 @@ Accept wildcard characters: False
 
 ### -DscResource
 Specifies the name, or part of the name, of modules that contain DSC resources.
-Per Windows PowerShell conventions, performs an OR search when you provide multiple arguments.
+Per PowerShell conventions, performs an OR search when you provide multiple arguments.
 
 ```yaml
 Type: String[]
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -Includes
-Returns only those modules that include specific kinds of Windows PowerShell functionality.
+Returns only those modules that include specific kinds of PowerShell functionality.
 For example, you might only want to find modules that include DSCResource.
 The acceptable values for this parameter are:
 
