@@ -123,7 +123,7 @@ You can pipe a service object or a string that contains the name of a service to
 This cmdlet does not return any output.
 
 ## NOTES
-* To run this cmdlet on Windows Vista and later versions of the Windows operating system, start Windows PowerShell by using the Run as administrator option.
+* To run this cmdlet on Windows Vista and later versions of the Windows operating system, start PowerShell by using the Run as administrator option.
 
 ## RELATED LINKS
 
