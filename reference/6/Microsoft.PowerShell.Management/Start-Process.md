@@ -167,7 +167,7 @@ If you specify only a file name, use the *WorkingDirectory* parameter to specify
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: PSPath, Path
+Aliases: PSPath
 
 Required: True
 Position: 1

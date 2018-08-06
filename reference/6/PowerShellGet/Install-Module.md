@@ -120,7 +120,7 @@ You cannot add this parameter if you are attempting to install multiple modules.
 The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 If you are installing multiple modules in a single command, and a specified minimum version for a module is not available for installation, the **Install-Module** command silently continues without installing the unavailable module.
-For example, if you try to install the ContosoServer module with a minimum version of 2.0, but the latest version of the ContosoServer module is 1.5, the **Install-Module** command does not install the ContosoServer module; it goes to install the next specified module, and PowerShell display errors when the command is finished.
+For example, if you try to install the ContosoServer module with a minimum version of 2.0, but the latest version of the ContosoServer module is 1.5, the **Install-Module** command does not install the ContosoServer module; it goes to install the next specified module, and Windows PowerShell display errors when the command is finished.
 
 ```yaml
 Type: Version
@@ -352,7 +352,7 @@ If the version of the installed module is greater than the value of the *Minimum
   To install multiple modules, specify an array of the module names, separated by commas.
 You cannot add *MinimumVersion* or *RequiredVersion* if you specify multiple module names.
 
-  By default, modules are installed to the Program Files folder, to prevent confusion when you are installing PowerShell Desired State Configuration (DSC) resources.You can pipe multiple **PSGetItemInfo** objects to **Install-Module**; this is another way of specifying multiple modules to install in a single command.
+  By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple **PSGetItemInfo** objects to **Install-Module**; this is another way of specifying multiple modules to install in a single command.
 
   To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.
 As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.

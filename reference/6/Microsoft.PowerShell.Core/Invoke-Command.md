@@ -116,9 +116,9 @@ Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [
 
 ### HostName
 ```
-Invoke-Command [-Subsystem <String>] -ScriptBlock <scriptblock> -HostName <string[]> [-Port <int>]
- [-AsJob] [-HideComputerName] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug]
- [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+Invoke-Command -ScriptBlock <scriptblock> -HostName <string[]> [-Port <int>] [-AsJob]
+[-HideComputerName] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug]
+[-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathHostName
@@ -491,21 +491,21 @@ To get the results of commands and scripts that run in disconnected sessions, us
 
 ### Example 17: Run a command on a remote computer using SSH
 ```
-PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * }
+PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * }
 ```
 
 This example shows how to run a command on a remote computer using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt. Otherwise you will have to use SSH key based user authentication.
 
 ### Example 18: Run a command on a remote computer using SSH and specify a user authentication key
 ```
-PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
+PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to run a command on a remote computer using SSH and specifying a key file for user authentication. You will not get a password prompt unless the key authentication fails and the remote computer is configured to allow basic password authentication.
 
 ### Example 19: Run a script file on multiple remote computers using SSH as a job
 ```
-PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa }
+PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="LinuxServer5"; UserName="UserB"; KeyFilePath="c:\UserB\<path>\id_rsa }
 PS C:\> $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
 ```
 
@@ -702,9 +702,6 @@ Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended: http://schemas.microsoft.com/PowerShell.
-
-When used with SSH, this specifies the subsystem to use on the target as defined in sshd_config.
-The default value for SSH is the `powershell` subsystem.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
@@ -1171,10 +1168,6 @@ Accept wildcard characters: False
 
 ### -HostName
 Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to the ComputerName parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
-This parameter supports specifying the user name and/or port as part of the host name parameter value using
-the form `user@hostname:port`.
-The user name and/or port specified as part of the host name takes precedence over the `-UserName` and `-Port` parameters, if specified.
-This allows passing multiple computer names to this parameter where some have specific user names and/or ports, while others use the user name and/or port from the `-UserName` and `-Port` parameters.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -1228,27 +1221,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Subsystem
-Specifies the SSH subsystem used for the new **PSSession**.
-
-This specifies the subsystem to use on the target as defined in sshd_config.
-The subsystem starts a specific version of PowerShell with predefined parameters.
-If the specified subsystem does not exist on the remote computer, the command fails.
-
-If this parameter is not used, the default is the 'powershell' subsystem.
-
-```yaml
-Type: String
-Parameter Sets: HostName
-Aliases:
-
-Required: False
-Position: Named
-Default value: powershell
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -UserName
 Specifies the user name for the account used to run a command on the remote computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
 
@@ -1273,10 +1245,9 @@ Accept wildcard characters: False
 ```
 
 ### -SSHConnection
-This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath, Subsystem).
+This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath).
 
 The hashtable connection parameters are the same as defined for the HostName parameter set.
-Note that the order of the keys in the hashtable result in user name and port being used for the connection where the last one specified is used.  For example, if you use `@{UserName="first";HostName="second@host"}`, then the user name `second` will be used.  However, if you use `@{HostName="second@host:22";Port=23}`, then port 23 will be used.
 
 The SSHConnection parameter is useful for creating multiple sessions where each session requires different connection information.
 

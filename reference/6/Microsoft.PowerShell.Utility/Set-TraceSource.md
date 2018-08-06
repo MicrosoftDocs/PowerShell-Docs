@@ -81,7 +81,7 @@ If you use this parameter to start the trace, use the *RemoveFileListener* param
 ```yaml
 Type: String
 Parameter Sets: optionsSet
-Aliases: PSPath, Path
+Aliases: PSPath
 
 Required: False
 Position: Named

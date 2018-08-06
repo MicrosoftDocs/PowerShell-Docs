@@ -93,20 +93,6 @@ This example demonstrates how the **Measure-Object** can measure Boolean values.
 In this case, it uses the PSIsContainer Boolean property to measure the incidence of folders (vs.
 files) in the current directory.
 
-### Example 7: Measure all the values
-```
-PS C:\> 1..5 | Measure-Object -AllStats
-Count             : 5
-Average           : 3
-Sum               : 15
-Maximum           : 5
-Minimum           : 1
-StandardDeviation : 1.58113883008419
-Property          :
-```
-
-This example demonstrates how the **Measure-Object** can measure all the statistics together.
-
 ## PARAMETERS
 
 ### -Average
@@ -237,21 +223,6 @@ Accept wildcard characters: False
 
 ### -Sum
 Indicates that the cmdlet displays the sum of the values of the specified properties.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: GenericMeasure
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllStats
-Indicates that the cmdlet displays all the statitics of the specified properties.
 
 ```yaml
 Type: SwitchParameter
