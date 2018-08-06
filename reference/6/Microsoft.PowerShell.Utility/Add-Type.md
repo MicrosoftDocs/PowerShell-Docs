@@ -21,7 +21,7 @@ Adds a Microsoft .NET Core type (a class) to a PowerShell session.
 ```
 Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
  [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [<CommonParameters>]
+ [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
 ### FromMember
@@ -29,27 +29,30 @@ Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblie
 ```
 Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>] [-UsingNamespace <String[]>]
  [-Language <Language>] [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
+ [<CommonParameters>]
 ```
 
 ### FromPath
 
 ```
 Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
+ [<CommonParameters>]
 ```
 
 ### FromLiteralPath
 
 ```
 Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
+ [<CommonParameters>]
 ```
 
 ### FromAssemblyName
 
 ```
-Add-Type -AssemblyName <String[]> [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
+Add-Type -AssemblyName <String[]> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -247,6 +250,27 @@ Parameter Sets: FromAssemblyName
 Aliases: AN
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CompilerOptions
+
+Specifies the options for the source code compiler.
+These options are sent to the compiler without revision.
+
+This parameter allows you to direct the compiler to generate an executable file, embed resources, or set command-line options, such as the "/unsafe" option.
+
+You cannot use the **CompilerOptions** and **ReferencedAssemblies** parameters in the same command.
+
+```yaml
+Type: String[]
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
