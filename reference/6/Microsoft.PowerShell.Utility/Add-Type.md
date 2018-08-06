@@ -63,7 +63,7 @@ If you add an `Add-Type` command to your PowerShell profile, the class is availa
 
 You can specify the type by specifying an existing assembly or source code files, or you can specify the source code inline or saved in a variable.
 You can even specify only a method and `Add-Type` will define and generate the class.
-On windows, you can use this feature to make Platform Invoke (P/Invoke) calls to unmanaged functions in PowerShell.
+On Windows, you can use this feature to make Platform Invoke (P/Invoke) calls to unmanaged functions in PowerShell.
 If you specify source code, `Add-Type` compiles the specified source code and generates an in-memory assembly that contains the new .NET Core types.
 
 You can use the parameters of `Add-Type` to specify an alternate language and compiler (C# is the default), compiler options, assembly dependencies, the class namespace, the names of the type, and the resulting assembly.
