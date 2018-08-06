@@ -19,42 +19,51 @@ Adds a Microsoft .NET Core type (a class) to a PowerShell session.
 ### FromSource (Default)
 
 ```
-Add-Type [-TypeDefinition] <string> [-Language <Language>] [-ReferencedAssemblies <string[]>] [-OutputAssembly <string>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <string[]>] [<CommonParameters>]
+Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
+ [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
+ [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
 ### FromMember
 
 ```
-Add-Type [-Name] <string> [-MemberDefinition] <string[]> [-Namespace <string>] [-UsingNamespace <string[]>] [-Language <Language>] [-ReferencedAssemblies <string[]>] [-OutputAssembly <string>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <string[]>] [<CommonParameters>]
+Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>] [-UsingNamespace <String[]>]
+ [-Language <Language>] [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
+ [<CommonParameters>]
 ```
 
 ### FromPath
 
 ```
-Add-Type [-Path] <string[]> [-ReferencedAssemblies <string[]>] [-OutputAssembly <string>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <string[]>] [<CommonParameters>]
+Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
+ [<CommonParameters>]
 ```
 
 ### FromLiteralPath
 
 ```
-Add-Type -LiteralPath <string[]> [-ReferencedAssemblies <string[]>] [-OutputAssembly <string>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <string[]>] [<CommonParameters>]
+Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
+ [<CommonParameters>]
 ```
 
 ### FromAssemblyName
 
 ```
-Add-Type -AssemblyName <string[]> [-PassThru] [<CommonParameters>]
+Add-Type -AssemblyName <String[]> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 The `Add-Type` cmdlet lets you define a Microsoft .NET Core class in your PowerShell session.
-You can then instantiate objects (by using the New-Object cmdlet) and use the objects, just as you would use any .NET Core object.
+You can then instantiate objects (by using the `New-Object` cmdlet) and use the objects, just as you would use any .NET Core object.
 If you add an `Add-Type` command to your PowerShell profile, the class is available in all PowerShell sessions.
 
 You can specify the type by specifying an existing assembly or source code files, or you can specify the source code inline or saved in a variable.
 You can even specify only a method and `Add-Type` will define and generate the class.
-You can use this feature to make Platform Invoke (P/Invoke) calls to unmanaged functions in PowerShell.
+On windows, you can use this feature to make Platform Invoke (P/Invoke) calls to unmanaged functions in PowerShell.
 If you specify source code, `Add-Type` compiles the specified source code and generates an in-memory assembly that contains the new .NET Core types.
 
 You can use the parameters of `Add-Type` to specify an alternate language and compiler (C# is the default), compiler options, assembly dependencies, the class namespace, the names of the type, and the resulting assembly.
@@ -214,7 +223,7 @@ The third and fourth commands use the new ShowWindowAsync static method.
 The method takes two parameters, the window handle, and an integer specifies how the window is to be shown.
 
 The third command calls `ShowWindowAsync`.
-It uses the `Get-Process` cmdlet with the $Pid automatic variable to get the process that is hosting the current PowerShell session.
+It uses the `Get-Process` cmdlet with the $PID automatic variable to get the process that is hosting the current PowerShell session.
 Then it uses the **MainWindowHandle** property of the current process and a value of 2, which represents the SW_MINIMIZE value.
 
 To restore the window, the fourth command use a value of 4 for the window position, which represents the SW_RESTORE value.
@@ -247,20 +256,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CompilerParameters
+### -CompilerOptions
 
 Specifies the options for the source code compiler.
 These options are sent to the compiler without revision.
 
 This parameter allows you to direct the compiler to generate an executable file, embed resources, or set command-line options, such as the "/unsafe" option.
-This parameter implements the **CompilerParameters** class (System.CodeDom.Compiler.CompilerParameters).
 
-You cannot use the **CompilerParameters** and **ReferencedAssemblies** parameters in the same command.
+You cannot use the **CompilerOptions** and **ReferencedAssemblies** parameters in the same command.
 
 ```yaml
-Type: CompilerParameters
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
-Aliases: CP
+Type: String[]
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
+Aliases:
 
 Required: False
 Position: Named
@@ -289,7 +297,6 @@ Accept wildcard characters: False
 ### -Language
 
 Specifies the language that is used in the source code.
-The `Add-Type` cmdlet uses the value of this parameter to select the appropriate *CodeDomProvider*.
 The acceptable value for this parameter is CSharp.
 
 ```yaml
@@ -478,7 +485,7 @@ Specifies the assemblies upon which the type depends.
 By default, `Add-Type` references System.dll and System.Management.Automation.dll.
 The assemblies that you specify by using this parameter are referenced in addition to the default assemblies.
 
-You cannot use the **CompilerParameters** and **ReferencedAssemblies** parameters in the same command.
+You cannot use the **CompilerOptions** and **ReferencedAssemblies** parameters in the same command.
 
 ```yaml
 Type: String[]
@@ -556,8 +563,6 @@ Otherwise, this cmdlet does not generate any output.
 
 - The types that you add exist only in the current session. To use the types in all sessions, add them to your PowerShell profile. For more information about the profile, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
 - Type names (and namespaces) must be unique within a session. You cannot unload a type or change it. If you need to change the code for a type, you must change the name or start a new PowerShell session. Otherwise, the command fails.
-- The CodeDomProvider class for some languages, such as IronPython and J#, does not generate output. As a result, types written in these languages cannot be used with `Add-Type`.
-- This cmdlet is based on the **CodeDomProvider** class. For more information about this class, see the Microsoft .NET Framework SDK.
 
 ## RELATED LINKS
 
