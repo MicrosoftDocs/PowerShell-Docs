@@ -1,3 +1,9 @@
+---
+title: Installing PowerShell Core on Windows
+description: Information about installing PowerShell Core on Windows
+ms.date: 08/06/2018
+---
+
 # Installing PowerShell Core on Windows
 
 ## MSI
