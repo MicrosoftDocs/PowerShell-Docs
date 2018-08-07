@@ -15,10 +15,10 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834968
  Cert:
 
 ## SHORT DESCRIPTION
- Provides access to X.509 certificate stores and certificates in Windows PowerShell.
+ Provides access to X.509 certificate stores and certificates in PowerShell.
 
 ## DETAILED DESCRIPTION
- The Windows PowerShell Certificate provider lets you navigate the certificate namespace and view the certificate stores and certificates. It also lets you open the Certificates snap-in for the Microsoft Management Console (MMC).
+ The PowerShell Certificate provider lets you navigate the certificate namespace and view the certificate stores and certificates. It also lets you open the Certificates snap-in for the Microsoft Management Console (MMC).
 
  NOTE: Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the [Certificate Provider](Certificate-Provider.md) is not imported automatically into every session. To use the Cert: drive, use the [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a "[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md) Cert:" command.
 
@@ -36,7 +36,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834968
 
  To populate the EnhancedKeyUsageList property, the Certificate provider copies the OID properties of the EnhancedKeyUsage (EKU) field in the certificate and creates a friendly name for it..
 
- The Certificate provider exposes the certificate namespace as the Cert: drive in Windows PowerShell. The Cert: drive has the following three levels:
+ The Certificate provider exposes the certificate namespace as the Cert: drive in PowerShell. The Cert: drive has the following three levels:
 
  --  Store locations (Microsoft.PowerShell.Commands.X509StoreLocation), which are high-level containers that group the certificates for the current user and for all users. Each system has a CurrentUser and LocalMachine (all users) store location.
 
@@ -48,7 +48,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834968
 
  In Windows PowerShell 2.0, the Certificate provider supports the [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md), [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md), [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md), [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md) cmdlets.
 
- In addition, Windows PowerShell Security module (Microsoft.PowerShell.Security), which includes the Certificate provider, also includes cmdlets to get and set Authenticode signatures and to get certificates. For a list of cmdlets in the Security module, type "[Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md) -module *security".
+ In addition, PowerShell Security module (Microsoft.PowerShell.Security), which includes the Certificate provider, also includes cmdlets to get and set Authenticode signatures and to get certificates. For a list of cmdlets in the Security module, type "[Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md) -module *security".
 
 ## CAPABILITIES
  ShouldProcess
@@ -228,7 +228,7 @@ Remove-Item -Path cert:\LocalMachine\CA\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0
 
  The first command uses the Enable-WSManCredSSP cmdlet to enable Credential Security Service Provider (CredSSP) authentication on a client on the S1 remote computer. CredSSP permits delegated authentication.
 
- The second command uses the Connect-WSMan cmdlet to connect the S1 computer to the WinRM service on the local computer. When this command completes, the S1 computer appears in the local WSMan: drive in Windows PowerShell.
+ The second command uses the Connect-WSMan cmdlet to connect the S1 computer to the WinRM service on the local computer. When this command completes, the S1 computer appears in the local WSMan: drive in PowerShell.
 
  The third command uses the Set-Item cmdlet in the WSMan: drive to enable the CredSSP attribute for the WinRM service.
 
@@ -328,7 +328,7 @@ Remove-Item -path cert:\LocalMachine\*test* -Recurse
 ```
 
 ## DYNAMIC PARAMETERS
- Dynamic parameters are cmdlet parameters that are added by a Windows PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
+ Dynamic parameters are cmdlet parameters that are added by a PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
 
 ### CodeSigningCert <System.Management.Automation.SwitchParameter>
  Gets only those certificates with code-signing authority.

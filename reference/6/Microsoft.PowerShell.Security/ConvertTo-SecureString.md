@@ -65,7 +65,7 @@ The first command uses the *AsSecureString* parameter of the Read-Host cmdlet to
 After you enter the command, any characters that you type are converted into a secure string and then saved in the $Secure variable.
 
 The second command displays the contents of the $Secure variable.
-Because the $Secure variable contains a secure string, Windows PowerShell displays only the System.Security.SecureString type.
+Because the $Secure variable contains a secure string, PowerShell displays only the System.Security.SecureString type.
 
 The third command uses the ConvertFrom-SecureString cmdlet to convert the secure string in the $Secure variable into an encrypted standard string.
 It saves the result in the $Encrypted variable.
