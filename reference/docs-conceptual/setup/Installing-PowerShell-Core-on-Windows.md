@@ -153,6 +153,7 @@ To install PowerShell Core from the CoreCLR Artifact:
 4. `./bin/pwsh.exe`
 
 <!-- [download-center]: TODO -->
+
 [releases]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
