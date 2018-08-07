@@ -14,7 +14,7 @@ Prevents a script from running without the required elements.
 ## Long description
 
 The `#Requires` statement prevents a script from running unless the Windows
-PowerShell version, modules, snap-ins, and module and snap-in version
+PowerShell version, modules, snap-ins, module and snap-in version, and edition
 prerequisites are met. If the prerequisites are not met, Windows PowerShell
 does not run the script.
 
@@ -24,6 +24,7 @@ does not run the script.
 #Requires -Version <N>[.<n>]
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
+#Requires -PSEdition <PSEdition-Name>
 #Requires -ShellId <ShellId>
 #Requires -RunAsAdministrator
 ```
@@ -92,28 +93,28 @@ terminating error.
 For each module, type the module name (\<String\>) or a hash table with the
 following keys. The value can be a combination of strings and hash tables.
 
-- `ModuleName` - __[Required]__ Specifies the *ModuleName*.
-- `GUID` - __[Optional]__ Specifies the *GUID* of the Module.
+- `ModuleName` - __[Required]__ Specifies the module name.
+- `GUID` - __[Optional]__ Specifies the GUID of the module.
 - It is also **Required** to specify **one** of the two below keys,
   they cannot be used together.
-  - `ModuleVersion` - __[Required]__ Specify a Minimum acceptable version.
-  - `RequiredVersion` - __[Required]__ Specify an exact, required version.
+  - `ModuleVersion` - __[Required]__ Specifies a minimum acceptable version of the module.
+  - `RequiredVersion` - __[Required]__ Specifies an exact, required version of the module.
 
 > [!NOTE]
-> `RequiredVersion` was added in Windows Powershell 5.0.
+> `RequiredVersion` was added in Windows PowerShell 5.0.
 
-For example,
+For example:
 
-Require that `Hyper-V` (version `1.1.0.0` or greater) is installed
+Require that `Hyper-V` (version `1.1` or greater) is installed.
 
 ```powershell
-#Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1.0.0" }
+#Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1" }
 ```
 
-Requires that `Hyper-V` (**only** version `1.1.0.0`) is installed
+Requires that `Hyper-V` (**only** version `1.1`) is installed.
 
 ```powershell
-#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1.0.0" }
+#Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1" }
 ```
 
 Requires that any version of `PSScheduledJob` and `PSWorkflow`, is installed.
@@ -141,11 +142,22 @@ This will **FAIL**, because "2.0.0" does not exactly match "2.0.0.0"
 #Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="2.0.0" }
 ```
 
+#### -PSEdition \<PSEdition-Name\>
+
+Specifies a PowerShell edition that the script requires.
+Valid values are Core for PowerShell Core and Desktop for Windows PowerShell.
+
+For example:
+
+```powershell
+#Requires -PSEdition Core
+```
+
 #### -ShellId
 
 Specifies the shell that the script requires. Enter the shell ID.
 
-For example,
+For example:
 
 ```powershell
 #Requires -ShellId MyLocalShell
@@ -158,8 +170,9 @@ You can find current ShellId by querying `$ShellId` automatic variable.
 When this switch parameter is added to your requires statement, it specifies
 that the Windows PowerShell session in which you are running the script must
 be started with elevated user rights (Run as Administrator).
+The RunAsAdministrator parameter is introduced in Windows PowerShell 4.0.
 
-For example,
+For example:
 
 ```powershell
 #Requires -RunAsAdministrator

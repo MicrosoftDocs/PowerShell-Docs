@@ -257,7 +257,7 @@ Otherwise, this cmdlet does not generate any output.
 * **Start-Service** can control services only if the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
 * To find the service names and display names of the services on your system, type `Get-Service`. The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.
 * You can start only the services that have a start type of Manual or Automatic. You cannot start the services that have a start type of Disabled. If a **Start-Service** command fails with the message `Cannot start service \<service-name\> on computer`, use Get-WmiObject to find the start type of the service and, if you have to, use the Set-Service cmdlet to change the start type of the service.
-* Some services, such as Performance Logs and Alerts (SysmonLog) stop automatically if they have no work to do. When Windows PowerShell starts a service that stops itself almost immediately, it displays the following message: `Service \<display-name\> start failed.`
+* Some services, such as Performance Logs and Alerts (SysmonLog) stop automatically if they have no work to do. When PowerShell starts a service that stops itself almost immediately, it displays the following message: `Service \<display-name\> start failed.`
 
 ## RELATED LINKS
 

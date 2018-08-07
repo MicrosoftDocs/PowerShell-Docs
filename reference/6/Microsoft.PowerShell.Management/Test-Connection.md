@@ -45,7 +45,7 @@ You can use this cmdlet to determine whether a particular computer can be contac
 
 You can use the parameters of **Test-Connection** to specify both the sending and receiving computers, to run the command as a background job, to set a time-out and number of pings, and to configure the connection and authentication.
 
-Unlike the familiar **ping** command, **Test-Connection** returns a **Win32_PingStatus** object that you can investigate in Windows PowerShell.
+Unlike the familiar **ping** command, **Test-Connection** returns a **Win32_PingStatus** object that you can investigate in PowerShell.
 You can use the *Quiet* parameter to force it to return only a **Boolean** value.
 
 ## EXAMPLES
@@ -97,7 +97,7 @@ PS C:\> $job = Test-Connection -ComputerName (Get-Content "Servers.txt") -AsJob
 PS C:\> if ($job.JobStateInfo.State -ne "Running") {$Results = Receive-Job $job}
 ```
 
-This example shows how to run a **Test-Connection** command as a Windows PowerShell background job.
+This example shows how to run a **Test-Connection** command as a PowerShell background job.
 
 The first command uses the **Test-Connection** cmdlet to ping many computers in an enterprise.
 The value of the *ComputerName* parameter is a Get-Content command that reads a list of computer names from the Servers.txt file.
@@ -131,7 +131,7 @@ If the **Test-Connection** command returns a value of $True, the command uses th
 ### -AsJob
 Indicates that this cmdlet runs as a background job.
 
-To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell by using the Run as administrator option.
+To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of the Windows operating system, you must open PowerShell by using the Run as administrator option.
 For more information, see about_Remote_Requirements.
 
 When you specify the *AsJob* parameter, the command immediately returns an object that represents the background job.
@@ -139,7 +139,7 @@ You can continue to work in the session while the job finishes.
 The job is created on the local computer and the results from remote computers are automatically returned to the local computer.
 To get the job results, use the Receive-Job cmdlet.
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -175,7 +175,7 @@ Type the computer names or type IP addresses in IPv4 or IPv6 format.
 Wildcard characters are not permitted.
 This parameter is required.
 
-This parameter does not rely on Windows PowerShell remoting.
+This parameter does not rely on PowerShell remoting.
 You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
 
 ```yaml

@@ -24,7 +24,7 @@ Find-PackageProvider [[-Name] <String[]>] [-AllVersions] [-Source <String[]>] [-
 ## DESCRIPTION
 The **Find-PackageProvider** cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet.
 These are package providers available for installation with the Install-PackageProvider cmdlet.
-By default, this includes modules available in the Windows PowerShell Gallery with the **PackageManagement** and **Provider** tags.
+By default, this includes modules available in the PowerShell Gallery with the **PackageManagement** and **Provider** tags.
 
 **Find-PackageProvider** also finds matching Package Management providers that are available in the Package Management Azure Blob store.
 Use the bootstrapper provider to find and install them.

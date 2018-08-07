@@ -89,7 +89,7 @@ Then, it uses the pipeline operator (|) to send the resulting files to the Renam
 
 In the Rename-Item command, the value of the NewName parameter is a script block that is executed before the value is submitted to the NewName parameter.
 
-In the script block, the $_ automatic variable represents each file object as it comes to the command through the pipeline.
+In the script block, the `$_` automatic variable represents each file object as it comes to the command through the pipeline.
 The command uses the dot format (.) to get the Name property of each file object.
 The Replace operator replaces the ".txt" file name extension of each file with ".log".
 

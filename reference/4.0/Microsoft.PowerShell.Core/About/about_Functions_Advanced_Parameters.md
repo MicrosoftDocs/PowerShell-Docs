@@ -611,7 +611,7 @@ Param
 )
 ```
 
-### Dynamic Parameters
+## Dynamic Parameters
 
 Dynamic parameters are parameters of a cmdlet, function, or script that are
 available only under certain conditions.
@@ -650,11 +650,11 @@ of the parameter, such as `Mandatory`, `Position`, or `ValueFromPipeline` or its
 parameter set.
 
 The following example shows a sample function with standard parameters named
-`Name` and `Path`, and an optional dynamic parameter named `DP1`.The `DP1`
-parameter is in the `PSet1` parameter set and has a type of `Int32`. The `DP1`
-parameter is available in the Sample function only when the value of the `Path`
-parameter contains "HKLM:", indicating that it is being used in the
-HKEY_LOCAL_MACHINE registry drive.
+**Name** and **Path**, and an optional dynamic parameter named **DP1**.
+The **DP1** parameter is in the PSet1 parameter set and has a type of `Int32`.
+The **DP1** parameter is available in the `Get-Sample` function
+only when the value of the **Path** parameter starts with "HKLM:",
+indicating that it is being used in the HKEY_LOCAL_MACHINE registry drive.
 
 ```powershell
 function Get-Sample {
@@ -663,23 +663,23 @@ function Get-Sample {
 
   DynamicParam
   {
-    if ($path -match ".HKLM.:")
+    if ($Path.StartsWith("HKLM:"))
     {
       $attributes = New-Object -Type `
         System.Management.Automation.ParameterAttribute
-      $attributes.ParameterSetName = "__AllParameterSets"
+      $attributes.ParameterSetName = "PSet1"
       $attributes.Mandatory = $false
       $attributeCollection = New-Object `
         -Type System.Collections.ObjectModel.Collection[System.Attribute]
       $attributeCollection.Add($attributes)
 
       $dynParam1 = New-Object -Type `
-        System.Management.Automation.RuntimeDefinedParameter("dp1", [Int32],
+        System.Management.Automation.RuntimeDefinedParameter("DP1", [Int32],
           $attributeCollection)
 
       $paramDictionary = New-Object `
         -Type System.Management.Automation.RuntimeDefinedParameterDictionary
-      $paramDictionary.Add("dp1", $dynParam1)
+      $paramDictionary.Add("DP1", $dynParam1)
       return $paramDictionary
     }
   }
@@ -690,7 +690,7 @@ For more information, see "RuntimeDefinedParameter Class" in the MSDN
 (Microsoft Developer Network) library at
 [RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter)
 
-### Switch Parameters
+## Switch Parameters
 
 Switch parameters are parameters with no parameter value. They are effective
 only when they are used and have only one effect.

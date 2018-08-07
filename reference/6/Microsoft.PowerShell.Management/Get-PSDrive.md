@@ -32,15 +32,15 @@ You can get a particular drive or all drives in the session.
 This cmdlet gets the following types of drives:
 
 - Windows logical drives on the computer, including drives mapped to network shares.
-- Drives exposed by Windows PowerShell providers (such as the Certificate:, Function:, and Alias: drives) and the HKLM: and HKCU: drives that are exposed by the Windows PowerShell Registry provider.
+- Drives exposed by PowerShell providers (such as the Certificate:, Function:, and Alias: drives) and the HKLM: and HKCU: drives that are exposed by the PowerShell Registry provider.
 - Session-specified temporary drives and persistent mapped network drives that you create by using the New-PSDrive cmdlet.
 
 Beginning in Windows PowerShell 3.0, the *Persist* parameter of the **New-PSDrive** cmdlet can create mapped network drives that are saved on the local computer and are available in other sessions.
 For more information, see New-PSDrive.
 
-Also, beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive.
-You do not need to restart Windows PowerShell.
-Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the PSDrive that represents the removed drive.
+Also, beginning in Windows PowerShell 3.0, when an external drive is connected to the computer, PowerShell automatically adds a PSDrive to the file system that represents the new drive.
+You do not need to restart PowerShell.
+Similarly, when an external drive is disconnected from the computer, PowerShell automatically deletes the PSDrive that represents the removed drive.
 
 ## EXAMPLES
 
@@ -63,7 +63,7 @@ Variable                               Variable
 
 This command gets the drives in the current session.
 
-The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed by the Windows PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:).
+The output shows the hard drive (C:), CD-ROM drive (D:), and the drives exposed by the PowerShell providers (Alias:, Cert:, Env:, Function:, HKCU:, HKLM:, and Variable:).
 
 ### Example 2: Get a drive on the computer
 ```
@@ -77,7 +77,7 @@ D                1211.06     123642.32 FileSystem    D:\
 This command gets the D: drive on the computer.
 Note that the drive letter in the command is not followed by a colon.
 
-### Example 3: Get all the drives that are supported by the Windows PowerShell file system provider
+### Example 3: Get all the drives that are supported by the PowerShell file system provider
 ```
 PS C:\> Get-PSDrive -PSProvider FileSystem
 Name           Used (GB)     Free (GB) Provider      Root
@@ -88,10 +88,10 @@ D                1211.06     123642.32 FileSystem    D:\
 G                 202.06        710.91 FileSystem    \\Music\GratefulDead
 ```
 
-This command gets all of the drives that are supported by the Windows PowerShell FileSystem provider.
+This command gets all of the drives that are supported by the PowerShell FileSystem provider.
 This includes fixed drives, logical partitions, mapped network drives, and temporary drives that you create by using the New-PSDrive cmdlet.
 
-### Example 4: Check to see if a drive is in use as a Windows PowerShell drive name
+### Example 4: Check to see if a drive is in use as a PowerShell drive name
 ```powershell
 if (Get-PSDrive X -ErrorAction SilentlyContinue) {
 	Write-Host 'The X: drive is already in use.'
@@ -100,7 +100,7 @@ if (Get-PSDrive X -ErrorAction SilentlyContinue) {
 }
 ```
 
-This command checks to see whether the X drive is already in use as a Windows PowerShell drive name.
+This command checks to see whether the X drive is already in use as a PowerShell drive name.
 If it is not, the command uses the `New-PSDrive` cmdlet to create a temporary drive that is mapped to the HKLM:\SOFTWARE registry key.
 
 ### Example 5: Compare the types of files system drives
@@ -147,7 +147,7 @@ G:        \\Music\GratefulDead  Connected       OK
 ```
 
 This example compares the types of file system drives that are displayed by **Get-PSDrive** to those displayed by using other methods.
-This example demonstrates different ways to display drives in Windows PowerShell, and it shows that session-specific drives created by using the New-PSDrive cmdlet are accessible only in Windows PowerShell.
+This example demonstrates different ways to display drives in PowerShell, and it shows that session-specific drives created by using the New-PSDrive cmdlet are accessible only in PowerShell.
 
 The first command uses **Get-PSDrive** to get all of the file system drives in the session.
 This includes the fixed drives (C: and D:), a mapped network drive (G:) that was created by using the *Persist* parameter of **New-PSDrive**, and a PowerShell drive (T:) that was created by using **New-PSDrive** without the *Persist* parameter.
@@ -173,7 +173,7 @@ Specifies the name of the drive.
 The value of *LiteralName* is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the name includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -204,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSProvider
-Specifies, as a string array, the Windows PowerShell provider.
+Specifies, as a string array, the PowerShell provider.
 This cmdlet gets only the drives supported by this provider.
 Type the name of a provider, such as FileSystem, Registry, or Certificate.
 

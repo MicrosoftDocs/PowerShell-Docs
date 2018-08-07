@@ -11,7 +11,7 @@ title:  Remove-PSDrive
 # Remove-PSDrive
 
 ## SYNOPSIS
-Deletes temporary Windows PowerShell drives and disconnects mapped network drives.
+Deletes temporary PowerShell drives and disconnects mapped network drives.
 
 ## SYNTAX
 
@@ -28,15 +28,15 @@ Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <Strin
 ```
 
 ## DESCRIPTION
-The **Remove-PSDrive** cmdlet deletes temporary Windows PowerShell drives that were created by using the New-PSDrive cmdlet.
+The **Remove-PSDrive** cmdlet deletes temporary PowerShell drives that were created by using the New-PSDrive cmdlet.
 
 Starting in Windows PowerShell 3.0, **Remove-PSDrive** also disconnects mapped network drives, including, but not limited to, drives created by using the *Persist* parameter of **New-PSDrive**.
 
 **Remove-PSDrive** cannot delete Windows physical or logical drives.
 
 Starting in Windows PowerShell 3.0, when an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive.
-You do not have to restart Windows PowerShell.
-Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the PSDrive that represents the removed drive.
+You do not have to restart PowerShell.
+Similarly, when an external drive is disconnected from the computer, PowerShell automatically deletes the PSDrive that represents the removed drive.
 
 ## EXAMPLES
 
@@ -59,7 +59,7 @@ The command uses the Get-PSDrive cmdlet to get the drives and **Remove-PSDrive**
 ## PARAMETERS
 
 ### -Force
-Removes the current Windows PowerShell drive.
+Removes the current PowerShell drive.
 
 ```yaml
 Type: SwitchParameter
@@ -79,7 +79,7 @@ Specifies the name of the drive.
 The value of *LiteralName* is used exactly as typed.
 No characters are interpreted as wildcard characters.
 If the name includes escape characters, enclose it in single quotation marks.
-Single quotation marks instruct Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks instruct PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 
 ### -PSProvider
 Specifies an array of **PSProvider** objects.
-This cmdlet removes and disconnects all of the drives associated with the specified Windows PowerShell provider.
+This cmdlet removes and disconnects all of the drives associated with the specified PowerShell provider.
 
 ```yaml
 Type: String[]
@@ -204,7 +204,7 @@ You can pipe a drive object, such as one from the Get-PSDrive cmdlet, to the thi
 This cmdlet does not return any output.
 
 ## NOTES
-* **Remove-PSDrive** is designed to work with the data exposed by any Windows PowerShell provider. To list the providers in your session, use the Get-PSProvider cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+* **Remove-PSDrive** is designed to work with the data exposed by any PowerShell provider. To list the providers in your session, use the Get-PSProvider cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 *
 

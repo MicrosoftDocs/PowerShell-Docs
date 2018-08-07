@@ -1,11 +1,17 @@
+---
+title: Installing PowerShell Core on Linux
+description: Information about installing PowerShell Core on various Linux distributions
+ms.date: 08/06/2018
+---
+
 # Installing PowerShell Core on Linux
 
-Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9],
+Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10][u18], [Debian 8][deb8], [Debian 9][deb9],
 [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27][fedora],
 [Fedora 28][fedora], and [Arch Linux][arch].
 
 For Linux distributions that are not officially supported,
-you can try using the [PowerShell AppImage][lai].
+you can try using the [PowerShell Snap Package][snap].
 You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar],
 but you would need to set up the necessary dependencies based on the OS in separate steps.
 
@@ -14,7 +20,7 @@ Once the package is installed, run `pwsh` from a terminal.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1710
+[u18]: #ubuntu-1810
 [u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
@@ -23,7 +29,7 @@ Once the package is installed, run `pwsh` from a terminal.
 [opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
-[lai]: #linux-appimage
+[snap]: #snap-package
 [tar]: #binary-archives
 
 ## Installing Preview Releases
@@ -144,60 +150,6 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## Ubuntu 17.10
-
-> [!NOTE]
-> Support for Ubuntu 17.04 was added after `6.1.0-preview.2`
-
-### Installation via Package Repository - Ubuntu 17.10
-
-PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).
-This is the preferred method.
-
-```sh
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-After registering the Microsoft repository once as superuser,
-from then on, you just need to use `sudo apt-get upgrade powershell` to update it.
-
-### Installation via Direct Download - Ubuntu 17.10
-
-Download the Debian package
-`powershell_6.0.2-1.ubuntu.17.10_amd64.deb`
-from the [releases][] page onto the Ubuntu machine.
-
-Then execute the following in the terminal:
-
-```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> The `dpkg -i` command fails with unmet dependencies.
-> The next command, `apt-get install -f` resolves these issues
-> then finishes configuring the PowerShell package.
-
-### Uninstallation - Ubuntu 17.10
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## Ubuntu 18.04
 
 > [!NOTE]
@@ -251,6 +203,14 @@ sudo apt-get install -f
 ```sh
 sudo apt-get remove powershell
 ```
+
+## Ubuntu 18.10
+
+> [!NOTE]
+> Support for Ubuntu 18.10 was added after `6.1.0-preview.3`.
+> As 18.10 is a daily build, it is only community supported.
+
+Installing on 18.10 is supported via `snapd`. See [Snap Package][snap] for full instructions;
 
 ## Debian 8
 
@@ -588,6 +548,33 @@ For more information on installing packages from the AUR, see the [Arch Linux wi
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
+
+## Snap Package
+
+### Getting snapd
+
+`snapd` is required to run snaps.  Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.
+
+### Installation via Snap
+
+PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).
+This is the preferred method.
+
+```sh
+# Install PowerShell
+sudo snap install powershell-preview --classic
+
+# Start PowerShell
+pwsh-preview
+```
+
+After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell-preview`.
+
+### Uninstallation
+
+```sh
+sudo snap remove powershell-preview
+```
 
 ## Linux AppImage
 

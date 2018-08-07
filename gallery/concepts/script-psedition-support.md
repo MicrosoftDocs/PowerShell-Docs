@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/12/2017
 contributor:  manikb
 keywords:  gallery,powershell,cmdlet,psget
@@ -45,7 +45,7 @@ Get-Content C:\script.ps1
 Get-Process -Name PowerShell
 
 C:\script.ps1
-C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell Core edition. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
+C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
 At line:1 char:1
 + C:\script.ps1
 + ~~~~~~~~~~~~~
@@ -54,15 +54,15 @@ At line:1 char:1
 ```
 
 PowerShell Gallery users can find the list of scripts supported on a specific PowerShell Edition.
-Scripts without PSEdition_Desktop and PSEditon_Core are considered to work fine on PowerShell
-Desktop editions.
+Scripts without PSEdition_Desktop and PSEdition_Core tags are considered to work fine on PowerShell
+Desktop edition.
 
 ```powershell
 # Find scripts supported on PowerShell Desktop edition
-Find-Script -Tag PSEditon_Desktop
+Find-Script -Tag PSEdition_Desktop
 
-# Find scripts supported on PowerShell Core editions
-Find-Script -Tag PSEditon_Core
+# Find scripts supported on PowerShell Core edition
+Find-Script -Tag PSEdition_Core
 ```
 
 ## More details

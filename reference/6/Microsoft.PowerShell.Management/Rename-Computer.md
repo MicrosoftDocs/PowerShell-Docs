@@ -73,7 +73,7 @@ The default is the local computer.
 Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer.
 To specify the local computer, type the computer name, a dot (.), or localhost.
 
-This parameter does not rely on Windows PowerShell remoting.
+This parameter does not rely on PowerShell remoting.
 You can use the *ComputerName* parameter of **Rename-Computer** even if your computer is not configured to run remote commands.
 
 ```yaml
