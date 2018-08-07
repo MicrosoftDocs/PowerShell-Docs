@@ -138,7 +138,7 @@
         },
         {
             "path_to_root": "_dependentPackages/CommonPlugins",
-            "target_framework": "net45",
+            "target_framework": "net461",
             "version": "latest",
             "id": "Microsoft.OpenPublishing.CommonPlugins",
             "nuget_feed": "https://www.myget.org/F/op/api/v2"
