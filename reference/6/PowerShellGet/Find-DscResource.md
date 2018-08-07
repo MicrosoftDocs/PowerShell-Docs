@@ -175,7 +175,7 @@ This parameter supports wildcard characters.
 If you do not specify wildcard characters, only resources that exactly match the specified names are returned.
 If no matches are found, and you have not used any wildcard characters, the command returns an error.
 If you use wildcard characters, but do not find matching results, no error is returned.
-This follows standard wildcard character matching behavior for Windows PowerShell.
+This follows standard wildcard character matching behavior for PowerShell.
 
 ```yaml
 Type: String[]
