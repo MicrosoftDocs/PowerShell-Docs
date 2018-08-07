@@ -11,7 +11,7 @@ title:  Convert-Path
 # Convert-Path
 
 ## SYNOPSIS
-Converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
+Converts a path from a PowerShell path to a PowerShell provider path.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Convert-Path -LiteralPath <String[]> [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Convert-Path** cmdlet converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
+The **Convert-Path** cmdlet converts a path from a PowerShell path to a PowerShell provider path.
 
 ## EXAMPLES
 
@@ -42,7 +42,7 @@ This command converts the current working directory, which is represented by a d
 PS C:\> Convert-Path HKLM:\Software\Microsoft
 ```
 
-This command converts the Windows PowerShell provider path to a standard registry path.
+This command converts the PowerShell provider path to a standard registry path.
 
 ### Example 3: Convert a path to a string
 ```
@@ -59,7 +59,7 @@ Specifies, as a string array, the path to be converted.
 The value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the Windows PowerShell path to be converted.
+Specifies the PowerShell path to be converted.
 
 ```yaml
 Type: String[]
@@ -121,7 +121,7 @@ You can pipe a path, but not a literal path, to this cmdlet.
 This cmdlet returns a string that contains the converted path.
 
 ## NOTES
-* The cmdlets that contain the Path noun manipulate path names and return the names in a concise format that all Windows PowerShell providers can interpret. They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format. Use them like you would use Dirname, Normpath, Realpath, Join, or other path manipulators.
+* The cmdlets that contain the Path noun manipulate path names and return the names in a concise format that all PowerShell providers can interpret. They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format. Use them like you would use Dirname, Normpath, Realpath, Join, or other path manipulators.
 
   You can use the path cmdlets with several providers, including the FileSystem, Registry, and Certificate providers.
 

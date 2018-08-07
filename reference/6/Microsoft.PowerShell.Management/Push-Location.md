@@ -47,7 +47,7 @@ PS C:\> Push-Location -Path "HKLM:\Software\Policies" -StackName RegFunction
 ```
 
 This command pushes the current location onto the RegFunction stack and changes the current location to the HKLM:\Software\Policies location.
-You can use the **Location** cmdlets in any Windows PowerShell drive (PSDrive).
+You can use the **Location** cmdlets in any PowerShell drive (PSDrive).
 
 ### Example 3: Push the current location onto the default stack
 ```
@@ -86,7 +86,7 @@ Specifies the path of the new location.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -140,7 +140,7 @@ Enter a location stack name.
 If the stack does not exist, **Push-Location** creates it.
 
 Without this parameter, **Push-Location** adds the location to the current location stack.
-By default, the current location stack is the unnamed default location stack that Windows PowerShell creates.
+By default, the current location stack is the unnamed default location stack that PowerShell creates.
 To make a location stack the current location stack, use the *StackName* parameter of the Set-Location cmdlet.
 For more information about location stacks, see the Notes.
 
@@ -192,9 +192,9 @@ This cmdlet generates a **System.Management.Automation.PathInfo** object that re
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
-* A stack is a last-in, first-out list in which only the most recently added item can be accessed. You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order. Windows PowerShell lets you store provider locations in location stacks.
-* Windows PowerShell creates an unnamed default location stack and you can create multiple named location stacks. If you do not specify a stack name, Windows PowerShell uses the current location stack. By default, the unnamed default location is the current location stack, but you can use **Set-Location** to change the current location stack.
-* To manage location stacks, use the Windows PowerShell **Location** cmdlets, as follows:
+* A stack is a last-in, first-out list in which only the most recently added item can be accessed. You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order. PowerShell lets you store provider locations in location stacks.
+* PowerShell creates an unnamed default location stack and you can create multiple named location stacks. If you do not specify a stack name, PowerShell uses the current location stack. By default, the unnamed default location is the current location stack, but you can use **Set-Location** to change the current location stack.
+* To manage location stacks, use the PowerShell **Location** cmdlets, as follows:
 
 - To add a location to a location stack, use the **Push-Location** cmdlet.
 - To get a location from a location stack, use the **Pop-Location** cmdlet.

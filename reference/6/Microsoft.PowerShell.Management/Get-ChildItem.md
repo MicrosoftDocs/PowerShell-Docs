@@ -37,7 +37,7 @@ The `Get-ChildItem` cmdlet gets the items in one or more specified locations.
 If the item is a container, it gets the items inside the container, known as child items.
 You can use the `-Recurse` parameter to get items in all child containers and use the `-Depth` parameter to limit the number of levels to recurse.
 
-A location can be a file system location, such as a directory, or a location exposed by a different Windows PowerShell provider, such as a registry hive or a certificate store.
+A location can be a file system location, such as a directory, or a location exposed by a different PowerShell provider, such as a registry hive or a certificate store.
 
 ## Examples
 
@@ -61,7 +61,7 @@ Get-ChildItem -Path *.txt -Recurse -Force
 ```
 
 This command gets all of the .txt files in the current directory and its subdirectories.
-The `-Recurse` parameter directs Windows PowerShell to get objects recursively, and it indicates that the subject of the command is the specified directory and its contents.
+The `-Recurse` parameter directs PowerShell to get objects recursively, and it indicates that the subject of the command is the specified directory and its contents.
 The `-Force` parameter adds hidden files to the display.
 
 To use the `-Recurse` parameter on Windows PowerShell 2.0 and earlier versions of Windows PowerShell, the value use the `-Path` parameter must be a container.
@@ -101,7 +101,7 @@ Import-Module Microsoft.PowerShell.Security
 Get-ChildItem -Path Cert:\* -Recurse -CodeSigningCert
 ```
 
-This command gets all of the certificates in the Windows PowerShell Cert: drive that have code-signing authority.
+This command gets all of the certificates in the PowerShell Cert: drive that have code-signing authority.
 
 The first command imports the Microsoft.PowerShell.Security module into the session.
 This module includes the Certificate provider that creates the Cert: drive.
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 
 ### -Depth
 
-This parameter, added in Powershell 5.0 enables you to control the depth of recursion.
+This parameter, added in Windows Powershell 5.0 enables you to control the depth of recursion.
 You use both the `-Recurse` and the `-Depth` parameter to limit the recursion.
 
 ```yaml
@@ -275,7 +275,7 @@ Accept wildcard characters: False
 Specifies a filter in the provider's format or language.
 The value of this parameter qualifies the `-Path` parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -373,7 +373,7 @@ Specifies a path to one or more locations.
 Unlike the `-Path` parameter, the value of the `-LiteralPath` parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
