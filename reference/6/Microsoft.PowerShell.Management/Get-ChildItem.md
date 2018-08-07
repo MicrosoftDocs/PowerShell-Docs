@@ -292,7 +292,7 @@ Accept wildcard characters: True
 ### -FollowSymlink
 
 By default, the `Get-ChildItem` cmdlet displays symbolic links to directories found during recursion, but does not recurse into them.
-Use the **FolowSymlink** switch to search the directories that those symbolic links target.
+Use the **FollowSymlink** switch to search the directories that those symbolic links target.
 The **FollowSymlink** is a dynamic parameter and it is supported only in the FileSystem provider.
 
 ```yaml
