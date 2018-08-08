@@ -316,7 +316,7 @@ For more information about this parameter, see the examples.
 
 To get events and event logs from remote computers, the firewall port for the event log service must be configured to allow remote access.
 
-This cmdlet does not rely on Windows PowerShell remoting.
+This cmdlet does not rely on PowerShell remoting.
 You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
 
 ```yaml
@@ -570,7 +570,7 @@ Specifies, as a string array, the event log providers from which this cmdlet get
 Enter the provider names in a comma-separated list, or use wildcard characters to create provider name patterns.
 
 An event log provider is a program or service that writes events to the event log.
-It is not a Windows PowerShell provider.
+It is not a PowerShell provider.
 
 ```yaml
 Type: String[]
@@ -601,5 +601,5 @@ With all other parameters, **Get-WinEvent** returns **System.Diagnostics.Eventin
 
 ## NOTES
 * **Get-WinEvent** runs on Windows Vista, Windows Server 2008 R2, and later versions of Windows.
-* This cmdlet is designed to replace the Get-EventLog cmdlet on computers running Windows Vista and later versions of Windows. **Get-EventLog** gets events only in classic event logs. Get-EventLog is retained in Windows PowerShell for backward compatibility.
+* This cmdlet is designed to replace the Get-EventLog cmdlet on computers running Windows Vista and later versions of Windows. **Get-EventLog** gets events only in classic event logs. Get-EventLog is retained in PowerShell for backward compatibility.
 * The **Get-WinEvent** and **Get-EventLog** cmdlets are not supported in Windows Preinstallation Environment (Windows PE).

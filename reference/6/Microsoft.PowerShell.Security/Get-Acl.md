@@ -61,14 +61,14 @@ This command gets the security descriptor of the C:Windows directory.
 Get-Acl C:\Windows\k*.log | Format-List -Property PSPath, Sddl
 ```
 
-This command gets the Windows PowerShell path and SDDL for all of the .log files in the C:\Windows
+This command gets the PowerShell path and SDDL for all of the .log files in the C:\Windows
 directory whose names begin with "k."
 
 The command uses the **Get-Acl** cmdlet to get objects representing the security descriptors of each log file.
 It uses a pipeline operator (|) to send the results to the Format-List cmdlet.
 The command uses the **Property** parameter of **Format-List** to display only the **PsPath** and **SDDL** properties of each security descriptor object.
 
-Lists are often used in Windows PowerShell, because long values appear truncated in tables.
+Lists are often used in PowerShell, because long values appear truncated in tables.
 
 The **SDDL** values are valuable to system administrators, because they are simple text strings
 that contain all of the information in the security descriptor. As such, they are easy to pass and
@@ -148,7 +148,7 @@ Accept wildcard characters: True
 Specifies a filter in the provider's format or language. The value of this parameter qualifies the
 **Path** parameter. The syntax of the filter, including the use of wildcards, depends on the
 provider. Filters are more efficient than other parameters, because the provider applies them when
-gettting the objects, rather than having Windows PowerShell filter the objects after they are
+gettting the objects, rather than having PowerShell filter the objects after they are
 retrieved.
 
 ```yaml

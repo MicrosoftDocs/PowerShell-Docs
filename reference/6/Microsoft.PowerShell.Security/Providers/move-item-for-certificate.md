@@ -18,7 +18,7 @@ Move-Item [-Path] <string[]> [[-Destination] <string>] [-Confirm] [-WhatIf] [<Co
 ```
 
 ## Description
- In the Cert: drive, [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md) moves certificates from one certificate store to another certificate store. The Windows PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.
+ In the Cert: drive, [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md) moves certificates from one certificate store to another certificate store. The PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to PowerShell.
 
  Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer (SSL) certificates for web hosting by enabling you to use the [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md) cmdlet to move certificates between certificate stores.  You cannot use this feature to move a certificate to a different certificate store location, such as a move from LocalMachine to CurrentUser, or to move certificate stores. Also, [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md) does not move private keys.
 
@@ -97,7 +97,7 @@ Description
 -----------
 This command uses the Move-Item cmdlet to move a certificate from the My store to the WebHosting store.
 
-Because the command uses absolute paths, you can run it from any Windows PowerShell drive. You can also run it from a Cert: drive path and use relative paths.
+Because the command uses absolute paths, you can run it from any PowerShell drive. You can also run it from a Cert: drive path and use relative paths.
 
 ```
 

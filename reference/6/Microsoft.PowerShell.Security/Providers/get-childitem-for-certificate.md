@@ -18,7 +18,7 @@ Get-ChildItem [-CodeSigningCert] [-DnsName <string>] [-EKU <string>] [-ExpiringI
 ```
 
 ## Description
- In the Cert: drive, the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet gets certificate store locations, certificate stores, and certificates. The Windows PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.
+ In the Cert: drive, the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet gets certificate store locations, certificate stores, and certificates. The PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to PowerShell.
 
  Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer (SSL) certificates for web hosting. New filtering parameters, DnsName, EKU, ,ExpiringInDays, and SSLServerAuthentication have been added to [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) to enable you to search for certificates based on their DNS names and expiration dates, and distinguish client and server authentication certificates by the value of their Enhanced Key Usage (EKU) properties. The new dynamic parameters work in Windows PowerShell 3.0 and newer releases of Windows PowerShell, running on Windows 8, Windows Server 2012 and newer releases of the Windows operating system.
 
@@ -263,7 +263,7 @@ C:\PS>Get-ChildItem -Path cert: -CodeSigningCert -Recurse
 
 Description
 -----------
-This command uses the CodeSigningCert and Recurse parameters of the Get-ChildItem cmdlet to get all of the certificates on the computer that have code-signing authority. Because the full path is specified, this command can be run in any Windows PowerShell drive.
+This command uses the CodeSigningCert and Recurse parameters of the Get-ChildItem cmdlet to get all of the certificates on the computer that have code-signing authority. Because the full path is specified, this command can be run in any PowerShell drive.
 
 ```
 

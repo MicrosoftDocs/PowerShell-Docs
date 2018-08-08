@@ -75,7 +75,7 @@ Compress-Archive -Path C:\Reference\* -CompressionLevel Fastest -DestinationPath
 ```
 
 This command creates a new archive file, Draft.zip, in the C:\Archives folder.
-Note that though the file name extension .zip was not added to the value of the **DestinationPath** parameter, Windows PowerShell appends this to the specified archive file name automatically.
+Note that though the file name extension .zip was not added to the value of the **DestinationPath** parameter, PowerShell appends this to the specified archive file name automatically.
 The new archive file contains every file in the C:\Reference folder, because a wildcard character was used in place of specific file names in the **Path** parameter.
 The specified compression level is Fastest, which might result in a larger output file, but compresses a large number of files faster.
 
@@ -93,7 +93,7 @@ Compress-Archive -Path C:\Reference -DestinationPath C:\Archives\Draft
 ```
 
 This command creates an archive from an entire folder, C:\Reference.
-Note that though the file name extension .zip was not added to the value of the **DestinationPath** parameter, Windows PowerShell appends this to the specified archive file name automatically.
+Note that though the file name extension .zip was not added to the value of the **DestinationPath** parameter, PowerShell appends this to the specified archive file name automatically.
 
 ## PARAMETERS
 
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 Specifies the path or paths to the files that you want to add to the archive zipped file.
 Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
 No characters are interpreted as wildcards.
-If the path includes escape characters, enclose each escape character in single quotation marks, to instruct Windows PowerShell not to interpret any characters as escape sequences.
+If the path includes escape characters, enclose each escape character in single quotation marks, to instruct PowerShell not to interpret any characters as escape sequences.
 To specify multiple paths, and include files in multiple locations in your output zipped file, use commas to separate the paths.
 
 ```yaml
