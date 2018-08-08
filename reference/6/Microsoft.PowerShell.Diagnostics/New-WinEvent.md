@@ -24,7 +24,7 @@ New-WinEvent [-ProviderName] <String> [-Id] <Int32> [-Version <Byte>] [[-Payload
 ## DESCRIPTION
 
 The **New-WinEvent** cmdlet creates an Event Tracing for Windows (ETW) event for an event provider.
-You can use this cmdlet to add events to ETW channels from Windows PowerShell.
+You can use this cmdlet to add events to ETW channels from PowerShell.
 
 ## EXAMPLES
 
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 Specifies the message for the event. When the event is written to an event log, the payload is
 stored in the **Message** property of the event object.
 
-When the specified payload does not match the payload in the event definition, Windows PowerShell generates a warning, but the command still succeeds.
+When the specified payload does not match the payload in the event definition, PowerShell generates a warning, but the command still succeeds.
 
 ```yaml
 Type: Object[]
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 
 ### -Version
 
-Specifies the version number of the event. Type the event number. Windows PowerShell converts the
+Specifies the version number of the event. Type the event number. PowerShell converts the
 number to the required Byte type.
 
 This parameter lets you specify an event when different versions of the same event are defined.
