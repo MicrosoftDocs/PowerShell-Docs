@@ -40,7 +40,6 @@ You create a script module by saving a valid PowerShell script to a .psm1 file, 
    ```
 
 2. If you wish to control user access to certain functions or properties, call [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) at the end of your script.
-2. If you wish to control user access to certain functions or properties, call [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) at the end of your script.
 
    The example code at the bottom of the page has only one function, which by default would be exposed. However, it is recommended that you explicitly call out which functions you wish to expose, as described in the following code:
 
