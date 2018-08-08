@@ -1,3 +1,9 @@
+---
+title: Installing PowerShell Core on Linux
+description: Information about installing PowerShell Core on various Linux distributions
+ms.date: 08/06/2018
+---
+
 # Installing PowerShell Core on Linux
 
 Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10][u18], [Debian 8][deb8], [Debian 9][deb9],

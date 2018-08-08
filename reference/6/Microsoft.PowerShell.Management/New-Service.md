@@ -228,7 +228,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet returns an object that represents the new service.
 
 ## NOTES
-* To run this cmdlet on Windows Vista and later versions of the Windows operating system, start Windows PowerShell by using the Run as administrator option.
+* To run this cmdlet on Windows Vista and later versions of the Windows operating system, start PowerShell by using the Run as administrator option.
 
 ## RELATED LINKS
 

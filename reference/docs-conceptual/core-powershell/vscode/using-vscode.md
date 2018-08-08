@@ -1,3 +1,9 @@
+---
+title: Using Visual Studio Code for PowerShell Development
+description: Using Visual Studio Code for PowerShell Development
+ms.date: 08/06/2018
+---
+
 # Using Visual Studio Code for PowerShell Development
 
 In addition to the [PowerShell ISE][ise],

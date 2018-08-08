@@ -12,7 +12,7 @@ Module Name:  Microsoft.PowerShell.Management
 
 # Microsoft.PowerShell.Management Module
 ## Description
-This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Management module. The Management module contains cmdlets that help you manage Windows in Windows PowerShell.
+This section contains the help topics for the cmdlets that are installed with PowerShell Microsoft.PowerShell.Management module. The Management module contains cmdlets that help you manage Windows in PowerShell.
 
 ## Microsoft.PowerShell.Management Cmdlets
 ### [Add-Content](Add-Content.md)
@@ -32,7 +32,7 @@ Clears the value of a property but does not delete the property.
 
 
 ### [Convert-Path](Convert-Path.md)
-Converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
+Converts a path from a PowerShell path to a PowerShell provider path.
 
 
 ### [Copy-Item](Copy-Item.md)
@@ -84,7 +84,7 @@ Gets drives in the current session.
 
 
 ### [Get-PSProvider](Get-PSProvider.md)
-Gets information about the specified Windows PowerShell provider.
+Gets information about the specified PowerShell provider.
 
 
 ### [Get-Service](Get-Service.md)
@@ -144,7 +144,7 @@ Deletes the property and its value from an item.
 
 
 ### [Remove-PSDrive](Remove-PSDrive.md)
-Deletes temporary Windows PowerShell drives and disconnects mapped network drives.
+Deletes temporary PowerShell drives and disconnects mapped network drives.
 
 
 ### [Rename-Computer](Rename-Computer.md)
@@ -152,7 +152,7 @@ Renames a computer.
 
 
 ### [Rename-Item](Rename-Item.md)
-Renames an item in a Windows PowerShell provider namespace.
+Renames an item in a PowerShell provider namespace.
 
 
 ### [Rename-ItemProperty](Rename-ItemProperty.md)

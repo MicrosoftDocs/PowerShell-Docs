@@ -317,7 +317,8 @@ Get-Command | where {$_.OutputType}
 ```powershell
 # Use Where-Object to get objects that are containers.
 # This gets objects that have the **PSIsContainer** property with a value of $True and excludes all others.
-Get-ChildItem | where PS>  Get-ChildItem | where {$_.PS>  Get-ChildItem | where {!$_.PS>  Get-ChildItem | where PSIsContainer -eq $False
+Get-ChildItem | where PSIsContainer
+Get-ChildItem | where {$_.PSIsContainer}
 ```
 
 ```powershell

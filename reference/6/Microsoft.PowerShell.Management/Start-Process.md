@@ -71,12 +71,12 @@ PS C:\> Start-Process -FilePath "notepad" -Wait -WindowStyle Maximized
 This command starts the Notepad process.
 It maximizes the window and retains the window until the process completes.
 
-### Example 5: Start Windows Powershell as an administrator
+### Example 5: Start PowerShell as an administrator
 ```
 PS C:\> Start-Process -FilePath "powershell" -Verb runAs
 ```
 
-This command starts Windows PowerShell by using the Run as administrator option.
+This command starts PowerShell by using the Run as administrator option.
 
 ### Example 6: Using different verbs to start a process
 ```
@@ -111,7 +111,7 @@ The Open verb starts the process in a new console window.
 
 The fourth command starts a PowerShell process with the RunAs verb.
 The RunAs verb starts the process with permissions of a member of the Administrators group on the computer.
-This is the same as starting Windows PowerShell by using the Run as administrator option.
+This is the same as starting PowerShell by using the Run as administrator option.
 
 ### Example 7: Specifying arguments to the process
 ```
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ### -LoadUserProfile
 Indicates that this cmdlet loads the Windows user profile stored in the **HKEY_USERS** registry key for the current user.
 
-This parameter does not affect the Windows PowerShell profiles.
+This parameter does not affect the PowerShell profiles.
 For more information, see about_Profiles.
 
 ```yaml
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 
 ### -NoNewWindow
 Start the new process in the current console window.
-By default Windows PowerShell opens a new window.
+By default PowerShell opens a new window.
 
 You cannot use the *NoNewWindow* and *WindowStyle* parameters in the same command.
 
