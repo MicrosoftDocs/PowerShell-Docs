@@ -1,42 +1,57 @@
 
+---
+title: PowerShell Remoting Over SSH
+description: Remoting in PowerShell Core using SSH
+ms.date: 08/06/2018
+---
+
 # PowerShell Remoting Over SSH
 
 ## Overview
 
-PowerShell remoting normally uses WinRM for connection negotiation and data transport.
-SSH was chosen for this remoting implementation since it is now available for both Linux and Windows platforms and allows true multiplatform PowerShell remoting.
-However, WinRM also provides a robust hosting model for PowerShell remote sessions which this implementation does not yet do.
-And this means that PowerShell remote endpoint configuration and JEA (Just Enough Administration) is not yet supported in this implementation.
+PowerShell remoting normally uses WinRM for connection negotiation and data transport. SSH was
+chosen for this remoting implementation since it is now available for both Linux and Windows
+platforms and allows true multiplatform PowerShell remoting. However, WinRM also provides a robust
+hosting model for PowerShell remote sessions which this implementation does not yet do. And this
+means that PowerShell remote endpoint configuration and JEA (Just Enough Administration) is not yet
+supported in this implementation.
 
-PowerShell SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines.
-This is done by creating a PowerShell hosting process on the target machine as an SSH subsystem.
-Eventually this will be changed to a more general hosting model similar to how WinRM works in order to support endpoint configuration and JEA.
+PowerShell SSH remoting lets you do basic PowerShell session remoting between Windows and Linux
+machines. This is done by creating a PowerShell hosting process on the target machine as an SSH
+subsystem. Eventually this will be changed to a more general hosting model similar to how WinRM
+works in order to support endpoint configuration and JEA.
 
-The `New-PSSession`, `Enter-PSSession` and `Invoke-Command` cmdlets now have a new parameter set to facilitate this new remoting connection
+The `New-PSSession`, `Enter-PSSession` and `Invoke-Command` cmdlets now have a new parameter set to
+facilitate this new remoting connection
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-This new parameter set will likely change but for now allows you to create SSH PSSessions that you can interact with from the command line or invoke commands and scripts on.
-You specify the target machine with the HostName parameter and provide the user name with UserName.
-When running the cmdlets interactively at the PowerShell command line you will be prompted for a password.
-But you also have the option to use SSH key authentication and provide a private key file path with the KeyFilePath parameter.
+This new parameter set will likely change but for now allows you to create SSH PSSessions that you
+can interact with from the command line or invoke commands and scripts on. You specify the target
+machine with the HostName parameter and provide the user name with UserName. When running the
+cmdlets interactively at the PowerShell command line you will be prompted for a password. But you
+also have the option to use SSH key authentication and provide a private key file path with the
+KeyFilePath parameter.
 
 ## General setup information
 
-SSH is required to be installed on all machines.
-You should install both client (`ssh.exe`) and server (`sshd.exe`) so that you can experiment with remoting to and from the machines.
-For Windows you will need to install [Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).
-For Linux you will need to install SSH (including sshd server) appropriate to your platform.
-You will also need a recent PowerShell build or package from GitHub having the SSH remoting feature.
-SSH subsystems is used to establish a PowerShell process on the remote machine and the SSH server will need to be configured for that.
-In addition you will need to enable password authentication and optionally key based authentication.
+SSH is required to be installed on all machines. You should install both client (`ssh.exe`) and
+server (`sshd.exe`) so that you can experiment with remoting to and from the machines. For Windows
+you will need to install [Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).
+For Linux you will need to install SSH (including sshd server) appropriate to your platform. You
+will also need a recent PowerShell build or package from GitHub having the SSH remoting feature.
+SSH subsystems is used to establish a PowerShell process on the remote machine and the SSH server
+will need to be configured for that. In addition you will need to enable password authentication
+and optionally key based authentication.
 
 ## Setup on Windows Machine
 
 1. Install the latest version of [PowerShell Core for Windows]
-   - You can tell if it has the SSH remoting support by looking at the parameter sets for `New-PSSession`
+
+   - You can tell if it has the SSH remoting support by looking at the parameter sets for
+     `New-PSSession`
 
    ```powershell
    Get-Command New-PSSession -syntax
@@ -48,41 +63,42 @@ In addition you will need to enable password authentication and optionally key b
 
 2. Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions
 3. Edit the sshd_config file at the location where you installed Win32 OpenSSH
+
    - Make sure password authentication is enabled
 
-   ```
-   PasswordAuthentication yes
-   ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-    ```
-    Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-    > [!NOTE]
-    There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.
-    See [this issue on GitHub for more information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+     > [!NOTE]
+     > There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.
+     > See [this issue on GitHub for more information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-    One solution is to create a symlink to the Powershell installation directory that does not contain spaces:
+     One solution is to create a symlink to the Powershell installation directory that does not contain spaces:
 
-    ```powershell
-    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
-    ```
+     ```powershell
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     ```
 
-    and then enter it in the subsystem:
+     and then enter it in the subsystem:
 
-    ```
-    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-   ```
-   Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
    - Optionally enable key authentication
 
-   ```
-   PubkeyAuthentication yes
-   ```
+     ```
+     PubkeyAuthentication yes
+     ```
 
 4. Restart the sshd service
 
@@ -91,6 +107,7 @@ In addition you will need to enable password authentication and optionally key b
    ```
 
 5. Add the path where OpenSSH is installed to your Path Env Variable
+
    - This should be along the lines of `C:\Program Files\OpenSSH\`
    - This allows for the ssh.exe to be found
 
@@ -105,6 +122,7 @@ In addition you will need to enable password authentication and optionally key b
    ```
 
 3. Edit the sshd_config file at location /etc/ssh
+
    - Make sure password authentication is enabled
 
    ```
@@ -132,12 +150,15 @@ In addition you will need to enable password authentication and optionally key b
 ## Setup on MacOS Machine
 
 1. Install the latest [PowerShell Core for MacOS] build
+
    - Make sure SSH Remoting is enabled by following these steps:
      - Open `System Preferences`
      - Click on `Sharing`
      - Check `Remote Login` - Should say `Remote Login: On`
      - Allow access to appropriate users
+
 2. Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`
+
    - Use your favorite editor or
 
      ```bash
@@ -171,10 +192,11 @@ In addition you will need to enable password authentication and optionally key b
 
 ## PowerShell Remoting Example
 
-The easiest way to test remoting is to just try it on a single machine.
-Here I will create a remote session back to the same machine on a Linux box.
-Notice that I am using PowerShell cmdlets from a command prompt so we see prompts from SSH asking to verify the host computer as well as password prompts.
-You can do the same thing on a Windows machine to ensure remoting is working there and then remote between machines by simply changing the host name.
+The easiest way to test remoting is to just try it on a single machine. Here I will create a remote
+session back to the same machine on a Linux box. Notice that I am using PowerShell cmdlets from a
+command prompt so we see prompts from SSH asking to verify the host computer as well as password
+prompts. You can do the same thing on a Windows machine to ensure remoting is working there and
+then remote between machines by simply changing the host name.
 
 ```powershell
 #
@@ -301,7 +323,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### Known Issues
 
-- sudo command does not work in remote session to Linux machine.
+The sudo command does not work in remote session to Linux machine.
 
 ## See Also
 

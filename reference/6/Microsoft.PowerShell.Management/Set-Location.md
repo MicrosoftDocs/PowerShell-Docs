@@ -58,7 +58,7 @@ PS Env:\>
 ```
 
 This command sets the current location to the root of the Env: drive.
-It uses the *PassThru* parameter to direct Windows PowerShell to return a **PathInfo** object that represents the Env: location.
+It uses the *PassThru* parameter to direct PowerShell to return a **PathInfo** object that represents the Env: location.
 
 ### Example 3: Set location to the C: drive
 ```
@@ -84,7 +84,7 @@ Specifies a path of the location.
 The value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -187,13 +187,13 @@ Otherwise, this cmdlet does not generate any output.
 
   A stack is a last-in, first-out list in which only the most recently added item can be accessed.
 You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order.
-Windows PowerShell lets you store provider locations in location stacks.
-Windows PowerShell creates an unnamed default location stack.
+PowerShell lets you store provider locations in location stacks.
+PowerShell creates an unnamed default location stack.
 You can create multiple named location stacks.
-If you do not specify a stack name, Windows PowerShell uses the current location stack.
+If you do not specify a stack name, PowerShell uses the current location stack.
 By default, the unnamed default location is the current location stack, but you can use the **Set-Location** cmdlet to change the current location stack.
 
-  To manage location stacks, use the Windows PowerShell Location cmdlets, as follows:
+  To manage location stacks, use the PowerShell Location cmdlets, as follows:
 
 - To add a location to a location stack, use the Push-Location cmdlet.
 - To get a location from a location stack, use the Pop-Location cmdlet.

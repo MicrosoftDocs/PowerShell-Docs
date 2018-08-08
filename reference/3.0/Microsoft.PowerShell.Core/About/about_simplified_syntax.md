@@ -63,7 +63,7 @@ Get-Process | ForEach Description
 
 The part of the Foreach statement enclosed in parenthesis represents a
 variable and a collection to iterate. Windows PowerShell creates the variable
-(\$<item>) automatically when the Foreach loop runs. Prior to each iteration
+`$<item>` automatically when the Foreach loop runs. Prior to each iteration
 through the loop, the variable is set to a value in the collection. The block
 following a Foreach statement `{<statement list>}` contains a set of commands
 to execute against each item in a collection.
@@ -183,8 +183,8 @@ specifier show no decimal places.
 
 When Foreach appears in a command pipeline, Windows PowerShell uses the
 foreach alias, which calls the ForEach-Object command. When you use the
-foreach alias in a command pipeline, you do not include the (\$<item> in
-\$<collection>) syntax as you do with the Foreach statement. This is because
+foreach alias in a command pipeline, you do not include the `($<item> in
+$<collection>)` syntax as you do with the Foreach statement. This is because
 the prior command in the pipeline provides this information. The syntax of the
 foreach alias when used in a command pipeline is as follows:
 

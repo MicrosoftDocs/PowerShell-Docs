@@ -1,3 +1,9 @@
+---
+title: PowerShell Core Support Lifecycle
+description: Policies governing support for PowerShell Core
+ms.date: 08/06/2018
+---
+
 # PowerShell Core Support Lifecycle
 
 PowerShell Core is a distinct set of tools and components that is shipped, installed, and configured separately from Windows PowerShell.
@@ -33,25 +39,54 @@ Eventually, we expect PowerShell Core will adopt the "long-term servicing" appro
 
 ## Supported platforms
 
-PowerShell Core is officially supported on the following platforms:
+Please see the following table to see what platform the version of PowerShell Core you are using is officially supported.
 
-* Windows 7, 8.1, and 10
-* Windows Server 2008 R2, 2012 R2, 2016
-* [Windows Server Semi-Annual Channel][semi-annual]
-* Ubuntu 14.04, 16.04, and 17.04
-* Debian 8.7+, and 9
-* CentOS 7
-* Red Hat Enterprise Linux 7
-* OpenSUSE 42.2
-* Fedora 27, 28
-* macOS 10.12+
+Our community has also contributed packages for some platforms,
+but they are not officially supported.
+These packages are marked as `Community` in the table.
 
-Our community has also contributed packages for the following platforms,
-but they are not officially suppported:
+Platforms listed as `Experimental` are not officially supported, but are available for experimentation and feedback.
 
-* Arch Linux
-* Kali Linux
-* AppImage (works on multiple Linux platforms)
+|                                                   | 6.0         | 6.1         |
+|---------------------------------------------------|:-----------:|:-----------:|
+| Windows 7, 8.1, and 10                            | Supported   | Supported   |
+| Windows Server 2008 R2, 2012 R2, 2016             | Supported   | Supported   |
+| [Windows Server Semi-Annual Channel][semi-annual] | Supported   | Supported   |
+| Ubuntu 14.04 and, 16.04                           | Supported   | Supported   |
+| Ubuntu 18.04                                      |             | Supported   |
+| Ubuntu 18.10 (via Snap Package)                   |             | Community   |
+| Debian 8.7+, and 9                                | Supported   | Supported   |
+| CentOS 7                                          | Supported   | Supported   |
+| Red Hat Enterprise Linux 7                        | Supported   | Supported   |
+| OpenSUSE 42.3                                     | Supported   | Supported   |
+| Fedora 27                                         | Supported   | Supported   |
+| Fedora 28                                         |             | Supported   |
+| macOS 10.12+                                      | Supported   | Supported   |
+| Arch                                              | Community   | Community   |
+| Raspbian                                          | Experimental| Community   |
+| Kali                                              | Community   | Community   |
+| AppImage  (works on multiple Linux platforms)     | Community   | Community   |
+| [Snap Package](https://snapcraft.io/powershell)   | See note    | See note    |
+
+> [!NOTE]
+> Snap packages will be experimental for a period.  After, we are confident that Snap does not introduce new support issues, the support will follow the distribution you are running the package on.
+
+## Platform which are out of support
+
+When a platform version reaches end-of-life as defined by the platform owner, PowerShell Core will also cease to provide support for that platform version. Previously released packages will remain available for customers needing access but formal support and updates of any kind will no longer be provided.
+
+Therefore, support for the following versions was ended by the distribution owners and are not supported.
+
+| OS       | Version | End of Life                                                                                 |
+|----------|---------|---------------------------------------------------------------------------------------------|
+| Fedora   | 24      | [August 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [May 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| openSUSE | 42.1    | [May 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| openSUSE | 42.2    | [January 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Ubuntu   | 16.10   | [July 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## Notes on licensing
 

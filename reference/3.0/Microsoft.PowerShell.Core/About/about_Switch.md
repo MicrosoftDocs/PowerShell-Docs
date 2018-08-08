@@ -214,7 +214,7 @@ The Continue keyword stops processing the current value, but continues
 processing any subsequent values.
 
 If the condition is an expression or a script block, it is evaluated just
-before it is compared to the value. The value is assigned to the $_
+before it is compared to the value. The value is assigned to the `$_`
 automatic variable and is available in the expression. The match succeeds
 if the expression is true or matches the value. The expression is evaluated
 in its own scope.

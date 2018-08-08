@@ -101,7 +101,7 @@ The first command gets all the processes on the computer and then stores them in
 
 The second command uses the *InputObject* parameter to pass the process objects that are stored in the $A variable to the **Get-Process** cmdlet.
 The pipeline operator passes the objects to the **Format-Table** cmdlet, which formats the processes by using the Priority view.
-The Priority view, and other views, are defined in the PS1XML format files in the Windows PowerShell home directory ($pshome).
+The Priority view, and other views, are defined in the PS1XML format files in the PowerShell home directory ($pshome).
 
 ### Example 5: Add a property to the standard Get-Process output display
 ```powershell
@@ -136,7 +136,7 @@ ProductVersion   FileVersion      FileName
 
 This command uses the *FileVersionInfo* parameter to get the version information for the PowerShell.exe file that is the main module for the PowerShell process.
 
-To run this command with processes that you do not own on Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option.
+To run this command with processes that you do not own on Windows Vista and later versions of Windows, you must open PowerShell with the Run as administrator option.
 
 ### Example 7: Get modules loaded with the specified process
 ```
@@ -146,7 +146,7 @@ PS C:\> Get-Process SQL* -Module
 This command uses the *Module* parameter to get the modules that have been loaded by the process.
 This command gets the modules for the processes that have names that begin with SQL.
 
-To run this command on Windows Vista and later versions of Windows with processes that you do not own, you must start Windows PowerShell with the Run as administrator option.
+To run this command on Windows Vista and later versions of Windows with processes that you do not own, you must start PowerShell with the Run as administrator option.
 
 ### Example 8: Find the owner of a process
 ```powershell
@@ -200,7 +200,7 @@ To view all of the properties, pipe the results of a **Get-Process** command to 
 ### -FileVersionInfo
 Indicates that this cmdlet gets the file version information for the program that runs in the process.
 
-On Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
+On Windows Vista and later versions of Windows, you must open PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
 
 To get file version information for a process on a remote computer, use the Invoke-Command cmdlet.
 
@@ -271,7 +271,7 @@ Accept wildcard characters: False
 ### -Module
 Indicates that this cmdlet gets the modules that have been loaded by the processes.
 
-On Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
+On Windows Vista and later versions of Windows, you must open PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
 
 To get the modules that have been loaded by a process on a remote computer, use the **Invoke-Command** cmdlet.
 
@@ -327,8 +327,8 @@ If you use the *Module* parameter, without the *FileVersionInfo* parameter, it r
 
 ## NOTES
 * You can also refer to this cmdlet by its built-in aliases, ps and gps. For more information, see about_Aliases.
-* On computers that are running a 64-bit version of Windows, the 64-bit version of Windows PowerShell gets only 64-bit process modules and the 32-bit version of Windows PowerShell gets only 32-bit process modules.
-* You can use the properties and methods of the Windows Management Instrumentation (WMI) Win32_Process object in Windows PowerShell. For information, see Get-WmiObject and the WMI SDK.
+* On computers that are running a 64-bit version of Windows, the 64-bit version of PowerShell gets only 64-bit process modules and the 32-bit version of PowerShell gets only 32-bit process modules.
+* You can use the properties and methods of the Windows Management Instrumentation (WMI) Win32_Process object in PowerShell. For information, see Get-WmiObject and the WMI SDK.
 * The default display of a process is a table that includes the following columns. For a description of all of the properties of process objects, see [Process Properties](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process#Properties) in the MSDN library.
 
   - Handles: The number of handles that the process has opened.

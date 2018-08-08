@@ -28,7 +28,7 @@ It can also shut down the local computer.
 
 You can use the parameters of **Stop-Computer** to run the shutdown operations as a background job, to specify the authentication levels and alternate credentials, to limit the concurrent connections that are created to run the command, and to force an immediate shut down.
 
-This cmdlet does not require Windows PowerShell remoting unless you use the *AsJob* parameter.
+This cmdlet does not require PowerShell remoting unless you use the *AsJob* parameter.
 
 ## EXAMPLES
 
@@ -95,7 +95,7 @@ It also uses the *ThrottleLimit* parameter to limit the command to 10 concurrent
 ### -AsJob
 Indicates that this cmdlet runs as a background job.
 
-To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell by using the Run as administrator option.
+To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of the Windows operating system, you must open PowerShell by using the Run as administrator option.
 For more information, see about_Remote_Requirements.
 
 When you specify the *AsJob* parameter, the command immediately returns an object that represents the background job.
@@ -103,7 +103,7 @@ You can continue to work in the session while the job finishes.
 The job is created on the local computer and the results from remote computers are automatically returned to the local computer.
 To get the job results, use the Receive-Job cmdlet.
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -124,7 +124,7 @@ The default is the local computer.
 Type the NETBIOS name, IP address, or fully qualified domain name of one or more computers in a comma-separated list.
 To specify the local computer, type the computer name or localhost.
 
-This parameter does not rely on Windows PowerShell remoting.
+This parameter does not rely on PowerShell remoting.
 You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
 
 ```yaml

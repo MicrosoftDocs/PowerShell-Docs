@@ -123,7 +123,7 @@ MSDN.
 > designed for commands that require authentication on more than one resource,
 > such as accessing a remote network share. This mechanism increases the
 > security risk of the remote operation. If the remote computer is compromised,
-> the credentials that are passed to it can be used to control the network 
+> the credentials that are passed to it can be used to control the network
 > session.
 
 #### -PSAuthenticationLevel \<AuthenticationLevel\>
@@ -142,7 +142,7 @@ Valid values are:
 |**Call** | Call-level COM authentication.   |
 |**Packet** | Packet-level COM authentication.|
 |**PacketIntegrity** | Packet Integrity-level COM authentication.  |
-|**PacketPrivacy** | Packet Privacy-level COM authentication. |         |
+|**PacketPrivacy** | Packet Privacy-level COM authentication. |
 
 #### -PSCertificateThumbprint \<String\>
 

@@ -20,24 +20,6 @@ This table defines some of the different terms used to discuss PowerShell.
 In general, references to "Windows PowerShell" in documentation can be changed to "PowerShell".
 "Windows PowerShell" should **not** be changed when Windows-specific technology is being discussed.
 
-## About_ file formatting
-
-We are changing the way we process about_ files.
-About_* files are being reformatted for the best compatibility across PowerShell versions and our publishing tools.
-For details, see [issue #1806][issue1806].
-Please do not alter the formatting of about_ files without checking in with a repo maintainer.
-
-Basic formatting guidelines:
-
-- Limit lines to 80 characters
-- Code blocks should be limited to 76 characters
-- Within a paragraph, the following characters must be escaped using a leading `\` character:
-  <code>$</code>, <code>\`</code>, <code>\<</code>
-- Tables need fit withing 76 characters
-  - Manually wrap contents of cells across multiple lines
-  - Use opening and closing `|` characters on each line
-  - See a working example in [about_Comparison_Operators][about-example]
-
 ## Use semantic line breaks
 
 Add a single newline after each sentence or a clause boundary near the 100 character limit.
@@ -53,13 +35,18 @@ For a good explanation of semantic line breaks, see [Semantic Linefeeds by Rhode
 This is not currently adopted across all of PowerShell-Docs, but we will be working towards it over time.
 Feel free to help out.
 
-
 ## Formatting syntax elements
 
 - PowerShell cmdlets are "[Pascal Cased][pascal-case]".
-  Verbs are seperated from nouns by a hyphen.
+  Verbs are separated from nouns by a hyphen.
 
-- When talking about a cmdlet in paragraph, use \` to highlight cmdlet names
+- In a paragraph, cmdlet names and variable references should be wrapped in backtick (\`) characters. For example:
+
+  The following code assigns the output of `Get-ChildItem` to the `$files` variable.
+
+  ```powershell
+  $files = Get-ChildItem C:\Windows
+  ```
 
 - Property names and parameter names should be in **bold**
 
@@ -71,12 +58,11 @@ Feel free to help out.
 
 ## Links
 
-- Avoid using bare URLs. Links should use MarkDown syntax `[friendlyname](url-or-path)`
+- Avoid using bare URLs. Links should use Markdown syntax `[friendlyname](url-or-path)`
  -* **Exception**: Links to non-Microsoft sites can be bare URLs for transparency
 - Links must have a friendly name, usually the title of the linked topic
 - All items in the "related links" section at the bottom should be hyperlinked.
 - Use relative links when linking to other content that is hosted on **docs.microsoft.com**.
--
 
 ### Structure of links on docs.microsoft.com
 
@@ -94,7 +80,7 @@ https://docs.microsoft.com/en-us/powershell/azure/overview?view=azurermps-5.1.1
 ```
 
 - **\<locale>** - identifies the language of the article (example: en-us or de-de)
-- **\<product-service>** - the name of the product or service being documented (example: powerShell, dotnet, or azure)
+- **\<product-service>** - the name of the product or service being documented (example: powershell, dotnet, or azure)
 - **[\<feature-service>]** - (optional) the name of the product's feature or subservice (for example, csharp or load-balancer)
 - **[\<subfolder>]** - (optional) the name of a subfolder within a feature
 - \<topic> - the name of the article file for the topic (example: load-balancer-overview or overview)
@@ -123,7 +109,7 @@ The link target must be the URL path to the _published article_ on **docs.micros
 The relative link starts with the **\<product-service>** portion of the URL as described above.
 You should omit the **[?view=\<view-name>]** portion unless you need to link to a specific version of the content.
 
-For example, the following markdown links to the Overview topic for Azure PowerShell.
+For example, the following Markdown links to the Overview topic for Azure PowerShell.
 
 ```Markdown
 [Overview of Azure PowerShell](/powershell/azure/overview)

@@ -12,11 +12,11 @@ Module Name:  Microsoft.PowerShell.Security
 
 # Microsoft.PowerShell.Security Module
 ## Description
-This section contains the help topics for the cmdlets that are installed with Windows PowerShell Microsoft.PowerShell.Security module. The Security module contains cmdlets and providers that manage the basic security features of Windows.
+This section contains the help topics for the cmdlets that are installed with PowerShell Microsoft.PowerShell.Security module. The Security module contains cmdlets and providers that manage the basic security features of Windows.
 
 ## Microsoft.PowerShell.Security Cmdlets
 ### [Certificate-Provider](Providers/Certificate-Provider.md)
-Provides access to X.509 certificate stores and certificates in Windows PowerShell.
+Provides access to X.509 certificate stores and certificates in PowerShell.
 
 ### [ConvertFrom-SecureString](ConvertFrom-SecureString.md)
 Converts a secure string to an encrypted standard string.
@@ -35,7 +35,7 @@ Gets information about the Authenticode signature for a file.
 
 
 ### [Get-ChildItem-for-Certificate](Providers/et-ChildItem-for-Certificate.md)
-Gets certificate store locations, certificate stores, and certificates in the Windows PowerShell certificate store.
+Gets certificate store locations, certificate stores, and certificates in the PowerShell certificate store.
 
 ### [Get-Credential](Get-Credential.md)
 Gets a credential object based on a user name and password.
@@ -66,11 +66,11 @@ Changes the security descriptor of a specified item, such as a file or a registr
 
 
 ### [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
-Adds an Authenticode signature to a Windows PowerShell script or other file.
+Adds an Authenticode signature to a PowerShell script or other file.
 
 
 ### [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
-Changes the user preference for the Windows PowerShell execution policy.
+Changes the user preference for the PowerShell execution policy.
 
 
 ### [Test-FileCatalog](Test-FileCatalog.md)

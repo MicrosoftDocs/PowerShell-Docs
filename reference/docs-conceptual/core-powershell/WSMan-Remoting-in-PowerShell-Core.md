@@ -1,3 +1,9 @@
+---
+title: WS-Management (WSMan) Remoting in PowerShell Core
+description: Remoting in PowerShell Core using WSMan
+ms.date: 08/06/2018
+---
+
 # WS-Management (WSMan) Remoting in PowerShell Core
 
 ## Instructions to Create a Remoting Endpoint

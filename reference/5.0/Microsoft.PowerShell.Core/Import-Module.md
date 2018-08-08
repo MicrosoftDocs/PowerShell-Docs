@@ -705,10 +705,14 @@ Accept wildcard characters: False
 
 ### -Global
 Indicates that this cmdlet imports modules into the global session state so they are available to all commands in the session.
-By default, the commands in a module, including commands from nested modules, are imported into the caller's session state.
-To restrict the commands that a module exports, use an Export-ModuleMember command in the script module.
 
-The *Global* parameter is equivalent to the *Scope* parameter with a value of Global.
+By default, when Import-Module cmdlet is called from the command prompt, script file, or scriptblock, all the commands are imported into the global session state.
+
+When invoked from another module, Import-Module cmdlet imports the commands in a module, including commands from nested modules, into the caller's session state.
+
+The **Global** parameter is equivalent to the **Scope** parameter with a value of Global.
+
+To restrict the commands that a module exports, use an `Export-ModuleMember` command in the script module.
 
 ```yaml
 Type: SwitchParameter
@@ -913,7 +917,13 @@ The acceptable values for this parameter are:
 - **Global**. Available to all commands in the session. Equivalent to the *Global* parameter.
 - **Local**. Available only in the current scope.
 
-By default, the module is imported into the current scope, which could be a script or module.
+By default, when Import-Module cmdlet is called from the command prompt, script file, or scriptblock, all the commands are imported into the global session state.
+You can use the **-Scope** parameter with the value of **Local** to import module content into the script or scriptblock scope.
+
+When invoked from another module, Import-Module cmdlet imports the commands in a module, including commands from nested modules, into the caller's session state.
+Specifying **-Scope Global** or **-Global** indicates that this cmdlet imports modules into the global session state so they are available to all commands in the session.
+
+The **Global** parameter is equivalent to the **Scope** parameter with a value of Global.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

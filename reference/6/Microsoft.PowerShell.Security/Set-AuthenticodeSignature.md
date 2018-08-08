@@ -11,7 +11,7 @@ title:  Set-AuthenticodeSignature
 # Set-AuthenticodeSignature
 
 ## SYNOPSIS
-Adds an Authenticode signature to a Windows PowerShell script or other file.
+Adds an Authenticode signature to a PowerShell script or other file.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Set-AuthenticodeSignature [-Certificate] <X509Certificate2> [-IncludeChain <Stri
 ## DESCRIPTION
 The **Set-AuthenticodeSignature** cmdlet adds an Authenticode signature to any file that supports Subject Interface Package (SIP).
 
-In a Windows PowerShell script file, the signature takes the form of a block of text that indicates the end of the instructions that are executed in the script.
+In a PowerShell script file, the signature takes the form of a block of text that indicates the end of the instructions that are executed in the script.
 If there is a signature in the file when this cmdlet runs, that signature is removed.
 
 ## EXAMPLES
@@ -50,9 +50,9 @@ PS C:\> $Cert = Get-ChildItem -Path "Cert:\CurrentUser\My" -CodeSigningCert
 PS C:\> Set-AuthenticodeSignature -FilePath "PsTestInternet2.ps1" -Certificate $Cert
 ```
 
-These commands get a code-signing certificate from the Windows PowerShell certificate provider and use it to sign a Windows PowerShell script.
+These commands get a code-signing certificate from the PowerShell certificate provider and use it to sign a PowerShell script.
 
-The first command uses the Get-ChildItem cmdlet and the Windows PowerShell certificate provider to get the certificates in the Cert:\CurrentUser\My subdirectory of the certificate store.
+The first command uses the Get-ChildItem cmdlet and the PowerShell certificate provider to get the certificates in the Cert:\CurrentUser\My subdirectory of the certificate store.
 (The Cert: drive is the drive exposed by the certificate provider.) The *CodeSigningCert* parameter, which is supported only by the certificate provider, limits the certificates retrieved to those with code-signing authority.
 The command stores the result in the $Cert variable.
 
@@ -66,14 +66,14 @@ PS C:\> Set-AuthenticodeSignature -FilePath "ServerProps.ps1" -Certificate $Cert
 ```
 
 These commands use the Get-PfxCertificate cmdlet to find a code signing certificate.
-Then, they use it to sign a Windows PowerShell script.
+Then, they use it to sign a PowerShell script.
 
 The first command uses the **Get-PfxCertificate** cmdlet to find the C:\Test\MySign.pfx certificate and store it in the $Cert variable.
 
 The second command uses **Set-AuthenticodeSignature** to sign the script.
 The *FilePath* parameter of **Set-AuthenticodeSignature** specifies the path to the script file being signed and the *Certificate* parameter passes the $Cert variable containing the certificate to **Set-AuthenticodeSignature**.
 
-If the certificate file is password protected, Windows PowerShell prompts you for the password.
+If the certificate file is password protected, PowerShell prompts you for the password.
 
 ### Example 3: Add a digital signature with the root authority
 ```
@@ -203,7 +203,7 @@ Specifies the path to a file that is being signed.
 Unlike *FilePath*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]

@@ -28,10 +28,10 @@ Get-Location [-Stack] [-StackName <String[]>] [-UseTransaction] [<CommonParamete
 ## DESCRIPTION
 The **Get-Location** cmdlet gets an object that represents the current directory, much like the print working directory (pwd) command.
 
-When you move between Windows PowerShell drives, Windows PowerShell retains your location in each drive.
+When you move between PowerShell drives, PowerShell retains your location in each drive.
 You can use this cmdlet to find your location in each drive.
 
-You can use this cmdlet to get the current directory at run time and use it in functions and scripts, such as in a function that displays the current directory in the Windows PowerShell prompt.
+You can use this cmdlet to get the current directory at run time and use it in functions and scripts, such as in a function that displays the current directory in the PowerShell prompt.
 
 You can also use this cmdlet to display the locations in a location stack.
 For more information, see the Notes and the descriptions of the *Stack* and *StackName* parameters.
@@ -46,7 +46,7 @@ Path
 C:\WINDOWS
 ```
 
-This command displays your location in the current Windows PowerShell drive.
+This command displays your location in the current PowerShell drive.
 
 For instance, if you are in the Windows directory of the C: drive, it displays the path to that directory.
 
@@ -55,7 +55,7 @@ For instance, if you are in the Windows directory of the C: drive, it displays t
 The first command uses the **Set-Location** cmdlet to set the current location to the Windows subdirectory of the C: drive.
 PS C:\> Set-Location C:\Windows
 
-The second command uses the **Set-Location** cmdlet to change the location to the HKLM:\Software\Microsoft registry key. When you change to a location in the HKLM: drive, Windows PowerShell retains your location in the C: drive.
+The second command uses the **Set-Location** cmdlet to change the location to the HKLM:\Software\Microsoft registry key. When you change to a location in the HKLM: drive, PowerShell retains your location in the C: drive.
 PS C:\>
 PS C:\WINDOWS> Set-Location HKLM:\Software\Microsoft
 PS HKLM:\Software\Microsoft>
@@ -76,12 +76,12 @@ Path
 C:\WINDOWS
 
 
-The fifth command uses the **Set-Location** cmdlet to return to the C: drive. Even though the command does not specify a subdirectory, Windows PowerShell returns you to the saved location.
+The fifth command uses the **Set-Location** cmdlet to return to the C: drive. Even though the command does not specify a subdirectory, PowerShell returns you to the saved location.
 PS C:\>
 PS HKCU:\Control Panel\Input Method> Set-Location C:
 PS C:\WINDOWS>
 
-The sixth command uses the **Get-Location** cmdlet to find the current location in the drives supported by the Windows PowerShell registry provider. **Get-Location** returns the location of the most recently accessed registry drive, HKCU.
+The sixth command uses the **Get-Location** cmdlet to find the current location in the drives supported by the PowerShell registry provider. **Get-Location** returns the location of the most recently accessed registry drive, HKCU.
 PS C:\>
 PS C:\WINDOWS> Get-Location -PSProvider registry
 
@@ -104,7 +104,7 @@ Path
 HKLM:\Software\Microsoft
 ```
 
-This example demonstrates the use of **Get-Location** to display your current location in different Windows PowerShell drives.
+This example demonstrates the use of **Get-Location** to display your current location in different PowerShell drives.
 
 ### Example 3:
 ```
@@ -144,17 +144,17 @@ C:\WINDOWS\system32
 This example shows how to use the *Stack* and *StackName* parameters of **Get-Location** to list the locations in the current location stack and alternate location stacks.
 For more information about location stacks, see the Notes.
 
-### Example 4: Customize the Windows PowerShell prompt
+### Example 4: Customize the PowerShell prompt
 ```
 PS C:\>
 function prompt { 'PowerShell: ' + (get-location) + '> '}
 PowerShell: C:\WINDOWS>
 ```
 
-This example shows how to customize the Windows PowerShell prompt.
+This example shows how to customize the PowerShell prompt.
 The function that defines the prompt includes a **Get-Location** command, which is run whenever the prompt appears in the console.
 
-The format of the default Windows PowerShell prompt is defined by a special function named prompt.
+The format of the default PowerShell prompt is defined by a special function named prompt.
 You can change the prompt in your console by creating a new function named prompt.
 
 To see the current prompt function, type the following command: `Get-Content Function:prompt`
@@ -169,7 +169,7 @@ The prompt ends with the string "\> ".
 ## PARAMETERS
 
 ### -PSDrive
-Specifies the current location in the specified Windows PowerShell drive that this cmdlet gets in the operation.
+Specifies the current location in the specified PowerShell drive that this cmdlet gets in the operation.
 
 For instance, if you are in the Certificate: drive, you can use this parameter to find your current location in the C: drive.
 
@@ -186,11 +186,11 @@ Accept wildcard characters: False
 ```
 
 ### -PSProvider
-Specifies the current location in the drive supported by the Windows PowerShell provider that this cmdlet gets in the operation.
+Specifies the current location in the drive supported by the PowerShell provider that this cmdlet gets in the operation.
 
 If the specified provider supports more than one drive, this cmdlet returns the location on the most recently accessed drive.
 
-For example, if you are in the C: drive, you can use this parameter to find your current location in the drives of the Windows PowerShellRegistry provider.
+For example, if you are in the C: drive, you can use this parameter to find your current location in the drives of the PowerShellRegistry provider.
 
 ```yaml
 Type: String[]
@@ -286,12 +286,12 @@ If no parameters are specified, this cmdlet returns the **PathInfo** object for 
 
   A stack is a last-in, first-out list in which only the most recently added item is accessible.
 You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order.
-Windows PowerShell lets you store provider locations in location stacks.
-Windows PowerShell creates an unnamed default location stack and you can create multiple named location stacks.
-If you do not specify a stack name, Windows PowerShell uses the current location stack.
+PowerShell lets you store provider locations in location stacks.
+PowerShell creates an unnamed default location stack and you can create multiple named location stacks.
+If you do not specify a stack name, PowerShell uses the current location stack.
 By default, the unnamed default location is the current location stack, but you can use the **Set-Location** cmdlet to change the current location stack.
 
-  To manage location stacks, use the Windows PowerShellLocation cmdlets, as follows.
+  To manage location stacks, use the PowerShellLocation cmdlets, as follows.
 
   - To add a location to a location stack, use the Push-Location cmdlet.
 
