@@ -2,7 +2,7 @@
   href: PowerShell-Scripting.md
   items:
     - name: Install
-      href: ''
+      href: 'setup/Installing-PowerShell.md'
       items:
         - name: PowerShell Core
           href: ''
