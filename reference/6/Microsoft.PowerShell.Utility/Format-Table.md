@@ -369,7 +369,7 @@ You can pipe any object to `Format-Table`.
 ## NOTES
 
 The **GroupBy** parameter assumes that the objects are sorted. Before using `Format-Table` to group the objects, use the Sort-Object cmdlet to sort them.
-The **View** parameter lets you specify an alternate format for the table. You can use the views defined in the *.format.PS1XML files in the Windows PowerShell directory or you can create your own views in new PS1XML files and then use the Update-FormatData cmdlet to include them in Windows PowerShell.
+The **View** parameter lets you specify an alternate format for the table. You can use the views defined in the *.format.PS1XML files in the PowerShell directory or you can create your own views in new PS1XML files and then use the Update-FormatData cmdlet to include them in PowerShell.
 The alternate views for the **View** parameter must use the table format. If it does not, the command fails. If the alternate view is a list, use the Format-List cmdlet. If the alternate view is neither a list nor a table, use the Format-Custom cmdlet.
 
 ## RELATED LINKS

@@ -91,7 +91,7 @@ Msg3 = "Use $_ to represent the object that is being processed."
 Import-LocalizedData -BindingVariable "Messages"
 Write-Host $Messages.Msg2
 
-# In Windows PowerShell
+# In PowerShell
 
 PS C:\> .\Test.ps1
 

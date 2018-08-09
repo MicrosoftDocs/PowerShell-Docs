@@ -172,7 +172,7 @@ You can pipe a variable object to **Remove-Variable**.
 This cmdlet does not return any output.
 
 ## NOTES
-* Changes affect only the current scope, such as a session. To delete a variable from all sessions, add a **Remove-Variable** command to your Windows PowerShell profile.
+* Changes affect only the current scope, such as a session. To delete a variable from all sessions, add a **Remove-Variable** command to your PowerShell profile.
 
   You can also refer to **Remove-Variable** by its built-in alias, **rv**.
 For more information, see about_Aliases.
