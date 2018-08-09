@@ -52,7 +52,6 @@ Because Windows PowerShell works directly with Microsoft .NET Framework objects,
 Occasionally, a cmdlet needs to protect the user from performing a requested operation. Such a cmdlet should support a `Force` parameter to allow the user to override that protection if the user has permissions to perform the operation.
 
 For example, the [Remove-Item](/powershell/module/microsoft.powershell.management/remove-item) cmdlet does not normally remove a read-only file. However, this cmdlet supports a `Force` parameter so a user can force removal of a read-only file. If the user already has permission to modify the read-only attribute, and the user removes the file, use of the `Force` parameter simplifies the operation. However, if the user does not have permission to remove the file, the `Force` parameter has no effect.
-For example, the [Remove-Item](/powershell/module/microsoft.powershell.management/remove-item) cmdlet does not normally remove a read-only file. However, this cmdlet supports a `Force` parameter so a user can force removal of a read-only file. If the user already has permission to modify the read-only attribute, and the user removes the file, use of the `Force` parameter simplifies the operation. However, if the user does not have permission to remove the file, the `Force` parameter has no effect.
 
 ### Handle Credentials Through Windows PowerShell (AD03)
 
@@ -80,7 +79,6 @@ You normally define the class for a cmdlet in a .NET Framework namespace that ap
 
 #### Name the Cmdlet Class to Match the Cmdlet Name
 
-When you name the .NET Framework class that implements a cmdlet, name the class "*\<Verb>**\<Noun>**\<Command>*", where you replace the *\<Verb>* and *\<Noun>* placeholders with the verb and noun used for the cmdlet name. For example, the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet is implemented by a class called `GetProcessCommand`.
 When you name the .NET Framework class that implements a cmdlet, name the class "*\<Verb>**\<Noun>**\<Command>*", where you replace the *\<Verb>* and *\<Noun>* placeholders with the verb and noun used for the cmdlet name. For example, the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet is implemented by a class called `GetProcessCommand`.
 
 ### If No Pipeline Input Override the BeginProcessing Method (AC02)
