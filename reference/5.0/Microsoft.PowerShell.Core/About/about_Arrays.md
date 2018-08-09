@@ -379,28 +379,36 @@ $rank2.rank
 
 ### Clear
 
-Removes all elements in the array. The following example shows the effect of
-the clear method.
+Sets all element values to the _default value_ of the array's element type.
+The Clear() method does not reset the size of the array.
+
+In the following example `$a` is an array of objects.
 
 ```powershell
-$a = 0 .. 2
-"Before the clear"
-$a
+$a = 1, 2, 3
 $a.Clear()
-"After the clear"
-$a
+$a | % { $null -eq $_ }
 ```
 
 ```output
-Before the clear
-0
-1
-2
-After the clear
+True
+True
+True
 ```
 
-> [!NOTE]
-> The Clear method does not reset the size of the array.
+In this example, `$intA` is explicitly typed to contain integers.
+
+```powershell
+[int[]] $intA = 1, 2, 3
+$intA.Clear()
+$intA
+```
+
+```output
+0
+0
+0
+```
 
 ### ForEach
 
@@ -487,7 +495,7 @@ Wednesday, June 20, 2018 9:21:57 AM
 
 #### ForEach(string methodName, object[] arguments)
 
-Lastly, `ForEach` methods can be used to execute a method on every item in 
+Lastly, `ForEach` methods can be used to execute a method on every item in
 the collection.
 
 ```powershell
@@ -525,7 +533,7 @@ Where(scriptblock expression[, WhereOperatorSelectionMode mode
 
 The `Expression` is scriptblock that is required for filtering, the `mode`
 optional argument allows additional selection capabilities, and the
-`numberToReturn` optional argument allows the ability to limit how many items 
+`numberToReturn` optional argument allows the ability to limit how many items
 are returned from the filter.
 
 > [!NOTE]
@@ -646,7 +654,7 @@ collections. Those that pass the scriptblock expression, and those that do not.
 If a `numberToReturn` is specified, the first collection, will contain the
 *passing* items, not to exceed the value specified.
 
-The remaining objects, even those that **PASS** the expression filter, will be 
+The remaining objects, even those that **PASS** the expression filter, will be
 returned in the second collection.
 
 ```powershell
