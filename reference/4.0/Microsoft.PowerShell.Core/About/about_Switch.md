@@ -176,7 +176,6 @@ In this example, there is no matching case so there is no output.
            2 {"It is two."; Break}
            3 {"It is three."; Break}
            4 {"It is four."; Break}
-           3 {"Three again."; Break}
            "fo*" {"That's too many."}
        }
 ```
@@ -185,13 +184,12 @@ For the word "fourteen" to match a case you must use the **-Wildcard** or
 **-Regex** parameter.
 
 ```powershell
-   PS> switch -Regex ("fourteen")
+   PS> switch -Wildcard ("fourteen")
        {
            1 {"It is one."; Break}
            2 {"It is two."; Break}
            3 {"It is three."; Break}
            4 {"It is four."; Break}
-           3 {"Three again."; Break}
            "fo*" {"That's too many."}
        }
  ```
@@ -200,6 +198,24 @@ For the word "fourteen" to match a case you must use the **-Wildcard** or
 
  ```Output
 That's too many.
+```
+
+The following example uses the **-Regex** parameter.
+
+```powershell
+$target = 'user@contoso.com'
+switch -Regex ($target)
+{
+    'ftp\://.*' { "$_ is an ftp address"; Break }
+    '\w+@\w+\.com|edu|org' { "$_ is an email address"; Break }
+    'http[s]?\://.*' { "$_ is a web address"; Break }
+}
+```
+
+Result:
+
+```output
+user@contoso.com is an email address
 ```
 
 Multiple instances of Regex, Wildcard, or Exact are permitted. However,
