@@ -1,6 +1,6 @@
 ---
 ms.date:  08/09/2018
-keywords:  powershell,cmdlet,download,install,setup,windows 10, windows 8.1, windows 8.0,windows 7
+keywords:  install, windows, linux, macOS, ARM, raspbian
 title:  Installing PowerShell
 ---
 # Installing various versions of PowerShell
