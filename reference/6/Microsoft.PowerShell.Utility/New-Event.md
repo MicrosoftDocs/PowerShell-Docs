@@ -30,7 +30,7 @@ However, if you want to forward an event to the local session or specify an acti
 
 When you subscribe to a custom event, the event subscriber is added to your session.
 If you cancel the event subscription by using the Unregister-Event cmdlet, the event subscriber and custom event are deleted from the session.
-If you do not subscribe to the custom event, to delete the event, you must change the program conditions or close the Windows PowerShell session.
+If you do not subscribe to the custom event, to delete the event, you must change the program conditions or close the PowerShell session.
 
 ## EXAMPLES
 
@@ -39,7 +39,7 @@ If you do not subscribe to the custom event, to delete the event, you must chang
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
 
-This command creates a new event in the Windows PowerShell event queue.
+This command creates a new event in the PowerShell event queue.
 It uses a **Windows.Timer** object to send the event.
 
 ### Example 2: Raise an event in response to another event
@@ -60,7 +60,7 @@ This sample function uses the **New-Event** cmdlet to raise an event in response
 The command uses the Register-ObjectEvent cmdlet to subscribe to the Windows Management Instrumentation (WMI) event that is raised when a new process is created.
 The command uses the *Action* parameter of the cmdlet to call the **New-Event** cmdlet, which creates the new event.
 
-Because the events that **New-Event** raises are automatically added to the Windows PowerShellevent queue, you do not need to register for that event.
+Because the events that **New-Event** raises are automatically added to the PowerShell event queue, you do not need to register for that event.
 
 ## PARAMETERS
 
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 
 ### -Sender
 Specifies the object that raises the event.
-The default is the Windows PowerShell engine.
+The default is the PowerShell engine.
 
 ```yaml
 Type: PSObject

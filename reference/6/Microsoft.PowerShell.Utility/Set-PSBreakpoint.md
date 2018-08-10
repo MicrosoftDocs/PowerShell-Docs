@@ -48,12 +48,12 @@ Each **Set-PSBreakpoint** command creates one of the following three types of br
 
 You can set a breakpoint on multiple lines, commands, or variables in a single **Set-PSBreakpoint** command, but each **Set-PSBreakpoint** command sets only one type of breakpoint.
 
-At a breakpoint, Windows PowerShell temporarily stops executing and gives control to the debugger.
+At a breakpoint, PowerShell temporarily stops executing and gives control to the debugger.
 The command prompt changes to `DBG\>`, and a set of debugger commands become available for use.
 However, you can use the *Action* parameter to specify an alternate response, such as conditions for the breakpoint or instructions to perform additional tasks such as logging or diagnostics.
 
-The **Set-PSBreakpoint** cmdlet is one of several cmdlets designed for debugging Windows PowerShell scripts.
-For more information about the Windows PowerShell debugger, see about_Debuggers.
+The **Set-PSBreakpoint** cmdlet is one of several cmdlets designed for debugging PowerShell scripts.
+For more information about the PowerShell debugger, see about_Debuggers.
 
 ## EXAMPLES
 
@@ -214,7 +214,7 @@ The default is column 1.
 
 The Column value is used with the value of the Line parameter to specify the breakpoint.
 If the Line parameter specifies multiple lines, the *Column* parameter sets a breakpoint at the specified column on each of the specified lines.
-Windows PowerShell stops executing before the statement or expression that includes the character at the specified line and column position.
+PowerShell stops executing before the statement or expression that includes the character at the specified line and column position.
 
 Columns are counted from the top left margin beginning with column number 1 (not 0).
 If you specify a column that does not exist in the script, an error is not declared, but the breakpoint is never executed.
@@ -254,7 +254,7 @@ Accept wildcard characters: False
 ### -Line
 Sets a line breakpoint in a script.
 Enter one or more line numbers, separated by commas.
-Windows PowerShell stops immediately before executing the statement that begins on each of the specified lines.
+PowerShell stops immediately before executing the statement that begins on each of the specified lines.
 
 Lines are counted from the top left margin of the script file beginning with line number 1 (not 0).
 If you specify a blank line, execution stops before the next non-blank line.

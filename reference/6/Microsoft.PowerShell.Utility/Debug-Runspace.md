@@ -37,13 +37,13 @@ Debug-Runspace [-InstanceId] <Guid> [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## DESCRIPTION
 The **Debug-Runspace** cmdlet starts an interactive debugging session with a local or remote active runspace.
-You can find a runspace that you want to debug by first running Get-Process to find processes associated with Windows PowerShell, then Enter-PSHostProcess with the process ID specified in the *Id* parameter to attach to the process, and then Get-Runspace to list runspaces within the Windows PowerShell host process.
+You can find a runspace that you want to debug by first running Get-Process to find processes associated with PowerShell, then Enter-PSHostProcess with the process ID specified in the *Id* parameter to attach to the process, and then Get-Runspace to list runspaces within the PowerShell host process.
 
-After you have selected a runspace to debug, if the runspace is currently running a command or script, or if the script has stopped at a breakpoint, Windows PowerShell opens a remote debugger session for the runspace.
+After you have selected a runspace to debug, if the runspace is currently running a command or script, or if the script has stopped at a breakpoint, PowerShell opens a remote debugger session for the runspace.
 You can debug the runspace script in the same way remote session scripts are debugged.
 
-You can only attach to a Windows PowerShell host process if you are an administrator on the computer that is running the process, or you are running the script that you want to debug.
-Also, you cannot enter the host process that is running the current Windows PowerShell session; you can only enter a host process that is running a different Windows PowerShell session.
+You can only attach to a PowerShell host process if you are an administrator on the computer that is running the process, or you are running the script that you want to debug.
+Also, you cannot enter the host process that is running the current PowerShell session; you can only enter a host process that is running a different PowerShell session.
 For example, if you are working in a PowerShell.exe session, you can't enter the host process for that session, but you can enter the host process of a running Windows PowerShell ISE session.
 
 ## EXAMPLES

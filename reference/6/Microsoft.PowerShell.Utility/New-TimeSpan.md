@@ -80,7 +80,7 @@ This command tells you how long it has been since the about_remote.help.txt file
 You can use this command format on any file, and on any other object that has a **LastWriteTime** property.
 
 This command works because the *Start* parameter of **New-TimeSpan** has an alias of LastWriteTime.
-When you pipe an object that has a **LastWriteTime** property to **New-TimeSpan**, Windows PowerShell uses the value of the **LastWriteTime** property as the value of the *Start* parameter.
+When you pipe an object that has a **LastWriteTime** property to **New-TimeSpan**, PowerShell uses the value of the **LastWriteTime** property as the value of the *Start* parameter.
 
 ## PARAMETERS
 

@@ -10,7 +10,7 @@ external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 # Get-Verb
 
 ## SYNOPSIS
-Gets approved Windows PowerShell verbs.
+Gets approved PowerShell verbs.
 
 ## SYNTAX
 
@@ -19,16 +19,16 @@ Get-Verb [[-Verb] <String[]>] [[-Group] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Get-Verb function gets verbs that are approved for use in Windows PowerShell commands.
+The Get-Verb function gets verbs that are approved for use in PowerShell commands.
 
-Windows PowerShell recommends that cmdlet and function names have the Verb-Noun format and include an approved verb.
+PowerShell recommends that cmdlet and function names have the Verb-Noun format and include an approved verb.
 This practice makes command names more consistent and predictable, and easier to use, especially for users who do not speak English as a first language.
 
-Commands that use unapproved verbs run in Windows PowerShell.
+Commands that use unapproved verbs run in PowerShell.
 However, when you import a module that includes a command with an unapproved verb in its name, the Import-Module command displays a warning message.
 
 NOTE:   The verb list that Get-Verb returns might not be complete.
-For an updated list of approved Windows PowerShell verbs with descriptions, see "Cmdlet Verbs" in MSDN at http://go.microsoft.com/fwlink/?LinkID=160773.
+For an updated list of approved PowerShell verbs with descriptions, see "Cmdlet Verbs" in MSDN at http://go.microsoft.com/fwlink/?LinkID=160773.
 
 ## EXAMPLES
 
@@ -137,11 +137,11 @@ Accept wildcard characters: False
 ### System.Management.Automation.VerbInfo
 
 ## NOTES
-Windows PowerShell verbs are assigned to a group based on their most common use.
+PowerShell verbs are assigned to a group based on their most common use.
 The groups are designed to make the verbs easy to find and compare, not to restrict their use.
 You can use any approved verb for any type of command.
 
-Each Windows PowerShell verb is assigned to one of the following groups.
+Each PowerShell verb is assigned to one of the following groups.
 -- Common: Define generic actions that can apply to almost any cmdlet, such as Add.
 
 -- Communications:  Define actions that apply to communications, such as Connect.
@@ -151,7 +151,7 @@ Each Windows PowerShell verb is assigned to one of the following groups.
 -- Security: Define actions that apply to security, such as Revoke.
 -- Other: Define other types of actions.
 
-Some of the cmdlets that are installed with Windows PowerShell, such as Tee-Object and Where-Object, use unapproved verbs.
+Some of the cmdlets that are installed with PowerShell, such as Tee-Object and Where-Object, use unapproved verbs.
 These cmdlets are considered to be historic exceptions and their verbs are classified as "reserved."
 
 ## RELATED LINKS

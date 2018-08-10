@@ -34,8 +34,8 @@ To re-enable a breakpoint, use the Enable-PSBreakpoint cmdlet.
 Breakpoints are enabled by default when you create them by using the Set-PSBreakpoint cmdlet.
 
 A breakpoint is a point in a script where execution stops temporarily so that you can examine the instructions in the script.
-**Disable-PSBreakpoint** is one of several cmdlets designed for debugging Windows PowerShell scripts.
-For more information about the Windows PowerShell debugger, see about_Debuggers.
+**Disable-PSBreakpoint** is one of several cmdlets designed for debugging PowerShell scripts.
+For more information about the PowerShell debugger, see about_Debuggers.
 
 ## EXAMPLES
 

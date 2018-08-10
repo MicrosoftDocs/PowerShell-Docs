@@ -53,7 +53,7 @@ PS C:\> $A = "i*"
 PS C:\> Trace-Command ParameterBinding {Get-Alias $Input} -PSHost -InputObject $A
 ```
 
-These commands trace the actions of the ParameterBinding operations of Windows PowerShell while it processes a Get-Alias expression that takes input from the pipeline.
+These commands trace the actions of the ParameterBinding operations of PowerShell while it processes a Get-Alias expression that takes input from the pipeline.
 
 In **Trace-Command**, the *InputObject* parameter passes an object to the expression that is being processed during the trace.
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies an array of Windows PowerShell components that are traced.
+Specifies an array of PowerShell components that are traced.
 Enter the name of the trace source of each component.
 Wildcards are permitted.
 To find the trace sources on your computer, type `Get-TraceSource`.
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSHost
-Indicates that the cmdlet sends the trace output to the Windows PowerShell host.
+Indicates that the cmdlet sends the trace output to the PowerShell host.
 This parameter also selects the PSHost trace listener.
 
 ```yaml
@@ -307,16 +307,16 @@ Returns the command trace in the debug stream.
 
 ## NOTES
 * Tracing is a method that developers use to debug and refine programs. When tracing, the program generates detailed messages about each step in its internal processing.
-* The Windows PowerShell tracing cmdlets are designed to help Windows PowerShell developers, but they are available to all users. They let you monitor nearly every aspect of the functionality of the shell.
-* To find the Windows PowerShell components that are enabled for tracing, type `Get-Help Get-TraceSource`.
+* The PowerShell tracing cmdlets are designed to help PowerShell developers, but they are available to all users. They let you monitor nearly every aspect of the functionality of the shell.
+* To find the PowerShell components that are enabled for tracing, type `Get-Help Get-TraceSource`.
 
-  A trace source is the part of each Windows PowerShell component that manages tracing and generates trace messages for the component.
+  A trace source is the part of each PowerShell component that manages tracing and generates trace messages for the component.
 To trace a component, you identify its trace source.
 
   A trace listener receives the output of the trace and displays it to the user.
 You can elect to send the trace data to a user-mode or kernel-mode debugger, to the host or console, to a file, or to a custom listener derived from the **System.Diagnostics.TraceListener** class.
 
-* When you use the commandSet parameter set, Windows PowerShell processes the command just as it would be processed in a pipeline. For example, command discovery is not repeated for each incoming object.
+* When you use the commandSet parameter set, PowerShell processes the command just as it would be processed in a pipeline. For example, command discovery is not repeated for each incoming object.
 * The names of the *Name*, *Expression*, *Option*, and *Command* parameters are optional. If you omit the parameter names, the unnamed parameter values must appear in this order: *Name*, *Expression*, *Option* or *Name*, *Command*, *Option*. If you include the parameter names, the parameters can appear in any order.
 
 ## RELATED LINKS

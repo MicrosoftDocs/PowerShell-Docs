@@ -28,7 +28,7 @@ Get-EventSubscriber [-SubscriptionId] <Int32> [-Force] [<CommonParameters>]
 ## DESCRIPTION
 The **Get-EventSubscriber** cmdlet gets the event subscribers in the current session.
 
-When you subscribe to an event by using a Register event cmdlet, an event subscriber is added to your Windows PowerShell session, and the events to which you subscribed are added to your event queue whenever they are raised.
+When you subscribe to an event by using a Register event cmdlet, an event subscriber is added to your PowerShell session, and the events to which you subscribed are added to your event queue whenever they are raised.
 To cancel an event subscription, delete the event subscriber by using the Unregister-Event cmdlet.
 
 ## EXAMPLES

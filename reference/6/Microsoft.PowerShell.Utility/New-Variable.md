@@ -22,7 +22,7 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Opti
 ```
 
 ## DESCRIPTION
-The **New-Variable** cmdlet creates a new variable in Windows PowerShell.
+The **New-Variable** cmdlet creates a new variable in PowerShell.
 You can assign a value to the variable while creating it or assign or change the value after it is created.
 
 You can use the parameters of **New-Variable** to set the properties of the variable, set the scope of a variable, and determine whether variables are public or private.
