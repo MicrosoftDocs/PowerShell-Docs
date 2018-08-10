@@ -27,7 +27,7 @@ The formatting data in the session includes formatting data from Format.ps1xml f
 You can use this cmdlet to examine the formatting data.
 Then, you can use the Export-FormatData cmdlet to serialize the objects, convert them to XML, and save them in Format.ps1xml files.
 
-For more information about formatting files in Windows PowerShell, see about_Format.ps1xml.
+For more information about formatting files in PowerShell, see about_Format.ps1xml.
 
 ## EXAMPLES
 

@@ -84,10 +84,10 @@ This command searches through all files with the .xml file name extension in the
 PS C:\> Select-String -Path "$pshome\en-US\*.txt" -Pattern "@"
 ```
 
-This command searches the Windows PowerShell conceptual Help files (about_*.txt) for information about the use of the at sign (@).
+This command searches the PowerShell conceptual Help files (about_*.txt) for information about the use of the at sign (@).
 
-To indicate the path, this command uses the value of the $pshome automatic variable, which stores the path to the Windows PowerShell installation directory.
-In this example, the command searches the en-US subdirectory, which contains the English (US) language Help files for Windows PowerShell.
+To indicate the path, this command uses the value of the $pshome automatic variable, which stores the path to the PowerShell installation directory.
+In this example, the command searches the en-US subdirectory, which contains the English (US) language Help files for PowerShell.
 
 ### Example 4: Use Select-String in a function
 
@@ -99,12 +99,12 @@ PS C:\> function search-help
 }
 ```
 
-This simple function uses the **Select-String** cmdlet to search the Windows PowerShell Help files for a particular string.
+This simple function uses the **Select-String** cmdlet to search the PowerShell Help files for a particular string.
 In this example, the function searches the "en-US" subdirectory for English-United States language files.
 
 To use the function to find a string, such as "psdrive", type `search-help psdrive`.
 
-To use this function in any Windows PowerShell console, change the path to point to the Windows PowerShell Help files on your system, and then paste the function in your Windows PowerShell profile.
+To use this function in any PowerShell console, change the path to point to the PowerShell Help files on your system, and then paste the function in your PowerShell profile.
 
 ### Example 5: Search for a string in the Application log
 
@@ -201,7 +201,7 @@ Value    : Transcript
 This example demonstrates the effect of the *AllMatches* parameter of **Select-String**.
 *AllMatches* finds all pattern matches in a line, instead of just finding the first match in each line.
 
-The first command in the example searches the Windows PowerShell conceptual Help files ("about" Help) for instances of the word "transcript".
+The first command in the example searches the PowerShell conceptual Help files ("about" Help) for instances of the word "transcript".
 The output of the first command is saved in the $A variable.
 
 The second command is identical, except that it uses the *AllMatches* parameter.
@@ -490,7 +490,7 @@ Specifies the path to the files to be searched.
 Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]

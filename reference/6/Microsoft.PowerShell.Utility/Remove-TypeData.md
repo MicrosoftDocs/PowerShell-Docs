@@ -34,7 +34,7 @@ Remove-TypeData -Path <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 The **Remove-TypeData** cmdlet deletes extended type data from the current session.
 This cmdlet affects only the current session and sessions that are created in the current session.
 
-You can add properties and methods to objects in Windows PowerShell by defining them in Update-TypeData commands and Types.ps1xml files.
+You can add properties and methods to objects in PowerShell by defining them in Update-TypeData commands and Types.ps1xml files.
 **Remove-TypeData** deletes those extended properties and methods from the current session.
 **Remove-TypeData** does not delete the Types.ps1xml files or delete any extended type definitions from the Types.ps1xml files.
 For more information about Types.ps1xml files, see about_Types.ps1xml (http://go.microsoft.com/fwlink/?LinkID=113274).
@@ -52,7 +52,7 @@ This command deletes from the session all type data for the **System.Array** typ
 
 ### Example 2: Remove an extended data type from a session
 ```
-The first command uses the Get-TypeData cmdlet to get extended type data for the **System.DateTime** type.The output shows that a **DateTime** property has been added to all **System.DateTime** objects in Windows PowerShell.
+The first command uses the Get-TypeData cmdlet to get extended type data for the **System.DateTime** type.The output shows that a **DateTime** property has been added to all **System.DateTime** objects in PowerShell.
 PS C:\> Get-TypeData System.DateTime
 TypeName        Members
 --------        -------

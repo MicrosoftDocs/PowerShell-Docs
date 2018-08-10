@@ -11,7 +11,7 @@ title:  Get-TraceSource
 # Get-TraceSource
 
 ## SYNOPSIS
-Gets Windows PowerShell components that are instrumented for tracing.
+Gets PowerShell components that are instrumented for tracing.
 
 ## SYNTAX
 
@@ -20,12 +20,12 @@ Get-TraceSource [[-Name] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-TraceSource** cmdlet gets the trace sources for Windows PowerShell components that are currently in use.
-You can use the data to determine which Windows PowerShell components you can trace.
+The **Get-TraceSource** cmdlet gets the trace sources for PowerShell components that are currently in use.
+You can use the data to determine which PowerShell components you can trace.
 When tracing, the component generates detailed messages about each step in its internal processing.
 Developers use the trace data to monitor data flow, program execution, and errors.
 
-The tracing cmdlets were designed for Windows PowerShell developers, but they are available to all users.
+The tracing cmdlets were designed for PowerShell developers, but they are available to all users.
 
 ## EXAMPLES
 
@@ -41,7 +41,7 @@ This command gets all of the trace sources that have names that include provider
 PS C:\> Get-TraceSource
 ```
 
-This command gets all of the Windows PowerShell components that can be traced.
+This command gets all of the PowerShell components that can be traced.
 
 ## PARAMETERS
 

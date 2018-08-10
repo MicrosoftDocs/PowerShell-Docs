@@ -165,7 +165,7 @@ Specifies the path to a file.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose the path in single quotation marks.
-Single quotation marks instruct Windows PowerShell not to interpret characters as escape sequences.
+Single quotation marks instruct PowerShell not to interpret characters as escape sequences.
 
 ```yaml
 Type: String[]

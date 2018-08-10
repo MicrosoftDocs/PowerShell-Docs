@@ -21,7 +21,7 @@ Get-Variable [[-Name] <String[]>] [-ValueOnly] [-Include <String[]>] [-Exclude <
 ```
 
 ## DESCRIPTION
-The **Get-Variable** cmdlet gets the Windows PowerShell variables in the current console.
+The **Get-Variable** cmdlet gets the PowerShell variables in the current console.
 You can retrieve just the values of the variables by specifying the *ValueOnly* parameter, and you can filter the variables returned by name.
 
 ## EXAMPLES

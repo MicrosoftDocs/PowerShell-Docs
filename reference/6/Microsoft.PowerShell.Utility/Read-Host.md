@@ -66,7 +66,7 @@ Accept wildcard characters: False
 Specifies the text of the prompt.
 Type a string.
 If the string includes spaces, enclose it in quotation marks.
-Windows PowerShell appends a colon (:) to the text that you enter.
+PowerShell appends a colon (:) to the text that you enter.
 
 ```yaml
 Type: Object
