@@ -22,7 +22,7 @@ Get-ExecutionPolicy [[-Scope] <ExecutionPolicyScope>] [-List] [<CommonParameters
 ## DESCRIPTION
 The **Get-ExecutionPolicy** cmdlet gets the execution policies for the current session.
 
-The execution policy is determined by execution policies that you set by using Set-ExecutionPolicy and the Group Policy settings for the Windows PowerShell execution policy.
+The execution policy is determined by execution policies that you set by using Set-ExecutionPolicy and the Group Policy settings for the PowerShell execution policy.
 The default value is Restricted.
 
 Without parameters, **Get-ExecutionPolicy** gets the execution policy that is effective in the session.
@@ -78,7 +78,7 @@ The second command gets only the effective execution policy, which is the one se
 PS C:\> Get-ExecutionPolicy
 RemoteSigned
 
-The second command shows what happens when you run a blocked script in a Windows PowerShell session in which the execution policy is RemoteSigned. The RemoteSigned policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
+The second command shows what happens when you run a blocked script in a PowerShell session in which the execution policy is RemoteSigned. The RemoteSigned policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
 PS C:\> .\Start-ActivityTracker.ps1
 .\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded. The file .\Start-ActivityTracker.ps1 is not digitally signed. The script will not execute
 on the system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
@@ -91,7 +91,7 @@ At line:1 char:1
 The third command uses the Unblock-File cmdlet to unblock the script so it can run in the session.Before running an **Unblock-File** command, read the script contents and verify that it is safe.
 PS C:\> Unblock-File -Path "Start-ActivityTracker.ps1"
 
-This command shows the effect of the Unblock-File command. The command does not change the execution policy. However, it unblocks the script so that it runs in Windows PowerShell.
+This command shows the effect of the Unblock-File command. The command does not change the execution policy. However, it unblocks the script so that it runs in PowerShell.
 PS C:\> Get-ExecutionPolicy
 RemoteSigned
 PS C:\> Start-ActivityTracker.ps1
@@ -131,7 +131,7 @@ The execution policy set by a Group Policy for all users of the computer.
 - UserPolicy.
 The execution policy set by a Group Policy for the current user of the computer.
 - Process.
-The execution policy that is set for the current Windows PowerShell process.
+The execution policy that is set for the current PowerShell process.
 - CurrentUser.
 The execution policy that is set for the current user.
 - LocalMachine.
@@ -163,12 +163,12 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.PowerShell.ExecutionPolicy
 
 ## NOTES
-* The execution policy is part of the security strategy of Windows PowerShell. It determines whether you can load configuration files (including your Windows PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
+* The execution policy is part of the security strategy of PowerShell. It determines whether you can load configuration files (including your PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
 
   The effective execution policy is determined by the policies that you set by using the Set-ExecutionPolicy cmdlet and the "Turn on Script Execution" group policies for computers and users.
 The precedence order is Computer Group Policy \> User Group Policy \> Process (session) execution policy \> User execution policy \> Computer execution policy.
 
-  For more information about Windows PowerShell execution policy, including definitions of the Windows PowerShell policies, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+  For more information about PowerShell execution policy, including definitions of the PowerShell policies, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
 ## RELATED LINKS
 

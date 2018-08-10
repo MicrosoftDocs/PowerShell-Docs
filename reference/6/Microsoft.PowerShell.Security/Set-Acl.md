@@ -196,7 +196,7 @@ Accept wildcard characters: False
 Specifies a filter in the provider's format or language.
 The value of this parameter qualifies the *Path* parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+Filters are more efficient than other parameters, because the provider applies them when retrieving the objects, rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -254,7 +254,7 @@ Changes the security descriptor of the specified item.
 Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -355,7 +355,7 @@ The type of the security object depends on the type of the item.
 
 ## NOTES
 
- The `Set-Acl` cmdlet is supported by the Windows PowerShell file system and registry providers. As such, you can use it to change the security descriptors of files, directories, and registry keys.
+ The `Set-Acl` cmdlet is supported by the PowerShell file system and registry providers. As such, you can use it to change the security descriptors of files, directories, and registry keys.
 
 ## RELATED LINKS
 

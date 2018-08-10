@@ -379,28 +379,37 @@ $rank2.rank
 
 ### Clear
 
-Removes all elements in the array. The following example shows the effect of
-the clear method.
+Sets all element values to the _default value_ of the array's element type.
+The Clear() method does not reset the size of the array.
+
+In the following example `$a` is an array of objects.
 
 ```powershell
-$a = 0 .. 2
-"Before the clear"
-$a
+$a = 1, 2, 3
 $a.Clear()
-"After the clear"
-$a
+$a | % { $null -eq $_ }
 ```
 
 ```output
-Before the clear
-0
-1
-2
-After the clear
+True
+True
+True
 ```
 
-> [!NOTE]
-> The Clear method does not reset the size of the array.
+In this example, `$intA` is explicitly typed to contain integers.
+
+```powershell
+[int[]] $intA = 1, 2, 3
+$intA.Clear()
+$intA
+```
+
+```output
+0
+0
+0
+```
+
 
 ### ForEach and Where methods
 

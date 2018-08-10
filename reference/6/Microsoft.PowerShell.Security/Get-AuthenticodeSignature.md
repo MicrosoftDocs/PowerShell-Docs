@@ -58,7 +58,7 @@ PS C:\> Get-ChildItem $pshome\*.* | ForEach-object {Get-AuthenticodeSignature $_
 ```
 
 This command lists all of the files in the $pshome directory that have a valid Authenticode signature.
-The $pshome automatic variable contains the path to the Windows PowerShell installation directory.
+The $pshome automatic variable contains the path to the PowerShell installation directory.
 
 The command uses the **Get-ChildItem** cmdlet to get the files in the $pshome directory.
 It uses a pattern of *.* to exclude directories (although it also excludes files without a dot in the filename).
@@ -91,7 +91,7 @@ Specifies the path to the file being examined.
 Unlike *FilePath*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes an escape character, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape characters.
+Single quotation marks tell PowerShell not to interpret any characters as escape characters.
 
 ```yaml
 Type: String[]
@@ -149,7 +149,7 @@ You can pipe a string that contains a file path to **Get-AuthenticodeSignature**
 **Get-AuthenticodeSignature** returns a signature object for each signature that it gets.
 
 ## NOTES
-* For information about Authenticode signatures in Windows PowerShell, see about_Signing.
+* For information about Authenticode signatures in PowerShell, see about_Signing.
 
 *
 
