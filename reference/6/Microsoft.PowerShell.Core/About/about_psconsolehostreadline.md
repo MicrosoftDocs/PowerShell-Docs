@@ -15,7 +15,7 @@ prompt.
 
 ## LONG DESCRIPTION
 
-Starting in Windows PowerShell V3, you can write a function named
+Starting in Windows PowerShell 3.0, you can write a function named
 PSConsoleHostReadLine that overrides the default way that console input is
 processed.
 
@@ -45,9 +45,9 @@ By default, PowerShell reads input from the console in what is known as
 keypresses, F7 menus, and other input. When you press Enter or Tab, Windows
 PowerShell gets the text that you have typed up to that point. There is no way
 for it to know that you pressed Ctrl-R, Ctrl-A, Ctrl-E, or any other keys
-before pressing Enter or Tab. In Windows PowerShell version 3, the
+before pressing Enter or Tab. In Windows PowerShell 3.0, the
 PSConsoleHostReadLine function solves this issue. When you define a function
-named PSConsoleHostReadline in the Windows PowerShell console host, Windows
+named PSConsoleHostReadline in the PowerShell console host, Windows
 PowerShell calls that function instead of the "Cooked Mode" input mechanism.
 
 ### SEE ALSO

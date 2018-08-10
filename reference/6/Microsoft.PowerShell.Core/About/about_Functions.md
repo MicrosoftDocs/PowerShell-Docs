@@ -10,11 +10,11 @@ title:  about_Functions
 
 # SHORT DESCRIPTION
 
-Describes how to create and use functions in Windows PowerShell.
+Describes how to create and use functions in PowerShell.
 
 # LONG DESCRIPTION
 
-A function is a list of Windows PowerShell statements that has a name that you
+A function is a list of PowerShell statements that has a name that you
 assign. When you run a function, you type the function name. The statements in
 the list run as if you had typed them at the command prompt.
 
@@ -64,7 +64,7 @@ A function includes the following items:
 - A scope (optional)
 - A name that you select
 - Any number of named parameters (optional)
-- One or more Windows PowerShell commands enclosed in braces ({})
+- One or more PowerShell commands enclosed in braces ({})
 
 For more information about the Dynamicparam keyword and dynamic parameters in
 functions, see
@@ -79,7 +79,7 @@ have the following format:
 function <function-name> {statements}
 ```
 
-For example, the following function starts Windows PowerShell with the Run as
+For example, the following function starts PowerShell with the Run as
 Administrator option.
 
 ```powershell
@@ -104,24 +104,24 @@ function Get-NewPix
 ```
 
 You can create a toolbox of useful small functions. Add these functions to
-your Windows PowerShell profile, as described in about_Profiles and later in
+your PowerShell profile, as described in about_Profiles and later in
 this topic.
 
 ### Function Names
 
 You can assign any name to a function, but functions that you share with
 others should follow the naming rules that have been established for all
-Windows PowerShell commands.
+PowerShell commands.
 
 Functions names should consist of a verb-noun pair in which the verb
 identifies the action that the function performs and the noun identifies the
 item on which the cmdlet performs its action.
 
 Functions should use the standard verbs that have been approved for all
-Windows PowerShell commands. These verbs help us to keep our command names
+PowerShell commands. These verbs help us to keep our command names
 simple, consistent, and easy for users to understand.
 
-For more information about the standard Windows PowerShell verbs, see
+For more information about the standard PowerShell verbs, see
 [Cmdlet Verbs](http://go.microsoft.com/fwlink/?LinkID=160773) on MSDN.
 
 ### Functions with Parameters
@@ -464,20 +464,20 @@ in functions, and at the command line.
 Functions normally create a scope. The items created in a function, such as
 variables, exist only in the function scope.
 
-For more information about scope in Windows PowerShell, see
+For more information about scope in PowerShell, see
 [about_Scopes](about_Scopes.md).
 
 ### Finding and Managing Functions Using the Function: Drive
 
-All the functions and filters in Windows PowerShell are automatically stored
-in the Function: drive. This drive is exposed by the Windows PowerShell
+All the functions and filters in PowerShell are automatically stored
+in the Function: drive. This drive is exposed by the PowerShell
 Function provider.
 
 When referring to the Function: drive, type a colon after Function, just as
 you would do when referencing the C or D drive of a computer.
 
 The following command displays all the functions in the current session of
-Windows PowerShell:
+PowerShell:
 
 ```powershell
 Get-ChildItem function:
@@ -485,7 +485,7 @@ Get-ChildItem function:
 
 The commands in the function are stored as a script block in the definition
 property of the function. For example, to display the commands in the Help
-function that comes with Windows PowerShell, type:
+function that comes with PowerShell, type:
 
 ```powershell
 (Get-ChildItem function:help).Definition
@@ -496,15 +496,15 @@ for the Function provider. Type `Get-Help Function`.
 
 ### Reusing Functions in New Sessions
 
-When you type a function at the Windows PowerShell command prompt, the
+When you type a function at the PowerShell command prompt, the
 function becomes part of the current session. It is available until the
 session ends.
 
-To use your function in all Windows PowerShell sessions, add the function
-to your Windows PowerShell profile. For more information about profiles,
+To use your function in all PowerShell sessions, add the function
+to your PowerShell profile. For more information about profiles,
 see [about_Profiles](about_Profiles.md).
 
-You can also save your function in a Windows PowerShell script file. Type your
+You can also save your function in a PowerShell script file. Type your
 function in a text file, and then save the file with the .ps1 file name
 extension.
 

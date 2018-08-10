@@ -10,11 +10,11 @@ title:  about_Regular_Expressions
 
 ## SHORT DESCRIPTION
 
-Describes regular expressions in Windows PowerShell.
+Describes regular expressions in PowerShell.
 
 ## LONG DESCRIPTION
 
-Windows PowerShell supports the following regular expression characters.
+PowerShell supports the following regular expression characters.
 
 ```
 Format   value
@@ -59,7 +59,7 @@ Logic    Matches the character that follows as an escaped character.
 Example  "Try$" -match "Try\\$"
 ```
 
-Windows PowerShell supports the character classes available in Microsoft .NET
+PowerShell supports the character classes available in Microsoft .NET
 Framework regular expressions.
 
 ```
@@ -106,7 +106,7 @@ Logic:   Matches any nondigit. Equivalent to \P{Nd} for Unicode and [^0-9]
          for non-Unicode behavior.
 Example: "abcd" -match "\D+"
 ```
-Windows PowerShell supports the quantifiers available in .NET Framework
+PowerShell supports the quantifiers available in .NET Framework
 regular expressions. The following are some examples of quantifiers.
 
 ```
@@ -140,8 +140,8 @@ Example: "abc" -match "\w{2,3}"
 All the comparisons shown in the preceding table evaluate to true.
 
 Notice that the escape character for regular expressions, a backslash (\\), is
-different from the escape character for Windows PowerShell. The escape
-character for Windows PowerShell is the backtick character (`) (ASCII 96).
+different from the escape character for PowerShell. The escape
+character for PowerShell is the backtick character (`) (ASCII 96).
 
 For more information, see [Regular Expression Language - Quick Reference](https://go.microsoft.com/fwlink/?LinkId=133231).
 

@@ -10,11 +10,11 @@ title:  about_Script_Blocks
 ## Short description
 
 Defines what a script block is and explains how to use script blocks in
-the Windows PowerShell programming language.
+the PowerShell programming language.
 
 ## Long description
 
-In the Windows PowerShell programming language, a script block is a
+In the PowerShell programming language, a script block is a
 collection of statements or expressions that can be used as a single unit.
 A script block can accept arguments and return values.
 

@@ -55,7 +55,7 @@ string values `"a"`, `"b"`, `"c"`, and `"d"`. The first time the `Foreach`
 statement runs, it sets the `$letter` variable equal to the first item in
 `$letterArray` (`"a"`). Then, it uses the `Write-Host` cmdlet to display the
 letter a. The next time through the loop, `$letter` is set to `"b"`, and so
-on. After the `Foreach` loop displays the letter d, Windows PowerShell exits
+on. After the `Foreach` loop displays the letter d, PowerShell exits
 the loop.
 
 The entire `Foreach` statement must appear on a single line to run it as a

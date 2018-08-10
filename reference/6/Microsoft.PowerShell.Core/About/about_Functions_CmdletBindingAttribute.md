@@ -18,7 +18,7 @@ The CmdletBinding attribute is an attribute of functions that makes
 them operate like compiled cmdlets that are written in C#, and it
 provides access to features of cmdlets.
 
-Windows PowerShell binds the parameters of functions that have the
+PowerShell binds the parameters of functions that have the
 CmdletBinding attribute in the same way that it binds the parameters of
 compiled cmdlets. The $PSCmdlet automatic variable is available to
 functions with the CmdletBinding attribute, but the $Args variable
@@ -70,7 +70,7 @@ http://go.microsoft.com/fwlink/?LinkId=136658.
 ## DefaultParameterSetName
 
 The DefaultParameterSetName argument specifies the name of the parameter
-set that Windows PowerShell will attempt to use when it cannot determine
+set that PowerShell will attempt to use when it cannot determine
 which parameter set to use. You can avoid this issue by making the
 unique parameter of each parameter set a mandatory parameter.
 
@@ -110,7 +110,7 @@ This argument was introduced in Windows PowerShell 3.0.
 followed by the objects. If the cmdlet cannot determine the total count, it
 returns "Unknown total count".
 
-Windows PowerShell includes NewTotalCount, a helper method that gets the
+PowerShell includes NewTotalCount, a helper method that gets the
 total count value to return and includes an estimate of the accuracy of the
 total count value.
 
@@ -161,7 +161,7 @@ When parameters are not positional (they are "named"), the parameter
 name (or an abbreviation or alias of the name) is required in the command.
 
 When PositionalBinding is $True, function parameters are positional by
-default. Windows PowerShell assigns position number to the parameters in
+default. PowerShell assigns position number to the parameters in
 the order in which they are declared in the function.
 
 When PositionalBinding is $False, function parameters are not positional

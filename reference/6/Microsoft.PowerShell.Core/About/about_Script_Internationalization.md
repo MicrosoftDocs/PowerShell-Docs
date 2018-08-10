@@ -16,7 +16,7 @@ scripts to display messages and instructions to users in their user interface
 
 ## Long Description
 
-The Windows PowerShell script internationalization features allow you to
+The PowerShell script internationalization features allow you to
 better serve users throughout the world by displaying Help and user messages
 for scripts and functions in the user's UI language.
 
@@ -27,7 +27,7 @@ separate from code so they are easily identified and extracted. A new cmdlet,
 `ConvertFrom-StringData`, converts text strings into dictionary-like hash
 tables to facilitate translation.
 
-To support international Help text, Windows PowerShell includes the following
+To support international Help text, PowerShell includes the following
 features:
 
 * A Data section that separates text strings from code instructions. For more

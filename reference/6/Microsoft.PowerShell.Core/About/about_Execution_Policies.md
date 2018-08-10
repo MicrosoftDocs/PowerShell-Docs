@@ -10,13 +10,13 @@ title:  about_Execution_Policies
 
 ## Short Description
 
-Describes the Windows PowerShell execution policies and explains
+Describes the PowerShell execution policies and explains
 how to manage them.
 
 ## Long Description
 
-Windows PowerShell execution policies let you determine the
-conditions under which Windows PowerShell loads configuration files
+PowerShell execution policies let you determine the
+conditions under which PowerShell loads configuration files
 and runs scripts.
 
 You can set an execution policy for the local computer, for the current
@@ -25,7 +25,7 @@ setting to set execution policy for computers and users.
 
 Execution policies for the local computer and current user are stored
 in the registry. You do not need to set execution policies in your
-Windows PowerShell profile. The execution policy for a particular session
+PowerShell profile. The execution policy for a particular session
 is stored only in memory and is lost when the session is closed.
 
 The execution policy is not a security system that restricts user actions.
@@ -34,9 +34,9 @@ contents at the command line when they cannot run a script. Instead, the
 execution policy helps users to set basic rules and prevents them from
 violating them unintentionally.
 
-## Windows PowerShell Execution Policies
+## PowerShell Execution Policies
 
-The Windows PowerShell execution policies are as follows:
+The PowerShell execution policies are as follows:
 
 "Restricted" is the default policy.
 
@@ -49,7 +49,7 @@ scripts.
 
 - Prevents running of all script files, including
 formatting and configuration files (.ps1xml), module
-script files (.psm1), and Windows PowerShell
+script files (.psm1), and PowerShell
 profiles (.ps1).
 
 ### AllSigned
@@ -97,9 +97,9 @@ files that are downloaded from the Internet.
 prompts.
 
 - This execution policy is designed for configurations
-in which a Windows PowerShell script is built in to a
+in which a PowerShell script is built in to a
 a larger application or for configurations in which
-Windows PowerShell is the foundation for a program
+PowerShell is the foundation for a program
 that has its own security model.
 
 ### Undefined
@@ -126,7 +126,7 @@ The Scope values are listed in precedence order.
 
 ### Process
 The execution policy affects only the current session
-(the current Windows PowerShell process).
+(the current PowerShell process).
 
 The execution policy is stored in the
 $env:PSExecutionPolicyPreference environment variable,
@@ -151,7 +151,7 @@ For more information, see [Set-ExecutionPolicy](../../Microsoft.PowerShell.Secur
 
 ## Get Your Execution Policy
 
-To get the Windows PowerShell execution policy that is in
+To get the PowerShell execution policy that is in
 effect in the current session, use the `Get-ExecutionPolicy` cmdlet.
 
 The following command gets the current execution policy:
@@ -195,11 +195,11 @@ Get-ExecutionPolicy -Scope CurrentUser
 
 ## Change Your Execution Policy
 
-To change the Windows PowerShell execution policy on your
+To change the PowerShell execution policy on your
 computer, use the `Set-ExecutionPolicy` cmdlet.
 
 The change is effective immediately; you do not need to restart
-Windows PowerShell.
+PowerShell.
 
 If you set the execution policy for the local computer (the default)
 or the current user, the change is saved in the registry and remains
@@ -211,7 +211,7 @@ process and any child processes are closed.
 
 Note: In Windows Vista and later versions of Windows, to run
 commands that change the execution policy for the local
-computer (the default), start Windows PowerShell with the
+computer (the default), start PowerShell with the
 "Run as administrator" option.
 
 To change your execution policy, type:
@@ -266,11 +266,11 @@ execution policy is Restricted, which is the default.
 ## Set a Different Execution Policy for One Session
 
 You can use the **ExecutionPolicy** parameter of powershell.exe to
-set an execution policy for a new Windows PowerShell session.
+set an execution policy for a new PowerShell session.
 The policy affects only the current session and child sessions.
 
-To set the execution policy for a new session, start Windows PowerShell
-at the command line (such as Cmd.exe or Windows PowerShell), and then use
+To set the execution policy for a new session, start PowerShell
+at the command line (such as Cmd.exe or PowerShell), and then use
 the **ExecutionPolicy** parameter of powershell.exe to set the execution
 policy.
 
@@ -313,7 +313,7 @@ the following execution policy settings.
 | Allow only signed scripts.                     | AllSigned        |
 
 - If "Turn on Script Execution" is not configured, it has no
-effect. The execution policy set in Windows PowerShell is
+effect. The execution policy set in PowerShell is
 effective.
 
 The PowerShellExecutionPolicy.adm and PowerShellExecutionPolicy.admx
@@ -336,7 +336,7 @@ For more information, see [about_Group_Policy_Settings](about_Group_Policy_Setti
 ## Execution Policy Precedence
 
 When determining the effective execution policy for a
-session, Windows PowerShell evaluates the execution policies
+session, PowerShell evaluates the execution policies
 in the following precedence order:
 
 - Group Policy: Computer Configuration
@@ -347,8 +347,8 @@ in the following precedence order:
 
 ## Manage Signed and Unsigned Scripts
 
-If your Windows PowerShell execution policy is RemoteSigned,
-Windows PowerShell will not run unsigned scripts that are
+If your PowerShell execution policy is RemoteSigned,
+PowerShell will not run unsigned scripts that are
 downloaded from the Internet (including e-mail and instant
 messaging programs).
 
@@ -359,7 +359,7 @@ Beginning in Windows PowerShell 3.0, you can use the **Stream**
 parameter of the `Get-Item` cmdlet to detect files that are
 blocked because they were downloaded from the Internet, and
 you can use the `Unblock-File` cmdlet to unblock the scripts
-so that you can run them in Windows PowerShell.
+so that you can run them in PowerShell.
 
 For more information, see [about_Signing](about_Signing.md),
 [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md), and

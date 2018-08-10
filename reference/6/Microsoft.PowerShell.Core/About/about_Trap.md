@@ -14,8 +14,8 @@ Describes a keyword that handles a terminating error.
 
 ## LONG DESCRIPTION
 
-A terminating error stops a statement from running. If Windows PowerShell
-does not handle a terminating error in some way, Windows PowerShell also
+A terminating error stops a statement from running. If PowerShell
+does not handle a terminating error in some way, PowerShell also
 stops running the function or script in the current pipeline. In other
 languages, such as C\#, terminating errors are referred to as exceptions.
 
@@ -41,8 +41,8 @@ appear anywhere in the script or command.
 ### TRAPPING ALL TERMINATING ERRORS
 
 When a terminating error occurs that is not handled in another way in a
-script or command, Windows PowerShell checks for a Trap statement that
-handles the error. If a Trap statement is present, Windows PowerShell
+script or command, PowerShell checks for a Trap statement that
+handles the error. If a Trap statement is present, PowerShell
 continues running the script or command in the Trap statement.
 
 The following example is a very simple Trap statement:
@@ -105,10 +105,10 @@ trap [System.Management.Automation.CommandNotFoundException]
 
 When a function or script encounters a string that does not match a known
 command, this Trap statement displays the "Command error trapped" string.
-After running any statements in the Trap statement list, Windows PowerShell
+After running any statements in the Trap statement list, PowerShell
 writes the error object to the error stream and then continues the script.
 
-Windows PowerShell uses the Microsoft .NET Framework exception types. The
+PowerShell uses the Microsoft .NET Framework exception types. The
 following example specifies the System.Exception error type:
 
 ```powershell
@@ -121,7 +121,7 @@ It also traps other error types.
 
 You can have more than one Trap statement in a script. Each error can be
 trapped by only one Trap statement. If an error occurs, and more than one
-Trap statement is available, Windows PowerShell uses the Trap statement
+Trap statement is available, PowerShell uses the Trap statement
 with the most specific error type that matches the error.
 
 The following script example contains an error. The script includes a
@@ -148,7 +148,7 @@ At C:\PS>testScript1.ps1:3 char:19
 +     nonsenseString <<<<
 ```
 
-Because Windows PowerShell does not recognize "nonsenseString" as a cmdlet
+Because PowerShell does not recognize "nonsenseString" as a cmdlet
 or other item, it returns a CommandNotFoundException error. This
 terminating error is trapped by the specific Trap statement.
 
@@ -178,7 +178,7 @@ traps any terminating error.
 ### TRAPPING ERRORS AND SCOPE
 
 If a terminating error occurs in the same scope as the Trap statement,
-after running the Trap statements, Windows PowerShell continues at the
+after running the Trap statements, PowerShell continues at the
 statement after the error. If the Trap statement is in a different scope
 from the error, execution continues at the next statement that is in the
 same scope as the Trap statement.
@@ -212,7 +212,7 @@ function1 was completed
 ```
 
 The Trap statement in the function traps the error. After displaying the
-message, Windows PowerShell resumes running the function. Note that
+message, PowerShell resumes running the function. Note that
 Function1 was completed.
 
 Compare this with the following example, which has the same error and Trap
@@ -244,7 +244,7 @@ At C:\PS>TestScript2.ps1:4 char:19
 
 In this example, the "function2 was completed" command was not run.
 Although both terminating errors occur within a function, if the Trap
-statement is outside the function, Windows PowerShell does not go back into
+statement is outside the function, PowerShell does not go back into
 the function after the Trap statement runs.
 
 ### USING THE BREAK AND CONTINUE KEYWORDS
@@ -273,9 +273,9 @@ At line:4 char:7
 Because the Trap statement included the Break keyword, the function does
 not continue to run, and the "Function completed" line is not run.
 
-If you include a Continue statement in a Trap statement, Windows PowerShell
+If you include a Continue statement in a Trap statement, PowerShell
 resumes after the statement that caused the error, just as it would without
-Break or Continue. With the Continue keyword, however, Windows PowerShell
+Break or Continue. With the Continue keyword, however, PowerShell
 does not write an error to the error stream.
 
 The following sample function uses the Continue keyword in a Trap

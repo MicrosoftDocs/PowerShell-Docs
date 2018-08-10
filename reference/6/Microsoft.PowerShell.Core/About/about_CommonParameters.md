@@ -15,7 +15,7 @@ Describes the parameters that can be used with any cmdlet.
 ## LONG DESCRIPTION
 
 The common parameters are a set of cmdlet parameters that you can use with any
-cmdlet. They are implemented by Windows PowerShell, not by the cmdlet
+cmdlet. They are implemented by PowerShell, not by the cmdlet
 developer, and they are automatically available to any cmdlet.
 
 You can use the common parameters with any cmdlet, but they might not have an
@@ -26,7 +26,7 @@ The common parameters are also available on advanced functions that use the
 CmdletBinding attribute or the Parameter attribute, and on all workflows.
 
 Several common parameters override system defaults or preferences that you set
-by using the Windows PowerShell preference variables. Unlike the preference
+by using the PowerShell preference variables. Unlike the preference
 variables, the common parameters affect only the commands in which they are
 used.
 
@@ -114,7 +114,7 @@ Valid values:
 
 - Stop. Displays the error message and stops executing the command.
 
-- Suspend. This value is only available in Windows PowerShell workflows. When
+- Suspend. This value is only available in PowerShell workflows. When
   a workflow runs into terminating error, this action preference automatically
   suspends the job to allow for further investigation. After investigation,
   the workflow can be resumed.
@@ -215,7 +215,7 @@ are sent through the pipeline. If you omit this parameter, objects are sent as
 they are generated.
 
 This resource management parameter is designed for advanced users. When you
-use this parameter, Windows PowerShell does not call the next cmdlet in the
+use this parameter, PowerShell does not call the next cmdlet in the
 pipeline until the number of objects generated equals OutBuffer + 1.
 Thereafter, it sends all objects as they are generated.
 
@@ -413,7 +413,7 @@ command:
 PS> Remove-Item Date.csv -WhatIf
 ```
 
-Instead of removing the item, Windows PowerShell lists the operations it would
+Instead of removing the item, PowerShell lists the operations it would
 perform and the items that would be affected. This command produces the
 following output:
 
@@ -445,7 +445,7 @@ Valid values:
   risk of the cmdlet.
 
 For example, the following command uses the Confirm parameter with a
-Remove-Item command. Before removing the item, Windows PowerShell lists the
+Remove-Item command. Before removing the item, PowerShell lists the
 operations it would perform and the items that would be affected, and asks for
 approval.
 

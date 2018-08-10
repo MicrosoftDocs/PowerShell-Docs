@@ -20,7 +20,7 @@ to avoid command-name conflicts in your session.
 
 ## COMMAND PRECEDENCE
 
-When a session includes commands that have the same name, Windows PowerShell
+When a session includes commands that have the same name, PowerShell
 uses the following rules to decide which command to run.
 
 These rules become very important when you add commands to your session from

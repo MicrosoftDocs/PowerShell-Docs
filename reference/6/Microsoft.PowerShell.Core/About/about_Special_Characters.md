@@ -15,13 +15,13 @@ PowerShell interprets the next character in a command or parameter.
 
 # LONG DESCRIPTION
 
-Windows PowerShell supports a set of special character sequences that are used
+PowerShell supports a set of special character sequences that are used
 to represent characters that are not part of the standard character set.
 
-The special characters in Windows PowerShell begin with the backtick
+The special characters in PowerShell begin with the backtick
 character, also known as the grave accent (ASCII 96).
 
-The following special characters are recognized by Windows PowerShell:
+The following special characters are recognized by PowerShell:
 
 ```
 | Character | Description             |
@@ -44,9 +44,9 @@ when used within double quoted (") strings.
 
 ## NULL (`0)
 
-Windows PowerShell recognizes a null special character (`0) and represents it
+PowerShell recognizes a null special character (`0) and represents it
 with a character code of 0. It appears as an empty space in the Windows
-PowerShell output. This allows you to use Windows PowerShell to read and
+PowerShell output. This allows you to use PowerShell to read and
 process text files that use null characters, such as string termination or
 record termination indicators. The null special character is not equivalent to
 the $null variable, which stores a value of NULL.
@@ -148,7 +148,7 @@ Delete everything before this point.
 ## HORIZONTAL TAB (`t)
 
 The horizontal tab character (`t) advances to the next tab stop and continues
-writing at that point. By default, the Windows PowerShell console has a tab
+writing at that point. By default, the PowerShell console has a tab
 stop at every eighth space.
 
 For example, the following command inserts two tabs between each column.
@@ -186,8 +186,8 @@ printed documents only. It does not affect screen output.
 
 ## STOP PARSING  (--%)
 
-The stop-parsing symbol (--%) prevents Windows PowerShell from interpreting
-arguments in program calls as Windows PowerShell commands and expressions.
+The stop-parsing symbol (--%) prevents PowerShell from interpreting
+arguments in program calls as PowerShell commands and expressions.
 
 Place the stop-parsing symbol after the program name and before program
 arguments that might cause errors.
@@ -198,7 +198,7 @@ For example, the following Icacls command uses the stop-parsing symbol.
 icacls X:\VMS --% /grant Dom\HVAdmin:(CI)(OI)F
 ```
 
-Windows PowerShell sends the following command to Icacls.
+PowerShell sends the following command to Icacls.
 
 ```output
 X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
