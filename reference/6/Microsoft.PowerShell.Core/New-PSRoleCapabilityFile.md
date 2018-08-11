@@ -35,7 +35,7 @@ All the parameters of **New-PSRoleCapabilityFile** are optional except for the *
 If you do not include a parameter when you run the cmdlet, the corresponding key in the session configuration file will be commented-out, except where noted in the parameter description.
 For example, if you do not include the *AssembliesToLoad* parameter then that section of the session configuration file will be commented out.
 
-To use the role capability file in a session configuration, first place the file in a **RoleCapabilities** subfolder of a valid Windows PowerShell module folder.
+To use the role capability file in a session configuration, first place the file in a **RoleCapabilities** subfolder of a valid PowerShell module folder.
 Then reference the file by name in the **RoleDefinitions** field in a PowerShell Session Configuration (.pssc) file.
 
 This cmdlet was introduced in Windows PowerShell 5.0.
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 ### -Guid
 Specifies a unique identifier for the role capability file.
 If you omit this parameter, **New-PSRoleCapabilityFile** generates a GUID for the file.
-To create a new GUID in Windows PowerShell, type `\[guid\]::NewGuid()`.
+To create a new GUID in PowerShell, type `\[guid\]::NewGuid()`.
 
 ```yaml
 Type: Guid
@@ -362,11 +362,11 @@ Accept wildcard characters: False
 ### -VisibleAliases
 Limits the aliases in the session to those aliases specified in the value of this parameter, plus any aliases that you define in the *AliasDefinition* parameter.
 Wildcard characters are supported.
-By default, all aliases that are defined by the Windows PowerShell engine and all aliases that modules export are visible in the session.
+By default, all aliases that are defined by the PowerShell engine and all aliases that modules export are visible in the session.
 
 For example, to limit the available aliases to gm and gcm use this syntax: `VisibleAliases="gcm", "gp"`
 
-When any *Visible* parameter is included in the role capability file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
+When any *Visible* parameter is included in the role capability file, PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: String[]
@@ -388,7 +388,7 @@ By default, all cmdlets that the modules in the session export are visible in th
 Use the *SessionType* and *ModulesToImport* parameters to determine which modules and snap-ins are imported into the session.
 If no modules in **ModulesToImport** expose the cmdlet, **New-PSRoleCapabilityFile** will try load the appropriate module.
 
-When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
+When any *Visible* parameter is included in the session configuration file, PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: Object[]
@@ -408,7 +408,7 @@ Wildcard characters are supported.
 
 By default, no external commands are visible in this session.
 
-When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
+When any *Visible* parameter is included in the session configuration file, PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: String[]
@@ -429,7 +429,7 @@ Wildcard characters are supported.
 By default, all functions exported by modules in the session are visible in that session.
 Use the *SessionType* and *ModulesToImport* parameters to determine which modules are imported into the session.
 
-When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
+When any *Visible* parameter is included in the session configuration file, PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: Object[]
@@ -444,13 +444,13 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleProviders
-Limits the Windows PowerShell providers in the session to those specified in the value of this parameter.
+Limits the PowerShell providers in the session to those specified in the value of this parameter.
 Wildcard characters are supported.
 
 By default, all providers exported by a module in the session are visible in the session.
 Use the *SessionType* and *ModulesToImport* parameters to determine which modules are imported into the session.
 
-When any *Visible* parameter is included in the session configuration file, Windows PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
+When any *Visible* parameter is included in the session configuration file, PowerShell removes the **Import-Module** cmdlet and its ipmo alias from the session.
 
 ```yaml
 Type: String[]

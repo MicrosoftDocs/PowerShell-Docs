@@ -11,7 +11,7 @@ title:  Remove-Job
 # Remove-Job
 
 ## SYNOPSIS
-Deletes a Windows PowerShell background job.
+Deletes a PowerShell background job.
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Remove-Job [-Command <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Remove-Job** cmdlet deletes Windows PowerShell background jobs.
+The **Remove-Job** cmdlet deletes PowerShell background jobs.
 You can start jobs by using the Start-Job or the *AsJob* parameter of any cmdlet.
 
 You can use this cmdlet to delete all jobs or delete jobs based on their name, ID, instance ID, command, or state, or by passing a job object to **Remove-Job**.
@@ -166,7 +166,7 @@ Debug         : {}
 Warning       : {}
 StateChanged  :
 
-The third command uses a **Remove-Job** command to remove the job from the current session. To generate the command, you can copy and paste the *InstanceID* value from the object display.To copy a value in the Windows PowerShell console, use the mouse to select the value, and then press Enter to copy it. To paste a value, right-click.
+The third command uses a **Remove-Job** command to remove the job from the current session. To generate the command, you can copy and paste the *InstanceID* value from the object display.To copy a value in the PowerShell console, use the mouse to select the value, and then press Enter to copy it. To paste a value, right-click.
 PS C:\> Remove-Job -InstanceID dce2ee73-f8c9-483e-bdd7-a549d8687eed
 ```
 

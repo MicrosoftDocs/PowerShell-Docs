@@ -33,7 +33,7 @@ PS C:\> Get-History | Export-Csv c:\testing\history.csv
 PS C:\> Import-Csv history.csv | Add-History
 ```
 
-These commands add the commands typed in one Windows PowerShell session to the history of a different Windows PowerShell session.
+These commands add the commands typed in one PowerShell session to the history of a different PowerShell session.
 
 The first command gets objects representing the commands in the history and exports them to the History.csv file.
 
@@ -63,7 +63,7 @@ PS C:\> Get-History -Id 5 -Count 5 | Add-History
 This command adds the first five commands in the history to the end of the history list.
 It uses the Get-History cmdlet to get the five commands ending in command 5.
 The pipeline operator passes them to the **Add-History** cmdlet, which appends them to the current history.
-The **Add-History** command does not include any parameters, but Windows PowerShell associates the objects passed through the pipeline with the *InputObject* parameter of **Add-History**.
+The **Add-History** command does not include any parameters, but PowerShell associates the objects passed through the pipeline with the *InputObject* parameter of **Add-History**.
 
 ### Example 4: Add commands in a .csv file to the current history
 ```
@@ -86,7 +86,7 @@ PS C:\> Add-History -InputObject (Import-Clixml c:\temp\history01.xml)
 
 This command adds the commands in the History01.xml file to the current session history.
 It uses the *InputObject* parameter to pass the results of the command in parentheses to the **Add-History** cmdlet.
-The command in parentheses, which is executed first, imports the History01.xml file into Windows PowerShell.
+The command in parentheses, which is executed first, imports the History01.xml file into PowerShell.
 The **Add-History** cmdlet then adds the commands in the file to the session history.
 
 ## PARAMETERS
@@ -138,7 +138,7 @@ This cmdlet returns a **HistoryInfo** object if you specify the *PassThru* param
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
-* The session history is a list of the commands entered during the session together with the ID. The session history represents the order of execution, the status, and the start and end times of the command. As you enter each command, Windows PowerShell adds it to the history so that you can reuse it. For more information about the session history, see about_History.
+* The session history is a list of the commands entered during the session together with the ID. The session history represents the order of execution, the status, and the start and end times of the command. As you enter each command, PowerShell adds it to the history so that you can reuse it. For more information about the session history, see about_History.
 
   To specify the commands to add to the history, use the *InputObject* parameter.
 The **Add-History** command accepts only **HistoryInfo** objects, such as those returned for each command by the **Get-History** cmdlet.

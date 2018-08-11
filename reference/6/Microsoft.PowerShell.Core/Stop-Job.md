@@ -11,7 +11,7 @@ title:  Stop-Job
 # Stop-Job
 
 ## SYNOPSIS
-Stops a Windows PowerShell background job.
+Stops a PowerShell background job.
 
 ## SYNTAX
 
@@ -46,11 +46,11 @@ Stop-Job [-PassThru] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParamete
 ```
 
 ## DESCRIPTION
-The **Stop-Job** cmdlet stops Windows PowerShell background jobs that are in progress.
+The **Stop-Job** cmdlet stops PowerShell background jobs that are in progress.
 You can use this cmdlet to stop all jobs or stop selected jobs based on their name, ID, instance ID, or state, or by passing a job object to **Stop-Job**.
 
 You can use **Stop-Job** to stop background jobs, such as those that were started by using the Start-Job cmdlet or the *AsJob* parameter of any cmdlet.
-When you stop a background job, Windows PowerShell completes all tasks that are pending in that job queue and then ends the job.
+When you stop a background job, PowerShell completes all tasks that are pending in that job queue and then ends the job.
 No new tasks are added to the queue after this command is submitted.
 
 This cmdlet does not delete background jobs.
@@ -75,7 +75,7 @@ Because the job was started by using the Invoke-Command cmdlet to run a **Start-
 You must use another **Invoke-Command** command to run a **Stop-Job** command remotely.
 For more information about remote background jobs, see about_Remote_Jobs.
 
-The first command creates a Windows PowerShell session (**PSSession**) on the Server01 computer, and then stores the session object in the $s variable.
+The first command creates a PowerShell session (**PSSession**) on the Server01 computer, and then stores the session object in the $s variable.
 The command uses the credentials of a domain administrator.
 
 The second command uses the **Invoke-Command** cmdlet to run a **Start-Job** command in the session.

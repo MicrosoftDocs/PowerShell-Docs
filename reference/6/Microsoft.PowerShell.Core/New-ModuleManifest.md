@@ -68,11 +68,11 @@ PS C:\> New-ModuleManifest -Path C:\Users\User01\Documents\WindowsPowerShell\Mod
 # Copyright statement for this moduleCopyright = '(c) 2012 User01. All rights reserved.'
 # Description of the functionality provided by this module
 # Description = ''
-# Minimum version of the Windows PowerShell engine required by this module
+# Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''
-# Name of the Windows PowerShell host required by this module
+# Name of the PowerShell host required by this module
 # PowerShellHostName = ''
-# Minimum version of the Windows PowerShell host required by this module
+# Minimum version of the PowerShell host required by this module
 # PowerShellHostVersion = ''
 # Minimum version of the .NET Framework required by this module
 # DotNetFrameworkVersion = ''
@@ -436,7 +436,7 @@ Accept wildcard characters: False
 ### -FormatsToProcess
 Specifies the formatting files (.ps1xml) that run when the module is imported.
 
-When you import a module, Windows PowerShell runs the Update-FormatData cmdlet with the specified files.
+When you import a module, PowerShell runs the Update-FormatData cmdlet with the specified files.
 Because formatting files are not scoped, they affect all session states in the session.
 
 ```yaml
@@ -478,7 +478,7 @@ The GUID can be used to distinguish among modules with the same name.
 
 If you omit this parameter, **New-ModuleManifest** creates a **GUID** key in the manifest and generates a GUID for the value.
 
-To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid()".
+To create a new GUID in PowerShell, type "\[guid\]::NewGuid()".
 
 ```yaml
 Type: Guid
@@ -656,7 +656,7 @@ Accept wildcard characters: False
 ```
 
 ### -PowerShellHostName
-Specifies the name of the Windows PowerShell host program that the module requires.
+Specifies the name of the PowerShell host program that the module requires.
 Enter the name of the host program, such as `Windows PowerShell ISE Host` or `ConsoleHost`.
 Wildcard characters are not permitted.
 
@@ -675,7 +675,7 @@ Accept wildcard characters: False
 ```
 
 ### -PowerShellHostVersion
-Specifies the minimum version of the Windows PowerShell host program that works with the module.
+Specifies the minimum version of the PowerShell host program that works with the module.
 Enter a version number, such as 1.1.
 
 ```yaml
@@ -691,7 +691,7 @@ Accept wildcard characters: False
 ```
 
 ### -PowerShellVersion
-Specifies the minimum version of Windows PowerShell that works with this module.
+Specifies the minimum version of PowerShell that works with this module.
 For example, you can enter 3.0, 4.0, or 5.0 as the value of this parameter.
 
 ```yaml
@@ -772,7 +772,7 @@ Accept wildcard characters: False
 ### -RequiredAssemblies
 Specifies the assembly (.dll) files that the module requires.
 Enter the assembly file names.
-Windows PowerShell loads the specified assemblies before updating types or formats, importing nested modules, or importing the module file that is specified in the value of the **RootModule** key.
+PowerShell loads the specified assemblies before updating types or formats, importing nested modules, or importing the module file that is specified in the value of the **RootModule** key.
 
 Use this parameter to list all the assemblies that the module requires.
 This includes assemblies that must be loaded to update any formatting or type files that are listed in the **FormatsToProcess** or **TypesToProcess** keys, even if those assemblies are also listed as binary modules in the **NestedModules** key.
@@ -791,7 +791,7 @@ Accept wildcard characters: False
 
 ### -RequiredModules
 Specifies modules that must be in the global session state.
-If the required modules are not in the global session state, Windows PowerShell imports them.
+If the required modules are not in the global session state, PowerShell imports them.
 If the required modules are not available, the Import-Module command fails.
 
 Enter each module name as a string or as a hash table with **ModuleName** and **ModuleVersion** keys.
@@ -875,7 +875,7 @@ Accept wildcard characters: False
 ### -TypesToProcess
 Specifies the type files (.ps1xml) that run when the module is imported.
 
-When you import the module, Windows PowerShell runs the Update-TypeData cmdlet with the specified files.
+When you import the module, PowerShell runs the Update-TypeData cmdlet with the specified files.
 Because type files are not scoped, they affect all session states in the session.
 
 ```yaml
@@ -960,9 +960,9 @@ However, if you use the *PassThru* parameter, it generates a **System.String** o
 
 ## NOTES
 * Module manifests are usually optional. However, a module manifest is required to export an assembly that is installed in the global assembly cache.
-* To add or change files in the $pshome\Modules directory (%Windir%\System32\WindowsPowerShell\v1.0\Modules), start Windows PowerShell by using the Run as administrator option.
+* To add or change files in the $pshome\Modules directory (%Windir%\System32\WindowsPowerShell\v1.0\Modules), start PowerShell by using the Run as administrator option.
 * In Windows PowerShell 2.0, many parameters of **New-ModuleManifest** are mandatory, even though they are not required in a module manifest. In Windows PowerShell 3.0, only the *Path* parameter is mandatory.
-* A session is an instance of the Windows PowerShell run environment. A session can have one or more session states. By default, a session has only a global session state, but each imported module has its own session state. Session states allow the commands in a module to run without affecting the global session state.
+* A session is an instance of the PowerShell run environment. A session can have one or more session states. By default, a session has only a global session state, but each imported module has its own session state. Session states allow the commands in a module to run without affecting the global session state.
 
   The caller's session state is the session state into which a module is imported.
 Typically, it refers to the global session state, but when a module imports nested modules, the caller is the module and the caller's session state is the module's session state.

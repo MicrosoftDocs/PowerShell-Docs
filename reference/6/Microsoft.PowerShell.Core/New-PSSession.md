@@ -68,8 +68,8 @@ New-PSSession [-Name <String[]>] -SSHConnection <Hashtable[]> [<CommonParameters
 ```
 
 ## DESCRIPTION
-The **New-PSSession** cmdlet creates a Windows PowerShell session (**PSSession**) on a local or remote computer.
-When you create a **PSSession**, Windows PowerShell establishes a persistent connection to the remote computer.
+The **New-PSSession** cmdlet creates a PowerShell session (**PSSession**) on a local or remote computer.
+When you create a **PSSession**, PowerShell establishes a persistent connection to the remote computer.
 
 Use a **PSSession** to run multiple commands that share data, such as a function or the value of a variable.
 To run commands in a **PSSession**, use the Invoke-Command cmdlet.
@@ -77,7 +77,7 @@ To use the **PSSession** to interact directly with a remote computer, use the En
 For more information, see about_PSSessions (http://go.microsoft.com/fwlink/?LinkID=135181).
 
 You can run commands on a remote computer without creating a **PSSession** by using the *ComputerName* parameters of **Enter-PSSession** or **Invoke-Command**.
-When you use the *ComputerName* parameter, Windows PowerShell creates a temporary connection that is used for the command and is then closed.
+When you use the *ComputerName* parameter, PowerShell creates a temporary connection that is used for the command and is then closed.
 
 Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and create a session on a remote computer, if SSH is available on the local computer and the remote computer is configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShell remote session is that it can work across multiple platforms (Windows, Linux, macOS). For SSH based sessions you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information. For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
 
@@ -112,7 +112,7 @@ This command creates three **PSSession** objects, one on each of the computers s
 The command uses the assignment operator (=) to assign the new **PSSession** objects to variables: $s1, $s2, $s3.
 It assigns the Server01 **PSSession** to $s1, the Server02 **PSSession** to $s2, and the Server03 **PSSession** to $s3.
 
-When you assign multiple objects to a series of variables, Windows PowerShell assigns each object to a variable in the series respectively.
+When you assign multiple objects to a series of variables, PowerShell assigns each object to a variable in the series respectively.
 If there are more objects than variables, all remaining objects are assigned to the last variable.
 If there are more variables than objects, the remaining variables are empty (null).
 
@@ -189,7 +189,7 @@ The command saves the **PSSession** objects in the $s variable.
 
 The second command uses the *AsJob* parameter of the Invoke-Command cmdlet to start a background job that runs a `Get-Process PowerShell` command in each of the **PSSession** objects in $s.
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ### Example 10: Create a session for a computer by using its URI
 ```
@@ -241,7 +241,7 @@ This example shows how to create multiple sessions using Secure Shell (SSH) and 
 Indicates that this cmdlet allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 
 When you use the *ConnectionURI* parameter, the remote destination can return an instruction to redirect to a different URI.
-By default, Windows PowerShell does not redirect connections, but you can use this parameter to enable it to redirect the connection.
+By default, PowerShell does not redirect connections, but you can use this parameter to enable it to redirect the connection.
 
 You can also limit the number of times the connection is redirected by changing the **MaximumConnectionRedirectionCount** session option value.
 Use the *MaximumRedirection* parameter of the New-PSSessionOption cmdlet or set the **MaximumConnectionRedirectionCount** property of the **$PSSessionOption** preference variable.
@@ -323,7 +323,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate, use the Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
+To get a certificate, use the Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
 Type: String
@@ -352,7 +352,7 @@ To use an IP address in the value of the *ComputerName* parameter, the command m
 Also, the computer must be configured for HTTPS transport or the IP address of the remote computer must be included in the WinRM TrustedHosts list on the local computer.
 For instructions for adding a computer name to the TrustedHosts list, see "How to Add a Computer to the Trusted Host List" in about_Remote_Troubleshooting (http://go.microsoft.com/fwlink/?LinkID=135188).
 
-To include the local computer in the value of the *ComputerName* parameter, start Windows PowerShell by using the Run as administrator option.
+To include the local computer in the value of the *ComputerName* parameter, start PowerShell by using the Run as administrator option.
 
 ```yaml
 Type: String[]
@@ -406,9 +406,9 @@ If you do not specify a *ConnectionURI*, you can use the *UseSSL*, *ComputerName
 
 Valid values for the Transport segment of the URI are HTTP and HTTPS.
 If you specify a connection URI with a Transport segment, but do not specify a port, the session is created with standards ports: 80 for HTTP and 443 for HTTPS.
-To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
+To use the default ports for PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
 
-If the destination computer redirects the connection to a different URI, Windows PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
+If the destination computer redirects the connection to a different URI, PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
 
 ```yaml
 Type: Uri[]
@@ -720,7 +720,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses the SSL protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network.
+WS-Management encrypts all PowerShell content transmitted over the network.
 The *UseSSL* parameter offers an additional protection that sends the data across an HTTPS connection instead of an HTTP connection.
 
 If you use this parameter, but SSL is not available on the port that is used for the command, the command fails.
@@ -809,8 +809,8 @@ You can pipe a string, URI, or session object to this cmdlet.
 ### System.Management.Automation.Runspaces.PSSession
 
 ## NOTES
-* This cmdlet uses the Windows PowerShell remoting infrastructure. To use this cmdlet, the local computer and any remote computers must be configured for Windows PowerShell remoting. For more information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
-* To create a **PSSession** on the local computer, start Windows PowerShell with the Run as administrator option.
+* This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local computer and any remote computers must be configured for PowerShell remoting. For more information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
+* To create a **PSSession** on the local computer, start PowerShell with the Run as administrator option.
 * When you are finished with the **PSSession**, use the Remove-PSSession cmdlet to delete the **PSSession** and release its resources.
 * The **HostName** and **SSHConnection** parameter sets were included starting with PowerShell 6.0. They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported.
 For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
