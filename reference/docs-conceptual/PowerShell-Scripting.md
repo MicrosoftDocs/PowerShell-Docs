@@ -1,9 +1,8 @@
 ---
-ms.date:  06/05/2017
+ms.date:  08/13/2018
 keywords:  powershell,cmdlet
 title:  PowerShell Scripting
 ---
-
 # PowerShell
 
 Built on the .NET Framework, PowerShell is a task-based command-line shell and scripting language.
@@ -62,7 +61,7 @@ But, in return, it makes the development of cmdlets much simpler.
 
 ### Interactive and Scripting Environments
 
-The Windows Command Prompt provides an interactive shell with access command-line tools and basic scripting.
+The Windows Command Prompt provides an interactive shell with access to command-line tools and basic scripting.
 Windows Script Host (WSH) provides access to scriptable command-line tools and COM automation objects, but doesn't provide an interactive shell.
 
 PowerShell is a combined interactive shell and scripting environment.
