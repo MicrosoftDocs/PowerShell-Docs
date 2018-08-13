@@ -84,7 +84,7 @@ At line:1 char:28
 + Set-PsDebug -strict;$NewVar <<<<
 ```
 
-This command puts Windows PowerShell in strict mode, and then attempts to access a variable that has not yet been set.
+This command puts PowerShell in strict mode, and then attempts to access a variable that has not yet been set.
 
 ## PARAMETERS
 
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 
 ### -Step
 Indicates that this cmdlet turns on script stepping.
-Before each line runs, Windows PowerShell prompts you to stop, continue, or enter a new interpreter level to inspect the state of the script.
+Before each line runs, PowerShell prompts you to stop, continue, or enter a new interpreter level to inspect the state of the script.
 
 Specifying the *Step* parameter automatically sets a trace level of 1.
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -Strict
-Indicates that Windows PowerShell returns an exception if a variable is referenced before a value is assigned to the variable.
+Indicates that PowerShell returns an exception if a variable is referenced before a value is assigned to the variable.
 
 A `Set-StrictMode -Off` command disables the verification set by a `Set-PSDebug -Strict` command.
 For more information, see **Set-StrictMode**.

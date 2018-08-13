@@ -154,7 +154,7 @@ Description
 -----------
 This command gets the content of the Chapter1.txt file and displays it in the console. It uses the Path parameter to specify the name of the item.
 
-Get-Content actually passes the content down the pipeline, but because there are no other cmdlets in the pipeline, Windows PowerShell formats the contents and displays it in the console.
+Get-Content actually passes the content down the pipeline, but because there are no other cmdlets in the pipeline, PowerShell formats the contents and displays it in the console.
 
 ```
 

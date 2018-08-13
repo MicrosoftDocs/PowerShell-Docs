@@ -223,7 +223,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
 
   `Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}`
 
-  All Windows PowerShell comparison operators are valid in the script block format.
+  All PowerShell comparison operators are valid in the script block format.
   For more information about comparison operators, see [about_Comparison_Operators](./About/about_Comparison_Operators.md).
 
 - **Comparison statement**.
@@ -239,7 +239,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
 
   Starting in Windows PowerShell 3.0, **Where-Object** adds comparison operators as parameters in a **Where-Object** command.
   Unless specified, all operators are case-insensitive.
-  Prior to Windows PowerShell 3.0, the comparison operators in the Windows PowerShell language could be used only in script blocks.
+  Prior to Windows PowerShell 3.0, the comparison operators in the PowerShell language could be used only in script blocks.
 
 ## Examples
 
@@ -334,14 +334,14 @@ This example shows how to create a `Where-Object` command with multiple conditio
 
 This command gets non-core modules that support the Updatable Help feature.
 The command uses the *ListAvailable* parameter of the `Get-Module` cmdlet to get all modules on the computer.
-A pipeline operator (|) sends the modules to the `Where-Object` cmdlet, which gets modules whose names do not begin with Microsoft or PS, and have a value for the **HelpInfoURI** property, which tells Windows PowerShell where to find updated help files for the module.
+A pipeline operator (|) sends the modules to the `Where-Object` cmdlet, which gets modules whose names do not begin with Microsoft or PS, and have a value for the **HelpInfoURI** property, which tells PowerShell where to find updated help files for the module.
 The comparison statements are connected by the **And** logical operator.
 
 The example uses the script block command format.
 Logical operators, such as **And** and **Or**, are valid only in script blocks.
 You cannot use them in the comparison statement format of a `Where-Object` command.
 
-- For more information about Windows PowerShell logical operators, see [about_Logical_Operators](./About/about_logical_operators.md).
+- For more information about PowerShell logical operators, see [about_Logical_Operators](./About/about_logical_operators.md).
 - For more information about the Updatable Help feature, see [about_Updatable_Help](./About/about_Updatable_Help.md).
 
 ## PARAMETERS
@@ -354,7 +354,7 @@ This operation is case-sensitive.
 For example: `Get-Process | where ProcessName -CContains "svchost"`
 
 *CContains* refers to a collection of values and is true if the collection contains an item that is an exact match for the specified value.
-If the input is a single object, Windows PowerShell converts it to a collection of one object.
+If the input is a single object, PowerShell converts it to a collection of one object.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -563,7 +563,7 @@ This operation is case-sensitive.
 For example: `Get-Process | where ProcessName -CNotContains "svchost"`
 
 "NotContains" and "CNotContains refer to a collection of values and are true when the collection does not contains any items that are an exact match for the specified value.
-If the input is a single object, Windows PowerShell converts it to a collection of one object.
+If the input is a single object, PowerShell converts it to a collection of one object.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -654,7 +654,7 @@ Indicates that this cmdlet gets objects if any item in the property value of the
 
 For example: `Get-Process | where ProcessName -Contains "Svchost"`
 
-If the property value contains a single object, Windows PowerShell converts it to a collection of one object.
+If the property value contains a single object, PowerShell converts it to a collection of one object.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -749,9 +749,9 @@ Indicates that this cmdlet gets objects if the property value matches any of the
 
 For example: `Get-Process | where -Property ProcessName -in -Value "Svchost", "TaskHost", "WsmProvHost"`
 
-If the value of the *Value* parameter is a single object, Windows PowerShell converts it to a collection of one object.
+If the value of the *Value* parameter is a single object, PowerShell converts it to a collection of one object.
 
-If the property value of an object is an array, Windows PowerShell uses reference equality to determine a match.
+If the property value of an object is an array, PowerShell uses reference equality to determine a match.
 `Where-Object` returns the object only if the value of the *Property* parameter and any value of *Value* are the same instance of an object.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -932,7 +932,7 @@ Indicates that this cmdlet gets objects if none of the items in the property val
 For example: `Get-Process | where ProcessName -NotContains "Svchost"`
 
 *NotContains* refers to a collection of values and is true if the collection does not contain any items that are an exact match for the specified value.
-If the input is a single object, Windows PowerShell converts it to a collection of one object.
+If the input is a single object, PowerShell converts it to a collection of one object.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -954,9 +954,9 @@ Indicates that this cmdlet gets objects if the property value is not an exact ma
 
 For example: `Get-Process | where -Value "svchost" -NotIn -Property ProcessName`
 
-If the value of *Value* is a single object, Windows PowerShell converts it to a collection of one object.
+If the value of *Value* is a single object, PowerShell converts it to a collection of one object.
 
-If the property value of an object is an array, Windows PowerShell uses reference equality to determine a match.
+If the property value of an object is an array, PowerShell uses reference equality to determine a match.
 `Where-Object` returns the object only if the value of *Property* and any value of *Value* are not the same instance of an object.
 
 This parameter was introduced in Windows PowerShell 3.0.

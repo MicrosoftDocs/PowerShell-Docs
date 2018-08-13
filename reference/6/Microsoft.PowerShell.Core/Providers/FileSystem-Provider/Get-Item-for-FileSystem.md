@@ -143,7 +143,7 @@ Description
 -----------
 This command gets the items in the C: drive. The wildcard character (*) represents all the items in the container, not just the container.
 
-In Windows PowerShell, use a single asterisk (*) to get contents, instead of the traditional "*.*". The format is interpreted literally, so "*.*" would not retrieve directories or file names without a dot.
+In PowerShell, use a single asterisk (*) to get contents, instead of the traditional "*.*". The format is interpreted literally, so "*.*" would not retrieve directories or file names without a dot.
 
 ```
 

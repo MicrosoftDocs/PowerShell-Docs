@@ -159,7 +159,7 @@ This command creates a $PSSessionOption preference variable.
 
 When the $PSSessionOption preference variable occurs in the session, it establishes default values for options in the sessions that are created by using the **New-PSSession**, **Enter-PSSession**, and Invoke-Command cmdlets.
 
-To make the $PSSessionOption variable available in all sessions, add it to your Windows PowerShell session and to your Windows PowerShell profile.
+To make the $PSSessionOption variable available in all sessions, add it to your PowerShell session and to your PowerShell profile.
 
 For more information about the $PSSessionOption preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
@@ -226,8 +226,8 @@ Specifies a primitive dictionary that is sent to the remote session.
 Commands and scripts in the remote session, including startup scripts in the session configuration, can find this dictionary in the **ApplicationArguments** property of the $PSSenderInfo automatic variable.
 You can use this parameter to send data to the remote session.
 
-A primitive dictionary is like a hash table, but it contains keys that are case-insensitive strings and values that can be serialized and deserialized during Windows PowerShell remoting handshakes.
-If you enter a hash table for the value of this parameter, Windows PowerShell converts it to a primitive dictionary.
+A primitive dictionary is like a hash table, but it contains keys that are case-insensitive strings and values that can be serialized and deserialized during PowerShell remoting handshakes.
+If you enter a hash table for the value of this parameter, PowerShell converts it to a primitive dictionary.
 
 For more information, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175), about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152), and about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
 
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 ```
 
 ### -CancelTimeout
-Determines how long Windows PowerShell waits for a cancel operation (CTRL + C) to finish before ending it.
+Determines how long PowerShell waits for a cancel operation (CTRL + C) to finish before ending it.
 Enter a value in milliseconds.
 
 The default value is 60000 (one minute).
@@ -325,7 +325,7 @@ This option allows a client that uses a non-default SPN to authenticate against 
 
 The option is designed for enterprises where multiple services that support Kerberos authentication are running under different user accounts.
 For example, an IIS application that allows for Kerberos authentication can require the default SPN to be registered to a user account that differs from the computer account.
-In such cases, Windows PowerShell remoting cannot use Kerberos to authenticate because it requires an SPN that is registered to the computer account.
+In such cases, PowerShell remoting cannot use Kerberos to authenticate because it requires an SPN that is registered to the computer account.
 To resolve this problem, administrators can create different SPNs, such as by using Setspn.exe, that are registered to different user accounts and can distinguish between them by including the port number in the SPN.
 
 For more information about Setspn.exe, see [Setspn Overview](https://go.microsoft.com/fwlink/?LinkID=189413).
@@ -402,7 +402,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumRedirection
-Determines how many times Windows PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
+Determines how many times PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
 The default value is 5.
 A value of 0 (zero) prevents all redirection.
 

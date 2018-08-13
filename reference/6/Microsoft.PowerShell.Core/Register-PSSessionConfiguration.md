@@ -53,8 +53,8 @@ Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <Strin
 The **Register-PSSessionConfiguration** cmdlet creates and registers a new session configuration on the local computer.
 This is an advanced cmdlet that you can use to create custom sessions for remote users.
 
-Every Windows PowerShell session (**PSSession**) uses a session configuration, also known as an endpoint.
-When users create a session that connects to the computer, they can select a session configuration or use the default session configuration that is registered when you enable Windows PowerShell remoting.
+Every PowerShell session (**PSSession**) uses a session configuration, also known as an endpoint.
+When users create a session that connects to the computer, they can select a session configuration or use the default session configuration that is registered when you enable PowerShell remoting.
 Users can also set the $PSSessionConfigurationName preference variable, which specifies a default configuration for remote sessions created in the current session.
 
 The session configuration defines the environment for the remote session.
@@ -140,7 +140,7 @@ Keys              : {Name=MaintenanceShell}
 Name              : MaintenanceShell
 TypeNameOfElement : Container
 
-The fifth command uses the Get-ChildItem cmdlet to display the items in the WSMan:\LocalHost\PlugIn path. These include the new MaintenanceShell configuration and the two default configurations that come with Windows PowerShell.
+The fifth command uses the Get-ChildItem cmdlet to display the items in the WSMan:\LocalHost\PlugIn path. These include the new MaintenanceShell configuration and the two default configurations that come with PowerShell.
 PS C:\> dir WSMan:\LocalHost\Plugin
 Name                      Type                 Keys
 ----                      ----                 ----
@@ -160,7 +160,7 @@ PS C:\> Register-PSSessionConfiguration -Name WithProfile -StartupScript Add-Pro
 ```
 
 This command creates and registers the WithProfile session configuration on the local computer.
-The command uses the *StartupScript* parameter to direct Windows PowerShell to run the specified script in any session that uses the session configuration.
+The command uses the *StartupScript* parameter to direct PowerShell to run the specified script in any session that uses the session configuration.
 
 The content of the specified script, Add-Profile.ps1, is also displayed.
 The script contains a single command that uses dot sourcing to run the user's **CurrentUserAllHosts** profile in the current scope of the session.
@@ -198,7 +198,7 @@ Before
 The commands in this example compare a no-language session to a restricted-language session.
 The example shows the effect of using the *LanguageMode* parameter of **New-PSSessionConfigurationFile** to limit the types of commands and statements that users can run in a session that uses a custom session configuration.
 
-To run the commands in this example, start Windows PowerShell by using the Run as administrator option.
+To run the commands in this example, start PowerShell by using the Run as administrator option.
 This option is required to run the Register-PSSessionConfiguration cmdlet.
 
 ## PARAMETERS
@@ -424,7 +424,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSVersion
-Specifies the version of Windows PowerShell in sessions that use this session configuration.
+Specifies the version of PowerShell in sessions that use this session configuration.
 
 The value of this parameter takes precedence over the value of the **PowerShellVersion** key in the session configuration file.
 
@@ -461,7 +461,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessorArchitecture
-Determines whether a 32-bit or 64-bit version of the Windows PowerShell process is started in sessions that use this session configuration.
+Determines whether a 32-bit or 64-bit version of the PowerShell process is started in sessions that use this session configuration.
 The acceptable values for this parameter are: x86 (32-bit) and AMD64 (64-bit).
 The default value is determined by the processor architecture of the computer that hosts the session configuration.
 
@@ -601,7 +601,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartupScript
-Specifies the fully qualified path of a Windows PowerShell script.
+Specifies the fully qualified path of a PowerShell script.
 The specified script runs in the new session that uses the session configuration.
 
 You can use the script to additionally configure the session.
@@ -727,7 +727,7 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.WSMan.Management.WSManConfigContainerElement
 
 ## NOTES
-* To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows operating system, start Windows PowerShell by using the Run as administrator option.
+* To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows operating system, start PowerShell by using the Run as administrator option.
 * This cmdlet generates XML that represents a Web Services for Management (WS-Management) plug-in configuration and sends the XML to WS-Management, which registers the plug-in on the local computer (`New-Item wsman:\localhost\plugin`).
 * The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.
 
