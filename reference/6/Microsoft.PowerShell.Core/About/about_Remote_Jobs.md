@@ -59,7 +59,7 @@ local computer.
 Use the Enter-PSSession cmdlet to start an interactive session with a remote
 computer. You can use the ComputerName parameter of Enter-PSSession to
 establish a temporary connection for the interactive session. Or, you can use
-the Session parameter to run the interactive session in a Windows PowerShell
+the Session parameter to run the interactive session in a PowerShell
 session (PSSession).
 
 The following command starts an interactive session on the Server01 computer.
@@ -168,7 +168,7 @@ is completed, the results are returned to the local computer.
 
 You can use the cmdlets that contain the Job noun (the Job cmdlets) to manage
 any job created by any cmdlet. Many of the cmdlets that have AsJob parameters
-do not use Windows PowerShell remoting, so you can use them even on computers
+do not use PowerShell remoting, so you can use them even on computers
 that are not configured for remoting and that do not meet the requirements for
 remoting.
 

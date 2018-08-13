@@ -63,7 +63,7 @@ Get-Process | ForEach Description
 #### The Foreach statement outside a command pipeline
 
 The part of the Foreach statement enclosed in parenthesis represents a
-variable and a collection to iterate. Windows PowerShell creates the variable
+variable and a collection to iterate. PowerShell creates the variable
 `$<item>` automatically when the Foreach loop runs. Prior to each iteration
 through the loop, the variable is set to a value in the collection. The block
 following a Foreach statement `{<statement list>}` contains a set of commands
@@ -87,7 +87,7 @@ string values "a", "b", "c", and "d". The first time the Foreach statement
 runs, it sets the $letter variable equal to the first item in $letterArray
 ("a"). Then, it uses the Write-Host cmdlet to display the letter a. The next
 time through the loop, $letter is set to "b", and so on. After the Foreach
-loop displays the letter d, Windows PowerShell exits the loop.
+loop displays the letter d, PowerShell exits the loop.
 
 Foreach statements can also be used together with cmdlets that return a
 collection of items. In the following example, the Foreach statement steps
@@ -119,7 +119,7 @@ In this example, the Foreach loop uses a property of the $file variable to
 perform a comparison operation ($file.length -gt 100KB). The $file variable
 contains all the properties in the object that is returned by the
 Get-ChildItem cmdlet. Therefore, you can return more than just a file name. In
-the next example, Windows PowerShell returns the length and the last access
+the next example, PowerShell returns the length and the last access
 time inside the statement list:
 
 ```powershell
@@ -177,7 +177,7 @@ specifier show no decimal places.
 
 #### The Foreach Statement Inside a Command Pipeline
 
-When Foreach appears in a command pipeline, Windows PowerShell uses the
+When Foreach appears in a command pipeline, PowerShell uses the
 foreach alias, which calls the ForEach-Object command. When you use the
 foreach alias in a command pipeline, you do not include the `($<item> in
 $<collection>)` syntax as you do with the Foreach statement. This is because

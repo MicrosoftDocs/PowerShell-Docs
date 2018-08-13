@@ -15,7 +15,7 @@ Lists the cmdlets that are designed for use with PowerShell providers.
 ## LONG DESCRIPTION
 
 PowerShell includes a set of cmdlets that are specifically designed to manage
-the items in the data stores that are exposed by Windows PowerShell providers.
+the items in the data stores that are exposed by PowerShell providers.
 You can use these cmdlets in the same ways to manage all the different types
 of data that the providers make available to you. For more information about
 providers, type "get-help about_providers".

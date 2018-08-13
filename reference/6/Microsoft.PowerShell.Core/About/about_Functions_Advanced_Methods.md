@@ -34,14 +34,14 @@ see [`System.Management.Automation.PSCmdlet`](http://go.microsoft.com/fwlink/?Li
 The methods described in this section are referred to as the input processing
 methods. For functions, these three methods are represented by the `Begin`,
 `Process`, and `End` blocks of the function. Each function must include one or
-more of these blocks. The Windows PowerShell runtime uses the code within
+more of these blocks. The PowerShell runtime uses the code within
 these blocks when it is running a function. (These blocks are also available
 to functions that do not use the `CmdletBinding` attribute.)
 
 #### Begin
 
 This block is used to provide optional one-time preprocessing for the
-function. The Windows PowerShell runtime uses the code in this block one time
+function. The PowerShell runtime uses the code in this block one time
 for each instance of the function in the pipeline.
 
 #### Process
