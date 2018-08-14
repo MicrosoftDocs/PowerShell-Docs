@@ -25,7 +25,7 @@ may open in the Script Pane are configuration files (.ps1xml), XML files, and te
 
 ### To create a new script file
 
-On the toolbar, click **New, or on the **File** menu, click **New**. The created file appears in
+On the toolbar, click **New**, or on the **File** menu, click **New**. The created file appears in
 a new file tab under the current PowerShell tab. Remember that the PowerShell tabs are only visible
 when there are more than one. By default a file of type script (.ps1) is created, but it can be
 saved with a new name and extension. Multiple script files can be created in the same PowerShell
