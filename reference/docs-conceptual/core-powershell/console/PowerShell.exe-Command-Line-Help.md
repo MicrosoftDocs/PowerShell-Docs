@@ -58,7 +58,7 @@ Starts PowerShell using a multi-threaded apartment. This parameter is introduced
 
 ### -NoExit
 
-doesn't exit after running startup commands.
+Doesn't exit after running startup commands.
 
 ### -NoLogo
 
@@ -66,11 +66,11 @@ Hides the copyright banner at startup.
 
 ### -NonInteractive
 
-doesn't present an interactive prompt to the user.
+Doesn't present an interactive prompt to the user.
 
 ### -NoProfile
 
-doesn't load the PowerShell profile.
+Doesn't load the PowerShell profile.
 
 ### -OutputFormat {Text | XML}
 
