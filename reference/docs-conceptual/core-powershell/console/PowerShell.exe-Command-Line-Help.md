@@ -1,5 +1,5 @@
 ---
-ms.date:  06/05/2017
+ms.date:  08/14/2018
 keywords:  powershell,cmdlet
 title:  PowerShell.exe Command Line Help
 ms.assetid:  1ab7b93b-6785-42c6-a1c9-35ff686a958f
@@ -39,18 +39,14 @@ Accepts a base-64-encoded string version of a command. Use this parameter to sub
 
 ### -ExecutionPolicy <ExecutionPolicy>
 
-Sets the default execution policy for the current session and saves it in the $env:PSExecutionPolicyPreference environment variable. This parameter does not change the PowerShell execution policy that is set in the registry. For information about PowerShell execution policies, including a list of valid values, see [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+Sets the default execution policy for the current session and saves it in the $env:PSExecutionPolicyPreference environment variable. This parameter doesn't change the PowerShell execution policy that is set in the registry. For information about PowerShell execution policies, including a list of valid values, see [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
 
 ### -File <FilePath> \[<Parameters>]
 
-Runs the specified script in the local scope ("dot-sourced"), so that the functions and variables that the script creates are available in the current session. Enter the script file path and any parameters. **File** must be the last parameter in the command, because all characters typed after the **File** parameter name are interpreted as the script file path followed by the script parameters and their values.
+Runs the specified script in the local scope ("dot-sourced"), so that the functions and variables that the script creates are available in the current session. Enter the script file path and any parameters. **File** must be the last parameter in the command. All values typed after the **-File** parameter are interpreted as the script file path and parameters passed to that script.
 
-You can include the parameters of a script, and parameter values, in the value of the **File** parameter. For example: `-File .\Get-Script.ps1 -Domain Central`
-Note that parameters passed to the script are passed as literal strings (after interpretation by the current shell).
-For example, if you are in cmd.exe and want to pass an environment variable value, you would use the cmd.exe syntax: `powershell -File .\test.ps1 -Sample %windir%`
-If you were to use PowerShell syntax, then in this example your script would receive the literal "$env:windir" and not the value of that environmental variable: `powershell -File .\test.ps1 -Sample $env:windir`
-
-Typically, the switch parameters of a script are either included or omitted. For example, the following command uses the **All** parameter of the Get-Script.ps1 script file: `-File .\Get-Script.ps1 -All`
+Parameters passed to the script are passed as literal strings (after interpretation by the current shell). For example, if you are in cmd.exe and want to pass an environment variable value, you would use the cmd.exe syntax: `powershell -File .\test.ps1 -Sample %windir%`
+In this example, the script receives the literal string `$env:windir` and not the value of that environmental variable: `powershell -File .\test.ps1 -Sample $env:windir`
 
 ### \-InputFormat {Text | XML}
 
@@ -62,7 +58,7 @@ Starts PowerShell using a multi-threaded apartment. This parameter is introduced
 
 ### -NoExit
 
-Does not exit after running startup commands.
+doesn't exit after running startup commands.
 
 ### -NoLogo
 
@@ -70,11 +66,11 @@ Hides the copyright banner at startup.
 
 ### -NonInteractive
 
-Does not present an interactive prompt to the user.
+doesn't present an interactive prompt to the user.
 
 ### -NoProfile
 
-Does not load the PowerShell profile.
+doesn't load the PowerShell profile.
 
 ### -OutputFormat {Text | XML}
 
@@ -92,18 +88,18 @@ Starts PowerShell using a single-threaded apartment. In PowerShell 3.0, single-t
 
 Starts the specified version of PowerShell. The version that you specify must be installed on the system. If PowerShell 3.0 is installed on the computer, valid values are "2.0" and "3.0". The default value is "3.0".
 
-If PowerShell 3.0 is not installed, the only valid value is "2.0". Other values are ignored.
+If PowerShell 3.0 isn't installed, the only valid value is "2.0". Other values are ignored.
 
-For more information, see "[Installing Windows PowerShell](../../setup/installing-windows-powershell.md)".
+For more information, see [Installing Windows PowerShell](../../setup/installing-windows-powershell.md).
 
 ### -WindowStyle <Window style>
 
-Sets the window style for the session. Valid values are Normal, Minimized, Maximized and Hidden.
+Sets the window style for the session. Valid values are Normal, Minimized, Maximized, and Hidden.
 
 ### -Command
 
-Executes the specified commands (and any parameters) as though they were typed at the PowerShell command prompt, and then exits, unless the NoExit parameter is specified.
-Essentially, any text after `-Command` is sent as a single command line to PowerShell (this is different from how `-File` handles parameters sent to a script).
+Executes the specified commands (with any parameters) as though they were typed at the PowerShell command prompt. After execution, PowerShell exits unless the `-NoExit` parameter is specified.
+Any text after `-Command` is sent as a single command line to PowerShell. This is different from how `-File` handles parameters sent to a script.
 
 The value of Command can be "-", a string. or a script block. If the value of Command is "-", the command text is read from standard input.
 
@@ -117,11 +113,11 @@ To write a string that runs a PowerShell command, use the format:
 "& {<command>}"
 ```
 
-where the quotation marks indicate a string and the invoke operator (&) causes the command to be executed.
+The quotation marks indicate a string and the invoke operator (&) causes the command to be executed.
 
 ### -Help, -?, /?
 
-Shows this message. If you are typing a PowerShell.exe command in PowerShell, prepend the command parameters with a hyphen (-), not a forward slash (/). You can use either a hyphen or forward slash in Cmd.exe.
+Shows the syntax of powershell.exe. If you are typing a PowerShell.exe command in PowerShell, prepend the command parameters with a hyphen (-), not a forward slash (/). You can use either a hyphen or forward slash in Cmd.exe.
 
 > [!NOTE]
 > Troubleshooting Note: In PowerShell 2.0, starting some programs in the Windows PowerShell console fails with a LastExitCode of 0xc0000142.
