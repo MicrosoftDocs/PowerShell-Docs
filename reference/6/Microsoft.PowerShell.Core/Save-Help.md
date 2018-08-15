@@ -30,13 +30,13 @@ Save-Help -LiteralPath <String[]> [[-Module] <PSModuleInfo[]>] [-FullyQualifiedM
 ```
 
 ## DESCRIPTION
-The **Save-Help** cmdlet downloads the newest help files for Windows PowerShell modules and saves them to a directory that you specify.
+The **Save-Help** cmdlet downloads the newest help files for PowerShell modules and saves them to a directory that you specify.
 This feature lets you update the help files on computers that do not have access to the Internet, and makes it easier to update the help files on multiple computers.
 
 In Windows PowerShell 3.0, **Save-Help** worked only for modules that are installed on the local computer.
 Although it was possible to import a module from a remote computer, or obtain a reference to a **PSModuleInfo** object from a remote computer by using Windows PowerShell remoting, the **HelpInfoUri** property was not preserved, and **Save-Help** would not work for remote module Help.
 
-In Windows PowerShell 4.0, the **HelpInfoUri** property is preserved over Windows PowerShell remoting, which enables **Save-Help** to work for modules that are installed on remote computers.
+In Windows PowerShell 4.0, the **HelpInfoUri** property is preserved over PowerShell remoting, which enables **Save-Help** to work for modules that are installed on remote computers.
 It is also possible to save a **PSModuleInfo** object to disk or removable media by running Export-Clixml on a computer that does not have Internet access, import the object on a computer that does have Internet access, and then run **Save-Help** on the **PSModuleInfo** object.
 The saved help can be transported to the remote computer by using removable storage media, such as a USB drive.
 The help can be installed on the remote computer by running **Update-Help**.
@@ -56,7 +56,7 @@ The saved help for each module consists of one help information (HelpInfo XML) f
 You do not have to extract the help files from the cabinet file.
 The **Update-Help** cmdlet extracts the help files, validates the XML for safety, and then installs the help files and the help information file in a language-specific subfolder of the module folder.
 
-To save the help files for modules in the Windows PowerShell installation folder ($pshome\Modules), start Windows PowerShell by using the Run as administrator option.
+To save the help files for modules in the PowerShell installation folder ($pshome\Modules), start PowerShell by using the Run as administrator option.
 You must be a member of the Administrators group on the computer to download the help files for these modules.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
@@ -141,7 +141,7 @@ When a module is not installed on the computer, **Save-Help** needs the module o
 PS C:\> Save-Help -Module Microsoft.PowerShell* -UICulture de-DE, en-US, fr-FR, ja-JP -DestinationPath "D:\Help"
 ```
 
-This command saves help for the Windows PowerShell Core modules in four different UI cultures.
+This command saves help for the PowerShell Core modules in four different UI cultures.
 The language packs for these locales do not have to be installed on the computer.
 
 **Save-Help** can download help files for modules in different UI cultures only when the module owner makes the translated files available on the Internet.
@@ -203,7 +203,7 @@ Indicates that this cmdlet does not follow the once-per-day limitation, skips ve
 
 Without this parameter, only one **Save-Help** command for each module is permitted in each 24-hour period, downloads are limited to 1 GB of uncompressed content per module, and help files for a module are installed only when they are newer than the files on the computer.
 
-The once-per-day limit protects the servers that host the help files, and makes it practical for you to add a **Save-Help** command to your Windows PowerShell profile.
+The once-per-day limit protects the servers that host the help files, and makes it practical for you to add a **Save-Help** command to your PowerShell profile.
 
 To save help for a module in multiple UI cultures without the *Force* parameter, include all UI cultures in the same command, such as: `Save-Help -Module PSScheduledJobs -UICulture en-US, fr-FR, pt-BR`
 
@@ -244,7 +244,7 @@ Specifies a path of the destination folder.
 Unlike the value of the *DestinationPath* parameter, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -345,12 +345,12 @@ You can pipe a module object from the **Get-Module** cmdlet to the *Module* para
 This cmdlet does not generate any output.
 
 ## NOTES
-* To save help for modules in the $pshome\Modules folder, start Windows PowerShell by using the Run as administrator option. Only members of the Administrators group on the computer can download help for modules in the $pshome\Modules folder.
+* To save help for modules in the $pshome\Modules folder, start PowerShell by using the Run as administrator option. Only members of the Administrators group on the computer can download help for modules in the $pshome\Modules folder.
 * The saved help for each module consists of one help information (HelpInfo XML) file and one cabinet (.cab) file for the help files each UI culture. You do not have to extract the help files from the cabinet file. The Update-Help cmdlet extracts the help files, validates the XML, and then installs the help files and the help information file in a language-specific subfolder of the module folder.
 * The **Save-Help** cmdlet can save help for modules that are not installed on the computer. However, because help files are installed in the module folder, the **Update-Help** cmdlet can install updated help file only for modules that are installed on the computer.
 * If **Save-Help** cannot find updated help files for a module, or cannot find updated help files in the specified language, it continues silently without displaying an error message. To see which files were saved by the command, specify the *Verbose* parameter.
 * Modules are the smallest unit of updatable help. You cannot save help for a particular cmdlet, only for all cmdlets in module. To find the module that contains a particular cmdlet, use the **ModuleName** property together with the Get-Command cmdlet, for example, `(Get-Command \<cmdlet-name\>).ModuleName`
-* **Save-Help** supports all modules and the Windows PowerShell Core snap-ins. It does not support any other snap-ins.
+* **Save-Help** supports all modules and the PowerShell Core snap-ins. It does not support any other snap-ins.
 * The **Update-Help** and **Save-Help** cmdlets use the following ports to download help files: Port 80 for HTTP and port 443 for HTTPS.
 * The **Update-Help** and **Save-Help** cmdlets are not supported on Windows Preinstallation Environment (Windows PE).
 

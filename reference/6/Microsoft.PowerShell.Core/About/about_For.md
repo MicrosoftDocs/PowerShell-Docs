@@ -139,7 +139,7 @@ for (<init>
 ```
 
 This alternative form of the For statement works in PowerShell script files
-and at the Windows PowerShell command prompt. However, it is easier to use
+and at the PowerShell command prompt. However, it is easier to use
 the For statement syntax with semicolons when you enter interactive
 commands at the command prompt.
 

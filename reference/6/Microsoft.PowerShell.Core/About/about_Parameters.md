@@ -22,7 +22,7 @@ parameters follow the command name and have the following form:
 ```
 
 The name of the parameter is preceded by a hyphen (-), which signals to
-Windows PowerShell that the word following the hyphen is a parameter name.
+PowerShell that the word following the hyphen is a parameter name.
 Some parameters do not require or accept a parameter value. Other parameters
 require a value, but do not require the parameter name in the command.
 
@@ -102,7 +102,7 @@ parameter attributes.
 
 This setting indicates whether the parameter is mandatory, that is, whether
 all commands that use this cmdlet must include this parameter. When the value
-is **"True"** and the parameter is missing from the command, Windows PowerShell
+is **"True"** and the parameter is missing from the command, PowerShell
 prompts you for a value for the parameter.
 
 #### Parameter Position
@@ -198,7 +198,7 @@ True (by Value)          Indicates that you can pipe any value to the
                          Framework type.
 ```
 
-When a parameter is "True (by Value)", Windows PowerShell tries to associate
+When a parameter is "True (by Value)", PowerShell tries to associate
 any piped values with that parameter before it tries other methods to
 interpret the command.
 

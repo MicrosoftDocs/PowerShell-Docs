@@ -78,7 +78,7 @@ However, you can still use the **Import-Module** command to import a module and 
 For more information about modules, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
 For more information about the $PSModuleAutoloadingPreference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
-A module is a package that contains members that can be used in Windows PowerShell.
+A module is a package that contains members that can be used in PowerShell.
 Members include cmdlets, providers, scripts, functions, variables, and other tools and files.
 After a module is imported, you can use the module members in your session.
 
@@ -87,19 +87,19 @@ By default, **Import-Module** imports all members that the module exports, but y
 You can also use the *NoClobber* parameter to prevent **Import-Module** from importing members that have the same names as members in the current session.
 
 **Import-Module** imports a module only into the current session.
-To import the module into all sessions, add an **Import-Module** command to your Windows PowerShell profile.
-For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
+To import the module into all sessions, add an **Import-Module** command to your PowerShell profile.
+For more information about profiles, see [about_Profiles](About/about_Profiles.md).
 
 Starting in Windows PowerShell 3.0, you can use **Import-Module** to import Common Information Model (CIM) modules, in which the cmdlets are defined in Cmdlet Definition XML (CDXML) files.
 This feature allows you to use cmdlets that are implemented in non-managed code assemblies, such as those written in C++.
 
 With these new features, **Import-Module** cmdlet becomes a primary tool for managing heterogeneous enterprises that include computers that run the Windows operating system and computers that are running other operating systems.
 
-To manage remote computers that run the Windows operating system that have Windows PowerShell and Windows PowerShell remoting enabled, create a **PSSession** on the remote computer and then use the *PSSession* parameter of **Get-Module** to get the Windows PowerShell modules in the **PSSession**.
+To manage remote computers that run the Windows operating system that have PowerShell and PowerShell remoting enabled, create a **PSSession** on the remote computer and then use the *PSSession* parameter of **Get-Module** to get the PowerShell modules in the **PSSession**.
 When you import the modules, and then use the imported commands in the current session, the commands run implicitly in the **PSSession** on the remote computer.
 You can use this strategy to manage the remote computer.
 
-You can use a similar strategy to manage computers that do not have Windows PowerShell remoting enabled, including computers that are not running the Windows operating system, and Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
+You can use a similar strategy to manage computers that do not have PowerShell remoting enabled, including computers that are not running the Windows operating system, and Windows computers that have PowerShell, but do not have PowerShell remoting enabled.
 
 Start by creating a CIM session on the remote computer, which is a connection to Windows Management Instrumentation (WMI) on the remote computer.
 Then use the *CIMSession* parameter of **Import-Module** to import CIM modules from the remote computer.
@@ -338,7 +338,7 @@ The results show that there are two **Get-Date** commands in the session, a func
 
 The fifth command runs the hidden cmdlet by qualifying the command name with the module name.
 
-For more information about command precedence in Windows PowerShell, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
+For more information about command precedence in PowerShell, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
 
 ### Example 10: Import a minimum version of a module
 ```
@@ -389,7 +389,7 @@ Windows Remote Management - Compatibility Mode (HTTP-In) WINRM-HTTP-Compat-In-TC
 ```
 
 This example shows how to use the **Import-Module** cmdlet to import a module from a remote computer.
-This command uses the Implicit Remoting feature of Windows PowerShell.
+This command uses the Implicit Remoting feature of PowerShell.
 
 When you import modules from another session, you can use the cmdlets in the current session.
 However, commands that use the cmdlets actually run in the remote session.
@@ -402,7 +402,7 @@ PS C:\> $cs = New-CimSession -ComputerName RSDGF03
 The second command uses the CIM session in the $cs variable to run an **Import-Module** command on the RSDGF03 computer. The command uses the *Name* parameter to specify the **Storage** CIM module.
 PS C:\> Import-Module -CimSession $cs -Name Storage
 
-The third command runs the **Get-Command** command on the **Get-Disk** command in the **Storage** module.When you import a CIM module into the local session, Windows PowerShell converts the CDXML files for each command into Windows PowerShell scripts, which appear as functions in the local session.
+The third command runs the **Get-Command** command on the **Get-Disk** command in the **Storage** module.When you import a CIM module into the local session, PowerShell converts the CDXML files for each command into PowerShell scripts, which appear as functions in the local session.
 PS C:\> Get-Command Get-Disk
 CommandType     Name                  ModuleName
 -----------     ----                  ----------
@@ -547,7 +547,7 @@ Enter a variable that contains the CIM session or a command that gets the CIM se
 **Import-Module** uses the CIM session connection to import modules from the remote computer into the current session.
 When you use the commands from the imported module in the current session, the commands actually run on the remote computer.
 
-You can use this parameter to import modules from computers and devices that are not running the Windows operating system, and Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
+You can use this parameter to import modules from computers and devices that are not running the Windows operating system, and Windows computers that have PowerShell, but do not have PowerShell remoting enabled.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -585,7 +585,7 @@ Accept wildcard characters: False
 ### -DisableNameChecking
 Indicates that this cmdlet suppresses the message that warns you when you import a cmdlet or function whose name includes an unapproved verb or a prohibited character.
 
-By default, when a module that you import exports cmdlets or functions that have unapproved verbs in their names, Windows PowerShell displays the following warning message:
+By default, when a module that you import exports cmdlets or functions that have unapproved verbs in their names, PowerShell displays the following warning message:
 
 "WARNING: Some imported command names include unapproved verbs which might make them less discoverable.
 Use the Verbose parameter for more detail or type Get-Verb to see the list of approved verbs."
@@ -769,17 +769,17 @@ Accept wildcard characters: False
 ```
 
 ### -PSSession
-Specifies a Windows PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
+Specifies a PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
 Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
 
 When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
-Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by Windows PowerShell.
+Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by PowerShell.
 
-This parameter uses the Implicit Remoting feature of Windows PowerShell.
+This parameter uses the Implicit Remoting feature of PowerShell.
 It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
 
-**Import-Module** cannot import Windows PowerShell Core modules from another session.
-The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
+**Import-Module** cannot import PowerShell Core modules from another session.
+The PowerShell Core modules have names that begin with Microsoft.PowerShell.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -847,7 +847,7 @@ You can also use the *Module* and *Version* parameters of the **#Requires** keyw
 This parameter was introduced in Windows PowerShell 3.0.
 
 Scripts that use *RequiredVersion* to import modules that are included with existing releases of the Windows operating system do not automatically run in future releases of the Windows operating system.
-This is because Windows PowerShell module version numbers in future releases of the Windows operating system are higher than module version numbers in existing releases of the Windows operating system.
+This is because PowerShell module version numbers in future releases of the Windows operating system are higher than module version numbers in existing releases of the Windows operating system.
 
 ```yaml
 Type: Version
@@ -951,13 +951,13 @@ If you specify the *AsCustomObject* parameter, it generates a **PSCustomObject**
   You can also use the *PSSession* and *CIMSession* parameters to import modules that are installed on remote computers.
 However, commands that use the cmdlets in these modules actually run in the remote session on the remote computer.
 
-* If you import members with the same name and the same type into your session, Windows PowerShell uses the member imported last by default. Variables and aliases are replaced, and the originals are not accessible. Functions, cmdlets and providers are merely shadowed by the new members. They can be accessed by qualifying the command name with the name of its snap-in, module, or function path.
+* If you import members with the same name and the same type into your session, PowerShell uses the member imported last by default. Variables and aliases are replaced, and the originals are not accessible. Functions, cmdlets and providers are merely shadowed by the new members. They can be accessed by qualifying the command name with the name of its snap-in, module, or function path.
 * To update the formatting data for commands that have been imported from a module, use the Update-FormatData cmdlet. **Update-FormatData** also updates the formatting data for commands in the session that were imported from modules. If the formatting file for a module changes, you can run an **Update-FormatData** command to update the formatting data for imported commands. You do not need to import the module again.
-* Starting in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins (**PSSnapins**). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
+* Starting in Windows PowerShell 3.0, the core commands that are installed with PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of PowerShell, the core commands are packaged in snap-ins (**PSSnapins**). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include core snap-ins.
 
   For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
 
-* **Import-Module** cannot import Windows PowerShell Core modules from another session. The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
+* **Import-Module** cannot import PowerShell Core modules from another session. The PowerShell Core modules have names that begin with Microsoft.PowerShell.
 * In Windows PowerShell 2.0, some of the property values of the module object, such as the **ExportedCmdlets** and **NestedModules** property values, were not populated until the module was imported and were not available on the module object that the *PassThru* parameter returns. In Windows PowerShell 3.0, all module property values are populated.
 * If you attempt to import a module that contains mixed-mode assemblies that are not compatible with Windows PowerShell 3.0, **Import-Module** returns an error message like the following one.
 
@@ -971,10 +971,10 @@ However, commands that use the cmdlets in these modules actually run in the remo
 
 * To use the CIM session feature, the remote computer must have WS-Management remoting and Windows Management Instrumentation (WMI), which is the Microsoft implementation of the Common Information Model (CIM) standard. The computer must also have the Module Discovery WMI provider or an alternate CIM provider that has the same basic features.
 
-  You can use the CIM session feature on computers that are not running a Windows operating system and on Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
+  You can use the CIM session feature on computers that are not running a Windows operating system and on Windows computers that have PowerShell, but do not have PowerShell remoting enabled.
 
-  You can also use the CIM parameters to get CIM modules from computers that have Windows PowerShell remoting enabled, including the local computer.
-When you create a CIM session on the local computer, Windows PowerShell uses DCOM, instead of WMI, to create the session.
+  You can also use the CIM parameters to get CIM modules from computers that have PowerShell remoting enabled, including the local computer.
+When you create a CIM session on the local computer, PowerShell uses DCOM, instead of WMI, to create the session.
 
 ## RELATED LINKS
 

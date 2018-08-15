@@ -10,11 +10,11 @@ title:  about_Objects
 
 ## Short Description
 
-Provides essential information about objects in Windows PowerShell.
+Provides essential information about objects in PowerShell.
 
 ## Long Description
 
-Every action you take in Windows PowerShell occurs within the context of
+Every action you take in PowerShell occurs within the context of
 objects. As data moves from one command to the next, it moves as one or
 more identifiable objects. An object, then, is a collection of data that
 represents an item. An object is made up of three types of data: the

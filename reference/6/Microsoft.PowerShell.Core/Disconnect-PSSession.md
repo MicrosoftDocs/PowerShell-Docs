@@ -41,7 +41,7 @@ Disconnect-PSSession [-IdleTimeoutSec <Int32>] [-OutputBufferingMode <OutputBuff
 ```
 
 ## DESCRIPTION
-The **Disconnect-PSSession** cmdlet disconnects a Windows PowerShell session (**PSSession**), such as one started by using the New-PSSession cmdlet, from the current session.
+The **Disconnect-PSSession** cmdlet disconnects a PowerShell session (**PSSession**), such as one started by using the New-PSSession cmdlet, from the current session.
 As a result, the **PSSession** is in a disconnected state.
 You can connect to the disconnected **PSSession** from the current session or from another session on the local computer or a different computer.
 
@@ -117,7 +117,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  2 ITTask          Srv2            Opened        Microsoft.PowerShell     Available
  3 ITTask          Srv30           Opened        Microsoft.PowerShell     Available
 
-The manager logs on to his home computer, connects to his corporate network, starts Windows PowerShell, and uses the Get-PSSession cmdlet to get the ITTask session on the Srv1 computer. He uses the credentials of the technician to access the session.
+The manager logs on to his home computer, connects to his corporate network, starts PowerShell, and uses the Get-PSSession cmdlet to get the ITTask session on the Srv1 computer. He uses the credentials of the technician to access the session.
 PS C:\> Get-PSSession -ComputerName Srv1 -Name ITTask -Credential Domain01\User01
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
@@ -449,7 +449,7 @@ You can pipe a session to this cmdlet.
 This cmdlet returns an object that represents the session that it disconnected.
 
 ## NOTES
-* The **Disconnect-PSSession** cmdlet works only when the local and remote computers are running Windows PowerShell 3.0 or later versions of Windows PowerShell.
+* The **Disconnect-PSSession** cmdlet works only when the local and remote computers are running Windows PowerShell 3.0 or later versions of Windows PowerShell or PowerShell Core.
 * If you use **Disconnect-PSSession** on a disconnected session, the command does not affect the session and it does not generate errors.
 * Disconnected loopback sessions with interactive security tokens, which are created by using the *EnableNetworkAccess* parameter, can be reconnected only from the computer on which the session was created. This restriction protects the computer from malicious access.
 * When you disconnect a **PSSession**, the session state is **Disconnected** and the availability is **None**.

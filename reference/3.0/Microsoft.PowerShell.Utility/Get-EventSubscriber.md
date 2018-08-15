@@ -89,9 +89,9 @@ Id  Name           State      HasMoreData  Location  Command
 3   Timer.Random   NotStarted False                  $random = Get-Random ...
 
 PS> $timer.Enabled = $true
-PS> $subscriber = Get-EventSubcriber -sourceIdentifer Timer.Random
+PS> $subscriber = Get-EventSubscriber -SourceIdentifier Timer.Random
 PS> ($subscriber.action).gettype().fullname
-PSEventJob
+System.Management.Automation.PSEventJob
 
 PS> $subscriber.action | format-list -property *
 
@@ -108,9 +108,9 @@ Id            : 1
 Name          : Timer.Random
 ChildJobs     : {}
 ...
+
 PS> & $subscriber.action.module {$random}
 96
-
 PS> & $subscriber.action.module {$random}
 23
 ```

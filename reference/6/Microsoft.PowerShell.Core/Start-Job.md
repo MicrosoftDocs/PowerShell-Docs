@@ -11,7 +11,7 @@ title:  Start-Job
 # Start-Job
 
 ## SYNOPSIS
-Starts a Windows PowerShell background job.
+Starts a PowerShell background job.
 
 ## SYNTAX
 
@@ -42,9 +42,9 @@ Start-Job [-Name <String>] [-Credential <PSCredential>] [-FilePath] <String>
 ```
 
 ## DESCRIPTION
-The **Start-Job** cmdlet starts a Windows PowerShell background job on the local computer.
+The **Start-Job** cmdlet starts a PowerShell background job on the local computer.
 
-A Windows PowerShell background job runs a command without interacting with the current session.
+A PowerShell background job runs a command without interacting with the current session.
 When you start a background job, a job object returns immediately, even if the job takes an extended time to finish.
 You can continue to work in the session without interruption while the job runs.
 
@@ -288,7 +288,7 @@ Specifies a local script that this cmdlet runs as a background job.
 Enter the path and file name of the script or pipe a script path to **Start-Job**.
 The script must be on the local computer or in a folder that the local computer can access.
 
-When you use this parameter, Windows PowerShell converts the contents of the specified script file to a script block and runs the script block as a background job.
+When you use this parameter, PowerShell converts the contents of the specified script file to a script block and runs the script block as a background job.
 
 ```yaml
 Type: String
@@ -346,7 +346,7 @@ Enter the path of a script on the local computer.
 Unlike the *FilePath* parameter, this cmdlet uses the value of the *LiteralPath* parameter exactly as it is typed.
 No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -380,7 +380,7 @@ Accept wildcard characters: False
 
 ### -PSVersion
 Specifies a version.
-This cmdlet runs the job with the version of Windows PowerShell.
+This cmdlet runs the job with the version of PowerShell.
 The acceptable values for this parameter are: 2.0 and 3.0.
 
 This parameter was introduced in Windows PowerShell 3.0.

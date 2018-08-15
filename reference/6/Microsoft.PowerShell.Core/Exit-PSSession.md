@@ -47,9 +47,9 @@ Id Name            ComputerName    State    ConfigurationName
 1  Session1        Server01        Opened   Microsoft.PowerShell
 ```
 
-These commands start and stop an interactive session with the Server01 computer that uses a Windows PowerShell session (**PSSession**).
+These commands start and stop an interactive session with the Server01 computer that uses a PowerShell session (**PSSession**).
 
-Because the interactive session was started by using a Windows PowerShell session, the **PSSession** is still available when the interactive session ends.
+Because the interactive session was started by using a PowerShell session, the **PSSession** is still available when the interactive session ends.
 If you use the *ComputerName* parameter, **Enter-PSSession** creates a temporary session that it closes when the interactive session ends.
 
 The first command uses the New-PSSession cmdlet to create a **PSSession** on the Server01 computer.

@@ -21,10 +21,10 @@ continue to run while the session is disconnected.
 
 The Disconnected Sessions feature is available only when the computer at the
 remote end of a connection is running Windows PowerShell 3.0 or a later
-version of Windows PowerShell and using the WSMan transport.
+version of Windows PowerShell and PowerShell Core.
 
 The Disconnected Sessions feature allows you to close the session in which a
-PSSession was created, and even close Windows PowerShell, and shut down the
+PSSession was created, and even close PowerShell, and shut down the
 computer, without disrupting commands running in the PSSession. It is
 especially useful for running commands that take an extended time to complete,
 and it provides the time and device flexibility that IT professionals require.
@@ -194,7 +194,7 @@ which you created the PSSession or from other sessions on the local computer
 or other computers.
 
 You can create a PSSession, run commands in the PSSession, disconnect from the
-PSSession, close Windows PowerShell, and shut down the computer. Hours later,
+PSSession, close PowerShell, and shut down the computer. Hours later,
 you can open a different computer, get the PSSession, connect to it, and get
 the results of commands that ran in the PSSession while it was disconnected.
 Then you can run more commands in the session.
@@ -292,7 +292,7 @@ Availability property. An Availability value of None indicates that you can
 connect to the session. A value of Busy indicates that you cannot connect to
 the PSSession because it is connected to another session.
 
-The following example is run in two sessions (Windows PowerShell console
+The following example is run in two sessions (PowerShell console
 windows) on the same computer. Note the changing values of the State and
 Availability properties in each session as the PSSession is disconnected and
 reconnected.
@@ -351,7 +351,7 @@ is maintained before it is deleted.
 
 PSSessions are idle when the "heartbeat thread" receives no response.
 Disconnecting a session makes it idle and starts the Idle Timeout clock, even
-if commands are still running in the disconnected session. Windows PowerShell
+if commands are still running in the disconnected session. PowerShell
 considers disconnected sessions to be active, but idle.
 
 When creating and disconnecting sessions, verify that the idle timeout in the
@@ -379,7 +379,7 @@ If you are a member of the Administrators group on the remote computer, you
 can also create and change the IdleTimeoutMs and MaxIdleTimeoutMs properties
 of session configurations.
 
-## NOTES:
+## NOTES
 
 The idle timeout value of session configurations and session options is in
 milliseconds. The idle timeout value of sessions and session configuration
@@ -628,7 +628,7 @@ cmdlet to wait until the session is reconnected (in the Opened state), use the
 ## Robust Sessions and Unintentional Disconnection
 
 Occasionally, a PSSession might be disconnected unintentionally due to a
-computer failure or network outage. Windows PowerShell attempts to recover the
+computer failure or network outage. PowerShell attempts to recover the
 PSSession, but its success depends upon the severity and duration of the
 cause.
 
@@ -641,10 +641,10 @@ the `Connect-PSSession` cmdlet to reconnect to the session and the
 session was disconnected.
 
 If you close (exit) the session in which a PSSession was created while
-commands are running in the PSSession, Windows PowerShell maintains the
+commands are running in the PSSession, PowerShell maintains the
 PSSession in the Disconnected state on the remote computer. If you close
 (exit) the session in which a PSSession was created, but no commands are
-running in the PSSession, Windows PowerShell does not attempt to maintain the
+running in the PSSession, PowerShell does not attempt to maintain the
 PSSession.
 
 ## See Also

@@ -28,9 +28,9 @@ PackageManagement supports a flexible plug-in model that enables support for
 other software package management systems.
 
 The PackageManagement module is included with Windows PowerShell 5.0 and later
-releases of Windows PowerShell, and works on three levels of package
-management structure: package providers, package sources, and the packages
-themselves. Let us define some terms:
+releases of Windows PowerShell and PowerShell Core, and works on three levels
+of package management structure: package providers, package sources,
+and the packages themselves. Let us define some terms:
 
 - Package manager: Software package management system. In PackageManagement
   terms, this is a package provider.

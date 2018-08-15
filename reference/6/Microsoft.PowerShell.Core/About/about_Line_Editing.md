@@ -10,12 +10,12 @@ title:  about_Line_Editing
 
 ## SHORT DESCRIPTION
 
-Describes how to edit commands at the Windows PowerShell command prompt.
+Describes how to edit commands at the PowerShell command prompt.
 
 ## LONG DESCRIPTION
 
-The Windows PowerShell console has some useful features to help
-you to edit commands at the Windows PowerShell command prompt.
+The PowerShell console has some useful features to help
+you to edit commands at the PowerShell command prompt.
 
 ### Move Left and Right
 
