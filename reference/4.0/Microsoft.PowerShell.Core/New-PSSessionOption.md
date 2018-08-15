@@ -163,7 +163,7 @@ When the **$PSSessionOption** preference variable exists in the session, it esta
 To make the **$PSSessionOption** variable available in all sessions, add it to your Windows PowerShell session and to your Windows PowerShell profile.
 
 For more information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
-For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
+For more information about profiles, see [about_Profiles](About/about_Profiles.md).
 
 ### Example 6
 ```

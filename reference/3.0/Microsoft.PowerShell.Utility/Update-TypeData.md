@@ -46,7 +46,7 @@ This feature is particularly useful when you are developing types and want to lo
 Beginning in Windows PowerShell 3.0, you can use **Update-TypeData** to add and replace extended type data in the session without using a Types.ps1xml file.
 Type data that is added dynamically, that is, without a file, is added only to the current session.
 To add the type data to all sessions, add an **Update-TypeData** command to your Windows PowerShell profile.
-For more information, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
+For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 Also, beginning in Windows PowerShell 3.0, you can use the Get-TypeData cmdlet to get the extended types in the current session and the Remove-TypeData cmdlet to delete extended types from the current session.
 

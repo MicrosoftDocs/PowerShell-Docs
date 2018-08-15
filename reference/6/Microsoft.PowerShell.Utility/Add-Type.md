@@ -537,7 +537,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- The types that you add exist only in the current session. To use the types in all sessions, add them to your PowerShell profile. For more information about the profile, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
+- The types that you add exist only in the current session. To use the types in all sessions, add them to your PowerShell profile. For more information about the profile, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 - Type names (and namespaces) must be unique within a session. You cannot unload a type or change it. If you need to change the code for a type, you must change the name or start a new PowerShell session. Otherwise, the command fails.
 
 ## RELATED LINKS

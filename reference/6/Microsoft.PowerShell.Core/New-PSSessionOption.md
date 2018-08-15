@@ -162,7 +162,7 @@ When the $PSSessionOption preference variable occurs in the session, it establis
 To make the $PSSessionOption variable available in all sessions, add it to your PowerShell session and to your PowerShell profile.
 
 For more information about the $PSSessionOption preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
-For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
+For more information about profiles, see [about_Profiles](About/about_Profiles.md).
 
 ### Example 6: Fulfill the requirements for a remote session configuration
 ```
