@@ -34,7 +34,7 @@ shown above has a different way to force case sensitivity.
 |---------|---------|
 |`Select-String`|use `-CaseSensitive` switch|
 |`switch` statement |use the `-casesensitive` option|
-|operators|prefix with **c** (`-cmatch`, `-csplit`, or `-creplace`)|
+|operators|prefix with **'c'** (`-cmatch`, `-csplit`, or `-creplace`)|
 
 ### Character literals
 
@@ -53,8 +53,8 @@ classes allow you to be less specific.
 
 #### Character groups
 
-`[`*character group*`]` allows you to match any number of characters one time,
-while `[^`*character group*`]` only matches characters NOT in the group.
+`[character group]` allows you to match any number of characters one time,
+while `[^character group]` only matches characters NOT in the group.
 
 ```powershell
 # This expression returns true if the pattern matches big, bog, or bug.
@@ -64,7 +64,7 @@ while `[^`*character group*`]` only matches characters NOT in the group.
 #### Character ranges
 
 A pattern can also be a range of characters. This can be alphabetic
-`[`A-Z`]`, numeric `[`0-9`]`, or even ASCII-based `[` -~`]` (all printable
+`[A-Z]`, numeric `[0-9]`, or even ASCII-based `[ -~]` (all printable
 characters).
 
 ```powershell
