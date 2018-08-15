@@ -88,7 +88,7 @@ You can also use the *NoClobber* parameter to prevent **Import-Module** from imp
 
 **Import-Module** imports a module only into the current session.
 To import the module into all sessions, add an **Import-Module** command to your PowerShell profile.
-For more information about profiles, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
+For more information about profiles, see [about_Profiles](About/about_Profiles.md).
 
 Starting in Windows PowerShell 3.0, you can use **Import-Module** to import Common Information Model (CIM) modules, in which the cmdlets are defined in Cmdlet Definition XML (CDXML) files.
 This feature allows you to use cmdlets that are implemented in non-managed code assemblies, such as those written in C++.

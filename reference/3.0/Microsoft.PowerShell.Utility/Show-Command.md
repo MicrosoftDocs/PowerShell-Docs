@@ -77,7 +77,7 @@ This command uses the **$PSDefaultParameterValues** automatic variable to set ne
 Now when you run a **Show-Command** command, the new defaults are applied automatically.
 
 To use these default values in every Windows PowerShell session, add the **$PSDefaultParameterValues** variable to your Windows PowerShell profile.
-For more information, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729) and [about_Parameters_Default_Values](../Microsoft.PowerShell.Core/About/about_Parameters_Default_Values.md).
+For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md) and [about_Parameters_Default_Values](../Microsoft.PowerShell.Core/About/about_Parameters_Default_Values.md).
 
 ### Example 5
 ```
