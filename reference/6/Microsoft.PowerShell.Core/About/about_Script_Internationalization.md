@@ -111,8 +111,8 @@ include the following statement:
 ```powershell
 ConvertFrom-StringData -StringData @'
 halloWorld = Hallo, Welt.
-errorMsg1 = Sie können das Feld Benutzername nicht leer lassen.
-promptMsg = Bitte geben Sie Ihren Benutzernamen ein.
+errorMsg1 = Das Feld Benutzername darf nicht leer sein.
+promptMsg = Geben Sie Ihren Benutzernamen ein.
 '@
 ```
 
@@ -121,7 +121,7 @@ directory might includes the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
-helloWorld = مرحبًا ، العالم
+helloWorld = مرحبًا أيها العالَم
 errorMsg1 = لا يمكنك ترك حقل اسم المستخدم فارغًا
 promptMsg = يرجى إدخال اسم المستخدم الخاص بك
 '@
