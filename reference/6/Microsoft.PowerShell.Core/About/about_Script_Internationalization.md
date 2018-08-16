@@ -110,9 +110,9 @@ include the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
-helloWorld = Hello, World (in German).
-errorMsg1 = You cannot leave the user name field blank (in German).
-promptMsg = Please enter your user name (in German).
+halloWorld = Hallo, Welt.
+errorMsg1 = Das Feld Benutzername darf nicht leer sein.
+promptMsg = Geben Sie Ihren Benutzernamen ein.
 '@
 ```
 
@@ -121,9 +121,9 @@ directory might includes the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
-helloWorld = Hello, World (in Arabic).
-errorMsg1 = You cannot leave the user name field blank (in Arabic).
-promptMsg = Please enter your user name (in Arabic).
+helloWorld = مرحبًا أيها العالَم
+errorMsg1 = لا يمكنك ترك حقل اسم المستخدم فارغًا
+promptMsg = يرجى إدخال اسم المستخدم الخاص بك
 '@
 ```
 
@@ -222,14 +222,14 @@ The following is a complete listing of .\de-DE\sample1.psd1:
 ```powershell
 # culture="de-DE"
 ConvertFrom-StringData @'
-    messageDate = Today is
-    d0 = Sunday (in German)
-    d1 = Monday (in German)
-    d2 = Tuesday (in German)
-    d3 = Wednesday (in German)
-    d4 = Thursday (in German)
-    d5 = Friday (in German)
-    d6 = Saturday (in German)
+    messageDate = Heute ist
+    d0 = Sonntag
+    d1 = Montag
+    d2 = Dienstag
+    d3 = Mittwoch
+    d4 = Donnerstag
+    d5 = Freitag
+    d6 = Samstag
 '@
 ```
 
