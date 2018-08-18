@@ -8,17 +8,17 @@ title:  about_Functions_CmdletBindingAttribute
 
 # About Functions CmdletBindingAttribute
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes the attribute that makes a function work like a compiled cmdlet.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The CmdletBinding attribute is an attribute of functions that makes
 them operate like compiled cmdlets that are written in C#, and it
 provides access to features of cmdlets.
 
-Windows PowerShell binds the parameters of functions that have the
+PowerShell binds the parameters of functions that have the
 CmdletBinding attribute in the same way that it binds the parameters of
 compiled cmdlets. The $PSCmdlet automatic variable is available to
 functions with the CmdletBinding attribute, but the $Args variable
@@ -31,7 +31,7 @@ cause parameter binding to fail.
 Note: Compiled cmdlets use the required Cmdlet attribute, which is similar
 to the CmdletBinding attribute that is described in this topic.
 
-# SYNTAX
+## SYNTAX
 
 The following example shows the format of a function that specifies all
 the optional arguments of the CmdletBinding attribute. A brief description
@@ -70,7 +70,7 @@ http://go.microsoft.com/fwlink/?LinkId=136658.
 ## DefaultParameterSetName
 
 The DefaultParameterSetName argument specifies the name of the parameter
-set that Windows PowerShell will attempt to use when it cannot determine
+set that PowerShell will attempt to use when it cannot determine
 which parameter set to use. You can avoid this issue by making the
 unique parameter of each parameter set a mandatory parameter.
 
@@ -86,13 +86,13 @@ of the CommandInfo object that Get-Command returns for the function.
 
 However, when help files are installed on the computer and the value of
 the first link in the RelatedLinks section of the help file is a URI,
-or the value of the first .Link directive in comment-based help is a
-URI, the URI in the help file is used as the value of the HelpUri
-property of the function.
+or the value of the first .Link directive in comment-based help is a URI,
+the URI in the help file is used as the value of the HelpUri property
+of the function.
 
-The Get-Help cmdlet uses the value of the HelpURI property to locate the
+The `Get-Help` cmdlet uses the value of the HelpURI property to locate the
 online version of the function help topic when the Online parameter
-of Get-Help is specified in a command.
+of `Get-Help` is specified in a command.
 
 ## SupportsPaging
 
@@ -104,13 +104,13 @@ selection, such as a SQL database.
 
 This argument was introduced in Windows PowerShell 3.0.
 
--- First: Gets only the first 'n' objects.
--- Skip:  Ignores the first 'n' objects and then gets the remaining objects.
--- IncludeTotalCount: Reports the number of objects in the data set (an integer)
+* First: Gets only the first 'n' objects.
+* Skip:  Ignores the first 'n' objects and then gets the remaining objects.
+* IncludeTotalCount: Reports the number of objects in the data set (an integer)
 followed by the objects. If the cmdlet cannot determine the total count, it
 returns "Unknown total count".
 
-Windows PowerShell includes NewTotalCount, a helper method that gets the
+PowerShell includes NewTotalCount, a helper method that gets the
 total count value to return and includes an estimate of the accuracy of the
 total count value.
 
@@ -138,9 +138,9 @@ function Get-Numbers {
 
 ## SupportsShouldProcess
 
-The SupportsShouldProcess argument adds Confirm and WhatIf parameters
-to the function. The Confirm parameter prompts the user before it runs
-the command on each object in the pipeline. The WhatIf parameter lists the
+The SupportsShouldProcess argument adds **Confirm** and **WhatIf** parameters
+to the function. The **Confirm** parameter prompts the user before it runs
+the command on each object in the pipeline. The **WhatIf** parameter lists the
 changes that the command would make, instead of running the command.
 
 ## PositionalBinding
@@ -152,7 +152,7 @@ binding.
 
 The PositionalBinding argument is introduced in Windows PowerShell 3.0.
 
-When parameters are positional, the parameter name is optional. Windows
+When parameters are positional, the parameter name is optional.
 PowerShell associates unnamed parameter values with the function parameters
 according to the order or position of the unnamed parameter values in the
 function command.
@@ -161,7 +161,7 @@ When parameters are not positional (they are "named"), the parameter
 name (or an abbreviation or alias of the name) is required in the command.
 
 When PositionalBinding is $True, function parameters are positional by
-default. Windows PowerShell assigns position number to the parameters in
+default. PowerShell assigns position number to the parameters in
 the order in which they are declared in the function.
 
 When PositionalBinding is $False, function parameters are not positional
@@ -174,15 +174,15 @@ PositionalBinding default value. You can use the Position argument to specify
 a position value for a parameter. For more information about the Position
 argument, see [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
 
-# NOTES
+## NOTES
 
 The SupportsTransactions argument is not supported in advanced functions.
 
-# KEYWORDS
+## KEYWORDS
 
 about_Functions_CmdletBinding_Attribute
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Functions](about_Functions.md)
 
