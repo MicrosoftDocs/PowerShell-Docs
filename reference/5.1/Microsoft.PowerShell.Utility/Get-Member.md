@@ -147,14 +147,16 @@ The results show that only process objects (**System.Diagnostics.Process**) and 
 ```
 PS C:\> $A = Get-Member - InputObject @(1)
 PS C:\> $A.Count
-1 PS C:\> $A = Get-Member -InputObject 1,2,3
+1
+PS C:\> $A = Get-Member -InputObject 1,2,3
 TypeName: System.Object[]
 Name               MemberType    Definition
 ----               ----------    ----------
 Count              AliasProperty Count = Length
 Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
-... PS C:\> $A.Count
+...
+PS C:\> $A.Count
 1
 ```
 
