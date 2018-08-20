@@ -121,8 +121,8 @@ Functions should use the standard verbs that have been approved for all
 Windows PowerShell commands. These verbs help us to keep our command names
 simple, consistent, and easy for users to understand.
 
-For more information about the standard Windows PowerShell verbs, see
-[Cmdlet Verbs](http://go.microsoft.com/fwlink/?LinkID=160773) on MSDN.
+For more information about the standard PowerShell verbs, see
+[Approved Verbs](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands) in the Microsoft Docs.
 
 ### Functions with Parameters
 
