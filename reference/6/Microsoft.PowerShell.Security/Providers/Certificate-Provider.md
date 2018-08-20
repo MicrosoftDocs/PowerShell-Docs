@@ -357,7 +357,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
 
-## See Also
+## See also
 
 [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)
 
