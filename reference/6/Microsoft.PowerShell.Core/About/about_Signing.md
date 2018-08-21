@@ -106,7 +106,7 @@ For best practices about code signing, see
 [Code-Signing Best Practices](/previous-versions/windows/hardware/design/dn653556(v=vs.85)).
 
 For more information about how to sign a script file, see
-[Set-AuthenticodeSignature](../../microsoft.powershell.security/set-authenticodesignature).
+[Set-AuthenticodeSignature](../../microsoft.powershell.security/set-authenticodesignature.md).
 
 The `New-SelfSignedCertificate` cmdlet, introduced in the PKI module in
 PowerShell 3.0, creates a self-signed certificate that is Appropriate for
