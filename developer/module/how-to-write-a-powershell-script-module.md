@@ -34,7 +34,7 @@ You create a script module by saving a valid PowerShell script to a .psm1 file, 
        [int[]] $highlightDay,
        [string[]] $highlightDate = [DateTime]::Today.ToString()
        )
-   {
+
        #actual code for the function goes here see the end of the topic for the complete code sample
    }
    ```
