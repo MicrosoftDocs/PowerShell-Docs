@@ -5,15 +5,14 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions_Advanced_Methods
 ---
-
 # About Functions Advanced Methods
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how functions that specify the `CmdletBinding` attribute can use the
 methods and properties that are available to compiled cmdlets.
 
-# LONG DESCRIPTION
+## Long description
 
 Functions that specify the `CmdletBinding` attribute can access a number of
 methods and properties through the `$pscmdlet` variable. These methods include
@@ -33,10 +32,12 @@ see [`System.Management.Automation.PSCmdlet`](http://go.microsoft.com/fwlink/?Li
 
 The methods described in this section are referred to as the input processing
 methods. For functions, these three methods are represented by the `Begin`,
-`Process`, and `End` blocks of the function. Each function must include one or
-more of these blocks. The PowerShell runtime uses the code within
-these blocks when it is running a function. (These blocks are also available
-to functions that do not use the `CmdletBinding` attribute.)
+`Process`, and `End` blocks of the function. You are not required to use
+any of these blocks in your functions.
+
+> [!NOTE]
+> These blocks are also available to functions that do not use the
+> `CmdletBinding` attribute.
 
 #### Begin
 
@@ -47,22 +48,22 @@ for each instance of the function in the pipeline.
 #### Process
 
 This block is used to provide record-by-record processing for the function.
-This block might be used any number of times, or not at all, depending on the
-input to the function. For example, if the function is the first command in
-the pipeline, the `Process` block will be used one time. If the function is
-not the first command in the pipeline, the `Process` block is used one time
-for every input that the function receives from the pipeline. If there is no
-pipeline input, the `Process` block is not used.
+You can use a `Process` block without defining the other blocks. The number
+of `Process` block executions depends on how you use the function and what
+input the function receives.
 
-This block must be defined if a function parameter is set to accept pipeline
-input. If this block is not defined and the parameter accepts input from the
-pipeline, the function will miss the values that are passed to the function
-through the pipeline.
+- Calling the function at the beginning, or outside of a pipeline, executes
+  the `Process` block once.
+- Within a pipeline, the `Process` block executes once for each input
+  object that reaches the function.
+- If the pipeline input that reaches the function is empty, the `Process`
+  block does NOT execute.
+  - The `Begin` and `End` blocks still execute.
 
-Also, when the function supports confirmation requests (when the
-`SupportsShouldProcess` parameter of the Parameter attribute is set to
-`$True`), the call to the `ShouldProcess` method must be made from within the
-Process block.
+> [!IMPORTANT]
+> If a function parameter is set to accept pipeline input, and a `Process`
+> block is not defined, record-by-record processing will fail. In this case,
+> your function will only execute once, regardless of the input.
 
 #### End
 
@@ -84,15 +85,20 @@ Function Test-ScriptCmdlet
 }
 ```
 
+> [!NOTE]
+> Using either a `Begin` or `End` block requires that you define all three
+> blocks. When using all three blocks, all PowerShell code must be inside
+> one of the blocks.
+
 ### Confirmation Methods
 
 #### ShouldProcess
 
 This method is called to request confirmation from the user before the
 function performs an action that would change the system. The function can
-continue based on the Boolean value returned by the method. This method can be
-called only from within the `Process{}` block of the function. And, the
-`CmdletBinding` attribute must declare that the function supports
+continue based on the Boolean value returned by the method. This method can
+only be called only from within the `Process{}` block of the function. The
+`CmdletBinding` attribute must also declare that the function supports
 `ShouldProcess` (as shown in the previous example).
 
 For more information about this method, see
@@ -113,7 +119,7 @@ the MSDN library at http://go.microsoft.com/fwlink/?LinkId=142143.
 ### Error Methods
 
 Functions can call two different methods when errors occur. When a
-nonterminating error occurs, the function should call the `WriteError` method,
+non-terminating error occurs, the function should call the `WriteError` method,
 which is described in the "Write Methods" section. When a terminating error
 occurs and the function cannot continue, it should call the
 `ThrowTerminatingError` method. You can also use the `Throw` statement for
