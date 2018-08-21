@@ -53,13 +53,13 @@ Remove-PSDrive -Name smp
 
 ### Example 2: Remove mapped network drives
 
-```powershell
-Get-PSDrive X, S | Remove-PSDrive
-```
-
 This command disconnects the X: mapped network drive that was created in File Explorer and the S: mapped network drive that was created by using the **Persist** parameter of the `New-PSDrive` cmdlet.
 
 The command uses the `Get-PSDrive` cmdlet to get the drives and the `Remove-PSDrive` cmdlet to disconnect them.
+
+```powershell
+Get-PSDrive X, S | Remove-PSDrive
+```
 
 ## PARAMETERS
 
@@ -153,8 +153,7 @@ Accept wildcard characters: False
 ### -Scope
 
 Specifies a scope for the drive.
-The acceptable values for this parameter are: Global, Local, and Script, or a number relative to the current scope, which is 0 through the number of scopes, where 0 is the current scope and 1 is its parent.
-Local is the default.
+The acceptable values for this parameter are: Global, Local, and Script, or a number relative to the current scope. Scopes number 0 through the number of scopes. The current scope number is 0 and its parent is 1.
 For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
