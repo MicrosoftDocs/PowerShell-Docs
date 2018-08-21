@@ -1,5 +1,5 @@
 ---
-ms.date:  01/03/2018
+ms.date:  08/21/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -103,12 +103,12 @@ scripts that you obtain from other sources. Before you sign any script,
 examine each command to verify that it is safe to run.
 
 For best practices about code signing, see
-[Code-Signing Best Practices](http://go.microsoft.com/fwlink/?LinkId=119096).
+[Code-Signing Best Practices](/previous-versions/windows/hardware/design/dn653556(v=vs.85)).
 
 For more information about how to sign a script file, see
-Set-AuthenticodeSignature.
+[Set-AuthenticodeSignature](../../microsoft.powershell.security/set-authenticodesignature).
 
-The New-SelfSignedCertificate cmdlet, introduced in the PKI module in
+The `New-SelfSignedCertificate` cmdlet, introduced in the PKI module in
 PowerShell 3.0, creates a self-signed certificate that is Appropriate for
 testing. For more information, see the help topic for the
 New-SelfSignedCertificate cmdlet.
@@ -152,7 +152,7 @@ Microsoft .NET Framework SDK (versions 1.1 and later) and in the Microsoft
 Windows SDK.
 
 For more information about the syntax and the parameter descriptions of the
-MakeCert.exe tool, see [Certificate Creation Tool (MakeCert.exe)](http://go.microsoft.com/fwlink/?LinkId=119097)
+MakeCert.exe tool, see [Certificate Creation Tool (MakeCert.exe)](/previous-versions/dotnet/netframework-2.0/bfsktky3(v=vs.80))
 in the MSDN library.
 
 To use the MakeCert.exe tool to create a certificate, run the following
@@ -186,7 +186,7 @@ will not find a certificate file in the file system directory.)
 At the PowerShell prompt, type:
 
 ```powershell
-get-childitem cert:\CurrentUser\my -codesigning
+Get-ChildItem cert:\CurrentUser\my -codesigning
 ```
 
 This command uses the PowerShell Certificate provider to view information
