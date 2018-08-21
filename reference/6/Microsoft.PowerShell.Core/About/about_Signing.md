@@ -152,8 +152,7 @@ Microsoft .NET Framework SDK (versions 1.1 and later) and in the Microsoft
 Windows SDK.
 
 For more information about the syntax and the parameter descriptions of the
-MakeCert.exe tool, see [Certificate Creation Tool (MakeCert.exe)](/previous-versions/dotnet/netframework-2.0/bfsktky3(v=vs.80))
-in the MSDN library.
+MakeCert.exe tool, see [Certificate Creation Tool (MakeCert.exe)](/previous-versions/dotnet/netframework-2.0/bfsktky3(v=vs.80)).
 
 To use the MakeCert.exe tool to create a certificate, run the following
 commands in an SDK Command Prompt window.
