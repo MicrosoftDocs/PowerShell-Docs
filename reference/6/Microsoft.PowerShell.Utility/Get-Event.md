@@ -26,11 +26,11 @@ Get-Event [-EventIdentifier] <Int32> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-Event** cmdlet gets events in the Windows PowerShell event queue for the current session.
+The **Get-Event** cmdlet gets events in the PowerShell event queue for the current session.
 You can get all events or use the *EventIdentifier* or *SourceIdentifier* parameter to specify the events.
 
 When an event occurs, it is added to the event queue.
-The event queue includes events for which you have registered, events created by using the New-Event cmdlet, and the event that is raised when Windows PowerShell exits.
+The event queue includes events for which you have registered, events created by using the New-Event cmdlet, and the event that is raised when PowerShell exits.
 You can use **Get-Event** or Wait-Event to get the events.
 
 This cmdlet does not get events from the Event Viewer logs.

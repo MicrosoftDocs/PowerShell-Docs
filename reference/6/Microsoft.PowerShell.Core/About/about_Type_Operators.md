@@ -24,7 +24,7 @@ The -as operator tries to convert the input object to the specified .NET
 Framework type. If it succeeds, it returns the converted object. It if
 fails, it returns \$null. It does not return an error.
 
-The following table lists the type operators in  Windows PowerShell.
+The following table lists the type operators in  PowerShell.
 
 |Operator|Description                |Example                          |
 |--------|---------------------------|---------------------------------|

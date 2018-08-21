@@ -842,7 +842,7 @@ Get-Help
 
 SYNOPSIS
 
-Displays information about Windows PowerShell cmdlets and concepts.
+Displays information about PowerShell cmdlets and concepts.
 ...
 ```
 

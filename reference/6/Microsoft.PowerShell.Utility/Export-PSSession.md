@@ -11,7 +11,7 @@ title:  Export-PSSession
 # Export-PSSession
 
 ## SYNOPSIS
-Imports commands from another session and saves them in a Windows PowerShell module.
+Imports commands from another session and saves them in a PowerShell module.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <String>] [[-Comma
 ```
 
 ## DESCRIPTION
-The **Export-PSSession** cmdlet gets cmdlets, functions, aliases, and other command types from another PSSession on a local or remote computer and saves them in a Windows PowerShell module.
+The **Export-PSSession** cmdlet gets cmdlets, functions, aliases, and other command types from another PSSession on a local or remote computer and saves them in a PowerShell module.
 To add the commands from the module to the current session, use the Import-Module cmdlet.
 
 Unlike Import-PSSession, which imports commands from another PSSession into the current session, **Export-PSSession** saves the commands in a module.
@@ -33,7 +33,7 @@ To export commands, first use the New-PSSession cmdlet to create a PSSession tha
 Then use the **Export-PSSession** cmdlet to export the commands.
 By default, **Export-PSSession** exports all commands, except for commands that exist in the current session, but you can use the *CommandName* parameter to specify the commands to export.
 
-The **Export-PSSession** cmdlet uses the implicit remoting feature of Windows PowerShell.
+The **Export-PSSession** cmdlet uses the implicit remoting feature of PowerShell.
 When you import commands into the current session, they run implicitly in the original session or in a similar session on the originating computer.
 
 ## EXAMPLES
@@ -88,7 +88,7 @@ After the commands in a module are added to the current session, you can use the
 The sixth command uses the **Test-Files** cmdlet, which was exported from the Server01 computer and added to the session.
 
 Although it is not evident, the **Test-Files** command actually runs in a remote session on the computer from which the command was imported.
-Windows PowerShell creates a session from information that is stored in the module.
+PowerShell creates a session from information that is stored in the module.
 
 ### Example 4: Import and clobber commands in the current session
 ```
@@ -204,18 +204,18 @@ Use *CommandType* or its alias, *Type*.
 
 The acceptable values for this parameter are:
 
-- Alias: All Windows PowerShell aliases in the current session.
+- Alias: All PowerShell aliases in the current session.
 - All: All command types.
 It is the equivalent of "get-command *".
 - Application.
-All files other than Windows PowerShell files in paths listed in the Path environment variable ($env:path), including .txt, .exe, and .dll files.
+All files other than PowerShell files in paths listed in the Path environment variable ($env:path), including .txt, .exe, and .dll files.
 - Cmdlet.
 The cmdlets in the current session.
 "Cmdlet" is the default.
 - ExternalScript.
 All .ps1 files in the paths listed in the Path environment variable ($env:path).
 - Filter and Function.
-All Windows PowerShell functions.
+All PowerShell functions.
 - Script.
 Script blocks in the current session.
 
@@ -319,7 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### -Module
-Exports only the commands in the specified Windows PowerShell snap-ins and modules.
+Exports only the commands in the specified PowerShell snap-ins and modules.
 Enter the snap-in and module names.
 Wildcards are not permitted.
 
@@ -407,12 +407,12 @@ You cannot pipe objects to **Export-PSSession**.
 **Export-PSSession** returns a list of files that comprise the module that it created.
 
 ## NOTES
-* **Export-PSSession** relies on the Windows PowerShell remoting infrastructure. To use this cmdlet, the computer must be configured for remoting. For more information, see about_Remote_Requirements.
+* **Export-PSSession** relies on the PowerShell remoting infrastructure. To use this cmdlet, the computer must be configured for remoting. For more information, see about_Remote_Requirements.
 
-  You cannot use **Export-PSSession** to export a Windows PowerShell provider.
+  You cannot use **Export-PSSession** to export a PowerShell provider.
 
   Exported commands run implicitly in the PSSession from which they were exported.
-However, the details of running the commands remotely are handled entirely by Windows PowerShell.
+However, the details of running the commands remotely are handled entirely by PowerShell.
 You can run the exported commands just as you would run local commands.
 
   **Export-Module** captures and saves information about the PSSession in the module that it exports.
@@ -433,7 +433,7 @@ You might see the progress bar while the command is running.
 
   Exported commands have the same limitations as other remote commands, including the inability to start a program with a user interface, such as Notepad.
 
-  Because Windows PowerShell profiles are not run in PSSessions, the commands that a profile adds to a session are not available to **Export-PSSession**.
+  Because PowerShell profiles are not run in PSSessions, the commands that a profile adds to a session are not available to **Export-PSSession**.
 To export commands from a profile, use an Invoke-Command command to run the profile in the PSSession manually before exporting commands.
 
   The module that **Export-PSSession** creates might include a formatting file, even if the command does not import formatting data.

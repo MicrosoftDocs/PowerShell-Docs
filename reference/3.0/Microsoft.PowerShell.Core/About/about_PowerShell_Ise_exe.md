@@ -61,8 +61,7 @@ profiles are run in every session.
 
 This parameter is recommended when you are writing shared content, such as
 functions and scripts that will be run on systems with different profiles.
-For more information, see about_Profiles
-(http://go.microsoft.com/fwlink/?LinkID=113729).
+For more information, see [about_Profiles](about_Profiles.md).
 
 -Help, -?, /?
 Displays help for PowerShell_ISE.exe.

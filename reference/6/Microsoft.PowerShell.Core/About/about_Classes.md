@@ -19,8 +19,8 @@ Starting in PowerShell 5.0, PowerShell adds language
 for defining classes and other user-defined types, by using formal syntax
 and semantics that are similar to other object-oriented programming
 languages. The goal is to enable developers and IT professionals to
-embrace Windows PowerShell for a wider range of use cases, simplify
-development of Windows PowerShell artifacts and accelerate coverage
+embrace PowerShell for a wider range of use cases, simplify
+development of PowerShell artifacts and accelerate coverage
 of management surfaces.
 
 A class declaration is like a blueprint that is used to create instances or
@@ -33,10 +33,10 @@ and each instance can have different values in its properties.
 
 ## SUPPORTED SCENARIOS
 
-- Define custom types in Windows PowerShell by using familiar object-oriented
+- Define custom types in PowerShell by using familiar object-oriented
   programming constructs, such as classes, properties, methods, inheritance,
   etc.
-- Debug types by using the Windows PowerShell language.
+- Debug types by using the PowerShell language.
 - Generate and handle exceptions by using formal mechanisms, and at the right
   level.
 - Define DSC resources and their associated types by using the PowerShell

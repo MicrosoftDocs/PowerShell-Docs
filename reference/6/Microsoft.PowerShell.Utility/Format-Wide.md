@@ -43,7 +43,7 @@ PS C:\> Get-ChildItem HKCU:\software\microsoft | Format-Wide -Property pschildna
 
 This command displays the names of registry keys in the HKEY_CURRENT_USER\Software\Microsoft key.
 The Get-ChildItem cmdlet gets objects representing the keys.
-The path is specified as HKCU:, one of the drives exposed by the Windows PowerShell Registry provider, followed by the key path.
+The path is specified as HKCU:, one of the drives exposed by the PowerShell Registry provider, followed by the key path.
 The pipeline operator (|) passes the registry key objects through the pipeline to `Format-Wide`, which formats them for output.
 The **Property** parameter specifies the name of the property, and the **AutoSize** parameter adjusts the columns for readability.
 
@@ -277,7 +277,7 @@ The **GroupBy** parameter assumes that the objects are sorted.
 Before using Format-Custom to group the objects, use `Sort-Object` to sort them.
 
 The **View** parameter lets you specify an alternate format for the table.
-You can use the views defined in the **.format.PS1XML files in the Windows PowerShell directory or you can create your own views in new PS1XML files and use the `Update-FormatData` cmdlet to include them in Windows PowerShell.
+You can use the views defined in the **.format.PS1XML files in the PowerShell directory or you can create your own views in new PS1XML files and use the `Update-FormatData` cmdlet to include them in PowerShell.
 
 The alternate view for the **View** parameter must use table format; if it does not, the command fails.
 If the alternate view is a list, use `Format-List`.

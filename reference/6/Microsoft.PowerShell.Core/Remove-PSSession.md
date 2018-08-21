@@ -11,7 +11,7 @@ title:  Remove-PSSession
 # Remove-PSSession
 
 ## SYNOPSIS
-Closes one or more Windows PowerShell sessions (PSSessions).
+Closes one or more PowerShell sessions (PSSessions).
 
 ## SYNTAX
 
@@ -56,7 +56,7 @@ Remove-PSSession [-ComputerName] <String[]> [-WhatIf] [-Confirm] [<CommonParamet
 ```
 
 ## DESCRIPTION
-The **Remove-PSSession** cmdlet closes Windows PowerShell sessions (**PSSessions**) in the current session.
+The **Remove-PSSession** cmdlet closes PowerShell sessions (**PSSessions**) in the current session.
 It stops any commands that are running in the **PSSessions**, ends the **PSSession**, and releases the resources that the **PSSession** was using.
 If the **PSSession** is connected to a remote computer, this cmdlet also closes the connection between the local and remote computers.
 
@@ -134,7 +134,7 @@ PS C:\> Function EndPSS { Get-PSSession | Remove-PSSession }
 ```
 
 This function deletes all of the **PSSessions** in the current session.
-After you add this function to your Windows PowerShell profile, to delete all sessions, type `EndPSS`.
+After you add this function to your PowerShell profile, to delete all sessions, type `EndPSS`.
 
 ## PARAMETERS
 

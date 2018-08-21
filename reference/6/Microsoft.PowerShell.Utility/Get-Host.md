@@ -20,9 +20,9 @@ Get-Host [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-Host** cmdlet gets an object that represents the program that is hosting Windows PowerShell.
+The **Get-Host** cmdlet gets an object that represents the program that is hosting PowerShell.
 
-The default display includes the Windows PowerShell version number and the current region and language settings that the host is using, but the host object contains a wealth of information, including detailed information about the version of Windows PowerShell that is currently running and the current culture and UI culture of Windows PowerShell.
+The default display includes the PowerShell version number and the current region and language settings that the host is using, but the host object contains a wealth of information, including detailed information about the version of PowerShell that is currently running and the current culture and UI culture of PowerShell.
 You can also use this cmdlet to customize features of the host program user interface, such as the text and background colors.
 
 ## EXAMPLES
@@ -41,8 +41,8 @@ IsRunspacePushed : False
 Runspace         : System.Management.Automation.Runspaces.LocalRunspace
 ```
 
-This command displays information about the Windows PowerShell console, which is the current host program for Windows PowerShell in this example.
-It includes the name of the host, the version of Windows PowerShell that is running in the host, and current culture and UI culture.
+This command displays information about the PowerShell console, which is the current host program for PowerShell in this example.
+It includes the name of the host, the version of PowerShell that is running in the host, and current culture and UI culture.
 
 The Version, UI, CurrentCulture, CurrentUICulture, PrivateData, and Runspace properties each contain an object with very useful properties.
 Later examples examine these properties.
@@ -56,7 +56,7 @@ PS C:\> $Win.Width  = 10
 PS C:\> $H.UI.RawUI.Set_WindowSize($Win)
 ```
 
-This command resizes the Windows PowerShell window to 10 pixels by 10 pixels.
+This command resizes the PowerShell window to 10 pixels by 10 pixels.
 
 ### Example 3: Get the PowerShell version for the host
 ```
@@ -69,7 +69,7 @@ MajorRevision : -1
 MinorRevision : -1
 ```
 
-This command gets detailed information about the version of Windows PowerShell running in the host.
+This command gets detailed information about the version of PowerShell running in the host.
 You can view, but not change, these values.
 
 The Version property of **Get-Host** contains a **System.Version** object.
@@ -102,7 +102,7 @@ UseUserOverride                : True
 IsReadOnly                     : False
 ```
 
-This command gets detailed information about the current culture set for Windows PowerShell running in the host.
+This command gets detailed information about the current culture set for PowerShell running in the host.
 This is the same information that is returned by the Get-Culture cmdlet.
 
 Similarly, the **CurrentUICulture** property returns the same object that Get-UICulture returns.
@@ -142,7 +142,7 @@ AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...}
 MonthGenitiveNames               : {January, February, March, April...}
 ```
 
-This command returns detailed information about the DateTimeFormat of the current culture that is being used for Windows PowerShell.
+This command returns detailed information about the DateTimeFormat of the current culture that is being used for PowerShell.
 
 The **CurrentCulture** property of the host object contains a **CultureInfo** object that, in turn, has many useful properties.
 Among them, the **DateTimeFormat** property contains a **DateTimeFormatInfo** object with many useful properties.
@@ -175,11 +175,11 @@ PS C:\> (Get-Host).UI.RawUI.BackgroundColor = "Black"
 PS C:\> cls
 ```
 
-These commands change the background color of the Windows PowerShell console to black.
+These commands change the background color of the PowerShell console to black.
 The **cls** command is an alias for the Clear-Host function, which clears the screen and changes the whole screen to the new color.
 
 This change is effective only in the current session.
-To change the background color of the console for all sessions, add the command to your Windows PowerShell profile.
+To change the background color of the console for all sessions, add the command to your PowerShell profile.
 
 ### Example 8: Set the background color for error messages
 ```

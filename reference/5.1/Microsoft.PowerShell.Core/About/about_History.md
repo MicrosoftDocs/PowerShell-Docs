@@ -67,8 +67,7 @@ To apply the setting, restart Windows PowerShell.
 
 To save the new variable value for all your Windows PowerShell sessions, add
 the assignment statement to a Windows PowerShell profile. For more information
-about profiles, see
-[about_Profiles](http://go.microsoft.com/fwlink/?LinkID=113729).
+about profiles, see [about_Profiles](about_Profiles.md).
 
 For more information about the $MaximumHistoryCount preference variable, see
 [about_Preference_Variables](about_Preference_Variables.md).

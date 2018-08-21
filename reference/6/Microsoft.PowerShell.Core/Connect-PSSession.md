@@ -67,7 +67,7 @@ Connect-PSSession [-ThrottleLimit <Int32>] [-Id] <Int32[]> [-WhatIf] [-Confirm] 
 ```
 
 ## DESCRIPTION
-The **Connect-PSSession** cmdlet reconnects to user-managed Windows PowerShell sessions (**PSSessions**) that were disconnected.
+The **Connect-PSSession** cmdlet reconnects to user-managed PowerShell sessions (**PSSessions**) that were disconnected.
 It works on sessions that are disconnected intentionally, such as by using the Disconnect-PSSession cmdlet or the *InDisconnectedSession* parameter of the Invoke-Command cmdlet, and those that were disconnected unintentionally, such as by a temporary network outage.
 
 **Connect-PSSession** can connect to any disconnected session that was started by the same user.
@@ -153,7 +153,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 -- ----            ------------    -----         -----------------     ------------
  1 ITTask          Server01        Disconnected  ITTasks               None
 
-Later that evening, the administrator starts her home computer, logs on to the corporate network, and starts Windows PowerShell. The fourth command uses the Get-PSSession cmdlet to get the sessions on the Server01 computer. The command finds the ITTask session.The fifth command uses the **Connect-PSSession** cmdlet to connect to the ITTask session. The command saves the session in the $s variable.
+Later that evening, the administrator starts her home computer, logs on to the corporate network, and starts PowerShell. The fourth command uses the Get-PSSession cmdlet to get the sessions on the Server01 computer. The command finds the ITTask session.The fifth command uses the **Connect-PSSession** cmdlet to connect to the ITTask session. The command saves the session in the $s variable.
 PS C:\> Get-PSSession -ComputerName Server01 -Name ITTask
 
 Id Name            ComputerName    State         ConfigurationName     Availability
@@ -181,7 +181,7 @@ PS C:\> Invoke-Command -Session $s {$BackupSpecs = Receive-Job -JobName Job2}
 
 PS C:\> Invoke-Command -Session $s {\\Server30\Scripts\New-SQLDatabase.ps1 -InitData $BackupSpecs.Initialization}
 
-The ninth command disconnects from the session in the $s variable.The administrator closes Windows PowerShell and closes the computer. She can reconnect to the session on the next day and check the script status from her work computer.
+The ninth command disconnects from the session in the $s variable.The administrator closes PowerShell and closes the computer. She can reconnect to the session on the next day and check the script status from her work computer.
 PS C:\> Disconnect-PSSession -Session $s -OutputBufferingMode Drop -IdleTimeoutSec 60*60*15
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
@@ -199,7 +199,7 @@ Later that evening, the administrator logs on to her home computer and verifies 
 Indicates that this cmdlet allows redirection of this connection to an alternate URI.
 
 When you use the *ConnectionURI* parameter, the remote destination can return an instruction to redirect to a different URI.
-By default, Windows PowerShell does not redirect connections, but you can use this parameter to allow it to redirect the connection.
+By default, PowerShell does not redirect connections, but you can use this parameter to allow it to redirect the connection.
 
 You can also limit the number of times the connection is redirected by changing the **MaximumConnectionRedirectionCount** session option value.
 Use the *MaximumRedirection* parameter of the New-PSSessionOption cmdlet or set the **MaximumConnectionRedirectionCount** property of the **$PSSessionOption** preference variable.
@@ -281,7 +281,7 @@ Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts.
 They do not work with domain accounts.
 
-To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
+To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
 Type: String
@@ -371,9 +371,9 @@ If you do not specify a connection URI, you can use the *UseSSL* and *Port* para
 
 Valid values for the **Transport** segment of the URI are HTTP and HTTPS.
 If you specify a connection URI with a Transport segment, but do not specify a port, the session is created with standards ports: 80 for HTTP and 443 for HTTPS.
-To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
+To use the default ports for PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
 
-If the destination computer redirects the connection to a different URI, Windows PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
+If the destination computer redirects the connection to a different URI, PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
 
 ```yaml
 Type: Uri[]
@@ -477,7 +477,7 @@ To connect to a remote computer, the remote computer must be listening on the po
 The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
-To configure the listener, type the following two commands at the Windows PowerShell prompt:
+To configure the listener, type the following two commands at the PowerShell prompt:
 
 `Remove-Item -Path WSMan:\Localhost\listener\listener* -Recurse`
 
@@ -563,7 +563,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to connect to the disconnected session.
 By default, SSL is not used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network.
+WS-Management encrypts all PowerShell content transmitted over the network.
 The *UseSSL* parameter is an additional protection that sends the data across an HTTPS connection instead of an HTTP connection.
 
 If you use this parameter, but SSL is not available on the port that is used for the command, the command fails.

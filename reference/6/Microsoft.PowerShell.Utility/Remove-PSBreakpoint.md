@@ -32,8 +32,8 @@ Enter a breakpoint object or a breakpoint ID.
 When you remove a breakpoint, the breakpoint object is no longer available or functional.
 If you have saved a breakpoint object in a variable, the reference still exists, but the breakpoint does not function.
 
-**Remove-PSBreakpoint** is one of several cmdlets designed for debugging Windows PowerShell scripts.
-For more information about the Windows PowerShell debugger, see about_Debuggers.
+**Remove-PSBreakpoint** is one of several cmdlets designed for debugging PowerShell scripts.
+For more information about the PowerShell debugger, see about_Debuggers.
 
 ## EXAMPLES
 
@@ -79,7 +79,7 @@ Then, it uses a pipeline operator (|) to send the breakpoints to the **Remove-PS
 
 As a result, you can type `del-psb` instead of the longer command.
 
-To save the function, add it to your Windows PowerShell profile.
+To save the function, add it to your PowerShell profile.
 
 ## PARAMETERS
 

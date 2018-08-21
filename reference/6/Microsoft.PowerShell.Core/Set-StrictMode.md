@@ -27,7 +27,7 @@ Set-StrictMode [-Off] [<CommonParameters>]
 
 ## DESCRIPTION
 The **Set-StrictMode** cmdlet configures strict mode for the current scope and all child scopes, and turns it on and off.
-When strict mode is on, Windows PowerShell generates a terminating error when the content of an expression, script, or script block violates basic best-practice coding rules.
+When strict mode is on, PowerShell generates a terminating error when the content of an expression, script, or script block violates basic best-practice coding rules.
 
 Use the *Version* parameter to determine which coding rules are enforced.
 
@@ -98,7 +98,7 @@ At line:1 char:9
 ```
 
 This command turns strict mode on and sets it to version 2.0.
-As a result, Windows PowerShell returns an error if you use method syntax, which uses parentheses and commas, for a function call or reference uninitialized variables or non-existent properties.
+As a result, PowerShell returns an error if you use method syntax, which uses parentheses and commas, for a function call or reference uninitialized variables or non-existent properties.
 
 The sample output shows the effect of version 2.0 strict mode.
 
@@ -145,7 +145,7 @@ Latest
 
 ---- Selects the latest version available.
 The latest version is the most strict.
-Use this value to make sure that scripts use the strictest available version, even when new versions are added to Windows PowerShell.
+Use this value to make sure that scripts use the strictest available version, even when new versions are added to PowerShell.
 
 ```yaml
 Type: Version
@@ -173,7 +173,7 @@ You cannot pipe input to this cmdlet.
 This cmdlet does not return any output.
 
 ## NOTES
-* **Set-StrictMode** is like the *Strict* parameter of **Set-PSDebug**. `Set-StrictMode -Version 1` is equivalent to `Set-PSDebug -Strict`, except that **Set-PSDebug** is effective in all scopes. **Set-StrictMode** is effective only in the scope in which it is set and in its child scopes. For more information about scopes in Windows PowerShell, see about_Scopes.
+* **Set-StrictMode** is like the *Strict* parameter of **Set-PSDebug**. `Set-StrictMode -Version 1` is equivalent to `Set-PSDebug -Strict`, except that **Set-PSDebug** is effective in all scopes. **Set-StrictMode** is effective only in the scope in which it is set and in its child scopes. For more information about scopes in PowerShell, see about_Scopes.
 
 *
 

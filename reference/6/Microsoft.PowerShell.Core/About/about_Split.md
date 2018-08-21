@@ -20,7 +20,7 @@ change the following elements of the Split operation:
 
 - Delimiter. The default is whitespace, but you can specify characters,
   strings, patterns, or script blocks that specify the delimiter. The Split
-  operator in Windows PowerShell uses a regular expression in the delimiter,
+  operator in PowerShell uses a regular expression in the delimiter,
   rather than a simple character.
 - Maximum number of substrings. The default is to return all substrings. If
   you specify a number less than the number of substrings, the remaining

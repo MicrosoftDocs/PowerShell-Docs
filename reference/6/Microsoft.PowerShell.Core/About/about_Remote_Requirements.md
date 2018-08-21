@@ -11,19 +11,19 @@ title:  about_Remote_Requirements
 ## SHORT DESCRIPTION
 
 Describes the system requirements and configuration requirements for running
-remote commands in Windows PowerShell.
+remote commands in PowerShell.
 
 ## LONG DESCRIPTION
 
 This topic describes the system requirements, user requirements, and resource
 requirements for establishing remote connections and running remote commands
-in Windows PowerShell. It also provides instructions for configuring remote
+in PowerShell. It also provides instructions for configuring remote
 operations.
 
 Note: Many cmdlets (including the Get-Service, Get-Process, Get-WMIObject,
 Get-EventLog, and Get-WinEvent cmdlets) get objects from remote computers by
 using Microsoft .NET Framework methods to retrieve the objects. They do not
-use the Windows PowerShell remoting infrastructure. The requirements in this
+use the PowerShell remoting infrastructure. The requirements in this
 document do not apply to these cmdlets.
 
 To find the cmdlets that have a ComputerName parameter but do not use Windows
@@ -51,7 +51,7 @@ You can create remote sessions between computers running Windows PowerShell
 PowerShell 3.0, such as the ability to disconnect and reconnect to sessions,
 are available only when both computers are running Windows PowerShell 3.0.
 
-To find the version number of an installed version of Windows PowerShell,
+To find the version number of an installed version of PowerShell,
 use the $PSVersionTable automatic variable.
 
 Windows Remote Management (WinRM) 3.0 and Microsoft .NET Framework 4 are
@@ -143,7 +143,7 @@ Administrator privileges are required for the following remoting operations:
 - Viewing and changing WS-Management settings on the local computer. These are
   the settings in the LocalHost node of the WSMAN: drive.
 
-To perform these tasks, you must start Windows PowerShell with the "Run as
+To perform these tasks, you must start PowerShell with the "Run as
 administrator" option even if you are a member of the Administrators group on
 the local computer.
 
@@ -170,28 +170,28 @@ the "Run as administrator" option to start the program.
 ## HOW TO CONFIGURE YOUR COMPUTER FOR REMOTING
 
 Computers running all supported versions of Windows can establish remote
-connections to and run remote commands in Windows PowerShell without any
+connections to and run remote commands in PowerShell without any
 configuration. However, to receive connections, and allow users to create
-local and remote user-managed Windows PowerShell sessions ("PSSessions") and
-run commands on the local computer, you must enable Windows PowerShell
+local and remote user-managed PowerShell sessions ("PSSessions") and
+run commands on the local computer, you must enable PowerShell
 remoting on the computer.
 
 Windows Server 2012 and newer releases of Windows Server are enabled for
-Windows PowerShell remoting by default. If the settings are changed, you can
+PowerShell remoting by default. If the settings are changed, you can
 restore the default settings by running the Enable-PSRemoting cmdlet.
 
 On all other supported versions of Windows, you need to run the
-Enable-PSRemoting cmdlet to enable Windows PowerShell remoting.
+Enable-PSRemoting cmdlet to enable PowerShell remoting.
 
-The remoting features of Windows PowerShell are supported by the WinRM
+The remoting features of PowerShell are supported by the WinRM
 service, which is the Microsoft implementation of the Web Services for
-Management (WS-Management) protocol. When you enable Windows PowerShell
+Management (WS-Management) protocol. When you enable PowerShell
 remoting, you change the default configuration of WS-Management and add system
 configuration that allow users to connect to WS-Management.
 
-To configure Windows PowerShell to receive remote commands:
+To configure PowerShell to receive remote commands:
 
-1. Start Windows PowerShell with the "Run as administrator" option.
+1. Start PowerShell with the "Run as administrator" option.
 2. At the command prompt, type: `Enable-PSRemoting`
 
 To verify that remoting is configured correctly, run a test command such as
@@ -216,9 +216,9 @@ If the command fails, for assistance, see
 
 ## UNDERSTAND POLICIES
 
-When you work remotely, you use two instances of Windows PowerShell, one on
+When you work remotely, you use two instances of PowerShell, one on
 the local computer and one on the remote computer. As a result, your work is
-affected by the Windows policies and the Windows PowerShell policies on the
+affected by the Windows policies and the PowerShell policies on the
 local and remote computers.
 
 In general, before you connect and as you are establishing the connection, the

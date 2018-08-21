@@ -79,7 +79,7 @@ Monday, July 21, 2008 7:16:58 PM    Server02
 
 Several cmdlets, including Get-Process, Get-Service, and Get-EventLog,
 have a ComputerName parameter that gets the objects on a remote computer.
-These cmdlets do not use Windows PowerShell remoting, so you can use them
+These cmdlets do not use PowerShell remoting, so you can use them
 even on computers that are not configured for remoting in Windows
 PowerShell.
 
@@ -151,19 +151,19 @@ When you run remote commands that generate output, the command output is
 transmitted across the network back to the local computer.
 
 Because most live Microsoft .NET Framework objects (such as the objects
-that Windows PowerShell cmdlets return) cannot be transmitted over the
+that PowerShell cmdlets return) cannot be transmitted over the
 network, the live objects are "serialized". In other words, the live
 objects are converted into XML representations of the object and its
 properties. Then, the XML-based serialized object is transmitted across
 the network.
 
-On the local computer, Windows PowerShell receives the XML-based serialized
+On the local computer, PowerShell receives the XML-based serialized
 object and "deserializes" it by converting the XML-based object into a
 standard .NET Framework object.
 
 However, the deserialized object is not a live object. It is a snapshot of
 the object at the time that it was serialized, and it includes properties
-but no methods. You can use and manage these objects in Windows PowerShell,
+but no methods. You can use and manage these objects in PowerShell,
 including passing them in pipelines, displaying selected properties, and
 formatting them.
 
@@ -192,7 +192,7 @@ any special handling or formatting.
 # ORDERING THE RESULTS
 
 The order of the computer names in the ComputerName parameter of cmdlets
-determines the order in which Windows PowerShell connects to the remote
+determines the order in which PowerShell connects to the remote
 computers. However, the results appear in the order in which the local
 computer receives them, which might be a different order.
 

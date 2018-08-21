@@ -23,22 +23,22 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834963
 
 ## Short description
 
- Provides access to the Windows PowerShell variables and to their values.
+ Provides access to the PowerShell variables and to their values.
 
 
 ## Detailed description
 
- The Windows PowerShell **Variable** provider lets you get, add, change, clear, and delete Windows PowerShell variables in the current console.
+ The PowerShell **Variable** provider lets you get, add, change, clear, and delete PowerShell variables in the current console.
 
- The Windows PowerShell **Variable** provider supports the variables that Windows PowerShell creates, including the automatic variables, the preference variables, and the variables that you create.
+ The PowerShell **Variable** provider supports the variables that PowerShell creates, including the automatic variables, the preference variables, and the variables that you create.
 
  The **Variable** provider is a flat namespace that contains only the variable objects. The variables have no child items.
 
  Most of the variables are instances of the [System.Management.Automation.PSVariable](https://msdn.microsoft.com/library/system.management.automation.psvariable) class. However, there are some variations. For example, the `?` variable is a member of the `QuestionMarkVariable` internal class, and the `MaximumVariableCount` variable is a member of the `SessionStateCapacityVariable` internal class.
 
- The **Variable** provider exposes its data store in the `Variable:` drive. To work with variables, you can change your location to the `Variable:` drive (`set-location Variable:`), or you can work from any other Windows PowerShell drive. To reference a variable from another location, use the drive name (`Variable:`) in the path.
+ The **Variable** provider exposes its data store in the `Variable:` drive. To work with variables, you can change your location to the `Variable:` drive (`set-location Variable:`), or you can work from any other PowerShell drive. To reference a variable from another location, use the drive name (`Variable:`) in the path.
 
- Windows PowerShell includes a set of cmdlets designed especially to view and to change variables:
+ PowerShell includes a set of cmdlets designed especially to view and to change variables:
 
  - [Get-Variable](../../Microsoft.PowerShell.Utility/Get-Variable.md)
  - [New-Variable](../../Microsoft.PowerShell.Utility/New-Variable.md)
@@ -50,7 +50,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834963
 
  The **Variable** provider supports all of the cmdlets whose names contain the *Item* noun (the `*-Item` cmdlets), except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). The **Variable** provider supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the *ItemProperty* noun (the `*-ItemProperty` cmdlets), and it does not support the `-Filter` parameter in any cmdlet.
 
- You can also use the Windows PowerShell expression parser to create, view, and change the values of variables without using the cmdlets. When working with variables directly, use a dollar sign (`$`) to identify the name as a variable and the assignment operator (`=`) to establish and change its value. For example, `$p = Get-Process` creates the `p` variable and stores the results of a `Get-Process` command in it.
+ You can also use the PowerShell expression parser to create, view, and change the values of variables without using the cmdlets. When working with variables directly, use a dollar sign (`$`) to identify the name as a variable and the assignment operator (`=`) to establish and change its value. For example, `$p = Get-Process` creates the `p` variable and stores the results of a `Get-Process` command in it.
 
 
 ## Capabilities
@@ -66,7 +66,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834963
 
 #### Example 1
 
- This command changes the current location to the `Variable:` drive. You can use this command from any drive in Windows PowerShell. To return to a file system drive, type the drive name. For example, type `set-location c:`.
+ This command changes the current location to the `Variable:` drive. You can use this command from any drive in PowerShell. To return to a file system drive, type the drive name. For example, type `set-location c:`.
 
 ```powershell
 Set-Location Variable:
@@ -78,7 +78,7 @@ Set-Location Variable:
 
 #### Example 1
 
- This command gets the list of all the variables and their values in the current session. You can use this command from any Windows PowerShell drive.
+ This command gets the list of all the variables and their values in the current session. You can use this command from any PowerShell drive.
 
 ```powershell
 Get-ChildItem -Path Variable:
@@ -87,7 +87,7 @@ Get-ChildItem -Path Variable:
 
 #### Example 2
 
- This command gets the variables with names that begin with "max". You can use this command from any Windows PowerShell drive.
+ This command gets the variables with names that begin with "max". You can use this command from any PowerShell drive.
 
 ```powershell
 Get-ChildItem -Path Variable:max*
@@ -240,7 +240,7 @@ $old_processes = $processes
 
 #### Example 1
 
- This command deletes the `serv` variable from the current session. You can use this command in any Windows PowerShell drive.
+ This command deletes the `serv` variable from the current session. You can use this command in any PowerShell drive.
 
 ```powershell
 Remove-Variable -Path Variable:serv

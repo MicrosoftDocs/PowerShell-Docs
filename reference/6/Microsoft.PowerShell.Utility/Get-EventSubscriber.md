@@ -28,7 +28,7 @@ Get-EventSubscriber [-SubscriptionId] <Int32> [-Force] [<CommonParameters>]
 ## DESCRIPTION
 The **Get-EventSubscriber** cmdlet gets the event subscribers in the current session.
 
-When you subscribe to an event by using a Register event cmdlet, an event subscriber is added to your Windows PowerShell session, and the events to which you subscribed are added to your event queue whenever they are raised.
+When you subscribe to an event by using a Register event cmdlet, an event subscriber is added to your PowerShell session, and the events to which you subscribed are added to your event queue whenever they are raised.
 To cancel an event subscription, delete the event subscriber by using the Unregister-Event cmdlet.
 
 ## EXAMPLES
@@ -74,12 +74,17 @@ The fourth command uses the **Get-EventSubscriber** cmdlet to get the event subs
 PS C:\> $Timer = New-Object Timers.Timer
 PS C:\> $Timer.Interval = 500
 PS C:\> Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Random -Action { $Random = Get-Random -Min 0 -Max 100 }
+
 Id  Name           State      HasMoreData  Location  Command
 --  ----           -----      -----------  --------  -------
-3   Timer.Random   NotStarted False                  $Random = Get-Random ... PS C:\> $Timer.Enabled = $True
-PS C:\> $Subscriber = Get-EventSubcriber -SourceIdentifer Timer.Random
+3   Timer.Random   NotStarted False                  $Random = Get-Random ...
+
+PS C:\> $Timer.Enabled = $True
+PS C:\> $Subscriber = Get-EventSubscriber -SourceIdentifier Timer.Random
 PS C:\> ($Subscriber.action).gettype().fullname
-PSEventJob PS C:\> $Subscriber.action | Format-List -Property *
+System.Management.Automation.PSEventJob
+PS C:\> $Subscriber.action | Format-List -Property *
+
 State         : Running
 Module        : __DynamicModule_6b5cbe82-d634-41d1-ae5e-ad7fe8d57fe0
 StatusMessage :
@@ -92,8 +97,11 @@ InstanceId    : 88944290-133d-4b44-8752-f901bd8012e2
 Id            : 1
 Name          : Timer.Random
 ChildJobs     : {}
-... PS C:\> & $Subscriber.action.module {$Random}
-96 PS C:\> & $Subscriber.action.module {$Random}
+...
+
+PS C:\> & $Subscriber.action.module {$Random}
+96
+PS C:\> & $Subscriber.action.module {$Random}
 23
 ```
 

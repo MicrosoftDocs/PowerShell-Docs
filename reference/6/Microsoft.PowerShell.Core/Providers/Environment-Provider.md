@@ -28,13 +28,13 @@ online version:  https://go.microsoft.com/fwlink/?linkid=834944
 
 ## Detailed description
 
- The Windows PowerShell **Environment** provider lets you get, add, change, clear, and delete Windows environment variables in Windows PowerShell.
+ The PowerShell **Environment** provider lets you get, add, change, clear, and delete Windows environment variables in PowerShell.
 
  The **Environment** provider is a flat namespace that contains only objects that represent the environment variables. The variables have no child items.
 
  Each environment variable is an instance of the [System.Collections.DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry) class. The name of the variable is the dictionary key. The value of the environment variable is the dictionary value.
 
- The **Environment** provider exposes its data store in the `Env:` drive. To work with environment variables, change your location to the `Env:` drive (`set-location Env:`), or work from another Windows PowerShell drive. To reference an environment variable from another location, use the `Env:` drive name in the path.
+ The **Environment** provider exposes its data store in the `Env:` drive. To work with environment variables, change your location to the `Env:` drive (`set-location Env:`), or work from another PowerShell drive. To reference an environment variable from another location, use the `Env:` drive name in the path.
 
  The **Environment** provider supports all the cmdlets that contain the *Item* noun except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets that contain the *ItemProperty* noun, and it does not support the `-Filter` parameter in any cmdlet.
 
@@ -59,7 +59,7 @@ online version:  https://go.microsoft.com/fwlink/?linkid=834944
 Set-Location Env:
 ```
 
- You can use this command from any drive in Windows PowerShell. To return to a file system drive, type the drive name. For example, type:
+ You can use this command from any drive in PowerShell. To return to a file system drive, type the drive name. For example, type:
 ```powershell
 Set-Location c:
 ```
@@ -76,7 +76,7 @@ Set-Location c:
 Get-ChildItem -Path Env:
 ```
 
- You can use this command from any Windows PowerShell drive.
+ You can use this command from any PowerShell drive.
 
 
 #### Example 2
@@ -96,7 +96,7 @@ Get-ChildItem -Path Env:windir
 Get-ChildItem  | Sort-Object -Property name
 ```
 
- By default, the environment variables appear in the order that Windows PowerShell discovers them. This command is submitted in the `Env:` drive.
+ By default, the environment variables appear in the order that PowerShell discovers them. This command is submitted in the `Env:` drive.
 When you run this command from another drive, add the `-Path` parameter with a value of `Env:`.
 
 
@@ -195,7 +195,7 @@ Copy-Item -Path Env:USERROLE -Destination Env:USERROLE2
 Remove-Item -Path Env:USERROLE2
 ```
 
- You can use this command in any Windows PowerShell drive. If you are in the `Env:` drive, you can omit the drive name from the path.
+ You can use this command in any PowerShell drive. If you are in the `Env:` drive, you can omit the drive name from the path.
 
 
 #### Example 2

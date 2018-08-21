@@ -84,7 +84,7 @@ configuration unencryptedPasswordDemo
     Node "TestMachine2"
     {
         # Now we'll use a node-specific password to this machine
-        $password = $Node.LocalPass | ConvertTo-SecureString -asPlainText -Force
+        $password = $Node.LocalPassword | ConvertTo-SecureString -asPlainText -Force
         $username = $node.UserName
         [PSCredential] $nodeCred = New-Object System.Management.Automation.PSCredential($username,$password)
 
@@ -101,7 +101,7 @@ configuration unencryptedPasswordDemo
 
         Group addToAdmin
         {
-            Credential = $domain
+            Credential = $promptedCreds
             GroupName = "Administrators"
             DependsOn = "[User]User2"
             Ensure = "Present"

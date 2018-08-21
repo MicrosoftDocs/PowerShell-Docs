@@ -34,8 +34,8 @@ Newly created breakpoints are automatically enabled, but you can disable them by
 
 Technically, this cmdlet changes the value of the Enabled property of a breakpoint object to True.
 
-**Enable-PSBreakpoint** is one of several cmdlets designed for debugging Windows PowerShell scripts.
-For more information about the Windows PowerShell debugger, see about_Debuggers.
+**Enable-PSBreakpoint** is one of several cmdlets designed for debugging PowerShell scripts.
+For more information about the PowerShell debugger, see about_Debuggers.
 
 ## EXAMPLES
 

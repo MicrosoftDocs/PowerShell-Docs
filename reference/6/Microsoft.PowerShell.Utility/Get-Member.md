@@ -147,14 +147,16 @@ The results show that only process objects (**System.Diagnostics.Process**) and 
 ```
 PS C:\> $A = Get-Member - InputObject @(1)
 PS C:\> $A.Count
-1 PS C:\> $A = Get-Member -InputObject 1,2,3
+1
+PS C:\> $A = Get-Member -InputObject 1,2,3
 TypeName: System.Object[]
 Name               MemberType    Definition
 ----               ----------    ----------
 Count              AliasProperty Count = Length
 Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
-... PS C:\> $A.Count
+...
+PS C:\> $A.Count
 1
 ```
 
@@ -191,13 +193,13 @@ Attributes PS C:\> [appdomain]::CurrentDomain.GetAssemblies() | ForEach-Object {
 ```
 
 This example shows how to determine which properties of an object can be changed.
-The example uses a file, but you can use this command format to find the changeable properties of any object in Windows PowerShell.
+The example uses a file, but you can use this command format to find the changeable properties of any object in PowerShell.
 
 The first command uses the Get-Item cmdlet to get a text file, and then it saves the file object in the $File variable.
 
 The second command gets all of the changeable properties of the file object in the $File variable and displays the names of the properties in a table.
 
-The third command gets the changeable properties of all objects in your Windows PowerShell session.
+The third command gets the changeable properties of all objects in your PowerShell session.
 
 ### Example 8: Get members of each item in a collection
 ```
@@ -250,10 +252,10 @@ By default, **Get-Member** gets these properties in all views other than Base an
 The following list describes the properties that are added when you use the *Force* parameter:
 
 - PSBase:  The original properties of the .NET Framework object without extension or adaptation. These are the properties defined for the object class and listed in MSDN.
-- PSAdapted. The properties and methods defined in the Windows PowerShell extended type system.
+- PSAdapted. The properties and methods defined in the PowerShell extended type system.
 - PSExtended. The properties and methods that were added in the Types.ps1xml files or by using the Add-Member cmdlet.
-- PSObject. The adapter that converts the base object to a Windows PowerShell**PSObject** object.
-- PSTypeNames. A list of object types that describe the object, in order of specificity. When formatting the object, Windows PowerShell searches for the types in the Format.ps1xml files in the Windows PowerShell installation directory ($pshome). It uses the formatting definition for the first type that it finds.
+- PSObject. The adapter that converts the base object to a PowerShell**PSObject** object.
+- PSTypeNames. A list of object types that describe the object, in order of specificity. When formatting the object, PowerShell searches for the types in the Format.ps1xml files in the PowerShell installation directory ($pshome). It uses the formatting definition for the first type that it finds.
 
 ```yaml
 Type: SwitchParameter
@@ -314,7 +316,7 @@ The acceptable values for this parameter are:
 For information about these values, see [PSMemberTypes Enumeration](https://msdn.microsoft.com/library/system.management.automation.psmembertypes) in the MSDN library.
 
 Not all objects have every type of member.
-If you specify a member type that the object does not have, Windows PowerShell returns a null value.
+If you specify a member type that the object does not have, PowerShell returns a null value.
 
 To get related types of members, such as all extended members, use the *View* parameter.
 If you use the *MemberType* parameter with the *Static* or *View* parameters, **Get-Member** gets the members that belong to both sets.
@@ -380,7 +382,7 @@ The default is Adapted, Extended.
 The acceptable values for this parameter are:
 
 - Base.  Gets only the original properties and methods of the .NET Framework object (without extension or adaptation).
-- Adapted.  Gets only the properties and methods defined in the Windows PowerShell extended type system.
+- Adapted.  Gets only the properties and methods defined in the PowerShell extended type system.
 - Extended. Gets only the properties and methods that were added in the Types.ps1xml files or by using the Add-Member cmdlet.
 - All. Gets the members in the Base, Adapted, and Extended views.
 

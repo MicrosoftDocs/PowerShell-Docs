@@ -167,7 +167,7 @@ that are specific to a host application, such as a command that sets the
 background color for a host application, in a profile that is specific to that
 host application.
 
-If you are an administrator who is customizing Windows PowerShell for many
+If you are an administrator who is customizing PowerShell for many
 users, follow these guidelines:
 
 - Store the common items in the `$profile.AllUsersAllHosts` profile

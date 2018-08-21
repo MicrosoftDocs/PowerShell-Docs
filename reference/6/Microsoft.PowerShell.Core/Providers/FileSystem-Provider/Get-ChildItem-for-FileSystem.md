@@ -243,7 +243,7 @@ Description
 -----------
 This command gets all of the .txt files in the current directory and its subdirectories.
 
-The dot (.) represents the current directory. The Include parameter specifies the file name extension. The Recurse parameter directs Windows PowerShell to search for objects recursively, and it indicates that the subject of the command is the specified directory and its contents. The Force parameter adds hidden files to the display.
+The dot (.) represents the current directory. The Include parameter specifies the file name extension. The Recurse parameter directs PowerShell to search for objects recursively, and it indicates that the subject of the command is the specified directory and its contents. The Force parameter adds hidden files to the display.
 
 ```
 

@@ -11,7 +11,7 @@ title:  Get-PSSession
 # Get-PSSession
 
 ## SYNOPSIS
-Gets the Windows PowerShell sessions on local and remote computers.
+Gets the PowerShell sessions on local and remote computers.
 
 ## SYNTAX
 
@@ -97,7 +97,7 @@ Get-PSSession [-Id] <Int32[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-PSSession** cmdlet gets the user-managed Windows PowerShell sessions (**PSSessions**) on local and remote computers.
+The **Get-PSSession** cmdlet gets the user-managed PowerShell sessions (**PSSessions**) on local and remote computers.
 
 Starting in Windows PowerShell 3.0, sessions are stored on the computers at the remote end of each connection.
 You can use the *ComputerName* or *ConnectionUri* parameters of **Get-PSSession** to get the sessions that connect to the local computer or remote computers, even if they were not created in the current session.
@@ -111,7 +111,7 @@ Use the remaining parameters to configure the temporary connection in which the 
 NOTE: In Windows PowerShell 2.0, without parameters, **Get-PSSession** gets all sessions that were created in the current session.
 The *ComputerName* parameter gets sessions that were created in the current session and connect to the specified computer.
 
-For more information about Windows PowerShell sessions, see about_PSSessions (http://go.microsoft.com/fwlink/?LinkID=135181).
+For more information about PowerShell sessions, see about_PSSessions (http://go.microsoft.com/fwlink/?LinkID=135181).
 
 ## EXAMPLES
 
@@ -164,7 +164,7 @@ The first command uses the **New-PSSession** cmdlet to create **PSSessions** on 
 The second command uses a **Get-PSSession** cmdlet to get the three **PSSessions**.
 It then saves each of the **PSSessions** in a separate variable.
 
-When Windows PowerShell assigns an array of objects to an array of variables, it assigns the first object to the first variable, the second object to the second variable, and so on.
+When PowerShell assigns an array of objects to an array of variables, it assigns the first object to the first variable, the second object to the second variable, and so on.
 If there are more objects than variables, it assigns all remaining objects to the last variable in the array.
 If there are more variables than objects, the extra variables are not used.
 
@@ -218,7 +218,7 @@ Because the value of the **ID** property is unique only in the current session, 
 
 ### -AllowRedirection
 Indicates that this cmdlet allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
-By default, Windows PowerShell does not redirect connections.
+By default, PowerShell does not redirect connections.
 
 This parameter configures the temporary connection that is created to run a **Get-PSSession** command with the *ConnectionUri* parameter.
 
@@ -306,7 +306,7 @@ This parameter configures the temporary connection that is created to run a **Ge
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
+To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -329,12 +329,12 @@ Wildcard characters are not permitted.
 There is no default value.
 
 Beginning in Windows PowerShell 3.0, **PSSession** objects are stored on the computers at the remote end of each connection.
-To get the sessions on the specified computers, Windows PowerShell creates a temporary connection to each computer and runs a **Get-PSSession** command.
+To get the sessions on the specified computers, PowerShell creates a temporary connection to each computer and runs a **Get-PSSession** command.
 
 Type the NetBIOS name, an IP address, or a fully-qualified domain name of one or more computers.
 To specify the local computer, type the computer name, localhost, or a dot (.).
 
-Note: This parameter gets sessions only from computers that run Windows PowerShell 3.0 or later versions of Windows PowerShell.
+Note: This parameter gets sessions only from computers that run Windows PowerShell 3.0 or later versions of PowerShell.
 Earlier versions do not store sessions.
 
 ```yaml
@@ -389,13 +389,13 @@ The default value is: http://localhost:5985/WSMAN.
 If you do not specify a *ConnectionUri*, you can use the *UseSSL*, *ComputerName*, *Port*, and *ApplicationName* parameters to specify the *ConnectionURI* values.
 Valid values for the Transport segment of the URI are HTTP and HTTPS.
 If you specify a connection URI with a Transport segment, but do not specify a port, the session is created with standards ports: 80 for HTTP and 443 for HTTPS.
-To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
+To use the default ports for PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
 
-If the destination computer redirects the connection to a different URI, Windows PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
+If the destination computer redirects the connection to a different URI, PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
-This parameter gets sessions only from computers that run Windows PowerShell 3.0 or later versions of Windows PowerShell.
+This parameter gets sessions only from computers that run Windows PowerShell 3.0 or later versions of Windows PowerShell or PowerShell Core.
 Earlier versions do not store sessions.
 
 ```yaml
@@ -461,7 +461,7 @@ Specifies an array of instance IDs of sessions.
 This cmdlet gets only the sessions with the specified instance IDs.
 
 The instance ID is a GUID that uniquely identifies a session on a local or remote computer.
-The **InstanceID** is unique, even when you have multiple sessions running in Windows PowerShell.
+The **InstanceID** is unique, even when you have multiple sessions running in PowerShell.
 
 The instance ID of a session is stored in the **InstanceID** property of the session.
 
@@ -526,7 +526,7 @@ To connect to a remote computer, the remote computer must be listening on the po
 The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
-To configure the listener, type the following two commands at the Windows PowerShell prompt:
+To configure the listener, type the following two commands at the PowerShell prompt:
 
 `Remove-Item -Path WSMan:\Localhost\listener\listener* -Recurse`
 
@@ -710,10 +710,10 @@ You cannot pipe input to this cmdlet.
 ### System.Management.Automation.Runspaces.PSSession
 
 ## NOTES
-* This cmdlet gets user-managed sessions **PSSession** objects" such as those that are created by using the New-PSSession, **Enter-PSSession**, and Invoke-Command cmdlets. It does not get the system-managed session that is created when you start Windows PowerShell.
-* Starting in Windows PowerShell 3.0, **PSSession** objects are stored on the computer that is at the server-side or receiving end of a connection. To get the sessions that are stored on the local computer or a remote computer, Windows PowerShell establishes a temporary session to the specified computer and runs query commands in the session.
+* This cmdlet gets user-managed sessions **PSSession** objects" such as those that are created by using the New-PSSession, **Enter-PSSession**, and Invoke-Command cmdlets. It does not get the system-managed session that is created when you start PowerShell.
+* Starting in Windows PowerShell 3.0, **PSSession** objects are stored on the computer that is at the server-side or receiving end of a connection. To get the sessions that are stored on the local computer or a remote computer, PowerShell establishes a temporary session to the specified computer and runs query commands in the session.
 * To get sessions that connect to a remote computer, use the *ComputerName* or *ConnectionUri* parameters to specify the remote computer. To filter the sessions that **Get-PSSession** gets, use the *Name*, *ID*, *InstanceID*, and *State* parameters. Use the remaining parameters to configure the temporary session that **Get-PSSession** uses.
-* When you use the *ComputerName* or *ConnectionUri* parameters, **Get-PSSession** gets only sessions from computers running Windows PowerShell 3.0 and later versions of Windows PowerShell.
+* When you use the *ComputerName* or *ConnectionUri* parameters, **Get-PSSession** gets only sessions from computers running Windows PowerShell 3.0 and later versions of PowerShell.
 * The value of the **State** property of a **PSSession** is relative to the current session. Therefore, a value of **Disconnected** means that the **PSSession** is not connected to the current session. However, it does not mean that the **PSSession** is disconnected from all sessions. It might be connected to a different session. To determine whether you can connect or reconnect to the **PSSession** from the current session, use the **Availability** property.
 
   An **Availability** value of **None** indicates that you can connect to the session.

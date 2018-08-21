@@ -226,7 +226,7 @@ You can pipe CSV strings to this cmdlet.
 This cmdlet returns the objects described by the properties in the CSV strings.
 
 ## NOTES
-* Because the imported objects are CSV versions of the object type, they are not recognized and formatted by the Windows PowerShell type formatting entries that format the non-CSV versions of the object type.
+* Because the imported objects are CSV versions of the object type, they are not recognized and formatted by the PowerShell type formatting entries that format the non-CSV versions of the object type.
 
   In CSV format, each object is represented by a comma-separated list of the property values of the object.
 The property values are converted to strings (by using the ToString() method of the object), so they are generally represented by the name of the property value.

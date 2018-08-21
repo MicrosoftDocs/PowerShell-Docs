@@ -19,8 +19,8 @@ Use Try, Catch, and Finally blocks to respond to or handle terminating
 errors in scripts. The Trap statement can also be used to handle
 terminating errors in scripts. For more information, see about_Trap.
 
-A terminating error stops a statement from running. If Windows PowerShell
-does not handle a terminating error in some way, Windows PowerShell also
+A terminating error stops a statement from running. If PowerShell
+does not handle a terminating error in some way, PowerShell also
 stops running the function or script using the current pipeline. In other
 languages, such as C\#, terminating errors are referred to as exceptions.
 For more information about errors, see about_Errors.
@@ -29,7 +29,7 @@ Use the Try block to define a section of a script in which you want Windows
 PowerShell to monitor for errors. When an error occurs within the Try
 block, the error is first saved to the $Error automatic variable. Windows
 PowerShell then searches for a Catch block to handle the error. If the Try
-statement does not have a matching Catch block, Windows PowerShell
+statement does not have a matching Catch block, PowerShell
 continues to search for an appropriate Catch block or Trap statement in the
 parent scopes. After a Catch block is completed or if no appropriate Catch
 block or Trap statement is found, the Finally block is run. If the error
@@ -74,7 +74,7 @@ is optional.
 
 The Catch keyword is followed by an optional list of error type
 specifications and a statement list. If a terminating error occurs in the
-Try block, Windows PowerShell searches for an appropriate Catch block. If
+Try block, PowerShell searches for an appropriate Catch block. If
 one is found, the statements in the Catch block are executed.
 
 The Catch block can specify one or more error types. An error type is a
@@ -115,7 +115,7 @@ catch { "An error occurred." }
 The Catch keyword must immediately follow the Try block or another Catch
 block.
 
-Windows PowerShell does not recognize "NonsenseString" as a cmdlet or other
+PowerShell does not recognize "NonsenseString" as a cmdlet or other
 item. Running this script returns the following result:
 
 ```powershell
@@ -153,7 +153,7 @@ System.IO.IOException types. The second Catch block does not specify an
 error type. The second Catch block handles any other terminating errors
 that occur.
 
-Windows PowerShell matches error types by inheritance. A Catch block
+PowerShell matches error types by inheritance. A Catch block
 handles errors of the specified .NET Framework exception class or of any
 class that derives from the specified class. The following example contains
 a Catch block that catches a "Command Not Found" error:
@@ -182,7 +182,7 @@ class.
 
 To free resources used by a script, add a Finally block after the Try and
 Catch blocks. The Finally block statements run regardless of whether the
-Try block encounters a terminating error. Windows PowerShell runs the
+Try block encounters a terminating error. PowerShell runs the
 Finally block before the script terminates or before the current block goes
 out of scope.
 

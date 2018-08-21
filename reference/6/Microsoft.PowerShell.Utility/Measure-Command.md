@@ -40,7 +40,7 @@ The first command measures the time it takes to process a recursive `Get-ChildIt
 
 The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific `-Filter` parameter.
 
-These commands show the value of using a provider-specific filter in Windows PowerShell commands.
+These commands show the value of using a provider-specific filter in PowerShell commands.
 
 ```powershell
 Measure-Command { Get-ChildItem -Path C:\Windows\*.txt -Recurse }
