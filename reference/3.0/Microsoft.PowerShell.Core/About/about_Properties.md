@@ -7,11 +7,11 @@ title:  about_Properties
 ---
 # About Properties
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to use object properties in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell uses structured collections of information called objects to
 represent the items in data stores or the state of the computer. Typically,
@@ -31,7 +31,7 @@ contains $True if the file the read-only attribute and $False if it does not.
 A DirectoryInfo object, which represents a file system directory, has a Parent
 property that contains the path to the parent directory.
 
-### OBJECT PROPERTIES
+### Object properties
 
 To get the properties of an object, use the `Get-Member` cmdlet. For example,
 to get the properties of a **FileInfo** object, use the `Get-ChildItem` cmdlet
@@ -81,7 +81,7 @@ Name              Property   System.String Name {get;}
 
 After you find the properties, you can use them in your PowerShell commands.
 
-## PROPERTY VALUES
+## Property values
 
 Although every object of a specific type has the same properties, the values
 of those properties describe the particular object. For example, every
@@ -101,7 +101,10 @@ are accessed. The `Get-ChildItem` command is followed by a dot and the name of
 the CreationTime property, as follows:
 
 ```powershell
-PS> (Get-ChildItem $pshome\PowerShell.exe).creationtime
+(Get-ChildItem $pshome\PowerShell.exe).creationtime
+```
+
+```output
 Tuesday, March 18, 2008 12:07:52 AM
 ```
 
@@ -109,8 +112,11 @@ You can also save an object in a variable and then get its properties by using
 the dot method, as shown in the following example:
 
 ```powershell
-PS> $a = Get-ChildItem $pshome\PowerShell.exe
-PS> $a.CreationTime
+$a = Get-ChildItem $pshome\PowerShell.exe
+$a.CreationTime
+```
+
+```output
 Tuesday, March 18, 2008 12:07:52 AM
 ```
 
@@ -124,10 +130,10 @@ For example, the following command displays the values of all the properties
 of the PowerShell.exe file.
 
 ```powershell
-PS> Get-ChildItem $pshome\PowerShell.exe | Format-List -Property *
+Get-ChildItem $pshome\PowerShell.exe | Format-List -property *
 ```
 
-```Output
+```output
 PSPath            : Microsoft.PowerShell.Core\FileSystem::C:\Windows\System3
                     2\WindowsPowerShell\v1.0\PowerShell.exe
 PSParentPath      : Microsoft.PowerShell.Core\FileSystem::C:\Windows\System3
@@ -174,7 +180,7 @@ LastWriteTimeUtc  : 9/29/2017 1:43:19 PM
 Attributes        : Archive
 ```
 
-### STATIC PROPERTIES
+### Static properties
 
 You can use the static properties of .NET classes in PowerShell. Static
 properties are properties of class, unlike standard properties, which are
@@ -204,7 +210,7 @@ UtcNow   Property   datetime UtcNow {get;}
 
 To get the value of a static property, use the following syntax.
 
-```powershell
+```
 [<ClassName>]::<Property>
 ```
 
@@ -215,56 +221,34 @@ property of the `System.DateTime` class.
 [System.DateTime]::UtcNow
 ```
 
-### PROPERTIES OF SCALAR OBJECTS AND COLLECTIONS
+### Properties of scalar objects and collections
 
 The properties of one ("scalar") object of a particular type are often
 different from the properties of a collection of objects of the same type.
-
 For example, every service has as **DisplayName** property, but a collection
-of services does not have a **DisplayName** property. Similarly, all
-collections have a **Count** property that tells how many objects are in the
-collection, but individual objects do not have a **Count** property.
+of services does not have a **DisplayName** property.
 
-Beginning in PowerShell 3.0, PowerShell tries to prevent scripting errors that
-result from the differing properties of scalar objects and collections.
-
-If you submit a collection, but request a property that exists only on single
-("scalar") objects, PowerShell returns the value of that property for every
-object in the collection.
-
-If you request the Count or Length property of zero objects or of one object,
-PowerShell returns the correct value.
-
-If the property exists on the individual objects and on the collection,
-PowerShell does not alter the result.
-
-This feature also works on methods of scalar objects and collections. For more
-information, see about_Methods.
-
-### EXAMPLES
-
-For example, each service has a DisplayName property. The following command
-gets the value of the DisplayName property of the Audiosrv service.
+The following command gets the value of the **DisplayName** property of the
+'Audiosrv' service.
 
 ```powershell
-PS> (Get-Service Audiosrv).DisplayName
+(Get-Service Audiosrv).DisplayName
+```
+
+```output
 Windows Audio
 ```
 
-However, a collection or array of services does not have a **DisplayName**.
-The following command tries to get the DisplayName property of all services in
-PowerShell 2.0.
+Beginning in PowerShell 3.0, PowerShell tries to prevent scripting errors that
+result from the differing properties of scalar objects and collections. The
+same command returns the value of the **DisplayName** property of every service
+that `Get-Service` returns.
 
 ```powershell
-PS> (Get-Service).DisplayName
-PS>
+(Get-Service).DisplayName
 ```
 
-Beginning in PowerShell 3.0, the same command returns the value of the
-**DisplayName** property of every service that `Get-Service` returns.
-
-```powershell
-PS> (Get-Service).DisplayName
+```output
 Application Experience
 Application Layer Gateway Service
 Windows All-User Install Agent
@@ -273,30 +257,52 @@ Application Information
 ...
 ```
 
-Conversely, a collection of two or more services has a **Count** property,
-which contains the number of objects in the collection.
+When you submit a collection, but request a property that exists only on
+single ("scalar") objects, PowerShell returns the value of that property
+for every object in the collection.
+
+All collections have a **Count** property that returns how many objects are in
+the collection.
 
 ```powershell
-PS> (Get-Service).Count
+(Get-Service).Count
+```
+
+```output
 176
 ```
 
-Individual services do not have a Count or Length property, as shown in this
-command in PowerShell 2.0.
+Beginning in PowerShell 3.0, if you request the Count or Length property of
+zero objects or one object, PowerShell returns the correct value.
 
 ```powershell
-PS> (Get-Service Audiosrv).Count
-PS>
+(Get-Service Audiosrv).Count
 ```
 
-Beginning in PowerShell 3.0, the command returns the correct Count value.
-
-```powershell
-PS> (Get-Service Audiosrv).Count
+```output
 1
 ```
 
-## SEE ALSO
+If a property exists on the individual objects and on the collection,
+only the collection's property is returned.
+
+ ```powershell
+ $collection = @(
+ [pscustomobject]@{length = "foo"}
+ [pscustomobject]@{length = "bar"}
+ )
+ # PowerShell returns the collection's Length.
+ $collection.length
+ ```
+
+ ```output
+ 2
+ ```
+
+This feature also works on methods of scalar objects and collections. For more
+information, see [about_Methods](about_methods.md).
+
+## See also
 
 [about_Methods](about_Methods.md)
 
