@@ -1,5 +1,5 @@
 ---
-ms.date:  12/04/2017
+ms.date:  08/21/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell
@@ -99,7 +99,7 @@ file should be placed under `/etc/rsyslog.d`.
 * Ensure `/etc/rsyslog.conf` includes the new file. Often, it will have
 a generic include statement that looks like following:
 
-`$IncludeCnofig /etc/rsyslog.d/*.conf`
+`$IncludeConfig /etc/rsyslog.d/*.conf`
 
 If it does not, you will need to add an include statement manually.
 

@@ -21,8 +21,8 @@ Objects have properties, which store data about the object, and methods that
 let you change the object.
 
 A "method" is a set of instructions that specify an action you can perform on
-the object. For example, the `FileInfo` object includes the `CopyTo` method that
-copies the file that the `FileInfo` object represents.
+the object. For example, the `FileInfo` object includes the `CopyTo` method
+that copies the file that the `FileInfo` object represents.
 
 To get the methods of any object, use the `Get-Member` cmdlet. Use its
 **MemberType** property with a value of "Method". The following command gets
@@ -51,34 +51,42 @@ WaitForInputIdle          Method     bool WaitForInputIdle(int millisecon...
 To perform or "invoke" a method of an object, type a dot (.), the method name,
 and a set of parentheses "()". If the method has arguments, place the argument
 values inside the parentheses. The parentheses are required for every method
-call, even when there are no arguments.
+call, even when there are no arguments. If the method takes multiple arguments,
+they should be separated by commas.
 
 For example, the following command invokes the Kill method of processes to end
-the Notepad process on the computer. As a result, the instance of Notepad
-closes. (The `Get-Process` command is enclosed in parentheses to insure that
-it runs before the Kill method is invoked.
+the Notepad process on the computer.
+
+```powershell
+$notepad = Get-Process notepad
+$notepad.Kill()
+```
+
+This example can be shortened by combining the above statements.
 
 ```powershell
 (Get-Process Notepad).Kill()
 ```
 
-Another very useful process is the Split method of strings. The split method
-takes a delimiter character argument that tells the method where to split the
-string.
+The `Get-Process` command is enclosed in parentheses to ensure that it
+runs before the Kill method is invoked. The `Kill` method is then invoked
+on the returned `Process` object.
+
+Another very useful method is the `Replace` method of strings. The `Replace`
+method, replaces text within a string. In the example below, the dot (.) can
+be placed immediately after the end quote of the string.
 
 ```powershell
-$a = "Try-Catch-Finally"
-$a.Split("-")
+'this is rocket science'.Replace('rocket', 'rock')
 ```
 
 ```output
-Try
-Catch
-Finally
+this is rock science
 ```
 
 As shown in the previous examples, you can invoke a method on an object that
-you get by using a command or an object in a variable.
+you get by using a command, an object in a variable, or anything that
+results in an object (like a string in quotes).
 
 Starting in PowerShell 4.0, method invocation by using dynamic method names is
 supported.
@@ -106,19 +114,27 @@ two method signatures:
 ```
 
 The first method signature takes the destination file name (and a path). The
-following example use The first `CopyTo` method to copy the `Final.txt` file to
+following example uses the first `CopyTo` method to copy the `Final.txt` file to
 the `C:\Bin` directory.
 
 ```powershell
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt")
 ```
 
+> [!NOTE]
+> Unlike PowerShell's *argument* mode, object methods execute in
+> *expression* mode, which is a pass-through to the .NET framework that
+> PowerShell is built on. In *expression* mode **bareword** arguments
+> (unquoted strings) are not allowed. You can see this in the difference
+> path as a parameter, versus the path as an argument.
+> You can read more about parsing modes in [about_Parsing](about_Parsing.md)
+
 The second method signature take a destination file name and a Boolean value
 that determines whether the destination file should be overwritten, if it
 already exists.
 
-The following example use The second `CopyTo` method to copy the `Final.txt` file
-to the `C:\Bin` directory, and to overwrite existing files.
+The following example uses the second `CopyTo` method to copy the `Final.txt`
+file to the `C:\Bin` directory, and to overwrite existing files.
 
 ```powershell
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt", $true)
@@ -139,8 +155,8 @@ If you submit a collection, but request a method that exists only on single
 ("scalar") objects, PowerShell invokes the method on every object in the
 collection.
 
-If the method exists on the individual objects and on the collection,
-PowerShell does not alter the result.
+If the method exists on the individual objects and on the collection, only
+the collection's method is invoked.
 
 This feature also works on properties of scalar objects and collections. For
 more information, see [about_Properties](about_Properties.md).
@@ -208,8 +224,8 @@ $p | ForEach-Object {$_.Kill()}
 
 ### ForEach and Where methods
 
-Beginning in PowerShell 4.0, collection filtering by using a method syntax
-is supported. This allows use of two new methods when dealing with collections
+Beginning in PowerShell 4.0, collection filtering by using a method syntax is
+supported. This allows use of two new methods when dealing with collections
 `ForEach` and `Where`.
 
 You can read more about these methods in [about_arrays](about_arrays.md)
