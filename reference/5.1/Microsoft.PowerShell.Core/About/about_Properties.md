@@ -130,7 +130,7 @@ For example, the following command displays the values of all the properties
 of the PowerShell.exe file.
 
 ```powershell
-Get-ChildItem $pshome\PowerShell.exe | Format-List -property *
+Get-ChildItem $pshome\PowerShell.exe | Format-List -Property *
 ```
 
 ```output
