@@ -1,4 +1,3 @@
-
 ---
 title: PowerShell Remoting Over SSH
 description: Remoting in PowerShell Core using SSH
