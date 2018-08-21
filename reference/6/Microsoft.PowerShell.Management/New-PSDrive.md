@@ -17,7 +17,7 @@ Creates temporary and persistent mapped network drives.
 
 ```
 New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Description <String>] [-Scope <String>]
- [-Persist] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Persist] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -279,7 +279,7 @@ To disconnect a Windows mapped network drive, use the `Remove-PSDrive` cmdlet.
 When you disconnect a Windows mapped network drive, the mapping is permanently deleted from the computer, not just deleted from the current session.
 
 Mapped network drives are specific to a user account.
-Mapped network drives that you create in sessions that are started by using the Run as administrator option or by using the credential of another user are not visible in a session that was started without explicit credentials, or by using the credentials of the current user.
+Mapped drives created in elevated sessions or sessions using the credential of another user are not visible in sessions started using different credentials.
 
 ```yaml
 Type: SwitchParameter
@@ -341,8 +341,7 @@ Accept wildcard characters: False
 ### -Scope
 
 Specifies a scope for the drive.
-The acceptable values for this parameter are: Global, Local, and Script, or a number relative to the current scope, which is 0 through the number of scopes, where 0 is the current scope and 1 is its parent.
-Local is the default.
+The acceptable values for this parameter are: Global, Local, and Script, or a number relative to the current scope. Scopes number 0 through the number of scopes. The current scope number is 0 and its parent is 1.
 For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
@@ -390,26 +389,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UseTransaction
-
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
@@ -427,7 +406,7 @@ You cannot pipe input to this cmdlet.
 ## NOTES
 
 - `New-PSDrive` is designed to work with the data exposed by any provider. To list the providers available in your session, use `Get-PSProvider`. For more information about providers, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
-- Mapped network drives are specific to a user account. Mapped network drives that you create in sessions that are started by using the Run as administrator option or by using the credential of another user are not visible in a session that was started without explicit credentials, or by using the credentials of the current user.
+- Mapped network drives are specific to a user account. Mapped drives created in elevated sessions or sessions using the credential of another user are not visible in sessions started using different credentials.
 
 ## RELATED LINKS
 

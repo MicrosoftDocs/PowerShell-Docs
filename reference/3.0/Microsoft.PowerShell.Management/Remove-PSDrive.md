@@ -45,11 +45,11 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### Example 1: Remove a file system drive
 
+This command removes a temporary file system drive named "smp".
+
 ```powershell
 Remove-PSDrive -Name smp
 ```
-
-This command removes a temporary file system drive named "smp".
 
 ### Example 2: Remove mapped network drives
 
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 Specifies a scope for the drive.
 The acceptable values for this parameter are: Global, Local, and Script, or a number relative to the current scope, which is 0 through the number of scopes, where 0 is the current scope and 1 is its parent.
 Local is the default.
-For more information, see [about_Scopes](http://go.microsoft.com/fwlink/?LinkID=113260).
+For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: String

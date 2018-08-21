@@ -279,7 +279,7 @@ To disconnect a Windows mapped network drive, use the `Remove-PSDrive` cmdlet.
 When you disconnect a Windows mapped network drive, the mapping is permanently deleted from the computer, not just deleted from the current session.
 
 Mapped network drives are specific to a user account.
-Mapped network drives that you create in sessions that are started by using the Run as administrator option or by using the credential of another user are not visible in a session that was started without explicit credentials, or by using the credentials of the current user.
+Mapped drives created in elevated sessions or sessions using the credential of another user are not visible in sessions started using different credentials.
 
 ```yaml
 Type: SwitchParameter
@@ -295,15 +295,15 @@ Accept wildcard characters: False
 
 ### -PSProvider
 
-Specifies the Windows PowerShell provider that supports drives of this type.
+Specifies the PowerShell provider that supports drives of this kind.
 
-For example, if the drive is associated with a network share or file system directory, the Windows PowerShell provider is "FileSystem".
-If the drive is associated with a registry key, the provider is "Registry".
+For example, if the drive is associated with a network share or file system directory, the PowerShell provider is FileSystem.
+If the drive is associated with a registry key, the provider is Registry.
 
-Temporary Windows PowerShell drives can be associated with any Windows PowerShell provider.
+Temporary PowerShell drives can be associated with any PowerShell provider.
 Mapped network drives can be associated only with the FileSystem provider.
 
-To see a list of the providers in your Windows PowerShell session, use the Get-PSProvider cmdlet.
+To see a list of the providers in your PowerShell session, use the `Get-PSProvider` cmdlet.
 
 ```yaml
 Type: String
@@ -341,8 +341,7 @@ Accept wildcard characters: False
 ### -Scope
 
 Specifies a scope for the drive.
-The acceptable values for this parameter are: Global, Local, and Script, or a number relative to the current scope, which is 0 through the number of scopes, where 0 is the current scope and 1 is its parent.
-Local is the default.
+The acceptable values for this parameter are: Global, Local, and Script, or a number relative to the current scope. Scopes number 0 through the number of scopes. The current scope number is 0 and its parent is 1.
 For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
@@ -425,7 +424,7 @@ You cannot pipe input to this cmdlet.
 ## NOTES
 
 - `New-PSDrive` is designed to work with the data exposed by any provider. To list the providers available in your session, use `Get-PSProvider`. For more information about providers, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
-- Mapped network drives are specific to a user account. Mapped network drives that you create in sessions that are started by using the Run as administrator option or by using the credential of another user are not visible in a session that was started without explicit credentials, or by using the credentials of the current user.
+- Mapped network drives are specific to a user account. Mapped drives created in elevated sessions or sessions using the credential of another user are not visible in sessions started using different credentials.
 
 ## RELATED LINKS
 

@@ -19,14 +19,14 @@ Deletes temporary PowerShell drives and disconnects mapped network drives.
 
 ```
 Remove-PSDrive [-Name] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralName
 
 ```
 Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,11 +45,11 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### Example 1: Remove a file system drive
 
+This command removes a temporary file system drive named "smp".
+
 ```powershell
 Remove-PSDrive -Name smp
 ```
-
-This command removes a temporary file system drive named "smp".
 
 ### Example 2: Remove mapped network drives
 
@@ -178,26 +178,6 @@ The cmdlet is not run.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
 
 Required: False
 Position: Named

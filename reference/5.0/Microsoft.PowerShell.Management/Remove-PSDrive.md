@@ -45,11 +45,11 @@ Similarly, when an external drive is disconnected from the computer, Windows Pow
 
 ### Example 1: Remove a file system drive
 
+This command removes a temporary file system drive named "smp".
+
 ```powershell
 Remove-PSDrive -Name smp
 ```
-
-This command removes a temporary file system drive named "smp".
 
 ### Example 2: Remove mapped network drives
 
