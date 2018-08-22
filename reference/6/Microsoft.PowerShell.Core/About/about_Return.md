@@ -51,23 +51,33 @@ return (2 + $a)
 ### Examples
 
 The following example uses the `return` keyword to exit a function at a
-specific point if a conditional is met:
+specific point if a conditional is met. Odd numbers are not multiplied
+because the return statement exits before that statement can execute.
 
 ```powershell
-function ScreenPassword($instance)
+function MultiplyEven
 {
-    if (!($instance.screensaversecure)) {return $instance.name}
-    # The statement below will only execute if screen saver is not secure.
-    $instance.Name # Output the user with the unsecure screen saver.
+    param($number)
+
+    if ($number % 2) { return "$number is not even" }
+    $number * 2
 }
 
-foreach ($a in @(Get-WmiObject win32_desktop)) { ScreenPassword $a }
+1..10 | ForEach-Object {MultiplyEven -Number $_}
 ```
 
-This script checks each user account. The `ScreenPassword` function returns the
-name of any user account that does not have a password-protected screen saver.
-If the screen saver is password protected, the function completes any other
-statements to be run, and PowerShell does not return any value.
+```output
+1 is not even
+4
+3 is not even
+8
+5 is not even
+12
+7 is not even
+16
+9 is not even
+20
+```
 
 In PowerShell, values can be returned even if the `return` keyword is not used.
 The results of each statement are returned. For example, the following
