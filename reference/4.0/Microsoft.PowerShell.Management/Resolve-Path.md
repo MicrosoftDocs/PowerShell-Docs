@@ -74,7 +74,7 @@ PS C:\> "C:\windows\*" | Resolve-Path
 ```
 
 This command returns all of the folders in the C:\Windows folder. The command uses a pipeline
-operator (|) to send a path string to **Resolve-Path**.
+operator (|) to send a path string to `Resolve-Path`.
 
 ### Example 4: Resolve a UNC path
 
@@ -100,8 +100,8 @@ This command returns relative paths for the directories at the root of the C: dr
 
 ### Example 6: Resolve a path containing brackets
 
-This example uses the `LiteralPath` parameter to resolve the path of the Test\[xml\] subfolder.
-Using `LiteralPath` causes the brackets to be treated as normal characters rather than a regular
+This example uses the **LiteralPath** parameter to resolve the path of the Test\[xml\] subfolder.
+Using **LiteralPath** causes the brackets to be treated as normal characters rather than a regular
 expression.
 
 ```powershell
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ### -LiteralPath
 
 Specifies the path to be resolved.
-The value of the *LiteralPath* parameter is used exactly as typed.
+The value of the **LiteralPath** parameter is used exactly as typed.
 No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 
 Specifies the PowerShell path to resolve.
 This parameter is required.
-You can also pipe a path string to **Resolve-Path**.
+You can also pipe a path string to `Resolve-Path`.
 
 ```yaml
 Type: String[]
@@ -225,8 +225,8 @@ Returns a **PathInfo** object. Returns a string value for the resolved path if y
 
 ## NOTES
 
-- The **Path** cmdlets work with the FileSystem, Registry, and Certificate providers.
-- **Resolve-Path** is designed to work with any provider. To list the providers available in your
+- The `*-Path` cmdlets work with the FileSystem, Registry, and Certificate providers.
+- `Resolve-Path` is designed to work with any provider. To list the providers available in your
   session, type `Get-PSProvider`. For more information, see
   [about_providers](../microsoft.powershell.core/about/about_providers.md).
 
