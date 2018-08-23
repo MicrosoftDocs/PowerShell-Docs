@@ -150,7 +150,7 @@ Sets no options.
 (None is the default.)
 - ReadOnly.
 Can be deleted.
-Cannot be not changed, except by using the Force parameter.
+Cannot be changed, except by using the Force parameter.
 - Constant.
 Cannot be deleted or changed.
 - Private.
