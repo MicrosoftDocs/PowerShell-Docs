@@ -5,9 +5,9 @@ title:  DSC Script Resource
 ---
 # DSC Script Resource
 
-> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x
 
-The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes. The `Script` resource uses `GetScript`, `SetScript`, and `TestScript` properties that contain script blocks you define to perform the corresponding DSC state operations.
+The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes. The **Script** resource uses `GetScript`, `SetScript`, and `TestScript` properties that contain script blocks you define to perform the corresponding DSC state operations.
 
 ## Syntax
 
@@ -37,17 +37,13 @@ Script [string] #ResourceName
 
 ### GetScript
 
-You should define the `GetScript` to return a `hashtable` representing the state of the current node. The `hashtable` must only contain a **Result** key, and the value must be of type `String`. The `GetScript` is not *required* to return anything because DSC doesn't do anything with the output.
-
-When using the [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet, the Script resource's `GetScript` executes to return the Node's current state.
+DSC does not use the output from `GetScript`. It is executed when you use the [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration.md) cmdlet to retrieve a node's current state. A return value is not required from `GetScript`. If you specify a return value, it must be a `hashtable` containing a **Result** key whose value is a `String`.
 
 ### TestScript
 
-You should define the `TestScript` to determine if the current node needs to be modified. You can design your `TestScript` to use your `GetScript` to determine the current state of the node.
+The `TestScript` is executed by DSC to determine if the `SetScript` should be run. If the `TestScript` returns `$false`, DSC executes the `SetScript` to bring the node back to the desired state. It must return a `boolean` value. A result of `$true` indicates that the node is compliant and `SetScript` should not executed.
 
-The `TestScript` must return a `boolean` value. You should return `$true` if the node is in the desired state, and `$false` if it is not. If the `TestScript` returns `$false`, DSC executes the `SetScript` to bring the node back to the desired state.
-
-When using the [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet, the Script resource's `TestScript` executes to return the nodes compliance. However, in this case, the `SetScript` will not run, no matter what the `TestScript` block returns.
+The [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration.md) cmdlet, executes the `TestScript` to retrieve the nodes compliance with the  **Script** resources. However, in this case, the `SetScript` does not run, no matter what the `TestScript` block returns.
 
 > [!NOTE]
 > You should ensure that all other output from your `TestScript` is suppressed so it does not become part of its return value. Unsuppressed output from your `TestScript` can yield
@@ -55,7 +51,7 @@ When using the [Test-DscConfiguration](https://technet.microsoft.com/en-us/libra
 
 ### SetScript
 
-You should define the `SetScript` script block to modify the node. It is called by DSC if the `TestScript` script block returns `$false`. The `SetScript` should have no return value.
+The `SetScript` modifies the node to enfore the desired state. It is called by DSC if the `TestScript` script block returns `$false`. The `SetScript` should have no return value.
 
 ## Examples
 
