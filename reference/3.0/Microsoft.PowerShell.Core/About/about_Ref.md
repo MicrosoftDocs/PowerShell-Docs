@@ -100,7 +100,7 @@ $var
 
 ### Passing references to .NET methods
 
-Certain .NET methods may require you to pass a variable as a reference. When
+Some .NET methods may require you to pass a variable as a reference. When
 the method's definition uses the keywords `in`, `out`, or `ref` on a
 parameter, it expects a reference.
 
@@ -114,7 +114,7 @@ Name     MemberType Definition
 TryParse Method     static bool TryParse(string s, [ref] int result)
 ```
 
-The `TryParse` method, attempts to parse a string as an integer. If the method
+The `TryParse` method attempts to parse a string as an integer. If the method
 succeeds, it returns `$true`, and the result is stored in the variable you
 passed **by reference**.
 
