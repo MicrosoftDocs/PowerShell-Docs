@@ -18,10 +18,11 @@ of a variable that is passed to it.
 
 You can pass variables to methods *by reference* or *by value*.
 
-In the following example, a method attempts to change the value of a
-variable that is passed into it, and fails.
-
 When you pass a variable *by value*, you are passing a copy of the data.
+
+In the following example, the function changes the value of the variable passed
+to it. In PowerShell, integers are value types so they are passed by value.
+Therefore, the value of `$var` is unchanged outside the scope of the function.
 
 ```powershell
 Function Test($data)
@@ -39,11 +40,11 @@ $var
 ```
 
 In the following example, a variable containing a `Hashtable` is passed to a
-method. `Hashtable` is an object type so by default it is passed to the
-method *by reference*.
+function. `Hashtable` is an object type so by default it is passed to the
+function *by reference*.
 
-When passing a variable *by reference*, the method can change the data and
-that change will persist after the method executes.
+When passing a variable *by reference*, the function can change the data and
+that change persists after the function executes.
 
 ```powershell
 Function Test($data)
@@ -62,16 +63,16 @@ Name                           Value
 Test                           New Text
 ```
 
-The method adds its own key, which you can still view after the
-method executes.
+The function adds a new key-value pair that persists outside of the function's
+scope.
 
-### Writing methods to accept reference parameters
+### Writing functions to accept reference parameters
 
-You can code your methods to take a parameter as a reference, regardless of
+You can code your functions to take a parameter as a reference, regardless of
 the type of data passed. This requires that you specify the parameters type
 as `System.Management.Automation.PSReference`, or `[ref]`.
 
-When using references, you will need to use the `Value` property of the
+When using references, you must use the `Value` property of the
 `System.Management.Automation.PSReference` type to access your data.
 
 ```powershell
@@ -113,9 +114,9 @@ Name     MemberType Definition
 TryParse Method     static bool TryParse(string s, [ref] int result)
 ```
 
-For the `TryParse` method, you can attempt to parse a string as an integer.
-If the method succeeds, the method will return true, and the result will
-be stored in the variable you passed **by reference**.
+The `TryParse` method, attempts to parse a string as an integer. If the method
+succeeds, it returns `$true`, and the result is stored in the variable you
+passed **by reference**.
 
 ```
 PS> $number = 0
