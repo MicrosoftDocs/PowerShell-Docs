@@ -37,17 +37,17 @@ Script [string] #ResourceName
 
 ### GetScript
 
-DSC does not use the output from `GetScript`. It is executed when you use the [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration.md) cmdlet to retrieve a node's current state. A return value is not required from `GetScript`. If you specify a return value, it must be a `hashtable` containing a **Result** key whose value is a `String`.
+DSC does not use the output from `GetScript`. The [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet executes the `GetScript` to retrieve a node's current state. A return value is not required from `GetScript`. If you specify a return value, it must be a `hashtable` containing a **Result** key whose value is a `String`.
 
 ### TestScript
 
 The `TestScript` is executed by DSC to determine if the `SetScript` should be run. If the `TestScript` returns `$false`, DSC executes the `SetScript` to bring the node back to the desired state. It must return a `boolean` value. A result of `$true` indicates that the node is compliant and `SetScript` should not executed.
 
-The [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration.md) cmdlet, executes the `TestScript` to retrieve the nodes compliance with the  **Script** resources. However, in this case, the `SetScript` does not run, no matter what the `TestScript` block returns.
+The [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) cmdlet, executes the `TestScript` to retrieve the nodes compliance with the  **Script** resources. However, in this case, the `SetScript` does not run, no matter what the `TestScript` block returns.
 
 > [!NOTE]
-> You should ensure that all other output from your `TestScript` is suppressed so it does not become part of its return value. Unsuppressed output from your `TestScript` can yield
-> unpredictable results, false positives, and cause difficulty during troubleshooting.
+> All output from your `TestScript` is part of its return value. PowerShell interprets unsuppressed output as non-zero, which means that your `TestScript` will return `$true` regardless of your node's state.
+> This results in unpredictable results, false positives, and causes difficulty during troubleshooting.
 
 ### SetScript
 
