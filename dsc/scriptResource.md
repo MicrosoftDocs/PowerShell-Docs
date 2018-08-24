@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date:  08/24/2018
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Script Resource
 ---
