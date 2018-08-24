@@ -36,14 +36,7 @@ $var
 10
 ```
 
-*By value* types in PowerShell include all numeric data types, like in the
-example above, as well as `Boolean`, `Char`, and `Date`. When you pass a
-variable containing one of these types, you are passing a copy of the data.
-
-`Class`, `Hashtable`, and `ArrayList` are considered **Reference Types**.
-When passing a variable, containing one of these types, to a method, you
-are passing a *reference* to the data. The method can change the data and
-that change will persist after the method executes.
+When you pass a variable *by value*, you are passing a copy of the data.
 
 In the following example, a variable containing a `Hashtable` is passed to a
 method. The method adds its own key, which you can still view after the
@@ -63,6 +56,9 @@ $var.Value
 ```output
 New Text
 ```
+
+When passing a variable *by reference*, the method can change the data and
+that change will persist after the method executes.
 
 You can code your methods to take references, regardless of the type of data
 passed. When doing so, you will need to access the data passed to your
