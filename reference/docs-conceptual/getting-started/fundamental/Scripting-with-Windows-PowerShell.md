@@ -1,5 +1,5 @@
 ---
-ms.date:  06/05/2017
+ms.date:  08/23/2018
 keywords:  powershell,cmdlet
 title:  Scripting with PowerShell
 ms.assetid:  c425d27a-bb41-4947-8d73-ba5480bc8ee0

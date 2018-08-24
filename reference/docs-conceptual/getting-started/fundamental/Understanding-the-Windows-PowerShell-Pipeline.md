@@ -1,43 +1,85 @@
 ---
 ms.date:  08/23/2018
 keywords:  powershell,cmdlet
-title:  Understanding the PowerShell Pipeline
+title:  Understanding the pipelines
 ms.assetid:  6be50926-7943-4ef7-9499-4490d72a63fb
 ---
 
-# Understanding the PowerShell Pipeline
+# Understanding pipelines
 
-Piping works virtually everywhere in PowerShell. Although you see text on the screen, PowerShell does not pipe text between commands. Instead, it pipes objects.
+Pipelines act like a series of connected segments of pipe. Items moving along the pipeline pass
+through each segment. To create a pipeline in PowerShell, you connect commands together
+with the pipe operator "|". The output of each command is used as input to the next command.
 
-The notation used for pipelines is similar to that used in other shells, so at first glance, it may not be apparent that PowerShell introduces something new. For example, if you use the **Out-Host** cmdlet to force a page-by-page display of output from another command, the output looks just like the normal text displayed on the screen, broken up into pages:
+The notation used for pipelines is similar to the notation used in other shells. At first glance, it
+may not be apparent how pipelines are different in PowerShell. Although you see text on the screen,
+PowerShell pipes objects, not text, between commands.
 
+## The PowerShell pipeline
+
+Pipelines are arguably the most valuable concept used in command-line interfaces. When used
+properly, pipelines reduce the effort of using complex commands and make it easier to see the flow
+of work for the commands. Each command in a pipeline (called a pipeline element) passes its output
+to the next command in the pipeline, item-by-item. Commands don't have to handle more than one item
+at a time. The result is reduced resource consumption and the ability to begin getting the output
+immediately.
+
+For example, if you use the `Out-Host` cmdlet to force a page-by-page display of output from
+another command, the output looks just like the normal text displayed on the screen, broken up into
+pages:
+
+```powershell
+Get-ChildItem -Path C:\WINDOWS\System32 | Out-Host -Paging
 ```
-PS> Get-ChildItem -Path C:\WINDOWS\System32 | Out-Host -Paging
 
+```Output
     Directory: C:\WINDOWS\system32
 
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
--a---        2005-10-22  11:04 PM        315 $winnt$.inf
--a---        2004-08-04   8:00 AM      68608 access.cpl
--a---        2004-08-04   8:00 AM      64512 acctres.dll
--a---        2004-08-04   8:00 AM     183808 accwiz.exe
--a---        2004-08-04   8:00 AM      61952 acelpdec.ax
--a---        2004-08-04   8:00 AM     129536 acledit.dll
--a---        2004-08-04   8:00 AM     114688 aclui.dll
--a---        2004-08-04   8:00 AM     194048 activeds.dll
--a---        2004-08-04   8:00 AM     111104 activeds.tlb
--a---        2004-08-04   8:00 AM       4096 actmovie.exe
--a---        2004-08-04   8:00 AM     101888 actxprxy.dll
--a---        2003-02-21   6:50 PM     143150 admgmt.msc
--a---        2006-01-25   3:35 PM      53760 admparse.dll
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/12/2018   2:15 AM                0409
+d-----        5/13/2018  11:31 PM                1033
+d-----        4/11/2018   4:38 PM                AdvancedInstallers
+d-----        5/13/2018  11:13 PM                af-ZA
+d-----        5/13/2018  11:13 PM                am-et
+d-----        4/11/2018   4:38 PM                AppLocker
+d-----        5/13/2018  11:31 PM                appmgmt
+d-----        7/11/2018   2:05 AM                appraiser
+d---s-        4/12/2018   2:20 AM                AppV
+d-----        5/13/2018  11:10 PM                ar-SA
+d-----        5/13/2018  11:13 PM                as-IN
+d-----        8/14/2018   9:03 PM                az-Latn-AZ
+d-----        5/13/2018  11:13 PM                be-BY
+d-----        5/13/2018  11:10 PM                BestPractices
+d-----        5/13/2018  11:10 PM                bg-BG
+d-----        5/13/2018  11:13 PM                bn-BD
+d-----        5/13/2018  11:13 PM                bn-IN
+d-----        8/14/2018   9:03 PM                Boot
+d-----        8/14/2018   9:03 PM                bs-Latn-BA
+d-----        4/11/2018   4:38 PM                Bthprops
+d-----        4/12/2018   2:19 AM                ca-ES
+d-----        8/14/2018   9:03 PM                ca-ES-valencia
+d-----        5/13/2018  10:46 PM                CatRoot
+d-----        8/23/2018   5:07 PM                catroot2
 <SPACE> next page; <CR> next line; Q quit
 ...
 ```
 
-The Out-Host -Paging command is a useful pipeline element whenever you have lengthy output that you would like to display slowly. It is especially useful if the operation is very CPU-intensive. Because processing is transferred to the Out-Host cmdlet when it has a complete page ready to display, cmdlets that precede it in the pipeline halt operation until the next page of output is available. You can see this if you use the Windows Task Manager to monitor CPU and memory use by PowerShell.
+Paging also reduces CPU utilization because processing transfers to the `Out-Host` cmdlet when it
+has a complete page ready to display. The cmdlets that precede it in the pipeline pause execution
+until the next page of output is available.
 
-Run the following command: **Get-ChildItem C:\\Windows -Recurse**. Compare the CPU and memory usage to this command: **Get-ChildItem C:\\Windows -Recurse | Out-Host -Paging**. What you see on the screen is text, but that is because it is necessary to represent objects as text in a console window. This is just a representation of what is really going on inside PowerShell. For example, consider the Get-Location cmdlet. If you type **Get-Location** while your current location is the root of the C drive, you would see the following output:
+You can see the difference Windows Task Manager to monitor CPU and memory used by PowerShell. Run
+the following command: `Get-ChildItem C:\\Windows -Recurse`. Compare the CPU and memory usage to
+this command: `Get-ChildItem C:\\Windows -Recurse | Out-Host -Paging`.
+
+## Objects in the pipeline
+
+When you run a cmdlet in PowerShell, you see text output because it is necessary to represent
+objects as text in a console window. The text output may not display all of the properties of the object being output.
+
+For example, consider the `Get-Location` cmdlet. If you run `Get-Location` while
+your current location is the root of the C drive, you see the following output:
 
 ```
 PS> Get-Location
@@ -47,14 +89,29 @@ Path
 C:\
 ```
 
-If PowerShell pipelined text, issuing a command such as **Get-Location | Out-Host**, would pass from **Get-Location** to **Out-Host** a set of characters in the order they are displayed onscreen. In other words, if you were to ignore the heading information, **Out-Host** would first receive the character '**C'**, then the character '**:'**, then the character '**\\'**. The **Out-Host** cmdlet could not determine what meaning to associate with the characters output by the **Get-Location** cmdlet.
+The text output is a summary of information, not a complete representation of the object returned
+by `Get-Location`. The heading in the output is added by the process that formats the data for
+onscreen display.
 
-Instead of using text to let commands in a pipeline communicate, PowerShell uses objects. From the standpoint of a user, objects package related information into a form that makes it easier to manipulate the information as a unit, and extract specific items that you need.
+When you pipe the output to the `Get-Member` cmdlet you get information about the object returned by
+`Get-Location`.
 
-The **Get-Location** command does not return text that contains the current path. It returns a package of information called a **PathInfo** object that contains the current path along with some other information. The **Out-Host** cmdlet then sends this **PathInfo** object to the screen, and PowerShell decides what information to display and how to display it based on its formatting rules.
+```
++PS> Get-Location  | Get-Member
 
-In fact, the heading information output by the **Get-Location** cmdlet is added only at the end of the process, as part of the process of formatting the data for onscreen display. What you see onscreen is a summary of information, and not a complete representation of the output object.
 
-Given that there may be more information output from a PowerShell command than what we see displayed in the console window, how can you retrieve the non-visible elements? How do you view the extra data? And what if you want to view the data in a format different than the one PowerShell normally uses?
+   TypeName: System.Management.Automation.PathInfo
 
-The rest of this chapter discusses how you can discover the structure of specific PowerShell objects, selecting specific items and formatting them for easier display, and how to send this information to alternative output locations such as files and printers.
+Name         MemberType Definition
+----         ---------- ----------
+Equals       Method     bool Equals(System.Object obj)
+GetHashCode  Method     int GetHashCode()
+GetType      Method     type GetType()
+ToString     Method     string ToString()
+Drive        Property   System.Management.Automation.PSDriveInfo Drive {get;}
+Path         Property   string Path {get;}
+Provider     Property   System.Management.Automation.ProviderInfo Provider {get;}
+ProviderPath Property   string ProviderPath {get;}
+```
+
+`Get-Location` returns a **PathInfo** object that contains the current path and other information.
