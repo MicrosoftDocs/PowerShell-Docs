@@ -147,7 +147,7 @@ Sets the value of the Options property of the alias.
 Valid values are:
 
 - None: Sets no options. ("None" is the default.)
-- ReadOnly: Can be deleted. Cannot be not changed, except by using the Force parameter.
+- ReadOnly: Can be deleted. Cannot be changed, except by using the Force parameter.
 - Constant: Cannot be deleted or changed.
 - Private: The alias is available only in the current scope.
 - AllScope: The alias is copied to any new scopes that are created.
