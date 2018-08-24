@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  08/24/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -11,12 +11,12 @@ title:  about_Ref
 ## Short description
 
 Describes how to create and use a reference type variable. You can use
-reference type variables to permit a method to change the value
+reference type variables to permit a function to change the value
 of a variable that is passed to it.
 
 ## Long description
 
-You can pass variables to methods *by reference* or *by value*.
+You can pass variables to functions *by reference* or *by value*.
 
 When you pass a variable *by value*, you are passing a copy of the data.
 
