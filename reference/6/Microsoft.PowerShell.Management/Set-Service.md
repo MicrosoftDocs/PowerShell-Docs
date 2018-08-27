@@ -20,7 +20,7 @@ Starts, stops, and suspends a service, and changes its properties.
 ```
 Set-Service [-Name] <String> [-DisplayName <String>] [-Description <String>]
  [-StartupType <ServiceStartMode>] [-Status <String>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-Force] [<CommonParameters>]
 ```
 
 ### InputObject
@@ -28,7 +28,7 @@ Set-Service [-Name] <String> [-DisplayName <String>] [-Description <String>]
 ```
 Set-Service [-DisplayName <String>] [-Description <String>] [-StartupType <ServiceStartMode>]
  [-Status <String>] [-InputObject <ServiceController>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -336,6 +336,25 @@ The cmdlet is not run.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+
+Specifies the Stop mode of the service.
+This parameter only works when "-Status Stopped" is used.
+If enabled, the cmdlet will stop the dependent services before stop the target service.
+By default, it will raise exception when other running services depends on the target service.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
