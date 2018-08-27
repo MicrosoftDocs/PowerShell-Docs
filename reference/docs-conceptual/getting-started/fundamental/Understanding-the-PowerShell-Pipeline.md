@@ -1,7 +1,7 @@
 ---
 ms.date:  08/23/2018
 keywords:  powershell,cmdlet
-title:  Understanding the pipelines
+title:  Understanding PowerShell pipelines
 ms.assetid:  6be50926-7943-4ef7-9499-4490d72a63fb
 ---
 

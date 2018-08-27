@@ -32,28 +32,22 @@
         - name: Starting the Windows PowerShell 2.0 Engine
           href: setup/starting-the-windows-powershell-2.0-engine.md
     - name: Concepts
-      href: ''
+      href: >-
+        getting-started/fundamental/understanding-important-powershell-concepts.md
       items:
-        - name: Understanding Important Windows PowerShell Concepts
-          href: >-
-            getting-started/fundamental/understanding-important-windows-powershell-concepts.md
+        - name: Learning PowerShell Names
+          href: getting-started/fundamental/learning-powershell-names.md
+        - name: Using Familiar Command Names
+          href: getting-started/fundamental/using-familiar-command-names.md
         - name: Getting Detailed Help Information
           href: getting-started/fundamental/getting-detailed-help-information.md
         - name: Getting Information About Commands
           href: getting-started/fundamental/getting-information-about-commands.md
-        - name: Learning Windows PowerShell Names
-          href: getting-started/fundamental/learning-windows-powershell-names.md
-        - name: Using Familiar Command Names
-          href: getting-started/fundamental/using-familiar-command-names.md
-        - name: Object Pipeline
-          href: getting-started/fundamental/object-pipeline.md
-        - name: Scripting with Windows PowerShell
-          href: getting-started/fundamental/scripting-with-windows-powershell.md
-        - name: Understanding the Windows PowerShell Pipeline
-          href: >-
-            getting-started/fundamental/understanding-the-windows-powershell-pipeline.md
         - name: Using Variables to Store Objects
           href: getting-started/fundamental/using-variables-to-store-objects.md
+        - name: Understanding the PowerShell Pipeline
+          href: >-
+            getting-started/fundamental/understanding-the-powershell-pipeline.md
         - name: Running Remote Commands
           href: core-powershell/running-remote-commands.md
           items:
@@ -180,7 +174,7 @@
         - name: Glossary
           href: windows-powershell-glossary.md
 - name: Sample scripts
-  href: getting-started/fundamental/using-windows-powershell-for-administration.md
+  href: getting-started/fundamental/using-powershell-for-administration.md
   items:
     - name: Changing Computer State
       href: getting-started/cookbooks/changing-computer-state.md

@@ -49,7 +49,7 @@ CommandType     Name                               Version    Source
 Alias           cls -> Clear-Host
 ```
 
-## Interpreting Standard Aliases
+## Interpreting standard aliases
 
 The aliases we described previous were designed for name-compatibility with other command shells.
 Most aliases built into PowerShell are designed for brevity. Shorter names are easier to type, but

@@ -5,7 +5,7 @@ title:  Getting Detailed Help Information
 ms.assetid:  6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ---
 
-# Getting Detailed Help Information
+# Getting detailed help information
 
 PowerShell includes detailed Help articles that explain PowerShell concepts and the PowerShell
 language. There are also Help articles for each cmdlet and provider and for many functions and
@@ -15,7 +15,7 @@ You can display these Help articles at the command prompt or view the most recen
 of these articles in the [PowerShell](/powershell/scripting/powershell-scripting) documentation
 online.
 
-## Getting Help for Cmdlets
+## Getting help for cmdlets
 
 To get Help about PowerShell cmdlets, use the
 [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet. For example, to get Help
@@ -85,7 +85,7 @@ Get-Help Get-ChildItem -examples
 For information about how to write Help articles for the cmdlets that you write, see
 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415).
 
-## Getting Conceptual Help
+## Getting conceptual help
 
 The Get-Help cmdlet also displays information about conceptual articles in PowerShell,
 including articles about the PowerShell language. Conceptual Help articles begin with the
@@ -107,7 +107,7 @@ Get-Help about_command_syntax
 The parameters of Get-Help, such as **Detailed**, **Parameter**, and **Examples**, have no effect
 on the display of conceptual Help articles.
 
-## Getting Help About Providers
+## Getting help about providers
 
 The Get-Help cmdlet displays information about PowerShell providers. To get Help for a
 provider, type `Get-Help` followed by the provider name. For example, to get Help for the Registry
@@ -126,7 +126,7 @@ Get-Help -Category provider
 The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect
 on the display of provider Help articles.
 
-## Getting Help About Scripts and Functions
+## Getting help about scripts and functions
 
 Many scripts and functions in PowerShell have Help articles. Use the `Get-Help` cmdlet to
 display the Help articles for scripts and functions.
@@ -157,7 +157,7 @@ For information about writing Help articles for your functions and scripts, see 
 - [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
 - [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
 
-## Getting Help Online
+## Getting help online
 
 Viewing the Help articles online is one of the best ways to get help. Online articles are easier
 to update and provide the most current content.
@@ -195,7 +195,7 @@ Online version: http://go.microsoft.com/fwlink/?LinkId=821564
 For information about how to provide online support for your Help articles, see
 [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
-## See Also
+## See also
 
 - [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
 - [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)

@@ -1,11 +1,11 @@
 ---
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
-title:  Getting Information About Commands
+title:  Getting information about commands
 ms.assetid:  56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ---
 
-# Getting Information About Commands
+# Getting information about commands
 
 The PowerShell `Get-Command` displays commands that are available in your current session.
 When you run the `Get-Command` cmdlet, you see something similar to the following output:
@@ -50,7 +50,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-## Displaying Available Command Types
+## Displaying available command by type
 
 The **Get-Command** command lists only the cmdlets in the current session. PowerShell actually
 supports several other types of commands:
