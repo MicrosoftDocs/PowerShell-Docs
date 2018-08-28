@@ -19,7 +19,7 @@ PowerShell base source code is now available in GitHub and open to community con
 See [PowerShell source on GitHub](https://github.com/powershell/powershell).
 
 You can start with the bits you need at [Get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
-Or, perhaps, with a quick tour at [Getting Started](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
+Or, perhaps, with a quick tour at [Getting Started](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell).
 
 ## PowerShell design goals
 
