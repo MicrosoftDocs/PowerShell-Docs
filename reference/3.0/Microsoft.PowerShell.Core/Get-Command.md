@@ -180,7 +180,7 @@ Beginning in Windows PowerShell 3.0, by default, when the session includes multi
 With the **All** parameter, **Get-Command** gets all commands with the specified name and returns them in execution precedence order.
 To run a command other than the first one in the list, type the fully qualified path to the command.
 
-For more information about command precedence, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
+For more information about command precedence, see [about_Command_Precedence](About/about_Command_Precedence.md).
 
 ### Example 12
 
@@ -234,8 +234,8 @@ To get the **PSTypeNames** property of a net adapter, and not the **PSTypeNames*
 Gets all commands, including commands of the same type that have the same name.
 By default, **Get-Command** gets only the commands that run when you type the command name.
 
-For more information about the method that Windows PowerShell uses to select the command to run when multiple commands have the same name, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
-For information about module-qualified command names and running commands that do not run by default because of a name conflict, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
+For more information about the method that Windows PowerShell uses to select the command to run when multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md).
+For information about module-qualified command names and running commands that do not run by default because of a name conflict, see [about_Modules](About/about_Modules.md).
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -490,7 +490,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 
