@@ -1,11 +1,11 @@
 ---
 ms.date:  08/27/2018
 keywords:  powershell,cmdlet
-title:  Using Windows PowerShell for Administration
+title:  Sample scripts for system administration
 ms.assetid:  db6334ec-ace6-436d-ab88-77aefc817511
 ---
 
-# Using Windows PowerShell for Administration
+# Sample scripts for system administration
 
 The fundamental goal of PowerShell is providing easy administrative control over systems, either
 interactively or from script. This collection of examples walks through scenarios for administering

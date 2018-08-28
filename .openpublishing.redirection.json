@@ -14836,7 +14836,7 @@
         },
         {
             "source_path": "reference/docs-conceptual/getting-started/fundamental/using-powershell-for-windows-administration.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/using-powershell-for-administration",
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/sample-scripts-for-administration",
             "redirect_document_id": false
         },
         {
