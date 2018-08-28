@@ -7,8 +7,6 @@ title:  about_InlineScript
 ---
 
 # About InlineScript
-## about_InlineScript
-
 
 # SHORT DESCRIPTION
 

@@ -7,8 +7,6 @@ title:  about_Parallel
 ---
 
 # About Parallel
-## about_Parallel
-
 
 ## SHORT DESCRIPTION
 Describes the Parallel keyword, which runs the activities in a workflow in parallel.
