@@ -7,9 +7,6 @@ title:  about_Scheduled_Jobs
 ---
 
 # About Scheduled Jobs
-## about_Scheduled_Jobs
-
-
 
 # SHORT DESCRIPTION
 

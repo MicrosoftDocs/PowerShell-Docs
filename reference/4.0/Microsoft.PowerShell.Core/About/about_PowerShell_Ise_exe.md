@@ -7,8 +7,6 @@ title:  about_PowerShell_Ise_exe
 ---
 
 # About PowerShell Ise.exe
-## about_PowerShell_Ise.exe
-
 
 # SHORT DESCRIPTION
 
