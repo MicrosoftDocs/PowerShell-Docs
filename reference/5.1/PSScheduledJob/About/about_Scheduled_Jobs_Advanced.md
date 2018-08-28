@@ -7,9 +7,6 @@ title:  about_Scheduled_Jobs_Advanced
 ---
 
 # About Scheduled Jobs Advanced
-## about_Scheduled_Jobs_Advanced
-
-
 
 # SHORT DESCRIPTION
 

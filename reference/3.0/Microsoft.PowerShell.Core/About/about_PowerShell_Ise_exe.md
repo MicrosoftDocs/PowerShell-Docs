@@ -7,9 +7,6 @@ title:  about_PowerShell_Ise_exe
 ---
 # About PowerShell Ise.exe
 
-## about_PowerShell_Ise.exe
-
-
 # SHORT DESCRIPTION
 
 Explains how to use the PowerShell_Ise.exe command-line tool.
