@@ -67,7 +67,7 @@ To display all content in the Help article, use the **Full** parameter of the `G
 example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:
 
 ```powershell
-Get-Help Get-ChildItem -full
+Get-Help Get-ChildItem -Full
 ```
 
 To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the
@@ -78,11 +78,11 @@ To get detailed Help about the parameters of a cmdlet, use the **Parameter** par
 Get-Help Get-ChildItem -Parameter *
 ```
 
-To display only the examples in a Help article, use the **Example** parameter of the `Get-Help`.
+To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.
 For example, to display only the examples in the Help article for the `Get-ChildItem `cmdlet, type:
 
 ```powershell
-Get-Help Get-ChildItem -examples
+Get-Help Get-ChildItem -Examples
 ```
 
 For information about how to write Help articles for the cmdlets that you write, see
