@@ -73,13 +73,14 @@ Example abbreviations:
 
 These aliases are understandable when you know the shorthand names.
 
-| Cmdlet name    |Alias|
-| `Get-Item `    | gi  |
-| `Set-Item`     | si  |
-| `Get-Location` | gl  |
-| `Set-Location` | sl  |
-| `Get-Command`  | gcm |
-| `Get-Alias`    | gal |
+| Cmdlet name    | Alias |
+|----------------|-------|
+| `Get-Item `    | gi    |
+| `Set-Item`     | si    |
+| `Get-Location` | gl    |
+| `Set-Location` | sl    |
+| `Get-Command`  | gcm   |
+| `Get-Alias`    | gal   |
 
 Once you're familiar with PowerShell aliasing, it's easy to guess that the **sal** alias refers
 to `Set-Alias`.
