@@ -1,23 +1,23 @@
 ﻿---
-ms.date:  06/27/2017
+ms.date:  08/28/2018
 schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Command_Precedence
 ---
 # About Command Precedence
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how PowerShell determines which command to run.
 
-## LONG DESCRIPTION
+## Long description
 
 This topic explains how PowerShell determines which command to run, especially
 when a session contains more than one command with the same name. It also
 explains how to run commands that do not run by default, and it explains how
 to avoid command-name conflicts in your session.
 
-## COMMAND PRECEDENCE
+## Command precedence
 
 When a session includes commands that have the same name, Windows PowerShell
 uses the following rules to decide which command to run.
@@ -58,12 +58,12 @@ when it runs commands:
 4. Native Windows commands
 
 Therefore, if you type "help", PowerShell first looks for an alias named
-"help", then a function named "Help", and finally a cmdlet named "Help". It
-runs the first "help" item that it finds.
+`help`, then a function named `Help`, and finally a cmdlet named `Help`. It
+runs the first `help` item that it finds.
 
-For example, if you have a "Get-Map" function in the session and you import a
-cmdlet named "Get-Map". By default, when you type "Get-Map", Windows
-PowerShell runs the "Get-Map" function.
+For example, if you have a `Get-Map` function in the session and you import a
+cmdlet named `Get-Map`. By default, when you type `Get-Map`, Windows
+PowerShell runs the `Get-Map` function.
 
 When the session contains items of the same type that have the same name, such
 as two cmdlets with the same name, PowerShell runs the item that was added to
@@ -73,7 +73,7 @@ For example, if you have a cmdlet named "Get-Date" and you import another
 cmdlet named "Get-Date", by default, PowerShell runs the most-recently
 imported cmdlet when you type "Get-Date".
 
-## HIDDEN and REPLACED ITEMS
+## Hidden and replaced items
 
 As a result of these rules, items can be replaced or hidden by items with the
 same name.
@@ -96,24 +96,24 @@ Also, if you type a function at the command line and then import a function
 with the same name, the original function is replaced and is no longer
 accessible.
 
-## FINDING HIDDEN COMMANDS
+## Finding hidden commands
 
 The **All** parameter of the [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
 cmdlet gets all commands with the specified name, even if they are hidden
 or replaced. Beginning in PowerShell 3.0, by default, `Get-Command`
 gets only the commands that run when you type the command name.
 
-In the following examples, the session includes a "Get-Date" function and a
+In the following examples, the session includes a `Get-Date` function and a
 [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md) cmdlet.
 
-The following command gets the "Get-Date" command that runs when you type
-"Get-Date".
+The following command gets the `Get-Date` command that runs when you type
+`Get-Date`.
 
 ```powershell
 Get-Command Get-Date
 ```
 
-```
+```output
 CommandType     Name                      ModuleName
 -----------     ----                      ----------
 Function        Get-Date
@@ -126,14 +126,14 @@ commands.
 Get-Command Get-Date -All
 ```
 
-```
+```output
 CommandType     Name                      ModuleName
 -----------     ----                      ----------
 Function        Get-Date
 Cmdlet          Get-Date                  Microsoft.PowerShell.Utility
 ```
 
-## RUNNING HIDDEN COMMANDS
+## Running hidden commands
 
 You can run particular commands by specifying item properties that distinguish
 the command from other commands that might have the same name.
@@ -145,7 +145,7 @@ Use this method as a best practice when writing scripts that you intend to
 distribute because you cannot predict which commands might be present in
 the session in which the script runs.
 
-## QUALIFIED NAMES
+## Qualified names
 
 You can run commands that have been imported from a PowerShell module or from
 another session by qualifying the command name with the name of the module or
@@ -181,32 +181,22 @@ For example, to find the source of the `Get-Date` cmdlet, type:
 (Get-Command Get-Date).ModuleName
 ```
 
-```
+```output
 Microsoft.PowerShell.Utility
 ```
 
-## CALL OPERATOR
+## Call operator
 
-You can also use the `Call` operator `&` to run any command that you
-can get by using a [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+You can also use the `Call` operator `&` to run hidden commands by combining
+it with a call to [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 (the alias is "dir"), `Get-Command` or
-[Get-Module](../../Microsoft.PowerShell.Core/Get-Module.md) command.
+[Get-Module](../../Microsoft.PowerShell.Core/Get-Module.md).
 
-To run a command, enclose the `Get-Command` command in parentheses, and use
-the Call operator `&` to run the command.
+The call operator executes strings and script blocks in a child scope. For more
+information see [about_Operators](about_Operators.md).
 
-```
-&(Get-Command ...)
-```
-
-or
-
-```
-&(dir ... )
-```
-
-For example, if you have a function named "Map" that is hidden by an alias
-named "Map", use the following command to run the function.
+For example, if you have a function named `Map` that is hidden by an alias
+named `Map`, use the following command to run the function.
 
 ```powershell
 &(Get-Command -Name Map -CommandType Function)
@@ -220,7 +210,7 @@ or
 
 You can also save your hidden command in a variable to make it easier to run.
 
-For example, the following command saves the "Map" function in the "$myMap"
+For example, the following command saves the `Map` function in the `$myMap`
 variable and then uses the `Call` operator to run it.
 
 ```powershell
@@ -228,14 +218,8 @@ $myMap = (Get-Command -Name map -CommandType function)
 &($myMap)
 ```
 
-If a command originated in a module, you can use the following format to run
-it.
-
-```
-& <PSModuleInfo-object> <command>
-```
-
-For example, to run the "Add-File" cmdlet in the "FileCommands" module, use
+If a command originated in a module, you can use the call operator to execute
+it. For example, to run the `Add-File` cmdlet in the `FileCommands` module, use
 the following command sequence.
 
 ```powershell
@@ -243,7 +227,7 @@ $FileCommands = Get-Module -Name FileCommands
 & $FileCommands Add-File
 ```
 
-# REPLACED ITEMS
+## Replaced items
 
 Items that have not been imported from a module or snap-in, such as functions,
 variables, and aliases that you create in your session or that you add by
@@ -254,11 +238,11 @@ Variables and aliases are always replaced even if they have been imported from
 a module or snap-in because you cannot use a call operator or a qualified name
 to run them.
 
-For example, if you type a "Get-Map" function in your session, and you import
-a function called "Get-Map", the original function is replaced. You cannot
+For example, if you type a `Get-Map` function in your session, and you import
+a function called `Get-Map`, the original function is replaced. You cannot
 retrieve it in the current session.
 
-## AVOIDING NAME CONFLICTS
+## Avoiding name conflicts
 
 The best way to manage command name conflicts is to prevent them. When you
 name your commands, use a name that is very specific or is likely to be
@@ -266,7 +250,7 @@ unique. For example, add your initials or company name acronym to the nouns in
 your commands.
 
 Also, when you import commands into your session from a PowerShell
-module or from another session, use the **Prefix** parameter of the
+module or from another session, use the `Prefix` parameter of the
 [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md) or
 [Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)
 cmdlet to add a prefix to the nouns in the names of commands.
@@ -281,7 +265,7 @@ Import-Module -Name DateFunctions -Prefix ZZ
 
 For more information, see `Import-Module` and `Import-PSSession` below.
 
-## SEE ALSO
+## See also
 
 - [about_Path_Syntax](about_Path_Syntax.md)
 - [about_Aliases](about_Aliases.md)
