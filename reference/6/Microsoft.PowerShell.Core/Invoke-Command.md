@@ -155,9 +155,9 @@ PowerShell converts the script block to a command and runs the command immediate
 To start an interactive session with a remote computer, use the Enter-PSSession cmdlet.
 To establish a persistent connection to a remote computer, use the **New-PSSession** cmdlet.
 
-Before using **Invoke-Command** to run commands on a remote computer, read about_Remote (http://go.microsoft.com/fwlink/?LinkID=135182).
+Before using `Invoke-Command` to run commands on a remote computer, read [about_Remote](About/about_Remote.md).
 
-Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke commands on remote computers. SSH must be installed on the local computer and the remote computer must be configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShell remote session is that it will work across multiple platforms (Windows, Linux, macOS). For SSH based session you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information. For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
+Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke commands on remote computers. SSH must be installed on the local computer and the remote computer must be configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShell remote session is that it will work across multiple platforms (Windows, Linux, macOS). For SSH based session you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information. For more information about how to set up PowerShell SSH remoting see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## EXAMPLES
 
@@ -342,7 +342,7 @@ This example shows how to include the values of local variables in a command run
 The command uses the Using scope modifier to identify a local variable in a remote command.
 By default, all variables are assumed to be defined in the remote session.
 The Using scope modifier was introduced in Windows PowerShell 3.0.
-For more information about the Using scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
+For more information about the Using scope modifier, see [about_Remote_Variables](About/about_Remote_Variables.md).
 
 The first command stores the name of the Microsoft-Windows-Forwarding/Operational event log in the $MWFO_Log variable.
 
@@ -1056,7 +1056,7 @@ However, they do not take precedence over maximum values, quotas or limits set i
 
 For a description of the session options that includes the default values, see **New-PSSessionOption**.
 For information about the $PSSessionOption preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: PSSessionOption
@@ -1295,7 +1295,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -1337,7 +1337,7 @@ A value of Busy indicates that you cannot connect to the PSSession because it is
 
   For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
-* The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0. They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported. For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
+* The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0. They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported. For more information about how to set up PowerShell SSH remoting see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
 

@@ -7,8 +7,6 @@ title:  about_Sequence
 ---
 
 # About Sequence
-## about_Sequence
-
 
 # SHORT DESCRIPTION
 

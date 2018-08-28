@@ -14810,6 +14810,36 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/learning-windows-powershell-names.md",
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/learning-powershell-names",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/understanding-the-windows-powershell-pipeline.md",
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-the-powershell-pipeline",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/understanding-important-windows-powershell-concepts.md",
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-important-powershell-concepts",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/scripting-with-windows-powershell.md",
+            "redirect_url": "/powershell/scripting/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/object-pipeline.md",
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-the-powershell-pipeline",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/using-powershell-for-windows-administration.md",
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/sample-scripts-for-administration",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "wmf/5.0/install.md",
             "redirect_url": "/powershell/wmf/5.0/requirements",
             "redirect_document_id": false

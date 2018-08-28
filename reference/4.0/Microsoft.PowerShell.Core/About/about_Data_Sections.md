@@ -7,8 +7,6 @@ title:  about_Data_Sections
 ---
 
 # About Data Sections
-## about_Data_Sections
-
 
 ### Short Description
 

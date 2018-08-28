@@ -7,8 +7,6 @@ title:  about_Suspend Workflow
 ---
 # About Suspend-Workflow
 
-## about_Suspend-Workflow
-
 ## SHORT DESCRIPTION
 
 Describes the Suspend-Workflow activity, which suspends

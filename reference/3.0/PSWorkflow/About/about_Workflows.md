@@ -7,8 +7,6 @@ title:  about_Workflows
 ---
 # About Workflows
 
-## about_Workflows
-
 ## SHORT DESCRIPTION
 
 Provides a brief introduction to the Windows

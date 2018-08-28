@@ -7,9 +7,6 @@ title:  about_Data_Sections
 ---
 # About Data Sections
 
-## about_Data_Sections
-
-
 ### Short Description
 
 Explains Data sections, which isolate text strings and other read-only
