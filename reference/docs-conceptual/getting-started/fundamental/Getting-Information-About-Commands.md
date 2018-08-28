@@ -27,10 +27,10 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 This output looks a lot like the Help output of Cmd.exe: a tabular summary of internal commands. In
 the excerpt of the `Get-Command` command output shown above, every command shown has a CommandType
 of Cmdlet. A cmdlet is PowerShell's intrinsic command type. This type corresponds roughly to
-commands like `dir` and `cd`in Cmd.exe or the built-in commands of Unix shells like bash.
+commands like `dir` and `cd` in Cmd.exe or the built-in commands of Unix shells like bash.
 
 The `Get-Command` cmdlet has a **Syntax** parameter that returns syntax of each cmdlet. The
-following example shows how to get the syntax of the Get-Help cmdlet:
+following example shows how to get the syntax of the `Get-Help` cmdlet:
 
 ```powershell
 Get-Command Get-Help -Syntax
@@ -52,7 +52,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 
 ## Displaying available command by type
 
-The **Get-Command** command lists only the cmdlets in the current session. PowerShell actually
+The `Get-Command` command lists only the cmdlets in the current session. PowerShell actually
 supports several other types of commands:
 
 - Aliases

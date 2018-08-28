@@ -13,7 +13,7 @@ learn the commands and parameters that you need to use on a regular basis.
 
 When you work with a new command or parameter, you can't always use what you already know. You have
 to find and learn a new name. Traditionally, command-line interfaces start with a small set of
-tools and grow with incremental additions. Tt is easy to see why there's no standard structure.
+tools and grow with incremental additions. It's easy to see why there's no standard structure.
 This seems logical for command names since each command is a separate tool. PowerShell has a better
 way to handle command names.
 
@@ -105,9 +105,11 @@ but aren't easily understood by new users.
 
 Unlike most other traditional command-line interfaces, PowerShell processes parameters directly,
 and it uses this direct access to the parameters along with developer guidance to standardize
-parameter names. This guidance encourages but does not guarantee that every cmdlet conforms to the standard.
+parameter names. This guidance encourages but does not guarantee that every cmdlet conforms to the
+standard.
 
-PowerShell also standardizes the parameter separator. Parameter names always have a '-' prepended to them with a PowerShell command. Consider the following example:
+PowerShell also standardizes the parameter separator. Parameter names always have a '-' prepended
+to them with a PowerShell command. Consider the following example:
 
 ```powershell
 Get-Command -Name Clear-Host
@@ -118,7 +120,7 @@ parameter.
 
 Here are some of the general characteristics of the standard parameter names and usages.
 
-### The **Help** parameter (?)
+### The Help parameter (?)
 
 When you specify the `-Help` or `-?` parameter on any cmdlet, PowerShell displays help for the
 cmdlet. The cmdlet is not executed.

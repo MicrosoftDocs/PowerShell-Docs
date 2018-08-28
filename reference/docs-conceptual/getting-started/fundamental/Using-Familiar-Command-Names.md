@@ -19,7 +19,7 @@ function named `Clear-Host` that clears the output window. You can type either t
 This feature helps users to learn PowerShell. First, most Cmd.exe and Unix users have a large
 repertoire of commands that users already know by name. The PowerShell equivalents may not produce
 identical results. However, the results are close enough that users can do work without knowing the
-PowerShell command name. "Finger memory" can be Another major source of frustration when learning a
+PowerShell command name. "Finger memory" is another major source of frustration when learning a
 new command shell. If you have used Cmd.exe for years, you might reflexively type the `cls` command
 to clear the screen. Without the alias for `Clear-Host`, you receive an error message and won't
 know what to do to clear the output.
@@ -41,9 +41,11 @@ PowerShell:
 The `Get-Alias` cmdlet shows you the real name of the native PowerShell command associated with an
 alias.
 
-```
+```powershell
 PS> Get-Alias cls
+```
 
+```Output
 CommandType     Name                               Version    Source
 -----------     ----                               -------    ------
 Alias           cls -> Clear-Host
@@ -61,6 +63,7 @@ aliases for common nouns and verbs.
 Example abbreviations:
 
 | Noun or Verb | Abbreviation |
+|--------------|--------------|
 | Get          | g            |
 | Set          | s            |
 | Item         | i            |
@@ -86,7 +89,7 @@ to `Set-Alias`.
 You can create your own aliases using the `Set-Alias` cmdlet. For example, the following statements
 create the standard cmdlet aliases previously discussed:
 
-```
+```powershell
 Set-Alias -Name gi -Value Get-Item
 Set-Alias -Name si -Value Set-Item
 Set-Alias -Name gl -Value Get-Location

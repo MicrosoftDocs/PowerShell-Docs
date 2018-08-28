@@ -64,30 +64,33 @@ Get-Help Get-ChildItem -Detailed
 ```
 
 To display all content in the Help article, use the **Full** parameter of the `Get-Help` cmdlet. For
-example, to display all content in the Help article for the Get-ChildItem cmdlet, type:
+example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:
 
 ```powershell
 Get-Help Get-ChildItem -full
 ```
 
-To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the `Get-Help` cmdlet. For example, to get detailed Help for all of the parameters of the Get-ChildItem cmdlet, type:
+To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the
+`Get-Help` cmdlet. For example, to get detailed Help for all of the parameters of the
+`Get-ChildItem` cmdlet, type:
 
 ```powershell
 Get-Help Get-ChildItem -Parameter *
 ```
 
-To display only the examples in a Help article, use the **Example** parameter of the `Get-Help`. For example, to display only the examples in the Help article for the Get-ChildItem cmdlet, type:
+To display only the examples in a Help article, use the **Example** parameter of the `Get-Help`.
+For example, to display only the examples in the Help article for the `Get-ChildItem `cmdlet, type:
 
 ```powershell
 Get-Help Get-ChildItem -examples
 ```
 
 For information about how to write Help articles for the cmdlets that you write, see
-[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415).
+[How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ## Getting conceptual help
 
-The Get-Help cmdlet also displays information about conceptual articles in PowerShell,
+The `Get-Help` cmdlet also displays information about conceptual articles in PowerShell,
 including articles about the PowerShell language. Conceptual Help articles begin with the
 "about_" prefix, such as about_line_editing. (The name of the conceptual article must be entered in
 English even on non-English versions of PowerShell.)
@@ -104,12 +107,12 @@ To display a particular Help article, type the article name, for example:
 Get-Help about_command_syntax
 ```
 
-The parameters of Get-Help, such as **Detailed**, **Parameter**, and **Examples**, have no effect
+The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect
 on the display of conceptual Help articles.
 
 ## Getting help about providers
 
-The Get-Help cmdlet displays information about PowerShell providers. To get Help for a
+The `Get-Help` cmdlet displays information about PowerShell providers. To get Help for a
 provider, type `Get-Help` followed by the provider name. For example, to get Help for the Registry
 provider, type:
 
@@ -131,7 +134,7 @@ on the display of provider Help articles.
 Many scripts and functions in PowerShell have Help articles. Use the `Get-Help` cmdlet to
 display the Help articles for scripts and functions.
 
-To display the Help for a function, type "Get-Help" followed by the function name. For example, to
+To display the Help for a function, type `Get-Help` followed by the function name. For example, to
 get Help for the `Disable-PSRemoting` function, type:
 
 ```powershell
@@ -149,7 +152,7 @@ Get-Help c:\ps-test\TestScript.ps1
 ```
 
 The parameters that are designed for displaying cmdlet Help work for script and function Help,
-too. However help for functions and scripts is not shown when you run `Get-Help *`.
+too. However, help for functions and scripts is not shown when you run `Get-Help *`.
 
 For information about writing Help articles for your functions and scripts, see the following articles:
 
@@ -188,7 +191,7 @@ Get-Help Add-Computer
 
 The first line in the Related Links section of the article is shown below.
 
-```powershell
+```Output
 Online version: http://go.microsoft.com/fwlink/?LinkId=821564
 ```
 

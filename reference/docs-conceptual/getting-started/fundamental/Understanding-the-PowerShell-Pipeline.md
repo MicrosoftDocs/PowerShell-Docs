@@ -96,10 +96,11 @@ onscreen display.
 When you pipe the output to the `Get-Member` cmdlet you get information about the object returned by
 `Get-Location`.
 
+```powershell
+PS> Get-Location | Get-Member
 ```
-+PS> Get-Location  | Get-Member
 
-
+```Output
    TypeName: System.Management.Automation.PathInfo
 
 Name         MemberType Definition

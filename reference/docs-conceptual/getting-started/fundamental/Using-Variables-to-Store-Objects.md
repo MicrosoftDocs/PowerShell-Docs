@@ -28,9 +28,9 @@ the current location in the variable `$loc`:
 $loc = Get-Location
 ```
 
-No output displayed when you type this command because the output of `Get-Location` is sent to
-`$loc`. In PowerShell, data that isn't assigned or redirected is sent to the screen. Typing
-`$loc` shows your current location:
+PowerShell displays no output when you type this command. PowerShell sends the output of
+'Get-Location' to `$loc`. In PowerShell, data that isn't assigned or redirected is sent to the
+screen. Typing `$loc` shows your current location:
 
 ```
 PS> $loc
@@ -41,7 +41,7 @@ C:\temp
 ```
 
 You can use `Get-Member` to display information about the contents of variables. `Get-Member` shows
-you that `$loc` is a **PathInfo** object, just like the output from Get-Location:
+you that `$loc` is a **PathInfo** object, just like the output from `Get-Location`:
 
 ```powershell
 PS> $loc | Get-Member -MemberType Property
@@ -92,7 +92,7 @@ typing the following command:
 Get-ChildItem env:
 ```
 
-The standard *-Variable cmdlets aren't designed to work with environment variables. Environment
+The standard `*-Variable` cmdlets aren't designed to work with environment variables. Environment
 variables are accessed using the `env:` drive prefix. For example, the **%SystemRoot%** variable in
 Cmd.exe contains the operating system's root directory name. In PowerShell, you use
 `$env:SystemRoot` to access the same value.
