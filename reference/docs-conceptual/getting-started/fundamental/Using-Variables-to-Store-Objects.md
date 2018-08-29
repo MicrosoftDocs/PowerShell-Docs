@@ -83,10 +83,10 @@ variables using the variable drive:
 Get-ChildItem variable:
 ```
 
-## Using cmd.exe  variables
+## Using cmd.exe variables
 
 PowerShell can use the same environment variables available to any Windows process, including
-**cmd.exe** . These variables are exposed through a drive named `env:`. You can view these
+**cmd.exe**. These variables are exposed through a drive named `env:`. You can view these
 variables by typing the following command:
 
 ```powershell
@@ -95,7 +95,7 @@ Get-ChildItem env:
 
 The standard `*-Variable` cmdlets aren't designed to work with environment variables. Environment
 variables are accessed using the `env:` drive prefix. For example, the **%SystemRoot%** variable in
-**cmd.exe**  contains the operating system's root directory name. In PowerShell, you use
+**cmd.exe** contains the operating system's root directory name. In PowerShell, you use
 `$env:SystemRoot` to access the same value.
 
 ```

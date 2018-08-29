@@ -16,15 +16,15 @@ function named `Clear-Host` that clears the output window. You can type either t
 `clear` alias at a command prompt. PowerShell interprets these aliases and runs the
 `Clear-Host` function.
 
-This feature helps users to learn PowerShell. First, most **cmd.exe** ** and Unix users have a large
+This feature helps users to learn PowerShell. First, most **cmd.exe** and Unix users have a large
 repertoire of commands that users already know by name. The PowerShell equivalents may not produce
 identical results. However, the results are close enough that users can do work without knowing the
 PowerShell command name. "Finger memory" is another major source of frustration when learning a
-new command shell. If you have used **cmd.exe**  for years, you might reflexively type the `cls` command
+new command shell. If you have used **cmd.exe** for years, you might reflexively type the `cls` command
 to clear the screen. Without the alias for `Clear-Host`, you receive an error message and won't
 know what to do to clear the output.
 
-The following list shows a few of the common **cmd.exe**  and Unix commands that you can use in
+The following list shows a few of the common **cmd.exe** and Unix commands that you can use in
 PowerShell:
 
 |||||

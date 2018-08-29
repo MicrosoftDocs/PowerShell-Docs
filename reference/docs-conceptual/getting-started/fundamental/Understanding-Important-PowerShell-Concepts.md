@@ -25,15 +25,15 @@ syntax.
 
 ## The command family is extensible
 
-Interfaces such as **cmd.exe** don't provide a way for you to directly extend the built-in command
-set. You can create external command-line tools that run in **cmd.exe** . But these external tools
-don't have services, such as Help integration. **cmd.exe** doesn't automatically know that these
+Interfaces such as **cmd.exe**don't provide a way for you to directly extend the built-in command
+set. You can create external command-line tools that run in **cmd.exe**. But these external tools
+don't have services, such as Help integration. **cmd.exe**doesn't automatically know that these
 external tools are valid commands.
 
 The native commands in PowerShell are known as *cmdlets* (pronounced command-lets). You can create
 your own cmdlets modules and functions using compiled code or scripts. Modules can add cmdlets and
 providers to the shell. PowerShell also supports scripts that are analogous to UNIX shell scripts
-and **cmd.exe**  batch files.
+and **cmd.exe** batch files.
 
 ## PowerShell handles console input and display
 
