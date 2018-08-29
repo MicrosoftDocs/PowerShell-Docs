@@ -120,9 +120,9 @@ one item, the array has only one member.
 Runs a command, script, or script block. The call operator, also known as the
 "invocation operator," lets you run commands that are stored in variables and
 represented by strings or script blocks. The call operator executes in a child
-scope. For more about scopes see [about_scopes](about_scopes.md).
+scope. For more about scopes, see [about_scopes](about_scopes.md).
 
-This example stores a command in a string and execute it using the call
+This example stores a command in a string and executes it using the call
 operator.
 
 ```
@@ -191,7 +191,7 @@ PS C:\Scripts> &".\script name with spaces.ps1"
 Hello World!
 ```
 
-For more about script blocks see [about_script_blocks.md](about_scriptBlocks.md).
+For more about script blocks, see [about_script_blocks.md](about_scriptBlocks.md).
 
 `[ ]` Cast operator
 
@@ -312,7 +312,7 @@ $myProcess.peakWorkingSet
 
 `..` Range operator
 
-Represents the sequential integers in an integer array, given an upper and
+Represents the sequential integers in an integer array, given an upper, and
 lower boundary.
 
 ```powershell
