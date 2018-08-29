@@ -96,7 +96,7 @@ Also, if you type a function at the command line and then import a function
 with the same name, the original function is replaced and is no longer
 accessible.
 
-## Finding hidden commands
+### Finding hidden commands
 
 The **All** parameter of the [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
 cmdlet gets all commands with the specified name, even if they are hidden
@@ -133,7 +133,7 @@ Function        Get-Date
 Cmdlet          Get-Date                  Microsoft.PowerShell.Utility
 ```
 
-## Running hidden commands
+### Running hidden commands
 
 You can run particular commands by specifying item properties that distinguish
 the command from other commands that might have the same name.
@@ -145,7 +145,7 @@ Use this method as a best practice when writing scripts that you intend to
 distribute because you cannot predict which commands might be present in
 the session in which the script runs.
 
-## Qualified names
+#### Qualified names
 
 You can run commands that have been imported from a PowerShell module or from
 another session by qualifying the command name with the name of the module or
@@ -185,7 +185,7 @@ For example, to find the source of the `Get-Date` cmdlet, type:
 Microsoft.PowerShell.Utility
 ```
 
-## Call operator
+#### Call operator
 
 You can also use the `Call` operator `&` to run hidden commands by combining
 it with a call to [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
@@ -218,16 +218,7 @@ $myMap = (Get-Command -Name map -CommandType function)
 &($myMap)
 ```
 
-If a command originated in a module, you can use the call operator to execute
-it. For example, to run the `Add-File` cmdlet in the `FileCommands` module, use
-the following command sequence.
-
-```powershell
-$FileCommands = Get-Module -Name FileCommands
-& $FileCommands Add-File
-```
-
-## Replaced items
+### Replaced items
 
 Items that have not been imported from a module or snap-in, such as functions,
 variables, and aliases that you create in your session or that you add by
@@ -242,7 +233,7 @@ For example, if you type a `Get-Map` function in your session, and you import
 a function called `Get-Map`, the original function is replaced. You cannot
 retrieve it in the current session.
 
-## Avoiding name conflicts
+### Avoiding name conflicts
 
 The best way to manage command name conflicts is to prevent them. When you
 name your commands, use a name that is very specific or is likely to be
@@ -256,8 +247,8 @@ module or from another session, use the `Prefix` parameter of the
 cmdlet to add a prefix to the nouns in the names of commands.
 
 For example, the following command avoids any conflict with the `Get-Date`
-and [Set-Date](../../Microsoft.PowerShell.Utility/Set-Date.md) cmdlets that
-come with PowerShell when you import the "DateFunctions" module.
+and `Set-Date` cmdlets that come with PowerShell when you import the 
+"DateFunctions" module.
 
 ```powershell
 Import-Module -Name DateFunctions -Prefix ZZ

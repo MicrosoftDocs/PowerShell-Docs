@@ -219,7 +219,7 @@ Runs a script in the current scope so that any functions, aliases, and
 variables that the script creates are added to the current scope.
 
 ```powershell
-. c:\scripts.sample.ps1
+. c:\scripts\sample.ps1
 ```
 
 > [!NOTE]
