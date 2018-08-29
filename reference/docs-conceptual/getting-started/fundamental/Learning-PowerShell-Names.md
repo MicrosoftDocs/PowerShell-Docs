@@ -22,16 +22,20 @@ way to handle command names.
 Most commands are built to manage elements of the operating system or applications, such as
 services or processes. The commands have names that may or may not fit into a family. For example,
 on Windows systems, you can use the `net start` and `net stop` commands to start and stop a
-service. **SC.EXE** is another service control tool for Windows. That name does not fit into the
-naming pattern for the `net` service commands. For process management, Windows has the `tasklist`
-command to list processes and the `taskkill` command to kill processes.
+service. **Sc.exe** is another service control tool for Windows. That name does not fit into the
+naming pattern for the **net.exe** service commands. For process management, Windows has the
+**tasklist.exe** command to list processes and the **taskkill.exe** command to kill processes.
 
 Also, these commands have irregular parameter specifications. You can't use the `net start` command
-to start a service on a remote computer. The `sc` command can start a service on a remote computer.
-But to specify the remote computer, you must prefix its name with a double backslash. To start the
-spooler service on a remote computer named DC01, you type `sc \\DC01 start spooler`. To list tasks
-running on DC01, you use the **/S** parameter and the computer name without backslashes. For
-example, `tasklist /S DC01`.
+to start a service on a remote computer. The **sc.exe** command can start a service on a remote
+computer. But to specify the remote computer, you must prefix its name with a double backslash. To
+start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
+To list tasks running on DC01, you use the **/S** parameter and the computer name without
+backslashes. For example, `tasklist /S DC01`.
+
+> [!NOTE]
+> Prior to PowerShell v6, `sc` was an alias for the `Set-Content` cmdlet. To run the **sc.exe**
+> command, you must include the file extension.
 
 Services and processes are examples of manageable elements on a computer that have well-defined
 life cycles. You may start or stop services and processes, or get a list of all currently
@@ -59,9 +63,9 @@ For this example of two nouns and verbs, consistency does not simplify learning 
 that list to a standardized set of 10 verbs and 10 nouns. Now you only have 20 words to understand.
 But those words can be combined to form 100 distinct command names.
 
-It's easy to understand what a PowerShell command does by reading its name. The command to shut down
-a computer is `Stop-Computer`. The command to list all computers on a network is `Get-Computer`.
-The command to get the system date is `Get-Date`.
+It's easy to understand what a PowerShell command does by reading its name. The command to shut
+down a computer is `Stop-Computer`. The command to list all computers on a network is
+`Get-Computer`. The command to get the system date is `Get-Date`.
 
 You can list all commands that include a particular verb with the **Verb** parameter for
 `Get-Command`. For example, to see all cmdlets that use the verb `Get`, type:
