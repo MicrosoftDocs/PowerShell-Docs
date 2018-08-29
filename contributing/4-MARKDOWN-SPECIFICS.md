@@ -7,7 +7,7 @@ to process the Markdown documents. Markdig parses the documents based on the rul
 The new CommonMark spec is much stricter about the construction of some Markdown elements.
 Pay close attention to the details provided in this document.
 
-## Blank lines & Spaces vs Tabs
+## Blank lines, spaces, and tabs
 
 Remove duplicate blank lines.
 Multiple blank lines render as a single blank line in HTML.
@@ -19,7 +19,7 @@ between a paragraph and a list).
 Always uses spaces instead of hard tabs.
 Remove extra spaces at the end of lines.
 
-## Titles/Headings
+## Titles and headings
 
 Only use [ATX headings][atx] (# style, as opposed to = or \- style headers).
 
@@ -27,6 +27,8 @@ Only use [ATX headings][atx] (# style, as opposed to = or \- style headers).
 - Titles/headings should be surrounded by blank lines
 - Only the first letter of a title and any proper nouns in that title should be capitalized
 - Only one H1 per document
+- Header levels should increment by one. Do not skip levels.
+- Do not use bold or code markup in header text
 
 When editing reference content, the H2s are prescribed by [platyPS][platyPS].
 Adding or removing H2 causes a build break.
