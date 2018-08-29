@@ -191,7 +191,7 @@ PS C:\Scripts> &".\script name with spaces.ps1"
 Hello World!
 ```
 
-For more about script blocks, see [about_script_blocks.md](about_scriptBlocks.md).
+For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 
 `[ ]` Cast operator
 
@@ -248,8 +248,8 @@ formatted on the right side of the operator.
 1 hello      3.14
 ```
 
-For more information, see the [String.Format](http://go.microsoft.com/fwlink/?LinkID=166450)
-method and [Composite Formatting](http://go.microsoft.com/fwlink/?LinkID=166451).
+For more information, see the [String.Format](/dotnet/api/system.string.format)
+method and [Composite Formatting](/dotnet/standard/base-types/composite-formatting).
 
 `[ ]` Index operator
 
