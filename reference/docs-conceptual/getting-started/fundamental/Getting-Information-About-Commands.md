@@ -24,10 +24,10 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-This output looks a lot like the Help output of Cmd.exe: a tabular summary of internal commands. In
+This output looks a lot like the Help output of **cmd.exe**: a tabular summary of internal commands. In
 the excerpt of the `Get-Command` command output shown above, every command shown has a CommandType
 of Cmdlet. A cmdlet is PowerShell's intrinsic command type. This type corresponds roughly to
-commands like `dir` and `cd` in Cmd.exe or the built-in commands of Unix shells like bash.
+commands like `dir` and `cd` in **cmd.exe** or the built-in commands of Unix shells like bash.
 
 The `Get-Command` cmdlet has a **Syntax** parameter that returns syntax of each cmdlet. The
 following example shows how to get the syntax of the `Get-Help` cmdlet:
@@ -74,7 +74,7 @@ It is more useful to look at a reduced set of commands.
 > [!NOTE]
 > The asterisk (\*) is used for wildcard matching in PowerShell command arguments. The \* means
 > "match one or more of any characters". You can type `Get-Command a*` to find all commands that
-> begin with the letter "a". Unlike wildcard matching in Cmd.exe, PowerShell's wildcard will also
+> begin with the letter "a". Unlike wildcard matching in **cmd.exe**, PowerShell's wildcard will also
 > match a period.
 
 Use the **CommandType** parameter of `Get-Command` to get native commands of other types.

@@ -37,10 +37,15 @@ Feel free to help out.
 
 ## Formatting syntax elements
 
-- PowerShell cmdlets are "[Pascal Cased][pascal-case]".
+- PowerShell cmdlet names are [Pascal Cased][pascal-case].
   Verbs are separated from nouns by a hyphen.
+  Always use the full Pascal Case name for cmdlets and parameters.
+  Avoid using aliases unless you are specifically talking about an alias.
 
-- In a paragraph, cmdlet names and variable references should be wrapped in backtick (\`) characters. For example:
+- Property, parameter, and class names should be **bold**
+
+- Within a paragraph, cmdlet names and variable references should be wrapped in backtick (\`)
+  characters. For example:
 
   The following code assigns the output of `Get-ChildItem` to the `$files` variable.
 
@@ -48,18 +53,41 @@ Feel free to help out.
   $files = Get-ChildItem C:\Windows
   ```
 
-- Property names and parameter names should be in **bold**
-
-- When writing an article (as opposed to reference content), the first instance of a cmdlet name should be a link to the cmdlet documentation.
+- When writing an article (as opposed to reference content), the first instance of a cmdlet name
+  should be a link to the cmdlet documentation.
 
   For example:
 
-  This [`Write-Host`](..\reference\6\Microsoft.PowerShell.Utility\Write-Host.md) cmdlet uses the **-Object** parameter to ...
+  This [Write-Host](..\reference\6\Microsoft.PowerShell.Utility\Write-Host.md) cmdlet uses the
+  **-Object** parameter to ...
+
+  > [!NOTE]
+  > Never use backticks or bold inside the brackets of a hyperlink. This is an exception to the previous
+  > rule.
+
+- When referring to a parameter by name, the name should be **bold**. When illustrating the use of
+  a parameter with the hyphen prefix, the paramter should be wrapped in backticks. For example:
+
+  > The parameter's name is **Name**, but it is typed as `-Name` when used on the command line as a
+  > parameter.
+
+- When referring to external commands (EXEs, scripts, etc.), the command name should be bold, all
+  lowercase (or capitalized if at the beginning of a sentence), and include the appropriate file
+  extension. For example:
+
+  > For example, on Windows systems, you can use the `net start` and `net stop` commands to start
+  > and stop a service. **Sc.exe** is another service control tool for Windows. That name does not
+  > fit into the naming pattern for the **net.exe** service commands.
+
+- When showing example usage of an external command, the example should be wrapped in backticks.
+  When there is a name collisions with an alias you must include the file extension in the command
+  example. For example:
+
+  > To start the spooler service on a remote computer named DC01, you type `sc.exe \\DC01 start spooler`.
 
 ## Links
 
 - Avoid using bare URLs. Links should use Markdown syntax `[friendlyname](url-or-path)`
- -* **Exception**: Links to non-Microsoft sites can be bare URLs for transparency
 - Links must have a friendly name, usually the title of the linked topic
 - All items in the "related links" section at the bottom should be hyperlinked.
 - Use relative links when linking to other content that is hosted on **docs.microsoft.com**.
