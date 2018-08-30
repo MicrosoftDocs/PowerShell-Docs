@@ -63,7 +63,7 @@ The security descriptor (ACL) of the session configuration determines which user
 You can define the elements of configuration by using an assembly that implements a new configuration class and by using a script that runs in the session.
 Beginning in Windows PowerShell 3.0, you can also use a session configuration file to define the session configuration.
 
-For information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 For information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
 
 ## EXAMPLES

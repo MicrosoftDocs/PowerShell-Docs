@@ -28,7 +28,7 @@ To make the change effective, **Unregister-PSSessionConfiguration** restarts the
 To prevent the restart, specify the *NoServiceRestart* parameter.
 
 If you accidentally delete the default Microsoft.PowerShell or Microsoft.PowerShell32 session configurations, use the Enable-PSRemoting cmdlet to restore them.
-For more information, see about_Session_Configurations.
+For more information, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ## EXAMPLES
 

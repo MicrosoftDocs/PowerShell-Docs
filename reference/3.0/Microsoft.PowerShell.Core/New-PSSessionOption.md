@@ -40,7 +40,7 @@ For more information about the **$PSSessionOption** preference variable, see [ab
 
 When you use a session option object in a cmdlet that creates a session, the session option values take precedence over default values for sessions set in the **$PSSessionOption** preference variable and in the session configuration.
 However, they do not take precedence over maximum values, quotas or limits set in the session configuration.
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ## EXAMPLES
 
@@ -239,7 +239,7 @@ You can use this parameter to send data to the remote session.
 A primitive dictionary is like a hash table, but it contains keys that are case-insensitive strings and values that can be serialized and deserialized during Windows PowerShell remoting handshakes.
 If you enter a hash table for the value of this parameter, Windows PowerShell converts it to a primitive dictionary.
 
-For more information, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175), about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152), and about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
+For more information, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175), [about_Session_Configurations](About/about_Session_Configurations.md), and about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
 
 ```yaml
 Type: PSPrimitiveDictionary
