@@ -31,7 +31,7 @@ Also, beginning in Windows PowerShell 3.0, new note properties have been added t
 These properties make it easier for users and session configuration authors to examine and compare session configurations.
 
 To create and register a session configuration, use the Register-PSSessionConfiguration cmdlet.
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ## EXAMPLES
 

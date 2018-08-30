@@ -315,7 +315,7 @@ configuration on the local computer.
 Set-PSSessionConfiguration Microsoft.PowerShell -ShowSecurityDescriptorUI
 ```
 
-For more information, see about_Session_Configurations.
+For more information, see [about_Session_Configurations](about_Session_Configurations.md).
 
 ### HOW TO ENABLE REMOTING FOR ADMINISTRATORS IN OTHER DOMAINS
 
@@ -602,8 +602,7 @@ invoke-command -session $s {$env:PROCESSOR_ARCHITECTURE}
 x86
 ```
 
-For more information about session configurations, see
-about_session_configurations.
+For more information about session configurations, see [about_Session_Configurations](about_Session_Configurations.md).
 
 ## TROUBLESHOOTING POLICY AND PREFERENCE ISSUES
 
