@@ -302,11 +302,12 @@ moment of creating the instance of the class. Constructors have the same name
 as the class. Constructors might have arguments, to initialize the data
 members of the new object.
 
-The class can have no constructor defined, one or more constructors. If no
-constructor is defined, the class is given a default parameterless
-constructor. This constructor initializes all members to their default values.
-Object types and strings are given null values. When you define constructor, no
-default parameterless constructor is created. Create a parameterless constructor if one is needed.
+The class can have zero or more constructors defined. If no constructor is
+defined, the class is given a default parameterless constructor. This
+constructor initializes all members to their default values. Object types and
+strings are given null values. When you define constructor, no default
+parameterless constructor is created. Create a parameterless constructor if
+one is needed.
 
 ### Constructor basic syntax
 
@@ -500,6 +501,7 @@ class Rack {
 ```
 
 #### Testing static property and method exist
+
 ```
 PS> [Rack]::InstalledRacks.Length
 0
