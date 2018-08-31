@@ -44,8 +44,8 @@ Feel free to help out.
 
 - Property, parameter, and class names should be **bold**
 
-- Within a paragraph, cmdlet names and variable references should be wrapped in backtick (\`)
-  characters. For example:
+- Within a paragraph, language keywords, cmdlet names, and variable references should be wrapped in
+  backtick (\`)   characters. For example:
 
   The following code assigns the output of `Get-ChildItem` to the `$files` variable.
 
