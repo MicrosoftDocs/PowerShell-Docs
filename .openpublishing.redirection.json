@@ -56,12 +56,12 @@
         },
         {
             "source_path": "reference/virtual-directory/getting-started/basic-cookbooks.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell-for-administration",
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/sample-scripts-for-administration",
             "redirect_document_id": "False"
         },
         {
             "source_path": "reference/virtual-directory/getting-started/cookbooks/basic-cookbooks-reference.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell-for-administration",
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/sample-scripts-for-administration",
             "redirect_document_id": "False"
         },
         {
@@ -14406,7 +14406,7 @@
         },
         {
             "source_path": "reference/virtual-directory/Using-Windows-PowerShell-for-Administration.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/using-windows-powershell-for-administration?view=powershell-5.1",
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/sample-scripts-for-administration",
             "redirect_document_id": "False"
         },
         {
