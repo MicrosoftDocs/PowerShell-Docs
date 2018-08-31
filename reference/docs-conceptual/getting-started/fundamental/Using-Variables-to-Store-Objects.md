@@ -8,7 +8,8 @@ ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
 # Using variables to store objects
 
 PowerShell works with objects. PowerShell lets you create named objects known as variables.
-Variables names can include the underscore character can any alphanumeric characters. When used in PowerShell, a variable is always specified using the \$ character followed by variable name.
+Variables names can include the underscore character can any alphanumeric characters. When used in
+PowerShell, a variable is always specified using the \$ character followed by variable name.
 
 ## Creating a variable
 
@@ -82,11 +83,11 @@ variables using the variable drive:
 Get-ChildItem variable:
 ```
 
-## Using Cmd.exe variables
+## Using cmd.exe variables
 
 PowerShell can use the same environment variables available to any Windows process, including
-Cmd.exe. These variables are exposed through a drive named `env:`. You can view these variables by
-typing the following command:
+**cmd.exe**. These variables are exposed through a drive named `env:`. You can view these
+variables by typing the following command:
 
 ```powershell
 Get-ChildItem env:
@@ -94,7 +95,7 @@ Get-ChildItem env:
 
 The standard `*-Variable` cmdlets aren't designed to work with environment variables. Environment
 variables are accessed using the `env:` drive prefix. For example, the **%SystemRoot%** variable in
-Cmd.exe contains the operating system's root directory name. In PowerShell, you use
+**cmd.exe** contains the operating system's root directory name. In PowerShell, you use
 `$env:SystemRoot` to access the same value.
 
 ```

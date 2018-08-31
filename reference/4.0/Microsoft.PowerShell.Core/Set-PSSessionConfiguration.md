@@ -64,7 +64,7 @@ Session configurations define the environment of remote sessions (PSSessions) th
 Every PSSession uses a session configuration.
 The session configuration determines the features of the PSSession, such as the modules that are available in the session, the cmdlets that are permitted to run, the language mode, quotas, and timeouts.
 The security descriptor (SDDL) of the session configuration determines who can use the session configuration to connect to the local computer.
-For more information about session configurations, see about_Session_Configurations.
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 To see the properties of a session configuration, use the **Get-PSSessionConfiguration** cmdlet or the WSMan Provider.
 For more information about the WSMan Provider, type "Get-Help WSMan".

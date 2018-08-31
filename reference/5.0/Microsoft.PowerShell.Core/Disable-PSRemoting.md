@@ -29,7 +29,7 @@ This prevents remote users from creating temporary or persistent sessions to the
 To re-enable remote access to all session configurations, use the Enable-PSRemoting cmdlet.
 To enable remote access to selected session configurations, use the *AccessMode* parameter of the Set-PSSessionConfiguration cmdlet.
 You can also use the Enable-PSSessionConfiguration and Disable-PSSessionConfiguration cmdlets to enable and disable session configurations for all users.
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 In Windows PowerShell 2.0, **Disable-PSRemoting** prevents all users from creating user-managed sessions to the local computer.
 In Windows PowerShell 3.0, **Disable-PSRemoting** prevents users on other computers from creating user-managed sessions on the local computer, but allows users of the local computer to create user-managed loopback sessions.
