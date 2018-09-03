@@ -25,8 +25,8 @@ The table below illustrates the resultant state and status related properties un
 
 | Scenario                        | LCMState             | Status     | Reboot Requested | ResourcesInDesiredState   | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-| S**^**                          | Idle                 | Success    | $false        | S                            | $null                          |
-| F**^**                          | PendingConfiguration | Failure    | $false        | $null                        | F                              |
+| S **^**                          | Idle                 | Success    | $false        | S                            | $null                          |
+| F **^**                          | PendingConfiguration | Failure    | $false        | $null                        | F                              |
 | S,F                             | PendingConfiguration | Failure    | $false        | S                            | F                              |
 | F,S                             | PendingConfiguration | Failure    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Failure    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
