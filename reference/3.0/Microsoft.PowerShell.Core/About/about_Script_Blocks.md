@@ -1,5 +1,5 @@
-﻿---
-ms.date:  06/09/2017
+---
+ms.date:  08/28/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -10,11 +10,11 @@ title:  about_Script_Blocks
 ## Short description
 
 Defines what a script block is and explains how to use script blocks in
-the Windows PowerShell programming language.
+the PowerShell programming language.
 
 ## Long description
 
-In the Windows PowerShell programming language, a script block is a
+In the PowerShell programming language, a script block is a
 collection of statements or expressions that can be used as a single unit.
 A script block can accept arguments and return values.
 
@@ -38,8 +38,9 @@ Param([type]$Parameter1 [,[type]$Parameter2])
 }
 ```
 
-In a script block, unlike a function, you cannot specify parameters outside
-the braces.
+> [!NOTE]
+> In a script block, unlike a function, you cannot specify parameters outside
+> the braces.
 
 Like functions, script blocks can include the `DynamicParam`, `Begin`,
 `Process`, and `End` keywords. For more information, see [about_Functions](about_Functions.md)
@@ -48,9 +49,9 @@ and [about_Functions_Advanced](about_Functions_Advanced.md).
 ## Using Script Blocks
 
 A script block is an instance of a Microsoft .NET Framework type
-(System.Management.Automation.ScriptBlock). Commands can have script
+`System.Management.Automation.ScriptBlock`. Commands can have script
 block parameter values. For example, the `Invoke-Command` cmdlet has a
-**ScriptBlock** parameter that takes a script block value, as shown in this
+`ScriptBlock` parameter that takes a script block value, as shown in this
 example:
 
 ```powershell
@@ -65,83 +66,72 @@ Handles  NPM(K)    PM(K)     WS(K) VM(M)   CPU(s)     Id ProcessName
 ...
 ```
 
-The script block that is used as a value can be more complicated, as
-shown in the following example:
+`Invoke-Command` can also execute script blocks that have parameter blocks.
+Parameters are assigned by position using the **ArgumentList** parameter.
 
 ```powershell
-Invoke-Command -ScriptBlock { Param($uu = "Parameter");
-"$uu assigned." }
+Invoke-Command -ScriptBlock { param($p1, $p2)
+"p1: $p1"
+"p2: $p2"
+} -ArgumentList "First", "Second"
 ```
 
 ```output
-Parameter assigned.
+p1: First
+p2: Second
 ```
 
-The script block in the preceding example uses the Param keyword to
-create a parameter that has a default value. The following example uses
-the **Args** parameter of the `Invoke-Command` cmdlet to assign a different
-value to the parameter:
+The script block in the preceding example uses the `param` keyword to
+create a parameters `$p1` and `$p2`. The string "First" is bound to the
+first parameter (`$p1`) and "Second" is bound to (`$p2`).
+
+You can use variables to store and execute script blocks. The example below
+stores a script block in a variable and passes it to `Invoke-Command`.
 
 ```powershell
-Invoke-Command -ScriptBlock { Param($uu = "Parameter");
-    "$uu assigned."} -Args "Other value"
+$a = { Get-Service BITS }
+Invoke-Command -ScriptBlock $a
 ```
 
 ```output
-Other value assigned.
+Status   Name               DisplayName
+------   ----               -----------
+Running  BITS               Background Intelligent Transfer Ser...
 ```
 
-You can assign a script block to a variable, as shown in the following
-example:
+The call operator is another way to execute script blocks stored in a variable.
+Like `Invoke-Command`, the call operator executes the script block in a child
+scope. The call operator can make it easier for you to use parameters with your
+script blocks.
 
 ```powershell
-$a = { Param($uu = "Parameter"); "$uu assigned." }
-```
-
-You can use the variable with a cmdlet such as `Invoke-Command`, as shown
-in the following example:
-
-```powershell
-Invoke-Command -ScriptBlock $a -Args "Other value"
+$a ={ param($p1, $p2)
+"p1: $p1"
+"p2: $p2"
+}
+&$a -p2 "First" -p1 "Second"
 ```
 
 ```output
-Other value assigned.
+p1: Second
+p2: First
 ```
 
-You can run a script block that is assigned to a variable by using the
-call operator `&`, as shown in the following example:
+You can store the output from your script blocks in a variable using
+assignment.
 
-```powershell
-& $a
+```
+PS>  $a = { 1 + 1}
+PS>  $b = &$a
+PS>  $b
+2
 ```
 
-```output
-Parameter assigned.
 ```
-
-You can also provide a parameter to the script block, as shown in the
-following example:
-
-```powershell
-& $a "Other value"
-```
-
-```output
-Other value assigned.
-```
-
-If you want to assign the value that is created by a script block to a
-variable, use the call operator to run the script block directly, as
-shown in the following example:
-
-```powershell
-$a = & { Param($uu = "Parameter"); "$uu assigned." }
-$a
-```
-
-```output
-Parameter assigned.
+PS>  $a = { 1 + 1}
+PS>  $b = Invoke-Command $a
+PS>  $b
+2
 ```
 
 For more information about the call operator, see [about_Operators](about_Operators.md).
@@ -160,8 +150,8 @@ dir config.log | Rename-Item -NewName {"old_" + $_.Name}
 The additional parameters must accept pipeline input
 (`by Value`) or (`by PropertyName`).
 
-In more complex cmdlets, this allows the dynamic reuse of one piped in object to
-populate other parameters.
+In more complex cmdlets, delay-bind script blocks allow the reuse of one piped
+in object to populate other parameters.
 
 ## See Also
 
