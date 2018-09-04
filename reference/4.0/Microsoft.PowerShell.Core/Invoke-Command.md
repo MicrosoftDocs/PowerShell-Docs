@@ -87,7 +87,7 @@ Windows PowerShell converts the script block to a command and runs the command i
 To start an interactive session with a remote computer, use the Enter-PSSession cmdlet.
 To establish a persistent connection to a remote computer, use the New-PSSession cmdlet.
 
-Before using **Invoke-Command** to run commands on a remote computer, read about_Remote (http://go.microsoft.com/fwlink/?LinkID=135182).
+Before using `Invoke-Command` to run commands on a remote computer, read [about_Remote](About/about_Remote.md).
 
 ## EXAMPLES
 
@@ -272,7 +272,7 @@ This example shows how to include the values of local variables in a command run
 The command uses the Using scope modifier to identify a local variable in a remote command.
 By default, all variables are assumed to be defined in the remote session.
 The Using scope modifier was introduced in Windows PowerShell 3.0.
-For more information about the Using scope modifier, see about_Remote_Variables http://go.microsoft.com/fwlink/?LinkID=252653.
+For more information about the Using scope modifier, see [about_Remote_Variables](About/about_Remote_Variables.md).
 
 The first command saves the name of the Microsoft-Windows-Forwarding/Operational event log in the $MWFO_Log variable.
 
@@ -940,7 +940,7 @@ However, they do not take precedence over maximum values, quotas or limits set i
 
 For a description of the session options, including the default values, see New-PSSessionOption.
 For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: PSSessionOption
@@ -994,7 +994,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 

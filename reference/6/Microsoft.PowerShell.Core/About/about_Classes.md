@@ -1,5 +1,5 @@
 ---
-ms.date:  11/27/2017
+ms.date:  08/31/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -9,36 +9,31 @@ description:  Describes how you can use classes to create your own custom types.
 
 # About Classes
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes how you can use classes to create your own custom types.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
-Starting in PowerShell 5.0, PowerShell adds language
-for defining classes and other user-defined types, by using formal syntax
-and semantics that are similar to other object-oriented programming
-languages. The goal is to enable developers and IT professionals to
-embrace Windows PowerShell for a wider range of use cases, simplify
-development of Windows PowerShell artifacts and accelerate coverage
-of management surfaces.
+PowerShell 5.0 adds a formal syntax to define classes and other user-defined
+types. The addition of classes enables developers and IT professionals to
+embrace PowerShell for a wider range of use cases. It simplifies development
+of PowerShell artifacts and accelerates coverage of management surfaces.
 
-A class declaration is like a blueprint that is used to create instances or
-objects at run time.
-If you define a class called *Device*, *Device* is the name of the type.
-If you declare and initialize a variable *d* of type *Device*,
-*d* is said to be an object or instance of *Device*.
-Multiple instances of the *Device* type can be created,
-and each instance can have different values in its properties.
+A class declaration is like a blueprint used to create instances of objects at
+run time. When you define a class, the class name is the name of the type. For
+example, if you declare a class named **Device** and initialize a variable
+`$dev` to a new instance of **Device**, `$dev` is an object or instance of type
+**Device**. Each instance of **Device** can have different values in its
+properties.
 
 ## SUPPORTED SCENARIOS
 
-- Define custom types in Windows PowerShell by using familiar object-oriented
-  programming constructs, such as classes, properties, methods, inheritance,
+- Define custom types in PowerShell using familiar object-oriented
+  programming semantics like classes, properties, methods, inheritance,
   etc.
-- Debug types by using the Windows PowerShell language.
-- Generate and handle exceptions by using formal mechanisms, and at the right
-  level.
+- Debug types using the PowerShell language.
+- Generate and handle exceptions using formal mechanisms.
 - Define DSC resources and their associated types by using the PowerShell
   language.
 
@@ -66,13 +61,14 @@ Classes are instantiated using either of the following syntaxes:
 [$<variable-name> =] [<class-name>]::new([<constructor-argument-list>])
 ```
 
-> **Note** When using the `[<class-name>]::new(` syntax,
+> [!NOTE]
+> When using the `[<class-name>]::new(` syntax,
 > brackets around the class name are mandatory!
 > The brackets signal a type definition for PowerShell.
 
-### EXAMPLE: Minimum syntax and usage
+### Example syntax and usage
 
-This is the minimum needed to create a 'useful' class.
+This example shows the minimum syntax needed to create a usable class.
 
 ```powershell
 class Device {
@@ -80,26 +76,15 @@ class Device {
 }
 
 $dev = [Device]::new()
-
-$dev
-
 $dev.Brand = "Microsoft"
-
 $dev
 ```
 
 ```output
-
 Brand
 -----
-
 Microsoft
 ```
-
-> **Note**: the first invocation of $dev returns the empty object
-> with the header of the  empty property *Brand*.
-> After updating the property, on the second invocation,
-> PowerShell removes the header when displaying the object.
 
 ## CLASS PROPERTIES
 
@@ -107,7 +92,7 @@ Properties are variables declared at class scope.
 A property may be of any built-in type or an instance of another class.
 Classes have no restriction in the number of properties they have.
 
-## EXAMPLE: Class with simple properties
+### Example class with simple properties
 
 ```powershell
 class Device {
@@ -133,7 +118,7 @@ Microsoft Surface Pro 4 5072641000
 
 ```
 
-### EXAMPLE: Complex types in class properties
+### Example complex types in class properties
 
 This example defines an empty **Rack** class using the **Device** class.
 The examples, following this one, show how to add devices to the rack
@@ -174,11 +159,11 @@ Devices   : {$null, $null, $null, $null...}
 ## CLASS METHODS
 
 Methods define the actions that a class can perform.
-Methods can take parameters that provide input data.
-Methods can return or not return output; when a method returns data,
-the returned data can be of any defined data type.
+Methods may take parameters that provide input data.
+Methods can return output.
+Data returned by a method can be any defined data type.
 
-### EXAMPLE: A simple class with properties and methods
+### Example simple class with properties and methods
 
 Extending the **Rack** class to add and remove devices
 to or from it.
@@ -252,17 +237,18 @@ Devices   : {$null, $null, Microsoft|Surface Pro 4|5072641000, $null...}
 
 ## OUTPUT IN CLASS METHODS
 
-Methods in classes should have a return type defined; if a method does not
+Methods should have a return type defined. If a method does not
 return output, then the output type should be `[void]`.
 
-In class methods, nothing goes to the pipeline except what is mentioned
-in the `return` statement. There is no accidental output to the pipeline
+In class methods, no objects get sent to the pipeline except those mentioned
+in the `return` statement. There's no accidental output to the pipeline
 from the code.
 
-> **Note**: This is fundamentally different from how PowerShell functions
+> [!NOTE]
+> This is fundamentally different from how PowerShell functions
 > handle output, where everything goes to the pipeline.
 
-### EXAMPLE: Method output
+### Method output
 
 This example demonstrates no accidental output to the pipeline from
 class methods, except on the `return` statement.
@@ -311,24 +297,23 @@ Hello World
 
 ## CONSTRUCTOR
 
-Constructors enable to set default values and validate object logic at the
+Constructors enable you to set default values and validate object logic at the
 moment of creating the instance of the class. Constructors have the same name
 as the class. Constructors might have arguments, to initialize the data
 members of the new object.
 
-The class can have no constructor defined, one or more constructors.
-If no constructor is defined, the class is given a default parameterless
-constructor; this constructor instantiates all members to their default
-values (null values for object type classes, including string).
-If a constructor is defined, then no default parameterless constructor
-is available; if needed, it has to be explicitly added to the class.
+The class can have zero or more constructors defined. If no constructor is
+defined, the class is given a default parameterless constructor. This
+constructor initializes all members to their default values. Object types and
+strings are given null values. When you define constructor, no default
+parameterless constructor is created. Create a parameterless constructor if
+one is needed.
 
-### EXAMPLE: Constructor basic syntax
+### Constructor basic syntax
 
-In this example the Device class is defined with properties and a constructor.
-In order to use this class, the user is required to provide minimum values
-to create the device.
-
+In this example, the Device class is defined with properties and a
+constructor. To use this class, the user is required to provide values for the
+parameters listed in the constructor.
 
 ```powershell
 class Device {
@@ -359,14 +344,13 @@ Microsoft Surface Pro 4 5072641000
 
 ```
 
-### EXAMPLE: Multiple Constructors
+### Example with multiple constructors
 
-In this example the Device class is defined with properties, a default
+In this example, the **Device** class is defined with properties, a default
 constructor, and a constructor to initialize the instance.
 
-The default constructor sets the brand to *Undefined*,
-and leaves model and vendor-sku with null values.
-
+The default constructor sets the **brand** to *Undefined*,
+and leaves **model** and **vendor-sku** with null values.
 
 ```powershell
 class Device {
@@ -397,31 +381,28 @@ $surface
 ```
 
 ```output
-
-Brand     Model         VendorSku
------     -----         ---------
+Brand       Model           VendorSku
+-----       -----           ---------
 Undefined
-Microsoft Surface Pro 4 5072641000
-
+Microsoft   Surface Pro 4   5072641000
 ```
 
 ## HIDDEN ATTRIBUTE
 
-The `hidden` attribute allows to make less visible a property or a method.
-That doesn't mean the property or method isn't accessible to the user,
-or its value protected.
-It is a developer's convenience, to provide class encapsulation; what it makes
-is to hide the members from the `Get-Member` cmdlet.
-Hidden members are not displayed by using tab completion or IntelliSense,
-unless the completion occurs in the class that defines the hidden member.
+The `hidden` attribute makes a property or method less visible. The property
+or method is still accessible to the user and is available in all scopes in
+which the object is available. Hidden members are hidden from the `Get-Member`
+cmdlet and can't be displayed using tab completion or IntelliSense outside of
+the class definition.
 
-### EXAMPLE: Hidden attribute
+### Example using hidden attributes
 
-When a 'rack' is created, the number of slots (for devices) is a fixed value
-that should not be changed at any time; this value is known at creation time.
+When a **Rack** object is created, the number of slots for devices is a
+fixed value that should not be changed at any time. This value is known at
+creation time.
 
 Using the hidden attribute allows the developer to keep the number of slots
-out of sight; so, nobody, inadvertently, changes the size of the rack.
+hidden and prevents unintentional changes the size of the rack.
 
 ```powershell
 class Device {
@@ -464,22 +445,20 @@ Microsoft Surface Pro 4 {$null, $null, $null, $null...}
 
 ```
 
-Notice `Slots` property is not reported in `$r1` output; but, the size was
-changed. Also, the property is available in all scopes the object is
-available.
+Notice **Slots** property isn't shown in `$r1` output. However, the size
+was changed by the constructor.
 
 ## STATIC ATTRIBUTE
 
 The `static` attribute defines a property or a method that exists in the class
-and needs no instance or instantiation.
+and needs no instance.
 
 A static property is always available, independent of class instantiation.
 A static property is shared across all instances of the class.
 A static method is available always.
+All static properties live for the entire session span.
 
-> **NOTE**: All static properties live for the entire session span.
-
-### EXAMPLE: Static attribute and method
+### Example using static attributes and methods
 
 Assume the racks instantiated here exist in your data center.
 So, you would like to keep track of the racks in your code.
@@ -519,32 +498,30 @@ class Rack {
         }
     }
 }
-
-## Testing static property and method exist
-[Rack]::InstalledRacks.Length
-[Rack]::PowerOffRacks()
-
-(1..10) | ForEach-Object {
-  [Rack]::new("Adatum Corporation", "Standard-16",
-    $_.ToString("Std0000"), 16)
-} > $null
-
-## Testing static property and method
-[Rack]::InstalledRacks.Length
-
-[Rack]::InstalledRacks[3]
-
-[Rack]::PowerOffRacks()
 ```
 
-```output
+#### Testing static property and method exist
+
+```
+PS> [Rack]::InstalledRacks.Length
 0
+
+PS> [Rack]::PowerOffRacks()
+
+PS> (1..10) | ForEach-Object {
+>>   [Rack]::new("Adatum Corporation", "Standard-16",
+>>     $_.ToString("Std0000"), 16)
+>> } > $null
+
+PS> [Rack]::InstalledRacks.Length
 10
 
+PS> [Rack]::InstalledRacks[3]
 Brand              Model       AssetId Devices
 -----              -----       ------- -------
 Adatum Corporation Standard-16 Std0004 {$null, $null, $null, $null...}
 
+PS> [Rack]::PowerOffRacks()
 WARNING: Turning off rack: Std0001
 WARNING: Turning off rack: Std0002
 WARNING: Turning off rack: Std0003
@@ -557,20 +534,15 @@ WARNING: Turning off rack: Std0009
 WARNING: Turning off rack: Std0010
 ```
 
-Note: Messages from the different streams might come at different times
-to your screen.
-
-If you run the sample a couple of times, you will notice the number of racks
-keeps increasing.
+Notice that the number of racks increases each time you run this example.
 
 ## PROPERTY VALIDATION ATTRIBUTES
 
-Validation attributes allow to test values given to properties meet defined
-requirements. Validations are triggered at the moment the property assignment
-is invoked, except at moment the class is instantiated. See
-[about_functions_advanced_parameters](about_functions_advanced_parameters.md).
+Validation attributes allow you to test that values given to properties meet
+defined requirements. Validation is triggered the moment that the value is
+assigned. See [about_functions_advanced_parameters](about_functions_advanced_parameters.md).
 
-### EXAMPLE: Validation Attributes
+### Example using validation attributes
 
 ```powershell
 class Device {
@@ -605,20 +577,19 @@ tion
 
 ## INHERITANCE IN POWERSHELL CLASSES
 
-You can extend the functionality of an existing class by creating a new class
-that derives from an existing class. The derived class inherits the properties
-of the base class, and you can add or override methods and properties as
-required.
+You can extend a class by creating a new class that derives from an existing
+class. The derived class inherits the properties of the base class. You can
+add or override methods and properties as required.
 
-PowerShell does not support multiple inheritance,
-meaning that classes cannot inherit from more than one class.
-You can, however, use interfaces for that purpose.
+PowerShell does not support multiple inheritance.
+Classes cannot inherit from more than one class.
+However, you can use interfaces for that purpose.
 
 Inheritance implementation is defined by the `:` operator;
 which means to extend this class or implements these interfaces.
 The derived class should always be leftmost in the class declaration.
 
-### EXAMPLE: SIMPLE INHERITANCE SYNTAX
+### Example using simple inheritance syntax
 
 This example shows the simple PowerShell class inheritance syntax.
 
@@ -626,13 +597,14 @@ This example shows the simple PowerShell class inheritance syntax.
 Class Derived : Base {...}
 ```
 
-This example shows inheritance with interface declaration comeing after the base class.
+This example shows inheritance with an interface declaration coming after the
+base class.
 
 ```powershell
 Class Derived : Base.Interface {...}
 ```
 
-### EXAMPLE: SIMPLE INHERITANCE IN POWERSHELL CLASSES
+### Example of simple inheritance in PowerShell classes
 
 In this example the _Rack_ and _Device_ classes used in the previous examples
 are better defined to: avoid property repetitions, better align common
@@ -761,7 +733,7 @@ Model               : Fbk5040
 
 To invoke a base class constructor from a subclass, add the "base" keyword.
 
-### EXAMPLE: Base class constructor invoked
+### Example using the base class constructor
 
 ```powershell
 class Person {
@@ -794,8 +766,8 @@ $littleone.Age
 
 ## INVOKE BASE CLASS METHODS
 
-You can override existing methods in subclasses. To do this, declare
-methods by using the same name and signature.
+To override existing methods in subclasses, declare methods by using the same
+name and signature.
 
 ```powershell
 class BaseClass
@@ -841,7 +813,27 @@ class ChildClass1 : BaseClass
 
 ## INTERFACES
 
-There is no syntax to declare interfaces in PowerShell.
+The syntax for declaring interfaces is similar to C#.
+You can declare interfaces after base types or immediately after a colon (:)
+when there is no base type specified. Separate all type names with commas.
+
+```powershell
+class MyComparable : system.IComparable
+{
+    [int] CompareTo([object] $obj)
+    {
+        return 0;
+    }
+}
+
+class MyComparableBar : bar, system.IComparable
+{
+    [int] CompareTo([object] $obj)
+    {
+        return 0;
+    }
+}
+```
 
 ## SEE ALSO
 

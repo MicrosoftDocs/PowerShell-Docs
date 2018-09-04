@@ -196,7 +196,7 @@ LinkID TopicTitle
 113207 about_Aliases
 ```
 
-This example shows how to create a custom object in Windows PowerShell by using a CSV file.
+This example shows how to create a custom object in PowerShell by using a CSV file.
 
 The first command uses the Get-Content cmdlet to get the Links.csv file.
 
@@ -206,7 +206,7 @@ The third command uses the Get-Member cmdlet to get the type and members of the 
 
 The output shows that **Import-Csv** returns a collection of custom objects (**PSCustomObject**). In addition to some default properties, the custom objects have "LinkId" and "TopicTitle" note properties.
 
-This command shows that you can use the custom object like you would any object in Windows PowerShell.
+This command shows that you can use the custom object like you would any object in PowerShell.
 
 The command pipes the custom objects in the $A variable to the **Where-Object** cmdlet, which gets only objects with a "TopicTitle" property that includes "alias".
 

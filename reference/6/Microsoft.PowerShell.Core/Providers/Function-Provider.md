@@ -23,12 +23,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834961
 
 ## Short description
 
- Provides access to the functions defined in Windows PowerShell.
+ Provides access to the functions defined in PowerShell.
 
 
 ## Detailed description
 
- The Windows PowerShell **Function** provider lets you get, add, change, clear, and delete the functions and filters in Windows PowerShell.
+ The PowerShell **Function** provider lets you get, add, change, clear, and delete the functions and filters in PowerShell.
 
  A function is a named block of code that performs an action. When you type the function name, the code in the function runs. A filter is a named block of code that establishes conditions for an action. You can type the name of the filter in place of the condition, such as in a [Where-Object](../Where-Object.md) command.
 
@@ -40,7 +40,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834961
 
  The examples in this section show how to manage functions, but the same methods can be used with filters.
 
- The **Function** provider exposes its data store in the `Function:` drive. To work with functions, you can change your location to the `Function:` drive (`set-location Function:`). Or, you can work from another Windows PowerShell drive. To reference a function from another location, use the drive name (`Function:`) in the path.
+ The **Function** provider exposes its data store in the `Function:` drive. To work with functions, you can change your location to the `Function:` drive (`set-location Function:`). Or, you can work from another PowerShell drive. To reference a function from another location, use the drive name (`Function:`) in the path.
 
  The **Function** provider supports all of the cmdlets whose names contain the *Item* noun (the `*-Item` cmdlets), except for [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it supports the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and [Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets. However, it does not support the cmdlets whose names contain the *ItemProperty* noun (the `*-ItemProperty` cmdlets), and it does not support the `-Filter` parameter in any cmdlet.
 
@@ -58,7 +58,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834961
 
 #### Example 1
 
- Changes the current location to the `Function:` drive. You can use this command from any drive in Windows PowerShell. To return to a file system drive, type the drive name. For example, type `set-location c:`.
+ Changes the current location to the `Function:` drive. You can use this command from any drive in PowerShell. To return to a file system drive, type the drive name. For example, type `set-location c:`.
 
 ```powershell
 Set-Location Function:
@@ -70,7 +70,7 @@ Set-Location Function:
 
 #### Example 1
 
- This command gets the list of all the functions in the current session. You can use this command from any Windows PowerShell drive.
+ This command gets the list of all the functions in the current session. You can use this command from any PowerShell drive.
 
 ```powershell
 Get-ChildItem -Path Function:
@@ -113,7 +113,7 @@ PS Function> Get-Item -Path .\c:
 New-Item -Path Function:HKLM: -Value {Set-Location HKLM:}
 ```
 
- You can also create a function by typing it at the Windows PowerShell command line. For example, tpe `Function:HKLM: {set-location HKLM:}`. If you are in the `Function:` drive, you can omit the drive name.
+ You can also create a function by typing it at the PowerShell command line. For example, tpe `Function:HKLM: {set-location HKLM:}`. If you are in the `Function:` drive, you can omit the drive name.
 Because you cannot specify the "Filter" label in [New-Item](../../Microsoft.PowerShell.Management/New-Item.md), filters are labeled as functions, but they operate properly with any label. To create a filter with the "Filter" label, type the filter at the command line. For example, type `filter:Running {$_.Status -eq "Running"}`.
 
 
@@ -225,7 +225,7 @@ Copy-Item -Path Function:prompt -Destination Function:oldPrompt
 
 ## Dynamic parameters
 
- Dynamic parameters are cmdlet parameters that are added by a Windows PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
+ Dynamic parameters are cmdlet parameters that are added by a PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
 
 
 ### `Options` <[System.Management.Automation.ScopedItemOptions](https://msdn.microsoft.com/library/system.management.automation.scopeditemoptions)>

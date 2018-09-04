@@ -209,7 +209,7 @@ You can pipe a session configuration object or a string that contains the name o
 This cmdlet does not return any objects.
 
 ## NOTES
-* To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows operating system, you must start Windows PowerShell by using the Run as administrator option.
+* To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows operating system, you must start PowerShell by using the Run as administrator option.
 
 *
 

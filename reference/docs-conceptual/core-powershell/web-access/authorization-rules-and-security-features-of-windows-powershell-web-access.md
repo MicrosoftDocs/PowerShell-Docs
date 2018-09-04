@@ -242,7 +242,7 @@ or session configurations).
    ```
    Get-PswaAuthorizationRule `
       -RuleName <rule-name> | Remove-PswaAuthorizationRule
-  ```
+   ```
 
 > [!NOTE]
 > You are not prompted to confirm whether you want to delete the specified authorization rule; the

@@ -7,8 +7,6 @@ title:  about_Checkpoint Workflow
 ---
 
 # About Checkpoint-Workflow
-## about_Checkpoint-Workflow
-
 
 ## SHORT DESCRIPTION
 Describes the Checkpoint-Workflow activity, which takes a checkpoint in a workflow.

@@ -150,14 +150,14 @@ To run a command in a disconnected session, use the *InDisconnectedSession* para
 To run a command in a background job, use the *AsJob* parameter.
 
 You can also use **Invoke-Command** on a local computer to evaluate or run a string in a script block as a command.
-Windows PowerShell converts the script block to a command and runs the command immediately in the current scope, instead of just echoing the string at the command line.
+PowerShell converts the script block to a command and runs the command immediately in the current scope, instead of just echoing the string at the command line.
 
 To start an interactive session with a remote computer, use the Enter-PSSession cmdlet.
 To establish a persistent connection to a remote computer, use the **New-PSSession** cmdlet.
 
-Before using **Invoke-Command** to run commands on a remote computer, read about_Remote (http://go.microsoft.com/fwlink/?LinkID=135182).
+Before using `Invoke-Command` to run commands on a remote computer, read [about_Remote](About/about_Remote.md).
 
-Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke commands on remote computers. SSH must be installed on the local computer and the remote computer must be configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShell remote session is that it will work across multiple platforms (Windows, Linux, macOS). For SSH based session you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information. For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
+Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke commands on remote computers. SSH must be installed on the local computer and the remote computer must be configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShell remote session is that it will work across multiple platforms (Windows, Linux, macOS). For SSH based session you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information. For more information about how to set up PowerShell SSH remoting see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## EXAMPLES
 
@@ -181,7 +181,7 @@ This command runs a Get-Culture command on the Server01 remote computer.
 It uses the *ComputerName* parameter to specify the computer name and the *Credential* parameter to run the command in the security context of Domain01\User01, a user who has permission to run commands.
 It uses the *ScriptBlock* parameter to specify the command to be run on the remote computer.
 
-In response, Windows PowerShell displays a dialog box that requests the password and an authentication method for the User01 account.
+In response, PowerShell displays a dialog box that requests the password and an authentication method for the User01 account.
 It then runs the command on the Server01 computer and returns the result.
 
 ### Example 3: Run a command in a persistent connection
@@ -199,7 +199,7 @@ Then, it saves the session in the $s variable.
 The second command uses the **Invoke-Command** cmdlet to run the Get-Culture command on Server02.
 It uses the *Session* parameter to specify the session saved in the $s variable.
 
-In response, Windows PowerShell runs the command in the session on the Server02 computer.
+In response, PowerShell runs the command in the session on the Server02 computer.
 
 ### Example 4: Use a session to run a series of commands that share data
 ```
@@ -220,7 +220,7 @@ The first command uses the Get-Process cmdlet to get the PowerShell process on t
 The second command gets the value of the **VirtualMemorySize** property of the PowerShell process.
 
 The first command succeeds.
-But the second command fails, because when you use the *ComputerName* parameter, Windows PowerShell creates a connection just to run the command.
+But the second command fails, because when you use the *ComputerName* parameter, PowerShell creates a connection just to run the command.
 Then, it closes the connection when the command is completed.
 The $p variable was created in one connection, but it does not exist in the connection created for the second command.
 
@@ -268,13 +268,13 @@ In this example, the command in the script block gets the events in the Windows 
 PS C:\> $version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {(Get-Host).Version}
 ```
 
-This command gets the version of the Windows PowerShell host program running on 200 remote computers.
+This command gets the version of the PowerShell host program running on 200 remote computers.
 
 Because only one command is run, you do not have to create persistent connections to each of the computers.
 Instead, the command uses the *ComputerName* parameter to indicate the computers.
 
 The command uses the **Invoke-Command** cmdlet to run a Get-Host command.
-It uses dot notation to get the **Version** property of the Windows PowerShell host.
+It uses dot notation to get the **Version** property of the PowerShell host.
 
 To specify the computers, it uses the Get-Content cmdlet to get the contents of the Machine.txt file, a file of computer names.
 
@@ -342,7 +342,7 @@ This example shows how to include the values of local variables in a command run
 The command uses the Using scope modifier to identify a local variable in a remote command.
 By default, all variables are assumed to be defined in the remote session.
 The Using scope modifier was introduced in Windows PowerShell 3.0.
-For more information about the Using scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
+For more information about the Using scope modifier, see [about_Remote_Variables](About/about_Remote_Variables.md).
 
 The first command stores the name of the Microsoft-Windows-Forwarding/Operational event log in the $MWFO_Log variable.
 
@@ -396,7 +396,7 @@ PS C:\> Invoke-Command -ConfigurationName Microsoft.Exchange -ConnectionUri http
 
 This example shows how to run a command on a remote computer that is identified by a URI.
 This particular example runs a **Set-Mailbox** command on a remote Exchange server.
-The backtick (\`) in the command is the Windows PowerShell continuation character.
+The backtick (\`) in the command is the PowerShell continuation character.
 
 The first command uses the Get-Credential cmdlet to store Windows Live ID credentials in the $LiveCred variable.
 A credentials dialog box prompts the user to enter Windows Live ID credentials.
@@ -425,7 +425,7 @@ The second command uses the **Invoke-Command** cmdlet to run a **Get-Mailbox** c
 The command uses the *AllowRedirection* parameter to provide explicit permission to redirect the connection to an alternate endpoint.
 It also uses the *SessionOption* parameter to specify the session object in the $max variable.
 
-As a result, if the remote computer specified by *ConnectionURI* returns a redirection message, Windows PowerShell redirects the connection, but if the new destination returns another redirection message, the redirection count value of 1 is exceeded, and *Invoke-Command* returns a non-terminating error.
+As a result, if the remote computer specified by *ConnectionURI* returns a redirection message, PowerShell redirects the connection, but if the new destination returns another redirection message, the redirection count value of 1 is exceeded, and *Invoke-Command* returns a non-terminating error.
 
 ### Example 14: Use a session option
 ```
@@ -517,7 +517,7 @@ This example shows how to run a script file on multiple remote computers using S
 Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 
 When you use the *ConnectionURI* parameter, the remote destination can return an instruction to redirect to a different URI.
-By default, Windows PowerShell does not redirect connections, but you can use this parameter to allow it to redirect the connection.
+By default, PowerShell does not redirect connections, but you can use this parameter to allow it to redirect the connection.
 
 You can also limit the number of times the connection is redirected by changing the **MaximumConnectionRedirectionCount** session option value.
 Use the *MaximumRedirection* parameter of the New-PSSessionOption cmdlet or set the **MaximumConnectionRedirectionCount** property of the $PSSessionOption preference variable.
@@ -599,7 +599,7 @@ To get the job results, use the Receive-Job cmdlet.
 The *AsJob* parameter resembles using the **Invoke-Command** cmdlet to run a Start-Job command remotely.
 However, with *AsJob*, the job is created on the local computer, even though the job runs on a remote computer, and the results of the remote job are automatically returned to the local computer.
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```yaml
 Type: SwitchParameter
@@ -655,7 +655,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
+To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
 Type: String
@@ -673,7 +673,7 @@ Accept wildcard characters: False
 Specifies the computers on which the command runs.
 The default is the local computer.
 
-When you use the *ComputerName* parameter, Windows PowerShell creates a temporary connection that is used only to run the specified command and is then closed.
+When you use the *ComputerName* parameter, PowerShell creates a temporary connection that is used only to run the specified command and is then closed.
 If you need a persistent connection, use the *Session* parameter.
 
 Type the NETBIOS name, IP address, or fully qualified domain name of one or more computers in a comma-separated list.
@@ -683,7 +683,7 @@ To use an IP address in the value of *ComputerName*, the command must include th
 Also, the computer must be configured for HTTPS transport or the IP address of the remote computer must be included in the WinRM TrustedHosts list on the local computer.
 For instructions for adding a computer name to the TrustedHosts list, see "How to Add a Computer to the Trusted Host List" in about_Remote_Troubleshooting.
 
-On Windows Vista and later versions of the Windows operating system, to include the local computer in the value of *ComputerName*, you must open Windows PowerShell by using the Run as administrator option.
+On Windows Vista and later versions of the Windows operating system, to include the local computer in the value of *ComputerName*, you must open PowerShell by using the Run as administrator option.
 
 ```yaml
 Type: String[]
@@ -738,9 +738,9 @@ If you do not specify a connection URI, you can use the *UseSSL* and *Port* para
 
 Valid values for the **Transport** segment of the URI are HTTP and HTTPS.
 If you specify a connection URI with a Transport segment, but do not specify a port, the session is created with standards ports: 80 for HTTP and 443 for HTTPS.
-To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
+To use the default ports for PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
 
-If the destination computer redirects the connection to a different URI, Windows PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
+If the destination computer redirects the connection to a different URI, PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
 
 ```yaml
 Type: Uri[]
@@ -826,7 +826,7 @@ Enter the path and file name of the script, or pipe a script path to **Invoke-Co
 The script must reside on the local computer or in a directory that the local computer can access.
 Use *ArgumentList* to specify the values of parameters in the script.
 
-When you use this parameter, Windows PowerShell converts the contents of the specified script file to a script block, transmits the script block to the remote computer, and runs it on the remote computer.
+When you use this parameter, PowerShell converts the contents of the specified script file to a script block, transmits the script block to the remote computer, and runs it on the remote computer.
 
 ```yaml
 Type: String
@@ -919,7 +919,7 @@ By default, jobs are named Job\<n\>, where \<n\> is an ordinal number.
 
 If you use the *JobName* parameter in a command, the command is run as a job, and **Invoke-Command** returns a job object, even if you do not include *AsJob* in the command.
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](About/about_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md).
 
 ```yaml
 Type: String
@@ -959,7 +959,7 @@ To connect to a remote computer, the remote computer must be listening on the po
 The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.
 
 Before using an alternate port, configure the WinRM listener on the remote computer to listen at that port.
-To configure the listener, type the following two commands at the Windows PowerShell prompt:
+To configure the listener, type the following two commands at the PowerShell prompt:
 
 `Remove-Item -Path WSMan:\Localhost\listener\listener* -Recurse`
 
@@ -1005,7 +1005,7 @@ Accept wildcard characters: False
 Specifies an array of sessions in which this cmdlet runs the command.
 Enter a variable that contains **PSSession** objects or a command that creates or gets the **PSSession** objects, such as a **New-PSSession** or **Get-PSSession** command.
 
-When you create a **PSSession**, Windows PowerShell establishes a persistent connection to the remote computer.
+When you create a **PSSession**, PowerShell establishes a persistent connection to the remote computer.
 Use a **PSSession** to run a series of related commands that share data.
 To run a single command or a series of unrelated commands, use the *ComputerName* parameter.
 For more information, see about_PSSessions.
@@ -1053,7 +1053,7 @@ However, they do not take precedence over maximum values, quotas or limits set i
 
 For a description of the session options that includes the default values, see **New-PSSessionOption**.
 For information about the $PSSessionOption preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: PSSessionOption
@@ -1089,7 +1089,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network.
+WS-Management encrypts all PowerShell content transmitted over the network.
 The *UseSSL* parameter is an additional protection that sends the data across an HTTPS, instead of HTTP.
 
 If you use this parameter, but SSL is not available on the port that is used for the command, the command fails.
@@ -1266,7 +1266,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -1282,8 +1282,8 @@ If you specify the *InDisconnectedSession* parameter, **Invoke-Command** returns
 Otherwise, it returns the output of the invoked command, which is the value of the *ScriptBlock* parameter.
 
 ## NOTES
-* On Windows Vista, and later versions of the Windows operating system, to use the *ComputerName* parameter of **Invoke-Command** to run a command on the local computer, you must open Windows PowerShell by using the Run as administrator option.
-* When you run commands on multiple computers, Windows PowerShell connects to the computers in the order in which they appear in the list. However, the command output is displayed in the order that it is received from the remote computers, which might be different.
+* On Windows Vista, and later versions of the Windows operating system, to use the *ComputerName* parameter of **Invoke-Command** to run a command on the local computer, you must open PowerShell by using the Run as administrator option.
+* When you run commands on multiple computers, PowerShell connects to the computers in the order in which they appear in the list. However, the command output is displayed in the order that it is received from the remote computers, which might be different.
 * Errors that result from the command that **Invoke-Command** runs are included in the command results. Errors that would be terminating errors in a local command are treated as non-terminating errors in a remote command. This strategy makes sure that terminating errors on one computer do not close the command on all computers on which it is run. This practice is used even when a remote command is run on a single computer.
 * If the remote computer is not in a domain that the local computer trusts, the computer might not be able to authenticate the credentials of the user. To add the remote computer to the list of trusted hosts in WS-Management, use the following command in the WSMAN provider, where \<Remote-Computer-Name\> is the name of the remote computer:
 
@@ -1291,7 +1291,7 @@ Otherwise, it returns the output of the invoked command, which is the value of t
 
 * In Windows PowerShell 2.0, you cannot use the Select-Object cmdlet to select the **PSComputerName** property of the object that **Invoke-Command** returns. Instead, to display the value of the **PSComputerName** property, use the dot method to get the **PSComputerName** property value ($result.PSComputerName), use a **Format** cmdlet, such as the Format-Table cmdlet, to display the value of the **PSComputerName** property, or use a Select-Object command where the value of the property parameter is a calculated property that has a label other than PSComputerName.
 
-  This limitation does not apply to Windows PowerShell 3.0 or later versions of Windows PowerShell.
+  This limitation does not apply to Windows PowerShell 3.0 or later versions of Windows PowerShell or PowerShell Core.
 
 * When you disconnect a **PSSession**, such as by using *InDisconnectedSession*, the session state is Disconnected and the availability is None.
 
@@ -1308,7 +1308,7 @@ A value of Busy indicates that you cannot connect to the PSSession because it is
 
   For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
-* The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0. They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported. For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
+* The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0. They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported. For more information about how to set up PowerShell SSH remoting see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
 

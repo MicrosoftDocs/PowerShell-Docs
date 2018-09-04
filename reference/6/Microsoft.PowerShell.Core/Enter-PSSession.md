@@ -104,7 +104,7 @@ The first command uses the **Enter-PSSession** cmdlet to start an interactive se
 PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\>
 
-The second command gets the Windows PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
+The second command gets the PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
 [Server01]: PS C:\> Get-Process Powershell > C:\ps-test\Process.txt
 
 The third command uses the **Exit** keyword to end the interactive session and close the connection.
@@ -127,7 +127,7 @@ PS C:\> Enter-PSSession -Session $s
 [Server01]: PS C:\>
 ```
 
-These commands use the *Session* parameter of **Enter-PSSession** to run the interactive session in an existing Windows PowerShell session (**PSSession**).
+These commands use the *Session* parameter of **Enter-PSSession** to run the interactive session in an existing PowerShell session (**PSSession**).
 
 ### Example 4: Start an interactive session and specify the Port and Credential parameters
 ```
@@ -173,7 +173,7 @@ Allows redirection of this connection to an alternate Uniform Resource Identifie
 By default, redirection is not allowed.
 
 When you use the *ConnectionURI* parameter, the remote destination can return an instruction to redirect to a different URI.
-By default, Windows PowerShell does not redirect connections, but you can use this parameter to allow it to redirect the connection.
+By default, PowerShell does not redirect connections, but you can use this parameter to allow it to redirect the connection.
 
 You can also limit the number of times the connection is redirected by changing the **MaximumConnectionRedirectionCount** session option value.
 Use the *MaximumRedirection* parameter of the New-PSSessionOption cmdlet or set the **MaximumConnectionRedirectionCount** property of the $PSSessionOption preference variable.
@@ -257,7 +257,7 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate, use the Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
+To get a certificate, use the Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
 Type: String
@@ -284,7 +284,7 @@ To use an IP address in the value of the *ComputerName* parameter, the command m
 Also, the computer must be configured for HTTPS transport or the IP address of the remote computer must be included in the WinRM TrustedHosts list on the local computer.
 For instructions for adding a computer name to the TrustedHosts list, see "How to Add a Computer to the Trusted Host List" in about_Remote_Troubleshooting.
 
-Note: In Windows Vista and later versions of the Windows operating system, to include the local computer in the value of the *ComputerName* parameter, you must start Windows PowerShell with the Run as administrator option.
+Note: In Windows Vista and later versions of the Windows operating system, to include the local computer in the value of the *ComputerName* parameter, you must start PowerShell with the Run as administrator option.
 
 ```yaml
 Type: String
@@ -338,9 +338,9 @@ If you do not specify a *ConnectionURI*, you can use the *UseSSL*, *ComputerName
 
 Valid values for the Transport segment of the URI are HTTP and HTTPS.
 If you specify a connection URI with a Transport segment, but do not specify a port, the session is created by using standards ports: 80 for HTTP and 443 for HTTPS.
-To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
+To use the default ports for PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
 
-If the destination computer redirects the connection to a different URI, Windows PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
+If the destination computer redirects the connection to a different URI, PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
 
 ```yaml
 Type: Uri
@@ -588,7 +588,7 @@ However, they do not take precedence over maximum values, quotas or limits set i
 
 For a description of the session options, including the default values, see **New-PSSessionOption**.
 For information about the $PSSessionOption preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: PSSessionOption

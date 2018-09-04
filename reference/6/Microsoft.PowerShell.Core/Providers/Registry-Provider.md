@@ -23,12 +23,12 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821468
 
 ## Short description
 
- Provides access to the registry keys, entries, and values in Windows PowerShell.
+ Provides access to the registry keys, entries, and values in PowerShell.
 
 
 ## Detailed description
 
- The Windows PowerShell **Registry** provider lets you get, add, change, clear, and delete registry keys, entries, and values in Windows PowerShell.
+ The PowerShell **Registry** provider lets you get, add, change, clear, and delete registry keys, entries, and values in PowerShell.
 
  Registry keys are represented as instances of the [Microsoft.Win32.RegistryKey](https://docs.microsoft.com/en-us/dotnet/api/microsoft.win32.registrykey) class. Registry entries are represented as instances of the [PSCustomObject](https://msdn.microsoft.com/library/system.management.automation.pscustomobject) class.
 
@@ -254,7 +254,7 @@ Set-Item -Path hkcu:\environment\testnew -Value "another default value"
 
 ## Dynamic parameters
 
- Dynamic parameters are cmdlet parameters that are added by a Windows PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
+ Dynamic parameters are cmdlet parameters that are added by a PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
 
 
 ### `Type` <[Microsoft.Win32.RegistryValueKind](https://msdn.microsoft.com/library/microsoft.win32.registryvaluekind)>

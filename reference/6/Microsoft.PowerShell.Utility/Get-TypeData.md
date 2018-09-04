@@ -25,9 +25,9 @@ This includes type data that was added to the session by Types.ps1xml file and d
 
 You can use the extended type data that **Get-TypeData** returns to examine the type data in the session and send it to the **Update-TypeData** and **Remove-TypeData** cmdlets.
 
-Extended type data adds properties and methods to objects in Windows PowerShell.
+Extended type data adds properties and methods to objects in PowerShell.
 You can use the added properties and methods in the same ways that you would use the properties and methods that are defined in the object type.
-However, when writing scripts, be aware that the added properties and methods might not be present in every Windows PowerShell session.
+However, when writing scripts, be aware that the added properties and methods might not be present in every PowerShell session.
 
 For more information about Types.ps1xml files, see about_Types.ps1xml (http://go.microsoft.com/fwlink/?LinkID=113274).
 For more information about dynamic type data that the **Update-TypeData** cmdlet adds, see Update-TypeData.
@@ -83,7 +83,7 @@ else
 }
 ```
 
-This command gets the script block that defines the **DateTime** property of **System.DateTime** objects in Windows PowerShell.
+This command gets the script block that defines the **DateTime** property of **System.DateTime** objects in PowerShell.
 
 The command uses the **Get-TypeData** cmdlet to get the extended type data for the **System.DataTime** type.
 The command gets the Members property of the **TypeData** object.
@@ -93,7 +93,7 @@ Each key in the Members hash table is a property or method name and each value i
 
 The command gets the **DateTime** key in Members and its GetScriptBlock property value.
 
-The output shows the script block that creates the value of the DateTime property of every **System.DateTime** object in Windows PowerShell.
+The output shows the script block that creates the value of the DateTime property of every **System.DateTime** object in PowerShell.
 
 ### Example 5: Find the file that adds extended data types to the session
 ```
@@ -111,7 +111,7 @@ C:\WINDOWS\System32\WindowsPowerShell\v1.0\types.ps1xml:433:
 ```
 
 This command finds the Types.ps1xml file that added extended type data for the **EventLogEntry** type to the session.
-This command uses the Get-ChildItem cmdlet (alias = "dir") to perform a recursive search for Types.ps1xml files in the Windows PowerShell installation directory ($pshome) and its subdirectories.
+This command uses the Get-ChildItem cmdlet (alias = "dir") to perform a recursive search for Types.ps1xml files in the PowerShell installation directory ($pshome) and its subdirectories.
 The command sends the Types.ps1xml files to the Select-String cmdlet, which does a full-text search for the "**EventLogEntry**" type name in the files and returns the matches.
 
 ## PARAMETERS

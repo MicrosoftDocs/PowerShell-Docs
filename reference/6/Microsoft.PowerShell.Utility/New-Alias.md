@@ -21,8 +21,8 @@ New-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <S
 ```
 
 ## DESCRIPTION
-The **New-Alias** cmdlet creates a new alias in the current Windows PowerShell session.
-Aliases created by using **New-Alias** are not saved after you exit the session or close Windows PowerShell.
+The **New-Alias** cmdlet creates a new alias in the current PowerShell session.
+Aliases created by using **New-Alias** are not saved after you exit the session or close PowerShell.
 You can use the Export-Alias cmdlet to save your alias information to a file.
 You can later use **Import-Alias** to retrieve that saved alias information.
 

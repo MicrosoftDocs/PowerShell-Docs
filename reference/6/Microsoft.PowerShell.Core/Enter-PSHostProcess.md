@@ -38,10 +38,10 @@ Enter-PSHostProcess [-HostProcessInfo] <PSHostProcessInfo> [[-AppDomainName] <St
 ## DESCRIPTION
 The **Enter-PSHostProcess** cmdlet connects to and enters into an interactive session with a local process.
 
-Instead of creating a new process to host Windows PowerShell and run a remote session, the remote, interactive session is run in an existing process that is already running Windows PowerShell.
+Instead of creating a new process to host PowerShell and run a remote session, the remote, interactive session is run in an existing process that is already running PowerShell.
 When you are interacting with a remote session on a specified process, you can enumerate running runspaces, and then select a runspace to debug by running either Debug-Runspace or Enable-RunspaceDebug.
 
-The process that you want to enter must be hosting Windows PowerShell (System.Management.Automation.dll).
+The process that you want to enter must be hosting PowerShell (System.Management.Automation.dll).
 You must be either a member of the Administrators group on the computer on which the process is found, or you must be the user who is running the script that started the process.
 
 After you have selected a runspace to debug, a remote debug session is opened for the runspace if it is either currently running a command or is stopped in the debugger.
@@ -50,9 +50,9 @@ You can then debug the runspace script in the same way you would debug other rem
 Detach from a debugging session, and then the interactive session with the process, by running exit twice, or stop script execution by running the existing debugger quit command.
 
 If you specify a process by using the *Name* parameter, and there is only one process found with the specified name, the process is entered.
-If more than one process with the specified name is found, Windows PowerShell returns an error, and lists all processes found with the specified name.
+If more than one process with the specified name is found, PowerShell returns an error, and lists all processes found with the specified name.
 
-To support attaching to processes on remote computers, the **Enter-PSHostProcess** cmdlet is enabled in a specified remote computer, so that you can attach to a local process within a remote Windows PowerShell session.
+To support attaching to processes on remote computers, the **Enter-PSHostProcess** cmdlet is enabled in a specified remote computer, so that you can attach to a local process within a remote PowerShell session.
 
 ## EXAMPLES
 
@@ -191,10 +191,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-* **Enter-PSHostProcess** cannot enter the process of the Windows PowerShell session in which you are running the command. You can, however, enter the process of another Windows PowerShell session, or a Windows PowerShell ISE session that is running at the same time as the session in which you are running **Enter-PSHostProcess**.
+* **Enter-PSHostProcess** cannot enter the process of the PowerShell session in which you are running the command. You can, however, enter the process of another PowerShell session, or a Windows PowerShell ISE session that is running at the same time as the session in which you are running **Enter-PSHostProcess**.
 
-  **Enter-PSHostProcess** can enter only those processes that are hosting Windows PowerShell.
-That is, they have loaded the Windows PowerShell engine.
+  **Enter-PSHostProcess** can enter only those processes that are hosting PowerShell.
+That is, they have loaded the PowerShell engine.
 
   To exit a process from within the process, type exit, and then press Enter.
 

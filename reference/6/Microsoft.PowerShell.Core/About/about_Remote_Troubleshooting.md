@@ -10,15 +10,15 @@ title:  about_Remote_Troubleshooting
 
 ## SHORT DESCRIPTION
 
-Describes how to troubleshoot remote operations in Windows PowerShell.
+Describes how to troubleshoot remote operations in PowerShell.
 
 ## LONG DESCRIPTION
 
 This section describes some of the problems that you might encounter when
-using the remoting features of Windows PowerShell that are based on
+using the remoting features of PowerShell that are based on
 WS-Management technology and it suggests solutions to these problems.
 
-Before using Windows PowerShell remoting, see about_Remote and
+Before using PowerShell remoting, see about_Remote and
 about_Remote_Requirements for guidance on configuration and basic use Also,
 the Help topics for each of the remoting cmdlets, particularly the parameter
 descriptions, have useful information that is designed to help you avoid
@@ -26,7 +26,7 @@ problems.
 
 NOTE: To view or change settings for the local computer in the WSMan: drive,
 including changes to the session configurations, trusted hosts, ports, or
-listeners, start Windows PowerShell with the "Run as administrator" option.
+listeners, start PowerShell with the "Run as administrator" option.
 
 ## TROUBLESHOOTING PERMISSION AND AUTHENTICATION ISSUES
 
@@ -68,7 +68,7 @@ WS-Management service is running on the remote host and configured to
 listen for requests on the correct port and HTTP URL.
 
 No configuration is required to enable a computer to send remote
-commands. However, to receive remote commands, Windows PowerShell remoting
+commands. However, to receive remote commands, PowerShell remoting
 must be enabled on the computer. Enabling includes starting the WinRM
 service, setting the startup type for the WinRM service to Automatic,
 creating listeners for HTTP and HTTPS connections, and creating default
@@ -103,7 +103,7 @@ ERROR: The connection to the remote host was refused. Verify that the
 WS-Management service is running on the remote host and configured to
 listen for requests on the correct port and HTTP URL.
 
-To enable a single computer to receive remote Windows PowerShell commands
+To enable a single computer to receive remote PowerShell commands
 and accept connections, use the Enable-PSRemoting cmdlet.
 
 To enable remoting for multiple computers in an enterprise, you can use the
@@ -200,7 +200,7 @@ the Windows Remote Management service.
 
 ERROR:  ACCESS IS DENIED
 
-Windows PowerShell remoting depends upon the Windows Remote Management
+PowerShell remoting depends upon the Windows Remote Management
 (WinRM) service. The service must be running to support remote commands.
 
 On server versions of Windows, the startup type of the Windows Remote
@@ -315,7 +315,7 @@ configuration on the local computer.
 Set-PSSessionConfiguration Microsoft.PowerShell -ShowSecurityDescriptorUI
 ```
 
-For more information, see about_Session_Configurations.
+For more information, see [about_Session_Configurations](about_Session_Configurations.md).
 
 ### HOW TO ENABLE REMOTING FOR ADMINISTRATORS IN OTHER DOMAINS
 
@@ -529,9 +529,9 @@ ERROR: The client cannot connect to the destination specified in the
 request. Verify that the service on the destination is running and is
 accepting requests.
 
-Because Windows PowerShell remoting uses the HTTP protocol, it is affected
+Because PowerShell remoting uses the HTTP protocol, it is affected
 by HTTP proxy settings. In enterprises that have proxy servers, users
-cannot access a Windows PowerShell remote computer directly.
+cannot access a PowerShell remote computer directly.
 
 To resolve this problem, use proxy setting options in your remote command.
 The following settings are available:
@@ -569,9 +569,9 @@ the option object that New-PSSessionOption creates in the value of the
 $PSSessionOption preference variable. For more information about the
 $PSSessionOption preference variable, see about_Preference_Variables.
 
-To set these options for all remote commands all Windows PowerShell sessions
+To set these options for all remote commands all PowerShell sessions
 on the local computer, add the $PSSessionOption preference variable to your
-Windows PowerShell profile. For more information about Windows PowerShell
+PowerShell profile. For more information about PowerShell
 profiles, see about_Profiles.
 
 ### HOW TO DETECT A 32-BIT SESSION ON A 64-BIT COMPUTER
@@ -602,8 +602,7 @@ invoke-command -session $s {$env:PROCESSOR_ARCHITECTURE}
 x86
 ```
 
-For more information about session configurations, see
-about_session_configurations.
+For more information about session configurations, see [about_Session_Configurations](about_Session_Configurations.md).
 
 ## TROUBLESHOOTING POLICY AND PREFERENCE ISSUES
 
@@ -630,7 +629,7 @@ process.
 
 For example, the following command starts a process with the RemoteSigned
 execution policy. The execution policy change affects only the current
-process and does not change the Windows PowerShell ExecutionPolicy registry
+process and does not change the PowerShell ExecutionPolicy registry
 setting.
 
 ```powershell
@@ -674,7 +673,7 @@ The following quotas are available in the basic configuration.
   MaximumReceivedObjectSizeMB parameters of the Register-PSSessionConfiguration
   cmdlet.
 
-When quotas conflict with a command, Windows PowerShell generates an error.
+When quotas conflict with a command, PowerShell generates an error.
 
 To resolve the error, change the remote command to comply with the quota.
 Or, determine the source of the quota, and then increase the quota to allow
@@ -702,7 +701,7 @@ the time specified in OperationTimeout.
 
 You can use timeouts to protect the local computer and the remote computer
 from excessive resource use, both accidental and malicious. When timeouts
-are set on both the local and remote computer, Windows PowerShell uses the
+are set on both the local and remote computer, PowerShell uses the
 shortest timeout settings.
 
 The following timeouts are available in the basic configuration.
@@ -746,13 +745,13 @@ New-PSSessionOption.
 ## TROUBLESHOOTING UNRESPONSIVE BEHAVIOR
 
 This section discusses remoting problems that prevent a command from completing
-and prevent or delay the return of the Windows PowerShell prompt.
+and prevent or delay the return of the PowerShell prompt.
 
 ### HOW TO INTERRUPT A COMMAND
 
 Some native Windows programs, such as programs with a user interface, console
 applications that prompt for input, and console applications that use the
-Win32 console API, do not work correctly in the Windows PowerShell remote host.
+Win32 console API, do not work correctly in the PowerShell remote host.
 
 When you use these programs, you might see unexpected behavior, such as no
 output, partial output, or a remote command that does not complete.
@@ -772,7 +771,7 @@ WinRM operations are in progress.
 To resolve this issue, verify that the WinRM service is running and try
 the command again.
 
-1. Start Windows PowerShell with the "Run as administrator" option.
+1. Start PowerShell with the "Run as administrator" option.
 2. Run the following command:
 
    Start-Service WinRM

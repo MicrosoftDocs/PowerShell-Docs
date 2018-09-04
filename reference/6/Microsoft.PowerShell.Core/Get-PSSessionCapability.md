@@ -30,7 +30,7 @@ The **Get-PSSessionCapability** cmdlet reduces complexity when auditing these en
 By default, the **Get-PSSessionCapability** cmdlet returns a list of commands the specified user can run in the specified endpoint.
 This is equivalent to the user running **Get-Command** in the specified endpoint.
 When run with the *Full* parameter, this cmdlet returns an **InitialSessionState** object.
-This object contains details about the Windows PowerShell runspace the specified user would interact with for the specified endpoint.
+This object contains details about the PowerShell runspace the specified user would interact with for the specified endpoint.
 It includes information such as Language Mode, Execution Policy, and Environmental Variables.
 
 ## EXAMPLES

@@ -7,9 +7,6 @@ title:  about_Scheduled_Jobs_Basics
 ---
 
 # About Scheduled Jobs Basics
-## about_Scheduled_Jobs_Basics
-
-
 
 # SHORT DESCRIPTION
 

@@ -71,7 +71,7 @@ PS C:\> Update-Help
 
 This command updates help for all installed modules that support Updatable Help in the language specified by the UI culture that is set for Windows.
 
-To run this command, start Windows PowerShell by using the Run as administrator option (`Start-Process PowerShell -Verb RunAs`).
+To run this command, start PowerShell by using the Run as administrator option (`Start-Process PowerShell -Verb RunAs`).
 
 ### Example 2: Update help for specified modules
 ```
@@ -80,7 +80,7 @@ PS C:\> Update-Help -Module ServerManager, Microsoft.PowerShell*
 
 This command updates help only for the ServerManager module and for modules that have names that begin with Microsoft.PowerShell.
 
-Because these modules are in the $pshome\Modules folder, to run this command, start Windows PowerShell by using the Run as administrator option.
+Because these modules are in the $pshome\Modules folder, to run this command, start PowerShell by using the Run as administrator option.
 
 ### Example 3: Update help in different languages
 ```
@@ -108,8 +108,8 @@ The command uses the Register-ScheduledJob cmdlet to create a scheduled job that
 The command uses the *Credential* parameter to run **Update-Help** by using the credentials of a member of the Administrators group on the computer.
 The value of the *Trigger* parameter is a New-JobTrigger command that creates a job trigger that starts the job every day at 3:00 AM.
 
-To run the **Register-ScheduledJob** command, start Windows PowerShell by using the Run as administrator option.
-When you run the command, Windows PowerShell prompts you for the password of the user specified in the value of the **Credential** parameter.
+To run the **Register-ScheduledJob** command, start PowerShell by using the Run as administrator option.
+When you run the command, PowerShell prompts you for the password of the user specified in the value of the **Credential** parameter.
 The credentials are stored with the scheduled job.
 You are not prompted when the job runs.
 
@@ -129,7 +129,7 @@ These commands download updated help files for system modules from the Internet 
 Then the commands install the updated help files from the file share on multiple computers.
 You can use a strategy such as the one shown here to update the help files on many computers, even those that are behind firewalls or are not connected to the Internet.
 
-All of the commands in this example were run in a Windows PowerShell session that was started by using the Run as administrator option.
+All of the commands in this example were run in a PowerShell session that was started by using the Run as administrator option.
 
 ### Example 6: Get a List of Updated Help Files
 ```
@@ -245,7 +245,7 @@ Indicates that this cmdlet does not follow the once-per-day limitation, skips ve
 
 Without this parameter, **Update-Help** runs only once in each 24-hour period, downloads are limited to 1 GB of uncompressed content per module and help files are installed only when they are newer than the files on the computer.
 
-The once-per-day limit protects the servers that host the help files and makes it practical for you to add an **Update-Help** command to your Windows PowerShell profile without incurring the resource cost of repeated connections or downloads.
+The once-per-day limit protects the servers that host the help files and makes it practical for you to add an **Update-Help** command to your PowerShell profile without incurring the resource cost of repeated connections or downloads.
 
 To update help for a module in multiple UI cultures without the *Force* parameter, include all UI cultures in the same command, such as: `Update-Help -Module PSScheduledJobs -UICulture en-US, fr-FR, pt-BR`
 
@@ -290,7 +290,7 @@ You can also pipe a directory object, such as one from the Get-Item or Get-Child
 Unlike the value of *SourcePath*, the value of *LiteralPath* is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -448,9 +448,9 @@ You can pipe a module object from the Get-Module cmdlet to this cmdlet.
 This cmdlet does not generate any output.
 
 ## NOTES
-* To update help for the Windows PowerShell Core modules, which contain the commands that are installed with Windows PowerShell, or any module in the $pshome\Modules folder, start Windows PowerShell by using the Run as administrator option.
+* To update help for the PowerShell Core modules, which contain the commands that are installed with PowerShell, or any module in the $pshome\Modules folder, start PowerShell by using the Run as administrator option.
 
-  Only members of the Administrators group on the computer can update help for the for the Windows PowerShell Core modules, the commands that are installed together with Windows PowerShell, and for modules in the $pshome\Modules folder.
+  Only members of the Administrators group on the computer can update help for the for the PowerShell Core modules, the commands that are installed together with PowerShell, and for modules in the $pshome\Modules folder.
 If you do not have permission to update help files, you might be able to read the help topics online.
 To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-name\> -Online `.
 

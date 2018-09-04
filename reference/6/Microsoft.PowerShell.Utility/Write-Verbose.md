@@ -20,7 +20,7 @@ Write-Verbose [-Message] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Write-Verbose** cmdlet writes text to the verbose message stream in Windows PowerShell.
+The **Write-Verbose** cmdlet writes text to the verbose message stream in PowerShell.
 Typically, the verbose message stream is used to deliver information about command processing that is used for debugging a command.
 
 By default, the verbose message stream is not displayed, but you can display it by changing the value of the **$VerbosePreference** variable or using the **Verbose** common parameter in any command.
@@ -85,7 +85,7 @@ You can pipe a string that contains the message to **Write-Verbose**.
 
 ## NOTES
 * Verbose messages are returned only when the command uses the **Verbose** common parameter. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
-* In Windows PowerShell background jobs and remote commands, the **$VerbosePreference** variable in the job session and remote session determine whether the verbose message is displayed by default. For more information about the **$VerbosePreference** variable, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+* In PowerShell background jobs and remote commands, the **$VerbosePreference** variable in the job session and remote session determine whether the verbose message is displayed by default. For more information about the **$VerbosePreference** variable, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 ## RELATED LINKS
 

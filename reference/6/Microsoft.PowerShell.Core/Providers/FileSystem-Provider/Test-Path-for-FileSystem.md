@@ -81,7 +81,7 @@ C:\PS>Test-Path -Path $profile -IsValid
 
 Description
 -----------
-These commands test the path to the Windows PowerShell profile.
+These commands test the path to the PowerShell profile.
 
 The first command determines whether all elements in the path exist. The second command determines whether the syntax of the path is correct. In this case, the path is FALSE, but the syntax is correct (TRUE). These commands use $profile, the automatic variable that points to the location for the profile, even if the profile does not exist.
 
@@ -113,7 +113,7 @@ C:\PS>Test-Path -Path $profile -PathType Leaf
 
 Description
 -----------
-This command tells whether the path stored in the $profile variable leads to a file. In this case, because the Windows PowerShell profile is a .ps1 file, the cmdlet returns TRUE.
+This command tells whether the path stored in the $profile variable leads to a file. In this case, because the PowerShell profile is a .ps1 file, the cmdlet returns TRUE.
 
 ```
 
@@ -129,11 +129,11 @@ FALSE
 
 Description
 -----------
-These commands use the Test-Path cmdlet with the Windows PowerShell registry provider.
+These commands use the Test-Path cmdlet with the PowerShell registry provider.
 
-The first command tests whether the registry path to the Microsoft.PowerShell registry key is correct on the system. If Windows PowerShell is installed correctly, the cmdlet returns TRUE.
+The first command tests whether the registry path to the Microsoft.PowerShell registry key is correct on the system. If PowerShell is installed correctly, the cmdlet returns TRUE.
 
-Test-Path does not work correctly with all Windows PowerShell providers. For example, you can use Test-Path to test the path to a registry key, but if you use it to test the path to a registry entry, it always returns FALSE, even if the registry entry is present.
+Test-Path does not work correctly with all PowerShell providers. For example, you can use Test-Path to test the path to a registry key, but if you use it to test the path to a registry entry, it always returns FALSE, even if the registry entry is present.
 
 ```
 

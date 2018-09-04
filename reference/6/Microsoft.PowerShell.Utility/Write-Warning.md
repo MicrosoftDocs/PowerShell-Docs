@@ -20,7 +20,7 @@ Write-Warning [-Message] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Write-Warning** cmdlet writes a warning message to the Windows PowerShell host.
+The **Write-Warning** cmdlet writes a warning message to the PowerShell host.
 The response to the warning depends on the value of the user's $WarningPreference variable and the use of the *WarningAction* common parameter.
 
 ## EXAMPLES
@@ -77,7 +77,7 @@ Continue with this operation?
 ```
 
 This example shows the effect of the *WarningAction* common parameter on a **Write-Warning** command.
-You can use the *WarningAction* common parameter with any cmdlet to determine how Windows PowerShell responds to warnings resulting from that command.
+You can use the *WarningAction* common parameter with any cmdlet to determine how PowerShell responds to warnings resulting from that command.
 The *WarningAction* common parameter overrides the value of the $WarningPreference only for that particular command.
 
 This command uses the **Write-Warning** cmdlet to display a warning.

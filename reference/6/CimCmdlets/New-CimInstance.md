@@ -172,7 +172,7 @@ Accept wildcard characters: False
 
 ### -ClientOnly
 Indicates that the instance is only created in PowerShell without going to the CIM server.
-You can use this parameter to create an in-memory CIM instance for use in subsequent Windows PowerShell operations.
+You can use this parameter to create an in-memory CIM instance for use in subsequent PowerShell operations.
 
 ```yaml
 Type: SwitchParameter

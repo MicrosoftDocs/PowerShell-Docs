@@ -293,7 +293,7 @@ Accept wildcard characters: False
 Specifies the number of characters in each line of output.
 Any additional characters are truncated, not wrapped.
 If you omit this parameter, the width is determined by the characteristics of the host.
-The default for the Windows PowerShell console is 80 characters.
+The default for the PowerShell console is 80 characters.
 
 ```yaml
 Type: Int32

@@ -33,7 +33,7 @@ This topic shows how to write a simple cmdlet (the **Send-Greeting** cmdlet) tha
 
 ## Example
 
-```vb
+```csharp
 using System.Management.Automation;  // Windows PowerShell assembly.
 
 namespace SendGreeting
