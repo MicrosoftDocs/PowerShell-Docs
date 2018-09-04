@@ -67,7 +67,7 @@ Handles  NPM(K)    PM(K)     WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 `Invoke-Command` can also execute script blocks that have parameter blocks.
-Parameters are assigned by position using the `ArgumentList` parameter.
+Parameters are assigned by position using the **ArgumentList** parameter.
 
 ```powershell
 Invoke-Command -ScriptBlock { param($p1, $p2)
@@ -99,10 +99,10 @@ Status   Name               DisplayName
 Running  BITS               Background Intelligent Transfer Ser...
 ```
 
-The call operator is another way that you can execute script blocks that you
-have stored in a variable. Like `Invoke-Command`, the call operator executes
-the script block in a child scope; however, the call operator can make it
-easier for you to use parameters with your script blocks.
+The call operator is another way to execute script blocks stored in a variable.
+Like `Invoke-Command`, the call operator executes the script block in a child
+scope. The call operator can make it easier for you to use parameters with your
+script blocks.
 
 ```powershell
 $a ={ param($p1, $p2)
@@ -150,8 +150,8 @@ dir config.log | Rename-Item -NewName {"old_" + $_.Name}
 The additional parameters must accept pipeline input
 (`by Value`) or (`by PropertyName`).
 
-In more complex cmdlets, this allows the dynamic reuse of one piped in object to
-populate other parameters.
+In more complex cmdlets, delay-bind script blocks allow the reuse of one piped
+in object to populate other parameters.
 
 ## See Also
 

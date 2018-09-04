@@ -24,18 +24,18 @@ command or expression. With these operators, you can add, subtract,
 multiply, or divide values, and calculate the remainder (modulus) of a
 division operation.
 
-You can also use arithmetic operators with strings, arrays, and hash
-tables. The addition operator concatenates elements. The multiplication
-operator returns the specified number of copies of each element.
+The addition operator concatenates elements. The multiplication operator
+returns the specified number of copies of each element. You can use
+arithmetic operators on any .NET type that implements them, such as: `Int`,
+`String`, `DateTime`, `Hashtable`, and Arrays.
 
 For more information, see [about_Arithmetic_Operators](about_Arithmetic_Operators.md).
 
 ### Assignment Operators
 
-Use assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`) to assign one
-or more values to variables, to change the values in a variable, and to
-append values to variables. You can also cast the variable as any Microsoft
-.NET Framework data type, such as string or DateTime, or Process variable.
+Use assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`) to assign, change,
+or append values to variables. You can combine arithmetic operators with
+assignment to assign the result of the arithmetic operation to a variable.
 
 For more information, see [about_Assignment_Operators](about_Assignment_Operators.md).
 
@@ -45,16 +45,15 @@ Use comparison operators (`-eq`, `-ne`, `-gt`, `-lt`, `-le`, `-ge`) to
 compare values and test conditions. For example, you can compare two string
 values to determine whether they are equal.
 
-The comparison operators include the match operators (`-match`,
-`-notmatch`), which find patterns by using regular expressions; the replace
-operator (`-replace`), which uses regular expressions to change input
-values; the like operators (`-like`, `-notlike`), which find patterns using
-wildcard characters (`*`); and the containment operators (`-in`, `-notin`,
-`-contains`, `-notcontains`), which determine whether a test value appears
-in a reference set.
+The comparison operators also include operators that find or replace patterns
+in text. The (`-match`, `-notmatch`, `-replace`) operators use regular
+expressions, and (`-like`, `-notlike`) use wildcards `*`.
 
-They also include the bitwise operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`)
-to manipulate the bit patterns in values.
+Containment comparison operators determine whether a test value appears in a
+reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
+
+Bitwise comparison operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`) manipulate
+the bit patterns in values.
 
 For more information, see [about_Comparison_Operators](about_Comparison_Operators.md).
 
@@ -101,10 +100,9 @@ example, to increment the variable `$a` from `9` to `10`, you type `$a++`.
 
 ### Special Operators
 
-Use special operators to perform tasks that cannot be performed by the
-other types of operators. For example, special operators allow you to
-perform operations such as running commands and changing a value's data
-type.
+Special operators have specific use-cases that do not fit into any other
+operator group. For example, special operators allow you to
+run commands, change a value's data type, or retrieve elements from an array.
 
 `@( )` Array subexpression operator
 
@@ -301,7 +299,7 @@ Get-Process | Get-Member
 Get-PSSnapin | Where-Object {$_.vendor -ne "Microsoft"}
 ```
 
-`.` Property dereference operator
+`.` Property dereferences operator
 
 Accesses the properties and methods of an object.
 

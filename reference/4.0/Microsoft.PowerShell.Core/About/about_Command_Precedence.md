@@ -12,66 +12,62 @@ Describes how PowerShell determines which command to run.
 
 ## Long description
 
-This topic explains how PowerShell determines which command to run, especially
-when a session contains more than one command with the same name. It also
-explains how to run commands that do not run by default, and it explains how
-to avoid command-name conflicts in your session.
+Command precedence describes how PowerShell determines which command to
+run when a session contains more than one command with the same name. Commands
+within a session can be hidden or replaced by commands with the same
+name. This article shows you how to run hidden commands and how to avoid
+command-name conflicts.
 
 ## Command precedence
 
-When a session includes commands that have the same name, Windows PowerShell
-uses the following rules to decide which command to run.
+When a PowerShell session includes more than one command that has the
+same name, PowerShell determines which command to run by using the
+following rules.
 
-These rules become very important when you add commands to your session from
-modules, snap-ins, and other sessions.
+- If you specify the path to a command, PowerShell runs the command at the
+  location specified by the path.
 
-If you specify the path to a command, PowerShell runs the command at the
-location specified by the path.
+  For example, the following command runs the FindDocs.ps1 script in the
+  "C:\\TechDocs" directory:
 
-For example, the following command runs the FindDocs.ps1 script in the
-"C:\\TechDocs" directory:
+  ```
+  C:\TechDocs\FindDocs.ps1
+  ```
 
-```
-C:\TechDocs\FindDocs.ps1
-```
+  As a security feature, PowerShell does not run executable (native) commands,
+  including PowerShell scripts, unless the command is located in a path that is
+  listed in the Path environment variable `$env:path` or unless you specify the
+  path to the script file.
 
-As a security feature, PowerShell does not run executable (native) commands,
-including PowerShell scripts, unless the command is located in a path that is
-listed in the Path environment variable `$env:path` or unless you specify the
-path to the script file.
+  To run a script that is in the current directory, specify the full path, or
+  type a dot `.` to represent the current directory.
 
-To run a script that is in the current directory, specify the full path, or
-type a dot `.` to represent the current directory.
+  For example, to run the FindDocs.ps1 file in the current directory, type:
 
-For example, to run the FindDocs.ps1 file in the current directory, type:
+  ```
+  .\FindDocs.ps1
+  ```
 
-```
-.\FindDocs.ps1
-```
+- If you do not specify a path, PowerShell uses the following precedence order
+  when it runs commands:
 
-If you do not specify a path, PowerShell uses the following precedence order
-when it runs commands:
+  1. Alias
+  2. Function
+  3. Cmdlet
+  4. Native Windows commands
 
-1. Alias
-2. Function
-3. Cmdlet
-4. Native Windows commands
+  Therefore, if you type "help", PowerShell first looks for an alias named
+  `help`, then a function named `Help`, and finally a cmdlet named `Help`. It
+  runs the first `help` item that it finds.
 
-Therefore, if you type "help", PowerShell first looks for an alias named
-`help`, then a function named `Help`, and finally a cmdlet named `Help`. It
-runs the first `help` item that it finds.
+  For example, if your session contains a cmdlet and a function, both named
+  `Get-Map`, when you type `Get-Map`, PowerShell runs the function.
 
-For example, if you have a `Get-Map` function in the session and you import a
-cmdlet named `Get-Map`. By default, when you type `Get-Map`, Windows
-PowerShell runs the `Get-Map` function.
+  When the session contains items of the same type that have the same name,
+  PowerShell runs the newer item.
 
-When the session contains items of the same type that have the same name, such
-as two cmdlets with the same name, PowerShell runs the item that was added to
-the session most recently.
-
-For example, if you have a cmdlet named "Get-Date" and you import another
-cmdlet named "Get-Date", by default, PowerShell runs the most-recently
-imported cmdlet when you type "Get-Date".
+  For example, if you import another `Get-Date` cmdlet from a module, when you
+  type `Get-Date`, PowerShell runs the imported version over the native one.
 
 ## Hidden and replaced items
 
@@ -88,7 +84,7 @@ from a snap-in or module.
 Items are "replaced" or "overwritten" if you can no longer access the original
 item.
 
-For example, if you import a variable that has the same name as a a variable
+For example, if you import a variable that has the same name as a variable
 in the session, the original variable is replaced and is no longer accessible.
 You cannot qualify a variable with a module name.
 
@@ -136,32 +132,30 @@ Cmdlet          Get-Date                  Microsoft.PowerShell.Utility
 ### Running hidden commands
 
 You can run particular commands by specifying item properties that distinguish
-the command from other commands that might have the same name.
-
-You can use this method to run any command, but it is especially useful for
-running hidden commands.
-
-Use this method as a best practice when writing scripts that you intend to
-distribute because you cannot predict which commands might be present in
-the session in which the script runs.
+the command from other commands that might have the same name. You can use this
+method to run any command, but it is especially useful for running hidden
+commands.
 
 #### Qualified names
 
-You can run commands that have been imported from a PowerShell module or from
-another session by qualifying the command name with the name of the module or
-snap-in in which it originated.
+Using the module-qualified name of a cmdlet allows you to run commands hidden
+by an item with the same name. For example, you can run the `Get-Date` cmdlet
+by qualifying it with its module name `Microsoft.PowerShell.Utility`.
 
-You can qualify commands, but you cannot qualify variables or aliases.
-
-For example, if the `Get-Date` cmdlet from the `Microsoft.PowerShell.Utility`
-module is hidden by an alias, function, or cmdlet with the same name, you can
-run it by using the module-qualified name of the cmdlet:
+Use this preferred method when writing scripts that you intend to
+distribute. You cannot predict which commands might be present in
+the session in which the script runs.
 
 ```powershell
+New-Alias -Name "Get-Date" -Value "Get-ChildItem"
 Microsoft.PowerShell.Utility\Get-Date
 ```
 
-To run a "New-Map" command that was added by the "MapFunctions" module, use
+```output
+Tuesday, September 4, 2018 8:17:25 AM
+```
+
+To run a `New-Map` command that was added by the `MapFunctions` module, use
 its module-qualified name:
 
 ```powershell
@@ -185,6 +179,9 @@ For example, to find the source of the `Get-Date` cmdlet, type:
 Microsoft.PowerShell.Utility
 ```
 
+> [!NOTE]
+> You cannot qualify variables or aliases.
+
 #### Call operator
 
 You can also use the `Call` operator `&` to run hidden commands by combining
@@ -192,8 +189,7 @@ it with a call to [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-Chil
 (the alias is "dir"), `Get-Command` or
 [Get-Module](../../Microsoft.PowerShell.Core/Get-Module.md).
 
-The call operator executes strings and script blocks in a child scope. For more
-information see [about_Operators](about_Operators.md).
+The call operator executes strings and script blocks in a child scope. For more information, see [about_Operators](about_Operators.md).
 
 For example, if you have a function named `Map` that is hidden by an alias
 named `Map`, use the following command to run the function.
@@ -220,25 +216,22 @@ $myMap = (Get-Command -Name map -CommandType function)
 
 ### Replaced items
 
-Items that have not been imported from a module or snap-in, such as functions,
-variables, and aliases that you create in your session or that you add by
-using a profile can be replaced by commands that have the same name. If they
-are replaced, you cannot access them.
-
-Variables and aliases are always replaced even if they have been imported from
-a module or snap-in because you cannot use a call operator or a qualified name
-to run them.
+A "replaced" item is one that you can no longer access. You can replace items
+by importing items of the same name from a module or snap-in.
 
 For example, if you type a `Get-Map` function in your session, and you import
-a function called `Get-Map`, the original function is replaced. You cannot
+a function called `Get-Map`, it replaces the original function. You cannot
 retrieve it in the current session.
+
+Variables and aliases cannot be hidden because you cannot use a call operator
+or a qualified name to run them. When you import variables and aliases from a
+module or snap-in, they replace variables in the session with the same name.
 
 ### Avoiding name conflicts
 
-The best way to manage command name conflicts is to prevent them. When you
-name your commands, use a name that is very specific or is likely to be
-unique. For example, add your initials or company name acronym to the nouns in
-your commands.
+The best way to manage command name conflicts is to prevent them. When you name
+your commands, use a unique name. For example, add your initials or company
+name acronym to the nouns in your commands.
 
 Also, when you import commands into your session from a PowerShell
 module or from another session, use the `Prefix` parameter of the
@@ -247,8 +240,8 @@ module or from another session, use the `Prefix` parameter of the
 cmdlet to add a prefix to the nouns in the names of commands.
 
 For example, the following command avoids any conflict with the `Get-Date`
-and `Set-Date` cmdlets that come with PowerShell when you import the 
-"DateFunctions" module.
+and `Set-Date` cmdlets that come with PowerShell when you import the
+`DateFunctions` module.
 
 ```powershell
 Import-Module -Name DateFunctions -Prefix ZZ
