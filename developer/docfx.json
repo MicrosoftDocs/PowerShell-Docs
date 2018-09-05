@@ -12,7 +12,7 @@
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.prod": "powershell",
-            "ms.technology": "developer",
+            "ms.technology": "powershell-developer",
             "manager": "carmonm",
             "ms.devlang": "powershell",
             "ms.tgt_pltfr": "windows, macos, linux",
