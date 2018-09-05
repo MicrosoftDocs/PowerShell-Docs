@@ -44,7 +44,7 @@ which makes it easier for ops to identify and change environments without develo
 ## Desired State Configuration On- and Off-Premises
 
 DSC can be used to manage both on-premise and off-premise deployments.
-For on-premise solutions, DSC has a [pull server](https://msdn.microsoft.com/powershell/dsc/pullserver)
+For on-premise solutions, DSC has a [pull server](pullServer.md)
 that can be used to centralize management of machines and report on their status.
 For cloud solutions, DSC is usable wherever Windows is usable.
 There are also specific offerings from Azure built on Desired State Configuration,
