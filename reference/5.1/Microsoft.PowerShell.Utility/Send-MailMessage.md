@@ -154,6 +154,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+[!NOTE]
+If `-Credential` parameter is not specified, Powershell would try to use currently logged in user credentials. If that user does not have permission to send as the sender specified under `-From` parameter, the Send-MailMessage will error out. 
+If you want to send message anonymously, you may want to consider specifying `-Credential Anonymous`
+Ottherwise you may want to make script look like below: 
+```
+$pass = New-Object securestring
+$creds = New-Object pscredential ('anonymous',$pass)
+Send-MailMessage -From user1@contoso.com -To user2@veeam.com -Subject Test -SmtpServer exchserver -Credential $creds
+```
+
 ### -DeliveryNotificationOption
 Specifies the delivery notification options for the email message.
 You can specify multiple values.
