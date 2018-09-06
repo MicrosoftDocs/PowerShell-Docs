@@ -162,7 +162,7 @@ You can specify multiple values.
 None is the default value.
 The alias for this parameter is **dno**.
 
-The delivery notifications are sent in an email message to the address specified in the value of the *To* parameter.
+The delivery notifications are sent in an email message to the address specified in the value of the *From* parameter.
 The acceptable values for this parameter are:
 
 - None.
