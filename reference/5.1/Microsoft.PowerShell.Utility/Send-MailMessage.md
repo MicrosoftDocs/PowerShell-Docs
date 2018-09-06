@@ -137,7 +137,9 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a user account that has permission to perform this action.
-The default is the current user.
+If omitted, `Send-MailMessage` uses the credentials of the  current user.
+To send a message anonymously, use `-Credential Anonymous`.
+If the user specified does not have permission to send, `Send-MailMessage` returns an error.
 
 Type a user name, such as User01 or Domain01\User01.
 Or, enter a **PSCredential** object, such as one from the Get-Credential cmdlet.
@@ -152,16 +154,6 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
-```
-
-[!NOTE]
-If `-Credential` parameter is not specified, Powershell would try to use currently logged in user credentials. If that user does not have permission to send as the sender specified under `-From` parameter, the Send-MailMessage will error out. 
-If you want to send message anonymously, you may want to consider specifying `-Credential Anonymous`
-Ottherwise you may want to make script look like below: 
-```
-$pass = New-Object securestring
-$creds = New-Object pscredential ('anonymous',$pass)
-Send-MailMessage -From user1@contoso.com -To user2@veeam.com -Subject Test -SmtpServer exchserver -Credential $creds
 ```
 
 ### -DeliveryNotificationOption
