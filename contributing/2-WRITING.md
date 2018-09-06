@@ -59,4 +59,4 @@ Read the [Style Guide](3-STYLE-GUIDE.md).
 [gfm-help]: https://help.github.com/categories/writing-on-github/
 [labels]: https://github.com/PowerShell/PowerShell-Docs/labels/in%20progress
 [gfm-task]: https://github.github.com/gfm/#task-list-items-extension-
-[dfm-diffs]: http://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#differences-between-dfm-and-gfm
+[dfm-diffs]: https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#differences-between-dfm-and-gfm
