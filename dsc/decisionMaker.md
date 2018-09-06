@@ -53,6 +53,6 @@ such as [Azure Automation](https://azure.microsoft.com/en-us/documentation/servi
 ## DSC and Compatibility
 
 Although DSC was introduced in Windows Server 2012 R2, it is available for down-level operating systems via the Windows Management Framework (WMF) package.
-More information about the WMF can be found on the [PowerShell homepage](https://msdn.microsoft.com/en-us/powershell/).
+More information about the WMF can be found on the [PowerShell homepage](/powershell/).
 
 DSC can also be used to manage Linux. For more information, see [Getting Started with DSC for Linux](lnxGettingStarted.md).
