@@ -1,8 +1,8 @@
 # Markdown Specifics
 
-The Microsoft Open Publishing System (OPS) that builds our documentation uses [markdig](https://github.com/lunet-io/markdig)
+The Microsoft Open Publishing System (OPS) that builds our documentation uses [markdig][]
 to process the Markdown documents. Markdig parses the documents based on the rules of the latest
-[CommonMark specification](https://spec.commonmark.org/).
+[CommonMark][] specification.
 
 The new CommonMark spec is much stricter about the construction of some Markdown elements.
 Pay close attention to the details provided in this document.
@@ -132,3 +132,6 @@ See [Formatting code blocks](5-FORMATTING-CODE.md).
 
 <!-- External URLs -->
 [platyPS]: https://github.com/PowerShell/platyPS
+[markdig]: https://github.com/lunet-io/markdig
+[CommonMark]: https://spec.commonmark.org/
+[atx]: https://github.github.com/gfm/#atx-headings

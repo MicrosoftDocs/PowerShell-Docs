@@ -2,12 +2,12 @@
 
 The PowerShell documentation has
 
-Cmdlet reference articles have a specific structure. This structure is defined by [PlatyPS].
+Cmdlet reference articles have a specific structure. This structure is defined by [PlatyPS][].
 PlatyPS is the tool we use to generate the cmdlet help for a PowerShell module and to create the
 MAML help files used by the `Get-Help` cmdlet.
 
 PlatyPS has a hardcoded schema for cmdlet reference that is written into the code. The
-[platyPS.schema.md] document attempts to describe this structure. When updating cmdlet reference,
+[platyPS.schema.md][] document attempts to describe this structure. When updating cmdlet reference,
 if you don't follow this schema you can cause build errors that must be fixed before we can
 accept your contribution.
 
@@ -70,5 +70,7 @@ computer.
 Get-Command -ListImported
 ```
 
-[PlatyPS]: http://github.com/powershell/platyps
+[PlatyPS]: https://github.com/powershell/platyps
 [platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
+[issue1806]: https://github.com/PowerShell/PowerShell-Docs/issues/1806
+[about-example]: ../reference/5.1/Microsoft.PowerShell.Core/About/about_Comparison_Operators.md

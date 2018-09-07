@@ -92,6 +92,18 @@ Feel free to help out.
 - All items in the "related links" section at the bottom should be hyperlinked.
 - Use relative links when linking to other content that is hosted on **docs.microsoft.com**.
 
+### Understanding Docsets
+
+The PowerShell-Doc repo hosts several docsets. Docsets are defined in the `docfx.json` file. The
+PowerShell-Docs repo contains the following docsets:
+
+- developer - conceptual docs the PowerShell SDK
+- dsc - conceptual docs for DSC
+- gallery - conceptual docs for the PowerShell Gallery
+- jea - conceptual docs for Just-in-Enough Administration
+- reference - conceptual docs for using PowerShell and cmdlet reference docs
+- wmf - conceptual docs and release notes for WMF
+
 ### Structure of links on docs.microsoft.com
 
 Content presented on docs.microsoft.com has the following URL structure:
@@ -108,15 +120,19 @@ https://docs.microsoft.com/en-us/powershell/azure/overview?view=azurermps-5.1.1
 ```
 
 - **\<locale>** - identifies the language of the article (example: en-us or de-de)
-- **\<product-service>** - the name of the product or service being documented (example: powershell, dotnet, or azure)
-- **[\<feature-service>]** - (optional) the name of the product's feature or subservice (for example, csharp or load-balancer)
+- **\<product-service>** - the name of the product or service being documented (example: powershell,
+  dotnet, or azure)
+- **[\<feature-service>]** - (optional) the name of the product's feature or subservice (for
+  example, csharp or load-balancer)
 - **[\<subfolder>]** - (optional) the name of a subfolder within a feature
-- \<topic> - the name of the article file for the topic (example: load-balancer-overview or overview)
-- **[?view=\<view-name>]** - (optional) the view name used by the version selector for content that has multiple versions available (example: azurermps-5.1.1)
+- \<topic> - the name of the article file for the topic (example: load-balancer-overview or
+  overview)
+- **[?view=\<view-name>]** - (optional) the view name used by the version selector for content that
+  has multiple versions available (example: azurermps-5.1.1)
 
-### Linking to content in the same repo
+### Linking to content in the same Docset
 
-When the content is in the same DocSet, the relative links are simple to calculate.
+When the content is in the same Docset, the relative links are simple to calculate.
 The link target must be the path to the _Markdown file_ in the repo.
 For example, the following markdown links to the about_Arrays topic in this repo.
 
@@ -130,12 +146,12 @@ Here is the live link:
 
 Note that the live link works within the GitHub view of this content.
 
-### Linking to content in a different repo
+### Linking to content in a different Docset
 
-When the content is in a different DocSet, the relative links are more complicated.
-The link target must be the URL path to the _published article_ on **docs.microsoft.com**.
-The relative link starts with the **\<product-service>** portion of the URL as described above.
-You should omit the **[?view=\<view-name>]** portion unless you need to link to a specific version of the content.
+When the content is in a different Docset, the relative links are more complicated. The link target
+must be the URL path to the _published article_ on **docs.microsoft.com**. The relative link starts
+with the **\<product-service>** portion of the URL as described above. You should omit the
+**[?view=\<view-name>]** portion unless you need to link to a specific version of the content.
 
 For example, the following Markdown links to the Overview topic for Azure PowerShell.
 
@@ -156,10 +172,4 @@ See [Markdown Specifics](4-MARKDOWN-SPECIFICS.md).
 
 <!-- External URLs -->
 [pascal-case]: https://en.wikipedia.org/wiki/PascalCase
-[issue1806]: https://github.com/PowerShell/PowerShell-Docs/issues/1806
-[atx]: https://github.github.com/gfm/#atx-headings
-[about-example]: https://github.com/PowerShell/PowerShell-Docs/blob/staging/reference/5.1/Microsoft.PowerShell.Core/About/about_Comparison_Operators.md
-[links]: https://help.github.com/articles/relative-links-in-readmes/
-[gfm-spec]: https://github.github.com/gfm/
 [semantics]: http://rhodesmill.org/brandon/2012/one-sentence-per-line/
-[platyPS]: https://github.com/PowerShell/platyPS
