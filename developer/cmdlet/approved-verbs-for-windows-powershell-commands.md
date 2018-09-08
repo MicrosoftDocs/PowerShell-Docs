@@ -1,7 +1,7 @@
 ---
 title: "Approved Verbs for PowerShell Commands | Microsoft Docs"
 ms.custom: ""
-ms.date: "06/21/2018"
+ms.date: "09/07/2018"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
@@ -95,6 +95,7 @@ The following table lists most of the defined verbs.
 |[Move](/dotnet/api/System.Management.Automation.VerbsCommon.Move) (m)|Moves a resource from one location to another. For example, the `Move-Item` cmdlet moves an item from one location in the data store to another location.|For this action, do not use verbs such as Transfer, Name, or Migrate.|
 |[New](/dotnet/api/System.Management.Automation.VerbsCommon.New) (n)|Creates a resource. (The `Set` verb can also be used when creating a resource that includes data, such as the `Set-Variable` cmdlet.)|For this action, do not use verbs such as Create, Generate, Build, Make, or Allocate.|
 |[Open](/dotnet/api/System.Management.Automation.VerbsCommon.Open) (op)|Changes the state of a resource to make it accessible, available, or usable. This verb is paired with `Close`.||
+|[Optimize](/dotnet/api/System.Management.Automation.VerbsCommon.Optimize) (om)|Increases the effectiveness of a resource.||
 |[Pop](/dotnet/api/System.Management.Automation.VerbsCommon.Pop) (pop)|Removes an item from the top of a stack. For example, the `Pop-Location` cmdlet changes the current location to the location that was most recently pushed onto the stack.||
 |[Push](/dotnet/api/System.Management.Automation.VerbsCommon.Push) (pu)|Adds an item to the top of a stack. For example, the `Push-Location` cmdlet pushes the current location onto the stack.||
 |[Redo](/dotnet/api/System.Management.Automation.VerbsCommon.Redo) (re)|Resets a resource to the state that was undone.||
@@ -183,9 +184,11 @@ The following table lists most of the defined verbs.
 |--------------------|------------|--------------|
 |[Approve](/dotnet/api/System.Management.Automation.VerbsLifecycle.Approve) (ap)|Confirms or agrees to the status of a resource or process.||
 |[Assert](/dotnet/api/System.Management.Automation.VerbsLifecycle.Assert) (as)|Affirms the state of a resource.|For this action, do not use a verb such as Certify.|
+|[Build](/dotnet/api/System.Management.Automation.VerbsLifecycle.Build) (bd)|Creates an artifact (usually a binary or document) out of some set of input files (usually source code or declarative documents)|This verb was added in PowerShell v6|
 |[Complete](/dotnet/api/system.management.automation.host.buffercelltype?view=powershellsdk-1.1.0) (cp)|Concludes an operation.||
 |[Confirm](/dotnet/api/System.Management.Automation.VerbsLifecycle.Confirm) (cn)|Acknowledges, verifies, or validates the state of a resource or process.|For this action, do not use verbs such as Acknowledge, Agree, Certify, Validate, or Verify.|
 |[Deny](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deny) (dn)|Refuses, objects, blocks, or opposes the state of a resource or process.|For this action, do not use verbs such as Block, Object, Refuse, or Reject.|
+|[Deploy](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deploy) (dp)|Sends an application, website, or solution to a remote target[s] in such a way that a consumer of that solution can access it after deployment is complete|This verb was added in PowerShell v6|
 |[Disable](/dotnet/api/System.Management.Automation.VerbsLifecycle.Disable) (d)|Configures a resource to an unavailable or inactive state. For example, the `Disable-PSBreakpoint` cmdlet makes a breakpoint inactive. This verb is paired with `Enable`.|For this action, do not use verbs such as Halt or Hide.|
 |[Enable](/dotnet/api/System.Management.Automation.VerbsLifecycle.Enable) (e)|Configures a resource to an available or active state. For example, the `Enable-PSBreakpoint` cmdlet makes a breakpoint active. This verb is paired with `Disable`.|For this action, do not use verbs such as Start or Begin.|
 |[Install](/dotnet/api/System.Management.Automation.VerbsLifecycle.Install) (is)|Places a resource in a location, and optionally initializes it. This verb is paired with `Uninstall`.|For this action, do not a use verb such as Setup.|
