@@ -398,3 +398,5 @@ signature. For more information, see [about_Signing](about_Signing.md).
 [Trace-Command](../../Microsoft.PowerShell.Utility/Trace-Command.md)
 
 [Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md)
+
+[Format Schema XML Reference](../../../../developer/format/format-schema-xml-reference.md)
