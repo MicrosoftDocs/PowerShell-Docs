@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  09/07/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -11,7 +11,8 @@ title:  Get-Verb
 # Get-Verb
 
 ## SYNOPSIS
-Gets approved Windows PowerShell verbs.
+
+Gets approved PowerShell verbs.
 
 ## SYNTAX
 
@@ -20,36 +21,38 @@ Get-Verb [[-verb] <String[]>]
 ```
 
 ## DESCRIPTION
-The Get-Verb function gets verbs that are approved for use in Windows PowerShell commands.
 
+The `Get-Verb` function gets verbs that are approved for use in PowerShell commands.
 
-Windows PowerShell recommends that cmdlet and function names have the Verb-Noun format and include an approved verb.
-This practice makes command names more consistent and predictable, and easier to use, especially for users who do not speak English as a first language.
+PowerShell recommends cmdlet and function names have the Verb-Noun format and include an
+approved verb. This practice makes command names more consistent, predictable, and easier to
+use.
 
+Commands that use unapproved verbs run in PowerShell. However, when you import a module that
+includes a command with an unapproved verb in its name, the `Import-Module` command displays a
+warning message.
 
-Commands that use unapproved verbs run in Windows PowerShell.
-However, when you import a module that includes a command with an unapproved verb in its name, the Import-Module command displays a warning message.
-
-NOTE:   The verb list that Get-Verb returns might not be complete.
-For an updated list of approved PowerShell verbs with descriptions, see [Approved Verbs](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands) in the Microsoft Docs.
+> [!NOTE]
+> The verb list that `Get-Verb` returns might not be complete. For an updated list of approved
+> PowerShell verbs with descriptions, see
+> [Approved Verbs](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands) in
+> the Microsoft Docs.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1 - Get a list of all verbs
+
+```powershell
+Get-Verb
 ```
-get-verb
+
+### Example 2 - Get a list of approved verbs that begin with "un"
+
+```powershell
+Get-Verb un*
 ```
 
-Description
-
------------
-
-This command gets all approved verbs.
-
-### Example 2
-```
-get-verb un*
-
+```Output
 Verb                 Group
 ----                 -----
 Undo                 Common
@@ -61,16 +64,13 @@ Unblock              Security
 Unprotect            Security
 ```
 
-Description
+### Example 3 - Get all approved verbs in the Security group
 
------------
-
-This command gets all approved verbs that begin with "un".
-
-### Example 3
 ```powershell
-PS C:\> Get-Verb | Where-Object Group -EQ Security
+Get-Verb | Where-Object Group -EQ Security
+```
 
+```Output
 Verb      Group
 ----      -----
 Block     Security
@@ -81,25 +81,26 @@ Unblock   Security
 Unprotect Security
 ```
 
-This command gets all approved verbs in the Security group.
+### Example 4 - Finds all commands in a module that have unapproved verbs
 
-### Example 4
 ```powershell
-Get-Command -Module Microsoft.PowerShell.Utility | where Verb -NotIn (Get-Verb).Verb
-# CommandType     Name            Version    Source
-# -----------     ----            -------    ------
-# Cmdlet          Sort-Object     3.1.0.0    Microsoft.PowerShell.Utility
-# Cmdlet          Tee-Object      3.1.0.0    Microsoft.PowerShell.Utility
+Get-Command -Module Microsoft.PowerShell.Utility | Where-Object Verb -NotIn (Get-Verb).Verb
 ```
 
-This command finds all commands in a module that have unapproved verbs.
+```Output
+CommandType     Name            Version    Source
+-----------     ----            -------    ------
+Cmdlet          Sort-Object     3.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Tee-Object      3.1.0.0    Microsoft.PowerShell.Utility
+```
 
 ## PARAMETERS
 
 ### -verb
+
 Gets only the specified verbs.
 Enter the name of a verb or a name pattern.
-Wildcards are permitted.
+Wildcards are allowed.
 
 ```yaml
 Type: String[]
@@ -122,27 +123,30 @@ Accept wildcard characters: True
 ### Selected.Microsoft.PowerShell.Commands.MemberDefinition
 
 ## NOTES
-Get-Verb returns a modified version of a Microsoft.PowerShell.Commands.MemberDefinition object.
+
+`Get-Verb` returns a modified version of a Microsoft.PowerShell.Commands.MemberDefinition object.
 The object does not have the standard properties of a MemberDefinition object.
 Instead it has Verb and Group properties.
 The Verb property contains a string with the verb name.
 The Group property contains a string with the verb group.
 
-Windows PowerShell verbs are assigned to a group based on their most common use.
+PowerShell verbs are assigned to a group based on their most common use.
 The groups are designed to make the verbs easy to find and compare, not to restrict their use.
 You can use any approved verb for any type of command.
 
-Each Windows PowerShell verb is assigned to one of the following groups.
--- Common: Define generic actions that can apply to almost any cmdlet, such as Add.
--- Communications:  Define actions that apply to communications, such as Connect.
--- Data:  Define actions that apply to data handling, such as Backup.
--- Diagnostic: Define actions that apply to diagnostics, such as Debug.
--- Lifecycle: Define actions that apply to the lifecycle of a cmdlet, such as Complete.
--- Security: Define actions that apply to security, such as Revoke.
--- Other: Define other types of actions.
+Each PowerShell verb is assigned to one of the following groups.
 
-Some of the cmdlets that are installed with Windows PowerShell, such as Tee-Object and Where-Object, use unapproved verbs.
-These cmdlets are considered to be historic exceptions and their verbs are classified as "reserved."
+- Common: Define generic actions that can apply to almost any cmdlet, such as Add.
+- Communications:  Define actions that apply to communications, such as Connect.
+- Data:  Define actions that apply to data handling, such as Backup.
+- Diagnostic: Define actions that apply to diagnostics, such as Debug.
+- Lifecycle: Define actions that apply to the lifecycle of a cmdlet, such as Complete.
+- Security: Define actions that apply to security, such as Revoke.
+- Other: Define other types of actions.
+
+Some of the cmdlets that are installed with PowerShell, such as `Tee-Object` and `Where-Object`, use
+unapproved verbs. These cmdlets are historic exceptions and their verbs are classified as
+**reserved**.
 
 ## RELATED LINKS
 
