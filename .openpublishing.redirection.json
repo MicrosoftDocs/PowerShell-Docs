@@ -15,11 +15,6 @@
             "redirect_document_id": "False"
         },
         {
-            "source_path": "wmf/readme.md",
-            "redirect_url": "/powershell/wmf/overview",
-            "redirect_document_id": "False"
-        },
-        {
             "source_path": "developer/index.md",
             "redirect_url": "/powershell/developer/windows-powershell",
             "redirect_document_id": "False"
@@ -192,11 +187,6 @@
         {
             "source_path": "gallery/psgallery/psgallery-SocialMediaFeedback.md",
             "redirect_url": "/powershell/gallery/how-to/working-with-items/social-media-feedback",
-            "redirect_document_id": false
-        },
-        {
-            "source_path": "gallery/readme.md",
-            "redirect_url": "/powershell/gallery/overview",
             "redirect_document_id": false
         },
         {
