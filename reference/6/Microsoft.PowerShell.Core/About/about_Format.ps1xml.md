@@ -400,4 +400,4 @@ signature. For more information, see [about_Signing](about_Signing.md).
 
 [Get-TraceSource](../../Microsoft.PowerShell.Utility/Get-TraceSource.md)
 
-[Format Schema XML Reference](../../../../developer/format/format-schema-xml-reference.md)
+[Format Schema XML Reference](/powershell/developer/format/format-schema-xml-reference)
