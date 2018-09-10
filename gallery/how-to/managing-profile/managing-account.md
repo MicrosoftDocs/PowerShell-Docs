@@ -22,7 +22,7 @@ The email address is where the PowerShell Gallery will send email notifications.
 This email address is never provided to other users directly by the PowerShell Gallery. 
 You may use any email account you have access to, and it does not have to match the login account. 
 
-![Changing email address](../../Images/PSGallery_AccountEmailAddress.png)
+![Changing email address](../../Images/PSGallery_AcccountEmailAddress.png)
 
 After a new email address is entered, a verification mail will be sent to that address by the PowerShell Gallery. 
 That verification mail contains a link back to the PowerShell Gallery that will complete the process of changing the registered email address. 
@@ -33,8 +33,8 @@ Until you complete the verification process, all emails will be sent to the addr
 You may opt out of allowing the PowerShell Gallery to send email when:
 
 * Another user wishes to contact you regarding a submission you have made;
-* An item is published that you are the co-owner of;
-* An item is pushed to the PowerShell Gallery using your account
+* A packaged is published that you are the co-owner of;
+* A package is pushed to the PowerShell Gallery using your account
 
 ![Changing email address](../../Images/PSGallery_AccountEmailOptions.png)
 

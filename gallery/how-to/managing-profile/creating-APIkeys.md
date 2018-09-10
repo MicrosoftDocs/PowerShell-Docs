@@ -41,23 +41,23 @@ For security, a newly created key is never shown on the screen and is only avail
 
 When creating an API key, you may define the scope to allow it to be used for any or all of the following:
 
-* Push new items
-* Push new or update items
-* Unlist items
+* Push new packages
+* Push new or update packages
+* Unlist packages
 
-In addition, any key you create will have an expiration. The default is a year, but it the expiration may be set for 1, 90, 180, 270, or 365 days. 
+In addition, any key you create will have an expiration. The default is a year, and may be set for 1, 90, 180, 270, or 365 days. 
 
 Note that these settings cannot be changed once the key is created. 
 
 ## Editing and Deleting Existing API Keys
 
-Once an API key is created, you may update the set of items controlled by existing keys,  regenerate the key value, and delete the key. 
+Once an API key is created, you may update the set of packages controlled by existing keys,  regenerate the key value, and delete the key. 
 As noted above, you cannot modify the security scope for an existing API key, or how long the key may be used. 
 The options available are shown in the screen shot below:
 
 ![Obtaining new API key value](../../Images/PSGallery_EditAPIKey.png)
 
-To change the items controlled by a key, you can choose individual items from the list, or change the glob pattern as needed. 
+To change the packages controlled by a key, you can choose individual packages from the list, or change the glob pattern as needed. 
 
 Use Regenerate to refresh the key value. 
 Just like when you initially create a key, you must Copy the key value immediately after updating it, as the Copy option will not be available once the page is refreshed. 
