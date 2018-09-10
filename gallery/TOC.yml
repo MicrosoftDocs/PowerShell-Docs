@@ -32,7 +32,7 @@
           href: how-to/working-with-items/filelist-view.md
         - name: Deploy to Azure Automation
           href: how-to/working-with-items/deploy-to-azure-automation.md
-        - name: Manual Download
+        - name: Manual Package Download
           href: how-to/working-with-items/manual-download.md
         - name: Items that Require License Acceptance
           href: how-to/working-with-items/items-that-require-license-acceptance.md

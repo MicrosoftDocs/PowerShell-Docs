@@ -6,9 +6,12 @@ title:  Get Started with the PowerShell Gallery
 ---
 # Get Started with the PowerShell Gallery
 
-Downloading items from the PowerShell Gallery to your system requires the
-[PowerShellGet](/powershell/module/powershellget) module. You can find the PowerShellGet module in
-any of the following. You do not need to sign in to download items from the PowerShell Gallery.
+The proper way to install items from the PowerShell Gallery is to use the cmdlets in the [PowerShellGet](/powershell/module/powershellget) module. You do not need to sign in to download items from the PowerShell Gallery.
+
+> [!NOTE]
+> It is possible to download a package from the PowerShell Gallery directly, but this is not a recommended approach. 
+> For more details, see [Manual Package Download](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/how-to/working-with-items/manual-download.md).  
+
 
 ## Discovering items from the PowerShell Gallery
 

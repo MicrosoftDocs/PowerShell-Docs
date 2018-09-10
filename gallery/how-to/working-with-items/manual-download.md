@@ -2,9 +2,9 @@
 ms.date:  06/26/18
 contributor:  JKeithB
 keywords:  gallery,powershell,psgallery
-title:  Manual Package download 
+title:  Manual Package Download 
 ---
-# Manual download and installation
+# Manual Package Download
 
 The Powershell Gallery supports downloading a package from the website directly, without using the PowerShellGet cmdlets. 
 The package will be downloaded as a NuGet package (.nupkg) file, which can then be easily copied to an internal repository. 
