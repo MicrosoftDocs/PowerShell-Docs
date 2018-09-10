@@ -32,7 +32,7 @@ foreach ($<item> in $<collection>){<statement list>}
 
 The part of the `ForEach` statement enclosed in parenthesis represents a
 variable and a collection to iterate. PowerShell creates the variable
-(`$<item>`) automatically when the `Foreach` loop runs. Prior to each
+`$<item>` automatically when the `Foreach` loop runs. Prior to each
 iteration through the loop, the variable is set to a value in the collection.
 The block following a `Foreach` statement `{<statement list>}` contains a set
 of commands to execute against each item in a collection.
@@ -55,7 +55,7 @@ string values `"a"`, `"b"`, `"c"`, and `"d"`. The first time the `Foreach`
 statement runs, it sets the `$letter` variable equal to the first item in
 `$letterArray` (`"a"`). Then, it uses the `Write-Host` cmdlet to display the
 letter a. The next time through the loop, `$letter` is set to `"b"`, and so
-on. After the `Foreach` loop displays the letter d, Windows PowerShell exits
+on. After the `Foreach` loop displays the letter d, PowerShell exits
 the loop.
 
 The entire `Foreach` statement must appear on a single line to run it as a

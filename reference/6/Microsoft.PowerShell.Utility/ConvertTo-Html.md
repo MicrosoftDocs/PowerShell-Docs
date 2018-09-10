@@ -33,7 +33,7 @@ You can use this cmdlet to display the output of a command in a Web page.
 
 You can use the parameters of **ConvertTo-Html** to select object properties, to specify a table or list format, to specify the HTML page title, to add text before and after the object, and to return only the table or list fragment, instead of a strict DTD page.
 
-When you submit multiple objects to **ConvertTo-Html**, Windows PowerShell creates the table (or list) based on the properties of the first object that you submit.
+When you submit multiple objects to **ConvertTo-Html**, PowerShell creates the table (or list) based on the properties of the first object that you submit.
 If the remaining objects do not have one of the specified properties, the property value of that object is an empty cell.
 If the remaining objects have additional properties, those property values are not included in the file.
 
@@ -53,7 +53,7 @@ PS C:\> Get-Alias | ConvertTo-Html > aliases.htm
 PS C:\> Invoke-Item aliases.htm
 ```
 
-This command creates an HTML page that lists the Windows PowerShell aliases in the current console.
+This command creates an HTML page that lists the PowerShell aliases in the current console.
 
 The command uses the Get-Alias cmdlet to get the aliases.
 It uses the pipeline operator (|) to send the aliases to the **ConvertTo-Html** cmdlet, which creates the HTML page.
@@ -179,11 +179,11 @@ Determines whether the object is formatted as a table or a list.
 Valid values are Table and List.
 The default value is Table.
 
-The Table value generates an HTML table that resembles the Windows PowerShell table format.
+The Table value generates an HTML table that resembles the PowerShell table format.
 The header row displays the property names.
 Each table row represents an object and displays the object's values for each property.
 
-The List value generates a two-column HTML table for each object that resembles the Windows PowerShell list format.
+The List value generates a two-column HTML table for each object that resembles the PowerShell list format.
 The first column displays the property name; the second column displays the property value.
 
 ```yaml
@@ -415,7 +415,7 @@ You can pipe any .NET object to **ConvertTo-Html**.
 ## NOTES
 * To use this cmdlet, pipe one or more objects to the cmdlet or use the InputObject parameter to specify the object. When the input consists of multiple objects, the output of these two methods is quite different.
 
-  - When you pipe multiple objects to a cmdlet, Windows PowerShell sends the objects to the cmdlet one at a time.
+  - When you pipe multiple objects to a cmdlet, PowerShell sends the objects to the cmdlet one at a time.
 As a result, **ConvertTo-Html** creates a table that displays the individual objects.
 For example, if you pipe the processes on a computer to **ConvertTo-Html**, the resulting table displays all of the processes.
 

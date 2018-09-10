@@ -7,9 +7,6 @@ title:  about_Scheduled_Jobs_Advanced
 ---
 
 # About Scheduled Jobs Advanced
-## about_Scheduled_Jobs_Advanced
-
-
 
 # SHORT DESCRIPTION
 
@@ -41,6 +38,7 @@ as the job name.
 The following is a sample ScheduledJobs directory.
 
 ```
+
 PS C:\ps-test> dir $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
 
 Directory: C:\Users\User01\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
@@ -54,12 +52,14 @@ d----         11/7/2011  10:40 AM            ProcessJob
 d----         11/2/2011  10:25 AM            SecureJob
 d----         9/27/2011   1:29 PM            Test-HelpFiles
 d----         9/26/2011   4:22 PM            DeployPackage
+
 ```
 
 Each scheduled job has its own directory. The directory contains
 the scheduled job XML file and an Output subdirectory.
 
 ```
+
 PS C:> dir $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\ProcessJob
 
 Directory:
@@ -69,6 +69,7 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 d----         11/1/2011   3:00 PM            Output
 -a---         11/1/2011   3:43 PM       7281 ScheduledJobDefinition.xml
+
 ```
 
 The Output directory for a scheduled job contains its execution
@@ -81,6 +82,7 @@ The following command shows the execution history directories for
 the ProcessJob scheduled job.
 
 ```
+
 PS C:> dir $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\ProcessJob\Output
 
 Directory: C:\Users\User01\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\ProcessJob\Output
@@ -103,6 +105,7 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---         11/2/2011   3:00 AM     581106 Results.xml
 -a---         11/2/2011   3:00 AM       9451 Status.xml
+
 ```
 
 You can open and examine the ScheduledJobDefinition.xml, Results.xml
@@ -163,6 +166,7 @@ a calculated property to display the elapsed time of each job
 instance.
 
 ```
+
 PS C:> Get-job -Name UpdateHelpJob | Format-Table -Property ID, PSBeginTime, PSEndTime,
 @{Label="Elapsed Time";Expression={$.PsEndTime - $.PSBeginTime}}
 
@@ -176,6 +180,7 @@ Id   PSBeginTime             PSEndTime                Elapsed Time
  7   11/8/2011 3:00:01 AM    11/8/2011 3:00:57 AM     00:00:56.2570556
  8   11/9/2011 3:00:03 AM    11/9/2011 3:00:55 AM     00:00:51.8142222
  9   11/10/2011 3:00:02 AM   11/10/2011 3:00:42 AM    00:00:40.7195954
+ 
 ```
 
 # MANAGE EXECUTION HISTORY
@@ -229,7 +234,26 @@ computer and displays them in a table.
 
 # SEE ALSO
 
+- [about_Scheduled_Jobs_Basics](about_Scheduled_Jobs_Basics.md)
+- [about_Scheduled_Jobs_Troubleshooting](about_Scheduled_Jobs_Troubleshooting.md)
+- [about_Scheduled_Jobs](about_Scheduled_Jobs.md)
+- [Task Scheduler](http://go.microsoft.com/fwlink/?LinkId=232928)
 
-about_Scheduled_Jobs
-about_Scheduled_Jobs_Troubleshooting
-about_Jobs
+## RELATED LINKS
+
+- [Add-JobTrigger](../Add-JobTrigger.md)
+- [Disable-JobTrigger](../Disable-JobTrigger.md)
+- [Disable-ScheduledJob](../Disable-ScheduledJob.md)
+- [Enable-JobTrigger](../Enable-JobTrigger.md)
+- [Enable-ScheduledJob](../Enable-ScheduledJob.md)
+- [Get-JobTrigger](../Get-JobTrigger.md)
+- [Get-ScheduledJob](../Get-ScheduledJob.md)
+- [Get-ScheduledJobOption](../Get-ScheduledJobOption.md)
+- [New-JobTrigger](../New-JobTrigger.md)
+- [New-ScheduledJobOption](../New-ScheduledJobOption.md)
+- [Register-ScheduledJob](../Register-ScheduledJob.md)
+- [Remove-JobTrigger](../Remove-JobTrigger.md)
+- [Set-JobTrigger](../Set-JobTrigger.md)
+- [Set-ScheduledJob](../Set-ScheduledJob.md)
+- [Set-ScheduledJobOption](../Set-ScheduledJobOption.md)
+- [Unregister-ScheduledJob](../Unregister-ScheduledJob.md)

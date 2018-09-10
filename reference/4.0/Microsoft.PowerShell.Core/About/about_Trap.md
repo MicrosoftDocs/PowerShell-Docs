@@ -70,7 +70,7 @@ Error found.
 ```
 
 The following example includes a Trap statement that displays the error by
-using the $_ automatic variable:
+using the `$_` automatic variable:
 
 ```powershell
 function TrapTest {

@@ -147,7 +147,7 @@ The table includes the **Label** key, which specifies the name of the property, 
 The expression uses the **ConvertToDateTime** method to convert each instance of ReleaseDate to a .NET Framework DateTime object.
 Then, the value is subtracted from the value of the `Get-Date` cmdlet, which, without parameters, gets the current date.
 
-The backtick character (`` ` ``) is the line continuation character in Windows PowerShell.
+The backtick character (`` ` ``) is the line continuation character in PowerShell.
 
 ### Example 8
 
@@ -260,7 +260,7 @@ Specifies the day of the month that is displayed.
 Enter a value from 1 to 31.
 The default is the current day.
 
-If you specify a value that is greater than the number of days in the month, Windows PowerShell adds the number of days to the month and displays the result.
+If you specify a value that is greater than the number of days in the month, PowerShell adds the number of days to the month and displays the result.
 For example, "`Get-Date -Month 2 -Day 31`" displays "March 3", not "February 31".
 
 ```yaml
@@ -303,9 +303,9 @@ Accept wildcard characters: False
 ### -Format
 Displays the date and time in the Microsoft .NET Framework format indicated by the format specifier.
 Enter a format specifier.
-For a list of available format specifiers, see [DateTimeFormatInfo Class](http://go.microsoft.com/fwlink/?LinkId=143638) in the MSDN (Microsoft Developer Network) library.
+For a list of available format specifiers, see [DateTimeFormatInfo Class](/dotnet/api/system.globalization.datetimeformatinfo).
 
-When you use the `-Format` parameter, Windows PowerShell gets only the properties of the **DateTime** object that it needs to display the date in the format that you specify.
+When you use the `-Format` parameter, PowerShell gets only the properties of the **DateTime** object that it needs to display the date in the format that you specify.
 As a result, some of the properties and methods of **DateTime** objects might not be available.
 
 Starting in Windows PowerShell 5.0, you can use the following additional formats as values for the `-Format` parameter.
@@ -452,7 +452,7 @@ Accept wildcard characters: False
 Displays the date and time in UNIX format.
 For a list of the format specifiers, see the Notes section.
 
-When you use the `-UFormat` parameter, Windows PowerShell gets only the properties of the **DateTime** object that it needs to display the date in the format that you specify.
+When you use the `-UFormat` parameter, PowerShell gets only the properties of the **DateTime** object that it needs to display the date in the format that you specify.
 As a result, some of the properties and methods of **DateTime** objects might not be available.
 
 ```yaml
@@ -501,7 +501,7 @@ Otherwise, it returns a **DateTime** object.
 ## NOTES
 * By default, the date-time is displayed in long-date and long-time formats for the system locale.
 
-  When you pipe a date to cmdlets that expect string input, such as the Add-Content cmdlet, Windows PowerShell converts the **DateTime** object to a string before adding it to the file. The default `ToString()` format is short date and long time. To specify an alternate format, use the `-Format` or `-UFormat` parameters of `Get-Date`.
+  When you pipe a date to cmdlets that expect string input, such as the Add-Content cmdlet, PowerShell converts the **DateTime** object to a string before adding it to the file. The default `ToString()` format is short date and long time. To specify an alternate format, use the `-Format` or `-UFormat` parameters of `Get-Date`.
 
   * Uformat Values:
 

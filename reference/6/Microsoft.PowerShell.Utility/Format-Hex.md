@@ -113,7 +113,7 @@ This parameter does not accept wildcard characters.
 To use wildcard characters, specify the *Path* parameter instead.
 
 If this parameter includes escape characters, enclose the path in single quotation marks.
-Windows PowerShell does not interpret any characters in a single quoted string as escape sequences.
+PowerShell does not interpret any characters in a single quoted string as escape sequences.
 For more information, type `Get-Help about_Quoting_Rules`.
 
 ```yaml

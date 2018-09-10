@@ -89,11 +89,11 @@ The value of $(2+3) is 5.
 ```
 
 To prevent the substitution of a variable value in a double-quoted string, use
-the backtick character (`)(ASCII 96), which is the Windows PowerShell escape
+the backtick character (`)(ASCII 96), which is the PowerShell escape
 character.
 
 In the following example, the backtick character that precedes the first $i
-variable prevents Windows PowerShell from replacing the variable name with its
+variable prevents PowerShell from replacing the variable name with its
 value. For example:
 
 ```powershell
@@ -158,8 +158,8 @@ The output of this command is:
 don't
 ```
 
-To force Windows PowerShell to interpret a double quotation mark literally,
-use a backtick character. This prevents Windows PowerShell from interpreting
+To force PowerShell to interpret a double quotation mark literally,
+use a backtick character. This prevents PowerShell from interpreting
 the quotation mark as a string delimiter. For example:
 
 ```powershell

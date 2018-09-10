@@ -28,13 +28,13 @@ Provides access to files and directories.
 
 ## Detailed description
 
-The Windows PowerShell **FileSystem** provider lets you get, add, change, clear, and delete files and directories in Windows PowerShell.
+The PowerShell **FileSystem** provider lets you get, add, change, clear, and delete files and directories in PowerShell.
 
-The **FileSystem** provider exposes Windows PowerShell drives that correspond to the logical drives on your computer, including drives that are mapped to network shares. This lets you reference these drives from within Windows PowerShell.
+The **FileSystem** provider exposes PowerShell drives that correspond to the logical drives on your computer, including drives that are mapped to network shares. This lets you reference these drives from within PowerShell.
 
-The **FileSystem** provider lets you refer to files and folders in Windows PowerShell in the same way that you refer to them in Windows.
+The **FileSystem** provider lets you refer to files and folders in PowerShell in the same way that you refer to them in Windows.
 
-To refer to a drive, specify the drive name followed by a colon. Like most of Windows PowerShell, the **FileSystem** provider is not case-sensitive. For example, to get the files and folders on the "C" drive, you refer to the `C:` drive or the `c:` drive.
+To refer to a drive, specify the drive name followed by a colon. Like most of PowerShell, the **FileSystem** provider is not case-sensitive. For example, to get the files and folders on the "C" drive, you refer to the `C:` drive or the `c:` drive.
 
 A fully qualified name includes the drive name, followed by a colon `:`, any directory and subdirectory names, and the file name (when applicable). Each element of the fully qualified name must be separated either by a backslash `\` or a forward slash `/`.
 
@@ -58,7 +58,7 @@ For example, the current location is the `C:\Windows\System32` directory, then y
 .\Shell.dll
 ```
 
-To use the **FileSystem** provider to view and manage files and folders, use the provider cmdlets, such as [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) (`dir`, `ls`) and [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md) (`cd`). Windows PowerShell also includes a `mkdir` function (alias `md`) that uses the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create a new directory.
+To use the **FileSystem** provider to view and manage files and folders, use the provider cmdlets, such as [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) (`dir`, `ls`) and [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md) (`cd`). PowerShell also includes a `mkdir` function (alias `md`) that uses the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create a new directory.
 
 Beginning in Windows PowerShell 3.0, you can get customized help topics for provider cmdlets that explain how those cmdlets behave in a file system drive.
 
@@ -98,7 +98,7 @@ You can use the `-Delimiter` parameter to specify an alternate delimiter. If you
 
 The first command gets the `Employees.txt` file and splits it into sections, each of which ends with the words "End of Employee Record" and it saves it in the `$e` variable.
 
-The second command uses array notation to get the first item in the collection in `$e`. It uses an index of 0, because Windows PowerShell arrays are zero-based.
+The second command uses array notation to get the first item in the collection in `$e`. It uses an index of 0, because PowerShell arrays are zero-based.
 
 For more information about `Get-Content` cmdlet, see the help topic for the [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md).
 
@@ -448,7 +448,7 @@ Get-ChildItem -Attributes Compressed,Encrypted
 
 ## Dynamic parameters
 
-Dynamic parameters are cmdlet parameters that are added by a Windows PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
+Dynamic parameters are cmdlet parameters that are added by a PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
 
 
 ### `Encoding` <[Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding](https://msdn.microsoft.com/library/microsoft.powershell.commands.filesystemcmdletproviderencoding)>

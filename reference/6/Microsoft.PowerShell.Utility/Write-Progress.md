@@ -11,7 +11,7 @@ title:  Write-Progress
 # Write-Progress
 
 ## SYNOPSIS
-Displays a progress bar within a Windows PowerShell command window.
+Displays a progress bar within a PowerShell command window.
 
 ## SYNTAX
 
@@ -22,7 +22,7 @@ Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-Perce
 ```
 
 ## DESCRIPTION
-The `Write-Progress` cmdlet displays a progress bar in a Windows PowerShell command window that depicts the status of a running command or script.
+The `Write-Progress` cmdlet displays a progress bar in a PowerShell command window that depicts the status of a running command or script.
 You can select the indicators that the bar reflects and the text that appears above and below the progress bar.
 
 ## EXAMPLES
@@ -41,7 +41,7 @@ The `Write-Progress` command includes a status bar heading ("activity"), a statu
 PS C:\> for($I = 1; $I -lt 101; $I++ )
 {Write-Progress -Activity Updating -Status 'Progress->' -PercentComplete $I -CurrentOperation OuterLoop; `
 PS C:\> for($j = 1; $j -lt 101; $j++ )
-{Write-Progress -Id 1 -Activity Updating -Status 'Progress' - PercentComplete $j -CurrentOperation InnerLoop} }
+{Write-Progress -Id 1 -Activity Updating -Status 'Progress' -PercentComplete $j -CurrentOperation InnerLoop} }
 Updating
 Progress ->
  [ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]
@@ -70,7 +70,7 @@ This command displays the progress of a command to find the string "bios" in the
 
 In the first line of the command, the Get-EventLog cmdlet gets the events in the System log and stores them in the $Events variable.
 
-In the second line, the events are piped to the ForEach-Object` cmdlet.
+In the second line, the events are piped to the `ForEach-Object` cmdlet.
 Before processing begins, the `Clear-Host` cmdlet is used to clear the screen, the $I counter variable is set to zero, and the $out output variable is set to the empty string.
 
 In the third line, which is the Process script block of the `ForEach-Object` cmdlet, the cmdlet searches the message property of each incoming object for "bios".
@@ -242,7 +242,7 @@ You cannot pipe input to this cmdlet.
 `Write-Progress` does not generate any output.
 
 ## NOTES
-If the progress bar does not appear, check the value of the $ProgressPreference variable. If the value is set to SilentlyContinue, the progress bar is not displayed. For more information about Windows PowerShell preferences, see about_Preference_Variables.
+If the progress bar does not appear, check the value of the $ProgressPreference variable. If the value is set to SilentlyContinue, the progress bar is not displayed. For more information about PowerShell preferences, see about_Preference_Variables.
 
 The parameters of the cmdlet correspond to the properties of the ProgressRecord class (System.Management.Automation.ProgressRecord). For more information, see [ProgressRecord Class](https://msdn.microsoft.com/library/system.management.automation.progressrecord) in the MSDN library.
 

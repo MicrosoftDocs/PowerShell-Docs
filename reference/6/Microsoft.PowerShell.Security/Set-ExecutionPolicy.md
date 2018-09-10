@@ -11,7 +11,7 @@ title:  Set-ExecutionPolicy
 # Set-ExecutionPolicy
 
 ## SYNOPSIS
-Changes the user preference for the Windows PowerShell execution policy.
+Changes the user preference for the PowerShell execution policy.
 
 ## SYNTAX
 
@@ -21,13 +21,13 @@ Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPol
 ```
 
 ## DESCRIPTION
-The **Set-ExecutionPolicy** cmdlet changes the user preference for the Windows PowerShell execution policy.
+The **Set-ExecutionPolicy** cmdlet changes the user preference for the PowerShell execution policy.
 
-The execution policy is part of the security strategy of Windows PowerShell.
-It determines whether you can load configuration files (including your Windows PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
+The execution policy is part of the security strategy of PowerShell.
+It determines whether you can load configuration files (including your PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
 For more information, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
 
-To change the execution policy for the default (LocalMachine) scope, start Windows PowerShell with the "Run as administrator" option.
+To change the execution policy for the default (LocalMachine) scope, start PowerShell with the "Run as administrator" option.
 
 ## EXAMPLES
 
@@ -41,7 +41,7 @@ This command sets the user preference for the shell execution policy to RemoteSi
 ### Example 2: Set a shell execution policy that conflicts with the group policy
 ```
 PS C:\> Set-ExecutionPolicy -ExecutionPolicy Restricted
-Set-ExecutionPolicy : Windows PowerShell updated your local preference successfully, but the setting is
+Set-ExecutionPolicy : PowerShell updated your local preference successfully, but the setting is
 overridden by the group policy applied to your system. Due to the override, your shell will retain its current
 effective execution policy of "AllSigned". Contact your group policy administrator for more information.
 At line:1 char:20
@@ -102,7 +102,7 @@ If you set the execution policy in all scopes to Undefined and the Group Policy 
 PS C:\> Set-ExecutionPolicy -Scope Process -ExecutionPolicy AllSigned
 ```
 
-This command sets an execution policy of AllSigned for only the current Windows PowerShell session.
+This command sets an execution policy of AllSigned for only the current PowerShell session.
 This execution policy is saved in the PSExecutionPolicyPreference environment variable ($env:PSExecutionPolicyPreference), so it does not affect the value in the registry.
 The variable and its value are deleted when the current session is closed.
 
@@ -115,7 +115,7 @@ The second command uses the Get-ExecutionPolicy cmdlet to get the effective exec
 PS C:\> Get-ExecutionPolicy
 RemoteSigned
 
-The third command shows what happens when you run a blocked script in a Windows PowerShell session in which the execution policy is RemoteSigned. The RemoteSigned policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
+The third command shows what happens when you run a blocked script in a PowerShell session in which the execution policy is RemoteSigned. The RemoteSigned policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
 PS C:\> .\Start-ActivityTracker.ps1
 .\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded. The file .\Start-ActivityTracker.ps1
 is not digitally signed. The script will not execute on the system. For more information, see about_Execution_Policies
@@ -129,7 +129,7 @@ At line:1 char:1
 The fourth command uses the Unblock-File cmdlet to unblock the script so it can run in the session.Before running an **Unblock-File** command, read the script contents and verify that it is safe.
 PS C:\> Unblock-File -Path "Start-ActivityTracker.ps1"
 
-The fifth and sixth commands show the effect of the **Unblock-File** command. The **Unblock-File** command does not change the execution policy. However, it unblocks the script so it will run in Windows PowerShell.
+The fifth and sixth commands show the effect of the **Unblock-File** command. The **Unblock-File** command does not change the execution policy. However, it unblocks the script so it will run in PowerShell.
 PS C:\> Get-ExecutionPolicy
 RemoteSigned
 PS C:\> Start-ActivityTracker.ps1
@@ -210,7 +210,7 @@ Specifies the scope of the execution policy.
 The default is LocalMachine.
 The acceptable values for this parameter are:
 
-- Process: The execution policy affects only the current Windows PowerShell process.
+- Process: The execution policy affects only the current PowerShell process.
 - CurrentUser: The execution policy affects only the current user.
 - LocalMachine: The execution policy affects all users of the computer.
 
@@ -264,7 +264,7 @@ This cmdlet does not return any output.
 ## NOTES
 * When you use **Set-ExecutionPolicy** in any scope other than Process, the new user preference is saved in the registry and remains unchanged until you change it. When the value of the *Scope* parameter is Process, the user preference is stored in the PSExecutionPolicyPreference environment variable ($env:PSExecutionPolicyPreference), instead of the registry, and it is deleted when the session in which it is effective is closed.
 
-  If the "Turn on Script Execution" group policy is enabled for the computer or user, the user preference is saved, but it is not effective, and Windows PowerShell displays a message explaining the conflict.
+  If the "Turn on Script Execution" group policy is enabled for the computer or user, the user preference is saved, but it is not effective, and PowerShell displays a message explaining the conflict.
 You cannot use **Set-ExecutionPolicy** to override a Group Policy, even if the user preference is more restrictive than the policy.
 
 *

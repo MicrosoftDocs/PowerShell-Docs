@@ -20,7 +20,7 @@ New-Item [-Path] <string[]> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## Description
- In the Cert: drive, the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet creates new certificate stores in the LocalMachine certificate store location. The Windows PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.
+ In the Cert: drive, the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet creates new certificate stores in the LocalMachine certificate store location. The PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to PowerShell.
 
  Beginning in Windows PowerShell 3.0, the Certificate provider enables you to use the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create new certificate stores. You can also use the [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md) cmdlet to delete the certificate stores that you create.  You cannot use the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to create certificates or certificate store locations, or to create certificate stores in the CurrentUser certficate store location.
 

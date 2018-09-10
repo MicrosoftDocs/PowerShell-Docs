@@ -18,7 +18,7 @@ Remove-Item [-Path] <string[]> [-DeleteKey] [-Confirm] [-WhatIf] [<CommonParamet
 ```
 
 ## Description
- In the Cert: drive, the Remove-Item cmdlet deletes certificates and their associated private keys. It also deletes certificate stores in the LocalMachine certificate store location that you create by using the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet. The Windows PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to Windows PowerShell.
+ In the Cert: drive, the Remove-Item cmdlet deletes certificates and their associated private keys. It also deletes certificate stores in the LocalMachine certificate store location that you create by using the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet. The PowerShell [Certificate Provider](Certificate-Provider.md) adds the Cert: drive to PowerShell.
 
  Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer (SSL) certificates for web hosting by enabling you to use the Remove-Item cmdlet to delete certificates and private keys, and to delete user-created certificate stores in the LocalMachine certificate store location. However, you cannot use this feature to delete certificate store locations, such as CurrentUser or LocalMachine, or certificate stores that Windows creates.
 
@@ -112,7 +112,7 @@ The first command uses the Enable-WSManCredSSP cmdlet to enable Credential Secur
 
 PS C:\> Enable-WSManCredSSP -Role Client -DelegateComputer S1
 
-The second command uses the Connect-WSMan cmdlet to connect the S1 computer to the WinRM service on the local computer. When this command completes, the S1 computer appears in the local WSMan: drive in Windows PowerShell.
+The second command uses the Connect-WSMan cmdlet to connect the S1 computer to the WinRM service on the local computer. When this command completes, the S1 computer appears in the local WSMan: drive in PowerShell.
 
 PS C:\> Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01
 

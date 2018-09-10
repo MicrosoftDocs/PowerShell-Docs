@@ -121,8 +121,8 @@ Functions should use the standard verbs that have been approved for all
 Windows PowerShell commands. These verbs help us to keep our command names
 simple, consistent, and easy for users to understand.
 
-For more information about the standard Windows PowerShell verbs, see
-[Cmdlet Verbs](http://go.microsoft.com/fwlink/?LinkID=160773) on MSDN.
+For more information about the standard PowerShell verbs, see
+[Approved Verbs](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands) in the Microsoft Docs.
 
 ### Functions with Parameters
 
@@ -340,7 +340,7 @@ The Begin statement list runs one time only, at the beginning of the function.
 
 The Process statement list runs one time for each object in the pipeline.
 While the Process block is running, each pipeline object is assigned to the
-\$_ automatic variable, one pipeline object at a time.
+`$_` automatic variable, one pipeline object at a time.
 
 After the function receives all the objects in the pipeline, the End statement
 list runs one time. If no Begin, Process, or End keywords are used, all the

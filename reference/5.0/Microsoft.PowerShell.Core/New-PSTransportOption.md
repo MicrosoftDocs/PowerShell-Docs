@@ -40,7 +40,7 @@ If you omit a parameter, the object has a null value for the property that the p
 A null value does not affect the session configuration.
 
 For more information about session options, see New-PSSessionOption.
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 

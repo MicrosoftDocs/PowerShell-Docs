@@ -15,7 +15,7 @@ Provides details about background jobs on local and remote computers.
 # DETAILED DESCRIPTION
 
 This topic explains the concept of a background job and provides technical
-information about how background jobs work in Windows PowerShell.
+information about how background jobs work in PowerShell.
 
 This topic is a supplement to the [about_Jobs](about_Jobs.md) and
 [about_Remote_Jobs](about_Remote_Jobs.md) topics.
@@ -27,9 +27,9 @@ a cmdlet, a function, a script, or any other command-based task. It is
 designed to run commands that take an extended period of time, but you
 can use it to run any command in the background.
 
-When a synchronous command runs, the Windows PowerShell command prompt is
+When a synchronous command runs, the PowerShell command prompt is
 suppressed until the command is complete. But a background job does not
-suppress the Windows PowerShell prompt. A command to start a background job
+suppress the PowerShell prompt. A command to start a background job
 returns a job object. The prompt returns immediately so you can work on
 other tasks while the background job runs.
 
@@ -41,7 +41,7 @@ You can also run commands to stop the job, to wait for the job to be
 completed, and to delete the job.
 
 To make the timing of a background job independent of other commands, each
-background job runs in its own Windows PowerShell environment
+background job runs in its own PowerShell environment
 (a "session"). However, this can be a temporary connection that is created
 only to run the job and is then destroyed, or it can be a persistent
 session (a PSSession) that you can use to run several related jobs or
@@ -115,7 +115,7 @@ Id Name   PSJobTypeName State      HasMoreData   Location    Command
 3  Job3                 Failed     False         localhost   Get-Process
 ```
 
-To get the child jobs of a job on all versions of Windows PowerShell,
+To get the child jobs of a job on all versions of PowerShell,
 use the ChildJob property of the parent job.
 
 ```powershell
@@ -220,15 +220,15 @@ ComputerName DateTime
 Server02     Thursday, March 13, 2008 4:16:03 PM
 ```
 
-The child jobs feature of Windows PowerShell background jobs gives you
+The child jobs feature of PowerShell background jobs gives you
 more control over the jobs that you run.
 
 # JOB TYPES
 
 
-Windows PowerShell supports different types of jobs for different tasks.
+PowerShell supports different types of jobs for different tasks.
 Beginning in Windows PowerShell 3.0, developers can write "job source
-adapters" that add new job types to Windows PowerShell and include the
+adapters" that add new job types to PowerShell and include the
 job source adapters in modules. When you import the module, you can
 use the new job type in your session.
 

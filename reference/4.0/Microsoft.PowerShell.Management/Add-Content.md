@@ -71,23 +71,21 @@ The parentheses ensure that the Get-Content command is complete before the Add-C
 You can also copy the content of Weekly.txt to a variable, such as $w, and then use the Value parameter to pass the variable to Add-Content.
 In that case, the command would be "Add-Content -Path monthly.txt -Value $w".
 
-### Example 4: Create a new directory and file and copy content
+### Example 4: Create a new file and copy content
 
 ```powershell
-PS C:\> Add-Content -Value (Get-Content "test.log") -Path "C:\tests\test134\logs\test134.log"
+PS C:\> Add-Content -Value (Get-Content "test.log") -Path "C:\Tests\logs\test134.log"
 ```
 
-This command creates a new directory and file and copies the content of an existing file to the newly created file.
+This command creates a new file and copies the content of an existing file to the newly created file.
 
 This command uses the Add-Content cmdlet to add the content.
 The value of the Value parameter is a Get-Content command that gets content from an existing file, Test.log.
 
-The value of the path parameter is a path that does not exist when the command runs.
-In this example, only the C:\Tests directories exist.
-The command creates the remaining directories and the Test134.log file.
-
-The Force parameter is not required for this command.
-Add-Content creates directories to complete a path even without the Force parameter.
+The value of the path parameter is a path that must exist when the command runs.
+In this example, C:\Tests\logs directory exists.
+The command creates the Test134.log file.
+The command will not work if any directory from the path is missing (for example if C:\Tests exists but C:\Tests\logs not, the command will fail).
 
 ## PARAMETERS
 

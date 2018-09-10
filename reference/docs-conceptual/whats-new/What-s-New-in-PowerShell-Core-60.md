@@ -1,3 +1,9 @@
+---
+title: What's New in PowerShell Core 6.0
+description: New features and changes released in PowerShell Core 6.0
+ms.date: 08/06/2018
+---
+
 # What's New in PowerShell Core 6.0
 
 [PowerShell Core 6.0][github] is a new edition of PowerShell that is cross-platform (Windows, macOS, and Linux), open-source, and built for heterogeneous environments and the hybrid cloud.

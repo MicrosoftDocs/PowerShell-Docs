@@ -45,8 +45,8 @@ The **Get-PSBreakPoint** cmdlet gets the breakpoints that are set in the current
 You can use the cmdlet parameters to get particular breakpoints.
 
 A breakpoint is a point in a command or script where execution stops temporarily so that you can examine the instructions.
-**Get-PSBreakpoint** is one of several cmdlets designed for debugging Windows PowerShell scripts and commands.
-For more information about the Windows PowerShell debugger, see about_Debuggers.
+**Get-PSBreakpoint** is one of several cmdlets designed for debugging PowerShell scripts and commands.
+For more information about the PowerShell debugger, see about_Debuggers.
 
 ## EXAMPLES
 

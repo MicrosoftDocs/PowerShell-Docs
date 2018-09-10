@@ -1,13 +1,13 @@
 # Markdown Specifics
 
-The Microsoft Open Publishing System (OPS) that builds our documentation uses [markdig](https://github.com/lunet-io/markdig)
+The Microsoft Open Publishing System (OPS) that builds our documentation uses [markdig][]
 to process the Markdown documents. Markdig parses the documents based on the rules of the latest
-[CommonMark specification](https://spec.commonmark.org/).
+[CommonMark][] specification.
 
 The new CommonMark spec is much stricter about the construction of some Markdown elements.
 Pay close attention to the details provided in this document.
 
-## Blank lines & Spaces vs Tabs
+## Blank lines, spaces, and tabs
 
 Remove duplicate blank lines.
 Multiple blank lines render as a single blank line in HTML.
@@ -19,7 +19,7 @@ between a paragraph and a list).
 Always uses spaces instead of hard tabs.
 Remove extra spaces at the end of lines.
 
-## Titles/Headings
+## Titles and headings
 
 Only use [ATX headings][atx] (# style, as opposed to = or \- style headers).
 
@@ -27,6 +27,8 @@ Only use [ATX headings][atx] (# style, as opposed to = or \- style headers).
 - Titles/headings should be surrounded by blank lines
 - Only the first letter of a title and any proper nouns in that title should be capitalized
 - Only one H1 per document
+- Header levels should increment by one. Do not skip levels.
+- Do not use bold or code markup in header text
 
 When editing reference content, the H2s are prescribed by [platyPS][platyPS].
 Adding or removing H2 causes a build break.
@@ -35,7 +37,6 @@ Adding or removing H2 causes a build break.
 
 If your list contains multiple sentences or paragraphs,
 consider using a sub-level header rather than a list.
-CommonMark
 
 ### Unordered lists
 
@@ -96,6 +97,8 @@ to get this output:
 
    To include a second element (like this one), insert a line break after the first and align indentations.
    The indentation of the second element must line up with the first character after the numbered list marker.
+   For single digit items, like this one, you indent to column 4.
+   For double digits items, for example item number 10, you indent to column 5.
 
 2. The next numbered item starts here.
 
@@ -126,3 +129,9 @@ And it will be rendered like this:
 ## Next steps
 
 See [Formatting code blocks](5-FORMATTING-CODE.md).
+
+<!-- External URLs -->
+[platyPS]: https://github.com/PowerShell/platyPS
+[markdig]: https://github.com/lunet-io/markdig
+[CommonMark]: https://spec.commonmark.org/
+[atx]: https://github.github.com/gfm/#atx-headings

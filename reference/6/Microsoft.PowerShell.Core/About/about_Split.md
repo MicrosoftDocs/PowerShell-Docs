@@ -20,7 +20,7 @@ change the following elements of the Split operation:
 
 - Delimiter. The default is whitespace, but you can specify characters,
   strings, patterns, or script blocks that specify the delimiter. The Split
-  operator in Windows PowerShell uses a regular expression in the delimiter,
+  operator in PowerShell uses a regular expression in the delimiter,
   rather than a simple character.
 - Maximum number of substrings. The default is to return all substrings. If
   you specify a number less than the number of substrings, the remaining
@@ -412,13 +412,27 @@ The second line.
 The third of three lines.
 ```
 
-The following statement uses the SimpleMatch option to direct the -split
-operator to interpret the dot (.) delimiter literally.
+The following statement uses the backslash character to escape the dot (.)
+delimiter.
 
 With the default, RegexMatch, the dot enclosed in quotation marks (".") is
 interpreted to match any character except for a newline character. As a
 result, the Split statement returns a blank line for every character except
 newline.
+
+```powershell
+"This.is.a.test" -split "\."
+```
+
+```output
+This
+is
+a
+test
+```
+
+The following statement uses the SimpleMatch option to direct the -split
+operator to interpret the dot (.) delimiter literally.
 
 The 0 represents the "return all" value of the Max-substrings parameter. You
 can use options, such as SimpleMatch, only when the Max-substrings value is

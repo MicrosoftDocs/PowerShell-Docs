@@ -48,7 +48,7 @@ To select object properties, use the **Property** parameter.
 When you select properties, `Select-Object` returns new objects that have only the specified properties.
 
 Beginning in Windows PowerShell 3.0, `Select-Object` includes an optimization feature that prevents commands from creating and processing objects that are not used.
-When you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, Windows PowerShell stops the command that generates the objects as soon as the selected number of objects is generated, even when the command that generates the objects appears before the `Select-Object` command in the pipeline.
+When you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, PowerShell stops the command that generates the objects as soon as the selected number of objects is generated, even when the command that generates the objects appears before the `Select-Object` command in the pipeline.
 To turn off this optimizing behavior, use the **Wait** parameter.
 
 ## EXAMPLES
@@ -192,7 +192,7 @@ The command uses the **ReadOnly** dynamic parameter of the `Get-ChildItem` for F
 It uses a pipeline operator (|) to send the files to the `Rename-Item` cmdlet, which renames the file.
 It uses the **Passthru** parameter of `Rename-Item` to send the renamed files to the `Select-Object` cmdlet, which selects the first 5 for display.
 
-The **Wait** parameter of `Select-Object` prevents Windows PowerShell from stopping the `Get-ChildItem` cmdlet after it gets the first five read-only text files.
+The **Wait** parameter of `Select-Object` prevents PowerShell from stopping the `Get-ChildItem` cmdlet after it gets the first five read-only text files.
 Without this parameter, only the first five read-only files would be renamed.
 
 ### Example 9: Demonstrate the intricacies of the -ExpandProperty parameter
@@ -390,6 +390,24 @@ Unlike the **Index** parameter, which starts counting at 0, the **Skip** paramet
 
 ```yaml
 Type: Int32
+Parameter Sets: DefaultParameter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipLast
+
+Skips (does not select) the specified number of items from the end of the list or array. Works in the same way as using **Skip** together with **Last** parameter.
+
+Unlike the **Index** parameter, which starts counting at 0, the **SkipLast** parameter begins at 1.
+
+```yaml
+Type: Int32
 Parameter Sets: SkipLastParameter
 Aliases:
 
@@ -422,8 +440,8 @@ Accept wildcard characters: False
 ### -Wait
 
 Indicates that the cmdlet turns off optimization.
-Windows PowerShell runs commands in the order that they appear in the command pipeline and lets them generate all objects.
-By default, if you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, Windows PowerShell stops the command that generates the objects as soon as the selected number of objects is generated.
+PowerShell runs commands in the order that they appear in the command pipeline and lets them generate all objects.
+By default, if you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, PowerShell stops the command that generates the objects as soon as the selected number of objects is generated.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -443,23 +461,6 @@ Accept wildcard characters: False
 
 Gets only the specified number of objects.
 Enter the number of objects to get.
-
-```yaml
-Type: Int32
-Parameter Sets: DefaultParameter
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-
-Ignores the specified number of objects and then gets the remaining objects.
-Enter the number of objects to skip.
 
 ```yaml
 Type: Int32

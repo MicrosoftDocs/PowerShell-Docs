@@ -25,7 +25,7 @@ compiled cmdlet.
 There is a difference between authoring a compiled cmdlet and an advanced
 function. Compiled cmdlets are .NET Framework classes that must be written in
 a .NET Framework language such as C#. In contrast, advanced functions are
-written in the Windows PowerShell script language in the same way that other
+written in the PowerShell script language in the same way that other
 functions or script blocks are written.
 
 Advanced functions use the CmdletBinding attribute to identify them as
@@ -91,4 +91,4 @@ Advanced functions differ from compiled cmdlets in the following ways:
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
 
-[Windows PowerShell Cmdlets](http://go.microsoft.com/fwlink/?LinkID=135279)
+[PowerShell Cmdlets](http://go.microsoft.com/fwlink/?LinkID=135279)

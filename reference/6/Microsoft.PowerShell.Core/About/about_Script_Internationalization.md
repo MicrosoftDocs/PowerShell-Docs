@@ -16,7 +16,7 @@ scripts to display messages and instructions to users in their user interface
 
 ## Long Description
 
-The Windows PowerShell script internationalization features allow you to
+The PowerShell script internationalization features allow you to
 better serve users throughout the world by displaying Help and user messages
 for scripts and functions in the user's UI language.
 
@@ -27,12 +27,12 @@ separate from code so they are easily identified and extracted. A new cmdlet,
 `ConvertFrom-StringData`, converts text strings into dictionary-like hash
 tables to facilitate translation.
 
-To support international Help text, Windows PowerShell includes the following
+To support international Help text, PowerShell includes the following
 features:
 
 * A Data section that separates text strings from code instructions. For more
   information about the Data section, see
-  [aout_Data_Sections](about_Data_Sections.md).
+  [about_Data_Sections](about_Data_Sections.md).
 
 * New automatic variables, \$PSCulture and \$PSUICulture. \$PSCulture stores the
   name of the UI language used on the system for elements such as the date,
@@ -110,9 +110,9 @@ include the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
-helloWorld = Hello, World (in German).
-errorMsg1 = You cannot leave the user name field blank (in German).
-promptMsg = Please enter your user name (in German).
+halloWorld = Hallo, Welt.
+errorMsg1 = Das Feld Benutzername darf nicht leer sein.
+promptMsg = Geben Sie Ihren Benutzernamen ein.
 '@
 ```
 
@@ -121,9 +121,9 @@ directory might includes the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
-helloWorld = Hello, World (in Arabic).
-errorMsg1 = You cannot leave the user name field blank (in Arabic).
-promptMsg = Please enter your user name (in Arabic).
+helloWorld = مرحبًا أيها العالَم
+errorMsg1 = لا يمكنك ترك حقل اسم المستخدم فارغًا
+promptMsg = يرجى إدخال اسم المستخدم الخاص بك
 '@
 ```
 
@@ -222,14 +222,14 @@ The following is a complete listing of .\de-DE\sample1.psd1:
 ```powershell
 # culture="de-DE"
 ConvertFrom-StringData @'
-    messageDate = Today is
-    d0 = Sunday (in German)
-    d1 = Monday (in German)
-    d2 = Tuesday (in German)
-    d3 = Wednesday (in German)
-    d4 = Thursday (in German)
-    d5 = Friday (in German)
-    d6 = Saturday (in German)
+    messageDate = Heute ist
+    d0 = Sonntag
+    d1 = Montag
+    d2 = Dienstag
+    d3 = Mittwoch
+    d4 = Donnerstag
+    d5 = Freitag
+    d6 = Samstag
 '@
 ```
 

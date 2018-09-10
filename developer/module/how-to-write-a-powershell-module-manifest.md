@@ -19,7 +19,7 @@ A *module manifest* is a Windows PowerShell data file (.psd1) that describes the
 
 For simple modules that contain only a single .psm1 or binary assembly, a module manifest is optional. However, it is recommended that you use a module manifest whenever possible, as they are useful to help you organize your code and to maintain versioning information. In addition, a module manifest is required to export an assembly that is installed in the global assembly cache. A module manifest is also required for modules that support the Updatable Help feature. That is, Updatable Help uses the **HelpInfoUri** key in the module manifest to find the Help information (HelpInfo XML) file that contains the location of the updated help files for the module. For more information about Updatable Help, see [Supporting Updatable Help](./supporting-updatable-help.md).
 
-#### To create and use a module manifest
+### To create and use a module manifest
 
 1. To create a module manifest, you have several options:
 
@@ -28,36 +28,32 @@ For simple modules that contain only a single .psm1 or binary assembly, a module
       `'@{ModuleVersion="1.0"}' > myModuleName.psd1`
 
    2. Or, call the [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet, with one or more of the default values passed in as parameters. (Note that the only the name of the file is required to generate a manifest, however.) This will create a module manifest with all the manifest values you supplied explicitly stated, and with the rest containing the appropriate default value.
-   2. Or, call the [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet, with one or more of the default values passed in as parameters. (Note that the only the name of the file is required to generate a manifest, however.) This will create a module manifest with all the manifest values you supplied explicitly stated, and with the rest containing the appropriate default value.
 
       `New-ModuleManifest myModuleName.psd1 -ModuleVersion "2.0" -Author "YourNameHere"`
 
    3. Finally, you can also create an empty .psd1 file, and copy the template at the bottom of this topic into the file, and fill in the relevant values. The only real requirement in this case would be to ensure that the file was named the same as the module.
 
-   2. Add in any additional elements to the manifest that you want to have in the file.
+2. Add in any additional elements to the manifest that you want to have in the file.
 
-      Generally speaking, this will probably be done in whatever text editor you prefer, such as Notepad. However this technically is a script file that contains code, so you may wish to edit it in an actual scripting or development environment, such as the PowerShell ISE. Again, note that all elements of a manifest file are optional, except for the ModuleVersion number.
+   Generally speaking, this will probably be done in whatever text editor you prefer, such as Notepad. However this technically is a script file that contains code, so you may wish to edit it in an actual scripting or development environment, such as the PowerShell ISE. Again, note that all elements of a manifest file are optional, except for the ModuleVersion number.
 
-      For descriptions of the keys and values you can have in a module manifest, see the **Module Manifest Elements** below. For additional information, see the parameter descriptions in the  [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet.
-      For descriptions of the keys and values you can have in a module manifest, see the **Module Manifest Elements** below. For additional information, see the parameter descriptions in the  [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet.
+   For descriptions of the keys and values you can have in a module manifest, see the **Module Manifest Elements** below. For additional information, see the parameter descriptions in the  [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet.
 
-   3. Optionally, you can choose to add additional code to your module manifest, to address any scenarios that would not be covered by the base module manifest elements.
+3. Optionally, you can choose to add additional code to your module manifest, to address any scenarios that would not be covered by the base module manifest elements.
 
-      Due to security concerns, PowerShell will run only a small subset of the available operations in a module manifest file. Generally, you can use the **if** statement, arithmetic and comparison operators, and the basic PowerShell data types.
+   Due to security concerns, PowerShell will run only a small subset of the available operations in a module manifest file. Generally, you can use the **if** statement, arithmetic and comparison operators, and the basic PowerShell data types.
 
-   4. Once you have created your module manifest, you can test it (to confirm that any paths described in the manifest are correct) with a call to [Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest).
-   4. Once you have created your module manifest, you can test it (to confirm that any paths described in the manifest are correct) with a call to [Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest).
+4. Once you have created your module manifest, you can test it (to confirm that any paths described in the manifest are correct) with a call to [Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest).
 
-      `Test-ModuleManifest myModuleName.psd1`
+   `Test-ModuleManifest myModuleName.psd1`
 
-   5. Be sure that your module manifest is located in the top level of the directory that contains your module.
+5. Be sure that your module manifest is located in the top level of the directory that contains your module.
 
-      When you copy your module onto a system and import it, PowerShell will use the module manifest to import your module.
+   When you copy your module onto a system and import it, PowerShell will use the module manifest to import your module.
 
-   6. Optionally, you can directly test your module manifest with a call to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) by dot-sourcing the manifest itself.
-   6. Optionally, you can directly test your module manifest with a call to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) by dot-sourcing the manifest itself.
+6. Optionally, you can directly test your module manifest with a call to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) by dot-sourcing the manifest itself.
 
-      `Import-Module .\myModuleName.psd1`
+   `Import-Module .\myModuleName.psd1`
 
 ## Module Manifest Elements
 
@@ -78,7 +74,7 @@ The following table describes the elements you can have in a module manifest
 |DotNetFrameworkVersion<br /><br /> Type: string|' '|Minimum version of Microsoft .NET Framework required by this module.<br /><br /> Example: `DotNetFrameorkVersion = '3.5'`|
 |CLRVersion<br /><br /> Type: string|' '|Minimum version of the common language runtime (CLR) required by this module.<br /><br /> Example: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Type: string|' '|Processor architecture (None, X86, Amd64) required by this module. Valid values are x86, AMD64, IA64, and None (unknown or unspecified).<br /><br /> Example: `ProcessorArchitecture = 'x86'`|
-|RequiredModules<br /><br /> Type: [string[]]|@()|Modules that must be imported into the global environment prior to importing this module. Note that this does not actually load any dependent modules - rather, it checks to see if the specified modules have already been loaded. (For example, some modules may already be loaded by a different module.)<br /><br /> Example: `RequiredModules = @({ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|RequiredModules<br /><br /> Type: [string[]]|@()|Modules that must be imported into the global environment prior to importing this module. This will load any modules listed unless they have already been loaded. (For example, some modules may already be loaded by a different module.). It is also possible to specify a specific version to load using `RequiredVersion` rather than `ModuleVersion`. When using `ModuleVersion` it will load the newest version available with a minimum of the version specified.<br /><br /> Example: `RequiredModules = @({ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Example: `RequiredModules = @({ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> Type: [string[]]|@()|Assemblies that must be loaded prior to importing this module.<br /><br /> Note that unlike RequiredModules, PowerShell will load the RequiredAssemblies if they are not already loaded.|
 |ScriptsToProcess<br /><br /> Type: [string[]]|@()|Script (.ps1) files that are run in the caller's session state when the module is imported. This could be the global session state or, for nested modules, the session state of another module. You can use these scripts to prepare an environment just as you might use a login script.<br /><br /> These scripts are run before any of the modules listed in the manifest are loaded.|
 |TypesToProcess<br /><br /> Type: [Object[]]|@()|Type files (.ps1xml) to be loaded when importing this module.|

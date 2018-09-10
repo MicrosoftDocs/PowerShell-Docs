@@ -11,7 +11,7 @@ title:  Get-Help
 # Get-Help
 
 ## SYNOPSIS
-Displays information about Windows PowerShell commands and concepts.
+Displays information about PowerShell commands and concepts.
 
 ## SYNTAX
 
@@ -173,7 +173,7 @@ This command displays a list of all help topics available on your system.
 PS C:\> Get-Help about_*
 ```
 
-This command displays a list of the conceptual topics included in Windows PowerShell help.
+This command displays a list of the conceptual topics included in PowerShell help.
 All of these topics begin with the characters about_.
 To display a particular help file, type get-help \<topic-name\>, for example, `Get-Help about_Signing`.
 
@@ -406,7 +406,7 @@ If you enter the exact name of a help topic, **Get-Help** displays the topic con
 If you enter a word or word pattern that appears in several help topic titles, **Get-Help** displays a list of the matching titles.
 If you enter a word that does not match any help topic titles, **Get-Help** displays a list of topics that include that word in their contents.
 
-The names of conceptual topics, such as `about_Objects`, must be entered in English, even in non-English versions of Windows PowerShell.
+The names of conceptual topics, such as `about_Objects`, must be entered in English, even in non-English versions of PowerShell.
 
 ```yaml
 Type: String
@@ -459,9 +459,9 @@ Accept wildcard characters: False
 
 ### -Path
 Gets help that explains how the cmdlet works in the specified provider path.
-Enter a Windows PowerShell provider path.
+Enter a PowerShell provider path.
 
-This parameter gets a customized version of a cmdlet help topic that explains how the cmdlet works in the specified Windows PowerShell provider path.
+This parameter gets a customized version of a cmdlet help topic that explains how the cmdlet works in the specified PowerShell provider path.
 This parameter is effective only for help about a provider cmdlet and only when the provider includes a custom version of the provider cmdlet help topic in its help file.
 To use this parameter, install the help file for the module that includes the provider.
 
@@ -469,7 +469,7 @@ To see the custom cmdlet help for a provider path, go to the provider path locat
 You can also find custom cmdlet help online in the provider help section of the help topics.
 For example, you can find help for the **New-Item** cmdlet in the Wsman:\*\ClientCertificate path (http://go.microsoft.com/fwlink/?LinkID=158676).
 
-For more information about Windows PowerShell providers, see [about_Providers](About/about_Providers.md).
+For more information about PowerShell providers, see [about_Providers](About/about_Providers.md).
 
 ```yaml
 Type: String
@@ -524,9 +524,9 @@ If you get a conceptual help topic, **Get-Help** returns it as a string.
 If you get a command that has a help file, **Get-Help** returns a **MamlCommandHelpInfo** object.
 
 ## NOTES
-* Windows PowerShell 3.0 does not include help files. To download and install the help files that **Get-Help** reads, use the **Update-Help** cmdlet. You can use the **Update-Help** cmdlet to download and install help files for the core commands that come with Windows PowerShell and for any modules that you install. You can also use it to update the help files so that the help on your computer is never outdated.
+* Windows PowerShell 3.0 does not include help files. To download and install the help files that **Get-Help** reads, use the **Update-Help** cmdlet. You can use the **Update-Help** cmdlet to download and install help files for the core commands that come with PowerShell and for any modules that you install. You can also use it to update the help files so that the help on your computer is never outdated.
 
-  You can also read the help topics about the commands that come with Windows PowerShell online starting at Scripting with Windows PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116).
+  You can also read the help topics about the commands that come with PowerShell online starting at Scripting with PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116).
 
 * **Get-Help** displays help in the locale set for the Windows operating system or in the fallback language for that locale. If you do not have help files for the primary or fallback locale, **Get-Help** behaves as if there are no help files on the computer. To get help for a different locale, use Region and Language in Control Panel to change the settings.
 * The full view of help includes a table of information about the parameters. The table includes the following fields:
@@ -545,7 +545,7 @@ For example, "2" indicates that when the parameter name is omitted, the paramete
 When the parameter name is used, the parameter can appear anywhere in the command.
 
   - Default value.
-The parameter value that Windows PowerShell uses if you do not include the parameter in the command.
+The parameter value that PowerShell uses if you do not include the parameter in the command.
 
   - Accepts pipeline input.
 Indicates whether you can (true) or cannot (false) send objects to the parameter through a pipeline.

@@ -7,8 +7,6 @@ title:  about_WS Management_Cmdlets
 ---
 
 # About WS-Management Cmdlets
-## about_WS-Management_Cmdlets
-
 
 # SHORT DESCRIPTION
 

@@ -46,7 +46,7 @@ Shutting down and restarting computers are generally the same types of task. Too
 
 You can also perform shutdown and restart operations directly from Windows PowerShell as well.
 
-To shut down the computer, use the restart-computer command
+To shut down the computer, use the stop-computer command
 
 ```powershell
 stop-computer

@@ -7,9 +7,6 @@ title:  about_ActivityCommonParameters
 ---
 
 # About ActivityCommonParameters
-## about_ActivityCommonParameters
-
-
 
 # SHORT DESCRIPTION
 

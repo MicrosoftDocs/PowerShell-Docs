@@ -72,7 +72,7 @@ Receive-PSSession -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-
 ```
 
 ## DESCRIPTION
-The **Receive-PSSession** cmdlet gets the results of commands running in Windows PowerShell sessions (**PSSession**) that were disconnected.
+The **Receive-PSSession** cmdlet gets the results of commands running in PowerShell sessions (**PSSession**) that were disconnected.
 If the session is currently connected, **Receive-PSSession** gets the results of commands that were running when the session was disconnected.
 If the session is still disconnected, **Receive-PSSession** connects to the session, resumes any commands that were suspended, and gets the results of commands running in the session.
 
@@ -144,7 +144,7 @@ PS C:\> Invoke-Command -Session $s -FilePath \\Server12\Scripts\SharedScripts\Ne
 # Restart local computer
 # Network access is not re-established within 4 minutes
 
-When the computer restarts, the user starts Windows PowerShell and runs a Get-PSSession command to get sessions on the Server01 computer. The output shows that the AD session still exists on the Server01 computer. The **State** indicates that it is disconnected and the **Availability** value, None, indicates that it is not connected to any client sessions.
+When the computer restarts, the user starts PowerShell and runs a Get-PSSession command to get sessions on the Server01 computer. The output shows that the AD session still exists on the Server01 computer. The **State** indicates that it is disconnected and the **Availability** value, None, indicates that it is not connected to any client sessions.
 PS C:\> Get-PSSession -ComputerName Server01
 
  Id Name    ComputerName    State         ConfigurationName     Availability
@@ -168,16 +168,16 @@ Id Name    ComputerName    State         ConfigurationName     Availability
 ```
 
 This example uses the **Receive-PSSession** cmdlet to get the results of a job after a network outage disrupts a session connection.
-Windows PowerShell automatically attempts to reconnect the session one time each second for the next four minutes and abandons the effort only if all attempts in the four-minute interval fail.
+PowerShell automatically attempts to reconnect the session one time each second for the next four minutes and abandons the effort only if all attempts in the four-minute interval fail.
 
 ### Example 5: Reconnect to disconnected sessions
 ```
-The first command uses the Invoke-Command cmdlet to run a script on the three remote computers. Because the scripts gathers and summarize data from multiple databases, it often takes the script an extended time to finish. The command uses the *InDisconnectedSession* parameter, which starts the scripts and then immediately disconnects the sessions.The command uses the *SessionOption* parameter to extend the **IdleTimeout** value of the disconnected session. Disconnected sessions are considered to be idle from the moment they are disconnected, so it is important to set the idle time-out for long enough that the commands can complete and you can reconnect to the session, if necessary. You can set the **IdleTimeout** only when you create the **PSSession** and change it only when you disconnect from it. You cannot change the **IdleTimeout** value when you connect to a **PSSession** or receiving its results.After running the command, the user exits Windows PowerShell and closes the computer .
+The first command uses the Invoke-Command cmdlet to run a script on the three remote computers. Because the scripts gathers and summarize data from multiple databases, it often takes the script an extended time to finish. The command uses the *InDisconnectedSession* parameter, which starts the scripts and then immediately disconnects the sessions.The command uses the *SessionOption* parameter to extend the **IdleTimeout** value of the disconnected session. Disconnected sessions are considered to be idle from the moment they are disconnected, so it is important to set the idle time-out for long enough that the commands can complete and you can reconnect to the session, if necessary. You can set the **IdleTimeout** only when you create the **PSSession** and change it only when you disconnect from it. You cannot change the **IdleTimeout** value when you connect to a **PSSession** or receiving its results.After running the command, the user exits PowerShell and closes the computer .
 PS C:\> Invoke-Command -InDisconnectedSession -ComputerName Server01, Server02, Server30 -FilePath \\Server12\Scripts\SharedScripts\Get-BugStatus.ps1 -Name BugStatus -SessionOption @{IdleTimeout = 86400000} -ConfigurationName ITTasks# Exit
 
-# Start Windows PowerShell on a different computer.
+# Start PowerShell on a different computer.
 
-On the next day, the user resumes Windows and starts Windows PowerShell. The second command uses the Get-PSSession cmdlet to get the sessions in which the scripts were running. The command identifies the sessions by the computer name, session name, and the name of the session configuration and saves the sessions in the $s variable.The third command displays the value of the $s variable. The output shows that the sessions are disconnected, but not busy, as expected.
+On the next day, the user resumes Windows and starts PowerShell. The second command uses the Get-PSSession cmdlet to get the sessions in which the scripts were running. The command identifies the sessions by the computer name, session name, and the name of the session configuration and saves the sessions in the $s variable.The third command displays the value of the $s variable. The output shows that the sessions are disconnected, but not busy, as expected.
 PS C:\> $s = Get-PSSession -ComputerName Server01, Server02, Server30 -Name BugStatus
  PS C:\> $s
 Id Name    ComputerName    State         ConfigurationName     Availability
@@ -256,7 +256,7 @@ This example shows what happens to a job that is running in a disconnected sessi
 Indicates that this cmdlet allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 
 When you use the *ConnectionURI* parameter, the remote destination can return an instruction to redirect to a different URI.
-By default, Windows PowerShell does not redirect connections, but you can use this parameter to enable it to redirect the connection.
+By default, PowerShell does not redirect connections, but you can use this parameter to enable it to redirect the connection.
 
 You can also limit the number of times the connection is redirected by changing the **MaximumConnectionRedirectionCount** session option value.
 Use the *MaximumRedirection* parameter of the New-PSSessionOption cmdlet or set the **MaximumConnectionRedirectionCount** property of the $PSSessionOption preference variable.
@@ -338,7 +338,7 @@ Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts.
 They do not work with domain accounts.
 
-To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the Windows PowerShell Cert: drive.
+To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the PowerShell Cert: drive.
 
 ```yaml
 Type: String
@@ -384,7 +384,7 @@ The configuration name of a session is stored in the **ConfigurationName** prope
 The value of this parameter is used to select and filter sessions.
 It does not change the session configuration that the session uses.
 
-For more information about session configurations, see about_Session_Configurations.
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: String
@@ -433,7 +433,7 @@ Valid values for the Transport segment of the URI are HTTP and HTTPS.
 If you specify a connection URI with a Transport segment, but do not specify a port, the session is created with standards ports: 80 for HTTP and 443 for HTTPS.
 To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
 
-If the destination computer redirects the connection to a different URI, Windows PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
+If the destination computer redirects the connection to a different URI, PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
 
 ```yaml
 Type: Uri
@@ -521,9 +521,9 @@ Specifies a friendly name for the job that **Receive-PSSession** returns.
 
 **Receive-PSSession** returns a job when the value of the *OutTarget* parameter is Job or the job that is running in the disconnected session was started in the current session.
 
-If the job that is running in the disconnected session was started in the current session, Windows PowerShell reuses the original job object in the session and ignores the value of the *JobName* parameter.
+If the job that is running in the disconnected session was started in the current session, PowerShell reuses the original job object in the session and ignores the value of the *JobName* parameter.
 
-If the job that is running in the disconnected session was started in a different session, Windows PowerShell creates a new job object.
+If the job that is running in the disconnected session was started in a different session, PowerShell creates a new job object.
 It uses a default name, but you can use this parameter to change the name.
 
 If the default value or explicit value of the *OutTarget* parameter is not Job, the command succeeds, but the *JobName* parameter has no effect.
@@ -604,7 +604,7 @@ To connect to a remote computer, the remote computer must be listening on the po
 The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.
 
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
-To configure the listener, type the following two commands at the Windows PowerShell prompt:
+To configure the listener, type the following two commands at the PowerShell prompt:
 
 `Remove-Item -Path WSMan:\Localhost\listener\listener* -Recurse`
 
@@ -654,7 +654,7 @@ However, they do not take precedence over maximum values, quotas or limits set i
 
 For a description of the session options that includes the default values, see New-PSSessionOption.
 For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
-For more information about session configurations, see about_Session_Configurations (http://go.microsoft.com/fwlink/?LinkID=145152).
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: PSSessionOption
@@ -672,7 +672,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to connect to the disconnected session.
 By default, SSL is not used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network.
+WS-Management encrypts all PowerShell content transmitted over the network.
 *UseSSL* is an additional protection that sends the data across an HTTPS connection instead of an HTTP connection.
 
 If you use this parameter, but SSL is not available on the port that is used for the command, the command fails.
@@ -755,7 +755,7 @@ In this case, the job object is created in the remote session.
 You cannot use the **Receive-PSSession** cmdlet to get the job results.
 Instead, use the **Connect-PSSession** cmdlet to connect to the session and then use the **Invoke-Command** cmdlet to run a Receive-Job command in the session.
 
-* When a session that contains a running job is disconnected and then reconnected, the original job object is reused only if the job is disconnected and reconnected to the same session, and the command to reconnect does not specify a new job name. If the session is reconnected to a different client session or a new job name is specified, Windows PowerShell creates a new job object for the new session.
+* When a session that contains a running job is disconnected and then reconnected, the original job object is reused only if the job is disconnected and reconnected to the same session, and the command to reconnect does not specify a new job name. If the session is reconnected to a different client session or a new job name is specified, PowerShell creates a new job object for the new session.
 * When you disconnect a **PSSession**, the session state is Disconnected and the availability is None.
 
   The value of the **State** property is relative to the current session.

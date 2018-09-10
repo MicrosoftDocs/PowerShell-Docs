@@ -32,7 +32,7 @@ The **Export-CliXml** cmdlet creates an XML-based representation of an object or
 You can then use the Import-Clixml cmdlet to re-create the saved object based on the contents of that file.
 
 This cmdlet is similar to ConvertTo-Xml, except that **Export-CliXml** stores the resulting XML in a file.
-**ConvertTo-XML** returns the XML, so you can continue to process it in Windows PowerShell.
+**ConvertTo-XML** returns the XML, so you can continue to process it in PowerShell.
 
 A valuable use of **Export-CliXml** is to export credentials and secure strings securely as XML.
 For an example of how to do this, see Example 3.
@@ -203,7 +203,7 @@ Specifies the path to the file where the XML representation of the object will b
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String

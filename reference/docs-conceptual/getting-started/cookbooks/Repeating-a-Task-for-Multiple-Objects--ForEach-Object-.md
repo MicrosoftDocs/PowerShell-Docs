@@ -6,7 +6,7 @@ ms.assetid:  6697a12d-2470-4ed6-b5bb-c35e5d525eb6
 ---
 # Repeating a Task for Multiple Objects (ForEach-Object)
 
-The **ForEach-Object** cmdlet uses script blocks and the $_ descriptor for the current pipeline object to let you run a command on each object in the pipeline. This can be used to perform some complicated tasks.
+The **ForEach-Object** cmdlet uses script blocks and the `$_` descriptor for the current pipeline object to let you run a command on each object in the pipeline. This can be used to perform some complicated tasks.
 
 One situation where this can be useful is manipulating data to make it more useful. For example, the Win32_LogicalDisk class from WMI can be used to return free space information for each local disk. The data is returned in terms of bytes, however, which makes it difficult to read:
 

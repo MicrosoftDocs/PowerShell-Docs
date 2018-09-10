@@ -21,7 +21,7 @@ Out-Default [-Transcript] [-InputObject <PSObject>] [<CommonParameters>]
 
 ## DESCRIPTION
 The **Out-Default** cmdlet sends output to the default formatter and the default output cmdlet.
-This cmdlet has no effect on the formatting or output of Windows PowerShell commands.
+This cmdlet has no effect on the formatting or output of PowerShell commands.
 It is a placeholder that lets you write your own **Out-Default** function or cmdlet.
 
 ## EXAMPLES

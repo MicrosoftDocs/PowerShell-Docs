@@ -24,7 +24,7 @@ Format-List [[-Property] <Object[]>] [-GroupBy <Object>] [-View <String>] [-Show
 The **Format-List** cmdlet formats the output of a command as a list of properties in which each property is displayed on a separate line.
 You can use **Format-List** to format and display all or selected properties of an object as a list (format-list *).
 
-Because more space is available for each item in a list than in a table, Windows PowerShell displays more properties of the object in the list, and the property values are less likely to be truncated.
+Because more space is available for each item in a list than in a table, PowerShell displays more properties of the object in the list, and the property values are less likely to be truncated.
 
 ## EXAMPLES
 
@@ -45,7 +45,7 @@ PS C:\> $A = Get-ChildItem $pshome\*.ps1xml
 PS C:\> Format-List -InputObject $A
 ```
 
-These commands display information about the PS1XML files in the Windows PowerShell directory as a list.
+These commands display information about the PS1XML files in the PowerShell directory as a list.
 
 The first command gets the objects representing the files and stores them in the $a variable.
 
@@ -271,15 +271,15 @@ You can pipe any object to **Format-List**.
 * You can also refer to Format-List by its built-in alias, FL. For more information, see about_Aliases.
 
   The format cmdlets, such as **Format-List**, arrange the data to be displayed but do not display it.
-The data is displayed by the output features of Windows PowerShell and by the cmdlets that contain the Out verb (the Out cmdlets), such as Out-Host, Out-File, and Out-Printer.
+The data is displayed by the output features of PowerShell and by the cmdlets that contain the Out verb (the Out cmdlets), such as Out-Host, Out-File, and Out-Printer.
 
-  If you do not use a format cmdlet, Windows PowerShell applies that default format for each object that it displays.
+  If you do not use a format cmdlet, PowerShell applies that default format for each object that it displays.
 
   The *GroupBy* parameter assumes that the objects are sorted.
 Before using Format-Custom to group the objects, use Sort-Object to sort them.
 
   The *View* parameter lets you specify an alternate format for the table.
-You can use the views defined in the *.format.PS1XML files in the Windows PowerShell directory, or you can create your own views in new PS1XML files and use the Update-FormatData cmdlet to include them in Windows PowerShell.
+You can use the views defined in the *.format.PS1XML files in the PowerShell directory, or you can create your own views in new PS1XML files and use the Update-FormatData cmdlet to include them in PowerShell.
 
   The alternate view for the View parameter must use the list format; if not, the command fails.
 If the alternate view is a table, use Format-Table.

@@ -64,7 +64,7 @@ Session configurations define the environment of remote sessions (**PSSessions**
 Every **PSSession** uses a session configuration.
 The session configuration determines the features of the **PSSession**, such as the modules that are available in the session, the cmdlets that are permitted to run, the language mode, quotas, and timeouts.
 The security descriptor of the session configuration determines who can use the session configuration to connect to the local computer.
-For more information about session configurations, see about_Session_Configurations.
+For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 To see the properties of a session configuration, use the Get-PSSessionConfiguration cmdlet or the WSMan Provider.
 For more information about the WSMan Provider, type `Get-Help WSMan`.
@@ -376,7 +376,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSVersion
-Specifies the version of Windows PowerShell in sessions that use this session configuration.
+Specifies the version of PowerShell in sessions that use this session configuration.
 
 The value of this parameter takes precedence over the value of the **PowerShellVersion** key in the session configuration file.
 
@@ -500,7 +500,7 @@ Accept wildcard characters: False
 
 ### -StartupScript
 Specifies the startup script for the configuration.
-Enter the fully qualified path of a Windows PowerShell script.
+Enter the fully qualified path of a PowerShell script.
 The specified script runs in the new session that uses the session configuration.
 
 To delete a startup script from a session configuration, enter an empty string ("") or a value of $Null.
@@ -634,7 +634,7 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.WSMan.Management.WSManConfigLeafElement
 
 ## NOTES
-* To run this cmdlet, start Windows PowerShell by using the Run as administrator option.
+* To run this cmdlet, start PowerShell by using the Run as administrator option.
 * The **Set-PSSessionConfiguration** cmdlet does not change the configuration name and the **WSMan** provider does not support the Rename-Item cmdlet. To change the name of a session configuration, use the Unregister-PSSessionConfiguration cmdlet to delete the configuration and then use the **Register-PSSessionConfiguration** cmdlet to create and register a new session configuration.
 * You can use the **Set-PSSessionConfiguration** cmdlet to change the default Microsoft.PowerShell and Microsoft.PowerShell32 session configurations. They are not protected. To revert to the original version of a default session configuration, use the **Unregister-PSSessionConfiguration** cmdlet to delete the default session configuration and then use the Enable-PSRemoting cmdlet to restore it.
 * The properties of a session configuration object vary with the options set for the session configuration and the values of those options. Also, session configurations that use a session configuration file have additional properties.

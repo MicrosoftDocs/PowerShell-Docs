@@ -10,14 +10,14 @@ title:  about_Group_Policy_Settings
 
 ## SHORT DESCRIPTION
 
-Describes the Group Policy settings for Windows PowerShell
+Describes the Group Policy settings for PowerShell
 
 ## LONG DESCRIPTION
 
-Windows PowerShell includes Group Policy settings to help you define
+PowerShell includes Group Policy settings to help you define
 consistent option values for servers in an enterprise environment.
 
-The Windows PowerShell Group Policy settings are in the following
+The PowerShell Group Policy settings are in the following
 Group Policy paths:
 
     Computer Configuration\
@@ -80,7 +80,7 @@ For more information, see [about_Execution_Policies](about_Execution_Policies.md
 ## TURN ON MODULE LOGGING
 
 The "Turn on Module Logging" policy setting turns on logging for
-selected Windows PowerShell modules. The setting is effective in
+selected PowerShell modules. The setting is effective in
 all sessions on all affected computers.
 
 If you enable this policy setting and specify one or more modules,
@@ -88,7 +88,7 @@ pipeline execution events for the specified modules are recorded in
 the Windows PowerShell log in Event Viewer.
 
 If you disable this policy setting, logging of execution events is
-disabled for all Windows PowerShell modules.
+disabled for all PowerShell modules.
 
 If this policy setting is not configured, the **LogPipelineExecutionDetails**
 property of each module or snap-in determines whether the execution
@@ -106,7 +106,7 @@ Import-Module <Module-Name>
 ```
 
 To turn on module logging for all sessions on a particular computer,
-add the previous commands to the 'All Users' Windows PowerShell profile
+add the previous commands to the 'All Users' PowerShell profile
 ($Profile.AllUsersAllHosts).
 
 For more information about module logging, see [about_Modules](about_Modules.md).
@@ -124,7 +124,7 @@ the Group Policy setting under 'Computer Configuration' is effective. The Group
 Policy setting under 'User Configuration' is ignored.
 
 The `Update-Help` cmdlet downloads and installs the newest help files for
-Windows PowerShell modules and installs them on the computer. By default,
+PowerShell modules and installs them on the computer. By default,
 `Update-Help` downloads new help files from an Internet location specified by
 the module.
 

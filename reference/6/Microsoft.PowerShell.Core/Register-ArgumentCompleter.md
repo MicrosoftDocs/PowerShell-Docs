@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -Native
-Indicates that the argument completer is for a native command where Windows PowerShell cannot complete parameter names.
+Indicates that the argument completer is for a native command where PowerShell cannot complete parameter names.
 
 ```yaml
 Type: SwitchParameter

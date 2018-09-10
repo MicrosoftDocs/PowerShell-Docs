@@ -1,3 +1,9 @@
+---
+title: Using Visual Studio Code for PowerShell Development
+description: Using Visual Studio Code for PowerShell Development
+ms.date: 08/06/2018
+---
+
 # Using Visual Studio Code for PowerShell Development
 
 In addition to the [PowerShell ISE][ise],
@@ -27,7 +33,7 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
   > [!IMPORTANT]
   > On macOS, you must install OpenSSL for the PowerShell extension to work correctly.
   > The easiest way to accomplish this is to install [Homebrew](http://brew.sh/) and then run `brew install openssl`.
-  > VS Code can now load the the PowerShell extension successfully.
+  > VS Code can now load the PowerShell extension successfully.
 
 - **Windows**: follow the installation instructions on the [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) page
 
@@ -60,8 +66,8 @@ To exit Visual Studio Code, **File->Exit**.
 If you wish to use a specific installation of PowerShell with Visual Studio Code, you need to add a new variable to your user settings file.
 
 1. Click **File -> Preferences -> Settings**
-2. Two editor panes appear.
-   In the right-most pane (`settings.json`), insert the setting below appropriate for your OS somewhere between the two curly brackets (`{` and `}`) and replace *<version>* with the installed PowerShell version:
+1. Two editor panes appear.
+   In the right-most pane (`settings.json`), insert the setting below appropriate for your OS somewhere between the two curly brackets (`{` and `}`) and replace **\<version\>** with the installed PowerShell version:
 
    ```json
     // On Windows:
@@ -74,8 +80,8 @@ If you wish to use a specific installation of PowerShell with Visual Studio Code
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
    ```
 
-3. Replace the setting with the path to the desired PowerShell executable
-4. Save the settings file and restart Visual Studio Code
+1. Replace the setting with the path to the desired PowerShell executable
+1. Save the settings file and restart Visual Studio Code
 
 #### Configuration settings for Visual Studio Code
 

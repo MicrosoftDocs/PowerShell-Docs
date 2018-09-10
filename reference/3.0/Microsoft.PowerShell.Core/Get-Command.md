@@ -32,23 +32,18 @@ Get-Command [[-Name] <String[]>] [[-ArgumentList] <Object[]>]
 ```
 
 ## DESCRIPTION
-
-The **Get-Command** cmdlet gets all commands that are installed on the computer, including cmdlets, aliases, functions, workflows, filters, scripts, and applications.
-**Get-Command** gets the commands from Windows PowerShell modules and snap-ins and commands that were imported from other sessions.
+The `Get-Command` cmdlet gets all commands that are installed on the computer, including cmdlets, aliases, functions, filters, scripts, and applications.
+`Get-Command` gets the commands from PowerShell modules and snap-ins and commands that were imported from other sessions.
 To get only commands that have been imported into the current session, use the **ListImported** parameter.
 
-Without parameters, a "`Get-Command`" command gets all of the cmdlets, functions, workflows and aliases installed on the computer.
-A "`Get-Command *`" command gets all types of commands, including all of the non-Windows-PowerShell files in the Path environment variable ($env:path), which it lists in the "Application" command type.
+Without parameters, `Get-Command` gets all of the cmdlets, functions, and aliases installed on the computer.
+`Get-Command *` gets all types of commands, including all of the non-PowerShell files in the Path environment variable (`$env:Path`), which it lists in the Application command type.
 
-A **Get-Command** command that uses the exact name of the command (without wildcard characters) automatically imports the module that contains the command so you can use the command immediately.
-To enable, disable, and configure automatic importing of modules, use the **$PSModuleAutoLoadingPreference** preference variable.
+`Get-Command` that uses the exact name of the command, without wildcard characters, automatically imports the module that contains the command so that you can use the command immediately.
+To enable, disable, and configure automatic importing of modules, use the `$PSModuleAutoLoadingPreference` preference variable.
 For more information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
-**Get-Command** gets its data directly from the command code, unlike Get-Help, which gets its information from help topics.
-
-In Windows PowerShell 2.0, **Get-Command** gets only commands in current session.
-It does not get commands from modules that are installed, but not imported.
-To limit **Get-Command** in Windows PowerShell 3.0 and later to commands in the current session, use the **ListImported** parameter.
+`Get-Command` gets its data directly from the command code, unlike `Get-Help`, which gets its information from help topics.
 
 ## EXAMPLES
 
@@ -78,12 +73,11 @@ This command gets all of the cmdlets, sorts them alphabetically by the noun in t
 This display can help you find the cmdlets for a task.
 
 ### Example 4
-
+```powershell
+Get-Command -Module Microsoft.PowerShell.Security, Microsoft.PowerShell.Utility
 ```
-PS> Get-Command -Module Microsoft.PowerShell.Security, PSScheduledJob
-```
 
-This command uses the **Module** parameter to get the commands in the Microsoft.PowerShell.Security and  PSScheduledJob modules.
+This command uses the **Module** parameter to get the commands in the Microsoft.PowerShell.Security and Microsoft.PowerShell.Utility modules.
 
 ### Example 5
 
@@ -186,7 +180,7 @@ Beginning in Windows PowerShell 3.0, by default, when the session includes multi
 With the **All** parameter, **Get-Command** gets all commands with the specified name and returns them in execution precedence order.
 To run a command other than the first one in the list, type the fully qualified path to the command.
 
-For more information about command precedence, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
+For more information about command precedence, see [about_Command_Precedence](About/about_Command_Precedence.md).
 
 ### Example 12
 
@@ -240,8 +234,8 @@ To get the **PSTypeNames** property of a net adapter, and not the **PSTypeNames*
 Gets all commands, including commands of the same type that have the same name.
 By default, **Get-Command** gets only the commands that run when you type the command name.
 
-For more information about the method that Windows PowerShell uses to select the command to run when multiple commands have the same name, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
-For information about module-qualified command names and running commands that do not run by default because of a name conflict, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
+For more information about the method that Windows PowerShell uses to select the command to run when multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md).
+For information about module-qualified command names and running commands that do not run by default because of a name conflict, see [about_Modules](About/about_Modules.md).
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -496,7 +490,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 

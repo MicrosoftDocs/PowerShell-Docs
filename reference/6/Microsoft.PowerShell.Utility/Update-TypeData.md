@@ -40,7 +40,7 @@ Update-TypeData [-Force] [-TypeData] <TypeData[]> [-InformationAction <ActionPre
 ## DESCRIPTION
 The **Update-TypeData** cmdlet updates the extended type data in the session by reloading the Types.ps1xml files into memory and adding new extended type data.
 
-By default, Windows PowerShell loads extended type data as it is needed.
+By default, PowerShell loads extended type data as it is needed.
 Without parameters, **Update-TypeData** reloads all of the Types.ps1xml files that it has loaded in the session, including any type files that you added.
 You can use the parameters of **Update-TypeData** to add new type files and add and replace extended type data.
 
@@ -49,8 +49,8 @@ This feature is particularly useful when you are developing types and want to lo
 
 Beginning in Windows PowerShell 3.0, you can use **Update-TypeData** to add and replace extended type data in the session without using a Types.ps1xml file.
 Type data that is added dynamically, that is, without a file, is added only to the current session.
-To add the type data to all sessions, add an **Update-TypeData** command to your Windows PowerShell profile.
-For more information, see about_Profiles (http://go.microsoft.com/fwlink/?LinkID=113729).
+To add the type data to all sessions, add an **Update-TypeData** command to your PowerShell profile.
+For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 Also, beginning in Windows PowerShell 3.0, you can use the Get-TypeData cmdlet to get the extended types in the current session and the Remove-TypeData cmdlet to delete extended types from the current session.
 
@@ -123,7 +123,7 @@ The selected properties include the new Quarter script property that was added i
 
 The second command uses the Get-Date cmdlet to get a **System.DateTime** object that represents the current date.
 The command uses a pipeline operator (|) to send the **DateTime** object to the Format-List cmdlet.
-Because the **Format-List** command does not specify the properties to display in the list, Windows PowerShell uses the default values that were established by the **Update-TypeData** command.
+Because the **Format-List** command does not specify the properties to display in the list, PowerShell uses the default values that were established by the **Update-TypeData** command.
 
 ### Example 5: Update type data for a piped object
 ```
@@ -375,7 +375,7 @@ Specifies additional values for **AliasProperty**, **ScriptProperty**, **CodePro
 Use this parameter with the *TypeName*, *MemberType*, *Value*, and *SecondValue* parameters to add or change a property or method of a type.
 
 When the value of the *MemberType* parameter is AliasProperty, the value of the *SecondValue* parameter must be a data type.
-Windows PowerShell converts (that is, casts) the value of the alias property to the specified type.
+PowerShell converts (that is, casts) the value of the alias property to the specified type.
 For example, if you add an alias property that provides an alternate name for a string property, you can also specify a **SecondValue** of System.Int32 to convert the aliased string value to an integer.
 
 When the value of the *MemberType* parameter is ScriptProperty, you can use the *SecondValue* parameter to specify an additional script block.
@@ -433,7 +433,7 @@ Serialize only the specified properties of this type.
 Use the *PropertySerializationSet* parameter to specify the properties of the type that are serialized.
 You can also use the *InheritPropertySerializationSet* parameter to determine whether the property set is inherited and the *SerializationDepth* parameter to determine whether child properties are serialized.
 
-In Windows PowerShell, serialization methods are stored in **PSStandardMembers** internal objects.
+In PowerShell, serialization methods are stored in **PSStandardMembers** internal objects.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -485,7 +485,7 @@ Accept wildcard characters: False
 
 ### -TypeAdapter
 Specifies the type of a type adapter, such as **Microsoft.PowerShell.Cim.CimInstanceAdapter**.
-A type adapter enables Windows PowerShell to get the members of a type.
+A type adapter enables PowerShell to get the members of a type.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

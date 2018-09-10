@@ -20,7 +20,7 @@ Out-Host [-Paging] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Out-Host** cmdlet sends output to the Windows PowerShell host for display.
+The **Out-Host** cmdlet sends output to the PowerShell host for display.
 The host displays the output at the command line.
 Because **Out-Host** is the default, you do not have to specify it unless you want to use its parameters to change the display.
 
@@ -97,7 +97,7 @@ However, the host might display the objects that **Out-Host** sends to it.
 
 ## NOTES
 * The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not format objects. They just render objects and send them to the specified display destination. If you send an unformatted object to an **Out** cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
-* The **Out** cmdlets do not have parameters for names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a Windows PowerShell command to the cmdlet. You can also store data in a variable and use the *InputObject* parameter to pass the data to the cmdlet. For help, see the examples.
+* The **Out** cmdlets do not have parameters for names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a PowerShell command to the cmdlet. You can also store data in a variable and use the *InputObject* parameter to pass the data to the cmdlet. For help, see the examples.
 * **Out-Host** sends data, but it does not emit any output objects. If you pipe the output of **Out-Host** to the Get-Member cmdlet, **Get-Member** reports that no objects have been specified.
 
 *

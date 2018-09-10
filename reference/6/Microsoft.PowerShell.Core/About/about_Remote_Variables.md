@@ -25,7 +25,7 @@ command.
 
 ## USING REMOTE VARIABLES
 
-Windows PowerShell assumes that the variables used in remote commands are
+PowerShell assumes that the variables used in remote commands are
 defined in the session in which the command runs.
 
 In the following example, the \$ps variable is defined in the temporary session
@@ -86,7 +86,7 @@ remote command and using the ArgumentList parameter of the Invoke-Command
 cmdlet to specify the local variable as the parameter value.
 
 This command format is valid on Windows PowerShell 2.0 and later versions of
-Windows PowerShell.
+Windows PowerShell and PowerShell Core.
 
 - Use the param keyword to define parameters for the remote command. The
   parameter names are placeholders that do not need to match the name of the

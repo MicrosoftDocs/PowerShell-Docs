@@ -11,7 +11,7 @@ title:  Wait-Job
 # Wait-Job
 
 ## SYNOPSIS
-Suppresses the command prompt until one or all of the Windows PowerShell background jobs running in the session are completed.
+Suppresses the command prompt until one or all of the PowerShell background jobs running in the session are completed.
 
 ## SYNTAX
 
@@ -46,13 +46,13 @@ Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Filter] <Hashtable> [<CommonParame
 ```
 
 ## DESCRIPTION
-The **Wait-Job** cmdlet waits for Windows PowerShell background jobs to finish before it displays the command prompt.
+The **Wait-Job** cmdlet waits for PowerShell background jobs to finish before it displays the command prompt.
 You can wait until any background job is complete, or until all background jobs are complete, and you can set a maximum wait time for the job.
 
 When the commands in the job are complete, **Wait-Job** displays the command prompt and returns a job object so that you can pipe it to another command.
 
 You can use **Wait-Job** cmdlet to wait for background jobs, such as those that were started by using the Start-Job cmdlet or the *AsJob* parameter of the Invoke-Command cmdlet.
-For more information about Windows PowerShell background jobs, see about_Jobs.
+For more information about PowerShell background jobs, see about_Jobs.
 
 Starting in Windows PowerShell 3.0, the **Wait-Job** cmdlet also waits for custom job types, such as workflow jobs and instances of scheduled jobs.
 To enable **Wait-Job** to wait for jobs of a particular type, import the module that supports the custom job type into the session before you run the Get-Job cmdlet, either by using the Import-Module cmdlet or by using or getting a cmdlet in the module.
@@ -81,7 +81,7 @@ Both **Start-Job** and **Wait-Job** commands are submitted to the remote compute
 
 This example uses **Wait-Job** to determine whether a Get-Date command running as a background job on three different computers is finished.
 
-The first command creates a Windows PowerShell session (**PSSession**) on each of the three remote computers and stores them in the $s variable.
+The first command creates a PowerShell session (**PSSession**) on each of the three remote computers and stores them in the $s variable.
 
 The second command uses **Invoke-Command** to run **Start-Job** in each of the three sessions in $s.
 All of the jobs are named Date1.
@@ -173,7 +173,7 @@ PS C:\> $j | Wait-Job
 
 This example shows how to use the **Wait-Job** cmdlet with jobs started on the local computer by using **Start-Job**.
 
-These commands start a job that gets the Windows PowerShell script files that were added or updated in the last week.
+These commands start a job that gets the PowerShell script files that were added or updated in the last week.
 
 The first command uses **Start-Job** to start a background job on the local computer.
 The job runs a Get-ChildItem command that gets all of the files that have a .ps1 file name extension that were added or updated in the last week.

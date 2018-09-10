@@ -69,16 +69,13 @@ The following procedure describes how to create and install a PowerShell binary 
    Note that technically you do not need to install your module anywhere on the `PSModulePath` - those are simply the default locations that PowerShell will look for your module. However, it is considered best practice to do so, unless you have a good reason for storing your module somewhere else. For more information, see [Installing a PowerShell Module](./installing-a-powershell-module.md) and [Modifying the PowerShell Module Installation Path](./modifying-the-psmodulepath-installation-path.md).
 
 4. Import your module into PowerShell with a call to to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module).
-4. Import your module into PowerShell with a call to to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module).
 
-   Calling to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) will load your module into active memory. If you are using PowerShell 3.0 and later, simply calling the name of your module in code will also import it; for more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md).
    Calling to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) will load your module into active memory. If you are using PowerShell 3.0 and later, simply calling the name of your module in code will also import it; for more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md).
 
 ## Importing Snap-in Assemblies as Modules
 
 Cmdlets and providers that exist in snap-in assemblies can be loaded as binary modules. When the snap-in assemblies are loaded as binary modules, the cmdlets and providers in the snap-in are available to the user, but the snap-in class in the assembly is ignored, and the snap-in is not registered. As a result, the snap-in cmdlets provided by Windows PowerShell cannot detect the snap-in even though the cmdlets and providers are available to the session.
 
-In addition, any formatting or types files that are referenced by the snap-in cannot be imported as part of a binary module. To import the formatting and types files you must create a module manifest. See, [How to Write a PowerShell Module Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
 In addition, any formatting or types files that are referenced by the snap-in cannot be imported as part of a binary module. To import the formatting and types files you must create a module manifest. See, [How to Write a PowerShell Module Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
 
 ## See Also

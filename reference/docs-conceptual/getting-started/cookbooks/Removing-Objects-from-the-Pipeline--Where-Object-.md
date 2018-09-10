@@ -32,7 +32,7 @@ Due to parsing considerations, symbols such as <,>, and = are not used as compar
 |-contains|Contains|1,2,3 -contains 1|
 |-notcontains|Does not contain|1,2,3 -notcontains 4|
 
-Where-Object script blocks use the special variable '$_' to refer to the current object in the pipeline. Here is an example of how it works. If you have a list of numbers, and only want to return the ones that are less than 3, you can use Where-Object to filter the numbers by typing:
+Where-Object script blocks use the special variable `$_` to refer to the current object in the pipeline. Here is an example of how it works. If you have a list of numbers, and only want to return the ones that are less than 3, you can use Where-Object to filter the numbers by typing:
 
 ```
 PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
@@ -42,7 +42,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 
 ### Filtering Based on Object Properties
 
-Since $_ refers to the current pipeline object, we can access its properties for our tests.
+Since `$_` refers to the current pipeline object, we can access its properties for our tests.
 
 As an example, we can look at the Win32_SystemDriver class in WMI. There might be hundreds of system drivers on a particular system, but you might only be interested in a particular set of the system drivers, such as those which are currently running. If you use Get-Member to view Win32_SystemDriver members (**Get-WmiObject -Class Win32_SystemDriver | Get-Member -MemberType Property**) you will see that the relevant property is State, and that it has a value of "Running" when the driver is running. You can filter the system drivers, selecting only the running ones by typing:
 

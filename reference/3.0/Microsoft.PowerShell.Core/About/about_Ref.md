@@ -1,76 +1,161 @@
 ﻿---
-ms.date:  06/09/2017
+ms.date:  08/24/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Ref
 ---
+
 # About Ref
 
-## SHORT DESCRIPTION
+## Short description
 
-Describes how to create and use a reference variable type.
-
-## LONG DESCRIPTION
-
-You can use the reference variable type to permit a method to change the value
+Describes how to create and use a reference type variable. You can use
+reference type variables to permit a function to change the value
 of a variable that is passed to it.
 
-When the [ref] type is associated with an object, it returns a reference to
-that object. If the reference is used with a method, the method can refer to
-the object that was passed to it. If the object is changed within the method,
-the change appears as a change in the value of the variable when control
-returns to the calling method.
+## Long description
 
-To use referencing, the parameter must be a reference variable. If it is not,
-an InvalidArgument exception is thrown.
+You can pass variables to functions *by reference* or *by value*.
 
-The parameters used in method invocations must match the type required by the
-methods.
+When you pass a variable *by value*, you are passing a copy of the data.
 
-Examples:
+In the following example, the function changes the value of the variable passed
+to it. In PowerShell, integers are value types so they are passed by value.
+Therefore, the value of `$var` is unchanged outside the scope of the function.
 
 ```powershell
-PS> function swap([ref]$a,[ref]$b)
->> {
->>     $a.value,$b.value = $b.value,$a.value
->> }
+Function Test($data)
+{
+    $data = 3
+}
 
-PS> $a = 1
-PS> $b = 10
-PS> $a,$b
-1
+$var = 10
+Test -data $var
+$var
+```
+
+```output
 10
-PS> swap ([ref]$a) ([ref]$b)
-PS> $a,$b
-10
-1
+```
 
-PS C:\ps-test> function double
->> {
->>     param ([ref]$x) $x.value = $x.value * 2
->> }
+In the following example, a variable containing a `Hashtable` is passed to a
+function. `Hashtable` is an object type so by default it is passed to the
+function *by reference*.
 
-PS> $number = 8
+When passing a variable *by reference*, the function can change the data and
+that change persists after the function executes.
+
+```powershell
+Function Test($data)
+{
+    $data.Test = "New Text"
+}
+
+$var = @{}
+Test -data $var
+$var
+```
+
+```output
+Name                           Value
+----                           -----
+Test                           New Text
+```
+
+The function adds a new key-value pair that persists outside of the function's
+scope.
+
+### Writing functions to accept reference parameters
+
+You can code your functions to take a parameter as a reference, regardless of
+the type of data passed. This requires that you specify the parameters type
+as `System.Management.Automation.PSReference`, or `[ref]`.
+
+When using references, you must use the `Value` property of the
+`System.Management.Automation.PSReference` type to access your data.
+
+```powershell
+Function Test([ref]$data)
+{
+    $data.Value = 3
+}
+```
+
+To pass a variable to a parameter that expects a reference, you must type
+cast your variable as a reference.
+
+> [!NOTE]
+> The brackets and parenthesis are BOTH required.
+
+```powershell
+$var = 10
+Test -data ([ref]$var)
+$var
+```
+
+```output
+3
+```
+
+### Passing references to .NET methods
+
+Some .NET methods may require you to pass a variable as a reference. When
+the method's definition uses the keywords `in`, `out`, or `ref` on a
+parameter, it expects a reference.
+
+```powershell
+[int] | Get-Member -Static -Name TryParse
+```
+
+```output
+Name     MemberType Definition
+----     ---------- ----------
+TryParse Method     static bool TryParse(string s, [ref] int result)
+```
+
+The `TryParse` method attempts to parse a string as an integer. If the method
+succeeds, it returns `$true`, and the result is stored in the variable you
+passed **by reference**.
+
+```
+PS> $number = 0
+PS> [int]::TryParse("15", ([ref]$number))
+True
 PS> $number
-8
-PS C> double ([ref]$number)
-PS C> $number
-16
+15
 ```
 
-The variable must be a reference variable.
+### References and scopes
+
+References allow the value of a variable in the parent scope to be changed
+within a child scope.
 
 ```powershell
-PS C:\ps-test> double $number
-double : Reference type is expected in argument.
-At line:1 char:7
-+ double  <<<< $number
+# Create a value type variable.
+$i = 0
+# Create a reference type variable.
+$iRef = [ref]0
+# Invoke a scriptblock to attempt to change both values.
+&{$i++;$iRef.Value++}
+# Output the results.
+"`$i = $i;`$iRef = $($iRef.Value)"
 ```
 
-## SEE ALSO
+```output
+$i = 0;$iRef = 1
+```
 
-- [about_Variables](about_Variables.md)
-- [about_Environment_Variables](about_Environment_Variables.md)
-- [about_Functions](about_Functions.md)
-- [about_Script_Blocks](about_Script_Blocks.md)
+Only the reference type's variable was changed.
+
+## See also
+
+[about_Variables](about_Variables.md)
+
+[about_Environment_Variables](about_Environment_Variables.md)
+
+[about_Functions](about_Functions.md)
+
+[about_Script_Blocks](about_Script_Blocks.md)
+
+[about_Scopes](about_scopes.md)

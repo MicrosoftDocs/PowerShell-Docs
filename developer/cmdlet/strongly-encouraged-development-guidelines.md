@@ -15,25 +15,25 @@ This section describes guidelines that you should follow when you write your cmd
 
 ## Design Guidelines
 
-- [Use a Specific Noun for a Cmdlet Name (SD01)](./strongly-encouraged-development-guidelines.md#SD01)
+- [Use a Specific Noun for a Cmdlet Name (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
-- [Use Pascal Case for Cmdlet Names (SD02)](./strongly-encouraged-development-guidelines.md#SD02)
+- [Use Pascal Case for Cmdlet Names (SD02)](./strongly-encouraged-development-guidelines.md#use-pascal-case-for-cmdlet-names-sd02)
 
-- [Parameter Design Guidelines (SD03)](./strongly-encouraged-development-guidelines.md#SD03)
+- [Parameter Design Guidelines (SD03)](./strongly-encouraged-development-guidelines.md#parameter-design-guidelines-sd03)
 
-- [Provide Feedback to the User (SD04)](./strongly-encouraged-development-guidelines.md#SD04)
+- [Provide Feedback to the User (SD04)](./strongly-encouraged-development-guidelines.md#provide-feedback-to-the-user-sd04)
 
-- [Create a Cmdlet Help File (SD05)](./strongly-encouraged-development-guidelines.md#SD05)
+- [Create a Cmdlet Help File (SD05)](./strongly-encouraged-development-guidelines.md#create-a-cmdlet-help-file-sd05)
 
 ## Code Guidelines
 
-- [Coding Parameters (SC01)](./strongly-encouraged-development-guidelines.md#SC01)
+- [Coding Parameters (SC01)](./strongly-encouraged-development-guidelines.md#coding-parameters-sc01)
 
-- [Support Well Defined Pipeline Input (SC02)](./strongly-encouraged-development-guidelines.md#SC02)
+- [Support Well Defined Pipeline Input (SC02)](./strongly-encouraged-development-guidelines.md#support-well-defined-pipeline-input-sc02)
 
-- [Write Single Records to the Pipeline (SC03)](./strongly-encouraged-development-guidelines.md#SC03)
+- [Write Single Records to the Pipeline (SC03)](./strongly-encouraged-development-guidelines.md#write-single-records-to-the-pipeline-sc03)
 
-- [Make Cmdlets Case-Insensitive and Case-Preserving (SC04)](./strongly-encouraged-development-guidelines.md#SC04)
+- [Make Cmdlets Case-Insensitive and Case-Preserving (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
 ## Design Guidelines
 
@@ -107,7 +107,6 @@ Frequently, users must perform the same operation against multiple arguments. Fo
 #### Support the PassThru Parameter
 
 By default, many cmdlets that modify the system, such as the [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, act as "sinks" for objects and do not return a result. These cmdlet should implement the `PassThru` parameter to force the cmdlet to return an object. When the `PassThru` parameter is specified, the cmdlet returns an object by using a call to the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method. For example, the following command stops the Calc process and passes the resultant process to the pipeline.
-By default, many cmdlets that modify the system, such as the [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, act as "sinks" for objects and do not return a result. These cmdlet should implement the `PassThru` parameter to force the cmdlet to return an object. When the `PassThru` parameter is specified, the cmdlet returns an object by using a call to the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method. For example, the following command stops the Calc process and passes the resultant process to the pipeline.
 
 ```powershell
 Stop-Process calc -passthru
@@ -145,7 +144,6 @@ Cmdlet operations that take a long time to complete and that cannot run in the b
 
 Occasionally, a cmdlet must communicate directly with the user instead of by using the various Write or Should methods supported by the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class. In this case, the cmdlet should derive from the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class and use the [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) property. This property supports different levels of communication type, including the PromptForChoice, Prompt, and WriteLine/ReadLine types. At the most specific level, it also provides ways to read and write individual keys and to deal with buffers.
 
-Unless a cmdlet is specifically designed to generate a graphical user interface (GUI), it should not bypass the host by using the [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) property. An example of a cmdlet that is designed to generate a GUI is the [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
 Unless a cmdlet is specifically designed to generate a graphical user interface (GUI), it should not bypass the host by using the [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) property. An example of a cmdlet that is designed to generate a GUI is the [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
 
 > [!NOTE]
@@ -185,7 +183,6 @@ If the data that the cmdlet reads or writes is only a set of strings instead of 
 
 A cmdlet should support wildcard characters if possible. Support for wildcard characters occurs in many places in a cmdlet (especially when a parameter takes a string to identify one object from a set of objects). For example, the sample **Stop-Proc** cmdlet from the [StopProc Tutorial](./stopproc-tutorial.md) defines a `Name` parameter to handle strings that represent process names. This parameter supports wildcard characters so that the user can easily specify the processes to stop.
 
-When support for wildcard characters is available, a cmdlet operation usually produces an array. Occasionally, it does not make sense to support an array because the user might use only a single item at a time. For example, the [Set-Location](/powershell/module/Microsoft.PowerShell.Management/Set-Location) cmdlet does not need to support an array because the user is setting only a single location. In this instance, the cmdlet still supports wildcard characters, but it forces resolution to a single location.
 When support for wildcard characters is available, a cmdlet operation usually produces an array. Occasionally, it does not make sense to support an array because the user might use only a single item at a time. For example, the [Set-Location](/powershell/module/Microsoft.PowerShell.Management/Set-Location) cmdlet does not need to support an array because the user is setting only a single location. In this instance, the cmdlet still supports wildcard characters, but it forces resolution to a single location.
 
 For more information about wildcard-character patterns, see [Supporting Wildcard Characters in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md).

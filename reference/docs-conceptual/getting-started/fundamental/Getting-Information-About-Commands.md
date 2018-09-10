@@ -1,32 +1,42 @@
 ---
-ms.date:  06/05/2017
+ms.date:  08/27/2018
 keywords:  powershell,cmdlet
-title:  Getting Information About Commands
+title:  Getting information about commands
 ms.assetid:  56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ---
 
-# Getting Information About Commands
-The Windows PowerShell `Get-Command` cmdlet gets all commands that are available in your current session. When you type `Get-Command` at a PowerShell prompt, you will see output similar to the following:
+# Getting information about commands
 
-```
-PS> Get-Command
-CommandType     Name                            Definition
------------     ----                            ----------
-Cmdlet          Add-Content                     Add-Content [-Path] <String[...
-Cmdlet          Add-History                     Add-History [[-InputObject] ...
-Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
+The PowerShell `Get-Command` displays commands that are available in your current session.
+When you run the `Get-Command` cmdlet, you see something similar to the following output:
+
+```output
+CommandType     Name                    Version    Source
+-----------     ----                    -------    ------
+Cmdlet          Add-Computer            3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-Content             3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-History             3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-JobTrigger          1.1.0.0    PSScheduledJob
+Cmdlet          Add-LocalGroupMember    1.0.0.0    Microsoft.PowerShell.LocalAccounts
+Cmdlet          Add-Member              3.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Add-PSSnapin            3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-This output looks a lot like the Help output of Cmd.exe: a tabular summary of internal commands. In the excerpt of the **Get-Command** command output shown above, every command shown has a CommandType of Cmdlet. A cmdlet is Windows PowerShell's intrinsic command type - a type that corresponds roughly to the **dir** and **cd** commands of Cmd.exe and to built-ins in UNIX shells such as BASH.
+This output looks a lot like the Help output of **cmd.exe**: a tabular summary of internal commands. In
+the excerpt of the `Get-Command` command output shown above, every command shown has a CommandType
+of Cmdlet. A cmdlet is PowerShell's intrinsic command type. This type corresponds roughly to
+commands like `dir` and `cd` in **cmd.exe** or the built-in commands of Unix shells like bash.
 
-In the output of the `Get-Command` command, all the definitions end with ellipses (...) to indicate that PowerShell cannot display all the content in the available space. When Windows PowerShell displays output, it formats the output as text and then arranges it to make the data fit cleanly into the window. We will talk about this later in the section on formatters.
+The `Get-Command` cmdlet has a **Syntax** parameter that returns syntax of each cmdlet. The
+following example shows how to get the syntax of the `Get-Help` cmdlet:
 
-The `Get-Command` cmdlet has a **Syntax** parameter that gets the syntax of each cmdlet. To get the syntax of the Get-Help cmdlet, use the following command:
-
-```
+```powershell
 Get-Command Get-Help -Syntax
+```
 
+```output
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>] [-Functionality <String[]>]
  [-Role <String[]>] [-Full] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 
@@ -40,8 +50,17 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-### Displaying Available Command Types
-The **Get-Command** command does not list every command that is available in Windows PowerShell. Instead, the **Get-Command** command lists only the cmdlets in the current session. Windows PowerShell actually supports several other types of commands. Aliases, functions, and scripts are also Windows PowerShell commands, although they are not discussed in detail in the Windows PowerShell User's Guide. External files that are executable, or have a registered file type handler, are also classified as commands.
+## Displaying available command by type
+
+The `Get-Command` command lists only the cmdlets in the current session. PowerShell actually
+supports several other types of commands:
+
+- Aliases
+- Functions
+- Scripts
+
+External executable files, or files that have a registered file type handler, are also classified as
+commands.
 
 To get all commands in the session, type:
 
@@ -49,12 +68,17 @@ To get all commands in the session, type:
 Get-Command *
 ```
 
-Because this list includes external files in your search path, it may contain thousands of items. It is more useful to look at a reduced set of commands.
-
-To get native commands of other types, use the **CommandType** parameter of the `Get-Command` cmdlet.
+This list includes external commands in your search path so it can contain thousands of items.
+It is more useful to look at a reduced set of commands.
 
 > [!NOTE]
-> The asterisk (\*) is used for wildcard matching in Windows PowerShell command arguments. The \* means "match one or more of any characters". You can type `Get-Command a*` to find all commands that begin with the letter "a". Unlike wildcard matching in Cmd.exe, Windows PowerShell's wildcard will also match a period.
+> The asterisk (\*) is used for wildcard matching in PowerShell command arguments. The \* means
+> "match one or more of any characters". You can type `Get-Command a*` to find all commands that
+> begin with the letter "a". Unlike wildcard matching in **cmd.exe**, PowerShell's wildcard will also
+> match a period.
+
+Use the **CommandType** parameter of `Get-Command` to get native commands of other types.
+cmdlet.
 
 To get command aliases, which are the assigned nicknames of commands, type:
 
@@ -68,7 +92,7 @@ To get the functions in the current session, type:
 Get-Command -CommandType Function
 ```
 
-To display scripts in Windows PowerShell's search path, type:
+To display scripts in PowerShell's search path, type:
 
 ```powershell
 Get-Command -CommandType Script

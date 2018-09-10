@@ -22,7 +22,7 @@ Get-PSCallStack [<CommonParameters>]
 ## DESCRIPTION
 The **Get-PSCallStack** cmdlet displays the current call stack.
 
-Although it is designed to be used with the Windows PowerShell debugger, you can use this cmdlet to display the call stack in a script or function outside of the debugger.
+Although it is designed to be used with the PowerShell debugger, you can use this cmdlet to display the call stack in a script or function outside of the debugger.
 
 To run a **Get-PSCallStack** command while in the debugger, type `k` or `Get-PSCallStack`.
 
@@ -66,7 +66,7 @@ Get-Content type
 
 This command uses the **Get-PSCallStack** cmdlet to display the call stack for My-Alias, a simple function that gets the aliases for a cmdlet name.
 
-The first command enters the function at the Windows PowerShell prompt.
+The first command enters the function at the PowerShell prompt.
 The second command uses the Set-PSBreakpoint cmdlet to set a breakpoint on the My-Alias function.
 The third command uses the My-Alias function to get all of the aliases in the current session for the Get-Content cmdlet.
 

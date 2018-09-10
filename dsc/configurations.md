@@ -3,30 +3,27 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Configurations
 ---
-
 # DSC Configurations
 
->Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC configurations are PowerShell scripts that define a special type of function.
 To define a configuration, you use the PowerShell keyword **Configuration**.
 
 ```powershell
 Configuration MyDscConfiguration {
-
-	Node "TEST-PC1" {
-		WindowsFeature MyFeatureInstance {
-			Ensure = "Present"
-			Name =	"RSAT"
-		}
-		WindowsFeature My2ndFeatureInstance {
-			Ensure = "Present"
-			Name = "Bitlocker"
-		}
-	}
+    Node "TEST-PC1" {
+        WindowsFeature MyFeatureInstance {
+            Ensure = 'Present'
+            Name = 'RSAT'
+        }
+        WindowsFeature My2ndFeatureInstance {
+            Ensure = 'Present'
+            Name = 'Bitlocker'
+        }
+    }
 }
 MyDscConfiguration
-
 ```
 
 Save the script as a .ps1 file.
@@ -44,23 +41,21 @@ target computer in the configuration, you could add a parameter for the node nam
 
 ```powershell
 Configuration MyDscConfiguration {
-
-	param(
-        [string[]]$ComputerName="localhost"
+    param(
+        [string[]]$ComputerName='localhost'
     )
-	Node $ComputerName {
-		WindowsFeature MyFeatureInstance {
-			Ensure = "Present"
-			Name =	"RSAT"
-		}
-		WindowsFeature My2ndFeatureInstance {
-			Ensure = "Present"
-			Name = "Bitlocker"
-		}
-	}
+    Node $ComputerName {
+        WindowsFeature MyFeatureInstance {
+            Ensure = 'Present'
+            Name = 'RSAT'
+        }
+        WindowsFeature My2ndFeatureInstance {
+            Ensure = 'Present'
+            Name = 'Bitlocker'
+        }
+    }
 }
 MyDscConfiguration -ComputerName $ComputerName
-
 ```
 
 In this example, you specify the name of the node by passing it as the **ComputerName** parameter when you compile the configuration. The name defaults to "localhost".
@@ -71,20 +66,22 @@ Before you can enact a configuration, you have to compile it into a MOF document
 You do this by calling the configuration like you would call a PowerShell function.
 The last line of the example containing only the name of the configuration, calls the configuration.
 
->**Note:** To call a configuration, the function must be in global scope (as with any other PowerShell function).
->You can make this happen either by "dot-sourcing" the script,
->or by running the configuration script by using F5 or clicking on the **Run Script** button in the ISE.
->To dot-source the script, run the command `. .\myConfig.ps1` where `myConfig.ps1` is the name of the script file that contains your configuration.
+> [!NOTE]
+> To call a configuration, the function must be in global scope (as with any other PowerShell function).
+> You can make this happen either by "dot-sourcing" the script,
+> or by running the configuration script by using F5 or clicking on the **Run Script** button in the ISE.
+> To dot-source the script, run the command `. .\myConfig.ps1` where `myConfig.ps1` is the name of the script file that contains your configuration.
 
 When you call the configuration, it:
 
 - Resolves all variables
 - Creates a folder in the current directory with the same name as the configuration.
 - Creates a file named _NodeName_.mof in the new directory, where _NodeName_ is the name of the target node of the configuration.
-	If there are more than one nodes, a MOF file will be created for each node.
+  If there are more than one nodes, a MOF file will be created for each node.
 
->**Note**: The MOF file contains all of the configuration information for the target node. Because of this, it’s important to keep it secure.
->For more information, see [Securing the MOF file](secureMOF.md).
+> [!NOTE]
+> The MOF file contains all of the configuration information for the target node. Because of this, it’s important to keep it secure.
+> For more information, see [Securing the MOF file](secureMOF.md).
 
 Compiling the first configuration above results in the following folder structure:
 
@@ -125,19 +122,18 @@ For example, a configuration might specify that an instance of the **User** reso
 Configuration DependsOnExample {
     Node Test-PC1 {
         Group GroupExample {
-            Ensure = "Present"
-            GroupName = "TestGroup"
+            Ensure = 'Present'
+            GroupName = 'TestGroup'
         }
 
         User UserExample {
-            Ensure = "Present"
-            UserName = "TestUser"
-            FullName = "TestUser"
-            DependsOn = "[Group]GroupExample"
+            Ensure = 'Present'
+            UserName = 'TestUser'
+            FullName = 'TestUser'
+            DependsOn = '[Group]GroupExample'
         }
     }
 }
-
 ```
 
 ## Using new resources in Your configuration
@@ -151,10 +147,12 @@ Once these modules have been placed in `$env:PSModulePath` and are properly reco
 they still need to be loaded within your configuration.
 **Import-DscResource** is a dynamic keyword that can only be recognized within a **Configuration** block (i.e. it is not a cmdlet).
 **Import-DscResource** supports two parameters:
+
 - **ModuleName** is the recommended way of using **Import-DscResource**. It accepts the name of the module that contains the resources to be imported (as well as a string array of module names).
 - **Name** is the name of the resource to import. This is not the friendly name returned as "Name" by [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), but the class name used when defining the resource schema (returned as **ResourceType** by [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)).
 
 ## See Also
-* [Windows PowerShell Desired State Configuration Overview](overview.md)
-* [DSC Resources](resources.md)
-* [Configuring The Local Configuration Manager](metaConfig.md)
+
+- [Windows PowerShell Desired State Configuration Overview](overview.md)
+- [DSC Resources](resources.md)
+- [Configuring The Local Configuration Manager](metaConfig.md)

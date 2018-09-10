@@ -48,7 +48,6 @@ An example section of a script manifest with a prerelease version would look lik
 ...
 
 #>
-
 ```
 
 To use a prerelease suffix, the version string must meet the following requirements:
@@ -58,16 +57,16 @@ To use a prerelease suffix, the version string must meet the following requireme
 - The prerelease suffix is a string which begins with a hyphen, and may contain ASCII alphanumerics
   [0-9A-Za-z-]
 - Only SemVer v1.0.0 prerelease strings are supported at this time, so the prerelease suffix
-  __must not__ contain either period or + [.+], which are allowed in SemVer 2.0
+  **must not** contain either period or + [.+], which are allowed in SemVer 2.0
 - Examples of supported PrereleaseString strings are: -alpha, -alpha1, -BETA, -update20171020
 
-__Prerelease versioning impact on sort order and installation folders__
+### Prerelease versioning impact on sort order and installation folders
 
 Sort order changes when using a prerelease version, which is important when publishing to the
 PowerShell Gallery, and when installing scripts using PowerShellGet commands. If two scripts
 versions with the version number exist, the sort order is based on the string portion following the
 hyphen. So, version 2.5.0-alpha is less than 2.5.0-beta, which is less than 2.5.0-gamma. If two
-scripts have the same version number, and only one has a PrereleaseString, the script __without__
+scripts have the same version number, and only one has a PrereleaseString, the script **without**
 the prerelease suffix is assumed to be the production-ready version and will be sorted as a greater
 version than the prerelease version. As an example, when comparing releases 2.5.0 and 2.5.0-beta,
 the 2.5.0 version will be considered the greater of the two.
@@ -89,9 +88,9 @@ cases with Uninstall-Script.
 
 - Get-InstalledScript always will automatically show the prerelease information in the version
   string if it is present.
-- Uninstall-Script will by default uninstall the most recent version of a script, if __no version__
+- Uninstall-Script will by default uninstall the most recent version of a script, if **no version**
   is specified. That behavior has not changed. However, if a prerelease version is specified using
-  -RequiredVersion, -AllowPrerelease will be required.
+  `-RequiredVersion`, `-AllowPrerelease` will be required.
 
 ## Examples
 
@@ -113,13 +112,13 @@ Version        Name                                Repository           Descript
 # To install a prerelease, you must specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
 
 C:\windows\system32> Install-Script TestPackage -RequiredVersion 1.9.0-alpha
+
 PackageManagement\Find-Package : No match was found for the specified search criteria and script name 'TestPackage'.
 Try Get-PSRepository to see all available registered script repositories.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:1455 char:3
 +         PackageManagement\Find-Package @PSBoundParameters | Microsoft ...
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exceptio
-   n
+    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage)[Find-Package], Exception
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 
 # The previous command failed because -AllowPrerelease was not specified.

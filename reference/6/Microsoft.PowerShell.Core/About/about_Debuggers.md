@@ -10,17 +10,17 @@ title:  about_Debuggers
 
 ## SHORT DESCRIPTION
 
-Describes the Windows PowerShell debugger.
+Describes the PowerShell debugger.
 
 ## LONG DESCRIPTION
 
 Debugging is the process of examining a script while it is running to identify
-and correct errors in the script instructions. The Windows PowerShell debugger
+and correct errors in the script instructions. The PowerShell debugger
 can help you examine and identify errors and inefficiencies in your scripts,
-functions, commands, Windows PowerShell workflows, Windows PowerShell Desired
+functions, commands, PowerShell workflows, PowerShell Desired
 State Configuration (DSC) configurations, or expressions.
 
-Starting in Windows PowerShell 5.0, the Windows PowerShell debugger has been
+Starting in Windows PowerShell 5.0, the PowerShell debugger has been
 updated to debug scripts, functions, workflows, commands, configurations, or
 expressions that are running in either the console or Windows PowerShell ISE
 on remote computers. You can run Enter-PSSession to start an interactive
@@ -33,19 +33,19 @@ disconnected session that is running a script has already hit a breakpoint,
 and is stopped at the breakpoint, Enter-PSSession automatically starts the
 command-line debugger, after you reconnect to the session.
 
-The Windows PowerShell debugger can also be used to debug Windows PowerShell
-workflows, in either the Windows PowerShell console, or in Windows PowerShell
+The PowerShell debugger can also be used to debug PowerShell
+workflows, in either the PowerShell console, or in Windows PowerShell
 ISE. Starting in Windows PowerShell 5.0, you can debug within running jobs or
 processes, either locally or remotely.
 
-You can use the features of the Windows PowerShell debugger to examine a
-Windows PowerShell script, function, command, workflow, or expression while it
-is running. The Windows PowerShell debugger includes a set of cmdlets that let
+You can use the features of the PowerShell debugger to examine a
+PowerShell script, function, command, workflow, or expression while it
+is running. The PowerShell debugger includes a set of cmdlets that let
 you set breakpoints, manage breakpoints, and view the call stack.
 
 ## Debugger Cmdlets
 
-The Windows PowerShell debugger includes the following set of cmdlets:
+The PowerShell debugger includes the following set of cmdlets:
 
 - `Set-PsBreakpoint`: Sets breakpoints on lines, variables, and commands.
 - `Get-PsBreakpoint`: Gets breakpoints in the current session.
@@ -67,7 +67,7 @@ complete. Or, type `stop` or `t`.
 
 ### Debugger Commands
 
-When you use the debugger in the Windows PowerShell console, use the following
+When you use the debugger in the PowerShell console, use the following
 commands to control the execution. In Windows PowerShell ISE, use commands on
 the Debug menu.
 
@@ -80,7 +80,7 @@ applications, see the host application documentation.
   invocations. The skipped statements are executed, but not stepped through.
 
 - `Ctrl+Break`: (Break All in ISE) Breaks into a running script within either
-  the Windows PowerShell console, or Windows PowerShell ISE. Note that
+  the PowerShell console, or Windows PowerShell ISE. Note that
   Ctrl+Break in Windows PowerShell 2.0, 3.0, and 4.0 closes the program. Break
   All works on both local and remote interactively-running scripts.
 
@@ -124,7 +124,7 @@ concern, examine the values of variables and the state of the system, and
 continue running the script until you have identified a problem.
 
 NOTE: If you step into a statement with a redirection operator, such as ">",
-the Windows PowerShell debugger steps over all remaining statements in the
+the PowerShell debugger steps over all remaining statements in the
 script.
 
 Displaying the Values of script Variables
@@ -172,14 +172,14 @@ command prompt changes so that it begins with "[DBG]:". If you are
 debugging a workflow, the prompt is "[WFDBG]". You can customize
 the prompt.
 
-Also, in some host applications, such as the Windows PowerShell console,
+Also, in some host applications, such as the PowerShell console,
 (but not in Windows PowerShell Integrated Scripting Environment [ISE]),
 a nested prompt opens for debugging. You can detect the nested prompt by
 the repeating greater-than characters (ASCII 62) that appear at the
 command prompt.
 
 For example, the following is the default debugging prompt in the
-Windows PowerShell console:
+PowerShell console:
 
 ```
 [DBG]: PS (get-location)>>>
@@ -413,7 +413,7 @@ test-cmdlet
 
 ## Debugging Remote Scripts
 
-Starting in Windows PowerShell 5.0, you can run the Windows PowerShell
+Starting in Windows PowerShell 5.0, you can run the PowerShell
 debugger in a remote session, in either the console, or Windows PowerShell
 ISE. Enter-PSSession functionality has been updated to let you reconnect to
 and enter a disconnected session that is running on a remote computer, and
@@ -489,9 +489,9 @@ The following command displays the contents of the test script file:
 c:>\PS-test>  get-content test.ps1
 
 function psversion {
-  "Windows PowerShell " + $psversiontable.psversion
+  "PowerShell " + $psversiontable.psversion
   if ($psversiontable.psversion.major -lt 6) {
-    "Upgrade to Windows PowerShell 6.0!"
+    "Upgrade to PowerShell 6.0!"
   }
   else {
     "Have you run a background job today (start-job)?"
@@ -598,7 +598,7 @@ or type "s" for Step.
 
 ```powershell
 DBG> s
-test.ps1:2       "Windows PowerShell " + $psversiontable.psversion
+test.ps1:2       "PowerShell " + $psversiontable.psversion
 ```
 
 The debug message includes a preview of the statement in the function. To
@@ -831,9 +831,9 @@ For example, type:
 help set-psbreakpoint -full
 ```
 
-## Other Debugging Features in Windows PowerShell
+## Other Debugging Features in PowerShell
 
-In addition to the Windows PowerShell debugger, Windows PowerShell includes
+In addition to the PowerShell debugger, PowerShell includes
 several other features that you can use to debug scripts and functions.
 
 - Windows PowerShell Integrated Scripting Environment (ISE) includes an

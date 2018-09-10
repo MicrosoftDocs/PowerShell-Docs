@@ -36,7 +36,7 @@ The **Remove-Module** cmdlet removes the members of a module, such as cmdlets an
 If the module includes an assembly (.dll), all members that are implemented by the assembly are removed, but the assembly is not unloaded.
 
 This cmdlet does not uninstall the module or delete it from the computer.
-It affects only the current Windows PowerShell session.
+It affects only the current PowerShell session.
 
 ## EXAMPLES
 

@@ -93,7 +93,7 @@ Accept wildcard characters: False
 Specifies the path to an archive file.
 Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
 Wildcard characters are not supported.
-If the path includes escape characters, enclose each escape character in single quotation marks, to instruct Windows PowerShell not to interpret any characters as escape sequences.
+If the path includes escape characters, enclose each escape character in single quotation marks, to instruct PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String

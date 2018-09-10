@@ -11,7 +11,7 @@ title:  Get-Job
 # Get-Job
 
 ## SYNOPSIS
-Gets Windows PowerShell background jobs that are running in the current session.
+Gets PowerShell background jobs that are running in the current session.
 
 ## SYNTAX
 
@@ -60,9 +60,9 @@ You can use the parameters of **Get-Job** to get particular jobs.
 The job object that **Get-Job** returns contains useful information about the job, but it does not contain the job results.
 To get the results, use the Receive-Job cmdlet.
 
-A Windows PowerShell background job is a command that runs in the background without interacting with the current session.
+A PowerShell background job is a command that runs in the background without interacting with the current session.
 Typically, you use a background job to run a complex command that takes a long time to finish.
-For more information about background jobs in Windows PowerShell, see about_Jobs.
+For more information about background jobs in PowerShell, see about_Jobs.
 
 Beginning in Windows PowerShell 3.0, the **Get-Job** cmdlet also gets custom job types, such as workflow jobs and instances of scheduled jobs.
 To find the job type of a job, use the **PSJobTypeName** property of the job.
@@ -222,7 +222,7 @@ Debug         : {}
 Warning       : {}
 StateChanged  :
 
-The fourth command uses **Get-Job** to get the job object that represents the Job2 child job. This is the job in which the command actually ran. It uses the dot method to get the **Reason** property of the **JobStateInfo** property.The result shows that the job failed because of an Access Denied error. In this case, the user forgot to use the Run as administrator option when starting Windows PowerShell.Because background jobs use the remoting features of Windows PowerShell, the computer must be configured for remoting to run a job, even when the job runs on the local computer.For information about requirements for remoting in Windows PowerShell, see about_Remote_Requirements. For troubleshooting tips, see about_Remote_Troubleshooting.
+The fourth command uses **Get-Job** to get the job object that represents the Job2 child job. This is the job in which the command actually ran. It uses the dot method to get the **Reason** property of the **JobStateInfo** property.The result shows that the job failed because of an Access Denied error. In this case, the user forgot to use the Run as administrator option when starting PowerShell.Because background jobs use the remoting features of PowerShell, the computer must be configured for remoting to run a job, even when the job runs on the local computer.For information about requirements for remoting in PowerShell, see about_Remote_Requirements. For troubleshooting tips, see about_Remote_Troubleshooting.
 PS C:\> (Get-Job -Name job2).JobStateInfo.Reason
 Connecting to remote server using WSManCreateShellEx api failed. The async callback gave the following error message: Access is denied.
 ```

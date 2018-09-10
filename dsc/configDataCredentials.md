@@ -84,7 +84,7 @@ configuration unencryptedPasswordDemo
     Node "TestMachine2"
     {
         # Now we'll use a node-specific password to this machine
-        $password = $Node.LocalPass | ConvertTo-SecureString -asPlainText -Force
+        $password = $Node.LocalPassword | ConvertTo-SecureString -asPlainText -Force
         $username = $node.UserName
         [PSCredential] $nodeCred = New-Object System.Management.Automation.PSCredential($username,$password)
 
@@ -101,7 +101,7 @@ configuration unencryptedPasswordDemo
 
         Group addToAdmin
         {
-            Credential = $domain
+            Credential = $promptedCreds
             GroupName = "Administrators"
             DependsOn = "[User]User2"
             Ensure = "Present"
@@ -282,10 +282,6 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 > `NodeName` cannot equal asterisk, a specific node name is mandatory.
 
 **Microsoft advises to avoid plain text passwords due to the significant security risk.**
-
-An exception would be when using the Azure Automation DSC service,
-only because the data is always stored encrypted
-(in transit, at rest in the service, and at rest on the node).
 
 ## Domain Credentials
 

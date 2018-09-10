@@ -1,5 +1,5 @@
 ---
-ms.date:  06/05/2017
+ms.date:  08/14/2018
 keywords:  powershell,cmdlet
 title:  Introducing the Windows PowerShell ISE
 ---
@@ -7,12 +7,11 @@ title:  Introducing the Windows PowerShell ISE
 
 The Windows PowerShell Integrated Scripting Environment (ISE) is a host application for Windows
 PowerShell. In Windows PowerShell ISE, you can run commands and write, test, and debug scripts in a
-single Windows-based graphic user interface with multiline editing, tab completion, syntax
-coloring, selective execution, context-sensitive help, and support for right-to-left languages. You
-can use menu items and keyboard shortcuts to perform many of the same tasks that you would perform
-in the Windows PowerShell console. For example, when you debug a script in the Windows PowerShell
-ISE, to set a line breakpoint in a script, right-click the line of code, and then click **Toggle
-Breakpoint**.
+single Windows-based graphic user interface. The interface provides multiline editing, tab
+completion, syntax coloring, selective execution, context-sensitive help, and support for
+right-to-left languages. Menu items and keyboard shortcuts are mapped to many of the same tasks
+that you would do in the Windows PowerShell console. For example, when you debug a script in the
+Windows PowerShell ISE, you can right-click on a line of code to set a breakpoint.
 
 Try these features in Windows PowerShell ISE.
 
@@ -20,20 +19,16 @@ Try these features in Windows PowerShell ISE.
   SHIFT+ENTER.
 - Selective execution: To run part of a script, select the text you want to run, and then click the
   **Run Script** button. Or, press F5.
-- Context-sensitive help: Type **Invoke-Item**, and then press F1. The Help file opens to the Help
-  topic for the **Invoke-Item** cmdlet.
+- Context-sensitive help: Type **Invoke-Item**, and then press F1. The Help file opens to the
+  article for the **Invoke-Item** cmdlet.
 
 The Windows PowerShell ISE lets you customize some aspects of its appearance. It also has its own
-Windows PowerShell profile, where you can store functions, aliases, variables, and commands you use
-in the Windows PowerShell ISE.
+Windows PowerShell profile script.
 
 ## To start the Windows PowerShell ISE
 
-Do one of the following:
-
-- Click **Start**, point to **All Programs**, point to **Windows PowerShell V2**, and then click
-  **Windows PowerShell ISE**.
-- In the Windows PowerShell console Cmd.exe, or in the Run box, type, **powershell_ise.exe**.
+Click **Start**, select **Windows PowerShell**, and then click **Windows PowerShell ISE**.
+Alternately, you can type `powershell_ise.exe` in any command shell or in the Run box.
 
 ## To get Help in the Windows PowerShell ISE
 

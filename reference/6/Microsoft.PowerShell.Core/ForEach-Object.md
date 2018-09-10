@@ -38,9 +38,9 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
 
 - **Script block**.
   You can use a script block to specify the operation.
-  Within the script block, use the $_ variable to represent the current object.
+  Within the script block, use the `$_` variable to represent the current object.
   The script block is the value of the *Process* parameter.
-  The script block can contain any Windows PowerShell script.
+  The script block can contain any PowerShell script.
 
   For example, the following command gets the value of the **ProcessName** property of each process on the computer.
 
@@ -81,7 +81,7 @@ This command takes an array of three integers and divides each one of them by 10
 Get-ChildItem $pshome | ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; " " }}
 ```
 
-This command gets the files and directories in the Windows PowerShell installation directory `$pshome` and passes them to the `ForEach-Object` cmdlet.
+This command gets the files and directories in the PowerShell installation directory `$pshome` and passes them to the `ForEach-Object` cmdlet.
 If the object is not a directory, the script block gets the name of the file, divides the value of its **Length** property by 1024, and adds a space (" ") to separate it from the next entry.
 The cmdlet uses the **PSISContainer** property to determine whether an object is a directory.
 
@@ -134,7 +134,7 @@ Hello
 
 This example shows the effect of piping the `$Null` automatic variable to the `ForEach-Object` cmdlet.
 
-Because Windows PowerShell treats null as an explicit placeholder, the `ForEach-Object` cmdlet generates a value for `$Null`, just as it does for other objects that you pipe to it.
+Because PowerShell treats null as an explicit placeholder, the `ForEach-Object` cmdlet generates a value for `$Null`, just as it does for other objects that you pipe to it.
 
 For more information about the `$Null` automatic variable, see about_Automatic_Variables.
 
@@ -145,7 +145,7 @@ Get-Module -ListAvailable | ForEach-Object -MemberName Path
 Get-Module -ListAvailable | Foreach Path
 ```
 
-These commands gets the value of the **Path** property of all installed Windows PowerShell modules.
+These commands gets the value of the **Path** property of all installed PowerShell modules.
 They use the *MemberName* parameter to specify the **Path** property of modules.
 
 The second command is equivalent to the first.
@@ -174,7 +174,7 @@ These commands split two dot-separated module names into their component names.
 The commands call the **Split** method of strings.
 The three commands use different syntax, but they are equivalent and interchangeable.
 
-The first command uses the traditional syntax, which includes a script block and the current object operator ($_).
+The first command uses the traditional syntax, which includes a script block and the current object operator `$_`.
 It uses the dot syntax to specify the method and parentheses to enclose the delimiter argument.
 
 The second command uses the *MemberName* parameter to specify the **Split** method and the *ArgumentName* parameter to identify the dot (".") as the split delimiter.

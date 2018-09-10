@@ -38,7 +38,7 @@ Starting in Windows PowerShell 3.0, there are two different ways to construct a 
 
 - **Script block**.
   You can use a script block to specify the operation.
-  Within the script block, use the $_ variable to represent the current object.
+  Within the script block, use the `$_` variable to represent the current object.
   The script block is the value of the *Process* parameter.
   The script block can contain any Windows PowerShell script.
 
@@ -174,7 +174,7 @@ These commands split two dot-separated module names into their component names.
 The commands call the **Split** method of strings.
 The three commands use different syntax, but they are equivalent and interchangeable.
 
-The first command uses the traditional syntax, which includes a script block and the current object operator ($_).
+The first command uses the traditional syntax, which includes a script block and the current object operator `$_`.
 It uses the dot syntax to specify the method and parentheses to enclose the delimiter argument.
 
 The second command uses the *MemberName* parameter to specify the **Split** method and the *ArgumentName* parameter to identify the dot (".") as the split delimiter.
