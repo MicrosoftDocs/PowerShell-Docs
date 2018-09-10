@@ -154,7 +154,7 @@ You can specify multiple values.
 "None" is the default value.
 The alias for this parameter is "dno".
 
-The delivery notifications are sent in an e-mail message to the address specified in the value of the To parameter.
+The delivery notifications are sent in an e-mail message to the address specified in the value of the *From* parameter.
 
 Valid values are:
 

@@ -137,7 +137,9 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a user account that has permission to perform this action.
-The default is the current user.
+If omitted, `Send-MailMessage` uses the credentials of the  current user.
+To send a message anonymously, use `-Credential Anonymous`.
+If the user specified does not have permission to send, `Send-MailMessage` returns an error.
 
 Type a user name, such as User01 or Domain01\User01.
 Or, enter a **PSCredential** object, such as one from the Get-Credential cmdlet.
@@ -160,7 +162,7 @@ You can specify multiple values.
 None is the default value.
 The alias for this parameter is **dno**.
 
-The delivery notifications are sent in an email message to the address specified in the value of the *To* parameter.
+The delivery notifications are sent in an email message to the address specified in the value of the *From* parameter.
 The acceptable values for this parameter are:
 
 - None.

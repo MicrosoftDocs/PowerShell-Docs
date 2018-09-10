@@ -1,18 +1,17 @@
 ---
-ms.date:  06/09/2017
+ms.date:  08/28/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Operators
 ---
-
 # About Operators
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the operators that are supported by PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 An operator is a language element that you can use in a command or
 expression. PowerShell supports several types of operators to help you
@@ -25,18 +24,18 @@ command or expression. With these operators, you can add, subtract,
 multiply, or divide values, and calculate the remainder (modulus) of a
 division operation.
 
-You can also use arithmetic operators with strings, arrays, and hash
-tables. The addition operator concatenates elements. The multiplication
-operator returns the specified number of copies of each element.
+The addition operator concatenates elements. The multiplication operator
+returns the specified number of copies of each element. You can use
+arithmetic operators on any .NET type that implements them, such as: `Int`,
+`String`, `DateTime`, `Hashtable`, and Arrays.
 
 For more information, see [about_Arithmetic_Operators](about_Arithmetic_Operators.md).
 
 ### Assignment Operators
 
-Use assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`) to assign one
-or more values to variables, to change the values in a variable, and to
-append values to variables. You can also cast the variable as any Microsoft
-.NET Framework data type, such as string or DateTime, or Process variable.
+Use assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`) to assign, change,
+or append values to variables. You can combine arithmetic operators with
+assignment to assign the result of the arithmetic operation to a variable.
 
 For more information, see [about_Assignment_Operators](about_Assignment_Operators.md).
 
@@ -46,16 +45,15 @@ Use comparison operators (`-eq`, `-ne`, `-gt`, `-lt`, `-le`, `-ge`) to
 compare values and test conditions. For example, you can compare two string
 values to determine whether they are equal.
 
-The comparison operators include the match operators (`-match`,
-`-notmatch`), which find patterns by using regular expressions; the replace
-operator (`-replace`), which uses regular expressions to change input
-values; the like operators (`-like`, `-notlike`), which find patterns using
-wildcard characters (`*`); and the containment operators (`-in`, `-notin`,
-`-contains`, `-notcontains`), which determine whether a test value appears
-in a reference set.
+The comparison operators also include operators that find or replace patterns
+in text. The (`-match`, `-notmatch`, `-replace`) operators use regular
+expressions, and (`-like`, `-notlike`) use wildcards `*`.
 
-They also include the bitwise operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`)
-to manipulate the bit patterns in values.
+Containment comparison operators determine whether a test value appears in a
+reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
+
+Bitwise comparison operators (`-bAND`, `-bOR`, `-bXOR`, `-bNOT`) manipulate
+the bit patterns in values.
 
 For more information, see [about_Comparison_Operators](about_Comparison_Operators.md).
 
@@ -102,10 +100,9 @@ example, to increment the variable `$a` from `9` to `10`, you type `$a++`.
 
 ### Special Operators
 
-Use special operators to perform tasks that cannot be performed by the
-other types of operators. For example, special operators allow you to
-perform operations such as running commands and changing a value's data
-type.
+Special operators have specific use-cases that do not fit into any other
+operator group. For example, special operators allow you to
+run commands, change a value's data type, or retrieve elements from an array.
 
 `@( )` Array subexpression operator
 
@@ -113,26 +110,86 @@ Returns the result of one or more statements as an array. If there is only
 one item, the array has only one member.
 
 ```powershell
-@(Get-WMIObject win32_logicalDisk)
+@(Get-WmiObject win32_logicalDisk)
 ```
 
 `&` Call operator
 
-Runs a command, script, or script block. The call operator, also known as
-the "invocation operator," lets you run commands that are stored in
-variables and represented by strings. Because the call operator does not
-parse the command, it cannot interpret command parameters.
+Runs a command, script, or script block. The call operator, also known as the
+"invocation operator," lets you run commands that are stored in variables and
+represented by strings or script blocks. The call operator executes in a child
+scope. For more about scopes, see [about_scopes](about_scopes.md).
 
-```powershell
-$c = "get-executionpolicy"
-$c
+This example stores a command in a string and executes it using the call
+operator.
 
-# get-executionpolicy
-
-& $c
-
-# AllSigned
 ```
+PS> $c = "get-executionpolicy"
+PS> $c
+get-executionpolicy
+PS> & $c
+AllSigned
+```
+
+The call operator does not parse strings. This means that you cannot use
+command parameters within a string when you use the call operator.
+
+```
+PS> $c = "Get-Service -Name Spooler"
+PS> $c
+Get-Service -Name Spooler
+PS> & $c
+& : The term 'Get-Service -Name Spooler' is not recognized as the name of a
+cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and
+try again.
+At line:1 char:2
++ &$c
++  ~~
+    + CategoryInfo          : ObjectNotFound: (Get-Service -Name Spooler:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+
+The [Invoke-Expression](../../Microsoft.PowerShell.Utility/Invoke-Expression.md) cmdlet can execute code that causes
+parsing errors when using the call operator.
+
+```
+PS> &"1+1"
+& : The term '1+1' is not recognized as the name of a cmdlet, function, script
+file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:1 char:2
++ &"1+1"
++  ~~~~~
+    + CategoryInfo          : ObjectNotFound: (1+1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+PS> Invoke-Expression "1+1"
+2
+```
+
+You can use the call operator to execute scripts using their filenames. The
+example below shows a script filename that contains spaces. When you try to
+execute the script, PowerShell instead displays the contents of the quoted
+string containing the filename. The call operator allows you to execute the
+contents of the string containing the filename.
+
+```
+PS C:\Scripts> Get-ChildItem
+
+    Directory: C:\Scripts
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/28/2018   1:36 PM             58 script name with spaces.ps1
+
+PS C:\Scripts> ".\script name with spaces.ps1"
+.\script name with spaces.ps1
+PS C:\Scripts> &".\script name with spaces.ps1"
+Hello World!
+```
+
+For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 
 `[ ]` Cast operator
 
@@ -160,7 +217,7 @@ Runs a script in the current scope so that any functions, aliases, and
 variables that the script creates are added to the current scope.
 
 ```powershell
-. c:\scripts.sample.ps1
+. c:\scripts\sample.ps1
 ```
 
 > [!NOTE]
@@ -183,12 +240,14 @@ formatted on the right side of the operator.
 
 ```powershell
 "{0} {1,-10} {2:N}" -f 1,"hello",[math]::pi
-
-# 1 hello      3.14
 ```
 
-For more information, see the [String.Format](http://go.microsoft.com/fwlink/?LinkID=166450)
-method and [Composite Formatting](http://go.microsoft.com/fwlink/?LinkID=166451).
+```output
+1 hello      3.14
+```
+
+For more information, see the [String.Format](/dotnet/api/system.string.format)
+method and [Composite Formatting](/dotnet/standard/base-types/composite-formatting).
 
 `[ ]` Index operator
 
@@ -197,35 +256,36 @@ Array indexes are zero-based, so the first object is indexed as `[0]`. For
 arrays (only), you can also use negative indexes to get the last values.
 Hash tables are indexed by key value.
 
-```powershell
-$a = 1, 2, 3
-$a[0]
-
-# 1
-
-$a[-1]
-
-# 3
+```
+PS> $a = 1, 2, 3
+PS> $a[0]
+1
+PS> $a[-1]
+3
 ```
 
 ```powershell
-(get-hotfix | sort installedOn)[-1]
+(Get-HotFix | Sort-Object installedOn)[-1]
 ```
 
 ```powershell
 $h = @{key="value"; name="PowerShell"; version="2.0"}
 $h["name"]
+```
 
-# PowerShell
+```output
+PowerShell
 ```
 
 ```powershell
 $x = [xml]"<doc><intro>Once upon a time...</intro></doc>"
 $x["doc"]
+```
 
-# intro
-# -----
-# Once upon a time...
+```output
+intro
+-----
+Once upon a time...
 ```
 
 `|` Pipeline operator
@@ -235,28 +295,28 @@ that follows it. When the output includes more than one object (a
 "collection"), the pipeline operator sends the objects one at a time.
 
 ```powershell
-get-process | get-member
-get-pssnapin | where {$_.vendor -ne "Microsoft"}
+Get-Process | Get-Member
+Get-PSSnapin | Where-Object {$_.vendor -ne "Microsoft"}
 ```
 
-`.` Property dereference operator
+`.` Property dereferences operator
 
 Accesses the properties and methods of an object.
 
 ```powershell
 $myProcess.peakWorkingSet
-(get-process PowerShell).kill()
+(Get-Process PowerShell).kill()
 ```
 
 `..` Range operator
 
-Represents the sequential integers in an integer array, given an upper and
+Represents the sequential integers in an integer array, given an upper, and
 lower boundary.
 
 ```powershell
 1..10
 10..1
-foreach ($a in 1..$max) {write-host $a}
+foreach ($a in 1..$max) {Write-Host $a}
 ```
 
 `::` Static member operator
@@ -276,10 +336,10 @@ a scalar. For multiple results, returns an array.
 
 ```powershell
 $($x * 23)
-$(Get-WMIObject win32_Directory)
+$(Get-WmiObject win32_Directory)
 ```
 
-## SEE ALSO
+## See also
 
 [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
 
