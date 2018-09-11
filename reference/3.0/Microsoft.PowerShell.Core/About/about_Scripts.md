@@ -223,7 +223,7 @@ methods:
   Create a Help topic by using special keywords in the comments. To create
   comment-based Help for a script, the comments must be placed at the
   beginning or end of the script file. For more information about
-  comment-based Help, see about_Comment_Based_Help.
+  comment-based Help, see [about_Comment_Based_Help](about_Comment_Based_Help.md).
 
 - XML-Based Help  for Scripts
 
@@ -233,7 +233,8 @@ methods:
 
 To associate the script with the XML-based Help topic, use the .ExternalHelp
 Help comment keyword. For more information about the ExternalHelp keyword, see
-about_Comment_Based_Help. For more information about XML-based help, see [How
+[about_Comment_Based_Help](about_Comment_Based_Help.md).
+For more information about XML-based help, see [How
 to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the
 MSDN library.
 
