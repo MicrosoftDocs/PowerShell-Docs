@@ -116,7 +116,7 @@ $Hash
 ```output
 Name                           Value
 ----                           -----
-Copyright                      © Microsoft Corporation. All rights reserved.
+Copyright                      ï¿½ Microsoft Corporation. All rights reserved.
 ModuleToProcess                Microsoft.PowerShell.ScheduledJob.dll
 FormatsToProcess               PSScheduledJob.Format.ps1xml
 PowerShellVersion              3.0
@@ -404,11 +404,12 @@ Valid values are:
 
 - ASCII:  Uses the encoding for the ASCII (7-bit) character set.
 - BigEndianUnicode:  Encodes in UTF-16 format using the big-endian byte order.
-- BigEndianUTF32:  Encodes in UTF-32 format using the big-endian byte order.
 - String:  Uses the encoding type for a string.
 - Unicode:  Encodes in UTF-16 format using the little-endian byte order.
 - UTF7:   Encodes in UTF-7 format.
 - UTF8:  Encodes in UTF-8 format.
+- UTF8BOM: Encodes in UTF-8 format with Byte Order Mark (BOM)
+- UF8NOBOM: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - UTF32:  Encodes in UTF-32 format.
 - Default: Encodes in the default installed code page.
 - OEM: Uses the default encoding for MS-DOS and console programs.
