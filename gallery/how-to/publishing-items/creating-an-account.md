@@ -24,8 +24,8 @@ Next, you are prompted to create a username for the PowerShell Gallery. Review t
 Privacy Policy, enter a username, and then click **Register**.
 
 > [!NOTE]
-> The account name cannot be changed once it is created.
-> For additional, see [Managing Item Owners](managing-item-owners.md).
+> The account name cannot be changed once it is created. For more information, see
+> [Managing Item Owners](managing-item-owners.md).
 
 ## Recommended practices for PowerShell Gallery accounts
 
@@ -39,4 +39,4 @@ that purpose. We recommend you use email forwarding to forward notifications to 
 your organization.
 
 When multiple owners are associated with an item, all PowerShell Gallery notifications are sent
-to all owners. For addition information, see [Managing Item Owners](managing-item-owners.md).
+to all owners. For more information, see [Managing Item Owners](managing-item-owners.md).

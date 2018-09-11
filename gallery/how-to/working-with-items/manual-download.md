@@ -14,7 +14,7 @@ then be easily copied to an internal repository.
 > Manual package download is **not** intended as a replacement for the Install-Module cmdlet.
 > Downloading the package does not install the module or script. Dependencies are not included in
 > the NuGet package downloaded. The following instructions are provided for reference purposes
-> only. Deploying a package in this manner is unsupported.
+> only.
 
 ## Using manual download to acquire a package
 

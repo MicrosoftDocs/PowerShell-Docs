@@ -21,7 +21,7 @@ The PowerShell Gallery provides the following account settings:
 
 The email address is the destination for PowerShell Gallery notifications. It does not have to
 match the login account. You may use any email account you have access to. Your email address is
-never directly provided to other users.
+never directly provided by the PowerShell Gallery to other users.
 
 ![Changing email address](../../Images/PSGallery_AcccountEmailAddress.png)
 
@@ -75,7 +75,7 @@ steps to complete the change.
 ## Enable Two-Factor Authentication (2FA)
 
 Two-factor authentication is recommended for all users who publish manually to the PowerShell
-Gallery. To enable two-factor authentication, login account must have at least two forms of
+Gallery. To enable two-factor authentication, the login account must have at least two forms of
 authentication registered. One is a password and the other forms can be:
 
 - A phone number that can receive text messages
@@ -88,10 +88,9 @@ Once 2FA is enabled, you are required to authenticate using the configured forms
 every time you sign in to the PowerShell Gallery.
 
 > [!IMPORTANT]
-> Enabling two-factor authentication only applies to the PowerShell Gallery site.
-> However, if you are unable to sign in, you may lose access to your PowerShell Gallery account. For
-> that reason, we recommend that you have at least three methods of authentication (password plus
-> two others) associated with the login account.
+> Enabling two-factor authentication for the PowerShell Gallery site does not require you to enable
+> 2FA for all uses of your login account. For more information, see
+> [About two-step verification](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification).
 
 ## Change your profile picture
 

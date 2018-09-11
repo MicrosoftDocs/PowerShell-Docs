@@ -20,8 +20,8 @@ The following image shows the options available when creating a scoped API key.
 
 ![Creating API keys](../../Images/PSGallery_KeyScoped.png)
 
-In this example, we created an API key named **AzureRMDataFactory**. This key can be used to push
-packages with names that begin with 'AzureRM.DataFactory' and is valid for 365 days. This is a
+In this example, we created an API key named **AzureRMDataFactory**. This key value can be used to
+push packages with names that begin with 'AzureRM.DataFactory' and is valid for 365 days. This is a
 typical scenario when different teams within the same organization work on different packages. The
 members of the team have a key that grants them privileges for the specific package they work on.
 The expiration value prevents the use of stale or forgotten keys.
@@ -35,8 +35,8 @@ named 'AzureRm.DataFactoryV2.Netcore' using this key since the package matches t
 
 ## Create API keys securely
 
-For security, a newly created key is never shown on the screen and is only available with the Copy
-button, as shown below.
+For security, a newly created key value is never shown on the screen and is only available with the
+Copy button, as shown below.
 
 ![Obtaining new API key value](../../Images/PSGallery_CopyCreatedKey.png)
 
@@ -83,8 +83,7 @@ Clicking **Delete** displays a confirmation message. Once a key is deleted, it w
 
 ## Key expiration
 
-Ten days before the expiration, the PowerShell Gallery sends a warning e-mail the account holder of
-the API key. You must generate a new key before the expiration date.
-
-A warning message will be displayed at the top of the API key management page showing which keys
-are no longer valid.
+Ten days before the expiration, the PowerShell Gallery sends a warning email the account holder of
+the API key. After expiration, the key is unusable. A warning message is displayed at the top of
+the API key management page showing which keys are no longer valid. You can generate a new key
+value.
