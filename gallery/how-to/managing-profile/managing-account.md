@@ -6,82 +6,93 @@ title:  PowerShell Gallery Account Settings
 ---
 # PowerShell Gallery Account Settings
 
-Your PowerShell Gallery account is a publicly visible name that is linked to either an email account and a login that is either a Microsoft ID (such as user@hotmail.com, or user@outlook.com), or an Azure Active Directory (AAD) account. 
-Account Settings provides you:
+Your PowerShell Gallery account is a publicly visible name that is linked to an identity. That
+identity is either a Microsoft ID, like `user@hotmail.com` or `user@outlook.com`, or an Azure
+Active Directory (AAD) account.
 
-* Control over the email account associated with your PowerShell Gallery account;
-* Control over certain email notifications you can receive from the PowerShell Gallery;
-* Ability to change the login account, which is the Microsoft ID or AAD account linked to your PowerShell Gallery account;
-* How to set the graphic that is displayed beside your PowerShell Gallery account name
+The PowerShell Gallery provides the following account settings:
 
+- The email account associated with your PowerShell Gallery account
+- Options for email notifications sent from the PowerShell Gallery
+- The user account associated with your PowerShell Gallery account
+- The picture associated with your PowerShell Gallery account
 
+## Email address
 
-## Email Address
-
-The email address is where the PowerShell Gallery will send email notifications.
-This email address is never provided to other users directly by the PowerShell Gallery. 
-You may use any email account you have access to, and it does not have to match the login account. 
+The email address is the destination for PowerShell Gallery notifications. It does not have to
+match the login account. You may use any email account you have access to. Your email address is
+never directly provided by the PowerShell Gallery to other users.
 
 ![Changing email address](../../Images/PSGallery_AcccountEmailAddress.png)
 
-After a new email address is entered, a verification mail will be sent to that address by the PowerShell Gallery. 
-That verification mail contains a link back to the PowerShell Gallery that will complete the process of changing the registered email address. 
-Until you complete the verification process, all emails will be sent to the address that was previously registered for the PowerShell Gallery account.
+When you enter a new email address, the PowerShell Gallery sends a verification mail to that
+address. The verification mail contains a link back to the PowerShell Gallery to complete the
+change process. Until you complete the verification process, all notifications are sent to the
+previous address.
 
-## Email Notifications
+## Email notifications
 
-You may opt out of allowing the PowerShell Gallery to send email when:
+PowerShell Gallery provides the following notification options:
 
-* Another user wishes to contact you regarding a submission you have made;
-* A packaged is published that you are the co-owner of;
-* A package is pushed to the PowerShell Gallery using your account
+- Users can contact me through the PowerShell Gallery
+- Notify me when an item is pushed to the PowerShell Gallery using my account
 
 ![Changing email address](../../Images/PSGallery_AccountEmailOptions.png)
 
-As noted on the page, critical notifications from the PowerShell Gallery cannot be disabled, including:
+As noted on the page, critical notifications from the PowerShell Gallery can't be disabled.
+These include:
 
-* Notifications regarding the tests run by the PowerShell Gallery for submissions you have made;
-* Security notifications;
-* Account management notifications from the PowerShell Gallery administrators
+- Security notifications
+- Account management notifications from PowerShell Gallery administrators
+- Notifications about the tests run by the PowerShell Gallery for submissions you have made
 
-## Change Login Account
+## Change your login account
 
-Changing the login account requires you to be logged in with the current account to access Account Settings, but then logging in with the new account you wish to switch to. The sequence of steps are shown below.
+To change the login account, you must be signed in with the current account. Use the following
+steps to complete the change.
 
 ![Login Account settings](../../Images/PSGallery_LoginAccountSettings.png)
 
-1. When you click on "Change Account", a pop-up will be shown to explain that changing the login account applies to all uses of that account in the PowerShell Gallery. Review the information, then click "OK" to continue. 
+1. Click on **Change Account**. A pop-up window explains that changing the login account applies to
+   all uses of that account in the PowerShell Gallery. Review the information, then click **OK** to
+   continue.
 
-![Login Account settings](../../Images/PSGallery_LoginAccountChange-1.png)
+   ![Login Account settings](../../Images/PSGallery_LoginAccountChange-1.png)
 
-2. You will then be prompted to log in, and must enter the **new account** you wish to use as your login account, as shown below.
+2. You are then prompted to sign in using the _new account_.
 
-![Login Account settings](../../Images/PSGallery_LoginAccountChange-2.png)
+   ![Login Account settings](../../Images/PSGallery_LoginAccountChange-2.png)
 
-3. You will see another prompt that you are signed in with the current account. Select "Sign out and sign in with a different account." 
+3. When you click **Next**, you see a message that you are signed in using the current account.
+   Click **Sign out and sign in with a different account**.
 
-![Login Account settings](../../Images/PSGallery_LoginAccountChange-3.png)
+   ![Login Account settings](../../Images/PSGallery_LoginAccountChange-3.png)
 
-4. You will then be prompted for the password of the new account, to complete the process. Once you enter the password, you will be returned to the Account Settings page, which will show that the login account has been updated.
+4. Enter the password of the new account. After entering the password, you are returned to the
+   Account Settings page showing you that the login account has been updated.
 
 
 ## Enable Two-Factor Authentication (2FA)
 
-Enabling two-factor authentication is a recommended security measure for all users who publish manually to the PowerShell Gallery. 
-This change will require that your login account has at least two forms of authentication registered for it. One will be the password, the other may be 
+Two-factor authentication is recommended for all users who publish manually to the PowerShell
+Gallery. To enable two-factor authentication, the login account must have at least two forms of
+authentication registered. One is a password and the other forms can be:
 
-* A phone number than can receive texts;
-* Registration with an authenticator application on your phone, such as Microsoft Authenticator
+- A phone number that can receive text messages
+- A registered authenticator application, such as Microsoft Authenticator for your mobile phone
 
-Configuring what forms of authentication are used must be done via your AAD account information, or your Microsoft ID Account Security settings. 
+These forms of authentication must be configured in your AAD account information or in your
+Microsoft ID Account Security settings.
 
-Once you select "Enable", 2FA will be turned on for your account. 
-If you leave the PowerShell Gallery, you will be required to authenticate your login account with the two forms of authentication you have configured. 
+Once 2FA is enabled, you are required to authenticate using the configured forms of authentication
+every time you sign in to the PowerShell Gallery.
 
 > [!IMPORTANT]
-> Enabling two-factor authentication for the PowerShell Gallery will apply only to this site. However, if you are unable to log in, you may lose access to your PowerShell Gallery account. For that reason, it is highly recommended that you have at least three methods of authentication (password plus two others) associated with the login account.
+> Enabling two-factor authentication for the PowerShell Gallery site does not require you to enable
+> 2FA for all uses of your login account. For more information, see
+> [About two-step verification](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification).
 
+## Change your profile picture
 
-## Change Profile Picture
-
-The PowerShell Gallery relies on Gravatar to store and render the picture associated with your profile. To update your profile image, visit [Gravatar.com](http://www.gravatar.com/). 
+The PowerShell Gallery relies on Gravatar to store and display the picture associated with your
+profile. To update your profile image, visit [Gravatar.com](http://www.gravatar.com/).

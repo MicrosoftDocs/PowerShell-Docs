@@ -1,37 +1,42 @@
 ﻿---
-ms.date:  06/12/2017
+ms.date:  09/11/2018
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  Creating a PowerShell Gallery account
 ---
-## Creating a PowerShell Gallery account
 
-A PowerShell Gallery account must be established before publishing anything to the PowerShell Gallery.
-The PowerShell Gallery accounts must be linked to an Azure Active Directory email-enabled account, or a Microsoft email account (with a domain of outlook.com, hotmail.com, etc.)
+# Creating a PowerShell Gallery account
 
-To create a PowerShell Gallery account, go to https://PowerShellGallery.com and click on "Sign in" (see the image below).
+You must create a PowerShell Gallery account before publishing anything to the PowerShell Gallery.
+PowerShell Gallery accounts must be linked to an email-enabled login account. This account can be
+an Azure Active Directory account or a Microsoft ID, like an email account from outlook.com or
+hotmail.com.
 
-![Register new account](../../Images/CreatingAccount-Register.png)
+To create a PowerShell Gallery account, go to [https://PowerShellGallery.com](https://PowerShellGallery.com)
+and click on **Sign in** as shown in the following image.
 
-In the next page, to use an Azure Active Directory account, select "Work or School Account", and log in with your account.
-To use a Microsoft account - such as one in a Hotmail.com or Outlook.com domain - choose "Personal Account", and log in.
+![Register new account](../../Images/CreateAccount-Register.png)
 
-Once you have logged in, you will be prompted to create a username for the PowerShell Gallery.
-Review the Terms of Use and Privacy Policy that are linked in, enter a username, and then click Register.
+To use an Azure Active Directory account, select **Work or School Account**, and sign in with your
+account. To use a Microsoft ID, choose **Personal Account** and sign in.
+
+Next, you are prompted to create a username for the PowerShell Gallery. Review the Terms of Use and
+Privacy Policy, enter a username, and then click **Register**.
 
 > [!NOTE]
-> The account name cannot be changed once it is created.
-> See [Managing Item Owners](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) for  additional details related to this.
+> The account name cannot be changed once it is created. For more information, see
+> [Managing Item Owners](managing-item-owners.md).
 
-## Recommended Practices for PowerShell Gallery Accounts
+## Recommended practices for PowerShell Gallery accounts
 
-It is important that the email account used with your PowerShell Gallery account be actively monitored.
-All communication with owners of PowerShell Gallery items is through the email using the address associated with your PowerShell Gallery account.
-If we are unable to contact an item owner, the Operations team may be required to delete an item under some circumstances.
+It's important to actively monitor the email account used with your PowerShell Gallery account. All
+communication with owners of PowerShell Gallery items is through this email address. If the
+PowerShell Gallery Operations team is unable to contact an item owner, we may be required to delete
+an item.
 
-Organizations that publish to the PowerShell Gallery often create a unique account for that purpose in Outlook.com, or another Microsoft account domain.
-In many cases that account is not regularly monitored.
-A best practice in that case is to use Outlook Forwarding to send email to another account, typically one within the organization, that will be monitored by the item owner(s).
+Organizations that publish to the PowerShell Gallery often create a unique external account for
+that purpose. We recommend you use email forwarding to forward notifications to an address within
+your organization.
 
-If there are multiple owners associated with an item, all communications that come from the PowerShell Gallery will go to all owners.
-See [Managing Item Owners](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) for additional details on adding owners to an item.
+When multiple owners are associated with an item, all PowerShell Gallery notifications are sent
+to all owners. For more information, see [Managing Item Owners](managing-item-owners.md).
