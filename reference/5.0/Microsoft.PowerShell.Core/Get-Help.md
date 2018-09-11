@@ -267,7 +267,7 @@ PS C:\> Get-Help C:\PS-Test\MyScript.ps1
 ```
 
 This command gets help for the MyScript.ps1 script.
-For information about how to write help for your functions and scripts, see about_Comment_Based_Help.
+For information about how to write help for your functions and scripts, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md).
 
 ## PARAMETERS
 
@@ -431,7 +431,7 @@ Displays the online version of a help topic in the default Internet browser.
 This parameter is valid only for cmdlet, function, workflow and script help topics.
 You cannot use the *Online* parameter in **Get-Help** commands in a remote session.
 
-For information about supporting this feature in help topics that you write, see about_Comment_Based_Help (http://go.microsoft.com/fwlink/?LinkID=144309), and Supporting Online Help (http://go.microsoft.com/fwlink/?LinkID=242132), and [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
+For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and Supporting Online Help (http://go.microsoft.com/fwlink/?LinkID=242132), and [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
 
 ```yaml
 Type: SwitchParameter
