@@ -1,3 +1,4 @@
+
 ---
 ms.date:  06/09/2017
 schema:  2.0.0
@@ -84,6 +85,62 @@ Get-ChildItem .\*.txt | ForEach-Object {Get-Content $_ -TotalCount 1; Get-Conten
 
 This command gets the first and last lines of each text file in the current directory.
 The command uses the **Tail** parameter and the **Head** alias of the **TotalCount** parameter
+
+### Example 5: Get the content of an alternate data stream
+
+This command uses the `-Stream` parameter to get the content of the `Zone.Identifier` alternate data stream.
+The output includes Zone ID value of 3, which represents the internet.
+
+```powershell
+Get-Content .\Copy-Scripts.ps1 -Stream Zone.Identifier
+```
+
+```output
+[ZoneTransfer]
+ZoneId=3
+```
+
+### Example 6: Getting a hashtable out of file contents as a hastable
+
+The commands in this example get the contents of a module manifest file (.psd1) as a hash table.
+The manifest file contains a hash table, but if you get the contents without the `-Raw` dynamic parameter, it is returned as an array of newline-delimited strings.
+
+```powershell
+# First, use the -Path property of modules to get the path to the file that contains the module manifest for the PSScheduledJob module.
+# Store the path in the Manifest variable.
+$Manifest = (Get-Module -List PSScheduledJob).Path
+# Use the Invoke-Expression cmdlet to run a Get-Content command and the -Raw dynamic parameter of the  Get-Content cmdlet to get the contents of the module manifest file in a single string.
+# Store the hashtable in the Hash variable.
+$Hash = Invoke-Expression (Get-Content $Manifest -Raw)
+# Return the contents of the hashtable as a collection of name-value pairs.
+$Hash
+```
+
+```output
+Name                           Value
+----                           -----
+Copyright                      © Microsoft Corporation. All rights reserved.
+ModuleToProcess                Microsoft.PowerShell.ScheduledJob.dll
+FormatsToProcess               PSScheduledJob.Format.ps1xml
+PowerShellVersion              3.0
+CompanyName                    Microsoft Corporation
+GUID                           50cdb55f-5ab7-489f-9e94-4ec21ff51e59
+Author                         Microsoft Corporation
+CLRVersion                     4.0
+CmdletsToExport                {New-JobTrigger, Add-JobTrigger, Remove-JobTrigger, Get-JobTrigger...}
+TypesToProcess                 PSScheduledJob.types.ps1xml
+HelpInfoURI                    http://go.microsoft.com/fwlink/?LinkID=223911
+ModuleVersion                  1.0.0.0
+```
+
+```powershell
+# Use the `ModuleToProcess` property of the hash table to get the value of the `ModuleToProcess` key in the module manifest.
+$Hash.ModuleToProcess
+```
+
+```output
+Microsoft.PowerShell.ScheduledJob.dll
+```
 
 ## PARAMETERS
 
@@ -350,7 +407,6 @@ Valid values are:
 
 - ASCII:  Uses the encoding for the ASCII (7-bit) character set.
 - BigEndianUnicode:  Encodes in UTF-16 format using the big-endian byte order.
-- BigEndianUTF32:  Encodes in UTF-32 format using the big-endian byte order.
 - Byte:   Encodes a set of characters into a sequence of bytes.
 - String:  Uses the encoding type for a string.
 - Unicode:  Encodes in UTF-16 format using the little-endian byte order.
@@ -424,7 +480,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can pipe items from installed providers into `Get-Content`.
+### System.Int64, System.String[], System.Management.Automation.PSCredential
+
+You can pipe the read count, total count, paths, or credentials to Get-Content.
 
 ## OUTPUTS
 
