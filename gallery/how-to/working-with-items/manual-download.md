@@ -1,18 +1,20 @@
 ﻿---
-ms.date:  06/26/18
+ms.date:  09/11/2018
 contributor:  JKeithB
 keywords:  gallery,powershell,psgallery
-title:  Manual Package Download 
+title:  Manual Package Download
 ---
 # Manual Package Download
 
-The Powershell Gallery supports downloading a package from the website directly, without using the PowerShellGet cmdlets. 
-The package will be downloaded as a NuGet package (.nupkg) file, which can then be easily copied to an internal repository. 
+The Powershell Gallery supports downloading a package from the website directly, without using the
+PowerShellGet cmdlets. The package will be downloaded as a NuGet package (.nupkg) file, which can
+then be easily copied to an internal repository.
 
 > [!NOTE]
-> Manual package download is **not** intended as a replacement for the Install-Module cmdlet. 
-> Downloading the package not install the module/script, and dependencies will not be downloaded. 
-> The instructions below provide the information needed to expand and deploy a PowerShell module as a reference, only. 
+> Manual package download is **not** intended as a replacement for the Install-Module cmdlet.
+> Downloading the package does not install the module or script. Dependencies are not included in
+> the NuGet package downloaded. The following instructions are provided for reference purposes
+> only. Deploying a package in this manner is unsupported.
 
 ## Using manual download to acquire a package
 
@@ -20,53 +22,58 @@ Each page has a link for Manual Download, as shown here:
 
 ![Manual Download](../../Images/Manual_Item_Download.PNG)
 
-To download manually, click on the text titled: "Download the raw nupkg file". 
-Depending on the browser you are using, you may be able to choose the target folder where the nupkg file is placed. 
-A copy of the package will be placed in the download folder for your browser, with the name [name].[version].nupkg. 
+To download manually, click on **Download the raw nupkg file**. A copy of the package copied to the
+download folder for your browser with the name `<name>.<version>.nupkg`.
 
-A NuGet package is in a zip format with extra content added to store data about the contents of the package (for example the author, version, type, licenseURI, projectURI, etc.). 
-Some browsers, notably Internet Explorer, will automatically rename the nupkg file to .zip during the download, as this is a supported part of the NuGet specification. 
+A NuGet package is a ZIP archive with extra files containing information about the contents of the
+package. Some browsers, like Internet Explorer, automatically replace the `.nupkg` file extension
+with `.zip`. To expand the package, rename the `.nupkg` file to `.zip`, if needed, then extract the
+contents to a local folder.
 
-Users who wish to expand the package can rename the .nupkg file to .zip (if needed), then extract the contents to a local folder. 
+A NuGet package file includes the following NuGet-specific elements that aren't part of the
+original packaged code:
 
-A NuGet zip includes the following NuGet-specific elements that are not part of the original package:
-
-* A folder named "_rels". This contains a .rels file, which lists the dependencies. 
-* A folder named "package". This folder contains the NuGet-specific data.
-* A file named "[content_types].xml". This describes how extensions such as PowerShellGet work with NuGet.
-* A file named "[name].nuspec". This contains the bulk of the metadata.
+- A folder named `_rels` - contains a `.rels` file that lists the dependencies
+- A folder named `package` - contains the NuGet-specific data
+- A file named `[Content_Types].xml` - describes how extensions like PowerShellGet work with NuGet
+- A file named `<name>.nuspec` - contains the bulk of the metadata
 
 ## Installing PowerShell Modules from a NuGet package
 
 > [!NOTE]
-> These instructions **will not** give the same result as running Install-Module, as some steps for Install-Module will be skipped. 
-> The instructions provide basic and minimum requirements. This is not intended to be a replacement for Install-Module. 
+> These instructions **DO NOT** give the same result as running `Install-Module`. These
+> instructions fulfill the minimum requirements. They are not intended to be a replacement for
+> `Install-Module`. Some steps performed by `Install-Module` are not included.
 
-The easiest approach is to remove the elements that are part of the NuGet package structure, leaving a folder that contains the PowerShell code from the package author. 
-The steps are:
+The easiest approach is to remove the NuGet-specific elements from the folder. This leaves the
+PowerShell code created by the package author. The steps are:
 
-* Extract the contents of the NuGet package.  
-* Rename the extracted folder. The default folder name for the will generally be [name].[version], and the version section will include "-prerelease" if the module is tagged as a prerelease. Rename the folder to be just the module name. For example, "azurerm.storage.5.0.4-preview" should become "azurerm.storage". 
-* Copy the folder to your PSModulePath. 
+1. Extract the contents of the NuGet package to a local folder.
+2. Delete the NuGet-specific elements from the folder.
+3. Rename the folder. The default folder name is usually `<name>.<version>`. The version can
+   include "-prerelease" if the module is tagged as a prerelease version. Rename the folder to just
+   the module name. For example, "azurerm.storage.5.0.4-preview" becomes "azurerm.storage".
+4. Copy the folder to your PSModulePath.
 
-Unlike using the PowerShellGet cmdlets, manual download will not include any dependencies required for the module to work. 
-If there are other packages that this package depends on, they must be installed on the system for this module to be used.
-The PowerShell Gallery will show all dependencies required by the downloaded package.
+> [!IMPORTANT]
+> The manual download does not include any dependencies required by the module. If the package has
+> dependencies, they must be installed on the system for this module to work correctly. The
+> PowerShell Gallery shows all dependencies required by the package.
 
 ## Installing PowerShell Scripts from a NuGet package
 
 > [!NOTE]
-> These instructions **will not** give the same result as running Install-Script. 
-> The instructions provide basic and minimum requirements. This is not intended to be a replacement for Install-Script. 
+> These instructions **DO NOT** give the same result as running `Install-Script`. These
+> instructions fulfill the minimum requirements. They are not intended to be a replacement for
+> `Install-Script`.
 
-The easiest approach is to extract the NuGet package, then use the script directly. 
-The steps are:
+The easiest approach is to extract the NuGet package, then use the script directly. The steps are:
 
-* Extract the contents of the NuGet package.  
-* The .PS1 file will be in the folder, and may be used directly. 
-* You may delete the other elements of the folder, including the folders named .rel and .package, and files named [content_types].xml and [scriptname].nuspec. 
+1. Extract the contents of the NuGet package.
+2. The `.PS1` file in the folder can be used directly from this location.
+3. You may delete the NuGet-specific elements in the folder.
 
-Unlike using the PowerShellGet cmdlets, manual download will not include any dependencies required for the script to work. 
-If there are other packages that this script depends on, they must be installed on the system for this script to be used.
-The PowerShell Gallery will show all dependencies required by the downloaded package.
-
+> [!IMPORTANT]
+> The manual download does not include any dependencies required by the module. If the package has
+> dependencies, they must be installed on the system for this module to work correctly. The
+> PowerShell Gallery shows all dependencies required by the package.
