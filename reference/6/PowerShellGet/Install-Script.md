@@ -270,8 +270,16 @@ Specifies the installation scope of the script.
 Valid values are: AllUsers and CurrentUser.
 The default is CurrentUser.
 
-The AllUsers scope specifies to install a script to %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts so that the script is available to all users.
-The CurrentUser scope specifies to install the script in $home\Documents\WindowsPowerShell\Scripts so that the script is available only to the current user.
+The CurrentUser scope causes scripts to be installed so that they are available only to the current user.
+The AllUsers scope causes scripts to be installed in a location that is accessible to all users of the computer.
+
+Installation locations vary by operating system and the value of *Scope*:
+
+OS | CurrentUser | AllUsers
+------------ | ------------- | ------------ 
+Windows | $env:USERPROFILE\Documents\PowerShell\Scripts | $env:ProgramFiles\PowerShell\Scripts
+Non-Windows | XDG_DATA_HOME/powershell/Scripts | /usr/local/share/powershell/Scripts
+
 
 ```yaml
 Type: String
