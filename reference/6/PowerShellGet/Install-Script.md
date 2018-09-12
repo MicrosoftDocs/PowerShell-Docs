@@ -273,13 +273,12 @@ The default is CurrentUser.
 The CurrentUser scope causes scripts to be installed so that they are available only to the current user.
 The AllUsers scope causes scripts to be installed in a location that is accessible to all users of the computer.
 
-Installation locations vary by operating system and the value of *Scope*:
+Installation locations vary by operating system and the value of **Scope**:
 
-OS | CurrentUser | AllUsers
------------- | ------------- | ------------ 
-Windows | $env:USERPROFILE\Documents\PowerShell\Scripts | $env:ProgramFiles\PowerShell\Scripts
-Non-Windows | XDG_DATA_HOME/powershell/Scripts | /usr/local/share/powershell/Scripts
-
+| OS  | CurrentUser | AllUsers |
+| --- | ----------- | -------- |
+| Windows | $env:USERPROFILE\Documents\PowerShell\Scripts | $env:ProgramFiles\PowerShell\Scripts |
+| Non-Windows | $env:XDG_DATA_HOME/powershell/Scripts | /usr/local/share/powershell/Scripts |
 
 ```yaml
 Type: String
