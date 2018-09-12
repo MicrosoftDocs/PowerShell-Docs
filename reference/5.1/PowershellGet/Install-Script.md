@@ -366,7 +366,11 @@ Accept wildcard characters: False
 ### -Scope
 Specifies the installation scope of the script.
 Valid values are: AllUsers and CurrentUser.
-The default is CurrentUser.
+
+When no *Scope* is defined, the default will be set based on the current session:
+* For an elevated PowerShell session, *Scope* will default to AllUsers;
+* For non-elevated PowerShell sessions in [PowerShellGet versions 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet) and above, *Scope* will default to CurrentUser;
+* For non-elevated PowerShell sessions in PowerShellGet versions 1.6.7 and earlier, *Scope* will be undefined, and Install-Script will fail.
 
 The AllUsers scope specifies to install a script to %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts so that the script is available to all users.
 The CurrentUser scope specifies to install the script in $home\Documents\WindowsPowerShell\Scripts so that the script is available only to the current user.
