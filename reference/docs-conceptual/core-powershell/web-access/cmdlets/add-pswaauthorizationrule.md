@@ -298,13 +298,13 @@ Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *
 
 ## See Also
 
-[Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)
+[Get-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592891(v=wps.630).aspx)
 
-[Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
+[Remove-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592893(v=wps.630).aspx)
 
-[Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
+[Test-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592892(v=wps.630).aspx)
 
-[Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
+[Install-PswaWebApplication](https://technet.microsoft.com/library/jj592894(v=wps.630).aspx)
 
 [Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
 
