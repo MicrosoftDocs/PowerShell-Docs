@@ -195,10 +195,10 @@ The CurrentUser scope lets modules be installed so that the module is available 
 
 Installation locations vary by operating system and the value of *Scope*:
 
-OS | CurrentUser | AllUsers
------------- | ------------- | ------------ 
-Windows | $env:USERPROFILE\Documents\PowerShell\Modules | $env:ProgramFiles\PowerShell\Modules
-Non-Windows | XDG_DATA_HOME/powershell/Modules | /usr/local/share/powershell/Modules
+| OS  | CurrentUser | AllUsers |
+| --- | ----------- | -------- |
+| Windows | $env:USERPROFILE\Documents\PowerShell\Modules | $env:ProgramFiles\PowerShell\Modules |
+| Non-Windows | $env:XDG_DATA_HOME/powershell/Modules | /usr/local/share/powershell/Modules |
 
 
 ```yaml
