@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/12/2017
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -171,12 +171,12 @@ PowerShell supports validation of code signing through two primary approaches:
 - Catalog signing a module
 
 Signing PowerShell files is a well-established approach to ensuring that the code being executed was produced by a reliable source, and has not been modified.
-Details on how to sign PowerShell script files is covered in the [About Signing](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) topic.
+Details on how to sign PowerShell script files is covered in the [About Signing](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) topic.
 In overview, a signature can be added to any .PS1 file that PowerShell validates when the script is loaded.
-PowerShell can be constrained using the [Execution Policy](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) cmdlets to ensure use of signed scripts.
+PowerShell can be constrained using the [Execution Policy](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) cmdlets to ensure use of signed scripts.
 
 Catalog signing modules is a feature added to PowerShell in version 5.1.
-How to sign a module is covered in the [Catalog Cmdlets](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/catalog-cmdlets) topic.
+How to sign a module is covered in the [Catalog Cmdlets](https://msdn.microsoft.com/powershell/wmf/5.1/catalog-cmdlets) topic.
 In overview, catalog signing is done by creating a catalog file, which contains a hash value for every file in the module, and then signing that file.
 The PowerShellGet publish-module, install-module, save-module, and update-module cmdlets will check the signature to ensure it is valid, then confirm that the hash value for each item matches what is in the catalog.
 If a previous version of the module is installed on the system, install-module will confirm that the signing authority for the new version matches what was previously installed.

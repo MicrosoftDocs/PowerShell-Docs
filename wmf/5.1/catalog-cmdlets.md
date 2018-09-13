@@ -7,7 +7,7 @@ title:  Catalog cmdlets
 
 # Catalog Cmdlets
 
-We have added two new cmdlets in [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) module to generate and validate windows catalog files.
+We have added two new cmdlets in [Microsoft.Powershell.Secuity](https://technet.microsoft.com/library/hh847877.aspx) module to generate and validate windows catalog files.
 
 ## New-FileCatalog
 --------------------------------
@@ -50,5 +50,5 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 This cmdlet compares the hashes of all files and their relative paths found in the catalog file with ones saved to disk. If it detects any mismatch between file hashes and paths it returns
 a status of `ValidationFailed`.
 Users can retrieve all this information using the `Detailed` switch. The signing status of the catalog is displayed as the `Signature` field, which is same as
-calling the [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet on the catalog file.
+calling the [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet on the catalog file.
 Users can also skip any file during validation by using the `FilesToSkip` parameter.
