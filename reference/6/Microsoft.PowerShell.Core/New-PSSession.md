@@ -58,8 +58,8 @@ New-PSSession [-Name <String[]>] [-ConfigurationName <String>] -ContainerId <Str
 
 ### SSHHost
 ```
-New-PSSession [-Name <String[]>] [-Port <Int32>] [-HostName] <String[]> [-UserName <String>]
- [-KeyFilePath <String>] [-SSHTransport] [<CommonParameters>]
+New-PSSession [-HostName] <string[]> [-Name <string[]>] [-Port <int>] [-UserName <string>] [-KeyFilePath <string>
+ [-Subsystem <String>] [-SSHTransport] [<CommonParameters>]
 ```
 
 ### SSHHostHashParam
@@ -215,21 +215,21 @@ The value of the SessionOption parameter is the **SessionOption** object in the 
 
 ### Example 12: Create a session using SSH
 ```
-PS C:\> New-PSSession -HostName LinuxServer01 -UserName UserA
+PS C:\> New-PSSession -HostName UserA@LinuxServer01
 ```
 
 This example shows how to create a new **PSSession** using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt. Otherwise you will have to use SSH key based user authentication.
 
 ### Example 13: Create a session using SSH and specify the port and user authentication key
 ```
-PS C:\> New-PSSession -HostName LinuxServer01 -UserName UserA -Port 22 -KeyFilePath c:\<path>\userAKey_rsa
+PS C:\> New-PSSession -HostName UserA@LinuxServer01:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to create a **PSSession** using Secure Shell (SSH). It uses the *Port* parameter to specify the port to use and the *KeyFilePath* parameter to specify an RSA key used to identify and authenticate the user on the remote computer.
 
 ### Example 14: Create multiple sessions using SSH
 ```
-PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="LinuxServer5"; UserName="UserB"; KeyFilePath="c:\UserB\<path>\id_rsa }
+PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa }
 PS C:\> New-PSSession -SSHConnection $sshConnections
 ```
 
@@ -371,6 +371,9 @@ Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended: http://schemas.microsoft.com/PowerShell.
+
+When used with SSH, this specifies the subsystem to use on the target as defined in sshd_config.
+The default value for SSH is the `powershell` subsystem.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
@@ -792,6 +795,132 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -HostName
+Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to the ComputerName parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
+This parameter supports specifying the user name and/or port as part of the host name parameter value using
+the form `user@hostname:port`.
+The user name and/or port specified as part of the host name takes precedence over the `-UserName` and `-Port` parameters, if specified.
+This allows passing multiple computer names to this parameter where some have specific user names and/or ports, while others use the user name and/or port from the `-UserName` and `-Port` parameters.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String[]
+Parameter Sets: HostName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KeyFilePath
+Specifies a key file path used by Secure Shell (SSH) to authenticate a user on a remote computer.
+
+SSH allows user authentication to be performed via private/public keys as an alternative to basic password authentication. If the remote computer is configured for key authentication then this parameter can be used to provide the key that identifies the user.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SSHTransport
+Indicates that the remote connection is established using Secure Shell (SSH).
+
+By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserName
+Specifies the user name for the account used to create a session on the remote computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
+
+If SSH is configured for basic password authentication then you will be prompted for the user password.
+
+If SSH is configured for key based user authentication then a key file path can be provided via the KeyFilePath parameter and no password prompt will occur. Note that if the client user key file is located in an SSH known location then the KeyFilePath parameter is not needed for key based authentication, and user authentication will occur automatically based on the user name. See SSH documentation about key based user authentication for more information.
+
+This is not a required parameter. If no UserName parameter is specified then the current log on user name is used for the connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SSHConnection
+This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath, Subsystem).
+
+The hashtable connection parameters are the same as defined for the **HostName** parameter set.
+Note that the order of the keys in the hashtable result in user name and port being used for the connection where the last one specified is used.  For example, if you use `@{UserName="first";HostName="second@host"}`, then the user name `second` will be used.  However, if you use `@{HostName="second@host:22";Port=23}`, then port 23 will be used.
+
+This parameter was introduced in PowerShell 6.0.
+
+The *SSHConnection* parameter is useful for creating multiple sessions where each session requires different connection information.
+
+
+```yaml
+Type: hashtable
+Parameter Sets: SSHConnection
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Subsystem
+Specifies the SSH subsystem used for the new **PSSession**.
+
+This specifies the subsystem to use on the target as defined in sshd_config.
+The subsystem starts a specific version of PowerShell with predefined parameters.
+If the specified subsystem does not exist on the remote computer, the command fails.
+
+If this parameter is not used, the default is the 'powershell' subsystem.
+
+```yaml
+Type: String
+Parameter Sets: HostName
+Aliases:
+
+Required: False
+Position: Named
+Default value: powershell
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
