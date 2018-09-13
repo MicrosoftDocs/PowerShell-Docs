@@ -189,7 +189,7 @@ Do not specify a file name or file name extension.
 ```yaml
 Type: String[]
 Parameter Sets: Path
-Aliases:
+Aliases: Path
 
 Required: True
 Position: 0

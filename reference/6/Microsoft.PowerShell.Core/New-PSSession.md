@@ -215,21 +215,21 @@ The value of the SessionOption parameter is the **SessionOption** object in the 
 
 ### Example 12: Create a session using SSH
 ```
-PS C:\> New-PSSession -HostName LinuxServer01 -UserName UserA
+PS C:\> New-PSSession -HostName UserA@LinuxServer01
 ```
 
 This example shows how to create a new **PSSession** using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt. Otherwise you will have to use SSH key based user authentication.
 
 ### Example 13: Create a session using SSH and specify the port and user authentication key
 ```
-PS C:\> New-PSSession -HostName LinuxServer01 -UserName UserA -Port 22 -KeyFilePath c:\<path>\userAKey_rsa
+PS C:\> New-PSSession -HostName UserA@LinuxServer01:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to create a **PSSession** using Secure Shell (SSH). It uses the *Port* parameter to specify the port to use and the *KeyFilePath* parameter to specify an RSA key used to identify and authenticate the user on the remote computer.
 
 ### Example 14: Create multiple sessions using SSH
 ```
-PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="LinuxServer5"; UserName="UserB"; KeyFilePath="c:\UserB\<path>\id_rsa }
+PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa }
 PS C:\> New-PSSession -SSHConnection $sshConnections
 ```
 
@@ -371,6 +371,9 @@ Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended: http://schemas.microsoft.com/PowerShell.
+
+When used with SSH, this specifies the subsystem to use on the target as defined in sshd_config.
+The default value for SSH is the `powershell` subsystem.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.

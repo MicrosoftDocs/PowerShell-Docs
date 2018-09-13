@@ -379,7 +379,7 @@ If you are a member of the Administrators group on the remote computer, you
 can also create and change the IdleTimeoutMs and MaxIdleTimeoutMs properties
 of session configurations.
 
-## NOTES:
+## NOTES
 
 The idle timeout value of session configurations and session options is in
 milliseconds. The idle timeout value of sessions and session configuration
