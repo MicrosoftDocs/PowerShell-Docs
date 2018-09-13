@@ -150,6 +150,8 @@
     - name: What's New
       href: ''
       items:
+        - name: What's new in PowerShell Core 6.1
+          href: whats-new/what-s-new-in-powershell-core-61.md
         - name: What's new in PowerShell Core 6.0
           href: whats-new/what-s-new-in-powershell-core-60.md
           items:
