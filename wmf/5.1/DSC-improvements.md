@@ -148,7 +148,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 
 ## Using PsDscRunAsCredential with DSC composite resources
 
-We have added support for using [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) with DSC [Composite](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) resources.
+We have added support for using [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) with DSC [Composite](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) resources.
 
 You can now specify a value for PsDscRunAsCredential when using composite resources inside configurations.
 When specified, all resources run inside a composite resource as a RunAs user.
@@ -156,7 +156,7 @@ If a composite resource calls another composite resource, all of its resources a
 RunAs credentials are propagated to any level of the composite resource hierarchy.
 If any resource inside a composite resource specifies its own value for PsDscRunAsCredential, a merge error results during configuration compilation.
 
-This example shows usage with [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) composite resource included in PSDesiredStateConfiguration module.
+This example shows usage with [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) composite resource included in PSDesiredStateConfiguration module.
 
 ```powershell
 Configuration InstallWindowsFeature

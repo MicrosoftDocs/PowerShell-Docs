@@ -52,7 +52,7 @@ You may delete the session configuration file at any time; it is not used after 
 
 ## Multi-machine configuration with DSC
 
-If you are deploying JEA on multiple machines, the simplest deployment model is to use the JEA [Desired State Configuration](https://msdn.microsoft.com/en-us/powershell/dsc/overview) resource to quickly and consistently deploy JEA on each machine.
+If you are deploying JEA on multiple machines, the simplest deployment model is to use the JEA [Desired State Configuration](https://msdn.microsoft.com/powershell/dsc/overview) resource to quickly and consistently deploy JEA on each machine.
 
 To deploy JEA with DSC, you will need to ensure the following prerequisites are met:
 - One or more role capabilities have been authored and added to a valid PowerShell module.
@@ -105,7 +105,7 @@ Configuration JEAMaintenance
 }
 ```
 
-This configuration can then be applied on a system by [directly invoking the Local Configuration Manager](https://msdn.microsoft.com/en-us/powershell/dsc/metaconfig) or updating the [pull server configuration](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver).
+This configuration can then be applied on a system by [directly invoking the Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig) or updating the [pull server configuration](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 The DSC resource also allows you to replace the default Microsoft.PowerShell remoting endpoint.
 If you do this, the resource will automatically register a backup unconstrainted endpoint named "Microsoft.PowerShell.Restricted" which has the default WinRM ACL (allowing Remote Management Users and local Administrators group members to access it).
