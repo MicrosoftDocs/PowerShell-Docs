@@ -282,7 +282,7 @@ You specify the management resource by using the *ResourceURI* parameter and the
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: Path
 
 Required: False
 Position: Named
