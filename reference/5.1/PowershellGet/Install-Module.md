@@ -33,9 +33,6 @@ Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope 
 ## DESCRIPTION
 The **Install-Module** cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.
 
-When no scope is defined, or when the value of the *Scope* parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.
-When the value of *Scope* is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.
-
 You can filter your results based on minimum and exact versions of specified modules.
 
 ## EXAMPLES
@@ -279,6 +276,11 @@ Accept wildcard characters: False
 ### -Scope
 Specifies the installation scope of the module.
 The acceptable values for this parameter are: AllUsers and CurrentUser.
+
+When no *Scope* is defined, the default will be set based on the current session:
+* For an elevated PowerShell session, *Scope* will default to AllUsers;
+* For non-elevated PowerShell sessions in [PowerShellGet versions 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet) and above, *Scope* will be CurrentUser;
+* For non-elevated PowerShell sessions in PowerShellGet versions 1.6.7 and earlier, *Scope* will be undefined, and Install-Module will fail.
 
 The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, %systemdrive%:\ProgramFiles\WindowsPowerShell\Modules.
 
