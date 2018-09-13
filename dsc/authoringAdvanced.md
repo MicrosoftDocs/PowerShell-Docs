@@ -21,8 +21,8 @@ to enable this concept:
 
 | Concept | Detailed Information
 |-|-
-| Partial Configurations | [Documentation](https://docs.microsoft.com/en-us/powershell/dsc/partialconfigs)
-| Composite Resources | [Documentation](https://docs.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite)
+| Partial Configurations | [Documentation](partialconfigs.md)
+| Composite Resources | [Documentation](authoringresourcecomposite.md)
 
 ## Understanding The Impact of Each Approach
 
