@@ -463,6 +463,8 @@ In Windows PowerShell, we included the following type accelerators to make it ea
 - `[wmiclass]`: `System.Management.ManagementClass`
 - `[wmisearcher]`: `System.Management.ManagementObjectSearcher`
 
+These type accelerators were not included in PowerShell 6, but have been added to PowerShell 6.1 running on Windows.
+
 These types are useful in easily constructing AD and WMI objects.
 
 For example, you can query using LDAP:
