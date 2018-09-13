@@ -191,14 +191,14 @@ brew cask upgrade powershell-preview
 ### Installation via Direct Download
 
 Download the PKG package
-`powershell-6.1.0-osx.10.12-x64.pkg`
+`powershell-6.1.0-osx-x64.pkg`
 from the [releases][] page onto your macOS machine.
 
 You can double-click the file and follow the prompts,
 or install it from the terminal:
 
 ```sh
-sudo installer -pkg powershell-6.1.0-osx.10.12-x64.pkg -target /
+sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 ```
 
 ## Binary Archives
