@@ -384,9 +384,8 @@ For a complete list of fixes and changes, check out our [changelog][] on GitHub.
   - the OS platform (`$PSVersionTable.OSDescription`)
   - the exact version of PowerShell (`$PSVersionTable.GitCommitId`)
 
-If you want to opt-out of this telemetry, simply delete `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`
-or create `POWERSHELL_TELEMETRY_OPTOUT` environment variable with one of the following values: `true`, `1` or `yes`.
-Deleting this file or creating the variable bypasses all telemetry even before the first run of PowerShell.
+If you want to opt-out of this telemetry, simply create `POWERSHELL_TELEMETRY_OPTOUT` environment variable with one of the following values: `true`, `1` or `yes`.
+Creating the variable bypasses all telemetry even before the first run of PowerShell.
 We also plan on exposing this telemetry data and the insights we glean from the telemetry in the [community dashboard][community-dashboard].
 You can find out more about how we use this data in this [blog post][telemetry-blog].
 
