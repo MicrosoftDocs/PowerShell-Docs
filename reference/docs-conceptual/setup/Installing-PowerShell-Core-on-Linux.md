@@ -78,13 +78,13 @@ From then on, you just need to use `sudo apt-get upgrade powershell` to update t
 ### Installation via Direct Download - Ubuntu 14.04
 
 Download the Debian package
-`powershell_6.0.3-1.ubuntu.14.04_amd64.deb`
+`powershell_6.1.0-1.ubuntu.14.04_amd64.deb`
 from the [releases][] page onto the Ubuntu machine.
 
 Then execute the following in the terminal:
 
 ```sh
-sudo dpkg -i powershell_6.0.3-1.ubuntu.14.04_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -129,13 +129,13 @@ from then on, you just need to use `sudo apt-get upgrade powershell` to update i
 ### Installation via Direct Download - Ubuntu 16.04
 
 Download the Debian package
-`powershell_6.0.3-1.ubuntu.16.04_amd64.deb`
+`powershell_6.1.0-1.ubuntu.16.04_amd64.deb`
 from the [releases][] page onto the Ubuntu machine.
 
 Then execute the following in the terminal:
 
 ```sh
-sudo dpkg -i powershell_6.0.3-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -183,13 +183,13 @@ from then on, you just need to use `sudo apt-get upgrade powershell` to update i
 ### Installation via Direct Download - Ubuntu 18.04
 
 Download the Debian package
-`powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb`
+`powershell_6.1.0-1.ubuntu.18.04_amd64.deb`
 from the [releases][] page onto the Ubuntu machine.
 
 Then execute the following in the terminal:
 
 ```sh
-sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -246,13 +246,13 @@ from then on, you just need to use `sudo apt-get upgrade powershell` to update i
 ### Installation via Direct Download - Debian 8
 
 Download the Debian package
-`powershell_6.0.3-1.debian.8_amd64.deb`
+`powershell_6.1.0-1.debian.8_amd64.deb`
 from the [releases][] page onto the Debian machine.
 
 Then execute the following in the terminal:
 
 ```sh
-sudo dpkg -i powershell_6.0.3-1.debian.8_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.debian.8_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -301,13 +301,13 @@ from then on, you just need to use `sudo apt-get upgrade powershell` to update i
 ### Installation via Direct Download - Debian 9
 
 Download the Debian package
-`powershell_6.0.3-1.debian.9_amd64.deb`
+`powershell_6.1.0-1.debian.9_amd64.deb`
 from the [releases][] page onto the Debian machine.
 
 Then execute the following in the terminal:
 
 ```sh
-sudo dpkg -i powershell_6.0.3-1.debian.9_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -343,19 +343,19 @@ you just need to use `sudo yum update powershell` to update PowerShell.
 ### Installation via Direct Download - CentOS 7
 
 Using [CentOS 7][], download the RPM package
-`powershell-6.0.3-1.rhel.7.x86_64.rpm`
+`powershell-6.1.0-1.rhel.7.x86_64.rpm`
 from the [releases][] page onto the CentOS machine.
 
 Then execute the following in the terminal:
 
 ```sh
-sudo yum install powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 You can also install the RPM without the intermediate step of downloading it:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### Uninstallation - CentOS 7
@@ -389,19 +389,19 @@ you just need to use `sudo yum update powershell` to update PowerShell.
 ### Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7
 
 Download the RPM package
-`powershell-6.0.3-1.rhel.7.x86_64.rpm`
+`powershell-6.1.0-1.rhel.7.x86_64.rpm`
 from the [releases][] page onto the Red Hat Enterprise Linux machine.
 
 Then execute the following in the terminal:
 
 ```sh
-sudo yum install powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 You can also install the RPM without the intermediate step of downloading it:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### Uninstallation - Red Hat Enterprise Linux (RHEL) 7
@@ -415,9 +415,9 @@ sudo yum remove powershell
 When installing PowerShell Core, `zypper` may report the following error:
 
 ```Output
-Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
- Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
- Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+Problem: nothing provides libcurl needed by powershell-6.1.0-1.rhel.7.x86_64
+ Solution 1: do not install powershell-6.1.0-1.rhel.7.x86_64
+ Solution 2: break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies
 ```
 
 In this case, verify that a compatible `libcurl` library is present by checking that the following
@@ -427,7 +427,7 @@ command shows the `libcurl4` package as installed:
 zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 ```
 
-Then choose the `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies`
+Then choose the `break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies`
 solution when installing the PowerShell package.
 
 ### Installation via Package Repository (preferred) - OpenSUSE 42.3
@@ -453,19 +453,19 @@ pwsh
 
 ### Installation via Direct Download - OpenSUSE 42.3
 
-Download the RPM package `powershell-6.0.3-1.rhel.7.x86_64.rpm`
+Download the RPM package `powershell-6.1.0-1.rhel.7.x86_64.rpm`
 from the [releases][] page onto the OpenSUSE machine.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo zypper install powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 You can also install the RPM without the intermediate step of downloading it:
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### Uninstallation - OpenSUSE 42.3
@@ -506,21 +506,21 @@ pwsh
 ### Installation via Direct Download - Fedora 27, Fedora 28
 
 Download the RPM package
-`powershell-6.0.3-1.rhel.7.x86_64.rpm`
+`powershell-6.1.0-1.rhel.7.x86_64.rpm`
 from the [releases][] page onto the Fedora machine.
 
 Then execute the following in the terminal:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 You can also install the RPM without the intermediate step of downloading it:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### Uninstallation - Fedora 27, Fedora 28
@@ -553,7 +553,8 @@ For more information on installing packages from the AUR, see the [Arch Linux wi
 
 ### Getting snapd
 
-`snapd` is required to run snaps.  Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.
+`snapd` is required to run snaps.
+Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.
 
 ### Installation via Snap
 
@@ -576,33 +577,10 @@ After installing Snap will automatically upgrade, but you can trigger an upgrade
 sudo snap remove powershell-preview
 ```
 
-## Linux AppImage
-
-> [!NOTE]
-> AppImage support is experimental
-
-Using a recent Linux distribution,
-download the AppImage `powershell-6.0.1-x86_64.AppImage`
-from the [releases][] page onto the Linux machine.
-
-Then execute the following in the terminal:
-
-```bash
-chmod a+x powershell-6.0.1-x86_64.AppImage
-./powershell-6.0.1-x86_64.AppImage
-```
-
-The [AppImage][] lets you run PowerShell without installing it.
-It is a portable application that bundles PowerShell and its dependencies
-(including .NET Core's system dependencies) into one cohesive package.
-This package is a single binary that works independently of the user's Linux distribution.
-
-[appimage]: http://appimage.org/
-
 ## Kali
 
 > [!NOTE]
-> Kali support is experimental.
+> Kali support is not currently working. Please use the [Snap package][snap] instead.
 
 ### Installation
 
@@ -613,23 +591,10 @@ wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libs
 sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
 
 # Install PowerShell
-sudo dpkg -i powershell_6.0.3-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.ubuntu.16.04_amd64.deb
 
 # Start PowerShell
 pwsh
-```
-
-### Run PowerShell in latest Kali (Kali GNU/Linux Rolling) without installing it
-
-```sh
-# Grab the latest App Image
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-x86_64.AppImage
-
-# Make executable
-chmod a+x powershell-6.0.2-x86_64.AppImage
-
-# Start PowerShell
-./powershell-6.0.2-x86_64.AppImage
 ```
 
 ### Uninstallation - Kali
@@ -657,13 +622,13 @@ Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and
 sudo apt-get install libunwind8
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-6.0.3-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-6.1.0-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -724,19 +689,19 @@ and then extracts the Linux `tar.gz` archive.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/6.0.2
+sudo mkdir -p /opt/microsoft/powershell/6.1.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.0.2
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/6.0.2/pwsh
+sudo chmod +x /opt/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/6.0.2/pwsh /usr/bin/pwsh
+sudo ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
 ```
 
 ### Uninstalling binary archives
@@ -747,7 +712,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## Paths
 
-* `$PSHOME` is `/opt/microsoft/powershell/6.0.3/`
+* `$PSHOME` is `/opt/microsoft/powershell/6.1.0/`
 * User profiles will be read from `~/.config/powershell/profile.ps1`
 * Default profiles will be read from `$PSHOME/profile.ps1`
 * User modules will be read from `~/.local/share/powershell/Modules`
