@@ -191,14 +191,14 @@ brew cask upgrade powershell-preview
 ### Installation via Direct Download
 
 Download the PKG package
-`powershell-6.0.2-osx.10.12-x64.pkg`
+`powershell-6.1.0-osx.10.12-x64.pkg`
 from the [releases][] page onto your macOS machine.
 
 You can double-click the file and follow the prompts,
 or install it from the terminal:
 
 ```sh
-sudo installer -pkg powershell-6.0.2-osx.10.12-x64.pkg -target /
+sudo installer -pkg powershell-6.1.0-osx.10.12-x64.pkg -target /
 ```
 
 ## Binary Archives
@@ -210,19 +210,19 @@ to enable advanced deployment scenarios.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.0.2
+sudo mkdir -p /usr/local/microsoft/powershell/6.1.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.0.2
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.1.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.0.2/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.0.2/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
 ```
 
 ## Uninstalling PowerShell Core
@@ -249,7 +249,7 @@ and remove the desired the paths using `sudo rm`.
 
 ## Paths
 
-* `$PSHOME` is `/usr/local/microsoft/powershell/6.0.2/`
+* `$PSHOME` is `/usr/local/microsoft/powershell/6.1.0/`
 * User profiles will be read from `~/.config/powershell/profile.ps1`
 * Default profiles will be read from `$PSHOME/profile.ps1`
 * User modules will be read from `~/.local/share/powershell/Modules`
@@ -263,14 +263,13 @@ So the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps
 PowerShell respects the [XDG Base Directory Specification][xdg-bds] on macOS.
 
 Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`.
-Thus, `$PSHOME` is `/usr/local/microsoft/powershell/6.0.2/`, and the symlink is placed at `/usr/local/bin/pwsh`.
+Thus, `$PSHOME` is `/usr/local/microsoft/powershell/6.1.0/`, and the symlink is placed at `/usr/local/bin/pwsh`.
 
 ## Additional Resources
 
 * [Homebrew Web][brew]
 * [Homebrew Github Repository][GitHub]
 * [Homebrew-Cask][cask]
-
 
 [brew]: http://brew.sh/
 [GitHub]: https://github.com/Homebrew
