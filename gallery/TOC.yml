@@ -32,12 +32,20 @@
           href: how-to/working-with-items/filelist-view.md
         - name: Deploy to Azure Automation
           href: how-to/working-with-items/deploy-to-azure-automation.md
+        - name: Manual Package Download
+          href: how-to/working-with-items/manual-download.md
         - name: Items that Require License Acceptance
           href: how-to/working-with-items/items-that-require-license-acceptance.md
         - name: Contacting item owners
           href: how-to/working-with-items/contacting-item-owners.md
         - name: Providing Feedback via Social Media or Comments
           href: how-to/working-with-items/social-media-feedback.md
+    - name: Managing Account Profile
+      items:
+        - name: PowerShell Gallery Account Settings
+          href: how-to/managing-profile/managing-account.md
+        - name: Managing API Keys
+          href: how-to/managing-profile/creating-apikeys.md
 - name: Concepts
   items:
     - name: Publishing guidelines and best practices

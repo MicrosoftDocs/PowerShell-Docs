@@ -69,7 +69,7 @@ The Windows PowerShell Configuration keyword is used to create a configuration f
 
 1. Import the nx module. The nx Windows PowerShell module contains the schema for Built-In resources for DSC for Linux, and must be installed to your local computer and imported in the configuration.
 
-   - To install the nx module, copy the nx module directory to either `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` or `$PSHOME\Modules`. The nx module is included in the DSC for Linux installation package (MSI). To import the nx module in your configuration, use the `Import-DSCResource` command:
+   - To install the nx module, copy the nx module directory to either `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` or `$PSHOME\Modules`. The nx module is included in the DSC for Linux installation package. To import the nx module in your configuration, use the `Import-DSCResource` command:
 
    ```powershell
    Configuration ExampleConfiguration{
