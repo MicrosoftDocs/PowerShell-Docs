@@ -16,10 +16,9 @@ Once the package is installed, run `pwsh` from a terminal.
 If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
 
 Once you've installed Homebrew, installing PowerShell is easy.
-First, install [Homebrew-Cask][cask], so you can install more packages and install [Cask-Versions][cask-versions] which lets you install alternative versions of packages:
+First, install [Cask-Versions][cask-versions] which lets you install alternative versions of packages:
 
 ```sh
-brew tap caskroom/cask
 brew tap caskroom/versions
 ```
 
@@ -49,7 +48,6 @@ brew cask upgrade powershell-preview
 > and refresh the values shown in $PSVersionTable.
 
 [brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 
 ### Installation of latest preview release via Homebrew on macOS 10.12 or higher
