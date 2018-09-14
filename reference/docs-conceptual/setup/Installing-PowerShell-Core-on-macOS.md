@@ -79,9 +79,6 @@ brew cask upgrade powershell-preview
 > but then the PowerShell shell must be exited and restarted to complete the upgrade.
 > and refresh the values shown in $PSVersionTable.
 
-[brew]: http://brew.sh/
-[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
-
 ## Installation via Direct Download
 
 Download the PKG package
@@ -133,13 +130,11 @@ If you installed PowerShell via direct download, PowerShell must be removed manu
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-To remove the additional PowerShell paths, please see the [paths][] section in this document
+To remove the additional PowerShell paths, please see the [paths](#paths) section in this document
 and remove the desired the paths using `sudo rm`.
 
 > [!NOTE]
 > This is not necessary if you installed with Homebrew.
-
-[paths]:#paths
 
 ## Paths
 
@@ -166,7 +161,8 @@ Thus, `$PSHOME` is `/usr/local/microsoft/powershell/6.1.0/`, and the symlink is 
 * [Homebrew-Cask][cask]
 
 [brew]: http://brew.sh/
-[GitHub]: https://github.com/Homebrew
 [Cask]: https://github.com/Homebrew/homebrew-cask
+[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
+[GitHub]: https://github.com/Homebrew
 [releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
