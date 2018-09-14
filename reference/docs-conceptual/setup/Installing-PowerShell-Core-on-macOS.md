@@ -10,6 +10,38 @@ PowerShell Core supports macOS 10.12 and higher.
 All packages are available on our GitHub [releases][] page.
 Once the package is installed, run `pwsh` from a terminal.
 
+### Installation of latest stable release via Homebrew on macOS 10.12 or higher
+
+[Homebrew][brew] is the preferred package manager for macOS.
+If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
+
+Now, you can install PowerShell:
+
+```sh
+brew cask install powershell
+```
+
+Finally, verify that your install is working properly:
+
+```sh
+pwsh
+```
+
+When new versions of PowerShell are released,
+simply update Homebrew's formulae and upgrade PowerShell:
+
+```sh
+brew update
+brew cask upgrade powershell
+```
+
+> [!NOTE]
+> The commands above can be called from within a PowerShell (pwsh) host,
+> but then the PowerShell shell must be exited and restarted to complete the upgrade.
+> and refresh the values shown in $PSVersionTable.
+
+[brew]: http://brew.sh/
+
 ### Installation of latest preview release via Homebrew on macOS 10.12 or higher
 
 [Homebrew][brew] is the preferred package manager for macOS.
@@ -19,7 +51,6 @@ Once you've installed Homebrew, installing PowerShell is easy.
 First, install [Homebrew-Cask][cask], so you can install more packages and install [Cask-Versions][cask-version] which lets you install alternative versions of packages:
 
 ```sh
-brew tap caskroom/cask
 brew tap caskroom/versions
 ```
 
@@ -58,11 +89,10 @@ brew cask upgrade powershell-preview
 If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
 
 Once you've installed Homebrew, installing PowerShell is easy.
-First, install [Homebrew-Cask][cask], so you can install more packages and install [Cask-Versions][cask-version] which lets you install alternative versions of packages:
+First, install [Cask-Versions][cask-version] which lets you install alternative versions of cask packages:
 
 ```sh
-brew tap caskroom/cask
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 ```
 
 Now, you can install PowerShell:
@@ -91,7 +121,6 @@ brew cask upgrade powershell-preview
 > and refresh the values shown in $PSVersionTable.
 
 [brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 
 ### Installation via Direct Download
