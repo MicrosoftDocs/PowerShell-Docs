@@ -37,6 +37,8 @@ warning message.
 > [Approved Verbs](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands) in
 > the Microsoft Docs.
 
+## Examples
+
 ### Example 1 - Get a list of all verbs
 
 ```powershell
