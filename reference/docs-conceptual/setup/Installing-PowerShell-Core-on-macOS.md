@@ -10,7 +10,7 @@ PowerShell Core supports macOS 10.12 and higher.
 All packages are available on our GitHub [releases][] page.
 Once the package is installed, run `pwsh` from a terminal.
 
-### Installation of latest stable release via Homebrew on macOS 10.12 or higher
+## Installation of latest stable release via Homebrew on macOS 10.12 or higher
 
 [Homebrew][brew] is the preferred package manager for macOS.
 If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
@@ -82,7 +82,7 @@ brew cask upgrade powershell-preview
 [brew]: http://brew.sh/
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 
-### Installation via Direct Download
+## Installation via Direct Download
 
 Download the PKG package
 `powershell-6.1.0-osx-x64.pkg`
@@ -97,7 +97,7 @@ sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 
 ## Binary Archives
 
-PowerShell binary `tar.gz` archives are provided for macOS and Linux platforms
+PowerShell binary `tar.gz` archives are provided for the macOS platform
 to enable advanced deployment scenarios.
 
 ### Installing binary archives on macOS
