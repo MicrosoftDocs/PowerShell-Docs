@@ -48,7 +48,7 @@ brew cask upgrade powershell
 If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
 
 Once you've installed Homebrew, installing PowerShell is easy.
-First, install [Cask-Versions][cask-version] which lets you install alternative versions of cask packages:
+First, install [Cask-Versions][cask-versions] which lets you install alternative versions of cask packages:
 
 ```sh
 brew tap homebrew/cask-versions
