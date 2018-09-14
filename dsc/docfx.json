@@ -20,8 +20,8 @@
             "ms.technology": { "**/**.md": "powershell-dsc" },
             "ms.topic": { "**/**.md": "conceptual" },
             "manager": { "**/**.md": "carmonm" },
-            "ms.author": { "**/**.md": "dacoulte" },
-            "author": { "**/**.md": "dcthegeek" }
+            "ms.author": { "**/**.md": "robreed" },
+            "author": { "**/**.md": "bobbytreed" }
         },
         "resource": [{
             "files": [
