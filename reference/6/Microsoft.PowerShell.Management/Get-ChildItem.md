@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821580
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-ChildItem
 ---
-
 # Get-ChildItem
 
 ## Synopsis
@@ -163,23 +162,22 @@ The `-Attributes` parameter supports the following attributes:
 - System
 - Temporary
 
-For a description of these attributes, see the [FileAttributes Enumeration](http://go.microsoft.com/fwlink/?LinkId=201508).
+  For a description of these attributes, see the [FileAttributes Enumeration](/dotnet/api/system.io.fileattributes).
 
-Use the following operators to combine attributes:
+  Use the following operators to combine attributes:
 
 - `!`   (NOT)
 - `+`   (AND)
 - `,`   (OR)
 
-No spaces are permitted between an operator and its attribute. However, spaces are permitted before commas.
+  No spaces are permitted between an operator and its attribute. However, spaces are permitted before commas.
 
-You can use the following abbreviations for commonly used attributes:
+  You can use the following abbreviations for commonly used attributes:
 
 - `D`   (Directory)
 - `H`   (Hidden)
 - `R`   (Read-only)
 - `S`   (System)
-
 
 ```yaml
 Type: System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]

@@ -24,9 +24,6 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 
 The PowerShell Certificate provider lets you navigate the certificate namespace and view the certificate stores and certificates. It also lets you open the Certificates snap-in for the Microsoft Management Console (MMC).
 
-> [!NOTE]
-> Beginning in Windows PowerShell 3.0, the Microsoft.PowerShell.Security module that contains the [Certificate Provider](Certificate-Provider.md) is not imported automatically into every session. To use the Cert: > drive, use the [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md) cmdlet to import the module, or run a command that uses the Cert: drive, such as a `Set-Location Cert:` command.
-
 Beginning in Windows PowerShell 3.0, the Certificate provider enhances its support for managing Secure Socket Layer (SSL) certificates for web hosting by adding support for cmdlets and new dynamic parameters that create and delete certificate stores in the LocalMachine certificate store location, and find, move, and delete certificates.
 
 New dynamic parameters, `DnsName`, `EKU`, `SSLServerAuthentication`, and `ExpiringInDays` have been added to the [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet in the Cert: drive. Also, a `DeleteKey` dynamic parameter has been added to [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md) in the Cert: drive. The new dynamic parameters are available in the Windows PowerShell 3.0 and newer Windows PowerShell releases, and work with IIS 8.0, available on Windows Server 2012 and later releases of the Windows Server operating system.
