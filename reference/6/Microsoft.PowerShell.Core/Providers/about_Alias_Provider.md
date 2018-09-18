@@ -177,10 +177,14 @@ needed.
 
 This command also uses the `-Options` dynamic parameter to set the **AllScope**
 option on the alias. The `-Options` parameter is available in
-the `New-Item` cmdlet only when you are in the `Alias:` drive.
+the `New-Item` cmdlet only when you are in the `Alias:` drive. The dot (`.`)
+indicates the current directory, which is the alias drive.
 
 ```powershell
-PS Alias:\> New-Item -Name serv -Value Get-Service -Options "AllScope"
+PS Alias:\> New-Item -Path . `
+                     -Name serv `
+                     -Value Get-Service `
+                     -Options "AllScope"
 ```
 
 ### Example 2: Create an alias with an absolute path

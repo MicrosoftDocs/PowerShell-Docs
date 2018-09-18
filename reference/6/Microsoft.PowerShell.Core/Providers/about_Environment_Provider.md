@@ -40,13 +40,10 @@ environment variable from another location, use the `Env:` drive name in the
 path.
 
 The **Environment** provider supports all the cmdlets that contain the *Item*
-noun except for
-[Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md). And, it
-supports the
-[Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md) and
-[Set-Content](../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets.
-However, it does not support the cmdlets that contain the *ItemProperty* noun,
-and it does not support the `-Filter` parameter in any cmdlet.
+noun except for `Invoke-Item`. And, it supports the `Get-Content` and
+`Set-Content` cmdlets. However, it does not support the cmdlets that contain
+the *ItemProperty* noun, and it does not support the `-Filter` parameter in any
+cmdlet.
 
 Environment variables must conform to the usual naming standards. Additionally,
 the name cannot include the equal sign (`=`).
