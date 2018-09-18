@@ -47,7 +47,7 @@ To add paths to this variable, use one of the following methods:
 
 ## To remove locations from the PSModulePath
 
-You can remove paths from the variable using similar methods: for example, `$env:PSModulePath = $envPSModulePath -replace ";c:\\ModulePath"` will remove the **c:\ModulePath** path from the current session.
+You can remove paths from the variable using similar methods: for example, `$env:PSModulePath = $env:PSModulePath -replace ";c:\\ModulePath"` will remove the **c:\ModulePath** path from the current session.
 
 ## See Also
 
