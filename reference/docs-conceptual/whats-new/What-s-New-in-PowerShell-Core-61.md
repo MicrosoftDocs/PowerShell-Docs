@@ -479,11 +479,10 @@ For example, you can query using LDAP:
 [adsi]'LDAP://CN=FooUse,OU=People,DC=contoso,DC=com'
 ```
 
-Both of these examples create a Win32_OperatingSystem CIM object:
+Following example creates a Win32_OperatingSystem CIM object:
 
 ```powershell
-[wmi]"win32_operatingsystem=@"
-[wmiclass]"win32_operatingsystem"
+[wmi]"Win32_OperatingSystem=@"
 ```
 
 ```Output
@@ -493,6 +492,20 @@ BuildNumber     : 18234
 RegisteredUser  : Contoso Corp.
 SerialNumber    : 12345-67890-ABCDE-F0123
 Version         : 10.0.18234
+```
+
+This example returns a ManagementClass object for Win32_OperatingSystem class.
+
+```powershell
+[wmiclass]"Win32_OperatingSystem"
+```
+
+```Output
+   NameSpace: ROOT\cimv2
+
+Name                                Methods              Properties
+----                                -------              ----------
+Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumber, BuildType, Caption...}
 ```
 
 ### `-lp` alias for all `-LiteralPath` parameters
