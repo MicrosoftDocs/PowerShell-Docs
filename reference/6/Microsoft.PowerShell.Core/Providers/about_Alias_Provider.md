@@ -124,6 +124,13 @@ You can use this command in any PowerShell drive.
 Get-Item -Path Alias:
 ```
 
+The Alias provider has no containers, so the above command has the
+same effect when used with `Get-ChildItem`.
+
+```powershell
+Get-ChildItem -Path Alias:
+```
+
 ### Example 2: Get a selected alias
 
 This command gets the `ls` alias.
