@@ -14,7 +14,7 @@ Certificate
 
 ## Drives
 
-Cert:
+`Cert:`
 
 ## Short description
 
@@ -24,18 +24,18 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 
 The PowerShell Certificate provider lets you navigate the certificate namespace and view the certificate stores and certificates. This article covers how to work with the PowerShell certificate provider using the following cmdlets:
 
-- `Get-Location`
-- `Set-Location`
-- `Get-Item`
-- `Get-ChildItem`
-- `Invoke-Item`
-- `Move-Item`
-- `New-Item`
-- `Remove-Item`
-- `Get-ItemProperty`
-- `Set-ItemProperty`
-- `Get-AuthenticodeSignature`
-- `Set-AuthenticodeSignature`
+- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
+- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
+- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+- [Invoke-Item](../../Microsoft.PowerShell.Management/Invoke-Item.md)
+- [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
+- [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
+- [Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)
+- [Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)
 
 ## Capabilities
 
@@ -152,7 +152,7 @@ This parameter deletes the associated private key when it deletes the certificat
 
 This parameter was introduced in Windows PowerShell 3.0.
 
-## Navigating the Cert: Drive
+## Navigating the Cert: drive
 
 The Certificate provider exposes the certificate namespace as the `Cert:` drive
 in PowerShell. The Cert: drive has the following three levels:
@@ -169,7 +169,7 @@ in PowerShell. The Cert: drive has the following three levels:
   certificates, each of which represent an X.509 certificate on the computer.
   Certificates are identified by their thumbprints.
 
-### Example 1: Navigating to the root of the Cert: Drive
+### Example 1: Navigating to the root of the Cert: drive
 
 This command uses the `Set-Location` command to change the current location to
 the Root certificate store in the LocalMachine store location. Use a backslash
@@ -181,9 +181,9 @@ If you are not in the `Cert:` drive, begin the path with the drive name.
 PS Cert:\> Set-Location -Path LocalMachine\Root
 ```
 
-## Displaying the Contents of the Cert: Drive
+## Displaying the Contents of the Cert: drive
 
-### Example 1: Displaying the Contents of the Cert: Drive
+### Example 1: Displaying the Contents of the Cert: drive
 
 This command uses the `Get-ChildItem` cmdlet to display the certificate stores
 in the CurrentUser certificate store location.
@@ -194,7 +194,7 @@ If you are not in the `Cert:` drive, use an absolute path.
 PS Cert:\CurrentUser\> Get-ChildItem
 ```
 
-### Example 2: Displaying certificate properties within the Cert: Drive
+### Example 2: Displaying certificate properties within the Cert: drive
 
 This example gets a certificate with `Get-Item` and stores it in a variable.
 The example shows the new certificate script properties (**DnsNameList**,
