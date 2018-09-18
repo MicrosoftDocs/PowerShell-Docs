@@ -196,7 +196,7 @@ You can learn more about this feature in [PowerShell RFC0029](https://github.com
 
 ## Web cmdlet improvements
 
-Thanks to @markekraus, a whole slew of improvements have been made to our web cmdlets:
+Thanks to [@markekraus](https://github.com/markekraus), a whole slew of improvements have been made to our web cmdlets:
 [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
 and [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
@@ -286,7 +286,7 @@ we've added support for this format of connection string:
 
 ## MSI option to add explorer shell context menu on Windows
 
-Thanks to @bergmeister, now you can enable a context menu on Windows. Now you can open your
+Thanks to [@bergmeister](https://github.com/bergmeister), now you can enable a context menu on Windows. Now you can open your
 system-wide installation of PowerShell 6.1 from any folder in the Windows Explorer:
 
 ![Shell context menu for PowerShell 6](./images/shell_context_menu.png)
@@ -295,7 +295,7 @@ system-wide installation of PowerShell 6.1 from any folder in the Windows Explor
 
 ### "Run as Administrator" in the Windows shortcut jump list
 
-Thanks to @bergmeister, the PowerShell Core shortcut's jump list now includes "Run as Administrator":
+Thanks to [@bergmeister](https://github.com/bergmeister), the PowerShell Core shortcut's jump list now includes "Run as Administrator":
 
 ![Run as administrator in the PowerShell 6 jump list](./images/jumplist.png)
 
@@ -319,7 +319,7 @@ Also, `cd --` changes to `$HOME`.
 
 ### `Test-Connection`
 
-Thanks to @iSazonov, the [`Test-Connection`](/powershell/module/microsoft.powershell.management/test-connection)
+Thanks to [@iSazonov](https://github.com/iSazonov), the [`Test-Connection`](/powershell/module/microsoft.powershell.management/test-connection)
 cmdlet has been ported to PowerShell Core.
 
 ### `Update-Help` as non-admin
@@ -329,7 +329,7 @@ By popular demand, `Update-Help` no longer needs to be run as an administrator.
 
 ### New methods/properties on `PSCustomObject`
 
-Thanks to @iSazonov, we've added new methods and properties to `PSCustomObject`.
+Thanks to [@iSazonov](https://github.com/iSazonov), we've added new methods and properties to `PSCustomObject`.
 `PSCustomObject` now includes a `Count`/`Length` property that gives the number of items.
 
 Both of these examples return `2` as the number of `PSCustomObjects` in the collection.
@@ -392,7 +392,7 @@ instead of a UTF-16 one.
 
 ### Conversions from PSMethod to Delegate
 
-Thanks to @powercode, we now support the conversion of a `PSMethod` into a delegate.
+Thanks to [@powercode](https://github.com/powercode), we now support the conversion of a `PSMethod` into a delegate.
 This allows you to do things like passing `PSMethod` `[M]::DoubleStrLen`
 as a delegate value into `[M]::AggregateString`:
 
@@ -416,7 +416,7 @@ For more info on this change, check out [PR #5287](https://github.com/PowerShell
 
 ### Standard deviation in `Measure-Object`
 
-Thanks to @CloudyDino, we've added a `StandardDeviation` property to `Measure-Object`:
+Thanks to [@CloudyDino](https://github.com/CloudyDino), we've added a `StandardDeviation` property to `Measure-Object`:
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats
@@ -434,7 +434,7 @@ Property          : CPU
 
 ### `GetPfxCertificate -Password`
 
-Thanks to @maybe-hello-world, `Get-PfxCertificate` now has the `Password` parameter,
+Thanks to [@maybe-hello-world](https://github.com/maybe-hello-world), `Get-PfxCertificate` now has the `Password` parameter,
 which takes a `SecureString`. This allows you to use it non-interactively:
 
 ```powershell
@@ -457,7 +457,7 @@ specified by `$env:PAGER` on non-Windows platforms.
 Previously, using `Set-Location` or `cd` to return to a PSDrive sent users
 to the default location for that drive.
 
-Thanks to @mcbobke, users are now sent to the last known current working directory for that session.
+Thanks to [@mcbobke](https://github.com/mcbobke), users are now sent to the last known current working directory for that session.
 
 ### Windows PowerShell type accelerators
 
@@ -497,7 +497,7 @@ Version         : 10.0.18234
 
 ### `-lp` alias for all `-LiteralPath` parameters
 
-Thanks to @kvprasoon, we now have a parameter alias `-lp` for all the
+Thanks to [@kvprasoon](https://github.com/kvprasoon), we now have a parameter alias `-lp` for all the
 built-in PowerShell cmdlets that have a `-LiteralPath` parameter.
 
 ## Breaking Changes
