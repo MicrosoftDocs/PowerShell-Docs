@@ -91,7 +91,7 @@ PS> Get-Process powershell -ComputerName localhost, Server01, Server02 |
         @{Label="PM(K)";Expression={[int]($_.PM/1024)}},
         @{Label="WS(K)";Expression={[int]($_.WS/1024)}},
         @{Label="VM(M)";Expression={[int]($_.VM/1MB)}},
-        @{Label="CPU(s)";Expression={if ($_.CPU -ne $() {$_.CPU.ToString("N")}}},
+        @{Label="CPU(s)";Expression={if ($_.CPU -ne $()){$_.CPU.ToString("N")}}},
         Id, ProcessName, MachineName -auto
 
 Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
