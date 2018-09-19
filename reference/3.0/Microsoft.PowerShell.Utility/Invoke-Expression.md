@@ -32,7 +32,6 @@ Without Invoke-Expression, a string submitted at the command line would be retur
 PS> $command = "Get-Process"
 PS> $command
 Get-Process
-
 PS> invoke-expression $command
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
