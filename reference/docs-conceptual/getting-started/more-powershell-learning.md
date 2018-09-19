@@ -12,7 +12,7 @@ Other sources to learn PowerShell
 
 In addition to the Help available at the command line, the following resources provide more information for users who want to run Windows PowerShell.
 
-- [Windows PowerShell Team Blog](http://blogs.msdn.com/b/powershell/). The best resource for learning directly from the Windows PowerShell product team.
+- [Windows PowerShell Team Blog](https://blogs.msdn.microsoft.com/powershell/). The best resource for learning directly from the Windows PowerShell product team.
 - [The Hey, Scripting Guy! Blog](https://blogs.technet.microsoft.com/heyscriptingguy/) publishes new content seven days a week, and is consistently ranked in the top five of all Microsoft blogs. The articles are scenario-driven, and written in an engaging and lively manner.
 - [The Learn PowerShell page](https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/04/weekend-scripter-the-best-ways-to-learn-powershell/) is the Windows PowerShell hub on the TechNet Script Center. This page hosts a series of beginner video sessions conducted by the Microsoft Scripting Guy Ed Wilson. It also contains Windows PowerShell quizzes, links to community content, and more.
 - Have questions about using Windows PowerShell? Connect with hundreds of other people who have similar interests on the [TechNet PowerShell forum](https://social.technet.microsoft.com/Forums/home?forum=winserverpowershell).
