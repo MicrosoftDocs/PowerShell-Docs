@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -7,6 +7,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113343
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Invoke-Expression
 ---
+
 # Invoke-Expression
 
 ## SYNOPSIS
@@ -32,7 +33,6 @@ Without Invoke-Expression, a string submitted at the command line would be retur
 PS> $command = "Get-Process"
 PS> $command
 Get-Process
-
 PS> invoke-expression $command
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
