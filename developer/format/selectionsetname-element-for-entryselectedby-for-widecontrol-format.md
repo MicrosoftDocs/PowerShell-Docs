@@ -11,7 +11,7 @@ caps.latest.revision: 10
 ---
 # SelectionSetName Element for EntrySelectedBy for WideControl (Format)
 
-Specifies a set of .NET Framework objects for the definition. The definition is used whenever one of these objects is displayed.
+Specifies a set of .NET objects for the definition. The definition is used whenever one of these objects is displayed.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -45,7 +45,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Defines the .NET Framework types that use this wide entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Defines the .NET types that use this wide entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
 

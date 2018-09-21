@@ -51,7 +51,7 @@ None.
 
 ## Remarks
 
-In most cases, a control has only one definition, which is specified in a single `CustomEntry` element. However, it is possible to provide multiple definitions if you want to use the same control to display different .NET Framework objects. In those cases, you can define a `CustomEntry` element for each object or set of objects.
+In most cases, a control has only one definition, which is specified in a single `CustomEntry` element. However, it is possible to provide multiple definitions if you want to use the same control to display different .NET objects. In those cases, you can define a `CustomEntry` element for each object or set of objects.
 
 ## See Also
 

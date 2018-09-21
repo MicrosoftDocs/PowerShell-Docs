@@ -41,7 +41,7 @@ None.
 |-------------|-----------------|
 |[Controls Element for Configuration (Format)](./controls-element-for-configuration-format.md)|Optional element.<br /><br /> Defines the common controls that can be used by all views of the formatting file.|
 |[DefaultSettings Element (Format)](./defaultsettings-element-format.md)|Optional element.<br /><br /> Defines common settings that apply to all the views of the formatting file.|
-|[SelectionSets Element Format](./selectionsets-element-format.md)|Optional element.<br /><br /> Defines the common sets of .NET Framework objects that can be used by all views of the formatting file.|
+|[SelectionSets Element Format](./selectionsets-element-format.md)|Optional element.<br /><br /> Defines the common sets of .NET objects that can be used by all views of the formatting file.|
 |[ViewDefinitions Element (Format)](./viewdefinitions-element-format.md)|Optional element.<br /><br /> Defines the views used to display objects.|
 
 ### Parent Elements

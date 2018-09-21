@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # PropertyName Element for ExpressionBinding for Controls for View (Format)
 
-Specifies the .NET Framework property whose value is displayed by the control. This element is used when defining controls that can be used by a view.
+Specifies the .NET property whose value is displayed by the control. This element is used when defining controls that can be used by a view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -51,7 +51,7 @@ None.
 
 ## Text Value
 
-Specify the name of the .NET Framework property whose value is displayed by the control.
+Specify the name of the .NET property whose value is displayed by the control.
 
 ## Remarks
 
