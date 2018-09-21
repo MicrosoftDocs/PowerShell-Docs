@@ -11,7 +11,7 @@ caps.latest.revision: 8
 ---
 # EntrySelectedBy Element for CustomEntry for CustomControl for View (Format)
 
-Defines the .NET Framework types that use this custom entry or the condition that must exist for this entry to be used.
+Defines the .NET types that use this custom entry or the condition that must exist for this entry to be used.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -44,14 +44,14 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[SelectionCondition Element for EntrySelectedBy for CustomEntry (Format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|Optional element.<br /><br /> Defines the condition that must exist for this definition to be used.|
-|[SelectionSetName Element for EntrySelectedBy for CustomEntry (Format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)|Optional element.<br /><br /> Specifies a set of .NET Framework types that use this definition of the control view.|
-|[TypeName Element for EntrySelectedBy for CustomEntry (Format)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that uses this definition of the control view.|
+|[SelectionSetName Element for EntrySelectedBy for CustomEntry (Format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)|Optional element.<br /><br /> Specifies a set of .NET types that use this definition of the control view.|
+|[TypeName Element for EntrySelectedBy for CustomEntry (Format)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|Optional element.<br /><br /> Specifies a .NET type that uses this definition of the control view.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[CustomEntry Element for CustomEntries for View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|Defines the controls used by specific .NET Framework objects.|
+|[CustomEntry Element for CustomEntries for View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|Defines the controls used by specific .NET objects.|
 
 ## Remarks
 

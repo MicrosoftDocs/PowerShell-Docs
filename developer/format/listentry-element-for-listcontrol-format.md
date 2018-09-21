@@ -41,7 +41,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Optional element.<br /><br /> Defines the .NET Framework objects that use this list view definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Optional element.<br /><br /> Defines the .NET objects that use this list view definition or the condition that must exist for this definition to be used.|
 |[ListItems Element (Format)](./listitems-element-for-listentry-for-listcontrol-format.md)|Required element.<br /><br /> Defines the properties and scripts whose values are displayed by the list view.|
 
 ### Parent Elements

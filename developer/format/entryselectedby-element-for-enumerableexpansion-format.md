@@ -11,7 +11,7 @@ caps.latest.revision: 11
 ---
 # EntrySelectedBy Element for EnumerableExpansion (Format)
 
-Defines the .NET Framework types that use this definition or the condition that must exist for this definition to be used.
+Defines the .NET types that use this definition or the condition that must exist for this definition to be used.
 
 Configuration Element (Format)
 DefaultSettings Element (Format)
@@ -42,14 +42,14 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Defines the condition that must exist to expand the collection objects of this definition.|
-|[SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies a set of .NET Framework types that use this definition of how collection objects are expanded.|
-|[TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that uses this definition of how collection objects are expanded.|
+|[SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies a set of .NET types that use this definition of how collection objects are expanded.|
+|[TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies a .NET type that uses this definition of how collection objects are expanded.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Defines how specific .NET Framework collection objects are expanded when they are displayed in a view.|
+|[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Defines how specific .NET collection objects are expanded when they are displayed in a view.|
 
 ## Remarks
 

@@ -11,7 +11,7 @@ caps.latest.revision: 8
 ---
 # SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)
 
-Specifies the set of .NET Framework types that are expanded by this definition.
+Specifies the set of .NET types that are expanded by this definition.
 
 Configuration Element (Format)
 DefaultSettings Element (Format)
@@ -43,7 +43,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Defines the .NET Framework collection objects that are expanded by this definition.|
+|[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Defines the .NET collection objects that are expanded by this definition.|
 
 ## Text Value
 
