@@ -41,7 +41,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Defines how specific .NET Framework collection objects are expanded when they are displayed in a view.|
+|[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Defines how specific .NET collection objects are expanded when they are displayed in a view.|
 
 ## Text Value
 

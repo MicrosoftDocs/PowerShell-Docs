@@ -44,7 +44,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[PropertyName Element for ItemSelectionCondition for ListControl (Format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the .NET Framework property that triggers the condition.|
+|[PropertyName Element for ItemSelectionCondition for ListControl (Format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
 |[ScriptBlock Element for ItemSelectionCondition for ListControl (Format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
 
 ### Parent Elements

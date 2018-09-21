@@ -11,7 +11,7 @@ caps.latest.revision: 15
 ---
 # TypeName Element for Types (Format)
 
-Specifies the .NET Framework type of an object that belongs to the selection set.
+Specifies the .NET type of an object that belongs to the selection set.
 
 Configuration Element (Format)
 SelectionSets Element (Format)
@@ -41,11 +41,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[Types Element (Format)](./types-element-for-selectionset-format.md)|Defines the .NET Framework objects that are in the selection set.|
+|[Types Element (Format)](./types-element-for-selectionset-format.md)|Defines the .NET objects that are in the selection set.|
 
 ## Text Value
 
-Specify the fully qualified name for the .NET Framework type.
+Specify the fully qualified name for the .NET type.
 
 ## Remarks
 
@@ -55,7 +55,7 @@ Common selection sets are specified by their name when defining the views of the
 
 ## Example
 
-The following example shows a `SelectionSet` element that defines four .NET Framework types.
+The following example shows a `SelectionSet` element that defines four .NET types.
 
 ```
 <SelectionSets>

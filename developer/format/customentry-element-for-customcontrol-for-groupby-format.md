@@ -42,7 +42,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Optional element.<br /><br /> Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Optional element.<br /><br /> Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.|
 |[CustomItem Element for CustomEntry for GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)|Required element.<br /><br /> Defines how the control displays the data.|
 
 ### Parent Elements

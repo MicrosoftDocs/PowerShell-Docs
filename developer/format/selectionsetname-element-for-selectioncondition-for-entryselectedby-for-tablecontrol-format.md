@@ -11,7 +11,7 @@ caps.latest.revision: 10
 ---
 # SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
 
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the table view.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the table view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -53,9 +53,9 @@ Specify the name of the selection set.
 
 ## Remarks
 
-The selection condition can specify a selection set or .NET Framework type, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
+The selection condition can specify a selection set or .NET type, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
-Selection sets are common groups of .NET Framework objects that can be used by any view that the formatting file defines. For more information about creating and referencing selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
+Selection sets are common groups of .NET objects that can be used by any view that the formatting file defines. For more information about creating and referencing selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).
 
 For more information about other components of a wide view, see [Creating a Table View](./creating-a-table-view.md).
 
