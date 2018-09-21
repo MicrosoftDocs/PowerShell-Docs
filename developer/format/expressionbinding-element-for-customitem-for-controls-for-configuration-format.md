@@ -51,7 +51,7 @@ None.
 |[CustomControlName Element for ExpressionBinding for Controls for Configuration (Format)](./customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the name of a common control or a view control.|
 |[EnumerateCollection Element for ExpressionBinding for Controls for Configuration (Format)](./enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specified that the elements of collections are displayed by the control.|
 |[ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration (Format)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Defines the condition that must exist for this common control to be used.|
-|[PropertyName Element for ExpressionBinding for Controls for Configuration (Format)](./propertyname-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the .NET Framework property whose value is displayed by the common control.|
+|[PropertyName Element for ExpressionBinding for Controls for Configuration (Format)](./propertyname-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the .NET property whose value is displayed by the common control.|
 |[ScriptBlock Element for ExpressionBinding for Controls for Configuration (Format)](./scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the script whose value is displayed by the common control.|
 
 ### Parent Elements

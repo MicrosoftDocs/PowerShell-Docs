@@ -11,7 +11,7 @@ caps.latest.revision: 11
 ---
 # TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
 
-Specifies a .NET Framework type that triggers the condition. When this type is present, the definition is used.
+Specifies a .NET type that triggers the condition. When this type is present, the definition is used.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -49,11 +49,11 @@ None.
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 
-The selection condition can specify a .NET Framework type or a selection set, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
+The selection condition can specify a .NET type or a selection set, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
 For more information about other components of a wide view, see [Creating a Wide View](./creating-a-wide-view.md).
 

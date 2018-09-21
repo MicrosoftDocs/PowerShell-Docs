@@ -11,7 +11,7 @@ caps.latest.revision: 18
 ---
 # SelectionSets Element (Format)
 
-Defines the common sets of .NET Framework objects that can be used by all views of the formatting file. The views and controls of the formatting file can reference the complete set of objects by using only the name of the selection set.
+Defines the common sets of .NET objects that can be used by all views of the formatting file. The views and controls of the formatting file can reference the complete set of objects by using only the name of the selection set.
 
 Configuration Element
 SelectionSets Element Format
@@ -36,7 +36,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[SelectionSet Element (Format)](./selectionset-element-format.md)|Required element.<br /><br /> Defines a single set of .NET Framework objects that can be referenced by the name of the set.|
+|[SelectionSet Element (Format)](./selectionset-element-format.md)|Required element.<br /><br /> Defines a single set of .NET objects that can be referenced by the name of the set.|
 
 ### Parent Elements
 

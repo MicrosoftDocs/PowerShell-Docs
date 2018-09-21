@@ -11,7 +11,7 @@ caps.latest.revision: 17
 ---
 # SelectionSet Element (Format)
 
-Defines a set of .NET Framework objects that can be referenced by the name of the set.
+Defines a set of .NET objects that can be referenced by the name of the set.
 
 Configuration Element (Format)
 SelectionSets Element (Format)
@@ -28,7 +28,7 @@ SelectionSet Element (Format)
 
 ## Attributes and Elements
 
-The following sections describe the attributes, child elements, and the parent element of the `SelectionSet` element. Each selection set must have a name, and it must specify the .NET Framework objects of the set.
+The following sections describe the attributes, child elements, and the parent element of the `SelectionSet` element. Each selection set must have a name, and it must specify the .NET objects of the set.
 
 ### Attributes
 
@@ -39,13 +39,13 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[Name Element for SelectionSet (Format)](./name-element-for-selectionset-format.md)|Required element.<br /><br /> Specifies the name used to reference the selection set.|
-|[Types Element (Format)](./types-element-for-selectionset-format.md)|Required element.<br /><br /> Defines the .NET Framework objects that are in the selection set.|
+|[Types Element (Format)](./types-element-for-selectionset-format.md)|Required element.<br /><br /> Defines the .NET objects that are in the selection set.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[SelectionSets Element Format](./selectionsets-element-format.md)|Defines the common sets of .NET Framework objects that can be used by all views of the formatting file.|
+|[SelectionSets Element Format](./selectionsets-element-format.md)|Defines the common sets of .NET objects that can be used by all views of the formatting file.|
 
 ## Remarks
 
@@ -55,7 +55,7 @@ Common selection sets are specified by their name when defining the views of the
 
 ## Example
 
-The following example shows a `SelectionSet` element that defines four .NET Framework types.
+The following example shows a `SelectionSet` element that defines four .NET types.
 
 ```xml
 <SelectionSets>

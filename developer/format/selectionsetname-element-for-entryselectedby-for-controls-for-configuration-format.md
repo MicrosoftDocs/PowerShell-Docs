@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)
 
-Specifies a set of .NET Framework types that use this definition of the control. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies a set of .NET types that use this definition of the control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 Configuration Element (Format)
 Controls Element of Configuration (Format)
@@ -45,7 +45,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
 

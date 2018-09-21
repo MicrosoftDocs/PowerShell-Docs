@@ -43,16 +43,16 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies the .NET Framework property that triggers the condition.|
+|[PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
 |[ScriptBlock Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
-|[SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies the set of .NET Framework types that triggers the condition.|
-|[TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that triggers the condition.|
+|[SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies the set of .NET types that triggers the condition.|
+|[TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Optional element.<br /><br /> Specifies a .NET type that triggers the condition.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Defines which .NET Framework collection objects are expanded by this definition.|
+|[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Defines which .NET collection objects are expanded by this definition.|
 
 ## Remarks
 
@@ -62,7 +62,7 @@ When you are defining a selection condition, the following requirements apply:
 
 - The selection condition must specify a least one property name or a script block, but cannot specify both.
 
-- The selection condition can specify any number of .NET Framework types or selection sets, but cannot specify both.
+- The selection condition can specify any number of .NET types or selection sets, but cannot specify both.
 
 For more information about how to use selection conditions, see [Defining Conditions for Diplaying Data](./defining-conditions-for-displaying-data.md).
 

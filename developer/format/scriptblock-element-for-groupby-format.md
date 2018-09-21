@@ -41,7 +41,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Defines how a group of .NET Framework objects is displayed.|
+|[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Defines how a group of .NET objects is displayed.|
 
 ## Text Value
 

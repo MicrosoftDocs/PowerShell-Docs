@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # TypeName Element for SelectionCondition for Controls for View (Format)
 
-Specifies a .NET Framework type that triggers the condition. This element is used when defining controls that can be used by a view.
+Specifies a .NET type that triggers the condition. This element is used when defining controls that can be used by a view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -52,7 +52,7 @@ None.
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 

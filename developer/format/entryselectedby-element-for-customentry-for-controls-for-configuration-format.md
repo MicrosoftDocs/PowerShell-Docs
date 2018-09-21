@@ -11,7 +11,7 @@ caps.latest.revision: 10
 ---
 # EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)
 
-Defines the .NET Framework types that use the definition of the common control or the condition that must exist for this control to be used. This element is used when defining a common control that can be used by all the views in the formatting file.
+Defines the .NET types that use the definition of the common control or the condition that must exist for this control to be used. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 Configuration Element (Format)
 Controls Element of Configuration (Format)
@@ -44,8 +44,8 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[SelectionCondition Element for EntrySelectedBy for Controls for Configuration (Format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Defines the condition that must exist for the common control definition to be used.|
-|[SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies a set of .NET Framework types that use this definition of the common control.|
-|[TypeName Element for EntrySelectedBy for Controls for Configuration (Format)](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that uses this definition of the common control.|
+|[SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies a set of .NET types that use this definition of the common control.|
+|[TypeName Element for EntrySelectedBy for Controls for Configuration (Format)](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies a .NET type that uses this definition of the common control.|
 
 ### Parent Elements
 
@@ -55,7 +55,7 @@ None.
 
 ## Remarks
 
-At a minimum, each definition must have at least one .NET Framework type, selection set, or selection condition specified. There is no maximum limit to the number of types, selection sets, or selection conditions that you can specify.
+At a minimum, each definition must have at least one .NET type, selection set, or selection condition specified. There is no maximum limit to the number of types, selection sets, or selection conditions that you can specify.
 
 ## See Also
 

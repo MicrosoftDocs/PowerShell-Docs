@@ -11,7 +11,7 @@ caps.latest.revision: 7
 ---
 # TypeName Element for SelectionCondition for Controls for Configuration (Format)
 
-Specifies a .NET Framework type that triggers the condition. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies a .NET type that triggers the condition. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 Configuration Element (Format)
 Controls Element of Configuration (Format)
@@ -50,7 +50,7 @@ None.
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 

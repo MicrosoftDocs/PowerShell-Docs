@@ -11,7 +11,7 @@ caps.latest.revision: 9
 ---
 # EntrySelectedBy Element for WideEntry (Format)
 
-Defines the .NET Framework types that use this definition of the wide view or the condition that must exist for this definition to be used.
+Defines the .NET types that use this definition of the wide view or the condition that must exist for this definition to be used.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -44,8 +44,8 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[SelectionCondition Element for EntrySelectedBy for WideEntry (Format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Optional element.<br /><br /> Defines the condition that must exist for this wide view definition to be used.|
-|[SelectionSetName Element for EntrySelectedBy for WideEntry (Format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)|Optional element.<br /><br /> Specifies a set of .NET Framework types that use this wide view definition.|
-|[TypeName Element for EntrySelectedBy for WideEntry (Format)](./typename-element-for-entryselectedby-for-wideentry-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that uses this wide view definition.|
+|[SelectionSetName Element for EntrySelectedBy for WideEntry (Format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)|Optional element.<br /><br /> Specifies a set of .NET types that use this wide view definition.|
+|[TypeName Element for EntrySelectedBy for WideEntry (Format)](./typename-element-for-entryselectedby-for-wideentry-format.md)|Optional element.<br /><br /> Specifies a .NET type that uses this wide view definition.|
 
 ### Parent Elements
 

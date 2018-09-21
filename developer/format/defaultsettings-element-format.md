@@ -41,7 +41,7 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[DisplayError Element (Frmat)](./displayerror-element-format.md)|Optional element.<br /><br /> Specifies that the string #ERR is displayed when an error occurs while displaying a piece of data.|
-|[EnumerableExpansions Element (Format)](./enumerableexpansions-element-format.md)|Optional element.<br /><br /> Defines the different ways that .NET Framework objects are expanded when they are displayed in a view.|
+|[EnumerableExpansions Element (Format)](./enumerableexpansions-element-format.md)|Optional element.<br /><br /> Defines the different ways that .NET objects are expanded when they are displayed in a view.|
 |[PropertyCountForTable (Format)](./propertycountfortable-element-format.md)|Optional element.<br /><br /> Specifies the minimum number of properties that an object must have to display the object in a table view.|
 |[ShowError Element (Format)](./showerror-element-format.md)|Optional element.<br /><br /> Specifies that the full error record is displayed when an error occurs while displaying a piece of data.|
 |[WrapTables Element (Format)](./wraptables-element-format.md)|Optional element.<br /><br /> Specifies that data in a table is moved to the next line if it does not fit into the width of the column.|
