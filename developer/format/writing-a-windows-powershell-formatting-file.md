@@ -16,7 +16,7 @@ caps.latest.revision: 13
 ## In This Section
 
 [Formatting File Overview](./formatting-file-overview.md)
-Describes what a format file is and the general components of a formatting file, including common features that can be defined in the file, the different types of format views that can be defined for .NET Framework objects, and a simplified example of the XML used to define a table view.
+Describes what a format file is and the general components of a formatting file, including common features that can be defined in the file, the different types of format views that can be defined for .NET objects, and a simplified example of the XML used to define a table view.
 
 [Formatting File Concepts](./formatting-file-concepts.md)
 Includes information that you might need to know when creating your own formatting files, such as the different types of views that you can define and special components of those views.

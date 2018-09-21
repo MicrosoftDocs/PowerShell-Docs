@@ -11,7 +11,7 @@ caps.latest.revision: 23
 ---
 # Creating a Table View
 
-A table view displays data in one or more columns. Each row in the table represents a .NET Framework object, and each column of the table represents a property of the object or a script value. You can define a table view that displays all the properties of an object or a subset of the properties of an object.
+A table view displays data in one or more columns. Each row in the table represents a .NET object, and each column of the table represents a property of the object or a script value. You can define a table view that displays all the properties of an object or a subset of the properties of an object.
 
 ## A Table View Display
 
@@ -146,7 +146,7 @@ The following XML elements can be used to provide definitions for a row:
 
 ## Defining the Objects That Use the Table View
 
-There are two ways to define which .NET Framework objects use the table view. You can use the [ViewSelectedBy](./viewselectedby-element-format.md) element to define the objects that can be displayed by all the definitions of the view, or you can use the [EntrySelectedBy](./entryselectedby-element-for-listentry-for-listcontrol-format.md) element to define which objects are displayed by a specific definition of the view. In most cases, a view has only one definition, so objects are typically defined by the [ViewSelectedBy](./viewselectedby-element-format.md) element.
+There are two ways to define which .NET objects use the table view. You can use the [ViewSelectedBy](./viewselectedby-element-format.md) element to define the objects that can be displayed by all the definitions of the view, or you can use the [EntrySelectedBy](./entryselectedby-element-for-listentry-for-listcontrol-format.md) element to define which objects are displayed by a specific definition of the view. In most cases, a view has only one definition, so objects are typically defined by the [ViewSelectedBy](./viewselectedby-element-format.md) element.
 
 The following example shows how to define the objects that are displayed by the table view using the [ViewSelectedBy](./viewselectedby-element-format.md) and [TypeName](./typename-element-for-viewselectedby-format.md) elements. There is no limit to the number of [TypeName](./typename-element-for-viewselectedby-format.md) elements that you can specify, and their order is not significant.
 
@@ -164,7 +164,7 @@ The following XML elements can be used to specify the objects that are used by t
 
 - The [ViewSelectedBy](./viewselectedby-element-format.md) element defines which objects are displayed by the list view.
 
-- The [TypeName](./typename-element-for-viewselectedby-format.md) element specifies the .NET Framework object that is displayed by the view. The fully qualified .NET Framework type name is required. You must specify at least one type or selection set for the view, but there is no maximum number of elements that can be specified.
+- The [TypeName](./typename-element-for-viewselectedby-format.md) element specifies the .NET object that is displayed by the view. The fully qualified .NET type name is required. You must specify at least one type or selection set for the view, but there is no maximum number of elements that can be specified.
 
 The following example uses the [ViewSelectedBy](./viewselectedby-element-format.md) and [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md) elements. Use selection sets where you have a related set of objects that are displayed using multiple views, such as when you define a list view and a table view for the same objects. For more information about how to create a selection set, see [Defining Selection Sets](./defining-selection-sets.md).
 
@@ -172,7 +172,7 @@ The following example uses the [ViewSelectedBy](./viewselectedby-element-format.
 <View>
   <Name>System.ServiceProcess.ServiceController</Name>
   <ViewSelectedBy>
-    <SelectionSetName>.NET Framework Type Set</SelectionSetName>
+    <SelectionSetName>.NET Type Set</SelectionSetName>
   </ViewSelectedBy>
   <TableControl>...</TableControl>
 </View>
@@ -184,7 +184,7 @@ The following XML elements can be used to specify the objects that are used by t
 
 - The [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md) element specifies a set of objects that can be displayed by the view. You must specify at least one selection set or type for the view, but there is no maximum number of elements that can be specified.
 
-The following example shows how to define the objects displayed by a specific definition of the table view using the [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element. Using this element, you can specify the .NET Framework type name of the object, a selection set of objects, or a selection condition that specifies when the definition is used. For more information about how to create a selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+The following example shows how to define the objects displayed by a specific definition of the table view using the [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element. Using this element, you can specify the .NET type name of the object, a selection set of objects, or a selection condition that specifies when the definition is used. For more information about how to create a selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 > [!NOTE]
 > When creating multiple definitions of the table view you cannot specify different column headers. You can specify only what is displayed in the rows of the table, such as what objects are displayed.
@@ -192,7 +192,7 @@ The following example shows how to define the objects displayed by a specific de
 ```xml
 <TableRowEntry>
   <EntrySelectedBy>
-    <TypeName>.NET Framework Type</TypeName>
+    <TypeName>.NET Type</TypeName>
   </EntrySelectedBy>
 </TableRowEntry>
 ```
@@ -201,7 +201,7 @@ The following XML elements can be used to specify the objects that are used by a
 
 - The [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element defines which objects are displayed by the definition.
 
-- The [TypeName](./typename-element-for-entryselectedby-for-listcontrol-format.md) element specifies the .NET Framework object that is displayed by the definition. When using this element, the fully qualified .NET Framework type name is required. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
+- The [TypeName](./typename-element-for-entryselectedby-for-listcontrol-format.md) element specifies the .NET object that is displayed by the definition. When using this element, the fully qualified .NET type name is required. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
 
 - The [SelectionSetName](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md) element (not shown) specifies a set of objects that can be displayed by this definition. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
 

@@ -11,7 +11,7 @@ caps.latest.revision: 12
 ---
 # PropertyName Element for ListItem for ListControl (Format)
 
-Specifies the .NET Framework property whose value is displayed in the list.
+Specifies the .NET property whose value is displayed in the list.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
