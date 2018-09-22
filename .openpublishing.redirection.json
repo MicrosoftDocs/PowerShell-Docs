@@ -570,7 +570,7 @@
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/3.0/Microsoft.PowerShell.Core/Export-Console.md",
+            "source_path": "reference/docs-conceptual/3.0/Microsoft.PowerShell.Core/Export-Console.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/Export-Console?view=powershell-3.0",
             "redirect_document_id": "False"
         },
