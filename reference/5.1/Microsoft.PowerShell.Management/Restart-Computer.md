@@ -200,21 +200,21 @@ Accept wildcard characters: False
 Specifies the authentication level that is used for the WMI connection.
 The acceptable values for this parameter are:
 
-- Call.
+- Call:
 Call-level COM authentication
-- Connect.
+- Connect:
 Connect-level COM authentication
-- Default.
-Windows Authentication
-- None.
+- Default:
+WMI's default settings (Windows authentication); despite its name, this item is not default value of this cmdlet
+- None:
 No COM authentication
-- Packet.
+- Packet:
 Packet-level COM authentication
-- PacketIntegrity.
+- PacketIntegrity:
 Packet Integrity-level COM authentication
-- PacketPrivacy.
+- PacketPrivacy:
 Packet Privacy-level COM authentication
-- Unchanged.
+- Unchanged:
 The authentication level is the same as the previous command
 
 The default value is Packet.
@@ -263,13 +263,13 @@ This parameter is valid only with the *Wait* parameter.
 
 The acceptable values for this parameter are:
 
-- Default.
+- Default:
 Waits for Windows PowerShell to restart.
-- PowerShell.
+- PowerShell:
 Can run commands in a Windows PowerShell remote session on the computer.
-- WMI.
+- WMI:
 Receives a reply to a Win32_ComputerSystem query for the computer.
-- WinRM.
+- WinRM:
 Can establish a remote session to the computer by using WS-Management.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -307,13 +307,13 @@ Specifies the impersonation level that this cmdlet uses to call WMI.
 **Restart-Computer** uses WMI.
 The acceptable values for this parameter are:
 
- -- Default.
-Default impersonation.
-- Anonymous.
+- Default:
+Default impersonation. Despite the name, this item is not the default value for this cmdlet.
+- Anonymous:
 Hides the identity of the caller.
-- Identify.
+- Identify:
 Allows objects to query the credentials of the caller.
-- Impersonate.
+- Impersonate:
 Allows objects to use the credentials of the caller.
 
 The default value is Impersonate.
@@ -478,16 +478,10 @@ Otherwise, it does not generate any output.
 
 ## RELATED LINKS
 
-[Add-Computer](Add-Computer.md)
-
-[Checkpoint-Computer](Checkpoint-Computer.md)
-
-[Rename-Computer](Rename-Computer.md)
-
-[Remove-Computer](Remove-Computer.md)
-
-[Restore-Computer](Restore-Computer.md)
-
-[Stop-Computer](Stop-Computer.md)
-
-[Test-Connection](Test-Connection.md)
+* [Add-Computer](Add-Computer.md)
+* [Checkpoint-Computer](Checkpoint-Computer.md)
+* [Rename-Computer](Rename-Computer.md)
+* [Remove-Computer](Remove-Computer.md)
+* [Restore-Computer](Restore-Computer.md)
+* [Stop-Computer](Stop-Computer.md)
+* [Test-Connection](Test-Connection.md)
