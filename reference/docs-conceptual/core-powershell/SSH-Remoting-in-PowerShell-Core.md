@@ -42,7 +42,7 @@ must configure enable password or key-based authentication.
 
 ## Set up on Windows Machine
 
-1. Install the latest version of [PowerShell Core for Windows]
+1. Install the latest version of [PowerShell Core for Windows](../setup/installing-powershell-core-on-windows.md#msi)
 
    - You can tell if it has the SSH remoting support by looking at the parameter sets for
      `New-PSSession`
@@ -101,7 +101,7 @@ must configure enable password or key-based authentication.
 
 ## Set up on Linux (Ubuntu 14.04) Machine
 
-1. Install the latest [PowerShell Core for Linux] build from GitHub
+1. Install the latest [PowerShell Core for Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) build from GitHub
 2. Install [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) as needed
 
    ```bash
@@ -137,7 +137,7 @@ must configure enable password or key-based authentication.
 
 ## Set up on MacOS Machine
 
-1. Install the latest [PowerShell Core for MacOS] build
+1. Install the latest [PowerShell Core for MacOS](../setup/installing-powershell-core-on-macos.md) build
 
    - Make sure SSH Remoting is enabled by following these steps:
      - Open `System Preferences`
@@ -324,8 +324,12 @@ The sudo command doesn't work in remote session to Linux machine.
 
 ## See Also
 
-[PowerShell Core for Windows]:(../setup/installing-powershell-core-on-windows.md#msi)
+[PowerShell Core for Windows](../setup/installing-powershell-core-on-windows.md#msi)
 
-[PowerShell Core for Linux]:(../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
+[PowerShell Core for Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
 
-[PowerShell Core for MacOS]:(../setup/installing-powershell-core-on-macos.md)
+[PowerShell Core for MacOS](../setup/installing-powershell-core-on-macos.md)
+
+[Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
+
+[Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
