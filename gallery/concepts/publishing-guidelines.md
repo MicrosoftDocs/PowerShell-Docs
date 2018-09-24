@@ -37,6 +37,7 @@ Items that follow these guidelines are far more likely to be downloaded and adop
 - Follow [SemVer](http://semver.org/) guidelines for versioning
 - Use common tags, as documented in Common PowerShell Gallery tags
 - Test publishing using a local repository
+- Use PowerShellGet to publish
 
 Each of these is covered briefly in the sections below.
 
@@ -214,6 +215,16 @@ With any of these solutions, use Register-PSRepository to define a new "reposito
 One additional point about test publishing: any item you publish to the PowerShell Gallery cannot be deleted without help from the operations team, who will confirm that nothing is dependent upon the item you wish to publish.
 For that reason, we do not support the PowerShell Gallery as a testing target, and will contact any publisher who does so.
 
+## Use PowerShellGet to publish
+
+It is strongly recommended that publishers use the Publish-Module and Publish-Script cmdlets when working with the PowerShell Gallery. 
+PowerShellGet has been created to help you avoid remembering important details about installing from an publishing to the PowerShell Gallery. 
+On occasion, publishers have chosen to skip PowerShellGet and use the NuGet client, or PackageManagement cmdlets, instead of Publish-Module. 
+There are a number of details that are easily missed, which results in a variety of support requests.
+
+If there is a reason that you cannot use Publish-Module or Publish-Script, please let us know. 
+File an issue in the PowerShellGet GitHub repo, and provide the details that cause you to choose NuGet or PackageManagement. 
+
 ## Recommended workflow
 
 The most successful approach we have found for items published to the PowerShell Gallery is this:
@@ -228,3 +239,4 @@ The most successful approach we have found for items published to the PowerShell
 - Decide if you want to code sign your item
 - When you feel the project is ready to use in a production environment, publish a 1.0.0 version to the PowerShell Gallery
 - Continue to gather feedback and iterate on your code based on user input
+
