@@ -15,7 +15,7 @@ To host Windows PowerShell in your application, you use the [System.Management.A
 
 ## Using the default runspace
 
-To start, we'll use the default runspace, and use the methods of the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) class to add commands, parameters, statements, and scripts to a pipeline.
+To start, we'll use the default runspace, and use the methods of the [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) class to add commands, parameters, statements, and scripts to a pipeline.
 
 ### AddCommand
 
