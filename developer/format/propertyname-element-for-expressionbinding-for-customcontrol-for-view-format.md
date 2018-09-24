@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # PropertyName Element for ExpressionBinding for CustomControl for View (Format)
 
-Specifies the .NET Framework property whose value is displayed by the control. This element is used when defining a custom control view
+Specifies the .NET property whose value is displayed by the control. This element is used when defining a custom control view
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -49,7 +49,7 @@ None.
 
 ## Text Value
 
-Specify the name of the .NET Framework property whose value is displayed by the control.
+Specify the name of the .NET property whose value is displayed by the control.
 
 ## Remarks
 

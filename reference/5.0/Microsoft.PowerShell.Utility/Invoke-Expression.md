@@ -29,7 +29,8 @@ Without **Invoke-Expression**, a string submitted at the command line would be r
 ```
 PS C:\> $Command = "Get-Process"
 PS C:\> $Command
-Get-Process PS C:\> Invoke-Expression $Command
+Get-Process
+PS C:\> Invoke-Expression $Command
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
 -------  ------    -----      ----- -----   ------     --   -----------
 296       4       1572       1956    20       0.53     1348   AdtAgent

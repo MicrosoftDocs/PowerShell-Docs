@@ -11,7 +11,7 @@ caps.latest.revision: 19
 ---
 # ViewSelectedBy Element (Format)
 
-Defines the .NET Framework objects that are displayed by the view. Each view must specify at least one .NET Framework object.
+Defines the .NET objects that are displayed by the view. Each view must specify at least one .NET object.
 
 ViewDefinitions Element (Format)
 View Element (Format)
@@ -38,14 +38,14 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TypeName Element for ViewSelectedBy (Format)](./typename-element-for-viewselectedby-format.md)|Optional element.<br /><br /> Specifies a .NET Framework object that is displayed by the view.|
-|[SelectionSetName Element for ViewSelectedBy (Format)](./selectionsetname-element-for-viewselectedby-format.md)|Optional element.<br /><br /> Specifies a set of .NET Framework objects that are displayed by the view.|
+|[TypeName Element for ViewSelectedBy (Format)](./typename-element-for-viewselectedby-format.md)|Optional element.<br /><br /> Specifies a .NET object that is displayed by the view.|
+|[SelectionSetName Element for ViewSelectedBy (Format)](./selectionsetname-element-for-viewselectedby-format.md)|Optional element.<br /><br /> Specifies a set of .NET objects that are displayed by the view.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[View Element (Format)](./view-element-format.md)|Defines a view that displays one or more .NET Framework objects.|
+|[View Element (Format)](./view-element-format.md)|Defines a view that displays one or more .NET objects.|
 
 ## Remarks
 

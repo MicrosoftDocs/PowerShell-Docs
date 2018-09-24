@@ -44,11 +44,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display one or more .NET Framework objects.|
+|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display one or more .NET objects.|
 
 ## Remarks
 
-In most cases, only one definition is required for each control view, but it is possible to provide multiple definitions if you want to use the same view to display different .NET Framework objects. In those cases, you can provide a separate definition for each object or set of objects.
+In most cases, only one definition is required for each control view, but it is possible to provide multiple definitions if you want to use the same view to display different .NET objects. In those cases, you can provide a separate definition for each object or set of objects.
 
 ## See Also
 

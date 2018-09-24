@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # TypeName Element for EntrySelectedBy for Controls for View (Format)
 
-Specifies a .NET Framework type that uses this definition of the control. This element is used when defining controls that can be used by a view.
+Specifies a .NET type that uses this definition of the control. This element is used when defining controls that can be used by a view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -46,11 +46,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 

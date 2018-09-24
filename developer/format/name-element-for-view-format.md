@@ -40,7 +40,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display the members of one or more .NET Framework objects.|
+|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display the members of one or more .NET objects.|
 
 ## Text Value
 

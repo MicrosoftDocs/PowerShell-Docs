@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # PropertyName Element for ItemSelectionCondition for GroupBy (Format)
 
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining how a new group of objects is displayed.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining how a new group of objects is displayed.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -51,7 +51,7 @@ None.
 
 ## Text Value
 
-Specify the name of the .NET Framework property that triggers the condition.
+Specify the name of the .NET property that triggers the condition.
 
 ## Remarks
 

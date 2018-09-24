@@ -11,7 +11,7 @@ caps.latest.revision: 14
 ---
 # TypeName Element for EntrySelectedBy for ListControl (Format)
 
-Specifies a .NET Framework type that uses this entry of the list view. There is no limit to the number of types that can be specified for a list entry.
+Specifies a .NET type that uses this entry of the list view. There is no limit to the number of types that can be specified for a list entry.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -44,11 +44,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Defines the .NET Framework types that use this list entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Defines the .NET types that use this list entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
 
-Specify the fully-qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully-qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 

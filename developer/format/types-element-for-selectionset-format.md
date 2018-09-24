@@ -11,7 +11,7 @@ caps.latest.revision: 15
 ---
 # Types Element for SelectionSet (Format)
 
-Defines the .NET Framework objects that are in the selection set.
+Defines the .NET objects that are in the selection set.
 
 Configuration Element (Format)
 SelectionSets Element (Format)
@@ -39,13 +39,13 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TypeName Element of Types (Format)](./typename-element-for-types-format.md)|Required element.<br /><br /> Specifies the .NET Framework object that belongs to the selection set.|
+|[TypeName Element of Types (Format)](./typename-element-for-types-format.md)|Required element.<br /><br /> Specifies the .NET object that belongs to the selection set.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[SelectionSet Element (Format)](./selectionset-element-format.md)|Defines a set of .NET Framework objects that can be referenced by the name of the set.|
+|[SelectionSet Element (Format)](./selectionset-element-format.md)|Defines a set of .NET objects that can be referenced by the name of the set.|
 
 ## Remarks
 
@@ -53,7 +53,7 @@ The objects defined by this element make up a selection set that can be used by 
 
 ## Example
 
-This example shows a `SelectionSet` element that defines four .NET Framework types.
+This example shows a `SelectionSet` element that defines four .NET types.
 
 ```xml
 <SelectionSets>
