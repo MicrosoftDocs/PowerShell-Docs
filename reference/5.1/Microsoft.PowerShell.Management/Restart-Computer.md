@@ -463,10 +463,16 @@ In Windows PowerShell 2.0, *AsJob* does not work reliably when you are restartin
 
 ## RELATED LINKS
 
-* [Add-Computer](Add-Computer.md)
-* [Checkpoint-Computer](Checkpoint-Computer.md)
-* [Rename-Computer](Rename-Computer.md)
-* [Remove-Computer](Remove-Computer.md)
-* [Restore-Computer](Restore-Computer.md)
-* [Stop-Computer](Stop-Computer.md)
-* [Test-Connection](Test-Connection.md)
+[Add-Computer](Add-Computer.md)
+
+[Checkpoint-Computer](Checkpoint-Computer.md)
+
+[Rename-Computer](Rename-Computer.md)
+
+[Remove-Computer](Remove-Computer.md)
+
+[Restore-Computer](Restore-Computer.md)
+
+[Stop-Computer](Stop-Computer.md)
+
+[Test-Connection](Test-Connection.md)
