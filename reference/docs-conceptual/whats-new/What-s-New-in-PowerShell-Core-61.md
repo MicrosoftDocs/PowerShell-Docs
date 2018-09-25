@@ -333,7 +333,9 @@ Thanks to [@iSazonov](https://github.com/iSazonov), we've added new methods and 
 `PSCustomObject` now includes a `Count`/`Length` property like other objects.
 
 ```powershell
-[pscustomobject]@{foo = '1'}.Length
+$PSCustomObject = [pscustomobject]@{foo = 1}
+
+$PSCustomObject.Length
 ```
 
 ```Output
@@ -341,7 +343,7 @@ Thanks to [@iSazonov](https://github.com/iSazonov), we've added new methods and 
 ```
 
 ```powershell
-[pscustomobject]@{foo = '1'}.Count
+$PSCustomObject.Count
 ```
 
 ```Output
@@ -352,7 +354,7 @@ This work also includes `ForEach` and `Where` methods that allow you
 to operate and filter on `PSCustomObject` items:
 
 ```powershell
-[pscustomobject]@{foo = 1}.ForEach({$_.foo + 1})
+$PSCustomObject.ForEach({$_.foo + 1})
 ```
 
 ```Output
@@ -360,11 +362,13 @@ to operate and filter on `PSCustomObject` items:
 ```
 
 ```powershell
-[pscustomobject]@{foo = 1}.Where({$_.foo -gt 0}).foo
+$PSCustomObject.Where({$_.foo -gt 0})
 ```
 
 ```Output
-1
+foo
+---
+  1
 ```
 
 ### `Where-Object -Not`
