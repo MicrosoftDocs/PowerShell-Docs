@@ -330,46 +330,45 @@ By popular demand, `Update-Help` no longer needs to be run as an administrator.
 ### New methods/properties on `PSCustomObject`
 
 Thanks to [@iSazonov](https://github.com/iSazonov), we've added new methods and properties to `PSCustomObject`.
-`PSCustomObject` now includes a `Count`/`Length` property that gives the number of items.
-
-Both of these examples return `2` as the number of `PSCustomObjects` in the collection.
+`PSCustomObject` now includes a `Count`/`Length` property like other objects.
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Length
+$PSCustomObject = [pscustomobject]@{foo = 1}
+
+$PSCustomObject.Length
+```
+
+```Output
+1
 ```
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Count
+$PSCustomObject.Count
+```
+
+```Output
+1
 ```
 
 This work also includes `ForEach` and `Where` methods that allow you
 to operate and filter on `PSCustomObject` items:
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).ForEach({$_.foo+1})
+$PSCustomObject.ForEach({$_.foo + 1})
 ```
 
 ```Output
 2
-3
 ```
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).Where({$_.foo -gt 1})
+$PSCustomObject.Where({$_.foo -gt 0})
 ```
 
 ```Output
 foo
 ---
-  2
+  1
 ```
 
 ### `Where-Object -Not`
