@@ -14,7 +14,11 @@ Function
 
 ## Drives
 
-`Function:`
+*Function:*
+
+## Capabilities
+
+**ShouldProcess**
 
 ## Short description
 
@@ -30,12 +34,22 @@ function name, the code in the function runs. A filter is a named block of code
 that establishes conditions for an action. You can type the name of the filter
 in place of the condition, such as in a `Where-Object` command.
 
-In the `Function:` drive, functions are preceded by the label "Function" and
-filters are preceded by the label "Filter", but they operate properly when used
-in the correct context regardless of the label.
-
-The **Function** provider is a flat namespace that contains only the function
+The **Function** drive is a flat namespace that contains only the function
 and filter objects. Neither functions nor filters have child items.
+
+The **Function** provider supports the following cmdlets, which are covered
+in this article.
+
+- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
+- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
+- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- [Clear-Item](Clear-Item.md)
+
+{{Make sure list is correct}}
+
+## Types exposed by this provider
 
 Each function is an instance of the
 [System.Management.Automation.FunctionInfo](https://msdn.microsoft.com/library/system.management.automation.functioninfo)
@@ -43,8 +57,44 @@ class. Each filter is an instance of the
 [System.Management.Automation.FilterInfo](https://msdn.microsoft.com/library/system.management.automation.filterinfo)
 class.
 
-The examples in this section show how to manage functions, but the same methods
-can be used with filters.
+## Working with provider paths
+
+A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
+should be usable from any location and start with a drive name followed by a
+colon `:`.  Separate containers in your paths using a backslash `\` or a
+forward slash `/`.  If you are referencing a specific item, it should be the
+last item in the path. An *Absolute* path is absolute, it should not
+change based on your current location.
+
+This is an example of an *Absolute* path.
+
+```
+C:\Windows\System32\shell.dll
+```
+
+A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
+indicates the current location, the double dot `..` represents the location
+directly above your current location. You can use multiple combinations
+of dot `.` and double dot `..`. A *Relative* path can change based on your
+current location.
+
+This is an example of a *Relative* path.
+
+```
+PS C:\Windows\System32\> .\shell.dll
+```
+
+Notice that this path is only valid if you are in the System32 directory.
+
+If any element in the fully qualified name includes spaces, you must enclose
+the name in quotation marks `" "`. The following example shows a fully
+qualified path that includes spaces.
+
+```
+"C:\Program Files\Internet Explorer\iexplore.exe"
+```
+
+## Navigating the Function drive
 
 The **Function** provider exposes its data store in the `Function:` drive. To
 work with functions, you can change your location to the `Function:` drive
@@ -52,44 +102,9 @@ work with functions, you can change your location to the `Function:` drive
 reference a function from another location, use the drive name (`Function:`) in
 the path.
 
-The **Function** provider supports all of the cmdlets whose names contain the
-*Item* noun (the `*-Item` cmdlets), except for `Invoke-Item`. And, it supports
-the `Get-Content`(../../Microsoft.PowerShell.Management/Get-Content.md) and
-`Set-Content`(../../Microsoft.PowerShell.Management/Set-Content.md) cmdlets.
-However, it does not support the cmdlets whose names contain the *ItemProperty*
-noun (the `*-ItemProperty` cmdlets), and it does not support the `-Filter`
-parameter in any cmdlet.
-
-## Capabilities
-
-ShouldProcess
-
-## Dynamic parameters
-
-Dynamic parameters are cmdlet parameters that are added by a PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
-
-### Options <[System.Management.Automation.ScopedItemOptions]>
-
-Determines the value of the **Options** property of a function.
-
-- `None`: No options. `None` is the default.
-- `Constant`: The function cannot be deleted, and its properties cannot be
-  changed. `Constant` is available only when you are creating a function.
-  You cannot change the option of an existing function to `Constant`.
-- `Private`: The function is visible only in the current scope
-- (not in child scopes).
-- `ReadOnly`: The properties of the function cannot be changed except by
-   using the `-Force` parameter. You can use `Remove-Item` to delete the
-   function.
-- `AllScope`: The function is copied to any new scopes that are created.
-
-### Cmdlets supported
-
-- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
-
-- [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)
-
-## Navigating the Function: drive
+In the `Function:` drive, functions are preceded by the label "Function" and
+filters are preceded by the label "Filter", but they operate properly when used
+in the correct context regardless of the label. The examples in this section show how to manage functions, but the same methods can be used with filters.
 
 ### Example 1: Getting to the Function: drive
 
@@ -228,6 +243,50 @@ the value of the **Options** property, use `Set-Item`.
 ```powershell
 Copy-Item -Path Function:prompt -Destination Function:oldPrompt
 ```
+
+## Dynamic parameters
+
+Dynamic parameters are cmdlet parameters that are added by a PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
+
+### Options <[System.Management.Automation.ScopedItemOptions]>
+
+Determines the value of the **Options** property of a function.
+
+- `None`: No options. `None` is the default.
+- `Constant`: The function cannot be deleted, and its properties cannot be
+  changed. `Constant` is available only when you are creating a function.
+  You cannot change the option of an existing function to `Constant`.
+- `Private`: The function is visible only in the current scope
+- (not in child scopes).
+- `ReadOnly`: The properties of the function cannot be changed except by
+   using the `-Force` parameter. You can use `Remove-Item` to delete the
+   function.
+- `AllScope`: The function is copied to any new scopes that are created.
+
+### Cmdlets supported
+
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+
+- [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)
+
+## Getting help
+
+Beginning in Windows PowerShell 3.0, you can get customized help topics for
+provider cmdlets that explain how those cmdlets behave in a file system drive.
+
+To get the help topics that are customized for the file system drive, run a
+[Get-Help](../Get-Help.md) command in a file system drive or use the `-Path`
+parameter of [Get-Help](../Get-Help.md) to specify a file system drive.
+
+```powershell
+Get-Help Get-ChildItem
+```
+
+```powershell
+Get-Help Get-ChildItem -Path c:
+```
+
+{{Make provider specific>}}
 
 ## See also
 

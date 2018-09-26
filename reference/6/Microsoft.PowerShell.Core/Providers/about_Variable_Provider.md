@@ -14,7 +14,11 @@ Variable
 
 ## Drives
 
-`Variable:`
+*Variable:*
+
+## Capabilities
+
+**ShouldProcess**
 
 ## Short description
 
@@ -29,24 +33,25 @@ The PowerShell **Variable** provider supports the variables that PowerShell
 creates, including the automatic variables, the preference variables, and the
 variables that you create.
 
-The **Variable** provider is a flat namespace that contains only the variable
+The **Variable** drive is a flat namespace that contains only the variable
 objects. The variables have no child items.
 
-Most of the variables are instances of the
-[System.Management.Automation.PSVariable](https://msdn.microsoft.com/library/system.management.automation.psvariable)
-class. However, there are some variations. For example, the `?` variable is a
-member of the `QuestionMarkVariable` internal class, and the
-`MaximumVariableCount` variable is a member of the
-`SessionStateCapacityVariable` internal class.
+The **Variable** provider supports the following cmdlets, which are covered
+in this article.
 
-The **Variable** provider exposes its data store in the `Variable:` drive. To
-work with variables, you can change your location to the `Variable:` drive
-(`Set-Location Variable:`), or you can work from any other PowerShell drive. To
-reference a variable from another location, use the drive name (`Variable:`) in
-the path.
+- [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
+- [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
+- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- [Clear-Item](Clear-Item.md)
 
-PowerShell includes a set of cmdlets designed especially to view and to change
-variables:
+{{Make sure list is correct}}
+
+PowerShell also includes a set of cmdlets designed especially to view and to
+change variables. When you use **Variable** cmdlets, you do not need to specify
+the `Variable:` drive in the name. This article does not cover working with
+**Variable** cmdlets.
 
 - [Get-Variable](../../Microsoft.PowerShell.Utility/Get-Variable.md)
 - [New-Variable](../../Microsoft.PowerShell.Utility/New-Variable.md)
@@ -54,28 +59,79 @@ variables:
 - [Remove-Variable](../../Microsoft.PowerShell.Utility/Remove-Variable.md)
 - [Clear-Variable](../../Microsoft.PowerShell.Utility/Clear-Variable.md)
 
-When you use these cmdlets, you do not need to specify the `Variable:` drive in
-the name.
+> [!NOTE]
+> You can also use the PowShell expression parser to create, view, and change
+> the values of variables without using the cmdlets. When working with variables
+> directly, use a dollar sign (`$`) to identify the name as a variable and the
+> assignment operator (`=`)to establish and change its value. For example,
+> `$p = Get-Process` creates the `p` variable and stores the results of a
+> `Get-Process` command in it.
 
-The **Variable** provider supports all of the cmdlets whose names contain the
-*Item* noun (the `*-Item` cmdlets), except for `Invoke-Item`. The **Variable**
-provider supports the `Get-Content` and `Set-Content` cmdlets. However, it does
-not support the cmdlets whose names contain the *ItemProperty* noun (the
-`*-ItemProperty` cmdlets), and it does not support the `-Filter` parameter in
-any cmdlet.
+## Types exposed by this provider
 
-You can also use the PowerShell expression parser to create, view, and change
-the values of variables without using the cmdlets. When working with variables
-directly, use a dollar sign (`$`) to identify the name as a variable and the
-assignment operator (`=`)to establish and change its value. For example,
-`$p = Get-Process` creates the `p` variable and stores the results of a
-`Get-Process` command in it.
+Variables can be one of several different types. Most variables will be
+instances of the `PSVariable` class. Other variables and their types are
+listed below.
 
-## Capabilities
+- The `?` variable is an instance of the `QuestionMarkVariable` class.
+- The `null` variable is an instance of the `NullVariable` class.
+- The maximum count variables are instances of the
+  `SessionStateCapacityVariable` class.
+- `LocalVariable` instances contain information about current execution,
+  such as:
+  - `MyInvocation`
+  - `PSCommandPath`
+  - `PSScriptRoot`
+  - `PSBoundParameters`
+  - `args`
+  - `input`
 
-ShouldProcess
+{{change these into links to the classes}}
 
-## Navigating the Variable: drive
+## Working with provider paths
+
+A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
+should be usable from any location and start with a drive name followed by a
+colon `:`.  Separate containers in your paths using a backslash `\` or a
+forward slash `/`.  If you are referencing a specific item, it should be the
+last item in the path. An *Absolute* path is absolute, it should not
+change based on your current location.
+
+This is an example of an *Absolute* path.
+
+```
+C:\Windows\System32\shell.dll
+```
+
+A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
+indicates the current location, the double dot `..` represents the location
+directly above your current location. You can use multiple combinations
+of dot `.` and double dot `..`. A *Relative* path can change based on your
+current location.
+
+This is an example of a *Relative* path.
+
+```
+PS C:\Windows\System32\> .\shell.dll
+```
+
+Notice that this path is only valid if you are in the System32 directory.
+
+If any element in the fully qualified name includes spaces, you must enclose
+the name in quotation marks `" "`. The following example shows a fully
+qualified path that includes spaces.
+
+```
+"C:\Program Files\Internet Explorer\iexplore.exe"
+```
+
+## Navigating the Variable drives
+
+The **Variable** provider exposes its data store in the `Variable:` drive. To
+work with variables, you can change your location to the `Variable:` drive
+(`Set-Location Variable:`), or you can work from any other PowerShell drive. To
+reference a variable from another location, use the drive name (`Variable:`) in
+the path.
 
 ### Example 1: Getting to the Variable: drive
 
@@ -223,6 +279,25 @@ This command uses the `Clear-Item` cmdlet to change the value of the
 ```powershell
 Clear-Item -Path Variable:processes
 ```
+
+## Getting help
+
+Beginning in Windows PowerShell 3.0, you can get customized help topics for
+provider cmdlets that explain how those cmdlets behave in a file system drive.
+
+To get the help topics that are customized for the file system drive, run a
+[Get-Help](../Get-Help.md) command in a file system drive or use the `-Path`
+parameter of [Get-Help](../Get-Help.md) to specify a file system drive.
+
+```powershell
+Get-Help Get-ChildItem
+```
+
+```powershell
+Get-Help Get-ChildItem -Path c:
+```
+
+{{Make provider specific>}}
 
 ## See also
 

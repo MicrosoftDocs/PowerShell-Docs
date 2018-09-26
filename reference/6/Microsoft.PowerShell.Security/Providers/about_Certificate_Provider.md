@@ -14,7 +14,11 @@ Certificate
 
 ## Drives
 
-`Cert:`
+*Cert:*
+
+## Capabilities
+
+**ShouldProcess**
 
 ## Short description
 
@@ -22,7 +26,15 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 
 ## Detailed description
 
-The PowerShell Certificate provider lets you navigate the certificate namespace and view the certificate stores and certificates. This article covers how to work with the PowerShell certificate provider using the following cmdlets:
+The PowerShell **Certificate** provider lets you get, add, change, clear, and delete
+certificates and certificate stores in PowerShell.
+
+Certificates are {{Fill in description}}
+
+The **Certificate** drive is a hierarchical namespace containing the cerificate stores and certificates on your computer.
+
+The **Certificate** provider supports the following cmdlets, which are covered
+in this article.
 
 - [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
 - [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
@@ -37,137 +49,72 @@ The PowerShell Certificate provider lets you navigate the certificate namespace 
 - [Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)
 - [Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)
 
-## Capabilities
+{{Make sure list is correct}}
 
-ShouldProcess
+## Types exposed by this provider
 
-## Script properties
-
-New script properties have been added to the **x509Certificate2** object that
-represents the certificates to make it easy to search and manage the
-certificates.
-
-- `DnsNameList`: To populate the `DnsNameList` property, the Certificate
-  provider copies the content from the DNSName entry in the
-  SubjectAlternativeName (SAN) extension. If the SAN extension is empty, the
-  property is populated with content from the Subject field of the certificate.
-
-- `EnhancedKeyUsageList`: To populate the `EnhancedKeyUsageList` property, the
-  Certificate provider copies the OID properties of the EnhancedKeyUsage (EKU)
-  field in the certificate and creates a friendly name for it.
-
-- `SendAsTrustedIssuer`: {{Fill in description}}
-
-These new features let you search for certificates based on their DNS names and
-expiration dates, and distinguish client and server authentication certificates
-by the value of their Enhanced Key Usage (EKU) properties.
-
-## Dynamic parameters
-
-Dynamic parameters are cmdlet parameters that are added by a PowerShell
-provider and are available only when the cmdlet is being used in the
-provider-enabled drive. These parameters are valid in all subdirectories of the
-Certificate provider, but are effective only on certificates.
-
-> [!NOTE]
-> Parameters that perform filtering against the `EnhancedKeyUsageList` property
-> also return items with an empty `EnhancedKeyUsageList` property value.
-> Certificates that have an empty **EnhancedKeyUsageList** can be used for
-> all purposes.
-
-### CodeSigningCert <System.Management.Automation.SwitchParameter>
-
-#### Cmdlets supported
-
-- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have "Code Signing" in their
-**EnhancedKeyUsageList** property value.
-
-### DnsName <Microsoft.PowerShell.Commands.DnsNameRepresentation>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have the specified domain name or name
-pattern in the **DNSNameList** property of the certificate. The value of this
-parameter can either be "Unicode" or "ASCII". Punycode values are converted to
-Unicode. Wildcard characters (*) are permitted.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### EKU <System.String>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that have the specified text or text pattern
-in the `EnhancedKeyUsageList` property of the certificate. Wildcard characters
-(*) are permitted. The `EnhancedKeyUsageList` property contains the friendly
-name and the OID fields of the EKU.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### ExpiringInDays <System.Int32>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets certificates that are expiring in or before the specified
-number of days. A value of 0 (zero) gets certificates that have expired.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### SSLServerAuthentication <System.Management.Automation.SwitchParameter>
-
-#### Cmdlets supported
-
-- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
-
-This parameter gets only server certificates for SSL web hosting. This
-parameter gets certificates that have "Server Authentication" in their
-`EnhancedKeyUsageList` property value.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-### DeleteKey <System.Management.Automation.SwitchParameter>
-
-#### Cmdlets supported
-
-- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
-
-This parameter deletes the associated private key when it deletes the certificate.
-
-> [!IMPORTANT]
-> To delete a private key that is associated with a user certificate in the
-> `Cert:\CurrentUser` store on a remote computer, you must use delegated
-> credentials. The `Invoke-Command` cmdlet supports credential delegation
-> using the **CredSSP** parameter. You should consider any security risks
-> before using `Remove-Item` with `Invoke-Command` and credential delegation.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-## Navigating the Cert: drive
-
-The Certificate provider exposes the certificate namespace as the `Cert:` drive
-in PowerShell. The Cert: drive has the following three levels:
+The Certificate drive exposes the following types.
 
 - Store locations (Microsoft.PowerShell.Commands.X509StoreLocation), which are
   high-level containers that group the certificates for the current user and
   for all users. Each system has a CurrentUser and LocalMachine (all users)
   store location.
 
-- Certificates stores (System.Security.Cryptography.X509Certificates.X509Store),
-  which are physical stores in which certificates are saved and managed.
+- Certificates stores (System.Security.Cryptography.X509Certificates.X509Store), which are physical stores in which certificates are saved and managed.
 
 - X.509 **System.Security.Cryptography.X509Certificates.X509Certificate2**
   certificates, each of which represent an X.509 certificate on the computer.
   Certificates are identified by their thumbprints.
+
+## Working with provider paths
+
+A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
+should be usable from any location and start with a drive name followed by a
+colon `:`.  Separate containers in your paths using a backslash `\` or a
+forward slash `/`.  If you are referencing a specific item, it should be the
+last item in the path. An *Absolute* path is absolute, it should not
+change based on your current location.
+
+This is an example of an *Absolute* path.
+
+```
+C:\Windows\System32\shell.dll
+```
+
+A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
+indicates the current location, the double dot `..` represents the location
+directly above your current location. You can use multiple combinations
+of dot `.` and double dot `..`. A *Relative* path can change based on your
+current location.
+
+This is an example of a *Relative* path.
+
+```
+PS C:\Windows\System32\> .\shell.dll
+```
+
+Notice that this path is only valid if you are in the System32 directory.
+
+If any element in the fully qualified name includes spaces, you must enclose
+the name in quotation marks `" "`. The following example shows a fully
+qualified path that includes spaces.
+
+```
+"C:\Program Files\Internet Explorer\iexplore.exe"
+```
+
+## Navigating the Certificate drive
+
+The Certificate provider exposes the certificate namespace as the `Cert:` drive
+in PowerShell. To work with certificates, you can change your location to the `Cert:` drive by using the
+following command.
+
+```powershell
+Set-Location Cert:
+```
+
+You can also work with the Certificate provider from any other PowerShell
+drive. To reference an alias from another location, use the `Cert:` drive name in the path.
 
 ### Example 1: Navigating to the root of the Cert: drive
 
@@ -480,6 +427,136 @@ store.
 Invoke-Command { Remove-Item -Path cert:\LocalMachine\TestStore -Recurse } `
   -ComputerName S1, S2
 ```
+
+## Dynamic parameters
+
+Dynamic parameters are cmdlet parameters that are added by a PowerShell
+provider and are available only when the cmdlet is being used in the
+provider-enabled drive. These parameters are valid in all subdirectories of the
+Certificate provider, but are effective only on certificates.
+
+> [!NOTE]
+> Parameters that perform filtering against the `EnhancedKeyUsageList` property
+> also return items with an empty `EnhancedKeyUsageList` property value.
+> Certificates that have an empty **EnhancedKeyUsageList** can be used for
+> all purposes.
+
+### CodeSigningCert <System.Management.Automation.SwitchParameter>
+
+#### Cmdlets supported
+
+- [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+
+- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+
+This parameter gets certificates that have "Code Signing" in their
+**EnhancedKeyUsageList** property value.
+
+### DnsName <Microsoft.PowerShell.Commands.DnsNameRepresentation>
+
+#### Cmdlets supported
+
+- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+
+This parameter gets certificates that have the specified domain name or name
+pattern in the **DNSNameList** property of the certificate. The value of this
+parameter can either be "Unicode" or "ASCII". Punycode values are converted to
+Unicode. Wildcard characters (*) are permitted.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+### EKU <System.String>
+
+#### Cmdlets supported
+
+- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+
+This parameter gets certificates that have the specified text or text pattern
+in the `EnhancedKeyUsageList` property of the certificate. Wildcard characters
+(*) are permitted. The `EnhancedKeyUsageList` property contains the friendly
+name and the OID fields of the EKU.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+### ExpiringInDays <System.Int32>
+
+#### Cmdlets supported
+
+- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+
+This parameter gets certificates that are expiring in or before the specified
+number of days. A value of 0 (zero) gets certificates that have expired.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+### SSLServerAuthentication <System.Management.Automation.SwitchParameter>
+
+#### Cmdlets supported
+
+- [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
+
+This parameter gets only server certificates for SSL web hosting. This
+parameter gets certificates that have "Server Authentication" in their
+`EnhancedKeyUsageList` property value.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+### DeleteKey <System.Management.Automation.SwitchParameter>
+
+#### Cmdlets supported
+
+- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+
+This parameter deletes the associated private key when it deletes the certificate.
+
+> [!IMPORTANT]
+> To delete a private key that is associated with a user certificate in the
+> `Cert:\CurrentUser` store on a remote computer, you must use delegated
+> credentials. The `Invoke-Command` cmdlet supports credential delegation
+> using the **CredSSP** parameter. You should consider any security risks
+> before using `Remove-Item` with `Invoke-Command` and credential delegation.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+## Script properties
+
+New script properties have been added to the **x509Certificate2** object that
+represents the certificates to make it easy to search and manage the
+certificates.
+
+- `DnsNameList`: To populate the `DnsNameList` property, the Certificate
+  provider copies the content from the DNSName entry in the
+  SubjectAlternativeName (SAN) extension. If the SAN extension is empty, the
+  property is populated with content from the Subject field of the certificate.
+
+- `EnhancedKeyUsageList`: To populate the `EnhancedKeyUsageList` property, the
+  Certificate provider copies the OID properties of the EnhancedKeyUsage (EKU)
+  field in the certificate and creates a friendly name for it.
+
+- `SendAsTrustedIssuer`: {{Fill in description}}
+
+These new features let you search for certificates based on their DNS names and
+expiration dates, and distinguish client and server authentication certificates
+by the value of their Enhanced Key Usage (EKU) properties.
+
+## Getting help
+
+Beginning in Windows PowerShell 3.0, you can get customized help topics for
+provider cmdlets that explain how those cmdlets behave in a file system drive.
+
+To get the help topics that are customized for the file system drive, run a
+[Get-Help](../Get-Help.md) command in a file system drive or use the `-Path`
+parameter of [Get-Help](../Get-Help.md) to specify a file system drive.
+
+```powershell
+Get-Help Get-ChildItem
+```
+
+```powershell
+Get-Help Get-ChildItem -Path c:
+```
+
+{{Make provider specific>}}
 
 ## See also
 
