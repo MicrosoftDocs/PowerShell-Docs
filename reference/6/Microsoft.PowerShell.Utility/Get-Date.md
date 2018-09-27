@@ -496,6 +496,8 @@ Otherwise, it returns a **DateTime** object.
       * Date:
 
         `D` : Date in mm/dd/yy format (06/14/06)
+        
+        `F` : Date in YYYY-mm-dd format (2006-06-14) Equivalent to %Y-%m-%d (the ISO 8601 date format).
 
         `x` : Date in standard format for locale (09/12/07 for English-US)
 
