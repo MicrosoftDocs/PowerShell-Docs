@@ -133,14 +133,33 @@ work with variables, you can change your location to the `Variable:` drive
 reference a variable from another location, use the drive name (`Variable:`) in
 the path.
 
-### Example 1: Getting to the Variable: drive
+```powershell
+Set-Location Variable:
+```
+
+You can also work with the **Variable** provider from any other PowerShell
+drive. To reference an variable from another location, use the drive name
+`Variable:` in the path.
+
+PowerShell uses aliases to allow you a familiar way to work with provider
+paths. Commands such as `dir` and `ls` are now aliases for
+[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
+`cd` is an alias for
+[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
+
+### Example 1: Getting to the Variable drive
 
 This command changes the current location to the `Variable:` drive. You can use
-this command from any drive in PowerShell. To return to a file system drive,
-type the drive name. For example, type `Set-Location c:`.
+this command from any drive in PowerShell.
 
 ```powershell
 Set-Location Variable:
+```
+
+To return to a file system drive, type the drive name. For example, type:
+
+```powershell
+Set-Location C:
 ```
 
 ## Displaying the value of variables

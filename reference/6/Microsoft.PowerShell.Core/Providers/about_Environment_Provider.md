@@ -99,7 +99,22 @@ work with environment variables, change your location to the `Env:` drive
 environment variable from another location, use the `Env:` drive name in the
 path.
 
-### Example 1: Getting to the Env: drive
+```powershell
+Set-Location Env:
+```
+
+You can also work with the **Environment** provider from any other PowerShell
+drive. To reference an environment variable from another location, use the drive name `Env:` in the path.
+
+{{Mention $env:}}
+
+PowerShell uses aliases to allow you a familiar way to work with provider
+paths. Commands such as `dir` and `ls` are now aliases for
+[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
+`cd` is an alias for
+[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
+
+### Example 1: Getting to the Env drive
 
 This command changes the current location to the `Env:` drive.
 
@@ -107,11 +122,10 @@ This command changes the current location to the `Env:` drive.
 Set-Location Env:
 ```
 
-You can use this command from any drive in PowerShell. To return to a file
-system drive, type the drive name. For example, type:
+To return to a file system drive, type the drive name. For example, type:
 
 ```powershell
-Set-Location c:
+Set-Location C:
 ```
 
 ## Getting environment variables

@@ -97,18 +97,35 @@ qualified path that includes spaces.
 
 ## Navigating the Registry drives
 
-The **Variable** provider exposes its data store in two default drives. The
+The **Registry** provider exposes its data store as two default drives. The
 registry location HKEY_LOCAL_MACHINE is mapped to the `HKLM:` drive and
 HKEY_CURRENT_USER is mapped to the `HKCU:` drive. To work with the registry,
-you can change your location to either drive (`Set-Location HKLM:`) To reference a registry drive from another location, use the drive name (`HKLM:`, `HKCU`) in the path.
-
-### Example 1
-
-This command sets the current location to the `HKEY_LOCAL_MACHINE\Software` registry key:
+you can change your location to the `HKLM:` drive using the following command.
 
 ```powershell
-Set-Location HKLM:\software
+Set-Location HKLM:
 ```
+
+To return to a file system drive, type the drive name. For example, type:
+
+```powershell
+Set-Location C:
+```
+
+You can also work with the **Registry** provider from any other PowerShell
+drive. To reference an registry key from another location, use the drive name
+(`HKLM:`, `HKCU:`) in the path. Use a backslash (\\) or a forward slash (/) to indicate a level of the **Registry** drive.
+
+```powershell
+PS C:\> cd HKLM:\Software
+```
+
+> [!NOTE]
+> PowerShell uses aliases to allow you a familiar way to work with provider
+> paths. Commands such as `dir` and `ls` are now aliases for
+> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
+> `cd` is an alias for
+> [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
 
 ### Example 2
 

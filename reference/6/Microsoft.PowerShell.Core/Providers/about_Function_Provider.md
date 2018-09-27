@@ -102,16 +102,32 @@ work with functions, you can change your location to the `Function:` drive
 reference a function from another location, use the drive name (`Function:`) in
 the path.
 
-In the `Function:` drive, functions are preceded by the label "Function" and
-filters are preceded by the label "Filter", but they operate properly when used
-in the correct context regardless of the label. The examples in this section show how to manage functions, but the same methods can be used with filters.
+```powershell
+Set-Location Function:
+```
 
-### Example 1: Getting to the Function: drive
+You can also work with the **Function** provider from any other PowerShell
+drive. To reference an function from another location, use the drive name
+`Function:` in the path.
 
- Changes the current location to the `Function:` drive. You can use this command from any drive in PowerShell. To return to a file system drive, type the drive name. For example, type `set-location c:`.
+PowerShell uses aliases to allow you a familiar way to work with provider
+paths. Commands such as `dir` and `ls` are now aliases for
+[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
+`cd` is an alias for
+[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
+
+### Example 1: Getting to the Function drive
+
+Changes the current location to the `Function:` drive. You can use this command from any drive in PowerShell.
 
 ```powershell
 Set-Location Function:
+```
+
+To return to a file system drive, type the drive name. For example, type:
+
+```powershell
+Set-Location C:
 ```
 
 ## Getting functions

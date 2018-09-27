@@ -105,9 +105,9 @@ qualified path that includes spaces.
 
 ## Navigating the Certificate drive
 
-The Certificate provider exposes the certificate namespace as the `Cert:` drive
-in PowerShell. To work with certificates, you can change your location to the `Cert:` drive by using the
-following command.
+The **Certificate** provider exposes the certificate namespace as the `Cert:`
+drive in PowerShell. To work with certificates, you can change your location to
+the `Cert:` drive by using the following command.
 
 ```powershell
 Set-Location Cert:
@@ -116,7 +116,13 @@ Set-Location Cert:
 You can also work with the Certificate provider from any other PowerShell
 drive. To reference an alias from another location, use the `Cert:` drive name in the path.
 
-### Example 1: Navigating to the root of the Cert: drive
+PowerShell uses aliases to allow you a familiar way to work with provider
+paths. Commands such as `dir` and `ls` are now aliases for
+[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
+`cd` is an alias for
+[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
+
+### Example 1: Getting to the root of the Certificate drive
 
 This command uses the `Set-Location` command to change the current location to
 the Root certificate store in the LocalMachine store location. Use a backslash
@@ -126,6 +132,12 @@ If you are not in the `Cert:` drive, begin the path with the drive name.
 
 ```powershell
 PS Cert:\> Set-Location -Path LocalMachine\Root
+```
+
+To return to a file system drive, type the drive name. For example, type:
+
+```powershell
+Set-Location C:
 ```
 
 ## Displaying the Contents of the Cert: drive

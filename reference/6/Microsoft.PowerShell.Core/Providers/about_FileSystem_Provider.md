@@ -94,17 +94,38 @@ qualified path that includes spaces.
 "C:\Program Files\Internet Explorer\iexplore.exe"
 ```
 
-## Navigating the File System drives
+## Navigating the FileSystem drives
 
-PowerShell uses aliases to allow you a familiar way to work with files and
-directories. Commands such as `dir` and `ls` are now aliases for
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-and `cd` is now an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
-PowerShell also includes a `mkdir` function (alias `md`) that uses the
-[New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to
-create a new directory.
+The **FileSystem** provider exposes its data stores by mapping any logical
+drives on the computer as PowerShell drives. To work with a **FileSystem**
+drive you can change your location to a drive uing the drive name followed
+by a colon (`:`).
 
-### Example 1: Get the current location
+```powershell
+Set-Location C:
+```
+
+You can also work with the **FileSystem** provider from any other PowerShell
+drive. To reference a file or directory from another location, use the drive name (`C:`, `D:`, ...) in the path.
+
+PowerShell uses aliases to allow you a familiar way to work with provider
+paths. Commands such as `dir` and `ls` are now aliases for
+[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
+`cd` is an alias for
+[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
+
+### Example 1: Getting to a FileSystem drive
+
+This command uses the `Set-Location` cmdlet to change the current location
+to the root of a **FileSystem** drive. You can use this command from any drive in PowerShell. Use a backslash (\\) or a forward slash (/) to indicate a level of the **FileSystem** drive.
+
+```powershell
+Set-Location C:
+```
+
+{{Should I combine Navigation and Provider Paths??}}
+
+### Example 2: Get the current location
 
 This command gets the current location:
 
@@ -119,14 +140,6 @@ type:
 
 ```powershell
 Get-Help Get-Location
-```
-
-### Example 2: Set the current location
-
-This command sets the current location:
-
-```powershell
-Set-Location C:
 ```
 
 ## Getting file and directory information
@@ -336,6 +349,10 @@ This command creates the `logfiles` directory on the `C` drive:
 ```powershell
 New-Item -Path c:\ -Name logfiles -Type directory
 ```
+
+PowerShell also includes a `mkdir` function (alias `md`) that uses the
+[New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to
+create a new directory.
 
 ### Example 2: Create a file
 

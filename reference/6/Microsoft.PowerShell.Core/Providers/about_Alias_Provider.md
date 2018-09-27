@@ -113,15 +113,24 @@ You can also work with the Alias provider from any other PowerShell drive. To
 reference an alias from another location, use the `Alias:` drive name in the
 path.
 
-### Example 1: Navigate to the Alias: drive
+PowerShell uses aliases to allow you a familiar way to work with provider
+paths. Commands such as `dir` and `ls` are now aliases for
+[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
+`cd` is an alias for
+[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
+
+### Example 1: Getting to the Alias drive
 
 This command changes the current location to the `Alias:` drive.
 You can use this command from any drive in PowerShell.
-To return to a file system drive, type the drive name.
-For example, type `Set-Location C:`.
 
 ```powershell
 Set-Location Alias:
+```
+To return to a file system drive, type the drive name. For example, type:
+
+```powershell
+Set-Location C:
 ```
 
 ## Displaying the Contents of the Alias: drive
