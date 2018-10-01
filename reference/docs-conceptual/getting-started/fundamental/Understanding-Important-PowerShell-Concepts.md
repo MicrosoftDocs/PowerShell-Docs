@@ -25,7 +25,7 @@ syntax.
 
 ## The command family is extensible
 
-Interfaces such as **cmd.exe**don't provide a way for you to directly extend the built-in command
+Interfaces such as **cmd.exe** don't provide a way for you to directly extend the built-in command
 set. You can create external command-line tools that run in **cmd.exe**. But these external tools
 don't have services, such as Help integration. **cmd.exe**doesn't automatically know that these
 external tools are valid commands.

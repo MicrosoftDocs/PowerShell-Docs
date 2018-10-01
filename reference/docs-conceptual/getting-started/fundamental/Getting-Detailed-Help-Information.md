@@ -170,7 +170,7 @@ that come with PowerShell, including provider Help and conceptual (About) Help a
 available online in the [PowerShell](/powershell/scripting/powershell-scripting) documentation.
 
 > [!NOTE]
-> You can't use the **Online** parameter with conceptual (about_*) or provider Help articles.
+> You can't use the **Online** parameter with conceptual (about_\*) or provider Help articles.
 > Online help is optional, so it does not work for every cmdlet, function, or script.
 
 For example, to get the online version of the Help article about the `Get-ChildItem` cmdlet, type:
