@@ -58,43 +58,6 @@ class. Registry entries are represented as instances of the
 [PSCustomObject](https://msdn.microsoft.com/library/system.management.automation.pscustomobject)
 class.
 
-## Working with provider paths
-
-A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
-should be usable from any location and start with a drive name followed by a
-colon `:`.  Separate containers in your paths using a backslash `\` or a
-forward slash `/`.  If you are referencing a specific item, it should be the
-last item in the path. An *Absolute* path is absolute, it should not
-change based on your current location.
-
-This is an example of an *Absolute* path.
-
-```
-C:\Windows\System32\shell.dll
-```
-
-A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
-indicates the current location, the double dot `..` represents the location
-directly above your current location. You can use multiple combinations
-of dot `.` and double dot `..`. A *Relative* path can change based on your
-current location.
-
-This is an example of a *Relative* path.
-
-```
-PS C:\Windows\System32\> .\shell.dll
-```
-
-Notice that this path is only valid if you are in the System32 directory.
-
-If any element in the fully qualified name includes spaces, you must enclose
-the name in quotation marks `" "`. The following example shows a fully
-qualified path that includes spaces.
-
-```
-"C:\Program Files\Internet Explorer\iexplore.exe"
-```
-
 ## Navigating the Registry drives
 
 The **Registry** provider exposes its data store as two default drives. The
@@ -127,174 +90,382 @@ PS C:\> cd HKLM:\Software
 > `cd` is an alias for
 > [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
 
-### Example 2
-
-This command gets an object that represents the current location:
+This last example shows another path syntax you can use to navigate the
+**Registry** provider. This syntax uses the provider name, followed by two
+colons `::`.  This syntax allows you to use the full HIVE name, instead
+of the mapped drive name `HKLM`.
 
 ```powershell
-Get-Location
+cd "Registry::HKEY_LOCAL_MACHINE\Software"
 ```
 
-## Managing registry keys
+## Displaying the contents of registry keys
 
-### Example 1
+The registry is divided into keys, subkeys and entries.  For more information about registry structure see [Structure of the Registry](/windows/desktop/sysinfo/structure-of-the-registry.md).
 
-This command gets each immediate subkeys of the `HKEY_LOCAL_MACHINE\Software` registry key:
+In a **Registry** drive, each key is a container. A key can contain any number
+of keys. A registry key that has a parent key is called a subkey. You can
+use `Get-ChildItem` to view registry keys and `Set-Location` to navigate to
+a key path.
 
-```powershell
-Get-ChildItem -Path HKLM:\software
+Registry values are attributes of a registry key. In the **Registry** drive
+they are called **Item Properties**. A registry key can have both children
+keys and item properties.
+
+In this example the difference between `Get-Item` and `Get-ChildItem` is
+shown. When you use `Get-Item` on the "Spooler" registry key, you can view its properties.
+
+```
+PS C:\ > Get-Item -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
+
+
+    Hive: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
+
+
+Name                           Property
+----                           --------
+Spooler                        DependOnService    : {RPCSS, http}
+                               Description        : @%systemroot%\system32\spoolsv.exe,-2
+                               DisplayName        : @%systemroot%\system32\spoolsv.exe,-1
+                               ErrorControl       : 1
+                               FailureActions     : {16, 14, 0, 0...}
+                               Group              : SpoolerGroup
+                               ImagePath          : C:\WINDOWS\System32\spoolsv.exe
+                               ObjectName         : LocalSystem
+                               RequiredPrivileges : {SeTcbPrivilege, SeImpersonatePrivilege, SeAuditPrivilege,
+                               SeChangeNotifyPrivilege...}
+                               ServiceSidType     : 1
+                               Start              : 2
+                               Type               : 272
 ```
 
-### Example 2
+Each registry key can also have subkeys. When you use `Get-Item` on a registry
+key, the subkeys are not displayed. The `Get-ChildItem` cmdlet will show you
+children items of the "Spooler" key, including each subkeys properties. The
+parent keys properties are not shown when using `Get-ChildItem`.
 
-This command creates the `TestNew` subkey under the `HKCU:\Environment` subkey:
+```
+PS C:\> Get-ChildItem -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
 
-```powershell
-New-Item -Path hkcu:\Environment\TestNew
+
+    Hive: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Spooler
+
+
+Name                           Property
+----                           --------
+Performance                    Close           : PerfClose
+                               Collect         : PerfCollect
+                               Collect Timeout : 2000
+                               Library         : C:\Windows\System32\winspool.drv
+                               Object List     : 1450
+                               Open            : PerfOpen
+                               Open Timeout    : 4000
+Security                       Security : {1, 0, 20, 128...}
 ```
 
-### Example 3
+The `Get-Item` cmdlet can also be used on the current location. The following
+example navigates to the "Spooler" registry key and gets the item properties.
+The dot `.` is used to indicate the current location.
 
-This command deletes the `TestNew` subkey of the `HKEY_CURRENT_USER\Environment` key:
+```
+PS C:\> cd HKLM:\System\CurrentControlSet\Services\Spooler
+PS HKLM:\SYSTEM\CurrentControlSet\Services\Spooler> Get-Item .
 
-```powershell
-Remove-Item -Path hkcu:\Environment\TestNew
+    Hive: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
+
+Name                           Property
+----                           --------
+Spooler                        DependOnService    : {RPCSS, http}
+                               Description        : @%systemroot%\system32\spoolsv.exe,-2
+...
 ```
 
-### Example 4
+For more information on the cmdlets covered in this section, see the following
+articles.
 
-This command copies the `TestNew` key to the `TestCopy` subkey:
+-[Get-Item](Get-Item.md)
+-[Get-ChildItem](Get-ChildItem.md)
+
+## Viewing registry key values
+
+Registry key values are stored as properties of each registry key. The `Get-ItemProperty` cmdlet views registry key properties using the name you specify. The result is a **PSCustom** object containing the
+properties you specify.
+
+The Following example uses the `Get-ItemProperty` cmdlet to view all
+properties. Storing the resulting object in a variable allows you to access
+the desired property value.
 
 ```powershell
-Copy-Item -Path  hkcu:\Environment\TestNew  hkcu:\Environment\TestNew\TestCopy
+$p = Get-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
+$p.DependOnService
 ```
 
-### Example 5
-
-This command gets all the subkeys of the `HKEY_LOCAL_MACHINE\Software` registry key:
-
-```powershell
-Get-ChildItem -Path HKLM:\Software -Recurse
+```output
+RPCSS
+http
 ```
 
-### Example 6
+Specifying a value for the `-Name` parameter selects the properties you
+specify and returns the **PSCustomObject**.  The following example shows
+the difference in output when you use the `-Name` parameter.
 
-This command moves the `HKEY_CURRENT_USER\Environment\testnewcopy` registry key, its subkeys and their registry entries to the `HKEY_CURRENT_USER\Environment\testnew` key:
+```
+PS C:\> Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Wbem
 
-```powershell
-Move-Item -Path hkcu:\environment\testnewcopy -Destination hkcu:\environment\testnew
+BUILD                      : 17134.1
+Installation Directory     : C:\WINDOWS\system32\WBEM
+MOF Self-Install Directory : C:\WINDOWS\system32\WBEM\MOF
+PSPath                     : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wbem
+PSParentPath               : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft
+PSChildName                : Wbem
+PSDrive                    : HKLM
+PSProvider                 : Microsoft.PowerShell.Core\Registry
+
+PS C:\> Get-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Wbem -Name BUILD
+
+BUILD        : 17134.1
+PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wbem
+PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft
+PSChildName  : Wbem
+PSDrive      : HKLM
+PSProvider   : Microsoft.PowerShell.Core\Registry
 ```
 
-### Example 7
-
-This command renames the `HKEY_CURRENT_USER\Environment\testnew` registry key to `HKEY_CURRENT_USER\Environment\test`:
+Beginning in PowerShell 5.0, the `Get-ItemPropertyValue` cmdlet returns
+only the value of the property you specify.
 
 ```powershell
-Rename-Item -Path hkcu:\environment\testnew\ -NewName test
+Get-ItemPropertyValue -Path HKLM:\SOFTWARE\Microsoft\Wbem -Name BUILD
 ```
 
-### Example 8
-
-This command gets the security descriptor of the specified registry key:
-
-```powershell
-Get-Acl -Path hkcu:\environment\testnew | Format-List -Property *
+```output
+17134.1
 ```
 
-## Managing registry entries
+For more information on the cmdlets used in this section, see the following
+articles.
 
-### Example 1
+- [Get-ItemProperty](Get-ItemProperty.md)
+- [Get-ItemPropertyValue](Get-ItemProperty.md)
 
-This command gets the registry entries in the `HKEY_CURRENT_USER\Environment` registry key:
+## Changing registry key values
 
-```powershell
-Get-ItemProperty -Path hkcu:\Environment
+The `Set-ItemProperty` cmdlet will set attributes for registry keys. The following example uses `Set-ItemProperty` to change the spooler service start type to manual. The example changes the **StartType** back to *Automatic* using the `Set-Service` cmdlet.
+
+```
+PS C:\> Get-Service spooler | Select-Object Name, StartMode
+
+Name    StartType
+----    ---------
+spooler Automatic
+
+PS C:\> $path = "HKLM:\SYSTEM\CurrentControlSet\Services\Spooler\"
+PS C:\> Set-ItemProperty -Path $path -Name Start -Value 3
+PS C:\> Get-Service spooler | Select-Object Name, StartMode
+
+Name    StartType
+----    ---------
+spooler    Manual
+
+PS C:\> Set-Service -Name Spooler -StartupType Automatic
 ```
 
-This command gets the **Default** registry entry only when it contains data.
-
-### Example 2
-
-This command gets the **Temp** registry entry in the `HKEY_CURRENT_USER\Environment` key:
+Each registry key has a *default* value. You can change the *default* value
+for a registry key with either `Set-Item` or `Set-ItemProperty`.
 
 ```powershell
-Get-ItemProperty -Path hkcu:\Environment -Name Temp
+Set-ItemProperty -Path HKLM:\SOFTWARE\Contoso -Name "(default)" -Value "one" Set-Item -Path HKLM:\SOFTWARE\Contoso -Value "two"
 ```
 
-### Example 3
+For more information on the cmdlets used in this section, see the following
+articles.
 
-This command creates a **PSTest** registry entry in the `HKEY_CURRENT_USER\Environment` key and sets its value to 1:
+- [Set-Item](Set-Item.md)
+- [Set-ItemProperty](Set-ItemProperty.md)
 
-```powershell
-New-ItemProperty -Path hkcu:\environment -Name PSTest -Value 1 -PropertyType dword
+## Creating registry keys and values
+
+The `New-Item` cmdlet will create registry keys with a name that you provide.
+You can also use the `mkdir` function which calls the `New-Item` cmdlet
+internally.
+
+```
+PS HKLM:\SOFTWARE\> mkdir ContosoCompany
+
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE
+
+Name                           Property
+----                           --------
+ContosoCompany
 ```
 
-### Example 4
-
-This command changes the value of the **PSTest** registry entry  in the `HKEY_CURRENT_USER\Environment` key to "Start" and changes its data type to REG_SZ (string):
+You can use the `New-ItemProperty` cmdlet to create to **Item Properties**
+on a registry key that you specify. The following example creates a new
+DWORD value on the ContosoCompany registry key.
 
 ```powershell
-Set-ItemProperty -Path hkcu:\environment -Name PSTest -Value Start -Type string
+$path = "HKLM:\SOFTWARE\ContosoCompany"
+New-ItemProperty -Path  -Name Test -Type DWORD -Value 1
 ```
 
-### Example 5
+> [!NOTE]
+> Review the dynamic parameters section in this article for other allowed
+> type values.
 
-This command renames the **PSTest** registry entry in the `HKEY_CURRENT_USER\Environment` key to **PSTestNew**:
+See [New-ItemProperty](New-ItemProperty.md) for more details on cmdlet usage.
+
+## Copying registry keys and values
+
+In the **Registry** provider, use the `Copy-Item` cmdlet copies registry keys and values. Use the `Copy-ItemProperty` cmdlet to copy registry values only. The following command copies the "Contoso" registry key, and its properties to the specified location "HKLM:\Software\Fabrikam".
+
+`Copy-Item` creates the destination key if it does not exist. If the
+destination key exists, `Copy-Item` creates a duplicate of the source key
+as a child item (subkey) of the destination key.
 
 ```powershell
-Rename-ItemProperty -Path hkcu:\environment -Name PSTest -NewName PSTestNew
+Copy-Item -Path  HKLM:\Software\Contoso -Destination HKLM:\Software\Fabrikam
 ```
 
-### Example 6
-
-This command copies the **PSTestNew** registry entry from the `HKEY_CURRENT_USER\Environment` key to the `HKEY_CURRENT_USER\Environment\testnewcopy` key:
+The following command uses the `Copy-ItemProperty` cmdlet to copy the "Server"
+value from the "Contoso" key to the "Fabrikam" key.
 
 ```powershell
-Copy-ItemProperty -Path hkcu:\environment -Destination hkcu:\environment\testnewcopy -Name pstestnew
+$source = "HKLM:\SOFTWARE\Contoso"
+$dest = "HKLM:\SOFTWARE\Fabrikam"
+Copy-ItemProperty -Path $source -Destination $dest -Name Server
 ```
 
-### Example 7
+For more information on the cmdlets used in this section, see the following
+articles.
 
-The command moves the **pstestnew** registry entry from the `HKEY_CURRENT_USER\environment\testnewcopy` key to the `HKEY_CURRENT_USER\environment\testnew` key:
+- [Copy-Item](Copy-Item.md)
+- [Copy-ItemProperty](Copy-ItemProperty.md)
+
+## Moving registry keys and values
+
+The `Move-Item` and `Move-ItemProperty` cmdlets behave like their "Copy"
+counterparts. If the destination exists, `Move-Item` moves the source
+key underneath the destination key. If the destination key does not exist
+the source key is moved to the destination path.
+
+The following command moves the "Contoso" key to the path
+"HKLM:\SOFTWARE\Fabrikam".
 
 ```powershell
-Move-ItemProperty -Path hkcu:\environment\testnewcopy -Destination hkcu:\environment\testnew -Name pstestnew
+Move-Item -Path HKLM:\SOFTWARE\Contoso -Destination HKLM:\SOFTWARE\Fabrikam
 ```
 
-### Example 8
-
-This command clears the value of the **pstestnew** registry entry in the `HKEY_CURRENT_USER\Environment\testnew` key:
+This command moves all of the properties from "HKLM:\SOFTWARE\ContosoCompany"
+to "HKLM:\SOFTWARE\Fabrikam".
 
 ```powershell
-Clear-ItemProperty -Path hkcu:\environment\testnew -Name pstestnew
+$source = "HKLM:\SOFTWARE\Contoso"
+$dest = "HKLM:\SOFTWARE\Fabrikam"
+Move-ItemProperty -Path $source -Destination $dest -Name *
 ```
 
-You can use the [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md) cmdlet to clear the value of the default registry entry for a subkey. For example, the following command clears the value of the default entry of the `HKEY_CURRENT_USER\Environment\testnew` registry key:
+For more information on the cmdlets used in this section, see the following
+articles.
+
+- [Move-Item](Move-Item.md)
+- [Move-ItemProperty](Move-ItemProperty.md)
+
+## Renaming registry keys and values
+
+You can rename registry keys and values just like you would files and folders.
+`Rename-Item` renames registry keys, while `Rename-ItemProperty` renames
+registry values.
 
 ```powershell
-Clear-Item -Path hkcu:\environment\testnew
+$path = "HKLM:\SOFTWARE\Contoso"
+Rename-ItemProperty -Path $path -Name ContosoTest -NewName FabrikamTest
+Rename-Item -Path $path -NewName Fabrikam
 ```
 
-### Example 9
+## Changing security descriptors
 
-This command deletes the pstestnew registry entry from the `HKEY_CURRENT_USER\Environment\testnew` registry key:
+You can permission registry keys using the `Get-Acl` and `Set-Acl` cmdlets.
+The following example adds a new user with full control to the "HKLM:\SOFTWARE\Contoso" registry key.
 
 ```powershell
-Remove-ItemProperty -Path hkcu:\environment\testnew -Name pstestnew
+$acl = Get-Acl -Path HKLM:\SOFTWARE\Contoso
+$rule = New-Object System.Security.AccessControl.RegistryAccessRule `
+("CONTOSO\jsmith", "FullControl", "Allow")
+$acl.SetAccessRule($rule)
+$acl | Set-Acl -Path HKLM:\SOFTWARE\Contoso
 ```
 
-### Example 10
+For more examples and cmdlet usage details see the following articles.
 
-This command changes the value of the default registry entry in the `HKEY_CURRENT_USER\Environment\testnew` key to "default value":
+- [Get-Acl](Get-Acl.md)
+- [Set-Acl](Set-Acl.md)
 
-```powershell
-Set-ItemProperty -Path hkcu:\environment\testnew -Name "(default)" -Value "default value"
+## Removing and clearing registry keys and values
+
+You can remove contained items by using **Remove-Item**, but you will be prompted to confirm the removal if the item contains anything else. The
+following example attempts to delete a key "HKLM:\SOFTWARE\Contoso".
+
+```
+PS C:\> dir HKLM:\SOFTWARE\Contoso\
+
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Contoso
+
+Name                           Property
+----                           --------
+ChildKey
+
+PS C:\> Remove-Item -Path HKLM:\SOFTWARE\Contoso
+
+Confirm
+The item at HKLM:\SOFTWARE\Contoso has children and the -Recurse
+parameter was not specified. If you continue, all children will be removed with
+ the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
+(default is "Y"):
 ```
 
-You can also change the default value of a registry key by using the [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md) cmdlet. For example, the following command updates the default value of the testnew key:
+To delete contained items without prompting, specify the `-Recurse` parameter.
 
 ```powershell
-Set-Item -Path hkcu:\environment\testnew -Value "another default value"
+Remove-Item -Path HKLM:\SOFTWARE\Contoso -Recurse
+```
+
+If you wanted to remove all items within "HKLM:\SOFTWARE\Contoso" but not "HKLM:\SOFTWARE\Contoso" itself, use a trailing backslash `\` followed by a
+wildcard.
+
+```powershell
+Remove-Item -Path HKLM:\SOFTWARE\Contoso\* -Recurse
+```
+
+This command deletes the "ContosoTest" registry value from the "HKLM:\SOFTWARE\Contoso" registry key.
+
+```powershell
+Remove-ItemProperty -Path HKLM:\SOFTWARE\Contoso -Name ContosoTest
+```
+
+`Clear-Item` clears all registry values for a key. The following example
+clears all values from the "HKLM:\SOFTWARE\Contoso" registry key.
+
+```
+PS HKLM:\SOFTWARE\> Get-Item .\Contoso\
+
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE
+
+Name                           Property
+----                           --------
+Contoso                        Server     : {a, b, c}
+                               HereString : {This is text which contains
+                                            newlines. It also contains "quoted" strings}
+                               (default)  : 1
+
+PS HKLM:\SOFTWARE\> Clear-Item .\Contoso\
+PS HKLM:\SOFTWARE\> Get-Item .\Contoso\
+
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE
+
+Name                           Property
+----                           --------
+Contoso
 ```
 
 ## Dynamic parameters
@@ -320,7 +491,6 @@ This parameter works as designed on the [Set-ItemProperty](../../Microsoft.Power
 #### Cmdlets supported
 
 - [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)
-
 - [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
 
 ## Getting help
@@ -337,7 +507,7 @@ Get-Help Get-ChildItem
 ```
 
 ```powershell
-Get-Help Get-ChildItem -Path c:
+Get-Help Get-ChildItem -Path C:
 ```
 
 {{Make provider specific>}}

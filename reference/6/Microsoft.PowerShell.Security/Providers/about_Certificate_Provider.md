@@ -68,40 +68,6 @@ The Certificate drive exposes the following types.
 
 ## Working with provider paths
 
-A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
-should be usable from any location and start with a drive name followed by a
-colon `:`.  Separate containers in your paths using a backslash `\` or a
-forward slash `/`.  If you are referencing a specific item, it should be the
-last item in the path. An *Absolute* path is absolute, it should not
-change based on your current location.
-
-This is an example of an *Absolute* path.
-
-```
-C:\Windows\System32\shell.dll
-```
-
-A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
-indicates the current location, the double dot `..` represents the location
-directly above your current location. You can use multiple combinations
-of dot `.` and double dot `..`. A *Relative* path can change based on your
-current location.
-
-This is an example of a *Relative* path.
-
-```
-PS C:\Windows\System32\> .\shell.dll
-```
-
-Notice that this path is only valid if you are in the System32 directory.
-
-If any element in the fully qualified name includes spaces, you must enclose
-the name in quotation marks `" "`. The following example shows a fully
-qualified path that includes spaces.
-
-```
-"C:\Program Files\Internet Explorer\iexplore.exe"
-```
 
 ## Navigating the Certificate drive
 
