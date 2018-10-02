@@ -17,7 +17,7 @@ In the Command Pane or Script Pane, type a few characters of a command and then 
 
 ## To automatically complete a cmdlet parameter entry
 
-In the Command Pane or Script pane, type a cmdlet followed by a dash, and then press TAB.
+In the Command Pane or Script pane, type a cmdlet followed by a dash and then press TAB.
 
 For example, type `Get-Process -` and then press TAB multiple times to display each of the parameters for the cmdlet in turn.
 
