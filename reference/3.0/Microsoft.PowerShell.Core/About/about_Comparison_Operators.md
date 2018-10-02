@@ -137,6 +137,8 @@ PS> 7, 8, 9 -gt 8
 9
 ```
 
+Note: Not to be confused with `>`, the greater-than operator in many other programming languages. See: [Powershell redirection operators](/reference/3.0/Microsoft.PowerShell.Core/About/about_Redirection.md#potential-confusion-with-comparison-operators).  
+
 #### -ge
 
 Description: Greater-than or equal to.
