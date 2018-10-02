@@ -161,7 +161,7 @@ The '<' operator is reserved for future use.
 + FullyQualifiedErrorId : RedirectionNotSupported
 ```
 
-If numeric comparison is the required operation, `-lt` and `-gt` should be used. See: [`-gt` Comparison Operator](reference/3.0/Microsoft.PowerShell.Core/About/about_Comparison_Operators.md#-gt)
+If numeric comparison is the required operation, `-lt` and `-gt` should be used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
 
 ## See also
 
