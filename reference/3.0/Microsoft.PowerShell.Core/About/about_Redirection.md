@@ -127,7 +127,7 @@ with its `Encoding` parameter.
 
 ### Potential confusion with comparison operators 
 
-The `>` operator is not to be confused with the [Greater-than](/reference/3.0/Microsoft.PowerShell.Core/About/about_Comparison_Operators.md#-gt) comparison operator (often denoted as `>` in other programming languages). 
+The `>` operator is not to be confused with the [Greater-than](about_Comparison_Operators.md#-gt) comparison operator (often denoted as `>` in other programming languages). 
 
 Depending on the objects being compared, the output using `>` can appear to be correct (because 36 is not greater than 42).
 
