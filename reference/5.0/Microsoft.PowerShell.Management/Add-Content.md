@@ -205,7 +205,7 @@ Accept wildcard characters: True
 ```
 
 ### -Force
-Forces the command to run without asking for user confirmation.
+Overrides the read-only attribute, allowing you to add content to a read-only file.
 
 ```yaml
 Type: SwitchParameter
