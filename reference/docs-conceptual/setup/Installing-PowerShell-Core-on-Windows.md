@@ -61,14 +61,14 @@ Windows IoT already comes with Windows PowerShell which we will use to deploy Po
 
    ```powershell
    Enter-PSSession $s
-   cd u:\users\administrator\downloads
+   Set-Location u:\users\administrator\downloads
    Expand-Archive .\PowerShell-6.1.0-win-arm32.zip
    ```
 
 4. Setup remoting to PowerShell Core 6
 
    ```powershell
-   cd .\PowerShell-6.1.0-win-arm32
+   Set-Location .\PowerShell-6.1.0-win-arm32
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
