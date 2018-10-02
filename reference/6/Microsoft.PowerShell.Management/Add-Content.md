@@ -87,6 +87,14 @@ In this example, C:\Tests\logs directory exists.
 The command creates the Test134.log file.
 The command will not work if any directory from the path is missing (for example if C:\Tests exists but C:\Tests\logs not, the command will fail).
 
+### Example 5: Add the contents to a read only file
+
+```powershell
+PS C:\> Add-Content -Path C:\Test\IsReadOnlyTextFile.txt -Value "Add value to read only text file" -Force
+```
+
+This command adds the value to the file even if the IsReadOnly file attribute is set to True.
+
 ## PARAMETERS
 
 ### -Confirm
@@ -197,7 +205,7 @@ Accept wildcard characters: True
 ```
 
 ### -Force
-Forces the command to run without asking for user confirmation.
+Overrides the read-only attribute, allowing you to add content to a read-only file.
 
 ```yaml
 Type: SwitchParameter
