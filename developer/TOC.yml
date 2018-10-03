@@ -417,7 +417,7 @@
           href: ./hosting/remoterunspace01-sample.md
         - name: RemoteRunspacePool01 Sample
           href: ./hosting/remoterunspacepool01-sample.md
-  - name: Writing a Windows PowerShell Formatting File
+  - name: Writing a PowerShell Formatting File
     href: ./format/writing-a-powershell-formatting-file.md
     items:
     - name: Formatting File Overview
