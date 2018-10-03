@@ -127,29 +127,33 @@ with its `Encoding` parameter.
 
 ### Potential confusion with comparison operators 
 
-The `>` operator is not to be confused with the [Greater-than](about_Comparison_Operators.md#-gt) comparison operator (often denoted as `>` in other programming languages). 
+The `>` operator is not to be confused with the
+[greater-than](about_Comparison_Operators.md#-gt) comparison operator often
+used in other programming languages.
 
-Depending on the objects being compared, the output using `>` can appear to be correct (because 36 is not greater than 42).
+Depending on the objects being compared, the output using `>` can appear to be
+correct. For example:
 
 ```powershell
 PS> if (36 > 42) { "true" } else { "false" }
 false
 ```
 
-However, a check of the local filesystem can see that a file called `42` was written, with the contents `36`. 
+However, the local filesystem now has a file named `42` that contains was
+the string `36`.
 
 ```powershell
-PS> dir
+PS> Get-ChildItem
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 ------          1/02/20  10:10 am              3 42
 
-PS> cat 42
+PS> Get-Content 42
 36
 ```
 
-Attempting to use the reverse comparison `<` (less than), yields a system error: 
+Attempting a *less-than* comparison using `<` yields the following error: 
 
 ```powershell
 PS> if (36 < 42) { "true" } else { "false" }
@@ -157,11 +161,12 @@ At line:1 char:8
 + if (36 < 42) { "true" } else { "false" }
 +        ~
 The '<' operator is reserved for future use.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
++ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecord
+Exception
 + FullyQualifiedErrorId : RedirectionNotSupported
 ```
 
-If numeric comparison is the required operation, `-lt` and `-gt` should be used. See: [`-gt` Comparison Operator](about_Comparison_Operators.md#-gt)
+For more information, see about_Comparison_Operators](about_Comparison_Operators.md#-gt).
 
 ## See also
 
