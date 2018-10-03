@@ -125,6 +125,49 @@ If the file has a different encoding, the output might not be formatted
 correctly. To redirect content to non-Unicode files, use the `Out-File` cmdlet
 with its `Encoding` parameter.
 
+### Potential confusion with comparison operators 
+
+The `>` operator is not to be confused with the
+[greater-than](about_Comparison_Operators.md#-gt) comparison operator often
+used in other programming languages.
+
+Depending on the objects being compared, the output using `>` can appear to be
+correct. For example:
+
+```powershell
+PS> if (36 > 42) { "true" } else { "false" }
+false
+```
+
+However, the local filesystem now has a file named `42` that contains was
+the string `36`.
+
+```powershell
+PS> Get-ChildItem
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+------          1/02/20  10:10 am              3 42
+
+PS> Get-Content 42
+36
+```
+
+Attempting a *less-than* comparison using `<` yields the following error: 
+
+```powershell
+PS> if (36 < 42) { "true" } else { "false" }
+At line:1 char:8
++ if (36 < 42) { "true" } else { "false" }
++        ~
+The '<' operator is reserved for future use.
++ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecord
+Exception
++ FullyQualifiedErrorId : RedirectionNotSupported
+```
+
+For more information, see about_Comparison_Operators](about_Comparison_Operators.md#-gt).
+
 ## See also
 
 [Out-File](../../microsoft.powershell.utility/Out-File.md)
