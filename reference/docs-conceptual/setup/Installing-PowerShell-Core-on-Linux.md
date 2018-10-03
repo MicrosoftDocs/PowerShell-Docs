@@ -579,9 +579,6 @@ sudo snap remove powershell-preview
 
 ## Kali
 
-> [!NOTE]
-> Kali support is not currently working. Please use the [Snap package][snap] instead.
-
 ### Installation
 
 ```sh
