@@ -78,4 +78,4 @@ For more information about how selection conditions can be used, see [Defining C
 
 [EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

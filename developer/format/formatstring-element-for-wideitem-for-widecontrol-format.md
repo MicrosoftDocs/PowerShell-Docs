@@ -73,4 +73,4 @@ The following example shows how to define a formatting string for the value of t
 
 [WideItem Element for WideControl (Format)](./wideitem-element-for-widecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

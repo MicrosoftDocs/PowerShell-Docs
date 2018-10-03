@@ -140,4 +140,4 @@ The previous selection set is referenced in the `ViewSelectedBy` element of a ta
 
 [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)
