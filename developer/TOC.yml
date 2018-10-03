@@ -443,8 +443,8 @@
         href: ./format/defining-conditions-for-displaying-data.md
       - name: Formatting Displayed Data
         href: ./format/formatting-displayed-data.md
-      - name: Windows PowerShell Formatting Files
-        href: ./format/windows-powershell-formatting-files.md
+      - name: PowerShell Formatting Files
+        href: ./format/powershell-formatting-files.md
     - name: Examples of Formatting Files
       href: ./format/examples-of-formatting-files.md
       items:
