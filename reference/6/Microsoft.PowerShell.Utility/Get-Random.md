@@ -205,6 +205,21 @@ The first command succeeds, but the second command fails.
 When the value of **Minimum** is a 32-bit integer, the default value of *Maximum* is Int32.MaxValues.
 The command fails because the value of *Maximum* must be greater than the value of *Minimum*.
 
+### Example 15: Roll fair dice
+```
+PS /> 1..1200 | ForEach-Object { 1..6 | Get-Random } | Group-Object | Select-Object Name,Count
+Name Count
+---- -----
+1      206
+2      199
+3      196
+4      226
+5      185
+6      188
+```
+
+This command rolls a fair die 1200 times and counts the outcomes.
+
 ## PARAMETERS
 
 ### -Count
