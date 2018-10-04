@@ -139,10 +139,8 @@ You can pipe a history ID to Invoke-History.
 * The session history is a list of the commands entered during the session along with the ID. The session history represents the order of execution, the status, and the start and end times of the command. As you enter each command, PowerShell adds it to the history so that you can reuse it.
   For more information about the session history, see [about_History](About/about_History.md).
 
-  You can also refer to **Invoke-History** by its built-in aliases, "r" and "ihy".
-For more information, see about_Aliases (http://go.microsoft.com/fwlink/?LinkID=113207).
-
-*
+* You can also refer to `Invoke-History` by its built-in aliases, `r` and `ihy`.
+  For more information, see [about_Aliases](About/about_Aliases.md).
 
 ## RELATED LINKS
 
