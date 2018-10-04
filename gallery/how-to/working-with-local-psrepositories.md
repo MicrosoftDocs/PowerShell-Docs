@@ -22,22 +22,22 @@ cmdlets to install the latest version of PowerShellGet into your local repositor
 There are two ways to create a local PSRepository: NuGet server or file share. Each type has
 advantages and disadvantages:
 
-- NuGet Server
+NuGet Server
 
-  | Advantages| Disadvantages |
-  | --- | --- |
-  | Closely mimics PowerShellGallery functionality | Multi-tier app requires operations planning & support |
-  | NuGet integrates with Visual Studio, other tools | Authentication model and NuGet accounts management needed |
-  | NuGet supports metadata in `.Nupkg` packages | Publishing requires API Key management & maintenance |
-  | Provides search, package administration, etc. | |
+| Advantages| Disadvantages |
+| --- | --- |
+| Closely mimics PowerShellGallery functionality | Multi-tier app requires operations planning & support |
+| NuGet integrates with Visual Studio, other tools | Authentication model and NuGet accounts management needed |
+| NuGet supports metadata in `.Nupkg` packages | Publishing requires API Key management & maintenance |
+| Provides search, package administration, etc. | |
 
-- File Share
+File Share
 
-  | Advantages| Disadvantages |
-  | --- | --- |
-  | Easy to set up, back up, and maintain | Metadata used by PowerShellGet isn't available |
-  | Simple security model - user permissions on the share | No UI beyond basic file share |
-  | No constraints such as replacing existing items | Limited security and no recording of who updates what |
+| Advantages| Disadvantages |
+| --- | --- |
+| Easy to set up, back up, and maintain | Metadata used by PowerShellGet isn't available |
+| Simple security model - user permissions on the share | No UI beyond basic file share |
+| No constraints such as replacing existing items | Limited security and no recording of who updates what |
 
 PowerShellGet works with either type and supports locating versions and dependency installation.
 However, some features that work for the PowerShell Gallery aren't available for base NuGet
