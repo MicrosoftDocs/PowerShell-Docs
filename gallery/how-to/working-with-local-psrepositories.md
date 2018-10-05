@@ -14,7 +14,7 @@ This supports the following scenarios:
 - Deliver PowerShell scripts and modules to systems that can't access the internet
 
 This article describes how to set up a local PowerShell repository. The article also covers the
-OfflinePowerShellGetDeploy module available from the PowerShell Gallery. This module contains
+[OfflinePowerShellGetDeploy][] module available from the PowerShell Gallery. This module contains
 cmdlets to install the latest version of PowerShellGet into your local repository.
 
 ## Local repository types
@@ -49,7 +49,9 @@ servers or file shares.
 
 For more information about NuGet, take a look at the following links:
 
-- [NuGet.org](https://www.nuget.org)
+- [Hosting your own NuGet feeds](/nuget/hosting-packages/overview)
+- [Setting up a local feed](/nuget/hosting-packages/local-feeds)
+- [Installing NuGet.Server](/nuget/hosting-packages/nuget-server)
 - [NuGet server download package](https://www.nuget.org/packages/NuGet.Server/)
 - [Deploying NuGet to Azure](https://github.com/NuGet/NuGetGallery/blob/master/docs/Deploying/README.md)
 
@@ -163,3 +165,5 @@ Install-PowerShellGetOffline -LocalFolder 'F:\OfflinePowerShellGet'
 
 After running these commands, you are ready to run `Register-PSRepository` and use
 PowerShellGet with your local repository.
+
+[OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.0-alpha01
