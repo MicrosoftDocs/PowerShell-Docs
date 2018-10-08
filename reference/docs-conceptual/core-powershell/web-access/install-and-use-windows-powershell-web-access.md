@@ -494,7 +494,7 @@ gateway as a root website.
    dialog box. You must use an unused port to run Windows PowerShell Web Access.
 
 1. Optionally, if needed for your organization, specify a host name that makes sense to your
-   organization and users, such as **www.contoso.com**. Click **OK**.
+   organization and users, such as **`www.contoso.com`**. Click **OK**.
 
 1. For a more secure production environment, we strongly recommend providing a valid certificate
    that has been signed by a CA. You must provide an SSL certificate, because users can only
@@ -610,8 +610,8 @@ valid SSL certificate from a CA.
      [GeoTrust](https://www.geotrust.com/). The certificate's common name must match the host header
      in the request.
 
-     For example, if the client browser requests http://www.contoso.com/, then the common name must
-     also be http://www.contoso.com/. This is the most secure and recommended option for providing
+     For example, if the client browser requests `http://www.contoso.com/`, then the common name must
+     also be `http://www.contoso.com/`. This is the most secure and recommended option for providing
      the Windows PowerShell Web Access gateway with a certificate.
 
    - Click **Create a Self-Signed Certificate** to create a certificate that you can use

@@ -579,19 +579,22 @@ sudo snap remove powershell-preview
 
 ## Kali
 
-> [!NOTE]
-> Kali support is not currently working. Please use the [Snap package][snap] instead.
-
 ### Installation
 
 ```sh
 # Download & Install prerequisites
-sudo apt-get install libunwind8 libicu55
-wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
-sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-9_amd64.deb
+dpkg -i libicu57_57.1-9_amd64.deb
+apt-get update && apt-get install -y curl gnupg apt-transport-https
 
-# Install PowerShell
-sudo dpkg -i powershell_6.1.0-1.ubuntu.16.04_amd64.deb
+# Add Microsoft public repository key to APT
+curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+
+# Add Microsoft package repository to the source list
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" | tee /etc/apt/sources.list.d/powershell.list
+
+# Install PowerShell package
+apt-get update && apt-get install -y powershell
 
 # Start PowerShell
 pwsh
@@ -600,7 +603,8 @@ pwsh
 ### Uninstallation - Kali
 
 ```sh
-sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
+# Uninstall PowerShell package
+apt-get remove -y powershell
 ```
 
 ## Raspbian

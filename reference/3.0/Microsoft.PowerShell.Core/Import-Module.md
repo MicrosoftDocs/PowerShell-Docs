@@ -487,7 +487,7 @@ Specifies arguments (parameter values) that are passed to a script module during
 This parameter is valid only when you are importing a script module.
 
 You can also refer to ArgumentList by its alias, "args".
-For more information, see about_Aliases.
+For more information, see [about_Aliases](About/about_Aliases.md).
 
 ```yaml
 Type: Object[]

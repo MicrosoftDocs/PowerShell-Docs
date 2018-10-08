@@ -246,7 +246,6 @@ Accept wildcard characters: False
 ```
 
 ### -AllowClobber
-
 Allows you to install a different version of a module that already exists on your computer.
 
 ```yaml
@@ -262,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-
+Specifies a user account that has rights to install a module for a specified package provider or source.
 
 ```yaml
 Type: PSCredential
@@ -292,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-
+Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 
 ```yaml
 Type: Uri
@@ -307,7 +306,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-
+Specifies a user account that has permission to use the proxy server that is specified by the Proxy parameter.
 
 ```yaml
 Type: PSCredential
@@ -322,7 +321,9 @@ Accept wildcard characters: False
 ```
 
 ### -SkipPublisherCheck
+Allows you to install a newer version of a module that already exists on your computer in the case when a newer one is not digitally signed by a trusted publisher and the newest existing module is digitally signed by a trusted publisher.
 
+It can happen for modules distributed with the operating system but maintained by the community, e.g. Pester or PSReadLine.
 
 ```yaml
 Type: SwitchParameter
@@ -346,7 +347,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-* This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.
+* This cmdlet runs on Windows PowerShell 5.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.
 
   If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the *Force* parameter to your command.
 

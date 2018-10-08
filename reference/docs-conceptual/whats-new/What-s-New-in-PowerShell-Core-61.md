@@ -208,13 +208,13 @@ and [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke
 
 ## Remoting improvements
 
-### PowerShell Direct tries to use PowerShell Core first
+### PowerShell Direct for Containers tries to use PowerShell Core first
 
 [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct)
-is a feature of PowerShell and Hyper-V that allows you to connect to a Hyper-V VM
+is a feature of PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container
 without network connectivity or other remote management services.
 
-In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the VM.
+In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the Container.
 Now, PowerShell Direct first attempts to connect using any available `pwsh.exe` on the `PATH` environment variable.
 If `pwsh.exe` isn't available, PowerShell Direct falls back to use `powershell.exe`.
 
@@ -330,46 +330,45 @@ By popular demand, `Update-Help` no longer needs to be run as an administrator.
 ### New methods/properties on `PSCustomObject`
 
 Thanks to [@iSazonov](https://github.com/iSazonov), we've added new methods and properties to `PSCustomObject`.
-`PSCustomObject` now includes a `Count`/`Length` property that gives the number of items.
-
-Both of these examples return `2` as the number of `PSCustomObjects` in the collection.
+`PSCustomObject` now includes a `Count`/`Length` property like other objects.
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Length
+$PSCustomObject = [pscustomobject]@{foo = 1}
+
+$PSCustomObject.Length
+```
+
+```Output
+1
 ```
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Count
+$PSCustomObject.Count
+```
+
+```Output
+1
 ```
 
 This work also includes `ForEach` and `Where` methods that allow you
 to operate and filter on `PSCustomObject` items:
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).ForEach({$_.foo+1})
+$PSCustomObject.ForEach({$_.foo + 1})
 ```
 
 ```Output
 2
-3
 ```
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).Where({$_.foo -gt 1})
+$PSCustomObject.Where({$_.foo -gt 0})
 ```
 
 ```Output
 foo
 ---
-  2
+  1
 ```
 
 ### `Where-Object -Not`
@@ -541,7 +540,7 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 To prevent the use of unencrypted traffic, PowerShell Remoting on Unix platforms now requires usage
 of NTLM/Negotiate or HTTPS.
 
-For more information on these changes, check out [PR #6799](https://github.com/PowerShell/PowerShell/pull/6799).
+For more information on these changes, check out [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
 ### Removed `VisualBasic` as a supported language in Add-Type
 
