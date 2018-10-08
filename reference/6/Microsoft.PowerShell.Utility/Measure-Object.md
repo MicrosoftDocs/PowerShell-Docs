@@ -18,7 +18,7 @@ Calculates the numeric properties of objects, and the characters, words, and lin
 ### GenericMeasure (Default)
 ```
 Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Sum] [-Average]
- [-Maximum] [-Minimum] [<CommonParameters>]
+ [-Maximum] [-Minimum] [-StandardDeviation] [<CommonParameters>]
 ```
 
 ### TextMeasure
@@ -32,7 +32,7 @@ The **Measure-Object** cmdlet calculates the property values of certain types of
 **Measure-Object** performs three types of measurements, depending on the parameters in the command.
 
 The **Measure-Object** cmdlet performs calculations on the property values of objects.
-It can count objects and calculate the minimum, maximum, sum, and average of the numeric values.
+It can count objects and calculate the minimum, maximum, sum, standard deviation and average of the numeric values.
 For text objects, it can count and calculate the number of lines, words, and characters.
 
 ## EXAMPLES
@@ -81,12 +81,13 @@ You can use **Measure-Object** to calculate the values of these properties, just
 ### Example 6: Measure Boolean values
 ```
 PS C:\> Get-ChildItem | Measure-Object -Property psiscontainer -Max -Sum -Min -Average
-Count    : 126
-Average  : 0.0634920634920635
-Sum      : 8
-Maximum  : 1
-Minimum  : 0
-Property : PSIsContainer
+Count             : 126
+Average           : 0.0634920634920635
+Sum               : 8
+Maximum           : 1
+Minimum           : 0
+StandardDeviation : 
+Property          : PSIsContainer
 ```
 
 This example demonstrates how the **Measure-Object** can measure Boolean values.
@@ -230,6 +231,21 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StandardDeviation
+Indicates that the cmdlet displays the standard deviation of the values of the specified properties.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: GenericMeasure
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
