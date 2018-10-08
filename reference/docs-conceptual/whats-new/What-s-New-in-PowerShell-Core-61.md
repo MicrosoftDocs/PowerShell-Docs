@@ -540,7 +540,7 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 To prevent the use of unencrypted traffic, PowerShell Remoting on Unix platforms now requires usage
 of NTLM/Negotiate or HTTPS.
 
-For more information on these changes, check out [PR #6799](https://github.com/PowerShell/PowerShell/pull/6799).
+For more information on these changes, check out [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
 ### Removed `VisualBasic` as a supported language in Add-Type
 
