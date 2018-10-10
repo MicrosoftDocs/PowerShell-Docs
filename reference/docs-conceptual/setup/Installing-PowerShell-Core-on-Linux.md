@@ -324,7 +324,7 @@ sudo apt-get remove powershell
 
 ### Installation via Package Repository (preferred) - CentOS 7
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).
+PowerShell Core, for Linux, is published to official Microsoft repositories for easy installation (and updates).
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -370,7 +370,7 @@ sudo yum remove powershell
 
 ### Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).
+PowerShell Core, for Linux, is published to official Microsoft repositories for easy installation (and updates).
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -432,7 +432,7 @@ solution when installing the PowerShell package.
 
 ### Installation via Package Repository (preferred) - OpenSUSE 42.3
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).
+PowerShell Core, for Linux, is published to official Microsoft repositories for easy installation (and updates).
 
 ```sh
 # Register the Microsoft signature key
@@ -481,7 +481,7 @@ sudo zypper remove powershell
 
 ### Installation via Package Repository (preferred) - Fedora 27, Fedora 28
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).
+PowerShell Core, for Linux, is published to official Microsoft repositories for easy installation (and updates).
 
 ```sh
 # Register the Microsoft signature key
