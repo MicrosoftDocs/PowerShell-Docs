@@ -154,7 +154,7 @@ It uses the *Title*, *Body*, *PreContent*, and *PostContent* parameters of **Con
 
 The first part of the command uses the Get-Service cmdlet to get the services on the computer that begin with A.
 The command uses a pipeline operator (|) to send the results to the **ConvertTo-Html** cmdlet.
-The cmdlet Out-File to send the output to the Services.htm file.
+The command also uses the Out-File cmdlet to send the output to the Services.htm file.
 
 A semicolon (;) ends the first command and starts a second command, which uses the Invoke-Item cmdlet (alias = "ii") to open the Services.htm file in the default browser.
 
