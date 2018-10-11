@@ -56,7 +56,7 @@ must configure enable password or key-based authentication.
    ```
 
 2. Install the latest [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) build from GitHub using the [installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instructions
-3. Edit the sshd_config file at the location where you installed Win32 OpenSSH
+3. Edit the sshd_config file located at `%ProgramData%\ssh`. 
 
    - Make sure password authentication is enabled
 
