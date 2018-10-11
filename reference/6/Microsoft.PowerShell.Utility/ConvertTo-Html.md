@@ -57,6 +57,7 @@ This command creates an HTML page that lists the PowerShell aliases in the curre
 
 The command uses the Get-Alias cmdlet to get the aliases.
 It uses the pipeline operator (|) to send the aliases to the **ConvertTo-Html** cmdlet, which creates the HTML page.
+The command also uses the Out-File cmdlet to send the HTML code to the aliases.htm file.
 
 ### Example 3: Create a web page to display PowerShell events
 ```
@@ -68,6 +69,7 @@ This command creates an HTML page called pslog.htm that displays the events in t
 It uses the Get-EventLog cmdlet to get the events in the Windows PowerShell log and then uses the pipeline operator (|) to send the events to the **ConvertTo-Html** cmdlet.
 The command also uses the Out-File cmdlet to send the HTML code to the pslog.htm file.
 
+The command also uses the Out-File cmdlet to send the HTML code to the pslog.htm file.
 
 ### Example 4: Create a web page to display processes
 ```
