@@ -216,7 +216,7 @@ Get-ChildItem
 
 You can move through a provider drive just as you would a hard disk drive.
 If the data is arranged in a hierarchy of items within items, use a
-backslash () to indicate a child item. Use the following format:
+backslash (`\`) to indicate a child item. Use the following format:
 
 ```
 drive:\location\child-location\...

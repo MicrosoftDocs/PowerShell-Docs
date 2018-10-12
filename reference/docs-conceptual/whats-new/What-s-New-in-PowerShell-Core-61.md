@@ -208,13 +208,13 @@ and [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke
 
 ## Remoting improvements
 
-### PowerShell Direct tries to use PowerShell Core first
+### PowerShell Direct for Containers tries to use PowerShell Core first
 
 [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct)
-is a feature of PowerShell and Hyper-V that allows you to connect to a Hyper-V VM
+is a feature of PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container
 without network connectivity or other remote management services.
 
-In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the VM.
+In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the Container.
 Now, PowerShell Direct first attempts to connect using any available `pwsh.exe` on the `PATH` environment variable.
 If `pwsh.exe` isn't available, PowerShell Direct falls back to use `powershell.exe`.
 
@@ -540,7 +540,7 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 To prevent the use of unencrypted traffic, PowerShell Remoting on Unix platforms now requires usage
 of NTLM/Negotiate or HTTPS.
 
-For more information on these changes, check out [PR #6799](https://github.com/PowerShell/PowerShell/pull/6799).
+For more information on these changes, check out [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
 ### Removed `VisualBasic` as a supported language in Add-Type
 
