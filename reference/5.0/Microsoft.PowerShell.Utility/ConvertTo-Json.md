@@ -11,6 +11,7 @@ title:  ConvertTo-Json
 # ConvertTo-Json
 
 ## SYNOPSIS
+
 Converts an object to a JSON-formatted string.
 
 ## SYNTAX
@@ -24,7 +25,7 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [<CommonPara
 The **ConvertTo-Json** cmdlet converts any object to a string in JavaScript Object Notation (JSON) format.
 The properties are converted to field names, the field values are converted to property values, and the methods are removed.
 
-You can then use the ConvertFrom-Json cmdlet to convert a JSON-formatted string to a JSON object, which is easily managed in Windows PowerShell.
+You can then use the **ConvertFrom-Json** cmdlet to convert a JSON-formatted string to a JSON object, which is easily managed in Windows PowerShell.
 
 Many web sites use JSON instead of XML to serialize data for communication between servers and web-based apps.
 
@@ -52,7 +53,7 @@ PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
 }
 ```
 
-This command uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
+This example uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
 
 ### Example 2
 
@@ -63,7 +64,7 @@ PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Com
 {"Admin":"True","Account":"User01","Domain":"Domain01"}
 ```
 
-This command shows the effect of using the `-Compress` parameter of **ConvertTo-Json**.
+This example shows the effect of using the `-Compress` parameter of **ConvertTo-Json**.
 The compression affects only the appearance of the string, not its validity.
 
 ### Example 3
