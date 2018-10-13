@@ -225,7 +225,7 @@ Accept wildcard characters: False
 Specifies credentials of a user who has permission to access the file system location specified by *SourcePath*.
 This parameter is valid only when the *SourcePath* or *LiteralPath* parameter is used in the command.
 
-This parameter enables you to run **Update-Help** commands that have *SourcePath* on remote computers.
+This parameter enables you to run **Update-Help** commands with the *SourcePath* parameter on remote computers.
 By providing explicit credentials, you can run the command on a remote computer and access a file share on a third computer without encountering an access denied error or using CredSSP authentication to delegate credentials.
 
 ```yaml
@@ -306,7 +306,7 @@ Accept wildcard characters: False
 
 ### -Module
 Specifies modules for which this cmdlet updates help.
-Enter one or more module names or name patters in a comma-separated list, or specify a file that lists one module name on each line.
+Enter one or more module names or name patterns in a comma-separated list, or specify a file that lists one module name on each line.
 Wildcard characters are permitted.
 You can also pipe modules from the Get-Module cmdlet, to the **Update-Help** cmdlet.
 

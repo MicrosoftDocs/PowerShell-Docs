@@ -134,7 +134,7 @@ $url = 'https://api.github.com/repos/powershell/powershell/issues'
 Invoke-RestMethod $url -FollowRelLink -MaximumFollowRelLink 2
 ```
 
-Some REST APIs support pagination via Relation Links per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6). Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you. This example returns the first two pages of issues from the PowerShell GitHub repository
+Some REST APIs support pagination via Relation Links per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6). Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you. This example returns the first two pages of issues from the PowerShell GitHub repository.
 
 ### Example 4: Simplified Multipart/Form-Data Submission
 ```powershell
@@ -161,7 +161,7 @@ When creating the `$Form` HashTable, the key names are used as form field names.
 By default, the values of the HashTable will be converted to strings.
 If a `System.IO.FileInfo` value is present, the file contents will be submitted.
 If a collection such as arrays or lists are present,
-the form field will be submitted will be submitted multiple times.
+the form field will be submitted multiple times.
 
 By using `Get-Item` on the `avatar` key, the `FileInfo` object will be set as the value.
 The result is that the image data for `jdoe.png` will be submitted.
@@ -409,9 +409,9 @@ $Form = @{
 ```
 
 If the value is a collection type,
-such Arrays or Lists,
+such as an Array or List,
 the for field will be submitted multiple times.
-The values of the the list will be treated as strings by default.
+The values of the list will be treated as strings by default.
 If the value is a `System.IO.FileInfo` object,
 then the binary file contents will be submitted.
 Nested collections are not supported.
@@ -675,7 +675,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResponseHeadersVariable
-Creates a Response Headers Dictionary and saves it in the value of the specified variable. The the keys of the dictionary will contain the field names of the Response Header returned by the web server and the values will be the respective field values.
+Creates a Response Headers Dictionary and saves it in the value of the specified variable. The keys of the dictionary will contain the field names of the Response Header returned by the web server and the values will be the respective field values.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -704,7 +704,7 @@ then the cmdlet will attempt to resume downloading the file
 and append the remaining bytes to the end of the file.
 
 If the local file size is the same as the remote file size,
-then no action is taken and the cmdlet assumes the download already complete.
+then no action is taken and the cmdlet assumes the download already completed.
 
 If the local file size is larger than the remote file size,
 then the local file will be overwritten and the entire remote file will be completely re-downloaded.
@@ -784,7 +784,7 @@ Accept wildcard characters: False
 ### -SkipHeaderValidation
 Indicates the cmdlet should add headers to the request without validation.
 
-This switch should be used for sites that require header values that do not conform to standards. Specifying this switch disables validation to allow the value to be passed unchecked.  When specified, all headers are added without validation.
+This switch should be used for sites that require header values that do not conform to standards. Specifying this switch disables validation to allow the value to be passed unchecked. When specified, all headers are added without validation.
 
 This will disable validation for values passed to the **-ContentType**, **-Headers** and **-UserAgent** parameters.
 
@@ -946,7 +946,7 @@ The default user agent is similar to `Mozilla/5.0 (Windows NT 10.0; Microsoft Wi
 
 To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](http://msdn.microsoft.com/library/windows/desktop/hh484857&#40;v=vs.85&#41;) class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
-For example, the following command uses the user agent string for Internet Explorer
+For example, the following command uses the user agent string for Internet Explorer.
 
 
 ```powershell
@@ -995,7 +995,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**, **-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**, **-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**, **-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**, **-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

@@ -11,7 +11,7 @@ caps.latest.revision: 10
 ---
 # TypeName Element for EntrySelectedBy for CustomEntry for View (Format)
 
-Specifies a .NET Framework type that uses this definition of the custom control view. There is no limit to the number of types that can be specified for a definition.
+Specifies a .NET type that uses this definition of the custom control view. There is no limit to the number of types that can be specified for a definition.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -44,11 +44,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines the .NET Framework types that use this custom control view definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines the .NET types that use this custom control view definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 

@@ -11,7 +11,7 @@ caps.latest.revision: 15
 ---
 # EntrySelectedBy Element for TableRowEntry  for TableControl (Format)
 
-Defines the .NET Framework types that use this definition of the table view or the condition that must exist for this definition to be used.
+Defines the .NET types that use this definition of the table view or the condition that must exist for this definition to be used.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -44,8 +44,8 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[SelectionCondition Element for EntrySelectedBy for TableControl (Format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|Optional element.<br /><br /> Defines the condition that must exist for this table view definition to be used.|
-|[SelectionSetName Element for EntrySelectedBy for TableControl (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)|Optional element.<br /><br /> Specifies a set of .NET Framework types that use this table view definition.|
-|[TypeName Element for EntrySelectedBy for TableControl (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that uses this table view definition.|
+|[SelectionSetName Element for EntrySelectedBy for TableControl (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)|Optional element.<br /><br /> Specifies a set of .NET types that use this table view definition.|
+|[TypeName Element for EntrySelectedBy for TableControl (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)|Optional element.<br /><br /> Specifies a .NET type that uses this table view definition.|
 
 ### Parent Elements
 

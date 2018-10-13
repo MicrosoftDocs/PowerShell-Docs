@@ -11,7 +11,7 @@ caps.latest.revision: 12
 ---
 # TypeName Element for ViewSelectedBy (Format)
 
-Specifies a .NET Framework object that is displayed by the view.
+Specifies a .NET object that is displayed by the view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -41,11 +41,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[ViewSelectedBy Element (Format)](./viewselectedby-element-format.md)|Defines the .NET Framework objects that are displayed by the view.|
+|[ViewSelectedBy Element (Format)](./viewselectedby-element-format.md)|Defines the .NET objects that are displayed by the view.|
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 

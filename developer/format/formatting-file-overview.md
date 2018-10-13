@@ -48,7 +48,7 @@ Displays a customizable view of object properties or script values that does not
 
 The following XML examples show the basic XML components of a view. The individual XML elements vary depending on which view you want to create, but the basic components of the views are all the same.
 
-To start with, each view has a `Name` element that specifies a user friendly name that is used to reference the view. a `ViewSelectedBy` element that defines which .NET Framework objects are displayed by the view, and a *control* element that defines the view.
+To start with, each view has a `Name` element that specifies a user friendly name that is used to reference the view. a `ViewSelectedBy` element that defines which .NET objects are displayed by the view, and a *control* element that defines the view.
 
 ```xml
 <ViewDefinitions>
@@ -76,7 +76,7 @@ To start with, each view has a `Name` element that specifies a user friendly nam
 
 ```
 
-Within the control element, you can define one or more *entry* elements. If you use multiple definitions, you must specify which .NET Framework objects use each definition. Typically only one entry, with only one definition, is needed for each control.
+Within the control element, you can define one or more *entry* elements. If you use multiple definitions, you must specify which .NET objects use each definition. Typically only one entry, with only one definition, is needed for each control.
 
 ```xml
 <ListControl>
@@ -98,7 +98,7 @@ Within the control element, you can define one or more *entry* elements. If you 
 
 ```
 
-Within each entry element of a view, you specify the *item* elements that define the .NET Framework properties or scripts that are displayed by that view.
+Within each entry element of a view, you specify the *item* elements that define the .NET properties or scripts that are displayed by that view.
 
 ```xml
 

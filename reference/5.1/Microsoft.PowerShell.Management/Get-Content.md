@@ -99,7 +99,7 @@ Get-Content .\Copy-Scripts.ps1 -Stream Zone.Identifier
 ZoneId=3
 ```
 
-### Example 6: Getting a hashtable out of file contents as a hastable
+### Example 6: Getting a hashtable out of file contents as a hashtable
 
 The commands in this example get the contents of a module manifest file (.psd1) as a hash table.
 The manifest file contains a hash table, but if you get the contents without the `-Raw` dynamic parameter, it is returned as an array of newline-delimited strings.

@@ -144,5 +144,4 @@ The details of that object are printed a few lines below, closely mimicking what
 
 ## See also
 
-- [Audit user actions in a JEA session](audit-and-report.md)
 - [*PowerShell ♥ the Blue Team* blog post on security](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

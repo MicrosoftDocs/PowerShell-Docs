@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # PropertyName Element for SelectionCondition for Controls for View (Format)
 
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the entry is used. This element is used when defining controls that can be used by a view.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the entry is used. This element is used when defining controls that can be used by a view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -51,7 +51,7 @@ None.
 
 ## Text Value
 
-Specify the .NET Framework property name.
+Specify the .NET property name.
 
 ## Remarks
 

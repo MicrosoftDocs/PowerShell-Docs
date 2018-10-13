@@ -11,7 +11,7 @@ caps.latest.revision: 12
 ---
 # EntrySelectedBy Element for ListEntry for ListControl (Format)
 
-Defines the .NET Framework types that use this list view definition or the condition that must exist for this definition to be used. In most cases only one definition is needed for a list view. However, you can provide multiple definitions for the list view if you want to use the same list view to display different data for different objects.
+Defines the .NET types that use this list view definition or the condition that must exist for this definition to be used. In most cases only one definition is needed for a list view. However, you can provide multiple definitions for the list view if you want to use the same list view to display different data for different objects.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -44,8 +44,8 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[SelectionCondition Element for EntrySelectedBy for ListControl  (Format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Defines the condition that must exist for this list view definition to be used.|
-|[SelectionSetName Element for EnrtySelectedBy for ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a set of .NET Framework types that use this list view definition.|
-|[TypeName Element for EntrySelectedBy for ListControl (Format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that uses this list view definition.|
+|[SelectionSetName Element for EnrtySelectedBy for ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a set of .NET types that use this list view definition.|
+|[TypeName Element for EntrySelectedBy for ListControl (Format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a .NET type that uses this list view definition.|
 
 ### Parent Elements
 
@@ -63,7 +63,7 @@ For more information about the components of a list view, see [Creating a List V
 
 ## Example
 
-The following example shows how to define the objects for a list view using their .NET Framework type name.
+The following example shows how to define the objects for a list view using their .NET type name.
 
 ```xml
 <ListEntry>

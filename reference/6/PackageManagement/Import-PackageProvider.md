@@ -28,7 +28,7 @@ To get a list of available providers, run `Get-PackageProvider -ListAvailable`.
 Note that a package provider name can be different from its module name.
 
 Due to security reasons, **PackageManagement** requires C#-based providers to contain a provider.manifest.
-For more information on how to build a provider with provider.manifest injected, see the .csproj project files on https://github.com/oneget/onegethttps://oneget.org.
+For more information on how to build a provider with provider.manifest injected, see the .csproj project files int the [OneGet repo](https://github.com/oneget/oneget).
 
 ## EXAMPLES
 
