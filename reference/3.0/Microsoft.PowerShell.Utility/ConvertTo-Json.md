@@ -7,6 +7,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=217032
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertTo-Json
 ---
+
 # ConvertTo-Json
 
 ## SYNOPSIS
@@ -105,7 +106,7 @@ PS> Get-Date | Select-Object -Property * | ConvertTo-Json
 }
 ```
 
-This command uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the Get-Date cmdlet to a JSON-formatted string. The command uses the **Select-Object** cmdlet to get all asterisks (`*`) of the properties of the **DateTime** object. The output shows the JSON string that **ConvertTo-Json** returned.
+This example uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the **Get-Date** cmdlet to a JSON-formatted string. The command uses the **Select-Object** cmdlet to get all (`*`) of the properties of the **DateTime** object. The output shows the JSON string that **ConvertTo-Json** returned.
 
 ### Example 4
 
@@ -131,16 +132,7 @@ TimeOfDay   : @{Ticks=723914009002; Days=0; Hours=20; Milliseconds=400; Minutes=
 Year        : 2012
 ```
 
-This command shows how to use the **ConvertTo-Json** and **ConvertFrom-Json** cmdlet to convert an object to a JSON string and a JSON object.
-
-### Example 5
-
-```powershell
-PS C:\> $JsonSecurityHelp = Get-Content $PSHOME\Modules\Microsoft.PowerShell.Security\en-US\Microsoft.PowerShell.Security.dll-Help.xml | ConvertTo-Json
-```
-
-This command uses the **ConvertTo-Json** cmdlet to convert a Windows PowerShell help file from XML format to JSON format.
-You can use a command like this to use the help topic content in a web service application.
+This example shows how to use the **ConvertTo-Json** and **ConvertFrom-Json** cmdlet to convert an object to a JSON string and a JSON object.
 
 ## PARAMETERS
 
