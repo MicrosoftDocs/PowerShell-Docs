@@ -20,6 +20,7 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [<CommonPara
 ```
 
 ## DESCRIPTION
+
 The **ConvertTo-Json** cmdlet converts any object to a string in JavaScript Object Notation (JSON) format.
 The properties are converted to field names, the field values are converted to property values, and the methods are removed.
 
@@ -32,155 +33,107 @@ This cmdlet is introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1
-```
+
+```powershell
 PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
+```
 
+```output
 {
-
-    "MinSupportedDateTime":  "\/Date(-62135568000000)\/",
-
+    "MinSupportedDateTime":  "\/Date(-62135596800000)\/",
     "MaxSupportedDateTime":  "\/Date(253402300799999)\/",
-
     "AlgorithmType":  1,
-
     "CalendarType":  1,
-
     "Eras":  [
-
                  1
-
              ],
-
     "TwoDigitYearMax":  2029,
-
     "IsReadOnly":  false
-
 }
 ```
 
 This command uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
 
 ### Example 2
+
+```powershell
+PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
 ```
-PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json - Compress
+
+```output
 {"Admin":"True","Account":"User01","Domain":"Domain01"}
 ```
 
-This command shows the effect of using the Compress parameter of **ConvertTo-Json**.
+This command shows the effect of using the `-Compress` parameter of **ConvertTo-Json**.
 The compression affects only the appearance of the string, not its validity.
 
 ### Example 3
-```
-The first command uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the Get-Date cmdlet to a JSON-formatted string. The command uses the Select-Object cmdlet to get all (*) of the properties of the **DateTime** object.The output shows the JSON string that **ConvertTo-Json** returned.
+
+```powershell
 PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
-
-{
-
-    "DisplayHint":  2,
-
-    "DateTime":  "Friday, January 13, 2012 8:06:16 PM",
-
-    "Date":  "\/Date(1326441600000)\/",
-
-    "Day":  13,
-
-    "DayOfWeek":  5,
-
-    "DayOfYear":  13,
-
-    "Hour":  20,
-
-    "Kind":  2,
-
-    "Millisecond":  221,
-
-    "Minute":  6,
-
-    "Month":  1,
-
-    "Second":  16,
-
-    "Ticks":  634620819762218083,
-
-    "TimeOfDay":  {
-
-                      "Ticks":  723762218083,
-
-                      "Days":  0,
-
-                      "Hours":  20,
-
-                      "Milliseconds":  221,
-
-                      "Minutes":  6,
-
-                      "Seconds":  16,
-
-                      "TotalDays":  0.83768775241087956,
-
-                      "TotalHours":  20.104506057861109,
-
-                      "TotalMilliseconds":  72376221.8083,
-
-                      "TotalMinutes":  1206.2703634716668,
-
-                      "TotalSeconds":  72376.22180829999
-
-                  },
-
-    "Year":  2012
-
-}
-
-The second command uses ConvertFrom-Json to convert the JSON string to a JSON object.
-PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
-
-DisplayHint : 2
-
-DateTime    : Friday, January 13, 2012 8:06:31 PM
-
-Date        : 1/13/2012 8:00:00 AM
-
-Day         : 13
-
-DayOfWeek   : 5
-
-DayOfYear   : 13
-
-Hour        : 20
-
-Kind        : 2
-
-Millisecond : 400
-
-Minute      : 6
-
-Month       : 1
-
-Second      : 31
-
-Ticks       : 634620819914009002
-
-TimeOfDay   : @{Ticks=723914009002; Days=0; Hours=20; Milliseconds=400;
-
- Minutes=6; Seconds=31; TotalDays=0.83786343634490734;
-               TotalHours=20.108722472277776; TotalMilliseconds=72391400.900200009;
- TotalMinutes=1206.5233483366667;
-
-              TotalSeconds=72391.4009002}
-
-Year        : 2012
 ```
 
-This command shows how to use the ConvertTo-Json and ConvertFrom-Json cmdlet to convert an object to a JSON string and a JSON object.
+```output
+{
+    "DisplayHint":  2,
+    "DateTime":  "Saturday, October 13, 2018 2:57:58 AM",
+    "Date":  "\/Date(1539388800000)\/",
+    "Day":  13,
+    "DayOfWeek":  6,
+    "DayOfYear":  286,
+    "Hour":  2,
+    "Kind":  2,
+    "Millisecond":  710,
+    "Minute":  57,
+    "Month":  10,
+    "Second":  58,
+    "Ticks":  636749962787108331,
+    "TimeOfDay":  {
+                      "Ticks":  106787108331,
+                      "Days":  0,
+                      "Hours":  2,
+                      "Milliseconds":  710,
+                      "Minutes":  57,
+                      "Seconds":  58,
+                      "TotalDays":  0.12359619019791666,
+                      "TotalHours":  2.96630856475,
+                      "TotalMilliseconds":  10678710.8331,
+                      "TotalMinutes":  177.978513885,
+                      "TotalSeconds":  10678.7108331
+                  },
+    "Year":  2018
+}
+```
+
+The example uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the **Get-Date** cmdlet to a JSON-formatted string. The command uses the **Select-Object** cmdlet to get all (`*`) of the properties of the **DateTime** object. The output shows the JSON string that **ConvertTo-Json** returned.
 
 ### Example 4
-```
-PS C:\> $JsonSecurityHelp = Get-Content $pshome\Modules\Microsoft.PowerShell.Security\en-US\Microsoft.PowerShell.Security.dll-Help.xml | ConvertTo-Json
+
+```powershell
+PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 ```
 
-This command uses the **ConvertTo-Json** cmdlet to convert a Windows PowerShell help file from XML format to JSON format.
-You can use a command like this to use the help topic content in a web service application.
+```output
+DisplayHint : 2
+DateTime    : Saturday, October 13, 2018 2:58:23 AM
+Date        : 10/13/2018 12:00:00 AM
+Day         : 13
+DayOfWeek   : 6
+DayOfYear   : 286
+Hour        : 2
+Kind        : 2
+Millisecond : 148
+Minute      : 58
+Month       : 10
+Second      : 23
+Ticks       : 636749963031489637
+TimeOfDay   : @{Ticks=107031489637; Days=0; Hours=2; Milliseconds=148; Minutes=58; Seconds=23;
+              TotalDays=0.12387903893171295; TotalHours=2.9730969343611111; TotalMilliseconds=10703148.9637;
+              TotalMinutes=178.38581606166667; TotalSeconds=10703.1489637}
+Year        : 2018
+```
+
+This command shows how to use the **ConvertTo-Json** and **ConvertFrom-Json** cmdlet to convert an object to a JSON string and a JSON object.
 
 ## PARAMETERS
 
