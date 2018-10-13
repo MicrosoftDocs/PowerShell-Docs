@@ -59,6 +59,7 @@ This example uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar o
 
 ```powershell
 PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
+```
 
 ```output
 {"Admin":"True","Account":"User01","Domain":"Domain01"}
