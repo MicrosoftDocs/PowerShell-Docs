@@ -52,7 +52,7 @@ PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
 }
 ```
 
-This command uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
+This example uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
 
 ### Example 2
 
@@ -64,7 +64,7 @@ PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Com
 {"Admin":"True","Account":"User01","Domain":"Domain01"}
 ```
 
-This command shows the effect of using the `-Compress` parameter of **ConvertTo-Json**.
+This example shows the effect of using the `-Compress` parameter of **ConvertTo-Json**.
 The compression affects only the appearance of the string, not its validity.
 
 ### Example 3
@@ -105,7 +105,7 @@ PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 }
 ```
 
-The example uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the **Get-Date** cmdlet to a JSON-formatted string. The command uses the **Select-Object** cmdlet to get all (`*`) of the properties of the **DateTime** object. The output shows the JSON string that **ConvertTo-Json** returned.
+This example uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the **Get-Date** cmdlet to a JSON-formatted string. The command uses the **Select-Object** cmdlet to get all (`*`) of the properties of the **DateTime** object. The output shows the JSON string that **ConvertTo-Json** returned.
 
 ### Example 4
 
@@ -133,7 +133,7 @@ TimeOfDay   : @{Ticks=107031489637; Days=0; Hours=2; Milliseconds=148; Minutes=5
 Year        : 2018
 ```
 
-This command shows how to use the **ConvertTo-Json** and **ConvertFrom-Json** cmdlet to convert an object to a JSON string and a JSON object.
+This example shows how to use the **ConvertTo-Json** and **ConvertFrom-Json** cmdlet to convert an object to a JSON string and a JSON object.
 
 ## PARAMETERS
 
@@ -169,12 +169,13 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the objects to convert to JSON format.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 You can also pipe an object to **ConvertTo-Json**.
 
-The **InputObject** parameter is required, but its value can be null ($null) or an empty string.
-When the input object is $null, **ConvertTo-Json** does not generate any output.
+The *InputObject* parameter is required, but its value can be null (`$null`) or an empty string.
+When the input object is `$null`, **ConvertTo-Json** does not generate any output.
 When the input object is an empty string, **ConvertTo-Json** returns an empty string.
 
 ```yaml
@@ -190,11 +191,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
+
 You can pipe any object to **ConvertTo-Json**.
 
 ## OUTPUTS
@@ -202,6 +205,7 @@ You can pipe any object to **ConvertTo-Json**.
 ### System.String
 
 ## NOTES
+
 * The **ConvertTo-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS

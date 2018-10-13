@@ -53,7 +53,7 @@ PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
 }
 ```
 
-This command uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
+This example uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
 
 ### Example 2
 
@@ -65,7 +65,7 @@ PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Com
 {"Admin":"True","Account":"User01","Domain":"Domain01"}
 ```
 
-This command shows the effect of using the `-Compress` parameter of **ConvertTo-Json**.
+This example shows the effect of using the `-Compress` parameter of **ConvertTo-Json**.
 The compression affects only the appearance of the string, not its validity.
 
 ### Example 3
@@ -175,8 +175,8 @@ Specifies the objects to convert to JSON format.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 You can also pipe an object to **ConvertTo-Json**.
 
-The **InputObject** parameter is required, but its value can be null ($null) or an empty string.
-When the input object is $null, **ConvertTo-Json** does not generate any output.
+The *InputObject* parameter is required, but its value can be null (`$null`) or an empty string.
+When the input object is `$null`, **ConvertTo-Json** does not generate any output.
 When the input object is an empty string, **ConvertTo-Json** returns an empty string.
 
 ```yaml
