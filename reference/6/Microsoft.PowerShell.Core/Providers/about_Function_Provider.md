@@ -57,43 +57,6 @@ class. Each filter is an instance of the
 [System.Management.Automation.FilterInfo](https://msdn.microsoft.com/library/system.management.automation.filterinfo)
 class.
 
-## Working with provider paths
-
-A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
-should be usable from any location and start with a drive name followed by a
-colon `:`.  Separate containers in your paths using a backslash `\` or a
-forward slash `/`.  If you are referencing a specific item, it should be the
-last item in the path. An *Absolute* path is absolute, it should not
-change based on your current location.
-
-This is an example of an *Absolute* path.
-
-```
-C:\Windows\System32\shell.dll
-```
-
-A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
-indicates the current location, the double dot `..` represents the location
-directly above your current location. You can use multiple combinations
-of dot `.` and double dot `..`. A *Relative* path can change based on your
-current location.
-
-This is an example of a *Relative* path.
-
-```
-PS C:\Windows\System32\> .\shell.dll
-```
-
-Notice that this path is only valid if you are in the System32 directory.
-
-If any element in the fully qualified name includes spaces, you must enclose
-the name in quotation marks `" "`. The following example shows a fully
-qualified path that includes spaces.
-
-```
-"C:\Program Files\Internet Explorer\iexplore.exe"
-```
-
 ## Navigating the Function drive
 
 The **Function** provider exposes its data store in the `Function:` drive. To
@@ -106,35 +69,27 @@ the path.
 Set-Location Function:
 ```
 
-You can also work with the **Function** provider from any other PowerShell
-drive. To reference an function from another location, use the drive name
-`Function:` in the path.
-
-PowerShell uses aliases to allow you a familiar way to work with provider
-paths. Commands such as `dir` and `ls` are now aliases for
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
-`cd` is an alias for
-[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
-
-### Example 1: Getting to the Function drive
-
-Changes the current location to the `Function:` drive. You can use this command from any drive in PowerShell.
-
-```powershell
-Set-Location Function:
-```
-
 To return to a file system drive, type the drive name. For example, type:
 
 ```powershell
 Set-Location C:
 ```
 
+You can also work with the **Function** provider from any other PowerShell
+drive. To reference an function from another location, use the drive name
+`Function:` in the path.
+
+> [!NOTE]
+> PowerShell uses aliases to allow you a familiar way to work with provider
+> paths. Commands such as `dir` and `ls` are now aliases for
+> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
+> an alias for [Get-Location](Get-Location.md).
+
 ## Getting functions
 
-### Example 1: Getting all functions in the current session
-
- This command gets the list of all the functions in the current session. You can use this command from any PowerShell drive.
+This command gets the list of all the functions in the current session. You can
+use this command from any PowerShell drive.
 
 ```powershell
 Get-ChildItem -Path Function:
@@ -147,7 +102,7 @@ same effect when used with `Get-ChildItem`.
 Get-ChildItem -Path Function:
 ```
 
-### Example 2: Getting selected functions
+### Getting selected functions
 
 This command gets the `man` function from the `Function:` drive. It uses the
 `Get-Item` cmdlet to get the function. The pipeline operator (`|`) sends the
@@ -159,7 +114,7 @@ columns to accommodate the text.
 Get-Item -Path man | Format-Table -Wrap -Autosize
 ```
 
-### Example 3: Working with Function provider paths
+### Working with Function provider paths
 
 These commands both get the function named `c:`. The first command can be used
 in any drive. The second command is used in the `Function:` drive. Because the
@@ -174,8 +129,6 @@ PS Function:\> Get-Item -Path .\c:
 
 ## Creating a function
 
-### Example 1: Create a Function
-
 This command uses the `New-Item` cmdlet to create a function called `Win32:`.
 The expression in braces is the script block that is represented by the
 function name.
@@ -184,49 +137,19 @@ function name.
 New-Item -Path Function:Win32: -Value {Set-Location C:\Windows\System32}
 ```
 
-You can also create a function by typing it at the PowerShell command line. For example, tpe `Function:Win32: {Set-Location C:\Windows\System32}`. If you are in the `Function:` drive, you can omit the drive name.
+You can also create a function by typing it at the PowerShell command line. For
+example, tpe `Function:Win32: {Set-Location C:\Windows\System32}`. If you are
+in the `Function:` drive, you can omit the drive name.
 
 ## Deleting a function
 
-### Example 1: Delete a function
-
- This command deletes the `HKLM:` function from the current session.
+This command deletes the `more:` function from the current session.
 
 ```powershell
-Remove-Item Function:HKLM:
+Remove-Item Function:more:
 ```
 
-### Example 2: Delete a function with Clear-Item
-
-This command deletes all the functions from the current session except for the
-functions whose **Options** property has a value of `Constant`. Without the
-`-Force` parameter, the command does not delete functions whose **Options**
-property has a value of `ReadOnly`.
-
-```powershell
-Remove-Item Function:* -Force
-```
-
-When you delete all the functions, the command prompt changes because the
-prompt function, which defines the content of the command prompt, is deleted.
-
-## Changing the properties of a function
-
-### Example 1: Set a function as ReadOnly
-
-You can use the `Set-Item` cmdlet with the `-Options` dynamic parameter to
-change the value of the **Options** property of a function.
-
-This command sets the `AllScope` and `ReadOnly` options for the `prompt`
-function. This command uses the `-Options` dynamic parameter of the `Set-Item`
-cmdlet. The `-Options` parameter is available in `Set-Item` only when you use
-it with the **Alias** or **Function** provider.
-
-```powershell
-Set-Item -Path Function:prompt -Options "ReadOnly"
-```
-
-### Example 2: Change the value of a function
+## Changing a function
 
 This command uses the `Set-Item` cmdlet to change the `prompt` function so that
 it displays the time before the path.
@@ -237,7 +160,7 @@ Set-Item -Path Function:prompt -Value {
   }
 ```
 
-### Example 3: Rename a function
+### Rename a function
 
 This command uses the `Rename-Item` cmdlet to change the name of the `help`
 function to `gh`.
@@ -247,8 +170,6 @@ Rename-Item -Path Function:help -NewName gh
 ```
 
 ## Copying a function
-
-### Example 1: Copy a function
 
 This command copies the `prompt` function to `oldPrompt`, effectively creating
 a new name for the script block that is associated with the prompt function.
@@ -260,9 +181,18 @@ the value of the **Options** property, use `Set-Item`.
 Copy-Item -Path Function:prompt -Destination Function:oldPrompt
 ```
 
+## Using the pipeline
+
+Provider cmdlets accept pipeline input. You can use the pipeline to simplify
+task by sending provider data from one cmdlet to another provider cmdlet.
+To read more about how to use the pipeline with provider cmdlets, see the
+cmdlet references provided throughout this article.
+
 ## Dynamic parameters
 
-Dynamic parameters are cmdlet parameters that are added by a PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.
+Dynamic parameters are cmdlet parameters that are added by a PowerShell
+provider and are available only when the cmdlet is being used in the
+provider-enabled drive.
 
 ### Options <[System.Management.Automation.ScopedItemOptions]>
 

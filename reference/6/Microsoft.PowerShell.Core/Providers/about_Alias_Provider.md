@@ -62,43 +62,6 @@ PowerShell includes a set of cmdlets that are designed to view and to change ali
 Each alias is an instance of the
 [System.Management.Automation.AliasInfo](https://msdn.microsoft.com/library/system.management.automation.aliasinfo) class.
 
-## Working with provider paths
-
-A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
-should be usable from any location and start with a drive name followed by a
-colon `:`.  Separate containers in your paths using a backslash `\` or a
-forward slash `/`.  If you are referencing a specific item, it should be the
-last item in the path. An *Absolute* path is absolute, it should not
-change based on your current location.
-
-This is an example of an *Absolute* path.
-
-```
-C:\Windows\System32\shell.dll
-```
-
-A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
-indicates the current location, the double dot `..` represents the location
-directly above your current location. You can use multiple combinations
-of dot `.` and double dot `..`. A *Relative* path can change based on your
-current location.
-
-This is an example of a *Relative* path.
-
-```
-PS C:\Windows\System32\> .\shell.dll
-```
-
-Notice that this path is only valid if you are in the System32 directory.
-
-If any element in the fully qualified name includes spaces, you must enclose
-the name in quotation marks `" "`. The following example shows a fully
-qualified path that includes spaces.
-
-```
-"C:\Program Files\Internet Explorer\iexplore.exe"
-```
-
 ## Navigating the Alias drive
 
 The **Alias** provider exposes its data store in the `Alias:` drive. To work
@@ -109,70 +72,24 @@ following command:
 Set-Location Alias:
 ```
 
-You can also work with the Alias provider from any other PowerShell drive. To
-reference an alias from another location, use the `Alias:` drive name in the
-path.
-
-PowerShell uses aliases to allow you a familiar way to work with provider
-paths. Commands such as `dir` and `ls` are now aliases for
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
-`cd` is an alias for
-[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
-
-### Example 1: Getting to the Alias drive
-
-This command changes the current location to the `Alias:` drive.
-You can use this command from any drive in PowerShell.
-
-```powershell
-Set-Location Alias:
-```
 To return to a file system drive, type the drive name. For example, type:
 
 ```powershell
 Set-Location C:
 ```
 
-## Displaying the Contents of the Alias: drive
+You can also work with the Alias provider from any other PowerShell drive. To
+reference an alias from another location, use the `Alias:` drive name in the
+path.
 
-### Example 1: Get all aliases in the current session
+> [!NOTE]
+> PowerShell uses aliases to allow you a familiar way to work with provider
+> paths. Commands such as `dir` and `ls` are now aliases for
+> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
+> an alias for [Get-Location](Get-Location.md).
 
-This command gets a list of all the aliases in the current session.
-You can use this command in any PowerShell drive.
-
-```powershell
-Get-Item -Path Alias:
-```
-
-The Alias provider has no containers, so the above command has the
-same effect when used with `Get-ChildItem`.
-
-```powershell
-Get-ChildItem -Path Alias:
-```
-
-### Example 2: Get a selected alias
-
-This command gets the `ls` alias.
-Because it includes the path, you can use it in any PowerShell drive.
-
-```powershell
-Get-Item -Path Alias:ls
-```
-
-If you are in the `Alias:` drive, you can omit the drive name from the path.
-
-### Example 3: Get all aliases for a specific cmdlet
-
-This command gets a list of the aliases that are associated with the
-`Get-ChildItem` cmdlet. It uses the **Definition** property, which stores
-the cmdlet name.
-
-```powershell
-Get-Item -Path Alias:* | Where-Object {$_.Definition -eq "Get-ChildItem"}
-```
-
-### Example 4: Get all aliases from the Alias: drive
+### Displaying the Contents of the Alias: drive
 
 This command gets the list of all the aliases when the current location is the
 `Alias:` drive. It uses a wildcard character `*` to indicate all the contents
@@ -187,9 +104,37 @@ wildcard character `*`, which represents all items in the current location,
 have the same effect. For example, `Get-Item -Path .` or `Get-Item \*` produce
 the same result.
 
+The Alias provider has no containers, so the above command has the
+same effect when used with `Get-ChildItem`.
+
+```powershell
+Get-ChildItem -Path Alias:
+```
+
+### Get a selected alias
+
+This command gets the `ls` alias.
+Because it includes the path, you can use it in any PowerShell drive.
+
+```powershell
+Get-Item -Path Alias:ls
+```
+
+If you are in the `Alias:` drive, you can omit the drive name from the path.
+
+### Get all aliases for a specific cmdlet
+
+This command gets a list of the aliases that are associated with the
+`Get-ChildItem` cmdlet. It uses the **Definition** property, which stores
+the cmdlet name.
+
+```powershell
+Get-Item -Path Alias:* | Where-Object {$_.Definition -eq "Get-ChildItem"}
+```
+
 ## Creating aliases
 
-### Example 1: Create an alias from the Alias: drive
+### Create an alias from the Alias: drive
 
 This command creates the `serv` alias for the `Get-Service` cmdlet. Because the
 current location is in the `Alias:` drive, the `-Path` parameter is not
@@ -207,7 +152,7 @@ PS Alias:\> New-Item -Path . `
                      -Options "AllScope"
 ```
 
-### Example 2: Create an alias with an absolute path
+### Create an alias with an absolute path
 
 You can create an alias for any item that invokes a command.
 This command creates the `np` alias for `Notepad.exe`.
@@ -216,7 +161,7 @@ This command creates the `np` alias for `Notepad.exe`.
 New-Item -Path Alias:np -Value c:\windows\notepad.exe
 ```
 
-### Example 3: Create an alias to a new function
+### Create an alias to a new function
 
 You can create an alias for any function. You can use this feature to create an
 alias that includes both a cmdlet and its parameters.
@@ -233,11 +178,12 @@ function CD32 {Set-Location -Path c:\windows\system32}
 Set-Item -Path Alias:go -Value CD32
 ```
 
-## Changing the properties of an alias
+## Changing aliases
 
-### Example 1: Change the options of an alias
+### Change the options of an alias
 
-You can use the `Set-Item` cmdlet with the `-Options` dynamic parameter to change the value of the `-Options` property of an alias.
+You can use the `Set-Item` cmdlet with the `-Options` dynamic parameter to
+change the value of the `-Options` property of an alias.
 
 This command sets the **AllScope** and **ReadOnly** options for the `dir`
 alias. The command uses the `-Options` dynamic parameter of the `Set-Item`
@@ -248,7 +194,7 @@ with the **Alias** or **Function** provider.
 Set-Item -Path Alias:dir -Options "AllScope,ReadOnly"
 ```
 
-### Example 2: Change an aliases referenced command
+### Change an aliases referenced command
 
 This command uses the `Set-Item` cmdlet to change the `gp` alias so that it
 represents the `Get-Process` cmdlet instead of the `Get-ItemProperty` cmdlet.
@@ -269,7 +215,7 @@ command:
 Get-Item -Path gp | Format-List -Property *
 ```
 
-### Example 3: Rename an alias
+### Rename an alias
 
 This command uses the `Rename-Item` cmdlet to change the `popd` alias to `pop`.
 
@@ -278,8 +224,6 @@ Rename-Item -Path Alias:popd -NewName pop
 ```
 
 ## Copying an alias
-
-### Example 1: Copy an alias
 
 This command copies the `pushd` alias so that a new `push` alias is created for
 the `Push-Location` cmdlet.
@@ -295,16 +239,12 @@ Copy-Item -Path Alias:pushd -Destination Alias:push
 
 ## Deleting an alias
 
-### Example 1: Delete an alias
-
 This command deletes the `serv` alias from the current session.
 You can use this command in any PowerShell drive.
 
 ```powershell
 Remove-Item -Path Alias:serv
 ```
-
-### Example 2: Delete aliases using wildcards
 
 This command deletes aliases that begin with "s".
 It does not delete read-only aliases.
@@ -313,7 +253,7 @@ It does not delete read-only aliases.
 Clear-Item -Path Alias:s*
 ```
 
-### Example 3: Delete read-only aliases
+### Delete read-only aliases
 
 This command deletes all aliases from the current session, except those with a
 value of `Constant` for their **Options** property. The `-Force`
@@ -323,6 +263,13 @@ value of `ReadOnly`.
 ```powershell
 Remove-Item Alias:* -Force
 ```
+
+## Using the pipeline
+
+Provider cmdlets accept pipeline input. You can use the pipeline to simplify
+task by sending provider data from one cmdlet to another provider cmdlet.
+To read more about how to use the pipeline with provider cmdlets, see the
+cmdlet references provided throughout this article.
 
 ## Dynamic parameters
 

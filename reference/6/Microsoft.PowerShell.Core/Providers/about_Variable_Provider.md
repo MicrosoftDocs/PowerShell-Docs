@@ -88,43 +88,6 @@ listed below.
 
 {{change these into links to the classes}}
 
-## Working with provider paths
-
-A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
-should be usable from any location and start with a drive name followed by a
-colon `:`.  Separate containers in your paths using a backslash `\` or a
-forward slash `/`.  If you are referencing a specific item, it should be the
-last item in the path. An *Absolute* path is absolute, it should not
-change based on your current location.
-
-This is an example of an *Absolute* path.
-
-```
-C:\Windows\System32\shell.dll
-```
-
-A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
-indicates the current location, the double dot `..` represents the location
-directly above your current location. You can use multiple combinations
-of dot `.` and double dot `..`. A *Relative* path can change based on your
-current location.
-
-This is an example of a *Relative* path.
-
-```
-PS C:\Windows\System32\> .\shell.dll
-```
-
-Notice that this path is only valid if you are in the System32 directory.
-
-If any element in the fully qualified name includes spaces, you must enclose
-the name in quotation marks `" "`. The following example shows a fully
-qualified path that includes spaces.
-
-```
-"C:\Program Files\Internet Explorer\iexplore.exe"
-```
-
 ## Navigating the Variable drives
 
 The **Variable** provider exposes its data store in the `Variable:` drive. To
@@ -137,34 +100,26 @@ the path.
 Set-Location Variable:
 ```
 
-You can also work with the **Variable** provider from any other PowerShell
-drive. To reference an variable from another location, use the drive name
-`Variable:` in the path.
-
-PowerShell uses aliases to allow you a familiar way to work with provider
-paths. Commands such as `dir` and `ls` are now aliases for
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
-`cd` is an alias for
-[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
-
-### Example 1: Getting to the Variable drive
-
-This command changes the current location to the `Variable:` drive. You can use
-this command from any drive in PowerShell.
-
-```powershell
-Set-Location Variable:
-```
-
 To return to a file system drive, type the drive name. For example, type:
 
 ```powershell
 Set-Location C:
 ```
 
+You can also work with the **Variable** provider from any other PowerShell
+drive. To reference an variable from another location, use the drive name
+`Variable:` in the path.
+
+> [!NOTE]
+> PowerShell uses aliases to allow you a familiar way to work with provider
+> paths. Commands such as `dir` and `ls` are now aliases for
+> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
+> an alias for [Get-Location](Get-Location.md).
+
 ## Displaying the value of variables
 
-### Example 1: Get all variables in the current session
+### Get all variables in the current session
 
 This command gets the list of all the variables and their values in the current
 session. You can use this command from any PowerShell drive.
@@ -173,7 +128,7 @@ session. You can use this command from any PowerShell drive.
 Get-ChildItem -Path Variable:
 ```
 
-### Example 2: Get variables using wildcards
+### Get variables using wildcards
 
 This command gets the variables with names that begin with "max". You can use
 this command from any PowerShell drive.
@@ -182,19 +137,19 @@ this command from any PowerShell drive.
 Get-ChildItem -Path Variable:max*
 ```
 
-### Example 3: Get the value of the ? variable
+### Get the value of the ? variable
 
 This command uses the `-LiteralPath` parameter of
 [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) to get
-the value of the `?` variable from within the `Variable:` drive.
-`Get-ChildItem` does not attempt to resolve any wildcards in the values of the
-`-LiteralPath` parameter.
+the value of the `?` variable from within the `Variable:` drive. The `?` is
+a wildcard in paths, but `Get-ChildItem` does not attempt to resolve any
+wildcards in the values of the `-LiteralPath` parameter.
 
 ```powershell
 Get-ChildItem -Literalpath ?
 ```
 
-### Example 4: Get ReadOnly and Constant variables
+### Get ReadOnly and Constant variables
 
 This command gets the variables that have the values of `ReadOnly` or
 `Constant` for their **Options** property.
@@ -208,7 +163,7 @@ Get-ChildItem -Path Variable: | Where-Object {
 
 ## Creating variables
 
-### Example 1: Create a new variable
+### Create a new variable
 
 This command creates the `services` variable and stores the results of a
 `Get-Service` command in it. Because the current location is in the `Variable:`
@@ -223,7 +178,7 @@ the new variable is a "Get-Service" string.
 New-Item -Path . -Name services -Value (Get-Service)
 ```
 
-### Example 2: Create a variable using an absolute path
+### Create a variable using an absolute path
 
 This command creates a `services` variable and stores the result of a
 `Get-Service` command in it.
@@ -234,9 +189,9 @@ New-Item -Path Variable:services -Value Get-Service
 
  To create a variable without a value, omit the assignment operator.
 
-## Changing the properties of variables
+## Changing variables
 
-### Example 1: Rename a variable
+### Rename a variable
 
 This command uses the `Rename-Item` cmdlet to change the name of the `a`
 variable to `processes`.
@@ -245,7 +200,7 @@ variable to `processes`.
 Rename-Item -Path Variable:a -NewName processes
 ```
 
-### Example 2: Change the value of a variable
+### Change the value of a variable
 
 This command uses the `Set-Item` cmdlet to change the value of the
 `ErrorActionPreference` variable to "Stop".
@@ -254,9 +209,7 @@ This command uses the `Set-Item` cmdlet to change the value of the
 Set-Item -Path Variable:ErrorActionPreference -Value Stop
 ```
 
-## Copying variables
-
-### Example 1: Copy a variable
+## Copy a variable
 
 This command uses the `Copy-Item` cmdlet to copy the `processes` variable to
 `old_processes`. This creates a new variable named `old_processes` that has the
@@ -266,9 +219,7 @@ same value as the `processes` variable.
 Copy-Item -Path Variable:processes -Destination Variable:old_processes
 ```
 
-## Deleting a variable
-
-### Example 1: Delete a variable
+## Delete a variable
 
 This command deletes the `serv` variable from the current session. You can use
 this command in any PowerShell drive.
@@ -277,7 +228,7 @@ this command in any PowerShell drive.
 Remove-Variable -Path Variable:serv
 ```
 
-### Example 2: Delete variables using the -Force parameter
+### Delete variables using the -Force parameter
 
 This command deletes all variables from the current session except for the
 variables whose **Options** property has a value of `Constant`. Without the
@@ -290,14 +241,19 @@ Remove-Item Variable:* -Force
 
 ## Setting the value of a variable to NULL
 
-### Example 1: Clear a variable
-
 This command uses the `Clear-Item` cmdlet to change the value of the
 `processes` variable to NULL.
 
 ```powershell
 Clear-Item -Path Variable:processes
 ```
+
+## Using the pipeline
+
+Provider cmdlets accept pipeline input. You can use the pipeline to simplify
+task by sending provider data from one cmdlet to another provider cmdlet.
+To read more about how to use the pipeline with provider cmdlets, see the
+cmdlet references provided throughout this article.
 
 ## Getting help
 

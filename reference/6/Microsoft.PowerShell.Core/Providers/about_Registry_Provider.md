@@ -45,6 +45,8 @@ in this article.
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
 - [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
 - [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
+- [Remove-ItemProperty](Remove-ItemProperty.md)
+- [Clear-ItemProperty](Clear-ItemProperty.md)
 - [Get-Acl](../Get-Acl.md)
 - [Set-Acl](../Set-Acl.md)
 
@@ -86,9 +88,9 @@ PS C:\> cd HKLM:\Software
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
-> `cd` is an alias for
-> [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
+> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
+> an alias for [Get-Location](Get-Location.md).
 
 This last example shows another path syntax you can use to navigate the
 **Registry** provider. This syntax uses the provider name, followed by two
@@ -444,7 +446,8 @@ Remove-ItemProperty -Path HKLM:\SOFTWARE\Contoso -Name ContosoTest
 ```
 
 `Clear-Item` clears all registry values for a key. The following example
-clears all values from the "HKLM:\SOFTWARE\Contoso" registry key.
+clears all values from the "HKLM:\SOFTWARE\Contoso" registry key. To clear
+only a specific property, use `Clear-ItemProperty`.
 
 ```
 PS HKLM:\SOFTWARE\> Get-Item .\Contoso\
@@ -467,6 +470,20 @@ Name                           Property
 ----                           --------
 Contoso
 ```
+
+For more examples and cmdlet usage details see the following articles.
+
+- [Clear-Item](Clear-Item.md)
+- [Clear-ItemProperty](Clear-ItemProperty.md)
+- [Remove-Item](Remove-Item.md)
+- [Remove-ItemProperty](Remove-ItemProperty.md)
+
+## Using the pipeline
+
+Provider cmdlets accept pipeline input. You can use the pipeline to simplify
+task by sending provider data from one cmdlet to another provider cmdlet.
+To read more about how to use the pipeline with provider cmdlets, see the
+cmdlet references provided throughout this article.
 
 ## Dynamic parameters
 

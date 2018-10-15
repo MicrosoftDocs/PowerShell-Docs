@@ -54,43 +54,6 @@ Each environment variable is an instance of the
 class. The name of the variable is the dictionary key. The value of the
 environment variable is the dictionary value.
 
-## Working with provider paths
-
-A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
-should be usable from any location and start with a drive name followed by a
-colon `:`.  Separate containers in your paths using a backslash `\` or a
-forward slash `/`.  If you are referencing a specific item, it should be the
-last item in the path. An *Absolute* path is absolute, it should not
-change based on your current location.
-
-This is an example of an *Absolute* path.
-
-```
-C:\Windows\System32\shell.dll
-```
-
-A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
-indicates the current location, the double dot `..` represents the location
-directly above your current location. You can use multiple combinations
-of dot `.` and double dot `..`. A *Relative* path can change based on your
-current location.
-
-This is an example of a *Relative* path.
-
-```
-PS C:\Windows\System32\> .\shell.dll
-```
-
-Notice that this path is only valid if you are in the System32 directory.
-
-If any element in the fully qualified name includes spaces, you must enclose
-the name in quotation marks `" "`. The following example shows a fully
-qualified path that includes spaces.
-
-```
-"C:\Program Files\Internet Explorer\iexplore.exe"
-```
-
 ## Navigating the Environment drive
 
 The **Environment** provider exposes its data store in the `Env:` drive. To
@@ -103,36 +66,39 @@ path.
 Set-Location Env:
 ```
 
-You can also work with the **Environment** provider from any other PowerShell
-drive. To reference an environment variable from another location, use the drive name `Env:` in the path.
-
-{{Mention $env:}}
-
-PowerShell uses aliases to allow you a familiar way to work with provider
-paths. Commands such as `dir` and `ls` are now aliases for
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
-`cd` is an alias for
-[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
-
-### Example 1: Getting to the Env drive
-
-This command changes the current location to the `Env:` drive.
-
-```powershell
-Set-Location Env:
-```
-
 To return to a file system drive, type the drive name. For example, type:
 
 ```powershell
 Set-Location C:
 ```
 
+You can also work with the **Environment** provider from any other PowerShell
+drive. To reference an environment variable from another location, use the drive name `Env:` in the path.
+
+The **Environment** provider also exposes environment variables using a variable
+prefix of `$env:`.  The following command views the contents of the
+**ProgramFiles** environment variable. The `$env:` variable prefix can
+be used from any PowerShell drive.
+
+```
+PS C:\> $env:ProgramFiles
+C:\Program Files
+```
+
+You can also change the value of an environment variable using the `$env:`
+variable prefix.  Any changes made only pertain to the current PowerShell
+session for as long as it is active.
+
+> [!NOTE]
+> PowerShell uses aliases to allow you a familiar way to work with provider
+> paths. Commands such as `dir` and `ls` are now aliases for
+> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
+> an alias for [Get-Location](Get-Location.md).
+
 ## Getting environment variables
 
-### Example 1: Get all environment variables
-
-This command lists all the environment variables in the current session:
+This command lists all the environment variables in the current session.
 
 ```powershell
 Get-Item -Path Env:
@@ -147,7 +113,7 @@ same effect when used with `Get-ChildItem`.
 Get-ChildItem -Path Env:
 ```
 
-### Example 2: Get a selected environment variable
+### Get a selected environment variable
 
 This command gets the `WINDIR` environment Variable.
 
@@ -155,31 +121,26 @@ This command gets the `WINDIR` environment Variable.
 Get-ChildItem -Path Env:windir
 ```
 
-### Example 3: List environment variables by name
-
-This command gets a list of all the environment variables in the current
-session and then sorts them by name. By default, the environment variables
-appear in the order that PowerShell discovers them.
+You can also use the variable prefix format as well.
 
 ```powershell
-PS Env:\> Get-ChildItem | Sort-Object -Property name
+$env:windir
 ```
 
-## Creating a new environment variable
-
-### Example 1: Create an environment variable
+## Create an environment variable
 
 This command creates the `USERMODE` environment variable with a value of
-"Non-Admin". Because the current location is in the `C:` drive, the value of
-the `-Path` parameter is the `Env:` drive.
+"Non-Admin". The `-Path` parameter value creates the new item in the `Env:`
+drive. The new environment variable is only usable in the current PowerShell
+session for as long as it is active.
 
 ```powershell
 PS C:\> New-Item -Path Env: -Name USERMODE -Value Non-Admin
 ```
 
-## Changing the properties of an environment variable
+## Changing an environment variable
 
-### Example 1: Rename an environment variable
+### Rename an environment variable
 
 This command uses the `Rename-Item` cmdlet to change the name of the `USERMODE`
 environment variable that you created to `USERROLE`. Do not change the name of
@@ -191,7 +152,7 @@ incorrectly.
 Rename-Item -Path Env:USERMODE -NewName USERROLE
 ```
 
-### Example 2: Change an environment variable
+### Change an environment variable
 
 This command uses the `Set-Item` cmdlet to change the value of the `USERROLE`
 environment variable to "Administrator".
@@ -200,9 +161,7 @@ environment variable to "Administrator".
 Set-Item -Path Env:USERROLE -Value Administrator
 ```
 
-## Copying an environment variable
-
-### Example 1: Copy an environment variable
+## Copy an environment variable
 
 This command copies the value of the `USERROLE` environment variable to the
 `USERROLE2` environment Variable.
@@ -211,9 +170,7 @@ This command copies the value of the `USERROLE` environment variable to the
 Copy-Item -Path Env:USERROLE -Destination Env:USERROLE2
 ```
 
-## Deleting an environment variable
-
-### Example 1: Remove an environment variable
+## Remove an environment variable
 
 This command deletes the `USERROLE2` environment variable from the current
 session.
@@ -222,13 +179,21 @@ session.
 Remove-Item -Path Env:USERROLE2
 ```
 
-### Example 2: Delete an environment variable with Clear-Item
+## Remove an environment variable with Clear-Item
 
-This command deletes the `USERROLE` environment variable.
+This command deletes the `USERROLE` environment variable by clearing its
+value.
 
 ```powershell
 Clear-Item -Path Env:USERROLE
 ```
+
+## Using the pipeline
+
+Provider cmdlets accept pipeline input. You can use the pipeline to simplify
+task by sending provider data from one cmdlet to another provider cmdlet.
+To read more about how to use the pipeline with provider cmdlets, see the
+cmdlet references provided throughout this article.
 
 ## Getting help
 

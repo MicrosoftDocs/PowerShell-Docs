@@ -26,9 +26,12 @@ Provides access to files and directories.
 
 ## Detailed description
 
-The PowerShell **FileSystem** provider lets you get, add, change, clear, and delete files and directories in PowerShell.
+The PowerShell **FileSystem** provider lets you get, add, change, clear, and
+delete files and directories in PowerShell.
 
-The **FileSystem** drives are a hierarchical namespace containing the directories and files on your computer. A **FileSystem** drive can be a logical or phsyical drive, directory, or mapped network share.
+The **FileSystem** drives are a hierarchical namespace containing the
+directories and files on your computer. A **FileSystem** drive can be a logical
+or phsyical drive, directory, or mapped network share.
 
 The **FileSystem** provider supports the following cmdlets, which are covered
 in this article.
@@ -43,6 +46,10 @@ in this article.
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
 - [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
 - [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
+- [Clear-Item](Clear-Item.md)
+- [Clear-ItemProperty](Clear-ItemProperty.md)
+- [Remove-Item](Remove-Item.md)
+- [Remove-ItemProperty](Remove-ItemProperty.md)
 - [Get-Acl](../Get-Acl.md)
 - [Set-Acl](../Set-Acl.md)
 - [Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)
@@ -56,43 +63,6 @@ Files are instances of the `System.IO.FileInfo` class.  Directories are
 instances of the `System.IO.DirectoryInfo` class.
 
 {{change these into links to the classes}}
-
-## Working with provider paths
-
-A provider path can either be *Absolute* or *Relative*.  An *Absolute* path
-should be usable from any location and start with a drive name followed by a
-colon `:`.  Separate containers in your paths using a backslash `\` or a
-forward slash `/`.  If you are referencing a specific item, it should be the
-last item in the path. An *Absolute* path is absolute, it should not
-change based on your current location.
-
-This is an example of an *Absolute* path.
-
-```
-C:\Windows\System32\shell.dll
-```
-
-A *Relative* path begins with a dot `.` or double dot `..`.  The dot `.`
-indicates the current location, the double dot `..` represents the location
-directly above your current location. You can use multiple combinations
-of dot `.` and double dot `..`. A *Relative* path can change based on your
-current location.
-
-This is an example of a *Relative* path.
-
-```
-PS C:\Windows\System32\> .\shell.dll
-```
-
-Notice that this path is only valid if you are in the System32 directory.
-
-If any element in the fully qualified name includes spaces, you must enclose
-the name in quotation marks `" "`. The following example shows a fully
-qualified path that includes spaces.
-
-```
-"C:\Program Files\Internet Explorer\iexplore.exe"
-```
 
 ## Navigating the FileSystem drives
 
@@ -108,112 +78,46 @@ Set-Location C:
 You can also work with the **FileSystem** provider from any other PowerShell
 drive. To reference a file or directory from another location, use the drive name (`C:`, `D:`, ...) in the path.
 
-PowerShell uses aliases to allow you a familiar way to work with provider
-paths. Commands such as `dir` and `ls` are now aliases for
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md), and
-`cd` is an alias for
-[Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md).
+> [!NOTE]
+> PowerShell uses aliases to allow you a familiar way to work with provider
+> paths. Commands such as `dir` and `ls` are now aliases for
+> [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
+> an alias for [Get-Location](Get-Location.md).
 
-### Example 1: Getting to a FileSystem drive
+## Getting files and directories
 
-This command uses the `Set-Location` cmdlet to change the current location
-to the root of a **FileSystem** drive. You can use this command from any drive in PowerShell. Use a backslash (\\) or a forward slash (/) to indicate a level of the **FileSystem** drive.
-
-```powershell
-Set-Location C:
-```
-
-{{Should I combine Navigation and Provider Paths??}}
-
-### Example 2: Get the current location
-
-This command gets the current location:
-
-```powershell
-Get-Location
-```
-
-The [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)
-cmdlet includes the functionality of commands like the `cd` command in the
-Windows Command Prompt and the `pwd` command in UNIX. For more information,
-type:
-
-```powershell
-Get-Help Get-Location
-```
-
-## Getting file and directory information
-
-### Example 1: Get all items in the current directory
-
-This command gets all the files and directories in the current directory:
+The `Get-ChildItem` cmdlet returns all files and directories in the
+current location. You can specify a different path to search and use built
+in parameters to filter and control the recursion depth.
 
 ```powershell
 Get-ChildItem
 ```
 
-By default, the
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet
-does not recurse. If files and folders are present in the current directory
-when you run this command, a
-[System.IO.FileInfo](https://msdn.microsoft.com/library/system.io.fileinfo)
-object and a
-[System.IO.DirectoryInfo](https://msdn.microsoft.com/library/system.io.directoryinfo)
-object are returned.
-
-### Example 2: Get only files in the current directory
-
-This command gets all the files in the current directory:
-
-```powershell
-Get-ChildItem -File
-```
-
-The command uses the
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet
-to get all files and directories. It pipes the results to the
-[Where-Object](../Where-Object.md) cmdlet, which selects only the objects that
-are not (`!`) containers.
-
-### Example 3: Get only directories in the current location
-
-The command uses the
-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md) cmdlet
-to get all files and directories. It pipes the results to
-[Where-Object](../Where-Object.md), which select only the objects that are
-containers.
-
-```powershell
-Get-ChildItem | Where-Object {$_.psiscontainer}
-```
+To read more about cmdlet usage, see [Get-ChildItem](Get-ChildItem.md).
 
 ## Copying files and directories
 
-### Example 1: Copy a file to a new location
+The `Copy-Item` cmdlet copies files and directories to a location you specify.
+Parameters are available to filter and recurse, similar to `Get-ChildItem`.
+
+The following command copies all of the files and directories under the path
+"C:\temp\" to the folder "C:\Windows\Temp".
+
+```powershell
+Copy-Item -Path C:\temp\* -Destination C:\Windows\Temp -Recurse -File
+```
+
+`Copy-Item` overwrites files in the destination directory without prompting for
+confirmation.
 
 This command copies the `a.txt` file from the `C:\a` directory to the `C:\a\bb`
-directory:
+directory.
 
 ```powershell
 Copy-Item -Path C:\a\a.txt -Destination C:\a\bb\a.txt
 ```
-
-It overwrites files in the destination directory without prompting for
-confirmation.
-
-### Example 2: Copy files to a new location using wildcards
-
-This command copies all the files in the `C:\a\bb` directory that have the
-`.txt` file name extension to the `C:\a\cc\ccc\` directory:
-
-```powershell
-Copy-Item -Path C:\a\bb\*.txt -Destination C:\a\cc\ccc\
-```
-
-It uses the original names of the files. The command overwrites the existing
-files in the destination directory without prompting for confirmation.
-
-### Example 3: Recursively copy files to a new location using wildcards
 
 Copies all the directories and files in the `C:\a` directory to the `C:\c`
 directory. If any of the directories to copy already exist in the destination
@@ -223,9 +127,9 @@ directory, the command will fail unless you specify the Force parameter.
 Copy-Item -Path C:\a\* -Destination C:\c -Recurse
 ```
 
-## Moving files and directories
+For more information, see [Copy-Item](Copy-Item.md).
 
-### Example 1: Move a file to a new location
+## Moving files and directories
 
 This command moves the `c.txt` file in the `C:\a` directory to the `C:\a\aa`
 directory:
@@ -238,20 +142,42 @@ The command will not automatically overwrite an existing file that has the same
 name. To force the cmdlet to overwrite an existing file, specify the Force
 parameter.
 
-### Example 2: Move a directory to a new location
+You cannot move a directory when that directory is the current location. When
+you use `Move-Item` to move the directory at the current location, you see
+this error.
 
-This command moves the `C:\a` directory and all its contents to the `C:\b`
-directory:
-
-```powershell
-Move-Item -Path C:\a -Destination C:\b
 ```
+C:\temp> Move-Item -Path C:\temp\ -Destination C:\Windows\Temp
 
-You cannot move a directory when that directory is the current location.
+Move-Item : Cannot move item because the item at 'C:\temp\' is in use.
+At line:1 char:1
++ Move-Item C:\temp\ C:\temp2\
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Move-Item], PSInvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.MoveItemCommand
+```
 
 ## Managing file content
 
-### Example 1: Add content to a file
+### Get the content of a file
+
+This command gets the contents of the "Test.txt" file and displays them in the
+console.
+
+```powershell
+Get-Content -Path Test.txt
+```
+
+You can pipe the contents of the file to another cmdlet. For example, the
+following command reads the contents of the `Test.txt` file and then supplies
+them as input to the
+[ConvertTo-Html](../../Microsoft.PowerShell.Utility/ConvertTo-Html.md) cmdlet:
+
+```powershell
+Get-Content -Path Test.txt | ConvertTo-Html
+```
+
+### Add content to a file
 
 This command appends the "test content" string to the `Test.txt` file:
 
@@ -261,25 +187,7 @@ Add-Content -Path test.txt -Value "test content"
 
 The existing content in the `Test.txt` file is not deleted.
 
-### Example 2: Get the content of a file
-
-This command gets the contents of the `Test.txt` file and displays them in the
-console:
-
-```powershell
-Get-Content -Path test.txt
-```
-
-You can pipe the contents of the file to another cmdlet. For example, the
-following command reads the contents of the `Test.txt` file and then supplies
-them as input to the
-[ConvertTo-Html](../../Microsoft.PowerShell.Utility/ConvertTo-Html.md) cmdlet:
-
-```powershell
-Get-Content -Path test.txt | ConvertTo-Html
-```
-
-### Example 3: Replace the content of a file
+### Replace the content of a file
 
 This command replaces the contents of the `Test.txt` file with the "test
 content" string:
@@ -292,7 +200,7 @@ It overwrites the contents of `Test.txt`. You can use the **Value** parameter
 of the [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to
 add content to a file when you create it.
 
-### Example 4: Loop through the contents of a file
+### Loop through the contents of a file
 
 By default, the `Get-Content` cmdlet uses the end-of-line character as its
 delimiter, so it gets a file as a collection of strings, with each line as one
@@ -321,7 +229,7 @@ $e[0]
 
 ## Managing security descriptors
 
-### Example 1: View the ACL for a file
+### View the ACL for a file
 
 This command returns a
 [System.Security.AccessControl.FileSecurity](https://msdn.microsoft.com/library/system.security.accesscontrol.filesecurity)
@@ -336,13 +244,13 @@ For more information about this object, pipe the command to the
 "[FileSecurity](http://go.microsoft.com/fwlink/?LinkId=145718) Class" in the
 MSDN (Microsoft Developer Network) library.
 
-### Example 2: Modify the ACL for a file
+### Modify the ACL for a file
 
-### Example 3: Create and set an ACL for a file
+### Create and set an ACL for a file
 
 ## Creating files and directories
 
-### Example 1: Create a directory
+### Create a directory
 
 This command creates the `logfiles` directory on the `C` drive:
 
@@ -354,7 +262,7 @@ PowerShell also includes a `mkdir` function (alias `md`) that uses the
 [New-Item](../../Microsoft.PowerShell.Management/New-Item.md) cmdlet to
 create a new directory.
 
-### Example 2: Create a file
+### Create a file
 
 This command creates the `log2.txt` file in the `C:\logfiles` directory and
 then adds the "test log" string to the file:
@@ -363,7 +271,7 @@ then adds the "test log" string to the file:
 New-Item -Path c:\logfiles -Name log2.txt -Type file
 ```
 
-### Example 3: Create a file with content
+### Create a file with content
 
 Creates a file called `log2.txt` in the `C:\logfiles` directory and adds the
 string "test log" to the file.
@@ -374,7 +282,7 @@ New-Item -Path c:\logfiles -Name log2.txt -Type file -Value "test log"
 
 ## Renaming files and directories
 
-### Example 1: Rename a file
+### Rename a file
 
 This command renames the `a.txt` file in the `C:\a` directory to `b.txt`:
 
@@ -382,7 +290,7 @@ This command renames the `a.txt` file in the `C:\a` directory to `b.txt`:
 Rename-Item -Path c:\a\a.txt -NewName b.txt
 ```
 
-### Example 2: Rename a directory
+### Rename a directory
 
 This command renames the `C:\a\cc` directory to `C:\a\dd`:
 
@@ -392,7 +300,7 @@ Rename-Item -Path c:\a\cc -NewName dd
 
 ## Deleting files and directories
 
-### Example 1: Delete a file
+### Delete a file
 
 This command deletes the `Test.txt` file in the current directory:
 
@@ -400,7 +308,7 @@ This command deletes the `Test.txt` file in the current directory:
 Remove-Item -Path test.txt
 ```
 
-### Example 2: Delete files using wildcards
+### Delete files using wildcards
 
 This command deletes all the files in the current directory that have the
 `.xml` file name extension:
@@ -411,7 +319,7 @@ Remove-Item -Path *.xml
 
 ## Starting a program by invoking an associated file
 
-### Example 1: Invoke a file
+### Invoke a file
 
 The first command uses the
 [Get-Service](../../Microsoft.PowerShell.Management/Get-Service.md) cmdlet to
@@ -432,7 +340,7 @@ Invoke-Item -Path services.csv
 
 ## Getting files and folders with specified attributes
 
-### Example 1: Get System files
+### Get System files
 
 This command gets system files in the current directory and its subdirectories.
 
@@ -446,7 +354,7 @@ all subdirectories.
 Get-ChildItem -File -System -Recurse
 ```
 
-### Example 2: Get Hidden files
+### Get Hidden files
 
 This command gets all files, including hidden files, in the current directory.
 
@@ -459,7 +367,7 @@ Get-ChildItem -Attributes !Directory,!Directory+Hidden
 
 `dir -att !d,!d+h` is the equivalent of this command.
 
-### Example 3: Get Compressed and Encrypted files
+### Get Compressed and Encrypted files
 
 This command gets files in the current directory that are either compressed or
 encrypted.
@@ -471,6 +379,13 @@ operator.
 ```powershell
 Get-ChildItem -Attributes Compressed,Encrypted
 ```
+
+## Using the pipeline
+
+Provider cmdlets accept pipeline input. You can use the pipeline to simplify
+task by sending provider data from one cmdlet to another provider cmdlet.
+To read more about how to use the pipeline with provider cmdlets, see the
+cmdlet references provided throughout this article.
 
 ## Dynamic parameters
 
