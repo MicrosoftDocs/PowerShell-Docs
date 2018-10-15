@@ -63,4 +63,4 @@ The selection condition can specify a selection set or .NET type, but cannot spe
 
 [Defining Selection Sets](./defining-selection-sets.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

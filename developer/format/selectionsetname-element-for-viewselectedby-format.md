@@ -71,4 +71,4 @@ The following example shows how to specify a selection set for a list view. The 
 
 [ViewSelectedBy Element (Format)](./viewselectedby-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

@@ -67,4 +67,4 @@ For more information about other components of a list view, see [Creating List V
 
 [ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

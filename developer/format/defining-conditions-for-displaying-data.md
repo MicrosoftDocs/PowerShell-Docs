@@ -95,4 +95,4 @@ You can specify only one selection condition for an item. And the condition must
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

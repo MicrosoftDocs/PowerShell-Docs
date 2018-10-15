@@ -73,4 +73,4 @@ For an example of a complete formatting file that includes this element, see [Wi
 
 [ScriptBlock Element for GroupBy (Format)](./scriptblock-element-for-groupby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

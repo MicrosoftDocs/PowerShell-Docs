@@ -85,4 +85,4 @@ For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic
 
 [WideItem Element (Format)](./wideitem-element-for-widecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

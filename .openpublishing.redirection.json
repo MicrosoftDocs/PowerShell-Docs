@@ -360,6 +360,16 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "developer/format/windows-powershell-formatting-files.md",
+            "redirect_url": "/powershell/developer/format/powershell-formatting-files",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "developer/format/writing-a-windows-powershell-formatting-file.md",
+            "redirect_url": "/powershell/developer/format/writing-a-powershell-formatting-file",
+            "redirect_document_id": false
+        },
+        {
             "source_path": "reference/virtual-directory/core-powershell/core-powershell.md",
             "redirect_url": "/powershell/scripting/powershell-scripting",
             "redirect_document_id": "False"

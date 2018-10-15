@@ -91,4 +91,4 @@ The following example shows two `TableColumnHeader` elements. The first element 
 
 [Width for TableColumnHeader for TableControl Element (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

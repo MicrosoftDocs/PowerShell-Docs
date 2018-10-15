@@ -80,4 +80,4 @@ This example shows a `TableColumnHeader` element whose data is aligned on the le
 
 [TableColumnHeader Element (Format)](./tablecolumnheader-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

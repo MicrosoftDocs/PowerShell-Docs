@@ -37,7 +37,7 @@ You can reference a selection sets in the following ways:
 
 ## Selection Set Example
 
-The following example shows a selection set that is taken directly from the `FileSystem` formatting file provided by Windows PowerShell. For more information about other Windows PowerShell formatting files, see [Windows PowerShell Formatting Files](./windows-powershell-formatting-files.md).
+The following example shows a selection set that is taken directly from the `FileSystem` formatting file provided by Windows PowerShell. For more information about other Windows PowerShell formatting files, see [Windows PowerShell Formatting Files](./powershell-formatting-files.md).
 
 ```xml
 <SelectionSets>
@@ -136,8 +136,8 @@ The previous selection set is referenced in the `ViewSelectedBy` element of a ta
 
 [Types](./types-element-for-selectionset-format.md)
 
-[Windows PowerShell Formatting Files](./windows-powershell-formatting-files.md)
+[PowerShell Formatting Files](./powershell-formatting-files.md)
 
 [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

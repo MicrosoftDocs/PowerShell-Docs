@@ -69,4 +69,4 @@ None.
 
 [Text Element for CustomItem for GroupBy (Format)](./text-element-for-customitem-for-groupby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

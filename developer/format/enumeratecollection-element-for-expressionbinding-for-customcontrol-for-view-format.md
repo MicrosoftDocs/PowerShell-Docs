@@ -53,4 +53,4 @@ None.
 
 [ExpressionBinding Element for CustomItem (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

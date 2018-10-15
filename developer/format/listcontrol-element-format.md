@@ -77,4 +77,4 @@ This example shows a list view for the [System.Serviceprocess.Servicecontroller]
 
 [Creating a List View](./creating-a-list-view.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

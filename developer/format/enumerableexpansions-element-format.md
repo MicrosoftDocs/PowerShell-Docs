@@ -51,4 +51,4 @@ This element is used to define how collection objects and the objects in the col
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

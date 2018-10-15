@@ -632,4 +632,4 @@ Specifies that data in a table cell is moved to the next line if the data is lon
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

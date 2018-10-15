@@ -67,4 +67,4 @@ For more information about other components of a list view, see [Creating a List
 
 [SelectionCondition Element for EntrySelectedBy for ListEntry (Format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
