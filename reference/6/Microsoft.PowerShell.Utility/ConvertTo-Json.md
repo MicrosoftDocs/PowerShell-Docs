@@ -11,19 +11,21 @@ title:  ConvertTo-Json
 # ConvertTo-Json
 
 ## SYNOPSIS
+
 Converts an object to a JSON-formatted string.
 
 ## SYNTAX
 
 ```
-ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [<CommonParameters>]
+ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [-EnumsAsStrings] [-AsArray] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **ConvertTo-Json** cmdlet converts any object to a string in JavaScript Object Notation (JSON) format.
 The properties are converted to field names, the field values are converted to property values, and the methods are removed.
 
-You can then use the ConvertFrom-Json cmdlet to convert a JSON-formatted string to a JSON object, which is easily managed in PowerShell.
+You can then use the **ConvertFrom-Json** cmdlet to convert a JSON-formatted string to a JSON object, which is easily managed in PowerShell.
 
 Many web sites use JSON instead of XML to serialize data for communication between servers and web-based apps.
 
@@ -31,106 +33,152 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
-### Example 1: Convert a Calendar object to a JSON string
-```
+### Example 1
+
+```powershell
 PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
+```
+
+```output
 {
-    "MinSupportedDateTime":  "\/Date(-62135568000000)\/",
-    "MaxSupportedDateTime":  "\/Date(253402300799999)\/",
-    "AlgorithmType":  1,
-    "CalendarType":  1,
-    "Eras":  [
-                 1
-             ],
-    "TwoDigitYearMax":  2029,
-    "IsReadOnly":  false
+  "MinSupportedDateTime": "0001-01-01T00:00:00",
+  "MaxSupportedDateTime": "9999-12-31T23:59:59.9999999",
+  "AlgorithmType": 1,
+  "CalendarType": 1,
+  "Eras": [
+    1
+  ],
+  "TwoDigitYearMax": 2029,
+  "IsReadOnly": true
 }
 ```
 
 This command uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
 
-### Example 2: Compress the JSON output
-```
-PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
-{"Admin":"True","Account":"User01","Domain":"Domain01"}
+### Example 2
+
+```powershell
+PS C:\> Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
 ```
 
-This command shows the effect of using the *Compress* parameter of **ConvertTo-Json**.
+```output
+{
+  "value": "2018-10-12T23:07:18.8450248-05:00",
+  "DisplayHint": 2,
+  "DateTime": "October 12, 2018 11:07:18 PM"
+}
+[
+  {
+    "value": "2018-10-12T23:07:18.8480668-05:00",
+    "DisplayHint": 2,
+    "DateTime": "October 12, 2018 11:07:18 PM"
+  }
+]
+```
+
+This example shows the output from **ConvertTo-Json** cmdlet with and without the `-AsArray` switch parameter. You can see the second portion of the output is wrapped in array brackets.
+
+### Example 3
+
+```powershell
+PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
+```
+
+```output
+{"Domain":"Domain01","Account":"User01","Admin":"True"}
+```
+
+This command shows the effect of using the `-Compress` parameter of **ConvertTo-Json**.
 The compression affects only the appearance of the string, not its validity.
 
-### Example 3: Convert an object to a JSON string and JSON object
-```
+### Example 4
+
+```powershell
 PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
+```
+
+```output
 {
+  "DisplayHint": 2,
+  "DateTime": "October 12, 2018 10:55:32 PM",
+  "Date": "2018-10-12T00:00:00-05:00",
+  "Day": 12,
+  "DayOfWeek": 5,
+  "DayOfYear": 285,
+  "Hour": 22,
+  "Kind": 2,
+  "Millisecond": 639,
+  "Minute": 55,
+  "Month": 10,
+  "Second": 32,
+  "Ticks": 636749817326397744,
+  "TimeOfDay": {
+    "Ticks": 825326397744,
+    "Days": 0,
+    "Hours": 22,
+    "Milliseconds": 639,
+    "Minutes": 55,
+    "Seconds": 32,
+    "TotalDays": 0.95523888627777775,
+    "TotalHours": 22.925733270666665,
+    "TotalMilliseconds": 82532639.774400011,
+    "TotalMinutes": 1375.54399624,
+    "TotalSeconds": 82532.6397744
+  },
+  "Year": 2018
+}
+```
 
-    "DisplayHint":  2,
-    "DateTime":  "Friday, January 13, 2012 8:06:16 PM",
-    "Date":  "\/Date(1326441600000)\/",
-    "Day":  13,
-    "DayOfWeek":  5,
-    "DayOfYear":  13,
-    "Hour":  20,
-    "Kind":  2,
-    "Millisecond":  221,
-    "Minute":  6,
-    "Month":  1,
-    "Second":  16,
-    "Ticks":  634620819762218083,
-    "TimeOfDay":  {
-                      "Ticks":  723762218083,
-                      "Days":  0,
-                      "Hours":  20,
-                      "Milliseconds":  221,
-                      "Minutes":  6,
-                      "Seconds":  16,
-                      "TotalDays":  0.83768775241087956,
-                      "TotalHours":  20.104506057861109,
-                      "TotalMilliseconds":  72376221.8083,
-                      "TotalMinutes":  1206.2703634716668,
-                      "TotalSeconds":  72376.22180829999
-                  },
-    "Year":  2012
-} C:\>Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+This example uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the **Get-Date** cmdlet to a JSON-formatted string. The command uses the **Select-Object** cmdlet to get all (`*`) of the properties of the **DateTime** object. The output shows the JSON string that **ConvertTo-Json** returned.
+
+### Example 5
+
+```powershell
+PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+```
+
+```output
 DisplayHint : 2
-DateTime    : Friday, January 13, 2012 8:06:31 PM
-Date        : 1/13/2012 8:00:00 AM
-Day         : 13
+DateTime    : October 12, 2018 10:55:52 PM
+Date        : 2018-10-12 12:00:00 AM
+Day         : 12
 DayOfWeek   : 5
-DayOfYear   : 13
-Hour        : 20
+DayOfYear   : 285
+Hour        : 22
 Kind        : 2
-Millisecond : 400
-Minute      : 6
-Month       : 1
-Second      : 31
-Ticks       : 634620819914009002
-TimeOfDay   : @{Ticks=723914009002; Days=0; Hours=20; Milliseconds=400;
- Minutes=6; Seconds=31; TotalDays=0.83786343634490734;
-               TotalHours=20.108722472277776; TotalMilliseconds=72391400.900200009;
- TotalMinutes=1206.5233483366667;
-              TotalSeconds=72391.4009002}
-Year        : 2012
+Millisecond : 768
+Minute      : 55
+Month       : 10
+Second      : 52
+Ticks       : 636749817527683372
+TimeOfDay   : @{Ticks=825527683372; Days=0; Hours=22; Milliseconds=768; Minutes=55; Seconds=52;
+              TotalDays=0.95547185575463; TotalHours=22.9313245381111; TotalMilliseconds=82552768.3372;
+              TotalMinutes=1375.87947228667; TotalSeconds=82552.7683372}
+Year        : 2018
 ```
 
-This command shows how to use the **ConvertTo-Json** and **ConvertFrom-Json** cmdlets to convert an object to a JSON string and a JSON object.
-
-The first command uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the Get-Date cmdlet to a JSON-formatted string.
-The command uses the Select-Object cmdlet to get all (*) of the properties of the **DateTime** object.
-The output shows the JSON string that **ConvertTo-Json** returned.
-
-The second command uses **ConvertFrom-Json** to convert the JSON string to a JSON object.
-
-### Example 4: Convert a PowerShell Help file to JSON format
-```
-PS C:\> $JsonSecurityHelp = Get-Content $Pshome\Modules\Microsoft.PowerShell.Security\en-US\Microsoft.PowerShell.Security.dll-Help.xml | ConvertTo-Json
-```
-
-This command uses the **ConvertTo-Json** cmdlet to convert a PowerShell Help file from XML format to JSON format.
-You can use a command like this to use the Help topic content in a web service application.
+This example shows how to use the **ConvertTo-Json** and **ConvertFrom-Json** cmdlets to convert an object to a JSON string and a JSON object.
 
 ## PARAMETERS
 
+### -AsArray
+
+Outputs the object in array brackets, even if the input is a single object.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Compress
+
 Omits white space and indented formatting in the output string.
 
 ```yaml
@@ -146,6 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -Depth
+
 Specifies how many levels of contained objects are included in the JSON representation.
 The default value is 2.
 
@@ -161,13 +210,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EnumsAsStrings
+
+Provides an alternative serialization option that converts all enumerations to their string representation.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
+
 Specifies the objects to convert to JSON format.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 You can also pipe an object to **ConvertTo-Json**.
 
-The *InputObject* parameter is required, but its value can be null ($Null) or an empty string.
-When the input object is $Null, **ConvertTo-Json** does not generate any output.
+The *InputObject* parameter is required, but its value can be null (`$null`) or an empty string.
+When the input object is `$null`, **ConvertTo-Json** does not generate any output.
 When the input object is an empty string, **ConvertTo-Json** returns an empty string.
 
 ```yaml
@@ -183,11 +249,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
+
 You can pipe any object to **ConvertTo-Json**.
 
 ## OUTPUTS
@@ -195,6 +263,7 @@ You can pipe any object to **ConvertTo-Json**.
 ### System.String
 
 ## NOTES
+
 * The **ConvertTo-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS
