@@ -256,4 +256,4 @@ The following XML element can be used to calling the `ToString` method:
 
 [Wide View (GroupBy)](./wide-view-groupby.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

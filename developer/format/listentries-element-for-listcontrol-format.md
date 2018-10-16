@@ -79,4 +79,4 @@ This example shows the XML elements that define the list view for the [System.Se
 
 [List View](./creating-a-list-view.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

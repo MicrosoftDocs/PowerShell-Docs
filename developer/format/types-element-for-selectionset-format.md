@@ -77,4 +77,4 @@ This example shows a `SelectionSet` element that defines four .NET types.
 
 [TypeName Element of Types (Format)](./typename-element-for-types-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

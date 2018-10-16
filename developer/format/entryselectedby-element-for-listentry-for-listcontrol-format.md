@@ -87,4 +87,4 @@ The following example shows how to define the objects for a list view using thei
 
 [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

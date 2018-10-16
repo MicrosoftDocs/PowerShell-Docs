@@ -86,4 +86,4 @@ For more information about the components of a table view, see [Creating a Table
 
 [TypeName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

@@ -108,4 +108,4 @@ This example shows a `View` element that defines a table view for the [System.Se
 
 [CustomControl Element (Format)](./customcontrol-element-for-groupby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

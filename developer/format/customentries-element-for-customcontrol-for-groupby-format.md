@@ -58,4 +58,4 @@ In most cases, a control has only one definition, which is specified in a single
 
 [CustomControl Element for GroupBy (Format)](./customcontrol-element-for-groupby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

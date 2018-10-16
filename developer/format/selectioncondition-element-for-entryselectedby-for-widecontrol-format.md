@@ -86,4 +86,4 @@ For more information about other components of a wide view, see [Creating a Wide
 
 [TypeName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

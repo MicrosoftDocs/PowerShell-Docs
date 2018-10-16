@@ -67,4 +67,4 @@ At a minimum, each definition must have at least one .NET type, selection set, o
 
 [TypeName Element for EntrySelectdBy for Controls for Configuration (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
