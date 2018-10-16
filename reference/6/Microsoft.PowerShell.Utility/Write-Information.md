@@ -110,6 +110,16 @@ Test-Info 6> Info.txt
 In this example, you redirect the information stream in the function to a file, Info.txt, by using the code 6\>.
 When you open the Info.txt file, you see the text, "Here you go."
 
+### Example 4: Pass object to write information
+
+```powershell
+Get-Process | Sort-Object CPU -Descending | Select-Object Id, ProcessName, CPU -First 10 | Write-Information -InformationAction Continue
+```
+
+In this example, you can use `Write-Information` to write the top 10 highest
+CPU utilization processes from the `Get-Process` object output that has passes
+through multiple pipelines.
+
 ## PARAMETERS
 
 ### -MessageData
