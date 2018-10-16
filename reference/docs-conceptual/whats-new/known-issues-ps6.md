@@ -136,12 +136,12 @@ something we will consider post 6.0 as it requires significant design work.
 ### `sudo`, `exec`, and PowerShell
 
 Because PowerShell runs most commands in memory (like Python or Ruby), you can't use sudo directly
-with PowerShell built-ins. (You can, of course, run `powershell` from sudo.) If it is necessary to
-run a PowerShell cmdlet from within PowerShell with sudo, for example, `sudo `Set-Date` 8/18/2016`,
-then you would do `sudo powershell `Set-Date` 8/18/2016`. Likewise, you can't exec a PowerShell
-built-in directly. Instead you would have to do `exec powershell item_to_exec`.
+with PowerShell built-ins. (You can, of course, run `pwsh` from sudo.) If it is necessary to
+run a PowerShell cmdlet from within PowerShell with sudo, for example, `sudo Set-Date 8/18/2016`,
+then you would do `sudo pwsh Set-Date 8/18/2016`. Likewise, you can't exec a PowerShell
+built-in directly. Instead you would have to do `exec pwsh item_to_exec`.
 
-This issue is currently being tracked as part of #3232.
+This issue is currently being tracked as part of [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### Missing Cmdlets
 
