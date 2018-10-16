@@ -56,7 +56,7 @@ must configure enable password or key-based authentication.
    ```
 
 2. Install the latest [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) build from GitHub using the [installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instructions
-3. Edit the sshd_config file located at `%ProgramData%\ssh`. 
+3. Edit the sshd_config file located at `%ProgramData%\ssh`.
 
    - Make sure password authentication is enabled
 
@@ -65,7 +65,7 @@ must configure enable password or key-based authentication.
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -75,7 +75,7 @@ must configure enable password or key-based authentication.
      One solution is to create a symlink to the Powershell installation directory that doesn't have spaces:
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      and then enter it in the subsystem:
