@@ -74,7 +74,7 @@ The **Force** parameter lets you create a file in the profile path, even when th
 
 After you use this command to create a profile, you can enter aliases, functions, and scripts in the profile to customize your shell.
 
-For more information, see [about_Automatic_Variables](about_Automatic_Variables.md) and [about_Profiles](about_Profiles.md).
+For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md) and [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 ```powershell
 New-Item -Path $profile -ItemType "file" -Force
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 
 Forces this cmdlet to create an item that writes over an existing read-only item.
 Implementation varies from provider to provider.
-For more information, see [about_Providers](about_Providers.md).
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 Even using the **Force** parameter, the cmdlet cannot override security restrictions.
 
 ```yaml

@@ -212,7 +212,7 @@ Accept wildcard characters: True
 
 Indicates that this cmdlet gets items that cannot otherwise be accessed, such as hidden items.
 Implementation varies from provider to provider.
-For more information, see [about_Providers](about_Providers.md).
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 Even using the **Force** parameter, the cmdlet cannot override security restrictions.
 
 ```yaml

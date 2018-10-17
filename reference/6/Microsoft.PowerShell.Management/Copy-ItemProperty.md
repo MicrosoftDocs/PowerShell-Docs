@@ -130,7 +130,7 @@ Accept wildcard characters: True
 
 Forces the command to run without asking for user confirmation.
 Implementation varies from provider to provider.
-For more information, see [about_Providers](about_Providers.md).
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
 Type: SwitchParameter

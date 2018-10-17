@@ -139,7 +139,7 @@ Accept wildcard characters: False
 Forces the cmdlet to set items that cannot otherwise be changed, such as read-only alias or variables.
 The cmdlet cannot change constant aliases or variables.
 Implementation varies from provider to provider.
-For more information, see [about_Providers](about_Providers.md).
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 Even using the *Force* parameter, the cmdlet cannot override security restrictions.
 
 ```yaml
