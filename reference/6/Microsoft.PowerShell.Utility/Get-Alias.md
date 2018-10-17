@@ -141,6 +141,7 @@ Specifies the aliases that this cmdlet gets.
 Wildcards are permitted.
 By default, `Get-Alias` retrieves all aliases defined for the current session.
 The parameter name **Name** is optional.
+The parameter values cannot be null or empty.
 You can also pipe alias names to `Get-Alias`.
 
 ```yaml
