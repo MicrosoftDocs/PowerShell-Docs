@@ -10,9 +10,7 @@ ms.date: 08/14/2018
 
 PowerShell remoting normally uses WinRM for connection negotiation and data transport. SSH is now available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.
 
-WinRM provides a robust hosting model for PowerShell remote sessions. which this implementation
-SSH-based remoting doesn't currently support remote endpoint configuration and JEA (Just Enough
-Administration).
+WinRM provides a robust hosting model for PowerShell remote sessions. SSH-based remoting doesn't currently support remote endpoint configuration and JEA (Just Enough Administration).
 
 SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines. SSH Remoting creates a PowerShell host process on the target machine as an SSH subsystem.
 Eventually we'll implement a general hosting model, similar to WinRM, to support endpoint
