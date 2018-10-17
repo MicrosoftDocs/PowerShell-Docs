@@ -548,17 +548,18 @@ Param(
 
 $Message = "bye"
 ```
-
 #### Dynamic ValidateSet Values
 
-You can use a `Class` to dynamically generate the values for `ValidateSet` at runtime.
-In the following example, the valid values for the variable `$Sound` are generated
-via a `Class` named `SoundNames` that checks three filesystem paths for available sound files:
+You can use a `Class` to dynamically generate the values for `ValidateSet` at
+runtime. In the following example, the valid values for the variable `$Sound`
+are generated via a `Class` named `SoundNames` that checks three filesystem
+paths for available sound files:
 
 ```powershell
 Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
     [String[]] GetValidValues() {
-        $SoundPaths = '/System/Library/Sounds/','/Library/Sounds','~/Library/Sounds'
+        $SoundPaths = '/System/Library/Sounds/',
+            '/Library/Sounds','~/Library/Sounds'
         $SoundNames = ForEach ($SoundPath in $SoundPaths) {
             If (Test-Path $SoundPath) {
                 (Get-ChildItem $SoundPath).BaseName
@@ -569,7 +570,8 @@ Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
 }
 ```
 
-The `[SoundNames]` class is then implemented as a dynamic `ValidateSet` value as follows:
+The `[SoundNames]` class is then implemented as a dynamic `ValidateSet` value
+as follows:
 
 ```powershell
 Param(
