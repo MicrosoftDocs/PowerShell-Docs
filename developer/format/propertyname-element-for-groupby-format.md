@@ -11,7 +11,7 @@ caps.latest.revision: 10
 ---
 # PropertyName Element for GroupBy (Format)
 
-Specifies the .NET Framework property that starts a new group whenever its value changes.
+Specifies the .NET property that starts a new group whenever its value changes.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -41,11 +41,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Defines how a group of .NET Framework objects is displayed.|
+|[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Defines how a group of .NET objects is displayed.|
 
 ## Text Value
 
-Specify the .NET Framework property name.
+Specify the .NET property name.
 
 ## Remarks
 
@@ -73,4 +73,4 @@ For an example of a complete formatting file that includes this element, see [Wi
 
 [ScriptBlock Element for GroupBy (Format)](./scriptblock-element-for-groupby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

@@ -48,13 +48,13 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display one or more .NET Framework objects.|
+|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display one or more .NET objects.|
 
 ## Remarks
 
 When defining a wide view, you can add the `AutoSize` element or the `ColumnNumber` but you cannot add both.
 
-In most cases, only one definition is required for each wide view, but it is possible to have multiple definitions if you want to use the same view to display different .NET Framework objects. In those cases, you can provide a separate definition for each object or set of objects.
+In most cases, only one definition is required for each wide view, but it is possible to have multiple definitions if you want to use the same view to display different .NET objects. In those cases, you can provide a separate definition for each object or set of objects.
 
 For more information about the components of a wide view, see [Wide View Components](./creating-a-wide-view.md).
 
@@ -90,4 +90,4 @@ For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic
 
 [Creating a Wide View](./creating-a-wide-view.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

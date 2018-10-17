@@ -42,7 +42,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Defines the .NET Framework types that use the definition of the common control or the condition that must exist for this control to be used.|
+|[EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Defines the .NET types that use the definition of the common control or the condition that must exist for this control to be used.|
 |[CustomItem Element for CustomEntry for Controls for Configuration](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|Required element.<br /><br /> Defines what data is displayed by the control and how it is displayed.|
 
 ### Parent Elements
@@ -53,7 +53,7 @@ None.
 
 ## Remarks
 
-In most cases, only one definition is required for each common custom control, but it is possible to have multiple definitions if you want to use the same control to display different .NET Framework objects. In those cases, you can provide a separate definition for each object or set of objects.
+In most cases, only one definition is required for each common custom control, but it is possible to have multiple definitions if you want to use the same control to display different .NET objects. In those cases, you can provide a separate definition for each object or set of objects.
 
 ## See Also
 
@@ -61,4 +61,4 @@ In most cases, only one definition is required for each common custom control, b
 
 [CustomItem Element for CustomEntry for Controls for Configuration](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

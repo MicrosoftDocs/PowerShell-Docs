@@ -11,7 +11,7 @@ caps.latest.revision: 7
 ---
 # PropertyName Element for ItemSelectionCondition for ListControl (Format)
 
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the view is used. This element is used when defining a list view.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the view is used. This element is used when defining a list view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -62,4 +62,4 @@ If this element is used, you cannot specify the [ScriptBlock](./scriptblock-elem
 
 [ItemSelectionCondition Element for ListItem for ListControl (Format)](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

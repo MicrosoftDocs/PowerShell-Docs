@@ -11,7 +11,7 @@ caps.latest.revision: 13
 ---
 # SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met.
 
 Configuration Element
 DefaultSettings Element (Format)
@@ -51,9 +51,9 @@ Specify the name of the selection set.
 
 ## Remarks
 
-The selection condition can specify a selection set or .NET Framework type, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+The selection condition can specify a selection set or .NET type, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
-Selection sets are common groups of .NET Framework objects that can be used by any view that the formatting file defines. For more information about creating and referencing selection sets, see [Defining Selection Sets](./defining-selection-sets.md).
+Selection sets are common groups of .NET objects that can be used by any view that the formatting file defines. For more information about creating and referencing selection sets, see [Defining Selection Sets](./defining-selection-sets.md).
 
 ## See Also
 
@@ -61,4 +61,4 @@ Selection sets are common groups of .NET Framework objects that can be used by a
 
 [SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

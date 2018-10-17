@@ -77,7 +77,7 @@ A number of changes have been made on macOS and Linux to support filename charac
   - The history save path is located at `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
   - The user module path is located at `~/.local/share/powershell/Modules`
 - Support for file and folder names containing the colon character on Unix. (#4959)
-- Support for script names or full paths that have commas. (#4136) (Thanks to @TimCurwick!)
+- Support for script names or full paths that have commas. (#4136) (Thanks to [@TimCurwick](https://github.com/TimCurwick)!)
 - Detect when `-LiteralPath` is used to suppress wildcard expansion for navigation cmdlets. (#5038)
 - Updated `Get-ChildItem` to work more like the *nix `ls -R` and the Windows `DIR /S` native commands.
   `Get-ChildItem` now returns the symbolic links encountered during a recursive search and does not search the directories that those links target. (#3780)
@@ -118,7 +118,7 @@ Additional changes to `pwsh(.exe)` from `powershell.exe`:
 - PowerShell Core accepts the `-i` (or `-Interactive`) switch to indicate an interactive shell. (#3558)
   This allows PowerShell to be used as a default shell on Unix platforms.
 - Removed parameters `-importsystemmodules` and `-psconsoleFile` from `pwsh.exe`. (#4995)
-- Changed `pwsh -version` and built-in help for `pwsh.exe` to align with other native tools. (#4958 & #4931) (Thanks @iSazonov)
+- Changed `pwsh -version` and built-in help for `pwsh.exe` to align with other native tools. (#4958 & #4931) (Thanks [@iSazonov](https://github.com/iSazonov))
 - Invalid argument error messages for `-File` and `-Command` and exit codes consistent with Unix standards (#4573)
 - Added `-WindowStyle` parameter on Windows. (#4573)
  Similarly, package-based installations updates on non-Windows platforms are in-place updates.
@@ -221,21 +221,21 @@ For more information about PowerShell jobs, see [about_Jobs](https://msdn.micros
 
 ## Semantic versioning
 
-- Made `SemanticVersion` compatible with `SemVer 2.0`. (#5037) (Thanks @iSazonov!)
-- Changed default `ModuleVersion` in `New-ModuleManifest` to `0.0.1` to align with SemVer. (#4842) (Thanks @LDSpits)
-- Added `semver` as a type accelerator for `System.Management.Automation.SemanticVersion`. (#4142) (Thanks to @oising!)
+- Made `SemanticVersion` compatible with `SemVer 2.0`. (#5037) (Thanks [@iSazonov](https://github.com/iSazonov)!)
+- Changed default `ModuleVersion` in `New-ModuleManifest` to `0.0.1` to align with SemVer. (#4842) (Thanks [@LDSpits](https://github.com/LDSpits))
+- Added `semver` as a type accelerator for `System.Management.Automation.SemanticVersion`. (#4142) (Thanks to [@oising](https://github.com/oising)!)
 - Enabled comparison between a `SemanticVersion` instance and a `Version` instance that is constructed only with `Major` and `Minor` version values.
 
 ## Language updates
 
-- Implement Unicode escape parsing so that users can use Unicode characters as arguments, strings, or variable names. (#3958) (Thanks to @rkeithhill!)
+- Implement Unicode escape parsing so that users can use Unicode characters as arguments, strings, or variable names. (#3958) (Thanks to [@rkeithhill](https://github.com/rkeithhill)!)
 - Added new escape character for ESC: `` `e``
-- Added support for converting enums to string (#4318) (Thanks @KirkMunro)
+- Added support for converting enums to string (#4318) (Thanks [@KirkMunro](https://github.com/KirkMunro))
 - Fixed casting single element array to a generic collection. (#3170)
-- Added character range overload to the `..` operator, so `'a'..'z'` returns characters from 'a' to 'z'. (#5026) (Thanks @IISResetMe!)
+- Added character range overload to the `..` operator, so `'a'..'z'` returns characters from 'a' to 'z'. (#5026) (Thanks [@IISResetMe](https://github.com/IISResetMe)!)
 - Fixed variable assignment to not overwrite read-only variables
 - Push locals of automatic variables to 'DottedScopes' when dotting script cmdlets (#4709)
-- Enable use of 'Singleline, Multiline' option in split operator (#4721) (Thanks @iSazonov)
+- Enable use of 'Singleline, Multiline' option in split operator (#4721) (Thanks [@iSazonov](https://github.com/iSazonov))
 
 ## Engine updates
 
@@ -248,13 +248,13 @@ For more information about PowerShell jobs, see [about_Jobs](https://msdn.micros
     It is set to `Win32NT` on Windows, `Unix` on macOS, and `Unix` on Linux.
 - Removed the `BuildVersion` property from `$PSVersionTable`.
   This property was strongly tied to the Windows build version.
-  Instead, we recommend that you use `GitCommitId` to retrieve the exact build version of PowerShell Core. (#3877) (Thanks to @iSazonov!)
+  Instead, we recommend that you use `GitCommitId` to retrieve the exact build version of PowerShell Core. (#3877) (Thanks to [@iSazonov](https://github.com/iSazonov)!)
 - Remove `ClrVersion` property from `$PSVersionTable`.
   This property is irrelevant for .NET Core, and was only preserved in .NET Core for specific legacy purposes that are inapplicable to PowerShell.
 - Added three new automatic variables to determine whether PowerShell is running in a given OS:
   `$IsWindows`, `$IsMacOs`, and `$IsLinux`.
 - Add `GitCommitId` to PowerShell Core banner.
-  Now you don't have to run `$PSVersionTable` as soon as you start PowerShell to get the version! (#3916) (Thanks to @iSazonov!)
+  Now you don't have to run `$PSVersionTable` as soon as you start PowerShell to get the version! (#3916) (Thanks to [@iSazonov](https://github.com/iSazonov)!)
 - Add a JSON config file called `powershell.config.json` in `$PSHome` to store some settings required before startup time (e.g. `ExecutionPolicy`).
 - Don't block pipeline when running Windows EXE's
 - Enabled enumeration of COM collections. (#4553)
@@ -264,84 +264,84 @@ For more information about PowerShell jobs, see [about_Jobs](https://msdn.micros
 ### New cmdlets
 
 - Add `Get-Uptime` to `Microsoft.PowerShell.Utility`.
-- Add `Remove-Alias` Command. (#5143) (Thanks @PowershellNinja!)
-- Add `Remove-Service` to Management module. (#4858) (Thanks @joandrsn!)
+- Add `Remove-Alias` Command. (#5143) (Thanks [@PowershellNinja](https://github.com/PowershellNinja)!)
+- Add `Remove-Service` to Management module. (#4858) (Thanks [@joandrsn](https://github.com/joandrsn)!)
 
 ### Web cmdlets
 
-- Add certificate authentication support for web cmdlets. (#4646) (Thanks @markekraus)
-- Add support for content headers to web cmdlets. (#4494 & #4640) (Thanks @markekraus)
-- Add multiple link header support to Web Cmdlets. (#5265) (Thanks @markekraus!)
+- Add certificate authentication support for web cmdlets. (#4646) (Thanks [@markekraus](https://github.com/markekraus))
+- Add support for content headers to web cmdlets. (#4494 & #4640) (Thanks [@markekraus](https://github.com/markekraus))
+- Add multiple link header support to Web Cmdlets. (#5265) (Thanks [@markekraus](https://github.com/markekraus)!)
 - Support Link header pagination in web cmdlets (#3828)
   - For `Invoke-WebRequest`, when the response includes a Link header we create a RelationLink property as a Dictionary representing the URLs and `rel` attributes and ensure the URLs are absolute to make it easier for the developer to use.
   - For `Invoke-RestMethod`, when the response includes a Link header we expose a `-FollowRelLink` switch to automatically follow `next` `rel` links until they no longer exist or once we hit the optional `-MaximumFollowRelLink` parameter value.
-- Add `-CustomMethod` parameter to web cmdlets to allow for non-standard method verbs. (#3142) (Thanks to @Lee303!)
-- Add `SslProtocol` support to Web Cmdlets. (#5329) (Thanks @markekraus!)
-- Add Multipart support to web cmdlets. (#4782) (Thanks @markekraus)
-- Add `-NoProxy` to web cmdlets so that they ignore the system-wide proxy setting. (#3447) (Thanks to @TheFlyingCorpse!)
-- User Agent of Web Cmdlets now reports the OS platform (#4937) (Thanks @LDSpits)
+- Add `-CustomMethod` parameter to web cmdlets to allow for non-standard method verbs. (#3142) (Thanks to [@Lee303](https://github.com/Lee303)!)
+- Add `SslProtocol` support to Web Cmdlets. (#5329) (Thanks [@markekraus](https://github.com/markekraus)!)
+- Add Multipart support to web cmdlets. (#4782) (Thanks [@markekraus](https://github.com/markekraus))
+- Add `-NoProxy` to web cmdlets so that they ignore the system-wide proxy setting. (#3447) (Thanks to [@TheFlyingCorpse](https://github.com/TheFlyingCorpse)!)
+- User Agent of Web Cmdlets now reports the OS platform (#4937) (Thanks [@LDSpits](https://github.com/LDSpits))
 - Add `-SkipHeaderValidation` switch to web cmdlets to support adding headers without validating the header value. (#4085)
 - Enable web cmdlets to not validate the HTTPS certificate of the server if required.
-- Add authentication parameters to web cmdlets. (#5052) (Thanks @markekraus)
+- Add authentication parameters to web cmdlets. (#5052) (Thanks [@markekraus](https://github.com/markekraus))
   - Add `-Authentication` that provides three options: Basic, OAuth, and Bearer.
   - Add `-Token` to get the bearer token for OAuth and Bearer options.
   - Add `-AllowUnencryptedAuthentication` to bypass authentication that is provided for any transport scheme other than HTTPS.
-- Add `-ResponseHeadersVariable` to `Invoke-RestMethod` to enable the capture of response headers. (#4888) (Thanks @markekraus)
+- Add `-ResponseHeadersVariable` to `Invoke-RestMethod` to enable the capture of response headers. (#4888) (Thanks [@markekraus](https://github.com/markekraus))
 - Fix web cmdlets to include the HTTP response in the exception when the response status code is not success. (#3201)
-- Change web cmdlets `UserAgent` from `WindowsPowerShell` to `PowerShell`. (#4914) (Thanks @markekraus)
+- Change web cmdlets `UserAgent` from `WindowsPowerShell` to `PowerShell`. (#4914) (Thanks [@markekraus](https://github.com/markekraus))
 - Add explicit `ContentType` detection to `Invoke-RestMethod` (#4692)
-- Fix web cmdlets `-SkipHeaderValidation` to work with non-standard User-Agent headers. (#4479 & #4512) (Thanks @markekraus)
+- Fix web cmdlets `-SkipHeaderValidation` to work with non-standard User-Agent headers. (#4479 & #4512) (Thanks [@markekraus](https://github.com/markekraus))
 
 ### JSON cmdlets
 
-- Add `-AsHashtable` to `ConvertFrom-Json` to return a `Hashtable` instead. (#5043) (Thanks @bergmeister!)
+- Add `-AsHashtable` to `ConvertFrom-Json` to return a `Hashtable` instead. (#5043) (Thanks [@bergmeister](https://github.com/bergmeister)!)
 - Use prettier formatter with `ConvertTo-Json` output. (#2787) (Thanks to @kittholland!)
 - Add `Jobject` serialization support to `ConvertTo-Json`. (#5141)
 - Fix `ConvertFrom-Json` to deserialize an array of strings from the pipeline that together construct a complete JSON string.
   This fixes some cases where newlines would break JSON parsing. (#3823)
 - Remove the `AliasProperty "Count"` defined for `System.Array`.
-  This removes the extraneous `Count` property on some `ConvertFrom-Json` output. (#3231) (Thanks to @PetSerAl!)
+  This removes the extraneous `Count` property on some `ConvertFrom-Json` output. (#3231) (Thanks to [@PetSerAl](https://github.com/PetSerAl)!)
 
 ### CSV cmdlets
 
-- Add `PSTypeName` Support for `Import-Csv` and `ConvertFrom-Csv`. (#5389) (Thanks @markekraus!)
-- Make `Import-Csv` support `CR`, `LF`, and `CRLF` as line delimiters. (#5363) (Thanks @iSazonov!)
-- Make `-NoTypeInformation` the default on `Export-Csv` and `ConvertTo-Csv`. (#5164) (Thanks @markekraus)
+- Add `PSTypeName` Support for `Import-Csv` and `ConvertFrom-Csv`. (#5389) (Thanks [@markekraus](https://github.com/markekraus)!)
+- Make `Import-Csv` support `CR`, `LF`, and `CRLF` as line delimiters. (#5363) (Thanks [@iSazonov](https://github.com/iSazonov)!)
+- Make `-NoTypeInformation` the default on `Export-Csv` and `ConvertTo-Csv`. (#5164) (Thanks [@markekraus](https://github.com/markekraus))
 
 ### Service cmdlets
 
-- Add properties `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, and `StartupType` to the `ServiceController` objects returned by `Get-Service`. (#4907) (Thanks @joandrsn)
-- Add functionality to set credentials on `Set-Service` command. (#4844) (Thanks @joandrsn)
+- Add properties `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, and `StartupType` to the `ServiceController` objects returned by `Get-Service`. (#4907) (Thanks [@joandrsn](https://github.com/joandrsn))
+- Add functionality to set credentials on `Set-Service` command. (#4844) (Thanks [@joandrsn](https://github.com/joandrsn))
 
 ### Other cmdlets
 
 - Add a parameter to `Get-ChildItem` called `-FollowSymlink` that traverses symlinks on demand, with checks for link loops. (#4020)
-- Update `Add-Type` to support `CSharpVersion7`. (#3933) (Thanks to @iSazonov)
+- Update `Add-Type` to support `CSharpVersion7`. (#3933) (Thanks to [@iSazonov](https://github.com/iSazonov))
 - Remove the `Microsoft.PowerShell.LocalAccounts` module due to the use of unsupported APIs until a better solution is found. (#4302)
 - Remove the `*-Counter` cmdlets in `Microsoft.PowerShell.Diagnostics` due to the use of unsupported APIs until a better solution is found. (#4303)
 - Add support for `Invoke-Item -Path <folder>`. (#4262)
-- Add `-Extension` and `-LeafBase` switches to `Split-Path` so that you can split paths between the filename extension and the rest of the filename. (#2721) (Thanks to @powercode!)
+- Add `-Extension` and `-LeafBase` switches to `Split-Path` so that you can split paths between the filename extension and the rest of the filename. (#2721) (Thanks to [@powercode](https://github.com/powercode)!)
 - Add parameters `-Top` and `-Bottom` to `Sort-Object` for Top/Bottom N sort
-- Expose a process' parent process by adding the `CodeProperty "Parent"` to `System.Diagnostics.Process`. (#2850) (Thanks to @powercode!)
+- Expose a process' parent process by adding the `CodeProperty "Parent"` to `System.Diagnostics.Process`. (#2850) (Thanks to [@powercode](https://github.com/powercode)!)
 - Use MB instead of KB for memory columns of `Get-Process`
-- Add `-NoNewLine` switch for `Out-String`. (#5056) (Thanks @raghav710)
+- Add `-NoNewLine` switch for `Out-String`. (#5056) (Thanks [@raghav710](https://github.com/raghav710))
 - `Move-Item` cmdlet honors `-Include`, `-Exclude`, and `-Filter` parameters. (#3878)
 - Allow `*` to be used in registry path for `Remove-Item`. (#4866)
 - Add `-Title` to `Get-Credential` and unify the prompt experience across platforms.
 - Add the `-TimeOut` parameter to `Test-Connection`. (#2492)
 - `Get-AuthenticodeSignature` cmdlets can now get file signature timestamp. (#4061)
 - Remove unsupported `-ShowWindow` switch from `Get-Help`. (#4903)
-- Fix `Get-Content -Delimiter` to not include the delimiter in the array elements returned (#3706) (Thanks @mklement0)
-- Add `Meta`, `Charset`, and `Transitional` parameters to `ConvertTo-HTML` (#4184) (Thanks @ergo3114)
+- Fix `Get-Content -Delimiter` to not include the delimiter in the array elements returned (#3706) (Thanks [@mklement0](https://github.com/mklement0))
+- Add `Meta`, `Charset`, and `Transitional` parameters to `ConvertTo-HTML` (#4184) (Thanks [@ergo3114](https://github.com/ergo3114))
 - Add `WindowsUBR` and `WindowsVersion` properties to `Get-ComputerInfo` result
 - Add `-Group` parameter to `Get-Verb`
-- Add `ShouldProcess` support to `New-FileCatalog` and `Test-FileCatalog` (fixes `-WhatIf` and `-Confirm`). (#3074) (Thanks to @iSazonov!)
-- Add `-WhatIf` switch to `Start-Process` cmdlet (#4735) (Thanks @sarithsutha)
+- Add `ShouldProcess` support to `New-FileCatalog` and `Test-FileCatalog` (fixes `-WhatIf` and `-Confirm`). (#3074) (Thanks to [@iSazonov](https://github.com/iSazonov)!)
+- Add `-WhatIf` switch to `Start-Process` cmdlet (#4735) (Thanks [@sarithsutha](https://github.com/sarithsutha))
 - Add `ValidateNotNullOrEmpty` too many existing parameters.
 
 ## Tab completion
 
-- Enhanced the type inference in tab completion based on runtime variable values. (#2744) (Thanks to @powercode!)
+- Enhanced the type inference in tab completion based on runtime variable values. (#2744) (Thanks to [@powercode](https://github.com/powercode)!)
   This enables tab completion in situations like:
 
   ```powershell
@@ -349,9 +349,9 @@ For more information about PowerShell jobs, see [about_Jobs](https://msdn.micros
   $p | Foreach-Object Prio<tab>
   ```
 
-- Add Hashtable tab completion for `-Property` of `Select-Object`. (#3625) (Thanks to @powercode)
-- Enable argument auto-completion for `-ExcludeProperty` and `-ExpandProperty` of `Select-Object`. (#3443) (Thanks to @iSazonov!)
-- Fix a bug in tab completion to make `native.exe --<tab>` call into native completer. (#3633) (Thanks to @powercode!)
+- Add Hashtable tab completion for `-Property` of `Select-Object`. (#3625) (Thanks to [@powercode](https://github.com/powercode))
+- Enable argument auto-completion for `-ExcludeProperty` and `-ExpandProperty` of `Select-Object`. (#3443) (Thanks to [@iSazonov](https://github.com/iSazonov)!)
+- Fix a bug in tab completion to make `native.exe --<tab>` call into native completer. (#3633) (Thanks to [@powercode](https://github.com/powercode)!)
 
 ## Breaking changes
 
@@ -384,9 +384,8 @@ For a complete list of fixes and changes, check out our [changelog][] on GitHub.
   - the OS platform (`$PSVersionTable.OSDescription`)
   - the exact version of PowerShell (`$PSVersionTable.GitCommitId`)
 
-If you want to opt-out of this telemetry, simply delete `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`
-or create `POWERSHELL_TELEMETRY_OPTOUT` environment variable with one of the following values: `true`, `1` or `yes`.
-Deleting this file or creating the variable bypasses all telemetry even before the first run of PowerShell.
+If you want to opt-out of this telemetry, simply create `POWERSHELL_TELEMETRY_OPTOUT` environment variable with one of the following values: `true`, `1` or `yes`.
+Creating the variable bypasses all telemetry even before the first run of PowerShell.
 We also plan on exposing this telemetry data and the insights we glean from the telemetry in the [community dashboard][community-dashboard].
 You can find out more about how we use this data in this [blog post][telemetry-blog].
 

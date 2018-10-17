@@ -11,13 +11,13 @@ caps.latest.revision: 6
 ---
 # Windows PowerShell Formatting Files
 
-Windows PowerShell provides several formatting files (.format.ps1xml) that are located in the installation directory (`$pshome`). Each of these files defines the default display for a specific set of .NET Framework objects. These files should never be changed. However, you can use them as a reference for creating your own custom formatting files.
+Windows PowerShell provides several formatting files (.format.ps1xml) that are located in the installation directory (`$pshome`). Each of these files defines the default display for a specific set of .NET objects. These files should never be changed. However, you can use them as a reference for creating your own custom formatting files.
 
 Certificate.Format.ps1xml
 Defines the display of objects in the Certificate store such as x.509 certificates and certificate stores.
 
 DotNetTypes.Format.ps1xml
-Defines the display of miscellaneous .NET Framework objects such as CultureInfo, FileVersionInfo, and EventLogEntry objects.
+Defines the display of miscellaneous .NET objects such as CultureInfo, FileVersionInfo, and EventLogEntry objects.
 
 FileSystem.Format.ps1xml
 Defines the display of file system objects such as file and directory objects.

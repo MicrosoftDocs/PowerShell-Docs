@@ -102,7 +102,7 @@ function AdvancedFunction2
 }
 ```
 
-# EXAMPLES
+## EXAMPLES
 
 The following function uses the OutputType attribute to indicate that it returns
 a string value.
@@ -209,7 +209,7 @@ The value of the OutputType property can be null. Use a null value when
 the output is a not a .NET type, such as a WMI object or a formatted view
 of an object.
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Functions](about_Functions.md)
 

@@ -11,7 +11,7 @@ caps.latest.revision: 16
 ---
 # Creating a Wide View
 
-A wide view displays a single value for each object that is displayed. The displayed value can be the value of a .NET Framework object property or the value of a script. By default, there is no label or header for this view.
+A wide view displays a single value for each object that is displayed. The displayed value can be the value of a .NET object property or the value of a script. By default, there is no label or header for this view.
 
 ## A Wide View Display
 
@@ -124,7 +124,7 @@ For an example of a complete formatting file that defines a wide view definition
 
 ## Defining the Objects That Use the Wide View
 
-There are two ways to define which .NET Framework objects use the wide view. You can use the [ViewSelectedBy](./viewselectedby-element-format.md) element to define the objects that can be displayed by all the definitions of the view, or you can use the [EntrySelectedBy](./entryselectedby-element-for-wideentry-format.md) element to define which objects are displayed by a specific definition of the view. In most cases, a view has only one definition, so objects are typically defined by the [ViewSelectedBy](./viewselectedby-element-format.md) element.
+There are two ways to define which .NET objects use the wide view. You can use the [ViewSelectedBy](./viewselectedby-element-format.md) element to define the objects that can be displayed by all the definitions of the view, or you can use the [EntrySelectedBy](./entryselectedby-element-for-wideentry-format.md) element to define which objects are displayed by a specific definition of the view. In most cases, a view has only one definition, so objects are typically defined by the [ViewSelectedBy](./viewselectedby-element-format.md) element.
 
 The following example shows how to define the objects that are displayed by the wide view using the [ViewSelectedBy](./viewselectedby-element-format.md) and [TypeName](./typename-element-for-viewselectedby-format.md) elements. There is no limit to the number of [TypeName](./typename-element-for-viewselectedby-format.md) elements that you can specify, and their order is not significant.
 
@@ -142,7 +142,7 @@ The following XML elements can be used to specify the objects that are used by t
 
 - The [ViewSelectedBy](./viewselectedby-element-format.md) element defines which objects are displayed by the wide view.
 
-- The [TypeName](./typename-element-for-viewselectedby-format.md) element specifies the .NET Framework that is displayed by the view. The fully qualified .NET Framework type name is required. You must specify at least one type or selection set for the view, but there is no maximum number of elements that can be specified.
+- The [TypeName](./typename-element-for-viewselectedby-format.md) element specifies the .NET that is displayed by the view. The fully qualified .NET type name is required. You must specify at least one type or selection set for the view, but there is no maximum number of elements that can be specified.
 
 For an example of a complete formatting file, see [Wide View (Basic)](./wide-view-basic.md).
 
@@ -152,7 +152,7 @@ The following example uses the [ViewSelectedBy](./viewselectedby-element-format.
 <View>
   <Name>System.ServiceProcess.ServiceController</Name>
   <ViewSelectedBy>
-    <SelectionSetName>.NET Framework Type Set</SelectionSetName>
+    <SelectionSetName>.NET Type Set</SelectionSetName>
   </ViewSelectedBy>
   <WideControl>...</WideControl>
 </View>
@@ -164,12 +164,12 @@ The following XML elements can be used to specify the objects that are used by t
 
 - The [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md) element specifies a set of objects that can be displayed by the view. You must specify at least one selection set or type for the view, but there is no maximum number of elements that can be specified.
 
-The following example shows how to define the objects displayed by a specific definition of the wide view using the [EntrySelectedBy](./entryselectedby-element-for-wideentry-format.md) element. Using this element, you can specify the .NET Framework type name of the object, a selection set of objects, or a selection condition that specifies when the definition is used. For more information about how to create a selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
+The following example shows how to define the objects displayed by a specific definition of the wide view using the [EntrySelectedBy](./entryselectedby-element-for-wideentry-format.md) element. Using this element, you can specify the .NET type name of the object, a selection set of objects, or a selection condition that specifies when the definition is used. For more information about how to create a selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 ```xml
 <WideEntry>
   <EntrySelectedBy>
-    <TypeName>.NET Framework Type</TypeName>
+    <TypeName>.NET Type</TypeName>
   </EntrySelectedBy>
 </WideEntry>
 ```
@@ -178,7 +178,7 @@ The following XML elements can be used to specify the objects that are used by a
 
 - The [EntrySelectedBy](./entryselectedby-element-for-wideentry-format.md) element defines which objects are displayed by the definition.
 
-- The [TypeName](./typename-element-for-viewselectedby-format.md) element specifies the .NET Framework that is displayed by the definition. When using this element the fully qualified .NET Framework type name is required. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
+- The [TypeName](./typename-element-for-viewselectedby-format.md) element specifies the .NET that is displayed by the definition. When using this element the fully qualified .NET type name is required. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
 
 - The [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md) element (not shown) specifies a set of objects that can be displayed by this definition. You must specify at least one type, selection set, or selection condition for the definition, but there is no maximum number of elements that can be specified.
 
@@ -256,4 +256,4 @@ The following XML element can be used to calling the `ToString` method:
 
 [Wide View (GroupBy)](./wide-view-groupby.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

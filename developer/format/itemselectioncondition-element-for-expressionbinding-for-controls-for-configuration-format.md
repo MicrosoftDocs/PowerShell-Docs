@@ -44,7 +44,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[PropertyName Element for ItemSelectionCondition for Controls for Configuration (Format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the .NET Framework property that triggers the condition.|
+|[PropertyName Element for ItemSelectionCondition for Controls for Configuration (Format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
 |[ScriptBlock Element for ItemSelectionCondition for Controls for Configuration (Format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
 
 ### Parent Elements
@@ -65,4 +65,4 @@ You can specify one property name or a script for this condition but cannot spec
 
 [ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

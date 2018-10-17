@@ -11,7 +11,7 @@ caps.latest.revision: 9
 ---
 # TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 
-Specifies a .NET Framework type that triggers the condition.
+Specifies a .NET type that triggers the condition.
 
 Configuration Element
 DefaultSettings Element (Format)
@@ -47,7 +47,7 @@ None.
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 
@@ -55,4 +55,4 @@ Specify the fully qualified name of the .NET Framework type, such as `System.IO.
 
 [SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

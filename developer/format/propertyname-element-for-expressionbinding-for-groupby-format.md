@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # PropertyName Element for ExpressionBinding for GroupBy (Format)
 
-Specifies the .NET Framework property whose value is displayed by the control. This element is used when defining how a new group of objects is displayed.
+Specifies the .NET property whose value is displayed by the control. This element is used when defining how a new group of objects is displayed.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -50,7 +50,7 @@ None.
 
 ## Text Value
 
-Specify the name of the .NET Framework property whose value is displayed by the control.
+Specify the name of the .NET property whose value is displayed by the control.
 
 ## Remarks
 
@@ -58,4 +58,4 @@ Specify the name of the .NET Framework property whose value is displayed by the 
 
 [ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

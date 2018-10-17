@@ -30,7 +30,7 @@ Beginning in Windows PowerShell 3.0, the default value is 4096.
 You can save the session history in XML or CSV format.
 By default, history files are saved in the home directory, but you can save the file in any location.
 
-For more information about the history features in Windows PowerShell, see about_History (http://go.microsoft.com/fwlink/?LinkID=113233).
+For more information about the history features in PowerShell, see [about_History](About/about_History.md) in the Microsoft Docs.
 
 ## EXAMPLES
 
@@ -141,7 +141,8 @@ Get-History returns a history object for each history item that it gets.
 
 ## NOTES
 
-- The session history is a list of the commands entered during the session. The session history represents the order of execution, the status, and the start and end times of the command. As you enter each command, Windows PowerShell adds it to the history so that you can reuse it. For more information about the command history, see about_History (http://go.microsoft.com/fwlink/?LinkID=113233).
+- The session history is a list of the commands entered during the session. The session history represents the order of execution, the status, and the start and end times of the command. As you enter each command, PowerShell adds it to the history so that you can reuse it.
+  For more information about the command history, see [about_History](About/about_History.md).
 - Beginning in Windows PowerShell 3.0, the default value of the **$MaximumHistoryCount** preference variable is 4096. In Windows PowerShell 2.0, the default value is 64. For more information about the **$MaximumHistoryCount** variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ## RELATED LINKS

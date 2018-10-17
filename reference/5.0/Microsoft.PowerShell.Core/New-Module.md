@@ -341,9 +341,8 @@ If you use the *AsCustomObject* parameter, it generates a **PSCustomObject** obj
 If you use the *ReturnResult* parameter, it returns the result of evaluating the script block in the dynamic module.
 
 ## NOTES
-* You can also refer to **New-Module** by its alias, **nmo**. For more information, see about_Aliases.
-
-*
+* You can also refer to `New-Module` by its alias, `nmo`.
+  For more information, see [about_Aliases](About/about_Aliases.md).
 
 ## RELATED LINKS
 

@@ -11,7 +11,7 @@ caps.latest.revision: 7
 ---
 # SelectionSetName Element for EntrySelectedBy for Controls for View (Format)
 
-Specifies a set of .NET Framework types that use this definition of the control. This element is used when defining controls that can be used by a view.
+Specifies a set of .NET types that use this definition of the control. This element is used when defining controls that can be used by a view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -47,7 +47,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
 
@@ -63,4 +63,4 @@ Selection sets are typically used when you want to define a group of objects tha
 
 [EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

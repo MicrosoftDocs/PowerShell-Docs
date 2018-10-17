@@ -44,7 +44,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display the members of one or more .NET Framework objects.|
+|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display the members of one or more .NET objects.|
 
 ## Remarks
 
@@ -54,4 +54,4 @@ None.
 
 [View Element (Format)](./view-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

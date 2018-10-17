@@ -11,7 +11,7 @@ caps.latest.revision: 10
 ---
 # PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)
 
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the table entry is used.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the table entry is used.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -49,7 +49,7 @@ None.
 
 ## Text Value
 
-Specify the .NET Framework property name.
+Specify the .NET property name.
 
 ## Remarks
 
@@ -67,4 +67,4 @@ For more information about the components of a table view, see [Creating a Table
 
 [SelectionCondition Element for EntrySelectedBy for TableRowEntry (Format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

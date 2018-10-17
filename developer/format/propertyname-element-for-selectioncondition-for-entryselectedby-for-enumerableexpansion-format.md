@@ -11,7 +11,7 @@ caps.latest.revision: 13
 ---
 # PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used.
 
 Configuration Element (Format)
 DefaultSettings Element (Format)
@@ -47,7 +47,7 @@ None.
 
 ## Text Value
 
-Specify the .NET Framework property name.
+Specify the .NET property name.
 
 ## Remarks
 
@@ -61,4 +61,4 @@ The selection condition must specify at least one property name or a script to e
 
 [SelectionCondition Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

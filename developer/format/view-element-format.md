@@ -11,7 +11,7 @@ caps.latest.revision: 24
 ---
 # View Element (Format)
 
-Defines a view that displays one or more .NET Framework objects. There is no limit to the number of views that can be defined in a formatting file.
+Defines a view that displays one or more .NET objects. There is no limit to the number of views that can be defined in a formatting file.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -46,11 +46,11 @@ None.
 |-------------|-----------------|
 |[Controls Element for View (Format)](./controls-element-for-view-format.md)|Optional element.<br /><br /> Defines a set of controls that can be referenced by their name from within the view.|
 |[CustomControl Element (Format)](./customcontrol-element-for-groupby-format.md)|Optional element.<br /><br /> Defines a custom control format for the view.|
-|[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Optional element.<br /><br /> Defines how the members of the .NET Framework objects are grouped.|
+|[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Optional element.<br /><br /> Defines how the members of the .NET objects are grouped.|
 |[ListControl Element (Format)](./listcontrol-element-format.md)|Optional element.<br /><br /> Defines a list format for the view.|
 |[Name Element for View (Format)](./name-element-for-view-format.md)|Required element.<br /><br /> Specifies the name used to reference the view.|
 |[TableControl Element (Format)](./tablecontrol-element-format.md)|Optional element.<br /><br /> Defines a table format for the view.|
-|[ViewSelectedBy Element for View (Format)](./viewselectedby-element-format.md)|Required element.<br /><br /> Defines the .NET Framework objects that this view displays.|
+|[ViewSelectedBy Element for View (Format)](./viewselectedby-element-format.md)|Required element.<br /><br /> Defines the .NET objects that this view displays.|
 |[WideControl Element (Format)](./widecontrol-element-format.md)|Optional element.<br /><br /> Defines a wide (single value) list format for the view.|
 
 ### Parent Elements
@@ -108,4 +108,4 @@ This example shows a `View` element that defines a table view for the [System.Se
 
 [CustomControl Element (Format)](./customcontrol-element-for-groupby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

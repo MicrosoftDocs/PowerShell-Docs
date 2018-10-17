@@ -40,7 +40,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[SelectionSet Element (Format)](./selectionset-element-format.md)|Defines a single set of .NET Framework objects that can be referenced by the name of the set.|
+|[SelectionSet Element (Format)](./selectionset-element-format.md)|Defines a single set of .NET objects that can be referenced by the name of the set.|
 
 ## Text Value
 
@@ -52,7 +52,7 @@ The name specified here is used in the `SelectionSetName` element. The selection
 
 ## Example
 
-This example shows a `SelectionSet` element that defines four .NET Framework types. The name of the selection set is "FileSystemTypes".
+This example shows a `SelectionSet` element that defines four .NET types. The name of the selection set is "FileSystemTypes".
 
 ```xml
 <SelectionSets>
@@ -74,4 +74,4 @@ This example shows a `SelectionSet` element that defines four .NET Framework typ
 
 [SelectionSet Element (Format)](./selectionset-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

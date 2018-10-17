@@ -79,4 +79,4 @@ FSysAgent                FwcAgent
 
 [Examples of Formatting Files](./examples-of-formatting-files.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

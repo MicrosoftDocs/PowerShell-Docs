@@ -36,7 +36,7 @@ There is no limit to the number of selection conditions that you can specify for
 
 - The selection condition must specify one property name or script to trigger the condition, but cannot specify both.
 
-- The selection condition can specify any number of .NET Framework types or selection sets, but cannot specify both.
+- The selection condition can specify any number of .NET types or selection sets, but cannot specify both.
 
 ## Specifying a Selection Condition for an Item
 
@@ -95,4 +95,4 @@ You can specify only one selection condition for an item. And the condition must
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

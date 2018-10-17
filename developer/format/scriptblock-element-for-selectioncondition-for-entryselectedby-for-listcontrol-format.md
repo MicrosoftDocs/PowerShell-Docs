@@ -69,4 +69,4 @@ For more information about the other components of a list view, see [List View](
 
 [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

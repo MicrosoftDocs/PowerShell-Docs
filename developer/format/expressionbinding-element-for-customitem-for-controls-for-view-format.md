@@ -53,7 +53,7 @@ None.
 |[CustomControlName Element for ExpressionBinding for Controls for View (Format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)|Optional element.<br /><br /> Specifies the name of a common control or a view control.|
 |[EnumerateCollection Element for ExpressionBinding for Controls for View (Format)](./enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md)|Optional element.<br /><br /> Specifies that the elements of collections are displayed.|
 |[ItemSelectionCondition Element of ExpressionBinding for Controls for View (Format)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format.md)|Optional element.<br /><br /> Defines the condition that must exist for this control to be used.|
-|[PropertyName Element for ExpressionBinding for Controls for View (Format)](./propertyname-element-for-expressionbinding-for-controls-for-view-format.md)|Optional element.<br /><br /> Specifies the .NET Framework property whose value is displayed by the control.|
+|[PropertyName Element for ExpressionBinding for Controls for View (Format)](./propertyname-element-for-expressionbinding-for-controls-for-view-format.md)|Optional element.<br /><br /> Specifies the .NET property whose value is displayed by the control.|
 |[ScriptBlock Element for ExpressionBinding for Controls for View (Format)](./scriptblock-element-for-expressionbinding-for-controls-for-view-format.md)|Optional element.<br /><br /> Specifies the script whose value is displayed by the control.|
 
 ### Parent Elements
@@ -78,4 +78,4 @@ None.
 
 [ScriptBlock Element for ExpressionBinding for Controls for View (Format)](./scriptblock-element-for-expressionbinding-for-controls-for-view-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

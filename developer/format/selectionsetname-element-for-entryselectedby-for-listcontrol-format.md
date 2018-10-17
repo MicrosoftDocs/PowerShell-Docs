@@ -11,7 +11,7 @@ caps.latest.revision: 11
 ---
 # SelectionSetName Element for EntrySelectedBy for ListControl (Format)
 
-Specifies a set of .NET Framework objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
+Specifies a set of .NET objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -44,7 +44,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Defines the .NET Framework types that use this list entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Defines the .NET types that use this list entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
 
@@ -77,4 +77,4 @@ The following example shows how to specify a selection set for an entry of a lis
 
 [EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

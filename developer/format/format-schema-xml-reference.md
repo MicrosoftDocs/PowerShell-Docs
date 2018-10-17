@@ -11,7 +11,7 @@ caps.latest.revision: 21
 ---
 # Format Schema XML Reference
 
-The topics in this section describe the XML elements used by formatting files (Format.ps1xml files). Formatting files define how the .NET Framework object is displayed; they do not change the object itself.
+The topics in this section describe the XML elements used by formatting files (Format.ps1xml files). Formatting files define how the .NET object is displayed; they do not change the object itself.
 
 ## In This Section
 
@@ -109,34 +109,34 @@ Defines common settings that apply to all the views of the formatting file. Comm
 Specifies that the string #ERR is displayed when an error occurs displaying a piece of data.
 
 [EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
-Defines the .NET Framework types that use the definition of the common control or the condition that must exist for this control to be used. This element is used when defining a common control that can be used by all the views in the formatting file.
+Defines the .NET types that use the definition of the common control or the condition that must exist for this control to be used. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 [EntrySelectedBy Element for CustomEntry for Controls for View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
-Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used. This element is used when defining controls that can be used by a view.
+Defines the .NET types that use this control definition or the condition that must exist for this definition to be used. This element is used when defining controls that can be used by a view.
 
 [EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
-Defines the .NET Framework types that use this custom entry or the condition that must exist for this entry to be used.
+Defines the .NET types that use this custom entry or the condition that must exist for this entry to be used.
 
 [EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)
-Defines the .NET Framework types that use this definition or the condition that must exist for this definition to be used.
+Defines the .NET types that use this definition or the condition that must exist for this definition to be used.
 
 [EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
-Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used. This element is used when defining how a new group of objects is displayed.
+Defines the .NET types that use this control definition or the condition that must exist for this definition to be used. This element is used when defining how a new group of objects is displayed.
 
 [EntrySelectedBy Element for ListEntry for ListControl (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
-Defines the .NET Framework types that use this list view definition or the condition that must exist for this definition to be used. In most cases only one definition is needed for a list view. However, you can provide multiple definitions for the list view if you want to use the same list view to display different data for different objects.
+Defines the .NET types that use this list view definition or the condition that must exist for this definition to be used. In most cases only one definition is needed for a list view. However, you can provide multiple definitions for the list view if you want to use the same list view to display different data for different objects.
 
 [EntrySelectedBy Element for TableRowEntry (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
-Defines the .NET Framework types whose property values are displayed in the row.
+Defines the .NET types whose property values are displayed in the row.
 
 [EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)
-Defines the .NET Framework types that use this definition of the wide view or the condition that must exist for this definition to be used.
+Defines the .NET types that use this definition of the wide view or the condition that must exist for this definition to be used.
 
 [EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)
-Defines how specific .NET Framework collection objects are expanded when they are displayed in a view.
+Defines how specific .NET collection objects are expanded when they are displayed in a view.
 
 [EnumerableExpansions Element (Format)](./enumerableexpansions-element-format.md)
-Defines how .NET Framework collection objects are expanded when they are displayed in a view.
+Defines how .NET collection objects are expanded when they are displayed in a view.
 
 [EnumerateCollection Element for ExpressionBinding for Controls for Configuration (Format)](./enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format.md)
 Specified that the elements of collections are displayed by the control. This element is used when defining a common control that can be used by all the views in the formatting file.
@@ -289,61 +289,61 @@ Adds a blank line to the display of the control. This element is used when defin
 Adds a blank line to the display of the control. This element is used when defining how a new group of objects is displayed.
 
 [PropertyName Element for ExpressionBinding for Controls for Configuration (Format)](./propertyname-element-for-expressionbinding-for-controls-for-configuration-format.md)
-Specifies the .NET Framework property whose value is displayed by the common control. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies the .NET property whose value is displayed by the common control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 [PropertyName Element for ExpressionBinding for Controls for View (Format)](./propertyname-element-for-expressionbinding-for-controls-for-view-format.md)
-Specifies the .NET Framework property whose value is displayed by the control. This element is used when defining controls that can be used by a view.
+Specifies the .NET property whose value is displayed by the control. This element is used when defining controls that can be used by a view.
 
 [PropertyName Element for ExpressionBinding for CustomControl for View (Format)](./propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
-Specifies the .NET Framework property whose value is displayed by the control. This element is used when defining a custom control view
+Specifies the .NET property whose value is displayed by the control. This element is used when defining a custom control view
 
 [PropertyName Element for ExpressionBinding for GroupBy (Format)](./propertyname-element-for-expressionbinding-for-groupby-format.md)
-Specifies the .NET Framework property whose value is displayed by the control. This element is used when defining how a new group of objects is displayed.
+Specifies the .NET property whose value is displayed by the control. This element is used when defining how a new group of objects is displayed.
 
 [PropertyName Element for GroupBy (Format)](./propertyname-element-for-groupby-format.md)
-Specifies the .NET Framework property that starts a new group whenever its value changes.
+Specifies the .NET property that starts a new group whenever its value changes.
 
 [PropertyName Element for ItemSeclectionCondition for Controls for Configuration (Format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 [PropertyName Element for ItemSelectionCondition for Controls for View (Format)](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining controls that can be used by a view.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining controls that can be used by a view.
 
 [PropertyName Element for ItemSelectionCondition for CustomControl for View (Format](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining a custom control view.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining a custom control view.
 
 [PropertyName Element for ItemSelectionCondition for GroupBy (Format)](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining how a new group of objects is displayed.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining how a new group of objects is displayed.
 
 [PropertyName Element for ItemSelectionCondition for ListItem (Format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the view is used. This element is used when defining a list view.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the view is used. This element is used when defining a list view.
 
 [PropertyName Element for ListItem for ListControl (Format)](./propertyname-element-for-listitem-for-listcontrol-format.md)
-Specifies the .NET Framework property whose value is displayed in the list.
+Specifies the .NET property whose value is displayed in the list.
 
 [PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the entry is used. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the entry is used. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 [PropertyName Element for SelectionCondition for Controls for View (Format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the entry is used. This element is used when defining controls that can be used by a view.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the entry is used. This element is used when defining controls that can be used by a view.
 
 [PropertyName Element for SelectionCondition for CustomControl for View (Format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used. This element is used when defining a custom control view.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used. This element is used when defining a custom control view.
 
 [PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used.
 
 [PropertyName Element for SelectionCondition for GroupBy (Format)](./propertyname-element-for-selectioncondition-for-groupby-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used. This element is used when defining how a new group of objects is displayed.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used. This element is used when defining how a new group of objects is displayed.
 
 [PropertyName Element for SelectionCondition for EmtrySelectedBy for ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the list entry is used.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the list entry is used.
 
 [PropertyName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the table entry is used.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the table entry is used.
 
 [PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used.
 
 [PropertyName Element for TableColumnItem (Format)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)
 Specifies the property whose value is displayed in the column of the row.
@@ -451,61 +451,61 @@ Defines the condition that must exist to use for this definition of the table vi
 Defines the condition that must exist for this definition to be used. There is no limit to the number of selection conditions that can be specified for a wide entry definition.
 
 [SelectionSet Element (Format)](./selectionset-element-format.md)
-Defines a set of .NET Framework objects that can be referenced by the name of the set.
+Defines a set of .NET objects that can be referenced by the name of the set.
 
 [SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
-Specifies a set of .NET Framework types that use this definition of the control. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies a set of .NET types that use this definition of the control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 [SelectionSetName Element for EntrySelectedBy for Controls for View (Format)](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
-Specifies a set of .NET Framework types that use this definition of the control. This element is used when defining controls that can be used by a view.
+Specifies a set of .NET types that use this definition of the control. This element is used when defining controls that can be used by a view.
 
 [SelectionSetName Element for EntrySelectedBy for CustomEntry (Format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
-Specifies a set of .NET Framework objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
+Specifies a set of .NET objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
 
 [SelectionSetName Element for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
-Specifies the set of .NET Framework types that are expanded by this definition.
+Specifies the set of .NET types that are expanded by this definition.
 
 [SelectionSetName Element for EntrySelectedBy for GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
-Specifies a set of .NET Framework objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry. This element is used when defining how a new group of objects is displayed.
+Specifies a set of .NET objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry. This element is used when defining how a new group of objects is displayed.
 
 [SelectionSetName Element for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
-Specifies a set of .NET Framework objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
+Specifies a set of .NET objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
 
 [SelectionSetName Element for EntrySelectedBy for TableRowEntry (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
-Specifies a set of .NET Framework types the use this entry of the table view. There is no limit to the number of selection sets that can be specified for an entry.
+Specifies a set of .NET types the use this entry of the table view. There is no limit to the number of selection sets that can be specified for an entry.
 
 [SelectionSetName Element for EntrySelectedBy for WideEntry (Format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
-Specifies a set of .NET Framework objects for the definition. The definition is used whenever one of these objects is displayed.
+Specifies a set of .NET objects for the definition. The definition is used whenever one of these objects is displayed.
 
 [SelectionSetName Element for SelectionCondition for Controls for Configuration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this control. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 [SelectionSetName Element for SelectionCondition for Controls for View (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met and the object is displayed using this control. This element is used when defining controls that can be used by a view.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met and the object is displayed using this control. This element is used when defining controls that can be used by a view.
 
 [EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met and the object is displayed using this control. This element is used when defining a custom control view.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met and the object is displayed using this control. This element is used when defining a custom control view.
 
 [SelectionSetName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met.
 
 [SelectionSetName Element for SelectionCondition for GroupBy (Format)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this control. This element is used when defining how a new group of objects is displayed.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this control. This element is used when defining how a new group of objects is displayed.
 
 [SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the list view.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the list view.
 
 [SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the table view.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the table view.
 
 [SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
-Specifies the set of .NET Framework types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the wide view.
+Specifies the set of .NET types that trigger the condition. When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the wide view.
 
 [SelectionSetName Element for ViewSelectedBy (Format)](./selectionsetname-element-for-viewselectedby-format.md)
-Specifies a set of .NET Framework objects that are displayed by the view.
+Specifies a set of .NET objects that are displayed by the view.
 
 [SelectionSets Element (Format)](./selectionsets-element-format.md)
-Defines the sets of .NET Framework objects that can be used by individual format views.
+Defines the sets of .NET objects that can be used by individual format views.
 
 [ShowError Element (Format)](./showerror-element-format.md)
 Specifies that the full error record is displayed when an error occurs while displaying a piece of data.
@@ -544,70 +544,70 @@ Specifies text that is added to the data that is displayed by the control, such 
 Specifies text that is added to the data that is displayed by the control, such as a label, brackets to enclose the data, and spaces to indent the data. This element is used when defining how a new group of objects is displayed.
 
 [TypeName Element for EntrySelectedBy for Controls for Configuration (Format)](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)
-Specifies a .NET Framework type that uses this definition of the control. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies a .NET type that uses this definition of the control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 [TypeName Element for EntrySelectedBy for Controls for View (Format)](./typename-element-for-entryselectedby-for-controls-for-view-format.md)
-Specifies a .NET Framework type that uses this definition of the control. This element is used when defining controls that can be used by a view.
+Specifies a .NET type that uses this definition of the control. This element is used when defining controls that can be used by a view.
 
 [TypeName Element for EntrySelectedBy for CustomEntry for View (Format)](./typename-element-for-entryselectedby-for-customentry-for-view-format.md)
-Specifies a .NET Framework type that uses this definition of the custom control view. There is no limit to the number of types that can be specified for a definition.
+Specifies a .NET type that uses this definition of the custom control view. There is no limit to the number of types that can be specified for a definition.
 
 [TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)
-Specifies a .NET Framework type that is expanded by this definition. This element is used when defining a default settings.
+Specifies a .NET type that is expanded by this definition. This element is used when defining a default settings.
 
 [TypeName Element for EntrySelectedBy for GroupBy (Format)](./typename-element-for-entryselectedby-for-groupby-format.md)
-Specifies a .NET Framework type that uses this definition of the custom control. This element is used when defining how a new group of objects is displayed.
+Specifies a .NET type that uses this definition of the custom control. This element is used when defining how a new group of objects is displayed.
 
 [TypeName Element for EntrySelectedBy for ListControl (Format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)
-Specifies a .NET Framework type that uses this entry of the list view. There is no limit to the number of types that can be specified for a list entry.
+Specifies a .NET type that uses this entry of the list view. There is no limit to the number of types that can be specified for a list entry.
 
 [TypeName Element for EntrySelectedBy for TableRowEntry (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
-Specifies a .NET Framework type that uses this entry of the table view. There is no limit to the number of types that can be specified for a table entry.
+Specifies a .NET type that uses this entry of the table view. There is no limit to the number of types that can be specified for a table entry.
 
 [TypeName Element for EntrySelectedBy for WideEntry (Format)](./typename-element-for-entryselectedby-for-wideentry-format.md)
-Specifies a .NET Framework type for the definition. The definition is used whenever this object is displayed.
+Specifies a .NET type for the definition. The definition is used whenever this object is displayed.
 
 [TypeName Element for SelectionCondition for Controls for Configuration (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
-Specifies a .NET Framework type that triggers the condition. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies a .NET type that triggers the condition. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 [TypeName Element for SelectionCondition for Controls for View (Format)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)
-Specifies a .NET Framework type that triggers the condition. This element is used when defining controls that can be used by a view.
+Specifies a .NET type that triggers the condition. This element is used when defining controls that can be used by a view.
 
 [TypeName Element for SelectionCondition for CustomControl for View  (Format)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)
-Specifies a .NET Framework type that triggers the condition. This element is used when defining a custom control view.
+Specifies a .NET type that triggers the condition. This element is used when defining a custom control view.
 
 [TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
-Specifies a .NET Framework type that triggers the condition.
+Specifies a .NET type that triggers the condition.
 
 [TypeName Element for SelectionCondition for GroupBy  (Format)](./typename-element-for-selectioncondition-for-groupby-format.md)
-Specifies a .NET Framework type that triggers the condition. This element is used when defining how a new group of objects is displayed.
+Specifies a .NET type that triggers the condition. This element is used when defining how a new group of objects is displayed.
 
 [TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)
-Specifies a .NET Framework type that triggers the condition. When this type is present, the list entry is used.
+Specifies a .NET type that triggers the condition. When this type is present, the list entry is used.
 
 [TypeName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
-Specifies a .NET Framework type that triggers the condition. When this type is present, the condition is met, and the table row is used.
+Specifies a .NET type that triggers the condition. When this type is present, the condition is met, and the table row is used.
 
 [TypeName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
-Specifies a .NET Framework type that triggers the condition. When this type is present, the definition is used.
+Specifies a .NET type that triggers the condition. When this type is present, the definition is used.
 
 [TypeName Element for Types (Format)](./typename-element-for-types-format.md)
-Specifies the .NET Framework type of an object that belongs to the selection set.
+Specifies the .NET type of an object that belongs to the selection set.
 
 [TypeName Element for ViewSelectedBy (Format)](./typename-element-for-viewselectedby-format.md)
-Specifies a .NET Framework object that is displayed by the view.
+Specifies a .NET object that is displayed by the view.
 
 [Types Element (Format)](./types-element-for-selectionset-format.md)
-Defines the .NET Framework objects that are in the selection set.
+Defines the .NET objects that are in the selection set.
 
 [View Element (Format)](./view-element-format.md)
-Defines a view that is used to display one or more .NET Framework objects.
+Defines a view that is used to display one or more .NET objects.
 
 [ViewDefinitions Element (Format)](./viewdefinitions-element-format.md)
 Defines the views used to display objects.
 
 [ViewSelectedBy Element (Format)](./viewselectedby-element-format.md)
-Defines the .NET Framework objects that are displayed by the view.
+Defines the .NET objects that are displayed by the view.
 
 [WideControl Element (Format)](./widecontrol-element-format.md)
 Defines a wide (single value) list format for the view. This view displays a single property value or script value for each object.
@@ -632,4 +632,4 @@ Specifies that data in a table cell is moved to the next line if the data is lon
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

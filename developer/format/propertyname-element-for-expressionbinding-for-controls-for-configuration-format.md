@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # PropertyName Element for ExpressionBinding for Controls for Configuration (Format)
 
-Specifies the .NET Framework property whose value is displayed by the common control. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies the .NET property whose value is displayed by the common control. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 Configuration Element (Format)
 Controls Element of Configuration (Format)
@@ -49,7 +49,7 @@ None.
 
 ## Text Value
 
-Specify the name of the .NET Framework property whose value is displayed by the control.
+Specify the name of the .NET property whose value is displayed by the control.
 
 ## Remarks
 
@@ -57,4 +57,4 @@ Specify the name of the .NET Framework property whose value is displayed by the 
 
 [ExpressionBinding Element for CustomItem for Controls for Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

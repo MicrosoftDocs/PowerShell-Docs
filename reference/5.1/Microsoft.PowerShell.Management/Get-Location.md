@@ -115,7 +115,7 @@ The second command uses the **Push-Location** cmdlet to push the current locatio
 PS C:\>
 C:\WINDOWS>Push-Location System32
 
-The third command uses the *StackName* parameter of the **Push-Location** cmdlet to push the current location (C:\Windows\System32) onto the Stack2 stack and to change the current location to the WindowsPowerShell subirectory. If the Stack2 stack does not exist, **Push-Location** creates it.
+The third command uses the *StackName* parameter of the **Push-Location** cmdlet to push the current location (C:\Windows\System32) onto the Stack2 stack and to change the current location to the WindowsPowerShell subdirectory. If the Stack2 stack does not exist, **Push-Location** creates it.
 PS C:\>
 C:\Windows\System32>Push-Location WindowsPowerShell -StackName Stack2
 

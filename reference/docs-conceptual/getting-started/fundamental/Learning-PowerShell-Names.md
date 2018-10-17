@@ -126,8 +126,8 @@ Here are some of the general characteristics of the standard parameter names and
 
 ### The Help parameter (?)
 
-When you specify the `-Help` or `-?` parameter on any cmdlet, PowerShell displays help for the
-cmdlet. The cmdlet is not executed.
+When you specify the `-?` parameter on any cmdlet, PowerShell displays help for the cmdlet.
+The cmdlet is not executed.
 
 ### Common parameters
 

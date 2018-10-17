@@ -11,7 +11,7 @@ caps.latest.revision: 11
 ---
 # TypeName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)
 
-Specifies a .NET Framework type that triggers the condition. When this type is present, the condition is met, and the table row is used.
+Specifies a .NET type that triggers the condition. When this type is present, the condition is met, and the table row is used.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -49,11 +49,11 @@ None.
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 
-The selection condition can specify any number of .NET Framework types or selection sets, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
+The selection condition can specify any number of .NET types or selection sets, but cannot specify both. For more information about how to use selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
 
 For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).
 
@@ -67,4 +67,4 @@ For more information about the components of a table view, see [Creating a Table
 
 [SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

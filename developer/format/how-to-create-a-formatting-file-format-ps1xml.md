@@ -40,4 +40,4 @@ This topic describes how to create a formatting file (.format.ps1xml).
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

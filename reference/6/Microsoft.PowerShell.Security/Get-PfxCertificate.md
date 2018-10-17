@@ -19,13 +19,15 @@ Gets information about .pfx certificate files on the computer.
 ### ByPath (Default)
 
 ```
-Get-PfxCertificate [-FilePath] <String[]> [<CommonParameters>]
+Get-PfxCertificate [-FilePath] <String[]> [-Password <SecureString>] [-NoPromptForPassword]
+ [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Get-PfxCertificate -LiteralPath <String[]> [<CommonParameters>]
+Get-PfxCertificate -LiteralPath <String[]> [-Password <SecureString>] [-NoPromptForPassword]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -98,6 +100,38 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -NoPromptForPassword
+
+Suppresses prompting for a password.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Password
+
+Specifies a password required to access a .pfx certificate file.
+
+```yaml
+Type: SecureString
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

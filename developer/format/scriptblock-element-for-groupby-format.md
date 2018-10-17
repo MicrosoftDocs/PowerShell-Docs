@@ -41,7 +41,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Defines how a group of .NET Framework objects is displayed.|
+|[GroupBy Element for View (Format)](./groupby-element-for-view-format.md)|Defines how a group of .NET objects is displayed.|
 
 ## Text Value
 
@@ -59,4 +59,4 @@ When this element is specified, you cannot specify the [PropertyName](http://msd
 
 [GroupBy Element for View (Format)](./groupby-element-for-view-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

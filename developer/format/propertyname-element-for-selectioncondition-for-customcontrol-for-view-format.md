@@ -11,7 +11,7 @@ caps.latest.revision: 7
 ---
 # PropertyName Element for SelectionCondition for CustomControl for View (Format)
 
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used. This element is used when defining a custom control view.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the definition is used. This element is used when defining a custom control view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -50,7 +50,7 @@ None.
 
 ## Text Value
 
-Specify the .NET Framework property name.
+Specify the .NET property name.
 
 ## Remarks
 
@@ -60,4 +60,4 @@ The selection condition must specify a least one property name or a script, but 
 
 [SelectionCondition Element for EntrySelectedBy for CustomControl for View (Format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

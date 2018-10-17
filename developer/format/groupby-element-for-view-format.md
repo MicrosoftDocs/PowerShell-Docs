@@ -45,14 +45,14 @@ None.
 |[CustomControl Element for GroupBy (Format)](./customcontrol-element-for-groupby-format.md)|Optional element.<br /><br /> Defines the custom control that display new groups.|
 |[CustomControlName Element for GroupBy (Format)](./customcontrolname-element-for-groupby-format.md)|Optional element.<br /><br /> Specifies the name of a control that is used to display the new group.|
 |[Label Element for GroupBy (Format)](./label-element-for-groupby-format.md)|Optional element.<br /><br /> Specifies a label that is displayed when a new group is encountered.|
-|[PropertyName Element for GroupBy (Format)](./propertyname-element-for-groupby-format.md)|Optional element.<br /><br /> Specifies the .NET Framework property the starts a new group whenever its value changes.|
+|[PropertyName Element for GroupBy (Format)](./propertyname-element-for-groupby-format.md)|Optional element.<br /><br /> Specifies the .NET property the starts a new group whenever its value changes.|
 |[ScriptBlock Element for GroupBy (Format)](./scriptblock-element-for-groupby-format.md)|Optional element.<br /><br /> Specifies the script that starts a new group whenever its value changes.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[View Element (Format)](./view-element-format.md)|Defines a view that displays one or more .NET Framework objects.|
+|[View Element (Format)](./view-element-format.md)|Defines a view that displays one or more .NET objects.|
 
 ## Remarks
 
@@ -70,4 +70,4 @@ When defining how a new group of objects is displayed, you must specify the prop
 
 [View Element (Format)](./view-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

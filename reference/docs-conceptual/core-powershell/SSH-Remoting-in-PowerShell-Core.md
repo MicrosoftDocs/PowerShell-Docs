@@ -42,7 +42,7 @@ must configure enable password or key-based authentication.
 
 ## Set up on Windows Machine
 
-1. Install the latest version of [PowerShell Core for Windows]
+1. Install the latest version of [PowerShell Core for Windows](../setup/installing-powershell-core-on-windows.md#msi)
 
    - You can tell if it has the SSH remoting support by looking at the parameter sets for
      `New-PSSession`
@@ -55,8 +55,8 @@ must configure enable password or key-based authentication.
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions
-3. Edit the sshd_config file at the location where you installed Win32 OpenSSH
+2. Install the latest [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) build from GitHub using the [installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instructions
+3. Edit the sshd_config file located at `%ProgramData%\ssh`.
 
    - Make sure password authentication is enabled
 
@@ -65,7 +65,7 @@ must configure enable password or key-based authentication.
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -75,7 +75,7 @@ must configure enable password or key-based authentication.
      One solution is to create a symlink to the Powershell installation directory that doesn't have spaces:
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      and then enter it in the subsystem:
@@ -101,8 +101,8 @@ must configure enable password or key-based authentication.
 
 ## Set up on Linux (Ubuntu 14.04) Machine
 
-1. Install the latest [PowerShell Core for Linux] build from GitHub
-2. Install [Ubuntu SSH] as needed
+1. Install the latest [PowerShell Core for Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) build from GitHub
+2. Install [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) as needed
 
    ```bash
    sudo apt install openssh-client
@@ -137,7 +137,7 @@ must configure enable password or key-based authentication.
 
 ## Set up on MacOS Machine
 
-1. Install the latest [PowerShell Core for MacOS] build
+1. Install the latest [PowerShell Core for MacOS](../setup/installing-powershell-core-on-macos.md) build
 
    - Make sure SSH Remoting is enabled by following these steps:
      - Open `System Preferences`
@@ -177,6 +177,15 @@ must configure enable password or key-based authentication.
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
+
+## Authentication
+
+PowerShell remoting over SSH relies on the authentication exchange between the SSH client and SSH service and does not implement any authentication schemes itself.
+This means that any configured authentication schemes including multi-factor authentication is handled by SSH and independent of PowerShell.
+For example, you can configure the SSH service to require public key authentication as well as a one-time password for added security.
+Configuration of multi-factor authentication is outside the scope of this documentation.
+Refer to documentation for SSH on how to correctly configure multi-factor authentication and validate it works outside of PowerShell
+before attempting to use it with PowerShell remoting.
 
 ## PowerShell Remoting Example
 
@@ -322,7 +331,5 @@ The sudo command doesn't work in remote session to Linux machine.
 [PowerShell Core for MacOS](../setup/installing-powershell-core-on-macos.md)
 
 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

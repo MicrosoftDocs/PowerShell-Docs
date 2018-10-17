@@ -167,7 +167,7 @@ If you specify only a file name, use the *WorkingDirectory* parameter to specify
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: PSPath
+Aliases: PSPath, Path
 
 Required: True
 Position: 1
@@ -328,8 +328,8 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
-Indicates that this cmdlet waits for the specified process to complete before accepting more input.
-This parameter suppresses the command prompt or retains the window until the process finishes.
+Indicates that this cmdlet waits for the specified process and its descendants to complete before accepting more input.
+This parameter suppresses the command prompt or retains the window until the processes finish.
 
 ```yaml
 Type: SwitchParameter
@@ -395,6 +395,8 @@ Otherwise, this cmdlet does not return any output.
 
 ## NOTES
 * This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process** class. For more information about this method, see [Process.Start Method](https://msdn.microsoft.com/library/system.diagnostics.process.start) in the MSDN library.
+
+* When using PowerShell Core on Linux, to open a new process within a new window (similar to the default behavior when using Start-Process in Windows), run the cmdlet with the `-UseNewEnvironment -Wait` parameters.  This is done to prevent the new process from blocking PowerShell's control of keyboard input.
 
 ## RELATED LINKS
 

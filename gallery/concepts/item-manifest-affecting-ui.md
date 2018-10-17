@@ -44,6 +44,8 @@ the publisher. Each item indicates if it may be controlled by the module or scri
 | **Version History** | The version history reflects the updates made to a module in the PowerShell Gallery. If a version of an item is hidden using the Delete feature, it will not be displayed in the version history, except to the item owners. | No | No |
 | **Project Site** | The project site is provided for modules in the Privatedata\PSData section of the module manifest by specifying a ProjectURI. In the script manifest, it is controlled by specifying .PROJECTURI. | Yes | Yes |
 | **License** | A license link is provided for modules in the Privatedata\PSData section of the module manifest by specifying a LicenseURI. In the script manifest, it is controlled by specifying .LICENSEURI. It is important to note that if a license is not provided via the LicenseURI, or within a module, then the terms of use for the PowerShell Gallery specify the terms of use for the item. See the terms of use for details. | Yes | Yes |
+| **Icon** | An icon can be specified for any item in the PowerShell Gallery by supplying the IconURI flag in the script manifest, or in the Privatedata-PSData section of the module manifest. The IconURI should point to a 32x32 image with transparency background. The URI **must** be a direct image URL and **must not** go to a web page containing the image, or a file in the PowerShell Gallery package. | Yes | Yes |
+
 
 ## Editing item details
 

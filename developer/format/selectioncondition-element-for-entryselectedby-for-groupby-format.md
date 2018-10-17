@@ -46,16 +46,16 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[PropertyName Element for SelectionCondition for GroupBy (Format)](./propertyname-element-for-selectioncondition-for-groupby-format.md)|Optional element.<br /><br /> Specifies a .NET Framework property that triggers the condition.|
+|[PropertyName Element for SelectionCondition for GroupBy (Format)](./propertyname-element-for-selectioncondition-for-groupby-format.md)|Optional element.<br /><br /> Specifies a .NET property that triggers the condition.|
 |[ScriptBlock Element for SelectionCondition for GroupBy (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
-|[SelectionSetName Element for SelectionCondition for GroupBy (Format)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)|Optional element.<br /><br /> Specifies the set of .NET Framework types that triggers the condition.|
-|[TypeName Element for SelectionCondition for GroupBy  (Format)](./typename-element-for-selectioncondition-for-groupby-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that triggers the condition.|
+|[SelectionSetName Element for SelectionCondition for GroupBy (Format)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)|Optional element.<br /><br /> Specifies the set of .NET types that triggers the condition.|
+|[TypeName Element for SelectionCondition for GroupBy  (Format)](./typename-element-for-selectioncondition-for-groupby-format.md)|Optional element.<br /><br /> Specifies a .NET type that triggers the condition.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Remarks
 
@@ -63,7 +63,7 @@ When you are defining a selection condition, the following requirements apply:
 
 - The selection condition must specify a least one property name or a script block, but cannot specify both.
 
-- The selection condition can specify any number of .NET Framework types or selection sets, but cannot specify both.
+- The selection condition can specify any number of .NET types or selection sets, but cannot specify both.
 
 For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
@@ -79,4 +79,4 @@ For more information about how to use selection conditions, see [Defining Condit
 
 [EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

@@ -13,7 +13,7 @@ title:  Invoke-RestMethod
 ## Synopsis
 Sends an HTTP or HTTPS request to a RESTful web service.
 
-## Syntax
+## SYNTAX
 
 ### StandardMethod (Default)
 ```
@@ -24,8 +24,9 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
  [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
- [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### StandardMethodNoProxy
@@ -36,9 +37,9 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
+ [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### CustomMethod
@@ -50,8 +51,9 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
  [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-ContentType <String>] [-TransferEncoding <String>]
- [-InFile <String>] [-OutFile <String>] [-PassThru] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### CustomMethodNoProxy
@@ -62,9 +64,9 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
+ [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ## Description
@@ -132,7 +134,41 @@ $url = 'https://api.github.com/repos/powershell/powershell/issues'
 Invoke-RestMethod $url -FollowRelLink -MaximumFollowRelLink 2
 ```
 
-Some REST APIs support pagination via Relation Links per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6). Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you. This example returns the first two pages of issues from the PowerShell GitHub repository
+Some REST APIs support pagination via Relation Links per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6). Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you. This example returns the first two pages of issues from the PowerShell GitHub repository.
+
+### Example 4: Simplified Multipart/Form-Data Submission
+```powershell
+$Uri = 'https://api.contoso.com/v2/profile'
+$Form = @{
+    firstName  = 'John'
+    lastName   = 'Doe'
+    email      = 'john.doe@contoso.com'
+    avatar     = Get-Item -Path 'c:\Pictures\jdoe.png'
+    birthday   = '1980-10-15'
+    hobbies    = 'Hiking','Fishing','Jogging'
+}
+$Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
+```
+
+Some APIs require `multipart/form-data` submissions to upload files and mixed content.
+This example demonstrates updating a user profile.
+The profile form requires these fields:
+`firstName`, `lastName`, `email`, `avatar`, `birthday`, and `hobbies`.
+The API is expecting an image for the user profile pic to be supplied in the `avatar` field.
+The API will also accept multiple `hobbies` entries to be submitted in the same form.
+
+When creating the `$Form` HashTable, the key names are used as form field names.
+By default, the values of the HashTable will be converted to strings.
+If a `System.IO.FileInfo` value is present, the file contents will be submitted.
+If a collection such as arrays or lists are present,
+the form field will be submitted multiple times.
+
+By using `Get-Item` on the `avatar` key, the `FileInfo` object will be set as the value.
+The result is that the image data for `jdoe.png` will be submitted.
+
+By supplying a list to the `hobbies` key,
+the `hobbies` field will be present in the submissions
+once for each list item.
 
 ## Parameters
 
@@ -141,6 +177,7 @@ Allows sending of credentials and secrets over unencrypted connections. By defau
 
 > **Warning**: Using this parameter is not secure and is not recommended. It is provided only for compatibility with legacy systems that cannot provide encrypted connections. Use at your own risk.
 
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: SwitchParameter
@@ -166,6 +203,7 @@ Available Authentication Options:
 
 Supplying **-Authentication** will override any `Authorization` headers supplied to **-Headers** or included in **-WebSession**.
 
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: WebAuthenticationType
@@ -192,7 +230,7 @@ For other request types (such as POST), the body is set as the value of the requ
 
 When the body is a form, or it is the output of another `Invoke-WebRequest` call, PowerShell sets the request content to the form fields.
 
-The **-Body** parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for **-Body**, any Content related headers supplied to the **-ContentType**, **-Headers**, or **-WebSession** parameters will be overridden by the Content headers of the `MultipartFormDataContent` object.
+The **-Body** parameter may also accept a `System.Net.Http.MultipartFormDataContent` object. This will facilitate `multipart/form-data` requests. When a `MultipartFormDataContent` object is supplied for **-Body**, any Content related headers supplied to the **-ContentType**, **-Headers**, or **-WebSession** parameters will be overridden by the Content headers of the `MultipartFormDataContent` object. This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: Object
@@ -212,8 +250,6 @@ Enter a variable that contains a certificate or a command or expression that get
 
 To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate (`Cert:`) drive.
 If the certificate is not valid or does not have sufficient authority, the command fails.
-
-> **Note**: This feature may not work on OS platforms where `libcurl` is configured with a TLS provider other than OpenSSL.
 
 ```yaml
 Type: X509Certificate
@@ -302,6 +338,8 @@ Invoke-WebRequest -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'
 
 This makes a `TEST` HTTP request to the API.
 
+This feature was added in PowerShell 6.0.0.
+
 ```yaml
 Type: String
 Parameter Sets: StandardMethod, CustomMethod
@@ -336,10 +374,66 @@ Indicates the cmdlet should follow relation links.
 
 To set how many times to follow relation links, use the **-MaximumFollowRelLink** parameter.
 
+This feature was added in PowerShell 6.0.0.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Form
+Converts a dictionary to a `multipart/form-data` submission.
+`-Form` may not be used with `-Body`.
+If `-ContentType` will be ignored.
+
+The keys of the dictionary will be used as the form field names.
+By default, form values will be converted to string values.
+
+If the value is a `System.IO.FileInfo` object,
+then the binary file contents will be submitted.
+The name of the file will be submitted as the `filename`.
+The MIME will be set as `application/octet-stream`.
+`Get-Item` can be used to simplify supplying the `System.IO.FileInfo` object.
+
+```powershell
+$Form = @{
+    resume = Get-Item 'c:\Users\jdoe\Documents\John Doe.pdf'
+}
+```
+
+If the value is a collection type,
+such as an Array or List,
+the for field will be submitted multiple times.
+The values of the list will be treated as strings by default.
+If the value is a `System.IO.FileInfo` object,
+then the binary file contents will be submitted.
+Nested collections are not supported.
+
+```powershell
+$Form = @{
+    tags     = 'Vacation', 'Italy', '2017'
+    pictures = Get-ChildItem 'c:\Users\jdoe\Pictures\2017-Italy\'
+}
+```
+
+In the above example the `tags` field will be supplied 3 times in the form,
+once for each of `Vacation`, `Italy`, and `2017`.
+The `pictures` field will also be submitted once for each file in the `2017-Italy` folder.
+The binary contents of the files in that folder will be submitted as the values.
+
+This feature was added in PowerShell 6.1.0.
+
+```yaml
+Type: IDictionary
+Parameter Sets: (All)
+Aliases: 
 
 Required: False
 Position: Named
@@ -509,6 +603,8 @@ Indicates the cmdlet should preserve the `Authorization` header, when present, a
 
 By default, the cmdlet strips the `Authorization` header before redirecting. Specifying this parameter disables this logic for cases where the header needs to be sent to the redirection location.
 
+This feature was added in PowerShell 6.0.0.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -524,6 +620,8 @@ Accept wildcard characters: False
 ### -Proxy
 Uses a proxy server for the request, rather than connecting directly to the Internet resource.
 Enter the URI of a network proxy server.
+
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: Uri
@@ -577,8 +675,9 @@ Accept wildcard characters: False
 ```
 
 ### -ResponseHeadersVariable
-Creates a Response Headers Dictionary and saves it in the value of the specified variable. The the keys of the dictionary will contain the field names of the Response Header returned by the web server and the values will be the respective field values.
+Creates a Response Headers Dictionary and saves it in the value of the specified variable. The keys of the dictionary will contain the field names of the Response Header returned by the web server and the values will be the respective field values.
 
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: String
@@ -591,6 +690,46 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 
+```
+
+### -Resume
+Performs a best effort attempt to resume downloading a partial file.
+`-Resume` requires `-OutFile`.
+
+`-Resume` only operates on the size of the local file and remote file
+and performs no other validation that the local file and the remote file are the same.
+
+If the local file size is smaller than the remote file size,
+then the cmdlet will attempt to resume downloading the file
+and append the remaining bytes to the end of the file.
+
+If the local file size is the same as the remote file size,
+then no action is taken and the cmdlet assumes the download already completed.
+
+If the local file size is larger than the remote file size,
+then the local file will be overwritten and the entire remote file will be completely re-downloaded.
+This behavior is the same as using `-OutFile` without `-Resume`.
+
+If the remote server does not support download resuming,
+then the local file will be overwritten and the entire remote file will be completely re-downloaded.
+This behavior is the same as using `-OutFile` without `-Resume`.
+
+If the local file does not exist,
+then the local file will be created and the entire remote file will be completely downloaded.
+This behavior is the same as using `-OutFile` without `-Resume`.
+
+This feature was added in PowerShell 6.1.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -SessionVariable
@@ -628,6 +767,7 @@ Skips certificate validation checks. This includes all validations such as expir
 
 > **Warning**: Using this parameter is not secure and is not recommended. This switch is only intended to be used against known hosts using a self-signed certificate for testing purposes. Use at your own risk.
 
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: SwitchParameter
@@ -644,9 +784,11 @@ Accept wildcard characters: False
 ### -SkipHeaderValidation
 Indicates the cmdlet should add headers to the request without validation.
 
-This switch should be used for sites that require header values that do not conform to standards. Specifying this switch disables validation to allow the value to be passed unchecked.  When specified, all headers are added without validation.
+This switch should be used for sites that require header values that do not conform to standards. Specifying this switch disables validation to allow the value to be passed unchecked. When specified, all headers are added without validation.
 
-This will disable validation for values passed to both the **-Headers** and **-UserAgent** parameters.
+This will disable validation for values passed to the **-ContentType**, **-Headers** and **-UserAgent** parameters.
+
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: SwitchParameter
@@ -665,7 +807,9 @@ Sets the SSL/TLS protocols that are permissible for the web request. By default 
 
 **-SslProtocol** uses the `WebSslProtocol` Flag Enum. It is possible to supply more than one protocol using flag notation or combining multiple `WebSslProtocol` options with `-bor`, however supplying multiple protocols is not supported on all platforms.
 
-> **Note**: This feature may not work on OS platforms where `libcurl` is configured with a TLS provider other than OpenSSL.
+> **Note**: On non-Windows platforms it may not be possible to supply `'Tls, Tls12'` as an option.
+
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: WebSslProtocol
@@ -708,6 +852,8 @@ The OAuth or Bearer token to include in the request. **-Token** is required by c
 ```powershell
 Invoke-RestMethod -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)
 ```
+
+This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: SecureString
@@ -800,7 +946,7 @@ The default user agent is similar to `Mozilla/5.0 (Windows NT 10.0; Microsoft Wi
 
 To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](http://msdn.microsoft.com/library/windows/desktop/hh484857&#40;v=vs.85&#41;) class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
-For example, the following command uses the user agent string for Internet Explorer
+For example, the following command uses the user agent string for Internet Explorer.
 
 
 ```powershell
@@ -849,7 +995,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**, **-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**, **-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**, **-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**, **-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
@@ -865,8 +1011,6 @@ The output of the cmdlet depends upon the format of the content that is retrieve
 If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the strings.
 
 ## Notes
-
-Some features may not be available on all platforms.
 
 ## Related Links
 

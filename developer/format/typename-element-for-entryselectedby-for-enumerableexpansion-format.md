@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # TypeName Element for EntrySelectedBy for EnumerableExpansion (Format)
 
-Specifies a .NET Framework type that is expanded by this definition. This element is used when defining a default settings.
+Specifies a .NET type that is expanded by this definition. This element is used when defining a default settings.
 
 Configuration Element (Format)
 DefaultSettings Element (Format)
@@ -43,11 +43,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Defines the .NET Framework types that use this definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Defines the .NET types that use this definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 
@@ -55,4 +55,4 @@ Specify the fully qualified name of the .NET Framework type, such as `System.IO.
 
 [EntrySelectedBy Element for EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

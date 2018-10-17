@@ -11,7 +11,7 @@ caps.latest.revision: 18
 ---
 # ViewDefinitions Element (Format)
 
-Defines the views used to display .NET Framework objects. These views can display the properties and script values of an object  in a table format, list format, wide format, and custom control format.
+Defines the views used to display .NET objects. These views can display the properties and script values of an object  in a table format, list format, wide format, and custom control format.
 
 Configuration Element (Format)
 ViewDefinitions (Format XML) Element
@@ -37,7 +37,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display one or more .NET Framework objects.|
+|[View Element (Format)](./view-element-format.md)|Defines a view that is used to display one or more .NET objects.|
 
 ### Parent Elements
 
@@ -88,4 +88,4 @@ This example shows a `ViewDefinitions` element that contains the parent elements
 
 [Custom Controls](./creating-custom-controls.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

@@ -11,7 +11,7 @@ caps.latest.revision: 7
 ---
 # SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)
 
-Specifies a set of .NET Framework objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
+Specifies a set of .NET objects for the list entry. There is no limit to the number of selection sets that can be specified for an entry.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -44,7 +44,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines the .NET Framework types that use this custom entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines the .NET types that use this custom entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
 
@@ -64,4 +64,4 @@ For more information about the components of a custom control view, see [Creatin
 
 [Custom Control View](./creating-custom-controls.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

@@ -5,8 +5,8 @@ title:  PowerShell Scripting
 ---
 # PowerShell
 
-PowerShell is a task-based command-line shell and scripting language built on the .NET Framework.
-PowerShell helps system administrators and power-users can rapidly automate tasks that manage
+PowerShell is a task-based command-line shell and scripting language built on .NET.
+PowerShell helps system administrators and power-users rapidly automate tasks that manage
 operating systems (Linux, macOS, and Windows) and processes.
 
 PowerShell commands let you manage computers from the command line. PowerShell providers let you

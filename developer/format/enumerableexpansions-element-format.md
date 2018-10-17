@@ -11,7 +11,7 @@ caps.latest.revision: 9
 ---
 # EnumerableExpansions Element (Format)
 
-Defines how .NET Framework collection objects are expanded when they are displayed in a view.
+Defines how .NET collection objects are expanded when they are displayed in a view.
 
 Configuration Element (Format)
 DefaultSettings Element (Format)
@@ -37,7 +37,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Optional element.<br /><br /> Defines the specific .NET Framework collection objects that are expanded when they are displayed in a view.|
+|[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Optional element.<br /><br /> Defines the specific .NET collection objects that are expanded when they are displayed in a view.|
 
 ### Parent Elements
 
@@ -51,4 +51,4 @@ This element is used to define how collection objects and the objects in the col
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

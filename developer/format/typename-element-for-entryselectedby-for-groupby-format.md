@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # TypeName Element for EntrySelectedBy for GroupBy (Format)
 
-Specifies a .NET Framework type that uses this definition of the custom control. This element is used when defining how a new group of objects is displayed.
+Specifies a .NET type that uses this definition of the custom control. This element is used when defining how a new group of objects is displayed.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -45,11 +45,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 
@@ -63,4 +63,4 @@ For more information about the components of a custom control view, see [Creatin
 
 [EntrySelectedBy Element for CustomEntry for GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

@@ -45,7 +45,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[PropertyName Element for ItemSelectionCondition for GroupBy (Format)](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)|Optional element.<br /><br /> Specifies the .NET Framework property that triggers the condition.|
+|[PropertyName Element for ItemSelectionCondition for GroupBy (Format)](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
 |[ScriptBlock Element for ItemSelectionCondition for GroupBy (Format)](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
 
 ### Parent Elements
@@ -60,6 +60,6 @@ You can specify one property name or a script for this condition but cannot spec
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
 
 [ExpressionBinding Element for CustomItem for GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)

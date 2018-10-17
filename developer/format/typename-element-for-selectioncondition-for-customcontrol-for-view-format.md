@@ -11,7 +11,7 @@ caps.latest.revision: 7
 ---
 # TypeName Element for SelectionCondition for CustomControl for View  (Format)
 
-Specifies a .NET Framework type that triggers the condition. This element is used when defining a custom control view.
+Specifies a .NET type that triggers the condition. This element is used when defining a custom control view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -50,7 +50,7 @@ None.
 
 ## Text Value
 
-Specify the fully qualified name of the .NET Framework type, such as `System.IO.DirectoryInfo`.
+Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.
 
 ## Remarks
 
@@ -58,4 +58,4 @@ Specify the fully qualified name of the .NET Framework type, such as `System.IO.
 
 [SelectionCondition Element for EntrySelectedBy for CustomControl for View (Format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

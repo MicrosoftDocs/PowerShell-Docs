@@ -41,7 +41,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Optional element.<br /><br /> Defines the .NET Framework types that use this wide entry definition or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Optional element.<br /><br /> Defines the .NET types that use this wide entry definition or the condition that must exist for this definition to be used.|
 |[WideItem Element (Format)](./wideitem-element-for-widecontrol-format.md)|Required element.<br /><br /> Defines the property or script whose value is displayed.|
 
 ### Parent Elements
@@ -85,4 +85,4 @@ For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic
 
 [WideItem Element (Format)](./wideitem-element-for-widecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

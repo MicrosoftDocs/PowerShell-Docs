@@ -11,7 +11,7 @@ caps.latest.revision: 16
 ---
 # Defining Selection Sets
 
-When creating multiple views and controls, you can define sets of objects that are referred to as selection sets. A selection set enables you to define the objects one time, without having to define them repeatedly for each view or control. Typically, selection sets are used when you have a set of related .NET Framework objects. For example, The `FileSystem` formatting file (FileSystem.format.ps1xml) defines a selection set of the file system types that several views use.
+When creating multiple views and controls, you can define sets of objects that are referred to as selection sets. A selection set enables you to define the objects one time, without having to define them repeatedly for each view or control. Typically, selection sets are used when you have a set of related .NET objects. For example, The `FileSystem` formatting file (FileSystem.format.ps1xml) defines a selection set of the file system types that several views use.
 
 ## Where Selection Sets are Defined and Referenced
 
@@ -37,7 +37,7 @@ You can reference a selection sets in the following ways:
 
 ## Selection Set Example
 
-The following example shows a selection set that is taken directly from the `FileSystem` formatting file provided by Windows PowerShell. For more information about other Windows PowerShell formatting files, see [Windows PowerShell Formatting Files](./windows-powershell-formatting-files.md).
+The following example shows a selection set that is taken directly from the `FileSystem` formatting file provided by Windows PowerShell. For more information about other Windows PowerShell formatting files, see [Windows PowerShell Formatting Files](./powershell-formatting-files.md).
 
 ```xml
 <SelectionSets>
@@ -72,13 +72,13 @@ The previous selection set is referenced in the `ViewSelectedBy` element of a ta
 
  There is no limit to the number of selection sets that you can define. The following XML elements are used to create a selection set.
 
-- The [SelectionSets](./selectionsets-element-format.md) element defines the sets of .NET Framework objects that are referenced by the views and controls of the formatting file.
+- The [SelectionSets](./selectionsets-element-format.md) element defines the sets of .NET objects that are referenced by the views and controls of the formatting file.
 
-- The [SelectionSet](./selectionset-element-format.md) element defines a single set of .NET Framework objects.
+- The [SelectionSet](./selectionset-element-format.md) element defines a single set of .NET objects.
 
 - The [Name](./name-element-for-selectionset-format.md) element specifies the name that is used to reference the selection set.
 
-- The [Types](./types-element-for-selectionset-format.md) element specifies the .NET Framework types of the objects of the selection set. (Within formatting files, objects are specified by their .NET Framework type.)
+- The [Types](./types-element-for-selectionset-format.md) element specifies the .NET types of the objects of the selection set. (Within formatting files, objects are specified by their .NET type.)
 
  The following XML elements are used to specify a selection set.
 
@@ -136,8 +136,8 @@ The previous selection set is referenced in the `ViewSelectedBy` element of a ta
 
 [Types](./types-element-for-selectionset-format.md)
 
-[Windows PowerShell Formatting Files](./windows-powershell-formatting-files.md)
+[PowerShell Formatting Files](./powershell-formatting-files.md)
 
 [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

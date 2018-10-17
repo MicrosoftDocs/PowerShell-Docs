@@ -11,7 +11,7 @@ caps.latest.revision: 10
 ---
 # TypeName Element for EntrySelectedBy for TableControl (Format)
 
-Specifies a .NET Framework type that uses this entry of the table view. There is no limit to the number of types that can be specified for a table entry.
+Specifies a .NET type that uses this entry of the table view. There is no limit to the number of types that can be specified for a table entry.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -44,11 +44,11 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Defines the .NET Framework types that use this entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Defines the .NET types that use this entry or the condition that must exist for this entry to be used.|
 
 ## Text Value
 
-Specify the name of the .NET Framework type.
+Specify the name of the .NET type.
 
 ## Remarks
 
@@ -62,4 +62,4 @@ For more information about the components of a table view, see [Creating a Table
 
 [EntrySelectedBy Element (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

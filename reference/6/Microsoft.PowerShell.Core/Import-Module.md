@@ -445,7 +445,7 @@ Specifies an array of arguments, or parameter values, that are passed to a scrip
 This parameter is valid only when you are importing a script module.
 
 You can also refer to the *ArgumentList* parameter by its alias, *args*.
-For more information, see about_Aliases.
+For more information, see [about_Aliases](About/about_Aliases.md).
 
 ```yaml
 Type: Object[]

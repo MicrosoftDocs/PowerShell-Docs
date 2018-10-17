@@ -11,7 +11,7 @@ caps.latest.revision: 7
 ---
 # EntrySelectedBy Element for CustomEntry for GroupBy (Format)
 
-Defines the .NET Framework types that use this control definition or the condition that must exist for this definition to be used. This element is used when defining how a new group of objects is displayed.
+Defines the .NET types that use this control definition or the condition that must exist for this definition to be used. This element is used when defining how a new group of objects is displayed.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -45,8 +45,8 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[SelectionCondition Element for EntrySelectedBy for GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Optional element.<br /><br /> Defines the condition that must exist for this definition to be used.|
-|[SelectionSetName Element for EntrySelectedBy for GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)|Optional element.<br /><br /> Specifies a set of .NET Framework types that use this definition of the control.|
-|[TypeName Element for EntrySelectedBy for GroupBy (Format)](./typename-element-for-entryselectedby-for-groupby-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that uses this definition of the control.|
+|[SelectionSetName Element for EntrySelectedBy for GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)|Optional element.<br /><br /> Specifies a set of .NET types that use this definition of the control.|
+|[TypeName Element for EntrySelectedBy for GroupBy (Format)](./typename-element-for-entryselectedby-for-groupby-format.md)|Optional element.<br /><br /> Specifies a .NET type that uses this definition of the control.|
 
 ### Parent Elements
 
@@ -68,4 +68,4 @@ Selection conditions are used to define a condition that must exist for the defi
 
 [CustomEntry Element for CustomEntries for Controls for View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

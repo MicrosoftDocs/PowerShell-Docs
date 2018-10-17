@@ -41,7 +41,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Defines how specific .NET Framework collection objects are expanded when they are displayed in a view.|
+|[EnumerableExpansion Element (Format)](./enumerableexpansion-element-format.md)|Defines how specific .NET collection objects are expanded when they are displayed in a view.|
 
 ## Text Value
 
@@ -61,4 +61,4 @@ The default behavior is to display only the properties of the objects in the col
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

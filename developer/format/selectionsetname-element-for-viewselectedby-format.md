@@ -11,7 +11,7 @@ caps.latest.revision: 13
 ---
 # SelectionSetName Element for ViewSelectedBy (Format)
 
-Specifies a set of .NET Framework objects that are displayed by the view.
+Specifies a set of .NET objects that are displayed by the view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -41,7 +41,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[ViewSelectedBy Element (Format)](./viewselectedby-element-format.md)|Defines the .NET Framework objects that are displayed by the view.|
+|[ViewSelectedBy Element (Format)](./viewselectedby-element-format.md)|Defines the .NET objects that are displayed by the view.|
 
 ## Text Value
 
@@ -71,4 +71,4 @@ The following example shows how to specify a selection set for a list view. The 
 
 [ViewSelectedBy Element (Format)](./viewselectedby-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

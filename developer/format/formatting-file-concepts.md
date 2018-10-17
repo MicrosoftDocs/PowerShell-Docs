@@ -38,5 +38,5 @@ When defining what data is displayed by a view or a control, you can specify a c
 [Formatting Displayed Data](./formatting-displayed-data.md)
 You can specify how the individual data points in your List, Table, or Wide view are displayed.
 
-[Windows PowerShell Formatting Files](./windows-powershell-formatting-files.md)
-Lists the available formatting files provided by Windows PowerShell.
+[PowerShell Formatting Files](./powershell-formatting-files.md)
+Lists the available formatting files provided by PowerShell.

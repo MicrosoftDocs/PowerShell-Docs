@@ -11,7 +11,7 @@ caps.latest.revision: 12
 ---
 # PropertyName Element for ListItem for ListControl (Format)
 
-Specifies the .NET Framework property whose value is displayed in the list.
+Specifies the .NET property whose value is displayed in the list.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -77,4 +77,4 @@ ListItem>
 
 [ListItem Element for ListControl(Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

@@ -45,16 +45,16 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|Optional element.<br /><br /> Specifies the .NET Framework property that triggers the condition.|
+|[PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
 |[ScriptBlock Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|Optional element.<br /><br /> Specifies the script block that triggers the condition.|
-|[SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|Optional element.<br /><br /> Specifies the set of .NET Framework types that triggers the condition.|
-|[TypeName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|Optional element.<br /><br /> Specifies a .NET Framework type that triggers the condition.|
+|[SelectionSetName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|Optional element.<br /><br /> Specifies the set of .NET types that triggers the condition.|
+|[TypeName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|Optional element.<br /><br /> Specifies a .NET type that triggers the condition.|
 
 ### Parent Elements
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Defines the .NET Framework types that use this wide entry or the condition that must exist for this entry to be used.|
+|[EntrySelectedBy Element for WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Defines the .NET types that use this wide entry or the condition that must exist for this entry to be used.|
 
 ## Remarks
 
@@ -64,7 +64,7 @@ When you are defining a selection condition, the following requirements apply:
 
 - The selection condition must specify a least one property name or a script block, but cannot specify both.
 
-- The selection condition can specify any number of .NET Framework types or selection sets, but cannot specify both.
+- The selection condition can specify any number of .NET types or selection sets, but cannot specify both.
 
 For more information about how to use selection conditions, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).
 
@@ -86,4 +86,4 @@ For more information about other components of a wide view, see [Creating a Wide
 
 [TypeName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

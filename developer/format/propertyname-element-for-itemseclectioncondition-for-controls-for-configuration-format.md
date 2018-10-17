@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # PropertyName Element for ItemSeclectionCondition for Controls for Configuration (Format)
 
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining a common control that can be used by all the views in the formatting file.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining a common control that can be used by all the views in the formatting file.
 
 Configuration Element (Format)
 Controls Element of Configuration (Format)
@@ -50,7 +50,7 @@ None.
 
 ## Text Value
 
-Specify the name of the .NET Framework property that triggers the condition.
+Specify the name of the .NET property that triggers the condition.
 
 ## Remarks
 
@@ -62,4 +62,4 @@ If this element is used, you cannot specify the [ScriptBlock](./scriptblock-elem
 
 [ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration (Format)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

@@ -74,4 +74,4 @@ The following example shows how to define a formatting string for the value of t
 
 [ListItem Element (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

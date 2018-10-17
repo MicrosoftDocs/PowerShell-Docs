@@ -58,4 +58,4 @@ If this element is used, you cannot specify the `PropertyName` element when defi
 
 ## See Also
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

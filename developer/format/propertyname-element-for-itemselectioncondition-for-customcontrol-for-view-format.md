@@ -11,7 +11,7 @@ caps.latest.revision: 6
 ---
 # PropertyName Element for ItemSelectionCondition for CustomControl for View (Format)
 
-Specifies the .NET Framework property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining a custom control view.
+Specifies the .NET property that triggers the condition. When this property is present or when it evaluates to `true`, the condition is met, and the control is used. This element is used when defining a custom control view.
 
 Configuration Element (Format)
 ViewDefinitions Element (Format)
@@ -50,7 +50,7 @@ None.
 
 ## Text Value
 
-Specify the name of the .NET Framework property that triggers the condition.
+Specify the name of the .NET property that triggers the condition.
 
 ## Remarks
 
@@ -62,4 +62,4 @@ If this element is used, you cannot specify the [ScriptBlock](./scriptblock-elem
 
 [ItemSelectionCondition Element for Expression Binding for CustomControl for View (Format)](./itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

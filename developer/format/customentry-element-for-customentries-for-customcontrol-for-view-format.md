@@ -41,7 +41,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Optional element.<br /><br /> Defines the .NET Framework types that use the definition of the custom control view or the condition that must exist for this definition to be used.|
+|[EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Optional element.<br /><br /> Defines the .NET types that use the definition of the custom control view or the condition that must exist for this definition to be used.|
 |[CustomItem Element for CustomEntry for View (Format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|Defines a control for the custom control definition.|
 
 ### Parent Elements
@@ -52,7 +52,7 @@ None.
 
 ## Remarks
 
-In most cases, only one definition is required for each custom control view, but it is possible to have multiple definitions if you want to use the same view to display different .NET Framework objects. In those cases, you can provide a separate definition for each object or set of objects.
+In most cases, only one definition is required for each custom control view, but it is possible to have multiple definitions if you want to use the same view to display different .NET objects. In those cases, you can provide a separate definition for each object or set of objects.
 
 ## See Also
 
@@ -62,4 +62,4 @@ In most cases, only one definition is required for each custom control view, but
 
 [EntrySelectedBy Element for CustomEntry for View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

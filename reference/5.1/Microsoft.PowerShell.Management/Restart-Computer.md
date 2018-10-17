@@ -200,22 +200,14 @@ Accept wildcard characters: False
 Specifies the authentication level that is used for the WMI connection.
 The acceptable values for this parameter are:
 
-- Call.
-Call-level COM authentication
-- Connect.
-Connect-level COM authentication
-- Default.
-Windows Authentication
-- None.
-No COM authentication
-- Packet.
-Packet-level COM authentication
-- PacketIntegrity.
-Packet Integrity-level COM authentication
-- PacketPrivacy.
-Packet Privacy-level COM authentication
-- Unchanged.
-The authentication level is the same as the previous command
+- Call: Call-level COM authentication
+- Connect: Connect-level COM authentication
+- Default: WMI's default settings (Windows authentication); despite its name, this item is not default value of this cmdlet
+- None: No COM authentication
+- Packet: Packet-level COM authentication
+- PacketIntegrity: Packet Integrity-level COM authentication
+- PacketPrivacy: Packet Privacy-level COM authentication
+- Unchanged: The authentication level is the same as the previous command
 
 The default value is Packet.
 
@@ -263,14 +255,10 @@ This parameter is valid only with the *Wait* parameter.
 
 The acceptable values for this parameter are:
 
-- Default.
-Waits for Windows PowerShell to restart.
-- PowerShell.
-Can run commands in a Windows PowerShell remote session on the computer.
-- WMI.
-Receives a reply to a Win32_ComputerSystem query for the computer.
-- WinRM.
-Can establish a remote session to the computer by using WS-Management.
+- Default: Waits for Windows PowerShell to restart.
+- PowerShell: Can run commands in a Windows PowerShell remote session on the computer.
+- WMI: Receives a reply to a Win32_ComputerSystem query for the computer.
+- WinRM: Can establish a remote session to the computer by using WS-Management.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -307,14 +295,10 @@ Specifies the impersonation level that this cmdlet uses to call WMI.
 **Restart-Computer** uses WMI.
 The acceptable values for this parameter are:
 
- -- Default.
-Default impersonation.
-- Anonymous.
-Hides the identity of the caller.
-- Identify.
-Allows objects to query the credentials of the caller.
-- Impersonate.
-Allows objects to use the credentials of the caller.
+- Default: Default impersonation. Despite the name, this item is not the default value for this cmdlet.
+- Anonymous: Hides the identity of the caller.
+- Identify: Allows objects to query the credentials of the caller.
+- Impersonate: Allows objects to use the credentials of the caller.
 
 The default value is Impersonate.
 
@@ -461,7 +445,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
-You can pipe computer names to this cmdlet..
+You can pipe computer names to this cmdlet.
 
 In Windows PowerShell 2.0, the *ComputerName* parameter takes input from the pipeline only by property name.
 In Windows PowerShell 3.0, the *ComputerName* parameter takes input from the pipeline by value.
@@ -473,8 +457,9 @@ This cmdlet returns a job object, if you specify the *AsJob* parameter.
 Otherwise, it does not generate any output.
 
 ## NOTES
-* This cmdlet uses the **Win32Shutdown** method of the WMI **WIN32_OperatingSystem** class.
-* In Windows PowerShell 2.0, *AsJob* does not work reliably when you are restarting/stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this problem.
+
+This cmdlet uses the **Win32Shutdown** method of the WMI **WIN32_OperatingSystem** class.
+In Windows PowerShell 2.0, *AsJob* does not work reliably when you are restarting/stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this problem.
 
 ## RELATED LINKS
 
