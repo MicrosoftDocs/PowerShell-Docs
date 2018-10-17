@@ -110,6 +110,29 @@ Test-Info 6> Info.txt
 In this example, you redirect the information stream in the function to a file, Info.txt, by using the code 6\>.
 When you open the Info.txt file, you see the text, "Here you go."
 
+### Example 4: Pass object to write information
+
+```powershell
+Get-Process | Sort-Object CPU -Descending | Select-Object Id, ProcessName, CPU -First 10 | Write-Information -InformationAction Continue
+```
+
+```output
+@{Id=12692; ProcessName=chrome; CPU=39431.296875}
+@{Id=21292; ProcessName=OUTLOOK; CPU=23991.875}
+@{Id=10548; ProcessName=CefSharp.BrowserSubprocess; CPU=20546.203125}
+@{Id=312848; ProcessName=Taskmgr; CPU=13173.1875}
+@{Id=10848; ProcessName=SnapClient; CPU=7014.265625}
+@{Id=9760; ProcessName=Receiver; CPU=6792.359375}
+@{Id=12040; ProcessName=Teams; CPU=5605.578125}
+@{Id=498388; ProcessName=chrome; CPU=3062.453125}
+@{Id=6900; ProcessName=chrome; CPU=2546.9375}
+@{Id=9044; ProcessName=explorer; CPU=2358.765625}
+```
+
+In this example, you can use `Write-Information` to write the top 10 highest
+CPU utilization processes from the `Get-Process` object output that has passes
+through multiple pipelines.
+
 ## PARAMETERS
 
 ### -MessageData
@@ -126,7 +149,7 @@ Aliases: Message, Msg
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True
 Accept wildcard characters: False
 ```
 

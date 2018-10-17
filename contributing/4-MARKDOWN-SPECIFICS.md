@@ -102,6 +102,38 @@ to get this output:
 
 2. The next numbered item starts here.
 
+## Images
+
+The syntax to include an image is:
+
+```markdown
+![[alt text]](<folderPath>)
+
+Example:
+![Introduction](./images/overview/Introduction.png)
+```
+
+Where `alt text` is a brief description of the image and `<folder path>` is a relative path to the
+image. Alternate text is required for screen readers for the visually impaired. It is also useful
+if there is a site bug where the image cannot render.
+
+Images should be stored in a `images/<article-name>` folder within the folder containing your
+article. Images should not be shared between articles. Create a folder that matches the filename of
+your article under the `images` folder. Copy the images for that article to that new folder. If an
+image is used by multiple articles, each image folder must have a copy of that image file. This
+practice prevents a change to an image in one article affecting another article.
+
+In some cases, you want to share images, like logos and icons, across multiple articles. These
+images are stored in a the `/images/shared` folder at the root of the repository.
+
+The following file types are supported by default for images:
+
+- .jpg
+- .png
+
+You can add support for other image types by adding them as resources to the docfx.json file for
+your doc set. For example, add .gif to enable animated .gif files.
+
 ## Markdown extensions supported by Open Publishing
 The following sections describe supported extensions in Open Publishing.
 
@@ -124,7 +156,7 @@ Use specific syntax inside a block quote to indicate that the content is a type 
 
 And it will be rendered like this:
 
-![alert boxes](./images/alert-boxes.png)
+![alert boxes](./images/4-markdown-specifics/alert-boxes.png)
 
 ## Next steps
 
