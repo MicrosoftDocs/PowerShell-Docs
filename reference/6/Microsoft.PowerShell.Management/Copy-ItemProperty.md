@@ -279,7 +279,7 @@ You can pipe a string that contains a path to this cmdlet.
 
 ### None or System.Management.Automation.PSCustomObject
 
-When you use the *Passthru* parameter, this cmdlet generates a **PsCustomObject** representing the copied item property.
+When you use the **Passthru** parameter, this cmdlet generates a **PsCustomObject** representing the copied item property.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
