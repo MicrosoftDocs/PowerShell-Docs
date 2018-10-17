@@ -120,10 +120,10 @@ https://docs.microsoft.com/en-us/powershell/azure/overview?view=azurermps-5.1.1
 ```
 
 - **\<locale>** - identifies the language of the article (example: en-us or de-de)
-- **\<product-service>** - the name of the product or service being documented (example: powershell,
-  dotnet, or azure)
-- **[\<feature-service>]** - (optional) the name of the product's feature or subservice (for
-  example, csharp or load-balancer)
+- **\<product-service>** - the name of the product or service (example: powershell, dotnet, or
+  azure)
+- **[\<feature-service>]** - (optional) the name of the product's feature or subservice (example:
+  csharp or load-balancer)
 - **[\<subfolder>]** - (optional) the name of a subfolder within a feature
 - \<topic> - the name of the article file for the topic (example: load-balancer-overview or
   overview)
