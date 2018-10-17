@@ -1,5 +1,5 @@
 ---
-ms.date:  17/10/2018
+ms.date:  10/17/2018
 schema: 2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -12,7 +12,7 @@ title:  Remove-Alias
 
 ## SYNOPSIS
 
-Remove aliases for the current session.
+Remove an alias from the current session.
 
 ## SYNTAX
 
@@ -22,33 +22,34 @@ Remove-Alias [-Name] <String[]> [-Scope <String>] [-Force] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The **Remove-Alias** cmdlet removes an alias in the current PowerShell session.
-You must use **Remove-Alias** with **-Force** to remove any aliases with **Constant** or **Read-Only** option.
+The `Remove-Alias` cmdlet removes an alias from the current PowerShell session.
+You must use the **-Force** parameter to remove any aliases with the **Read-Only** option.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1 - Remove an alias
+
+This command removes an alias named `del` that represents the Remove-Item cmdlet.
 
 ```powershell
-PS C:\> Remove-Alias -Name del
+Remove-Alias -Name del
 ```
 
-This command removes an alias named del that represent the Remove-Item cmdlet.
 
-### Example 2
+### Example 2 - Remove all non-Constant aliases
+
+This command get all aliases except for alias with Constant option and removes them from the current PowerShell session.
 
 ```powershell
-PS C:\> Get-Alias | Where-Object { $_.Options -ne "Constant" } | Remove-Alias -Force
+Get-Alias | Where-Object { $_.Options -ne "Constant" } | Remove-Alias -Force
 ```
-
-This command get all aliases except for alias with Constant option and removes them in the current PowerShell session.
 
 ## PARAMETERS
 
 ### -Force
 
 Indicates that the cmdlet removes an alias even if it is read-only.
-Even using the *Force* parameter, the cmdlet cannot remove a constant.
+Even using the **Force** parameter, the cmdlet cannot remove a constant alias.
 
 ```yaml
 Type: SwitchParameter
@@ -65,7 +66,6 @@ Accept wildcard characters: False
 ### -Name
 
 Specifies the name of the alias to be removed.
-The parameter name (*Name*) is optional.
 
 ```yaml
 Type: String[]
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ### -Scope
 
-Gets only the variables in the specified scope.
+Affects only the aliases in the specified scope.
 The acceptable values for this parameter are:
 
 - Global
@@ -89,8 +89,8 @@ The acceptable values for this parameter are:
 - Script
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent)
 
-Local is the default.
-For more information, see about_Scopes.
+Local is the default scope.
+For more information, see [about_Scopes](../microsoft.powershell.core/about/about_scopes.md).
 
 ```yaml
 Type: String
@@ -123,9 +123,9 @@ This cmdlet does not return any output.
 
 ## NOTES
 
-- Changes affect only the current scope, such as a session. To delete an alias from all sessions, add a **Remove-Alias** command to your PowerShell profile.
+Changes affect only the current scope. To remove an alias from all sessions, add a **Remove-Alias** command to your PowerShell profile.
 
-For more information, see about_Aliases.
+For more information, see [about_Aliases](../microsoft.powershell.core/about/about_aliases.md).
 
 ## RELATED LINKS
 
