@@ -20,7 +20,7 @@ Users must log in to the site they have chosen in order to share the PowerShell 
 
 Users are encouraged to do this if they find that a package is something they would recommend to others.
 The PowerShell Gallery will check each social media site for "shares" of the package, and display how many times that package has been shared in each of the social media sites.
-Since this shows only the count of times something has been shared, it will be intepreted other users as "liking" the item.
+Since this shows only the count of times something has been shared, it will be intepreted other users as "liking" the package.
 
 
 ## Comments
@@ -30,14 +30,14 @@ Users who have recommendations or feedback can use this feature to provide feedb
 Package owners can Follow this feedback, and be notified when someone posts a comment.
 
 The Comment system is based on LiveFyre, which is a separate service that is not managed by Microsoft, and requires unique login to use.
-The first time you choose to leave a comment or Follow comments on one of your packages, you will be prompted to create a LiveFyre account.
+The first time you choose to leave a comment or follow comments on one of your packages, you will be prompted to create a LiveFyre account.
 
 If you have created a LiveFyre account and logged in, you can craft a comment that provides feedback on the package, then click on "Post comment..."
 The comment will not be visible immediately.
-Comments for gallery items are moderated by the PowerShell Gallery administrators, and all posts are reviewed by the moderators before being published and visible to others.
+Comments for gallery packages are moderated by the PowerShell Gallery administrators, and all posts are reviewed by the moderators before being published and visible to others.
 Our purpose in moderating the comments is to ensure that they align with public behavior consistent with the PowerShell Gallery [Terms of Use](https://www.powershellgallery.com/policies/Terms).
 
-Item owners are encouraged to Follow comments that are posted to LiveFyre.
+Package owners are encouraged to Follow comments that are posted to LiveFyre.
 A LiveFyre account is required, and it is recommended to use the same email address you use for publishing your package in LiveFyre.
 To Follow comments, log into LiveFyre, and navigate to any package where you are listed as an Owner.
 Below the Comment box at the bottom of each package you will see "+Follow".
