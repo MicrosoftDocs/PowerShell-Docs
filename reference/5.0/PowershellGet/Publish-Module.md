@@ -159,8 +159,7 @@ Accept wildcard characters: False
 
 ### -Path
 Specifies the path to the module that you want to publish.
-This parameter accepts either the path to the folder that contains the module, or the module manifest (.psd1) file.
-The parameter accepts piped values from `Get-Module`.
+This parameter accepts the path to the folder that contains the module.
 
 ```yaml
 Type: String
