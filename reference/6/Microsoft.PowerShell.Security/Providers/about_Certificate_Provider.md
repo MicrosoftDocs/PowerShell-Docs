@@ -257,7 +257,7 @@ Get-ChildItem cert:\LocalMachine\My -SSLServerAuthentication | Move-Item `
 The `Remove-Item` cmdlet will remove certificates that you specify. The
 `-DeleteKey` dynamic parameter deletes the private key.
 
-### Delete a certificate from the CA store
+### Delete a Certificate from the CA store
 
 This command deletes a certificate from the CA certificate store, but leaves
 the associated private key intact.
@@ -268,6 +268,16 @@ ignored.
 
 ```powershell
 Remove-Item cert:\LocalMachine\CA\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0
+```
+
+### Delete a Certificate using a wildcards in the DNS name
+
+This command deletes all certificates that have a DNS name that contains
+"Fabrikam". It uses the **DNSName** parameter of the `Get-ChildItem` cmdlet to
+get the certificates and the `Remove-Item` cmdlet to delete them.
+
+```powershell
+Get-ChildItem -Path cert:\LocalMachine -DnsName *Fabrikam* | Remove-Item
 ```
 
 ### Delete private keys from a remote computer
@@ -317,7 +327,7 @@ Invoke-Command -Session $s { Remove-Item `
   }
 ```
 
-### Delete certs using wildcards in a DNS name
+### Delete expired Certificates
 
 This command uses the **ExpiringInDays** parameter of the `Get-ChildItem`
 cmdlet with a value of 0 to get certificates in the WebHosting store that have
@@ -471,9 +481,9 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 - [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 
-This parameter gets only server certificates for SSL web hosting. This
-parameter gets certificates that have "Server Authentication" in their
-`EnhancedKeyUsageList` property value.
+Gets only server certificates for SSL web hosting. This parameter gets
+certificates that have "Server Authentication" in their `EnhancedKeyUsageList`
+property value.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -509,7 +519,7 @@ certificates.
   Certificate provider copies the OID properties of the EnhancedKeyUsage (EKU)
   field in the certificate and creates a friendly name for it.
 
-- `SendAsTrustedIssuer`: {{Fill in description}}
+- `SendAsTrustedIssuer`: {{Fill in description https://docs.microsoft.com/en-us/dotnet/api/microsoft.powershell.commands.sendastrustedissuerproperty?redirectedfrom=MSDN&view=powershellsdk-1.1.0}}
 
 These new features let you search for certificates based on their DNS names and
 expiration dates, and distinguish client and server authentication certificates
