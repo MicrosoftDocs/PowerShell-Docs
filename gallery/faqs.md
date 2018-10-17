@@ -23,30 +23,30 @@ Modules are generally better for sharing, but we are enabling script sharing to 
 
 ## How can I publish to the PowerShell Gallery?
 
-You must register an account in the PowerShell Gallery before you can publish items to the Gallery. This is because publishing items requires a NuGetApiKey, which is provided upon registration. To register, use your personal, work, or school account to sign in to the PowerShell Gallery. A one-time registration process is required when you sign in for the first time. Afterwards, your NuGetApiKey is available on your profile page.
+You must register an account in the PowerShell Gallery before you can publish packages to the Gallery. This is because publishing packages requires a NuGetApiKey, which is provided upon registration. To register, use your personal, work, or school account to sign in to the PowerShell Gallery. A one-time registration process is required when you sign in for the first time. Afterwards, your NuGetApiKey is available on your profile page.
 
-Once you have registered in the Gallery, use the [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlets to publish your item to the Gallery. For more details on how to run these cmdlets, visit the Publish tab, or read the [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) documentation.
+Once you have registered in the Gallery, use the [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlets to publish your package to the Gallery. For more details on how to run these cmdlets, visit the Publish tab, or read the [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) documentation.
 
-**You do not need to register or sign in to the Gallery to install or save items.**
+**You do not need to register or sign in to the Gallery to install or save packages.**
 
-## I received "Failed to process request. 'The specified API key is invalid or does not have permission to access the specified package.'. The remote server returned an error: (403) Forbidden." error when I tried to publish an item to the PowerShell Gallery. What does that mean?
+## I received "Failed to process request. 'The specified API key is invalid or does not have permission to access the specified package.'. The remote server returned an error: (403) Forbidden." error when I tried to publish a package to the PowerShell Gallery. What does that mean?
 
 This error can occur for the following reasons:
 
 - **The specified API key is invalid.**
      Ensure that you have specified the valid API key from your account. To get your API key, view your profile page.
-- **The specified item name is not owned by you.**
-     If you have confirmed that your API key is correct, then there may already exist an item with the same name as the one you are trying to use. The item may have been unlisted by the owner, in which case it will not appear in any search results. To determine if an item with the same name already exists, open a browser and navigate to the item's details page: `https://www.powershellgallery.com/packages/<itemName>`. For example, navigating directly to `https://www.powershellgallery.com/packages/pester` will take you to the Pester module's details page, whether it is unlisted or not. If an item with a conflicting name already exists and is unlisted, you can:
-    - Select another name for your item.
-    - Contact the owners of the existing item.
+- **The specified package name is not owned by you.**
+     If you have confirmed that your API key is correct, then there may already exist a package with the same name as the one you are trying to use. The package may have been unlisted by the owner, in which case it will not appear in any search results. To determine if a package with the same name already exists, open a browser and navigate to the package's details page: `https://www.powershellgallery.com/packages/<packageName>`. For example, navigating directly to `https://www.powershellgallery.com/packages/pester` will take you to the Pester module's details page, whether it is unlisted or not. If a package with a conflicting name already exists and is unlisted, you can:
+    - Select another name for your package.
+    - Contact the owners of the existing package.
 
 ## Why can't I sign in with my personal account, but I could sign in yesterday?
 
 Please be aware that your gallery account does not accommodate changes to your primary email alias. For more information, see [Microsoft Email Aliases](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
-## Why don't I see all the gallery items when I select all the Category checkboxes on the Items tab?
+## Why don't I see all the gallery packages when I select all the Category checkboxes on the packages tab?
 
-By selecting a Category checkbox, you are stating "I would like to see all items in this category." Only the items in the selected categories will be displayed. So similarly, by selecting all the Category checkboxes, you are stating "I would like to see all items in any category." But some items in the gallery do not belong to any of the categories listed, so they will not appear in the results. To see all items in the gallery, uncheck all the Categories, or select the Items tab again.
+By selecting a Category checkbox, you are stating "I would like to see all packages in this category." Only the packages in the selected categories will be displayed. So similarly, by selecting all the Category checkboxes, you are stating "I would like to see all packages in any category." But some packages in the gallery do not belong to any of the categories listed, so they will not appear in the results. To see all packages in the gallery, uncheck all the Categories, or select the packages tab again.
 
 ## What are the requirements to publish a module to the PowerShell Gallery?
 
@@ -76,7 +76,7 @@ Any kind of PowerShell script (scripts or workflows) can be published to the gal
 
 ## How do I search?
 
-Type what you are looking for in the text box. For example, if you want to find modules that are related to Azure SQL, just type "azure sql". Our search engine will look for those keywords in all published items, including titles, descriptions and across metadata. Then, based on a weighted quality score, it will display the closest matches. You can also search by specific field using field:"value" syntax in the search query for the following fields:
+Type what you are looking for in the text box. For example, if you want to find modules that are related to Azure SQL, just type "azure sql". Our search engine will look for those keywords in all published packages, including titles, descriptions and across metadata. Then, based on a weighted quality score, it will display the closest matches. You can also search by specific field using field:"value" syntax in the search query for the following fields:
 
 - Tags
 - Functions
@@ -106,7 +106,7 @@ All of the modules in the Gallery contain module manifests, and most of these mo
 
 PackageManagement is a common interface for working with any package manager. Eventually, whether you're dealing with PowerShell modules, MSIs, Ruby gems, NuGet packages, or Perl modules, you should be able to use PackageManagement's commands (Find-Package and Install-Package) to find and install them. PackageManagement does this by having a package provider for each package manager that plugs into PackageManagement. Providers do all of the actual work; they fetch content from repositories, and install the content locally. Often, package providers simply wrap around the existing package manager tools for a given package type.
 
-PowerShellGet is the package manager for PowerShell items. There is a PSModule package provider that exposes PowerShellGet functionality through PackageManagement. Because of this, you can either run [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or Install-Package -Provider PSModule to install a module from the PowerShell Gallery. Certain PowerShellGet functionality, including [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), cannot be accessed through PackageManagement commands.
+PowerShellGet is the package manager for PowerShell packages. There is a PSModule package provider that exposes PowerShellGet functionality through PackageManagement. Because of this, you can either run [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or Install-Package -Provider PSModule to install a module from the PowerShell Gallery. Certain PowerShellGet functionality, including [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), cannot be accessed through PackageManagement commands.
 
 In summary, PowerShellGet is solely focused on having a premium package management experience for PowerShell content. PackageManagement is focused on exposing all package management experiences through one general set of tools. If you find this answer unsatisfying, there is a long answer at the bottom of this document, in the **How does PackageManagement actually relate to PowerShellGet?** section.
 
@@ -152,14 +152,14 @@ Therefore, **PowerShellGet** requires one of the following operating systems:
 
 **PowerShellGet** also  requires .NET Framework 4.5 or above. You can install .NET Framework 4.5 or above from [here](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-## Is it possible to reserve names for items that will be published in future?
+## Is it possible to reserve names for packages that will be published in future?
 
-It is not possible to squat item names. If you feel that an existing item has taken the name which suits your item more, try [contacting the owner of the item](./how-to/working-with-items/contacting-item-owners.md). If you didnt get response within a couple of weeks, you can contact support and the PowerShell Gallery team will look in to it.
+It is not possible to squat package names. If you feel that an existing package has taken the name which suits your package more, try [contacting the owner of the package](./how-to/working-with-items/contacting-item-owners.md). If you didnt get response within a couple of weeks, you can contact support and the PowerShell Gallery team will look in to it.
 
-## How do I claim ownership for items ?
+## How do I claim ownership for packages?
 
-Check out [Managing Item Owners on PowerShellGallery.com](./how-to/publishing-items/managing-item-owners.md) for details.
+Check out [Managing Package Owners on PowerShellGallery.com](./how-to/publishing-items/managing-item-owners.md) for details.
 
-## How do I deal with an item owner who is violating my item license?
+## How do I deal with a package owner who is violating my package license?
 
-We encourage the PowerShell community to work together to resolve any disputes that may arise between item owners and the owners of other items.  We have crafted a [dispute resolution process](./how-to/getting-support/dispute-resolution.md) that we ask you to follow before PowerShellGallery.com administrators intercede.
+We encourage the PowerShell community to work together to resolve any disputes that may arise between package owners and the owners of other packages.  We have crafted a [dispute resolution process](./how-to/getting-support/dispute-resolution.md) that we ask you to follow before PowerShellGallery.com administrators intercede.
