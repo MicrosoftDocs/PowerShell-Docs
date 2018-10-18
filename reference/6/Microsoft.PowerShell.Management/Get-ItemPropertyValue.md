@@ -250,13 +250,22 @@ For example, in a file system drive, the cmdlet might return a file or folder.
 
 ## RELATED LINKS
 
-- [Get-ItemProperty](Get-ItemProperty.md)
-- [Clear-ItemProperty](Clear-ItemProperty.md)
-- [Copy-ItemProperty](Copy-ItemProperty.md)
-- [Get-PSProvider](Get-PSProvider.md)
-- [Move-ItemProperty](Move-ItemProperty.md)
-- [New-ItemProperty](New-ItemProperty.md)
-- [Remove-ItemProperty](Remove-ItemProperty.md)
-- [Rename-ItemProperty](Rename-ItemProperty.md)
-- [Set-ItemProperty](Set-ItemProperty.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Get-ItemProperty](Get-ItemProperty.md)
+
+[Clear-ItemProperty](Clear-ItemProperty.md)
+
+[Copy-ItemProperty](Copy-ItemProperty.md)
+
+[Get-PSProvider](Get-PSProvider.md)
+
+[Move-ItemProperty](Move-ItemProperty.md)
+
+[New-ItemProperty](New-ItemProperty.md)
+
+[Remove-ItemProperty](Remove-ItemProperty.md)
+
+[Rename-ItemProperty](Rename-ItemProperty.md)
+
+[Set-ItemProperty](Set-ItemProperty.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

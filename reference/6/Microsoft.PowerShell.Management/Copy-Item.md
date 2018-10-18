@@ -465,13 +465,22 @@ For more information, see about_Providers.
 
 ## RELATED LINKS
 
-- [Clear-Item](Clear-Item.md)
-- [Get-Item](Get-Item.md)
-- [Invoke-Item](Invoke-Item.md)
-- [Move-Item](Move-Item.md)
-- [New-Item](New-Item.md)
-- [Remove-Item](Remove-Item.md)
-- [Rename-Item](Rename-Item.md)
-- [Set-Item](Set-Item.md)
-- [Get-PSProvider](Get-PSProvider.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Clear-Item](Clear-Item.md)
+
+[Get-Item](Get-Item.md)
+
+[Invoke-Item](Invoke-Item.md)
+
+[Move-Item](Move-Item.md)
+
+[New-Item](New-Item.md)
+
+[Remove-Item](Remove-Item.md)
+
+[Rename-Item](Rename-Item.md)
+
+[Set-Item](Set-Item.md)
+
+[Get-PSProvider](Get-PSProvider.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

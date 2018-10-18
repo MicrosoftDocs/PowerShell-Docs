@@ -267,7 +267,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -288,11 +288,18 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-- [Clear-ItemProperty](Clear-ItemProperty.md)
-- [Get-ItemProperty](Get-ItemProperty.md)
-- [Move-ItemProperty](Move-ItemProperty.md)
-- [New-ItemProperty](New-ItemProperty.md)
-- [Rename-ItemProperty](Rename-ItemProperty.md)
-- [Set-ItemProperty](Set-ItemProperty.md)
-- [Get-PSProvider](Get-PSProvider.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Clear-ItemProperty](Clear-ItemProperty.md)
+
+[Get-ItemProperty](Get-ItemProperty.md)
+
+[Move-ItemProperty](Move-ItemProperty.md)
+
+[New-ItemProperty](New-ItemProperty.md)
+
+[Rename-ItemProperty](Rename-ItemProperty.md)
+
+[Set-ItemProperty](Set-ItemProperty.md)
+
+[Get-PSProvider](Get-PSProvider.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

@@ -275,12 +275,20 @@ This cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-- [Copy-Item](Copy-Item.md)
-- [Get-Item](Get-Item.md)
-- [Invoke-Item](Invoke-Item.md)
-- [Move-Item](Move-Item.md)
-- [New-Item](New-Item.md)
-- [Remove-Item](Remove-Item.md)
-- [Rename-Item](Rename-Item.md)
-- [Set-Item](Set-Item.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Copy-Item](Copy-Item.md)
+
+[Get-Item](Get-Item.md)
+
+[Invoke-Item](Invoke-Item.md)
+
+[Move-Item](Move-Item.md)
+
+[New-Item](New-Item.md)
+
+[Remove-Item](Remove-Item.md)
+
+[Rename-Item](Rename-Item.md)
+
+[Set-Item](Set-Item.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

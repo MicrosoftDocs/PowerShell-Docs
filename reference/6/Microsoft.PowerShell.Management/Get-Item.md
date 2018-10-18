@@ -322,14 +322,25 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 ## RELATED LINKS
 
 [Clear-Item](Clear-Item.md)
+
 [Copy-Item](Copy-Item.md)
+
 [Invoke-Item](Invoke-Item.md)
+
 [Move-Item](Move-Item.md)
+
 [New-Item](New-Item.md)
+
 [Remove-Item](Remove-Item.md)
+
 [Rename-Item](Rename-Item.md)
+
 [Set-Item](Set-Item.md)
+
 [Get-ChildItem](Get-ChildItem.md)
+
 [Get-ItemProperty](Get-ItemProperty.md)
+
 [Get-PSProvider](Get-PSProvider.md)
+
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

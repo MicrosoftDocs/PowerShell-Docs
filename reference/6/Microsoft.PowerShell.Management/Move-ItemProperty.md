@@ -294,11 +294,18 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-- [Clear-ItemProperty](Clear-ItemProperty.md)
-- [Copy-ItemProperty](Copy-ItemProperty.md)
-- [Get-ItemProperty](Get-ItemProperty.md)
-- [New-ItemProperty](New-ItemProperty.md)
-- [Remove-ItemProperty](Remove-ItemProperty.md)
-- [Rename-ItemProperty](Rename-ItemProperty.md)
-- [Set-ItemProperty](Set-ItemProperty.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Clear-ItemProperty](Clear-ItemProperty.md)
+
+[Copy-ItemProperty](Copy-ItemProperty.md)
+
+[Get-ItemProperty](Get-ItemProperty.md)
+
+[New-ItemProperty](New-ItemProperty.md)
+
+[Remove-ItemProperty](Remove-ItemProperty.md)
+
+[Rename-ItemProperty](Rename-ItemProperty.md)
+
+[Set-ItemProperty](Set-ItemProperty.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

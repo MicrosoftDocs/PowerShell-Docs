@@ -289,14 +289,24 @@ This cmdlet does not return any output.
 
 ## RELATED LINKS
 
-- [Get-Item](Get-Item.md)
-- [Clear-ItemProperty](Clear-ItemProperty.md)
-- [Copy-ItemProperty](Copy-ItemProperty.md)
-- [Get-ItemProperty](Get-ItemProperty.md)
-- [Move-ItemProperty](Move-ItemProperty.md)
-- [New-ItemProperty](New-ItemProperty.md)
-- [Remove-Item](Remove-Item.md)
-- [Rename-ItemProperty](Rename-ItemProperty.md)
-- [Set-ItemProperty](Set-ItemProperty.md)
-- [Set-Location](Set-Location.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Get-Item](Get-Item.md)
+
+[Clear-ItemProperty](Clear-ItemProperty.md)
+
+[Copy-ItemProperty](Copy-ItemProperty.md)
+
+[Get-ItemProperty](Get-ItemProperty.md)
+
+[Move-ItemProperty](Move-ItemProperty.md)
+
+[New-ItemProperty](New-ItemProperty.md)
+
+[Remove-Item](Remove-Item.md)
+
+[Rename-ItemProperty](Rename-ItemProperty.md)
+
+[Set-ItemProperty](Set-ItemProperty.md)
+
+[Set-Location](Set-Location.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

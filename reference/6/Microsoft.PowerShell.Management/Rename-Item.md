@@ -274,14 +274,24 @@ Otherwise, this cmdlet does not generate any output.
 
 ## RELATED LINKS
 
-- [Clear-Item](Clear-Item.md)
-- [Copy-Item](Copy-Item.md)
-- [Get-ChildItem](Get-ChildItem.md)
-- [Get-Item](Get-Item.md)
-- [Invoke-Item](Invoke-Item.md)
-- [Move-Item](Move-Item.md)
-- [New-Item](New-Item.md)
-- [Remove-Item](Remove-Item.md)
-- [Rename-ItemProperty](Rename-ItemProperty.md)
-- [Set-Item](Set-Item.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Clear-Item](Clear-Item.md)
+
+[Copy-Item](Copy-Item.md)
+
+[Get-ChildItem](Get-ChildItem.md)
+
+[Get-Item](Get-Item.md)
+
+[Invoke-Item](Invoke-Item.md)
+
+[Move-Item](Move-Item.md)
+
+[New-Item](New-Item.md)
+
+[Remove-Item](Remove-Item.md)
+
+[Rename-ItemProperty](Rename-ItemProperty.md)
+
+[Set-Item](Set-Item.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

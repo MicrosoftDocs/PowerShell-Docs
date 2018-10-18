@@ -499,9 +499,14 @@ For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/a
 
 ## Related Links
 
-- [Get-Alias](../Microsoft.PowerShell.Utility/Get-Alias.md)
-- [Get-Item](Get-Item.md)
-- [Get-Location](Get-Location.md)
-- [Get-Process](Get-Process.md)
-- [Get-PSProvider](Get-PSProvider.md)
-- [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[Get-Alias](../Microsoft.PowerShell.Utility/Get-Alias.md)
+
+[Get-Item](Get-Item.md)
+
+[Get-Location](Get-Location.md)
+
+[Get-Process](Get-Process.md)
+
+[Get-PSProvider](Get-PSProvider.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
