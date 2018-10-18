@@ -20,7 +20,7 @@ The Cmdlet attribute identifies a Microsoft .NET Framework class as a cmdlet and
 ## Syntax
 
 ```csharp
-[Cmdlet("verbName", "nounName"]
+[Cmdlet("verbName", "nounName")]
 [Cmdlet("verbName", "nounName", Named Parameters...)]
 ```
 
