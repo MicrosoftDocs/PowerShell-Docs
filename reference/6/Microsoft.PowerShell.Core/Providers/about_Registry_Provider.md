@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -14,7 +14,7 @@ Registry
 
 ## Drives
 
-*HKLM:*, *HKCU:*
+`HKLM:`, `HKCU:`
 
 ## Capabilities
 
@@ -78,7 +78,7 @@ Set-Location C:
 ```
 
 You can also work with the **Registry** provider from any other PowerShell
-drive. To reference an registry key from another location, use the drive name
+drive. To reference a registry key from another location, use the drive name
 (`HKLM:`, `HKCU:`) in the path. Use a backslash (\\) or a forward slash (/) to indicate a level of the **Registry** drive.
 
 ```powershell
@@ -103,18 +103,18 @@ cd "Registry::HKEY_LOCAL_MACHINE\Software"
 
 ## Displaying the contents of registry keys
 
-The registry is divided into keys, subkeys and entries.  For more information about registry structure see [Structure of the Registry](/windows/desktop/sysinfo/structure-of-the-registry.md).
+The registry is divided into keys, subkeys, and entries.  For more information about registry structure, see [Structure of the Registry](/windows/desktop/sysinfo/structure-of-the-registry.md).
 
 In a **Registry** drive, each key is a container. A key can contain any number
 of keys. A registry key that has a parent key is called a subkey. You can
 use `Get-ChildItem` to view registry keys and `Set-Location` to navigate to
 a key path.
 
-Registry values are attributes of a registry key. In the **Registry** drive
+Registry values are attributes of a registry key. In the **Registry** drive,
 they are called **Item Properties**. A registry key can have both children
 keys and item properties.
 
-In this example the difference between `Get-Item` and `Get-ChildItem` is
+In this example, the difference between `Get-Item` and `Get-ChildItem` is
 shown. When you use `Get-Item` on the "Spooler" registry key, you can view its properties.
 
 ```
@@ -143,7 +143,7 @@ Spooler                        DependOnService    : {RPCSS, http}
 
 Each registry key can also have subkeys. When you use `Get-Item` on a registry
 key, the subkeys are not displayed. The `Get-ChildItem` cmdlet will show you
-children items of the "Spooler" key, including each subkeys properties. The
+children items of the "Spooler" key, including each subkey's properties. The
 parent keys properties are not shown when using `Get-ChildItem`.
 
 ```
@@ -288,7 +288,7 @@ articles.
 ## Creating registry keys and values
 
 The `New-Item` cmdlet will create registry keys with a name that you provide.
-You can also use the `mkdir` function which calls the `New-Item` cmdlet
+You can also use the `mkdir` function, which calls the `New-Item` cmdlet
 internally.
 
 ```
@@ -314,7 +314,7 @@ New-ItemProperty -Path  -Name Test -Type DWORD -Value 1
 > Review the dynamic parameters section in this article for other allowed
 > type values.
 
-See [New-ItemProperty](New-ItemProperty.md) for more details on cmdlet usage.
+For detailed cmdlet usage, see [New-ItemProperty](New-ItemProperty.md).
 
 ## Copying registry keys and values
 
@@ -347,7 +347,7 @@ articles.
 
 The `Move-Item` and `Move-ItemProperty` cmdlets behave like their "Copy"
 counterparts. If the destination exists, `Move-Item` moves the source
-key underneath the destination key. If the destination key does not exist
+key underneath the destination key. If the destination key does not exist,
 the source key is moved to the destination path.
 
 The following command moves the "Contoso" key to the path
@@ -386,8 +386,9 @@ Rename-Item -Path $path -NewName Fabrikam
 
 ## Changing security descriptors
 
-You can permission registry keys using the `Get-Acl` and `Set-Acl` cmdlets.
-The following example adds a new user with full control to the "HKLM:\SOFTWARE\Contoso" registry key.
+You can restrict access to registry keys using the `Get-Acl` and `Set-Acl`
+cmdlets. The following example adds a new user with full control to the
+"HKLM:\SOFTWARE\Contoso" registry key.
 
 ```powershell
 $acl = Get-Acl -Path HKLM:\SOFTWARE\Contoso
