@@ -25,18 +25,18 @@ Privacy Policy, enter a username, and then click **Register**.
 
 > [!NOTE]
 > The account name cannot be changed once it is created. For more information, see
-> [Managing Item Owners](managing-item-owners.md).
+> [Managing Package Owners](managing-item-owners.md).
 
 ## Recommended practices for PowerShell Gallery accounts
 
 It's important to actively monitor the email account used with your PowerShell Gallery account. All
-communication with owners of PowerShell Gallery items is through this email address. If the
-PowerShell Gallery Operations team is unable to contact an item owner, we may be required to delete
-an item.
+communication with owners of PowerShell Gallery packages is through this email address. If the
+PowerShell Gallery Operations team is unable to contact a package owner, we may be required to delete
+a package.
 
 Organizations that publish to the PowerShell Gallery often create a unique external account for
 that purpose. We recommend you use email forwarding to forward notifications to an address within
 your organization.
 
-When multiple owners are associated with an item, all PowerShell Gallery notifications are sent
-to all owners. For more information, see [Managing Item Owners](managing-item-owners.md).
+When multiple owners are associated with a package, all PowerShell Gallery notifications are sent
+to all owners. For more information, see [Managing Package Owners](managing-item-owners.md).
