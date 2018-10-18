@@ -2,9 +2,9 @@
 ms.date:  06/12/2017
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
-title:  Items with compatible PowerShell Editions
+title:  Packages with compatible PowerShell Editions
 ---
-# Items with compatible PowerShell Editions
+# Packages with compatible PowerShell Editions
 
 Starting with version 5.1, PowerShell is available in different editions which denote varying
 feature sets and platform compatibility.
@@ -16,16 +16,16 @@ feature sets and platform compatibility.
   targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano
   Server and Windows IoT.
 
-## PowerShell Gallery extracts supported PSEditions metadata and allows you to filters the items compatible for specific PowerShell Editions
+## PowerShell Gallery extracts supported PSEditions metadata and allows you to filters the packages compatible for specific PowerShell Editions
 
-If an item has compatible PSEditions specified, they will be listed as part of 'PowerShell
-Editions' in the item display page and also in items results.
+If a package has compatible PSEditions specified, they will be listed as part of 'PowerShell
+Editions' in the package display page and also in packages results.
 
 ![Item display page with PSEditions](../../Images/ItemDisplayPageWithPSEditions.PNG)
 
-## Search for items in the gallery UI which works on PowerShellCore
+## Search for packages in the gallery UI which works on PowerShellCore
 
-Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the items on PowerShell Gallery.
+Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the packages on PowerShell Gallery.
 
 ### Use Tags:"PSEdition_Core" to search items compatible with PowerShell Core Edition.
 
@@ -35,7 +35,7 @@ Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the items on P
 
 ![Search results for items compatible with Desktop PSEdition](../../Images/SearchResultsWithPSEdition-Desktop.PNG)
 
-## More details on authoring and finding the items with compatible PowerShell Editions
+## More details on authoring and finding the packages with compatible PowerShell Editions
 
 - [Modules with PSEditions](../../concepts/module-psedition-support.md)
 - [Scripts with PSEditions](../../concepts/script-psedition-support.md)
