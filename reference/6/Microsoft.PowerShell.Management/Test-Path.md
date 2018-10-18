@@ -98,30 +98,42 @@ In this case, because the PowerShell profile is a .ps1 file, the cmdlet returns 
 
 ### Example 5: Check paths in the Registry
 
-```
-PS C:\> Test-Path -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell"
-True
-PS C:\> Test-Path -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy"
-False
-```
-
 These commands use `Test-Path` with the PowerShell registry provider.
 
-The first command tests whether the registry path of the Microsoft.PowerShell registry key is correct on the system.
+The first command tests whether the registry path of the **Microsoft.PowerShell** registry key is correct on the system.
 If PowerShell is installed correctly, the cmdlet returns `$True`.
 
 > [!IMPORTANT]
 > `Test-Path` does not work correctly with all PowerShell providers.
 > For example, you can use `Test-Path` to test the path of a registry key, but if you use it to test the path of a registry entry, it always returns `$False`, even if the registry entry is present.
 
-## Example 6: Test if a file is newer than a specified date
+```powershell
+Test-Path -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell"
+```
 
-This command uses the NewerThan dynamic parameter to determine whether the PowerShell.exe file on the computer is newer than July 13, 2009.
+```output
+True
+```
+
+```powershell
+Test-Path -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy"
+```
+
+```output
+False
+```
+
+### Example 6: Test if a file is newer than a specified date
+
+This command uses the **NewerThan** dynamic parameter to determine whether the "PowerShell.exe" file on the computer is newer than "July 13, 2009".
 
 The NewerThan parameter works only in file system drives.
 
+```powershell
+Test-Path $pshome\PowerShell.exe -NewerThan "July 13, 2009"
 ```
-PS C:\> Test-Path $pshome\PowerShell.exe -NewerThan "July 13, 2009"
+
+```output
 True
 ```
 
