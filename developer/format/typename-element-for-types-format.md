@@ -81,4 +81,4 @@ The following example shows a `SelectionSet` element that defines four .NET type
 
 [Types Element (Format)](./types-element-for-selectionset-format.md)
 
-[Writing a Windows PowDefining Sets of ObjecterShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowDefining Sets of ObjecterShell Formatting File](./writing-a-powershell-formatting-file.md)

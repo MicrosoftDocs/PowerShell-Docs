@@ -10,9 +10,7 @@ ms.date: 08/14/2018
 
 PowerShell remoting normally uses WinRM for connection negotiation and data transport. SSH is now available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.
 
-WinRM provides a robust hosting model for PowerShell remote sessions. which this implementation
-SSH-based remoting doesn't currently support remote endpoint configuration and JEA (Just Enough
-Administration).
+WinRM provides a robust hosting model for PowerShell remote sessions. SSH-based remoting doesn't currently support remote endpoint configuration and JEA (Just Enough Administration).
 
 SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines. SSH Remoting creates a PowerShell host process on the target machine as an SSH subsystem.
 Eventually we'll implement a general hosting model, similar to WinRM, to support endpoint
@@ -56,7 +54,7 @@ must configure enable password or key-based authentication.
    ```
 
 2. Install the latest [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) build from GitHub using the [installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instructions
-3. Edit the sshd_config file at the location where you installed Win32 OpenSSH
+3. Edit the sshd_config file located at `%ProgramData%\ssh`.
 
    - Make sure password authentication is enabled
 
@@ -65,7 +63,7 @@ must configure enable password or key-based authentication.
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -75,7 +73,7 @@ must configure enable password or key-based authentication.
      One solution is to create a symlink to the Powershell installation directory that doesn't have spaces:
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      and then enter it in the subsystem:

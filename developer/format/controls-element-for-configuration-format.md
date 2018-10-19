@@ -54,4 +54,4 @@ You can create any number of common controls. For each control, you must specify
 
 [Control Element for Controls for Configuration (Format)](./control-element-for-controls-for-configuration-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

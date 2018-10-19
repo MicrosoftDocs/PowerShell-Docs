@@ -62,4 +62,4 @@ Formatting files define how objects are displayed. In most cases, this root elem
 
 [ViewDefinitions Element (Format)](./viewdefinitions-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

@@ -88,4 +88,4 @@ This example shows a `TableControl` element that is used to display the properti
 
 [TableRowEntries Element (Format)](./tablerowentries-element-for-tablecontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

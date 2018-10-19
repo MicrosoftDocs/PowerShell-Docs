@@ -70,6 +70,10 @@ computer.
 Get-Command -ListImported
 ```
 
+## Next Steps
+
+See the [Pull Requests](7-PULL-REQUESTS.md) article.
+
 [PlatyPS]: https://github.com/powershell/platyps
 [platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
 [issue1806]: https://github.com/PowerShell/PowerShell-Docs/issues/1806

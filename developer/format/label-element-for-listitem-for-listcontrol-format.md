@@ -73,4 +73,4 @@ The following example shows how to add a label to a row.
 
 [ListItem Element (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

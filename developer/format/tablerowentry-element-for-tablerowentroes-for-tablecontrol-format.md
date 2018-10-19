@@ -92,4 +92,4 @@ The following example shows a `TableRowEntry` element that defines a row that di
 
 [Wrap Element for TableRowEntry for TableCntrol (Format)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

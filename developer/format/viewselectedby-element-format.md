@@ -83,4 +83,4 @@ The following example shows how to specify the [System.Serviceprocess.Servicecon
 
 [TypeName Element (Format)](./typename-element-for-viewselectedby-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

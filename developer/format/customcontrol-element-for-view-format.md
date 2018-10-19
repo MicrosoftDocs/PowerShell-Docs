@@ -56,4 +56,4 @@ In most cases, only one definition is required for each control view, but it is 
 
 [View Element (Format)](./view-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

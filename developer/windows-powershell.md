@@ -42,7 +42,7 @@ by developers who are implementing them. The host application can, define the ru
 commands are run, open sessions on a local or remote computer, and invoke the commands either
 synchronously or asynchronously based on the needs of the application.
 
-- [Writing a Windows PowerShell Formatting File](./format/writing-a-windows-powershell-formatting-file.md)
+- [Writing a PowerShell Formatting File](./format/writing-a-powershell-formatting-file.md)
 Provides information for the authoring of formatting files, which control the display format for
 the objects that are returned by commands (cmdlets, functions, and scripts).
 

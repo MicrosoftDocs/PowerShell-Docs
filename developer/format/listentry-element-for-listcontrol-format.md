@@ -84,4 +84,4 @@ This example shows the XML elements that define the list view for the [System.Se
 
 [ListItems Element (Format)](./listitems-element-for-listentry-for-listcontrol-format.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

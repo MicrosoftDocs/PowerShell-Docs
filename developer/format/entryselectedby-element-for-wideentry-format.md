@@ -75,4 +75,4 @@ For more information about other components of a wide view, see [Creating a Wide
 
 [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

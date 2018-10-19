@@ -78,4 +78,4 @@ This example shows a `TableHeaders` element that defines two column headers.
 
 [TableControl Element (Format)](./tablecontrol-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

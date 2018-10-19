@@ -98,4 +98,4 @@ This example shows the XML elements that define three rows of the list view. The
 
 [Creating a List View](./creating-a-list-view.md)
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)

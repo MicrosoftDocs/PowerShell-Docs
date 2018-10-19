@@ -328,8 +328,8 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
-Indicates that this cmdlet waits for the specified process to complete before accepting more input.
-This parameter suppresses the command prompt or retains the window until the process finishes.
+Indicates that this cmdlet waits for the specified process and its descendants to complete before accepting more input.
+This parameter suppresses the command prompt or retains the window until the processes finish.
 
 ```yaml
 Type: SwitchParameter

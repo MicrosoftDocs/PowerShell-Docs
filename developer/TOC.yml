@@ -417,8 +417,8 @@
           href: ./hosting/remoterunspace01-sample.md
         - name: RemoteRunspacePool01 Sample
           href: ./hosting/remoterunspacepool01-sample.md
-  - name: Writing a Windows PowerShell Formatting File
-    href: ./format/writing-a-windows-powershell-formatting-file.md
+  - name: Writing a PowerShell Formatting File
+    href: ./format/writing-a-powershell-formatting-file.md
     items:
     - name: Formatting File Overview
       href: ./format/formatting-file-overview.md
@@ -443,8 +443,8 @@
         href: ./format/defining-conditions-for-displaying-data.md
       - name: Formatting Displayed Data
         href: ./format/formatting-displayed-data.md
-      - name: Windows PowerShell Formatting Files
-        href: ./format/windows-powershell-formatting-files.md
+      - name: PowerShell Formatting Files
+        href: ./format/powershell-formatting-files.md
     - name: Examples of Formatting Files
       href: ./format/examples-of-formatting-files.md
       items:

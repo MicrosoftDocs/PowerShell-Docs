@@ -56,4 +56,4 @@ None.
 
 [Control Element for Controls for View (Format)](./control-element-for-controls-for-view-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

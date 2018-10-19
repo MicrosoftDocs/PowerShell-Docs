@@ -1,5 +1,5 @@
 ---
-title: "Writing a Windows PowerShell Formatting File | Microsoft Docs"
+title: "Writing a PowerShell Formatting File | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/13/2016"
 ms.reviewer: ""
@@ -9,9 +9,9 @@ ms.topic: "article"
 ms.assetid: 39acce45-5144-43ba-894d-a4ce782fa67d
 caps.latest.revision: 13
 ---
-# Writing a Windows PowerShell Formatting File
+# Writing a PowerShell Formatting File
 
-"Writing a Windows PowerShell Formatting File" is for command developers who are writing cmdlets or functions that output objects to the command line. Formatting files define how Windows PowerShell displays those objects at the command line. This documentation provides an overview of formatting files, an explanation of the concepts that you should understand when writing these files, examples of XML used in these files, and a reference section for the XML elements.
+"Writing a PowerShell Formatting File" is for command developers who are writing cmdlets or functions that output objects to the command line. Formatting files define how PowerShell displays those objects at the command line. This documentation provides an overview of formatting files, an explanation of the concepts that you should understand when writing these files, examples of XML used in these files, and a reference section for the XML elements.
 
 ## In This Section
 

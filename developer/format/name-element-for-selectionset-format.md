@@ -74,4 +74,4 @@ This example shows a `SelectionSet` element that defines four .NET types. The na
 
 [SelectionSet Element (Format)](./selectionset-element-format.md)
 
-[Writing a Windows PowerShell Formatting File](./writing-a-windows-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
