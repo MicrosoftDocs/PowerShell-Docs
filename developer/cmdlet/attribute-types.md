@@ -24,7 +24,8 @@ Parameter
 Identifies a public property in the cmdlet class as a cmdlet parameter. For more information about the syntax and parameters of this attribute, see[Parameter Attribute Declaration](./parameter-attribute-declaration.md).
 
 Alias
-Specifies one or more aliases for a parameter. For more information about aliases, see [Cmdlet Aliases](./cmdlet-aliases.md).For more information about the syntax and parameters of this attribute, see[AliasAttribute Declaration](./alias-attribute-declaration.md).
+Specifies one or more aliases for a parameter.
+For more information about the syntax and parameters of this attribute, see [AliasAttribute Declaration](./alias-attribute-declaration.md).
 
 ## Argument Validation Attributes
 
