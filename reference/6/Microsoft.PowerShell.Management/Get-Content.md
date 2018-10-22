@@ -421,7 +421,7 @@ Encoding is a dynamic parameter that the FileSystem provider adds to the `Get-Co
 When reading from and writing to binary files, use a value of Byte for the Encoding dynamic parameter and a value of 0 for the ReadCount parameter.  A ReadCount value of 0 reads the entire file in a single read operation and converts it into a single object (PSObject).  The default ReadCount value, 1, reads one byte in each read operation and converts each byte into a separate object, which causes errors when you use the `Set-Content` cmdlet to write the bytes to a file. For more information, see the examples.
 
 > [!NOTE]
-> Beginning in PowerShell 6.0, **Byte** is no longer a valid option for the `-Enoding` parameter. You can use the `-AsByteStream` parameter to indicate that the content should be read and output as a byte stream.
+> Beginning in PowerShell 6.0, **Byte** is no longer a valid option for the `-Encoding` parameter. You can use the `-AsByteStream` parameter to indicate that the content should be read and output as a byte stream.
 
 ```yaml
 Type: FileSystemCmdletProviderEncoding
