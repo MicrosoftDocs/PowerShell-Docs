@@ -279,7 +279,7 @@ Valid keys are:
 - Expression \<string\> or \<script block\>
 - FormatString \<string\>
 - Width \<int32\>
-- Alignment� (value can be "Left", "Center", or "Right")
+- Alignment (value can be "Left", "Center", or "Right")
 
 ```yaml
 Type: Object[]
