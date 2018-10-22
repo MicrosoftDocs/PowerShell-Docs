@@ -284,7 +284,7 @@ of the following:
 
 #### Cmdlets supported
 
-- [New-Item](New-Item.md)
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
 
 ### Capability \<Enumeration\>
 
@@ -559,4 +559,4 @@ Specifies the format in which XML is passed to plug-ins through the
 
 ## See also
 
-[about_Providers](about_Providers.md)
+[about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)

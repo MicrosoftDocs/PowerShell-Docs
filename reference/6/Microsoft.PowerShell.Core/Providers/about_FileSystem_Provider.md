@@ -46,14 +46,14 @@ in this article.
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
 - [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
 - [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
-- [Clear-Item](Clear-Item.md)
-- [Clear-ItemProperty](Clear-ItemProperty.md)
-- [Remove-Item](Remove-Item.md)
-- [Remove-ItemProperty](Remove-ItemProperty.md)
-- [Get-Acl](../Get-Acl.md)
-- [Set-Acl](../Set-Acl.md)
-- [Get-AuthenticodeSignature](../Get-AuthenticodeSignature.md)
-- [Set-AuthenticodeSignature](../Set-AuthenticodeSignature.md)
+- [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
+- [Clear-ItemProperty](../../Microsoft.PowerShell.Management/Clear-ItemProperty.md)
+- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- [Remove-ItemProperty](../../Microsoft.PowerShell.Management/Remove-ItemProperty.md)
+- [Get-Acl](../../Microsoft.PowerShell.Security/Get-Acl.md)
+- [Set-Acl](../../Microsoft.PowerShell.Security/Set-Acl.md)
+- [Get-AuthenticodeSignature](../../Microsoft.PowerShell.Security/Get-AuthenticodeSignature.md)
+- [Set-AuthenticodeSignature](../../Microsoft.PowerShell.Security/Set-AuthenticodeSignature.md)
 
 {{Make sure list is correct}}
 
@@ -83,7 +83,7 @@ drive. To reference a file or directory from another location, use the drive nam
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
 > `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](Get-Location.md).
+> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ## Getting files and directories
 
@@ -95,7 +95,7 @@ in parameters to filter and control the recursion depth.
 Get-ChildItem
 ```
 
-To read more about cmdlet usage, see [Get-ChildItem](Get-ChildItem.md).
+To read more about cmdlet usage, see [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md).
 
 ## Copying files and directories
 
@@ -127,7 +127,7 @@ directory, the command will fail unless you specify the Force parameter.
 Copy-Item -Path C:\a\* -Destination C:\c -Recurse
 ```
 
-For more information, see [Copy-Item](Copy-Item.md).
+For more information, see [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md).
 
 ## Moving files and directories
 
@@ -232,7 +232,7 @@ $e[0]
 ### View the ACL for a file
 
 This command returns a
-[System.Security.AccessControl.FileSecurity](https://msdn.microsoft.com/library/system.security.accesscontrol.filesecurity)
+[System.Security.AccessControl.FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity)
 object:
 
 ```powershell
@@ -241,7 +241,7 @@ Get-Acl -Path test.txt | Format-List -Property *
 
 For more information about this object, pipe the command to the
 [Get-Member](../../Microsoft.PowerShell.Utility/Get-Member.md) cmdlet. Or, see
-"[FileSecurity](http://go.microsoft.com/fwlink/?LinkId=145718) Class" in the
+"[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) Class" in the
 MSDN (Microsoft Developer Network) library.
 
 ### Modify the ACL for a file
@@ -488,7 +488,7 @@ The `-Attributes` parameter supports the following attributes:
 - **Temporary**
 
 For a description of these attributes, see the
-[FileAttributes](http://go.microsoft.com/fwlink/?LinkId=201508) enumeration.
+[FileAttributes](/dotnet/api/system.io.fileattributes) enumeration.
 
 Use the following operators to combine attributes.
 
@@ -578,10 +578,10 @@ system files and folders, use the `-Attributes` parameter.
 Returns `$True` when the `LastWriteTime` value of a file is greater than the
 specified date. Otherwise, it returns `$False`.
 
-Enter a [DateTime](https://msdn.microsoft.com/library/system.datetime) object,
+Enter a [DateTime](/dotnet/api/system.datetime) object,
 such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
 cmdlet returns, or a string that can be converted to a
-[DateTime](https://msdn.microsoft.com/library/system.datetime) object, such as
+[DateTime](/dotnet/api/system.datetime) object, such as
 `"August 10, 2011 2:00 PM"`.
 
 #### Cmdlets supported
@@ -593,10 +593,10 @@ cmdlet returns, or a string that can be converted to a
 Returns `$True` when the `LastWriteTime` value of a file is less than the
 specified date. Otherwise, it returns `$False`.
 
-Enter a [DateTime](https://msdn.microsoft.com/library/system.datetime) object,
+Enter a [DateTime](/dotnet/api/system.datetime) object,
 such as one that the [Get-Date](../../Microsoft.PowerShell.Utility/Get-Date.md)
 cmdlet returns, or a string that can be converted to a
-[DateTime](https://msdn.microsoft.com/library/system.datetime) object, such as
+[DateTime](/dotnet/api/system.datetime) object, such as
 `"August 10, 2011 2:00 PM"`.
 
 #### Cmdlets supported
@@ -606,7 +606,7 @@ cmdlet returns, or a string that can be converted to a
 ### Stream \<System.String\>
 
 Manages alternate data streams. Enter the stream name. Wildcards are permitted
-only in [Get-Item](Get-Item.md) for and [Remove-Item](Remove-Item.md) commands
+only in [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md) for and [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md) commands
 in a file system drive.
 
 #### Cmdlets supported

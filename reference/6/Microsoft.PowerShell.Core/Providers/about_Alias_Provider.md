@@ -44,7 +44,7 @@ in this article.
 - [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
 - [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
-- [Clear-Item](Clear-Item.md)
+- [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
 
 {{Make sure list is correct}}
 
@@ -60,7 +60,7 @@ PowerShell includes a set of cmdlets that are designed to view and to change ali
 ## Types exposed by this provider
 
 Each alias is an instance of the
-[System.Management.Automation.AliasInfo](https://msdn.microsoft.com/library/system.management.automation.aliasinfo) class.
+[System.Management.Automation.AliasInfo](/dotnet/api/system.management.automation.aliasinfo) class.
 
 ## Navigating the Alias drive
 
@@ -87,7 +87,7 @@ path.
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
 > `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](Get-Location.md).
+> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ### Displaying the Contents of the Alias: drive
 

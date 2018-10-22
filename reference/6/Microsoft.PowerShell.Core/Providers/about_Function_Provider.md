@@ -45,16 +45,16 @@ in this article.
 - [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
 - [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
-- [Clear-Item](Clear-Item.md)
+- [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
 
 {{Make sure list is correct}}
 
 ## Types exposed by this provider
 
 Each function is an instance of the
-[System.Management.Automation.FunctionInfo](https://msdn.microsoft.com/library/system.management.automation.functioninfo)
+[System.Management.Automation.FunctionInfo](/dotnet/api/system.management.automation.functioninfo)
 class. Each filter is an instance of the
-[System.Management.Automation.FilterInfo](https://msdn.microsoft.com/library/system.management.automation.filterinfo)
+[System.Management.Automation.FilterInfo](/dotnet/api/system.management.automation.filterinfo)
 class.
 
 ## Navigating the Function drive
@@ -84,7 +84,7 @@ drive. To reference an function from another location, use the drive name
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
 > `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](Get-Location.md).
+> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ## Getting functions
 

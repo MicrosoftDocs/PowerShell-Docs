@@ -43,14 +43,14 @@ in this article.
 - [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
 - [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
-- [Clear-Item](Clear-Item.md)
+- [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
 
 {{Make sure list is correct}}
 
 ## Types exposed by this provider
 
 Each environment variable is an instance of the
-[System.Collections.DictionaryEntry](https://msdn.microsoft.com/library/system.collections.dictionaryentry)
+[System.Collections.DictionaryEntry](/dotnet/api/system.collections.dictionaryentry)
 class. The name of the variable is the dictionary key. The value of the
 environment variable is the dictionary value.
 
@@ -94,7 +94,7 @@ session for as long as it is active.
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
 > `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](Get-Location.md).
+> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ## Getting environment variables
 

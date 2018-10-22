@@ -98,7 +98,7 @@ Set-Location C:
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
 > `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](Get-Location.md).
+> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 ## Displaying the Contents of the Cert: drive
 
@@ -345,7 +345,7 @@ $expired | Remove-Item -DeleteKey
 ## Creating Certificates
 
 The `New-Item` cmdlet does not create new certificates in the **Certificate**
-provider. Use the [New-SelfSignedCertificate](New-SelfSignedCertificate.md) cmdlet to create a certificate
+provider. Use the [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) cmdlet to create a certificate
 for testing purposes.  
 
 ## Creating Certificate Stores
@@ -531,8 +531,8 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](../Get-Help.md) command in a file system drive or use the `-Path`
-parameter of [Get-Help](../Get-Help.md) to specify a file system drive.
+[Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) command in a file system drive or use the `-Path`
+parameter of [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) to specify a file system drive.
 
 ```powershell
 Get-Help Get-ChildItem

@@ -305,5 +305,6 @@ For more information, see [about_Modules](about_Modules.md).
 
 ## SEE ALSO
 
-- [Environment (provider)](../Providers/Environment-Provider.md)
-- [about_Modules](about_Modules.md)
+[Environment (provider)](about_Environment_Provider.md)
+
+[about_Modules](about_Modules.md)

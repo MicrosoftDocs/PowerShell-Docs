@@ -45,10 +45,10 @@ in this article.
 - [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
 - [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
 - [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
-- [Remove-ItemProperty](Remove-ItemProperty.md)
-- [Clear-ItemProperty](Clear-ItemProperty.md)
-- [Get-Acl](../Get-Acl.md)
-- [Set-Acl](../Set-Acl.md)
+- [Remove-ItemProperty](../../Microsoft.PowerShell.Management/Remove-ItemProperty.md)
+- [Clear-ItemProperty](../../Microsoft.PowerShell.Management/Clear-ItemProperty.md)
+- [Get-Acl](../../Microsoft.PowerShell.Security/Get-Acl.md)
+- [Set-Acl](../../Microsoft.PowerShell.Security/Set-Acl.md)
 
 {{Make sure list is correct}}
 
@@ -57,7 +57,7 @@ in this article.
 Registry keys are represented as instances of the
 [Microsoft.Win32.RegistryKey](https://docs.microsoft.com/en-us/dotnet/api/microsoft.win32.registrykey)
 class. Registry entries are represented as instances of the
-[PSCustomObject](https://msdn.microsoft.com/library/system.management.automation.pscustomobject)
+[PSCustomObject](/dotnet/api/system.management.automation.pscustomobject)
 class.
 
 ## Navigating the Registry drives
@@ -90,7 +90,7 @@ PS C:\> cd HKLM:\Software
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
 > `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md). and `pwd` is
-> an alias for [Get-Location](Get-Location.md).
+> an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 This last example shows another path syntax you can use to navigate the
 **Registry** provider. This syntax uses the provider name, followed by two
@@ -185,8 +185,8 @@ Spooler                        DependOnService    : {RPCSS, http}
 For more information on the cmdlets covered in this section, see the following
 articles.
 
--[Get-Item](Get-Item.md)
--[Get-ChildItem](Get-ChildItem.md)
+-[Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
+-[Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md)
 
 ## Viewing registry key values
 
@@ -247,8 +247,8 @@ Get-ItemPropertyValue -Path HKLM:\SOFTWARE\Microsoft\Wbem -Name BUILD
 For more information on the cmdlets used in this section, see the following
 articles.
 
-- [Get-ItemProperty](Get-ItemProperty.md)
-- [Get-ItemPropertyValue](Get-ItemProperty.md)
+- [Get-ItemProperty](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
+- [Get-ItemPropertyValue](../../Microsoft.PowerShell.Management/Get-ItemProperty.md)
 
 ## Changing registry key values
 
@@ -282,8 +282,8 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Contoso -Name "(default)" -Value "one" Set
 For more information on the cmdlets used in this section, see the following
 articles.
 
-- [Set-Item](Set-Item.md)
-- [Set-ItemProperty](Set-ItemProperty.md)
+- [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)
+- [Set-ItemProperty](../../Microsoft.PowerShell.Management/Set-ItemProperty.md)
 
 ## Creating registry keys and values
 
@@ -314,7 +314,7 @@ New-ItemProperty -Path  -Name Test -Type DWORD -Value 1
 > Review the dynamic parameters section in this article for other allowed
 > type values.
 
-For detailed cmdlet usage, see [New-ItemProperty](New-ItemProperty.md).
+For detailed cmdlet usage, see [New-ItemProperty](../../Microsoft.PowerShell.Management/New-ItemProperty.md).
 
 ## Copying registry keys and values
 
@@ -340,8 +340,8 @@ Copy-ItemProperty -Path $source -Destination $dest -Name Server
 For more information on the cmdlets used in this section, see the following
 articles.
 
-- [Copy-Item](Copy-Item.md)
-- [Copy-ItemProperty](Copy-ItemProperty.md)
+- [Copy-Item](../../Microsoft.PowerShell.Management/Copy-Item.md)
+- [Copy-ItemProperty](../../Microsoft.PowerShell.Management/Copy-ItemProperty.md)
 
 ## Moving registry keys and values
 
@@ -369,8 +369,8 @@ Move-ItemProperty -Path $source -Destination $dest -Name *
 For more information on the cmdlets used in this section, see the following
 articles.
 
-- [Move-Item](Move-Item.md)
-- [Move-ItemProperty](Move-ItemProperty.md)
+- [Move-Item](../../Microsoft.PowerShell.Management/Move-Item.md)
+- [Move-ItemProperty](../../Microsoft.PowerShell.Management/Move-ItemProperty.md)
 
 ## Renaming registry keys and values
 
@@ -400,8 +400,8 @@ $acl | Set-Acl -Path HKLM:\SOFTWARE\Contoso
 
 For more examples and cmdlet usage details see the following articles.
 
-- [Get-Acl](Get-Acl.md)
-- [Set-Acl](Set-Acl.md)
+- [Get-Acl](../../Microsoft.PowerShell.Security/Get-Acl.md)
+- [Set-Acl](../../Microsoft.PowerShell.Security/Set-Acl.md)
 
 ## Removing and clearing registry keys and values
 
@@ -474,10 +474,10 @@ Contoso
 
 For more examples and cmdlet usage details see the following articles.
 
-- [Clear-Item](Clear-Item.md)
-- [Clear-ItemProperty](Clear-ItemProperty.md)
-- [Remove-Item](Remove-Item.md)
-- [Remove-ItemProperty](Remove-ItemProperty.md)
+- [Clear-Item](../../Microsoft.PowerShell.Management/Clear-Item.md)
+- [Clear-ItemProperty](../../Microsoft.PowerShell.Management/Clear-ItemProperty.md)
+- [Remove-Item](../../Microsoft.PowerShell.Management/Remove-Item.md)
+- [Remove-ItemProperty](../../Microsoft.PowerShell.Management/Remove-ItemProperty.md)
 
 ## Using the pipeline
 
