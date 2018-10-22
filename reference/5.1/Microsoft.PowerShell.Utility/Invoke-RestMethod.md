@@ -99,6 +99,18 @@ Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile 
 {"preview":true,"offset":3,"result":{"sourcetype":"contoso4","count":"15277"}}
 ```
 
+### Example 3: Pass multiple headers
+```powershell
+$headers = @{ 
+    'userId' = 'UserIDValue'
+    'token' = 'TokenValue'
+}
+Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body 
+```
+APIs often require passed headers for authentication, validation etc.
+
+This example demonstrates, how to pass multiple headers in from a `hash-table` to a REST API.
+
 ## Parameters
 
 ### -Body
