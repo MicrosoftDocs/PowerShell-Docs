@@ -86,7 +86,7 @@ MyDocs     FileSystem    C:\Documents and Settings\User01\My Documents
 This command creates a temporary PowerShell drive that provides quick access to a local directory.
 It creates a drive named MyDocs: that is mapped to the "C:\Documents and Settings\User01\My Documents" directory on the local computer.
 
-It uses *Name* to specify a name for the drive, **PSProvider** to specify the PowerShell FileSystem provider, **Root** to specify the path of the My Documents folder, and the **Description** parameter to create a description of the drive.
+It uses **Name** to specify a name for the drive, **PSProvider** to specify the PowerShell FileSystem provider, **Root** to specify the path of the My Documents folder, and the **Description** parameter to create a description of the drive.
 
 When the command finishes, the contents of the My Documents folder appear in the `MyDocs:` drive.
 To see them, type: `dir MyDocs:`.
@@ -106,7 +106,7 @@ MyCompany  Registry      HKEY_LOCAL_MACHINE\Software\MyCo...
 This command creates a temporary PowerShell drive that provides quick access to a frequently checked registry key.
 It creates a drive named MyCompany that is mapped to the `HKLM\Software\MyCompany` registry key.
 
-It uses *Name* to specify a name for the drive, **PSProvider** to specify the PowerShell Registry provider, and **Root** to specify the registry key.
+It uses **Name** to specify a name for the drive, **PSProvider** to specify the PowerShell Registry provider, and **Root** to specify the registry key.
 
 When the command finishes, the contents of the MyCompany key appear in the `MyCompany:` drive.
 To see them, type: `dir MyCompany:`.
