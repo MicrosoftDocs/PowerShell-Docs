@@ -8,8 +8,8 @@ title:  Registering JEA Configurations
 
 > Applies to: Windows PowerShell 5.0
 
-The last step before you can use JEA once you have your [role capabilities](role-capabilities.md) and [session configuration file](session-configurations.md) created is to register the JEA endpoint.
-This process applies the session configuration information to the system and makes the endpoint available for use by users and automation engines.
+Once you have your [role capabilities](role-capabilities.md) and [session configuration file](session-configurations.md) created, the last step before you can use JEA is to register the JEA endpoint.
+Registering the JEA endpoint with the system makes the endpoint available for use by users and automation engines.
 
 ## Single machine configuration
 
@@ -20,8 +20,8 @@ Before you begin, ensure that the following prerequisites have been met:
 - A session configuration file has been created and tested.
 - The user registering the JEA configuration has administrator rights on the system(s).
 
-You will also need to select a name for your JEA endpoint.
-The name of the JEA endpoint will be required when users want to connect to the system using JEA.
+You also need to select a name for your JEA endpoint.
+The name of the JEA endpoint is required when users want to connect to the system using JEA.
 You can use the [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet to check the names of existing endpoints on the system.
 Endpoints that start with 'microsoft' are typically shipped with Windows.
 The 'microsoft.powershell' endpoint is the default endpoint used when connecting to a remote PowerShell endpoint.
@@ -43,26 +43,26 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 ```
 
 > [!WARNING]
-> The above command will restart the WinRM service on the system.
-> This will terminate all PowerShell remoting sessions as well as any ongoing DSC configurations.
+> The above command restarts the WinRM service on the system.
+> This terminates all PowerShell remoting sessions as well as any ongoing DSC configurations.
 > It is recommended that you take any production machines offline before running the command to avoid disrupting business operations.
 
-If registration was successful, you are ready to [use JEA](using-jea.md).
-You may delete the session configuration file at any time; it is not used after registration.
+If registration is successful, you are ready to [use JEA](using-jea.md).
+You may delete the session configuration file at any time; it is not used after registration of the end point.
 
 ## Multi-machine configuration with DSC
 
 If you are deploying JEA on multiple machines, the simplest deployment model is to use the JEA [Desired State Configuration](https://msdn.microsoft.com/powershell/dsc/overview) resource to quickly and consistently deploy JEA on each machine.
 
-To deploy JEA with DSC, you will need to ensure the following prerequisites are met:
+To deploy JEA with DSC, you need to ensure the following prerequisites are met:
 - One or more role capabilities have been authored and added to a valid PowerShell module.
 - The PowerShell module containing the roles is stored on a (read-only) file share accessible by each machine.
 - Settings for the session configuration have been determined. You do not need to create a session configuration file when using the JEA DSC resource.
-- You have credentials that will allow you to perform administrative actions on each machine, or have access to a DSC pull server used to manage the machines.
+- You have credentials that allow you to perform administrative actions on each machine, or have access to a DSC pull server used to manage the machines.
 - You have downloaded the [JEA DSC resource](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)
 
 On a target machine (or pull server, if you are using one), create a DSC configuration for your JEA endpoint.
-In this configuration, you will use the JustEnoughAdministration DSC resource to set up the session configuration file and the File resource to copy over the role capabilities from the file share.
+In this configuration, you use the JustEnoughAdministration DSC resource to set up the session configuration file and the File resource to copy over the role capabilities from the file share.
 
 The following properties are configurable using the DSC resource:
 - Role Definitions
@@ -108,12 +108,12 @@ Configuration JEAMaintenance
 This configuration can then be applied on a system by [directly invoking the Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig) or updating the [pull server configuration](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 The DSC resource also allows you to replace the default Microsoft.PowerShell remoting endpoint.
-If you do this, the resource will automatically register a backup unconstrainted endpoint named "Microsoft.PowerShell.Restricted" which has the default WinRM ACL (allowing Remote Management Users and local Administrators group members to access it).
+If you do this, the resource automatically registers a backup unconstrainted endpoint named "Microsoft.PowerShell.Restricted" which has the default WinRM ACL (allowing Remote Management Users and local Administrators group members to access it).
 
 ## Unregistering JEA configurations
 
 To remove a JEA endpoint on a system, use the [Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) cmdlet.
-Unregistering a JEA endpoint will prevent new users from creating new JEA sessions on the system.
+Unregistering a JEA endpoint prevents new users from creating new JEA sessions on the system.
 It also allows you to update a JEA configuration by re-registering an updated session configuration file using the same endpoint name.
 
 ```powershell
@@ -122,8 +122,8 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ```
 
 > [!WARNING]
-> Unregistering a JEA endpoint will cause the WinRM service to restart.
-> This will interrupt most remote management operations in progress, including other PowerShell sessions, WMI invocations, and some management tools.
+> Unregistering a JEA endpoint causes the WinRM service to restart.
+> This interrupts most remote management operations in progress, including other PowerShell sessions, WMI invocations, and some management tools.
 > Only unregister PowerShell endpoints during planned maintenance windows.
 
 ## Next steps
