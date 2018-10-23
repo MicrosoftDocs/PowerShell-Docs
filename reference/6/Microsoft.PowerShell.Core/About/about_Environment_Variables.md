@@ -294,7 +294,7 @@ $path = [System.Environment]::GetEnvironmentVariable("PSModulePath",
 ```
 
 For more information about the methods of the System.Environment class, see
-[Environment Methods](https://go.microsoft.com/fwlink/?LinkId=242783) in
+[Environment Methods](/dotnet/api/system.environment) in
 MSDN.
 
 You can add also add a command that changes the value to your profile or use
@@ -305,5 +305,6 @@ For more information, see [about_Modules](about_Modules.md).
 
 ## SEE ALSO
 
-- [Environment (provider)](../Providers/Environment-Provider.md)
-- [about_Modules](about_Modules.md)
+[Environment (provider)](../Providers/about_Environment_Provider.md)
+
+[about_Modules](about_Modules.md)

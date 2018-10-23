@@ -118,7 +118,7 @@ $Hash
 ```output
 Name                           Value
 ----                           -----
-Copyright                      © Microsoft Corporation. All rights reserved.
+Copyright                      Â© Microsoft Corporation. All rights reserved.
 ModuleToProcess                Microsoft.PowerShell.ScheduledJob.dll
 FormatsToProcess               PSScheduledJob.Format.ps1xml
 PowerShellVersion              3.0

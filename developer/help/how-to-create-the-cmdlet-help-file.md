@@ -32,15 +32,15 @@ This section describes how to create a valid XML file that contains content for 
 
    |Node|Description|
    |----------|-----------------|
-   |`<details>`|Adds content for the NAME and SYNOPSIS sections of the cmdlet Help topic. For more information, see[How to Add the Cmdlet Name and Synopsis](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md).|
-   |`<maml:description>`|Adds content for the DESCRIPTION section of the cmdlet Help topic. For more information, see[How to Add the Detailed Description to a Cmdlet Help Topic](./how-to-add-a-cmdlet-description.md).|
-   |`<command:syntax>`|Adds content for the SYNTAX section of the cmdlet Help topic. For more information, see[How to Add Syntax to a Cmdlet Help Topic](./how-to-add-syntax-to-a-cmdlet-help-topic.md).|
-   |`<command:parameters`|Adds content for the PARAMETERS section of the cmdlet Help topic. For more information, see[How to Add Parameters to a Cmdlet Help Topic](./how-to-add-parameter-information.md).|
-   |`<command:inputTypes`|Adds content for the INPUTS section of the cmdlet Help topic. For more information, see[How to Add Input Types to a Cmdlet Help Topic](./how-to-add-input-types-to-a-cmdlet-help-topic.md).|
-   |`<command:returnValues`|Adds content for the OUTPUTS section of the cmdlet Help topic. For more information, see[How to Add Return Values to a Cmdlet Help Topic](./how-to-add-return-values-to-a-cmdlet-help-topic.md).|
-   |`<maml:alertset>`|Adds content to the NOTES section of the cmdlet Help topic. For more information, see[How to add Notes to a Cmdlet Help Topic](./how-to-add-notes-to-a-cmdlet-help-topic.md).|
-   |`<command:examples>`|Adds content for the EXAMPLES section of the cmdlet Help topic. For more information, see[How to Add Examples to a Cmdlet Help Topic](./how-to-add-examples-to-a-cmdlet-help-topic.md).|
-   |`<maml:relatedLinks`|Adds content for the RELATED LINKS section of the cmdlet Help topic. For more information, see[How to Add Related Links to a Cmdlet Help Topic](./how-to-add-related-links-to-a-cmdlet-help-topic.md).|
+   |`<details>`|Adds content for the NAME and SYNOPSIS sections of the cmdlet Help topic. For more information, see [How to Add the Cmdlet Name and Synopsis](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md).|
+   |`<maml:description>`|Adds content for the DESCRIPTION section of the cmdlet Help topic. For more information, see [How to Add the Detailed Description to a Cmdlet Help Topic](./how-to-add-a-cmdlet-description.md).|
+   |`<command:syntax>`|Adds content for the SYNTAX section of the cmdlet Help topic. For more information, see [How to Add Syntax to a Cmdlet Help Topic](./how-to-add-syntax-to-a-cmdlet-help-topic.md).|
+   |`<command:parameters>`|Adds content for the PARAMETERS section of the cmdlet Help topic. For more information, see [How to Add Parameters to a Cmdlet Help Topic](./how-to-add-parameter-information.md).|
+   |`<command:inputTypes>`|Adds content for the INPUTS section of the cmdlet Help topic. For more information, see [How to Add Input Types to a Cmdlet Help Topic](./how-to-add-input-types-to-a-cmdlet-help-topic.md).|
+   |`<command:returnValues>`|Adds content for the OUTPUTS section of the cmdlet Help topic. For more information, see [How to Add Return Values to a Cmdlet Help Topic](./how-to-add-return-values-to-a-cmdlet-help-topic.md).|
+   |`<maml:alertset>`|Adds content to the NOTES section of the cmdlet Help topic. For more information, see [How to add Notes to a Cmdlet Help Topic](./how-to-add-notes-to-a-cmdlet-help-topic.md).|
+   |`<command:examples>`|Adds content for the EXAMPLES section of the cmdlet Help topic. For more information, see [How to Add Examples to a Cmdlet Help Topic](./how-to-add-examples-to-a-cmdlet-help-topic.md).|
+   |`<maml:relatedLinks>`|Adds content for the RELATED LINKS section of the cmdlet Help topic. For more information, see [How to Add Related Links to a Cmdlet Help Topic](./how-to-add-related-links-to-a-cmdlet-help-topic.md).|
 
 ## Example
 
