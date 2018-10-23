@@ -37,7 +37,7 @@ brew cask upgrade powershell
 
 > [!NOTE]
 > The commands above can be called from within a PowerShell (pwsh) host,
-> but then the PowerShell shell must be exited and restarted to complete the upgrade.
+> but then the PowerShell shell must be exited and restarted to complete the upgrade
 > and refresh the values shown in $PSVersionTable.
 
 [brew]: http://brew.sh/
