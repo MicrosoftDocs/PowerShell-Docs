@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-US
 keywords:  powershell,cmdlet
-Help Version:  6.0
+Help Version:  6.1.0.1
 Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855946
 Module Guid:  fb6cc51d-c096-4b38-b78d-0fed6277096a
 Module Name:  CimCmdlets
