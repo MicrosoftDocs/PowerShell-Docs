@@ -56,7 +56,7 @@
         },
         {
             "source_path": "gallery/how-to/publishing-items/publishing-an-item.md",
-            "redirect_url": "/powershell/gallery/how-to/publishing-packages/publishing-an-package",
+            "redirect_url": "/powershell/gallery/how-to/publishing-packages/publishing-a-package",
             "redirect_document_id": false
         },
         {
@@ -191,7 +191,7 @@
         },
         {
             "source_path": "gallery/psgallery/Creating-and-Publishing-an-item.md",
-            "redirect_url": "/powershell/gallery/how-to/publishing-packages/publishing-an-package",
+            "redirect_url": "/powershell/gallery/how-to/publishing-packages/publishing-a-package",
             "redirect_document_id": false
         },
         {
