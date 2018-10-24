@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-US
 keywords:  powershell,cmdlet
-Help Version:  6.0
+Help Version:  6.1.0.1
 Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855966
 Module Guid:  5714753b-2afd-4492-a5fd-01d9e2cff8b5
 title:  PSReadLine
