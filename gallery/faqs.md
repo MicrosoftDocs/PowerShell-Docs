@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/12/2017
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -154,11 +154,11 @@ Therefore, **PowerShellGet** requires one of the following operating systems:
 
 ## Is it possible to reserve names for packages that will be published in future?
 
-It is not possible to squat package names. If you feel that an existing package has taken the name which suits your package more, try [contacting the owner of the package](./how-to/working-with-items/contacting-item-owners.md). If you didnt get response within a couple of weeks, you can contact support and the PowerShell Gallery team will look in to it.
+It is not possible to squat package names. If you feel that an existing package has taken the name which suits your package more, try [contacting the owner of the package](./how-to/working-with-packages/contacting-package-owners.md). If you didnt get response within a couple of weeks, you can contact support and the PowerShell Gallery team will look in to it.
 
 ## How do I claim ownership for packages?
 
-Check out [Managing Package Owners on PowerShellGallery.com](./how-to/publishing-items/managing-item-owners.md) for details.
+Check out [Managing Package Owners on PowerShellGallery.com](./how-to/publishing-packages/managing-package-owners.md) for details.
 
 ## How do I deal with a package owner who is violating my package license?
 

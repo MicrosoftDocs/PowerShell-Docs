@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/12/2017
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -21,7 +21,7 @@ feature sets and platform compatibility.
 If a package has compatible PSEditions specified, they will be listed as part of 'PowerShell
 Editions' in the package display page and also in packages results.
 
-![Item display page with PSEditions](../../Images/ItemDisplayPageWithPSEditions.PNG)
+![Item display page with PSEditions](../../Images/manual_package_download.png)
 
 ## Search for packages in the gallery UI which works on PowerShellCore
 
