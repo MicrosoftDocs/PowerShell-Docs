@@ -6,7 +6,7 @@ ms.date: 08/06/2018
 
 # Installing PowerShell Core on Linux
 
-Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10][u18], [Debian 8][deb8], [Debian 9][deb9],
+Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Debian 8][deb8], [Debian 9][deb9],
 [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27][fedora],
 [Fedora 28][fedora], and [Arch Linux][arch].
 
@@ -20,8 +20,8 @@ Once the package is installed, run `pwsh` from a terminal.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u18]: #ubuntu-1810
-[u18]: #ubuntu-1804
+[u1804]: #ubuntu-1804
+[u1810]: #ubuntu-1810
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
@@ -563,15 +563,31 @@ This is the preferred method.
 
 ```sh
 # Install PowerShell
+sudo snap install powershell --classic
+
+# Start PowerShell
+pwsh
+```
+
+If you want to install preview version, use following method.
+
+```sh
+# Install PowerShell
 sudo snap install powershell-preview --classic
 
 # Start PowerShell
 pwsh-preview
 ```
 
-After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell-preview`.
+After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.
 
 ### Uninstallation
+
+```sh
+sudo snap remove powershell
+```
+
+or
 
 ```sh
 sudo snap remove powershell-preview

@@ -8,7 +8,7 @@ title:  Modules Requiring License Acceptance
 
 ## SYNOPSIS
 
-Legal departments for some module publishers require that customers must explicitly accept the license before installing their module from PowerShell Gallery. If a user installs, updates, or saves a module using PowerShellGet, whether directly or as a dependency for another item, and that module requires the user to agree to a license, the user must indicate they accept the license or the operation fails.
+Legal departments for some module publishers require that customers must explicitly accept the license before installing their module from PowerShell Gallery. If a user installs, updates, or saves a module using PowerShellGet, whether directly or as a dependency for another package, and that module requires the user to agree to a license, the user must indicate they accept the license or the operation fails.
 
 ## Publish Requirements for Modules
 
@@ -37,7 +37,7 @@ Modules that would like to require users to accept license should fulfill follow
 
 - During Install/Save/Update operation, if a dependent module(something else depends on the module) requires license acceptance, then the license acceptance behavior (above) will be required.
 - If the module version is already listed in the local catalog as being installed on the system, we would bypass the license checking.
-- During Install/Save/Update operation, if a dependent module requires a license, and the license acceptance does not occur, the operation will fail and follow normal processes for the item failed to install/save/update.
+- During Install/Save/Update operation, if a dependent module requires a license, and the license acceptance does not occur, the operation will fail and follow normal processes for the package failed to install/save/update.
 
 ## Impact on -Force
 
@@ -213,6 +213,6 @@ Module is updated without any prompt to accept license.
 
 [Require License Acceptance for Scripts](./script-license-acceptance.md)
 
-[Require License Acceptance support on PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[Require License Acceptance support on PowerShellGallery](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Require License Acceptance on Deploy to Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Require License Acceptance on Deploy to Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)

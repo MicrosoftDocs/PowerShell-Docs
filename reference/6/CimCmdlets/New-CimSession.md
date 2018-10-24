@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 ---
-
 # New-CimSession
 
 ## SYNOPSIS
@@ -16,7 +15,7 @@ Creates a CIM session.
 
 ### CredentialParameterSet (Default)
 
-```powershell
+```
 New-CimSession [-Authentication <PasswordAuthenticationMechanism>] [[-Credential] <PSCredential>]
  [[-ComputerName] <String[]>] [-Name <String>] [-OperationTimeoutSec <UInt32>] [-SkipTestConnection]
  [-Port <UInt32>] [-SessionOption <CimSessionOptions>] [<CommonParameters>]
@@ -24,7 +23,7 @@ New-CimSession [-Authentication <PasswordAuthenticationMechanism>] [[-Credential
 
 ### CertificatePrameterSet
 
-```powershell
+```
 New-CimSession [-CertificateThumbprint <String>] [[-ComputerName] <String[]>] [-Name <String>]
  [-OperationTimeoutSec <UInt32>] [-SkipTestConnection] [-Port <UInt32>] [-SessionOption <CimSessionOptions>]
  [<CommonParameters>]
@@ -148,8 +147,8 @@ Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the [`Get-Item`](../Microsoft.Powershell.Management/Get-Item.md) or [`Get-ChildItem`](../Microsoft.Powershell.Management/Get-ChildItem.md) cmdlets in the PowerShell [Certificate Provider](../Microsoft.PowerShell.Security/Providers/Certificate-Provider.md).
-For more information about using the PowerShell Certificate provider, type `Get-Help Certificate`, or see [Certificate Provider](../Microsoft.PowerShell.Security/Providers/Certificate-Provider.md) on docs.microsoft.com.
+To get a certificate thumbprint, use the [`Get-Item`](../Microsoft.Powershell.Management/Get-Item.md) or [`Get-ChildItem`](../Microsoft.Powershell.Management/Get-ChildItem.md) cmdlets in the PowerShell Certificate Provider.
+For more information about using the PowerShell Certificate provider, type `Get-Help Certificate`, or see [Certificate Provider](../Microsoft.PowerShell.Security/Providers/about_Certificate_Provider.md).
 
 ```yaml
 Type: String
@@ -266,9 +265,9 @@ The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port fo
 Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
 Use the following commands to configure the listener:
 
- winrm delete winrm/config/listener?Address=*+Transport=HTTP
+`winrm delete winrm/config/listener?Address=*+Transport=HTTP`
 
- winrm create winrm/config/listener?Address=*+Transport=HTTP @{Port="\<port-number>"}
+`winrm create winrm/config/listener?Address=*+Transport=HTTP @{Port="\<port-number>"}`
 
 Do not use the **Port** parameter unless you must.
 The port setting in the command applies to all computers or sessions on which the command runs.
@@ -322,8 +321,9 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

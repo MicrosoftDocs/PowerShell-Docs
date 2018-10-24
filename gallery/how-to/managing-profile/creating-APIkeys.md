@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  09/10/2018
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery

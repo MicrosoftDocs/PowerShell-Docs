@@ -70,8 +70,8 @@ has a complete page ready to display. The cmdlets that precede it in the pipelin
 until the next page of output is available.
 
 You can see the difference Windows Task Manager to monitor CPU and memory used by PowerShell. Run
-the following command: `Get-ChildItem C:\\Windows -Recurse`. Compare the CPU and memory usage to
-this command: `Get-ChildItem C:\\Windows -Recurse | Out-Host -Paging`.
+the following command: `Get-ChildItem C:\Windows -Recurse`. Compare the CPU and memory usage to
+this command: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
 
 ## Objects in the pipeline
 

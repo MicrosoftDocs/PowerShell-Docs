@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -105,7 +105,7 @@ The manifest file contains a hash table, but if you get the contents without the
 ```powershell
 # First, use the -Path property of modules to get the path to the file that contains the module manifest for the PSScheduledJob module.
 # Store the path in the Manifest variable.
-$Manifest = (Get-Module -List PSScheduledJob).Path
+$Manifest = (Get-Module -ListAvailable PSScheduledJob).Path
 # Use the Invoke-Expression cmdlet to run a Get-Content command and the -Raw dynamic parameter of the  Get-Content cmdlet to get the contents of the module manifest file in a single string.
 # Store the hashtable in the Hash variable.
 $Hash = Invoke-Expression (Get-Content $Manifest -Raw)
@@ -116,7 +116,7 @@ $Hash
 ```output
 Name                           Value
 ----                           -----
-Copyright                      � Microsoft Corporation. All rights reserved.
+Copyright                      © Microsoft Corporation. All rights reserved.
 ModuleToProcess                Microsoft.PowerShell.ScheduledJob.dll
 FormatsToProcess               PSScheduledJob.Format.ps1xml
 PowerShellVersion              3.0
@@ -162,7 +162,7 @@ Accept wildcard characters: True
 ### -LiteralPath
 
 Specifies the path to an item.
-Unlike the *Path* parameter, the value of *LiteralPath* is used exactly as it is typed.
+Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
@@ -402,18 +402,19 @@ Specifies the file encoding. The default is ASCII.
 
 Valid values are:
 
-- ASCII:  Uses the encoding for the ASCII (7-bit) character set.
-- BigEndianUnicode:  Encodes in UTF-16 format using the big-endian byte order.
-- String:  Uses the encoding type for a string.
-- Unicode:  Encodes in UTF-16 format using the little-endian byte order.
-- UTF7:   Encodes in UTF-7 format.
-- UTF8:  Encodes in UTF-8 format.
-- UTF8BOM: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- UF8NOBOM: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- UTF32:  Encodes in UTF-32 format.
-- Default: Encodes in the default installed code page.
-- OEM: Uses the default encoding for MS-DOS and console programs.
-- Unknown:  The encoding type is unknown or invalid. The data can be treated as binary.
+- **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
+- **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
+- **Default**: Encodes using the default value: ASCII.
+- **OEM**: Uses the default encoding for MS-DOS and console programs.
+- **Byte**: Encodes a set of characters into a sequence of bytes.
+- **String**: Uses the encoding type for a string.
+- **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
+- **UTF7**: Encodes in UTF-7 format.
+- **UTF8**: Encodes in UTF-8 format.
+- **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
+- **UF8NOBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- **UTF32**:  Encodes in UTF-32 format.
+- **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
 
 Encoding is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet. This parameter works only in file system drives.
 
@@ -477,7 +478,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -485,7 +486,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Int64, System.String[], System.Management.Automation.PSCredential
 
-You can pipe the read count, total count, paths, or credentials to Get-Content.
+You can pipe the read count, total count, paths, or credentials to `Get-Content`.
 
 ## OUTPUTS
 

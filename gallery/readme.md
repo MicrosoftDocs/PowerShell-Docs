@@ -1,4 +1,4 @@
-﻿# README
+# README
 
 This folder contains the documentation for the PowerShell Gallery.
 This is configured as a separate docset within the PowerShell-Docs repo.

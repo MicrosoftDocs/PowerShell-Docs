@@ -9,18 +9,18 @@ title:  The PowerShell Gallery
 The PowerShell Gallery is the central repository for PowerShell content. In it, you can find useful
 PowerShell modules containing PowerShell commands and Desired State Configuration (DSC) resources.
 You can also find PowerShell scripts, some of which may contain PowerShell workflows, and which
-outline a set of tasks and provide sequencing for those tasks. Some of these items are authored by
+outline a set of tasks and provide sequencing for those tasks. Some of these packages are authored by
 Microsoft, and others are authored by the PowerShell community.
 
 ## PowerShellGet Overview
 
 The PowerShellGet module contains cmdlets for discovering, installing, updating and publishing
-PowerShell artifacts such as Modules, DSC Resources, Role Capabilities and Scripts from the
+PowerShell packages which contain artifacts such as Modules, DSC Resources, Role Capabilities and Scripts from the
 [PowerShell Gallery](https://www.PowerShellGallery.com) and other private repositories.
 
 ## Getting Started with the Gallery
 
-Installing items from the Gallery requires the latest version of the PowerShellGet module.
+Installing packages from the Gallery requires the latest version of the PowerShellGet module.
 See [Installing PowerShellGet](installing-psget.md) for complete instructions.
 
 Check out the [Getting Started](getting-started.md) page for more information on how to use

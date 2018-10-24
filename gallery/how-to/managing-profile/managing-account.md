@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  09/05/2018
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -35,7 +35,7 @@ previous address.
 PowerShell Gallery provides the following notification options:
 
 - Users can contact me through the PowerShell Gallery
-- Notify me when an item is pushed to the PowerShell Gallery using my account
+- Notify me when an package is pushed to the PowerShell Gallery using my account
 
 ![Changing email address](../../Images/PSGallery_AccountEmailOptions.png)
 

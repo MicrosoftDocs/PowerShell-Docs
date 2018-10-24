@@ -206,7 +206,7 @@
       href: getting-started/cookbooks/other-useful-scripting-objects.md
     - name: Performing networking tasks
       href: getting-started/cookbooks/performing-networking-tasks.md
-    - name: Redirecting data with out cmdlets
+    - name: Redirecting data with Out- cmdlets
       href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
     - name: Removing objects from the pipeline - Where-Object
       href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
