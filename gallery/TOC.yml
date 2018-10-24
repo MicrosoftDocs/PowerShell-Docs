@@ -17,7 +17,7 @@
     - name: Publishing to the Gallery
       items:
         - name: Creating and publishing items
-          href: how-to/publishing-packages/publishing-an-package.md
+          href: how-to/publishing-packages/publishing-a-package.md
         - name: Creating a PowerShellGallery Account
           href: how-to/publishing-packages/creating-an-account.md
         - name: Unlisting items
