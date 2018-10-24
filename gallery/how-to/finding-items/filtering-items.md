@@ -6,10 +6,10 @@ title:  Filtering search results
 ---
 # Filtering search results
 
-The [Items tab](https://www.powershellgallery.com/items) displays all available items in the PowerShell Gallery.
+The [Packages tab](https://www.powershellgallery.com/packages) displays all available packages in the PowerShell Gallery.
 
-There are several ways to filter, sort, and search the items.
-To see more details about a particular item, click the item.
+There are several ways to filter, sort, and search the packages.
+To see more details about a particular package, click the package.
 
 ## Filter By
 
@@ -20,7 +20,7 @@ The drop-down under "Filter By" allows users to filter the results by:
 For information about "Prerelease" and "Stable", see [Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) in the PowerShell Team Blog.
 
 The checkboxes under the drop-down allow users to filter the results by:
-- Item Types
+- Package Types
   - Module
   - Script
 - Categories
@@ -30,24 +30,24 @@ The checkboxes under the drop-down allow users to filter the results by:
   - Role Capability
   - Workflow
 
-To see only modules in the PowerShell Gallery, check Module in the Item Types.
-Similarly, to see only scripts in the PowerShell Gallery, check Script in the Item Types.
+To see only modules in the PowerShell Gallery, check Module in the Package Types.
+Similarly, to see only scripts in the PowerShell Gallery, check Script in the Package Types.
 
 > [!NOTE]
 > Filters are inclusive.
-> Example: An item containing both cmdlets and functions will appear if either Cmdlet or Function (or both) are checked.
-> If neither are selected, the item will not appear.
-> Similarly, if all categories are selected, only items containing one of those categories will appear.
-> **Items that do not belong to any of those categories will not appear.**
+> Example: A package containing both cmdlets and functions will appear if either Cmdlet or Function (or both) are checked.
+> If neither are selected, the package will not appear.
+> Similarly, if all categories are selected, only packages containing one of those categories will appear.
+> **Packages that do not belong to any of those categories will not appear.**
 
 ## Sort By
 
 The Sort By drop-down allows users to sort the results by:
 - Popularity - Popularity is determined by Download Count
-- A-Z - Alphabetically by item name
-- Recent - Items appear in order of publish date
+- A-Z - Alphabetically by package name
+- Recent - Packages appear in order of publish date
 
 ## Search Box
 
-The Search Box allows users to search the items on keywords.
+The Search Box allows users to search the packages on keywords.
 For more information, see [Gallery Search Syntax](search-syntax.md).

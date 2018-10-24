@@ -7,7 +7,7 @@ title:  Prerelease versions of scripts
 # Prerelease versions of scripts
 
 Starting with version 1.6.0, PowerShellGet and the PowerShell Gallery provide support for tagging
-versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease items were limited
+versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease packages were limited
 to having a version beginning with 0. The goal of these features is to provide greater support for
 [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking
 backwards compatibility with PowerShell versions 3 and above, or existing versions of
@@ -20,10 +20,10 @@ At a high level, the prerelease script features include:
 
 - Adding a PrereleaseString suffix to the version string in the script manifest. When the scripts
   is published to the PowerShell Gallery, this data is extracted from the manifest, and used to
-  identify prerelease items.
-- Acquiring prerelease items requires adding -AllowPrerelease flag to the PowerShellGet commands
+  identify prerelease packages.
+- Acquiring prerelease packages requires adding -AllowPrerelease flag to the PowerShellGet commands
   Find-Script, Install-Script, Update-Script, and Save-Script. If the flag is not specified,
-  prerelease items will not be shown.
+  prerelease packages will not be shown.
 - Script versions displayed by Find-Script, Get-InstalledScript, and in the PowerShell Gallery will
   be displayed with the PrereleaseString, as in 2.5.0-alpha.
 
@@ -76,12 +76,12 @@ must have a greater version than any previously-published version that is in the
 Gallery. A publisher may update version 2.5.0-alpha with 2.5.0-beta, or with 2.5.0 (with no
 prerelease suffix).
 
-## Finding and acquiring prerelease items using PowerShellGet commands
+## Finding and acquiring prerelease packages using PowerShellGet commands
 
-Dealing with prerelease items using PowerShellGet Find-Script, Install-Script, Update-Script, and
+Dealing with prerelease packages using PowerShellGet Find-Script, Install-Script, Update-Script, and
 Save-Script commands requires adding the -AllowPrerelease flag. If -AllowPrerelease is specified,
-prerelease items will be included if they are present. If -AllowPrerelease flag is not specified,
-prerelease items will not be shown.
+prerelease packages will be included if they are present. If -AllowPrerelease flag is not specified,
+prerelease packages will not be shown.
 
 The only exceptions to this in the PowerShellGet script commands are Get-InstalledScript, and some
 cases with Uninstall-Script.

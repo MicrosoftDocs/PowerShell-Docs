@@ -24,22 +24,22 @@ Matching documents should usually contain the exact phrase "azure sql", includin
 
 ## Filtering on fields
 
-You can search for a specific item ID (or 'Id' or 'id'), or certain other fields by prefixing search terms with the field name.
+You can search for a specific package ID (or 'Id' or 'id'), or certain other fields by prefixing search terms with the field name.
 
 Currently the searchable fields are 'Id', 'Version', 'Tags', 'Author', 'Owner', 'Functions', 'Cmdlets', 'DscResources' and 'PowerShellVersion'.
 
-[What's the difference between ID and Title? ID is the name you use in the console. Title is what is shown at the top of the item page in search results.]
+[What's the difference between ID and Title? ID is the name you use in the console. Title is what is shown at the top of the package page in search results.]
 
 ## Examples
 
     ID:"PSReadline"
     id:"AzureRM.Profile"
 
-finds items with "PSReadline" or "AzureRM.Profile" in their ID field respectively.
+finds packages with "PSReadline" or "AzureRM.Profile" in their ID field respectively.
 
     Id:"AzureRM.Profile"
 
-is another way to find items with "AzureRM.Profile" in their ID field.
+is another way to find packages with "AzureRM.Profile" in their ID field.
 
 The 'Id' filter is a substring match, so if you search for the following:
 
@@ -57,23 +57,23 @@ And you can perform phrase searches:
     id:"azure.storage"
 
 
-To search all items with DSC tag.
+To search all packages with DSC tag.
 
     Tags:"DSC"
 
-To search all items with the specified function.
+To search all packages with the specified function.
 
     Functions:"Update-AzureRM"
 
-To search all items with the specified cmdlet.
+To search all packages with the specified cmdlet.
 
     Cmdlets:"Get-AzureRmEnvironment"
 
-To search all items with the specified DSC Resource name.
+To search all packages with the specified DSC Resource name.
 
     DscResources:"xArchive"
 
-To search all items with the specified PowerShellVersion
+To search all packages with the specified PowerShellVersion
 
     PowerShellVersion:"5.0"
     PowerShellVersion:"3.0"

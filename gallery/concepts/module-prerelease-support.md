@@ -7,7 +7,7 @@ title:  Prerelease Module Versions
 # Prerelease Module Versions
 
 Starting with version 1.6.0, PowerShellGet and the PowerShell Gallery provide support for tagging
-versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease items were limited
+versions greater than 1.0.0 as a prerelease. Prior to this feature, prerelease packages were limited
 to having a version beginning with 0. The goal of these features is to provide greater support for
 [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning convention without breaking
 backwards compatibility with PowerShell versions 3 and above, or existing versions of
@@ -20,10 +20,10 @@ At a high level, the prerelease module features include:
 
 - Adding a Prerelease string to the PSData section of the module manifest identifies the module as
   a prerelease version. When the module is published to the PowerShell Gallery, this data is
-  extracted from the manifest, and used to identify prerelease items.
-- Acquiring prerelease items requires adding `-AllowPrerelease` flag to the PowerShellGet commands
+  extracted from the manifest, and used to identify prerelease packages.
+- Acquiring prerelease packages requires adding `-AllowPrerelease` flag to the PowerShellGet commands
   `Find-Module`, `Install-Module`, `Update-Module`, and `Save-Module`. If the flag is not specified,
-  prerelease items will not be shown.
+  prerelease packages will not be shown.
 - Module versions displayed by `Find-Module`, `Get-InstalledModule`, and in the PowerShell Gallery
   will be displayed as a single string with the Prerelease string appended, as in 2.5.0-alpha.
 
@@ -67,7 +67,7 @@ The detailed requirements for Prerelease string are:
   included in the Prerelease string as the first character, only.
 - The Prerelease string may contain only ASCII alphanumerics [0-9A-Za-z-]. It is a best practice to
   begin the Prerelease string with an alpha character, as it will be easier to identify that this
-  is a prerelease version when scanning a list of items.
+  is a prerelease version when scanning a list of packages.
 - Only SemVer v1.0.0 prerelease strings are supported at this time. Prerelease string **must not**
   contain either period or + [.+], which are allowed in SemVer 2.0.
 - Examples of supported Prerelease string are: -alpha, -alpha1, -BETA, -update20171020
@@ -88,12 +88,12 @@ When publishing to the PowerShell Gallery, by default the version of the module 
 must have a greater version than any previously-published version that is in the PowerShell
 Gallery.
 
-## Finding and acquiring prerelease items using PowerShellGet commands
+## Finding and acquiring prerelease packages using PowerShellGet commands
 
-Dealing with prerelease items using PowerShellGet Find-Module, Install-Module, Update-Module, and
+Dealing with prerelease packages using PowerShellGet Find-Module, Install-Module, Update-Module, and
 Save-Module commands requires adding the -AllowPrerelease flag. If -AllowPrerelease is specified,
-prerelease items will be included if they are present. If -AllowPrerelease flag is not specified,
-prerelease items will not be shown.
+prerelease packages will be included if they are present. If -AllowPrerelease flag is not specified,
+prerelease packages will not be shown.
 
 The only exceptions to this in the PowerShellGet module commands are Get-InstalledModule, and some cases with Uninstall-Module.
 
