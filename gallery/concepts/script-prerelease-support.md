@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  10/17/2017
 contributor:  keithb
 keywords:  gallery,powershell,cmdlet,psget

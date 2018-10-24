@@ -17,7 +17,7 @@ improving your code with feedback from initial reviewers and [Powershell Script 
 versioning your module, documentation, tests & examples for how to use what you have shared.
 Much of this documentation follows the guidelines for publishing [High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-For the mechanics of publishing a package to the PowerShell Gallery, see [Creating and Publishing a Package](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item).
+For the mechanics of publishing a package to the PowerShell Gallery, see [Creating and Publishing a Package](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-package).
 
 Feedback on these guidelines is welcomed. If you do have feedback, please open issues in our [Github documentation repository](https://github.com/powershell/powershell-docs/).
 
@@ -94,7 +94,7 @@ There are two feedback methods available in the PowerShell Gallery:
 - Comments: At the bottom of the package page is a Comment field.
   The advantage to this system is that other users can see the comments and responses, which reduces the number of times any single question must be answered.
   As a package owner, it is strongly recommended that you Follow the comments made for each package.
-See [Providing Feedback via Social Media or Comments](../how-to/working-with-items/social-media-feedback.md) for details on how to do that.
+See [Providing Feedback via Social Media or Comments](../how-to/working-with-packages/social-media-feedback.md) for details on how to do that.
 
 Owners who respond to feedback constructively are appreciated by the community.
 Use the opportunity in the report to request more information if needed, provide a workaround, or identify if an update fixes a problem.

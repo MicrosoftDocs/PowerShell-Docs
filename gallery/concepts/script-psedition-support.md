@@ -68,4 +68,4 @@ Find-Script -Tag PSEdition_Core
 ## More details
 
 - [Modules with PSEditions](module-psedition-support.md)
-- [PSEditions support on PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
+- [PSEditions support on PowerShellGallery](../how-to/finding-packages/searching-by-psedition.md)

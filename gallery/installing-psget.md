@@ -8,14 +8,14 @@ title:  Installing PowerShellGet
 
 ## PowerShellGet is an in-box module in the following releases
 
-- [Windows 10](https://www.microsoft.com/en-us/windows) or newer
+- [Windows 10](https://www.microsoft.com/windows) or newer
 - [Windows Server 2016](/windows-server/windows-server) or newer
-- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) or newer
+- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) or newer
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
 ## Get PowerShellGet module for PowerShell versions 3.0 and 4.0
 
-- [PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451)
+- [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)
 
 ## Get the latest version from PowerShell Gallery
 
@@ -43,7 +43,7 @@ title:  Installing PowerShellGet
   Exit
   ```
 
-### For systems running PowerShell 3 or PowerShell 4, that have installed the [PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451)
+### For systems running PowerShell 3 or PowerShell 4, that have installed the [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)
 
 - Use below PowerShellGet cmdlet from an elevated PowerShell session to save the modules to a local directory
 
