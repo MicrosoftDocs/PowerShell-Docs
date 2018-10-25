@@ -6,7 +6,7 @@ title:  DSC for Linux nxFile Resource
 
 # DSC for Linux nxFile Resource
 
-The **nxFile** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to to manage files and directories on a Linux node.
+The **nxFile** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage files and directories on a Linux node.
 
 ## Syntax
 

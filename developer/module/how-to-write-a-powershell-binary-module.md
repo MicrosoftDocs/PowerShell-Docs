@@ -68,7 +68,7 @@ The following procedure describes how to create and install a PowerShell binary 
 
    Note that technically you do not need to install your module anywhere on the `PSModulePath` - those are simply the default locations that PowerShell will look for your module. However, it is considered best practice to do so, unless you have a good reason for storing your module somewhere else. For more information, see [Installing a PowerShell Module](./installing-a-powershell-module.md) and [Modifying the PowerShell Module Installation Path](./modifying-the-psmodulepath-installation-path.md).
 
-4. Import your module into PowerShell with a call to to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module).
+4. Import your module into PowerShell with a call to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module).
 
    Calling to [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) will load your module into active memory. If you are using PowerShell 3.0 and later, simply calling the name of your module in code will also import it; for more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md).
 
