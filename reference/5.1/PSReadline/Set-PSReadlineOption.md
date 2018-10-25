@@ -46,6 +46,8 @@ The **Set-PSReadlineOption** cmdlet customizes the behavior of the PSReadline mo
 
 ### Example 1: Set values for Comment type
 
+# This example will not work, however, in powershell 5.1+. Please fix! TokenKind is no longer a parameter.
+
 ```
 PS C:\> Set-PSReadlineOption -TokenKind Comment -ForegroundColor Green -BackgroundColor Gray
 ```
