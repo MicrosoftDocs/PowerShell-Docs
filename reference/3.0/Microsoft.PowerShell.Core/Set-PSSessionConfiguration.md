@@ -61,7 +61,7 @@ To delete a property value from the configuration (and use the default value), e
 Beginning in Windows PowerShell 3.0, you can use a session configuration file to define a session configuration.
 This feature provides a simple and discoverable method for setting and changing the properties of sessions that use the session configuration.
 To specify a session configuration file, use the **Path** parameter of **Set-PSSessionConfiguration**.
-For information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
+For information about session configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 For information about creating and editing a session configuration file, see New-PSSessionConfigurationFile.
 
 Session configurations define the environment of remote sessions (PSSessions) that connect to the local computer.

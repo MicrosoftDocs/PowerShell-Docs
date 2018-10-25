@@ -4,7 +4,7 @@ contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  Get Started with the PowerShell Gallery
 ---
-# Get Started with the PowerShell Gallery
+# Getting Started with the PowerShell Gallery
 
 The proper way to install packages from the PowerShell Gallery is to use the cmdlets in the
 [PowerShellGet](/powershell/module/powershellget) module. You do not need to sign in to download
@@ -39,11 +39,11 @@ If you're only interested in discovering specific DSC resources in the Gallery, 
 Because DSC resources are always delivered as part of a module, you still need to run
 [Install-Module][] to install those DSC resources.
 
-## Learning about package in the PowerShell Gallery
+## Learning about packages in the PowerShell Gallery
 
-Once you've identified a package you're interested in, you may want to learn more about it. You can
+Once you've identified a package that you're interested in, you may want to learn more about it. You can
 do this by examining that package's specific page on the Gallery. On that page, you'll be able to see
-all of the metadata uploaded with the package. This metadata for a package is provided by the package's
+all of the metadata uploaded with the package. This metadata is provided by the package's
 author, and is not verified by Microsoft. The Owner of the package is strongly tied to the Gallery
 account used to publish the package, and is more trustworthy than the Author field.
 
@@ -91,7 +91,7 @@ To install an older version of the package, add the `-RequiredVersion` parameter
 ### Deploy
 
 To deploy a package from the PowerShell Gallery to Azure Automation, click **Deploy to Azure
-Automation** on the package details page. You will be redirected to the Azure Management Portal, where
+Automation** on the package details page. You will be redirected to the Azure Management Portal where
 you sign in by using your Azure account credentials. Note that deploying packages with dependencies
 will deploy all the dependencies to Azure Automation. The 'Deploy to Azure Automation' button can
 be disabled by adding the **AzureAutomationNotSupported** tag to your package metadata.

@@ -19,8 +19,8 @@ View Element (Format)
 ListControl Element (Format)
 ListEntries Element for ListControl (Format)
 ListEntry Element for ListEntries for ListControl (Format)
-ListItems Element for ListEntry for ListControl(Format)
-ListItem Element Element for ListItemes for ListControl (Format)
+ListItems Element for ListEntry for ListControl (Format)
+ListItem Element for ListItems for ListControl (Format)
 ItemSelectionCondition Element for ListItem for ListControl (Format)
 
 ## Syntax

@@ -113,7 +113,7 @@ To push the current location onto the stack, and then move to the Local Settings
 Push-Location -Path "Local Settings"
 ```
 
-You can then push the Local Settings location onto the stack and and move to the Temp folder by typing:
+You can then push the Local Settings location onto the stack and move to the Temp folder by typing:
 
 ```powershell
 Push-Location -Path Temp

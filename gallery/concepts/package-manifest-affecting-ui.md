@@ -66,7 +66,7 @@ for a package, specifically:
 This approach is not generally recommended, except when needed to correct what is displayed for an
 older version of a module. Users who acquire the module will see the metadata does not match what
 is displayed in the PowerShell Gallery, which raises concerns about the package. This will frequently
-result in inquiries going to to the package owners to confirm the change. It is strongly recommended
+result in inquiries going to the package owners to confirm the change. It is strongly recommended
 that any time this approach is used, a new version of the package should be published with the same
 changes.
 

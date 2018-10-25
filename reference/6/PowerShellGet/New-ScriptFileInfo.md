@@ -150,7 +150,7 @@ Feature 5
 Param()
 ```
 
-This command creates creates a script file New-ScriptFile.ps1 with all of its metadata properties.
+This command creates a script file New-ScriptFile.ps1 with all of its metadata properties.
 The *Verbose* parameter specifies that the command display verbose output.
 
 ## PARAMETERS

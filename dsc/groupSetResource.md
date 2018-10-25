@@ -6,7 +6,7 @@ title:  DSC GroupSet Resource
 ---
 # DSC GroupSet Resource
 
-> Applies To: Windows Windows PowerShell 5.0
+> Applies To: Windows PowerShell 5.0
 
 The **GroupSet** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on the target node. This resource is a
 [composite resource](authoringResourceComposite.md) that calls the [Group resource](groupResource.md) for each group specified in the `GroupName` parameter.
