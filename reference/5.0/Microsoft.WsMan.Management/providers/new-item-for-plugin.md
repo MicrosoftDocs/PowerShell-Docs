@@ -113,7 +113,7 @@ New-Item -Plugin <string> -Filename <string> -ResourceURI <Uri> -Capability <str
 |Accept Wildcard Characters?|false|
 
 ### -xmlns <string\>
- A string that specifies specifies a Uniform Resource Name (URN) that uniquely identifies the namespace.
+ A string that specifies a Uniform Resource Name (URN) that uniquely identifies the namespace.
 
 |||
 |-|-|

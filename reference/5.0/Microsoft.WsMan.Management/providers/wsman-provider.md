@@ -862,7 +862,7 @@ ClientCertificate                     Container
 -   [Set-Item](../../Microsoft.PowerShell.Management/Set-Item.md)
 
 ### xmlns <String\>
- A string that specifies specifies a Uniform Resource Name (URN) that uniquely identifies the namespace.
+ A string that specifies a Uniform Resource Name (URN) that uniquely identifies the namespace.
 
 #### Cmdlets supported:
 
