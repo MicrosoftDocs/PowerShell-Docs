@@ -142,7 +142,7 @@ Typically, parameter values that are placeholders are required and parameter val
        Get-Tech -ID <int[]> [-list] [-type basic advanced]
    ```
 
-8. If the user can choose from from parameters or parameter values, such as the Type parameter, enclose the choices in curly brackets and separate them with the exclusive OR symbol(;).
+8. If the user can choose from parameters or parameter values, such as the Type parameter, enclose the choices in curly brackets and separate them with the exclusive OR symbol(;).
 
    ```
    SYNTAX
