@@ -11,7 +11,7 @@ title:  DSC WaitForAny Resource
 The **WaitForSome** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](configurations.md)
 to specify dependencies on configurations on other nodes.
 
-This resource succeeds if if the resource specified by the **ResourceName** property is in the desired state on any target nodes defined in the **NodeName** property.
+This resource succeeds if the resource specified by the **ResourceName** property is in the desired state on any target nodes defined in the **NodeName** property.
 
 
 ## Syntax
