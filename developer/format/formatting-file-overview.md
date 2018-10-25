@@ -39,7 +39,7 @@ List View
 Lists the properties of an object or a script value in a single column. Each row of the list displays an optional label or the property name followed by the value of the property or script. Creating a list view is very similar to piping an object to the `Format-List` cmdlet. For more information about this view, see [List View](./creating-a-list-view.md).
 
 Wide View
-Lists a single property of an object or a script value in one or more columns. There is no label or header for this view. Creating a wide view is very similar to piping an object to the `Format-Wide` cmdlet. For more information about about this view, see [Wide View](./creating-a-wide-view.md).
+Lists a single property of an object or a script value in one or more columns. There is no label or header for this view. Creating a wide view is very similar to piping an object to the `Format-Wide` cmdlet. For more information about this view, see [Wide View](./creating-a-wide-view.md).
 
 Custom View
 Displays a customizable view of object properties or script values that does not adhere to the rigid structure of table views, list views, or wide views. You can define a stand-alone custom view, or you can define a custom view that is used by another view, such as a table view or list view. Creating a custom view is very similar to piping an object to the `Format-Custom` cmdlet. For more information about this view, see [Custom View](./creating-custom-controls.md).
