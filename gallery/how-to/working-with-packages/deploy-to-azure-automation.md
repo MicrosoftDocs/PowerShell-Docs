@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/12/2017
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -31,5 +31,5 @@ If the module being deployed to Azure Automation requires license acceptance, po
 ## More details
 
 - [Require License Acceptance in PowerShellGet](../../concepts/module-license-acceptance.md)
-- [Require License Acceptance in PowerShell Gallery](items-that-require-license-acceptance.md)
+- [Require License Acceptance in PowerShell Gallery](packages-that-require-license-acceptance.md)
 - [Azure Automation website](http://azure.microsoft.com/services/automation/)

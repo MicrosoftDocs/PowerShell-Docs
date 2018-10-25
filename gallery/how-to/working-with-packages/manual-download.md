@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  09/11/2018
 contributor:  JKeithB
 keywords:  gallery,powershell,psgallery
@@ -20,7 +20,7 @@ then be easily copied to an internal repository.
 
 Each page has a link for Manual Download, as shown here:
 
-![Manual Download](../../Images/Manual_Item_Download.PNG)
+![Manual Download](../../Images/packagedisplaypagewithpseditions.png)
 
 To download manually, click on **Download the raw nupkg file**. A copy of the package copied to the
 download folder for your browser with the name `<name>.<version>.nupkg`.

@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  09/11/2018
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -25,7 +25,7 @@ Privacy Policy, enter a username, and then click **Register**.
 
 > [!NOTE]
 > The account name cannot be changed once it is created. For more information, see
-> [Managing Package Owners](managing-item-owners.md).
+> [Managing Package Owners](managing-package-owners.md).
 
 ## Recommended practices for PowerShell Gallery accounts
 
@@ -39,4 +39,4 @@ that purpose. We recommend you use email forwarding to forward notifications to 
 your organization.
 
 When multiple owners are associated with a package, all PowerShell Gallery notifications are sent
-to all owners. For more information, see [Managing Package Owners](managing-item-owners.md).
+to all owners. For more information, see [Managing Package Owners](managing-package-owners.md).

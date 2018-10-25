@@ -111,7 +111,7 @@ remote access.
 
 To enable remoting on client versions of Windows with public networks, use the
 SkipNetworkProfileCheck parameter of the Enable-PSRemoting cmdlet. It creates
-a firewall rule that that allows remote access only from computers in the same
+a firewall rule that allows remote access only from computers in the same
 local subnet.
 
 To remove the local subnet restriction on public networks and allow remote

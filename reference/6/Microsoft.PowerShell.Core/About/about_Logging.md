@@ -37,7 +37,7 @@ before logged events can appear in the event log.  For PowerShell, this is
 accomplished by running the `RegisterManifest.ps1` from an elevated
 PowerShell prompt.
 
-The script is located in the the $PSHOME directory and should be run from
+The script is located in the $PSHOME directory and should be run from
 that location.
 
 ### Unregistering the PowerShell event provider on Windows

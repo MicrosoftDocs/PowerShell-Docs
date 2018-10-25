@@ -26,7 +26,7 @@ To find any errors, use the **Verbose** common parameter.
 
 **Test-PSSessionConfigurationFile** verifies the session configuration files, such as those created by the New-PSSessionConfigurationFile cmdlet.
 For information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
-For information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
+For information about session configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 ## EXAMPLES

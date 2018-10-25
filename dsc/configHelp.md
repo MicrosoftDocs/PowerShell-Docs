@@ -6,7 +6,7 @@ title:  Writing help for DSC configurations
 
 # Writing help for DSC configurations
 
->Applies To: Windows Windows PowerShell 5.0
+>Applies To: Windows PowerShell 5.0
 
 You can use comment-based help in DSC configurations. Users can access the help by calling the configuration function with `-?`, or by using the
 [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet. For more information about PowerShell comment-based help, see

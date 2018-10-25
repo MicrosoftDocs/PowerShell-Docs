@@ -3,7 +3,7 @@ ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-US
 keywords:  powershell,cmdlet
-Help Version:  6.0
+Help Version:  6.1.0.1
 Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855965
 Module Guid:  c61d6278-02a3-4618-ae37-a524d40a7f44
 Module Name:  PSDiagnostics
