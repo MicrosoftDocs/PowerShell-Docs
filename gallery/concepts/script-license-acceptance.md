@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell
@@ -43,5 +43,5 @@ PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ## More details
 
 - [Require License Acceptance support for Modules](module-license-acceptance.md)
-- [Require License Acceptance support on PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
-- [Require License Acceptance on Deploy to Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+- [Require License Acceptance support on PowerShellGallery](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
+- [Require License Acceptance on Deploy to Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)

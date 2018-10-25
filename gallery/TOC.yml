@@ -9,37 +9,37 @@
     - name: Finding Items in the Gallery
       items:
         - name: Searching For Items
-          href: how-to/finding-items/search-syntax.md
+          href: how-to/finding-packages/search-syntax.md
         - name: Searching by PSEdition
-          href: how-to/finding-items/searching-by-psedition.md
+          href: how-to/finding-packages/searching-by-psedition.md
         - name: Filtering Search Results
-          href: how-to/finding-items/filtering-items.md
+          href: how-to/finding-packages/filtering-packages.md
     - name: Publishing to the Gallery
       items:
         - name: Creating and publishing items
-          href: how-to/publishing-items/publishing-an-item.md
+          href: how-to/publishing-packages/publishing-a-package.md
         - name: Creating a PowerShellGallery Account
-          href: how-to/publishing-items/creating-an-account.md
+          href: how-to/publishing-packages/creating-an-account.md
         - name: Unlisting items
-          href: how-to/publishing-items/unlisting-items.md
+          href: how-to/publishing-packages/unlisting-packages.md
         - name: Deleting items
-          href: how-to/publishing-items/deleting-items.md
+          href: how-to/publishing-packages/deleting-packages.md
         - name: Managing item owners
-          href: how-to/publishing-items/managing-item-owners.md
+          href: how-to/publishing-packages/managing-package-owners.md
     - name: Working with Items
       items:
         - name: FileList view
-          href: how-to/working-with-items/filelist-view.md
+          href: how-to/working-with-packages/filelist-view.md
         - name: Deploy to Azure Automation
-          href: how-to/working-with-items/deploy-to-azure-automation.md
+          href: how-to/working-with-packages/deploy-to-azure-automation.md
         - name: Manual Package Download
-          href: how-to/working-with-items/manual-download.md
+          href: how-to/working-with-packages/manual-download.md
         - name: Items that Require License Acceptance
-          href: how-to/working-with-items/items-that-require-license-acceptance.md
+          href: how-to/working-with-packages/packages-that-require-license-acceptance.md
         - name: Contacting item owners
-          href: how-to/working-with-items/contacting-item-owners.md
+          href: how-to/working-with-packages/contacting-package-owners.md
         - name: Providing Feedback via Social Media or Comments
-          href: how-to/working-with-items/social-media-feedback.md
+          href: how-to/working-with-packages/social-media-feedback.md
     - name: Managing Account Profile
       items:
         - name: PowerShell Gallery Account Settings
@@ -51,7 +51,7 @@
     - name: Publishing guidelines and best practices
       href: concepts/publishing-guidelines.md
     - name: Item manifest and Gallery UI
-      href: concepts/item-manifest-affecting-ui.md
+      href: concepts/package-manifest-affecting-ui.md
     - name: Requiring Specific PSEditions
       items:
         - name: Writing Scripts with PSEditions Support

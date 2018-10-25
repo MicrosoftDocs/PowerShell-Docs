@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/12/2017
 contributor:  JKeithB
 keywords:  gallery,powershell,cmdlet,psgallery
@@ -6,13 +6,13 @@ title:  Get Started with the PowerShell Gallery
 ---
 # Get Started with the PowerShell Gallery
 
-The proper way to install packages from the PowerShell Gallery is to use the cmdlets in the [PowerShellGet](/powershell/module/powershellget) module. You do not need to sign in to download items from the PowerShell Gallery.
+The proper way to install packages from the PowerShell Gallery is to use the cmdlets in the
+[PowerShellGet](/powershell/module/powershellget) module. You do not need to sign in to download
+items from the PowerShell Gallery.
 
 > [!NOTE]
-> It is possible to download a package from the PowerShell Gallery directly, but this is not a recommended approach. 
-> For more details, see [Manual Package Download](https://docs.microsoft.com/en-us/powershell/gallery/how-to/working-with-items/manual-download).  
-
-
+> It is possible to download a package from the PowerShell Gallery directly, but this is not a recommended approach.
+> For more details, see [Manual Package Download](/powershell/gallery/how-to/working-with-packages/manual-download).
 
 ## Discovering packages from the PowerShell Gallery
 

@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/12/2017
 contributor:  Farehar
 keywords:  gallery,powershell,psgallery

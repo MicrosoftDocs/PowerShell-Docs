@@ -17,9 +17,9 @@ improving your code with feedback from initial reviewers and [Powershell Script 
 versioning your module, documentation, tests & examples for how to use what you have shared.
 Much of this documentation follows the guidelines for publishing [High Quality DSC Resource Modules](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-For the mechanics of publishing a package to the PowerShell Gallery, see [Creating and Publishing a Package](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item).
+For the mechanics of publishing a package to the PowerShell Gallery, see [Creating and Publishing a Package](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
 
-Feedback on these guidelines is welcomed. If you do have feedback, please open issues in our [Github documentation repository](https://github.com/powershell/powershell-docs/).
+Feedback on these guidelines is welcomed. If you do have feedback, please open issues in our [Github documentation repository](https://github.com/powershell/powershell-docs/issues).
 
 ## Best practices for publishing packages
 
@@ -65,12 +65,12 @@ Documentation and examples are the best way to ensure users can take advantage o
 
 Documentation is the most helpful thing to include in packages published to the PowerShell Gallery.
 Users will generally bypass packages without documentation, as the alternative is to read the code to understand what the package is and how to use it.
-There are several articles available in MSDN on how to provide documentation with PowerShell packages, including:
+There are several articles available about how to provide documentation with PowerShell packages, including:
 
 - Guidelines for providing help are in [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
 - Creating cmdlet help, which is the best approach for any PowerShell script, function, or cmdlet.
-  For information about how to create cmdlet help, start with [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
-  To add help within a script, see [About Comment Based Help](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
+  For information about how to create cmdlet help, start with [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415).
+  To add help within a script, see [About Comment Based Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 - Many modules also include documentation in text format, such as MarkDown files.
   This can be particularly helpful when there is a project site in Github, where Markdown is a heavily used format.
   The best practice is to use [Github-flavored Markdown](https://help.github.com/categories/writing-on-github/)
@@ -94,7 +94,7 @@ There are two feedback methods available in the PowerShell Gallery:
 - Comments: At the bottom of the package page is a Comment field.
   The advantage to this system is that other users can see the comments and responses, which reduces the number of times any single question must be answered.
   As a package owner, it is strongly recommended that you Follow the comments made for each package.
-See [Providing Feedback via Social Media or Comments](../how-to/working-with-items/social-media-feedback.md) for details on how to do that.
+See [Providing Feedback via Social Media or Comments](../how-to/working-with-packages/social-media-feedback.md) for details on how to do that.
 
 Owners who respond to feedback constructively are appreciated by the community.
 Use the opportunity in the report to request more information if needed, provide a workaround, or identify if an update fixes a problem.
@@ -172,12 +172,12 @@ PowerShell supports validation of code signing through two primary approaches:
 - Catalog signing a module
 
 Signing PowerShell files is a well-established approach to ensuring that the code being executed was produced by a reliable source, and has not been modified.
-Details on how to sign PowerShell script files is covered in the [About Signing](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) topic.
+Details on how to sign PowerShell script files is covered in the [About Signing](/powershell/module/microsoft.powershell.core/about/about_signing) topic.
 In overview, a signature can be added to any .PS1 file that PowerShell validates when the script is loaded.
-PowerShell can be constrained using the [Execution Policy](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) cmdlets to ensure use of signed scripts.
+PowerShell can be constrained using the [Execution Policy](/powershell/module/microsoft.powershell.core/about/about_execution_policies) cmdlets to ensure use of signed scripts.
 
 Catalog signing modules is a feature added to PowerShell in version 5.1.
-How to sign a module is covered in the [Catalog Cmdlets](https://msdn.microsoft.com/powershell/wmf/5.1/catalog-cmdlets) topic.
+How to sign a module is covered in the [Catalog Cmdlets](/powershell/wmf/5.1/catalog-cmdlets) topic.
 In overview, catalog signing is done by creating a catalog file, which contains a hash value for every file in the module, and then signing that file.
 The PowerShellGet publish-module, install-module, save-module, and update-module cmdlets will check the signature to ensure it is valid, then confirm that the hash value for each package matches what is in the catalog.
 If a previous version of the module is installed on the system, install-module will confirm that the signing authority for the new version matches what was previously installed.
@@ -217,13 +217,13 @@ For that reason, we do not support the PowerShell Gallery as a testing target, a
 
 ## Use PowerShellGet to publish
 
-It is strongly recommended that publishers use the Publish-Module and Publish-Script cmdlets when working with the PowerShell Gallery. 
-PowerShellGet has been created to help you avoid remembering important details about installing from an publishing to the PowerShell Gallery. 
-On occasion, publishers have chosen to skip PowerShellGet and use the NuGet client, or PackageManagement cmdlets, instead of Publish-Module. 
+It is strongly recommended that publishers use the Publish-Module and Publish-Script cmdlets when working with the PowerShell Gallery.
+PowerShellGet has been created to help you avoid remembering important details about installing from an publishing to the PowerShell Gallery.
+On occasion, publishers have chosen to skip PowerShellGet and use the NuGet client, or PackageManagement cmdlets, instead of Publish-Module.
 There are a number of details that are easily missed, which results in a variety of support requests.
 
-If there is a reason that you cannot use Publish-Module or Publish-Script, please let us know. 
-File an issue in the PowerShellGet GitHub repo, and provide the details that cause you to choose NuGet or PackageManagement. 
+If there is a reason that you cannot use Publish-Module or Publish-Script, please let us know.
+File an issue in the PowerShellGet GitHub repo, and provide the details that cause you to choose NuGet or PackageManagement.
 
 ## Recommended workflow
 
