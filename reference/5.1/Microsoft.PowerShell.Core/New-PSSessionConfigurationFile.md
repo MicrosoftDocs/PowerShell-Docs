@@ -46,7 +46,7 @@ To specify a particular session configuration, use the *ConfigurationName* param
 A session configuration file makes it easy to define a session configuration without complex scripts or code assemblies.
 The settings in the file are used in addition to the optional startup script and any assemblies in the session configuration.
 
-For more information about session configurations and session configuration files, see [about_Session_Configurations](About/about_Session_Configurations.md) and about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
+For more information about session configurations and session configuration files, see [about_Session_Configurations](About/about_Session_Configurations.md) and [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 

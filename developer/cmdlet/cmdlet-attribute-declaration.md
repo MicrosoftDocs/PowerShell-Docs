@@ -30,7 +30,7 @@ The Cmdlet attribute identifies a Microsoft .NET Framework class as a cmdlet and
 Required. Specifies the cmdlet verb. This verb specifies the action taken by the cmdlet. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md) and [Required Development Guidelines](./required-development-guidelines.md).
 
 `NounName` ([System.String](/dotnet/api/System.String))
-Required. Specifies the cmdlet noun. This noun specifies the resource that the cmdlet acts upon. For more information about about cmdlet nouns, see [Cmdlet Declaration](./cmdlet-class-declaration.md) and [Strongly Encouraged Development Guidelines](./strongly-encouraged-development-guidelines.md).
+Required. Specifies the cmdlet noun. This noun specifies the resource that the cmdlet acts upon. For more information about cmdlet nouns, see [Cmdlet Declaration](./cmdlet-class-declaration.md) and [Strongly Encouraged Development Guidelines](./strongly-encouraged-development-guidelines.md).
 
 `SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean))
 Optional named parameter. `True` indicates that the cmdlet supports calls to the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method, which provides the cmdlet with a way to prompt the user before an action that changes the system is performed. `False`, the default value, indicates that the cmdlet does not support calls to the [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method. For more information about confirmation requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).

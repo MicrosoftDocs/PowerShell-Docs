@@ -15,7 +15,7 @@ function Get-ContentWithoutHeader {
     $doc = Get-Content $path -Encoding UTF8
     $start = $end = -1
 
-   # search the the first 30 lines for the Yaml header
+   # search the first 30 lines for the Yaml header
    # no yaml header in our docset will ever be that long
 
     for ($x = 0; $x -lt 30; $x++) {

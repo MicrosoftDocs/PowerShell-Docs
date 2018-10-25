@@ -71,7 +71,7 @@ It uses the *Force* parameter to suppress the user prompts.
 ### Example 3: Allow remote access on clients
 ```
 PS C:\> Enable-PSRemoting -SkipNetworkProfileCheck -Force
-PS C:\> Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
+PS C:\> Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP" -RemoteAddress Any
 ```
 
 This example shows how to allow remote access from public networks on client versions of the Windows operating system.

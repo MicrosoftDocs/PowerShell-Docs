@@ -199,7 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
-Indicates that that the cmdlet does not overwrite the contents of an existing file.
+Indicates that the cmdlet does not overwrite the contents of an existing file.
 By default, if a file exists in the specified path, **Export-Clixml** overwrites the file without warning.
 
 ```yaml

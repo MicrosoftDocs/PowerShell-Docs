@@ -405,7 +405,7 @@ $Form = @{
 If the value is a collection type,
 such Arrays or Lists,
 the for field will be submitted multiple times.
-The values of the the list will be treated as strings by default.
+The values of the list will be treated as strings by default.
 If the value is a `System.IO.FileInfo` object,
 then the binary file contents will be submitted.
 Nested collections are not supported.
