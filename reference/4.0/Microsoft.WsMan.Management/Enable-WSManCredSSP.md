@@ -99,7 +99,7 @@ PS C:\> enable-wsmancredssp -role server
 This command allows a computer to act as a delegate for another.
 The Enable-WSManCredSSP cmdlet (shown in the earlier examples) only enables CredSSP authentication on the client, and specifies the remote computers that can act on it's behalf.
 In order for the remote computer to act as a delegate for the client, the CredSSP item in the Service node of WSMan must be set to true.
-This example sets the the CredSSP item in the Service node of WSMan to true.
+This example sets the CredSSP item in the Service node of WSMan to true.
 
 ### Example 5
 ```
