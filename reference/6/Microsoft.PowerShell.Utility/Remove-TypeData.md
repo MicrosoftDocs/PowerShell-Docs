@@ -140,7 +140,7 @@ Accept wildcard characters: False
 
 ### -TypeName
 Specifies the types that this cmdlet deletes all extended type data for.
-For For types in the System namespace, enter the short name.
+For types in the System namespace, enter the short name.
 Otherwise, the full type name is required.
 Wildcards are not supported.
 
