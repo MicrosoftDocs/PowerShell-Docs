@@ -412,7 +412,7 @@ Wildcards are not permitted.
 
 **Import-PSSession** cannot import providers from a snap-in.
 
-For more information, see about_PSSnapins and about_Modules.
+For more information, see about_PSSnapins and [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
 
 ```yaml
 Type: String[]

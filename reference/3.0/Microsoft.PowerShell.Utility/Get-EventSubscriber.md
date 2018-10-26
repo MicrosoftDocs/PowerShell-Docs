@@ -143,7 +143,7 @@ The remaining commands use the call operator (&) to invoke the command in the mo
 You can use the call operator to invoke any command in a module, including commands that are not exported.
 In this case, the commands show the random number that is being generated when the Elapsed event occurs.
 
-For more information about modules, see about_Modules.
+For more information about modules, see [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
 
 ## PARAMETERS
 

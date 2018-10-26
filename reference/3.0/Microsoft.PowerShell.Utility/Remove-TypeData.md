@@ -83,7 +83,8 @@ This command uses the **Path** parameter of the **Remove-TypeData** cmdlet to re
 This command does not affect dynamic type data that is added by using the Update-TypeData cmdlet.
 The command succeeds only when the modules have been imported into the current session.
 
-For more information about modules, see about_Modules (http://go.microsoft.com/fwlink/?LinkID=144311).
+For more information about modules, see [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
+
 ### Example 5
 ```
 PS C:\> Invoke-Command -Session $s {Get-TypeData -TypeName *CIM* | Remove-TypeData}
