@@ -20,7 +20,7 @@ Deletes the property and its value from an item.
 ```
 Remove-ItemProperty [-Path] <String[]> [-Name] <String[]> [-Force] [-Filter <String>] [-Include <String[]>]
  [-Exclude <String[]>] [-Credential <PSCredential>] [-InformationAction <ActionPreference>]
- [-InformationVariable <String>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-InformationVariable <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
@@ -28,7 +28,7 @@ Remove-ItemProperty [-Path] <String[]> [-Name] <String[]> [-Force] [-Filter <Str
 ```
 Remove-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -283,9 +283,9 @@ This cmdlet does not return any output.
 
 ## NOTES
 
-- You can also refer to `Remove-ItemProperty` by its built-in alias, **rp**. For more information, see about_Aliases.
-- In the PowerShell Registry provider, registry values are considered to be properties of a registry key or subkey. You can use the **ItemProperty** cmdlets to manage these values.
-- `Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see about_Providers.
+In the PowerShell Registry provider, registry values are considered to be properties of a registry key or subkey. You can use the **ItemProperty** cmdlets to manage these values.
+
+`Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see about_Providers.
 
 ## RELATED LINKS
 

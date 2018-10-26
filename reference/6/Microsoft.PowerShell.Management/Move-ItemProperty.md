@@ -20,7 +20,7 @@ Moves a property from one location to another.
 ```
 Move-ItemProperty [-Path] <String[]> [-Name] <String[]> [-Destination] <String> [-PassThru] [-Force]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
@@ -28,7 +28,7 @@ Move-ItemProperty [-Path] <String[]> [-Name] <String[]> [-Destination] <String> 
 ```
 Move-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Destination] <String> [-PassThru] [-Force]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## Description
@@ -286,11 +286,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- The names of the **Path**, **Destination**, and **Name** parameters are optional. If you omit the parameter names, the unnamed parameter values must appear in this order: Path, Destination, and Name. If you include the parameter names, the parameters can appear in any order.
-
-- You can also refer to this cmdlet by its built-in alias, "mp". For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-
-- This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

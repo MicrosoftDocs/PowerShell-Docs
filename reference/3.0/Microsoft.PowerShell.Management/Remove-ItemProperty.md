@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,19 +7,23 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113374
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Remove-ItemProperty
 ---
-
 # Remove-ItemProperty
+
 ## SYNOPSIS
+
 Deletes the property and its value from an item.
+
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Remove-ItemProperty [-Path] <String[]> [-Name] <String[]> [-Force] [-Filter <String>] [-Include <String[]>]
  [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
 Remove-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
@@ -27,54 +31,64 @@ Remove-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Force] [-Filter
 ```
 
 ## DESCRIPTION
-The Remove-ItemProperty cmdlet deletes a property and its value from an item.
+
+The `Remove-ItemProperty` cmdlet deletes a property and its value from an item.
 You can use it to delete registry values and the data that they store.
+
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> remove-itemproperty -path HKLM:\Software\SmpApplication -name SmpProperty
-```
+### Example 1: Delete a registry value
 
-This command deletes the SmpProperty registry value, and its data, from the SmpApplication subkey of the HKEY_LOCAL_MACHINE\Software registry key.
+This command deletes the "SmpProperty" registry value, and its data, from the "SmpApplication" subkey of the "HKEY_LOCAL_MACHINE\Software" registry key.
 
-Because the command is issued from a file system drive (PS C:\\\>), it includes the fully qualified path to the SmpApplication subkey, including the drive, HKLM:, and the Software key.
+Because the command is issued from a file system drive (`PS C:\>`), it includes the fully qualified path of the "SmpApplication" subkey, including the drive, `HKLM:`, and the "Software" key.
 
-It uses the Name parameter to identify the registry value that is being deleted.
-### Example 2
-```
-PS C:\> set-location HKCU:\Software\MyCompany\MyApp
-PS HKCU:\Software\MyCompany\MyApp> remove-itemproperty -path . -Name Options -confirm
+It uses the **Name** parameter to identify the registry value that is being deleted.
+
+```powershell
+Remove-ItemProperty -Path "HKLM:\Software\SmpApplication" -Name "SmpProperty"
 ```
 
-These commands delete the Options registry value, and its data, from the MyApp subkey of HKEY_CURRENT_USER\Software\MyCompany.
+### Example 2: Delete a registry value from the HKCU location
 
-The first command uses the Set-Location cmdlet to change the current location to the HKEY_CURRENT_USER drive (HKCU:) and the Software\MyCompany\MyApp subkey.
+These commands delete the "Options" registry value, and its data, from the "MyApp" subkey of "HKEY_CURRENT_USER\Software\MyCompany".
 
-The second command uses the Remove-Item cmdlet to remove the Options registry value, and its data, from the MyApp subkey.
-Because the Path parameter is required, the command uses a dot (.) to indicate the current location.
-It uses the Name parameter to specify which registry value to delete.
-It uses the Confirm parameter to request a user prompt before deleting the value.
-### Example 3
+The first command uses the `Set-Location` cmdlet to change the current location to the **HKEY_CURRENT_USER** drive (`HKCU:`) and the "Software\MyCompany\MyApp" subkey.
+
+The second command uses `Remove-ItemProperty` to remove the "Options" registry value, and its data, from the "MyApp" subkey.
+Because **Path** is required, the command uses a dot ('.') to indicate the current location.
+It uses **Name** to specify which registry value to delete.
+It uses the **Confirm** parameter to request a user prompt before deleting the value.
+
 ```
-PS C:\> get-item -path HKLM:\Software\MyCompany | remove-itemproperty -name NoOfEmployees
+PS C:\> Set-Location HKCU:\Software\MyCompany\MyApp
+PS HKCU:\Software\MyCompany\MyApp> Remove-ItemProperty -Path . -Name "Options" -Confirm
 ```
 
-This command deletes the NoOfEmployees registry value, and its data, from the HKLM\Software\MyCompany registry key.
+### Example 3: Remove a registry value by using the pipeline
 
-The command uses the Get-Item cmdlet to get an item that represents the registry key.
-It uses a pipeline operator (|) to send the object to the Remove-ItemProperty cmdlet.
-Then, it uses the Name parameter of Remove-ItemProperty to specify the name of the registry value.
+This command deletes the "NoOfEmployees" registry value, and its data, from the "HKLM\Software\MyCompany" registry key.
+
+The command uses the `Get-Item` cmdlet to get an item that represents the registry key.
+It uses a pipeline operator (`|`) to send the object to `Remove-ItemProperty`.
+Then, it uses the **Name** parameter of `Remove-ItemProperty` to specify the name of the registry value.
+
+```powershell
+Get-Item -Path HKLM:\Software\MyCompany | Remove-ItemProperty -Name NoOfEmployees
+```
+
 ## PARAMETERS
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a PSCredential object, such as one generated by the Get-Credential cmdlet.
-If you type a user name, you will be prompted for a password.
+Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the `Get-Credential` cmdlet.
+If you type a user name, you are prompted for a password.
 
-This parameter is not supported by any providers installed with Windows PowerShell.
+> [!WARNING]
+> This parameter is not supported by any providers installed with Windows PowerShell.
 
 ```yaml
 Type: PSCredential
@@ -89,10 +103,11 @@ Accept wildcard characters: False
 ```
 
 ### -Exclude
-Omits the specified items.
-The value of this parameter qualifies the Path parameter.
+
+Specifies items that this cmdlet omits.
+The value of this parameter qualifies the **Path** parameter.
 Enter a path element or pattern, such as "*.txt".
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -107,10 +122,12 @@ Accept wildcard characters: True
 ```
 
 ### -Filter
-Specifies a filter in the provider's format or language.
-The value of this parameter qualifies the Path parameter.
-The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when retrieving the objects rather than having Windows PowerShell filter the objects after they are retrieved.
+
+Specifies a filter in the format or language of the provider.
+The value of this parameter qualifies the **Path** parameter.
+
+The syntax of the filter, including the use of wildcard characters, depends on the provider.
+Filters are more efficient than other parameters, because the provider applies them when the cmdlet gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -125,9 +142,10 @@ Accept wildcard characters: True
 ```
 
 ### -Force
-Allows the cmdlet to remove a property of an object that cannot otherwise be accessed by the user.
+
+Forces the cmdlet to remove a property of an object that cannot otherwise be accessed by the user.
 Implementation varies from provider to provider.
-For more information, see about_Providers.
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
 Type: SwitchParameter
@@ -142,10 +160,11 @@ Accept wildcard characters: False
 ```
 
 ### -Include
-Deletes only the specified items.
-The value of this parameter qualifies the Path parameter.
+
+Specifies, as a string array, an item or items that this cmdlet includes in the operation.
+The value of this parameter qualifies the **Path** parameter.
 Enter a path element or pattern, such as "*.txt".
-Wildcards are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -156,15 +175,16 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies a path to the item property.
-The value of LiteralPath is used exactly as it is typed.
+
+Specifies the path to the current location of the property.
+Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String[]
@@ -179,7 +199,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies the names of the properties to be retrieved.
+
+Specifies the names of the properties to remove.
 
 ```yaml
 Type: String[]
@@ -194,8 +215,9 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path to the item whose properties are being removed.
-Wildcards are permitted.
+
+Specifies the path of the item whose properties are being removed.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]
@@ -210,6 +232,7 @@ Accept wildcard characters: True
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -225,6 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -241,6 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
@@ -258,26 +283,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains a path (but not a literal path) to Remove-ItemProperty.
+
+You can pipe a string that contains a path, but not a literal path, to this cmdlet.
+
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
+
 ## NOTES
-* You can also refer to Remove-ItemProperty by its built-in alias, "rp". For more information, see about_Alias.
 
-  In the Windows PowerShell Registry provider, registry values are considered to be properties of a registry key or subkey.
-You can use the ItemProperty cmdlets to manage these values.
+In the PowerShell Registry provider, registry values are considered to be properties of a registry key or subkey. You can use the **ItemProperty** cmdlets to manage these values.
 
-  The Remove-ItemProperty cmdlet is designed to work with the data exposed by any provider.
-To list the providers available in your session, type "Get-PSProvider".
-For more information, see about_Providers.
+`Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see about_Providers.
 
-*
 ## RELATED LINKS
 
 [Clear-ItemProperty](Clear-ItemProperty.md)

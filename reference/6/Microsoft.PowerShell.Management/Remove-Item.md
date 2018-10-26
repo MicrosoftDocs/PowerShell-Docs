@@ -19,14 +19,14 @@ Deletes the specified items.
 
 ```
 Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+ [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+ [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -199,13 +199,6 @@ Mode                LastWriteTime     Length Name
 ## PARAMETERS
 
 ### -Stream
-
-Specifies an alternative data stream from a file that this cmdlet deletes.
-This cmdlet does not delete the file.
-Enter the stream name.
-Wildcard characters are supported.
-
-This parameter is not valid on folders.
 
 The **Stream** parameter is a dynamic parameter that the FileSystem provider adds to `Remove-Item`.
 This parameter works only in file system drives.
