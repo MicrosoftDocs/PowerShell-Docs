@@ -338,9 +338,9 @@ Valid Values:
 
 - Stop. Displays the warning message and stops executing the command.
 
-NOTE: The WarningAction parameter does not override the value of the
-$WarningAction preference variable when the parameter is used in a command to
-run a script or function.
+> [!NOTE] The WarningAction parameter does not override the value of the
+> $WarningAction preference variable when the parameter is used in a command to
+> run a script or function.
 
 -WarningVariable [+]<variable-name>
 
@@ -378,7 +378,7 @@ You can use this parameter to create a variable that contains only warnings
 from specific commands. You can use array notation, such as $a[0] or
 $warning[1,2] to refer to specific warnings stored in the variable.
 
-NOTE: The WarningVariable parameter does not capture warnings from nested
+> [!NOTE] The WarningVariable parameter does not capture warnings from nested
 calls in functions or scripts.
 
 ### Risk Management Parameter Descriptions
