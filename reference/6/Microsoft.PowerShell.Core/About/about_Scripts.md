@@ -345,7 +345,7 @@ which is a module that consists entirely or primarily of a script and
 supporting resources. A script module is just a script with a .psm1 file name
 extension.
 
-For more information about modules, see about_Modules.
+For more information about modules, see [about_Modules](about_Modules.md).
 
 ### OTHER SCRIPT FEATURES
 
