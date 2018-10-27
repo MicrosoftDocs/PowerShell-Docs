@@ -7,11 +7,11 @@ title:  about_Remote_Output
 ---
 # About Remote Output
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes how to interpret and format the output of remote commands.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The output of a command that was run on a remote computer might look
 like output of the same command run on a local computer, but there are
@@ -20,7 +20,7 @@ some significant differences.
 This topic explains how to interpret, format, and display the output
 of commands that are run on remote computers.
 
-# DISPLAYING THE COMPUTER NAME
+## DISPLAYING THE COMPUTER NAME
 
 When you use the Invoke-Command cmdlet to run a command on a remote
 computer, the command returns an object that includes the name of
@@ -73,7 +73,7 @@ Monday, July 21, 2008 7:16:58 PM    Server01
 Monday, July 21, 2008 7:16:58 PM    Server02
 ```
 
-# DISPLAYING THE MACHINENAME PROPERTY
+## DISPLAYING THE MACHINENAME PROPERTY
 
 Several cmdlets, including Get-Process, Get-Service, and Get-EventLog,
 have a ComputerName parameter that gets the objects on a remote computer.
@@ -141,7 +141,7 @@ Handles NPM(K) PM(K)  WS(K) VM(M) CPU(s)   Id ProcessName MachineName
 
 ```
 
-# DESERIALIZED OBJECTS
+## DESERIALIZED OBJECTS
 
 When you run remote commands that generate output, the command output is
 transmitted across the network back to the local computer.
@@ -185,7 +185,7 @@ Some object types, such as DirectoryInfo objects and GUIDs, are converted
 back into live objects when they are received. These objects do not need
 any special handling or formatting.
 
-# ORDERING THE RESULTS
+## ORDERING THE RESULTS
 
 The order of the computer names in the ComputerName parameter of cmdlets
 determines the order in which Windows PowerShell connects to the remote
@@ -197,7 +197,7 @@ sort on the PSComputerName or MachineName property. You can also sort on
 another property of the object so that the results from different
 computers are interspersed.
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Remote](about_Remote.md)
 
