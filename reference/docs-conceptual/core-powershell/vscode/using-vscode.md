@@ -168,9 +168,7 @@ For instance, you can add a configurations to:
 
   Once the debug configuration is established, you can select which configuration you want to use during a debug session by selecting one from the debug configuration drop-down in the **Debug** view's toolbar.
 
-  There are a few blogs that may be helpful to get you started using PowerShell extension for Visual Studio Code
-
-Visual Studio Code:
+  There are a few blogs that may be helpful to get you started using PowerShell extension for Visual Studio Code:
 
 - [PowerShell Extension][ps-extension]
 - [Write and debug PowerShell scripts in Visual Studio Code][debug]
