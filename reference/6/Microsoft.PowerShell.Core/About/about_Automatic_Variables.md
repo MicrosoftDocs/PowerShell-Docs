@@ -145,6 +145,26 @@ the pipeline, so the $input variable enumerates an empty collection. If the
 function does not have a Process block, then in the End block, the $input
 variable enumerates the collection of all input to the function.
 
+### $ISCORECLR
+
+Contains $TRUE if the current session is running on the .NET Core Runtime 
+(CoreCLR). Otherwise contains $FALSE.
+
+### $ISLINUX
+
+Contains $TRUE if the current session is running on a Linux operating system.
+Otherwise contains $FALSE.
+
+### $ISMACOS
+
+Contains $TRUE if the current session is running on a MacOS operating system.
+Otherwise contains $FALSE.
+
+### $ISWINDOWS
+
+Contains $TRUE if the current session is running on a Windows operationg system.
+Otherwise contains $FALSE.
+
 ### $LASTEXITCODE
 
 Contains the exit code of the last Windows-based program that was run.
@@ -420,6 +440,10 @@ following items:
 |                           | (CLR)                                         |
 | GitCommitId               | The commit Id of the source files, in GitHub, |
 |                           | used in this version of PowerShell            |
+| OS                        | Description of the operating system that      |
+|                           | PowerShell is running on.                     |
+| Platform                  | Platform that the operating system is running |
+|                           | on.                                           |
 | PSCompatibleVersions      | Versions of PowerShell that are compatible    |
 |                           | with the current version                      |
 | PSEdition                 | This property has the value of 'Desktop', for |
