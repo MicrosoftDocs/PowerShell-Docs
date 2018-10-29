@@ -37,14 +37,17 @@ A suitable version of **Windows PowerShell** is available for these operating sy
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** also requires .NET Framework 4.5 or above. You can install .NET Framework 4.5 or
+**PowerShellGet** requires .NET Framework 4.5 or above. You can install .NET Framework 4.5 or
 above from [here](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-**PowerShell Core** supports many operating systems. See [this article](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) for a full list.
+Since **PowerShell Core** is cross-platform and that means it works on Windows, Linux and MacOS, that also makes
+**PowerShellGet** available on those systems. For a full list of systems supported by **PowerShell Core** see
+[Installing PowerShell](/powershell/scripting/setup/installing-powershell).
 
 Many modules hosted in the gallery will support different OSes and have additional requirements. Please refer to the documentation for the modules for more information.
 
