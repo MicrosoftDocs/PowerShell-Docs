@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821716
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Protect-CmsMessage
 ---
-
 # Protect-CmsMessage
 
 ## SYNOPSIS
@@ -40,7 +39,7 @@ Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-LiteralPath] <String> [[-OutF
 
 The `Protect-CmsMessage` cmdlet encrypts content by using the Cryptographic Message Syntax (CMS) format.
 
-The CMS cmdlets support encryption and decryption of content using the IETF format as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).
+The CMS cmdlets support encryption and decryption of content using the IETF format as documented by [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
 The CMS encryption standard uses public key cryptography, where the keys used to encrypt content (the public key) and the keys used to decrypt content (the private key) are separate.
 Your public key can be shared widely, and is not sensitive data.
@@ -48,7 +47,7 @@ If any content is encrypted with this public key, only your private key can decr
 For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
 Before you can run the `Protect-CmsMessage` cmdlet, you must have an encryption certificate set up.
-To be recognized in PowerShell, encryption certificates require a unique extended key usage ([EKU](https://msdn.microsoft.com/library/windows/desktop/aa381990)) ID to identify them as data encryption certificates (such as the IDs for Code Signing and Encrypted Mail).
+To be recognized in PowerShell, encryption certificates require a unique extended key usage ([EKU](/windows/desktop/SecCrypto/eku)) ID to identify them as data encryption certificates (such as the IDs for Code Signing and Encrypted Mail).
 For an example of a certificate that would work for document encryption, see Example 1 in this topic.
 
 ## EXAMPLES
@@ -81,12 +80,12 @@ ValidityPeriodUnits = "1000"
 %szOID_ENHANCED_KEY_USAGE% = "{text}%szOID_DOCUMENT_ENCRYPTION%"
 } | Out-File -FilePath DocumentEncryption.inf
 
-# After you have created your certificate file, run the following command to add the certificate file to the certificate store. Now you are ready to encrypt and decrypt content.
+# After you have created your certificate file, run the following command to add the certificate file to the certificate store.Now you are ready to encrypt and decrypt content with the next two examples.
 certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
 Before you can run the `Protect-CmsMessage` cmdlet, you must create an encryption certificate.
-Using the following text, change the name in the Subject line to your name, email, or other identifier, and save the certificate in a file (such as DocumentEncryption.inf, as shown in this example).
+Using the following text, change the name in the Subject line to your name, email, or other identifier, and save the certificate in a file (such as "DocumentEncryption.inf", as shown in this example).
 
 ### Example 2: Encrypt a message sent by email
 
@@ -97,11 +96,20 @@ $Protected = "Hello World" | Protect-CmsMessage -To "*youralias@emailaddress.com
 In the following example, you encrypt a message, "Hello World", by piping it to the `Protect-CmsMessage` cmdlet, and then save the encrypted message in a variable.
 The **To** parameter uses the value of the Subject line in the certificate.
 
+### Example 3: View document encryption certificates
+
+```
+PS C:\> cd Cert:\currentuser\my
+Get-ChildItem -DocumentEncryptionCert
+```
+
+To view document encryption certificates in the certificate provider, you can add the **DocumentEncryptionCert** dynamic parameter of [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md), available only when the certificate provider is loaded.
+
 ## PARAMETERS
 
 ### -Content
 
-Specifies a PSObject that contains content that you want to encrypt.
+Specifies a **PSObject** that contains content that you want to encrypt.
 For example, you can encrypt the content of an event message, and then use the variable containing the message (`$Event`, in this example) as the value of the **Content** parameter: `$event = Get-WinEvent -ProviderName "PowerShell" -MaxEvents 1`.
 You can also use the `Get-Content` cmdlet to get the contents of a file, such as a Microsoft Word document, and save the content in a variable that you use as the value of the **Content** parameter.
 
@@ -193,7 +201,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
