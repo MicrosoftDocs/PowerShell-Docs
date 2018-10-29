@@ -27,46 +27,47 @@ following rules.
 - If you specify the path to a command, PowerShell runs the command at the
   location specified by the path.
 
-For example, the following command runs the "FindDocs.ps1" script in the
-"C:\\TechDocs" directory:
+  For example, the following command runs the FindDocs.ps1 script in the
+  "C:\\TechDocs" directory:
 
-```
-C:\TechDocs\FindDocs.ps1
-```
+  ```
+  C:\TechDocs\FindDocs.ps1
+  ```
 
-As a security feature, PowerShell does not run executable (native) commands,
-including PowerShell scripts, unless the command is located in a path that is
-listed in the Path environment variable `$env:path` or unless you specify the
-path to the script file.
+  As a security feature, PowerShell does not run executable (native) commands,
+  including PowerShell scripts, unless the command is located in a path that is
+  listed in the Path environment variable `$env:path` or unless you specify the
+  path to the script file.
 
-To run a script that is in the current directory, specify the full path, or
-type a dot `.` to represent the current directory.
+  To run a script that is in the current directory, specify the full path, or
+  type a dot `.` to represent the current directory.
 
-For example, to run the FindDocs.ps1 file in the current directory, type:
+  For example, to run the FindDocs.ps1 file in the current directory, type:
 
-```
-.\FindDocs.ps1
-```
+  ```
+  .\FindDocs.ps1
+  ```
 
 - If you do not specify a path, PowerShell uses the following precedence order
   when it runs commands:
+
   1. Alias
   2. Function
   3. Cmdlet
   4. Native Windows commands
 
-Therefore, if you type "help", PowerShell first looks for an alias named
-`help`, then a function named `Help`, and finally a cmdlet named `Help`. It
-runs the first `help` item that it finds.
+  Therefore, if you type "help", PowerShell first looks for an alias named
+  `help`, then a function named `Help`, and finally a cmdlet named `Help`. It
+  runs the first `help` item that it finds.
 
-For example, if your session contains a cmdlet and a function, both named
-`Get-Map`, when you type `Get-Map`, PowerShell runs the function.
+  For example, if your session contains a cmdlet and a function, both named
+  `Get-Map`, when you type `Get-Map`, PowerShell runs the function.
 
-When the session contains items of the same type that have the same name,
-PowerShell runs the newer item.
+  When the session contains items of the same type that have the same name,
+  PowerShell runs the newer item.
 
-For example, if you import another `Get-Date` cmdlet from a module, when you
-type `Get-Date`, PowerShell runs the imported version over the native one.
+  For example, if you import another `Get-Date` cmdlet from a module, when you
+  type `Get-Date`, PowerShell runs the imported version over the native one.
 
 ## Hidden and replaced items
 
@@ -114,7 +115,7 @@ CommandType     Name                      ModuleName
 Function        Get-Date
 ```
 
-The following command uses the **All** parameter to get all "`Get-Date`"
+The following command uses the **All** parameter to get all `Get-Date`
 commands.
 
 ```powershell
@@ -251,18 +252,11 @@ For more information, see `Import-Module` and `Import-PSSession` below.
 
 ## See also
 
-[about_Path_Syntax](about_Path_Syntax.md)
-
-[about_Aliases](about_Aliases.md)
-
-[about_Functions](about_Functions.md)
-
-[Alias-Provider](../Providers/about_Alias_Provider.md)
-
-[Function-Provider](../Providers/about_Function_Provider.md)
-
-[Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
-
-[Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md)
-
-[Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)
+- [about_Path_Syntax](about_Path_Syntax.md)
+- [about_Aliases](about_Aliases.md)
+- [about_Functions](about_Functions.md)
+- [Alias-Provider](../../Microsoft.PowerShell.Core/About/about_Alias_Provider.md)
+- [Function-Provider](../../Microsoft.PowerShell.Core/About/about_Function_Provider.md)
+- [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
+- [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md)
+- [Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)

@@ -136,7 +136,7 @@ setting up pull clients, see [Setting up a pull client using configuration ID](p
 > [!NOTE]
 > You must use configuration IDs if you are using an SMB pull server. Configuration names are not supported for SMB.
 
-Each resource module needs to be zipped and named according the the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version
+Each resource module needs to be zipped and named according the following pattern `{Module Name}_{Module Version}.zip`. For example, a module named xWebAdminstration with a module version
 of 3.1.2.0 would be named 'xWebAdministration_3.2.1.0.zip'. Each version of a module must be contained in a single zip file. Since there is only a single version of a resource in each zip
 file the module format added in WMF 5.0 with support for multiple module versions in a single directory is not supported. This means that before packaging up DSC resource modules for use with
 pull server you need to make a small change to the directory structure. The default format of modules containing DSC resource in WMF 5.0 is

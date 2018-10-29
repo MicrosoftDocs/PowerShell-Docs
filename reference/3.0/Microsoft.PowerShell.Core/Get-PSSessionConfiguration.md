@@ -26,7 +26,7 @@ This is an advanced cmdlet that is designed to be used by system administrators 
 
 Beginning in Windows PowerShell 3.0, you can define the properties of a session configuration by using a session configuration (.pssc) file.
 This feature lets you create customized and restricted sessions without writing a computer program.
-For more information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
+For more information about session configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 Also, beginning in Windows PowerShell 3.0, new note properties have been added to the session configuration object that **Get-PSSessionConfiguration** returns.
 These properties make it easier for users and session configuration authors to examine and compare session configurations.
@@ -113,7 +113,7 @@ The **Property** parameter with a value of * (all) directs **Format-List** to di
 The output of this command has very useful information, including the author of the session configuration, the session type, language mode, and execution policy of sessions that are created with this session configuration, session quotas, and the full path to the session configuration file.
 
 This view of a session configuration is used for sessions that include a session configuration file.
-For more information about session configuration files, see about_Session_Configuration_Files (http://go.microsoft.com/fwlink/?LinkID=236023).
+For more information about session configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 ### Example 4
 

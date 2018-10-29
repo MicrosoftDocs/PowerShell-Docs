@@ -19,14 +19,14 @@ Gets the item at the specified location.
 
 ```
 Get-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+ [-Credential <PSCredential>] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+ [-Credential <PSCredential>] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,11 +126,14 @@ This command works only when the path includes a wildcard character ('*') to spe
 Get-Item c:\Windows\*.* -Exclude "w*"
 ```
 
+
 ## PARAMETERS
 
 ### -Stream
 
-This parameter is not supported by any providers installed with PowerShell.
+Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are supported. To get all streams, use an asterisk (*). This parameter is not valid on folders.
+
+Stream is a dynamic parameter that the FileSystem provider adds to the `Get-Item` cmdlet. This parameter works only in file system drives.
 
 ```yaml
 Type: String[]
@@ -139,9 +142,9 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: No alternate file streams
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Credential
@@ -162,7 +165,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Current user
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -185,7 +188,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Filter
@@ -222,7 +225,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

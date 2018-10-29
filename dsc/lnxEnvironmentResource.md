@@ -6,7 +6,7 @@ title:  DSC for Linux nxEnvironment Resource
 
 # DSC for Linux nxEnvironment Resource
 
-The **nxEnvironment** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to to manage system environment variables on a Linux node.
+The **nxEnvironment** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage system environment variables on a Linux node.
 
 ## Syntax
 

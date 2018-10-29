@@ -19,14 +19,14 @@ Moves an item from one location to another.
 
 ```
 Move-Item [-Path] <String[]> [[-Destination] <String>] [-Force] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Move-Item -LiteralPath <String[]> [[-Destination] <String>] [-Force] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -340,16 +340,13 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- This cmdlet will move files between drives that are supported by the same provider, but it will move directories only within the same drive.
+This cmdlet will move files between drives that are supported by the same provider, but it will move directories only within the same drive.
 
 Because a `Move-Item` command moves the properties, contents, and child items of an item, all moves are recursive by default.
 
-You can also refer to this cmdlet by its built-in aliases, "move", "mv", and "mi".
-For more information, see about_Aliases.
-
 This cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PSProvider`.
-For more information, see about_Providers.
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

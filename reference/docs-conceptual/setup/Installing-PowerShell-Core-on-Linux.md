@@ -7,7 +7,7 @@ ms.date: 08/06/2018
 # Installing PowerShell Core on Linux
 
 Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Debian 8][deb8], [Debian 9][deb9],
-[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27][fedora],
+[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora],
 [Fedora 28][fedora], and [Arch Linux][arch].
 
 For Linux distributions that are not officially supported,
@@ -45,7 +45,6 @@ Here is a table of the commands to install the stable and preview packages using
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| OpenSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
 ## Ubuntu 14.04
@@ -410,68 +409,62 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1
 sudo yum remove powershell
 ```
 
-## OpenSUSE 42.3
+## openSUSE
 
-When installing PowerShell Core, `zypper` may report the following error:
-
-```Output
-Problem: nothing provides libcurl needed by powershell-6.1.0-1.rhel.7.x86_64
- Solution 1: do not install powershell-6.1.0-1.rhel.7.x86_64
- Solution 2: break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies
-```
-
-In this case, verify that a compatible `libcurl` library is present by checking that the following
-command shows the `libcurl4` package as installed:
+### Installation - openSUSE 42.3
 
 ```sh
-zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
-```
+# Install dependencies
+zypper update && zypper --non-interactive install curl tar libicu52_1
 
-Then choose the `break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies`
-solution when installing the PowerShell package.
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
-### Installation via Package Repository (preferred) - OpenSUSE 42.3
+# Create the target folder where powershell will be placed
+mkdir -p /opt/microsoft/powershell/6.1.0
 
-PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).
+# Expand powershell to the target folder
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
 
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+# Set execute permissions
+chmod +x /opt/microsoft/powershell/6.1.0/pwsh
 
-# Add the Microsoft Repository
-zypper ar https://packages.microsoft.com/rhel/7/prod/
-
-# Update the list of products
-sudo zypper update
-
-# Install PowerShell
-sudo zypper install powershell
+# Create the symbolic link that points to pwsh
+ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
 
 # Start PowerShell
 pwsh
 ```
 
-### Installation via Direct Download - OpenSUSE 42.3
-
-Download the RPM package `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-from the [releases][] page onto the OpenSUSE machine.
+### Installation - openSUSE Leap 15
 
 ```sh
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install powershell-6.1.0-1.rhel.7.x86_64.rpm
+# Install dependencies
+zypper update && zypper --non-interactive install curl tar gzip libopenssl1_0_0 libicu60_2
+
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+
+# Create the target folder where powershell will be placed
+mkdir -p /opt/microsoft/powershell/6.1.0
+
+# Expand powershell to the target folder
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
+
+# Set execute permissions
+chmod +x /opt/microsoft/powershell/6.1.0/pwsh
+
+# Create the symbolic link that points to pwsh
+ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
+
+# Start PowerShell
+pwsh
 ```
 
-You can also install the RPM without the intermediate step of downloading it:
+### Uninstallation - openSUSE 42.3, openSUSE Leap 15
 
 ```sh
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
-```
-
-### Uninstallation - OpenSUSE 42.3
-
-```sh
-sudo zypper remove powershell
+rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
 ## Fedora
@@ -595,7 +588,7 @@ sudo snap remove powershell-preview
 
 ## Kali
 
-### Installation
+### Installation - Kali
 
 ```sh
 # Download & Install prerequisites
@@ -635,7 +628,7 @@ like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsuppor
 
 Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.
 
-### Installation
+### Installation - Raspbian
 
 ```sh
 # Install prerequisites
@@ -693,7 +686,9 @@ on different Linux distributions.
 | Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE OpenSUSE 42.3 | libunwind, libcurl, openssl-libs, libicu |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl-libs, libicu |
+| openSUSE 42.3 | libcurl4, libopenssl1_0_0, libicu52_1 |
+| openSUSE Leap 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 To deploy PowerShell binaries on Linux distributions that are not officially supported,
