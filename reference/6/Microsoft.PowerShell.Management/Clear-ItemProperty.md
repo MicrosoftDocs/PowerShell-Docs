@@ -20,8 +20,7 @@ Clears the value of a property but does not delete the property.
 ```
 Clear-ItemProperty [-Path] <String[]> [-Name] <String> [-PassThru] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
@@ -29,8 +28,7 @@ Clear-ItemProperty [-Path] <String[]> [-Name] <String> [-PassThru] [-Force] [-Fi
 ```
 Clear-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PassThru] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -275,14 +273,9 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- You can use `Clear-ItemProperty` to delete the data in registry values without deleting the value. If the data type of the value is Binary or DWORD, clearing the data sets the value to zero. Otherwise, the value is empty.
+You can use `Clear-ItemProperty` to delete the data in registry values without deleting the value. If the data type of the value is Binary or DWORD, clearing the data sets the value to zero. Otherwise, the value is empty.
 
-You can also refer to `Clear-ItemProperty` by its built-in alias, clp.
-For more information, see about_Aliases.
-
-The `Clear-ItemProperty` cmdlet is designed to work with the data exposed by any provider.
-To list the providers available in your session, type `Get-PSProvider`.
-For more information, see about_Providers.
+The `Clear-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see about_Providers.
 
 ## RELATED LINKS
 

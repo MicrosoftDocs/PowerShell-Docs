@@ -19,14 +19,14 @@ Gets the value for one or more properties of a specified item.
 
 ```
 Get-ItemPropertyValue [[-Path] <String[]>] [-Name] <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -246,7 +246,7 @@ For example, in a file system drive, the cmdlet might return a file or folder.
 
 ## NOTES
 
-- This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, run the `Get-PSProvider` cmdlet. For more information, see about_Providers.
+This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, run the `Get-PSProvider` cmdlet. For more information, see about_Providers.
 
 ## RELATED LINKS
 

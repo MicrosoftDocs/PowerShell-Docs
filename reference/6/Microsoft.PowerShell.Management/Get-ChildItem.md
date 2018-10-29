@@ -99,7 +99,7 @@ This command uses the `Get-ChildItem` cmdlet.
 - The `-Recurse` parameter requests a recursive search.
 - The `-CodeSigningCert` parameter is a dynamic parameter that the Certificate provider adds to the `Get-ChildItem` cmdlet. This parameter gets only certificates that have code-signing authority.
 
-For more information about the Certificate provider and the `Cert:` drive, go to [Certificate Provider](../Microsoft.PowerShell.Security/Providers/about_Certificate_Provider.md) or use the `Update-Help` cmdlet to download the help files for the **Microsoft.PowerShell.Security** module and then type `Get-Help Certificate`.
+For more information about the Certificate provider and the Cert: drive, go to [Certificate Provider](../microsoft.powershell.security/About/about_Certificate_Provider.md) or use the `Update-Help` cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type `Get-Help Certificate`.
 
 ```powershell
 Get-ChildItem -Path Cert:\* -Recurse -CodeSigningCert
