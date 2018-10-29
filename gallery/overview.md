@@ -45,21 +45,9 @@ A suitable version of **Windows PowerShell** is available for these operating sy
 **PowerShellGet** requires .NET Framework 4.5 or above. You can install .NET Framework 4.5 or
 above from [here](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-Since **PowerShell Core** is cross-platform and that means it works on Windows, Linux and MacOS, that also makes **PowerShellGet** available on those systems. For a full list of systems supported by **PowerShell Core** see [this article](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell?view=powershell-6). Linked article also contains detailed instructions on how to install **PowerShell Core** on those systems.
-
-Currently at least following **Linux** editions are supported:
-- Ubuntu 18.xx
-- Ubuntu 16.xx
-- Ubuntu 14.xx
-- Debian 9
-- Debian 8
-- CentOS 7
-- Red Hat Enterprise Linux (RHEL) 7
-- OpenSUSE 42.3
-- Many more...
-
-Currently at least following **macOS** editions are supported:
-- macOS 10.12 or higher
+Since **PowerShell Core** is cross-platform and that means it works on Windows, Linux and MacOS, that also makes
+**PowerShellGet** available on those systems. For a full list of systems supported by **PowerShell Core** see
+[Installing PowerShell](/powershell/scripting/setup/installing-powershell).
 
 Many modules hosted in the gallery will support different OSes and have additional requirements. Please refer to the documentation for the modules for more information.
 
