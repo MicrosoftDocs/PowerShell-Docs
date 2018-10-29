@@ -121,12 +121,11 @@ For instance, you can add a configurations to:
 - Launch an interactive session in the debugger
 - Attach the debugger to a PowerShell host process
 
-  Follow these steps to create your debug configuration file:
+Follow these steps to create your debug configuration file:
 
   1. Open the **Debug** view by pressing **Ctrl+Shift+D** (**Cmd+Shift+D** on Mac).
   2. Press the **Configure** gear icon in the toolbar.
-  3. Visual Studio Code prompts you to **Select Environment**.
-  Choose **PowerShell**.
+  3. Visual Studio Code prompts you to **Select Environment**. Choose **PowerShell**.
 
   When you do this, Visual Studio Code creates a directory and a file ".vscode\launch.json" in the root of your workspace folder.
   This is where your debug configuration is stored. If your files are in a Git repository, you typically want to commit the launch.json file.
@@ -168,7 +167,7 @@ For instance, you can add a configurations to:
 
   Once the debug configuration is established, you can select which configuration you want to use during a debug session by selecting one from the debug configuration drop-down in the **Debug** view's toolbar.
 
-  There are a few blogs that may be helpful to get you started using PowerShell extension for Visual Studio Code:
+There are a few blogs that may be helpful to get you started using PowerShell extension for Visual Studio Code:
 
 - [PowerShell Extension][ps-extension]
 - [Write and debug PowerShell scripts in Visual Studio Code][debug]
