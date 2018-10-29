@@ -20,7 +20,7 @@ Creates or changes the value of a property of an item.
 ```
 Set-ItemProperty [-Path] <String[]> [-Name] <String> [-Value] <Object> [-PassThru] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### propertyPSObjectPathSet
@@ -28,7 +28,7 @@ Set-ItemProperty [-Path] <String[]> [-Name] <String> [-Value] <Object> [-PassThr
 ```
 Set-ItemProperty [-Path] <String[]> -InputObject <PSObject> [-PassThru] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### propertyValueLiteralPathSet
@@ -36,7 +36,7 @@ Set-ItemProperty [-Path] <String[]> -InputObject <PSObject> [-PassThru] [-Force]
 ```
 Set-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Value] <Object> [-PassThru] [-Force]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### propertyPSObjectLiteralPathSet
@@ -44,8 +44,7 @@ Set-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Value] <Object> [-Pa
 ```
 Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -395,7 +394,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- `Set-ItemProperty` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see about_Providers.
+`Set-ItemProperty` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

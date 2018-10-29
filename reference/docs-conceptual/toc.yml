@@ -182,14 +182,10 @@
       href: getting-started/cookbooks/changing-computer-state.md
     - name: Collecting information about computers
       href: getting-started/cookbooks/collecting-information-about-computers.md
-    - name: Creating .NET and COM objects - New-Object
-      href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
     - name: Creating a custom input box
       href: getting-started/cookbooks/creating-a-custom-input-box.md
     - name: Creating a graphical date picker
       href: getting-started/cookbooks/creating-a-graphical-date-picker.md
-    - name: Getting WMI objects - Get-WmiObject
-      href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
     - name: Managing current location
       href: getting-started/cookbooks/managing-current-location.md
     - name: Managing processes with process cmdlets
@@ -208,20 +204,10 @@
       href: getting-started/cookbooks/performing-networking-tasks.md
     - name: Redirecting data with Out- cmdlets
       href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
-    - name: Removing objects from the pipeline - Where-Object
-      href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
-    - name: Repeating a task for multiple objects - ForEach-Object
-      href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
     - name: Selecting items from a list box
       href: getting-started/cookbooks/selecting-items-from-a-list-box.md
-    - name: Selecting parts of object - Select-Object
-      href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
-    - name: Sorting objects
-      href: getting-started/cookbooks/sorting-objects.md
     - name: Using format commands to change output view
       href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
-    - name: Using static classes and methods
-      href: getting-started/cookbooks/using-static-classes-and-methods.md
     - name: Viewing object structure - Get-Member
       href: getting-started/cookbooks/viewing-object-structure--get-member-.md
     - name: Working with files and folders
@@ -230,6 +216,21 @@
       href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
     - name: Working with objects
       href: getting-started/cookbooks/working-with-objects.md
+      items:
+      - name: Getting WMI objects - Get-WmiObject
+        href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+      - name: Creating .NET and COM objects - New-Object
+        href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+      - name: Removing objects from the pipeline - Where-Object
+        href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+      - name: Selecting parts of object - Select-Object
+        href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+      - name: Sorting objects
+        href: getting-started/cookbooks/sorting-objects.md
+      - name: Repeating a task for multiple objects - ForEach-Object
+        href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+      - name: Using static classes and methods
+        href: getting-started/cookbooks/using-static-classes-and-methods.md
     - name: Working with printers
       href: getting-started/cookbooks/working-with-printers.md
     - name: Working with registry entries

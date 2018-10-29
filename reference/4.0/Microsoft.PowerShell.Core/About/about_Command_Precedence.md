@@ -115,7 +115,7 @@ CommandType     Name                      ModuleName
 Function        Get-Date
 ```
 
-The following command uses the **All** parameter to get all "Get-Date"
+The following command uses the **All** parameter to get all `Get-Date`
 commands.
 
 ```powershell
@@ -140,7 +140,7 @@ commands.
 
 Using the module-qualified name of a cmdlet allows you to run commands hidden
 by an item with the same name. For example, you can run the `Get-Date` cmdlet
-by qualifying it with its module name `Microsoft.PowerShell.Utility`.
+by qualifying it with its module name **Microsoft.PowerShell.Utility**.
 
 Use this preferred method when writing scripts that you intend to
 distribute. You cannot predict which commands might be present in
@@ -236,6 +236,7 @@ name acronym to the nouns in your commands.
 Also, when you import commands into your session from a PowerShell
 module or from another session, use the `Prefix` parameter of the
 [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md) or
+
 [Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)
 cmdlet to add a prefix to the nouns in the names of commands.
 
@@ -254,8 +255,8 @@ For more information, see `Import-Module` and `Import-PSSession` below.
 - [about_Path_Syntax](about_Path_Syntax.md)
 - [about_Aliases](about_Aliases.md)
 - [about_Functions](about_Functions.md)
-- [Alias-Provider](../../Microsoft.PowerShell.Core/Providers/Alias-Provider.md)
-- [Function-Provider](../../Microsoft.PowerShell.Core/Providers/Function-Provider.md)
+- [Alias-Provider](../../Microsoft.PowerShell.Core/About/about_Alias_Provider.md)
+- [Function-Provider](../../Microsoft.PowerShell.Core/About/about_Function_Provider.md)
 - [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)
 - [Import-Module](../../Microsoft.PowerShell.Core/Import-Module.md)
 - [Import-PSSession](../../Microsoft.PowerShell.Utility/Import-PSSession.md)

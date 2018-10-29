@@ -19,14 +19,14 @@ Clears the contents of an item, but does not delete the item.
 
 ```
 Clear-Item [-Path] <String[]> [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Clear-Item -LiteralPath <String[]> [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Clear-Item Variable:TestVar1
 ```
 
 ```
-Set-location Variable:
+Set-Location Variable:
 PS Variable:\> Clear-Item TestVar1
 ```
 
@@ -260,18 +260,9 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
-- The `Clear-Item` cmdlet is supported only by several PowerShell providers, including the Alias, Environment, Function, Registry, and Variable providers. As such, you can use `Clear-Item` to delete the content of items in the provider namespaces.
+The `Clear-Item` cmdlet is supported only by several PowerShell providers, including the Alias, Environment, Function, Registry, and Variable providers. As such, you can use `Clear-Item` to delete the content of items in the provider namespaces. To list the providers available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-- You cannot use `Clear-Item` to delete the contents of a file, because the PowerShell FileSystem provider does not support this cmdlet.
-  To clear files, use the `Clear-Content`.
-
-- You can also refer to `Clear-Item` by its built-in alias, `cli`.
-  For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-
-- The `Clear-Item` cmdlet is designed to work with the data exposed by any provider.
-  To list the providers available in your session, type `Get-PsProvider`.
-
-  For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+You cannot use `Clear-Item` to delete the contents of a file, because the PowerShell FileSystem provider does not support this cmdlet. To clear files, use the `Clear-Content`.
 
 ## RELATED LINKS
 

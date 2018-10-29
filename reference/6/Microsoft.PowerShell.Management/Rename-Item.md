@@ -53,9 +53,11 @@ This example shows that you cannot use `Rename-Item` to both rename and move an 
 Specifically, you cannot supply a path for the value of the **NewName** parameter, unless the path is identical to the path specified in the **Path** parameter.
 Otherwise, only a new name is permitted.
 
+This command attempts to rename the "project.txt" file in the current directory to "old-project.txt" in the "D:\Archive" directory. The result is the error shown in the output.
+
 ```
-The first command attempts to rename the project.txt file in the current directory to old-project.txt in the D:\Archive directory. The result is the error shown in the output.
-PS>  Rename-Item -Path "project.txt" -NewName "d:\archive\old-project.txt"
+PS C:\>  Rename-Item -Path "project.txt" -NewName "d:\archive\old-project.txt"
+
 Rename-Item : Cannot rename because the target specified represents a path or device name.
 At line:1 char:12
 + Rename-Item <<<<  -path project.txt -NewName d:\archive\old-project.txt
@@ -171,7 +173,7 @@ To rename and move an item, use `Move-Item`.
 
 You cannot use wildcard characters in the value of the *NewName* parameter.
 To specify a name for multiple files, use the **Replace** operator in a regular expression.
-For more information about the Replace operator, see about_Comparison_Operators.
+For more information about the Replace operator, see [about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md).
 
 ```yaml
 Type: String
@@ -270,7 +272,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- `Rename-Item` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PsProvider`. For more information, see about_Providers.
+`Rename-Item` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
