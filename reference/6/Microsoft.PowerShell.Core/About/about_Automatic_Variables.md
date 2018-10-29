@@ -145,22 +145,22 @@ the pipeline, so the $input variable enumerates an empty collection. If the
 function does not have a Process block, then in the End block, the $input
 variable enumerates the collection of all input to the function.
 
-### $ISCORECLR
+### $IsCoreCLR
 
 Contains $TRUE if the current session is running on the .NET Core Runtime 
 (CoreCLR). Otherwise contains $FALSE.
 
-### $ISLINUX
+### $IsLinux
 
 Contains $TRUE if the current session is running on a Linux operating system.
 Otherwise contains $FALSE.
 
-### $ISMACOS
+### $IsMacOS
 
 Contains $TRUE if the current session is running on a MacOS operating system.
 Otherwise contains $FALSE.
 
-### $ISWINDOWS
+### $IsWindows
 
 Contains $TRUE if the current session is running on a Windows operationg system.
 Otherwise contains $FALSE.
@@ -178,7 +178,7 @@ $Matches automatic variable with a hash table of any string values that
 were matched. For more information about the -match operator, see
 [about_comparison_operators](about_comparison_operators.md).
 
-### $MYINVOCATION
+### $MyInvocation
 
 Contains an information about the current command, such as the name,
 parameters, parameter values, and information about how the command was
@@ -210,7 +210,7 @@ PSScriptRoot and PSCommandPath properties of the $MyInvocation automatic
 variable contain information about the invoker or calling script, not the
 current script.
 
-### $NESTEDPROMPTLEVEL
+### $NestedPromptLevel
 
 Contains the current prompt level. A value of 0 indicates the original
 prompt level. The value is incremented when you enter a nested level and
@@ -230,7 +230,7 @@ The $NestedPromptLevel variable helps you track the prompt level. You can
 create an alternative PowerShell command prompt that includes this value so
 that it is always visible.
 
-### $NULL
+### $null
 
 $null is an automatic variable that contains a NULL or empty value. You can
 use this variable to represent an absent or undefined value in commands and
@@ -321,7 +321,7 @@ You can also use it in a command to open the profile in Notepad:
 notepad $profile
 ```
 
-### $PSBOUNDPARAMETERS
+### $PSBoundParameters
 
 Contains a dictionary of the parameters that are passed to a script or
 function and their current values. This variable has a value only in a
@@ -357,12 +357,12 @@ parameters to the cmdlet dynamically.
 For more information about the $PSCmdlet automatic variable, see
 [about_Functions_Advanced](about_Functions_Advanced.md).
 
-### $PSCOMMANDPATH
+### $PSCommandPath
 
 Contains the full path and file name of the script that is being run. This
 variable is valid in all scripts.
 
-### $PSCULTURE
+### $PSCulture
 
 Contains the name of the culture currently in use in the operating system.
 The culture determines the display format of items such as numbers,
@@ -399,7 +399,7 @@ Same as $_. Contains the current object in the pipeline object. You can use
 this variable in commands that perform an action on every object or on
 selected objects in a pipeline.
 
-### $PSSCRIPTROOT
+### $PSScriptRoot
 
 Contains the directory from which a script is being run.
 
@@ -418,7 +418,7 @@ from the originating session. To add data to the ApplicationArguments
 property, use the ApplicationArguments parameter of the New-PSSessionOption
 cmdlet.
 
-### $PSUICULTURE
+### $PSUICulture
 
 Contains the name of the user interface (UI) culture that is currently in
 use in the operating system. The UI culture determines which text strings
@@ -427,7 +427,7 @@ the value of the System.Globalization.CultureInfo.CurrentUICulture.Name
 property of the system. To get the System.Globalization.CultureInfo object
 for the system, use the Get-UICulture cmdlet.
 
-### $PSVERSIONTABLE
+### $PSVersionTable
 
 Contains a read-only hash table that displays details about the version of
 PowerShell that is running in the current session. The table includes the
@@ -479,11 +479,11 @@ only within the Action block of an event registration command. The value of
 this variable can also be found in the Sender property of the PSEventArgs
 (System.Management.Automation.PSEventArgs) object that Get-Event returns.
 
-### $SHELLID
+### $ShellId
 
 Contains the identifier of the current shell.
 
-### $STACKTRACE
+### $StackTrace
 Contains a stack trace for the most recent error.
 
 ### $THIS
@@ -491,7 +491,7 @@ Contains a stack trace for the most recent error.
 In a script block that defines a script property or script method, the
 $This variable refers to the object that is being extended.
 
-### $TRUE
+### $true
 
 Contains TRUE. You can use this variable to represent TRUE in commands and
 scripts.
