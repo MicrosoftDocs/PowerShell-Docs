@@ -418,7 +418,7 @@ Accept wildcard characters: False
 
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see [about_Transactions](about_Transactions.md)
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/Aboutabout_Transactions.md)
 
 ```yaml
 Type: SwitchParameter
