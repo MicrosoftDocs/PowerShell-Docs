@@ -147,7 +147,7 @@ Certificates are used in client certificate-based authentication.
 They can be mapped only to local user accounts; they do not work with domain accounts.
 
 To get a certificate thumbprint, use the [`Get-Item`](../Microsoft.Powershell.Management/Get-Item.md) or [`Get-ChildItem`](../Microsoft.Powershell.Management/Get-ChildItem.md) cmdlets in the PowerShell Certificate Provider.
-For more information about using the PowerShell Certificate provider, type `Get-Help Certificate`, or see [Certificate Provider](../Microsoft.PowerShell.Security/Providers/about_Certificate_Provider.md).
+For more information about using the PowerShell Certificate provider, type `Get-Help Certificate`, or see [Certificate Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
 
 ```yaml
 Type: String
