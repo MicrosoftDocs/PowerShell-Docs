@@ -69,7 +69,7 @@ PS C:\> Invoke-Command -Session $s -ScriptBlock { Stop-job -Job $Using:j }
 This example shows how to use the **Stop-Job** cmdlet to stop a job that is running on a remote computer.
 
 Because the job was started by using the Invoke-Command cmdlet to run a **Start-Job** command remotely, the job object is stored on the remote computer, and you must use another **Invoke-Command** command to run a **Stop-Job** command remotely.
-For more information about remote background jobs, see about_Remote_Jobs.
+For more information about remote background jobs, see [about_Remote_Jobs](./About/about_Remote_Jobs.md).
 
 The first command creates a Windows PowerShell session (PSSession) on the Server01 computer and saves the session object in the $s variable.
 The command uses the credentials of a domain administrator.
@@ -81,7 +81,7 @@ The resulting job object is stored in the $j variable.
 The third command stops the job.
 It uses the **Invoke-Command** cmdlet to run a **Stop-Job** command in the PSSession on Server01.
 Because the job objects are stored in $j, which is a variable on the local computer, the command uses the Using scope modifier to identify $j as a local variable.
-For more information about the Using scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
+For more information about the Using scope modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md).
 
 When the command completes, the job is stopped and the PSSession in $s is available for use.
 ### Example 2
@@ -156,7 +156,7 @@ The second command uses a pipeline operator to send the job in the $j variable t
 The command uses the **PassThru** parameter to direct **Stop-Job** to return a job object.
 The job object display confirms that the State of the job is "Stopped".
 
-For more information about remote background jobs, see about_Remote_Jobs.
+For more information about remote background jobs, see [about_Remote_Jobs](./About/about_Remote_Jobs.md).
 ## PARAMETERS
 
 ### -Filter
@@ -278,7 +278,7 @@ Accept wildcard characters: False
 Stops only jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping.
 
-For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
+For more information about job states, see [JobState Enumeration](/dotnet/api/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
 Type: JobState
@@ -324,7 +324,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 ## INPUTS
 
 ### System.Management.Automation.RemotingJob

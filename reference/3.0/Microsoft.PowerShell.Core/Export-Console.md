@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -26,7 +26,7 @@ You can use this cmdlet to save the snap-ins for use in future sessions.
 
 To add the snap-ins in the .psc1 console file to a session, start Windows PowerShell (Powershell.exe) at the command line by using Cmd.exe or another Windows PowerShell session, and then use the PSConsoleFile parameter of Powershell.exe to specify the console file.
 
-For more information about Windows PowerShell snap-ins, see about_PSSnapins.
+For more information about Windows PowerShell snap-ins, see [about_PSSnapins](./About/about_PSSnapins.md).
 
 ## EXAMPLES
 
@@ -161,7 +161,7 @@ It is also required when you use the NoClobber parameter to prevent the current 
 
 If you omit this parameter, Export-Console overwrites (replaces the content of) the console file that was used most recently in this session.
 The path to the most recently used console file is stored in the value of the $ConsoleFileName automatic variable.
-For more information, see about_Automatic_Variables.
+For more information, see [about_Automatic_Variables](./About/about_Automatic_Variables.md).
 
 ```yaml
 Type: String
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -233,7 +233,7 @@ Export-Console creates a file that contains the exported aliases.
   "powershell.exe -PsConsoleFile \<ConsoleFile\>.psc1".
 
   You can also save Windows PowerShell snap-ins for future sessions by adding an Add-PSSnapin command to your Windows PowerShell profile.
-For more information, see about_Profiles.
+For more information, see [about_Profiles](./About/about_profiles.md).
 
 - 
 

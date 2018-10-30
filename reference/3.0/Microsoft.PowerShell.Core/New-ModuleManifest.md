@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -145,7 +145,7 @@ The command uses the **HelpInfoUri** parameter to create a **HelpInfoUri** key i
 The value of the parameter and the key must begin with "http" or "https".
 This value tells the Updatable Help system where to find the HelpInfo XML updatable help information file for the module.
 
-For information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkID=235801).
+For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
 For information about the HelpInfo XML file, see "Supporting Updatable Help" in MSDN.
 
 ### Example 5
@@ -461,7 +461,7 @@ Enter an Uniform Resource Identifier (URI) that begins with "http" or "https".
 
 The   HelpInfo XML file supports the Updatable Help feature that was introduced in Windows PowerShell 3.0.
 It contains information about the location of downloadable help files for the module and the version numbers of the newest help files for each supported locale.
-For information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkID=235801).
+For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
 For information about the HelpInfo XML file, see "Supporting Updatable Help" in MSDN.
 
 This parameter is introduced in Windows PowerShell 3.0.
@@ -868,7 +868,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 
