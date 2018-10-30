@@ -19,7 +19,7 @@ Changes the value of an item to the value specified in the command.
 
 ```
 Set-Item [-Path] <String[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
@@ -27,7 +27,7 @@ Set-Item [-Path] <String[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <S
 ```
 Set-Item -LiteralPath <String[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -295,10 +295,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- You can also refer to `Set-Item` by its built-in alias, **si**. For more information, see about_Aliases.
-
-  `Set-Item` is not supported by the PowerShell FileSystem provider.
-To change the values of items in the file system, use the `Set-Content` cmdlet.
+`Set-Item` is not supported by the PowerShell FileSystem provider. To change the values of items in the file system, use the `Set-Content` cmdlet.
 
 In the Registry drives, HKLM: and HKCU:, `Set-Item` changes the data in the (Default) value of a registry key.
 To create and change the names of registry keys, use the `New-Item` and `Rename-Item` cmdlet.
@@ -306,7 +303,7 @@ To change the names and data in registry values, use the `New-ItemProperty`, `Se
 
 `Set-Item` is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PsProvider`.
-For more information, see about_Providers.
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

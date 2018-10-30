@@ -20,7 +20,7 @@ Copies an item from one location to another.
 ```
 Copy-Item [-Path] <String[]> [[-Destination] <String>] [-Container] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Recurse] [-PassThru] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [-FromSession <PSSession>] [-ToSession <PSSession>] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-FromSession <PSSession>] [-ToSession <PSSession>] [<CommonParameters>]
 ```
 
 ### LiteralPath
@@ -28,7 +28,7 @@ Copy-Item [-Path] <String[]> [[-Destination] <String>] [-Container] [-Force] [-F
 ```
 Copy-Item -LiteralPath <String[]> [[-Destination] <String>] [-Container] [-Force] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Recurse] [-PassThru] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [-FromSession <PSSession>] [-ToSession <PSSession>] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-FromSession <PSSession>] [-ToSession <PSSession>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -457,11 +457,9 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- This cmdlet is similar to the cp or copy commands in other shells.
-
 This cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PsProvider`.
-For more information, see about_Providers.
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

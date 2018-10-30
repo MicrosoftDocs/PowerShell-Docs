@@ -1,3 +1,3 @@
 ---
-redirect_url: readme
+redirect_url: PowerShell-Scripting
 ---

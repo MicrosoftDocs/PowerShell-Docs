@@ -309,13 +309,13 @@ You can pipe a string that contains a path to `Get-ItemProperty`.
 
 ### System.Boolean, System.String, System.DateTime
 
-Get-ItemProperty returns an object for each item property that it gets.
+`Get-ItemProperty` returns an object for each item property that it gets.
 The object type depends on the object that is retrieved.
 For example, in a file system drive, it might return a file or folder.
 
 ## NOTES
 
-- The `Get-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "`Get-PSProvider`". For more information, see about_Providers.
+The `Get-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "`Get-PSProvider`". For more information, see about_Providers.
 
 ## RELATED LINKS
 

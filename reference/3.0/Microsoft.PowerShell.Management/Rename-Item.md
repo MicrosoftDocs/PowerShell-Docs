@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  10/18/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,109 +7,109 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113382
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Rename-Item
 ---
-
 # Rename-Item
+
 ## SYNOPSIS
-Renames an item in a Windows PowerShell provider namespace.
+
+Renames an item in a PowerShell provider namespace.
+
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```
 Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
  [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```
 Rename-Item -LiteralPath <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>]
  [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Rename-Item cmdlet changes the name of a specified item.
+
+The `Rename-Item` cmdlet changes the name of a specified item.
 This cmdlet does not affect the content of the item being renamed.
 
-You cannot use Rename-Item to move an item, such as by specifying a path along with the new name.
-To move and rename an item, use the Move-Item cmdlet.
+You cannot use `Rename-Item` to move an item, such as by specifying a path together with the new name.
+To move and rename an item, use the `Move-Item` cmdlet.
+
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> rename-item -path c:\logfiles\daily_file.txt -newname monday_file.txt
+### Example 1: Rename a file
+
+This command renames the file "daily_file.txt" to "monday_file.txt".
+
+```powershell
+Rename-Item -Path "c:\logfiles\daily_file.txt" -NewName "monday_file.txt"
 ```
 
-This command renames the file daily_file.txt to monday_file.txt.
-### Example 2
+### Example 2: Rename and move an item
+
+This example shows that you cannot use `Rename-Item` to both rename and move an item.
+Specifically, you cannot supply a path for the value of the **NewName** parameter, unless the path is identical to the path specified in the **Path** parameter.
+Otherwise, only a new name is permitted.
+
+This command attempts to rename the "project.txt" file in the current directory to "old-project.txt" in the "D:\Archive" directory. The result is the error shown in the output.
+
 ```
-PS C:\> rename-item -path project.txt -newname d:\archive\old-project.txt
+PS C:\>  Rename-Item -Path "project.txt" -NewName "d:\archive\old-project.txt"
 
 Rename-Item : Cannot rename because the target specified represents a path or device name.
 At line:1 char:12
-+ rename-item <<<<  -path project.txt -newname d:\archive\old-project.txt
-+ CategoryInfo          : InvalidArgument: (:) [Rename-Item], PSArgumentException
-+ FullyQualifiedErrorId : Argument,Microsoft.PowerShell.Commands.RenameItemCommand
-
-PS C:\> move-item -path project.txt -destination d:\archive\old-project.txt
-# Command succeeds
++ Rename-Item <<<<  -path project.txt -NewName d:\archive\old-project.txt
++ CategoryInfo          : InvalidArgument: (:) [Rename-Item], PS>  Move-Item -Path "project.txt" -Destination "d:\archive\old-project.txt"
 ```
 
-This example shows that you cannot use the Rename-Item cmdlet to both rename and move an item.
-Specifically, you cannot supply a path for the value of the NewName parameter, unless the path is identical to the path specified in the Path parameter.
-Otherwise, only a new name is permitted.
+### Example 3: Rename a registry key
 
-The first command uses the Rename-Item cmdlet to rename the project.txt file in the current directory to old-project.txt in the D:\Archive directory.
-The result is the error shown in the output.
-
-The second command shows the correct way to move and rename a file by using the Move-Item cmdlet.
-The Move-Item cmdlet lets you specify both a new path and a new name in the value of its Destination parameter.
-### Example 3
-```
-PS C:\> rename-item HKLM:\Software\MyCompany\Advertising -NewName Marketing
-```
-
-This command uses the Rename-Item cmdlet to rename a registry key from Advertising to Marketing.
+This command renames a registry key from "Advertising" to "Marketing".
 When the command is complete, the key is renamed, but the registry entries in the key are unchanged.
-### Example 4
+
+```powershell
+Rename-Item -Path "HKLM:\Software\MyCompany\Advertising" -NewName "Marketing"
 ```
-PS C:\> get-childItem *.txt | rename-item -newname { $_.name -replace '\.txt$','.log' }
-```
 
-This example shows how to use the Replace operator to rename multiple files, even though the NewName parameter does not accept wildcard characters.
+### Example 4: Rename multiple files
 
-This command renames all of the .txt files in the current directory to .log.
+This example shows how to use the **Replace** operator to rename multiple files, even though the **NewName** parameter does not accept wildcard characters.
 
-The command uses a Get-ChildItem cmdlet to get all of the files in the current directory that have a .txt file name extension.
-Then, it uses the pipeline operator (|) to send the resulting files to the Rename-Item cmdlet.
+This command renames all of the ".txt" files in the current directory to ".log".
 
-In the Rename-Item command, the value of the NewName parameter is a script block that is executed before the value is submitted to the NewName parameter.
+The command uses the `Get-ChildItem` cmdlet to get all of the files in the current folder that have a .txt file name extension.
+Then, it uses the pipeline operator (`|`) to send those files to `Rename-Item`.
+
+The value of **NewName** is a script block that runs before the value is submitted to the **NewName** parameter.
 
 In the script block, the `$_` automatic variable represents each file object as it comes to the command through the pipeline.
-The command uses the dot format (.) to get the Name property of each file object.
-The Replace operator replaces the ".txt" file name extension of each file with ".log".
+The command uses the dot format ('.') to get the **Name** property of each file object.
+The **Replace** operator replaces the ".txt" file name extension of each file with ".log".
 
-Because the Replace operator works with regular expressions, the dot preceding "txt" is interpreted to match any character.
-To ensure that it matches only a dot (.), it is escaped with a backslash character (\\).
+Because the **Replace** operator works with regular expressions, the dot in front of "txt" is interpreted to match any character.
+To make sure that it matches only a dot ('.'), it is escaped with a backslash character (\\).
 The backslash character is not required in ".log" because it is a string, not a regular expression.
 
-To make sure that .txt is an extension, i.e. last part of the string representing the name, a dollar sign ($) is added after \\.txt.
+To make sure that ".txt" is an extension, i.e. last part of the string representing the name, a dollar sign (`$`) is added after "\\.txt".
 
-### Example 5
+```powershell
+Get-ChildItem *.txt | Rename-Item -NewName { $_.name -Replace '\.txt$','.log' }
 ```
-Get-ChildItem -Filter "*.MARKUP" -Recurse | Rename-Item -NewName {"2017-01-10-" + $_.name}
-```
-
-This command shows how to prefix ( or suffix for that matter; use your imagination) a specific string to each entry supplied to Rename-Item commandlet.
 
 ## PARAMETERS
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a PSCredential object, such as one generated by the Get-Credential cmdlet.
-If you type a user name, you will be prompted for a password.
+Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the `Get-Credential` cmdlet.
+If you type a user name, you are prompted for a password.
 
-This parameter is not supported by any providers installed with Windows PowerShell.
+> [!WARNING]
+> This parameter is not supported by any providers installed with Windows PowerShell.
 
 ```yaml
 Type: PSCredential
@@ -124,11 +124,13 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Allows the cmdlet to rename items that cannot otherwise be changed, such as hidden or read-only files or read-only aliases or variables.
+
+Forces the cmdlet to rename items that cannot otherwise be changed, such as hidden or read-only files or read-only aliases or variables.
 The cmdlet cannot change constant aliases or variables.
 Implementation varies from provider to provider.
-For more information, see about_Providers.
-Even using the Force parameter, the cmdlet cannot override security restrictions.
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+Even using the **Force** parameter, the cmdlet cannot override security restrictions.
 
 ```yaml
 Type: SwitchParameter
@@ -143,12 +145,12 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies the path to the item to rename.
 
+Specifies the path of the item to rename.
 Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
@@ -163,15 +165,15 @@ Accept wildcard characters: False
 ```
 
 ### -NewName
+
 Specifies the new name of the item.
 Enter only a name, not a path and name.
-If you enter a path that is different from the path that is specified in the Path parameter, Rename-Item generates an error.
-To rename and move an item, use the Move-Item cmdlet.
+If you enter a path that differs from the path that is specified in the *Path* parameter, `Rename-Item` generates an error.
+To rename and move an item, use `Move-Item`.
 
-You cannot use wildcard characters in the value of NewName.
-To specify a name for multiple files, use the Replace operator in a regular expression.
-For more information about the Replace operator, type "get-help about_comparison_operators".
-For a demonstration, see the examples.
+You cannot use wildcard characters in the value of the *NewName* parameter.
+To specify a name for multiple files, use the **Replace** operator in a regular expression.
+For more information about the Replace operator, see [about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md).
 
 ```yaml
 Type: String
@@ -186,7 +188,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Passes an object representing the item to the pipeline.
+
+Returns an object that represents the item to the pipeline.
 By default, this cmdlet does not generate any output.
 
 ```yaml
@@ -202,7 +205,8 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path to the item to rename.
+
+Specifies the path of the item to rename.
 
 ```yaml
 Type: String
@@ -217,6 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -232,6 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -248,9 +254,10 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see about_Transactions.
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: SwitchParameter
@@ -265,20 +272,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains a path to Rename-Item.
+
+You can pipe a string that contains a path to this cmdlet.
+
 ## OUTPUTS
 
-### None or an object representing the renamed item.
-When you use the Passthru parameter, Rename-Item generates an object representing the renamed item.
-Otherwise, this cmdlet does not generate any output.
-## NOTES
-* The Rename-Item cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type "Get-PsProvider". For more information, see about_Providers.
+### None or an object that represents the renamed item.
 
-*
+This cmdlet generates an object that represents the renamed item, if you specify the *PassThru* parameter.
+Otherwise, this cmdlet does not generate any output.
+
+## NOTES
+
+`Rename-Item` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
 ## RELATED LINKS
 
 [Clear-Item](Clear-Item.md)
