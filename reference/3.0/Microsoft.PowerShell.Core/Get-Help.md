@@ -79,7 +79,7 @@ To download or update the help files for a module in Windows PowerShell 3.0, use
 
 You can also view the help topics for PowerShell online in the Microsoft Docs.
 To get the online version of a help topic, use the **Online** parameter, such as: `Get-Help Get-Process -Online`.
-To read all of the help topics, see [PowerShell Documentation](https://go.microsoft.com/fwlink/?LinkID=107116) in the Microsoft Docs.
+To read all of the help topics, see [PowerShell Documentation](../../docs-conceptual/PowerShell-Scripting.md) in the Microsoft Docs.
 
 If you type "Get-Help" followed by the exact name of a help topic, or by a word unique to a help topic, `Get-Help` displays the topic contents.
 If you enter a word or word pattern that appears in several help topic titles, `Get-Help` displays a list of the matching titles.
@@ -429,7 +429,7 @@ Displays the online version of a help topic in the default Internet browser.
 This parameter is valid only for cmdlet, function, workflow and script help topics.
 You cannot use the **Online** parameter in **Get-Help** commands in a remote session.
 
-For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and "Supporting Online Help" (http://go.microsoft.com/fwlink/?LinkID=242132), and [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
+For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and "Supporting Online Help" (http://go.microsoft.com/fwlink/?LinkID=242132), and [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx) in the MSDN library.
 
 ```yaml
 Type: SwitchParameter
@@ -535,7 +535,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -584,8 +584,6 @@ When the parameter name is used, the parameter can appear anywhere in the comman
   - Accepts wildcard characters: Indicates whether the value of a parameter can include wildcard characters, such as * and ?.
 
 ## RELATED LINKS
-
-[Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
 
 [about_Command_Syntax](About/about_Command_Syntax.md)
 

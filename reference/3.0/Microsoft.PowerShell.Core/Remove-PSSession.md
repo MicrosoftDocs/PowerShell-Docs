@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -273,7 +273,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -293,7 +293,7 @@ Remove-PSSession does not return any objects.
 
   A PSSession uses a persistent connection to a remote computer.
 Create a PSSession to run a series of commands that share data.
-For more information, see about_PSSessions.
+For more information, see [about_PSSessions](./About/about_PSSessions.md).
 
   PSSessions are specific to the current session.
 When you end a session, the PSSessions that you created in that session are forcibly closed.

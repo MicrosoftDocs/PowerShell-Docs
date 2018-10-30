@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -178,8 +178,8 @@ The command uses the **StartupScript** parameter to direct Windows PowerShell to
 The content of the specified script, Add-Profile.ps1, is also displayed.
 The script contains a single command that uses dot sourcing to run the user's **CurrentUserAllHosts** profile in the current scope of the session.
 
-For more information about profiles, see about_Profiles.
-For more information about dot sourcing, see about_Scopes.
+For more information about profiles, see [about_Profiles](./About/about_profiles.md).
+For more information about dot sourcing, see [about_Scopes](./About/about_scopes.md).
 
 ### Example 6
 
@@ -730,7 +730,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -770,7 +770,7 @@ You cannot pipe input to this cmdlet.
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
 
-[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
 
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
