@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -69,7 +69,7 @@ To get the results, use the Receive-Job cmdlet.
 
 A Windows PowerShell background job is a command that runs "in the background" without interacting with the current session.
 Typically, you use a background job to run a complex command that takes a long time to complete.
-For more information about background jobs in Windows PowerShell, see about_Jobs.
+For more information about background jobs in Windows PowerShell, see [about_Jobs](./About/about_Jobs.md).
 
 Beginning in Windows PowerShell 3.0, the **Get-Job** cmdlet also gets custom job types, such as workflow jobs and instances of scheduled jobs.
 To find the job type of a job, use the **PSJobTypeName** property of the job.
@@ -462,7 +462,7 @@ Gets only jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping.
 By default, **Get-Job** gets all the jobs in the current session.
 
-For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
+For more information about job states, see [JobState Enumeration](/dotnet/api/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
 Type: JobState
@@ -601,7 +601,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 

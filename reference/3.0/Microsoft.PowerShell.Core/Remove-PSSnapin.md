@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -148,14 +148,14 @@ However, if you use the PassThru parameter, it generates a System.Management.Aut
 
 ## NOTES
 
-- You can also refer to Remove-PSSnapin by its built-in alias, "rsnp". For more information, see about_Aliases.
+- You can also refer to Remove-PSSnapin by its built-in alias, "rsnp". For more information, see [about_Aliases](./About/about_Aliases.md).
 
   Remove-PSSnapin does not check the version of Windows PowerShell before removing a snap-in from the session.
 If a snap-in cannot be removed, a warning appears and the command fails.
 
   Remove-PSSnapin affects only the current session.
 If you have added an Add-PSSnapin command to your Windows PowerShell profile, you should delete the command to remove the snap-in from future sessions.
-For instructions, see about_Profiles.
+For instructions, see [about_Profiles](./About/about_profiles.md).
 
 - 
 

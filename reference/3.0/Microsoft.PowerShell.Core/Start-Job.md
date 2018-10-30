@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -55,10 +55,10 @@ You can continue to work in the session without interruption while the job runs.
 
 The job object contains useful information about the job, but it does not contain the job results.
 When the job completes, use the Receive-Job cmdlet to get the results of the job.
-For more information about background jobs, see about_Jobs.
+For more information about background jobs, see [about_Jobs](./About/about_Jobs.md).
 
 To run a background job on a remote computer, use the AsJob parameter that is available on many cmdlets, or use the Invoke-Command cmdlet to run a **Start-Job** command on the remote computer.
-For more information, see about_Remote_Jobs.
+For more information, see [about_Remote_Jobs](./About/about_Remote_Jobs.md).
 
 Beginning in Windows PowerShell 3.0, **Start-Job** can start instances of custom job types, such as scheduled jobs.
 For information about using **Start-Job** to start jobs with custom types, see the help topics for the job type feature.
@@ -206,7 +206,7 @@ The default value is **Default**.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -407,7 +407,7 @@ Use this parameter to start custom job types that have a definition name, such a
 When you use **Start-Job** to start an instance of a scheduled job, the job starts immediately, regardless of job triggers or job options.
 The resulting job instance is a scheduled job, but it is not saved to disk like triggered scheduled jobs.
 Also, you cannot use the **ArgumentList** parameter of **Start-Job** to provide values for parameters of scripts that run in a scheduled job.
-For more information, see about_Scheduled_Jobs.
+For more information, see [about_Scheduled_Jobs](../PSScheduledJob/About/about_Scheduled_Jobs.md).
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -468,7 +468,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 

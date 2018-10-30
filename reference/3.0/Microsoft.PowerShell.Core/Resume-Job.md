@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -53,7 +53,7 @@ Resume-Job [-Wait] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters
 
 ## DESCRIPTION
 
-The **Resume-Job** cmdlet resumes a workflow job that was suspended, such as by using the Suspend-Job cmdlet or the about_Suspend-Workflow activity.
+The **Resume-Job** cmdlet resumes a workflow job that was suspended, such as by using the Suspend-Job cmdlet or the [about_Suspend-Workflow](../PSWorkflow/About/about_Suspend-Workflow.md) activity.
 When a workflow job is resumed, the job engine reconstructs the state, metadata, and output from saved resources, such as checkpoints, so the job is restarted without any loss of state or data.
 The job state is changed from **Suspended** to **Running**.
 
@@ -189,7 +189,7 @@ The Resume-Job cmdlet lets you resume a workflow job that was suspend by using t
 This activity suspends a workflow from within a workflow.
 It is valid only in workflows.
 
-For information about the Suspend-Workflow, see about_Suspend-Workflow.
+For information about the Suspend-Workflow, see [about_Suspend-Workflow](../PSWorkflow/About/about_Suspend-Workflow.md).
 
 ## PARAMETERS
 
@@ -292,7 +292,7 @@ Accept wildcard characters: False
 Resumes only those jobs in the specified state.
 Valid values are NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, and Stopping, but **Resume-Job** resumes only jobs in the **Suspended** state.
 
-For more information about job states, see [JobState Enumeration](https://msdn.microsoft.com/library/system.management.automation.jobstate) in the MSDN library.
+For more information about job states, see [JobState Enumeration](/dotnet/api/system.management.automation.jobstate) in the MSDN library.
 
 ```yaml
 Type: JobState
@@ -358,7 +358,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 

@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -211,7 +211,7 @@ This example shows how to use the **ApplicationArguments** parameter of the **Ne
 
 The first command creates a hash table with two keys, Team and Use.
 The command saves the hash table in the $team variable.
-(For more information about hash tables, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175).)
+(For more information about hash tables, see [about_Hash_Tables](./About/about_Hash_Tables.md).)
 
 The second command uses the **ApplicationArguments** parameter of the **New-PSSessionOption** cmdlet to create a session option object that contains the data in the $team variable.
 The command saves the session option object in the $teamOption variable.
@@ -239,7 +239,7 @@ You can use this parameter to send data to the remote session.
 A primitive dictionary is like a hash table, but it contains keys that are case-insensitive strings and values that can be serialized and deserialized during Windows PowerShell remoting handshakes.
 If you enter a hash table for the value of this parameter, Windows PowerShell converts it to a primitive dictionary.
 
-For more information, see about_Hash_Tables (http://go.microsoft.com/fwlink/?LinkID=135175), [about_Session_Configurations](About/about_Session_Configurations.md), and about_Automatic_Variables (http://go.microsoft.com/fwlink/?LinkID=113212).
+For more information, see [about_Hash_Tables](./About/about_Hash_Tables.md), [about_Session_Configurations](About/about_Session_Configurations.md), and [about_Automatic_Variables](./About/about_Automatic_Variables.md).
 
 ```yaml
 Type: PSPrimitiveDictionary
@@ -522,7 +522,7 @@ Determines which mechanism is used to resolve the host name.
 Valid values are **IEConfig**, **WinHttpConfig**, **AutoDetect**, **NoProxyServer** and **None**.
 The default value is **None**.
 
-For information about the values of this parameter, see [ProxyAccessType Enumeration](https://msdn.microsoft.com/library/system.management.automation.remoting.proxyaccesstype) in the MSDN library.
+For information about the values of this parameter, see [ProxyAccessType Enumeration](/dotnet/api/system.management.automation.remoting.proxyaccesstype) in the MSDN library.
 
 ```yaml
 Type: ProxyAccessType
@@ -542,7 +542,7 @@ Specifies the authentication method that is used for proxy resolution.
 Valid values are **Basic**, **Digest**, and **Negotiate**.
 The default value is **Negotiate**.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 ```yaml
 Type: AuthenticationMechanism
@@ -673,7 +673,7 @@ For example, an IIS application that allows Kerberos authentication can require 
 In such cases, Windows PowerShell remoting cannot use Kerberos to authenticate because it requires an SPN that is registered to the computer account.
 To resolve this problem, administrators can create different SPNs (such as by using Setspn.exe) that are registered to different user accounts and can distinguish between them by including the port number in the SPN.
 
-For more information about Setspn.exe, see [Setspn Overview](https://go.microsoft.com/fwlink/?LinkID=189413).
+For more information about Setspn.exe, see [Setspn Overview](/previous-versions/windows/it-pro/windows-server-2003/cc773257(v=ws.10)).
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -691,7 +691,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 

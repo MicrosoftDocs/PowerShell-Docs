@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -179,7 +179,7 @@ This cmdlet does not return any output.
 
 ## NOTES
 
-- Set-StrictMode is similar to the Strict parameter of Set-PSDebug. "Set-Strictmode -version 1" is equivalent to "Set-PSDebug -strict", except that Set-PSDebug is effective in all scopes. Set-StrictMode is effective only in the scope in which it is set and in its child scopes. For more information about scopes in Windows PowerShell, see about_Scopes.
+- Set-StrictMode is similar to the Strict parameter of Set-PSDebug. "Set-Strictmode -version 1" is equivalent to "Set-PSDebug -strict", except that Set-PSDebug is effective in all scopes. Set-StrictMode is effective only in the scope in which it is set and in its child scopes. For more information about scopes in Windows PowerShell, see [about_Scopes](./About/about_scopes.md).
 
 - 
 
