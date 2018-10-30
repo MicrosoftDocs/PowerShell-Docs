@@ -218,7 +218,7 @@ For that reason, we do not support the PowerShell Gallery as a testing target, a
 ## Use PowerShellGet to publish
 
 It is strongly recommended that publishers use the Publish-Module and Publish-Script cmdlets when working with the PowerShell Gallery.
-PowerShellGet has been created to help you avoid remembering important details about installing from an <!-- Missing word --> publishing to the PowerShell Gallery.
+PowerShellGet has been created to help you avoid remembering important details about installing from and publishing to the PowerShell Gallery.
 On occasion, publishers have chosen to skip PowerShellGet and use the NuGet client, or PackageManagement cmdlets, instead of Publish-Module.
 There are a number of details that are easily missed, which results in a variety of support requests.
 
