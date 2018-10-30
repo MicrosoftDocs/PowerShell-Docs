@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -201,7 +201,7 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
-- The session history is a list of the commands entered during the session. You can view the history, add and delete commands, and run commands from the history. For more information, see about_History.
+- The session history is a list of the commands entered during the session. You can view the history, add and delete commands, and run commands from the history. For more information, see [about_History](./About/about_History.md).
 
   Deleting a command from the history does not change the history IDs of the remaining items in the command history.
 

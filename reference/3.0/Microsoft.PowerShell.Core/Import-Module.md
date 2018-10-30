@@ -743,7 +743,7 @@ By default, `Import-Module` imports all exported module commands.
 
 Commands with the same names can hide or replace commands in the session.
 To avoid command name conflicts in a session, use the `Prefix` or `NoClobber` parameters.
-For more information about name conflicts and command precedence, see "Modules and Name Conflicts" in about_Modules and about_Command_Precedence.
+For more information about name conflicts and command precedence, see "Modules and Name Conflicts" in [about_Modules](./About/about_Modules.md) and [about_Command_Precedence](./About/about_Command_Precedence.md).
 
 This parameter was added in Windows PowerShell 3.0.
 
