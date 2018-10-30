@@ -251,8 +251,7 @@ Param(
 ```
 
 > [!NOTE]
-> A parameter that accepts pipeline input (`by Value`) will enable use of
-> **delay-bind** script blocks on all other parameters defined to accept
+> A parameter that accepts pipeline input (`by Value`) enables you to use **delay-bind** script blocks on all other parameters defined to accept
 > pipeline input. The **delay-bind** script block is run automatically during
 > ParameterBinding. The result is bound to the parameter. Delay binding
 > does **not** work for parameters defined as type `System.Object`, the
@@ -586,9 +585,9 @@ The `ValidateNotNull` attribute specifies that the parameter value cannot be
 `$null`. PowerShell generates an error if the parameter value is `$null`.
 
 The `ValidateNotNull` attribute is designed to be used when the type of the
-parameter value is not specified or when the specified type will accept a
-value of `$null`. (If you specify a type that will not accept a `$null` value,
-such as a string, the `$null` value will be rejected without the
+parameter value is not specified or when the specified type accepts a
+value of `$null`. (If you specify a type that does not accept a `$null` value,
+such as a string, the `$null` value is rejected without the
 `ValidateNotNull` attribute, because it does not match the specified type.)
 
 In the following example, the value of the `ID` parameter cannot be `$null`.
