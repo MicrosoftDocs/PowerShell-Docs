@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date:  10/30/2018
 keywords:  dsc,powershell,configuration,setup
 title:  Troubleshooting DSC
 ---
@@ -578,7 +578,7 @@ ConfigurationID                :
 ConfigurationMode              : ApplyAndMonitor
 ConfigurationModeFrequencyMins : 30
 Credential                     :
-DebugMode                      : False
+DebugMode                      : {None}
 DownloadManagerCustomData      :
 DownloadManagerName            :
 LocalConfigurationManagerState : Ready
@@ -588,7 +588,7 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-You can see that `DebugMode` is set to **FALSE**.
+You can see that `DebugMode` is set to **"None"**.
 
 To set up the `DebugMode` demonstration, use the following PowerShell resource:
 
@@ -680,12 +680,12 @@ This script generates a random number and updates the provider code accordingly.
 set to false, the contents of the file "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**"
 are never changed.
 
-Now, set `DebugMode` to **TRUE** in your configuration script:
+Now, set `DebugMode` to **"ForceModuleImport"** in your configuration script:
 
 ```powershell
 LocalConfigurationManager
 {
-    DebugMode = $true
+    DebugMode = "ForceModuleImport"
 }
 ```
 
