@@ -334,7 +334,7 @@ To view the default module locations, type:
 $Env:PSModulePath
 ```
 
-To add a default module location, use the following command format.
+To add a default module location on Windows, use the following command format:
 
 ```powershell
 $Env:PSModulePath = $Env:PSModulePath + ";<path>"
@@ -349,12 +349,28 @@ For example, to add the "C:\ps-test\Modules" directory, type:
 $Env:PSModulePath + ";C:\ps-test\Modules"
 ```
 
+To add a default module location on Linux or MacOS, use the following command format:
+
+```powershell
+$Env:PSModulePath = $Env:PSModulePath + ":<path>"
+```
+
+For example, to add the "/usr/local/Fabrikam/Modules" directory to
+the value of the PSModulePath environment variable, type:
+
+```powershell
+$Env:PSModulePath = $Env:PSModulePath + ":/usr/local/Fabrikam/Modules"
+```
+
+On Linux or MacOS, the colon (:) in the command separates the new path from the path that
+precedes it in the list.
+
 When you add a path to PSModulePath, `Get-Module` and `Import-Module`
 commands include modules in that path.
 
 The value that you set affects only the current session. To make the
 change persistent, add the command to your PowerShell profile
-or use System in Control Panel to change the value of the PSModulePath
+or, on Windows, use System in Control Panel to change the value of the PSModulePath
 environment variable in the registry.
 
 Also, to make the change persistent, you can also use the
