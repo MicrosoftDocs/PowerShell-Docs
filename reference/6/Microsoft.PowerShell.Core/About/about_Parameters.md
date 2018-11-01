@@ -220,7 +220,7 @@ a property called **"Name"**.
 > does **not** work for parameters defined as type `System.Object`, the
 > script block is passed through **without** being invoked.
 >
-> You can read about **delay-bind** script blocks here [about_Script_Blocks.md](about_Script_Blocks.md)
+> You can read about **delay-bind** script blocks here [about_Script_Blocks](about_Script_Blocks.md)
 
 #### Accepts Wildcard Characters
 
