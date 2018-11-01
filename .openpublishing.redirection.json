@@ -2510,37 +2510,37 @@
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/provider/new-item-for-clientcertificate.md",
+            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/providers/new-item-for-clientcertificate.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_WSMan_Provider?view=3.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/provider/new-item-for-initializationparameters.md",
+            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/providers/new-item-for-initializationparameters.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_WSMan_Provider?view=3.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/provider/new-item-for-listener.md",
+            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/providers/new-item-for-listener.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_WSMan_Provider?view=3.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/provider/new-item-for-plugin.md",
+            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/providers/new-item-for-plugin.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_WSMan_Provider?view=3.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/provider/new-item-for-resources.md",
+            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/providers/new-item-for-resources.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_WSMan_Provider?view=3.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/provider/new-item-for-security.md",
+            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/providers/new-item-for-security.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_WSMan_Provider?view=3.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/provider/wsman-provider.md",
+            "source_path": "reference/virtual-directory-module/3.0/Microsoft.WsMan.Management/providers/wsman-provider.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_WSMan_Provider?view=3.0",
             "redirect_document_id": "False"
         },
@@ -4775,32 +4775,32 @@
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/provider/new-item-for-clientcertificate.md",
+            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/providers/new-item-for-clientcertificate.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-4.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/provider/new-item-for-initializationparameters.md",
+            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/providers/new-item-for-initializationparameters.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-4.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/provider/new-item-for-listener.md",
+            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/providers/new-item-for-listener.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-4.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/provider/new-item-for-plugin.md",
+            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/providers/new-item-for-plugin.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-4.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/provider/new-item-for-resources.md",
+            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/providers/new-item-for-resources.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-4.0",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/provider/new-item-for-security.md",
+            "source_path": "reference/virtual-directory-module/4.0/Microsoft.WsMan.Management/providers/new-item-for-security.md",
             "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-4.0",
             "redirect_document_id": "False"
         },
@@ -14885,132 +14885,132 @@
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/FileSystem-Provider/Add-Content-for-FileSystem.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/FileSystem-Provider/Add-Content-for-FileSystem.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_FileSystem_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/FileSystem-Provider/Clear-Content-for-FileSystem.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/FileSystem-Provider/Clear-Content-for-FileSystem.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_FileSystem_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/FileSystem-Provider/Get-ChildItem-for-FileSystem.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/FileSystem-Provider/Get-ChildItem-for-FileSystem.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_FileSystem_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/FileSystem-Provider/Get-Content-for-FileSystem.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/FileSystem-Provider/Get-Content-for-FileSystem.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_FileSystem_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/FileSystem-Provider/Get-Item-for-FileSystem.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/FileSystem-Provider/Get-Item-for-FileSystem.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_FileSystem_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/FileSystem-Provider/Remove-Item-for-FileSystem.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/FileSystem-Provider/Remove-Item-for-FileSystem.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_FileSystem_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/FileSystem-Provider/Set-Content-for-FileSystem.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/FileSystem-Provider/Set-Content-for-FileSystem.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_FileSystem_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/FileSystem-Provider/Test-Path-for-FileSystem.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/FileSystem-Provider/Test-Path-for-FileSystem.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_FileSystem_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/About/get-childitem-for-certificate.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/Providers/get-childitem-for-certificate.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/About/about_Certificate_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/About/move-item-for-certificate.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/Providers/move-item-for-certificate.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/About/about_Certificate_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/About/new-item-for-certificate.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/Providers/new-item-for-certificate.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/About/about_Certificate_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/About/remove-item-for-certificate.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/Providers/remove-item-for-certificate.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/About/about_Certificate_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/About/New-Item-for-ClientCertificate.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/Providers/New-Item-for-ClientCertificate.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/About/about_Certificate_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/About/New-Item-for-InitializationParameters.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/Providers/New-Item-for-InitializationParameters.md",
             "redirect_url": "/powershell/module/Microsoft.WSMan.Management/About/about_WSMan_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/About/New-Item-for-Listener.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/Providers/New-Item-for-Listener.md",
             "redirect_url": "/powershell/module/Microsoft.WSMan.Management/About/about_WSMan_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/About/New-Item-for-Plugin.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/Providers/New-Item-for-Plugin.md",
             "redirect_url": "/powershell/module/Microsoft.WSMan.Management/About/about_WSMan_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/About/New-Item-for-Resources.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/Providers/New-Item-for-Resources.md",
             "redirect_url": "/powershell/module/Microsoft.WSMan.Management/About/about_WSMan_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/About/New-Item-for-Security.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/Providers/New-Item-for-Security.md",
             "redirect_url": "/powershell/module/Microsoft.WSMan.Management/About/about_WSMan_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/Alias-Provider.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/Alias-Provider.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_Alias_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/Environment-Provider.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/Environment-Provider.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_Environment_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/FileSystem-Provider.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/FileSystem-Provider.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_FileSystem_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/Function-Provider.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/Function-Provider.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_Function_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/Registry-Provider.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/Registry-Provider.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_Registry_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/About/Variable-Provider.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Core/Providers/Variable-Provider.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_Variable_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/About/Certificate-Provider.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.PowerShell.Security/Providers/Certificate-Provider.md",
             "redirect_url": "/powershell/module/Microsoft.PowerShell.Security/About/about_Certificate_Provider",
             "redirect_document_id": "False"
         },
         {
-            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/About/WSMan-Provider.md",
+            "source_path": "reference/virtual-directory-module/Microsoft.WSMan.Management/Providers/WSMan-Provider.md",
             "redirect_url": "/powershell/module/Microsoft.WSMan.Management/About/about_WSMan_Provider",
             "redirect_document_id": "False"
         }
