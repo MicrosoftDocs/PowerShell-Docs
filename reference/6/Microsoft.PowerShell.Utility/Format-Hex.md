@@ -31,14 +31,13 @@ Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonPara
 ### ByInputObject
 
 ```
-Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
+Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **Format-Hex** cmdlet displays a file or other input as hexadecimal values. To determine the
-offset of a character from the output, add the number at the leftmost of the row to the number at
-the top of the column for that character.
+The **Format-Hex** cmdlet displays a file or other input as hexadecimal values.
+To determine the offset of a character from the output, add the number at the leftmost of the row to the number at the top of the column for that character.
 
 This cmdlet can help you determine the file type of a corrupted file or a file which may not have a file name extension.
 Run this cmdlet, and then inspect the results for file information.
@@ -103,9 +102,10 @@ The acceptable values for this parameter are:
 The default value is Unicode.
 
 ```yaml
-Type: Encoding
+Type: String
 Parameter Sets: ByInputObject
 Aliases:
+Accepted values: Ascii, UTF32, UTF7, UTF8, BigEndianUnicode, Unicode
 
 Required: False
 Position: Named
@@ -120,7 +120,7 @@ Specifies the objects to be formatted.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: Object
 Parameter Sets: ByInputObject
 Aliases:
 
@@ -214,7 +214,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Int64.MaxValue
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
