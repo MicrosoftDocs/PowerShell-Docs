@@ -1,44 +1,39 @@
 ---
-ms.date:  11/02/2018
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821773
-external help file:  Microsoft.PowerShell.Utility-help.xml
-title:  Format-Hex
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821773
+schema: 2.0.0
+title: Format-Hex
 ---
 
 # Format-Hex
 
 ## SYNOPSIS
-
 Displays a file or other input as hexadecimal.
 
 ## SYNTAX
 
-### Path (Default)
-
+### Path
 ```
-Format-Hex [-Path] <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
+Format-Hex [-Path] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
-
 ```
-Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
+Format-Hex -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByInputObject
-
 ```
-Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
+Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Raw] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-
-The **Format-Hex** cmdlet displays a file or other input as hexadecimal values. To determine the
-offset of a character from the output, add the number at the leftmost of the row to the number at
-the top of the column for that character.
+The **Format-Hex** cmdlet displays a file or other input as hexadecimal values.
+To determine the offset of a character from the output, add the number at the leftmost of the row to the number at the top of the column for that character.
 
 This cmdlet can help you determine the file type of a corrupted file or a file which may not have a file name extension.
 Run this cmdlet, and then inspect the results for file information.
@@ -46,50 +41,32 @@ Run this cmdlet, and then inspect the results for file information.
 ## EXAMPLES
 
 ### Example 1: Get the hexadecimal representation of a string
-
 ```
 PS C:\> "Hello World" | Format-Hex
+           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
-
-                       00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
-
-00000000000000000000   48 65 6C 6C 6F 20 57 6F 72 6C 64                 Hello World
+00000000   48 65 6C 6C 6F 20 57 6F 72 6C 64                 Hello World
 ```
 
 This command returns the hexadecimal representation of the string Hello World.
 
-### Example 2: Get the hexadecimal representation of a string with offset and count
-
+### Example 2: Investigate a file type
 ```
-PS C:\> "Hello World, Goodbye!" | Format-Hex -Offset 6 -Count 5
+PS C:\> Format-Hex -Path "C:\temp\temp.t7f"
+           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
-
-                       00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
-
-00000000000000000000   57 6F 72 6C 64                                   World
+00000000   25 50 44 46 2D 31 2E 35 0D 0A 25 B5 B5 B5 B5 0D  %PDF-1.5..%????.
+00000010   0A 31 20 30 20 6F 62 6A 0D 0A 3C 3C 2F 54 79 70  .1 0 obj..<</Typ
+00000020   65 2F 43 61 74 61 6C 6F 67 2F 50 61 67 65 73 20  e/Catalog/Pages
 ```
 
-### Example 3: Get the hexadecimal representation of a file
-
-```
-PS C:\> Format-Hex -Path .\README.md -Count 67
-
-
-                       Path: C:\README.md
-
-                       00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
-
-00000000000000000000   23 20 21 5B 6C 6F 67 6F 5D 5B 5D 20 50 6F 77 65  # ![logo][] Powe
-00000000000000000010   72 53 68 65 6C 6C 0A 0A 57 65 6C 63 6F 6D 65 20  rShell..Welcome
-00000000000000000020   74 6F 20 74 68 65 20 50 6F 77 65 72 53 68 65 6C  to the PowerShel
-00000000000000000030   6C 20 47 69 74 48 75 62 20 43 6F 6D 6D 75 6E 69  l GitHub Communi
-00000000000000000040   74 79 21                                         ty!
-```
+This command converts the file that is named temp.t7f to hexadecimal.
+In this example, a file that has the unfamiliar file name extension .t7f is actually a PDF file.
+The first few bytes of the header contain that information.
 
 ## PARAMETERS
 
 ### -Encoding
-
 Specifies the type of character encoding used in the file that this cmdlet formats as hexadecimal.
 The acceptable values for this parameter are:
 
@@ -115,7 +92,6 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-
 Specifies the objects to be formatted.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
@@ -132,7 +108,6 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-
 Specifies an array of literal paths of items.
 This parameter does not accept wildcard characters.
 To use wildcard characters, specify the *Path* parameter instead.
@@ -154,7 +129,6 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-
 Specifies an array of paths of items.
 This cmdlet returns a hexadecimal representation of the items that this parameter specifies.
 
@@ -187,52 +161,47 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Offset
-
-This represents the number of bytes to skip from being part of the hex output.
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: Int64
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-
-This represents the number of bytes to include in the hex output.
+### -WhatIf
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: Int64
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: wi
 
 Required: False
 Position: Named
-Default value: Int64.MaxValue
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
-
 You can pipe a string to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.ByteCollection
-
 This cmdlet returns a **ByteCollection**.
 This object represents a collection of bytes.
 It includes methods that convert the collection of bytes to a string formatted like each line of output returned by **Format-Hex**.
