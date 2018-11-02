@@ -37,7 +37,7 @@ Set-Location [-PassThru] [-StackName <String>] [<CommonParameters>]
 ## DESCRIPTION
 
 The `Set-Location` cmdlet sets the working location to a specified location.
-That location could be a directory, a sub-directory, a registry location, or
+That location could be a directory, a subdirectory, a registry location, or
 any provider path.
 
 You can also use the **StackName** parameter to make a named location stack the
@@ -107,6 +107,13 @@ If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell PowerShell not to interpret any characters as escape
 sequences.
 
+If the path is the `-` character, then the new working location will be the
+previous working location in history (if it exists).
+This is equivalent to using `Pop-Location` as if `Push-Location` had been
+executed prior.
+Similarly, if the path is the `+` character, then the new working location will
+be the next working location in history (if it exists).
+
 ```yaml
 Type: String
 Parameter Sets: LiteralPath
@@ -142,6 +149,12 @@ Accept wildcard characters: False
 Specify the path of a new working location.
 If no path is provided, `Set-Location` will default to the current user's home
 directory.
+If the path is the `-` character, then the new working location will be the
+previous working location in history (if it exists).
+This is equivalent to using `Pop-Location` as if `Push-Location` had been
+executed prior.
+Similarly, if the path is the `+` character, then the new working location will
+be the next working location in history (if it exists).
 
 ```yaml
 Type: String
