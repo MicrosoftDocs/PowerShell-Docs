@@ -22,6 +22,7 @@ pwsh starts a PowerShell session.
 ```
 pwsh[.exe]
 [-Version]
+[-ConfigurationName]
 [-EncodedCommand <Base64EncodedCommand>]
 [-ExecutionPolicy <ExecutionPolicy>]
 [-InputFormat {Text | XML}]
@@ -30,6 +31,7 @@ pwsh[.exe]
 [-NonInteractive]
 [-NoProfile]
 [-OutputFormat {Text | XML}]
+[-SettingsFile <SettingFilePath>]
 [-WindowStyle <style>]
 [-WorkingDirectory <DirectoryPath>]
 [-File <FilePath> [<Args>]]
@@ -43,6 +45,12 @@ pwsh[.exe] -Help | -? | /?
 #### -Version
 
 Displays the version of PowerShell. Additional parameters are ignored.
+
+#### -ConfigurationName <ConfigurationName>
+
+Specifies a configuration endpoint in which PowerShell is run.
+This can be any endpoint registered on the local machine including the default PowerShell
+remoting endpoints or a custom endpoint having specific user role capabilities.
 
 #### -EncodedCommand <Base64EncodedCommand>
 
@@ -103,6 +111,15 @@ Does not load the PowerShell profile.
 Determines how output from PowerShell is formatted. Valid values are "Text"
 (text strings) or "XML" (serialized CLIXML format).
 
+#### -SettingsFile <SettingsFilePath>
+
+Overrides the system-wide `powershell.config.json` settings file for the session.
+By default, system-wide settings are read from the `powershell.config.json`
+in the `$PSHOME` directory.
+
+Note that these settings are not used by the endpoint specified
+by the `-ConfigurationName` argument.
+
 #### -WindowStyle <Window style>
 
 Sets the window style for the session. Valid values are Normal, Minimized,
@@ -162,4 +179,10 @@ pwsh -Command Get-Command -Name Get-Item
 
 # Example starting in another working directory
 pwsh -WorkingDirectory ~/Downloads
+
+# Example specifying a custom settings file
+pwsh -SettingsFile ~/powershell.config.json
+
+# Example of specifying a configuration name
+pwsh -ConfigurationName AdminRoles
 ```
