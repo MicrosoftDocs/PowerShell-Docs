@@ -104,7 +104,7 @@ Special operators have specific use-cases that do not fit into any other
 operator group. For example, special operators allow you to
 run commands, change a value's data type, or retrieve elements from an array.
 
-`@( )` Array subexpression operator
+#### Array subexpression operator `@( )`
 
 Returns the result of one or more statements as an array. If there is only
 one item, the array has only one member.
@@ -113,7 +113,7 @@ one item, the array has only one member.
 @(Get-WmiObject win32_logicalDisk)
 ```
 
-`&` Call operator
+#### Call operator `&`
 
 Runs a command, script, or script block. The call operator, also known as the
 "invocation operator," lets you run commands that are stored in variables and
@@ -191,7 +191,7 @@ Hello World!
 
 For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 
-`&` Ampersand background operator
+#### Ampersand background operator `&`
 
 Runs the pipeline before it in a PowerShell job.
 The ampersand background operator acts similarly to the UNIX "ampersand operator"
@@ -244,7 +244,7 @@ Remove-Job $job
 
 For more information on PowerShell jobs, see [about_Jobs](about_Jobs.md).
 
-`[ ]` Cast operator
+#### Cast operator `[ ]`
 
 Converts or limits objects to the specified type. If the objects cannot be
 converted, PowerShell generates an error.
@@ -254,7 +254,7 @@ converted, PowerShell generates an error.
 [int64]$a = 34
 ```
 
-`,` Comma operator
+#### Comma operator `,`
 
 As a binary operator, the comma creates an array. As a unary operator, the
 comma creates an array with one member. Place the comma before the member.
@@ -264,7 +264,7 @@ $myArray = 1,2,3
 $SingleArray = ,1
 ```
 
-`.` Dot sourcing operator
+#### Dot sourcing operator `.`
 
 Runs a script in the current scope so that any functions, aliases, and
 variables that the script creates are added to the current scope.
@@ -285,7 +285,7 @@ run in the current scope.
 . .\sample.ps1
 ```
 
-`-f` Format operator
+#### Format operator `-f`
 
 Formats strings by using the format method of string objects. Enter the
 format string on the left side of the operator and the objects to be
@@ -302,7 +302,7 @@ formatted on the right side of the operator.
 For more information, see the [String.Format](/dotnet/api/system.string.format)
 method and [Composite Formatting](/dotnet/standard/base-types/composite-formatting).
 
-`[ ]` Index operator
+#### Index operator `[ ]`
 
 Selects objects from indexed collections, such as arrays and hash tables.
 Array indexes are zero-based, so the first object is indexed as `[0]`. For
@@ -341,7 +341,7 @@ intro
 Once upon a time...
 ```
 
-`|` Pipeline operator
+#### Pipeline operator `|`
 
 Sends ("pipes") the output of the command that precedes it to the command
 that follows it. When the output includes more than one object (a
@@ -352,7 +352,7 @@ Get-Process | Get-Member
 Get-PSSnapin | Where-Object {$_.vendor -ne "Microsoft"}
 ```
 
-`.` Property dereferences operator
+#### Property dereferences operator `.`
 
 Accesses the properties and methods of an object.
 
@@ -361,7 +361,7 @@ $myProcess.peakWorkingSet
 (Get-Process PowerShell).kill()
 ```
 
-`..` Range operator
+#### Range operator `..`
 
 Represents the sequential integers in an integer array, given an upper, and
 lower boundary.
@@ -372,7 +372,7 @@ lower boundary.
 foreach ($a in 1..$max) {Write-Host $a}
 ```
 
-`::` Static member operator
+#### Static member operator `::`
 
 Calls the static properties operator and methods of a .NET Framework class.
 To find the static properties and methods of an object, use the Static
@@ -382,7 +382,7 @@ parameter of the `Get-Member` cmdlet.
 [datetime]::now
 ```
 
-`$( )` Subexpression operator
+#### Subexpression operator `$( )`
 
 Returns the result of one or more statements. For a single result, returns
 a scalar. For multiple results, returns an array.
