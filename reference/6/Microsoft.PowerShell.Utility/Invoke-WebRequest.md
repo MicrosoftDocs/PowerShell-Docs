@@ -17,50 +17,56 @@ Gets content from a web page on the Internet.
 
 ### StandardMethod (Default)
 ```
-Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>]
- [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
- [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
- [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- [-Method <WebRequestMethod>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
- [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
- [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] [-Method <WebRequestMethod>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### StandardMethodNoProxy
 ```
-Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>]
- [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
- [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
- [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- [-Method <WebRequestMethod>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] [-Method <WebRequestMethod>] [-NoProxy] [-Body <Object>]
+ [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
+ [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### CustomMethod
 ```
-Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>]
- [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
- [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
- [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- -CustomMethod <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
- [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
- [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] -CustomMethod <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### CustomMethodNoProxy
 ```
-Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>]
- [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
- [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>]
- [-DisableKeepAlive] [-TimeoutSec <Int32>] [-Headers <IDictionary>] [-MaximumRedirection <Int32>]
- -CustomMethod <String> [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
+ [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] -CustomMethod <String> [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
+ [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ## DESCRIPTION
@@ -427,7 +433,7 @@ This feature was added in PowerShell 6.1.0.
 ```yaml
 Type: IDictionary
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -480,6 +486,23 @@ Accept wildcard characters: False
 Specifies how many times PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
 The default value is 5.
 A value of 0 (zero) prevents all redirection.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumRetryCount
+
+Specifies how many times PowerShell retries a connection when a failure code between 400 and 599, inclusive or 304 is received.
+Also see `-RetryIntervalSec` parameter for specifying number of retries.
 
 ```yaml
 Type: Int32
@@ -683,7 +706,24 @@ This feature was added in PowerShell 6.1.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RetryIntervalSec
+
+Specifies the interval between retries for the connection when a failure code between 400 and 599, inclusive or 304 is received.
+Also see `-MaximumRetryCount` parameter for specifying number of retries.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named

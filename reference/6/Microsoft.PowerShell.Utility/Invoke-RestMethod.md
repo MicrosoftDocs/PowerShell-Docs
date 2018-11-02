@@ -23,10 +23,11 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
+ [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
+ [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect]
+ [-SkipHeaderValidation]
 ```
 
 ### StandardMethodNoProxy
@@ -37,9 +38,10 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
- [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ### CustomMethod
@@ -50,10 +52,11 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
+ [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
+ [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-PreserveAuthorizationOnRedirect]
+ [-SkipHeaderValidation]
 ```
 
 ### CustomMethodNoProxy
@@ -64,9 +67,10 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
- [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-Resume] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
+ [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-RetryIntervalSec <Int32>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
 ```
 
 ## Description
@@ -529,6 +533,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MaximumRetryCount
+
+Specifies how many times PowerShell retries a connection when a failure code between 400 and 599, inclusive or 304 is received.
+Also see `-RetryIntervalSec` parameter for specifying number of retries.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Method
 Specifies the method used for the web request.
 The acceptable values for this parameter are:
@@ -737,6 +758,23 @@ This feature was added in PowerShell 6.1.0.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RetryIntervalSec
+
+Specifies the interval between retries for the connection when a failure code between 400 and 599, inclusive or 304 is received.
+Also see `-MaximumRetryCount` parameter for specifying number of retries.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
