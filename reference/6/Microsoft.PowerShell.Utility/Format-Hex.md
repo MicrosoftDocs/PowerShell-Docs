@@ -31,7 +31,7 @@ Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonPara
 ### ByInputObject
 
 ```
-Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
+Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,6 +73,7 @@ PS C:\> "Hello World, Goodbye!" | Format-Hex -Offset 6 -Count 5
 ```
 PS C:\> Format-Hex -Path .\README.md -Count 67
 
+
                        Path: C:\README.md
 
                        00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
@@ -101,9 +102,10 @@ The acceptable values for this parameter are:
 The default value is Unicode.
 
 ```yaml
-Type: Encoding
+Type: String
 Parameter Sets: ByInputObject
 Aliases:
+Accepted values: Ascii, UTF32, UTF7, UTF8, BigEndianUnicode, Unicode
 
 Required: False
 Position: Named
@@ -118,7 +120,7 @@ Specifies the objects to be formatted.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: Object
 Parameter Sets: ByInputObject
 Aliases:
 
