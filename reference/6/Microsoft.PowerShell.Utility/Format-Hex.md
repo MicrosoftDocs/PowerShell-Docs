@@ -31,7 +31,7 @@ Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonPara
 ### ByInputObject
 
 ```
-Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
+Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
