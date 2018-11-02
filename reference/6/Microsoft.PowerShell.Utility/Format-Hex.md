@@ -36,9 +36,8 @@ Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offs
 
 ## DESCRIPTION
 
-The **Format-Hex** cmdlet displays a file or other input as hexadecimal values. To determine the
-offset of a character from the output, add the number at the leftmost of the row to the number at
-the top of the column for that character.
+The **Format-Hex** cmdlet displays a file or other input as hexadecimal values.
+To determine the offset of a character from the output, add the number at the leftmost of the row to the number at the top of the column for that character.
 
 This cmdlet can help you determine the file type of a corrupted file or a file which may not have a file name extension.
 Run this cmdlet, and then inspect the results for file information.
@@ -73,7 +72,6 @@ PS C:\> "Hello World, Goodbye!" | Format-Hex -Offset 6 -Count 5
 
 ```
 PS C:\> Format-Hex -Path .\README.md -Count 67
-
 
                        Path: C:\README.md
 
