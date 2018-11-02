@@ -102,9 +102,10 @@ The acceptable values for this parameter are:
 The default value is Unicode.
 
 ```yaml
-Type: Encoding
+Type: String
 Parameter Sets: ByInputObject
 Aliases:
+Accepted values: Ascii, UTF32, UTF7, UTF8, BigEndianUnicode, Unicode
 
 Required: False
 Position: Named
@@ -119,7 +120,7 @@ Specifies the objects to be formatted.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
 ```yaml
-Type: PSObject
+Type: Object
 Parameter Sets: ByInputObject
 Aliases:
 
