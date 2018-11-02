@@ -249,4 +249,3 @@ If you specify the *Path* or *LiteralPath* parameter, the object also contains t
 [Format-Table](Format-Table.md)
 
 [Format-Wide](Format-Wide.md)
-0
