@@ -69,7 +69,7 @@ $job = Start-Job -ScriptBlock {Get-Process}
 ```
 
 You can also use the
-`&` ([ampersand background operator](about_Operators.md#special_operators))
+`&` ([ampersand background operator](about_Operators.md#special-operators))
 to start jobs.
 The following command is functionally equivalent to the command above.
 
