@@ -31,7 +31,7 @@ Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonPara
 ### ByInputObject
 
 ```
-Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
+Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,6 +72,7 @@ PS C:\> "Hello World, Goodbye!" | Format-Hex -Offset 6 -Count 5
 
 ```
 PS C:\> Format-Hex -Path .\README.md -Count 67
+
 
                        Path: C:\README.md
 
