@@ -11,11 +11,13 @@ title:  Invoke-WebRequest
 # Invoke-WebRequest
 
 ## SYNOPSIS
+
 Gets content from a web page on the Internet.
 
 ## SYNTAX
 
 ### StandardMethod (Default)
+
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
  [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
@@ -30,6 +32,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 ```
 
 ### StandardMethodNoProxy
+
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
  [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
@@ -43,6 +46,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 ```
 
 ### CustomMethod
+
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
  [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
@@ -57,6 +61,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 ```
 
 ### CustomMethodNoProxy
+
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>]
  [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
@@ -70,6 +75,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 ```
 
 ## DESCRIPTION
+
 The `Invoke-WebRequest` cmdlet sends HTTP and HTTPS requests to a web page or web service.
 It parses the response and returns collections of links, images, and other significant HTML elements.
 
@@ -78,6 +84,7 @@ This cmdlet was introduced in PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Use a stateful web service
+
 ```powershell
 $Body = @{
     User = 'jdoe'
@@ -102,8 +109,8 @@ The second call to `Invoke-WebRequest` fetches the user's profile which requires
 
 The call to `$ProfileResponse` by itself shows the `BasicHtmlWebResponseObject` in the variable.
 
-
 ### Example 2: Get links from a web page
+
 ```powershell
 (Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs").Links.Href
 ```
@@ -113,6 +120,7 @@ It uses the `Invoke-WebRequest` cmdlet to get the web page content.
 Then it users the **Links** property of the `BasicHtmlWebResponseObject` that `Invoke-WebRequest` returns, and the Href property of each link.
 
 ### Example 3: Writes the response content to a file using the encoding defined in the requested page.
+
 ```powershell
 $Response = Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs"
 $Stream = [System.IO.StreamWriter]::new('.\docspage.html', $false, $Response.Encoding)
@@ -158,6 +166,7 @@ $Response = Invoke-WebRequest -Body $MultipartContent -Method 'POST' -Uri 'https
 This example uses the `Invoke-WebRequest` cmdlet upload a file as a `multipart/form-data` submission. The file `c:\document.txt` will be submitted as the form field `document` with the `Content-Type` of `text/plain`.
 
 ### Example 5: Simplified Multipart/Form-Data Submission
+
 ```powershell
 $Uri = 'https://api.contoso.com/v2/profile'
 $Form = @{
@@ -194,9 +203,13 @@ once for each list item.
 ## PARAMETERS
 
 ### -AllowUnencryptedAuthentication
+
 Allows sending of credentials and secrets over unencrypted connections. By default, supplying **-Credential** or any **-Authentication** option with a **-Uri** that does not begin with `https://` will result in an error and the request will abort to prevent unintentionally communicating secrets in plain text over unencrypted connections. To override this behavior at your own risk, supply the **-AllowUnencryptedAuthentication** parameter.
 
-> **Warning**: Using this parameter is not secure and is not recommended. It is provided only for compatibility with legacy systems that cannot provide encrypted connections. Use at your own risk.
+> [!WARNING]
+> Using this parameter is not secure and is not recommended. It is provided only
+> for compatibility with legacy systems that cannot provide encrypted
+> connections. Use at your own risk.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -213,6 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the explicit authentication type to use for the request. The default is **None**. **-Authentication** cannot be used with **-UseDefaultCredentials**.
 
 Available Authentication Options:
@@ -240,6 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -Body
+
 Specifies the body of the request.
 The body is the content of the request that follows the headers.
 You can also pipe a body value to `Invoke-WebRequest`.
@@ -264,6 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -Certificate
+
 Specifies the client certificate that is used for a secure web request.
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
 
@@ -283,6 +299,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to send the request.
 Enter the certificate thumbprint of the certificate.
 
@@ -291,7 +308,8 @@ They can be mapped only to local user accounts; they do not work with domain acc
 
 To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the PowerShell `Cert:` drive.
 
-> Note: This feature is currently only supported on Windows OS platforms.
+> [!NOTE]
+> This feature is currently only supported on Windows OS platforms.
 
 ```yaml
 Type: String
@@ -306,6 +324,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentType
+
 Specifies the content type of the web request.
 
 If this parameter is omitted and the request method is POST, `Invoke-WebRequest` sets the content type to `application/x-www-form-urlencoded`.
@@ -326,6 +345,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to send the request.
 The default is the current user.
 
@@ -347,6 +367,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomMethod
+
 Specifies custom method used for the web request. This can be used with the Request Method required by the endpoint is not an available option on the **-Method**. **-Method** and **-CustomMethod** cannot be used together.
 
 Example:
@@ -372,6 +393,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableKeepAlive
+
 Indicates that the cmdlet sets the **KeepAlive** value in the HTTP header to False.
 By default, **KeepAlive** is True.
 **KeepAlive** establishes a persistent connection to the server to facilitate subsequent requests.
@@ -389,6 +411,7 @@ Accept wildcard characters: False
 ```
 
 ### -Form
+
 Converts a dictionary to a `multipart/form-data` submission.
 `-Form` may not be used with `-Body`.
 If `-ContentType` will be ignored.
@@ -443,6 +466,7 @@ Accept wildcard characters: False
 ```
 
 ### -Headers
+
 Specifies the headers of the web request.
 Enter a hash table or dictionary.
 
@@ -464,6 +488,7 @@ Accept wildcard characters: False
 ```
 
 ### -InFile
+
 Gets the content of the web request from a file.
 
 Enter a path and file name.
@@ -481,8 +506,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-
 ### -MaximumRedirection
+
 Specifies how many times PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
 The default value is 5.
 A value of 0 (zero) prevents all redirection.
@@ -517,6 +542,7 @@ Accept wildcard characters: False
 ```
 
 ### -Method
+
 Specifies the method used for the web request.
 The acceptable values for this parameter are:
 
@@ -547,6 +573,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoProxy
+
 Indicates that the cmdlet will not use a proxy to reach the destination.
 
 When you need to bypass the proxy configured in the environment, use this switch.
@@ -566,6 +593,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutFile
+
 Specifies the output file for which this cmdlet saves the response body.
 Enter a path and file name.
 If you omit the path, the default is the current location.
@@ -586,6 +614,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Indicates that the cmdlet returns the results, in addition to writing them to a file.
 This parameter is valid only when the **-OutFile** parameter is also used in the command.
 
@@ -602,6 +631,7 @@ Accept wildcard characters: False
 ```
 
 ### -PreserveAuthorizationOnRedirect
+
 Indicates the cmdlet should preserve the `Authorization` header, when present, across redirections.
 
 By default, the cmdlet strips the `Authorization` header before redirecting. Specifying this parameter disables this logic for cases where the header needs to be sent to the redirection location.
@@ -621,6 +651,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
+
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 Enter the URI of a network proxy server.
 
@@ -637,6 +668,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
 Specifies a user account that has permission to use the proxy server that is specified by the **-Proxy** parameter.
 The default is the current user.
 
@@ -658,6 +690,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyUseDefaultCredentials
+
 Indicates that the cmdlet uses the credentials of the current user to access the proxy server that is specified by the **-Proxy** parameter.
 
 This parameter is valid only when the **-Proxy** parameter is also used in the command.
@@ -676,6 +709,7 @@ Accept wildcard characters: False
 ```
 
 ### -Resume
+
 Performs a best effort attempt to resume downloading a partial file.
 `-Resume` requires `-OutFile`.
 
@@ -733,6 +767,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionVariable
+
 Specifies a variable for which this cmdlet creates a web request session and saves it in the value.
 Enter a variable name without the dollar sign (`$`) symbol.
 
@@ -763,9 +798,13 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateCheck
+
 Skips certificate validation checks. This includes all validations such as expiration, revocation, trusted root authority, etc.
 
-> **Warning**: Using this parameter is not secure and is not recommended. This switch is only intended to be used against known hosts using a self-signed certificate for testing purposes. Use at your own risk.
+> [!WARNING]
+> Using this parameter is not secure and is not recommended. This switch is only
+> intended to be used against known hosts using a self-signed certificate for
+> testing purposes. Use at your own risk.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -782,6 +821,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipHeaderValidation
+
 Indicates the cmdlet should add headers to the request without validation.
 
 This switch should be used for sites that require header values that do not conform to standards. Specifying this switch disables validation to allow the value to be passed unchecked.  When specified, all headers are added without validation.
@@ -803,11 +843,13 @@ Accept wildcard characters: False
 ```
 
 ### -SslProtocol
+
 Sets the SSL/TLS protocols that are permissible for the web request. By default all, SSL/TLS protocols supported by the system are allowed. **-SslProtocol** allows for limiting to specific protocols for compliance purposes.
 
 **-SslProtocol** uses the `WebSslProtocol` Flag Enum. It is possible to supply more than one protocol using flag notation or combining multiple `WebSslProtocol` options with `-bor`, however supplying multiple protocols is not supported on all platforms.
 
-> **Note**: On non-Windows platforms it may not be possible to supply `'Tls, Tls12'` as an option.
+> [!NOTE]
+> On non-Windows platforms it may not be possible to supply `'Tls, Tls12'` as an option.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -825,6 +867,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeoutSec
+
 Specifies how long the request can be pending before it times out.
 Enter a value in seconds.
 The default value, 0, specifies an indefinite time-out.
@@ -845,6 +888,7 @@ Accept wildcard characters: False
 ```
 
 ### -Token
+
 The OAuth or Bearer token to include in the request. **-Token** is required by certain **-Authentication** options. It cannot be used independently.
 
 **-Token** takes a `SecureString` containing the token. To supply the token manually use the following:
@@ -868,6 +912,7 @@ Accept wildcard characters: False
 ```
 
 ### -TransferEncoding
+
 Specifies a value for the transfer-encoding HTTP response header.
 The acceptable values for this parameter are:
 
@@ -891,6 +936,7 @@ Accept wildcard characters: False
 ```
 
 ### -Uri
+
 Specifies the Uniform Resource Identifier (URI) of the Internet resource to which the web request is sent.
 Enter a URI.
 This parameter supports HTTP or HTTPS only.
@@ -911,6 +957,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseBasicParsing
+
 This parameter has been deprecated. Beginning with PowerShell 6.0.0, all Web requests use basic parsing only. This parameter is included for backwards compatibility only and any use of it will have no effect on the operation of the cmdlet.
 
 ```yaml
@@ -926,6 +973,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseDefaultCredentials
+
 Indicates that the cmdlet uses the credentials of the current user to send the web request. This cannot be used with **-Authentication** or **-Credential** and may not be supported on all platforms.
 
 ```yaml
@@ -941,6 +989,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserAgent
+
 Specifies a user agent string for the web request.
 
 The default user agent is similar to `Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` with slight variations for each operating system and platform.
@@ -948,7 +997,6 @@ The default user agent is similar to `Mozilla/5.0 (Windows NT 10.0; Microsoft Wi
 To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](http://msdn.microsoft.com/library/windows/desktop/hh484857&#40;v=vs.85&#41;) class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet Explorer
-
 
 ```powershell
 Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
@@ -967,6 +1015,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebSession
+
 Specifies a web request session.
 Enter the variable name, including the dollar sign (`$`).
 
@@ -996,11 +1045,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**, **-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**, **-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
+
 You can pipe the body of a web request to `Invoke-WebRequest`.
 
 ## OUTPUTS
