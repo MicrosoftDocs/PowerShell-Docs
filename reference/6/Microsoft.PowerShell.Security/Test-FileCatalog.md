@@ -1,16 +1,23 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822570
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Test-FileCatalog
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822570
+schema: 2.0.0
+title: Test-FileCatalog
 ---
 
 # Test-FileCatalog
 
 ## SYNOPSIS
+
+`Test-FileCatalog` validates whether the hashes contained in a catalog file
+(.cat) matches the hashes of the actual files in order to validate their
+authenticity.
+
+This cmdlet is only supported on Windows.
 
 ## SYNTAX
 
@@ -21,16 +28,52 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 
 ## DESCRIPTION
 
+`Test-FileCatalog` validates the authenticity of files by comparing the file
+hashes of a catalog file (.cat) with the hashes of actual files on disk.
+If it detects any mismatches, it returns the status as ValidationFailed. Users can retrieve all this information by using the -Detailed parameter.
+It also displays signing status of catalog in Signature property which is equivalent to calling `Get-AuthenticodeSignature` cmdlet on the catalog file.
+Users can also skip any file during validation by using the -FilesToSkip parameter.
+
+This cmdlet is only supported on Windows.
+
 ## EXAMPLES
 
-### 1:
+### Example 1: Create and validate a file catalog
+
+```powershell
+New-FileCatalog -Path $PSHOME\Modules\Microsoft.PowerShell.Utility -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -CatalogVersion 2.0
+
+Test-FileCatalog -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
 ```
-PS C:\>
+
+```Output
+Valid
+```
+
+### Example 2: Validate a file catalog with detailed output
+
+```powershell
+Test-FileCatalog -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+```
+
+```Output
+Status        : Valid
+HashAlgorithm : SHA256
+CatalogItems  : {[Microsoft.PowerShell.Utility.psd1,
+                A7028BD54018AE519381CDF5BF91F3B0417BD9345478086089ACBFAD05C899FC], [Microsoft.PowerShell.Utility.psm1,
+                1127E8151FB86BCB683F932E8F6538552F7195816ED351A28AE07A753B8F20DE]}
+PathItems     : {[Microsoft.PowerShell.Utility.psd1,
+                A7028BD54018AE519381CDF5BF91F3B0417BD9345478086089ACBFAD05C899FC], [Microsoft.PowerShell.Utility.psm1,
+                1127E8151FB86BCB683F932E8F6538552F7195816ED351A28AE07A753B8F20DE]}
+Signature     : System.Management.Automation.Signature
 ```
 
 ## PARAMETERS
 
 ### -CatalogFilePath
+
+A path to a catalog file (.cat) that contains the hashes to be used for validation.
+
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -44,6 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -59,6 +103,11 @@ Accept wildcard characters: False
 ```
 
 ### -Detailed
+
+Returns more information a more detailed `CatalogInformation` object that
+contains the files tested, their expected/actual hashes, and an Authenticode
+signature of the catalog file if it's signed.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -72,6 +121,9 @@ Accept wildcard characters: False
 ```
 
 ### -FilesToSkip
+
+An array of paths that should not be tested as part of the validation.
+
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -85,6 +137,9 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
+A folder or array of files that should be validated against the catalog file.
+
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -98,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -114,12 +170,33 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
+### System.IO.DirectoryInfo[], System.String[]
+
+The pipeline accepts an array of strings or `DirectoryInfo` objects that
+represent paths to the files that need to be validated.  
+
 ## OUTPUTS
+
+### System.Management.Automation.CatalogValidationStatus
+
+The default return type containing a value of either `Valid` or
+`ValidationFailed`.
+
+### System.Management.Automation.CatalogInformation
+
+A more detailed object returned when using `-Detailed` which can be used to
+analyze specific files that may or may not have passed validation,
+which hashes were expected vs. found, and the algorithm used in the catalog.
 
 ## NOTES
 
 ## RELATED LINKS
+
+[New-FileCatalog](New-FileCatalog.md)
+
+[PowerShellGet](../PowerShellGet/PowerShellGet.md)
