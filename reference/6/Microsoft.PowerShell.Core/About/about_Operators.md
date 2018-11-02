@@ -191,6 +191,44 @@ Hello World!
 
 For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 
+`&` Ampersand background operator
+
+Runs the pipeline before it in a PowerShell job.
+The ampersand background operator acts similarly to the UNIX "ampersand operator"
+which famously runs the command before it as a background process.
+The ampersand background operator is built on top of PowerShell jobs so it shares a lot of functionality with 
+`Start-Job`.
+The following command contains basic usage of the ampersand background operator.
+
+```powershell
+Get-Process -Name $foo &
+```
+
+This is functionally equivalent to the following usage of
+`Start-Job`.
+
+```powershell
+Start-Job -ScriptBlock {Get-Process}
+```
+
+Since it's functionally equivalent to using
+`Start-Job`,
+the ampersand background operator returns a
+`Job`
+object just like
+`Start-Job` does.
+This means that the following two commands are equivalent.
+
+```powershell
+$job = Start-Job -ScriptBlock {Get-Process}
+```
+
+```powershell
+$job = Get-Process &
+```
+
+For more information on PowerShell jobs, see [about_Jobs](about_Jobs.md).
+
 `[ ]` Cast operator
 
 Converts or limits objects to the specified type. If the objects cannot be
