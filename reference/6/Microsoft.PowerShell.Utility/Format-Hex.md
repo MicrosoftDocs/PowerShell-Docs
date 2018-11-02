@@ -62,6 +62,7 @@ This command returns the hexadecimal representation of the string Hello World.
 ```
 PS C:\> "Hello World, Goodbye!" | Format-Hex -Offset 6 -Count 5
 
+
                        00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 
 00000000000000000000   57 6F 72 6C 64                                   World
@@ -71,6 +72,7 @@ PS C:\> "Hello World, Goodbye!" | Format-Hex -Offset 6 -Count 5
 
 ```
 PS C:\> Format-Hex -Path .\README.md -Count 67
+
 
                        Path: C:\README.md
 
