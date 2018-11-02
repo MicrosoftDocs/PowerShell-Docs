@@ -215,7 +215,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Int64.MaxValue
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
