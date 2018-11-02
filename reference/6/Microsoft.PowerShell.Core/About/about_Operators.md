@@ -208,7 +208,7 @@ This is functionally equivalent to the following usage of
 `Start-Job`.
 
 ```powershell
-Start-Job -ScriptBlock {Get-Process}
+Start-Job -ScriptBlock {Get-Process -Name pwsh}
 ```
 
 Since it's functionally equivalent to using
