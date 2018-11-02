@@ -18,7 +18,9 @@ Converts an object to a JSON-formatted string.
 ## SYNTAX
 
 ```
-ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [-EnumsAsStrings] [-AsArray] [<CommonParameters>]
+ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
+[-EnumsAsStrings] [-AsArray] [-EscapeHandling <StringEscapeHandling>]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -249,9 +251,29 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -EscapeHandling
+
+Controls how certain characters are escaped in the resulting JSON output.
+By default, only control characters (e.g. newline) are escaped.
+
+```yaml
+Type: NewtonSoft.Json.StringEscapeHandling
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Default
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`,
+`-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`,
+`-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and
+`-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -276,3 +298,5 @@ You can pipe any object to **ConvertTo-Json**.
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
+
+[NewtonSoft.Json.StringEscapeHandling](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_StringEscapeHandling.htm)
