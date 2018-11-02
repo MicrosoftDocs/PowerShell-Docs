@@ -62,16 +62,16 @@ In this example, the name of the *FilePath* parameter, which is optional, is omi
 ### Example 3: Get only valid digital signatures for multiple files
 
 ```powershell
-Get-ChildItem $pshome\*.* | ForEach-object {Get-AuthenticodeSignature $_} | Where-Object {$_.status -eq "Valid"}
+Get-ChildItem $PSHOME\*.* | ForEach-object {Get-AuthenticodeSignature $_} | Where-Object {$_.status -eq "Valid"}
 ```
 
-This command lists all of the files in the `$pshome` directory that have a valid digital signature.
-The `$pshome` automatic variable contains the path to the Windows PowerShell installation directory.
+This command lists all of the files in the `$PSHOME` directory that have a valid digital signature.
+The `$PSHOME` automatic variable contains the path to the Windows PowerShell installation directory.
 
-The command uses the **Get-ChildItem** cmdlet to get the files in the `$pshome` directory.
+The command uses the **Get-ChildItem** cmdlet to get the files in the `$PSHOME` directory.
 It uses a pattern of *.* to exclude directories (although it also excludes files without a dot in the filename).
 
-The command uses a pipeline operator (|) to send the files in `$pshome` to the ForEach-Object cmdlet, where **Get-AuthenticodeSignature** is called for each file.
+The command uses a pipeline operator (|) to send the files in `$PSHOME` to the ForEach-Object cmdlet, where **Get-AuthenticodeSignature** is called for each file.
 
 The results of the **Get-AuthenticodeSignature** command are sent to a Where-Object command that selects only the signature objects with a status of Valid.
 
