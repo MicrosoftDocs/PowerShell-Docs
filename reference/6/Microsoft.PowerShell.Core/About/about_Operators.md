@@ -201,7 +201,7 @@ The ampersand background operator is built on top of PowerShell jobs so it share
 The following command contains basic usage of the ampersand background operator.
 
 ```powershell
-Get-Process -Name $foo &
+Get-Process -Name pwsh &
 ```
 
 This is functionally equivalent to the following usage of
