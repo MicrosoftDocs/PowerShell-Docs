@@ -16,4 +16,4 @@ packages.config
 *.orig
 _themes/
 dependentPackages/
-
+.optemp/
