@@ -758,16 +758,6 @@ output, partial output, or a remote command that does not complete.
 To end an unresponsive program, type CTRL + C. To view any errors that might
 have been reported, type "$error" in the local host and the remote session.
 
-## Linux and macOS limitations
-
-### Authentication
-
-Only basic authentication works on macOS and
-attempting to use other authentication schemes may result in the process crashing.
-
-Please see the [OMI authentication](https://github.com/PowerShell/psl-omi-provider#connecting-from-linux-to-windows)
-instructions.
-
 ## HOW TO RECOVER FROM AN OPERATION FAILURE
 
 ERROR: The I/O operation has been aborted because of either a thread exit
