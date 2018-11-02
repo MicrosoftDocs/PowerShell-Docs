@@ -217,14 +217,29 @@ the ampersand background operator returns a
 `Job`
 object just like
 `Start-Job` does.
-This means that the following two commands are equivalent.
+This means that you are able to use
+`Receive-Job` and `Remove-Job`
+just as you would if you had used
+`Start-Job` to start the job.
 
 ```powershell
-$job = Start-Job -ScriptBlock {Get-Process}
+$job = Get-Process -Name pwsh &
+Receive-Job $job
+```
+
+```Output
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+      0     0.00     221.16      25.90    6988 988 pwsh
+      0     0.00     140.12      29.87   14845 845 pwsh
+      0     0.00      85.51       0.91   19639 988 pwsh
+
 ```
 
 ```powershell
-$job = Get-Process &
+$job = Get-Process -Name pwsh &
+Remove-Job $job
 ```
 
 For more information on PowerShell jobs, see [about_Jobs](about_Jobs.md).
