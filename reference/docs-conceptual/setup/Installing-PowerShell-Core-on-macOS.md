@@ -1,7 +1,7 @@
 ---
 title: Installing PowerShell Core on macOS
 description: Information about installing PowerShell Core on macOS
-ms.date: 08/06/2018
+ms.date: 11/02/2018
 ---
 
 # Installing PowerShell Core on macOS
@@ -10,10 +10,14 @@ PowerShell Core supports macOS 10.12 and higher.
 All packages are available on our GitHub [releases][] page.
 Once the package is installed, run `pwsh` from a terminal.
 
-## Installation of latest stable release via Homebrew on macOS 10.12 or higher
+## About Brew
 
 [Homebrew][brew] is the preferred package manager for macOS.
 If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
+
+## Installation of latest stable release via Homebrew on macOS 10.12 or higher
+
+See [About Brew](#about-brew) for information about Brew.
 
 Now, you can install PowerShell:
 
@@ -44,8 +48,7 @@ brew cask upgrade powershell
 
 ## Installation of latest preview release via Homebrew on macOS 10.12 or higher
 
-[Homebrew][brew] is the preferred package manager for macOS.
-If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].
+See [About Brew](#about-brew) for information about Brew.
 
 Once you've installed Homebrew, installing PowerShell is easy.
 First, install [Cask-Versions][cask-versions] which lets you install alternative versions of cask packages:
@@ -92,6 +95,8 @@ or install it from the terminal:
 sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 ```
 
+Install [OpenSSL](#install-openssl) as this is needed for PowerShell remoting and CIM operations.
+
 ## Binary Archives
 
 PowerShell binary `tar.gz` archives are provided for the macOS platform
@@ -114,6 +119,42 @@ sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
 sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+```
+
+Install [OpenSSL](#install-openssl) as this is needed for PowerShell remoting and CIM operations.
+
+## Installing dependencies
+
+### Install XCode command line tools
+
+```shell
+xcode-select -install
+```
+
+### Install OpenSSL
+
+OpenSSL is needed for PowerShell remoting and CIM operations.  You can install via MacPorts or Brew.
+
+#### Install OpenSSL via Brew
+
+See [About Brew](#about-brew) for information about Brew.
+
+Run `brew install openssl` to install OpenSSL.
+
+#### Install OpenSSL via MacPorts
+
+1. Instal the [XCode command line tools](#install-xcode-command-line-tools)
+1. Install MacPorts.
+   See the [installation guide](https://guide.macports.org/chunked/installing.macports.html)
+   if you need instructions.
+1. Update MacPorts by running `sudo port selfupdate`
+1. Upgrade MacPorts packages by running `sudo port upgrade outdated`
+1. Install OpenSSL by running by running `sudo port instal openssl`
+1. Link the libraries so that PowerShell can use it.
+
+```shell
+sudo mkdir -p /usr/local/opt/openssl
+sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
 ## Uninstalling PowerShell Core
@@ -152,7 +193,7 @@ So the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps
 PowerShell respects the [XDG Base Directory Specification][xdg-bds] on macOS.
 
 Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`.
-Thus, `$PSHOME` is `/usr/local/microsoft/powershell/6.1.0/`, and the symlink is placed at `/usr/local/bin/pwsh`.
+Thus, `$PSHOME` is `/usr/local/microsoft/powershell/6.1.0/`, and the symbolic link is placed at `/usr/local/bin/pwsh`.
 
 ## Additional Resources
 
