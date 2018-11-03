@@ -14,12 +14,12 @@ Cross-platform configuration files for PowerShell Core.
 
 ## LONG DESCRIPTION
 
-A `powershell.config.json` file allows configuration of
+A `powershell.config.json` is a JSON-format file allowing configuration of
 installation-wide settings in PowerShell Core.
-These settings were previously configured in the Windows Registry
-in Windows PowerShell.
-The file is in the [JSON](https://en.wikipedia.org/wiki/JSON) format,
-with settings specified by key.
+It is read in and used when PowerShell starts up,
+but is also modified at runtime by PowerShell.
+These settings were previously configured
+in the Windows Registry in Windows PowerShell.
 
 > [!WARNING]
 > A `powershell.config.json` file that contains invalid JSON
@@ -66,8 +66,10 @@ See [About Execution Policies](./about_Execution_Policies.md).
 
 Where:
 
-- `<shell-id>` refers to the ID of the PowerShell host.
+- `<shell-id>` refers to the ID of the current PowerShell host.
   For normal PowerShell Core, this is `"Microsoft.PowerShell"`.
+  In any PowerShell session, you can discover it with `$ShellId`.
+  See also [About Automatic Variables](./about_Automatic_Variables.md).
 - `<execution-policy>` refers to a valid execution policy name,
   as described in [About Execution Policies](./about_Execution_Policies.md).
 
@@ -129,5 +131,7 @@ Equivalent registry key in Windows PowerShell:
 ```
 HKLM:\System\CurrentControlSet\Control\Session Manager\Environment
 ```
+
+### ExperimentalFeatures
 
 ### Examples
