@@ -53,7 +53,10 @@
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "apiPlatform": "powershell",
             "ms.devlang": "powershell",
-            "ROBOTS": "INDEX, FOLLOW"
+            "ROBOTS": "INDEX, FOLLOW",
+            "feedback_system": "GitHub",
+            "feedback_github_repo": "PowerShell/PowerShell-Docs",
+            "feedback_product_url": "https://github.com/powershell/powershell/issues/new"
         },
         "fileMetadata": {
             "ms.prod": { "**/**.md": "powershell" },
@@ -68,8 +71,8 @@
             },
             "manager": { "**/**.md": "carmonm" },
             "ms.tgt_pltfr": { "**/**.md": "windows, macos, linux" },
-            "author": { "**/**.md": "sdwheeler" },
-            "ms.author": { "**/**.md": "sewhee" }
+            "author": { "**/**.md": "joeyaiello" },
+            "ms.author": { "**/**.md": "jaiello" }
         },
         "template": [],
         "dest": "pscore-reference",
