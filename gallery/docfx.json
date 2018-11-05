@@ -21,7 +21,9 @@
             "author": { "**/**.md": "sysmith" },
             "ms.author": { "**/**.md": "SydneyhSmith" }
         },
-        "resource": [{ "files": ["**/images/**"], "exclude": ["**/obj/**"] }],
+        "resource": [
+            { "files": ["**/images/**"], "exclude": ["**/obj/**"] }
+        ],
         "template": "op.html",
         "dest": "gallery",
         "markdownEngineName": "markdig"
