@@ -473,8 +473,6 @@ For more information, see the examples.
 > You can use the `-AsByteStream` parameter to indicate that the content should be read and
 > output as a byte stream.
 
-- PowerShell 6
-
 ```yaml
 Type: System.Text.Encoding
 Parameter Sets: (All)
@@ -484,21 +482,6 @@ Accepted values: A `System.Text.Encoding` object, ASCII, BigEndianUnicode, OEM, 
 Required: False
 Position: Named
 Default value: UTF8NoBOM
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-- Prior to PowerShell 6
-
-```yaml
-Type: FileSystemCmdletProviderEncoding
-Parameter Sets: (All)
-Aliases:
-Accepted values: Unknown, String, Unicode, Byte, BigEndianUnicode, UTF8, UTF7, UTF32, Ascii, Default, Oem
-
-Required: False
-Position: Named
-Default value: ASCII
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
