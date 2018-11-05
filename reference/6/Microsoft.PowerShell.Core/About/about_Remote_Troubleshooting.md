@@ -778,6 +778,16 @@ the command again.
 
 3. Re-run the command that generated the error.
 
+## Linux and macOS limitations
+
+### Authentication
+
+Only basic authentication works on macOS and
+attempting to use other authentication schemes may result in the process crashing.
+
+Please see the [OMI authentication](https://github.com/PowerShell/psl-omi-provider#connecting-from-linux-to-windows)
+instructions.
+
 # SEE ALSO
 
 [about_Remote](about_Remote.md)

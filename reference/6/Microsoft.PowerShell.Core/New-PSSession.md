@@ -79,7 +79,10 @@ For more information, see about_PSSessions (http://go.microsoft.com/fwlink/?Link
 You can run commands on a remote computer without creating a **PSSession** by using the *ComputerName* parameters of **Enter-PSSession** or **Invoke-Command**.
 When you use the *ComputerName* parameter, PowerShell creates a temporary connection that is used for the command and is then closed.
 
-Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and create a session on a remote computer, if SSH is available on the local computer and the remote computer is configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShell remote session is that it can work across multiple platforms (Windows, Linux, macOS). For SSH based sessions you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information. For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
+Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and create a session on a remote computer, if SSH is available on the local computer and the remote computer is configured with a PowerShell SSH endpoint.
+The benefit of an SSH based PowerShell remote session is that it can work across multiple platforms (Windows, Linux, macOS).
+For SSH based sessions you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information.
+For more information about how to set up PowerShell SSH remoting, see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## EXAMPLES
 
@@ -941,8 +944,12 @@ You can pipe a string, URI, or session object to this cmdlet.
 * This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local computer and any remote computers must be configured for PowerShell remoting. For more information, see [about_Remote_Requirements](About/about_Remote_Requirements.md).
 * To create a **PSSession** on the local computer, start PowerShell with the Run as administrator option.
 * When you are finished with the **PSSession**, use the Remove-PSSession cmdlet to delete the **PSSession** and release its resources.
-* The **HostName** and **SSHConnection** parameter sets were included starting with PowerShell 6.0. They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported.
-For more information about how to set up PowerShell SSH remoting see (https://github.com/PowerShell/PowerShell/tree/master/demos/SSHRemoting).
+* The **HostName** and **SSHConnection** parameter sets were included starting with PowerShell 6.0.
+  They were added to provide PowerShell remoting based on Secure Shell (SSH).
+  Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured.
+  This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply.
+  For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported.
+  For more information about how to set up PowerShell SSH remoting, see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
 
