@@ -6,9 +6,9 @@
   href: getting-started.md
 - name: How-To
   items:
-    - name: Finding Items in the Gallery
+    - name: Finding Packages in the Gallery
       items:
-        - name: Searching For Items
+        - name: Searching For Packages
           href: how-to/finding-packages/search-syntax.md
         - name: Searching by PSEdition
           href: how-to/finding-packages/searching-by-psedition.md
@@ -16,17 +16,17 @@
           href: how-to/finding-packages/filtering-packages.md
     - name: Publishing to the Gallery
       items:
-        - name: Creating and publishing items
+        - name: Creating and publishing Packages
           href: how-to/publishing-packages/publishing-a-package.md
         - name: Creating a PowerShellGallery Account
           href: how-to/publishing-packages/creating-an-account.md
-        - name: Unlisting items
+        - name: Unlisting Packages
           href: how-to/publishing-packages/unlisting-packages.md
-        - name: Deleting items
+        - name: Deleting Packages
           href: how-to/publishing-packages/deleting-packages.md
-        - name: Managing item owners
+        - name: Managing Packages owners
           href: how-to/publishing-packages/managing-package-owners.md
-    - name: Working with Items
+    - name: Working with Packages
       items:
         - name: FileList view
           href: how-to/working-with-packages/filelist-view.md
@@ -34,9 +34,9 @@
           href: how-to/working-with-packages/deploy-to-azure-automation.md
         - name: Manual Package Download
           href: how-to/working-with-packages/manual-download.md
-        - name: Items that Require License Acceptance
+        - name: Packages that Require License Acceptance
           href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-        - name: Contacting item owners
+        - name: Contacting Packages owners
           href: how-to/working-with-packages/contacting-package-owners.md
         - name: Providing Feedback via Social Media or Comments
           href: how-to/working-with-packages/social-media-feedback.md
@@ -50,7 +50,7 @@
   items:
     - name: Publishing guidelines and best practices
       href: concepts/publishing-guidelines.md
-    - name: Item manifest and Gallery UI
+    - name: Packages manifest and Gallery UI
       href: concepts/package-manifest-affecting-ui.md
     - name: Requiring Specific PSEditions
       items:
@@ -64,7 +64,7 @@
           href: concepts/script-license-acceptance.md
         - name: Requiring License Acceptance for Modules
           href: concepts/module-license-acceptance.md
-    - name: Defining Items as PreRelease
+    - name: Defining Packages as PreRelease
       items:
         - name: Defining a Module as PreRelease
           href: concepts/module-prerelease-support.md
