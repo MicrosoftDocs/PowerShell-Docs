@@ -18,8 +18,8 @@
             "ms.technology": { "**/**.md": "powershell-jea" },
             "ms.topic": { "**/**.md": "conceptual" },
             "manager": { "**/**.md": "carmonm" },
-            "author": { "**/**.md": "joeyaiello" },
-            "ms.author": { "**/**.md": "jaiello" }
+            "author": { "**/**.md": "rpsqrd" },
+            "ms.author": { "**/**.md": "ryanpu" }
         },
         "resource": [
             { "files": ["**/images/**"], "exclude": ["**/obj/**"] }

@@ -17,8 +17,8 @@
             "ms.technology": { "**/**.md": "powershell-wmf" },
             "ms.topic": { "**/**.md": "reference" },
             "manager": { "**/**.md": "carmonm" },
-            "author": { "**/**.md": "joeyaiello" },
-            "ms.author": { "**/**.md": "jaiello" }
+            "author": { "**/**.md": "HemantMahawar" },
+            "ms.author": { "**/**.md": "hemantm" }
         },
         "resource": [
             { "files": ["**/images/**"], "exclude": ["**/obj/**"] }
