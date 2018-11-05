@@ -47,7 +47,7 @@
         - name: Managing API Keys
           href: how-to/managing-profile/creating-apikeys.md
      - name: Working with Local Repositories
-       href: how-to/working-with-local-repositories.md
+       href: how-to/WorkingwithLocalPSRepositories.md
 - name: Concepts
   items:
     - name: Publishing guidelines and best practices
