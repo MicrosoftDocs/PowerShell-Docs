@@ -6,8 +6,8 @@ title:  Working with local PSRepositories
 ---
 # Working with local PowerShellGet Repositories
 
-The cmdlets in the PowerShellGet module support repositories other than the PowerShell Gallery.
-This supports the following scenarios:
+The PowerShellGet module support repositories other than the PowerShell Gallery.
+These cmdlets enable the following scenarios:
 
 - Support a trusted, pre-validated set of PowerShell modules for use in your environment
 - Testing a CI/CD pipeline that builds PowerShell modules or scripts
@@ -47,16 +47,23 @@ servers or file shares.
   capabilities.
 - File share servers can't see package metadata, including tags.
 
-For more information about creating a NuGet.Server feed follow the steps [here](https://docs.microsoft.com/en-us/nuget/hosting-packages/nuget-server), up to the point of publishing packages. Follow the steps bellow for publishing packages using cmdlets.
-
 ## Creating a local repository
 
-Add a new repository for use by PowerShellGet with the `Register-PSRepository` command. In the
-examples below, the **InstallationPolicy** is set to *Trusted*, on the assumption that you trust
-your own repository. Take note of the difference between how the two commands handle
-**ScriptSourceLocation**. For a file share-based repositories, the **SourceLocation** and
-**ScriptSourceLocation** must match. For a web-based repository, they must be different, so in this
-example a trailing "/" is added to the **SourceLocation**.
+The following article lists the steps for setting up your own NuGet Server.
+
+- [NuGet.Server][]
+
+Follow the steps up to the point of adding packages. The steps for
+[publishing a package](#publishing-to-a-local-repository) are covered later in this article.
+
+For a file share-based repository, make sure that your users have permissions to access the file
+share.
+
+## Registering a local repository
+
+Before a repository can be used, it must be registered using the `Register-PSRepository` command.
+In the examples below, the **InstallationPolicy** is set to *Trusted*, on the assumption that you
+trust your own repository.
 
 ```powershell
 # Register a NuGet-based server
@@ -64,8 +71,12 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation http://MyLocalNuget/Api/
 
 # Register a file share on my local machine
 Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal\' -ScriptSourceLocation '\\localhost\PSRepoLocal\' -InstallationPolicy Trusted
-
 ```
+
+Take note of the difference between how the two commands handle **ScriptSourceLocation**. For a
+file share-based repositories, the **SourceLocation** and **ScriptSourceLocation** must match. For
+a web-based repository, they must be different, so in this example a trailing "/" is added to the
+**SourceLocation**.
 
 If you want the newly created PSRepository to be the default repository, you must unregister all
 other PSRepositories. For example:
@@ -86,14 +97,14 @@ Register-PSRepository -Default
 
 ## Publishing to a local repository
 
-Once you've registered the local PSRepository, you can  publish to your local PSRepository.
-There are two main publishing scenarios you will encounter: publishing your own module and
-publishing a module from the PSGallery.
+Once you've registered the local PSRepository, you can publish to your local PSRepository. There
+are two main publishing scenarios: publishing your own module and publishing a module from the
+PSGallery.
 
-### Publishing a Module you Authored
+### Publishing a module you authored
 
-To publish a module you authored to your local PSRepository you can use `Publish-Module` and `Publish-Script`
-the same way you do for the PowerShell Gallery.
+Use `Publish-Module` and `Publish-Script` to publish your module to your local PSRepository the
+same way you do for the PowerShell Gallery.
 
 - Specify the location for your code
 - Supply an API key
@@ -117,12 +128,12 @@ Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey
 > To ensure security, API keys should not be hard-coded in scripts. Use a secure key management
 > system.
 
-### Publishing a Module from the PSGallery
+### Publishing a module from the PSGallery
 
-To publish a module from the PSGallery to your local PSRepository you can you the 'Save-Package' cmdlet.
+To publish a module from the PSGallery to your local PSRepository, you can use the 'Save-Package' cmdlet.
 
 - Specify the Name of the Package
-- Specify 'Nuget' as the Provider
+- Specify 'NuGet' as the Provider
 - Specify the PSGallery location as the source (https://www.powershellgallery.com/api/v2)
 - Specify the path to your local Repository
 
@@ -133,19 +144,16 @@ Example:
 Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
-If your local PSRepository is web-based it will require an additional step which uses nuget.exe to publish.
+If your local PSRepository is web-based, it requires an additional step that uses nuget.exe to publish.
 
-The documentation for using nuget.exe can be found [here](https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference).
-
-We provide the below explanation of installing PowerShellGet on a disconnected system as a good
-example of how to publish modules from the gallery to your local repository in systems disconnected from the internet.
+See the documentation for using [nuget.exe][].
 
 ## Installing PowerShellGet on a disconnected system
 
-Deploying PowerShellGet is difficult in environments that require
-systems to be disconnected from the internet. PowerShellGet has a bootstrap process that installs
-the latest version the first time it's used. The OfflinePowerShellGetDeploy module in the PowerShell
-Gallery provides cmdlets that support this bootstrap process for your local repository.
+Deploying PowerShellGet is difficult in environments that require systems to be disconnected from
+the internet. PowerShellGet has a bootstrap process that installs the latest version the first time
+it's used. The OfflinePowerShellGetDeploy module in the PowerShell Gallery provides cmdlets that
+support this bootstrap process.
 
 To bootstrap an offline deployment, you need to:
 
@@ -201,8 +209,7 @@ Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApi
 > To ensure security, API keys should not be hard-coded in scripts. Use a secure key management
 > system.
 
-
-
-
-
+<!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1
+[Nuget.Server]: /nuget/hosting-packages/nuget-server
+[nuget.exe]: /nuget/tools/nuget-exe-cli-reference
