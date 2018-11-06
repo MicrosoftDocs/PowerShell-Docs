@@ -721,8 +721,8 @@
         },
         {
             "source_path": "reference/virtual-directory/Object-Pipeline.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/object-pipeline?view=powershell-5.1",
-            "redirect_document_id": "True"
+            "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-the-powershell-pipeline",
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/virtual-directory/Other-Useful-Scripting-Objects.md",
