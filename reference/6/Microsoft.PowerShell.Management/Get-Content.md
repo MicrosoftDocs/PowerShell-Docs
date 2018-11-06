@@ -1,5 +1,5 @@
 ---
-ms.date:  10/18/2018
+ms.date:  11/02/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -18,29 +18,30 @@ Gets the content of the item at the specified location.
 ### Path (Default)
 
 ```
-Get-Content [-Path] <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
- [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Force] [-Credential <PSCredential>]  [-Delimiter <String>] [-Wait] [-Raw]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
- [<CommonParameters>]
+Get-Content [-Path] <string[]> [-ReadCount <long>] [-TotalCount <long>]
+[-Tail <int>] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+[-Force] [-Credential <PSCredential>] [-Delimiter <string>] [-Wait] [-Raw]
+[-Encoding <System.Text.Encoding>] [-AsByteStream] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Get-Content -LiteralPath <String[]> [-ReadCount <Int64>] [-TotalCount <Int64>]
- [-Tail <Int32>] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Force] [-Credential <PSCredential>] [-Delimiter <String>] [-Wait] [-Raw]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
- [<CommonParameters>]
+Get-Content -LiteralPath <string[]> [-ReadCount <long>] [-TotalCount <long>]
+[-Tail <int>] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+[-Force] [-Credential <PSCredential>] [-Delimiter <string>] [-Wait] [-Raw]
+[-Encoding <System.Text.Encoding>] [-AsByteStream] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Get-Content` cmdlet gets the content of the item at the location specified by the path, such as the text in a file.
-It reads the content one line at a time and returns a collection of objects, each of which represents a line of content.
+The `Get-Content` cmdlet gets the content of the item at the location
+specified by the path, such as the text in a file or the content of a function.
+For files, the content is read one line at a time and returns a collection of objects,
+each of which represents a line of content.
 
-Beginning in Windows PowerShell 3.0, `Get-Content` can also get a specified number of lines from the beginning or end of an item.
+Beginning in Windows PowerShell 3.0, `Get-Content` can also get a specified
+number of lines from the beginning or end of an item.
 
 ## EXAMPLES
 
@@ -52,7 +53,9 @@ Get-Content -Path C:\Chapters\Chapter1.txt
 
 This command gets the content of the Chapter1.txt file.
 It uses the **Path** parameter to specify the name of the item.
-`Get-Content` passes the content down the pipeline. Because there are no other pipeline elements, the content is formatted by default and displayed at the command line.
+`Get-Content` passes the content down the pipeline
+ Because there are no other pipeline elements, the content is formatted by default and
+ displayed at the command line.
 
 ### Example 2: Get the first 50 lines from a text file and store the results in another file
 
@@ -60,10 +63,12 @@ It uses the **Path** parameter to specify the name of the item.
 Get-Content c:\Logs\Log060912.txt -TotalCount 50 | Set-Content Sample.txt
 ```
 
-This command gets the first 50 lines of the Log060912.txt file and stores them in the Sample.txt file.
+This command gets the first 50 lines of Log060912.txt and writes them into Sample.txt.
 The command uses the `Get-Content` cmdlet to get the text in the file.
-(The name of **Path** parameter, which is optional, is omitted.) The **TotalCount** parameter limits the content retrieved to the first 50 lines.
-The pipeline operator (|) sends the result to the `Set-Content` cmdlet, which places it in the Sample.txt file.
+(The name of **Path** parameter, which is optional, is omitted.)
+The **TotalCount** parameter limits the content retrieved to the first 50 lines.
+The pipeline operator (|) sends the result to the `Set-Content` cmdlet,
+which places it in the Sample.txt file.
 
 ### Example 3: Get the fifth line of a text file
 
@@ -72,7 +77,8 @@ The pipeline operator (|) sends the result to the `Set-Content` cmdlet, which pl
 ```
 
 This command gets the fifth line of the Cmdlets.txt text file.
-It uses the **TotalCount** parameter to get the first five lines and then uses array notation to get the last line (indicated by "-1") of the resulting set.
+It uses the **TotalCount** parameter to get the first five lines and
+then uses array notation to get the last line (indicated by "-1") of the resulting set.
 
 ### Example 4: Get the first and last line of a text file
 
@@ -85,7 +91,8 @@ The command uses the **Tail** parameter and the **Head** alias of the **TotalCou
 
 ### Example 5: Get the content of an alternate data stream
 
-This command uses the `-Stream` parameter to get the content of the `Zone.Identifier` alternate data stream.
+This command uses the `-Stream` parameter to get the content of the `Zone.Identifier`
+alternate data stream.
 The output includes Zone ID value of 3, which represents the internet.
 
 ```powershell
@@ -97,16 +104,19 @@ Get-Content .\Copy-Scripts.ps1 -Stream Zone.Identifier
 ZoneId=3
 ```
 
-### Example 6: Getting a hashtable out of file contents as a hastable
+### Example 6: Getting a hashtable out of file contents as a hashtable
 
 The commands in this example get the contents of a module manifest file (.psd1) as a hash table.
-The manifest file contains a hash table, but if you get the contents without the `-Raw` dynamic parameter, it is returned as an array of newline-delimited strings.
+The manifest file contains a hash table, but if you get the contents without the `-Raw`
+dynamic parameter, it is returned as an array of newline-delimited strings.
 
 ```powershell
-# First, use the -Path property of modules to get the path to the file that contains the module manifest for the PSScheduledJob module.
+# First, use the -Path property of modules to get the path to the file that contains
+# the module manifest for the PSScheduledJob module.
 # Store the path in the Manifest variable.
 $Manifest = (Get-Module -ListAvailable PSScheduledJob).Path
-# Use the Invoke-Expression cmdlet to run a Get-Content command and the -Raw dynamic parameter of the  Get-Content cmdlet to get the contents of the module manifest file in a single string.
+# Use the Invoke-Expression cmdlet to run a Get-Content command and the -Raw dynamic parameter
+# of the  Get-Content cmdlet to get the contents of the module manifest file in a single string.
 # Store the hashtable in the Hash variable.
 $Hash = Invoke-Expression (Get-Content $Manifest -Raw)
 # Return the contents of the hashtable as a collection of name-value pairs.
@@ -185,8 +195,10 @@ Specifies how many lines of content are sent through the pipeline at a time.
 The default value is 1.
 A value of 0 (zero) sends all of the content at one time.
 
-This parameter does not change the content displayed, but it does affect the time it takes to display the content.
-As the value of **ReadCount** increases, the time it takes to return the first line increases, but the total time for the operation decreases.
+This parameter does not change the content displayed,
+but it does affect the time it takes to display the content.
+As the value of **ReadCount** increases, the time it takes to return the first line increases,
+but the total time for the operation decreases.
 This can make a perceptible difference in large items.
 
 ```yaml
@@ -245,7 +257,9 @@ Accept wildcard characters: False
 Specifies a filter in the provider's format or language.
 The value of this parameter qualifies the **Path** parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
-Filters are more efficient than other parameters, because the provider applies them when this cmdlet gets the objects, rather than having Windows PowerShell filter the objects after they are retrieved.
+Filters are more efficient than other parameters,
+because the provider applies them when this cmdlet gets the objects,
+rather than having Windows PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: String
@@ -299,8 +313,10 @@ Accept wildcard characters: True
 
 ### -Force
 
-Overrides restrictions that prevent the command from succeeding, provided the changes do not compromise security.
-For example, **Force** will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.
+Overrides restrictions that prevent the command from succeeding,
+provided the changes do not compromise security.
+For example, **Force** will override the read-only attribute or create directories to complete
+a file path, but it will not attempt to change file permissions.
 
 ```yaml
 Type: SwitchParameter
@@ -319,7 +335,8 @@ Accept wildcard characters: False
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the `Get-Credential` cmdlet.
+Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object,
+such as one generated by the `Get-Credential` cmdlet.
 If you type a user name, you will be prompted for a password.
 
 > [!WARNING]
@@ -339,14 +356,26 @@ Accept wildcard characters: False
 
 ### -Delimiter
 
-Specifies the delimiter that `Get-Content` uses to divide the file into objects while it reads. The default is "\n", the end-of-line character. When reading a text file, `Get-Content` returns a collection of string objects, each of which ends with an end-of-line character. When you enter a delimiter that does not exist in the file, `Get-Content` returns the entire file as a single, undelimited object.
+Specifies the delimiter that `Get-Content` uses to divide the file into objects while it reads.
+The default is "\n", the end-of-line character.
+When reading a text file, `Get-Content` returns a collection of string objects,
+each of which ends with an end-of-line character.
+When you enter a delimiter that does not exist in the file, `Get-Content` returns the entire file
+as a single, un-delimited object.
 
-You can use this parameter to split a large file into smaller files by specifying a file separator, as the delimiter. The delimiter is preserved (not discarded) and becomes the last item in each file section.
+You can use this parameter to split a large file into smaller files by specifying a file separator,
+as the delimiter.
+The delimiter is preserved (not discarded) and becomes the last item in each file section.
 
-`-Delimiter` is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet. This parameter works only in file system drives.
+`-Delimiter` is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet
+ This parameter works only in file system drives.
 
 > [!NOTE]
-> Currently, when the value of the `-Delimiter` parameter is an empty string, `Get-Content` does not return anything. This is a known issue. To force `Get-Content` to return the entire file as a single, undelimited string, enter a value that does not exist in the file.
+> Currently, when the value of the `-Delimiter` parameter is an empty string,
+> `Get-Content` does not return anything.
+> This is a known issue
+> To force `Get-Content` to return the entire file as a single, un-delimited string,
+> enter a value that does not exist in the file.
 
 ```yaml
 Type: String
@@ -362,10 +391,14 @@ Accept wildcard characters: False
 
 ### -Wait
 
-Keeps the file open after all existing lines have been output. While waiting, `Get-Content` checks the file once each second and outputs new lines as they are appended. You can interrupt `-Wait` by pressing  CTRL+C.
+Keeps the file open after all existing lines have been output.
+While waiting, `Get-Content` checks the file once each second and outputs new lines if present.
+You can interrupt `-Wait` by pressing  CTRL+C.
 Waiting also ends if the file gets deleted, in which case a non-terminating error is reported.
 
-`-Wait` is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet. This parameter works only in file system drives. `-Wait` cannot be combined with `-Raw`
+`-Wait` is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet.
+This parameter works only in file system drives.
+`-Wait` cannot be combined with `-Raw`
 
 ```yaml
 Type: SwitchParameter
@@ -381,11 +414,15 @@ Accept wildcard characters: False
 
 ### -Raw
 
-Ignores newline characters and returns the entire contents of a file in one string with the newlines preserved. By default, newline characters in a file are used as delimiters to separate the input into an array of strings.
+Ignores newline characters and returns the entire contents of a file
+in one string with the newlines preserved.
+By default, newline characters in a file are used as delimiters to separate
+the input into an array of strings.
 
-`-Raw` is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet. This parameter works only in file system drives.
+`-Raw` is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet
+ This parameter works only in file system drives.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -401,51 +438,64 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the file encoding. The default is ASCII.
+Specifies the file encoding
+ The default is UTF8NoBOM.
 
-Valid values are:
+Acceptable values are any valid `System.Text.Encoding` instance and the following strings are allowed:
 
 - **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
 - **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
-- **Default**: Encodes using the default value: ASCII.
-- **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **Byte**: Encodes a set of characters into a sequence of bytes.
-- **String**: Uses the encoding type for a string.
+- **OEM**: Uses UTF8NoBOM on non-Windows and the encoding for MS-DOS and console programs on Windows.
+- **String**: Uses Unicode encoding.
 - **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
 - **UTF7**: Encodes in UTF-7 format.
-- **UTF8**: Encodes in UTF-8 format.
+- **UTF8**: Encodes in UTF-8 format without Byte Order Mark (BOM).
 - **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- **UF8NOBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- **UF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - **UTF32**:  Encodes in UTF-32 format.
-- **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
+- **Unknown**: The encoding type is unknown, but is treated as Unicode.
 
-Encoding is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet. This parameter works only in file system drives.
+Encoding is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet.
+This parameter is available only in file system drives.
 
-When reading from and writing to binary files, use a value of Byte for the Encoding dynamic parameter and a value of 0 for the ReadCount parameter.  A ReadCount value of 0 reads the entire file in a single read operation and converts it into a single object (PSObject).  The default ReadCount value, 1, reads one byte in each read operation and converts each byte into a separate object, which causes errors when you use the `Set-Content` cmdlet to write the bytes to a file. For more information, see the examples.
+When reading from and writing to binary files, use the `-AsByteStream` parameter and
+a value of 0 for the ReadCount parameter.
+A ReadCount value of 0 reads the entire file in a single read operation.
+The default ReadCount value, 1, reads one byte in each read operation and converts each byte into a
+separate object, which causes errors when you use the `Set-Content` cmdlet to write the bytes
+to a file unless you use `-AsByteStream` parameter.
+For more information, see the examples.
 
 > [!NOTE]
-> Beginning in PowerShell 6.0, **Byte** is no longer a valid option for the `-Encoding` parameter. You can use the `-AsByteStream` parameter to indicate that the content should be read and output as a byte stream.
+> Beginning in PowerShell 6.0, the type of the Encoding parameter changed from
+> `FileSystemCmdletProviderEncoding` to `System.Text.Encoding`, and **Byte** is no longer
+> a valid option for the `-Encoding` parameter.
+> You can use the `-AsByteStream` parameter to indicate that the content should be read and
+> output as a byte stream.
 
 ```yaml
-Type: FileSystemCmdletProviderEncoding
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: Unknown, String, Unicode, Byte, BigEndianUnicode, UTF8, UTF7, UTF32, Ascii, Default, Oem
+Accepted values: A `System.Text.Encoding` object, ASCII, BigEndianUnicode, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UF8NoBOM, UTF32, Unknown
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: UTF8NoBOM
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Stream
 
-Gets the contents of the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are not supported.
+Gets the contents of the specified alternate NTFS file stream from the file.
+Enter the stream name.
+Wildcards are not supported.
 
-Stream is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet. This parameter works only in file system drives.
+Stream is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet.
+This parameter works only in file system drives on Windows systems.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
@@ -463,9 +513,10 @@ Accept wildcard characters: False
 
 Specifies that the content should be read as a stream of bytes.
 
-A warning occurs when you use the `-AsByteStream` parameter with the `-Encoding` parameter. The `-AsByteStream` parameter ignores any encoding and the output is returned as a stream of bytes.
+A warning occurs when you use the `-AsByteStream` parameter with the `-Encoding` parameter.
+The `-AsByteStream` parameter ignores any encoding and the output is returned as a stream of bytes.
 
-This parameter is introduced in Windows PowerShell 6.0.
+This parameter was introduced in Windows PowerShell 6.0.
 
 ```yaml
 Type: SwitchParameter
@@ -481,11 +532,12 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
+`-Verbose`, `-WarningAction`, and `-WarningVariable`.
+For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
-
-### None
 
 ### System.Int64, System.String[], System.Management.Automation.PSCredential
 
@@ -500,7 +552,9 @@ The output type depends upon the type of content that you specify as input.
 
 ## NOTES
 
-The `Get-Content` cmdlet is designed to work with the data exposed by any provider. To get the providers in your session, use the `Get-PsProvider` cmdlet. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+The `Get-Content` cmdlet is designed to work with the data exposed by any provider.
+To get the providers in your session, use the `Get-PsProvider` cmdlet.
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
