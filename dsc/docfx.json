@@ -1,19 +1,18 @@
 {
     "build": {
-        "content": [{
-            "files": [
-                "**/**.md",
-                "**/**.yml"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
+        "content": [
+            { "files": ["**/**.md", "**/**.yml"], "exclude": ["**/obj/**"] }
+        ],
         "globalMetadata": {
             "breadcrumb_path": "~/bread/toc.yml",
             "uhfHeaderId": "MSDocsHeader-Powershell",
             "layout": "conceptual",
             "ROBOTS": "INDEX, FOLLOW",
             "ms.devlang": "powershell",
-            "ms.tgt_pltfr": "windows"
+            "ms.tgt_pltfr": "windows",
+            "feedback_system": "GitHub",
+            "feedback_github_repo": "PowerShell/PowerShell-Docs",
+            "feedback_product_url": "https://windowsserver.uservoice.com/forums/301869-powershell"
         },
         "fileMetadata": {
             "ms.prod": { "**/**.md": "powershell" },
@@ -23,12 +22,9 @@
             "ms.author": { "**/**.md": "robreed" },
             "author": { "**/**.md": "bobbytreed" }
         },
-        "resource": [{
-            "files": [
-                "**/images/**"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
+        "resource": [
+            { "files": ["**/images/**"], "exclude": ["**/obj/**"] }
+        ],
         "template": "op.html",
         "dest": "dsc",
         "markdownEngineName": "markdig"
