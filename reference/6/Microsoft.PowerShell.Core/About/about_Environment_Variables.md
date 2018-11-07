@@ -167,14 +167,14 @@ You can change the values of variables without using a cmdlet by using the
 following syntax:
 
 ```powershell
-$Env:<variable-name> = "<new-value>"
+$Env:<variable-name> += "<new-value>"
 ```
 
 For example, to append ";c:\\temp" to the value of the Path environment
 variable, use the following syntax:
 
 ```powershell
-$Env:path = $env:path + ";c:\temp"
+$Env:path += ";c:\temp"
 ```
 
 You can also use the Item cmdlets, such as Set-Item, Remove-Item, and
@@ -199,15 +199,14 @@ every PowerShell session, add the following command to your Windows
 PowerShell profile.
 
 ```powershell
-$Env:Path = $Env:Path + ";C:\Temp"
+$Env:Path += ";C:\Temp"
 ```
 
 To add the command to an existing profile, such as the CurrentUser,AllHosts
 profile, type:
 
 ```powershell
-Add-Content -Path $Profile.CurrentUserAllHosts -Value '$Env:Path = `
-$Env:Path + ";C:\Temp"'
+Add-Content -Path $Profile.CurrentUserAllHosts -Value '$Env:Path += ";C:\Temp"'
 ```
 
 ### Environment Variables That Store Preferences
@@ -269,7 +268,7 @@ For example, to add the "C:\\Program Files\\Fabrikam\\Modules" directory to
 the value of the PSModulePath environment variable, type:
 
 ```powershell
-$Env:PSModulePath = $Env:PSModulePath+";C:\Program Files\Fabrikam\Modules"
+$Env:PSModulePath += ";C:\Program Files\Fabrikam\Modules"
 ```
 
 The semicolon (;) in the command separates the new path from the path that
@@ -279,7 +278,7 @@ On Linux or MacOS, to add the "/usr/local/Fabrikam/Modules" directory to
 the value of the PSModulePath environment variable, type:
 
 ```powershell
-$Env:PSModulePath = $Env:PSModulePath+":/usr/local/Fabrikam/Modules"
+$Env:PSModulePath += ":/usr/local/Fabrikam/Modules"
 ```
 
 On Linux or MacOS, the colon (:) in the command separates the new path from the path that

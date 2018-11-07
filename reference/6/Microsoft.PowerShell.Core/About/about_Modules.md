@@ -337,7 +337,7 @@ $Env:PSModulePath
 To add a default module location on Windows, use the following command format:
 
 ```powershell
-$Env:PSModulePath = $Env:PSModulePath + ";<path>"
+$Env:PSModulePath += ";<path>"
 ```
 
 The semicolon (;) in the command separates the new path from the
@@ -346,20 +346,20 @@ path that precedes it in the list.
 For example, to add the "C:\ps-test\Modules" directory, type:
 
 ```powershell
-$Env:PSModulePath + ";C:\ps-test\Modules"
+$Env:PSModulePath += ";C:\ps-test\Modules"
 ```
 
 To add a default module location on Linux or MacOS, use the following command format:
 
 ```powershell
-$Env:PSModulePath = $Env:PSModulePath + ":<path>"
+$Env:PSModulePath += ":<path>"
 ```
 
 For example, to add the "/usr/local/Fabrikam/Modules" directory to
 the value of the PSModulePath environment variable, type:
 
 ```powershell
-$Env:PSModulePath = $Env:PSModulePath + ":/usr/local/Fabrikam/Modules"
+$Env:PSModulePath += ":/usr/local/Fabrikam/Modules"
 ```
 
 On Linux or MacOS, the colon (:) in the command separates the new path from the path that
