@@ -334,32 +334,46 @@ To view the default module locations, type:
 $Env:PSModulePath
 ```
 
-To add a default module location, use the following command format.
+To add a default module location on Windows, use the following command format:
 
 ```powershell
-$Env:PSModulePath = $Env:PSModulePath + ";<path>"
+$Env:PSModulePath += ";<path>"
 ```
 
-The semi-colon (;) in the command separates the new path from the
+The semicolon (;) in the command separates the new path from the
 path that precedes it in the list.
 
 For example, to add the "C:\ps-test\Modules" directory, type:
 
 ```powershell
-$Env:PSModulePath + ";C:\ps-test\Modules"
+$Env:PSModulePath += ";C:\ps-test\Modules"
 ```
+
+To add a default module location on Linux or MacOS, use the following command format:
+
+```powershell
+$Env:PSModulePath += ":<path>"
+```
+
+For example, to add the "/usr/local/Fabrikam/Modules" directory to
+the value of the PSModulePath environment variable, type:
+
+```powershell
+$Env:PSModulePath += ":/usr/local/Fabrikam/Modules"
+```
+
+On Linux or MacOS, the colon (:) in the command separates the new path from the path that
+precedes it in the list.
 
 When you add a path to PSModulePath, `Get-Module` and `Import-Module`
 commands include modules in that path.
 
-The value that you set affects only the current session. To make the
-change persistent, add the command to your PowerShell profile
-or use System in Control Panel to change the value of the PSModulePath
-environment variable in the registry.
-
-Also, to make the change persistent, you can also use the
+The value that you set affects only the current session. To make the change
+persistent, add the command to your PowerShell profile. Alternatively, on
+Windows, you can use System in Control Panel to change the value of the
+PSModulePath environment variable, or you can use the
 SetEnvironmentVariable method of the System.Environment class to add
-a Path to the PSModulePath environment variable.
+a path to the PSModulePath environment variable.
 
 For more information about the PSModulePath variable, see
 [about_Environment_Variables](about_Environment_Variables.md).
