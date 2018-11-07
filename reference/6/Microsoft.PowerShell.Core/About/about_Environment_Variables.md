@@ -243,7 +243,7 @@ The environment variables that store preferences include:
   The default value of $Env:PSModulePath on Windows is:
 
   ```
-  $HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules
+  $HOME\Documents\WindowsPowerShell\Modules;$PSHOME\Modules
   ```
 
   The default value of $Env:PSModulePath on Linux or MacOS is:
