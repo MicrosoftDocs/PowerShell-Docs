@@ -249,7 +249,7 @@ The environment variables that store preferences include:
   The default value of $Env:PSModulePath on Linux or MacOS is:
 
   ```
-  $HOME/.local/share/powershell/Modules:/usr/local/share/powershell/Modules:/opt/microsoft/powershell/6/Modules
+  $HOME/.local/share/powershell/Modules:/usr/local/share/powershell/Modules:$PSHOME/Modules
   ```
 
 On Windows, PowerShell sets the value of "\$PSHOME\\Modules" in the registry. It
