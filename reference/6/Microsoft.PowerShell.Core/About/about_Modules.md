@@ -368,14 +368,12 @@ precedes it in the list.
 When you add a path to PSModulePath, `Get-Module` and `Import-Module`
 commands include modules in that path.
 
-The value that you set affects only the current session. To make the
-change persistent, add the command to your PowerShell profile
-or, on Windows, use System in Control Panel to change the value of the PSModulePath
-environment variable in the registry.
-
-Also, to make the change persistent, you can also use the
+The value that you set affects only the current session. To make the change
+persistent, add the command to your PowerShell profile. Alternatively, on
+Windows, you can use System in Control Panel to change the value of the
+PSModulePath environment variable, or you can use the
 SetEnvironmentVariable method of the System.Environment class to add
-a Path to the PSModulePath environment variable.
+a path to the PSModulePath environment variable.
 
 For more information about the PSModulePath variable, see
 [about_Environment_Variables](about_Environment_Variables.md).
