@@ -340,7 +340,7 @@ To add a default module location on Windows, use the following command format:
 $Env:PSModulePath = $Env:PSModulePath + ";<path>"
 ```
 
-The semi-colon (;) in the command separates the new path from the
+The semicolon (;) in the command separates the new path from the
 path that precedes it in the list.
 
 For example, to add the "C:\ps-test\Modules" directory, type:

@@ -272,7 +272,7 @@ the value of the PSModulePath environment variable, type:
 $Env:PSModulePath = $Env:PSModulePath+";C:\Program Files\Fabrikam\Modules"
 ```
 
-The semi-colon (;) in the command separates the new path from the path that
+The semicolon (;) in the command separates the new path from the path that
 precedes it in the list.
 
 On Linux or MacOS, to add the "/usr/local/Fabrikam/Modules" directory to
