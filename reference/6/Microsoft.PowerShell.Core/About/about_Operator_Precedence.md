@@ -80,7 +80,7 @@ order:
 |`-and -or -xor`           |[about_Logical_Operators](about_logical_operators.md)|
 |`.` (dot-source)          |[about_Scopes](about_Scopes.md)|
 |`&` (call)                |[about_Operators](about_Operators.md)|
-|&#124; (pipeline operator)|[about_Operators](about_Operators.md)|
+|<code>&#124;</code> (pipeline operator)|[about_Operators](about_Operators.md)|
 |`> >> 2> 2>> 2>&1`        |[about_Redirection](about_Redirection.md)|
 |`= += -= *= /= %=`        |[about_Assignment_Operators](about_Assignment_Operators.md)|
 
