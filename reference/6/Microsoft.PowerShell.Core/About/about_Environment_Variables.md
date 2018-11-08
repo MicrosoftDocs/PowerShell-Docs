@@ -167,14 +167,14 @@ You can change the values of variables without using a cmdlet by using the
 following syntax:
 
 ```powershell
-$Env:<variable-name> = "<new-value>"
+$Env:<variable-name> += "<new-value>"
 ```
 
 For example, to append ";c:\\temp" to the value of the Path environment
 variable, use the following syntax:
 
 ```powershell
-$Env:path = $env:path + ";c:\temp"
+$Env:path += ";c:\temp"
 ```
 
 You can also use the Item cmdlets, such as Set-Item, Remove-Item, and
@@ -199,15 +199,14 @@ every PowerShell session, add the following command to your Windows
 PowerShell profile.
 
 ```powershell
-$Env:Path = $Env:Path + ";C:\Temp"
+$Env:Path += ";C:\Temp"
 ```
 
 To add the command to an existing profile, such as the CurrentUser,AllHosts
 profile, type:
 
 ```powershell
-Add-Content -Path $Profile.CurrentUserAllHosts -Value '$Env:Path = `
-$Env:Path + ";C:\Temp"'
+Add-Content -Path $Profile.CurrentUserAllHosts -Value '$Env:Path += ";C:\Temp"'
 ```
 
 ### Environment Variables That Store Preferences
@@ -241,13 +240,19 @@ The environment variables that store preferences include:
   for modules in the specified directories when you do not specify a full path
   to a module.
 
-  The default value of $Env:PSModulePath is:
+  The default value of $Env:PSModulePath on Windows is:
 
   ```
-  $HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules
+  $HOME\Documents\WindowsPowerShell\Modules;$PSHOME\Modules
   ```
 
-PowerShell sets the value of "\$PSHOME\\Modules" in the registry. It
+  The default value of $Env:PSModulePath on Linux or MacOS is:
+
+  ```
+  $HOME/.local/share/powershell/Modules:/usr/local/share/powershell/Modules:$PSHOME/Modules
+  ```
+
+On Windows, PowerShell sets the value of "\$PSHOME\\Modules" in the registry. It
 sets the value of "\$HOME\\Documents\\WindowsPowerShell\\Modules" each time you
 start PowerShell.
 
@@ -263,10 +268,20 @@ For example, to add the "C:\\Program Files\\Fabrikam\\Modules" directory to
 the value of the PSModulePath environment variable, type:
 
 ```powershell
-$Env:PSModulePath = $Env:PSModulePath+";C:\Program Files\Fabrikam\Modules"
+$Env:PSModulePath += ";C:\Program Files\Fabrikam\Modules"
 ```
 
-The semi-colon (;) in the command separates the new path from the path that
+The semicolon (;) in the command separates the new path from the path that
+precedes it in the list.
+
+On Linux or MacOS, to add the "/usr/local/Fabrikam/Modules" directory to
+the value of the PSModulePath environment variable, type:
+
+```powershell
+$Env:PSModulePath += ":/usr/local/Fabrikam/Modules"
+```
+
+On Linux or MacOS, the colon (:) in the command separates the new path from the path that
 precedes it in the list.
 
 To change the value of PSModulePath in every session, add the previous command
