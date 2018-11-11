@@ -52,7 +52,7 @@ on UNIX-like platforms this is `$HOME/.config/powershell/`.
 > The user configuration directory can be found across platforms
 > with the command `Split-Path $PROFILE`.
 
-## Configuration settings
+## General configuration settings
 
 ### ExecutionPolicy
 
@@ -171,6 +171,8 @@ no experimental features are enabled in Powershell by default.
 }
 ```
 
+## Non-Windows logging configuration
+
 ### LogIdentity
 
 > [!IMPORTANT]
@@ -200,5 +202,25 @@ Where:
   "LogIdentity": "dev-powershell"
 }
 ```
+
+### LogLevel
+
+### LogChannels
+
+### LogKeywords
+
+## Group policy configuration
+
+### ScriptExecution
+
+### ScriptBlockLogging
+
+### ProtectedEventLogging
+
+### Transcription
+
+### UpdateableHelp
+
+### ConsoleSessionConfiguration
 
 ### Example Configurations
