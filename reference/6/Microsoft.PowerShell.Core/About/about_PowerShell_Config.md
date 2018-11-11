@@ -126,6 +126,10 @@ Examples:
 }
 ```
 
+> [!NOTE]
+> You can use `/` or `\` as a directory separator for this value
+> just like you would for the `$env:PSModulePath` environment variable.
+
 Equivalent registry key in Windows PowerShell:
 
 ```
@@ -133,5 +137,36 @@ HKLM:\System\CurrentControlSet\Control\Session Manager\Environment
 ```
 
 ### ExperimentalFeatures
+
+The names of the experimental features to enable in PowerShell.
+Include experimental feature names here to ensure they are
+in effect when PowerShell starts up.
+
+For more information on experimental features,
+see [PowerShell RFC 29](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
+
+```Schema
+"ExperimentalFeatures": [<experimental-feature-name>, ...]
+```
+
+Where:
+
+- `<experimental-feature-name>` is a string,
+  the name of an experimental feature to enable.
+
+Default setting: An empty array (`[]`);
+no experimental features are enabled in Powershell by default.
+
+Example:
+
+```json
+
+{
+  "ExperimentalFeatures": [
+    "PSImplicitRemotingBatching",
+    "PSUseAbbreviationExpansion"
+  ]
+}
+```
 
 ### Examples
