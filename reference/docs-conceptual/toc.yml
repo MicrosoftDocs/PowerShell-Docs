@@ -32,8 +32,7 @@
         - name: Starting the Windows PowerShell 2.0 Engine
           href: setup/starting-the-windows-powershell-2.0-engine.md
     - name: Concepts
-      href: >-
-        getting-started/fundamental/understanding-important-powershell-concepts.md
+      href: getting-started/fundamental/understanding-important-powershell-concepts.md
       items:
         - name: Learning PowerShell names
           href: getting-started/fundamental/learning-powershell-names.md
@@ -46,8 +45,7 @@
         - name: Using variables to store objects
           href: getting-started/fundamental/using-variables-to-store-objects.md
         - name: Understanding the PowerShell pipeline
-          href: >-
-            getting-started/fundamental/understanding-the-powershell-pipeline.md
+          href: getting-started/fundamental/understanding-the-powershell-pipeline.md
         - name: Running remote commands
           href: core-powershell/running-remote-commands.md
           items:

@@ -186,12 +186,13 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## Using ConfigurationData variables in a configuration
 
-DSC provides three special variables that can be used in a configuration script: **$AllNodes**, **$Node**, and **$ConfigurationData**.
+DSC provides the following special variables that can be used in a configuration script:
 
 - **$AllNodes** refers to the entire collection of nodes defined in **ConfigurationData**. You can filter the **AllNodes** collection by using **.Where()** and **.ForEach()**.
+- **ConfigurationData** refers to the entire hash table that is passed as the parameter when compiling a configuration.
+- **MyTypeName** contains the [configuration](configurations.md) name the variable is used in. For example, in the configuration `MyDscConfiguration`, the `$MyTypeName` will have a value of `MyDscConfiguration`.
 - **Node** refers to a particular entry in the **AllNodes** collection after it is filtered by using **.Where()** or **.ForEach()**.
   - You can read more about these methods in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
-- **ConfigurationData** refers to the entire hash table that is passed as the parameter when compiling a configuration.
 
 ## Using non-node data
 
