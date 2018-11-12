@@ -74,19 +74,19 @@ GO
 - Launch the Task Manager and select the **Details** tab.
 - Scroll down the list to powershell.exe.
 
-  [![Task Manager Details](.\media\DecodeCommandTaskManagerDetails.png)](.\media\DecodeCommandTaskManagerDetails.png "Task Manager Details")
+  [![Task Manager Details](./media/DecodeCommandTaskManagerDetails.png)](./media/DecodeCommandTaskManagerDetails.png "Task Manager Details")
 
 - Right-click the column headers in Task Manager and click **Select Columns**.
 
-  [![Task Manager right-click the column header](.\media\DecodeCommandTaskManagerRightClick.png)](.\media\DecodeCommandTaskManagerRightClick.png "Right-Click the column header")
+  [![Task Manager right-click the column header](./media/DecodeCommandTaskManagerRightClick.png)](./media/DecodeCommandTaskManagerRightClick.png "Right-Click the column header")
 
 - Check **Command Line** in the Select columns dialogue and click **OK**.
 
-  [![Task Manager select **Columns**](.\media\DecodeCommandTaskManagerSelectColumns.png)](.\media\DecodeCommandTaskManagerSelectColumns.png "Select Columns")
+  [![Task Manager select **Columns**](./media/DecodeCommandTaskManagerSelectColumns.png)](./media/DecodeCommandTaskManagerSelectColumns.png "Select Columns")
 
 - Now the parameters that were passed into powershell.exe are visible. However, the command is still obfuscated as an encoded command.
 
-  [![Task Manager with Command Line](.\media\DecodeCommandTaskManagerWithCommandLine.png)](.\media\DecodeCommandTaskManagerWithCommandLine.png "Task Manager with Command Line shown")
+  [![Task Manager with Command Line](./media/DecodeCommandTaskManagerWithCommandLine.png)](./media/DecodeCommandTaskManagerWithCommandLine.png "Task Manager with Command Line shown")
 
 ### Using PowerShell
 
