@@ -32,9 +32,9 @@ powershell.exe -Command {
 
 ## View the process
 
-The body of the command which PowerShell is executing is stored in the `CommandLine` property
-of the [Win32_Process][] class. If the command is an [encoded command][], the `CommandLine`
-property contains the string `EncodedCommand`. Using this information, the encoded command can
+The body of the command which PowerShell is executing is stored in the **CommandLine** property
+of the [Win32_Process][] class. If the command is an [encoded command][], the **CommandLine**
+property contains the string "EncodedCommand". Using this information, the encoded command can
 be de-obfuscated via the following process.
 
 Start PowerShell as Administrator. It is vital that PowerShell is running as administrator,
