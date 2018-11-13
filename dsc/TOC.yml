@@ -224,6 +224,8 @@
   items:
   - name: Creating Configurations from Servers
     href: createConfigurationsfromServers.md
+  - name: Managing configuration data at scale
+    href: configurationDataAtScale.md
 - name: More Resources
   items:
   - name: Whitepapers
