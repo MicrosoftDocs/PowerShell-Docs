@@ -58,8 +58,12 @@ Then register your servers from either
 [on-premises](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azureaws)
 or [in Azure](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#azure-virtual-machines)
 to pull configurations.
+The latest update to the project has also published
+[runbooks](https://www.powershellgallery.com/packages?q=DscGallerySamples)
+for Azure Automation to automate the process of importing configurations
+from the PowerShell Gallery in to your account for use as composite resources.
 
-To try out automating creation of Composite Resources for DSC, visit the
+To try out automating creation of composite resources for DSC, visit the
 [PowerShell Gallery](https://www.powershellgallery.com/packages/compositeresource/)
 and download the solution or click "Project Site"
 to view the
