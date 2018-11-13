@@ -14,8 +14,6 @@
     href: enactingConfigurations.md
   - name: Separating configuration and environment data
     href: separatingEnvData.md
-  - name: Managing configuration data at scale
-    href: configurationDataAtScale.md
   - name: Using resources with multiple versions
     href: sxsResource.md
   - name: Running DSC with user credentials
@@ -221,6 +219,13 @@
       href: msft-dsclocalconfigurationmanager-stopconfiguration.md
     - name: TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
       href: msft-dsclocalconfigurationmanager-testconfiguration.md
+- name: Community Solutions for DSC
+  href: communitySolutions.md
+  items:
+  - name: Creating Configurations from Servers
+    href: createConfigurationsfromServers.md
+  - name: Managing configuration data at scale
+    href: configurationDataAtScale.md
 - name: More Resources
   items:
   - name: Whitepapers
