@@ -220,6 +220,7 @@
     - name: TestConfiguration method of the MSFT_DSCLocalConfigurationManager class
       href: msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: Community Solutions for DSC
+  href: communitySolutions.md
   items:
   - name: Managing configuration data at scale
     href: configurationDataAtScale.md
