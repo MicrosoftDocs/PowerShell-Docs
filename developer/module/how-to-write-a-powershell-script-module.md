@@ -23,7 +23,7 @@ You create a script module by saving a valid PowerShell script to a .psm1 file, 
 
    Saving a script with the .psm1 extension means that you can use the module cmdlets, such as [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), on it. These cmdlets exist primarily so that you can easily import and export your code onto other user's systems. (The alternate solution would be to load up your code on other systems and then dot-source it into active memory, which isn't a particularly scalable solution.) For more information see the **Module Cmdlets and Variables** section in [Windows PowerShell Modules](./understanding-a-windows-powershell-module.md) Note that, by default, all functions in your script will be accessible to users who import your .psm1 file, but properties will not.
 
-   An example PowerShell script, entitled Get-Calendar, is available at the end of this topic.
+   An example PowerShell script, entitled Show-Calendar, is available at the end of this topic.
 
    ```powershell
    function Show-Calendar {
@@ -75,7 +75,7 @@ You create a script module by saving a valid PowerShell script to a .psm1 file, 
 
 Note that [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) removes your module from active memory - it does not actually delete it from where you saved the module files.
 
-### Get-Calendar code example
+### Show-Calendar code example
 
 The following example is a simple script module that contains a single function named Show-Calendar. This function displays a visual representation of a calendar. In addition, the sample contains the PowerShell Help strings for the synopsis, description, parameter values, and example. Note that the last line of code indicates that the Show-Calendar function will be exported as a module member when the module is imported.
 

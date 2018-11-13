@@ -32,8 +32,7 @@
         - name: Starting the Windows PowerShell 2.0 Engine
           href: setup/starting-the-windows-powershell-2.0-engine.md
     - name: Concepts
-      href: >-
-        getting-started/fundamental/understanding-important-powershell-concepts.md
+      href: getting-started/fundamental/understanding-important-powershell-concepts.md
       items:
         - name: Learning PowerShell names
           href: getting-started/fundamental/learning-powershell-names.md
@@ -46,8 +45,7 @@
         - name: Using variables to store objects
           href: getting-started/fundamental/using-variables-to-store-objects.md
         - name: Understanding the PowerShell pipeline
-          href: >-
-            getting-started/fundamental/understanding-the-powershell-pipeline.md
+          href: getting-started/fundamental/understanding-the-powershell-pipeline.md
         - name: Running remote commands
           href: core-powershell/running-remote-commands.md
           items:
@@ -182,10 +180,8 @@
       href: getting-started/cookbooks/changing-computer-state.md
     - name: Collecting information about computers
       href: getting-started/cookbooks/collecting-information-about-computers.md
-    - name: Creating a custom input box
-      href: getting-started/cookbooks/creating-a-custom-input-box.md
-    - name: Creating a graphical date picker
-      href: getting-started/cookbooks/creating-a-graphical-date-picker.md
+    - name: Decode a PowerShell command from a running process
+      href: getting-started/cookbooks/Decode-PowerShell-Command-from-a-Running-Process.md
     - name: Managing current location
       href: getting-started/cookbooks/managing-current-location.md
     - name: Managing processes with process cmdlets
@@ -196,16 +192,18 @@
       href: getting-started/cookbooks/managing-windows-powershell-drives.md
     - name: Manipulating items directly
       href: getting-started/cookbooks/manipulating-items-directly.md
+    - name: Creating a custom input box
+      href: getting-started/cookbooks/creating-a-custom-input-box.md
+    - name: Creating a graphical date picker
+      href: getting-started/cookbooks/creating-a-graphical-date-picker.md
     - name: Multiple selection list boxes
       href: getting-started/cookbooks/multiple-selection-list-boxes.md
-    - name: Other useful scripting objects
-      href: getting-started/cookbooks/other-useful-scripting-objects.md
+    - name: Selecting items from a list box
+      href: getting-started/cookbooks/selecting-items-from-a-list-box.md
     - name: Performing networking tasks
       href: getting-started/cookbooks/performing-networking-tasks.md
     - name: Redirecting data with Out- cmdlets
       href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
-    - name: Selecting items from a list box
-      href: getting-started/cookbooks/selecting-items-from-a-list-box.md
     - name: Using format commands to change output view
       href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
     - name: Viewing object structure - Get-Member
@@ -239,6 +237,8 @@
       href: getting-started/cookbooks/working-with-registry-keys.md
     - name: Working with software installations
       href: getting-started/cookbooks/working-with-software-installations.md
+    - name: Other useful scripting objects
+      href: getting-started/cookbooks/other-useful-scripting-objects.md
     - name: Appendix 1 Compatibility aliases
       href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
     - name: Appendix 2 Creating a custom powershell shortcut

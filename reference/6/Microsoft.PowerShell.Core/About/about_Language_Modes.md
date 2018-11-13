@@ -61,7 +61,8 @@ In RestrictedLanguage language mode, users may run commands (cmdlets,
 functions, CIM commands, and workflows) but are not permitted to use script
 blocks.
 
-Only the following variables are permitted:
+By default, only the following variables are permitted in RestrictedLanguage
+language mode:
 
 - \$PSCulture
 - \$PSUICulture
@@ -69,7 +70,15 @@ Only the following variables are permitted:
 - \$False
 - \$Null.
 
+Module manifests, which use RestrictedLanguage language mode, permit the
+following additional variables as well:
+
+- \$PSScriptRoot
+- \$PSEdition (in PowerShell Core)
+- \$EnabledExperimentalFeatures (in PowerShell Core)
+
 Only the following comparison operators are permitted:
+
 - -eq (equal)
 - -gt (greater-than)
 - -lt (less-than)
