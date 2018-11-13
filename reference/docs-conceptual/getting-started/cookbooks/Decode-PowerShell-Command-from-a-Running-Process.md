@@ -1,8 +1,8 @@
 # Decode PowerShell Command from a Running Process
 
-There are times when I've found a PowerShell process running that is taking up a bunch of resources. Sometimes they've even been my own scripts running in the context of a [Task Scheduler](https://docs.microsoft.com/windows/desktop/TaskSchd/task-scheduler-start-page
+At times you may have a PowerShell process running that is taking up a large amount of resources. This process could be running in the context of a [Task Scheduler](https://docs.microsoft.com/windows/desktop/TaskSchd/task-scheduler-start-page
 ) job or a [SQL Server Agent](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent
-) Job with a PowerShell job step. Because multiple PowerShell processes can be running at a time, sometimes it's difficult to know what the offending process is. The following method can be used to decode a script block that a PowerShell process is currently running.
+) job. Because multiple PowerShell processes can be running at a time, it can be difficult to know what the offending process is. The following method can be used to decode a script block that a PowerShell process is currently running.
 
 ## Create a Long Running Process
 
@@ -22,35 +22,20 @@ powershell.exe -Command {
 
 ## View the Process
 
-### Using Task Manager
+The body of the command which PowerShell is executing is stored the in the `CommandLine` property of the [Win32_Process](https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-process
+) class. If the command is an [encoded command](https://docs.microsoft.com/powershell/scripting/core-powershell/console/powershell.exe-command-line-help?#-encodedcommand-
+), the `CommandLine` property will contain the string `EncodedCommand`. Using this information, the [encoded command](https://docs.microsoft.com/powershell/scripting/core-powershell/console/powershell.exe-command-line-help?#-encodedcommand-
+) can be de-obfuscated via the following process.
 
-- Launch the Task Manager and select the **Details** tab.
-- Scroll down the list to powershell.exe.
+Start PowerShell as Administrator. It is vital that PowerShell is running as administrator, otherwise no results will be returned when querying the running processes.
 
-  [![Task Manager Details](./media/DecodeCommandTaskManagerDetails.png)](./media/DecodeCommandTaskManagerDetails.png "Task Manager Details")
-
-- Right-click the column headers in Task Manager and click **Select Columns**.
-
-  [![Task Manager right-click the column header](./media/DecodeCommandTaskManagerRightClick.png)](./media/DecodeCommandTaskManagerRightClick.png "Right-Click the column header")
-
-- Check **Command Line** in the Select columns dialogue and click **OK**.
-
-  [![Task Manager select **Columns**](./media/DecodeCommandTaskManagerSelectColumns.png)](./media/DecodeCommandTaskManagerSelectColumns.png "Select Columns")
-
-- Now the parameters that were passed into powershell.exe are visible. However, the command is still obfuscated as an encoded command.
-
-  [![Task Manager with Command Line](./media/DecodeCommandTaskManagerWithCommandLine.png)](./media/DecodeCommandTaskManagerWithCommandLine.png "Task Manager with Command Line shown")
-
-### Using PowerShell
-
-- Start PowerShell as Administrator. It is vital that PowerShell is running as administrator, otherwise no results will be returned when querying the running processes.
-- Execute the following command to obtain all of the PowerShell processes that have an encoded command:
+Execute the following command to obtain all of the PowerShell processes that have an encoded command:
 
 ```PowerShell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-- The following command creates a custom PowerShell object that contains the process ID and the encoded command.
+The following command creates a custom PowerShell object that contains the process ID and the encoded command.
 
 ```PowerShell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -65,7 +50,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-- Now the encoded command can be decoded. The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.
+Now the encoded command can be decoded. The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.
 
 ```PowerShell
 $commandDetails | ForEach-Object -Process {
@@ -85,7 +70,7 @@ $commandDetails | ForEach-Object -Process {
 }
 ```
 
-- The decoded command can now be reviewed by selecting the decoded command property.
+The decoded command can now be reviewed by selecting the decoded command property.
 
 ```PowerShell
 $commandDetails[0].DecodedCommand
