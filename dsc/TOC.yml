@@ -222,8 +222,8 @@
 - name: Community Solutions for DSC
   href: communitySolutions.md
   items:
-  - name: Creating Configurations from Servers
-    href: createConfigurationsfromServers.md
+  - name: Configuration Based On STIG
+    href: configurationBasedOnSTIG.md
 - name: More Resources
   items:
   - name: Whitepapers
