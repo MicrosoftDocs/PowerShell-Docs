@@ -42,7 +42,7 @@ or [in Azure](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-o
 to pull configurations.
 
 To try out ReverseDSC, visit the
-[PowerShell Gallery](http://www.powershellgallery.com)
+[PowerShell Gallery](https://www.powershellgallery.com/packages/ReverseDSC/)
 and download the solution or click "Project Site"
 to view the
 [documentation](https://github.com/Microsoft/sharepointDSC.reverse).
