@@ -1,70 +1,23 @@
 # Decode PowerShell Command from a Running Process
 
-There are times when I've found a PowerShell process running that is taking up a bunch of resources. Sometimes they've even been my own scripts running in the context of a SQL Server Agent Job with a PowerShell job step. Because I can have multiple PowerShell job steps running at a time, sometimes it's difficult to know what the offending job is. The following method can be used to decode a script block that a PowerShell process is currently running.
+There are times when I've found a PowerShell process running that is taking up a bunch of resources. Sometimes they've even been my own scripts running in the context of a [Task Scheduler](https://docs.microsoft.com/windows/desktop/TaskSchd/task-scheduler-start-page
+) job or a [SQL Server Agent](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent
+) Job with a PowerShell job step. Because multiple PowerShell processes can be running at a time, sometimes it's difficult to know what the offending process is. The following method can be used to decode a script block that a PowerShell process is currently running.
 
 ## Create a Long Running Process
 
-To demonstrate this capability, create the following Agent Job. It executes a PowerShell job step that outputs a number every minute for 10 minutes.
+To demonstrate this capability, open a new PowerShell window and run the following code. It executes a PowerShell command that outputs a number every minute for 10 minutes.
 
-```SQL
-USE [msdb]
-GO
-DECLARE @jobId BINARY(16)
-EXEC msdb.dbo.sp_add_job @job_name=N'PowerShell Job',
-    @enabled=1,
-    @notify_level_eventlog=0,
-    @notify_level_email=2,
-    @notify_level_page=2,
-    @delete_level=0,
-    @category_name=N'[Uncategorized (Local)]',
-    @owner_login_name=N'sa'
-GO
-
-EXEC msdb.dbo.sp_add_jobserver @job_name=N'PowerShell Job', @server_name = @@SERVERNAME
-GO
-
-EXEC msdb.dbo.sp_add_jobstep @job_name=N'PowerShell Job', @step_name=N'PowerShell',
-    @step_id=1,
-    @cmdexec_success_code=0,
-    @on_success_action=1,
-    @on_fail_action=2,
-    @retry_attempts=0,
-    @retry_interval=0,
-    @os_run_priority=0,
-    @subsystem=N'PowerShell',
-    @command=N'
-        powershell.exe -Command {
-            $i = 1
-            while ( $i -le 10 )
-            {
-                Write-Output -InputObject $i
-                Start-Sleep -Seconds 60
-                $i++
-            }
-        }
-    ', 
-    @database_name=N'master',
-    @flags=0
-GO
-
-EXEC msdb.dbo.sp_update_job @job_name=N'PowerShell Job',
-    @enabled=1,
-    @start_step_id=1,
-    @notify_level_eventlog=0,
-    @notify_level_email=2,
-    @notify_level_page=2,
-    @delete_level=0,
-    @description=N'',
-    @category_name=N'[Uncategorized (Local)]',
-    @owner_login_name=N'sa',
-    @notify_email_operator_name=N'',
-    @notify_page_operator_name=N''
-GO
-Execute the Agent Job that was just created.
-USE msdb;
-GO
-EXEC dbo.sp_start_job N'PowerShell Job';
-GO
+```PowerShell
+powershell.exe -Command {
+    $i = 1
+    while ( $i -le 10 )
+    {
+        Write-Output -InputObject $i
+        Start-Sleep -Seconds 60
+        $i++
+    }
+}
 ```
 
 ## View the Process
@@ -116,8 +69,16 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 
 ```PowerShell
 $commandDetails | ForEach-Object -Process {
+    # Get the current process
     $currentProcess = $_
-    $decodedCommand = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($currentProcess.EncodedCommand))
+
+    # Convert the Base 64 string to a Byte Array
+    $commandBytes = [System.Convert]::FromBase64String($currentProcess.EncodedCommand)
+
+    # Convert the Byte Array to a string
+    $decodedCommand = [System.Text.Encoding]::Unicode.GetString($commandBytes)
+
+    # Add the decoded command back to the object
     $commandDetails |
         Where-Object -FilterScript { $_.ProcessId -eq $_.ProcessId } |
         Add-Member -MemberType NoteProperty -Name DecodedCommand -Value $decodedCommand
