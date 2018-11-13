@@ -14,6 +14,8 @@
     href: enactingConfigurations.md
   - name: Separating configuration and environment data
     href: separatingEnvData.md
+  - name: Managing configuration data at scale
+    href: configurationDataAtScale.md
   - name: Using resources with multiple versions
     href: sxsResource.md
   - name: Running DSC with user credentials
