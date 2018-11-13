@@ -25,16 +25,16 @@ the best option is to package the configuration as a
 This can be challenging if you are thinking about creating a Composite for the first time.
 
 A community maintained solution named
-[Composite Resource](https://github.com/microsoft/compositeresource)
+[CompositeResource](https://github.com/microsoft/compositeresource)
 has been created to resolve this challenge.
 
-Composite Resource automates the process of creating a new module from your configuration.
+CompositeResource automates the process of creating a new module from your configuration.
 You start by
 [dot sourcing](https://blogs.technet.microsoft.com/heyscriptingguy/2010/08/10/how-to-reuse-windows-powershell-functions-in-scripts/)
 the configuration script on your workstation (or build server)
 so it is loaded in memory.
 Next, rather than running the configuration to generate a MOF file,
-use the function provided by the Composite Resource module to automate a conversion.
+use the function provided by the CompositeResource module to automate a conversion.
 This will load the contents of your configuration,
 get the list of parameters,
 and generate a new module with everything you need.
