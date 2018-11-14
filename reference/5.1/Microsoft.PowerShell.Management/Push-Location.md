@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821612
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Push-Location
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821612
+schema: 2.0.0
+title: Push-Location
 ---
 
 # Push-Location
@@ -78,7 +79,6 @@ PS C:\> Get-Location -Stack
 ```
 
 This commmand shows the current location stack.
-
 
 ## PARAMETERS
 

@@ -96,9 +96,6 @@ You can use the `Clear-Content` cmdlet to change the content of the Zone.Identif
 However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.
 If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
 
-> [!WARNING]
-> This parameter is not supported by any providers installed with Windows PowerShell.
-
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -241,7 +238,7 @@ Parameter Sets: Path
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -254,11 +251,11 @@ Prompts you for confirmation before running the cmdlet.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -271,7 +268,7 @@ The cmdlet is not run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: wi
+Aliases: cf
 
 Required: False
 Position: Named

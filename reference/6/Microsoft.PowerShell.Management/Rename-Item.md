@@ -18,15 +18,15 @@ Renames an item in a PowerShell provider namespace.
 ### ByPath (Default)
 
 ```
-Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
 Rename-Item -LiteralPath <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -181,7 +181,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -214,7 +214,7 @@ Parameter Sets: ByPath
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

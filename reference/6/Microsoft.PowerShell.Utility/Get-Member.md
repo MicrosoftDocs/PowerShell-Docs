@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821792
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-Member
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821792
+schema: 2.0.0
+title: Get-Member
 ---
 
 # Get-Member
@@ -15,10 +16,9 @@ Gets the properties and methods of objects.
 
 ## SYNTAX
 
-```powershell
-Get-Member [[-Name] <String[]>] [-InputObject <PSObject>]
- [-MemberType <PSMemberTypes>] [-View <PSMemberViewTypes>] [-Static] [-Force]
- [<CommonParameters>]
+```
+Get-Member [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMemberTypes>]
+ [-View <PSMemberViewTypes>] [-Static] [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

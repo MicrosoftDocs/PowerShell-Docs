@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=821452
-external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
-title:  Set-PSReadlineKeyHandler
+external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSReadline
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=821452
+schema: 2.0.0
+title: Set-PSReadlineKeyHandler
 ---
+
 # Set-PSReadlineKeyHandler
 
 ## SYNOPSIS
@@ -16,14 +18,12 @@ Binds keys to user-defined or PSReadline-provided key handlers.
 ## SYNTAX
 
 ### ScriptBlock
-
 ```
 Set-PSReadlineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String>] [-Description <String>]
  [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
 ```
 
 ### Function
-
 ```
 Set-PSReadlineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String> [<CommonParameters>]
 ```
@@ -173,7 +173,6 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

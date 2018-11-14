@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821680
-external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-title:  Add-JobTrigger
+external help file: Microsoft.PowerShell.ScheduledJob.dll-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSScheduledJob
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821680
+schema: 2.0.0
+title: Add-JobTrigger
 ---
 
 # Add-JobTrigger

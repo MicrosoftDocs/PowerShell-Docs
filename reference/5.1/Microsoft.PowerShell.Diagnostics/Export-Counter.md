@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821527
-external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-title:  Export-Counter
+external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Diagnostics
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821527
+schema: 2.0.0
+title: Export-Counter
 ---
 
 # Export-Counter
@@ -183,7 +184,7 @@ Parameter Sets: (All)
 Aliases: PSPath
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False

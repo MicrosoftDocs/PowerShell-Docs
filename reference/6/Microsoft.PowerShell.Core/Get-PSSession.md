@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821488
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-PSSession
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821488
+schema: 2.0.0
+title: Get-PSSession
 ---
 
 # Get-PSSession
@@ -36,13 +37,6 @@ Get-PSSession [-ComputerName] <String[]> [-ApplicationName <String>] [-Configura
  [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
 ```
 
-### ConnectionUriInstanceId
-```
-Get-PSSession [-ConnectionUri] <Uri[]> [-ConfigurationName <String>] [-AllowRedirection] -InstanceId <Guid[]>
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
- [-ThrottleLimit <Int32>] [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
-```
-
 ### ConnectionUri
 ```
 Get-PSSession [-ConnectionUri] <Uri[]> [-ConfigurationName <String>] [-AllowRedirection] [-Name <String[]>]
@@ -50,10 +44,17 @@ Get-PSSession [-ConnectionUri] <Uri[]> [-ConfigurationName <String>] [-AllowRedi
  [-ThrottleLimit <Int32>] [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
 ```
 
-### VMIdInstanceId
+### ConnectionUriInstanceId
 ```
-Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>] -VMId <Guid[]>
- [<CommonParameters>]
+Get-PSSession [-ConnectionUri] <Uri[]> [-ConfigurationName <String>] [-AllowRedirection] -InstanceId <Guid[]>
+ [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+ [-ThrottleLimit <Int32>] [-State <SessionFilterState>] [-SessionOption <PSSessionOption>] [<CommonParameters>]
+```
+
+### VMNameInstanceId
+```
+Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>]
+ -VMName <String[]> [<CommonParameters>]
 ```
 
 ### ContainerId
@@ -74,16 +75,16 @@ Get-PSSession [-ConfigurationName <String>] [-Name <String[]>] [-State <SessionF
  [<CommonParameters>]
 ```
 
+### VMIdInstanceId
+```
+Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>] -VMId <Guid[]>
+ [<CommonParameters>]
+```
+
 ### VMName
 ```
 Get-PSSession [-ConfigurationName <String>] [-Name <String[]>] [-State <SessionFilterState>] -VMName <String[]>
  [<CommonParameters>]
-```
-
-### VMNameInstanceId
-```
-Get-PSSession [-ConfigurationName <String>] -InstanceId <Guid[]> [-State <SessionFilterState>]
- -VMName <String[]> [<CommonParameters>]
 ```
 
 ### InstanceId
@@ -226,7 +227,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ConnectionUriInstanceId, ConnectionUri
+Parameter Sets: ConnectionUri, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -286,7 +287,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: AuthenticationMechanism
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -312,7 +313,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -364,7 +365,7 @@ For more information about session configurations, see [about_Session_Configurat
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri, VMIdInstanceId, ContainerId, ContainerIdInstanceId, VMId, VMName, VMNameInstanceId
+Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId, VMNameInstanceId, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName
 Aliases:
 
 Required: False
@@ -400,11 +401,28 @@ Earlier versions do not store sessions.
 
 ```yaml
 Type: Uri[]
-Parameter Sets: ConnectionUriInstanceId, ConnectionUri
+Parameter Sets: ConnectionUri, ConnectionUriInstanceId
 Aliases: URI, CU
 
 Required: True
 Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ContainerId
+Specifies an array of IDs of containers.
+This cmdlet starts an interactive session with each of the specified containers.
+To see the containers that are available to you, use the **Get-Container** cmdlet.
+
+```yaml
+Type: String[]
+Parameter Sets: ContainerId, ContainerIdInstanceId
+Aliases:
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -424,7 +442,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: PSCredential
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -467,7 +485,7 @@ The instance ID of a session is stored in the **InstanceID** property of the ses
 
 ```yaml
 Type: Guid[]
-Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, VMIdInstanceId, ContainerIdInstanceId, VMNameInstanceId
+Parameter Sets: ComputerInstanceId, ConnectionUriInstanceId, VMNameInstanceId, ContainerIdInstanceId, VMIdInstanceId
 Aliases:
 
 Required: True
@@ -568,7 +586,7 @@ For more information about session configurations, see [about_Session_Configurat
 
 ```yaml
 Type: PSSessionOption
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -593,7 +611,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SessionFilterState
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri, VMIdInstanceId, ContainerId, ContainerIdInstanceId, VMId, VMName, VMNameInstanceId
+Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId, VMNameInstanceId, ContainerId, ContainerIdInstanceId, VMId, VMIdInstanceId, VMName
 Aliases:
 Accepted values: All, Opened, Disconnected, Closed, Broken
 
@@ -613,7 +631,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUriInstanceId, ConnectionUri
+Parameter Sets: ComputerName, ComputerInstanceId, ConnectionUri, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -644,23 +662,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ContainerId
-Specifies an array of IDs of containers.
-This cmdlet starts an interactive session with each of the specified containers.
-To see the containers that are available to you, use the **Get-Container** cmdlet.
-
-```yaml
-Type: String[]
-Parameter Sets: ContainerId, ContainerIdInstanceId
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -VMId
 Specifies an array of ID of virtual machines.
 This cmdlet starts an interactive session with each of the specified virtual machines.
@@ -670,7 +671,7 @@ To see the virtual machines that are available to you, use the following command
 
 ```yaml
 Type: Guid[]
-Parameter Sets: VMIdInstanceId, VMId
+Parameter Sets: VMId, VMIdInstanceId
 Aliases: VMGuid
 
 Required: True
@@ -687,7 +688,7 @@ To see the virtual machines that are available to you, use the **Get-VM** cmdlet
 
 ```yaml
 Type: String[]
-Parameter Sets: VMName, VMNameInstanceId
+Parameter Sets: VMNameInstanceId, VMName
 Aliases:
 
 Required: True

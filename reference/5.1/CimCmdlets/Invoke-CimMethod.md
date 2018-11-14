@@ -26,24 +26,10 @@ Invoke-CimMethod [-ClassName] <String> -CimSession <CimSession[]> [[-Arguments] 
  [<CommonParameters>]
 ```
 
-### ResourceUriSessionSet
-```
-Invoke-CimMethod -ResourceUri <Uri> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
 ### ResourceUriComputerSet
 ```
 Invoke-CimMethod -ResourceUri <Uri> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
  [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### CimInstanceComputerSet
-```
-Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> [-ComputerName <String[]>]
- [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -54,10 +40,18 @@ Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> -CimSession <
  [<CommonParameters>]
 ```
 
-### CimClassSessionSet
+### CimInstanceComputerSet
 ```
-Invoke-CimMethod [-CimClass] <CimClass> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> [-ComputerName <String[]>]
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### ResourceUriSessionSet
+```
+Invoke-CimMethod -ResourceUri <Uri> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
+ [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### CimClassComputerSet
@@ -66,16 +60,22 @@ Invoke-CimMethod [-CimClass] <CimClass> [-ComputerName <String[]>] [[-Arguments]
  [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### QuerySessionSet
+### CimClassSessionSet
 ```
-Invoke-CimMethod -Query <String> [-QueryDialect <String>] -CimSession <CimSession[]>
- [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-CimMethod [-CimClass] <CimClass> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
+ [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### QueryComputerSet
 ```
 Invoke-CimMethod -Query <String> [-QueryDialect <String>] [-ComputerName <String[]>]
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### QuerySessionSet
+```
+Invoke-CimMethod -Query <String> [-QueryDialect <String>] -CimSession <CimSession[]>
  [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -180,7 +180,7 @@ Using this parameter results in better client side schema validations.
 
 ```yaml
 Type: CimClass
-Parameter Sets: CimClassSessionSet, CimClassComputerSet
+Parameter Sets: CimClassComputerSet, CimClassSessionSet
 Aliases:
 
 Required: True
@@ -261,7 +261,7 @@ To invoke class static methods, use the Class parameter or the CimClass paramete
 
 ```yaml
 Type: CimInstance
-Parameter Sets: CimInstanceComputerSet, CimInstanceSessionSet
+Parameter Sets: CimInstanceSessionSet, CimInstanceComputerSet
 Aliases: CimInstance
 
 Required: True
@@ -300,7 +300,7 @@ of namespaces.
 
 ```yaml
 Type: String
-Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriSessionSet, ResourceUriComputerSet, QuerySessionSet, QueryComputerSet
+Parameter Sets: ClassNameComputerSet, ClassNameSessionSet, ResourceUriComputerSet, ResourceUriSessionSet, QueryComputerSet, QuerySessionSet
 Aliases:
 
 Required: False
@@ -348,7 +348,7 @@ square brackets (\[\]): percent (%), underscore (_), or opening square bracket (
 
 ```yaml
 Type: String
-Parameter Sets: QuerySessionSet, QueryComputerSet
+Parameter Sets: QueryComputerSet, QuerySessionSet
 Aliases:
 
 Required: True
@@ -367,7 +367,7 @@ The default value is WQL.
 
 ```yaml
 Type: String
-Parameter Sets: QuerySessionSet, QueryComputerSet
+Parameter Sets: QueryComputerSet, QuerySessionSet
 Aliases:
 
 Required: False
@@ -399,7 +399,7 @@ If both the ResourceUri parameter and the Filter parameter are specified, the Fi
 
 ```yaml
 Type: Uri
-Parameter Sets: ResourceUriSessionSet, ResourceUriComputerSet
+Parameter Sets: ResourceUriComputerSet, ResourceUriSessionSet, CimInstanceSessionSet, CimInstanceComputerSet
 Aliases:
 
 Required: True

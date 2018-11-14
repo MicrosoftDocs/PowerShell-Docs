@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?linkid=821592
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-PSProvider
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?linkid=821592
+schema: 2.0.0
+title: Get-PSProvider
 ---
 
 # Get-PSProvider
@@ -101,10 +102,10 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### CommonParameters
@@ -122,5 +123,7 @@ You can pipe one or more provider name strings to this cmdlet.
 This cmdlet returns objects that represent the PowerShell providers in the session.
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

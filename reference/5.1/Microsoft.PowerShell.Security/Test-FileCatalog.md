@@ -152,6 +152,21 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 
 Shows what would happen if the cmdlet runs.
@@ -178,7 +193,7 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 ### System.IO.DirectoryInfo[], System.String[]
 
 The pipeline accepts an array of strings or `DirectoryInfo` objects that
-represent paths to the files that need to be validated.  
+represent paths to the files that need to be validated.
 
 ## OUTPUTS
 

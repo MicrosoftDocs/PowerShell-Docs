@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821723
-external help file:  PSWorkflowUtility-help.xml
-title:  Invoke-AsWorkflow
+external help file: Microsoft.PowerShell.Workflow.ServiceCore.dll-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSWorkflowUtility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821723
+schema: 2.0.0
+title: Invoke-AsWorkflow
 ---
+
 # Invoke-AsWorkflow
 
 ## SYNOPSIS
@@ -16,13 +18,11 @@ Runs a command or expression as a Windows PowerShell Workflow.
 ## SYNTAX
 
 ### Command (Default)
-
 ```
 Invoke-AsWorkflow [-CommandName <String>] [-Parameter <Hashtable>] [-InputObject <Object>] [<CommonParameters>]
 ```
 
 ### Expression
-
 ```
 Invoke-AsWorkflow [-Expression <String>] [-InputObject <Object>] [<CommonParameters>]
 ```
@@ -138,6 +138,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+
+{{Fill InputObject Description}}
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Parameter
 
 Specifies the parameters and parameter values of the command that is specified in the `CommandName` parameter.
@@ -157,30 +173,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-
-{{Fill InputObject Description}}
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
-
-### WorkflowCommonParameters
-
-This cmdlet also supports workflow specific common parameters.  
-For information, see [about_WorkflowCommonParameters](../PSWorkflow/About/about_WorkflowCommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

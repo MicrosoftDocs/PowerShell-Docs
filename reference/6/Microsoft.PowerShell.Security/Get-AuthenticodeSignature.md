@@ -176,7 +176,7 @@ You can pipe a string that contains a file path to **Get-AuthenticodeSignature**
 
 ## NOTES
 
-* For information about digital signatures in PowerShell, see [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
+For information about digital signatures in PowerShell, see [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
 
 ## RELATED LINKS
 

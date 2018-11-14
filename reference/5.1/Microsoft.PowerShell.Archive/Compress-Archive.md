@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821654
-external help file:  Microsoft.PowerShell.Archive-help.xml
-title:  Compress-Archive
+external help file: Microsoft.PowerShell.Archive-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Archive
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821654
+schema: 2.0.0
+title: Compress-Archive
 ---
 
 # Compress-Archive
@@ -16,37 +17,37 @@ Creates an archive, or zipped file, from specified files and folders.
 ## SYNTAX
 
 ### Path (Default)
-```powershell
+```
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithUpdate
-```powershell
+```
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Update]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithForce
-```powershell
+```
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Force] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithUpdate
-```powershell
+```
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Update]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithForce
-```powershell
+```
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Force]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
-```powershell
+```
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
@@ -65,6 +66,7 @@ This is a limitation of the underlying API.
 ```powershell
 Compress-Archive -Path C:\Reference\Draftdoc.docx, C:\Reference\Images\diagram2.vsd -CompressionLevel Optimal -DestinationPath C:\Archives\Draft.Zip
 ```
+
 ### Example 2: Create an archive file (using LiteralPath)
 ```powershell
 Compress-Archive -LiteralPath "C:\Reference\Draft Doc.docx", "C:\Reference\Images\Diagram 2.vsd"  -CompressionLevel Optimal -DestinationPath C:\Archives\Draft.Zip
@@ -124,21 +126,6 @@ Accepted values: Optimal, NoCompression, Fastest
 Required: False
 Position: Named
 Default value: Optimal
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -223,6 +210,66 @@ Parameter Sets: PathWithUpdate, LiteralPathWithUpdate
 Aliases:
 
 Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
