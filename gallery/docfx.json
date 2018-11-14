@@ -18,8 +18,8 @@
             "ms.technology": { "**/**.md": "powershell-gallery" },
             "ms.topic": { "**/**.md": "conceptual" },
             "manager": { "**/**.md": "carmonm" },
-            "author": { "**/**.md": "sysmith" },
-            "ms.author": { "**/**.md": "SydneyhSmith" }
+            "ms.author": { "**/**.md": "sysmith" },
+            "author": { "**/**.md": "SydneyhSmith" }
         },
         "resource": [
             { "files": ["**/images/**"], "exclude": ["**/obj/**"] }
