@@ -114,20 +114,6 @@ Accept wildcard characters: False
 ```
 
 ### -AllowClobber
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllowClobber
 Allows you to install a different version of a module that already exists on your computer.
 
 ```yaml
