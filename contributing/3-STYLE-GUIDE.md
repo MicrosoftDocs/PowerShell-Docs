@@ -59,14 +59,14 @@ Feel free to help out.
   For example:
 
   This [Write-Host](..\reference\6\Microsoft.PowerShell.Utility\Write-Host.md) cmdlet uses the
-  **-Object** parameter to ...
+  **Object** parameter to ...
 
   > [!NOTE]
   > Never use backticks or bold inside the brackets of a hyperlink. This is an exception to the previous
   > rule.
 
 - When referring to a parameter by name, the name should be **bold**. When illustrating the use of
-  a parameter with the hyphen prefix, the paramter should be wrapped in backticks. For example:
+  a parameter with the hyphen prefix, the parameter should be wrapped in backticks. For example:
 
   > The parameter's name is **Name**, but it is typed as `-Name` when used on the command line as a
   > parameter.
