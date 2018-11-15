@@ -10,6 +10,12 @@
 - name: Configurations
   href: configurations.md
   items:
+  - name: Other types of Configurations
+    items:
+    - name: Nesting configurations
+      href: compositeConfigs.md  
+    - name: Partial Configurations
+      href: partialConfigs.md
   - name: Enacting configurations
     href: enactingConfigurations.md
   - name: Separating configuration and environment data
@@ -25,12 +31,10 @@
     items:
     - name: Credential options in configuration data
       href: configDataCredentials.md
-  - name: Nesting configurations
-    href: compositeConfigs.md
+  
   - name: Securing the configuration MOF file
     href: secureMOF.md
-  - name: Partial Configurations
-    href: partialConfigs.md
+  
   - name: Writing help for DSC configurations
     href: configHelp.md
   - name: Configure a virtual machine at initial boot-up by using DSC
@@ -41,53 +45,6 @@
 - name: Resources
   href: resources.md
   items:
-  - name: Built-in resources
-    href: builtInResource.md
-    items:
-    - name: Archive Resource
-      href: archiveResource.md
-    - name: Environment Resource
-      href: environmentResource.md
-    - name: File Resource
-      href: fileResource.md
-    - name: Group Resource
-      href: groupResource.md
-    - name: GroupSet Resource
-      href: groupSetResource.md
-    - name: Log Resource
-      href: logResource.md
-    - name: Package Resource
-      href: packageResource.md
-    - name: ProcessSet Resource
-      href: processSetResource.md
-    - name: Registry Resource
-      href: registryResource.md
-    - name: Script Resource
-      href: scriptResource.md
-    - name: Service Resource
-      href: serviceResource.md
-    - name: ServiceSet Resource
-      href: serviceSetResource.md
-    - name: User Resource
-      href: userResource.md
-    - name: WaitForAllResource
-      href: waitForAllResource.md
-    - name: WaitForAnyResource
-      href: waitForAnyResource.md
-    - name: WaitForSomeResource
-      href: waitForSomeResource.md
-    - name: WindowsFeature Resource
-      href: windowsfeatureResource.md
-    - name: WindowsFeatureSet Resource
-      href: windowsFeatureSetResource.md
-    - name: WindowsOptionalFeature Resource
-      href: windowsOptionalFeatureResource.md
-    - name: WindowsOptionalFeatureSet Resource
-      href: windowsOptionalFeatureSetResource.md
-    - name: WindowsPackageCab Resource
-      href: windowsPackageCabResource.md
-    - name: WindowsProcess Resource
-      href: windowsProcessResource.md
   - name: Authoring custom resources
     href: authoringResource.md
     items:
