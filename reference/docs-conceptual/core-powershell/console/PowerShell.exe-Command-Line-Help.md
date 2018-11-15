@@ -45,8 +45,11 @@ Sets the default execution policy for the current session and saves it in the $e
 
 Runs the specified script in the local scope ("dot-sourced"), so that the functions and variables that the script creates are available in the current session. Enter the script file path and any parameters. **File** must be the last parameter in the command. All values typed after the **-File** parameter are interpreted as the script file path and parameters passed to that script.
 
-Parameters passed to the script are passed as literal strings (after interpretation by the current shell). For example, if you are in cmd.exe and want to pass an environment variable value, you would use the cmd.exe syntax: `powershell -File .\test.ps1 -Sample %windir%`
-In this example, the script receives the literal string `$env:windir` and not the value of that environmental variable: `powershell -File .\test.ps1 -Sample $env:windir`
+Parameters passed to the script are passed as literal strings, after interpretation by the current shell. For example, if you are in cmd.exe and want to pass an environment variable value, you would use the cmd.exe syntax: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+In contrast, running `powershell.exe -File .\test.ps1 -TestParam $env:windir` in cmd.exe results in the script receiving the literal string `$env:windir` because it has no special meaning to the current cmd.exe shell.
+The `$env:windir` style of environment variable reference _can_ be used inside a `-Command` parameter,
+since there it will be interpreted as PowerShell code.
 
 ### \-InputFormat {Text | XML}
 
