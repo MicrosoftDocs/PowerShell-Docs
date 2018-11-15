@@ -84,8 +84,6 @@ listed below.
   - `args`
   - `input`
 
-{{change these into links to the classes}}
-
 ## Navigating the Variable drives
 
 The **Variable** provider exposes its data store in the `Variable:` drive. To
