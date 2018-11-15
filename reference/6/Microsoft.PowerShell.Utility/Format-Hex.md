@@ -1,17 +1,4 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
-locale: en-us
-Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
-online version: http://go.microsoft.com/fwlink/?LinkId=821773
-schema: 2.0.0
-title: Format-Hex
-=======
-=======
->>>>>>> add new offset and count parameters (#3233)
 ms.date:  11/02/2018
 schema:  2.0.0
 locale:  en-us
@@ -19,7 +6,6 @@ keywords:  powershell,cmdlet
 online version:  http://go.microsoft.com/fwlink/?LinkId=821773
 external help file:  Microsoft.PowerShell.Utility-help.xml
 title:  Format-Hex
->>>>>>> add new offset and count parameters (#3233)
 ---
 
 # Format-Hex
@@ -30,47 +16,21 @@ Displays a file or other input as hexadecimal.
 
 ## SYNTAX
 
-<<<<<<< HEAD
 ### Path
 ```
 Format-Hex [-Path] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
-=======
-### Path (Default)
-
-```
-Format-Hex [-Path] <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
-<<<<<<< HEAD
->>>>>>> add new offset and count parameters (#3233)
-=======
->>>>>>> add new offset and count parameters (#3233)
 ```
 
 ### LiteralPath
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 Format-Hex -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
-=======
-Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
->>>>>>> add new offset and count parameters (#3233)
-=======
-Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
->>>>>>> add new offset and count parameters (#3233)
 ```
 
 ### ByInputObject
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Raw] [-WhatIf] [-Confirm] [<CommonParameters>]
-=======
-Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
->>>>>>> add new offset and count parameters (#3233)
-=======
-Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
->>>>>>> add new offset and count parameters (#3233)
 ```
 
 ## DESCRIPTION
@@ -225,8 +185,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -238,31 +196,10 @@ Aliases: cf
 Required: False
 Position: Named
 Default value: None
-=======
-=======
->>>>>>> add new offset and count parameters (#3233)
-### -Offset
-
-This represents the number of bytes to skip from being part of the hex output.
-
-```yaml
-Type: Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: 0
-<<<<<<< HEAD
->>>>>>> add new offset and count parameters (#3233)
-=======
->>>>>>> add new offset and count parameters (#3233)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### -WhatIf
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
@@ -274,25 +211,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: None
-=======
-=======
->>>>>>> add new offset and count parameters (#3233)
-### -Count
-
-This represents the number of bytes to include in the hex output.
-
-```yaml
-Type: Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: Int64.MaxValue
-<<<<<<< HEAD
->>>>>>> add new offset and count parameters (#3233)
-=======
->>>>>>> add new offset and count parameters (#3233)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
