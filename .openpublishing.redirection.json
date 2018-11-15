@@ -15,6 +15,11 @@
             "redirect_document_id": "True"
         },
         {
+            "source_path": "gallery/readme.md",
+            "redirect_url": "/powershell/gallery/overview",
+            "redirect_document_id": "True"
+        },
+        {
             "source_path": "gallery/concepts/item-manifest-affecting-ui.md",
             "redirect_url": "/powershell/gallery/concepts/package-manifest-affecting-ui",
             "redirect_document_id": "True"
