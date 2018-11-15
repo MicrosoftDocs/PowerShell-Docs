@@ -30,7 +30,7 @@ Extended type data adds properties and methods to objects in PowerShell.
 You can use the added properties and methods in the same ways that you would use the properties and methods that are defined in the object type.
 However, when writing scripts, be aware that the added properties and methods might not be present in every PowerShell session.
 
-For more information about Types.ps1xml files, see about_Types.ps1xml (http://go.microsoft.com/fwlink/?LinkID=113274).
+For more information about Types.ps1xml files, see [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md).
 For more information about dynamic type data that the **Update-TypeData** cmdlet adds, see Update-TypeData.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
