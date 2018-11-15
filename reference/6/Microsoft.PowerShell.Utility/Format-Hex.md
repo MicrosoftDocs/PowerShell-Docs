@@ -16,19 +16,20 @@ Displays a file or other input as hexadecimal.
 
 ## SYNTAX
 
-### Path
+### Path (Default)
+
 ```
-Format-Hex [-Path] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Format-Hex [-Path] <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Format-Hex -LiteralPath <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
 ```
 
 ### ByInputObject
 ```
-Format-Hex -InputObject <PSObject> [-Encoding <Encoding>] [-Raw] [-WhatIf] [-Confirm] [<CommonParameters>]
+Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -162,32 +163,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -Offset
+
+This represents the number of bytes to skip from being part of the hex output.
 
 ```yaml
-Type: SwitchParameter
+Type: Int64
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+### -Count
+
+This represents the number of bytes to include in the hex output.
 
 ```yaml
-Type: SwitchParameter
+Type: Int64
 Parameter Sets: (All)
-Aliases: wi
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Int64.MaxValue
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
