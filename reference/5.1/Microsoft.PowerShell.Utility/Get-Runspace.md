@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821801
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-Runspace
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821801
+schema: 2.0.0
+title: Get-Runspace
 ---
 
 # Get-Runspace
@@ -41,7 +42,7 @@ PS C:\> Get-Runspace
 ```
 
 ```Output
- Id Name            ComputerName    Type          State         Availability
+Id Name            ComputerName    Type          State         Availability
  -- ----            ------------    ----          -----         ------------
   1 Runspace1       localhost       Local         Opened        Busy
   2 Runspace2       localhost       Local         Opened        Available
@@ -54,7 +55,7 @@ PS C:\> Get-Runspace -Id 2
 ```
 
 ```Output
- Id Name            ComputerName    Type          State         Availability
+Id Name            ComputerName    Type          State         Availability
  -- ----            ------------    ----          -----         ------------
   2 Runspace2       localhost       Local         Opened        Available
 ```
@@ -65,7 +66,7 @@ PS C:\> Get-Runspace -Name Runspace1
 ```
 
 ```Output
- Id Name            ComputerName    Type          State         Availability
+Id Name            ComputerName    Type          State         Availability
  -- ----            ------------    ----          -----         ------------
   1 Runspace1       localhost       Local         Opened        Busy
 ```
@@ -78,7 +79,7 @@ PS C:\> Get-Runspace -InstanceId $activeRunspace.InstanceId
 ```
 
 ```Output
- Id Name            ComputerName    Type          State         Availability
+Id Name            ComputerName    Type          State         Availability
  -- ----            ------------    ----          -----         ------------
   1 Runspace1       localhost       Local         Opened        Busy
 ```

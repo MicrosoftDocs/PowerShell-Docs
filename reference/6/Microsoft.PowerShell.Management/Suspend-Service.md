@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821644
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Suspend-Service
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821644
+schema: 2.0.0
+title: Suspend-Service
 ---
 
 # Suspend-Service
@@ -23,14 +24,14 @@ Suspend-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <Stri
 
 ### Default
 ```
-Suspend-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Suspend-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### DisplayName
 ```
-Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,7 +139,7 @@ Parameter Sets: InputObject
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -157,7 +158,7 @@ Parameter Sets: Default
 Aliases: ServiceName
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False

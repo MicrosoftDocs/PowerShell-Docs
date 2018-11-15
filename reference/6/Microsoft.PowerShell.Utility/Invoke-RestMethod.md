@@ -1,17 +1,17 @@
 ---
-ms.date:  11/17/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821824
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Invoke-RestMethod
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 11/17/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821824
+schema: 2.0.0
+title: Invoke-RestMethod
 ---
 
 # Invoke-RestMethod
 
-## Synopsis
-
+## SYNOPSIS
 Sends an HTTP or HTTPS request to a RESTful web service.
 
 ## SYNTAX
@@ -88,7 +88,7 @@ For JavaScript Object Notation (JSON) or XML, PowerShell converts (or deserializ
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the PowerShell RSS feed
 
@@ -372,9 +372,9 @@ Specifies custom method used for the web request. This can be used with the Requ
 
 Example:
 
-```powershell
+
+
 Invoke-WebRequest -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'
-```
 
 This makes a `TEST` HTTP request to the API.
 
@@ -382,10 +382,10 @@ This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: String
-Parameter Sets: StandardMethod, CustomMethod
-Aliases:
+Parameter Sets: CustomMethodNoProxy, CustomMethod
+Aliases: CM
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -421,7 +421,7 @@ This feature was added in PowerShell 6.0.0.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: FL
 
 Required: False
 Position: Named
@@ -536,7 +536,7 @@ A value of 0 (zero) prevents following relation links.
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases:
+Aliases: ML
 
 Required: False
 Position: Named
@@ -600,7 +600,7 @@ The **-CustomMethod** parameter can be used for Request Methods not listed above
 
 ```yaml
 Type: WebRequestMethod
-Parameter Sets: (All)
+Parameter Sets: StandardMethod, StandardMethodNoProxy
 Aliases:
 Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
 
@@ -696,7 +696,7 @@ This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: Uri
-Parameter Sets: (All)
+Parameter Sets: StandardMethod, CustomMethod
 Aliases:
 
 Required: False
@@ -763,7 +763,6 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
-
 ```
 
 ### -Resume
@@ -853,7 +852,6 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
-
 ```
 
 ### -SkipCertificateCheck
@@ -952,11 +950,7 @@ The OAuth or Bearer token to include in the request. **-Token** is required by c
 
 **-Token** takes a `SecureString` containing the token. To supply the token manually use the following:
 
-```powershell
-Invoke-RestMethod -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)
-```
-
-This feature was added in PowerShell 6.0.0.
+`Invoke-RestMethod -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)`
 
 ```yaml
 Type: SecureString
@@ -1052,13 +1046,11 @@ Specifies a user agent string for the web request.
 
 The default user agent is similar to `Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` with slight variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](http://msdn.microsoft.com/library/windows/desktop/hh484857&#40;v=vs.85&#41;) class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
+To test a website with the standard user agent string that is used by most Internet browsers, use the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class, such as Chrome, FireFox, InternetExplorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet Explorer.
 
-```powershell
-Invoke-RestMethod -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
-```
+`Invoke-RestMethod -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
 
 ```yaml
 Type: String
@@ -1106,13 +1098,13 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: **-Debug**, **-ErrorAction**, **-ErrorVariable**, **-InformationAction**, **-InformationVariable**, **-OutVariable**, **-OutBuffer**, **-PipelineVariable**, **-Verbose**, **-WarningAction**, and **-WarningVariable**. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 
 You can pipe the body of a web request to `Invoke-RestMethod`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Int64, System.String, System.Xml.XmlDocument
 
@@ -1122,9 +1114,11 @@ The output of the cmdlet depends upon the format of the content that is retrieve
 
 If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the strings.
 
-## Notes
+## NOTES
 
-## Related Links
+Some features may not be available on all platforms.
+
+## RELATED LINKS
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

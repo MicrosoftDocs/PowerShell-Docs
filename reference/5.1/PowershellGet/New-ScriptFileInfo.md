@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822329
-external help file:  PSModule-help.xml
-title:  New-ScriptFileInfo
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822329
+schema: 2.0.0
+title: New-ScriptFileInfo
 ---
 
 # New-ScriptFileInfo
@@ -16,11 +17,12 @@ Creates a script file with metadata.
 ## SYNTAX
 
 ```
-New-ScriptFileInfo [[-Path] <String>] [-Version <Version>] [-Author <String>] -Description <String>
+New-ScriptFileInfo [[-Path] <String>] [-Version <String>] [-Author <String>] -Description <String>
  [-Guid <Guid>] [-CompanyName <String>] [-Copyright <String>] [-RequiredModules <Object[]>]
  [-ExternalModuleDependencies <String[]>] [-RequiredScripts <String[]>]
  [-ExternalScriptDependencies <String[]>] [-Tags <String[]>] [-ProjectUri <Uri>] [-LicenseUri <Uri>]
- [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-IconUri <Uri>] [-ReleaseNotes <String[]>] [-PrivateData <String>] [-PassThru] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -185,21 +187,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Copyright
 Specifies a copyright statement for the script.
 
@@ -354,6 +341,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -PrivateData
+{{Fill PrivateData Description}}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProjectUri
 Specifies the URL of a web page about this project.
 
@@ -434,13 +436,28 @@ Accept wildcard characters: False
 Specifies the version of the script.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -617,47 +617,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SSHConnection
-This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath).
-
-The hashtable connection parameters are the same as defined for the **HostName** parameter set.
-
-The *SSHConnection* parameter is useful for creating multiple sessions where each session requires different connection information.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: Hashtable[]
-Parameter Sets: SSHHostHashParam
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SSHTransport
-Indicates that the remote connection is established using Secure Shell (SSH).
-
-By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: SSHHost
-Aliases:
-Accepted values: true
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Session
 Specifies an array of **PSSession** objects that this cmdlet uses as a model for the new **PSSession**.
 This parameter creates new **PSSession** objects that have the same properties as the specified **PSSession** objects.
@@ -704,6 +663,47 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SSHConnection
+This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath).
+
+The hashtable connection parameters are the same as defined for the **HostName** parameter set.
+
+The *SSHConnection* parameter is useful for creating multiple sessions where each session requires different connection information.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: Hashtable[]
+Parameter Sets: SSHHostHashParam
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SSHTransport
+Indicates that the remote connection is established using Secure Shell (SSH).
+
+By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: SSHHost
+Aliases:
+Accepted values: true
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ThrottleLimit
 Specifies the maximum number of concurrent connections that can be established to run this command.
 If you omit this parameter or enter a value of 0 (zero), the default value, 32, is used.
@@ -713,27 +713,6 @@ The throttle limit applies only to the current command, not to the session or to
 ```yaml
 Type: Int32
 Parameter Sets: ComputerName, VMName, Uri, VMId, Session, ContainerId
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseSSL
-Indicates that this cmdlet uses the SSL protocol to establish a connection to the remote computer.
-By default, SSL is not used.
-
-WS-Management encrypts all PowerShell content transmitted over the network.
-The *UseSSL* parameter offers an additional protection that sends the data across an HTTPS connection instead of an HTTP connection.
-
-If you use this parameter, but SSL is not available on the port that is used for the command, the command fails.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: ComputerName
 Aliases:
 
 Required: False
@@ -757,6 +736,27 @@ This parameter was introduced in PowerShell 6.0.
 ```yaml
 Type: String
 Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseSSL
+Indicates that this cmdlet uses the SSL protocol to establish a connection to the remote computer.
+By default, SSL is not used.
+
+WS-Management encrypts all Windows PowerShell content transmitted over the network.
+The *UseSSL* parameter offers an additional protection that sends the data across an HTTPS connection instead of an HTTP connection.
+
+If you use this parameter, but SSL is not available on the port that is used for the command, the command fails.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ComputerName
 Aliases:
 
 Required: False

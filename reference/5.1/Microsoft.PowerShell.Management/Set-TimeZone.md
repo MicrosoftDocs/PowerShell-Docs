@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822279
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Set-TimeZone
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822279
+schema: 2.0.0
+title: Set-TimeZone
 ---
 
 # Set-TimeZone
@@ -43,21 +44,6 @@ PS C:\> Set-TimeZone -Name "Pacific Standard Time"
 This command sets the time zone on the local computer to Pacific Standard Time.
 
 ## PARAMETERS
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Id
 Specifies the ID of the time zone that this cmdlet sets.
@@ -116,6 +102,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

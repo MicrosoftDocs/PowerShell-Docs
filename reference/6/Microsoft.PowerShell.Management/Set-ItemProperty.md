@@ -287,7 +287,7 @@ Parameter Sets: propertyValuePathSet, propertyValueLiteralPathSet
 Aliases: PSProperty
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -320,7 +320,7 @@ Parameter Sets: propertyValuePathSet, propertyPSObjectPathSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -336,7 +336,7 @@ Parameter Sets: propertyValuePathSet, propertyValueLiteralPathSet
 Aliases:
 
 Required: True
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False

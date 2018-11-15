@@ -28,7 +28,7 @@ New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <
 `New-FileCatalog` creates a [Windows catalog file](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/catalog-files)
 for a set of folders and files.
 This catalog file contains hashes for all files in the provided paths.
-Users can then distribute the catalog with their files so that users can validate  
+Users can then distribute the catalog with their files so that users can validate
 whether any changes have been made to the folders since catalog creation time.
 
 Catalog versions 1 and 2 are supported. Version 1 uses the (deprecated) SHA1
@@ -87,6 +87,19 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 

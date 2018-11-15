@@ -353,7 +353,7 @@ Parameter Sets: Path
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
@@ -386,11 +386,11 @@ Prompts you for confirmation before running the cmdlet.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -403,7 +403,7 @@ The cmdlet is not run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: wi
+Aliases: cf
 
 Required: False
 Position: Named

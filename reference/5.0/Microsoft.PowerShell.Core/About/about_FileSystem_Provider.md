@@ -57,10 +57,8 @@ in this article.
 
 ## Types exposed by this provider
 
-Files are instances of the `System.IO.FileInfo` class.  Directories are
-instances of the `System.IO.DirectoryInfo` class.
-
-{{change these into links to the classes}}
+Files are instances of the [System.IO.FileInfo](/dotnet/api/system.io.fileinfo) class.  Directories are
+instances of the [System.IO.DirectoryInfo](/dotnet/api/system.io.directoryinfo) class.
 
 ## Navigating the FileSystem drives
 

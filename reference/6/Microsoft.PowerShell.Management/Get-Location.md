@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821589
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-Location
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821589
+schema: 2.0.0
+title: Get-Location
 ---
 
 # Get-Location
@@ -17,12 +18,12 @@ Gets information about the current working location or a location stack.
 
 ### Location (Default)
 ```
-Get-Location [-PSProvider <String[]>] [-PSDrive <String[]>] [-UseTransaction] [<CommonParameters>]
+Get-Location [-PSProvider <String[]>] [-PSDrive <String[]>] [<CommonParameters>]
 ```
 
 ### Stack
 ```
-Get-Location [-Stack] [-StackName <String[]>] [-UseTransaction] [<CommonParameters>]
+Get-Location [-Stack] [-StackName <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -241,25 +242,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -UseTransaction
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: usetx
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

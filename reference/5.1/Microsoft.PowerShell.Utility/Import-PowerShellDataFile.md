@@ -1,17 +1,19 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821817
-external help file:  Microsoft.PowerShell.Utility-help.xml
-title:  Import-PowerShellDataFile
+external help file: Microsoft.PowerShell.Utility-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821817
+schema: 2.0.0
+title: Import-PowerShellDataFile
 ---
 
 # Import-PowerShellDataFile
 
 ## SYNOPSIS
 Imports values from a .PSD1 file without invoking its contents
+
 ## SYNTAX
 
 ### ByPath (Default)
@@ -38,7 +40,9 @@ Name                           Value
 key1                           value1
 key2                           value2
 ```
+
 This examples retrieves the key-value pairs stored in the hashtable kept inside the Configuration.psd1 file.
+
 ## PARAMETERS
 
 ### -LiteralPath
@@ -75,5 +79,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

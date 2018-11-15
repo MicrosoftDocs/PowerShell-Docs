@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821722
-external help file:  PSWorkflow-help.xml
-title:  New-PSWorkflowSession
+external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSWorkflow
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821722
+schema: 2.0.0
+title: New-PSWorkflowSession
 ---
 
 # New-PSWorkflowSession
@@ -155,7 +156,7 @@ Parameter Sets: (All)
 Aliases: Cn
 
 Required: False
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -338,5 +339,7 @@ You can pipe a session or a computer name to this cmdlet.
 
 ## NOTES
 * A **New-PSWorkflowSession** command is equivalent to the following command: `New-PSSession -ConfigurationName Microsoft.PowerShell.Workflow`
+
+## RELATED LINKS
 
 ## RELATED LINKS

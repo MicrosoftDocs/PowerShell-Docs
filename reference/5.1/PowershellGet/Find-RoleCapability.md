@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822321
-external help file:  PSModule-help.xml
-title:  Find-RoleCapability
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822321
+schema: 2.0.0
+title: Find-RoleCapability
 ---
 
 # Find-RoleCapability
@@ -16,9 +17,10 @@ Finds role capabilities in modules.
 ## SYNTAX
 
 ```
-Find-RoleCapability [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <Version>]
- [-MaximumVersion <Version>] [-RequiredVersion <Version>] [-AllVersions] [-Tag <String[]>] [-Filter <String>]
- [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Repository <String[]>] [<CommonParameters>]
+Find-RoleCapability [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>]
+ [-MaximumVersion <String>] [-RequiredVersion <String>] [-AllVersions] [-AllowPrerelease] [-Tag <String[]>]
+ [-Filter <String>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Repository <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,6 +88,21 @@ The second command gets the installed modules.
 
 ## PARAMETERS
 
+### -AllowPrerelease
+{{Fill AllowPrerelease Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllVersions
 Indicates that this cmdlet gets all versions of a module.
 
@@ -119,9 +136,8 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -137,7 +153,7 @@ Specifies the minimum version of the module to include in results.
 The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -229,7 +245,7 @@ Accept wildcard characters: False
 Specifies the version of the module to include in the results.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -263,5 +279,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS
