@@ -13,7 +13,7 @@
   - name: Other types of Configurations
     items:
     - name: Nesting configurations
-      href: compositeConfigs.md  
+      href: compositeConfigs.md
     - name: Partial Configurations
       href: partialConfigs.md
   - name: Enacting configurations
@@ -31,10 +31,8 @@
     items:
     - name: Credential options in configuration data
       href: configDataCredentials.md
-  
   - name: Securing the configuration MOF file
     href: secureMOF.md
-  
   - name: Writing help for DSC configurations
     href: configHelp.md
   - name: Configure a virtual machine at initial boot-up by using DSC
@@ -107,27 +105,6 @@
     href: lnxGettingStarted.md
   - name: Built-in resources for Linux
     href: lnxBuiltInResources.md
-    items:
-    - name: nxArchive Resource
-      href: lnxArchiveResource.md
-    - name: nxEnvironment Resource
-      href: lnxEnvironmentResource.md
-    - name: nxFile Resource
-      href: lnxFileResource.md
-    - name: nxFileLine Resource
-      href: lnxFileLineResource.md
-    - name: nxGroup Resource
-      href: lnxGroupResource.md
-    - name: nxPackage Resource
-      href: lnxPackageResource.md
-    - name: nxScript Resource
-      href: lnxScriptResource.md
-    - name: nxService Resource
-      href: lnxServiceResource.md
-    - name: nxSshAuthorizedKeys Resource
-      href: lnxSshAuthorizedKeysResource.md
-    - name: nxUser Resource
-      href: lnxUserResource.md
 - name: Using DSC on Microsoft Azure
   href: azureDsc.md
   items:
