@@ -1,22 +1,27 @@
 - name: Overview
-  href: overview.md
   items:
+  - name: Desired State Configuration Overview for Developers
+    href: overview.md
   - name: Desired State Configuration Overview for Decision Makers
     href: decisionMaker.md
   - name: Desired State Configuration Overview for Engineers
     href: DscForEngineers.md
-  - name: DSC quick start
-    href: quickStart.md
+  - name: Quickstarts
+    items:
+    - name: Configure a local service with DSC
+      href: service-quickstart.md
+    - name: Create a Website with DSC
+      href: website-quickStart.md
 - name: Concepts
   items:
-  - name: Get/Set/Test structure
+  - name: Get, Test, and Set
     href:
   - name: Local Configuration Manager
     href:
   - name: Push/Pull Model
     href: enactingConfigurations.md
   - name: Security
-    href:
+    href: secureServer.md
   - name: CI/CD Pipeline
     href: authoringAdvanced.md
   - name: Whitepapers
@@ -24,47 +29,60 @@
 - name: How-to-guides
   items:
   - name: Writing Configurations
-    href: configurations.md
     items:
-    - name: Resource Blocks
-      href: resources.md
+    - name: Beginner
       items:
-      - name: Installing DSC Resources
+      - name: What is a Configuration?
+        href: configurations.md
+      - name: What are Resources?
+        href: resources.md
+      - name: Putting it All together
+        href:
+      - name: Applying a Configuration
+        href:
+    - name: Intermediate
+      items:
+      - name: Installing additional DSC Resources
         href:
       - name: Using resources with multiple versions
         href: sxsResource.md
-    - name: Using Credentials in DSC
-      href: runAsUser.md
-    - name: Configuration Parameters
-      href:
-    - name: Configuration data
-      href: configData.md
-      items:
-      - name: Credential options in configuration data
-        href: configDataCredentials.md
-      - name: Dynamic Configurations
+      - name: Resource dependencies using the DependsOn key.
         href:
-      - name: Separating configuration and environment data (Dup of above)
-        href: separatingEnvData.md
-    - name: Specifying cross-node dependencies
-      href: crossNodeDependencies.md
+      - name: Using Credentials in DSC
+        href: runAsUser.md
+      - name: Adding Parameters to Configuration
+        href:
+      - name: Writing help for DSC configurations
+        href: configHelp.md
+      - name: Configuration data
+        items:
+        - name: Dynamic Configurations
+          href: configData.md
+        - name: Separating configuration and environment data (Dup of above)
+          href: separatingEnvData.md
+        - name: Credential options in configuration data
+          href: configDataCredentials.md
+    - name: Advanced
       items:
-      - name: DSC WaitForAny Resource
-        href: waitforanyresource.md
-      - name: DSC WaitForSome Resource
-        href: waitforsomeresource.md
-      - name: DSC WaitForAll Resource
-        href: waitforallresource.md
-    - name: Writing help for DSC configurations
-      href: configHelp.md
-    - name: Advanced Configuration Types
-      items:
-      - name: Partial Configurations
-        href: partialconfigs.md
-      - name: Composite Configurations
-        href: compositeconfigs.md
-  - name: Writing Resources
+      - name: Other Configuration Types
+        items:
+        - name: Partial Configurations
+          href: partialconfigs.md
+        - name: Composite Configurations
+          href: compositeconfigs.md
+      - name: Specifying cross-node dependencies
+        href: crossNodeDependencies.md
+        items:
+        - name: DSC WaitForAny Resource
+          href: waitforanyresource.md
+        - name: DSC WaitForSome Resource
+          href: waitforsomeresource.md
+        - name: DSC WaitForAll Resource
+          href: waitforallresource.md
+  - name: Writing Custom Resources
     items:
+    - name: Resource authoring checklist
+      href: resourceAuthoringChecklist.md
     - name: PowerShell
       items:
       - name: Write a MOF-based resource in PowerShell
@@ -81,8 +99,6 @@
       items:
       - name: Write a Python MOF based resource
         href:
-    - name: Resource authoring checklist
-      href: resourceAuthoringChecklist.md
     - name: Advanced
       items:
       - name: Calling DSC resource methods directly
@@ -115,6 +131,9 @@
       - name: Setting up a DSC SMB Pull Server
         href: pullServerSMB.md
       - name: Set up a DSC HTTP Pull Server
+        href:
+      - name: Pull Server Security
+        href: secureServer.md
     - name: Register a Node with a Pull Server
       href: pullClient.md
       items:
@@ -130,10 +149,8 @@
         href:
       - name: Manually update a Node
         href:
-    - name: Using a DSC report server
-      href: reportServer.md
-    - name: Pull Server Security
-      href: secureServer.md
+      - name: Using a DSC report server
+        href: reportServer.md
 - name: Tutorials
   items:
   - name: Building a CI/CD pipeline with DSC, Pester, and Visual Studio Team Services
@@ -150,8 +167,13 @@
   href:
   items:
 - name: Troubleshooting
-  href: troubleshooting.md
   items:
+  - name: Known Issues
+    href: troubleshooting.md
+  - name: Logging
+    href: troubleshooting.md
+  - name: Network Troubleshooting
+    href:
   - name: Debugging DSC resources
     href: debugResource.md
 - name: Availability
@@ -165,7 +187,6 @@
     - name: Built-in resources for Linux
       href: lnxBuiltInResources.md
   - name: Using DSC on Microsoft Azure
-    href: azureDsc.md
     items:
     - name: DSC Extension
       href: azureDscexthistory.md

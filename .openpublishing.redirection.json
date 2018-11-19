@@ -14220,9 +14220,9 @@
             "redirect_document_id": false
         },
         {
-         "source_path"         : "dsc/windowsOptionalFeatureSetResource.md",
-         "redirect_url"        : "/dsc/resources.md",
-         "redirect_document_id": false
+            "source_path"         : "dsc/windowsOptionalFeatureSetResource.md",
+            "redirect_url"        : "/dsc/resources.md",
+            "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/windowsPackageCabResource.md",
@@ -14232,6 +14232,11 @@
         {
             "source_path"         : "dsc/windowsProcessResource.md",
             "redirect_url"        : "/dsc/resources.md",
+            "redirect_document_id": false
+        },
+        {
+            "source_path"         : "dsc/quickstart.md",
+            "redirect_url"        : "/dsc/website-quickstart.md",
             "redirect_document_id": false
         },
         {
