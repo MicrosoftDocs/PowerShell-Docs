@@ -47,7 +47,7 @@ Service [String] #ResourceName
 }
 ```
 
-Inside a Configuration, a **Service** might look like this to **Ensure** that the Spooler service is running.
+Inside a Configuration, a **Service** resource block might look like this to **Ensure** that the Spooler service is running.
 
 > [!NOTE]
 > Before using a resource in a Configuration, you must import it using [Import-DSCResource](./cmdlets/Import-DSCResource.md).
@@ -69,6 +69,33 @@ Configuration TestConfig
 }
 ```
 
-Beginning in PowerShell 5.0, intellisense was added for DSC. This new feature allows you to use \<TAB\> and \<Ctrl+Space\> to auto-complete key names.
+Configurations can contain multiple instances of the same resource type. Each instance must be uniquely named. In the following example, a second **Service** resource block is added to configure the "DHCP" service.
+
+```powershell
+Configuration TestConfig
+{
+    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    Import-DSCResource -Name Service
+    Node localhost
+    {
+        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        Service "Spooler:Running"
+        {
+            Name = "Spooler"
+            State = "Running"
+        }
+
+        # To configure a second service resource block, add another Service resource block and use a unique name.
+        Service "DHCP:Running"
+        {
+            Name = "DHCP"
+            State = "Running"
+        }
+    }
+}
+```
+
+> [!NOTE]
+> Beginning in PowerShell 5.0, intellisense was added for DSC. This new feature allows you to use \<TAB\> and \<Ctrl+Space\> to auto-complete key names.
 
 ![Resource Tab Completion](./media/resource-tabcompletion.png)

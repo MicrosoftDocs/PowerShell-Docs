@@ -6,70 +6,52 @@
     href: decisionMaker.md
   - name: Desired State Configuration Overview for Engineers
     href: DscForEngineers.md
+  - name: CI/CD Pipeline
+    href: authoringAdvanced.md
+  - name: Whitepapers
+    href: whitepapers.md
+- name: Configurations
+  items:
+  - name: Concepts
+    items:
+      - name: What is a Configuration?
+        href: configurations.md
   - name: Quickstarts
     items:
     - name: Configure a local service with DSC
       href: service-quickstart.md
     - name: Create a Website with DSC
       href: website-quickStart.md
-- name: Concepts
-  items:
-  - name: Get, Test, and Set
-    href:
-  - name: Local Configuration Manager
-    href:
-  - name: Push/Pull Model
-    href: enactingConfigurations.md
-  - name: Security
-    href: secureServer.md
-  - name: CI/CD Pipeline
-    href: authoringAdvanced.md
-  - name: Whitepapers
-    href: whitepapers.md
-- name: How-to-guides
-  items:
-  - name: Writing Configurations
+  - name: How-to-guides
     items:
     - name: Beginner
       items:
-      - name: What is a Configuration?
-        href: configurations.md
-      - name: What are Resources?
-        href: resources.md
-      - name: Putting it All together
-        href:
-      - name: Applying a Configuration
-        href:
-    - name: Intermediate
-      items:
       - name: Installing additional DSC Resources
         href:
+      - name: Adding Parameters to Configuration
+        href:
+      - name: Writing help for DSC configurations
+        href: configHelp.md
+    - name: Intermediate
+      items:
       - name: Using resources with multiple versions
         href: sxsResource.md
       - name: Resource dependencies using the DependsOn key.
         href:
       - name: Using Credentials in DSC
         href: runAsUser.md
-      - name: Adding Parameters to Configuration
-        href:
-      - name: Writing help for DSC configurations
-        href: configHelp.md
       - name: Configuration data
         items:
         - name: Dynamic Configurations
           href: configData.md
-        - name: Separating configuration and environment data (Dup of above)
+        - name: Separating configuration and environment data (psd1)
           href: separatingEnvData.md
         - name: Credential options in configuration data
           href: configDataCredentials.md
     - name: Advanced
       items:
-      - name: Other Configuration Types
-        items:
-        - name: Partial Configurations
-          href: partialconfigs.md
-        - name: Composite Configurations
-          href: compositeconfigs.md
+      - name: Composite Configurations
+        href: compositeconfigs.md
       - name: Specifying cross-node dependencies
         href: crossNodeDependencies.md
         items:
@@ -79,10 +61,20 @@
           href: waitforsomeresource.md
         - name: DSC WaitForAll Resource
           href: waitforallresource.md
-  - name: Writing Custom Resources
+- name: Resources
+  items:
+  - name: Concepts
     items:
+    - name: What are Resources?
+      href: resources.md
+    - name: Get, Test, and Set
+      href: get-test-set.md
+    - name: Writing a single-instance DSC resource (best practice)
+      href: singleInstance.md
     - name: Resource authoring checklist
       href: resourceAuthoringChecklist.md
+  - name: How-to guides
+    items:
     - name: PowerShell
       items:
       - name: Write a MOF-based resource in PowerShell
@@ -99,13 +91,13 @@
       items:
       - name: Write a Python MOF based resource
         href:
-    - name: Advanced
-      items:
-      - name: Calling DSC resource methods directly
-        href: directCallResource.md
-      - name: Writing a single-instance DSC resource (best practice)
-        href: singleInstance.md
-  - name: Manage a DSC Node
+- name: Manage a DSC Node
+  items:
+  - name: Concepts
+    items:
+    - name: Local Configuration Manager
+      href:
+  - name: How-to guides
     items:
     - name: Applying Configurations
       href:
@@ -121,7 +113,19 @@
         href: metaConfig.md
       - name: Configuring the LCM in PowerShell 4.0
         href: metaConfig4.md
-  - name: Pull Server
+    - name: Advanced
+      items:
+        - name: Calling DSC resource methods directly
+          href: directCallResource.md
+- name: Pull Server
+  items:
+  - name: Concepts
+    items:
+    - name: Push/Pull Model
+      href: enactingConfigurations.md
+    - name: Security
+      href: secureServer.md
+  - name: How-to guides
     items:
     - name: Setup a Pull Server
       href:
@@ -141,13 +145,15 @@
         href: pullClientConfigNames.md
       - name: Register a Node using configuration ID
         href: pullClientConfigID.md
-    - name: Manage a Pull Server Node
+      - name: Partial Configurations
+        href: partialconfigs.md
+    - name: Manage Nodes with a Pull Server
       items:
       - name: Publishing Configurations to a Pull Server
         href:
       - name: Creating Checksums
         href:
-      - name: Manually update a Node
+      - name: Manually force a Node to update
         href:
       - name: Using a DSC report server
         href: reportServer.md
