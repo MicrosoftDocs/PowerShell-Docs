@@ -250,7 +250,7 @@ In the following example, the user sets the error level variable value to 4 by
 adding 'exit 4' to the script file _test.ps1_.
 
 ```powershell
-C:\Users\bruce\documents\test>type test.ps1
+C:\scripts\test>type test.ps1
 1
 
 2
@@ -259,14 +259,14 @@ C:\Users\bruce\documents\test>type test.ps1
 
 exit 4
 
-C:\Users\bruce\documents\test>powershell -file ./test.ps1
+C:\scripts\test>powershell -file ./test.ps1
 1
 
 2
 
 3
 
-C:\Users\bruce\documents\test>echo %ERRORLEVEL%
+C:\scripts\test>echo %ERRORLEVEL%
 4
 ```
 
