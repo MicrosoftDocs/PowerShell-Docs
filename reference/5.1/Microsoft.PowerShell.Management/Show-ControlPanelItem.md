@@ -52,7 +52,7 @@ PS C:\> Show-ControlPanelItem -Name "AutoPlay"
 
 This command shows the AutoPlay item.
 
-### Example 2: Pipe a control panel item to this cmldet
+### Example 2: Pipe a control panel item to this cmdlet
 ```
 PS C:\> Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
 ```

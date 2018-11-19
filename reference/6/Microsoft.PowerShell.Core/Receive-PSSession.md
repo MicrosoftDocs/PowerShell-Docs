@@ -712,16 +712,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
-You can pipe session objects, such as those returned by the Get-PSSession cmdlet, to this cmldet.
+You can pipe session objects, such as those returned by the Get-PSSession cmdlet, to this cmdlet.
 
 ### System.Int32
-You can pipe session IDs to this cmldet.
+You can pipe session IDs to this cmdlet.
 
 ### System.Guid
-You can pipe the instance IDs of sessions this cmldet.
+You can pipe the instance IDs of sessions this cmdlet.
 
 ### System.String
-You can pipe session names to this cmldet.
+You can pipe session names to this cmdlet.
 
 ## OUTPUTS
 
