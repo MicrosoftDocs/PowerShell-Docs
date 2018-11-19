@@ -70,34 +70,34 @@ Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential
 ## DESCRIPTION
 The **Save-Package** cmdlet saves packages to the local computer without installing them.
 This cmdlet saves the newest version of a package unless you specify the *AllVersions* parameter.
-The *DestinationPath* and *LiteralPath* parameters are mutually exclusive, and cannot be added to the same command.
+The *Path* and *LiteralPath* parameters are mutually exclusive, and cannot be added to the same command.
 
 ## EXAMPLES
 
 ### Example 1: Save a package to the local computer
 ```
-PS C:\> Save-Package -Name "DSCAccelerator" -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Save-Package -Name "DSCAccelerator" -Path "C:\Users\TestUser\Downloads"
 ```
 
 This example saves the newest version of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
 
 ### Example 2: Save an exact version of a package
 ```
-PS C:\> Save-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Save-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" -Path "C:\Users\TestUser\Downloads"
 ```
 
 This example saves only version 2.1.2 of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
 
 ### Example 3: Save a package by piping results of Find-Package
 ```
-PS C:\> Find-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Save-Package -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Find-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Save-Package -Path "C:\Users\TestUser\Downloads"
 ```
 
 This command saves a package named DSCAccelerator by first locating the exact package with the **Find-Package** cmdlet, then piping the results of **Find-Package** to the **Save-Package** cmdlet.
 
 ### Example 4: Save a package to a local folder, then install the package
 ```
-PS C:\> Save-Package "notepad2" -DestinationPath "C:\temp"
+PS C:\> Save-Package "notepad2" -Path "C:\temp"
 PS C:\> Install-Package "C:\temp\notepad2.4.2.25.3.nupkg"
 ```
 
@@ -336,7 +336,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 Specifies the literal path to which you want to save the package.
-You cannot add both this parameter and the *DestinationPath* parameter to the same command.
+You cannot add both this parameter and the *Path* parameter to the same command.
 
 ```yaml
 Type: String
