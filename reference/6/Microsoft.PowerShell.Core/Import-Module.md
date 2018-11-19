@@ -948,14 +948,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String, System.Management.Automation.PSModuleInfo, System.Reflection.Assembly
-You can pipe a module name, module object, or assembly object to this cmldet.
+You can pipe a module name, module object, or assembly object to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.PSModuleInfo, or System.Management.Automation.PSCustomObject
 This cmdlet returns a **PSModuleInfo** or **PSCustomObject**.
 By default, **Import-Module** does not generate any output.
-If you specify the *PassThru* parameter, the cmldet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
+If you specify the *PassThru* parameter, the cmdlet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
 If you specify the *AsCustomObject* parameter, it generates a **PSCustomObject** object.
 
 ## NOTES

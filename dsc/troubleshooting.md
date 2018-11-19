@@ -381,7 +381,7 @@ SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull co
 ```
 
 Pass the **GUID** assigned to a specific DSC operation (as returned by the `Get-xDscOperation`
-cmldet) to get the event details for that DSC operation:
+cmdlet) to get the event details for that DSC operation:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -JobID 9e0bfb6b-3a3a-11e6-9165-00155d390509
