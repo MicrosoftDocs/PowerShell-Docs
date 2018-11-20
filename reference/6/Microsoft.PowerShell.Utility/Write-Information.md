@@ -177,9 +177,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### System.Object
 
-`Write-Information` does not accept piped input.
+`Write-Information` accepts piped objects to pass to the information stream.
 
 ## OUTPUTS
 
