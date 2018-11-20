@@ -8,7 +8,7 @@ ms.assetid:  b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 # Learning PowerShell names
 
 Learning names of commands and parameters requires a significant time investment with most
-command-line interfaces. The issue is that there are few patterns. Memorization is only way to
+command-line interfaces. The issue is that there are few patterns. Memorization is the only way to
 learn the commands and parameters that you need to use on a regular basis.
 
 When you work with a new command or parameter, you can't always use what you already know. You have
