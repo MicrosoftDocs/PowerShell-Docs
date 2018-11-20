@@ -26,25 +26,25 @@
     items:
     - name: Beginner
       items:
-      - name: Installing additional DSC Resources
+      - name: Install additional DSC Resources
         href:
-      - name: Adding Parameters to Configuration
+      - name: Add Parameters to Configuration
         href:
-      - name: Writing help for DSC configurations
+      - name: Write help for DSC configurations
         href: configHelp.md
     - name: Intermediate
       items:
-      - name: Using resources with multiple versions
+      - name: Use resources with multiple versions
         href: sxsResource.md
       - name: Resource dependencies using the DependsOn key.
         href:
-      - name: Using Credentials in DSC
+      - name: Use Credentials in DSC
         href: runAsUser.md
       - name: Configuration data
         items:
         - name: Dynamic Configurations
           href: configData.md
-        - name: Separating configuration and environment data (psd1)
+        - name: Separate configuration and environment data (psd1)
           href: separatingEnvData.md
         - name: Credential options in configuration data
           href: configDataCredentials.md
@@ -52,7 +52,7 @@
       items:
       - name: Composite Configurations
         href: compositeconfigs.md
-      - name: Specifying cross-node dependencies
+      - name: Specify cross-node dependencies
         href: crossNodeDependencies.md
         items:
         - name: DSC WaitForAny Resource
@@ -69,7 +69,9 @@
       href: resources.md
     - name: Get, Test, and Set
       href: get-test-set.md
-    - name: Writing a single-instance DSC resource (best practice)
+    - name: Custom Resources
+      href: authoringresource.md
+    - name: Write a single-instance DSC resource (best practice)
       href: singleInstance.md
     - name: Resource authoring checklist
       href: resourceAuthoringChecklist.md
@@ -99,23 +101,23 @@
       href:
   - name: How-to guides
     items:
-    - name: Applying Configurations
+    - name: Apply a Configuration
       href:
-    - name: Getting the status of a Configuration
+    - name: Get the status of a Configuration
       href:
-    - name: Testing the status of a Configuration
+    - name: Test the status of a Configuration
       href:
     - name: Manage Configuration documents (MOF)
       href:
     - name: Configure the Local Configuration Manager
       items:
-      - name: Configuring the Local Configuration Manager (LCM)
+      - name: Configure the Local Configuration Manager (LCM)
         href: metaConfig.md
-      - name: Configuring the LCM in PowerShell 4.0
+      - name: Configure the LCM in PowerShell 4.0
         href: metaConfig4.md
     - name: Advanced
       items:
-        - name: Calling DSC resource methods directly
+        - name: Invoke DSC resource methods directly
           href: directCallResource.md
 - name: Pull Server
   items:
@@ -132,7 +134,7 @@
       items:
       - name: DSC Pull Service
         href: pullServer.md
-      - name: Setting up a DSC SMB Pull Server
+      - name: Set up a DSC SMB Pull Server
         href: pullServerSMB.md
       - name: Set up a DSC HTTP Pull Server
         href:
@@ -149,24 +151,24 @@
         href: partialconfigs.md
     - name: Manage Nodes with a Pull Server
       items:
-      - name: Publishing Configurations to a Pull Server
+      - name: Publish Configurations to a Pull Server
         href:
-      - name: Creating Checksums
+      - name: Create Checksums
         href:
       - name: Manually force a Node to update
         href:
-      - name: Using a DSC report server
+      - name: Use a DSC report server
         href: reportServer.md
 - name: Tutorials
   items:
-  - name: Building a CI/CD pipeline with DSC, Pester, and Visual Studio Team Services
+  - name: Build a CI/CD pipeline with DSC, Pester, and Visual Studio Team Services
     href: dscCiCd.md
   - name: Configure a virtual machine at initial boot-up by using DSC
     href: bootstrapDsc.md
     items:
     - name: DSCAutomationHostEnabled registry key
       href: DSCAutomationHostEnabled.md
-  - name: Securing the Configuration MOF (Series)
+  - name: Secure the Configuration MOF (Series)
     href: secureMOF.md
     items:
 - name: Samples
@@ -180,7 +182,7 @@
     href: troubleshooting.md
   - name: Network Troubleshooting
     href:
-  - name: Debugging DSC resources
+  - name: Debug DSC resources
     href: debugResource.md
 - name: Availability
   items:
@@ -188,11 +190,11 @@
     href: support.md
   - name: DSC on Linux
     items:
-    - name: Getting started with DSC for Linux
+    - name: Get started with DSC for Linux
       href: lnxGettingStarted.md
     - name: Built-in resources for Linux
       href: lnxBuiltInResources.md
-  - name: Using DSC on Microsoft Azure
+  - name: Use DSC on Microsoft Azure
     items:
     - name: DSC Extension
       href: azureDscexthistory.md
