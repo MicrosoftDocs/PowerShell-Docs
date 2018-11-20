@@ -134,3 +134,4 @@ PowerShell      VirtualMemory             ComputerManagementDsc          6.0.0.0
 ## See also
 
 - [What are Resources?](resources.md)
+- [Install PowerShellGet using DSC](install-powershellget-using-dsc.md)

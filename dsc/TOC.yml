@@ -18,18 +18,20 @@
         href: configurations.md
   - name: Quickstarts
     items:
-    - name: Configure a local service with DSC
-      href: service-quickstart.md
     - name: Create a Website with DSC
       href: website-quickStart.md
+    - name: Install PowerShellGet using DSC
+      href: install-powershellget-using-dsc.md
   - name: How-to-guides
     items:
     - name: Beginner
       items:
+      - name: Write, Compile, and Apply a Configuration
+        href: write-compile-apply-configuration.md
       - name: Install additional DSC Resources
-        href:
-      - name: Add Parameters to Configuration
-        href:
+        href: installing-additional-dsc-resources.md
+      - name: Add Parameters to a Configuration
+        href: add-parameters-to-a-configuration.md
       - name: Write help for DSC configurations
         href: configHelp.md
     - name: Intermediate
@@ -43,6 +45,8 @@
       - name: Configuration data
         items:
         - name: Dynamic Configurations
+          href: dynamicConfigs.md
+        - name: Use ConfigurationData in your Configurations
           href: configData.md
         - name: Separate configuration and environment data (psd1)
           href: separatingEnvData.md
@@ -163,6 +167,8 @@
   items:
   - name: Build a CI/CD pipeline with DSC, Pester, and Visual Studio Team Services
     href: dscCiCd.md
+  - name: Create a dynamic package installer that detects the ProductId and name
+    href:
   - name: Configure a virtual machine at initial boot-up by using DSC
     href: bootstrapDsc.md
     items:
