@@ -244,13 +244,27 @@ enum <enum-name> {
 
 Causes PowerShell to exit a script or a PowerShell instance.
 
-When you run `powershell.exe -File <path to a script>`, you can only set the
-%ERRORLEVEL% variable to a value other than zero by using the exit statement.
+Syntax:
+
+```
+exit
+exit <exitcode>
+```
+
+When you use `powershell.exe` with the **File** parameter, the .ps1 (script)
+file itself should include instructions for handling any errors or exceptions
+that occur while the script is running. You should only use the exit statement
+to indicate the post-execution status of the script.
+
+In PowerShell, the exit statement sets the value of the `$LASTEXITCODE`
+variable. In the Windows Command Shell (cmd.exe), the exit statement sets the
+value of the `%ERRORLEVEL% environment variable.
+
 In the following example, the user sets the error level variable value to 4 by
 adding 'exit 4' to the script file _test.ps1_.
 
-```powershell
-C:\Users\bruce\documents\test>type test.ps1
+```cmd
+C:\scripts\test>type test.ps1
 1
 
 2
@@ -259,28 +273,20 @@ C:\Users\bruce\documents\test>type test.ps1
 
 exit 4
 
-C:\Users\bruce\documents\test>powershell -file ./test.ps1
+C:\scripts\test>powershell -file ./test.ps1
 1
 
 2
 
 3
 
-C:\Users\bruce\documents\test>echo %ERRORLEVEL%
+C:\scripts\test>echo %ERRORLEVEL%
 4
 ```
 
-When you use powershell.exe with the File parameter, the .ps1 (script) file
-itself should include instructions for handling any errors or exceptions that
-occur while the script is running. You should only use the exit statement to
-indicate the post-execution status of the script.
-
-Syntax:
-
-```powershell
-exit
-exit <exitcode>
-```
+When you run `powershell.exe -File <path to a script>`, the exit statement
+sets the `%ERRORLEVEL%` variable to a value other than zero. If you have an
+unhandled exception in your script, `%ERRORLEVEL%` is set to the value of 1.
 
 ### Filter
 
