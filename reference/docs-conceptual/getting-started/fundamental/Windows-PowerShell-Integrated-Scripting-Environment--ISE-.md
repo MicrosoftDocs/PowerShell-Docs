@@ -91,7 +91,7 @@ The ISE was introduced with PowerShell v2.0.
 The ISE is available on any Windows computer that can run Windows PowerShell v2.0 or later. Each
 version of Windows and Windows Server includes a version of Windows PowerShell and the ISE, but you
 can upgrade to the latest available by installing the Windows Management Framework (WMF). See the
-[WMF](/powershell/wmf/readme) documentation for more information.
+[WMF](/powershell/wmf) documentation for more information.
 
 > [!NOTE]
 > Because Windows PowerShell ISE requires a graphical user interface, you can’t run it on the

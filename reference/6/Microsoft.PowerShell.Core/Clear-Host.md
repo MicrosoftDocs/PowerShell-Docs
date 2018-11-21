@@ -101,4 +101,6 @@ As such, you cannot use common parameters, such as -Debug, in a Clear-Host comma
 
 [Out-Host](out-host.md)
 
-[Read-Host. Write-Host]()
+[Read-Host](../microsoft.powershell.utility/read-host.md)
+
+[Write-Host](../microsoft.powershell.utility/write-host.md)

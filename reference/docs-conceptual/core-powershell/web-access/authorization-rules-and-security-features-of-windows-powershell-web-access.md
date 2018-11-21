@@ -20,26 +20,26 @@ sign-in page in a browser, but they cannot sign in until the Windows PowerShell 
 administrator grants users access explicitly. 'Windows PowerShell Web Access' access control is
 managed by using the set of Windows PowerShell cmdlets described in the following table. There is
 no comparable GUI for adding or managing authorization rules.
-See [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
+See [Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Administrators can define `{0-n}` authentication rules for Windows PowerShell Web Access. The
 default security is restrictive rather than permissive; zero authentication rules means no users
 have access to anything.
 
-[Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) and
-[Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) in Windows Server 2012 R2
-include a Credential parameter that allows you to add and test Windows PowerShell Web Access
-authorization rules from a remote computer, or from within an active Windows PowerShell Web Access
-session. As with other Windows PowerShell cmdlets that have a Credential parameter, you can specify
-a PSCredential object as the value of the parameter. To create a PSCredential object that contains
-credentials you want to pass to a remote computer, run the
-[Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential)
+[Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) and
+[Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps)
+in Windows Server 2012 R2 include a Credential parameter that allows you to
+add and test Windows PowerShell Web Access authorization rules from a remote
+computer, or from within an active Windows PowerShell Web Access session. As
+with other Windows PowerShell cmdlets that have a Credential parameter, you
+can specify a PSCredential object as the value of the parameter. To create a
+PSCredential object that contains credentials you want to pass to a remote
+computer, run the [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential)
 cmdlet.
 
 Windows PowerShell Web Access authentication rules are whitelist rules. Each
 rule is a definition of an allowed connection between users, target computers,
-and particular Windows PowerShellÂ [session
-configurations](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)
+and particular Windows PowerShell [session configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1)
 (also referred to as endpoints or _runspaces_) on specified target computers.
 For an explanation on **runspaces** see [Beginning Use of PowerShell
 Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
@@ -52,7 +52,7 @@ Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginn
 > allow users access only to constrained session configurations that allow them to accomplish
 > specific tasks that they normally need to perform remotely.
 
-The cmdlets referenced in [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md)
+The cmdlets referenced in [Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)
 allow to create a set of access rules which are used to authorize a user on the Windows PowerShell
 Web Access gateway. The rules are different from the access control lists (ACLs) on the destination
 computer, and provide an additional layer of security for web access. More details about security
@@ -415,4 +415,4 @@ time-out period specified by the gateway administrator has lapsed.
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md)
+[Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)
