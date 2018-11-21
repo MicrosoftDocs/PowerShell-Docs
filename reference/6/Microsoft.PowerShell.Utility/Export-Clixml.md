@@ -275,8 +275,6 @@ You can pipe any object to **Export-Clixml**.
 
 [Export-Csv](Export-Csv.md)
 
-[ConvertTo-Clixml](ConvertTo-Clixml.md)
-
-[ConvertFrom-Clixml](ConvertFrom-Clixml.md)
+[Export-Clixml](Export-Clixml.md)
 
 [Import-Clixml](Import-Clixml.md)

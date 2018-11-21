@@ -283,7 +283,7 @@ administrator grants users access explicitly. Windows PowerShell Web Access acce
 managed by using the set of Windows PowerShell cmdlets described in the following table. There is
 no comparable GUI for adding or managing authorization rules. For more detailed information about
 Windows PowerShell Web Access cmdlets, see the cmdlet reference topics,
-[Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
+[Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 For more detail about Windows PowerShell Web Access authorization rules and security, see
 [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
@@ -547,7 +547,7 @@ administrator grants users access explicitly. Windows PowerShell Web Access acce
 managed by using the set of Windows PowerShell cmdlets described in the following table. There is
 no comparable GUI for adding or managing authorization rules. For more detailed information about
 Windows PowerShell Web Access cmdlets, see the cmdlet reference topics, [Windows PowerShell Web
-Access Cmdlets](cmdlets/web-access-cmdlets.md).
+Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 For more detail about Windows PowerShell Web Access authorization rules and security, see
 [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).

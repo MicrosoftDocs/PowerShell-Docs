@@ -134,12 +134,11 @@ You cannot pipe input to this cmdlet.
 **Get-Culture** returns an object that represents the current culture.
 
 ## NOTES
-* You can also use the $PsCulture and $PsUICulture variables. The $PsCulture variable stores the name of the current culture and the $PsUICulture variable stores the name of the current UI culture.
 
-*
+You can also use the $PsCulture and $PsUICulture variables. The $PsCulture variable stores the name of the current culture and the $PsUICulture variable stores the name of the current UI culture.
 
 ## RELATED LINKS
 
-[Set-Culture]()
+[Set-Culture](/powershell/module/international/set-culture?view=win10-ps)
 
 [Get-UICulture](Get-UICulture.md)
