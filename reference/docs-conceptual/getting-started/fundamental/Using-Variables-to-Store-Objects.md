@@ -8,7 +8,7 @@ ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
 # Using variables to store objects
 
 PowerShell works with objects. PowerShell lets you create named objects known as variables.
-Variables names can include the underscore character can any alphanumeric characters. When used in
+Variable names can include the underscore character and any alphanumeric characters. When used in
 PowerShell, a variable is always specified using the \$ character followed by variable name.
 
 ## Creating a variable
