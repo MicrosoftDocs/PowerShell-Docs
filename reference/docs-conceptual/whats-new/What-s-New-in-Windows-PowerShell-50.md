@@ -12,7 +12,7 @@ Windows PowerShell 5.0 is backward-compatible. Cmdlets, providers, modules, snap
 ## Installing Windows PowerShell
 Windows PowerShell 5.0 is installed by default on Windows Server  2016 Technical Preview and Windows 10 .
 
-To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0](http://aka.ms/wmf5download). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0.
+To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1 Pro, download and install [Windows Management Framework 5.0](https://aka.ms/wmf5download). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 5.0.
 
 ## In this topic
 
@@ -25,17 +25,17 @@ To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterpr
 Many updates and improvements to Windows PowerShell Desired State Configuration (DSC) in Windows PowerShell 4.0 are available in the [November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850). You can determine if KB 3000850 is installed on your system by running `Get-Hotfix -Id KB3000850` in Windows PowerShell.
 
 - Updates to existing cmdlets in the [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) module
-  - [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) is faster (especially in ISE).
-  - [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) has a new parameter, -UseExisting, which reapplies the last applied configuration.
-  - [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force has been fixed.
-  - [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) displays more useful information about the engine state.
-  - [Test-DscConfiguration](http://technet.microsoft.com/library/dn407382.aspx) now returns the computer name along with True or False.
-  - [New-DscChecksum](http://technet.microsoft.com/library/dn521622.aspx) now supports UNC paths.
+  - [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) is faster (especially in ISE).
+  - [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) has a new parameter, -UseExisting, which reapplies the last applied configuration.
+  - [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) -Force has been fixed.
+  - [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) displays more useful information about the engine state.
+  - [Test-DscConfiguration](https://technet.microsoft.com/library/dn407382.aspx) now returns the computer name along with True or False.
+  - [New-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) now supports UNC paths.
 
-- New cmdlets in the [PSDesiredStateConfiguration](http://technet.microsoft.com/library/dn391651(v=wps.640).aspx) module
-  - [Update-DscConfiguration](http://technet.microsoft.com/library/mt143541(v=wps.630).aspx):  Performs an on-demand pull server check.
-  - [Stop-DscConfiguration](http://technet.microsoft.com/library/mt143542(v=wps.630).aspx):  Stops a configuration that is already running.
-  - [Remove-DscConfigurationDocument](http://technet.microsoft.com/library/mt143544(v=wps.630).aspx):  Lets you remove configuration documents in various stages (pending, previous, or current).
+- New cmdlets in the [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) module
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx):  Performs an on-demand pull server check.
+  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx):  Stops a configuration that is already running.
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx):  Lets you remove configuration documents in various stages (pending, previous, or current).
 
 - Language enhancements
   - DependsOn now supports composite resources.
@@ -62,7 +62,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
     - ContinueConfiguration (default value): Automatically resumes a configuration after a target node restarts.
     - StopConfiguration: Do not automatically resume a configuration after a node restarts.
   - A consistency run can now occur more often than a PULL operation, or vice-versa.
-  - Versioning support:  DSC can now recognize a document that was generated on a newer client (included with [WMF 5.0](http://aka.ms/wmf5download)).
+  - Versioning support:  DSC can now recognize a document that was generated on a newer client (included with [WMF 5.0](https://aka.ms/wmf5download)).
 
 - Error prevention improvements
   - Module version is now enforced before a configuration is applied.
@@ -78,8 +78,8 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
   - The Package resource
     - No longer installs the wrong package (either from local or web sources).
     - Now supports HTTPS.
-  - There is now support for HTTPS in the [Package resource](http://technet.microsoft.com/library/dn282132.aspx).
-  - [Archive resource](http://technet.microsoft.com/library/dn249917.aspx) now supports credentials.
+  - There is now support for HTTPS in the [Package resource](https://technet.microsoft.com/library/dn282132.aspx).
+  - [Archive resource](https://technet.microsoft.com/library/dn249917.aspx) now supports credentials.
 
 ## New features in Windows PowerShell 5.0
 
@@ -100,30 +100,30 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
   - Two new workflow common parameters, PSInformation and InformationAction, have been added.
   - When you use the Format-Table command, table columns are now automatically formatted by evaluating the first 300ms of data that passes through the stream.
 
-- In collaboration with [Microsoft Research](http://research.microsoft.com/), a new cmdlet, ConvertFrom-String, has been added. ConvertFrom-String lets you extract and parse structured objects from the content of text strings. For more information, see ConvertFrom-String.
+- In collaboration with [Microsoft Research](https://research.microsoft.com/), a new cmdlet, ConvertFrom-String, has been added. ConvertFrom-String lets you extract and parse structured objects from the content of text strings. For more information, see ConvertFrom-String.
 - A new Convert-String cmdlet automatically formats text based on an example that you provide in an -Example parameter.
 - A new module, Microsoft.PowerShell.Archive, includes cmdlets that let you compress files and folders into archive (also known as ZIP) files, extract files from existing ZIP files, and update ZIP files with newer versions of files compressed within them.
 - A new module, PackageManagement, lets you discover and install software packages on the Internet. The PackageManagement (formerly known as OneGet) module is a manager or multiplexer of existing package managers (also called package providers) to unify Windows package management with a single Windows PowerShell interface.
-- A new module, PowerShellGet, lets you find, install, publish, and update modules and DSC resources on the [PowerShell Gallery](http://www.powershellgallery.com/), or on an internal module repository that you can set up by running the Register-PSRepository cmdlet.
+- A new module, PowerShellGet, lets you find, install, publish, and update modules and DSC resources on the [PowerShell Gallery](https://www.powershellgallery.com/), or on an internal module repository that you can set up by running the Register-PSRepository cmdlet.
 - A new language keyword, **Hidden**, has been added to specify that a member (a property or a method) is not shown by default in Get-Member results (unless you add the -Force parameter). Properties or methods that have been marked hidden also do not show up in IntelliSense results, unless you are in a context where the member should be visible; for example, the automatic variable $This should show hidden members when in the class method.
-- New-Item, Remove-Item, and Get-ChildItem have been enhanced to support creating and managing [symbolic links](http://en.wikipedia.org/wiki/Symbolic_link). The **-ItemType** parameter for New-Item accepts a new value, **SymbolicLink**. Now you can create symbolic links in a single line by running the New-Item cmdlet.
+- New-Item, Remove-Item, and Get-ChildItem have been enhanced to support creating and managing [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link). The **-ItemType** parameter for New-Item accepts a new value, **SymbolicLink**. Now you can create symbolic links in a single line by running the New-Item cmdlet.
 - Get-ChildItem also has a new -Depth parameter, which you use with the -Recurse parameter to limit the recursion. For example, Get-ChildItem -Recurse -Depth 2 returns results from the current folder, all of the child folders within the current folder, and all of the folders within the child folders.
-- Copy-Item now lets you copy files or folders from one Windows PowerShell session to another, meaning that you can copy files to sessions that are connected to remote computers, (including computers that are running [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), and thus have no other interface). To copy files, specify PSSession IDs as the value of the new -FromSession and -ToSession parameters, and add -Path and -Destination to specify origin path and destination, respectively. For example, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
+- Copy-Item now lets you copy files or folders from one Windows PowerShell session to another, meaning that you can copy files to sessions that are connected to remote computers, (including computers that are running [Nano Server](https://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), and thus have no other interface). To copy files, specify PSSession IDs as the value of the new -FromSession and -ToSession parameters, and add -Path and -Destination to specify origin path and destination, respectively. For example, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
 - Windows PowerShell transcription has been improved to apply to all hosting applications (such as Windows PowerShell ISE) in addition to the console host (**powershell.exe**). Transcription options (including enabling a system-wide transcript) can be configured by enabling the **Turn on PowerShell Transcription** Group Policy setting, found in Administrative Templates/Windows Components/Windows PowerShell.
 - A new detailed script tracing feature lets you enable detailed tracking and analysis of Windows PowerShell scripting use on a system. After you enable detailed script tracing, Windows PowerShell logs all script blocks to the Event Tracing for Windows (ETW) event log, **Microsoft-Windows-PowerShell/Operational**.
-- Starting in Windows PowerShell 5.0, new Cryptographic Message Syntax cmdlets support encryption and decryption of content by using the IETF standard format for cryptographically protecting messages as documented by [RFC5652](http://tools.ietf.org/html/rfc5652). The Get-CmsMessage, Protect-CmsMessage, and Unprotect-CmsMessage cmdlets have been added to the [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) module.
-- New cmdlets in the [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) module, Get-Runspace, Debug-Runspace, Get-RunspaceDebug, Enable-RunspaceDebug, and Disable-RunspaceDebug, let you set debug options on a runspace, and start and stop debugging on a runspace. For debugging arbitrary runspaces'”that is, runspaces that are not the default runspace for a Windows PowerShell console or Windows PowerShell ISE session'”Windows PowerShell lets you set breakpoints in a script, and have added breakpoints stop the script from running until you can attach a debugger to debug the runspace script. Nested debugging support for arbitrary runspaces has been added to the Windows PowerShell script debugger for runspaces.
-- A new Format-Hex cmdlet has been added to the [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) module. Format-Hex lets you view text or binary data in hexadecimal format.
-- Get-Clipboard and Set-Clipboard cmdlets have been added to the [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) module; they ease the transfer of content to and from a Windows PowerShell session. The Clipboard cmdlets support images, audio files, file lists, and text.
-- A new cmdlet, Clear-RecycleBin, has been added to the [Microsoft.PowerShell.Management](http://technet.microsoft.com/library/hh849827(v=wps.640).aspx) module; this cmdlet empties the Recycle Bin for a fixed drive, which includes external drives. By default, you are prompted to confirm a Clear-RecycleBin command, because the ConfirmImpact property of the cmdlet is set to ConfirmImpact.High.
+- Starting in Windows PowerShell 5.0, new Cryptographic Message Syntax cmdlets support encryption and decryption of content by using the IETF standard format for cryptographically protecting messages as documented by [RFC5652](https://tools.ietf.org/html/rfc5652). The Get-CmsMessage, Protect-CmsMessage, and Unprotect-CmsMessage cmdlets have been added to the [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh849807.aspx) module.
+- New cmdlets in the [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) module, Get-Runspace, Debug-Runspace, Get-RunspaceDebug, Enable-RunspaceDebug, and Disable-RunspaceDebug, let you set debug options on a runspace, and start and stop debugging on a runspace. For debugging arbitrary runspaces'”that is, runspaces that are not the default runspace for a Windows PowerShell console or Windows PowerShell ISE session'”Windows PowerShell lets you set breakpoints in a script, and have added breakpoints stop the script from running until you can attach a debugger to debug the runspace script. Nested debugging support for arbitrary runspaces has been added to the Windows PowerShell script debugger for runspaces.
+- A new Format-Hex cmdlet has been added to the [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) module. Format-Hex lets you view text or binary data in hexadecimal format.
+- Get-Clipboard and Set-Clipboard cmdlets have been added to the [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) module; they ease the transfer of content to and from a Windows PowerShell session. The Clipboard cmdlets support images, audio files, file lists, and text.
+- A new cmdlet, Clear-RecycleBin, has been added to the [Microsoft.PowerShell.Management](https://technet.microsoft.com/library/hh849827(v=wps.640).aspx) module; this cmdlet empties the Recycle Bin for a fixed drive, which includes external drives. By default, you are prompted to confirm a Clear-RecycleBin command, because the ConfirmImpact property of the cmdlet is set to ConfirmImpact.High.
 - A new cmdlet, New-TemporaryFile, lets you create a temporary file as part of scripting. By default, the new temporary file is created in ```C:\Users\<user name>\AppData\Local\Temp```.
 - The Out-File, Add-Content, and Set-Content cmdlets now have a new -NoNewline parameter, which omits a new line after the output.
 - The New-Guid cmdlet leverages the .NET Framework Guid class to generate a GUID, useful when you are writing scripts or DSC resources.
 - Because file version information can be misleading, particularly after a file is patched, new FileVersionRaw and ProductVersionRaw script properties are available for FileInfo objects. For example, you can run the following command to display the values of these properties for powershell.exe, where $pid contains the process ID for a running session of Windows PowerShell:  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 - New cmdlets Enter-PSHostProcess and Exit-PSHostProcess let you debug Windows PowerShell scripts in processes separate from the current process that is running in the Windows PowerShell console. Run Enter-PSHostProcess to enter, or attach to, a specific process ID, and then run Get-Runspace to return the active runspaces within the process. Run Exit-PSHostProcess to detach from the process when you are finished debugging the script within the process.
-- A new Wait-Debugger cmdlet has been added to the [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) module. You can run Wait-Debugger to stop a script in the debugger before running the next statement in the script.
+- A new Wait-Debugger cmdlet has been added to the [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) module. You can run Wait-Debugger to stop a script in the debugger before running the next statement in the script.
 - The Windows PowerShell Workflow debugger now supports command or tab completion, and you can debug nested workflow functions. You can now press **Ctrl+Break** to enter the debugger in a running script, in both local and remote sessions, and in a workflow script.
-- A Debug-Job cmdlet has been added to the [Microsoft.PowerShell.Core](http://technet.microsoft.com/library/hh849695.aspx) module to debug running job scripts for Windows PowerShell Workflow, background, and jobs running in remote sessions.
+- A Debug-Job cmdlet has been added to the [Microsoft.PowerShell.Core](https://technet.microsoft.com/library/hh849695.aspx) module to debug running job scripts for Windows PowerShell Workflow, background, and jobs running in remote sessions.
 - A new state, AtBreakpoint, has been added for Windows PowerShell jobs. The AtBreakpoint state applies when a job is running a script that includes set breakpoints, and the script has hit a breakpoint. When a job is stopped at a debug breakpoint, you must debug the job by running the Debug-Job cmdlet.
 - Windows PowerShell 5.0 implements support for multiple versions of a single Windows PowerShell module in the same folder in $PSModulePath. A RequiredVersion property has been added to the ModuleSpecification class to help you get the desired version of a module; this property is mutually exclusive with the ModuleVersion property. RequiredVersion is now supported as part of the value of the FullyQualifiedName parameter of the Get-Module, Import-Module, and Remove-Module cmdlets.
 - You can now perform module version validation by running the Test-ModuleManifest cmdlet.
@@ -162,7 +162,7 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 - A new **DscLocalConfigurationManager** attribute designates a configuration block as a meta-configuration, which is used to configure the DSC Local Configuration Manager. This attribute restricts a configuration to containing only items which configure the DSC Local Configuration Manager. During processing, this configuration generates a \*.meta.mof file that is then sent to the appropriate target nodes by running the Set-DscLocalConfigurationManager cmdlet.
 - Partial configurations are now allowed in Windows PowerShell 5.0. You can deliver configuration documents to a node in fragments. For a node to receive multiple fragments of a configuration document, the node'™s Local Configuration Manager must be first set to specify the expected fragments
 - Cross-computer synchronization is new in DSC in Windows PowerShell 5.0. By using the built-in WaitFor\* resources (**WaitForAll**, **WaitForAny**, and **WaitForSome**), you can now specify dependencies across computers during configuration runs, without external orchestrations. These resources provide node-to-node synchronization by using CIM connections over the WS-Man protocol. A configuration can wait for another computer'™s specific resource state to change.
-- Just Enough Administration (JEA), a new delegation security feature, leverages DSC and Windows PowerShell constrained runspaces to help secure enterprises from data loss or compromise by employees, whether intentional or unintentional. For more information about JEA, including where you can download the xJEA DSC resource, see [Just Enough Administration, Step by Step](http://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
+- Just Enough Administration (JEA), a new delegation security feature, leverages DSC and Windows PowerShell constrained runspaces to help secure enterprises from data loss or compromise by employees, whether intentional or unintentional. For more information about JEA, including where you can download the xJEA DSC resource, see [Just Enough Administration, Step by Step](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
 - The following new cmdlets have been added to the PSDesiredStateConfiguration module.
   - A new Get-DscConfigurationStatus cmdlet gets high-level information about configuration status from a target node. You can obtain the status of the last, or of all configurations.
   - A new Compare-DscConfiguration cmdlet compares a specified configuration with the actual state of one or more target nodes.
@@ -179,18 +179,18 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 
 ### New features in Windows PowerShell Web Services (Management OData IIS Extension)
 
-- Starting in Windows PowerShell 5.0, you can generate a set of Windows PowerShell cmdlets based on the functionality exposed by a given OData endpoint, by running the Export-ODataEndpointProxy cmdlet, found in the new [Microsoft.PowerShell.OdataUtils](http://technet.microsoft.com/library/dn818507(v=wps.640).aspx) module.
+- Starting in Windows PowerShell 5.0, you can generate a set of Windows PowerShell cmdlets based on the functionality exposed by a given OData endpoint, by running the Export-ODataEndpointProxy cmdlet, found in the new [Microsoft.PowerShell.OdataUtils](https://technet.microsoft.com/library/dn818507(v=wps.640).aspx) module.
 
 ### Notable bug fixes in Windows PowerShell 5.0
 
-- Windows PowerShell 5.0 includes a new COM implementation, which offers significant performance improvements when you are working with COM objects. For a video demonstration of the effect, see [Com_Perf_Improvements](http://1drv.ms/1qu3UPZ).
+- Windows PowerShell 5.0 includes a new COM implementation, which offers significant performance improvements when you are working with COM objects. For a video demonstration of the effect, see [Com_Perf_Improvements](https://1drv.ms/1qu3UPZ).
 - Significant performance improvements have been made to the first tab completion in a Windows PowerShell session, shortening tab completion time by nearly 500 ms.
 
 ## New features in Windows PowerShell 4.0
 
 Windows PowerShell 4.0 is backward-compatible. Cmdlets, providers, modules, snap-ins, scripts, functions, and profiles that were designed for Windows PowerShell 3.0 and Windows PowerShell 2.0 work in Windows PowerShell 4.0 without changes.
 
-Windows PowerShell 4.0 is installed by default on Windows 8.1 and Windows Server 2012 R2. To install Windows PowerShell 4.0 on Windows 7 with SP1, or Windows Server 2008 R2, download and install [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 4.0.
+Windows PowerShell 4.0 is installed by default on Windows 8.1 and Windows Server 2012 R2. To install Windows PowerShell 4.0 on Windows 7 with SP1, or Windows Server 2008 R2, download and install [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855). Be sure to read the download details, and meet all system requirements, before you install Windows Management Framework 4.0.
 
 - [New features in Windows PowerShell](#new-features-in-windows-powershell-1)
 - [New features in Windows PowerShell Integrated Scripting Environment (ISE)](#new-features-in-windows-powershell-integrated-scripting-environment-ise)
@@ -240,7 +240,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 ### New features in Windows PowerShell Web Services
 
-- When an error occurs in Windows PowerShell Web Services (PSWS, also called Management OData IIS Extension), while a cmdlet is running, more detailed error messages are returned to the caller. In addition, error codes follow [Windows Azure REST API error code guidelines](http://msdn.microsoft.com/library/windowsazure/dd179357.aspx).
+- When an error occurs in Windows PowerShell Web Services (PSWS, also called Management OData IIS Extension), while a cmdlet is running, more detailed error messages are returned to the caller. In addition, error codes follow [Windows Azure REST API error code guidelines](https://msdn.microsoft.com/library/windowsazure/dd179357.aspx).
 - An endpoint can now define the API version, as well as enforce the usage of a specific API version. Whenever version mismatches occur between client and server, errors are displayed to both the client and the server.
 - Management of the dispatch schema has been simplified by automatically generating values for any missing fields in the schema. Generation occurs, as a helpful starting point, even if the dispatch schema does not exist.
 - Type handling in PSWS has been improved to support types that use a different constructor than the default constructor, by behaving similarly to the **PSTypeConverter** in Windows PowerShell. This lets you use complex types with PSWS.
@@ -332,7 +332,7 @@ The following are the benefits of Windows PowerShell Workflow
 
 Windows PowerShell Web Access is a Windows Server 2012 feature that lets users run Windows PowerShell commands and scripts in a web-based console. Devices that use the web-based console do not require Windows PowerShell, remote management software, or browser plug-in installations. All that is required is a properly-configured Windows PowerShell Web Access gateway and a client device browser that supports JavaScript and accepts cookies.
 
-For more information, see [Deploy Windows PowerShell Web Access](http://go.microsoft.com/fwlink/p/?LinkID=221050).
+For more information, see [Deploy Windows PowerShell Web Access](https://go.microsoft.com/fwlink/p/?LinkID=221050).
 
 ### New Windows PowerShell ISE Features
 
@@ -380,7 +380,7 @@ Windows 8 and Windows Server 2012 modules do not include help files. To download
 
 When the help files for a cmdlet are not installed on the computer, the [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet now displays auto-generated help. The auto-generated help includes the command syntax and instructions for using the [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet to download help files.
 
-Any module author can support Updatable Help for their module. You can include help files in the module and use Updatable Help to update them or omit the help files and use Updatable Help to install them. For more information about supporting Updatable Help, see [Supporting Updatable Help](http://go.microsoft.com/FWLink/?LinkID=242129) in MSDN.
+Any module author can support Updatable Help for their module. You can include help files in the module and use Updatable Help to update them or omit the help files and use Updatable Help to install them. For more information about supporting Updatable Help, see [Supporting Updatable Help](https://go.microsoft.com/FWLink/?LinkID=242129) in MSDN.
 
 ### Enhanced Online Help
 
@@ -405,7 +405,7 @@ Beginning in Windows PowerShell 3.0, authors of C# cmdlets can populate the **He
 
 You can also include a **HelpUri** value in the first related link of an XML-based cmdlet help file or the .Link directive of comment-based help in a function.
 
-For more information about supporting online help, see [Supporting Online Help](http://go.microsoft.com/fwlink/?LinkId=242132) in MSDN.
+For more information about supporting online help, see [Supporting Online Help](https://go.microsoft.com/fwlink/?LinkId=242132) in MSDN.
 
 ### CIM integration
 
@@ -559,4 +559,4 @@ To improve the ability of Windows PowerShell 3.0 to interpret and correctly hand
 ## See Also
 
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
+- [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)

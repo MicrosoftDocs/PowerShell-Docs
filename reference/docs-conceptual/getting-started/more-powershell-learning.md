@@ -28,23 +28,23 @@ In addition to the Help available at the command line, the following resources p
 
 #### Windows PowerShell Essentials for the Busy Admin Series
 
-- [PowerShell 'SmowerShell'—Why You Should Learn Windows PowerShell Part 1](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Heard It through the Pipeline—How to Compound Windows PowerShell Commands for Fun and Profit Part 2](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Sole Provider? Not Hardly—A Look at Windows PowerShell Providers Part 3](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [The Main Event—Windows PowerShell Does Event Logs Part 4](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [More Than Remotely Possible—Using Windows PowerShell to Manage the Remote Desktop Part 5](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell 'SmowerShell'—Why You Should Learn Windows PowerShell Part 1](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Heard It through the Pipeline—How to Compound Windows PowerShell Commands for Fun and Profit Part 2](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Sole Provider? Not Hardly—A Look at Windows PowerShell Providers Part 3](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [The Main Event—Windows PowerShell Does Event Logs Part 4](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [More Than Remotely Possible—Using Windows PowerShell to Manage the Remote Desktop Part 5](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### Learn it now before it's an emergency
 
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 2](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 3](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 4](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 5](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 1](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 2](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 3](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 4](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 5](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
 
 ## Resources for Windows PowerShell Developers
 
 The following resources provide resources to help developers create their own Windows PowerShell modules, functions, cmdlets, providers, and hosting applications.
 
-- [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595). Provides reference content.
-- [Windows PowerShell Programmer's Guide](http://go.microsoft.com/fwlink/p/?LinkID=89596). Provides tutorials. Also contains information about fundamental Windows PowerShell concepts.
+- [Windows PowerShell SDK](https://go.microsoft.com/fwlink/p/?LinkID=89595). Provides reference content.
+- [Windows PowerShell Programmer's Guide](https://go.microsoft.com/fwlink/p/?LinkID=89596). Provides tutorials. Also contains information about fundamental Windows PowerShell concepts.

@@ -38,7 +38,7 @@ This cmdlet affects only the current session and sessions that are created in th
 You can add properties and methods to objects in PowerShell by defining them in Update-TypeData commands and Types.ps1xml files.
 **Remove-TypeData** deletes those extended properties and methods from the current session.
 **Remove-TypeData** does not delete the Types.ps1xml files or delete any extended type definitions from the Types.ps1xml files.
-For more information about Types.ps1xml files, see about_Types.ps1xml (http://go.microsoft.com/fwlink/?LinkID=113274).
+For more information about Types.ps1xml files, see [about_Types.ps1xml](../Microsoft.PowerShell.Core/about/about_Types.ps1xml.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -112,7 +112,7 @@ Use the remaining parameters to configure the temporary connection in which the 
 NOTE: In Windows PowerShell 2.0, without parameters, **Get-PSSession** gets all sessions that were created in the current session.
 The *ComputerName* parameter gets sessions that were created in the current session and connect to the specified computer.
 
-For more information about PowerShell sessions, see about_PSSessions (http://go.microsoft.com/fwlink/?LinkID=135181).
+For more information about PowerShell sessions, see [about_PSSessions](about/about_PSSessions.md).
 
 ## EXAMPLES
 
@@ -699,7 +699,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

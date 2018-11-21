@@ -121,7 +121,7 @@ Accept wildcard characters: False
 Removes the central access policy from the specified item.
 
 Beginning in Windows Server® 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
-For more information, see [Dynamic Access Control: Scenario Overview](http://go.microsoft.com/fwlink/?LinkId=238408).
+For more information, see [Dynamic Access Control: Scenario Overview](https://go.microsoft.com/fwlink/?LinkId=238408).
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -9,7 +9,7 @@ This section contains the help topics for the **PSWorkflow** module, which inclu
 
 ## Help Topics
 
-[Workflow Cmdlets](http://go.microsoft.com/fwlink/?LinkID=245865)
+[Workflow Cmdlets](https://go.microsoft.com/fwlink/?LinkID=245865)
 
 [about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 

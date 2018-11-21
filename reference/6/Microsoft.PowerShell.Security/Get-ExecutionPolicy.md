@@ -29,7 +29,7 @@ The default value is Restricted.
 Without parameters, **Get-ExecutionPolicy** gets the execution policy that is effective in the session.
 You can use the *List* parameter to get all execution policies that affect the session or the *Scope* parameter to get the execution policy for a particular scope.
 
-For more information, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+For more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
 ## EXAMPLES
 
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -169,7 +169,7 @@ You cannot pipe input to this cmdlet.
   The effective execution policy is determined by the policies that you set by using the Set-ExecutionPolicy cmdlet and the "Turn on Script Execution" group policies for computers and users.
 The precedence order is Computer Group Policy \> User Group Policy \> Process (session) execution policy \> User execution policy \> Computer execution policy.
 
-  For more information about PowerShell execution policy, including definitions of the PowerShell policies, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+  For more information about PowerShell execution policy, including definitions of the PowerShell policies, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
 ## RELATED LINKS
 

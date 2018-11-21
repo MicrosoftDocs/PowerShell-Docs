@@ -346,7 +346,7 @@ Use this parameter when you have used the **Save-Help** cmdlet to download updat
 
 Administrators can use the Set the default source path for Update-Help Group Policy setting under Computer Configuration to specify a default value for *SourcePath*.
 This Group Policy setting prevents users from using **Update-Help** to download help files from the Internet.
-For more information, see about_Group_Policy_Settings (http://go.microsoft.com/fwlink/?LinkId=251696).
+For more information, see [about_Group_Policy_Settings](about/about_Group_Policy_Settings.md).
 
 ```yaml
 Type: String[]
@@ -433,7 +433,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -462,12 +462,10 @@ To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-nam
 * The **Update-Help** and **Save-Help** cmdlets use the following ports to download help files: Port 80 for HTTP and port 443 for HTTPS.
 * **Update-Help** supports all modules and the Windows PowerShell Core snap-ins. It does not support any other snap-ins.
 * To update help for a module in a location that is not listed in the **PSModulePath** environment variable, import the module into the current session and then run an **Update-Help** command. Run **Update-Help** without parameters or use the *Module* parameter to specify the module name. The *Module* parameter of the **Update-Help** and **Save-Help** cmdlets does not accept the full path of a module file or module manifest file.
-* Any module can support Updatable Help. For instructions for supporting Updatable Help in the modules that you author, see Supporting Updatable Help (http://go.microsoft.com/fwlink/?LinkID=242129) in the MSDN Library.
+* Any module can support Updatable Help. For instructions for supporting Updatable Help in the modules that you author, see [Supporting Updatable Help](https://go.microsoft.com/fwlink/?LinkID=242129) in the MSDN Library.
 * The **Update-Help** and **Save-Help** cmdlets are not supported on Windows Preinstallation Environment (Windows PE).
 
 ## RELATED LINKS
-
-[Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
 
 [Get-Help](Get-Help.md)
 

@@ -339,7 +339,7 @@ The results show that there are two **Get-Date** commands in the session, a func
 
 The fifth command runs the hidden cmdlet by qualifying the command name with the module name.
 
-For more information about command precedence in PowerShell, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
+For more information about command precedence in PowerShell, see [about_Command_Precedence](about/about_Command_Precedence.md).
 
 ### Example 10: Import a minimum version of a module
 ```
@@ -943,7 +943,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

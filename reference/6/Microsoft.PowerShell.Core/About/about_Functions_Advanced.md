@@ -90,5 +90,3 @@ Advanced functions differ from compiled cmdlets in the following ways:
 [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 
 [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-
-[PowerShell Cmdlets](http://go.microsoft.com/fwlink/?LinkID=135279)
