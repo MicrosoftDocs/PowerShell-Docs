@@ -174,7 +174,7 @@ This command gets the properties of the **PSModuleInfo** object that `Get-Module
 There is one object for each module file.
 
 You can use the properties to format and filter the module objects.
-For more information about the properties, see [PSModuleInfo Properties](http://go.microsoft.com/fwlink/?LinkId=143624) in the MSDN library.
+For more information about the properties, see [PSModuleInfo Properties](https://go.microsoft.com/fwlink/?LinkId=143624) in the MSDN library.
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0.
 
@@ -568,7 +568,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

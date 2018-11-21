@@ -12,7 +12,7 @@ recommendations, and best practices when using PowerShell Remoting.
 ## What is PowerShell Remoting?
 
 PowerShell Remoting uses [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), which is the Microsoft implementation of the
-[Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protocol, to allow users to run PowerShell commands on remote
+[Web Services for Management (WS-Management)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protocol, to allow users to run PowerShell commands on remote
 computers. You can find more information about using PowerShell Remoting at [Running Remote Commands](https://technet.microsoft.com/library/dd819505.aspx).
 
 PowerShell Remoting is not the same as using the **ComputerName** parameter of a cmdlet to run it on a remote computer, which uses Remote Procedure Call (RPC)

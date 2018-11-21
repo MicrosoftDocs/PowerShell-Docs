@@ -72,7 +72,7 @@ $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 $Credential = Import-CliXml $CredXmlPath
 ```
 
-The **Export-CliXml** cmdlet encrypts credential objects by using the [Windows Data Protection API](http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
+The **Export-CliXml** cmdlet encrypts credential objects by using the [Windows Data Protection API](https://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
 This ensures that only your user account on only that computer can decrypt the contents of the credential object. The exported CliXml file can neither be used on a different computer nor by a different user.
 
 In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-CliXml** cmdlet to save the credential to disk. In the example, the file in which the credential is stored is represented by TestScript.ps1.credential.
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -265,9 +265,9 @@ You can pipe any object to **Export-Clixml**.
 
 ## RELATED LINKS
 
-[Use PowerShell to Pass Credentials to Legacy Systems](http://blogs.technet.com/b/heyscriptingguy/archive/2011/06/05/use-powershell-to-pass-credentials-to-legacy-systems.aspx)
+[Use PowerShell to Pass Credentials to Legacy Systems](https://blogs.technet.com/b/heyscriptingguy/archive/2011/06/05/use-powershell-to-pass-credentials-to-legacy-systems.aspx)
 
-[Securely Store Credentials on Disk](http://powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
+[Securely Store Credentials on Disk](https://powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
 
 [ConvertTo-Html](ConvertTo-Html.md)
 

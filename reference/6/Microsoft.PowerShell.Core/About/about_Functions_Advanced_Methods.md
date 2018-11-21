@@ -26,7 +26,7 @@ the following methods:
 
 All the methods and properties of the `PSCmdlet` class are available to
 advanced functions. For more information about these methods and properties,
-see [`System.Management.Automation.PSCmdlet`](http://go.microsoft.com/fwlink/?LinkId=142139) in the MSDN library.
+see [`System.Management.Automation.PSCmdlet`](https://go.microsoft.com/fwlink/?LinkId=142139) in the MSDN library.
 
 ### Input Processing Methods
 
@@ -102,11 +102,11 @@ only be called only from within the `Process{}` block of the function. The
 `ShouldProcess` (as shown in the previous example).
 
 For more information about this method, see
-[`System.Management.Automation.Cmdlet.ShouldProcess`](http://go.microsoft.com/fwlink/?LinkId=142142)
+[`System.Management.Automation.Cmdlet.ShouldProcess`](https://go.microsoft.com/fwlink/?LinkId=142142)
 in the MSDN library.
 
 For more information about how to request confirmation, see
-[Requesting Confirmation](http://go.microsoft.com/fwlink/?LinkID=136658)
+[Requesting Confirmation](https://go.microsoft.com/fwlink/?LinkID=136658)
 in the MSDN library.
 
 #### ShouldContinue
@@ -126,7 +126,7 @@ occurs and the function cannot continue, it should call the
 terminating errors and the `Write-Error` cmdlet for nonterminating errors.
 
 For more information, see
-[`System.Management.Automation.Cmdlet.ThrowTerminatingError`](http://go.microsoft.com/fwlink/?LinkId=142144)
+[`System.Management.Automation.Cmdlet.ThrowTerminatingError`](https://go.microsoft.com/fwlink/?LinkId=142144)
 in the MSDN libray.
 
 ### Write Methods
@@ -138,7 +138,7 @@ can also use the various Write cmdlets, such as Write-Error.
 #### WriteCommandDetail
 
 For information about the `WriteCommandDetails` method, see
-[`System.Management.Automation.Cmdlet.WriteCommandDetail`](http://go.microsoft.com/fwlink/?LinkId=142155)
+[`System.Management.Automation.Cmdlet.WriteCommandDetail`](https://go.microsoft.com/fwlink/?LinkId=142155)
 in the MSDN library.
 
 #### WriteDebug
@@ -146,14 +146,14 @@ in the MSDN library.
 To provide information that can be used to troubleshoot a function, make the
 function call the `WriteDebug` method. This displays debug messages to the
 user. For more information, see
-[`System.Management.Automation.Cmdlet.WriteDebug`](http://go.microsoft.com/fwlink/?LinkId=142156)
+[`System.Management.Automation.Cmdlet.WriteDebug`](https://go.microsoft.com/fwlink/?LinkId=142156)
 in the MSDN library.
 
 #### WriteError
 
 Functions should call this method when nonterminating errors occur and the
 function is designed to continue processing records. For more information, see
-[`System.Management.Automation.Cmdlet.WriteError`](http://go.microsoft.com/fwlink/?LinkId=142157)
+[`System.Management.Automation.Cmdlet.WriteError`](https://go.microsoft.com/fwlink/?LinkId=142157)
 in the MSDN library.
 
 Note: If a terminating error occurs, the function should call the
@@ -164,7 +164,7 @@ Note: If a terminating error occurs, the function should call the
 This method allows the function to send an object to the next command in the
 pipeline. In most cases, this is the method to use when the function returns
 data. For more information, see
-[`System.Management.Automation.PSCmdlet.WriteObject`](http://go.microsoft.com/fwlink/?LinkId=142158)
+[`System.Management.Automation.PSCmdlet.WriteObject`](https://go.microsoft.com/fwlink/?LinkId=142158)
 in the MSDN library.
 
 #### WriteProgress
@@ -172,7 +172,7 @@ in the MSDN library.
 For functions whose actions take a long time to complete, this method allows
 the function to call the `WriteProgress` method so that progress information
 is displayed. For example, you can display the percent completed. For more
-information, see [`System.Management.Automation.PSCmdlet.WriteProgress`](http://go.microsoft.com/fwlink/?LinkId=142160)
+information, see [`System.Management.Automation.PSCmdlet.WriteProgress`](https://go.microsoft.com/fwlink/?LinkId=142160)
 in the MSDN library.
 
 #### WriteVerbose
@@ -181,7 +181,7 @@ To provide detailed information about what the function is doing, make the
 function call the `WriteVerbose` method to display verbose messages to the
 user. By default, verbose messages are not displayed. For more information,
 see
-[`System.Management.Automation.PSCmdlet.WriteVerbose`](http://go.microsoft.com/fwlink/?LinkId=142162)
+[`System.Management.Automation.PSCmdlet.WriteVerbose`](https://go.microsoft.com/fwlink/?LinkId=142162)
 in the MSDN library.
 
 #### WriteWarning
@@ -189,7 +189,7 @@ in the MSDN library.
 To provide information about conditions that may cause unexpected results,
 make the function call the WriteWarning method to display warning messages to
 the user. By default, warning messages are displayed. For more information,
-see [`System.Management.Automation.PSCmdlet.WriteWarning`](http://go.microsoft.com/fwlink/?LinkId=142164)
+see [`System.Management.Automation.PSCmdlet.WriteWarning`](https://go.microsoft.com/fwlink/?LinkId=142164)
 in the MSDN library.
 
 Note: You can also display warning messages by configuring the
@@ -200,7 +200,7 @@ command-line options.
 
 For information about the other methods and properties that can be
 accessed through the `$PSCmdlet` variable, see
-[`System.Management.Automation.PSCmdlet`](http://go.microsoft.com/fwlink/?LinkId=142139)
+[`System.Management.Automation.PSCmdlet`](https://go.microsoft.com/fwlink/?LinkId=142139)
 in the MSDN library.
 
 For example, the `ParameterSetName` property allows you to see the parameter

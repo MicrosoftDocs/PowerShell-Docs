@@ -429,7 +429,7 @@ workflow, and to run commands that share data. By default, the commands in an
 InlineScript script block run in a separate process.
 
 For more information, see about_InlineScript and
-[Running PowerShell Commands in a Workflow](http://technet.microsoft.com/library/jj574197.aspx).
+[Running PowerShell Commands in a Workflow](https://technet.microsoft.com/library/jj574197.aspx).
 
 ### Param
 

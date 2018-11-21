@@ -606,7 +606,7 @@ valid SSL certificate from a CA.
 
    - Click **Import** to import an existing, valid certificate from a location on your network.
    - Click **Create Certificate Request** to request a certificate from a CA such as
-     [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), or
+     [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/), or
      [GeoTrust](https://www.geotrust.com/). The certificate's common name must match the host header
      in the request.
 

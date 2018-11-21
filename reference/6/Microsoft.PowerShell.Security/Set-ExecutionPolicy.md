@@ -26,7 +26,7 @@ The **Set-ExecutionPolicy** cmdlet changes the user preference for the PowerShel
 
 The execution policy is part of the security strategy of PowerShell.
 It determines whether you can load configuration files (including your PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
-For more information, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+For more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
 To change the execution policy for the default (LocalMachine) scope, start PowerShell with the "Run as administrator" option.
 
@@ -250,7 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

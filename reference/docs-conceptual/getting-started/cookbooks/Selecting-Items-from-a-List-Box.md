@@ -124,7 +124,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-Add the control (in this case, a list box) that lets users provide the information you’ve described in your label text. There are many other controls you can apply besides list boxes; for more controls, see [System.Windows.Forms Namespace](http://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) on MSDN.
+Add the control (in this case, a list box) that lets users provide the information you’ve described in your label text. There are many other controls you can apply besides list boxes; for more controls, see [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) on MSDN.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -173,6 +173,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## See Also
 
-- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644)
+- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Selecting Items from a List Box](http://technet.microsoft.com/library/ff730949.aspx)
+- [Windows PowerShell Tip of the Week:  Selecting Items from a List Box](https://technet.microsoft.com/library/ff730949.aspx)
