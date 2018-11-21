@@ -265,6 +265,8 @@ Accept wildcard characters: False
 ### -Persist
 
 Indicates that this cmdlet creates a Windows mapped network drive.
+This parameter is only available on Windows.
+
 Mapped network drives are saved in Windows on the local computer.
 They are persistent, not session-specific, and can be viewed and managed in File Explorer and other tools.
 
