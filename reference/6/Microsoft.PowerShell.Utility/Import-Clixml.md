@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -167,18 +167,14 @@ You can pipe a string that contains a path to **Import-Clixml**.
 **Import-Clixml** returns objects that have been deserialized from the stored XML files.
 
 ## NOTES
-* When specifying multiple values for a parameter, use commas to separate the values. For example, "\<parameter-name\> \<value1\>, \<value2\>".
 
-*
+When specifying multiple values for a parameter, use commas to separate the values. For example,
+"\<parameter-name\> \<value1\>, \<value2\>".
 
 ## RELATED LINKS
 
 [Use PowerShell to Pass Credentials to Legacy Systems](http://blogs.technet.com/b/heyscriptingguy/archive/2011/06/05/use-powershell-to-pass-credentials-to-legacy-systems.aspx)
 
 [Securely Store Credentials on Disk](http://powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
-
-[ConvertTo-Clixml](ConvertTo-Clixml.md)
-
-[ConvertFrom-Clixml](ConvertFrom-Clixml.md)
 
 [Export-Clixml](Export-Clixml.md)
