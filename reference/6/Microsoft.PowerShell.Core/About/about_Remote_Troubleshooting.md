@@ -597,8 +597,8 @@ following command finds the processor architecture of the session in the
 \$s variable.
 
 ```powershell
-$s = New-PSSession -ComputerName Server01 -configurationName CustomShell
-invoke-command -session $s {$env:PROCESSOR_ARCHITECTURE}
+$s = New-PSSession -ComputerName Server01 -ConfigurationName CustomShell
+Invoke-Command -Session $s {$env:PROCESSOR_ARCHITECTURE}
 x86
 ```
 
@@ -788,7 +788,7 @@ attempting to use other authentication schemes may result in the process crashin
 Please see the [OMI authentication](https://github.com/PowerShell/psl-omi-provider#connecting-from-linux-to-windows)
 instructions.
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Remote](about_Remote.md)
 

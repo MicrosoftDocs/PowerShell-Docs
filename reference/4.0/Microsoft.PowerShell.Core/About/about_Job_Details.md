@@ -8,28 +8,28 @@ title:  about_Job_Details
 
 # About Job Details
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Provides details about background jobs on local and remote computers.
 
-# DETAILED DESCRIPTION
+## DETAILED DESCRIPTION
 
 This topic explains the concept of a background job and provides technical
-information about how background jobs work in Windows PowerShell.
+information about how background jobs work in PowerShell.
 
 This topic is a supplement to the [about_Jobs](about_Jobs.md) and
 [about_Remote_Jobs](about_Remote_Jobs.md) topics.
 
-# ABOUT BACKGROUND JOBS
+### ABOUT BACKGROUND JOBS
 
 A background job runs a command or expression asynchronously. It might run
 a cmdlet, a function, a script, or any other command-based task. It is
 designed to run commands that take an extended period of time, but you
 can use it to run any command in the background.
 
-When a synchronous command runs, the Windows PowerShell command prompt is
+When a synchronous command runs, the PowerShell command prompt is
 suppressed until the command is complete. But a background job does not
-suppress the Windows PowerShell prompt. A command to start a background job
+suppress the PowerShell prompt. A command to start a background job
 returns a job object. The prompt returns immediately so you can work on
 other tasks while the background job runs.
 
@@ -41,13 +41,13 @@ You can also run commands to stop the job, to wait for the job to be
 completed, and to delete the job.
 
 To make the timing of a background job independent of other commands, each
-background job runs in its own Windows PowerShell environment
+background job runs in its own PowerShell environment
 (a "session"). However, this can be a temporary connection that is created
 only to run the job and is then destroyed, or it can be a persistent
 session (a PSSession) that you can use to run several related jobs or
 commands.
 
-# USING THE JOB CMDLETS
+### USING THE JOB CMDLETS
 
 Use a Start-Job command to start a background job on a local computer.
 Start-Job returns a job object. You can also get objects representing the
@@ -64,7 +64,7 @@ the Remove-Job cmdlet.
 For more information about how the cmdlets work, see the Help topic for
 each cmdlet, and see about_Jobs.
 
-# STARTING BACKGROUND JOBS ON REMOTE COMPUTERS
+### STARTING BACKGROUND JOBS ON REMOTE COMPUTERS
 
 You can create and manage background jobs on a local or remote computer. To
 run a background job remotely, use the AsJob parameter of a cmdlet such as
@@ -74,7 +74,7 @@ session.
 
 For more information about remote background jobs, see about_Remote_Jobs.
 
-# CHILD JOBS
+### CHILD JOBS
 
 Each background job consists of a parent job and one or more child jobs. In
 jobs started by using Start-Job or the AsJob parameter of Invoke-Command,
@@ -93,7 +93,7 @@ parameter of the Get-Job cmdlet. The IncludeChildJob parameter is
 introduced in Windows PowerShell 3.0.
 
 ```powershell
-C:\PS> Get-Job -IncludeChildJob
+PS> Get-Job -IncludeChildJob
 
 Id Name   PSJobTypeName State      HasMoreData   Location    Command
 -- ----   ------------- -----      -----------   --------    -------
@@ -107,7 +107,7 @@ value, use the ChildJobState parameter of the Get-Job cmdlet. The
 ChildJobState parameter is introduced in Windows PowerShell 3.0.
 
 ```powershell
-C:\PS> Get-Job -ChildJobState Failed
+PS> Get-Job -ChildJobState Failed
 
 Id Name   PSJobTypeName State      HasMoreData   Location    Command
 -- ----   ------------- -----      -----------   --------    -------
@@ -115,11 +115,11 @@ Id Name   PSJobTypeName State      HasMoreData   Location    Command
 3  Job3                 Failed     False         localhost   Get-Process
 ```
 
-To get the child jobs of a job on all versions of Windows PowerShell,
+To get the child jobs of a job on all versions of PowerShell,
 use the ChildJob property of the parent job.
 
 ```powershell
-C:\PS> (Get-Job Job1).ChildJobs
+PS> (Get-Job Job1).ChildJobs
 
 Id Name   PSJobTypeName State      HasMoreData   Location    Command
 -- ----   ------------- -----      -----------   --------    -------
@@ -131,7 +131,7 @@ You can also use a Get-Job command on the child job, as shown in the
 following command:
 
 ```powershell
-C:\PS> Get-Job Job3
+PS> Get-Job Job3
 
 Id Name   PSJobTypeName State      HasMoreData   Location    Command
 -- ----   ------------- -----      -----------   --------    -------
@@ -168,7 +168,7 @@ background jobs on the local computer and two remote computers. The command
 saves the job in the \$j variable.
 
 ```powershell
-PS C:> $j = Invoke-Command -ComputerName localhost, Server01, Server02 `
+PS> $j = Invoke-Command -ComputerName localhost, Server01, Server02 `
 -Command {Get-Date} -AsJob
 ```
 
@@ -177,7 +177,7 @@ shows that the command returned a job object with three child jobs, one for
 each computer.
 
 ```powershell
-PS C:> $j | Format-List Name, ChildJobs
+PS> $j | Format-List Name, ChildJobs
 
 Name      : Job3
 ChildJobs : {Job4, Job5, Job6}
@@ -186,7 +186,7 @@ ChildJobs : {Job4, Job5, Job6}
 When you display the parent job, it shows that the job failed.
 
 ```powershell
-C:\PS> $j
+PS> $j
 
 Id Name   PSJobTypeName State      HasMoreData   Location
 -- ----   ------------- -----      -----------   --------
@@ -197,7 +197,7 @@ But when you run a Get-Job command that gets the child jobs, the output
 shows that only one child job failed.
 
 ```powershell
-PS C:> Get-Job -IncludeChildJobs
+PS> Get-Job -IncludeChildJobs
 
 Id  Name   PSJobTypeName State      HasMoreData   Location    Command
 --  ----   ------------- -----      -----------   --------    -------
@@ -212,47 +212,43 @@ the results of the parent job. But you can also get the results of a
 particular child job, as shown in the following command.
 
 ```powershell
-C:\PS> Receive-Job -Name Job6 -Keep | Format-Table ComputerName,
->> DateTime -Auto
-
+PS> Receive-Job -Name Job6 -Keep | Format-Table ComputerName,
+>> DateTime -AutoSize
 ComputerName DateTime
 ------------ --------
 Server02     Thursday, March 13, 2008 4:16:03 PM
 ```
 
-The child jobs feature of Windows PowerShell background jobs gives you
+The child jobs feature of PowerShell background jobs gives you
 more control over the jobs that you run.
 
-# JOB TYPES
+### JOB TYPES
 
+PowerShell supports different types of jobs for different tasks. Beginning in
+Windows PowerShell 3.0, developers can write "job source adapters" that add
+new job types to PowerShell and include the job source adapters in modules.
+When you import the module, you can use the new job type in your session.
 
-Windows PowerShell supports different types of jobs for different tasks.
-Beginning in Windows PowerShell 3.0, developers can write "job source
-adapters" that add new job types to Windows PowerShell and include the
-job source adapters in modules. When you import the module, you can
-use the new job type in your session.
+For example, the PSScheduledJob module adds scheduled jobs and the PSWorkflow
+module adds workflow jobs.
 
-For example, the PSScheduledJob module adds scheduled jobs and the
-PSWorkflow module adds workflow jobs.
+Custom jobs types might differ significantly from standard Windows PowerShell
+background jobs. For example, scheduled jobs are saved on disk; they do not
+exist only in a particular session. Workflow jobs can be suspended and
+resumed.
 
-Custom jobs types might differ significantly from standard Windows
-PowerShell background jobs. For example, scheduled jobs are saved
-on disk; they do not exist only in a particular session. Workflow
-jobs can be suspended and resumed.
+The cmdlets that you use to manage custom jobs depend on the job type. For
+some, you use the standard job cmdlets, such as Get-Job and Start-Job. Others
+come with specialized cmdlets that manage only a particular type of job. For
+detailed information about custom job types, see the help topics about the job
+type.
 
-The cmdlets that you use to manage custom jobs depend on the job
-type. For some, you use the standard job cmdlets, such as Get-Job
-and Start-Job. Others come with specialized cmdlets that manage
-only a particular type of job. For detailed information about
-custom job types, see the help topics about the job type.
+To find the job type of a job, use the Get-Job cmdlet. Get-Job returns
+different job objects for different types of jobs. The value of the
+PSJobTypeName property of the job objects that Get-Job returns indicates the
+job type.
 
-To find the job type of a job, use the Get-Job cmdlet. Get-Job
-returns different job objects for different types of jobs. The
-value of the PSJobTypeName property of the job objects that
-Get-Job returns indicates the job type.
-
-The following table lists the job types that come with Windows
-PowerShell.
+The following table lists the job types that come with PowerShell.
 
 |Job Type      |Description                                               |
 |--------------|----------------------------------------------------------|
@@ -272,7 +268,7 @@ NOTE: Before using the Get-Job cmdlet to get jobs of a particular type, verify
 that the module that adds the job type is imported into the current session.
 Otherwise, Get-Job does not get jobs of that type.
 
-# EXAMPLE
+## EXAMPLE
 
 The following commands create a local background job, a remote background job,
 a workflow job, and a scheduled job. Then, it uses the Get-Job cmdlet to get
@@ -282,7 +278,7 @@ instances of the scheduled job.
 Start a background job on the local computer.
 
 ```powershell
-PS C:> Start-Job -Name LocalData {Get-Process}
+PS> Start-Job -Name LocalData {Get-Process}
 
 Id Name        PSJobTypeName   State   HasMoreData   Location   Command
 -- ----        -------------   -----   -----------   --------   -------
@@ -292,7 +288,7 @@ Id Name        PSJobTypeName   State   HasMoreData   Location   Command
 Start a background job that runs on a remote computer.
 
 ```powershell
-PS C:> Invoke-Command -ComputerName Server01 {Get-Process} `
+PS> Invoke-Command -ComputerName Server01 {Get-Process} `
 -AsJob -JobName RemoteData
 
 Id  Name        PSJobTypeName  State   HasMoreData   Location   Command
@@ -301,8 +297,9 @@ Id  Name        PSJobTypeName  State   HasMoreData   Location   Command
 ```
 
 Create a scheduled job
+
 ```powershell
-PS C:>  Register-ScheduledJob -Name ScheduledJob -ScriptBlock `
+PS>  Register-ScheduledJob -Name ScheduledJob -ScriptBlock `
  {Get-Process} -Trigger (New-JobTrigger -Once -At "3 PM")
 
 Id         Name            JobTriggers     Command       Enabled
@@ -311,14 +308,16 @@ Id         Name            JobTriggers     Command       Enabled
 ```
 
 Create a workflow.
+
 ```powershell
-PS C:> workflow Test-Workflow {Get-Process}
+PS> workflow Test-Workflow {Get-Process}
 ```
 
 Run the workflow as a job.
+
 ```powershell
 
-PS C:> Test-Workflow -AsJob -JobName TestWFJob
+PS> Test-Workflow -AsJob -JobName TestWFJob
 
 Id  Name       PSJobTypeName   State   HasMoreData   Location   Command
 --  ----       -------------   -----   -----------   --------   -------
@@ -329,7 +328,7 @@ Get the jobs. The `Get-Job` command does not get scheduled jobs, but it gets
 instances of the scheduled job that are started.
 
 ```powershell
-PS C:> Get-Job
+PS> Get-Job
 
 Id  Name         PSJobTypeName  State     HasMoreData  Location  Command
 --  ----         -------------  -----     -----------  --------  -------
@@ -342,14 +341,14 @@ Id  Name         PSJobTypeName  State     HasMoreData  Location  Command
 To get scheduled jobs, use the Get-ScheduledJob cmdlet.
 
 ```powershell
-PS C:> Get-ScheduledJob
+PS> Get-ScheduledJob
 
 Id         Name            JobTriggers     Command       Enabled
 --         ----            -----------     -------       -------
 1          ScheduledJob    1               Get-Process   True
 ```
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Jobs](about_Jobs.md)
 

@@ -8,14 +8,14 @@ title:  about_Data_Sections
 
 # About Data Sections
 
-### Short Description
+## Short Description
 
 Explains Data sections, which isolate text strings and other read-only
 data from script logic.
 
-### Long Description
+## Long Description
 
-Scripts that are designed for Windows PowerShell can have one or more
+Scripts that are designed for PowerShell can have one or more
 Data sections that contain only data. You can include one or more Data
 sections in any script, function, or advanced function. The content of
 the Data section is restricted to a specified subset of the Windows
@@ -26,7 +26,7 @@ both logic and data. It lets you have separate string resource files for
 text, such as error messages and Help strings. It also isolates the code
 logic, which facilitates security and validation tests.
 
-In Windows PowerShell, the Data section is used to support script
+In PowerShell, the Data section is used to support script
 internationalization. You can use Data sections to make it easier to
 isolate, locate, and process strings that will be translated into many
 user interface (UI) languages.
@@ -47,7 +47,7 @@ The Data keyword is required. It is not case-sensitive.
 
 The permitted content is limited to the following elements:
 
-- All Windows PowerShell operators, except `-match`
+- All PowerShell operators, except `-match`
 
 - `If`, `Else`, and `ElseIf` statements
 
@@ -157,7 +157,7 @@ Simple data strings.
 
 ```powershell
 DATA {
-    "Thank you for using my Windows PowerShell Organize.pst script."
+    "Thank you for using my PowerShell Organize.pst script."
     "It is provided free of charge to the community."
     "I appreciate your comments and feedback."
 }
@@ -203,7 +203,7 @@ DATA -supportedCommand Format-XML {
 }
 ```
 
-# See Also
+## See Also
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 

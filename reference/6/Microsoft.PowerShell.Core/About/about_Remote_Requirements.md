@@ -276,8 +276,7 @@ $session = New-PSSession -Computer <hostname> -Credential $cred `
 > Authentication in
 > [Authentication for Remote Connections](https://msdn.microsoft.com/en-us/library/aa384295(v=vs.85).aspx)
 
-
-# SEE ALSO
+## SEE ALSO
 
 [about_Remote](about_Remote.md)
 

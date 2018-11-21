@@ -20,10 +20,10 @@ administrator and the winner of the Advanced Division of the 2012 Scripting
 Games. Revised for Windows PowerShell 3.0.]
 
 Splatting is a method of passing a collection of parameter values to a command
-as unit. Windows PowerShell associates each value in the collection with a
+as unit. PowerShell associates each value in the collection with a
 command parameter. Splatted parameter values are stored in named splatting
 variables, which look like standard variables, but begin with an At symbol (@)
-instead of a dollar sign ($). The At symbol tells Windows PowerShell that you
+instead of a dollar sign ($). The At symbol tells PowerShell that you
 are passing a collection of values, instead of a single value.
 
 Splatting makes your commands shorter and easier to read. You can re-use the
@@ -85,7 +85,7 @@ Copy-Item @HashArguments
 ```
 
 Note: In the first command, the At symbol (@) indicates a hash table, not a
-splatted value. The syntax for hash tables in Windows PowerShell is:
+splatted value. The syntax for hash tables in PowerShell is:
 @{\<name\>=\<value\>; \<name\>=\<value\>; …}*
 
 ## SPLATTING WITH ARRAYS
@@ -281,7 +281,7 @@ FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell
                      Language:         English (United States)
 ```
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Arrays](about_Arrays.md)
 

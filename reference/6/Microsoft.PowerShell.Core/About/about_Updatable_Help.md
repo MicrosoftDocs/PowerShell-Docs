@@ -447,7 +447,7 @@ your modules. For more information, see "Supporting Updatable Help" and
 
 Updatable help not available for PowerShell snap-ins or comment-based help.
 
-# REMARKS
+## REMARKS
 
 The Update-Help and Save-Help cmdlets are not supported on Windows
 Preinstallation Environment (Windows PE).

@@ -8,11 +8,11 @@ title:  about_Using
 
 # About Using
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Allows to indicate which namespaces are used in the session.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The `using` statement allows to indicate which namespaces are used in the
 session. Making easier to mention classes and members, as it requires less
@@ -35,7 +35,7 @@ using module <module-name>
 **Note**: The `using` statetement, for modules, is intended to surface the
 classes in the module. If the module isn't loaded, the `using` fails.
 
-## Example 1
+## Examples
 
 The following script gets the cryptographic hash for the "Hello World" string.
 
@@ -58,8 +58,6 @@ $hashfromstream = Get-FileHash -InputStream $memorystream `
   -Algorithm $algorithm
 $hashfromstream.Hash.ToString()
 ```
-
-## Example 2
 
 The following script assumes a module named 'CardGames' was loaded
 automatically.
