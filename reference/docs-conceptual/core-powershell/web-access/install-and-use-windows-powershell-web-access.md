@@ -30,7 +30,7 @@ run a web-based Windows PowerShell console after successful authentication.
 
 Windows PowerShell Web Access setup and configuration is a three-step process:
 
-1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access)
+1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Configure the Gateway](#configure-the-gateway)
 1. [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
 
@@ -107,7 +107,7 @@ Server 2012 R2 or Windows Server 2012 by using either Windows PowerShell cmdlets
 Add Roles and Features Wizard that is opened from within Server Manager. For quick installation and
 configuration, use Windows PowerShell cmdlets, as described in this section.
 
-1. [Install Windows PowerShell Web Access](#install-Windows-powershell-web-access)
+1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Configure the Gateway](#configure-the-gateway)
 1. [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
 

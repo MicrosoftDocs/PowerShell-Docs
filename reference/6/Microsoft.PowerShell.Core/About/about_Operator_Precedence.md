@@ -87,17 +87,17 @@ order:
 |`> >> 2> 2>> 2>&1`        |[about_Redirection](about_Redirection.md)|
 |`= += -= *= /= %=`        |[about_Assignment_Operators](about_Assignment_Operators.md)|
 
-# EXAMPLES
+## EXAMPLES
 
 The following two commands show the arithmetic operators and the effect of
 using parentheses to force PowerShell to evaluate the enclosed part of
 the expression first.
 
 ```powershell
-C:\PS> 2 + 3 * 4
+PS> 2 + 3 * 4
 14
 
-C:\PS> (2 + 3) * 4
+PS> (2 + 3) * 4
 20
 ```
 
@@ -105,12 +105,13 @@ The following example gets the read-only text files from the local directory
 and saves them in the `$read_only` variable.
 
 ```powershell
-$read_only = get-childitem *.txt | where-object {$_.isReadOnly}
+$read_only = Get-ChildItem *.txt | Where-Object {$_.isReadOnly}
 ```
+
 It is equivalent to the following example.
 
 ```powershell
-$read_only = ( get-childitem *.txt | where-object {$_.isReadOnly} )
+$read_only = ( Get-ChildItem *.txt | Where-Object {$_.isReadOnly} )
 ```
 
 Because the pipeline operator (|) has a higher precedence than the assignment
@@ -127,7 +128,7 @@ which is the first string. Finally, it casts the selected object as a string.
 In this case, the cast has no effect.
 
 ```powershell
-C:\PS> [string]@('Windows','PowerShell','2.0')[0]
+PS> [string]@('Windows','PowerShell','2.0')[0]
 Windows
 ```
 
@@ -137,7 +138,7 @@ before the index selection. As a result, the entire array is cast as a
 array, which is the first character.
 
 ```powershell
-C:\PS> ([string]@('Windows','PowerShell','2.0'))[0]
+PS> ([string]@('Windows','PowerShell','2.0'))[0]
 W
 ```
 
@@ -146,21 +147,21 @@ precedence than the -and (logical AND) operator, the result of the expression
 is FALSE.
 
 ```powershell
-C:\PS> 2 -gt 4 -and 1
+PS> 2 -gt 4 -and 1
 False
 ```
 
 It is equivalent to the following expression.
 
 ```powershell
-C:\PS> (2 -gt 4) -and 1
+PS> (2 -gt 4) -and 1
 False
 ```
 
 If the -and operator had higher precedence, the answer would be TRUE.
 
 ```powershell
-C:\PS> 2 -gt (4 -and 1)
+PS> 2 -gt (4 -and 1)
 True
 ```
 

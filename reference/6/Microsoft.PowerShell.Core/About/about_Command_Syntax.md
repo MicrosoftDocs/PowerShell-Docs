@@ -7,18 +7,18 @@ title:  about_Command_Syntax
 
 # About Command Syntax
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes the syntax diagrams that are used in PowerShell.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) and
 [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md) cmdlets display
 syntax diagrams to help you construct commands correctly. This topic
 explains how to interpret the syntax diagrams.
 
-# SYNTAX DIAGRAMS
+## SYNTAX DIAGRAMS
 
 Each paragraph in a command syntax diagram represents a valid form of the
 command.
@@ -310,7 +310,7 @@ In syntax examples, brackets are also used in naming and casting to .NET
 Framework types. In this context, brackets do not indicate an element is
 optional.
 
-# SEE ALSO
+## SEE ALSO
 
 - [about_Parameters](about_Parameters.md)
 - [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)

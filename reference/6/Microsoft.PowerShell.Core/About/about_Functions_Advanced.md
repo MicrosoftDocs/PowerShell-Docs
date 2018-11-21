@@ -8,11 +8,11 @@ title:  about_Functions_Advanced
 
 # About Functions Advanced
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Introduces advanced functions that act similar to cmdlets.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 Advanced functions allow you to write functions that can perform operations
 that are similar to the operations you can perform with cmdlets. Advanced
@@ -51,7 +51,7 @@ function Send-Greeting
 
     Process
     {
-        write-host ("Hello " + $Name + "!")
+        Write-Host ("Hello " + $Name + "!")
     }
 }
 ```
@@ -79,7 +79,7 @@ Advanced functions differ from compiled cmdlets in the following ways:
 
 - Advanced functions cannot be used in transactions.
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Functions](about_Functions.md)
 
