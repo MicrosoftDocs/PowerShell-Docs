@@ -254,7 +254,7 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-For each module, there are also metadata fields associated with it. In order to display metadata properly on PowrShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.
+For each module, there are also metadata fields associated with it. In order to display metadata properly on PowerShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
