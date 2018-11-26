@@ -8,20 +8,20 @@ title:  about_Types.ps1xml
 
 # About Types.ps1xml
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Explains how to use Types.ps1xml files to extend the types of objects
-that are used in Windows PowerShell.
+that are used in PowerShell.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 Extended type data defines additional properties and methods ("members")
-of object types in Windows PowerShell. There are two techniques for adding
-extended type data to a Windows PowerShell session.
+of object types in PowerShell. There are two techniques for adding
+extended type data to a PowerShell session.
 
 - Types.ps1xml file: An XML file that defines extended type data.
 - `Update-TypeData`: A cmdlet that reloads Types.ps1xml files and defines
-extended data for types in the current session.
+  extended data for types in the current session.
 
 This topic describes Types.ps1xml files. For more information about using the
 `Update-TypeData` cmdlet to add dynamic extended type data to the current
@@ -31,11 +31,11 @@ session see
 ## About Extended Type Data
 
 Extended type data defines additional properties and methods ("members") of
-object types in Windows PowerShell. You can extend any type that is supported
-by Windows PowerShell and use the added properties and methods in the same way
+object types in PowerShell. You can extend any type that is supported
+by PowerShell and use the added properties and methods in the same way
 that you use the properties that are defined on the object types.
 
-For example, Windows PowerShell adds a `DateTime` property to all
+For example, PowerShell adds a `DateTime` property to all
 `System.DateTime` objects, such as the ones that the `Get-Date` cmdlet
 returns.
 
@@ -46,19 +46,19 @@ Sunday, January 29, 2012 9:43:57 AM
 
 You won't find the `DateTime` property in the description of the
 [`System.DateTime` structure](http://msdn.microsoft.com/library/system.datetime.aspx),
-because Windows PowerShell adds the property and it is visible only in Windows
+because PowerShell adds the property and it is visible only in Windows
 PowerShell.
 
-To add the `DateTime` property to all Windows PowerShell sessions, Windows
+To add the `DateTime` property to all PowerShell sessions, Windows
 PowerShell defines the `DateTime` property in the Types.ps1xml file in the
-Windows PowerShell installation directory (`$PSHOME`).
+PowerShell installation directory (`$PSHOME`).
 
-## Adding Extended Type Data to Windows PowerShell.
+## Adding Extended Type Data to PowerShell.
 
-There are three sources of extended type data in Windows PowerShell sessions.
+There are three sources of extended type data in PowerShell sessions.
 
-- The Types.ps1xml files in the Windows PowerShell installation directory
-  are loaded automatically into every Windows PowerShell session.
+- The Types.ps1xml files in the PowerShell installation directory
+  are loaded automatically into every PowerShell session.
 
 - The Types.ps1xml files that modules export are loaded when the module
   is imported into the current session.
@@ -73,7 +73,8 @@ types.
 ## The TypeData Cmdlets
 
 The following TypeData cmdlets are included in the Microsoft.PowerShell.Utility
-module in Windows PowerShell 3.0 and later versions of Windows PowerShell.
+module in Windows PowerShell 3.0 and later versions of Windows PowerShell
+and PowerShell Core.
 
 - `Get-TypeData`: Gets extended type data in the current session.
 - `Update-TypeData`: Reloads Types.ps1xml files. Adds extended type data to the
@@ -87,9 +88,9 @@ For more information about these cmdlets, see the help topic for each cmdlet.
 The Types.ps1xml files in the `$PSHOME` directory are added automatically to
 every session.
 
-The Types.ps1xml file in the Windows PowerShell installation directory
+The Types.ps1xml file in the PowerShell installation directory
 (`$PSHOME`) is an XML-based text file that lets you add properties and
-methods to the objects that are used in Windows PowerShell. Windows
+methods to the objects that are used in PowerShell. Windows
 PowerShell has built-in Types.ps1xml files that add several elements
 to the .NET Framework types, but you can create additional Types.ps1xml
 files to further extend the types.
@@ -136,7 +137,7 @@ Get        Method        System.Object Get(Int32)
 ```
 
 As a result, you can use either the Count property or the Length property
-of arrays in Windows PowerShell. For example:
+of arrays in PowerShell. For example:
 
 ```powershell
 C:\PS> (1, 2, 3, 4).count
@@ -150,32 +151,32 @@ C:\PS> (1, 2, 3, 4).length
 
 ## Creating New Types.ps1xml Files
 
-The .ps1xml files that are installed with Windows PowerShell are
+The .ps1xml files that are installed with PowerShell are
 digitally signed to prevent tampering because the formatting can include
 script blocks. Therefore, to add a property or method to a .NET Framework
 type, create your own Types.ps1xml files, and then add them to your
-Windows PowerShell session.
+PowerShell session.
 
 To create a new file, start by copying an existing Types.ps1xml file. The
 new file can have any name, but it must have a .ps1xml file name
 extension. You can place the new file in any directory that is accessible
-to Windows PowerShell, but it is useful to place the files in the Windows
+to PowerShell, but it is useful to place the files in the Windows
 PowerShell installation directory (`$PSHOME`) or in a subdirectory of the
 installation directory.
 
 When you have saved the new file, use the `Update-TypeData` cmdlet to add
-the new file to your Windows PowerShell session. If you want your types
+the new file to your PowerShell session. If you want your types
 to take precedence over the types that are defined in the built-in file,
 use the PrependData parameter of the `Update-TypeData` cmdlet.
 `Update-TypeData` affects only the current session. To make the change to
 all future sessions, export the console, or add the `Update-TypeData`
-command to your Windows PowerShell profile.
+command to your PowerShell profile.
 
 ## Types.ps1xml and Add-Member
 
 The Types.ps1xml files add properties and methods to all the instances
 of the objects of the specified .NET Framework type in the affected
-Windows PowerShell session. However, if you need to add properties or
+PowerShell session. However, if you need to add properties or
 methods only to one instance of an object, use the `Add-Member` cmdlet.
 
 For more information, see [Add-Member](../../Microsoft.PowerShell.Utility/Add-Member.md).
@@ -330,7 +331,7 @@ the name of the new method and a pair of `<GetCodeReference>` tags
 that specify the code in which the method is defined.
 
 For example, the Mode property of directories (`System.IO.DirectoryInfo`
-objects) is a code property defined in the Windows PowerShell
+objects) is a code property defined in the PowerShell
 FileSystem provider.
 
 ```xml
@@ -357,7 +358,7 @@ the name of the new property and a pair of `<GetCodeReference>` tags
 that specify the code in which the property is defined.
 
 For example, the `Mode` property of directories (`System.IO.DirectoryInfo`
-objects) is a code property defined in the Windows PowerShell
+objects) is a code property defined in the PowerShell
 FileSystem provider.
 
 ```xml
@@ -387,7 +388,7 @@ create a property (such as `<NoteProperty>` or `<ScriptProperty>`) or a
 method (such as `<Method>` or `<ScriptMethod>`) can be members of the set.
 
 In Types.ps1xml files, the `<MemberSet>` tag is used to define the
-default views of the .NET Framework objects in Windows PowerShell. In
+default views of the .NET Framework objects in PowerShell. In
 this case, the name of the member set (the value within the `<Name>`
 tags) is always "PsStandardMembers", and the names of the properties
 (the value of the `<Name>` tag) are one of the following:
@@ -397,8 +398,8 @@ tags) is always "PsStandardMembers", and the names of the properties
 - `DefaultDisplayPropertySet`: One or more properties of an object.
 
 - `DefaultKeyPropertySet`: One or more key properties of an object.
-A key property identifies instances of property values, such as
-the ID number of items in a session history.
+  A key property identifies instances of property values, such as
+  the ID number of items in a session history.
 
 For example, the following XML defines the default display of services
 (`System.ServiceProcess.ServiceController` objects) that are returned by
@@ -560,7 +561,7 @@ library](http://go.microsoft.com/fwlink/?LinkId=144538).
 
 ## `Update-TypeData`
 
-To load your Types.ps1xml files into a Windows PowerShell session, run
+To load your Types.ps1xml files into a PowerShell session, run
 the `Update-TypeData` cmdlet. If you want the types in your file to take
 precedence over types in the built-in Types.ps1xml file, add the
 PrependData parameter of `Update-TypeData`. `Update-TypeData` affects only
@@ -589,7 +590,7 @@ To protect users of your Types.ps1xml file, you can sign the file using a
 digital signature. For more information, see
 [about_Signing](about_Signing.md).
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Signing](about_Signing.md)
 

@@ -416,6 +416,21 @@ Certificate provider, but are effective only on certificates.
 > Certificates that have an empty **EnhancedKeyUsageList** can be used for
 > all purposes.
 
+### ItemType \<String\>
+
+This parameter allows you to specify the type of item created by `New-Item`.
+
+In a `Certificate` drive, the following values are allowed:
+
+- Certificate Provider
+- Certificate
+- Store
+- StoreLocation
+
+### Cmdlets Supported
+
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+
 ### CodeSigningCert <System.Management.Automation.SwitchParameter>
 
 #### Cmdlets supported

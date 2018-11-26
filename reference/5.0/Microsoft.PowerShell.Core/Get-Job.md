@@ -588,7 +588,7 @@ You cannot pipe input to this cmdlet.
 ## OUTPUTS
 
 ### System.Management.Automation.RemotingJob
-This cmldet returns objects that represent the jobs in the session.
+This cmdlet returns objects that represent the jobs in the session.
 
 ## NOTES
 * The **PSJobTypeName** property of jobs indicates the job type of the job. The property value is determined by the job type author. The following list shows common job types.

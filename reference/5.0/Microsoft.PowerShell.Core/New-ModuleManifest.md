@@ -936,7 +936,7 @@ You cannot pipe input to this cmdlet.
 ## OUTPUTS
 
 ### None or System.String
-This cmldet does not generate any output by default.
+This cmdlet does not generate any output by default.
 However, if you use the *PassThru* parameter, it generates a **System.String** object that represents the module manifest.
 
 ## NOTES

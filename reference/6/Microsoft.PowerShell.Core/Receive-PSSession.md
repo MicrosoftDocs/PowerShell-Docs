@@ -707,21 +707,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
-You can pipe session objects, such as those returned by the Get-PSSession cmdlet, to this cmldet.
+You can pipe session objects, such as those returned by the Get-PSSession cmdlet, to this cmdlet.
 
 ### System.Int32
-You can pipe session IDs to this cmldet.
+You can pipe session IDs to this cmdlet.
 
 ### System.Guid
-You can pipe the instance IDs of sessions this cmldet.
+You can pipe the instance IDs of sessions this cmdlet.
 
 ### System.String
-You can pipe session names to this cmldet.
+You can pipe session names to this cmdlet.
 
 ## OUTPUTS
 

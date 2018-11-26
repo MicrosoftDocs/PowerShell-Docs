@@ -5,6 +5,7 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Language_Modes
 ---
+
 # About Language Modes
 
 ## SHORT DESCRIPTION
@@ -60,7 +61,8 @@ In RestrictedLanguage language mode, users may run commands (cmdlets,
 functions, CIM commands, and workflows) but are not permitted to use script
 blocks.
 
-Only the following variables are permitted:
+By default, only the following variables are permitted in RestrictedLanguage
+language mode:
 
 - \$PSCulture
 - \$PSUICulture
@@ -69,6 +71,7 @@ Only the following variables are permitted:
 - \$Null.
 
 Only the following comparison operators are permitted:
+
 - -eq (equal)
 - -gt (greater-than)
 - -lt (less-than)
@@ -197,7 +200,7 @@ the session configuration has a LanguageMode property. You can find the
 language mode by getting the value of the LanguageMode property.
 
 ```powershell
-PS> (Get-PSSessionConfiguration -Name Test).LanguageMode
+PS C:\> (Get-PSSessionConfiguration -Name Test).LanguageMode
 FullLanguage
 ```
 
@@ -214,7 +217,7 @@ state.
 For example:
 
 ```powershell
-PS> $ExecutionContext.SessionState.LanguageMode
+PS C:> $ExecutionContext.SessionState.LanguageMode
 ConstrainedLanguage
 ```
 
@@ -239,14 +242,14 @@ NoLanguage session, PowerShell returns the ScriptsNotAllowed error message.
 - ScriptsNotAllowed: The syntax is not supported by this runspace. This
   might be because it is in no-language mode.
 
-# KEYWORDS
+## KEYWORDS
 
 - about_ConstrainedLanguage
 - about_FullLanguage
 - about_NoLanguage
 - about_RestrictedLanguage
 
-# SEE ALSO
+## SEE ALSO
 
 - [about_Session_Configuration_Files](about_Session_Configuration_Files.md)
 - [about_Session_Configurations](about_Session_Configurations.md)

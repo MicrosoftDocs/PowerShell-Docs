@@ -160,11 +160,11 @@ Creates a DCOM session to Windows Management Instrumentation (WMI) using imperso
 
 Valid values for this parameter are:
 
-- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm. 
+- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm.
 - None: The client is anonymous to the server.
-  The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used. 
-- Identify: Allows objects to query the credentials of the caller. 
-- Impersonate: Allows objects to use the credentials of the caller. 
+  The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used.
+- Identify: Allows objects to query the credentials of the caller.
+- Impersonate: Allows objects to use the credentials of the caller.
 - Delegate: Allows objects to permit other objects to use the credentials of the caller.
 
 If Impersonation is not specified, the New-CimSession cmdlet uses the value of 3: Impersonate
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 Specifies the credentials to use for proxy authentication.
 Enter one of the following:
 
-- A variable that contains a PSCredential object. 
+- A variable that contains a PSCredential object.
 - A command that gets a PSCredential object, such as Get-Credential
 
 If this option is not set, then you cannot specify any credentials.
@@ -441,7 +441,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

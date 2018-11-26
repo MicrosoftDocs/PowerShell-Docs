@@ -58,7 +58,7 @@ To use snippets in Windows PowerShell 3.0 or later, on the **Edit** menu, click 
 ### Add-on tools
 **Added in PowerShell 3.0**
 
-Windows PowerShell ISE now supports add-on tools, which are Windows Presentation Foundation (WPF) controls that are added by using the object model. Add-on tools can be displayed as a vertical or horizontal pane in the console. Multiple add-on tools in a pane are displayed as a tabbed control. You can also add or remove add-on tools that are produced by non-Microsoft parties. For more information about how to import or remove add-on tools, see [Windows PowerShell ISE Operations](http://technet.microsoft.com/library/cc732148.aspx).
+Windows PowerShell ISE now supports add-on tools, which are Windows Presentation Foundation (WPF) controls that are added by using the object model. Add-on tools can be displayed as a vertical or horizontal pane in the console. Multiple add-on tools in a pane are displayed as a tabbed control. You can also add or remove add-on tools that are produced by non-Microsoft parties. For more information about how to import or remove add-on tools, see [Windows PowerShell ISE Operations](https://technet.microsoft.com/library/cc732148.aspx).
 
 **What value does this change add?**
 
@@ -219,5 +219,5 @@ Show-Command is new Windows PowerShell ISE 3.0.
 For more information about using Windows PowerShell ISE in Windows PowerShell, see the following links.
 
 - [Exploring the Windows PowerShell Integrated Scripting Environment](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [ISE on the TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [Script Center](http://technet.microsoft.com/scriptcenter/default)
+- [ISE on the TechNet Wiki](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [Script Center](https://technet.microsoft.com/scriptcenter/default)

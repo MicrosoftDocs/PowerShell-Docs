@@ -16,22 +16,22 @@ policies.
 ## LONG DESCRIPTION
 
 The Restricted execution policy does not permit any scripts to run. The
-AllSigned and RemoteSigned execution policies prevent PowerShell from running
-scripts that do not have a digital signature.
+**AllSigned** and **RemoteSigned** execution policies prevent PowerShell from
+running scripts that do not have a digital signature.
 
 This topic explains how to run selected scripts that are not signed, even
-while the execution policy is RemoteSigned, and how to sign scripts for your
-own use.
+while the execution policy is **RemoteSigned**, and how to sign scripts for
+your own use.
 
 For more information about PowerShell execution policies, see
 [about_Execution_Policies](about_Execution_Policies.md).
 
 ## TO PERMIT SIGNED SCRIPTS TO RUN
 
-When you start PowerShell on a computer for the first time, the Restricted
+When you start PowerShell on a computer for the first time, the **Restricted**
 execution policy (the default) is likely to be in effect.
 
-The Restricted policy does not permit any scripts to run.
+The **Restricted** policy does not permit any scripts to run.
 
 To find the effective execution policy on your computer, type:
 
@@ -42,23 +42,22 @@ Get-ExecutionPolicy
 To run unsigned scripts that you write on your local computer and signed
 scripts from other users, start PowerShell with the Run as Administrator
 option and then use the following command to change the execution policy on
-the computer to RemoteSigned:
+the computer to **RemoteSigned**:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
 
-For more information, see the help topic for the Set-ExecutionPolicy cmdlet.
+For more information, see the help topic for the `Set-ExecutionPolicy` cmdlet.
 
 ## RUNNING UNSIGNED SCRIPTS (REMOTESIGNED EXECUTION POLICY)
 
-If your PowerShell execution policy is RemoteSigned, Windows
-PowerShell will not run unsigned scripts that are downloaded from the
-Internet, including unsigned scripts you receive through e-mail and instant
-messaging programs.
+If your PowerShell execution policy is **RemoteSigned**, Windows PowerShell
+will not run unsigned scripts that are downloaded from the Internet, including
+unsigned scripts you receive through e-mail and instant messaging programs.
 
-If you try to run a downloaded script, PowerShell displays the
-following error message:
+If you try to run a downloaded script, PowerShell displays the following error
+message:
 
 ```output
 The file <file-name> cannot be loaded. The file <file-name> is not digitally
@@ -98,9 +97,9 @@ this publisher.
 
 ## METHODS OF SIGNING SCRIPTS
 
-You can sign the scripts that you write and the
-scripts that you obtain from other sources. Before you sign any script,
-examine each command to verify that it is safe to run.
+You can sign the scripts that you write and the scripts that you obtain from
+other sources. Before you sign any script, examine each command to verify that
+it is safe to run.
 
 For best practices about code signing, see
 [Code-Signing Best Practices](/previous-versions/windows/hardware/design/dn653556(v=vs.85)).
@@ -289,7 +288,7 @@ signed while the signing certificate was valid.
 Because most signing certificates are valid for one year only, using a time
 stamp server ensures that users can use your script for many years to come.
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Execution_Policies](about_Execution_Policies.md)
 

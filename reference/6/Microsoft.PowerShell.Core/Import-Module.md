@@ -339,7 +339,7 @@ The results show that there are two **Get-Date** commands in the session, a func
 
 The fifth command runs the hidden cmdlet by qualifying the command name with the module name.
 
-For more information about command precedence in PowerShell, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
+For more information about command precedence in PowerShell, see [about_Command_Precedence](about/about_Command_Precedence.md).
 
 ### Example 10: Import a minimum version of a module
 ```
@@ -943,19 +943,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String, System.Management.Automation.PSModuleInfo, System.Reflection.Assembly
-You can pipe a module name, module object, or assembly object to this cmldet.
+You can pipe a module name, module object, or assembly object to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.PSModuleInfo, or System.Management.Automation.PSCustomObject
 This cmdlet returns a **PSModuleInfo** or **PSCustomObject**.
 By default, **Import-Module** does not generate any output.
-If you specify the *PassThru* parameter, the cmldet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
+If you specify the *PassThru* parameter, the cmdlet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
 If you specify the *AsCustomObject* parameter, it generates a **PSCustomObject** object.
 
 ## NOTES

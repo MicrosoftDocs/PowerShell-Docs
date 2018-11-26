@@ -182,7 +182,7 @@ Alt+F7 | Clear the command history list
 
     You can encounter the double-hop (or connecting to a second computer from the first connection) limitation if you try to create or work on a new session by using Windows PowerShell Web Access. Windows PowerShell Web Access uses a remote runspace, and currently, **PowerShell.exe** does not support establishing a remote connection to a second computer from a remote runspace. If you attempt to connect to a second remote computer from an existing connection by using the **Enter-PSSession** cmdlet, for example, you can get various errors, such as €œCannot get network resources.
 
-    To avoid double-hop errors, your administrator should configure CredSSP authentication in your organizations network environment. For more information about configuring CredSSP authentication, see [CredSSP for second-hop remoting](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) on the Microsoft website. You can also provide explicit credentials when you want to manage a second remote computer; implicit credentials are unlikely to allow the second hop.
+    To avoid double-hop errors, your administrator should configure CredSSP authentication in your organizations network environment. For more information about configuring CredSSP authentication, see [CredSSP for second-hop remoting](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) on the Microsoft website. You can also provide explicit credentials when you want to manage a second remote computer; implicit credentials are unlikely to allow the second hop.
 
 - Remoting
 
@@ -237,12 +237,12 @@ Alt+F7 | Clear the command history list
 
         You can change the height of the console in a similar manner.
 
-        Additional examples for customizing the console view are available in the [Windows PowerShell Team Blog](http://blogs.msdn.com/b/powershell/).
+        Additional examples for customizing the console view are available in the [Windows PowerShell Team Blog](https://blogs.msdn.com/b/powershell/).
 
 ## See Also
 
 - [Windows PowerShell Cmdlet Reference](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
 - [Windows PowerShell on Microsoft TechNet](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet Script Center Repository](http://gallery.technet.microsoft.com/scriptcenter)
+- [TechNet Script Center Repository](https://gallery.technet.microsoft.com/scriptcenter)
 - [Script Center - Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell Team Blog](http://blogs.msdn.com/b/powershell/)
+- [Windows PowerShell Team Blog](https://blogs.msdn.com/b/powershell/)

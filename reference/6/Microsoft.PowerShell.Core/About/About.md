@@ -65,9 +65,6 @@ Module Name:  About
 ### [about_Environment_Variables](about_environment_variables.md)
 {{Manually Enter about_Environment_Variables Description Here}}
 
-### [about_Escape_Characters](about_escape_characters.md)
-{{Manually Enter about_Escape_Characters Description Here}}
-
 ### [about_Eventlogs](about_eventlogs.md)
 {{Manually Enter about_Eventlogs Description Here}}
 

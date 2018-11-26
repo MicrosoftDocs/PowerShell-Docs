@@ -615,6 +615,24 @@ Ignores newline characters. Returns contents as a single item.
 
 - [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)
 
+### ItemType \<String\>
+
+This parameter allows you to specify the tye of item to create with `New-Item`
+
+The available values of this parameter depend on the current provider you are using.
+
+In a `FileSystem` drive, the following values are allowed:
+
+- File
+- Directory
+- SymbolicLink
+- Junction
+- HardLink
+
+### Cmdlets supported
+
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
+
 ## Using the pipeline
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify

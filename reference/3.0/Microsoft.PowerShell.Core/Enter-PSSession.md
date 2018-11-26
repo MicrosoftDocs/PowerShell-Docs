@@ -288,7 +288,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: Microsoft.PowreShell
+Default value: Microsoft.PowerShell
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```

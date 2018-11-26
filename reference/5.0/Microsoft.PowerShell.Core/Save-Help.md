@@ -49,7 +49,7 @@ Without parameters, a **Save-Help** command downloads the newest help for all mo
 This action skips modules that do not support Updatable Help without warning.
 
 The **Save-Help** cmdlet checks the version of any help files in the destination folder.
-If newer help files are available, this cmldet downloads the newest help files from the Internet, and then saves them in the folder.
+If newer help files are available, this cmdlet downloads the newest help files from the Internet, and then saves them in the folder.
 The **Save-Help** cmdlet works just like the Update-Help cmdlet, except that it saves the downloaded cabinet (.cab) files, instead of extracting the help files from the cabinet files and installing them on the computer.
 
 The saved help for each module consists of one help information (HelpInfo XML) file and one cabinet (.cab) file for the help files each UI culture.

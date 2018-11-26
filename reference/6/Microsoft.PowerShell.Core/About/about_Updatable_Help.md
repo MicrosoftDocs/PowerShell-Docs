@@ -389,7 +389,7 @@ the script.
 
 The Online parameter does not work with About topics. To see the about topics
 for PowerShell Core, including help topics about the PowerShell language, see
-[PowerShell Core Module About Topics](http://go.microsoft.com/fwlink/?LinkID=113206).
+[PowerShell Core Module About Topics](about.md).
 
 ## HOW TO MINIMIZE OR PREVENT INTERNET DOWNLOADS
 
@@ -447,7 +447,7 @@ your modules. For more information, see "Supporting Updatable Help" and
 
 Updatable help not available for PowerShell snap-ins or comment-based help.
 
-# REMARKS
+## REMARKS
 
 The Update-Help and Save-Help cmdlets are not supported on Windows
 Preinstallation Environment (Windows PE).

@@ -31,11 +31,10 @@ Before starting the Windows PowerShell 2.0 Engine, enable the Windows PowerShell
 Microsoft .NET Framework 3.5 with Service Pack 1. For instructions, see
 [Installing Windows PowerShell](Installing-Windows-PowerShell.md).
 
-Systems on which [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881)
-or Windows Management Framework 3.0 are installed have all of the required components. No further
-configuration is necessary. For information about installing [Windows Management Framework
-4.0](http://go.microsoft.com/fwlink/?LinkID=293881) or Windows Management Framework 3.0, see
-[Installing Windows PowerShell](Installing-Windows-PowerShell.md).
+Systems on which Windows Management Framework 4.0 or Windows Management Framework 3.0 are installed
+have all of the required components. No further configuration is necessary. For information about
+installing [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) or
+Windows Management Framework 3.0, see [Installing Windows PowerShell](Installing-Windows-PowerShell.md).
 
 ## How to start the Windows PowerShell 2.0 Engine
 

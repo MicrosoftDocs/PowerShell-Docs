@@ -23,5 +23,3 @@ In this topic:
 - [Installing Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 
 - [Starting Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
-
-- [Getting Ready to Use Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
