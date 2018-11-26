@@ -58,7 +58,7 @@ PowerShell installation directory (`$PSHOME`).
 There are three sources of extended type data in PowerShell sessions.
 
 - The Types.ps1xml files in the PowerShell installation directory
-  are loaded automatically into every PowerSheall session.
+  are loaded automatically into every PowerShell session.
 
 - The Types.ps1xml files that modules export are loaded when the module
   is imported into the current session.
