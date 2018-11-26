@@ -61,6 +61,9 @@ After pressing 'y', the "Nuget" provider is installed, you see a list of DSC res
 
 You can also specify the `-Name` parameter using wildcards, or `-Filter` parameter without wildcards to narrow down your search. This example attempts to find a "TimeZone" DSC resource using the wildcarded name "\*Time\*"
 
+> [!IMPORTANT]
+> Currently there is a bug in the `Find-DSCResource` cmdlet that prevents using wildcards in both the `-Name` and `-Filter` parameters. The second example below shows a workaround using `Where-Object`.
+
 ```
 PS> Find-DSCResource -Name *Time*
 
@@ -81,6 +84,18 @@ xSqlServerMoveDatabaseFiles         1.0.0      mlSqlServerDSC                   
 xSqlServerSQLDataRoot               1.0.0      mlSqlServerDSC                      PSGallery
 xSqlServerStartupParam              1.0.0      mlSqlServerDSC                      PSGallery
 ```
+
+You can also use Where-Object to find DSC resources with more granular filtering. This approach will be slower than using built in filtering parameters.
+
+```
+PS> Find-DSCResource | Where-Object {$_.Name -like "Time*"}
+
+Name                                Version    ModuleName                          Repository
+----                                -------    ----------                          ----------
+TimeZone                            6.0.0.0    ComputerManagementDsc               PSGallery
+```
+
+For more information on filtering, see [Where-Object](/powershell/module/microsoft.powershell.core/where-object).
 
 ## Installing DSC Resources using PowerShellGet
 

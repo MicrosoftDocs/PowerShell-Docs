@@ -38,8 +38,8 @@
       items:
       - name: Use resources with multiple versions
         href: sxsResource.md
-      - name: Resource dependencies using the DependsOn key.
-        href:
+      - name: Resource dependencies using DependsOn
+        href: resource-depends-on.md
       - name: Use Credentials in DSC
         href: runAsUser.md
       - name: Configuration data
