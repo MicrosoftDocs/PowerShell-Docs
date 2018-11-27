@@ -265,10 +265,8 @@ This cmdlet does not return any output.
 ## NOTES
 * When you use **Set-ExecutionPolicy** in any scope other than Process, the new user preference is saved in the registry and remains unchanged until you change it. When the value of the *Scope* parameter is Process, the user preference is stored in the PSExecutionPolicyPreference environment variable ($env:PSExecutionPolicyPreference), instead of the registry, and it is deleted when the session in which it is effective is closed.
 
-  If the "Turn on Script Execution" group policy is enabled for the computer or user, the user preference is saved, but it is not effective, and PowerShell displays a message explaining the conflict.
+* If the "Turn on Script Execution" group policy is enabled for the computer or user, the user preference is saved, but it is not effective, and PowerShell displays a message explaining the conflict.
 You cannot use **Set-ExecutionPolicy** to override a Group Policy, even if the user preference is more restrictive than the policy.
-
-*
 
 ## RELATED LINKS
 
