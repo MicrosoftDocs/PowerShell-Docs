@@ -136,11 +136,9 @@ You can pipe a **SecureString** object to **ConvertFrom-SecureString**.
 ## NOTES
 * To create a secure string from characters that are typed at the command prompt, use the *AsSecureString* parameter of the Read-Host cmdlet.
 
-  When you use the *Key* or *SecureKey* parameters to specify a key, the key length must be correct.
+* When you use the *Key* or *SecureKey* parameters to specify a key, the key length must be correct.
 For example, a key of 128 bits can be specified as a byte array of 16 digits.
 Similarly, 192-bit and 256-bit keys correspond to byte arrays of 24 and 32 digits, respectively.
-
-*
 
 ## RELATED LINKS
 
