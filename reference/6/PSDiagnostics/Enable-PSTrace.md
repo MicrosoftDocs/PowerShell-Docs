@@ -1,42 +1,46 @@
 ---
 external help file: PSDiagnostics-help.xml
-keywords: powershell,cmdlet
-locale: en-us
 Module Name: PSDiagnostics
-ms.date: 06/09/2017
+online version:
 schema: 2.0.0
 ---
 
 # Enable-PSTrace
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Enables the Microsoft-Windows-PowerShell event provider logs.
 
 ## SYNTAX
 
 ```
-Enable-PSTrace [-Force] [-AnalyticOnly] [<CommonParameters>]
+Enable-PSTrace [-Force] [-AnalyticOnly]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+
+This cmdlet enables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
+event provider.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
+### Example 1: Enable the Analytic event log for PowerShell
 
-{{ Add example description here }}
+The following example enables only the Analytic event log of the Microsoft-Windows-PowerShell
+provider.
+
+```powershell
+Enable-PSTrace -AnalyticOnly
+```
 
 ## PARAMETERS
 
 ### -AnalyticOnly
-{{Fill AnalyticOnly Description}}
+
+When this parameter is used, the cmdlet enables the Analytic event log of the
+Microsoft-Windows-PowerShell provider. The Operational event log is not changed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -48,10 +52,11 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-{{Fill Force Description}}
+
+Used to force the change without prompting.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -62,19 +67,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
-
 ## INPUTS
 
 ### None
 
 ## OUTPUTS
 
-### System.Object
+### None
 
 ## NOTES
 
-## RELATED LINKS
+This cmdlet uses by the the `Get-LogProperties` and `Set-LogProperties` cmdlets.
+
+You must run this cmdlet from an elevated PowerShell session.
 
 ## RELATED LINKS
+
+[Get-LogProperties](Get-LogProperties.md)
+
+[Set-LogProperties](Set-LogProperties.md)
+
+[Disable-PSTrace](Disable-PSTrace.md)
