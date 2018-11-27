@@ -3,6 +3,8 @@ external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
+ms.date:  11/27/2018
+Help Version: 5.0.0.1
 ---
 
 # Enable-PSTrace
@@ -77,7 +79,7 @@ Accept wildcard characters: False
 
 ## NOTES
 
-This cmdlet uses by the the `Get-LogProperties` and `Set-LogProperties` cmdlets.
+This cmdlet uses the `Get-LogProperties` and `Set-LogProperties` cmdlets.
 
 You must run this cmdlet from an elevated PowerShell session.
 

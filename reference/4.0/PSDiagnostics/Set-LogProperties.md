@@ -4,7 +4,7 @@ Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
 ms.date:  11/27/2018
-Help Version: 6.1.0.2
+Help Version: 4.0.0.1
 ---
 
 # Set-LogProperties
