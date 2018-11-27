@@ -33,7 +33,7 @@ Unlike Functions, Unlike a Function though, the [CmdletBinding](/powershell/modu
 
 |Parameter  |Description  |
 |---------|---------|
-|`-InstanceName`|{{TODO: Fill in description}}|
+|`-InstanceName`|Used in defining [Composite Configurations](compositeconfigs.md)|
 |`-DependsOn`|Used in defining [Composite Configurations](compositeconfigs.md)|
 |`-PSDSCRunAsCredential`|Used in defining [Composite Configurations](compositeconfigs.md)|
 |`-ConfigurationData`|Used to pas in structured [Configuration Data](configData.md) for use in the Configuration.|

@@ -21,7 +21,7 @@
     - name: Create a Website with DSC
       href: website-quickStart.md
     - name: Install PowerShellGet using DSC
-      href: install-powershellget-using-dsc.md
+      href:
   - name: How-to-guides
     items:
     - name: Beginner
@@ -102,17 +102,13 @@
   - name: Concepts
     items:
     - name: Local Configuration Manager
+      href: lcm.md
+    - name: DSC and CIM
       href:
   - name: How-to guides
     items:
-    - name: Apply a Configuration
-      href:
-    - name: Get the status of a Configuration
-      href:
-    - name: Test the status of a Configuration
-      href:
-    - name: Manage Configuration documents (MOF)
-      href:
+    - name: Apply, Get, and Test Configurations on a Node
+      href: apply-get-test.md
     - name: Configure the Local Configuration Manager
       items:
       - name: Configure the Local Configuration Manager (LCM)
@@ -136,12 +132,10 @@
     - name: Setup a Pull Server
       href:
       items:
-      - name: DSC Pull Service
-        href: pullServer.md
       - name: Set up a DSC SMB Pull Server
         href: pullServerSMB.md
       - name: Set up a DSC HTTP Pull Server
-        href:
+        href: pullServer.md
       - name: Pull Server Security
         href: secureServer.md
     - name: Register a Node with a Pull Server
@@ -171,6 +165,8 @@
     href:
   - name: Configure a virtual machine at initial boot-up by using DSC
     href: bootstrapDsc.md
+  - name: Report on DSC using PowerPivot or PowerBI
+    href:
     items:
     - name: DSCAutomationHostEnabled registry key
       href: DSCAutomationHostEnabled.md
