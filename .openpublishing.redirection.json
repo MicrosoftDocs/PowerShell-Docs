@@ -17,7 +17,7 @@
         {
             "source_path": "gallery/readme.md",
             "redirect_url": "/powershell/gallery/overview",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "gallery/concepts/item-manifest-affecting-ui.md",
@@ -367,7 +367,7 @@
         {
             "source_path": "reference/docs-conceptual/core-powershell/ise-guide.md",
             "redirect_url": "/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/docs-conceptual/getting-started/fundamental/learning-windows-powershell-names.md",
@@ -377,7 +377,7 @@
         {
             "source_path": "reference/docs-conceptual/getting-started/fundamental/object-pipeline.md",
             "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-the-powershell-pipeline",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/docs-conceptual/getting-started/fundamental/scripting-with-windows-powershell.md",
@@ -397,7 +397,7 @@
         {
             "source_path": "reference/docs-conceptual/getting-started/fundamental/using-powershell-for-windows-administration.md",
             "redirect_url": "/powershell/scripting/getting-started/fundamental/sample-scripts-for-administration",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/docs-conceptual/getting-started/understanding-concepts-reference.md",
@@ -467,12 +467,12 @@
         {
             "source_path": "reference/virtual-directory/core-powershell/core-powershell.md",
             "redirect_url": "/powershell/scripting/powershell-scripting",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/virtual-directory/core-powershell/ise/ise-module.md",
             "redirect_url": "/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/virtual-directory/core-powershell/ise/the-windows-powershell-ise-scripting-object-model.md",
@@ -537,12 +537,12 @@
         {
             "source_path": "reference/virtual-directory/getting-started/basic-cookbooks.md",
             "redirect_url": "/powershell/scripting/getting-started/fundamental/sample-scripts-for-administration",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/virtual-directory/getting-started/cookbooks/basic-cookbooks-reference.md",
             "redirect_url": "/powershell/scripting/getting-started/fundamental/sample-scripts-for-administration",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/virtual-directory/getting-started/fundamental/about-windows-powershell.md",
@@ -552,7 +552,7 @@
         {
             "source_path": "reference/virtual-directory/getting-started/fundamental/using-windows-powershell.md",
             "redirect_url": "/powershell/scripting/setup/starting-windows-powershell",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/virtual-directory/getting-started/fundamental-concepts.md",
@@ -852,7 +852,7 @@
         {
             "source_path": "reference/virtual-directory/setup/starting-the-32-bit-version-of-windows-powershell.md",
             "redirect_url": "/powershell/scripting/setup/starting-windows-powershell",
-            "redirect_document_id": "True"
+            "redirect_document_id": "False"
         },
         {
             "source_path": "reference/virtual-directory/setup/starting-windows-powershell-on-earlier-versions-of-windows.md",
