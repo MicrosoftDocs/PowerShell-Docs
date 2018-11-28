@@ -1,5 +1,5 @@
 - name: Overview
-  href: readme.md
+  href: overview.md
 - name: Installing PowerShellGet
   href: installing-psget.md
 - name: Getting Started
@@ -46,7 +46,7 @@
           href: how-to/managing-profile/managing-account.md
         - name: Managing API Keys
           href: how-to/managing-profile/creating-apikeys.md
-    - name: Working with Local PowerShellGet Repositories 
+    - name: Working with Local PowerShellGet Repositories
       href: how-to/working-with-local-psrepositories.md
 - name: Concepts
   items:
