@@ -17,7 +17,7 @@ items from the PowerShell Gallery.
 
 ## Discovering packages from the PowerShell Gallery
 
-You can find packages in the PowerShell Gallery by using the **Search** control on the PowerShell Gallery's home page  (HTTPS://www.powershellgallery.com), or by browsing through the Modules and Scripts from the Packages page (https://www.powershellgallery.com/packages). 
+You can find packages in the PowerShell Gallery by using the **Search** control on the PowerShell Gallery's [home page](https://www.powershellgallery.com), or by browsing through the Modules and Scripts from the [Packages page](https://www.powershellgallery.com/packages). 
 You can also find packages from the PowerShell Gallery
 by running the [Find-Module][], [Find-DscResource], and [Find-Script][] cmdlets, depending on the package type, with
 `-Repository PSGallery`.
