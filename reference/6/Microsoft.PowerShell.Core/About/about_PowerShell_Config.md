@@ -361,6 +361,7 @@ All other logging will be omitted.
 "LogKeywords": "Runspace,Pipeline,Cmdlets"
 ```
 
+<!--
 ## Group policy configuration
 
 ### ScriptExecution
@@ -374,5 +375,7 @@ All other logging will be omitted.
 ### UpdateableHelp
 
 ### ConsoleSessionConfiguration
+
+-->
 
 ### Example Configurations
