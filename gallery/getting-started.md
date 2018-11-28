@@ -6,8 +6,9 @@ title:  Get Started with the PowerShell Gallery
 ---
 # Getting Started with the PowerShell Gallery
 
-The proper way to install packages from the PowerShell Gallery is to use the cmdlets in the
-[PowerShellGet](/powershell/module/powershellget) module. You do not need to sign in to download
+The PowerShell Gallery is a package repository containing scripts, modules, and DSC resources you can download and leverage. 
+You use the cmdlets in the [PowerShellGet](/powershell/module/powershellget) module to install packages from the PowerShell Gallery. 
+You do not need to sign in to download
 items from the PowerShell Gallery.
 
 > [!NOTE]
@@ -16,12 +17,12 @@ items from the PowerShell Gallery.
 
 ## Discovering packages from the PowerShell Gallery
 
-You can find packages in the PowerShell Gallery by using the **Search** control on this website, or by
-browsing through the Modules and Scripts pages. You can also find packages from the PowerShell Gallery
-by running the [Find-Module][] and [Find-Script][] cmdlets, depending on the item type, with
+You can find packages in the PowerShell Gallery by using the **Search** control on the PowerShell Gallery's home page  (HTTPS://www.powershellgallery.com), or by browsing through the Modules and Scripts from the Packages page (https://www.powershellgallery.com/packages). 
+You can also find packages from the PowerShell Gallery
+by running the [Find-Module][], [Find-DscResource], and [Find-Script][] cmdlets, depending on the package type, with
 `-Repository PSGallery`.
 
-Filtering results from the Gallery can be done by using the following parameters:
+You can filter results from the Gallery by using the following parameters:
 
 - Name
 - AllVersions
@@ -90,10 +91,10 @@ To install an older version of the package, add the `-RequiredVersion` parameter
 
 ### Deploy
 
-To deploy a package from the PowerShell Gallery to Azure Automation, click **Deploy to Azure
-Automation** on the package details page. You will be redirected to the Azure Management Portal where
+To deploy a package from the PowerShell Gallery to Azure Automation, click **Azure Automation**, then click **Deploy to Azure
+Automation** on the package details page. You are redirected to the Azure Management Portal where
 you sign in by using your Azure account credentials. Note that deploying packages with dependencies
-will deploy all the dependencies to Azure Automation. The 'Deploy to Azure Automation' button can
+deploys all the dependencies to Azure Automation. The 'Deploy to Azure Automation' button can
 be disabled by adding the **AzureAutomationNotSupported** tag to your package metadata.
 
 To learn more about Azure Automation, see the [Azure Automation](/azure/automation) documentation.
@@ -102,11 +103,11 @@ To learn more about Azure Automation, see the [Azure Automation](/azure/automati
 
 To update packages installed from the PowerShell Gallery, run either the [Update-Module][] or
 [Update-Script][] cmdlet. When run without any additional parameters, [Update-Module][] attempts to
-update each module installed by running [Install-Module][]. To selectively update modules, add the
-`-Name` parameter.
+update all modules installed by running [Install-Module][]. To selectively update modules, add the
+`-Name` parameter. 
 
 Similarly, when run without any additional parameters, [Update-Script][] also attempts to update
-each script installed by running [Install-Script][]. To selectively update scripts, add the `-Name`
+all scripts installed by running [Install-Script][]. To selectively update scripts, add the `-Name`
 parameter.
 
 ## List packages that you have installed from the PowerShell Gallery
