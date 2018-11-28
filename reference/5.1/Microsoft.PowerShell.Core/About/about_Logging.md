@@ -23,7 +23,7 @@ details about PowerShell commands.
 PowerShell logs can be viewed using the Event Viewer. The event log is located
 in the Application and Services Logs group and is named
 `Microsoft-Windows-PowerShell`. The associated ETW provider `GUID` is
-`A0C1853B-5C40-4B15-8766-3CF1C58F985A}`.
+`{A0C1853B-5C40-4B15-8766-3CF1C58F985A}`.
 
 When script block logging is enabled, PowerShell will log the following events
 to the `Microsoft-Windows-PowerShell/Operational` log:
@@ -43,14 +43,14 @@ Any new PowerShell session will pickup the new setting after making one of the
 following changes.
 
 > [!NOTE]
-> It is recommended to enable Protected Event Logging when
+> It is recommended to enable Protected Event Logging (as described below) when
 > using Script Block logging for anything other than diagnostics purposes.
 
 ### Using Group Policy
 
 To enable automatic transcription, enable the 'Turn on PowerShell Script Block
-Logging' feature in Group Policy through `Windows Components -> Administrative
-Templates -> Windows PowerShell`.
+Logging' feature in Group Policy through `Administrative Templates ->
+Windows Components -> Windows PowerShell`.
 
 ### Using the Registry
 
@@ -100,13 +100,14 @@ it. For more information about Public Key Cryptography, see
 When you implement a protected event logging policy, you deploy a public key
 to all machines that have event log data you want to protect. You retain the
 corresponding private key to post-process the event logs at a more secure
-location such as a central event log collector, or SIEM aggregator.
+location such as a central event log collector,
+or [SIEM](https://en.wikipedia.org/wiki/Security_information_and_event_management) aggregator.
 
 ### Enabling Protected Event Logging via Group Policy
 
 To enable Protected Event Logging, enable the `Enable Protected Event Logging`
-feature in Group Policy through `Windows Components -> Administrative
-Templates -> Event Logging`. This setting requires an encryption certificate,
+feature in Group Policy through `Administrative Templates ->
+Windows Components -> Event Logging`. This setting requires an encryption certificate,
 which you can provide in one of several forms:
 
 - The content of a base-64 encoded X.509 certificate (for example, as offered
