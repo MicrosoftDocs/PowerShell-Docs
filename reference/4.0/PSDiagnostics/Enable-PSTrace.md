@@ -23,6 +23,8 @@ Enable-PSTrace [-Force] [-AnalyticOnly]
 This cmdlet enables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
 event provider.
 
+You must run this cmdlet from an elevated PowerShell session.
+
 ## EXAMPLES
 
 ### Example 1: Enable the Analytic event log for PowerShell
