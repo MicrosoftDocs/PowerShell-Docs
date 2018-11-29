@@ -116,8 +116,9 @@ Pipe instances of ExperimentalFeature from `Get-ExperimentalFeature` cmdlet to e
 
 ## OUTPUTS
 
-### None
-This cmdlet does not return any output.
+### ExperimentalFeature
+
+Affected instances of ExperimentalFeature that will be enabled upon restart of PowerShell.
 
 ## NOTES
 
