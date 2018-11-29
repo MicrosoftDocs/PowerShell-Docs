@@ -10,7 +10,7 @@ schema: 2.0.0
 # Disable-PSWSManCombinedTrace
 
 ## SYNOPSIS
-Start the logging session started by Enable-PSWSManCombinedTrace
+Stop the logging session started by Enable-PSWSManCombinedTrace
 
 ## SYNTAX
 
@@ -20,7 +20,7 @@ Disable-PSWSManCombinedTrace [<CommonParameters>]
 
 ## DESCRIPTION
 
-This cmdlet starts the logging session started by `Enable-PSWSManCombinedTrace`.
+This cmdlet stops the logging session started by `Enable-PSWSManCombinedTrace`.
 
 This cmdlet uses the `Stop-Trace` cmdlet.
 
