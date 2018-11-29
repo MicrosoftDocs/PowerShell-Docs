@@ -4,7 +4,6 @@ Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
 ms.date:  11/27/2018
-Help Version: 5.0.0.1
 ---
 
 # Disable-PSTrace

@@ -4,7 +4,6 @@ Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
 ms.date:  11/27/2018
-Help Version: 3.0.0.1
 ---
 
 # Enable-PSTrace

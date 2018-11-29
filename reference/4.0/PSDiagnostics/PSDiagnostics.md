@@ -22,7 +22,7 @@ tracing in PowerShell on Windows.
 Disables the Microsoft-Windows-PowerShell event provider logs.
 
 ### [Disable-PSWSManCombinedTrace](Disable-PSWSManCombinedTrace.md)
-Start the logging session started by Enable-PSWSManCombinedTrace
+Stop the logging session started by Enable-PSWSManCombinedTrace
 
 ### [Disable-WSManTrace](Disable-WSManTrace.md)
 Stop the WSMan logging session started by Enable-WSManTrace
