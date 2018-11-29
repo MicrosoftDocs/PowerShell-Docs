@@ -10,7 +10,7 @@ schema: 2.0.0
 # Enable-PSWSManCombinedTrace
 
 ## SYNOPSIS
-Start a logging session with the WSMan and PowerShell providers enabled
+Start a logging session with the WSMan and PowerShell providers enabled.
 
 ## SYNTAX
 

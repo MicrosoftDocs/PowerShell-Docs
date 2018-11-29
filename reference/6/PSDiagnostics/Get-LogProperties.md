@@ -22,8 +22,6 @@ Get-LogProperties [-Name] <string> [<CommonParameters>]
 This cmdlet gets the configuration settings of a Windows event log. This cmdlet is used by the
 `Enable-PSTrace` and `Disable-PSTrace` cmdlets.
 
-This cmdlet only applies to computers running Windows.
-
 ## EXAMPLES
 
 ### Example 1: Get the configuration settings of the Windows PowerShell event log

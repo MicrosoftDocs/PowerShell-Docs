@@ -22,6 +22,8 @@ Disable-PSTrace [-AnalyticOnly]
 This cmdlet disables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
 event provider.
 
+You must run this cmdlet from an elevated PowerShell session.
+
 ## EXAMPLES
 
 ### Example 1: Disable the Analytic event log for PowerShell

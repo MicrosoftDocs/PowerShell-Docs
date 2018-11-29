@@ -10,7 +10,7 @@ schema: 2.0.0
 # Stop-Trace
 
 ## SYNOPSIS
-Stop an Event Trace logging session
+Stop an Event Trace logging session.
 
 ## SYNTAX
 

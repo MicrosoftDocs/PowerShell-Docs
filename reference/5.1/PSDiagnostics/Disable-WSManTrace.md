@@ -10,7 +10,7 @@ schema: 2.0.0
 # Disable-WSManTrace
 
 ## SYNOPSIS
-Stop the WSMan logging session started by Enable-WSManTrace
+Stop the WSMan logging session started by Enable-WSManTrace.
 
 ## SYNTAX
 

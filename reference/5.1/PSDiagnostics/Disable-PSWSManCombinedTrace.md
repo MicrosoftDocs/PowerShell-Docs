@@ -10,7 +10,7 @@ schema: 2.0.0
 # Disable-PSWSManCombinedTrace
 
 ## SYNOPSIS
-Stop the logging session started by Enable-PSWSManCombinedTrace
+Stop the logging session started by Enable-PSWSManCombinedTrace.
 
 ## SYNTAX
 

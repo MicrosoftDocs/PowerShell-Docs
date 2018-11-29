@@ -10,7 +10,7 @@ schema: 2.0.0
 # Enable-WSManTrace
 
 ## SYNOPSIS
-Start a logging session with the WSMan providers enabled
+Start a logging session with the WSMan providers enabled.
 
 ## SYNTAX
 

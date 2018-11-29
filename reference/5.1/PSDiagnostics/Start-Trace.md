@@ -10,7 +10,7 @@ schema: 2.0.0
 # Start-Trace
 
 ## SYNOPSIS
-Start an Event Trace logging session
+Start an Event Trace logging session.
 
 ## SYNTAX
 
