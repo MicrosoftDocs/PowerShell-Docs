@@ -20,7 +20,7 @@ Enable-PSWSManCombinedTrace [-DoNotOverwriteExistingTrace] [<CommonParameters>]
 
 ## DESCRIPTION
 
-This cmdlet starts a logging session with the following PowerShell providers enabled
+This cmdlet starts a logging session with the following PowerShell providers enabled:
 
 - Microsoft-Windows-PowerShell
 - Microsoft-Windows-WinRM

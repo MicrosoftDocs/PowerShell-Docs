@@ -28,7 +28,8 @@ You must run this cmdlet from an elevated PowerShell session.
 ## EXAMPLES
 
 ### Example 1: Stop a WSMan trace
-```
+
+```powershell
 Disable-WSManTrace
 ```
 
