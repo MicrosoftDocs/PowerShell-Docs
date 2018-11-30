@@ -103,8 +103,8 @@ service description.
 Set-Service -Name "winrm" -Status Running -PassThru
 ```
 
-This command starts the WinRM service. The command uses the Status parameter to specify the desired
-status, which is running, and the *PassThru* parameter to direct `Set-Service` to return an object
+This command starts the WinRM service. The command uses the **Status** parameter to specify the desired
+status, which is running, and the **PassThru** parameter to direct `Set-Service` to return an object
 that represents the WinRM service.
 
 ### Example 5: Suspend a service
@@ -129,8 +129,8 @@ These commands stop the Schedule service.
 The first command uses `Get-Service` to get the Schedule service.
 The command stores the service in the `$s` variable.
 
-The second command changes the status of the Schedule service to Stopped. It uses the *InputObject*
-parameter to submit the service stored in the `$s` variable, and it uses the *Status* parameter to
+The second command changes the status of the Schedule service to Stopped. It uses the **InputObject**
+parameter to submit the service stored in the `$s` variable, and it uses the **Status** parameter to
 specify the desired status.
 
 ### Example 7: Stop a service on a remote system
