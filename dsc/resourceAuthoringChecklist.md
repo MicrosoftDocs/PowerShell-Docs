@@ -81,7 +81,7 @@ If ($error.count –ne 0) {
 
 ## Resource is idempotent in the positive case
 
-One of the fundamental characteristics of DSC resources is be idempotence. It means that applying a DSC configuration containing that resource multiple times will always achieve the same result. For example, if we create a configuration which contains the following File resource:
+One of the fundamental characteristics of DSC resources is idempotence. It means that applying a DSC configuration containing that resource multiple times will always achieve the same result. For example, if we create a configuration which contains the following File resource:
 
 ```powershell
 File file {
