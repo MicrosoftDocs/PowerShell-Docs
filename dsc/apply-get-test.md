@@ -102,6 +102,12 @@ An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-1245250
 Operation 'Invoke CimMethod' complete.
 ```
 
+Beginning in PowerShell 5.0, the `-UseExisting` parameter was added to `Start-DSCConfiguration`. By specifying `-UseExisting`, you instruct the cmdlet to use the existing applied Configuration instead of one specified by the `-Path` parameter.
+
+```powershell
+Start-DSCConfiguration -UseExisting -Verbose -Wait
+```
+
 ## Test a Configuration
 
 You can test a currently applied Configuration using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/test-dscconfiguration). `Test-DSCConfiguration` will return `True` if the Node is compliant, and `False` if it is not.
