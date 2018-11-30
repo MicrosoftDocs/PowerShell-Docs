@@ -4,7 +4,6 @@ Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
 ms.date:  11/27/2018
-Help Version: 4.0.0.1
 ---
 
 # Enable-PSTrace
@@ -22,6 +21,8 @@ Enable-PSTrace [-Force] [-AnalyticOnly]
 
 This cmdlet enables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
 event provider.
+
+You must run this cmdlet from an elevated PowerShell session.
 
 ## EXAMPLES
 

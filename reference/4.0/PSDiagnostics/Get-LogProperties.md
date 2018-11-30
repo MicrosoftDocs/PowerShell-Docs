@@ -4,7 +4,6 @@ Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
 ms.date:  11/27/2018
-Help Version: 4.0.0.1
 ---
 
 # Get-LogProperties
@@ -22,8 +21,6 @@ Get-LogProperties [-Name] <string> [<CommonParameters>]
 
 This cmdlet gets the configuration settings of a Windows event log. This cmdlet is used by the
 `Enable-PSTrace` and `Disable-PSTrace` cmdlets.
-
-This cmdlet only applies to computers running Windows.
 
 ## EXAMPLES
 

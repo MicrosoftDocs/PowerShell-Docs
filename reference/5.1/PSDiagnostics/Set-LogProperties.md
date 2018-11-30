@@ -4,7 +4,6 @@ Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
 ms.date:  11/27/2018
-Help Version: 5.1.0.1
 ---
 
 # Set-LogProperties
@@ -23,7 +22,7 @@ Set-LogProperties [-LogDetails] <LogDetails> [-Force] [<CommonParameters>]
 This cmdlet changes the configuration settings of a Windows event log. This cmdlet is used by the
 `Enable-PSTrace` and `Disable-PSTrace` cmdlets.
 
-This cmdlet only applies to computers running Windows.
+You must run this cmdlet from an elevated PowerShell session.
 
 ## EXAMPLES
 
