@@ -1,11 +1,8 @@
 ---
-title: "SelectStr Tutorial | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/13/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: SelectStr Tutorial
+ms.custom:
+ms.date: 09/13/2016
+ms.topic: article
 ms.assetid: e81c0920-d696-4355-aaf7-eb20a6f79b6d
 caps.latest.revision: 5
 ---
