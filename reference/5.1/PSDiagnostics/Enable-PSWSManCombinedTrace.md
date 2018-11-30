@@ -3,7 +3,7 @@ external help file: PSDiagnostics-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDiagnostics
-ms.date: 06/09/2017
+ms.date: 11/29/2018
 schema: 2.0.0
 ---
 
