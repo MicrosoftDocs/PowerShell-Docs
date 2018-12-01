@@ -3,14 +3,14 @@ external help file: PSDiagnostics-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSDiagnostics
-ms.date: 06/09/2017
+ms.date: 11/29/2018
 schema: 2.0.0
 ---
 
 # Enable-PSWSManCombinedTrace
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Start a logging session with the WSMan and PowerShell providers enabled.
 
 ## SYNTAX
 
@@ -19,21 +19,32 @@ Enable-PSWSManCombinedTrace [-DoNotOverwriteExistingTrace] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+
+This cmdlet starts a logging session with the following PowerShell providers enabled:
+
+- Microsoft-Windows-PowerShell
+- Microsoft-Windows-WinRM
+
+The session is named 'PSTrace'.
+
+This cmdlet uses the `Start-Trace` cmdlet.
+
+You must run this cmdlet from an elevated PowerShell session.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
+### Example 1: Start a combined logging session
 
-{{ Add example description here }}
+```powershell
+Enable-PSWSManCombinedTrace
+```
 
 ## PARAMETERS
 
 ### -DoNotOverwriteExistingTrace
-{{Fill DoNotOverwriteExistingTrace Description}}
+
+By default, the events are written to "$pshome\Traces\PSTrace.etl". When this parameter is used,
+the cmdlet creates a unique filename: "$pshome\Traces\PSTrace_{guid}.etl"
 
 ```yaml
 Type: SwitchParameter
@@ -48,7 +59,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -56,10 +71,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Object
+### None
 
 ## NOTES
 
 ## RELATED LINKS
 
-## RELATED LINKS
+[Event Tracing](/windows/desktop/ETW/event-tracing-portal)
+
+[Start-Trace](start-trace.md)
+
+[Disable-PSWSManCombinedTrace](Disable-PSWSManCombinedTrace.md)

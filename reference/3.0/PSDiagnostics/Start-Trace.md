@@ -1,39 +1,47 @@
 ---
 external help file: PSDiagnostics-help.xml
+keywords: powershell,cmdlet
+locale: en-us
 Module Name: PSDiagnostics
-online version:
+ms.date:  11/27/2018
 schema: 2.0.0
 ---
 
 # Start-Trace
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Start an Event Trace logging session.
 
 ## SYNTAX
 
 ```
-Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFilePath] <String>] [-ETS]
- [-Format <Object>] [-MinBuffers <Int32>] [-MaxBuffers <Int32>] [-BufferSizeInKB <Int32>]
- [-MaxLogFileSizeInMB <Int32>] [<CommonParameters>]
+Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFilePath] <String>]
+ [-ETS] [-Format <String>] [-MinBuffers <Int32>] [-MaxBuffers <Int32>]
+ [-BufferSizeInKB <Int32>] [-MaxLogFileSizeInMB <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+This cmdlet starts a Windows Event Trace logging session.
+
+This cmdlet is used by the following cmdlets:
+
+- `Enable-PSWSManCombinedTrace`
+- `Enable-WSManTrace`
+
+You must run this cmdlet from an elevated PowerShell session.
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
+### Example 1: Start a WSMan Trace logging session
 
-{{ Add example description here }}
+```powershell
+Start-Trace -SessionName 'wsmlog' -ETS -OutputFilePath "$env:windir\system32\wsmtraces.log" -Format 'bincirc' -MinBuffers 16 -MaxBuffers 256 -BufferSizeInKb 64 -MaxLogFileSizeInMB 256 -ProviderFilePath "$env:windir\system32\wsmtraceproviders.txt"
+```
 
 ## PARAMETERS
 
 ### -BufferSizeInKB
-{{Fill BufferSizeInKB Description}}
+Event Trace Session buffer size in kilobytes (KB).
 
 ```yaml
 Type: Int32
@@ -42,13 +50,13 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ETS
-{{Fill ETS Description}}
+Send commands to Event Trace Sessions directly without saving or scheduling.
 
 ```yaml
 Type: SwitchParameter
@@ -63,7 +71,14 @@ Accept wildcard characters: False
 ```
 
 ### -Format
-{{Fill Format Description}}
+Specifies the log format for the data collector. For SQL database format, you must use the **OutputFilePath**
+option in the command line with the `dsn!log` value. The default is binary (bin). The possible values are:
+
+- bin - binary
+- bincirc - binary with circular logging
+- csv - Comma-separated values
+- tsv - Tab-separated values
+- sql - SQL database
 
 ```yaml
 Type: Object
@@ -73,13 +88,13 @@ Accepted values: bin, bincirc, csv, tsv, sql
 
 Required: False
 Position: Named
-Default value: None
+Default value: bin
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaxBuffers
-{{Fill MaxBuffers Description}}
+Sets the maximum number of Event Trace Session buffers.
 
 ```yaml
 Type: Int32
@@ -88,13 +103,13 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 256
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaxLogFileSizeInMB
-{{Fill MaxLogFileSizeInMB Description}}
+Sets the maximum log file size in megabytes (MB) or number of records for SQL logs.
 
 ```yaml
 Type: Int32
@@ -103,13 +118,13 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 0 (no limit)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MinBuffers
-{{Fill MinBuffers Description}}
+Sets the minimum number of Event Trace Session buffers.
 
 ```yaml
 Type: Int32
@@ -118,13 +133,14 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -OutputFilePath
-{{Fill OutputFilePath Description}}
+Path of the output log file or the DSN and log set name in a SQL database. The default path is
+`$env:systemdrive\PerfLogs\Admin`.
 
 ```yaml
 Type: String
@@ -133,13 +149,13 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: $env:systemdrive\PerfLogs\Admin
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ProviderFilePath
-{{Fill ProviderFilePath Description}}
+File listing multiple Event Trace providers to enable.
 
 ```yaml
 Type: String
@@ -154,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionName
-{{Fill SessionName Description}}
+The name of the Event Trace session. To stop a trace session you must know the session name.
 
 ```yaml
 Type: String
@@ -169,18 +185,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-
 ## OUTPUTS
 
-### System.Object
+### None
 
 ## NOTES
 
 ## RELATED LINKS
+
+[Event Tracing](/windows/desktop/ETW/event-tracing-portal)
+
+[Stop-Trace](stop-trace.md)
+
+[Disable-PSWSManCombinedTrace](Disable-PSWSManCombinedTrace.md)
+
+[Disable-WSManTrace](Disable-WSManTrace.md)
+
+[Enable-PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
+
+[Enable-WSManTrace](Enable-WSManTrace.md)

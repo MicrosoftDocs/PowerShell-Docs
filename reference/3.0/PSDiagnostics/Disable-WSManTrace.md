@@ -1,44 +1,61 @@
 ---
 external help file: PSDiagnostics-help.xml
+keywords: powershell,cmdlet
+locale: en-us
 Module Name: PSDiagnostics
-online version:
+ms.date: 11/29/2018
 schema: 2.0.0
 ---
 
 # Disable-WSManTrace
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Stop the WSMan logging session started by Enable-WSManTrace.
 
 ## SYNTAX
 
 ```
-Disable-WSManTrace
+Disable-WSManTrace [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+This cmdlet stops the WSMan logging session started by Enable-WSManTrace.
+
+This cmdlet uses the `Stop-Trace` cmdlet.
+
+You must run this cmdlet from an elevated PowerShell session.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Stop a WSMan trace
+
 ```powershell
-PS C:\> {{ Add example code here }}
+Disable-WSManTrace
 ```
 
-{{ Add example description here }}
-
 ## PARAMETERS
+
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-
 ## OUTPUTS
 
-### System.Object
+### None
 
 ## NOTES
 
 ## RELATED LINKS
+
+[Event Tracing](/windows/desktop/ETW/event-tracing-portal)
+
+[Stop-Trace](stop-trace.md)
+
+[Enable-WSManTrace](Enable-WSManTrace.md)
