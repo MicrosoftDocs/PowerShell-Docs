@@ -6,13 +6,14 @@ title:  Gallery Search Syntax
 ---
 # Gallery Search Syntax
 
-PowerShell Gallery offers a text searchbox where you can use words, phrases and keyword expressions to narrow down search results.
+You can search the PowerShell Gallery using the [PowerShell Gallery's web site](https://www.powershellgallery.com/).
+PowerShell Gallery web site offers a text searchbox where you can use words, phrases and keyword expressions to narrow down search results.
 
 ## Search by Keywords
 
     dsc azure sql
 
-Search will do its best effort to find relevant documents containing all 3 keywords, and return matching documents.
+Search attempts to find relevant documents containing all 3 keywords, and return matching documents.
 
 ## Search using Phrases and keywords
 
@@ -32,10 +33,9 @@ Currently the searchable fields are 'Id', 'Version', 'Tags', 'Author', 'Owner', 
 
 ## Examples
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-finds packages with "PSReadline" or "AzureRM.Profile" in their ID field respectively.
+    ID:PSReadline
+    
+finds packages with an ID containing "PSReadline".
 
     Id:"AzureRM.Profile"
 
@@ -45,40 +45,35 @@ The 'Id' filter is a substring match, so if you search for the following:
 
     Id:"azure"
 
-You'll get results like 'AzureRM.Profile' and 'Azure.Storage'.
+This provides results that include AzureRM.Profile' and 'Azure.Storage'.
 
-You can also search for multiple keywords in a single field. Or mix and match fields.
+You can also search for multiple keywords in a single field. 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-And you can perform phrase searches:
+And you can perform phrase searches using double quotes:
 
     id:"azure.storage"
 
-
 To search all packages with DSC tag.
 
-    Tags:"DSC"
+    Tags:DSC
 
 To search all packages with the specified function.
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 To search all packages with the specified cmdlet.
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 To search all packages with the specified DSC Resource name.
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 To search all packages with the specified PowerShellVersion
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 Finally, if you use a field we don't support, such as 'commands', we'll just ignore it and search all the fields. So the following query
 
