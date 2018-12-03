@@ -19,13 +19,13 @@ Extracts files from a specified archive (zipped) file.
 
 ### Path (Default)
 ```
-Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
+Expand-Archive [-Path] <String> [-DestinationPath] <String> [-Force] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
+Expand-Archive -LiteralPath <String> [-DestinationPath] <String> [-Force] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -108,7 +108,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-{{Fill PassThru Description}}
+
+Causes the cmdlet to output a list of the files expanded from the archive.
 
 ```yaml
 Type: SwitchParameter
@@ -172,7 +173,10 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -182,10 +186,13 @@ You can pipe a string that contains a path to an existing archive file.
 
 ## OUTPUTS
 
-### None
+### System.IO.FileSystemInfo
+
+When the `-PassThru` parameter is used, the cmdlet outputs a list of files that where expanded from
+the archive.
 
 ## NOTES
 
 ## RELATED LINKS
 
-## RELATED LINKS
+[Compress-Archive](compress-archive.md)
