@@ -32,8 +32,6 @@
   items:
   - name: Create a Website with DSC
     href: website-quickStart.md
-  - name: Install PowerShellGet using DSC
-    href:
 - name: Configurations
   items:
   - name: Concepts
@@ -113,16 +111,12 @@
       href: authoringResourceMofCS.md
     - name: Write a Python MOF based resource
       href:
-    - name: Forcing a reboot from within a Resource
-      href:
 - name: Manage a System's Configuration
   items:
   - name: Concepts
     items:
     - name: Local Configuration Manager
       href: lcm.md
-    - name: DSC and CIM
-      href:
   - name: How-to guides
     items:
     - name: Apply, Get, and Test Configurations on a Node
@@ -139,8 +133,6 @@
     items:
     - name: Push/Pull Model
       href: enactingConfigurations.md
-    - name: Security
-      href: secureServer.md
   - name: How-to guides
     items:
     - name: Setup a Pull Server
@@ -149,8 +141,6 @@
         href: pullServerSMB.md
       - name: Set up a DSC HTTP Pull Server
         href: pullServer.md
-      - name: Pull Server Security
-        href: secureServer.md
     - name: Register a Node with a Pull Server
       href: pullClient.md
       items:
@@ -164,7 +154,9 @@
         href: partialconfigs.md
     - name: Deploy Configurations with a Pull Server
       items:
-      - name: Publish Configurations to a Pull Server (v4)
+      - name: Publish to a Pull Server using Configuration IDs (v4/v5)
+        href:
+      - name: Publish to a Pull Server using Configuration Names (v5)
         href:
       - name: Automatically download Resources to a Node (Push/Pull)
         href:
@@ -172,33 +164,27 @@
         href:
       - name: Use a DSC report server
         href: reportServer.md
+    - name: Securing the Pull Server
+      items:
+      - name: Pull Server Security
+        href: secureServer.md
+      - name: Securing MOF files with Certificates
+        href: secureMOF.md
 - name: Tutorials
   items:
   - name: Build a CI/CD pipeline with DSC, Pester, and Visual Studio Team Services
     href: dscCiCd.md
-  - name: Create a dynamic package installer that detects the ProductId and name
-    href:
   - name: Configure a virtual machine at initial boot-up by using DSC
     href: bootstrapDsc.md
     items:
     - name: DSCAutomationHostEnabled registry key
       href: DSCAutomationHostEnabled.md
-  - name: Report on DSC using PowerPivot or PowerBI
-    href:
-  - name: Secure the Configuration MOF (Series)
-    href: secureMOF.md
-    items:
-- name: Samples
-  href:
-  items:
 - name: Troubleshooting
   items:
   - name: Known Issues
     href: troubleshooting.md
   - name: Logging
     href: troubleshooting.md
-  - name: Network Troubleshooting
-    href:
   - name: Debug DSC resources
     href: debugResource.md
 - name: Reference
