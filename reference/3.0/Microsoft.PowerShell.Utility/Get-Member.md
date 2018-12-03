@@ -115,7 +115,7 @@ In this case, the extended member is the Name property, which is an alias proper
 ### Example 4
 
 ```powershell
-PS C:\> Get-EventLog -Log System | Get-Member -MemberType ScriptProperty
+PS> Get-EventLog -Log System | Get-Member -MemberType ScriptProperty
 
 
    TypeName: System.Diagnostics.EventLogEntry
@@ -158,10 +158,10 @@ The results show that only process objects (System.Diagnostics.Process) and serv
 ### Example 6
 
 ```
-PS C:\> $A = @(1)
-PS C:\> $A.Count
+PS> $A = @(1)
+PS> $A.Count
 1
-PS C:\> Get-Member -InputObject $A
+PS> Get-Member -InputObject $A
 TypeName: System.Object[]
 Name               MemberType    Definition
 ----               ----------    ----------
@@ -169,8 +169,8 @@ Count              AliasProperty Count = Length
 Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
 ...
-PS C:\> $A = @(1,2,3)
-PS C:\> Get-Member -InputObject $A
+PS> $A = @(1,2,3)
+PS> Get-Member -InputObject $A
 TypeName: System.Object[]
 Name               MemberType    Definition
 ----               ----------    ----------
@@ -178,7 +178,7 @@ Count              AliasProperty Count = Length
 Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
 ...
-PS C:\> $A.Count
+PS> $A.Count
 3
 ```
 
