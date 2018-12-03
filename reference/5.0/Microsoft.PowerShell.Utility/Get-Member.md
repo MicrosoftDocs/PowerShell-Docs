@@ -157,7 +157,7 @@ Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
 ...
 PS> $A = @(1,2,3)
-PS > Get-Member -InputObject $A
+PS> Get-Member -InputObject $A
 TypeName: System.Object[]
 Name               MemberType    Definition
 ----               ----------    ----------
@@ -198,7 +198,8 @@ LastAccessTime
 LastAccessTimeUtc
 LastWriteTime
 LastWriteTimeUtc
-Attributes PS C:\> [appdomain]::CurrentDomain.GetAssemblies() | ForEach-Object { $_.getexportedtypes() } | ForEach-Object {$_.getproperties() | Where-Object {$_.canwrite }} | Select-Object reflectedtype, name
+Attributes
+PS> [appdomain]::CurrentDomain.GetAssemblies() | ForEach-Object { $_.getexportedtypes() } | ForEach-Object {$_.getproperties() | Where-Object {$_.canwrite }} | Select-Object reflectedtype, name
 ```
 
 This example shows how to determine which properties of an object can be changed.
@@ -212,8 +213,8 @@ The third command gets the changeable properties of all objects in your Windows 
 
 ### Example 8: Get members of each item in a collection
 ```
-PS C:\> $S = Get-Service
-PS C:\> $S | Get-Member
+PS> $S = Get-Service
+PS> $S | Get-Member
 TypeName: System.ServiceProcess.ServiceController
 Name                      MemberType    Definition
 ----                      ----------    ----------
