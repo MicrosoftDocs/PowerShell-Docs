@@ -6,9 +6,9 @@ title:  Using Import-DSCResource
 
 # Using Import-DSCResource
 
-Import-DScResource is a cmdlet which can only be used inside a Configuration script block. When you are authoring a new configuration, you must import the resources needed by your configuration using this cmdlet. Resources under `$phsome` are imported automatically, but it is still considered best practice to explicitly import all resources used in your [Configuration](Configuration.md).
+Import-DScResource is a dynamic keyword which can only be used inside a Configuration script block, it is not a cmdlet. When you are authoring a new configuration, you must import the resources needed by your configuration using this keyword. Resources under `$phsome` are imported automatically, but it is still considered best practice to explicitly import all resources used in your [Configuration](Configuration.md).
 
-The cmdlet syntax is shown below.
+The syntax for `Import-DSCResource` is shown below.
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>]
@@ -66,7 +66,7 @@ The recommended way is to specify `–ModuleName` as well as described below, th
 
 ## Intellisense with Import-DSCResource
 
-When authoring the DSC configuration in ISE, PowerShell provides IntelliSence for resources and resource properties. Resource definitions under the `$pshome` module path are loaded automatically. When you import resources using the `Import-DSCResource` cmdlet, the specified resource definitions are added and Intellisense is expanded to include the imported resource's schema.
+When authoring the DSC configuration in ISE, PowerShell provides IntelliSence for resources and resource properties. Resource definitions under the `$pshome` module path are loaded automatically. When you import resources using the `Import-DSCResource` keyword, the specified resource definitions are added and Intellisense is expanded to include the imported resource's schema.
 
 [Resource Intellisense](resource-intellisense.png)
 

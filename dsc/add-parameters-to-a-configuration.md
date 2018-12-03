@@ -132,7 +132,7 @@ Configuration TestConfig
     # It is best practice to implicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
-    Node localhost
+    Node $ComputerName
     {
         Service $ServiceName
         {

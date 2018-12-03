@@ -58,10 +58,10 @@
         items:
         - name: Add Parameters to a Configuration
           href: add-parameters-to-a-configuration.md
+        - name: Conditional statements and loops in Configurations
+          href: flow-control-in-configurations.md
         - name: Write help for DSC configurations
           href: configHelp.md
-        - name: Conditional statements and Loops in Configurations
-          href:
         - name: Nesting Configurations
           href: compositeconfigs.md
       - name: Configuration Data
