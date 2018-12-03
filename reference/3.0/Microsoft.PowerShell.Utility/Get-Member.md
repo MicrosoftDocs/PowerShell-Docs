@@ -158,20 +158,28 @@ The results show that only process objects (System.Diagnostics.Process) and serv
 ### Example 6
 
 ```
-PS> $a = get-member -inputobject @(1)
-PS> $a.count
+PS C:\> $A = @(1)
+PS C:\> $A.Count
 1
-PS> $a = get-member -inputobject 1,2,3
+PS C:\> Get-Member -InputObject $A
 TypeName: System.Object[]
-
 Name               MemberType    Definition
 ----               ----------    ----------
 Count              AliasProperty Count = Length
 Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
 ...
-PS> $a.count
-1
+PS C:\> $A = @(1,2,3)
+PS C:\> Get-Member -InputObject $A
+TypeName: System.Object[]
+Name               MemberType    Definition
+----               ----------    ----------
+Count              AliasProperty Count = Length
+Address            Method        System.Object& Address(Int32 )
+Clone              Method        System.Object Clone()
+...
+PS C:\> $A.Count
+3
 ```
 
 This example demonstrates how to find the properties and methods of an array of objects when you have only one object of the given type.
