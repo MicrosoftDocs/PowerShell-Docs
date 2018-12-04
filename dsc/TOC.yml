@@ -144,24 +144,24 @@
     - name: Register a Node with a Pull Server
       href: pullClient.md
       items:
-      - name: Register a Node using configuration names
+      - name: Setup a Pull Client using Configuration Names (v5)
         href: pullClientConfigNames.md
-      - name: Register a Node using configuration ID (v5)
+      - name: Setup a Pull Client using Configuration IDs (v5)
         href: pullClientConfigID.md
-      - name: Register a Node using a Configuration Id (v4)
+      - name: Setup a Pull Client using Configuration IDs (v4)
         href: pullClientConfigID4.md
       - name: Partial Configurations
         href: partialconfigs.md
     - name: Deploy Configurations with a Pull Server
       items:
       - name: Publish to a Pull Server using Configuration IDs (v4/v5)
-        href:
+        href: publishConfigIDs.md
       - name: Publish to a Pull Server using Configuration Names (v5)
-        href:
-      - name: Automatically download Resources to a Node (Push/Pull)
-        href:
+        href: publishConfigNames.md
+      - name: Package and Upload Resources to a Pull Server (v4)
+        href: package-upload-resources.md
       - name: Update Nodes from a Pull Server
-        href:
+        href: update-nodes-manually.md
       - name: Use a DSC report server
         href: reportServer.md
     - name: Securing the Pull Server
