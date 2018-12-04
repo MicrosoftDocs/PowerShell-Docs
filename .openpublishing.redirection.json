@@ -360,48 +360,478 @@
             "redirect_document_id": "True"
         },
         {
-            "source_path": "reference/docs-conceptual/core-powershell/console-guide.md",
-            "redirect_url": "/powershell/scripting/core-powershell/console/powershell.exe-command-line-help",
+            "source_path": "reference/docs-conceptual/PowerShell-Scripting.md",
+            "redirect_url": "/powershell/scripting/overview",
             "redirect_document_id": "True"
         },
         {
-            "source_path": "reference/docs-conceptual/core-powershell/ise-guide.md",
-            "redirect_url": "/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise",
-            "redirect_document_id": "False"
-        },
-        {
-            "source_path": "reference/docs-conceptual/getting-started/fundamental/learning-windows-powershell-names.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/learning-powershell-names",
+            "source_path": "reference/docs-conceptual/core-powershell/console/powershell.exe-command-line-help.md",
+            "redirect_url": "/powershell/scripting/components/console/powershell.exe-command-line-help",
             "redirect_document_id": "True"
         },
         {
-            "source_path": "reference/docs-conceptual/getting-started/fundamental/object-pipeline.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-the-powershell-pipeline",
-            "redirect_document_id": "False"
-        },
-        {
-            "source_path": "reference/docs-conceptual/getting-started/fundamental/scripting-with-windows-powershell.md",
-            "redirect_url": "/powershell/scripting/",
+            "source_path": "reference/docs-conceptual/core-powershell/console/using-tab-expansion.md",
+            "redirect_url": "/powershell/scripting/components/console/using-tab-expansion",
             "redirect_document_id": "True"
         },
         {
-            "source_path": "reference/docs-conceptual/getting-started/fundamental/understanding-important-windows-powershell-concepts.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-important-powershell-concepts",
+            "source_path": "reference/docs-conceptual/setup/accessibility-in-windows-powershell-ise.md",
+            "redirect_url": "/powershell/scripting/components/ise/accessibility-in-windows-powershell-ise",
             "redirect_document_id": "True"
         },
         {
-            "source_path": "reference/docs-conceptual/getting-started/fundamental/understanding-the-windows-powershell-pipeline.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/understanding-the-powershell-pipeline",
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/exploring-the-windows-powershell-ise.md",
+            "redirect_url": "/powershell/scripting/components/ise/exploring-the-windows-powershell-ise",
             "redirect_document_id": "True"
         },
         {
-            "source_path": "reference/docs-conceptual/getting-started/fundamental/using-powershell-for-windows-administration.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/sample-scripts-for-administration",
-            "redirect_document_id": "False"
+            "source_path": "reference/docs-conceptual/core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md",
+            "redirect_url": "/powershell/scripting/components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise",
+            "redirect_document_id": "True"
         },
         {
-            "source_path": "reference/docs-conceptual/getting-started/understanding-concepts-reference.md",
-            "redirect_url": "/powershell/scripting/getting-started/fundamental/about-windows-powershell",
+            "source_path": "reference/docs-conceptual/core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md",
+            "redirect_url": "/powershell/scripting/components/ise/how-to-debug-scripts-in-windows-powershell-ise",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md",
+            "redirect_url": "/powershell/scripting/components/ise/how-to-use-profiles-in-windows-powershell-ise",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md",
+            "redirect_url": "/powershell/scripting/components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md",
+            "redirect_url": "/powershell/scripting/components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md",
+            "redirect_url": "/powershell/scripting/components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/introducing-the-windows-powershell-ise.md",
+            "redirect_url": "/powershell/scripting/components/ise/introducing-the-windows-powershell-ise",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md",
+            "redirect_url": "/powershell/scripting/components/ise/keyboard-shortcuts-for-the-windows-powershell-ise",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-iseaddontoolcollection-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-iseaddontoolcollection-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-iseaddontool-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-iseaddontool-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-iseeditor-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-iseeditor-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-isefilecollection-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-isefilecollection-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-isefile-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-isefile-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-isemenuitemcollection-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-isemenuitemcollection-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-isemenuitem-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-isemenuitem-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-ise-object-model-hierarchy.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-ise-object-model-hierarchy",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-iseoptions-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-iseoptions-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-isesnippetcollection-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-isesnippetcollection-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-isesnippetobject.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-isesnippetobject",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-objectmodelroot-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-objectmodelroot-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-powershelltabcollection-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-powershelltabcollection-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/ise/the-powershelltab-object.md",
+            "redirect_url": "/powershell/scripting/components/ise/object-model/the-powershelltab-object",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-.md",
+            "redirect_url": "/powershell/scripting/components/ise/windows-powershell-integrated-scripting-environment--ise-",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/vscode/using-vscode.md",
+            "redirect_url": "/powershell/scripting/components/vscode/using-vscode",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md",
+            "redirect_url": "/powershell/scripting/components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/web-access/install-and-use-windows-powershell-web-access.md",
+            "redirect_url": "/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md",
+            "redirect_url": "/powershell/scripting/components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/web-access/uninstall-windows-powershell-web-access.md",
+            "redirect_url": "/powershell/scripting/components/web-access/uninstall-windows-powershell-web-access",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/web-access/use-the-web-based-windows-powershell-console.md",
+            "redirect_url": "/powershell/scripting/components/web-access/use-the-web-based-windows-powershell-console",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/workflows-guide.md",
+            "redirect_url": "/powershell/scripting/components/workflows-guide",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/starting-the-windows-powershell-2.0-engine.md",
+            "redirect_url": "/powershell/scripting/getting-started/starting-the-windows-powershell-2.0-engine",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/starting-windows-powershell.md",
+            "redirect_url": "/powershell/scripting/getting-started/starting-windows-powershell",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/Installing-PowerShell.md",
+            "redirect_url": "/powershell/scripting/install/installing-powershell",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/Installing-PowerShell-Core-on-Linux.md",
+            "redirect_url": "/powershell/scripting/install/installing-powershell-core-on-linux",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/Installing-PowerShell-Core-on-macOS.md",
+            "redirect_url": "/powershell/scripting/install/installing-powershell-core-on-macos",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/Installing-PowerShell-Core-on-Windows.md",
+            "redirect_url": "/powershell/scripting/install/installing-powershell-core-on-windows",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/installing-the-windows-powershell-2.0-engine.md",
+            "redirect_url": "/powershell/scripting/install/installing-the-windows-powershell-2.0-engine",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/installing-windows-powershell.md",
+            "redirect_url": "/powershell/scripting/install/installing-windows-powershell",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/PowerShell-Core-on-ARM.md",
+            "redirect_url": "/powershell/scripting/install/powershell-core-on-arm",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/windows-powershell-system-requirements.md",
+            "redirect_url": "/powershell/scripting/install/windows-powershell-system-requirements",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/getting-detailed-help-information.md",
+            "redirect_url": "/powershell/scripting/learn/getting-detailed-help-information",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/getting-information-about-commands.md",
+            "redirect_url": "/powershell/scripting/learn/getting-information-about-commands",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/learning-powershell-names.md",
+            "redirect_url": "/powershell/scripting/learn/learning-powershell-names",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/more-powershell-learning.md",
+            "redirect_url": "/powershell/scripting/learn/more-powershell-learning",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/ps-remoting-second-hop.md",
+            "redirect_url": "/powershell/scripting/learn/remoting/ps-remoting-second-hop",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/running-remote-commands.md",
+            "redirect_url": "/powershell/scripting/learn/remoting/running-remote-commands",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/SSH-Remoting-in-PowerShell-Core.md",
+            "redirect_url": "/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/setup/winrmsecurity.md",
+            "redirect_url": "/powershell/scripting/learn/remoting/winrmsecurity",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/core-powershell/WSMan-Remoting-in-PowerShell-Core.md",
+            "redirect_url": "/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/understanding-important-powershell-concepts.md",
+            "redirect_url": "/powershell/scripting/learn/understanding-important-powershell-concepts",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/understanding-the-powershell-pipeline.md",
+            "redirect_url": "/powershell/scripting/learn/understanding-the-powershell-pipeline",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/using-familiar-command-names.md",
+            "redirect_url": "/powershell/scripting/learn/using-familiar-command-names",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/using-variables-to-store-objects.md",
+            "redirect_url": "/powershell/scripting/learn/using-variables-to-store-objects",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/windows-powershell-glossary.md",
+            "redirect_url": "/powershell/scripting/learn/windows-powershell-glossary",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/PowerShell-Core-Support.md",
+            "redirect_url": "/powershell/scripting/powershell-support-lifecycle",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/appendix-1---compatibility-aliases.md",
+            "redirect_url": "/powershell/scripting/samples/appendix-1---compatibility-aliases",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md",
+            "redirect_url": "/powershell/scripting/samples/appendix-2---creating-a-custom-powershell-shortcut",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/changing-computer-state.md",
+            "redirect_url": "/powershell/scripting/samples/changing-computer-state",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/collecting-information-about-computers.md",
+            "redirect_url": "/powershell/scripting/samples/collecting-information-about-computers",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md",
+            "redirect_url": "/powershell/scripting/samples/creating-.net-and-com-objects--new-object-",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/creating-a-custom-input-box.md",
+            "redirect_url": "/powershell/scripting/samples/creating-a-custom-input-box",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/creating-a-graphical-date-picker.md",
+            "redirect_url": "/powershell/scripting/samples/creating-a-graphical-date-picker",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/Decode-PowerShell-Command-from-a-Running-Process.md",
+            "redirect_url": "/powershell/scripting/samples/decode-powershell-command-from-a-running-process",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md",
+            "redirect_url": "/powershell/scripting/samples/getting-wmi-objects--get-wmiobject-",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/managing-current-location.md",
+            "redirect_url": "/powershell/scripting/samples/managing-current-location",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/managing-processes-with-process-cmdlets.md",
+            "redirect_url": "/powershell/scripting/samples/managing-processes-with-process-cmdlets",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/managing-services.md",
+            "redirect_url": "/powershell/scripting/samples/managing-services",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/managing-windows-powershell-drives.md",
+            "redirect_url": "/powershell/scripting/samples/managing-windows-powershell-drives",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/manipulating-items-directly.md",
+            "redirect_url": "/powershell/scripting/samples/manipulating-items-directly",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/multiple-selection-list-boxes.md",
+            "redirect_url": "/powershell/scripting/samples/multiple-selection-list-boxes",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/other-useful-scripting-objects.md",
+            "redirect_url": "/powershell/scripting/samples/other-useful-scripting-objects",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/performing-networking-tasks.md",
+            "redirect_url": "/powershell/scripting/samples/performing-networking-tasks",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/redirecting-data-with-out---cmdlets.md",
+            "redirect_url": "/powershell/scripting/samples/redirecting-data-with-out---cmdlets",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md",
+            "redirect_url": "/powershell/scripting/samples/removing-objects-from-the-pipeline--where-object-",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md",
+            "redirect_url": "/powershell/scripting/samples/repeating-a-task-for-multiple-objects--foreach-object-",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/fundamental/sample-scripts-for-administration.md",
+            "redirect_url": "/powershell/scripting/samples/sample-scripts-for-administration",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/selecting-items-from-a-list-box.md",
+            "redirect_url": "/powershell/scripting/samples/selecting-items-from-a-list-box",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/selecting-parts-of-objects--select-object-.md",
+            "redirect_url": "/powershell/scripting/samples/selecting-parts-of-objects--select-object-",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/sorting-objects.md",
+            "redirect_url": "/powershell/scripting/samples/sorting-objects",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/using-format-commands-to-change-output-view.md",
+            "redirect_url": "/powershell/scripting/samples/using-format-commands-to-change-output-view",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/using-static-classes-and-methods.md",
+            "redirect_url": "/powershell/scripting/samples/using-static-classes-and-methods",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/viewing-object-structure--get-member-.md",
+            "redirect_url": "/powershell/scripting/samples/viewing-object-structure--get-member-",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/working-with-files-and-folders.md",
+            "redirect_url": "/powershell/scripting/samples/working-with-files-and-folders",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/working-with-files-folders-and-registry-keys.md",
+            "redirect_url": "/powershell/scripting/samples/working-with-files-folders-and-registry-keys",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/working-with-objects.md",
+            "redirect_url": "/powershell/scripting/samples/working-with-objects",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/working-with-printers.md",
+            "redirect_url": "/powershell/scripting/samples/working-with-printers",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/working-with-registry-entries.md",
+            "redirect_url": "/powershell/scripting/samples/working-with-registry-entries",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/working-with-registry-keys.md",
+            "redirect_url": "/powershell/scripting/samples/working-with-registry-keys",
+            "redirect_document_id": "True"
+        },
+        {
+            "source_path": "reference/docs-conceptual/getting-started/cookbooks/working-with-software-installations.md",
+            "redirect_url": "/powershell/scripting/samples/working-with-software-installations",
             "redirect_document_id": "True"
         },
         {
