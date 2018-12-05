@@ -169,10 +169,7 @@ You can pipe a string that contains a path to an existing archive file.
 
 ## OUTPUTS
 
-### System.IO.FileSystemInfo
-
-When the `-PassThru` parameter is used, the cmdlet outputs a list of files that where expanded from
-the archive.
+### None
 
 ## NOTES
 
