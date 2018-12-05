@@ -181,13 +181,13 @@
     - name: Creating UI elements
       href: ''
       items:
-    - name: Creating a custom input box
+        - name: Creating a custom input box
           href: samples/creating-a-custom-input-box.md
-    - name: Creating a graphical date picker
+        - name: Creating a graphical date picker
           href: samples/creating-a-graphical-date-picker.md
-    - name: Multiple selection list boxes
+        - name: Multiple selection list boxes
           href: samples/multiple-selection-list-boxes.md
-    - name: Selecting items from a list box
+        - name: Selecting items from a list box
           href: samples/selecting-items-from-a-list-box.md
     - name: Decode a PowerShell command from a running process
       href: samples/decode-powershell-command-from-a-running-process.md
