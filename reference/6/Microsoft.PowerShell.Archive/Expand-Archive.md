@@ -12,20 +12,21 @@ title: Expand-Archive
 # Expand-Archive
 
 ## SYNOPSIS
-
 Extracts files from a specified archive (zipped) file.
 
 ## SYNTAX
 
 ### Path (Default)
+
 ```
-Expand-Archive [-Path] <String> [-DestinationPath] <String> [-Force] [-PassThru] [-WhatIf] [-Confirm]
+Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
-Expand-Archive -LiteralPath <String> [-DestinationPath] <String> [-Force] [-PassThru] [-WhatIf] [-Confirm]
+Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -58,7 +59,6 @@ This command extracts the contents of an existing archive file in the current fo
 
 Specifies the path to the folder in which you want the command to save extracted files.
 Enter the path to a folder, but do not specify a file name or file name extension.
-This parameter is required.
 
 ```yaml
 Type: String
@@ -67,7 +67,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: Current location
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
