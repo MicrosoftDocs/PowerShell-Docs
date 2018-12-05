@@ -19,14 +19,14 @@ Extracts files from a specified archive (zipped) file.
 ### Path (Default)
 
 ```
-Expand-Archive [-Path] <String> [-DestinationPath] <String> [-Force] [-PassThru] [-WhatIf] [-Confirm]
+Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Expand-Archive -LiteralPath <String> [-DestinationPath] <String> [-Force] [-PassThru] [-WhatIf] [-Confirm]
+Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
