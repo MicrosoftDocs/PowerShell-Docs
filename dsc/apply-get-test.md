@@ -212,6 +212,14 @@ Remove-DSCConfigurationDocument -Stage Current
 > [!NOTE]
 > In PowerShell 4.0, you can still remove these ".mof" files directly using [Remove-Item](/powershell/module/microsoft.powershell.management/remove-item).
 
+## Publish Configurations
+
+Beginning in PowerShell 5.0, the [Publish-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet was added. This cmdlet allows you to publish a ".mof" file to a set a computers, without applying it.
+
+```powershell
+Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
+```
+
 ## See also
 
 - [Get, Test, and Set](get-test-set.md)

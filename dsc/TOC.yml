@@ -154,10 +154,8 @@
         href: partialconfigs.md
     - name: Deploy Configurations with a Pull Server
       items:
-      - name: Publish to a Pull Server using Configuration IDs (v4/v5)
-        href: publishConfigIDs.md
-      - name: Publish to a Pull Server using Configuration Names (v5)
-        href: publishConfigNames.md
+      - name: Publish Configurations to a Pull Server (v4/v5)
+        href: publishConfigs.md
       - name: Package and Upload Resources to a Pull Server (v4)
         href: package-upload-resources.md
       - name: Update Nodes from a Pull Server

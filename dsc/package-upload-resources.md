@@ -42,7 +42,7 @@ Once the Resource module has been compressed and renamed, you need to create a *
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-No output will be shown, but you should now see a "xPSDesiredStateConfiguration_8.4.4.0.zip.checksum". You can also run `New-DSCCheckSum` against a directory of resource module ".zip" files using the `-Path` parameter. If a checksum already exists, you can force it to be re-created with the `-Force` parameter.
+No output will be shown, but you should now see a "xPSDesiredStateConfiguration_8.4.4.0.zip.checksum". You can also run `New-DSCCheckSum` against a directory of files using the `-Path` parameter. If a checksum already exists, you can force it to be re-created with the `-Force` parameter.
 
 ### Where to store Resource Archives
 
