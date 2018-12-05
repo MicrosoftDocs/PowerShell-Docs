@@ -24,21 +24,19 @@ experimental features from the `powershell.config.json` settings file read on Po
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Disable an experimental feature
+
+In this example, if this experimental feature was previously enabled, then the `powershell.config.json`
+file is updated for the user to not enable that feature once PowerShell is restarted.
+Upon success nothing is output to the pipeline and only a warning message is displayed.
+
 ```powershell
 PS C:\> Disable-ExperimentalFeature PSImplicitRemotingBatching
 ```
 
 ```output
-Name                                Enabled Source                              Description
-----                                ------- ------                              -----------
-PSImplicitRemotingBatching             True PSEngine                            Batch implicit remoting proxy commands to improve performance
 WARNING: Enabling and disabling experimental features do not take effect until next start of PowerShell.
 ```
-
-In this example, if this experimental feature was previously enabled, then the `powershell.config.json`
-file is updated for the user to not enable that feature once PowerShell is restarted.
-The `Enabled` value represents the current state, not the new desired state.
 
 ## PARAMETERS
 
@@ -117,9 +115,8 @@ Pipe instances of ExperimentalFeature from `Get-ExperimentalFeature` cmdlet to d
 
 ## OUTPUTS
 
-### ExperimentalFeature
-
-Affected instances of ExperimentalFeature that will be disabled upon restart of PowerShell.
+### None
+This cmdlet does not return any output.
 
 ## NOTES
 
