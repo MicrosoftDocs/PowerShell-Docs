@@ -3,38 +3,50 @@ external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
+ms.date:  11/27/2018
 ---
 
 # Get-LogProperties
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Retrieves the properties of a Windows event log.
 
 ## SYNTAX
 
 ```
-Get-LogProperties [-Name] <Object> [<CommonParameters>]
+Get-LogProperties [-Name] <string> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+
+This cmdlet gets the configuration settings of a Windows event log. This cmdlet is used by the
+`Enable-PSTrace` and `Disable-PSTrace` cmdlets.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Get the configuration settings of the Windows PowerShell event log
+
 ```powershell
-PS C:\> {{ Add example code here }}
+Get-LogProperties 'Windows PowerShell'
 ```
 
-{{ Add example description here }}
+```Output
+Name       : Windows PowerShell
+Enabled    : True
+Type       : Admin
+Retention  : False
+AutoBackup : False
+MaxLogSize : 15728640
+```
 
 ## PARAMETERS
 
 ### -Name
-{{Fill Name Description}}
+
+The name of the event provider.
 
 ```yaml
-Type: Object
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -46,18 +58,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.Object
-
+### System.String
 
 ## OUTPUTS
 
-### System.Object
+### Microsoft.PowerShell.Diagnostics.LogDetails
+
+The **PSDiagnostics** module adds the **LogDetails** class to the
+`Microsoft.PowerShell.Diagnostics` namespace.
 
 ## NOTES
 
 ## RELATED LINKS
+
+[Set-LogProperties](Set-LogProperties.md)
+
+[Enable-PSTrace](Enable-PSTrace.md)
+
+[Disable-PSTrace](Disable-PSTrace.md)

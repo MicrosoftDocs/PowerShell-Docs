@@ -91,7 +91,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 
 The **Out-Null** cmdlet is designed to immediately discard any input it receives. This is useful for discarding unnecessary data that you get as a side-effect of running a command. When type the following command, you do not get anything back from the command:
 
-```powreshell
+```powershell
 Get-Command | Out-Null
 ```
 

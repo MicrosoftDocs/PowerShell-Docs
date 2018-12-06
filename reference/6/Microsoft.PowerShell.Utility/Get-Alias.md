@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821778
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-Alias
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821778
+schema: 2.0.0
+title: Get-Alias
 ---
 
 # Get-Alias
@@ -16,15 +17,13 @@ Gets the aliases for the current session.
 ## SYNTAX
 
 ### Default (Default)
-```powershell
-Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>]
- [<CommonParameters>]
+```
+Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>] [<CommonParameters>]
 ```
 
 ### Definition
-```powershell
-Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
- [<CommonParameters>]
+```
+Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,7 +152,7 @@ Required: False
 Position: 0
 Default value: All aliases
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Scope

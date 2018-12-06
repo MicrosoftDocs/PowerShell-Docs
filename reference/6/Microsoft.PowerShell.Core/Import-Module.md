@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821492
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Import-Module
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821492
+schema: 2.0.0
+title: Import-Module
 ---
 
 # Import-Module
@@ -338,7 +339,7 @@ The results show that there are two **Get-Date** commands in the session, a func
 
 The fifth command runs the hidden cmdlet by qualifying the command name with the module name.
 
-For more information about command precedence in PowerShell, see about_Command_Precedence (http://go.microsoft.com/fwlink/?LinkID=113214).
+For more information about command precedence in PowerShell, see [about_Command_Precedence](about/about_Command_Precedence.md).
 
 ### Example 10: Import a minimum version of a module
 ```
@@ -351,21 +352,23 @@ It uses the *MinimumVersion* parameter of **Import-Module** to import only versi
 You can also use the *RequiredVersion* parameter to import a particular version of a module, or use the *Module* and *Version* parameters of the **#Requires** keyword to require a particular version of a module in a script.
 
 ### Example 11: Import a module from a remote computer
-```
-The first command uses the New-PSSession cmdlet to create a remote session (**PSSession**) to the Server01 computer. The command saves the **PSSession** in the $s variable.
-PS C:\> $s = New-PSSession -ComputerName Server01
+This example shows how to use the **Import-Module** cmdlet to import a module from a remote computer.
+This command uses the Implicit Remoting feature of PowerShell.
 
-The second command uses the *PSSession* parameter of the Get-Module cmdlet to get the **NetSecurity** module in the session in the $s variable.This command is equivalent to using the Invoke-Command cmdlet to run a **Get-Module** command in the session in $s ([CODE_Snippit]Invoke-Command $s {Get-Module -ListAvailable -Name NetSecurity[CODE_Snippit]).The output shows that the **NetSecurity** module is installed on the computer and is available to the session in the $s variable.
-PS C:\> Get-Module -PSSession $s -ListAvailable -Name NetSecurity
+When you import modules from another session, you can use the cmdlets in the current session.
+However, commands that use the cmdlets actually run in the remote session.
+
+```powershell
+$s = New-PSSession -ComputerName Server01
+Get-Module -PSSession $s -ListAvailable -Name NetSecurity
+
 ModuleType Name                                ExportedCommands
 ---------- ----                                ----------------
 Manifest   NetSecurity                         {New-NetIPsecAuthProposal, New-NetIPsecMainModeCryptoProposal, New-Ne...
 
-The third command uses the *PSSession* parameter of the **Import-Module** cmdlet to import the **NetSecurity** module from the session in the $s variable into the current session.
-PS C:\> Import-Module -PSSession $s -Name NetSecurity
+Import-Module -PSSession $s -Name NetSecurity
+Get-Command -Module NetSecurity -Name Get-*Firewall*
 
-The fourth command uses the **Get-Command** cmdlet to get commands that begin with "Get" and include "Firewall" from the Net-Security module.The output gets the commands and confirms that the module and its cmdlets were imported into the current session.
-PS C:\> Get-Command -Module NetSecurity -Name Get-*Firewall*
 CommandType     Name                                               ModuleName
 -----------     ----                                               ----------
 Function        Get-NetFirewallAddressFilter                       NetSecurity
@@ -379,8 +382,8 @@ Function        Get-NetFirewallSecurityFilter                      NetSecurity
 Function        Get-NetFirewallServiceFilter                       NetSecurity
 Function        Get-NetFirewallSetting                             NetSecurity
 
-The fifth command uses the **Get-NetFirewallRule** cmdlet to get Windows Remote Management firewall rules on the Server01 computer. This command is equivalent to using the Invoke-Command cmdlet to run a **Get-NetFirewallRule** command on the session in the $s variable ([CODE_Snippit]Invoke-Command -Session $s {Get-NetFirewallRule -DisplayName "Windows Remote Management*"[CODE_Snippit]}).
-PS C:\> Get-NetFirewallRule -DisplayName "Windows Remote Management*" | Format-Table -Property DisplayName, Name -AutoSize
+Get-NetFirewallRule -DisplayName "Windows Remote Management*" | Format-Table -Property DisplayName, Name -AutoSize
+
 DisplayName                                              Name
 -----------                                              ----
 Windows Remote Management (HTTP-In)                      WINRM-HTTP-In-TCP
@@ -388,35 +391,45 @@ Windows Remote Management (HTTP-In)                      WINRM-HTTP-In-TCP-PUBLI
 Windows Remote Management - Compatibility Mode (HTTP-In) WINRM-HTTP-Compat-In-TCP
 ```
 
-This example shows how to use the **Import-Module** cmdlet to import a module from a remote computer.
-This command uses the Implicit Remoting feature of PowerShell.
+The first command uses the New-PSSession cmdlet to create a remote session (**PSSession**) to the Server01 computer. The command saves the **PSSession** in the $s variable.
 
-When you import modules from another session, you can use the cmdlets in the current session.
-However, commands that use the cmdlets actually run in the remote session.
+The second command uses the *PSSession* parameter of the Get-Module cmdlet to get the **NetSecurity** module in the session in the $s variable.This command is equivalent to using the Invoke-Command cmdlet to run a **Get-Module** command in the session in $s ([CODE_Snippit]Invoke-Command $s {Get-Module -ListAvailable -Name NetSecurity[CODE_Snippit]).The output shows that the **NetSecurity** module is installed on the computer and is available to the session in the $s variable.
+
+The third command uses the *PSSession* parameter of the **Import-Module** cmdlet to import the **NetSecurity** module from the session in the $s variable into the current session.
+
+The fourth command uses the **Get-Command** cmdlet to get commands that begin with "Get" and include "Firewall" from the Net-Security module.The output gets the commands and confirms that the module and its cmdlets were imported into the current session.
+
+The fifth command uses the **Get-NetFirewallRule** cmdlet to get Windows Remote Management firewall rules on the Server01 computer. This command is equivalent to using the Invoke-Command cmdlet to run a **Get-NetFirewallRule** command on the session in the `$s` variable.
 
 ### Example 12: Manage storage on a remote computer without the Windows operating system
-```
+
+In this example, because the administrator of the computer has installed the Module Discovery WMI provider, the CIM commands can use the default values, which are designed for the provider.
+
+The commands in this example enable you to manage the storage systems of a remote computer that is not running the Windows operating system.
+
 The first command uses the **New-CimSession** cmdlet to create a session on the RSDGF03 remote computer. The session connects to WMI on the remote computer. The command saves the CIM session in the $cs variable.
-PS C:\> $cs = New-CimSession -ComputerName RSDGF03
 
 The second command uses the CIM session in the $cs variable to run an **Import-Module** command on the RSDGF03 computer. The command uses the *Name* parameter to specify the **Storage** CIM module.
-PS C:\> Import-Module -CimSession $cs -Name Storage
 
 The third command runs the **Get-Command** command on the **Get-Disk** command in the **Storage** module.When you import a CIM module into the local session, PowerShell converts the CDXML files for each command into PowerShell scripts, which appear as functions in the local session.
-PS C:\> Get-Command Get-Disk
+
+The fourth command runs the **Get-Disk** command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported.The command gets objects from the remote computer and returns them to the local session.
+
+```powershell
+$cs = New-CimSession -ComputerName RSDGF03
+Import-Module -CimSession $cs -Name Storage
+Get-Command Get-Disk
+
 CommandType     Name                  ModuleName
 -----------     ----                  ----------
 Function        Get-Disk              Storage
 
-The fourth command runs the **Get-Disk** command. Although the command is typed in the local session, it runs implicitly on the remote computer from which it was imported.The command gets objects from the remote computer and returns them to the local session.
-PS C:\> Get-Disk
+Get-Disk
+
 Number Friendly Name              OperationalStatus          Total Size Partition Style
 ------ -------------              -----------------          ---------- ---------------
 0      Virtual HD ATA Device      Online                          40 GB MBR
 ```
-
-The commands in this example enable you to manage the storage systems of a remote computer that is not running the Windows operating system.
-In this example, because the administrator of the computer has installed the Module Discovery WMI provider, the CIM commands can use the default values, which are designed for the provider.
 
 ## PARAMETERS
 
@@ -678,6 +691,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MaximumVersion
+Specifies a maximum version.
+This cmdlet imports only a version of the module that is less than or equal to the specified value.
+If no version qualifies, **Import-Module** generates an error.
+
+```yaml
+Type: String
+Parameter Sets: Name, PSSession, CimSession
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MinimumVersion
 Specifies a minimum version.
 This cmdlet imports only a version of the module that is greater than or equal to the specified value.
@@ -768,33 +798,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PSSession
-Specifies a PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
-Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
-
-When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
-Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by PowerShell.
-
-This parameter uses the Implicit Remoting feature of PowerShell.
-It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
-
-**Import-Module** cannot import PowerShell Core modules from another session.
-The PowerShell Core modules have names that begin with Microsoft.PowerShell.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: PSSession
-Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
@@ -829,6 +832,33 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PSSession
+Specifies a Windows PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
+Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
+
+When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
+Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by Windows PowerShell.
+
+This parameter uses the Implicit Remoting feature of Windows PowerShell.
+It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
+
+**Import-Module** cannot import Windows PowerShell Core modules from another session.
+The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: PSSession
+Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -912,37 +942,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MaximumVersion
-Specifies a maximum version.
-This cmdlet imports only a version of the module that is less than or equal to the specified value.
-If no version qualifies, **Import-Module** generates an error.
-
-```yaml
-Type: String
-Parameter Sets: Name, PSSession, CimSession
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String, System.Management.Automation.PSModuleInfo, System.Reflection.Assembly
-You can pipe a module name, module object, or assembly object to this cmldet.
+You can pipe a module name, module object, or assembly object to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.PSModuleInfo, or System.Management.Automation.PSCustomObject
 This cmdlet returns a **PSModuleInfo** or **PSCustomObject**.
 By default, **Import-Module** does not generate any output.
-If you specify the *PassThru* parameter, the cmldet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
+If you specify the *PassThru* parameter, the cmdlet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
 If you specify the *AsCustomObject* parameter, it generates a **PSCustomObject** object.
 
 ## NOTES

@@ -16,7 +16,7 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-Mod
 
 * **Name**: Names of one or more resources to import.
 * **ModuleName**: Module names or ModuleSpecification objects of one or more modules to import.
-* **ModuleVersion**: Version of module ot import. If used, ModuleName must represent only one module by name.
+* **ModuleVersion**: Version of module to import. If used, ModuleName must represent only one module by name.
 
 In the Windows PowerShell ISE, it shows up with IntelliSense:
 

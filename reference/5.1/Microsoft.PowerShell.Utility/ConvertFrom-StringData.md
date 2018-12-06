@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821755
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  ConvertFrom-StringData
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821755
+schema: 2.0.0
+title: ConvertFrom-StringData
 ---
 
 # ConvertFrom-StringData
@@ -76,7 +77,6 @@ TypeName: System.Collections.Hashtable
 Name              MemberType            Definition
 ----              ----------            ----------
 Add               Method                System.Void Add(Object key, Object
-
 ```
 
 These commands demonstrate that **ConvertFrom-StringData** actually converts a here-string to a hash table.
@@ -255,5 +255,7 @@ This cmdlet returns a hash table that it creates from the key/value pairs.
   This cmdlet can be useful in scripts that display user messages in multiple spoken languages.
   You can use the dictionary-style hash tables to isolate text strings from code, such as in resource files, and to format the text strings for use in translation tools.
 
+
+## RELATED LINKS
 
 ## RELATED LINKS

@@ -26,7 +26,7 @@ There are several types of providers, each of which provides a different level o
 
 ## Provider cmdlets
 
-Providers can implement methods that correspond to cmdlets, creating custom behaviors for those cmdlets when used in a drive for that provider. Depending on the type of provider, different sets of cmdlets are available. For a complete list of the cmldets available for customization in providers, see [Provider cmdlets](./provider-cmdlets.md).
+Providers can implement methods that correspond to cmdlets, creating custom behaviors for those cmdlets when used in a drive for that provider. Depending on the type of provider, different sets of cmdlets are available. For a complete list of the cmdlets available for customization in providers, see [Provider cmdlets](./provider-cmdlets.md).
 
 ## Provider paths
 

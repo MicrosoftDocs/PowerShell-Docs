@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821866
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Trace-Command
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821866
+schema: 2.0.0
+title: Trace-Command
 ---
 
 # Trace-Command
@@ -16,19 +17,16 @@ Configures and starts a trace of the specified expression or command.
 ## SYNTAX
 
 ### expressionSet (Default)
-```powershell
-Trace-Command [-Name] <String[]> [-Expression] <ScriptBlock>
- [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
- [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
- [-Debugger] [-PSHost] [<CommonParameters>]
+```
+Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
+ [-Expression] <ScriptBlock> [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force] [-Debugger]
+ [-PSHost] [<CommonParameters>]
 ```
 
 ### commandSet
-```powershell
-Trace-Command [-Name] <String[]> [-Command] <String>
- [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
- [-ArgumentList <Object[]>]
- [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
+```
+Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
+ [-Command] <String> [-ArgumentList <Object[]>] [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
  [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 

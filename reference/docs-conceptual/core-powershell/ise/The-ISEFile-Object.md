@@ -16,7 +16,7 @@ Supported in Windows PowerShell ISE 2.0 and later.
 
 Saves the file to disk.
 
-**\[saveEncoding\]** - optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)
 An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
 
 ### Exceptions
@@ -44,7 +44,7 @@ Saves the file with the specified file name and encoding.
 **filename** - String
 The name to be used to save the file.
 
-**\[saveEncoding\]** - optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)
 An optional character encoding parameter to be used for the saved file. The default value is **UTF8**.
 
 ### Exceptions

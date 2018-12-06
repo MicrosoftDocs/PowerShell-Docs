@@ -29,8 +29,6 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 The PowerShell **Certificate** provider lets you get, add, change, clear, and delete
 certificates and certificate stores in PowerShell.
 
-Certificates are {{Fill in description}}
-
 The **Certificate** drive is a hierarchical namespace containing the cerificate stores and certificates on your computer.
 
 The **Certificate** provider supports the following cmdlets, which are covered
@@ -344,7 +342,7 @@ $expired | Remove-Item -DeleteKey
 
 The `New-Item` cmdlet does not create new certificates in the **Certificate**
 provider. Use the [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) cmdlet to create a certificate
-for testing purposes.  
+for testing purposes.
 
 ## Creating Certificate Stores
 
@@ -417,6 +415,21 @@ Certificate provider, but are effective only on certificates.
 > also return items with an empty `EnhancedKeyUsageList` property value.
 > Certificates that have an empty **EnhancedKeyUsageList** can be used for
 > all purposes.
+
+### ItemType \<String\>
+
+This parameter allows you to specify the type of item created by `New-Item`.
+
+In a `Certificate` drive, the following values are allowed:
+
+- Certificate Provider
+- Certificate
+- Store
+- StoreLocation
+
+### Cmdlets Supported
+
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
 
 ### CodeSigningCert <System.Management.Automation.SwitchParameter>
 
@@ -510,7 +523,10 @@ certificates.
   Certificate provider copies the OID properties of the EnhancedKeyUsage (EKU)
   field in the certificate and creates a friendly name for it.
 
-- `SendAsTrustedIssuer`: {{Fill in description https://docs.microsoft.com/en-us/dotnet/api/microsoft.powershell.commands.sendastrustedissuerproperty?redirectedfrom=MSDN&view=powershellsdk-1.1.0}}
+- `SendAsTrustedIssuer`: To populate the `SendAsTrustedIssuer` property, the
+  Certificate provider copies the `SendAsTrustedIssuer` property from the
+  certificate.  For more information see
+  [Management of trusted issuers for client authentication](/windows-server/security/tls/what-s-new-in-tls-ssl-schannel-ssp-overview#BKMK_TrustedIssuers).
 
 These new features let you search for certificates based on their DNS names and
 expiration dates, and distinguish client and server authentication certificates

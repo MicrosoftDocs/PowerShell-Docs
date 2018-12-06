@@ -98,7 +98,7 @@ In both cases, you will need the Windows 10 x64 ZIP release package and will nee
 1. Use your favorite zip utility to unzip the package to a directory within the mounted Nano Server image.
 2. Unmount the image and boot it.
 3. Connect to the inbox instance of Windows PowerShell.
-4. Follow the instructions to create a remoting endpoint using the ["another instance technique"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+4. Follow the instructions to create a remoting endpoint using the ["another instance technique"](../core-powershell/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
 ### Online Deployment of PowerShell Core
 

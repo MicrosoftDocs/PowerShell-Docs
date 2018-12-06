@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821765
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Enable-RunspaceDebug
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821765
+schema: 2.0.0
+title: Enable-RunspaceDebug
 ---
 
 # Enable-RunspaceDebug
@@ -59,7 +60,6 @@ The **Enable-RunspaceDebug** cmdlet enables debugging on runspaces where any bre
 
 ### -AppDomainName
 
-
 ```yaml
 Type: String[]
 Parameter Sets: ProcessNameParameterSet
@@ -74,7 +74,6 @@ Accept wildcard characters: False
 
 ### -BreakAll
 
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: RunspaceNameParameterSet, RunspaceParameterSet, RunspaceIdParameterSet
@@ -88,7 +87,6 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessName
-
 
 ```yaml
 Type: String
@@ -120,7 +118,6 @@ Accept wildcard characters: False
 
 ### -RunspaceId
 
-
 ```yaml
 Type: Int32[]
 Parameter Sets: RunspaceIdParameterSet
@@ -135,7 +132,6 @@ Accept wildcard characters: False
 
 ### -RunspaceInstanceId
 
-
 ```yaml
 Type: Guid[]
 Parameter Sets: RunspaceInstanceIdParameterSet
@@ -149,7 +145,6 @@ Accept wildcard characters: False
 ```
 
 ### -RunspaceName
-
 
 ```yaml
 Type: String[]

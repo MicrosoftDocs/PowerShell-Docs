@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821492
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Import-Module
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821492
+schema: 2.0.0
+title: Import-Module
 ---
 
 # Import-Module
@@ -277,7 +278,7 @@ $a | Get-Member
 ```
 
 ```output
-    TypeName: System.Management.Automation.PSCustomObject
+TypeName: System.Management.Automation.PSCustomObject
 Name          MemberType   Definition
 ----          ----------   ----------
 Equals        Method       bool Equals(System.Object obj)
@@ -834,33 +835,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PSSession
-Specifies a Windows PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
-Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
-
-When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
-Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by Windows PowerShell.
-
-This parameter uses the Implicit Remoting feature of Windows PowerShell.
-It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
-
-**Import-Module** cannot import Windows PowerShell Core modules from another session.
-The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: PSSession
-Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
@@ -895,6 +869,33 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PSSession
+Specifies a Windows PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
+Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
+
+When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
+Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by Windows PowerShell.
+
+This parameter uses the Implicit Remoting feature of Windows PowerShell.
+It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
+
+**Import-Module** cannot import Windows PowerShell Core modules from another session.
+The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: PSSession
+Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -979,8 +980,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -993,7 +993,7 @@ You can pipe a module name, module object, or assembly object to `Import-Module`
 ### None, System.Management.Automation.PSModuleInfo, or System.Management.Automation.PSCustomObject
 
 By default, **Import-Module** does not generate any output.
-If you specify the *PassThru* parameter, the cmldet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
+If you specify the *PassThru* parameter, the cmdlet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
 If you specify the *AsCustomObject* parameter, it generates a **PSCustomObject** object.
 
 ## NOTES

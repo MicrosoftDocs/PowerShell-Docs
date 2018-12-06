@@ -1,12 +1,8 @@
 {
     "build": {
-        "content": [{
-            "files": [
-                "**/**.yml",
-                "**/**.md"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
+        "content": [
+            { "files": ["**/**.yml", "**/**.md"], "exclude": ["**/obj/**"] }
+        ],
         "globalMetadata": {
             "breadcrumb_path": "bread/toc.yml",
             "uhfHeaderId": "MSDocsHeader-Powershell",
@@ -17,14 +13,14 @@
             "ms.devlang": "powershell",
             "ms.tgt_pltfr": "windows, macos, linux",
             "author": "joeyaiello",
-            "ms.author": "jaiello"
+            "ms.author": "jaiello",
+            "feedback_system": "GitHub",
+            "feedback_github_repo": "PowerShell/PowerShell-Docs",
+            "feedback_product_url": "https://github.com/powershell/powershell/issues/new"
         },
-        "resource": [{
-            "files": [
-                "**/images/**"
-            ],
-            "exclude": ["**/obj/**"]
-        }],
+        "resource": [
+            { "files": ["**/media/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"] }
+        ],
         "template": "op.html",
         "dest": "developer",
         "markdownEngineName": "markdig"

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821767
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Export-Clixml
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821767
+schema: 2.0.0
+title: Export-Clixml
 ---
 
 # Export-Clixml
@@ -18,13 +19,13 @@ Creates an XML-based representation of an object or objects and stores it in a f
 ### ByPath (Default)
 ```
 Export-Clixml [-Depth <Int32>] [-Path] <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
 Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,7 +72,7 @@ $CredXmlPath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 $Credential = Import-CliXml $CredXmlPath
 ```
 
-The **Export-CliXml** cmdlet encrypts credential objects by using the [Windows Data Protection API](http://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
+The **Export-CliXml** cmdlet encrypts credential objects by using the [Windows Data Protection API](https://msdn.microsoft.com/library/windows/apps/xaml/hh464970.aspx).
 This ensures that only your user account on only that computer can decrypt the contents of the credential object. The exported CliXml file can neither be used on a different computer nor by a different user.
 
 In this example, given a credential that you've stored in the $Credential variable by running the Get-Credential cmdlet, you can run the **Export-CliXml** cmdlet to save the credential to disk. In the example, the file in which the credential is stored is represented by TestScript.ps1.credential.
@@ -120,10 +121,9 @@ The acceptable values for this parameter are:
 The default value is Unicode.
 
 ```yaml
-Type: String
+Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, OEM
 
 Required: False
 Position: Named
@@ -167,6 +167,25 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -LiteralPath
+Specifies the path to the file where the XML representation of the object will be stored.
+Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String
+Parameter Sets: ByLiteralPath
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -NoClobber
 Indicates that the cmdlet does not overwrite the contents of an existing file.
 By default, if a file exists in the specified path, **Export-Clixml** overwrites the file without warning.
@@ -192,26 +211,7 @@ Parameter Sets: ByPath
 Aliases:
 
 Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-Specifies the path to the file where the XML representation of the object will be stored.
-Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String
-Parameter Sets: ByLiteralPath
-Aliases: PSPath
-
-Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -265,9 +265,9 @@ You can pipe any object to **Export-Clixml**.
 
 ## RELATED LINKS
 
-[Use PowerShell to Pass Credentials to Legacy Systems](http://blogs.technet.com/b/heyscriptingguy/archive/2011/06/05/use-powershell-to-pass-credentials-to-legacy-systems.aspx)
+[Use PowerShell to Pass Credentials to Legacy Systems](https://blogs.technet.com/b/heyscriptingguy/archive/2011/06/05/use-powershell-to-pass-credentials-to-legacy-systems.aspx)
 
-[Securely Store Credentials on Disk](http://powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
+[Securely Store Credentials on Disk](https://powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
 
 [ConvertTo-Html](ConvertTo-Html.md)
 
@@ -275,8 +275,6 @@ You can pipe any object to **Export-Clixml**.
 
 [Export-Csv](Export-Csv.md)
 
-[ConvertTo-Clixml](ConvertTo-Clixml.md)
-
-[ConvertFrom-Clixml](ConvertFrom-Clixml.md)
+[Export-Clixml](Export-Clixml.md)
 
 [Import-Clixml](Import-Clixml.md)

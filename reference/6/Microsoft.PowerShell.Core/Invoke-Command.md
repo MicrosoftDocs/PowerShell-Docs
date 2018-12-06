@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821493
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Invoke-Command
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821493
+schema: 2.0.0
+title: Invoke-Command
 ---
 
 # Invoke-Command
@@ -21,18 +22,18 @@ Invoke-Command [-ScriptBlock] <ScriptBlock> [-NoNewScope] [-InputObject <PSObjec
  [<CommonParameters>]
 ```
 
-### Session
-```
-Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- [<CommonParameters>]
-```
-
 ### FilePathRunspace
 ```
 Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-FilePath] <String> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
+ [-JobName <String>] [-FilePath] <String> [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
  [<CommonParameters>]
+```
+
+### Session
+```
+Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
+ [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-RemoteDebug] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### ComputerName
@@ -41,8 +42,8 @@ Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port 
  [-ConfigurationName <String>] [-ApplicationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
  [-InDisconnectedSession] [-SessionName <String[]>] [-HideComputerName] [-JobName <String>]
  [-ScriptBlock] <ScriptBlock> [-SessionOption <PSSessionOption>] [-Authentication <AuthenticationMechanism>]
- [-EnableNetworkAccess] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-CertificateThumbprint <String>]
- [<CommonParameters>]
+ [-EnableNetworkAccess] [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
+ [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
 ### FilePathComputerName
@@ -51,7 +52,15 @@ Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port 
  [-ConfigurationName <String>] [-ApplicationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
  [-InDisconnectedSession] [-SessionName <String[]>] [-HideComputerName] [-JobName <String>]
  [-FilePath] <String> [-SessionOption <PSSessionOption>] [-Authentication <AuthenticationMechanism>]
- [-EnableNetworkAccess] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+ [-EnableNetworkAccess] [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
+ [<CommonParameters>]
+```
+
+### VMId
+```
+Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
+ [-HideComputerName] [-ScriptBlock] <ScriptBlock> [-RemoteDebug] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [-VMId] <Guid[]> [<CommonParameters>]
 ```
 
 ### Uri
@@ -59,7 +68,7 @@ Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port 
 Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
  [[-ConnectionUri] <Uri[]>] [-AsJob] [-InDisconnectedSession] [-HideComputerName] [-JobName <String>]
  [-ScriptBlock] <ScriptBlock> [-AllowRedirection] [-SessionOption <PSSessionOption>]
- [-Authentication <AuthenticationMechanism>] [-EnableNetworkAccess] [-InputObject <PSObject>]
+ [-Authentication <AuthenticationMechanism>] [-EnableNetworkAccess] [-RemoteDebug] [-InputObject <PSObject>]
  [-ArgumentList <Object[]>] [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
@@ -68,76 +77,69 @@ Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-Thro
 Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
  [[-ConnectionUri] <Uri[]>] [-AsJob] [-InDisconnectedSession] [-HideComputerName] [-JobName <String>]
  [-FilePath] <String> [-AllowRedirection] [-SessionOption <PSSessionOption>]
- [-Authentication <AuthenticationMechanism>] [-EnableNetworkAccess] [-InputObject <PSObject>]
+ [-Authentication <AuthenticationMechanism>] [-EnableNetworkAccess] [-RemoteDebug] [-InputObject <PSObject>]
  [-ArgumentList <Object[]>] [<CommonParameters>]
-```
-
-### VMId
-```
-Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
- [-HideComputerName] [-ScriptBlock] <ScriptBlock> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- -VMId <Guid[]> [<CommonParameters>]
 ```
 
 ### VMName
 ```
 Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
- [-HideComputerName] [-ScriptBlock] <ScriptBlock> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- -VMName <String[]> [<CommonParameters>]
+ [-HideComputerName] [-ScriptBlock] <ScriptBlock> [-RemoteDebug] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] -VMName <String[]> [<CommonParameters>]
 ```
 
 ### FilePathVMId
 ```
 Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
- [-HideComputerName] [-FilePath] <String> [-InputObject <PSObject>] [-ArgumentList <Object[]>] -VMId <Guid[]>
- [<CommonParameters>]
+ [-HideComputerName] [-FilePath] <String> [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
+ [-VMId] <Guid[]> [<CommonParameters>]
 ```
 
 ### FilePathVMName
 ```
 Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
- [-HideComputerName] [-FilePath] <String> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
+ [-HideComputerName] [-FilePath] <String> [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
  -VMName <String[]> [<CommonParameters>]
 ```
 
-### ContainerId
+### SSHHost
 ```
-Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-RunAsAdministrator] [-InputObject <PSObject>]
- [-ArgumentList <Object[]>] -ContainerId <String[]> [<CommonParameters>]
+Invoke-Command [-Port <Int32>] [-AsJob] [-HideComputerName] [-ScriptBlock] <ScriptBlock> -HostName <String[]>
+ [-UserName <String>] [-KeyFilePath <String>] [-SSHTransport] [-RemoteDebug] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathContainerId
 ```
 Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-FilePath] <String> [-RunAsAdministrator] [-InputObject <PSObject>]
+ [-JobName <String>] [-FilePath] <String> [-RunAsAdministrator] [-RemoteDebug] [-InputObject <PSObject>]
  [-ArgumentList <Object[]>] -ContainerId <String[]> [<CommonParameters>]
 ```
 
-### HostName
+### ContainerId
 ```
-Invoke-Command [-Subsystem <String>] -ScriptBlock <scriptblock> -HostName <string[]> [-Port <int>]
- [-AsJob] [-HideComputerName] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug]
- [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
-```
-
-### FilePathHostName
-```
-Invoke-Command -FilePath <string> -HostName <string[]> [-Port <int>] [-AsJob] [-HideComputerName]
-[-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [-RemoteDebug] [-InputObject <psobject>]
-[-ArgumentList <Object[]>] [<CommonParameters>]
+Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
+ [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-RunAsAdministrator] [-RemoteDebug]
+ [-InputObject <PSObject>] [-ArgumentList <Object[]>] -ContainerId <String[]> [<CommonParameters>]
 ```
 
-### SSHConnection
+### SSHHostHashParam
 ```
-Invoke-Command -ScriptBlock <scriptblock> -SSHConnection <hashtable[]> [-AsJob] [-HideComputerName]
-[-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+Invoke-Command [-AsJob] [-HideComputerName] [-ScriptBlock] <ScriptBlock> -SSHConnection <Hashtable[]>
+ [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-### FilePathSSHConnection
+### FilePathSSHHost
 ```
-Invoke-Command -FilePath <string> -SSHConnection <hashtable[]> [-AsJob] [-HideComputerName]
-[-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+Invoke-Command [-AsJob] [-HideComputerName] [-FilePath] <String> -HostName <String[]> [-UserName <String>]
+ [-KeyFilePath <String>] [-SSHTransport] [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
+ [<CommonParameters>]
+```
+
+### FilePathSSHHostHash
+```
+Invoke-Command [-AsJob] [-HideComputerName] [-FilePath] <String> -SSHConnection <Hashtable[]> [-RemoteDebug]
+ [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -157,7 +159,11 @@ To establish a persistent connection to a remote computer, use the **New-PSSessi
 
 Before using `Invoke-Command` to run commands on a remote computer, read [about_Remote](About/about_Remote.md).
 
-Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke commands on remote computers. SSH must be installed on the local computer and the remote computer must be configured with a PowerShell SSH endpoint. The benefit of an SSH based PowerShell remote session is that it will work across multiple platforms (Windows, Linux, macOS). For SSH based session you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information. For more information about how to set up PowerShell SSH remoting see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke commands on remote computers.
+SSH must be installed on the local computer and the remote computer must be configured with a PowerShell SSH endpoint.
+The benefit of an SSH based PowerShell remote session is that it will work across multiple platforms (Windows, Linux, macOS).
+For SSH based session you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information.
+For more information about how to set up PowerShell SSH remoting, see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## EXAMPLES
 
@@ -429,7 +435,7 @@ As a result, if the remote computer specified by *ConnectionURI* returns a redir
 
 ### Example 14: Use a session option
 ```
-PS C:\> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck –SkipRevocationCheck
+PS C:\> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 PS C:\> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
 ```
 
@@ -603,7 +609,7 @@ For more information about PowerShell background jobs, see [about_Jobs](About/ab
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId, HostName, FilePathHostName, SSHConnection, FilePathSSHConnection
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, SSHHost, FilePathContainerId, ContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases:
 
 Required: False
@@ -715,7 +721,7 @@ For more information, see about_Preference_Variables.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
+Parameter Sets: ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, FilePathContainerId, ContainerId
 Aliases:
 
 Required: False
@@ -754,6 +760,21 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ContainerId
+Specifies an array of container IDs.
+
+```yaml
+Type: String[]
+Parameter Sets: FilePathContainerId, ContainerId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -833,7 +854,7 @@ When you use this parameter, PowerShell converts the contents of the specified s
 
 ```yaml
 Type: String
-Parameter Sets: FilePathRunspace, FilePathComputerName, FilePathUri, FilePathVMId, FilePathVMName, FilePathContainerId, FilePathHostName, FilePathSSHConnection
+Parameter Sets: FilePathRunspace, FilePathComputerName, FilePathUri, FilePathVMId, FilePathVMName, FilePathContainerId, FilePathSSHHost, FilePathSSHHostHash
 Aliases: PSPath
 
 Required: True
@@ -852,10 +873,27 @@ It does not change the object.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId, HostName, FilePathHostName, SSHConnection, FilePathSSHConnection
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, SSHHost, FilePathContainerId, ContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
 Aliases: HCN
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HostName
+Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to the ComputerName parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String[]
+Parameter Sets: SSHHost, FilePathSSHHost
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -926,8 +964,27 @@ For more information about PowerShell background jobs, see [about_Jobs](About/ab
 
 ```yaml
 Type: String
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, ContainerId, FilePathContainerId
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, Uri, FilePathUri, FilePathContainerId, ContainerId
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KeyFilePath
+Specifies a key file path used by Secure Shell (SSH) to authenticate a user on a remote computer.
+
+SSH allows user authentication to be performed via private/public keys as an alternative to basic password authentication. If the remote computer is configured for key authentication then this parameter can be used to provide the key that identifies the user.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: SSHHost, FilePathSSHHost
+Aliases: IdentityFilePath
 
 Required: False
 Position: Named
@@ -974,7 +1031,37 @@ An alternate port setting might prevent the command from running on all computer
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerName, FilePathComputerName, HostName, FilePathHostName
+Parameter Sets: ComputerName, FilePathComputerName, SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoteDebug
+{{Fill RemoteDebug Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, SSHHost, FilePathContainerId, ContainerId, SSHHostHashParam, FilePathSSHHost, FilePathSSHHostHash
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RunAsAdministrator
+Indicates that this cmdlet invokes a command as an Administrator.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: FilePathContainerId, ContainerId
 Aliases:
 
 Required: False
@@ -994,11 +1081,11 @@ To include local variables in the command, use *ArgumentList*.
 
 ```yaml
 Type: ScriptBlock
-Parameter Sets: InProcess, Session, ComputerName, Uri, VMId, VMName, ContainerId, HostName, SSHConnection
+Parameter Sets: InProcess, Session, ComputerName, VMId, Uri, VMName, SSHHost, ContainerId, SSHHostHashParam
 Aliases: Command
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -1015,7 +1102,7 @@ For more information, see about_PSSessions.
 
 ```yaml
 Type: PSSession[]
-Parameter Sets: Session, FilePathRunspace
+Parameter Sets: FilePathRunspace, Session
 Aliases:
 
 Required: False
@@ -1070,6 +1157,47 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SSHConnection
+This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath).
+
+The hashtable connection parameters are the same as defined for the HostName parameter set.
+
+The SSHConnection parameter is useful for creating multiple sessions where each session requires different connection information.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: Hashtable[]
+Parameter Sets: SSHHostHashParam, FilePathSSHHostHash
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SSHTransport
+Indicates that the remote connection is established using Secure Shell (SSH).
+
+By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: SSHHost, FilePathSSHHost
+Aliases:
+Accepted values: true
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ThrottleLimit
 Specifies the maximum number of concurrent connections that can be established to run this command.
 If you omit this parameter or enter a value of 0, the default value, 32, is used.
@@ -1078,7 +1206,30 @@ The throttle limit applies only to the current command, not to the session or to
 
 ```yaml
 Type: Int32
-Parameter Sets: Session, FilePathRunspace, ComputerName, FilePathComputerName, Uri, FilePathUri, VMId, VMName, FilePathVMId, FilePathVMName, ContainerId, FilePathContainerId
+Parameter Sets: FilePathRunspace, Session, ComputerName, FilePathComputerName, VMId, Uri, FilePathUri, VMName, FilePathVMId, FilePathVMName, FilePathContainerId, ContainerId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserName
+Specifies the user name for the account used to run a command on the remote computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
+
+If SSH is configured for basic password authentication then you will be prompted for the user password.
+
+If SSH is configured for key based user authentication then a key file path can be provided via the KeyFilePath parameter and no password prompt will occur. Note that if the client user key file is located in an SSH known location then the KeyFilePath parameter is not needed for key based authentication, and user authentication will occur automatically based on the user name. See SSH documentation about key based user authentication for more information.
+
+This is not a required parameter. If no UserName parameter is specified then the current log on user name is used for the connection.
+
+This parameter was introduced in PowerShell 6.0.
+
+```yaml
+Type: String
+Parameter Sets: SSHHost, FilePathSSHHost
 Aliases:
 
 Required: False
@@ -1092,7 +1243,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
-WS-Management encrypts all PowerShell content transmitted over the network.
+WS-Management encrypts all Windows PowerShell content transmitted over the network.
 The *UseSSL* parameter is an additional protection that sends the data across an HTTPS, instead of HTTP.
 
 If you use this parameter, but SSL is not available on the port that is used for the command, the command fails.
@@ -1100,51 +1251,6 @@ If you use this parameter, but SSL is not available on the port that is used for
 ```yaml
 Type: SwitchParameter
 Parameter Sets: ComputerName, FilePathComputerName
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VMName
-Specifies an array of names of virtual machines.
-
-```yaml
-Type: String[]
-Parameter Sets: VMName, FilePathVMName
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ContainerId
-Specifies an array of container IDs.
-
-```yaml
-Type: String[]
-Parameter Sets: ContainerId, FilePathContainerId
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -RunAsAdministrator
-Indicates that this cmdlet invokes a command as an Administrator.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: ContainerId, FilePathContainerId
 Aliases:
 
 Required: False
@@ -1163,134 +1269,24 @@ Parameter Sets: VMId, FilePathVMId
 Aliases: VMGuid
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -HostName
-Specifies an array of computer names for a Secure Shell (SSH) based connection. This is similar to the ComputerName parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
-This parameter supports specifying the user name and/or port as part of the host name parameter value using
-the form `user@hostname:port`.
-The user name and/or port specified as part of the host name takes precedence over the `-UserName` and `-Port` parameters, if specified.
-This allows passing multiple computer names to this parameter where some have specific user names and/or ports, while others use the user name and/or port from the `-UserName` and `-Port` parameters.
-
-This parameter was introduced in PowerShell 6.0.
+### -VMName
+Specifies an array of names of virtual machines.
 
 ```yaml
 Type: String[]
-Parameter Sets: HostName
+Parameter Sets: VMName, FilePathVMName
 Aliases:
 
 Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -KeyFilePath
-Specifies a key file path used by Secure Shell (SSH) to authenticate a user on a remote computer.
-
-SSH allows user authentication to be performed via private/public keys as an alternative to basic password authentication. If the remote computer is configured for key authentication then this parameter can be used to provide the key that identifies the user.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: String
-Parameter Sets: HostName
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SSHTransport
-Indicates that the remote connection is established using Secure Shell (SSH).
-
-By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: HostName
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Subsystem
-Specifies the SSH subsystem used for the new **PSSession**.
-
-This specifies the subsystem to use on the target as defined in sshd_config.
-The subsystem starts a specific version of PowerShell with predefined parameters.
-If the specified subsystem does not exist on the remote computer, the command fails.
-
-If this parameter is not used, the default is the 'powershell' subsystem.
-
-```yaml
-Type: String
-Parameter Sets: HostName
-Aliases:
-
-Required: False
-Position: Named
-Default value: powershell
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -UserName
-Specifies the user name for the account used to run a command on the remote computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
-
-If SSH is configured for basic password authentication then you will be prompted for the user password.
-
-If SSH is configured for key based user authentication then a key file path can be provided via the KeyFilePath parameter and no password prompt will occur. Note that if the client user key file is located in an SSH known location then the KeyFilePath parameter is not needed for key based authentication, and user authentication will occur automatically based on the user name. See SSH documentation about key based user authentication for more information.
-
-This is not a required parameter. If no UserName parameter is specified then the current log on user name is used for the connection.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: String
-Parameter Sets: HostName
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SSHConnection
-This parameter takes an array of hashtables where each hashtable contains one or more connection parameters needed to establish a Secure Shell (SSH) connection (HostName, Port, UserName, KeyFilePath, Subsystem).
-
-The hashtable connection parameters are the same as defined for the HostName parameter set.
-Note that the order of the keys in the hashtable result in user name and port being used for the connection where the last one specified is used.  For example, if you use `@{UserName="first";HostName="second@host"}`, then the user name `second` will be used.  However, if you use `@{HostName="second@host:22";Port=23}`, then port 23 will be used.
-
-The SSHConnection parameter is useful for creating multiple sessions where each session requires different connection information.
-
-This parameter was introduced in PowerShell 6.0.
-
-```yaml
-Type: hashtable
-Parameter Sets: SSHConnection
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -1337,7 +1333,12 @@ A value of Busy indicates that you cannot connect to the PSSession because it is
 
   For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
-* The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0. They were added to provide PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured. This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply. For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported. For more information about how to set up PowerShell SSH remoting see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
+* The HostName and SSHConnection parameter sets were included starting with PowerShell 6.0.
+  They were added to provide PowerShell remoting based on Secure Shell (SSH).
+  Both SSH and PowerShell are supported on multiple platforms (Windows, Linux, macOS) and PowerShell remoting will work over these platforms where PowerShell and SSH are installed and configured.
+  This is separate from the previous Windows only remoting that is based on WinRM and much of the WinRM specific features and limitations do not apply.
+  For example WinRM based quotas, session options, custom endpoint configuration, and disconnect/reconnect features are currently not supported.
+  For more information about how to set up PowerShell SSH remoting, see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
 ## RELATED LINKS
 

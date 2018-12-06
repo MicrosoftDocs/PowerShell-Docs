@@ -1,43 +1,49 @@
 ---
-Module Name: PSDiagnostics
-Module Guid: c61d6278-02a3-4618-ae37-a524d40a7f44
-Download Help Link: {{Please enter FwLink manually}}
-Help Version: {{Please enter version of help manually (X.X.X.X) format}}
+ms.date:  11/27/2018
+schema:  2.0.0
 Locale: en-US
+keywords:  powershell,cmdlet
+Help Version:  3.0.0.1
+Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855965
+Module Guid: c61d6278-02a3-4618-ae37-a524d40a7f44
+Module Name: PSDiagnostics
 ---
 
 # PSDiagnostics Module
+
 ## Description
-{{Manually Enter Description Here}}
+
+The Windows PowerShell Diagnostics Module contains a set of cmdlets that enables the use of ETW
+tracing in PowerShell on Windows.
 
 ## PSDiagnostics Cmdlets
+
 ### [Disable-PSTrace](Disable-PSTrace.md)
-{{Manually Enter Disable-PSTrace Description Here}}
+Disables the Microsoft-Windows-PowerShell event provider logs.
 
 ### [Disable-PSWSManCombinedTrace](Disable-PSWSManCombinedTrace.md)
-{{Manually Enter Disable-PSWSManCombinedTrace Description Here}}
+Stop the logging session started by Enable-PSWSManCombinedTrace.
 
 ### [Disable-WSManTrace](Disable-WSManTrace.md)
-{{Manually Enter Disable-WSManTrace Description Here}}
+Stop the WSMan logging session started by Enable-WSManTrace.
 
 ### [Enable-PSTrace](Enable-PSTrace.md)
-{{Manually Enter Enable-PSTrace Description Here}}
+Enables the Microsoft-Windows-PowerShell event provider logs.
 
 ### [Enable-PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
-{{Manually Enter Enable-PSWSManCombinedTrace Description Here}}
+Start a logging session with the WSMan and PowerShell providers enabled.
 
 ### [Enable-WSManTrace](Enable-WSManTrace.md)
-{{Manually Enter Enable-WSManTrace Description Here}}
+Start a logging session with the WSMan providers enabled.
 
 ### [Get-LogProperties](Get-LogProperties.md)
-{{Manually Enter Get-LogProperties Description Here}}
+Retrieves the properties of a Windows event log.
 
 ### [Set-LogProperties](Set-LogProperties.md)
-{{Manually Enter Set-LogProperties Description Here}}
+Changes the properties of a Windows event log.
 
 ### [Start-Trace](Start-Trace.md)
-{{Manually Enter Start-Trace Description Here}}
+Start an Event Trace logging session.
 
 ### [Stop-Trace](Stop-Trace.md)
-{{Manually Enter Stop-Trace Description Here}}
-
+Stop an Event Trace logging session.

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821725
-external help file:  Microsoft.WSMan.Management.dll-Help.xml
-title:  Disable-WSManCredSSP
+external help file: Microsoft.WSMan.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.WSMan.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821725
+schema: 2.0.0
+title: Disable-WSManCredSSP
 ---
 
 # Disable-WSManCredSSP
@@ -73,9 +74,10 @@ If you specify Server, this cmdlet performs the following action:
 Type: String
 Parameter Sets: (All)
 Aliases:
+Accepted values: Client, Server
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

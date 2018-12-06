@@ -23,7 +23,8 @@ order is the order in which PowerShell evaluates the operators when
 multiple operators appear in the same expression.
 
 When operators have equal precedence, PowerShell evaluates them from
-left to right. The exceptions are the assignment operators, the cast
+left to right as they appear within the expression.
+The exceptions are the assignment operators, the cast
 operators, and the negation operators (!, -not, -bnot), which are evaluated
 from right to left.
 
@@ -41,7 +42,7 @@ the topic, type `get-help <topic-name>`.
 
 |OPERATOR                |REFERENCE|
 |------------------------|---------|
-|`$()  @()`              |[about_Operators](#index-operator)|
+|`$() @() ()`            |[about_Operators](about_Operators.md)|
 |`.` (dereference)       |[about_Operators](about_Operators.md)|
 |`::` (static)           |[about_Operators](about_Operators.md)|
 |`[0]` (index operator)  |[about_Operators](about_Operators.md)|
@@ -54,7 +55,9 @@ the topic, type `get-help <topic-name>`.
 |`! -bNot`               |[about_Comparison_Operators](about_Comparison_Operators.md)|
 |`..` (range operator)   |[about_Operators](about_Operators.md)|
 |`-f` (format operator)  |[about_Operators](about_Operators.md)|
-|`* / % + -`             |[about_Arithmetic_Operators](about_Arithmetic_Operators.md)|
+|`-` (unary/negative)    |[about_Arithmetic_Operators](about_Arithmetic_Operators.md)|
+|`* / %`                 |[about_Arithmetic_Operators](about_Arithmetic_Operators.md)|
+|`+ -`                   |[about_Arithmetic_Operators](about_Arithmetic_Operators.md)|
 
 The following group of operators have equal precedence. Their case-sensitive
 and explicitly case-insensitive variants have the same precedence.
@@ -80,21 +83,21 @@ order:
 |`-and -or -xor`           |[about_Logical_Operators](about_logical_operators.md)|
 |`.` (dot-source)          |[about_Scopes](about_Scopes.md)|
 |`&` (call)                |[about_Operators](about_Operators.md)|
-|&#124; (pipeline operator)|[about_Operators](about_Operators.md)|
+|<code>&#124;</code> (pipeline operator)|[about_Operators](about_Operators.md)|
 |`> >> 2> 2>> 2>&1`        |[about_Redirection](about_Redirection.md)|
 |`= += -= *= /= %=`        |[about_Assignment_Operators](about_Assignment_Operators.md)|
 
-# EXAMPLES
+## EXAMPLES
 
 The following two commands show the arithmetic operators and the effect of
 using parentheses to force PowerShell to evaluate the enclosed part of
 the expression first.
 
 ```powershell
-C:\PS> 2 + 3 * 4
+PS> 2 + 3 * 4
 14
 
-C:\PS> (2 + 3) * 4
+PS> (2 + 3) * 4
 20
 ```
 
@@ -102,12 +105,13 @@ The following example gets the read-only text files from the local directory
 and saves them in the `$read_only` variable.
 
 ```powershell
-$read_only = get-childitem *.txt | where-object {$_.isReadOnly}
+$read_only = Get-ChildItem *.txt | Where-Object {$_.isReadOnly}
 ```
+
 It is equivalent to the following example.
 
 ```powershell
-$read_only = ( get-childitem *.txt | where-object {$_.isReadOnly} )
+$read_only = ( Get-ChildItem *.txt | Where-Object {$_.isReadOnly} )
 ```
 
 Because the pipeline operator (|) has a higher precedence than the assignment
@@ -124,7 +128,7 @@ which is the first string. Finally, it casts the selected object as a string.
 In this case, the cast has no effect.
 
 ```powershell
-C:\PS> [string]@('Windows','PowerShell','2.0')[0]
+PS> [string]@('Windows','PowerShell','2.0')[0]
 Windows
 ```
 
@@ -134,7 +138,7 @@ before the index selection. As a result, the entire array is cast as a
 array, which is the first character.
 
 ```powershell
-C:\PS> ([string]@('Windows','PowerShell','2.0'))[0]
+PS> ([string]@('Windows','PowerShell','2.0'))[0]
 W
 ```
 
@@ -143,21 +147,21 @@ precedence than the -and (logical AND) operator, the result of the expression
 is FALSE.
 
 ```powershell
-C:\PS> 2 -gt 4 -and 1
+PS> 2 -gt 4 -and 1
 False
 ```
 
 It is equivalent to the following expression.
 
 ```powershell
-C:\PS> (2 -gt 4) -and 1
+PS> (2 -gt 4) -and 1
 False
 ```
 
 If the -and operator had higher precedence, the answer would be TRUE.
 
 ```powershell
-C:\PS> 2 -gt (4 -and 1)
+PS> 2 -gt (4 -and 1)
 True
 ```
 

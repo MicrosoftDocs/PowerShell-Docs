@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822413
-external help file:  Microsoft.PowerShell.Utility-help.xml
-title:  Get-FileHash
+external help file: Microsoft.PowerShell.Utility-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822413
+schema: 2.0.0
+title: Get-FileHash
 ---
 
 # Get-FileHash

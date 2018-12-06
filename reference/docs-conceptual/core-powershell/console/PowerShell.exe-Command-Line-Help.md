@@ -45,8 +45,11 @@ Sets the default execution policy for the current session and saves it in the $e
 
 Runs the specified script in the local scope ("dot-sourced"), so that the functions and variables that the script creates are available in the current session. Enter the script file path and any parameters. **File** must be the last parameter in the command. All values typed after the **-File** parameter are interpreted as the script file path and parameters passed to that script.
 
-Parameters passed to the script are passed as literal strings (after interpretation by the current shell). For example, if you are in cmd.exe and want to pass an environment variable value, you would use the cmd.exe syntax: `powershell -File .\test.ps1 -Sample %windir%`
-In this example, the script receives the literal string `$env:windir` and not the value of that environmental variable: `powershell -File .\test.ps1 -Sample $env:windir`
+Parameters passed to the script are passed as literal strings, after interpretation by the current shell. For example, if you are in cmd.exe and want to pass an environment variable value, you would use the cmd.exe syntax: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+In contrast, running `powershell.exe -File .\test.ps1 -TestParam $env:windir` in cmd.exe results in the script receiving the literal string `$env:windir` because it has no special meaning to the current cmd.exe shell.
+The `$env:windir` style of environment variable reference _can_ be used inside a `-Command` parameter,
+since there it will be interpreted as PowerShell code.
 
 ### \-InputFormat {Text | XML}
 
@@ -98,22 +101,38 @@ Sets the window style for the session. Valid values are Normal, Minimized, Maxim
 
 ### -Command
 
-Executes the specified commands (with any parameters) as though they were typed at the PowerShell command prompt. After execution, PowerShell exits unless the `-NoExit` parameter is specified.
-Any text after `-Command` is sent as a single command line to PowerShell. This is different from how `-File` handles parameters sent to a script.
+Executes the specified commands (with any parameters) as though they were typed at the PowerShell command prompt.
+After execution, PowerShell exits unless the **NoExit** parameter is specified.
+Any text after `-Command` is sent as a single command line to PowerShell.
+This is different from how `-File` handles parameters sent to a script.
 
-The value of Command can be "-", a string. or a script block. If the value of Command is "-", the command text is read from standard input.
+The value of `-Command` can be "-", a string, or a script block.
+The results of the command are returned to the parent shell as deserialized XML objects, not live objects.
 
-Script blocks must be enclosed in braces ({}). You can specify a script block only when running PowerShell.exe in PowerShell. The results of the script are returned to the parent shell as deserialized XML objects, not live objects.
+If the value of `-Command` is "-", the command text is read from standard input.
 
-If the value of Command is a string, **Command** must be the last parameter in the command, because any characters typed after the command are interpreted as the command arguments.
+When the value of `-Command` is a string, **Command** _must_ be the last parameter specified
+because any characters typed after the command are interpreted as the command arguments.
 
-To write a string that runs a PowerShell command, use the format:
+The **Command** parameter only accepts a script block for execution when it can recognize the value passed to `-Command` as a ScriptBlock type.
+This is _only_ possible when running PowerShell.exe from another PowerShell host.
+The ScriptBlock type may be contained in an existing variable, returned from an expression,
+or parsed by the PowerShell host as a literal script block enclosed in curly braces `{}`,
+before being passed to PowerShell.exe.
 
-```powershell
+In cmd.exe, there is no such thing as a script block (or ScriptBlock type),
+so the value passed to **Command** will _always_ be a string.
+You can write a script block inside the string,
+but instead of being executed it will behave exactly as though you typed it at a typical PowerShell prompt,
+printing the contents of the script block back out to you.
+
+A string passed to `-Command` will still be executed as PowerShell,
+so the script block curly braces are often not required in the first place when running from cmd.exe.
+To execute an inline script block defined inside a string, the [call operator](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` can be used:
+
+```console
 "& {<command>}"
 ```
-
-The quotation marks indicate a string and the invoke operator (&) causes the command to be executed.
 
 ### -Help, -?, /?
 

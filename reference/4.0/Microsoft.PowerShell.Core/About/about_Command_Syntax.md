@@ -7,18 +7,18 @@ title:  about_Command_Syntax
 
 # About Command Syntax
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
-Describes the syntax diagrams that are used in Windows PowerShell.
+Describes the syntax diagrams that are used in PowerShell.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 The [Get-Help](../../Microsoft.PowerShell.Core/Get-Help.md) and
 [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md) cmdlets display
 syntax diagrams to help you construct commands correctly. This topic
 explains how to interpret the syntax diagrams.
 
-# SYNTAX DIAGRAMS
+## SYNTAX DIAGRAMS
 
 Each paragraph in a command syntax diagram represents a valid form of the
 command.
@@ -26,7 +26,7 @@ command.
 To construct a command, follow the syntax diagram from left to right. Select
 from among the optional parameters and provide values for the placeholders.
 
-Windows PowerShell uses the following notation for syntax diagrams.
+PowerShell uses the following notation for syntax diagrams.
 
 ```powershell
 <command-name> -<Required Parameter Name> <Required Parameter Value>
@@ -44,7 +44,7 @@ New-Alias [-Name] <string> [-Value] <string> [-Description <string>]
 [-PassThru] [-Scope <string>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-The syntax is capitalized for readability, but Windows PowerShell is
+The syntax is capitalized for readability, but PowerShell is
 case-insensitive.
 
 The syntax diagram has the following elements.
@@ -63,8 +63,8 @@ For example, the `Get-Help` command has a **Name** parameter that lets you
 specify the name of the topic for which help is displayed. The topic name is
 the value of the **Name** parameter.
 
-In a Windows PowerShell command, parameter names always begin with a hyphen.
-The hyphen tells Windows PowerShell that the item in the command is a
+In a PowerShell command, parameter names always begin with a hyphen.
+The hyphen tells PowerShell that the item in the command is a
 parameter name.
 
 For example, to use the Name parameter of `New-Alias`, you type the following:
@@ -167,7 +167,7 @@ returns a random number.
 
 In each parameter set, the parameters appear in position order. The order of
 parameters in a command matters only when you omit the optional parameter
-names. When parameter names are omitted, Windows PowerShell assigns values to
+names. When parameter names are omitted, PowerShell assigns values to
 parameters by position and type. For more information about parameter
 position, see `about_Parameters`.
 
@@ -310,7 +310,7 @@ In syntax examples, brackets are also used in naming and casting to .NET
 Framework types. In this context, brackets do not indicate an element is
 optional.
 
-# SEE ALSO
+## SEE ALSO
 
 - [about_Parameters](about_Parameters.md)
 - [Get-Command](../../Microsoft.PowerShell.Core/Get-Command.md)

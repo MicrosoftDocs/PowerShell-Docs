@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517140
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Save-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517140
+schema: 2.0.0
+title: Save-Package
 ---
 
 # Save-Package
@@ -50,51 +51,53 @@ Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ### PowerShellGet
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 The **Save-Package** cmdlet saves packages to the local computer without installing them.
 This cmdlet saves the newest version of a package unless you specify the *AllVersions* parameter.
-The *DestinationPath* and *LiteralPath* parameters are mutually exclusive, and cannot be added to the same command.
+The *Path* and *LiteralPath* parameters are mutually exclusive, and cannot be added to the same command.
 
 ## EXAMPLES
 
 ### Example 1: Save a package to the local computer
 ```
-PS C:\> Save-Package -Name "DSCAccelerator" -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Save-Package -Name "DSCAccelerator" -Path "C:\Users\TestUser\Downloads"
 ```
 
 This example saves the newest version of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
 
 ### Example 2: Save an exact version of a package
 ```
-PS C:\> Save-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Save-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" -Path "C:\Users\TestUser\Downloads"
 ```
 
 This example saves only version 2.1.2 of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
 
 ### Example 3: Save a package by piping results of Find-Package
 ```
-PS C:\> Find-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Save-Package -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Find-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Save-Package -Path "C:\Users\TestUser\Downloads"
 ```
 
 This command saves a package named DSCAccelerator by first locating the exact package with the **Find-Package** cmdlet, then piping the results of **Find-Package** to the **Save-Package** cmdlet.
 
 ### Example 4: Save a package to a local folder, then install the package
 ```
-PS C:\> Save-Package "notepad2" -DestinationPath "C:\temp"
+PS C:\> Save-Package "notepad2" -Path "C:\temp"
 PS C:\> Install-Package "C:\temp\notepad2.4.2.25.3.nupkg"
 ```
 
@@ -102,6 +105,36 @@ The first command saves a package to C:\temp, a folder on the local computer.
 The second command installs the saved package from the C:\temp folder, instead of installing from the web.
 
 ## PARAMETERS
+
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowPrereleaseVersions
+{{Fill AllowPrereleaseVersions Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:PackageByInputObject, NuGet, PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AllVersions
 Indicates that this cmdlet saves all available versions of the package.
@@ -125,6 +158,36 @@ Specifies one or more commands included in the package.
 ```yaml
 Type: String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConfigFile
+{{Fill ConfigFile Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet:PackageByInputObject, NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Contains
+{{Fill Contains Description}}
+
+```yaml
+Type: String
+Parameter Sets: NuGet:PackageByInputObject, NuGet
 Aliases:
 
 Required: False
@@ -179,6 +242,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FilterOnTag
+{{Fill FilterOnTag Description}}
+
+```yaml
+Type: String[]
+Parameter Sets: NuGet:PackageByInputObject, NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 Indicates that this cmdlet overrides restrictions that prevent the command from succeeding, as long as running the command does not compromise security.
 
@@ -209,6 +287,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Headers
+{{Fill Headers Description}}
+
+```yaml
+Type: String[]
+Parameter Sets: NuGet:PackageByInputObject, NuGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Includes
 Indicates the resources that the package includes.
 
@@ -216,7 +309,7 @@ Indicates the resources that the package includes.
 Type: String[]
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
-Accepted values: DscResource, Cmdlet, Function, Workflow
+Accepted values: DscResource, Cmdlet, Function, Workflow, RoleCapability
 
 Required: False
 Position: Named
@@ -243,7 +336,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 Specifies the literal path to which you want to save the package.
-You cannot add both this parameter and the *DestinationPath* parameter to the same command.
+You cannot add both this parameter and the *Path* parameter to the same command.
 
 ```yaml
 Type: String
@@ -298,7 +391,7 @@ Parameter Sets: PackageBySearch
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -341,12 +434,40 @@ Specifies one or more provider names.
 Type: String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
-Accepted values: Programs, msi, msu, PowerShellGet, nuget, chocolatey
+Accepted values: Bootstrap, NuGet, PowerShellGet
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Proxy
+
+```yaml
+Type: Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProxyCredential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -381,6 +502,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RoleCapability
+
+```yaml
+Type: String[]
+Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ScriptPublishLocation
 Specifies the script publish location.
 
@@ -402,6 +537,21 @@ Specifies the script source location.
 ```yaml
 Type: String
 Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipValidate
+{{Fill SkipValidate Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NuGet:PackageByInputObject, NuGet
 Aliases:
 
 Required: False
@@ -484,141 +634,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllowPrereleaseVersions
-{{Fill AllowPrereleaseVersions Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConfigFile
-{{Fill ConfigFile Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Contains
-{{Fill Contains Description}}
-
-```yaml
-Type: String
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FilterOnTag
-{{Fill FilterOnTag Description}}
-
-```yaml
-Type: String[]
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-{{Fill Headers Description}}
-
-```yaml
-Type: String[]
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Proxy
-
-
-```yaml
-Type: Uri
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProxyCredential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RoleCapability
-
-
-```yaml
-Type: String[]
-Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkipValidate
-{{Fill SkipValidate Description}}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: NuGet:PackageByInputObject, NuGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 locale:  en-us
@@ -48,7 +48,7 @@ When you create a PSSession, Windows PowerShell establishes a persistent connect
 Use a PSSession to run multiple commands that share data, such as a function or the value of a variable.
 To run commands in a PSSession, use the Invoke-Command cmdlet.
 To use the PSSession to interact directly with a remote computer, use the Enter-PSSession cmdlet.
-For more information, see about_PSSessions (http://go.microsoft.com/fwlink/?LinkID=135181).
+For more information, see [about_PSSessions](./About/about_PSSessions.md).
 
 You can run commands on a remote computer without creating a PSSession by using the **ComputerName** parameters of **Enter-PSSession** or **Invoke-Command**.
 When you use the **ComputerName** parameter, Windows PowerShell creates a temporary connection that is used for the command and is then closed.
@@ -252,7 +252,7 @@ Specifies the mechanism that is used to authenticate the user's credentials.
 Valid values are "**Default**", "**Basic**", "**Credssp**", "**Digest**", "**Kerberos**", "**Negotiate**", and "**NegotiateWithImplicitCredential**".
 The default value is "**Default**".
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
 
 Caution: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -305,7 +305,7 @@ You can also pipe a computer name (in quotes) to New-PSSession.
 
 To use an IP address in the value of the ComputerName parameter, the command must include the **Credential** parameter.
 Also, the computer must be configured for HTTPS transport or the IP address of the remote computer must be included in the WinRM TrustedHosts list on the local computer.
-For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in about_Remote_Troubleshooting (http://go.microsoft.com/fwlink/?LinkID=135188).
+For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in [about_Remote_Troubleshooting](./About/about_Remote_Troubleshooting.md).
 
 Note:  To include the local computer in the value of the **ComputerName** parameter, start Windows PowerShell with the "Run as administrator" option.
 
@@ -575,7 +575,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 

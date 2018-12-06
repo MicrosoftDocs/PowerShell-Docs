@@ -379,4 +379,4 @@ For more information, see [about_Signing](about_Signing.md),
 
 [Unblock-File](../../Microsoft.PowerShell.Utility/Unblock-File.md)
 
-[PowerShell.exe Console Help](http://go.microsoft.com/fwlink/?LinkID=113439)
+[Pwsh Console Help](about_pwsh.md)

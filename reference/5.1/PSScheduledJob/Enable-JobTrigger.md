@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821683
-external help file:  Microsoft.PowerShell.ScheduledJob.dll-Help.xml
-title:  Enable-JobTrigger
+external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSScheduledJob
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821683
+schema: 2.0.0
+title: Enable-JobTrigger
 ---
 
 # Enable-JobTrigger
@@ -91,21 +92,6 @@ The properties include a new JobName property that displays the name of the sche
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Specifies the job trigger to enable.
 Enter a variable that contains **ScheduledJobTrigger** objects or type a command or expression that gets **ScheduledJobTriger** objects, such as a Get-JobTrigger command.
@@ -135,6 +121,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

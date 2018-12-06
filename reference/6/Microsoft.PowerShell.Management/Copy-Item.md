@@ -222,7 +222,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -273,6 +273,22 @@ Indicates that this cmdlet copies items that cannot otherwise be changed, such a
 
 ```yaml
 Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FromSession
+Specifies the **PSSession** object from which a remote file is being copied.
+When you use this parameter, the *Path* and *LiteralPath* parameters refer to the local path on the remote machine.
+
+```yaml
+Type: PSSession
 Parameter Sets: (All)
 Aliases:
 
@@ -349,7 +365,7 @@ Parameter Sets: Path
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -371,8 +387,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
+### -ToSession
+Specifies the **PSSession** object to which a remote file is being copied.
+When you use this parameter, the *Path* and *LiteralPath* parameters refer to the local path on the remote machine.
 
+```yaml
+Type: PSSession
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -388,7 +419,6 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -400,40 +430,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FromSession
-
-Specifies the **PSSession** object from which a remote file is being copied.
-When you use this parameter, the *Path* and *LiteralPath* parameters refer to the local path on the remote machine.
-
-```yaml
-Type: PSSession
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ToSession
-
-Specifies the **PSSession** object to which a remote file is being copied.
-When you use this parameter, the *Path* and *LiteralPath* parameters refer to the local path on the remote machine.
-
-```yaml
-Type: PSSession
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

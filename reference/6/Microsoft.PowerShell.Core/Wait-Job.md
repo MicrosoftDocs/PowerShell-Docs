@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=821525
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Wait-Job
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=821525
+schema: 2.0.0
+title: Wait-Job
 ---
 
 # Wait-Job
@@ -114,7 +115,7 @@ The **Start-Job** command starts a background job that runs the **Get-EventLog**
 
 The command uses the **Using** scope modifier to indicate that the $c variable was defined on the local computer.
 The **Using** scope modifier is introduced in Windows PowerShell 3.0.
-For more information about the **Using** scope modifier, see about_Remote_Variables (http://go.microsoft.com/fwlink/?LinkID=252653).
+For more information about the **Using** scope modifier, see [about_Remote_Variables](about/about_Remote_Variables.md).
 
 The fourth command uses **Invoke-Command** to run a **Wait-Job** command in the sessions.
 It uses the *Any* parameter to wait until the first job on the remote computers is completed.
@@ -405,7 +406,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821753
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  ConvertFrom-Json
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821753
+schema: 2.0.0
+title: ConvertFrom-Json
 ---
+
 # ConvertFrom-Json
 
 ## SYNOPSIS
@@ -16,8 +18,7 @@ Converts a JSON-formatted string to a custom object or a hash table.
 ## SYNTAX
 
 ```
-ConvertFrom-Json [-InputObject] <String> [-AsHashtable]
-[<CommonParameters>]
+ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,6 +106,30 @@ the command would have thrown an error.
 
 ## PARAMETERS
 
+### -AsHashtable
+
+Converts the JSON to a hash table object. This switch was introduced in PowerShell 6.0.
+There are several scenarios where it can overcome some limitations of the `ConvertFrom-Json` cmdlet.
+
+- If the JSON contains a list with keys that only differ in casing. Without the switch, those keys
+  would be seen as identical keys and therefore only the last one would get used.
+- If the JSON contains a key that is an empty string. Without the switch, the cmdlet would throw an
+  error since a `PSCustomObject` does not allow for that but a hash table does. An example use case
+ where this can occurs are `project.lock.json` files.
+- Hash tables can be processed faster for certain data structures.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 
 Specifies the JSON strings to convert to JSON objects.
@@ -121,39 +146,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -AsHashtable
-
-Converts the JSON to a hash table object. This switch was introduced in PowerShell 6.0.
-There are several scenarios where it can overcome some limitations of the `ConvertFrom-Json` cmdlet.
-
-- If the JSON contains a list with keys that only differ in casing. Without the switch, those keys
-  would be seen as identical keys and therefore only the last one would get used.
-- If the JSON contains a key that is an empty string. Without the switch, the cmdlet would throw an
-  error since a `PSCustomObject` does not allow for that but a hash table does. An example use case
- where this can occurs are `project.lock.json` files.
-- Hash tables can be processed faster for certain data structures.
-
-```yaml
-Type: SwitchParameter
-Aliases:
-
-Required: False
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction,
--InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and
--WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -174,7 +174,7 @@ The `ConvertFrom-Json` cmdlet is implemented by using the
 
 ## RELATED LINKS
 
-[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](http://msdn.microsoft.com/en-us/library/bb299886.aspx)
+[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](https://msdn.microsoft.com/en-us/library/bb299886.aspx)
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

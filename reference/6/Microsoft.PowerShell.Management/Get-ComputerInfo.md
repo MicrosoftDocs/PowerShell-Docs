@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822226
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Get-ComputerInfo
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822226
+schema: 2.0.0
+title: Get-ComputerInfo
 ---
+
 # Get-ComputerInfo
 
 ## SYNOPSIS
@@ -68,5 +70,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.PowerShell.Management.ComputerInfo
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

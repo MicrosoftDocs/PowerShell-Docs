@@ -597,8 +597,8 @@ following command finds the processor architecture of the session in the
 \$s variable.
 
 ```powershell
-$s = New-PSSession -ComputerName Server01 -configurationName CustomShell
-invoke-command -session $s {$env:PROCESSOR_ARCHITECTURE}
+$s = New-PSSession -ComputerName Server01 -ConfigurationName CustomShell
+Invoke-Command -Session $s {$env:PROCESSOR_ARCHITECTURE}
 x86
 ```
 
@@ -778,7 +778,17 @@ the command again.
 
 3. Re-run the command that generated the error.
 
-# SEE ALSO
+## Linux and macOS limitations
+
+### Authentication
+
+Only basic authentication works on macOS and
+attempting to use other authentication schemes may result in the process crashing.
+
+Please see the [OMI authentication](https://github.com/PowerShell/psl-omi-provider#connecting-from-linux-to-windows)
+instructions.
+
+## SEE ALSO
 
 [about_Remote](about_Remote.md)
 

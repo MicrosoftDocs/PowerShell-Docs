@@ -8,12 +8,12 @@ title:  about_Special_Characters
 
 # About Special Characters
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes the special characters that you can use to control how Windows
 PowerShell interprets the next character in a command or parameter.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 PowerShell supports a set of special character sequences that are used
 to represent characters that are not part of the standard character set.
@@ -206,6 +206,6 @@ X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
 
 For more information about the stop-parsing symbol, see [about_Parsing](about_Parsing.md).
 
-# SEE ALSO
+## SEE ALSO
 
 - [about_Quoting_Rules](about_Quoting_Rules.md)

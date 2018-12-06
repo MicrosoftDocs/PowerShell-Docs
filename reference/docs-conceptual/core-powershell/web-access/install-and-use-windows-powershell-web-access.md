@@ -30,7 +30,7 @@ run a web-based Windows PowerShell console after successful authentication.
 
 Windows PowerShell Web Access setup and configuration is a three-step process:
 
-1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access)
+1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Configure the Gateway](#configure-the-gateway)
 1. [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
 
@@ -107,7 +107,7 @@ Server 2012 R2 or Windows Server 2012 by using either Windows PowerShell cmdlets
 Add Roles and Features Wizard that is opened from within Server Manager. For quick installation and
 configuration, use Windows PowerShell cmdlets, as described in this section.
 
-1. [Install Windows PowerShell Web Access](#install-Windows-powershell-web-access)
+1. [Install Windows PowerShell Web Access](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Configure the Gateway](#configure-the-gateway)
 1. [Configure a restrictive authorization rule](#configure-a-restrictive-authorization-rule)
 
@@ -283,7 +283,7 @@ administrator grants users access explicitly. Windows PowerShell Web Access acce
 managed by using the set of Windows PowerShell cmdlets described in the following table. There is
 no comparable GUI for adding or managing authorization rules. For more detailed information about
 Windows PowerShell Web Access cmdlets, see the cmdlet reference topics,
-[Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
+[Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 For more detail about Windows PowerShell Web Access authorization rules and security, see
 [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
@@ -547,7 +547,7 @@ administrator grants users access explicitly. Windows PowerShell Web Access acce
 managed by using the set of Windows PowerShell cmdlets described in the following table. There is
 no comparable GUI for adding or managing authorization rules. For more detailed information about
 Windows PowerShell Web Access cmdlets, see the cmdlet reference topics, [Windows PowerShell Web
-Access Cmdlets](cmdlets/web-access-cmdlets.md).
+Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 For more detail about Windows PowerShell Web Access authorization rules and security, see
 [Authorization Rules and Security Features of Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
@@ -606,7 +606,7 @@ valid SSL certificate from a CA.
 
    - Click **Import** to import an existing, valid certificate from a location on your network.
    - Click **Create Certificate Request** to request a certificate from a CA such as
-     [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), or
+     [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/), or
      [GeoTrust](https://www.geotrust.com/). The certificate's common name must match the host header
      in the request.
 

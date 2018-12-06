@@ -32,7 +32,7 @@ For traditional Windows PowerShell workloads, see [Installing Windows PowerShell
 
   > [!IMPORTANT]
   > On macOS, you must install OpenSSL for the PowerShell extension to work correctly.
-  > The easiest way to accomplish this is to install [Homebrew](http://brew.sh/) and then run `brew install openssl`.
+  > The easiest way to accomplish this is to install [Homebrew](https://brew.sh/) and then run `brew install openssl`.
   > VS Code can now load the PowerShell extension successfully.
 
 - **Windows**: follow the installation instructions on the [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) page

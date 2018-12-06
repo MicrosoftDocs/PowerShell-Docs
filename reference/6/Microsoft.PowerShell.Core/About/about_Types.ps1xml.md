@@ -8,12 +8,12 @@ title:  about_Types.ps1xml
 
 # About Types.ps1xml
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Explains how to use Types.ps1xml files to extend the types of objects
 that are used in PowerShell.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 Extended type data defines additional properties and methods ("members")
 of object types in PowerShell. There are two techniques for adding
@@ -21,7 +21,7 @@ extended type data to a PowerShell session.
 
 - Types.ps1xml file: An XML file that defines extended type data.
 - `Update-TypeData`: A cmdlet that reloads Types.ps1xml files and defines
-extended data for types in the current session.
+  extended data for types in the current session.
 
 This topic describes Types.ps1xml files. For more information about using the
 `Update-TypeData` cmdlet to add dynamic extended type data to the current
@@ -45,7 +45,7 @@ Sunday, January 29, 2012 9:43:57 AM
 ```
 
 You won't find the `DateTime` property in the description of the
-[`System.DateTime` structure](http://msdn.microsoft.com/library/system.datetime.aspx),
+[`System.DateTime` structure](https://msdn.microsoft.com/library/system.datetime.aspx),
 because PowerShell adds the property and it is visible only in Windows
 PowerShell.
 
@@ -398,8 +398,8 @@ tags) is always "PsStandardMembers", and the names of the properties
 - `DefaultDisplayPropertySet`: One or more properties of an object.
 
 - `DefaultKeyPropertySet`: One or more key properties of an object.
-A key property identifies instances of property values, such as
-the ID number of items in a session history.
+  A key property identifies instances of property values, such as
+  the ID number of items in a session history.
 
 For example, the following XML defines the default display of services
 (`System.ServiceProcess.ServiceController` objects) that are returned by
@@ -555,9 +555,7 @@ property of the `GetVersionInfo` static method of
 </Type>
 ```
 
-For more information, see the [Windows PowerShell Software Development
-Kit (SDK) in the MSDN (Microsoft Developer Network)
-library](http://go.microsoft.com/fwlink/?LinkId=144538).
+For more information, see the [Windows PowerShell SDK](https://go.microsoft.com/fwlink/?LinkId=144538).
 
 ## `Update-TypeData`
 
@@ -590,7 +588,7 @@ To protect users of your Types.ps1xml file, you can sign the file using a
 digital signature. For more information, see
 [about_Signing](about_Signing.md).
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Signing](about_Signing.md)
 

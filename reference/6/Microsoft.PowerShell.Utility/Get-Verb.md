@@ -3,7 +3,7 @@ ms.date:  09/07/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-online version:  http://technet.microsoft.com/library/hh852690(v=wps.630).aspx
+online version:
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 ---
 
@@ -15,7 +15,7 @@ Gets approved PowerShell verbs.
 
 ## SYNTAX
 
-```powershell
+```
 Get-Verb [[-Verb] <String[]>] [[-Group] <String[]>] [<CommonParameters>]
 ```
 
@@ -23,13 +23,13 @@ Get-Verb [[-Verb] <String[]>] [[-Group] <String[]>] [<CommonParameters>]
 
 The `Get-Verb` function gets verbs that are approved for use in PowerShell commands.
 
-PowerShell recommends cmdlet and function names have the Verb-Noun format and include an
-approved verb. This practice makes command names more consistent, predictable, and easier to
-use.
+It is recommended that PowerShell cmdlet and function names have the `Verb-Noun`
+format and include an approved verb. This practice makes command names more consistent,
+predictable, and easier to use.
 
-Commands that use unapproved verbs run in PowerShell. However, when you import a module that
-includes a command with an unapproved verb in its name, the `Import-Module` command displays a
-warning message.
+Commands that use unapproved verbs, still run in PowerShell. However, when you import a
+module that includes a command with an unapproved verb in its name, the `Import-Module`
+command displays a warning message.
 
 > [!NOTE]
 > The verb list that `Get-Verb` returns might not be complete. For an updated list of approved
@@ -37,7 +37,7 @@ warning message.
 > [Approved Verbs](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands) in
 > the Microsoft Docs.
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Get a list of all verbs
 
@@ -61,7 +61,6 @@ Uninstall  us          Lifecycle Removes a resource from an indicated location
 Unregister ur          Lifecycle Removes the entry for a resource from a repository
 Unblock    ul          Security  Removes restrictions to a resource
 Unprotect  up          Security  Removes safeguards from a resource that were added to prevent it from attack or loss
-
 ```
 
 ### Example 3 - Get all approved verbs in the Security group
@@ -106,12 +105,13 @@ Wildcards are allowed.
 Type: String[]
 Parameter Sets: (All)
 Aliases:
+Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
 
 Required: False
 Position: 1
-Default value: All verbs
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: True
+Default value: All groups
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
 ```
 
 ### -Group
@@ -124,14 +124,16 @@ Wildcards are not allowed.
 Type: String[]
 Parameter Sets: (All)
 Aliases:
-Accepted values: Common, Communications, Data, Diagnostic, Lifecycle, Other, Security
 
 Required: False
-Position: 1
-Default value: All groups
-Accept pipeline input: True (ByPropertyName)
+Position: 0
+Default value: All verbs
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -150,15 +152,15 @@ You can use any approved verb for any type of command.
 Each PowerShell verb is assigned to one of the following groups.
 
 - Common: Define generic actions that can apply to almost any cmdlet, such as Add.
-- Communications:  Define actions that apply to communications, such as Connect.
-- Data:  Define actions that apply to data handling, such as Backup.
+- Communications: Define actions that apply to communications, such as Connect.
+- Data: Define actions that apply to data handling, such as Backup.
 - Diagnostic: Define actions that apply to diagnostics, such as Debug.
 - Lifecycle: Define actions that apply to the lifecycle of a cmdlet, such as Complete.
 - Security: Define actions that apply to security, such as Revoke.
 - Other: Define other types of actions.
 
-Some of the cmdlets that are installed with PowerShell, such as `Tee-Object` and `Where-Object`, use
-unapproved verbs. These cmdlets are historic exceptions and their verbs are classified as
+Some of the cmdlets that are installed with PowerShell, such as `Tee-Object` and `Where-Object`,
+use unapproved verbs. These cmdlets are historic exceptions and their verbs are classified as
 **reserved**.
 
 ## RELATED LINKS

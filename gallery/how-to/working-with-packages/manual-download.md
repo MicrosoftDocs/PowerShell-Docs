@@ -7,8 +7,8 @@ title:  Manual Package Download
 # Manual Package Download
 
 The Powershell Gallery supports downloading a package from the website directly, without using the
-PowerShellGet cmdlets. The package will be downloaded as a NuGet package (.nupkg) file, which can
-then be easily copied to an internal repository.
+PowerShellGet cmdlets. You can download any package as a NuGet package (.nupkg) file, which you can
+then copy to an internal repository.
 
 > [!NOTE]
 > Manual package download is **not** intended as a replacement for the Install-Module cmdlet.
@@ -53,7 +53,7 @@ PowerShell code created by the package author. The steps are:
 3. Rename the folder. The default folder name is usually `<name>.<version>`. The version can
    include "-prerelease" if the module is tagged as a prerelease version. Rename the folder to just
    the module name. For example, "azurerm.storage.5.0.4-preview" becomes "azurerm.storage".
-4. Copy the folder to your PSModulePath.
+4. Copy the folder to one of the folders in the `$env:PSModulePath value`. `$env:PSModulePath` is a semicolon delimited set of paths in which PowerShell should look for modules.
 
 > [!IMPORTANT]
 > The manual download does not include any dependencies required by the module. If the package has

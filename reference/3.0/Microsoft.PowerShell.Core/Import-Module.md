@@ -743,7 +743,7 @@ By default, `Import-Module` imports all exported module commands.
 
 Commands with the same names can hide or replace commands in the session.
 To avoid command name conflicts in a session, use the `Prefix` or `NoClobber` parameters.
-For more information about name conflicts and command precedence, see "Modules and Name Conflicts" in about_Modules and about_Command_Precedence.
+For more information about name conflicts and command precedence, see "Modules and Name Conflicts" in [about_Modules](./About/about_Modules.md) and [about_Command_Precedence](./About/about_Command_Precedence.md).
 
 This parameter was added in Windows PowerShell 3.0.
 
@@ -972,7 +972,7 @@ You can pipe a module name, module object, or assembly object to `Import-Module`
 ### None, System.Management.Automation.PSModuleInfo, or System.Management.Automation.PSCustomObject
 
 By default, **Import-Module** does not generate any output.
-If you specify the *PassThru* parameter, the cmldet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
+If you specify the *PassThru* parameter, the cmdlet generates a **System.Management.Automation.PSModuleInfo** object that represents the module.
 If you specify the *AsCustomObject* parameter, it generates a **PSCustomObject** object.
 
 ## NOTES
