@@ -13,6 +13,7 @@ This guide will show you how to work with Configurations on a target Node. This 
 - [Get Configuration Values](#get-configuration-values)
 - [Get Configuration Status](#get-configuration-status)
 - [Manage Configuration Documents](#manage-configuration-documents)
+- [Publish Configurations](#publish-configurations)
 
 ## Apply a Configuration
 
@@ -46,7 +47,7 @@ Mode                LastWriteTime     Length Name
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-To apply a Configuration, use the [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet. The `-Path` parameter specifies a directory where ".mof" files reside. If no `-Computername` is specified, `Start-DSCConfiguration` will attempt to apply each Configuration to the computername specified by the name of the '.mof' file (\<computername\>.mof). Specify `-Verbose` to `Start-DSCConfiguration` to see more verbose output.
+To apply a Configuration, use the [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet. The `-Path` parameter specifies a directory where ".mof" files reside. If no `-Computername` is specified, `Start-DSCConfiguration` will attempt to apply each Configuration to the computer name specified by the name of the '.mof' file (\<computername\>.mof). Specify `-Verbose` to `Start-DSCConfiguration` to see more verbose output.
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
@@ -122,7 +123,7 @@ Beginning in PowerShell 5.0, the `-Detailed` parameter was added which returns a
 Test-DSCConfiguration -Detailed
 ```
 
-Beginning in PowerShell 5.0 you can test a Configuration without applying it. The `-ReferenceConfiguration` parameter accepts the path of a ".mof" file to test the Node against. No **Set** actions are taken against the Node. In PowerShell 4.0 there are workarounds to test a Configuration without applying it, but they are not discussed here.
+Beginning in PowerShell 5.0 you can test a Configuration without applying it. The `-ReferenceConfiguration` parameter accepts the path of a ".mof" file to test the Node against. No **Set** actions are taken against the Node. In PowerShell 4.0, there are workarounds to test a Configuration without applying it, but they are not discussed here.
 
 ## Get Configuration Values
 
@@ -214,7 +215,7 @@ Remove-DSCConfigurationDocument -Stage Current
 
 ## Publish Configurations
 
-Beginning in PowerShell 5.0, the [Publish-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet was added. This cmdlet allows you to publish a ".mof" file to a set a computers, without applying it.
+Beginning in PowerShell 5.0, the [Publish-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet was added. This cmdlet allows you to publish a ".mof" file to remote computers, without applying it.
 
 ```powershell
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)

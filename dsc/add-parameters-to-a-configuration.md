@@ -6,7 +6,7 @@ title:  Add Parameters to a Configuration
 
 # Add Parameters to a Configuration
 
-Like Functions, [Configurations](configurations.md) can be parameterized to allow more dynamic configurations based on user input. The steps are very similar to those described in [Functions with Parameters](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+Like Functions, [Configurations](configurations.md) can be parameterized to allow more dynamic configurations based on user input. The steps are similar to those described in [Functions with Parameters](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
 
 This example starts with a basic Configuration that configures the "Spooler" service to be "Running".
 
@@ -64,7 +64,7 @@ param
 )
 ```
 
-Within your configuration you can then specify your `-ComputerName` parameter when defining your Node block.
+Within your configuration, you can then specify your `-ComputerName` parameter when defining your Node block.
 
 ```powershell
 Node $ComputerName
@@ -112,7 +112,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 
 ## Advanced parameters in Configurations
 
-In addition to a `-ComputerName` paramter, we can add parameters for the service name and state. The following example adds a parameter block with a `-ServiceName` parameter and uses it to dynamically define the **Service** resource block. It also adds a `-State` parameter to dynamically define the **State** in the **Service** resource block.
+In addition to a `-ComputerName` parameter, we can add parameters for the service name and state. The following example adds a parameter block with a `-ServiceName` parameter and uses it to dynamically define the **Service** resource block. It also adds a `-State` parameter to dynamically define the **State** in the **Service** resource block.
 
 ```powershell
 Configuration TestConfig
@@ -146,7 +146,7 @@ Configuration TestConfig
 > [!NOTE]
 > In more advacned scenarios, it might make more sense to move your dynamic data into a structured [Configuration Data](configData.md).
 
-The example Configuration now takes a dynamic `$ServiceName`, but if one is not specified, the Configuration will error. You could add a default value like this example.
+The example Configuration now takes a dynamic `$ServiceName`, but if one is not specified, compiling results in an error. You could add a default value like this example.
 
 ```powershell
 [String]

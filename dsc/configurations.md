@@ -26,7 +26,7 @@ Configuration MyDscConfiguration {
 MyDscConfiguration
 ```
 
-Save the script as a .ps1 file.
+Save the script as a `.ps1` file.
 
 ## Configuration syntax
 
@@ -115,7 +115,7 @@ When you call the configuration, it:
 - Resolves all variables
 - Creates a folder in the current directory with the same name as the configuration.
 - Creates a file named _NodeName_.mof in the new directory, where _NodeName_ is the name of the target node of the configuration.
-  If there are more than one nodes, a MOF file will be created for each node.
+  If there is more than one node, a MOF file will be created for each node.
 
 > [!NOTE]
 > The MOF file contains all of the configuration information for the target node. Because of this, it’s important to keep it secure.
@@ -154,7 +154,7 @@ Mode                LastWriteTime         Length Name
 If you ran the previous examples, you might have noticed that you were warned that you were using a resource without explicitly importing it.
 Today, DSC ships with 12 resources as part of the PSDesiredStateConfiguration module.
 
-The cmdlet, [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx),can be used to determine what resources are installed on the system and available for use by the LCM.
+The cmdlet, [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), can be used to determine what resources are installed on the system and available for use by the LCM.
 Once these modules have been placed in `$env:PSModulePath` and are properly recognized by [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), they still need to be loaded within your configuration.
 
 **Import-DscResource** is a dynamic keyword that can only be recognized within a **Configuration** block, it is not a cmdlet.

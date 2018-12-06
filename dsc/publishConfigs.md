@@ -6,12 +6,12 @@ title:  Publish to a Pull Server using Configuration IDs (v4/v5)
 
 # Publish to a Pull Server using Configuration IDs (v4/v5)
 
-The sections below assume that you have already set up a Pull Server. If you have not setup your Pull Server, you can use the following guides:
+The sections below assume that you have already set up a Pull Server. If you have not set up your Pull Server, you can use the following guides:
 
-- [Setup a DSC SMB Pull Server](pullServerSmb.md)
-- [Setup a DSC HTTP Pull Server](pullServer.md)
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)
 
-Each target node can be configured to download configurations, resources, and even report it's status. This article will show you how to upload resources so they are available to be downloaded, and configure clients to download resources automatically. When the Node's receives an assigned Configuration, through **Pull** or **Push** (v5),it automatically downloads any resources required by the Configuration from the location specified in the LCM.
+Each target node can be configured to download configurations, resources, and even report its status. This article will show you how to upload resources so they are available to be downloaded, and configure clients to download resources automatically. When the Node's receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the LCM.
 
 ## Compile Configurations
 
@@ -30,7 +30,7 @@ GenericConfig
 
 Once you have compiled your generic configuration, you should have a "localhost.mof" file.
 
-## Renaming the .MOF file
+## Renaming the MOF file
 
 You can store Configuration ".mof" files on a Pull Server by **ConfigurationName** or **ConfigurationID**. Depending on how you plan to set up your pull clients, you can choose a section below to properly rename your compiled ".mof" files.
 
@@ -78,7 +78,7 @@ New-DscChecksum -Path '.\' -Force
 
 No output will be shown, but you should now see a "<GUID or Configuration Name>.mof.checksum" file.
 
-## Where to store the .MOF files and CheckSums
+## Where to store MOF files and CheckSums
 
 ### On a DSC HTTP Pull Server
 
@@ -95,9 +95,9 @@ When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull S
 
 ```
 
-### On a SMB Share
+### On an SMB Share
 
-When you set up a Pull Client to use a SMB share, you specify a **ConfigurationRepositoryShare**. All ".mof" files and ".checksum" files should then be stored in the **SourcePath** directory from the **ConfigurationRepositoryShare** block.
+When you set up a Pull Client to use an SMB share, you specify a **ConfigurationRepositoryShare**. All ".mof" files and ".checksum" files should then be stored in the **SourcePath** directory from the **ConfigurationRepositoryShare** block.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -110,12 +110,12 @@ ConfigurationRepositoryShare SMBPullServer
 
 Next, you will want to configure Pull Clients to pull the specified configuration. For more information, see one of the following guides:
 
-- [Setup a Pull Client using Configuration IDs (v4)](pullClientConfigId4.md)
-- [Setup a Pull Client using Configuration IDs (v5)](pullClientConfigId.md)
-- [Setup a Pull Client using Configuration Names (v5)](pullClientConfigNames.md)
+- [Set up a Pull Client using Configuration IDs (v4)](pullClientConfigId4.md)
+- [Set up a Pull Client using Configuration IDs (v5)](pullClientConfigId.md)
+- [Set up a Pull Client using Configuration Names (v5)](pullClientConfigNames.md)
 
 ## See also
 
-- [Setup a DSC SMB Pull Server](pullServerSmb.md)
-- [Setup a DSC HTTP Pull Server](pullServer.md)
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)
 - [Package and Upload Resources to a Pull Server](package-upload-resources.md)

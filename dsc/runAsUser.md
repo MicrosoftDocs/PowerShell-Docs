@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  Running DSC with user credentials
+title:  Use Credentials with DSC Resources
 ---
-# Running DSC with user credentials
+# Use Credentials with DSC Resources
 
 > Applies To: Windows PowerShell 5.0, Windows PowerShell 5.1
 
@@ -16,7 +16,7 @@ Every DSC resource has a **PsDscRunAsCredential** property that can be set to an
 The credential can be hard-coded as the value of the property in the configuration, or you can set the value to [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential),
 which will prompt the user for a credential when the configuration is compiled (for information about compiling configurations, see [Configurations](configurations.md).
 
-> [!NOTE] 
+> [!NOTE]
 > In PowerShell 5.0, using the **PsDscRunAsCredential** property in configurations calling composite resources was not supported.
 > In PowerShell 5.1, the **PsDscRunAsCredential** property is supported in configurations calling composite resources.
 > The **PsDscRunAsCredential** property is not available in PowerShell 4.0.

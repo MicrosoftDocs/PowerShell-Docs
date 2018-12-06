@@ -6,12 +6,12 @@ title:  Package and Upload Resources to a Pull Server
 
 # Package and Upload Resources to a Pull Server
 
-The sections below assume that you have already set up a Pull Server. If you have not setup your Pull Server, you can use the following guides:
+The sections below assume that you have already set up a Pull Server. If you have not set up your Pull Server, you can use the following guides:
 
-- [Setup a DSC SMB Pull Server](pullServerSmb.md)
-- [Setup a DSC HTTP Pull Server](pullServer.md)
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)
 
-Each target node can be configured to download configurations, resources, and even report it's status. This article will show you how to upload resources so they are available to be downloaded, and configure clients to download resources automatically. When the Node's receives an assigned Configuration, through **Pull** or **Push** (v5),it automatically downloads any resources required by the Configuration from the location specified in the LCM.
+Each target node can be configured to download configurations, resources, and even report its status. This article will show you how to upload resources so they are available to be downloaded, and configure clients to download resources automatically. When the Node's receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the LCM.
 
 ## Package Resource Modules
 
@@ -61,7 +61,7 @@ When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull S
 
 ```
 
-#### On a SMB Share
+#### On an SMB Share
 
 If you specified a **ResourceRepositoryShare**, when setting up your Pull Client, store archives and checksums in the **SourcePath** directory from the **ResourceRepositoryShare** block.
 
@@ -92,5 +92,5 @@ You can force a Node to update its resources by changing the version number in t
 
 ## See also
 
-- [Setup a DSC SMB Pull Server](pullServerSmb.md)
-- [Setup a DSC HTTP Pull Server](pullServer.md)
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)

@@ -6,7 +6,7 @@ title:  Using Import-DSCResource
 
 # Using Import-DSCResource
 
-Import-DScResource is a dynamic keyword which can only be used inside a Configuration script block, it is not a cmdlet. When you are authoring a new configuration, you must import the resources needed by your configuration using this keyword. Resources under `$phsome` are imported automatically, but it is still considered best practice to explicitly import all resources used in your [Configuration](Configuration.md).
+`Import-DScResource` is a dynamic keyword, which can only be used inside a Configuration script block. The `Import-DSCResource` keyword to import any resources needed in your Configuration. Resources under `$phsome` are imported automatically, but it is still considered best practice to explicitly import all resources used in your [Configuration](Configuration.md).
 
 The syntax for `Import-DSCResource` is shown below.
 
@@ -16,8 +16,8 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>]
 
 |Parameter  |Description  |
 |---------|---------|
-|`-Name`|This is the DSC resource name(s) that you must import. If the module name is specified, the command searches for these DSC resources within this module; otherwise the command searches the DSC resources in all DSC resource paths. Wildcards are supported.|
-|`-ModuleName`|This is the container module name(s), or module specification(s).  If the DSC resources that are required are specified, the command will try to import only those resources from the module(s).; Otherwise, the command imports all  the DSC resources in this module.|
+|`-Name`|The DSC resource name(s) that you must import. If the module name is specified, the command searches for these DSC resources within this module; otherwise the command searches the DSC resources in all DSC resource paths. Wildcards are supported.|
+|`-ModuleName`|The container module name(s), or module specification(s).  If you specify resources to import from a module, the command will try to import only those resources. If you specify the module only, the command imports all the DSC resources in the module.|
 
 You can use wildcards with the `-Name` parameter when using `Import-DSCResource`.
 
@@ -52,17 +52,19 @@ Configuration MSDSCConfiguration
 
 Things to consider when using only the Name parameter:
 
-- It has performance implications because it is resource intensive operation. It can use lots of memory on machine depending on how many modules are installed on machine.
-- It will load the first resource found with given name so in the case where ther are more than one resource with same name deployed on machine, it can end up loading different resource then the one desired.
+- It is a resource-intensive operation depending on the number of modules installed on machine.
+- It will load the first resource found with the given name. In the case where there is more than one resource with same name installed, it could load the wrong resource.
 
-The recommended way is to specify `–ModuleName` as well as described below, this accomplishes two things:
+The recommended usage is to specify `–ModuleName` with the `-Name` parameter, as described below.
+
+This usage has the following benefits:
 
 - It reduces the performance impact by limiting the search scope for the specified resource.
-- It explicitly defines the module the resource is defined in ensuring the correct resource is loaded.
+- It explicitly defines the module defining the resource, ensuring the correct resource is loaded.
 
 > [!NOTE]
 > In PowerShell 5.0, DSC resources can have multiple versions, and versions can be installed on a computer side-by-side. This is implemented by having multiple versions of a resource module that are contained in the same module folder.
-> For more information see [Using resources with multiple versions](sxsresource.md).
+> For more information, see [Using resources with multiple versions](sxsresource.md).
 
 ## Intellisense with Import-DSCResource
 
@@ -77,12 +79,12 @@ When compiling the Configuration, PowerShell uses the imported resource definiti
 Each resource block is validated, using the resource's schema definition, for the following rules.
 
 - Only properties defined in schema are used.
-- The data types for each property is correct.
+- The data types for each property are correct.
 - Keys properties are specified.
-- No read only property is used.
+- No read-only property is used.
 - Validation on value maps types.
 
-Consider this configuration:
+Consider the following configuration:
 
 ```powershell
 Configuration SchemaValidationInCorrectEnumValue
@@ -107,7 +109,7 @@ Compiling this Configuration results in an error.
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-This allows catching most of the errors during parse and compilation time instead of delaying it till run time (configuration application).
+Intellisense and schema validation allow you to catch more errors during parse and compilation time, avoiding complications at run time.
 
 > [!NOTE]
 > Each DSC resource can have a name, and a **FriendlyName** defined by the resource's schema. Below are the first two lines of "MSFT_ServiceResource.shema.mof".
@@ -123,13 +125,13 @@ There are multiple differences you see when authoring Configurations in PowerShe
 
 ### Multiple Resource Versions
 
-Installing and using multiple versions of resources side-by-side was not supported in PowerShell 4.0. If you notice issues importing resources into your Configuration, ensure that you only have one version of the resource installed.
+Installing and using multiple versions of resources side by side was not supported in PowerShell 4.0. If you notice issues importing resources into your Configuration, ensure that you only have one version of the resource installed.
 
 In the image below, two versions of the **xPSDesiredStateConfiguration** module are installed.
 
 [Multiple Resource Versions Fixed](multiple-resource-versions-broken.md)
 
-You should copy the contents of your desired module version to the top-level of the module directory.
+Copy the contents of your desired module version to the top level of the module directory.
 
 [Multiple Resource Versions Fixed](multiple-resource-versions-fixed.md)
 

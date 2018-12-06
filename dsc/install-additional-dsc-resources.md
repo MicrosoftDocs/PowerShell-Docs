@@ -40,7 +40,7 @@ To determine if you already have **PowerShell** get, or to get help installing i
 
 Once **PowerShellGet** is installed on your system, you can find and install DSC resources hosted in the [PowerShell Gallery](https://www.powershellgallery.com/).
 
-First, use the [Find-DSCResource](Find-DSCResource.md) cmdlet to find DSC resources. When you run `Find-DSCResource` for the first time, you see the following prompt to install the "Nuget provider".
+First, use the [Find-DSCResource](Find-DSCResource.md) cmdlet to find DSC resources. When you run `Find-DSCResource` for the first time, you see the following prompt to install the "NuGet provider".
 
 ```
 PS> Find-DSCResource
@@ -54,12 +54,12 @@ install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
-After pressing 'y', the "Nuget" provider is installed, you see a list of DSC resources that you can install from the PowerShell Gallery.
+After pressing 'y', the "NuGet" provider is installed, you see a list of DSC resources that you can install from the PowerShell Gallery.
 
 > [!NOTE]
 > List is not shown because it is very large.
 
-You can also specify the `-Name` parameter using wildcards, or `-Filter` parameter without wildcards to narrow down your search. This example attempts to find a "TimeZone" DSC resource using the wildcarded name "\*Time\*"
+You can also specify the `-Name` parameter using wildcards, or `-Filter` parameter without wildcards to narrow down your search. This example attempts to find a "TimeZone" DSC resource using the wildcards.
 
 > [!IMPORTANT]
 > Currently there is a bug in the `Find-DSCResource` cmdlet that prevents using wildcards in both the `-Name` and `-Filter` parameters. The second example below shows a workaround using `Where-Object`.
@@ -85,7 +85,7 @@ xSqlServerSQLDataRoot               1.0.0      mlSqlServerDSC                   
 xSqlServerStartupParam              1.0.0      mlSqlServerDSC                      PSGallery
 ```
 
-You can also use Where-Object to find DSC resources with more granular filtering. This approach will be slower than using built in filtering parameters.
+You can also use `Where-Object` to find DSC resources with more granular filtering. This approach will be slower than using built in filtering parameters.
 
 ```
 PS> Find-DSCResource | Where-Object {$_.Name -like "Time*"}
@@ -99,7 +99,7 @@ For more information on filtering, see [Where-Object](/powershell/module/microso
 
 ## Installing DSC Resources using PowerShellGet
 
-To install a DSC resource, usse the [Install-Module](Install-Module.md) cmdlet, specifying the name of the module shown under **Module** name in your search results.
+To install a DSC resource, use the [Install-Module](Install-Module.md) cmdlet, specifying the name of the module shown under **Module** name in your search results.
 
 The "TimeZone" resource exists in the "ComputerManagementDSC" module, so that is the module this example installs.
 

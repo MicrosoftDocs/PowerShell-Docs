@@ -10,7 +10,7 @@ You can make your [Configurations](configurations.md) more dynamic using PowerSh
 
 Just like a Function or a Script Block, you can use any PowerShell language within a Configuration. The statements you use will only be evaluated when you call your Configuration to compile a ".mof" file. The examples below show simple scenarios to demonstrate concepts. Conditionals are loops are more often used with parameters and Configuration Data.
 
-In this simple example, the **Service** resource block retrieves the current state of a service at compile time to generate a ".mof" file that maintains it's current state.
+In this simple example, the **Service** resource block retrieves the current state of a service at compile time to generate a ".mof" file that maintains its current state.
 
 > [!NOTE]
 > Using dynamic Resource blocks will preempt the effectiveness of Intellisense. The PowerShell parser cannot determine if the values specified are acceptable until the Configuration is compiled.

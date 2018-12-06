@@ -1,39 +1,47 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  Using resources with multiple versions
+title:  Import a specific version of an installed resource
 ---
 
-# Using resources with multiple versions
+# Import a specific version of an installed resource
 
 > Applies To: Windows PowerShell 5.0
 
-In PowerShell 5.0, DSC resources can have multiple versions, and versions can be installed on a computer side-by-side. This is implemented by having multiple versions of a resource module
-that are contained in the same module folder.
+In PowerShell 5.0, separate versions of DSC resources can be installed on a computer side by side. A resource module can store separate versions of a resource in version named folders.
 
-## Installing multiple resource versions side-by-side
+## Installing separate resource versions side by side
 
 You can use the **MinimumVersion**, **MaximumVersion**, and **RequiredVersion** parameters of the [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) cmdlet to specify
 which version of a module to install. Calling **Install-Module** without specifying a version installs the most recent version.
 
-For example, there are multiple versions of the **xFailOverCluster** module, each of which contains an **xCluster** resouce. The result of calling **Install-Module** without specifying the
-version number is as follows:
+For example, there are multiple versions of the **xFailOverCluster** module, each of which contains an **xCluster** resource. Calling **Install-Module** without specifying the
+version number installs the most recent version of the module.
 
 ```powershell
-C:\Program Files\WindowsPowerShell\Modules\xFailOverCluster> Install-Module xFailOverCluster
-C:\Program Files\WindowsPowerShell\Modules\xFailOverCluster> Get-DscResource xCluster
+PS> Install-Module xFailOverCluster
+PS> Get-DscResource xCluster
+```
 
+```output
 ImplementedAs   Name                      ModuleName                     Version    Properties
 -------------   ----                      ----------                     -------    ----------
 PowerShell      xCluster                  xFailOverCluster               1.2.0.0    {DomainAdministratorCredential, ...
 ```
 
-Now, if you call **Install-Module** again, but specify a **RequiredVersion** of 1.1.0.0, it results in the following:
+To install a specific version of a module, specify a **RequiredVersion** of 1.1.0.0. This installs the specified version side by side with the installed version.
 
 ```powershell
-C:\Program Files\WindowsPowerShell\Modules\xFailOverCluster> Install-Module xFailOverCluster -RequiredVersion 1.1
-C:\Program Files\WindowsPowerShell\Modules\xFailOverCluster> Get-DscResource xCluster
+PS> Install-Module xFailOverCluster -RequiredVersion 1.1
+```
 
+Now, you see both version of the module listed when you use `Get-DSCResource`.
+
+```powershell
+PS> Get-DscResource xCluster
+```
+
+```output
 ImplementedAs   Name                      ModuleName                     Version    Properties
 -------------   ----                      ----------                     -------    ----------
 PowerShell      xCluster                  xFailOverCluster               1.1        {DomainAdministratorCredential, Name, ...
@@ -42,7 +50,7 @@ PowerShell      xCluster                  xFailOverCluster               1.2.0.0
 
 ## Specifying a resource version in a configuration
 
-If you have multiple resources installed on a computer, you must specify the version of that resource when you use it in a configuration. You do this by specifying the **ModuleVersion**
+If you have separate resource versions installed on a computer, you must specify the version of that resource when you use it in a configuration. You do this by specifying the **ModuleVersion**
 parameter of the **Import-DscResource** keyword. If you fail to specify the version of a resource module of a resource of which you have more than one version installed, the configuration
 generates an error.
 

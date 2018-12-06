@@ -48,9 +48,9 @@
           href: import-dscresource.md
         - name: Install additional DSC Resources
           href: installing-additional-dsc-resources.md
-        - name: Use DSC resources with multiple versions
+        - name: Import a specific version of an installed resource
           href: sxsResource.md
-        - name: Using Credentials with DSC Resources
+        - name: Use Credentials with DSC Resources
           href: runAsUser.md
       - name: Writing Dynamic Configurations
         items:
@@ -109,14 +109,8 @@
         href: authoringResourceComposite.md
     - name: Write a C# MOF-based resources
       href: authoringResourceMofCS.md
-    - name: Write a Python MOF based resource
-      href:
 - name: Manage a System's Configuration
   items:
-  - name: Concepts
-    items:
-    - name: Local Configuration Manager
-      href: lcm.md
   - name: How-to guides
     items:
     - name: Apply, Get, and Test Configurations on a Node

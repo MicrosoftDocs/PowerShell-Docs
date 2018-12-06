@@ -191,7 +191,7 @@ configuration Sample_MetaConfigurationToRegisterWithLessSecurePullServer
         [string] $NodeName = 'localhost',
 
         [ValidateNotNullOrEmpty()]
-        [string] $RegistrationKey, #same as the one used to setup pull server in previous configuration
+        [string] $RegistrationKey, #same as the one used to set up pull server in previous configuration
 
         [ValidateNotNullOrEmpty()]
         [string] $ServerName = 'localhost' #node name of the pull server, same as $NodeName used in previous configuration
@@ -315,8 +315,8 @@ with incremental enhancements.
 
 The following topics describe setting up pull clients in detail:
 
-- [Setting up a DSC pull client using a configuration ID](pullClientConfigID.md)
-- [Setting up a DSC pull client using configuration names](pullClientConfigNames.md)
+- [Set up a DSC pull client using a configuration ID](pullClientConfigID.md)
+- [Set up a DSC pull client using configuration names](pullClientConfigNames.md)
 - [Partial configurations](partialConfigs.md)
 
 ## See also

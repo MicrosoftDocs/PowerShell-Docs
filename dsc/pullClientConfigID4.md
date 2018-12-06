@@ -1,10 +1,10 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  Setup a Pull Client using Configuration IDs in PowerShell 4.0
+title:  Set up a Pull Client using Configuration IDs in PowerShell 4.0
 ---
 
-# Setup a Pull Client using Configuration IDs in PowerShell 4.0
+# Set up a Pull Client using Configuration IDs in PowerShell 4.0
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -15,12 +15,12 @@ title:  Setup a Pull Client using Configuration IDs in PowerShell 4.0
 > (includes features beyond Pull Server on Windows Server) or one of the community solutions
 > listed [here](pullserver.md#community-solutions-for-pull-service).
 
-Before you setup a pull client, you should setup a pull server. Though this order is not required, it helps with troubleshooting, and helps you ensure that the registration was successful. To setup a pull server, you can use the following guides:
+Before setting up a pull client, you should set up a pull server. Though this order is not required, it helps with troubleshooting, and helps you ensure that the registration was successful. To set up a pull server, you can use the following guides:
 
-- [Setup a DSC SMB Pull Server](pullServerSmb.md)
-- [Setup a DSC HTTP Pull Server](pullServer.md)
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)
 
-Each target node can be configured to download configurations, resources, and even report it's status. The sections below show you how to configure a pull client with a SMB share or HTTP DSC Pull Server. When the Node's LCM refreshes, it will reach out to the configured location to download any assigned configurations. If any required resources do not exist on the Node, it will automatically download them from the configured location. If the Node is configured with a [Report Server](reportServer.md), it will then report the status of the operation.
+Each target node can be configured to download configurations, resources, and even report its status. The sections below show you how to configure a pull client with an SMB share or HTTP DSC Pull Server. When the Node's LCM refreshes, it will reach out to the configured location to download any assigned configurations. If any required resources do not exist on the Node, it will automatically download them from the configured location. If the Node is configured with a [Report Server](reportServer.md), it will then report the status of the operation.
 
 ## Configure the pull client LCM
 
@@ -34,7 +34,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## Configuration ID
 
-The examples below set the **ConfigurationID** property of the LCM to a **Guid** that had been previously created for this purpose. The **ConfigurationID** is what the LCM uses to find the appropriate configuration on the pull server. The configuration MOF file on the pull server must be named `ConfigurationID.mof`, where *ConfigurationID* is the value of the **ConfigurationID** property of the target node's LCM. For more information see [Publish to a Pull Server using Configuration IDs (v4/v5)](publishConfigId.md).
+The examples below set the **ConfigurationID** property of the LCM to a **Guid** that had been previously created for this purpose. The **ConfigurationID** is what the LCM uses to find the appropriate configuration on the pull server. The configuration MOF file on the pull server must be named `ConfigurationID.mof`, where *ConfigurationID* is the value of the **ConfigurationID** property of the target node's LCM. For more information, see [Publish to a Pull Server using Configuration IDs (v4/v5)](publishConfigId.md).
 
 You can create a random **Guid** using the example below.
 
@@ -42,13 +42,13 @@ You can create a random **Guid** using the example below.
 [System.Guid]::NewGuid()
 ```
 
-## Setup a Pull Client to download Configurations
+## Set up a Pull Client to download Configurations
 
-Each target Node has to be told to use pull mode and be given the URL where it can contact the pull server to get configurations. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, with a **LocalConfigurationManager** block. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig4.md).
+Each client must be configured in **Pull** mode and given the pull server url where its configuration is stored. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, with a **LocalConfigurationManager** block. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig4.md).
 
 ## HTTP DSC Pull Server
 
-If the pull server is set up as a web service, you set the **DownloadManagerName** to **WebDownloadManager**. The **WebDownloadManager** requires that a **ServerUrl** be specified to the **DownloadManagerCustomData** key. You can also specify a value for **AllowUnsecureConnection**, as in the example below. The following script configures the LCM to pull configurations from a server named "PullServer".
+If the pull server is set up as a web service, you set the **DownloadManagerName** to **WebDownloadManager**. The **WebDownloadManager** requires that you specify a **ServerUrl** to the **DownloadManagerCustomData** key. You can also specify a value for **AllowUnsecureConnection**, as in the example below. The following script configures the LCM to pull configurations from a server named "PullServer".
 
 ```powershell
 Configuration PullClientConfigId
@@ -70,7 +70,7 @@ PullClientConfigId -Output "."
 
 ## SMB Share
 
-If the pull server is set up as an SMB file share, rather than a web service, you set the **DownloadManagerName** to **DscFileDownloadManager** rather than the **WebDownLoadManager**. The **DscFileDownloadManager** requires that a **SourcePath** property be specified in the **DownloadManagerCustomData**. The following script configures the LCM to pull configurations from an SMB share named "SmbDscShare" on a server named "CONTOSO-SERVER".
+If the pull server is set up as an SMB file share, rather than a web service, you set the **DownloadManagerName** to **DscFileDownloadManager** rather than the **WebDownLoadManager**. The **DscFileDownloadManager** requires that you specify a **SourcePath** property in the **DownloadManagerCustomData**. The following script configures the LCM to pull configurations from an SMB share named "SmbDscShare" on a server named "CONTOSO-SERVER".
 
 ```powershell
 Configuration PullClientConfigId
@@ -100,5 +100,5 @@ Once the pull client has been configured, you can use the following guides to pe
 
 ## See Also
 
-- [Setting up a DSC web pull server](pullServer.md)
-- [Setting up a DSC SMB pull server](pullServerSMB.md)
+- [Set up a DSC web pull server](pullServer.md)
+- [Set up a DSC SMB pull server](pullServerSMB.md)

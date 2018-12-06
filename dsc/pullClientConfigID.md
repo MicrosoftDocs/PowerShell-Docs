@@ -1,10 +1,10 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  Setup a Pull Client using Configuration IDs in PowerShell 5.0 and later
+title:  Set up a Pull Client using Configuration IDs in PowerShell 5.0 and later
 ---
 
-# Setup a Pull Client using Configuration IDs in PowerShell 5.0 and later
+# Set up a Pull Client using Configuration IDs in PowerShell 5.0 and later
 
 > Applies To: Windows PowerShell 5.0
 
@@ -15,12 +15,12 @@ title:  Setup a Pull Client using Configuration IDs in PowerShell 5.0 and later
 > (includes features beyond Pull Server on Windows Server) or one of the community solutions
 > listed [here](pullserver.md#community-solutions-for-pull-service).
 
-Before you setup a pull client, you should setup a pull server. Though this order is not required, it helps with troubleshooting, and helps you ensure that the registration was successful. To setup a pull server, you can use the following guides:
+Before setting up a pull client, you should set up a pull server. Though this order is not required, it helps with troubleshooting, and helps you ensure that the registration was successful. To set up a pull server, you can use the following guides:
 
-- [Setup a DSC SMB Pull Server](pullServerSmb.md)
-- [Setup a DSC HTTP Pull Server](pullServer.md)
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)
 
-Each target node can be configured to download configurations, resources, and even report it's status. The sections below show you how to configure a pull client with a SMB share or HTTP DSC Pull Server. When the Node's LCM refreshes, it will reach out to the configured location to download any assigned configurations. If any required resources do not exist on the Node, it will automatically download them from the configured location. If the Node is configured with a [Report Server](reportServer.md), it will then report the status of the operation.
+Each target node can be configured to download configurations, resources, and even report its status. The sections below show you how to configure a pull client with an SMB share or HTTP DSC Pull Server. When the Node's LCM refreshes, it will reach out to the configured location to download any assigned configurations. If any required resources do not exist on the Node, it will automatically download them from the configured location. If the Node is configured with a [Report Server](reportServer.md), it will then report the status of the operation.
 
 > **Note**: This topic applies to PowerShell 5.0. For information on setting up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md)
 
@@ -46,9 +46,9 @@ You can create a random **Guid** using the example below, or by using the [New-G
 
 For more information about using **Guids** in your environment, see [Plan for GUIDs](secureServer.mof#GUIDs).
 
-## Setup a Pull Client to download Configurations
+## Set up a Pull Client to download Configurations
 
-Each target Node has to be told to use pull mode and be given the URL where it can contact the pull server to get configurations. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).
+Each client must be configured in **Pull** mode and given the pull server url where its configuration is stored. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).
 
 ### HTTP DSC Pull Server
 
@@ -107,11 +107,11 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-In the script, the **ConfigurationRepositoryShare** block defines the pull server, which in this case, is just a SMB share.
+In the script, the **ConfigurationRepositoryShare** block defines the pull server, which in this case, is just an SMB share.
 
-## Setup a Pull Client to download Resources
+## Set up a Pull Client to download Resources
 
-If you specify only the **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block in your LCM configuration (as in the previous examples), the pull client will pull resources from the same location it retrieves its configurations. You can also specify separate locations for resources. To specify a resource location as a separate server, use the **ResourceRepositoryWeb** block. To specify a resource location as a SMB share, use the **ResourceRepositoryShare** block.
+If you specify only the **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block in your LCM configuration (as in the previous examples), the pull client will pull resources from the same location it retrieves its configurations. You can also specify separate locations for resources. To specify a resource location as a separate server, use the **ResourceRepositoryWeb** block. To specify a resource location as an SMB share, use the **ResourceRepositoryShare** block.
 
 > [!NOTE]
 > You can combine **ConfigurationRepositoryWeb** with **ResourceRepositoryShare** or **ConfigurationRepositoryShare** with **ResourceRepositoryWeb**. Examples of this are not shown below.
@@ -183,7 +183,7 @@ PullClientConfigID
 
 #### Automatically download Resources in Push Mode
 
-Beginning in PowerShell 5.0, your pull clients can download modules from a SMB share, even when they are configured for **Push** mode. This is especially useful in scenarios where you do not want to set up a Pull Server. The **ResourceRepositoryShare** block can be used without specifying a **ConfigurationRepositoryShare**. The following example shows a metaconfiguration that sets up a client to pull resources from an SMB Share `\\SMBPullServer\Resources`. When the Node is **PUSHED** a configuration, it will automatically download any required resources, from the share specified.
+Beginning in PowerShell 5.0, your pull clients can download modules from an SMB share, even when they are configured for **Push** mode. This is especially useful in scenarios where you do not want to set up a Pull Server. The **ResourceRepositoryShare** block can be used without specifying a **ConfigurationRepositoryShare**. The following example shows a metaconfiguration that sets up a client to pull resources from an SMB Share `\\SMBPullServer\Resources`. When the Node is **PUSHED** a configuration, it will automatically download any required resources, from the share specified.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -206,7 +206,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## Setup a Pull Client to report status
+## Set up a Pull Client to report status
 
 By default, Nodes will not send reports to a configured Pull Server. You can use a single pull server for configurations, resources, and reporting, but you have to create a
 **ReportRepositoryWeb** block to set up reporting.
