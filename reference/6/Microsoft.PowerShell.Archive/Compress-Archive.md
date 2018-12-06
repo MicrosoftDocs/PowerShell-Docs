@@ -177,7 +177,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-{{Fill PassThru Description}}
+
+Causes the cmdlet to output a file object representing the archive file created.
 
 ```yaml
 Type: SwitchParameter
@@ -271,3 +272,5 @@ You can pipe a string that contains a path to one or more files.
 ## NOTES
 
 ## RELATED LINKS
+
+[Expand-Archive](expand-archive.md)

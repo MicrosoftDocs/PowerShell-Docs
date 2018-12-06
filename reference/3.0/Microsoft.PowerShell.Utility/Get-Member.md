@@ -115,7 +115,7 @@ In this case, the extended member is the Name property, which is an alias proper
 ### Example 4
 
 ```powershell
-PS C:\> Get-EventLog -Log System | Get-Member -MemberType ScriptProperty
+PS> Get-EventLog -Log System | Get-Member -MemberType ScriptProperty
 
 
    TypeName: System.Diagnostics.EventLogEntry
@@ -158,20 +158,28 @@ The results show that only process objects (System.Diagnostics.Process) and serv
 ### Example 6
 
 ```
-PS> $a = get-member -inputobject @(1)
-PS> $a.count
+PS> $A = @(1)
+PS> $A.Count
 1
-PS> $a = get-member -inputobject 1,2,3
+PS> Get-Member -InputObject $A
 TypeName: System.Object[]
-
 Name               MemberType    Definition
 ----               ----------    ----------
 Count              AliasProperty Count = Length
 Address            Method        System.Object& Address(Int32 )
 Clone              Method        System.Object Clone()
 ...
-PS> $a.count
-1
+PS> $A = @(1,2,3)
+PS> Get-Member -InputObject $A
+TypeName: System.Object[]
+Name               MemberType    Definition
+----               ----------    ----------
+Count              AliasProperty Count = Length
+Address            Method        System.Object& Address(Int32 )
+Clone              Method        System.Object Clone()
+...
+PS> $A.Count
+3
 ```
 
 This example demonstrates how to find the properties and methods of an array of objects when you have only one object of the given type.

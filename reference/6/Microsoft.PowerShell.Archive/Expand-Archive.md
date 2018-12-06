@@ -12,18 +12,19 @@ title: Expand-Archive
 # Expand-Archive
 
 ## SYNOPSIS
-
 Extracts files from a specified archive (zipped) file.
 
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
 Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -58,7 +59,6 @@ This command extracts the contents of an existing archive file in the current fo
 
 Specifies the path to the folder in which you want the command to save extracted files.
 Enter the path to a folder, but do not specify a file name or file name extension.
-This parameter is required.
 
 ```yaml
 Type: String
@@ -67,7 +67,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: Current location
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -108,7 +108,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-{{Fill PassThru Description}}
+
+Causes the cmdlet to output a list of the files expanded from the archive.
 
 ```yaml
 Type: SwitchParameter
@@ -172,7 +173,10 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -182,10 +186,13 @@ You can pipe a string that contains a path to an existing archive file.
 
 ## OUTPUTS
 
-### None
+### System.IO.FileSystemInfo
+
+When the `-PassThru` parameter is used, the cmdlet outputs a list of files that where expanded from
+the archive.
 
 ## NOTES
 
 ## RELATED LINKS
 
-## RELATED LINKS
+[Compress-Archive](compress-archive.md)
