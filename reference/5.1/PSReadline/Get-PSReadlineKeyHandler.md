@@ -63,7 +63,6 @@ Ctrl+c                CopyOrCancelLine        Either copy selected text to the c
 Ctrl+C                Copy                    Copy selected region to the system clipboard.  If no region is selected, copy the whole line
 Ctrl+l                ClearScreen             Clear the screen and redraw the current line at the top of the screen
 Ctrl+r                ReverseSearchHistory    Search history backwards interactively
-â€¦
 ```
 
 This command returns all key mappings, bound and unbound.
@@ -113,7 +112,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -129,7 +128,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

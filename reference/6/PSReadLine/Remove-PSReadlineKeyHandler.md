@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PSReadLine
-ms.date: 06/09/2017
+ms.date: 12/07/2018
 online version: http://go.microsoft.com/fwlink/?LinkId=821451
 schema: 2.0.0
 title: Remove-PSReadlineKeyHandler
@@ -12,19 +12,17 @@ title: Remove-PSReadlineKeyHandler
 # Remove-PSReadlineKeyHandler
 
 ## SYNOPSIS
-
 Removes a key binding.
 
 ## SYNTAX
 
 ```
-Remove-PSReadlineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
+Remove-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **Remove-PSReadlineKeyHandler** cmdlet removes a specified key binding.
-Create a key binding by running the Set-PSReadlineKeyHandler cmdlet.
+The `Remove-PSReadlineKeyHandler` cmdlet removes a specified key binding.
 
 ## EXAMPLES
 
@@ -34,21 +32,21 @@ Create a key binding by running the Set-PSReadlineKeyHandler cmdlet.
 Remove-PSReadlineKeyHandler -Chord Ctrl+Shift+B
 ```
 
-This command removes the binding from the key combination, or chord, Ctrl+Shift+B.
-The Ctrl+Shift+B chord is created in the `Set-PSReadlineKeyHandler` topic.
+This command removes the binding from the key combination, or chord, `Ctrl+Shift+B`.
+The `Ctrl+Shift+B` chord is created in the `Set-PSReadlineKeyHandler` article.
 
 ## PARAMETERS
 
 ### -Chord
 
-Specifies an array of  keys or sequences of keys to be removed.
-A single binding is specified by using a single string.
-If the binding is a sequence of keys, separate the keys by a comma, as in the following example:
+Specifies an array of keys or sequences of keys to be removed. A single binding is specified by
+using a single string. If the binding is a sequence of keys, separate the keys by a comma, as in
+the following example:
 
-"Ctrl+X,Ctrl+L"
+`Ctrl+X,Ctrl+L`
 
-This parameter accepts multiple strings.
-Each string is a separate binding, not a sequence of keys for a single binding.
+This parameter accepts an array of strings. Each string is a separate binding, not a sequence of
+keys for a single binding.
 
 ```yaml
 Type: String[]
@@ -64,7 +62,7 @@ Accept wildcard characters: False
 
 ### -ViMode
 
-{{Fill ViMode Description}}
+Specify which vi mode the binding applies to. Possible values are: Insert, Command.
 
 ```yaml
 Type: ViMode
@@ -80,7 +78,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -89,6 +91,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
+
+### None
 
 ## NOTES
 

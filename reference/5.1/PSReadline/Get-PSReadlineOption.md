@@ -34,7 +34,7 @@ This provides a slightly simpler way to set syntax coloring options for multiple
 ```
 PS C:\> Get-PSReadlineOption
 EditMode                               : Windows
-ContinuationPrompt                     : >>>
+ContinuationPrompt                     : >>
 ContinuationPromptForegroundColor      : DarkYellow
 ContinuationPromptBackgroundColor      : DarkMagenta
 ExtraPromptLineCount                   : 0
