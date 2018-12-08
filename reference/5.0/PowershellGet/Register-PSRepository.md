@@ -126,6 +126,8 @@ Accept wildcard characters: False
 
 ### -SourceLocation
 Specifies the URI for discovering and installing modules from this repository.
+A URI can be a NuGet server feed (most common situation), HTTP, HTTPS, FTP or file location.
+
 For example, for NuGet-based repositories, the source location is similar to http://someNuGetUrl.com/api/v2.
 
 ```yaml
