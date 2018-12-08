@@ -42,7 +42,7 @@ This command uninstalls version 2.5 of the script file named MyScript.
 ## PARAMETERS
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Allows you to uninstall a script marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter

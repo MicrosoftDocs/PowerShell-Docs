@@ -109,7 +109,7 @@ Because this example is operating against a NuGet-based repository, the *Filter*
 ## PARAMETERS
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Includes in the results modules marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter

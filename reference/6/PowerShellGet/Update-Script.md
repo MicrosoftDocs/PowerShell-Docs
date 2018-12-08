@@ -58,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Allows you to update a script with the newer script marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter
