@@ -9,7 +9,7 @@ external help file: PSReadLine-help.xml
 # PSConsoleHostReadLine
 
 ## SYNOPSIS
-This function is the main entry point for PSReadline.
+This function is the main entry point for PSReadLine.
 
 ## SYNTAX
 

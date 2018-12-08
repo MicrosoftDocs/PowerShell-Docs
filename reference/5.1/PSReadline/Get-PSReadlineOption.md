@@ -6,7 +6,7 @@ Module Name: PSReadLine
 ms.date: 12/07/2018
 online version: http://go.microsoft.com/fwlink/?LinkId=821450
 schema: 2.0.0
-title: Get-PSReadlineOption
+title: Get-PSReadLineOption
 ---
 
 # Get-PSReadLineOption
@@ -22,9 +22,9 @@ Get-PSReadLineOption [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Get-PSReadlineOption` cmdlet returns the current state of the settings that can be configured
-by using the `Set-PSReadlineOption` cmdlet. You can use the returned object to change
-**PSReadline** options. This provides a slightly simpler way to set syntax coloring options for
+The `Get-PSReadLineOption` cmdlet returns the current state of the settings that can be configured
+by using the `Set-PSReadLineOption` cmdlet. You can use the returned object to change
+**PSReadLine** options. This provides a slightly simpler way to set syntax coloring options for
 multiple kinds of tokens.
 
 ## EXAMPLES
@@ -32,7 +32,7 @@ multiple kinds of tokens.
 ### Example 1: Get options and their values
 
 ```powershell
-Get-PSReadlineOption
+Get-PSReadLineOption
 ```
 
 ```Output
@@ -56,7 +56,7 @@ DingDuration                           : 50
 BellStyle                              : Audible
 HistorySearchCaseSensitive             : False
 ViModeIndicator                        : None
-HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\Cons
+HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\Cons
                                          oleHost_history.txt
 HistorySaveStyle                       : SaveIncrementally
 DefaultTokenForegroundColor            : DarkYellow
@@ -87,7 +87,7 @@ ErrorForegroundColor                   : Red
 ErrorBackgroundColor                   : DarkMagenta
 ```
 
-This command returns the list of available PSReadline options and their current values.
+This command returns the list of available PSReadLine options and their current values.
 
 ## PARAMETERS
 
@@ -112,10 +112,10 @@ You cannot pipe objects to this cmdlet.
 
 ## RELATED LINKS
 
-[Remove-PSReadlineKeyHandler](Remove-PSReadlineKeyHandler.md)
+[Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
 
-[Get-PSReadlineKeyHandler](Get-PSReadlineKeyHandler.md)
+[Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
 
-[Set-PSReadlineOption](Set-PSReadlineOption.md)
+[Set-PSReadLineOption](Set-PSReadLineOption.md)
 
-[Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
+[Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)

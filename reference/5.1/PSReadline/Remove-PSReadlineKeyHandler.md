@@ -6,10 +6,10 @@ Module Name: PSReadLine
 ms.date: 12/07/2018
 online version: http://go.microsoft.com/fwlink/?LinkId=821451
 schema: 2.0.0
-title: Remove-PSReadlineKeyHandler
+title: Remove-PSReadLineKeyHandler
 ---
 
-# Remove-PSReadlineKeyHandler
+# Remove-PSReadLineKeyHandler
 
 ## SYNOPSIS
 Removes a key binding.
@@ -22,18 +22,18 @@ Remove-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParam
 
 ## DESCRIPTION
 
-The `Remove-PSReadlineKeyHandler` cmdlet removes a specified key binding.
+The `Remove-PSReadLineKeyHandler` cmdlet removes a specified key binding.
 
 ## EXAMPLES
 
 ### Example 1: Remove a binding
 
 ```powershell
-Remove-PSReadlineKeyHandler -Chord Ctrl+Shift+B
+Remove-PSReadLineKeyHandler -Chord Ctrl+Shift+B
 ```
 
 This command removes the binding from the key combination, or chord, `Ctrl+Shift+B`.
-The `Ctrl+Shift+B` chord is created in the `Set-PSReadlineKeyHandler` article.
+The `Ctrl+Shift+B` chord is created in the `Set-PSReadLineKeyHandler` article.
 
 ## PARAMETERS
 
@@ -98,10 +98,10 @@ You cannot pipe objects to this cmdlet.
 
 ## RELATED LINKS
 
-[Get-PSReadlineKeyHandler](Get-PSReadlineKeyHandler.md)
+[Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
 
-[Get-PSReadlineOption](Get-PSReadlineOption.md)
+[Get-PSReadLineOption](Get-PSReadLineOption.md)
 
-[Set-PSReadlineOption](Set-PSReadlineOption.md)
+[Set-PSReadLineOption](Set-PSReadLineOption.md)
 
-[Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
+[Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)

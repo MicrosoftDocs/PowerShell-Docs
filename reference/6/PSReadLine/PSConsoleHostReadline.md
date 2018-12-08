@@ -4,12 +4,13 @@ schema: 2.0.0
 locale: en-us
 keywords: powershell,cmdlet
 external help file: PSReadLine-help.xml
+title:  PSConsoleHostReadLine
 ---
 
 # PSConsoleHostReadLine
 
 ## SYNOPSIS
-This function is the main entry point for PSReadline.
+This function is the main entry point for PSReadLine.
 
 ## SYNTAX
 

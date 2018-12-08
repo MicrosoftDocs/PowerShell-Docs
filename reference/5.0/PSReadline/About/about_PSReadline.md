@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  About PSReadLine
 ---
-
 # PSReadLine
 
 ## about_PSReadLine

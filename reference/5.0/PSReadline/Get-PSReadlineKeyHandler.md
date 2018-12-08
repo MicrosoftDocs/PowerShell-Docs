@@ -6,10 +6,10 @@ Module Name: PSReadLine
 ms.date:  12/07/2018
 online version: http://go.microsoft.com/fwlink/?LinkID=821449
 schema: 2.0.0
-title: Get-PSReadlineKeyHandler
+title: Get-PSReadLineKeyHandler
 ---
 
-# Get-PSReadlineKeyHandler
+# Get-PSReadLineKeyHandler
 
 ## SYNOPSIS
 Gets the key bindings for the PSReadLine module.
@@ -22,7 +22,7 @@ Get-PSReadLineKeyHandler [-Bound] [-Unbound] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The **Get-PSReadlineKeyHandler** cmdlet returns the currently bound key bindings.
+The **Get-PSReadLineKeyHandler** cmdlet returns the currently bound key bindings.
 
 ## EXAMPLES
 
@@ -31,7 +31,7 @@ The **Get-PSReadlineKeyHandler** cmdlet returns the currently bound key bindings
 This command returns all key mappings, bound and unbound.
 
 ```powershell
-Get-PSReadlineKeyHandler -Bound -Unbound
+Get-PSReadLineKeyHandler -Bound -Unbound
 ```
 
 ```Output
@@ -72,7 +72,7 @@ Ctrl+r                ReverseSearchHistory    Search history backwards interacti
 This command returns only bound keys and key combinations.
 
 ```powershell
-Get-PSReadlineKeyHandler
+Get-PSReadLineKeyHandler
 ```
 
 ```Output
@@ -160,10 +160,10 @@ each unbound function.
 
 ## RELATED LINKS
 
-[Remove-PSReadlineKeyHandler](Remove-PSReadlineKeyHandler.md)
+[Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
 
-[Get-PSReadlineOption](Get-PSReadlineOption.md)
+[Get-PSReadLineOption](Get-PSReadLineOption.md)
 
-[Set-PSReadlineOption](Set-PSReadlineOption.md)
+[Set-PSReadLineOption](Set-PSReadLineOption.md)
 
-[Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
+[Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)

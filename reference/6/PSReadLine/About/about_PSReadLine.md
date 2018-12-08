@@ -1,3 +1,10 @@
+---
+ms.date:  12/08/2018
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+title:  About PSReadLine
+---
 # PSReadLine
 
 ## about_PSReadLine
@@ -1203,8 +1210,9 @@ Prompts for a search string and initiates search upon AcceptLine.
 
 ## Custom Key Bindings
 
-PSReadLine supports custom key bindings using the cmdlet `Set-PSReadLineKeyHandler`. Most
-custom key bindings call one of the above functions, for example
+PSReadLine supports custom key bindings using the cmdlet
+`Set-PSReadLineKeyHandler`. Most custom key bindings call one of the above
+functions, for example
 
 ```powershell
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -1390,7 +1398,7 @@ typical call looks like
 PSReadLine requires PowerShell 3.0, or newer, and the console host. It
 does not work in Windows PowerShell ISE.
 
-### FEEDBACK & CONTRIBUTING TO PSREADLINE
+### FEEDBACK & CONTRIBUTING TO PSReadLine
 
 [PSReadLine on GitHub](https://github.com/lzybkr/PSReadLine)
 

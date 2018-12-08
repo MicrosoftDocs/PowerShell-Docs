@@ -14,25 +14,25 @@ Module Name: PSReadLine
 
 ## Description
 
-The PSReadline module contains cmdlets that let you customize the command-line editing environment
+The PSReadLine module contains cmdlets that let you customize the command-line editing environment
 in PowerShell. These articles documents PSReadLine v1.2. This version ships in PowerShell v5.1 and below.
 
 ## PSReadLine Cmdlets
 
 ### [PSConsoleHostReadLine](PSConsoleHostReadLine.md)
-The main entry point for PSReadline.
+The main entry point for PSReadLine.
 
 ### [Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
-Gets the key bindings for the PSReadline module.
+Gets the key bindings for the PSReadLine module.
 
 ### [Get-PSReadLineOption](Get-PSReadLineOption.md)
 Gets values for the options that can be configured.
 
-### [Remove-PSReadLineKeyHandler](Remove-PSReadlineKeyHandler.md)
+### [Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
 Removes a key binding.
 
 ### [Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)
-Binds keys to user-defined or PSReadline-provided key handlers.
+Binds keys to user-defined or PSReadLine-provided key handlers.
 
 ### [Set-PSReadLineOption](Set-PSReadLineOption.md)
-Customizes the behavior of command line editing in PSReadline.
+Customizes the behavior of command line editing in PSReadLine.
