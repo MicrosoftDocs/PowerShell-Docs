@@ -503,7 +503,7 @@ Accept wildcard characters: False
 ### -HistorySearchCursorMovesToEnd
 
 Indicates that the cursor moves to the end of commands that you load from history by using a search.
-When this parameter is set to `$False`, the cursor remains at the position it was when you pressed
+When this parameter is set to `$false`, the cursor remains at the position it was when you pressed
 the up or down arrows.
 
 To turn off this option, you can run either of the following commands:
@@ -646,7 +646,7 @@ Accept wildcard characters: False
 
 ### -WordDelimiters
 
-Specifies the characters that delimit words for functions like **ForwardWord**` or **KillWord**.
+Specifies the characters that delimit words for functions like **ForwardWord** or **KillWord**.
 
 ```yaml
 Type: String

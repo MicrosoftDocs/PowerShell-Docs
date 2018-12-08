@@ -65,7 +65,7 @@ The **Set-PSReadLineOption** cmdlet customizes the behavior of the PSReadLine mo
 
 This command sets tokens of the type Comment to be displayed in PSReadLine in green text on a gray background.
 
-```
+```powershell
 Set-PSReadLineOption -TokenKind Comment -ForegroundColor Green -BackgroundColor Gray
 ```
 
@@ -76,8 +76,6 @@ by emitting an audible beep at 1221 Hz for 60 ms.
 
 ```powershell
 Set-PSReadLineOption -BellStyle Audible -DingTone 1221 -DingDuration 60
-```
-
 ```
 
 ## PARAMETERS
@@ -103,7 +101,7 @@ Accept wildcard characters: False
 
 ### -BackgroundColor
 
-Specifies the background color for the token kind that is specified by the *TokenKind* parameter.
+Specifies the background color for the token kind that is specified by the **TokenKind** parameter.
 
 The acceptable values for this parameter are:
 
@@ -197,7 +195,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 100
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -214,7 +212,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: >>
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -222,7 +220,7 @@ Accept wildcard characters: False
 
 Specifies the background color of the continuation prompt.
 
-The acceptable values for this parameter are: the same values as for the *BackgroundColor* parameter.
+The acceptable values for this parameter are: the same values as for the **BackgroundColor** parameter.
 
 ```yaml
 Type: ConsoleColor
@@ -241,7 +239,7 @@ Accept wildcard characters: False
 
 Specifies the foreground color of the continuation prompt.
 
-The acceptable values for this parameter are: the same values as for *BackgroundColor*.
+The acceptable values for this parameter are: the same values as for **BackgroundColor**.
 
 ```yaml
 Type: ConsoleColor
@@ -268,7 +266,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 50ms
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -284,7 +282,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: 1221
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -308,7 +306,7 @@ Accepted values: Windows, Emacs, Vi
 Required: False
 Position: Named
 Default value: Windows
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -316,7 +314,7 @@ Accept wildcard characters: False
 
 Specifies the background color that is used for emphasis, such as to highlight search text.
 
-The acceptable values for this parameter are: the same values as for *BackgroundColor*.
+The acceptable values for this parameter are: the same values as for **BackgroundColor**.
 
 ```yaml
 Type: ConsoleColor
@@ -335,7 +333,7 @@ Accept wildcard characters: False
 
 Specifies the foreground color that is used for emphasis, such as to highlight search text.
 
-The acceptable values for this parameter are: the same values as for *BackgroundColor*.
+The acceptable values for this parameter are: the same values as for **BackgroundColor**.
 
 ```yaml
 Type: ConsoleColor
@@ -354,7 +352,7 @@ Accept wildcard characters: False
 
 Specifies the background color that is used for errors.
 
-The acceptable values for this parameter are: the same values as for *BackgroundColor*.
+The acceptable values for this parameter are: the same values as for **BackgroundColor**.
 
 ```yaml
 Type: ConsoleColor
@@ -373,7 +371,7 @@ Accept wildcard characters: False
 
 Specifies the foreground color that is used for errors.
 
-The acceptable values for this parameter are: the same values as for *BackgroundColor*.
+The acceptable values for this parameter are: the same values as for **BackgroundColor**.
 
 ```yaml
 Type: ConsoleColor
@@ -401,15 +399,15 @@ Aliases:
 Required: False
 Position: Named
 Default value: 0
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ForegroundColor
 
-Specifies the foreground color for the token kind that is specified by the *TokenKind* parameter.
+Specifies the foreground color for the token kind that is specified by the **TokenKind** parameter.
 
-The acceptable values for this parameter are: the same values as for *BackgroundColor*.
+The acceptable values for this parameter are: the same values as for **BackgroundColor**.
 
 ```yaml
 Type: ConsoleColor
@@ -487,7 +485,8 @@ Accept wildcard characters: False
 
 ### -HistorySearchCaseSensitive
 
-Specifies that history searching is case-sensitive in functions like **ReverseSearchHistory** or **HistorySearchBackward**.
+Specifies that history searching is case-sensitive in functions like **ReverseSearchHistory** or
+**HistorySearchBackward**.
 
 ```yaml
 Type: SwitchParameter
@@ -504,7 +503,8 @@ Accept wildcard characters: False
 ### -HistorySearchCursorMovesToEnd
 
 Indicates that the cursor moves to the end of commands that you load from history by using a search.
-When this parameter is set to `$false`, the cursor remains at the position it was when you pressed the up or down arrows.
+When this parameter is set to `$false`, the cursor remains at the position it was when you pressed
+the up or down arrows.
 
 To turn off this option, you can run either of the following commands:
 
@@ -656,7 +656,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: ;:,.[]{}()/\|^&*-=+'"–—―
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
