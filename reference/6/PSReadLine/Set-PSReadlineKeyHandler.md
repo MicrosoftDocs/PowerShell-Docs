@@ -156,6 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -ViMode
+
 Specify which vi mode the binding applies to.
 
 Valid values are:

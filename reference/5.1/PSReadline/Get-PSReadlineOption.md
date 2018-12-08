@@ -2,37 +2,40 @@
 external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
-Module Name: PSReadline
-ms.date: 06/09/2017
+Module Name: PSReadLine
+ms.date: 12/07/2018
 online version: http://go.microsoft.com/fwlink/?LinkId=821450
 schema: 2.0.0
 title: Get-PSReadlineOption
 ---
 
-# Get-PSReadlineOption
+# Get-PSReadLineOption
 
 ## SYNOPSIS
-
 Gets values for the options that can be configured.
 
 ## SYNTAX
 
 ```
-Get-PSReadlineOption [<CommonParameters>]
+Get-PSReadLineOption [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **Get-PSReadlineOption** returns the current state of the settings that can be configured by using the Set-PSReadlineOption cmdlet.
-You can use the object that **Get-PSReadlineOption** returns to change PSReadline options.
-This provides a slightly simpler way to set syntax coloring options for multiple kinds of tokens.
+The `Get-PSReadlineOption` cmdlet returns the current state of the settings that can be configured
+by using the `Set-PSReadlineOption` cmdlet. You can use the returned object to change
+**PSReadline** options. This provides a slightly simpler way to set syntax coloring options for
+multiple kinds of tokens.
 
 ## EXAMPLES
 
 ### Example 1: Get options and their values
 
+```powershell
+Get-PSReadlineOption
 ```
-PS C:\> Get-PSReadlineOption
+
+```Output
 EditMode                               : Windows
 ContinuationPrompt                     : >>
 ContinuationPromptForegroundColor      : DarkYellow
@@ -48,11 +51,13 @@ HistorySearchCursorMovesToEnd          : False
 ShowToolTips                           : False
 DingTone                               : 1221
 CompletionQueryItems                   : 100
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+---
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"–—―
 DingDuration                           : 50
 BellStyle                              : Audible
 HistorySearchCaseSensitive             : False
-HistorySavePath                        : C:\Users\TestUser\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+ViModeIndicator                        : None
+HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\Cons
+                                         oleHost_history.txt
 HistorySaveStyle                       : SaveIncrementally
 DefaultTokenForegroundColor            : DarkYellow
 CommentForegroundColor                 : DarkGreen
@@ -87,7 +92,11 @@ This command returns the list of available PSReadline options and their current 
 ## PARAMETERS
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -96,6 +105,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
+
+### Microsoft.PowerShell.PSConsoleReadLineOptions
 
 ## NOTES
 

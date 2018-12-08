@@ -53,7 +53,7 @@ The `Set-PSReadlineOption` cmdlet customizes the behavior of the PSReadline modu
 
 ### Example 1: Set color values for multiple types
 
-This command sets tokens of the type Comment to be displayed in PSReadline in green text on a gray background.
+This example shows three different methods for how to set the color of tokens displayed in PSReadline.
 
 ```powershell
 et-PSReadLineOption -Colors @{
@@ -144,19 +144,20 @@ Specifies how PSReadLine responds to various error and ambiguous conditions.
 
 Valid values are:
 
-- Audible: a short beep
-- Visible: a brief flash is performed
-- None: no feedback
+- Audible: A short beep
+- Visible: Text flashes briefly
+- None: No feedback
 
 ```yaml
 Type: BellStyle
 Parameter Sets: (All)
 Aliases:
+Accepted values: None, Visual, Audible
 
 Required: False
 Position: Named
 Default value: Audible
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -210,6 +211,9 @@ Accept wildcard characters: False
 
 Specifies a **ScriptBlock** that is called from `ValidateAndAcceptLine`. If an exception is
 thrown, validation fails and the error is reported.
+
+Before throwing an exception, the validation handler can place the cursor at the point of the error to make it easier to fix.
+A validation handler can also change the command line, such as to correct common typographical errors.
 
 `ValidateAndAcceptLine` is used to avoid cluttering your history with commands that can't work.
 
@@ -279,7 +283,7 @@ Accept wildcard characters: False
 
 ### -DingTone
 
-Specifies the tone of the beep when **BellStyle** is set to **Audible**.
+Specifies the tone in Hertz (Hz) of the beep when **BellStyle** is set to **Audible**.
 
 ```yaml
 Type: Int32
@@ -308,6 +312,7 @@ Valid values are:
 Type: EditMode
 Parameter Sets: (All)
 Aliases:
+Accepted values: Windows, Emacs, Vi
 
 Required: False
 Position: Named
@@ -367,13 +372,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: A file named $($host.Name)_history.txt in $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine on Windows and $env:XDG_DATA_HOME/powershell/PSReadLine or $env:HOME/.local/share/powershell/PSReadLine on non-Windows platforms
-Accept pipeline input: false
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -HistorySaveStyle
 
-Specifies how PSReadLine should save history.
+Specifies how PSReadLine saves history.
 
 Valid values are:
 
@@ -386,6 +391,7 @@ Valid values are:
 Type: HistorySaveStyle
 Parameter Sets: (All)
 Aliases:
+Accepted values: SaveIncrementally, SaveAtExit, SaveNothing
 
 Required: False
 Position: Named
@@ -412,13 +418,17 @@ Accept wildcard characters: False
 
 ### -HistorySearchCursorMovesToEnd
 
-When using `HistorySearchBackward` and `HistorySearchForward`, the default behavior leaves the
-cursor at the end of the search string.
+Indicates that the cursor moves to the end of commands that you load from history by using a search.
+When this parameter is set to `$false`, the cursor remains at the position it was when you pressed the up or down arrows.
 
-To move the cursor to end of the line, set this option to `$true`.
+To turn off this option, you can run either of the following commands:
+
+`Set-PSReadlineOption -HistorySearchCursorMovesToEnd:$False`
+
+`(Get-PSReadlineOption).HistorySearchCursorMovesToEnd = $False`
 
 ```yaml
-Type: switch
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -442,8 +452,8 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: 1024
-Accept pipeline input: false
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -494,7 +504,7 @@ Accept wildcard characters: False
 
 ### -ShowToolTips
 
-When displaying possible completions, show tooltips in the list of completions.
+When displaying possible completions,  tooltips are shown in the list of completions.
 
 This option is enabled by default. This option was not enabled by default in prior versions of
 PSReadLine. To disable, set this option to `$false`.
@@ -526,6 +536,7 @@ Valid values are:
 Type: ViModeStyle
 Parameter Sets: (All)
 Aliases:
+Accepted values: None, Prompt, Cursor
 
 Required: False
 Position: Named
@@ -539,7 +550,7 @@ Accept wildcard characters: False
 Specifies the characters that delimit words for functions like `ForwardWord` or `KillWord`.
 
 ```yaml
-Type: string
+Type: String
 Parameter Sets: (All)
 Aliases:
 

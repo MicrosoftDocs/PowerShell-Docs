@@ -10,7 +10,7 @@ PowerShell console.
 ## LONG DESCRIPTION
 
 PSReadLine provides a powerful command line editing experience for the
-PowerShell console. It provides
+PowerShell console. It provides:
 
 - Syntax coloring of the command line
 - A visual indication of syntax errors
@@ -1203,9 +1203,8 @@ Prompts for a search string and initiates search upon AcceptLine.
 
 ## Custom Key Bindings
 
-PSReadLine supports custom key bindings using the cmdlet
-`Set-PSReadLineKeyHandler`. Most custom key bindings will call one of the above
-functions, for example
+PSReadLine supports custom key bindings using the cmdlet `Set-PSReadLineKeyHandler`. Most
+custom key bindings call one of the above functions, for example
 
 ```powershell
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -1218,7 +1217,7 @@ anything you want. Some useful examples include
 - opening a new window (e.g. help)
 - change directories without changing the command line
 
-The ScriptBlock is receives two arguments:
+The ScriptBlock receives two arguments:
 
 - `$key` - A `[ConsoleKeyInfo]` object that is the key that triggered the
   custom binding. If you bind the same ScriptBlock to multiple keys and need
@@ -1260,8 +1259,8 @@ Set-PSReadLineKeyHandler @parameters
 You can see many more examples in the file `SamplePSReadLineProfile.ps1` which
 is installed in the PSReadLine module folder.
 
-Most key bindings will want to take advantage of some helper functions for
-editing the command line those APIs are documented in the next section.
+Most key bindings use some helper functions for editing the command line.
+Those APIs are documented in the next section.
 
 ## Custom Key Binding Support APIs
 
@@ -1388,8 +1387,8 @@ typical call looks like
 
 ### POWERSHELL COMPATIBILITY
 
-PSReadLine requires PowerShell version 3 or greater and the console host. It
-will not work in the ISE.
+PSReadLine requires PowerShell 3.0, or newer, and the console host. It
+does not work in Windows PowerShell ISE.
 
 ### FEEDBACK & CONTRIBUTING TO PSREADLINE
 

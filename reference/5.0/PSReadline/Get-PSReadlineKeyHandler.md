@@ -1,37 +1,40 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=821449
-external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
-title:  Get-PSReadlineKeyHandler
+external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSReadLine
+ms.date:  12/07/2018
+online version: http://go.microsoft.com/fwlink/?LinkID=821449
+schema: 2.0.0
+title: Get-PSReadlineKeyHandler
 ---
+
 # Get-PSReadlineKeyHandler
 
 ## SYNOPSIS
-
-Gets the key bindings for the PSReadline module.
+Gets the key bindings for the PSReadLine module.
 
 ## SYNTAX
 
 ```
-Get-PSReadlineKeyHandler [-Bound] [-Unbound] [<CommonParameters>]
+Get-PSReadLineKeyHandler [-Bound] [-Unbound] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **Get-PSReadlineKeyHandler** cmdlet gets key bindings.
-If you specify the *Bound* and *Unbound* parameters, this cmdlet returns all bound keys and unbound functions.
-If you specify *Bound*, but not *Unbound*, the cmdlet returns only bound keys.
-If you specify *Unbound*, but not *Bound*, the cmdlet returns only unbound keys.
+The **Get-PSReadlineKeyHandler** cmdlet returns the currently bound key bindings.
 
 ## EXAMPLES
 
 ### Example 1: Get all key mappings
 
+This command returns all key mappings, bound and unbound.
+
+```powershell
+Get-PSReadlineKeyHandler -Bound -Unbound
 ```
-PS C:\> Get-PSReadlineKeyHandler
+
+```Output
 Key                   Function                Description
 ---                   --------                -----------
 Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token.
@@ -61,15 +64,18 @@ Ctrl+c                CopyOrCancelLine        Either copy selected text to the c
 Ctrl+C                Copy                    Copy selected region to the system clipboard.  If no region is selected, copy the whole line
 Ctrl+l                ClearScreen             Clear the screen and redraw the current line at the top of the screen
 Ctrl+r                ReverseSearchHistory    Search history backwards interactively
-â€¦
+...
 ```
-
-This command returns all key mappings, bound and unbound.
 
 ### Example 2: Get bound keys
 
+This command returns only bound keys and key combinations.
+
+```powershell
+Get-PSReadlineKeyHandler
 ```
-PS C:\> Get-PSReadlineKeyHandler -Bound
+
+```Output
 Key                   Function                Description
 ---                   --------                -----------
 Enter                 AcceptLine              Accept the input or move to the next line if input is missing a closing token.
@@ -93,10 +99,8 @@ Delete                DeleteChar              Delete the character under the cur
 Backspace             BackwardDeleteChar      Delete the charcter before the cursor
 Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o...
 Tab                   TabCompleteNext         Complete the input using the next completion
-â€¦
+...
 ```
-
-This command returns only bound keys and key combinations.
 
 ## PARAMETERS
 
@@ -111,7 +115,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: True
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -127,14 +131,17 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: True
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information,
+see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -144,9 +151,10 @@ You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### PSConsoleUtilities.KeyHandler
+### Microsoft.PowerShell.KeyHandler
 
-This cmdlet returns one entry for each key binding, or chord, for bound functions and one entry for each unbound function.
+This cmdlet returns one entry for each key binding, or chord, for bound functions and one entry for
+each unbound function.
 
 ## NOTES
 
