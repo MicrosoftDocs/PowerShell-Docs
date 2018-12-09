@@ -30,7 +30,7 @@ PowerShell console. It provides:
 - PowerShell token based "word" movement and kill
 
 The following functions are available in the class
-`[Microsoft.PowerShell.PSConsoleReadLine]`.
+**[Microsoft.PowerShell.PSConsoleReadLine]**.
 
 ## Basic editing functions
 
@@ -1227,7 +1227,7 @@ anything you want. Some useful examples include
 
 The ScriptBlock receives two arguments:
 
-- `$key` - A `[ConsoleKeyInfo]` object that is the key that triggered the
+- `$key` - A **[ConsoleKeyInfo]** object that is the key that triggered the
   custom binding. If you bind the same ScriptBlock to multiple keys and need
   to perform different actions depending on the key, you can check $key. Many
   custom bindings ignore this argument.
@@ -1395,8 +1395,8 @@ typical call looks like
 
 ### POWERSHELL COMPATIBILITY
 
-PSReadLine requires PowerShell 3.0, or newer, and the console host. It
-does not work in Windows PowerShell ISE.
+PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
+not work in PowerShell ISE. It does work in the console of Visual Studio Code.
 
 ### FEEDBACK & CONTRIBUTING TO PSReadLine
 

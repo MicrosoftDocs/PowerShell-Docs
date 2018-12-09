@@ -2,7 +2,7 @@
 ms.date:  12/08/2018
 schema:  2.0.0
 locale:  en-us
-keywords:  powershell,cmdlet
+keywords:  powershell
 title:  About PSReadLine
 ---
 
@@ -31,7 +31,7 @@ PowerShell console. It provides:
 - PowerShell token based "word" movement and kill
 
 The following functions are available in the class
-`[Microsoft.PowerShell.PSConsoleReadLine]`.
+**[Microsoft.PowerShell.PSConsoleReadLine]**.
 
 ## Cursor movement
 
@@ -352,7 +352,7 @@ Undo a previous insertion or deletion.
 
 ### ClearHistory
 
-- Cmd: Alt+F7
+- Cmd: `<Alt+F7>`
 - Emacs: unbound
 
 Clears history in PSReadLine. This does not affect PowerShell
@@ -405,14 +405,14 @@ that matches the characters between the start and the input and the cursor.
 ### BeginningOfHistory
 
 - Cmd: unbound
-- Emacs: `<Alt+`<>`
+- Emacs: `<Alt+<>`
 
 Replace the current input with the last item from PSReadLine history.
 
 ### EndOfHistory
 
 - Cmd: unbound
-- Emacs: `<Alt+>`>`
+- Emacs: `<Alt+>>`
 
 Replace the current input with the last item in PSReadLine history, which
 is the possibly empty input that was entered before any history commands.
@@ -675,11 +675,11 @@ screen.
 ### DigitArgument
 
 - Cmd: unbound
-- Emacs: `<Alt+[0..9]>`,,`<Alt+->`
+- Emacs: `<Alt+[0..9]>`,`<any char>`,`<Alt+->`
 
 Used to pass numeric arguments to functions like CharacterSearch or
 YankNthArg. Alt+- toggles the argument to be negative/non-negative. To enter
-80 '*' characters, you could type Alt+8 Alt+0 *.
+80 '\*' characters, you could type Alt+8 Alt+0 \*.
 
 CaptureScreen
 
@@ -776,7 +776,7 @@ anything you want. Some useful examples include
 
 The ScriptBlock receives two arguments:
 
-- `$key` - A `[ConsoleKeyInfo]` object that is the key that triggered the
+- `$key` - A **[ConsoleKeyInfo]** object that is the key that triggered the
   custom binding. If you bind the same ScriptBlock to multiple keys and need
   to perform different actions depending on the key, you can check $key. Many
   custom bindings ignore this argument.
@@ -944,14 +944,14 @@ typical call looks like
 
 ### POWERSHELL COMPATIBILITY
 
-PSReadLine requires PowerShell 3.0, or newer, and the console host. It
-does not work in PowerShell ISE.
+PSReadLine requires PowerShell 3.0, or newer, and the console host. It does
+not work in PowerShell ISE. It does work in the console of Visual Studio Code.
 
 ### FEEDBACK & CONTRIBUTING TO PSREADLINE
 
 [PSReadLine on GitHub](https://github.com/lzybkr/PSReadLine)
 
-Feel free to submit a pull request or submit feedback on the github page.
+Feel free to submit a pull request or submit feedback on the GitHub page.
 
 ## SEE ALSO
 
