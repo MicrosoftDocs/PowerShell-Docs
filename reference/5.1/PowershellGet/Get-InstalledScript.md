@@ -54,7 +54,7 @@ This command gets scripts where the name begins with Required-Scri.
 ## PARAMETERS
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Includes in the results scripts marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter

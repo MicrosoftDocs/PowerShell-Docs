@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Allows you to update a module with the newer module marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter

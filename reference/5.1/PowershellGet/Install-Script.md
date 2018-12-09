@@ -196,7 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Allows you to install a script marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter
