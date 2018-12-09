@@ -51,7 +51,7 @@ This command gets versions of the AzureRM.Automation module from version 1.0 thr
 ## PARAMETERS
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Includes in the results modules marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter

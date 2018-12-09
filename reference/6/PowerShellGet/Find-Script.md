@@ -174,7 +174,7 @@ This command uses the wildcard character (*) to find scripts that begin with Req
 ## PARAMETERS
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Includes in the results scripts marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter
