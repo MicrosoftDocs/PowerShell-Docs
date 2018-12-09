@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Allows you to install a module marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter
