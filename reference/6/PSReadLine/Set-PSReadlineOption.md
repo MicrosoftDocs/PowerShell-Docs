@@ -56,7 +56,7 @@ The `Set-PSReadLineOption` cmdlet customizes the behavior of the PSReadLine modu
 This example shows three different methods for how to set the color of tokens displayed in PSReadLine.
 
 ```powershell
-et-PSReadLineOption -Colors @{
+Set-PSReadLineOption -Colors @{
  # Use a ConsoleColor enum
  "Error" = [ConsoleColor]::DarkRed
 
