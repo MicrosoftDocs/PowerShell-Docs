@@ -64,6 +64,7 @@ The second command gets registered repositories and displays the results.
 ## PARAMETERS
 
 ### -Credential
+Specifies credentials of an account that has rights to register a repository.
 
 ```yaml
 Type: PSCredential
@@ -224,6 +225,8 @@ Accept wildcard characters: False
 
 ### -SourceLocation
 Specifies the URI for discovering and installing modules from this repository.
+A URI can be a NuGet server feed (most common situation), HTTP, HTTPS, FTP or file location.
+
 For example, for NuGet-based repositories, the source location is similar to http://someNuGetUrl.com/api/v2.
 
 ```yaml
