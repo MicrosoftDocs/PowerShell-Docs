@@ -36,7 +36,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## Configuration Name
 
-The examples below sets the **ConfigurationName** property of the LCM to the name of a previously compiled Configuration, created for this purpose. The **ConfigurationName** is what the LCM uses to find the appropriate configuration on the pull server. The configuration MOF file on the pull server must be named `<ConfigurationName>.mof`, in this case, "ClientConfig.mof". For more information, see [Publish Configurations to a Pull Server (v4/v5)](publishConfigName.md).
+The examples below sets the **ConfigurationName** property of the LCM to the name of a previously compiled Configuration, created for this purpose. The **ConfigurationName** is what the LCM uses to find the appropriate configuration on the pull server. The configuration MOF file on the pull server must be named `<ConfigurationName>.mof`, in this case, "ClientConfig.mof". For more information, see [Publish Configurations to a Pull Server (v4/v5)](publishConfigs.md).
 
 ## Set up a Pull Client to download Configurations
 
