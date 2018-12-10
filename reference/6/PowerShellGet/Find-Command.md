@@ -131,6 +131,8 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
+Specifies the maximum (exclusively) version of the module to include in results.
+The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
 Type: String
