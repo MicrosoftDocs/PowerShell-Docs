@@ -177,7 +177,7 @@ Creates table-like custom objects from the items in a CSV file.
 Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
 
 ### [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
-Imports values from a .PSD1 file without invoking its contents
+Imports values from a .PSD1 file without invoking its contents.
 
 ### [Import-PSSession](Import-PSSession.md)
 Imports commands from another session into the current session.
