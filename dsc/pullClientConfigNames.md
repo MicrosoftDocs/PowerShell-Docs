@@ -1,9 +1,9 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  Setting up a pull client using configuration names
+title:  Set up a Pull Client using Configuration Names in PowerShell 5.0 and later
 ---
-# Setting up a pull client using configuration names
+# Set up a Pull Client using Configuration Names in PowerShell 5.0 and later
 
 > Applies To: Windows PowerShell 5.0
 
@@ -14,15 +14,45 @@ title:  Setting up a pull client using configuration names
 > (includes features beyond Pull Server on Windows Server) or one of the community solutions
 > listed [here](pullserver.md#community-solutions-for-pull-service).
 
-Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations.
-To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information.
-To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute.
-For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).
+Before setting up a pull client, you should set up a pull server. Though this order is not required, it helps with troubleshooting, and helps you ensure that the registration was successful. To set up a pull server, you can use the following guides:
+
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)
+
+Each target node can be configured to download configurations, resources, and even report its status. The sections below show you how to configure a pull client with an SMB share or HTTP DSC Pull Server. When the Node's LCM refreshes, it will reach out to the configured location to download any assigned configurations. If any required resources do not exist on the Node, it will automatically download them from the configured location. If the Node is configured with a [Report Server](reportServer.md), it will then report the status of the operation.
 
 > **Note**: This topic applies to PowerShell 5.0.
-For information on setting up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md)
+For information on setting up a pull client in PowerShell 4.0, see [Set up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md)
 
-The following script configures the LCM to pull configurations from a server named "CONTOSO-PullSrv":
+## Configure the pull client LCM
+
+Executing any of the examples below creates a new output folder named **PullClientConfigName** and puts a metaconfiguration MOF file there. In this case, the metaconfiguration MOF file will be named `localhost.meta.mof`.
+
+To apply the configuration, call the **Set-DscLocalConfigurationManager** cmdlet, with the **Path** set to the location of the metaconfiguration MOF file. For example:
+
+```powershell
+Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigName –Verbose.
+```
+
+## Configuration Name
+
+The examples below sets the **ConfigurationName** property of the LCM to the name of a previously compiled Configuration, created for this purpose. The **ConfigurationName** is what the LCM uses to find the appropriate configuration on the pull server. The configuration MOF file on the pull server must be named `<ConfigurationName>.mof`, in this case, "ClientConfig.mof". For more information, see [Publish Configurations to a Pull Server (v4/v5)](publishConfigs.md).
+
+## Set up a Pull Client to download Configurations
+
+Each client must be configured in **Pull** mode and given the pull server url where its configuration is stored. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).
+
+The following script configures the LCM to pull configurations from a server named "CONTOSO-PullSrv".
+
+- In the script, the **ConfigurationRepositoryWeb** block defines the pull server. The **ServerURL** property specifies the endpoint for the pull server.
+
+- The **RegistrationKey** property is a shared key between all client nodes for a pull server and that pull server. The same value is stored in a file on the pull server.
+  > **Note**: Registration keys work only with **web** pull servers. You must still use **ConfigurationID** with an **SMB** pull server.
+  > For information about configuring a pull server by using **ConfigurationID**, see [Setting up a pull client using configuration ID](pullClientConfigId.md)
+
+- The **ConfigurationNames** property is an array that specifies the names of the configurations intended for the client node.
+  >**Note:** If you specify more than one value in the **ConfigurationNames**, you must also specify **PartialConfiguration** blocks in your configuration.
+  >For information about partial configurations, see [PowerShell Desired State Configuration partial configurations](partialConfigs.md).
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -47,36 +77,46 @@ configuration PullClientConfigNames
 PullClientConfigNames
 ```
 
-In the script, the **ConfigurationRepositoryWeb** block defines the pull server.
-The **ServerURL** property specifies the endpoint for the pull server.
+## Set up a Pull Client to download Resources
 
-The **RegistrationKey** property is a shared key between all client nodes for a pull server and that pull server.
-The same value is stored in a file on the pull server.
+If you specify only a **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block in your LCM configuration (as in the previous example), the pull client will pull resources from same location where your ".mof" files are stored. You can also specify different locations where clients can download resources. To specify a resource server, you use either a **ResourceRepositoryWeb** (for a web pull server) or a **ResourceRepositoryShare** block (for an SMB pull server).
 
-The **ConfigurationNames** property is an array that specifies the names of the configurations intended for the client node.
-On the pull server, the configuration MOF file for this client node must be named *ConfigurationNames*.mof, where *ConfigurationNames* matches the value of the **ConfigurationNames** property you set in this metaconfiguration.
-
->**Note:** If you specify more than one value in the **ConfigurationNames**, you must also specify **PartialConfiguration** blocks in your configuration.
-For information about partial configurations, see [PowerShell Desired State Configuration partial configurations](partialConfigs.md).
-
-After this script runs, it creates a new output folder named **PullClientConfigNames** and puts a metaconfiguration MOF file there.
-In this case, the metaconfiguration MOF file will be named `localhost.meta.mof`.
-
-To apply the configuration, call the **Set-DscLocalConfigurationManager** cmdlet, with the **Path** set to the location of the metaconfiguration MOF file.
+The following example shows a metaconfiguration that sets up a client to download configurations from a Pull Server, and resources from an SMB share.
 
 ```powershell
-Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Verbose.
+[DSCLocalConfigurationManager()]
+configuration PullClientConfigNames
+{
+    Node localhost
+    {
+        Settings
+        {
+            RefreshMode = 'Pull'
+            RefreshFrequencyMins = 30
+            RebootNodeIfNeeded = $true
+        }
+
+        ConfigurationRepositoryWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
+        }
+
+        ResourceRepositoryShare SMBResources
+        {
+            SourcePath = '\\SMBPullServer\Resources'
+        }
+    }
+}
+PullClientConfigNames
 ```
 
-> **Note**: Registration keys work only with web pull servers.
-You must still use **ConfigurationID** with an SMB pull server.
-For information about configuring a pull server by using **ConfigurationID**, see [Setting up a pull client using configuration ID](PullClientConfigNames.md)
+## Set up a Pull Client to report status
 
-## Resource and report servers
+You can use a single pull server for configurations, resources, and reporting. Reporting is not configured for clients by default. To configure a client to report status, you have to create a **ReportRepositoryWeb** block. The following example shows a metaconfiguration that sets up a client to pull configurations and resources, and send reporting data, to a single pull server.
 
-If you specify only a **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block in your LCM configuration (as in the previous example), the pull client will pull resources from the specified server, but it will not send reports to it.
-You can use a single pull server for configurations, resources, and reporting, but you have to create a **ReportRepositoryWeb** block to set up reporting.
-The following example shows a metaconfiguration that sets up a client to pull configurations and resources, and send reporting data, to a single pull server.
+> [!NOTE]
+> A report server cannot be an SMB share.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -100,47 +140,7 @@ configuration PullClientConfigNames
         ReportServerWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-        }
-    }
-}
-PullClientConfigNames
-```
-
-You can also specify different pull servers for resources and reporting.
-To specify a resource server, you use either a **ResourceRepositoryWeb** (for a web pull server) or a **ResourceRepositoryShare** block (for an SMB pull server).
-To specify a report server, you use a **ReportRepositoryWeb** block.
-A report server cannot be an SMB server.
-The following metaconfiguration configures a pull client to get its configurations from **CONTOSO-PullSrv** and its resources from **CONTOSO-ResourceSrv**, and to send status reports to **CONTOSO-ReportSrv**:
-
-```powershell
-[DSCLocalConfigurationManager()]
-configuration PullClientConfigNames
-{
-    Node localhost
-    {
-        Settings
-        {
-            RefreshMode = 'Pull'
-            RefreshFrequencyMins = 30
-            RebootNodeIfNeeded = $true
-        }
-
-        ConfigurationRepositoryWeb CONTOSO-PullSrv
-        {
-            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
             RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
-        }
-
-        ResourceRepositoryWeb CONTOSO-ResourceSrv
-        {
-            ServerURL = 'https://CONTOSO-ResourceSrv:8080/PSDSCPullServer.svc'
-            RegistrationKey = '30ef9bd8-9acf-4e01-8374-4dc35710fc90'
-        }
-
-        ReportServerWeb CONTOSO-ReportSrv
-        {
-            ServerURL = 'https://CONTOSO-ReportSrv:8080/PSDSCPullServer.svc'
-            RegistrationKey = '6b392c6a-818c-4b24-bf38-47124f1e2f14'
         }
     }
 }

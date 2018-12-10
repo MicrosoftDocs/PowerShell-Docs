@@ -1,12 +1,12 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  Desired State Configuration Quick Start
+title:  Quickstart - Create a website with DSC
 ---
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-# Desired State Configuration Quick Start
+# Quickstart - Create a website with DSC
 
 This exercise walks through creating and applying a Desired State Configuration (DSC) configuration from start to finish.
 The example we'll use ensures that a server has the `Web-Server` (IIS) feature enabled,

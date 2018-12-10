@@ -41,8 +41,7 @@ check that configuration into source control, and operation teams can easily dep
 Configurations are also [data-driven](configData.md),
 which makes it easier for ops to identify and change environments without developer intervention.
 
-## Desired State Configuration On- and Off-Premises
-
+## Desired State Configuration On-Premises and Off-Premises
 DSC can be used to manage both on-premise and off-premise deployments.
 For on-premise solutions, DSC has a [pull server](pullServer.md)
 that can be used to centralize management of machines and report on their status.
