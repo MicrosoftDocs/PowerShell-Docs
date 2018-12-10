@@ -22,7 +22,7 @@ which will prompt the user for a credential when the configuration is compiled (
 > The **PsDscRunAsCredential** property is not available in PowerShell 4.0.
 
 In the following example, `Get-Credential` is used to prompt the user for credentials.
-The [Registry](registryResource.md) resource is used to change the registry key that specifies the background color
+The **Registry** resource is used to change the registry key that specifies the background color
 for the Windows command prompt window.
 
 ```powershell

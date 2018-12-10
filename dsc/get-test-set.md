@@ -8,9 +8,9 @@ title:  Get-Test-Set
 
 >Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-[Get, Test, and Set](./media/get-test-set.png)
+![Get, Test, and Set](/media/get-test-set.png)
 
-PowerShell Desired State Configuration is constructed around a **Get**, **Test**, and **Set** process. DSC [resources](resources.md) each contains methods to complete each of these operations. In a [Configuration](configuration.md), you define resource blocks to fill in keys that become parameters for a resource's **Get**, **Test**, and **Set** methods.
+PowerShell Desired State Configuration is constructed around a **Get**, **Test**, and **Set** process. DSC [resources](resources.md) each contains methods to complete each of these operations. In a [Configuration](configurations.md), you define resource blocks to fill in keys that become parameters for a resource's **Get**, **Test**, and **Set** methods.
 
 This is the syntax for a **Service** resource block. The **Service** resource configures Windows services.
 
@@ -122,7 +122,7 @@ When applied, the [Local Configuration Manager](metaConfig.md) will read the val
 
 The **Get** method of a resource, retrieves the state of the resource as it is configured on the target Node. This state is returned as a [hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables). The keys of the **hashtable** will be the configurable values, or parameters, the resource accepts.
 
-The **Get** method maps directly to the [Get-DSCConfiguration](Get-DSCConfiguration.md) cmdlet. When you call `Get-DSCConfiguration`, the LCM runs the **Get** method of each resource in the currently applied configuration. The LCM uses the key values stored in the ".mof" file as parameters to each corresponding resource instance.
+The **Get** method maps directly to the [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet. When you call `Get-DSCConfiguration`, the LCM runs the **Get** method of each resource in the currently applied configuration. The LCM uses the key values stored in the ".mof" file as parameters to each corresponding resource instance.
 
 This is sample output from a **Service** resource that configures the "Spooler" service.
 
@@ -173,7 +173,7 @@ Service [String] #ResourceName
 ## Test
 
 The **Test** method of a resource determines if the target node is currently compliant with the resource's *desired state*. The **Test** method returns `$True` or `$False` only to indicate whether the Node is compliant.
-When you call [Test-DSCConfiguration](Test-DSCConfiguration.md), the LCM calls the **Test** method of each resource in the currently applied configuration. The LCM uses the key values stored in the ".mof" file as parameters to each corresponding resource instance.
+When you call [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), the LCM calls the **Test** method of each resource in the currently applied configuration. The LCM uses the key values stored in the ".mof" file as parameters to each corresponding resource instance.
 
 If the result of any individual resource's **Test** is `$False`, `Test-DSCConfiguration` returns `$False` indicating that the Node is not compliant. If all resource's **Test** methods return `$True`, `Test-DSCConfiguration` returns `$True` to indicate that the Node is compliant.
 
@@ -197,11 +197,11 @@ PSComputerName  ResourcesInDesiredState        ResourcesNotInDesiredState     In
 localhost       {[Service]Spooler}                                            True
 ```
 
-For more information, see [Test-DSCConfiguration](Test-DSCConfiguration.md)
+For more information, see [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
 
 ## Set
 
-The **Set** method of a resource attempts to force the Node to become compliant with the resource's *desired state*. The **Set** method is meant to be **idempotent**, which means that **Set** could be run multiple times and always get the same result without errors.  When you run [Start-DSCConfiguration](Start-DSCConfiguration), the LCM cycles through each resource in the currently applied configuration. The LCM retrieves key values for the current resource instance from the ".mof" file and uses them as parameters for the **Test** method. If the **Test** method returns `$True`, the Node is compliant with the current resource, and the **Set** method is skipped. If the **Test** returns `$False`, the Node is non-compliant.  The LCM passes the resource instance's key values as parameters to the resource's **Set** method, restoring the Node to compliance.
+The **Set** method of a resource attempts to force the Node to become compliant with the resource's *desired state*. The **Set** method is meant to be **idempotent**, which means that **Set** could be run multiple times and always get the same result without errors.  When you run [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), the LCM cycles through each resource in the currently applied configuration. The LCM retrieves key values for the current resource instance from the ".mof" file and uses them as parameters for the **Test** method. If the **Test** method returns `$True`, the Node is compliant with the current resource, and the **Set** method is skipped. If the **Test** returns `$False`, the Node is non-compliant.  The LCM passes the resource instance's key values as parameters to the resource's **Set** method, restoring the Node to compliance.
 
 By specifying the `-Verbose` and `-Wait` parameters, you can watch the progress of the `Start-DSCConfiguration` cmdlet. In this example, the Node is already compliant. The `Verbose` output indicates that the **Set** method was skipped.
 

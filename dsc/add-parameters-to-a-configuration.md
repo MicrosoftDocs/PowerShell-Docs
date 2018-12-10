@@ -6,7 +6,7 @@ title:  Add Parameters to a Configuration
 
 # Add Parameters to a Configuration
 
-Like Functions, [Configurations](configurations.md) can be parameterized to allow more dynamic configurations based on user input. The steps are similar to those described in [Functions with Parameters](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+Like Functions, [Configurations](configurations.md) can be parameterized to allow more dynamic configurations based on user input. The steps are similar to those described in [Functions with Parameters](/powershell/module/microsoft.powershell.core/about/about_functions#functions-with-parameters).
 
 This example starts with a basic Configuration that configures the "Spooler" service to be "Running".
 
@@ -223,6 +223,6 @@ Configuration TestConfig
 ## See also
 
 - [Write help for DSC configurations](configHelp.md)
-- [Dynamic Configurations](dynamicConfigs.md)
+- [Dynamic Configurations](flow-control-in-configurations.md)
 - [Use Configuration Data in your Configurations](configData.md)
 - [Separate configuration and environment data](separatingEnvData.md)

@@ -202,7 +202,7 @@ Success    11/27/2018 6:03:44 AM     Consistency     PUSH  False                
 
 ## Manage Configuration Documents
 
-The LCM manages the Configuration of the Node by working with **Configuration Documents**. These ".mof" files reside in the "C:\Windows\System32\Configuration" directory. For more information on these ".mof" files, see [Local Configuration Manager](lcm.md).
+The LCM manages the Configuration of the Node by working with **Configuration Documents**. These ".mof" files reside in the "C:\Windows\System32\Configuration" directory.
 
 Beginning in PowerShell 5.0 the [Remove-DSCConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument) allows you to remove the ".mof" files to stop future consistency checks or remove a Configuration that has errors when applied. The `-Stage` parameter allows you to specify which ".mof" file you want to remove.
 
@@ -224,4 +224,3 @@ Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer
 ## See also
 
 - [Get, Test, and Set](get-test-set.md)
-- [Local Configuration Manager](lcm.md)

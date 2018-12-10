@@ -17,7 +17,7 @@ For more information about PowerShell comment-based help, see [about_Comment_Bas
 > [!NOTE]
 > PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.
 
-The following example shows a script that contains a configuration and comment-based help for it. This example shows a Configuration with parameters. To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-your-configurations.md).
+The following example shows a script that contains a configuration and comment-based help for it. This example shows a Configuration with parameters. To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).
 
 ```powershell
 <#

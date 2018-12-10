@@ -76,7 +76,7 @@ Mode                LastWriteTime         Length Name
 ## Apply the configuration
 
 Now that you have the compiled MOF, you can apply the configuration to the target node (in this case, the local computer) by calling the
-[Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration) cmdlet.
+[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.
 
 The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](metaConfig.md),
 the engine of DSC, to apply the configuration.
@@ -93,9 +93,9 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 ## Test the configuration
 
-Once the `Start-DSCConfiguration` cmdlet is complete, you should see a "HelloWorld.txt" file in the location you specified. You can verify the contents with the [Get-Content](Get-Content.md) cmdlet.
+Once the `Start-DSCConfiguration` cmdlet is complete, you should see a "HelloWorld.txt" file in the location you specified. You can verify the contents with the [Get-Content](/powershell/module/microsoft.powershell.management/get-content) cmdlet.
 
-You can also *test* the current status using [Test-DSCConfiguration](Test-DSCConfiguration.md).
+You can also *test* the current status using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).
 
 The output should be "True" if the Node is currently compliant with the applied Configuration.
 

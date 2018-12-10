@@ -34,7 +34,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## Configuration ID
 
-The examples below set the **ConfigurationID** property of the LCM to a **Guid** that had been previously created for this purpose. The **ConfigurationID** is what the LCM uses to find the appropriate configuration on the pull server. The configuration MOF file on the pull server must be named `ConfigurationID.mof`, where *ConfigurationID* is the value of the **ConfigurationID** property of the target node's LCM. For more information, see [Publish to a Pull Server using Configuration IDs (v4/v5)](publishConfigId.md).
+The examples below set the **ConfigurationID** property of the LCM to a **Guid** that had been previously created for this purpose. The **ConfigurationID** is what the LCM uses to find the appropriate configuration on the pull server. The configuration MOF file on the pull server must be named `ConfigurationID.mof`, where *ConfigurationID* is the value of the **ConfigurationID** property of the target node's LCM. For more information, see [Publish Configurations to a Pull Server (v4/v5)](publishConfigs.md).
 
 You can create a random **Guid** using the example below.
 
@@ -94,8 +94,7 @@ PullClientConfigId -Output "."
 
 Once the pull client has been configured, you can use the following guides to perform the next steps:
 
-- [Publish to a Pull Server using Configuration IDs (v4/v5)](publishConfigIDs.md)
-- [Publish to a Pull Server using Configuration Names (v5)](publishConfigNames.md))
+- [Publish Configurations to a Pull Server (v4/v5)](publishConfigs.md)
 - [Package and Upload Resources to a Pull Server (v4)](package-upload-resources.md)
 
 ## See Also

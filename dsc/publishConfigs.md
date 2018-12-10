@@ -56,7 +56,7 @@ You can then rename your ".mof" file using any acceptable method. The example be
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-For more information about using **Guids** in your environment, see [Plan for GUIDs](secureServer.mof#GUIDs).
+For more information about using **Guids** in your environment, see [Plan for GUIDs](secureServer.md#GUIDs).
 
 ### Configuration Names
 

@@ -50,7 +50,7 @@ Service [String] #ResourceName
 Inside a Configuration, a **Service** resource block might look like this to **Ensure** that the Spooler service is running.
 
 > [!NOTE]
-> Before using a resource in a Configuration, you must import it using [Import-DSCResource](./cmdlets/Import-DSCResource.md).
+> Before using a resource in a Configuration, you must import it using [Import-DSCResource](Import-DSCResource.md).
 
 ```powershell
 Configuration TestConfig
@@ -98,4 +98,4 @@ Configuration TestConfig
 > [!NOTE]
 > Beginning in PowerShell 5.0, intellisense was added for DSC. This new feature allows you to use \<TAB\> and \<Ctrl+Space\> to auto-complete key names.
 
-![Resource Tab Completion](./media/resource-tabcompletion.png)
+![Resource Tab Completion](/media/resource-tabcompletion.png)

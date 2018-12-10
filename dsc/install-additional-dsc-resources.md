@@ -40,7 +40,7 @@ To determine if you already have **PowerShell** get, or to get help installing i
 
 Once **PowerShellGet** is installed on your system, you can find and install DSC resources hosted in the [PowerShell Gallery](https://www.powershellgallery.com/).
 
-First, use the [Find-DSCResource](Find-DSCResource.md) cmdlet to find DSC resources. When you run `Find-DSCResource` for the first time, you see the following prompt to install the "NuGet provider".
+First, use the [Find-DSCResource](/powershell/module/powershellget/find-dscresource) cmdlet to find DSC resources. When you run `Find-DSCResource` for the first time, you see the following prompt to install the "NuGet provider".
 
 ```
 PS> Find-DSCResource
@@ -99,7 +99,7 @@ For more information on filtering, see [Where-Object](/powershell/module/microso
 
 ## Installing DSC Resources using PowerShellGet
 
-To install a DSC resource, use the [Install-Module](Install-Module.md) cmdlet, specifying the name of the module shown under **Module** name in your search results.
+To install a DSC resource, use the [Install-Module](/powershell/module/powershellget/Install-Module) cmdlet, specifying the name of the module shown under **Module** name in your search results.
 
 The "TimeZone" resource exists in the "ComputerManagementDSC" module, so that is the module this example installs.
 
@@ -116,7 +116,7 @@ InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure yo
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Press 'y' to continue installing the module. After install, you can verify that your new resource is installed using [Get-DSCResource](Get-DSCResource.md).
+Press 'y' to continue installing the module. After install, you can verify that your new resource is installed using [Get-DSCResource](/powershell/module/psdesiredstateconfiguration/get-dscresource).
 
 ```
 PS> Get-DSCResource -Name TimeZone -Syntax
@@ -149,4 +149,3 @@ PowerShell      VirtualMemory             ComputerManagementDsc          6.0.0.0
 ## See also
 
 - [What are Resources?](resources.md)
-- [Install PowerShellGet using DSC](install-powershellget-using-dsc.md)

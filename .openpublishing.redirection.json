@@ -470,11 +470,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path"         : "dsc/sxsResource.md",
-            "redirect_url"        : "/dsc/resources.md",
-            "redirect_document_id": false
-        },
-        {
             "source_path"         : "dsc/userResource.md",
             "redirect_url"        : "/dsc/resources.md",
             "redirect_document_id": false

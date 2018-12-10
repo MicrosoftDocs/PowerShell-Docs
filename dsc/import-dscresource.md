@@ -6,7 +6,7 @@ title:  Using Import-DSCResource
 
 # Using Import-DSCResource
 
-`Import-DScResource` is a dynamic keyword, which can only be used inside a Configuration script block. The `Import-DSCResource` keyword to import any resources needed in your Configuration. Resources under `$phsome` are imported automatically, but it is still considered best practice to explicitly import all resources used in your [Configuration](Configuration.md).
+`Import-DScResource` is a dynamic keyword, which can only be used inside a Configuration script block. The `Import-DSCResource` keyword to import any resources needed in your Configuration. Resources under `$phsome` are imported automatically, but it is still considered best practice to explicitly import all resources used in your [Configuration](Configurations.md).
 
 The syntax for `Import-DSCResource` is shown below.
 
@@ -70,7 +70,7 @@ This usage has the following benefits:
 
 When authoring the DSC configuration in ISE, PowerShell provides IntelliSence for resources and resource properties. Resource definitions under the `$pshome` module path are loaded automatically. When you import resources using the `Import-DSCResource` keyword, the specified resource definitions are added and Intellisense is expanded to include the imported resource's schema.
 
-[Resource Intellisense](resource-intellisense.png)
+![Resource Intellisense](/media/resource-intellisense.png)
 
 > [!NOTE]
 > Beginning in PowerShell 5.0, tab completion was added to the ISE for DSC resources and their properties. For more information, see [Resources](resources.md).
@@ -129,11 +129,11 @@ Installing and using multiple versions of resources side by side was not support
 
 In the image below, two versions of the **xPSDesiredStateConfiguration** module are installed.
 
-[Multiple Resource Versions Fixed](multiple-resource-versions-broken.md)
+![Multiple Resource Versions Fixed](/media/multiple-resource-versions-broken.md)
 
 Copy the contents of your desired module version to the top level of the module directory.
 
-[Multiple Resource Versions Fixed](multiple-resource-versions-fixed.md)
+![Multiple Resource Versions Fixed](/media/multiple-resource-versions-fixed.md)
 
 ### Resource location
 

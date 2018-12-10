@@ -47,7 +47,7 @@
         - name: Using Import-DSCResource
           href: import-dscresource.md
         - name: Install additional DSC Resources
-          href: installing-additional-dsc-resources.md
+          href: install-additional-dsc-resources.md
         - name: Import a specific version of an installed resource
           href: sxsResource.md
         - name: Use Credentials with DSC Resources
