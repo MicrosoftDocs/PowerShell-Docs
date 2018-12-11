@@ -90,7 +90,7 @@ Configuration DSCSMB
 
         File CreateFolder
         {
-            DestinationPath = 'DscSmbShare'
+            DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
         }
@@ -98,7 +98,7 @@ Configuration DSCSMB
         xSMBShare CreateShare
         {
             Name = 'DscSmbShare'
-            Path = 'DscSmbShare'
+            Path = 'C:\DscSmbShare'
             FullAccess = 'administrator'
             ReadAccess = 'myDomain\Contoso-Server$'
             FolderEnumerationMode = 'AccessBased'
@@ -109,7 +109,7 @@ Configuration DSCSMB
         cNtfsPermissionEntry PermissionSet1
         {
             Ensure = 'Present'
-            Path = 'C:\DSCSMB'
+            Path = 'C:\DscSmbShare'
             Principal = 'myDomain\Contoso-Server$'
             AccessControlInformation = @(
                 cNtfsAccessControlInformation
