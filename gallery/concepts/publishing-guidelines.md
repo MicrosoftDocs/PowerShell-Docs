@@ -31,7 +31,7 @@ Packages that follow these guidelines are far more likely to be downloaded and a
 - Be responsive to feedback
 - Provide modules rather than scripts
 - Provide links to a project site
-- Tag your module with the compatible PSEdition(s) and platforms 
+- Tag your package with the compatible PSEdition(s) and platforms 
 - Include tests with your modules
 - Include and/or link to license terms
 - Sign your code
