@@ -39,7 +39,7 @@ Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the packages o
 
 ## Searching by Operating System 
 
-Since PowerShell Core is available for Windows, Linux, and MacOS, packages in the Gallery may be designed for any combination of these operating systems. In the GalleryUI use the following searchs tags to find packages tagged by operating system:
+Since PowerShell Core is available for Windows, Linux, and MacOS, packages in the Gallery may be designed for any combination of these operating systems. In the gallery UI use the following searchs tags to find packages tagged by operating system:
 
 - Tags: "Windows"
 - Tags: "Linux"
