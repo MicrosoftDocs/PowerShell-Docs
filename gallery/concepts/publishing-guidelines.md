@@ -31,6 +31,7 @@ Packages that follow these guidelines are far more likely to be downloaded and a
 - Be responsive to feedback
 - Provide modules rather than scripts
 - Provide links to a project site
+- Tag your module with the compatible PSEdition(s) and platforms 
 - Include tests with your modules
 - Include and/or link to license terms
 - Sign your code
@@ -132,6 +133,16 @@ Adding a link is done by including ProjectURI in the PSData section of the manif
         ProjectUri = 'https://github.com/powershell/powershell'
 
 When a ProjectURI is provided, the PowerShell Gallery will include a link to the Project Site on the left side of the package page.
+
+## Tag your package with the compatible PSEdition(s) and platforms 
+
+Use the following tags to demonstrate to users which packages will work well with their enviroment:
+
+- PSEdition_Desktop : Packages that are compatible with Windows PowerShell 
+- PSEdition_Core : Packages that are compatible with Powershell Core 
+- Windows : Packages that are compatible with the Windows Operating System
+- Linux : Packages that are compatible with Linux Operating Systems 
+- MacOS : Packages that are compatible with the Mac Operating System
 
 ## Include tests
 
