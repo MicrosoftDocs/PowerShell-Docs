@@ -47,11 +47,11 @@ Since PowerShell Core is available for Windows, Linux, and MacOS, packages in th
 
 ## Searching for Multiple Compatibilities
 
-If I am looking for a package that is complatible with multiple compatibilities I would use the syntax: 
+If I am looking for a package that has multiple compatibilities I would use the syntax: 
 
 Tags: "Compatibility1" "Compatibility2" 
 
-For example, if I am looking for a package with PowerShell Core Compatibility that runs on both Windows and Linux I would search:
+For example, if I am looking for a package with PowerShell Core Compatibility that will run on both my Windows and Linux machines I would search:
 
 Tags: "PSEdition_Core" "Windows" "Linux" 
 
