@@ -11,7 +11,7 @@
         - name: Searching For Packages
           href: how-to/finding-packages/search-syntax.md
         - name: Searching by Compatibility
-          href: how-to/finding-packages/searching-by-compatibility.md 
+          href: how-to/finding-packages/searching-by-compatibility.md
         - name: Filtering Search Results
           href: how-to/finding-packages/filtering-packages.md
     - name: Publishing to the Gallery
