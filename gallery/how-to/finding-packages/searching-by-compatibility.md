@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date:  12/11/2018
 contributor:  JKeithB, SydneyhSmith
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  Packages with compatible PowerShell Editions or Operating System
