@@ -18,16 +18,6 @@
         href: lnxGettingStarted.md
       - name: Built-in resources for Linux
         href: lnxBuiltInResources.md
-    - name: Microsoft Azure
-      items:
-      - name: DSC Extension
-        href: azureDscexthistory.md
-      - name: State Configuration
-        href:
-      - name: Azure Policy Guest Configuration
-        href:
-      - name: Azure Security Center
-        href:
 - name: Quickstarts
   items:
   - name: Create a Website with DSC
