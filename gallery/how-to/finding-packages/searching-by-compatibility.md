@@ -4,7 +4,7 @@ contributor:  JKeithB, SydneyhSmith
 keywords:  gallery,powershell,cmdlet,psgallery
 title:  Packages with compatible PowerShell Editions or Operating System
 ---
-# Packages with compatible PowerShell Editions or Operating System
+# Packages with compatible PowerShell Editions or Operating Systems
 
 Starting with version 5.1, PowerShell is available in different editions which denote varying
 feature sets and platform compatibilities.
