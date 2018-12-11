@@ -61,6 +61,7 @@ Manifest elements that are most important to fill in for item you publish to the
 - Author - this is a required primary key, and contains the name to be associated with the item (see Authors and Owners, below)
 - Description - this is a required primary key, used to briefly explain what this item does and any requirements for using it
 - ProjectURI - this is a strongly recommended URI field in PSData that provides a link to a Github repo or similar location where you do development on the item
+- Tags - it is a strong recommendation to tag your package based on its compatibility with PSEditions and platforms (see for details)
 
 Authors and Owners of PowerShell Gallery items are related concepts, but do not always match.
 Item Owners are users with PowerShell Gallery accounts that have permission to maintain the item. There may be many Owners who can update any item.
