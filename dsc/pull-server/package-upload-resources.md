@@ -18,7 +18,7 @@ Each target node can be configured to download configurations, resources, and ev
 Each resource available for a client to download must be stored in a ".zip" file. The example below will show the required steps using the [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) resource.
 
 > [!NOTE]
-> If you have any clients using PowerShell 4.0, you will need to flaten the resource folder structure and remove any version folders. For more information, see [Multiple Resource Versions](import-dscresource.md#multiple-resource-versions).
+> If you have any clients using PowerShell 4.0, you will need to flaten the resource folder structure and remove any version folders. For more information, see [Multiple Resource Versions](../configurations/import-dscresource.md#multiple-resource-versions).
 
 You can compress the resource directory using any utility, script, or method that you prefer. In Windows, you can *right-click* on the "xPSDesiredStateConfiguration" directory, and select "Send To", then "Compressed Folder".
 
