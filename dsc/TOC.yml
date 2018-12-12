@@ -90,6 +90,8 @@
       href: resources/authoringResourceComposite.md
     - name: Write MOF-based resources in C#
       href: resources/authoringResourceMofCS.md
+    - name: Using the Resource Designer Tool
+      href: resources/authoringResourceMofDesigner.md
 - name: Managing Nodes
   items:
   - name: How-to guides

@@ -360,11 +360,6 @@
             "redirect_document_id": "True"
         },
         {
-            "source_path"         : "dsc/add-parameters-to-a-configuration.md",
-            "redirect_url"        : "/powershell/dsc/configurations/add-parameters-to-a-configuration",
-            "redirect_document_id": false
-        },
-        {
             "source_path"         : "dsc/compositeConfigs.md",
             "redirect_url"        : "/powershell/dsc/configurations/compositeConfigs",
             "redirect_document_id": false
@@ -395,26 +390,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path"         : "dsc/flow-control-in-configurations.md",
-            "redirect_url"        : "/powershell/dsc/configurations/flow-control-in-configurations",
-            "redirect_document_id": false
-        },
-        {
-            "source_path"         : "dsc/import-dscresource.md",
-            "redirect_url"        : "/powershell/dsc/configurations/import-dscresource",
-            "redirect_document_id": false
-        },
-        {
-            "source_path"         : "dsc/install-additional-dsc-resources.md",
-            "redirect_url"        : "/powershell/dsc/configurations/install-additional-dsc-resources",
-            "redirect_document_id": false
-        },
-        {
-            "source_path"         : "dsc/resource-depends-on.md",
-            "redirect_url"        : "/powershell/dsc/configurations/resource-depends-on",
-            "redirect_document_id": false
-        },
-        {
             "source_path"         : "dsc/runAsUser.md",
             "redirect_url"        : "/powershell/dsc/configurations/runAsUser",
             "redirect_document_id": false
@@ -427,11 +402,6 @@
         {
             "source_path"         : "dsc/sxsResource.md",
             "redirect_url"        : "/powershell/dsc/configurations/sxsResource",
-            "redirect_document_id": false
-        },
-        {
-            "source_path"         : "dsc/write-compile-apply-configuration.md",
-            "redirect_url"        : "/powershell/dsc/configurations/write-compile-apply-configuration",
             "redirect_document_id": false
         },
         {
@@ -457,11 +427,6 @@
         {
             "source_path"         : "dsc/nanoDsc.md",
             "redirect_url"        : "/powershell/dsc/getting-started/nanoDsc",
-            "redirect_document_id": false
-        },
-        {
-            "source_path"         : "dsc/apply-get-test.md",
-            "redirect_url"        : "/powershell/dsc/managing-nodes/apply-get-test",
             "redirect_document_id": false
         },
         {
@@ -505,18 +470,8 @@
             "redirect_document_id": false
         },
         {
-            "source_path"         : "dsc/package-upload-resources.md",
-            "redirect_url"        : "/powershell/dsc/pull-server/package-upload-resources",
-            "redirect_document_id": false
-        },
-        {
             "source_path"         : "dsc/partialConfigs.md",
             "redirect_url"        : "/powershell/dsc/pull-server/partialConfigs",
-            "redirect_document_id": false
-        },
-        {
-            "source_path"         : "dsc/publishConfigs.md",
-            "redirect_url"        : "/powershell/dsc/pull-server/publishConfigs",
             "redirect_document_id": false
         },
         {
@@ -562,16 +517,6 @@
         {
             "source_path"         : "dsc/secureServer.md",
             "redirect_url"        : "/powershell/dsc/pull-server/secureServer",
-            "redirect_document_id": false
-        },
-        {
-            "source_path"         : "dsc/update-nodes-manually.md",
-            "redirect_url"        : "/powershell/dsc/pull-server/update-nodes-manually",
-            "redirect_document_id": false
-        },
-        {
-            "source_path"         : "dsc/website-quickstart.md",
-            "redirect_url"        : "/powershell/dsc/quickstarts/website-quickstart",
             "redirect_document_id": false
         },
         {
@@ -745,18 +690,38 @@
             "redirect_document_id": false
         },
         {
+            "source_path"         : "dsc/dscExamples.md",
+            "redirect_url"        : "/powershell/dsc/overview/overview.md",
+            "redirect_document_id": false
+        },
+        {
+            "source_path"         : "dsc/gettingStarted.md",
+            "redirect_url"        : "/powershell/dsc/configurations/write-compile-apply-configuration",
+            "redirect_document_id": false
+        },
+        {
+            "source_path"         : "dsc/queryServerNodes.md",
+            "redirect_url"        : "/powershell/dsc/pull-server/update-nodes-manually",
+            "redirect_document_id": false
+        },
+        {
+            "source_path"         : "dsc/authoringResourceMofDesigner.md",
+            "redirect_url"        : "/powershell/dsc/resources/authoringResourceMofDesigner",
+            "redirect_document_id": false
+        },
+        {
             "source_path"         : "dsc/waitForAllResource.md",
-            "redirect_url"        : "/powershell/dsc/configurations/crossNodeDependencies.md",
+            "redirect_url"        : "/powershell/dsc/configurations/crossNodeDependencies",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/waitForAnyResource.md",
-            "redirect_url"        : "/powershell/dsc/configurations/crossNodeDependencies.md",
+            "redirect_url"        : "/powershell/dsc/configurations/crossNodeDependencies",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/waitForSomeResource.md",
-            "redirect_url"        : "/powershell/dsc/configurations/crossNodeDependencies.md",
+            "redirect_url"        : "/powershell/dsc/configurations/crossNodeDependencies",
             "redirect_document_id": false
         },
         {
