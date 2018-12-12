@@ -645,11 +645,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path"         : "dsc/get-test-set.md",
-            "redirect_url"        : "/powershell/dsc/resources/get-test-set",
-            "redirect_document_id": false
-        },
-        {
             "source_path"         : "dsc/resourceAuthoringChecklist.md",
             "redirect_url"        : "/powershell/dsc/resources/resourceAuthoringChecklist",
             "redirect_document_id": false
@@ -726,12 +721,12 @@
         },
         {
             "source_path"         : "dsc/fileResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/archiveResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
@@ -741,157 +736,157 @@
         },
         {
             "source_path"         : "dsc/environmentResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/registryResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/builtinResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/groupResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/groupSetResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxArchiveResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxBuiltInResources.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxEnvironmentResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxFileLineResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxFileResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxGroupResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxPackageResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxScriptResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxServiceResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxSshAuthorizedKeysResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/lnxUserResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/logResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/PackageManagementDscResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/PackageManagementSourceDscResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/packageResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/processSetResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/scriptResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/serviceResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/serviceSetResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/userResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/windowsfeatureResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/windowsFeatureSetResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/windowsOptionalFeatureResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/windowsOptionalFeatureSetResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/windowsPackageCabResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
             "source_path"         : "dsc/windowsProcessResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
+            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {
