@@ -106,7 +106,7 @@ It is this file that can then be applied to the target node.
 ## Apply the configuration
 
 Now that you have the compiled MOF, you can apply the configuration to the target node (in this case, the local computer) by calling the
-[Start-DscConfiguration](start-dscconfiguration.md) cmdlet.
+[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.
 
 The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md),
 which is the engine of DSC, to apply the configuration.
@@ -120,7 +120,7 @@ Start-DscConfiguration .\WebsiteTest
 
 ## Test the configuration
 
-You can call the [Get-DscConfigurationStatus](Get-DscConfigurationStatus.md)
+You can call the [Get-DscConfigurationStatus](/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus)
 cmdlet to see whether the configuration succeeded.
 
 You can also test the results directly, in this case by browsing to `http://localhost/` in a web browser.

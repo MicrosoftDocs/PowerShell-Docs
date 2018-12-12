@@ -289,7 +289,7 @@ Starts a PowerShell session on `TestAgent1` and installs the modules containing 
 
 #### DeployConfigs
 
-Calls the [Start-DscConfiguration](start-dscconfiguration.md) cmdlet to run the configuration on `TestAgent1`.
+Calls the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet to run the configuration on `TestAgent1`.
 
 #### IntegrationTests
 

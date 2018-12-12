@@ -51,7 +51,7 @@ To successfully encrypt the credentials used to secure a DSC configuration, make
  3. Create a configuration script that defines your desired configuration for the target node and sets up decryption on the target nodes by commanding the Local Configuration manager to decrypt the configuration data using the certificate and its thumbprint.
  4. Run the configuration, which will set the Local Configuration Manager settings and start the DSC configuration.
 
-![Diagram1](images/CredentialEncryptionDiagram1.png)
+![Diagram1](../images/CredentialEncryptionDiagram1.png)
 
 ## Certificate Requirements
 
@@ -225,7 +225,7 @@ Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation
 
 ## Configuration data
 
-The configuration data block defines which target nodes to operate on, whether or not to encrypt the credentials, the means of encryption, and other information. For more information on the configuration data block, see [Separating Configuration and Environment Data](..\configurations\configData.md).
+The configuration data block defines which target nodes to operate on, whether or not to encrypt the credentials, the means of encryption, and other information. For more information on the configuration data block, see [Separating Configuration and Environment Data](../configurations/configData.md).
 
 The elements that can be configured for each node that are related to credential encryption are:
 

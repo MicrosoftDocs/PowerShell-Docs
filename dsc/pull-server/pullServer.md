@@ -44,7 +44,7 @@ Features of the online service that are not currently available in the pull serv
 - All data is encrypted in transit and at rest
 - Client certificates are created and managed automatically
 - Secrets store for centrally managing [passwords/credentials](/azure/automation/automation-credentials), or [variables](/azure/automation/automation-variables) such as server names or connection strings
-- Centrally manage node [LCM configuration](metaConfig.md#basic-settings)
+- Centrally manage node [LCM configuration](../managing-nodes/metaConfig.md#basic-settings)
 - Centrally assign configurations to client nodes
 - Release configuration changes to "canary groups" for testing before reaching production
 - Graphical reporting
@@ -321,7 +321,7 @@ The following topics describe setting up pull clients in detail:
 
 ## See also
 
-- [Windows PowerShell Desired State Configuration Overview](..\overview\overview.md)
+- [Windows PowerShell Desired State Configuration Overview](../overview/overview.md)
 - [Enacting configurations](enactingConfigurations.md)
 - [Using a DSC report server](reportServer.md)
 - [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://msdn.microsoft.com/library/dn393548.aspx)

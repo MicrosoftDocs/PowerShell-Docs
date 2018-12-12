@@ -18,7 +18,7 @@ and a central team releasing changes to security baselines.
 The nuances of each approach including the benefits and risks
 are detailed here.
 
-![Pipeline](images/Pipeline.jpg)
+![Pipeline](../images/Pipeline.jpg)
 
 ## Types of Collaborative Authoring Techniques
 
@@ -47,7 +47,7 @@ and then assigned to the node.
 This requires LCM to be configured in advance
 with the name of each configuration.
 
-![PartialConfiguration](images/PartialConfiguration.jpg)
+![PartialConfiguration](../images/PartialConfiguration.jpg)
 
 Partial Configurations provide two, or more, teams complete control
 over configuration of a server,
@@ -73,7 +73,7 @@ with both configurations applied.
 In this model, only one authority has permission
 to make changes in production.
 
-![PartialSinglePipeline](images/PartialSinglePipeline.jpg)
+![PartialSinglePipeline](../images/PartialSinglePipeline.jpg)
 
 When changes are required from Team B,
 they should submit a Pull Request against Team A's source control environment.
@@ -90,7 +90,7 @@ to accept composite resources.
 The resources are used within a new configuration
 and a single compilation results in one MOF file.
 
-![CompositeResource](images/CompositeResource.jpg)
+![CompositeResource](../images/CompositeResource.jpg)
 
 There are two common scenarios for composite resources.
 The first is to reduce complexity and abstract unique concepts.
