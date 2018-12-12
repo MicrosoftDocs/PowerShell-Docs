@@ -770,11 +770,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path"         : "dsc/builtinResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources.md",
-            "redirect_document_id": false
-        },
-        {
             "source_path"         : "dsc/dsc_roadmap.md",
             "redirect_url"        : "/powershell/dsc/resources/overview.md",
             "redirect_document_id": false
