@@ -9,10 +9,10 @@ title:  Writing help for DSC configurations
 >Applies To: Windows PowerShell 5.0
 
 You can use comment-based help in DSC configurations. Users can access the help by calling the **Configuration** with `-?`, or by using the
-[Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet. Place your Comment-based help directly above the `Configuration` keyword.
+[Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet. Place your Comment-based help directly above the `Configuration` keyword.
 You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.
 
-For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
+For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 > [!NOTE]
 > PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.

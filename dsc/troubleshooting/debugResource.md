@@ -11,10 +11,10 @@ title:  Debugging DSC resources
 In PowerShell 5.0, a new feature was introduced in Desired State Configuraiton (DSC) that allows you to debug a DSC resource as a configuration is being applied.
 
 ## Enabling DSC debugging
-Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet.
+Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) cmdlet.
 This cmdlet takes a mandatory parameter, **BreakAll**.
 
-You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).
+You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).
 
 The following PowerShell output shows the result of enabling debugging:
 
@@ -39,7 +39,7 @@ PS C:\DebugTest>
 
 ## Starting a configuration with debug enabled
 To debug a DSC resource, you start a configuration that calls that resource.
-For this example, we'll look at a simple configuration that calls the [WindowsFeature](windowsfeatureResource.md) resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:
+For this example, we'll look at a simple configuration that calls the **WindowsFeature** resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:
 
 ```powershell
 Configuration PSWebAccess
@@ -56,7 +56,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).
+After compiling the configuration, start it by calling [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
 The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.
 If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.
 
@@ -94,19 +94,17 @@ You should now see a prompt that looks similar to:
 ```
 
 The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).
-Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on.
-For information about debugging in the PowerShell ISE, see [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx).
-Remember that every line in the resource script (or class) is set as a break point.
+Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on. Remember that every line in the resource script (or class) is set as a break point.
 
 ## Disabling DSC debugging
 
-After calling [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), all calls to [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx)
+After calling [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug), all calls to [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 will result in the configuration breaking into the debugger. To allow configurations to run normally, you must disable debugging by calling the
-[Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.
+[Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) cmdlet.
 
 >**Note:** Rebooting does not change the debug state of the LCM. If debugging is enabled, starting a configuration will still break into the debugger after a reboot.
 
-
 ## See Also
-- [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
-- [Writing a custom DSC resource with PowerShell classes](authoringResourceClass.md)
+
+- [Writing a custom DSC resource with MOF](../resources/authoringResourceMOF.md)
+- [Writing a custom DSC resource with PowerShell classes](../resources/authoringResourceClass.md)

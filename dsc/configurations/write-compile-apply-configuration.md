@@ -11,7 +11,7 @@ title:  Write, Compile, and Apply a Configuration
 This exercise walks through creating and applying a Desired State Configuration (DSC) configuration from start to finish.
 In the following example, you will learn how to write and apply a very simple Configuration. The Configuration will ensure a "HelloWorld.txt" file exists on your local machine. If you delete the file, DSC will recreate it the next time it updates.
 
-For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Developers](overview.md).
+For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Developers](../overview/overview.md).
 
 ## Requirements
 
@@ -46,7 +46,7 @@ Save the file as "HelloWorld.ps1".
 
 Defining a Configuration is like defining a Function. The **Node** block specifies the target node to be configured, in this case `localhost`.
 
-The configuration calls one [resources](resources.md), the `File` resource. Resources do the work of ensuring that the target node is in the state defined by the configuration.
+The configuration calls one [resources](../resources/resources.md), the `File` resource. Resources do the work of ensuring that the target node is in the state defined by the configuration.
 
 ## Compile the configuration
 
@@ -78,7 +78,7 @@ Mode                LastWriteTime         Length Name
 Now that you have the compiled MOF, you can apply the configuration to the target node (in this case, the local computer) by calling the
 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.
 
-The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](metaConfig.md),
+The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md),
 the engine of DSC, to apply the configuration.
 The LCM does the work of calling the DSC resources to apply the configuration.
 
@@ -126,5 +126,5 @@ Remove-Item -Path C:\Temp\HelloWorld.txt
 ## Next steps
 
 - Find out more about DSC configurations at [DSC configurations](configurations.md).
-- See what DSC resources are available, and how to create custom DSC resources at [DSC resources](resources.md).
+- See what DSC resources are available, and how to create custom DSC resources at [DSC resources](../resources/resources.md).
 - Find DSC configurations and resources in the [PowerShell Gallery](https://www.powershellgallery.com/).

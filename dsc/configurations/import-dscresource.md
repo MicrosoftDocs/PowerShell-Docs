@@ -73,7 +73,7 @@ When authoring the DSC configuration in ISE, PowerShell provides IntelliSence fo
 ![Resource Intellisense](/media/resource-intellisense.png)
 
 > [!NOTE]
-> Beginning in PowerShell 5.0, tab completion was added to the ISE for DSC resources and their properties. For more information, see [Resources](resources.md).
+> Beginning in PowerShell 5.0, tab completion was added to the ISE for DSC resources and their properties. For more information, see [Resources](../resources/resources.md).
 
 When compiling the Configuration, PowerShell uses the imported resource definitions to validate all resource blocks in the configuration.
 Each resource block is validated, using the resource's schema definition, for the following rules.
@@ -141,4 +141,4 @@ When authoring and compiling Configurations, your resources can be stored in any
 
 ## See also
 
-- [Resources](resources.md)
+- [Resources](../resources/resources.md)

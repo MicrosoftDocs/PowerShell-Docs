@@ -10,7 +10,7 @@ title:  Get-Test-Set
 
 ![Get, Test, and Set](/media/get-test-set.png)
 
-PowerShell Desired State Configuration is constructed around a **Get**, **Test**, and **Set** process. DSC [resources](resources.md) each contains methods to complete each of these operations. In a [Configuration](configurations.md), you define resource blocks to fill in keys that become parameters for a resource's **Get**, **Test**, and **Set** methods.
+PowerShell Desired State Configuration is constructed around a **Get**, **Test**, and **Set** process. DSC [resources](resources.md) each contains methods to complete each of these operations. In a [Configuration](../configurations/configurations.md), you define resource blocks to fill in keys that become parameters for a resource's **Get**, **Test**, and **Set** methods.
 
 This is the syntax for a **Service** resource block. The **Service** resource configures Windows services.
 
@@ -116,7 +116,7 @@ ModuleVersion = "1.0";
 };
 ```
 
-When applied, the [Local Configuration Manager](metaConfig.md) will read the value "Spooler" from the ".mof" file, and pass it to the `-Name` parameter of the **Get**, **Test**, and **Set** methods for the "MyService" instance of the **Service** resource.
+When applied, the [Local Configuration Manager](../managing-nodes/metaConfig.md) will read the value "Spooler" from the ".mof" file, and pass it to the `-Name` parameter of the **Get**, **Test**, and **Set** methods for the "MyService" instance of the **Service** resource.
 
 ## Get
 
@@ -233,5 +233,5 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 ## See also
 
 - [Azure Automation DSC Overview](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
-- [Setting up an SMB pull server](pullServerSMB.md)
-- [Configuring a pull client](pullClientConfigID.md)
+- [Setting up an SMB pull server](../pull-server/pullServerSMB.md)
+- [Configuring a pull client](../pull-server/pullClientConfigID.md)

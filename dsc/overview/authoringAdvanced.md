@@ -27,8 +27,8 @@ to enable this concept:
 
 | Concept | Detailed Information
 |-|-
-| Partial Configurations | [Documentation](partialconfigs.md)
-| Composite Resources | [Documentation](authoringresourcecomposite.md)
+| Partial Configurations | [Documentation](../pull-server/partialConfigs.md)
+| Composite Resources | [Documentation](../resources/authoringResourceComposite.md)
 
 ## Understanding The Impact of Each Approach
 
@@ -174,4 +174,4 @@ creates a safe environment for releasing change in small but frequent batches.
 
 For more information about using release pipelines to manage core infrastructure,
 see the whitepaper:
-[The Release Pipeline Model](http://aka.ms/thereleasepipelinemodel).
+[The Release Pipeline Model](../further-reading/whitepapers.md).

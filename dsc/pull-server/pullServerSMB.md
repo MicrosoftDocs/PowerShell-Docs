@@ -36,7 +36,7 @@ Call the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdle
 
 ### Create the directory and file share
 
-The following configuration uses the [File](fileResource.md) resource to create the directory for the share and the **xSmbShare** resource to set up the SMB share:
+The following configuration uses the **File** resource to create the directory for the share and the **xSmbShare** resource to set up the SMB share:
 
 ```powershell
 Configuration SmbShare
@@ -166,7 +166,7 @@ For more information about configuring the LCM, see [Setting up a pull client us
 
 > [!NOTE]
 > For simplicity, this example uses the **PSDscAllowPlainTextPassword** to allow passing a plaintext password to the **Credential** parameter. For information
-> about passing credentials more securely, see [Credentials Options in Configuration Data](configDataCredentials.md).
+> about passing credentials more securely, see [Credentials Options in Configuration Data](../configurations/configDataCredentials.md).
 >
 > You **MUST** specify a **ConfigurationID** in the **Settings** block of a metaconfiguration for an SMB pull server, even if you are only pulling resources.
 
@@ -221,7 +221,7 @@ Special thanks to the following individuals:
 
 ## See also
 
-[Windows PowerShell Desired State Configuration Overview](overview.md)
+[Windows PowerShell Desired State Configuration Overview](../overview/overview.md)
 
 [Enacting configurations](enactingConfigurations.md)
 

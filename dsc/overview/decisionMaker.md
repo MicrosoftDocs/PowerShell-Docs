@@ -12,7 +12,7 @@ This document describes the business benefits of using Windows PowerShell Desire
 
 PowerShell Desired State Configuration is a configuration management platform built into Windows that is based on open standards. DSC is flexible enough to function reliably and consistently in each stage of the deployment lifecycle (development, test, pre-production, production), as well as during scale-out.
 
-DSC centers around [configurations](configurations.md).
+DSC centers around [configurations](../configurations/configurations.md).
 A configuration is an easy-to-read document that describes an environment made up of computers ("nodes") with specific characteristics.
 These characteristics can be as simple as ensuring a specific Windows feature is enabled or as complex as deploying SharePoint.
 
@@ -38,12 +38,12 @@ DSC was designed with [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/
 Having a single configuration define an environment means that developers can encode their requirements into a configuration,
 check that configuration into source control, and operation teams can easily deploy code without having to go through error-prone manual processes.
 
-Configurations are also [data-driven](configData.md),
+Configurations are also [data-driven](../configurations/configData.md),
 which makes it easier for ops to identify and change environments without developer intervention.
 
 ## Desired State Configuration On-Premises and Off-Premises
 DSC can be used to manage both on-premise and off-premise deployments.
-For on-premise solutions, DSC has a [pull server](pullServer.md)
+For on-premise solutions, DSC has a [pull server](../pull-server/pullServer.md)
 that can be used to centralize management of machines and report on their status.
 For cloud solutions, DSC is usable wherever Windows is usable.
 There are also specific offerings from Azure built on Desired State Configuration,
@@ -54,4 +54,4 @@ such as [Azure Automation](https://azure.microsoft.com/en-us/documentation/servi
 Although DSC was introduced in Windows Server 2012 R2, it is available for down-level operating systems via the Windows Management Framework (WMF) package.
 More information about the WMF can be found on the [PowerShell homepage](/powershell/).
 
-DSC can also be used to manage Linux. For more information, see [Getting Started with DSC for Linux](lnxGettingStarted.md).
+DSC can also be used to manage Linux. For more information, see [Getting Started with DSC for Linux](../getting-started/lnxGettingStarted.md).

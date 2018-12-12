@@ -10,7 +10,7 @@ title:  Configure a virtual machines at initial boot-up by using DSC
 
 ## Requirements
 
-> [!NOTE] 
+> [!NOTE]
 > The **DSCAutomationHostEnabled** registry key described in this topic is not available in PowerShell 4.0.
 > For information on how to configure new virtual machines at initial boot-up in PowerShell 4.0, see
 > [Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?]> (https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
@@ -72,7 +72,7 @@ Configuration SampleIISInstall
 
 3. In a PowerShell console, navigate to the folder where you saved the .ps1 file.
 
-4. Run the following PowerShell commands to compile the MOF document (for information about compiling DSC configurations, see [DSC Configurations](configurations.md):
+4. Run the following PowerShell commands to compile the MOF document (for information about compiling DSC configurations, see [DSC Configurations](../configurations/configurations.md):
 
    ```powershell
    . .\SampleIISInstall.ps1
@@ -80,7 +80,7 @@ Configuration SampleIISInstall
    ```
 
 5. This will create a `localhost.mof` file in a new folder named `SampleIISInstall`.
-   Rename and move that file into the proper location on the VHD as `Pending.mof` by using the [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx) cmdlet. For example:
+   Rename and move that file into the proper location on the VHD as `Pending.mof` by using the [Move-Item](/powershell/module/microsoft.powershell.management/move-item) cmdlet. For example:
 
    ```powershell
        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
@@ -95,14 +95,14 @@ Configuration SampleIISInstall
 7. Create a VM by using the VHD where you installed the DSC MOF document.
 
 After intial boot-up and operating system installation, IIS will be installed.
-You can verify this by calling the [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet.
+You can verify this by calling the [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) cmdlet.
 
 ## Inject a DSC metaconfiguration into a VHD
 
-You can also configure a computer to pull a configuration at intial boot-up by injecting a metaconfiguration (see [Configuring the Local Configuration Manager (LCM)](metaConfig.md)) into the VHD as its `MetaConfig.mof` file.
+You can also configure a computer to pull a configuration at intial boot-up by injecting a metaconfiguration (see [Configuring the Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md)) into the VHD as its `MetaConfig.mof` file.
 If the **DSCAutomationHostEnabled** registry key is set to 2 (the default value),  DSC will apply the metaconfiguration defined by `MetaConfig.mof` to the LCM when the computer boots up for the first time.
 If the metaconfiguration specifies that the LCM should pull configurations from a pull server, the computer will attempt to pull a configuration from that pull server at inital boot-up.
-For information about setting up a DSC pull server, see [Setting up a DSC web pull server](pullServer.md).
+For information about setting up a DSC pull server, see [Setting up a DSC web pull server](../pull-server/pullServer.md).
 
 For this example, we will use both the configuration described in the previous section (**SampleIISInstall**), and the following metaconfiguration:
 
@@ -136,13 +136,13 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. [Set up a DSC web pull server](pullServer.md), and save the **SampleIISInistall** configuration to the appropriate folder.
+2. [Set up a DSC web pull server](../pull-server/pullServer.md), and save the **SampleIISInistall** configuration to the appropriate folder.
 
 3. On a computer running PowerShell 5.0 or later, save the above metaconfiguration (**PullClientBootstrap**) as a PowerShell script (.ps1) file.
 
 4. In a PowerShell console, navigate to the folder where you saved the .ps1 file.
 
-5. Run the following PowerShell commands to compile the  metaconfiguration MOF document (for information about compiling DSC configurations, see [DSC Configurations](configurations.md):
+5. Run the following PowerShell commands to compile the  metaconfiguration MOF document (for information about compiling DSC configurations, see [DSC Configurations](../configurations/configurations.md):
 
    ```powershell
    . .\PullClientBootstrap.ps1
@@ -150,7 +150,7 @@ configuration PullClientBootstrap
    ```
 
 6. This will create a `localhost.meta.mof` file in a new folder named `PullClientBootstrap`.
-   Rename and move that file into the proper location on the VHD as `MetaConfig.mof` by using the [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx) cmdlet.
+   Rename and move that file into the proper location on the VHD as `MetaConfig.mof` by using the [Move-Item](/powershell/module/microsoft.powershell.management/move-item) cmdlet.
 
    ```powershell
    Move-Item -Path C:\DSCTest\PullClientBootstrap\localhost.meta.mof -Destination E:\Windows\System32\Configuration\MetaConfig.mof
@@ -165,7 +165,7 @@ configuration PullClientBootstrap
 8. Create a VM by using the VHD where you installed the DSC MOF document.
 
 After intial boot-up and operating system installation, DSC will pull the configuration from the pull server, and IIS will be installed.
-You can verify this by calling the [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet.
+You can verify this by calling the [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) cmdlet.
 
 ## Disable DSC at boot time
 
@@ -206,10 +206,10 @@ so set the value of this key to 0:
 
 ## See Also
 
-[DSC Configurations](configurations.md)
+[DSC Configurations](../configurations/configurations.md)
 
 [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md)
 
-[Configuring the Local Configuration Manager (LCM)](metaConfig.md)
+[Configuring the Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md)
 
-[Setting up a DSC web pull server](pullServer.md)
+[Setting up a DSC web pull server](../pull-server/pullServer.md)

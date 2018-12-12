@@ -36,7 +36,7 @@ In the example above, "xPSDesiredStateConfiguration.zip" should be renamed "xPSD
 
 ### Create CheckSums
 
-Once the Resource module has been compressed and renamed, you need to create a **CheckSum**.  The **CheckSum** is used, by the LCM on the client, to determine if the resource has been changed, and needs to be downloaded again. You can create a **CheckSum** with the [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) cmdlet, as shown in the example below.
+Once the Resource module has been compressed and renamed, you need to create a **CheckSum**.  The **CheckSum** is used, by the LCM on the client, to determine if the resource has been changed, and needs to be downloaded again. You can create a **CheckSum** with the [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) cmdlet, as shown in the example below.
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip

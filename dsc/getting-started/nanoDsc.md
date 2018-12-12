@@ -17,7 +17,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 ```
 
 For information about installing and using Nano Server, as well as how to manage Nano Server with PowerShell Remoting, see
-[Getting Started with Nano Server](https://technet.microsoft.com/library/mt126167.aspx).
+[Getting Started with Nano Server](/windows-server/get-started/getting-started-with-nano-server).
 
 ## DSC features available on Nano Server
 
@@ -29,47 +29,47 @@ The following DSC features are currently available on Nano Server:
 Both push and pull modes
 
 - All DSC cmdlets that exist on a full version of Windows Server, including the following:
-- [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
-- [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)
-- [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
-- [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)
-- [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
-- [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
-- [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
-- [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)
-- [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
-- [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
-- [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
-- [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
-- [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx)
-- [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
+- [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager)
+- [Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager)
+- [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)
+- [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug)
+- [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
+- [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)
+- [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)
+- [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
+- [Publish-DscConfiguraiton](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
+- [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)
+- [Restore-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration)
+- [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
+- [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
+- [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
 - [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
-- [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
-- [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)
+- [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
+- [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
-- Compiling configurations (see [DSC configurations](configurations.md))
+- Compiling configurations (see [DSC configurations](../configurations/configurations.md))
 
-  **Issue:** Password encryption (see [Securing the MOF File](securemof.md)) during configuration compilation doesn't work.
+  **Issue:** Password encryption (see [Securing the MOF File](../pull-server/secureMOF.md)) during configuration compilation doesn't work.
 
-- Compiling metaconfigurations (see [Configuring the Local Configuration Manager](metaConfig.md))
+- Compiling metaconfigurations (see [Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md))
 
-- Running a resource under user context (see [Running DSC with user credentials (RunAs)](runAsUser.md))
+- Running a resource under user context (see [Running DSC with user credentials (RunAs)](../configurations/runAsUser.md))
 
-- Class-based resources (see [Writing a custom DSC resource with PowerShell classes](authoringResourceClass.md))
+- Class-based resources (see [Writing a custom DSC resource with PowerShell classes](../resources/authoringResourceClass.md))
 
-- Debugging of DSC resources (see [Debugging DSC resources](debugresource.md))
+- Debugging of DSC resources (see [Debugging DSC resources](../troubleshooting/debugResource.md))
 
-  **Issue:** Doesn't work if a resource is using PsDscRunAsCredential (see [Running DSC with user credentials](runAsUser.md))
+  **Issue:** Doesn't work if a resource is using PsDscRunAsCredential (see [Running DSC with user credentials](../configurations/runAsUser.md))
 
-- [Specifying cross-node dependencies](crossNodeDependencies.md)
+- [Specifying cross-node dependencies](../configurations/crossNodeDependencies.md)
 
-- [Resource versioning](sxsResource.md)
+- [Resource versioning](../configurations/sxsResource.md)
 
-- Pull client (configurations & resources) (see [Setting up a pull client using configuration names](pullClientConfigNames.md))
+- Pull client (configurations & resources) (see [Setting up a pull client using configuration names](../pull-server/pullClientConfigNames.md))
 
-- [Partial configurations (pull & push)](partialConfigs.md)
+- [Partial configurations (pull & push)](../pull-server/partialConfigs.md)
 
-- [Reporting to pull server](reportServer.md)
+- [Reporting to pull server](../pull-server/reportServer.md)
 
 - MOF encryption
 
@@ -88,9 +88,9 @@ Both push and pull modes
 - **Script**
 - **WindowsPackageCab**
 - **WindowsProcess**
-- **WaitForAll** (see [Specifying cross-node dependencies](crossNodeDependencies.md))
-- **WaitForAny** (see [Specifying cross-node dependencies](crossNodeDependencies.md))
-- **WaitForSome** (see [Specifying cross-node dependencies](crossNodeDependencies.md))
+- **WaitForAll** (see [Specifying cross-node dependencies](../configurations/crossNodeDependencies.md))
+- **WaitForAny** (see [Specifying cross-node dependencies](../configurations/crossNodeDependencies.md))
+- **WaitForSome** (see [Specifying cross-node dependencies](../configurations/crossNodeDependencies.md))
 
 - Resources that are partially functional
 - **Group**
@@ -123,4 +123,4 @@ Complete end-to-end testing before deploying any DSC custom resources to a produ
 
 ## See Also
 
-- [Getting Started with Nano Server](https://technet.microsoft.com/library/mt126167.aspx)
+- [Getting Started with Nano Server](/windows-server/get-started/getting-started-with-nano-server)

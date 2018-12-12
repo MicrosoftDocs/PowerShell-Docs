@@ -56,7 +56,7 @@ Note the following about the previous code:
 * The type qualifier, `[Key]`, on a property indicates that this property will uniquely identify the resource instance. At least one `[Key]` property is required.
 * The `[Required]` qualifier indicates that the property is required (a value must be specified in any configuration script that uses this resource).
 * The `[write]` qualifier indicates that this property is optional when using the custom resource in a configuration script. The `[read]` qualifier indicates that a property cannot be set by a configuration, and is for reporting purposes only.
-* `Values` restricts the values that can be assigned to the property to the list of values defined in `ValueMap`. For more information, see [ValueMap and Value Qualifiers](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
+* `Values` restricts the values that can be assigned to the property to the list of values defined in `ValueMap`. For more information, see [ValueMap and Value Qualifiers](/windows/desktop/WmiSdk/value-map).
 * Including a property called `Ensure` with values `Present` and `Absent` in your resource is recommended as a way to maintain a consistent style with built-in DSC resources.
 * Name the schema file for your custom resource as follows: `classname.schema.mof`, where `classname` is the identifier that follows the `class` keyword in your schema definition.
 
@@ -274,9 +274,9 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 >**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
 
-The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the
+The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the
 resource should be run under a specified set of credentials.
-For more information, see [Running DSC with user credentials](runAsUser.md).
+For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).
 
 To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.
 

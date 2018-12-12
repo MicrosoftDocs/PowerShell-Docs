@@ -53,4 +53,4 @@ The properties in the `NestedConfig` resource block (**CopyFrom** and **CopyTo**
 
 ## See Also
 
-- [Composite resources--Using a DSC configuration as a resource](authoringResourceComposite.md)
+- [Composite resources--Using a DSC configuration as a resource](../resources/authoringResourceComposite.md)

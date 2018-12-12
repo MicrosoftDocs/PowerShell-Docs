@@ -126,7 +126,7 @@ Start-DscConfiguration Sample_Share
 ```
 
 This script is cleanly formatted and straightforward to read.
-The logic paths and error handling are still present in the [resource](resources.md) implementation,
+The logic paths and error handling are still present in the [resource](../resources/resources.md) implementation,
 but invisible to the script author.
 
 ## Separating Environment from Structure
@@ -138,7 +138,7 @@ where other people verify the new functionality.
 Finally, the code goes into "prod", or the live site production environment.
 
 DSC configurations accommodate this dev-test-prod pipeline
-through the use of [configuration data](configData.md).
+through the use of [configuration data](../configurations/configData.md).
 This further abstracts the difference between the structure of the configuration
 from the nodes that are managed.
 For example, you can define a configuration
@@ -154,8 +154,8 @@ with the correct configuration data for the environment you want to target.
 
 ## See Also
 
-[Configurations](configurations.md)
+[Configurations](../configurations/configurations.md)
 
-[Configuration Data](configData.md)
+[Configuration Data](../configurations/configData.md)
 
-[Resources](resources.md)
+[Resources](../resources/resources.md)

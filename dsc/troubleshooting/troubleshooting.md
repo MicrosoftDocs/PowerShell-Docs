@@ -17,7 +17,7 @@ PowerShell elevated session, to enable WinRM.
 
 ## Using Get-DscConfigurationStatus
 
-The [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet gets
+The [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet gets
 information about configuration status from a target node. A rich object is returned that includes
 high-level information about whether or not the configuration run was successful or not. You can
 dig into the object to discover details about the configuration run such as:
@@ -81,8 +81,8 @@ PSComputerName        :
 ## My script won't run: Using DSC logs to diagnose script errors
 
 Like all Windows software, DSC records errors and events in
-[logs](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx) that can be viewed from
-the [Event Viewer](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer).
+[logs](/windows/desktop/EventLog/about-event-logging) that can be viewed from
+the [Event Viewer](https://support.microsoft.com/hub/4338813/windows-help).
 Examining these logs can help you understand why a particular operation failed, and how to prevent
 failure in the future. Writing configuration scripts can be tricky, so to make tracking errors
 easier as you author, use the DSC Log resource to track the progress of your configuration in the
@@ -93,7 +93,7 @@ DSC Analytic event log.
 In Event Viewer, DSC events are in: **Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
 
 The corresponding PowerShell cmdlet,
-[Get-WinEvent](https://technet.microsoft.com/library/hh849682.aspx), can also be run to view the
+[Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent), can also be run to view the
 event logs:
 
 ```
@@ -109,14 +109,14 @@ TimeCreated                     Id LevelDisplayName Message
 As shown above, DSC's primary log name is **Microsoft->Windows->DSC** (other log names under
 Windows are not shown here for brevity). The primary name is appended to the channel name to create
 the complete log name. The DSC engine writes mainly into three types of logs:
-[Operational, Analytic, and Debug logs](https://technet.microsoft.com/library/cc722404.aspx). Since
+[Operational, Analytic, and Debug logs](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Since
 the analytic and debug logs are turned off by default, you should enable them in Event Viewer. To
 do this, open Event Viewer by typing Show-EventLog in Windows PowerShell; or, click the **Start**
 button, click **Control Panel**, click **Administrative Tools**, and then click **Event Viewer**.
 On the **View** menu in Event viewer, click **Show Analytic and Debug Logs**. The log name for the
 analytic channel is **Microsoft-Windows-Dsc/Analytic**, and the debug channel is
 **Microsoft-Windows-Dsc/Debug**. You could also use the
-[wevtutil](https://technet.microsoft.com/library/cc732848.aspx) utility to enable the logs, as
+[wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) utility to enable the logs, as
 shown in the following example.
 
 ```powershell
@@ -222,12 +222,12 @@ TimeCreated                     Id LevelDisplayName Message
 ```
 
 You can extract the data in the variable `$SeparateDscOperations` using
-[Where-Object](https://technet.microsoft.com/library/ee177028.aspx). Following are five scenarios
+[Where-Object](/powershell/module/microsoft.powershell.core/where-object). Following are five scenarios
 in which you might want to extract data for troubleshooting DSC:
 
 ### 1: Operations failures
 
-All events have [severity levels](https://msdn.microsoft.com/library/dd996917(v=vs.85)). This
+All events have [severity levels](/windows/desktop/WES/defining-severity-levels). This
 information can be used to identify the error events:
 
 ```
@@ -709,14 +709,10 @@ onlyProperty                            PSComputerName
 
 ## See Also
 
-### Reference
-
-- [DSC Log Resource](logResource.md)
-
 ### Concepts
 
-- [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
+- [Build Custom Windows PowerShell Desired State Configuration Resources](../resources/authoringResource.md)
 
 ### Other Resources
 
-- [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
+- [Windows PowerShell Desired State Configuration Cmdlets](/powershell/module/psdesiredstateconfiguration/)

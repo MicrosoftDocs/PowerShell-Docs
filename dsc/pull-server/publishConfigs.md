@@ -15,7 +15,7 @@ Each target node can be configured to download configurations, resources, and ev
 
 ## Compile Configurations
 
-The first step to storing [Configurations](configurations.md) on a Pull Server, is to compile them into ".mof" files. To make a configuration generic, and applicable to more clients, use `localhost` in your Node block. The example below shows a Configuration shell that uses `localhost` instead of a specific client name.
+The first step to storing [Configurations](../configurations/configurations.md) on a Pull Server, is to compile them into ".mof" files. To make a configuration generic, and applicable to more clients, use `localhost` in your Node block. The example below shows a Configuration shell that uses `localhost` instead of a specific client name.
 
 ```powershell
 Configuration GenericConfig

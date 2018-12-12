@@ -8,7 +8,7 @@ title:  Calling DSC resource methods directly
 
 >Applies To: Windows PowerShell 5.0
 
-You can use the [Invoke-DscResource](https://technet.microsoft.com/library/mt517869.aspx) cmdlet to directly call the functions or methods of a DSC resource (The **Get-TargetResource**,
+You can use the [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) cmdlet to directly call the functions or methods of a DSC resource (The **Get-TargetResource**,
 **Set-TargetResource**, and **Test-TargetResource** functions of a MOF-based resource, or the **Get**, **Set**, and **Test** methods of a class-based resource).
 This can be used by third-parties that want to use DSC resources, or as a helpful tool while developing resources.
 
@@ -49,6 +49,6 @@ $result.ItemValue | fl
 >**Note:** Directly calling composite resource methods is not supported. Instead, call the methods of the underlying resources that make up the composite resource.
 
 ## See Also
-- [Writing a custom DSC resource with MOF](authoringResourceMOF.md)
-- [Writing a custom DSC resource with PowerShell classes](authoringResourceClass.md)
-- [Debugging DSC resources](debugResource.md)
+- [Writing a custom DSC resource with MOF](../resources/authoringResourceMOF.md)
+- [Writing a custom DSC resource with PowerShell classes](../resources/authoringResourceClass.md)
+- [Debugging DSC resources](../troubleshooting/debugResource.md)

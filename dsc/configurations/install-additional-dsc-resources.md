@@ -22,13 +22,13 @@ This is a list of the OOB resources included in PowerShell 4.0 and a description
 |**Log**|Writes messages to the `Microsoft-Windows-Desired State Configuration/Analytic` event log.|
 |**Package**|Installs or uninstalls packages using **Arguments**, **LogPath**, **ReturnCode**, other settings.|
 |**Registry**|Manages registry keys and values.|
-|**Script**|Allows you to design your own [get-test-set](get-test-set.md) script blocks.|
+|**Script**|Allows you to design your own [get-test-set](../resources/get-test-set.md) script blocks.|
 |**Service**|Configures Windows services.|
 |**User** |Manages local users and attributes.|
 |**WindowsFeature**|Manages roles and features.|
 |**WindowsProcess**|Configures Windows processes.|
 
-The OOB resources allow a good starting point for common operations. If the OOB resources do not meet your needs, you can write your own [Custom Resource](authoringresource.md). Before you write a custom resource to solve your problem, you should look through the vast number of DSC resources that have already been created by both Microsoft and the PowerShell community.
+The OOB resources allow a good starting point for common operations. If the OOB resources do not meet your needs, you can write your own [Custom Resource](../resources/authoringResource.md). Before you write a custom resource to solve your problem, you should look through the vast number of DSC resources that have already been created by both Microsoft and the PowerShell community.
 
 You can find DSC resources in both the [PowerShell Gallery](https://www.powershellgallery.com/) and [GitHub](https://github.com/). You can also install DSC resources directly from the PowerShell console using [PowerShellGet](/powershell/module/powershellget/).
 
@@ -99,7 +99,7 @@ For more information on filtering, see [Where-Object](/powershell/module/microso
 
 ## Installing DSC Resources using PowerShellGet
 
-To install a DSC resource, use the [Install-Module](/powershell/module/powershellget/Install-Module) cmdlet, specifying the name of the module shown under **Module** name in your search results.
+To install a DSC resource, use the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet, specifying the name of the module shown under **Module** name in your search results.
 
 The "TimeZone" resource exists in the "ComputerManagementDSC" module, so that is the module this example installs.
 
@@ -116,7 +116,7 @@ InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure yo
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Press 'y' to continue installing the module. After install, you can verify that your new resource is installed using [Get-DSCResource](/powershell/module/psdesiredstateconfiguration/get-dscresource).
+Press 'y' to continue installing the module. After install, you can verify that your new resource is installed using [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource).
 
 ```
 PS> Get-DSCResource -Name TimeZone -Syntax
@@ -148,4 +148,4 @@ PowerShell      VirtualMemory             ComputerManagementDsc          6.0.0.0
 
 ## See also
 
-- [What are Resources?](resources.md)
+- [What are Resources?](../resources/resources.md)

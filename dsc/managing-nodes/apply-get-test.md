@@ -8,13 +8,6 @@ title:  Apply, Get, and Test Configurations on a Node
 
 This guide will show you how to work with Configurations on a target Node. This guide is broken up into the following steps:
 
-- [Apply a Configuration](#apply-a-configuration)
-- [Test a Configuration](#test-a-configuration)
-- [Get Configuration Values](#get-configuration-values)
-- [Get Configuration Status](#get-configuration-status)
-- [Manage Configuration Documents](#manage-configuration-documents)
-- [Publish Configurations](#publish-configurations)
-
 ## Apply a Configuration
 
 In order to apply and manage a Configuration, we need to generate a ".mof" file. The following code will represent a simple Configuration that will be used throughout this guide.
@@ -61,7 +54,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 45     Job45           Configuratio... Running       True            localhost,server02   Start-DSCConfiguration...
 ```
 
-If a Configuration is taking a long time and you want to stop it, you can use [Stop-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/stop-dscconfiguration) to stop application on the local Node.
+If a Configuration is taking a long time and you want to stop it, you can use [Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) to stop application on the local Node.
 
 ```powershell
 Stop-DSCConfiguration -Force
@@ -111,7 +104,7 @@ Start-DSCConfiguration -UseExisting -Verbose -Wait
 
 ## Test a Configuration
 
-You can test a currently applied Configuration using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/test-dscconfiguration). `Test-DSCConfiguration` will return `True` if the Node is compliant, and `False` if it is not.
+You can test a currently applied Configuration using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration). `Test-DSCConfiguration` will return `True` if the Node is compliant, and `False` if it is not.
 
 ```powershell
 Test-DSCConfiguration
@@ -127,7 +120,7 @@ Beginning in PowerShell 5.0 you can test a Configuration without applying it. Th
 
 ## Get Configuration Values
 
-The [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet returns the current values for any configured resources in the currently applied Configuration.
+The [Get-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet returns the current values for any configured resources in the currently applied Configuration.
 
 ```powershell
 Get-DSCConfiguration
@@ -164,7 +157,7 @@ CimClassName         : MSFT_FileDirectoryConfiguration
 
 ## Get Configuration Status
 
-Beginning in PowerShell 5.0 the [Get-DSCConfigurationStatus](/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus) cmdlet allows you to see the history of applied Configurations to the node. PowerShell DSC keeps track of the last {{N}} Configurations applied in **Push** or **Pull** mode. This includes any *consistency* checks executed by the LCM. By default, `Get-DSCConfigurationStatus` shows you the last history entry only.
+Beginning in PowerShell 5.0 the [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet allows you to see the history of applied Configurations to the node. PowerShell DSC keeps track of the last {{N}} Configurations applied in **Push** or **Pull** mode. This includes any *consistency* checks executed by the LCM. By default, `Get-DSCConfigurationStatus` shows you the last history entry only.
 
 ```powershell
 Get-DSCConfigurationStatus
@@ -204,7 +197,7 @@ Success    11/27/2018 6:03:44 AM     Consistency     PUSH  False                
 
 The LCM manages the Configuration of the Node by working with **Configuration Documents**. These ".mof" files reside in the "C:\Windows\System32\Configuration" directory.
 
-Beginning in PowerShell 5.0 the [Remove-DSCConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument) allows you to remove the ".mof" files to stop future consistency checks or remove a Configuration that has errors when applied. The `-Stage` parameter allows you to specify which ".mof" file you want to remove.
+Beginning in PowerShell 5.0 the [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) allows you to remove the ".mof" files to stop future consistency checks or remove a Configuration that has errors when applied. The `-Stage` parameter allows you to specify which ".mof" file you want to remove.
 
 ```powershell
 Remove-DSCConfigurationDocument -Stage Current
@@ -215,7 +208,7 @@ Remove-DSCConfigurationDocument -Stage Current
 
 ## Publish Configurations
 
-Beginning in PowerShell 5.0, the [Publish-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet was added. This cmdlet allows you to publish a ".mof" file to remote computers, without applying it.
+Beginning in PowerShell 5.0, the [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet was added. This cmdlet allows you to publish a ".mof" file to remote computers, without applying it.
 
 ```powershell
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
@@ -223,4 +216,4 @@ Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer
 
 ## See also
 
-- [Get, Test, and Set](get-test-set.md)
+- [Get, Test, and Set](../resources/get-test-set.md)

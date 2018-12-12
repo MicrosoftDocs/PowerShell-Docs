@@ -321,7 +321,7 @@ The following topics describe setting up pull clients in detail:
 
 ## See also
 
-- [Windows PowerShell Desired State Configuration Overview](overview.md)
+- [Windows PowerShell Desired State Configuration Overview](..\overview\overview.md)
 - [Enacting configurations](enactingConfigurations.md)
 - [Using a DSC report server](reportServer.md)
 - [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://msdn.microsoft.com/library/dn393548.aspx)

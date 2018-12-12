@@ -44,7 +44,7 @@ You can create a random **Guid** using the example below.
 
 ## Set up a Pull Client to download Configurations
 
-Each client must be configured in **Pull** mode and given the pull server url where its configuration is stored. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, with a **LocalConfigurationManager** block. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig4.md).
+Each client must be configured in **Pull** mode and given the pull server url where its configuration is stored. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, with a **LocalConfigurationManager** block. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](../managing-nodes/metaConfig4.md).
 
 ## HTTP DSC Pull Server
 

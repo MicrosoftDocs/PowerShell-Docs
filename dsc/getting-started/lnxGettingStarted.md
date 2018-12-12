@@ -5,7 +5,7 @@ title:  Get started with Desired State Configuration (DSC) for Linux
 ---
 # Get started with Desired State Configuration (DSC) for Linux
 
-This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Linux. For general information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](overview.md).
+This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Linux. For general information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](../overview/overview.md).
 
 ## Supported Linux operation system versions
 
@@ -103,7 +103,7 @@ The Windows PowerShell Configuration keyword is used to create a configuration f
 
 ### Push the configuration to the Linux computer
 
-Configuration documents (MOF files) can be pushed to the Linux computer using the [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration) cmdlet. In order to use this cmdlet, along with the [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration), or [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) cmdlets, remotely to a Linux computer, you must use a CIMSession. The [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet is used to create a CIMSession to the Linux computer.
+Configuration documents (MOF files) can be pushed to the Linux computer using the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet. In order to use this cmdlet, along with the [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration), or [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) cmdlets, remotely to a Linux computer, you must use a CIMSession. The [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet is used to create a CIMSession to the Linux computer.
 
 The following code shows how to create a CIMSession for DSC for Linux.
 
@@ -123,7 +123,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 > For “Push” mode, the user credential must be the root user on the Linux computer.
 > Only SSL/TLS connections are supported for DSC for Linux, the `New-CimSession` must be used with the –UseSSL parameter set to $true.
 > The SSL certificate used by OMI (for DSC) is specified in the file: `/opt/omi/etc/omiserver.conf` with the properties: pemfile and keyfile.
-> If this certificate is not trusted by the Windows computer that you are running the [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet on, you can choose to ignore certificate validation with the CIMSession Options: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+> If this certificate is not trusted by the Windows computer that you are running the [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet on, you can choose to ignore certificate validation with the CIMSession Options: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 Run the following command to push the DSC configuration to the Linux node.
 
@@ -131,7 +131,7 @@ Run the following command to push the DSC configuration to the Linux node.
 
 ### Distribute the configuration with a pull server
 
-Configurations can be distributed to a Linux computer with a pull server, just like for Windows computers. For guidance on using a pull server, see [Windows PowerShell Desired State Configuration Pull Servers](pullServer.md). For additional information and limitations related to using Linux computers with a pull server, see the Release Notes for Desired State Configuration for Linux.
+Configurations can be distributed to a Linux computer with a pull server, just like for Windows computers. For guidance on using a pull server, see [Windows PowerShell Desired State Configuration Pull Servers](../pull-server/pullServer.md). For additional information and limitations related to using Linux computers with a pull server, see the Release Notes for Desired State Configuration for Linux.
 
 ### Working with configurations locally
 
@@ -163,7 +163,7 @@ Removes a custom DSC resource module. Requires the name of the module to remove.
 
 - StartDscLocalConfigurationManager.py
 
-Applies a configuration MOF file to the computer. Similar to the [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration) cmdlet. Requires the path to the configuration MOF to apply.
+Applies a configuration MOF file to the computer. Similar to the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet. Requires the path to the configuration MOF to apply.
 
 `# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 

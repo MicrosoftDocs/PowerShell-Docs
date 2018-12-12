@@ -40,7 +40,7 @@ The examples below sets the **ConfigurationName** property of the LCM to the nam
 
 ## Set up a Pull Client to download Configurations
 
-Each client must be configured in **Pull** mode and given the pull server url where its configuration is stored. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).
+Each client must be configured in **Pull** mode and given the pull server url where its configuration is stored. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md).
 
 The following script configures the LCM to pull configurations from a server named "CONTOSO-PullSrv".
 

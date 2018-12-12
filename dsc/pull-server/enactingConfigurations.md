@@ -16,17 +16,17 @@ push mode and pull mode.
 ![Push mode](images/pushModel.png "How push mode works")
 
 Push mode refers to a user actively applying a configuration to a target node
-by calling the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet.
+by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.
 
 After creating and compiling a configuration, you can enact it in push mode
-by calling the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet,
+by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet,
 setting the -Path parameter of the cmdlet to the path where the configuration MOF is located.
 For example, if the configuration MOF is located at `C:\DSC\Configurations\localhost.mof`,
 you would apply it to the local machine with the following command:
 `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > __Note__: By default, DSC runs a configuration as a background job. To run the configuration interactively, call the
->[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) with the __-Wait__ parameter.
+>[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) with the __-Wait__ parameter.
 
 ## Pull mode
 
@@ -49,7 +49,7 @@ specified by the **ConfigurationModeFrequencyMins** property of the LCM.
 The LCM checks for updated configurations on the pull service at regular intervals
 specified by the **RefreshModeFrequency** property of the LCM.
 For information about configuring the LCM, see
-[Configuring the Local Configuration Manager](metaConfig.md).
+[Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md).
 
 The recommended solution for hosting a Pull Service, is the DSC cloud service,
 [Azure Automation](https://azure.microsoft.com/services/automation/).

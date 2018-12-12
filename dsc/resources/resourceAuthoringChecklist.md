@@ -29,7 +29,7 @@ xPSDesiredStateConfiguration
 
 ## Resource and schema are correct
 
-Verify the resource schema (*.schema.mof) file. You can use the [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner) to help develop and test your schema.
+Verify the resource schema (*.schema.mof) file. You can use the [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) to help develop and test your schema.
 Make sure that:
 
 - Property types are correct (e.g. don’t use String for properties which accept numeric values, you should use UInt32 or other numeric types instead)
@@ -52,7 +52,7 @@ Make sure that:
 
 - Every field has meaningful description. The PowerShell GitHub repository has good examples, such as [the .schema.mof for xRemoteFile](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
 
-Additionally, you should use **Test-xDscResource** and **Test-xDscSchema** cmdlets from [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner) to automatically verify the resource and schema:
+Additionally, you should use **Test-xDscResource** and **Test-xDscSchema** cmdlets from [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) to automatically verify the resource and schema:
 
 ```
 Test-xDscResource <Resource_folder>

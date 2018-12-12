@@ -12,7 +12,7 @@ In PowerShell 5.0, separate versions of DSC resources can be installed on a comp
 
 ## Installing separate resource versions side by side
 
-You can use the **MinimumVersion**, **MaximumVersion**, and **RequiredVersion** parameters of the [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) cmdlet to specify
+You can use the **MinimumVersion**, **MaximumVersion**, and **RequiredVersion** parameters of the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet to specify
 which version of a module to install. Calling **Install-Module** without specifying a version installs the most recent version.
 
 For example, there are multiple versions of the **xFailOverCluster** module, each of which contains an **xCluster** resource. Calling **Install-Module** without specifying the
@@ -98,4 +98,4 @@ This will also work in PowerShell 5.0, but it is recommended that you use the **
 ## See also
 
 - [DSC Configurations](configurations.md)
-- [DSC Resources](resources.md)
+- [DSC Resources](../resources/resources.md)

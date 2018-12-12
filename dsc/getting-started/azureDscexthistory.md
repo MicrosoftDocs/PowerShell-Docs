@@ -86,7 +86,7 @@ This article will provide information about each version of the Azure DSC VM Ext
 - **Environment:** Azure
 - **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
 - **New features:**
-  - Bug fixes & improvements that simplifies using DSC Azure Automation through the portal UI as well as Resource Manager template.  For more information, see [Default Configuration Script](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-dsc-overview#default-configuration-script) in the DSC Extension documentation.
+  - Bug fixes & improvements that simplifies using DSC Azure Automation through the portal UI as well as Resource Manager template.  For more information, see [Default Configuration Script](/azure/virtual-machines/extensions/dsc-overview) in the DSC Extension documentation.
 
 ### Version 2.26
 
@@ -233,7 +233,7 @@ This article will provide information about each version of the Azure DSC VM Ext
 
 ## Next steps
 
-- For more information about PowerShell DSC, go to the [PowerShell documentation center](overview.md).
-- Examine the [Resource Manager template for the DSC extension](/azure/virtual-machines/windows/extensions-dsc-template).
+- For more information about PowerShell DSC, go to the [PowerShell documentation center](../overview/overview.md).
+- Examine the [Resource Manager template for the DSC extension](/azure/virtual-machines/extensions/dsc-template).
 - For more functionality that you can manage by using PowerShell DSC, and for more DSC resources, browse the [PowerShell gallery](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0).
-- For details about passing sensitive parameters into configurations, see [Manage credentials securely with the DSC extension handler](/azure/virtual-machines/windows/extensions-dsc-credentials).
+- For details about passing sensitive parameters into configurations, see [Manage credentials securely with the DSC extension handler](/azure/virtual-machines/extensions/dsc-credentials).

@@ -8,5 +8,5 @@ title:  DSC Examples
 
 This section contains DSC examples:
 
-- [Building a CI-CD pipeline with DSC, Pester, and Visual Studio Team Services](dscCiCd.md)
-- [Separating configuration and environment data](separatingEnvData.md)
+- [Building a CI-CD pipeline with DSC, Pester, and Visual Studio Team Services](./tutorials/dscCiCd.md)
+- [Separating configuration and environment data](./configurations/separatingEnvData.md)

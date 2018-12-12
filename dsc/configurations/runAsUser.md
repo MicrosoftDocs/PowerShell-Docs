@@ -62,4 +62,4 @@ ChangeCmdBackGroundColor -ConfigurationData $configData
 
 > [!NOTE]
 > This example assumes that you have a valid certificate at `C:\publicKeys\targetNode.cer`, and that the thumbprint of that certificate is the value shown.
-> For information about encrypting credentials in DSC configuration MOF files, see [Securing the MOF file](secureMOF.md).
+> For information about encrypting credentials in DSC configuration MOF files, see [Securing the MOF file](../pull-server/secureMOF.md).

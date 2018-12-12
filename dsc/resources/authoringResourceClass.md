@@ -64,7 +64,7 @@ Notice that the properties are modified by attributes. The meaning of the attrib
 - **DscProperty(NotConfigurable)**: The property is read-only. Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.
 - **DscProperty()**: The property is configurable, but it is not required.
 
-The **$Path** and **$SourcePath** properties are both strings. The **$CreationTime** is a [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) property. The **$Ensure** property is an enumeration type, defined as follows.
+The **$Path** and **$SourcePath** properties are both strings. The **$CreationTime** is a [DateTime](/dotnet/api/system.datetime) property. The **$Ensure** property is an enumeration type, defined as follows.
 
 ```powershell
 enum Ensure
@@ -450,7 +450,7 @@ PowerShellVersion = '5.0'
 
 ## Test the resource
 
-After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource. For information about how to run a DSC configuration, see [Enacting configurations](enactingConfigurations.md). The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).
+After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource. For information about how to run a DSC configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md). The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).
 
 ```powershell
 Configuration Test
@@ -471,9 +471,9 @@ Start-DscConfiguration -Wait -Force Test
 
 >**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.
 
-The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the
+The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the
 resource should be run under a specified set of credentials.
-For more information, see [Running DSC with user credentials](runAsUser.md).
+For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).
 
 ### Require or disallow PsDscRunAsCredential for your resource
 

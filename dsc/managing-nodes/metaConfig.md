@@ -50,11 +50,11 @@ configuration LCMConfig
 The process of applying settings to LCM is similar to applying a DSC configuration.
 You will create an LCM configuration, compile it to a MOF file, and apply it to the node.
 Unlike DSC configurations, you do not enact an LCM configuration
-by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.
-Instead, you call [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx),
+by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.
+Instead, you call [Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager),
 supplying the path to the LCM configuration MOF as a parameter.
 After you enact the LCM configuration, you can see the properties of the LCM
-by calling the [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet.
+by calling the [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) cmdlet.
 
 An LCM configuration can contain blocks only for a limited set of resources.
 In the previous example, the only resource called is **Settings**.
@@ -79,12 +79,12 @@ The following properties are available in a **Settings** block.
 | AllowModuleOverwrite| bool| __$TRUE__ if new configurations downloaded from the pull service are allowed to overwrite the old ones on the target node. Otherwise, $FALSE.|
 | CertificateID| string| The thumbprint of a certificate used to secure credentials passed in a configuration. For more information see [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Note:__ this is managed automatically if using Azure Automation DSC pull service.|
 | ConfigurationDownloadManagers| CimInstance[]| Obsolete. Use __ConfigurationRepositoryWeb__ and __ConfigurationRepositoryShare__ blocks to define configuration pull service endpoints.|
-| ConfigurationID| string| For backwards compatibility with older pull service versions. A GUID that identifies the configuration file to get from a pull service. The node will pull configurations on the pull service if the name of the configuration MOF is named ConfigurationID.mof.<br> __Note:__ If you set this property, registering the node with a pull service by using __RegistrationKey__ does not work. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).|
+| ConfigurationID| string| For backwards compatibility with older pull service versions. A GUID that identifies the configuration file to get from a pull service. The node will pull configurations on the pull service if the name of the configuration MOF is named ConfigurationID.mof.<br> __Note:__ If you set this property, registering the node with a pull service by using __RegistrationKey__ does not work. For more information, see [Setting up a pull client with configuration names](../pull-server/pullClientConfigNames.md).|
 | ConfigurationMode| string | Specifies how the LCM actually applies the configuration to the target nodes. Possible values are __"ApplyOnly"__,__"ApplyAndMonitor"__, and __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__: DSC applies the configuration and does nothing further unless a new configuration is pushed to the target node or when a new configuration is pulled from a service. After initial application of a new configuration, DSC does not check for drift from a previously configured state. Note that DSC will attempt to apply the configuration until it is successful before __ApplyOnly__ takes effect. </li><li> __ApplyAndMonitor__: This is the default value. The LCM applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs. Note that DSC will attempt to apply the configuration until it is successful before __ApplyAndMonitor__ takes effect.</li><li>__ApplyAndAutoCorrect__: DSC applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs, and then re-applies the current configuration.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| How often, in minutes, the current configuration is checked and applied. This property is ignored if the ConfigurationMode property is set to ApplyOnly. The default value is 15.|
 | DebugMode| string| Possible values are __None__, __ForceModuleImport__, and __All__. <ul><li>Set to __None__ to use cached resources. This is the default and should be used in production scenarios.</li><li>Setting to __ForceModuleImport__, causes the LCM to reload any DSC resource modules, even if they have been previously loaded and cached. This impacts the performance of DSC operations as each module is reloaded on use. Typically you would use this value while debugging a resource</li><li>In this release, __All__ is same as __ForceModuleImport__</li></ul> |
 | RebootNodeIfNeeded| bool| Set this to __$true__ to automatically reboot the node after a configuration that requires reboot is applied. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is __$false__. To use this setting when a reboot condition is enacted by something other than DSC (such as Windows Installer), combine this setting with the [xPendingReboot](https://github.com/powershell/xpendingreboot) module.|
-| RefreshMode| string| Specifies how the LCM gets configurations. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: DSC configurations are disabled for this node.</li><li> __Push__: Configurations are initiated by calling the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. The configuration is applied immediately to the node. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for configurations from a pull service or SMB path. If this property is set to __Pull__, you must specify an HTTP (service) or SMB (share) path in a __ConfigurationRepositoryWeb__ or __ConfigurationRepositoryShare__ block.</li></ul>|
+| RefreshMode| string| Specifies how the LCM gets configurations. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: DSC configurations are disabled for this node.</li><li> __Push__: Configurations are initiated by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet. The configuration is applied immediately to the node. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for configurations from a pull service or SMB path. If this property is set to __Pull__, you must specify an HTTP (service) or SMB (share) path in a __ConfigurationRepositoryWeb__ or __ConfigurationRepositoryShare__ block.</li></ul>|
 | RefreshFrequencyMins| Uint32| The time interval, in minutes, at which the LCM checks a pull service to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30.|
 | ReportManagers| CimInstance[]| Obsolete. Use __ReportServerWeb__ blocks to define an endpoint to send reporting data to a pull service.|
 | ResourceModuleManagers| CimInstance[]| Obsolete. Use __ResourceRepositoryWeb__ and __ResourceRepositoryShare__ blocks to define pull service HTTP endpoints or SMB paths, respectively.|
@@ -100,7 +100,7 @@ LCM configuration supports defining the following types of pull service endpoint
 - **Report server**: A service that DSC sends report data to. Define report servers by using **ReportServerWeb** blocks. A report server must be a web service.
 
 For more details on pull service see,
-[Desired State Configuration Pull Service](pullServer.md).
+[Desired State Configuration Pull Service](../pull-server/pullServer.md).
 
 ## Configuration server blocks
 
@@ -112,8 +112,8 @@ A **ConfigurationRepositoryWeb** defines the following properties.
 |---|---|---|
 |AllowUnsecureConnection|bool|Set to **$TRUE** to allow connections from the node to the server without authentication. Set to **$FALSE** to require authentication.|
 |CertificateID|string|The thumbprint of a certificate used to authenticate to the server.|
-|ConfigurationNames|String[]|An array of names of configurations to be pulled by the target node. These are used only if the node is registered with the pull service by using a **RegistrationKey**. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).|
-|RegistrationKey|string|A GUID that registers the node with the pull service. For more information, see [Setting up a pull client with configuration names](pullClientConfigNames.md).|
+|ConfigurationNames|String[]|An array of names of configurations to be pulled by the target node. These are used only if the node is registered with the pull service by using a **RegistrationKey**. For more information, see [Setting up a pull client with configuration names](../pull-server/pullClientConfigNames.md).|
+|RegistrationKey|string|A GUID that registers the node with the pull service. For more information, see [Setting up a pull client with configuration names](../pull-server/pullClientConfigNames.md).|
 |ServerURL|string|The URL of the configuration service.|
 
 An example script to simplify configuring the ConfigurationRepositoryWeb value for on-premises nodes
@@ -149,7 +149,7 @@ you create a **ResourceRepositoryShare** block.
 
 |Property|Type|Description|
 |---|---|---|
-|Credential|MSFT_Credential|The credential used to authenticate to the SMB share. For an example of passing credentials, see [Setting up a DSC SMB pull server](pullServerSMB.md)|
+|Credential|MSFT_Credential|The credential used to authenticate to the SMB share. For an example of passing credentials, see [Setting up a DSC SMB pull server](../pull-server/pullServerSMB.md)|
 |SourcePath|string|The path of the SMB share.|
 
 ## Report server blocks
@@ -172,7 +172,7 @@ is available - see [Generating DSC metaconfigurations](https://docs.microsoft.co
 
 To define a partial configuration, you create a **PartialConfiguration** block.
 For more information about partial configurations,
-see [DSC Partial configurations](partialConfigs.md).
+see [DSC Partial configurations](../pull-server/partialConfigs.md).
 **PartialConfiguration** defines the following properties.
 
 |Property|Type|Description|
@@ -181,7 +181,7 @@ see [DSC Partial configurations](partialConfigs.md).
 |DependsOn|string{}|A list of names of other configurations that must be completed before this partial configuration is applied.|
 |Description|string|Text used to describe the partial configuration.|
 |ExclusiveResources|string[]|An array of resources exclusive to this partial configuration.|
-|RefreshMode|string|Specifies how the LCM gets this partial configuration. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: This partial configuration is disabled.</li><li> __Push__: The partial configuration is pushed to the node by calling the [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) cmdlet. After all partial configurations for the node are either pushed or pulled from a service, the configuration can be started by calling `Start-DscConfiguration –UseExisting`. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for partial configuration from a pull service. If this property is set to __Pull__, you must specify a pull service in a __ConfigurationSource__ property. For more information about Azure Automation pull service, see [Azure Automation DSC Overview](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview).</li></ul>|
+|RefreshMode|string|Specifies how the LCM gets this partial configuration. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: This partial configuration is disabled.</li><li> __Push__: The partial configuration is pushed to the node by calling the [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet. After all partial configurations for the node are either pushed or pulled from a service, the configuration can be started by calling `Start-DscConfiguration –UseExisting`. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for partial configuration from a pull service. If this property is set to __Pull__, you must specify a pull service in a __ConfigurationSource__ property. For more information about Azure Automation pull service, see [Azure Automation DSC Overview](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|string[]|An array of the names of resource servers from which to download required resources for this partial configuration. These names must refer to service endpoints previously defined in **ResourceRepositoryWeb** and **ResourceRepositoryShare** blocks.|
 
 __Note:__ partial configurations are supported with Azure Automation DSC, but only one configuration can be pulled from each automation account per node.
@@ -189,12 +189,12 @@ __Note:__ partial configurations are supported with Azure Automation DSC, but on
 ## See Also
 
 ### Concepts
-[Desired State Configuration Overview](overview.md)
+[Desired State Configuration Overview](../overview/overview.md)
 
 [Getting started with Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
 ### Other Resources
 
-[Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)
+[Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager)
 
-[Setting up a pull client with configuration names](pullClientConfigNames.md)
+[Setting up a pull client with configuration names](../pull-server/pullClientConfigNames.md)

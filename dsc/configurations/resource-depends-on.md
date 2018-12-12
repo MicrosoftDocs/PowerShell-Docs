@@ -6,7 +6,7 @@ title:  Resource dependencies using DependsOn
 
 # Resource dependencies using DependsOn
 
-When you write [Configurations](configurations.md), you add [Resource blocks](resources.md) to configure aspects of a target Node. As you continue to add Resource blocks, your Configurations can grow quite large and cumbersome to manage. One such challenge is the applied order of your resource blocks. Typically resources are applied in the order they are defined within the Configuration. As your Configuration grows larger and more complex, you can use the `DependsOn` key to change the applied order of your resources by specifying that a resource depends on another resource.
+When you write [Configurations](configurations.md), you add [Resource blocks](../resources/resources.md) to configure aspects of a target Node. As you continue to add Resource blocks, your Configurations can grow quite large and cumbersome to manage. One such challenge is the applied order of your resource blocks. Typically resources are applied in the order they are defined within the Configuration. As your Configuration grows larger and more complex, you can use the `DependsOn` key to change the applied order of your resources by specifying that a resource depends on another resource.
 
 The `DependsOn` key can be used in any Resource block. It is defined with the same key/value mechanism as other Resource keys. The `DependsOn` key expects an array of strings with the following syntax.
 
@@ -138,6 +138,4 @@ If you applied the Configuration above, you can reverse keys to undo any changes
 
 ## See also
 
-- [DSC WaitForAny Resource](waitforanyresource.md)
-- [DSC WaitForSome Resource](waitforsomeresource.md)
-- [DSC WaitForAll Resource](waitforallresource.md)
+- [Use Cross Node Dependencies](./crossNodeDependencies.md)

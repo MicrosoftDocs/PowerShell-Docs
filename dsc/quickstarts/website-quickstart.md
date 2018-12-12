@@ -12,7 +12,7 @@ This exercise walks through creating and applying a Desired State Configuration 
 The example we'll use ensures that a server has the `Web-Server` (IIS) feature enabled,
 and that the content for a simple "Hello World" website is present in the `intepub\wwwroot` directory of that server.
 
-For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Decision Makers](decisionMaker.md).
+For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Decision Makers](../overview/decisionMaker.md).
 
 ## Requirements
 
@@ -37,7 +37,7 @@ Save this as `index.htm` in the `test` folder you created earlier.
 
 ## Write the configuration
 
-A [DSC configuration](configurations.md) is a special PowerShell function that defines how you want to configure one or more target computers (nodes).
+A [DSC configuration](../configurations/configurations.md) is a special PowerShell function that defines how you want to configure one or more target computers (nodes).
 
 In the PowerShell ISE, type the following:
 
@@ -72,7 +72,7 @@ You can see that it looks like a PowerShell function, with the addition of the k
 
 The **Node** block specifies the target node to be configured, in this case `localhost`.
 
-The configuration calls two [resources](resources.md), [WindowsFeature](windowsFeatureResource.md) and [File](fileResource.md).
+The configuration calls two [resources](../resources/resources.md), **WindowsFeature** and **File**.
 Resources do the work of ensuring that the target node is in the state defined by the configuration.
 
 ## Compile the configuration
@@ -106,9 +106,9 @@ It is this file that can then be applied to the target node.
 ## Apply the configuration
 
 Now that you have the compiled MOF, you can apply the configuration to the target node (in this case, the local computer) by calling the
-[Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration) cmdlet.
+[Start-DscConfiguration](start-dscconfiguration.md) cmdlet.
 
-The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](metaConfig.md),
+The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md),
 which is the engine of DSC, to apply the configuration.
 The LCM does the work of calling the DSC resources to apply the configuration.
 
@@ -120,7 +120,7 @@ Start-DscConfiguration .\WebsiteTest
 
 ## Test the configuration
 
-You can call the [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
+You can call the [Get-DscConfigurationStatus](Get-DscConfigurationStatus.md)
 cmdlet to see whether the configuration succeeded.
 
 You can also test the results directly, in this case by browsing to `http://localhost/` in a web browser.
@@ -128,6 +128,6 @@ You should see the "Hello World" HTML page you created as the first step in this
 
 ## Next steps
 
-- Find out more about DSC configurations at [DSC configurations](configurations.md).
-- See what DSC resources are available, and how to create custom DSC resources at [DSC resources](resources.md).
+- Find out more about DSC configurations at [DSC configurations](../configurations/configurations.md).
+- See what DSC resources are available, and how to create custom DSC resources at [DSC resources](../resources/resources.md).
 - Find DSC configurations and resources in the [PowerShell Gallery](https://www.powershellgallery.com/).

@@ -12,13 +12,13 @@ Desired State Configuration (DSC) Resources provide the building blocks for a DS
 
 A resource can model something as generic as a file or as specific as an IIS server setting.  Groups of like resources are combined in to a DSC Module, which organizes all the required files in to a structure that is portable and includes metadata to identify how the resources are intended to be used.
 
-Each resource has a *schema that determines the syntax needed to use the resource in a [Configuration](configurations.md). A resource's schema can be defined in the following ways:
+Each resource has a *schema that determines the syntax needed to use the resource in a [Configuration](../configurations/configurations.md). A resource's schema can be defined in the following ways:
 
 - **'Schema.Mof'** file: Most resources define their *schema* in a 'schema.mof' file, using [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- **'\<Resource Name\>.schema.psm1'** file: [Composite Resources](compositeconfigs.md) define their *schema* in a '<ResourceName>.schema.psm1' file using a [Parameter Block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- **'\<Resource Name\>.schema.psm1'** file: [Composite Resources](../configurations/compositeConfigs.md) define their *schema* in a '<ResourceName>.schema.psm1' file using a [Parameter Block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
 - **'\<Resource Name\>.psm1'** file: Class based DSC resources define their *schema* in the class definition. Syntax items are denoted as Class properties. For more information, see [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
-To retrieve the syntax for a DSC resource, use the [Get-DSCResource](/powershell/module/psdesiredstateconfiguration/get-dscresource) cmdlet with the `-Syntax` parameter. This usage is similar to using [Get-Command](/powershell/module/microsoft.powershell.core/get-command) with the `-Syntax` parameter to get cmdlet syntax. The output you see will show the template used for a resource block for the resource you specify.
+To retrieve the syntax for a DSC resource, use the [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet with the `-Syntax` parameter. This usage is similar to using [Get-Command](/powershell/module/microsoft.powershell.core/get-command) with the `-Syntax` parameter to get cmdlet syntax. The output you see will show the template used for a resource block for the resource you specify.
 
 ```powershell
 Get-DscResource -Syntax Service
@@ -50,7 +50,7 @@ Service [String] #ResourceName
 Inside a Configuration, a **Service** resource block might look like this to **Ensure** that the Spooler service is running.
 
 > [!NOTE]
-> Before using a resource in a Configuration, you must import it using [Import-DSCResource](Import-DSCResource.md).
+> Before using a resource in a Configuration, you must import it using [Import-DSCResource](../configurations/import-dscresource.md).
 
 ```powershell
 Configuration TestConfig

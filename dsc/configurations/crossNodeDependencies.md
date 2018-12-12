@@ -56,7 +56,7 @@ All **WaitForXXXX** share the following syntax keys.
 | RetryCount| The maximum number of times to retry.|
 | ThrottleLimit| Number of machines to connect simultaneously. Default is `New-CimSession` default.|
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For more information, see [DependsOn](resource-depends-on.md)|
-| PsDscRunAsCredential | See [Using DSC with User Credentials](https://docs.microsoft.com/powershell/dsc/runasuser) |
+| PsDscRunAsCredential | See [Using DSC with User Credentials](./runAsUser.md) |
 
 
 ## Using WaitForXXXX resources
@@ -119,5 +119,5 @@ When you compile the Configuration, two ".mof" files are generated. Apply both "
 
 - [DSC Configurations](configurations.md)
 - [Use Resource Dependencies](resource-depends-on.md)
-- [DSC Resources](resources.md)
-- [Configuring The Local Configuration Manager](metaConfig.md)
+- [DSC Resources](../resources/resources.md)
+- [Configuring The Local Configuration Manager](../managing-nodes/metaConfig.md)

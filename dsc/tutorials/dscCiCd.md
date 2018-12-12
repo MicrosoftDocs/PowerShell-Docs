@@ -47,7 +47,7 @@ This computer must have [Team Foundation Server 2017](https://www.visualstudio.c
 
 The computer that runs the Windows build agent that builds the project.
 This computer must have a Windows build agent installed and running.
-See [Deploy an agent on Windows](https://www.visualstudio.com/en-us/docs/build/actions/agents/v2-windows)
+See [Deploy an agent on Windows](/azure/devops/pipelines/agents/v2-windows)
 for instructions on how to install and run a Windows build agent.
 
 You also need to install both the `xDnsServer` and `xNetworking` DSC modules on this computer.
@@ -70,7 +70,7 @@ If you have not already cloned the Demo_CI repository to your client computer, d
 `git clone https://github.com/PowerShell/Demo_CI`
 
 1. On your client computer, navigate to your TFS server in a web browser.
-1. In TFS, [Create a new team project](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project) named Demo_CI.
+1. In TFS, [Create a new team project](/azure/devops/organizations/projects/create-project) named Demo_CI.
 
    Make sure that **Version control** is set to **Git**.
 1. On your client computer, add a remote to the repository you just created in TFS with the following command:
@@ -79,7 +79,7 @@ If you have not already cloned the Demo_CI repository to your client computer, d
 
    Where `<YourTFSRepoURL>` is the clone URL to the TFS repository you created in the previous step.
 
-   If you don't know where to find this URL, see [Clone an existing Git repo](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
+   If you don't know where to find this URL, see [Clone an existing Git repo](/azure/devops/repos/git/clone).
 1. Push the code from your local repository to your TFS repository with the following command:
 
    `git push tfs --all`
@@ -154,7 +154,7 @@ Notice the `Node` statement:
 Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
-This finds any nodes that were defined as having a role of `DNSServer` in the [configuration data](configData.md),
+This finds any nodes that were defined as having a role of `DNSServer` in the [configuration data](../configurations/configData.md),
 which is created by the `DevEnv.ps1` script.
 
 You can read more about the `Where` method in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
@@ -162,7 +162,7 @@ You can read more about the `Where` method in [about_arrays](/powershell/referen
 Using configuration data to define nodes is important when doing CI because node information will likely change between environments,
 and using configuration data allows you to easily make changes to node information without changing the configuration code.
 
-In the first resource block, the configuration calls the [WindowsFeature](windowsFeatureResource.md) to ensure that the DNS feature is enabled.
+In the first resource block, the configuration calls the **WindowsFeature** to ensure that the DNS feature is enabled.
 The resource blocks that follow call resources from the [xDnsServer](https://github.com/PowerShell/xDnsServer) module to configure the primary zone
 and DNS records.
 
@@ -289,7 +289,7 @@ Starts a PowerShell session on `TestAgent1` and installs the modules containing 
 
 #### DeployConfigs
 
-Calls the [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md) cmdlet to run the configuration on `TestAgent1`.
+Calls the [Start-DscConfiguration](start-dscconfiguration.md) cmdlet to run the configuration on `TestAgent1`.
 
 #### IntegrationTests
 
@@ -336,7 +336,7 @@ The integration test script uses a mixture of [Pester](https://github.com/pester
 Now that we've uploaded our code to TFS and looked at what it does, let's define our build.
 
 Here, we'll cover only the build steps that you'll add to the build. For instructions on how to create a build definition in TFS,
-see [Create and queue a build definition](https://www.visualstudio.com/en-us/docs/build/define/create).
+see [Create and queue a build definition](/azure/devops/pipelines/get-started-designer).
 
 Create a new build definition (select the **Empty** template) named "InfraDNS".
 Add the following steps to you build definition:

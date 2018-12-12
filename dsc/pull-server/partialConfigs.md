@@ -28,7 +28,7 @@ To use partial configurations in push mode, you configure the LCM on the target 
 partial configurations. Each partial configuration must be pushed to the target by using the
 `Publish-DSCConfiguration` cmdlet. The target node then combines the partial configuration into a
 single configuration, and you can apply the configuration by calling the
-[Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration)
+[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 cmdlet.
 
 ### Configuring the LCM for push-mode partial configurations
@@ -447,4 +447,4 @@ SharePointConfig
 
 [Windows PowerShell Desired State Configuration Pull Servers](pullServer.md)
 
-[Windows Configuring the Local Configuration Manager](metaConfig.md)
+[Windows Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md)
