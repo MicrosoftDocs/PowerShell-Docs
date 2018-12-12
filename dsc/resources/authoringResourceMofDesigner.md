@@ -8,7 +8,7 @@ title:  Using the Resource Designer tool
 
 > Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-The Resource Designer tool is a set of cmdlets exposed by the **xDscResourceDesigner** module that make creating Windows PowerShell Desired State Configuration (DSC) resources easier. The cmdlets in this resource help create the MOF schema, the script module, and the directory structure for your new resource. For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](./resources/authoringResource.md).
+The Resource Designer tool is a set of cmdlets exposed by the **xDscResourceDesigner** module that make creating Windows PowerShell Desired State Configuration (DSC) resources easier. The cmdlets in this resource help create the MOF schema, the script module, and the directory structure for your new resource. For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md).
 In this topic, we will create a DSC resource that manages Active Directory users.
 Use the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet to install the **xDscResourceDesigner** module.
 
@@ -173,7 +173,7 @@ The Resource Designer tool exposes one more cmdlet that can be used to test the 
 ### See Also
 
 #### Concepts
-[Build Custom Windows PowerShell Desired State Configuration Resources](./resources/authoringResource.md)
+[Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
 #### Other Resources
 [xDscResourceDesigner Module](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)
