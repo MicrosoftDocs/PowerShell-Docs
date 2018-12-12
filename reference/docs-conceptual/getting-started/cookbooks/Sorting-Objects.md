@@ -110,3 +110,38 @@ LastWriteTime          CreationTime
 11/12/2018 6:29:53 PM  12/7/2017 7:57:07 PM
 ...
 ```
+
+## Tips
+
+You can omit the **Property** parameter name as following:
+
+```powershell
+Sort-Object LastWriteTime, Name
+```
+
+Besides, you can refer to `Sort-Object` by its built-in alias, `sort`:
+
+```powershell
+sort LastWriteTime, Name
+```
+
+The keys in the hash tables for sorting can be abbreviated as following:
+
+```powershell
+Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
+```
+
+In this example, the **e** stands for **Expression**, the **d** stands for **Descending**, and the **a** stands for **Ascending**.
+
+To improve readability, you can place the hash tables into a separate variable:
+
+```powershell
+$order = @(
+  @{ Expression = 'LastWriteTime'; Descending = $true }
+  @{ Expression = 'Name'; Ascending = $true }
+)
+
+Get-ChildItem |
+  Sort-Object $order |
+  Format-Table LastWriteTime, Name
+```
