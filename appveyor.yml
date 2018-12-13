@@ -33,7 +33,11 @@ only_commits:
     - reference/**/*
     - appveyor.ps1
     - appveyor.yml
+    - .openpublishing.build.ps1
+    - .openpublishing.publish.config.json
+    - .openpublishing.redirection.json
     - tests/**/*
+    - '**/docfx.json'
     - '**/*.md'
 
 deploy:
