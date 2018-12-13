@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 12/13/2018
 online version: http://go.microsoft.com/fwlink/?LinkId=821824
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -131,18 +131,14 @@ When the body is a form, or it is the output of another `Invoke-WebRequest` call
 
 For example:
 
-
-
+```powershell
 $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $R
+Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
+```
 
-or
-
-
-
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]```yaml
+```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
@@ -296,7 +292,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -304,16 +300,16 @@ Accept wildcard characters: False
 ### -Method
 Specifies the method used for the web request.
 The acceptable values for this parameter are:
-* Default
-* Delete
-* Get
-* Head
-* Merge
-* Options
-* Patch
-* Post
-* Put
-* Trace
+- Default
+- Delete
+- Get
+- Head
+- Merge
+- Options
+- Patch
+- Post
+- Put
+- Trace
 
 ```yaml
 Type: WebRequestMethod
@@ -472,11 +468,11 @@ Accept wildcard characters: False
 ### -TransferEncoding
 Specifies a value for the transfer-encoding HTTP response header.
 The acceptable values for this parameter are:
-* Chunked
-* Compress
-* Deflate
-* GZip
-* Identity
+- Chunked
+- Compress
+- Deflate
+- GZip
+- Identity
 
 ```yaml
 Type: String
@@ -512,25 +508,9 @@ Accept wildcard characters: False
 
 ### -UseBasicParsing
 
-Indicates that the cmdlet uses basic parsing.
+Indicates that the cmdlet uses basic parsing. The cmdlet returns the raw HTML in a **String** object.
 
-The Body parameter can be used to specify a list of query parameters or specify the content of the response.
-
-When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body is added to the URI as query parameters. For other request types (such as POST), the body is set as the value of the request body in the standard name=value format.
-
-When the body is a form, or it is the output of another `Invoke-WebRequest` call, Windows PowerShell sets the request content to the form fields.
-
-For example:
-
-
-
-$R = Invoke-WebRequest http://website.com/login.aspx $R.Forms\[0\].Name = "MyName" $R.Forms\[0\].Password = "MyPassword" Invoke-RestMethod http://website.com/service.aspx -Body $R
-
-or
-
-
-
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]```yaml
+```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -566,9 +546,11 @@ To test a website with the standard user agent string that is used by most Inter
 
 For example, the following command uses the user agent string for Internet
 
+```powershell
+Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)
+```
 
-
-Invoke-WebRequest -Uri http://website.com/ -UserAgent (\[Microsoft.PowerShell.Commands.PSUserAgent\]::InternetExplorer)```yaml
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
@@ -610,7 +592,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
