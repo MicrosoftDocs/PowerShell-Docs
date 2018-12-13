@@ -51,7 +51,7 @@ brew cask upgrade powershell
 See [About Brew](#about-brew) for information about Brew.
 
 After you've installed Homebrew, you can install PowerShell.
-First, install the [Cask-Version][cask-versions] that lets you install alternative versions of cask packages:
+First, install the [Cask-Versions][cask-versions] package that lets you install alternative versions of cask packages:
 
 ```sh
 brew tap homebrew/cask-versions
@@ -159,7 +159,7 @@ sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 
 ## Uninstalling PowerShell Core
 
-If you installed PowerShell with Homebrew, use this command to uninstall:
+If you installed PowerShell with Homebrew, use the following command to uninstall:
 
 ```sh
 brew cask uninstall powershell
