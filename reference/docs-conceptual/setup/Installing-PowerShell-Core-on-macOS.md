@@ -42,7 +42,7 @@ brew cask upgrade powershell
 > [!NOTE]
 > The commands above can be called from within a PowerShell (pwsh) host,
 > but then the PowerShell shell must be exited and restarted to complete the upgrade
-> and refresh the values shown in $PSVersionTable.
+> and refresh the values shown in `$PSVersionTable`.
 
 [brew]: http://brew.sh/
 
@@ -51,7 +51,7 @@ brew cask upgrade powershell
 See [About Brew](#about-brew) for information about Brew.
 
 After you've installed Homebrew, you can install PowerShell.
-First, install [Cask-Versions that lets you install alternative versions of cask packages:
+First, install the [Cask-Version][cask-versions] that lets you install alternative versions of cask packages:
 
 ```sh
 brew tap homebrew/cask-versions
@@ -80,7 +80,7 @@ brew cask upgrade powershell-preview
 > [!NOTE]
 > The commands above can be called from within a PowerShell (pwsh) host,
 > but then the PowerShell shell must be exited and restarted to complete the upgrade.
-> and refresh the values shown in $PSVersionTable.
+> and refresh the values shown in `$PSVersionTable`.
 
 ## Installation via Direct Download
 
@@ -95,7 +95,7 @@ or install it from the terminal:
 sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 ```
 
-Install [OpenSSL](#install-openssl) because that is needed for PowerShell remoting and CIM operations.
+Install [OpenSSL](#install-openssl). OpenSSL is needed for PowerShell remoting and CIM operations.
 
 ## Binary Archives
 
@@ -121,7 +121,7 @@ sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
 sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
 ```
 
-Install [OpenSSL](#install-openssl) because that is needed for PowerShell remoting and CIM operations.
+Install [OpenSSL](#install-openssl). OpenSSL is needed for PowerShell remoting and CIM operations.
 
 ## Installing dependencies
 
