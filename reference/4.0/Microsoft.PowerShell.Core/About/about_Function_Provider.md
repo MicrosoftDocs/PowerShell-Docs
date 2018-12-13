@@ -1,7 +1,6 @@
 ---
 ms.date:  10/18/2018
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  Function Provider
 ---

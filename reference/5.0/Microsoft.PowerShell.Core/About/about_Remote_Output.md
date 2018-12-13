@@ -1,7 +1,6 @@
 ---
 ms.date:  12/01/2017
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Output
 ---

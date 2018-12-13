@@ -1,7 +1,6 @@
 ---
 ms.date:  06/09/2017
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 online version:  https://go.microsoft.com/fwlink/?linkid=834941
 external help file:  System.Management.Automation.dll-help.xml

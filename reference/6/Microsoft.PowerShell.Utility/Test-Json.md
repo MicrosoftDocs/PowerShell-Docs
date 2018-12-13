@@ -1,7 +1,6 @@
 ---
 ms.date:  10/10/2018
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 online version:  n/a
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml

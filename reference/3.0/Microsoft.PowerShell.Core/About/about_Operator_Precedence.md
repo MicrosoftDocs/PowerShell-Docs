@@ -1,7 +1,6 @@
 ﻿---
 ms.date:  11/30/2017
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Operator_Precedence
 ---
