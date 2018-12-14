@@ -1,176 +1,175 @@
 - name: Overview
   href: overview.md
+- name: Install
+  href: install/installing-powershell.md
   items:
-    - name: Install
-      href: install/installing-powershell.md
-      items:
-        - name: PowerShell Core
-          href: ''
-          items:
-            - name: Installing PowerShell Core on Windows
-              href: install/installing-powershell-core-on-windows.md
-            - name: Installing PowerShell Core on Linux
-              href: install/installing-powershell-core-on-linux.md
-            - name: Installing PowerShell Core on macOS
-              href: install/installing-powershell-core-on-macos.md
-            - name: Installing PowerShell Core on ARM
-              href: install/powershell-core-on-arm.md
-        - name: Windows PowerShell
-          href: ''
-          items:
-            - name: Installing Windows PowerShell
-              href: install/installing-windows-powershell.md
-            - name: Installing the Windows PowerShell 2.0 Engine
-              href: install/installing-the-windows-powershell-2.0-engine.md
-            - name: Windows PowerShell System Requirements
-              href: install/windows-powershell-system-requirements.md
-    - name: Get started
-      href: getting-started/getting-started-with-windows-powershell.md
-      items:
-        - name: Starting Windows PowerShell
-          href: getting-started/starting-windows-powershell.md
-        - name: Starting the Windows PowerShell 2.0 Engine
-          href: getting-started/starting-the-windows-powershell-2.0-engine.md
-    - name: Learning PowerShell
-      href: learn/understanding-important-powershell-concepts.md
-      items:
-        - name: Learning PowerShell names
-          href: learn/learning-powershell-names.md
-        - name: Using familiar command names
-          href: learn/using-familiar-command-names.md
-        - name: Getting detailed help information
-          href: learn/getting-detailed-help-information.md
-        - name: Getting information about commands
-          href: learn/getting-information-about-commands.md
-        - name: Using variables to store objects
-          href: learn/using-variables-to-store-objects.md
-        - name: Understanding the PowerShell pipeline
-          href: learn/understanding-the-powershell-pipeline.md
-        - name: More PowerShell learning
-          href: learn/more-powershell-learning.md
-        - name: Glossary
-          href: learn/windows-powershell-glossary.md
-        - name: Running remote commands
-          href: learn/remoting/running-remote-commands.md
-          items:
-            - name: PowerShell remoting over SSH
-              href: learn/remoting/ssh-remoting-in-powershell-core.md
-            - name: WS-Management (WSMan) remoting in PowerShell Core
-              href: learn/remoting/wsman-remoting-in-powershell-core.md
-            - name: WinRM Security
-              href: learn/remoting/winrmsecurity.md
-            - name: Making the second hop in PowerShell Remoting
-              href: learn/remoting/ps-remoting-second-hop.md
-    - name: Components
+    - name: PowerShell Core
       href: ''
       items:
-        - name: Console
-          href: ''
-          items:
-            - name: PowerShell.exe command line help
-              href: components/console/powershell.exe-command-line-help.md
-            - name: Using tab expansion
-              href: components/console/using-tab-expansion.md
-        - name: ISE
-          href: components/ise/introducing-the-windows-powershell-ise.md
-          items:
-            - name: Windows PowerShell Integrated Scripting Environment (ISE)
-              href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
-            - name: Using the Windows PowerShell ISE
-              href: ''
-              items:
-                - name: Exploring the Windows PowerShell ISE
-                  href: components/ise/exploring-the-windows-powershell-ise.md
-                - name: How to Create a PowerShell Tab in Windows PowerShell ISE
-                  href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-                - name: How to debug scripts in Windows PowerShell ISE
-                  href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-                - name: How to use profiles in Windows PowerShell ISE
-                  href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
-                - name: How to use tab completion in the script and console panes
-                  href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-                - name: How to use the console pane in the Windows PowerShell ISE
-                  href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-                - name: How to write and run scripts in the Windows PowerShell ISE
-                  href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-                - name: Keyboard shortcuts for the Windows PowerShell ISE
-                  href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-                - name: Accessibility in Windows PowerShell ISE
-                  href: components/ise/accessibility-in-windows-powershell-ise.md
-            - name: The ISE scripting object model
-              href: ''
-              items:
-                - name: Purpose of the Windows PowerShell ISE Scripting Object Model
-                  href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-                - name: The ISE object model hierarchy
-                  href: components/ise/object-model/the-ise-object-model-hierarchy.md
-                - name: The ObjectModelRoot object
-                  href: components/ise/object-model/the-objectmodelroot-object.md
-                - name: The ISEAddOnToolCollection object
-                  href: components/ise/object-model/the-iseaddontoolcollection-object.md
-                - name: The ISEAddOnTool object
-                  href: components/ise/object-model/the-iseaddontool-object.md
-                - name: The ISEEditor object
-                  href: components/ise/object-model/the-iseeditor-object.md
-                - name: The ISEFileCollection object
-                  href: components/ise/object-model/the-isefilecollection-object.md
-                - name: The ISEFile object
-                  href: components/ise/object-model/the-isefile-object.md
-                - name: The ISEMenuItemCollection Object
-                  href: components/ise/object-model/the-isemenuitemcollection-object.md
-                - name: The ISEMenuItem object
-                  href: components/ise/object-model/the-isemenuitem-object.md
-                - name: The ISEOptions object
-                  href: components/ise/object-model/the-iseoptions-object.md
-                - name: The ISESnippetCollection object
-                  href: components/ise/object-model/the-isesnippetcollection-object.md
-                - name: The ISESnippetObject
-                  href: components/ise/object-model/the-isesnippetobject.md
-                - name: The PowerShellTabCollection object
-                  href: components/ise/object-model/the-powershelltabcollection-object.md
-                - name: The PowerShellTab object
-                  href: components/ise/object-model/the-powershelltab-object.md
-        - name: Visual Studio Code
-          href: ''
-          items:
-            - name: Using Visual Studio Code
-              href: components/vscode/using-vscode.md
-        - name: Web Access
-          href: ''
-          items:
-            - name: Authorization rules and security features
-              href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-            - name: Installation
-              href: components/web-access/install-and-use-windows-powershell-web-access.md
-            - name: Troubleshooting access problems
-              href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-            - name: Uninstall Windows PowerShell web access
-              href: components/web-access/uninstall-windows-powershell-web-access.md
-            - name: Use the web based PowerShell console
-              href: components/web-access/use-the-web-based-windows-powershell-console.md
-        - name: Workflows Guide
-          href: components/workflows-guide.md
-    - name: What's New
+        - name: Installing PowerShell Core on Windows
+          href: install/installing-powershell-core-on-windows.md
+        - name: Installing PowerShell Core on Linux
+          href: install/installing-powershell-core-on-linux.md
+        - name: Installing PowerShell Core on macOS
+          href: install/installing-powershell-core-on-macos.md
+        - name: Installing PowerShell Core on ARM
+          href: install/powershell-core-on-arm.md
+    - name: Windows PowerShell
       href: ''
       items:
-        - name: What's new in PowerShell Core 6.1
-          href: whats-new/what-s-new-in-powershell-core-61.md
-        - name: What's new in PowerShell Core 6.0
-          href: whats-new/what-s-new-in-powershell-core-60.md
+        - name: Installing Windows PowerShell
+          href: install/installing-windows-powershell.md
+        - name: Installing the Windows PowerShell 2.0 Engine
+          href: install/installing-the-windows-powershell-2.0-engine.md
+        - name: Windows PowerShell System Requirements
+          href: install/windows-powershell-system-requirements.md
+- name: Get started
+  href: getting-started/getting-started-with-windows-powershell.md
+  items:
+    - name: Starting Windows PowerShell
+      href: getting-started/starting-windows-powershell.md
+    - name: Starting the Windows PowerShell 2.0 Engine
+      href: getting-started/starting-the-windows-powershell-2.0-engine.md
+- name: Learning PowerShell
+  href: learn/understanding-important-powershell-concepts.md
+  items:
+    - name: Learning PowerShell names
+      href: learn/learning-powershell-names.md
+    - name: Using familiar command names
+      href: learn/using-familiar-command-names.md
+    - name: Getting detailed help information
+      href: learn/getting-detailed-help-information.md
+    - name: Getting information about commands
+      href: learn/getting-information-about-commands.md
+    - name: Using variables to store objects
+      href: learn/using-variables-to-store-objects.md
+    - name: Understanding the PowerShell pipeline
+      href: learn/understanding-the-powershell-pipeline.md
+    - name: More PowerShell learning
+      href: learn/more-powershell-learning.md
+    - name: Glossary
+      href: learn/windows-powershell-glossary.md
+    - name: Running remote commands
+      href: learn/remoting/running-remote-commands.md
+      items:
+        - name: PowerShell remoting over SSH
+          href: learn/remoting/ssh-remoting-in-powershell-core.md
+        - name: WS-Management (WSMan) remoting in PowerShell Core
+          href: learn/remoting/wsman-remoting-in-powershell-core.md
+        - name: WinRM Security
+          href: learn/remoting/winrmsecurity.md
+        - name: Making the second hop in PowerShell Remoting
+          href: learn/remoting/ps-remoting-second-hop.md
+- name: Components
+  href: ''
+  items:
+    - name: Console
+      href: ''
+      items:
+        - name: PowerShell.exe command line help
+          href: components/console/powershell.exe-command-line-help.md
+        - name: Using tab expansion
+          href: components/console/using-tab-expansion.md
+    - name: ISE
+      href: components/ise/introducing-the-windows-powershell-ise.md
+      items:
+        - name: Windows PowerShell Integrated Scripting Environment (ISE)
+          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
+        - name: Using the Windows PowerShell ISE
+          href: ''
           items:
-            - name: Breaking changes in PowerShell Core 6.0
-              href: whats-new/breaking-changes-ps6.md
-            - name: Known issues in PowerShell Core 6.0
-              href: whats-new/known-issues-ps6.md
-        - name: What's new with PowerShell 5.0
-          href: whats-new/what-s-new-with-powershell.md
+            - name: Exploring the Windows PowerShell ISE
+              href: components/ise/exploring-the-windows-powershell-ise.md
+            - name: How to Create a PowerShell Tab in Windows PowerShell ISE
+              href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: How to debug scripts in Windows PowerShell ISE
+              href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: How to use profiles in Windows PowerShell ISE
+              href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: How to use tab completion in the script and console panes
+              href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: How to use the console pane in the Windows PowerShell ISE
+              href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: How to write and run scripts in the Windows PowerShell ISE
+              href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Keyboard shortcuts for the Windows PowerShell ISE
+              href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Accessibility in Windows PowerShell ISE
+              href: components/ise/accessibility-in-windows-powershell-ise.md
+        - name: The ISE scripting object model
+          href: ''
           items:
-            - name: What's new in Windows PowerShell 5.0
-              href: whats-new/what-s-new-in-windows-powershell-50.md
-            - name: What's new in the PowerShell 5.0 ISE
-              href: whats-new/what-s-new-in-the-powershell-50-ise.md
-    - name: PowerShell Core support lifecycle
-      href: powershell-support-lifecycle.md
+            - name: Purpose of the Windows PowerShell ISE Scripting Object Model
+              href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: The ISE object model hierarchy
+              href: components/ise/object-model/the-ise-object-model-hierarchy.md
+            - name: The ObjectModelRoot object
+              href: components/ise/object-model/the-objectmodelroot-object.md
+            - name: The ISEAddOnToolCollection object
+              href: components/ise/object-model/the-iseaddontoolcollection-object.md
+            - name: The ISEAddOnTool object
+              href: components/ise/object-model/the-iseaddontool-object.md
+            - name: The ISEEditor object
+              href: components/ise/object-model/the-iseeditor-object.md
+            - name: The ISEFileCollection object
+              href: components/ise/object-model/the-isefilecollection-object.md
+            - name: The ISEFile object
+              href: components/ise/object-model/the-isefile-object.md
+            - name: The ISEMenuItemCollection Object
+              href: components/ise/object-model/the-isemenuitemcollection-object.md
+            - name: The ISEMenuItem object
+              href: components/ise/object-model/the-isemenuitem-object.md
+            - name: The ISEOptions object
+              href: components/ise/object-model/the-iseoptions-object.md
+            - name: The ISESnippetCollection object
+              href: components/ise/object-model/the-isesnippetcollection-object.md
+            - name: The ISESnippetObject
+              href: components/ise/object-model/the-isesnippetobject.md
+            - name: The PowerShellTabCollection object
+              href: components/ise/object-model/the-powershelltabcollection-object.md
+            - name: The PowerShellTab object
+              href: components/ise/object-model/the-powershelltab-object.md
+    - name: Visual Studio Code
+      href: ''
+      items:
+        - name: Using Visual Studio Code
+          href: components/vscode/using-vscode.md
+    - name: Web Access
+      href: ''
+      items:
+        - name: Authorization rules and security features
+          href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+        - name: Installation
+          href: components/web-access/install-and-use-windows-powershell-web-access.md
+        - name: Troubleshooting access problems
+          href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
+        - name: Uninstall Windows PowerShell web access
+          href: components/web-access/uninstall-windows-powershell-web-access.md
+        - name: Use the web based PowerShell console
+          href: components/web-access/use-the-web-based-windows-powershell-console.md
+    - name: Workflows Guide
+      href: components/workflows-guide.md
+- name: What's New
+  href: ''
+  items:
+    - name: What's new in PowerShell Core 6.1
+      href: whats-new/what-s-new-in-powershell-core-61.md
+    - name: What's new in PowerShell Core 6.0
+      href: whats-new/what-s-new-in-powershell-core-60.md
+      items:
+        - name: Breaking changes in PowerShell Core 6.0
+          href: whats-new/breaking-changes-ps6.md
+        - name: Known issues in PowerShell Core 6.0
+          href: whats-new/known-issues-ps6.md
+    - name: What's new with PowerShell 5.0
+      href: whats-new/what-s-new-with-powershell.md
+      items:
+        - name: What's new in Windows PowerShell 5.0
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: What's new in the PowerShell 5.0 ISE
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+- name: PowerShell Core support lifecycle
+  href: powershell-support-lifecycle.md
 - name: Sample scripts
   href: samples/sample-scripts-for-administration.md
   items:
