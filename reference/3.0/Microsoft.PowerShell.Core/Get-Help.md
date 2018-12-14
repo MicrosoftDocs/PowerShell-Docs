@@ -79,7 +79,7 @@ To download or update the help files for a module in Windows PowerShell 3.0, use
 
 You can also view the help topics for PowerShell online in the Microsoft Docs.
 To get the online version of a help topic, use the **Online** parameter, such as: `Get-Help Get-Process -Online`.
-To read all of the help topics, see [PowerShell Documentation](../../docs-conceptual/PowerShell-Scripting.md) in the Microsoft Docs.
+To read all of the help topics, see [PowerShell Documentation](/powershell/overview) in the Microsoft Docs.
 
 If you type "Get-Help" followed by the exact name of a help topic, or by a word unique to a help topic, `Get-Help` displays the topic contents.
 If you enter a word or word pattern that appears in several help topic titles, `Get-Help` displays a list of the matching titles.
