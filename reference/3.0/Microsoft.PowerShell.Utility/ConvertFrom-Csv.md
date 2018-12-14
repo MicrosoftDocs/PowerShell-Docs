@@ -167,8 +167,8 @@ The column header determines the names of the properties of the object that Conv
 Enter a comma-separated list of the column headers.
 Enclose each item in quotation marks (single or double).
 Do not enclose the header string in quotation marks.
-If you enter fewer column headers than there are columns, the remaining columns will have no headers.
-If you enter more headers than there are columns, the extra headers are ignored.
+If you enter fewer column headers than there are columns, the data for the remaining columns will be discarded.
+If you enter more headers than there are columns, the extra headers will be considered to have empty columns.
 
 When using the Header parameter, omit the column header string from the CSV strings.
 Otherwise, ConvertFrom-CSV creates an extra object from the items in the header row.
