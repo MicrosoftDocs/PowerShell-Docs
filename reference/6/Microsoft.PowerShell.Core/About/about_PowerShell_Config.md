@@ -9,30 +9,25 @@ title:  about_PowerShell_Config
 # About PowerShell Config
 
 ## SHORT DESCRIPTION
-
 Cross-platform configuration files for PowerShell Core.
 
 ## LONG DESCRIPTION
 
-A `powershell.config.json` is a JSON-format file allowing configuration of
-installation-wide settings in PowerShell Core.
-It is read in and used when PowerShell starts up,
-but is also modified at runtime by PowerShell.
-These settings were previously configured
-in the Windows Registry in Windows PowerShell.
+The `powershell.config.json` file contains configuration settings for
+PowerShell Core. PowerShell loads this configuration at startup. The settings
+can also be modified at runtime. Previously, these settings were stored in the
+Windows Registry for Windows PowerShell.
 
 > [!WARNING]
-> A `powershell.config.json` file that contains invalid JSON
-> or unsupported keys or values will result in not being able
-> to start an interactive PowerShell session.
-> If this occurs, you will need to fix the configuration file
-> from another application to run PowerShell.
+> If the `powershell.config.json` file contains invalid JSON,
+> unsupported keys, or values, PowerShell cannot start an interactive session.
+> If this occurs, you must fix the configuration file.
 
 ### System-wide configuration
 
-A `powershell.config.json` file in the `$PSHOME` directory will apply
-to all PowerShell Core sessions running for that PowerShell Core
-installation.
+A `powershell.config.json` file in the `$PSHOME` directory defines the
+configuration for all PowerShell Core sessions running from that PowerShell
+Core installation.
 
 > [!NOTE]
 > The system `powershell.config.json` location is defined as
@@ -41,28 +36,21 @@ installation.
 
 ### User configurations
 
-Configuration of PowerShell can also be provided on a per-user basis.
-This applies configuration settings to a specific user.
-For this, the configuration file can be found in the user-scope
-configuration directory.
-On Windows this is `"$([System.Environment]::GetFolderPath("MyDocuments"))\Microsoft\powershell"`,
-on UNIX-like platforms this is `$HOME/.config/powershell/`.
-
-> [!TIP]
-> The user configuration directory can be found across platforms
-> with the command `Split-Path $PROFILE.CurrentUserCurrentHost`.
+You can also configure PowerShell on a per-user basis by placing the file in
+the user-scope configuration directory. The user configuration directory can
+be found across platforms with the command
+`Split-Path $PROFILE.CurrentUserCurrentHost`.
 
 ## General configuration settings
 
 ### ExecutionPolicy
 
-Configures the execution policy for PowerShell sessions,
-determining what scripts can be run.
-See [About Execution Policies](./about_Execution_Policies.md).
+Configures the execution policy for PowerShell sessions, determining what
+scripts can be run. By default, PowerShell uses the existing execution policy.
 
 > [!NOTE]
 > The [`Set-ExecutionPolicy`](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
-> cmdlet will modify this setting in the configuration file.
+> cmdlet modifies this setting in the configuration file.
 
 ```Schema
 "<shell-id>:ExecutionPolicy": "<execution-policy>"
@@ -73,18 +61,9 @@ Where:
 - `<shell-id>` refers to the ID of the current PowerShell host.
   For normal PowerShell Core, this is `Microsoft.PowerShell`.
   In any PowerShell session, you can discover it with `$ShellId`.
-  See also [About Automatic Variables](./about_Automatic_Variables.md).
-- `<execution-policy>` refers to a valid execution policy name,
-  as described in [About Execution Policies](./about_Execution_Policies.md).
+- `<execution-policy>` refers to a valid execution policy name.
 
-#### Default setting
-
-Uses the existing execution policy for the platform.
-See [About Execution Policies](./about_Execution_Policies.md).
-
-#### Example
-
-This sets the execution policy of PowerShell to `RemoteSigned`.
+The following example sets the execution policy of PowerShell to `RemoteSigned`.
 
 ```json
 {
@@ -92,18 +71,14 @@ This sets the execution policy of PowerShell to `RemoteSigned`.
 }
 ```
 
-#### Equivalent registry key in Windows PowerShell
-
-```
-HKLM\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
--AND-
-HKCU\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
-```
+In Windows, the equivalent registry keys can be found in
+`\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell` under
+`HKEY_LOCAL_MACHINE` and `HKEY_CURRENT_USER`.
 
 ### ModulePath
 
-Sets the **PSModulePath** environment variable when
-PowerShell starts up.
+Sets the **PSModulePath** environment variable when PowerShell starts up.
+The default value is `$env:ProgramFiles/PowerShell/Modules`.
 
 ```Schema
 "PSModulePath": "<ps-module-path>"
@@ -111,19 +86,11 @@ PowerShell starts up.
 
 Where:
 
-- `<ps-module-path>` is the **PSModulePath**
-  value you would use for `$env:PSModulePath`.
+- `<ps-module-path>` is the **PSModulePath** value you would use for
+  `$env:PSModulePath`.
 
-#### Default setting
-
-```
-$env:ProgramFiles/PowerShell/Modules
-```
-
-#### Examples
-
-This is a simple PSModulePath configuration
-in a Windows environment:
+This examples shows a minimal PSModulePath configuration for a Windows
+environment:
 
 ```json
 {
@@ -131,8 +98,8 @@ in a Windows environment:
 }
 ```
 
-This is a simple PSModulePath configuration
-in a macOS or Linux environment:
+This examples shows a minimal PSModulePath configuration for a macOS or Linux
+environment:
 
 ```json
 {
@@ -141,27 +108,17 @@ in a macOS or Linux environment:
 ```
 
 > [!NOTE]
-> When configuring the module path in this way,
-> you should use the appropriate directory and path separator characters for the platform.
-> You can discover these from PowerShell:
+> You must use the appropriate directory and path separator characters for the
+> platform. You can discover these from PowerShell:
 >
 > - Directory separator character: `[System.IO.Path]::DirectorySeparatorChar`
 > - Path separator character: `[System.IO.Path]::PathSeparator`
 
-#### Equivalent registry key in Windows PowerShell
-
-```
-HKLM:\System\CurrentControlSet\Control\Session Manager\Environment
-```
-
 ### ExperimentalFeatures
 
 The names of the experimental features to enable in PowerShell.
-Include experimental feature names here to ensure they are
-in effect when PowerShell starts up.
-
-For more information on experimental features,
-see [PowerShell RFC 29](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
+By default, no experimental features are enabled.
+The default value is an empty array.
 
 ```Schema
 "ExperimentalFeatures": ["<experimental-feature-name>", ...]
@@ -171,15 +128,8 @@ Where:
 
 - `<experimental-feature-name>` is the name of an experimental feature to enable.
 
-#### Default setting
-
-An empty array (`[]`);
-no experimental features are enabled in Powershell by default.
-
-#### Example
-
-This setting enables the `PSImplicitRemoting`
-and `PSUseAbbreviationExpansion` experimental features
+The following example enables the **PSImplicitRemoting**
+and **PSUseAbbreviationExpansion** experimental features
 when PowerShell starts up.
 
 ```json
@@ -191,24 +141,25 @@ when PowerShell starts up.
 }
 ```
 
+For more information on experimental features, see [PowerShell RFC 29][RFC0029].
+
 ## Non-Windows logging configuration
 
 > [!IMPORTANT]
 > The configuration options in this section only apply to macOS and Linux.
-> Logging configuration on Windows is handled by the ETW Event Viewer.
+> Logging for Windows is managed by the Windows Event Viewer.
 
 PowerShell's logging on macOS and Linux can be configured
 in the PowerShell configuration file.
-For a full description of logging in PowerShell, see [About Logging](./about_Logging.md).
-More information on logging configuration on non-Windows platforms
-can be found in [About Logging - Configuring Logging on non-Windows system](./about_Logging.md#configuring-logging-on-non-windows-system).
+For a full description of PowerShell logging for non-Windows systems, see [About Logging](./about_Logging.md).
 
 ### LogIdentity
 
 > [!IMPORTANT]
 > This setting can only be used in macOS and Linux.
 
-Sets the identity name used to write to the system log.
+Sets the identity name used to write to the system log. The default value is
+"powershell".
 
 ```Schema
 "LogIdentity": "<log-identity>"
@@ -219,13 +170,12 @@ Where:
 - `<log-identity>` is the string identity that PowerShell should use
   for writing to syslog.
 
-#### Default setting
+> [!NOTE]
+> You may want to have different **LogIdentity** values for each different
+> instance of PowerShell you have installed.
 
-```
-"powershell"
-```
-
-#### Example
+In this example, we are configuring the **LogIdentity** for a preview
+release of PowerShell.
 
 ```json
 {
@@ -247,27 +197,21 @@ Specifies the minimum severity level at which PowerShell should log.
 Where:
 
 - `<log-level>` is one of:
-  - `Always`
-  - `Critical`
-  - `Error`
-  - `Warning`
-  - `Informational`
-  - `Verbose`
-  - `Debug`
+  - Always
+  - Critical
+  - Error
+  - Warning
+  - Informational
+  - Verbose
+  - Debug
 
 > [!NOTE]
-> Setting a given log level in the list
-> will enable all log levels above it.
+> Setting a the log level enables all log levels above it.
 
-Setting this setting to `"default"` will be interpreted as the default value.
+Setting this setting to **default** will be interpreted as the default value.
+The default value is **Informational**.
 
-#### Default setting
-
-```
-"Informational"
-```
-
-#### Example
+The following example sets the value to **Verbose**.
 
 ```json
 {
@@ -289,19 +233,11 @@ Determines which logging channels are enabled.
 Where:
 
 - `<log-channel>` is one of:
-  - `Operational` (logs ordinary information about what PowerShell is doing)
-  - `Analytic` (intended for more diagnostic usage)
+  - Operational - logs basic information about PowerShell activities
+  - Analytic - logs more detailed diagnostic information
 
-Values for this field should be included in the same
-string and separated by a comma (`,`).
-
-#### Default setting
-
-```
-"Operational"
-```
-
-#### Example
+The default value is **Operational**. To enable both channels, include both
+values as a single comma-separated string. For example:
 
 ```json
 {
@@ -314,15 +250,8 @@ string and separated by a comma (`,`).
 > [!IMPORTANT]
 > This setting can only be used in macOS and Linux.
 
-> [!NOTE]
-> It is generally advised to leave this value unset
-> unless you are trying to diagnose a specific behavior
-> in a known part of PowerShell's functionality.
-> Setting this value can only decrease the amount of information logged.
-
-Sets which log keywords should be enabled.
-This allows control over which parts of PowerShell are logged and which are not.
-
+Determines which parts of PowerShell are logged. By default, all log keywords are enabled.
+To enable multiple keywords, list the values in a single comma-separated string.
 ```Schema
 "LogKeywords": "<log-keyword>,..."
 ```
@@ -330,32 +259,24 @@ This allows control over which parts of PowerShell are logged and which are not.
 Where:
 
 - `<log-keyword>` is one of:
-  - `Runspace` (runspace management)
-  - `Pipeline` (pipeline operations)
-  - `Protocol` (communication protocol handling, such as PSRP)
-  - `Transport` (transport layer support, such as SSH)
-  - `Host` (PowerShell host functionality, for example console interaction)
-  - `Cmdlets` (PowerShell builtin cmdlets)
-  - `Serializer` (serialization logic)
-  - `Session` (PowerShell session state)
-  - `ManagedPlugin` (WSMan plugin)
+  - Runspace - runspace management
+  - Pipeline - pipeline operations
+  - Protocol - communication protocol handling, such as PSRP
+  - Transport - transport layer support, such as SSH
+  - Host - PowerShell host functionality, for example console interaction
+  - Cmdlets -PowerShell builtin cmdlets
+  - Serializer - serialization logic
+  - Session - PowerShell session state
+  - ManagedPlugin - WSMan plugin
 
-Values for this field should be composed within the string with a comma (`,`).
+> [!NOTE]
+> It is generally advised to leave this value unset
+> unless you are trying to diagnose a specific behavior
+> in a known part of PowerShell.
+> Changing this value only decreases the amount of information logged.
 
-#### Default value
-
-The default value for this field is all keywords:
-
-```
-"Runspace,Pipeline,Protocol,Transport,Host,Cmdlets,Serializer,Session,ManagedPlugin"
-```
-
-#### Example
-
-This setting will mean that only logging from
-runspace operations, pipeline logic and cmdlet use
-will be written to the logs.
-All other logging will be omitted.
+This example limits the logging to runspace operations, pipeline logic, and
+cmdlet use. All other logging will be omitted.
 
 ```json
 "LogKeywords": "Runspace,Pipeline,Cmdlets"
@@ -377,22 +298,9 @@ All other logging will be omitted.
 ### ConsoleSessionConfiguration
 -->
 
-### Example configurations
+## More example configurations
 
-#### Basic configuration with execution policyfor
-
-This PowerShell configuration sets the execution policy to `Bypass`
-and leaves all other configurations as default.
-
-For example, this configuration will leave the `"LogIdentity"` setting as `"powershell"`.
-
-```json
-{
-  "Microsoft.PowerShell.ExecutionPolicy": "Bypass"
-}
-```
-
-#### Fuller configuration settings (Windows)
+### Example Windows configuration
 
 This configuration has more settings explicitly set:
 
@@ -413,28 +321,30 @@ This configuration has more settings explicitly set:
 }
 ```
 
-#### Fuller configuration settings (UNIX-like)
+### Example non-Windows configuration
 
-This configuration sets a number of options
-that will only work in macOS or Linux:
+This configuration sets a number of options that only work in macOS or Linux:
 
-- The module path has three module directories on it.
-- The `PSImplicitRemotingBatching` experimental feature is enabled
-- The PowerShell logging level is set to `Verbose`, for more logging
-- When this PowerShell installation writes to the logs,
-  it will use the `"home-powershell"` identity.
+- The module path contains three module directories
+- The **PSImplicitRemotingBatching** experimental feature is enabled
+- The PowerShell logging level is set to **Verbose**, for more logging
+- This PowerShell installation writes to the logs using the **home-powershell**
+  identity.
 
-> [!NOTE]
-> In addition to the platform-specific settings,
-> the use of `/` and `:` as separator characters in the `"PSModulePath"` configuration
-> mean it will only be useful on a macOS or Linux platform
-> (likely Linux, given the directory structure).
 
 ```json
 {
-  "PSModulePath": "/home/bjessup/.config/powershell/Modules:/mnt/sparedrive/PowerShellModules:/opt/microsoft/powershell/Modules",
+  "PSModulePath": "/home/bmcnamara/.config/powershell/Modules:/mnt/sparedrive/PowerShellModules:/opt/microsoft/powershell/Modules",
   "ExperimentalFeatures": ["PSImplicitRemotingBatching"],
   "LogLevel": "Verbose",
   "LogIdentity": "home-powershell"
 }
 ```
+
+## See also
+
+[About Execution Policies](./about_Execution_Policies.md)
+
+[About Automatic Variables](./about_Automatic_Variables.md)
+
+[RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md
