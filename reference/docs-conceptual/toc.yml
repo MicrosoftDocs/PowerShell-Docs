@@ -130,7 +130,7 @@
             - name: The PowerShellTab object
               href: components/ise/object-model/the-powershelltab-object.md
     - name: Visual Studio Code
-      href: ''
+      href: components/vscode/using-vscode.md
       items:
         - name: Using Visual Studio Code
           href: components/vscode/using-vscode.md
