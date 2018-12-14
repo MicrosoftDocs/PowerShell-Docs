@@ -134,9 +134,9 @@
       items:
         - name: Using Visual Studio Code
           href: components/vscode/using-vscode.md
-        - name: Using Visual Studio Code for 
+        - name: How to replicate the ISE experience in Visual Studio Code
           href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-        - name: Using Visual Studio Code
+        - name: Using Visual Studio Code for remote editing and debugging
           href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
     - name: Web Access
       href: ''

@@ -1,4 +1,10 @@
-# ISE Compatibility
+---
+title: How to replicate the ISE experience in Visual Studio Code
+description: How to replicate the ISE experience in Visual Studio Code
+ms.date: 08/06/2018
+---
+
+# How to replicate the ISE experience in Visual Studio Code
 
 While the PowerShell extension for VSCode doesn't seek
 complete feature parity with the PowerShell ISE,
