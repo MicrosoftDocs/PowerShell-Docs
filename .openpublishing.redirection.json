@@ -135,9 +135,14 @@
             "redirect_document_id": "False"
         },
         {
+            "source_path": "gallery/how-to/finding-packages/searching-by-psedition.md",
+            "redirect_url": "/powershell/gallery/how-to/finding-packages/searching-by-compatibility",
+            "redirect_document_id": "False"
+        },
+        {
             "source_path": "gallery/psgallery/psgallery_pseditions.md",
-            "redirect_url": "/powershell/gallery/how-to/finding-packages/seaching-by-psedition",
-            "redirect_document_id": "True"
+            "redirect_url": "/powershell/gallery/how-to/finding-packages/searching-by-compatibility",
+            "redirect_document_id": "False"
         },
         {
             "source_path": "gallery/psgallery/psgallery_report_abuse.md",

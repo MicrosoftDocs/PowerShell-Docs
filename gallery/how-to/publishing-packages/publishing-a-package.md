@@ -57,10 +57,11 @@ PrivateData supports adding new keys, so the elements specific to the PowerShell
 Manifest elements that are most important to fill in for item you publish to the PowerShell Gallery are:
 
 - Script or Module Name - Those are drawn from the names of the .PS1 for a script, or the .PSD1 for a module.
-- Version - this is a required primary key, format should follow SemVer guidelines (see Best Practices for details)
-- Author - this is a required primary key, and contains the name to be associated with the item (see Authors and Owners, below)
+- Version - this is a required primary key, format should follow SemVer guidelines. See Best Practices for details.
+- Author - this is a required primary key, and contains the name to be associated with the item. See Authors and Owners below.
 - Description - this is a required primary key, used to briefly explain what this item does and any requirements for using it
 - ProjectURI - this is a strongly recommended URI field in PSData that provides a link to a Github repo or similar location where you do development on the item
+- Tags - it is a strong recommendation to tag your package based on its compatibility with PSEditions and platforms. See [publishing guidlines](/powershell/gallery/concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms) for details.
 
 Authors and Owners of PowerShell Gallery items are related concepts, but do not always match.
 Item Owners are users with PowerShell Gallery accounts that have permission to maintain the item. There may be many Owners who can update any item.
