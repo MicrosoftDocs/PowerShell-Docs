@@ -895,6 +895,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path": "reference/docs-conceptual/powershell-scripting.md",
+            "redirect_url": "/powershell/scripting/core-powershell/console/powershell.exe-command-line-help",
+            "redirect_document_id": "True"
+        },
+        {
             "source_path": "reference/docs-conceptual/core-powershell/console-guide.md",
             "redirect_url": "/powershell/scripting/core-powershell/console/powershell.exe-command-line-help",
             "redirect_document_id": "True"
@@ -1431,7 +1436,7 @@
         },
         {
             "source_path": "reference/virtual-directory/core-powershell/core-powershell.md",
-            "redirect_url": "/powershell/scripting/powershell-scripting",
+            "redirect_url": "/powershell/scripting/overview",
             "redirect_document_id": "False"
         },
         {
@@ -1566,7 +1571,7 @@
         },
         {
             "source_path": "reference/virtual-directory/index.md",
-            "redirect_url": "/powershell/scripting/powershell-scripting",
+            "redirect_url": "/powershell/scripting/overview",
             "redirect_document_id": "True"
         },
         {
