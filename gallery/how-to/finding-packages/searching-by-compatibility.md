@@ -31,11 +31,11 @@ Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the packages o
 
 #### Use Tags:"PSEdition_Core" to search items compatible with PowerShell Core Edition.
 
-![Search results for items compatible with Core PSEdition](../../Images/SearchResultsWithPSEditions.PNG)
+![Search results for items compatible with Core PSEdition](../../Images/searchresultswithpseditions.PNG)
 
 #### Use Tags:"PSEdition_Desktop" to search items compatible with PowerShell Desktop Edition.
 
-![Search results for items compatible with Desktop PSEdition](../../Images/SearchResultsWithPSEdition-Desktop.PNG)
+![Search results for items compatible with Desktop PSEdition](../../Images/searchresultswithpseditionsdesktop.PNG)
 
 ## Searching by Operating System 
 
