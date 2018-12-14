@@ -66,7 +66,7 @@ Get-ChildItem -Path *.txt -Recurse -Force
 
 This command lists the ".txt" files in the "Logs" subdirectory, except for those whose names start with the letter 'A'.
 It uses the wildcard character (`*`) to indicate the contents of the "Logs" subdirectory, not the directory container.
-Because the command does not include the `-Recurse` parameter, `Get-ChildItem` does not include the content of directory automatically; you need to specify it.
+Because the command does not include the `-Recurse` parameter, `Get-ChildItem` does not include the content of sub-directories automatically; you need to specify it.
 
 ```powershell
 Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*

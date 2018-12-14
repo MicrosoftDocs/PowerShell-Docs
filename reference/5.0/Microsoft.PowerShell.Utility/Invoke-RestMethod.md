@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  12/13/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -133,12 +133,6 @@ For example:
 $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $R
-```
-
-or
-
-```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
 ```
 
@@ -319,6 +313,7 @@ The acceptable values for this parameter are:
 Type: WebRequestMethod
 Parameter Sets: (All)
 Aliases:
+Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
 
 Required: False
 Position: Named
@@ -511,25 +506,7 @@ Accept wildcard characters: False
 
 ### -UseBasicParsing
 
-Indicates that the cmdlet uses basic parsing.
-
-The Body parameter can be used to specify a list of query parameters or specify the content of the response.
-
-When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body is added to the URI as query parameters. For other request types (such as POST), the body is set as the value of the request body in the standard name=value format.
-
-When the body is a form, or it is the output of another `Invoke-WebRequest` call, Windows PowerShell sets the request content to the form fields.
-
-For example:
-
-```powershell
-$R = Invoke-WebRequest http://website.com/login.aspx $R.Forms\[0\].Name = "MyName" $R.Forms\[0\].Password = "MyPassword" Invoke-RestMethod http://website.com/service.aspx -Body $R
-```
-
-or
-
-```powershell
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]
-```
+Indicates that the cmdlet uses basic parsing. The cmdlet returns the raw HTML in a **String** object.
 
 ```yaml
 Type: SwitchParameter
@@ -613,7 +590,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 

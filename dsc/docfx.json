@@ -23,7 +23,7 @@
             "author": { "**/**.md": "bobbytreed" }
         },
         "resource": [
-            { "files": ["**/images/**"], "exclude": ["**/obj/**"] }
+            { "files": ["**/images/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"] }
         ],
         "template": "op.html",
         "dest": "dsc",

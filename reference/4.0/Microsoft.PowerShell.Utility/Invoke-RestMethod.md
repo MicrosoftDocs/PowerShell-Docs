@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  12/13/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -99,12 +99,13 @@ Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile 
 ```
 
 ### Example 3: Pass multiple headers
+
 ```powershell
-$headers = @{ 
+$headers = @{
     'userId' = 'UserIDValue'
     'token' = 'TokenValue'
 }
-Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body 
+Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
 ```
 APIs often require passed headers for authentication, validation etc.
 
@@ -132,12 +133,6 @@ For example:
 $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $R
-```
-
-or
-
-```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
 ```
 
@@ -241,7 +236,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: KeepAlive
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -250,7 +245,7 @@ Accept wildcard characters: False
 Specifies the headers of the web request.
 Enter a hash table or dictionary.
 
-To set UserAgent headers, use the UserAgent parameter.
+To set UserAgent headers, use the `-UserAgent` parameter.
 You cannot use this parameter to specify UserAgent or cookie headers.
 
 ```yaml
@@ -318,10 +313,11 @@ The acceptable values for this parameter are:
 Type: WebRequestMethod
 Parameter Sets: (All)
 Aliases:
+Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
 
 Required: False
 Position: Named
-Default value: Default
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -480,6 +476,7 @@ The acceptable values for this parameter are:
 Type: String
 Parameter Sets: (All)
 Aliases:
+Accepted values: chunked, compress, deflate, gzip, identity
 
 Required: False
 Position: Named
