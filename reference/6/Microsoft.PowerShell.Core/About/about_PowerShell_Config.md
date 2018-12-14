@@ -45,12 +45,12 @@ Configuration of PowerShell can also be provided on a per-user basis.
 This applies configuration settings to a specific user.
 For this, the configuration file can be found in the user-scope
 configuration directory.
-On Windows this is `$env:LocalAppData\Microsoft\powershell`,
+On Windows this is `"$([System.Environment]::GetFolderPath("MyDocuments"))\Microsoft\powershell"`,
 on UNIX-like platforms this is `$HOME/.config/powershell/`.
 
 > [!TIP]
 > The user configuration directory can be found across platforms
-> with the command `Split-Path $PROFILE`.
+> with the command `Split-Path $PROFILE.CurrentUserCurrentHost`.
 
 ## General configuration settings
 
