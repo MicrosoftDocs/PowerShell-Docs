@@ -12,7 +12,7 @@ language. There are also Help articles for each cmdlet and provider and for many
 scripts.
 
 You can display these Help articles at the command prompt or view the most recently updated versions
-of these articles in the [PowerShell](/powershell/scripting/powershell-scripting) documentation
+of these articles in the [PowerShell](/powershell/scripting/overview) documentation
 online.
 
 ## Getting help for cmdlets
