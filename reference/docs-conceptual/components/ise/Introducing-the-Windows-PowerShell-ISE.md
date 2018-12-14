@@ -3,17 +3,27 @@ ms.date:  08/14/2018
 keywords:  powershell,cmdlet
 title:  Introducing the Windows PowerShell ISE
 ---
-# Introducing the Windows PowerShell ISE
+# The Windows PowerShell ISE
 
 The Windows PowerShell Integrated Scripting Environment (ISE) is a host application for Windows
-PowerShell. In Windows PowerShell ISE, you can run commands and write, test, and debug scripts in a
-single Windows-based graphic user interface. The interface provides multiline editing, tab
+PowerShell. In the ISE, you can run commands and write, test, and debug scripts in a
+single Windows-based graphic user interface. The ISE provides multiline editing, tab
 completion, syntax coloring, selective execution, context-sensitive help, and support for
 right-to-left languages. Menu items and keyboard shortcuts are mapped to many of the same tasks
 that you would do in the Windows PowerShell console. For example, when you debug a script in the
-Windows PowerShell ISE, you can right-click on a line of code to set a breakpoint.
+ISE, you can right-click on a line of code in the edit pane to set a breakpoint.
 
-Try these features in Windows PowerShell ISE.
+## Support
+
+The ISE was first introduced with Windows PowerShell V2 and was re-designed with PowerShell V3. 
+The ISE is supported in all supported versions of Windows PowerShell up to and including Windows PowerShell V5.1. 
+The ISE, however, is in maintennce mode and no new features are likely to be added.
+Additionally, there is no support for the ISE with PowerShell v6 and beyond. 
+Users wanting a graphical tool with which to manage PowerShell scrips, etc, should consider [Visual Studio Code](https://code.visualstudio.com/).
+
+## Key Features
+
+Key features in Windows PowerShell ISE include:
 
 - Multiline editing: To insert a blank line under the current line in the Command pane, press
   SHIFT+ENTER.
