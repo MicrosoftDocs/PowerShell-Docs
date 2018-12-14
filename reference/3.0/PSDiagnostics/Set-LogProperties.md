@@ -3,12 +3,13 @@ external help file: PSDiagnostics-help.xml
 Module Name: PSDiagnostics
 online version:
 schema: 2.0.0
+ms.date:  11/27/2018
 ---
 
 # Set-LogProperties
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Changes the properties of a Windows event log.
 
 ## SYNTAX
 
@@ -17,24 +18,40 @@ Set-LogProperties [-LogDetails] <LogDetails> [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+
+This cmdlet changes the configuration settings of a Windows event log. This cmdlet is used by the
+`Enable-PSTrace` and `Disable-PSTrace` cmdlets.
+
+You must run this cmdlet from an elevated PowerShell session.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Change the retention setting of the Windows PowerShell event log
+
 ```powershell
-PS C:\> {{ Add example code here }}
+$logDetails = Get-LogProperties 'Windows PowerShell'
+$logDetails.Retention = $True
+Set-LogProperties -LogDetails $logDetails
+Get-LogProperties 'Windows PowerShell'
 ```
 
-{{ Add example description here }}
+```Output
+Name       : Windows PowerShell
+Enabled    : True
+Type       : Admin
+Retention  : True
+AutoBackup : False
+MaxLogSize : 15728640
+```
 
 ## PARAMETERS
 
 ### -Force
-{{Fill Force Description}}
+
+Used to force the change without prompting.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -46,10 +63,11 @@ Accept wildcard characters: False
 ```
 
 ### -LogDetails
-{{Fill LogDetails Description}}
+
+The updated configuration settings to be assigned to the event log.
 
 ```yaml
-Type: LogDetails
+Type: Microsoft.PowerShell.Diagnostics.LogDetails
 Parameter Sets: (All)
 Aliases:
 
@@ -61,18 +79,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.Diagnostics.LogDetails
 
+You must pass a fully configured **LogDetails** object to the `Set-LogProperties` cmdlet.
+Therefore, to change one setting, you should use `Get-LogProperties` to retrieve the current
+configuration.
 
 ## OUTPUTS
 
-### System.Object
+### None
 
 ## NOTES
 
+You must run this cmdlet from an elevated PowerShell session.
+
 ## RELATED LINKS
+
+[Get-LogProperties](Get-LogProperties.md)
+
+[Enable-PSTrace](Enable-PSTrace.md)
+
+[Disable-PSTrace](Disable-PSTrace.md)

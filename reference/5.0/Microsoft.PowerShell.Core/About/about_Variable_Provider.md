@@ -58,7 +58,7 @@ the `Variable:` drive in the name. This article does not cover working with
 - [Clear-Variable](../../Microsoft.PowerShell.Utility/Clear-Variable.md)
 
 > [!NOTE]
-> You can also use the PowShell expression parser to create, view, and change
+> You can also use the PowerShell expression parser to create, view, and change
 > the values of variables without using the cmdlets. When working with variables
 > directly, use a dollar sign (`$`) to identify the name as a variable and the
 > assignment operator (`=`)to establish and change its value. For example,
@@ -83,8 +83,6 @@ listed below.
   - `PSBoundParameters`
   - `args`
   - `input`
-
-{{change these into links to the classes}}
 
 ## Navigating the Variable drives
 

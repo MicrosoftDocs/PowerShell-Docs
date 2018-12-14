@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821676
-external help file:  PSModule-help.xml
-title:  Update-Module
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821676
+schema: 2.0.0
+title: Update-Module
 ---
 
 # Update-Module
@@ -16,9 +17,9 @@ Downloads and installs the newest version of specified modules from an online ga
 ## SYNTAX
 
 ```
-Update-Module [[-Name] <String[]>] [-RequiredVersion <Version>] [-MaximumVersion <Version>]
- [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Update-Module [[-Name] <String[]>] [-RequiredVersion <String>] [-MaximumVersion <String>]
+ [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Force] [-AllowPrerelease]
+ [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -74,6 +75,50 @@ This example installs (or reinstalls) the newest version of ContosoModule from t
 
 ## PARAMETERS
 
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowPrerelease
+Allows you to update a module with the newer module marked as a prerelease.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Credential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Force
 Forces the update of each specified module, regardless of the current version of the module installed.
 
@@ -86,6 +131,23 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumVersion
+Specifies the maximum version of a single module to update.
+You cannot add this parameter if you are attempting to update multiple modules.
+The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -102,19 +164,30 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -MaximumVersion
-Specifies the maximum version of a single module to update.
-You cannot add this parameter if you are attempting to update multiple modules.
-The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
+### -Proxy
 
 ```yaml
-Type: Version
+Type: Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProxyCredential
+
+```yaml
+Type: PSCredential
 Parameter Sets: (All)
 Aliases:
 
@@ -131,7 +204,7 @@ You cannot add this parameter if you are updating more than one module in a sing
 If the online gallery does not have this version of the specified module, an error occurs.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -170,51 +243,6 @@ Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Credential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Proxy
-
-
-```yaml
-Type: Uri
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ProxyCredential
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

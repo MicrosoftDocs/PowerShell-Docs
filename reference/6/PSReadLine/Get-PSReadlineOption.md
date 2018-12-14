@@ -1,92 +1,90 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821450
-external help file:  Microsoft.PowerShell.PSReadLine.dll-Help.xml
-title:  Get-PSReadlineOption
+external help file: Microsoft.PowerShell.PSReadLine.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PSReadLine
+ms.date: 12/07/2018
+online version: http://go.microsoft.com/fwlink/?LinkId=821450
+schema: 2.0.0
+title: Get-PSReadLineOption
 ---
-# Get-PSReadlineOption
+
+# Get-PSReadLineOption
 
 ## SYNOPSIS
-
-Gets values for the options that can be configured.
+Returns the values for the options that can be configured.
 
 ## SYNTAX
 
 ```
-Get-PSReadlineOption [<CommonParameters>]
+Get-PSReadLineOption [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **Get-PSReadlineOption** returns the current state of the settings that can be configured by using the Set-PSReadlineOption cmdlet.
-You can use the object that **Get-PSReadlineOption** returns to change PSReadline options.
-This provides a slightly simpler way to set syntax coloring options for multiple kinds of tokens.
+The `Get-PSReadLineOption` cmdlet returns the current state of the settings that can be configured
+by using the `Set-PSReadLineOption` cmdlet. You can use the returned object to change
+**PSReadLine** options. This provides a slightly simpler way to set syntax coloring options for
+multiple kinds of tokens.
 
 ## EXAMPLES
 
 ### Example 1: Get options and their values
 
-```
-PS C:\> Get-PSReadlineOption
-EditMode                               : Windows
-ContinuationPrompt                     : >>>
-ContinuationPromptForegroundColor      : DarkYellow
-ContinuationPromptBackgroundColor      : DarkMagenta
-ExtraPromptLineCount                   : 0
-AddToHistoryHandler                    :
-CommandValidationHandler               :
-CommandsToValidateScriptBlockArguments : {ForEach-Object, %, Invoke-Command, icm...}
-HistoryNoDuplicates                    : False
-MaximumHistoryCount                    : 4096
-MaximumKillRingCount                   : 10
-HistorySearchCursorMovesToEnd          : False
-ShowToolTips                           : False
-DingTone                               : 1221
-CompletionQueryItems                   : 100
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+---
-DingDuration                           : 50
-BellStyle                              : Audible
-HistorySearchCaseSensitive             : False
-HistorySavePath                        : C:\Users\TestUser\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
-HistorySaveStyle                       : SaveIncrementally
-DefaultTokenForegroundColor            : DarkYellow
-CommentForegroundColor                 : DarkGreen
-KeywordForegroundColor                 : Green
-StringForegroundColor                  : DarkCyan
-OperatorForegroundColor                : DarkGray
-VariableForegroundColor                : Green
-CommandForegroundColor                 : Yellow
-ParameterForegroundColor               : DarkGray
-TypeForegroundColor                    : Gray
-NumberForegroundColor                  : White
-MemberForegroundColor                  : White
-DefaultTokenBackgroundColor            : DarkMagenta
-CommentBackgroundColor                 : DarkMagenta
-KeywordBackgroundColor                 : DarkMagenta
-StringBackgroundColor                  : DarkMagenta
-OperatorBackgroundColor                : DarkMagenta
-VariableBackgroundColor                : DarkMagenta
-CommandBackgroundColor                 : DarkMagenta
-ParameterBackgroundColor               : DarkMagenta
-TypeBackgroundColor                    : DarkMagenta
-NumberBackgroundColor                  : DarkMagenta
-MemberBackgroundColor                  : DarkMagenta
-EmphasisForegroundColor                : Cyan
-EmphasisBackgroundColor                : DarkMagenta
-ErrorForegroundColor                   : Red
-ErrorBackgroundColor                   : DarkMagenta
+```powershell
+Get-PSReadLineOption
 ```
 
-This command returns the list of available PSReadline options and their current values.
+```Output
+EditMode                               : Windows
+AddToHistoryHandler                    :
+HistoryNoDuplicates                    : True
+HistorySavePath                        : C:\Users\testuser\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\Consol
+                                         eHost_history.txt
+HistorySaveStyle                       : SaveIncrementally
+HistorySearchCaseSensitive             : False
+HistorySearchCursorMovesToEnd          : False
+MaximumHistoryCount                    : 4096
+ContinuationPrompt                     : >>
+ExtraPromptLineCount                   : 0
+PromptText                             :
+BellStyle                              : Audible
+DingDuration                           : 50
+DingTone                               : 1221
+CommandsToValidateScriptBlockArguments : {ForEach-Object, %, Invoke-Command, icm...}
+CommandValidationHandler               :
+CompletionQueryItems                   : 100
+MaximumKillRingCount                   : 10
+ShowToolTips                           : True
+ViModeIndicator                        : None
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"–—―
+CommandColor                           : "`e[93m"
+CommentColor                           : "`e[32m"
+ContinuationPromptColor                : "`e[37m"
+DefaultTokenColor                      : "`e[37m"
+EmphasisColor                          : "`e[96m"
+ErrorColor                             : "`e[91m"
+KeywordColor                           : "`e[92m"
+MemberColor                            : "`e[97m"
+NumberColor                            : "`e[97m"
+OperatorColor                          : "`e[90m"
+ParameterColor                         : "`e[90m"
+SelectionColor                         : "`e[30;47m"
+StringColor                            : "`e[36m"
+TypeColor                              : "`e[37m"
+VariableColor                          : "`e[92m"
+```
+
+This command returns the list of available PSReadLine options and their current values.
 
 ## PARAMETERS
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -96,14 +94,16 @@ You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
+### Microsoft.PowerShell.PSConsoleReadLineOptions
+
 ## NOTES
 
 ## RELATED LINKS
 
-[Remove-PSReadlineKeyHandler](Remove-PSReadlineKeyHandler.md)
+[Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
 
-[Get-PSReadlineKeyHandler](Get-PSReadlineKeyHandler.md)
+[Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
 
-[Set-PSReadlineOption](Set-PSReadlineOption.md)
+[Set-PSReadLineOption](Set-PSReadLineOption.md)
 
-[Set-PSReadlineKeyHandler](Set-PSReadlineKeyHandler.md)
+[Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)

@@ -54,8 +54,8 @@ Get-Content -Path C:\Chapters\Chapter1.txt
 This command gets the content of the Chapter1.txt file.
 It uses the **Path** parameter to specify the name of the item.
 `Get-Content` passes the content down the pipeline
- Because there are no other pipeline elements, the content is formatted by default and
- displayed at the command line.
+Because there are no other pipeline elements, the content is formatted by default and
+displayed at the command line.
 
 ### Example 2: Get the first 50 lines from a text file and store the results in another file
 

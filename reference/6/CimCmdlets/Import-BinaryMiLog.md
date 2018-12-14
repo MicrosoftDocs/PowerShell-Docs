@@ -59,5 +59,3 @@ Accept wildcard characters: False
 ## NOTES
 
 ## RELATED LINKS
-
-[http://go.microsoft.com/fwlink/?LinkId=301309](http://go.microsoft.com/fwlink/?LinkId=301309)

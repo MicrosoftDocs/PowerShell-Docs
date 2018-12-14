@@ -155,5 +155,5 @@ Preferred Tag, as that will result in less noise, and better search results for 
 | AzureRm | Used primarily for the AzureRM modules |
 | Zip |  |
 | MSI |  |
-| Mac |  |
+| MacOS |  |
 | PoshBot |  |

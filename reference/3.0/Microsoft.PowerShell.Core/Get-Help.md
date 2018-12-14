@@ -79,7 +79,7 @@ To download or update the help files for a module in Windows PowerShell 3.0, use
 
 You can also view the help topics for PowerShell online in the Microsoft Docs.
 To get the online version of a help topic, use the **Online** parameter, such as: `Get-Help Get-Process -Online`.
-To read all of the help topics, see [PowerShell Documentation](../../docs-conceptual/PowerShell-Scripting.md) in the Microsoft Docs.
+To read all of the help topics, see [PowerShell Documentation](/powershell/overview) in the Microsoft Docs.
 
 If you type "Get-Help" followed by the exact name of a help topic, or by a word unique to a help topic, `Get-Help` displays the topic contents.
 If you enter a word or word pattern that appears in several help topic titles, `Get-Help` displays a list of the matching titles.
@@ -429,7 +429,7 @@ Displays the online version of a help topic in the default Internet browser.
 This parameter is valid only for cmdlet, function, workflow and script help topics.
 You cannot use the **Online** parameter in **Get-Help** commands in a remote session.
 
-For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and "Supporting Online Help" (http://go.microsoft.com/fwlink/?LinkID=242132), and [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx) in the MSDN library.
+For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx) in the Microsoft Docs.
 
 ```yaml
 Type: SwitchParameter

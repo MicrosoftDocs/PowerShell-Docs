@@ -1,21 +1,22 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821824
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Invoke-RestMethod
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 12/13/2018
+online version: http://go.microsoft.com/fwlink/?LinkId=821824
+schema: 2.0.0
+title: Invoke-RestMethod
 ---
 
 # Invoke-RestMethod
 
-## Synopsis
+## SYNOPSIS
 Sends an HTTP or HTTPS request to a RESTful web service.
 
-## Syntax
+## SYNTAX
 
-```powershell
+```
 Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
  [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-Credential <PSCredential>]
  [-UseDefaultCredentials] [-CertificateThumbprint <String>] [-Certificate <X509Certificate>]
@@ -25,7 +26,7 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
  [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational State Transfer (REST) web services that returns richly structured data.
 
 Windows PowerShell formats the response based to the data type.
@@ -34,7 +35,7 @@ For JavaScript Object Notation (JSON) or XML, Windows PowerShell converts (or de
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get the PowerShell RSS feed
 ```powershell
@@ -100,12 +101,13 @@ Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile 
 ```
 
 ### Example 3: Pass multiple headers
+
 ```powershell
-$headers = @{ 
+$headers = @{
     'userId' = 'UserIDValue'
     'token' = 'TokenValue'
 }
-Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body 
+Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
 ```
 APIs often require passed headers for authentication, validation etc.
 
@@ -133,12 +135,6 @@ For example:
 $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
-Invoke-RestMethod http://website.com/service.aspx -Body $R
-```
-
-or
-
-```powershell
 Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
 ```
 
@@ -296,7 +292,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -304,21 +300,22 @@ Accept wildcard characters: False
 ### -Method
 Specifies the method used for the web request.
 The acceptable values for this parameter are:
-* Default
-* Delete
-* Get
-* Head
-* Merge
-* Options
-* Patch
-* Post
-* Put
-* Trace
+- Default
+- Delete
+- Get
+- Head
+- Merge
+- Options
+- Patch
+- Post
+- Put
+- Trace
 
 ```yaml
 Type: WebRequestMethod
 Parameter Sets: (All)
 Aliases:
+Accepted values: Default, Get, Head, Post, Put, Delete, Trace, Options, Merge, Patch
 
 Required: False
 Position: Named
@@ -471,11 +468,11 @@ Accept wildcard characters: False
 ### -TransferEncoding
 Specifies a value for the transfer-encoding HTTP response header.
 The acceptable values for this parameter are:
-* Chunked
-* Compress
-* Deflate
-* GZip
-* Identity
+- Chunked
+- Compress
+- Deflate
+- GZip
+- Identity
 
 ```yaml
 Type: String
@@ -511,25 +508,7 @@ Accept wildcard characters: False
 
 ### -UseBasicParsing
 
-Indicates that the cmdlet uses basic parsing.
-
-The Body parameter can be used to specify a list of query parameters or specify the content of the response.
-
-When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body is added to the URI as query parameters. For other request types (such as POST), the body is set as the value of the request body in the standard name=value format.
-
-When the body is a form, or it is the output of another `Invoke-WebRequest` call, Windows PowerShell sets the request content to the form fields.
-
-For example:
-
-```powershell
-$R = Invoke-WebRequest http://website.com/login.aspx $R.Forms\[0\].Name = "MyName" $R.Forms\[0\].Password = "MyPassword" Invoke-RestMethod http://website.com/service.aspx -Body $R
-```
-
-or
-
-```powershell
-Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms\[0\]
-```
+Indicates that the cmdlet uses basic parsing. The cmdlet returns the raw HTML in a **String** object.
 
 ```yaml
 Type: SwitchParameter
@@ -613,14 +592,14 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Inputs
+## INPUTS
 
 ### System.Object
 You can pipe the body of a web request to `Invoke-RestMethod`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Xml.XmlDocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System.String
 The output of the cmdlet depends upon the format of the content that is retrieved.
@@ -628,9 +607,9 @@ The output of the cmdlet depends upon the format of the content that is retrieve
 ### PSObject
 If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the strings.
 
-## Notes
+## NOTES
 
-## Related Links
+## RELATED LINKS
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

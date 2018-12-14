@@ -19,7 +19,7 @@
             "feedback_product_url": "https://github.com/powershell/powershell/issues/new"
         },
         "resource": [
-            { "files": ["**/images/**"], "exclude": ["**/obj/**"] }
+            { "files": ["**/media/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"] }
         ],
         "template": "op.html",
         "dest": "developer",

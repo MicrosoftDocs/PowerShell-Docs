@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821719
-external help file:  Microsoft.PowerShell.Security.dll-Help.xml
-title:  Set-ExecutionPolicy
+external help file: Microsoft.PowerShell.Security.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Security
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821719
+schema: 2.0.0
+title: Set-ExecutionPolicy
 ---
 
 # Set-ExecutionPolicy
@@ -25,7 +26,7 @@ The **Set-ExecutionPolicy** cmdlet changes the user preference for the PowerShel
 
 The execution policy is part of the security strategy of PowerShell.
 It determines whether you can load configuration files (including your PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
-For more information, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+For more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
 To change the execution policy for the default (LocalMachine) scope, start PowerShell with the "Run as administrator" option.
 
@@ -141,21 +142,6 @@ It also shows how to use the Unblock-File cmdlet to unblock scripts, so that you
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ExecutionPolicy
 Specifies the new execution policy.
 The acceptable values for this parameter are:
@@ -232,6 +218,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
@@ -249,7 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -264,10 +265,8 @@ This cmdlet does not return any output.
 ## NOTES
 * When you use **Set-ExecutionPolicy** in any scope other than Process, the new user preference is saved in the registry and remains unchanged until you change it. When the value of the *Scope* parameter is Process, the user preference is stored in the PSExecutionPolicyPreference environment variable ($env:PSExecutionPolicyPreference), instead of the registry, and it is deleted when the session in which it is effective is closed.
 
-  If the "Turn on Script Execution" group policy is enabled for the computer or user, the user preference is saved, but it is not effective, and PowerShell displays a message explaining the conflict.
+* If the "Turn on Script Execution" group policy is enabled for the computer or user, the user preference is saved, but it is not effective, and PowerShell displays a message explaining the conflict.
 You cannot use **Set-ExecutionPolicy** to override a Group Policy, even if the user preference is more restrictive than the policy.
-
-*
 
 ## RELATED LINKS
 

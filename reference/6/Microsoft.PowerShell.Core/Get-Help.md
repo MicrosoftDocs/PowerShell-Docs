@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821483
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-Help
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821483
+schema: 2.0.0
+title: Get-Help
 ---
 
 # Get-Help
@@ -425,7 +426,7 @@ Displays the online version of a help topic in the default Internet browser.
 This parameter is valid only for cmdlet, function, workflow and script help topics.
 You cannot use the *Online* parameter in **Get-Help** commands in a remote session.
 
-For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and Supporting Online Help (http://go.microsoft.com/fwlink/?LinkID=242132), and [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
+For information about supporting this feature in help topics that you write, see [about_Comment_Based_Help](About/about_Comment_Based_Help.md), and [Supporting Online Help](/powershell/developer/module/supporting-online-help), and [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the Microsoft Docs.
 
 ```yaml
 Type: SwitchParameter
@@ -461,13 +462,18 @@ Accept wildcard characters: False
 Gets help that explains how the cmdlet works in the specified provider path.
 Enter a PowerShell provider path.
 
-This parameter gets a customized version of a cmdlet help topic that explains how the cmdlet works in the specified PowerShell provider path.
-This parameter is effective only for help about a provider cmdlet and only when the provider includes a custom version of the provider cmdlet help topic in its help file.
-To use this parameter, install the help file for the module that includes the provider.
+This parameter gets a customized version of a cmdlet help topic that explains
+how the cmdlet works in the specified PowerShell provider path. This parameter
+is effective only for help about a provider cmdlet and only when the provider
+includes a custom version of the provider cmdlet help topic in its help file.
+To use this parameter, install the help file for the module that includes the
+provider.
 
-To see the custom cmdlet help for a provider path, go to the provider path location and enter a **Get-Help** command or, from any path location, use the *Path* parameter of **Get-Help** to specify the provider path.
-You can also find custom cmdlet help online in the provider help section of the help topics.
-For example, you can find help for the **New-Item** cmdlet in the Wsman:\*\ClientCertificate path (http://go.microsoft.com/fwlink/?LinkID=158676).
+To see the custom cmdlet help for a provider path, go to the provider path
+location and enter a **Get-Help** command or, from any path location, use the
+*Path* parameter of **Get-Help** to specify the provider path. You can also
+find custom cmdlet help online in the provider help section of the help
+topics.
 
 For more information about PowerShell providers, see [about_Providers](About/about_Providers.md).
 
@@ -505,7 +511,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -526,37 +532,31 @@ If you get a command that has a help file, **Get-Help** returns a **MamlCommandH
 ## NOTES
 * Windows PowerShell 3.0 does not include help files. To download and install the help files that **Get-Help** reads, use the **Update-Help** cmdlet. You can use the **Update-Help** cmdlet to download and install help files for the core commands that come with PowerShell and for any modules that you install. You can also use it to update the help files so that the help on your computer is never outdated.
 
-  You can also read the help topics about the commands that come with PowerShell online starting at Scripting with PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116).
+  You can also read the help topics about the commands that come with PowerShell online starting at [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
 * **Get-Help** displays help in the locale set for the Windows operating system or in the fallback language for that locale. If you do not have help files for the primary or fallback locale, **Get-Help** behaves as if there are no help files on the computer. To get help for a different locale, use Region and Language in Control Panel to change the settings.
 * The full view of help includes a table of information about the parameters. The table includes the following fields:
 
-  - Required.
-Indicates whether the parameter is required (true) or optional (false).
+  - Required. Indicates whether the parameter is required (true) or optional (false).
 
-  - Position.
-Indicates whether the parameter is named or positional (numbered).
-Positional parameters must appear in a specified place in the command.
+  - Position. Indicates whether the parameter is named or positional (numbered). Positional parameters must appear in a specified place in the command.
 
-  ---- "Named" indicates that the parameter name is required, but that the parameter can appear anywhere in the command.
+  - "Named" indicates that the parameter name is required, but that the parameter can appear anywhere in the command.
 
-  ---- \<Number\> indicates that the parameter name is optional, but when the name is omitted, the parameter must be in the place specified by the number.
-For example, "2" indicates that when the parameter name is omitted, the parameter must be the second (2) or only unnamed parameter in the command.
-When the parameter name is used, the parameter can appear anywhere in the command.
+  - \<Number\> indicates that the parameter name is optional, but when the name is omitted, the parameter must be in the place specified by the number.
 
-  - Default value.
-The parameter value that PowerShell uses if you do not include the parameter in the command.
+    For example, "2" indicates that when the parameter name is omitted, the parameter must be the second (2) or only unnamed parameter in the command. When the parameter name is used, the parameter can appear anywhere in the command.
 
-  - Accepts pipeline input.
-Indicates whether you can (true) or cannot (false) send objects to the parameter through a pipeline.
+  - Default value. The parameter value that PowerShell uses if you do not include the parameter in the command.
+
+  - Accepts pipeline input. Indicates whether you can (true) or cannot (false) send objects to the parameter through a pipeline.
 "By Property Name" means that the pipelined object must have a property that has the same name as the parameter name.
 
-  - Accepts wildcard characters.
-Indicates whether the value of a parameter can include wildcard characters, such as * and ?.
+  - Accepts wildcard characters. Indicates whether the value of a parameter can include wildcard characters, such as * and ?.
 
 ## RELATED LINKS
 
-[Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007)](http://go.microsoft.com/fwlink/?LinkID=270007)
+[Updatable Help Status Table (https://go.microsoft.com/fwlink/?LinkID=270007)](https://go.microsoft.com/fwlink/?LinkID=270007)
 
 [about_Command_Syntax](About/about_Command_Syntax.md)
 

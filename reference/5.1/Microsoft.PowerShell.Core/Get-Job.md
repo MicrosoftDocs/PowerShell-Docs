@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821485
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-Job
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821485
+schema: 2.0.0
+title: Get-Job
 ---
 
 # Get-Job
@@ -21,16 +22,16 @@ Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] 
  [-After <DateTime>] [-Newest <Int32>] [[-Id] <Int32[]>] [<CommonParameters>]
 ```
 
-### NameParameterSet
-```
-Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
- [-After <DateTime>] [-Newest <Int32>] [-Name] <String[]> [<CommonParameters>]
-```
-
 ### InstanceIdParameterSet
 ```
 Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
  [-After <DateTime>] [-Newest <Int32>] [-InstanceId] <Guid[]> [<CommonParameters>]
+```
+
+### NameParameterSet
+```
+Get-Job [-IncludeChildJob] [-ChildJobState <JobState>] [-HasMoreData <Boolean>] [-Before <DateTime>]
+ [-After <DateTime>] [-Newest <Int32>] [-Name] <String[]> [<CommonParameters>]
 ```
 
 ### StateParameterSet
@@ -310,7 +311,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: DateTime
-Parameter Sets: SessionIdParameterSet, NameParameterSet, InstanceIdParameterSet, StateParameterSet, CommandParameterSet
+Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
 Required: False
@@ -332,7 +333,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: DateTime
-Parameter Sets: SessionIdParameterSet, NameParameterSet, InstanceIdParameterSet, StateParameterSet, CommandParameterSet
+Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
 Required: False
@@ -365,7 +366,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: JobState
-Parameter Sets: SessionIdParameterSet, NameParameterSet, InstanceIdParameterSet, StateParameterSet, CommandParameterSet
+Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 Accepted values: NotStarted, Running, Completed, Failed, Stopped, Blocked, Suspended, Disconnected, Suspending, Stopping, AtBreakpoint
 
@@ -438,7 +439,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Boolean
-Parameter Sets: SessionIdParameterSet, NameParameterSet, InstanceIdParameterSet, StateParameterSet, CommandParameterSet
+Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
 Required: False
@@ -477,7 +478,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: SessionIdParameterSet, NameParameterSet, InstanceIdParameterSet, StateParameterSet, CommandParameterSet
+Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
 Required: False
@@ -534,7 +535,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Int32
-Parameter Sets: SessionIdParameterSet, NameParameterSet, InstanceIdParameterSet, StateParameterSet, CommandParameterSet
+Parameter Sets: SessionIdParameterSet, InstanceIdParameterSet, NameParameterSet, StateParameterSet, CommandParameterSet
 Aliases:
 
 Required: False
@@ -588,7 +589,7 @@ You cannot pipe input to this cmdlet.
 ## OUTPUTS
 
 ### System.Management.Automation.RemotingJob
-This cmldet returns objects that represent the jobs in the session.
+This cmdlet returns objects that represent the jobs in the session.
 
 ## NOTES
 * The **PSJobTypeName** property of jobs indicates the job type of the job. The property value is determined by the job type author. The following list shows common job types.

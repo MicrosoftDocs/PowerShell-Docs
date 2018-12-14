@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821729
-external help file:  Microsoft.WSMan.Management.dll-Help.xml
-title:  Get-WSManInstance
+external help file: Microsoft.WSMan.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.WSMan.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821729
+schema: 2.0.0
+title: Get-WSManInstance
 ---
 
 # Get-WSManInstance
@@ -423,6 +424,7 @@ If the remote computer is compromised, when credentials are passed to it, the cr
 Type: AuthenticationMechanism
 Parameter Sets: (All)
 Aliases: auth, am
+Accepted values: None, Default, Digest, Negotiate, Basic, Kerberos, ClientCertificate, Credssp
 
 Required: False
 Position: Named
@@ -672,7 +674,7 @@ Parameter Sets: (All)
 Aliases: RURI
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
@@ -697,6 +699,7 @@ If you specify ObjectAndEPR, this cmdlet returns both the object and its associa
 Type: String
 Parameter Sets: Enumerate
 Aliases: RT
+Accepted values: object, epr, objectandepr
 
 Required: False
 Position: Named
@@ -780,7 +783,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

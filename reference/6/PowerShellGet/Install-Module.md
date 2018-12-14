@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821663
-external help file:  PSModule-help.xml
-title:  Install-Module
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821663
+schema: 2.0.0
+title: Install-Module
 ---
 
 # Install-Module
@@ -17,17 +18,17 @@ Downloads one or more modules from an online gallery, and installs them on the l
 
 ### NameParameterSet (Default)
 ```
-Install-Module [-Name] <String[]> [-MinimumVersion <Version>] [-MaximumVersion <Version>]
- [-RequiredVersion <Version>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
- [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+ [-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+ [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
-Install-Module -InputObject <PSObject[]> [-Credential <PSCredential>] [-Scope <String>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>] [-Proxy <Uri>]
+ [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force] [-AcceptLicense] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -81,6 +82,66 @@ This example installs the newest version of the module ContosoServer to $home\Do
 
 ## PARAMETERS
 
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowClobber
+
+Allows you to install a different version of a module that already exists on your computer.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowPrerelease
+Allows you to install a module marked as a prerelease.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Credential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Force
 Forces the installation of modules.
 If a module of the same name and version already exists on the computer, this parameter overwrites the existing module with one of the same name that was found by the command.
@@ -97,13 +158,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+{{Fill InputObject Description}}
+
+```yaml
+Type: PSObject[]
+Parameter Sets: InputObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
 ### -MaximumVersion
 Specifies the maximum version of a single module to install.
 You cannot add this parameter if you are attempting to install multiple modules.
 The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -120,10 +196,10 @@ You cannot add this parameter if you are attempting to install multiple modules.
 The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 If you are installing multiple modules in a single command, and a specified minimum version for a module is not available for installation, the **Install-Module** command silently continues without installing the unavailable module.
-For example, if you try to install the ContosoServer module with a minimum version of 2.0, but the latest version of the ContosoServer module is 1.5, the **Install-Module** command does not install the ContosoServer module; it goes to install the next specified module, and PowerShell display errors when the command is finished.
+For example, if you try to install the ContosoServer module with a minimum version of 2.0, but the latest version of the ContosoServer module is 1.5, the **Install-Module** command does not install the ContosoServer module; it goes to install the next specified module, and Windows PowerShell display errors when the command is finished.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -147,7 +223,35 @@ Parameter Sets: NameParameterSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Proxy
+
+```yaml
+Type: Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProxyCredential
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -174,7 +278,7 @@ You cannot add this parameter if you are attempting to install multiple modules.
 The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -187,25 +291,31 @@ Accept wildcard characters: False
 
 ### -Scope
 Specifies the installation scope of the module.
-The acceptable values for this parameter are: AllUsers and CurrentUser. 
-The default is CurrentUser.
+The acceptable values for this parameter are: AllUsers and CurrentUser.
 
-The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer.
-The CurrentUser scope lets modules be installed so that the module is available only to the current user.
+The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, %systemdrive%:\ProgramFiles\WindowsPowerShell\Modules.
 
-Installation locations vary by operating system and the value of *Scope*:
-
-| OS  | CurrentUser | AllUsers |
-| --- | ----------- | -------- |
-| Windows | $env:USERPROFILE\Documents\PowerShell\Modules | $env:ProgramFiles\PowerShell\Modules |
-| Non-Windows | $env:XDG_DATA_HOME/powershell/Modules | /usr/local/share/powershell/Modules |
-
+The CurrentUser scope lets modules be installed only to $home\Documents\WindowsPowerShell\Modules, so that the module is available only to the current user.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 Accepted values: CurrentUser, AllUsers
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipPublisherCheck
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -241,98 +351,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllowClobber
-Allows you to install a different version of a module that already exists on your computer.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Credential
-Specifies a user account that has rights to install a module for a specified package provider or source.
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -InputObject
-{{Fill InputObject Description}}
-
-```yaml
-Type: PSObject[]
-Parameter Sets: InputObject
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -Proxy
-Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
-
-```yaml
-Type: Uri
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ProxyCredential
-Specifies a user account that has permission to use the proxy server that is specified by the Proxy parameter.
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -SkipPublisherCheck
-Allows you to install a newer version of a module that already exists on your computer in the case when a newer one is not digitally signed by a trusted publisher and the newest existing module is digitally signed by a trusted publisher.
-
-It can happen for modules distributed with the operating system but maintained by the community, e.g. Pester or PSReadLine.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

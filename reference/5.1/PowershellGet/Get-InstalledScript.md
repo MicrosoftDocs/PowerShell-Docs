@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822324
-external help file:  PSModule-help.xml
-title:  Get-InstalledScript
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822324
+schema: 2.0.0
+title: Get-InstalledScript
 ---
 
 # Get-InstalledScript
@@ -16,8 +17,8 @@ Gets an installed script.
 ## SYNTAX
 
 ```
-Get-InstalledScript [[-Name] <String[]>] [-MinimumVersion <Version>] [-RequiredVersion <Version>]
- [-MaximumVersion <Version>] [<CommonParameters>]
+Get-InstalledScript [[-Name] <String[]>] [-MinimumVersion <String>] [-RequiredVersion <String>]
+ [-MaximumVersion <String>] [-AllowPrerelease] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,12 +53,27 @@ This command gets scripts where the name begins with Required-Scri.
 
 ## PARAMETERS
 
+### -AllowPrerelease
+Includes in the results scripts marked as a prerelease.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MaximumVersion
 Specifies the maximum, or latest, version of a script to get.
 The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -73,7 +89,7 @@ Specifies the minimum version of a script to get.
 The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -104,7 +120,7 @@ Accept wildcard characters: False
 Specifies the exact version of a script to get.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 

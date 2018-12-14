@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821829
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Measure-Object
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821829
+schema: 2.0.0
+title: Measure-Object
 ---
 
 # Measure-Object
@@ -17,14 +18,14 @@ Calculates the numeric properties of objects, and the characters, words, and lin
 
 ### GenericMeasure (Default)
 ```
-Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Sum] [-Average]
- [-Maximum] [-Minimum] [-StandardDeviation] [<CommonParameters>]
+Measure-Object [[-Property] <PSPropertyExpression[]>] [-InputObject <PSObject>] [-StandardDeviation]
+ [-Sum] [-AllStats] [-Average] [-Maximum] [-Minimum] [<CommonParameters>]
 ```
 
 ### TextMeasure
 ```
-Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Line] [-Word] [-Character]
- [-IgnoreWhiteSpace] [<CommonParameters>]
+Measure-Object [[-Property] <PSPropertyExpression[]>] [-InputObject <PSObject>] [-Line] [-Word]
+ [-Character] [-IgnoreWhiteSpace] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,7 +87,7 @@ Average           : 0.0634920634920635
 Sum               : 8
 Maximum           : 1
 Minimum           : 0
-StandardDeviation : 
+StandardDeviation :
 Property          : PSIsContainer
 ```
 
@@ -160,8 +161,13 @@ Accept wildcard characters: False
 Specifies the objects to be measured.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
-When you use the *InputObject* parameter with **Measure-Object**, instead of piping command results to **Measure-Object**, the *InputObject* value-even if the value is a collection that is the result of a command, such as `-InputObject (Get-Process)`-is treated as a single object.
-Because *InputObject* cannot return individual properties from an array or collection of objects, it is recommended that if you use **Measure-Object** to measure a collection of objects for those objects that have specific values in defined properties, you use **Measure-Object** in the pipeline, as shown in the examples in this topic.
+When you use the *InputObject* parameter with **Measure-Object**, instead of piping command results
+to **Measure-Object**, the *InputObject* value-even if the value is a collection that is the result
+of a command, such as `-InputObject (Get-Process)`-is treated as a single object. Because
+*InputObject* cannot return individual properties from an array or collection of objects, it is
+recommended that if you use **Measure-Object** to measure a collection of objects for those objects
+that have specific values in defined properties, you use **Measure-Object** in the pipeline, as
+shown in the examples in this topic.
 
 ```yaml
 Type: PSObject
@@ -225,12 +231,12 @@ Specifies one or more numeric properties to measure.
 The default is the **Count** property of the object.
 
 ```yaml
-Type: String[]
+Type: PSPropertyExpression[]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -297,16 +303,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see about_CommonParameters
+(http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe objects to **Measure-Object**.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GenericMeasureInfo, Microsoft.PowerShell.Commands.TextMeasureInfo, Microsoft.PowerShell.Commands.GenericObjectMeasureInfo
+
 If you use the *Word* parameter, **Measure-Object** returns a **TextMeasureInfo** object.
 Otherwise, it returns a **GenericMeasureInfo** object.
 

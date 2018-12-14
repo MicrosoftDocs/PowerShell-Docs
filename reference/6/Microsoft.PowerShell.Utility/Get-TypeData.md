@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821805
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Get-TypeData
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821805
+schema: 2.0.0
+title: Get-TypeData
 ---
 
 # Get-TypeData
@@ -29,7 +30,7 @@ Extended type data adds properties and methods to objects in PowerShell.
 You can use the added properties and methods in the same ways that you would use the properties and methods that are defined in the object type.
 However, when writing scripts, be aware that the added properties and methods might not be present in every PowerShell session.
 
-For more information about Types.ps1xml files, see about_Types.ps1xml (http://go.microsoft.com/fwlink/?LinkID=113274).
+For more information about Types.ps1xml files, see [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md).
 For more information about dynamic type data that the **Update-TypeData** cmdlet adds, see Update-TypeData.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
@@ -131,7 +132,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False

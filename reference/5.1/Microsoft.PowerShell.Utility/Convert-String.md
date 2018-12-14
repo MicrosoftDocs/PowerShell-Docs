@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821756
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Convert-String
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821756
+schema: 2.0.0
+title: Convert-String
 ---
 
 # Convert-String
@@ -15,7 +16,7 @@ Formats a string to match examples.
 
 ## SYNTAX
 
-```bnf
+```
 Convert-String [-Example <System.Collections.Generic.List`1[System.Management.Automation.PSObject]>]
  -InputObject <String> [<CommonParameters>]
 ```
@@ -93,7 +94,7 @@ $composers | Convert-String -Example "Patti Fuller = Fuller, P."
 ```
 
 ```output
- Wagner, R.
+Wagner, R.
  Brahms, J.
 ```
 

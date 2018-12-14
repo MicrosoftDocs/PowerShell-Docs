@@ -217,7 +217,7 @@ $a
 ```
 
 ```
-PowerShell
+Windows PowerShell
 ```
 
 When the value of the variable is an array, the `+=` operator appends the
@@ -499,7 +499,7 @@ $a
 3
 ```
 
-# THE INCREMENT AND DECREMENT OPERATORS
+## THE INCREMENT AND DECREMENT OPERATORS
 
 The increment operator `++` increases the value of a variable by 1. When
 you use the increment operator in a simple statement, no value is returned.
@@ -806,7 +806,7 @@ following:
 Tuesday, May 31, 2005 12:00:00 AM
 ```
 
-# ASSIGNING MULTIPLE VARIABLES
+## ASSIGNING MULTIPLE VARIABLES
 
 In PowerShell, you can assign values to multiple variables by using
 a single command. The first element of the assignment value is assigned to

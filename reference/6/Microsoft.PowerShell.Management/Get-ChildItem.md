@@ -9,36 +9,35 @@ title:  Get-ChildItem
 ---
 # Get-ChildItem
 
-## Synopsis
-
+## SYNOPSIS
 Gets the items and child items in one or more specified locations.
 
-## Syntax
+## SYNTAX
 
 ### Items (Default)
-
 ```
 Get-ChildItem [[-Path] <String[]>] [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Depth <UInt32>] [-Force] [-Name] [-Attributes {ReadOnly | Hidden | System | Directory | Archive | Device | Normal | Temporary | SparseFile | ReparsePoint | Compressed | Offline | NotContentIndexed | Encrypted | IntegrityStream | NoScrubData}] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+ [-Depth <UInt32>] [-Force] [-Name]
+ [-Attributes <System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]>] [-FollowSymlink]
+ [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ### LiteralItems
-
 ```
 Get-ChildItem -LiteralPath <String[]> [[-Filter] <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Depth <UInt32>] [-Force] [-Name] [-Attributes {ReadOnly | Hidden | System | Directory |
- Archive | Device | Normal | Temporary | SparseFile | ReparsePoint | Compressed | Offline | NotContentIndexed | Encrypted | IntegrityStream | NoScrubData}] [-FollowSymlink] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+ [-Recurse] [-Depth <UInt32>] [-Force] [-Name]
+ [-Attributes <System.Management.Automation.FlagsExpression`1[System.IO.FileAttributes]>] [-FollowSymlink]
+ [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
-## Description
-
+## DESCRIPTION
 The `Get-ChildItem` cmdlet gets the items in one or more specified locations.
 If the item is a container, it gets the items inside the container, known as child items.
 You can use the `-Recurse` parameter to get items in all child containers and use the `-Depth` parameter to limit the number of levels to recurse.
 
 A location can be a file system location, such as a directory, or a location exposed by a different PowerShell provider, such as a registry hive or a certificate store.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Get child items in the current directory
 
@@ -67,7 +66,7 @@ Get-ChildItem -Path *.txt -Recurse -Force
 
 This command lists the ".txt" files in the "Logs" subdirectory, except for those whose names start with the letter 'A'.
 It uses the wildcard character (`*`) to indicate the contents of the "Logs" subdirectory, not the directory container.
-Because the command does not include the `-Recurse` parameter, `Get-ChildItem` does not include the content of directory automatically; you need to specify it.
+Because the command does not include the `-Recurse` parameter, `Get-ChildItem` does not include the content of sub-directories automatically; you need to specify it.
 
 ```powershell
 Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*
@@ -129,9 +128,7 @@ Gets files and folders with the specified attributes. This parameter supports al
 
 For example, to get non-system files (not directories) that are encrypted or compressed, type:
 
-```powershell
-Get-ChildItem -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed
-```
+`Get-ChildItem -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed`
 
 To find files and folders with commonly used attributes, you can use the `-Attributes` parameter, or the `-Directory`, `-File`, `-Hidden`, `-ReadOnly`, and `-System` switch parameters.
 
@@ -237,7 +234,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -File
@@ -274,10 +271,25 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
+```
+
+### -FollowSymlink
+{{Fill FollowSymlink Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -FollowSymlink
@@ -355,7 +367,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -LiteralPath
@@ -407,10 +419,10 @@ Parameter Sets: Items
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: Current directory
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -ReadOnly
@@ -466,16 +478,15 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
-
-## Inputs
+## INPUTS
 
 ### System.String
 
 You can pipe a string that contains a path to `Get-ChildItem`.
 
-## Outputs
+## OUTPUTS
 
 ### System.Object
 
@@ -485,7 +496,7 @@ The type of object that `Get-ChildItem` returns is determined by the objects in 
 
 If you use the `-Name` parameter, `Get-ChildItem` returns the object names as strings.
 
-## Notes
+## NOTES
 
 You can also refer to `Get-ChildItem` by its built-in aliases, `ls`, `dir`, and `gci`. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
@@ -497,7 +508,7 @@ To list the providers available in your session, type `Get-PSProvider`.
 
 For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-## Related Links
+## RELATED LINKS
 
 [Get-Alias](../Microsoft.PowerShell.Utility/Get-Alias.md)
 

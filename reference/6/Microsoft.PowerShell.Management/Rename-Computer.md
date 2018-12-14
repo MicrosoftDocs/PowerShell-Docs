@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821620
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Rename-Computer
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821620
+schema: 2.0.0
+title: Rename-Computer
 ---
 
 # Rename-Computer
@@ -18,7 +19,7 @@ Renames a computer.
 ```
 Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCredential>]
  [-LocalCredential <PSCredential>] [-NewName] <String> [-Force] [-Restart] [-WsmanAuthentication <String>]
- [-Protocol <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,7 +157,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -194,6 +195,40 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -WsmanAuthentication
+Specifies the mechanism that is used to authenticate the user credentials when this cmdlet uses the WSMan protocol.
+The acceptable values for this parameter are:
+
+- Basic
+- CredSSP
+- Default
+- Digest
+- Kerberos
+- Negotiate
+
+The default value is Default.
+
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+
+Caution: Credential Security Service Provider (CredSSP) authentication, in which the user credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
+This mechanism increases the security risk of the remote operation.
+If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Default, Basic, Negotiate, CredSSP, Digest, Kerberos
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -221,58 +256,6 @@ Aliases: wi
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Protocol
-Specifies which protocol to use to rename the computer.
-The acceptable values for this parameter are: WSMan and DCOM.
-The default value is DCOM.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WsmanAuthentication
-Specifies the mechanism that is used to authenticate the user credentials when this cmdlet uses the WSMan protocol.
-The acceptable values for this parameter are:
-
-- Basic
-- CredSSP
-- Default
-- Digest
-- Kerberos
-- Negotiate
-
-The default value is Default.
-
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
-
-Caution: Credential Security Service Provider (CredSSP) authentication, in which the user credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
-This mechanism increases the security risk of the remote operation.
-If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

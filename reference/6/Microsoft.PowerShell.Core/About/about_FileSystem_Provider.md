@@ -57,10 +57,8 @@ in this article.
 
 ## Types exposed by this provider
 
-Files are instances of the `System.IO.FileInfo` class.  Directories are
-instances of the `System.IO.DirectoryInfo` class.
-
-{{change these into links to the classes}}
+Files are instances of the [System.IO.FileInfo](/dotnet/api/system.io.fileinfo) class.  Directories are
+instances of the [System.IO.DirectoryInfo](/dotnet/api/system.io.directoryinfo) class.
 
 ## Navigating the FileSystem drives
 
@@ -616,6 +614,24 @@ Ignores newline characters. Returns contents as a single item.
 #### Cmdlets supported
 
 - [Get-Content](../../Microsoft.PowerShell.Management/Get-Content.md)
+
+### ItemType \<String\>
+
+This parameter allows you to specify the tye of item to create with `New-Item`
+
+The available values of this parameter depend on the current provider you are using.
+
+In a `FileSystem` drive, the following values are allowed:
+
+- File
+- Directory
+- SymbolicLink
+- Junction
+- HardLink
+
+### Cmdlets supported
+
+- [New-Item](../../Microsoft.PowerShell.Management/New-Item.md)
 
 ## Using the pipeline
 

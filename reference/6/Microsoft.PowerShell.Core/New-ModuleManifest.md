@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821496
-external help file:  System.Management.Automation.dll-Help.xml
-title:  New-ModuleManifest
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821496
+schema: 2.0.0
+title: New-ModuleManifest
 ---
 
 # New-ModuleManifest
@@ -144,7 +145,7 @@ The command uses the *HelpInfoUri* parameter to create a **HelpInfoUri** key in 
 The value of the parameter and the key must begin with http or https.
 This value tells the Updatable Help system where to find the HelpInfo XML updatable help information file for the module.
 
-For information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkID=235801).
+For information about Updatable Help, see [about_Updatable_Help](about/about_Updatable_Help.md).
 For information about the HelpInfo XML file, see "Supporting Updatable Help" in the Microsoft Developer Library (MSDN) library.
 
 ### Example 5: Get the module manifest values of a module
@@ -317,17 +318,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -CompatiblePSEditions
+Specifies the compatible PSEditions of the module.
+For information about PSEdition, see [Modules with compatible PowerShell Editions](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport).
 
 ```yaml
-Type: SwitchParameter
+Type: String[]
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
+Accepted values: Desktop, Core
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -401,7 +404,6 @@ Accept wildcard characters: False
 ```
 
 ### -DscResourcesToExport
-
 
 ```yaml
 Type: String[]
@@ -498,7 +500,7 @@ Enter an Uniform Resource Identifier (URI) that starts with "http" or "https".
 
 The HelpInfo XML file supports the Updatable Help feature that was introduced in Windows PowerShell 3.0.
 It contains information about the location of downloadable help files for the module and the version numbers of the newest help files for each supported locale.
-For information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkID=235801).
+For information about Updatable Help, see [about_Updatable_Help](about/about_Updatable_Help.md).
 For information about the HelpInfo XML file, see "Supporting Updatable Help" in the Microsoft Developer Network (MSDN) library.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -517,7 +519,6 @@ Accept wildcard characters: False
 
 ### -IconUri
 
-
 ```yaml
 Type: Uri
 Parameter Sets: (All)
@@ -531,7 +532,6 @@ Accept wildcard characters: False
 ```
 
 ### -LicenseUri
-
 
 ```yaml
 Type: Uri
@@ -741,7 +741,6 @@ Accept wildcard characters: False
 
 ### -ProjectUri
 
-
 ```yaml
 Type: Uri
 Parameter Sets: (All)
@@ -859,7 +858,6 @@ Accept wildcard characters: False
 
 ### -Tags
 
-
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -911,6 +909,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
@@ -927,25 +940,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CompatiblePSEditions
-Specifies the compatible PSEditions of the module.
-For information about PSEdition, see [Modules with compatible PowerShell Editions](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport).
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-Accepted values: Desktop, Core
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -955,7 +951,7 @@ You cannot pipe input to this cmdlet.
 ## OUTPUTS
 
 ### None or System.String
-This cmldet does not generate any output by default.
+This cmdlet does not generate any output by default.
 However, if you use the *PassThru* parameter, it generates a **System.String** object that represents the module manifest.
 
 ## NOTES

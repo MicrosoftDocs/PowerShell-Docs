@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkID=517140
-external help file:  Microsoft.PowerShell.PackageManagement.dll-Help.xml
-title:  Save-Package
+external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PackageManagement
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkID=517140
+schema: 2.0.0
+title: Save-Package
 ---
 
 # Save-Package
@@ -50,51 +51,53 @@ Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ### PowerShellGet
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-PackageManagementProvider <String>] [-PublishLocation <String>] [-ScriptSourceLocation <String>]
- [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>]
- [-DscResource <String[]>] [-RoleCapability <String[]>] [-Command <String[]>] [<CommonParameters>]
+ [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+ [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
+ [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
+ [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 The **Save-Package** cmdlet saves packages to the local computer without installing them.
 This cmdlet saves the newest version of a package unless you specify the *AllVersions* parameter.
-The *DestinationPath* and *LiteralPath* parameters are mutually exclusive, and cannot be added to the same command.
+The *Path* and *LiteralPath* parameters are mutually exclusive, and cannot be added to the same command.
 
 ## EXAMPLES
 
 ### Example 1: Save a package to the local computer
 ```
-PS C:\> Save-Package -Name "DSCAccelerator" -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Save-Package -Name "DSCAccelerator" -Path "C:\Users\TestUser\Downloads"
 ```
 
 This example saves the newest version of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
 
 ### Example 2: Save an exact version of a package
 ```
-PS C:\> Save-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Save-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" -Path "C:\Users\TestUser\Downloads"
 ```
 
 This example saves only version 2.1.2 of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
 
 ### Example 3: Save a package by piping results of Find-Package
 ```
-PS C:\> Find-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Save-Package -DestinationPath "C:\Users\TestUser\Downloads"
+PS C:\> Find-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Save-Package -Path "C:\Users\TestUser\Downloads"
 ```
 
 This command saves a package named DSCAccelerator by first locating the exact package with the **Find-Package** cmdlet, then piping the results of **Find-Package** to the **Save-Package** cmdlet.
 
 ### Example 4: Save a package to a local folder, then install the package
 ```
-PS C:\> Save-Package "notepad2" -DestinationPath "C:\temp"
+PS C:\> Save-Package "notepad2" -Path "C:\temp"
 PS C:\> Install-Package "C:\temp\notepad2.4.2.25.3.nupkg"
 ```
 
@@ -103,13 +106,12 @@ The second command installs the saved package from the C:\temp folder, instead o
 
 ## PARAMETERS
 
-### -AllVersions
-Indicates that this cmdlet saves all available versions of the package.
-By default, **Save-Package** only returns the newest available version.
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: PowerShellGet:PackageByInputObject, PowerShellGet
 Aliases:
 
 Required: False
@@ -124,7 +126,23 @@ Accept wildcard characters: False
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: NuGet:PackageByInputObject, NuGet
+Parameter Sets: NuGet:PackageByInputObject, NuGet, PowerShellGet:PackageByInputObject, PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllVersions
+Indicates that this cmdlet saves all available versions of the package.
+By default, **Save-Package** only returns the newest available version.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -160,21 +178,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -333,7 +336,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 Specifies the literal path to which you want to save the package.
-You cannot add both this parameter and the *DestinationPath* parameter to the same command.
+You cannot add both this parameter and the *Path* parameter to the same command.
 
 ```yaml
 Type: String
@@ -431,7 +434,7 @@ Specifies one or more provider names.
 Type: String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
-Accepted values: msi, NuGet, msu, Programs, PowerShellGet, psl, chocolatey
+Accepted values: Programs, msi, msu, NuGet, PowerShellGet, psl, chocolatey
 
 Required: False
 Position: Named
@@ -603,6 +606,21 @@ Accepted values: Module, Script, All
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

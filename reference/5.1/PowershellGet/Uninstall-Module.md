@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821673
-external help file:  PSModule-help.xml
-title:  Uninstall-Module
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821673
+schema: 2.0.0
+title: Uninstall-Module
 ---
 
 # Uninstall-Module
@@ -17,8 +18,9 @@ Uninstalls a module.
 
 ### NameParameterSet (Default)
 ```
-Uninstall-Module [-Name] <String[]> [-MinimumVersion <Version>] [-RequiredVersion <Version>]
- [-MaximumVersion <Version>] [-AllVersions] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Uninstall-Module [-Name] <String[]> [-MinimumVersion <String>] [-RequiredVersion <String>]
+ [-MaximumVersion <String>] [-AllVersions] [-Force] [-AllowPrerelease] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### InputObject
@@ -41,9 +43,8 @@ This command gets version 3.6.0.0 of the module named xPSDesiredStateConfigurati
 
 ## PARAMETERS
 
-### -AllVersions
-Specifies that you want to include all available versions of a module.
-You cannot use the *AllVersions* parameter with the *MinimumVersion*, *MaximumVersion*, or *RequiredVersion* parameters.
+### -AllowPrerelease
+Allows you to uninstall a module marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter
@@ -57,17 +58,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -AllVersions
+Specifies that you want to include all available versions of a module.
+You cannot use the *AllVersions* parameter with the *MinimumVersion*, *MaximumVersion*, or *RequiredVersion* parameters.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
+Parameter Sets: NameParameterSet
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -107,7 +109,7 @@ Specifies the maximum, or newest, version of the module to uninstall.
 The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -123,7 +125,7 @@ Specifies the minimum version of the script to uninstall.
 The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -153,7 +155,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the module to uninstall.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -161,6 +163,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

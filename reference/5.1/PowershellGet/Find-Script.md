@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822322
-external help file:  PSModule-help.xml
-title:  Find-Script
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822322
+schema: 2.0.0
+title: Find-Script
 ---
 
 # Find-Script
@@ -16,10 +17,10 @@ Finds a script.
 ## SYNTAX
 
 ```
-Find-Script [[-Name] <String[]>] [-MinimumVersion <Version>] [-MaximumVersion <Version>]
- [-RequiredVersion <Version>] [-AllVersions] [-IncludeDependencies] [-Filter <String>] [-Tag <String[]>]
+Find-Script [[-Name] <String[]>] [-MinimumVersion <String>] [-MaximumVersion <String>]
+ [-RequiredVersion <String>] [-AllVersions] [-IncludeDependencies] [-Filter <String>] [-Tag <String[]>]
  [-Includes <String[]>] [-Command <String[]>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-Repository <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+ [-Repository <String[]>] [-Credential <PSCredential>] [-AllowPrerelease] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -172,6 +173,21 @@ This command uses the wildcard character (*) to find scripts that begin with Req
 
 ## PARAMETERS
 
+### -AllowPrerelease
+Includes in the results scripts marked as a prerelease.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllVersions
 Indicates that this operation finds all script versions.
 
@@ -204,7 +220,6 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-
 
 ```yaml
 Type: PSCredential
@@ -270,7 +285,7 @@ Specifies the maximum, or newest, version of the script to find.
 The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -286,7 +301,7 @@ Specifies the minimum version of the script to find.
 The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -361,7 +376,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the script to find.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 

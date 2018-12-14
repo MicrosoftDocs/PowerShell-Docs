@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821865
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Tee-Object
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821865
+schema: 2.0.0
+title: Tee-Object
 ---
 
 # Tee-Object
@@ -17,20 +18,17 @@ Saves command output in a file or variable and also sends it down the pipeline.
 
 ### File (Default)
 ```
-Tee-Object [-FilePath] <String> [-InputObject <PSObject>] [-Append]
- [<CommonParameters>]
+Tee-Object [-InputObject <PSObject>] [-FilePath] <String> [-Append] [<CommonParameters>]
 ```
 
 ### LiteralFile
 ```
-Tee-Object -LiteralPath <String> [-InputObject <PSObject>]
- [<CommonParameters>]
+Tee-Object [-InputObject <PSObject>] -LiteralPath <String> [<CommonParameters>]
 ```
 
 ### Variable
 ```
-Tee-Object -Variable <String> [-InputObject <PSObject>]
- [<CommonParameters>]
+Tee-Object [-InputObject <PSObject>] -Variable <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -135,14 +133,17 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Variable
-Specifies a variable that the cmdlet saves the object to.
-Enter a variable name without the preceding dollar sign ($).
+### -LiteralPath
+Specifies a file that this cmdlet saves the object to.
+Unlike *FilePath*, the value of the *LiteralPath* parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String
-Parameter Sets: Variable
-Aliases:
+Parameter Sets: LiteralFile
+Aliases: PSPath
 
 Required: True
 Position: Named
@@ -151,17 +152,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LiteralPath
-Specifies a file that this cmdlet saves the object to.
-Unlike *FilePath*, the value of the *LiteralPath* parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+### -Variable
+Specifies a variable that the cmdlet saves the object to.
+Enter a variable name without the preceding dollar sign ($).
 
 ```yaml
 Type: String
-Parameter Sets: LiteralFile
-Aliases: PSPath
+Parameter Sets: Variable
+Aliases:
 
 Required: True
 Position: Named

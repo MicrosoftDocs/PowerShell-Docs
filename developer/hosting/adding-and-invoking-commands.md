@@ -149,7 +149,7 @@ namespace HostPS3
   {
     static void Main(string[] args)
     {
-      // Use the PowerShell.Create and Powers.AddCommand
+      // Use the PowerShell.Create and PowerShell.AddCommand
       // methods to create a command pipeline that includes
       // Get-Process cmdlet. Do not include spaces immediatly
       // before or after the cmdlet name as that will cause

@@ -1,0 +1,246 @@
+- name: PowerShell Scripting
+  href: overview.md
+  items:
+    - name: Install
+      href: install/installing-powershell.md
+      items:
+        - name: PowerShell Core
+          href: ''
+          items:
+            - name: Installing PowerShell Core on Windows
+              href: install/installing-powershell-core-on-windows.md
+            - name: Installing PowerShell Core on Linux
+              href: install/installing-powershell-core-on-linux.md
+            - name: Installing PowerShell Core on macOS
+              href: install/installing-powershell-core-on-macos.md
+            - name: Installing PowerShell Core on ARM
+              href: install/powershell-core-on-arm.md
+        - name: Windows PowerShell
+          href: ''
+          items:
+            - name: Installing Windows PowerShell
+              href: install/installing-windows-powershell.md
+            - name: Installing the Windows PowerShell 2.0 Engine
+              href: install/installing-the-windows-powershell-2.0-engine.md
+            - name: Windows PowerShell System Requirements
+              href: install/windows-powershell-system-requirements.md
+    - name: Get Started
+      href: getting-started/getting-started-with-windows-powershell.md
+      items:
+        - name: Starting Windows PowerShell
+          href: getting-started/starting-windows-powershell.md
+        - name: Starting the Windows PowerShell 2.0 Engine
+          href: getting-started/starting-the-windows-powershell-2.0-engine.md
+    - name: Learning PowerShell
+      href: learn/understanding-important-powershell-concepts.md
+      items:
+        - name: Learning PowerShell names
+          href: learn/learning-powershell-names.md
+        - name: Using Familiar Command Names
+          href: learn/using-familiar-command-names.md
+        - name: Getting Detailed Help Information
+          href: learn/getting-detailed-help-information.md
+        - name: Getting information about commands
+          href: learn/getting-information-about-commands.md
+        - name: Using Variables to Store Objects
+          href: learn/using-variables-to-store-objects.md
+        - name: Understanding PowerShell pipelines
+          href: learn/understanding-the-powershell-pipeline.md
+        - name: More PowerShell learning
+          href: learn/more-powershell-learning.md
+        - name: Windows PowerShell Glossary
+          href: learn/windows-powershell-glossary.md
+        - name: Running Remote Commands
+          href: learn/remoting/running-remote-commands.md
+          items:
+            - name: PowerShell Remoting Over SSH
+              href: learn/remoting/ssh-remoting-in-powershell-core.md
+            - name: WS-Management (WSMan) Remoting in PowerShell Core
+              href: learn/remoting/wsman-remoting-in-powershell-core.md
+            - name: WinRMSecurity
+              href: learn/remoting/winrmsecurity.md
+            - name: Making the second hop in PowerShell Remoting
+              href: learn/remoting/ps-remoting-second-hop.md
+    - name: Components
+      href: ''
+      items:
+          - name: Console
+            href: ''
+            items:
+              - name: PowerShell.exe Command Line Help
+                href: components/console/powershell.exe-command-line-help.md
+              - name: Using Tab Expansion
+                href: components/console/using-tab-expansion.md
+          - name: ISE
+            href: components/ise/introducing-the-windows-powershell-ise.md
+            items:
+              - name: Windows PowerShell Integrated Scripting Environment ISE
+                href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
+              - name: Using the Windows PowerShell ISE
+                href: ''
+                items:
+                  - name: Exploring the Windows PowerShell ISE
+                    href: components/ise/exploring-the-windows-powershell-ise.md
+                  - name: How to Create a PowerShell Tab in Windows PowerShell ISE
+                    href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+                  - name: How to Debug Scripts in Windows PowerShell ISE
+                    href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+                  - name: How to Use Profiles in Windows PowerShell ISE
+                    href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
+                  - name: How to Use Tab Completion in the Script Pane and Console Pane
+                    href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+                  - name: How to Use the Console Pane in the Windows PowerShell ISE
+                    href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+                  - name: How to Write and Run Scripts in the Windows PowerShell ISE
+                    href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+                  - name: Keyboard Shortcuts for the Windows PowerShell ISE
+                    href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+                  - name: Accessibility in Windows PowerShell ISE
+                    href: components/accessibility-in-windows-powershell-ise.md
+              - name: The ISE scripting object model
+                href: ''
+                items:
+                  - name: Purpose of the Windows PowerShell ISE Scripting Object Model
+                    href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+                  - name: The ISE Object Model Hierarchy
+                    href: components/ise/object-model/the-ise-object-model-hierarchy.md
+                  - name: The ObjectModelRoot Object
+                    href: components/ise/object-model/the-objectmodelroot-object.md
+                  - name: The ISEAddOnToolCollection Object
+                    href: components/ise/object-model/the-iseaddontoolcollection-object.md
+                  - name: The ISEAddOnTool Object
+                    href: components/ise/object-model/the-iseaddontool-object.md
+                  - name: The ISEEditor Object
+                    href: components/ise/object-model/the-iseeditor-object.md
+                  - name: The ISEFileCollection Object
+                    href: components/ise/object-model/the-isefilecollection-object.md
+                  - name: The ISEFile Object
+                    href: components/ise/object-model/the-isefile-object.md
+                  - name: The ISEMenuItemCollection Object
+                    href: components/ise/object-model/the-isemenuitemcollection-object.md
+                  - name: The ISEMenuItem Object
+                    href: components/ise/object-model/the-isemenuitem-object.md
+                  - name: The ISEOptions Object
+                    href: components/ise/object-model/the-iseoptions-object.md
+                  - name: The ISESnippetCollection Object
+                    href: components/ise/object-model/the-isesnippetcollection-object.md
+                  - name: The ISESnippetObject
+                    href: components/ise/object-model/the-isesnippetobject.md
+                  - name: The PowerShellTabCollection Object
+                    href: components/ise/object-model/the-powershelltabcollection-object.md
+                  - name: The PowerShellTab Object
+                    href: components/ise/object-model/the-powershelltab-object.md
+          - name: Visual Studio Code
+            href: ''
+            items:
+              - name: Using Visual Studio Code for PowerShell Development
+                href: components/vscode/using-vscode.md
+          - name: Web Access
+            href: ''
+            items:
+              - name: Authorization Rules and Security Features of Windows PowerShell Web Access
+                href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+              - name: Install and use Windows PowerShell Web Access
+                href: components/web-access/install-and-use-windows-powershell-web-access.md
+              - name: troubleshooting access problems in windows powershell web access
+                href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
+              - name: uninstall windows powershell web access
+                href: components/web-access/uninstall-windows-powershell-web-access.md
+              - name: use the web based windows powershell console
+                href: components/web-access/use-the-web-based-windows-powershell-console.md
+          - name: Workflows guide
+            href: components/workflows-guide.md
+    - name: What's New
+      href: ''
+      items:
+        - name: What's New in PowerShell Core 6.1
+          href: whats-new/what-s-new-in-powershell-core-61.md
+        - name: What's New in PowerShell Core 6.0
+          href: whats-new/what-s-new-in-powershell-core-60.md
+          items:
+            - name: Breaking Changes for PowerShell 6.0
+              href: whats-new/breaking-changes-ps6.md
+            - name: Known Issues for PowerShell 6.0
+              href: whats-new/known-issues-ps6.md
+        - name: What's New With PowerShell 5.0
+          href: whats-new/what-s-new-with-powershell.md
+          items:
+            - name: What's New in Windows PowerShell 5.0
+              href: whats-new/what-s-new-in-windows-powershell-50.md
+            - name: What's New in the PowerShell 50 ISE
+              href: whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: PowerShell Core Support Lifecycle
+      href: powershell-support-lifecycle.md
+- name: Sample scripts
+  href: samples/sample-scripts-for-administration.md
+  items:
+    - name: Changing Computer State
+      href: samples/changing-computer-state.md
+    - name: Collecting Information About Computers
+      href: samples/collecting-information-about-computers.md
+    - name: Creating UI elements
+      href: ''
+      items:
+        - name: Creating a Custom Input Box
+          href: samples/creating-a-custom-input-box.md
+        - name: Creating a Graphical Date Picker
+          href: samples/creating-a-graphical-date-picker.md
+        - name: Multiple selection List Boxes
+          href: samples/multiple-selection-list-boxes.md
+        - name: Selecting Items from a List Box
+          href: samples/selecting-items-from-a-list-box.md
+    - name: Decode a PowerShell command from a running process
+      href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Managing Current Location
+      href: samples/managing-current-location.md
+    - name: Managing Processes with Process Cmdlets
+      href: samples/managing-processes-with-process-cmdlets.md
+    - name: Managing Services
+      href: samples/managing-services.md
+    - name: Managing Windows PowerShell Drives
+      href: samples/managing-windows-powershell-drives.md
+    - name: Manipulating Items Directly
+      href: samples/manipulating-items-directly.md
+    - name: Performing Networking Tasks
+      href: samples/performing-networking-tasks.md
+    - name: Redirecting Data with Out Cmdlets
+      href: samples/redirecting-data-with-out---cmdlets.md
+    - name: Using Format Commands to Change Output View
+      href: samples/using-format-commands-to-change-output-view.md
+    - name: Working with Files and Folders
+      href: samples/working-with-files-and-folders.md
+    - name: Working With Files Folders and Registry Keys
+      href: samples/working-with-files-folders-and-registry-keys.md
+    - name: Working with Objects
+      href: samples/working-with-objects.md
+      items:
+        - name: Getting WMI Objects Get WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: Creating .NET and COM Objects New Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Removing Objects from the Pipeline Where Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Selecting Parts of Objects Select Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Sorting Objects
+          href: samples/sorting-objects.md
+        - name: Repeating a Task for Multiple Objects ForEach Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: Using Static Classes and Methods
+          href: samples/using-static-classes-and-methods.md
+        - name: Viewing Object Structure Get Member
+          href: samples/viewing-object-structure--get-member-.md
+    - name: Working with Printers
+      href: samples/working-with-printers.md
+    - name: Working with Registry Entries
+      href: samples/working-with-registry-entries.md
+    - name: Working with Registry Keys
+      href: samples/working-with-registry-keys.md
+    - name: Working with Software Installations
+      href: samples/working-with-software-installations.md
+    - name: Other Useful Scripting Objects
+      href: samples/other-useful-scripting-objects.md
+    - name: Appendix 1 Compatibility Aliases
+      href: samples/appendix-1---compatibility-aliases.md
+    - name: Appendix 2 Creating a Custom PowerShell Shortcut
+      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md

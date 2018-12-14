@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821485
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Get-Job
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821485
+schema: 2.0.0
+title: Get-Job
 ---
 
 # Get-Job
@@ -588,7 +589,7 @@ You cannot pipe input to this cmdlet.
 ## OUTPUTS
 
 ### System.Management.Automation.RemotingJob
-This cmldet returns objects that represent the jobs in the session.
+This cmdlet returns objects that represent the jobs in the session.
 
 ## NOTES
 * The **PSJobTypeName** property of jobs indicates the job type of the job. The property value is determined by the job type author. The following list shows common job types.

@@ -1,15 +1,15 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  PSDiagnostics-help.xml
+external help file: PSDiagnostics-help.xml
+Module Name: PSDiagnostics
+online version:
+schema: 2.0.0
+ms.date:  11/27/2018
 ---
 
 # Disable-PSTrace
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Disables the Microsoft-Windows-PowerShell event provider logs.
 
 ## SYNTAX
 
@@ -18,24 +18,32 @@ Disable-PSTrace [-AnalyticOnly]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+
+This cmdlet disables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
+event provider.
+
+You must run this cmdlet from an elevated PowerShell session.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
+### Example 1: Disable the Analytic event log for PowerShell
 
-{{ Add example description here }}
+The following example disables only the Analytic event log of the Microsoft-Windows-PowerShell
+provider.
+
+```powershell
+Disable-PSTrace -AnalyticOnly
+```
 
 ## PARAMETERS
 
 ### -AnalyticOnly
-{{Fill AnalyticOnly Description}}
+
+When this parameter is used, the cmdlet disables the Analytic event log of the
+Microsoft-Windows-PowerShell provider. The Operational event log is not changed.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -50,11 +58,20 @@ Accept wildcard characters: False
 
 ### None
 
-
 ## OUTPUTS
 
-### System.Object
+### None
 
 ## NOTES
 
+This cmdlet uses the `Get-LogProperties` and `Set-LogProperties` cmdlets.
+
+You must run this cmdlet from an elevated PowerShell session.
+
 ## RELATED LINKS
+
+[Get-LogProperties](Get-LogProperties.md)
+
+[Set-LogProperties](Set-LogProperties.md)
+
+[Enable-PSTrace](Enable-PSTrace.md)

@@ -1,12 +1,14 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821633
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Set-Service
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 11/30/2018
+online version: http://go.microsoft.com/fwlink/?LinkId=821633
+schema: 2.0.0
+title: Set-Service
 ---
+
 # Set-Service
 
 ## SYNOPSIS
@@ -18,17 +20,17 @@ Starts, stops, and suspends a service, and changes its properties.
 ### Name (Default)
 
 ```
-Set-Service [-Name] <String> [-DisplayName <String>] [-Description <String>]
- [-StartupType <ServiceStartMode>] [-Status <String>] [-PassThru]
- [-WhatIf] [-Confirm] [-Force] [<CommonParameters>]
+Set-Service [-Name] <String> [-DisplayName <String>] [-Credential <PSCredential>] [-Description <String>]
+ [-StartupType <ServiceStartupType>] [-Status <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
-Set-Service [-DisplayName <String>] [-Description <String>] [-StartupType <ServiceStartMode>]
- [-Status <String>] [-InputObject <ServiceController>] [-PassThru]
- [-WhatIf] [-Confirm] [-Force] [<CommonParameters>]
+Set-Service [-InputObject] <ServiceController> [-DisplayName <String>] [-Credential <PSCredential>]
+ [-Description <String>] [-StartupType <ServiceStartupType>] [-Status <String>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +38,8 @@ Set-Service [-DisplayName <String>] [-Description <String>] [-StartupType <Servi
 The `Set-Service` cmdlet changes the properties of a service.
 This includes the status, description, display name, and start mode.
 You can use this cmdlet to start, stop, or suspend, or pause, a service.
-To identify the service, enter its service name or submit a service object, or pipe a service name or service object to `Set-Service`.
+To identify the service, enter its service name or submit a service object, or pipe a service name
+or service object to `Set-Service`.
 
 ## EXAMPLES
 
@@ -62,7 +65,8 @@ Name StartType  Status
 BITS      Auto Stopped
 ```
 
-These commands get the startup type of the Background Intelligent Transfer Service (BITS) service, set the start mode to automatic, and then display the result of the change.
+These commands get the startup type of the Background Intelligent Transfer Service (BITS) service,
+set the start mode to automatic, and then display the result of the change.
 
 ### Example 3: Change the description of a service
 
@@ -89,7 +93,9 @@ Description : Transfers files in the background using idle network bandwidth.
 
 These commands change the description of the BITS service and then display the result.
 
-These commands use the `Get-CimInstance` cmdlet to get the **Win32_Service** object for the service, because the **ServiceController** object that `Get-Service` returns does not include the service description.
+These commands use the `Get-CimInstance` cmdlet to get the **Win32_Service** object for the
+service, because the **ServiceController** object that `Get-Service` returns does not include the
+service description.
 
 ### Example 4: Start a service
 
@@ -97,8 +103,9 @@ These commands use the `Get-CimInstance` cmdlet to get the **Win32_Service** obj
 Set-Service -Name "winrm" -Status Running -PassThru
 ```
 
-This command starts the WinRM service.
-The command uses the Status parameter to specify the desired status, which is running, and the *PassThru* parameter to direct `Set-Service` to return an object that represents the WinRM service.
+This command starts the WinRM service. The command uses the **Status** parameter to specify the desired
+status, which is running, and the **PassThru** parameter to direct `Set-Service` to return an object
+that represents the WinRM service.
 
 ### Example 5: Suspend a service
 
@@ -122,8 +129,9 @@ These commands stop the Schedule service.
 The first command uses `Get-Service` to get the Schedule service.
 The command stores the service in the `$s` variable.
 
-The second command changes the status of the Schedule service to Stopped.
-It uses the *InputObject* parameter to submit the service stored in the `$s` variable, and it uses the *Status* parameter to specify the desired status.
+The second command changes the status of the Schedule service to Stopped. It uses the **InputObject**
+parameter to submit the service stored in the `$s` variable, and it uses the **Status** parameter to
+specify the desired status.
 
 ### Example 7: Stop a service on a remote system
 
@@ -155,13 +163,29 @@ The second command changes the credentials of the Schedule service.
 
 ## PARAMETERS
 
+### -Credential
+
+Specifies the credentials under which the service should be run.
+
+```yaml
+Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Description
 
 Specifies a new description for the service.
 
-The service description appears in Services in Computer Management.
-Description is not a property of the **ServiceController** object that `Get-Service` gets.
-To see the service description, use `Get-CimInstance` to get a **Win32_Service** object that represents the service.
+The service description appears in Services in Computer Management. Description is not a property
+of the **ServiceController** object that `Get-Service` gets. To see the service description, use
+`Get-CimInstance` to get a **Win32_Service** object that represents the service.
 
 ```yaml
 Type: String
@@ -193,17 +217,17 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies a **ServiceController** object that represents the service to change.
-Enter a variable that contains the object, or type a command or expression that gets the object, such as a `Get-Service` command.
-You can also pipe a service object to `Set-Service`.
+Specifies a **ServiceController** object that represents the service to change. Enter a variable
+that contains the object, or type a command or expression that gets the object, such as a
+`Get-Service` command. You can also pipe a service object to `Set-Service`.
 
 ```yaml
 Type: ServiceController
 Parameter Sets: InputObject
 Aliases:
 
-Required: False
-Position: Named
+Required: True
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -221,26 +245,9 @@ Parameter Sets: Name
 Aliases: ServiceName, SN
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -Credential
-
-Specifies the credentials under which the service should be run.
-
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -266,18 +273,16 @@ Accept wildcard characters: False
 Specifies the start mode of the service.
 The acceptable values for this parameter are:
 
-- Automatic.
-  Start when the system starts.
-- Manual.
-  Starts only when started by a user or program.
-- Disabled.
-  Cannot be started.
+- Automatic. Start when the system boots.
+- AutomaticDelayedStart. Starts shortly after the system boots.
+- Manual. Starts only when started by a user or program.
+- Disabled. Cannot be started.
 
 ```yaml
-Type: ServiceStartMode
+Type: ServiceStartupType
 Parameter Sets: (All)
 Aliases: StartMode, SM, ST
-Accepted values: Boot, System, Automatic, Manual, Disabled
+Accepted values: Automatic, Manual, Disabled, AutomaticDelayedStart, InvalidValue
 
 Required: False
 Position: Named
@@ -364,8 +369,10 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -381,9 +388,12 @@ This cmdlet does not return any objects.
 
 ## NOTES
 
-Use of `Set-Service` requires elevated permissions. Start  PowerShell by using the Run as administrator option.
-`Set-Service` can control services only when the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
-To find the service names and display names of the services on your system, type `Get-Service`. The service names appear in the **Name** column and the display names appear in the **DisplayName** column.
+Use of `Set-Service` requires elevated permissions. Start PowerShell by using the Run as
+administrator option. `Set-Service` can control services only when the current user has permission
+to do this. If a command does not work correctly, you might not have the required permissions. To
+find the service names and display names of the services on your system, type `Get-Service`. The
+service names appear in the **Name** column and the display names appear in the **DisplayName**
+column.
 
 ## RELATED LINKS
 

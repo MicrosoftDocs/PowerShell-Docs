@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821654
-external help file:  Microsoft.PowerShell.Archive-help.xml
-title:  Compress-Archive
+external help file: Microsoft.PowerShell.Archive-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Archive
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821654
+schema: 2.0.0
+title: Compress-Archive
 ---
 
 # Compress-Archive
@@ -16,39 +17,39 @@ Creates an archive, or zipped file, from specified files and folders.
 ## SYNTAX
 
 ### Path (Default)
-```powershell
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+```
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithUpdate
-```powershell
+```
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Update]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithForce
-```powershell
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Force] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+```
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Force]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithUpdate
-```powershell
+```
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Update]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithForce
-```powershell
+```
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-Force]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
-```powershell
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+```
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -142,6 +143,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Force
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: PathWithForce, LiteralPathWithForce
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LiteralPath
 Specifies the path or paths to the files that you want to add to the archive zipped file.
 Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.
@@ -158,6 +173,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PassThru
+
+Causes the cmdlet to output a file object representing the archive file created.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -226,21 +257,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: PathWithForce, LiteralPathWithForce
-Aliases:
-
-Required: True
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -256,3 +272,5 @@ You can pipe a string that contains a path to one or more files.
 ## NOTES
 
 ## RELATED LINKS
+
+[Expand-Archive](expand-archive.md)

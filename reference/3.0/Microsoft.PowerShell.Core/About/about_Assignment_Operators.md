@@ -4,6 +4,7 @@ schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Assignment_Operators
 ---
+
 # About Assignment Operators
 
 ## SHORT DESCRIPTION
@@ -15,7 +16,7 @@ Describes how to use operators to assign values to variables.
 Assignment operators assign one or more values to a variable. They can
 perform numeric operations on the values before the assignment.
 
-Windows PowerShell supports the following assignment operators.
+PowerShell supports the following assignment operators.
 
 |Operator|Description                                                  |
 |--------|-------------------------------------------------------------|
@@ -59,14 +60,14 @@ replace the existing value of the variable, or you can append a new value
 to the existing value.
 
 The basic assignment operator is the equal sign `=` `(ASCII 61)`. For
-example, the following statement assigns the value Windows PowerShell to
+example, the following statement assigns the value PowerShell to
 the $MyShell variable:
 
 ```powershell
-$MyShell = "Windows PowerShell"
+$MyShell = "PowerShell"
 ```
 
-When you assign a value to a variable in Windows PowerShell, the variable
+When you assign a value to a variable in PowerShell, the variable
 is created if it did not already exist. For example, the first of the
 following two assignement statements creates the $a variable and assigns a
 value of 6 to $a. The second assignment statement assigns a value of 12 to
@@ -78,7 +79,7 @@ $a = 6
 $a = 12
 ```
 
-Variables in Windows PowerShell do not have a specific data type unless you
+Variables in PowerShell do not have a specific data type unless you
 cast them. When a variable contains only one object, the variable takes the
 data type of that object. When a variable contains a collection of objects,
 the variable has the System.Object data type. Therefore, you can assign any
@@ -141,7 +142,7 @@ $a = "apple", "orange", "lemon", "grape"
 ```
 
 To assign a hash table to a variable, use the standard hash table notation
-in Windows PowerShell. Type an at sign `@` followed by key/value pairs that
+in PowerShell. Type an at sign `@` followed by key/value pairs that
 are separated by semicolons `;` and enclosed in braces `{ }`. For example,
 to assign a hash table to the $a variable, type:
 
@@ -150,7 +151,7 @@ $a = @{one=1; two=2; three=3}
 ```
 
 To assign hexadecimal values to a variable, precede the value with `0x`.
-Windows PowerShell converts the hexadecimal value (0x10) to a decimal value
+PowerShell converts the hexadecimal value (0x10) to a decimal value
 (in this case, 16) and assigns that value to the $a variable. For example,
 to assign a value of 0x10 to the $a variable, type:
 
@@ -166,7 +167,7 @@ assign a value of 3.1415 to the power of 1,000 to the $a variable, type:
 $a = 3.1415e3
 ```
 
-Windows PowerShell can also convert kilobytes `KB`, megabytes `MB`, and
+PowerShell can also convert kilobytes `KB`, megabytes `MB`, and
 gigabytes `GB` into bytes. For example, to assign a value of 10 kilobytes
 to the $a variable, type:
 
@@ -411,7 +412,7 @@ $a *= 2
 $a = ($a * 2)
 ```
 
-When a variable contains a string value, Windows PowerShell appends the
+When a variable contains a string value, PowerShell appends the
 specified number of strings to the value, as follows:
 
 ```powershell
@@ -498,7 +499,7 @@ $a
 3
 ```
 
-# THE INCREMENT AND DECREMENT OPERATORS
+## THE INCREMENT AND DECREMENT OPERATORS
 
 The increment operator `++` increases the value of a variable by 1. When
 you use the increment operator in a simple statement, no value is returned.
@@ -689,7 +690,7 @@ $a
 file3
 ```
 
-If the first value is an integer, Windows PowerShell treats all operations
+If the first value is an integer, PowerShell treats all operations
 as integer operations and casts new values to integers. This occurs in the
 following example:
 
@@ -753,7 +754,7 @@ In addition, when you precede a variable name with a data type, the type of
 that variable is locked unless you explicitly override the type by
 specifying another data type. If you try to assign a value that is
 incompatible with the existing type, and you do not explicitly override the
-type, Windows PowerShell displays an error, as shown in the following
+type, PowerShell displays an error, as shown in the following
 example:
 
 ```powershell
@@ -774,7 +775,7 @@ At line:1 char:3
 [string]$a = "string"
 ```
 
-In Windows PowerShell, the data types of variables that contain multiple
+In PowerShell, the data types of variables that contain multiple
 items in an array are handled differently from the data types of variables
 that contain a single item. Unless a data type is specifically assigned to
 an array variable, the data type is always `System.Object []`. This data
@@ -788,7 +789,7 @@ array type:
 [string []] $a = "one", "two", "three"
 ```
 
-Windows PowerShell variables can be any .NET Framework data type. In
+PowerShell variables can be any .NET Framework data type. In
 addition, you can assign any fully qualified .NET Framework data type that
 is available in the current process. For example, the following command
 specifies a `System.DateTime` data type:
@@ -805,9 +806,9 @@ following:
 Tuesday, May 31, 2005 12:00:00 AM
 ```
 
-# ASSIGNING MULTIPLE VARIABLES
+## ASSIGNING MULTIPLE VARIABLES
 
-In Windows PowerShell, you can assign values to multiple variables by using
+In PowerShell, you can assign values to multiple variables by using
 a single command. The first element of the assignment value is assigned to
 the first variable, the second element is assigned to the second variable,
 the third element to the third variable, and so on. For example, the
@@ -826,7 +827,7 @@ following command contains three variables and five values:
 $a, $b, $c = 1, 2, 3, 4, 5
 ```
 
-Therefore, Windows PowerShell assigns the value 1 to the $a variable and
+Therefore, PowerShell assigns the value 1 to the $a variable and
 the value 2 to the $b variable. It assigns the values 3, 4, and 5 to the $c
 variable. To assign the values in the $c variable to three other variables,
 use the following format:

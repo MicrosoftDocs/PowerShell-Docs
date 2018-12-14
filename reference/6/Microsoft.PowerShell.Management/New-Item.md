@@ -147,7 +147,24 @@ Accept wildcard characters: False
 ### -ItemType
 
 Specifies the provider-specified type of the new item.
-Starting in Windows PowerShell 5.0, you can create symbolic links by specifying SymbolicLink as the value of this parameter.
+The available values of this parameter depend on the current provider you are using.
+
+If your location is in a `FileSystem` drive, the following values are allowed:
+
+- File
+- Directory
+- SymbolicLink
+- Junction
+- HardLink
+
+In a `Certificate` drive, these are the values you can specify:
+
+- Certificate Provider
+- Certificate
+- Store
+- StoreLocation
+
+For more information see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
 Type: String
@@ -192,7 +209,7 @@ Parameter Sets: pathSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -204,7 +221,7 @@ Parameter Sets: nameSet
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821669
-external help file:  PSModule-help.xml
-title:  Save-Module
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821669
+schema: 2.0.0
+title: Save-Module
 ---
 
 # Save-Module
@@ -17,30 +18,30 @@ Saves a module locally without installing it.
 
 ### NameAndPathParameterSet (Default)
 ```
-Save-Module [-Name] <String[]> [-MinimumVersion <Version>] [-MaximumVersion <Version>]
- [-RequiredVersion <Version>] [-Repository <String[]>] -Path <String> [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+ [-RequiredVersion <String>] [-Repository <String[]>] [-Path] <String> [-Proxy <Uri>]
+ [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease] [-AcceptLicense]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameAndLiteralPathParameterSet
 ```
-Save-Module [-Name] <String[]> [-MinimumVersion <Version>] [-MaximumVersion <Version>]
- [-RequiredVersion <Version>] [-Repository <String[]>] -LiteralPath <String> [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+ [-RequiredVersion <String>] [-Repository <String[]>] -LiteralPath <String> [-Proxy <Uri>]
+ [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease] [-AcceptLicense]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputOjectAndLiteralPathParameterSet
 ```
 Save-Module [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputOjectAndPathParameterSet
 ```
-Save-Module [-InputObject] <PSObject[]> -Path <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-Credential <PSCredential>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Save-Module [-InputObject] <PSObject[]> [-Path] <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -100,23 +101,37 @@ The final command displays the contents of the C:\MyLocalModules folder.
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowPrerelease
+Allows you to save a module marked as a prerelease.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Credential
-
 
 ```yaml
 Type: PSCredential
@@ -184,7 +199,7 @@ Specifies the maximum, or newest, version of the module to save.
 The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -201,7 +216,7 @@ You cannot add this parameter if you are attempting to install multiple modules.
 The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -238,7 +253,7 @@ Parameter Sets: NameAndPathParameterSet, InputOjectAndPathParameterSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -293,7 +308,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the module to save.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
 Aliases:
 
@@ -301,6 +316,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

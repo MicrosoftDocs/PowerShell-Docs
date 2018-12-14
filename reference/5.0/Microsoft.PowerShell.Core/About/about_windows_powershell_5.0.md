@@ -293,7 +293,7 @@ You can also read about changes to Windows PowerShell 5.0 in
 For more information about Windows PowerShell 5.0, visit the following web
 sites:
 
-- [Windows PowerShell Scripting website](/powershell/scripting/powershell-scripting)
+- [Windows PowerShell Scripting website](/powershell/scripting/overview)
 - [Windows PowerShell Team Blog](http://go.microsoft.com/fwlink/?LinkId=143696)
 - [Windows PowerShell Web Access](/powershell/scripting/core-powershell/web-access)
 

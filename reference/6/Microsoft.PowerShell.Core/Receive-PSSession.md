@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821506
-external help file:  System.Management.Automation.dll-Help.xml
-title:  Receive-PSSession
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821506
+schema: 2.0.0
+title: Receive-PSSession
 ---
 
 # Receive-PSSession
@@ -27,18 +28,18 @@ Receive-PSSession [-Id] <Int32> [-OutTarget <OutTarget>] [-JobName <String>] [-W
  [<CommonParameters>]
 ```
 
-### ComputerSessionName
-```
-Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
- -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [-Port <Int32>] [-UseSSL]
- [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
 ### ComputerInstanceId
 ```
 Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
  -InstanceId <Guid> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [-Port <Int32>] [-UseSSL]
+ [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ComputerSessionName
+```
+Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
+ -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [-Port <Int32>] [-UseSSL]
  [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -287,7 +288,7 @@ It does not change the application that the session uses.
 
 ```yaml
 Type: String
-Parameter Sets: ComputerSessionName, ComputerInstanceId
+Parameter Sets: ComputerInstanceId, ComputerSessionName
 Aliases:
 
 Required: False
@@ -319,7 +320,7 @@ If the remote computer is compromised, the credentials that are passed to it can
 
 ```yaml
 Type: AuthenticationMechanism
-Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 Accepted values: Default, Basic, Negotiate, NegotiateWithImplicitCredential, Credssp, Digest, Kerberos
 
@@ -342,7 +343,7 @@ To get a certificate thumbprint, use a Get-Item or Get-ChildItem command in the 
 
 ```yaml
 Type: String
-Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -363,7 +364,7 @@ To specify the local computer, type the computer name, localhost, or a dot (.)
 
 ```yaml
 Type: String
-Parameter Sets: ComputerSessionName, ComputerInstanceId
+Parameter Sets: ComputerInstanceId, ComputerSessionName
 Aliases: Cn
 
 Required: True
@@ -388,28 +389,13 @@ For more information about session configurations, see [about_Session_Configurat
 
 ```yaml
 Type: String
-Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -457,7 +443,7 @@ If you type a user name, this cmdlet prompts you for a password.
 
 ```yaml
 Type: PSCredential
-Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -616,7 +602,7 @@ An alternate port setting might prevent the command from running on all computer
 
 ```yaml
 Type: Int32
-Parameter Sets: ComputerSessionName, ComputerInstanceId
+Parameter Sets: ComputerInstanceId, ComputerSessionName
 Aliases:
 
 Required: False
@@ -658,7 +644,7 @@ For more information about session configurations, see [about_Session_Configurat
 
 ```yaml
 Type: PSSessionOption
-Parameter Sets: ComputerSessionName, ComputerInstanceId, ConnectionUriSessionName, ConnectionUriInstanceId
+Parameter Sets: ComputerInstanceId, ComputerSessionName, ConnectionUriSessionName, ConnectionUriInstanceId
 Aliases:
 
 Required: False
@@ -679,12 +665,27 @@ If you use this parameter, but SSL is not available on the port that is used for
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: ComputerSessionName, ComputerInstanceId
+Parameter Sets: ComputerInstanceId, ComputerSessionName
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -706,21 +707,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
-You can pipe session objects, such as those returned by the Get-PSSession cmdlet, to this cmldet.
+You can pipe session objects, such as those returned by the Get-PSSession cmdlet, to this cmdlet.
 
 ### System.Int32
-You can pipe session IDs to this cmldet.
+You can pipe session IDs to this cmdlet.
 
 ### System.Guid
-You can pipe the instance IDs of sessions this cmldet.
+You can pipe the instance IDs of sessions this cmdlet.
 
 ### System.String
-You can pipe session names to this cmldet.
+You can pipe session names to this cmdlet.
 
 ## OUTPUTS
 

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=822338
-external help file:  PSModule-help.xml
-title:  Uninstall-Script
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=822338
+schema: 2.0.0
+title: Uninstall-Script
 ---
 
 # Uninstall-Script
@@ -17,13 +18,13 @@ Uninstalls a script file.
 
 ### NameParameterSet (Default)
 ```
-Uninstall-Script [-Name] <String[]> [-MinimumVersion <Version>] [-RequiredVersion <Version>]
- [-MaximumVersion <Version>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Uninstall-Script [-Name] <String[]> [-MinimumVersion <String>] [-RequiredVersion <String>]
+ [-MaximumVersion <String>] [-Force] [-AllowPrerelease] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
-Uninstall-Script -InputObject <PSObject[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Uninstall-Script [-InputObject] <PSObject[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,6 +41,21 @@ This command uninstalls version 2.5 of the script file named MyScript.
 
 ## PARAMETERS
 
+### -AllowPrerelease
+Allows you to uninstall a script marked as a prerelease.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 Forces the command to run without asking for user confirmation.
 
@@ -55,12 +71,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+{{Fill InputObject Description}}
+
+```yaml
+Type: PSObject[]
+Parameter Sets: InputObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
 ### -MaximumVersion
 Specifies the maximum, or newest, version of the script to uninstall.
 The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -76,7 +107,7 @@ Specifies the minimum version of the script to uninstall.
 The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -96,7 +127,7 @@ Parameter Sets: NameParameterSet
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -106,7 +137,7 @@ Accept wildcard characters: False
 Specifies the exact version number of the script to uninstall.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -145,21 +176,6 @@ Required: False
 Position: Named
 Default value: False
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-{{Fill InputObject Description}}
-
-```yaml
-Type: PSObject[]
-Parameter Sets: InputObject
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 

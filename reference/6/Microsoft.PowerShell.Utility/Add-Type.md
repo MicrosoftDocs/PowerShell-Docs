@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821749
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Add-Type
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821749
+schema: 2.0.0
+title: Add-Type
 ---
 
 # Add-Type
@@ -29,12 +30,10 @@ Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblie
 ```
 Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>] [-UsingNamespace <String[]>]
  [-Language <Language>] [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
- [<CommonParameters>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [<CommonParameters>]
 ```
 
 ### FromPath
-
 ```
 Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
  [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
@@ -42,7 +41,6 @@ Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly 
 ```
 
 ### FromLiteralPath
-
 ```
 Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
  [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
@@ -346,7 +344,7 @@ Parameter Sets: FromMember
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -368,7 +366,7 @@ Parameter Sets: FromMember
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -402,7 +400,7 @@ By default, `Add-Type` generates the assembly only in memory.
 
 ```yaml
 Type: String
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OA
 
 Required: False
@@ -429,9 +427,9 @@ This parameter is valid only when an output assembly is specified in the command
 
 ```yaml
 Type: OutputAssemblyType
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: OT
-Accepted values: ConsoleApplication, Library, WindowsApplication
+Accepted values: Library, ConsoleApplication, WindowsApplication
 
 Required: False
 Position: Named
@@ -473,7 +471,7 @@ Parameter Sets: FromPath
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -489,7 +487,7 @@ You cannot use the **CompilerOptions** and **ReferencedAssemblies** parameters i
 
 ```yaml
 Type: String[]
-Parameter Sets: FromSource, FromMember, FromLiteralPath, FromPath
+Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
 Aliases: RA
 
 Required: False
@@ -503,7 +501,7 @@ Accept wildcard characters: False
 
 Specifies the source code that contains the type definitions.
 Enter the source code in a string or here-string, or enter a variable that contains the source code.
-For more information about here-strings, see about_Quoting_Rules (http://go.microsoft.com/fwlink/?LinkID=113253).
+For more information about here-strings, see [about_Quoting_Rules](../Microsoft.PowerShell.Core/about/about_Quoting_Rules.md).
 
 Include a namespace declaration in your type definition.
 If you omit the namespace declaration, your type might have the same name as another type or the shortcut for another type, causing an unintentional overwrite.
@@ -515,7 +513,7 @@ Parameter Sets: FromSource
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -544,7 +542,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

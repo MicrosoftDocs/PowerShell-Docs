@@ -25,8 +25,7 @@ Each parameter set must have a unique parameter that the Windows PowerShell runt
 
 In the following illustration, the left column shows three valid parameter sets. Parameter A is unique to the first parameter set, parameter B is unique to the second parameter set, and parameter C is unique to the third parameter set. However, in the right column, the parameter sets do not have a unique parameter.
 
-![](../media/ps-parametersets.gif)
-![](../media/ps-parametersets.gif "ps_parametersets")
+![ps_parametersets](../media/ps-parametersets.gif)
 
 ## Parameter Set Requirements
 

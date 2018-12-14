@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821660
-external help file:  PSModule-help.xml
-title:  Get-InstalledModule
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821660
+schema: 2.0.0
+title: Get-InstalledModule
 ---
 
 # Get-InstalledModule
@@ -16,8 +17,8 @@ Gets installed modules on a computer.
 ## SYNTAX
 
 ```
-Get-InstalledModule [[-Name] <String[]>] [-MinimumVersion <Version>] [-RequiredVersion <Version>]
- [-MaximumVersion <Version>] [-AllVersions] [<CommonParameters>]
+Get-InstalledModule [[-Name] <String[]>] [-MinimumVersion <String>] [-RequiredVersion <String>]
+ [-MaximumVersion <String>] [-AllVersions] [-AllowPrerelease] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,6 +50,21 @@ This command gets versions of the AzureRM.Automation module from version 1.0 thr
 
 ## PARAMETERS
 
+### -AllowPrerelease
+Includes in the results modules marked as a prerelease.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllVersions
 Indicates that you want to get all available versions of a module.
 You cannot use the *AllVersions* parameter with the *MinimumVersion*, *MaximumVersion*, or *RequiredVersion* parameters.
@@ -70,7 +86,7 @@ Specifies the maximum, or newest, version of a module to get.
 The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -86,7 +102,7 @@ Specifies the minimum version of a single module to get.
 The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -116,7 +132,7 @@ Accept wildcard characters: False
 Specifies the exact version of a module to get.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -135,5 +151,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
+## RELATED LINKS
 
 ## RELATED LINKS

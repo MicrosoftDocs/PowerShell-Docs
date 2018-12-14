@@ -1,9 +1,10 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: CimCmdlets
+ms.date: 06/09/2017
+schema: 2.0.0
 ---
 
 # New-CimSessionOption
@@ -127,6 +128,7 @@ The acceptable values for this parameter are:  Default, Utf8, or Utf16.
 Type: PacketEncoding
 Parameter Sets: WSManParameterSet
 Aliases:
+Accepted values: Default, Utf8, Utf16
 
 Required: False
 Position: Named
@@ -158,11 +160,11 @@ Creates a DCOM session to Windows Management Instrumentation (WMI) using imperso
 
 Valid values for this parameter are:
 
-- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm. 
+- Default: DCOM can choose the impersonation level using its normal security negotiation algorithm.
 - None: The client is anonymous to the server.
-  The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used. 
-- Identify: Allows objects to query the credentials of the caller. 
-- Impersonate: Allows objects to use the credentials of the caller. 
+  The server process can impersonate the client, but the impersonation token does not contain any information and cannot be used.
+- Identify: Allows objects to query the credentials of the caller.
+- Impersonate: Allows objects to use the credentials of the caller.
 - Delegate: Allows objects to permit other objects to use the credentials of the caller.
 
 If Impersonation is not specified, the New-CimSession cmdlet uses the value of 3: Impersonate
@@ -171,6 +173,7 @@ If Impersonation is not specified, the New-CimSession cmdlet uses the value of 3
 Type: ImpersonationType
 Parameter Sets: DcomParameterSet
 Aliases:
+Accepted values: Default, None, Identify, Impersonate, Delegate
 
 Required: False
 Position: Named
@@ -250,10 +253,10 @@ The acceptable values for this parameter are: DCOM or WinRM.
 Type: ProtocolType
 Parameter Sets: ProtocolTypeSet
 Aliases:
-Accepted values: Dcom, Default, Wsman
+Accepted values: Default, Dcom, Wsman
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -268,6 +271,7 @@ The acceptable values for this parameter are: Default, Digest, Negotiate, Basic,
 Type: PasswordAuthenticationMechanism
 Parameter Sets: WSManParameterSet
 Aliases:
+Accepted values: Default, Digest, Negotiate, Basic, Kerberos, NtlmDomain, CredSsp
 
 Required: False
 Position: Named
@@ -303,7 +307,7 @@ Accept wildcard characters: False
 Specifies the credentials to use for proxy authentication.
 Enter one of the following:
 
-- A variable that contains a PSCredential object. 
+- A variable that contains a PSCredential object.
 - A command that gets a PSCredential object, such as Get-Credential
 
 If this option is not set, then you cannot specify any credentials.
@@ -331,6 +335,7 @@ By default, the value of this parameter is InternetExplorer.
 Type: ProxyType
 Parameter Sets: WSManParameterSet
 Aliases:
+Accepted values: None, WinHttp, Auto, InternetExplorer
 
 Required: False
 Position: Named
@@ -436,8 +441,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

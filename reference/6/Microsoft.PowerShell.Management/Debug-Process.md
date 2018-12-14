@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821577
-external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
-title:  Debug-Process
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821577
+schema: 2.0.0
+title: Debug-Process
 ---
 
 # Debug-Process
@@ -17,13 +18,12 @@ Debugs one or more processes running on the local computer.
 
 ### Name (Default)
 ```
-Debug-Process [-Name] <String[]>
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Process [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Id
 ```
-Debug-Process [-Id] <Int32[]>  [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Process [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
@@ -117,7 +117,7 @@ Parameter Sets: Id
 Aliases: PID, ProcessId
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -151,7 +151,7 @@ Parameter Sets: Name
 Aliases: ProcessName
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -202,7 +202,7 @@ You can pipe a process ID (Int32), a process object (System.Diagnostics.Process)
 This cmdlet does not generate any output.
 
 ## NOTES
-* This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI) Win32_Process class. For more information about this method, see [AttachDebugger method](http://go.microsoft.com/fwlink/?LinkId=143640) in the MSDN library.
+* This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI) Win32_Process class. For more information about this method, see [AttachDebugger method](https://go.microsoft.com/fwlink/?LinkId=143640) in the MSDN library.
 
 ## RELATED LINKS
 

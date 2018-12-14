@@ -1,11 +1,13 @@
 ---
-ms.date:  11/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Write-Host
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 11/09/2017
+schema: 2.0.0
+title: Write-Host
 ---
+
 # Write-Host
 
 ## SYNOPSIS
@@ -205,7 +207,7 @@ Objects to display in the host.
 ```yaml
 Type: Object
 Parameter Sets: (All)
-Aliases: Message, Msg
+Aliases:
 
 Required: False
 Position: 0
@@ -231,8 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

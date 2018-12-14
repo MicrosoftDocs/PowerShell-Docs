@@ -102,22 +102,6 @@ New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log
 
 ## PARAMETERS
 
-### -Confirm
-
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Credential
 
 Specifies a user account that has permission to perform this action.
@@ -163,7 +147,24 @@ Accept wildcard characters: False
 ### -ItemType
 
 Specifies the provider-specified type of the new item.
-Starting in Windows PowerShell 5.0, you can create symbolic links by specifying SymbolicLink as the value of this parameter.
+The available values of this parameter depend on the current provider you are using.
+
+If your location is in a `FileSystem` drive, the following values are allowed:
+
+- File
+- Directory
+- SymbolicLink
+- Junction
+- HardLink
+
+In a `Certificate` drive, these are the values you can specify:
+
+- Certificate Provider
+- Certificate
+- Store
+- StoreLocation
+
+For more information see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
 Type: String
@@ -230,7 +231,7 @@ Accept wildcard characters: False
 
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see about_Transactions.
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: SwitchParameter
@@ -258,6 +259,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

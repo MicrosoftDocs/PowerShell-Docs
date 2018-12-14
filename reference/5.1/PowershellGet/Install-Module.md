@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821663
-external help file:  PSModule-help.xml
-title:  Install-Module
+external help file: PSModule-help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: PowerShellGet
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821663
+schema: 2.0.0
+title: Install-Module
 ---
 
 # Install-Module
@@ -17,17 +18,17 @@ Downloads one or more modules from an online gallery, and installs them on the l
 
 ### NameParameterSet (Default)
 ```
-Install-Module [-Name] <String[]> [-MinimumVersion <Version>] [-MaximumVersion <Version>]
- [-RequiredVersion <Version>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
- [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+ [-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+ [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 ```
 Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force] [-AcceptLicense] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,14 +39,16 @@ You can filter your results based on minimum and exact versions of specified mod
 ## EXAMPLES
 
 ### Example 1: Find a module and install it
-```
+
+```powershell
 PS C:\> Find-Module -Name "MyDSC*" | Install-Module
 ```
 
 In this example, modules with a name that starts with MyDSC that are found by Find-Module in the online gallery are installed to the default folder, C:\ProgramFiles\WindowsPowerShell\Modules.
 
 ### Example 2: Install a module by name
-```
+
+```powershell
 PS C:\> Install-Module -Name "MyDscModule"
 ```
 
@@ -54,7 +57,8 @@ In this example, the newest version of the module MyDscModule from the online ga
 If no module named MyDscModule exists, an error occurs.
 
 ### Example 3: Install a module using its minimum version
-```
+
+```powershell
 PS C:\> Install-Module -Name "ContosoServer" -MinimumVersion 1.0
 ```
 
@@ -62,7 +66,8 @@ In this example, the most current version of the module ContosoServer is install
 If the most current version of the module is a lower number than 1.0, the command returns errors.
 
 ### Example 4: Install a specific version of a module
-```
+
+```powershell
 PS C:\> Install-Module -Name "ContosoServer" -RequiredVersion 1.1.3
 ```
 
@@ -70,13 +75,43 @@ This example installs version 1.1.3 of the module ContosoServer to the Program F
 If version 1.1.3 is not available, an error occurs.
 
 ### Example 5: Install the current version of a module
-```
+
+```powershell
 PS C:\> Install-Module -Name "ContosoServer" -Scope "CurrentUser"
 ```
 
 This example installs the newest version of the module ContosoServer to $home\Documents\WindowsPowerShell\Modules.
 
 ## PARAMETERS
+
+### -AcceptLicense
+{{Fill AcceptLicense Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowClobber
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AllowClobber
 Allows you to install a different version of a module that already exists on your computer.
@@ -93,17 +128,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -AllowPrerelease
+Allows you to install a module marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
+Parameter Sets: NameParameterSet
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -160,7 +195,7 @@ You cannot add this parameter if you are attempting to install multiple modules.
 The *MaximumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -180,7 +215,7 @@ If you are installing multiple modules in a single command, and a specified mini
 For example, if you try to install the ContosoServer module with a minimum version of 2.0, but the latest version of the ContosoServer module is 1.5, the **Install-Module** command does not install the ContosoServer module; it goes to install the next specified module, and Windows PowerShell display errors when the command is finished.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -261,7 +296,7 @@ You cannot add this parameter if you are attempting to install multiple modules.
 The *MinimumVersion* and the *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.
 
 ```yaml
-Type: Version
+Type: String
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -301,8 +336,6 @@ Accept wildcard characters: False
 ### -SkipPublisherCheck
 Allows you to install a newer version of a module that already exists on your computer in the case when a newer one is not digitally signed by a trusted publisher and the newest existing module is digitally signed by a trusted publisher.
 
-It can happen for modules distributed with the operating system but maintained by the community, e.g. Pester or PSReadLine.
-
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -311,6 +344,21 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

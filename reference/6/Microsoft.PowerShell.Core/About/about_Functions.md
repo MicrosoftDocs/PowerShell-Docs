@@ -8,11 +8,11 @@ title:  about_Functions
 
 # About Functions
 
-# SHORT DESCRIPTION
+## SHORT DESCRIPTION
 
 Describes how to create and use functions in PowerShell.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 A function is a list of PowerShell statements that has a name that you
 assign. When you run a function, you type the function name. The statements in
@@ -99,7 +99,7 @@ function Get-NewPix
 {
   $start = Get-Date -Month 1 -Day 1 -Year 2010
   $allpix = Get-ChildItem -Path $env:UserProfile\*.jpg -Recurse
-  $allpix | where {$_.LastWriteTime -gt $Start}
+  $allpix | Where-Object {$_.LastWriteTime -gt $Start}
 }
 ```
 
@@ -169,7 +169,7 @@ value of the $size parameter, and it excludes directories:
 ```powershell
 function Get-SmallFiles {
   Param($Size)
-  Get-ChildItem $HOME | where {
+  Get-ChildItem $HOME | Where-Object {
     $_.Length -lt $Size -and !$_.PSIsContainer
   }
 }
@@ -198,7 +198,7 @@ Get-SmallFiles example:
 
 ```powershell
 function Get-SmallFiles ($Size = 100) {
-  Get-ChildItem $HOME | where {
+  Get-ChildItem $HOME | Where-Object {
     $_.Length -lt $Size -and !$_.PSIsContainer
   }
 }
@@ -248,7 +248,7 @@ function Get-Extension {
 ```
 
 ```powershell
-C:\PS> Get-Extension myTextFile
+PS> Get-Extension myTextFile
 myTextFile.txt
 ```
 
@@ -272,10 +272,10 @@ When you type the On switch parameter after the function name, the function
 displays "Switch on". Without the switch parameter, it displays "Switch off".
 
 ```powershell
-C:\PS> Switch-Item -on
+PS> Switch-Item -on
 Switch on
 
-C:\PS> Switch-Item
+PS> Switch-Item
 Switch off
 ```
 
@@ -283,10 +283,10 @@ You can also assign a Boolean value to a switch when you run the function, as
 shown in the following example:
 
 ```powershell
-C:\PS> Switch-Item -on:$true
+PS> Switch-Item -on:$true
 Switch on
 
-C:\PS> Switch-Item -on:$false
+PS> Switch-Item -on:$false
 Switch off
 ```
 
@@ -311,7 +311,7 @@ Get-MyCommand function. The parameters and parameter values are passed to the
 command using @Args.
 
 ```powershell
-PS C:> Get-MyCommand -Name Get-ChildItem
+PS> Get-MyCommand -Name Get-ChildItem
 CommandType     Name                ModuleName
 -----------     ----                ----------
 Cmdlet          Get-ChildItem       Microsoft.PowerShell.Management
@@ -360,7 +360,7 @@ To demonstrate this function, enter an list of numbers separated by commas, as
 shown in the following example:
 
 ```powershell
-C:\PS> 1,2,4 | Get-Pipeline
+PS> 1,2,4 | Get-Pipeline
 The value is: 1
 The value is: 2
 The value is: 4
@@ -387,7 +387,7 @@ If this function is run by using the pipeline, it displays the following
 results:
 
 ```powershell
-C:\PS> 1,2,4 | Get-PipelineBeginEnd
+PS> 1,2,4 | Get-PipelineBeginEnd
 Begin: The input is
 End:   The input is 1 2 4
 ```
@@ -412,7 +412,7 @@ at a time. The $input automatic variable is empty when the function reaches
 the End keyword.
 
 ```powershell
-C:\PS> 1,2,4 | Get-PipelineInput
+PS> 1,2,4 | Get-PipelineInput
 Processing:  1
 Processing:  2
 Processing:  4
@@ -436,7 +436,7 @@ either the whole entry or only the message portion of the entry:
 ```powershell
 filter Get-ErrorLog ([switch]$message)
 {
-  if ($message) { out-host -inputobject $_.Message }
+  if ($message) { Out-Host -InputObject $_.Message }
   else { $_ }
 }
 ```
@@ -454,7 +454,7 @@ the global scope in the following example:
 
 ```powershell
 function global:Get-DependentSvs {
-  Get-Service | where {$_.DependentServices}
+  Get-Service | Where-Object {$_.DependentServices}
 }
 ```
 
@@ -547,7 +547,7 @@ methods:
   information about XML-based help, see [How to Write Cmdlet
   Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
 
-# SEE ALSO
+## SEE ALSO
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 

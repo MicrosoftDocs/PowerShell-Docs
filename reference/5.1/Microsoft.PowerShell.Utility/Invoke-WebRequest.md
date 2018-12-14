@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821826
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Invoke-WebRequest
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821826
+schema: 2.0.0
+title: Invoke-WebRequest
 ---
 
 # Invoke-WebRequest
@@ -131,18 +132,17 @@ When the body is a form, or it is the output of an **Invoke-WebRequest** call, W
 
 For example:
 
-```
+
+
 PS C:\> $R = Invoke-WebRequest http://website.com/login.aspx
 $R.Forms[0].Name = "MyName"
 $R.Forms[0].Password = "MyPassword"
 Invoke-RestMethod http://website.com/service.aspx -Body $R
-```
-- or -
-```
-PS C:\> Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]
-```
 
-```yaml
+- or -
+
+
+PS C:\> Invoke-RestMethod http://website.com/service.aspx -Body $R.Forms[0]```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
@@ -554,11 +554,9 @@ To test a website with the standard user agent string that is used by most Inter
 
 For example, the following command uses the user agent string for Internet Explorer
 
-```
-PS C:\> Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
-```
 
-```yaml
+
+PS C:\> Invoke-WebRequest -Uri http://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
