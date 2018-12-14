@@ -38,6 +38,8 @@ only_commits:
     - .openpublishing.redirection.json
     - tests/**/*
     - '**/docfx.json'
+    - '**/TOC.yml'
+    - '**/toc.yml'
     - '**/*.md'
 
 deploy:
