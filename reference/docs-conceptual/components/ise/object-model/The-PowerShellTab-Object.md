@@ -109,7 +109,7 @@ $secondTab.CanInvoke
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.  In Windows PowerShell ISE 2.0 this was named **CommandPane**.
 
-The read-only property that gets the Console pane [editor](../ise/The-ISEEditor-Object.md) object.
+The read-only property that gets the Console pane [editor](The-ISEEditor-Object.md) object.
 
 ```powershell
 # Gets the Console Pane editor.
@@ -143,7 +143,7 @@ $psISE.CurrentPowerShellTab.ExpandedScript = !$psISE.CurrentPowerShellTab.Expand
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the [collection of script files](../ise/The-ISEFileCollection-Object.md) that are open in the PowerShell tab.
+The read-only property that gets the [collection of script files](The-ISEFileCollection-Object.md) that are open in the PowerShell tab.
 
 ```powershell
 $newFile = $psISE.CurrentPowerShellTab.Files.Add()
@@ -156,7 +156,7 @@ $newFile.Editor.LineCount
 
 This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.  In later versions of Windows PowerShell ISE, you can use the **ConsolePane** object for the same purposes.
 
-The read-only property that gets the Output pane of the current [editor](../ise/The-ISEEditor-Object.md).
+The read-only property that gets the Output pane of the current [editor](The-ISEEditor-Object.md).
 
 ```powershell
 # Clears the text in the Output pane.

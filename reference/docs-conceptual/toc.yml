@@ -96,7 +96,7 @@
                 - name: Keyboard shortcuts for the Windows PowerShell ISE
                   href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
                 - name: Accessibility in Windows PowerShell ISE
-                  href: components/accessibility-in-windows-powershell-ise.md
+                  href: components/ise/accessibility-in-windows-powershell-ise.md
             - name: The ISE scripting object model
               href: ''
               items:

@@ -18,7 +18,7 @@ This topic describes the accessibility features of Windows PowerShell Integrated
 
 Microsoft is committed to making its products and services easier for everyone to use. The following topics provide information about the features, products, and services that make Windows PowerShell ISE more accessible for people with disabilities.
 
-Windows PowerShell ISE supports high contrast mode. For the visually impaired, breakpoint information is available through the cmdlets for managing breakpoints, such as [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) and [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). For more information please see 'How to manage breakpoints' in [How to Debug Scripts in the Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). In addition to accessibility features and utilities in Microsoft Windows, the following features make Windows PowerShell ISE more accessible for people with disabilities:
+Windows PowerShell ISE supports high contrast mode. For the visually impaired, breakpoint information is available through the cmdlets for managing breakpoints, such as [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) and [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). For more information please see 'How to manage breakpoints' in [How to Debug Scripts in the Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). In addition to accessibility features and utilities in Microsoft Windows, the following features make Windows PowerShell ISE more accessible for people with disabilities:
 
 - Keyboard Shortcuts
 
@@ -115,9 +115,11 @@ You can use the following keyboard shortcuts when you debug scripts.
 |**Remove All Breakpoints**|CTRL+SHIFT+F9|Script Pane, when debugging a script|
 |**Stop Debugger**|SHIFT+F5|Script Pane, when debugging a script|
 
-> ![NOTE](../core-powershell/web-access/images/Note.jpeg)**Note**
+> [!NOTE]
 >
-> You can also use the keyboard shortcuts designed for the Windows PowerShell console when you debug scripts in Windows PowerShell ISE. To use these shortcuts, you must type the shortcut in the Console Pane and press ENTER.
+> You can also use the keyboard shortcuts designed for the Windows PowerShell
+> console when you debug scripts in Windows PowerShell ISE. To use these
+> shortcuts, you must type the shortcut in the Console Pane and press ENTER.
 
 |Action|Keyboard Shortcut|Use in|
 |----------|---------------------|----------|
@@ -153,4 +155,4 @@ You can use the following keyboard shortcuts to start the Windows PowerShell con
 
 ## See Also
 
-- [Introducing the Windows PowerShell ISE](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+[Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)

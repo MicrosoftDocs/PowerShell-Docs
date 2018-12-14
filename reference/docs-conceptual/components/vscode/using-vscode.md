@@ -179,7 +179,7 @@ There are a few blogs that may be helpful to get you started using PowerShell ex
 - [Debugging PowerShell script in Visual Studio Code – Part 1][debugging-part1]
 - [Debugging PowerShell script in Visual Studio Code – Part 2][debugging-part2]
 
-[ise]: ../ise-guide.md
+[ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
 [install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
 [install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md

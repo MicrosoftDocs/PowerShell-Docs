@@ -12,13 +12,13 @@ within the same application.
 Each PowerShell tab corresponds to a separate execution environment or
 session.
 
-> **NOTE**:
->
-> Variables, functions, and aliases that you create in one tab do not carry over to another. They are different Windows PowerShell sessions.
+> [!NOTE]
+> Variables, functions, and aliases that you create in one tab do not carry over to another. They
+> are different Windows PowerShell sessions.
 
 Use the following steps to open or close a tab in Windows PowerShell.
 To rename a tab, set the
-[DisplayName](The-PowerShellTab-Object.md#displayname) property on the
+[DisplayName](object-model/The-PowerShellTab-Object.md#displayname) property on the
 Windows PowerShell Tab scripting object.
 
 ## To create and use a new PowerShell Tab
