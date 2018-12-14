@@ -375,7 +375,66 @@ All other logging will be omitted.
 ### UpdateableHelp
 
 ### ConsoleSessionConfiguration
-
 -->
 
-### Example Configurations
+### Example configurations
+
+#### Basic configuration with execution policyfor
+
+This PowerShell configuration sets the execution policy to `Bypass`
+and leaves all other configurations as default.
+
+For example, this configuration will leave the `"LogIdentity"` setting as `"powershell"`.
+
+```json
+{
+  "Microsoft.PowerShell.ExecutionPolicy": "Bypass"
+}
+```
+
+#### Fuller configuration settings (Windows)
+
+This configuration has more settings explicitly set:
+
+- Execution policy for this PowerShell installation is `AllSigned`
+- The module path is set to include three module directories
+- The `PSImplicitRemotingBatching` experimental feature is enabled
+
+> [!NOTE]
+> The `ExecutionPolicy` and `PSModulePath` settings here would only work on a Windows platform,
+> since the module path uses `\` and `;` separator characters
+> and the execution policy is not `Unrestricted` (the only policy allowed on UNIX-like platforms).
+
+```json
+{
+  "Microsoft.PowerShell.ExecutionPolicy": "AllSigned",
+  "PSModulePath": "C:\\Users\\Marisol Briggs\\Documents\\PowerShell\\Modules;C:\\Shared\\Modules;C:\\Program Files\\PowerShell\\6\\Modules",
+  "ExperimentalFeatures": ["PSImplicitRemotingBatching"],
+}
+```
+
+#### Fuller configuration settings (UNIX-like)
+
+This configuration sets a number of options
+that will only work in macOS or Linux:
+
+- The module path has three module directories on it.
+- The `PSImplicitRemotingBatching` experimental feature is enabled
+- The PowerShell logging level is set to `Verbose`, for more logging
+- When this PowerShell installation writes to the logs,
+  it will use the `"home-powershell"` identity.
+
+> [!NOTE]
+> In addition to the platform-specific settings,
+> the use of `/` and `:` as separator characters in the `"PSModulePath"` configuration
+> mean it will only be useful on a macOS or Linux platform
+> (likely Linux, given the directory structure).
+
+```json
+{
+  "PSModulePath": "/home/bjessup/.config/powershell/Modules:/mnt/sparedrive/PowerShellModules:/opt/microsoft/powershell/Modules",
+  "ExperimentalFeatures": ["PSImplicitRemotingBatching"],
+  "LogLevel": "Verbose",
+  "LogIdentity": "home-powershell"
+}
+```
