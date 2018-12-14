@@ -248,7 +248,7 @@ default value when no value is provided in the file.
 |LogKeywords|Runspace      |Keywords provide the ability to limit logging|
 |           |Pipeline      |to specific components within PowerShell. By |
 |           |Protocol      |default, all keywords are enabled and change |
-|           |Transport     |this value is only useful for very |
+|           |Transport     |this value is only useful for very           |
 |           |Host          |specialized trouble shooting.                |
 |           |Cmdlets       |                                             |
 |           |Serializer    |                                             |
