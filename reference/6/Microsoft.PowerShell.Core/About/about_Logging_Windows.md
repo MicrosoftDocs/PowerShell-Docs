@@ -22,11 +22,11 @@ details about PowerShell commands.
 
 PowerShell logs can be viewed using the Event Viewer. The event log is located
 in the Application and Services Logs group and is named
-`Microsoft-Windows-PowerShell`. The associated ETW provider `GUID` is
+`PowerShellCore`. The associated ETW provider `GUID` is
 `{f90714a8-5509-434a-bf6d-b1624c8a19a2}`.
 
 When script block logging is enabled, PowerShell will log the following events
-to the `Microsoft-Windows-PowerShell/Operational` log:
+to the `PowerShellCore/Operational` log:
 
 |Field| Value|
 |-|-|
