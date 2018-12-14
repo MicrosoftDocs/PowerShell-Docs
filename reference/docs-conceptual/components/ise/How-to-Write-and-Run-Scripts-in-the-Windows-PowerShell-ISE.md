@@ -153,7 +153,7 @@ Press **CTRL+S** or, on the toolbar, click the **Save** icon, or on the **File**
 By default, Windows PowerShell ISE saves new script files (.ps1), script data files (.psd1), and
 script module files (.psm1) as Unicode (BigEndianUnicode) by default.Â To save a script in another
 encoding, such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the
-[$psISE.CurrentFile](the-ise-object-model-hierarchy.md) object.
+[$psISE.CurrentFile](object-model/the-ise-object-model-hierarchy.md) object.
 
 The following command saves a new script as MyScript.ps1 with ASCII encoding.
 

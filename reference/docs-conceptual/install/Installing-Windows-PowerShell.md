@@ -104,4 +104,4 @@ Otherwise, what you might need is
 
 [Windows PowerShell System Requirements](Windows-PowerShell-System-Requirements.md)
 
-[Starting Windows PowerShell](Starting-Windows-PowerShell.md)
+[Starting Windows PowerShell](../getting-started/Starting-Windows-PowerShell.md)

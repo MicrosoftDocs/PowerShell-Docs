@@ -83,4 +83,4 @@ $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
 
 ## See Also
 
-[Purpose of the Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[Purpose of the Windows PowerShell ISE Scripting Object Model](../components/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
