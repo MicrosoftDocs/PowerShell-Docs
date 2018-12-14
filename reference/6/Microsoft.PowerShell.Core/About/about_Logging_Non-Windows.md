@@ -231,10 +231,11 @@ default value when no value is provided in the file.
 |LogIdentity|(string name) |The name to use when logging. By default,    |
 |           |powershell*   |powershell is the identity. This value can be|
 |           |              |used to tell the difference between two      |
-|           |              |a PowerShell installation, such as a release |
-|           |              |and beta version. This value is also used to |
-|           |              |redirect log output to a separate file on    |
-|           |              |Linux. See the discussion of rsyslog above.  |
+|           |              |instances of a PowerShell installation, such |
+|           |              |as a release and beta version. This value is |
+|           |              |also used to redirect log output to a        |
+|           |              |separate file on Linux. See the discussion of|
+|           |              |rsyslog above.                               |
 |LogChannels|Operational*  |The channels to enable. Separate the values  |
 |           |Analytic      |with a comma when specifying more than one.  |
 |LogLevel   |Always        |Specify a single value. The value enables    |
