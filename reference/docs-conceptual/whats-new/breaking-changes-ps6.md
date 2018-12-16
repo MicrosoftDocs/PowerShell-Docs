@@ -344,3 +344,4 @@ Internet Explorer have resulted in several breaking changes within `Invoke-WebRe
 - There is currently no certificate based authentication available on macOS.
 - Use of `-Credential` over an `http://` URI will result in an error. Use an `https://` URI or
   supply the `-AllowUnencryptedAuthentication` parameter to suppress the error.
+- `-MaximumRedirection` now produces a terminating error when redirection attempts exceed the provided limit instead of returning the results of the last redirection.
