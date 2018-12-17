@@ -14,11 +14,11 @@ Configuration files for PowerShell Core, replacing Registry configuration.
 
 ## LONG DESCRIPTION
 
-The `powershell.config.json` file contains configuration settings for PowerShell Core.
-PowerShell loads this configuration at startup.
-The settings can also be modified at runtime.
-Previously, these settings were stored in the Windows Registry for Windows PowerShell,
-but are now contained in a file to enable configuration on macOS and Linux.
+The `powershell.config.json` file contains configuration settings for
+PowerShell Core. PowerShell loads this configuration at startup. The settings
+can also be modified at runtime. Previously, these settings were stored in the
+Windows Registry for Windows PowerShell, but are now contained in a file to
+enable configuration on macOS and Linux.
 
 > [!WARNING]
 > If the `powershell.config.json` file contains invalid JSON
@@ -92,17 +92,19 @@ In Windows, the equivalent registry keys can be found in
 
 ### PSModulePath
 
-Overrides a PSModulePath component for this PowerShell session.
-If the configuration is for the current user, sets the CurrentUser module path.
-If the configuration is for all users, sets the AllUser module path.
+Overrides a PSModulePath component for this PowerShell session. If the
+configuration is for the current user, sets the CurrentUser module path. If
+the configuration is for all users, sets the AllUser module path.
 
-If no value is set, the default value for the respective module path component will be used.
-See [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath)
+If no value is set, the default value for the respective module path component
+will be used. See
+[about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath)
 for more details on these defaults.
 
-This setting allows environment variables to be used by embedding them between `%` characters,
-like `"%HOME%\Documents\PowerShell\Modules"`, in the same way as CMD allows.
-This syntax also applies on Linux and macOS. See below for examples.
+This setting allows environment variables to be used by embedding them between
+`%` characters, like `"%HOME%\Documents\PowerShell\Modules"`, in the same way
+as CMD allows. This syntax also applies on Linux and macOS. See below for
+examples.
 
 ```Schema
 "PSModulePath": "<ps-module-path>"
@@ -110,12 +112,11 @@ This syntax also applies on Linux and macOS. See below for examples.
 
 Where:
 
-- `<ps-module-path>` is the absolute path to a module directory.
-  For all user configurations, this is the AllUsers shared module directory.
-  For current user configurations, this is CurrentUser module directory.
+- `<ps-module-path>` is the absolute path to a module directory. For all user
+  configurations, this is the AllUsers shared module directory. For current
+  user configurations, this is CurrentUser module directory.
 
-This example shows a PSModulePath configuration for a Windows
-environment:
+This example shows a PSModulePath configuration for a Windows environment:
 
 ```json
 {
@@ -132,9 +133,9 @@ environment:
 }
 ```
 
-This example shows embedding an environment variable in a PSModulePath configuration.
-Note that using the `HOME` environment variable and the `/` directory separator,
-this will work on Windows, macOS and Linux.
+This example shows embedding an environment variable in a PSModulePath
+configuration. Note that using the `HOME` environment variable and the `/`
+directory separator, this will work on Windows, macOS and Linux.
 
 ```json
 {
@@ -142,8 +143,8 @@ this will work on Windows, macOS and Linux.
 }
 ```
 
-This example shows embedding an environment variable in a PSModulePath configuration
-that will only work on macOS and Linux:
+This example shows embedding an environment variable in a PSModulePath
+configuration that will only work on macOS and Linux:
 
 ```json
 {
@@ -153,13 +154,10 @@ that will only work on macOS and Linux:
 
 > [!NOTE]
 > PowerShell variables cannot be embedded in PSModulePath configurations.
-
-> [!NOTE]
-> PSModulePath configurations on Linux and macOS are case-sensitive.
-
-> [!NOTE]
-> A PSModulePath configuration must use valid directory separators for the platform.
-> On macOS and Linux, this means `/`. On Windows, both `/` and `\` will work.
+> PSModulePath configurations on Linux and macOS are case-sensitive. A
+> PSModulePath configuration must use valid directory separators for the
+> platform. On macOS and Linux, this means `/`. On Windows, both `/` and `\`
+> will work.
 
 ### ExperimentalFeatures
 
@@ -173,7 +171,8 @@ The default value is an empty array.
 
 Where:
 
-- `<experimental-feature-name>` is the name of an experimental feature to enable.
+- `<experimental-feature-name>` is the name of an experimental feature to
+  enable.
 
 The following example enables the **PSImplicitRemoting**
 and **PSUseAbbreviationExpansion** experimental features
@@ -196,9 +195,9 @@ For more information on experimental features, see [PowerShell RFC 29][RFC0029].
 > The configuration options in this section only apply to macOS and Linux.
 > Logging for Windows is managed by the Windows Event Viewer.
 
-PowerShell's logging on macOS and Linux can be configured
-in the PowerShell configuration file.
-For a full description of PowerShell logging for non-Windows systems, see [About Logging](./about_Logging.md).
+PowerShell's logging on macOS and Linux can be configured in the PowerShell
+configuration file. For a full description of PowerShell logging for
+non-Windows systems, see [About Logging](./about_Logging.md).
 
 ### LogIdentity
 
@@ -297,8 +296,10 @@ values as a single comma-separated string. For example:
 > [!IMPORTANT]
 > This setting can only be used in macOS and Linux.
 
-Determines which parts of PowerShell are logged. By default, all log keywords are enabled.
-To enable multiple keywords, list the values in a single comma-separated string.
+Determines which parts of PowerShell are logged. By default, all log keywords
+are enabled. To enable multiple keywords, list the values in a single
+comma-separated string.
+
 ```Schema
 "LogKeywords": "<log-keyword>,..."
 ```
@@ -356,9 +357,10 @@ This configuration has more settings explicitly set:
 - The `PSImplicitRemotingBatching` experimental feature is enabled
 
 > [!NOTE]
-> The `ExecutionPolicy` and `PSModulePath` settings here would only work on a Windows platform,
-> since the module path uses `\` and `;` separator characters
-> and the execution policy is not `Unrestricted` (the only policy allowed on UNIX-like platforms).
+> The `ExecutionPolicy` and `PSModulePath` settings here would only work on a
+> Windows platform, since the module path uses `\` and `;` separator characters
+> and the execution policy is not `Unrestricted` (the only policy allowed on
+> UNIX-like platforms).
 
 ```json
 {
