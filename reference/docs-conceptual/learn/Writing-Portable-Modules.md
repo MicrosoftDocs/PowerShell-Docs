@@ -22,13 +22,16 @@ environments need to be aware of these differences.
 PowerShell SnapIns (PSSnapIn) are not supported in PowerShell Core.
 However, it is nearly trivial to convert a PSSnapIn to a PowerShell module.
 Typically, the PSSnapIn registration code is in a single source file of a
-class that derives from [PSSnapIn](/dotnet/api/system.management.automation.pssnapin?view=powershellsdk-1.1.0).
+class that derives from [PSSnapIn](/dotnet/api/system.management.automation.pssnapin).
 Simply remove this source file from the build as it is no longer needed.
 
 Use [`New-ModuleManifest`](/powershell/module/microsoft.powershell.core/new-modulemanifest)
 to create a new module manifest that replaces the need for the PSSnapIn
 registration code.  Some of the values from the PSSnapIn (such as Description)
 can be reused within the module manifest.
+
+The `RootModule` property in the module manifest should be set to the name of
+the assembly (dll) implementing the cmdlets.
 
 ### The .NET Portability Analyzer (aka APIPort)
 
@@ -39,16 +42,16 @@ This is a tool that you can run against your compiled assembly to determine if
 the .NET APIs it is using is compatible with .NET Framework, .NET Core, and
 other .NET runtimes.
 The tool will suggest alternate APIs if they exist, otherwise you may need to
-add [runtime checks](/dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription?view=netframework-4.7.2#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription)
+add [runtime checks](/dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription)
 and restrict capabilities not available in specific runtimes.
 
 ## Creating a New Module
 
-If creating a new module, the recommendation is to use the [DotNet CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x).
+If creating a new module, the recommendation is to use the [.NET CLI](/dotnet/core/tools/?tabs=netcore2x).
 
 ### Installing the PowerShell Standard Module Template
 
-Once the DotNet CLI is installed, you can then install a template library to
+Once the .NET CLI is installed, you can then install a template library to
 generate a simple PowerShell module that is compatible with Windows PowerShell,
 PowerShell Core, Windows, Linux, and macOS.
 
@@ -95,6 +98,7 @@ In this example the sample module is called 'myModule'.
 ```powershell
 mkdir myModule
 cd myModule
+dotnet new psmodule
 ```
 
 ```output
@@ -120,7 +124,7 @@ Restore succeeded.
 
 ### Building the Module
 
-Use standard DotNet CLI commands to build the project.
+Use standard .NET CLI commands to build the project.
 
 ```powershell
 dotnet build
@@ -194,9 +198,9 @@ Framework and .NET Core versions that support that version of the .NET Standard.
 > so to verify compatibility with Windows PowerShell and PowerShell Core,
 > the best practice is to run tests for your module within both environments.
 
-Building targeting .NET Standard will help ensure at that as the module evolves,
-incompatible APIs don't accidentally get introduced and will be discovered at
-build time.
+Building targeting .NET Standard will help ensure that as the module evolves,
+incompatible APIs don't accidentally get introduced into the module and will be
+discovered at compile time and not at runtime.
 
 However, targeting .NET Standard is not *required* to have a module work with
 both Windows PowerShell and PowerShell Core as the Intermediate Language (IL)
@@ -225,10 +229,12 @@ will always be compatible with future versions of PowerShell.
 
 After validating that your module works with both Windows PowerShell and
 PowerShell Core, the module manifest should explicitly indicate compatibility
-by using the [`CompatiblePSEditions` property](https://docs.microsoft.com/en-us/powershell/gallery/concepts/module-psedition-support).
+by using the [`CompatiblePSEditions` property](/powershell/gallery/concepts/module-psedition-support).
 A value of `Desktop` means that the module is compatible with Windows
 PowerShell, while a value of `Core` means that the module is compatible
 with PowerShell Core.
+Including both `Desktop` and `Core` means that the module is compatible with
+both Windows PowerShell and PowerShell Core.
 
 > [!NOTE]
 > `Core` does not automatically mean that the module is compatible with
