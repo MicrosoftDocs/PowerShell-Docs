@@ -30,7 +30,7 @@ configuration for all PowerShell Core sessions running from that PowerShell
 Core installation.
 
 > [!NOTE]
-> The system `powershell.config.json` location is defined as
+> The `$PSHOME` location is defined as
 > the same directory as the executing System.Management.Automation.dll
 > assembly. This applies to hosted PowerShell SDK instances as well.
 
