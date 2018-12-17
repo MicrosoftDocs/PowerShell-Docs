@@ -9,21 +9,27 @@ title:  about_PowerShell_Config
 # About PowerShell Config
 
 ## SHORT DESCRIPTION
-Cross-platform configuration files for PowerShell Core.
+
+Configuration files for PowerShell Core, replacing Registry configuration.
 
 ## LONG DESCRIPTION
 
-The `powershell.config.json` file contains configuration settings for
-PowerShell Core. PowerShell loads this configuration at startup. The settings
-can also be modified at runtime. Previously, these settings were stored in the
-Windows Registry for Windows PowerShell.
+The `powershell.config.json` file contains configuration settings for PowerShell Core.
+PowerShell loads this configuration at startup.
+The settings can also be modified at runtime.
+Previously, these settings were stored in the Windows Registry for Windows PowerShell,
+but are now contained in a file to enable configuration on macOS and Linux.
 
 > [!WARNING]
-> If the `powershell.config.json` file contains invalid JSON,
-> unsupported keys, or values, PowerShell cannot start an interactive session.
+> If the `powershell.config.json` file contains invalid JSON
+> PowerShell cannot start an interactive session.
 > If this occurs, you must fix the configuration file.
 
-### System-wide configuration
+> [!NOTE]
+> Unrecognized keys or invalid values in the configuration file
+> will be silently ignored.
+
+### AllUsers (shared) configuration
 
 A `powershell.config.json` file in the `$PSHOME` directory defines the
 configuration for all PowerShell Core sessions running from that PowerShell
@@ -34,7 +40,7 @@ Core installation.
 > the same directory as the executing System.Management.Automation.dll
 > assembly. This applies to hosted PowerShell SDK instances as well.
 
-### User configurations
+### CurrentUser (per-user) configurations
 
 You can also configure PowerShell on a per-user basis by placing the file in
 the user-scope configuration directory. The user configuration directory can
@@ -75,10 +81,19 @@ In Windows, the equivalent registry keys can be found in
 `\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell` under
 `HKEY_LOCAL_MACHINE` and `HKEY_CURRENT_USER`.
 
-### ModulePath
+### PSModulePath
 
-Sets the **PSModulePath** environment variable when PowerShell starts up.
-The default value is `$env:ProgramFiles/PowerShell/Modules`.
+Overrides a PSModulePath component for this PowerShell session.
+If the configuration is for the current user, sets the CurrentUser module path.
+If the configuration is for all users, sets the AllUser module path.
+
+If no value is set, the default value for the respective module path component will be used.
+See [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath)
+for more details on these defaults.
+
+This setting allows environment variables to be used by embedding them between `%` characters,
+like `"%HOME%\Documents\PowerShell\Modules"`, in the same way as CMD allows.
+This syntax also applies on Linux and macOS. See below for examples.
 
 ```Schema
 "PSModulePath": "<ps-module-path>"
@@ -86,33 +101,56 @@ The default value is `$env:ProgramFiles/PowerShell/Modules`.
 
 Where:
 
-- `<ps-module-path>` is the **PSModulePath** value you would use for
-  `$env:PSModulePath`.
+- `<ps-module-path>` is the absolute path to a module directory.
+  For all user configurations, this is the AllUsers shared module directory.
+  For current user configurations, this is CurrentUser module directory.
 
-This examples shows a minimal PSModulePath configuration for a Windows
+This example shows a PSModulePath configuration for a Windows
 environment:
 
 ```json
 {
-  "PSModulePath": "C:\\Users\\Bruce McNamara\\PowerShell\\Modules;C:\\Program Files\\PowerShell\\6\\Modules"
+  "PSModulePath": "C:\\Program Files\\PowerShell\\6\\Modules"
 }
 ```
 
-This examples shows a minimal PSModulePath configuration for a macOS or Linux
+This example shows a PSModulePath configuration for a macOS or Linux
 environment:
 
 ```json
 {
-  "PSModulePath": "/home/me/.local/share/powershell/Modules:/opt/powershell/6/Modules"
+  "PSModulePath": "/opt/powershell/6/Modules"
+}
+```
+
+This example shows embedding an environment variable in a PSModulePath configuration.
+Note that using the `HOME` environment variable and the `/` directory separator,
+this will work on Windows, macOS and Linux.
+
+```json
+{
+  "PSModulePath": "%HOME%/Documents/PowerShell/Modules"
+}
+```
+
+This example shows embedding an environment variable in a PSModulePath configuration
+that will only work on macOS and Linux:
+
+```json
+{
+  "PSModulePath": "%XDG_CONFIG_HOME%/powershell/Modules"
 }
 ```
 
 > [!NOTE]
-> You must use the appropriate directory and path separator characters for the
-> platform. You can discover these from PowerShell:
->
-> - Directory separator character: `[System.IO.Path]::DirectorySeparatorChar`
-> - Path separator character: `[System.IO.Path]::PathSeparator`
+> PowerShell variables cannot be embedded in PSModulePath configurations.
+
+> [!NOTE]
+> PSModulePath configurations on Linux and macOS are case-sensitive.
+
+> [!NOTE]
+> A PSModulePath configuration must use valid directory separators for the platform.
+> On macOS and Linux, this means `/`. On Windows, both `/` and `\` will work.
 
 ### ExperimentalFeatures
 
