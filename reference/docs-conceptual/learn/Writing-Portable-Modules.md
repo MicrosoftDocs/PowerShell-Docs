@@ -25,7 +25,7 @@ Typically, the PSSnapIn registration code is in a single source file of a
 class that derives from [PSSnapIn](/dotnet/api/system.management.automation.pssnapin?view=powershellsdk-1.1.0).
 Simply remove this source file from the build as it is no longer needed.
 
-Use `New-ModuleManifest`(/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-6)
+Use [`New-ModuleManifest`](/powershell/module/microsoft.powershell.core/new-modulemanifest)
 to create a new module manifest that replaces the need for the PSSnapIn
 registration code.  Some of the values from the PSSnapIn (such as Description)
 can be reused within the module manifest.
