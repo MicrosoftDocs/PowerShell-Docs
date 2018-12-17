@@ -8,31 +8,30 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834943
 ---
 # Experimental Features
 
-The Experimental Features support in PowerShell is to provide a mechanism for
+The Experimental Features support in PowerShell provides a mechanism for
 experimental features to coexist with existing stable features in PowerShell
 or PowerShell modules.
 
-An experimental feature is one where the design is not finalized and available
-to users to provide feedback.  Once an experimental feature is no longer
-experimental, design changes would become breaking changes.  Experimental
-features are not intended to be used in production as changes are allowed to
-be breaking.
+An experimental feature is one where the design is not finalized. The feature
+is available for users to test and provide feedback. Once an experimental
+feature is finalized, the design changes become breaking changes. Experimental
+features aren't intended to be used in production since the changes are
+allowed to be breaking.
 
 Experimental features are disabled by default and need to be explicitly enabled
 by the user or administrator of the system.
 
 Enabled experimental features are listed in the `powershell.config.json` file
-in `$PSHOME` for all users or the user specific configuration file for a
+in `$PSHOME` for all users or the user-specific configuration file for a
 specific user.
 
 > [!NOTE]
-> If experimental features are enabled in the user configuration file, then
-> that will take precedence over any experimental features listed in the system
-> configuration file.
+> Experimental features enabled in the user configuration file take precedence
+> over experimental features listed in the system configuration file.
 
 ## Declaring Experimental Features in Modules written in C#
 
-Module authors who want to leverage the Experimental Feature flags can declare
+Module authors who want to use the Experimental Feature flags can declare
 a cmdlet as experimental by using the `Experimental` attribute:
 
 ```csharp
@@ -57,9 +56,13 @@ function Enable-SSHRemoting {
 
 ### Mutually Exclusive Experimental Features
 
-In cases where an experimental cmdlet overrides an existing cmdlet and the
-two cannot coexist side-by-side.  The use of `ExperimentAction.Hide` can allow
-only one of the two cmdlets to be enabled at one time:
+You can have an experimental cmdlet that overrides an existing cmdlet. The two
+versions can't coexist side by side. The `ExperimentAction.Hide` setting
+allows only one of the two cmdlets to be enabled at one time.
+
+In this example, we create a new experimental `Invoke-WebRequest` cmdlet.
+`InvokeWebRequestCommand` contains the non-experimental implementation.
+`InvokeWebRequestCommandV2` contains the experimental version of the cmdlet.
 
 ```csharp
 [Experimental("PSWebCmdletV2", ExperimentAction.Show)]
@@ -71,20 +74,19 @@ public class InvokeWebRequestCommandV2 : WebCmdletBaseV2 { ... }
 public class InvokeWebRequestCommand : WebCmdletBase { ... }
 ```
 
-In this example, there is a newer experimental `Invoke-WebRequest` cmdlet.
-If the `PSWebCmdletV2` experimental feature is not enabled, then the non-
-experimental `InvokeWebRequestCommand` implements the cmdlet.  However, if
-the `PSWebCmdletV2` experimental feature is enabled, then the existing
-`InvokeWebRequestCommand` implementation is hidden and the `InvokeWebRequestCommandV2`
-is available implementing `Invoke-WebRequest`.  This allows users to try out
-the new cmdlet and provide feedback while reverting to the non-experimental
-version when needed.
+When the `PSWebCmdletV2` experimental feature is enabled, the existing
+`InvokeWebRequestCommand` implementation is hidden and the
+`InvokeWebRequestCommandV2` provides the implementation of
+`Invoke-WebRequest`.
+
+This allows users to try out the new cmdlet and provide feedback then revert
+to the non-experimental version when needed.
 
 ### Experimental Parameters in Cmdlets
 
-If the experimental feature is a new set of parameters on an existing cmdlet
-rather than an entirely new cmdlet, the `Experimental` attribute can also be
-applied to parameters:
+The `Experimental` attribute can also be applied to individual parameters.
+This allows you to create an experimental set of parameters for an existing
+cmdlet rather than an entirely new cmdlet.
 
 ```csharp
 [Experimental("PSNewAddTypeCompilation", ExperimentAction.Show)]
