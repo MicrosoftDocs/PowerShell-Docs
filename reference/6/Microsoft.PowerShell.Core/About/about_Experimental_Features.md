@@ -29,7 +29,24 @@ specific user.
 > Experimental features enabled in the user configuration file take precedence
 > over experimental features listed in the system configuration file.
 
-## Declaring Experimental Features in Modules written in C#
+## The Experimental Attribute
+
+Use the `Experimental` attribute to declare some code as experimental.
+
+Use the following synxtax to declare the `Experimental` attribute providing the
+name of the experimental feature and the action to take if the experimental
+feature is enabled:
+
+```csharp
+[Experimental(NameOfExperimentalFeature, ExperimentAction)]
+```
+
+The `ExperimentAction` parameter must be specified and the only valid values are:
+
+- `Show` means to show this experimental feature if the feature is enabled
+- `Hide` means to hide this experimental feature if the feature is enabled
+
+### Declaring Experimental Features in Modules Written in C#
 
 Module authors who want to use the Experimental Feature flags can declare
 a cmdlet as experimental by using the `Experimental` attribute:
@@ -40,7 +57,7 @@ a cmdlet as experimental by using the `Experimental` attribute:
 public class InvokeWebRequestCommandV2 : WebCmdletBaseV2 { ... }
 ```
 
-## Declaring Experimental Features in Modules written in PowerShell
+### Declaring Experimental Features in Modules written in PowerShell
 
 Module written in PowerShell can also use the `Experimental` attribute to
 declare experimental cmdlets:
@@ -56,13 +73,19 @@ function Enable-SSHRemoting {
 
 ### Mutually Exclusive Experimental Features
 
-You can have an experimental cmdlet that overrides an existing cmdlet. The two
-versions can't coexist side by side. The `ExperimentAction.Hide` setting
+There are cases where an experimental feature cannot co-exist side-by-side with
+an existing feature or another experimental feature.
+
+For example, you can have an experimental cmdlet that overrides an existing cmdlet.
+The two versions can't coexist side by side. The `ExperimentAction.Hide` setting
 allows only one of the two cmdlets to be enabled at one time.
 
 In this example, we create a new experimental `Invoke-WebRequest` cmdlet.
 `InvokeWebRequestCommand` contains the non-experimental implementation.
 `InvokeWebRequestCommandV2` contains the experimental version of the cmdlet.
+
+The use of `ExperimentAction.Hide` will allow only one of the two features to be
+enabled at one time:
 
 ```csharp
 [Experimental("PSWebCmdletV2", ExperimentAction.Show)]
@@ -88,6 +111,8 @@ The `Experimental` attribute can also be applied to individual parameters.
 This allows you to create an experimental set of parameters for an existing
 cmdlet rather than an entirely new cmdlet.
 
+Here is an example in C#:
+
 ```csharp
 [Experimental("PSNewAddTypeCompilation", ExperimentAction.Show)]
 [Parameter(ParameterSet = "NewCompilation")]
@@ -98,6 +123,8 @@ public CompilationParameters CompileParameters { ... }
 public CodeDom CodeDom { ... }
 ```
 
+Here is a different example in PowerShell script:
+
 ```powershell
 param(
     [Experimental("PSNewFeature", "Show")]
@@ -106,6 +133,32 @@ param(
     [Experimental("PSNewFeature", "Hide")]
     [string] $OldName
 )
+```
+
+## Checking if an Experimental Feature is Enabled
+
+In your code, you will need to check if your experimental feature is enabled
+before taking appropriate action.
+You can determine if an experimental feature is enabled using the static
+`IsEnabled()` method on the `System.Management.Automation.ExperimentalFeature`
+class.
+
+Here is an example in C#:
+
+```csharp
+if (ExperimentalFeature.IsEnabled("MyExperimentalFeature"))
+{
+   // code specific to the experimental feature
+}
+```
+
+Here is an example in PowerShell script:
+
+```powershell
+if ([ExperimentalFeature]::IsEnabled("MyExperimentalFeature"))
+{
+  # code specific to the experimental feature
+}
 ```
 
 ## See also
