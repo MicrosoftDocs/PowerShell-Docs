@@ -96,6 +96,11 @@ Overrides a PSModulePath component for this PowerShell session. If the
 configuration is for the current user, sets the CurrentUser module path. If
 the configuration is for all users, sets the AllUser module path.
 
+> [!WARNING]
+> Configuring an AllUsers or CurrentUser module path here
+> will not change the scoped installation location for PowerShellGet modules like [Install-Module](https://docs.microsoft.com/en-us/powershell/module/powershellget/install-module).
+> These cmdlets always use the *default* module paths.
+
 If no value is set, the default value for the respective module path component
 will be used. See
 [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath)
@@ -353,7 +358,7 @@ cmdlet use. All other logging will be omitted.
 This configuration has more settings explicitly set:
 
 - Execution policy for this PowerShell installation is `AllSigned`
-- The module path is set to include three module directories
+- The CurrentUser module path is set to a module directory on a shared drive
 - The `PSImplicitRemotingBatching` experimental feature is enabled
 
 > [!NOTE]
@@ -365,7 +370,7 @@ This configuration has more settings explicitly set:
 ```json
 {
   "Microsoft.PowerShell.ExecutionPolicy": "AllSigned",
-  "PSModulePath": "C:\\Users\\Marisol Briggs\\Documents\\PowerShell\\Modules;C:\\Shared\\Modules;C:\\Program Files\\PowerShell\\6\\Modules",
+  "PSModulePath": "Z:\\Marisol's Shared Drive\\Modules",
   "ExperimentalFeatures": ["PSImplicitRemotingBatching"],
 }
 ```
@@ -374,7 +379,7 @@ This configuration has more settings explicitly set:
 
 This configuration sets a number of options that only work in macOS or Linux:
 
-- The module path contains three module directories
+- The CurrentUser module path is set to a custom module directory in `$HOME`
 - The **PSImplicitRemotingBatching** experimental feature is enabled
 - The PowerShell logging level is set to **Verbose**, for more logging
 - This PowerShell installation writes to the logs using the **home-powershell**
@@ -383,7 +388,7 @@ This configuration sets a number of options that only work in macOS or Linux:
 
 ```json
 {
-  "PSModulePath": "/home/bmcnamara/.config/powershell/Modules:/mnt/sparedrive/PowerShellModules:/opt/microsoft/powershell/Modules",
+  "PSModulePath": "%HOME%/.powershell/Modules",
   "ExperimentalFeatures": ["PSImplicitRemotingBatching"],
   "LogLevel": "Verbose",
   "LogIdentity": "home-powershell"
