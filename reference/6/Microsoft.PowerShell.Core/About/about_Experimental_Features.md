@@ -3,8 +3,7 @@ ms.date:  12/14/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
-title:  Alias Provider
-online version:  http://go.microsoft.com/fwlink/?LinkId=834943
+title:  About experimental features
 ---
 # Experimental Features
 
