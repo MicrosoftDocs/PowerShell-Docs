@@ -51,12 +51,21 @@ be found across platforms with the command
 
 ### ExecutionPolicy
 
+> [!IMPORTANT]
+> This configuration only applies on Windows platforms.
+
 Configures the execution policy for PowerShell sessions, determining what
 scripts can be run. By default, PowerShell uses the existing execution policy.
 
+For AllUsers configurations, this sets the **LocalMachine** execution policy.
+For CurrentUser configurations, this sets the **CurrentUser** execution policy.
+
 > [!NOTE]
 > The [`Set-ExecutionPolicy`](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
-> cmdlet modifies this setting in the configuration file.
+> cmdlet modifies this setting in the AllUsers configuration file
+> when invoked with `-Scope LocalMachine`,
+> and modifies this setting in the CurrentUser configuration file
+> when invoked with `-Scope CurrentUser`.
 
 ```Schema
 "<shell-id>:ExecutionPolicy": "<execution-policy>"
