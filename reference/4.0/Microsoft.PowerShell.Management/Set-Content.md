@@ -123,16 +123,20 @@ Accept wildcard characters: False
 Specifies the file encoding.
 The acceptable values for this parameter are:
 
-- **ASCII** Uses the encoding for the ASCII (7-bit) character set.
-- **BigEndianUnicode** Encodes in UTF-16 format using the big-endian byte order.
+- **Unknown** Same as **Unicode**.
+- **String** Same as **Unicode**.
+- **Unicode** Uses UTF-16 with the little-endian byte order.
 - **Byte** Encodes a set of characters into a sequence of bytes.
-- **String** Uses the encoding type for a string.
-- **Unicode** Encodes in UTF-16 format using the little-endian byte order.
-- **UTF7** Encodes in UTF-7 format.
-- **UTF8** Encodes in UTF-8 format.
-- **Unknown** The encoding type is unknown or invalid; the data can be treated as binary.
+- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
+- **UTF8** Uses UTF-8.
+- **UTF7** Uses UTF-7.
+- **UTF32** Uses UTF-32 with the little-endian byte order.
+- **ASCII** Uses ASCII (7-bit) character set.
+- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Oem** Uses the encoding that corresponds to the system's current OEM code page.
+- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
 
-The default value is ASCII.
+The default value is **Default**.
 
 Encoding is a dynamic parameter that the FileSystem provider adds to `Set-Content`.
 This parameter works only in file system drives.
