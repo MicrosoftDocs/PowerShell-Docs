@@ -17,9 +17,9 @@ Formats the output as a table.
 ## SYNTAX
 
 ```
-Format-Table [-AutoSize] [-HideTableHeaders] [-Wrap] [[-Property] <Object[]>] [-GroupBy <Object>]
- [-View <String>] [-ShowError] [-DisplayError] [-Force] [-Expand <String>] [-InputObject <PSObject>]
- [<CommonParameters>]
+Format-Table [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap] [[-Property] <Object[]>]
+ [-GroupBy <Object>] [-View <String>] [-ShowError] [-DisplayError] [-Force] [-Expand <String>]
+ [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -337,6 +337,23 @@ Accept wildcard characters: False
 ### -Wrap
 Displays text that exceeds the column width on the next line.
 By default, text that exceeds the column width is truncated.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RepeatHeader
+Repeats displaying the header of a table after every screen full.
+This is most useful when the output is piped to a pager such as `less` or
+`more` or paging and using a screen reader.
 
 ```yaml
 Type: SwitchParameter
