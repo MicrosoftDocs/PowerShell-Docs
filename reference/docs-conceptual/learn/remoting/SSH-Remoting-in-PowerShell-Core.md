@@ -30,13 +30,14 @@ a password. You can also, use SSH key authentication using a private key file wi
 
 ## General setup information
 
-SSH must be installed on all machines. Install both the SSH client (`ssh.exe`) and
-server (`sshd.exe`) so that you can remote to and from the machines. For Windows, install
-[Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).
-For Linux, install SSH (including sshd server) appropriate to your platform. You also need to
-install PowerShell Core from GitHub to get the SSH remoting feature. The SSH server must be
-configured to create an SSH subsystem to host a PowerShell process on the remote machine. You also
-must configure enable password or key-based authentication.
+SSH must be installed on all machines. Install both the SSH client (`ssh.exe`) and server
+(`sshd.exe`) so that you can remote to and from the machines. OpenSSH for Windows is now availabe
+in Windows 10 build 1809 and Windows Server 2019. For more information, see
+[OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview). For Linux, install
+SSH (including sshd server) appropriate to your platform. You also need to install PowerShell Core
+from GitHub to get the SSH remoting feature. The SSH server must be configured to create an SSH
+subsystem to host a PowerShell process on the remote machine. You also must configure enable
+password or key-based authentication.
 
 ## Set up on Windows Machine
 
@@ -53,8 +54,9 @@ must configure enable password or key-based authentication.
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Install the latest [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) build from GitHub using the [installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instructions
-3. Edit the sshd_config file located at `%ProgramData%\ssh`.
+2. Install the latest Win32 OpenSSH. For installation instructions, see
+   [Installation of OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
+3. Edit the `sshd_config` file located at `%ProgramData%\ssh`.
 
    - Make sure password authentication is enabled
 
@@ -328,6 +330,6 @@ The sudo command doesn't work in remote session to Linux machine.
 
 [PowerShell Core for MacOS](../../install/installing-powershell-core-on-macos.md)
 
-[Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
+[OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
