@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 12/19/2018
 online version: http://go.microsoft.com/fwlink/?LinkId=821775
 schema: 2.0.0
 title: Format-Table
@@ -90,8 +90,8 @@ your own format.ps1xml files with customized views.
 Get-Service | Format-Table -Property Name, DependentServices
 ```
 
-This command displays all of the services on the computer in a table with two columns, Name and
-DependentServices. The `Get-Service` cmdlet gets all of the services on the computer. The pipeline
+This command displays all of the services on the computer in a table with two columns, **Name** and
+**DependentServices**. The `Get-Service` cmdlet gets all of the services on the computer. The pipeline
 operator (|) sends the results to the `Format-Table` cmdlet, which formats the output in a table.
 The **Property** parameter specifies the properties that appear in the table as columns. The name
 of the **Property** parameter is optional, so you can omit it, for example

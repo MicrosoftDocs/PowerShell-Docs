@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 12/19/2018
 online version: http://go.microsoft.com/fwlink/?LinkId=821774
 schema: 2.0.0
 title: Format-List
@@ -235,6 +235,7 @@ the ShowError parameter with an expression.
 
 ```powershell
 Get-Date | Format-List DayOfWeek,{ $_ / $null } -ShowError
+
 DayOfWeek  $_ / $null
 --------- ------------
 Wednesday
