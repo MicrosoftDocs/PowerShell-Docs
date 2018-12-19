@@ -8,7 +8,7 @@ title:  DSC WaitForAny Resource
 
 > Applies To: Windows PowerShell 5.1 and later
 
-The **WaitForSome** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](configurations.md)
+The **WaitForSome** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](../../configurations/configurations.md)
 to specify dependencies on configurations on other nodes.
 
 This resource succeeds if the resource specified by the **ResourceName** property is in the desired state on any target nodes defined in the **NodeName** property.
@@ -42,4 +42,4 @@ WaitForAny [string] #ResourceName
 
 ## Example
 
-For an example of how to use this resource, see [Specifying cross-node dependencies](crossNodeDependencies.md)
+For an example of how to use this resource, see [Specifying cross-node dependencies](../../configurations/crossNodeDependencies.md)

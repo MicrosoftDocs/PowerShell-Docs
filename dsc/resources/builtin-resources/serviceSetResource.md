@@ -10,7 +10,7 @@ title:  DSC ServiceSet Resource
 
 
 The **ServiceSet** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on the target node. This resource is a
-[composite resource](authoringResourceComposite.md) that calls the [Service resource](serviceResource.md) for each service specified in the `Name` property.
+[composite resource](../authoringResourceComposite.md) that calls the [Service resource](serviceResource.md) for each service specified in the `Name` property.
 
 Use this resource when you want to configure a number of services to the same state.
 

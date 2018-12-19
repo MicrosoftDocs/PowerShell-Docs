@@ -8,7 +8,7 @@ title:  DSC WaitForAll Resource
 
 > Applies To: Windows PowerShell 5.0 and later
 
-The **WaitForAll** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](configurations.md)
+The **WaitForAll** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](../../configurations/configurations.md)
 to specify dependencies on configurations on other nodes.
 
 This resource succeeds if the resource specified by the **ResourceName** property is in the desired state on all target nodes defined in the **NodeName** property.
@@ -42,4 +42,4 @@ WaitForAll [string] #ResourceName
 
 ## Example
 
-For an example of how to use this resource, see [Specifying cross-node dependencies](crossNodeDependencies.md)
+For an example of how to use this resource, see [Specifying cross-node dependencies](../../configurations/crossNodeDependencies.md)

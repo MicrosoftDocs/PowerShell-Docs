@@ -9,7 +9,7 @@ title:  DSC GroupSet Resource
 > Applies To: Windows PowerShell 5.0
 
 The **GroupSet** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on the target node. This resource is a
-[composite resource](authoringResourceComposite.md) that calls the [Group resource](groupResource.md) for each group specified in the `GroupName` parameter.
+[composite resource](../authoringResourceComposite.md) that calls the [Group resource](groupResource.md) for each group specified in the `GroupName` parameter.
 
 Use this resource when you want to add and/or remove the same list of members to more than one group, remove more than one group, or add more than one group with the same list of members.
 
@@ -72,5 +72,5 @@ $cd = @{
 GroupSetTest -ConfigurationData $cd
 ```
 
-> [!NOTE] 
-> This example uses plaintext credentials for simplicity. For information about how to encrypt credentials in the configuration MOF file, see [Securing the MOF File](secureMOF.md).
+> [!NOTE]
+> This example uses plaintext credentials for simplicity. For information about how to encrypt credentials in the configuration MOF file, see [Securing the MOF File](../../pull-server/secureMOF.md).

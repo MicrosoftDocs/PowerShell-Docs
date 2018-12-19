@@ -9,7 +9,7 @@ title:  DSC WindowsOptionalFeatureSet Resource
 > Applies To: Windows PowerShell 5.0
 
 The **WindowsOptionalFeatureSet** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that optional features are enabled on a target node.
-This resource is a [composite resource](authoringResourceComposite.md) that calls the [WindowsOptionalFeature resource](windowsOptionalFeatureResource.md) for each feature specified in
+This resource is a [composite resource](../authoringResourceComposite.md) that calls the [WindowsOptionalFeature resource](windowsOptionalFeatureResource.md) for each feature specified in
 the `Name` property.
 
 Use this resource when you want to configure a number of Windows optional features to the same state.
