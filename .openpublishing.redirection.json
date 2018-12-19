@@ -912,7 +912,7 @@
         {
             "source_path": "reference/docs-conceptual/core-powershell/console-guide.md",
             "redirect_url": "/powershell/scripting/core-powershell/console/powershell.exe-command-line-help",
-            "redirect_document_id": "True"
+            "redirect_document_id": false
         },
         {
             "source_path": "reference/docs-conceptual/core-powershell/console/powershell.exe-command-line-help.md",
