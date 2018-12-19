@@ -68,6 +68,53 @@
           href: configurations/crossNodeDependencies.md
 - name: Resources
   items:
+  - name: Built-in resources
+    href: resources/builtin-resources/builtInResource.md
+    items:
+    - name: Archive Resource
+      href: resources/builtin-resources/archiveResource.md
+    - name: Environment Resource
+      href: resources/builtin-resources/environmentResource.md
+    - name: File Resource
+      href: resources/builtin-resources/fileResource.md
+    - name: Group Resource
+      href: resources/builtin-resources/groupResource.md
+    - name: GroupSet Resource
+      href: resources/builtin-resources/groupSetResource.md
+    - name: Log Resource
+      href: resources/builtin-resources/logResource.md
+    - name: Package Resource
+      href: resources/builtin-resources/packageResource.md
+    - name: ProcessSet Resource
+      href: resources/builtin-resources/processSetResource.md
+    - name: Registry Resource
+      href: resources/builtin-resources/registryResource.md
+    - name: Script Resource
+      href: resources/builtin-resources/scriptResource.md
+    - name: Service Resource
+      href: resources/builtin-resources/serviceResource.md
+    - name: ServiceSet Resource
+      href: resources/builtin-resources/serviceSetResource.md
+    - name: User Resource
+      href: resources/builtin-resources/userResource.md
+    - name: WaitForAllResource
+      href: resources/builtin-resources/waitForAllResource.md
+    - name: WaitForAnyResource
+      href: resources/builtin-resources/waitForAnyResource.md
+    - name: WaitForSomeResource
+      href: resources/builtin-resources/waitForSomeResource.md
+    - name: WindowsFeature Resource
+      href: resources/builtin-resources/windowsfeatureResource.md
+    - name: WindowsFeatureSet Resource
+      href: resources/builtin-resources/windowsFeatureSetResource.md
+    - name: WindowsOptionalFeature Resource
+      href: resources/builtin-resources/windowsOptionalFeatureResource.md
+    - name: WindowsOptionalFeatureSet Resource
+      href: resources/builtin-resources/windowsOptionalFeatureSetResource.md
+    - name: WindowsPackageCab Resource
+      href: resources/builtin-resources/windowsPackageCabResource.md
+    - name: WindowsProcess Resource
+      href: resources/builtin-resources/windowsProcessResource.md
   - name: Concepts
     items:
     - name: What are Resources?
