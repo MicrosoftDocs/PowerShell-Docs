@@ -169,10 +169,8 @@ Accept wildcard characters: False
 
 ### -DisplayError
 
-Indicates that the cmdlet displays errors at the command line. This parameter is rarely used, but
-can be used as a debugging aid when you are formatting expressions in a `Format-Table` command, and
-the expressions do not appear to be working. The following shows an example of the results of
-adding the DisplayError parameter with an expression.
+Indicates that the cmdlet displays errors at the command line. The following shows an example of
+the results of adding the DisplayError parameter with an expression.
 
 ```powershell
 Get-Date | Format-Table DayOfWeek,{ $_ / $null } -DisplayError
@@ -181,6 +179,9 @@ DayOfWeek  $_ / $null
 --------- ------------
 Wednesday #ERR
 ```
+
+This parameter is rarely used, but can be used as a debugging aid when you are formatting
+expressions in a `Format-Table` command, and the expressions do not appear to be working.
 
 ```yaml
 Type: SwitchParameter
@@ -329,10 +330,8 @@ Accept wildcard characters: False
 
 ### -ShowError
 
-Sends errors through the pipeline. This parameter is rarely used, but can be used as a debugging
-aid when you are formatting expressions in a `Format-Table` command, and the expressions do not
-appear to be working. The following shows an example of the results of adding the **ShowError**
-parameter with an expression.
+Sends errors through the pipeline. The following shows an example of the results of adding the
+**ShowError** parameter with an expression.
 
 ```powershell
 Get-Date | Format-Table DayOfWeek,{ $_ / $null } -ShowError
@@ -345,6 +344,9 @@ Failed to evaluate expression " $_ / $null ".
 + FullyQualifiedErrorId : PSPropertyExpressionError
 
 ```
+
+This parameter is rarely used, but can be used as a debugging aid when you are formatting
+expressions in a `Format-Table` command, and the expressions do not appear to be working.
 
 ```yaml
 Type: SwitchParameter

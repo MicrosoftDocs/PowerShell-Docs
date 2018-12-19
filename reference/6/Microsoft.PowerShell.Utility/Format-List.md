@@ -91,10 +91,8 @@ display.
 
 ### -DisplayError
 
-Indicates that this cmdlet displays errors at the command line. This parameter is rarely used, but
-can be used as a debugging aid when you are formatting expressions in a `Format-List` command, and
-the expressions do not appear to be working. The following shows an example of the results of
-adding the **DisplayError** parameter with an expression.
+Indicates that this cmdlet displays errors at the command line. The following shows an example of
+the results of adding the **DisplayError** parameter with an expression.
 
 ```powershell
 PS C:\> Get-Date | Format-List DayOfWeek, { $_ / $null } -DisplayError
@@ -103,6 +101,9 @@ PS C:\> Get-Date | Format-List DayOfWeek, { $_ / $null } -DisplayError
 DayOfWeek    : Monday
  $_ / $null  : #ERR
 ```
+
+This parameter is rarely used, but can be used as a debugging aid when you are formatting
+expressions in a `Format-List` command, and the expressions do not appear to be working.
 
 ```yaml
 Type: SwitchParameter
@@ -228,10 +229,8 @@ Accept wildcard characters: False
 
 ### -ShowError
 
-Indicates that the cmdlet sends errors through the pipeline. This parameter is rarely used, but can
-be used as a debugging aid when you are formatting expressions in a `Format-List` command, and the
-expressions do not appear to be working. The following shows an example of the results of adding
-the ShowError parameter with an expression.
+Indicates that the cmdlet sends errors through the pipeline. The following shows an example of the
+results of adding the ShowError parameter with an expression.
 
 ```powershell
 Get-Date | Format-List DayOfWeek,{ $_ / $null } -ShowError
@@ -244,6 +243,9 @@ Failed to evaluate expression " $_ / $null ".
     + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
     + FullyQualifiedErrorId : mshExpressionError
 ```
+
+This parameter is rarely used, but can be used as a debugging aid when you are formatting
+expressions in a `Format-List` command, and the expressions do not appear to be working.
 
 ```yaml
 Type: SwitchParameter
