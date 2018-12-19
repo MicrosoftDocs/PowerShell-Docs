@@ -9,7 +9,8 @@ title:  Writing Portable Modules
 Windows PowerShell is written for [.NET Framework][] while PowerShell Core is written for
 [.NET Core][]. Portable modules are modules that work in both Windows PowerShell and PowerShell
 Core. While .NET Framework and .NET Core are highly compatible, there are differences in the
-available APIs between the two. Modules intended to be used in both environments need to be aware
+available APIs between the two. There are also differences in the APIs available in Windows
+PowerShell and PowerShell Core. Modules intended to be used in both environments need to be aware
 of these differences.
 
 ## Porting an Existing Module
@@ -44,6 +45,8 @@ If creating a new module, the recommendation is to use the [.NET CLI][].
 
 Once the .NET CLI is installed, install a template library to generate a simple PowerShell module.
 The module will be compatible with Windows PowerShell, PowerShell Core, Windows, Linux, and macOS.
+
+The following example shows how to install the template:
 
 ```powershell
 dotnet new -i Microsoft.PowerShell.Standard.Module.Template
@@ -175,12 +178,13 @@ The following sections describe in detail some of the technologies used by this 
 
 [.NET Standard][] is a formal specification of .NET APIs that are available in all .NET
 implementations. Managed code targeting .NET Standard works with the .NET Framework and .NET Core
-versions that support that version of the .NET Standard.
+versions that are compatible with that version of the .NET Standard.
 
 > [!NOTE]
 > Although an API may exist in .NET Standard, the API implementation in .NET Core may throw a
 > `PlatformNotSupportedException` at runtime, so to verify compatibility with Windows PowerShell
 > and PowerShell Core, the best practice is to run tests for your module within both environments.
+> Also run tests on Linux and macOS if your module is intended to be cross-platform.
 
 Targeting .NET Standard helps ensure that, as the module evolves, incompatible APIs don't
 accidentally get introduced into the module. Incompatibilities are discovered at compile time
@@ -188,7 +192,9 @@ instead of runtime.
 
 However, it isn't required to target .NET Standard for a module to work with both Windows
 PowerShell and PowerShell Core, as long as you use compatible APIs. The Intermediate Language (IL)
-is compatible between the two runtimes.
+is compatible between the two runtimes so you can target .NET Framework 4.6.1 which is compatible
+with .NET Standard 2.0 and if you don't use APIs outside of .NET Standard 2.0, then your module
+will work as-is (without recompilation) with PowerShell Core 6.
 
 ## PowerShell Standard Library
 
@@ -222,7 +228,7 @@ First, validate that your module works on Linux and macOS. Next, indicate compat
 operating systems in the module manifest. This makes it easier for users to find your module for
 their operating system when published to the [PowerShell Gallery][].
 
-Within the module manifest, the `PrivateData` property has a `PSData` subproperty. The optional
+Within the module manifest, the `PrivateData` property has a `PSData` sub-property. The optional
 `Tags` property of `PSData` takes an array of values that show up in PowerShell Gallery. The
 PowerShell Gallery supports the following compatibility values:
 
@@ -248,7 +254,7 @@ Example:
     ClrVersion = "4.0"
     RootModule = "PackageManagement.psm1"
     Description = 'PackageManagement (a.k.a. OneGet) is a new way to discover and install software packages from around the web.
- It is a manager or multiplexor of existing package managers (also called package providers) that unifies Windows package management with a single Windows PowerShell interface. With PackageManagement, you can do the following.
+ It is a manager or multiplexer of existing package managers (also called package providers) that unifies Windows package management with a single Windows PowerShell interface. With PackageManagement, you can do the following.
   - Manage a list of software repositories in which packages can be searched, acquired and installed
   - Discover software packages
   - Seamlessly install, uninstall, and inventory packages from one or more software repositories'
