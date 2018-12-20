@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 12/19/2018
 online version: http://go.microsoft.com/fwlink/?LinkId=821772
 schema: 2.0.0
 title: Format-Custom
@@ -22,31 +22,39 @@ Format-Custom [[-Property] <Object[]>] [-Depth <Int32>] [-GroupBy <Object>] [-Vi
 ```
 
 ## DESCRIPTION
+
 The `Format-Custom` cmdlet formats the output of a command as defined in an alternate view.
-`Format-Custom` is designed to display views that are not just tables or just lists.
-You can use the views defined in the *format.PS1XML files in the PowerShell directory, or you can create your own views in new PS1XML files and use the Update-FormatData cmdlet to add them to PowerShell.
+`Format-Custom` is designed to display views that are not just tables or just lists. You can use
+the views defined in the *format.PS1XML files in the PowerShell directory, or you can create your
+own views in new PS1XML files and use the Update-FormatData cmdlet to add them to PowerShell.
 
 ## EXAMPLES
 
 ### Example 1: Format output with a custom view
+
 ```powershell
-PS C:\> Get-Command Start-Transcript | Format-Custom -View MyView
+Get-Command Start-Transcript | Format-Custom -View MyView
 ```
 
-This command formats information about the `Start-Transcript` cmdlet in the format defined by the MyView view, a custom view created by the user.
-To run this command successfully, you must first create a new PS1XML file, define the MyView view, and then use the Update-FormatData command to add the PS1XML file to PowerShell.
+This command formats information about the `Start-Transcript` cmdlet in the format defined by the
+MyView view, a custom view created by the user. To run this command successfully, you must first
+create a new PS1XML file, define the *MyView* view, and then use the `Update-FormatData` command to
+add the PS1XML file to PowerShell.
 
 ### Example 2: Format output with the default view
+
 ```powershell
-PS C:\> Get-Process Winlogon | Format-Custom
+Get-Process Winlogon | Format-Custom
 ```
 
 This command formats information about the Winlogon process in an alternate customized view.
-Because the command does not use the **View** parameter, `Format-Custom` uses a default custom view to format the data.
+Because the command does not use the **View** parameter, `Format-Custom` uses a default custom view
+to format the data.
 
 ## PARAMETERS
 
 ### -Depth
+
 Specifies the number of columns in the display.
 
 ```yaml
@@ -62,17 +70,22 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayError
-Displays errors at the command line.
-This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a Format-Custom command, and the expressions do not appear to be working.
-The following shows an example of the results of adding the **DisplayError** parameter with an expression.
 
+Displays errors at the command line. The following shows an example of the results of adding the
+**DisplayError** parameter with an expression.
 
-
-PS \> Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -DisplayError
+```powershell
+Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -DisplayError
 
 DayOfWeek  $_ / $null
 --------- ------------
-Wednesday #ERR```yaml
+Wednesday #ERR
+```
+
+This parameter is rarely used, but can be used as a debugging aid when you are formatting
+expressions in a `Format-Custom` command, and the expressions do not appear to be working.
+
+```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -85,9 +98,10 @@ Accept wildcard characters: False
 ```
 
 ### -Expand
-Formats the collection object, as well as the objects in the collection.
-This parameter is designed to format objects that support the ICollection (System.Collections) interface.
-The default value is **EnumOnly**.
+
+Formats the collection object, as well as the objects in the collection. This parameter is designed
+to format objects that support the ICollection (System.Collections) interface. The default value is
+**EnumOnly**.
 
 Valid values are:
 
@@ -109,9 +123,10 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Directs the cmdlet to display all of the error information.
-Use with the DisplayError or ShowError parameters.
-By default, when an error object is written to the error or display streams, only some of the error information is displayed.
+
+Directs the cmdlet to display all of the error information. Use with the **DisplayError** or
+**ShowError** parameters. By default, when an error object is written to the error or display
+streams, only some of the error information is displayed.
 
 ```yaml
 Type: SwitchParameter
@@ -126,12 +141,12 @@ Accept wildcard characters: False
 ```
 
 ### -GroupBy
-Formats the output in groups based on a shared property or value.
-Enter an expression or a property of the output.
 
-The value of the GroupBy parameter can be a new calculated property.
-To create a calculated, property, use a hash table.
-Valid keys are:
+Formats the output in groups based on a shared property or value. Enter an expression or a property
+of the output.
+
+The value of the GroupBy parameter can be a new calculated property. To create a calculated,
+property, use a hash table. Valid keys are:
 
 - Name (or Label) \<string\>
 - Expression \<string\> or \<script block\>
@@ -150,8 +165,9 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Specifies the objects to be formatted.
-Enter a variable that contains the objects or type a command or expression that gets the objects.
+
+Specifies the objects to be formatted. Enter a variable that contains the objects or type a command
+or expression that gets the objects.
 
 ```yaml
 Type: PSObject
@@ -166,16 +182,16 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies the object properties that appear in the display and the order in which they appear.
 Wildcards are permitted.
 
-If you omit this parameter, the properties that appear in the display depend on the object being displayed.
-The parameter name ("Property") is optional.
-You cannot use the Property and View parameters in the same command.
+If you omit this parameter, the properties that appear in the display depend on the object being
+displayed. The parameter name ("Property") is optional. You cannot use the **Property** and
+**View** parameters in the same command.
 
-The value of the Property parameter can be a new calculated property.
-To create a calculated property, use a hash table.
-Valid keys are:
+The value of the Property parameter can be a new calculated property. To create a calculated
+property, use a hash table. Valid keys are:
 
 - Expression \<string\> or \<script block\>
 - Depth \<int32\>
@@ -193,12 +209,11 @@ Accept wildcard characters: False
 ```
 
 ### -ShowError
-Sends errors through the pipeline.
-This parameter is rarely used, but can be used as a debugging aid when you are formatting expressions in a Format-Custom command, and the expressions do not appear to be working.
-The following shows an example of the results of adding the **ShowError** parameter with an expression.
 
+Sends errors through the pipeline. The following shows an example of the results of adding the
+**ShowError** parameter with an expression.
 
-
+```powershell
 PS \> Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -ShowError
 DayOfWeek  $_ / $null
 --------- ------------
@@ -206,7 +221,13 @@ Wednesday
 
 Failed to evaluate expression " $_ / $null ".
     + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
-    + FullyQualifiedErrorId : mshExpressionError```yaml
+    + FullyQualifiedErrorId : mshExpressionError
+```
+
+This parameter is rarely used, but can be used as a debugging aid when you are formatting
+expressions in a `Format-Custom` command, and the expressions do not appear to be working.
+
+```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -219,9 +240,10 @@ Accept wildcard characters: False
 ```
 
 ### -View
-Specifies the name of an alternate format or "view."
-If you omit this parameter, `Format-Custom` uses a default custom view.
-You cannot use the Property and View parameters in the same command.
+
+Specifies the name of an alternate format or "view." If you omit this parameter, `Format-Custom`
+uses a default custom view. You cannot use the **Property** and **View** parameters in the same
+command.
 
 ```yaml
 Type: String
@@ -236,7 +258,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -252,13 +278,14 @@ You can pipe any object to Format-Custom.
 
 ## NOTES
 
-`Format-Custom` is designed to display views that are not just tables or just lists. To display an alternate table view, use Format-Table. To display an alternate list view, use Format-List.
+`Format-Custom` is designed to display views that are not just tables or just lists. To display an
+alternate table view, use `Format-Table`. To display an alternate list view, use `Format-List`.
 
-You can also refer to `Format-Custom` by its built-in alias, "fc".
-For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+You can also refer to `Format-Custom` by its built-in alias, "fc". For more information, see
+[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
-The **GroupBy** parameter assumes that the objects are sorted.
-Before using `Format-Custom` to group the objects, use `Sort-Object` to sort them.
+The **GroupBy** parameter assumes that the objects are sorted. Before using `Format-Custom` to
+group the objects, use `Sort-Object` to sort them.
 
 ## RELATED LINKS
 
