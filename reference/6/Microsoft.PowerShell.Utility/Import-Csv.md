@@ -111,7 +111,7 @@ This example shows how to use the **UseCulture** parameter of the `Import-Csv` c
 
 In this example the processes are exported to a file that uses the culture as a delimiter. The next command imports the objects in the Processes.csv file into the `$P` variable. The **UseCulture** parameter directs `Import-Csv` to use the list separator defined for the current culture.
 
-The `Get-Culture` cmdlet displays the list separator for the current culture. A [method][method] is used to get the current culture's **TextInfo** property and the **ListSeparator** property. In this example, the command returns a comma.
+The `Get-Culture` cmdlet displays the list separator for the current culture. A [method](../Microsoft.PowerShell.Core/About/about_Methods.md) is used to get the current culture's **TextInfo** property and the **ListSeparator** property. In this example, the command returns a comma.
 
 ### Example 4: Change property names in an imported object
 ```powershell
@@ -422,7 +422,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][commonparms].
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -454,9 +454,3 @@ In the CSV file, each object is represented by a comma-separated list of the pro
 [Export-Csv](Export-Csv.md)
 
 [Get-Culture](Get-Culture.md)
-
-
-<!--Reference links-->
-[method]: ../Microsoft.PowerShell.Core/About/about_Methods.md
-
-[commonparms]: ../Microsoft.PowerShell.Core/About/about_CommonParameters.md
