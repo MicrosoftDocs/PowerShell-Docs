@@ -47,8 +47,8 @@
       href: learn/understanding-the-powershell-pipeline.md
     - name: More PowerShell learning
       href: learn/more-powershell-learning.md
-    - name: Glossary
-      href: learn/windows-powershell-glossary.md
+    - name: Writing portable modules
+      href: learn/writing-portable-modules.md
     - name: Running remote commands
       href: learn/remoting/running-remote-commands.md
       items:
@@ -60,6 +60,8 @@
           href: learn/remoting/winrmsecurity.md
         - name: Making the second hop in PowerShell Remoting
           href: learn/remoting/ps-remoting-second-hop.md
+    - name: Glossary
+      href: learn/windows-powershell-glossary.md
 - name: Components
   href: ''
   items:
