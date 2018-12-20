@@ -121,19 +121,20 @@ The resulting object has the **MoreData** and **StateInfo** properties, as speci
 
 ### Example 4: Convert CSV strings of service objects
 ```powershell
-$Services = (Get-Service | ConvertTo-Csv)
 (Get-Culture).TextInfo.ListSeparator
+$Services = (Get-Service | ConvertTo-Csv)
 ConvertFrom-Csv -InputObject $Services -UseCulture
 ```
 
-The command uses the `ConvertFrom-Csv` cmdlet to convert CSV strings of service objects that were converted by the `ConvertTo-Csv` cmdlet.
-The command uses the **UseCulture** parameter to direct `ConvertFrom-Csv` to use the delimiter (list separator) of the current culture.
+This example shows how to use the `ConvertFrom-Csv` cmdlet with the **UseCulture** parameter.
 
-The `Get-Culture` cmdlet is used to verify the list separator, before running the `ConvertFrom-Csv` command.
+The `Get-Culture` cmdlet displays the list separator for the current culture. A [method](../Microsoft.PowerShell.Core/About/about_Methods.md) is used to get the current culture's **TextInfo** property and the **ListSeparator** property.
 
-When using the **UseCulture** parameter, be sure that the list separator of the current culture matches the delimiter used in the CSV strings.
-Otherwise, `ConvertFrom-Csv` cannot generate objects from the CSV strings.
+The next command uses the `Get-Service` cmdlet and a pipeline operator (|) to send the results to `ConvertTo-Csv`. The CSV strings are stored in the `$Services` variable.
 
+The `ConvertFrom-Csv` uses the **InputObject** parameter to to convert the CSV strings stored in the `$Services` variable. The **UseCulture** parameter uses the default list separator of the current culture setting.
+
+When the **UseCulture** parameter is used, be sure that the list separator of the current culture matches the delimiter used in the CSV strings. Otherwise, `ConvertFrom-Csv` cannot generate objects from the CSV strings.
 
 ## PARAMETERS
 
@@ -164,7 +165,7 @@ The column header determines the property names of the objects created by `Conve
 
 Enter column headers as a comma-separated list. Do not enclose the header string in quotation marks.
 
-Enclose each item in quotation marks (single or double).
+Enclose each column header in quotation marks (single or double).
 
 If you enter fewer column headers than there are data columns, the remaining data columns are discarded.
 
@@ -224,7 +225,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 This cmdlet supports the common parameters: 
--Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 
 ## INPUTS

@@ -102,16 +102,16 @@ When importing, the `Import-Csv` file uses the **Delimiter** parameter to indica
 
 ### Example 3: Specify the current culture for the delimiter
 ```powershell
-Get-Process | Export-Csv -Path .\Processes.csv -UseCulture
-$P = Import-Csv -Path .\Processes.csv -UseCulture
 (Get-Culture).TextInfo.ListSeparator
+Get-Process | Export-Csv -Path .\Processes.csv -UseCulture
+Import-Csv -Path .\Processes.csv -UseCulture
 ```
 
-This example shows how to use the **UseCulture** parameter of the `Import-Csv` cmdlet.
+This example shows how to use the `Import-Csv` cmdlet with the **UseCulture** parameter.
 
-In this example the processes are exported to a file that uses the culture as a delimiter. The next command imports the objects in the Processes.csv file into the `$P` variable. The **UseCulture** parameter directs `Import-Csv` to use the list separator defined for the current culture.
+The `Get-Culture` cmdlet displays the list separator for the current culture. A [method](../Microsoft.PowerShell.Core/About/about_Methods.md) is used to get the current culture's **TextInfo** property and the **ListSeparator** property.
 
-The `Get-Culture` cmdlet displays the list separator for the current culture. A [method](../Microsoft.PowerShell.Core/About/about_Methods.md) is used to get the current culture's **TextInfo** property and the **ListSeparator** property. In this example, the command returns a comma.
+`Get-Process` uses a pipeline operator (|) to send the processes to `Export-Csv` that saves the results in the Processes.csv file and uses the culture as a delimiter. The `Import-Csv` cmdlet imports the objects in the Processes.csv file. The **UseCulture** parameter uses the default list separator of the current culture setting.
 
 ### Example 4: Change property names in an imported object
 ```powershell
