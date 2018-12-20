@@ -1,5 +1,5 @@
 ---
-ms.date:  11/27/2018
+ms.date:  12/14/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell
@@ -18,7 +18,7 @@ PowerShell logs details of PowerShell operations, such as starting and
 stopping the engine and starting and stopping providers. It will also log
 details about PowerShell commands.
 
-## Viewing the PowerShell event log on Windows
+## Viewing the PowerShell event log entries on Windows
 
 PowerShell logs can be viewed using the Event Viewer. The event log is located
 in the Application and Services Logs group and is named
@@ -39,7 +39,7 @@ to the `Microsoft-Windows-PowerShell/Operational` log:
 
 ## Enabling Script Block Logging
 
-Any new PowerShell session will pickup the new setting after making one of the
+Any new PowerShell session will pick up the new setting after making one of the
 following changes.
 
 > [!NOTE]
@@ -94,7 +94,7 @@ separate.
 
 Your public key can be shared widely, and is not sensitive data. If any
 content is encrypted with this public key, only your private key can decrypt
-it. For more information about Public Key Cryptography, see 
+it. For more information about Public Key Cryptography, see
 [Wikipedia - Public Key Cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
 When you implement a protected event logging policy, you deploy a public key
@@ -113,12 +113,12 @@ which you can provide in one of several forms:
 - The content of a base-64 encoded X.509 certificate (for example, as offered
   by the `Export` option in Certificate Manager)
 - The thumbprint of a certificate that can be found in the Local Machine
-  certificate store (usually deployed by PKI infrastructure)
+  certificate store (can be deployed by PKI infrastructure)
 - The full path to a certificate (can be local, or a remote share)
 - The path to a directory containing a certificate or certificates (can be
   local, or a remote share)
 - The subject name of a certificate that can be found in the Local Machine
-  certificate store (usually deployed by PKI infrastructure)
+  certificate store (can be deployed by PKI infrastructure)
 
 The resulting certificate must have `Document Encryption` as an enhanced key
 usage (`1.3.6.1.4.1.311.80.1`), as well as either `Data Encipherment` or `Key
@@ -130,10 +130,10 @@ Encipherment` key usages enabled.
 
 ### Decrypting Protected Event Log Messages
 
-The following will retrieve and decrypt (assuming you have the private key):
+The following script will retrieve and decrypt (assuming you have the private key):
 
 ```powershell
-Get-WinEvent Microsoft-Windows-PowerShell/Operational | 
+Get-WinEvent Microsoft-Windows-PowerShell/Operational |
   Where-Object Id -eq 4104 | Unprotect-CmsMessage
 ```
 

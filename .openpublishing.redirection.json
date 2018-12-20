@@ -135,9 +135,14 @@
             "redirect_document_id": "False"
         },
         {
+            "source_path": "gallery/how-to/finding-packages/searching-by-psedition.md",
+            "redirect_url": "/powershell/gallery/how-to/finding-packages/searching-by-compatibility",
+            "redirect_document_id": "False"
+        },
+        {
             "source_path": "gallery/psgallery/psgallery_pseditions.md",
-            "redirect_url": "/powershell/gallery/how-to/finding-packages/seaching-by-psedition",
-            "redirect_document_id": "True"
+            "redirect_url": "/powershell/gallery/how-to/finding-packages/searching-by-compatibility",
+            "redirect_document_id": "False"
         },
         {
             "source_path": "gallery/psgallery/psgallery_report_abuse.md",
@@ -892,6 +897,11 @@
         {
             "source_path": "dsc/quickstart.md",
             "redirect_url": "/powershell/dsc/resources/website-quickstart",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "reference/6/Microsoft.PowerShell.Core/About/about_Logging.md",
+            "redirect_url": "/powershell/module/Microsoft.PowerShell.Core/About/about_Logging_Non-Windows?view=powershell-6",
             "redirect_document_id": false
         },
         {
