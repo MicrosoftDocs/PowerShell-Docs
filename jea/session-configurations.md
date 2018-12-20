@@ -75,6 +75,8 @@ When one or more security groups is specified, the virtual account will no longe
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> Virtual accounts are temporarily granted the Logon as a service right in the local server security policy.  If one of the VirtualAccountGroups specified has already been granted this right in the policy, the individual virtual account will no longer be added and removed from the policy.  This can be useful in scenarios such as domain controllers where revisions to the domain controller security policy are closely audited.  This is only available in Windows Server 2016 with the November 2018 or later rollup and Windows Server 2019 with the January 2019 or later rollup.
 
 #### Group Managed Service Account
 

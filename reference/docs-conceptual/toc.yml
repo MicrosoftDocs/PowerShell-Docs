@@ -49,6 +49,8 @@
       href: learn/more-powershell-learning.md
     - name: Glossary
       href: learn/windows-powershell-glossary.md
+    - name: Writing portable modules
+      href: learn/writing-portable-modules.md
     - name: Running remote commands
       href: learn/remoting/running-remote-commands.md
       items:
