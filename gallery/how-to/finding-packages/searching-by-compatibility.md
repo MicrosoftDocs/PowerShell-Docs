@@ -26,7 +26,7 @@ You can also search for compatible packages using PowerShell.
 
 ![Item display page with PSEditions](../../Images/packagedisplaypagewithpseditions.PNG)
 
-### Search for packages in the gallery UI which works on PowerShellCore
+### Search for packages in the gallery UI that work on PowerShell Core
 
 Use Tags:"PSEdition_Desktop" and Tags:"PSEdition_Core" to filters the packages on PowerShell Gallery.
 
@@ -59,7 +59,7 @@ Since PowerShell Core is available for Windows, Linux, and MacOS, packages in th
 - Tags: "Linux"
 - Tags: "MacOS" 
 
-You can specify these tags on ``Find-Module`` (and other cmdlets in the PowerShellGet module), like this:
+You can specify these tags on `Find-Module` (and other cmdlets in the PowerShellGet module), like this:
 
 ```powershell
 # Find Modules compatible with Windows
