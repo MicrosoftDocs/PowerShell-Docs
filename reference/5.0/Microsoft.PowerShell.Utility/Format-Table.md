@@ -147,6 +147,29 @@ has been running by subtracting the creation date of the process from the curren
 **DateTime** object that can be compared with the output of `Get-Date`. Then, the converted
 creation date is subtracted from the current date. The result is the value of **Total Running Time**.
 
+### Example 7: Troubleshooting format errors
+
+The following examples show of the results of adding the **DisplayError** or **ShowError**
+parameters with an expression.
+
+```powershell
+PC /> Get-Date | Format-Table DayOfWeek,{ $_ / $null } -DisplayError
+
+DayOfWeek  $_ / $null
+--------- ------------
+Wednesday #ERR
+
+PC /> Get-Date | Format-Table DayOfWeek,{ $_ / $null } -ShowError
+
+DayOfWeek  $_ / $null
+--------- ------------
+Wednesday
+
+Failed to evaluate expression " $_ / $null ".
+    + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
+    + FullyQualifiedErrorId : mshExpressionError
+```
+
 ## PARAMETERS
 
 ### -AutoSize
@@ -170,16 +193,7 @@ Accept wildcard characters: False
 
 Indicates that the cmdlet displays errors at the command line. This parameter is rarely used, but
 can be used as a debugging aid when you are formatting expressions in a `Format-Table` command, and
-the expressions do not appear to be working. The following shows an example of the results of
-adding the DisplayError parameter with an expression.
-
-```powershell
-Get-Date | Format-Table DayOfWeek,{ $_ / $null } -DisplayError
-
-DayOfWeek  $_ / $null
---------- ------------
-Wednesday #ERR
-```
+the expressions do not appear to be working.
 
 ```yaml
 Type: SwitchParameter
@@ -330,20 +344,7 @@ Accept wildcard characters: False
 
 Sends errors through the pipeline. This parameter is rarely used, but can be used as a debugging
 aid when you are formatting expressions in a `Format-Table` command, and the expressions do not
-appear to be working. The following shows an example of the results of adding the **ShowError**
-parameter with an expression.
-
-```powershell
-Get-Date | Format-Table DayOfWeek,{ $_ / $null } -ShowError
-
-DayOfWeek  $_ / $null
---------- ------------
-Wednesday
-Failed to evaluate expression " $_ / $null ".
-+ CategoryInfo          : InvalidArgument: (12/19/2018 9:04:32 AM:PSObject) [], RuntimeException
-+ FullyQualifiedErrorId : PSPropertyExpressionError
-
-```
+appear to be working.
 
 ```yaml
 Type: SwitchParameter
