@@ -221,7 +221,8 @@ and `Core` means that the module is compatible with both Windows PowerShell and 
 
 > [!NOTE]
 > `Core` does not automatically mean that the module is compatible with Windows, Linux, and macOS.
-> Also please note that using the `CompatiblePSEditions` Property in the Module manifest with it being Uncommented out will prevent modules loading in versions of PowerShell prior to PowerShell v5 when this property was introduced due to the engine not expecting this property in versions prior to v5
+> The **CompatiblePSEditions** property was introduced in PowerShell v5. Module manifests that use
+> the **CompatiblePSEditions** property fail to load in versions prior to PowerShell v5.
 
 ### Indicating OS Compatibility
 
