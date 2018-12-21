@@ -164,7 +164,6 @@ REMARKS
     None
 
 
-
 PS C:\Users\Steve\myModule> Test-SampleCmdlet -FavoriteNumber 7 -FavoritePet Cat
 
 FavoriteNumber FavoritePet
@@ -192,9 +191,9 @@ instead of runtime.
 
 However, it isn't required to target .NET Standard for a module to work with both Windows
 PowerShell and PowerShell Core, as long as you use compatible APIs. The Intermediate Language (IL)
-is compatible between the two runtimes so you can target .NET Framework 4.6.1 which is compatible
-with .NET Standard 2.0 and if you don't use APIs outside of .NET Standard 2.0, then your module
-will work as-is (without recompilation) with PowerShell Core 6.
+is compatible between the two runtimes. You can target .NET Framework 4.6.1, which is compatible
+with .NET Standard 2.0. If you don't use APIs outside of .NET Standard 2.0, then your module
+works with PowerShell Core 6 without recompilation.
 
 ## PowerShell Standard Library
 
