@@ -50,6 +50,34 @@ This command formats information about the Winlogon process in an alternate cust
 Because the command does not use the **View** parameter, `Format-Custom` uses a default custom view
 to format the data.
 
+### Example 3: Troubleshooting format errors
+
+The following examples show of the results of adding the **DisplayError** or **ShowError**
+parameters with an expression.
+
+```powershell
+PC /> Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -DisplayError
+
+class DateTime
+{
+  DayOfWeek = Friday
+   $_ / $null  = #ERR
+}
+
+
+PC /> Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -ShowError
+
+class DateTime
+{
+  DayOfWeek = Friday
+   $_ / $null  =
+}
+
+Failed to evaluate expression " $_ / $null ".
++ CategoryInfo          : InvalidArgument: (12/21/2018 8:01:04 AM:PSObject) [], RuntimeException
++ FullyQualifiedErrorId : PSPropertyExpressionError
+```
+
 ## PARAMETERS
 
 ### -Depth
@@ -72,16 +100,7 @@ Accept wildcard characters: False
 
 Displays errors at the command line. This parameter is rarely used, but can be used as a debugging
 aid when you are formatting expressions in a `Format-Custom` command, and the expressions do not
-appear to be working. The following shows an example of the results of adding the **DisplayError**
-parameter with an expression.
-
-```powershell
-Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -DisplayError
-
-DayOfWeek  $_ / $null
---------- ------------
-Wednesday #ERR
-```
+appear to be working.
 
 ```yaml
 Type: SwitchParameter
@@ -210,19 +229,7 @@ Accept wildcard characters: False
 
 Sends errors through the pipeline. This parameter is rarely used, but can be used as a debugging
 aid when you are formatting expressions in a `Format-Custom` command, and the expressions do not
-appear to be working. The following shows an example of the results of adding the **ShowError**
-parameter with an expression.
-
-```powershell
-PS \> Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -ShowError
-DayOfWeek  $_ / $null
---------- ------------
-Wednesday
-
-Failed to evaluate expression " $_ / $null ".
-    + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
-    + FullyQualifiedErrorId : mshExpressionError
-```
+appear to be working.
 
 ```yaml
 Type: SwitchParameter

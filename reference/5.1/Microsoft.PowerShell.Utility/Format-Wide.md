@@ -56,6 +56,25 @@ operator (|) passes the registry key objects through the pipeline to `Format-Wid
 them for output. The **Property** parameter specifies the name of the property, and the
 **AutoSize** parameter adjusts the columns for readability.
 
+### Example 3: Troubleshooting format errors
+
+The following examples show of the results of adding the **DisplayError** or **ShowError**
+parameters with an expression.
+
+```powershell
+PS /> Get-Date | Format-Wide { $_ / $null } -DisplayError
+
+
+#ERR
+
+PS /> Get-Date | Format-Wide { $_ / $null } -ShowError
+
+
+Failed to evaluate expression " $_ / $null ".
++ CategoryInfo          : InvalidArgument: (12/21/2018 8:18:01 AM:PSObject) [], RuntimeException
++ FullyQualifiedErrorId : PSPropertyExpressionError
+```
+
 ## PARAMETERS
 
 ### -AutoSize
@@ -97,15 +116,7 @@ Accept wildcard characters: False
 
 Displays errors at the command line. This parameter is rarely used, but can be used as a debugging
 aid when you are formatting expressions in a `Format-Wide` command, and the expressions do not
-appear to be working. The following shows an example of the results of adding the **DisplayError**
-parameter with an expression.
-
-```powershell
-PS \> Get-Date | Format-Wide DayOfWeek,{ $_ / $null } -ShowError
-DayOfWeek  $_ / $null
---------- ------------
-Wednesday #ERR
-```
+appear to be working.
 
 ```yaml
 Type: SwitchParameter
@@ -236,20 +247,7 @@ Accept wildcard characters: False
 
 Sends errors through the pipeline. This parameter is rarely used, but can be used as a debugging
 aid when you are formatting expressions in a `Format-Wide` command, and the expressions do not
-appear to be working. The following shows an example of the results of adding the **ShowError**
-parameter with an expression.
-
-```powershell
-Get-Date | Format-Wide DayOfWeek,{ $_ / $null } -ShowError
-
-DayOfWeek  $_ / $null
---------- ------------
-Wednesday
-
-Failed to evaluate expression " $_ / $null ".
-    + CategoryInfo          : InvalidArgument: (10/30/2013 2:28:07 PM:PSObject) \[\], RuntimeException
-    + FullyQualifiedErrorId : mshExpressionError
-```
+appear to be working.
 
 ```yaml
 Type: SwitchParameter
