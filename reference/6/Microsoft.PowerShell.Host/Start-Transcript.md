@@ -18,19 +18,19 @@ Creates a record of all or part of a PowerShell session to a text file.
 
 ### ByPath (Default)
 ```
-Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
+Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 ```
-Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
+Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### ByOutputDirectory
 ```
-Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader]
+Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-UseMinimalHeader]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -99,6 +99,21 @@ Accept wildcard characters: False
 
 ### -IncludeInvocationHeader
 Indicates that this cmdlet logs the time stamp when commands are run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseMinimalHeader
+Prepend a short header to the transcript, instead of the detailed header included by default.
 
 ```yaml
 Type: SwitchParameter
