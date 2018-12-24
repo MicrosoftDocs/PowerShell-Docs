@@ -114,7 +114,7 @@ This will save considerable time, since every time you publish to the PowerShell
 
 Examples would be:
 
-* `Publish-Module -Path ".\MyModule" -RequiredVersion "0.0.1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
 * `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
 
 Review the output carefully, and if you see no errors or warnings, repeat the command without -Whatif.
