@@ -20,13 +20,13 @@ objects.
 ### Delimiter (Default)
 
 ```
-ConvertFrom-Csv [-InputObject] <PSObject[]> [[-Delimiter] <Char>] [-Header <String[]>] [<CommonParameters>]
+ConvertFrom-Csv [-InputObject] <psobject[]> [[-Delimiter] <char>] [-Header <string[]>] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-ConvertFrom-Csv [-InputObject] <PSObject[]> [-UseCulture] [-Header <String[]>] [<CommonParameters>]
+ConvertFrom-Csv [-InputObject] <psobject[]> -UseCulture [-Header <string[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,7 +83,7 @@ This example shows how to use the **Header** parameter of `ConvertFrom-Csv` to c
 properties in the resulting imported object.
 
 ```powershell
-$J = Start-Job -ScriptBlock { Get-Process } | ConvertTo-Csv
+$J = Start-Job -ScriptBlock { Get-Process } | ConvertTo-Csv  -NoTypeInformation
 $Header = 'State', 'MoreData', 'StatusMessage', 'Location', 'Command', 'StateInfo', 'Finished', 'InstanceId', 'Id', 'Name', 'ChildJobs', 'BeginTime', 'EndTime', 'JobType', 'Output', 'Error', 'Progress', 'Verbose', 'Debug', 'Warning', 'Information'
 # Delete the default header from $J
 $J = $J[1..($J.count - 1)]
@@ -115,11 +115,13 @@ Information   : System.Management.Automation.PSDataCollection`1[System.Managemen
 ```
 
 The `Start-Job` cmdlet starts a background job that runs `Get-Process`. A job object is sent down
-the pipeline to `ConvertTo-Csv` and converted to a CSV string. The `$Header` variable contains a
-custom header that replaces the following default values: **HasMoreData**, **JobStateInfo**,
-**PSBeginTime**, **PSEndTime**, and **PSJobTypeName**. The `$J` variable contains the CSV string
-and is used to remove the default header. The `ConvertFrom-Csv` cmdlet converts the CSV string to a
-job object and uses the **Header** parameter to apply the `$Header` variable.
+the pipeline to `ConvertTo-Csv` and converted to a CSV string. The **NoTypeInformation** parameter
+removes the type information header from CSV output and is optional in PowerShell Core. The
+`$Header` variable contains a custom header that replaces the following default values:
+**HasMoreData**, **JobStateInfo**, **PSBeginTime**, **PSEndTime**, and **PSJobTypeName**. The `$J`
+variable contains the CSV string and is used to remove the default header. The `ConvertFrom-Csv`
+cmdlet converts the CSV string into a **PSCustomObject** and uses the **Header** parameter to apply
+the `$Header` variable.
 
 ### Example 4: Convert CSV strings of service objects
 
@@ -138,7 +140,7 @@ strings. The CSV strings are stored in the `$Services` variable. The `ConvertFro
 the **InputObject** parameter and converts the CSV strings from the `$Services` variable. The
 **UseCulture** parameter uses the current culture's default list separator.
 
-[!NOTE] When the **UseCulture** parameter is used, be sure that the current culture's default list
+When the **UseCulture** parameter is used, be sure that the current culture's default list
 separator matches the delimiter used in the CSV strings. Otherwise, `ConvertFrom-Csv` cannot
 generate objects from the CSV strings.
 
@@ -259,9 +261,9 @@ formatted by the PowerShell type formatting entries that format the non-CSV vers
 type.
 
 In CSV format, each object is represented by a comma-separated list of the property values of the
-object. The property values are converted to strings (by using the ToString() method of the
-object), so they are generally represented by the name of the property value. This cmdlet does not
-export the methods of the object.
+object. The property values are converted to strings (by using the **ToString()** method of the
+object), so they are represented by the name of the property value. This cmdlet does not export the
+methods of the object.
 
 ## RELATED LINKS
 

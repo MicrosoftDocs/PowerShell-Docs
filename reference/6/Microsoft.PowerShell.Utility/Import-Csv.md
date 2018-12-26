@@ -95,8 +95,8 @@ The `Get-Process` cmdlet sends process objects down the pipeline to the `Export-
 `Export-Csv` cmdlet converts the process objects to CSV strings and saves the strings in the
 Processes.csv file. The `Import-Csv` cmdlet imports the CSV strings from the Processes.csv file.
 The strings are saved in the `$P` variable. The `$P` variable is sent down the pipeline to the
-`Get-Member` cmdlet that shows they are **System.Management.Automation.PSCustomObject** objects.
-The `$P` variable is sent down the pipeline to the `Format-Table` cmdlet and displays the objects.
+`Get-Member` cmdlet that displays the properties of the imported CSV strings. The `$P` variable
+is sent down the pipeline to the `Format-Table` cmdlet and displays the objects.
 
 ### Example 2: Specify the delimiter
 
@@ -137,7 +137,7 @@ This example shows how to use the **Header** parameter of `Import-Csv` to change
 properties in the resulting imported object.
 
 ```powershell
-Start-Job -ScriptBlock { Get-Process } | Export-Csv -Path .\Jobs.csv
+Start-Job -ScriptBlock { Get-Process } | Export-Csv -Path .\Jobs.csv -NoTypeInformation
 $Header = 'State', 'MoreData', 'StatusMessage', 'Location', 'Command', 'StateInfo', 'Finished', 'InstanceId', 'Id', 'Name', 'ChildJobs', 'BeginTime', 'EndTime', 'JobType', 'Output', 'Error', 'Progress', 'Verbose', 'Debug', 'Warning', 'Information'
 # Delete the default header from file
 $A = Get-Content -Path .\Jobs.csv
@@ -172,14 +172,15 @@ Information   : System.Management.Automation.PSDataCollection`1[System.Managemen
 ```
 
 The `Start-Job` cmdlet starts a background job that runs `Get-Process`. A job object is sent down
-the pipeline to the `Export-Csv` cmdlet and converted to a CSV string. The `$Header` variable
-contains a custom header that replaces the following default values: **HasMoreData**,
-**JobStateInfo**, **PSBeginTime**, **PSEndTime**, and **PSJobTypeName**. The `$A` variable uses the
-`Get-Content` cmdlet to get the CSV string from the Jobs.csv file. The `$A` variable is used to
-remove the default header from the file. The `Out-File` cmdlet saves the new version of the
-Jobs.csv file in the `$A` variable. The `Import-Csv` cmdlet imports the Jobs.csv file and uses the
-**Header** parameter to apply the `$Header` variable. The `$J` variable contains the imported job
-object and displays the object in the PowerShell console.
+the pipeline to the `Export-Csv` cmdlet and converted to a CSV string. The **NoTypeInformation**
+parameter removes the type information header from CSV output and is optional in PowerShell Core.
+The `$Header` variable contains a custom header that replaces the following default values:
+**HasMoreData**, **JobStateInfo**, **PSBeginTime**, **PSEndTime**, and **PSJobTypeName**. The `$A`
+variable uses the `Get-Content` cmdlet to get the CSV string from the Jobs.csv file. The `$A`
+variable is used to remove the default header from the file. The `Out-File` cmdlet saves the new
+version of the Jobs.csv file in the `$A` variable. The `Import-Csv` cmdlet imports the Jobs.csv
+file and uses the **Header** parameter to apply the `$Header` variable. The `$J` variable contains
+the imported **PSCustomObject** and displays the object in the PowerShell console.
 
 ### Example 5: Create a custom object using a CSV file
 
@@ -225,7 +226,7 @@ TopicTitle  NoteProperty string TopicTitle=about_Aliases
 ```
 
 ```powershell
-$A | Where-Object -Property TopicTitle -Like "*alias*"
+$A | Where-Object -Property TopicTitle -Like '*alias*'
 ```
 
 ```Output
@@ -234,7 +235,6 @@ LinkID TopicTitle
 113207 about_Aliases
 ```
 
-[!NOTE]
 To create your Links.csv file, use the values shown in the `Get-Content` output.
 
 The `Get-Content` cmdlet displays the Links.csv file. The `Import-Csv` cmdlet imports the Links.csv
@@ -285,7 +285,6 @@ FarEast
 Europe
 ```
 
-[!NOTE]
 To create your Projects.csv file, use the values shown in the example's `Get-Content` output.
 
 The `Get-Content` cmdlet displays the Projects.csv file. The header row is missing a value between
@@ -469,9 +468,9 @@ If the column header row is missing a value or contains a null or empty value, `
 **H** followed by a number for the missing column header and property name.
 
 In the CSV file, each object is represented by a comma-separated list of the property values of the
-object. The property values are converted to strings by using the `ToString()` method of the
-object, so they are generally represented by the name of the property value. `Export-Csv` does not
-export the methods of the object.
+object. The property values are converted to strings by using the **ToString()** method of the
+object, so they are represented by the name of the property value. `Export-Csv` does not export the
+methods of the object.
 
 ## RELATED LINKS
 
