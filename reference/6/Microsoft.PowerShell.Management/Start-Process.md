@@ -74,7 +74,7 @@ It maximizes the window and retains the window until the process completes.
 
 ### Example 5: Start PowerShell as an administrator
 ```
-PS C:\> Start-Process -FilePath "powershell" -Verb runAs
+PS C:\> Start-Process -FilePath "powershell" -Verb RunAs
 ```
 
 This command starts PowerShell by using the Run as administrator option.
@@ -92,7 +92,7 @@ PS C:\> Start-Process -FilePath "powershell.exe" -Verb open
 
 # Starts a PowerShell process with "Run as Administrator" permissions.
 
-PS C:\> Start-Process -FilePath "powershell.exe" -Verb runas
+PS C:\> Start-Process -FilePath "powershell.exe" -Verb RunAs
 ```
 
 These commands show how to find the verbs that can be used when starting a process, and the effect of using the verbs to start the process.
@@ -105,7 +105,7 @@ The first command uses **New-Object** to create a **System.Diagnostics.ProcessSt
 The command saves the **ProcessStartInfo** object in the $startExe variable.
 
 The second command displays the values in the **Verbs** property of the **ProcessStartInfo** object in the $startExe variable.
-The results show that you can use the Open and Runas verbs with PowerShell.exe, or with any process that runs a .exe file.
+The results show that you can use the Open and RunAs verbs with PowerShell.exe, or with any process that runs a .exe file.
 
 The third command starts a PowerShell process with the Open verb.
 The Open verb starts the process in a new console window.
@@ -308,7 +308,7 @@ The following table shows the verbs for some common process file types.
 
 | File type | Verbs   |
 | --------- | ------- |
-|.cmd       | Edit, Open, Print, Runas |
+|.cmd       | Edit, Open, Print, RunAs |
 |.exe       | Open, RunAs |
 |.txt       | Open, Print, PrintTo |
 |.wav       | Open, Play |
