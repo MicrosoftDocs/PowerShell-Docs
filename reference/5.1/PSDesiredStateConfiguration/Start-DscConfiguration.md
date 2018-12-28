@@ -303,4 +303,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Test-DscConfiguration](Test-DscConfiguration.md)
 
-[Update-DscConfiguration](Update-DscConfiguration.md) 
+[Update-DscConfiguration](Update-DscConfiguration.md)
