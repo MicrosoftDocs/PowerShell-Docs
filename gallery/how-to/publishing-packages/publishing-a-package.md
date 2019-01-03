@@ -10,9 +10,8 @@ The PowerShell Gallery is the place to publish and share stable PowerShell modul
 and DSC resources with the broader PowerShell user community.
 
 This article covers the mechanics and important steps for preparing a script or module, and
-publishing it to the PowerShell Gallery. We strongly encourage that you review the 
-[Publishing Guidelines](/powershell/gallery/concepts/publishing-guidelines) to understand how to
- ensure that the items you publish will be more widely accepted by PowerShell Gallery users.
+publishing it to the PowerShell Gallery. We strongly encourage that you review the
+ [Publishing Guidelines](../../concepts/publishing-guidelines.md) to understand how to ensure that the items you publish will be more widely accepted by PowerShell Gallery users.
 
 The minimum requirements to publish an item to the PowerShell Gallery are:
 
@@ -45,7 +44,7 @@ The PowerShell Gallery provides information to gallery users drawn from metadata
 included in the script or module manifest. Creating or modifying items for publication to the
 PowerShell Gallery has a small set of requirements for information supplied in the item manifest.
 We strongly encourage that you review the Item Metadata section of the
- [Publishing Guidelines](/powershell/gallery/concepts/publishing-guidelines) to learn how to provide
+ [Publishing Guidelines](../../concepts/publishing-guidelines.md) to learn how to provide
  the best information to users with your items.
 
 The [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest)
@@ -74,7 +73,7 @@ requirements for using it
 repo or similar location where you do development on the item
 - Tags - it is a strong recommendation to tag your package based on its compatibility with
 PSEditions and platforms. For details, see the
- [Publishing Guidelines](/powershell/gallery/concepts/publishing-guidelines#tag-your-package-with-the-compatible-pseditions-and-platforms).
+[Publishing Guidelines](../../concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms).
 
 Authors and Owners of PowerShell Gallery items are related concepts, but do not always match. Item
 Owners are users with PowerShell Gallery accounts that have permission to maintain the item. There
