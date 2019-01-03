@@ -15,7 +15,6 @@ This example shows the basic code elements that add support for transactions to 
 
 > [!IMPORTANT]
 > For more information about how Windows PowerShell handles transactions, see [Windows PowerShell Transactions](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
-> For more information about how Windows PowerShell handles transactions, see [Windows PowerShell Transactions](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
 
 ## To support transactions
 
