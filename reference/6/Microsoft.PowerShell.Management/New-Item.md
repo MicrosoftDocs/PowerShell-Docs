@@ -159,7 +159,7 @@ If your location is in a `FileSystem` drive, the following values are allowed:
 
 [!NOTE]
 > Creating a `SymbolicLink` type on Windows requires elevation as administrator.
-> However, on Windows 10 (build 14972 or newer) with Developer Mode enabled no
+> However, Windows 10 (build 14972 or newer) with Developer Mode enabled no
 > longer requires elevation creating symbolic links.
 
 In a `Certificate` drive, these are the values you can specify:
