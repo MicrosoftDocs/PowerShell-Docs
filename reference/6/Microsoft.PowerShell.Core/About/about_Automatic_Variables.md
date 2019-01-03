@@ -343,7 +343,7 @@ function Test {
 }
 ```
 
-### $PSCMDLET
+### $PSCmdlet
 
 Contains an object that represents the cmdlet or advanced function that is
 being run.
@@ -355,7 +355,7 @@ being used, and the ShouldProcess method adds the WhatIf and Confirm
 parameters to the cmdlet dynamically.
 
 For more information about the $PSCmdlet automatic variable, see
-[about_Functions_Advanced](about_Functions_Advanced.md).
+[about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md).
 
 ### $PSCommandPath
 
@@ -371,12 +371,12 @@ System.Globalization.CultureInfo.CurrentCulture.Name property of the
 system. To get the System.Globalization.CultureInfo object for the system,
 use the Get-Culture cmdlet.
 
-### $PSDEBUGCONTEXT
+### $PSDebugContext
 
 While debugging, this variable contains information about the debugging
 environment. Otherwise, it contains a NULL value. As a result, you can use
 it to indicate whether the debugger has control. When populated, it
-contains a PsDebugContext object that has Breakpoints and InvocationInfo
+contains a PSDebugContext object that has Breakpoints and InvocationInfo
 properties. The InvocationInfo property has several useful properties,
 including the Location property. The Location property indicates the path
 of the script that is being debugged.
