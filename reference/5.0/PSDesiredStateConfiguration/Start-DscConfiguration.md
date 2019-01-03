@@ -96,7 +96,7 @@ The command creates **Job** objects for each configured computer.
 
 ### -CimSession
 Runs the cmdlet in a remote session or on a remote computer.
-Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession) cmdlet.
+Enter a computer name or a session object, such as the output of a [New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession) or [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) cmdlet.
 The default is the current session on the local computer.
 
 ```yaml
@@ -233,7 +233,8 @@ Accept wildcard characters: False
 Indicates that this cmdlet applies the existing configuration.
 The configuration can exist on the target computer by enactment using **Start-DscConfiguration** or by publication using the Publish-DscConfiguration cmdlet.
 
-Before you specify this parameter for this cmdlet, review the information in What's New in Windows PowerShellhttp://technet.microsoft.com/library/hh857339.aspx (http://technet.microsoft.com/library/hh857339.aspx) in the TechNet library.
+Before you specify this parameter for this cmdlet, review the information in [What's New in Windows PowerShell 5.0](https://docs.microsoft.com//powershell/scripting/whats-new/what-s-new-in-windows-powershell-50)
+
 
 ```yaml
 Type: SwitchParameter
@@ -291,7 +292,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Windows PowerShell Desired State Configuration Overview](http://go.microsoft.com/fwlink/?LinkID=311940)
+[Windows PowerShell Desired State Configuration Overview](/powershell/dsc/overview/overview)
 
 [Get-DscConfiguration](Get-DscConfiguration.md)
 
