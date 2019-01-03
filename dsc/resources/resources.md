@@ -98,4 +98,4 @@ Configuration TestConfig
 > [!NOTE]
 > Beginning in PowerShell 5.0, intellisense was added for DSC. This new feature allows you to use \<TAB\> and \<Ctrl+Space\> to auto-complete key names.
 
-![Resource Tab Completion](/media/resource-tabcompletion.png)
+![Resource Tab Completion](../media/resource-tabcompletion.png)
