@@ -37,25 +37,31 @@ Restart-Service -DisplayName <String[]>
 ```
 
 ## DESCRIPTION
+
 The Restart-Service cmdlet sends a stop message and then a start message to the Windows Service Controller for a specified service.
 If a service was already stopped, it is started without notifying you of an error.
 You can specify the services by their service names or display names, or you can use the InputObject parameter to pass an object that represents each service that you want to restart.
 ## EXAMPLES
 
 ### Example 1
-```
+
+```powershell
 PS C:\> Restart-Service winmgmt
 ```
 
 This command restarts the Windows Management Instrumentation service (WinMgmt) on the local computer.
+
 ### Example 2
-```
+
+```powershell
 PS C:\> Restart-Service -DisplayName net* -Exclude "net logon"
 ```
 
 This command restarts the services that have a display name that begins with "Net", except for the "Net Logon" service.
+
 ### Example 3
-```
+
+```powershell
 PS C:\> Get-Service net* | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
 ```
 
@@ -161,7 +167,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PassThru

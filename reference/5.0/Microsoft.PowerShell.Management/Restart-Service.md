@@ -44,25 +44,28 @@ You can specify the services by their service names or display names, or you can
 ## EXAMPLES
 
 ### Example 1: Restart a service on the local computer
-```
+
+```powershell
 PS C:\> Restart-Service -Name winmgmt
 ```
 
 This command restarts the Windows Management Instrumentation service (WinMgmt) on the local computer.
 
 ### Example 2: Exclude a service
-```
+
+```powershell
 PS C:\> Restart-Service -DisplayName "net*" -Exclude "net logon"
 ```
 
 This command restarts the services that have a display name that starts with Net, except for the Net Logon service.
 
 ### Example 3: Start all stopped network services
-```
+
+```powershell
 PS C:\> Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
 ```
 
-This command starts all of the stopped network services on the computer.
+This command gets then restarts all of the stopped network services on the computer.
 
 This command uses the Get-Service cmdlet to get objects that represent the services whose service name starts with net.
 The pipeline operator (|) sends the services object to the Where-Object cmdlet, which selects only the services that have a status of stopped.
@@ -182,7 +185,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -PassThru
