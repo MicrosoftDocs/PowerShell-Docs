@@ -42,7 +42,7 @@ To cancel the subscription, use the Unregister-Event cmdlet, which deletes the e
 
 New CIM cmdlets, introduced Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets.
 The CIM cmdlets comply with WS-Management (WSMan) standards and with the Common Information Model (CIM) standard, which enables the cmdlets to use the same techniques to manage Windows computers and those running other operating systems.
-Instead of using **Register-WmiEvent**, consider using the Register-CimIndicationEventhttp://go.microsoft.com/fwlink/?LinkId=227960 cmdlet.
+Instead of using **Register-WmiEvent**, consider using the Register-CimIndicationEvent http://go.microsoft.com/fwlink/?LinkId=227960 cmdlet.
 ## EXAMPLES
 
 ### Example 1
