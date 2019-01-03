@@ -113,8 +113,9 @@ To avoid errors, it is strongly recommended that you try the commands using -Wha
 This will save considerable time, since every time you publish to the PowerShell Gallery, you must update the version number in the manifest section of the item.
 
 Examples would be:
-'Publish-Module -Path ".\MyModule" -RequiredVersion "0.0.1" -NugetAPIKey "GUID" -Whatif -Verbose'
-'Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose'
+
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
 
 Review the output carefully, and if you see no errors or warnings, repeat the command without -Whatif.
 
