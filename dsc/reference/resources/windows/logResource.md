@@ -5,7 +5,7 @@ title:  DSC Log Resource
 ---
 # DSC Log Resource
 
-_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_
+> _Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 The __Log__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to write messages to the Microsoft-Windows-Desired State Configuration/Analytic event log.
 
@@ -20,7 +20,7 @@ Log [string] #ResourceName
 ```
 
 > [!NOTE]
-> By default only the Operational logs for DSC are enabled. Before the Analytic log will be available or visible, it must be enabled. For more information, see [Where are DSC Event Logs?](troubleshooting.md#where-are-dsc-event-logs).
+> By default only the Operational logs for DSC are enabled. Before the Analytic log will be available or visible, it must be enabled. For more information, see [Where are DSC Event Logs?](../../../troubleshooting/troubleshooting.md#where-are-dsc-event-logs).
 
 ## Properties
 

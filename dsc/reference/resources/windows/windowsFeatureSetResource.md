@@ -9,7 +9,7 @@ title:  DSC WindowsFeatureSet Resource
 > Applies To: Windows PowerShell 5.0
 
 The **WindowsFeatureSet** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that roles and features are added or removed on a target node.
-This resource is a [composite resource](authoringResourceComposite.md) that calls the [WindowsFeature resource](windowsfeatureResource.md) for each feature specified in the `Name` property.
+This resource is a [composite resource](../../../resources/authoringResourceComposite.md) that calls the [WindowsFeature resource](windowsfeatureResource.md) for each feature specified in the `Name` property.
 
 Use this resource when you want to configure a number of Windows Features to the same state.
 
