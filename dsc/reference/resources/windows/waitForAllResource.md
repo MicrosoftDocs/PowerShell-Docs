@@ -8,11 +8,10 @@ title:  DSC WaitForAll Resource
 
 > Applies To: Windows PowerShell 5.0 and later
 
-The **WaitForAll** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](configurations.md)
+The **WaitForAll** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](../../../configurations/configurations.md)
 to specify dependencies on configurations on other nodes.
 
 This resource succeeds if the resource specified by the **ResourceName** property is in the desired state on all target nodes defined in the **NodeName** property.
-
 
 ## Syntax
 
@@ -39,7 +38,6 @@ WaitForAll [string] #ResourceName
 | ThrottleLimit| Number of machines to connect simultaneously. Default is new-cimsession default.|
 | DependsOn | Indicates that the configuration of another resource must run before this resource is configured. For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.|
 
-
 ## Example
 
-For an example of how to use this resource, see [Specifying cross-node dependencies](crossNodeDependencies.md)
+For an example of how to use this resource, see [Specifying cross-node dependencies](../../../configurations/crossNodeDependencies.md)
