@@ -50,4 +50,4 @@ This example shows the basic code elements that add support for transactions to 
 [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
 
 <!-- External URLs -->
-[windows-powershell-transactions]: http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710
+[windows-powershell-transactions]: /powershell/module/Microsoft.PowerShell.Core/About/about_Transactions?view=powershell-5.1
