@@ -322,10 +322,10 @@ Accept wildcard characters: False
 ```
 
 ### -TimeToLive
-Specifies the maximum times a packet can be forwarded. For every hop in gateways, routers etc. 
-the TimeToLive value is decreased by one and at zero the packet is discarded.
+Specifies the maximum times a packet can be forwarded. For every hop in gateways, routers etc.
+the **TimeToLive** value is decreased by one. At zero the packet is discarded and an error is returned.
 The default value (in Windows) is 128.
-The alias of the *TimeToLive* parameter is *TTL*.
+The alias of the **TimeToLive** parameter is **TTL**.
 
 ```yaml
 Type: Int32

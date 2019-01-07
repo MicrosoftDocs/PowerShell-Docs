@@ -378,10 +378,10 @@ Accept wildcard characters: False
 ```
 
 ### -TimeToLive
-Specifies the maximum time, in seconds, that each echo request packet, or ping, is active.
-Enter an integer between 1 and 255.
-The default value is 80 (seconds).
-The alias of the *TimeToLive* parameter is *TTL*.
+Specifies the maximum times a packet can be forwarded. For every hop in gateways, routers etc.
+the **TimeToLive** value is decreased by one. At zero the packet is discarded and an error is returned.
+The default value (in Windows) is 128.
+The alias of the **TimeToLive** parameter is **TTL**.
 
 ```yaml
 Type: Int32
