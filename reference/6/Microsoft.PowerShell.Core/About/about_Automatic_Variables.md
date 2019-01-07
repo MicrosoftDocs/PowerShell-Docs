@@ -147,7 +147,7 @@ variable enumerates the collection of all input to the function.
 
 ### $IsCoreCLR
 
-Contains $TRUE if the current session is running on the .NET Core Runtime 
+Contains $TRUE if the current session is running on the .NET Core Runtime
 (CoreCLR). Otherwise contains $FALSE.
 
 ### $IsLinux
@@ -435,25 +435,21 @@ following items:
 
 | Property                  | Description                                   |
 | ------------------------- | --------------------------------------------- |
-| BuildVersion              | The build number of the current version       |
-| CLRVersion                | The version of the common language runtime    |
-|                           | (CLR)                                         |
+| PSVersion                 | The PowerShell version number                 |
+| PSEdition                 | This property has the value of 'Desktop', for |
+|                           | Windows Server and Windows client versions.   |
+|                           | This property has the value of 'Core' for     |
+|                           | PowerShell running under Nano Server or       |
+|                           | Windows IOT.                                  |
 | GitCommitId               | The commit Id of the source files, in GitHub, |
-|                           | used in this version of PowerShell            |
 | OS                        | Description of the operating system that      |
 |                           | PowerShell is running on.                     |
 | Platform                  | Platform that the operating system is running |
 |                           | on.                                           |
 | PSCompatibleVersions      | Versions of PowerShell that are compatible    |
 |                           | with the current version                      |
-| PSEdition                 | This property has the value of 'Desktop', for |
-|                           | Windows Server and Windows client versions.   |
-|                           | This property has the value of 'Core' for     |
-|                           | PowerShell running under Nano Server or       |
-|                           | Windows IOT.                                  |
 | PSRemotingProtocolVersion | The version of the PowerShell remote          |
 |                           | management protocol.                          |
-| PSVersion                 | The PowerShell version number                 |
 | SerializationVersion      | The version of the serialization method       |
 | WSManStackVersion         | The version number of the WS-Management stack |
 
