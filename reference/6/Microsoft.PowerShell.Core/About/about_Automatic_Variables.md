@@ -445,7 +445,8 @@ following items:
 | OS                        | Description of the operating system that      |
 |                           | PowerShell is running on.                     |
 | Platform                  | Platform that the operating system is running |
-|                           | on.                                           |
+|                           | on. The value on Linux and macOS is **Unix**. |
+|                           | See `$IsMacOs` and `$IsLinux`.                |
 | PSCompatibleVersions      | Versions of PowerShell that are compatible    |
 |                           | with the current version                      |
 | PSRemotingProtocolVersion | The version of the PowerShell remote          |
