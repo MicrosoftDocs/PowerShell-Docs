@@ -135,7 +135,8 @@ Many updates and improvements to Windows PowerShell Desired State Configuration 
 - The FullyQualifiedName parameter has been added to Import-Module and Remove-Module cmdlets, to support storing multiple versions of a single module.
 - Save-Help, Update-Help, Import-PSSession, Export-PSSession, and Get-Command have a new parameter, FullyQualifiedModule, of type ModuleSpecification. Add this parameter to specify a module by its fully qualified name.
 - The value of **$PSVersionTable.PSVersion** has been updated to 5.0.
-
+- WMF 5.0 (PowerShell 5.0) includes the **Pester** module.  Pester is a unit testing framework for PowerShell. It provides a few simple-to-use keywords that let you create tests for your scripts. 
+ 
 ### New features in Windows PowerShell Desired State Configuration
 
 - Windows PowerShell language enhancements let you define Windows PowerShell Desired State Configuration (DSC) resources by using classes. Import-DscResource is now a true dynamic keyword; Windows PowerShell parses the specified module'™s root module, searching for classes that contain the DscResource attribute. You can now use classes to define DSC resources, in which neither a MOF file nor a DSCResource subfolder in the module folder is required. A Windows PowerShell module file can contain multiple DSC resource classes.

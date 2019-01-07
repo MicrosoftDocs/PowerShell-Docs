@@ -35,8 +35,6 @@ The sections in this topic include the following:
 
 - [Code Sample](#Code-Sample)
 
-- [Define Object Types and Formatting](None)
-
 - [Testing the Windows PowerShell Provider](#Testing-the-Windows-PowerShell-Provider)
 
 ## Defining the Windows PowerShell Provider Class

@@ -147,7 +147,7 @@ variable enumerates the collection of all input to the function.
 
 ### $IsCoreCLR
 
-Contains $TRUE if the current session is running on the .NET Core Runtime 
+Contains $TRUE if the current session is running on the .NET Core Runtime
 (CoreCLR). Otherwise contains $FALSE.
 
 ### $IsLinux
@@ -343,7 +343,7 @@ function Test {
 }
 ```
 
-### $PSCMDLET
+### $PSCmdlet
 
 Contains an object that represents the cmdlet or advanced function that is
 being run.
@@ -355,7 +355,7 @@ being used, and the ShouldProcess method adds the WhatIf and Confirm
 parameters to the cmdlet dynamically.
 
 For more information about the $PSCmdlet automatic variable, see
-[about_Functions_Advanced](about_Functions_Advanced.md).
+[about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md).
 
 ### $PSCommandPath
 
@@ -371,12 +371,12 @@ System.Globalization.CultureInfo.CurrentCulture.Name property of the
 system. To get the System.Globalization.CultureInfo object for the system,
 use the Get-Culture cmdlet.
 
-### $PSDEBUGCONTEXT
+### $PSDebugContext
 
 While debugging, this variable contains information about the debugging
 environment. Otherwise, it contains a NULL value. As a result, you can use
 it to indicate whether the debugger has control. When populated, it
-contains a PsDebugContext object that has Breakpoints and InvocationInfo
+contains a PSDebugContext object that has Breakpoints and InvocationInfo
 properties. The InvocationInfo property has several useful properties,
 including the Location property. The Location property indicates the path
 of the script that is being debugged.
@@ -435,25 +435,22 @@ following items:
 
 | Property                  | Description                                   |
 | ------------------------- | --------------------------------------------- |
-| BuildVersion              | The build number of the current version       |
-| CLRVersion                | The version of the common language runtime    |
-|                           | (CLR)                                         |
-| GitCommitId               | The commit Id of the source files, in GitHub, |
-|                           | used in this version of PowerShell            |
-| OS                        | Description of the operating system that      |
-|                           | PowerShell is running on.                     |
-| Platform                  | Platform that the operating system is running |
-|                           | on.                                           |
-| PSCompatibleVersions      | Versions of PowerShell that are compatible    |
-|                           | with the current version                      |
+| PSVersion                 | The PowerShell version number                 |
 | PSEdition                 | This property has the value of 'Desktop', for |
 |                           | Windows Server and Windows client versions.   |
 |                           | This property has the value of 'Core' for     |
 |                           | PowerShell running under Nano Server or       |
 |                           | Windows IOT.                                  |
+| GitCommitId               | The commit Id of the source files, in GitHub, |
+| OS                        | Description of the operating system that      |
+|                           | PowerShell is running on.                     |
+| Platform                  | Platform that the operating system is running |
+|                           | on. The value on Linux and macOS is **Unix**. |
+|                           | See `$IsMacOs` and `$IsLinux`.                |
+| PSCompatibleVersions      | Versions of PowerShell that are compatible    |
+|                           | with the current version                      |
 | PSRemotingProtocolVersion | The version of the PowerShell remote          |
 |                           | management protocol.                          |
-| PSVersion                 | The PowerShell version number                 |
 | SerializationVersion      | The version of the serialization method       |
 | WSManStackVersion         | The version number of the WS-Management stack |
 

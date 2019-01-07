@@ -98,4 +98,54 @@ Configuration TestConfig
 > [!NOTE]
 > Beginning in PowerShell 5.0, intellisense was added for DSC. This new feature allows you to use \<TAB\> and \<Ctrl+Space\> to auto-complete key names.
 
-![Resource Tab Completion](/media/resource-tabcompletion.png)
+![Resource Tab Completion](../media/resource-tabcompletion.png)
+
+## Built-in resources
+
+In addition to community resources, there are built-in resources for Windows, resources for Linux, and resources for cross-node dependency. You can use the steps above to determine the syntax of these resources and how to use them. The pages that serve these resources have been archived under **Reference**.
+
+Windows built-in resources
+
+* [Archive Resource](../reference/resources/windows/archiveResource.md)
+* [Environment Resource](../reference/resources/windows/environmentResource.md)
+* [File Resource](../reference/resources/windows/fileResource.md)
+* [Group Resource](../reference/resources/windows/groupResource.md)
+* [GroupSet Resource](../reference/resources/windows/groupSetResource.md)
+* [Log Resource](../reference/resources/windows/logResource.md)
+* [Package Resource](../reference/resources/windows/packageResource.md)
+* [ProcessSet Resource](../reference/resources/windows/ProcessSetResource.md)
+* [Registry Resource](../reference/resources/windows/registryResource.md)
+* [Script Resource](../reference/resources/windows/scriptResource.md)
+* [Service Resource](../reference/resources/windows/serviceResource.md)
+* [ServiceSet Resource](../reference/resources/windows/serviceSetResource.md)
+* [User Resource](../reference/resources/windows/userResource.md)
+* [WindowsFeature Resource](../reference/resources/windows/windowsFeatureResource.md)
+* [WindowsFeatureSet Resource](../reference/resources/windows/windowsFeatureSetResource.md)
+* [WindowsOptionalFeature Resource](../reference/resources/windows/windowsOptionalFeatureResource.md)
+* [WindowsOptionalFeatureSet Resource](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
+* [WindowsPackageCabResource Resource](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsProcess Resource](../reference/resources/windows/windowsProcessResource.md)
+
+[Cross-Node dependency](../configurations/crossNodeDependencies.md) resources
+
+* [WaitForAll Resource](../reference/resources/windows/waitForAllResource.md)
+* [WaitForSome Resource](../reference/resources/windows/waitForSomeResource.md)
+* [WaitForAny Resource](../reference/resources/windows/waitForAnyResource.md)
+
+Package Management resources
+
+* [PackageManagement Resource](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+* [PackageManagementSource Resource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+
+Linux resources
+
+* [Linux Archive Resource](../reference/resources/linux/lnxArchiveResource.md)
+* [Linux Environment Resource](../reference/resources/linux/lnxEnvironmentResource.md)
+* [Linux FileLine Resource](../reference/resources/linux/lnxFileLineResource.md)
+* [Linux File Resource](../reference/resources/linux/lnxFileResource.md)
+* [Linux Group Resource](../reference/resources/linux/lnxGroupResource.md)
+* [Linux Package Resource](../reference/resources/linux/lnxPackageResource.md)
+* [Linux Script Resource](../reference/resources/linux/lnxScriptResource.md)
+* [Linux Service Resource](../reference/resources/linux/lnxServiceResource.md)
+* [Linux SshAuthorizedKeys Resource](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+* [Linux User Resource](../reference/resources/linux/lnxUserResource.md)

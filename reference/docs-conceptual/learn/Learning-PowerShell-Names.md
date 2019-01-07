@@ -1,11 +1,11 @@
 ---
 ms.date:  08/24/2018
 keywords:  powershell,cmdlet
-title:  Learning PowerShell names
+title:  Learning PowerShell command names
 ms.assetid:  b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ---
 
-# Learning PowerShell names
+# Learning PowerShell command names
 
 Learning names of commands and parameters requires a significant time investment with most
 command-line interfaces. The issue is that there are few patterns. Memorization is the only way to

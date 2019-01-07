@@ -189,3 +189,15 @@ In the following example the *FileAttributes* enumeration is created.
 file1 attributes are: Archive, Compressed, Device
 file2 attributes are: Device, Directory, Encrypted
 ```
+
+To test that a specific is set, you can use the binary comparison operator
+`-band`. In this example, we test for the **Device** and the **Archive**
+attributes in the value of `$file2`.
+
+```
+PS > ($file2 -band [FileAttributes]::Device) -eq [FileAttributes]::Device
+True
+
+PS > ($file2 -band [FileAttributes]::Archive) -eq [FileAttributes]::Archive
+False
+```

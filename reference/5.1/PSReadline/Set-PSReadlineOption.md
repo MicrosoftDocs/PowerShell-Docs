@@ -142,7 +142,7 @@ Specifies how PSReadLine responds to various error and ambiguous conditions.
 Valid values are:
 
 - Audible: A short beep
-- Visible: Text flashes briefly
+- Visual: Text flashes briefly
 - None: No feedback
 
 ```yaml
