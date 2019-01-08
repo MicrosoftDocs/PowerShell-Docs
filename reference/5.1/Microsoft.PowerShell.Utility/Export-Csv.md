@@ -210,11 +210,10 @@ Windows. The `$WinService` variable stores the service objects. The `Export-Csv`
 Services.csv file. The `Get-Content` cmdlet is repeated to display the updated file that includes
 the appended data.
 
-### Example 7: Select properties to export
+### Example 7: Format cmdlet within a pipeline creates unexpected results
 
-This example shows how to select properties and export an object to a CSV file. The example then
-shows the difference when the `Format-Table` cmdlet selects properties and sends a table object
-down the pipeline to the `Export-Csv` command.
+This example shows why it is important not to use a format cmdlet within a pipeline. When
+unexpected output is received, troubleshoot the pipeline syntax.
 
 ```powershell
 Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear |
@@ -226,14 +225,6 @@ Get-Content -Path .\DateTime.csv
 "DateTime","Day","DayOfWeek","DayOfYear"
 "Wednesday, January 2, 2019 14:59:34","2","Wednesday","2"
 ```
-
-The `Get-Date` cmdlet gets the **DateTime** object. The object is sent down the pipeline to the
-`Select-Object` cmdlet. `Select-Object` uses the **Property** parameter to select a subset of
-object properties. The object is sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv`
-converts the object to a CSV format. The **Path** parameter specifies that the DateTime.csv file is
-saved in the current directory. The **NoTypeInformation** parameter removes the **#TYPE**
-information header from the CSV output and is not required in PowerShell 6. The `Get-Content`
-cmdlet uses the **Path** parameter to display the file located in the current directory.
 
 ```powershell
 Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear |
@@ -251,13 +242,18 @@ Get-Content -Path .\FTDateTime.csv
 ```
 
 The `Get-Date` cmdlet gets the **DateTime** object. The object is sent down the pipeline to the
-`Format-Table` cmdlet. `Format-Table` uses the **Property** parameter to select a subset of object
-properties. The table objects are sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv`
-converts the table objects to a series of CSV strings. The **Path** parameter specifies that the
-FTDateTime.csv file is saved in the current directory. The **NoTypeInformation** parameter removes
-the **#TYPE** information header from the CSV output and is not required in PowerShell 6. The
-`Get-Content` cmdlet uses the **Path** parameter to display the file located in the current
-directory.
+`Select-Object` cmdlet. `Select-Object` uses the **Property** parameter to select a subset of
+object properties. The object is sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv`
+converts the object to a CSV format. The **Path** parameter specifies that the DateTime.csv file is
+saved in the current directory. The **NoTypeInformation** parameter removes the **#TYPE**
+information header from the CSV output and is not required in PowerShell 6. The `Get-Content`
+cmdlet uses the **Path** parameter to display the CSV file located in the current directory.
+
+When the `Format-Table` cmdlet is used within the pipeline to select properties unexpected results
+are received. `Format-Table` sends table format objects down the pipeline to the `Export-Csv`
+cmdlet rather than the **DateTime** object. `Export-Csv` converts the table format objects to a
+series of CSV strings. The `Get-Content` cmdlet displays the CSV file which contains the table
+format objects.
 
 ### Example 8: Using the Force parameter to overwrite read-only files
 
