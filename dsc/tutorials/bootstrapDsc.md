@@ -13,7 +13,7 @@ title:  Configure a virtual machines at initial boot-up by using DSC
 > [!NOTE]
 > The **DSCAutomationHostEnabled** registry key described in this topic is not available in PowerShell 4.0.
 > For information on how to configure new virtual machines at initial boot-up in PowerShell 4.0, see
-> [Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?]> (https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> [Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 To run these examples, you will need:
 
