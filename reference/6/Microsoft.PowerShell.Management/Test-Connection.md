@@ -54,15 +54,15 @@ Test-Connection [-TargetName] <string[]> -TCPPort <int> [-IPv4] [-IPv6] [-Resolv
 
 ## DESCRIPTION
 
-The **Test-Connection** cmdlet sends Internet Control Message Protocol (ICMP) echo request packets,
+The `Test-Connection` cmdlet sends Internet Control Message Protocol (ICMP) echo request packets,
 or pings, to one or more remote computers and returns the echo response replies. You can use this
 cmdlet to determine whether a particular computer can be contacted across an IP network.
 
-You can use the parameters of **Test-Connection** to specify both the sending and receiving
+You can use the parameters of `Test-Connection` to specify both the sending and receiving
 computers, to run the command as a background job, to set a time-out and number of pings, and to
 configure the connection and authentication.
 
-Unlike the familiar **ping** command, **Test-Connection** returns a
+Unlike the familiar **ping** command, `Test-Connection` returns a
 **TestConnectionCommand+PingReport**. You can use the **Quiet** parameter to force it to return
 only a **Boolean** value.
 
@@ -77,11 +77,11 @@ Test-Connection Server01 -IPv4
 ```
 
 ```Output
-Pinging Server01 [172.16.0.55] with 32 bytes of data:
-Reply from 172.16.0.55: bytes=32 time=0ms TTL=128
-Reply from 172.16.0.55: bytes=32 time=0ms TTL=128
-Reply from 172.16.0.55: bytes=32 time=0ms TTL=128
-Reply from 172.16.0.55: bytes=32 time=0ms TTL=128
+Pinging Server01 [10.59.137.44] with 32 bytes of data:
+Reply from 10.59.137.44: bytes=32 time=0ms TTL=128
+Reply from 10.59.137.44: bytes=32 time=0ms TTL=128
+Reply from 10.59.137.44: bytes=32 time=0ms TTL=128
+Reply from 10.59.137.44: bytes=32 time=0ms TTL=128
 Ping complete.
 
 Source     Destination Replies
@@ -115,7 +115,7 @@ Use this command format to test the latency of connections from multiple points.
 
 ### Example 4: Customize the test command
 
-It uses the parameters of **Test-Connection** to customize the command.
+It uses the parameters of `Test-Connection` to customize the command.
 
 ```powershell
 Test-Connection -ComputerName Server01 -Count 3 -Delay 2 -MaxHops 255 -BufferSize 256 -ThrottleLimit 32
@@ -129,14 +129,14 @@ because of an extended number of hops or a high-traffic network condition.
 
 ### Example 5: Run a test as a background job
 
-This example shows how to run a **Test-Connection** command as a PowerShell background job.
+This example shows how to run a `Test-Connection` command as a PowerShell background job.
 
 ```powershell
 $job = Start-Job -ScriptBlock { Test-Connection -TargetName (Get-Content "Servers.txt") }
 if ($job.JobStateInfo.State -ne "Running") { $Results = Receive-Job $job }
 ```
 
-The first command uses the **Test-Connection** cmdlet to ping many computers in an enterprise. The
+The first command uses the `Test-Connection` cmdlet to ping many computers in an enterprise. The
 value of the **TargetName** parameter is a `Get-Content` command that reads a list of computer
 names from the Servers.txt file. The command uses the `Start-Job` cmdlet to run the command as a
 background job and it saves the job in the `$job` variable.
@@ -153,14 +153,14 @@ the computer succeeds.
 if (Test-Connection -TargetName Server01 -Quiet) {New-PSSession Server01}
 ```
 
-The command uses the **Test-Connection** cmdlet to ping the Server01 computer. The command uses the
+The command uses the `Test-Connection` cmdlet to ping the Server01 computer. The command uses the
 **Quiet** parameter, which returns a **Boolean** value, instead of a
 **TestConnectionCommand+PingReport** object.
 
 The value is `$True` if any of the four pings succeed. If none of the pings succeed, the value is
 `$False`.
 
-If the **Test-Connection** command returns a value of `$True`, the command uses the `New-PSSession` cmdlet to create the **PSSession**.
+If the `Test-Connection` command returns a value of `$True`, the command uses the `New-PSSession` cmdlet to create the **PSSession**.
 
 ## PARAMETERS
 

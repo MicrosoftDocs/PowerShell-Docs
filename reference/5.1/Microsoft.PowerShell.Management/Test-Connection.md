@@ -43,16 +43,16 @@ Test-Connection [-ComputerName] <string[]> [-DcomAuthentication <AuthenticationL
 
 ## DESCRIPTION
 
-The **Test-Connection** cmdlet sends Internet Control Message Protocol (ICMP) echo request packets,
+The `Test-Connection` cmdlet sends Internet Control Message Protocol (ICMP) echo request packets,
 or pings, to one or more remote computers and returns the echo response replies. You can use this
 cmdlet to determine whether a particular computer can be contacted across an IP network.
 
-You can use the parameters of **Test-Connection** to specify both the sending and receiving
+You can use the parameters of `Test-Connection` to specify both the sending and receiving
 computers, to run the command as a background job, to set a time-out and number of pings, and to
 configure the connection and authentication.
 
 Unlike the familiar **ping** command, `Test-Connection` returns a **Win32_PingStatus** object
-that you can investigate in Windows PowerShell. You can use the *Quiet* parameter to force it to
+that you can investigate in Windows PowerShell. You can use the **Quiet** parameter to force it to
 return only a **Boolean** value.
 
 ## EXAMPLES
@@ -99,7 +99,7 @@ connections from multiple points.
 
 ### Example 4: Customize the test command
 
-It uses the parameters of **Test-Connection** to customize the command.
+It uses the parameters of `Test-Connection` to customize the command.
 
 ```powershell
 Test-Connection -ComputerName Server01 -Count 3 -Delay 2 -TTL 255 -BufferSize 256 -ThrottleLimit 32
@@ -112,14 +112,14 @@ because of an extended number of hops or a high-traffic network condition.
 
 ### Example 5: Run a test as a background job
 
-This example shows how to run a **Test-Connection** command as a PowerShell background job.
+This example shows how to run a `Test-Connection` command as a PowerShell background job.
 
 ```powershell
 $job = Test-Connection -ComputerName (Get-Content Servers.txt) -AsJob
 if ($job.JobStateInfo.State -ne "Running") {$Results = Receive-Job $job}
 ```
 
-The first command uses the **Test-Connection** cmdlet to ping many computers in an enterprise. The
+The first command uses the `Test-Connection` cmdlet to ping many computers in an enterprise. The
 value of the **ComputerName** parameter is a Get-Content command that reads a list of computer names
 from the Servers.txt file. The command uses the **AsJob** parameter to run the command as a
 background job and it saves the job in the `$job` variable.
@@ -129,7 +129,7 @@ The second command checks to see that the job is not still running, and if it is
 
 ### Example 6: Ping a remote computer with credentials
 
-This command uses the **Test-Connection** cmdlet to ping a remote computer.
+This command uses the `Test-Connection` cmdlet to ping a remote computer.
 
 ```powershell
 Test-Connection Server55 -Credential Domain55\User01 -Impersonation Identify
@@ -148,11 +148,11 @@ the computer succeeds.
 if (Test-Connection -ComputerName Server01 -Quiet) {New-PSSession Server01}
 ```
 
-The command uses the **Test-Connection** cmdlet to ping the Server01 computer. The command uses the
+The command uses the `Test-Connection` cmdlet to ping the Server01 computer. The command uses the
 **Quiet** parameter, which returns a **Boolean** value, instead of a **Win32_PingStatus** object. The
 value is `$True` if any of the four pings succeed and is, otherwise, `$False`.
 
-If the **Test-Connection** command returns a value of `$True`, the command uses the `New-PSSession`
+If the `Test-Connection` command returns a value of `$True`, the command uses the `New-PSSession`
 cmdlet to create the **PSSession**.
 
 ## PARAMETERS
@@ -258,7 +258,7 @@ Accept wildcard characters: False
 
 ### -DcomAuthentication
 Specifies the authentication level that this cmdlet uses with WMI.
-**Test-Connection** uses WMI.
+`Test-Connection` uses WMI.
 The acceptable values for this parameter are:
 
 - Default. Windows Authentication
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 
 ### -Impersonation
 Specifies the impersonation level to use when this cmdlet calls WMI.
-**Test-Connection** uses WMI.
+`Test-Connection` uses WMI.
 The acceptable values for this parameter are:
 
 - Default. Default impersonation.
@@ -472,7 +472,7 @@ Otherwise, this cmdlet returns a **Win32_PingStatus** object for each ping.
 ## NOTES
 
 This cmdlet uses the **Win32_PingStatus** class. A `Get-WMIObject Win32_PingStatus` command is
-equivalent to a **Test-Connection** command.
+equivalent to a `Test-Connection` command.
 
 The **Source** parameter set was introduced in Windows PowerShell 3.0.
 
