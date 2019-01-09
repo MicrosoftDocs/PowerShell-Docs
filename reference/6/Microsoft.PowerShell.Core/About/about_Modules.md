@@ -23,8 +23,8 @@ modules to their PowerShell sessions and use them just like the built-in
 commands.
 
 This topic explains how to use PowerShell modules. For information about how
-to write PowerShell modules, see [Writing a PowerShell Module](https://go.microsoft.com/fwlink/?LinkId=144916)
-in the MSDN library.
+to write PowerShell modules, see [Writing a Windows PowerShell Module](/developer/module/writing-a-windows-powershell-module.md)
+in Windows PowerShell SDK.
 
 ## What Is a Module?
 
