@@ -19,7 +19,8 @@ objects.
 ### Delimiter (Default)
 
 ```
-ConvertFrom-Csv [-InputObject] <psobject[]> [[-Delimiter] <char>] [-Header <string[]>] [<CommonParameters>]
+ConvertFrom-Csv [-InputObject] <psobject[]> [[-Delimiter] <char>] [-Header <string[]>]
+[<CommonParameters>]
 ```
 
 ### UseCulture
@@ -163,7 +164,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: comma (,)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -215,12 +216,8 @@ Accept wildcard characters: False
 
 ### -UseCulture
 
-Indicates that this cmdlet uses the list separator for the current culture as the string delimiter.
-The default is based on the culture settings of the Operating System. For example, the **en-US**
-culture will return a comma (,) by default. To find the list separator for a culture, use the
-following command: `(Get-Culture).TextInfo.ListSeparator`. If you specify a character other than
-the actual string delimiter in the file, `ConvertFrom-Csv` cannot create the objects from the CSV
-strings and will return the CSV strings.
+Uses the list separator for the current culture as the item delimiter. To find the list separator
+for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 
 ```yaml
 Type: SwitchParameter
@@ -239,7 +236,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

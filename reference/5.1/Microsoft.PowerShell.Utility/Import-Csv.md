@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/21/2018
+ms.date: 1/8/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821815
 schema: 2.0.0
 title: Import-Csv
@@ -19,15 +19,15 @@ Creates table-like custom objects from the items in a comma-separated value (CSV
 ### Delimiter (Default)
 
 ```
-Import-Csv [[-Path] <String[]>] [[-Delimiter] <Char>] [-LiteralPath <String[]>] [-Header <String[]>]
- [-Encoding <Encoding>] [<CommonParameters>]
+Import-Csv [[-Path] <string[]>] [[-Delimiter] <char>] [-LiteralPath <string[]>] [-Header
+<string[]>] [-Encoding <string>] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-Import-Csv [[-Path] <String[]>] -UseCulture [-LiteralPath <String[]>] [-Header <String[]>]
- [-Encoding <Encoding>] [<CommonParameters>]
+Import-Csv [[-Path] <string[]>] -UseCulture [-LiteralPath <string[]>] [-Header <string[]>]
+[-Encoding <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -312,26 +312,30 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: None
+Default value: comma (,)
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Encoding
 
-Specifies the type of character encoding that was used in the CSV file. The default is ASCII. This
-parameter was introduced in PowerShell 3.0.
+Specifies the encoding for the exported CSV file. The default value is **ASCII**. This parameter
+was introduced in PowerShell 3.0.
 
 The acceptable values for this parameter are:
 
-- Unicode
-- UTF7
-- UTF8
-- ASCII
-- UTF32
-- BigEndianUnicode
-- Default
-- OEM
+- **Unknown** Same as **Unicode**.
+- **String** Same as **Unicode**.
+- **Unicode** Uses UTF-16 with the little-endian byte order.
+- **Byte** Encodes a set of characters into a sequence of bytes.
+- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
+- **UTF8** Uses UTF-8.
+- **UTF7** Uses UTF-7.
+- **UTF32** Uses UTF-32 with the little-endian byte order.
+- **ASCII** Uses ASCII (7-bit) character set.
+- **Default** Uses the encoding that corresponds to the system's active code page.
+- **Oem** Uses the encoding that corresponds to the system's current OEM code page.
+- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
 
 ```yaml
 Type: Encoding
@@ -340,7 +344,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: ASCII
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -410,12 +414,8 @@ Accept wildcard characters: False
 
 ### -UseCulture
 
-Indicates that this cmdlet uses the list separator for the current culture as the item delimiter.
-The default is based on the culture settings of the Operating System. For example, the **en-US**
-culture will return a comma (,) by default. To find the list separator for a culture, use the
-following command: `(Get-Culture).TextInfo.ListSeparator`. If you specify a character other than
-the actual string delimiter in the file, `Import-Csv` cannot create the objects from the CSV
-strings and will return the CSV strings.
+Uses the list separator for the current culture as the item delimiter. To find the list separator
+for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
 
 ```yaml
 Type: SwitchParameter
@@ -434,7 +434,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
