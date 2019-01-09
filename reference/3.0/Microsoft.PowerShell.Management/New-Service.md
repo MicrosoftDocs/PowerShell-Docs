@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Specifies a user account credentials under which the service runs.
+Specifies the account used by the service as the [Service Logon Account](/windows/desktop/ad/about-service-logon-accounts).
 
 Type a user name, such as "User01" or "Domain01\User01".
 Or, enter a PSCredential object, such as one from the Get-Credential cmdlet.
