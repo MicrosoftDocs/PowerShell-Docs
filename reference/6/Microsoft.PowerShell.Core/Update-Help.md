@@ -19,16 +19,16 @@ Downloads and installs the newest help files on your computer.
 ### Path (Default)
 ```
 Update-Help [[-Module] <string[]>] [[-SourcePath] <string[]>] [[-UICulture] <cultureinfo[]>] 
-[-FullyQualifiedModule <ModuleSpecification[]>] [-Recurse] [-Credential <pscredential>]
-[-UseDefaultCredentials] [-Force] [-Scope <UpdateHelpScope>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-Recurse] [-Credential <pscredential>]
+ [-UseDefaultCredentials] [-Force] [-Scope <UpdateHelpScope>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
 Update-Help [[-Module] <string[]>] [[-UICulture] <cultureinfo[]>]
-[-FullyQualifiedModule <ModuleSpecification[]>] [-LiteralPath <string[]>] [-Recurse]
-[-Credential <pscredential>] [-UseDefaultCredentials] [-Force] [-Scope <UpdateHelpScope>]
-[-WhatIf] [-Confirm] [<CommonParameters>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-LiteralPath <string[]>] [-Recurse]
+ [-Credential <pscredential>] [-UseDefaultCredentials] [-Force] [-Scope <UpdateHelpScope>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
