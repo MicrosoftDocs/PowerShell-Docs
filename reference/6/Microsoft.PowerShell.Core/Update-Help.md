@@ -325,7 +325,8 @@ Accept wildcard characters: False
 ### -FullyQualifiedModule
 
 Specifies modules with names that are specified in the form of **ModuleSpecification** objects.
-These are described in the Remarks section of [ModuleSpecification Constructor (Hashtable)][]. 
+These are described in the Remarks section of 
+[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_). 
 For example, the FullyQualifiedModule parameter accepts a module name that is specified in the format
 `@{ModuleName = "modulename"; ModuleVersion = "version_number"}` or 
 `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}.`
@@ -634,6 +635,3 @@ This cmdlet does not generate any output.
 [Start-Job](Start-Job.md)
 
 [Save-Help](Save-Help.md)
-
-<!-- reference links -->
-[ModuleSpecification Constructor (Hashtable)]: /dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_
