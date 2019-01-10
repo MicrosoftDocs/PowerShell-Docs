@@ -636,4 +636,4 @@ This cmdlet does not generate any output.
 [Save-Help](Save-Help.md)
 
 <!-- reference links -->
-[ModuleSpecification Constructor (Hashtable)] :/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_
+[ModuleSpecification Constructor (Hashtable)]: /dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_
