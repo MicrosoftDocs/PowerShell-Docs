@@ -42,7 +42,7 @@ File [string] #ResourceName
 |Ensure         |The desired state of the target file or directory. |No|**Present**|
 |Force          |Overrides access operations that would result in an error (such as overwriting a file or deleting a directory that is not empty).|No|`$false`|
 |Recurse        |Only valid when used with `Directory` type. Performs the state operation recursively to all subdirectories.|No|`$false`|
-|DependsOn      |Sets a dependency on specified resource(s). This resource will only execute after successful execution of any dependent resources. You can specify dependent resources using the syntax `"[ResourceType]ResourceName"`. See [about_DependsOn](about_DependsOn.md)|No|None|
+|DependsOn      |Sets a dependency on specified resource(s). This resource will only execute after successful execution of any dependent resources. You can specify dependent resources using the syntax `"[ResourceType]ResourceName"`. See [about_DependsOn](../../../configurations/resource-depends-on.md)|No|None|
 |SourcePath     |The path from which to copy the file or folder resource.|No|None|
 |Type           |The type of resource being configured. Valid values are `Directory` and `File`.|No|`File`|
 |MatchSource    |Determines if the resource should monitor for new files added to the source directory after the initial copy. A value of `$true` indicates that, after the initial copy, any new source files should be copied to the destination. If set to `$False`, the resource caches the contents of the source directory and ignores any files added after the initial copy.|No|`$false`|
