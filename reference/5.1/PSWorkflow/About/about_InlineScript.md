@@ -129,9 +129,6 @@ the workflow process, remove the InlineScript value from the
 OutOfProcessActivity property of the session configuration,
 such as by using the New-PSWorkflowExecutionOption cmdlet.
 
-For more information, see [How to Run Windows PowerShell Commands
-in a Workflow](http://go.microsoft.com/fwlink/?LinkId=261983).
-
 # EXAMPLES
 
 The InlineScript in the following workflow includes commands
