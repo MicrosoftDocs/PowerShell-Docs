@@ -1005,8 +1005,6 @@
       href: ./workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
     - name: Creating a Workflow with Windows PowerShell Activities
       href: ./workflow/creating-a-workflow-with-windows-powershell-activities.md
-    - name: Extending the Windows PowerShell Workflow activity controller
-      href: ./workflow/extending-the-windows-powershell-workflow-activity-controller.md
     - name: Importing and Invoking a Windows PowerShell Workflow
       href: ./workflow/importing-and-invoking-a-windows-powershell-workflow.md
     - name: Scheduling Jobs with the Windows PowerShell API
