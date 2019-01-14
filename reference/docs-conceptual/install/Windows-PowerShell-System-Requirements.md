@@ -31,7 +31,7 @@ Windows PowerShell 5.1 runs on the following versions of Windows.
 
 - Windows 7 with Service Pack 1, install [Windows Management Framework 5.1](https://aka.ms/wmf5download) to run Windows PowerShell 5.1
 
-Windows PowerShell 5.0 (Superceeded by Windows PowerShell 5.1) runs on the following versions of Windows.
+Windows PowerShell 5.0 (Superseded by Windows PowerShell 5.1) runs on the following versions of Windows.
 
 - Windows Server 2019, higher version installed by default
 
