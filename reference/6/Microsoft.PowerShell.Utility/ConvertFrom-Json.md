@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 01/14/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821753
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -23,14 +23,13 @@ ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `ConvertFrom-Json` cmdlet converts a JavaScript Object Notation (JSON) formatted string
-to a custom **PSCustomObject** object that has a property for each field in the JSON string.
-JSON is commonly used by web sites to provide a textual representation of objects.
-The JSON standard does not prohibit usage that is prohibited with a PSCustomObject.
-For example, if the JSON string contains duplicate keys, only the last key is used by this cmdlet.
-See other examples below.
+The `ConvertFrom-Json` cmdlet converts a JavaScript Object Notation (JSON) formatted string to a
+custom **PSCustomObject** object that has a property for each field in the JSON string. JSON is
+commonly used by web sites to provide a textual representation of objects. The JSON standard does
+not prohibit usage that is prohibited with a **PSCustomObject**. For example, if the JSON string
+contains duplicate keys, only the last key is used by this cmdlet. See other examples below.
 
-To generate a JSON string from any object, use the ConvertTo-Json cmdlet.
+To generate a JSON string from any object, use the `ConvertTo-Json` cmdlet.
 
 This cmdlet was introduced in PowerShell 3.0.
 
@@ -38,8 +37,14 @@ This cmdlet was introduced in PowerShell 3.0.
 
 ### Example 1: Convert a DateTime object to a JSON object
 
+This command uses the `ConvertTo-Json` and `ConvertFrom-Json` cmdlets to convert a **DateTime**
+object from the `Get-Date` cmdlet to a JSON object.
+
+```powershell
+Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 ```
-PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
+
+```Output
 DisplayHint : 2
 DateTime    : Friday, January 13, 2012 8:06:31 PM
 Date        : 1/13/2012 8:00:00 AM
@@ -57,14 +62,15 @@ TimeOfDay   : @{Ticks=723914009002; Days=0; Hours=20; Milliseconds=400; Minutes=
 Year        : 2012
 ```
 
-This command uses the ConvertTo-Json and `ConvertFrom-Json` cmdlets to convert a **DateTime**
-object from the Get-Date cmdlet to a JSON object.
-
-The command uses the Select-Object cmdlet to get all of the properties of the **DateTime** object.
+The example uses the `Select-Object` cmdlet to get all of the properties of the **DateTime** object.
 It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a JSON-formatted string
 and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string to a JSON object.
 
 ### Example 2: Get JSON strings from a web service and convert them to PowerShell objects
+
+This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service
+and then it uses the `ConvertFrom-Json` cmdlet to convert JSON content to objects
+that can be managed in PowerShell.
 
 ```powershell
 # Ensures that Invoke-WebRequest uses TLS 1.2
@@ -72,36 +78,30 @@ and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string to a JSON
 $j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' | ConvertFrom-Json
 ```
 
-This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service
-and then it uses the `ConvertFrom-Json` cmdlet to convert JSON content to objects
-that can be managed in PowerShell.
-
-You can also use the Invoke-RestMethod cmdlet, which automatically converts JSON content to objects.
+You can also use the `Invoke-RestMethod` cmdlet, which automatically converts JSON content to objects.
 
 ### Example 3: Convert a JSON string to a custom object
 
+This example shows how to use the `ConvertFrom-Json` cmdlet to convert a JSON file to a PowerShell
+custom object.
+
 ```powershell
-(Get-Content JsonFile.JSON) -join "`n" | ConvertFrom-Json
+Get-Content JsonFile.JSON | ConvertFrom-Json
 ```
 
-This example shows how to use the `ConvertFrom-Json` cmdlet to convert a JSON file to a PowerShell custom object.
-
-The command uses Get-Content cmdlet to get the strings in a JSON file.
-It uses the Join operator to join the lines in the file into a single string that is delimited
-by newline characters (\`n).
-Then it uses the pipeline operator to send the delimited string to the `ConvertFrom-Json` cmdlet,
-which converts it to a custom object.
-
-The Join operator is required, because the `ConvertFrom-Json` cmdlet expects a single string.
+The command uses Get-Content cmdlet to get the strings in a JSON file. Then it uses the pipeline
+operator to send the delimited string to the `ConvertFrom-Json` cmdlet, which converts it to a
+custom object.
 
 ### Example 4: Convert a JSON string to a hash table
+
+This command shows an example where the `-AsHashtable` switch can overcome limitations of the command.
 
 ```powershell
 '{ "key":"value1", "Key":"value2" }' | ConvertFrom-Json -AsHashtable
 ```
 
-This command shows an example where the `-AsHashtable` switch can overcome limitations of the command.
-The JSON string contains 2 key value pairs with keys that differ only in casing. Without the switch,
+The JSON string contains two key value pairs with keys that differ only in casing. Without the switch,
 the command would have thrown an error.
 
 ## PARAMETERS
@@ -132,13 +132,13 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the JSON strings to convert to JSON objects.
-Enter a variable that contains the string, or type a command or expression that gets the string.
-You can also pipe a string to `ConvertFrom-Json`.
+Specifies the JSON strings to convert to JSON objects. Enter a variable that contains the string,
+or type a command or expression that gets the string. You can also pipe a string to
+`ConvertFrom-Json`.
 
-The *InputObject* parameter is required, but its value can be an empty string.
-When the input object is an empty string, `ConvertFrom-Json` does not generate any output.
-The *InputObject* value cannot be $Null.
+The **InputObject** parameter is required, but its value can be an empty string. When the input
+object is an empty string, `ConvertFrom-Json` does not generate any output. The **InputObject**
+value cannot be `$null`.
 
 ```yaml
 Type: String
@@ -153,7 +153,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -169,12 +173,12 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 
 ## NOTES
 
-The `ConvertFrom-Json` cmdlet is implemented by using the
-[JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
+The `ConvertFrom-Json` cmdlet is implemented using the
+[JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.7.2).
 
 ## RELATED LINKS
 
-[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](https://msdn.microsoft.com/en-us/library/bb299886.aspx)
+[An Introduction to JavaScript Object Notation (JSON) in JavaScript and .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
 
 [ConvertTo-Json](ConvertTo-Json.md)
 
