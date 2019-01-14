@@ -25,9 +25,36 @@ To implement a DSC custom resource with a PowerShell class, create the following
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
+
+### Declaring multiple class resources in a module
+
+A module can define multiple class based DSC resources. You can create the folder structure in the following ways:
+
+1. Define the first resource in the "<ModuleName>.psm1" file and subsequent resources under the **DSCResources** folder.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. Define all resources under the **DSCResources** folder.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
 
 ## Create the class
 
@@ -212,6 +239,7 @@ This code also includes the CopyFile() function, a helper function that copies t
 ```
 
 ### The complete file
+
 The complete class file follows.
 
 ```powershell
@@ -408,7 +436,6 @@ class FileResource
     }
 } # This module defines a class for a DSC "FileResource" provider.
 ```
-
 
 ## Create a manifest
 
