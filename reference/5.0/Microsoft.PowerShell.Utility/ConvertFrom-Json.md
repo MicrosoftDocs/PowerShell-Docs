@@ -137,7 +137,7 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 ## NOTES
 
 The `ConvertFrom-Json` cmdlet is implemented using the
-[JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.7.2).
+[JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS
 
