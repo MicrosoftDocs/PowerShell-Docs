@@ -15,7 +15,7 @@ This example shows the basic code elements that add support for transactions to 
 
 > [!IMPORTANT]
 > For more information about how Windows PowerShell handles transactions,
-> see [Windows PowerShell Transactions][windows-powershell-transactions].
+> see [About Transactions][about_Transactions].
 
 ## To support transactions
 
@@ -50,4 +50,5 @@ This example shows the basic code elements that add support for transactions to 
 [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
 
 <!-- External URLs -->
-[windows-powershell-transactions]: /powershell/module/Microsoft.PowerShell.Core/About/about_Transactions?view=powershell-5.1
+
+[about_Transactions]: /powershell/module/Microsoft.PowerShell.Core/About/about_Transactions
