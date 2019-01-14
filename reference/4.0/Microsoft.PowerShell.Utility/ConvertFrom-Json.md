@@ -36,7 +36,7 @@ This cmdlet was introduced in PowerShell 3.0.
 ### Example 1: Convert a DateTime object to a JSON object
 
 This command uses the `ConvertTo-Json` and `ConvertFrom-Json` cmdlets to convert a **DateTime**
-object from the `Get-Date` cmdlet to a JSON object.
+object from the `Get-Date` cmdlet to a JSON object then to a **PSCustomObject**.
 
 ```powershell
 Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
@@ -60,9 +60,10 @@ TimeOfDay   : @{Ticks=723914009002; Days=0; Hours=20; Milliseconds=400; Minutes=
 Year        : 2012
 ```
 
-The example uses the `Select-Object` cmdlet to get all of the properties of the **DateTime** object.
-It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a JSON-formatted string
-and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string to a JSON object.
+The example uses the `Select-Object` cmdlet to get all of the properties of the **DateTime**
+object. It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a string
+formatted as a JSON object and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string
+to a **PSCustomObject** object.
 
 ### Example 2: Get JSON strings from a web service and convert them to PowerShell objects
 
