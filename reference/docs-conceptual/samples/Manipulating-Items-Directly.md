@@ -87,7 +87,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Although it would be convenient to treat registry entries as items, you cannot specify a path to a registry entry in a way that ensures that it is unique. The path notation does not distinguish between the registry subkey named **Run** and the **(Default)** registry entry in the **Run** subkey. Furthermore, because registry entry names can contain the backslash character (**\\**), if regsitry entries were items, then you could not use the path notation to distinguish a registry entry named **Windows\\CurrentVersion\\Run** from the subkey that is located in that path.
+Although it would be convenient to treat registry entries as items, you cannot specify a path to a registry entry in a way that ensures that it is unique. The path notation does not distinguish between the registry subkey named **Run** and the **(Default)** registry entry in the **Run** subkey. Furthermore, because registry entry names can contain the backslash character (**\\**), if registry entries were items, then you could not use the path notation to distinguish a registry entry named **Windows\\CurrentVersion\\Run** from the subkey that is located in that path.
 
 ### Renaming Existing Items (Rename-Item)
 
