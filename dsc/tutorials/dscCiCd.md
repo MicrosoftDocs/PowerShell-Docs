@@ -406,7 +406,7 @@ Let's create a release definition so that the project is deployed to the develop
 
 To do this, add a new release definition associated with the `InfraDNS` build definition you created previously.
 Be sure to select **Continuous deployment** so that a new release will be triggered any time a new build is completed.
-([How to: Work with release definitions](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions))
+([What are release pipelines?](/azure/devops/pipelines/release/what-is-release-management))
 and configure it as follows:
 
 Add the following steps to the release definition:
