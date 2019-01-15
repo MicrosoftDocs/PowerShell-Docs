@@ -222,7 +222,7 @@ If `pwsh.exe` isn't available, PowerShell Direct falls back to use `powershell.e
 
 `Enable-PSRemoting` now creates two remoting session configurations:
 
-- One for the major version of PowerShell. For example,`PowerShell.6`. This endpoint that can be relied upon across minor version updates as the "system-wide" PowerShell 6 session configuration
+- One for the major version of PowerShell. For example, `PowerShell.6`. This endpoint that can be relied upon across minor version updates as the "system-wide" PowerShell 6 session configuration
 - One version-specific session configuration, for example: `PowerShell.6.1.0`
 
 This behavior is useful if you want to have multiple PowerShell 6 versions installed and accessible
@@ -448,7 +448,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 In the past, PowerShell shipped a function on Windows called `more` that wrapped `more.com`.
 That function has now been removed.
 
-Also the `help` function changed to use `more.com` on Windows, or the system's default pager
+Also, the `help` function changed to use `more.com` on Windows, or the system's default pager
 specified by `$env:PAGER` on non-Windows platforms.
 
 ### `cd DriveName:` now returns users to the current working directory in that drive
