@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  01/15/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -239,13 +239,13 @@ Restricted, which is the default for Windows clients.
 
 ## Set a Different Execution Policy for One Session
 
-You can use the **ExecutionPolicy** parameter of **powershell.exe** to set an
+You can use the **ExecutionPolicy** parameter of `powershell.exe` to set an
 execution policy for a new PowerShell session. The policy affects only the
 current session and child sessions.
 
 To set the execution policy for a new session, start PowerShell at the command
-line, such as **Cmd.exe** or from PowerShell, and then use the
-**ExecutionPolicy** parameter of **powershell.exe** to set the execution
+line, such as `cmd.exe` or from PowerShell, and then use the
+**ExecutionPolicy** parameter of `powershell.exe` to set the execution
 policy.
 
 For example:
