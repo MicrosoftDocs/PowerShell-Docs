@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 12/14/2018
 online version: http://go.microsoft.com/fwlink/?LinkId=821482
 schema: 2.0.0
 title: Get-Command
@@ -19,16 +19,18 @@ Gets all commands.
 ### CmdletSet (Default)
 ```
 Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
- [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
- [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
- [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax]
+ [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
+ [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ### AllCommandSet
 ```
-Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>]
- [-All] [-ListImported] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [[-Name] <string[]>] [[-ArgumentList] <Object[]>] [-Module <string[]>]
+[-FullyQualifiedModule <ModuleSpecification[]>] [-CommandType <CommandTypes>]
+[-TotalCount <int>] [-Syntax] [-ShowCommandInfo] [-All] [-ListImported]
+[-ParameterName <string[]>] [-ParameterType <PSTypeName[]>]
+[-UseFuzzyMatching] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -216,6 +218,24 @@ You can use this command format to find the cmdlets that accept the type of obje
 
 The command uses the **PSTypeNames** intrinsic property of all objects, which gets the types that describe the object.
 To get the **PSTypeNames** property of a net adapter, and not the **PSTypeNames** property of a collection of net adapters, the command uses array notation to get the first net adapter that the cmdlet returns.
+
+### Example 15: Get commands using a fuzzy match
+```powershell
+Get-Command get-commnd -UseFuzzyMatching
+```
+
+```output
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Command                                        6.2.0.0    Microsoft.PowerShell.Core
+Application     getconf                                            0.0.0.0    /usr/bin/getconf
+Application     command                                            0.0.0.0    /usr/bin/command
+```
+
+In this example, the name of the command deliberately has a typo as 'get-commnd'.
+Using the `-UseFuzzyMatching` switch, the cmdlet determined that the best match
+was `Get-Command` followed by other native commands on the system that were a
+similar match.
 
 ## PARAMETERS
 
@@ -496,6 +516,24 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -UseFuzzyMatching
+Indicates using a fuzzy matching algorithm when finding commands.  The order
+of the output is from closest match to least likely match.  Wildcards should
+not be used with fuzzy matching as it will attempt to match commands that
+may contain those wildcard characters.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
