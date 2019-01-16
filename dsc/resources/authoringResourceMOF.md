@@ -295,7 +295,7 @@ If the actions taken in your `Set-TargetResource` function require a reboot, you
 Inside your `Set-TargetResource` function, add the following line of code.
 
 ```powershell
-Include this line if the resource requires a system reboot.
+# Include this line if the resource requires a system reboot.
 $global:DSCMachineStatus = 1
 ```
 
