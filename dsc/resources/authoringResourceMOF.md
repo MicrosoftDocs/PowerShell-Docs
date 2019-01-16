@@ -287,3 +287,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## Rebooting the Node
+
+If the actions taken in your `Set-TargetResource` function require a reboot, you can use a global flag to tell the LCM to reboot the Node. This reboot occurs directly after the `Set-TargetResource` function completes.
+
+Inside your `Set-TargetResource` function, add the following line of code.
+
+```powershell
+Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+In order for the LCM to reboot the Node, the **RebootNodeIfNeeded** flag needs to be set to `$true`. The **ActionAfterReboot** setting should also be set to **ContinueConfiguration**, which is the default. For more information on configuring the LCM, see [Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md), or [Configuring the Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
