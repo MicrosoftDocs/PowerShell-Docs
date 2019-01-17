@@ -146,7 +146,7 @@ Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
 
-- The session history is a list of the commands entered during the session along with the ID. The session history represents the order of execution, the status, and the start and end times of the command. As you enter each command, Windows PowerShell adds it to the history so that you can reuse it.  For more information about the session history, see about_History.
+- The session history is a list of the commands entered during the session along with the ID. The session history represents the order of execution, the status, and the start and end times of the command. As you enter each command, Windows PowerShell adds it to the history so that you can reuse it.  For more information about the session history, see [about_History](About/about_History.md).
 
   To specify the commands to add to the history, use the **InputObject** parameter.
 The **Add-History** command accepts only **HistoryInfo** objects, such as those returned for each command by the Get-History cmdlet.
@@ -161,6 +161,7 @@ For more information, see the examples.
 If you intend to pass the objects back to **Add-History**, do not use the **NoTypeInformation** parameter of the Export-Csv cmdlet and do not delete the type information, column headings, or any fields in the file.
 
   To edit the session history, export the session to a CSV or XML file, edit the file, import the file, and use **Add-History** to append it to the current session history.
+
 ## RELATED LINKS
 
 [Clear-History](Clear-History.md)
