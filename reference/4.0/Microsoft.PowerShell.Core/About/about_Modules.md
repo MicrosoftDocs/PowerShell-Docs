@@ -506,7 +506,7 @@ The following modules (or snap-ins) are installed with PowerShell.
 
 Beginning in PowerShell 3.0, you can record execution events for the cmdlets
 and functions in PowerShell modules and snap-ins by setting the
-**LogPipelineExecutionDetails** property of modules and snap-ins to `$True`. 
+**LogPipelineExecutionDetails** property of modules and snap-ins to `$True`.
 You can also use a Group Policy setting, Turn on Module Logging, to enable
 module logging in all PowerShell sessions. For more information, see
 [about_EventLogs](about_EventLogs.md) and

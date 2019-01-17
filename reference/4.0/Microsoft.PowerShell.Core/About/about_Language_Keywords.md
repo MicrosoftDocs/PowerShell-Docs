@@ -523,6 +523,7 @@ Statement syntax:
 while (<condition>) {
    <statements>
  }
+```
 
 When used in a `Do` statement, `while` is part of a looping construct where
 the statement list is executed at least one time.
