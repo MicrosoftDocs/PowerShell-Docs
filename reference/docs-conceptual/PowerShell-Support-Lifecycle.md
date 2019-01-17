@@ -55,7 +55,7 @@ Platforms listed as `Experimental` are not officially supported, but are availab
 | Ubuntu 14.04 and, 16.04                           | Supported   | Supported   |
 | Ubuntu 18.04                                      |             | Supported   |
 | Ubuntu 18.10 (via Snap Package)                   |             | Community   |
-| Debian 8.7+, and 9                                | Supported   | Supported   |
+| Debian 9                                          | Supported   | Supported   |
 | CentOS 7                                          | Supported   | Supported   |
 | Red Hat Enterprise Linux 7                        | Supported   | Supported   |
 | OpenSUSE 42.3                                     | Supported   | Supported   |
@@ -87,6 +87,7 @@ Therefore, support for the following versions was ended by the distribution owne
 | Ubuntu   | 16.10   | [July 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 | Ubuntu   | 17.04   | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
 | Ubuntu   | 17.10   | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
+| Debian   | 8       | [June 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
 
 ## Notes on licensing
 
