@@ -341,10 +341,10 @@ authorization rule.
 ### Using a single set of authorization rules for multiple sites
 
 Authorization rules are stored in an XML file. By default, the path name of the XML file is
-`%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
+`$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
 
 The path to the authorization rules XML file is stored in the **powwa.config** file, which is found
-in `%windir%\Web\PowershellWebAccess\data`. The administrator has the flexibility to change the
+in `$env:windir\Web\PowershellWebAccess\data`. The administrator has the flexibility to change the
 reference to the default path in **powwa.config** to suit preferences or requirements. Allowing the
 administrator to change the location of the file lets multiple Windows PowerShell Web Access
 gateways use the same authorization rules, if such a configuration is desired.
@@ -354,7 +354,7 @@ gateways use the same authorization rules, if such a configuration is desired.
 By default, Windows PowerShell Web Access limits a user to three sessions at one time. You can edit
 the web application's **web.config** file in IIS Manager to support a different number of sessions
 per user. The path to the **web.config** file is
-`$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
+`$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
 
 By default, IIS Web Server is configured to restart the application pool if any settings are
 edited. For example, the application pool is restarted if changes are made to the **web.config**
