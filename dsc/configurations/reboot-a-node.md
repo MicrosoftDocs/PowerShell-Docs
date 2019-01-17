@@ -6,18 +6,27 @@ title:  Reboot a Node
 # Reboot a Node
 
 > [!NOTE]
-> This topic talks about how to reboot a Node. In order for the reboot to be successful the **ActionAfterReboot** and **RebootNodeIfNeeded** LCM settings need to be configured properly. To read about Local Configuration Manager settings, see [Configure the Local Configuration Manager](../managing-nodes/metaConfig.md), or [Configure the Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
+> This topic talks about how to reboot a Node. In order for the reboot to be successful the
+> **ActionAfterReboot** and **RebootNodeIfNeeded** LCM settings need to be configured properly.
+> To read about Local Configuration Manager settings, see [Configure the Local Configuration Manager](../managing-nodes/metaConfig.md),
+> or [Configure the Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
 
-Nodes can be rebooted from within a resource, by using the `$global:DSCMachineStatus` flag. Setting this flag to `1` in the `Set-TargetResource` function forces the LCM to reboot the Node directly after the **Set** method of the current resource. Using this flag, the **xPendingReboot** resource detects if a reboot is pending outside of DSC.
+Nodes can be rebooted from within a resource, by using the `$global:DSCMachineStatus` flag. Setting
+this flag to `1` in the `Set-TargetResource` function forces the LCM to reboot the Node directly
+after the **Set** method of the current resource. Using this flag, the **xPendingReboot** resource
+detects if a reboot is pending outside of DSC.
 
-Your [configurations](configurations.md) may perform steps that require the Node to reboot. This could inclue things such as:
+Your [configurations](configurations.md) may perform steps that require the Node to reboot. This
+could include things such as:
 
 - Windows updates
 - Software install
 - File renames
 - Computer rename
 
-The **xPendingReboot** resource checks specific computer locations to determine if a reboot is pending. If the Node requires a reboot outside of DSC, the **xPendingReboot** resource sets the `$global:DSCMachineStatus` flag to `1` forcing a reboot and resolving the pending condition.
+The **xPendingReboot** resource checks specific computer locations to determine if a reboot is
+pending. If the Node requires a reboot outside of DSC, the **xPendingReboot** resource sets the
+`$global:DSCMachineStatus` flag to `1` forcing a reboot and resolving the pending condition.
 
 ## Syntax
 
@@ -50,7 +59,8 @@ xPendingReboot [String] #ResourceName
 
 ## Example
 
-The following example renames a computer using the **Computer** resource, reboots the machine using **xPendingReboot**, and logs a message.
+The following example renames a computer using the **Computer** resource, reboots the machine using
+**xPendingReboot**, and logs a message.
 
 ```powershell
 Configuration RenameComputer
@@ -80,7 +90,8 @@ Configuration RenameComputer
 ```
 
 > [!NOTE]
-> This example assumes that you have configured your Local Configuration Manager to allow reboots and continue the configuration after a reboot.
+> This example assumes that you have configured your Local Configuration Manager to allow reboots
+> and continue the configuration after a reboot.
 
 ## Where to Download
 
