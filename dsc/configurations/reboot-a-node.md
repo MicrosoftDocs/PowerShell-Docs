@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date:  1/17/2019
 keywords:  dsc,powershell,configuration,setup
 title:  Reboot a Node
 ---
