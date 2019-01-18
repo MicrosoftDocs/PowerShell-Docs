@@ -89,7 +89,7 @@ PS C:\> cd HKLM:\Software
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
 > [Get-ChildItem](../../Microsoft.PowerShell.Management/Get-ChildItem.md),
-> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md)
+> `cd` is an alias for [Set-Location](../../Microsoft.PowerShell.Management/Set-Location.md),
 > and `pwd` is an alias for [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md).
 
 This last example shows another path syntax you can use to navigate the
@@ -136,8 +136,7 @@ Spooler     DependOnService    : {RPCSS, http}
             Group              : SpoolerGroup
             ImagePath          : C:\WINDOWS\System32\spoolsv.exe
             ObjectName         : LocalSystem
-            RequiredPrivileges : {SeTcbPrivilege, SeImpersonatePrivilege,
-            SeAuditPrivilege, SeChangeNotifyPrivilege...}
+            RequiredPrivileges : {SeTcbPrivilege, SeImpersonatePrivilege, ...
             ServiceSidType     : 1
             Start              : 2
             Type               : 27
@@ -194,7 +193,7 @@ articles.
 
 Registry key values are stored as properties of each registry key. The
 `Get-ItemProperty` cmdlet views registry key properties using the name you
-specify. The result is a **PSCustom** object containing the properties you
+specify. The result is a **PSCustomObject** containing the properties you
 specify.
 
 The Following example uses the `Get-ItemProperty` cmdlet to view all
@@ -309,9 +308,9 @@ Name                           Property
 ContosoCompany
 ```
 
-You can use the `New-ItemProperty` cmdlet to create to **Item Properties** on
-a registry key that you specify. The following example creates a new DWORD
-value on the ContosoCompany registry key.
+You can use the `New-ItemProperty` cmdlet to create values in a registry key
+that you specify. The following example creates a new DWORD value on the
+ContosoCompany registry key.
 
 ```powershell
 $path = "HKLM:\SOFTWARE\ContosoCompany"
@@ -541,7 +540,7 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-`Get-Help` command in a file system drive or use the `-Path` parameter to
+`Get-Help` command in a file system drive or use the **Path** parameter to
 specify a file system drive.
 
 ```powershell

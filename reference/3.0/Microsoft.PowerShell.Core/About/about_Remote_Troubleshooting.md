@@ -166,7 +166,7 @@ creates firewall rules that allows remote access from the same local subnet.
 
 On client versions of Windows, `Enable-PSRemoting` succeeds on private and
 domain networks. By default, it fails on public networks, but if
-you use the SkipNetworkProfileCheck parameter, `Enable-PSRemoting` succeeds
+you use the **SkipNetworkProfileCheck** parameter, `Enable-PSRemoting` succeeds
 and creates a firewall rule that allows traffic from the same local subnet.
 
 To remove the local subnet restriction on public networks and allow
@@ -279,8 +279,8 @@ Get-Item wsman:\localhost\Service\RootSDDL
 
 To change the RootSDDL, use the `Set-Item` cmdlet in the WSMan: drive. To
 change the security descriptor of a session configuration, use the
-`Set-PSSessionConfiguration` cmdlet with the SecurityDescriptorSDDL or
-ShowSecurityDescriptorUI parameters.
+`Set-PSSessionConfiguration` cmdlet with the **SecurityDescriptorSDDL** or
+**ShowSecurityDescriptorUI** parameters.
 
 For more information about the WSMan: drive, see the Help topic for the
 WSMan provider ("Get-Help wsman").
@@ -308,8 +308,8 @@ Administrator.
 Invoke-Command -ComputerName Server01 -Credential Domain01\Admin01
 ```
 
-For more information about the Credential parameter, see `New-PSSession`,
-`Enter-PSSession` or `Invoke-Command`.
+For more information about the **Credential** parameter, see [New-PSSession](../New-PSSession.md),
+[Enter-PSSession](../Enter-PSSession.md) or [Invoke-Command](../Invoke-Command.md).
 
 ### HOW TO ENABLE REMOTING FOR NON-ADMINISTRATIVE USERS
 
@@ -737,8 +737,8 @@ Set-PSSessionConfiguration -Name microsoft.PowerShell `
 For more information about the `New-PSSessionOption` cmdlet, see
 `New-PSSessionOption`.
 
-For more information about the WS-Management quotas, see the Help topic for
-the WSMan provider (type `Get-Help WSMan`).
+For more information about the WS-Management quotas, see
+[about_WSMan_Provider](../../Microsoft.WsMan.Management/About/about_WSMan_Provider.md).
 
 ### HOW TO RESOLVE TIMEOUT ERRORS
 
