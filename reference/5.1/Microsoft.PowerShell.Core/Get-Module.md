@@ -392,7 +392,7 @@ Accept wildcard characters: False
 ### -CimSession
 
 Specifies a CIM session on the remote computer.
-Enter a variable that contains the CIM session or a command that gets the CIM session, such as a [Get-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession) command.
+Enter a variable that contains the CIM session or a command that gets the CIM session, such as a [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) command.
 
 `Get-Module` uses the CIM session connection to get modules from the remote computer.
 When you import the module by using the `Import-Module` cmdlet and use the commands from the imported module in the current session, the commands actually run on the remote computer.
@@ -605,9 +605,9 @@ When you create a CIM session on the local computer, Windows PowerShell uses DCO
 
 ## RELATED LINKS
 
-[Get-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/get-cimsession)
+[Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession)
 
-[New-CimSession](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/new-cimsession)
+[New-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsession)
 
 [Get-PSSession](Get-PSSession.md)
 

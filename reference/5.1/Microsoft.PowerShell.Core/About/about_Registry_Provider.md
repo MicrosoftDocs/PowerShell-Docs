@@ -53,7 +53,7 @@ in this article.
 ## Types exposed by this provider
 
 Registry keys are represented as instances of the
-[Microsoft.Win32.RegistryKey](https://docs.microsoft.com/en-us/dotnet/api/microsoft.win32.registrykey)
+[Microsoft.Win32.RegistryKey](https://docs.microsoft.com/dotnet/api/microsoft.win32.registrykey)
 class. Registry entries are represented as instances of the
 [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject)
 class.
