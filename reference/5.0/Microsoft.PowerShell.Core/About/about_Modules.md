@@ -1,11 +1,10 @@
 ---
-ms.date:  11/29/2017
+ms.date:  01/04/2018
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Modules
 ---
-
 # About Modules
 
 ## Short Description
@@ -23,8 +22,8 @@ modules to their PowerShell sessions and use them just like the built-in
 commands.
 
 This topic explains how to use PowerShell modules. For information about how
-to write PowerShell modules, see [Writing a PowerShell Module](https://go.microsoft.com/fwlink/?LinkId=144916)
-in the MSDN library.
+to write PowerShell modules, see
+[Writing a PowerShell Module](/powershell/developer/module/writing-a-windows-powershell-module).
 
 ## What Is a Module?
 
@@ -43,6 +42,7 @@ gets all commands in all installed modules, even if they are not yet in the
 session, so you can find a command and use it without importing.
 
 Any of the following commands will import a module into your session.
+
 ### Run the Command
 
 ```powershell
@@ -68,14 +68,14 @@ Only modules that are stored in the location specified by the PSModulePath
 environment variable are automatically imported. Modules in other locations
 must be imported by running the `Import-Module` cmdlet.
 
-Also, commands that use PowerShell providers do not automatically
-import a module. For example, if you use a command that requires the WSMan:
-drive, such as the `Get-PSSessionConfiguration` cmdlet, you might need to
-run the `Import-Module` cmdlet to import the Microsoft.WSMan.Management
-module that includes the WSMan: drive.
+Also, commands that use PowerShell providers do not automatically import a
+module. For example, if you use a command that requires the WSMan: drive, such
+as the `Get-PSSessionConfiguration` cmdlet, you might need to run the
+`Import-Module` cmdlet to import the **Microsoft.WSMan.Management** module that
+includes the `WSMan:` drive.
 
 You can still run the `Import-Module` command to import a module and
-use the $PSModuleAutoloadingPreference variable to enable, disable and
+use the `$PSModuleAutoloadingPreference` variable to enable, disable and
 configure automatic importing of modules. For more information, see
 [about_Preference_Variables](about_Preference_Variables.md).
 
@@ -104,7 +104,6 @@ the Turn Windows features on or off dialog box in Control Panel, any
 PowerShell modules that are part of the feature are installed. Many other
 modules come in an installer or Setup program that installs the module.
 
-
 Create a Modules directory for the current user if one does not exist. To
 create a Modules directory, type:
 
@@ -115,7 +114,7 @@ New-Item -Type Directory -Path $HOME\Documents\WindowsPowerShell\Modules
 Copy the entire module folder into the Modules directory. You can use any
 method to copy the folder, including Windows Explorer and Cmd.exe, as well as
 PowerShell. In PowerShell use the `Copy-Item` cmdlet. For example, to copy the
-MyModule folder from C:\\ps-test\\MyModule to the Modules directory, type:
+MyModule folder from `C:\ps-test\MyModule` to the Modules directory, type:
 
 ```powershell
 Copy-Item -Path C:\ps-test\MyModule -Destination `
@@ -201,9 +200,9 @@ For more information, see [Get-Help](../Get-Help.md) and
 
 You might have to import a module or import a module file. Importing is
 required when a module is not installed in the locations specified by the
-PSModulePath environment variable ($env:PSModulePath), or the module consists
-of file, such as a .dll or .psm1 file, instead of typical module that is
-delivered as a folder.
+**PSModulePath** environment variable, `$env:PSModulePath`, or the module
+consists of file, such as a .dll or .psm1 file, instead of typical module that
+is delivered as a folder.
 
 You might also choose to import a module so that you can use the parameters of
 the `Import-Module` command, such as the Prefix parameter, which adds a
@@ -291,42 +290,43 @@ PowerShell 4.0, with the introduction of DSC, a new default module and DSC
 resource folder was introduced. For more information about DSC, see
 about_DesiredStateConfiguration.
 
-- System: $pshome\Modules (%windir%\System32\WindowsPowerShell\v1.0\Modules)
+- System: `$pshome\Modules` or
+  (`$env:windir\System32\WindowsPowerShell\v1.0\Modules`)
   System modules are those that ship with Windows and PowerShell.
 
   Starting in PowerShell 4.0, when PowerShell Desired State Configuration
   (DSC) was introduced, DSC resources that are included with PowerShell are
-  also stored in \$pshome\\Modules, in the
-  \$pshome\\Modules\\PSDesiredStateConfiguration\\DSCResources folder.
+  also stored in `$PSHOME\Modules`, in the
+  `$pshome\Modules\PSDesiredStateConfiguration\DSCResources` folder.
 
-- Current user: \$home\\Documents\\WindowsPowerShell\\Modules
-  (%UserProfile%\Documents\WindowsPowerShell\Modules)
+- Current user: `$home\Documents\WindowsPowerShell\Modules`
+  (`$env:UserProfile\Documents\WindowsPowerShell\Modules`)
 
   or
 
-  \$home\\My Documents\\WindowsPowerShell\\Modules
-  (%UserProfile%\My Documents\WindowsPowerShell\Modules)
+  `$home\My Documents\WindowsPowerShell\Modules`
+  (`$env:UserProfile\My Documents\WindowsPowerShell\Modules`)
   This is the location for user-added modules prior to PowerShell 4.0.
 
 In PowerShell 4.0 and later releases of PowerShell, user-added modules and DSC
-resources are stored in C:\\Program Files\\WindowsPowerShell\\Modules. Modules
+resources are stored in `C:\Program Files\WindowsPowerShell\Modules`. Modules
 and DSC resources in this location are accessible by all users of the
 computer. This change was required because the DSC engine runs as local
 system, and could not access user-specific paths, such as
-\$home\\Documents\\WindowsPowerShell\\Modules.
+`$home\Documents\WindowsPowerShell\Modules`.
 
 Starting in PowerShell 5.0, with the addition of the PowerShellGet module, and
-the [PowerShell Gallery](https://www.powershellgallery.com) of community- and
+the [PowerShell Gallery](https://www.powershellgallery.com) of community and
 Microsoft-created resources, the `Install-Module` command installs modules and
-DSC resources to C:\\Program Files\\WindowsPowerShell\\Modules by default.
+DSC resources to `C:\Program Files\WindowsPowerShell\Modules` by default.
 
-Note: To add or change files in the %Windir%\\System32 directory, start
+Note: To add or change files in the `$env:Windir\System32` directory, start
 PowerShell with the "Run as administrator" option.
 
 You can change the default module locations on your system by changing the
-value of the PSModulePath environment variable ($Env:PSModulePath). The
-PSModulePath environment variable is modeled on the Path environment variable
-and has the same format.
+value of the **PSModulePath** environment variable, `$Env:PSModulePath`. The
+**PSModulePath** environment variable is modeled on the Path environment
+variable and has the same format.
 
 To view the default module locations, type:
 
@@ -343,23 +343,23 @@ $Env:PSModulePath = $Env:PSModulePath + ";<path>"
 The semi-colon (;) in the command separates the new path from the
 path that precedes it in the list.
 
-For example, to add the "C:\ps-test\Modules" directory, type:
+For example, to add the `C:\ps-test\Modules` directory, type:
 
 ```powershell
 $Env:PSModulePath + ";C:\ps-test\Modules"
 ```
 
-When you add a path to PSModulePath, `Get-Module` and `Import-Module`
+When you add a path to **PSModulePath**, `Get-Module` and `Import-Module`
 commands include modules in that path.
 
 The value that you set affects only the current session. To make the
 change persistent, add the command to your PowerShell profile
-or use System in Control Panel to change the value of the PSModulePath
+or use System in Control Panel to change the value of the **PSModulePath**
 environment variable in the registry.
 
 Also, to make the change persistent, you can also use the
-SetEnvironmentVariable method of the System.Environment class to add
-a Path to the PSModulePath environment variable.
+**SetEnvironmentVariable** method of the **System.Environment** class to add a
+Path to the **PSModulePath** environment variable.
 
 For more information about the PSModulePath variable, see
 [about_Environment_Variables](about_Environment_Variables.md).
@@ -508,9 +508,9 @@ The following modules (or snap-ins) are installed with PowerShell.
 
 Beginning in PowerShell 3.0, you can record execution events for the cmdlets
 and functions in PowerShell modules and snap-ins by setting the
-LogPipelineExecutionDetails property of modules and snap-ins to \$True. You can
-also use a Group Policy setting, Turn on Module Logging, to enable module
-logging in all PowerShell sessions. For more information, see
+**LogPipelineExecutionDetails** property of modules and snap-ins to `$True`.
+You can also use a Group Policy setting, Turn on Module Logging, to enable
+module logging in all PowerShell sessions. For more information, see
 [about_EventLogs](about_EventLogs.md) and
 [about_Group_Policy_Settings](about_Group_Policy_Settings.md).
 

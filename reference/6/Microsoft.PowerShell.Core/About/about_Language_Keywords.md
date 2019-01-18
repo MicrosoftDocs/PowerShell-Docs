@@ -61,18 +61,18 @@ Language Keywords
 
 ### Begin
 
-Specifies one part of the body of a function, along with the DynamicParam,
-Process, and End keywords. The Begin statement list runs one time before any
+Specifies one part of the body of a function, along with the `DynamicParam`,
+`Process`, and `End` keywords. The `Begin` statement list runs one time before any
 objects are received from the pipeline.
 
 Syntax:
 
-```powershell
+```Syntax
 function <name> {
-DynamicParam {<statement list>}
-begin {<statement list>}
-process {<statement list>}
-end {<statement list>}
+    DynamicParam {<statement list>}
+    begin {<statement list>}
+    process {<statement list>}
+    end {<statement list>}
 }
 ```
 
@@ -82,7 +82,7 @@ Causes a script to exit a loop.
 
 Syntax:
 
-```powershell
+```Syntax
 while (<condition>) {
    <statements>
    ...
@@ -102,7 +102,7 @@ indicates that the error type is optional.
 
 Syntax:
 
-```powershell
+```Syntax
 try {<statement list>}
 catch [[<error type>]] {<statement list>}
 ```
@@ -113,7 +113,7 @@ Specifies a new class in PowerShell.
 
 Syntax:
 
-```powershell
+```Syntax
 class <class-name> {
     [[hidden] [static] <property-definition> ...]
     [<class-name>([argument-list>]) {<constructor-statement-list>} ...]
@@ -128,7 +128,7 @@ condition is met, the script begins the loop again.
 
 Syntax:
 
-```powershell
+```Syntax
 while (<condition>) {
    <statements>
    ...
@@ -143,40 +143,39 @@ while (<condition>) {
 ### Data
 
 In a script, defines a section that isolates data from the script logic. Can
-also include If statements and some limited commands.
+also include `If` statements and some limited commands.
 
 Syntax:
 
-```powershell
+```Syntax
 data <variable> [-supportedCommand <cmdlet-name>] {<permitted content>}
 ```
 
 ### Do
 
-Used with the While or Until keyword as a looping construct. Windows
-PowerShell runs the statement list at least one time, unlike a loop that uses
-While.
+Used with the `While` or `Until` keyword as a looping construct. PowerShell
+runs the statement list at least one time, unlike a loop that uses `While`.
 
-Syntax for _While_:
+Syntax for `While`:
 
-```powershell
+```Syntax
 do {<statement list>} while (<condition>)
 ```
 
-Syntax for _Until_:
+Syntax for `Until`:
 
-```powershell
+```Syntax
 do {<statement list>} until (<condition>)
 ```
 
 ### DynamicParam
 
-Specifies one part of the body of a function, along with the Begin, Process,
-and End keywords. Dynamic parameters are added at run time.
+Specifies one part of the body of a function, along with the `Begin`, `Process`,
+and `End` keywords. Dynamic parameters are added at run time.
 
 Syntax:
 
-```powershell
+```Syntax
 function <name> {
    DynamicParam {<statement list>}
    begin {<statement list>}
@@ -187,23 +186,23 @@ function <name> {
 
 ### Else
 
-Used with the If keyword to specify the default statement list.
+Used with the `If` keyword to specify the default statement list.
 
 Syntax:
 
-```powershell
+```Syntax
 if (<condition>) {<statement list>}
 else {<statement list>}
 ```
 
 ### Elseif
 
-Used with the If and Else keywords to specify additional conditionals. The
-Else keyword is optional.
+Used with the `If` and `Else` keywords to specify additional conditionals. The
+`Else` keyword is optional.
 
 Syntax:
 
-```powershell
+```Syntax
 if (<condition>) {<statement list>}
 elseif (<condition>) {<statement list>}
 else {<statement list>}
@@ -211,13 +210,13 @@ else {<statement list>}
 
 ### End
 
-Specifies one part of the body of a function, along with the DynamicParam,
-Begin, and End keywords. The End statement list runs one time after all the
+Specifies one part of the body of a function, along with the `DynamicParam`,
+`Begin`, and `End` keywords. The `End` statement list runs one time after all the
 objects have been received from the pipeline.
 
 Syntax:
 
-```powershell
+```Syntax
 function <name> {
    DynamicParam {<statement list>}
    begin {<statement list>}
@@ -233,7 +232,7 @@ a set of named labels called the enumerator list.
 
 Syntax:
 
-```powershell
+```Syntax
 enum <enum-name> {
     <label> [= <int-value>]
     ...
@@ -246,7 +245,7 @@ Causes PowerShell to exit a script or a PowerShell instance.
 
 Syntax:
 
-```
+```Syntax
 exit
 exit <exitcode>
 ```
@@ -258,10 +257,10 @@ to indicate the post-execution status of the script.
 
 In PowerShell, the exit statement sets the value of the `$LASTEXITCODE`
 variable. In the Windows Command Shell (cmd.exe), the exit statement sets the
-value of the `%ERRORLEVEL% environment variable.
+value of the `%ERRORLEVEL%` environment variable.
 
 In the following example, the user sets the error level variable value to 4 by
-adding 'exit 4' to the script file _test.ps1_.
+adding `exit 4` to the script file _test.ps1_.
 
 ```cmd
 C:\scripts\test>type test.ps1
@@ -296,19 +295,19 @@ block.
 
 Syntax:
 
-```powershell
+```Syntax
 filter <name> {<statement list>}
 ```
 
 ### Finally
 
 Defines a statement list that runs after statements that are associated with
-Try and Catch. A Finally statement list runs even if you press CTRL+C to leave
+Try and Catch. A `Finally` statement list runs even if you press `CTRL+C` to leave
 a script or if you use the Exit keyword in the script.
 
 Syntax:
 
-```powershell
+```Syntax
 try {<statement list>}
 catch [<error type>] {<statement list>}
 finally {<statement list>}
@@ -320,7 +319,7 @@ Defines a loop by using a condition.
 
 Syntax:
 
-```powershell
+```Syntax
 for (<initialize>; <condition>; <iterate>) { <statement list> }
 ```
 
@@ -330,7 +329,7 @@ Defines a loop by using each member of a collection.
 
 Syntax:
 
-```powershell
+```Syntax
 ForEach (<item> in <collection>) { <statement list> }
 ```
 
@@ -342,12 +341,12 @@ Reserved for future use.
 
 Creates a named statement list of reusable code. You can name the scope a
 function belongs to. And, you can specify one or more named parameters by
-using the Param keyword. Within the function statement list, you can include
-DynamicParam, Begin, Process, and End statement lists.
+using the `Param` keyword. Within the function statement list, you can include
+`DynamicParam`, `Begin`, `Process`, and `End` statement lists.
 
 Syntax:
 
-```powershell
+```Syntax
 function [<scope:>]<name> {
    param ([type]<$pname1> [, [type]<$pname2>])
    DynamicParam {<statement list>}
@@ -362,7 +361,7 @@ statement list after the function name.
 
 Syntax:
 
-```powershell
+```Syntax
 function [<scope:>]<name> [([type]<$pname1>, [[type]<$pname2>])] {
    DynamicParam {<statement list>}
    begin {<statement list>}
@@ -377,29 +376,29 @@ Defines a conditional.
 
 Syntax:
 
-```powershell
+```Syntax
 if (<condition>) {<statement list>}
 ```
 
 ### Hidden
 
-Hides class members from the default results of the Get-Member cmdlet, and
+Hides class members from the default results of the `Get-Member` cmdlet, and
 from IntelliSense and tab completion results.
 
 Syntax:
 
-```powershell
+```Syntax
 Hidden [data type] $member_name
 ```
 
 ### In
 
-Used in a ForEach statement to create a loop that uses each member of a
+Used in a `ForEach` statement to create a loop that uses each member of a
 collection.
 
 Syntax:
 
-```powershell
+```Syntax
 ForEach (<item> in <collection>){<statement list>}
 ```
 
@@ -410,7 +409,7 @@ only in a PowerShell Workflow.
 
 Syntax:
 
-```powershell
+```Syntax
 workflow <verb>-<noun>
 {
    InlineScript
@@ -422,14 +421,13 @@ workflow <verb>-<noun>
 }
 ```
 
-The InlineScript keyword indicates an InlineScript activity, which runs
+The `InlineScript` keyword indicates an `InlineScript` activity, which runs
 commands in a shared standard (non-workflow) session. You can use the
-InlineScript keyword to run commands that are not otherwise valid in a
+`InlineScript` keyword to run commands that are not otherwise valid in a
 workflow, and to run commands that share data. By default, the commands in an
 InlineScript script block run in a separate process.
 
-For more information, see about_InlineScript and
-[Running PowerShell Commands in a Workflow](https://technet.microsoft.com/library/jj574197.aspx).
+For more information, see [Running PowerShell Commands in a Workflow](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574197(v=ws.11)).
 
 ### Param
 
@@ -437,7 +435,7 @@ Defines the parameters in a function.
 
 Syntax:
 
-```powershell
+```Syntax
 function [<scope:>]<name> {
    param ([type]<$pname1>[, [[type]<$pname2>]])
    <statement list>
@@ -446,16 +444,16 @@ function [<scope:>]<name> {
 
 ### Process
 
-Specifies a part of the body of a function, along with the DynamicParam,
-Begin, and End keywords. When a Process statement list receives input from the
-pipeline, the Process statement list runs one time for each element from the
-pipeline. If the pipeline provides no objects, the Process statement list does
-not run. If the command is the first command in the pipeline, the Process
-statement list runs one time.
+Specifies a part of the body of a function, along with the `DynamicParam`,
+`Begin`, and `End` keywords. When a `Process` statement list receives input
+from the pipeline, the `Process` statement list runs one time for each element
+from the pipeline. If the pipeline provides no objects, the `Process`
+statement list does not run. If the command is the first command in the
+pipeline, the `Process` statement list runs one time.
 
 Syntax:
 
-```powershell
+```Syntax
 function <name> {
    DynamicParam {<statement list>}
    begin {<statement list>}
@@ -471,7 +469,7 @@ and writes the optional expression to the output.
 
 Syntax:
 
-```powershell
+```Syntax
 return [<expression>]
 ```
 
@@ -480,19 +478,19 @@ return [<expression>]
 Specifies the property or method defined is common to all instances of the
 class in which is defined.
 
-See, in this topic, **Class**  for usage examples.
+See `Class` for usage examples.
 
 ### Switch
 
-To check multiple conditions, use a Switch statement. The Switch statement is
+To check multiple conditions, use a `Switch` statement. The `Switch` statement is
 equivalent to a series of If statements, but it is simpler.
 
-The Switch statement lists each condition and an optional action. If a
+The `Switch` statement lists each condition and an optional action. If a
 condition obtains, the action is performed.
 
 Syntax 1:
 
-```powershell
+```Syntax
 switch [-regex|-wildcard|-exact][-casesensitive] ( <value> )
 {
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
@@ -505,7 +503,7 @@ switch [-regex|-wildcard|-exact][-casesensitive] ( <value> )
 
 Syntax 2:
 
-```powershell
+```Syntax
 switch [-regex|-wildcard|-exact][-casesensitive] -file <filename>
 {
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
@@ -522,7 +520,7 @@ Throws an object as an error.
 
 Syntax:
 
-```powershell
+```Syntax
 throw [<object>]
 ```
 
@@ -534,20 +532,20 @@ is optional.
 
 Syntax:
 
-```powershell
+```Syntax
 trap [[<error type>]] {<statement list>}
 ```
 
 ### Try
 
 Defines a statement list to be checked for errors while the statements run. If
-an error occurs, PowerShell continues running in a Catch or Finally statement.
-An error type requires brackets. The second pair of brackets indicates that
-the error type is optional.
+an error occurs, PowerShell continues running in a `Catch` or `Finally`
+statement. An error type requires brackets. The second pair of brackets
+indicates that the error type is optional.
 
 Syntax:
 
-```powershell
+```Syntax
 try {<statement list>}
 catch [[<error type>]] {<statement list>}
 finally {<statement list>}
@@ -555,12 +553,12 @@ finally {<statement list>}
 
 ### Until
 
-Used in a Do statement as a looping construct where the statement list is
+Used in a `Do` statement as a looping construct where the statement list is
 executed at least one time.
 
 Syntax:
 
-```powershell
+```Syntax
 do {<statement list>} until (<condition>)
 ```
 
@@ -571,23 +569,37 @@ members require less typing to mention them. You can also include classes from
 modules.
 
 Syntax #1:
-```
+
+```Syntax
 using namespace <.Net-framework-namespace>
 ```
 
 Syntax #2:
-```
+
+```Syntax
 using module <module-name>
 ```
 
 ### While
 
-Used in a Do statement as a looping construct where the statement list is
-executed at least one time.
+The `while` statement is a looping construct where the condition is tested
+before the statements are executed. If the condition is FALSE, then the
+statements do not execute.
 
-Syntax:
+Statement syntax:
 
-```powershell
+```Syntax
+while (<condition>) {
+   <statements>
+ }
+```
+
+When used in a `Do` statement, `while` is part of a looping construct where
+the statement list is executed at least one time.
+
+Do loop Syntax:
+
+```Syntax
 do {<statement list>} while (<condition>)
 ```
 

@@ -205,8 +205,6 @@ This cmdlet does not generate any output.
 
   Deleting a command from the history does not change the history IDs of the remaining items in the command history.
 
-- 
-
 ## RELATED LINKS
 
 [Add-History](Add-History.md)

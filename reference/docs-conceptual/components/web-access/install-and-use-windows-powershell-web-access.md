@@ -211,7 +211,7 @@ the Secure Sockets Layer (SSL) certificate.
    - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **Example**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -241,7 +241,7 @@ the Secure Sockets Layer (SSL) certificate.
    - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. Open the IIS Manager console by doing one of the following.
 
@@ -411,7 +411,7 @@ gateway as a root website.
 7. In the **Application pool** field, select the application pool that you created in step 3.
 
 8. In the **Physical path** field, browse for the location of the application. You can use the
-  default location, `%windir%/Web/PowerShellWebAccess/wwwroot`. Click **OK**.
+  default location, `$env:windir/Web/PowerShellWebAccess/wwwroot`. Click **OK**.
 
 9. Follow the steps in the procedure
    [To configure an SSL certificate in IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager)
@@ -480,7 +480,7 @@ gateway as a root website.
    the alternate application pool in the **Select Application Pool** dialog box, and then click
    **OK**.
 
-1. In the **Physical path** text box, navigate to %*windir*%/Web/PowerShellWebAccess/wwwroot.
+1. In the **Physical path** text box, navigate to %windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. In the **Type** field of the **Binding** area, select **https**.
 
