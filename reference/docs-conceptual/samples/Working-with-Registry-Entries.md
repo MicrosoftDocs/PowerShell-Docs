@@ -114,6 +114,35 @@ PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windo
 %SystemRoot%\inf
 ```
 
+### Setting a Single Registry Entry
+
+If you want to change a specific entry in a registry key, you can use one of several possible approaches. This example modifies the **Path** entry under **HKEY_CURRENT_USER\\Environment**.
+The **Path** entry specifies where to find executable files.
+
+1. Retrieve the current value of the **Path** entry using **Get-ItemProperty**.
+2. Add the new value, separating it with a `;`.
+3. Use **Set-ItemProperty** with the specified key, entry name, and value to modify the registry entry.
+
+```
+PS> $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
+PS> $newpath = $value.Path += ";C:\src\bin\"
+PS> Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
+```
+
+> [!NOTE]
+> Although **Set-ItemProperty** has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name. These parameters refer to registry keys—which are item paths—and not registry entries—which are item properties.
+
+Another option is to use the Reg.exe command line tool. For help with reg.exe, type **reg.exe /?** at a command prompt.
+
+The following example changes the **Path** entry by removing the path added in the example above. **Get-ItemProperty** is still used to retrieve the current value to avoid having to parse the string returned from `reg query`.
+The **SubString** and **LastIndexOf** methods are used to retrieve the last path added to the **Path** entry.
+```
+PS> $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
+PS> $newpath = $value.Path.SubString(0, $value.Path.LastIndexOf(';'))
+PS> reg add HKCU\Environment /v Path /d $newpath /f
+The operation completed successfully.
+```
+
 ### Creating New Registry Entries
 
 To add a new entry named "PowerShellPath" to the **CurrentVersion** key, use **New-ItemProperty** with the path to the key, the entry name, and the value of the entry. For this example, we will take the value of the Windows PowerShell variable **$PSHome**, which stores the path to the installation directory for Windows PowerShell.
