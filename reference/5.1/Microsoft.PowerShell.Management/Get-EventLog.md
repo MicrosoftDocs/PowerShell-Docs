@@ -33,7 +33,7 @@ Get-EventLog [-ComputerName <string[]>] [-List] [-AsString] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The **Get-EventLog** cmdlet gets events and event logs on the local and remote computers.
+The `Get-EventLog` cmdlet gets events and event logs on the local and remote computers.
 
 You can use the cmdlet's parameters and property values to search for events. This cmdlet gets
 events that match the specified property values.
