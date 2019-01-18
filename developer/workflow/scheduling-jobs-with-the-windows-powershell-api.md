@@ -159,16 +159,13 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 Dictionary<string, object> jobDefParameters = new Dictionary<string, object>();
                 jobDefParameters.Add("Name", schedJobDefName);      // Unique name is required.
 
-                ScriptBlock scriptBlock = ScriptBlock.Create(@"1..5 |
-                                                        foreach {sleep 1; ""SchedJobOutput $_""}");
-                jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or
-                                                                   // script FilePath is required.
+                ScriptBlock scriptBlock = ScriptBlock.Create(@"1..5 | foreach {sleep 1; ""SchedJobOutput $_""}");
+                jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script FilePath is required.
 
-                // Now create a JobInvocation object that contains all information about
-                // the PowerShell job to run.
+                // Now create a JobInvocation object that contains all information about the PowerShell job to run.
                 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
-                    new JobDefinition(typeof(ScheduledJobSourceAdapter),
-                    scriptBlock.ToString(), schedJobDefName), jobDefParameters);
+                    new JobDefinition(typeof(ScheduledJobSourceAdapter), scriptBlock.ToString(), schedJobDefName),
+                    jobDefParameters);
 
                 // Finally create the scheduled job definition object that pulls all
                 // of this information together.
