@@ -1,5 +1,5 @@
 ---
-ms.date:  12/01/2017
+ms.date:  01/18/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -18,15 +18,16 @@ This section describes some of the problems that you might encounter when
 using the remoting features of PowerShell that are based on
 WS-Management technology and it suggests solutions to these problems.
 
-Before using PowerShell remoting, see about_Remote and
-about_Remote_Requirements for guidance on configuration and basic use Also,
-the Help topics for each of the remoting cmdlets, particularly the parameter
-descriptions, have useful information that is designed to help you avoid
-problems.
+Before using PowerShell remoting, see [about_Remote](about_remote.md) and
+[about_Remote_Requirements](about_Remote_Requirements.md) for guidance on
+configuration and basic use. Also, the Help topics for each of the remoting
+cmdlets, particularly the parameter descriptions, have useful information that
+is designed to help you avoid problems.
 
-NOTE: To view or change settings for the local computer in the WSMan: drive,
-including changes to the session configurations, trusted hosts, ports, or
-listeners, start PowerShell with the "Run as administrator" option.
+> [!NOTE]
+> To view or change settings for the local computer in the WSMan: drive,
+> including changes to the session configurations, trusted hosts, ports, or
+> listeners, start PowerShell with the "Run as administrator" option.
 
 ## TROUBLESHOOTING PERMISSION AND AUTHENTICATION ISSUES
 
@@ -54,11 +55,12 @@ To start Windows PowerShell with the "Run as administrator option:
 - In the Windows taskbar, right-click the Windows PowerShell icon, and then
   click "Run as Administrator."
 
-  Note: In Windows Server 2008 R2, the Windows PowerShell icon is pinned
-  to the taskbar by default.
+  In Windows Server 2008 R2, the Windows PowerShell icon is pinned to the
+  taskbar by default.
 
 ### HOW TO ENABLE REMOTING
 
+```
 ERROR:  ACCESS IS DENIED
 
 or
@@ -66,6 +68,7 @@ or
 ERROR: The connection to the remote host was refused. Verify that the
 WS-Management service is running on the remote host and configured to
 listen for requests on the correct port and HTTP URL.
+```
 
 No configuration is required to enable a computer to send remote
 commands. However, to receive remote commands, PowerShell remoting
@@ -76,25 +79,26 @@ session configurations.
 
 Windows PowerShell remoting is enabled on Windows Server 2012 and newer
 releases of Windows Server by default. On all other systems, run the
-Enable-PSRemoting cmdlet to enable remoting. You can also run the
-Enable-PSRemoting cmdlet to re-enable remoting on Windows Server 2012 and
+`Enable-PSRemoting` cmdlet to enable remoting. You can also run the
+`Enable-PSRemoting` cmdlet to re-enable remoting on Windows Server 2012 and
 newer releases of Windows Server if remoting is disabled.
 
 To configure a computer to receive remote commands, use the
-Enable-PSRemoting cmdlet. The following command enables all required
+`Enable-PSRemoting` cmdlet. The following command enables all required
 remote settings, enables the session configurations, and restarts the
 WinRM service to make the changes effective.
 
-Enable-PSRemoting
+`Enable-PSRemoting`
 
 To suppress all user prompts, type:
 
-Enable-PSRemoting -Force
+`Enable-PSRemoting -Force`
 
-For more information, see Enable-PSRemoting.
+For more information, see [Enable-PSRemoting](../Enable-PSRemoting.md).
 
 ### HOW TO ENABLE REMOTING IN AN ENTERPRISE
 
+```
 ERROR:  ACCESS IS DENIED
 
 or
@@ -102,9 +106,10 @@ or
 ERROR: The connection to the remote host was refused. Verify that the
 WS-Management service is running on the remote host and configured to
 listen for requests on the correct port and HTTP URL.
+```
 
 To enable a single computer to receive remote PowerShell commands
-and accept connections, use the Enable-PSRemoting cmdlet.
+and accept connections, use the `Enable-PSRemoting` cmdlet.
 
 To enable remoting for multiple computers in an enterprise, you can use the
 following scaled options.
@@ -114,7 +119,7 @@ following scaled options.
   Enable Listeners by Using a Group Policy" (below).
 
 - To set the startup type of the Windows Remote Management (WinRM)
-  to Automatic on multiple computers, use the Set-Service cmdlet. For
+  to Automatic on multiple computers, use the `Set-Service` cmdlet. For
   instructions, see "How to Set the Startup Type of the WinrM Service"
   (below).
 
@@ -124,6 +129,7 @@ following scaled options.
 
 ### HOW TO ENABLE LISTENERS BY USING A GROUP POLICY
 
+```
 ERROR:  ACCESS IS DENIED
 
 or
@@ -131,6 +137,7 @@ or
 ERROR: The connection to the remote host was refused. Verify that the
 WS-Management service is running on the remote host and configured to listen
 for requests on the correct port and HTTP URL.
+```
 
 To configure the listeners for all computers in a domain, enable the "Allow
 automatic configuration of listeners" policy in the following Group Policy
@@ -144,20 +151,22 @@ permitted.
 
 ### HOW TO ENABLE REMOTING ON PUBLIC NETWORKS
 
+```
 ERROR:  Unable to check the status of the firewall
+```
 
-The Enable-PSRemoting cmdlet returns this error when the local network
+The `Enable-PSRemoting` cmdlet returns this error when the local network
 is public and the SkipNetworkProfileCheck parameter is not used in the
 command.
 
-On server versions of Windows, Enable-PSRemoting succeeds on all network
+On server versions of Windows, `Enable-PSRemoting` succeeds on all network
 location types. It creates firewall rules that allow remote access to
 private and domain ("Home" and "Work") networks. For public networks, it
 creates firewall rules that allows remote access from the same local subnet.
 
-On client versions of Windows, Enable-PSRemoting succeeds on private and
+On client versions of Windows, `Enable-PSRemoting` succeeds on private and
 domain networks. By default, it fails on public networks, but if
-you use the SkipNetworkProfileCheck parameter, Enable-PSRemoting succeeds
+you use the SkipNetworkProfileCheck parameter, `Enable-PSRemoting` succeeds
 and creates a firewall rule that allows traffic from the same local subnet.
 
 To remove the local subnet restriction on public networks and allow
@@ -167,16 +176,18 @@ remote access from any location, run the following command:
 Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 ```
 
-The Set-NetFirewallRule cmdlet is exported by the NetSecurity module.
+The `Set-NetFirewallRule` cmdlet is exported by the NetSecurity module.
 
-NOTE: In Windows PowerShell 2.0, on computers running server versions
-of Windows, Enable-PSRemoting creates firewall rules that allow remote
-access on private, domain and public networks. On computers running
-client versions of Windows, Enable-PSRemoting creates firewall rules
-that allow remote access only on private and domain networks.
+> [!NOTE]
+> In Windows PowerShell 2.0, on computers running server versions
+> of Windows, `Enable-PSRemoting` creates firewall rules that allow remote
+> access on private, domain and public networks. On computers running
+> client versions of Windows, `Enable-PSRemoting` creates firewall rules
+> that allow remote access only on private and domain networks.
 
 ### HOW TO ENABLE A FIREWALL EXCEPTION BY USING A GROUP POLICY
 
+```
 ERROR:  ACCESS IS DENIED
 
 or
@@ -184,6 +195,7 @@ or
 ERROR: The connection to the remote host was refused. Verify that the
 WS-Management service is running on the remote host and configured to
 listen for requests on the correct port and HTTP URL.
+```
 
 To enable a firewall exception for in all computers in a domain, enable the
 "Windows Firewall: Allow local port exceptions" policy in the following
@@ -198,7 +210,9 @@ the Windows Remote Management service.
 
 ### HOW TO SET THE STARTUP TYPE OF THE WINRM SERVICE
 
+```
 ERROR:  ACCESS IS DENIED
+```
 
 PowerShell remoting depends upon the Windows Remote Management
 (WinRM) service. The service must be running to support remote commands.
@@ -210,7 +224,7 @@ However, on client versions of Windows, the WinRM service is disabled
 by default.
 
 To set the startup type of a service on a remote computer, use the
-Set-Service cmdlet.
+`Set-Service` cmdlet.
 
 To run the command on multiple computers, you can create a text file or
 CSV file of the computer names.
@@ -220,38 +234,42 @@ Servers.txt file and then sets the startup type of the WinRM service on all
 of the computers to Automatic.
 
 ```powershell
-C:\PS> $servers = Get-Content servers.txt
-C:\PS> Set-Service WinRM -ComputerName $servers -startuptype Automatic
+$servers = Get-Content servers.txt
+Set-Service WinRM -ComputerName $servers -startuptype Automatic
 ```
 
-To see the results use the Get-WMIObject cmdlet with the Win32_Service object.
-For more information, see Set-Service.
+To see the results use the `Get-WMIObject` cmdlet with the **Win32_Service**
+object. For more information, see
+[Set-Service](../../Microsoft.PowerShell.Management/Set-Service.md).
 
 ### HOW TO RECREATE THE DEFAULT SESSION CONFIGURATIONS
 
+```
 ERROR:  ACCESS IS DENIED
+```
 
 To connect to the local computer and run commands remotely, the local
 computer must include session configurations for remote commands.
 
-When you use Enable-PSRemoting, it creates default session configurations
+When you use `Enable-PSRemoting`, it creates default session configurations
 on the local computer. Remote users use these session configurations
 whenever a remote command does not include the ConfigurationName parameter.
 
 If the default configurations on a computer are unregistered or deleted,
-use the Enable-PSRemoting cmdlet to recreate them. You can use this cmdlet
+use the `Enable-PSRemoting` cmdlet to recreate them. You can use this cmdlet
 repeatedly. It does not generate errors if a feature is already configured.
 
 If you change the default session configurations and want to restore the
 original default session configurations, use the
-Unregister-PSSessionConfiguration cmdlet to delete the changed session
-configurations and then use the Enable-PSRemoting cmdlet to restore them.
-Enable-PSRemoting does not change existing session configurations.
+`Unregister-PSSessionConfiguration` cmdlet to delete the changed session
+configurations and then use the `Enable-PSRemoting` cmdlet to restore them.
+`Enable-PSRemoting` does not change existing session configurations.
 
-Note: When Enable-PSRemoting restores the default session configuration, it
-does not create explicit security descriptors for the configurations.
-Instead, the configurations inherit the security descriptor of the RootSDDL,
-which is secure by default.
+> [!NOTE]
+> When `Enable-PSRemoting` restores the default session configuration, it
+> does not create explicit security descriptors for the configurations.
+> Instead, the configurations inherit the security descriptor of the
+> RootSDDL, which is secure by default.
 
 To see the RootSDDL security descriptor, type:
 
@@ -259,9 +277,9 @@ To see the RootSDDL security descriptor, type:
 Get-Item wsman:\localhost\Service\RootSDDL
 ```
 
-To change the RootSDDL, use the Set-Item cmdlet in the WSMan: drive. To
+To change the RootSDDL, use the `Set-Item` cmdlet in the WSMan: drive. To
 change the security descriptor of a session configuration, use the
-Set-PSSessionConfiguration cmdlet with the SecurityDescriptorSDDL or
+`Set-PSSessionConfiguration` cmdlet with the SecurityDescriptorSDDL or
 ShowSecurityDescriptorUI parameters.
 
 For more information about the WSMan: drive, see the Help topic for the
@@ -269,7 +287,9 @@ WSMan provider ("Get-Help wsman").
 
 ### HOW TO PROVIDE ADMINISTRATOR CREDENTIALS
 
+```
 ERROR:  ACCESS IS DENIED
+```
 
 To create a PSSession or run commands on a remote computer, by default, the
 current user must be a member of the Administrators group on the remote
@@ -278,8 +298,8 @@ logged on to an account that is a member of the Administrators group.
 
 If the current user is a member of the Administrators group on the remote
 computer, or can provide the credentials of a member of the Administrators
-group, use the Credential parameter of the New-PSSession, Enter-PSSession
-or Invoke-Command cmdlets to connect remotely.
+group, use the Credential parameter of the `New-PSSession`, `Enter-PSSession`
+or `Invoke-Command` cmdlets to connect remotely.
 
 For example, the following command provides the credentials of an
 Administrator.
@@ -288,12 +308,14 @@ Administrator.
 Invoke-Command -ComputerName Server01 -Credential Domain01\Admin01
 ```
 
-For more information about the Credential parameter, see New-PSSession,
-Enter-PSSession or Invoke-Command.
+For more information about the Credential parameter, see `New-PSSession`,
+`Enter-PSSession` or `Invoke-Command`.
 
 ### HOW TO ENABLE REMOTING FOR NON-ADMINISTRATIVE USERS
 
+```
 ERROR:  ACCESS IS DENIED
+```
 
 To establish a PSSession or run a command on a remote computer, the user
 must have permission to use the session configurations on the remote
@@ -319,7 +341,9 @@ For more information, see [about_Session_Configurations](about_Session_Configura
 
 ### HOW TO ENABLE REMOTING FOR ADMINISTRATORS IN OTHER DOMAINS
 
+```
 ERROR:  ACCESS IS DENIED
+```
 
 When a user in another domain is a member of the Administrators group on
 the local computer, the user cannot connect to the local computer remotely
@@ -330,30 +354,33 @@ However, you can use the LocalAccountTokenFilterPolicy registry entry to
 change the default behavior and allow remote users who are members of the
 Administrators group to run with Administrator privileges.
 
-Caution: The LocalAccountTokenFilterPolicy entry disables user account
-control (UAC) remote restrictions for all users of all affected
-computers. Consider the implications of this setting carefully
-before changing the policy.
+> [!CAUTION]
+> The LocalAccountTokenFilterPolicy entry disables user account
+> control (UAC) remote restrictions for all users of all affected
+> computers. Consider the implications of this setting carefully
+> before changing the policy.
 
 To change the policy, use the following command to set the value of the
 LocalAccountTokenFilterPolicy registry entry to 1.
 
 ```powershell
-C:\PS> New-ItemProperty -Name LocalAccountTokenFilterPolicy -Path `
-HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System `
--PropertyType DWord -Value 1
+New-ItemProperty -Name LocalAccountTokenFilterPolicy `
+  -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System `
+  -PropertyType DWord -Value 1
 ```
 
 ### HOW TO USE AN IP ADDRESS IN A REMOTE COMMAND
 
+```
 ERROR:  The WinRM client cannot process the request. If the
 authentication scheme is different from Kerberos, or if the client
 computer is not joined to a domain, then HTTPS transport must be used
 or the destination machine must be added to the TrustedHosts
 configuration setting.
+```
 
-The ComputerName parameters of the New-PSSession, Enter-PSSession and
-Invoke-Command cmdlets accept an IP address as a valid value. However,
+The ComputerName parameters of the `New-PSSession`, `Enter-PSSession` and
+`Invoke-Command` cmdlets accept an IP address as a valid value. However,
 because Kerberos authentication does not support IP addresses, NTLM
 authentication is used by default whenever you specify an IP address.
 
@@ -374,11 +401,13 @@ for remoting.
 
 ### HOW TO CONNECT REMOTELY FROM A WORKGROUP-BASED COMPUTER
 
+```
 ERROR:  The WinRM client cannot process the request. If the
 authentication scheme is different from Kerberos, or if the client
 computer is not joined to a domain, then HTTPS transport must be used
 or the destination machine must be added to the TrustedHosts
 configuration setting.
+```
 
 When the local computer is not in a domain, the following procedure is required
 for remoting.
@@ -422,7 +451,7 @@ To view the list of trusted hosts, use the following command:
 Get-Item wsman:\localhost\Client\TrustedHosts
 ```
 
-You can also use the Set-Location cmdlet (alias = cd) to navigate
+You can also use the `Set-Location` cmdlet (alias = cd) to navigate
 though the WSMan: drive to the location.
 For example:
 
@@ -453,7 +482,7 @@ the following command format:
 Set-Item wsman:\localhost\Client\TrustedHosts -Value <ComputerName>
 ```
 
-where each value <ComputerName> must have the following format:
+where each value `<ComputerName>` must have the following format:
 
 ```
 <Computer>.<Domain>.<Company>.<top-level-domain>
@@ -494,10 +523,12 @@ Set-Item wsman:\localhost\Client\TrustedHosts -Value 172.16.0.0
 ```
 
 To add a computer to the TrustedHosts list of a remote computer, use the
-Connect-WSMan cmdlet to add a node for the remote computer to the WSMan: drive
-on the local computer. Then use a Set-Item command to add the computer.
+`Connect-WSMan` cmdlet to add a node for the remote computer to the WSMan:
+drive on the local computer. Then use a `Set-Item` command to add the
+computer.
 
-For more information about the Connect-WSMan cmdlet, see Connect-WSMan.
+For more information about the `Connect-WSMan` cmdlet, see
+[Connect-WSMan](../../Microsoft.WSMan.Management/Connect-WSMan.md).
 
 ## TROUBLESHOOTING COMPUTER CONFIGURATION ISSUES
 
@@ -506,15 +537,17 @@ configurations of a computer, domain, or enterprise.
 
 ### HOW TO CONFIGURE REMOTING ON ALTERNATE PORTS
 
+```
 ERROR:  The connection to the specified remote host was refused. Verify
 that the WS-Management service is running on the remote host and
 configured to listen for requests on the correct port and HTTP URL.
+```
 
 Windows PowerShell remoting uses port 80 for HTTP transport by default. The
 default port is used whenever the user does not specify the ConnectionURI
 or Port parameters in a remote command.
 
-To change the default port that Windows PowerShell uses, use Set-Item cmdlet
+To change the default port that Windows PowerShell uses, use `Set-Item` cmdlet
 in the WSMan: drive to change the Port value in the  listener leaf node.
 
 For example, the following command changes the default port to 8080.
@@ -525,9 +558,11 @@ Set-Item wsman:\localhost\listener\listener*\port -Value 8080
 
 ### HOW TO CONFIGURE REMOTING WITH A PROXY SERVER
 
+```
 ERROR: The client cannot connect to the destination specified in the
 request. Verify that the service on the destination is running and is
 accepting requests.
+```
 
 Because PowerShell remoting uses the HTTP protocol, it is affected
 by HTTP proxy settings. In enterprises that have proxy servers, users
@@ -543,29 +578,29 @@ The following settings are available:
 To set these options for a particular command, use the following procedure:
 
 1. Use the ProxyAccessType, ProxyAuthentication, and ProxyCredential
-   parameters of the New-PSSessionOption cmdlet to create a session
+   parameters of the `New-PSSessionOption` cmdlet to create a session
    option object with the proxy settings for your enterprise. Save the
    option object is a variable.
 
 2. Use the variable that contains the option object as the value of the
-   SessionOption parameter of a New-PSSession, Enter-PSSession, or
-   Invoke-Command command.
+   SessionOption parameter of a `New-PSSession`, `Enter-PSSession`, or
+   `Invoke-Command` command.
 
 For example, the following command creates a session option object with
 proxy session options and then uses the object to create a remote session.
 
 ```powershell
-C:\PS> $SessionOption = New-PSSessionOption -ProxyAccessType IEConfig `
+$SessionOption = New-PSSessionOption -ProxyAccessType IEConfig `
 -ProxyAuthentication Negotiate -ProxyCredential Domain01\User01
 
-C:\PS> New-PSSession -ConnectionURI https://www.fabrikam.com
+New-PSSession -ConnectionURI https://www.fabrikam.com
 ```
 
-For more information about the New-PSSessionOption cmdlet, see
-New-PSSessionOption.
+For more information about the `New-PSSessionOption` cmdlet, see
+[New-PSSessionOption](../New-PSSessionOption.md).
 
 To set these options for all remote commands in the current session, use
-the option object that New-PSSessionOption creates in the value of the
+the option object that `New-PSSessionOption` creates in the value of the
 $PSSessionOption preference variable. For more information about the
 $PSSessionOption preference variable, see about_Preference_Variables.
 
@@ -576,19 +611,21 @@ profiles, see about_Profiles.
 
 ### HOW TO DETECT A 32-BIT SESSION ON A 64-BIT COMPUTER
 
+```
 ERROR: The term "<tool-Name>" is not recognized as the name of a cmdlet,
 function, script file, or operable program. Check the spelling of the
 name, or if a path was included, verify that the path is correct and try
 again.
+```
 
 If the remote computer is running a 64-bit version of Windows, and the
 remote command is using a 32-bit session configuration, such as
 Microsoft.PowerShell32, Windows Remote Management (WinRM) loads a WOW64
 process and Windows automatically redirects all references to the
-%Windir%\\System32 directory to the %windir%\\SysWOW64 directory.
+`$env:Windir\System32` directory to the `$env:Windir\SysWOW64` directory.
 
 As a result, if you try to use tools in the System32 directory that do
-not have counterparts in the SysWow64 directory, such as Defrag.exe,
+not have counterparts in the SysWow64 directory, such as **Defrag.exe**,
 the tools cannot be found in the directory.
 
 To find the processor architecture that is being used in the session,
@@ -599,10 +636,14 @@ following command finds the processor architecture of the session in the
 ```powershell
 $s = New-PSSession -ComputerName Server01 -ConfigurationName CustomShell
 Invoke-Command -Session $s {$env:PROCESSOR_ARCHITECTURE}
+```
+
+```Output
 x86
 ```
 
-For more information about session configurations, see [about_Session_Configurations](about_Session_Configurations.md).
+For more information about session configurations, see
+[about_Session_Configurations](about_Session_Configurations.md).
 
 ## TROUBLESHOOTING POLICY AND PREFERENCE ISSUES
 
@@ -611,20 +652,22 @@ preferences set on the local and remote computers.
 
 ### HOW TO CHANGE THE EXECUTION POLICY FOR IMPORT-PSSESSION AND IMPORT-MODULE
 
+```
 ERROR: Import-Module: File <filename> cannot be loaded because the
 execution of scripts is disabled on this system.
+```
 
-The Import-PSSession and Export-PSSession cmdlets create modules that
+The `Import-PSSession` and `Export-PSSession` cmdlets create modules that
 contains unsigned script files and formatting files.
 
 To import the modules that are created by these cmdlets, either by using
-Import-PSSession or Import-Module, the execution policy in the current
+`Import-PSSession` or `Import-Module`, the execution policy in the current
 session cannot be Restricted or AllSigned. (For information about Windows
 PowerShell execution policies, see about_Execution_Policies.
 
 To import the modules without changing the execution policy for the local
 computer that is set in the registry, use the Scope parameter of
-Set-ExecutionPolicy to set a less restrictive execution policy for a single
+`Set-ExecutionPolicy` to set a less restrictive execution policy for a single
 process.
 
 For example, the following command starts a process with the RemoteSigned
@@ -636,22 +679,24 @@ setting.
 Set-ExecutionPolicy -Scope process -ExecutionPolicy RemoteSigned
 ```
 
-You can also use the ExecutionPolicy parameter of PowerShell.exe to start
+You can also use the ExecutionPolicy parameter of **PowerShell.exe** to start
 a single session with a less restrictive execution policy.
 
 ```powershell
 PowerShell.exe -ExecutionPolicy RemoteSigned
 ```
 
-For more information about the cmdlets, see Import-PSSession,
-Export-PSSession, and Import-Module. For more information about
+For more information about the cmdlets, see `Import-PSSession`,
+`Export-PSSession`, and `Import-Module`. For more information about
 execution policies, see about_Execution_Policies. For more information
 about the PowerShell.exe console help options, type "PowerShell.exe -?".
 
 ### HOW TO SET AND CHANGE QUOTAS
 
+```
 ERROR: The total data received from the remote client exceeded allowed
 maximum.
+```
 
 You can use quotas to protect the local computer and the remote computer
 from excessive resource use, both accidental and malicious.
@@ -659,19 +704,20 @@ from excessive resource use, both accidental and malicious.
 The following quotas are available in the basic configuration.
 
 - The WSMan provider (WSMan:) provides several quota settings, such as the
-  MaxEnvelopeSizeKB and MaxProviderRequests settings in the
-  WSMan:\<ComputerName\> node and the MaxConcurrentOperations,
-  MaxConcurrentOperationsPerUser, and MaxConnections settings in the
-  WSMan:\<ComputerName\>\\Service node.
+  **MaxEnvelopeSizeKB** and **MaxProviderRequests** settings in the
+  `WSMan:<ComputerName>` node and the **MaxConcurrentOperations**,
+  **MaxConcurrentOperationsPerUser**, and **MaxConnections** settings in the
+  `WSMan:<ComputerName>\Service` node.
 
 - You can protect the local computer by using the
-  MaximumReceivedDataSizePerCommand and MaximumReceivedObjectSize parameters of
-  the New-PSSessionOption cmdlet and the \$PSSessionOption preference variable.
+  MaximumReceivedDataSizePerCommand and MaximumReceivedObjectSize parameters
+  of the `New-PSSessionOption` cmdlet and the \$PSSessionOption preference
+  variable.
 
 - You can protect the remote computer by adding restrictions to the session
-  configurations, such as by using the MaximumReceivedDataSizePerCommandMB and
-  MaximumReceivedObjectSizeMB parameters of the Register-PSSessionConfiguration
-  cmdlet.
+  configurations, such as by using the **MaximumReceivedDataSizePerCommandMB**
+  and **MaximumReceivedObjectSizeMB** parameters of the
+  `Register-PSSessionConfiguration` cmdlet.
 
 When quotas conflict with a command, PowerShell generates an error.
 
@@ -685,19 +731,21 @@ Microsoft.PowerShell session configuration on the remote computer from 10 MB
 
 ```powershell
 Set-PSSessionConfiguration -Name microsoft.PowerShell `
--MaximumReceivedObjectSizeMB 11 -Force
+  -MaximumReceivedObjectSizeMB 11 -Force
 ```
 
-For more information about the New-PSSessionOption cmdlet, see
-New-PSSessionOption.
+For more information about the `New-PSSessionOption` cmdlet, see
+`New-PSSessionOption`.
 
 For more information about the WS-Management quotas, see the Help topic for
-the WSMan provider (type "Get-Help WSMan").
+the WSMan provider (type `Get-Help WSMan`).
 
 ### HOW TO RESOLVE TIMEOUT ERRORS
 
+```
 ERROR: The WS-Management service cannot complete the operation within
 the time specified in OperationTimeout.
+```
 
 You can use timeouts to protect the local computer and the remote computer
 from excessive resource use, both accidental and malicious. When timeouts
@@ -707,14 +755,14 @@ shortest timeout settings.
 The following timeouts are available in the basic configuration.
 
 - The WSMan provider (WSMan:) provides several client-side and service-side
-  timeout settings, such as the MaxTimeoutms setting in the
-  WSMan:\<ComputerName\> node and the EnumerationTimeoutms and
-  MaxPacketRetrievalTimeSeconds settings in the WSMan:\<ComputerName\>\\Service
-  node.
+  timeout settings, such as the **MaxTimeoutms** setting in the
+  `WSMan:<ComputerName>` node and the **EnumerationTimeoutms** and
+  **MaxPacketRetrievalTimeSeconds** settings in the
+  `WSMan:<ComputerName>\Service` node.
 
-- You can protect the local computer by using the CancelTimeout, IdleTimeout,
-  OpenTimeout, and OperationTimeout parameters of the New-PSSessionOption
-  cmdlet and the $PSSessionOption preference variable.
+- You can protect the local computer by using the **CancelTimeout**,
+  **IdleTimeout**, **OpenTimeout**, and **OperationTimeout** parameters of the
+  `New-PSSessionOption` cmdlet and the $PSSessionOption preference variable.
 
 - You can also protect the remote computer by setting timeout values
   programmatically in the session configuration for the session.
@@ -726,21 +774,21 @@ To resolve the error, change the command to complete within the timeout
 interval or determine the source of the timeout limit and increase the
 timeout interval to allow the command to complete.
 
-For example, the following commans use the New-PSSessionOption cmdlet to
-create a session option object with an OperationTimeout value of 4 minutes
+For example, the following commands use the `New-PSSessionOption` cmdlet to
+create a session option object with an **OperationTimeout** value of 4 minutes
 (in MS) and then use the session option object to create a remote session.
 
 ```powershell
-C:\PS> $pso = New-PSSessionoption -OperationTimeout 240000
+$pso = New-PSSessionoption -OperationTimeout 240000
 
-C:\PS> New-PSSession -ComputerName Server01 -sessionOption $pso
+New-PSSession -ComputerName Server01 -sessionOption $pso
 ```
 
 For more information about the WS-Management timeouts, see the Help topic for
 the WSMan provider (type "Get-Help WSMan").
 
-For more information about the New-PSSessionOption cmdlet, see
-New-PSSessionOption.
+For more information about the `New-PSSessionOption` cmdlet, see
+[New-PSSessionOption](../New-PSSessionOption.md).
 
 ## TROUBLESHOOTING UNRESPONSIVE BEHAVIOR
 
@@ -756,13 +804,15 @@ Win32 console API, do not work correctly in the PowerShell remote host.
 When you use these programs, you might see unexpected behavior, such as no
 output, partial output, or a remote command that does not complete.
 
-To end an unresponsive program, type CTRL + C. To view any errors that might
-have been reported, type "$error" in the local host and the remote session.
+To end an unresponsive program, type `CTRL+C`. To view any errors that might
+have been reported, type `$error` in the local host and the remote session.
 
 ## HOW TO RECOVER FROM AN OPERATION FAILURE
 
+```
 ERROR: The I/O operation has been aborted because of either a thread exit
 or an  application request.
+```
 
 This error is returned when an operation is terminated before it completes.
 Typically, it occurs when the WinRM service stops or restarts while other
@@ -774,7 +824,7 @@ the command again.
 1. Start PowerShell with the "Run as administrator" option.
 2. Run the following command:
 
-   Start-Service WinRM
+   `Start-Service WinRM`
 
 3. Re-run the command that generated the error.
 
