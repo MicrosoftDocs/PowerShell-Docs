@@ -9,81 +9,93 @@ ms.topic: "article"
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ---
-# Scheduling Jobs with the Windows PowerShell API
 
-You can use the objects exposed by the [Microsoft.Powershell.Scheduledjob](/dotnet/api/Microsoft.PowerShell.ScheduledJob) namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.
+# Scheduling jobs with the PowerShell API
 
-## Triggering the Job
+You can use the objects exposed by the **Microsoft.PowerShell.ScheduledJob** namespace to do the
+following:
 
-The first step in creating a scheduled job is specifying when the job should run. Do this by creating and configuring a [Microsoft.Powershell.Scheduledjob.Scheduledjobtrigger](/dotnet/api/Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger)object. The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.
+- Create a scheduled job.
+- Define when the job runs.
+- Get results about the completed job.
 
-```
+## Triggering the job
+
+The first step in creating a scheduled job is specifying when the job should run. Do this by
+creating and configuring a **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** object. The
+following code creates a trigger that schedules a job to run a single time 20 seconds in the
+future.
+
+```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
-                    DateTime.Now.AddSeconds(20),        // Create trigger to start job 20 seconds after now.
-                    TimeSpan.Zero,                      // No random delay
-                    null,                               // No repetition interval time
-                    null,                               // No repetition interval duration
-                    1,                                  // Trigger Id
-                    true);                              // Create trigger enabled
+                    DateTime.Now.AddSeconds(20), // Create trigger to start job in 20 seconds.
+                    TimeSpan.Zero,               // No random delay
+                    null,                        // No repetition interval time
+                    null,                        // No repetition interval duration
+                    1,                           // Trigger Id
+                    true);                       // Create trigger enabled
 
 ```
 
-## Defining the Job
+## Defining the job
 
-You define a Windows PowerShell job by creating a parameter dictionary. The following parameters are supported.
+You define a PowerShell job by creating a parameter dictionary. The following parameters are
+supported:
 
 |Parameter Name|Description|
 |--------------------|-----------------|
-|`Name`|The name of the job.|
-|`ScriptBock`|A Windows PowerShell script block that specifies what the job does.|
-|`FilePath`|A path to a file that contains Windows PowerShell script block that specifies what the job does.|
-|`InitializationScript`|A Windows PowerShell script block that initializes the job.|
-|`ArgumentList`|An array of objects that specify arguments that the job takes.|
-|`RunAs32`|A boolean value that specifies whether to run the job in a 32-bit process.|
+|**Name**|The name of the job.|
+|**ScriptBock**|A PowerShell script block that specifies what the job does.|
+|**FilePath**|Path to a file that contains a PowerShell script block to specify what the job does.|
+|**InitializationScript**|A PowerShell script block that initializes the job.|
+|**ArgumentList**|An array of objects that specify arguments that the job takes.|
+|**RunAs32**|A boolean value that specifies whether to run the job in a 32-bit process.|
 
-The following code creates a parameter dictionary object and sets the `Name` and `ScriptBlock` parameters.
+The following code creates a parameter dictionary object and sets the **Name** and **ScriptBlock**
+parameters.
 
-```
+```csharp
 string schedJobDefName = "MySampleSchedJob";
-                Dictionary<string, object> jobDefParameters = new Dictionary<string, object>();
-                jobDefParameters.Add("Name", schedJobDefName);      // Unique name is requiried.
+  Dictionary<string, object> jobDefParameters = new Dictionary<string, object>();
+  jobDefParameters.Add("Name", schedJobDefName);      // Unique name is required.
 
-                ScriptBlock scriptBlock = ScriptBlock.Create(@"1..5 | foreach {sleep 1; ""SchedJobOutput $_""}");
-                jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script FilePath
-                                                                   // is required.
+  ScriptBlock scriptBlock = ScriptBlock.Create(@"1..5 | foreach {sleep 1; ""SchedJobOutput $_""}");
+  jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script FilePath
+                                                    // is required.
 
 ```
 
-## Creating the Invocation and Job Definition Objects
+## Creating the invocation and job definition objects
 
-You then create ScheduledJobInvicationInfo and SheduledJobDefinition objects to run the job. The following code demonstrates this.
+You then create `ScheduledJobInvocationInfo` and `ScheduledJobDefinition` objects to run the job as
+shown in the following example:
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
-                    new JobDefinition(typeof(ScheduledJobSourceAdapter), scriptBlock.ToString(), schedJobDefName),
-                    jobDefParameters);
+    new JobDefinition(typeof(ScheduledJobSourceAdapter), scriptBlock.ToString(), schedJobDefName),
+    jobDefParameters);
 
-                schedJobDefinition = new ScheduledJobDefinition(
-                    jobInvocationInfo,                          // Defines the PowerShell job to run.
-                    new ScheduledJobTrigger[1] { jobTrigger },  // Defines when to run the PowerShell job.
-                    null,                                       // No custom options.  We accept default.
-                    null);                                      // No credentials.  PowerShell job is run
-                                                                // in default Task Scheduler process, account.
+    schedJobDefinition = new ScheduledJobDefinition(
+    jobInvocationInfo,                          // Defines the PowerShell job to run.
+    new ScheduledJobTrigger[1] { jobTrigger },  // Defines when to run the PowerShell job.
+    null,                                       // No custom options. We accept default.
+    null);                                      // No credentials. PowerShell job is run
+                                                // in default Task Scheduler process, account.
 
 ```
 
-## Registering the Job with the Task Scheduler
+## Registering the job with the task scheduler
 
 The following code registers the job with the [Windows Task Scheduler](http://go.microsoft.com/fwlink/?LinkId=251817).
 
 ```csharp
 schedJobDefinition.Register();
-                registrationSucceeded = true;
-                Console.WriteLine("Scheduled job has been registered.  Waiting 30 seconds for it to be started and run.");
+    registrationSucceeded = true;
+    Console.WriteLine("Scheduled job is registered. Waiting 30 seconds for it to run.");
 
 ```
 
-## Complete Code Example
+## Complete code Example
 
 The following is the complete code example from which the previous snippets were taken.
 
@@ -91,13 +103,13 @@ The following is the complete code example from which the previous snippets were
 using System;
 using System.Threading;
 using System.Collections.Generic;
-using System.Management.Automation;             // Windows PowerShell namespace.
-using Microsoft.PowerShell.ScheduledJob;        // Windows PowerShell ScheduledJob namespace.
+using System.Management.Automation;             // PowerShell namespace.
+using Microsoft.PowerShell.ScheduledJob;        // PowerShell ScheduledJob namespace.
 
 namespace Microsoft.Samples.PowerShell.ScheduledJob
 {
     /// <summary>
-    /// This class contains the Main enrty point for the application.
+    /// This class contains the Main entry point for the application.
     /// </summary>
     public class ScheduledJobSample
     {
@@ -126,12 +138,12 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // may want to increase the 20 seconds value so that the trigger time
                 // remains in the future once you register the scheduled job.
                 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
-                    DateTime.Now.AddSeconds(20),        // Create trigger to start job 20 seconds after now.
-                    TimeSpan.Zero,                      // No random delay
-                    null,                               // No repetition interval time
-                    null,                               // No repetition interval duration
-                    1,                                  // Trigger Id
-                    true);                              // Create trigger enabled
+                    DateTime.Now.AddSeconds(20),      // Create trigger to start job in 20 seconds.
+                    TimeSpan.Zero,                    // No random delay
+                    null,                             // No repetition interval time
+                    null,                             // No repetition interval duration
+                    1,                                // Trigger Id
+                    true);                            // Create trigger enabled
 
                 // Create a parameter dictionary that defines the PowerShell job.
                 // For this example we will create a simple script that runs for
@@ -145,40 +157,44 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // RunAs32              - Switch (boolean type).
                 string schedJobDefName = "MySampleSchedJob";
                 Dictionary<string, object> jobDefParameters = new Dictionary<string, object>();
-                jobDefParameters.Add("Name", schedJobDefName);      // Unique name is requiried.
+                jobDefParameters.Add("Name", schedJobDefName);      // Unique name is required.
 
-                ScriptBlock scriptBlock = ScriptBlock.Create(@"1..5 | foreach {sleep 1; ""SchedJobOutput $_""}");
-                jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script FilePath
-                                                                   // is required.
+                ScriptBlock scriptBlock = ScriptBlock.Create(@"1..5 |
+                                                        foreach {sleep 1; ""SchedJobOutput $_""}");
+                jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or
+                                                                   // script FilePath is required.
 
                 // Now create a JobInvocation object that contains all information about
                 // the PowerShell job to run.
                 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
-                    new JobDefinition(typeof(ScheduledJobSourceAdapter), scriptBlock.ToString(), schedJobDefName),
-                    jobDefParameters);
+                    new JobDefinition(typeof(ScheduledJobSourceAdapter),
+                    scriptBlock.ToString(), schedJobDefName), jobDefParameters);
 
                 // Finally create the scheduled job definition object that pulls all
                 // of this information together.
                 schedJobDefinition = new ScheduledJobDefinition(
-                    jobInvocationInfo,                          // Defines the PowerShell job to run.
-                    new ScheduledJobTrigger[1] { jobTrigger },  // Defines when to run the PowerShell job.
-                    null,                                       // No custom options.  We accept default.
-                    null);                                      // No credentials.  PowerShell job is run
-                                                                // in default Task Scheduler process, account.
+                   jobInvocationInfo,                          // Defines the PowerShell job to run.
+                   new ScheduledJobTrigger[1] { jobTrigger },  // Defines when to run the job.
+                   null,                                       // No custom options. Accept default.
+                   null);                                      // No credentials. PowerShell job is
+                                                               // run in default Task Scheduler
+                                                               // process, account.
 
                 // Next we register this scheduled job object with Windows Task Scheduler.
-                // The Task Scheduler will run the PowerShell script based on the provided job trigger.
+                // The Task Scheduler runs the PowerShell script based on the provided job trigger.
                 schedJobDefinition.Register();
                 registrationSucceeded = true;
-                Console.WriteLine("Scheduled job has been registered.  Waiting 30 seconds for it to be started and run.");
+                Console.WriteLine("Scheduled job is registered. Waiting 30 seconds for it to run.");
 
                 // You can see this PowerShell job task registered in the Task Scheduler UI.
-                // Look under path: Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs
+                // Look under path:
+                // Task Scheduler Library\Microsoft\Windows\PowerShell\ScheduledJobs
 
-                // Wait for Task Scheduler to run the PowerShell job.  This should happen in 20 seconds
-                // and then the job will take about 5 seconds to run.  If PowerShell job task doesn't
-                // run try increasing the trigger time in the ScheduledJobTrigger object.  You can also
-                // run this task manully from the Task Scheduler UI.
+                // Wait for Task Scheduler to run the PowerShell job.
+                // This should happen in 20 seconds and then the job takes about 5 seconds to run.
+                // If PowerShell job task doesn't run try increasing the trigger time in the
+                // ScheduledJobTrigger object. 
+                // You can run this task manually from the Task Scheduler UI.
                 for (int count = 1; count < 31; ++count)
                 {
                     Thread.Sleep(1000);
