@@ -113,7 +113,7 @@ Accept wildcard characters: False
 
 ### -AllowClobber
 
-Allows you to install a different version of a module that already exists on your computer.
+Allows you install module that contains commands those have the same names as commands that already exists.
 
 ```yaml
 Type: SwitchParameter

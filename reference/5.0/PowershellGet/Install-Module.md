@@ -129,7 +129,8 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-{{Fill InputObject Description}}
+
+Used for pipeline input.
 
 ```yaml
 Type: PSObject[]
