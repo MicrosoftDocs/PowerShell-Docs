@@ -69,16 +69,22 @@ The third command repeats the first command. It verifies that the content is cle
 
 You can use a method like this one to clear the content of an alternate data stream. However, it is not the recommended way to eliminate security checks that block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.
 
+```powershell
+Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 ```
-PS C:\> Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 
+```output
 [ZoneTransfer]
 ZoneId=3
+```
 
-PS C:\>Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+```powershell
+Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
+```
 
-PS C:\>Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
-PS C:\>
+```output
+
 ```
 
 ## PARAMETERS
@@ -221,6 +227,7 @@ Accept wildcard characters: True
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -236,6 +243,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
