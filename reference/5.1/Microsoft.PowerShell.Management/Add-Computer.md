@@ -10,7 +10,6 @@ title:  Add-Computer
 # Add-Computer
 
 ## SYNOPSIS
-
 Add the local computer to a domain or workgroup.
 
 ## SYNTAX

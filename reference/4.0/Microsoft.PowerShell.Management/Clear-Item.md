@@ -10,7 +10,6 @@ title:  Clear-Item
 # Clear-Item
 
 ## SYNOPSIS
-
 Clears the contents of an item, but does not delete the item.
 
 ## SYNTAX

@@ -10,7 +10,6 @@ title:  Clear-Content
 # Clear-Content
 
 ## SYNOPSIS
-
 Deletes the contents of an item, but does not delete the item.
 
 ## SYNTAX

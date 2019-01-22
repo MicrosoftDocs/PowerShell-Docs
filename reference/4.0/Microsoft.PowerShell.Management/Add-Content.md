@@ -10,7 +10,6 @@ title:  Add-Content
 # Add-Content
 
 ## SYNOPSIS
-
 Adds content to the specified items, such as adding words to a file.
 
 ## SYNTAX

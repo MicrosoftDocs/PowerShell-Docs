@@ -11,7 +11,6 @@ title: Checkpoint-Computer
 # Checkpoint-Computer
 
 ## SYNOPSIS
-
 Creates a system restore point on the local computer.
 
 ## SYNTAX

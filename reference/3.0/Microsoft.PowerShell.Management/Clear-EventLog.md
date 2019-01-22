@@ -10,7 +10,6 @@ title:  Clear-EventLog
 # Clear-EventLog
 
 ## SYNOPSIS
-
 Clears all entries from specified event logs on the local or remote computers.
 
 ## SYNTAX
@@ -66,7 +65,7 @@ function clear-all-event-logs ($computerName="localhost")
 clear-all-event-logs -ComputerName Server01
 ```
 
-```output
+```Output
 Max(K) Retain OverflowAction        Entries Log
 ------ ------ --------------        ------- ---
 15,168      0 OverwriteAsNeeded           0 Application

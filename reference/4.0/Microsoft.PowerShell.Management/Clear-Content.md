@@ -10,7 +10,6 @@ title:  Clear-Content
 # Clear-Content
 
 ## SYNOPSIS
-
 Deletes the contents of an item, but does not delete the item.
 
 ## SYNTAX
@@ -73,7 +72,7 @@ You can use a method like this one to clear the content of an alternate data str
 Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 ```
 
-```output
+```Output
 [ZoneTransfer]
 ZoneId=3
 ```
@@ -83,7 +82,7 @@ Clear-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 Get-Content C:\Test\Copy-Script.ps1 -Stream Zone.Identifier
 ```
 
-```output
+```Output
 
 ```
 
