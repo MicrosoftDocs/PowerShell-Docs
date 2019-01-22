@@ -54,7 +54,7 @@ Get-Service | Get-Member
 ### Consistency
 
 Managing systems can be a complex task. Tools that have a consistent interface help to control the
-inherent complexity. Unfortunately, command-line tools and scriptable COM objects aren't known for
+inherent complexity. Unfortunately, command-line tools and scriptable Component Object Model (COM) objects aren't known for
 their consistency.
 
 The consistency of PowerShell is one of its primary assets. For example, if you learn how to use
