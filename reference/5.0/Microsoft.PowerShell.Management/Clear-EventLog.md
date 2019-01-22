@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821568
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Clear-EventLog
 ---
-
 # Clear-EventLog
 
 ## SYNOPSIS
@@ -20,8 +19,9 @@ Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Co
 ```
 
 ## DESCRIPTION
-The **Clear-EventLog** cmdlet removes all of the entries from the specified event logs on the local computer or on remote computers.
-To use **Clear-EventLog**, you must be a member of the Administrators group on the affected computer.
+
+The `Clear-EventLog` cmdlet deletes all of the entries from the specified event logs on the local computer or on remote computers.
+To use `Clear-EventLog`, you must be a member of the Administrators group on the affected computer.
 
 The cmdlets that contain the **EventLog** noun (the EventLog cmdlets) work only on classic event logs.
 To get events from logs that use the Windows Event Log technology in Windows Vista and later versions of Windows, use the Get-WinEvent cmdlet.
@@ -29,30 +29,43 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 ## EXAMPLES
 
 ### Example 1: Clear specific event log types from the local computer
-```
-PS C:\> Clear-EventLog "Windows PowerShell"
+
+```powershell
+Clear-EventLog "Windows PowerShell"
 ```
 
 This command clears the entries from the Windows PowerShell event log on the local computer.
 
 ### Example 2: Clear specific multiple log types from the local and remote computers
-```
-PS C:\> Clear-EventLog -LogName "ODiag", "OSession" -ComputerName "localhost", "Server02"
+
+```powershell
+Clear-EventLog -LogName ODiag, OSession -ComputerName localhost, Server02
 ```
 
 This command clears all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
 
 ### Example 3: Clear all logs on the specified computers then display the event log list
+
+```powershell
+Clear-EventLog -LogName application, system -confirm
 ```
-PS C:\> function Clear-All-Event-Logs ($ComputerName="localhost")
+
+This command prompts you for confirmation before deleting the entries in the specified event logs.
+
+### Example 4: Clear all logs on the specified computers then display the event log list
+
+```powershell
+function clear-all-event-logs ($computerName="localhost")
 {
-   $Logs = Get-EventLog -ComputerName $ComputerName -List | ForEach {$_.Log}
-   $Logs | ForEach {Clear-EventLog -Comp $ComputerName -Log $_ }
-   Get-EventLog -ComputerName $ComputerName -List
+   $logs = Get-EventLog -ComputerName $computername -List | ForEach-Object {$_.Log}
+   $logs | ForEach-Object {Clear-EventLog -ComputerName $computername -LogName $_ }
+   Get-EventLog -ComputerName $computername -list
 }
 
-PS C:\> Clear-All-Event-Logs -Comp "Server01"
+clear-all-event-logs -ComputerName Server01
+```
 
+```Output
 Max(K) Retain OverflowAction        Entries Log
 ------ ------ --------------        ------- ---
 15,168      0 OverwriteAsNeeded           0 Application
@@ -68,21 +81,22 @@ Max(K) Retain OverflowAction        Entries Log
 15,360      0 OverwriteAsNeeded           0 Windows PowerShell
 ```
 
-This example clears all event logs on the specified computers and then displays the resulting event log list.
+This function clears all event logs on the specified computers and then displays the resulting event log list.
 
 Notice that a few entries were added to the System and Security logs after the logs were cleared but before they were displayed.
 
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies a remote computer.
 The default is the local computer.
 
 Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a remote computer.
-To specify the local computer, type the computer name, a dot (.), or localhost.
+To specify the local computer, type the computer name, a dot (.), or "localhost".
 
 This parameter does not rely on Windows PowerShell remoting.
-You can use the *ComputerName* parameter of the Get-EventLog cmdlet even if your computer is not configured to run remote commands.
+You can use the **ComputerName** parameter of `Get-EventLog` even if your computer is not configured to run remote commands.
 
 ```yaml
 Type: String[]
@@ -97,6 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -112,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
+
 Specifies the event logs.
 Enter the log name (the value of the Log property; not the LogDisplayName) of one or more event logs, separated by commas.
 
@@ -128,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -144,22 +161,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### None
-You cannot pipe objects to this cmdlet.
+
+You cannot pipe objects to `Clear-EventLog`.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
-* To use **Clear-EventLog** on Windows Vista and later versions of Windows, start Windows PowerShell with the "Run as administrator" option.
 
-*
+- To use `Clear-EventLog` on Windows Vista and later versions of Windows, start Windows PowerShell with the "Run as administrator" option.
 
 ## RELATED LINKS
 
