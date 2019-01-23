@@ -83,13 +83,24 @@ The following properties are available in a **Settings** block.
 | ConfigurationMode| string | Specifies how the LCM actually applies the configuration to the target nodes. Possible values are __"ApplyOnly"__,__"ApplyAndMonitor"__, and __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__: DSC applies the configuration and does nothing further unless a new configuration is pushed to the target node or when a new configuration is pulled from a service. After initial application of a new configuration, DSC does not check for drift from a previously configured state. Note that DSC will attempt to apply the configuration until it is successful before __ApplyOnly__ takes effect. </li><li> __ApplyAndMonitor__: This is the default value. The LCM applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs. Note that DSC will attempt to apply the configuration until it is successful before __ApplyAndMonitor__ takes effect.</li><li>__ApplyAndAutoCorrect__: DSC applies any new configurations. After initial application of a new configuration, if the target node drifts from the desired state, DSC reports the discrepancy in logs, and then re-applies the current configuration.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| How often, in minutes, the current configuration is checked and applied. This property is ignored if the ConfigurationMode property is set to ApplyOnly. The default value is 15.|
 | DebugMode| string| Possible values are __None__, __ForceModuleImport__, and __All__. <ul><li>Set to __None__ to use cached resources. This is the default and should be used in production scenarios.</li><li>Setting to __ForceModuleImport__, causes the LCM to reload any DSC resource modules, even if they have been previously loaded and cached. This impacts the performance of DSC operations as each module is reloaded on use. Typically you would use this value while debugging a resource</li><li>In this release, __All__ is same as __ForceModuleImport__</li></ul> |
-| RebootNodeIfNeeded| bool| Set this to __$true__ to automatically reboot the node after a configuration that requires reboot is applied. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is __$false__. To use this setting when a reboot condition is enacted by something other than DSC (such as Windows Installer), combine this setting with the [xPendingReboot](https://github.com/powershell/xpendingreboot) module.|
+| RebootNodeIfNeeded| bool| Set this to `$true` to allow resources to reboot the Node using the `$global:DSCMachineStatus` flag. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is `$false`. To use this setting when a reboot condition is enacted by something other than DSC (such as Windows Installer), combine this setting with the [xPendingReboot](https://github.com/powershell/xpendingreboot) module.|
 | RefreshMode| string| Specifies how the LCM gets configurations. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: DSC configurations are disabled for this node.</li><li> __Push__: Configurations are initiated by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet. The configuration is applied immediately to the node. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for configurations from a pull service or SMB path. If this property is set to __Pull__, you must specify an HTTP (service) or SMB (share) path in a __ConfigurationRepositoryWeb__ or __ConfigurationRepositoryShare__ block.</li></ul>|
 | RefreshFrequencyMins| Uint32| The time interval, in minutes, at which the LCM checks a pull service to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30.|
 | ReportManagers| CimInstance[]| Obsolete. Use __ReportServerWeb__ blocks to define an endpoint to send reporting data to a pull service.|
 | ResourceModuleManagers| CimInstance[]| Obsolete. Use __ResourceRepositoryWeb__ and __ResourceRepositoryShare__ blocks to define pull service HTTP endpoints or SMB paths, respectively.|
 | PartialConfigurations| CimInstance| Not implemented. Do not use.|
 | StatusRetentionTimeInDays | UInt32| The number of days the LCM keeps the status of the current configuration.|
+
+> [!NOTE]
+> The LCM starts the **ConfigurationModeFrequencyMins** cycle based on:
+>
+> - A new metaconfig is applied using `Set-DscLocalConfigurationManager`
+> - A machine restart
+>
+> For any condition where the timer process experiences a crash, that will be detected within 30 seconds and the cycle will be restarted.
+> A concurrent operation could delay the cycle from being started, if the duration of this operation exceeds the configured cycle frequency, the next timer will not start.
+>
+> Example, the metaconfig is configured at a 15 minute pull frequency and a pull occurs at T1.  The Node does not finish work for 16 minutes.  The first 15 minute cycle is ignored, and next pull will happen at T1+15+15.
 
 ## Pull service
 
@@ -117,7 +128,7 @@ A **ConfigurationRepositoryWeb** defines the following properties.
 |ServerURL|string|The URL of the configuration service.|
 
 An example script to simplify configuring the ConfigurationRepositoryWeb value for on-premises nodes
-is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 To define an SMB-based configuration server,
 you create a **ConfigurationRepositoryShare** block.
@@ -141,7 +152,7 @@ A **ResourceRepositoryWeb** defines the following properties.
 |ServerURL|string|The URL of the configuration server.|
 
 An example script to simplify configuring the ResourceRepositoryWeb value for on-premises nodes
-is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 To define an SMB-based resource server,
 you create a **ResourceRepositoryShare** block.
@@ -166,7 +177,7 @@ The report server role is not compatible with SMB based pull service.
 |ServerURL|string|The URL of the configuration server.|
 
 An example script to simplify configuring the ReportServerWeb value for on-premises nodes
-is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+is available - see [Generating DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 ## Partial configurations
 
@@ -181,7 +192,7 @@ see [DSC Partial configurations](../pull-server/partialConfigs.md).
 |DependsOn|string{}|A list of names of other configurations that must be completed before this partial configuration is applied.|
 |Description|string|Text used to describe the partial configuration.|
 |ExclusiveResources|string[]|An array of resources exclusive to this partial configuration.|
-|RefreshMode|string|Specifies how the LCM gets this partial configuration. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: This partial configuration is disabled.</li><li> __Push__: The partial configuration is pushed to the node by calling the [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet. After all partial configurations for the node are either pushed or pulled from a service, the configuration can be started by calling `Start-DscConfiguration –UseExisting`. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for partial configuration from a pull service. If this property is set to __Pull__, you must specify a pull service in a __ConfigurationSource__ property. For more information about Azure Automation pull service, see [Azure Automation DSC Overview](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview).</li></ul>|
+|RefreshMode|string|Specifies how the LCM gets this partial configuration. The possible values are __"Disabled"__, __"Push"__, and __"Pull"__. <ul><li>__Disabled__: This partial configuration is disabled.</li><li> __Push__: The partial configuration is pushed to the node by calling the [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet. After all partial configurations for the node are either pushed or pulled from a service, the configuration can be started by calling `Start-DscConfiguration –UseExisting`. This is the default value.</li><li>__Pull:__ The node is configured to regularly check for partial configuration from a pull service. If this property is set to __Pull__, you must specify a pull service in a __ConfigurationSource__ property. For more information about Azure Automation pull service, see [Azure Automation DSC Overview](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|string[]|An array of the names of resource servers from which to download required resources for this partial configuration. These names must refer to service endpoints previously defined in **ResourceRepositoryWeb** and **ResourceRepositoryShare** blocks.|
 
 __Note:__ partial configurations are supported with Azure Automation DSC, but only one configuration can be pulled from each automation account per node.
@@ -191,7 +202,7 @@ __Note:__ partial configurations are supported with Azure Automation DSC, but on
 ### Concepts
 [Desired State Configuration Overview](../overview/overview.md)
 
-[Getting started with Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
+[Getting started with Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
 
 ### Other Resources
 

@@ -31,9 +31,20 @@ The following lists the Local Configuration Manager properties that you can set 
 - **Credential**: Indicates credentials (as with Get-Credential) required to access remote resources, such as to contact the configuration service.
 - **DownloadManagerCustomData**: Represents an array that contains custom data specific to the download manager.
 - **DownloadManagerName**: Indicates the name of the configuration and module download manager.
-- **RebootNodeIfNeeded**: Certain configuration changes on a target node might require it to be restarted for the changes to be applied. With the value **True**, this property will restart the node as soon as the configuration has been completely applies, without further warning. If **False** (the default value), the configuration will be completed, but the node must be restarted manually for the changes to take effect.
+- **RebootNodeIfNeeded**: Set this to `$true` to allow resources to reboot the Node using the `$global:DSCMachineStatus` flag. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is `$false`. To use this setting when a reboot condition is enacted by something other than DSC (such as Windows Installer), combine this setting with the [xPendingReboot](https://github.com/powershell/xpendingreboot) module.
 - **RefreshFrequencyMins**: Used when you have set up a pull service. Represents the frequency (in minutes) at which the Local Configuration Manager contacts a pull service to download the current configuration. This value can be set in conjunction with ConfigurationModeFrequencyMins. When RefreshMode is set to PULL, the target node contacts the pull service at an interval set by RefreshFrequencyMins and downloads the current configuration. At the interval set by ConfigurationModeFrequencyMins, the consistency engine then applies the latest configuration that was downloaded to the target node. If RefreshFrequencyMins is not set to an integer multiple of ConfigurationModeFrequencyMins, the system will round it up. The default value is 30.
 - **RefreshMode**: Possible values are **Push** (the default) and **Pull**. In the “push” configuration, you must place a configuration file on each target node, using any client computer. In the “pull” mode, you must set up a pull service for Local Configuration Manager to contact and access the configuration files.
+
+> [!NOTE]
+> The LCM starts the **ConfigurationModeFrequencyMins** cycle based on:
+>
+> - A new metaconfig is applied using `Set-DscLocalConfigurationManager`
+> - A machine restart
+>
+> For any condition where the timer process experiences a crash, that will be detected within 30 seconds and the cycle will be restarted.
+> A concurrent operation could delay the cycle from being started, if the duration of this operation exceeds the configured cycle frequency, the next timer will not start.
+>
+> Example, the metaconfig is configured at a 15 minute pull frequency and a pull occurs at T1.  The Node does not finish work for 16 minutes.  The first 15 minute cycle is ignored, and next pull will happen at T1+15+15.
 
 ### Example of updating Local Configuration Manager settings
 

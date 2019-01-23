@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  01/22/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/p/?linkid=289595
 external help file:  System.Management.Automation.dll-Help.xml
 title:  New-ModuleManifest
 ---
-
 # New-ModuleManifest
 
 ## SYNOPSIS
@@ -16,219 +15,270 @@ Creates a new module manifest.
 ## SYNTAX
 
 ```
-New-ModuleManifest [-Path] <String> [-NestedModules <Object[]>] [-Guid <Guid>] [-Author <String>]
- [-CompanyName <String>] [-Copyright <String>] [-RootModule <String>] [-ModuleVersion <Version>]
- [-Description <String>] [-ProcessorArchitecture <ProcessorArchitecture>] [-PowerShellVersion <Version>]
- [-ClrVersion <Version>] [-DotNetFrameworkVersion <Version>] [-PowerShellHostName <String>]
- [-PowerShellHostVersion <Version>] [-RequiredModules <Object[]>] [-TypesToProcess <String[]>]
- [-FormatsToProcess <String[]>] [-ScriptsToProcess <String[]>] [-RequiredAssemblies <String[]>]
- [-FileList <String[]>] [-ModuleList <Object[]>] [-FunctionsToExport <String[]>] [-AliasesToExport <String[]>]
- [-VariablesToExport <String[]>] [-CmdletsToExport <String[]>] [-PrivateData <Object>] [-HelpInfoUri <String>]
- [-PassThru] [-DefaultCommandPrefix <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-ModuleManifest [-Path] <string> [-NestedModules <Object[]>] [-Guid <guid>] [-Author <string>]
+  [-CompanyName <string>] [-Copyright <string>] [-RootModule <string>] [-ModuleVersion <version>]
+  [-Description <string>] [-ProcessorArchitecture <ProcessorArchitecture>] [-PowerShellVersion <version>]
+  [-ClrVersion <version>] [-DotNetFrameworkVersion <version>] [-PowerShellHostName <string>]
+  [-PowerShellHostVersion <version>] [-RequiredModules <Object[]>] [-TypesToProcess <string[]>]
+  [-FormatsToProcess <string[]>] [-ScriptsToProcess <string[]>] [-RequiredAssemblies <string[]>]
+  [-FileList <string[]>] [-ModuleList <Object[]>] [-FunctionsToExport <string[]>]
+  [-AliasesToExport <string[]>] [-VariablesToExport <string[]>] [-CmdletsToExport <string[]>]
+  [-PrivateData <Object>] [-HelpInfoUri <string>] [-PassThru] [-DefaultCommandPrefix <string>]
+  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-ModuleManifest** cmdlet creates a new module manifest (.psd1) file, populates its values, and saves the manifest file in the specified path.
 
-Module authors can use this cmdlet to create a manifest for their module.
-A module manifest is a .psd1 file that contains a hash table.
-The keys and values in the hash table describe the contents and attributes of the module, define the prerequisites, and determine how the components are processed.
-Manifests are not required for a module.
+The `New-ModuleManifest` cmdlet creates a new module manifest (.psd1) file, populates its values,
+and saves the manifest file in the specified path.
 
-**New-ModuleManifest** creates a manifest that includes all of the commonly used manifest keys, so you can use the default output as a manifest template.
-To add or change values, or to add module keys that this cmdlet does not add, open the resulting file in a text editor.
+Module authors can use this cmdlet to create a manifest for their module. A module manifest is a
+.psd1 file that contains a hash table. The keys and values in the hash table describe the contents
+and attributes of the module, define the prerequisites, and determine how the components are
+processed. Manifests are not required for a module.
 
-Each parameter of this cmdlet (except for **Path** and **PassThru**) creates a module manifest key and its value.
-In a module manifest, only the **ModuleVersion** key is required.
-Unless specified in the parameter description, if you omit a parameter from the command, **New-ModuleManifest** creates a comment string for the associated value that has no effect.
+`New-ModuleManifest` creates a manifest that includes all of the commonly used manifest keys, so
+you can use the default output as a manifest template. To add or change values, or to add module
+keys that this cmdlet does not add, open the resulting file in a text editor.
 
-In Windows PowerShell 2.0, **New-ModuleManifest** prompts you for the values of commonly used parameters that are not specified in the command, in addition to required parameter values.
-Beginning in Windows PowerShell 3.0, it prompts only when required parameter values are not specified.
+Each parameter of this cmdlet (except for **Path** and **PassThru**) creates a module manifest key
+and its value. In a module manifest, only the **ModuleVersion** key is required. Unless specified
+in the parameter description, if you omit a parameter from the command, `New-ModuleManifest`
+creates a comment string for the associated value that has no effect.
+
+In Windows PowerShell 2.0, `New-ModuleManifest` prompts you for the values of commonly used
+parameters that are not specified in the command, in addition to required parameter values.
+Beginning in Windows PowerShell 3.0, it prompts only when required parameter values are not
+specified.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> New-ModuleManifest -Path C:\Users\User01\Documents\WindowsPowerShell\Modules\Test-Module\Test-Module.psd1 -PassThru
+### Example 1 - Create a new module manifest
 
-## Module manifest for module 'TestModule'
-## Generated by: User01
-## Generated on: 1/24/2012
-#@{
-# Script module or binary module file associated with this manifest
-# RootModule = ''
-# Version number of this module.ModuleVersion = '1.0'
-# ID used to uniquely identify this moduleGUID = 'd0a9150d-b6a4-4b17-a325-e3a24fed0aa9'
-# Author of this moduleAuthor = 'User01'
-# Company or vendor of this moduleCompanyName = 'Unknown'
-# Copyright statement for this moduleCopyright = '(c) 2012 User01. All rights reserved.'
-# Description of the functionality provided by this module
-# Description = ''
-# Minimum version of the Windows PowerShell engine required by this module
-# PowerShellVersion = ''
-# Name of the Windows PowerShell host required by this module
-# PowerShellHostName = ''
-# Minimum version of the Windows PowerShell host required by this module
-# PowerShellHostVersion = ''
-# Minimum version of the .NET Framework required by this module
-# DotNetFrameworkVersion = ''
-# Minimum version of the common language runtime (CLR) required by this module
-# CLRVersion = ''
-# Processor architecture (None, X86, Amd64) required by this module
-# ProcessorArchitecture = ''
-# Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @()
-# Assemblies that must be loaded prior to importing this module
-# RequiredAssemblies = @()
-# Script files (.ps1) that are run in the caller's environment prior to importing this module
-# ScriptsToProcess = @()
-# Type files (.ps1xml) to be loaded when importing this module
-# TypesToProcess = @()
-# Format files (.ps1xml) to be loaded when importing this module
-# FormatsToProcess = @()
-# Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-# NestedModules = @()
-# Functions to export from this moduleFunctionsToExport = '*'
-# Cmdlets to export from this moduleCmdletsToExport = '*'
-# Variables to export from this moduleVariablesToExport = '*'
-# Aliases to export from this moduleAliasesToExport = '*'
-# List of all modules packaged with this module# ModuleList = @()
-# List of all files packaged with this module
-# FileList = @()
-# Private data to pass to the module specified in RootModule/ModuleToProcess
-# PrivateData = ''
-# HelpInfo URI of this module
-# HelpInfoURI = ''
-# Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
-# DefaultCommandPrefix = ''}
-```
-
-This command creates a new module manifest in the file that is specified by the Path parameter.
-The **PassThru** parameter sends the output to the pipeline as well as to the file.
+This command creates a new module manifest in the file that is specified by the Path parameter. The
+**PassThru** parameter sends the output to the pipeline as well as to the file.
 
 The output shows the default values of all keys in the manifest.
 
-### Example 2
-```
-PS C:\> New-ModuleManifest -PowerShellVersion 1.0 -AliasesToExport JKBC, DRC, TAC -Path C:\ps-test\ManifestTest.psd1
-```
-
-This command creates a new module manifest.
-It uses the **PowerShellVersion** and **AliasesToExport** parameters to add values to the corresponding manifest keys.
-
-### Example 3
-```
-PS C:\> New-ModuleManifest -RequiredModules BitsTransfer,@{ModuleName="PSScheduledJob";ModuleVersion="1.0.0.0";GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"}
+```powershell
+New-ModuleManifest -Path C:\ps-test\Test-Module\Test-Module.psd1 -PassThru
 ```
 
-This example shows how to use the string and hash table formats of the  **ModuleList**, **RequiredModules**, and **NestedModules** parameter.
-You can combine strings and hash tables in the same parameter value.
+```Output
+#
+# Module manifest for module 'Test-Module'
+#
+# Generated by: ContosoAdmin
+#
+# Generated on: 1/22/2019
+#
 
-This command commands creates a module manifest for a module that requires the **BitsTransfer**  and **PSScheduledJob** modules.
+@{
 
-The command uses a string format to specify the name of the **BitsTransfer** module and the hash table format to specify the name, a GUID, and a version of the **PSScheduledJob** module.
+# Script module or binary module file associated with this manifest.
+# RootModule = ''
 
-### Example 4
+# Version number of this module.
+ModuleVersion = '1.0'
+
+# ID used to uniquely identify this module
+GUID = '47179120-0bcb-4f14-8d80-f4560107f85c'
+
+# Author of this module
+Author = 'ContosoAdmin'
+
+# Company or vendor of this module
+CompanyName = 'Unknown'
+
+# Copyright statement for this module
+Copyright = '(c) 2019 ContosoAdmin. All rights reserved.'
+
+# Description of the functionality provided by this module
+# Description = ''
+
+# Minimum version of the Windows PowerShell engine required by this module
+# PowerShellVersion = ''
+
+# Name of the Windows PowerShell host required by this module
+# PowerShellHostName = ''
+
+# Minimum version of the Windows PowerShell host required by this module
+# PowerShellHostVersion = ''
+
+# Minimum version of the .NET Framework required by this module
+# DotNetFrameworkVersion = ''
+
+# Minimum version of the common language runtime (CLR) required by this module
+# CLRVersion = ''
+
+# Processor architecture (None, X86, Amd64) required by this module
+# ProcessorArchitecture = ''
+
+# Modules that must be imported into the global environment prior to importing this module
+# RequiredModules = @()
+
+# Assemblies that must be loaded prior to importing this module
+# RequiredAssemblies = @()
+
+# Script files (.ps1) that are run in the caller's environment prior to importing this module.
+# ScriptsToProcess = @()
+
+# Type files (.ps1xml) to be loaded when importing this module
+# TypesToProcess = @()
+
+# Format files (.ps1xml) to be loaded when importing this module
+# FormatsToProcess = @()
+
+# Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
+# NestedModules = @()
+
+# Functions to export from this module
+FunctionsToExport = '*'
+
+# Cmdlets to export from this module
+CmdletsToExport = '*'
+
+# Variables to export from this module
+VariablesToExport = '*'
+
+# Aliases to export from this module
+AliasesToExport = '*'
+
+# List of all modules packaged with this module.
+# ModuleList = @()
+
+# List of all files packaged with this module
+# FileList = @()
+
+# Private data to pass to the module specified in RootModule/ModuleToProcess
+# PrivateData = ''
+
+# HelpInfo URI of this module
+# HelpInfoURI = ''
+
+# Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
+# DefaultCommandPrefix = ''
+
+}
 ```
-PS C:\> New-ModuleManifest -HelpInfoUri "http://http://go.microsoft.com/fwlink/?LinkID=603"
+
+### Example 2 - Create a new manifest with some prepopulated settings
+
+This command creates a new module manifest. It uses the **PowerShellVersion** and
+**AliasesToExport** parameters to add values to the corresponding manifest keys.
+
+```powershell
+New-ModuleManifest -PowerShellVersion 1.0 -AliasesToExport JKBC, DRC, TAC -Path C:\ps-test\ManifestTest.psd1
 ```
 
-This example shows creates a module manifest for a module that supports the Updatable Help feature.
-This feature allows users to use the Update-Help and Save-Help cmdlets, which download help files for the module from the Internet and install them in the module.
+### Example 3 - Create a manifest that requires other modules
 
-The command uses the **HelpInfoUri** parameter to create a **HelpInfoUri** key in the module manifest.
-The value of the parameter and the key must begin with "http" or "https".
-This value tells the Updatable Help system where to find the HelpInfo XML updatable help information file for the module.
+The example uses a string format to specify the name of the **BitsTransfer** module and the hash
+table format to specify the name, a GUID, and a version of the **PSScheduledJob** module.
 
-For information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkID=235801).
-For information about the HelpInfo XML file, see "Supporting Updatable Help" in MSDN.
-
-### Example 5
+```powershell
+$moduleSettings = @{
+  RequiredModules = (BitsTransfer, @{
+    ModuleName="PSScheduledJob"
+    ModuleVersion="1.0.0.0";
+    GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"
+  }
+  Path = 'C:\ps-test\ManifestTest.psd1'
+}
+New-ModuleManifest @moduleSettings
 ```
-PS C:\> Get-Module PSScheduledJob -List | Format-List -Property *
 
-LogPipelineExecutionDetails :
-FalseName                        :
-PSScheduledJobPath                        : C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob\PSScheduledJob.psd1
+This example shows how to use the string and hash table formats of the **ModuleList**,
+**RequiredModules**, and **NestedModules** parameter. You can combine strings and hash tables in
+the same parameter value.
+
+### Example 4 - Create a manifest that supports updateable help
+
+This example uses the **HelpInfoUri** parameter to create a **HelpInfoUri** key in the module
+manifest. The value of the parameter and the key must begin with "http" or "https". This value
+tells the Updatable Help system where to find the HelpInfo XML updatable help information file for
+the module.
+
+```powershell
+$moduleSettings = @{
+  HelpInfoUri = 'http://http://go.microsoft.com/fwlink/?LinkID=603'
+  Path = 'C:\ps-test\ManifestTest.psd1'
+}
+New-ModuleManifest @moduleSettings
+```
+
+For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
+For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help).
+
+### Example 5 - Getting module information
+
+This example shows how to get the configuration values of a module. The values in the module
+manifest are reflected in the values of properties of the module object.
+
+The `Get-Module` cmdlet is used to get the **Microsoft.PowerShell.Diagnostics** module using the
+**List** parameter. The command sends the module to the `Format-List` cmdlet to display all
+properties and values of the module object.
+
+```powershell
+Get-Module Microsoft.PowerShell.Diagnostics -List | Format-List -Property *
+```
+
+```Output
+LogPipelineExecutionDetails : False
+Name                        : Microsoft.PowerShell.Diagnostics
+Path                        : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Diagnostics\Micro
+                              soft.PowerShell.Diagnostics.psd1
 Definition                  :
 Description                 :
-Guid                        : 50cdb55f-5ab7-489f-9e94-4ec21ff51e59
-HelpInfoUri                 : http://go.microsoft.com/fwlink/?LinkID=223911
-ModuleBase                  : C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob
+Guid                        : ca046f10-ca64-4740-8ff9-2565dba61a4f
+HelpInfoUri                 : http://go.microsoft.com/fwlink/?LinkID=210596
+ModuleBase                  : C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Diagnostics
 PrivateData                 :
-Version                     : 1.0.0.0
-ModuleType                  :
-BinaryAuthor                      : Microsoft Corporation
+Version                     : 3.0.0.0
+ModuleType                  : Manifest
+Author                      : Microsoft Corporation
 AccessMode                  : ReadWrite
 ClrVersion                  : 4.0
 CompanyName                 : Microsoft Corporation
-Copyright                   : c Microsoft Corporation. All rights reserved.
+Copyright                   : © Microsoft Corporation. All rights reserved.
 DotNetFrameworkVersion      :
 ExportedFunctions           : {}
-ExportedCmdlets             : {[New-JobTrigger, New-JobTrigger], [Add-JobTrigger, Add-JobTrigger], [Remove-JobTrigger, Remove-JobTrigger], [Get-JobTrigger, Get-JobTrigger]...}
-ExportedCommands            : {[New-JobTrigger, New-JobTrigger], [Add-JobTrigger, Add-JobTrigger], [Remove-JobTrigger, Remove-JobTrigger], [Get-JobTrigger, Get-JobTrigger]...}
+ExportedCmdlets             : {[Get-WinEvent, Get-WinEvent], [Get-Counter, Get-Counter], [Import-Counter,
+                              Import-Counter], [Export-Counter, Export-Counter]...}
+ExportedCommands            : {[Get-WinEvent, Get-WinEvent], [Get-Counter, Get-Counter], [Import-Counter,
+                              Import-Counter], [Export-Counter, Export-Counter]...}
 FileList                    : {}
 ModuleList                  : {}
 NestedModules               : {}
 PowerShellHostName          :
 PowerShellHostVersion       :
-PowerShellVersion           : 4.0
+PowerShellVersion           : 3.0
 ProcessorArchitecture       : None
 Scripts                     : {}
 RequiredAssemblies          : {}
 RequiredModules             : {}
-RootModule                  : Microsoft.PowerShell.ScheduledJob.dll
+RootModule                  :
 ExportedVariables           : {}
 ExportedAliases             : {}
 ExportedWorkflows           : {}
 SessionState                :
 OnRemove                    :
-ExportedFormatFiles         : {C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob\PSScheduledJob.Format.ps1xml}
-ExportedTypeFiles           : {C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob\PSScheduledJob.types.ps1xml}
-
-PS C:\> Get-Module -List | Format-Table -Property Name, PowerShellVersion
-
-Name                                                        PowerShellVersion
-----                                                        -----------------
-ADDeploymentWF                                              4.0
-AppLocker                                                   4.0
-Appx                                                        4.0
-BestPractices                                               4.0
-BitsTransfer                                                4.0
-BranchCache                                                 4.0
-CimCmdlets                                                  4.0
-DirectAccessClientComponents                                4.0
-Dism                                                        4.0
-DnsClient                                                   4.0
-International                                               4.0
-iSCSI                                                       4.0
-IscsiTarget                                                 4.0
-Kds                                                         4.0
-Microsoft.PowerShell.Diagnostics                            4.0
-Microsoft.PowerShell.Host                                   4.0
-Microsoft.PowerShell.Management                             4.0â€¦
+ExportedFormatFiles         : {C:\Windows\system32\WindowsPowerShell\v1.0\Event.format.ps1xml,
+                              C:\Windows\system32\WindowsPowerShell\v1.0\Diagnostics.format.ps1xml}
+ExportedTypeFiles           : {C:\Windows\system32\WindowsPowerShell\v1.0\GetEvent.types.ps1xml}
 ```
-
-This example shows how to get the module manifest values of a module -- essentially a "Get-ModuleManifest" command.
-Because the values in the module manifest are reflected in the values of properties of the module object, you can get the module manifest values by displaying the module object properties.
-
-The first command uses the **Get-Module** cmdlet to get the PSScheduledJob module.
-The command uses the List parameter, because the module is installed, but not imported into the session.
-The command sends the module to the Format-List cmdlet, which displays all properties and values of the module object in a list.
-
-The second command uses the Format-Table cmdlet to display the PowerShellVersion property of all installed modules in a table.
-The PowerShellVersion property is defined in the module manifest.
 
 ## PARAMETERS
 
 ### -AliasesToExport
-Specifies the aliases that the module exports.
-Wildcards are permitted.
 
-You can use this parameter to restrict the aliases that are exported by the module.
-It can remove aliases from the list of exported aliases, but it cannot add aliases to the list.
+Specifies the aliases that the module exports. Wildcards are permitted.
 
-If you omit this parameter, **New-ModuleManifest** creates an **AliasesToExport** key with a value of * (all), meaning that all aliases that are exported by the module are exported by the manifest.
+You can use this parameter to restrict the aliases that are exported by the module. It can remove
+aliases from the list of exported aliases, but it cannot add aliases to the list.
+
+If you omit this parameter, `New-ModuleManifest` creates an **AliasesToExport** key with a value
+of `*` (all), meaning that all aliases defined in the module are exported by the manifest.
 
 ```yaml
 Type: String[]
@@ -239,13 +289,15 @@ Required: False
 Position: Named
 Default value: * (all)
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Author
+
 Specifies the module author.
 
-If you omit this parameter, **New-ModuleManifest** creates an **Author** key with the name of the current user.
+If you omit this parameter, `New-ModuleManifest` creates an **Author** key with the name of the
+current user.
 
 ```yaml
 Type: String
@@ -260,7 +312,9 @@ Accept wildcard characters: False
 ```
 
 ### -ClrVersion
-Specifies the minimum version of the Common Language Runtime (CLR) of the Microsoft .NET Framework that the module requires.
+
+Specifies the minimum version of the Common Language Runtime (CLR) of the Microsoft .NET Framework
+that the module requires.
 
 ```yaml
 Type: Version
@@ -275,13 +329,14 @@ Accept wildcard characters: False
 ```
 
 ### -CmdletsToExport
-Specifies the cmdlets that the module exports.
-Wildcards are permitted.
 
-You can use this parameter to restrict the cmdlets that are exported by the module.
-It can remove cmdlets from the list of exported cmdlets, but it cannot add cmdlets to the list.
+Specifies the cmdlets that the module exports. Wildcards are permitted.
 
-If you omit this parameter, **New-ModuleManifest** creates a **CmdletsToExport** key with a value of * (all), meaning that all cmdlets that are exported by the module are exported by the manifest.
+You can use this parameter to restrict the cmdlets that are exported by the module. It can remove
+cmdlets from the list of exported cmdlets, but it cannot add cmdlets to the list.
+
+If you omit this parameter, `New-ModuleManifest` creates a **CmdletsToExport** key with a value
+of `*` (all), meaning that all cmdlets defined in the module are exported by the manifest.
 
 ```yaml
 Type: String[]
@@ -292,13 +347,15 @@ Required: False
 Position: Named
 Default value: * (all)
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -CompanyName
+
 Identifies the company or vendor who created the module.
 
-If you omit this parameter, **New-ModuleManifest** creates a **CompanyName** key with a value of "Unknown".
+If you omit this parameter, `New-ModuleManifest` creates a **CompanyName** key with a value of
+"Unknown".
 
 ```yaml
 Type: String
@@ -313,6 +370,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -328,10 +386,12 @@ Accept wildcard characters: False
 ```
 
 ### -Copyright
+
 Specifies a copyright statement for the module.
 
-If you omit this parameter, **New-ModuleManifest** creates a **Copyright** key with a value of  "(c) \<year\> \<username\>.
-All rights reserved." where \<year\> is the current year and \<username\> is the value of the **Author** key (if one is specified) or the name of the current user.
+If you omit this parameter, `New-ModuleManifest` creates a **Copyright** key with a value of
+`(c) <year> <username>. All rights reserved.` where `<year>` is the current year and `<username>`
+is the value of the **Author** key.
 
 ```yaml
 Type: String
@@ -345,28 +405,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DefaultCommandPrefix
-Specifies a prefix that is prepended to the nouns of all commands in the module when they are imported into a session.
-Enter a prefix string.
-Prefixes prevent command name conflicts in a user's session.
-
-Module users can override this prefix by specifying the **Prefix** parameter of the Import-Module cmdlet.
-
-This parameter is introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Description
+
 Describes the contents of the module.
 
 ```yaml
@@ -382,6 +422,7 @@ Accept wildcard characters: False
 ```
 
 ### -DotNetFrameworkVersion
+
 Specifies the minimum version of the Microsoft .NET Framework that the module requires.
 
 ```yaml
@@ -397,9 +438,11 @@ Accept wildcard characters: False
 ```
 
 ### -FileList
+
 Specifies all items that are included in the module.
 
-This key is designed to act as a module inventory. The files listed in the key are included when the module is published, but any functions are not automatically exported.
+This key is designed to act as a module inventory. The files listed in the key are included when
+the module is published, but any functions are not automatically exported.
 
 ```yaml
 Type: String[]
@@ -414,10 +457,11 @@ Accept wildcard characters: False
 ```
 
 ### -FormatsToProcess
+
 Specifies the formatting files (.ps1xml) that run when the module is imported.
 
-When you import a module, Windows PowerShell runs the Update-FormatData cmdlet with the specified files.
-Because formatting files are not scoped, they affect all session states in the session.
+When you import a module, Windows PowerShell runs the `Update-FormatData` cmdlet with the specified
+files. Because formatting files are not scoped, they affect all session states in the session.
 
 ```yaml
 Type: String[]
@@ -432,13 +476,14 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionsToExport
-Specifies the functions that the module exports.
-Wildcards are permitted.
 
-You can use this parameter to restrict the functions that are exported by the module.
-It can remove functions from the list of exported aliases, but it cannot add functions to the list.
+Specifies the functions that the module exports. Wildcards are permitted.
 
-If you omit this parameter, **New-ModuleManifest** creates an **FunctionsToExport** key with a value of * (all), meaning that all functions that are exported by the module are exported by the manifest.
+You can use this parameter to restrict the functions that are exported by the module. It can remove
+functions from the list of exported aliases, but it cannot add functions to the list.
+
+If you omit this parameter, `New-ModuleManifest` creates an **FunctionsToExport** key with a
+value of `*` (all), meaning that all functions defined in the module are exported by the manifest.
 
 ```yaml
 Type: String[]
@@ -449,14 +494,16 @@ Required: False
 Position: Named
 Default value: * (all)
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Guid
-Specifies a unique identifier for the module.
-The GUID can be used to distinguish among modules with the same name.
 
-If you omit this parameter, **New-ModuleManifest** creates a **GUID** key in the manifest and generates a GUID for the value.
+Specifies a unique identifier for the module. The GUID can be used to distinguish among modules
+with the same name.
+
+If you omit this parameter, `New-ModuleManifest` creates a **GUID** key in the manifest and
+generates a GUID for the value.
 
 To create a new GUID in Windows PowerShell, type "\[guid\]::NewGuid()".
 
@@ -473,15 +520,18 @@ Accept wildcard characters: False
 ```
 
 ### -HelpInfoUri
-Specifies the Internet address of the HelpInfo XML file for the module.
-Enter an Uniform Resource Identifier (URI) that begins with "http" or "https".
 
-The   HelpInfo XML file supports the Updatable Help feature that was introduced in Windows PowerShell 3.0.
-It contains information about the location of downloadable help files for the module and the version numbers of the newest help files for each supported locale.
-For information about Updatable Help, see about_Updatable_Help (http://go.microsoft.com/fwlink/?LinkID=235801).
-For information about the HelpInfo XML file, see "Supporting Updatable Help" in MSDN.
+Specifies the Internet address of the HelpInfo XML file for the module. Enter an Uniform Resource
+Identifier (URI) that begins with "http" or "https".
 
-This parameter is introduced in Windows PowerShell 3.0.
+The HelpInfo XML file supports the Updatable Help feature that was introduced in Windows PowerShell
+3.0. It contains information about the location of downloadable help files for the module and the
+version numbers of the newest help files for each supported locale.
+
+For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
+For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/developer/module/supporting-updatable-help).
+
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
@@ -496,15 +546,15 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleList
+
 Lists all modules that are included in this module.
 
-Enter each module name as a string or as a hash table with **ModuleName** and **ModuleVersion** keys.
-The hash table can also have an optional **GUID** key.
-You can combine strings and hash tables in the parameter value.
-For more information, see the examples.
+Enter each module name as a string or as a hash table with **ModuleName** and **ModuleVersion**
+keys. The hash table can also have an optional **GUID** key. You can combine strings and hash
+tables in the parameter value. For more information, see the examples.
 
-This key is designed to act as a module inventory.
-The modules that are listed in the value of this key are not automatically processed.
+This key is designed to act as a module inventory. The modules that are listed in the value of this
+key are not automatically processed.
 
 ```yaml
 Type: Object[]
@@ -519,10 +569,12 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleVersion
+
 Specifies the version of the module.
 
-This parameter is not required by the cmdlet, but a **ModuleVersion** key is required in the manifest.
-If you omit this parameter, **New-ModuleManifest** creates a **ModuleVersion** key with a value of "1.0".
+This parameter is not required by the cmdlet, but a **ModuleVersion** key is required in the
+manifest. If you omit this parameter, `New-ModuleManifest` creates a **ModuleVersion** key with a
+value of "1.0".
 
 ```yaml
 Type: Version
@@ -537,21 +589,26 @@ Accept wildcard characters: False
 ```
 
 ### -NestedModules
-Specifies script modules (.psm1) and binary modules (.dll) that are imported into the module's session state.
-The files in the **NestedModules** key run in the order in which they are listed in the value.
 
-Enter each module name as a string or as a hash table with **ModuleName** and **ModuleVersion** keys.
-The hash table can also have an optional **GUID** key.
-You can combine strings and hash tables in the parameter value.
-For more information, see the examples.
+Specifies script modules (.psm1) and binary modules (.dll) that are imported into the module's
+session state. The files in the **NestedModules** key run in the order in which they are listed in
+the value.
+
+Enter each module name as a string or as a hash table with **ModuleName** and **ModuleVersion**
+keys. The hash table can also have an optional **GUID** key. You can combine strings and hash
+tables in the parameter value. For more information, see the examples.
 
 Typically, nested modules contain commands that the root module needs for its internal processing.
-By default, the commands in nested modules are exported from the module's session state into the caller's session state, but the root module can restrict the commands that it exports (for example, by using an Export-ModuleMembercommand).
+By default, the commands in nested modules are exported from the module's session state into the
+caller's session state, but the root module can restrict the commands that it exports (for example,
+by using an Export-ModuleMember command).
 
-Nested modules in the module session state are available to the root module, but they are not returned by a Get-Module command in the caller's session state.
+Nested modules in the module session state are available to the root module, but they are not
+returned by a `Get-Module` command in the caller's session state.
 
-Scripts (.ps1) that are listed in the **NestedModules** key are run in the module's session state, not in the caller's session state.
-To run a script in the caller's session state, list the script file name in the value of the **ScriptsToProcess** key in the manifest.
+Scripts (.ps1) that are listed in the **NestedModules** key are run in the module's session state,
+not in the caller's session state. To run a script in the caller's session state, list the script
+file name in the value of the **ScriptsToProcess** key in the manifest.
 
 ```yaml
 Type: Object[]
@@ -566,8 +623,9 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Writes the resulting module manifest to the console, in addition to creating a .psd1 file.
-By default, this cmdlet does not generate any output.
+
+Writes the resulting module manifest to the console, in addition to creating a .psd1 file. By
+default, this cmdlet does not generate any output.
 
 ```yaml
 Type: SwitchParameter
@@ -582,16 +640,20 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path and file name of the new module manifest.
-Enter a path and file name with a .psd1 file name extension, such as "$pshome\Modules\MyModule\MyModule.psd1".
-This parameter is required.
 
-If you specify the path to an existing file, **New-ModuleManifest** replaces the file without warning unless the file has the read-only attribute.
+Specifies the path and file name of the new module manifest. Enter a path and file name with a
+.psd1 file name extension, such as `$pshome\Modules\MyModule\MyModule.psd1`. This parameter is
+required.
 
-The manifest should be located in the module's directory, and the manifest file name should be the same as the module directory name, but with a .psd1 file name extension.
+If you specify the path to an existing file, `New-ModuleManifest` replaces the file without
+warning unless the file has the read-only attribute.
 
-Note: You cannot use variables, such as $pshome or $home, in response to a prompt for a **Path** parameter value.
-To use a variable, include the **Path** parameter in the command.
+The manifest should be located in the module's directory, and the manifest file name should be the
+same as the module directory name, but with a .psd1 file name extension.
+
+> [!NOTE]
+> You cannot use variables, such as `$PSHOME` or `$HOME`, in response to a prompt for a **Path**
+> parameter value. To use a variable, include the **Path** parameter in the command.
 
 ```yaml
 Type: String
@@ -599,18 +661,18 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -PowerShellHostName
-Specifies the name of the Windows PowerShell host program that the module requires.
-Enter the name of the host program, such as "Windows PowerShell ISE Host" or "ConsoleHost".
-Wildcards are not permitted.
 
-To find the name of a host program, in the program, type "$host.name".
+Specifies the name of the PowerShell host program that the module requires. Enter the name of the
+host program, such as "Windows PowerShell ISE Host" or "ConsoleHost". Wildcards are not permitted.
+
+To find the name of a host program, in the program, type `$Host.Name`.
 
 ```yaml
 Type: String
@@ -625,8 +687,9 @@ Accept wildcard characters: False
 ```
 
 ### -PowerShellHostVersion
-Specifies the minimum version of the Windows PowerShell host program that works with the module.
-Enter a version number, such as 1.1.
+
+Specifies the minimum version of the PowerShell host program that works with the module. Enter a
+version number, such as 1.1.
 
 ```yaml
 Type: Version
@@ -641,8 +704,9 @@ Accept wildcard characters: False
 ```
 
 ### -PowerShellVersion
-Specifies the minimum version of Windows PowerShell that will work with this module.
-For example, you can enter 2.0, 3.0, or 4.0 as the value of this parameter.
+
+Specifies the minimum version of Windows PowerShell that will work with this module. For example,
+you can enter 1.0, 2.0, or 3.0 as the value of this parameter.
 
 ```yaml
 Type: Version
@@ -657,6 +721,7 @@ Accept wildcard characters: False
 ```
 
 ### -PrivateData
+
 Specifies data that is passed to the module when it is imported.
 
 ```yaml
@@ -672,8 +737,9 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessorArchitecture
-Specifies the processor architecture that the module requires.
-Valid values are x86, AMD64, IA64, and None (unknown or unspecified).
+
+Specifies the processor architecture that the module requires. Valid values are x86, AMD64, IA64, MSIL,
+and None (unknown or unspecified).
 
 ```yaml
 Type: ProcessorArchitecture
@@ -689,11 +755,15 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredAssemblies
-Specifies the assembly (.dll) files that the module requires.
-Enter the assembly file names.
-Windows PowerShell loads the specified assemblies before updating types or formats, importing nested modules, or importing the module file that is specified in the value of the **RootModule** key.
 
-Use this parameter to list all the assemblies that the module requires, including assemblies that must be loaded to update any formatting or type files that are listed in the **FormatsToProcess** or **TypesToProcess** keys, even if those assemblies are also listed as binary modules in the **NestedModules** key.
+Specifies the assembly (.dll) files that the module requires. Enter the assembly file names.
+PowerShell loads the specified assemblies before updating types or formats, importing nested
+modules, or importing the module file that is specified in the value of the **RootModule** key.
+
+Use this parameter to list all the assemblies that the module requires, including assemblies that
+must be loaded to update any formatting or type files that are listed in the **FormatsToProcess**
+or **TypesToProcess** keys, even if those assemblies are also listed as binary modules in the
+**NestedModules** key.
 
 ```yaml
 Type: String[]
@@ -708,17 +778,17 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredModules
-Specifies modules that must be in the global session state.
-If the required modules are not in the global session state, Windows PowerShell imports them.
-If the required modules are not available, the Import-Module command fails.
 
-Enter each module name as a string or as a hash table with **ModuleName** and **ModuleVersion** keys.
-The hash table can also have an optional **GUID** key.
-You can combine strings and hash tables in the parameter value.
-For more information, see the examples.
+Specifies modules that must be in the global session state. If the required modules are not in the
+global session state, Windows PowerShell imports them. If the required modules are not available,
+the `Import-Module` command fails.
 
-In Windows PowerShell 2.0, **Import-Module** does not import required modules automatically.
-It just verifies that the required modules are in the global session state.
+Enter each module name as a string or as a hash table with **ModuleName** and **ModuleVersion**
+keys. The hash table can also have an optional **GUID** key. You can combine strings and hash
+tables in the parameter value. For more information, see the examples.
+
+In Windows PowerShell 2.0, `Import-Module` does not import required modules automatically. It
+just verifies that the required modules are in the global session state.
 
 ```yaml
 Type: Object[]
@@ -732,31 +802,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RootModule
-Specifies the primary or "root" file of the module.
-Enter the file name of a script (.ps1), a script module (.psm1), a module manifest(.psd1), an assembly (.dll), a cmdlet definition XML file (.cdxml), or a workflow (.xaml).
-When the module is imported, the members that are exported from the root module file are imported into the caller's session state.
-
-If a module has a manifest file and no root file has been designated in the **RootModule** key, the manifest becomes the primary file for the module, and the module becomes a "manifest module" (ModuleType = Manifest).
-
-To export members from .psm1 or .dll files in a module that has a manifest, the names of those files must be specified in the values of the **RootModule** or **NestedModules** keys in the manifest.
-Otherwise, their members are not exported.
-
-Note: In Windows PowerShell 2.0, this key was called "ModuleToProcess." You can use the "RootModule" parameter name or its "ModuleToProcess" alias.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: ModuleToProcess
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ScriptsToProcess
+
 Specifies script (.ps1) files that run in the caller's session state when the module is imported.
 You can use these scripts to prepare an environment, just as you might use a login script.
 
@@ -775,10 +822,11 @@ Accept wildcard characters: False
 ```
 
 ### -TypesToProcess
+
 Specifies the type files (.ps1xml) that run when the module is imported.
 
-When you import the module, Windows PowerShell runs the Update-TypeData cmdlet with the specified files.
-Because type files are not scoped, they affect all session states in the session.
+When you import the module, Windows PowerShell runs the `Update-TypeData` cmdlet with the specified
+files. Because type files are not scoped, they affect all session states in the session.
 
 ```yaml
 Type: String[]
@@ -793,13 +841,14 @@ Accept wildcard characters: False
 ```
 
 ### -VariablesToExport
-Specifies the variables that the module exports.
-Wildcards are permitted.
 
-You can use this parameter to restrict the variables that are exported by the module.
-It can remove variables from the list of exported variables, but it cannot add variables to the list.
+Specifies the variables that the module exports. Wildcards are permitted.
 
-If you omit this parameter, **New-ModuleManifest** creates a **VariablesToExport** key with a value of * (all), meaning that all variables that are exported by the module are exported by the manifest.
+You can use this parameter to restrict the variables that are exported by the module. It can remove
+variables from the list of exported variables, but it cannot add variables to the list.
+
+If you omit this parameter, `New-ModuleManifest` creates a **VariablesToExport** key with a value
+of `*` (all), meaning that all variables defined int the module are exported by the manifest.
 
 ```yaml
 Type: String[]
@@ -810,12 +859,66 @@ Required: False
 Position: Named
 Default value: * (all)
 Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### -DefaultCommandPrefix
+
+Specifies a prefix that is prepended to the nouns of all commands in the module when they are
+imported into a session. Enter a prefix string. Prefixes prevent command name conflicts in a user's
+session.
+
+Module users can override this prefix by specifying the **Prefix** parameter of the `Import-Module`
+cmdlet.
+
+This parameter is introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RootModule
+
+Specifies the primary or "root" file of the module. Enter the file name of a script (.ps1), a
+script module (.psm1), a module manifest(.psd1), an assembly (.dll), a cmdlet definition XML file
+(.cdxml), or a workflow (.xaml). When the module is imported, the members that are exported from
+the root module file are imported into the caller's session state.
+
+If a module has a manifest file and no root file has been designated in the **RootModule** key, the
+manifest becomes the primary file for the module, and the module becomes a "manifest module"
+(ModuleType = Manifest).
+
+To export members from .psm1 or .dll files in a module that has a manifest, the names of those
+files must be specified in the values of the **RootModule** or **NestedModules** keys in the
+manifest. Otherwise, their members are not exported.
+
+> [!NOTE]
+> In PowerShell 2.0, this key was called **ModuleToProcess**. You can use the "RootModule" parameter
+> name or its **ModuleToProcess** alias.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: ModuleToProcess
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -830,27 +933,44 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](./About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None or System.String
-By default, New-ModuleManifest does not generate any output.
-However, if you use the PassThru parameter, it generates a System.String object representing the module manifest..
+
+By default, `New-ModuleManifest` does not generate any output. However, if you use the **PassThru**
+parameter, it generates a **System.String** object representing the module manifest.
 
 ## NOTES
-* Module manifests are usually optional. However, a module manifest is required to export an assembly that is installed in the global assembly cache.
-* To add or change files in the $pshome\Modules directory (%Windir%\System32\WindowsPowerShell\v1.0\Modules), start Windows PowerShell with the "Run as administrator" option.
-* In Windows PowerShell 2.0, many parameters of **New-ModuleManifest** are mandatory, even though they are not required in a module manifest. In Windows PowerShell 3.0, only the **Path** parameter is  mandatory.
-* A "session" is an instance of the Windows PowerShell execution environment. A session can have one or more session states. By default, a session has only a global session state, but each imported module has its own session state. Session states allow the commands in a module to run without affecting the global session state.
 
-  The "caller's session state" is the session state into which a module is imported.
-Typically, it refers to the global session state, but when a module imports nested modules, the "caller" is the module and the "caller's session state" is the module's session state.
+Module manifests are usually optional. However, a module manifest is required to export an assembly
+that is installed in the global assembly cache.
+
+To add or change files in the `$pshome\Modules` directory, start PowerShell with the "Run as
+administrator" option.
+
+In PowerShell 2.0, many parameters of `New-ModuleManifest` are mandatory, even though they are not
+required in a module manifest. In Windows PowerShell 3.0, only the **Path** parameter is mandatory.
+
+A "session" is an instance of the PowerShell execution environment. A session can have one or more
+session states. By default, a session has only a global session state, but each imported module has
+its own session state. Session states allow the commands in a module to run without affecting the
+global session state.
+
+The "caller's session state" is the session state into which a module is imported. Typically, it
+refers to the global session state, but when a module imports nested modules, the "caller" is the
+module and the "caller's session state" is the module's session state.
 
 ## RELATED LINKS
 

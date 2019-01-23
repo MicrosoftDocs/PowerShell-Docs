@@ -241,6 +241,121 @@ The following are a few commonly used character escapes.
 |`\n`|Matches a newline|
 |`\r`|Matches a carriage return|
 
+### Grouping and Capturing
+
+Grouping constructs separate a input string into substrings that can be
+captured or ignored. Grouped substrings are called subexpressions. By default
+subexpressions are captured in numbered groups, though you can assign names
+to them as well.
+
+A grouping construct is a regular expression surrounded by
+parenthesis. Any text matched by the by the enclosed regular expression is
+captured. The following example will break the input text into two capturing
+groups.
+
+```powershell
+"The last logged on user was CONTOSO\jsmith" -match "(.+was )(.+)"
+True
+```
+
+Use the `$Matches` **Hashtable** automatic variable to retrieve
+captured text. The text representing the entire match is stored at key `0`.
+
+```powershell
+$Matches.0
+The last logged on user was CONTOSO\jsmith
+```
+
+Captures are stored in numeric **Integer** keys that increase from left to
+right. Capture `1` contains all the text until the username, capture `2`
+contains just the username.
+
+```powershell
+$Matches
+
+Name                           Value
+----                           -----
+2                              CONTOSO\jsmith
+1                              The last logged on user was
+0                              The last logged on user was CONTOSO\jsmith
+```
+
+> [!IMPORTANT]
+> The `0` key is an **Integer**. You can use any **Hashtable** method to access
+> the value stored.
+>
+> ```powershell
+> PS> "Good Dog" -matches "Dog"
+> True
+>
+> PS> $Matches[0]
+> Dog
+>
+> PS> $Matches.Item(0)
+> Dog
+>
+> PS> $Matches.0
+> Dog
+> ```
+
+#### Named Captures
+
+By default, captures are stored in ascending numeric order, from left to right.
+You can also assign a *name* to a capturing group. This *name* becomes a key
+on the `$Matches` **Hashtable** automatic variable.
+
+Inside a capturing group, use `?<keyname>` to store captured data under
+a named key.
+
+```powershell
+PS> $string = "The last logged on user was CONTOSO\jsmith"
+PS> $string -match "was (?<domain>.+)\\(?<user>.+)"
+True
+
+PS> $Matches
+
+Name                           Value
+----                           -----
+domain                         CONTOSO
+user                           jsmith
+0                              was CONTOSO\jsmith
+
+PS> $Matches.domain
+CONTOSO
+
+PS> $Matches.user
+jsmith
+```
+
+The following example stores the latest **SuccessAudit** from the Windows
+Security Log. The provided regular expression extracts the username and
+domain from the message and stores them under **N** and **D** keys for
+*name* and *domain*.
+
+```powershell
+$log = (Get-EventLog -LogName Security -Newest 1 -InstanceId 4689).message
+$r = '(?s).*Account Name:\s*(?<N>.*).*Account Domain:\s*(?<D>[A-Z,0-9]*)'
+$log -match $r
+```
+
+```output
+True
+```
+
+```powershell
+$Matches
+```
+
+```output
+Name                           Value
+----                           -----
+D                              CONTOSO
+N                              jsmith
+0                              A process has exited....
+```
+
+For more information, see [Grouping Constructs in Regular Expressions](/dotnet/standard/base-types/grouping-constructs-in-regular-expressions).
+
 ## See also
 
 [about_Comparison_Operators](about_Comparison_Operators.md)
