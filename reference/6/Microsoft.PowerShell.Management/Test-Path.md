@@ -325,12 +325,6 @@ Accept wildcard characters: False
 
 ### -PathType
 
-> [!REMARK]
-> 
-> Up to PowerShell version 6.1.1, when the **IsValid** switch and the **PathType** switch are specified together, the `Test-Path` cmdlet simply ignores the **PathType** switch and only validates the syntactic path without validating simultaneously the path type.
-> 
-> According to [issue #8607](https://github.com/PowerShell/PowerShell/issues/8607), this behavior may be subject to a breaking change in future versions, in which **IsValid** and **PathType** switches will belong to separate parameter sets and thus cannot be specified together anymore in order to avoid confusion.
-
 Specifies the type of the final element in the path.
 This cmdlet returns `$True` if the element is of the specified type and `$False` if it is not.
 The acceptable values for this parameter are:
@@ -356,6 +350,17 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+> [!CAUTION] 
+> 
+> Up to PowerShell version 6.1.1, when the **IsValid** switch and the **PathType** switch are 
+> specified together, the `Test-Path` cmdlet simply ignores the **PathType** switch and only 
+> validates the syntactic path without validating simultaneously the path type. 
+> 
+> According to [issue #8607](https://github.com/PowerShell/PowerShell/issues/8607), this behavior
+> may be subject to a breaking change in future versions, in which **IsValid** and **PathType** 
+> switches will belong to separate parameter sets and thus cannot be specified together anymore
+> in order to avoid confusion.
 
 ### CommonParameters
 
