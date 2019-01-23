@@ -87,10 +87,10 @@ for experimentation and feedback.
 Based on [Lifecycle of PowerShell Core](#lifecycle-of-powershell-core),
 the following table lists the dates when various release will no longer be supported.
 
-| Version | End Of Line Date              |
+| Version | End Of Life                   |
 |---------|-------------------------------|
-| 6.0     | February 13 2018              |
-| 6.1     | 6 Months after `6.2` releases |
+| 6.0     | February 13, 2019             |
+| 6.1     | 6 Months after 6.2 releases   |
 
 ## Platforms, which are out of support
 
