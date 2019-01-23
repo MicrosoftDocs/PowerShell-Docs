@@ -308,6 +308,17 @@ The acceptable values for this parameter are:
 
 Tells whether the final element in the path is of a particular type.
 
+> [!CAUTION] 
+> 
+> Up to PowerShell version 6.1.2, when the **IsValid** and **PathType** switches are 
+> specified together, the `Test-Path` cmdlet simply  the **PathType** switch and only 
+> validates the syntactic path without validating the path type. 
+> 
+> According to [issue #8607](https://github.com/PowerShell/PowerShell/issues/8607), fixing this
+> behavior may be a breaking change in a future version, where the **IsValid** and **PathType** 
+> switches belong to separate parameter sets, and thus, cannot be used together avoiding this
+> confusion.
+
 ```yaml
 Type: TestPathType
 Parameter Sets: (All)
