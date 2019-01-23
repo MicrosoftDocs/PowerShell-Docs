@@ -83,6 +83,16 @@ for experimentation and feedback.
 > After, we are confident that Snap does not introduce new support issues,
 > the support will follow the distribution you are running the package on.
 
+## PowerShell release end of life
+
+Based on [Lifecycle of PowerShell Core](#lifecycle-of-powershell-core),
+the following table lists the dates when various release will no longer be supported.
+
+| Version | End Of Line Date              |
+|---------|-------------------------------|
+| 6.0     | February 13 2018              |
+| 6.1     | 6 Months after `6.2` releases |
+
 ## Platforms, which are out of support
 
 When a platform version reaches end-of-life as defined by the platform owner,
