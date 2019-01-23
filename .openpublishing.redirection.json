@@ -905,6 +905,21 @@
             "redirect_document_id": false
         },
         {
+            "source_path"         : "reference/5.0/Microsoft.PowerShell.Core/about/about_psreadline.md",
+            "redirect_url"        : "/powershell/module/psreadline/about/about_psreadline?view=powershell-5.0",
+            "redirect_document_id": false
+        },
+        {
+            "source_path"         : "reference/5.1/Microsoft.PowerShell.Core/about/about_psreadline.md",
+            "redirect_url"        : "/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1",
+            "redirect_document_id": false
+        },
+        {
+            "source_path"         : "reference/6/Microsoft.PowerShell.Core/about/about_psreadline.md",
+            "redirect_url"        : "/powershell/module/psreadline/about/about_psreadline?view=powershell-6",
+            "redirect_document_id": false
+        },
+        {
             "source_path"         : "reference/docs-conceptual/powershell-scripting.md",
             "redirect_url"        : "/powershell/scripting/overview",
             "redirect_document_id": true
@@ -6955,11 +6970,6 @@
             "redirect_document_id": false
         },
         {
-            "source_path"         : "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_psreadline.md",
-            "redirect_url"        : "/powershell/module/microsoft.powershell.core/about/about_psreadline?view=powershell-5.0",
-            "redirect_document_id": false
-        },
-        {
             "source_path"         : "reference/virtual-directory-module/5.0/Microsoft.PowerShell.Core/about/about_PSSession_Details.md",
             "redirect_url"        : "/powershell/module/microsoft.powershell.core/about/about_pssession_details?view=powershell-5.0",
             "redirect_document_id": false
@@ -9721,7 +9731,7 @@
         },
         {
             "source_path"         : "reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/about/about_psreadline.md",
-            "redirect_url"        : "/powershell/module/microsoft.powershell.core/about/about_psreadline?view=powershell-5.1",
+            "redirect_url"        : "/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1",
             "redirect_document_id": false
         },
         {
