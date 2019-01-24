@@ -9,7 +9,7 @@ branches:
     - live
 
 install:
-  - git clone https://github.com/PowerShell/PowerShell-Docs
+  - git clone https://github.com/MicrosoftDocs/PowerShell-Docs
   - ps: |
       Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
       Install-Module -Name platyPS -Repository PSGallery -Force
