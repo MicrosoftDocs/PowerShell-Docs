@@ -15,8 +15,8 @@
             "author": "joeyaiello",
             "ms.author": "jaiello",
             "feedback_system": "GitHub",
-            "feedback_github_repo": "PowerShell/PowerShell-Docs",
-            "feedback_product_url": "https://github.com/powershell/powershell/issues/new"
+            "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
+            "feedback_product_url": "https://github.com/MicrosoftDocs/powershell/issues/new"
         },
         "resource": [
             { "files": ["**/media/**", "**/*.png", "**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.svg"], "exclude": ["**/obj/**", "**/includes/**"] }
