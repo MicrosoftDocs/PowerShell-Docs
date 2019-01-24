@@ -10,7 +10,6 @@ title:  Add-Content
 # Add-Content
 
 ## SYNOPSIS
-
 Adds content to the specified items, such as adding words to a file.
 
 ## SYNTAX
@@ -407,7 +406,7 @@ When you pipe an object to `Add-Content`, the object is converted to a string be
 The object type determines the string format, but the format might be different than the default display of the object.
 To control the string format, use the formatting parameters of the sending cmdlet.
 
-You can also refer to `Add-Content` by its built-in alias, "ac". For more information, see about_Aliases.
+You can also refer to `Add-Content` by its built-in alias, "ac". For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 The `Add-Content` cmdlet is designed to work with the data exposed by any provider.
 To list the providers available in your session, type `Get-PsProvider`.

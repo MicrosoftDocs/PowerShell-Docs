@@ -65,7 +65,7 @@ The created or updated instance is written to the WMI repository.
 
 New CIM cmdlets, introduced Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets.
 The CIM cmdlets comply with WS-Management (WSMan) standards and with the Common Information Model (CIM) standard, which enables the cmdlets to use the same techniques to manage Windows computers and those running other operating systems.
-Instead of using `Set-WmiInstance`, consider using the [Set-CimInstance](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/set-ciminstance) or [New-CimInstance](https://docs.microsoft.com/en-us/powershell/module/cimcmdlets/new-ciminstance) cmdlets.
+Instead of using `Set-WmiInstance`, consider using the [Set-CimInstance](https://docs.microsoft.com/powershell/module/cimcmdlets/set-ciminstance) or [New-CimInstance](https://docs.microsoft.com/powershell/module/cimcmdlets/new-ciminstance) cmdlets.
 
 ## EXAMPLES
 

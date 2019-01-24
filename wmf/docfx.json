@@ -9,7 +9,7 @@
             "ROBOTS": "INDEX, FOLLOW",
             "ms.tgt_pltfr": "windows",
             "feedback_system": "GitHub",
-            "feedback_github_repo": "PowerShell/PowerShell-Docs",
+            "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
             "feedback_product_url": "https://windowsserver.uservoice.com/forums/301869-powershell"
         },
         "fileMetadata": {

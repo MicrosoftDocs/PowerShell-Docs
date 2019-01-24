@@ -981,4 +981,4 @@ function Html ([HTML] $doc) { return $doc }
 
 [about_Methods](../../Microsoft.PowerShell.Core/About/about_Methods.md)
 
-[Build Custom Windows PowerShell Desired State Configuration Resources](https://docs.microsoft.com/en-us/powershell/dsc/resources/authoringResource)
+[Build Custom Windows PowerShell Desired State Configuration Resources](https://docs.microsoft.com/powershell/dsc/resources/authoringResource)
