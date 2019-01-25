@@ -196,7 +196,7 @@ For more about script blocks, see [about_Script_Blocks](about_Script_Blocks.md).
 Runs the pipeline before it in a PowerShell job.
 The ampersand background operator acts similarly to the UNIX "ampersand operator"
 which famously runs the command before it as a background process.
-The ampersand background operator is built on top of PowerShell jobs so it shares a lot of functionality with 
+The ampersand background operator is built on top of PowerShell jobs so it shares a lot of functionality with
 `Start-Job`.
 The following command contains basic usage of the ampersand background operator.
 
@@ -370,6 +370,34 @@ lower boundary.
 1..10
 10..1
 foreach ($a in 1..$max) {Write-Host $a}
+```
+
+Beginning in PowerShell 6, the range operator works with **Characters** as
+well as **Integers**.
+
+To create a range of characters, enclose the boundary characters in quotes.
+
+```powershell
+PS> 'a'..'f'
+a
+b
+c
+d
+e
+f
+```
+
+You can also create ranges in reverse order. PowerShell matches the case of
+the boundary characters automatically.
+
+```powershell
+PS> 'F'..'A'
+F
+E
+D
+C
+B
+A
 ```
 
 #### Static member operator `::`

@@ -10,7 +10,6 @@ title:  Clear-Item
 # Clear-Item
 
 ## SYNOPSIS
-
 Clears the contents of an item, but does not delete the item.
 
 ## SYNTAX
@@ -64,9 +63,9 @@ You can use the **Include** and **Exclude** parameters to identify particular re
 - To delete particular registry entries, use the `Remove-ItemProperty` cmdlet.
 - To delete the value of a registry entry, use the `Clear-ItemPropertycmdlet`.
 
-```powershell
-Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
-```
+  ```powershell
+  Clear-Item HKLM:\Software\MyCompany\MyKey -Confirm
+  ```
 
 ## PARAMETERS
 
@@ -246,7 +245,7 @@ Accept wildcard characters: False
 
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see about_Transactions.
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: SwitchParameter

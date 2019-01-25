@@ -63,6 +63,6 @@ and does require some "do it yourself" integration.
 
 The following topics explain pull service and clients:
 
-- [Azure Automation DSC Overview](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC Overview](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Setting up an SMB pull server](pullServerSMB.md)
 - [Configuring a pull client](pullClientConfigID.md)

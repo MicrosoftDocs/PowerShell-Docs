@@ -56,7 +56,7 @@ password or key-based authentication.
 
 2. Install the latest Win32 OpenSSH. For installation instructions, see
    [Installation of OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
-3. Edit the `sshd_config` file located at `%ProgramData%\ssh`.
+3. Edit the `sshd_config` file located at `$env:ProgramData\ssh`.
 
    - Make sure password authentication is enabled
 

@@ -1,18 +1,17 @@
 ---
-ms.date:  06/09/2017
+ms.date:  01/18/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Comparison_Operators
 ---
-
 # About Comparison Operators
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the operators that compare values in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Comparison operators let you specify conditions for comparing values and
 finding values that match specified patterns. To use a comparison operator,
@@ -138,7 +137,8 @@ PS> 7, 8, 9 -gt 8
 9
 ```
 
-Note: Not to be confused with `>`, the greater-than operator in many other programming languages. See: [Powershell redirection operators](about_Redirection.md#potential-confusion-with-comparison-operators).  
+> [!NOTE]
+> This should not to be confused with `>`, the greater-than operator in many other programming languages. In PowerShell, `>` is used for redirection. For more information, see [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators).
 
 #### -ge
 
@@ -267,7 +267,11 @@ PS>
 
 In contrast, the following command submits a single string to the `-match`
 operator. The `-match` operator returns a Boolean value and populates the
-`$Matches` automatic variable.
+`$Matches` automatic variable. The `$Matches` automatic variable is a
+**Hashtable**. If no grouping or capturing is used, only one key is populated.
+The `0` key represents all text that was matched. For more information about
+grouping and capturing using regular expressions, see
+[about_Regular_Expressions](about_Regular_Expressions.md).
 
 ```powershell
 PS> "Sunday" -match "sun"
@@ -279,6 +283,24 @@ Name                           Value
 ----                           -----
 0                              Sun
 ```
+
+> [!IMPORTANT]
+> The `0` key is an **Integer**. You can use any **Hashtable** method to access
+> the value stored.
+>
+> ```powershell
+> PS> "Good Dog" -matches "Dog"
+> True
+>
+> PS> $Matches[0]
+> Dog
+>
+> PS> $Matches.Item(0)
+> Dog
+>
+> PS> $Matches.0
+> Dog
+> ```
 
 The `-notmatch` operator populates the `$Matches` automatic variable when the
 input is scalar and the result is False, that it, when it detects a match.
@@ -593,7 +615,8 @@ Two of the ways to reference capturing groups is by **Number** and by **Name**
 > $5.72
 > ```
 
-To learn more see [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)
+To learn more see [about_Regular_Expressions](about_Regular_Expressions.md) and
+[Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)
 
 ### Type comparison
 

@@ -162,8 +162,6 @@ If you intend to pass the objects back to **Add-History**, do not use the **NoTy
 
   To edit the session history, export the session to a CSV or XML file, edit the file, import the file, and use **Add-History** to append it to the current session history.
 
-- 
-
 ## RELATED LINKS
 
 [Clear-History](Clear-History.md)
