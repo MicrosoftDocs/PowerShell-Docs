@@ -142,4 +142,4 @@ Configuration Example
 You can download the resources used in this topic at the following locations, or by using the PowerShell gallery.
 
 - [xPendingReboot](https://github.com/PowerShell/xPendingReboot)
-- [ComputerManagementDSC](https://github.com/PowerShell/ComputerManagementDsc)
+- [xExchange](https://github.com/PowerShell/xExchange)
