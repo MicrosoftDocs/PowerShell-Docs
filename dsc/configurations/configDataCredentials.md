@@ -332,7 +332,7 @@ that could be used on other servers.
 
 **When using credentials with DSC resources, prefer a local account over a domain account when possible.**
 
-If there is a '\' or '@' in the `Username` property of the credential,
+If there is a '\\' or '\@' in the `Username` property of the credential,
 then DSC will treat it as a domain account.
 There is an exception for "localhost",
 "127.0.0.1", and "::1" in the domain portion of the user name.
