@@ -255,16 +255,19 @@ The acceptable values for this parameter are as follows:
 - Application. All files other than PowerShell files in paths listed in the Path environment
   variable (`$env:path`), including .txt, .exe, and .dll files.
 - Cmdlet. The cmdlets in the current session. Cmdlet is the default.
+- Configuration. A PowerShell configuration. For more information, see
+  [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md).
 - ExternalScript. All .ps1 files in the paths listed in the Path environment variable
   (`$env:path`).
 - Filter and Function. All PowerShell functions.
 - Script. Script blocks in the current session.
+- Workflow. A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1).
 
 ```yaml
 Type: CommandTypes
 Parameter Sets: (All)
 Aliases: Type
-Accepted values: Alias, Function, Filter, Cmdlet, ExternalScript, Application, Script, Workflow, Configuration, All
+Accepted values: Alias, All, Application, Cmdlet, Configuration, ExternalScript, Filter, Function, Script, Workflow
 
 Required: False
 Position: Named
@@ -297,6 +300,7 @@ The acceptable values for this parameter are as follows:
 Type: Encoding
 Parameter Sets: (All)
 Aliases:
+Accepted values: ASCII, BigEndianUnicode, Byte, Default, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UF8NoBOM, UTF32, Unknown
 
 Required: False
 Position: Named

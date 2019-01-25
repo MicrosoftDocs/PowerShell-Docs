@@ -236,11 +236,13 @@ The acceptable values for this parameter are as follows:
   (`$env:path`).
 - Filter and Function. All PowerShell functions.
 - Script. Script blocks in the current session.
+- Workflow. A PowerShell workflow. For more information, see [about_Workflows](../PSWorkflow/About/about_Workflows.md).
 
 ```yaml
 Type: CommandTypes
 Parameter Sets: (All)
 Aliases: Type
+Accepted values: Alias, All, Application, Cmdlet, ExternalScript, Filter, Function, Script, Workflow
 
 Required: False
 Position: Named
@@ -260,7 +262,7 @@ The acceptable values for this parameter are as follows:
 - **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
 - **Byte** Encodes a set of characters into a sequence of bytes.
 - **Default** Uses the encoding that corresponds to the system's active code page.
-- **Oem** Uses the encoding that corresponds to the system's current OEM code page.
+- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
 - **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
 - **Unknown** Same as **Unicode**.
@@ -272,6 +274,7 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: (All)
 Aliases:
+Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
