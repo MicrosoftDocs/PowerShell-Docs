@@ -28,6 +28,10 @@ The **xPendingReboot** resource checks specific computer locations to determine 
 pending. If the Node requires a reboot outside of DSC, the **xPendingReboot** resource sets the
 `$global:DSCMachineStatus` flag to `1` forcing a reboot and resolving the pending condition.
 
+> [!NOTE]
+> Any DSC resource can instruct the LCM to reboot the node by setting this flag in the `Set-TargetResource`
+> function. For more information, see [Writing a custom DSC resource with MOF](../resources/authoringResourceMOF.md).
+
 ## Syntax
 
 ```
@@ -59,31 +63,71 @@ xPendingReboot [String] #ResourceName
 
 ## Example
 
-The following example renames a computer using the **Computer** resource, reboots the machine using
-**xPendingReboot**, and logs a message.
+The following example installs Microsoft Exchange using the [xExchange](https://github.com/PowerShell/xExchange) resource.
+Throughout the install, the **xPendingReboot** resource is used to reboot the Node.
+
+> [!NOTE]
+> This example requires the credential of an account that has rights to add an Exchange server to
+> the forest. For more information on using credentials in DSC, see [Handling Credentials in DSC](../configurations/configDataCredentials.md#Handling-Credentials-in-DSC)
 
 ```powershell
-Configuration RenameComputer
+$ConfigurationData = @{
+    AllNodes = @(
+        @{
+            NodeName                    = '*'
+            PSDSCAllowPlainTextPassword = $true
+        },
+        @{
+            NodeName = 'DSCPULL-1'
+        }
+    )
+}
+
+Configuration Example
 {
-    Import-DscResource -ModuleName xPendingReboot, PSDesiredStateConfiguration, ComputerManagementDSC
+    param
+    (
+        [Parameter(Mandatory = $true)]
+        [System.Management.Automation.PSCredential]
+        $ExchangeAdminCredential
+    )
 
-    Node localhost
+    Import-DscResource -Module xExchange
+    Import-DscResource -Module xPendingReboot
+
+    Node $AllNodes.NodeName
     {
-        Computer Rename
+        # Copy the Exchange setup files locally
+        File ExchangeBinaries
         {
-            Name = "Server01"
+            Ensure          = 'Present'
+            Type            = 'Directory'
+            Recurse         = $true
+            SourcePath      = '\\rras-1\Binaries\E15CU6'
+            DestinationPath = 'C:\Binaries\E15CU6'
         }
 
-        xPendingReboot ComputerRename
+        # Check if a reboot is needed before installing Exchange
+        xPendingReboot BeforeExchangeInstall
         {
-            Name = "ComputerRename"
-            DependsOn = "[Computer]Rename"
+            Name       = 'BeforeExchangeInstall'
+            DependsOn  = '[File]ExchangeBinaries'
         }
 
-        Log Success
+        # Do the Exchange install
+        xExchInstall InstallExchange
         {
-            Message = "Successfully rebooted the Node"
-            DependsOn = "[xPendingReboot]ComputerRename"
+            Path       = 'C:\Binaries\E15CU6\Setup.exe'
+            Arguments  = '/mode:Install /role:Mailbox /Iacceptexchangeserverlicenseterms'
+            Credential = $ExchangeAdminCredential
+            DependsOn  = '[xPendingReboot]BeforeExchangeInstall'
+        }
+
+        # See if a reboot is required after installing Exchange
+        xPendingReboot AfterExchangeInstall
+        {
+            Name      = 'AfterExchangeInstall'
+            DependsOn = '[xExchInstall]InstallExchange'
         }
     }
 }
