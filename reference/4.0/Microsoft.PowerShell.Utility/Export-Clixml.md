@@ -45,34 +45,38 @@ an example of how to do this, see Example 3.
 
 ### Example 1: Export a string to an XML file
 
-```powershell
-"This is a test" | Export-Clixml sample.xml
-```
+This command creates an XML file that stores a representation of the string, "This is a test" in
+the current directory.
 
-This command creates an XML file that stores a representation of the string, "This is a test".
+```powershell
+"This is a test" | Export-Clixml -Path .\sample.xml
+```
 
 ### Example 2: Export an object to an XML file
-
-```powershell
-Get-Acl C:\test.txt | Export-Clixml -Path fileacl.xml
-$fileacl = Import-Clixml fileacl.xml
-```
 
 This example shows how to export an object to an XML file and then create an object by importing
 the XML from the file.
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Test.txt file. It
-uses a pipeline operator to pass the security descriptor to `Export-Clixml`, which stores an
-XML-based representation of the object in a file named FileACL.xml.
+```powershell
+Get-Acl C:\test.txt | Export-Clixml -Path .\fileacl.xml
+$fileacl = Import-Clixml -Path .\fileacl.xml
+```
 
-The second command uses the `Import-Clixml` cmdlet to create an object from the XML in the
-FileACL.xml file. Then, it saves the object in the `$fileacl` variable.
+The `Get-Acl` cmdlet gets the security descriptor of the Test.txt file. It sends the object down
+the pipeline to pass the security descriptor to `Export-Clixml`. The XML-based representation of
+the object is stored in a file named FileACL.xml.
+
+The `Import-Clixml` cmdlet creates an object from the XML in the FileACL.xml file. Then, it saves
+the object in the `$fileacl` variable.
 
 ### Example 3: Encrypt an exported credential object
 
+This example shows how to use a credential stored in a variable and save it to disk. The credential
+can then be imported into scripts.
+
 ```powershell
 $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
-$credential | Export-Clixml $credPath
+$credential | Export-Clixml $credxmlpath
 $credxmlpath = Join-Path (Split-Path $profile) TestScript.ps1.credential
 $credential = Import-Clixml $credxmlpath
 ```
@@ -127,7 +131,7 @@ The acceptable values for this parameter are as follows:
 - **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
 - **Byte** Encodes a set of characters into a sequence of bytes.
 - **Default** Uses the encoding that corresponds to the system's active code page.
-- **Oem** Uses the encoding that corresponds to the system's current OEM code page.
+- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
 - **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
 - **Unknown** Same as **Unicode**.
@@ -139,6 +143,7 @@ The acceptable values for this parameter are as follows:
 Type: String
 Parameter Sets: (All)
 Aliases:
+Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
