@@ -65,23 +65,23 @@ To exit Visual Studio Code, **File->Exit**.
 
 Some systems are set up in a way that requires all code signatures to be checked and thus requires
 PowerShell Editor Services to be manually approved to run on the system.
-A Group Policy update that changes execution policy is a likely culprit if you have installed the 
+A Group Policy update that changes execution policy is a likely cause if you have installed the 
 PowerShell extension but are reaching an error like:
 
 ```
- Language server startup failed.
- ```
+Language server startup failed.
+```
 
 To manually approve PowerShell Editor Services and thus the PowerShell extension for VSCode
 open a PowerShell prompt and run:
 
-```
+```powershell
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-You will then be prompted with "Do you want to run software from this untrusted publisher?"
-Type `R` to run the file. Then, open VSCode and check to see if the PowerShell extension is
-functioning properly. If you still having issues getting started, let us know on [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
+You are prompted with "Do you want to run software from this untrusted publisher?"
+Type `R` to run the file. Then, open Visual Studio Code and check that the PowerShell extension is
+functioning properly. If you still have issues getting started, let us know on [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
 #### Using a specific installed version of PowerShell
 
