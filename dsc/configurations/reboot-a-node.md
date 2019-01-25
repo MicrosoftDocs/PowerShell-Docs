@@ -68,7 +68,7 @@ Throughout the install, the **xPendingReboot** resource is used to reboot the No
 
 > [!NOTE]
 > This example requires the credential of an account that has rights to add an Exchange server to
-> the forest. For more information on using credentials in DSC, see [Handling Credentials in DSC](../configurations/configDataCredentials.md#Handling-Credentials-in-DSC)
+> the forest. For more information on using credentials in DSC, see [Handling Credentials in DSC](../configurations/configDataCredentials.md)
 
 ```powershell
 $ConfigurationData = @{
