@@ -169,7 +169,7 @@ The argument is a Hashtable where the keys specify which element and the values 
 
 Colors can be either a value from ConsoleColor, for example `[ConsoleColor]::Red`, or a valid
 escape sequence. Valid escape sequences depend on your terminal. In Windows PowerShell, an example
-escape sequence is `$([char]0x1b)[91m`. In PowerShell 6, the same escape sequence is ```e[91m`. You
+escape sequence is `$([char]0x1b)[91m`. In PowerShell 6, the same escape sequence is `e[91m`. You
 can specify other escape sequences including:
 
 - 256 color

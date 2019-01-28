@@ -319,22 +319,21 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the encoding for the exported CSV file. The default value is **UTF8NoBOM**. This
-parameter was introduced in PowerShell 3.0.
+Specifies the encoding for the exported CSV file. The default value is **UTF8NoBOM**.
 
-The acceptable values for this parameter are:
+The acceptable values for this parameter are as follows:
 
 - **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
 - **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte order.
+- **Byte**: Encodes a set of characters into a sequence of bytes.
 - **Default**: Encodes using the default value: ASCII.
 - **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **Byte**: Encodes a set of characters into a sequence of bytes.
 - **String**: Uses the encoding type for a string.
 - **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
 - **UTF7**: Encodes in UTF-7 format.
 - **UTF8**: Encodes in UTF-8 format.
 - **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- **UF8NOBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- **UF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - **UTF32**:  Encodes in UTF-32 format.
 - **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
 
@@ -342,6 +341,7 @@ The acceptable values for this parameter are:
 Type: Encoding
 Parameter Sets: (All)
 Aliases:
+Accepted values: ASCII, BigEndianUnicode, Byte, Default, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UF8NoBOM, UTF32, Unknown
 
 Required: False
 Position: Named

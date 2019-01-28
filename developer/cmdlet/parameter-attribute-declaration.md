@@ -67,7 +67,7 @@ Optional named parameter.Specifies the resource identifier for a Help message.
 
 - When you use parameter sets, note the following:
 
-    - Each parameter set must have at least one unique parameter. Good cmdlet design indicates this unique parameter should also be mandatory if possible. If your cmdlet is desigtened to be run without parameters, the unique parameter cannot be mandatory.
+    - Each parameter set must have at least one unique parameter. Good cmdlet design indicates this unique parameter should also be mandatory if possible. If your cmdlet is designed to be run without parameters, the unique parameter cannot be mandatory.
 
     - No parameter set should contain more than one positional parameter with the same position.
 
