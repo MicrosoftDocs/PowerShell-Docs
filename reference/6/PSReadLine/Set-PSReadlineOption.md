@@ -18,7 +18,7 @@ Customizes the behavior of command line editing in PSReadLine.
 
 ### OptionsSet
 
-```powershell
+```
 Set-PSReadLineOption
  [-EditMode <EditMode>]
  [-ContinuationPrompt <String>]
