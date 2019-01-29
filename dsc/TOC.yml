@@ -42,6 +42,8 @@
           href: configurations/sxsResource.md
         - name: Use Credentials with DSC Resources
           href: configurations/runAsUser.md
+        - name: Rebooting the Node with xPendingReboot
+          href: configurations/reboot-a-node.md
       - name: Writing Dynamic Configurations
         items:
         - name: Add Parameters to a Configuration
