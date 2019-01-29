@@ -159,7 +159,7 @@ set to `False`.
 Specifies that the content should be read as a stream of bytes. This parameter was introduced in
 PowerShell 6.0.
 
-A warning occurs when you use the **-AsByteStream** parameter with the **Encoding** parameter. The
+A warning occurs when you use the **AsByteStream** parameter with the **Encoding** parameter. The
 **AsByteStream** parameter ignores any encoding and the output is returned as a stream of bytes.
 
 ```yaml
