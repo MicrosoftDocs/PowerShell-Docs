@@ -66,6 +66,8 @@
           href: configurations/resource-depends-on.md
         - name: Cross-Node dependecies
           href: configurations/crossNodeDependencies.md
+        - name: Reboot a Node
+          href: configurations/reboot-a-node.md
 - name: Resources
   items:
   - name: Concepts
