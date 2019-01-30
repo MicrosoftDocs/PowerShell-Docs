@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_pipelines
 ---
-
 # About Pipelines
 
 ## Short Description

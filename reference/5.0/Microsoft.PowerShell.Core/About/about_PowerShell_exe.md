@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PowerShell_exe
 ---
-
 # About PowerShell.exe
 
 ## SHORT DESCRIPTION

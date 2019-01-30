@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Job_Details
 ---
-
 # About Job Details
 
 ## SHORT DESCRIPTION

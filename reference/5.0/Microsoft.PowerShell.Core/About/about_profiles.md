@@ -4,7 +4,6 @@ schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Profiles
 ---
-
 # About Profiles
 
 ## SHORT DESCRIPTION
@@ -214,6 +213,7 @@ function Pro {notepad $profile.CurrentUserAllHosts}
 ```
 
 ### Add a function that opens PowerShell Help in a compiled HTML
+
   Help file (.chm)
 
 ```powershell

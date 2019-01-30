@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions_OutputTypeAttribute
 ---
-
 # About Functions OutputTypeAttribute
 
 ## SHORT DESCRIPTION

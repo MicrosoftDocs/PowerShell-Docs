@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Logical_Operators
 ---
-
 # about_Logical_Operators
 
 ## SHORT DESCRIPTION
