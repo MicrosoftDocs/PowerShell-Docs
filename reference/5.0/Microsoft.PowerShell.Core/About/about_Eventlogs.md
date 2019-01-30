@@ -8,7 +8,6 @@ title:  about_Eventlogs
 # About Eventlogs
 
 ## Short Description
-
 Windows PowerShell creates a Windows event log that is named "Windows
 PowerShell" to record Windows PowerShell events. You can view this log in
 Event Viewer or by using cmdlets that get events, such as the `Get-EventLog`

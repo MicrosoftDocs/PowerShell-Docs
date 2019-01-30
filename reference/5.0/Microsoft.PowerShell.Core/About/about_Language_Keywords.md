@@ -8,7 +8,6 @@ title:  about_Language_Keywords
 # About Language Keywords
 
 ## SHORT DESCRIPTION
-
 Describes the keywords in the PowerShell scripting language.
 
 ## LONG DESCRIPTION

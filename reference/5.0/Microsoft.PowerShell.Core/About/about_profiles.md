@@ -7,7 +7,6 @@ title:  about_Profiles
 # About Profiles
 
 ## SHORT DESCRIPTION
-
 Describes how to create and use a PowerShell profile.
 
 ## LONG DESCRIPTION

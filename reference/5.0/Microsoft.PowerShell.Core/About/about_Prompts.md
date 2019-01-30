@@ -8,7 +8,6 @@ title:  about_Prompts
 # About Prompts
 
 ## SHORT DESCRIPTION
-
 Describes the Prompt function and demonstrates how to create a custom Prompt
 function.
 

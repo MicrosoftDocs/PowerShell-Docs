@@ -8,7 +8,6 @@ title:  about_Locations
 # about_Locations
 
 ## SHORT DESCRIPTION
-
 Describes how to access items from the working location in PowerShell.
 
 ## LONG DESCRIPTION
