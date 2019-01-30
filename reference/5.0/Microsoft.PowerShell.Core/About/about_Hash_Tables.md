@@ -8,7 +8,6 @@ title:  about_Hash_Tables
 # About Hash Tables
 
 ## SHORT DESCRIPTION
-
 Describes how to create, use, and sort hash tables in PowerShell.
 
 ## LONG DESCRIPTION

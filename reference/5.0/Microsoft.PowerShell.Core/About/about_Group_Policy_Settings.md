@@ -8,7 +8,6 @@ title:  about_Group_Policy_Settings
 # About Group Policy Settings
 
 ## SHORT DESCRIPTION
-
 Describes the Group Policy settings for Windows PowerShell
 
 ## LONG DESCRIPTION

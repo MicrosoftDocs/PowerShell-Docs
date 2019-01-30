@@ -8,7 +8,6 @@ title:  about_PSSnapins
 # About PSSnapins
 
 ## SHORT DESCRIPTION
-
 Describes  Windows PowerShell® snap-ins and shows how to use and manage them.
 
 ## LONG DESCRIPTION
