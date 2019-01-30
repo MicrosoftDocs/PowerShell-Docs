@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Object_Creation
 ---
-
 # About Object Creation
 
 ## SHORT DESCRIPTION

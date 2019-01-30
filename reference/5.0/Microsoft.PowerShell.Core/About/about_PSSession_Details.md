@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PSSession_Details
 ---
-
 # About PSSession Details
 
 ## Short Description

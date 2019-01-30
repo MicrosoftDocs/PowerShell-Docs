@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Enum
 ---
-
 # About Enum
 
 ## SHORT DESCRIPTION
