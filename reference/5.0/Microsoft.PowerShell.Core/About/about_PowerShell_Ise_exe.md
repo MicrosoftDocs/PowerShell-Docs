@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PowerShell_Ise_exe
 ---
-
 # About PowerShell Ise.exe
 
 # SHORT DESCRIPTION
@@ -71,6 +70,7 @@ and can be used interchangeably.
 
 PS C:> PowerShell_ISE.exe
 PS C:> PowerShell_ISE
+
 # PS C:>ISE
 
 

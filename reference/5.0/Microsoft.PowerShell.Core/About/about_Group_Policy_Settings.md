@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Group_Policy_Settings
 ---
-
 # About Group Policy Settings
 
 ## SHORT DESCRIPTION

@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Objects
 ---
-
 # About Objects
 
 ## Short Description
