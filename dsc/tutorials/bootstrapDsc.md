@@ -18,13 +18,13 @@ title:  Configure a virtual machines at initial boot-up by using DSC
 To run these examples, you will need:
 
 - A bootable VHD to work with. You can download an ISO with an evaluation copy of Windows Server 2016 at
-  [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). You can find instructions on how to create a VHD
-  from an ISO image at [Creating Bootable Virtual Hard Disks](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
+  [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
+  You can find instructions on how to create a VHD from an ISO image at [Creating Bootable Virtual Hard Disks](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - A host computer that has Hyper-V enabled. For information, see [Hyper-V overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
   By using DSC, you can automate software installation and configuration for a computer at initial boot-up.
   You do this by either injecting a configuration MOF document or a metaconfiguration into bootable media (such as a VHD) so that they are run during the initial boot-up process.
-  This behavior is specified by the [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md) registry key under `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies`.
+  This behavior is specified by the [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md) registry key under `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`.
   By default, the value of this key is 2, which allows DSC to run at boot time.
 
   If you do not want DSC to run at boot time, set the value of the [DSCAutomationHostEnabled registry key](DSCAutomationHostEnabled.md) registry key to 0.
@@ -169,7 +169,7 @@ You can verify this by calling the [Get-WindowsFeature](/powershell/module/serve
 
 ## Disable DSC at boot time
 
-By default, the value of the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` key is set to 2,
+By default, the value of the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` key is set to 2,
 which allows a DSC configuration to run if the computer is in pending or current state. If you do not want a configuration to run at initial boot-up, you need
 so set the value of this key to 0:
 
@@ -185,10 +185,10 @@ so set the value of this key to 0:
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
    ```
 
-3. Navigate to the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*` by using the PowerShell Registry provider.
+3. Navigate to the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` by using the PowerShell Registry provider.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
    ```
 
 4. Change the value of `DSCAutomationHostEnabled` to 0.

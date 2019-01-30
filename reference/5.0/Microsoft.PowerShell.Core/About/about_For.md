@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_For
 ---
-
 # About For
 
 ## SHORT DESCRIPTION
@@ -13,6 +12,7 @@ Describes a language command you can use to run statements based on a
 conditional test.
 
 ## LONG DESCRIPTION
+
 The For statement (also known as a For loop) is a language construct you
 can use to create a loop that runs commands in a command block while a
 specified condition evaluates to true.
@@ -22,6 +22,7 @@ operate on a subset of these values. In most cases, if you want to iterate
 all the values in an array, consider using a Foreach statement.
 
 ### Syntax
+
 The following shows the For statement syntax.
 
 ```powershell
