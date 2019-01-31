@@ -238,6 +238,8 @@ When this MOF file is delivered to a Node in **Push** mode, WinRM encrypts the c
 text password. In **Pull** mode, you can configure your pull server to use certificates over HTTPS to protect
 any secrets contained in the MOF file.
 
+In Azure, both Push and Pull traffic is always encrypted.
+
 Beginning in PowerShell 5.0 once the MOF file is applied to the Node via **Push** or **Pull**, the
 MOF file is stored in an encrypted format.
 
@@ -245,11 +247,12 @@ In summary, any secrets in the MOF file are only exposed in 3 scenarios:
 
 1. After compilation, credentials are stored in plain text in the MOF file. Take precautions
    by storing the MOF file in a secure location with proper security restrictions.
-2. In **Pull** mode, credentials are exposed in transit when HTTP is used. Configure Nodes to use
+   **Encrypting the MOF with a certificate protects the MOF file at rest on the Pull Server.**
+1. In **Pull** mode, credentials are exposed in transit when HTTP is used. Configure Nodes to use
    certificates to encrypt MOF files in transit over HTTPS. For more information, see
    [Securing MOF files with Certificates](../pull-server/secureMOF.md).
-3. After a MOF file is applied to a Node, credentials are exposed at rest on the Node, but only in
-   PowerShell 4.0
+1. After a MOF file is applied to a Node, credentials that are not encrypted with a certificate, are
+   exposed at rest on the Node, but only in PowerShell 4.0.
 
 **Microsoft advises to avoid plain text passwords due to the significant security risk.**
 
