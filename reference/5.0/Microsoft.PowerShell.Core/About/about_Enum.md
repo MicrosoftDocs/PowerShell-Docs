@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Enum
 ---
-
 # About Enum
 
 ## SHORT DESCRIPTION
-
 The `enum` statement is used to declare an enumeration. An enumeration is a
 distinct type that consists of a set of named labels called the enumerator
 list.
@@ -188,4 +186,16 @@ In the following example the *FileAttributes* enumeration is created.
 ```output
 file1 attributes are: Archive, Compressed, Device
 file2 attributes are: Device, Directory, Encrypted
+```
+
+To test that a specific is set, you can use the binary comparison operator
+`-band`. In this example, we test for the **Device** and the **Archive**
+attributes in the value of `$file2`.
+
+```
+PS > ($file2 -band [FileAttributes]::Device) -eq [FileAttributes]::Device
+True
+
+PS > ($file2 -band [FileAttributes]::Archive) -eq [FileAttributes]::Archive
+False
 ```

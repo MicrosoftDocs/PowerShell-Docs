@@ -57,7 +57,7 @@ To stop the integrated console on startup, set:
 ```
 
 > [!NOTE]
-> The background PowerShell process will still start since that provides intellisense, script analysis, symbol navigation, etc.
+> The background PowerShell process will still start since that provides IntelliSense, script analysis, symbol navigation, etc.
 But the console won't be shown.
 
 ## Assume files are PowerShell by default

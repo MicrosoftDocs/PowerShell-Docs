@@ -39,8 +39,8 @@ The Windows Compatibility Pack enables PowerShell Core to use **more than 1900 c
 
 ## Support for Application Whitelisting
 
-PowerShell Core 6.1 has parity with Windows PowerShell 5.1 supporting [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
-and [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) application whitelisting.
+PowerShell Core 6.1 has parity with Windows PowerShell 5.1 supporting [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
+and [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) application whitelisting.
 Application whitelisting allows granular control of what binaries are allowed to be executed used with PowerShell [Constrained Language mode](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## Performance improvements
@@ -222,7 +222,7 @@ If `pwsh.exe` isn't available, PowerShell Direct falls back to use `powershell.e
 
 `Enable-PSRemoting` now creates two remoting session configurations:
 
-- One for the major version of PowerShell. For example,`PowerShell.6`. This endpoint that can be relied upon across minor version updates as the "system-wide" PowerShell 6 session configuration
+- One for the major version of PowerShell. For example, `PowerShell.6`. This endpoint that can be relied upon across minor version updates as the "system-wide" PowerShell 6 session configuration
 - One version-specific session configuration, for example: `PowerShell.6.1.0`
 
 This behavior is useful if you want to have multiple PowerShell 6 versions installed and accessible
@@ -448,7 +448,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 In the past, PowerShell shipped a function on Windows called `more` that wrapped `more.com`.
 That function has now been removed.
 
-Also the `help` function changed to use `more.com` on Windows, or the system's default pager
+Also, the `help` function changed to use `more.com` on Windows, or the system's default pager
 specified by `$env:PAGER` on non-Windows platforms.
 
 ### `cd DriveName:` now returns users to the current working directory in that drive

@@ -114,13 +114,13 @@ modifier. The valid values of a modifier are **Global**, **Local**,
 The syntax for a scope modifier in a variable is:
 
 ```
-$[<scope-modifier>]:<name> = <value>
+$[<scope-modifier>:]<name> = <value>
 ```
 
 The syntax for a scope modifier in a function is:
 
 ```
-function [<scope-modifier>]:<name> {<function-body>}
+function [<scope-modifier>:]<name> {<function-body>}
 ```
 
 The default scope for scripts is the script scope. The default scope for

@@ -61,6 +61,28 @@ To save it, click **File->Save** and then provide a file name, let's say `HelloW
 To close the file, click on "x" next to the file name.
 To exit Visual Studio Code, **File->Exit**.
 
+### Installing the PowerShell Extension on Restricted Systems
+
+Some systems are set up in a way that requires all code signatures to be checked and thus requires
+PowerShell Editor Services to be manually approved to run on the system.
+A Group Policy update that changes execution policy is a likely cause if you have installed the 
+PowerShell extension but are reaching an error like:
+
+```
+Language server startup failed.
+```
+
+To manually approve PowerShell Editor Services and thus the PowerShell extension for VSCode
+open a PowerShell prompt and run:
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+You are prompted with "Do you want to run software from this untrusted publisher?"
+Type `R` to run the file. Then, open Visual Studio Code and check that the PowerShell extension is
+functioning properly. If you still have issues getting started, let us know on [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
+
 #### Using a specific installed version of PowerShell
 
 If you wish to use a specific installation of PowerShell with Visual Studio Code, you need to add a new variable to your user settings file.

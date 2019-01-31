@@ -1,5 +1,5 @@
 ﻿---
-ms.date:  12/04/2017
+ms.date:  1/7/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,248 +7,531 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113299
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Export-Csv
 ---
+
 # Export-Csv
 
 ## SYNOPSIS
-
-Converts objects into a series of comma-separated (CSV) strings and saves the strings in a CSV file.
+Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a
+file.
 
 ## SYNTAX
 
 ### Delimiter (Default)
 
 ```
-Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <String>] [-Append] [[-Delimiter] <Char>] [-NoTypeInformation] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject> [-LiteralPath <string>]
+[-Force] [-NoClobber] [-Encoding <string>] [-Append] [-NoTypeInformation] [-WhatIf] [-Confirm]
+[<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <String>] [-Append] [-UseCulture] [-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
+Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-Force] [-NoClobber]
+[-Encoding <string>] [-Append] [-UseCulture] [-NoTypeInformation] [-WhatIf] [-Confirm]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Export-CSV` cmdlet creates a CSV file of the objects that you submit.
-Each object is represented as a line or row of the CSV.
-The row consists of a comma-separated list of the values of object properties.
-You can use this cmdlet to create spreadsheets and share data with programs that take CSV files as input.
+The `Export-CSV` cmdlet creates a CSV file of the objects that you submit. Each object is a row
+that includes a comma-separated list of the object's property values. You can use the `Export-CSV`
+cmdlet to create spreadsheets and share data with programs that accept CSV files as input.
 
-Do not format objects before sending them to the `Export-CSV` cmdlet.
-If you do, the format properties are represented in the CSV file, instead of the properties of the original objects.
-To export only selected properties of an object, use the `Select-Object` cmdlet.
+Do not format objects before sending them to the `Export-CSV` cmdlet. If `Export-CSV` receives
+formatted objects the CSV file contains the format properties rather than the object properties. To
+export only selected properties of an object, use the `Select-Object` cmdlet.
 
 ## EXAMPLES
 
-### Example 1: Export process properties
+### Example 1: Export process properties to a CSV file
+
+This example selects **Process** objects with specific properties, exports the objects to a CSV
+file.
 
 ```powershell
-Get-Process wmiprvse | Select-Object basePriority,ID,SessionID,WorkingSet | Export-Csv -Path "data.csv"
-```
-
-This command selects a few properties of the WmiPrvse process and exports them to a CSV file named `data.csv`.
-
-### Example 2: Export processes to a comma-delimited file
-
-```powershell
-Get-Process | Export-Csv -Path "processes.csv"
-Get-Content -Path "processes.csv"
-```
-
-```output
-#TYPE System.Diagnostics.Process
-__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,...
-Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS...
-Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
-```
-
-This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
-Because it does not specify a delimiter, a comma (`,`) is used to separate the fields in the file.
-
-### Example 3: Export processes to a semicolon-delimited file
-
-```powershell
-Get-Process | Export-Csv -Path "processes.csv" -Delimiter ";"
-Get-Content -Path "processes.csv"
-```
-
-```output
-#TYPE System.Diagnostics.Process
-__NounName;Name;Handles;VM;WS;PM;NPM;Path;Company;CPU;FileVersion;...
-Process;powershell;626;201666560;76058624;61943808;11960;C:\WINDOWS...
-Process;powershell;257;151920640;38322176;37052416;7836;C:\WINDOWS\...
-```
-
-This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
-It uses the **-Delimiter** parameter to specify the semicolon (`;`).
-As a result, the fields in the file are separated by semicolons.
-
-### Example 4: Export using the list separator of the current culture
-
-```powershell
-Get-Process | Export-Csv -Path "processes.csv" -UseCulture
-```
-
-This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
-It uses the **-UseCulture** parameter to direct `Export-CSV` to use the delimiter specified by the **ListSeparator** property of the current culture.
-
-### Example 5: Export processes without type information
-
-```powershell
-Get-Process | Export-Csv -Path "processes.csv" -NoTypeInformation
-Get-Content -Path "processes.csv"
-```
-
-```output
-__NounName,Name,Handles,VM,WS,PM,NPM,Path,Company,CPU,FileVersion,...
-Process,powershell,626,201666560,76058624,61943808,11960,C:\WINDOWS...
-Process,powershell,257,151920640,38322176,37052416,7836,C:\WINDOWS\...
-```
-
-This command exports objects representing the processes on the computer to the `processes.csv` file in the current directory.
-It uses the **-NoTypeInformation** parameter to suppress the type information in the file.
-
-### Example 6: Export and append script properties
-
-```powershell
-$ScriptFiles = Get-ChildItem D:\* -Include *.ps1 -Recurse | Where-Object {$_.creationtime -gt "01/01/2011"}
-$ScriptFiles = $ScriptFiles | Select-Object -Property Name, CreationTime, LastWriteTime, IsReadOnly
-$ScriptFiles | Export-Csv -Append -Path "\\Archive01\Scripts\Scripts.csv"
-```
-
-The first command uses the `Get-ChildItem` cmdlet to do a recursive search in the `D:` drive for files with the `.ps1` file name extension.
-It uses a pipeline operator to sends the results to the `Where-Object` cmdlet, which gets only files that were created after January 1, 2011, and then saves them in the **$ScriptFiles** variable.
-
-The second command uses the `Select-Object` cmdlet to select the relevant properties of the script files. It saves the revised results in the **$ScriptFiles** variable.
-
-The third command uses a pipeline operator (`|`) to send the script file information in the **$ScriptFiles** variable to the `Export-CSV` cmdlet. The command uses the **-Path** parameter to specify the output file and the **-Append** parameter to add the new script data to the end of the output file, instead of replacing the existing file contents.
-
-These commands add information about new PowerShell scripts to a script inventory file.
-
-### Example 7: Select properties to export
-
-```powershell
-Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv -NoTypeInformation
-Get-Content -Path "Date.csv"
-```
-
-```output
-"DateTime","Day","DayOfWeek","DayOfYear"
-"Tuesday, October 05, 2010 2:45:13 PM","5","Tuesday","278"
-```
-
-```powershell
-Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear | Export-Csv -Path Date.csv -NoTypeInformation
-Get-Content -Path "Date.csv"
+Get-Process -Name WmiPrvSE | Select-Object -Property BasePriority,Id,SessionId,WorkingSet |
+  Export-Csv -Path .\WmiData.csv -NoTypeInformation
+Import-Csv -Path .\WmiData.csv
 ```
 
 ```Output
-"ClassId2e4f51ef21dd47e99d3c952918aff9cd","pageHeaderEntry","pageFooterEntry","autosizeInfo","shapeInfo","groupingEntry"
-"033ecb2bc07a4d43b5ef94ed5a35d280",,,,"Microsoft.PowerShell.Commands.Internal.Format.TableHeaderInfo",
+BasePriority Id    SessionId WorkingSet
+------------ --    --------- ----------
+8            976   0         20267008
+8            2292  0         36786176
+8            3816  0         30351360
+8            8604  0         15011840
+8            10008 0         8830976
+8            11764 0         14237696
+8            54632 0         9502720
+```
+
+The `Get-Process` cmdlet gets the **Process** objects. The **Name** parameter filters the output to
+include only the WmiPrvSE process objects. The process objects are sent down the pipeline to the
+`Select-Object` cmdlet. `Select-Object` uses the **Property** parameter to select a subset of
+process object properties. The process objects are sent down the pipeline to the `Export-Csv`
+cmdlet. `Export-Csv` converts the process objects to a series of CSV strings. The **Path**
+parameter specifies that the WmiData.csv file is saved in the current directory. The
+**NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is
+not required in PowerShell 6. The `Import-Csv` cmdlet uses the **Path** parameter to display the
+file located in the current directory.
+
+### Example 2: Export processes to a comma-delimited file
+
+This example gets **Process** objects and exports the objects to a CSV file.
+
+```powershell
+Get-Process | Export-Csv -Path .\Processes.csv -NoTypeInformation
+Get-Content -Path .\Processes.csv
+```
+
+```Output
+"Name","SI","Handles","VM","WS","PM","NPM","Path","Parent","Company","CPU","FileVersion", ...
+"ApplicationFrameHost","4","511","2203597099008","35364864","21979136","30048", ...
+```
+
+The `Get-Process` cmdlet gets **Process** objects. The process objects are sent down the pipeline
+to the `Export-Csv` cmdlet. `Export-Csv` converts the process objects to a series of CSV strings.
+The **Path** parameter specifies that the Processes.csv file is saved in the current directory. The
+**NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is
+not required in PowerShell 6. The `Get-Content` cmdlet uses the **Path** parameter to display the
+file located in the current directory.
+
+### Example 3: Export processes to a semicolon delimited file
+
+This example gets **Process** objects and exports the objects to a file with a semicolon delimiter.
+
+```powershell
+Get-Process | Export-Csv -Path .\Processes.csv -Delimiter ';' -NoTypeInformation
+Get-Content -Path .\Processes.csv
+```
+
+```Output
+"Name";"SI";"Handles";"VM";"WS";"PM";"NPM";"Path";"Parent";"Company";"CPU";"FileVersion"; ...
+"ApplicationFrameHost";"4";"509";"2203595321344";"34807808";"21770240";"29504"; ...
+```
+
+The `Get-Process` cmdlet gets **Process** objects. The process objects are sent down the pipeline
+to the `Export-Csv` cmdlet. `Export-Csv` converts the process objects to a series of CSV strings.
+The **Path** parameter specifies that the Processes.csv file is saved in the current directory. The
+**Delimiter** parameter specifies a semicolon to separate the string values. The
+**NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is
+not required in PowerShell 6. The `Get-Content` cmdlet uses the **Path** parameter to display the
+file located in the current directory.
+
+### Example 4: Export processes using the current culture's list separator
+
+This example gets **Process** objects and exports the objects to a file. The delimiter is the
+current culture's list separator.
+
+```powershell
+(Get-Culture).TextInfo.ListSeparator
+Get-Process | Export-Csv -Path .\Processes.csv -UseCulture -NoTypeInformation
+Get-Content -Path .\Processes.csv
+```
+
+```Output
+"Name","SI","Handles","VM","WS","PM","NPM","Path","Parent","Company","CPU","FileVersion", ...
+"ApplicationFrameHost","4","511","2203597099008","35364864","21979136","30048", ...
+```
+
+The `Get-Culture` cmdlet uses the nested properties **TextInfo** and **ListSeparator** and displays
+the current culture's default list separator. The `Get-Process` cmdlet gets **Process** objects.
+The process objects are sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv` converts
+the process objects to a series of CSV strings. The **Path** parameter specifies that the
+Processes.csv file is saved in the current directory. The **UseCulture** parameter uses the current
+culture's default list separator as the delimiter. The **NoTypeInformation** parameter removes the
+**#TYPE** information header from the CSV output and is not required in PowerShell 6. The
+`Get-Content` cmdlet uses the **Path** parameter to display the file located in the current
+directory.
+
+### Example 5: Export processes with type information
+
+This example explains how to include the **#TYPE** header information in a CSV file. The **#TYPE**
+header is the default in versions prior to PowerShell 6.0.
+
+```powershell
+Get-Process | Export-Csv -Path .\Processes.csv
+Get-Content -Path .\Processes.csv
+```
+
+```Output
+#TYPE System.Diagnostics.Process
+"Name","SI","Handles","VM","WS","PM","NPM","Path","Company","CPU","FileVersion", ...
+"ApplicationFrameHost","4","507","2203595001856","35139584","20934656","29504", ...
+```
+
+The `Get-Process` cmdlet gets **Process** objects. The process objects are sent down the pipeline
+to the `Export-Csv` cmdlet. `Export-Csv` converts the process objects to a series of CSV strings.
+The **Path** parameter specifies that the Processes.csv file is saved in the current directory. The
+`Get-Content` cmdlet uses the **Path** parameter to display the file located in the current
+directory.
+
+### Example 6: Export and append objects to a CSV file
+
+This example describes how to export objects to a CSV file and use the **Append** parameter to add
+objects to an existing file.
+
+```powershell
+$AppService = (Get-Service -DisplayName *Application* | Select-Object -Property DisplayName, Status)
+$AppService | Export-Csv -Path .\Services.Csv -NoTypeInformation
+Get-Content -Path .\Services.Csv
+$WinService = (Get-Service -DisplayName *Windows* | Select-Object -Property DisplayName, Status)
+$WinService | Export-Csv -Path ./Services.csv -NoTypeInformation -Append
+Get-Content -Path .\Services.Csv
+```
+
+```Output
+"DisplayName","Status"
+"Application Layer Gateway Service","Stopped"
+"Application Identity","Running"
+"Windows Audio Endpoint Builder","Running"
+"Windows Audio","Running"
+"Windows Event Log","Running"
+```
+
+The `Get-Service` cmdlet gets service objects. The **DisplayName** parameter returns services that
+contain the word Application. The service objects are sent down the pipeline to the `Select-Object`
+cmdlet. `Select-Object` uses the **Property** parameter to specify the **DisplayName** and
+**Status** properties. The `$AppService` variable stores the objects.
+
+The `$AppService` objects are sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv`
+converts the service objects to a series of CSV strings. The **Path** parameter specifies that the
+Services.csv file is saved in the current directory. The **NoTypeInformation** parameter removes
+the **#TYPE** information header from the CSV output and is not required in PowerShell 6. The
+`Get-Content` cmdlet uses the **Path** parameter to display the file located in the current
+directory.
+
+The `Get-Service` and `Select-Object` cmdlets are repeated for services that contain the word
+Windows. The `$WinService` variable stores the service objects. The `Export-Csv` cmdlet uses the
+**Append** parameter to specify that the `$WinService` objects are added to the existing
+Services.csv file. The `Get-Content` cmdlet is repeated to display the updated file that includes
+the appended data.
+
+### Example 7: Format cmdlet within a pipeline creates unexpected results
+
+This example shows why it is important not to use a format cmdlet within a pipeline. When
+unexpected output is received, troubleshoot the pipeline syntax.
+
+```powershell
+Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear |
+ Export-Csv -Path .\DateTime.csv -NoTypeInformation
+Get-Content -Path .\DateTime.csv
+```
+
+```Output
+"DateTime","Day","DayOfWeek","DayOfYear"
+"Wednesday, January 2, 2019 14:59:34","2","Wednesday","2"
+```
+
+```powershell
+Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear |
+ Export-Csv -Path .\FTDateTime.csv -NoTypeInformation
+Get-Content -Path .\FTDateTime.csv
+```
+
+```Output
+"ClassId2e4f51ef21dd47e99d3c952918aff9cd","pageHeaderEntry","pageFooterEntry","autosizeInfo", ...
+"033ecb2bc07a4d43b5ef94ed5a35d280",,,,"Microsoft.PowerShell.Commands.Internal.Format. ...
 "9e210fe47d09416682b841769c78b8a3",,,,,
 "27c87ef9bbda4f709f6b4002fa4af63c",,,,,
 "4ec4f0187cb04f4cb6973460dfe252df",,,,,
 "cf522b78d86c486691226b40aa69e95c",,,,,
 ```
 
-The first command shows how to select properties of an object and export them to a CSV file. This command uses the `Get-Date` cmdlet to get the current date and time. It uses the `Select-Object` cmdlet to select the desired properties, and the `Export-CSV` cmdlet to export the object and its properties to the `Date.csv` file. The output shows the expected content in the `Date.csv` file.
+The `Get-Date` cmdlet gets the **DateTime** object. The object is sent down the pipeline to the
+`Select-Object` cmdlet. `Select-Object` uses the **Property** parameter to select a subset of
+object properties. The object is sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv`
+converts the object to a CSV format. The **Path** parameter specifies that the DateTime.csv file is
+saved in the current directory. The **NoTypeInformation** parameter removes the **#TYPE**
+information header from the CSV output and is not required in PowerShell 6. The `Get-Content`
+cmdlet uses the **Path** parameter to display the CSV file located in the current directory.
 
-The second command shows that when you use the `Format-Table` cmdlet to format your data before exporting it, the output is not useful.
+When the `Format-Table` cmdlet is used within the pipeline to select properties unexpected results
+are received. `Format-Table` sends table format objects down the pipeline to the `Export-Csv`
+cmdlet rather than the **DateTime** object. `Export-Csv` converts the table format objects to a
+series of CSV strings. The `Get-Content` cmdlet displays the CSV file which contains the table
+format objects.
 
-This example demonstrates one of most common problems that users encounter when using the `Export-CSV` cmdlet.
-It explains how to recognize and avoid this error.
+### Example 8: Using the Force parameter to overwrite read-only files
 
-Because a CSV file has a table format, it might seem natural to use the Format-Table cmdlet to format the data in a table to prepare it for export as a CSV file.
-Also, the `Format-Table` cmdlet allows you to select object properties easily.
-
-However, when you format the data in a table and then export it, you are exporting a table object, not your original data object.
-The resulting CSV file is not useful.
-
-### Example 8: Using -Force parameter to overwrite read only files
+This example creates an empty, read-only file and uses the **Force** parameter to update the file.
 
 ```powershell
-Get-Process | Export-Csv -Path ReadOnly.csv
+New-Item -Path .\ReadOnly.csv -ItemType File
+Set-ItemProperty -Path .\ReadOnly.csv -Name IsReadOnly -Value $true
+Get-Process | Export-Csv -Path .\ReadOnly.csv -NoTypeInformation
 ```
 
-```output
+```Output
 Export-Csv : Access to the path 'C:\ReadOnly.csv' is denied.
 At line:1 char:15
-+ Get-Process | Export-Csv -Path ReadOnly.csv
++ Get-Process | Export-Csv -Path .\ReadOnly.csv -NoTypeInformation
 +               ~~~~~~~~~~~~~~~~~~~~~~~~
 + CategoryInfo          : OpenError: (:) [Export-Csv], UnauthorizedAccessException
 + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.ExportCsvCommand
 ```
 
 ```powershell
-Get-Process | Export-Csv -Path ReadOnly.csv -Force
+Get-Process | Export-Csv -Path .\ReadOnly.csv -NoTypeInformation -Force
+Get-Content -Path .\ReadOnly.csv
 ```
 
-The first command tries to export process objects to a file with **Read Only** attribute set.
-It doesn't use **-Force** parameter so error is returned.
+```Output
+"Name";"SI";"Handles";"VM";"WS";"PM";"NPM";"Path";"Parent";"Company";"CPU";"FileVersion"; ...
+"ApplicationFrameHost";"4";"509";"2203595321344";"34807808";"21770240";"29504"; ...
+```
 
-The second command uses **-Force** parameter and export succeeds.
+The `New-Item` cmdlet uses the **Path** and **ItemType** parameters to create the ReadOnly.csv file
+in the current directory. The `Set-ItemProperty` cmdlet uses the **Name** and **Value** parameters
+to change the file's **IsReadOnly** property to true. The `Get-Process` cmdlet gets **Process**
+objects. The process objects are sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv`
+converts the process objects to a series of CSV strings. The **Path** parameter specifies that the
+ReadOnly.csv file is saved in the current directory. The **NoTypeInformation** parameter removes
+the **#TYPE** information header from the CSV output and is not required in PowerShell 6. The
+output shows that the file is not written because access is denied.
 
-### Example 9: Using -Force parameter with -Append
+The **Force** parameter is added to the `Export-Csv` cmdlet to force the export to write to the
+file. The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the
+current directory.
+
+### Example 9: Using the Force parameter with Append
+
+This example shows how to use the **Force** and **Append** parameters. When these parameters are
+combined, mismatched object properties can be written to a CSV file.
 
 ```powershell
 $Content = [PSCustomObject]@{Name = 'PowerShell Core'; Version = '6.0'}
-$Content | Export-Csv -Path file.csv
-
+$Content | Export-Csv -Path .\ParmFile.csv -NoTypeInformation
 $AdditionalContent = [PSCustomObject]@{Name = 'Windows PowerShell'; Edition = 'Desktop'}
-$AdditionalContent | Export-Csv -Path file.csv -Append
+$AdditionalContent | Export-Csv -Path .\ParmFile.csv -NoTypeInformation -Append
 ```
 
-```output
-Export-Csv : Cannot append CSV content to the following file: file.csv. The appended object does not have a property that corresponds to the following column: Version. To continue with mismatched properties, add the -Force parameter, and then retry the command.
+```Output
+Export-Csv : Cannot append CSV content to the following file: ParmFile.csv. 
+The appended object does not have a property that corresponds to the following column:
+Version. To continue with mismatched properties, add the -Force parameter, and then retry
+ the command.
 At line:1 char:22
-+ $AdditionalContent | Export-Csv -Path file.csv -Append
++ $AdditionalContent | Export-Csv -Path .\ParmFile.csv -NoTypeInformation -Append
 +                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 + CategoryInfo          : InvalidData: (Version:String) [Export-Csv], InvalidOperationException
-+ FullyQualifiedErrorId : CannotAppendCsvWithMismatchedPropertyNames,Microsoft.PowerShell.Commands.ExportCsvCommand
++ FullyQualifiedErrorId : CannotAppendCsvWithMismatchedPropertyNames,Microsoft.PowerShell. ...
 ```
 
 ```powershell
-$AdditionalContent | Export-Csv -Path file.csv -Append -Force
-
-Import-Csv -Path file.csv
+$AdditionalContent | Export-Csv -Path .\ParmFile.csv -NoTypeInformation -Append -Force
+Import-Csv -Path .\ParmFile.csv
 ```
 
-```output
+```Output
 Name               Version
 ----               -------
 PowerShell Core    6.0
 Windows PowerShell
 ```
 
-The first command creates **PSCustomObject** with **Name** and **Version** properties.
+An expression creates the **PSCustomObject** with **Name** and **Version** properties. The values
+are stored in the `$Content` variable. The `$Content` variable is sent down the pipeline to the
+`Export-Csv` cmdlet. `Export-Csv` uses the **Path** parameter and saves the ParmFile.csv file in
+the current directory. The **NoTypeInformation** parameter removes the **#TYPE** information header
+from the CSV output and is not required in PowerShell 6.
 
-The second command export the object to csv file.
+Another expression creates a **PSCustomObject** with the **Name** and **Edition** properties. The
+values are stored in the `$AdditionalContent` variable. The `$AdditionalContent` variable is sent
+down the pipeline to the `Export-Csv` cmdlet. The **Append** parameter is used to add the data to
+the file. The append fails because there is a property name mismatch between **Version** and
+**Edition**.
 
-The third command creates **PSCustomObject** with **Name** and **Edition** properties.
-The object doesn't have the **Version** property.
-
-The fourth command tries to export new object to csv file without **-Force** parameter and returns error.
-
-The fifth command uses **-Force** parameter, so export succeeds.
-
-The sixth command shows the content of the csv file.
-It doesn't have the **Edition** property and **Version** property of the second object is empty.
+The `Export-Csv` cmdlet **Force** parameter is used to force the export to write to the file. The
+**Edition** property is discarded. The `Import-Csv` cmdlet uses the **Path** parameter to display
+the file located in the current directory.
 
 ## PARAMETERS
 
 ### -Append
 
-Indicates that this cmdlet adds the CSV output to the end of the specified file.
-Without this parameter, `Export-CSV` replaces the file contents without warning.
+Use this parameter so that `Export-CSV` adds CSV output to the end of the specified file. Without
+this parameter, `Export-CSV` replaces the file contents without warning.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Delimiter
+
+Specifies a delimiter to separate the property values. The default is a comma (`,`). Enter a
+character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in quotation marks.
+
+```yaml
+Type: Char
+Parameter Sets: Delimiter
+Aliases:
+
+Required: False
+Position: 1
+Default value: comma (,)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Encoding
+
+Specifies the encoding for the exported CSV file. The default value is **ASCII**.
+
+The acceptable values for this parameter are as follows:
+
+- **ASCII** Uses ASCII (7-bit) character set.
+- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
+- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
+- **Byte** Encodes a set of characters into a sequence of bytes.
+- **Default** Uses the encoding that corresponds to the system's active code page.
+- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
+- **String** Same as **Unicode**.
+- **Unicode** Uses UTF-16 with the little-endian byte order.
+- **Unknown** Same as **Unicode**.
+- **UTF7** Uses UTF-7.
+- **UTF8** Uses UTF-8.
+- **UTF32** Uses UTF-32 with the little-endian byte order.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
+
+Required: False
+Position: Named
+Default value: ASCII
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+
+This parameter allows `Export-Csv` to overwrite files with the **Read Only** attribute.
+
+When **Force** and **Append** parameters are combined, objects that contain mismatched properties
+can be written to a CSV file. Only the properties that match are written to the file. The
+mismatched properties are discarded.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+
+Specifies the objects to export as CSV strings. Enter a variable that contains the objects or type
+a command or expression that gets the objects. You can also pipe objects to `Export-CSV`.
+
+```yaml
+Type: PSObject
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -LiteralPath
+
+Specifies the path to the CSV output file. Unlike **Path**, the value of the **LiteralPath**
+parameter is used exactly as it is typed. No characters are interpreted as wildcards. If the path
+includes escape characters, use single quotation marks. Single quotation marks tell
+PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: PSPath
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoClobber
+
+Use this parameter so that `Export-CSV` does not overwrite an existing file. By default, if the
+file exists in the specified path, `Export-CSV` overwrites the file without warning.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: NoOverwrite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoTypeInformation
+
+Removes the **#TYPE** information header from the output. This parameter became the default in
+PowerShell 6.0 and is included for backwards compatibility.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: NTI
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+
+A required parameter that specifies the location to save the CSV output file.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseCulture
+
+Uses the list separator for the current culture as the item delimiter. To find the list separator
+for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: UseCulture
 Aliases:
 
 Required: False
@@ -274,187 +557,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Delimiter
-
-Specifies a delimiter to separate the property values.
-The default is a comma (`,`).
-Enter a character, such as a colon (`:`).
-To specify a semicolon (`;`), enclose it in quotation marks.
-
-```yaml
-Type: Char
-Parameter Sets: Delimiter
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Encoding
-
-Specifies the encoding for the exported CSV file.
-The acceptable values for this parameter are:
-
-- Unicode
-- UTF7
-- UTF8
-- ASCII
-- UTF32
-- BigEndianUnicode
-- Default
-- OEM
-
-The default value is ASCII.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-Accepted values: Unicode, UTF7, UTF8, ASCII, UTF32, BigEndianUnicode, Default, OEM
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Force
-
-When specified, it allows to overwrite files with **Read Only** attribute set.
-
-Also, when used with **-Append** parameter, it allows to add objects with lacking properties, compared to existing columns in csv file.
-In this case, only existent properties added and absent ones assigned the empty value.
-Extra properties are always skipped.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-
-Specifies the objects to export as CSV strings.
-Enter a variable that contains the objects or type a command or expression that gets the objects.
-You can also pipe objects to `Export-CSV`.
-
-```yaml
-Type: PSObject
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-
-Specifies the path to the CSV output file.
-Unlike **-Path**, the value of the **-LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: PSPath
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoClobber
-
-Indicates that this cmdlet does not overwrite of an existing file.
-By default, if a file exists in the specified path, `Export-CSV` overwrites the file without warning.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: NoOverwrite
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoTypeInformation
-
-Indicates that this cmdlet omits the type information from the CSV file.
-This is the default behavior beginning with PowerShell 6.0.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: NTI
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Path
-
-Specifies the path to the CSV output file.
-This parameter is required.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseCulture
-
-Indicates that this cmdlet uses the list separator for the current culture as the item delimiter.
-The default is a comma (`,`).
-
-This parameter is very useful in scripts that are being distributed to users worldwide.
-To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: UseCulture
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Prevents the cmdlet from being processed or making changes. The output shows what would happen if
+the cmdlet were run.
 
 ```yaml
 Type: SwitchParameter
@@ -470,7 +576,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -486,26 +595,35 @@ The CSV list is sent to the file designated in the Path parameter.
 
 ## NOTES
 
-- The `Export-CSV` cmdlet converts the objects that you submit into a series of CSV variable-length strings and saves them in the specified text file.
-  You can use `Export-CSV` to save objects in a CSV file and then use the Import-Csv cmdlet to create objects from the text in the CSV file.
+The `Export-CSV` cmdlet converts the objects that you submit into a series of CSV strings and saves
+them in the specified text file. You can use `Export-CSV` to save objects in a CSV file and then use
+the `Import-Csv` cmdlet to create objects from the CSV file.
 
-  In the CSV file, each object is represented by a comma-separated list of the property values of the object.
-The property values are converted to strings (by using the `ToString()` method of the object), so they are generally represented by the name of the property value.
-`Export-CSV` does not export the methods of the object.
+In the CSV file, each object is represented by a comma-separated list of the property values of the
+object. The property values are converted to strings using the **ToString()** method. The strings
+are represented by the property value name. `Export-CSV does not export the methods of the object.
 
-  The format of an exported file is as follows:
+The CSV strings are output as follows:
 
-  - The first line of the CSV file contains the string #TYPE followed by the fully qualified name of the object, such as `#TYPE System.Diagnostics.Process`.
-To exclude this line specify `-NoTypeInformation` parameter.
+- By default the first string contains the **#TYPE** information header followed by the object
+  type's fully qualified name. For example, **#TYPE System.Diagnostics.Process**.
+- If **NoTypeInformation** is used the first string includes the column headers. The headers
+  contain the first object's property names as a comma-separated list.
+- The remaining strings contain comma-separated lists of each object's property values.
 
-  - The next line of the CSV file represents the column headers.
-It contains a comma-separated list of the names of all the properties of the first object.
+When you submit multiple objects to `Export-CSV`, `Export-CSV` organizes the file based on the
+properties of the first object that you submit. If the remaining objects do not have one of the
+specified properties, the property value of that object is null, as represented by two consecutive
+commas. If the remaining objects have additional properties, those property values are not included
+in the file.
 
-  - Additional lines of the file consist of comma-separated lists of the property values of each object.
+You can use the `Import-Csv` cmdlet to recreate objects from the CSV strings in the files. The
+resulting objects are CSV versions of the original objects that consist of string representations
+of the property values and no methods.
 
-- When you submit multiple objects to `Export-CSV`, `Export-CSV` organizes the file based on the properties of the first object that you submit. If the remaining objects do not have one of the specified properties, the property value of that object is null, as represented by two consecutive commas. If the remaining objects have additional properties, those property values are not included in the file.
-- You can use the `Import-Csv` cmdlet to re-create objects from the CSV strings in the files. The resulting objects are CSV versions of the original objects that consist of string representations of the property values and no methods.
-- The `ConvertTo-Csv` and `ConvertFrom-Csv` cmdlets to convert objects to CSV strings (and back). `Export-CSV` is the same as `ConvertTo-CSV`, except that it saves the CSV strings in a file.
+The `ConvertTo-Csv` and `ConvertFrom-Csv` cmdlets convert objects to CSV strings and from CSV
+strings. `Export-CSV` is the same as `ConvertTo-CSV`, except that it saves the CSV strings in a
+file.
 
 ## RELATED LINKS
 
@@ -518,5 +636,3 @@ It contains a comma-separated list of the names of all the properties of the fir
 [Import-Csv](Import-Csv.md)
 
 [Select-Object](Select-Object.md)
-
-[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)

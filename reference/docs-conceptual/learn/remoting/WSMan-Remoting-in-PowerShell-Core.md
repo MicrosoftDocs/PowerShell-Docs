@@ -23,7 +23,7 @@ For more details, please see issue [#1193](https://github.com/PowerShell/PowerSh
 
 The script
 
-1. Creates a directory for the plug-in within %windir%\System32\PowerShell
+1. Creates a directory for the plug-in within `$env:windir\System32\PowerShell`
 1. Copies pwrshplugin.dll to that location
 1. Generates a configuration file
 1. Registers that plug-in with WinRM

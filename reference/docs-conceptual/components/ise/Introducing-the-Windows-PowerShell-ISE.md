@@ -17,9 +17,9 @@ ISE, you can right-click on a line of code in the edit pane to set a breakpoint.
 
 The ISE was first introduced with Windows PowerShell V2 and was re-designed with PowerShell V3. 
 The ISE is supported in all supported versions of Windows PowerShell up to and including Windows PowerShell V5.1. 
-The ISE, however, is in maintennce mode and no new features are likely to be added.
+The ISE, however, is in maintenance mode and no new features are likely to be added.
 Additionally, there is no support for the ISE with PowerShell v6 and beyond. 
-Users wanting a graphical tool with which to manage PowerShell scrips, etc, should consider [Visual Studio Code](https://code.visualstudio.com/).
+Users wanting a graphical tool with which to manage PowerShell scripts, etc, should consider [Visual Studio Code](https://code.visualstudio.com/).
 
 ## Key Features
 

@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Parameters_Default_Values
 ---
-
 # About Parameters Default Values
 
 ## SHORT DESCRIPTION
-
 Describes how to set custom default values for the parameters of cmdlets and
 advanced functions.
 

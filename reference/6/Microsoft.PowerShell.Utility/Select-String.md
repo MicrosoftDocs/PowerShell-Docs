@@ -138,10 +138,10 @@ The *CaseSensitive* parameter indicates that the "M" in "Microsoft" must be capi
 ### Example 7: Find strings that do not match a pattern
 
 ```powershell
-PS C:\> Select-String -Path "process.txt" -Pattern "idle, svchost" -NotMatch
+Select-String -Path process.txt -Pattern idle, svchost -NotMatch
 ```
 
-This command finds lines of text in the Process.txt file that do not include the words "idle" or "svchost".
+This command finds lines of text in the process.txt file that do not include the words "idle" or "svchost".
 
 ### Example 8: Find lines before and after a match
 
