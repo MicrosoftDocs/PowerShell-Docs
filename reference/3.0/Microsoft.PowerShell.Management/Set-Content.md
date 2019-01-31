@@ -18,19 +18,19 @@ Writes new content or replaces existing content in a file.
 ### Path (Default)
 
 ```
-Set-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>] [-Include
-<string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
-[-UseTransaction] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <string>]
-[<CommonParameters>]
+Set-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
+[-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
+[-WhatIf] [-Confirm] [-UseTransaction] [-Encoding <FileSystemCmdletProviderEncoding>]
+[-Stream <string>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Set-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>] [-Include
-<string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
-[-UseTransaction] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <string>]
-[<CommonParameters>]
+Set-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
+[-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
+[-Confirm] [-UseTransaction] [-Encoding <FileSystemCmdletProviderEncoding>]
+[-Stream <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,30 +48,27 @@ If you need to create files or directories for the following examples, see [New-
 
 This example replaces the content for multiple files in the current directory.
 
-```powershell
-Get-ChildItem -Path .\Test*.txt
-Set-Content -Path .\Test*.txt -Value 'Hello, World'
-Get-Content -Path .\Test*.txt
 ```
+PS> Get-ChildItem -Path .\Test*.txt
 
-```Output
-# Get-ChildItem output
 Test1.txt
 Test2.txt
 Test3.txt
 
-# Get-Content output
+PS> Set-Content -Path .\Test*.txt -Value 'Hello, World'
+
+PS> Get-Content -Path .\Test*.txt
+
 Hello, World
 Hello, World
 Hello, World
 ```
 
 The `Get-ChildItem` cmdlet uses the **Path** parameter to list **.txt** files that begin with
-**Test\*** in the current directory. The `Set-Content` cmdlet uses the **Path** parameter to
-specify the **Test\*.txt** files. The **Value** parameter provides the text string **Hello, World**
-that replaces the existing content in each file. The `Get-Content` cmdlet uses the **Path**
-parameter to specify the **Test\*.txt** files and displays each file's content in the PowerShell
-console.
+`Test*` in the current directory. The `Set-Content` cmdlet uses the **Path** parameter to specify
+the `Test*.txt` files. The **Value** parameter provides the text string **Hello, World** that
+replaces the existing content in each file. The `Get-Content` cmdlet uses the **Path** parameter to
+specify the `Test*.txt` files and displays each file's content in the PowerShell console.
 
 ### Example 2: Create a new file and write content
 
@@ -86,32 +83,33 @@ Get-Content -Path .\DateTime.txt
 1/30/2019 09:55:08
 ```
 
-`Set-Content` uses the **Path** parameter to create a new file named **DateTime.txt** in the
-current directory. The **Value** parameter uses `Get-Date` to get the current date and time.
-`Set-Content` writes the **DateTime** object to the file. The `Get-Content` cmdlet uses the
-**Path** parameter to display the content of **DateTime.txt** in the PowerShell console.
+`Set-Content` uses the **Path** and **Value** parameters to create a new file named **DateTime.txt**
+in the current directory. The **Value** parameter uses `Get-Date` to get the current date and time.
+`Set-Content` writes the **DateTime** object to the file as a string. The `Get-Content` cmdlet uses
+the **Path** parameter to display the content of **DateTime.txt** in the PowerShell console.
 
 ### Example 3: Replace text in a file
 
 This command replaces all instances of word within an existing file.
 
-```powershell
-(Get-Content -Path .\Notice.txt) | ForEach-Object {$_ -Replace 'Warning', 'Caution'} | Set-Content -Path .\Notice.txt
 ```
+PS> Get-Content -Path .\Notice.txt
 
-```Output
-# Existing Notice.txt file contents
 Warning
 Replace Warning with a new word.
 The word Warning was replaced.
 
-# Updated Notice.txt file contents
+PS> (Get-Content -Path .\Notice.txt) | ForEach-Object {$_ -Replace 'Warning', 'Caution'} | Set-Content -Path .\Notice.txt
+
+PS> Get-Content -Path .\Notice.txt
+
 Caution
 Replace Caution with a new word.
 The word Caution was replaced.
 ```
 
-To display the file contents before or after the example use `Get-Content -Path .\Notice.txt`.
+The `Get-Content` cmdlet uses the **Path** parameter to specify the **Notice.txt** file in the
+current directory and displays the file's content in the PowerShell console.
 
 The `Get-Content` cmdlet uses the **Path** parameter to specify the **Notice.txt** file in the
 current directory. The `Get-Content` command is wrapped with parentheses so that the command
@@ -120,6 +118,8 @@ the pipeline to the `ForEach-Object` cmdlet. `ForEach-Object` uses the automatic
 replaces each occurrence of **Warning** with **Caution**. The objects are sent down the pipeline to
 the `Set-Content` cmdlet. `Set-Content` uses the **Path** parameter to specify the **Notice.txt**
 file and writes the updated content to the file.
+
+The `Get-Content` cmdlet displays the updated file content in the PowerShell console.
 
 ## PARAMETERS
 
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ### -Exclude
 
 Omits the specified items. The value of this parameter qualifies the Path parameter. Enter a path
-element or pattern, such as **\*.txt**. Wildcards are permitted.
+element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
 Type: String[]
@@ -220,8 +220,7 @@ Accept wildcard characters: True
 Specifies a filter in the provider's format or language. The value of this parameter qualifies the
 **Path** parameter. The syntax of the filter, including the use of wildcards, depends on the
 provider. **Filters** are more efficient than other parameters because the provider applies filters
-when objects are retrieved. Otherwise, PowerShell processes filters after the objects are
-retrieved.
+when objects are retrieved. Otherwise, PowerShell processes filters after the objects are retrieved.
 
 ```yaml
 Type: String
@@ -238,9 +237,8 @@ Accept wildcard characters: True
 ### -Force
 
 Forces the cmdlet to set the contents of a file, even if the file is read-only. Implementation
-varies from provider to provider. For more information, see
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md). The **Force** parameter
-does not override security restrictions.
+varies from provider to provider. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+The **Force** parameter does not override security restrictions.
 
 ```yaml
 Type: SwitchParameter
@@ -257,7 +255,7 @@ Accept wildcard characters: False
 ### -Include
 
 Changes only the specified items. The value of this parameter qualifies the **Path** parameter.
-Enter a path element or pattern, such as **\*.txt**. Wildcards are permitted.
+Enter a path element or pattern, such as `*.txt`. Wildcards are permitted.
 
 ```yaml
 Type: String[]
@@ -331,9 +329,9 @@ it. Wildcard characters are not supported.
 **Stream** is a dynamic parameter that the **FileSystem** provider adds to `Set-Content`. This
 parameter works only in file system drives.
 
-You can use the `Set-Content` cmdlet to change the content of the **Zone.Identifier** alternate
-data stream. However, we do not recommend this as a way to eliminate security checks that block
-files that are downloaded from the Internet. If you verify that a downloaded file is safe, use the
+You can use the `Set-Content` cmdlet to change the content of the **Zone.Identifier** alternate data
+stream. However, we do not recommend this as a way to eliminate security checks that block files
+that are downloaded from the Internet. If you verify that a downloaded file is safe, use the
 `Unblock-File` cmdlet.
 
 This parameter was introduced in PowerShell 3.0.
@@ -403,8 +401,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+`-Verbose`, `-WarningAction`, and `-WarningVariable`.
+For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
