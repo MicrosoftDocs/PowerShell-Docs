@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Objects
 ---
-
 # About Objects
 
 ## Short Description
-
 Provides essential information about objects in Windows PowerShell.
 
 ## Long Description

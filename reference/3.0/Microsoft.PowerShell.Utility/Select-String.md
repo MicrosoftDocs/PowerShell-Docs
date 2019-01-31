@@ -137,10 +137,10 @@ The CaseSensitive parameter indicates that the "M" in "Microsoft" must be capita
 ### Example 7
 
 ```powershell
-PS C:\> select-string -path process.txt -pattern idle, svchost -notmatch
+Select-String -Path process.txt -Pattern idle, svchost -NotMatch
 ```
 
-This command finds lines of text in the Process.txt file that do not include the words "idle" or "svchost".
+This command finds lines of text in the process.txt file that do not include the words "idle" or "svchost".
 
 ### Example 8
 

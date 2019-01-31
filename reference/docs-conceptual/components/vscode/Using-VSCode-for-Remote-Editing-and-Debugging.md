@@ -57,7 +57,7 @@ The watered down explanation of the cmdlet is:
 - `Enter-PSSession -ContainerId foo` and `Enter-PSSession -VmId foo` start a session via PowerShell Direct
 - `Enter-PSSession -HostName foo` starts a session via SSH
 
-For more info on `Enter-PSSession`, check out the docs [here](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
+For more info on `Enter-PSSession`, check out the docs [here](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
 
 I'll be using SSH for remoting since I'm going from macOS to an Ubuntu VM in Azure.
 

@@ -14,8 +14,8 @@
             "author": "sdwheeler",
             "ms.author": "sewhee",
             "feedback_system": "GitHub",
-            "feedback_github_repo": "PowerShell/PowerShell-Docs",
-            "feedback_product_url": "https://github.com/powershell/powershell/issues/new"
+            "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
+            "feedback_product_url": "https://github.com/MicrosoftDocs/powershell/issues/new"
         },
         "resource": [
             { "files": ["**/images/**", "**/*.png", "**/*.jpg"], "exclude": ["**/obj/**"] }

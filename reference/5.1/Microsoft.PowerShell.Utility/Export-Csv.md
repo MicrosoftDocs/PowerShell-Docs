@@ -391,25 +391,26 @@ Accept wildcard characters: False
 
 Specifies the encoding for the exported CSV file. The default value is **ASCII**.
 
-The acceptable values for this parameter are:
+The acceptable values for this parameter are as follows:
 
-- **Unknown** Same as **Unicode**.
+- **ASCII** Uses ASCII (7-bit) character set.
+- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
+- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
+- **Byte** Encodes a set of characters into a sequence of bytes.
+- **Default** Uses the encoding that corresponds to the system's active code page.
+- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
 - **String** Same as **Unicode**.
 - **Unicode** Uses UTF-16 with the little-endian byte order.
-- **Byte** Encodes a set of characters into a sequence of bytes.
-- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
-- **UTF8** Uses UTF-8.
+- **Unknown** Same as **Unicode**.
 - **UTF7** Uses UTF-7.
+- **UTF8** Uses UTF-8.
 - **UTF32** Uses UTF-32 with the little-endian byte order.
-- **ASCII** Uses ASCII (7-bit) character set.
-- **Default** Uses the encoding that corresponds to the system's active code page.
-- **Oem** Uses the encoding that corresponds to the system's current OEM code page.
-- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
+Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named

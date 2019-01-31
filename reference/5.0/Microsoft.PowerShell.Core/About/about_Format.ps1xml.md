@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Format.ps1xml
 ---
-
 # About Format.ps1xml
 
 ## Short Description
-
 The Format.ps1xml files in Windows PowerShell define the default display of
 objects in the Windows PowerShell console. You can create your own
 Format.ps1xml files to change the display of objects or to define default

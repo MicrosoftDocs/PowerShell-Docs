@@ -7,7 +7,7 @@ keywords:  wmf,powershell,setup
 
 # Windows Management Framework (WMF) 5.0 RTM Release Notes Overview
 
-**WMF 5.0 is superceeded by WMF 5.1.
+**WMF 5.0 is superseded by WMF 5.1.
 Users with WMF 5.0 must upgrade to WMF 5.1 to receive support.
 Please follow the [installation intructions of WMF 5.1](../5.1/install-configure.md)**
 

@@ -171,7 +171,7 @@ Other Windows PowerShell ISE editing features include:
 
 - **Parse error display** Parse errors are indicated with red underlines. When you hover over an indicated error, tooltip text displays the problem that was found in the code.
 
-- **Zoom** The zoom percentage of the console'™s content can be set by using the zoom slider (in the lower right corner of Windows PowerShell ISE window), or by entering the command **$psise.options.Zoom** in the Console Pane.
+- **Zoom** The zoom percentage of the console's content can be set by using the zoom slider (in the lower right corner of Windows PowerShell ISE window), or by entering the command **$psise.options.Zoom** in the Console Pane.
 
 - **Rich text copy and paste** Copying to the clipboard in Windows PowerShell ISE preserves the font, size, and color information of the original selection.
 
