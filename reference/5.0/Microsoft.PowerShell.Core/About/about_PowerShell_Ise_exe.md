@@ -5,14 +5,12 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PowerShell_Ise_exe
 ---
-
 # About PowerShell Ise.exe
 
-# SHORT DESCRIPTION
-
+## SHORT DESCRIPTION
 Explains how to use the PowerShell_Ise.exe command-line tool.
 
-# LONG DESCRIPTION
+## LONG DESCRIPTION
 
 PowerShell_Ise.exe starts a Windows PowerShell Integrated
 Scripting Environment (ISE) session. You can run it in Cmd.exe
@@ -21,7 +19,7 @@ and in Windows PowerShell.
 To run PowerShell_ISE.exe, type PowerShell_ISE.exe, PowerShell_ISE,
 or ISE.
 
-# SYNTAX
+## SYNTAX
 
 PowerShell_Ise[.exe]
 PowerShell_ISE[.exe]
@@ -30,7 +28,7 @@ ISE[.exe]
 -Help | ? | -? | /?
 Displays the syntax and describes the command-line switches.
 
-# PARAMETERS
+## PARAMETERS
 
 -File
 Opens the specified files in Windows PowerShell ISE. The
@@ -64,15 +62,15 @@ For more information, see [about_Profiles](about_Profiles.md).
 -Help, -?, /?
 Displays help for PowerShell_ISE.exe.
 
-# EXAMPLES
+## EXAMPLES
 
 These commands start Windows PowerShell ISE. The commands are equivalent
 and can be used interchangeably.
 
 PS C:> PowerShell_ISE.exe
 PS C:> PowerShell_ISE
-# PS C:>ISE
 
+## PS C:>ISE
 
 These commands open the Get-Profile.ps1 script in Windows PowerShell ISE.
 The commands are equivalent and can be used interchangeably.
@@ -96,7 +94,7 @@ This command gets help for PowerShell_ISE.exe.
 
 PS C:> ISE -help
 
-# SEE ALSO
+## SEE ALSO
 
 [about_PowerShell.exe](about_PowerShell_exe.md)
 

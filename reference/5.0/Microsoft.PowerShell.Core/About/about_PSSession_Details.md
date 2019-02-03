@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PSSession_Details
 ---
-
 # About PSSession Details
 
 ## Short Description
-
 Provides detailed information about Windows PowerShell sessions and the
 role they play in remote commands.
 

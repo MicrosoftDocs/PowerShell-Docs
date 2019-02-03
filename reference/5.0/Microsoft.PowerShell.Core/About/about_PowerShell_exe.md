@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PowerShell_exe
 ---
-
 # About PowerShell.exe
 
 ## SHORT DESCRIPTION
-
 Explains how to use the PowerShell.exe command-line tool. Displays the syntax
 and describes the command-line switches.
 

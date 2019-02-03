@@ -29,33 +29,6 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
         MyDscResource.psd1
 ```
 
-### Declaring multiple class resources in a module
-
-A module can define multiple class based DSC resources. You can create the folder structure in the following ways:
-
-1. Define the first resource in the "<ModuleName>.psm1" file and subsequent resources under the **DSCResources** folder.
-
-   ```
-   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
-        |- MyDscResource (folder)
-           |- MyDscResource.psm1
-              MyDscResource.psd1
-        |- DSCResources
-           |- SecondResource.psm1
-   ```
-
-2. Define all resources under the **DSCResources** folder.
-
-   ```
-   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
-        |- MyDscResource (folder)
-           |- MyDscResource.psm1
-              MyDscResource.psd1
-        |- DSCResources
-           |- FirstResource.psm1
-              SecondResource.psm1
-   ```
-
 ## Create the class
 
 You use the class keyword to create a PowerShell class. To specify that a class is a DSC resource, use the **DscResource()** attribute. The name of the class is the name of the DSC resource.
@@ -108,7 +81,6 @@ The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-Targ
 This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.
 
 ```powershell
-
 	<#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -520,6 +492,36 @@ class FileResource {
 }
 ```
 
+### Declaring multiple class resources in a module
+
+A module can define multiple class based DSC resources. You can create the folder structure in the following ways:
+
+1. Define the first resource in the "<ModuleName>.psm1" file and subsequent resources under the **DSCResources** folder.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. Define all resources under the **DSCResources** folder.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> In the examples above, add any PSM1 files under the **DSCResources** to the **NestedModules** key in your PSD1 file.
+
 ### Access the user context
 
 To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.
@@ -533,5 +535,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## See Also
-### Concepts
+
 [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)
