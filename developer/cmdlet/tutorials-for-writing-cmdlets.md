@@ -18,16 +18,13 @@ This section contains tutorials for writing cmdlets. These tutorials include the
 
 ## In This Section
 
-[GetProc Tutorial](./getproc-tutorial.md)
+[GetProc Tutorial](./getproc-tutorial.md) - 
 This tutorial describes how to define a cmdlet class and add basic functionality such as adding parameters and reporting errors. The cmdlet described in this tutorial is very similar to the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet provided by Windows PowerShell.
-This tutorial describes how to define a cmdlet class and add basic functionality such as adding parameters and reporting errors. The cmdlet described in this tutorial is very similar to the [Get-Process](https://www.msn.com/?ocid=NEFLS000) cmdlet provided by Windows PowerShell.
 
-[StopProc Tutorial](./stopproc-tutorial.md)
-This tutorial describes how to define a cmdlet and add functionality such as user prompts, wildcard support, and the use of parameter sets. The cmdlet described here performs the same task as the [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet provided by Windows PowerShell.
+[StopProc Tutorial](./stopproc-tutorial.md) - 
 This tutorial describes how to define a cmdlet and add functionality such as user prompts, wildcard support, and the use of parameter sets. The cmdlet described here performs the same task as the [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet provided by Windows PowerShell.
 
-[SelectStr Tutorial](./selectstr-tutorial.md)
-This tutorial describes how to define a cmdlet that accesses a data store. The cmdlet described here performs the same task as the [Select-String](/powershell/module/microsoft.powershell.utility/select-string) cmdlet provided by Windows PowerShell.
+[SelectStr Tutorial](./selectstr-tutorial.md) - 
 This tutorial describes how to define a cmdlet that accesses a data store. The cmdlet described here performs the same task as the [Select-String](/powershell/module/microsoft.powershell.utility/select-string) cmdlet provided by Windows PowerShell.
 
 ## See Also
