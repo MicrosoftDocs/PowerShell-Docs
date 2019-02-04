@@ -7,25 +7,28 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821528
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 title:  Get-Counter
 ---
-
 # Get-Counter
 
-## SYNOPSISGets performance counter data from local and remote computers.
+## SYNOPSIS
+Gets performance counter data from local and remote computers.
 
 ## SYNTAX
 
 ### GetCounterSet (Default)
+
 ```
 Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int64>] [-Continuous]
  [-ComputerName <String[]>] [<CommonParameters>]
 ```
 
 ### ListSetSet
+
 ```
 Get-Counter [-ListSet] <String[]> [-ComputerName <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Counter** cmdlet gets live, real-time performance counter data directly from the performance monitoring instrumentation in the Windows family of operating systems.
 You can use it to get performance data from the local or remote computers at the sample interval that you specify.
 
@@ -36,6 +39,7 @@ You can use the parameters of this cmdlet to specify one or more computers, to l
 ## EXAMPLES
 
 ### Example 1: Get counter sets on the local computer
+
 ```
 PS C:\> Get-Counter -ListSet *
 ```
@@ -45,6 +49,7 @@ This command gets all of the counter sets on the local computer.
 Because many of the counter sets are protected by access control lists (ACLs), to see all counter sets, open Windows PowerShell with the "Run as administrator" option before using the **Get-Counter** command.
 
 ### Example 2: Get a counter set with a sample interval for a specified maximum sample
+
 ```
 PS C:\> Get-Counter -Counter "\Processor(_Total)\% Processor Time" -SampleInterval 2 -MaxSamples 3
 ```
@@ -53,6 +58,7 @@ This command gets the current "% Processor Time" combined values for all process
 It collects data every two seconds until it has three values.
 
 ### Example 3: Get an alphabetically sorted list of all counter sets
+
 ```
 PS C:\> Get-Counter -ListSet * | Sort-Object CounterSetName | Format-Table CounterSetName
 ```
@@ -60,6 +66,7 @@ PS C:\> Get-Counter -ListSet * | Sort-Object CounterSetName | Format-Table Count
 This command gets an alphabetically sorted list of the names of all of the counter sets on the local computer.
 
 ### Example 4: Use the counter Path property to find formatted path names for performance counters
+
 ```
 The first command gets the path names of the performance counters in the Memory counter set on the local computer.
 PS C:\> (Get-Counter -ListSet Memory).Paths
@@ -93,6 +100,7 @@ This example uses the **Path** property of a counter set to find the correctly f
 You can use a command like this one to get the correct counter path names.
 
 ### Example 5: Get specific counter data from multiple computers
+
 ```
 The first command saves the **Disk Reads/sec** counter path in the $DiskReads variable.
 PS C:\> $DiskReads = "\LogicalDisk(C:)\Disk Reads/sec"
@@ -104,6 +112,7 @@ PS C:\> $DiskReads | Get-Counter -Computer Server01, Server02 -MaxSamples 10
 This example gets the **Disk Reads/sec** counter data from the Server01 and Server02 computers.
 
 ### Example 6: Get formatted path names for a performance counter
+
 ```
 PS C:\> (Get-Counter -List PhysicalDisk).PathsWithInstances
 ```
@@ -111,6 +120,7 @@ PS C:\> (Get-Counter -List PhysicalDisk).PathsWithInstances
 This command gets the correctly formatted path names for the **PhysicalDisk** performance counters, including the instance names.
 
 ### Example 7: Get the value of a specific performance counter on multiple random computers
+
 ```
 The first command uses the Get-Content cmdlet to get the list of enterprise servers from the Servers.txt file. It uses the Get-Random cmdlet to select 50 server names randomly from the Servers.txt file contents. The results are saved in the $Servers variable.
 PS C:\> $Servers = Get-Random (Get-Content Servers.txt) -Count 50
@@ -125,6 +135,7 @@ PS C:\> Get-Counter -Counter $Counter -ComputerName $Servers
 This example gets the value of the "**% DPC Time**" performance counter on 50 randomly select computers in the enterprise.
 
 ### Example 8: Get a single value for all of the performance counters in a counter set
+
 ```
 The first command uses the **Get-Counter** cmdlet to get the counter paths. It saves them in the $MemCounters variable.
 PS C:\> $MemCounters = (Get-Counter -List Memory).Paths
@@ -136,6 +147,7 @@ PS C:\> Get-Counter -Counter $MemCounters
 This example gets a single value for all of the performance counters in the Memory counter set on the local computer.
 
 ### Example 9: Display property values in a PerformanceCounterSample
+
 ```
 The first command saves a counter path in the $Counter variable.
 PS C:\> $Counter = "\\SERVER01\Process(Idle)\% Processor Time"
@@ -164,6 +176,7 @@ This example shows the property values in the **PerformanceCounterSample** objec
 You can use the properties of the **CounterSamples** object to examine, select, sort, and group the data.
 
 ### Example 10: Get performance counter data as a background job
+
 ```
 PS C:\> Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
 ```
@@ -172,6 +185,7 @@ The command runs a **Get-Counter** command as background job.
 For more information, see Start-Job.
 
 ### Example 11: Get the percentage of free disk space on multiple random computers
+
 ```
 PS C:\> Get-Counter -ComputerName (Get-Random Servers.txt -Count 50) -Counter "\LogicalDisk(*)\% Free Space"
 ```
@@ -179,6 +193,7 @@ PS C:\> Get-Counter -ComputerName (Get-Random Servers.txt -Count 50) -Counter "\
 This command uses the **Get-Counter** and Get-Random cmdlets to find the percentage of free disk space on 50 computers selected randomly from the Servers.txt file.
 
 ### Example 12: Associate counter data with a the computer from which it originated
+
 ```
 The first command uses the **Get-Counter** cmdlet to get the "LogicalDisk\% Free Space" counter value from two remote computers, S1 and S2. It saves the result in the $DiskSpace variable.
 PS C:\> $DiskSpace = Get-Counter "\LogicalDisk(_Total)\% Free Space" -ComputerName s1, s2
@@ -228,6 +243,7 @@ Path                                InstanceName    CookedValue
 This example shows how to associate counter data with the computer on which it originated, and how to manipulate the data.
 
 ### Example 13: Sort performance counter data
+
 ```
 The first command uses the **Get-Counter** cmdlet to get the "Process\% Processor Time" counter for all the processes on the computer. The command saves the results in the $P variable.
 PS C:\> $P = Get-Counter '\Process(*)\% Processor Time'
@@ -251,6 +267,7 @@ This example shows how to sort performance counter data.
 The example finds the processes on the computer that are using the most processor time during the sampling.
 
 ### Example 14: Find processes on a computer with the largest working sets
+
 ```
 The first command gets one sample of the "Process\Working Set - Private" counter for each process. The command saves the counter data in the $WS variable.
 PS C:\> $WS = Get-Counter "\Process(*)\Working Set - Private"
@@ -273,6 +290,7 @@ This example finds the processes on the computer with the largest working sets.
 The cmdlet lists the processes in descending order based on their working set size.
 
 ### Example 15: Get a series of samples of a performance counter
+
 ```
 PS C:\> Get-Counter -Counter "\Processor(_Total)\% Processor Time" -Continuous
 ```
@@ -283,6 +301,7 @@ To stop the command, press CTRL + C.
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies, as a string array, the names of the computers that this cmdlet gets performance counter data from.
 You can specify the NetBIOS name, an Internet Protocol (IP) address, or the fully qualified domain names (FQDN) of the computers.
 The default value is the local computer.
@@ -303,6 +322,7 @@ Accept wildcard characters: False
 ```
 
 ### -Continuous
+
 Indicates that this cmdlet gets samples continuously until you press CTRL+C.
 By default, this cmdlet gets only one counter sample.
 You can use the *SampleInterval* parameter to set the interval for continuous sampling.
@@ -320,6 +340,7 @@ Accept wildcard characters: False
 ```
 
 ### -Counter
+
 Specifies, as a string array, data from the specified performance counters.
 Enter one or more counter paths.
 You can also pipe counter path strings to this cmdlet.
@@ -353,6 +374,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListSet
+
 Specifies the performance counter sets on the computers.
 Enter the names of the counter sets.
 You can also pipe counter set names to this cmdlet.
@@ -370,6 +392,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxSamples
+
 Specifies the number of samples to get from each counter.
 The default is 1 sample.
 To get samples continuously, use the *Continuous* parameter.
@@ -390,6 +413,7 @@ Accept wildcard characters: False
 ```
 
 ### -SampleInterval
+
 Specifies the time between samples in seconds.
 The minimum value and the default value are 1 second.
 
@@ -406,21 +430,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String[]
+
 You can pipe counter paths and counter set (ListSet) names to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample
+
 This cmdlet returns Microsoft.PowerShell.Commands.GetCounter.CounterSet objects through the *ListSet* parameter.
 The *Counter* parameter gets **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet** objects.
 Each counter value is a **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample** object.
 
 ## NOTES
+
 * Performance counters are often protected by access control lists (ACLs). To get all available performance counters, open Windows PowerShell with the "Run as administrator" option.
 
   By default, **Get-Counter** gets one sample during a one-second sample interval.

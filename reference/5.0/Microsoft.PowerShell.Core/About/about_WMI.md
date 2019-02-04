@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_WMI
 ---
-
 # About WMI
 
 ## SHORT DESCRIPTION

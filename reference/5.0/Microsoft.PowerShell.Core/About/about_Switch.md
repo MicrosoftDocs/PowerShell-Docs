@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Switch
 ---
-
 # About Switch
 
 ## SHORT DESCRIPTION

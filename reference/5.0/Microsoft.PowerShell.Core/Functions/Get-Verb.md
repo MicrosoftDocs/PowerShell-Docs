@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834942
 external help file:  System.Management.Automation.dll-help.xml
 title:  Get-Verb
 ---
-
 # Get-Verb
 
 ## SYNOPSIS

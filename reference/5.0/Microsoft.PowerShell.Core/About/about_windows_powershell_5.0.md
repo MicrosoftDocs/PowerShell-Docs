@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Windows_PowerShell_5.0
 ---
-
 # about_Windows_PowerShell_5.0
 
 ## SHORT DESCRIPTION

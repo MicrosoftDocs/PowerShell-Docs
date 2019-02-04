@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Updatable_Help
 ---
-
 # About Updatable Help
 
 ## SHORT DESCRIPTION

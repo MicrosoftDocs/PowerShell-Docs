@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Windows_PowerShell_ISE
 ---
-
 # About Windows PowerShell ISE
 
 ## SHORT DESCRIPTION
