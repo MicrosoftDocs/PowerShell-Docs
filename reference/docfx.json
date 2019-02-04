@@ -56,7 +56,7 @@
             "ROBOTS": "INDEX, FOLLOW",
             "feedback_system": "GitHub",
             "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
-            "feedback_product_url": "https://github.com/MicrosoftDocs/powershell/issues/new"
+            "feedback_product_url": "https://github.com/PowerShell/PowerShell/issues/new/choose"
         },
         "fileMetadata": {
             "ms.prod": { "**/**.md": "powershell" },
