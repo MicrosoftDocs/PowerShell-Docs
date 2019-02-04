@@ -146,6 +146,7 @@ in a configuration that sets up the web service.
                 DependsOn               = "[WindowsFeature]DSCServiceFeature"
                 RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"
                 AcceptSelfSignedCertificates = $true
+                UseSecurityBestPractices     = $true
                 Enable32BitAppOnWin64   = $false
             }
 
