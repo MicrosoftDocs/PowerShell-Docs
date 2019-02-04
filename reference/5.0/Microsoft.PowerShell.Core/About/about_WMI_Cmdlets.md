@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_WMI_Cmdlets
 ---
-
 # About WMI Cmdlets
 
 ## SHORT DESCRIPTION
-
 Provides background information about Windows Management Instrumentation (WMI)
 and Windows PowerShell.
 
@@ -54,6 +52,7 @@ The following WMI cmdlets are included.
 |Set-WmiInstance  |Creates or modifies instances of WMI classes. |
 
 ### SAMPLE COMMANDS
+
 The following command displays the BIOS information for the local computer.
 
 ```powershell

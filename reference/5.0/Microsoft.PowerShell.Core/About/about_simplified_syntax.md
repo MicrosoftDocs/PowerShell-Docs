@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Simplified_Syntax
 ---
-
 # about_Simplified_Syntax
 
 ## SHORT DESCRIPTION
-
 Describes easier, more natural-language ways of scripting filters for
 collections of objects.
 

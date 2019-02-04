@@ -9,7 +9,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821468
 # Registry provider
 
 ## Provider name
-
 Registry
 
 ## Drives
