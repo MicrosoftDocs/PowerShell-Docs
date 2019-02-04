@@ -53,7 +53,7 @@ Alias           cls -> Clear-Host
 
 ## Interpreting standard aliases
 
-The aliases we described previous were designed for name-compatibility with other command shells.
+The aliases we described previously were designed for name-compatibility with other command shells.
 Most aliases built into PowerShell are designed for brevity. Shorter names are easier to type, but
 are difficult to read if you don't know what they refer to.
 
