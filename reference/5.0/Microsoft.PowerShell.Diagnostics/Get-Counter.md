@@ -7,6 +7,7 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821528
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 title:  Get-Counter
 ---
+
 # Get-Counter
 
 ## SYNOPSISGets performance counter data from local and remote computers.

@@ -5,6 +5,7 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Splatting
 ---
+
 # About Splatting
 
 ## SHORT DESCRIPTION

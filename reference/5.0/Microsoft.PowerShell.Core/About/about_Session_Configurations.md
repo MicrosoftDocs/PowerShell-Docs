@@ -5,6 +5,7 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Session_Configurations
 ---
+
 # About Session Configurations
 
 ## SHORT DESCRIPTION

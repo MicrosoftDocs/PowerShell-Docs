@@ -5,6 +5,7 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Simplified_Syntax
 ---
+
 # about_Simplified_Syntax
 
 ## SHORT DESCRIPTION
