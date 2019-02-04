@@ -123,6 +123,7 @@ in a configuration that sets up the web service.
             [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
         )
 
+        Import-DSCResource -ModuleName PSDesiredStateConfiguration
         Import-DSCResource -ModuleName xPSDesiredStateConfiguration
 
         Node $NodeName
