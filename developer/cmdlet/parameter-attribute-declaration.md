@@ -83,8 +83,6 @@ Optional named parameter.Specifies the resource identifier for a Help message.
 
 [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
 
-[Cmdlet Parameter Names](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)
-
-[Cmdlet Parameter Names](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)
+[Cmdlet Parameter Names](standard-cmdlet-parameter-names-and-types.md)
 
 [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
