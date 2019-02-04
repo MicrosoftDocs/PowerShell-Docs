@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Wildcards
 ---
-
 # About Wildcards
 
 ## SHORT DESCRIPTION
-
 Describes how to use wildcard characters in PowerShell.
 
 ## LONG DESCRIPTION

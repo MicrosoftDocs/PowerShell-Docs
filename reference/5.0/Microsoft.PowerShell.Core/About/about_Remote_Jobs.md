@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Jobs
 ---
-
 # About Remote Jobs
 
 ## SHORT DESCRIPTION
-
 Describes how to run background jobs on remote computers.
 
 ## DETAILED DESCRIPTION
