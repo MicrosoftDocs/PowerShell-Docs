@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Windows_PowerShell_5.0
 ---
-
 # about_Windows_PowerShell_5.0
 
 ## SHORT DESCRIPTION
-
 Describes new features that are included in Windows PowerShell 5.0.
 
 ## LONG DESCRIPTION

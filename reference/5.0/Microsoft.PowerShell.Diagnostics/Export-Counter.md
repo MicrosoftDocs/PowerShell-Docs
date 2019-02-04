@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821527
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 title:  Export-Counter
 ---
-
 # Export-Counter
 
-## SYNOPSIS
-Exports performance counter data to log files.
+## SYNOPSISExports performance counter data to log files.
 
 ## SYNTAX
 

@@ -7,11 +7,9 @@ online version:  https://go.microsoft.com/fwlink/?linkid=834941
 external help file:  System.Management.Automation.dll-help.xml
 title:  Clear-Host
 ---
-
 # Clear-Host
 
-## SYNOPSIS
-Clears the display in the host program.
+## SYNOPSISClears the display in the host program.
 
 ## SYNTAX
 
