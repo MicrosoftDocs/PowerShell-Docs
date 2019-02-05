@@ -88,7 +88,7 @@ following details about its Path parameter:
     permitted. The default location is the current directory (.).
 
 Required?                    false
-Position?                    1
+Position?                    0
 Default value                Current directory
 Accept pipeline input?       true (ByValue, ByPropertyName)
 Accept wildcard characters?  true
@@ -107,18 +107,13 @@ prompts you for a value for the parameter.
 
 #### Parameter Position
 
-This setting indicates whether you can supply a parameter's value without
-preceding it with the parameter name. If set to **"0"** or **"named"**, a
-parameter name is required. This type of parameter is referred to as a
-named parameter. A named parameter can be listed in any position after the
+If the `Position` setting is set to a positive integer, the parameter name is
+not required. This type of parameter is referred to as a positional parameter,
+and the number indicates the position in which the parameter must appear in
+relation to other positional parameters. A named parameter can be listed in any
+position after the cmdlet name. If you include the parameter name for a
+positional parameter, the parameter can be listed in any position after the
 cmdlet name.
-
-If the `Parameter position` setting is set to an integer other than **"0"**, the
-parameter name is not required. This type of parameter is referred to as a
-positional parameter, and the number indicates the position in which the
-parameter must appear in relation to other positional parameters. If you
-include the parameter name for a positional parameter, the parameter can be
-listed in any position after the cmdlet name.
 
 For example, the `Get-ChildItem` cmdlet has Path and Exclude parameters. The
 `Parameter position` setting for `Path` is **"1"**, which means that it is a
@@ -130,8 +125,8 @@ value must be the first or only unnamed parameter value in the command.
 However, because the Exclude parameter is a named parameter, you can place it
 in any position in the command.
 
-As a result of the `Parameter position` settings for these two parameters,
-you can use any of the following commands:
+As a result of the `Position` settings for these two parameters, you can use
+any of the following commands:
 
 ```powershell
 Get-ChildItem -Path c:\techdocs -Exclude *.ppt
@@ -141,8 +136,8 @@ Get-ChildItem -Exclude *.ppt c:\techdocs
 ```
 
 If you were to include another positional parameter without including the
-parameter name, that parameter would have to be placed in the order specified
-by the "Parameter position?" setting.
+parameter name, that parameter must be placed in the order specified by the
+`Position` setting.
 
 #### Parameter Type
 
@@ -215,12 +210,12 @@ a property called **"Name"**.
 > [!NOTE]
 > A parameter that accepts pipeline input (`by Value`) will enable use of
 > **delay-bind** script blocks on all other parameters defined to accept
-> pipeline input. The **delay-bind** script block is run automatically during
-> ParameterBinding. The result is bound to the parameter. Delay binding
-> does **not** work for parameters defined as type `System.Object`, the
-> script block is passed through **without** being invoked.
+> pipeline input. The **delay-bind** script block is run automatically
+> during ParameterBinding. The result is bound to the parameter. Delay
+> binding does **not** work for parameters defined as type `System.Object`,
+> the script block is passed through **without** being invoked.
 >
-> You can read about **delay-bind** script blocks here [about_Script_Blocks](about_Script_Blocks.md)
+> You can read about **delay-bind** script blocks in [about_Script_Blocks](about_Script_Blocks.md).
 
 #### Accepts Wildcard Characters
 
