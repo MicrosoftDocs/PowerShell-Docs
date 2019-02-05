@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Session_Configurations
 ---
-
 # About Session Configurations
 
 ## SHORT DESCRIPTION
-
 Describes session configurations, which determine the users who can connect to
 the computer remotely and the commands they can run.
 

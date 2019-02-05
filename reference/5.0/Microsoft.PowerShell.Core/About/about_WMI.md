@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_WMI
 ---
-
 # About WMI
 
 ## SHORT DESCRIPTION
-
 Windows Management Instrumentation (WMI) uses the Common Information Model
 (CIM) to represent systems, applications, networks, devices, and other
 manageable components of the modern enterprise.

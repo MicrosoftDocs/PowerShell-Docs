@@ -8,8 +8,8 @@ title:  DSCAutomationHostEnabled registry key
 
 # DSCAutomationHostEnabled registry key
 
-DSC uses the **DSCAutomationHostEnabled** registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** to enable configuration of the machine at initial boot-up.
-DSCAutomationHostEnabled supports three modes:
+DSC uses the **DSCAutomationHostEnabled** registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** to enable configuration of the machine at initial boot-up.
+**DSCAutomationHostEnabled** supports three modes:
 
 |  DSCAutomationHostEnabled Value  |  Description   |
 |---|---|

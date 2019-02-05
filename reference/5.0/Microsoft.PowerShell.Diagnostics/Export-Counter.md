@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821527
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 title:  Export-Counter
 ---
-
 # Export-Counter
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Export-Counter [-Path] <String> [-FileFormat <String>] [-MaxSize <UInt32>]
 ```
 
 ## DESCRIPTION
+
 The **Export-Counter** cmdlet exports performance counter data (PerformanceCounterSampleSet objects) to log files in binary performance log (.blg), comma-separated value (.csv), or tab-separated value (.tsv) format.
 You can use this cmdlet to log performance counter data.
 
@@ -31,6 +31,7 @@ This cmdlet runs only on Windows 7, Windows Server 2008 R2, and later versions o
 ## EXAMPLES
 
 ### Example 1: Export counter data to a file
+
 ```
 PS C:\> Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $home\Counters.blg
 ```
@@ -45,6 +46,7 @@ Because the data set might be very large, this command sends the data to **Expor
 If the data were saved in a variable, the command might use a disproportionate amount of memory.
 
 ### Example 2: Export a file to a counter file format
+
 ```
 The first command uses the built-in Windows PowerShell conversion feature to store the value of 1 gigabyte (GB) in bytes in the $1GBInBytes variable. When you type a value followed by K (kilobyte), MB (megabyte), or GB, Windows PowerShell returns the value in bytes.
 PS C:\> $1GBInBytes = 1GB
@@ -56,6 +58,7 @@ PS C:\> Import-Counter Threads.csv | Export-Counter -Path ThreadTest.blg -Circul
 This example convert a CSV file to a counter data BLG format.
 
 ### Example 3: Get counter data from a remote computer and save the data to a file
+
 ```
 The first command uses the Get-Counter cmdlet to collect working set counter data from Server01, a remote computer. The command saves the data in the $C variable.
 PS C:\> $C = Get-Counter -ComputerName Server01 -Counter "\Process(*)\Working Set - Private" -MaxSamples 20
@@ -67,6 +70,7 @@ PS C:\> $C | Export-Counter -Path \\Server01\Perf\WorkingSet.blg
 This example shows how to get performance counter data from a remote computer and save the data in a file on the remote computer.
 
 ### Example 4: Re-log existing data
+
 ```
 The first command uses the **Import-Counter** cmdlet to import performance counter data from the DiskSpace.blg log. It saves the data in the $All variable. This file contains samples of the "LogicalDisk\% Free Space" counter on more than 200 remote computers in the enterprise.
 PS C:\> $All = Import-Counter DiskSpace.blg
@@ -83,6 +87,7 @@ This example shows how to use the Import-Counter and **Export-Counter** cmdlets 
 ## PARAMETERS
 
 ### -Circular
+
 Indicates that the output file is a circular log with first in, first out (FIFO) format.
 When you include this parameter, the *MaxSize* parameter is required.
 
@@ -99,6 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -FileFormat
+
 Specifies the output format of the output log file.
 
 The acceptable values for this parameter are:
@@ -122,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Overwrites and replaces an existing file if one exists in the location specified by the *Path* parameter.
 
 ```yaml
@@ -137,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies, as an array, the counter data to export.
 Enter a variable that contains the data or a command that gets the data, such as the **Get-Counter** or **Import-Counter** cmdlet.
 
@@ -153,6 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxSize
+
 Specifies the maximum size of the output file.
 
 If the *Circular* parameter is specified, then when the log file reaches the specified maximum size, the oldest entries are deleted as newer ones are added.
@@ -171,6 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path and file name of the output file.
 Enter a relative or absolute path on the local computer, or a Uniform Naming Convention (UNC) path to a remote computer, such as \\\\Computer\Share\file.blg.
 This parameter is required.
@@ -190,11 +200,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet
+
 You can pipe performance counter data from **Get-Counter** or **Import-Counter** to this cmdlet.
 
 ## OUTPUTS
@@ -202,6 +214,7 @@ You can pipe performance counter data from **Get-Counter** or **Import-Counter**
 ### None
 
 ## NOTES
+
 * The log file generator expects that all input objects have the same counter path and that the objects are arranged in ascending time order.
 
   The counter type and path of the first input object determines the properties recorded in the log file.

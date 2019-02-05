@@ -63,7 +63,7 @@ The **Container** parameter is set to "true" by default.
 This preserves the directory structure.
 
 ```powershell
-Copy-Item "C:\Logfiles" -Destination "C:\Drawings" -Recurse
+Copy-Item "C:\Logfiles\*" -Destination "C:\Drawings" -Recurse
 ```
 
 ### Example 3: Copy the contents of a directory to another directory and create the destination directory if it does not exist

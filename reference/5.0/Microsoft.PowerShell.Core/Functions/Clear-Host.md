@@ -7,7 +7,6 @@ online version:  https://go.microsoft.com/fwlink/?linkid=834941
 external help file:  System.Management.Automation.dll-help.xml
 title:  Clear-Host
 ---
-
 # Clear-Host
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Clear-Host
 ```
 
 ## DESCRIPTION
+
 The Clear-Host function removes all text from the current display, including commands and output that might have accumulated.
 When complete, it displays the command prompt.
 You can use the function name or its alias, CLS.
@@ -33,6 +33,7 @@ Because the behavior of the Clear-Host function is determined by the host progra
 ## EXAMPLES
 
 ### Example 1
+
 ```
 cls
 
@@ -80,14 +81,17 @@ This command uses the CLS alias of Clear-Host to clear the current display.
 ## INPUTS
 
 ### None
+
 You cannot pipe input to Clear-Host.
 
 ## OUTPUTS
 
 ### None
+
 Clear-Host does not generate any output
 
 ## NOTES
+
 Clear-Host is a simple function, not an advanced function.
 As such, you cannot use common parameters, such as -Debug, in a Clear-Host command.
 

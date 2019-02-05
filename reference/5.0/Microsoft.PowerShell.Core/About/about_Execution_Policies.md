@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Execution_Policies
 ---
-
 # About Execution Policies
 
 ## Short Description
-
 Describes the PowerShell execution policies and explains how to manage them.
 
 ## Long Description

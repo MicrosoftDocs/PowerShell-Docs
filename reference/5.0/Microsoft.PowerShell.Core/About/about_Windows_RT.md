@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Windows_RT
 ---
-
 # About Windows RT
 
 ## SHORT DESCRIPTION
-
 Explains limitations of  Windows PowerShell® 4.0 on Windows RT 8.1.
 
 ## LONG DESCRIPTION

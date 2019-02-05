@@ -3,8 +3,8 @@ ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
 title:  Credentials Options in Configuration Data
 ---
-
 # Credentials Options in Configuration Data
+
 >Applies To: Windows PowerShell 5.0
 
 ## Plain Text Passwords and Domain Users
@@ -13,153 +13,16 @@ DSC configurations containing a credential without encryption
 will generate an error message about plain text passwords.
 Also, DSC will generate a warning when using domain credentials.
 To suppress these error and warning messages use the DSC configuration data keywords:
-* **PsDscAllowPlainTextPassword**
-* **PsDscAllowDomainUser**
+
+- **PsDscAllowPlainTextPassword**
+- **PsDscAllowDomainUser**
 
 > [!NOTE]
-> Storing/transmitting plaintext passwords unencrypted is generally not secure. Securing credentials by using the techniques covered later in this topic is recommended.
-> The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.
+> Storing/transmitting plaintext passwords unencrypted is generally not secure. Securing credentials
+> by using the techniques covered later in this topic is recommended.
+> The Azure Automation DSC service allows you to centrally manage credentials
+> to be compiled in configurations and stored securely.
 > For information, see: [Compiling DSC Configurations / Credential Assets](/azure/automation/automation-dsc-compile#credential-assets)
-
-The following is an example of passing plain text credentials:
-
-```powershell
-#Prompt user for their credentials
-#credentials will be unencrypted in the MOF
-$promptedCreds = get-credential -Message "Please enter your credentials to generate a DSC MOF:"
-
-# Store passwords in plaintext, in the document itself
-# will also be stored in plaintext in the mof
-$password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
-$username = "User1"
-[PSCredential] $credential = New-Object System.Management.Automation.PSCredential($username,$password)
-
-# DSC requires explicit confirmation before storing passwords insecurely
-$ConfigurationData = @{
-    AllNodes = @(
-            @{
-                # The "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-                NodeName="*"
-                PSDscAllowPlainTextPassword = $true
-            },
-            #however, each node still needs to be explicitly defined for "*" to have meaning
-            @{
-                NodeName = "TestMachine1"
-            },
-            #we can also use a property to define node-specific passwords, although this is no more secure
-            @{
-                NodeName = "TestMachine2";
-                UserName = "User2"
-                LocalPassword = "ThisIsYetAnotherPlaintextPassword"
-            }
-        )
-}
-
-configuration unencryptedPasswordDemo
-{
-    Node "TestMachine1"
-    {
-        # We use the plaintext password to generate a new account
-        User User1
-        {
-            UserName = $username
-            Password = $credential
-            Description = "local account"
-            Ensure = "Present"
-            Disabled = $false
-            PasswordNeverExpires = $true
-            PasswordChangeRequired = $false
-        }
-        # We use the prompted password to add this account to the local admins group
-        Group addToAdmin
-        {
-            # Ensure the user exists before we add the user to a group
-            DependsOn = "[User]User1"
-            Credential = $promptedCreds
-            GroupName = "Administrators"
-            Ensure = "Present"
-            MembersToInclude = "User1"
-        }
-    }
-
-    Node "TestMachine2"
-    {
-        # Now we'll use a node-specific password to this machine
-        $password = $Node.LocalPassword | ConvertTo-SecureString -asPlainText -Force
-        $username = $node.UserName
-        [PSCredential] $nodeCred = New-Object System.Management.Automation.PSCredential($username,$password)
-
-        User User2
-        {
-            UserName = $username
-            Password = $nodeCred
-            Description = "local account"
-            Ensure = "Present"
-            Disabled = $false
-            PasswordNeverExpires = $true
-            PasswordChangeRequired = $false
-        }
-
-        Group addToAdmin
-        {
-            Credential = $promptedCreds
-            GroupName = "Administrators"
-            DependsOn = "[User]User2"
-            Ensure = "Present"
-            MembersToInclude = "User2"
-        }
-    }
-}
-
-# We declared the ConfigurationData in a local variable, but we need to pass it
-# in to our configuration function
-# We need to invoke the configuration function we created to generate a MOF
-unencryptedPasswordDemo -ConfigurationData $ConfigurationData
-
-# We need to pass the MOF to the machines we named.
-#-wait: doesn't use jobs so we get blocked at the prompt until the configuration is done
-#-verbose: so we can see what's going on and catch any errors
-#-force: for testing purposes, I run start-dscconfiguration frequently + want to make sure i'm
-#        not blocked by previous configurations that are still running
-Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
-```
-
-This is an excerpt from the ".mof" file generated by the configuration for "TestMachine1". The
-`System.Security.SecureString` used in the configuration was converted to plain text and stored in
-the ".mof" file as a `MSF_Credential`. A `SecureString` is encrypted with the current users
-profile. This works well with all forms of PowerShell remote management. A ".mof" file is designed
-to be a stand alone configuration mechanism. Beginning in PowerShell 5.0, ".mof" files on a Node
-are encrypted at rest, but not in transit to the Node. This means that passwords in a ".mof" file
-are exposed as clear text when you apply them to a Node. To encrypt credentials, you need to use a
-**Pull Server**. For more information, see [Securing MOF files with Certificates](../pull-server/secureMOF.md).
-
-```syntax
-instance of MSFT_Credential as $MSFT_Credential1ref
-{
-Password = "ThisIsYetAnotherPlaintextPassword";
- UserName = "User2";
-
-};
-
-instance of MSFT_UserResource as $MSFT_UserResource1ref
-{
-ResourceID = "[User]User2";
- Description = "local account";
- UserName = "User2";
- Ensure = "Present";
- Password = $MSFT_Credential1ref;
- Disabled = False;
- SourceInfo = "::66::9::User";
- PasswordNeverExpires = True;
- ModuleName = "PsDesiredStateConfiguration";
- PasswordChangeRequired = False;
-
-ModuleVersion = "1.0";
-
- ConfigurationName = "unencryptedPasswordDemo";
-
-};
-```
 
 ## Handling Credentials in DSC
 
@@ -175,7 +38,8 @@ Newer resources and custom resources can use this automatic property
 instead of creating their own property for credentials.
 
 > [!NOTE]
-> The design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.
+> The design of some resources are to use multiple credentials for a specific reason, and they will
+> have their own credential properties.
 
 To find the available credential properties on a resource
 use either `Get-DscResource -Name ResourceName -Syntax`
@@ -249,31 +113,41 @@ DomainCredentialExample -DomainCredential $cred
 This code generates both an error and warning message:
 
 ```
-ConvertTo-MOFInstance : System.InvalidOperationException error processing
-property 'Credential' OF TYPE 'Group': Converting and storing encrypted
-passwords as plain text is not recommended. For more information on securing
-credentials in MOF file, please refer to MSDN blog:
-http://go.microsoft.com/fwlink/?LinkId=393729
+ConvertTo-MOFInstance : System.InvalidOperationException error processing property 'Credential' OF
+TYPE 'Group': Converting and storing encrypted passwords as plain text is not recommended.
+For more information on securing credentials in MOF file, please refer to MSDN blog:
+https://go.microsoft.com/fwlink/?LinkId=393729
 
 At line:11 char:9
 +   Group
-At line:297 char:16
+At line:341 char:16
 +     $aliasId = ConvertTo-MOFInstance $keywordName $canonicalizedValue
 +                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidOperation: (:) [Write-Error], InvalidOperationException
     + FullyQualifiedErrorId : FailToProcessProperty,ConvertTo-MOFInstance
+WARNING: It is not recommended to use domain credential for node 'localhost'. In order to suppress
+the warning, you can add a property named 'PSDscAllowDomainUser' with a value of $true to your DSC
+configuration data for node 'localhost'.
 
-WARNING: It is not recommended to use domain credential for node 'localhost'.
-In order to suppress the warning, you can add a property named
-'PSDscAllowDomainUser' with a value of $true to your DSC configuration data
-for node 'localhost'.
+Compilation errors occurred while processing configuration
+'DomainCredentialExample'. Please review the errors reported in error stream and modify your
+configuration code appropriately.
+At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\PSDesiredStateConfiguration.psm1:3917 char:5
++     throw $ErrorRecord
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (DomainCredentialExample:String) [], InvalidOperationException
+    + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
 
 This example has two issues:
+
 1. An error explains that plain text passwords are not recommended
 2. A warning advises against using a domain credential
 
-## PsDscAllowPlainTextPassword
+The flags **PSDSCAllowPlainTextPassword** and **PSDSCAllowDomainUser** suppress the error and warning
+informing the user of the risk involved.
+
+## PSDSCAllowPlainTextPassword
 
 The first error message has a URL with documentation.
 This link explains how to encrypt passwords
@@ -286,12 +160,12 @@ the resource requires the `PsDscAllowPlainTextPassword` keyword in the configura
 as follows:
 
 ```powershell
+$password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
+$username = "contoso\Administrator"
+[PSCredential] $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+
 Configuration DomainCredentialExample
 {
-    param
-    (
-        [PSCredential] $DomainCredential
-    )
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     node localhost
@@ -300,7 +174,7 @@ Configuration DomainCredentialExample
         {
             GroupName        = 'ApplicationAdmins'
             MembersToInclude = 'contoso\alice'
-            Credential       = $DomainCredential
+            Credential       = $credential
         }
     }
 }
@@ -314,12 +188,65 @@ $cd = @{
     )
 }
 
-$cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
-DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
+DomainCredentialExample -ConfigurationData $cd
 ```
 
-> [!NOTE]
-> `NodeName` cannot equal asterisk, a specific node name is mandatory.
+### localhost.mof
+
+The **PSDSCAllowPlainTextPassword** flag requires that the user acknowledge the risk of storing
+plain text passwords in a MOF file. In the generated MOF file, even though a **PSCredential** object
+containing a **SecureString** was used, the passwords still appear as plain text. This is the only
+time the credentials are exposed. Gaining access to this MOF file gives anyone access to the
+Administrator account.
+
+```
+/*
+@TargetNode='localhost'
+@GeneratedBy=Administrator
+@GenerationDate=01/31/2019 06:43:13
+@GenerationHost=Server01
+*/
+
+instance of MSFT_Credential as $MSFT_Credential1ref
+{
+Password = "ThisIsAPlaintextPassword";
+ UserName = "Administrator";
+
+};
+
+instance of MSFT_GroupResource as $MSFT_GroupResource1ref
+{
+ResourceID = "[Group]DomainUserToLocalGroup";
+ MembersToInclude = {
+    "contoso\\alice"
+};
+ Credential = $MSFT_Credential1ref;
+ SourceInfo = "::11::9::Group";
+ GroupName = "ApplicationAdmins";
+ ModuleName = "PSDesiredStateConfiguration";
+
+ModuleVersion = "1.0";
+
+ ConfigurationName = "DomainCredentialExample";
+
+};
+```
+
+### Credentials in transit and at rest
+
+- The **PSDscAllowPlainTextPassword** flag allows the compilation of MOF files that contain passwords in clear text.
+  Take precautions when storing MOF files containing clear text passwords.
+- When the MOF file is delivered to a Node in **Push** mode, WinRM encrypts the communication to
+  protect the clear text password unless you override the default with the **AllowUnencrypted** parameter.
+  - Encrypting the MOF with a certificate protects the MOF file at rest before it has been applied to a node.
+- In **Pull** mode, you can configure Windows pull server to use HTTPS to encrypt traffic using the protocol
+  specified in Internet Information Server. For more information, see the articles [Setting up a DSC pull client](../pull-server/pullclient.md)
+  and [Securing MOF files with Certificates](../pull-server/secureMOF.md).
+  - In the [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) service,
+    Pull traffic is always encrypted.
+- On the Node, MOF files are encrypted at rest Beginning in PowerShell 5.0.
+  - In PowerShell 4.0 MOF files are unencrypted at rest unless they are encrypted with a certificate when
+    they pushed or pulled to the Node.
 
 **Microsoft advises to avoid plain text passwords due to the significant security risk.**
 
@@ -332,7 +259,7 @@ that could be used on other servers.
 
 **When using credentials with DSC resources, prefer a local account over a domain account when possible.**
 
-If there is a '\' or '@' in the `Username` property of the credential,
+If there is a '\\' or '\@' in the `Username` property of the credential,
 then DSC will treat it as a domain account.
 There is an exception for "localhost",
 "127.0.0.1", and "::1" in the domain portion of the user name.
@@ -344,16 +271,36 @@ querying an Active Directory domain *requires* a domain account.
 In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:
 
 ```powershell
+$password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
+$username = "contoso\Administrator"
+[PSCredential] $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+
+Configuration DomainCredentialExample
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    node localhost
+    {
+        Group DomainUserToLocalGroup
+        {
+            GroupName        = 'ApplicationAdmins'
+            MembersToInclude = 'contoso\alice'
+            Credential       = $credential
+        }
+    }
+}
+
 $cd = @{
     AllNodes = @(
         @{
             NodeName = 'localhost'
             PSDscAllowDomainUser = $true
-            # PSDscAllowPlainTextPassword = $true
-            CertificateFile = "C:\PublicKeys\server1.cer"
+            PSDscAllowPlainTextPassword = $true
         }
     )
 }
+
+DomainCredentialExample -ConfigurationData $cd
 ```
 
 Now the configuration script will generate the MOF file with no errors or warnings.
