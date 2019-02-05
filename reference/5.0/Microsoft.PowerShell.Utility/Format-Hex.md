@@ -140,10 +140,10 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies an array of literal paths of items. This parameter does not accept wildcard characters. If
-the **LiteralPath** parameter includes escape characters, enclose the path in single quotation
-marks. PowerShell does not interpret any characters in a single quoted string as escape sequences.
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_quoting_rules).
+Specifies the complete path to a file. The value of **LiteralPath** is used exactly as it is typed.
+This parameter does not accept wildcard characters. If the **LiteralPath** parameter includes escape
+characters, enclose the path in single quotation marks. PowerShell does not interpret any characters
+in a single quoted string as escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_quoting_rules).
 
 ```yaml
 Type: String[]
@@ -159,9 +159,8 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to a file. Use a dot, backslash (`.\`) to specify the current location. The
-`Format-Hex` cmdlet returns a hexadecimal representation of the file specified by the **Path**
-parameter.
+Specifies the path to a file. Use a dot (`.`) to specify the current location. If the **Path**
+parameter includes escape characters, enclose the path in single quotation marks.
 
 ```yaml
 Type: String[]
@@ -193,7 +192,7 @@ You can pipe a string to this cmdlet.
 
 This cmdlet returns a **ByteCollection**. This object represents a collection of bytes. It includes
 methods that convert the collection of bytes to a string formatted like each line of output returned
-by **Format-Hex**. If you specify the *Path* or *LiteralPath* parameter, the object also contains
+by `Format-Hex`. If you specify the **Path** or **LiteralPath** parameter, the object also contains
 the path of the file that contains each byte.
 
 ## NOTES

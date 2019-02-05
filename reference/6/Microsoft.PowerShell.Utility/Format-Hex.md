@@ -143,12 +143,11 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies an array of literal paths of items. This parameter does not accept wildcard characters. To
-use wildcard characters, use the **Path** parameter.
-
-If the **LiteralPath** parameter includes escape characters, enclose the path in single quotation
-marks. PowerShell does not interpret any characters in a single quoted string as escape sequences.
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_quoting_rules).
+Specifies the complete path to a file. The value of **LiteralPath** is used exactly as it is typed.
+This parameter does not accept wildcard characters. To specify multiple paths to files, separate the
+paths with a comma. If the **LiteralPath** parameter includes escape characters, enclose the path in
+single quotation marks. PowerShell does not interpret any characters in a single quoted string as
+escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_quoting_rules).
 
 ```yaml
 Type: String[]
@@ -164,10 +163,10 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies an array of paths to files. To specify multiple files, separate the paths with a comma.
-Use a dot, backslash (`.\`) to specify the current location. Use the wildcard character (`*`) to
-specify all the items in the current location. The `Format-Hex` cmdlet returns a hexadecimal
-representation of the items specified by the **Path** parameter.
+Specifies the path to files. Use a dot (`.`) to specify the current location. The wildcard character
+(`*`) is accepted and can be used to specify all the items in a location. If the **Path** parameter
+includes escape characters, enclose the path in single quotation marks. To specify multiple paths to
+files, separate the paths with a comma.
 
 ```yaml
 Type: String[]
@@ -178,7 +177,7 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Raw
@@ -252,7 +251,7 @@ You can pipe a string to this cmdlet.
 
 This cmdlet returns a **ByteCollection**. This object represents a collection of bytes. It includes
 methods that convert the collection of bytes to a string formatted like each line of output returned
-by **Format-Hex**. If you specify the *Path* or *LiteralPath* parameter, the object also contains
+by `Format-Hex`. If you specify the **Path** or **LiteralPath** parameter, the object also contains
 the path of the file that contains each byte.
 
 ## NOTES
