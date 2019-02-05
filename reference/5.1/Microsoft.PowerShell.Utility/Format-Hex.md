@@ -144,7 +144,7 @@ Accept wildcard characters: False
 Specifies the complete path to a file. The value of **LiteralPath** is used exactly as it is typed.
 This parameter does not accept wildcard characters. If the **LiteralPath** parameter includes escape
 characters, enclose the path in single quotation marks. PowerShell does not interpret any characters
-in a single quoted string as escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_quoting_rules).
+in a single quoted string as escape sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: String[]
@@ -221,7 +221,7 @@ the path of the file that contains each byte.
 
 ## RELATED LINKS
 
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_quoting_rules)
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md)
 
 [Format-Custom](Format-Custom.md)
 
