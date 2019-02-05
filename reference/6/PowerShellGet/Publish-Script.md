@@ -84,7 +84,8 @@ Demo-ScriptWorkflow
 PS C:\> Test-ScriptFileInfo -Path "D:\ScriptSharingDemo\Demo-Script.ps1"
 Version    Name                      Author               Description
 -------    ----                      ------               -----------
-1.0        Demo-Script               pattif@microsoft.com my test script file description goes here PS C:\> Publish-Script -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Repository "LocalRepo1"
+1.0        Demo-Script               pattif@microsoft.com my test script file description goes here
+PS C:\> Publish-Script -Path "D:\ScriptSharingDemo\Demo-Script.ps1" -Repository "LocalRepo1"
 PS C:\> Find-Script -Repository "LocalRepo1" -Name "Demo-Script"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
