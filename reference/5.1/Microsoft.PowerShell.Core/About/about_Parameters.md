@@ -101,7 +101,7 @@ parameter attributes.
 
 This setting indicates whether the parameter is mandatory, that is, whether
 all commands that use this cmdlet must include this parameter. When the value
-is **"True"** and the parameter is missing from the command, PowerShell
+is **True** and the parameter is missing from the command, PowerShell
 prompts you for a value for the parameter.
 
 #### Parameter Position
@@ -115,9 +115,8 @@ positional parameter, the parameter can be listed in any position after the
 cmdlet name.
 
 For example, the `Get-ChildItem` cmdlet has Path and Exclude parameters. The
-`Parameter position` setting for `Path` is **"1"**, which means that it is a
-positional parameter. The `Parameter position` setting for `Exclude` is **"0"**,
-which means that it is a named parameter.
+`Parameter position` setting for `Path` is **0**, which means that it is a
+positional parameter. The `Position` setting for `Exclude` is **named**.
 
 This means that `Path` does not require the parameter name, but its parameter
 value must be the first or only unnamed parameter value in the command.
