@@ -55,28 +55,39 @@ $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
 $allErrors = @()
 
 # Go through all the directories in the reference folder
-Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping', 'bread-pscore' | ForEach-Object -Process {
+Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual', 'mapping', 'bread' | ForEach-Object -Process {
     $Version = $_.Name
+    Write-Verbose -Verbose "Version = $Version"
+
     $VersionFolder = $_.FullName
+    Write-Verbose -Verbose "VersionFolder = $VersionFolder"
+
     # For each of the directories, go through each module folder
     Get-ChildItem $VersionFolder -Directory | ForEach-Object -Process {
-        $ModuleName = $_
-        $ModulePath = Join-Path $VersionFolder $_
+        $ModuleName = $_.Name
+        Write-Verbose -Verbose "ModuleName = $ModuleName"
+
+        $ModulePath = Join-Path $VersionFolder $ModuleName
+        Write-Verbose -Verbose "ModulePath = $ModulePath"
 
         $LandingPage = Join-Path $ModulePath "$ModuleName.md"
-        $MamlOutputFolder = Join-Path "$PSScriptRoot\maml" "$Version\$ModuleName"
-        $CabOutputFolder = Join-Path "$PSScriptRoot\updatablehelp" "$Version\$ModuleName"
+        Write-Verbose -Verbose "LandingPage = $LandingPage"
 
-        if(-not (Test-Path $MamlOutputFolder))
-        {
+        $MamlOutputFolder = Join-Path "$PSScriptRoot\maml" "$Version\$ModuleName"
+        Write-Verbose -Verbose "MamlOutputFolder = $MamlOutputFolder"
+
+        $CabOutputFolder = Join-Path "$PSScriptRoot\updatablehelp" "$Version\$ModuleName"
+        Write-Verbose -Verbose "CabOutputFolder = $CabOutputFolder"
+
+        if (-not (Test-Path $MamlOutputFolder)) {
             New-Item $MamlOutputFolder -ItemType Directory -Force > $null
         }
 
         # Process the about topics if any
         $AboutFolder = Join-Path $ModulePath "About"
 
-        if(Test-Path $AboutFolder)
-        {
+        if (Test-Path $AboutFolder) {
+            Write-Verbose -Verbose "AboutFolder = $AboutFolder"
             Get-ChildItem "$aboutfolder/about_*.md" | ForEach-Object {
                 $aboutFileFullName = $_.FullName
                 $aboutFileOutputName = "$($_.BaseName).help.txt"
@@ -104,12 +115,14 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual','mapping', 
                 $cabInfo = New-ExternalHelpCab -CabFilesFolder $MamlOutputFolder -LandingPagePath $LandingPage -OutputFolder $CabOutputFolder
 
                 # Only output the cab fileinfo object
-                if($cabInfo.Count -eq 8){$cabInfo[-1].FullName}
+                if ($cabInfo.Count -eq 8) {$cabInfo[-1].FullName}
             }
-        } catch {
+        }
+        catch {
             $allErrors += $_
         }
     }
+
 }
 
 # If the above block, produced any errors, throw and fail the job
