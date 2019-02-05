@@ -45,11 +45,11 @@ The `Get-Help` cmdlet returns various details about the command, including a
 description, the command syntax, information about the parameters, and
 examples showing how to use the parameters in a command.
 
-You can also use the Parameter parameter of the Get-Help cmdlet to find
-information about a particular parameter. Or, you can use the Parameter
-parameter with the wildcard character ( `*` ) value to find information about all
-parameters of the command. For example, the following command gets information
-about all parameters of the `Get-Member` cmdlet:
+You can also use the Parameter parameter of the `Get-Help` cmdlet to find
+information about a particular parameter. Or, you can use the **Parameter**
+parameter with the wildcard character ( `*` ) value to find information about
+all parameters of the command. For example, the following command gets
+information about all parameters of the `Get-Member` cmdlet:
 
 ```powershell
 Get-Help Get-Member -Parameter *
@@ -60,9 +60,9 @@ Get-Help Get-Member -Parameter *
 Optional parameters have a default value, which is the value that is used or
 assumed when the parameter is not specified in the command.
 
-For example, the default value of the ComputerName parameter of many cmdlets
-is the name of the local computer. As a result, the local computer name is
-used in the command unless the ComputerName parameter is specified.
+For example, the default value of the **ComputerName** parameter of many
+cmdlets is the name of the local computer. As a result, the local computer name
+is used in the command unless the **ComputerName** parameter is specified.
 
 To find the default parameter value, see help topic for the cmdlet. The
 parameter description should include the default value.
@@ -73,9 +73,9 @@ advanced function. For information about setting custom default values, see
 
 ### Parameter attribute table
 
-When you use the `Full`, `Parameter`, or `Online` parameters of the `Get-Help`
-cmdlet, `Get-Help` displays a parameter attribute table with detailed
-information about the parameter.
+When you use the **Full**, **Parameter**, or **Online** parameters of the
+`Get-Help` cmdlet, `Get-Help` displays a parameter attribute table with
+detailed information about the parameter.
 
 This information includes the details you need to know to use the parameter.
 For example, the help topic for the `Get-ChildItem` cmdlet includes the
@@ -115,10 +115,10 @@ positional parameter, the parameter can be listed in any position after the
 cmdlet name.
 
 For example, the `Get-ChildItem` cmdlet has Path and Exclude parameters. The
-`Parameter position` setting for `Path` is **0**, which means that it is a
-positional parameter. The `Position` setting for `Exclude` is **named**.
+`Position` setting for **Path** is **0**, which means that it is a positional
+parameter. The `Position` setting for **Exclude** is **named**.
 
-This means that `Path` does not require the parameter name, but its parameter
+This means that **Path** does not require the parameter name, but its parameter
 value must be the first or only unnamed parameter value in the command.
 However, because the Exclude parameter is a named parameter, you can place it
 in any position in the command.
@@ -140,7 +140,7 @@ parameter name, that parameter must be placed in the order specified by the
 #### Parameter Type
 
 This setting specifies the Microsoft .NET Framework type of the parameter
-value. For example, if the type is Int32, the parameter value must be an
+value. For example, if the type is **Int32**, the parameter value must be an
 integer. If the type is string, the parameter value must be a character
 string. If the string contains spaces, the value must be enclosed in quotation
 marks, or the spaces must be preceded by the escape character ( ` ).
@@ -161,7 +161,7 @@ as the value of the parameter in the command, or save a comma-separated list
 (an array) in a variable, and then specify the variable as the parameter
 value.
 
-For example, the ServiceName parameter of the Get-Service cmdlet accepts
+For example, the ServiceName parameter of the `Get-Service` cmdlet accepts
 multiple values. The following commands are both valid:
 
 ```powershell
@@ -202,8 +202,8 @@ True (by Property Name)  Indicates that you can pipe a value to the
                          name as the parameter.
 ```
 
-For example, you can pipe a value to a Name parameter only when the value has
-a property called **"Name"**.
+For example, you can pipe a value to a **Name** parameter only when the value
+has a property called **Name**.
 
 > [!NOTE]
 > A parameter that accepts pipeline input (`by Value`) will enable use of
