@@ -13,7 +13,7 @@ If you are interested in PowerShell 6 and later, you need to install PowerShell 
 
 Sometimes locating PowerShell console or ISE (Integrated Scripting
 Environment) in Windows can be difficult,
-as it's location moves from one version of Windows to the next.
+as its location moves from one version of Windows to the next.
 
 The following tables should help you find PowerShell in your Windows version.
 All versions listed here are the original version, as released,
