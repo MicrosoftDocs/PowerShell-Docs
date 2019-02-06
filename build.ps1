@@ -37,6 +37,8 @@ function Get-ContentWithoutHeader {
     }
   }
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+
 # Pandoc source URL
 $panDocVersion = "2.0.6"
 $pandocSourceURL = "https://github.com/jgm/pandoc/releases/download/$panDocVersion/pandoc-$panDocVersion-windows.zip"
