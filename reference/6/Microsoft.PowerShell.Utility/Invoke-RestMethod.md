@@ -416,6 +416,8 @@ Indicates the cmdlet should follow relation links.
 
 To set how many times to follow relation links, use the **-MaximumFollowRelLink** parameter.
 
+When using this switch, cmdlet returns collection of pages, not a concatenated collection of pages contents.
+
 This feature was added in PowerShell 6.0.0.
 
 ```yaml
