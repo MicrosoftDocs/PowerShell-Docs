@@ -177,8 +177,8 @@ $PSSessionOption = New-PSSessionOption -OpenTimeOut 120000
 ```
 
 When the `$PSSessionOption` preference variable occurs in the session, it establishes default values
-for options in the sessions that are created by using the **New-PSSession**, **Enter-PSSession**,
-and Invoke-Command cmdlets.
+for options in the sessions that are created by using the `New-PSSession`, `Enter-PSSession`,
+and `Invoke-Command` cmdlets.
 
 To make the `$PSSessionOption` variable available in all sessions, add it to your PowerShell session
 and to your PowerShell profile.
@@ -197,7 +197,7 @@ $skipCN = New-PSSessionOption -SkipCNCheck
 New-PSSession -ComputerName 171.09.21.207 -UseSSL -Credential Domain01\User01 -SessionOption $SkipCN
 ```
 
-The first command uses the **New-PSSessionOption** cmdlet to create a session option object that has
+The first command uses the `New-PSSessionOption` cmdlet to create a session option object that has
 the **SkipCNCheck** property. The command saves the resulting session object in the `$skipCN`
 variable.
 
@@ -210,7 +210,7 @@ does not match any of the common names in the certificate that is used for Secur
 
 ### Example 7: Make arguments available to a remote session
 
-This example shows how to use the **ApplicationArguments** parameter of the **New-PSSessionOption**
+This example shows how to use the **ApplicationArguments** parameter of the `New-PSSessionOption`
 cmdlet to make additional data available to the remote session.
 
 ```powershell
@@ -714,7 +714,7 @@ Valid values include:
 
 - A culture name in `<languagecode2>-<country/regioncode2>` format, such as `ja-JP`
 - A variable that contains a **CultureInfo** object
-- A command that gets a **CultureInfo** object, such as **Get-Culture**
+- A command that gets a **CultureInfo** object, such as `Get-Culture`
 
 The default value is `$null`, and the UI culture that is set in the operating system when the
 session is created is used in the session.

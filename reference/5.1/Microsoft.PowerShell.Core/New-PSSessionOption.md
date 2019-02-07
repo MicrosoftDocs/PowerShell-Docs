@@ -28,12 +28,12 @@ New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachinePr
 
 ## DESCRIPTION
 
-The **New-PSSessionOption** cmdlet creates an object that contains advanced options for a
+The `New-PSSessionOption` cmdlet creates an object that contains advanced options for a
 user-managed session (**PSSession**). You can use the object as the value of the **SessionOption**
-parameter of cmdlets that create a **PSSession**, such as New-PSSession, Enter-PSSession, and
-Invoke-Command.
+parameter of cmdlets that create a **PSSession**, such as `New-PSSession`, `Enter-PSSession`, and
+`Invoke-Command`.
 
-Without parameters, **New-PSSessionOption** generates an object that contains the default values for
+Without parameters, `New-PSSessionOption` generates an object that contains the default values for
 all of the options. Because all of the properties can be edited, you can use the resulting object as
 a template, and create standard option objects for your enterprise.
 
@@ -178,8 +178,8 @@ $PSSessionOption = New-PSSessionOption -OpenTimeOut 120000
 ```
 
 When the `$PSSessionOption` preference variable occurs in the session, it establishes default values
-for options in the sessions that are created by using the **New-PSSession**, **Enter-PSSession**,
-and Invoke-Command cmdlets.
+for options in the sessions that are created by using the `New-PSSession`, `Enter-PSSession`,
+and `Invoke-Command` cmdlets.
 
 To make the `$PSSessionOption` variable available in all sessions, add it to your PowerShell session
 and to your PowerShell profile.
@@ -198,7 +198,7 @@ $skipCN = New-PSSessionOption -SkipCNCheck
 New-PSSession -ComputerName 171.09.21.207 -UseSSL -Credential Domain01\User01 -SessionOption $SkipCN
 ```
 
-The first command uses the **New-PSSessionOption** cmdlet to create a session option object that has
+The first command uses the `New-PSSessionOption` cmdlet to create a session option object that has
 the **SkipCNCheck** property. The command saves the resulting session object in the `$skipCN`
 variable.
 
@@ -211,7 +211,7 @@ does not match any of the common names in the certificate that is used for Secur
 
 ### Example 7: Make arguments available to a remote session
 
-This example shows how to use the **ApplicationArguments** parameter of the **New-PSSessionOption**
+This example shows how to use the **ApplicationArguments** parameter of the `New-PSSessionOption`
 cmdlet to make additional data available to the remote session.
 
 ```powershell
@@ -734,7 +734,7 @@ Valid values include:
 
 - A culture name in `<languagecode2>-<country/regioncode2>` format, such as `ja-JP`
 - A variable that contains a **CultureInfo** object
-- A command that gets a **CultureInfo** object, such as **Get-Culture**
+- A command that gets a **CultureInfo** object, such as `Get-Culture`
 
 The default value is `$null`, and the UI culture that is set in the operating system when the
 session is created is used in the session.
