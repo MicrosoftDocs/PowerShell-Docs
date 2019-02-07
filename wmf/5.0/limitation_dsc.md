@@ -48,9 +48,9 @@ If LCM is in DebugMode, pressing CTRL+C to stop the processing of Get-DscConfigu
 **Resolution:** Don’t press CTRL+C while debugging Get-DscConfiguration cmdlet.
 
 
-Stop-DscConfiguration may hang in DebugMode
+Stop-DscConfiguration may not respond in DebugMode
 ------------------------------------------------------------------------------------------------------------------------
-If LCM is in DebugMode, Stop-DscConfiguration may hang while trying to stop an operation started by Get-DscConfiguration
+If LCM is in DebugMode, Stop-DscConfiguration may not respond while trying to stop an operation started by Get-DscConfiguration
 
 **Resolution:** Finish the debugging of the operation started by Get-DscConfiguration as outlined in section ‘[Debugging DSC resources](https://msdn.microsoft.com/powershell/dsc/debugresource)’.
 

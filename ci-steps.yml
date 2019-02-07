@@ -1,0 +1,42 @@
+steps:
+- powershell: |
+    Get-ChildItem Env:\
+  displayName: Capture environment
+
+#- powershell: |
+#    if ((Get-Command pwsh -CommandType Application -ErrorAction Ignore) -eq $null)
+#    {
+#      Write-Verbose -Verbose "Installing pwsh"
+#      $destPath = "${env:BUILD_ARTIFACTSTAGINGDIRECTORY}/install-powershell.ps1"
+#      Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/PowerShell/PowerShell/master/tools/install-powershell.ps1' -OutFile $destPath
+#      Unblock-File $destPath
+#      & $destPath -UseMSI -Quiet
+#    }
+#  displayName: Install pwsh if not available
+
+- powershell: |
+    Install-Module -Name platyPS -Repository PSGallery -Force
+  displayName: Install tools
+
+- powershell: |
+    $(Build.SourcesDirectory)\build.ps1
+  displayName: Build
+
+- powershell: |
+    Compress-Archive -Path "$(Build.SourcesDirectory)\updatablehelp\*" -DestinationPath "$(Build.ArtifactStagingDirectory)\updatablehelp-$(Build.BuildId).zip"
+    Write-Host "##vso[artifact.upload containerfolder=artifacts;artifactname=artifacts]$(Build.ArtifactStagingDirectory)\updatablehelp-$(Build.BuildId).zip"
+  displayName: Compress and upload updatable help content
+
+  # We run tests on Windows PowerShell. Changing to PowerShell core would need changes to the tests
+- powershell: |
+    Install-Module -Name Pester -Repository PSGallery -Force -SkipPublisherCheck
+    Import-Module "$(Build.SourcesDirectory)/tests/PowerShellDocsTests.psm1" -Force
+    Invoke-Test
+  displayName: Test
+
+# Publish Test Results to Azure Pipelines/TFS
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**/TestResults.xml'
+    searchFolder: '$(Build.SourcesDirectory)'
