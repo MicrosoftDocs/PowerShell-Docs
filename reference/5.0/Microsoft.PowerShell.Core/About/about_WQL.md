@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_WQL
 ---
-
 # About WQL
 
 ## SHORT DESCRIPTION
-
 Describes WMI Query Language (WQL), which can be used to get WMI objects in
 Windows PowerShell.
 

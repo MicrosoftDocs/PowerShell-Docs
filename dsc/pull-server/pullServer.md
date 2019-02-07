@@ -123,6 +123,7 @@ in a configuration that sets up the web service.
             [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
         )
 
+        Import-DSCResource -ModuleName PSDesiredStateConfiguration
         Import-DSCResource -ModuleName xPSDesiredStateConfiguration
 
         Node $NodeName
@@ -146,6 +147,7 @@ in a configuration that sets up the web service.
                 DependsOn               = "[WindowsFeature]DSCServiceFeature"
                 RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"
                 AcceptSelfSignedCertificates = $true
+                UseSecurityBestPractices     = $true
                 Enable32BitAppOnWin64   = $false
             }
 

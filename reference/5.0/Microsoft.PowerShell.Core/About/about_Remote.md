@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote
 ---
-
 # About Remote
 
 ## SHORT DESCRIPTION
-
 Describes how to run remote commands in Windows PowerShell.
 
 ## LONG DESCRIPTION

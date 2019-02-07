@@ -123,7 +123,7 @@ For example, consider the following role capability entry:
 ```
 
 This role capability allows users to run any PowerShell cmdlet with the noun "Process" from the Microsoft.PowerShell.Management module.
-Users may need to access cmdlets like `Get-Process` to understand what applications are running on the system and `Stop-Process` to kill any hung applications.
+Users may need to access cmdlets like `Get-Process` to understand what applications are running on the system and `Stop-Process` to kill any applications that are not responding.
 However, this entry also allows `Start-Process`, which can be used to start up an arbitrary program with full administrator permissions.
 The program doesn't need to be installed locally on the system, so an adversary could simply start a program on a file share that gives the connecting user local admin privileges, runs malware, and more.'
 

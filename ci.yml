@@ -1,0 +1,52 @@
+name: PR-$(System.PullRequest.PullRequestNumber)-$(Date:yyyyMMdd)$(Rev:.rr)
+trigger:
+  branches:
+    include:
+    - live
+    - staging
+  paths:
+    include:
+    - reference/**/*
+    - build.ps1
+    - ci.yml
+    - ci-steps.yml
+    - .openpublishing.build.ps1
+    - .openpublishing.publish.config.json
+    - .openpublishing.redirection.json
+    - tests/**/*
+    - '**/docfx.json'
+    - '**/TOC.yml'
+    - '**/toc.yml'
+    - '**/*.md'
+
+pr:
+  branches:
+    include:
+    - staging
+    - live
+  paths:
+    include:
+    - reference/**/*
+    - build.ps1
+    - ci.yml
+    - ci-steps.yml
+    - .openpublishing.build.ps1
+    - .openpublishing.publish.config.json
+    - .openpublishing.redirection.json
+    - tests/**/*
+    - '**/docfx.json'
+    - '**/TOC.yml'
+    - '**/toc.yml'
+    - '**/*.md'
+
+resources:
+- repo: self
+  clean: true
+
+jobs:
+- job: build_and_test
+  displayName: Build And Test
+  pool: Hosted VS2017
+
+  steps:
+    - template: ci-steps.yml

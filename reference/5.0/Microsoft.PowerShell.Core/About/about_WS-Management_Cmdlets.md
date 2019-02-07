@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_WS Management_Cmdlets
 ---
-
 # About WS-Management Cmdlets
 
 ## SHORT DESCRIPTION
-
 Provides an overview of Web Services for Management (WS-Management) as
 background for using the WS-Management cmdlets in Windows PowerShell.
 
