@@ -101,7 +101,7 @@ some data might be truncated.
 
 This example shows how to use the `Out-File` cmdlet when you are not in a **FileSystem** provider
 drive. Use the `Get-PSProvider` cmdlet to view the providers on your local computer. For more
-information, see [about_Providers](../Microsoft.Powershell.Core/About/about_Providers).
+information, see [about_Providers](../Microsoft.Powershell.Core/About/about_Providers.md).
 
 ```
 PS> Set-Location -Path Alias:
@@ -303,8 +303,8 @@ Accept wildcard characters: False
 ### -Width
 
 Specifies the number of characters in each line of output. Any additional characters are truncated,
-not wrapped. If you omit this parameter, the width is determined by the characteristics of the host.
-The default for the Windows PowerShell console is 80 characters.
+not wrapped. If this parameter is not used, the width is determined by the characteristics of the
+host. The default for the PowerShell console is 80 characters.
 
 ```yaml
 Type: Int
@@ -350,7 +350,7 @@ in a variable and use the **InputObject** parameter to pass data to the `Out-Fil
 
 ## RELATED LINKS
 
-[about_Providers](../Microsoft.Powershell.Core/About/about_Providers)
+[about_Providers](../Microsoft.Powershell.Core/About/about_Providers.md)
 
 [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md)
 

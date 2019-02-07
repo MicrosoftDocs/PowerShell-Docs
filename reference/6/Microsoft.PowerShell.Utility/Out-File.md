@@ -102,7 +102,7 @@ some data might be truncated.
 
 This example shows how to use the `Out-File` cmdlet when you are not in a **FileSystem** provider
 drive. Use the `Get-PSProvider` cmdlet to view the providers on your local computer. For more
-information, see [about_Providers](../Microsoft.Powershell.Core/About/about_Providers).
+information, see [about_Providers](../Microsoft.Powershell.Core/About/about_Providers.md).
 
 ```
 PS> Set-Location -Path Alias:
@@ -370,7 +370,7 @@ in a variable and use the **InputObject** parameter to pass data to the `Out-Fil
 
 ## RELATED LINKS
 
-[about_Providers](../Microsoft.Powershell.Core/About/about_Providers)
+[about_Providers](../Microsoft.Powershell.Core/About/about_Providers.md)
 
 [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md)
 
