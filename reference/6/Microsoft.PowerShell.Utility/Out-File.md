@@ -33,7 +33,7 @@ Out-File [[-Encoding] <Encoding>] -LiteralPath <string> [-Append] [-Force] [-NoC
 ## DESCRIPTION
 
 The `Out-File` cmdlet sends output to a file. When you need to specify parameters for the output use
-`Out-File` rather than the redirection operator (`\>`).
+`Out-File` rather than the redirection operator (`>`).
 
 ## EXAMPLES
 
