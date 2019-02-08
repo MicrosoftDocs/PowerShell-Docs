@@ -58,7 +58,7 @@ You can also used Kerberos unconstrained delegation to make the second hop. Howe
 
 ## Kerberos constrained delegation
 
-You can use legacy constrained delegation (not resource-based) to make the second hop.
+You can use legacy constrained delegation (not resource-based) to make the second hop, by configuring Kerberos Constrained delegation, with option “Use any authentication protocol” to allow Protocol Transition.
 
 >**Note:** Active Directory accounts that have the **Account is sensitive and cannot be delegated** property set cannot be delegated. For more information, see
 >[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)
