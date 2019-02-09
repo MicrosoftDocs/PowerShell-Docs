@@ -60,10 +60,10 @@ you are searching files of Unicode text.
 
 ## EXAMPLES
 
+### Example 1: Find a case-sensitive match
+
 This command performs a case-sensitive match of the text that was sent down the pipeline to the
 `Select-String` cmdlet.
-
-### Example 1: Find a case-sensitive match
 
 ```powershell
 'Hello', 'HELLO' | Select-String -Pattern 'HELLO' -CaseSensitive -SimpleMatch
