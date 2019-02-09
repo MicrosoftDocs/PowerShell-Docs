@@ -655,7 +655,7 @@ To find the properties of a **MatchInfo** object, type the following command:
 
 [about_Functions](../Microsoft.PowerShell.Core/About/about_Functions.md)
 
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md)
 
 [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md)
 
