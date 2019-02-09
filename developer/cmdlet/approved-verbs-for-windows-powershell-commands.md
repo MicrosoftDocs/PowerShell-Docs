@@ -8,7 +8,7 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords:
   - "action names [PowerShell SDK]"
-  - "verb names [PowerShell SDK]"f
+  - "verb names [PowerShell SDK]"
   - "cmdlets [PowerShell SDK], verb names"
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
