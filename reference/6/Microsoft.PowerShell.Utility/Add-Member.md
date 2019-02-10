@@ -129,7 +129,7 @@ The first command creates a string and saves it in the $A variable.
 
 The second command adds the Padboth script method to the object in the $A variable.
 The *Value* parameter defines the new script method.
-It uses the PadRight and PadLeft methods of a string to add one space the left and one space to the right of the string.
+It uses the PadRight and PadLeft methods of a string to add one space to the left and one space to the right of the string.
 
 The *Value* parameter also uses the $This automatic variable, which represents the current object.
 The $This variable is valid only in script blocks that define new properties and methods.
