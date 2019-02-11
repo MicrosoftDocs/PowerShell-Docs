@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821648
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Undo-Transaction
 ---
-
 # Undo-Transaction
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Undo-Transaction [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Undo-Transaction** cmdlet rolls back the active transaction.
 When you roll back a transaction, the changes that were made by the commands in the transaction are discarded and the data is restored to its original form.
 
@@ -34,6 +34,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Roll back the current transaction
+
 ```
 PS C:\> Undo-Transaction
 ```
@@ -41,6 +42,7 @@ PS C:\> Undo-Transaction
 This command rolls back the current, active, transaction.
 
 ### Example 2: Start and roll back a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\Software> Start-Transaction
@@ -52,6 +54,7 @@ This example starts a transaction and then rolls it back.
 As a result, no changes are made to the registry.
 
 ### Example 3: Roll back a transaction for all subscribers
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\Software> Start-Transaction
@@ -106,6 +109,7 @@ The results show that the transaction is rolled back, and that the subscriber co
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -121,6 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -137,19 +142,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES
+
 * You cannot roll back a transaction that has been committed.
 
   You cannot roll back any transaction other than the active transaction.

@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821532
 external help file:  Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 title:  Start-Transcript
 ---
-
 # Start-Transcript
 
 ## SYNOPSIS
@@ -16,24 +15,28 @@ Creates a record of all or part of a Windows PowerShell session to a text file.
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```powershell
 Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```powershell
 Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### ByOutputDirectory
+
 ```powershell
 Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The `Start-Transcript` cmdlet creates a record of all or part of a Windows PowerShell session to a text file.
 The transcript includes all command that the user types and all output that appears on the console.
 
@@ -46,6 +49,7 @@ Additionally in Windows PowerShell 5.0, the `Start-Transcript` cmdlet works in W
 ## EXAMPLES
 
 ### Example 1: Start a transcript file with default settings
+
 ```powershell
 Start-Transcript
 ```
@@ -53,6 +57,7 @@ Start-Transcript
 This command starts a transcript in the default file location.
 
 ### Example 2: Start a transcript file at a specific location
+
 ```powershell
 Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 ```
@@ -64,6 +69,7 @@ If the Transcript0.txt file already exists, the command fails.
 ## PARAMETERS
 
 ### -Append
+
 Indicates that this cmdlet adds the new transcript to the end of an existing file.
 Use the **Path** parameter to specify the file.
 
@@ -80,6 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -95,6 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Allows the cmdlet to append the transcript to an existing read-only file.
 When used on a read-only file, the cmdlet changes the file permission to read-write.
 The cmdlet cannot override security restrictions when this parameter is used.
@@ -112,6 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeInvocationHeader
+
 Indicates that this cmdlet logs the time stamp when commands are run.
 
 ```yaml
@@ -127,6 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies a location to the transcript file.
 Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -146,6 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
+
 Indicates that this cmdlet will not overwrite of an existing file.
 By default, if a transcript file exists in the specified path, `Start-Transcript` overwrites the file without warning.
 
@@ -162,6 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputDirectory
+
 Specifies a specific path and folder in which to save a transcript.
 Windows PowerShell automatically assigns the transcript name.
 
@@ -178,6 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies a location to the transcript file.
 Enter a path to a .txt file.
 Wildcards are not permitted.
@@ -200,6 +213,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -216,19 +230,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
+
 This cmdlet returns a string that contains a confirmation message and the path to the output file.
 
 ## NOTES
+
 * To stop a transcript, use the `Stop-Transcript` cmdlet.
 
   To record an entire session, add the `Start-Transcript` command to your profile.

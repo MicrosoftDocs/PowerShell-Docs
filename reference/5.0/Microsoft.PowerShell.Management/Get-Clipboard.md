@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=526219
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-Clipboard
 ---
-
 # Get-Clipboard
 
 ## SYNOPSIS
@@ -20,11 +19,13 @@ Get-Clipboard [-Format <ClipboardFormat>] [-TextFormatType <TextDataFormat>] [-R
 ```
 
 ## DESCRIPTION
+
 The **Get-Clipboard** cmdlet gets the current Windows clipboard entry.
 
 ## EXAMPLES
 
 ### Example 1: Get the content of the clipboard and display it to the command-line
+
 ```
 PS C:\> Get-Clipboard
 This is a test string.
@@ -33,6 +34,7 @@ This is a test string.
 This command displays the contents of the clipboard to the command-line.
 
 ### Example 2: Get the content of the clipboard and display it to the command-line
+
 ```
 PS C:\> Get-Clipboard
 https://en.wikipedia.org/wiki/PowerShell
@@ -43,6 +45,7 @@ This command displays the link, as a URL, of the image that is stored in the cli
 ## PARAMETERS
 
 ### -Format
+
 Specifies the type, or format, of the clipboard.
 The acceptable values for this parameter are:
 
@@ -65,6 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -Raw
+
 Indicates that this cmdlet ignores newline characters and gets the entire contents of the clipboard.
 
 ```yaml
@@ -80,6 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -TextFormatType
+
 Specifies the text data format type of the clipboard.
 The acceptable values for this parameter are:
 
@@ -103,6 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
