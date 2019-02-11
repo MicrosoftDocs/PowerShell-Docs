@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821593
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-Service
 ---
-
 # Get-Service
 
 ## SYNOPSIS
@@ -16,24 +15,28 @@ Gets the services on a local or remote computer.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices]
  [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### DisplayName
+
 ```
 Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] -DisplayName <String[]>
  [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>]
  [-Exclude <String[]>] [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Service** cmdlet gets objects that represent the services on a local computer or on a remote computer, including running and stopped services.
 
 You can direct this cmdlet to get only particular services by specifying the service name or display name of the services, or you can pipe service objects to this cmdlet.
@@ -41,6 +44,7 @@ You can direct this cmdlet to get only particular services by specifying the ser
 ## EXAMPLES
 
 ### Example 1: Get all services on the computer
+
 ```
 PS C:\> Get-Service
 ```
@@ -50,6 +54,7 @@ It behaves as though you typed `Get-Service *`.
 The default display shows the status, service name, and display name of each service.
 
 ### Example 2: Get services that begin with a search string
+
 ```
 PS C:\> Get-Service "wmi*"
 ```
@@ -57,6 +62,7 @@ PS C:\> Get-Service "wmi*"
 This command retrieves services with service names that begin with WMI (the acronym for Windows Management Instrumentation).
 
 ### Example 3: Display services that include a search string
+
 ```
 PS C:\> Get-Service -Displayname "*network*"
 ```
@@ -65,6 +71,7 @@ This command displays services with a display name that includes the word networ
 Searching the display name finds network-related services even when the service name does not include "Net", such as xmlprov, the Network Provisioning Service.
 
 ### Example 4: Get services that begin with a search string and an exclusion
+
 ```
 PS C:\> Get-Service -Name "win*" -Exclude "WinRM"
 ```
@@ -72,6 +79,7 @@ PS C:\> Get-Service -Name "win*" -Exclude "WinRM"
 These commands get only the services with service names that begin with win, except for the WinRM service.
 
 ### Example 5: Display services that are currently active
+
 ```
 PS C:\> Get-Service | Where-Object {$_.Status -eq "Running"}
 ```
@@ -84,6 +92,7 @@ Status is only one property of service objects.
 To see all of the properties, type `Get-Service | Get-Member`.
 
 ### Example 6: Get the services on a remote computer
+
 ```
 PS C:\> Get-Service -ComputerName "Server02"
 ```
@@ -93,6 +102,7 @@ This command gets the services on the Server02 remote computer.
 Because the *ComputerName* parameter of **Get-Service** does not use Windows PowerShell remoting, you can use this parameter even if the computer is not configured for remoting in Windows PowerShell.
 
 ### Example 7: List the services on the local computer that have dependent services
+
 ```
 PS C:\> Get-Service | Where-Object {$_.DependentServices} | Format-List -Property Name, DependentServices, @{Label="NoOfDependentServices"; Expression={$_.dependentservices.count}}
 
@@ -121,6 +131,7 @@ Another pipeline operator sends the results to the Format-List cmdlet.
 The command uses its *Property* parameter to display the name of the service, the name of the dependent services, and a calculated property that displays the number of dependent services that each service has.
 
 ### Example 8: Sort services by property value
+
 ```
 PS C:\> Get-Service "s*" | Sort-Object status
 
@@ -165,6 +176,7 @@ This happens because the value of Status is an enumeration, in which Stopped has
 To list running services first, use the *Descending* parameter of the Sort-Object cmdlet.
 
 ### Example 9: Get services on multiple computers
+
 ```
 PS C:\> Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server02" | Format-Table -Property MachineName, Status, Name, DisplayName -auto
 
@@ -187,6 +199,7 @@ A pipeline operator (|) sends the results to the **Format-Table** cmdlet, which 
 The **Format-Table** command uses the *Property* parameter to specify the properties displayed in the table, including the **MachineName** property.
 
 ### Example 10: Get the dependent services of a service
+
 ```
 PS C:\> Get-Service "WinRM" -RequiredServices
 ```
@@ -196,6 +209,7 @@ This command gets the services that the WinRM service requires.
 The command returns the value of the **ServicesDependedOn** property of the service.
 
 ### Example 11: Get a service through the pipeline operator
+
 ```
 PS C:\> "WinRM" | Get-Service
 ```
@@ -206,6 +220,7 @@ This example shows that you can pipe a service name string (enclosed in quotatio
 ## PARAMETERS
 
 ### -ComputerName
+
 Gets the services running on the specified computers.
 The default is the local computer.
 
@@ -228,6 +243,7 @@ Accept wildcard characters: False
 ```
 
 ### -DependentServices
+
 Indicates that this cmdlet gets only the services that depend upon the specified service.
 
 By default, this cmdlet gets all services.
@@ -245,6 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
+
 Specifies, as a string array, the display names of services to be retrieved.
 Wildcards are permitted.
 By default, this cmdlet gets all services on the computer.
@@ -262,6 +279,7 @@ Accept wildcard characters: True
 ```
 
 ### -Exclude
+
 Specifies, as a string array, a service or services that this cmdlet excludes from the operation.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as "s*".
@@ -280,6 +298,7 @@ Accept wildcard characters: True
 ```
 
 ### -Include
+
 Specifies, as a string array, a service or services that this cmdlet includes in the operation.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as "s*".
@@ -298,6 +317,7 @@ Accept wildcard characters: True
 ```
 
 ### -InputObject
+
 Specifies **ServiceController** objects representing the services to be retrieved.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 You can also pipe a service object to this cmdlet.
@@ -315,6 +335,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the service names of services to be retrieved.
 Wildcards are permitted.
 By default, this cmdlet gets all of the services on the computer.
@@ -332,6 +353,7 @@ Accept wildcard characters: True
 ```
 
 ### -RequiredServices
+
 Indicates that this cmdlet gets only the services that this service requires.
 
 This parameter gets the value of the **ServicesDependedOn** property of the service.
@@ -350,19 +372,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
+
 You can pipe a service object or a service name to this cmdlet.
 
 ## OUTPUTS
 
 ### System.ServiceProcess.ServiceController
+
 This cmdlet returns objects that represent the services on the computer.
 
 ## NOTES
+
 * You can also refer to **Get-Service** by its built-in alias, "gsv". For more information, see about_Aliases.
 
   This cmdlet can display services only when the current user has permission to see them.

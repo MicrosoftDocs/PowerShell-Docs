@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821530
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 title:  Import-Counter
 ---
-
 # Import-Counter
 
 ## SYNOPSIS
@@ -16,22 +15,26 @@ Imports performance counter log files and creates the objects that represent eac
 ## SYNTAX
 
 ### GetCounterSet (Default)
+
 ```
 Import-Counter [-Path] <String[]> [-StartTime <DateTime>] [-EndTime <DateTime>] [-Counter <String[]>]
  [-MaxSamples <Int64>] [<CommonParameters>]
 ```
 
 ### ListSetSet
+
 ```
 Import-Counter [-Path] <String[]> -ListSet <String[]> [<CommonParameters>]
 ```
 
 ### SummarySet
+
 ```
 Import-Counter [-Path] <String[]> [-Summary] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Import-Counter** cmdlet imports performance counter data from performance counter log files and creates objects for each counter sample in the file.
 The **PerformanceCounterSampleSet** objects that it creates are identical to the objects that **Get-Counter** returns when it collects performance counter data.
 
@@ -44,6 +47,7 @@ Along with the Get-Counter and Export-Counter cmdlets, this feature lets you col
 ## EXAMPLES
 
 ### Example 1: Import all counter data from a file
+
 ```powershell
 $Data = Import-Counter -Path ProcessorData.csv
 ```
@@ -51,6 +55,7 @@ $Data = Import-Counter -Path ProcessorData.csv
 This command imports all counter data from the ProcessorData.csv file into the $Data variable.
 
 ### Example 2: Import specific counter data from a file
+
 ```
 PS C:\> $I = Import-Counter -Path "ProcessorData.blg" -Counter "\\SERVER01\Processor(_Total)\Interrupts/sec"
 ```
@@ -58,6 +63,7 @@ PS C:\> $I = Import-Counter -Path "ProcessorData.blg" -Counter "\\SERVER01\Proce
 This command imports only the **"Processor(_total)\Interrupts/sec"** counter data from the ProcessorData.blg file into the $I variable.
 
 ### Example 3: Select data from a performance counter then export it to a file
+
 ```
 The first command uses **Import-Counter** to import all of the performance counter data from the ProcessorData.blg files. The command saves the data in the $Data variable.
 PS C:\> $Data = Import-Counter .\ProcessorData.blg
@@ -98,6 +104,7 @@ The first four commands get the counter paths from the file and save them in the
 The last two commands import selected data and then export only the selected data.
 
 ### Example 4: Display all counter paths in a group of imported counter sets
+
 ```
 The first command uses the *ListSet* parameter of the **Import-Counter** cmdlet to get all of the counter sets that are represented in a counter data file.
 PS C:\> Import-Counter -Path ProcessorData.csv -ListSet *
@@ -136,6 +143,7 @@ PS C:\> Import-Counter -Path ProcessorData.csv -ListSet * | ForEach-Object {$_.P
 This example shows how to display all the counter paths in a group of imported counter sets.
 
 ### Example 5: Import counter data from a range of time stamps
+
 ```
 The first command lists in a table the time stamps of all of the data in the ProcessorData.blg file.
 PS C:\> Import-Counter -Path ".\disk.blg" | Format-Table -Property Timestamp
@@ -150,6 +158,7 @@ PS C:\> Import-Counter -Path Disk.blg -StartTime $start -EndTime $end
 This example imports only the counter data that has a time stamp between the starting an ending ranges specified in the command.
 
 ### Example 6: Import a specified number of the oldest samples from a performance counter log file
+
 ```
 The first command uses the **Import-Counter** cmdlet to import the first (oldest) five samples from the Disk.blg file. The command uses the *MaxSamples* parameter to limit the import to five counter samples.
 PS C:\> Import-Counter -Path "Disk.blg" -MaxSamples 5
@@ -161,6 +170,7 @@ PS C:\> (Import-Counter -Path Disk.blg)[-1 .. -5]
 This example shows how to import the five oldest and five newest samples from a performance counter log file.
 
 ### Example 7: Get a summary of counter data from a file
+
 ```
 PS C:\> Import-Counter "D:\Samples\Memory.blg" -Summary
 
@@ -172,6 +182,7 @@ OldestRecord            NewestRecord            SampleCount
 This command uses the *Summary* parameter of the **Import-Counter** cmdlet to get a summary of the counter data in the Memory.blg file.
 
 ### Example 8: Update a performance counter log file
+
 ```
 The first command uses the *ListSet* parameter of **Import-Counter** to get the counters in OldData.blg, an existing counter log file. The command uses a pipeline operator (|) to send the data to a ForEach-Object command that gets only the values of the **PathsWithInstances** property of each object
 PS C:\> $Counters = Import-Counter OldData.blg -ListSet * | ForEach-Object {$_.PathsWithInstances}
@@ -183,6 +194,7 @@ PS C:\> Get-Counter -Counter $Counters -MaxSamples 20 | Export-Counter C:\Logs\N
 This example updates a performance counter log file.
 
 ### Example 9: Import performance log data from multiple files and then save it
+
 ```
 PS C:\> $Counters = "D:\test\pdata.blg", "D:\samples\netlog.blg" | Import-Counter
 ```
@@ -195,6 +207,7 @@ Notice that each path is enclosed in quotation marks and that the paths are sepa
 ## PARAMETERS
 
 ### -Counter
+
 Specifies, as a string array, the performance counters.
 By default, **Import-Counter** imports all data from all counters in the input files.
 Enter one or more counter paths.
@@ -219,6 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndTime
+
 Specifies an end date and time that this cmdlet imports counter data between the *StartTime* and this parameter timestamps.
 Enter a **DateTime** object, such as one created by the Get-Date cmdlet.
 By default, **Import-Counter** imports all counter data in the files specified by the *Path* parameter.
@@ -236,6 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListSet
+
 Specifies the performance counter sets that are represented in the exported files.
 Commands with this parameter do not import any data.
 
@@ -256,6 +271,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxSamples
+
 Specifies the maximum number of samples of each counter to import.
 By default, **Get-Counter** imports all of the data in the files specified by the *Path* parameter.
 
@@ -272,6 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the file paths of the files to be imported.
 This parameter is required.
 
@@ -292,6 +309,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartTime
+
 Specifies the start date and time in which this cmdlet gets counter data.
 Enter a **DateTime** object, such as one created by the **Get-Date** cmdlet.
 By default, **Import-Counter** imports all counter data in the files specified by the *Path* parameter.
@@ -309,6 +327,7 @@ Accept wildcard characters: False
 ```
 
 ### -Summary
+
 Indicates that this cmdlet gets a summary of the imported data, instead of getting individual counter data samples.
 
 ```yaml
@@ -324,21 +343,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe performance counter log paths to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.CounterFileInfo
+
 This cmdlet returns a **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet**.
 If you use the *ListSet* parameter, this cmdlet returns a **Microsoft.PowerShell.Commands.GetCounter.CounterSet** object.
 If you use the *Summary* parameter, this cmdlet returns a **Microsoft.PowerShell.Commands.GetCounter.CounterFileInfo** object.
 
 ## NOTES
+
 * This cmdlet does not have a *ComputerName* parameter. However, if the computer is configured for Windows PowerShell remoting, you can use the Invoke-Command cmdlet to run an **Import-Counter** command on a remote computer.
 
 *

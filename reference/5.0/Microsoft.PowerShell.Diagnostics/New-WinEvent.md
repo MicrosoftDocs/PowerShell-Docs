@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821531
 external help file:  Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 title:  New-WinEvent
 ---
-
 # New-WinEvent
 
 ## SYNOPSIS
-
 Creates a new Windows event for the specified event provider.
 
 ## SYNTAX

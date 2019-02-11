@@ -10,7 +10,6 @@ title:  Get-ChildItem
 # Get-ChildItem
 
 ## Synopsis
-
 Gets the items and child items in one or more specified locations.
 
 ## Syntax
