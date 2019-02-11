@@ -296,8 +296,8 @@ The `$B` variable uses the same `Get-ChildItem` and `Select-String` cmdlets, but
 **AllMatches** parameter. **AllMatches** finds each occurrence of the pattern **PowerShell** on each
 line. The objects stored in the `$A` and `$B` variables are identical.
 
-The `$B.Matches.Length` property counts each occurrence of the pattern **PowerShell** on each line.
-The count is higher because there is a line with two instances of the pattern **PowerShell**.
+The `$B.Matches.Length` property increases because for each line, every occurrence of the pattern
+**PowerShell** is counted.
 
 ## PARAMETERS
 
