@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821610
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Pop-Location
 ---
-
 # Pop-Location
 
 ## SYNOPSIS
@@ -20,12 +19,14 @@ Pop-Location [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParamet
 ```
 
 ## DESCRIPTION
+
 The **Pop-Location** cmdlet changes the current location to the location most recently pushed onto the stack by using the Push-Location cmdlet.
 You can pop a location from the default stack or from a stack that you create by using a **Push-Location** command.
 
 ## EXAMPLES
 
 ### Example 1: Change to most recent location
+
 ```
 PS C:\> Pop-Location
 ```
@@ -33,6 +34,7 @@ PS C:\> Pop-Location
 This command changes your location to the location most recently added to the current stack.
 
 ### Example 2: Change to most recent location in a named stack
+
 ```
 PS C:\> Pop-Location -StackName "Stack2"
 ```
@@ -42,6 +44,7 @@ This command changes your location to the location most recently added to the St
 For more information about location stacks, see the Notes.
 
 ### Example 3: Move between locations for different providers
+
 ```
 PS C:\> pushd HKLM:\Software\Microsoft\PowerShell
 PS HKLM:\Software\Microsoft\PowerShell> pushd Cert:\LocalMachine\TrustedPublisher
@@ -63,6 +66,7 @@ The first **popd** command returns to the Registry drive, and the second command
 ## PARAMETERS
 
 ### -PassThru
+
 Passes an object that represents the location to the pipeline.
 By default, this cmdlet does not generate any output.
 
@@ -79,6 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -StackName
+
 Specifies the location stack from which the location is popped.
 Enter a location stack name.
 
@@ -101,6 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
@@ -118,20 +124,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.PathInfo
+
 This cmdlet generates a **System.Management.Automation.PathInfo** object that represents the location, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * A stack is a last-in, first-out list in which only the most recently added item can be accessed. You add items to a stack in the order that you use them, and then retrieve them for use in the reverse order. Windows PowerShell lets you store provider locations in location stacks.
 * Windows PowerShell lets you store provider locations in location stacks. Windows PowerShell creates an unnamed default location stack and you can create multiple named location stacks. If you do not specify a stack name, Windows PowerShell uses the current location stack. By default, the unnamed default location is the current location stack, but you can use the Set-Location cmdlet to change the current location stack.
 * To manage location stacks, use the Windows PowerShell**Location** cmdlets, as follows:
