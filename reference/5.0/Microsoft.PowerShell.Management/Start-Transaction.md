@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821640
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Start-Transaction
 ---
-
 # Start-Transaction
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Start-Transaction [-Timeout <Int32>] [-Independent] [-RollbackPreference <Rollba
 ```
 
 ## DESCRIPTION
+
 The **Start-Transaction** cmdlet starts a transaction, which is a series of commands that are managed as a unit.
 A transaction can be completed, or committed.
 Alternatively, it can be completely undone, or rolled back, so that any data changed by the transaction is restored to its original state.
@@ -45,6 +45,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Start and roll back a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -57,6 +58,7 @@ These commands start and then roll back a transaction.
 Because the transaction is rolled back, no changes are made to the registry.
 
 ### Example 2: Start and complete a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -69,6 +71,7 @@ These commands start and then complete a transaction.
 No changes are made to the registry until the **Complete-Transaction** command is used.
 
 ### Example 3: Use different rollback preferences
+
 ```
 PS C:\> cd HKCU:\software
 PS HKCU:\software> Start-Transaction
@@ -123,6 +126,7 @@ As a result, when an error occurs in a transaction command, the transaction is s
 Because most transactions must be performed without error, the default value of *RollbackPreference* is typically preferred.
 
 ### Example 4: Use this cmdlet while a transaction is in progress
+
 ```
 PS C:\> cd HKCU:\software
 PS HKCU:\software> Start-Transaction
@@ -155,6 +159,7 @@ To complete the transaction, you must enter two **Complete-Transaction** command
 If you were to roll back the transaction at any point, all the transaction would be rolled back for both subscribers.
 
 ### Example 5: Start an independent transaction while one is in progress
+
 ```
 PS C:\> cd HKCU:\software
 PS HKCU:\software> Start-Transaction
@@ -201,6 +206,7 @@ The **New-ItemProperty** command, which is part of the original transaction, fin
 As a result, the registry is changed.
 
 ### Example 6: Run commands that are not part of a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -242,6 +248,7 @@ The **Complete-Transaction** command commits the transaction.
 As a result, the second dir command shows that all of the new items are added to the registry.
 
 ### Example 7: Roll back a transaction that does not finish in a specified time
+
 ```
 PS C:\> Start-Transaction -Timeout 2
 
@@ -274,6 +281,7 @@ When the time-out expires, you are not notified, but the **Status** property of 
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -289,6 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -Independent
+
 Indicates that this cmdlet starts a transaction that is independent of any transactions in progress.
 By default, if you use **Start-Transaction** while another transaction is in progress, a new subscriber is added to the transaction in progress.
 This parameter has an effect only when a transaction is already in progress in the session.
@@ -315,6 +324,7 @@ Accept wildcard characters: False
 ```
 
 ### -RollbackPreference
+
 Specifies the conditions under which a transaction is automatically rolled back.
 The acceptable values for this parameter are:
 
@@ -341,6 +351,7 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
+
 Specifies the maximum time, in minutes, that the transaction is active.
 When the time-out expires, the transaction is automatically rolled back.
 
@@ -360,6 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -376,16 +388,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

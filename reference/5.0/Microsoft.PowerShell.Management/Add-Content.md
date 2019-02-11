@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821565
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Add-Content
 ---
-
 # Add-Content
 
 ## SYNOPSIS

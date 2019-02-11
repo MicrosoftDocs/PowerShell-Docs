@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821623
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Reset-ComputerMachinePassword
 ---
-
 # Reset-ComputerMachinePassword
 
 ## SYNOPSIS
@@ -21,12 +20,14 @@ Reset-ComputerMachinePassword [-Server <String>] [-Credential <PSCredential>] [-
 ```
 
 ## DESCRIPTION
+
 The **Reset-ComputerMachinePassword** cmdlet changes the computer account password that the computers use to authenticate to the domain controllers in the domain.
 You can use it to reset the password of the local computer.
 
 ## EXAMPLES
 
 ### Example 1: Reset the password for the local computer
+
 ```
 PS C:\> Reset-ComputerMachinePassword
 ```
@@ -35,6 +36,7 @@ This command resets the computer password for the local computer.
 The command runs with the credentials of the current user.
 
 ### Example 2: Reset the password for the local computer by using a specified domain controller
+
 ```
 PS C:\> Reset-ComputerMachinePassword -Server "DC01" -Credential Domain01\Admin01
 ```
@@ -43,6 +45,7 @@ This command resets the computer password of the local computer by using the DC0
 It uses the *Credential* parameter to specify a user account that has permission to reset a computer password in the domain.
 
 ### Example 3: Reset the password on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword}
 ```
@@ -54,6 +57,7 @@ For more information about remote commands in Windows PowerShell, see about_Remo
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -69,6 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -90,6 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Server
+
 Specifies the name of a domain controller to use when this cmdlet sets the computer account password.
 
 This parameter is optional.
@@ -108,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -124,16 +131,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

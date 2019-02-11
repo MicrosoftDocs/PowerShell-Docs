@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821627
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Restore-Computer
 ---
-
 # Restore-Computer
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Restore-Computer [-RestorePoint] <Int32> [-WhatIf] [-Confirm] [<CommonParameters
 ```
 
 ## DESCRIPTION
+
 The **Restore-Computer** cmdlet restores the local computer to the specified system restore point.
 
 **Restore-Computer** restarts the computer.
@@ -30,6 +30,7 @@ System restore points and **Restore-Computer** are supported only on client oper
 ## EXAMPLES
 
 ### Example 1: Restore the local computer
+
 ```
 PS C:\> Restore-Computer -RestorePoint 253
 ```
@@ -37,6 +38,7 @@ PS C:\> Restore-Computer -RestorePoint 253
 This command restores the local computer to the restore point that has sequence number 253.
 
 ### Example 2: Restore the local computer with confirmation
+
 ```
 PS C:\> Restore-Computer -RestorePoint 255 -Confirm
 Confirm
@@ -49,6 +51,7 @@ This command restores the local computer to the restore point that has sequence 
 It uses the *Confirm* parameter to prompt the user before actually performing the operation.
 
 ### Example 3: Restore a computer and check the status
+
 ```
 PS C:\> Get-ComputerRestorePoint
 PS C:\> Restore-Computer -RestorePoint 255
@@ -67,6 +70,7 @@ Because **Restore-Computer** forces a restart, this command would be entered aft
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -82,6 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -RestorePoint
+
 Specifies the sequence number of the restore point.
 To find the sequence number, use the Get-ComputerRestorePoint cmdlet.
 This parameter is required.
@@ -99,6 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -115,19 +121,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To run a Restore-Computer command on Windows Vista and later versions of the Windows operating system, open Windows PowerShell by using the Run as administrator option.
 * This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
 

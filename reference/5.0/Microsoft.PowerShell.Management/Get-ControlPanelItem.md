@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821584
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-ControlPanelItem
 ---
-
 # Get-ControlPanelItem
 
 ## SYNOPSIS
@@ -16,16 +15,19 @@ Gets control panel items.
 ## SYNTAX
 
 ### RegularName (Default)
+
 ```
 Get-ControlPanelItem [[-Name] <String[]>] [-Category <String[]>] [<CommonParameters>]
 ```
 
 ### CanonicalName
+
 ```
 Get-ControlPanelItem -CanonicalName <String[]> [-Category <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-ControlPanelItem** cmdlet gets control panel items on the local computer.
 You can use it to find control panel items by name, category, or description, even on systems that do not have a user interface.
 
@@ -38,6 +40,7 @@ It works only on Windows 8 and Windows Server 2012.
 ## EXAMPLES
 
 ### Example 1: Get all control panel items
+
 ```
 PS C:\> Get-ControlPanelItem
 Name                          CanonicalName                 Category                      Description
@@ -54,6 +57,7 @@ Date and Time                 Microsoft.DateAndTime         {Clock, Language, an
 This command gets all control panel items on the local computer.
 
 ### Example 2: Get control panel items by name
+
 ```
 PS C:\> Get-ControlPanelItem -Name "*Program*", "*App*"
 ```
@@ -61,6 +65,7 @@ PS C:\> Get-ControlPanelItem -Name "*Program*", "*App*"
 This command gets control panel items that have Program or App in their names.
 
 ### Example 3: Get control panel items by category
+
 ```
 PS C:\> Get-ControlPanelItem -Category "*Security*"
 ```
@@ -68,6 +73,7 @@ PS C:\> Get-ControlPanelItem -Category "*Security*"
 This command gets all control panel items in categories that have Security in their names.
 
 ### Example 4: Open a control panel item
+
 ```
 PS C:\> Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
 ```
@@ -76,6 +82,7 @@ This command opens the Windows Firewall control panel item on the local computer
 It uses the **Get-ControlPanelItem** cmdlet to get the control panel item and the Show-ControlPanelItem cmdlet to open it.
 
 ### Example 5: Get control panel items on a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" {Get-ControlPanelItem -Name "BitLocker*" }
 ```
@@ -84,6 +91,7 @@ This command gets the BitLocker Drive Encryption control panel item on the Serve
 It uses the Invoke-Command cmdlet to run the **Get-ControlPanelItem** cmdlet remotely.
 
 ### Example 6: Search the descriptions of control panel items
+
 ```
 PS C:\> Get-ControlPanelItem | Where-Object {$_.Description -like "*Device*"}
 Name                          CanonicalName                 Category                      Description
@@ -99,6 +107,7 @@ The command uses the **Get-ControlPanelItem** cmdlet to get all control panel it
 ## PARAMETERS
 
 ### -CanonicalName
+
 Specifies, as a string array, the control panel items by their canonical names or name patterns that this cmdlet gets.
 Wildcards are permitted.
 If you enter multiple names, this cmdlet gets control panel items that match any of the names, as though the items in the name list were separated by an "or" operator.
@@ -118,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Category
+
 Specifies, as a string array, the categories of the control panel items in the specified categories that this cmdlet gets.
 Enter a category name or name pattern.
 Wildcards are permitted.
@@ -137,6 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies, as a string array, the names or name patterns of the control panel that this cmdlet gets.
 Wildcards are permitted.
 You can also pipe a name or name pattern to this cmdlet.
@@ -154,16 +165,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a name or name pattern to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.ControlPanelItem
+
 This cmdlet gets control panel items on the local computer.
 
 ## NOTES

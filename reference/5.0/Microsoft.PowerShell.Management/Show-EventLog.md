@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821636
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Show-EventLog
 ---
-
 # Show-EventLog
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Show-EventLog [[-ComputerName] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Show-EventLog** cmdlet opens Event Viewer on the local computer and displays in it all of the classic event logs on the local computer or a remote computer.
 
 To open Event Viewer on Windows Vista and later versions of the Windows operating system, the current user must be a member of the Administrators group on the local computer.
@@ -30,6 +30,7 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 ## EXAMPLES
 
 ### Example 1: Display event logs for the local computer
+
 ```
 PS C:\> Show-EventLog
 ```
@@ -37,6 +38,7 @@ PS C:\> Show-EventLog
 This command opens Event Viewer and displays in it the classic event logs on the local computer.
 
 ### Example 2: Display event logs for a remote computer
+
 ```
 PS C:\> Show-EventLog -ComputerName "Server01"
 ```
@@ -46,6 +48,7 @@ This command opens Event Viewer and displays in it the classic event logs on the
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies a remote computer.
 **Show-EventLog** displays the event logs from the specified computer in Event Viewer on the local computer.
 The default is the local computer.
@@ -68,19 +71,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The Windows PowerShell command prompt returns as soon as Event Viewer opens. You can work in the current session while Event Viewer is open.
 
   Because this cmdlet requires a user interface, it does not work on Server Core installations of Windows Server.

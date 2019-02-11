@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821624
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Resolve-Path
 ---
-
 # Resolve-Path
 
 ## SYNOPSIS
-
 Resolves the wildcard characters in a path, and displays the path contents.
 
 ## SYNTAX
@@ -188,6 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_transactions.

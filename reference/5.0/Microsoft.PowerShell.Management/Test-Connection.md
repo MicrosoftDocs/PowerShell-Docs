@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821646
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Test-Connection
 ---
-
 # Test-Connection
 
 ## SYNOPSIS
@@ -16,6 +15,7 @@ Sends ICMP echo request packets ("pings") to one or more computers.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Test-Connection [-ComputerName] <string[]> [-AsJob] [-Authentication <AuthenticationLevel>]
   [-BufferSize <int>] [-Count <int>] [-Impersonation <ImpersonationLevel>] [-ThrottleLimit <int>]
@@ -23,6 +23,7 @@ Test-Connection [-ComputerName] <string[]> [-AsJob] [-Authentication <Authentica
 ```
 
 ### Source
+
 ```
 Test-Connection [-ComputerName] <string[]> [-Source] <string[]> [-AsJob] [-Authentication <AuthenticationLevel>]
   [-BufferSize <int>] [-Count <int>] [-Credential <pscredential>] [-Impersonation <ImpersonationLevel>]
@@ -30,6 +31,7 @@ Test-Connection [-ComputerName] <string[]> [-Source] <string[]> [-AsJob] [-Authe
 ```
 
 ### Quiet
+
 ```
 Test-Connection [-ComputerName] <string[]> [-Authentication <AuthenticationLevel>] [-BufferSize<int>]
   [-Count <int>] [-Impersonation <ImpersonationLevel>] [-TimeToLive <int>] [-Delay <int>]
@@ -153,6 +155,7 @@ cmdlet to create the **PSSession**.
 ## PARAMETERS
 
 ### -AsJob
+
 Indicates that this cmdlet runs as a background job.
 
 To use this parameter, the local and remote computers must be configured for remoting and, on
@@ -179,6 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -BufferSize
+
 Specifies the size, in bytes, of the buffer sent with this command.
 The default value is 32.
 
@@ -195,6 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the computers to ping.
 Type the computer names or type IP addresses in IPv4 or IPv6 format.
 Wildcard characters are not permitted.
@@ -216,6 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -Count
+
 Specifies the number of echo requests to send.
 The default value is 4.
 
@@ -232,6 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to send a ping request from the source computer. Type
 a user name, such as User01 or Domain01\User01, or enter a **PSCredential** object, such as one
 from the `Get-Credential` cmdlet.
@@ -252,6 +259,7 @@ Accept wildcard characters: False
 ```
 
 ### -DcomAuthentication
+
 Specifies the authentication level that this cmdlet uses with WMI.
 `Test-Connection` uses WMI.
 The acceptable values for this parameter are:
@@ -284,6 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -Delay
+
 Specifies the interval between pings, in seconds.
 
 ```yaml
@@ -299,6 +308,7 @@ Accept wildcard characters: False
 ```
 
 ### -Impersonation
+
 Specifies the impersonation level to use when this cmdlet calls WMI.
 `Test-Connection` uses WMI.
 The acceptable values for this parameter are:
@@ -324,6 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -Quiet
+
 Indicates that this cmdlet suppresses all errors.
 If any pings succeed, this cmdlet returns `$True`.
 If all pings fail, this cmdlet returns `$False`.
@@ -341,6 +352,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Specifies the names of the computers where the ping originates.
 Enter a comma-separated list of computer names.
 The default is the local computer.
@@ -358,6 +370,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent connections that can be established to run this command.
 If you omit this parameter or enter a value of 0, the default value, 32, is used.
 
@@ -376,6 +389,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeToLive
+
 Specifies the maximum times a packet can be forwarded. For every hop in gateways, routers etc.
 the **TimeToLive** value is decreased by one. At zero the packet is discarded and an error is returned.
 The default value (in Windows) is 128.
@@ -403,11 +417,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.ManagementObject#root\cimv2\Win32_PingStatus, System.Management.Automation.RemotingJob, System.Boolean
+
 This cmdlet returns a job object, if you specify the **AsJob** parameter.
 If you specify the **Quiet** parameter, it returns a **Boolean**.
 Otherwise, this cmdlet returns a **Win32_PingStatus** object for each ping.

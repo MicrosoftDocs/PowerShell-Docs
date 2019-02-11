@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821714
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Get-ExecutionPolicy
 ---
-
 # Get-ExecutionPolicy
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Get-ExecutionPolicy [[-Scope] <ExecutionPolicyScope>] [-List] [<CommonParameters
 ```
 
 ## DESCRIPTION
+
 The **Get-ExecutionPolicy** cmdlet gets the execution policies for the current session.
 
 The execution policy is determined by execution policies that you set by using Set-ExecutionPolicy and the Group Policy settings for the Windows PowerShell execution policy.
@@ -33,6 +33,7 @@ For more information, see about_Execution_Policies (http://go.microsoft.com/fwli
 ## EXAMPLES
 
 ### Example 1: Get the current execution policy
+
 ```powershell
 PS C:\> Get-ExecutionPolicy
 Restricted
@@ -41,6 +42,7 @@ Restricted
 This command gets the current execution policy for the computer.
 
 ### Example 2: Set the execution policy
+
 ```powershell
 PS C:\> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 PS C:\> Get-ExecutionPolicy
@@ -51,6 +53,7 @@ These commands set a new user preference for the execution policy and then displ
 In this example, because there is no Group Policy setting, the user preference is the effective policy for the computer.
 
 ### Example 3: Get all execution policies for the current session
+
 ```powershell
 PS C:\> Get-ExecutionPolicy -List
 
@@ -75,6 +78,7 @@ The policies are listed in precedence order.
 The second command gets only the effective execution policy, which is the one set in the CurrentUser scope.
 
 ### Example 4: Prevent a unsigned script from running
+
 ```powershell
 PS C:\> Get-ExecutionPolicy
 RemoteSigned
@@ -107,6 +111,7 @@ The first command uses the **Get-ExecutionPolicy** cmdlet to get the effective e
 ## PARAMETERS
 
 ### -List
+
 Gets all execution policy values for the session listed in precedence order.
 By default, **Get-ExecutionPolicy** gets only the effective execution policy.
 
@@ -123,6 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Gets the execution policy in the specified scope.
 By default, **Get-ExecutionPolicy** gets the effective execution policy for the current session.
 The acceptable values for this parameter are:
@@ -152,11 +158,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
@@ -164,6 +172,7 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.PowerShell.ExecutionPolicy
 
 ## NOTES
+
 * The execution policy is part of the security strategy of Windows PowerShell. It determines whether you can load configuration files (including your Windows PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
 
   The effective execution policy is determined by the policies that you set by using the Set-ExecutionPolicy cmdlet and the "Turn on Script Execution" group policies for computers and users.
