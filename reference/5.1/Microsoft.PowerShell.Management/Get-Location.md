@@ -41,10 +41,10 @@ For more information, see the Notes and the descriptions of the *Stack* and *Sta
 
 ### Example 1: Display your current drive location
 ```
-PS C:\> Get-Location
+PS C:\Windows> Get-Location
 Path
 ----
-C:\WINDOWS
+C:\Windows
 ```
 
 This command displays your location in the current Windows PowerShell drive.
@@ -57,34 +57,29 @@ The first command uses the **Set-Location** cmdlet to set the current location t
 PS C:\> Set-Location C:\Windows
 
 The second command uses the **Set-Location** cmdlet to change the location to the HKLM:\Software\Microsoft registry key. When you change to a location in the HKLM: drive, Windows PowerShell retains your location in the C: drive.
-PS C:\>
-PS C:\WINDOWS> Set-Location HKLM:\Software\Microsoft
+PS C:\Windows> Set-Location HKLM:\Software\Microsoft
 PS HKLM:\Software\Microsoft>
 
 The third command uses the **Set-Location** cmdlet to change the location to the HKCU:\Control Panel\Input Method registry key.
-PS C:\>
 PS HKLM:\Software\Microsoft> Set-Location "HKCU:\Control Panel\Input Method"
 PS HKCU:\Control Panel\Input Method>
 
 The fourth command uses the **Get-Location** cmdlet to find the current location on the C: drive. It uses the *PSDrive* parameter to specify the drive.
-PS C:\>
 PS HKCU:\Control Panel\Input Method> Get-Location -PSDrive C
 
 
 
 Path
 ----
-C:\WINDOWS
+C:\Windows
 
 
 The fifth command uses the **Set-Location** cmdlet to return to the C: drive. Even though the command does not specify a subdirectory, Windows PowerShell returns you to the saved location.
-PS C:\>
 PS HKCU:\Control Panel\Input Method> Set-Location C:
-PS C:\WINDOWS>
+PS C:\Windows>
 
 The sixth command uses the **Get-Location** cmdlet to find the current location in the drives supported by the Windows PowerShell registry provider. **Get-Location** returns the location of the most recently accessed registry drive, HKCU.
-PS C:\>
-PS C:\WINDOWS> Get-Location -PSProvider registry
+PS C:\Windows> Get-Location -PSProvider registry
 
 
 
@@ -95,8 +90,7 @@ HKCU:\Control Panel\Input Method
 
 
 To see the current location in the HKLM: drive, you need to use the *PSDrive* parameter to specify the drive. The seventh command does just this:
-PS C:\>
-PS C:\WINDOWS> Get-Location -PSDrive HKLM
+PS C:\Windows> Get-Location -PSDrive HKLM
 
 
 
@@ -113,33 +107,29 @@ The first command sets the current location to the Windows directory on the C: d
 PS C:\> Set-Location C:\Windows
 
 The second command uses the **Push-Location** cmdlet to push the current location (C:\Windows) onto the current location stack and change to the System32 subdirectory. Because no stack is specified, the current location is pushed onto the current location stack. By default, the current location stack is the unnamed default location stack.
-PS C:\>
-C:\WINDOWS>Push-Location System32
+PS C:\Windows>Push-Location System32
 
 The third command uses the *StackName* parameter of the **Push-Location** cmdlet to push the current location (C:\Windows\System32) onto the Stack2 stack and to change the current location to the WindowsPowerShell subdirectory. If the Stack2 stack does not exist, **Push-Location** creates it.
-PS C:\>
-C:\Windows\System32>Push-Location WindowsPowerShell -StackName Stack2
+PS C:\Windows\System32>Push-Location WindowsPowerShell -StackName Stack2
 
 The fourth command uses the *Stack* parameter of the **Get-Location** cmdlet to get the locations in the current location stack. By default, the current stack is the unnamed default location stack.
-PS C:\>
-C:\WINDOWS\system32\WindowsPowerShell>Get-Location -Stack
+C:\Windows\System32\WindowsPowerShell>Get-Location -Stack
 
 
 
 Path
 ----
-C:\WINDOWS
+C:\Windows
 
 
 The fifth command uses the *StackName* parameter of the **Get-Location** cmdlet to get the locations in the Stack2 stack.
-PS C:\>
-C:\WINDOWS\system32\WindowsPowerShell>get-location -stackname Stack2
+C:\Windows\System32\WindowsPowerShell>Get-Location -StackName Stack2
 
 
 
 Path
 ----
-C:\WINDOWS\system32
+C:\Windows\System32
 ```
 
 This example shows how to use the *Stack* and *StackName* parameters of **Get-Location** to list the locations in the current location stack and alternate location stacks.
@@ -163,7 +153,7 @@ To see the current prompt function, type the following command: `Get-Content Fun
 The command begins with the function keyword followed by the function name, prompt.
 The function body appears within braces ( {} ).
 
-This command defines a new prompt that begins with the string PowerShell: .
+This command defines a new prompt that begins with the string "PowerShell: ".
 To append the current location, it uses a **Get-Location** command, which runs when the prompt function is called.
 The prompt ends with the string "\> ".
 

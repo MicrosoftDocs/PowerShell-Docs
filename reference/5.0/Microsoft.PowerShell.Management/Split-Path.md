@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821637
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Split-Path
 ---
-
 # Split-Path
 
 ## SYNOPSIS
@@ -16,42 +15,49 @@ Returns the specified part of a path.
 ## SYNTAX
 
 ### ParentSet (Default)
+
 ```
 Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
  [<CommonParameters>]
 ```
 
 ### LeafSet
+
 ```
 Split-Path [-Path] <String[]> [-Leaf] [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
  [<CommonParameters>]
 ```
 
 ### QualifierSet
+
 ```
 Split-Path [-Path] <String[]> [-Qualifier] [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
  [<CommonParameters>]
 ```
 
 ### NoQualifierSet
+
 ```
 Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
  [<CommonParameters>]
 ```
 
 ### IsAbsoluteSet
+
 ```
 Split-Path [-Path] <String[]> [-Resolve] [-IsAbsolute] [-Credential <PSCredential>] [-UseTransaction]
  [<CommonParameters>]
 ```
 
 ### LiteralPathSet
+
 ```
 Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>] [-UseTransaction]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Split-Path** cmdlet returns only the specified part of a path, such as the parent folder, a subfolder, or a file name.
 It can also get items that are referenced by the split path and tell whether the path is relative or absolute.
 
@@ -60,6 +66,7 @@ You can use this cmdlet to get or submit only a selected part of a path.
 ## EXAMPLES
 
 ### Example 1: Get the qualifier of a path
+
 ```
 PS C:\> Split-Path -Path "HKCU:\Software\Microsoft" -Qualifier
 HKCU:
@@ -69,6 +76,7 @@ This command returns only the qualifier of the path.
 The qualifier is the drive.
 
 ### Example 2: Display file names
+
 ```
 PS C:\> Split-Path -Path "C:\Test\Logs\*.log" -Leaf -Resolve
 Pass1.log
@@ -85,6 +93,7 @@ Like all **Split-Path** commands, this command returns strings.
 It does not return **FileInfo** objects that represent the files.
 
 ### Example 3: Get the parent container
+
 ```
 PS C:\> Split-Path -Path "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
 C:\WINDOWS\system32\WindowsPowerShell\V1.0
@@ -94,6 +103,7 @@ This command returns only the parent containers of the path.
 Because it does not include any parameters to specify the split, **Split-Path** uses the split location default, which is *Parent*.
 
 ### Example 4: Determines whether a path is absolute
+
 ```
 PS C:\> Split-Path -Path ".\My Pictures\*.jpg" -IsAbsolute
 False
@@ -103,6 +113,7 @@ This command determines whether the path is relative or absolute.
 In this case, because the path is relative to the current folder, which is represented by a dot (.), it returns $False.
 
 ### Example 5: Change location to a specified path
+
 ```
 PS C:\> Set-Location (Split-Path -Path $profile)
 PS C:\Documents and Settings\User01\My Documents\WindowsPowerShell>
@@ -117,6 +128,7 @@ The parentheses direct Windows PowerShell to run the command first.
 This is a useful way to move to a folder that has a long path name.
 
 ### Example 6: Split a path by using the pipeline
+
 ```
 PS C:\> "C:\Documents and Settings\User01\My Documents\My Pictures" | Split-Path
 C:\Documents and Settings\User01\My Documents
@@ -128,6 +140,7 @@ The path is enclosed in quotation marks to indicate that it is a single token.
 ## PARAMETERS
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -149,6 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsAbsolute
+
 Indicates that this cmdlet returns $True if the path is absolute and $False if it is relative.
 An absolute path has a length greater than zero and does not use a dot (.) to indicate the current path.
 
@@ -165,6 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -Leaf
+
 Indicates that this cmdlet returns only the last item or container in the path.
 For example, in the path `C:\Test\Logs\Pass1.log`, it returns only Pass1.log.
 
@@ -181,6 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the paths to be split.
 Unlike *Path*, the value of *LiteralPath* is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
@@ -200,6 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoQualifier
+
 Indicates that this cmdlet returns the path without the qualifier.
 For the FileSystem or registry providers, the qualifier is the drive of the provider path, such as C: or HKCU:.
 For example, in the path `C:\Test\Logs\Pass1.log`, it returns only \Test\Logs\Pass1.log.
@@ -217,6 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -Parent
+
 Indicates that this cmdlet returns only the parent containers of the item or of the container specified by the path.
 For example, in the path `C:\Test\Logs\Pass1.log`, it returns C:\Test\Logs.
 The *Parent* parameter is the default split location parameter.
@@ -234,6 +252,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the paths to be split.
 Wildcard characters are permitted.
 If the path includes spaces, enclose it in quotation marks.
@@ -252,6 +271,7 @@ Accept wildcard characters: False
 ```
 
 ### -Qualifier
+
 Indicates that this cmdlet returns only the qualifier of the specified path.
 For the FileSystem or registry providers, the qualifier is the drive of the provider path, such as C: or HKCU:.
 
@@ -268,6 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -Resolve
+
 Indicates that this cmdlet displays the items that are referenced by the resulting split path instead of displaying the path elements.
 
 ```yaml
@@ -283,6 +304,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
@@ -300,22 +322,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String, System.Boolean
+
 **Split-Path** returns text strings.
 When you specify the *Resolve* parameter, **Split-Path** returns a string that describes the location of the items; it does not return objects that represent the items, such as a **FileInfo** or **RegistryKey** object.
 
 When you specify the *IsAbsolute* parameter, **Split-Path** returns a **Boolean** value.
 
 ## NOTES
+
 * The split location parameters (*Qualifier*, *Parent*, *Leaf*, and *NoQualifier*) are exclusive. You can use only one in each command.
 
   The cmdlets that contain the **Path** noun (the **Path** cmdlets) work with path names and return the names in a concise format that all Windows PowerShell providers can interpret.

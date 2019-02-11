@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821649
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Use-Transaction
 ---
-
 # Use-Transaction
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Use-Transaction [-TransactedScript] <ScriptBlock> [-UseTransaction] [<CommonPara
 ```
 
 ## DESCRIPTION
+
 The **Use-Transaction** cmdlet adds a script block to an active transaction.
 This enables you to do transacted scripting by using transaction-enabled Microsoft .NET Framework objects.
 The script block can contain only transaction-enabled .NET Framework objects, such as instances of the Microsoft.PowerShell.Commands.Management.TransactedString class.
@@ -32,6 +32,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Script by using a transaction-enabled object
+
 ```
 PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
@@ -81,6 +82,7 @@ The seventh command uses the Complete-Transaction cmdlet to commit the transacti
 The final command uses the **ToString** method to display the resulting value of the variable as a string.
 
 ### Example 2: Roll back a transaction
+
 ```
 PS C:\> Start-Transaction
 PS C:\> $transactedString = New-Object Microsoft.PowerShell.Commands.Management.TransactedString
@@ -113,6 +115,7 @@ The results show that only the changes that were made outside the transaction we
 ## PARAMETERS
 
 ### -TransactedScript
+
 Specifies the script block that is run in the transaction.
 Enter any valid script block enclosed in braces ( { } ).
 This parameter is required.
@@ -130,6 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
@@ -147,19 +151,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### PSObject
+
 This cmdlet returns the result of the transaction.
 
 ## NOTES
+
 * The *UseTransaction* parameter includes the command in the active transaction. Because the **Use-Transaction** cmdlet is always used in transactions, this parameter is required to make any **Use-Transaction** command effective.
 
 *

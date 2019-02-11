@@ -10,7 +10,6 @@ title:  Get-Credential
 # Get-Credential
 
 ## SYNOPSIS
-
 Gets a credential object based on a user name and password.
 
 ## SYNTAX

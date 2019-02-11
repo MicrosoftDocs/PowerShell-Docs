@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821650
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Wait-Process
 ---
-
 # Wait-Process
 
 ## SYNOPSIS
@@ -16,21 +15,25 @@ Waits for the processes to be stopped before accepting more input.
 ## SYNTAX
 
 ### Name (Default)
+
 ```
 Wait-Process [-Name] <String[]> [[-Timeout] <Int32>] [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Wait-Process** cmdlet waits for one or more running processes to be stopped before accepting input.
 In the Windows PowerShell console, this cmdlet suppresses the command prompt until the processes are stopped.
 You can specify a process by process name or process ID (PID), or pipe a process object to **Wait-Process**.
@@ -40,6 +43,7 @@ You can specify a process by process name or process ID (PID), or pipe a process
 ## EXAMPLES
 
 ### Example 1: Stop a process and wait
+
 ```
 PS C:\> $nid = (Get-Process notepad).id
 PS C:\> Stop-Process -Id $nid
@@ -57,6 +61,7 @@ The third command uses **Wait-Process** to wait until the Notepad process is sto
 It uses the *Id* parameter of **Wait-Process** to identify the process.
 
 ### Example 2: Specifying a process
+
 ```
 PS C:\> $p = Get-Process notepad
 PS C:\> Wait-Process -Id $p.id
@@ -72,6 +77,7 @@ The second command uses the *Id* parameter, the third command uses the *Name* pa
 These commands have the same results and can be used interchangeably.
 
 ### Example 3: Wait for processes for a specified time
+
 ```
 PS C:\> Wait-Process -Name outlook, winword -Timeout 30
 ```
@@ -82,6 +88,7 @@ If both processes are not stopped, the cmdlet displays a non-terminating error a
 ## PARAMETERS
 
 ### -Id
+
 Specifies the process IDs of the processes.
 To specify multiple IDs, use commas to separate the IDs.
 To find the PID of a process, type `Get-Process`.
@@ -99,6 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the processes by submitting process objects.
 Enter a variable that contains the process objects, or type a command or expression that gets the process objects, such as the Get-Process cmdlet.
 
@@ -115,6 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the process names of the processes.
 To specify multiple names, use commas to separate the names.
 Wildcard characters are not supported.
@@ -132,6 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
+
 Specifies the maximum time, in seconds, that this cmdlet waits for the specified processes to stop.
 When this interval expires, the command displays a non-terminating error that lists the processes that are still running, and ends the wait.
 By default, there is no time-out.
@@ -149,19 +159,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Diagnostics.Process
+
 You can pipe a process object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * This cmdlet uses the **WaitForExit** method of the System.Diagnostics.Process class. For more information about this method, see the Microsoft .NET Framework SDK.
 
 *

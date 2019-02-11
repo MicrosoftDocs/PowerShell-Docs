@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821586
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-HotFix
 ---
-
 # Get-HotFix
 
 ## SYNOPSIS
@@ -16,22 +15,26 @@ Gets the hotfixes that have been applied to the local and remote computers.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### Description
+
 ```
 Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Hotfix** cmdlet gets hotfixes (also called updates) that have been installed on either the local computer (or on specified remote computers) by Windows Update, Microsoft Update, or Windows Server Update Services; the cmdlet also gets hotfixes or updates that have been installed manually by users.
 
 ## EXAMPLES
 
 ### Example 1: Get all hotfixes on the local computer
+
 ```
 PS C:\> Get-HotFix
 ```
@@ -39,6 +42,7 @@ PS C:\> Get-HotFix
 This command gets all hotfixes on the local computer.
 
 ### Example 2: Get all hotfixes on multiple computers that start with a search string
+
 ```
 PS C:\> Get-HotFix -Description "Security*" -ComputerName "Server01", "Server02" -Cred "Server01\admin01"
 ```
@@ -46,6 +50,7 @@ PS C:\> Get-HotFix -Description "Security*" -ComputerName "Server01", "Server02"
 This command gets all hotfixes on the Server01 and Server02 computers that have a description that begins with Security.
 
 ### Example 3: Create a text file that contain the computer names that are missing a security update
+
 ```
 PS C:\> $A = Get-Content "servers.txt"
 PS C:\> $A | ForEach { if (!(Get-HotFix -Id "KB957095" -ComputerName $_)) { Add-Content $_ -Path "Missing-kb953631.txt" }}
@@ -58,6 +63,7 @@ The commands use the **Get-Hotfix** cmdlet to get the KB957095 security update o
 If a computer does not have the update, the Add-Content cmdlet writes the computer name in the Missing-KB953631.txt file.
 
 ### Example 4: Get the most recent hotfix on the local computer
+
 ```
 PS C:\> (Get-HotFix | sort installedon)[-1]
 ```
@@ -69,6 +75,7 @@ It gets the hotfixes, sorts them by the value of the InstalledOn property, and t
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies a remote computer.
 The default is the local computer.
 
@@ -90,6 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -109,6 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies the hotfix descriptions that this cmdlet gets.
 Wildcards are permitted.
 The default is all hotfixes on the computer.
@@ -126,6 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies the hotfix IDs that this cmdlet gets.
 The default is all hotfixes on the computer.
 
@@ -142,6 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -153,9 +164,11 @@ You can pipe one or more computer names to Get-HotFix.
 ## OUTPUTS
 
 ### System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering
+
 This cmdlet returns objects that represent the hotfixes on the computer.
 
 ## NOTES
+
 * This cmdlet uses the Win32_QuickFixEngineering WMI class, which represents small system-wide updates of the operating system. Starting with Windows Vista, this class returns only the updates supplied by Microsoft Windows Installer, Windows Update, Microsoft Update, or Windows Server Update Services. It does not include updates that are supplied by Component Based Servicing (CBS), or other non-hotfix programs or apps. For more information, see [Win32_QuickFixEngineering class](https://go.microsoft.com/fwlink/?LinkID=145071) in the MSDN library.
 
   The output of this cmdlet might be different on different operating systems.

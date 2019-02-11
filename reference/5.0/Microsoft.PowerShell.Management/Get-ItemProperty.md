@@ -10,7 +10,6 @@ title:  Get-ItemProperty
 # Get-ItemProperty
 
 ## SYNOPSIS
-
 Gets the properties of a specified item.
 
 ## SYNTAX
