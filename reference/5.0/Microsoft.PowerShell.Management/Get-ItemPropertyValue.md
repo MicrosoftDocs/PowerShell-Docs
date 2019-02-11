@@ -10,7 +10,6 @@ title:  Get-ItemPropertyValue
 # Get-ItemPropertyValue
 
 ## SYNOPSIS
-
 Gets the value for one or more properties of a specified item.
 
 ## SYNTAX

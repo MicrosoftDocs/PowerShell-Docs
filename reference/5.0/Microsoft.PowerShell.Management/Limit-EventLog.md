@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821600
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Limit-EventLog
 ---
-
 # Limit-EventLog
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Limit-EventLog [-LogName] <String[]> [-ComputerName <String[]>] [-RetentionDays 
 ```
 
 ## DESCRIPTION
+
 The **Limit-EventLog** cmdlet sets the maximum size of a classic event log, how long each event must be retained, and what happens when the log reaches its maximum size.
 You can use it to limit the event logs on local or remote computers.
 
@@ -30,6 +30,7 @@ To get events from logs that use the Windows Event Log technology in Windows Vis
 ## EXAMPLES
 
 ### Example 1: Increase the size of an event log
+
 ```
 PS C:\> Limit-EventLog -LogName "Windows PowerShell" -MaximumSize 20KB
 ```
@@ -37,6 +38,7 @@ PS C:\> Limit-EventLog -LogName "Windows PowerShell" -MaximumSize 20KB
 This command increases the maximum size of the Windows PowerShell event log on the local computer to 20480 bytes (20 KB).
 
 ### Example 2: Retain an event log for a specified duration
+
 ```
 PS C:\> Limit-EventLog -LogName Security -ComputerName "Server01", "Server02" -RetentionDays 7
 ```
@@ -44,6 +46,7 @@ PS C:\> Limit-EventLog -LogName Security -ComputerName "Server01", "Server02" -R
 This command ensures that events in the Security log on the Server01 and Server02 computers are retained for at least 7 days.
 
 ### Example 3: Change the overflow action of all event logs
+
 ```
 PS C:\> $Logs = Get-EventLog -List | ForEach {$_.log}
 PS C:\> Limit-EventLog -OverflowAction OverwriteOlder -LogName $Logs
@@ -72,6 +75,7 @@ The third command displays the results.
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies remote computers.
 The default is the local computer.
 
@@ -94,6 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -109,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
+
 Specifies the event logs.
 Enter the log name (the value of the Log property; not the LogDisplayName) of one or more event logs, separated by commas.
 
@@ -125,6 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumSize
+
 Specifies the maximum size of the event logs in bytes.
 Enter a value between 64 kilobytes (KB) and 4 gigabytes (GB).
 The value must be divisible by 64 KB (65536).
@@ -144,6 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -OverflowAction
+
 Specifies what happens when the event log reaches its maximum size.
 
 The acceptable values for this parameter are:
@@ -168,6 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionDays
+
 Specifies the minimum number of days that an event must remain in the event log.
 
 This parameter specifies the value of the **MinimumRetentionDays** property of the **System.Diagnostics.EventLog** object that represents a classic event log.
@@ -185,6 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -201,19 +211,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pip input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To use this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
   This cmdlet changes the properties of the **System.Diagnostics.EventLog** object that represents a classic event log.

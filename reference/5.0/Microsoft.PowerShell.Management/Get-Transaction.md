@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821594
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-Transaction
 ---
-
 # Get-Transaction
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Get-Transaction [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Transaction** cmdlet gets an object that represents the current transaction in the session.
 
 This cmdlet never returns more than one object, because only one transaction is active at a time.
@@ -33,6 +33,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Get the current transaction
+
 ```
 PS C:\> Start-Transaction
 PS C:\> Get-Transaction
@@ -45,6 +46,7 @@ Error                1                 Active
 This command uses the Get-Transaction cmdlet to get the current transaction.
 
 ### Example 2: Show the properties and methods of the transaction object
+
 ```
 PS C:\> Get-Transaction | Get-Member
 
@@ -64,6 +66,7 @@ SubscriberCount    Property   System.Int32 SubscriberCount {get;set;}
 This command uses the Get-Member cmdlet to show the properties and methods of the transaction object.
 
 ### Example 3: Show the property values of a rolled back transaction
+
 ```
 PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
@@ -79,6 +82,7 @@ Error                0                 RolledBack
 This command shows the property values of a transaction object for a transaction that has been rolled back.
 
 ### Example 4: Show the property values of a committed transaction
+
 ```
 PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
@@ -94,6 +98,7 @@ Error                1                 Committed
 This command shows the property values of a transaction object for a transaction that has been committed.
 
 ### Example 5: Start a transaction while another is in progress
+
 ```
 PS C:\> cd hklm:\software
 HKLM:\SOFTWARE> Start-Transaction
@@ -141,6 +146,7 @@ The first Complete-Transaction command does not commit the transaction, but it r
 The second **Complete-Transaction** command commits the transaction.
 
 ### Example 6: Start an independent transaction while another is in progress
+
 ```
 PS C:\>
 HKLM:\SOFTWARE> Start-Transaction
@@ -181,16 +187,19 @@ The second **Complete-Transaction** command commits the transaction.
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSTransaction
+
 This cmdlet returns an object that represents the current transaction.
 
 ## NOTES
