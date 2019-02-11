@@ -505,7 +505,7 @@ Specifies the path to the files to search. Wildcards are permitted. The default 
 local directory.
 
 Specify files in the directory, such as `log1.txt`, `*.doc`, or `*.*`. If you specify only a
-directory, the command will fail.
+directory, the command fails.
 
 ```yaml
 Type: String[]
