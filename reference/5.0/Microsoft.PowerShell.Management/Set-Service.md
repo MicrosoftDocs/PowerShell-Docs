@@ -10,7 +10,6 @@ title:  Set-Service
 # Set-Service
 
 ## SYNOPSIS
-
 Starts, stops, and suspends a service, and changes its properties.
 
 ## SYNTAX

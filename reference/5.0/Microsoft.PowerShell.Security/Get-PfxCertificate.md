@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821715
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Get-PfxCertificate
 ---
-
 # Get-PfxCertificate
 
 ## SYNOPSIS
@@ -16,22 +15,26 @@ Gets information about .pfx certificate files on the computer.
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```
 Get-PfxCertificate [-FilePath] <String[]> [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```
 Get-PfxCertificate -LiteralPath <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-PfxCertificate** cmdlet gets an object representing each specified .pfx certificate file.
 A .pfx file includes both the certificate and a private key.
 
 ## EXAMPLES
 
 ### Example 1: Get a .pfx certificate
+
 ```
 PS C:\> Get-PfxCertificate -FilePath "C:\windows\system32\Test.pfx"
 Password: ******
@@ -44,6 +47,7 @@ Path:                    C:\windows\system32\zap.pfx
 This command gets information about the Test.pfx certificate on the system.
 
 ### Example 2: Get a .pfx certificate from a remote computer
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-PfxCertificate -FilePath "C:\Text\TestNoPassword.pfx}" -authentication CredSSP
 ```
@@ -56,6 +60,7 @@ When the .pfx certificate file is not password-protected, the value of the *Auth
 ## PARAMETERS
 
 ### -FilePath
+
 Specifies the full path to the .pfx file of the secured file.
 If you specify a value for this parameter, it is not necessary to type `-FilePath` at the command line.
 
@@ -72,6 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 The full path to the .pfx file of the secured file.
 Unlike *FilePath*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -91,19 +97,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains a file path to **Get-PfxCertificate**.
 
 ## OUTPUTS
 
 ### System.Security.Cryptography.X509Certificates.X509Certificate2
+
 **Get-PfxCertificate** returns an object for each certificate that it gets.
 
 ## NOTES
+
 * When using the Invoke-Command cmdlet to run a **Get-PfxCertificate** command remotely, and the .pfx certificate file is not password protected, the value of the *Authentication* parameter of **Invoke-Command** must be CredSSP.
 
 *
