@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  2/11/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -11,55 +11,86 @@ title:  Send-MailMessage
 # Send-MailMessage
 
 ## SYNOPSIS
-Sends an e-mail message.
+Sends an email message.
 
 ## SYNTAX
 
 ```
-Send-MailMessage [-Attachments <String[]>] [-Bcc <String[]>] [[-Body] <String>] [-BodyAsHtml]
- [-Encoding <Encoding>] [-Cc <String[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
- -From <String> [[-SmtpServer] <String>] [-Priority <MailPriority>] [-Subject] <String> [-To] <String[]>
- [-Credential <PSCredential>] [-UseSsl] [-Port <Int32>] [<CommonParameters>]
+Send-MailMessage [-To] <string[]> [-Subject] <string> [[-Body] <string>] [[-SmtpServer] <string>]
+-From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
+[-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+[-Priority <MailPriority>] [-Credential <pscredential>] [-UseSsl] [-Port <int>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Send-MailMessage cmdlet sends an e-mail message from within Windows PowerShell.
+
+The `Send-MailMessage` cmdlet sends an email message from within PowerShell.
+
+You must specify a Simple Mail Transfer Protocol (SMTP) server or the `Send-MailMessage` command
+fails. Use the **SmtpServer** parameter or set the `$PSEmailServer` variable to a valid SMTP server.
+The value assigned to `$PSEmailServer` is the default SMTP setting for PowerShell. For more
+information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> send-mailmessage -to "User01 <user01@example.com>" -from "User02 <user02@example.com>" -subject "Test mail"
-```
+### Example 1: Send an email from one person to another person
 
-This command sends an e-mail message from User01 to User02.
+This command sends an email message from one person to another person.
 
-The mail message has a subject, which is required, but it does not have a body, which is optional.
-Also, because the SmtpServer parameter is not specified, Send-MailMessage uses the value of the $PSEmailServer preference variable for the SMTP server.
+The **From**, **To**, and **Subject** parameters are required by `Send-MailMessage`. This example
+uses the default `$PSEmailServer` variable for the SMTP server, so the **SmtpServer** parameter is
+not needed.
 
-### Example 2
 ```
-PS C:\> send-mailmessage -from "User01 <user01@example.com>" -to "User02 <user02@example.com>", "User03 <user03@example.com>" -subject "Sending the Attachment" -body "Forgot to send the attachment. Sending now." -Attachments "data.csv" -priority High -dno onSuccess, onFailure -smtpServer smtp.fabrikam.com
+PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
 ```
 
-This command sends an e-mail message with an attachment from User01 to two other users.
+The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
+**To** parameter specifies the message's recipient. The **Subject** parameter uses the text string
+**Test mail** as the message because the optional **Body** parameter is not included.
 
-It specifies a priority value of "High" and requests a delivery notification by e-mail when the e-mail messages are delivered or when they fail.
+### Example 2: Send an attachment
 
-### Example 3
+This command sends an email message with an attachment.
+
 ```
-PS C:\> send-mailmessage -to "User01 <user01@example.com>" -from "ITGroup <itdept@example.com>" -cc "User02 <user02@example.com>" -bcc "ITMgr <itmgr@example.com>" -subject "Don't forget today's meeting!" -credential domain01\admin01 -useSSL
+PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>' -Subject 'Sending the Attachment' -Body 'Forgot to send the attachment. Sending now.' -Attachments .\data.csv -Priority High -DeliveryNotificationOption OnSuccess, OnFailure -SmtpServer 'smtp.fabrikam.com'
 ```
 
-This command sends an e-mail message from User01 to the ITGroup mailing list with a copy (CC) to User02 and a blind carbon copy (BCC) to the IT manager (ITMgr).
+The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
+**To** parameter specifies the message's recipients. The **Subject** parameter describes the content
+of the message. The **Body** parameter is the content of the message.
 
-The command uses the credentials of a domain administrator and the UseSSL parameter.
+The **Attachments** parameter specifies the file in the current directory that is attached to the
+email message. The **Priority** parameter sets the message to **High** priority. The
+**-DeliveryNotificationOption** parameter specifies two values, **OnSuccess** and **OnFailure**. The
+sender will receive email notifications to confirm the success or failure of the message delivery.
+The **SmtpServer** parameter sets the SMTP server to **smtp.fabrikam.com**.
+
+### Example 3: Send email to a mailing list
+
+This command sends an email message to a mailing list.
+
+```
+PS> Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabrikam.com>' -Cc 'User02 <user02@fabrikam.com>' -Bcc 'ITMgr <itmgr@fabrikam.com>' -Subject 'Don't forget today's meeting!' -Credential domain01\admin01 -UseSsl
+```
+
+The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
+**To** parameter specifies the message's recipients. The **Cc** parameter sends a copy of the
+message to the specified recipient. The **Bcc** parameter sends a blind copy of the message. A blind
+copy is an email address that is hidden from the other recipients. The **Subject** parameter is the
+message because the optional **Body** parameter is not included.
+
+The **Credential** parameter specifies a domain administrator's credentials are used to send the
+message. The **UseSsl** parameter specifies that Secure Socket Layer (SSL) creates a secure
+connection.
 
 ## PARAMETERS
 
 ### -Attachments
-Specifies the path and file names of files to be attached to the e-mail message.
-You can use this parameter or pipe the paths and file names to Send-MailMessage.
+
+Specifies the path and file names of files to be attached to the email message. You can use this
+parameter or pipe the paths and file names to `Send-MailMessage`.
 
 ```yaml
 Type: String[]
@@ -74,8 +105,9 @@ Accept wildcard characters: False
 ```
 
 ### -Bcc
-Specifies the e-mail addresses that receive a copy of the mail but are not listed as recipients of the message.
-Enter names (optional) and the e-mail address, such as "Name \<someone@example.com\>".
+
+Specifies the email addresses that receive a copy of the mail but are not listed as recipients of
+the message. Enter names (optional) and the email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
 Type: String[]
@@ -90,7 +122,8 @@ Accept wildcard characters: False
 ```
 
 ### -Body
-Specifies the body (content) of the e-mail message.
+
+Specifies the content of the email message.
 
 ```yaml
 Type: String
@@ -98,14 +131,15 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -BodyAsHtml
-Indicates that the value of the Body parameter contains HTML.
+
+Specifies that the value of the **Body** parameter contains HTML.
 
 ```yaml
 Type: SwitchParameter
@@ -120,8 +154,9 @@ Accept wildcard characters: False
 ```
 
 ### -Cc
-Specifies the e-mail addresses to which a carbon copy (CC) of the e-mail message is sent.
-Enter names (optional) and the e-mail address, such as "Name \<someone@example.com\>".
+
+Specifies the email addresses to which a carbon copy (CC) of the email message is sent. Enter names
+(optional) and the email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
 Type: String[]
@@ -136,11 +171,12 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Specifies a user account that has permission to perform this action.
-The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01".
-Or, enter a PSCredential object, such as one from the Get-Credential cmdlet.
+Specifies a user account that has permission to perform this action. The default is the current
+user.
+
+Type a user name, such as **User01** or **Domain01\User01**. Or, enter a **PSCredential** object,
+such as one from the `Get-Credential` cmdlet.
 
 ```yaml
 Type: PSCredential
@@ -155,42 +191,57 @@ Accept wildcard characters: False
 ```
 
 ### -DeliveryNotificationOption
-Specifies the delivery notification options for the e-mail message.
-You can specify multiple values.
-"None" is the default value.
-The alias for this parameter is "dno".
 
-The delivery notifications are sent in an e-mail message to the address specified in the value of the *From* parameter.
+Specifies the delivery notification options for the email message. You can specify multiple values.
+None is the default value. The alias for this parameter is **DNO**.
 
-Valid values are:
+The delivery notifications are sent to the address in the **From** parameter.
 
-- None: No notification.
-- OnSuccess: Notify if the delivery is successful.
-- OnFailure: Notify if the delivery is unsuccessful.
-- Delay: Notify if the delivery is delayed.
-- Never: Never notify.
+The acceptable values for this parameter are as follows:
+
+- **None**: No notification.
+- **OnSuccess**: Notify if the delivery is successful.
+- **OnFailure**: Notify if the delivery is unsuccessful.
+- **Delay**: Notify if the delivery is delayed.
+- **Never**: Never notify.
 
 ```yaml
 Type: DeliveryNotificationOptions
 Parameter Sets: (All)
 Aliases: DNO
+Accepted values: None, OnSuccess, OnFailure, Delay, Never
 
 Required: False
 Position: Named
-Default value: "None"
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Encoding
-Specifies the encoding used for the body and subject.
-Valid values are ASCII, UTF8, UTF7, UTF32, Unicode, BigEndianUnicode, Default, and OEM.
-ASCII is the default.
+
+Specifies the type of encoding for the target file. The default value is **ASCII**.
+
+The acceptable values for this parameter are as follows:
+
+- **ASCII** Uses ASCII (7-bit) character set.
+- **BigEndianUnicode** Uses UTF-16 with the big-endian byte order.
+- **BigEndianUTF32** Uses UTF-32 with the big-endian byte order.
+- **Byte** Encodes a set of characters into a sequence of bytes.
+- **Default** Uses the encoding that corresponds to the system's active code page.
+- **OEM** Uses the encoding that corresponds to the system's current OEM code page.
+- **String** Same as **Unicode**.
+- **Unicode** Uses UTF-16 with the little-endian byte order.
+- **Unknown** Same as **Unicode**.
+- **UTF7** Uses UTF-7.
+- **UTF8** Uses UTF-8.
+- **UTF32** Uses UTF-32 with the little-endian byte order.
 
 ```yaml
 Type: Encoding
 Parameter Sets: (All)
 Aliases: BE
+Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, Byte, Default, OEM, String, Unicode, Unknown, UTF7, UTF8, UTF32
 
 Required: False
 Position: Named
@@ -200,9 +251,9 @@ Accept wildcard characters: False
 ```
 
 ### -From
-Specifies the address from which the mail is sent.
-Enter a name (optional) and e-mail address, such as "Name \<someone@example.com\>".
-This parameter is required.
+
+The **From** parameter is required. This parameter specifies the sender's email address. Enter a
+name (optional) and email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
 Type: String
@@ -217,9 +268,9 @@ Accept wildcard characters: False
 ```
 
 ### -Port
-Specifies an alternate port on the SMTP server.
-The default value is 25, which is the default SMTP port.
-This parameter is available in Windows PowerShell 3.0 and newer releases.
+
+Specifies an alternate port on the SMTP server. The default value is 25, which is the default SMTP
+port.
 
 ```yaml
 Type: Int32
@@ -234,27 +285,29 @@ Accept wildcard characters: False
 ```
 
 ### -Priority
-Specifies the priority of the e-mail message.
-The valid values for this are Normal, High, and Low.
-Normal is the default.
+
+Specifies the priority of the email message. Normal is the default. The acceptable values for this
+parameter are Normal, High, and Low.
 
 ```yaml
 Type: MailPriority
 Parameter Sets: (All)
 Aliases:
+Accepted values: Normal, High, Low
 
 Required: False
 Position: Named
-Default value: Normal.
+Default value: Normal
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SmtpServer
-Specifies the name of the SMTP server that sends the e-mail message.
 
-The default value is the value of the $PSEmailServer preference variable.
-If the preference variable is not set and this parameter is omitted, the command fails.
+Specifies the name of the SMTP server that sends the email message.
+
+The default value is the value of the `$PSEmailServer` preference variable. If the preference
+variable is not set and this parameter is not used, the `Send-MailMessage` command fails.
 
 ```yaml
 Type: String
@@ -262,37 +315,20 @@ Parameter Sets: (All)
 Aliases: ComputerName
 
 Required: False
-Position: 4
+Position: 3
 Default value: $PSEmailServer
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Subject
-Specifies the subject of the e-mail message.
-This parameter is required.
+
+Th **Subject** parameter is required. This parameter specifies the subject of the email message.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: sub
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -To
-Specifies the addresses to which the mail is sent.
-Enter names (optional) and the e-mail address, such as "Name \<someone@example.com\>".
-This parameter is required.
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
 
 Required: True
 Position: 1
@@ -301,9 +337,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -To
+
+The **To** parameter is required. This parameter specifies the recipient's email address. If there
+are multiple recipients, separate their addresses with a comma (`,`). Enter names (optional) and the
+email address, such as `Name <someone@fabrikam.com>`.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UseSsl
-Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer to send mail.
-By default, SSL is not used.
+
+The Secure Sockets Layer (SSL) protocol is used to establish a secure connection to the remote
+computer to send mail. By default, SSL is not used.
 
 ```yaml
 Type: SwitchParameter
@@ -318,18 +373,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
-You can pipe the path and file names of attachments to Send-MailMessage.
+
+You can pipe the path and file names of attachments to `Send-MailMessage`.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
 
 ## RELATED LINKS
+
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
+
+[Get-Credential](../Microsoft.PowerShell.Security/Get-Credential.md)
