@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821598
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Invoke-WmiMethod
 ---
-
 # Invoke-WmiMethod
 
 ## SYNOPSIS
@@ -16,6 +15,7 @@ Calls WMI methods.
 ## SYNTAX
 
 ### class (Default)
+
 ```
 Invoke-WmiMethod [-Class] <String> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
@@ -24,12 +24,14 @@ Invoke-WmiMethod [-Class] <String> [-Name] <String> [-ArgumentList <Object[]>] [
 ```
 
 ### object
+
 ```
 Invoke-WmiMethod -InputObject <ManagementObject> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
  [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### path
+
 ```
 Invoke-WmiMethod -Path <String> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
@@ -38,6 +40,7 @@ Invoke-WmiMethod -Path <String> [-Name] <String> [-ArgumentList <Object[]>] [-As
 ```
 
 ### WQLQuery
+
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -46,6 +49,7 @@ Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
 ```
 
 ### query
+
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -54,6 +58,7 @@ Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
 ```
 
 ### list
+
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -62,6 +67,7 @@ Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
 ```
 
 ## DESCRIPTION
+
 The **Invoke-WmiMethod** cmdlet calls the methods of Windows Management Instrumentation (WMI) objects.
 
 New Common Information Model (CIM) cmdlets, introduced in Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets.
@@ -71,6 +77,7 @@ Instead of using **Invoke-WmiMethod**, consider using Invoke-CimMethodhttp://go.
 ## EXAMPLES
 
 ### Example 1: List the required order of WMI objects
+
 ```
 PS C:\> ([wmiclass]'Win32_Volume').GetMethodParameters('Format')
 __GENUS           : 2
@@ -96,6 +103,7 @@ This command lists the required order of the objects.
 To invoke WMI in PowerShell 3.0 differs from alternate methods, and requires that object values are entered in a specific order.
 
 ### Example 2: Start an instance of an application
+
 ```
 PS C:\> ([Wmiclass]'Win32_Process').GetMethodParameters('Create')
 __GENUS                   : 2
@@ -132,6 +140,7 @@ This command starts an instance of Notepad by calling the Create method of the W
 The **ReturnValue** property is populated with a 0, and the **ProcessId** property is populated with an integer (the next process ID number) if the command is completed.
 
 ### Example 3: Rename a file
+
 ```
 PS C:\> Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
 __GENUS          : 2
@@ -156,6 +165,7 @@ The **ReturnValue** property is populated with a 0 if the command is completed.
 ## PARAMETERS
 
 ### -ArgumentList
+
 Specifies the parameters to pass to the called method.
 The value of this parameter must be an array of objects, and they must appear in the order required by the called method.
 The **Invoke-CimCommand** cmdlet does not have these limitations.
@@ -186,6 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
+
 Indicates that this cmdlet runs the command as a background job.
 Use this parameter to run commands that take a long time to finish.
 
@@ -214,6 +225,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the authentication level to be used with the WMI connection.
 The acceptable values for this parameter are:
 
@@ -247,6 +259,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authority
+
 Specifies the authority to use to authenticate the WMI connection.
 You can specify standard Windows NT LAN Manager (NTLM) or Kerberos authentication.
 To use NTLM, set the authority setting to ntlmdomain:\<DomainName\>, where \<DomainName\> identifies a valid NTLM domain name.
@@ -266,6 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -Class
+
 Specifies the WMI class that contains a static method to call.
 
 ```yaml
@@ -281,6 +295,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies, as a string array, the computers that this cmdlet runs the command on.
 The default is the local computer.
 
@@ -303,6 +318,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -318,6 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 Type a user name, such as User01, Domain01\User01, or User@Contoso.com.
@@ -337,6 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAllPrivileges
+
 Indicates that this cmdlet enables all the privileges of the current user before the command makes the WMI call.
 
 ```yaml
@@ -352,6 +370,7 @@ Accept wildcard characters: False
 ```
 
 ### -Impersonation
+
 Specifies the impersonation level to use.
 The acceptable values for this parameter are:
 
@@ -379,6 +398,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a **ManagementObject** object to use as input.
 When this parameter is used, all other parameters except the *Flag* and *Argument* parameters are ignored.
 
@@ -395,6 +415,7 @@ Accept wildcard characters: False
 ```
 
 ### -Locale
+
 Specifies the preferred locale for WMI objects.
 Specify the value of the Locale parameter as an array in the MS_\<LCID\> format in the preferred order.
 
@@ -411,6 +432,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the method to be invoked.
 This parameter is mandatory and cannot be null or empty.
 
@@ -427,6 +449,7 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
+
 When used with the *Class* parameter, this parameter specifies the WMI repository namespace where the referenced WMI class or object is located.
 
 ```yaml
@@ -442,6 +465,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the WMI object path of a WMI class, or specifies the WMI object path of an instance of a WMI class.
 The class or the instance that you specify must contain the method that is specified in the *Name* parameter.
 
@@ -458,6 +482,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies a throttle value for the number of WMI operations that can be executed simultaneously.
 This parameter is used together with the *AsJob* parameter.
 The throttle limit applies only to the current command, not to the session or to the computer.
@@ -475,6 +500,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -491,16 +517,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 This cmdlet does not accept any input.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

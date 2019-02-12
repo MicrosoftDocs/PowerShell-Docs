@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821641
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Stop-Computer
 ---
-
 # Stop-Computer
 
 ## SYNOPSIS
@@ -23,6 +22,7 @@ Stop-Computer [-AsJob] [-DcomAuthentication <AuthenticationLevel>] [-WsmanAuthen
 ```
 
 ## DESCRIPTION
+
 The **Stop-Computer** cmdlet shuts down computers remotely.
 It can also shut down the local computer.
 
@@ -33,6 +33,7 @@ This cmdlet does not require Windows PowerShell remoting unless you use the *AsJ
 ## EXAMPLES
 
 ### Example 1: Shut down the local computer
+
 ```
 PS C:\> Stop-Computer
 ```
@@ -40,6 +41,7 @@ PS C:\> Stop-Computer
 This command shuts down the local computer.
 
 ### Example 2: Shut down two remote computers and the local computer
+
 ```
 PS C:\> Stop-Computer -ComputerName "Server01", "Server02", "localhost"
 ```
@@ -47,6 +49,7 @@ PS C:\> Stop-Computer -ComputerName "Server01", "Server02", "localhost"
 This command stops two remote computers, Server01 and Server02, and the local computer, identified as localhost.
 
 ### Example 3: Shut down remote computers as a background job
+
 ```
 PS C:\> $j = Stop-Computer -ComputerName "Server01", "Server02" -AsJob
 PS C:\> $results = $j | Receive-Job
@@ -66,6 +69,7 @@ The third command displays the result saved in the $results variable.
 Because *AsJob* creates the job on the local computer and automatically returns the results to the local computer, you can run **Receive-Job** as a local command.
 
 ### Example 4: Shut down a remote computer
+
 ```
 PS C:\> Stop-Computer -CompupterName "Server01" -Impersonation anonymous -Authentication PacketIntegrity
 ```
@@ -74,6 +78,7 @@ This command stops the Server01 remote computer.
 The command uses customized impersonation and authentication settings.
 
 ### Example 5:
+
 ```
 PS C:\> $s = Get-Content Domain01.txt
 PS C:\> $c = Get-Credential domain01\admin01
@@ -93,6 +98,7 @@ It also uses the *ThrottleLimit* parameter to limit the command to 10 concurrent
 ## PARAMETERS
 
 ### -AsJob
+
 Indicates that this cmdlet runs as a background job.
 
 To use this parameter, the local and remote computers must be configured for remoting and, on Windows Vista and later versions of the Windows operating system, you must open Windows PowerShell by using the Run as administrator option.
@@ -118,6 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the computers to stop.
 The default is the local computer.
 
@@ -140,6 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -155,6 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -173,6 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -DcomAuthentication
+
 Specifies the authentication level that this cmdlet uses with WMI.
 **Stop-Computer** uses WMI.
 The acceptable values for this parameter are:
@@ -212,6 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces an immediate shut down of the computers.
 
 ```yaml
@@ -227,6 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -Impersonation
+
 Specifies the impersonation level to use when this cmdlet calls WMI.
 **Stop-Computer** uses WMI.
 The acceptable values for this parameter are:
@@ -256,6 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -Protocol
+
 Specifies which protocol to use to restart the computers.
 The acceptable values for this parameter are: WSMan and DCOM.
 The default value is DCOM.
@@ -276,6 +289,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent connections that can be established to run this command.
 If you omit this parameter or enter a value of 0, the default value, 32, is used.
 
@@ -294,6 +308,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -310,6 +325,7 @@ Accept wildcard characters: False
 ```
 
 ### -WsmanAuthentication
+
 Specifies the mechanism that is used to authenticate the user credentials when this cmdlet uses the WSMan protocol.
 The acceptable values for this parameter are:
 
@@ -344,20 +360,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None or System.Management.Automation.RemotingJob
+
 The cmdlet returns a **System.Management.Automation.RemotingJob** object, if you specify the *AsJob* parameter.
 Otherwise, it does not generate any output.
 
 ## NOTES
+
 * This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class.
 * In Windows PowerShell 2.0, the *AsJob* parameter does not work reliably when you are restarting/stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this problem.
 

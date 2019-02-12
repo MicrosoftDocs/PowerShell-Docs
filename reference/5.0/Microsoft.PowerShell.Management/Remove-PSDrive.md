@@ -10,7 +10,6 @@ title:  Remove-PSDrive
 # Remove-PSDrive
 
 ## SYNOPSIS
-
 Deletes temporary PowerShell drives and disconnects mapped network drives.
 
 ## SYNTAX

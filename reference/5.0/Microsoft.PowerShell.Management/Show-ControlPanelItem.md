@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821635
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Show-ControlPanelItem
 ---
-
 # Show-ControlPanelItem
 
 ## SYNOPSIS
@@ -16,21 +15,25 @@ Opens control panel items.
 ## SYNTAX
 
 ### RegularName (Default)
+
 ```
 Show-ControlPanelItem [-Name] <String[]> [<CommonParameters>]
 ```
 
 ### CanonicalName
+
 ```
 Show-ControlPanelItem -CanonicalName <String[]> [<CommonParameters>]
 ```
 
 ### ControlPanelItem
+
 ```
 Show-ControlPanelItem [[-InputObject] <ControlPanelItem[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Show-ControlPanelItem** cmdlet opens control panel items on the local computer.
 You can use it to open control panel items by name, category, or description, even on systems that do not have a user interface.
 You can pipe control panel items from the Get-ControlPanelItem cmdlet to **Show-ControlPanelItem**.
@@ -45,6 +48,7 @@ Because this cmdlet requires a user interface, it does not work on Server Core i
 ## EXAMPLES
 
 ### Example 1: Show a control panel item
+
 ```
 PS C:\> Show-ControlPanelItem -Name "AutoPlay"
 ```
@@ -52,6 +56,7 @@ PS C:\> Show-ControlPanelItem -Name "AutoPlay"
 This command shows the AutoPlay item.
 
 ### Example 2: Pipe a control panel item to this cmdlet
+
 ```
 PS C:\> Get-ControlPanelItem -Name "Windows Firewall" | Show-ControlPanelItem
 ```
@@ -60,6 +65,7 @@ This command opens the Windows Firewall control panel item on the local computer
 It uses the Get-ControlPanelItem cmdlet to get the control panel item and the **Show-ControlPanelItem** cmdlet to open it.
 
 ### Example 3: Use a file name to open a control panel item
+
 ```
 PS C:\> appwiz
 ```
@@ -74,6 +80,7 @@ In Windows PowerShell 3.0, you can omit the .cpl file name extension for control
 ## PARAMETERS
 
 ### -CanonicalName
+
 Specifies control panel items by using the specified canonical names or name patterns.
 Wildcard characters are permitted.
 If you enter multiple names, this cmdlet opens control panel items that match any of the names, as if the items in the name list were separated by an **OR** operator.
@@ -91,6 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies control panel items to open by submitting control panel item objects.
 Enter a variable that contains control panel item objects, or type a command or expression that gets control panel item objects, such as **Get-ControlPanelItem**.
 
@@ -107,6 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies names of control panel items.
 Wildcard characters are permitted.
 If you enter multiple names, this cmdlet opens control panel items that match any of the names, as if the items in the name list were separated by an **OR** operator.
@@ -124,16 +133,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String, Microsoft.PowerShell.Commands.ControlPanelItem
+
 You can pipe a name or control panel item object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES

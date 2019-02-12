@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821578
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Disable-ComputerRestore
 ---
-
 # Disable-ComputerRestore
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Disable-ComputerRestore [-Drive] <String[]> [-WhatIf] [-Confirm] [<CommonParamet
 ```
 
 ## DESCRIPTION
+
 The **Disable-ComputerRestore** cmdlet turns off the System Restore feature on one or more file system drives.
 As a result, attempts to restore the computer do not affect the specified drive.
 
@@ -33,6 +33,7 @@ System restore points and the ComputerRestore cmdlets are supported only on clie
 ## EXAMPLES
 
 ### Example 1: Disable System Restore on the specified drive
+
 ```
 PS C:\> Disable-ComputerRestore -Drive "C:\"
 ```
@@ -40,6 +41,7 @@ PS C:\> Disable-ComputerRestore -Drive "C:\"
 This command disables System Restore on the C: drive.
 
 ### Example 2: Disable System Restore on multiple drives
+
 ```
 PS C:\> Disable-ComputerRestore "C:\", "D:\"
 ```
@@ -50,6 +52,7 @@ The command uses the *Drive* parameter, but it omits the Drive parameter name.
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -65,6 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -Drive
+
 Specifies the file system drives.
 Enter one or more file system drive letters, each followed by a colon and a backslash and enclosed in quotation marks, such as C:\ or D:\.
 This parameter is required.
@@ -86,6 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -102,19 +107,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * To run this cmdlet on Windows Vistaand later versions of Windows, open Windows PowerShell with the Run as administrator option.
 
   To find the file system drives that are eligible for system restore, in System in Control Panel, see the System Protection tab.

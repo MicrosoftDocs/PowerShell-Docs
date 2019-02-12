@@ -10,7 +10,6 @@ title:  Rename-Item
 # Rename-Item
 
 ## SYNOPSIS
-
 Renames an item in a PowerShell provider namespace.
 
 ## SYNTAX

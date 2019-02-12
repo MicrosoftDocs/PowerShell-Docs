@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821572
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Complete-Transaction
 ---
-
 # Complete-Transaction
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Complete-Transaction [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Complete-Transaction** cmdlet commits an active transaction.
 When you commit a transaction, the commands in the transaction are finalized and the data affected by the commands is changed.
 
@@ -31,6 +31,7 @@ For more information, see about_Transactions.
 ## EXAMPLES
 
 ### Example 1: Commit a transaction
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -63,6 +64,7 @@ The **Complete-Transaction** command commits the transaction, which makes the re
 As a result, the second dir command shows that the registry is changed.
 
 ### Example 2: Commit a transaction that has more than one subscriber
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -135,6 +137,7 @@ The second **Complete-Transaction** command commits the entire transaction and c
 This is confirmed by a second dir m* command, which shows the changes.
 
 ### Example 3: Perform a transaction that does not change any data
+
 ```
 PS C:\> cd hkcu:\software
 PS HKCU:\software> Start-Transaction
@@ -171,6 +174,7 @@ However, when you add the *UseTransaction* parameter to the dir command, the com
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -186,6 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -202,19 +207,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * You cannot roll back a transaction that has been committed, or commit a transaction that has been rolled back.
 
   You cannot roll back any transaction other than the active transaction.
