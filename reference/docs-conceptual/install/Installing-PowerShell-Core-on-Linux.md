@@ -151,9 +151,6 @@ sudo apt-get remove powershell
 
 ## Ubuntu 18.04
 
-> [!NOTE]
-> Support for Ubuntu 18.04 was added after `6.1.0-preview.2`
-
 ### Installation via Package Repository - Ubuntu 18.04
 
 PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).
@@ -206,7 +203,6 @@ sudo apt-get remove powershell
 ## Ubuntu 18.10
 
 > [!NOTE]
-> Support for Ubuntu 18.10 was added after `6.1.0-preview.3`.
 > As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle),
 > it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
