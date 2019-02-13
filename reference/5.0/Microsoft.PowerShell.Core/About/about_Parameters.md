@@ -1,5 +1,5 @@
 ---
-ms.date:  01/03/2018
+ms.date:  02/12/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -18,11 +18,12 @@ parameters follow the command name and have the following form:
 
 ```
 -<parameter_name> <parameter_value>
+-<parameter_name>:<parameter_value>
 ```
 
-The name of the parameter is preceded by a hyphen (-), which signals to
-PowerShell that the word following the hyphen is a parameter name.
-Some parameters do not require or accept a parameter value. Other parameters
+The name of the parameter is preceded by a hyphen (-), which signals to PowerShell that the word
+following the hyphen is a parameter name. The parameter name and value can be separated by a space
+or a colon character. Some parameters do not require or accept a parameter value. Other parameters
 require a value, but do not require the parameter name in the command.
 
 The type of parameters and the requirements for those parameters vary. To find
