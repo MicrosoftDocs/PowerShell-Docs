@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821711
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Get-AuthenticodeSignature
 ---
-
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
@@ -16,22 +15,26 @@ Gets information about the Authenticode signature for a file.
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```
 Get-AuthenticodeSignature [-FilePath] <String[]> [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```
 Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-AuthenticodeSignature** cmdlet gets information about the Authenticode signature for a file.
 If the file is not signed, the information is retrieved, but the fields are blank.
 
 ## EXAMPLES
 
 ### Example 1: Get the Authenticode signature for a file
+
 ```
 PS C:\> Get-AuthenticodeSignature -FilePath "C:\Test\NewScript.ps1"
 ```
@@ -40,6 +43,7 @@ This command gets information about the Authenticode signature in the NewScript.
 It uses the *FilePath* parameter to specify the file.
 
 ### Example 2: Get the Authenticode signature for multiple files
+
 ```
 PS C:\> Get-AuthenticodeSignature test.ps1, test1.ps1, sign-file.ps1, makexml.ps1
 ```
@@ -48,6 +52,7 @@ This command gets information about the Authenticode signature for the four file
 In this example, the name of the *FilePath* parameter, which is optional, is omitted.
 
 ### Example 3: Get only valid Authenticode signatures for multiple files
+
 ```
 PS C:\> Get-ChildItem $pshome\*.* | ForEach-object {Get-AuthenticodeSignature $_} | where {$_.status -eq "Valid"}
 ```
@@ -65,6 +70,7 @@ The results of the **Get-AuthenticodeSignature** command are sent to a Where-Obj
 ## PARAMETERS
 
 ### -FilePath
+
 Specifies the path to the file to examine.
 Wildcards are permitted, but they must lead to a single file.
 It is not necessary to type `-FilePath` at the command line when you specify a value for this parameter.
@@ -82,6 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the path to the file being examined.
 Unlike *FilePath*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -101,19 +108,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains a file path to **Get-AuthenticodeSignature**.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Signature
+
 **Get-AuthenticodeSignature** returns a signature object for each signature that it gets.
 
 ## NOTES
+
 * For information about Authenticode signatures in Windows PowerShell, see about_Signing.
 
 *

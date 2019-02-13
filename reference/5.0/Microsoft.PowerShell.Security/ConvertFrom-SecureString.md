@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821708
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  ConvertFrom-SecureString
 ---
-
 # ConvertFrom-SecureString
 
 ## SYNOPSIS
@@ -16,16 +15,19 @@ Converts a secure string to an encrypted standard string.
 ## SYNTAX
 
 ### Secure (Default)
+
 ```
 ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureString>] [<CommonParameters>]
 ```
 
 ### Open
+
 ```
 ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **ConvertFrom-SecureString** cmdlet converts a secure string (**System.Security.SecureString**) to an encrypted standard string (**System.String**).
 Unlike a secure string, an encrypted standard string can be saved in a file for later use.
 The encrypted standard string can be converted back to a secure string by using the ConvertTo-SecureString cmdlet.
@@ -37,6 +39,7 @@ If no key is specified, the Windows Data Protection API (DPAPI) is used to encry
 ## EXAMPLES
 
 ### Example 1: Create a secure string
+
 ```
 PS C:\> $SecureString = Read-Host -AsSecureString
 ```
@@ -46,6 +49,7 @@ After entering the command, type the string you want to store as a secure string
 An asterisk (*) is displayed to represent each character that you type.
 
 ### Example 2: Convert a secure string to an encrypted standard string
+
 ```
 PS C:\> $StandardString = ConvertFrom-SecureString $SecureString
 ```
@@ -54,6 +58,7 @@ This command converts the secure string in the $SecureString variable to an encr
 The resulting encrypted standard string is stored in the $StandardString variable.
 
 ### Example 3: Convert a secure string to an encrypted standard string with a 192-bit key
+
 ```
 PS C:\> $Key = (3,4,2,3,56,34,254,222,1,1,2,23,42,54,33,233,1,34,2,7,6,5,35,43)
 PS C:\> $StandardString = ConvertFrom-SecureString $SecureString -Key $Key
@@ -74,6 +79,7 @@ The second command uses the key in the $Key variable to convert the secure strin
 ## PARAMETERS
 
 ### -Key
+
 Specifies the encryption key as a byte array.
 
 ```yaml
@@ -89,6 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecureKey
+
 Specifies the encryption key as a secure string.
 The secure string value is converted to a byte array before being used as the key.
 
@@ -105,6 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecureString
+
 Specifies the secure string to convert to an encrypted standard string.
 
 ```yaml
@@ -120,19 +128,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Security.SecureString
+
 You can pipe a **SecureString** object to **ConvertFrom-SecureString**.
 
 ## OUTPUTS
 
 ### System.String
+
 **ConvertFrom-SecureString** returns a standard string object.
 
 ## NOTES
+
 * To create a secure string from characters that are typed at the command prompt, use the *AsSecureString* parameter of the Read-Host cmdlet.
 
   When you use the *Key* or *SecureKey* parameters to specify a key, the key length must be correct.

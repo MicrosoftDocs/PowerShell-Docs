@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821609
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  New-WebServiceProxy
 ---
-
 # New-WebServiceProxy
 
 ## SYNOPSIS
@@ -16,23 +15,27 @@ Creates a Web service proxy object that lets you use and manage the Web service 
 ## SYNTAX
 
 ### NoCredentials (Default)
+
 ```
 New-WebServiceProxy [-Uri] <Uri> [[-Class] <String>] [[-Namespace] <String>] [<CommonParameters>]
 ```
 
 ### Credential
+
 ```
 New-WebServiceProxy [-Uri] <Uri> [[-Class] <String>] [[-Namespace] <String>] [-Credential <PSCredential>]
  [<CommonParameters>]
 ```
 
 ### UseDefaultCredential
+
 ```
 New-WebServiceProxy [-Uri] <Uri> [[-Class] <String>] [[-Namespace] <String>] [-UseDefaultCredential]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **New-WebServiceProxy** cmdlet lets you use a Web service in Windows PowerShell.
 The cmdlet connects to a Web service and creates a Web service proxy object in Windows PowerShell.
 You can use the proxy object to manage the Web service.
@@ -43,6 +46,7 @@ The Microsoft .NET Framework provides Web service proxy objects that represent t
 ## EXAMPLES
 
 ### Example 1: Create a proxy for a Web service
+
 ```
 PS C:\> $zip = New-WebServiceProxy -Uri "http://www.webservicex.net/uszip.asmx?WSDL"
 ```
@@ -50,6 +54,7 @@ PS C:\> $zip = New-WebServiceProxy -Uri "http://www.webservicex.net/uszip.asmx?W
 This command creates a .NET Framework proxy of the US Zip Web service in Windows PowerShell.
 
 ### Example 2: Create a proxy for a Web service and specify namespace and class
+
 ```
 PS C:\> $URI = "http://www.webservicex.net/uszip.asmx?WSDL"
 PS C:\> $zip = New-WebServiceProxy -Uri $URI -Namespace "WebServiceProxy" -Class "USZip"
@@ -63,6 +68,7 @@ The second command creates the Web service proxy.
 The command uses the *Uri* parameter to specify the URI and the *Namespace* and *Class* parameters to specify the namespace and class of the object.
 
 ### Example 3: Display methods of a Web service proxy
+
 ```
 PS C:\> $zip | Get-Member -MemberType method
 TypeName: WebServiceProxy.USZip
@@ -98,6 +104,7 @@ We will use these methods in the following example.
 Notice that the **TypeName** of the proxy object, WebServiceProxy, reflects the namespace and class names that were specified in the previous example.
 
 ### Example 4: Use a Web service proxy
+
 ```
 PS C:\> $zip.GetInfoByZip(20500).table
 CITY      : Washington
@@ -113,6 +120,7 @@ The command uses the **GetInfoByZip** method of the proxy and its Table property
 ## PARAMETERS
 
 ### -Class
+
 Specifies a name for the proxy class that the cmdlet creates for the Web service.
 The value of this parameter is used together with the *Namespace* parameter to provide a fully qualified name for the class.
 The default value is generated from the Uniform Resource Identifier (URI).
@@ -130,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 This is an alternative to using the **UseDefaultCredential** parameter.
@@ -150,6 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
+
 Specifies a namespace for the new class.
 
 The value of this parameter is used together with the value of the *Class* parameter to generate a fully qualified name for the class.
@@ -170,6 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -Uri
+
 Specifies the URI of the Web service.
 Enter a URI or the path and file name of a file that contains a service description.
 
@@ -189,6 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseDefaultCredential
+
 Indicates that this cmdlet uses the default credential.
 This cmdlet sets the **UseDefaultCredential** property in the resulting proxy object to True.
 This is an alternative to using the *Credential* parameter.
@@ -206,21 +218,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### A Web service proxy object
+
 This cmdlet returns a Web service proxy object.
 The namespace and class of the object are determined by the parameters of the command.
 The default is generated from the input URI.
 
 ## NOTES
+
 * **New-WebServiceProxy** uses the **System.Net.WebClient** class to load the specified Web service.
 
 *

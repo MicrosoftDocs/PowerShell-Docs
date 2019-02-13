@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821626
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Restart-Service
 ---
-
 # Restart-Service
 
 ## SYNOPSIS
@@ -16,6 +15,7 @@ Stops and then starts one or more services.
 ## SYNTAX
 
 ### InputObject (Default)
+
 ```
 Restart-Service [-InputObject] <ServiceController[]>
  [-Force] [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
@@ -23,6 +23,7 @@ Restart-Service [-InputObject] <ServiceController[]>
 ```
 
 ### Default
+
 ```
 Restart-Service [-Name] <String[]>
  [-Force] [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
@@ -30,6 +31,7 @@ Restart-Service [-Name] <String[]>
 ```
 
 ### DisplayName
+
 ```
 Restart-Service -DisplayName <String[]>
  [-Force] [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
@@ -37,6 +39,7 @@ Restart-Service -DisplayName <String[]>
 ```
 
 ## DESCRIPTION
+
 The **Restart-Service** cmdlet sends a stop message and then a start message to the Windows Service Controller for a specified service.
 If a service was already stopped, it is started without notifying you of an error.
 You can specify the services by their service names or display names, or you can use the *InputObject* parameter to pass an object that represents each service that you want to restart.
@@ -76,6 +79,7 @@ In practice, you would use the *WhatIf* parameter to determine the effect of the
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -91,6 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
+
 Specifies the display names of services to restarted.
 Wildcard characters are permitted.
 
@@ -107,6 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Exclude
+
 Specifies services that this cmdlet omits.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as s*.
@@ -125,6 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -140,6 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -Include
+
 Specifies an array of services that this cmdlet restarts.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as s*.
@@ -158,6 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies an array of **ServiceController** objects that represent the services to restart.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -174,6 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the service names of the services to restart.
 
 ```yaml
@@ -189,6 +199,7 @@ Accept wildcard characters: True
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -205,6 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -221,20 +233,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
+
 You can pipe a service object or a string that contains a service name to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.ServiceProcess.ServiceController
+
 This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the restarted service, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * **Restart-Service** can control services only when the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
 * To find the service names and display names of the services on your system, type `Get-Service`. The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.
 
