@@ -65,16 +65,16 @@ specified files or folders. An archive file allows multiple files to be packaged
 compressed, into a single zipped file for easier distribution and storage. An archive file can be
 compressed by using the compression algorithm specified by the CompressionLevel parameter.
 
-Because `Compress-Archive` relies upon the Microsoft .NET API `System.IO.Compression.ZipArchive` to
-compress files. Therefor, the maximum file size that is 2 GB. This is a limitation of the underlying
-API.
+The `Compress-Archive` cmdlet relies upon the Microsoft .NET API `System.IO.Compression.ZipArchive`
+to compress files. Therefore, the maximum file size that is 2 GB. This is a limitation of the
+underlying API.
 
 ## EXAMPLES
 
 ### Example 1: Create an archive file
 
-This command creates a new archive file, Draft.zip, by compressing two files, Draftdoc.docx and
-diagram2.vsd, specified by the **Path** parameter. The compression level specified for this
+This command creates a new archive file, `Draft.zip`, by compressing two files, `Draftdoc.docx` and
+`diagram2.vsd`, specified by the **Path** parameter. The compression level specified for this
 operation is Optimal.
 
 ```powershell
@@ -83,8 +83,8 @@ Compress-Archive -Path C:\Reference\Draftdoc.docx, C:\Reference\Images\diagram2.
 
 ### Example 2: Create an archive file (using LiteralPath)
 
-This command creates a new archive file, Draft.zip, by compressing two files, "Draft doc.docx" and
-"Diagram [2].vsd", specified by the **LiteralPath** parameter. The compression level specified for this
+This command creates a new archive file, `Draft.zip`, by compressing two files, `Draft doc.docx` and
+`Diagram [2].vsd`, specified by the **LiteralPath** parameter. The compression level specified for this
 operation is Optimal.
 
 ```powershell
@@ -93,9 +93,9 @@ Compress-Archive -LiteralPath 'C:\Reference\Draft Doc.docx', 'C:\Reference\Image
 
 ### Example 3: Create an archive with wildcard characters
 
-This command creates a new archive file, Draft.zip, in the C:\Archives folder. The new archive file
-contains every file in the C:\Reference folder, because a wildcard character was used in place of
-specific file names in the **Path** parameter.
+This command creates a new archive file, `Draft.zip`, in the `C:\Archives` folder. The new archive
+file contains every file in the `C:\Reference` folder, because a wildcard character was used in
+place of specific file names in the **Path** parameter.
 
 ```powershell
 Compress-Archive -Path C:\Reference\* -CompressionLevel Fastest -DestinationPath C:\Archives\Draft
@@ -103,7 +103,7 @@ Compress-Archive -Path C:\Reference\* -CompressionLevel Fastest -DestinationPath
 
 Notice that the file name extension .zip was not added to the value of the **DestinationPath**
 parameter. PowerShell appends the .zip extension to the file name automatically. The specified
-compression level is Fastest, which might result in a larger output file, but compresses a large
+compression level is **Fastest**, which might result in a larger output file, but compresses a large
 number of files faster.
 
 ### Example 4: Update an existing archive file
@@ -114,9 +114,9 @@ This command updates an existing archive file, Draft.Zip, in the C:\Archives fol
 Compress-Archive -Path C:\Reference\* -Update -DestinationPath C:\Archives\Draft.Zip
 ```
 
-The command is run to update Draft.Zip with newer versions of existing files that came from the
-C:\Reference folder, and also to add new files that have been added to C:\Reference since Draft.Zip
-was initially created.
+The command is run to update `Draft.Zip` with newer versions of existing files that came from the
+C:\Reference folder, and also to add new files that have been added to `C:\Reference` since
+`Draft.Zip` was initially created.
 
 ### Example 5: Create an archive from an entire folder
 
@@ -137,10 +137,10 @@ Specifies how much compression to apply when you are creating the archive file. 
 requires less time to create the file, but can result in larger file sizes. The acceptable values
 for this parameter are:
 
-- Fastest. Use the fastest compression method available to decrease processing time; this can result
+- **Fastest**. Use the fastest compression method available to decrease processing time; this can result
   in larger file sizes.
-- NoCompression. Do not compress the source files.
-- Optimal. Processing time is dependent on file size.
+- **NoCompression**. Do not compress the source files.
+- **Optimal**. Processing time is dependent on file size.
 
 If this parameter is not specified, the command uses the default value, Optimal.
 
