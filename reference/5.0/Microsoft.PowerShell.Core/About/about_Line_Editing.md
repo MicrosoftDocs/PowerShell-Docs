@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Line_Editing
 ---
-
 # About Line Editing
 
 ## SHORT DESCRIPTION
-
 Describes how to edit commands at the Windows PowerShell command prompt.
 
 ## LONG DESCRIPTION

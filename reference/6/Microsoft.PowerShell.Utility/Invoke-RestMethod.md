@@ -412,9 +412,14 @@ Accept wildcard characters: False
 
 ### -FollowRelLink
 
-Indicates the cmdlet should follow relation links.
+Indicates the cmdlet should follow relation links. 
 
-To set how many times to follow relation links, use the **-MaximumFollowRelLink** parameter.
+Some REST APIs support pagination via Relation Links per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6).
+Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you. 
+To set how many times to follow relation links, use the **MaximumFollowRelLink** parameter.
+
+When using this switch, the cmdlet returns a collection of pages of results.
+Each page of results may contain multiple result items.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -528,7 +533,7 @@ Accept wildcard characters: False
 
 ### -MaximumFollowRelLink
 
-Specifies how many times to follow relation links if **-FollowRelLink** is used.
+Specifies how many times to follow relation links if **FollowRelLink** is used.
 A smaller value may be needed if the REST api throttles due to too many requests.
 The default value is `[Int32]::MaxValue`.
 A value of 0 (zero) prevents following relation links.

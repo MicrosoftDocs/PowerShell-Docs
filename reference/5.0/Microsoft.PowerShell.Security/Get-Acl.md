@@ -10,7 +10,6 @@ title:  Get-Acl
 # Get-Acl
 
 ## SYNOPSIS
-
 Gets the security descriptor for a resource, such as a file or registry key.
 
 ## SYNTAX

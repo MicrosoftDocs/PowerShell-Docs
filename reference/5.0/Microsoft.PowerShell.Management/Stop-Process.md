@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821642
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Stop-Process
 ---
-
 # Stop-Process
 
 ## SYNOPSIS
@@ -16,21 +15,25 @@ Stops one or more running processes.
 ## SYNTAX
 
 ### Id (Default)
+
 ```
 Stop-Process [-Id] <Int32[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Name
+
 ```
 Stop-Process -Name <String[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Stop-Process [-InputObject] <Process[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Stop-Process** cmdlet stops one or more running processes.
 You can specify a process by process name or process ID (PID), or pass a process object to **Stop-Process**.
 **Stop-Process** works only on processes running on the local computer.
@@ -41,6 +44,7 @@ Also, you are will not be prompted for confirmation unless you specify the *Conf
 ## EXAMPLES
 
 ### Example 1: Stop all instances of a process
+
 ```
 PS C:\> Stop-Process -Name "notepad"
 ```
@@ -51,6 +55,7 @@ It uses the *Name* parameter to specify the processes, all of which have the sam
 If you were to use the *Id* parameter to stop the same processes, you would have to list the process IDs of each instance of Notepad.
 
 ### Example 2: Stop a specific instance of a process
+
 ```
 PS C:\> Stop-Process -Id 3952 -Confirm -PassThru
 Confirm
@@ -71,6 +76,7 @@ The *PassThru* parameter passes the process object to the formatter for display.
 Without this parameter, there would be no display after a **Stop-Process** command.
 
 ### Example 3: Stop a process and detect that it has stopped
+
 ```
 PS C:\> calc
 PS C:\> $p = Get-Process -Name "calc"
@@ -94,6 +100,7 @@ The pipeline operator (|) passes the results to the Where-Object cmdlet, which s
 To find all the properties, type `Get-Process | Get-Member`.
 
 ### Example 4: Stop a process not owned by the current user
+
 ```
 PS C:\> Get-Process -Name "lsass" | Stop-Process
 
@@ -125,6 +132,7 @@ As a result, the process is stopped without confirmation.
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -140,6 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Stops the specified processes without prompting for confirmation.
 By default, **Stop-Process** prompts for confirmation before stopping any process that is not owned by the current user.
 
@@ -158,6 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies the process IDs of the processes to stop.
 To specify multiple IDs, use commas to separate the IDs.
 To find the PID of a process, type `Get-Process`.
@@ -175,6 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the process objects to stop.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -191,6 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the process names of the processes to stop.
 You can type multiple process names, separated by commas, or use wildcard characters.
 
@@ -207,6 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object that represents the process.
 By default, this cmdlet does not generate any output.
 
@@ -223,6 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -239,20 +253,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Diagnostics.Process
+
 You can pipe a process object to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Diagnostics.Process
+
 This cmdlet returns a **System.Diagnostics.Process** object that represents the stopped process, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * You can also refer to **Stop-Process** by its built-in aliases, **kill** and **spps**. For more information, see about_Aliases.
 
   You can also use the properties and methods of the Windows Management Instrumentation (WMI) **Win32_Process** object in Windows PowerShell.

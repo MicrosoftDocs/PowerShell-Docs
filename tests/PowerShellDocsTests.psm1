@@ -1,10 +1,10 @@
-function Invoke-AppveyorTest
+function Invoke-Test
 {
     [CmdletBinding()]
     param()
 
     $path = Join-Path $PSScriptRoot 'Pester'
-    $logFilePath = Join-Path $env:temp 'TestResults.xml'
+    $logFilePath = Join-Path $PSScriptRoot 'TestResults.xml'
 
     Invoke-Pester $path -OutputFile $logFilePath -OutputFormat NUnitXml
     Test-PSPesterResults -TestResultsFile $logFilePath

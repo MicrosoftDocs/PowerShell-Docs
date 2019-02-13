@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821571
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Clear-RecycleBin
 ---
-
 # Clear-RecycleBin
 
 ## SYNOPSIS
-
 Clears the contents of a recycle bin.
 
 ## SYNTAX
@@ -27,6 +25,7 @@ The Clear-RecycleBin cmdlet deletes the content of a recycle bin. Running this c
 ## EXAMPLES
 
 ### 1: Clear all recycle bins
+
 ```
 PS C:\> Clear-RecycleBin
 ```
@@ -34,6 +33,7 @@ This command will clear all recycle bins present on the local computer.
 the command will prompt for user confirmation before execution.
 
 ### 2: Clear single recycle bin
+
 ```
 PS C:\> Clear-RecycleBin -DriveLetter C
 ```
@@ -42,6 +42,7 @@ This command will not work on
 The command will prompt for user confirmation before execution.
 
 ### 3: Clear all recycle bins without confirmation
+
 ```
 PS C:\> Clear-RecycleBin -Force
 ```
@@ -49,6 +50,7 @@ This command will clear the recycle bin on the volume with the C drive letter.
 The command will NOT prompt for user confirmation before execution.
 
 ### 3: Clear all recycle bins without confirmation (alternative)
+
 ```
 PS C:\> Clear-RecycleBin -Confirm:$false
 ```
@@ -58,6 +60,7 @@ The command will NOT prompt for user confirmation before execution.
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -73,6 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -DriveLetter
+
 Specifies an array of drive letters for which this cmdlet clears the recycle bin.
 
 ```yaml
@@ -88,6 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -103,6 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -119,6 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

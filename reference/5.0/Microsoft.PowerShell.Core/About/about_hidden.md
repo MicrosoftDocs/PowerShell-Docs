@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Hidden
 ---
-
 # about_Hidden
 
 ## SHORT DESCRIPTION
-
 Describes the Hidden keyword, which hides class members from default
 Get-Member results.
 

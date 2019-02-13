@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821577
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Debug-Process
 ---
-
 # Debug-Process
 
 ## SYNOPSIS
@@ -16,21 +15,25 @@ Debugs one or more processes running on the local computer.
 ## SYNTAX
 
 ### Name (Default)
+
 ```
 Debug-Process [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Debug-Process [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Debug-Process -InputObject <Process[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Debug-Process** cmdlet attaches a debugger to one or more running processes on a local computer.
 You can specify the processes by their process name or process ID (PID), or you can pipe process objects to this cmdlet.
 
@@ -40,6 +43,7 @@ Before using this cmdlet, verify that a debugger is downloaded and correctly con
 ## EXAMPLES
 
 ### Example 1: Attach a debugger to a process on the computer
+
 ```
 PS C:\> Debug-Process -Name "Windows Powershell"
 ```
@@ -47,6 +51,7 @@ PS C:\> Debug-Process -Name "Windows Powershell"
 This command attaches a debugger to the Windows PowerShell process on the computer.
 
 ### Example 2: Attach a debugger to all processes that begin with the specified string
+
 ```
 PS C:\> Debug-Process -Name "SQL*"
 ```
@@ -54,6 +59,7 @@ PS C:\> Debug-Process -Name "SQL*"
 This command attaches a debugger to all processes that have names that begin with SQL.
 
 ### Example 3: Attach a debugger to multiple processes
+
 ```
 PS C:\> Debug-Process "Winlogon", "Explorer", "Outlook"
 ```
@@ -61,6 +67,7 @@ PS C:\> Debug-Process "Winlogon", "Explorer", "Outlook"
 This command attaches a debugger to the Winlogon, Explorer, and Outlook processes.
 
 ### Example 4: Attach a debugger to multiple process IDs
+
 ```
 PS C:\> Debug-Process -Id 1132, 2028
 ```
@@ -68,6 +75,7 @@ PS C:\> Debug-Process -Id 1132, 2028
 This command attaches a debugger to the processes that have process IDs 1132 and 2028.
 
 ### Example 5: Use Get-Process to get a process then attach a debugger to it
+
 ```
 PS C:\> Get-Process "Windows PowerShell" | Debug-Process
 ```
@@ -78,6 +86,7 @@ It uses the **Get-Process** cmdlet to get the Windows PowerShell processes on th
 To specify a particular PowerShell process, use the ID parameter of **Get-Process**.
 
 ### Example 6: Attach a debugger to a current process on the local computer
+
 ```
 PS C:\> $PID | Debug-Process
 ```
@@ -90,6 +99,7 @@ Then, it uses a pipeline operator (|) to send the process ID to the **Debug-Proc
 For more information about the $PID automatic variable, see about_Automatic_Variables.
 
 ### Example 7: Attach a debugger to the specified process on multiple computers
+
 ```
 PS C:\> Get-Process -ComputerName "Server01", "Server02" -Name "MyApp" | Debug-Process
 ```
@@ -100,6 +110,7 @@ The command uses the **Get-Process** cmdlet to get the MyApp processes on the Se
 It uses a pipeline operator to send the processes to the Debug-Process cmdlet, which attaches the debuggers.
 
 ### Example 8: Attach a debugger to a process that uses the InputObject parameter
+
 ```
 PS C:\> $P = Get-Process "Windows PowerShell"
 PS C:\> Debug-Process -InputObject $P
@@ -115,6 +126,7 @@ The second command uses the *InputObject* parameter of the **Debug-Process** cmd
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -130,6 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies the process IDs of the processes to be debugged.
 The *Id* parameter name is optional.
 
@@ -148,6 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the process objects that represent processes to be debugged.
 Enter a variable that contains the process objects or a command that gets the process objects, such as the Get-Process cmdlet.
 You can also pipe process objects to this cmdlet.
@@ -165,6 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names of the processes to be debugged.
 If there is more than one process with the same name, this cmdlet attaches a debugger to all processes with that name.
 The *Name * parameter is optional.
@@ -182,6 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -198,19 +214,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Int32, System.Diagnostics.Process, System.String
+
 You can pipe a process ID (Int32), a process object (System.Diagnostics.Process), or a process name (String) to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI) Win32_Process class. For more information about this method, see [AttachDebugger method](http://go.microsoft.com/fwlink/?LinkId=143640) in the MSDN library.
 
 ## RELATED LINKS

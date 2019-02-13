@@ -9,7 +9,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834963
 # Variable provider
 
 ## Provider name
-
 Variable
 
 ## Drives

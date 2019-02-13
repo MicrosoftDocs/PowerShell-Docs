@@ -10,7 +10,6 @@ title:  Set-Item
 # Set-Item
 
 ## SYNOPSIS
-
 Changes the value of an item to the value specified in the command.
 
 ## SYNTAX

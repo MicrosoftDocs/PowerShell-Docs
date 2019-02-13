@@ -1,0 +1,71 @@
+name: PowerShell-Docs-Daily-$(Date:yyyyMMdd)$(Rev:.rr)
+trigger:
+  branches:
+    include:
+    - live
+    - staging
+  paths:
+    include:
+    - reference/**/*
+    - build.ps1
+    - ci.yml
+    - ci-steps.yml
+    - .openpublishing.build.ps1
+    - .openpublishing.publish.config.json
+    - .openpublishing.redirection.json
+    - tests/**/*
+    - '**/docfx.json'
+    - '**/TOC.yml'
+    - '**/toc.yml'
+    - '**/*.md'
+
+pr:
+  branches:
+    include:
+    - staging
+    - live
+  paths:
+    include:
+    - reference/**/*
+    - build.ps1
+    - ci.yml
+    - ci-steps.yml
+    - .openpublishing.build.ps1
+    - .openpublishing.publish.config.json
+    - .openpublishing.redirection.json
+    - tests/**/*
+    - '**/docfx.json'
+    - '**/TOC.yml'
+    - '**/toc.yml'
+    - '**/*.md'
+
+resources:
+- repo: self
+  clean: true
+
+jobs:
+- job: build_and_test
+  displayName: Build And Test
+  pool: Package ES CodeHub Lab E
+
+  steps:
+    - template: ci-steps.yml
+
+    - task: securedevelopmentteam.vss-secure-development-tools.build-task-antimalware.AntiMalware@3
+      displayName: 'Run Defender Scan'
+
+    - task: securedevelopmentteam.vss-secure-development-tools.build-task-policheck.PoliCheck@1
+      displayName: 'Run PoliCheck'
+      inputs:
+        targetType: F
+        optionsFC: 0
+        optionsXS: 0
+        optionsPE: '1|2|3|4'
+        optionsHMENABLE: 0
+        optionsRulesDBPath: '$(Build.SourcesDirectory)\tools\terms\PowerShell-Docs-Terms-Rules.mdb'
+        optionsFTPATH: '$(Build.SourcesDirectory)\tools\terms\FileTypeSet.xml'
+      continueOnError: true
+
+
+
+

@@ -42,7 +42,7 @@ This cmdlet uses the WinRM connection/transport layer to create the management r
 
 ### Example 1: Create a HTTPS listener
 ```
-PS C:\> New-WSManInstance - ResourceURI winrm/config/Listener -SelectorSet @{Transport=HTTPS} -ValueSet @{Hostname="HOST";CertificateThumbprint="XXXXXXXXXX"}
+PS C:\> New-WSManInstance -ResourceURI winrm/config/Listener -SelectorSet @{Transport="HTTPS";Address="*"} -ValueSet @{Hostname="HOST";CertificateThumbprint="XXXXXXXXXX"}
 ```
 
 This command creates an instance of a WS-Management HTTPS listener on all IP addresses.

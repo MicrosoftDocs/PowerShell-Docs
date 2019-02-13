@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Scripts
 ---
-
 # About Scripts
 
 ## SHORT DESCRIPTION
-
 Describes how to run and write scripts in PowerShell.
 
 ## LONG DESCRIPTION

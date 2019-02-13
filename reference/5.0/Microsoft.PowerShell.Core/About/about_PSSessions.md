@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PSSessions
 ---
-
 # About PSSessions
 
 ## Short Description
-
 Describes Windows PowerShell sessions (PSSessions) and explains how to
 establish a persistent connection to a remote computer.
 
