@@ -280,7 +280,7 @@ This example creates the Asset custom object.
 The first command uses the `New-Object` cmdlet to create a PSObject.
 The command saves the PSObject in the $Asset variable.
 
-The second command uses the \[ordered\] type accelerator to create an ordered dictionary of names
+The second command uses the `[ordered]` type accelerator to create an ordered dictionary of names
 and values. The command saves the result in the $d variable.
 
 The third command uses the **NotePropertyMembers** parameter of the `Add-Member` cmdlet to add the
