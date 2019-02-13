@@ -8,21 +8,19 @@ title:  Using Import-DSCResource
 
 `Import-DScResource` is a dynamic keyword, which can only be used inside a Configuration script block. The `Import-DSCResource` keyword to import any resources needed in your Configuration. Resources under `$phsome` are imported automatically, but it is still considered best practice to explicitly import all resources used in your [Configuration](Configurations.md).
 
-The syntax for `Import-DSCResource` is shown below.
+The syntax for `Import-DSCResource` is shown below.  When specifying modules by name, it is a requirement to list each on a new line.
 
 ```syntax
-Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>]
+Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 ```
 
 |Parameter  |Description  |
 |---------|---------|
 |`-Name`|The DSC resource name(s) that you must import. If the module name is specified, the command searches for these DSC resources within this module; otherwise the command searches the DSC resources in all DSC resource paths. Wildcards are supported.|
-|`-ModuleName`|The container module name(s), or module specification(s).  If you specify resources to import from a module, the command will try to import only those resources. If you specify the module only, the command imports all the DSC resources in the module.|
-
-You can use wildcards with the `-Name` parameter when using `Import-DSCResource`.
+|`-ModuleName`|The module name, or module specification.  If you specify resources to import from a module, the command will try to import only those resources. If you specify the module only, the command imports all the DSC resources in the module.|
 
 ```powershell
-Import-DscResource -Name * -ModuleName xActiveDirectory;
+Import-DscResource -ModuleName xActiveDirectory;
 ```
 
 ## Example: Use Import-DSCResource within a configuration
@@ -31,15 +29,20 @@ Import-DscResource -Name * -ModuleName xActiveDirectory;
 Configuration MSDSCConfiguration
 {
     # Search for and imports Service, File, and Registry from the module PSDesiredStateConfiguration.
-    Import-DSCResource -ModuleName MS_DSC1 -name Service, File, Registry
-
+    Import-DSCResource -ModuleName PSDesiredStateConfiguration -Name Service, File, Registry
+    
     # Search for and import Resource1 from the module that defines it.
     # If only –Name parameter is used then resources can belong to different PowerShell modules as well.
     # TimeZone resource is from the ComputerManagementDSC module which is not installed by default.
-    Import-DSCResource -Name File, TimeZone
+    # As a best practice, list each requirement on a different line if possible.  This makes reviewing
+    # multiple changes in source control a bit easier.
+    Import-DSCResource -Name File
+    Import-DSCResource -Name TimeZone
 
     # Search for and import all DSC resources inside the module PSDesiredStateConfiguration.
+    # When specifying the modulename parameter, it is a requirement to list each on a new line.
     Import-DSCResource -ModuleName PSDesiredStateConfiguration
+    Import-DSCResource -ModuleName ComputerManagementDsc
 ...
 ```
 
