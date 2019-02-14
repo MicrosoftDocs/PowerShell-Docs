@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821615
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Remove-EventLog
 ---
-
 # Remove-EventLog
 
 ## SYNOPSIS
@@ -16,16 +15,19 @@ Deletes an event log or unregisters an event source.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Remove-EventLog [[-ComputerName] <String[]>] [-LogName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Source
+
 ```
 Remove-EventLog [[-ComputerName] <String[]>] [-Source <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Remove-EventLog** cmdlet deletes an event log file from a local or remote computer and unregisters all its event sources for the log.
 You can also use this cmdlet to unregister event sources without deleting any event logs.
 
@@ -37,6 +39,7 @@ CAUTION: This cmdlet can delete operating system event logs, which might cause a
 ## EXAMPLES
 
 ### Example 1: Remove an event log from the local computer
+
 ```
 PS C:\> Remove-EventLog -LogName "MyLog"
 ```
@@ -44,6 +47,7 @@ PS C:\> Remove-EventLog -LogName "MyLog"
 This command deletes the MyLog event log from the local computer and unregisters its event sources.
 
 ### Example 2: Remove an event log from several computers
+
 ```
 PS C:\> Remove-EventLog -LogName "MyLog", "TestLog" -ComputerName "Server01", "Server02", "localhost"
 ```
@@ -52,6 +56,7 @@ This command deletes the MyLog and TestLog event logs from the local computer an
 The command also unregisters the event sources for these logs.
 
 ### Example 3: Delete an event source
+
 ```
 PS C:\> Remove-EventLog -Source "MyApp"
 ```
@@ -60,6 +65,7 @@ This command deletes the MyApp event source from the logs on the local computer.
 When the command finishes, the MyApp program cannot write to any event logs.
 
 ### Example 4: Remove an event log and confirm the action
+
 ```
 The first command lists the event logs on the local computer.
 PS C:\> Get-EventLog -List
@@ -95,6 +101,7 @@ Max(K) Retain OverflowAction        Entries Log
 These commands show how to list the event logs on a computer and verify that a **Remove-EventLog** command was successful.
 
 ### Example 5: Remove an event source and confirm the action
+
 ```
 PS C:\> Get-WmiObject win32_nteventlogfile -Filter "logfilename='TestLog'" | foreach {$_.sources}
 MyApp
@@ -118,6 +125,7 @@ It shows that the MyApp event source was deleted.
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies a remote computer.
 The default is the local computer.
 
@@ -140,6 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -155,6 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
+
 Specifies the event logs.
 Enter the log name of one or more event logs, separated by commas.
 The log name is the value of the **Log** property, not the *LogDisplayName*, Wildcard characters are not permitted.
@@ -173,6 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Specifies the event sources that this cmdlet unregisters.
 Enter the source names, not the executable name, separated by commas.
 
@@ -189,6 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -205,19 +217,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES
+
 * To use **Remove-EventLog** on Windows Vista and later versions of the Windows operating system, start Windows PowerShell by using the Run as administrator option.
 
   If you remove an event log and then re-create the log, you will not be able to register the same event sources.

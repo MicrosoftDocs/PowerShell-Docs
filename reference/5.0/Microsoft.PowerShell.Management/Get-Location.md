@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821589
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-Location
 ---
-
 # Get-Location
 
 ## SYNOPSIS
@@ -16,16 +15,19 @@ Gets information about the current working location or a location stack.
 ## SYNTAX
 
 ### Location (Default)
+
 ```
 Get-Location [-PSProvider <String[]>] [-PSDrive <String[]>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### Stack
+
 ```
 Get-Location [-Stack] [-StackName <String[]>] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Location** cmdlet gets an object that represents the current directory, much like the print working directory (pwd) command.
 
 When you move between Windows PowerShell drives, Windows PowerShell retains your location in each drive.
@@ -39,6 +41,7 @@ For more information, see the Notes and the descriptions of the *Stack* and *Sta
 ## EXAMPLES
 
 ### Example 1: Display your current drive location
+
 ```
 PS C:\> Get-Location
 Path
@@ -51,6 +54,7 @@ This command displays your location in the current Windows PowerShell drive.
 For instance, if you are in the Windows directory of the C: drive, it displays the path to that directory.
 
 ### Example 2: Display your current location for different drives
+
 ```
 The first command uses the **Set-Location** cmdlet to set the current location to the Windows subdirectory of the C: drive.
 PS C:\> Set-Location C:\Windows
@@ -105,6 +109,7 @@ HKLM:\Software\Microsoft
 This example demonstrates the use of **Get-Location** to display your current location in different Windows PowerShell drives.
 
 ### Example 3: List the locations in the current location stack and alternate location stacks
+
 ```
 The first command sets the current location to the Windows directory on the C: drive.
 PS C:\> Set-Location C:\Windows
@@ -136,6 +141,7 @@ This command shows how to use the *Stack* and *StackName* parameters of **Get-Lo
 For more information about location stacks, see the Notes.
 
 ### Example 4: Customize the Windows PowerShell prompt
+
 ```
 PS C:\>
 function prompt { 'PowerShell: ' + (get-location) + '> '}
@@ -160,6 +166,7 @@ The prompt ends with the string "\> ".
 ## PARAMETERS
 
 ### -PSDrive
+
 Specifies the current location in the specified Windows PowerShell drive that this cmdlet gets in the operation.
 
 For instance, if you are in the Certificate: drive, you can use this parameter to find your current location in the C: drive.
@@ -177,6 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSProvider
+
 Specifies the current location in the drive supported by the Windows PowerShell provider that this cmdlet gets in the operation.
 
 If the specified provider supports more than one drive, this cmdlet returns the location on the most recently accessed drive.
@@ -196,6 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -Stack
+
 Indicates that this cmdlet displays the locations in the current location stack.
 
 To display the locations in a different location stack, use the *StackName* parameter.
@@ -214,6 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -StackName
+
 Specifies, as a string array, the named location stacks.
 Enter one or more location stack names.
 
@@ -236,6 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
@@ -253,20 +264,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PathInfo or System.Management.Automation.PathInfoStack
+
 If you use the *Stack* or *StackName* parameters, this cmdlet returns a **StackInfo** object.
 Otherwise, it returns a **PathInfo** object.
 
 ## NOTES
+
 * This cmdlet is designed to work with the data exposed by any provider. To list the providers in your session, type `Get-PSProvider`. For more information, see about_Providers.
 
   The ways that the *PSProvider*, *PSDrive*, *Stack*, and *StackName* parameters interact depends on the provider.

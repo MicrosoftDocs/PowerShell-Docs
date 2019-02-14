@@ -201,7 +201,7 @@ The acceptable values for this parameter are:
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 
 Local is the default.
-For more information, see about_Scopes.
+For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: String
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -276,13 +276,13 @@ When you use the *PassThru* parameter, **Set-Alias** generates a **System.Manage
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
-* An alias is an alternate name or nickname for a cmdlet or command element. To run the cmdlet, you can use its full name or any valid alias. For more information, see about_Aliases.
+* An alias is an alternate name or nickname for a cmdlet or command element. To run the cmdlet, you can use its full name or any valid alias. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 * To create a new alias, use **Set-Alias** or New-Alias. To delete an alias, use Remove-Item.
 * A cmdlet can have multiple aliases, but an alias can only be associated with one cmdlet at a time. If you use **Set-Alias** to associate the alias with a different cmdlet, it is no longer associated with the original cmdlet.
 * You can create an alias for a cmdlet, but you cannot create an alias for a command with parameters and values. For example, you can create an alias for **Set-Location**, but you cannot create an alias for `Set-Location C:\Windows\System32`. To create an alias for a command, create a function that includes the command, and then create an alias to the function.
 * To save the aliases from a session and use them in a different session, add the **Set-Alias** command to your PowerShell profile. Profiles do not exist by default. To create a profile in the path stored in the $profile variable, type `New-Item -Type file -Force $profile`. To see the value of the $profile variable, type `$profile`.
 * You can also save your aliases by using Export-Alias to copy the aliases from the session to a file, and then use Import-Alias to add them to the alias list for a new session.
-* You can also refer to **Set-Alias** by its built-in alias, **sal**. For more information, see about_Aliases.
+* You can also refer to **Set-Alias** by its built-in alias, **sal**. For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 ## RELATED LINKS
 

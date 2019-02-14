@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821595
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-WmiObject
 ---
-
 # Get-WmiObject
 
 ## SYNOPSIS
@@ -16,6 +15,7 @@ Gets instances of WMI classes or information about the available classes.
 ## SYNTAX
 
 ### query (Default)
+
 ```
 Get-WmiObject [-Class] <String> [[-Property] <String[]>] [-Filter <String>] [-Amended] [-DirectRead] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
@@ -24,6 +24,7 @@ Get-WmiObject [-Class] <String> [[-Property] <String[]>] [-Filter <String>] [-Am
 ```
 
 ### list
+
 ```
 Get-WmiObject [[-Class] <String>] [-Recurse] [-Amended] [-List] [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -32,6 +33,7 @@ Get-WmiObject [[-Class] <String>] [-Recurse] [-Amended] [-List] [-AsJob] [-Imper
 ```
 
 ### WQLQuery
+
 ```
 Get-WmiObject [-Amended] [-DirectRead] -Query <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -40,6 +42,7 @@ Get-WmiObject [-Amended] [-DirectRead] -Query <String> [-AsJob] [-Impersonation 
 ```
 
 ### path
+
 ```
 Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -47,6 +50,7 @@ Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authen
 ```
 
 ### class
+
 ```
 Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -54,6 +58,7 @@ Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authen
 ```
 
 ## DESCRIPTION
+
 Starting in Windows PowerShell 3.0, this cmdlet has been superseded by Get-CimInstancehttp://technet.microsoft.com/library/jj590758(v=wps.630).aspx.
 
 The **Get-WmiObject** cmdlet gets instances of Windows Management Instrumentation (WMI) classes or information about the available WMI classes.
@@ -70,6 +75,7 @@ This makes it easier to include the source computer name in output and reports.
 ## EXAMPLES
 
 ### Example 1: Get processes on the local computer
+
 ```
 PS C:\> Get-WmiObject -Class Win32_Process
 ```
@@ -77,6 +83,7 @@ PS C:\> Get-WmiObject -Class Win32_Process
 This command get the processes on the local computer.
 
 ### Example 2: Gets services on a remote computer
+
 ```
 PS C:\> Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
 ```
@@ -86,6 +93,7 @@ It uses the ComputerName parameter to specify the Internet Protocol (IP) address
 By default, the current account must be a member of the Administrators group on the remote computer.
 
 ### Example 3: Get WMI classes in the root or default namespace of the local computer
+
 ```
 PS C:\> Get-WmiObject -Namespace "root/default" -List
 ```
@@ -93,6 +101,7 @@ PS C:\> Get-WmiObject -Namespace "root/default" -List
 This command gets the WMI classes in the root or default namespace of the local computer.
 
 ### Example 4: Get a named service on multiple computers
+
 ```
 PS C:\> Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 | Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
 PSComputerName : SERVER01
@@ -123,6 +132,7 @@ This makes it easy to see the computer on which the service resides.
 This alias is introduced in Windows PowerShell 3.0.
 
 ### Example 5: Stop a service on a remote computer
+
 ```
 PS C:\> (Get-WmiObject -Class Win32_Service -Filter "name='WinRM'" -ComputerName Server01).StopService()
 ```
@@ -134,6 +144,7 @@ Then, it invokes the **StopService** method of the Win32_Service WMI class on th
 This command is an alternative to using the Stop-Service cmdlet.
 
 ### Example 6: Get the BIOS on the local computer
+
 ```
 PS C:\> Get-WmiObject -Class Win32_Bios | Format-List -Property
 Status                : OK
@@ -188,6 +199,7 @@ The command uses a value of all (*) for the Property parameter of the Format-Lis
 By default, only a subset (defined in the Types.ps1xml configuration file) are displayed.
 
 ### Example 7: Get the services on a remote computer
+
 ```
 PS C:\> Get-WmiObject Win32_Service -Credential FABRIKAM\administrator -Computer Fabrikam
 ```
@@ -199,6 +211,7 @@ The user is prompted for a password.
 ## PARAMETERS
 
 ### -Amended
+
 Indicates whether the objects that are returned from WMI should contain amended information.
 Typically, amended information is localizable information, such as object and property descriptions, that is attached to the WMI object.
 
@@ -215,6 +228,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
+
 Indicates that this cmdlet runs the command as a background job.
 Use this parameter to run commands that take a long time to finish.
 
@@ -243,6 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the authentication level to be used with the WMI connection.
 The acceptable values for this parameter are:
 
@@ -276,6 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authority
+
 Specifies the authority to use to authenticate the WMI connection.
 You can specify standard NTLM or Kerberos authentication.
 To use NTLM, set the authority setting to ntlmdomain:\<DomainName\>, where \<DomainName\> identifies a valid NTLM domain name.
@@ -295,6 +311,7 @@ Accept wildcard characters: False
 ```
 
 ### -Class
+
 Specifies the name of a WMI class.
 When this parameter is used, the cmdlet retrieves instances of the WMI class.
 
@@ -323,6 +340,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the target computer for the management operation.
 Enter a fully qualified domain name (FQDN), a NetBIOS name, or an IP address.
 When the remote computer is in a different domain than the local computer, the fully qualified domain name is required.
@@ -346,6 +364,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 Type a user name, such as User01, Domain01\User01, or User@Contoso.com.
@@ -365,6 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -DirectRead
+
 Specifies whether direct access to the WMI provider is requested for the specified class without any regard to its base class or to its derived classes.
 
 ```yaml
@@ -380,6 +400,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAllPrivileges
+
 Indicates that this cmdlet enables all the privileges of the current user before the command makes the WMI call.
 
 ```yaml
@@ -395,6 +416,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies a **Where** clause to use as a filter.
 Uses the syntax of the WMI Query Language (WQL).
 
@@ -418,6 +440,7 @@ Accept wildcard characters: False
 ```
 
 ### -Impersonation
+
 Specifies the impersonation level to use.
 
 The acceptable values for this parameter are:
@@ -451,6 +474,7 @@ Accept wildcard characters: False
 ```
 
 ### -List
+
 Gets the names of the WMI classes in the WMI repository namespace that is specified by the *Namespace* parameter.
 
 If you specify the *List* parameter, but not the *Namespace* parameter, **Get-WmiObject** uses the Root\Cimv2 namespace by default.
@@ -469,6 +493,7 @@ Accept wildcard characters: False
 ```
 
 ### -Locale
+
 Specifies the preferred locale for WMI objects.
 Enter a value in MS_\<LCID\> format.
 
@@ -485,6 +510,7 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
+
 Specifies the WMI repository namespace where the specified WMI class is located when used with the *Class* parameter.
 When used with the *List* parameter, it specifies the namespace from which to gather WMI class information.
 
@@ -501,6 +527,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies the WMI class properties that this cmdlet gets information from.
 Enter the property names.
 
@@ -517,6 +544,7 @@ Accept wildcard characters: False
 ```
 
 ### -Query
+
 Specifies WMI Query Language (WQL) statement that this cmdlet runs.
 This parameter does not support event queries.
 
@@ -533,6 +561,7 @@ Accept wildcard characters: False
 ```
 
 ### -Recurse
+
 Indicates that this cmdlet searches the current namespace and all other namespaces for the class name that is specified by the *Class* parameter.
 
 ```yaml
@@ -548,6 +577,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of WMI operations that can be executed simultaneously.
 This parameter is valid only when the *AsJob* parameter is used in the command.
 
@@ -564,20 +594,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### PSObject or System.Management.Automation.RemotingJob
+
 When you use the *AsJob* parameter, the cmdlet returns a job object.
 Otherwise, the object that **Get-WmiObject** returns depends on the value of the *Class* parameter.
 
 ## NOTES
+
 * To access WMI information on a remote computer, the cmdlet must run under an account that is a member of the local administrators group on the remote computer. Or, the default access control on the WMI namespace of the remote repository can be changed to give access rights to other accounts.
 
   Only some of the properties of each WMI class are displayed by default.

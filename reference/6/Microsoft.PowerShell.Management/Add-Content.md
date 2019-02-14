@@ -18,19 +18,20 @@ Adds content to the specified items, such as adding words to a file.
 ### Path (Default)
 
 ```
-Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>] [-Include
-<string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
-[-NoNewline] [-Encoding <Encoding>] [-AsByteStream] [-Stream <string>] [<CommonParameters>]
+Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
+[-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
+[-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream] [-Stream <string>]
+[<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>] [-Include
-<string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm]
-[-NoNewline] [-Encoding <Encoding>] [-AsByteStream] [-Stream <string>] [<CommonParameters>]
+Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
+[-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
+[-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream] [-Stream <string>]
+[<CommonParameters>]
 ```
-
 
 ## DESCRIPTION
 
@@ -217,15 +218,15 @@ The acceptable values for this parameter are as follows:
 - **UTF7**: Encodes in UTF-7 format.
 - **UTF8**: Encodes in UTF-8 format.
 - **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- **UF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- **UTF32**:  Encodes in UTF-32 format.
+- **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
+- **UTF32**: Encodes in UTF-32 format.
 - **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
 
 ```yaml
 Type: Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, Byte, Default, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UF8NoBOM, UTF32, Unknown
+Accepted values: ASCII, BigEndianUnicode, Byte, Default, OEM, String, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32, Unknown
 
 Required: False
 Position: Named

@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821590
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Get-Process
 ---
-
 # Get-Process
 
 ## SYNOPSIS
@@ -16,37 +15,44 @@ Gets the processes that are running on the local computer or a remote computer.
 ## SYNTAX
 
 ### Name (Default)
+
 ```
 Get-Process [[-Name] <String[]>] [-ComputerName <String[]>] [-Module] [-FileVersionInfo] [<CommonParameters>]
 ```
 
 ### NameWithUserName
+
 ```
 Get-Process [[-Name] <String[]>] [-IncludeUserName] [<CommonParameters>]
 ```
 
 ### IdWithUserName
+
 ```
 Get-Process -Id <Int32[]> [-IncludeUserName] [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Get-Process -Id <Int32[]> [-ComputerName <String[]>] [-Module] [-FileVersionInfo] [<CommonParameters>]
 ```
 
 ### InputObjectWithUserName
+
 ```
 Get-Process -InputObject <Process[]> [-IncludeUserName] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Get-Process -InputObject <Process[]> [-ComputerName <String[]>] [-Module] [-FileVersionInfo]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Process** cmdlet gets the processes on a local or remote computer.
 
 Without parameters, this cmdlet gets all of the processes on the local computer.
@@ -58,6 +64,7 @@ You can also use the parameters of the **Get-Process** cmdlet to get file versio
 ## EXAMPLES
 
 ### Example 1: Get a list of all active processes on the local computer
+
 ```
 PS C:\> Get-Process
 ```
@@ -66,6 +73,7 @@ This command gets a list of all active processes running on the local computer.
 For a definition of each column, see the "Additional Notes" section of the Help topic for Get-Help.
 
 ### Example 2: Get all available data about one or more processes
+
 ```
 PS C:\> Get-Process winword, explorer | Format-List *
 ```
@@ -78,6 +86,7 @@ You can also identify the processes by their process IDs.
 For instance, `Get-Process -Id 664, 2060`.
 
 ### Example 3: Get all processes with a working set greater than a specified size
+
 ```
 PS C:\> Get-Process | Where-Object {$_.WorkingSet -gt 20000000}
 ```
@@ -91,6 +100,7 @@ To see all of the properties, type `Get-Process | Get-Member`.
 By default, the values of all amount properties are in bytes, even though the default display lists them in kilobytes and megabytes.
 
 ### Example 4: List processes on the computer in groups based on priority
+
 ```
 PS C:\> $A = Get-Process PS C:\> Get-Process -InputObject $A | Format-Table -View priority
 ```
@@ -103,6 +113,7 @@ The pipeline operator passes the objects to the **Format-Table** cmdlet, which f
 The Priority view, and other views, are defined in the PS1XML format files in the Windows PowerShell home directory ($pshome).
 
 ### Example 5: Add a property to the standard Get-Process output display
+
 ```powershell
 PS C:\> Get-Process powershell -ComputerName S1, localhost |
 	ft @{Label = "NPM(K)"; Expression = {[int]($_.NPM / 1024)}},
@@ -122,6 +133,7 @@ NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
 This example provides a `Format-Table` (alias = ft) command that adds the MachineName property to the standard `Get-Process` output display.
 
 ### Example 6: Get version information for a process
+
 ```
 PS C:\> Get-Process powershell -FileVersionInfo
 
@@ -138,6 +150,7 @@ This command uses the *FileVersionInfo* parameter to get the version information
 To run this command with processes that you do not own on Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option.
 
 ### Example 7: Get modules loaded with the specified process
+
 ```
 PS C:\> Get-Process SQL* -Module
 ```
@@ -148,6 +161,7 @@ This command gets the modules for the processes that have names that begin with 
 To run this command on Windows Vista and later versions of Windows with processes that you do not own, you must start Windows PowerShell with the Run as administrator option.
 
 ### Example 8: Find the owner of a process
+
 ```powershell
 PS C:\> Get-Process powershell -IncludeUserName
 
@@ -187,6 +201,7 @@ The third command uses the GetOwner method to get the owner of the process in $p
 The output reveals that the owner is Domain01\user01.
 
 ### Example 9: Use an automatic variable to identify the process hosting the current session
+
 ```powershell
 PS C:\> Get-Process powershell
 
@@ -211,6 +226,7 @@ The first command gets all of the PowerShell processes in the current session.
 The second command gets the PowerShell process that is hosting the current session.
 
 ### Example 10: Get all processes that have a main window title and display them in a table
+
 ```
 PS C:\> Get-Process | where {$_.mainWindowTitle} | Format-Table id, name, mainwindowtitle -autosize
 ```
@@ -223,6 +239,7 @@ To view all of the properties, pipe the results of a **Get-Process** command to 
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies the computers for which this cmdlet gets active processes.
 The default is the local computer.
 
@@ -245,6 +262,7 @@ Accept wildcard characters: False
 ```
 
 ### -FileVersionInfo
+
 Indicates that this cmdlet gets the file version information for the program that runs in the process.
 
 On Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
@@ -269,6 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies one or more processes by process ID (PID).
 To specify multiple IDs, use commas to separate the IDs.
 To find the PID of a process, type `Get-Process`.
@@ -286,6 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeUserName
+
 Indicates that the UserName value of the **Process** object is returned with results of the command.
 
 ```yaml
@@ -301,6 +321,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies one or more process objects.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -317,6 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -Module
+
 Indicates that this cmdlet gets the modules that have been loaded by the processes.
 
 On Windows Vista and later versions of Windows, you must open Windows PowerShell with the Run as administrator option to use this parameter on processes that you do not own.
@@ -343,6 +365,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies one or more processes by process name.
 You can type multiple process names (separated by commas) and use wildcard characters.
 The parameter name ("Name") is optional.
@@ -360,21 +383,25 @@ Accept wildcard characters: True
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Diagnostics.Process
+
 You can pipe a process object to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Diagnostics.Process, System.Diagnotics.FileVersionInfo, System.Diagnostics.ProcessModule
+
 By default, this cmdlet returns a **System.Diagnostics.Process** object.
 If you use the *FileVersionInfo* parameter, it returns a **System.Diagnotics.FileVersionInfo** object.
 If you use the *Module* parameter, without the *FileVersionInfo* parameter, it returns a **System.Diagnostics.ProcessModule** object.
 
 ## NOTES
+
 * You can also refer to this cmdlet by its built-in aliases, ps and gps. For more information, see about_Aliases.
 * On computers that are running a 64-bit version of Windows, the 64-bit version of Windows PowerShell gets only 64-bit process modules and the 32-bit version of Windows PowerShell gets only 32-bit process modules.
 * You can use the properties and methods of the Windows Management Instrumentation (WMI) Win32_Process object in Windows PowerShell. For information, see Get-WmiObject and the WMI SDK.

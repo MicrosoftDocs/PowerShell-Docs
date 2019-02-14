@@ -10,7 +10,6 @@ title:  Test-Path
 # Test-Path
 
 ## SYNOPSIS
-
 Determines whether all elements of a path exist.
 
 ## SYNTAX
