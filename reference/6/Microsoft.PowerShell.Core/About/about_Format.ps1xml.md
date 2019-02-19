@@ -1,11 +1,10 @@
 ---
-ms.date:  11/28/2017
+ms.date:  02/19/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Format.ps1xml
 ---
-
 # About Format.ps1xml
 
 ## Short Description
@@ -311,26 +310,22 @@ following tags:
 ### ViewSelectedBy tag
 
 The `<ViewSelectedBy>` tag can contain a `<TypeName>` tag for each object type
-to which the view applies. Alternatively, you can use a `<SelectionSetName>`
-tag that references a selection set that is defined elsewhere by using a
+to which the view applies. Or, it can contain a `<SelectionSetName>` tag that
+references a selection set that is defined elsewhere by using a
 `<SelectionSet>` tag.
 
 ### GroupBy tag
 
-Use the `<GroupBy>` tag to define a property by which items are to be grouped.
-The `<PropertyName>` tag defines the name of the property used in the group.
-The `<Label>` tag allows you to define a string used to label each group.
-
-You can also label groups dynamically using a `<CustomControl>` tag. First,
-define a `<Control>` tag containing a `<Name>`, and a `<CustomControl>` tag
-containing the labeling logic.
-
-Second, use the **Name** of the `<Control>` you defined in the
-`<CustomControlName>` tag of the `<GroupBy>` element.
+The `<GroupBy>` tag contains a `<PropertyName>` tag that specifies the object
+property by which items are to be grouped. It also contains either a `<Label>`
+tag that specifies a string to be used as a label for each group or a
+`<CustomControlName>` tag that references a custom control defined elsewhere
+using a `<Control>` tag. The `<Control>` tag contains a `<Name>` tag and a
+`<CustomControl>` tag.
 
 ### TableControlTag
 
-Use the `<TableControl>` tag typically contains `<TableHeaders>` and
+The `<TableControl>` tag typically contains `<TableHeaders>` and
 `<TableRowEntries>` tags that define the formatting for the table's heads and
 rows. The `<TableHeaders>` tag typically contains `<TableColumnHeader>` tags
 that contain `<Label>`, `<Width>`, and `<Alignment>` tags. The
