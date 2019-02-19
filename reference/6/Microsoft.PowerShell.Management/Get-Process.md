@@ -125,12 +125,13 @@ home directory (`$pshome`).
 ### Example 5: Add a property to the standard Get-Process output display
 
 ```powershell
-Get-Process pwsh | Format-Table @{Label = "NPM(K)"; Expression = {[int]($_.NPM / 1024)}},
-                               @{Label = "PM(K)"; Expression = {[int]($_.PM / 1024)}},
-                               @{Label = "WS(K)"; Expression = {[int]($_.WS / 1024)}},
-                               @{Label = "VM(M)"; Expression = {[int]($_.VM / 1MB)}},
-                               @{Label = "CPU(s)"; Expression = {if ($_.CPU) {$_.CPU.ToString("N")}}},
-Id, MachineName, ProcessName -AutoSize
+Get-Process pwsh | Format-Table `
+    @{Label = "NPM(K)"; Expression = {[int]($_.NPM / 1024)}},
+    @{Label = "PM(K)"; Expression = {[int]($_.PM / 1024)}},
+    @{Label = "WS(K)"; Expression = {[int]($_.WS / 1024)}},
+    @{Label = "VM(M)"; Expression = {[int]($_.VM / 1MB)}},
+    @{Label = "CPU(s)"; Expression = {if ($_.CPU) {$_.CPU.ToString("N")}}},
+    Id, MachineName, ProcessName -AutoSize
 ```
 
 ```Output

@@ -108,12 +108,12 @@ home directory (`$pshome`).
 
 ```powershell
 Get-Process powershell -ComputerName S1, localhost | Format-Table `
-                               @{Label = "NPM(K)"; Expression = {[int]($_.NPM / 1024)}},
-                               @{Label = "PM(K)"; Expression = {[int]($_.PM / 1024)}},
-                               @{Label = "WS(K)"; Expression = {[int]($_.WS / 1024)}},
-                               @{Label = "VM(M)"; Expression = {[int]($_.VM / 1MB)}},
-                               @{Label = "CPU(s)"; Expression = {if ($_.CPU) {$_.CPU.ToString("N")}}},
-Id, MachineName, ProcessName -AutoSize
+    @{Label = "NPM(K)"; Expression = {[int]($_.NPM / 1024)}},
+    @{Label = "PM(K)"; Expression = {[int]($_.PM / 1024)}},
+    @{Label = "WS(K)"; Expression = {[int]($_.WS / 1024)}},
+    @{Label = "VM(M)"; Expression = {[int]($_.VM / 1MB)}},
+    @{Label = "CPU(s)"; Expression = {if ($_.CPU) {$_.CPU.ToString("N")}}},
+    Id, MachineName, ProcessName -AutoSize
 ```
 
 ```Output
