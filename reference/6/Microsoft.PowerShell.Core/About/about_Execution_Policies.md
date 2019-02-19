@@ -82,7 +82,7 @@ The PowerShell execution policies are as follows:
 
 - Nothing is blocked and there are no warnings or prompts.
 - This execution policy is designed for configurations in which a PowerShell
-  script is built in to a a larger application or for configurations in which
+  script is built in to a larger application or for configurations in which
   PowerShell is the foundation for a program that has its own security model.
 
 ### Undefined
