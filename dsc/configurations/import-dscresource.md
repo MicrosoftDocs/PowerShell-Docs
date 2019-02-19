@@ -6,7 +6,7 @@ title:  Using Import-DSCResource
 
 # Using Import-DSCResource
 
-`Import-DScResource` is a dynamic keyword, which can only be used inside a Configuration script block. The `Import-DSCResource` keyword to import any resources needed in your Configuration. Resources under `$phsome` are imported automatically, but it is still considered best practice to explicitly import all resources used in your [Configuration](Configurations.md).
+`Import-DScResource` is a dynamic keyword, which can only be used inside a Configuration script block. The `Import-DSCResource` keyword to import any resources needed in your Configuration. Resources under `$pshome` are imported automatically, but it is still considered best practice to explicitly import all resources used in your [Configuration](Configurations.md).
 
 The syntax for `Import-DSCResource` is shown below.  When specifying modules by name, it is a requirement to list each on a new line.
 

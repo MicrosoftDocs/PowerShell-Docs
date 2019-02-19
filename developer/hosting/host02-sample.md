@@ -20,7 +20,7 @@ This sample shows how to write a host application that uses the Windows PowerShe
 
 ## Demonstrates
 
-- Creating a custom host whose classes derive from the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.
+- Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.
 
 - Creating a runspace that uses the custom host.
 
@@ -129,7 +129,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
 ## Example
 
- The following code is the implementation of the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
+ The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -783,7 +783,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
  [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)
 
- [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
 
  [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
