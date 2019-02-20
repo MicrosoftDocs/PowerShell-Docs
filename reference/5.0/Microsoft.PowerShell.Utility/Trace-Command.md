@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821866
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Trace-Command
 ---
-
 # Trace-Command
 
 ## SYNOPSIS
@@ -16,6 +15,7 @@ Configures and starts a trace of the specified expression or command.
 ## SYNTAX
 
 ### expressionSet (Default)
+
 ```powershell
 Trace-Command [-Name] <String[]> [-Expression] <ScriptBlock>
  [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
@@ -24,6 +24,7 @@ Trace-Command [-Name] <String[]> [-Expression] <ScriptBlock>
 ```
 
 ### commandSet
+
 ```powershell
 Trace-Command [-Name] <String[]> [-Command] <String>
  [[-Option] <PSTraceSourceOptions>] [-InputObject <PSObject>]
@@ -33,12 +34,14 @@ Trace-Command [-Name] <String[]> [-Command] <String>
 ```
 
 ## DESCRIPTION
+
 The **Trace-Command** cmdlet configures and starts a trace of the specified expression or command.
 It works like Set-TraceSource, except that it applies only to the specified command.
 
 ## EXAMPLES
 
 ### Example 1: Trace metadata processing, parameter binding, and an expression
+
 ```
 PS C:\> Trace-Command -Name metadata,parameterbinding,cmdlet -Expression {Get-Process Notepad} -PSHost
 ```
@@ -48,6 +51,7 @@ It uses the *Name* parameter to specify the trace sources, the *Expression* para
 Because it does not specify any tracing options or listener options, the command uses the defaults--All for the tracing options, and None for the listener options.
 
 ### Example 2: Trace the actions of ParameterBinding operations
+
 ```
 PS C:\> $A = "i*"
 PS C:\> Trace-Command ParameterBinding {Get-Alias $Input} -PSHost -InputObject $A
@@ -68,6 +72,7 @@ In effect, the command being processed during the trace is `Get-Alias -InputObje
 ## PARAMETERS
 
 ### -ArgumentList
+
 Specifies the parameters and parameter values for the command being traced.
 The alias for *ArgumentList* is *Args*.
 This feature is especially useful for debugging dynamic parameters.
@@ -85,6 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -Command
+
 Specifies a command that is being processed during the trace.
 
 ```yaml
@@ -100,6 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Debugger
+
 Indicates that the cmdlet sends the trace output to the debugger.
 You can view the output in any user-mode or kernel mode debugger or in Visual Studio.
 This parameter also selects the default trace listener.
@@ -117,6 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -Expression
+
 Specifies the expression that is being processed during the trace.
 Enclose the expression in braces ({}).
 
@@ -133,6 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilePath
+
 Specifies a file that the cmdlet sends the trace output to.
 This parameter also selects the file trace listener.
 
@@ -149,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 Used with the *FilePath* parameter.
 Even using the *Force* parameter, the cmdlet cannot override security restrictions.
@@ -166,6 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies input to the expression that is being processed during the trace.
 
 You can enter a variable that represents the input that the expression accepts, or pass an object through the pipeline.
@@ -183,6 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListenerOption
+
 Specifies optional data to the prefix of each trace message in the output.
 The acceptable values for this parameter are:
 
@@ -212,6 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of Windows PowerShell components that are traced.
 Enter the name of the trace source of each component.
 Wildcards are permitted.
@@ -230,6 +243,7 @@ Accept wildcard characters: False
 ```
 
 ### -Option
+
 Specifies the type of events that are traced.
 The acceptable values for this parameter are:
 
@@ -278,6 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSHost
+
 Indicates that the cmdlet sends the trace output to the Windows PowerShell host.
 This parameter also selects the PSHost trace listener.
 
@@ -294,19 +309,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe objects that represent input to the expression to **Trace-Command**.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSObject
+
 Returns the command trace in the debug stream.
 
 ## NOTES
+
 * Tracing is a method that developers use to debug and refine programs. When tracing, the program generates detailed messages about each step in its internal processing.
 * The Windows PowerShell tracing cmdlets are designed to help Windows PowerShell developers, but they are available to all users. They let you monitor nearly every aspect of the functionality of the shell.
 * To find the Windows PowerShell components that are enabled for tracing, type `Get-Help Get-TraceSource`.
