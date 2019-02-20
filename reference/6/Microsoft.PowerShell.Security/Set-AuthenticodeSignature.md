@@ -10,7 +10,8 @@ title:  Set-AuthenticodeSignature
 # Set-AuthenticodeSignature
 
 ## SYNOPSIS
-Adds an Authenticode signature to a PowerShell script or other file.
+Adds an [Authenticode](/windows-hardware/drivers/install/authenticode) signature to a PowerShell
+script or other file.
 
 ## SYNTAX
 
@@ -67,7 +68,7 @@ authority. The command stores the result in the `$cert` variable.
 
 The second command uses the `Set-AuthenticodeSignature` cmdlet to sign the `PSTestInternet2.ps1`
 script. It uses the **FilePath** parameter to specify the name of the script and the **Certificate**
-parameter to specify that the certificate is stored in the $cert variable.
+parameter to specify that the certificate is stored in the `$cert` variable.
 
 ### Example 2 - Sign a script using a certificate from a PFX file
 
