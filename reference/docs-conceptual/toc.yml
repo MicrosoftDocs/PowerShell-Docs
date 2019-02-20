@@ -31,10 +31,10 @@
     - name: Starting the Windows PowerShell 2.0 Engine
       href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: About Topics
-  href: ../6/Microsoft.PowerShell.Core/About/About.md
+  href: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/
   items:
     - name: About Arrays
-      href: ../6/Microsoft.PowerShell.Core/About/about_Arrays.md
+      href: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays
 - name: Learning PowerShell
   href: learn/understanding-important-powershell-concepts.md
   items:
