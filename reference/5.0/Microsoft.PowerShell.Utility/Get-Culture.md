@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821779
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Culture
 ---
-
 # Get-Culture
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Get-Culture [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Culture** cmdlet gets information about the current culture settings.
 This includes information about the current language settings on the system, such as the keyboard layout, and the display format of items such as numbers, currency, and dates.
 
@@ -29,6 +29,7 @@ The user-interface (UI) culture determines which text strings are used for user 
 ## EXAMPLES
 
 ### Example 1: Get culture settings
+
 ```
 PS C:\> Get-Culture
 ```
@@ -36,6 +37,7 @@ PS C:\> Get-Culture
 This command displays information about the regional settings on the computer.
 
 ### Example 2: Format the properties of a culture object
+
 ```
 PS C:\> $C = Get-Culture
 PS C:\> $C | Format-List -Property *
@@ -120,19 +122,23 @@ The fifth command uses dot notation to display the value of the FirstDayOfWeek p
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Globalization.CultureInfo
+
 **Get-Culture** returns an object that represents the current culture.
 
 ## NOTES
+
 * You can also use the $PsCulture and $PsUICulture variables. The $PsCulture variable stores the name of the current culture and the $PsUICulture variable stores the name of the current UI culture.
 
 *

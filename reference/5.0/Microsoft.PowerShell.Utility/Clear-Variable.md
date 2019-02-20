@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821750
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Clear-Variable
 ---
-
 # Clear-Variable
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-
 ```
 
 ## DESCRIPTION
+
 The **Clear-Variable** cmdlet deletes the data stored in a variable, but it does not delete the variable.
 As a result, the value of the variable is NULL (empty).
 If the variable has a specified data or object type, this cmdlet preserves the type of the object stored in the variable.
@@ -28,6 +28,7 @@ If the variable has a specified data or object type, this cmdlet preserves the t
 ## EXAMPLES
 
 ### Example 1: Remove the value of global variables that begin with a search string
+
 ```
 PS C:\> Clear-Variable "my*" -Scope Global
 ```
@@ -35,6 +36,7 @@ PS C:\> Clear-Variable "my*" -Scope Global
 This command removes the value of global variables that have names that begin with my.
 
 ### Example 2: Clear a variable in a child scope but not the parent scope
+
 ```
 PS C:\> $A = 3
 PS C:\> &{ Clear-Variable A }
@@ -49,6 +51,7 @@ The variable is cleared in the child scope (although it did not exist), but it i
 The third command, which gets the value of $A, shows that the value 3 is unaffected.
 
 ### Example 3: Delete the value of the specified variable
+
 ```
 PS C:\> Clear-Variable -Name "Processes"
 ```
@@ -59,6 +62,7 @@ After the cmdlet completes the operation, the variable named Processes still exi
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -74,6 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Exclude
+
 Specifies an array of items that this cmdlet omits in the operation.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as s*.
@@ -92,6 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that the cmdlet clears a variable even if it is read-only.
 Even using the *Force* parameter, the cmdlet cannot clear constants.
 
@@ -108,6 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -Include
+
 Specifies an array of items that this cmdlet includes in the operation.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as s*.
@@ -126,6 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the variable to be cleared.
 Wildcards are permitted.
 This parameter is required, but the parameter name, Name, is optional.
@@ -143,6 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -159,6 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the scope in which this alias is valid.
 
 The acceptable values for this parameter are:
@@ -184,6 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -200,20 +211,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None or System.Management.Automation.PSVariable
+
 When you use the *PassThru* parameter, this cmdlet generates a **System.Management.Automation.PSVariable** object representing the cleared variable.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * To delete a variable, along with its value, use the Remove-Variable or Remove-Item cmdlets.
 
   This cmdlet does not delete the values of variables that are set as constants or owned by the system, even if you use the *Force* parameter.

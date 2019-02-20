@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821760
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertTo-Xml
 ---
-
 # ConvertTo-Xml
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ ConvertTo-Xml [-InputObject] <PSObject> [-Depth <Int32>] [-NoTypeInformation]
 ```
 
 ## DESCRIPTION
+
 The `ConvertTo-Xml` cmdlet creates an XML-based representation of one or more Microsoft .NET Framework objects.
 To use this cmdlet, pipe one or more objects to the cmdlet, or use the **InputObject** parameter to specify the object.
 
@@ -32,6 +32,7 @@ This cmdlet is similar to `Export-Clixml` except that `Export-Clixml` stores the
 ## EXAMPLES
 
 ### Example 1: Convert a date to XML
+
 ```
 PS C:\> Get-Date | ConvertTo-Xml
 ```
@@ -39,6 +40,7 @@ PS C:\> Get-Date | ConvertTo-Xml
 This command converts the current date (a **DateTime** object) to XML.
 
 ### Example 2: Convert processes to XML
+
 ```
 PS C:\> ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
 ```
@@ -49,6 +51,7 @@ The objects are expanded to a depth of three levels.
 ## PARAMETERS
 
 ### -As
+
 Determines the output format.
 The acceptable values for this parameter are:
 
@@ -75,6 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Depth
+
 Specifies how many levels of contained objects are included in the XML representation.
 The default value is 1.
 
@@ -96,6 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the object to be converted.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 You can also pipe objects to **ConvertTo-XML**.
@@ -113,6 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoTypeInformation
+
 Omits the Type attribute from the object nodes.
 
 ```yaml
@@ -128,16 +134,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any object to **ConvertTo-XML**.
 
 ## OUTPUTS
 
 ### System.String or System.Xml.XmlDocument
+
 The value of the *As* parameter determines the type of object that **ConvertTo-XML** returns.
 
 ## NOTES

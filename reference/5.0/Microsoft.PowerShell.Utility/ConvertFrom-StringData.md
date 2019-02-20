@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821755
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertFrom-StringData
 ---
-
 # ConvertFrom-StringData
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ ConvertFrom-StringData [-StringData] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **ConvertFrom-StringData** cmdlet converts a string that contains one or more key and value pairs into a hash table.
 Because each key/value pair must be on a separate line, here-strings are often used as the input format.
 
@@ -36,6 +36,7 @@ Unescaped backslash characters, such as those that are commonly used in file pat
 ## EXAMPLES
 
 ### Example 1: Convert a single-quoted here-string to a hash table
+
 ```
 PS C:\> $Here = @'
 Msg1 = The string parameter is required.
@@ -58,6 +59,7 @@ The first command creates a here-string and saves it in the $Here variable.
 The second command uses the **ConvertFrom-StringData** cmdlet to convert the here-string in the $Here variable to a hash table.
 
 ### Example 2: Convert a double-quoted here-string to a hash table
+
 ```
 PS C:\> $P = @"
 ISE = Windows PowerShell Integrated Scripting Environment
@@ -92,6 +94,7 @@ The final command uses a pipeline operator (|) to send the $Hash variable to the
 The result shows that the content of the $Hash variable is a hash table (System.Collections.Hashtable).
 
 ### Example 3: Convert a here-string to a hash table
+
 ```
 PS C:\> ConvertFrom-StringData -StringData @'
 Name = Disks.ps1
@@ -117,6 +120,7 @@ The here-string includes a comment about one of the strings.
 Comments are valid in strings, provided that the comment is on a different line than a key/value pair.
 
 ### Example 4: Convert a string to a hash table
+
 ```
 PS C:\> $A = ConvertFrom-StringData -StringData "Top = Red `n Bottom = Blue"
 PS C:\> "Top = " + $A.Top
@@ -132,6 +136,7 @@ The result is a hash table of the input.
 The remaining commands display the output.
 
 ### Example 5: Use ConvertFrom-StringData in the DATA section of a script
+
 ```
 PS C:\> $TextMsgs = DATA {
 ConvertFrom-StringData @'
@@ -151,6 +156,7 @@ Because the text includes variable names, it must be enclosed in a single-quoted
 Variables are not permitted in the DATA section.
 
 ### Example 6: Use the pipeline operator to pass a string
+
 ```
 PS C:\> $Here = @'
 Msg1 = The string parameter is required.
@@ -175,6 +181,7 @@ The command saves the result in the $Hash variable.
 The final command displays the contents of the $Hash variable.
 
 ### Example 7: Use escape characters to add new lines and return characters
+
 ```
 PS C:\> ConvertFrom-StringData @"
 Vincentio = Heaven doth with us as we with torches do,\nNot light them for themselves; for if our virtues\nDid not go forth of us, 'twere all alike\nAs if we had them not.
@@ -197,6 +204,7 @@ This example shows the use of escape characters to create new lines and return c
 In this example, the escape sequence **\n** is used to create new lines within a block of text (the value, in the resulting hash table) that is associated with a name or item (the name, in the resulting hash table).
 
 ### Example 8: Use backslash escape character to correctly render a file path
+
 ```
 PS C:\> ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
 Name                           Value
@@ -210,6 +218,7 @@ The double backslash ensures that the literal backslash characters render correc
 ## PARAMETERS
 
 ### -StringData
+
 Specifies the string to be converted.
 You can use this parameter or pipe a string to **ConvertFrom-StringData**.
 The parameter name is optional.
@@ -236,19 +245,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string containing a key/value pair to **ConvertFrom-StringData**.
 
 ## OUTPUTS
 
 ### System.Collections.Hashtable
+
 This cmdlet returns a hash table that it creates from the key/value pairs.
 
 ## NOTES
+
 * A here-string is a string consisting of one or more lines within which quotation marks are interpreted literally.
 
   This cmdlet can be useful in scripts that display user messages in multiple spoken languages.
