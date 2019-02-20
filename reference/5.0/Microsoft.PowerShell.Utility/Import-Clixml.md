@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821813
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Import-Clixml
 ---
-
 # Import-Clixml
 
 ## SYNOPSIS
@@ -16,17 +15,20 @@ Imports a CLIXML file and creates corresponding objects in Windows PowerShell.
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```
 Import-Clixml [-Path] <String[]> [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```
 Import-Clixml -LiteralPath <String[]> [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Import-Clixml** cmdlet imports a CLIXML file with data that represents Microsoft .NET Framework objects and creates the objects in Windows PowerShell.
 
 A valuable use of **Import-Clixml** is to import credentials and secure strings that have been exported as secure XML by running the Export-Clixml cmdlet.
@@ -35,6 +37,7 @@ For an example of how to do this, see Example 2.
 ## EXAMPLES
 
 ### Example 1: Import a serialized file and recreate an object
+
 ```
 PS C:\> Get-Process | Export-Clixml pi.xml
 PS C:\> $Processes = Import-Clixml pi.xml
@@ -44,6 +47,7 @@ This command uses the Export-Clixml cmdlet to save a serialized copy of the proc
 It then uses **Import-Clixml** to retrieve the contents of the serialized file and re-create an object that is stored in the $Processes variable.
 
 ### Example 2: Import a secure credential object
+
 ```
 PS C:\> $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 PS C:\> $Credential | Export-Clixml $Credxmlpath
@@ -68,6 +72,7 @@ This eliminates the risk of exposing plain-text passwords in your script.
 ## PARAMETERS
 
 ### -First
+
 Gets only the specified number of objects.
 Enter the number of objects to get.
 
@@ -84,6 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
+
 Reports the total number of objects in the data set (an integer) followed by the selected objects.
 If the cmdlet cannot determine the total count, it displays "Unknown total count." The integer has an Accuracy property that indicates the reliability of the total count value.
 The value of Accuracy ranges from 0.0 to 1.0 where 0.0 means that the cmdlet could not count the objects, 1.0 means that the count is exact, and a value between 0.0 and 1.0 indicates an increasingly reliable estimate.
@@ -101,6 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the XML files.
 Unlike *Path*, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -120,6 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the XML files.
 
 ```yaml
@@ -135,6 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Skip
+
 Ignores the specified number of objects and then gets the remaining objects.
 Enter the number of objects to skip.
 
@@ -151,19 +160,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains a path to **Import-Clixml**.
 
 ## OUTPUTS
 
 ### PSObject
+
 **Import-Clixml** returns objects that have been deserialized from the stored XML files.
 
 ## NOTES
+
 * When specifying multiple values for a parameter, use commas to separate the values. For example, "\<parameter-name\> \<value1\>, \<value2\>".
 
 *

@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821829
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Measure-Object
 ---
-
 # Measure-Object
 
 ## SYNOPSIS
@@ -16,18 +15,21 @@ Calculates the numeric properties of objects, and the characters, words, and lin
 ## SYNTAX
 
 ### GenericMeasure (Default)
+
 ```
 Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Sum] [-Average] [-Maximum] [-Minimum]
  [<CommonParameters>]
 ```
 
 ### TextMeasure
+
 ```
 Measure-Object [-InputObject <PSObject>] [[-Property] <String[]>] [-Line] [-Word] [-Character]
  [-IgnoreWhiteSpace] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Measure-Object** cmdlet calculates the property values of certain types of object.
 **Measure-Object** performs three types of measurements, depending on the parameters in the command.
 
@@ -38,6 +40,7 @@ For text objects, it can count and calculate the number of lines, words, and cha
 ## EXAMPLES
 
 ### Example 1: Count the files and folders in a directory
+
 ```
 PS C:\> Get-ChildItem | Measure-Object
 ```
@@ -45,6 +48,7 @@ PS C:\> Get-ChildItem | Measure-Object
 This command counts the files and folders in the current directory.
 
 ### Example 2: Measure the files in a directory
+
 ```
 PS C:\> Get-ChildItem | Measure-Object -Property length -Minimum -Maximum -Average
 ```
@@ -52,6 +56,7 @@ PS C:\> Get-ChildItem | Measure-Object -Property length -Minimum -Maximum -Avera
 This command displays the minimum, maximum, and sum of the sizes of all files in the current directory, and the average size of a file in the directory.
 
 ### Example 3: Measure text in a text file
+
 ```
 PS C:\> Get-Content C:\test.txt | Measure-Object -Character -Line -Word
 ```
@@ -59,6 +64,7 @@ PS C:\> Get-Content C:\test.txt | Measure-Object -Character -Line -Word
 This command displays the number of characters, words, and lines in the Text.txt file.
 
 ### Example 4: Measure computer processes
+
 ```
 PS C:\> Get-Process | Measure-Object -Property workingset -Minimum -Maximum -Average
 ```
@@ -66,6 +72,7 @@ PS C:\> Get-Process | Measure-Object -Property workingset -Minimum -Maximum -Ave
 This command displays the minimum, maximum, and average sizes of the working sets of the processes on the computer.
 
 ### Example 5: Measure the contents of a CSV file
+
 ```
 PS C:\> Import-Csv d:\test\serviceyrs.csv | Measure-Object -Property years -Minimum -Maximum -Average
 ```
@@ -79,6 +86,7 @@ When you use **Import-Csv** to import the file, the result is a **PSCustomObject
 You can use **Measure-Object** to calculate the values of these properties, just like any other property of an object.
 
 ### Example 6: Measure Boolean values
+
 ```
 PS C:\> Get-ChildItem | Measure-Object -Property psiscontainer -Max -Sum -Min -Average
 Count    : 126
@@ -96,6 +104,7 @@ files) in the current directory.
 ## PARAMETERS
 
 ### -Average
+
 Indicates that the cmdlet displays the average value of the specified properties.
 
 ```yaml
@@ -111,6 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -Character
+
 Indicates that the cmdlet counts the number of characters in the input object.
 
 ```yaml
@@ -126,6 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -IgnoreWhiteSpace
+
 Indicates that the cmdlet ignores white space in word counts and character counts.
 By default, white space is not ignored.
 
@@ -142,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the objects to be measured.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -161,6 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -Line
+
 Indicates that the cmdlet counts the number of lines in the input object.
 
 ```yaml
@@ -176,6 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -Maximum
+
 Indicates that the cmdlet displays the maximum value of the specified properties.
 
 ```yaml
@@ -191,6 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -Minimum
+
 Indicates that the cmdlet displays the minimum value of the specified properties.
 
 ```yaml
@@ -206,6 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies one or more numeric properties to measure.
 The default is the **Count** property of the object.
 
@@ -222,6 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sum
+
 Indicates that the cmdlet displays the sum of the values of the specified properties.
 
 ```yaml
@@ -237,6 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -Word
+
 Indicates that the cmdlet counts the number of words in the input object.
 
 ```yaml
@@ -252,16 +270,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe objects to **Measure-Object**.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GenericMeasureInfo, Microsoft.PowerShell.Commands.TextMeasureInfo, Microsoft.PowerShell.Commands.GenericObjectMeasureInfo
+
 If you use the *Word* parameter, **Measure-Object** returns a **TextMeasureInfo** object.
 Otherwise, it returns a **GenericMeasureInfo** object.
 

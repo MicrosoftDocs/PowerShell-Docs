@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821839
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Out-File
 ---
-
 # Out-File
 
 ## SYNOPSIS

@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821857
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Set-Alias
 ---
-
 # Set-Alias
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Set-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <S
 ```
 
 ## DESCRIPTION
+
 The **Set-Alias** cmdlet creates or changes an alias (alternate name) for a cmdlet or for a command element, such as a function, a script, a file, or other executable.
 You can also use **Set-Alias** to reassign a current alias to a new command, or to change any of the properties of an alias, such as its description.
 Unless you add the alias to the Windows PowerShell profile, the changes to an alias are lost when you exit the session or close Windows PowerShell.
@@ -28,6 +28,7 @@ Unless you add the alias to the Windows PowerShell profile, the changes to an al
 ## EXAMPLES
 
 ### Example 1: Create an alias for a Get-ChildItem
+
 ```
 PS C:\> Set-Alias -Name list -Value get-childitem
 ```
@@ -36,6 +37,7 @@ This command creates the alias **list** for the Get-ChildItem cmdlet.
 After you create the alias, you can use **list** in place of **Get-ChildItem** at the command line and in scripts.
 
 ### Example 2: Create an alias and omit parameter names
+
 ```
 PS C:\> Set-Alias list get-location
 ```
@@ -48,6 +50,7 @@ When you omit parameter names, the values of those parameters must appear in the
 In this case, the value of *Name* (**list**) must be the first parameter and the value of *Value* (get-location) must be the second parameter.
 
 ### Example 3: Make an alias read-only
+
 ```
 PS C:\> Set-Alias scrub Remove-Item -Option ReadOnly -Passthru | Format-List
 ```
@@ -59,6 +62,7 @@ The *PassThru* parameter directs Windows PowerShell to pass an object that repre
 If the *PassThru* parameter were omitted, there would be no output from this cmdlet to display (in a list or otherwise).
 
 ### Example 4: Create an alias for Notepad.exe
+
 ```
 PS C:\> Set-Alias np c:\windows\notepad.exe
 ```
@@ -72,6 +76,7 @@ To make the command more generic, you can use the Windir environment variable ($
 The generic version of the command is `Set-Alias np ${env:windir}\notepad.exe`.
 
 ### Example 5: Create an alias for a command with parameters
+
 ```
 PS C:\> function CD32 {set-location c:\windows\system32}
 PS C:\> Set-Alias go cd32
@@ -92,6 +97,7 @@ Then, to run the **Set-Location** command, the user can type either `CD32` or `g
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -107,6 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies a description of the alias.
 You can type any string.
 If the description includes spaces, enclose it quotation marks.
@@ -124,6 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that the cmdlet will set a read-only alias.
 Use the *Option* parameter to create a read-only alias.
 The *Force* parameter cannot set a constant alias.
@@ -141,6 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the new alias.
 You can use any alphanumeric characters in an alias, but the first character cannot be a number.
 
@@ -157,6 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -Option
+
 Sets the value of the Options property of the alias.
 The acceptable values for this parameter are:
 
@@ -190,6 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -206,6 +217,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the scope in which this alias is valid.
 The acceptable values for this parameter are:
 
@@ -230,6 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 Specifies the name of the cmdlet or command element that is being aliased.
 
 ```yaml
@@ -245,6 +258,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -261,20 +275,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None or System.Management.Automation.AliasInfo
+
 When you use the *PassThru* parameter, **Set-Alias** generates a **System.Management.Automation.AliasInfo** object representing the alias.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * An alias is an alternate name or nickname for a cmdlet or command element. To run the cmdlet, you can use its full name or any valid alias. For more information, see about_Aliases.
 * To create a new alias, use **Set-Alias** or New-Alias. To delete an alias, use Remove-Item.
 * A cmdlet can have multiple aliases, but an alias can only be associated with one cmdlet at a time. If you use **Set-Alias** to associate the alias with a different cmdlet, it is no longer associated with the original cmdlet.

@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821859
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Set-PSBreakpoint
 ---
-
 # Set-PSBreakpoint
 
 ## SYNOPSIS
@@ -16,23 +15,27 @@ Sets a breakpoint on a line, command, or variable.
 ## SYNTAX
 
 ### Line (Default)
+
 ```
 Set-PSBreakpoint [-Action <ScriptBlock>] [[-Column] <Int32>] [-Line] <Int32[]> [-Script] <String[]>
  [<CommonParameters>]
 ```
 
 ### Variable
+
 ```
 Set-PSBreakpoint [-Action <ScriptBlock>] [[-Script] <String[]>] -Variable <String[]>
  [-Mode <VariableAccessMode>] [<CommonParameters>]
 ```
 
 ### Command
+
 ```
 Set-PSBreakpoint [-Action <ScriptBlock>] -Command <String[]> [[-Script] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Set-PSBreakpoint** cmdlet sets a breakpoint in a script or in any command run in the current session.
 You can use **Set-PSBreakpoint** to set a breakpoint before executing a script or running a command, or during debugging, when stopped at another breakpoint.
 
@@ -57,6 +60,7 @@ For more information about the Windows PowerShell debugger, see about_Debuggers.
 ## EXAMPLES
 
 ### Example 1: Set a breakpoint on a line
+
 ```
 PS C:\> Set-PSBreakpoint -Script "sample.ps1" -Line 5
 Column     : 0
@@ -75,6 +79,7 @@ As a result, when the script runs, execution stops immediately before line 5 wou
 When you set a new breakpoint by line number, the **Set-PSBreakpoint** cmdlet generates a line breakpoint object (**System.Management.Automation.LineBreakpoint**) that includes the breakpoint ID and hit count, as shown in the following sample output.
 
 ### Example 2: Set a breakpoint on a function
+
 ```
 PS C:\> Set-PSBreakpoint -Command "Increment" -Script "sample.ps1"
 Command    : Increment
@@ -93,6 +98,7 @@ The result is a command breakpoint object.
 Before the script runs, the value of the HitCount property is 0.
 
 ### Example 3: Set a breakpoint on a variable
+
 ```
 PS C:\> Set-PSBreakpoint -Script "sample.ps1" -Variable "Server" -Mode ReadWrite
 ```
@@ -101,6 +107,7 @@ This command sets a breakpoint on the Server variable in the Sample.ps1 script.
 It uses the *Mode* parameter with a value of ReadWrite to stop execution when the value of the variable is read and just before the value changes.
 
 ### Example 4: Set a breakpoint on every command that begins with specified text
+
 ```
 PS C:\> Set-PSBreakpoint -Script Sample.ps1 -Command "write*"
 ```
@@ -108,6 +115,7 @@ PS C:\> Set-PSBreakpoint -Script Sample.ps1 -Command "write*"
 This command sets a breakpoint on every command in the Sample.ps1 script that begins with write, such as Write-Host.
 
 ### Example 5: Set a breakpoint depending on the value of a variable
+
 ```
 PS C:\> Set-PSBreakpoint -Script "test.ps1" -Command "DiskTest" `
 -Action { if ($Disk -gt 2) { break } }
@@ -122,6 +130,7 @@ The action uses the BREAK keyword to stop execution if the condition is met.
 The alternative (and the default) is CONTINUE.
 
 ### Example 6: Set a breakpoint on a function
+
 ```
 PS C:\> Set-PSBreakpoint -Command "checklog"
 Id       : 0
@@ -143,6 +152,7 @@ Because the command does not specify a script, the breakpoint is set on anything
 The debugger breaks when the function is called, not when it is declared.
 
 ### Example 7: Set breakpoints on multiple lines
+
 ```
 PS C:\> Set-PSBreakpoint -Script "sample.ps1" -Line 1, 14, 19 -Column 2 -Action {&(log.ps1)}
 Column     : 2
@@ -182,6 +192,7 @@ The action specified in the *Action* parameter applies to all breakpoints.
 ## PARAMETERS
 
 ### -Action
+
 Specifies commands that run at each breakpoint instead of breaking.
 Enter a script block that contains the commands.
 You can use this parameter to set conditional breakpoints or to perform other tasks, such as testing or logging.
@@ -207,6 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -Column
+
 Specifies the column number of the column in the script file on which execution stops.
 Enter only one column number.
 The default is column 1.
@@ -231,6 +243,7 @@ Accept wildcard characters: False
 ```
 
 ### -Command
+
 Sets a command breakpoint.
 Enter cmdlet names, such as Get-Process, or function names.
 Wildcards are permitted.
@@ -251,6 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -Line
+
 Sets a line breakpoint in a script.
 Enter one or more line numbers, separated by commas.
 Windows PowerShell stops immediately before executing the statement that begins on each of the specified lines.
@@ -272,6 +286,7 @@ Accept wildcard characters: False
 ```
 
 ### -Mode
+
 Specifies the mode of access that triggers variable breakpoints.
 The default is Write.
 
@@ -301,6 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -Script
+
 Specifies an array of script files that this cmdlet sets a breakpoint in.
 Enter the paths and file names of one or more script files.
 If the files are in the current directory, you can omit the path.
@@ -334,6 +350,7 @@ Accept wildcard characters: False
 ```
 
 ### -Variable
+
 Specifies an array of variables that this cmdlet sets breakpoints on.
 Enter a comma-separated list of variables without dollar signs ($).
 
@@ -353,19 +370,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to **Set-PSBreakpoint**.
 
 ## OUTPUTS
 
 ### Breakpoint object (System.Management.Automation.LineBreakpoint, System.Management.Automation.VariableBreakpoint, System.Management.Automation.CommandBreakpoint)
+
 **Set-PSBreakpoint** returns an object that represents each breakpoint that it sets.
 
 ## NOTES
+
 * **Set-PSBreakpoint** cannot set a breakpoint on a remote computer. To debug a script on a remote computer, copy the script to the local computer and then debug it locally.
 * When you set a breakpoint on more than one line, command, or variable, **Set-PSBreakpoint** generates a breakpoint object for each entry.
 * When setting a breakpoint on a function or variable at the command prompt, you can set the breakpoint before or after you create the function or variable.

@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821826
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Invoke-WebRequest
 ---
-
 # Invoke-WebRequest
 
 ## SYNOPSIS
@@ -25,6 +24,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
 ```
 
 ## DESCRIPTION
+
 The **Invoke-WebRequest** cmdlet sends HTTP, HTTPS, FTP, and FILE requests to a web page or web service.
 It parses the response and returns collections of forms, links, images, and other significant HTML elements.
 
@@ -33,6 +33,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Send a web request
+
 ```
 PS C:\> $R = Invoke-WebRequest -URI http://www.bing.com?q=how+many+feet+in+a+mile
 PS C:\> $R.AllElements | where {$_.innerhtml -like "*=*"} | Sort { $_.InnerHtml.Length } | Select InnerText -First 5
@@ -47,6 +48,7 @@ The second command gets the **InnerHtml** property when it includes an equal sig
 Sorting by the shortest HTML value often helps you find the most specific element that matches that text.
 
 ### Example 2: Use a stateful web service
+
 ```
 The first command uses the **Invoke-WebRequest** cmdlet to send a sign-in request. The command specifies a value of "FB" for the value of the *SessionVariable* parameter, and saves the result in the $R variable.When the command completes, the $R variable contains an **HtmlWebResponseObject** and the $FB variable contains a **WebRequestSession** object.
 PS C:\> $R=Invoke-WebRequest http://www.facebook.com/login.php -SessionVariable fb
@@ -107,6 +109,7 @@ PS C:\> $R.StatusDescription
 This example shows how to use the **Invoke-WebRequest** cmdlet with a stateful web service, such as Facebook.
 
 ### Example 3: Get links from a web page
+
 ```
 PS C:\> (Invoke-WebRequest -Uri "http://msdn.microsoft.com/en-us/library/aa973757(v=vs.85).aspx").Links.Href
 ```
@@ -118,6 +121,7 @@ Then it users the **Links** property of the HtmlWebResponseObject that **Invoke-
 ## PARAMETERS
 
 ### -Body
+
 Specifies the body of the request.
 The body is the content of the request that follows the headers.
 You can also pipe a body value to **Invoke-WebRequest**.
@@ -153,6 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -Certificate
+
 Specifies the client certificate that is used for a secure web request.
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
 
@@ -172,6 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to send the request.
 Enter the certificate thumbprint of the certificate.
 
@@ -193,6 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentType
+
 Specifies the content type of the web request.
 
 If this parameter is omitted and the request method is POST, **Invoke-WebRequest** sets the content type to application/x-www-form-urlencoded.
@@ -211,6 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to send the request.
 The default is the current user.
 
@@ -229,6 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableKeepAlive
+
 Indicates that the cmdlet sets the KeepAlive value in the HTTP header to False.
 By default, KeepAlive is True.
 KeepAlive establishes a persistent connection to the server to facilitate subsequent requests.
@@ -246,6 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -Headers
+
 Specifies the headers of the web request.
 Enter a hash table or dictionary.
 
@@ -265,6 +275,7 @@ Accept wildcard characters: False
 ```
 
 ### -InFile
+
 Gets the content of the web request from a file.
 
 Enter a path and file name.
@@ -283,6 +294,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumRedirection
+
 Specifies how many times Windows PowerShell redirects a connection to an alternate Uniform Resource Identifier (URI) before the connection fails.
 The default value is 5.
 A value of 0 (zero) prevents all redirection.
@@ -300,6 +312,7 @@ Accept wildcard characters: False
 ```
 
 ### -Method
+
 Specifies the method used for the web request.
 The acceptable values for this parameter are:
 
@@ -328,6 +341,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutFile
+
 Specifies the output file for which this cmdlet saves the response body.
 Enter a path and file name.
 If you omit the path, the default is the current location.
@@ -348,6 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Indicates that the cmdlet returns the results, in addition to writing them to a file.
 This parameter is valid only when the *OutFile* parameter is also used in the command.
 
@@ -364,6 +379,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
+
 Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
 Enter the URI of a network proxy server.
 
@@ -380,6 +396,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
+
 Specifies a user account that has permission to use the proxy server that is specified by the *Proxy* parameter.
 The default is the current user.
 
@@ -401,6 +418,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyUseDefaultCredentials
+
 Indicates that the cmdlet uses the credentials of the current user to access the proxy server that is specified by the *Proxy* parameter.
 
 This parameter is valid only when the *Proxy* parameter is also used in the command.
@@ -419,6 +437,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionVariable
+
 Specifies a variable for which this cmdlet creates a web request session and saves it in the value.
 Enter a variable name without the dollar sign ($) symbol.
 
@@ -449,6 +468,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeoutSec
+
 Specifies how long the request can be pending before it times out.
 Enter a value in seconds.
 The default value, 0, specifies an indefinite time-out.
@@ -469,6 +489,7 @@ Accept wildcard characters: False
 ```
 
 ### -TransferEncoding
+
 Specifies a value for the transfer-encoding HTTP response header.
 The acceptable values for this parameter are:
 
@@ -492,6 +513,7 @@ Accept wildcard characters: False
 ```
 
 ### -Uri
+
 Specifies the Uniform Resource Identifier (URI) of the Internet resource to which the web request is sent.
 Enter a URI.
 This parameter supports HTTP, HTTPS, FTP, and FILE values.
@@ -512,6 +534,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseBasicParsing
+
 Indicates that the cmdlet uses the response object for HTML content without Document Object Model (DOM) parsing.
 
 This parameter is required when Internet Explorer is not installed on the computers, such as on a Server Core installation of a Windows Server operating system.
@@ -529,6 +552,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseDefaultCredentials
+
 Indicates that the cmdet uses the credentials of the current user to send the web request.
 
 ```yaml
@@ -544,6 +568,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserAgent
+
 Specifies a user agent string for the web request.
 
 The default user agent is similar to Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/3.0 with slight variations for each operating system and platform.
@@ -567,6 +592,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebSession
+
 Specifies a web request session.
 Enter the variable name, including the dollar sign ($).
 
@@ -596,11 +622,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
+
 You can pipe the body of a web request to **Invoke-WebRequest**.
 
 ## OUTPUTS

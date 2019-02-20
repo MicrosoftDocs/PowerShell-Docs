@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821863
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Sort-Object
 ---
-
 # Sort-Object
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Sort-Object [-Descending] [-Unique] [-InputObject <PSObject>] [[-Property] <Obje
 ```
 
 ## DESCRIPTION
+
 The **Sort-Object** cmdlet sorts objects in ascending or descending order based on the values of properties of the object.
 
 You can specify a single property or multiple properties, for a multi-key sort, and you can select a case-sensitive or case-insensitive sort.
@@ -29,6 +29,7 @@ You can also direct **Sort-Object** to display only the objects with a unique va
 ## EXAMPLES
 
 ### Example 1: Sort the current directory by name
+
 ```
 PS C:\> Get-ChildItem | Sort-Object
 Mode                LastWriteTime     Length Name
@@ -55,6 +56,7 @@ This command sorts the subdirectories and files in the current directory.
 Because no properties are specified, the files and directories are sorted in ascending alphabetical order by their default sort property, Name.
 
 ### Example 2: Sort the current directory by file length
+
 ```
 PS C:\> Get-ChildItem | Sort-Object -Property length
 Mode                LastWriteTime     Length Name
@@ -73,6 +75,7 @@ Mode                LastWriteTime     Length Name
 This command displays the files in the current directory in ascending order by file length.
 
 ### Example 3: Sort processes by memory use
+
 ```
 PS C:\> Get-Process | Sort-Object -Property WS | Select-Object -Last 5
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -92,6 +95,7 @@ It uses a pipeline operator (|) to send the results to the **Sort-Object** cmdle
 Another pipeline operator sends the results to the Select-Object, which displays only the last five items in the list.
 
 ### Example 4: Sort HistoryInfo objects by ID
+
 ```
 PS C:\> Get-History | Sort-Object -Descending
 Id CommandLine
@@ -111,6 +115,7 @@ Id CommandLine
 This command sorts **HistoryInfo** objects using the Id property as the default key.
 
 ### Example 5: Sort services by Status and DisplayName
+
 ```
 PS C:\> Get-Service | Sort-Object -Property @{Expression = "Status"; Descending = $True}, @{Expression = "DisplayName"; Descending = $False}
 Status   Name               DisplayName
@@ -141,6 +146,7 @@ The resulting display, which sorts the Status values in descending order, lists 
 When sorted in ascending order, Stopped appears before Running, because Status is an enumerated property in which the value of Stopped (1) is less than the value of Running (4).
 
 ### Example 6: Sort text files by time span
+
 ```
 PS C:\> Get-ChildItem *.txt | Sort-Object -Property @{Expression={$_.LastWriteTime - $_.CreationTime}; Ascending = $False} | Format-Table LastWriteTime, CreationTime
 LastWriteTime                           CreationTime
@@ -157,6 +163,7 @@ LastWriteTime                           CreationTime
 This command sorts text files in descending order by the time span between CreationTime and LastWriteTime.
 
 ### Example 7: Sort names in a text file
+
 ```
 PS C:\> Get-Content servers.txt
 localhost
@@ -177,6 +184,7 @@ The second command uses the **Sort-Object** cmdlet with the *Unique* parameter t
 ## PARAMETERS
 
 ### -CaseSensitive
+
 Indicates that the sort should be case sensitive.
 By default, sorting is not case sensitive.
 
@@ -193,6 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -Culture
+
 Specifies the cultural configuration to use when sorting.
 
 ```yaml
@@ -208,6 +217,7 @@ Accept wildcard characters: False
 ```
 
 ### -Descending
+
 Indicates that the cmdlet sorts the objects in descending order.
 The default is ascending order.
 
@@ -227,6 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the objects to sort.
 
 When you use the *InputObject* parameter to submit a collection of items, **Sort-Object** receives one object that represents the collection.
@@ -247,6 +258,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies the properties to use when sorting.
 Objects are sorted based on the values of these properties.
 Enter the names of the properties.
@@ -279,6 +291,7 @@ Accept wildcard characters: True
 ```
 
 ### -Unique
+
 Indicates that the cmdlet eliminates duplicates and returns only the unique members of the collection.
 You can use this parameter instead of using the Get-Unique cmdlet.
 
@@ -298,19 +311,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe the objects to be sorted to **Sort-Object**.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSObject
+
 **Sort-Object** returns the sorted objects.
 
 ## NOTES
+
 * **Sort-Object** sorts objects based on the properties that you specify or the default sort properties for objects of that type.
 * If an object does not have one of the specified properties, the property value for that object is interpreted by the cmdlet as Null and is placed at the end of the sort order.
 * When sorting objects, **Sort-Object** uses the Compare method for each property. If a property does not implement IComparable, the cmdlet converts the property value to a string and uses the Compare method for **System.String**.
