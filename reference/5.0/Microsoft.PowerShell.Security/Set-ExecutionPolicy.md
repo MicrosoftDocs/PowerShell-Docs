@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821719
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Set-ExecutionPolicy
 ---
-
 # Set-ExecutionPolicy
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPol
 ```
 
 ## DESCRIPTION
+
 The **Set-ExecutionPolicy** cmdlet changes the user preference for the Windows PowerShell execution policy.
 
 The execution policy is part of the security strategy of Windows PowerShell.
@@ -32,6 +32,7 @@ To change the execution policy for the default (LocalMachine) scope, start Windo
 ## EXAMPLES
 
 ### Example 1: Set the shell execution policy
+
 ```
 PS C:\> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
@@ -39,6 +40,7 @@ PS C:\> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 This command sets the user preference for the shell execution policy to RemoteSigned.
 
 ### Example 2: Set a shell execution policy that conflicts with the group policy
+
 ```
 PS C:\> Set-ExecutionPolicy -ExecutionPolicy Restricted
 Set-ExecutionPolicy : Windows PowerShell updated your local preference successfully, but the setting is
@@ -52,6 +54,7 @@ This command attempts to set the execution policy for the shell to Restricted.
 The Restricted setting is written to the registry, but because it conflicts with a group policy, it is not effective, even though it is more restrictive than the group policy.
 
 ### Example 3: Apply the execution policy from a remote computer to the local computer
+
 ```
 PS C:\> Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-ExecutionPolicy} | Set-ExecutionPolicy -Force
 ```
@@ -64,6 +67,7 @@ Because you can pipe an ExecutionPolicy (Microsoft.PowerShell.ExecutionPolicy) o
 The command uses the *Force* parameter to suppress the user prompt.
 
 ### Example 4: Set the scope for an execution policy
+
 ```
 PS C:\> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy AllSigned -Force
 
@@ -88,6 +92,7 @@ The first command uses the **Set-ExecutionPolicy** cmdlet to set an execution po
 It uses the *Force* parameter to suppress the user prompt.
 
 ### Example 5: Remove the execution policy for the current user
+
 ```
 PS C:\> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Undefined
 ```
@@ -98,6 +103,7 @@ As a result, the execution policy that is set in Group Policy or in the LocalMac
 If you set the execution policy in all scopes to Undefined and the Group Policy is not set, the default execution policy, Restricted, is effective for all users of the computer.
 
 ### Example 6: Set the execution policy for the current session
+
 ```
 PS C:\> Set-ExecutionPolicy -Scope Process -ExecutionPolicy AllSigned
 ```
@@ -107,6 +113,7 @@ This execution policy is saved in the PSExecutionPolicyPreference environment va
 The variable and its value are deleted when the current session is closed.
 
 ### Example 7: Unblock a script to run it without changing the execution policy
+
 ```
 The first command uses the **Set-ExecutionPolicy** cmdlet to change the execution policy to RemoteSigned.
 PS C:\> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
@@ -142,6 +149,7 @@ It also shows how to use the Unblock-File cmdlet to unblock scripts, so that you
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -157,6 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExecutionPolicy
+
 Specifies the new execution policy.
 The acceptable values for this parameter are:
 
@@ -190,6 +199,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Suppresses all prompts.
 By default, **Set-ExecutionPolicy** displays a warning whenever you change the execution policy.
 
@@ -206,6 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the scope of the execution policy.
 The default is LocalMachine.
 The acceptable values for this parameter are:
@@ -233,6 +244,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -249,19 +261,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ExecutionPolicy, System.String
+
 You can pipe an execution policy object or a string that contains the name of an execution policy to **Set-ExecutionPolicy**.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES
+
 * When you use **Set-ExecutionPolicy** in any scope other than Process, the new user preference is saved in the registry and remains unchanged until you change it. When the value of the *Scope* parameter is Process, the user preference is stored in the PSExecutionPolicyPreference environment variable ($env:PSExecutionPolicyPreference), instead of the registry, and it is deleted when the session in which it is effective is closed.
 
   If the "Turn on Script Execution" group policy is enabled for the computer or user, the user preference is saved, but it is not effective, and Windows PowerShell displays a message explaining the conflict.

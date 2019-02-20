@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821761
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Debug-Runspace
 ---
-
 # Debug-Runspace
 
 ## SYNOPSIS
@@ -16,26 +15,31 @@ Starts an interactive debugging session with a runspace.
 ## SYNTAX
 
 ### RunspaceParameterSet (Default)
+
 ```
 Debug-Runspace [-Runspace] <Runspace> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameParameterSet
+
 ```
 Debug-Runspace [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### IdParameterSet
+
 ```
 Debug-Runspace [-Id] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
+
 ```
 Debug-Runspace [-InstanceId] <Guid> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Debug-Runspace** cmdlet starts an interactive debugging session with a local or remote active runspace.
 You can find a runspace that you want to debug by first running Get-Process to find processes associated with Windows PowerShell, then Enter-PSHostProcess with the process ID specified in the *Id* parameter to attach to the process, and then Get-Runspace to list runspaces within the Windows PowerShell host process.
 
@@ -49,6 +53,7 @@ For example, if you are working in a PowerShell.exe session, you can't enter the
 ## EXAMPLES
 
 ### Example 1: Debug a remote runspace
+
 ```
 PS C:\> Get-Process -ComputerName "WS10TestServer" -Name "*powershell*"
 Handles      WS(K)   VM(M)      CPU(s)    Id  ProcessName
@@ -84,6 +89,7 @@ Because there's a breakpoint in the script, the debugger opens.
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -99,6 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies the ID number of a runspace.
 You can run Get-Runspace to show runspace IDs.
 
@@ -115,6 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies a runspace by its instance ID, a GUID that you can show by running **Get-Runspace**.
 
 ```yaml
@@ -130,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a runspace by its name.
 You can run **Get-Runspace** to show the names of runspaces.
 
@@ -146,6 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -Runspace
+
 Specifies a runspace object.
 The simplest way to provide a value for this parameter is to specify a variable that contains the results of a filtered **Get-Runspace** command.
 
@@ -162,6 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -178,16 +189,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Runspaces.Runspace
+
 You can pipe the results of a **Get-Runspace** command to **Debug-Runspace.**
 
 ## OUTPUTS
 
 ## NOTES
+
 * **Debug-Runspace** works on runspaces that are in the Opened state. If a runspace state changes from Opened to another state, that runspace is automatically removed from the running list. A runspace is added to the running list only if it meets the following criteria.
 
   - If it is coming from Invoke-Command; that is, it has an **Invoke-Command** GUID ID.
