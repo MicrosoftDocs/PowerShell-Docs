@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821862
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Show-Command
 ---
-
 # Show-Command
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Show-Command [[-Name] <String>] [-Height <Double>] [-Width <Double>] [-NoCommonP
 ```
 
 ## DESCRIPTION
+
 The **Show-Command** cmdlet lets you create a Windows PowerShell command in a command window.
 You can use the features of the command window to run the command or have it return the command to you.
 
@@ -49,6 +49,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Open the Commands window
+
 ```
 PS C:\> Show-Command
 ```
@@ -57,6 +58,7 @@ This command displays the default view of the **Show-Command** window.
 The Commands window displays a list of all commands in all modules that are installed on the computer.
 
 ### Example 2: Open a cmdlet in the Commands window
+
 ```
 PS C:\> Show-Command -Name "Invoke-Command"
 ```
@@ -65,6 +67,7 @@ This command opens the Invoke-Command cmdlet display in the **Show-Command** win
 You can use the **Invoke-Command** display to run **Invoke-Command** commands.
 
 ### Example 3: Open a cmdlet with specified parameters
+
 ```
 PS C:\> Show-Command -Name "Connect-PSSession" -Height 700 -Width 1000 -ErrorPopup
 ```
@@ -75,6 +78,7 @@ It uses the *Height* and *Width* parameters to specify the dimension of the comm
 When you click **Run**, the **Connect-PSSession** command runs, just as would if you typed the **Connect-PSSession** command at the command line.
 
 ### Example 4: Specify new default parameter values for a cmdlet
+
 ```
 PS C:\> $PSDefaultParameterValues = @{"Show-Command:Height" = 700; "Show-Command:Width" = 1000; "Show-Command:ErrorPopup" = $True}
 ```
@@ -86,6 +90,7 @@ To use these default values in every Windows PowerShell session, add the $PSDefa
 For more information, see about_Profiles and [about_Parameters_Default_Values](../Microsoft.PowerShell.Core/About/about_Parameters_Default_Values.md).
 
 ### Example 5: Send output to a grid view
+
 ```
 PS C:\> Show-Command Get-ChildItem | Out-GridView
 ```
@@ -97,6 +102,7 @@ When you click the **Run** button, the **Get-ChildItem** command runs and genera
 The pipeline operator ( | ) sends the output of the **Get-ChildItem** command to the **Out-GridView** cmdlet, which displays the **Get-ChildItem** output in an interactive window.
 
 ### Example 6: Display a command that you create in the Commands window
+
 ```
 PS C:\> Show-Command -PassThru
 Get-EventLog -LogName "Windows PowerShell" -Newest 5
@@ -110,6 +116,7 @@ For example, if you use the **Show-Command** window to create a Get-EventLog com
 Viewing the command string helps you to learn Windows PowerShell.
 
 ### Example 7: Save a command to a variable
+
 ```
 PS C:\> $C = Show-Command -PassThru
 
@@ -141,6 +148,7 @@ In this case, we use the **Show-Command** window to create a Get-EventLog comman
 When you click **OK**, **Show-Command** returns the command string, which is saved in the $C variable.
 
 ### Example 8: Save the output of a command to a variable
+
 ```
 PS C:\> $P = Show-Command Get-Process -ErrorPopup
 
@@ -165,6 +173,7 @@ To run the command, click the **Run** button in the **Show-Command** window.
 ## PARAMETERS
 
 ### -ErrorPopup
+
 Indicates that the cmdlet displays errors in a pop-up window, in addition to displaying them at the command line.
 By default, when a command that is run in a **Show-Command** window generates an error, the error is displayed only at the command line.
 
@@ -184,6 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -Height
+
 Specifies the height of the **Show-Command** window in pixels.
 Enter a value between 300 and the number of pixels in the screen resolution.
 If the value is too large to display the command window on the screen, **Show-Command** generates an error.
@@ -203,6 +213,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Displays a command window for the specified command.
 Enter the name of one command, such as the name of a cmdlet, function, workflow, or CIM command.
 If you omit this parameter, **Show-Command** displays a command window that lists all of the Windows PowerShell commands in all modules installed on the computer.
@@ -220,6 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoCommonParameter
+
 Indicates that this cmdlet omits the Common Parameters section of the command display.
 By default, the Common Parameters appear in an expandable section at the bottom of the command window.
 
@@ -236,6 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -254,6 +267,7 @@ Accept wildcard characters: False
 ```
 
 ### -Width
+
 Specifies the width of the **Show-Command** window in pixels.
 Enter a value between 300 and the number of pixels in the screen resolution.
 If the value is too large to display the command window on the screen, **Show-Command** generates an error.
@@ -272,20 +286,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to **Show-Command**.
 
 ## OUTPUTS
 
 ### System.String, System.Object
+
 When you use the *PassThru* parameter, **Show-Command** returns a command string.
 When you use the *ErrorPopup* parameter, **Show-Command** returns the command output (any object).Otherwise, **Show-Command** does not generate any output.
 
 ## NOTES
+
 * **Show-Command** does not work in remote sessions.
 
 ## RELATED LINKS

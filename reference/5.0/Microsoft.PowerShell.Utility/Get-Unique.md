@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821807
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Unique
 ---
-
 # Get-Unique
 
 ## SYNOPSIS
@@ -16,16 +15,19 @@ Returns unique items from a sorted list.
 ## SYNTAX
 
 ### AsString (Default)
+
 ```
 Get-Unique [-InputObject <PSObject>] [-AsString] [<CommonParameters>]
 ```
 
 ### UniqueByType
+
 ```
 Get-Unique [-InputObject <PSObject>] [-OnType] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Unique** cmdlet compares each item in a sorted list to the next item, eliminates duplicates, and returns only one instance of each item.
 The list must be sorted for the cmdlet to work properly.
 
@@ -35,6 +37,7 @@ As a result, strings that differ only in character casing are considered to be u
 ## EXAMPLES
 
 ### Example 1: Get unique words in a text file
+
 ```
 PS C:\> $A = $(foreach ($line in Get-Content C:\Test1\File1.txt) {$line.tolower().split(" ")}) | sort | Get-Unique
 PS C:\> $A.count
@@ -50,6 +53,7 @@ The results are stored in the $A variable.
 The second command uses the Count property of the collection of strings in $A to determine how many items are in $A.
 
 ### Example 2: Get unique integers in an array
+
 ```
 PS C:\> 1,1,1,1,12,23,4,5,4643,5,3,3,3,3,3,3,3 | Sort-Object | Get-Unique
 ```
@@ -58,6 +62,7 @@ This command finds the unique members of the set of integers.
 The first command takes an array of integers typed at the command line, pipes them to the Sort-Object cmdlet to be sorted, and then pipes them to **Get-Unique**, which eliminates duplicate entries.
 
 ### Example 3: Get unique object types in a directory
+
 ```
 PS C:\> Get-ChildItem | Sort-Object {$_.GetType()} | Get-Unique -OnType
 ```
@@ -70,6 +75,7 @@ Another pipeline operator sends the results to **Get-Unique**.
 The *OnType* parameter directs **Get-Unique** to return only one object of each type.
 
 ### Example 4: Get unique processes
+
 ```
 PS C:\> Get-Process | Sort-Object | Select-Object processname | Get-Unique -AsString
 ```
@@ -87,6 +93,7 @@ Without this parameter, **Get-Unique** treats the ProcessName values as objects 
 ## PARAMETERS
 
 ### -AsString
+
 Indicates that this cmdlet uses the data as a string.
 Without this parameter, data is treated as an object, so when you submit a collection of objects of the same type to **Get-Unique**, such as a collection of files, it returns just one (the first).
 You can use this parameter to find the unique values of object properties, such as the file names.
@@ -104,6 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies input for **Get-Unique**.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
@@ -123,6 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnType
+
 Indicates that this cmdlet returns only one object of each type.
 
 ```yaml
@@ -138,19 +147,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any type of object to **Get-Unique**.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSObject
+
 The type of object that **Get-Unique** returns is determined by the input.
 
 ## NOTES
+
 * You can also refer to **Get-Unique** by its built-in alias, gu. For more information, see about_Aliases.
 
   To sort a list, use Sort-Object.

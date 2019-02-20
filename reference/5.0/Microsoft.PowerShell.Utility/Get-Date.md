@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821781
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Date
 ---
-
 # Get-Date
 
 ## Synopsis
@@ -16,6 +15,7 @@ Gets the current date and time.
 ## Syntax
 
 ### Net (Default)
+
 ```powershell
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-Format <String>]
@@ -23,6 +23,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
 ```
 
 ### UFormat
+
 ```powershell
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-UFormat <String>]
@@ -30,6 +31,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
 ```
 
 ## Description
+
 The `Get-Date` cmdlet gets a **DateTime** object that represents the current date or a date that you specify.
 It can format the date and time in several Windows and UNIX formats.
 You can use `Get-Date` to generate a date or time character string, and then send the string to other cmdlets or programs.
@@ -89,6 +91,7 @@ This command displays the day of the year for the current date.
 For example, December 31 is the 365th day of 2006, but it is the 366th day of 2000.
 
 ### Example 5
+
 ```powershell
 $a = Get-Date
 $a.IsDaylightSavingTime()
@@ -204,6 +207,7 @@ When you use the `-Format` or `-UFormat` parameters, `Get-Date` generates a stri
 Then, when you send the string to `Add-Content`, it adds the string to the Test.txt file without changing it.
 
 ### Example 10
+
 ```powershell
 Get-Date -Format o
 ```
@@ -238,6 +242,7 @@ This example shows how to use the `Get-Date` cmdlet to create a timestamp and ho
 ## Parameters
 
 ### -Date
+
 Specifies a date and time.
 By default, `Get-Date` gets the current system date and time.
 
@@ -256,6 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -Day
+
 Specifies the day of the month that is displayed.
 Enter a value from 1 to 31.
 The default is the current day.
@@ -276,6 +282,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayHint
+
 Determines which elements of the date and time are displayed.
 
 Valid values are:
@@ -301,6 +308,7 @@ Accept wildcard characters: False
 ```
 
 ### -Format
+
 Displays the date and time in the Microsoft .NET Framework format indicated by the format specifier.
 Enter a format specifier.
 For a list of available format specifiers, see [DateTimeFormatInfo Class](http://go.microsoft.com/fwlink/?LinkId=143638) in the MSDN (Microsoft Developer Network) library.
@@ -331,6 +339,7 @@ Accept wildcard characters: False
 ```
 
 ### -Hour
+
 Specifies the hour that is displayed.
 Enter a value from 0 to 23.
 The default is the current hour.
@@ -348,6 +357,7 @@ Accept wildcard characters: False
 ```
 
 ### -Millisecond
+
 Specifies the milliseconds in the date.
 Enter a value from 0 to 999.
 The default is the current number of milliseconds.
@@ -367,6 +377,7 @@ Accept wildcard characters: False
 ```
 
 ### -Minute
+
 Specifies the minute that is displayed.
 Enter a value from 0 to 59.
 The default value is the current minutes.
@@ -384,6 +395,7 @@ Accept wildcard characters: False
 ```
 
 ### -Month
+
 Specifies the month that is displayed.
 Enter a value from 1 to 12.
 The default is the current month.
@@ -401,6 +413,7 @@ Accept wildcard characters: False
 ```
 
 ### -Second
+
 Specifies the second that is displayed.
 Enter a value from 0 to 59.
 The default is the current second.
@@ -418,6 +431,7 @@ Accept wildcard characters: False
 ```
 
 ### -UFormat
+
 Displays the date and time in UNIX format.
 For a list of the format specifiers, see the Notes section.
 
@@ -437,6 +451,7 @@ Accept wildcard characters: False
 ```
 
 ### -Year
+
 Specifies the year that is displayed.
 Enter a value from 1 to 9999.
 The default is the current year.
@@ -454,20 +469,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Inputs
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## Outputs
 
 ### System.DateTime or System.String
+
 When you use the `-Format` or `-UFormat` parameters, `Get-Date` returns a string.
 Otherwise, it returns a **DateTime** object.
 
 ## NOTES
+
 * By default, the date-time is displayed in long-date and long-time formats for the system locale.
 
   When you pipe a date to cmdlets that expect string input, such as the Add-Content cmdlet, Windows PowerShell converts the **DateTime** object to a string before adding it to the file. The default `ToString()` format is short date and long time. To specify an alternate format, use the `-Format` or `-UFormat` parameters of `Get-Date`.

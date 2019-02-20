@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821791
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Host
 ---
-
 # Get-Host
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Get-Host [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Host** cmdlet gets an object that represents the program that is hosting Windows PowerShell.
 
 The default display includes the Windows PowerShell version number and the current region and language settings that the host is using, but the host object contains a wealth of information, including detailed information about the version of Windows PowerShell that is currently running and the current culture and UI culture of Windows PowerShell.
@@ -28,6 +28,7 @@ You can also use this cmdlet to customize features of the host program user inte
 ## EXAMPLES
 
 ### Example 1: Get information about the PowerShell console host
+
 ```
 PS C:\> Get-Host
 Name             : ConsoleHost
@@ -48,6 +49,7 @@ The Version, UI, CurrentCulture, CurrentUICulture, PrivateData, and Runspace pro
 Later examples examine these properties.
 
 ### Example 2: Resize the PowerShell window
+
 ```
 PS C:\> $H = Get-Host
 PS C:\> $Win = $H.UI.RawUI.WindowSize
@@ -59,6 +61,7 @@ PS C:\> $H.UI.RawUI.Set_WindowSize($Win)
 This command resizes the Windows PowerShell window to 10 pixels by 10 pixels.
 
 ### Example 3: Get the PowerShell version for the host
+
 ```
 PS C:\> (Get-Host).Version | Format-List -Property *
 Major         : 2
@@ -77,6 +80,7 @@ This command uses a pipeline operator (|) to send the version object to the Form
 The **Format-List** command uses the *Property* parameter with a value of all (*) to display all of the properties and property values of the version object.
 
 ### Example 4: Get the current culture for the host
+
 ```
 PS C:\> (Get-Host).CurrentCulture | Format-List -Property *
 Parent                         : en
@@ -112,6 +116,7 @@ This command uses a pipeline operator (|) to send the **CultureInfo** object to 
 The **Format-List** command uses the *Property* parameter with a value of all (*) to display all of the properties and property values of the **CultureInfo** object.
 
 ### Example 5: Get the DateTimeFormat for the current culture
+
 ```
 PS C:\> (Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
 AMDesignator                     : AM
@@ -151,6 +156,7 @@ To find the type of an object that is stored in an object property, use the Get-
 To display the property values of the object, use the Format-List cmdlet.
 
 ### Example 6: Get the RawUI property for the host
+
 ```
 PS C:\> (Get-Host).UI.RawUI | Format-List -Property *
 ForegroundColor       : DarkYellow
@@ -170,6 +176,7 @@ This command displays the properties of the **RawUI** property of the host objec
 By changing these values, you can change the appearance of the host program.
 
 ### Example 7: Set the background color for the PowerShell console
+
 ```
 PS C:\> (Get-Host).UI.RawUI.BackgroundColor = "Black"
 PS C:\> cls
@@ -182,6 +189,7 @@ This change is effective only in the current session.
 To change the background color of the console for all sessions, add the command to your Windows PowerShell profile.
 
 ### Example 8: Set the background color for error messages
+
 ```
 PS C:\> $Host.PrivateData.ErrorBackgroundColor = "white"
 ```
@@ -197,19 +205,23 @@ To see all of the properties of the object in the $Host.PrivateData property, ty
 ## PARAMETERS
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Internal.Host.InternalHost
+
 **Get-Host** returns a **System.Management.Automation.Internal.Host.InternalHost** object.
 
 ## NOTES
+
 * The $Host automatic variable contains the same object that **Get-Host** returns, and you can use it in the same way. Similarly, the $PSCulture and $PSUICulture automatic variables contain the same objects that the **CurrentCulture** and **CurrentUICulture** properties of the host object contain. You can use these features interchangeably.
 
   For more information, see about_Automatic_Variables.

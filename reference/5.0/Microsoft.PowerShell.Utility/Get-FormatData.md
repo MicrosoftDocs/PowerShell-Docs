@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821790
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-FormatData
 ---
-
 # Get-FormatData
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Get-FormatData [[-TypeName] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-FormatData** cmdlet gets the formatting data in the current session.
 
 The formatting data in the session includes formatting data from Format.ps1xml formatting files, such as those in the $pshome directory, formatting data for modules that you import into the session, and formatting data for commands that you import into your session by using the Import-PSSession cmdlet.
@@ -32,6 +32,7 @@ For more information about formatting files in Windows PowerShell, see about_For
 ## EXAMPLES
 
 ### Example 1: Get all formatting data
+
 ```
 PS C:\> Get-FormatData
 ```
@@ -39,6 +40,7 @@ PS C:\> Get-FormatData
 This command gets all the formatting data in the session.
 
 ### Example 2: Get formatting data by type name
+
 ```
 PS C:\> Get-FormatData -TypeName "Microsoft.Wsman*"
 ```
@@ -46,6 +48,7 @@ PS C:\> Get-FormatData -TypeName "Microsoft.Wsman*"
 This command gets the formatting data items whose names begin with Microsoft.Wsman.
 
 ### Example 3: Examine a formatting data object
+
 ```
 PS C:\> $F = Get-FormatData -TypeName helpinfoshort
 PS C:\> $F
@@ -65,6 +68,7 @@ Undefined      0
 This example shows how to get a formatting data object and examine its properties.
 
 ### Example 4: Get formatting data and export it
+
 ```
 PS C:\> $A = Get-FormatData
 PS C:\> Import-Module bitstransfer
@@ -91,6 +95,7 @@ The final command shows an excerpt of the format.ps1xml file content.
 ## PARAMETERS
 
 ### -TypeName
+
 Specifies the type names that this cmdlet gets for the formatting data.
 Enter the type names.
 Wildcards are permitted.
@@ -108,11 +113,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS

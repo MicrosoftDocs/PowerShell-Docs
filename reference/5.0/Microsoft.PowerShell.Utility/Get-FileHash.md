@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=822413
 external help file:  Microsoft.PowerShell.Utility-help.xml
 title:  Get-FileHash
 ---
-
 # Get-FileHash
 
 ## SYNOPSIS
@@ -16,21 +15,25 @@ Computes the hash value for a file by using a specified hash algorithm.
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Get-FileHash [-Path] <String[]> [-Algorithm <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
 Get-FileHash -LiteralPath <String[]> [-Algorithm <String>] [<CommonParameters>]
 ```
 
 ### Stream
+
 ```
 Get-FileHash -InputStream <Stream> [-Algorithm <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-FileHash** cmdlet computes the hash value for a file by using a specified hash algorithm.
 A hash value is a unique value that corresponds to the content of the file.
 Rather than identifying the contents of a file by its file name, extension, or other designation, a hash assigns a unique value to the contents of a file.
@@ -48,6 +51,7 @@ By default, the **Get-FileHash** cmdlet uses the SHA256 algorithm, although any 
 ## EXAMPLES
 
 ### Example 1: Compute the hash value for a PowerShell.exe file
+
 ```powershell
 PS C:\> Get-FileHash $pshome\powershell.exe | Format-List
 Algorithm : SHA256
@@ -60,6 +64,7 @@ The hash algorithm used is the default, SHA256.
 The output is piped to the Format-List cmdlet to format the output as a list.
 
 ### Example 2: Compute the hash value for an ISO file
+
 ```powershell
 PS C:\> Get-FileHash C:\Users\Andris\Downloads\Contoso8_1_ENT.iso -Algorithm SHA384 | Format-List
 
@@ -117,6 +122,7 @@ Get-FileHash results are consistent
 ## PARAMETERS
 
 ### -Algorithm
+
 Specifies the cryptographic hash function to use for computing the hash value of the contents of the specified file.
 A cryptographic hash function includes the property that it is not possible to find two distinct inputs that generate the same hash values.
 Hash functions are commonly used with digital signatures and for data integrity.
@@ -148,6 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputStream
+
 Specifies the input stream.
 
 ```yaml
@@ -163,6 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the path to a file.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
@@ -182,6 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path to one or more files as an array.
 Wildcard characters are permitted.
 
@@ -198,16 +207,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string to the **Get-FileHash** cmdlet that contains a path to one or more files.
 
 ## OUTPUTS
 
 ### Microsoft.Powershell.Utility.FileHash
+
 **Get-FileHash** returns an object that represents the path to the specified file, the value of the computed hash, and the algorithm used to compute the hash.
 
 ## NOTES

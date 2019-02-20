@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821799
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Random
 ---
-
 # Get-Random
 
 ## SYNOPSIS
@@ -16,18 +15,21 @@ Gets a random number, or selects objects randomly from a collection.
 ## SYNTAX
 
 ### RandomNumberParameterSet (Default)
+
 ```powershell
 Get-Random [[-Maximum] <Object>] [-SetSeed <Int32>] [-Minimum <Object>]
  [<CommonParameters>]
 ```
 
 ### RandomListItemParameterSet
+
 ```powershell
 Get-Random [-InputObject] <Object[]> [-SetSeed <Int32>] [-Count <Int32>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Random** cmdlet gets a randomly selected number.
 If you submit a collection of objects to **Get-Random**, it gets one or more randomly selected objects from the collection.
 
@@ -38,6 +40,7 @@ You can use the parameters of **Get-Random** to specify a seed number, minimum a
 ## EXAMPLES
 
 ### Example 1: Get a random integer
+
 ```
 PS C:\> Get-Random
 3951433
@@ -46,6 +49,7 @@ PS C:\> Get-Random
 This command gets a random integer between 0 (zero) and Int32.MaxValue.
 
 ### Example 2: Get a random integer between 0 and 99
+
 ```
 PS C:\> Get-Random -Maximum 100
 47
@@ -54,6 +58,7 @@ PS C:\> Get-Random -Maximum 100
 This command gets a random integer between 0 (zero) and 99.
 
 ### Example 3: Get a random integer between -100 and 99
+
 ```
 PS C:\> Get-Random -Minimum -100 -Maximum 100
 56
@@ -62,6 +67,7 @@ PS C:\> Get-Random -Minimum -100 -Maximum 100
 This command gets a random integer between -100 and 99.
 
 ### Example 4: Get a random floating-point number
+
 ```
 PS C:\> Get-Random -Minimum 10.7 -Maximum 20.93
 18.08467273887
@@ -70,6 +76,7 @@ PS C:\> Get-Random -Minimum 10.7 -Maximum 20.93
 This command gets a random floating-point number greater than or equal to 10.7 and less than 20.92.
 
 ### Example 5: Get a random integer from an array
+
 ```
 PS C:\> Get-Random -InputObject 1, 2, 3, 5, 8, 13
 8
@@ -78,6 +85,7 @@ PS C:\> Get-Random -InputObject 1, 2, 3, 5, 8, 13
 This command gets a randomly selected number from the specified array.
 
 ### Example 6: Get several random integers from an array
+
 ```
 PS C:\> Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count 3
 3
@@ -88,6 +96,7 @@ PS C:\> Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count 3
 This command gets three randomly selected numbers in random order from an array.
 
 ### Example 7:
+
 ```
 PS C:\> Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count ([int]::MaxValue)
 2
@@ -104,6 +113,7 @@ The value of the *Count* parameter is the MaxValue static property of integers.
 To return an entire collection in random order, enter any number that is greater than or equal to the number of objects in the collection.
 
 ### Example 8: Get a random non-numeric value
+
 ```
 PS C:\> Get-Random -InputObject "red", "yellow", "blue"
 yellow
@@ -112,6 +122,7 @@ yellow
 This command returns a random value from a non-numeric collection.
 
 ### Example 9: Get a random process
+
 ```
 PS C:\> Get-Process | Get-Random
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -122,6 +133,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 This command gets a randomly selected process from the collection of processes on the computer.
 
 ### Example 10: Run commands on remote computers in random order
+
 ```
 PS C:\> Get-Content Servers.txt | Get-Random -Count (Get-Content Servers.txt).Count | foreach {Invoke-Command -ComputerName $_ -Command 'Get-Process PowerShell'}
 ```
@@ -129,6 +141,7 @@ PS C:\> Get-Content Servers.txt | Get-Random -Count (Get-Content Servers.txt).Co
 This command runs a command on a series of remote computers in random order.
 
 ### Example 11: Use the SetSeed parameter
+
 ```
 PS C:\> Get-Random -Maximum 100 -SetSeed 23
 
@@ -174,6 +187,7 @@ This example shows the effect of using the *SetSeed* parameter.
 Because *SetSeed* produces non-random behavior, it is typically used only to reproduce results, such as when debugging or analyzing a script.
 
 ### Example 12: Get random files
+
 ```
 PS C:\> $Files = dir -Path C:\* -Recurse
 PS C:\> $Sample = $Files | Get-Random -Count 50
@@ -182,6 +196,7 @@ PS C:\> $Sample = $Files | Get-Random -Count 50
 These commands get a randomly selected sample of 50 files from the C: drive of the local computer.
 
 ### Example 13: Get a random integer less than 10001
+
 ```
 PS C:\> Get-Random 10001
 7600
@@ -191,6 +206,7 @@ This command gets a random integer less than 10001.
 Because the **Maximum** parameter has position 0, you can omit the parameter name when the value is the first or only unnamed parameter in the command.
 
 ### Example 14: Get random 64-bit numbers
+
 ```
 PS C:\> Get-Random -Minimum ([Int64]::MinValue)3738173363251507200
 PS C:\> Get-Random -Minimum ([Int32]::MaxValue)
@@ -208,6 +224,7 @@ The command fails because the value of *Maximum* must be greater than the value 
 ## PARAMETERS
 
 ### -Count
+
 Specifies how many objects are returned.
 The default is 1.
 If the value of *Count* exceeds the number of objects in the collection, **Get-Random** returns all of the objects in random order.
@@ -225,6 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a collection of objects.
 **Get-Random** gets randomly selected objects in random order from the collection.
 Enter the objects, a variable that contains the objects, or a command or expression that gets the objects.
@@ -243,6 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -Maximum
+
 Specifies a maximum value for the random number.
 **Get-Random** returns a value that is less than the maximum (not equal).
 Enter a 32-bit integer or a double-precision floating-point number, or an object that can be converted to an integer or double, such as a numeric string ("100").
@@ -271,6 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -Minimum
+
 Specifies a minimum value for the random number.
 Enter a 32-bit integer or a double-precision floating-point number, or an object that can be converted to an integer or double, such as a numeric string ("100").
 On a 64-bit computer, you can enter a 64-bit integer.
@@ -292,6 +312,7 @@ Accept wildcard characters: False
 ```
 
 ### -SetSeed
+
 Specifies a seed value for the random number generator.
 This seed value is used for the current command and for all subsequent **Get-Random** commands in the current session until you use SetSeed again or close the session.
 You cannot reset the seed to its default, clock-based value.
@@ -313,20 +334,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
+
 You can pipe one or more objects to **Get-Random**.
 **Get-Random** selects values randomly from the piped objects.
 
 ## OUTPUTS
 
 ### System.Int32, System.Int64, System.Double
+
 **Get-Random** returns an integer or floating-point number, or an object selected randomly from a submitted collection.
 
 ## NOTES
+
 * **Get-Random** sets a default seed for each session based on the system time clock when the session starts.
 * Beginning in Windows PowerShell 3.0, **Get-Random** supports 64-bit integers. In Windows PowerShell 2.0, all values are cast to System.Int32.
 
