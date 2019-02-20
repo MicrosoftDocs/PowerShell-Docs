@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821766
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Export-Alias
 ---
-
 # Export-Alias
 
 ## SYNOPSIS
@@ -16,18 +15,21 @@ Exports information about currently defined aliases to a file.
 ## SYNTAX
 
 ### ByPath (Default)
+
 ```powershell
 Export-Alias [-Path] <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append] [-Force]
  [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```powershell
 Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append]
  [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The `Export-Alias` cmdlet exports the aliases in the current session to a file.
 If the output file does not exist, the cmdlet will create it.
 
@@ -36,6 +38,7 @@ If the output file does not exist, the cmdlet will create it.
 ## EXAMPLES
 
 ### Example 1: Export an alias
+
 ```powershell
 Export-Alias -Path "alias.csv"
 ```
@@ -43,6 +46,7 @@ Export-Alias -Path "alias.csv"
 This command exports current alias information to a file named Alias.csv in the current directory.
 
 ### Example 2: Export an alias unless the export file already exists
+
 ```powershell
 Export-Alias -Path "alias.csv" -NoClobber
 ```
@@ -52,6 +56,7 @@ This command exports the aliases in the current session to an Alias.csv file.
 Because the **NoClobber** parameter is specified, the command will fail if an Alias.csv file already exists in the current directory.
 
 ### Example 3: Append aliases to a file
+
 ```powershell
 Export-Alias -Path "alias.csv" -Append -Description "Appended Aliases" -Force
 ```
@@ -63,6 +68,7 @@ The command uses the **Description** parameter to add a description to the comme
 The command also uses the **Force** parameter to overwrite any existing Alias.csv files, even if they have the read-only attribute.
 
 ### Example 4: Export aliases as a script
+
 ```powershell
 Export-Alias -Path "alias.ps1" -As Script
 Add-Content -Path $Profile -Value (Get-Content alias.ps1)
@@ -87,6 +93,7 @@ The fourth command uses the **FilePath** parameter of the `Invoke-Command` cmdle
 ## PARAMETERS
 
 ### -Append
+
 Indicates that this cmdlet appends the output to the specified file, rather than overwriting the existing contents of that file.
 
 ```yaml
@@ -102,6 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -As
+
 Specifies the output format.
 CSV is the default.
 The acceptable values for this parameter are:
@@ -126,6 +134,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -141,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies the description of the exported file.
 The description appears as a comment at the top of the file, following the header information.
 
@@ -157,6 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 By default, `Export-Alias` overwrites files without warning, unless the read-only or hidden attribute is set or the **NoClobber** parameter is used in the command.
@@ -177,6 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the path to the output file.
 Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -196,6 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names as an array of the aliases to export.
 Wildcards are permitted.
 
@@ -214,6 +227,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoClobber
+
 Indicates that this cmdlet prevents `Export-Alias` from overwriting any files, even if the **Force** parameter is used in the command.
 
 If the **NoClobber** parameter is omitted, `Export-Alias` will overwrite an existing file without warning, unless the read-only attribute is set on the file.
@@ -234,6 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -250,6 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path to the output file.
 Wildcards are permitted, but the resulting path value must resolve to a single file name.
 
@@ -266,6 +282,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the scope from which the aliases should be exported.
 The acceptable values for this parameter are:
 
@@ -290,6 +307,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -306,20 +324,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None.
+
 You cannot pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None or System.Management.Automation.AliasInfo
+
 When you use the **Passthru** parameter, `Export-Alias` returns a **System.Management.Automation.AliasInfo** object that represents the alias.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * You can only Export-Aliases to a file.
 
 ## RELATED LINKS

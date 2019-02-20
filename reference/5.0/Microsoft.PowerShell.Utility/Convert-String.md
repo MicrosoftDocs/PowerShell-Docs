@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821756
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Convert-String
 ---
-
 # Convert-String
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Convert-String [-Example <System.Collections.Generic.List`1[System.Management.Au
 ```
 
 ## DESCRIPTION
+
 The **Convert-String** cmdlet formats a string to match the format of examples.
 
 ## EXAMPLES
@@ -192,6 +192,7 @@ The command coverts each string in **$Processes**.
 ## PARAMETERS
 
 ### -Example
+
 Specifies a list of examples of the target format.
 Specify pairs separated by the equal (=) sign,
 with the source pattern on the left
@@ -225,6 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies a string to format.
 
 ```yaml
@@ -240,16 +242,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### String
+
 You can pipe strings to this cmdlet.
 
 ## OUTPUTS
 
 ### String
+
 This cmdlet returns a string.
 
 ## NOTES

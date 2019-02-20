@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821804
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-TraceSource
 ---
-
 # Get-TraceSource
 
 ## SYNOPSIS
@@ -20,6 +19,7 @@ Get-TraceSource [[-Name] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-TraceSource** cmdlet gets the trace sources for Windows PowerShell components that are currently in use.
 You can use the data to determine which Windows PowerShell components you can trace.
 When tracing, the component generates detailed messages about each step in its internal processing.
@@ -30,6 +30,7 @@ The tracing cmdlets were designed for Windows PowerShell developers, but they ar
 ## EXAMPLES
 
 ### Example 1: Get trace sources by name
+
 ```
 PS C:\> Get-TraceSource -Name "*provider*"
 ```
@@ -37,6 +38,7 @@ PS C:\> Get-TraceSource -Name "*provider*"
 This command gets all of the trace sources that have names that include provider.
 
 ### Example 2: Get all trace sources
+
 ```
 PS C:\> Get-TraceSource
 ```
@@ -46,6 +48,7 @@ This command gets all of the Windows PowerShell components that can be traced.
 ## PARAMETERS
 
 ### -Name
+
 Specifies the trace sources to get.
 Wildcards are permitted.
 The parameter name *Name* is optional.
@@ -63,16 +66,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains the name of a trace source to **Get-TraceSource**.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSTraceSource
+
 **Get-TraceSource** returns objects that represent the trace sources.
 
 ## NOTES

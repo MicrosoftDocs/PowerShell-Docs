@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=822386
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertFrom-String
 ---
-
 # ConvertFrom-String
 
 ## SYNOPSIS
@@ -16,18 +15,21 @@ Extracts and parses structured properties from string content.
 ## SYNTAX
 
 ### ByDelimiter (Default)
+
 ```
 ConvertFrom-String [-Delimiter <String>] [-PropertyNames <String[]>] [-InputObject] <String>
  [<CommonParameters>]
 ```
 
 ### TemplateParsing
+
 ```
 ConvertFrom-String [-TemplateFile <String[]>] [-TemplateContent <String[]>] [-IncludeExtent] [-UpdateTemplate]
  [-InputObject] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **ConvertFrom-String** cmdlet extracts and parses structured properties from string content.
 This cmdlet generates an object by parsing text from a traditional text stream.
 For each string in the pipeline, the cmdlet splits the input by either a delimiter or a parse expression, and then assigns property names to each of the resulting split elements.
@@ -179,6 +181,7 @@ because there's no sample data that matches that pattern
 Similar with 3 or more digit ages, they will not be recognized.
 
 ### Example 5: Specifying data types to the generated properties
+
 ```
 $template = @'
 {[string]Name*:Phoebe Cat}, {[string]phone:425-123-6789}, {[int]age:6}
@@ -260,6 +263,7 @@ Get-Member shows age is of integer type.
 ## PARAMETERS
 
 ### -Delimiter
+
 Specifies a regular expression that identifies the boundary between elements.
 Elements that are created by the split become properties in the resulting object.
 The delimiter is ultimately used in a call to System.Text.RegularExpressions.RegularExpression.Split().
@@ -277,6 +281,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeExtent
+
 Indicates that this cmdlet includes an extent text property that is removed by default.
 
 ```yaml
@@ -292,6 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies strings received from the pipeline, or a variable that contains a string object.
 
 ```yaml
@@ -307,6 +313,7 @@ Accept wildcard characters: False
 ```
 
 ### -PropertyNames
+
 Specifies an array of property names to which to assign split values in the resulting object.
 Every line of text that you split or parse generates elements that represent property values.
 If the element is the result of a capture group, and that capture group is named (for example, (?<name>) or (?'name') ),
@@ -331,6 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -TemplateContent
+
 Specifies an expression, or an expression saved as a variable, that describes the properties to which this cmdlet assigns strings.
 The syntax of a template field specification is the following: {\[optional-typecast\]name(sequence-spec, for example \*):example-value}.
 An example is {PersonInfo*:{Name:Patti Fuller}.
@@ -348,6 +356,7 @@ Accept wildcard characters: False
 ```
 
 ### -TemplateFile
+
 Specifies a file, as an array, that contains a template for the desired parsing of the string.
 In the template file, properties and their values are enclosed in brackets, as shown in the following example.
 If a property, such as the Name property and its associated other properties,
@@ -377,6 +386,7 @@ Accept wildcard characters: False
 ```
 
 ### -UpdateTemplate
+
 Indicates that this cmdlet saves the results of a learning algorithm into a comment in the template file.
 This makes the algorithm learning process faster.
 To use this parameter, you must also specify a template file with the *TemplateFile* parameter.
@@ -394,6 +404,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters:
 -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable,
 -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction,

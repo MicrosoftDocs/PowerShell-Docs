@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821759
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  ConvertTo-Json
 ---
-
 # ConvertTo-Json
 
 ## SYNOPSIS
-
 Converts an object to a JSON-formatted string.
 
 ## SYNTAX
