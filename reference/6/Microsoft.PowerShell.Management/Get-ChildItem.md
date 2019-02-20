@@ -161,10 +161,10 @@ The **Include** parameter uses an asterisk (`*`) wildcard to specify all files w
 extension **.txt**.
 
 When the **Include** parameter is used, the **Path** parameter needs a trailing asterisk (`*`)
-wildcard to specify the directory's contents. For example, `-Path C:\Test\Logs\*`.
+wildcard to specify the directory's contents. For example, `-Path C:\Test\*`.
 
 If a trailing asterisk (`*`) is not included in the **Path** parameter, the command does not return
-any output and returns to the PowerShell prompt. For example, `-Path C:\Test\Logs`.
+any output and returns to the PowerShell prompt. For example, `-Path C:\Test\`.
 
 If the **Recurse** parameter is added to the command, a trailing asterisk (`*`) in the **Path**
 parameter is optional. The **Recurse** parameter gets items from the **Path** directory and its
@@ -721,15 +721,13 @@ You can investigate the file names or directories that `Get-ChildItem` searches 
 **Include** or **Exclude** parameters. Use the `ForEach-Object` and `Split-Path` cmdlets as shown in
 these examples:
 
-```
-PS> Get-ChildItem -Path C:\Test\Logs\* -Include *.txt -Recurse | ForEach-Object {Split-Path $_.FullName -Parent}
+`PS> Get-ChildItem -Path C:\Test\Logs\* -Include *.txt -Recurse | ForEach-Object {Split-Path $_.FullName -Parent}`
 
-PS> Get-ChildItem -Path C:\Test\Logs\* -Include *.txt -Recurse | ForEach-Object {Split-Path $_.FullName -Leaf}
+`PS> Get-ChildItem -Path C:\Test\Logs\* -Include *.txt -Recurse | ForEach-Object {Split-Path $_.FullName -Leaf}`
 
-PS> Get-ChildItem -Path C:\Test\Logs -Exclude A* -Recurse | ForEach-Object {Split-Path $_.FullName -Parent}
+`PS> Get-ChildItem -Path C:\Test\Logs -Exclude A* -Recurse | ForEach-Object {Split-Path $_.FullName -Parent}`
 
-PS> Get-ChildItem -Path C:\Test\Logs -Exclude A* -Recurse | ForEach-Object {Split-Path $_.FullName -Leaf}
-```
+`PS> Get-ChildItem -Path C:\Test\Logs -Exclude A* -Recurse | ForEach-Object {Split-Path $_.FullName -Leaf}`
 
 You can refer to `Get-ChildItem` by its built-in aliases, `ls`, `dir`, and `gci`. For more
 information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
