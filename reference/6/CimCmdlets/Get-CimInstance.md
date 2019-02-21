@@ -141,16 +141,13 @@ class named Win32_Process using the Filter parameter.
 
 ```
 PS C:\>$x = New-CimInstance -ClassName Win32_Process -Namespace root\cimv2 -Property @{ "Handle"=0 } -Key Handle -ClientOnly
-```
 
-The variable is passed as a CIM instance to the Get-CimInstance cmdlet to get a particular instance.
-
-```
 PS C:\>Get-CimInstance -CimInstance $x
 ```
 
 This set of commands creates a new CIM instance in memory for a class named
 Win32_Process with the key property @{ "Handle"=0 } and stores it in a variable named $x.
+The variable is passed as a CIM instance to the Get-CimInstance cmdlet to get a particular instance.
 
 ### Example 6: Retrieve CIM instances and reuse them
 
