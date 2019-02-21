@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  12/01/2017
 schema:  2.0.0
 locale:  en-us
@@ -15,7 +15,7 @@ Describes regular expressions in Windows PowerShell.
 > [!NOTE]
 > This article will show you the syntax and methods for using regular
 > expressions in PowerShell, not all syntax is discussed. For a more
-> complete reference, see the [Regular Expression Language - Quick Reference](https://go.microsoft.com/fwlink/?LinkId=133231).
+> complete reference, see the [Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 A regular expression is a pattern used to match text. It can be made up of
 literal characters, operators, and other constructs.
@@ -24,7 +24,7 @@ This article demonstrates regular expression syntax in PowerShell. PowerShell
 has several operators and cmdlets that use regular expressions. You can read
 more about their syntax and usage at the links below.
 
-- [Select-String](Select-String.md)
+- [Select-String](../../Microsoft.PowerShell.Utility/Select-String.md)
 - [-match and -replace operators](about_Comparison_Operators.md)
 - [-split](about_Split.md)
 - [switch statement with -regex option](about_Switch.md)
@@ -197,7 +197,7 @@ between **Singleline** and **Multiline** regular expression options.
   instead of matching every character EXCEPT the newline `\n`.
 
 To read more about these options and how to use them, visit the
-[Regular Expression Language - Quick Reference](https://go.microsoft.com/fwlink/?LinkId=133231).
+[Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 ### Escaping characters
 
