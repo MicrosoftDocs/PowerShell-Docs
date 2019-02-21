@@ -1,10 +1,10 @@
 ---
 ms.date:  06/12/2017
 keywords:  dsc,powershell,configuration,setup
-title:  Advanced DSC Authoring for Composition and Collaboration
+title:  Understanding DSC's role in a CI/CD pipeline
 ---
 
-# Advanced DSC Authoring for Composition and Collaboration
+# Understanding DSC's role in a CI/CD pipeline
 
 This article describes the types of approaches available
 for combining configurations and resources.
