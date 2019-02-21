@@ -117,9 +117,11 @@ This command retrieves all the CIM instances that start with the letter p of a c
 ### Example 5: Get the CIM instances with only key properties filled in
 ```
 PS C:\>$x = New-CimInstance -ClassName Win32_Process -Namespace root\cimv2 -Property @{ "Handle"=0 } -Key Handle -ClientOnly
-
+```
 
 The variable is passed as a CIM instance to the Get-CimInstance cmdlet to get a particular instance.
+
+```
 PS C:\>Get-CimInstance -CimInstance $x
 ```
 
@@ -129,9 +131,7 @@ This set of commands creates a new CIM instance in memory for a class named Win3
 ```
 PS C:\>$x,$y = Get-CimInstance -ClassName Win32_Process
 
-
 PS C:\>$x| Format-Table -Property Name,KernelModeTime -AutoSize
-
 
 PS C:\>$x| Get-CimInstance |Format-Table -Property Name,KernelModeTime -AutoSize
 ```
@@ -150,7 +150,9 @@ This command retrieves the CIM instances of a class named Win32_ComputerSystem f
 ```
 PS C:\>Get-CimInstance -Class Win32_Process -KeyOnly
 
-PS C:\>$x = Get-CimInstance -Class Win32_Process -KeyOnlyPS C:\>$x | Invoke-CimMethod -MethodName GetOwner
+PS C:\>$x = Get-CimInstance -Class Win32_Process -KeyOnly
+
+PS C:\>$x | Invoke-CimMethod -MethodName GetOwner
 ```
 
 This command retrieves only the key properties, which reduces the size of the object and network traffic.
@@ -159,23 +161,18 @@ This command retrieves only the key properties, which reduces the size of the ob
 ```
 PS C:\>Get-CimInstance -Class Win32_Process -Property Name,KernelModeTime
 
-PS C:\>$x = Get-CimInstance -Class Win32_Process -Property Name, KernelModeTimePS C:\>$x | Invoke-CimMethod -MethodName GetOwner
-
-The instance retrieved with the Property parameter can be used to perform other CIM operations, for example Set-CimInstance or Invoke-CimMethod.
 PS C:\>$x = Get-CimInstance -Class Win32_Process -Property Name,KernelModeTime
 
-
-
-PS C:\>Invoke-CimMethod -InputObject $x -MethodName GetOwner
+PS C:\>$x | Invoke-CimMethod -MethodName GetOwner
 ```
+
+The instance retrieved with the Property parameter can be used to perform other CIM operations, for example Set-CimInstance or Invoke-CimMethod.
 
 This command retrieves only a subset of properties, which reduces the size of the object and network traffic.
 
 ### Example 10: Get the CIM instance using CIM session
 ```
 PS C:\>$s = New-CimSession -ComputerName Server01,Server02
-
-
 
 PS C:\>Get-CimInstance -ClassName Win32_ComputerSystem -CimSession $s
 ```
