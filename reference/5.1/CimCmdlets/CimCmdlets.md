@@ -12,7 +12,8 @@ Locale: en-US
 
 ## Description
 
-Contains cmdlets that interact with CIM Servers like the WMI service in Windows.
+Contains cmdlets that interact with Common Information Model (CIM) Servers like the Windows
+Management Instrumentation (WMI) service.
 
 ## CimCmdlets Cmdlets
 
@@ -46,7 +47,7 @@ Creates a CIM session.
 
 ### [New-CimSessionOption](New-CimSessionOption.md)
 
-Specifies advanced options for the New-CimSession cmdlet.
+Specifies advanced options for the `New-CimSession` cmdlet.
 
 ### [Register-CimIndicationEvent](Register-CimIndicationEvent.md)
 
@@ -62,4 +63,4 @@ Removes one or more CIM sessions.
 
 ### [Set-CimInstance](Set-CimInstance.md)
 
-Modifies a CIM instance on a CIM server by calling the ModifyInstance method of the CIM class.
+Modifies a CIM instance on a CIM server by calling the **ModifyInstance** method of the CIM class.
