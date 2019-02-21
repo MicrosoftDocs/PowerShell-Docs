@@ -388,7 +388,7 @@ Two of the ways to reference capturing groups is by **Number** and by **Name**
   ```
 
   ```output
-  FABRIKOM\Administrator
+  FABRIKAM\Administrator
   ```
 
 The `$&` expression represents all of the text matched.
