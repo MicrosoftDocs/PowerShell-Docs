@@ -1,51 +1,65 @@
 ---
-ms.date:  06/09/2017
+ms.date:  02/20/2019
 schema:  2.0.0
 Module Name: CimCmdlets
 keywords:  powershell,cmdlet
 Help Version:  5.0
 Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
-Download Help Link: {{Please enter FwLink manually}}
+Download Help Link:
 Locale: en-US
 ---
-
 # CimCmdlets Module
+
 ## Description
-{{Manually Enter Description Here}}
+
+Contains cmdlets that interact with CIM Servers like the WMI service in Windows.
 
 ## CimCmdlets Cmdlets
+
 ### [Get-CimAssociatedInstance](Get-CimAssociatedInstance.md)
-{{Manually Enter Get-CimAssociatedInstance Description Here}}
+
+Retrieves the CIM instances that are connected to a specific CIM instance by an association.
 
 ### [Get-CimClass](Get-CimClass.md)
-{{Manually Enter Get-CimClass Description Here}}
+
+Gets a list of CIM classes in a specific namespace.
 
 ### [Get-CimInstance](Get-CimInstance.md)
-{{Manually Enter Get-CimInstance Description Here}}
+
+Gets the CIM instances of a class from a CIM server.
 
 ### [Get-CimSession](Get-CimSession.md)
-{{Manually Enter Get-CimSession Description Here}}
+
+Gets the CIM session objects from the current session.
 
 ### [Invoke-CimMethod](Invoke-CimMethod.md)
-{{Manually Enter Invoke-CimMethod Description Here}}
+
+Invokes a method of a CIM class.
 
 ### [New-CimInstance](New-CimInstance.md)
-{{Manually Enter New-CimInstance Description Here}}
+
+Creates a CIM instance.
 
 ### [New-CimSession](New-CimSession.md)
-{{Manually Enter New-CimSession Description Here}}
+
+Creates a CIM session.
 
 ### [New-CimSessionOption](New-CimSessionOption.md)
-{{Manually Enter New-CimSessionOption Description Here}}
+
+Specifies advanced options for the New-CimSession cmdlet.
 
 ### [Register-CimIndicationEvent](Register-CimIndicationEvent.md)
-{{Manually Enter Register-CimIndicationEvent Description Here}}
+
+Subscribes to indications using a filter expression or a query expression.
 
 ### [Remove-CimInstance](Remove-CimInstance.md)
-{{Manually Enter Remove-CimInstance Description Here}}
+
+Removes a CIM instance from a computer.
 
 ### [Remove-CimSession](Remove-CimSession.md)
-{{Manually Enter Remove-CimSession Description Here}}
+
+Removes one or more CIM sessions.
 
 ### [Set-CimInstance](Set-CimInstance.md)
-{{Manually Enter Set-CimInstance Description Here}}
+
+Modifies a CIM instance on a CIM server by calling the ModifyInstance method of the CIM class.
