@@ -36,22 +36,12 @@ its own command history. To display the command history, use the `Get-History` c
 By default, `Clear-History` deletes the entire command history from a PowerShell session. You can
 use parameters with `Clear-History` to delete selected commands.
 
-`PSReadLine` has options to `Set` or `Get` information about command history. To display your
-configuration for command history, use `Get-PSReadLineOption`. For more information, see [PSReadLine](/psreadline)
-and [about_PSReadLine](/psreadline/about/about_PSReadLine).
-
-`Clear-History` does not clear the command history that is accessible at a PowerShell prompt. From a
-PowerShell prompt, you can scroll through commands with the up or down arrows on your keyboard. To
-display the list of `PSReadLine` keyboard shortcuts that are related to command history, use
-`Get-PSReadLineKeyHandler`. For example, to delete the command history that is accessible at a
-PowerShell prompt, only for the current PowerShell session, press `Alt + F7`.
-
-`Clear-History` does not clear the text file that stores your complete PowerShell command history.
-This file contains the command history that is accessible at a PowerShell prompt. By default, the
-file is named **ConsoleHost_history.txt** and is stored in your user profile for your operating
-system. To display the **HistorySavePath** path and file name, use the command
-`(Get-PSReadlineOption).HistorySavePath`. To change how the command history is saved on your
-computer, use `Set-PSReadLineOption`.
+`Clear-History` does not clear the `PSReadLine` command history file. The `PSReadLine` module stores
+a history file that contains every PowerShell command from every PowerShell session. From a
+PowerShell prompt, use the up and down arrows on your keyboard to scroll through the command
+history. To display the `PSReadLine` configuration for command history, use `Get-PSReadLineOption`.
+`PSReadLine` shipped with PowerShell 5.0 and above. For more information, see [PSReadLine](../PSReadLine/PSReadLine.md)
+and [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 ## EXAMPLES
 
@@ -381,7 +371,7 @@ information, see [about_History](About/about_History.md).
 
 [about_History](About/about_History.md)
 
-[about_PSReadLine](/psreadline/about/about_PSReadLine)
+[about_PSReadLine](../PSReadLine/About/about_PSReadLine.md)
 
 [about_Quoting_Rules](About/about_Quoting_Rules.md)
 
@@ -389,10 +379,10 @@ information, see [about_History](About/about_History.md).
 
 [Get-History](Get-History.md)
 
-[Get-PSReadLineOption](/psreadline/Get-PSReadLineOption)
+[Get-PSReadLineOption](../PSReadLine/Get-PSReadLineOption)
 
 [Invoke-History](Invoke-History.md)
 
-[PSReadLine](/psreadline)
+[PSReadLine](../PSReadLine/PSReadLine.md)
 
-[Set-PSReadLineOption](/psreadline/Set-PSReadLineOption)
+[Set-PSReadLineOption](../PSReadLine/Set-PSReadLineOption)
