@@ -5,7 +5,7 @@ Module Name: CimCmdlets
 keywords:  powershell,cmdlet
 Help Version:  5.1
 Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a
-Download Help Link: 
+Download Help Link: none
 Locale: en-US
 ---
 # CimCmdlets Module
