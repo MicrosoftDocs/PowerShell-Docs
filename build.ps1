@@ -122,6 +122,7 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual', 'mapping',
         }
         catch {
             $allErrors += $_
+            Write-Error -Message "PlatyPS failure: $ModuleName -- $Version" -Exception $_
         }
     }
 
