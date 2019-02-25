@@ -122,6 +122,7 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual', 'mapping',
         }
         catch {
             $allErrors += $_
+            $_
         }
     }
 
@@ -129,6 +130,6 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual', 'mapping',
 
 # If the above block, produced any errors, throw and fail the job
 if ($allErrors) {
-    $allErrors
+    # $allErrors
     throw "There are errors during platyPS run!`nPlease fix your markdown to comply with the schema: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md"
 }
