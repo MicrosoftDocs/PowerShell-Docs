@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  02/20/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -10,7 +10,7 @@ external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 # Import-BinaryMiLog
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Used to re-create the saved objects based on the contents of an export file.
 
 ## SYNTAX
 
@@ -19,21 +19,26 @@ Import-BinaryMiLog [-Path] <String>
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+
+Use this cmdlet to re-create saved objects based on the contents of an export file created by
+`Export-BinaryMILog`. This cmdlet is similar to `Import-Clixml`, except that `Export-BinaryMILog`
+stores the resulting object in a binary encoded file.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> {{ Add example code here }}
-```
+### Example 1 - Restore objects exported to a file
 
-{{ Add example description here }}
+```powershell
+Import-BinaryMiLog -Path "Processes.bmil"
+```
 
 ## PARAMETERS
 
 ### -Path
-{{Fill Path Description}}
+
+Specifies the path of the file in which to store the binary representation of the object. The
+**Path** parameter supports wild cards and relative paths. This cmdlet generates an error if the
+path resolves to more than one file.
 
 ```yaml
 Type: String
@@ -44,13 +49,12 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ## INPUTS
 
 ### None
-
 
 ## OUTPUTS
 
