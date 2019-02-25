@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821841
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Out-Printer
 ---
-
 # Out-Printer
 
 ## SYNOPSIS
@@ -20,11 +19,13 @@ Out-Printer [[-Name] <String>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Out-Printer** cmdlet sends output to the default printer or to an alternate printer, if one is specified.
 
 ## EXAMPLES
 
 ### Example 1: Print the content of a help topic to the default printer
+
 ```
 PS C:\> Get-Content $pshome\about_signing.help.txt | Out-Printer
 ```
@@ -37,6 +38,7 @@ The path includes $pshome, a built-in variable that stores the installation dire
 A pipeline operator (|) passes the results to **Out-Printer**, which sends it to the default printer.
 
 ### Example 2: Print text to an alternative printer
+
 ```
 PS C:\> "Hello, World" | Out-Printer -Name "\\Server01\Prt-6B Color"
 ```
@@ -46,6 +48,7 @@ This command uses the *Name* parameter to specify the alternate printer.
 Because the parameter name is optional, you can omit it.
 
 ### Example 3: Print the full version of a help topic to the default printer
+
 ```
 PS C:\> $H = Get-Help -Full Get-WmiObject
 PS C:\> Out-Printer -InputObject $H
@@ -59,6 +62,7 @@ It uses the InputObject parameter to pass the value of the $H variable to **Out-
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies the objects to be sent to the printer.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -75,6 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the alternate printer.
 The parameter name *Name* is optional.
 
@@ -91,19 +96,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any object to **Out-Printer**.
 
 ## OUTPUTS
 
 ### None
+
 **Out-Printer** does not return any objects.
 
 ## NOTES
+
 * You can also refer to **Out-Printer** by its built-in alias, **lp**. For more information, see about_Aliases.
 
   The cmdlets that contain the Out verb do not format objects; they just render them and send them to the specified display destination.

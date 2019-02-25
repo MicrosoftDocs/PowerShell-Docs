@@ -8,7 +8,6 @@ title:  about_Regular_Expressions
 # About Regular Expressions
 
 ## Short description
-
 Describes regular expressions in Windows PowerShell.
 
 ## Long description
@@ -16,16 +15,19 @@ Describes regular expressions in Windows PowerShell.
 > [!NOTE]
 > This article will show you the syntax and methods for using regular
 > expressions in PowerShell, not all syntax is discussed. For a more
-> complete reference, see the [Regular Expression Language - Quick Reference](https://go.microsoft.com/fwlink/?LinkId=133231).
+> complete reference, see the [Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 A regular expression is a pattern used to match text. It can be made up of
 literal characters, operators, and other constructs.
 
-PowerShell has several operators and cmdlets that use regular expressions.
+This article demonstrates regular expression syntax in PowerShell. PowerShell
+has several operators and cmdlets that use regular expressions. You can read
+more about their syntax and usage at the links below.
 
-- `Select-String`
-- `-match`, `-split`, and `-replace` operators
-- `switch` statement with `-regex` option.
+- [Select-String](../../Microsoft.PowerShell.Utility/Select-String.md)
+- [-match and -replace operators](about_Comparison_Operators.md)
+- [-split](about_Split.md)
+- [switch statement with -regex option](about_Switch.md)
 
 PowerShell regular expressions are case-insensitive by default. Each method
 shown above has a different way to force case sensitivity.
@@ -195,7 +197,7 @@ between **Singleline** and **Multiline** regular expression options.
   instead of matching every character EXCEPT the newline `\n`.
 
 To read more about these options and how to use them, visit the
-[Regular Expression Language - Quick Reference](https://go.microsoft.com/fwlink/?LinkId=133231).
+[Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 ### Escaping characters
 
@@ -241,7 +243,7 @@ The following are a few commonly used character escapes.
 |`\n`|Matches a newline|
 |`\r`|Matches a carriage return|
 
-### Grouping and Capturing
+### Groups, Captures, and Substitutions
 
 Grouping constructs separate a input string into substrings that can be
 captured or ignored. Grouped substrings are called subexpressions. By default
@@ -355,6 +357,72 @@ N                              jsmith
 ```
 
 For more information, see [Grouping Constructs in Regular Expressions](/dotnet/standard/base-types/grouping-constructs-in-regular-expressions).
+
+#### Substitutions in Regular Expressions
+
+Using the regular expressions with the `-replace` operator allows you to
+dynamically replace text using captured text. Capturing groups can be
+referenced in the \<substitute\> string. This is done by using the `$`
+character before the group identifier.
+
+`<input> -replace <original>, <substitute>`
+
+Two of the ways to reference capturing groups is by **Number** and by **Name**
+
+- By **Number** -
+  Capturing Groups are numbered from left to right.
+
+  ```powershell
+  "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
+  ```
+
+  ```output
+  John.D.Smith@contoso.com
+  ```
+
+- By **Name** -
+  Capturing Groups can also be referenced by name.
+
+  ```powershell
+  "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
+  ```
+
+  ```output
+  FABRIKAM\Administrator
+  ```
+
+The `$&` expression represents all of the text matched.
+
+```powershell
+"Gobble" -replace "Gobble", "$& $&"
+```
+
+```output
+Gobble Gobble
+```
+
+> [!WARNING]
+> Since the `$` character is used in string expansion, you will need to use
+> literal strings with substitution, or escape the `$` character.
+> ```powershell
+> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
+> ```
+>
+> ```output
+> Hello Universe
+> ```
+>
+> Additionally, sicne the `$` character is used in substitution, you will need
+> to escape any instances in your string.
+>
+> ```powershell
+> '5.72' -replace '(.+)', '$$$1'
+> ```
+> ```output
+> $5.72
+> ```
+
+For more information, see [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions).
 
 ## See also
 

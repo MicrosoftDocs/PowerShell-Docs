@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821838
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  New-Variable
 ---
-
 # New-Variable
 
 ## SYNOPSIS
@@ -22,6 +21,7 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Opti
 ```
 
 ## DESCRIPTION
+
 The **New-Variable** cmdlet creates a new variable in Windows PowerShell.
 You can assign a value to the variable while creating it or assign or change the value after it is created.
 
@@ -32,6 +32,7 @@ Typically, you create a new variable by typing the variable name and its value, 
 ## EXAMPLES
 
 ### Example 1: Create a variable
+
 ```
 PS C:\> New-Variable days
 ```
@@ -40,6 +41,7 @@ This command creates a new variable named days.
 You are not required to type the *Name* parameter.
 
 ### Example 2: Create a variable and assign it a value
+
 ```
 PS C:\> New-Variable -Name "zipcode" -Value 98033
 ```
@@ -47,6 +49,7 @@ PS C:\> New-Variable -Name "zipcode" -Value 98033
 This command creates a variable named zipcode and assigns it the value 98033.
 
 ### Example 3: Create a variable with the ReadOnly option
+
 ```
 PS C:\> New-Variable -Name Max -Value 256 -Option ReadOnly
 PS C:\> New-Variable -Name max -Value 1024
@@ -73,6 +76,7 @@ The third command uses the *Force* parameter to override the read-only protectio
 In this case, the command to create a new variable with the same name succeeds.
 
 ### Example 4: Create a private variable
+
 ```
 PS C:\> New-Variable -Name counter -Visibility Private
 
@@ -110,6 +114,7 @@ The sample output shows the behavior of a private variable.
 The user who has loaded the module cannot view or change the value of the Counter variable, but the Counter variable can be read and changed by the commands in the module.
 
 ### Example 5: Create a variable with a space
+
 ```
 PS C:\> New-Variable -Name 'with space' -Value 'abc123xyz'
 
@@ -129,6 +134,7 @@ The variables can be accessed using the **Get-Variable** cmdlet or directly by d
 ## PARAMETERS
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -144,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies a description of the variable.
 
 ```yaml
@@ -159,6 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that the cmdlet creates a variable with the same name as an existing read-only variable.
 
 By default, you can overwrite a variable unless the variable has an option value of ReadOnly or Constant.
@@ -177,6 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a name for the new variable.
 
 ```yaml
@@ -192,6 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -Option
+
 Specifies the value of the **Options** property of the variable.
 The acceptable values for this parameter are:
 
@@ -226,6 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -242,6 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
+
 Specifies the scope of the new variable.
 The acceptable values for this parameter are:
 
@@ -274,6 +286,7 @@ Accept wildcard characters: False
 ```
 
 ### -Value
+
 Specifies the initial value of the variable.
 
 ```yaml
@@ -289,6 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -Visibility
+
 Determines whether the variable is visible outside of the session in which it was created.
 This parameter is designed for use in scripts and commands that will be delivered to other users.
 The acceptable values for this parameter are:
@@ -317,6 +331,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -333,16 +348,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
+
 You can pipe a value to **New-Variable**.
 
 ## OUTPUTS
 
 ### None or System.Management.Automation.PSVariable
+
 When you use the *PassThru* parameter, **New-Variable** generates a **System.Management.Automation.PSVariable** object representing the new variable.
 Otherwise, this cmdlet does not generate any output.
 

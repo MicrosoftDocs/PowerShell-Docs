@@ -21,7 +21,7 @@ This sample shows how to implement a host application that uses a custom host. I
 
 ## Demonstrates
 
-- Creating a custom host class that derives from the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class.
+- Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.
 
 - Creating a runspace that uses the custom host class.
 
@@ -133,7 +133,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
 ## Example
 
- The following code is the implementation of the [System.Management.Automation.Host.Pshost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
+ The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application. Those elements that are not implemented throw an exception or return nothing.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821720
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Unprotect-CmsMessage
 ---
-
 # Unprotect-CmsMessage
 
 ## SYNOPSIS
@@ -16,28 +15,33 @@ Decrypts content that has been encrypted by using the Cryptographic Message Synt
 ## SYNTAX
 
 ### ByWinEvent (Default)
+
 ```
 Unprotect-CmsMessage [-EventLogRecord] <PSObject> [-IncludeContext] [[-To] <CmsMessageRecipient[]>]
  [<CommonParameters>]
 ```
 
 ### ByContent
+
 ```
 Unprotect-CmsMessage [-Content] <String> [-IncludeContext] [[-To] <CmsMessageRecipient[]>] [<CommonParameters>]
 ```
 
 ### ByPath
+
 ```
 Unprotect-CmsMessage [-Path] <String> [-IncludeContext] [[-To] <CmsMessageRecipient[]>] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
+
 ```
 Unprotect-CmsMessage [-LiteralPath] <String> [-IncludeContext] [[-To] <CmsMessageRecipient[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Unprotect-CmsMessage** cmdlet decrypts content that has been encrypted by using the Cryptographic Message Syntax (CMS) format.
 
 The CMS cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages, as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).
@@ -55,6 +59,7 @@ The **Unprotect-CmsMessage** cmdlet returns the decrypted content.
 ## EXAMPLES
 
 ### Example 1: Decrypt a message
+
 ```
 PS C:\> C:\Users\gabyk\Documents\PowerShell_ISEUnprotect-CmsMessage -LiteralPath "C:\Users\Test\Documents\PowerShell ISE\Future_Plans.txt" -To '0f 8j b1 ab e0 ce 35 1d 67 d2 f2 6f a2 d2 00 cl 22 z9 m9 85'
 Try the new Break All command
@@ -67,6 +72,7 @@ The decrypted message, "Try the new Break All command," is the result.
 ## PARAMETERS
 
 ### -Content
+
 Specifies an encrypted string, or a variable containing an encrypted string.
 
 ```yaml
@@ -82,6 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventLogRecord
+
 Specifies an event log record ID that represents a CMS encryption operation.
 
 ```yaml
@@ -112,6 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies the path to encrypted content that you want to decrypt.
 Unlike *Path*, the value of *LiteralPath* is used exactly as it is typed.
 No characters are interpreted as wildcard characters.
@@ -131,6 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path to encrypted content that you want to decrypt.
 
 ```yaml
@@ -146,6 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -To
+
 Specifies one or more CMS message recipients, identified in any of the following formats.
 
 - An actual certificate (as retrieved from the certificate provider).
@@ -167,16 +177,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Diagnostics.Eventing.Reader.EventLogRecord or System.String
+
 You can pipe an object containing encrypted content to **Unprotect-CmsMessage**.
 
 ## OUTPUTS
 
 ### System.String
+
 The unencrypted message.
 
 ## NOTES

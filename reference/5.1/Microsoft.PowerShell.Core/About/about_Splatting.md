@@ -54,8 +54,8 @@ single command just so you pass no more than one value for each parameter.
 ## SPLATTING WITH HASH TABLES
 
 Use a hash table to splat parameter name and value pairs. You can use this
-format for all parameter types, including positional and named parameters and
-switch parameters.
+format for all parameter types, including positional and switch parameters. 
+Positional parameters must be assigned by name. 
 
 The following examples compare two `Copy-Item` commands that copy the Test.txt
 file to the Test2.txt file in the same directory.
