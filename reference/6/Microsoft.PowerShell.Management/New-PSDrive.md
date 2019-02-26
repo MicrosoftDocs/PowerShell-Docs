@@ -11,7 +11,6 @@ title: New-PSDrive
 # New-PSDrive
 
 ## SYNOPSIS
-
 Creates temporary and persistent mapped network drives.
 
 ## SYNTAX

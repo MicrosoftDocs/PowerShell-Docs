@@ -7,16 +7,15 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821606
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  New-ItemProperty
 ---
-
 # New-ItemProperty
 
 ## SYNOPSIS
-
 Creates a new property for an item and sets its value.
 
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 New-ItemProperty [-Path] <String[]> [-Name] <String> [-PropertyType <String>] [-Value <Object>] [-Force]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
@@ -24,6 +23,7 @@ New-ItemProperty [-Path] <String[]> [-Name] <String> [-PropertyType <String>] [-
 ```
 
 ### LiteralPath
+
 ```
 New-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PropertyType <String>] [-Value <Object>] [-Force]
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]

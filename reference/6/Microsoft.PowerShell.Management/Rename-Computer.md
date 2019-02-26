@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821620
 schema: 2.0.0
 title: Rename-Computer
 ---
-
 # Rename-Computer
 
 ## SYNOPSIS
@@ -23,6 +22,7 @@ Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCrede
 ```
 
 ## DESCRIPTION
+
 The **Rename-Computer** cmdlet renames the local computer or a remote computer.
 It renames one computer in each command.
 
@@ -31,6 +31,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Rename the local computer
+
 ```
 PS C:\> Rename-Computer -NewName "Server044" -DomainCredential Domain01\Admin01 -Restart
 ```
@@ -38,6 +39,7 @@ PS C:\> Rename-Computer -NewName "Server044" -DomainCredential Domain01\Admin01 
 This command renames the local computer to Server044 and then restarts it to make the change effective.
 
 ### Example 2: Rename a remote computer
+
 ```
 PS C:\> Rename-Computer -ComputerName "Srv01" -NewName "Server001" -LocalCredential Srv01\Admin01 -DomainCredential Domain01\Admin01 -Force -PassThru -Restart
 ```
@@ -47,6 +49,7 @@ It uses the *LocalCredential* parameter to supply the credentials of a user who 
 It uses the *Force* parameter to suppress the confirmation prompt and the *PassThru* parameter to return the results of the command.
 
 ### Example 3: Rename multiple computers
+
 ```
 PS C:\> $a = Import-Csv ServerNames.csv -Header OldName, NewName
 PS C:\> Foreach ( $Server in $a ) {Rename-Computer -ComputerName $Server.OldName -NewName $Server.NewName -DomainCredential Domain01\Admin01 -Force -Restart}
@@ -68,6 +71,7 @@ The command specifies domain credentials and uses *Force* and *Restart* to suppr
 ## PARAMETERS
 
 ### -ComputerName
+
 Renames the specified remote computer.
 The default is the local computer.
 
@@ -90,6 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -DomainCredential
+
 Specifies a user account that has permission to connect to the domain.
 Explicit credentials are required to rename a computer that is joined to a domain.
 
@@ -111,6 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces the command to run without asking for user confirmation.
 
 ```yaml
@@ -126,6 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -LocalCredential
+
 Specifies a user account that has permission to connect to the computer specified by the **ComputerName** parameter.
 The default is the current user.
 
@@ -147,6 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -NewName
+
 Specifies a new name for the computer.
 This parameter is required.
 The name cannot include control characters, leading or trailing spaces, or any of the following characters: / \\\\ \[ \].
@@ -164,6 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns the results of the command.
 Otherwise, this cmdlet does not generate any output.
 
@@ -180,6 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -Restart
+
 Indicates that this cmdlet restarts the computer that was renamed.
 A restart is often required to make the change effective.
 
@@ -196,6 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -WsmanAuthentication
+
 Specifies the mechanism that is used to authenticate the user credentials when this cmdlet uses the WSMan protocol.
 The acceptable values for this parameter are:
 
@@ -230,6 +241,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -245,6 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -261,17 +274,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 This cmdlet does not have parameters that take input by value.
 However, you can pipe the values of the **ComputerName** and **NewName** properties of objects to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.ComputerChangeInfo
+
 This cmdlet returns a **ComputerChangeInfo** object, if you specify the *PassThru* parameter.
 Otherwise, it does not return any output.
 

@@ -92,7 +92,7 @@ The second command uses the `Where-Object` cmdlet to get the providers that come
 ### Example 4: Resolve the path of the Home property of the file system provider
 
 ```powershell
-PS C:\> Resolve-Path ~
+C:\> Resolve-Path ~
 ```
 
 ```Output
