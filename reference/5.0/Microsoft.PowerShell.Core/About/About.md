@@ -86,7 +86,7 @@ Explains Data sections, which isolate text strings and other read-only data from
 
 ### [about_Debuggers](about_Debuggers.md)
 
-Describes the Windows PowerShell debugger.
+Describes the PowerShell debugger.
 
 ### [about_desiredstateconfiguration](about_desiredstateconfiguration.md)
 
@@ -98,11 +98,11 @@ Runs a statement list one or more times, subject to a While or Until condition.
 
 ### [about_dsclogresource](about_dsclogresource.md)
 
-Provides a brief introduction to the PowerShell Desired State Configuration (DSC) Log Resource. LONG DESCRIPTION
+Provides a brief introduction to the PowerShell Desired State Configuration (DSC) Log Resource.
 
 ### [about_Enum](about_Enum.md)
 
-The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
+An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
 
 ### [about_Environment_Provider](about_Environment_Provider.md)
 
@@ -166,7 +166,7 @@ Describes an attribute that reports the type of object that the function returns
 
 ### [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
 
-Describes the Group Policy settings for Windows PowerShell
+Describes the Group Policy settings for PowerShell
 
 ### [about_Hash_Tables](about_Hash_Tables.md)
 
@@ -174,7 +174,7 @@ Describes how to create, use, and sort hash tables in PowerShell.
 
 ### [about_hidden](about_hidden.md)
 
-Describes the Hidden keyword, which hides class members from default Get-Member results.
+Describes the `Hidden` keyword, which hides class members from default `Get-Member` results.
 
 ### [about_History](about_History.md)
 
@@ -194,7 +194,7 @@ Provides information about how PowerShell background jobs run a command or expre
 
 ### [about_Join](about_Join.md)
 
-Describes how the join operator (-join) combines multiple strings into a single string.
+Describes how the join operator `-join` combines multiple strings into a single string.
 
 ### [about_Language_Keywords](about_Language_Keywords.md)
 
@@ -206,7 +206,7 @@ Explains language modes and their effect on PowerShell sessions.
 
 ### [about_Line_Editing](about_Line_Editing.md)
 
-Describes how to edit commands at the Windows PowerShell command prompt.
+Describes how to edit commands at the PowerShell command prompt.
 
 ### [about_locations](about_locations.md)
 
@@ -226,15 +226,15 @@ Explains how to install, import, and use PowerShell modules.
 
 ### [about_Object_Creation](about_Object_Creation.md)
 
-Explains how to create objects in  PowerShell.
+Explains how to create objects in PowerShell.
 
 ### [about_Objects](about_Objects.md)
 
-Provides essential information about objects in Windows PowerShell.
+Provides essential information about objects in PowerShell.
 
 ### [about_Operator_Precedence](about_Operator_Precedence.md)
 
-Lists the PowerShell operators in precedence order.  [This topic was contributed by Kirk Munro, a PowerShell MVP from Ottawa, Ontario]
+Lists the PowerShell operators in precedence order.
 
 ### [about_Operators](about_Operators.md)
 
@@ -258,7 +258,7 @@ Describes how PowerShell parses commands.
 
 ### [about_Path_Syntax](about_Path_Syntax.md)
 
-Describes the full and relative path name formats in  PowerShell.
+Describes the full and relative path name formats in PowerShell.
 
 ### [about_pipelines](about_pipelines.md)
 
@@ -266,15 +266,15 @@ Combining commands into pipelines in the PowerShell
 
 ### [about_PowerShell_exe](about_PowerShell_exe.md)
 
-Explains how to use the PowerShell.exe command-line tool. Displays the syntax and describes the command-line switches.  PowerShell.exe starts a Windows PowerShell session. You can use it in Cmd.exe and in Windows PowerShell.
+Explains how to use the **PowerShell.exe** command-line tool.
 
 ### [about_PowerShell_Ise_exe](about_PowerShell_Ise_exe.md)
 
-Explains how to use the PowerShell_Ise.exe from the command-line.
+Explains how to use the **PowerShell_Ise.exe** from the command-line.
 
 ### [about_Preference_Variables](about_Preference_Variables.md)
 
-Variables that customize the behavior of PowerShell
+Variables that customize the behavior of PowerShell.
 
 ### [about_Profiles](about_Profiles.md)
 
@@ -282,7 +282,7 @@ Describes how to create and use a PowerShell profile.
 
 ### [about_Prompts](about_Prompts.md)
 
-Describes the Prompt function and demonstrates how to create a custom Prompt function.
+Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function.
 
 ### [about_Properties](about_Properties.md)
 
@@ -294,15 +294,15 @@ Describes how PowerShell providers provide access to data and components that wo
 
 ### [about_PSSession_Details](about_PSSession_Details.md)
 
-Provides detailed information about Windows PowerShell sessions and the role they play in remote commands.
+Provides detailed information about PowerShell sessions and the role they play in remote commands.
 
 ### [about_PSSessions](about_PSSessions.md)
 
-Describes Windows PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
+Describes PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
 
 ### [about_PSSnapins](about_PSSnapins.md)
 
-Describes  Windows PowerShell┬« snap-ins and shows how to use and manage them.
+Describes PowerShell snap-ins and shows how to use and manage them.
 
 ### [about_Quoting_Rules](about_Quoting_Rules.md)
 
@@ -318,23 +318,23 @@ Describes how to create and use a reference type variable. You can use reference
 
 ### [about_Registry_Provider](about_Registry_Provider.md)
 
-Provides access to Registry objects.
+Provides access to registry objects.
 
 ### [about_Regular_Expressions](about_Regular_Expressions.md)
 
-Describes regular expressions in Windows PowerShell.
+Describes regular expressions in PowerShell.
 
 ### [about_Remote](about_Remote.md)
 
-Describes how to run remote commands in Windows PowerShell.
+Describes how to run remote commands in PowerShell.
 
 ### [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
 
-Explains how to disconnect from and reconnect to a PSSession
+Explains how to disconnect from and reconnect to a `PSSession`.
 
 ### [about_Remote_FAQ](about_Remote_FAQ.md)
 
-Contains questions and answers about running remote commands in Windows PowerShell.
+Contains questions and answers about running remote commands in PowerShell.
 
 ### [about_Remote_Jobs](about_Remote_Jobs.md)
 
@@ -410,19 +410,19 @@ Describes the special characters that you can use to control how Windows PowerSh
 
 ### [about_Splatting](about_Splatting.md)
 
-Describes how to use splatting to pass parameters to commands in Windows PowerShell.
+Describes how to use splatting to pass parameters to commands in PowerShell.
 
 ### [about_Split](about_Split.md)
 
-Explains how to use the Split operator to split one or more strings into substrings.
+Explains how to use the `-Split` operator to split one or more strings into substrings.
 
 ### [about_Switch](about_Switch.md)
 
-Explains how to use a switch to handle multiple If statements.
+Explains how to use a switch to handle multiple `If` statements.
 
 ### [about_Throw](about_Throw.md)
 
-Describes the Throw keyword, which generates a terminating error.
+Describes the `Throw` keyword, which generates a terminating error.
 
 ### [about_Transactions](about_Transactions.md)
 
@@ -434,7 +434,7 @@ Describes a keyword that handles a terminating error.
 
 ### [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
 
-Describes how to use the Try, Catch, and Finally blocks to handle terminating errors.
+Describes how to use the `Try`, `Catch`, and `Finally` blocks to handle terminating errors.
 
 ### [about_Type_Operators](about_Type_Operators.md)
 
@@ -442,7 +442,7 @@ Describes the operators that work with Microsoft .NET Framework types.
 
 ### [about_Types.ps1xml](about_Types.ps1xml.md)
 
-Explains how to use Types.ps1xml files to extend the types of objects that are used in PowerShell.
+Explains how to use `Types.ps1xml` files to extend the types of objects that are used in PowerShell.
 
 ### [about_Updatable_Help](about_Updatable_Help.md)
 
@@ -478,7 +478,7 @@ Describes the features and system requirements of Windows PowerShell Integrated 
 
 ### [about_Windows_RT](about_Windows_RT.md)
 
-Explains limitations of  Windows PowerShell┬« 4.0 on Windows RT 8.1.
+Explains limitations of Windows PowerShell 4.0 on Windows RT 8.1.
 
 ### [about_WMI](about_WMI.md)
 
