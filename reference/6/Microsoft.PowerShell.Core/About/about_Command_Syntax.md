@@ -4,11 +4,9 @@ schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Command_Syntax
 ---
-
 # About Command Syntax
 
 ## SHORT DESCRIPTION
-
 Describes the syntax diagrams that are used in PowerShell.
 
 ## LONG DESCRIPTION

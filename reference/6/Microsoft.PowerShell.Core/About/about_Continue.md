@@ -4,11 +4,9 @@ schema:  2.0.0
 keywords:  powershell,cmdlet
 title:  about_Continue
 ---
-
 # About Continue
 
 ## SHORT DESCRIPTION
-
 Describes how the `Continue` statement immediately returns the program flow
 to the top of a program loop.
 

@@ -9,7 +9,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821468
 # FileSystem provider
 
 ## Provider name
-
 FileSystem
 
 ## Drives

@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Enum
 ---
-
 # About Enum
 
 ## SHORT DESCRIPTION
-
 The `enum` statement is used to declare an enumeration. An enumeration is a
 distinct type that consists of a set of named labels called the enumerator
 list.
