@@ -12,6 +12,7 @@ title: Get-PSHostProcessInfo
 # Get-PSHostProcessInfo
 
 ## SYNOPSIS
+Gets process information about the PowerShell host.
 
 ## SYNTAX
 
@@ -47,6 +48,7 @@ PS C:\>
 ## PARAMETERS
 
 ### -Id
+Specifies a process by the process ID. To get a process ID, run the **Get-Process** cmdlet.
 
 ```yaml
 Type: Int32[]
@@ -61,6 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+Specifies a process by the process name. To get a process name, run the **Get-Process** cmdlet. You can also get process names from the Properties dialog box of a process in Task Manager.
 
 ```yaml
 Type: String[]
@@ -98,7 +101,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-
-## RELATED LINKS
 
 ## RELATED LINKS

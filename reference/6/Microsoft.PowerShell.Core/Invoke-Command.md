@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 02/25/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821493
 schema: 2.0.0
 title: Invoke-Command
@@ -1100,7 +1100,7 @@ Accept wildcard characters: False
 
 ### -RemoteDebug
 
-{{Fill RemoteDebug Description}}
+Used to run the invoked command in debug mode in the remote PowerShell session.
 
 ```yaml
 Type: SwitchParameter
