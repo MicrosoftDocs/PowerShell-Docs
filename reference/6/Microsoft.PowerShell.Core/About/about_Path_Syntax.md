@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Path_Syntax
 ---
-
 # About Path Syntax
 
 ## SHORT DESCRIPTION
-
 Describes the full and relative path name formats in  PowerShell.
 
 ## LONG DESCRIPTION

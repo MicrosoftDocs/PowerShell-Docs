@@ -8,7 +8,6 @@ title:  about_Return
 # About Return
 
 ## Short description
-
 Exits the current scope, which can be a function, script, or script block.
 
 ## Long description

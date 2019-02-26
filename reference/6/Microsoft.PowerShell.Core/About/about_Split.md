@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Split
 ---
-
 # About Split
 
 ## SHORT DESCRIPTION
-
 Explains how to use the Split operator to split one or more strings into
 substrings.
 

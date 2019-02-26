@@ -8,7 +8,6 @@ title:  about_Redirection
 # About Redirection
 
 ## Short description
-
 Explains how to redirect output from PowerShell to text files.
 
 ## Long description
