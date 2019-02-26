@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Providers
 ---
-
 # About Providers
 
 ## Short description
-
 Describes how PowerShell providers provide access to data and
 components that would not otherwise be easily accessible at the command line.
 The data is presented in a consistent format that resembles a file system

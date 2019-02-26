@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Throw
 ---
-
 # About Throw
 
 ## SHORT DESCRIPTION
-
 Describes the Throw keyword, which generates a terminating error.
 
 ## LONG DESCRIPTION

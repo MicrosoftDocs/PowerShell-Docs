@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821499
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
 ---
-
 # New-PSSessionConfigurationFile
 
 ## SYNOPSIS
@@ -31,6 +30,7 @@ New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Gui
 ```
 
 ## DESCRIPTION
+
 The **New-PSSessionConfigurationFile** cmdlet creates a file of settings that define a session configuration and the environment of sessions that are created by using the session configuration.
 To use the file in a session configuration, use the *Path* parameter of the Register-PSSessionConfiguration or Set-PSSessionConfiguration cmdlets.
 
@@ -54,6 +54,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Designing a specialized session
+
 ```
 PS C:\> New-PSSessionConfigurationFile -ModulesToImport DMSCmdlets, *Microsoft* -ScriptsToProcess \\Server01\Scripts\Get-DMSServers.ps1
 ```
@@ -66,6 +67,7 @@ The ACLs on the session configuration determine who can use the session configur
 Customized sessions that include the cmdlets, functions and scripts that technical users need make it easier for those users to write scripts that automate common tasks.
 
 ### Example 2: Restricting Language in a Session
+
 ```
 The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the *LanguageMode* parameter, the session configuration files are equivalent.
 PS C:\> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
@@ -99,6 +101,7 @@ To run the commands in this example, start Windows PowerShell by using the Run a
 This option is required to run the Register-PSSessionConfiguration cmdlet.
 
 ### Example 3: Changing a Session Configuration File
+
 ```
 The first command uses the **New-PSSessionConfigurationFile** cmdlet to create a session configuration file that imports the required modules.
 PS C:\> New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
@@ -112,6 +115,7 @@ In this scenario, the administrator wants to add the **PSScheduledJob** module t
 Previously, these sessions had only the core modules and an internal "ITTasks" module.
 
 ### Example 4: Editing a Session Configuration File
+
 ```
 The first command uses the Get-PSSessionConfiguration command to get the path of the configuration file for the ITConfig session configuration. The path is stored in the **ConfigFilePath** property of the session configuration.
 PS C:\> (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
@@ -128,6 +132,7 @@ True
 This example shows how to change a session configuration by editing the active session configuration copy of the configuration file.
 
 ### Example 5: Sample Configuration File
+
 ```
 PS C:\> New-PSSessionConfigurationFile
 -Path .\SampleFile.pssc
@@ -264,6 +269,7 @@ The resulting SampleFile.pssc is displayed in the output.
 ## PARAMETERS
 
 ### -AliasDefinitions
+
 Adds the specified aliases to sessions that use the session configuration.
 Enter a hash table with the following keys:
 
@@ -297,6 +303,7 @@ Accept wildcard characters: False
 ```
 
 ### -AssembliesToLoad
+
 Specifies the assemblies to load into the sessions that use the session configuration.
 
 ```yaml
@@ -312,6 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### -Author
+
 Specifies the author of the session configuration or the configuration file.
 The default is the current user.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
@@ -329,6 +337,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompanyName
+
 Specifies the company that created the session configuration or the configuration file.
 The default value is Unknown.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
@@ -346,6 +355,7 @@ Accept wildcard characters: False
 ```
 
 ### -Copyright
+
 Specifies a copyright the session configuration file.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
 
@@ -364,6 +374,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
+
 Specifies a description of the session configuration or the session configuration file.
 The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.
 
@@ -380,6 +391,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnvironmentVariables
+
 Adds environment variables to the session.
 Enter a hash table in which the keys are the environment variable names and the values are the environment variable values.
 
@@ -398,6 +410,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExecutionPolicy
+
 Specifies the execution policy of sessions that use the session configuration.
 If you omit this parameter, the value of the **ExecutionPolicy** key in the session configuration file is Restricted.
 For information about execution policies in Windows PowerShell, see [about_Execution_Policies](about/about_Execution_Policies.md).
@@ -416,6 +429,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatsToProcess
+
 Specifies the formatting files (.ps1xml) that run in sessions that use the session configuration.
 The value of this parameter must be a full or absolute path of the formatting files.
 
@@ -432,6 +446,7 @@ Accept wildcard characters: False
 ```
 
 ### -Full
+
 Indicates that this operation includes all possible configuration properties in the session configuration file.
 
 ```yaml
@@ -447,6 +462,7 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionDefinitions
+
 Adds the specified functions to sessions that use the session configuration.
 Enter a hash table with the following keys:
 
@@ -478,6 +494,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupManagedServiceAccount
+
 Configures sessions using this session configuration to run under the context of the specified Group Managed Service Account.
 The machine where this session configuration is registered must have permission to request the gMSA password in order for sessions to be created successfully.
 This field cannot be used in conjunction with the `-RunAsVirtualAccount` parameter.
@@ -495,6 +512,7 @@ Accept wildcard characters: False
 ```
 
 ### -Guid
+
 Specifies a unique identifier for the session configuration file.
 If you omit this parameter, **New-PSSessionConfigurationFile** generates a GUID for the file.To create a new GUID in Windows PowerShell, type "`\[guid\]::NewGuid()`".
 
@@ -511,6 +529,7 @@ Accept wildcard characters: False
 ```
 
 ### -LanguageMode
+
 Determines which elements of the Windows PowerShell language are permitted in sessions that use this session configuration.
 You can use this parameter to restrict the commands that particular users can run on the computer.
 
@@ -548,6 +567,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModulesToImport
+
 Specifies the modules and snap-ins that are automatically imported into sessions that use the session configuration.
 
 By default, only the **Microsoft.PowerShell.Core** snap-in is imported into remote sessions, but unless the cmdlets are excluded, users can use the Import-Module and Add-PSSnapin cmdlets to add modules and snap-ins to the session.
@@ -577,6 +597,7 @@ Accept wildcard characters: False
 ```
 
 ### -MountUserDrive
+
 Configures sessions that use this session configuration to expose the "User:" PSDrive.
 User drives are unique for each connecting user and allow users to copy data to/from PowerShell endpoints even if the File System provider is not exposed.
 User drive roots are created under `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`.
@@ -598,6 +619,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path and file name of the session configuration file.
 The file must have a .pssc file name extension.
 
@@ -614,6 +636,7 @@ Accept wildcard characters: False
 ```
 
 ### -PowerShellVersion
+
 Specifies the version of the Windows PowerShell engine in sessions that use the session configuration.
 The acceptable values for this parameter are: 2.0 and 3.0.
 If you omit this parameter, the **PowerShellVersion** key is commented-out and newest version of Windows PowerShell runs in the session.
@@ -633,6 +656,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredGroups
+
 Specifies conditional access rules for users connecting to sessions that use this session configuration.
 
 Enter a hashtable to compose your list of rules using only 1 key per hashtable, 'And' or 'Or', and set the value to an array of security group names or additional hashtables.
@@ -654,6 +678,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitions
+
 Specifies the mapping between security groups (or users) and role capabilities.
 Users will be granted access to all role capabilities which apply to their group membership at the time the session is created.
 
@@ -674,6 +699,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunAsVirtualAccount
+
 Configures sessions using this session configuration to be run as the computer's (virtual) administrator account.
 This field cannot be used in conjunction with the `-GroupManagedServiceAccount` parameter.
 
@@ -690,6 +716,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunAsVirtualAccountGroups
+
 Specifies the security groups to be associated with the virtual account when a session that uses the session configuration is run as a virtual account.
 If omitted, the virtual account belongs to Domain Admins on domain controllers and Administrators on all other computers.
 
@@ -706,6 +733,7 @@ Accept wildcard characters: True
 ```
 
 ### -SchemaVersion
+
 Specifies the version of the session configuration file schema.
 The default value is "1.0.0.0".
 
@@ -722,6 +750,7 @@ Accept wildcard characters: True
 ```
 
 ### -ScriptsToProcess
+
 Adds the specified scripts to sessions that use the session configuration.
 Enter the path and file names of the scripts.
 The value of this parameter must be a full or absolute path of script file names.
@@ -739,6 +768,7 @@ Accept wildcard characters: True
 ```
 
 ### -SessionType
+
 Specifies the type of session that is created by using the session configuration.
 The default value is Default.
 The acceptable values for this parameter are:
@@ -769,6 +799,7 @@ Accept wildcard characters: True
 ```
 
 ### -TranscriptDirectory
+
 Specifies the directory to place session transcripts for sessions using this session configuration.
 
 ```yaml
@@ -784,6 +815,7 @@ Accept wildcard characters: False
 ```
 
 ### -TypesToProcess
+
 Adds the specified type files (.ps1xml) to sessions that use the session configuration.
 Enter the type file names.
 The value of this parameter must be a full or absolute path of type file names.
@@ -801,6 +833,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserDriveMaximumSize
+
 Specifies the maximum size for user drives exposed in sessions that use this session configuration.
 When omitted, the default size of each User: drive root is 50MB.
 
@@ -819,6 +852,7 @@ Accept wildcard characters: False
 ```
 
 ### -VariableDefinitions
+
 Adds the specified variables to sessions that use the session configuration.
 Enter a hash table with the following keys:
 
@@ -849,6 +883,7 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleAliases
+
 Limits the aliases in the session to those specified in the value of this parameter, plus any aliases that you define in the *AliasDefinition* parameter.
 Wildcard characters are supported.
 By default, all aliases that are defined by the Windows PowerShell engine and all aliases that modules export are visible in the session.
@@ -870,6 +905,7 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleCmdlets
+
 Limits the cmdlets in the session to those specified in the value of this parameter.
 Wildcard characters and Module Qualified Names are supported.
 
@@ -892,6 +928,7 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleExternalCommands
+
 Limits the external binaries, scripts, and commands that can be executed in the session to those specified in the value of this parameter.
 Wildcard characters are supported.
 
@@ -912,6 +949,7 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleFunctions
+
 Limits the functions in the session to those specified in the value of this parameter, plus any functions that you define in the *FunctionDefinition* parameter.
 Wildcard characters are supported.
 
@@ -933,6 +971,7 @@ Accept wildcard characters: False
 ```
 
 ### -VisibleProviders
+
 Limits the Windows PowerShell providers in the session to those specified in the value of this parameter.
 Wildcard characters are supported.
 
@@ -954,19 +993,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe any objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
+
 * The *Visible* parameters, such as *VisibleCmdlets* and *VisibleProviders*, do not import items into the session. Instead, they select from among the items imported into the session. For example, if the value of the *VisibleProviders* parameter is the Certificate provider, but the *ModulesToImport* parameter does not specify the **Microsoft.PowerShell.Security** module that contains the Certificate provider, the Certificate provider is not visible in the session.
 * **New-PSSessionConfigurationFile** creates a session configuration file that has a .pssc file name extension in the path that you specify in the *Path* parameter. When you use the session configuration file to create a session configuration, the Register-PSSessionConfiguration cmdlet copies the configuration file and saves an active copy of the file in the **SessionConfig** subdirectory of the $pshome directory.
 

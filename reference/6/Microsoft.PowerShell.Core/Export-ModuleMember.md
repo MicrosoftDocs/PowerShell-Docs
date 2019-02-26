@@ -8,11 +8,9 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821480
 schema: 2.0.0
 title: Export-ModuleMember
 ---
-
 # Export-ModuleMember
 
 ## SYNOPSIS
-
 Specifies the module members that are exported.
 
 ## SYNTAX

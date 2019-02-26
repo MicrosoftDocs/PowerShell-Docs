@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821519
 schema: 2.0.0
 title: Stop-Job
 ---
-
 # Stop-Job
 
 ## SYNOPSIS
@@ -17,36 +16,43 @@ Stops a PowerShell background job.
 ## SYNTAX
 
 ### SessionIdParameterSet (Default)
+
 ```
 Stop-Job [-PassThru] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobParameterSet
+
 ```
 Stop-Job [-Job] <Job[]> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameParameterSet
+
 ```
 Stop-Job [-PassThru] [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
+
 ```
 Stop-Job [-PassThru] [-InstanceId] <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### StateParameterSet
+
 ```
 Stop-Job [-PassThru] [-State] <JobState> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### FilterParameterSet
+
 ```
 Stop-Job [-PassThru] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Stop-Job** cmdlet stops PowerShell background jobs that are in progress.
 You can use this cmdlet to stop all jobs or stop selected jobs based on their name, ID, instance ID, or state, or by passing a job object to **Stop-Job**.
 
@@ -64,6 +70,7 @@ For information about a particular custom job type, see the documentation of the
 ## EXAMPLES
 
 ### Example 1: Stop a job on a remote computer by using Invoke-Command
+
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01 -Credential Domain01\Admin02
 PS C:\> $j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
@@ -91,6 +98,7 @@ For more information about the Using scope modifier, see [about_Remote_Variables
 When the command finishes, the job is stopped and the **PSSession** in $s is available for use.
 
 ### Example 2: Stop a background job
+
 ```
 PS C:\> Stop-Job -Name "Job1"
 ```
@@ -98,6 +106,7 @@ PS C:\> Stop-Job -Name "Job1"
 This command stops the Job1 background job.
 
 ### Example 3: Stop several background jobs
+
 ```
 PS C:\> Stop-Job -Id 1, 3, 4
 ```
@@ -106,6 +115,7 @@ This command stops three jobs.
 It identifies them by their IDs.
 
 ### Example 4: Stop all background jobs
+
 ```
 PS C:\> Get-Job | Stop-Job
 ```
@@ -113,6 +123,7 @@ PS C:\> Get-Job | Stop-Job
 This command stops all of the background jobs in the current session.
 
 ### Example 5: Stop all blocked background jobs
+
 ```
 PS C:\> Stop-Job -State Blocked
 ```
@@ -120,6 +131,7 @@ PS C:\> Stop-Job -State Blocked
 This command stops all the jobs that are blocked.
 
 ### Example 6: Stop a job by using an instance ID
+
 ```
 PS C:\> Get-Job | Format-Table ID, Name, Command, @{Label="State";Expression={$_.JobStateInfo.State}},
 InstanceID -Auto
@@ -143,6 +155,7 @@ It uses a calculated property to display the job state.
 The second command uses a **Stop-Job** command that has the *InstanceID* parameter to stop a selected job.
 
 ### Example 7: Stop a job on a remote computer
+
 ```
 PS C:\> $j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog System} -AsJob
 PS C:\> $j | Stop-Job -PassThru
@@ -173,6 +186,7 @@ For more information about remote background jobs, see about_Remote_Jobs.
 ## PARAMETERS
 
 ### -Filter
+
 Specifies a hash table of conditions.
 This cmdlet stops jobs that satisfy all of the conditions.
 Enter a hash table where the keys are job properties and the values are job property values.
@@ -196,6 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies the IDs of jobs that this cmdlet stops.
 The default is all jobs in the current session.
 
@@ -217,6 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies the instance IDs of jobs that this cmdlet stops.
 The default is all jobs.
 
@@ -236,6 +252,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
+
 Specifies the jobs that this cmdlet stops.
 Enter a variable that contains the jobs or a command that gets the jobs.
 You can also use a pipeline operator to submit jobs to the **Stop-Job** cmdlet.
@@ -254,6 +271,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies friendly names of jobs that this cmdlet stops.
 Enter the job names in a comma-separated list or use wildcard characters (*) to enter a job name pattern.
 By default, **Stop-Job** stops all jobs created in the current session.
@@ -273,6 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -289,6 +308,7 @@ Accept wildcard characters: False
 ```
 
 ### -State
+
 Specifies a job state.
 This cmdlet stops only jobs in the specified state.
 The acceptable values for this parameter are:
@@ -320,6 +340,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -335,6 +356,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -351,16 +373,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.RemotingJob
+
 You can pipe a job object to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Management.Automation.PSRemotingJob
+
 This cmdlet returns a job object, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not generate any output.
 

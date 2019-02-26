@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell
 title:  about_PowerShell_Config
 ---
-
 # About PowerShell Config
 
 ## SHORT DESCRIPTION
-
 Configuration files for PowerShell Core, replacing Registry configuration.
 
 ## LONG DESCRIPTION
@@ -336,6 +334,7 @@ cmdlet use. All other logging will be omitted.
 ```
 
 <!--
+
 ## Group policy configuration
 
 ### ScriptExecution
@@ -349,6 +348,7 @@ cmdlet use. All other logging will be omitted.
 ### UpdateableHelp
 
 ### ConsoleSessionConfiguration
+
 -->
 
 ## More example configurations

@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkID=403736
 schema: 2.0.0
 title: Enter-PSHostProcess
 ---
-
 # Enter-PSHostProcess
 
 ## SYNOPSIS
@@ -17,26 +16,31 @@ Connects to and enters into an interactive session with a local process.
 ## SYNTAX
 
 ### ProcessIdParameterSet (Default)
+
 ```
 Enter-PSHostProcess [-Id] <Int32> [[-AppDomainName] <String>] [<CommonParameters>]
 ```
 
 ### ProcessParameterSet
+
 ```
 Enter-PSHostProcess [-Process] <Process> [[-AppDomainName] <String>] [<CommonParameters>]
 ```
 
 ### ProcessNameParameterSet
+
 ```
 Enter-PSHostProcess [-Name] <String> [[-AppDomainName] <String>] [<CommonParameters>]
 ```
 
 ### PSHostProcessInfoParameterSet
+
 ```
 Enter-PSHostProcess [-HostProcessInfo] <PSHostProcessInfo> [[-AppDomainName] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Enter-PSHostProcess** cmdlet connects to and enters into an interactive session with a local process.
 
 Instead of creating a new process to host PowerShell and run a remote session, the remote, interactive session is run in an existing process that is already running PowerShell.
@@ -58,6 +62,7 @@ To support attaching to processes on remote computers, the **Enter-PSHostProcess
 ## EXAMPLES
 
 ### Example 1: Start debugging a runspace within the Windows PowerShell ISE process
+
 ```
 In this example, you run **Enter-PSHostProcess** from within the Windows PowerShell console to enter the Windows PowerShell ISE process. In the resulting interactive session, you can find a runspace that you want to debug by running Get-Runspace, and then debug the runspace.
 PS C:\> Enter-PSHostProcess -Name powershell_ise
@@ -132,6 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies a process by the process ID.
 To get a process ID, run the Get-Process cmdlet.
 
@@ -148,6 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies a process by the process name.
 To get a process name, run the Get-Process cmdlet.
 You can also get process names from the Properties dialog box of a process in Task Manager.
@@ -165,6 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -Process
+
 Specifies a process by the process object.
 The simplest way to use this parameter is to save the results of a **Get-Process** command that returns process that you want to enter in a variable, and then specify the variable as the value of this parameter.
 
@@ -181,6 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -190,6 +199,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
 * **Enter-PSHostProcess** cannot enter the process of the PowerShell session in which you are running the command. You can, however, enter the process of another PowerShell session, or a Windows PowerShell ISE session that is running at the same time as the session in which you are running **Enter-PSHostProcess**.
 
   **Enter-PSHostProcess** can enter only those processes that are hosting PowerShell.

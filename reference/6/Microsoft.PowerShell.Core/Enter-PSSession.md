@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821477
 schema: 2.0.0
 title: Enter-PSSession
 ---
-
 # Enter-PSSession
 
 ## SYNOPSIS
@@ -17,6 +16,7 @@ Starts an interactive session with a remote computer.
 ## SYNTAX
 
 ### ComputerName (Default)
+
 ```
 Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [[-Credential] <PSCredential>]
  [-ConfigurationName <String>] [-Port <Int32>] [-UseSSL] [-ApplicationName <String>]
@@ -25,17 +25,20 @@ Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [[-Credential] <
 ```
 
 ### SSHHost
+
 ```
 Enter-PSSession [-HostName] <String> [-Port <Int32>] [-UserName <String>] [-KeyFilePath <String>]
  [-SSHTransport] [<CommonParameters>]
 ```
 
 ### Session
+
 ```
 Enter-PSSession [[-Session] <PSSession>] [<CommonParameters>]
 ```
 
 ### Uri
+
 ```
 Enter-PSSession [[-ConnectionUri] <Uri>] [-EnableNetworkAccess] [[-Credential] <PSCredential>]
  [-ConfigurationName <String>] [-AllowRedirection] [-SessionOption <PSSessionOption>]
@@ -43,38 +46,45 @@ Enter-PSSession [[-ConnectionUri] <Uri>] [-EnableNetworkAccess] [[-Credential] <
 ```
 
 ### InstanceId
+
 ```
 Enter-PSSession [-InstanceId <Guid>] [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Enter-PSSession [[-Id] <Int32>] [<CommonParameters>]
 ```
 
 ### Name
+
 ```
 Enter-PSSession [-Name <String>] [<CommonParameters>]
 ```
 
 ### VMId
+
 ```
 Enter-PSSession [-VMId] <Guid> [-Credential] <PSCredential> [-ConfigurationName <String>] [<CommonParameters>]
 ```
 
 ### VMName
+
 ```
 Enter-PSSession [-VMName] <String> [-Credential] <PSCredential> [-ConfigurationName <String>]
  [<CommonParameters>]
 ```
 
 ### ContainerId
+
 ```
 Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdministrator]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Enter-PSSession** cmdlet starts an interactive session with a single remote computer.
 During the session, the commands that you type run on the remote computer, just as if you were typing directly on the remote computer.
 You can have only one interactive session at a time.
@@ -93,6 +103,7 @@ To end the interactive session and disconnect from the remote computer, use the 
 ## EXAMPLES
 
 ### Example 1: Start an interactive session
+
 ```
 PS C:\> Enter-PSSession
 [localhost]: PS C:\>
@@ -104,6 +115,7 @@ The command prompt changes to indicate that you are now running commands in a di
 The commands that you enter run in the new session, and the results are returned to the default session as text.
 
 ### Example 2: Work with an interactive session
+
 ```
 The first command uses the **Enter-PSSession** cmdlet to start an interactive session with Server01, a remote computer. When the session starts, the command prompt changes to include the computer name.
 PS C:\> Enter-PSSession -ComputerName Server01
@@ -126,6 +138,7 @@ At line:1 char:4
 This command shows how to work in an interactive session with a remote computer.
 
 ### Example 3: Use the Session parameter
+
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01
 PS C:\> Enter-PSSession -Session $s
@@ -135,6 +148,7 @@ PS C:\> Enter-PSSession -Session $s
 These commands use the *Session* parameter of **Enter-PSSession** to run the interactive session in an existing PowerShell session (**PSSession**).
 
 ### Example 4: Start an interactive session and specify the Port and Credential parameters
+
 ```
 PS C:\> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
 [Server01]: PS C:\>
@@ -144,6 +158,7 @@ This command starts an interactive session with the Server01 computer.
 It uses the *Port* parameter to specify the port and the *Credential* parameter to specify the account of a user who has permission to connect to the remote computer.
 
 ### Example 5: Stop an interactive session
+
 ```
 PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\> Exit-PSSession
@@ -158,6 +173,7 @@ You can also use the **Exit** keyword to end the interactive session.
 **Exit-PSSession** and **Exit** have the same effect.
 
 ### Example 6: Start an interactive session using SSH
+
 ```
 PS C:\> Enter-PSSession -HostName UserA@LinuxServer01
 ```
@@ -165,6 +181,7 @@ PS C:\> Enter-PSSession -HostName UserA@LinuxServer01
 This example shows how to start an interactive session using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt.  Otherwise you will have to use SSH key based user authentication.
 
 ### Example 7: Start an interactive session using SSH and specify the Port and user authentication key
+
 ```
 PS C:\> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
@@ -174,6 +191,7 @@ This example shows how to start an interactive session using SSH. It uses the *P
 ## PARAMETERS
 
 ### -AllowRedirection
+
 Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 By default, redirection is not allowed.
 
@@ -197,6 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
+
 Specifies the application name segment of the connection URI.
 Use this parameter to specify the application name when you are not using the *ConnectionURI* parameter in the command.
 
@@ -221,6 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the mechanism that is used to authenticate the user's credentials.
 The acceptable values for this parameter are:
 
@@ -256,6 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
@@ -277,6 +298,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies a computer name.
 This cmdlet starts an interactive session with the specified remote computer.
 Enter only one computer name.
@@ -304,6 +326,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationName
+
 Specifies the session configuration that is used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
@@ -332,6 +355,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
+
 Specifies a URI that defines the connection endpoint for the session.
 The URI must be fully qualified.
 The format of this string is as follows:
@@ -363,6 +387,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerId
+
 Specifies the ID of a container.
 
 ```yaml
@@ -378,6 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -410,6 +436,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
+
 Indicates that this cmdlet adds an interactive security token to loopback sessions.
 The interactive token lets you run commands in the loopback session that get data from other computers.
 For example, you can run a command in the session that copies XML files from a remote computer to the local computer.
@@ -440,6 +467,7 @@ Accept wildcard characters: False
 ```
 
 ### -HostName
+
 Specifies a computer name for a Secure Shell (SSH) based connection.
 This is similar to the *ComputerName* parameter except that the connection to the remote computer is made using SSH rather than Windows WinRM.
 This parameter supports specifying the user name and/or port as part of the host name parameter value using
@@ -462,6 +490,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies the ID of an existing session.
 **Enter-PSSession** uses the specified session for the interactive session.
 
@@ -480,6 +509,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies the instance ID of an existing session.
 **Enter-PSSession** uses the specified session for the interactive session.
 
@@ -501,6 +531,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyFilePath
+
 Specifies a key file path used by Secure Shell (SSH) to authenticate a user on a remote computer.
 
 SSH allows user authentication to be performed via private/public keys as an alternative to basic password authentication. If the remote computer is configured for key authentication then this parameter can be used to provide the key that identifies the user.
@@ -520,6 +551,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the friendly name of an existing session.
 **Enter-PSSession** uses the specified session for the interactive session.
 
@@ -542,6 +574,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
+
 Specifies the network port on the remote computer that is used for this command.
 
 In PowerShell 6.0 this parameter was inlcuded in the **HostName** parameter set which supports Secure Shell (SSH) connections.
@@ -580,6 +613,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunAsAdministrator
+
 Indicates that the **PSSession** runs as administrator.
 
 ```yaml
@@ -595,6 +629,7 @@ Accept wildcard characters: False
 ```
 
 ### -Session
+
 Specifies a Windows PowerShell session (**PSSession**) to use for the interactive session.
 This parameter takes a session object.
 You can also use the *Name*, *InstanceID*, or *ID* parameters to specify a **PSSession**.
@@ -619,6 +654,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
+
 Sets advanced options for the session.
 Enter a **SessionOption** object, such as one that you create by using the **New-PSSessionOption** cmdlet, or a hash table in which the keys are session option names and the values are session option values.
 
@@ -645,6 +681,7 @@ Accept wildcard characters: False
 ```
 
 ### -SSHTransport
+
 Indicates that the remote connection is established using Secure Shell (SSH).
 
 By default PowerShell uses Windows WinRM to connect to a remote computer. This switch forces PowerShell to use the HostName parameter set for establishing an SSH based remote connection.
@@ -665,6 +702,7 @@ Accept wildcard characters: False
 ```
 
 ### -Subsystem
+
 Specifies the SSH subsystem used for the new **PSSession**.
 
 This specifies the subsystem to use on the target as defined in sshd_config.
@@ -686,6 +724,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserName
+
 Specifies the user name for the account used to create a session on the remote computer. User authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
 
 If SSH is configured for basic password authentication then you will be prompted for the user password.
@@ -709,6 +748,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
+
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
@@ -730,6 +770,7 @@ Accept wildcard characters: False
 ```
 
 ### -VMId
+
 Specifies the ID of a virtual machine.
 
 ```yaml
@@ -745,6 +786,7 @@ Accept wildcard characters: False
 ```
 
 ### -VMName
+
 Specifies the name of a virtual machine.
 
 ```yaml
@@ -760,19 +802,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.String, System.Management.Automation.Runspaces.PSSession
+
 You can pipe a computer name, as a string, or a session object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 The cmdlet does not return any output.
 
 ## NOTES
+
 * To connect to a remote computer, you must be a member of the Administrators group on the remote computer.
 * In Windows Vista and later versions of the Windows operating system, to start an interactive session on the local computer, you must start Windows PowerShell with the Run as administrator option.
 * When you use **Enter-PSSession**, your user profile on the remote computer is used for the interactive session. The commands in the remote user profile, including commands to add Windows PowerShell snap-ins and to change the command prompt, run before the remote prompt is displayed.

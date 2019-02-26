@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Operator_Precedence
 ---
-
 # About Operator Precedence
 
 ## SHORT DESCRIPTION
-
 Lists the PowerShell operators in precedence order.
 
 [This topic was contributed by Kirk Munro, a PowerShell MVP
