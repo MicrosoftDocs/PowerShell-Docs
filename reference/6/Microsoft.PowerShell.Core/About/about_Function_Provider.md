@@ -9,7 +9,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834961
 # Function provider
 
 ## Provider name
-
 Function
 
 ## Drives

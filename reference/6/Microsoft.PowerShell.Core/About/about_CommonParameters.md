@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_CommonParameters
 ---
-
 # About CommonParameters
 
 ## SHORT DESCRIPTION
-
 Describes the parameters that can be used with any cmdlet.
 
 ## LONG DESCRIPTION

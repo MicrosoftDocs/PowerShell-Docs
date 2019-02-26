@@ -7,7 +7,6 @@ title:  about_Command_Precedence
 # About Command Precedence
 
 ## Short description
-
 Describes how PowerShell determines which command to run.
 
 ## Long description

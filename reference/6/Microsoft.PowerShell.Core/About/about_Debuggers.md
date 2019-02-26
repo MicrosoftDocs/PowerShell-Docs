@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Debuggers
 ---
-
 # About Debuggers
 
 ## SHORT DESCRIPTION
-
 Describes the PowerShell debugger.
 
 ## LONG DESCRIPTION
