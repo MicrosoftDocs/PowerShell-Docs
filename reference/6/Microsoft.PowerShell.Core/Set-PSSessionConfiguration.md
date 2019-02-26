@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821516
 schema: 2.0.0
 title: Set-PSSessionConfiguration
 ---
-
 # Set-PSSessionConfiguration
 
 ## SYNOPSIS
@@ -17,6 +16,7 @@ Changes the properties of a registered session configuration.
 ## SYNTAX
 
 ### NameParameterSet (Default)
+
 ```
 Set-PSSessionConfiguration [-Name] <String> [-ApplicationBase <String>] [-RunAsCredential <PSCredential>]
  [-ThreadOptions <PSThreadOptions>] [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess]
@@ -27,6 +27,7 @@ Set-PSSessionConfiguration [-Name] <String> [-ApplicationBase <String>] [-RunAsC
 ```
 
 ### AssemblyNameParameterSet
+
 ```
 Set-PSSessionConfiguration [-Name] <String> [-AssemblyName] <String> [-ApplicationBase <String>]
  [-ConfigurationTypeName] <String> [-RunAsCredential <PSCredential>] [-ThreadOptions <PSThreadOptions>]
@@ -38,6 +39,7 @@ Set-PSSessionConfiguration [-Name] <String> [-AssemblyName] <String> [-Applicati
 ```
 
 ### SessionConfigurationFile
+
 ```
 Set-PSSessionConfiguration [-Name] <String> [-RunAsCredential <PSCredential>]
  [-ThreadOptions <PSThreadOptions>] [-AccessMode <PSSessionConfigurationAccessMode>] [-UseSharedProcess]
@@ -48,6 +50,7 @@ Set-PSSessionConfiguration [-Name] <String> [-RunAsCredential <PSCredential>]
 ```
 
 ## DESCRIPTION
+
 The **Set-PSSessionConfiguration** cmdlet changes the properties of the session configurations on the local computer.
 
 Use the *Name* parameter to identify the session configuration that you want to change.
@@ -72,6 +75,7 @@ For more information about the WSMan Provider, type `Get-Help WSMan`.
 ## EXAMPLES
 
 ### Example 1: Change the thread apartment state
+
 ```
 PS C:\> Set-PSSessionConfiguration -Name "MaintenanceShell" -ThreadApartmentState STA
 ```
@@ -80,6 +84,7 @@ This command changes the thread apartment state in the MaintenanceShell configur
 The change is effective when you restart the **WinRM** service.
 
 ### Example 2: Create and change a session configuration
+
 ```
 The first command uses the **Register-PSSessionConfiguration** cmdlet to create the AdminShell configuration.
 PS C:\> Register-PSSessionConfiguration -Name "AdminShell" -AssemblyName "C:\Shells\AdminShell.dll" -ConfigurationTypeName "AdminClass"
@@ -92,6 +97,7 @@ PS C:\> Set-PSSessionConfiguration -Name "AdminShell" -StartupScript $Null
 ```
 
 ### Example 3: Display results
+
 ```
 PS C:\> Set-PSSessionConfiguration -Name "IncObj" -MaximumReceivedObjectSizeMB 20
 WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin\IncObj\InitializationParameters
@@ -111,6 +117,7 @@ This command also prompts you to restart the **WinRM** service.
 The change is not effective until the **WinRM** service is restarted.
 
 ### Example 4: Display results in different ways
+
 ```
 The first command uses the **Set-PSSessionConfiguration** cmdlet to change the startup script in the MaintenanceShell session configuration to Maintenance.ps1. The output of this command shows the change and prompts you to restart the **WinRM** service. The response is "y" (yes).
 PS C:\> Set-PSSessionConfiguration -Name "MaintenanceShell" -StartupScript "C:\ps-test\Maintenance.ps1"
@@ -153,6 +160,7 @@ startupscript c:\ps-test\Maintenance.ps1
 ## PARAMETERS
 
 ### -AccessMode
+
 Enables and disables the session configuration and determines whether it can be used for remote or local sessions on the computer.
 The acceptable values for this parameter are:
 
@@ -188,6 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationBase
+
 Specifies the path of the assembly file (*.dll) that is specified in the value of the *AssemblyName* parameter.
 
 ```yaml
@@ -203,6 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -AssemblyName
+
 Specifies the assembly name.
 This cmdlet creates a session configuration based on a class that is defined in an assembly.
 
@@ -222,6 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationTypeName
+
 Specifies the type of the session configuration that is defined in the assembly in the *AssemblyName* parameter.
 The type that you specify must implement the **System.Management.Automation.Remoting.PSSessionConfiguration** class.
 
@@ -240,6 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Suppresses all user prompts, and restarts the **WinRM** service without prompting.
 Restarting the service makes the configuration change effective.
 
@@ -258,6 +270,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumReceivedDataSizePerCommandMB
+
 Specifies the limit on the amount of data that can be sent to this computer in any single remote command.
 Enter the data size in megabytes (MB).
 The default is 50 MB.
@@ -278,6 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumReceivedObjectSizeMB
+
 Specifies the limits on the amount of data that can be sent to this computer in any single object.
 Enter the data size in megabytes.
 The default is 10 MB.
@@ -298,6 +312,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModulesToImport
+
 Specifies the modules and snap-ins that are automatically imported into sessions that use the session configuration.
 Enter the module and snap-in names.
 
@@ -323,6 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the name of the session configuration that you want to change.
 
 You cannot use this parameter to change the name of the session configuration.
@@ -340,6 +356,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoServiceRestart
+
 Does not restart the **WinRM** service, and suppresses the prompt to restart the service.
 
 By default, when you run **Set-PSSessionConfiguration**, you are prompted to restart the **WinRM** service to make the new session configuration effective.
@@ -361,6 +378,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path of a session configuration file (.pssc), such as one created by the **New-PSSessionConfigurationFile** cmdlet.
 If you omit the path, the default is the current directory.
 
@@ -381,6 +399,7 @@ Accept wildcard characters: False
 ```
 
 ### -PSVersion
+
 Specifies the version of Windows PowerShell in sessions that use this session configuration.
 
 The value of this parameter takes precedence over the value of the **PowerShellVersion** key in the session configuration file.
@@ -400,6 +419,7 @@ Accept wildcard characters: False
 ```
 
 ### -RunAsCredential
+
 Specifies credentials for commands in the session.
 By default, commands run with the permissions of the current user.
 
@@ -418,6 +438,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityDescriptorSddl
+
 Specifies a different Security Descriptor Definition Language (SDDL) string for the configuration.
 
 This string determines the permissions that are required to use the new session configuration.
@@ -442,6 +463,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionTypeOption
+
 Specifies type-specific options for the session configuration.
 Enter a session type options object, such as the **PSWorkflowExecutionOption** object that the New-PSWorkflowExecutionOption cmdlet returns.
 
@@ -464,6 +486,7 @@ Accept wildcard characters: False
 ```
 
 ### -ShowSecurityDescriptorUI
+
 Indicates that this cmdlet a property sheet that helps you create a new SDDL for the session configuration.
 The property sheet appears after you run the **Set-PSSessionConfiguration** command and then restart the **WinRM** service.
 
@@ -484,6 +507,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartupScript
+
 Specifies the startup script for the configuration.
 Enter the fully qualified path of a PowerShell script.
 The specified script runs in the new session that uses the session configuration.
@@ -506,6 +530,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThreadOptions
+
 Specifies the thread options setting in the configuration.
 This setting defines how threads are created and used when a command is executed in the session.
 The acceptable values for this parameter are:
@@ -533,6 +558,7 @@ Accept wildcard characters: False
 ```
 
 ### -TransportOption
+
 Specifies the transport options for the session configuration.
 Enter a transport options object, such as the **WSManConfigurationOption** object that the New-PSTransportOption cmdlet returns.
 
@@ -555,6 +581,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSharedProcess
+
 Use only one process to host all sessions that are started by the same user and use the same session configuration.
 By default, each session is hosted in its own process.
 
@@ -573,6 +600,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -588,6 +616,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -604,11 +633,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
@@ -616,6 +647,7 @@ You cannot pipe input to this cmdlet.
 ### Microsoft.WSMan.Management.WSManConfigLeafElement
 
 ## NOTES
+
 * To run this cmdlet, start PowerShell by using the Run as administrator option.
 * The **Set-PSSessionConfiguration** cmdlet does not change the configuration name and the **WSMan** provider does not support the Rename-Item cmdlet. To change the name of a session configuration, use the Unregister-PSSessionConfiguration cmdlet to delete the configuration and then use the **Register-PSSessionConfiguration** cmdlet to create and register a new session configuration.
 * You can use the **Set-PSSessionConfiguration** cmdlet to change the default Microsoft.PowerShell and Microsoft.PowerShell32 session configurations. They are not protected. To revert to the original version of a default session configuration, use the **Unregister-PSSessionConfiguration** cmdlet to delete the default session configuration and then use the Enable-PSRemoting cmdlet to restore it.
