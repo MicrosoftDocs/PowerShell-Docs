@@ -10,7 +10,6 @@ title:  Invoke-AsWorkflow
 # Invoke-AsWorkflow
 
 ## SYNOPSIS
-
 Runs a command or expression as a Windows PowerShell Workflow.
 
 ## SYNTAX
@@ -159,7 +158,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-{{Fill InputObject Description}}
+Used to allows pipeline input.
 
 ```yaml
 Type: Object
@@ -179,7 +178,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### WorkflowCommonParameters
 
-This cmdlet also supports workflow specific common parameters.  
+This cmdlet also supports workflow specific common parameters.
 For information, see [about_WorkflowCommonParameters](../PSWorkflow/About/about_WorkflowCommonParameters.md).
 
 ## INPUTS
