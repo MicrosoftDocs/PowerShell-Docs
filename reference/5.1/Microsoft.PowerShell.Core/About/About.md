@@ -88,9 +88,17 @@ Explains Data sections, which isolate text strings and other read-only data from
 
 Describes the PowerShell debugger.
 
+### [about_desiredstateconfiguration](about_desiredstateconfiguration.md)
+
+Provides a brief introduction to the PowerShell Desired State Configuration (DSC) feature.
+
 ### [about_Do](about_Do.md)
 
 Runs a statement list one or more times, subject to a While or Until condition.
+
+### [about_dsclogresource](about_dsclogresource.md)
+
+Provides a brief introduction to the PowerShell Desired State Configuration (DSC) Log Resource. LONG DESCRIPTION
 
 ### [about_Enum](about_Enum.md)
 
@@ -103,6 +111,10 @@ Provides access to the Environment variables and the values that they represent.
 ### [about_Environment_Variables](about_Environment_Variables.md)
 
 Describes how to access Windows environment variables in Windows PowerShell.
+
+### [about_Eventlogs](about_Eventlogs.md)
+
+Windows PowerShell creates a Windows event log that is named "Windows PowerShell" to record Windows PowerShell events.
 
 ### [about_Execution_Policies](about_Execution_Policies.md)
 
@@ -200,11 +212,7 @@ Describes how to edit commands at the PowerShell command prompt.
 
 Describes how to access items from the working location in PowerShell.
 
-### [about_Logging_Non-Windows](about_Logging_Non-Windows.md)
-
-PowerShell logs internal operations from the engine, providers, and cmdlets.
-
-### [about_Logging_Windows](about_Logging_Windows.md)
+### [about_Logging](about_Logging.md)
 
 PowerShell logs internal operations from the engine, providers, and cmdlets.
 
@@ -226,7 +234,7 @@ Explains how to create objects in  PowerShell.
 
 ### [about_Objects](about_Objects.md)
 
-Provides essential information about objects in PowerShell.
+Provides essential information about objects in Windows PowerShell.
 
 ### [about_Operator_Precedence](about_Operator_Precedence.md)
 
@@ -260,9 +268,13 @@ Describes the full and relative path name formats in  PowerShell.
 
 Combining commands into pipelines in the PowerShell
 
-### [about_PowerShell_Config](about_PowerShell_Config.md)
+### [about_PowerShell_exe](about_PowerShell_exe.md)
 
-Configuration files for PowerShell Core, replacing Registry configuration.
+Explains how to use the PowerShell.exe command-line tool. Displays the syntax and describes the command-line switches.  PowerShell.exe starts a Windows PowerShell session. You can use it in Cmd.exe and in Windows PowerShell.
+
+### [about_PowerShell_Ise_exe](about_PowerShell_Ise_exe.md)
+
+Explains how to use the PowerShell_Ise.exe from the command-line.
 
 ### [about_Preference_Variables](about_Preference_Variables.md)
 
@@ -284,10 +296,6 @@ Describes how to use object properties in PowerShell.
 
 Describes how PowerShell providers provide access to data and components that would not otherwise be easily accessible at the command line.
 
-### [about_psconsolehostreadline](about_psconsolehostreadline.md)
-
-Explains how to create a customize how PowerShell reads input at the console prompt.
-
 ### [about_PSSession_Details](about_PSSession_Details.md)
 
 Provides detailed information about PowerShell sessions and the role they play in remote commands.
@@ -296,9 +304,9 @@ Provides detailed information about PowerShell sessions and the role they play i
 
 Describes PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
 
-### [about_pwsh](about_pwsh.md)
+### [about_PSSnapins](about_PSSnapins.md)
 
-Explains how to use the pwsh command-line tool. Displays the syntax and describes the command-line switches.  pwsh starts a PowerShell session.
+Describes  Windows PowerShell┬« snap-ins and shows how to use and manage them.
 
 ### [about_Quoting_Rules](about_Quoting_Rules.md)
 
@@ -420,6 +428,10 @@ Explains how to use a switch to handle multiple If statements.
 
 Describes the Throw keyword, which generates a terminating error.
 
+### [about_Transactions](about_Transactions.md)
+
+Describes how to manage transacted operations in PowerShell.
+
 ### [about_Trap](about_Trap.md)
 
 Describes a keyword that handles a terminating error.
@@ -460,3 +472,30 @@ Describes a language statement that you can use to run a command block based on 
 
 Describes how to use wildcard characters in PowerShell.
 
+### [about_windows_powershell_5.1](about_windows_powershell_5.1.md)
+
+Describes new features that are included in Windows PowerShell 5.1.
+
+### [about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
+
+Describes the features and system requirements of Windows PowerShell Integrated Scripting Environment (ISE).
+
+### [about_Windows_RT](about_Windows_RT.md)
+
+Explains limitations of  Windows PowerShell┬« 4.0 on Windows RT 8.1.
+
+### [about_WMI](about_WMI.md)
+
+Windows Management Instrumentation (WMI) uses the Common Information Model (CIM) to represent systems, applications, networks, devices, and other manageable components of the modern enterprise.
+
+### [about_WMI_Cmdlets](about_WMI_Cmdlets.md)
+
+Provides background information about Windows Management Instrumentation (WMI) and Windows PowerShell.
+
+### [about_WQL](about_WQL.md)
+
+Describes WMI Query Language (WQL), which can be used to get WMI objects in Windows PowerShell.
+
+### [about_WS-Management_Cmdlets](about_WS-Management_Cmdlets.md)
+
+Provides an overview of Web Services for Management (WS-Management) as background for using the WS-Management cmdlets in Windows PowerShell.
