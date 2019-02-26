@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821482
 schema: 2.0.0
 title: Get-Command
 ---
-
 # Get-Command
 
 ## SYNOPSIS
@@ -17,6 +16,7 @@ Gets all commands.
 ## SYNTAX
 
 ### CmdletSet (Default)
+
 ```
 Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
  [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
@@ -25,6 +25,7 @@ Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
 ```
 
 ### AllCommandSet
+
 ```
 Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
  [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>]
@@ -32,6 +33,7 @@ Get-Command [[-Name] <String[]>] [-Module <String[]>] [-FullyQualifiedModule <Mo
 ```
 
 ## DESCRIPTION
+
 The `Get-Command` cmdlet gets all commands that are installed on the computer, including cmdlets, aliases, functions, filters, scripts, and applications.
 `Get-Command` gets the commands from PowerShell modules and snap-ins and commands that were imported from other sessions.
 To get only commands that have been imported into the current session, use the **ListImported** parameter.
@@ -51,6 +53,7 @@ A new **Version** property has been added to the **CommandInfo** class.
 ## EXAMPLES
 
 ### Example 1: Get cmdlets, functions, and aliases
+
 ```
 PS C:\> Get-Command
 ```
@@ -58,6 +61,7 @@ PS C:\> Get-Command
 This command gets the PowerShell cmdlets, functions, and aliases that are installed on the computer.
 
 ### Example 2: Get commands in the current session
+
 ```
 PS C:\> Get-Command -ListImported
 ```
@@ -65,6 +69,7 @@ PS C:\> Get-Command -ListImported
 This command uses the *ListImported* parameter to get only the commands in the current session.
 
 ### Example 3: Get cmdlets and display them in order
+
 ```
 PS C:\> Get-Command -Type Cmdlet | Sort-Object -Property Noun | Format-Table -GroupBy Noun
 ```
@@ -73,6 +78,7 @@ This command gets all of the cmdlets, sorts them alphabetically by the noun in t
 This display can help you find the cmdlets for a task.
 
 ### Example 4: Get commands in a module
+
 ```powershell
 Get-Command -Module Microsoft.PowerShell.Security, Microsoft.PowerShell.Utility
 ```
@@ -80,6 +86,7 @@ Get-Command -Module Microsoft.PowerShell.Security, Microsoft.PowerShell.Utility
 This command uses the **Module** parameter to get the commands in the Microsoft.PowerShell.Security and Microsoft.PowerShell.Utility modules.
 
 ### Example 5: Get information about a cmdlet
+
 ```
 PS C:\> Get-Command Get-AppLockerPolicy
 ```
@@ -93,6 +100,7 @@ To enable, disable, and configuration automatic importing of modules, use the **
 For more information, see about_Preference_Variables.
 
 ### Example 6: Get the syntax of a cmdlet
+
 ```
 PS C:\> Get-Command Get-Childitem -Args Cert: -Syntax
 ```
@@ -105,6 +113,7 @@ When you compare the syntax displayed in the output with the syntax that is disp
 For more information about the Certificate provider, see Certificate Provider.
 
 ### Example 7: Get dynamic parameters
+
 ```
 PS C:\> function Get-DynamicParameters
 {
@@ -125,6 +134,7 @@ Dynamic parameter can be added to a cmdlet by another cmdlet or a provider.
 The command in the example uses the **Get-DynamicParameters** function to get the dynamic parameters that the Certificate provider adds to the Get-ChildItem cmdlet when it is used in the Cert: drive.
 
 ### Example 8: Get all commands of all types
+
 ```
 PS C:\> Get-Command *
 ```
@@ -133,6 +143,7 @@ This command gets all commands of all types on the local computer, including exe
 It returns an **ApplicationInfo** object (System.Management.Automation.ApplicationInfo) for each file, not a **FileInfo** object (System.IO.FileInfo).
 
 ### Example 9: Get cmdlets by using a name
+
 ```
 PS C:\> Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
 ```
@@ -143,6 +154,7 @@ You can use a command like this one to find cmdlets that let you specify the met
 The *ParameterType* parameter distinguishes parameters that take an **AuthenticationMechanism** value from those that take an *AuthenticationLevel* parameter, even when they have similar names.
 
 ### Example 10: Get an alias
+
 ```
 PS C:\> Get-Command dir
 CommandType     Name                                               ModuleName
@@ -157,6 +169,7 @@ The output of the command shows the special view of the **Name** property value 
 The view shows the alias and the full command name.
 
 ### Example 11: Get all instances of the Notepad command
+
 ```
 PS C:\> Get-Command Notepad -All | Format-Table CommandType, Name, Definition
 
@@ -176,6 +189,7 @@ To run a command other than the first one in the list, type the fully qualified 
 For more information about command precedence, see [about_Command_Precedence](About/about_Command_Precedence.md).
 
 ### Example 12: Get the name of a snap-in or module that contains a cmdlet
+
 ```
 PS C:\> (Get-Command Get-Date).ModuleName
 Microsoft.PowerShell.Utility
@@ -187,6 +201,7 @@ The command uses the **ModuleName** property of all commands.
 This command format works on commands in PowerShell modules and snap-ins, even if they are not imported into the session.
 
 ### Example 13: Get cmdlets and functions that have an output type
+
 ```
 PS C:\> Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name, OutputType
 ```
@@ -200,6 +215,7 @@ Another pipeline operator sends the selected cmdlet objects to the Format-List c
 The **OutputType** property of a **CommandInfo** object has a non-null value only when the cmdlet code defines the **OutputType** attribute for the cmdlet.
 
 ### Example 14: Get cmdlets that take a specific object type as input
+
 ```
 PS C:\> Get-Command -ParameterType (((Get-NetAdapter)[0]).PSTypeNames)
 CommandType     Name                                               ModuleName
@@ -220,6 +236,7 @@ To get the **PSTypeNames** property of a net adapter, and not the **PSTypeNames*
 ## PARAMETERS
 
 ### -All
+
 Indicates that this cmdlet gets all commands, including commands of the same type that have the same name.
 By default, **Get-Command** gets only the commands that run when you type the command name.
 
@@ -243,6 +260,7 @@ Accept wildcard characters: False
 ```
 
 ### -ArgumentList
+
 Specifies an array of arguments.
 This cmdlet gets information about a cmdlet or function when it is used with the specified parameters ("arguments").
 The alias for *ArgumentList* is *Args*.
@@ -267,6 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommandType
+
 Specifies the  types of commands that this cmdlet gets.
 Enter one or more command types.
 Use *CommandType* or its alias, *Type*.
@@ -297,6 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedModule
+
 Specifies modules with names that are specified in the form of ModuleSpecification objects, described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290) in the MSDN library.
 For example, the FullyQualifiedModule parameter accepts a module name that is specified in the format @{ModuleName = "modulename"; ModuleVersion = "version_number"} or @{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}.
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional.
@@ -317,6 +337,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListImported
+
 Indicates that this cmdlet gets only commands in the current session.
 
 Starting in Windows PowerShell 3.0, by default, **Get-Command** gets all installed commands, including, but not limited to, the commands in the current session.
@@ -337,6 +358,7 @@ Accept wildcard characters: False
 ```
 
 ### -Module
+
 Specifies an array of modules.
 This cmdlet gets the commands that came from the specified modules or snap-ins.
 Enter the names of modules or snap-ins, or enter snap-in or module objects.
@@ -359,6 +381,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of names.
 This cmdlet gets only commands that have the specified name.
 Enter a name or name pattern.
@@ -380,6 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### -Noun
+
 Specifies an array of command nouns.
 This cmdlet gets commands, which include cmdlets, functions, and aliases, that have names that include the specified noun.
 Enter one or more nouns or noun patterns.
@@ -398,6 +422,7 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterName
+
 Specifies an array of parameter names.
 This cmdlet gets commands in the session that have the specified parameters.
 Enter parameter names or parameter aliases.
@@ -420,6 +445,7 @@ Accept wildcard characters: False
 ```
 
 ### -ParameterType
+
 Specifies an array of parameter names.
 This cmdlet gets commands in the session that have parameters of the specified type.
 Enter the full name or partial name of a parameter type.
@@ -442,6 +468,7 @@ Accept wildcard characters: False
 ```
 
 ### -ShowCommandInfo
+
 Indicates that this cmdlet displays command information.
 
 For more information about the method that PowerShell uses to select the command to run when multiple commands have the same name, see [about_Command_Precedence](About/about_Command_Precedence.md).
@@ -464,6 +491,7 @@ Accept wildcard characters: False
 ```
 
 ### -Syntax
+
 Indicates that this cmdlet gets only the following specified data about the command:
 
 - Aliases. Gets the standard name.
@@ -484,6 +512,7 @@ Accept wildcard characters: False
 ```
 
 ### -TotalCount
+
 Specifies the number of commands to get.
 You can use this parameter to limit the output of a command.
 
@@ -500,6 +529,7 @@ Accept wildcard characters: False
 ```
 
 ### -Verb
+
 Specifies an array of command verbs.
 This cmdlet gets commands, which include cmdlets, functions, and aliases, that have names that include the specified verb.
 Enter one or more verbs or verb patterns.
@@ -518,32 +548,40 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe command names to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.CommandInfo
+
 This cmdlet returns objects derived from the **CommandInfo** class.
 The type of object that is returned depends on the type of command that **Get-Command** gets.
 
 ### System.Management.Automation.AliasInfo
+
 Represents aliases.
 
 ### System.Management.Automation.ApplicationInfo
+
 Represents or applications and files.
 
 ### System.Management.Automation.CmdletInfo
+
 Represents cmdlets.
 
 ### System.Management.Automation.FunctionInfo
+
 Represents functions and filters.
 
 ## NOTES
+
 * When more than one command that has the same name is available to the session, **Get-Command** returns the command that runs when you type the command name. To get commands that have the same name, listed in run order, use the *All* parameter. For more information, see about_Command_Precedence.
 * When a module is imported automatically, the effect is the same as using the Import-Module cmdlet. The module can add commands, types and formatting files, and run scripts in the session. To enable, disable, and configuration automatic importing of modules, use the $PSModuleAutoLoadingPreference preference variable. For more information, see about_Preference_Variables.
 

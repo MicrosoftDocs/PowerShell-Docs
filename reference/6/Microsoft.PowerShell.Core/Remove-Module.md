@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821510
 schema: 2.0.0
 title: Remove-Module
 ---
-
 # Remove-Module
 
 ## SYNOPSIS
@@ -17,21 +16,25 @@ Removes modules from the current session.
 ## SYNTAX
 
 ### name
+
 ```
 Remove-Module [-Name] <String[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### FullyQualifiedName
+
 ```
 Remove-Module [-FullyQualifiedName] <ModuleSpecification[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ModuleInfo
+
 ```
 Remove-Module [-ModuleInfo] <PSModuleInfo[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Remove-Module** cmdlet removes the members of a module, such as cmdlets and functions, from the current session.
 
 If the module includes an assembly (.dll), all members that are implemented by the assembly are removed, but the assembly is not unloaded.
@@ -42,6 +45,7 @@ It affects only the current PowerShell session.
 ## EXAMPLES
 
 ### Example 1: Remove a module
+
 ```
 PS C:\> Remove-Module -Name "BitsTransfer"
 ```
@@ -49,6 +53,7 @@ PS C:\> Remove-Module -Name "BitsTransfer"
 This command removes the BitsTransfer module from the current session.
 
 ### Example 2: Remove all modules
+
 ```
 PS C:\> Get-Module | Remove-Module
 ```
@@ -56,6 +61,7 @@ PS C:\> Get-Module | Remove-Module
 This command removes all modules from the current session.
 
 ### Example 3: Remove modules by using the pipeline
+
 ```
 PS C:\> "FileTransfer", "PSDiagnostics" | Remove-Module -Verbose
 VERBOSE: Performing operation "Remove-Module" on Target "filetransfer (Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\filetransfer\filetransfer.psd1')".
@@ -85,6 +91,7 @@ The messages differ because the BitsTransfer module includes an assembly that im
 The PSDiagnostics module includes a module script file (.psm1) that exports functions.
 
 ### Example 4: Remove a module by using ModuleInfo
+
 ```
 PS C:\> $a = Get-Module BitsTransfer
 PS C:\> Remove-Module -ModuleInfo $a
@@ -95,6 +102,7 @@ This command uses the *ModuleInfo* parameter to remove the BitsTransfer module.
 ## PARAMETERS
 
 ### -Force
+
 Indicates that this cmdlet removes read-only modules.
 By default, **Remove-Module** removes only read-write modules.
 
@@ -113,6 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedName
+
 Specifies the fully qualified names of modules to remove.
 
 ```yaml
@@ -128,6 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleInfo
+
 Specifies the module objects to remove.
 Enter a variable that contains a module object (**PSModuleInfo**) or a command that gets a module object, such as a Get-Module command.
 You can also pipe module objects to **Remove-Module**.
@@ -145,6 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names of modules to remove.
 Wildcard characters are permitted.
 You can also pipe name strings to **Remove-Module**.
@@ -162,6 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -177,6 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -193,19 +206,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String, System.Management.Automation.PSModuleInfo
+
 You can pipe module names and module objects to **Remove-Module**.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES
+
 When removing a module, there is an event on the module that will execute.
 This event allows a module to react to being removed and perform some cleanup such as freeing up resources. Example:
 
