@@ -8,24 +8,25 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821487
 schema: 2.0.0
 title: Get-PSHostProcessInfo
 ---
-
 # Get-PSHostProcessInfo
 
 ## SYNOPSIS
-
 ## SYNTAX
 
 ### ProcessNameParameterSet (Default)
+
 ```
 Get-PSHostProcessInfo [[-Name] <String[]>] [<CommonParameters>]
 ```
 
 ### ProcessParameterSet
+
 ```
 Get-PSHostProcessInfo [-Process] <Process[]> [<CommonParameters>]
 ```
 
 ### ProcessIdParameterSet
+
 ```
 Get-PSHostProcessInfo [-Id] <Int32[]> [<CommonParameters>]
 ```
@@ -35,11 +36,13 @@ Get-PSHostProcessInfo [-Id] <Int32[]> [<CommonParameters>]
 ## EXAMPLES
 
 ### 1:
+
 ```
 PS C:\>
 ```
 
 ### 2:
+
 ```
 PS C:\>
 ```
@@ -89,6 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -96,7 +100,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-
-## RELATED LINKS
 
 ## RELATED LINKS

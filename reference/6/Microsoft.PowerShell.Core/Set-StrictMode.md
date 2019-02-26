@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821517
 schema: 2.0.0
 title: Set-StrictMode
 ---
-
 # Set-StrictMode
 
 ## SYNOPSIS
@@ -17,16 +16,19 @@ Establishes and enforces coding rules in expressions, scripts, and script blocks
 ## SYNTAX
 
 ### Version (Default)
+
 ```
 Set-StrictMode -Version <Version> [<CommonParameters>]
 ```
 
 ### Off
+
 ```
 Set-StrictMode [-Off] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Set-StrictMode** cmdlet configures strict mode for the current scope and all child scopes, and turns it on and off.
 When strict mode is on, PowerShell generates a terminating error when the content of an expression, script, or script block violates basic best-practice coding rules.
 
@@ -42,6 +44,7 @@ Unnamed variables are not permitted.
 ## EXAMPLES
 
 ### Example 1: Turn on strict mode as version 1.0
+
 ```
 PS C:\> Set-StrictMode -Version 1.0
 PS C:\> $a -gt 5
@@ -64,6 +67,7 @@ As a result, attempts to reference variables that are not initialized fail.
 The sample output shows the effect of version 1.0 strict mode.
 
 ### Example 2: Turn on strict mode as version 2.0
+
 ```
 PS C:\> # Set-StrictMode -Version 2.0
 # Strict mode is off by default.
@@ -112,6 +116,7 @@ By using version 2.0, it is interpreted correctly as a reference error.
 ## PARAMETERS
 
 ### -Off
+
 Indicates that this cmdlet turns strict mode off.
 This parameter also turns off `Set-PSDebug -Strict`.
 
@@ -128,6 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -Version
+
 Specifies the conditions that cause an error in strict mode.
 
 The acceptable values for this parameter are:
@@ -161,19 +167,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES
+
 * **Set-StrictMode** is like the *Strict* parameter of **Set-PSDebug**. `Set-StrictMode -Version 1` is equivalent to `Set-PSDebug -Strict`, except that **Set-PSDebug** is effective in all scopes. **Set-StrictMode** is effective only in the scope in which it is set and in its child scopes. For more information about scopes in PowerShell, see about_Scopes.
 
 *

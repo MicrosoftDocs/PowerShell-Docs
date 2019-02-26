@@ -325,6 +325,7 @@ the remote computer. For more information about the `$PSSessionConfiguration` va
 ## PARAMETERS
 
 ### -Force
+
 Suppresses the prompt to restart the WinRM service, if the service is not already running.
 
 ```yaml

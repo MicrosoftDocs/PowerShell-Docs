@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821496
 schema: 2.0.0
 title: New-ModuleManifest
 ---
-
 # New-ModuleManifest
 
 ## SYNOPSIS
@@ -243,7 +242,7 @@ Author                      : Microsoft Corporation
 AccessMode                  : ReadWrite
 ClrVersion                  : 4.0
 CompanyName                 : Microsoft Corporation
-Copyright                   : © Microsoft Corporation. All rights reserved.
+Copyright                   : ï¿½ Microsoft Corporation. All rights reserved.
 DotNetFrameworkVersion      :
 ExportedFunctions           : {}
 ExportedCmdlets             : {[Get-WinEvent, Get-WinEvent], [Get-Counter, Get-Counter], [Import-Counter,
@@ -825,6 +824,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProjectUri
+
 Specifies the URL of a web page about this project.
 
 ```yaml
@@ -840,6 +840,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReleaseNotes
+
 Specifies release notes.
 
 ```yaml
@@ -922,6 +923,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
+
 Specifies an array of tags.
 
 ```yaml

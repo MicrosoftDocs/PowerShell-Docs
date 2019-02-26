@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821523
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
 ---
-
 # Unregister-PSSessionConfiguration
 
 ## SYNOPSIS
@@ -22,6 +21,7 @@ Unregister-PSSessionConfiguration [-Name] <String> [-Force] [-NoServiceRestart] 
 ```
 
 ## DESCRIPTION
+
 The **Unregister-PSSessionConfiguration** cmdlet deletes registered session configurations from the computer.
 This is an advanced cmdlet that is designed for system administrators to manage customized session configurations for users.
 
@@ -34,6 +34,7 @@ For more information, see [about_Session_Configurations](About/about_Session_Con
 ## EXAMPLES
 
 ### Example 1: Delete a session configuration
+
 ```
 PS C:\> Unregister-PSSessionConfiguration -Name "MaintenanceShell"
 ```
@@ -41,6 +42,7 @@ PS C:\> Unregister-PSSessionConfiguration -Name "MaintenanceShell"
 This command deletes the MaintenanceShell session configuration from the computer.
 
 ### Example 2: Delete a session configuration and restart the WinRM service
+
 ```
 PS C:\> Unregister-PSSessionConfiguration -Name MaintenanceShell -Force
 ```
@@ -49,6 +51,7 @@ This command deletes the MaintenanceShell session configuration from the compute
 The command specifies the *Force* parameter to suppress all user messages, and to restart the **WinRM** service without prompting.
 
 ### Example 3: Delete all session configurations
+
 ```
 PS C:\> Unregister-PSSessionConfiguration -Name *
 PS C:\> Get-PSSessionConfiguration -Name * | Unregister-PSSessionConfiguration
@@ -58,6 +61,7 @@ These commands delete all of the session configurations on the computer.
 The commands have the same effect and can be used interchangeably.
 
 ### Example 4: Unregister without a restart
+
 ```
 PS C:\> Unregister-PSSessionConfiguration -Name "MaintenanceShell" -NoServiceRestart
 PS C:\> Get-PSSessionConfiguration -Name "MaintenanceShell"
@@ -100,6 +104,7 @@ This time, the session fails because the MaintenanceShell configuration has been
 ## PARAMETERS
 
 ### -Force
+
 Indicates that the cmdlet does not prompt you for confirmation, and restarts the **WinRM** service without prompting.
 Restarting the service makes the configuration change effective.
 
@@ -118,6 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the names of the session configurations to delete.
 Enter one session configuration name or a configuration name pattern.
 Wildcard characters are permitted.
@@ -138,6 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoServiceRestart
+
 Indicates that this cmdlet does not restart the **WinRM** service, and suppresses the prompt to restart the service.
 
 By default, when you run an **Unregister-PSSessionConfiguration** command, you are prompted to restart the **WinRM** service to make the change effective.
@@ -159,6 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -174,6 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -190,19 +199,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration
+
 You can pipe a session configuration object from **Get-PSSessionConfiguration** to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any objects.
 
 ## NOTES
+
 * To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows operating system, you must start PowerShell by using the Run as administrator option.
 
 *
