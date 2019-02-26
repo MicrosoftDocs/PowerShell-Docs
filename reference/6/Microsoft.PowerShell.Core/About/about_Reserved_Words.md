@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Reserved_Words
 ---
-
 # About Reserved Words
 
 ## SHORT DESCRIPTION
-
 Lists the reserved words that cannot be used as identifiers because they
 have a special meaning in PowerShell.
 

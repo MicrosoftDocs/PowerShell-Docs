@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Special_Characters
 ---
-
 # About Special Characters
 
 ## SHORT DESCRIPTION
-
 Describes the special characters that you can use to control how Windows
 PowerShell interprets the next character in a command or parameter.
 

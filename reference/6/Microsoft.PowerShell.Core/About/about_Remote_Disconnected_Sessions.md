@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Disconnected_Sessions
 ---
-
 # About Remote Disconnected Sessions
 
 ## Short Description
-
 Explains how to disconnect from and reconnect to a PSSession
 
 ## Long Description
