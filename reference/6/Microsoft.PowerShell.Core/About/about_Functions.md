@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions
 ---
-
 # About Functions
 
 ## SHORT DESCRIPTION
-
 Describes how to create and use functions in PowerShell.
 
 ## LONG DESCRIPTION

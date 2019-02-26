@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Automatic_Variables
 ---
-
 # About Automatic Variables
 
 ## SHORT DESCRIPTION
-
 Describes variables that store state information for PowerShell. These
 variables are created and maintained by PowerShell.
 
@@ -479,6 +477,7 @@ object that `Get-Event` returns.
 Contains the identifier of the current shell.
 
 ### $StackTrace
+
 Contains a stack trace for the most recent error.
 
 ### $THIS
