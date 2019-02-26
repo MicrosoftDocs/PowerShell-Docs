@@ -10,7 +10,6 @@ title:  Copy-Item
 # Copy-Item
 
 ## SYNOPSIS
-
 Copies an item from one location to another.
 
 ## SYNTAX
@@ -284,6 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -FromSession
+
 Specifies the **PSSession** object from which a remote file is being copied.
 When you use this parameter, the *Path* and *LiteralPath* parameters refer to the local path on the remote machine.
 
@@ -388,6 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### -ToSession
+
 Specifies the **PSSession** object to which a remote file is being copied.
 When you use this parameter, the *Path* and *LiteralPath* parameters refer to the local path on the remote machine.
 
@@ -404,6 +405,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -419,6 +421,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
