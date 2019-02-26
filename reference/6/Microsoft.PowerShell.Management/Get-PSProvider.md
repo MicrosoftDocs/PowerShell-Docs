@@ -132,5 +132,3 @@ This cmdlet returns objects that represent the PowerShell providers in the sessi
 ## NOTES
 
 ## RELATED LINKS
-
-## RELATED LINKS
