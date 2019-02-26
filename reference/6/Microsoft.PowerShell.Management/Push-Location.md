@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821612
 schema: 2.0.0
 title: Push-Location
 ---
-
 # Push-Location
 
 ## SYNOPSIS
@@ -17,11 +16,13 @@ Adds the current location to the top of a location stack.
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Push-Location [[-Path] <String>] [-PassThru] [-StackName <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
 Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [<CommonParameters>]
 ```
