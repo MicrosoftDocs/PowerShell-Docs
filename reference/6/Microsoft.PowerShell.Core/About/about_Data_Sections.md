@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Data_Sections
 ---
-
 # About Data Sections
 
 ## Short Description
-
 Explains Data sections, which isolate text strings and other read-only
 data from script logic.
 

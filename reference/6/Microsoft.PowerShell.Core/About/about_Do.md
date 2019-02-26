@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Do
 ---
-
 # About Do
 
 ## SHORT DESCRIPTION
-
 Runs a statement list one or more times, subject to a While or Until
 condition.
 

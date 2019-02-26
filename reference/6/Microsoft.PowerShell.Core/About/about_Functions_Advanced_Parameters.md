@@ -8,7 +8,6 @@ title:  about_Functions_Advanced_Parameters
 # About Functions Advanced Parameters
 
 ## Short description
-
 Explains how to add parameters to advanced functions.
 
 ## Long description
