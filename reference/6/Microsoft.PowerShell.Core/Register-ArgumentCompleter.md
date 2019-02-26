@@ -160,5 +160,3 @@ This cmdlet returns no output.
 ## NOTES
 
 ## RELATED LINKS
-
-## RELATED LINKS
