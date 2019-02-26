@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  02/25/2019
 schema:  2.0.0
 locale:  en-US
 keywords:  powershell,cmdlet
@@ -12,6 +12,7 @@ Module Name:  Microsoft.PowerShell.Core
 # Microsoft.PowerShell.Core Module
 
 ## Description
+
 This section contains the help topics for the cmdlets that are installed with PowerShell Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of PowerShell.
 
 ## Microsoft.PowerShell.Core Cmdlets
@@ -22,11 +23,11 @@ Appends entries to the session history.
 
 ### [Clear-History](Clear-History.md)
 
-Deletes entries from the command history.
+Deletes entries from the PowerShell command history.
 
 ### [Clear-Host](Clear-Host.md)
 
-Clears the output screen of the current host.
+Clears the display in the host program.
 
 ### [Connect-PSSession](Connect-PSSession.md)
 
@@ -34,7 +35,11 @@ Reconnects to disconnected sessions.
 
 ### [Debug-Job](Debug-Job.md)
 
-Debugs a running background, remote, or PowerShell Workflow job.
+Debugs a running background, remote, or Windows PowerShell Workflow job.
+
+### [Disable-PSRemoting](Disable-PSRemoting.md)
+
+Prevents remote users from running commands on the local computer.
 
 ### [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
 
@@ -43,6 +48,10 @@ Disables session configurations on the local computer.
 ### [Disconnect-PSSession](Disconnect-PSSession.md)
 
 Disconnects from a session.
+
+### [Enable-PSRemoting](Enable-PSRemoting.md)
+
+Configures the computer to receive remote commands.
 
 ### [Enable-PSSessionConfiguration](Enable-PSSessionConfiguration.md)
 
@@ -94,7 +103,7 @@ Gets the modules that have been imported or that can be imported into the curren
 
 ### [Get-PSHostProcessInfo](Get-PSHostProcessInfo.md)
 
-Get information about the process that hosts the current PowerShell session.
+Gets process information about the PowerShell host.
 
 ### [Get-PSSession](Get-PSSession.md)
 
@@ -162,7 +171,7 @@ Sends output to the command line.
 
 ### [Out-Null](Out-Null.md)
 
-Deletes output instead of sending it down the pipeline.
+Hides the output instead of sending it down the pipeline or displaying it.
 
 ### [Receive-Job](Receive-Job.md)
 

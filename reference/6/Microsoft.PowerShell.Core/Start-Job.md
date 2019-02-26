@@ -327,7 +327,7 @@ Accept wildcard characters: False
 
 ### -HostName
 
-{{Fill HostName Description}}
+The DNS name of the target SSH host of the job.
 
 ```yaml
 Type: String[]
