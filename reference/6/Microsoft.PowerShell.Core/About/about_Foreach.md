@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Foreach
 ---
-
 # About ForEach
 
 ## SHORT DESCRIPTION
-
 Describes a language command you can use to traverse all the items in a
 collection of items.
 

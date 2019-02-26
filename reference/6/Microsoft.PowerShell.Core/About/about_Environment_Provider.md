@@ -9,7 +9,6 @@ online version:  https://go.microsoft.com/fwlink/?linkid=834944
 # Environment provider
 
 ## Provider name
-
 Environment
 
 ## Drives

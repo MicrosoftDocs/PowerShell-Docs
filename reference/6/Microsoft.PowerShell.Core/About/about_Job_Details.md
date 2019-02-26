@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Job_Details
 ---
-
 # About Job Details
 
 ## SHORT DESCRIPTION
-
 Provides details about background jobs on local and remote computers.
 
 ## DETAILED DESCRIPTION
