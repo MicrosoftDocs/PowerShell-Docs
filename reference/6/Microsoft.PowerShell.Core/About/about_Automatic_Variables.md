@@ -765,6 +765,103 @@ foreach ($num in ("one","two","three"))
 }
 ```
 
+```Output
+Iteration: 0
+        Num: one
+        Current: one
+Iteration: 1
+        Num: two
+        Current: two
+Before MoveNext (Current): two
+After MoveNext (Current): three
+Num has not changed: two
+```
+
+Using the **Reset** method resets the current element in the collection. The
+following example loops through the first two elements **twice** because the
+**Reset** method is called. After the first two loops, the `if` statement
+fails and the loop iterates through all three elements normally.
+
+> [!IMPORTANT]
+> This could result in an infinite loop.
+
+```powershell
+$stopLoop = 0
+foreach ($num in ("one","two", "three"))
+{
+    ("`t" * $stopLoop) + "Current: $($foreach.Current)"
+
+    if ($num -eq "two" -and $stopLoop -lt 2)
+    {
+        $foreach.Reset() | Out-Null
+        ("`t" * $stopLoop) + "Reset Loop: $stopLoop"
+        $stopLoop++
+    }
+}
+```
+
+```Output
+Current: one
+Current: two
+Reset Loop: 0
+        Current: one
+        Current: two
+        Reset Loop: 1
+                Current: one
+                Current: two
+                Current: three
+```
+
+### Example 5: Using the $switch variable
+
+The `$switch` variable has the exact same rules as the `$foreach` variable.
+The following example demonstrates all of the enumerator concepts.
+
+> [!NOTE]
+> Note how the **NotEvaluated** case is never executed, even though there is
+> no `break` statement after the **MoveNext** method.
+
+```powershell
+$values = "Start", "MoveNext", "NotEvaluated", "Reset", "End"
+$stopInfinite = $false
+switch ($values)
+{
+    "MoveNext" {
+        "`tMoveNext"
+        $switch.MoveNext() | Out-Null
+        "`tAfter MoveNext: $($switch.Current)"
+    }
+    # This case is never evaluated.
+    "NotEvaluated" {
+        "`tAfterMoveNext: $($switch.Current)"
+    }
+
+    "Reset" {
+        if (!$stopInfinite)
+        {
+            "`tReset"
+            $switch.Reset()
+            $stopInfinite = $true
+        }
+    }
+
+    default {
+        "Default (Current): $($switch.Current)"
+    }
+}
+```
+
+```Output
+Default (Current): Start
+    MoveNext
+    After MoveNext: NotEvaluated
+    Reset
+Default (Current): Start
+    MoveNext
+    After MoveNext: NotEvaluated
+Default (Current): End
+```
+
 ## SEE ALSO
 
 - [about_Hash_Tables](about_Hash_Tables.md)
