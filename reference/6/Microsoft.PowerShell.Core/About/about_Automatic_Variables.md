@@ -527,38 +527,243 @@ The `$input`, `$foreach`, and `$switch` variables are all enumerators used
 to iterate through the values processed by their containing code block.
 
 An enumerator contains properties and methods you can use to advance or reset
-iteration, or retrieve iteration values.
+iteration, or retrieve iteration values. Directly manipulating enumeators is not
+considered best practice.
+
+- Within loops, flow control keywords [break](about_Break.md) and [continue](about_Continue.md)
+  should be preferred.
+- Within functions that accepts pipeline input, it is best practice to
+  use Parameters with the **ValueFromPipeline** or
+  **ValueFromPipelineByPropertyName** attributes.
+
+  For more information, see [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
 
 ### MoveNext
 
-The **MoveNext** method attempts to set the `$input` variable equal to the next
-item in the pipeline. It returns **True** if the operation is successful, and
-**False** if the operation fails (no more items to retrieve). In the following
-example, the first value in the pipeline is skipped.
+The [MoveNext](/dotnet/api/system.collections.ienumerator.movenext) method
+advances the enumerator to the next element of the collection. **MoveNext**
+returns **True** if the enumerator was successfully advanced, **false** if
+the enumerator has passed the end of the collection.
+
+> [!NOTE]
+> The **Boolean** value returned my **MoveNext** is sent to the output stream.
+> You can suppress the output by typecasting it to `[void]` or piping it to
+> [Out-Null](Out-Null.md).
+>
+> ```powershell
+> $input.MoveNext() | Out-Null
+> ```
+>
+> ```powershell
+> [void]$input.MoveNext()
+> ```
+
+### Reset
+
+The [Reset](/dotnet/api/system.collections.ienumerator.reset) method sets
+the enumerator to its initial position, which is **before** the first element
+in the collection.
+
+### Current
+
+The [Current](/dotnet/api/system.collections.ienumerator.current) property
+gets the element in the collection, or pipeline, at the current position of
+the enumerator.
+
+The **Current** property continues to return the same property until
+**MoveNext** is called.
+
+### Examples
+
+#### Example 1: Using the Input variable
+
+In the following example, accessing the `$input` variable clears the variable
+until the next time the process block executes. Using the **Reset** method
+resets the `$input` variable to the current pipeline value.
 
 ```powershell
 function Test
 {
+    begin
+    {
+        $i = 0
+    }
+
     process
     {
-        $input.MoveNext()
-        $input
+        "Iteration: $i"
+        $i++
+        "`tInput: $input"
+        "`tAccess Again: $input"
+        $input.Reset()
+        "`tAfter Reset: $input"
     }
 }
 
-1,2 | Test
+"one","two" | Test
 ```
 
 ```Output
-True
-2
+Iteration: 0
+    Input: one
+    Access Again:
+    After Reset: one
+Iteration: 1
+    Input: two
+    Access Again:
+    After Reset: two
 ```
 
-When writing a function that accepts pipeline input, it is best practice to
-use Parameters with the **ValueFromPipeline** or
-**ValueFromPipelineByPropertyName** attributes.
+The process block automatically advances the `$input` variable even if you
+do not access it.
 
-For more information, see [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+```powershell
+$skip = $true
+function Skip
+{
+    begin
+    {
+        $i = 0
+    }
+
+    process
+    {
+        "Iteration: $i"
+        $i++
+        if ($skip)
+        {
+            "`tSkipping"
+            $skip = $false
+        }
+        else
+        {
+            "`tInput: $input"
+        }
+    }
+}
+
+"one","two" | Skip
+```
+
+```Output
+Iteration: 0
+    Skipping
+Iteration: 1
+    Input: two
+```
+
+### Example 2: Using $input outside the Process block
+
+Outside of the process block the `$input` variable represents all the values
+piped into the function.
+
+- Accessing the `$input` variable clears all values.
+- The **Reset** method resets the entire collection.
+- The **Current** property is never populated.
+- The **MoveNext** method returns false because the collection cannot be
+  advanced.
+  - Calling **MoveNext** clears out the `$input` variable.
+
+```powershell
+Function All
+{
+    "All Values: $input"
+    "Access Again: $input"
+    $input.Reset()
+    "After Reset: $input"
+    $input.MoveNext() | Out-Null
+    "After MoveNext: $input"
+}
+
+"one","two","three" | All
+```
+
+```Output
+All Values: one two three
+Access Again:
+After Reset: one two three
+After MoveNext:
+```
+
+### Example 3: Using the $input.Current property
+
+By using the **Current** property, the current pipeline value can be accessed
+multiple times without using the **Reset** method. The Process block does not
+automatically call the **MoveNext** method.
+
+The **Current** property will never be populated unless you explicitly call
+**MoveNext**. The **Current** property can be accessed multiple times inside
+the process block without clearing its value.
+
+```powershell
+function Current
+{
+    begin
+    {
+        $i = 0
+    }
+
+    process
+    {
+        "Iteration: $i"
+        $i++
+        "`tBefore MoveNext: $($input.Current)"
+        $input.MoveNext() | Out-Null
+        "`tAfter MoveNext: $($input.Current)"
+        "`tAccess Again: $($input.Current)"
+    }
+}
+
+"one","two" | Current
+```
+
+```Output
+Iteration: 0
+    Before MoveNext:
+    After MoveNext: one
+    Access Again: one
+Iteration: 1
+    Before MoveNext:
+    After MoveNext: two
+    Access Again: two
+```
+
+### Example 4: Using the $foreach variable
+
+Unlike the `$input` variable, the `$foreach` variable always represents all
+items in the collection when accessed directly. Use the **Current** property
+to access the current collection element, and the **Reset** and **MoveNext**
+methods to change its value.
+
+> [!NOTE]
+> Each iteration of the `foreach` loop will automatically call the **MoveNext**
+> method.
+
+The following loop only executes twice. In the second iteration, the collection
+is moved to the 3rd element before the iteration is complete. After the second
+iteration, there are now no more values to iterate, and the loop terminates.
+
+The **MoveNext** propety does not affect the variable chosen to iterate through
+the collection (`$Num`).
+
+```powershell
+$i = 0
+foreach ($num in ("one","two","three"))
+{
+    "Iteration: $i"
+    $i++
+    "`tNum: $num"
+    "`tCurrent: $($foreach.Current)"
+
+    if ($foreach.Current -eq "two")
+    {
+        "Before MoveNext (Current): $($foreach.Current)"
+        $foreach.MoveNext() | Out-Null
+        "After MoveNext (Current): $($foreach.Current)"
+        "Num has not changed: $num"
+    }
+}
+```
 
 ## SEE ALSO
 
