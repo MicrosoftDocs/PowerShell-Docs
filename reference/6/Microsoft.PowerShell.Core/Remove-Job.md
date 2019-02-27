@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821509
 schema: 2.0.0
 title: Remove-Job
 ---
-
 # Remove-Job
 
 ## SYNOPSIS
@@ -17,41 +16,49 @@ Deletes a PowerShell background job.
 ## SYNTAX
 
 ### SessionIdParameterSet (Default)
+
 ```
 Remove-Job [-Force] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### JobParameterSet
+
 ```
 Remove-Job [-Job] <Job[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameParameterSet
+
 ```
 Remove-Job [-Force] [-Name] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InstanceIdParameterSet
+
 ```
 Remove-Job [-Force] [-InstanceId] <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### FilterParameterSet
+
 ```
 Remove-Job [-Force] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### StateParameterSet
+
 ```
 Remove-Job [-State] <JobState> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CommandParameterSet
+
 ```
 Remove-Job [-Command <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Remove-Job** cmdlet deletes PowerShell background jobs.
 You can start jobs by using the Start-Job or the *AsJob* parameter of any cmdlet.
 
@@ -71,6 +78,7 @@ If you do not delete a background job, the job remains in the global job cache u
 ## EXAMPLES
 
 ### Example 1: Delete a job by using its name
+
 ```
 PS C:\> $batch = Get-Job -Name "BatchJob"
 PS C:\> $batch | Remove-Job
@@ -84,6 +92,7 @@ The second command uses a pipeline operator (|) to send the job to the Remove-Jo
 This command is equivalent to using the *Job* parameter of **Remove-Job**, for example, `Remove-Job -Job $batch`.
 
 ### Example 2: Delete all jobs in a session
+
 ```
 PS C:\> Get-Job | Remove-Job
 ```
@@ -91,6 +100,7 @@ PS C:\> Get-Job | Remove-Job
 This command deletes all of the jobs in the current session.
 
 ### Example 3: Delete NotStarted jobs
+
 ```
 PS C:\> Remove-Job -State NotStarted
 ```
@@ -98,6 +108,7 @@ PS C:\> Remove-Job -State NotStarted
 This command deletes all jobs from the current session that have not yet been started.
 
 ### Example 4: Delete jobs by using a friendly name
+
 ```
 PS C:\> Remove-Job -Name *batch -Force
 ```
@@ -108,6 +119,7 @@ These include jobs that are running.
 The command uses the *Name* parameter of **Remove-Job** to specify a job name pattern, and it uses the *Force* parameter to make sure that all jobs are removed, even those that might be in progress.
 
 ### Example 5: Delete a job that was created by Invoke-Command
+
 ```
 PS C:\> $j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-Process} -AsJob
 PS C:\> $j | Remove-Job
@@ -127,6 +139,7 @@ This is a local command.
 A remote command is not required to remove a job that was started by using the *AsJob* parameter.
 
 ### Example 6: Delete a job that was created by Invoke-Command and Start-Job
+
 ```
 The first command uses the New-PSSession cmdlet to create a **PSSession**, which is a persistent connection, to the Server01 computer. A persistent connection is required when you run **Start-Job** remotely. The command stores the **PSSession** in the $s variable.
 PS C:\> $s = New-PSSession -ComputerName Server01
@@ -142,6 +155,7 @@ This example shows how to remove a job that was started by using Invoke-Command 
 In this case, the job object is created on the remote computer and you use remote commands to manage the job.
 
 ### Example 7: Delete a job by using its instance ID
+
 ```
 The first command uses **Start-Job** to start a background job. The command saves the resulting job object in the $j variable.
 PS C:\> $j = Start-Job -ScriptBlock {Get-Process Powershell}
@@ -176,6 +190,7 @@ This example shows how to remove a job based on its instance ID.
 ## PARAMETERS
 
 ### -Command
+
 Specifies an array of words that appear in commands.
 This cmdlet deletes jobs that include the specified words.
 
@@ -192,6 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies a hash table of conditions.
 This cmdlet deletes jobs that satisfy all of the conditions.
 Enter a hash table where the keys are job properties and the values are job property values.
@@ -215,6 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Indicates that this cmdlet deletes a job even if the status is Running.
 By default, this cmdlet does not delete running jobs.
 
@@ -231,6 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies an array of IDs of background jobs that this cmdlet deletes.
 
 The ID is an integer that uniquely identifies the job in the current session.
@@ -251,6 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies an array of instance IDs of jobs that this cmdlet deletes.
 
 An instance ID is a GUID that uniquely identifies the job on the computer.
@@ -269,6 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
+
 Specifies the jobs to be deleted.
 Enter a variable that contains the jobs or a command that gets the jobs.
 You can also use a pipeline operator to submit jobs to this cmdlet.
@@ -286,6 +306,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies an array of friendly names of jobs that this cmdlet deletes.
 Wildcard characters are permitted.
 
@@ -304,6 +325,7 @@ Accept wildcard characters: False
 ```
 
 ### -State
+
 Specifies the state of jobs to delete.
 The acceptable values for this parameter are:
 
@@ -334,6 +356,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -349,6 +372,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -365,16 +389,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Job
+
 You can pipe a job object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not generate any output.
 
 ## NOTES

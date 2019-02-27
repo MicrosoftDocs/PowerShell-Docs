@@ -337,7 +337,9 @@ Accept wildcard characters: False
 ```
 
 ### -RunEvery
-{{Fill RunEvery Description}}
+
+Used to specify how often to run the job. For example, use this option to run a job every 15
+minutes.
 
 ```yaml
 Type: TimeSpan

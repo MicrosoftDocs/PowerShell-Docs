@@ -1,4 +1,4 @@
-﻿---
+---
 ms.date:  06/09/2017
 schema:  2.0.0
 keywords:  powershell,cmdlet
@@ -7,7 +7,6 @@ title:  about_Comment_Based_Help
 # About Comment Based Help
 
 ## SHORT DESCRIPTION
-
 Describes how to write comment-based help topics for functions and scripts.
 
 ## LONG DESCRIPTION
@@ -100,7 +99,7 @@ function Get-Function
 <help content>
 #>
 
-<function commands>
+  # function logic
 }
 ```
 
@@ -109,7 +108,7 @@ or
 ```powershell
 function Get-Function
 {
-<function commands>
+   # function logic
 
 <#
 .<help keyword>
@@ -285,8 +284,8 @@ Redirects to the help topic for the specified command. You can redirect users
 to any help topic, including help topics for a function, script, cmdlet, or
 provider.
 
-```
-.FORWARDHELPTARGETNAME <Command-Name>
+```powershell
+# .FORWARDHELPTARGETNAME <Command-Name>
 ```
 
 ### .FORWARDHELPCATEGORY
@@ -296,8 +295,8 @@ values are "Alias", "Cmdlet", "HelpFile", "Function", "Provider", "General",
 "FAQ", "Glossary", "ScriptCommand", "ExternalScript", "Filter", or "All". Use
 this keyword to avoid conflicts when there are commands with the same name.
 
-```
-.FORWARDHELPCATEGORY <Category>
+```powershell
+# .FORWARDHELPCATEGORY <Category>
 ```
 
 ### .REMOTEHELPRUNSPACE
@@ -307,16 +306,16 @@ contains a "PSSession". This keyword is used by the
 [Export-PSSession](../../Microsoft.PowerShell.Utility/Export-PSSession.md)
 cmdlet to find the help topics for the exported commands.
 
-```
-.REMOTEHELPRUNSPACE <PSSession-variable>
+```powershell
+# .REMOTEHELPRUNSPACE <PSSession-variable>
 ```
 
 ### .EXTERNALHELP
 
 Specifies an XML-based help file for the script or function.
 
-```
-.EXTERNALHELP <XML Help File>
+```powershell
+# .EXTERNALHELP <XML Help File>
 ```
 
 The "ExternalHelp" keyword is required when a function or script is documented
@@ -470,7 +469,7 @@ The results are as follows:
 Get-Help -Name "Add-Extension" -Full
 ```
 
-```
+```Output
 NAME
 
 Add-Extension
@@ -677,7 +676,7 @@ command that gets the script help must specify the script path.
 Get-Help -Path .\update-month.ps1 -Full
 ```
 
-```
+```Output
 # NAME
 
 C:\ps-test\Update-Month.ps1
@@ -762,7 +761,7 @@ Note that the value of the "ExternalHelp" keyword appears on the same
 line as the keyword. Any other placement is ineffective.
 
 ```powershell
- .ExternalHelp C:\MyScripts\Update-Month-Help.xml
+# .ExternalHelp C:\MyScripts\Update-Month-Help.xml
 
 param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
@@ -775,7 +774,7 @@ keyword in a function.
 ```powershell
 function Add-Extension
 {
-.ExternalHelp C:\ps-test\Add-Extension.xml
+# .ExternalHelp C:\ps-test\Add-Extension.xml
 
 param ([string] $name, [string]$extension = "txt")
 $name = $name + "." + $extension
@@ -790,12 +789,12 @@ param ([string] $name, [string]$extension = "txt")
 $name = $name + "." + $extension
 $name
 
-.ExternalHelp C:\ps-test\Add-Extension.xml
+# .ExternalHelp C:\ps-test\Add-Extension.xml
 }
 ```
 
 ```powershell
-.ExternalHelp C:\ps-test\Add-Extension.xml
+# .ExternalHelp C:\ps-test\Add-Extension.xml
 function Add-Extension
 {
 param ([string] $name, [string]$extension = "txt")
@@ -835,14 +834,14 @@ The following command uses this feature:
 Get-Help -Name help
 ```
 
-```
+```Output
 NAME
 
 Get-Help
 
 SYNOPSIS
 
-Displays information about Windows PowerShell cmdlets and concepts.
+Displays information about PowerShell cmdlets and concepts.
 ...
 ```
 

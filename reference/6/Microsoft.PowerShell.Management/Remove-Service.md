@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821608
 schema: 2.0.0
 title: Remove-Service
 ---
-
 # Remove-Service
 
 ## SYNOPSIS
@@ -17,21 +16,25 @@ Removes a Windows service.
 ## SYNTAX
 
 ### Name (Default)
+
 ```
 Remove-Service [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 Remove-Service [-InputObject <ServiceController>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Remove-Service** cmdlet removes a Windows service in the registry and in the service database.
 
 ## EXAMPLES
 
 ### Example 1: Remove a service
+
 ```
 PS C:\> Remove-Service -Name "TestService"
 ```
@@ -39,6 +42,7 @@ PS C:\> Remove-Service -Name "TestService"
 This command removes a service named TestService.
 
 ### Example 2: Remove a service using the display name
+
 ```
 PS C:\> Get-Service -DisplayName "Test Service" | Remove-Service
 ```
@@ -50,6 +54,7 @@ The pipeline operator (|) pipes the object to **Remove-Service**, which removes 
 ## PARAMETERS
 
 ### -InputObject
+
 Specifies **ServiceController** objects that represent the services to stop.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -66,6 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the service names of the services to stop.
 Wildcard characters are permitted.
 
@@ -82,6 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -97,6 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -113,19 +121,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
+
 You can pipe a service object or a string that contains the name of a service to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
 This cmdlet does not return any output.
 
 ## NOTES
+
 * To run this cmdlet on Windows Vista and later versions of the Windows operating system, start PowerShell by using the Run as administrator option.
 
 ## RELATED LINKS

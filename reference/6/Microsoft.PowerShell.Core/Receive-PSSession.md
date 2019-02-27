@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821506
 schema: 2.0.0
 title: Receive-PSSession
 ---
-
 # Receive-PSSession
 
 ## SYNOPSIS
@@ -17,18 +16,21 @@ Gets results of commands in disconnected sessions.
 ## SYNTAX
 
 ### Session (Default)
+
 ```
 Receive-PSSession [-Session] <PSSession> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Receive-PSSession [-Id] <Int32> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### ComputerInstanceId
+
 ```
 Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
  -InstanceId <Guid> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
@@ -37,6 +39,7 @@ Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-Configu
 ```
 
 ### ComputerSessionName
+
 ```
 Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
  -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
@@ -45,6 +48,7 @@ Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-Configu
 ```
 
 ### ConnectionUriSessionName
+
 ```
 Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRedirection] -Name <String>
  [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
@@ -53,6 +57,7 @@ Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRe
 ```
 
 ### ConnectionUriInstanceId
+
 ```
 Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRedirection] -InstanceId <Guid>
  [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
@@ -61,18 +66,21 @@ Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRe
 ```
 
 ### InstanceId
+
 ```
 Receive-PSSession -InstanceId <Guid> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### SessionName
+
 ```
 Receive-PSSession -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Receive-PSSession** cmdlet gets the results of commands running in PowerShell sessions (**PSSession**) that were disconnected.
 If the session is currently connected, **Receive-PSSession** gets the results of commands that were running when the session was disconnected.
 If the session is still disconnected, **Receive-PSSession** connects to the session, resumes any commands that were suspended, and gets the results of commands running in the session.
@@ -92,6 +100,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Connect to a PSSession
+
 ```
 PS C:\> Receive-PSSession -ComputerName Server01 -Name ITTask
 ```
@@ -101,6 +110,7 @@ This command uses the **Receive-PSSession** cmdlet to connect to the ITTask sess
 Because the command does not use the *OutTarget* parameter, the results appear at the command line.
 
 ### Example 2: Get results of all commands on disconnected sessions
+
 ```
 PS C:\> Get-PSSession -ComputerName Server01, Server02 | Receive-PSSession
 ```
@@ -110,6 +120,7 @@ This command gets the results of all commands running in all disconnected sessio
 If any session was not disconnected or is not running commands, **Receive-PSSession** does not connect to the session and does not return any output or errors.
 
 ### Example 3: Get the results of a script running in a session
+
 ```
 PS C:\> Receive-PSSession -ComputerName Server01 -Name ITTask -OutTarget Job -JobName ITTaskJob01 -Credential Domain01\Admin01
 Id     Name            State         HasMoreData     Location
@@ -128,6 +139,7 @@ The output shows that **Receive-PSSession** returned the results as a job in the
 To get the job results, use a Receive-Job command
 
 ### Example 4: Get results after a network outage
+
 ```
 The first command uses the New-PSSession cmdlet to create a session on the Server01 computer. The command saves the session in the $s variable.The second command gets the session in the $s variable. Notice that the **State** is Opened and the **Availability** is Available. These values indicate that you are connected to the session and can run commands in the session.
 PS C:\> $s = New-PSSession -ComputerName Server01 -Name AD -ConfigurationName ADEndpoint
@@ -172,6 +184,7 @@ This example uses the **Receive-PSSession** cmdlet to get the results of a job a
 PowerShell automatically attempts to reconnect the session one time each second for the next four minutes and abandons the effort only if all attempts in the four-minute interval fail.
 
 ### Example 5: Reconnect to disconnected sessions
+
 ```
 The first command uses the Invoke-Command cmdlet to run a script on the three remote computers. Because the scripts gathers and summarize data from multiple databases, it often takes the script an extended time to finish. The command uses the *InDisconnectedSession* parameter, which starts the scripts and then immediately disconnects the sessions.The command uses the *SessionOption* parameter to extend the **IdleTimeout** value of the disconnected session. Disconnected sessions are considered to be idle from the moment they are disconnected, so it is important to set the idle time-out for long enough that the commands can complete and you can reconnect to the session, if necessary. You can set the **IdleTimeout** only when you create the **PSSession** and change it only when you disconnect from it. You cannot change the **IdleTimeout** value when you connect to a **PSSession** or receiving its results.After running the command, the user exits PowerShell and closes the computer .
 PS C:\> Invoke-Command -InDisconnectedSession -ComputerName Server01, Server02, Server30 -FilePath \\Server12\Scripts\SharedScripts\Get-BugStatus.ps1 -Name BugStatus -SessionOption @{IdleTimeout = 86400000} -ConfigurationName ITTasks# Exit
@@ -210,6 +223,7 @@ Server01              121               Friday, December 30, 2011 5:03:34 PMÃ¢â‚
 This example uses the **Receive-PSSession** cmdlet to reconnect to sessions that were intentionally disconnected and get the results of jobs that were running in the sessions.
 
 ### Example 6: Running a job in a disconnected session
+
 ```
 The first command uses the New-PSSession cmdlet to create the Test session on the Server01 computer. The command saves the session in the $s variable.
 PS C:\> $s = New-PSSession -ComputerName Server01 -Name Test
@@ -254,6 +268,7 @@ This example shows what happens to a job that is running in a disconnected sessi
 ## PARAMETERS
 
 ### -AllowRedirection
+
 Indicates that this cmdlet allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 
 When you use the *ConnectionURI* parameter, the remote destination can return an instruction to redirect to a different URI.
@@ -276,6 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
+
 Specifies an application.
 This cmdlet connects only to sessions that use the specified application.
 
@@ -299,6 +315,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the mechanism that is used to authenticate the credentials of the user in the command to reconnect to the disconnected session.
 The acceptable values for this parameter are:
 
@@ -332,6 +349,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to connect to the disconnected session.
 Enter the certificate thumbprint of the certificate.
 
@@ -354,6 +372,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the computer on which the disconnected session is stored.
 Sessions are stored on the computer that is at the server-side, or receiving end of a connection.
 The default is the local computer.
@@ -375,6 +394,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationName
+
 Specifies the name of a session configuration.
 This cmdlet connects only to sessions that use the specified session configuration.
 
@@ -400,6 +420,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
+
 Specifies a URI that defines the connection endpoint that is used to reconnect to the disconnected session.
 
 The URI must be fully qualified.
@@ -434,6 +455,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to connect to the disconnected session.
 The default is the current user.
 
@@ -454,6 +476,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies the ID of the disconnected session.
 The *Id* parameter works only when the disconnected session was previously connected to the current session.
 
@@ -472,6 +495,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
+
 Specifies the instance ID of the disconnected session.
 
 The instance ID is a GUID that uniquely identifies a **PSSession** on a local or remote computer.
@@ -503,6 +527,7 @@ Accept wildcard characters: False
 ```
 
 ### -JobName
+
 Specifies a friendly name for the job that **Receive-PSSession** returns.
 
 **Receive-PSSession** returns a job when the value of the *OutTarget* parameter is Job or the job that is running in the disconnected session was started in the current session.
@@ -527,6 +552,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the friendly name of the disconnected session.
 
 ```yaml
@@ -554,6 +580,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutTarget
+
 Determines how the session results are returned.
 The acceptable values for this parameter are:
 
@@ -585,6 +612,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
+
 Specifies the network port on the remote computer that is used to reconnect to the session.
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.
@@ -613,6 +641,7 @@ Accept wildcard characters: False
 ```
 
 ### -Session
+
 Specifies the disconnected session.
 Enter a variable that contains the **PSSession** or a command that creates or gets the **PSSession**, such as a Get-PSSession command.
 
@@ -629,6 +658,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
+
 Specifies advanced options for the session.
 Enter a **SessionOption** object, such as one that you create by using the New-PSSessionOption cmdlet, or a hash table in which the keys are session option names and the values are session option values.
 
@@ -655,6 +685,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
+
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to connect to the disconnected session.
 By default, SSL is not used.
 
@@ -676,6 +707,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -691,6 +723,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -707,30 +740,37 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
+
 You can pipe session objects, such as those returned by the Get-PSSession cmdlet, to this cmdlet.
 
 ### System.Int32
+
 You can pipe session IDs to this cmdlet.
 
 ### System.Guid
+
 You can pipe the instance IDs of sessions this cmdlet.
 
 ### System.String
+
 You can pipe session names to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Job or PSObject
+
 This cmdlet returns the results of commands that ran in the disconnected session, if any.
 If the value or default value of the *OutTarget* parameter is Job, **Receive-PSSession** returns a job object.
 Otherwise, it returns objects that represent that command results.
 
 ## NOTES
+
 * **Receive-PSSession** gets results only from sessions that were disconnected. Only sessions that are connected to, or terminate at, computers that run Windows PowerShell 3.0 or later versions can be disconnected and reconnected.
 * If the commands that were running in the disconnected session did not generate results or if the results were already returned to another session, **Receive-PSSession** does not generate any output.
 * The output buffering mode of a session determines how commands in the session manage output when the session is disconnected. When the value of the **OutputBufferingMode** option of the session is Drop and the output buffer is full, the command starts to delete output. **Receive-PSSession** cannot recover this output. For more information about the output buffering mode option, see the help topics for the New-PSSessionOption and New-PSTransportOption cmdlets.

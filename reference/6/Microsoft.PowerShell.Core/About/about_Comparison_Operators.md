@@ -8,7 +8,6 @@ title:  about_Comparison_Operators
 # About Comparison Operators
 
 ## Short description
-
 Describes the operators that compare values in PowerShell.
 
 ## Long description

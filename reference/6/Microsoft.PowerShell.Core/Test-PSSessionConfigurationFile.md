@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821522
 schema: 2.0.0
 title: Test-PSSessionConfigurationFile
 ---
-
 # Test-PSSessionConfigurationFile
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Test-PSSessionConfigurationFile [-Path] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Test-PSSessionConfigurationFile** cmdlet verifies that a session configuration file contains valid keys and the values are of the correct type.
 For enumerated values, the cmdlet verifies that the specified values are valid.
 
@@ -36,6 +36,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ## EXAMPLES
 
 ### Example 1: Test a session configuration file
+
 ```
 PS C:\> Test-PSSessionConfigurationFile -Path "FullLanguage.pssc"
 True
@@ -44,6 +45,7 @@ True
 This command uses the **Test-PSSessionConfigurationFile** cmdlet to test a new session configuration file before using it in a session configuration.
 
 ### Example 2: Test the session configuration file of a session configuration
+
 ```
 PS C:\> Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name Restricted).ConfigFilePath
 ```
@@ -53,6 +55,7 @@ The value of the *Path* parameter is a Get-PSSessionConfiguration command that g
 The path of the session configuration file is stored in the value of the **ConfigFilePath** property of the session configuration.
 
 ### Example 3: Test all session configuration files
+
 ```
 PS C:\> function Test-AllConfigFiles
 {
@@ -77,6 +80,7 @@ The *Verbose* parameter returns the file error when the file fails the test.
 ## PARAMETERS
 
 ### -Path
+
 Specifies the path and file name of a session configuration file (.pssc).
 If you omit the path, the default is the current folder.
 Wildcard characters are supported, but they must resolve to a single file.
@@ -95,11 +99,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a session configuration file path to **Test-PSSessionConfigurationFile**.
 
 ## OUTPUTS

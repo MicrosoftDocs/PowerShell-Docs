@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell
 title:  about_Logging-Windows
 ---
-
 # About Logging
 
 ## Short Description

@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Variables
 ---
-
 # About Variables
 
 ## SHORT DESCRIPTION
-
 Describes how variables store values that can be used in PowerShell.
 
 ## LONG DESCRIPTION

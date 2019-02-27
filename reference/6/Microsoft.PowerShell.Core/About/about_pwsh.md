@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PowerShell_exe
 ---
-
 # About pwsh
 
 ## SHORT DESCRIPTION
-
 Explains how to use the pwsh command-line tool. Displays the syntax and
 describes the command-line switches.
 
@@ -131,6 +129,7 @@ Sets the initial working directory when starting PowerShell.  Any valid
 PowerShell file path is supported.
 
 To start PowerShell in your home directory, use: pwsh -WorkingDirectory ~
+
 #### -Command
 
 Executes the specified commands (and any parameters) as though they were typed

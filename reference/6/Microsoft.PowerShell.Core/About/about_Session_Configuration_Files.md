@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Session_Configuration_Files
 ---
-
 # About Session Configuration Files
 
 ## SHORT DESCRIPTION
-
 Describes session configuration files, which are used in a session
 configuration (also known as an "endpoint") to define the environment of
 sessions that use the session configuration.

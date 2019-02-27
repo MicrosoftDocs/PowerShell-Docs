@@ -8,11 +8,9 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821531
 schema: 2.0.0
 title: New-WinEvent
 ---
-
 # New-WinEvent
 
 ## SYNOPSIS
-
 Creates a new Windows event for the specified event provider.
 
 ## SYNTAX
