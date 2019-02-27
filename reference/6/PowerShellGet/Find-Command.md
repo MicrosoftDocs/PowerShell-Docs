@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ### -MaximumVersion
 
 Specifies the maximum (exclusively) version of the module to include in results.
-The *MaximumVersion* and the **RequiredVersion** parameters are mutually exclusive; you cannot use
+The **MaximumVersion** and the **RequiredVersion** parameters are mutually exclusive; you cannot use
 both parameters in the same command.
 
 ```yaml
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ### -MinimumVersion
 
 Specifies the minimum version of the module to include in results.
-The *MinimumVersion* and the **RequiredVersion** parameters are mutually exclusive; you cannot use
+The **MinimumVersion** and the **RequiredVersion** parameters are mutually exclusive; you cannot use
 both parameters in the same command.
 
 ```yaml

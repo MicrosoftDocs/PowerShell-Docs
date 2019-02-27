@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ### -AllVersions
 
 Specifies that you want to include all available versions of a module in results.
-You cannot use the **AllVersions** parameter with the *MinimumVersion*, *MaximumVersion*, or
+You cannot use the **AllVersions** parameter with the **MinimumVersion**, **MaximumVersion**, or
 **RequiredVersion** parameters.
 
 ```yaml
@@ -167,7 +167,7 @@ Accept wildcard characters: False
 ### -Filter
 
 Specifies the PackageManagement provider-specific search syntax to use to find modules.
-For NuGet modules, this is the equivalent of searching by using the Search bar on the 
+For NuGet modules, this is the equivalent of searching by using the Search bar on the
 [PowerShell Gallery](https://www.powershellgallery.com/) website.
 
 ```yaml
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 
 Specifies the minimum version of a single resource to find.
 Do not specify this parameter if you are attempting to find multiple resources.
-The *MinimumVersion* and the **RequiredVersion** parameters are mutually exclusive; you cannot use
+The **MinimumVersion** and the **RequiredVersion** parameters are mutually exclusive; you cannot use
 both parameters in the same command.
 
 ```yaml
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 ### -RequiredVersion
 
 Specifies the exact version number of the module to include in the results.
-The *MinimumVersion* and the **RequiredVersion** parameters are mutually exclusive; you cannot use
+The **MinimumVersion** and the **RequiredVersion** parameters are mutually exclusive; you cannot use
 both parameters in the same command.
 
 ```yaml

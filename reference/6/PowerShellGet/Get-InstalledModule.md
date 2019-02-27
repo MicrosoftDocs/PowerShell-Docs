@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ### -AllVersions
 
 Indicates that you want to get all available versions of a module.
-You cannot use the **AllVersions** parameter with the *MinimumVersion*, *MaximumVersion*, or
+You cannot use the **AllVersions** parameter with the **MinimumVersion**, **MaximumVersion**, or
 **RequiredVersion** parameters.
 
 ```yaml
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ### -MaximumVersion
 
 Specifies the maximum, or newest, version of a module to get.
-The *MaximumVersion* and **RequiredVersion** parameters are mutually exclusive; you cannot use both
+The **MaximumVersion** and **RequiredVersion** parameters are mutually exclusive; you cannot use both
 parameters in the same command.
 
 ```yaml
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ### -MinimumVersion
 
 Specifies the minimum version of a single module to get.
-The *MinimumVersion* and **RequiredVersion** parameters are mutually exclusive; you cannot use both
+The **MinimumVersion** and **RequiredVersion** parameters are mutually exclusive; you cannot use both
 parameters in the same command.
 
 ```yaml
