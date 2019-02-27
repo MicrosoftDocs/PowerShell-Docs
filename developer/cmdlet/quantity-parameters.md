@@ -13,30 +13,13 @@ caps.latest.revision: 6
 
 The following table lists the recommended names and functionality for quantity parameters.
 
-All
-Data type: Boolean
-
-Implement this parameter so that `true` indicates that all resources should be acted upon instead of a default subset of resources. Implement this parameter so that `false` indicates a subset of the resources.
-
-Allocation
-Data type: Int32
-
-Implement this parameter so that the user can specify the number of items to allocate.
-
-BlockCount
-Data type: Int64
-
-Implement this parameter so that the user can specify the block count.
-
-Count
-Data type: Int64
-
-Implement this parameter so that the user can specify the count.
-
-Scope
-Data type: Keyword
-
-Implement this parameter so that the user can specify the scope to operate on.
+|Parameter|Functionality|
+|---|---|
+|**All**<br>Data type: Boolean|Implement this parameter so that `true` indicates that all resources should be acted upon instead of a default subset of resources. Implement this parameter so that `false` indicates a subset of the resources.|
+|**Allocation**<br>Data type: Int32|Implement this parameter so that the user can specify the number of items to allocate.|
+|**BlockCount**<br>Data type: Int64|Implement this parameter so that the user can specify the block count.|
+|**Count**<br>Data type: Int64|Implement this parameter so that the user can specify the count.|
+|**Scope**<br>Data type: Keyword|Implement this parameter so that the user can specify the scope to operate on.|
 
 ## See Also
 
