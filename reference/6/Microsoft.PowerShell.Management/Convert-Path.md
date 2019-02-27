@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821573
 schema: 2.0.0
 title: Convert-Path
 ---
-
 # Convert-Path
 
 ## SYNOPSIS
@@ -17,21 +16,25 @@ Converts a path from a PowerShell path to a PowerShell provider path.
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Convert-Path [-Path] <String[]> [<CommonParameters>]
 ```
 
 ### LiteralPath
+
 ```
 Convert-Path -LiteralPath <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Convert-Path** cmdlet converts a path from a PowerShell path to a PowerShell provider path.
 
 ## EXAMPLES
 
 ### Example 1: Convert the working directory to a standard file system path
+
 ```
 PS C:\> Convert-Path .
 C:\
@@ -40,6 +43,7 @@ C:\
 This command converts the current working directory, which is represented by a dot (.), to a standard file system path.
 
 ### Example 2: Convert a provider path to a standard registry path
+
 ```
 PS C:\> Convert-Path HKLM:\Software\Microsoft
 HKEY_LOCAL_MACHINE\Software\Microsoft
@@ -48,6 +52,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft
 This command converts the PowerShell provider path to a standard registry path.
 
 ### Example 3: Convert a path to a string
+
 ```
 PS C:\> Convert-Path ~
 C:\Users\User01
@@ -58,6 +63,7 @@ This command converts the path to the home directory of the current provider, wh
 ## PARAMETERS
 
 ### -LiteralPath
+
 Specifies, as a string array, the path to be converted.
 The value of the *LiteralPath* parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -77,6 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the PowerShell path to be converted.
 
 ```yaml
@@ -92,19 +99,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe a path, but not a literal path, to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
+
 This cmdlet returns a string that contains the converted path.
 
 ## NOTES
+
 * The cmdlets that contain the Path noun manipulate path names and return the names in a concise format that all PowerShell providers can interpret. They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format. Use them like you would use Dirname, Normpath, Realpath, Join, or other path manipulators.
 
   You can use the path cmdlets with several providers, including the FileSystem, Registry, and Certificate providers.

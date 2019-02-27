@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Security.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Security
-ms.date: 06/09/2017
+ms.date: 02/25/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821713
 schema: 2.0.0
 title: Get-Credential
@@ -236,7 +236,8 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-{{Fill Title Description}}
+
+Sets the text of the title bar for the authentication dialog.
 
 ```yaml
 Type: String
@@ -277,8 +278,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -10,7 +10,6 @@ title:  Remove-ItemProperty
 # Remove-ItemProperty
 
 ## SYNOPSIS
-
 Deletes the property and its value from an item.
 
 ## SYNTAX
