@@ -55,7 +55,7 @@ The following table lists the recommended names and functionality for activity p
 |**Timeout**<br>Data type: Int32|Implement this parameter so that the user can specify the timeout interval (in milliseconds).|
 |**Truncate**<br>Data type: SwitchParameter|Implement this parameter so that the cmdlet will truncate its actions when the parameter is specified. If the parameter is not specified, the cmdlet performs another action.|
 |**Verify**<br>Data type: SwitchParameter|Implement this parameter so that the cmdlet will test to determine whether an action has occurred when the parameter is specified.|
-|**Wait**<br>Data type: SwitchParameter|Implement this parameter so that the cmdlet will wait for user input before continuing when the|parameter is specified.
+|**Wait**<br>Data type: SwitchParameter|Implement this parameter so that the cmdlet will wait for user input before continuing when the parameter is specified.
 |**WaitTime**<br>Data type: Int32|Implement this parameter so that the user can specify the duration (in seconds) that the cmdlet will wait for user input when the **Wait** parameter is specified.|
 
 ## See Also
