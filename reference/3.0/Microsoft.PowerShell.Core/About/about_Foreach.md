@@ -8,7 +8,6 @@ title:  about_Foreach
 # About ForEach
 
 ## SHORT DESCRIPTION
-
 Describes a language command you can use to traverse all the items in a
 collection of items.
 
@@ -157,6 +156,8 @@ to `skip X` on a `For` loop) and the `Current` property of the `$foreach`
 variable inside of a foreach script block. The example function can find
 functions in a script even if there are unusually- or inconsistently-spaced
 function definitions that span multiple lines.
+
+For more information, see [Using Enumerators](about_Automatic_Variables.md#using-enumerators).
 
 ```powershell
 function Get-FunctionPosition {

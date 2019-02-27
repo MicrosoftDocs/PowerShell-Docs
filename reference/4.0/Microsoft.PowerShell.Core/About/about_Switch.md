@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Switch
 ---
-
 # About Switch
 
 ## SHORT DESCRIPTION
-
 Explains how to use a switch to handle multiple If statements.
 
 ## LONG DESCRIPTION
@@ -22,6 +20,9 @@ To check multiple conditions, use a Switch statement. The Switch statement
 is equivalent to a series of If statements, but it is simpler. The Switch
 statement lists each condition and an optional action. If a condition
 obtains, the action is performed.
+
+The switch statement also uses the `$switch` automatic variable. For more
+information, see [about_Automatic_Variables](about_Automatic_Variables.md).
 
 A basic Switch statement has the following format:
 

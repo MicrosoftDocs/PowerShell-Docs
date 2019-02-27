@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Automatic_Variables
 ---
-
 # About Automatic Variables
 
 ## SHORT DESCRIPTION
-
 Describes variables that store state information for PowerShell. These
 variables are created and maintained by PowerShell.
 
@@ -113,11 +111,13 @@ non-zero integer.
 
 ### $FOREACH
 
-Contains the enumerator (not the resulting values) of a ForEach loop. You
-can use the properties and methods of enumerators on the value of the
-`$ForEach` variable. This variable exists only while the `ForEach` loop is
-running; it is deleted after the loop is completed. For detailed
-information, see [about_ForEach](about_ForEach.md).
+Contains the enumerator (not the resulting values) of a
+[ForEach](about_ForEach.md) loop. The `$ForEach` variable exists only while
+the `ForEach` loop is running; it is deleted after the loop is completed.
+
+Enumerators contain properties and methods you can use to retrieve loop values
+and change the current loop iteration. For more information, see
+[Using Enumerators](#using-enumerators).
 
 ### $HOME
 
@@ -137,12 +137,26 @@ commands or to display or change the properties of the host, such as
 
 Contains an enumerator that enumerates all input that is passed to a
 function. The `$input` variable is available only to functions and script
-blocks (which are unnamed functions). In the Process block of a function,
-the `$input` variable enumerates the object that is currently in the
-pipeline. When the Process block completes, there are no objects left in
-the pipeline, so the `$input` variable enumerates an empty collection. If the
-function does not have a Process block, then in the End block, the `$input`
-variable enumerates the collection of all input to the function.
+blocks (which are unnamed functions).
+
+- In a function without a Begin, Process, or End block, the `$input` variable enumerates the
+  collection of all input to the function.
+
+- In the Process block of a function, the `$input` variable contains the object that is currently in
+  the pipeline.
+
+- In the End block, the `$input` variable enumerates the collection of all
+  input to the function.
+  > [!NOTE]
+  > You cannot use the `$input` variable inside both the Process block and the
+  > End block in the same function or script block.
+
+> [!NOTE]
+> The `$input` variable will contain no data inside of the Begin block.
+
+Enumerators contain properties and methods you can use to retrieve loop values
+and change the current loop iteration. For more information, see
+[Using Enumerators]().
 
 ### $LASTEXITCODE
 
@@ -153,9 +167,13 @@ Contains the exit code of the last Windows-based program that was run.
 The `Matches` variable works with the `-match` and `-notmatch` operators.
 When you submit scalar input to the `-match` or `-notmatch` operator, and
 either one detects a match, they return a Boolean value and populate the
-$Matches automatic variable with a hash table of any string values that
-were matched. For more information about the `-match` operator, see
-[about_comparison_operators](about_comparison_operators.md).
+`$Matches` automatic variable with a hash table of any string values that
+were matched. The `$Matches` hash table can also be populated with captures
+when you use regular expressions with the `-match` operator.
+
+For more information about the `-match` operator, see
+[about_comparison_operators](about_comparison_operators.md). For more
+information on regular expressions, see [about_Regular_Expressions](about_Regular_Expressions.md).
 
 ### $MYINVOCATION
 
@@ -461,6 +479,17 @@ Contains the identifier of the current shell.
 
 Contains a stack trace for the most recent error.
 
+### $SWITCH
+
+Contains the enumerator (not the resulting values) of a [Switch](about_Switch.md)
+statement. The `$Switch` variable exists only while the `switch` statement is
+running; it is deleted when the `switch` statement
+completes execution.
+
+Enumerators contain properties and methods you can use to retrieve loop values
+and change the current loop iteration. For more information, see
+[Using Enumerators](#using-enumerators).
+
 ### $THIS
 
 In a script block that defines a script property or script method, the
@@ -470,6 +499,347 @@ In a script block that defines a script property or script method, the
 
 Contains TRUE. You can use this variable to represent TRUE in commands and
 scripts.
+
+## Using Enumerators
+
+The `$input`, `$foreach`, and `$switch` variables are all enumerators used
+to iterate through the values processed by their containing code block.
+
+An enumerator contains properties and methods you can use to advance or reset
+iteration, or retrieve iteration values. Directly manipulating enumerators is not
+considered best practice.
+
+- Within loops, flow control keywords [break](about_Break.md) and [continue](about_Continue.md)
+  should be preferred.
+- Within functions that accepts pipeline input, it is best practice to
+  use Parameters with the **ValueFromPipeline** or
+  **ValueFromPipelineByPropertyName** attributes.
+
+  For more information, see [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+
+### MoveNext
+
+The [MoveNext](/dotnet/api/system.collections.ienumerator.movenext) method
+advances the enumerator to the next element of the collection. **MoveNext**
+returns **True** if the enumerator was successfully advanced, **false** if
+the enumerator has passed the end of the collection.
+
+> [!NOTE]
+> The **Boolean** value returned my **MoveNext** is sent to the output stream.
+> You can suppress the output by typecasting it to `[void]` or piping it to
+> [Out-Null](../Out-Null.md).
+>
+> ```powershell
+> $input.MoveNext() | Out-Null
+> ```
+>
+> ```powershell
+> [void]$input.MoveNext()
+> ```
+
+### Reset
+
+The [Reset](/dotnet/api/system.collections.ienumerator.reset) method sets
+the enumerator to its initial position, which is **before** the first element
+in the collection.
+
+### Current
+
+The [Current](/dotnet/api/system.collections.ienumerator.current) property
+gets the element in the collection, or pipeline, at the current position of
+the enumerator.
+
+The **Current** property continues to return the same property until
+**MoveNext** is called.
+
+### Examples
+
+#### Example 1: Using the Input variable
+
+In the following example, accessing the `$input` variable clears the variable
+until the next time the process block executes. Using the **Reset** method
+resets the `$input` variable to the current pipeline value.
+
+```powershell
+function Test
+{
+    begin
+    {
+        $i = 0
+    }
+
+    process
+    {
+        "Iteration: $i"
+        $i++
+        "`tInput: $input"
+        "`tAccess Again: $input"
+        $input.Reset()
+        "`tAfter Reset: $input"
+    }
+}
+
+"one","two" | Test
+```
+
+```Output
+Iteration: 0
+    Input: one
+    Access Again:
+    After Reset: one
+Iteration: 1
+    Input: two
+    Access Again:
+    After Reset: two
+```
+
+The process block automatically advances the `$input` variable even if you
+do not access it.
+
+```powershell
+$skip = $true
+function Skip
+{
+    begin
+    {
+        $i = 0
+    }
+
+    process
+    {
+        "Iteration: $i"
+        $i++
+        if ($skip)
+        {
+            "`tSkipping"
+            $skip = $false
+        }
+        else
+        {
+            "`tInput: $input"
+        }
+    }
+}
+
+"one","two" | Skip
+```
+
+```Output
+Iteration: 0
+    Skipping
+Iteration: 1
+    Input: two
+```
+
+### Example 2: Using $input outside the Process block
+
+Outside of the process block the `$input` variable represents all the values
+piped into the function.
+
+- Accessing the `$input` variable clears all values.
+- The **Reset** method resets the entire collection.
+- The **Current** property is never populated.
+- The **MoveNext** method returns false because the collection cannot be
+  advanced.
+  - Calling **MoveNext** clears out the `$input` variable.
+
+```powershell
+Function All
+{
+    "All Values: $input"
+    "Access Again: $input"
+    $input.Reset()
+    "After Reset: $input"
+    $input.MoveNext() | Out-Null
+    "After MoveNext: $input"
+}
+
+"one","two","three" | All
+```
+
+```Output
+All Values: one two three
+Access Again:
+After Reset: one two three
+After MoveNext:
+```
+
+### Example 3: Using the $input.Current property
+
+By using the **Current** property, the current pipeline value can be accessed
+multiple times without using the **Reset** method. The Process block does not
+automatically call the **MoveNext** method.
+
+The **Current** property will never be populated unless you explicitly call
+**MoveNext**. The **Current** property can be accessed multiple times inside
+the process block without clearing its value.
+
+```powershell
+function Current
+{
+    begin
+    {
+        $i = 0
+    }
+
+    process
+    {
+        "Iteration: $i"
+        $i++
+        "`tBefore MoveNext: $($input.Current)"
+        $input.MoveNext() | Out-Null
+        "`tAfter MoveNext: $($input.Current)"
+        "`tAccess Again: $($input.Current)"
+    }
+}
+
+"one","two" | Current
+```
+
+```Output
+Iteration: 0
+    Before MoveNext:
+    After MoveNext: one
+    Access Again: one
+Iteration: 1
+    Before MoveNext:
+    After MoveNext: two
+    Access Again: two
+```
+
+### Example 4: Using the $foreach variable
+
+Unlike the `$input` variable, the `$foreach` variable always represents all
+items in the collection when accessed directly. Use the **Current** property
+to access the current collection element, and the **Reset** and **MoveNext**
+methods to change its value.
+
+> [!NOTE]
+> Each iteration of the `foreach` loop will automatically call the **MoveNext**
+> method.
+
+The following loop only executes twice. In the second iteration, the collection
+is moved to the 3rd element before the iteration is complete. After the second
+iteration, there are now no more values to iterate, and the loop terminates.
+
+The **MoveNext** propety does not affect the variable chosen to iterate through
+the collection (`$Num`).
+
+```powershell
+$i = 0
+foreach ($num in ("one","two","three"))
+{
+    "Iteration: $i"
+    $i++
+    "`tNum: $num"
+    "`tCurrent: $($foreach.Current)"
+
+    if ($foreach.Current -eq "two")
+    {
+        "Before MoveNext (Current): $($foreach.Current)"
+        $foreach.MoveNext() | Out-Null
+        "After MoveNext (Current): $($foreach.Current)"
+        "Num has not changed: $num"
+    }
+}
+```
+
+```Output
+Iteration: 0
+        Num: one
+        Current: one
+Iteration: 1
+        Num: two
+        Current: two
+Before MoveNext (Current): two
+After MoveNext (Current): three
+Num has not changed: two
+```
+
+Using the **Reset** method resets the current element in the collection. The
+following example loops through the first two elements **twice** because the
+**Reset** method is called. After the first two loops, the `if` statement
+fails and the loop iterates through all three elements normally.
+
+> [!IMPORTANT]
+> This could result in an infinite loop.
+
+```powershell
+$stopLoop = 0
+foreach ($num in ("one","two", "three"))
+{
+    ("`t" * $stopLoop) + "Current: $($foreach.Current)"
+
+    if ($num -eq "two" -and $stopLoop -lt 2)
+    {
+        $foreach.Reset() | Out-Null
+        ("`t" * $stopLoop) + "Reset Loop: $stopLoop"
+        $stopLoop++
+    }
+}
+```
+
+```Output
+Current: one
+Current: two
+Reset Loop: 0
+        Current: one
+        Current: two
+        Reset Loop: 1
+                Current: one
+                Current: two
+                Current: three
+```
+
+### Example 5: Using the $switch variable
+
+The `$switch` variable has the exact same rules as the `$foreach` variable.
+The following example demonstrates all of the enumerator concepts.
+
+> [!NOTE]
+> Note how the **NotEvaluated** case is never executed, even though there is
+> no `break` statement after the **MoveNext** method.
+
+```powershell
+$values = "Start", "MoveNext", "NotEvaluated", "Reset", "End"
+$stopInfinite = $false
+switch ($values)
+{
+    "MoveNext" {
+        "`tMoveNext"
+        $switch.MoveNext() | Out-Null
+        "`tAfter MoveNext: $($switch.Current)"
+    }
+    # This case is never evaluated.
+    "NotEvaluated" {
+        "`tAfterMoveNext: $($switch.Current)"
+    }
+
+    "Reset" {
+        if (!$stopInfinite)
+        {
+            "`tReset"
+            $switch.Reset()
+            $stopInfinite = $true
+        }
+    }
+
+    default {
+        "Default (Current): $($switch.Current)"
+    }
+}
+```
+
+```Output
+Default (Current): Start
+    MoveNext
+    After MoveNext: NotEvaluated
+    Reset
+Default (Current): Start
+    MoveNext
+    After MoveNext: NotEvaluated
+Default (Current): End
+```
 
 ## SEE ALSO
 

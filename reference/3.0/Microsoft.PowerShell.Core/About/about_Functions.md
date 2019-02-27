@@ -1,15 +1,13 @@
-﻿---
+---
 ms.date:  11/28/2017
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions
 ---
-
 # About Functions
 
 ## SHORT DESCRIPTION
-
 Describes how to create and use functions in PowerShell.
 
 ## LONG DESCRIPTION
@@ -104,7 +102,7 @@ function Get-NewPix
 ```
 
 You can create a toolbox of useful small functions. Add these functions to
-your PowerShell profile, as described in about_Profiles and later in
+your PowerShell profile, as described in [about_Profiles](about_Profiles.md) and later in
 this topic.
 
 ### Function Names
@@ -223,7 +221,7 @@ function Get-SmallFiles {
 ```
 
 For more information about the PSDefaultValue attribute class, see
-[PSDefaultValue Attribute Members](https://msdn.microsoft.com/library/system.management.automation.psdefaultvalueattribute_members(v=vs.85).aspx) on MSDN.
+[PSDefaultValue Attribute Members](/dotnet/api/system.management.automation.psdefaultvalueattribute) on MSDN.
 
 
 ### Positional Parameters
@@ -419,6 +417,8 @@ Processing:  4
 End:   The input is:
 ```
 
+For more information, see [Using Enumerators](about_Automatic_Variables.md#using-enumerators)
+
 ### Filters
 
 A filter is a type of function that runs on each object in the pipeline. A
@@ -544,8 +544,8 @@ methods:
 
   For more information about the ExternalHelp keyword, see
   [about_Comment_Based_Help](about_Comment_Based_Help.md). For more
-  information about XML-based help, see [How to Write Cmdlet
-  Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.
+  information about XML-based help, see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
+  in the MSDN library.
 
 ## SEE ALSO
 
@@ -571,4 +571,4 @@ methods:
 
 [about_Script_Blocks](about_Script_Blocks.md)
 
-Function (provider)
+[about_Function_provider](about_Function_provider.md)

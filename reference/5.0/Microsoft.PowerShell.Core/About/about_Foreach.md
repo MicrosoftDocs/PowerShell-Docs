@@ -157,6 +157,8 @@ variable inside of a foreach script block. The example function can find
 functions in a script even if there are unusually- or inconsistently-spaced
 function definitions that span multiple lines.
 
+For more information, see [Using Enumerators](about_Automatic_Variables.md#using-enumerators).
+
 ```powershell
 function Get-FunctionPosition {
   [CmdletBinding()]

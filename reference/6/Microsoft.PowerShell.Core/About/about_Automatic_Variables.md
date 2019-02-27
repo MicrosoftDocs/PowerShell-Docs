@@ -527,7 +527,7 @@ The `$input`, `$foreach`, and `$switch` variables are all enumerators used
 to iterate through the values processed by their containing code block.
 
 An enumerator contains properties and methods you can use to advance or reset
-iteration, or retrieve iteration values. Directly manipulating enumeators is not
+iteration, or retrieve iteration values. Directly manipulating enumerators is not
 considered best practice.
 
 - Within loops, flow control keywords [break](about_Break.md) and [continue](about_Continue.md)
@@ -548,7 +548,7 @@ the enumerator has passed the end of the collection.
 > [!NOTE]
 > The **Boolean** value returned my **MoveNext** is sent to the output stream.
 > You can suppress the output by typecasting it to `[void]` or piping it to
-> [Out-Null](Out-Null.md).
+> [Out-Null](../Out-Null.md).
 >
 > ```powershell
 > $input.MoveNext() | Out-Null
