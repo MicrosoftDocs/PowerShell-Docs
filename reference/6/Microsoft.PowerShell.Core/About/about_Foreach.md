@@ -7,24 +7,24 @@ title:  about_Foreach
 ---
 # About ForEach
 
-## SHORT DESCRIPTION
+## Short description
 Describes a language command you can use to traverse all the items in a
 collection of items.
 
-## LONG DESCRIPTION
+## Long description
 
-The Foreach statement (also known as a Foreach loop) is a language construct
+The `Foreach` statement (also known as a `Foreach` loop) is a language construct
 for stepping through (iterating) a series of values in a collection of items.
 
 The simplest and most typical type of collection to traverse is an array.
-Within a Foreach loop, it is common to run one or more commands against each
+Within a `Foreach` loop, it is common to run one or more commands against each
 item in an array.
 
 ## Syntax
 
-The following shows the ForEach syntax:
+The following shows the `ForEach` syntax:
 
-```syntax
+```
 foreach ($<item> in $<collection>){<statement list>}
 ```
 
