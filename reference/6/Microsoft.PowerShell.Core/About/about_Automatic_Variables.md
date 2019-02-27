@@ -111,11 +111,13 @@ non-zero integer.
 
 ### $FOREACH
 
-Contains the enumerator (not the resulting values) of a ForEach loop. You
-can use the properties and methods of enumerators on the value of the
-`$ForEach` variable. This variable exists only while the `ForEach` loop is
-running; it is deleted after the loop is completed. For detailed
-information, see [about_ForEach](about_ForEach.md).
+Contains the enumerator (not the resulting values) of a
+[ForEach](about_ForEach.md) loop. The `$ForEach` variable exists only while
+the `ForEach` loop is running; it is deleted after the loop is completed.
+
+Enumerators contain properties and methods you can use to retrieve loop values
+and change the current loop iteration. For more information, see
+[Using Enumerators](#using-enumerators).
 
 ### $HOME
 
@@ -135,12 +137,26 @@ commands or to display or change the properties of the host, such as
 
 Contains an enumerator that enumerates all input that is passed to a
 function. The `$input` variable is available only to functions and script
-blocks (which are unnamed functions). In the Process block of a function,
-the `$input` variable enumerates the object that is currently in the
-pipeline. When the Process block completes, there are no objects left in
-the pipeline, so the `$input` variable enumerates an empty collection. If the
-function does not have a Process block, then in the End block, the `$input`
-variable enumerates the collection of all input to the function.
+blocks (which are unnamed functions).
+
+- In a function without a Begin, Process, or End block, the `$input` variable enumerates the
+  collection of all input to the function.
+
+- In the Process block of a function, the `$input` variable contains the object that is currently in
+  the pipeline.
+
+- In the End block, the `$input` variable enumerates the collection of all
+  input to the function.
+  > [!NOTE]
+  > You cannot use the `$input` variable inside both the Process block and the
+  > End block in the same function or script block.
+
+> [!NOTE]
+> The `$input` variable will contain no data inside of the Begin block.
+
+Enumerators contain properties and methods you can use to retrieve loop values
+and change the current loop iteration. For more information, see
+[Using Enumerators](#using-enumerators).
 
 ### $IsCoreCLR
 
@@ -171,9 +187,13 @@ Contains the exit code of the last Windows-based program that was run.
 The `Matches` variable works with the `-match` and `-notmatch` operators.
 When you submit scalar input to the `-match` or `-notmatch` operator, and
 either one detects a match, they return a Boolean value and populate the
-$Matches automatic variable with a hash table of any string values that
-were matched. For more information about the `-match` operator, see
-[about_comparison_operators](about_comparison_operators.md).
+`$Matches` automatic variable with a hash table of any string values that
+were matched. The `$Matches` hash table can also be populated with captures
+when you use regular expressions with the `-match` operator.
+
+For more information about the `-match` operator, see
+[about_comparison_operators](about_comparison_operators.md). For more
+information on regular expressions, see [about_Regular_Expressions](about_Regular_Expressions.md).
 
 ### $MYINVOCATION
 
@@ -480,6 +500,17 @@ Contains the identifier of the current shell.
 
 Contains a stack trace for the most recent error.
 
+### $SWITCH
+
+Contains the enumerator (not the resulting values) of a [Switch](about_Switch.md)
+statement. The `$Switch` variable exists only while the `switch` statement is
+running; it is deleted when the `switch` statement
+completes execution.
+
+Enumerators contain properties and methods you can use to retrieve loop values
+and change the current loop iteration. For more information, see
+[Using Enumerators](#using-enumerators).
+
 ### $THIS
 
 In a script block that defines a script property or script method, the
@@ -489,6 +520,45 @@ In a script block that defines a script property or script method, the
 
 Contains TRUE. You can use this variable to represent TRUE in commands and
 scripts.
+
+## Using Enumerators
+
+The `$input`, `$foreach`, and `$switch` variables are all enumerators used
+to iterate through the values processed by their containing code block.
+
+An enumerator contains properties and methods you can use to advance or reset
+iteration, or retrieve iteration values.
+
+### MoveNext
+
+The **MoveNext** method attempts to set the `$input` variable equal to the next
+item in the pipeline. It returns **True** if the operation is successful, and
+**False** if the operation fails (no more items to retrieve). In the following
+example, the first value in the pipeline is skipped.
+
+```powershell
+function Test
+{
+    process
+    {
+        $input.MoveNext()
+        $input
+    }
+}
+
+1,2 | Test
+```
+
+```Output
+True
+2
+```
+
+When writing a function that accepts pipeline input, it is best practice to
+use Parameters with the **ValueFromPipeline** or
+**ValueFromPipelineByPropertyName** attributes.
+
+For more information, see [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
 
 ## SEE ALSO
 
