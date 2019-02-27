@@ -85,7 +85,7 @@ You cannot pipe input to this cmdlet.
 
 ### System.Globalization.CultureInfo, Microsoft.PowerShell.VistaCultureInfo
 
-**`Get-UICulture` returns an object that represents the current UI culture.
+`Get-UICulture` returns an object that represents the current UI culture.
 In Windows PowerShell 3.0, it returns a **CultureInfo** object.
 In Windows PowerShell 2.0, it returns a **VistaCultureInfo** object.
 
