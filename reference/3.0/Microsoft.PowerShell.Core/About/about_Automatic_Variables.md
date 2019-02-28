@@ -141,16 +141,18 @@ blocks (which are unnamed functions).
 - In a function without a `Begin`, `Process`, or `End` block, the `$input`
   variable enumerates the collection of all input to the function.
 
-- In the `Process` block of a function, the `$input` variable contains the
+- In the `Begin` block, the `$input` variable contains no data.
+
+- In the `Process` block, the `$input` variable contains the
   object that is currently in the pipeline.
 
 - In the `End` block, the `$input` variable enumerates the collection of all
   input to the function.
+
   > [!NOTE]
   > You cannot use the `$input` variable inside both the Process block and the
   > End block in the same function or script block.
 
-- The `$input` variable will contain no data inside of the `Begin` block.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
