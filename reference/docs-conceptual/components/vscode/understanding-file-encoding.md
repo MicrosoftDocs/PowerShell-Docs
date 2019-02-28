@@ -11,7 +11,7 @@ using the correct character encoding format.
 ## What is file encoding and why is it important?
 
 VSCode manages the interface between a human entering strings of characters into a buffer and
-reading/writing blocks of bytes to the filesystem. When VSCode saves the file, it uses a text
+reading/writing blocks of bytes to the filesystem. When VSCode saves a file, it uses a text
 encoding to do this.
 
 Similarly, when PowerShell runs a script it must convert the bytes in a file to characters to
@@ -84,22 +84,23 @@ The PowerShell extension interacts with scripts in a number of ways:
 2. When scripts are executed directly in the Integrated Console, they're read from the file by
    PowerShell directly. Tf PowerShell's encoding differs from VSCode's, something can go wrong here.
 3. When a script that is open in VSCode references another script that is not open in VSCode, the
-   extension falls back to loading that script's content from the file system. VSCode defaults to
-   UTF-8 encoding, but uses [byte-order mark][], or BOM, detection to select the correct encoding.
+   extension falls back to loading that script's content from the file system. The PowerShell
+   extension defaults to UTF-8 encoding, but uses [byte-order mark][], or BOM, detection to select
+   the correct encoding.
 
-The problem occurs when assuming the encoding of BOM-less formats (like [UTF-8] with no BOM and [Windows-1252]).
+The problem occurs when assuming the encoding of BOM-less formats (like [UTF-8][] with no BOM and [Windows-1252][]).
 The PowerShell extension defaults to UTF-8. The extension cannot change VSCode's encoding settings.
 For more information, see [issue #824](https://github.com/Microsoft/vscode/issues/824).
 
 ## Choosing the right encoding
 
-Choosing an encoding depends on the platforms and applications you use to read and write your
-PowerShell files.
+Different systems and applications can use different encodings:
 
-On Windows, many applications have long used [Windows-1252]. Many .NET applications use [UTF-16],
-often called "Unicode". Unicode is a term that now refers to a broader [standard](https://en.wikipedia.org/wiki/Unicode).
-
-In the Linux world, on the web, and in .NET Standard, UTF-8 is now the dominant encoding.
+- In .NET Standard, on the web, and in the Linux world, UTF-8 is now the dominant encoding.
+- Many .NET Framework applications use [UTF-16][]. For historical reasons, this is sometimes called
+  "Unicode", a term that now refers to a broad [standard](https://en.wikipedia.org/wiki/Unicode)
+  that includes both UTF-8 and UTF-16.
+- On Windows, many native applications that predate Unicode continue to use Windows-1252 by default.
 
 Unicode encodings also have the concept of a byte-order mark (BOM). BOMs occur at the beginning of
 text to tell a decoder which encoding the text is using. For multi-byte encodings, the BOM also
@@ -108,7 +109,7 @@ to be bytes that rarely occur in non-Unicode text, allowing a reasonable guess t
 when a BOM is present.
 
 BOMs are optional and their adoption isn't as popular in the Linux world because a dependable
-convention of UTF-8 being used everywhere. Most Linux applications presume that text input is
+convention of UTF-8 is used everywhere. Most Linux applications presume that text input is
 encoded in UTF-8. While many Linux applications will recognize and correctly handle a BOM, a number
 do not, leading to artifacts in text manipulated with those applications.
 
@@ -127,8 +128,8 @@ do not, leading to artifacts in text manipulated with those applications.
 
 VSCode's default encoding is UTF-8 without BOM.
 
-To set [VSCode's encoding](https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support),
-go to the VSCode settings (Ctrl+,) and set the `"files.encoding"` setting:
+To set [VSCode's encoding][], go to the VSCode settings (<kbd>Ctrl<kbd>+</kbd>,</kbd>) and set the
+`"files.encoding"` setting:
 
 ```json
 "files.encoding": "utf8bom"
@@ -165,8 +166,8 @@ field. For example:
 
 PowerShell's default encoding varies depending on version:
 
-- In PowerShell 6+, the default encoding is [UTF-8] without BOM on all platforms.
-- In Windows PowerShell, the default encoding is usually [Windows-1252], an extension of [latin-1],
+- In PowerShell 6+, the default encoding is UTF-8 without BOM on all platforms.
+- In Windows PowerShell, the default encoding is usually Windows-1252, an extension of [latin-1][],
   also known as ISO 8859-1.
 
 In PowerShell 5+ you can find your default encoding with this:
@@ -179,7 +180,7 @@ In PowerShell 5+ you can find your default encoding with this:
 ```
 
 The following [this script](https://gist.github.com/rjmholt/3d8dd4849f718c914132ce3c5b278e0e) can be
-used to determine what encoded your PowerShell session infers for a script without a BOM.
+used to determine what encoding your PowerShell session infers for a script without a BOM.
 
 ```powershell
 $badBytes = [byte[]]@(0xC3, 0x80)
@@ -226,11 +227,12 @@ save scripts in a Unicode format with a BOM.
 > Any other tools you have that touch PowerShell scripts may be affected by your
 > encoding choices or re-encode your scripts to another encoding.
 
-### Scripts
+### Existing scripts
 
 Scripts already on the file system may need to be re-encoded to your new chosen encoding. In the
-bottom bar of VSCode, you'll see the label UTF-8. Click it to open the action bar and select
-**Save with encoding**. You can now pick a new encoding for that file.
+bottom bar of VSCode, you'll see the label UTF-8. Click it to open the action bar and select **Save
+with encoding**. You can now pick a new encoding for that file. See [VSCode's encoding][] for full
+instructions.
 
 If you need to re-encode multiple files, you can use the following script:
 
@@ -318,3 +320,4 @@ read:
 [byte-order mark]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Language Server Protocol]: https://microsoft.github.io/language-server-protocol/
+[VSCode's encoding]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
