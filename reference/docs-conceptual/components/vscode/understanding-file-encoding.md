@@ -1,3 +1,8 @@
+---
+title: Understanding file encoding in VSCode and PowerShell
+description: Configure file encoding in VSCode and PowerShell
+ms.date: 02/28/2019
+---
 # Understanding file encoding in VSCode and PowerShell
 
 When using VS Code to create and edit PowerShell scripts, it is important that your files are saved
