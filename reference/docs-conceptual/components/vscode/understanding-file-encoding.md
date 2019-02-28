@@ -24,9 +24,11 @@ configure your VSCode and PowerShell settings properly.
 Encoding problems occur when the encoding of VSCode or your script file does not match the expected
 encoding of PowerShell. There is no way for PowerShell to automatically determine the file encoding.
 
-You're more likely to have encoding problems when you're using characters not in the [7-bit ASCII character set](https://ascii.cl/),
-such as accented latin characters (e.g. `É`, `ü`), or non-latin characters like Cyrillic (`Д`, `Ц`)
-or Han Chinese (`脚`, `本`).
+You're more likely to have encoding problems when you're using characters not in the [7-bit ASCII character set](https://ascii.cl/). For example:
+
+- Accented latin characters (`É`, `ü`)
+- Non-latin characters like Cyrillic (`Д`, `Ц`)
+- Han Chinese (`脚`, `本`)
 
 Common reasons for encoding issues are:
 
@@ -34,9 +36,9 @@ Common reasons for encoding issues are:
   5.1 and below, the default encoding is different from VSCode's.
 - Another editor has opened and overwritten the file in a new encoding. This often happens with the
   ISE.
-- The file is checked into source control (like git) in a different encoding to what VSCode or
-  PowerShell expects. This can happen when collaborators edit files with an editor with a different
-  encoding configurations.
+- The file is checked into source control in an encoding that is different from what VSCode or
+  PowerShell expects. This can happen when collaborators use editors with different encoding
+  configurations.
 
 ### How to tell when you have encoding issues
 
@@ -74,37 +76,36 @@ The PowerShell extension interacts with scripts in a number of ways:
 1. When scripts are edited in VSCode, the contents are sent by VSCode to the extension. The [Language Server Protocol][]
    mandates that this content is transferred in UTF-8. Therefore, it is not possible for the
    extension to get the wrong encoding.
-2. When scripts are executed directly in the Integrated Console, they are read off the filesystem by
-   PowerShell directly. This means that if PowerShell's encoding differs from VSCode's, something
-   may go wrong here.
+2. When scripts are executed directly in the Integrated Console, they're read from the file by
+   PowerShell directly. Tf PowerShell's encoding differs from VSCode's, something can go wrong here.
 3. When a script that is open in VSCode references another script that is not open in VSCode, the
    extension falls back to loading that script's content from the file system. VSCode defaults to
    UTF-8 encoding, but uses [byte-order mark][], or BOM, detection to select the correct encoding.
 
 The problem occurs when assuming the encoding of BOM-less formats (like [UTF-8] with no BOM and [Windows-1252]).
-In these cases, the extension defaults to UTF-8 rather than more complex logic. The PowerShell
-extension cannot change VSCode's encoding settings. For more information see [issue #824](https://github.com/Microsoft/vscode/issues/824).
+The PowerShell extension defaults to UTF-8. The extension cannot change VSCode's encoding settings.
+For more information, see [issue #824](https://github.com/Microsoft/vscode/issues/824).
 
 ## Choosing the right encoding
 
 Choosing an encoding depends on the platforms and applications you use to read and write your
 PowerShell files.
 
-On Windows, many applications have long used [Windows-1252]. Many .NET applications use [UTF-16]. In
-Windows, this is often called "Unicode", Unicode is a term that now refers to a broader [standard](https://en.wikipedia.org/wiki/Unicode).
+On Windows, many applications have long used [Windows-1252]. Many .NET applications use [UTF-16],
+often called "Unicode". Unicode is a term that now refers to a broader [standard](https://en.wikipedia.org/wiki/Unicode).
 
-In the Linux world, on the web, and .NET Standard, UTF-8 is now the dominant encoding.
+In the Linux world, on the web, and in .NET Standard, UTF-8 is now the dominant encoding.
 
 Unicode encodings also have the concept of a byte-order mark (BOM). BOMs occur at the beginning of
-text to tell a decoder which encoding the text is using. In the case of multi-byte encodings, the
-BOM also indicates [endianness](https://en.wikipedia.org/wiki/Endianness) of the encoding. BOMs are
-designed to be bytes that rarely occur in non-Unicode text, allowing a reasonable guess that text is
-Unicode when a BOM is present.
+text to tell a decoder which encoding the text is using. For multi-byte encodings, the BOM also
+indicates [endianness](https://en.wikipedia.org/wiki/Endianness) of the encoding. BOMs are designed
+to be bytes that rarely occur in non-Unicode text, allowing a reasonable guess that text is Unicode
+when a BOM is present.
 
-BOMs are optional and their adoption has not caught on in the Linux world, due to a dependable
-convention of UTF-8 being used everywhere. This means that most Linux applications presume that text
-input is encoded in UTF-8. While many Linux applications will recognize and correctly handle a BOM,
-a number do not, leading to artifacts in text manipulated with those applications.
+BOMs are optional and their adoption isn't as popular in the Linux world because a dependable
+convention of UTF-8 being used everywhere. Most Linux applications presume that text input is
+encoded in UTF-8. While many Linux applications will recognize and correctly handle a BOM, a number
+do not, leading to artifacts in text manipulated with those applications.
 
 **Therefore**:
 
@@ -138,14 +139,14 @@ Some possible values are:
 
 You should get a dropdown for this in the GUI view, or completions for it in the JSON view.
 
-You can also add the following to auto-detect encoding when possible:
+You can also add the following to autodetect encoding when possible:
 
 ```json
 "files.autoGuessEncoding": true
 ```
 
 If you don't want these settings to affect all files types, VSCode also allows per-language
-configurations. Create a language specific setting by putting settings in a `[<language-name>]`
+configurations. Create a language-specific setting by putting settings in a `[<language-name>]`
 field. For example:
 
 ```json
@@ -206,14 +207,14 @@ finally
 }
 ```
 
-If want to configure PowerShell to use a given encoding more generally, this is possible to do for
-some aspects with profile settings. See:
+It's possible to configure PowerShell to use a given encoding more generally using profile
+settings. See the following articles:
 
 - [@mklement0]'s [answer about PowerShell encoding on StackOverflow](https://stackoverflow.com/a/40098904).
 - [@rkeithhill]'s [blog post about dealing with BOM-less UTF-8 input in PowerShell](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/).
 
 It's not possible to force PowerShell to use a specific input encoding. PowerShell 5.1 and below
-default to Windows-1252 encoding when there is no BOM. For interoperability reasons, it's best to
+default to Windows-1252 encoding when there's no BOM. For interoperability reasons, it's best to
 save scripts in a Unicode format with a BOM.
 
 > [!IMPORTANT]
@@ -237,12 +238,12 @@ Get-ChildItem *.ps1 -Recurse | ForEach-Object {
 
 ### The PowerShell Integrated Scripting Environment (ISE)
 
-If you also edit scripts using the PowerShell ISE, you will need to synchronize your encoding
+If you also edit scripts using the PowerShell ISE, you need to synchronize your encoding
 settings there.
 
-The ISE should honor a BOM, but it is also possible to use reflection to
+The ISE should honor a BOM, but it's also possible to use reflection to
 [set the encoding](https://bensonxion.wordpress.com/2012/04/25/powershell-ise-default-saveas-encoding/).
-Note that this would not be persisted between startups.
+Note that this wouldn't be persisted between startups.
 
 ### Source control software
 
@@ -271,7 +272,7 @@ Some examples are:
 - Using the clipboard to copy and paste a script. This is common in scenarios like:
   - Copying a script into a VM
   - Copying a script out of an email or webpage
-  - Copying a script into or out of an Microsoft Word or PowerPoint document
+  - Copying a script into or out of a Microsoft Word or PowerPoint document
 - Other text editors, such as:
   - Notepad
   - vim
@@ -284,9 +285,9 @@ Some examples are:
   - A web browser, when downloading scripts
   - A file share
 
-Some of these deal in bytes rather than text, but others offer encoding configurations. In those
-cases where you need to configure an encoding, you need to make it the same as your editor encoding
-to prevent problems.
+Some of these tools deal in bytes rather than text, but others offer encoding configurations. In
+those cases where you need to configure an encoding, you need to make it the same as your editor
+encoding to prevent problems.
 
 ## Other resources on encoding in PowerShell
 
@@ -300,7 +301,7 @@ read:
   - [#1680](https://github.com/PowerShell/vscode-powershell/issues/1680)
   - [#1744](https://github.com/PowerShell/vscode-powershell/issues/1744)
   - [#1751](https://github.com/PowerShell/vscode-powershell/issues/1751)
-- [The classic *Joel on Software* writeup about Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- [The classic *Joel on Software* write up about Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Encoding in .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
 
