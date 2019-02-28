@@ -65,7 +65,7 @@ To exit Visual Studio Code, **File->Exit**.
 
 Some systems are set up in a way that requires all code signatures to be checked and thus requires
 PowerShell Editor Services to be manually approved to run on the system.
-A Group Policy update that changes execution policy is a likely cause if you have installed the 
+A Group Policy update that changes execution policy is a likely cause if you have installed the
 PowerShell extension but are reaching an error like:
 
 ```
@@ -117,17 +117,34 @@ We recommend the following configuration settings for Visual Studio Code:
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+If you don't want these settings to affect all files types, VSCode also allows per-language
+configurations. Create a language specific setting by putting settings in a `[<language-name>]`
+field. For example:
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+For more information about file encoding in VS Code, see [Understanding file encoding](understanding-file-encoding.md).
 
 ## Debugging with Visual Studio Code
 
 ### No-workspace debugging
 
-As of Visual Studio Code version 1.9 you can debug PowerShell scripts without having to open the folder containing the PowerShell script.
-Simply open the PowerShell script file with **File->Open File...**, set a breakpoint on a line (press F9) and then press F5 to start debugging.
-You should see the Debug actions pane appear which allows you to break into the debugger, step, resume and stop debugging.
+As of Visual Studio Code version 1.9 you can debug PowerShell scripts without having to open the
+folder containing the PowerShell script. Open the PowerShell script file with **File->Open
+File...**, set a breakpoint on a line (press F9) and then press F5 to start debugging. You should
+see the Debug actions pane appear which allows you to break into the debugger, step, resume and stop
+debugging.
 
 ### Workspace debugging
 
