@@ -179,7 +179,7 @@ In PowerShell 5+ you can find your default encoding with this:
   }
 ```
 
-The following [this script](https://gist.github.com/rjmholt/3d8dd4849f718c914132ce3c5b278e0e) can be
+The following [script](https://gist.github.com/rjmholt/3d8dd4849f718c914132ce3c5b278e0e) can be
 used to determine what encoding your PowerShell session infers for a script without a BOM.
 
 ```powershell
