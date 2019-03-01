@@ -8,11 +8,9 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821501
 schema: 2.0.0
 title: New-PSTransportOption
 ---
-
 # New-PSTransportOption
 
 ## SYNOPSIS
-
 Creates an object that contains advanced options for a session configuration.
 
 ## SYNTAX
@@ -359,6 +357,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

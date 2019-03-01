@@ -8,7 +8,6 @@ title:  about_Properties
 # About Properties
 
 ## Short description
-
 Describes how to use object properties in PowerShell.
 
 ## Long description

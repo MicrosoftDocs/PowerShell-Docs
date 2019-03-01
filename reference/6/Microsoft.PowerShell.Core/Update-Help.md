@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkID=821524
 schema: 2.0.0
 title: Update-Help
 ---
-
 # Update-Help
 
 ## SYNOPSIS
@@ -17,6 +16,7 @@ Downloads and installs the newest help files on your computer.
 ## SYNTAX
 
 ### Path (Default)
+
 ```
 Update-Help [[-Module] <string[]>] [[-SourcePath] <string[]>] [[-UICulture] <cultureinfo[]>] 
  [-FullyQualifiedModule <ModuleSpecification[]>] [-Recurse] [-Credential <pscredential>]
@@ -24,6 +24,7 @@ Update-Help [[-Module] <string[]>] [[-SourcePath] <string[]>] [[-UICulture] <cul
 ```
 
 ### LiteralPath
+
 ```
 Update-Help [[-Module] <string[]>] [[-UICulture] <cultureinfo[]>]
  [-FullyQualifiedModule <ModuleSpecification[]>] [-LiteralPath <string[]>] [-Recurse]
@@ -326,7 +327,7 @@ Accept wildcard characters: False
 
 Specifies modules with names that are specified in the form of **ModuleSpecification** objects.
 These are described in the Remarks section of 
-[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_). 
+[ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 For example, the FullyQualifiedModule parameter accepts a module name that is specified in the format
 `@{ModuleName = "modulename"; ModuleVersion = "version_number"}` or 
 `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}.`
@@ -406,6 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -Recurse Searches recursively for help files in the specified directory. This parameter is
+
 valid only when **SourcePath** is used in the command.
 
 ```yaml

@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821502
 schema: 2.0.0
 title: Out-Default
 ---
-
 # Out-Default
 
 ## SYNOPSIS
@@ -21,6 +20,7 @@ Out-Default [-Transcript] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Out-Default** cmdlet sends output to the default formatter and the default output cmdlet.
 This cmdlet has no effect on the formatting or output of PowerShell commands.
 It is a placeholder that lets you write your own **Out-Default** function or cmdlet.
@@ -28,6 +28,7 @@ It is a placeholder that lets you write your own **Out-Default** function or cmd
 ## EXAMPLES
 
 ### 1:
+
 ```
 
 ```
@@ -35,6 +36,7 @@ It is a placeholder that lets you write your own **Out-Default** function or cmd
 ## PARAMETERS
 
 ### -InputObject
+
 Accepts input to the cmdlet.
 
 ```yaml
@@ -64,6 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -71,7 +74,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-
-## RELATED LINKS
 
 ## RELATED LINKS

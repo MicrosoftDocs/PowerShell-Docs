@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_pipelines
 ---
-
 # About Pipelines
 
 ## Short Description
-
 Combining commands into pipelines in the PowerShell
 
 ## Long Description
