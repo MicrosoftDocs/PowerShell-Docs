@@ -181,11 +181,11 @@ Creates a new Windows service.
 
 ### [New-WebServiceProxy](New-WebServiceProxy.md)
 
-Creates a Web service proxy object that lets you use and manage the Web service in Windows PowerShell.
+Creates a Web service proxy object that lets you use and manage the Web service in PowerShell.
 
 ### [Pop-Location](Pop-Location.md)
 
-Changes the current location to the location most recently pushed onto the stack. You can pop the location from the default stack or from a stack that you create by using the Push-Location cmdlet.
+Changes the current location to the location most recently pushed onto the stack.
 
 ### [Push-Location](Push-Location.md)
 
