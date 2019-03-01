@@ -12,7 +12,7 @@ caps.latest.revision: 9
 
 # How to write a cmdlet
 
-This article shows how to write a cmdlet. The **Send-Greeting** cmdlet takes a single user name as
+This article shows how to write a cmdlet. The `Send-Greeting` cmdlet takes a single user name as
 input and then writes a greeting to that user. Although the cmdlet does not do much work, this
 example demonstrates the major sections of a cmdlet.
 
@@ -53,7 +53,7 @@ using System.Management.Automation;  // Windows PowerShell assembly.
 
 namespace SendGreeting
 {
-  // Declare the class as a cmdlet and specify and
+  // Declare the class as a cmdlet and specify the
   // appropriate verb and noun for the cmdlet name.
   [Cmdlet(VerbsCommunications.Send, "Greeting")]
   public class SendGreetingCommand : Cmdlet
