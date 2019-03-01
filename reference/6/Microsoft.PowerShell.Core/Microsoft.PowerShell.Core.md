@@ -1,5 +1,5 @@
 ---
-ms.date:  02/25/2019
+ms.date:  02/28/2019
 schema:  2.0.0
 locale:  en-US
 keywords:  powershell,cmdlet
@@ -13,7 +13,9 @@ Module Name:  Microsoft.PowerShell.Core
 
 ## Description
 
-This section contains the help topics for the cmdlets that are installed with PowerShell Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of PowerShell.
+This section contains the help topics for the cmdlets that are installed with PowerShell
+Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the
+basic features of PowerShell.
 
 ## Microsoft.PowerShell.Core Cmdlets
 
@@ -117,10 +119,6 @@ Gets the capabilities of a specific user on a constrained session configuration.
 
 Gets the registered session configurations on the computer.
 
-### [Get-Verb](Get-Verb.md)
-
-Gets a list of approved verbs for PowerShell cmdlets.
-
 ### [Import-Module](Import-Module.md)
 
 Adds modules to the current session.
@@ -132,6 +130,10 @@ Runs commands on local and remote computers.
 ### [Invoke-History](Invoke-History.md)
 
 Runs commands from the session history.
+
+### [Microsoft.PowerShell.Core](Microsoft.PowerShell.Core.md)
+
+This section contains the help topics for the cmdlets that are installed with PowerShell Microsoft.PowerShell.Core module. The Core module contains cmdlets and providers that manage the basic features of PowerShell.
 
 ### [New-Module](New-Module.md)
 
