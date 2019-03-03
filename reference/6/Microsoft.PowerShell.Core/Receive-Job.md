@@ -622,12 +622,8 @@ This cmdlet returns the results of the commands in the job.
 
 [Remove-Job](Remove-Job.md)
 
-[Resume-Job](../../5.1/Microsoft.PowerShell.Core/Resume-Job.md)
-
 [Start-Job](Start-Job.md)
 
 [Stop-Job](Stop-Job.md)
-
-[Suspend-Job](../../5.1/Microsoft.PowerShell.Core/Suspend-Job.md)
 
 [Wait-Job](Wait-Job.md)
