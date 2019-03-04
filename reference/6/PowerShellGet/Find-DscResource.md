@@ -131,8 +131,8 @@ term.
 ## PARAMETERS
 
 ### -AllowPrerelease
+Includes in the results resources marked as a prerelease.
 
-{{Fill AllowPrerelease Description}}
 
 ```yaml
 Type: SwitchParameter
