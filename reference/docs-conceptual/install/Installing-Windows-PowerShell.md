@@ -98,7 +98,7 @@ If you're looking for **Azure PowerShell**,
 you could start with [Overview of Azure PowerShell](/powershell/azure/overview).
 
 Otherwise, what you might need is
-[Install and configure Azure PowerShell](/powershell/azure/install-azurerm-ps)
+[Install and configure Azure PowerShell](/powershell/azure/install-az-ps)
 
 ## See Also
 
