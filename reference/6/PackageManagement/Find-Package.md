@@ -291,7 +291,7 @@ Accept wildcard characters: False
 
 ### -Headers
 
-{{Fill Headers Description}}
+Specifies the headers for the package.
 
 ```yaml
 Type: String[]
