@@ -28,7 +28,6 @@ Windows PowerShell provides several providers (such as the FileSystem provider, 
 ## Accessing the Stored Data Using Windows PowerShell Paths
 
 Windows PowerShell providers are accessible to the Windows PowerShell runtime and to commands programmatically through the use of Windows PowerShell paths. Most of the time, these paths are used to directly access the data through the provider. However, some paths can be resolved to provider-internal paths that allow a cmdlet to use non-Windows PowerShell application programming interfaces (APIs) to access the data. For more information about how Windows PowerShell providers operate within Windows PowerShell, see [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
-Windows PowerShell providers are accessible to the Windows PowerShell runtime and to commands programmatically through the use of Windows PowerShell paths. Most of the time, these paths are used to directly access the data through the provider. However, some paths can be resolved to provider-internal paths that allow a cmdlet to use non-Windows PowerShell application programming interfaces (APIs) to access the data. For more information about how Windows PowerShell providers operate within Windows PowerShell, see [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
 ## Exposing Provider Cmdlets Using Windows PowerShell Drives
 
@@ -58,8 +57,6 @@ The following table lists topics that include code examples that build on each o
 |[Creating a Windows PowerShell Property Provider](./creating-a-windows-powershell-property-provider.md)|This topic shows how to create a Windows PowerShell provider that allows the user to manipulate the properties of items in a data store.|
 
 ## See Also
-
-[How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

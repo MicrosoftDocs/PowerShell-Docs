@@ -18,7 +18,6 @@ This topic describes how to create a provider that enables the user to manipulat
 
 > [!NOTE]
 > Windows PowerShell provides a template file that you can use to develop a Windows PowerShell provider. The TemplateProvider.cs file is available on the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
-> Windows PowerShell provides a template file that you can use to develop a Windows PowerShell provider. The TemplateProvider.cs file is available on the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > The downloaded template is available in the **\<PowerShell Samples>** directory. You should make a copy of this file and use the copy for creating a new Windows PowerShell provider, removing any functionality that you do not need.
 >
@@ -144,7 +143,6 @@ Here is the default implementation of [System.Management.Automation.Provider.Ipr
 ## Building the Windows PowerShell provider
 
 See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## See Also
 
@@ -153,9 +151,5 @@ See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.micr
 [Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
 [Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Extending Object Types and Formatting](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
