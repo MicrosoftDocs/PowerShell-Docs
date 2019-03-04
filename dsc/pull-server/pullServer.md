@@ -1,11 +1,9 @@
 ---
-ms.date:  04/11/2018
+ms.date:  03/04/2019
 keywords:  dsc,powershell,configuration,setup
 title:  DSC Pull Service
 ---
 # Desired State Configuration Pull Service
-
-> Applies To: Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server
