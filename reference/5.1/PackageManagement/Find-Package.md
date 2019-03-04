@@ -163,7 +163,7 @@ Accept wildcard characters: False
 
 ### -ConfigFile
 
-{{Fill ConfigFile Description}}
+Specifies a configuration file.
 
 ```yaml
 Type: String
