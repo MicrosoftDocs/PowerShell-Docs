@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821842
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Out-String
 ---
-
 # Out-String
 
 ## SYNOPSIS
-
 Sends objects to the host as a series of strings.
 
 ## SYNTAX

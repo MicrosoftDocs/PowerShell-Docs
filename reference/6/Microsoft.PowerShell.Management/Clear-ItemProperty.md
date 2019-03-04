@@ -10,7 +10,6 @@ title:  Clear-ItemProperty
 # Clear-ItemProperty
 
 ## SYNOPSIS
-
 Clears the value of a property but does not delete the property.
 
 ## SYNTAX

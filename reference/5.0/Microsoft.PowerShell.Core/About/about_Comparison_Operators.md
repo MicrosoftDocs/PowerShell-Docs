@@ -261,7 +261,7 @@ that match. It does not populate the `$Matches` automatic variable.
 PS> "Sunday", "Monday", "Tuesday" -match "sun"
 Sunday
 
-PS> $matches
+PS> $Matches
 PS>
 ```
 
@@ -277,11 +277,25 @@ grouping and capturing using regular expressions, see
 PS> "Sunday" -match "sun"
 True
 
-PS> $matches
+PS> $Matches
 
 Name                           Value
 ----                           -----
 0                              Sun
+```
+
+It is important to note that the `$Matches` hashtable will only contain the
+first occurence of any matching pattern.
+
+```powershell
+PS> "Banana" -match "na"
+True
+
+PS> $Matches
+
+Name                           Value
+----                           -----
+0                              na
 ```
 
 > [!IMPORTANT]
@@ -289,7 +303,7 @@ Name                           Value
 > the value stored.
 >
 > ```powershell
-> PS> "Good Dog" -matches "Dog"
+> PS> "Good Dog" -match "Dog"
 > True
 >
 > PS> $Matches[0]
@@ -565,58 +579,9 @@ Cook
 book
 ```
 
-#### Substitutions in Regular Expressions
-
-Additionally, capturing groups can be referenced in the \<substitute\> string.
-This is done by using the `$` character before the group identifier.
-
-Two of the ways to reference capturing groups is by **Number** and by **Name**
-
-- By **Number** -
-  Capturing Groups are numbered from left to right.
-
-  ```powershell
-  "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
-  ```
-
-  ```output
-  John.D.Smith@contoso.com
-  ```
-
-- By **Name** -
-  Capturing Groups can also be referenced by name.
-
-  ```powershell
-  "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
-  ```
-
-  ```output
-  FABRIKOM\Administrator
-  ```
-
-> [!WARNING]
-> Since the `$` character is used in string expansion, you will need to use
-> literal strings with substitution, or escape the `$` character.
-> ```powershell
-> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
-> ```
->
-> ```output
-> Hello Universe
-> ```
->
-> Additionally, sicne the `$` character is used in substitution, you will need
-> to escape any instances in your string.
->
-> ```powershell
-> '5.72' -replace '(.+)', '$$$1'
-> ```
-> ```output
-> $5.72
-> ```
-
-To learn more see [about_Regular_Expressions](about_Regular_Expressions.md) and
-[Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)
+It is also possible to use regular expressions to dynamically replace text using
+capturing groups, and substitutions.
+For more information, see [about_Regular_Expressions](about_Regular_Expressions.md).
 
 ### Type comparison
 

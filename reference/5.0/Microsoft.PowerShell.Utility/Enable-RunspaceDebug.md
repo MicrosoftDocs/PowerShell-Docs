@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821765
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Enable-RunspaceDebug
 ---
-
 # Enable-RunspaceDebug
 
 ## SYNOPSIS
@@ -16,41 +15,49 @@ Enables debugging on runspaces where any breakpoint is preserved until a debugge
 ## SYNTAX
 
 ### RunspaceNameParameterSet (Default)
+
 ```
 Enable-RunspaceDebug [-BreakAll] [[-RunspaceName] <String[]>] [<CommonParameters>]
 ```
 
 ### RunspaceParameterSet
+
 ```
 Enable-RunspaceDebug [-BreakAll] [-Runspace] <Runspace[]> [<CommonParameters>]
 ```
 
 ### RunspaceIdParameterSet
+
 ```
 Enable-RunspaceDebug [-BreakAll] [-RunspaceId] <Int32[]> [<CommonParameters>]
 ```
 
 ### RunspaceInstanceIdParameterSet
+
 ```
 Enable-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
 ```
 
 ### ProcessNameParameterSet
+
 ```
 Enable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Enable-RunspaceDebug** cmdlet enables debugging on runspaces where any breakpoint is preserved until a debugger is attached.
 
 ## EXAMPLES
 
 ### 1:
+
 ```
 
 ```
 
 ### 2:
+
 ```
 
 ```
@@ -103,6 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Runspace
+
 Specifies a runspace object.
 The simplest way to provide a value for this parameter is to specify a variable that contains the results of a filtered **Get-Runspace** command.
 
@@ -164,6 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

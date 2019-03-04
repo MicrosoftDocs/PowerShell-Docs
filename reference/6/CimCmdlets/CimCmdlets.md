@@ -1,5 +1,5 @@
 ---
-ms.date:  06/09/2017
+ms.date:  02/20/2019
 schema:  2.0.0
 locale:  en-US
 keywords:  powershell,cmdlet
@@ -8,50 +8,67 @@ Download Help Link:  https://go.microsoft.com/fwlink/?linkid=855946
 Module Guid:  fb6cc51d-c096-4b38-b78d-0fed6277096a
 Module Name:  CimCmdlets
 ---
-
 # CimCmdlets Module
+
 ## Description
-{{Manually Enter Description Here}}
+
+Contains cmdlets that interact with Common Information Model (CIM) Servers like the Windows
+Management Instrumentation (WMI) service.
 
 ## CimCmdlets Cmdlets
+
 ### [Export-BinaryMiLog](Export-BinaryMiLog.md)
-{{Manually Enter Export-BinaryMiLog Description Here}}
+
+Creates a binary encoded representation of an object or objects and stores it in a file.
 
 ### [Get-CimAssociatedInstance](Get-CimAssociatedInstance.md)
-{{Manually Enter Get-CimAssociatedInstance Description Here}}
+
+Retrieves the CIM instances that are connected to a specific CIM instance by an association.
 
 ### [Get-CimClass](Get-CimClass.md)
-{{Manually Enter Get-CimClass Description Here}}
+
+Gets a list of CIM classes in a specific namespace.
 
 ### [Get-CimInstance](Get-CimInstance.md)
-{{Manually Enter Get-CimInstance Description Here}}
+
+Gets the CIM instances of a class from a CIM server.
 
 ### [Get-CimSession](Get-CimSession.md)
-{{Manually Enter Get-CimSession Description Here}}
+
+Gets the CIM session objects from the current session.
 
 ### [Import-BinaryMiLog](Import-BinaryMiLog.md)
-{{Manually Enter Import-BinaryMiLog Description Here}}
+
+Used to re-create the saved objects based on the contents of an export file.
 
 ### [Invoke-CimMethod](Invoke-CimMethod.md)
-{{Manually Enter Invoke-CimMethod Description Here}}
+
+Invokes a method of a CIM class.
 
 ### [New-CimInstance](New-CimInstance.md)
-{{Manually Enter New-CimInstance Description Here}}
+
+Creates a CIM instance.
 
 ### [New-CimSession](New-CimSession.md)
-{{Manually Enter New-CimSession Description Here}}
+
+Creates a CIM session.
 
 ### [New-CimSessionOption](New-CimSessionOption.md)
-{{Manually Enter New-CimSessionOption Description Here}}
+
+Specifies advanced options for the `New-CimSession` cmdlet.
 
 ### [Register-CimIndicationEvent](Register-CimIndicationEvent.md)
-{{Manually Enter Register-CimIndicationEvent Description Here}}
+
+Subscribes to indications using a filter expression or a query expression.
 
 ### [Remove-CimInstance](Remove-CimInstance.md)
-{{Manually Enter Remove-CimInstance Description Here}}
+
+Removes a CIM instance from a computer.
 
 ### [Remove-CimSession](Remove-CimSession.md)
-{{Manually Enter Remove-CimSession Description Here}}
+
+Removes one or more CIM sessions.
 
 ### [Set-CimInstance](Set-CimInstance.md)
-{{Manually Enter Set-CimInstance Description Here}}
+
+Modifies a CIM instance on a CIM server by calling the **ModifyInstance** method of the CIM class.

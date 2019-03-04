@@ -261,7 +261,7 @@ that match. It does not populate the `$Matches` automatic variable.
 PS> "Sunday", "Monday", "Tuesday" -match "sun"
 Sunday
 
-PS> $matches
+PS> $Matches
 PS>
 ```
 
@@ -277,11 +277,25 @@ grouping and capturing using regular expressions, see
 PS> "Sunday" -match "sun"
 True
 
-PS> $matches
+PS> $Matches
 
 Name                           Value
 ----                           -----
 0                              Sun
+```
+
+It is important to note that the `$Matches` hashtable will only contain the
+first occurence of any matching pattern.
+
+```powershell
+PS> "Banana" -match "na"
+True
+
+PS> $Matches
+
+Name                           Value
+----                           -----
+0                              na
 ```
 
 > [!IMPORTANT]
@@ -289,7 +303,7 @@ Name                           Value
 > the value stored.
 >
 > ```powershell
-> PS> "Good Dog" -matches "Dog"
+> PS> "Good Dog" -match "Dog"
 > True
 >
 > PS> $Matches[0]
@@ -565,6 +579,8 @@ Cook
 book
 ```
 
+It is also possible to use capturing groups, and substitutions with the
+`-replace` operator. For more information, see [about_Regular_Expressions](about_Regular_Expressions.md).
 #### Substitutions in Regular Expressions
 
 Additionally, capturing groups can be referenced in the \<substitute\> string.

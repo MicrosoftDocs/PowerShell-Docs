@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821784
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Event
 ---
-
 # Get-Event
 
 ## SYNOPSIS
@@ -16,16 +15,19 @@ Gets the events in the event queue.
 ## SYNTAX
 
 ### BySource (Default)
+
 ```
 Get-Event [[-SourceIdentifier] <String>] [<CommonParameters>]
 ```
 
 ### ById
+
 ```
 Get-Event [-EventIdentifier] <Int32> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-Event** cmdlet gets events in the Windows PowerShell event queue for the current session.
 You can get all events or use the *EventIdentifier* or *SourceIdentifier* parameter to specify the events.
 
@@ -39,6 +41,7 @@ To get those events, use Get-WinEvent or Get-EventLog.
 ## EXAMPLES
 
 ### Example 1: Get all events
+
 ```
 PS C:\> Get-Event
 ```
@@ -46,6 +49,7 @@ PS C:\> Get-Event
 This command gets all events in the event queue.
 
 ### Example 2: Get events by source identifier
+
 ```
 PS C:\> Get-Event -SourceIdentifier "PowerShell.ProcessCreated"
 ```
@@ -53,6 +57,7 @@ PS C:\> Get-Event -SourceIdentifier "PowerShell.ProcessCreated"
 This command gets events in which the value of the SourceIdentifier property is PowerShell.ProcessCreated.
 
 ### Example 3: Get an event based on the time it was generated
+
 ```
 PS C:\> $Events = Get-Event
 PS C:\> $Events[0] | Format-List -Property *
@@ -87,6 +92,7 @@ This allows you to examine the properties of the event object.
 The third command shows how to use the Where-Object cmdlet to get an event based on the time that it was generated.
 
 ### Example 4: Get an event by its identifier
+
 ```
 PS C:\> Get-Event -EventIdentifier 2
 ```
@@ -96,6 +102,7 @@ This command gets the event with an event identifier of 2.
 ## PARAMETERS
 
 ### -EventIdentifier
+
 Specifies the event identifiers for which this cmdlet gets events.
 
 ```yaml
@@ -111,6 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Specifies source identifiers for which this cmdlet gets events.
 The default is all events in the event queue.
 Wildcards are not permitted.
@@ -128,20 +136,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSEventArgs
+
 **Get-Event** returns a **PSEventArgs** object for each event.
 To see a description of this object, type `Get-Help Get-Event -Full` and see the Notes section of the help topic.
 
 ## NOTES
+
 * Events, event subscriptions, and the event queue exist only in the current session. If you close the current session, the event queue is discarded and the event subscription is canceled.
 
   The **Get-Event** cmdlet returns a **PSEventArgs** object (System.Management.Automation.PSEventArgs) with the following properties:

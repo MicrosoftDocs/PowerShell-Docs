@@ -10,7 +10,6 @@ title:  Get-Item
 # Get-Item
 
 ## SYNOPSIS
-
 Gets the item at the specified location.
 
 ## SYNTAX

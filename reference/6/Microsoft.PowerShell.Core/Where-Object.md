@@ -8,178 +8,208 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821526
 schema: 2.0.0
 title: Where-Object
 ---
-
 # Where-Object
 
 ## SYNOPSIS
-
 Selects objects from a collection based on their property values.
 
 ## SYNTAX
 
 ### EqualSet (Default)
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-EQ] [<CommonParameters>]
 ```
 
 ### NotSet
+
 ```
 Where-Object [-Property] <string> -Not [-InputObject <psobject>] [<CommonParameters>]
 ```
 
 ### ScriptBlockSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-FilterScript] <ScriptBlock> [<CommonParameters>]
 ```
 
 ### CaseSensitiveLessOrEqualSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CLE] [<CommonParameters>]
 ```
 
 ### CaseSensitiveEqualSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CEQ] [<CommonParameters>]
 ```
 
 ### NotEqualSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NE] [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotEqualSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNE] [<CommonParameters>]
 ```
 
 ### GreaterThanSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-GT] [<CommonParameters>]
 ```
 
 ### CaseSensitiveGreaterThanSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CGT] [<CommonParameters>]
 ```
 
 ### LessThanSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-LT] [<CommonParameters>]
 ```
 
 ### CaseSensitiveLessThanSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CLT] [<CommonParameters>]
 ```
 
 ### GreaterOrEqualSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-GE] [<CommonParameters>]
 ```
 
 ### CaseSensitiveGreaterOrEqualSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CGE] [<CommonParameters>]
 ```
 
 ### LessOrEqualSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-LE] [<CommonParameters>]
 ```
 
 ### LikeSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Like] [<CommonParameters>]
 ```
 
 ### CaseSensitiveLikeSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CLike] [<CommonParameters>]
 ```
 
 ### NotLikeSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NotLike] [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotLikeSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotLike]
  [<CommonParameters>]
 ```
 
 ### MatchSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Match] [<CommonParameters>]
 ```
 
 ### CaseSensitiveMatchSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CMatch] [<CommonParameters>]
 ```
 
 ### NotMatchSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NotMatch]
  [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotMatchSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotMatch]
  [<CommonParameters>]
 ```
 
 ### ContainsSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Contains]
  [<CommonParameters>]
 ```
 
 ### CaseSensitiveContainsSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CContains]
  [<CommonParameters>]
 ```
 
 ### NotContainsSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NotContains]
  [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotContainsSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotContains]
  [<CommonParameters>]
 ```
 
 ### InSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-In] [<CommonParameters>]
 ```
 
 ### CaseSensitiveInSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CIn] [<CommonParameters>]
 ```
 
 ### NotInSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-NotIn] [<CommonParameters>]
 ```
 
 ### CaseSensitiveNotInSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-CNotIn] [<CommonParameters>]
 ```
 
 ### IsSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-Is] [<CommonParameters>]
 ```
 
 ### IsNotSet
+
 ```
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-IsNot] [<CommonParameters>]
 ```
@@ -902,6 +932,7 @@ Accept wildcard characters: False
 ```
 
 ### -Not
+
 Indicates that this cmdlet gets objects if the property does not exist or has a value of null or false.
 
 For example: `Get-Service | where -Not "DependentServices"`
@@ -1050,6 +1081,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

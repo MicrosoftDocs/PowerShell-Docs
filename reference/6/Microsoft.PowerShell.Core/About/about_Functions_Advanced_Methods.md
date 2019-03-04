@@ -8,7 +8,6 @@ title:  about_Functions_Advanced_Methods
 # About Functions Advanced Methods
 
 ## Short description
-
 Describes how functions that specify the `CmdletBinding` attribute can use the
 methods and properties that are available to compiled cmdlets.
 

@@ -2,10 +2,6 @@
   // See https://go.microsoft.com/fwlink/?LinkId=827846
   // for the documentation about the extensions.json format
   "recommendations": [
-    "DavidAnson.vscode-markdownlint",
-    "streetsidesoftware.code-spell-checker",
-    "docsmsft.docs-preview",
-    "docsmsft.docs-markdown",
-    "docsmsft.docs-article-templates"
+    "docsmsft.docs-authoring-pack"
   ]
 }

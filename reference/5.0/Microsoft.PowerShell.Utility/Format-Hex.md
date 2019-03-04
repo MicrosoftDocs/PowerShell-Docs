@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821773
 external help file:  Microsoft.PowerShell.Utility-help.xml
 title:  Format-Hex
 ---
-
 # Format-Hex
 
 ## SYNOPSIS

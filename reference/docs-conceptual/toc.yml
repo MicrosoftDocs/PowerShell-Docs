@@ -138,6 +138,8 @@
           href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
         - name: Using Visual Studio Code for remote editing and debugging
           href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: Understanding file encoding in VSCode and PowerShell
+          href: components/vscode/understanding-file-encoding.md
     - name: Web Access
       href: ''
       items:

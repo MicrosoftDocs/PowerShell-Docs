@@ -5,11 +5,9 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions_OutputTypeAttribute
 ---
-
 # About Functions OutputTypeAttribute
 
 ## SHORT DESCRIPTION
-
 Describes an attribute that reports the type of object that the function
 returns.
 

@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821774
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Format-List
 ---
-
 # Format-List
 
 ## SYNOPSIS

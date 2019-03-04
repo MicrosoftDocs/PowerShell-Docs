@@ -10,7 +10,6 @@ title:  Remove-Item
 # Remove-Item
 
 ## SYNOPSIS
-
 Deletes the specified items.
 
 ## SYNTAX

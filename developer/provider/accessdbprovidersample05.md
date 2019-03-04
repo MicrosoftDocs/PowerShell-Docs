@@ -1877,7 +1877,7 @@ namespace Microsoft.Samples.PowerShell.Providers
     private int rowCount;
 
     /// <summary>
-    /// The column difinition of a table.
+    /// The column definition of a table.
     /// </summary>
     private DataColumnCollection columns;
 
