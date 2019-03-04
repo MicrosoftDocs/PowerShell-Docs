@@ -20,7 +20,6 @@ Providers that can work on multi-level data stores are referred to as Windows Po
 
 > [!NOTE]
 > You can download the C# source file (AccessDBSampleProvider04.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
-> You can download the C# source file (AccessDBSampleProvider04.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
@@ -412,7 +411,6 @@ For complete sample code, see [AccessDbProviderSample04 Code Sample](./accessdbp
 ## Building the Windows PowerShell Provider
 
 See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-See [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## Testing the Windows PowerShell Provider
 
@@ -531,8 +529,6 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
 [Implementing an Item Windows PowerShell Provider](./creating-a-windows-powershell-item-provider.md)
 
 [Implementing a Navigation Windows PowerShell Provider](./creating-a-windows-powershell-navigation-provider.md)
-
-[How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [How to Register Cmdlets, Providers, and Host Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

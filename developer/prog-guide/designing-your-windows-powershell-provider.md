@@ -160,6 +160,4 @@ The [System.Management.Automation.Provider.Isecuritydescriptorcmdletprovider](/d
 
 [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
-[How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
-
 [Windows PowerShell SDK](../windows-powershell-reference.md)
