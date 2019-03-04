@@ -98,7 +98,8 @@ The command installs the newest version of the package, within a range of versio
 ## PARAMETERS
 
 ### -AcceptLicense
-{{Fill AcceptLicense Description}}
+Automatically accept the license agreement during installation if the package requires it.
+
 
 ```yaml
 Type: SwitchParameter
@@ -127,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrereleaseVersions
-{{Fill AllowPrereleaseVersions Description}}
+Allows the installation of packages marked as Prerelease.
 
 ```yaml
 Type: SwitchParameter
@@ -173,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigFile
-{{Fill ConfigFile Description}}
+Specifies a configuration file.
 
 ```yaml
 Type: String
@@ -188,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -Contains
-{{Fill Contains Description}}
+Indicates that this cmdlet gets objects if any item in the property value of the object is an exact match for the specified value.
 
 ```yaml
 Type: String
@@ -218,7 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -Destination
-{{Fill Destination Description}}
+Specifies a string of the path to the input object.
 
 ```yaml
 Type: String
@@ -248,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludeVersion
-{{Fill ExcludeVersion Description}}
+Switch to exclude the version number in the folder path.
 
 ```yaml
 Type: SwitchParameter
@@ -278,7 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilterOnTag
-{{Fill FilterOnTag Description}}
+Specifies the tag to filter the results on. Excludes results not contianing the specified tag.
 
 ```yaml
 Type: String[]
@@ -607,7 +608,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipDependencies
-{{Fill SkipDependencies Description}}
+Switch which specifies to skip installing any dependencies.
 
 ```yaml
 Type: SwitchParameter
@@ -636,7 +637,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipValidate
-{{Fill SkipValidate Description}}
+Switch that skips validating the credentials of a package.
 
 ```yaml
 Type: SwitchParameter
