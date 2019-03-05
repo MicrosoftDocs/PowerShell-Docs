@@ -110,8 +110,7 @@ The second command gets the installed modules.
 ## PARAMETERS
 
 ### -AllowPrerelease
-
-{{Fill AllowPrerelease Description}}
+Includes resources marked as prerelease.
 
 ```yaml
 Type: SwitchParameter

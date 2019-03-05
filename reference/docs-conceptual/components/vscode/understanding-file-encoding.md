@@ -82,7 +82,7 @@ The PowerShell extension interacts with scripts in a number of ways:
    mandates that this content is transferred in UTF-8. Therefore, it is not possible for the
    extension to get the wrong encoding.
 2. When scripts are executed directly in the Integrated Console, they're read from the file by
-   PowerShell directly. Tf PowerShell's encoding differs from VSCode's, something can go wrong here.
+   PowerShell directly. If PowerShell's encoding differs from VSCode's, something can go wrong here.
 3. When a script that is open in VSCode references another script that is not open in VSCode, the
    extension falls back to loading that script's content from the file system. The PowerShell
    extension defaults to UTF-8 encoding, but uses [byte-order mark][], or BOM, detection to select

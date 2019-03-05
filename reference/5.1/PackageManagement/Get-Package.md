@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrereleaseVersions
-{{Fill AllowPrereleaseVersions Description}}
+Includes in the results modules marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Destination
-{{Fill Destination Description}}
+Specifies a string of the path searched for packages
 
 ```yaml
 Type: String
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludeVersion
-{{Fill ExcludeVersion Description}}
+Switch to exclude the version number in the folder path
 
 ```yaml
 Type: SwitchParameter
@@ -384,7 +384,8 @@ Accept wildcard characters: False
 ```
 
 ### -SkipDependencies
-{{Fill SkipDependencies Description}}
+Switch which specifies to skip any dependencies a package has
+
 
 ```yaml
 Type: SwitchParameter

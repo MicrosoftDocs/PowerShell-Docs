@@ -65,7 +65,7 @@ If MyDscModule is not a valid manifest module that specifies a name, version, de
 ## PARAMETERS
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Publishes the module as prerelease. 
 
 ```yaml
 Type: SwitchParameter

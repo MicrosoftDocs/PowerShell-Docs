@@ -85,7 +85,7 @@ This command finds the specified command, and then passes it to Save-Module to s
 ## PARAMETERS
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Includes in the results modules marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter

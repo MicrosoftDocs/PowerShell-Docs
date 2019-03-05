@@ -65,7 +65,7 @@ The second command uses the Test-ScriptFileInfo cmdlet to validate the script.
 ## PARAMETERS
 
 ### -AcceptLicense
-{{Fill AcceptLicense Description}}
+Automatically accept the license agreement during installation if the package requires it.
 
 ```yaml
 Type: SwitchParameter
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-{{Fill InputObject Description}}
+Specifies a package by using the script's SoftwareID object, which is shown in the results of the Find-Script cmdlet.
 
 ```yaml
 Type: PSObject[]

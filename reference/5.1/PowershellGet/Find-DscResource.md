@@ -107,7 +107,7 @@ In a NuGet repository, this command searches through the name, description, and 
 ## PARAMETERS
 
 ### -AllowPrerelease
-{{Fill AllowPrerelease Description}}
+Includes in the results resources marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter
