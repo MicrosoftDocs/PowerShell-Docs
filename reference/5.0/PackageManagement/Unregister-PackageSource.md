@@ -205,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-{{Fill Scope Description}}
+Specifies the scope of the Package Source. The acceptable values for this parameter are: AllUsers and CurrentUser. 
 
 ```yaml
 Type: String

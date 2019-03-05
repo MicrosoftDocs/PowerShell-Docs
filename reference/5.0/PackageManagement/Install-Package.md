@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationPath
-{{Fill DestinationPath Description}}
+Specifies a string of the path where packages are installed from. 
 
 ```yaml
 Type: String
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstallationPolicy
-{{Fill InstallationPolicy Description}}
+Specifies the installation policy. Valid values are: Trusted, UnTrusted
 
 ```yaml
 Type: String
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-{{Fill Location Description}}
+Specifies a location for publishing the package. 
 
 ```yaml
 Type: String

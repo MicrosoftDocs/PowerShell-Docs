@@ -98,7 +98,7 @@ This command finds a matching range of versions of a package named DSCAccelerato
 ## PARAMETERS
 
 ### -AcceptLicense
-{{Fill AcceptLicense Description}}
+Automatically accept the license agreement if the package requires it.
 
 ```yaml
 Type: SwitchParameter
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 
 ### -AllowPrereleaseVersions
 
-{{Fill AllowPrereleaseVersions Description}}
+Includes in the results packages marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 
 ### -ConfigFile
 
-{{Fill ConfigFile Description}}
+Specifies a configuration file.
 
 ```yaml
 Type: String
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 
 ### -Contains
 
-{{Fill Contains Description}}
+Indicates that this cmdlet gets objects if any item in the property value of the object is an exact match for the specified value.
 
 ```yaml
 Type: String
@@ -243,7 +243,7 @@ Accept wildcard characters: False
 
 ### -FilterOnTag
 
-{{Fill FilterOnTag Description}}
+Specifies the tag to filter the results on. Excludes results not contianing the specified tag.
 
 ```yaml
 Type: String[]
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 
 ### -Headers
 
-{{Fill Headers Description}}
+Specifies the headers for the package.
 
 ```yaml
 Type: String[]
@@ -538,7 +538,7 @@ Accept wildcard characters: False
 
 ### -SkipValidate
 
-{{Fill SkipValidate Description}}
+Switch that skips validating the credentials of a package.
 
 ```yaml
 Type: SwitchParameter

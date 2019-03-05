@@ -77,7 +77,7 @@ It also changes the package source to be trusted, so that users who install pack
 ## PARAMETERS
 
 ### -ConfigFile
-{{Fill ConfigFile Description}}
+Specifies a configuration file.
 
 ```yaml
 Type: String
@@ -321,7 +321,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipValidate
-{{Fill SkipValidate Description}}
+Switch that skips validating the credentials of a package source.
 
 ```yaml
 Type: SwitchParameter

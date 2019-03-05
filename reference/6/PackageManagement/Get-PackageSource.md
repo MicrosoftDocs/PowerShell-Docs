@@ -60,7 +60,7 @@ This command gets all package sources for the PSModule provider by piping the re
 ## PARAMETERS
 
 ### -ConfigFile
-{{Fill ConfigFile Description}}
+Specifies a configuration file.
 
 ```yaml
 Type: String
@@ -218,7 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipValidate
-{{Fill SkipValidate Description}}
+Switch that skips validating the credentials of a package source.
 
 ```yaml
 Type: SwitchParameter

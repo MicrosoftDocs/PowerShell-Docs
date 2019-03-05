@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -PrivateData
-{{Fill PrivateData Description}}
+Specifies private data for the script.
 
 ```yaml
 Type: String

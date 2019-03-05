@@ -80,7 +80,7 @@ The *Force* parameter ensures that you are not prompted to confirm that you want
 ## PARAMETERS
 
 ### -ConfigFile
-{{Fill ConfigFile Description}}
+Specifies a configuration file.
 
 ```yaml
 Type: String
@@ -250,7 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipValidate
-{{Fill SkipValidate Description}}
+Switch that skips validating the credentials of a package.
 
 ```yaml
 Type: SwitchParameter

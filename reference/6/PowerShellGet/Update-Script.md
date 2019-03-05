@@ -43,7 +43,7 @@ The second command gets Fabrikam-Script and displays the results.
 ## PARAMETERS
 
 ### -AcceptLicense
-{{Fill AcceptLicense Description}}
+Automatically accept the license agreement during installation if the package requires it.
 
 ```yaml
 Type: SwitchParameter
