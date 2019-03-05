@@ -164,7 +164,7 @@ The third command uses the **Get-Command** cmdlet to get the Hello function that
 ### Example 5: Generate a custom object that has exported functions
 
 ```
-PS C:\> $m = New-Module -ScriptBlock {function Hello ($name) {"Hello, $name"}; functionn Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
+PS C:\> $m = New-Module -ScriptBlock {function Hello ($name) {"Hello, $name"}; function Goodbye ($name) {"Goodbye, $name"}} -AsCustomObject
 PS C:\> $m
 PS C:\> $m | Get-Member
 TypeName: System.Management.Automation.PSCustomObject
