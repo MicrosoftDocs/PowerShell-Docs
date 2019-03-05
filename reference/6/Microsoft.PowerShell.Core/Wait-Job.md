@@ -467,10 +467,6 @@ If the wait ends because the value of the *Timeout* parameter is exceeded, **Wai
 
 [Remove-Job](Remove-Job.md)
 
-[Resume-Job](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Resume-Job)
-
 [Start-Job](Start-Job.md)
 
 [Stop-Job](Stop-Job.md)
-
-[Suspend-Job](https://msdn.microsoft.com/en-us/powershell/reference/5.1/Microsoft.PowerShell.Core/Suspend-Job)
