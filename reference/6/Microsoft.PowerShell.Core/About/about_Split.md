@@ -128,7 +128,7 @@ Strawberry-Blueberry
 Specifies the maximum number of times that a string is split. The default is
 all the substrings split by the delimiter. If there are more substrings, they
 are concatenated to the final substring. If there are fewer substrings, all
-the substrings are returned. A value of 0 and negative values return all the
+the substrings are returned. A value of 0 return all the
 substrings.
 
 Max-substrings does not specify the maximum number of objects that are
@@ -149,6 +149,28 @@ Venus
 Earth
 Mars
 Jupiter,Saturn,Uranus,Neptune
+```
+
+### \<ReverseSubstring>
+
+If your input for max-substrings is a negative number then the splitting
+processes starts at the end of the string. If there are more substrings, they
+are concatenated to the final substring. If there are fewer substrings, all
+the substrings are returned. A value of 0 returns all the substrings.
+
+Example:
+
+```powershell
+$c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
+$c -split ",", -5
+```
+
+```output
+Mercury,Venus,Earth,Mars
+Jupiter
+Saturn
+Uranus
+Neptune
 ```
 
 ### \<ScriptBlock\>
@@ -368,6 +390,18 @@ The following statement splits a string into three substrings.
 a
 b
 c,d,e,f,g,h
+```
+
+The following statement splits a string into three substrings starting from the end of the string.
+
+```powershell
+"a,b,c,d,e,f,g,h" -split ",", -3
+```
+
+```output
+a,b,c,d,e,f
+g
+h
 ```
 
 The following statement splits two strings into three substrings.
