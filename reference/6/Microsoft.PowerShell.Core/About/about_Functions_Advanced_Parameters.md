@@ -460,10 +460,19 @@ four-digit number, and each digit must be a number zero to nine.
 
 ### ValidateRange Validation Attribute
 
-The `ValidateRange` attribute specifies a numeric range for each parameter or
-variable value. PowerShell generates an error if any value is outside that
-range. In the following example, the value of the `Attempts` parameter must be
-between zero and ten.
+The `ValidateRange` attribute specifies a numeric range or a `ValidateRangeKind`
+enum value for each parameter or variable value. PowerShell generates an error
+if any value is outside that range.
+
+The `ValidateRangeKind` enum allows for the following values:
+
+- `Positive` A number greater than zero
+- `Negative` A number less than zero
+- `NotPositive` A number less than or equal to zero
+- `NotNegative` A number greater than or equal to zero
+
+In the following example, the value of the
+`Attempts` parameter must be between zero and ten.
 
 ```powershell
 Param(
@@ -479,6 +488,13 @@ zero and ten.
 
 ```powershell
 [Int32][ValidateRange(0,10)]$number = 5
+```
+
+In the following example, the value of the variable $number must be greater
+than zero.
+
+```powershell
+[Int32][ValidateRange("Positive")]$number = 1
 ```
 
 ### ValidateScript Validation Attribute

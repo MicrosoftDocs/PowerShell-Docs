@@ -8,27 +8,30 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821759
 schema: 2.0.0
 title: ConvertTo-Json
 ---
-
 # ConvertTo-Json
 
 ## SYNOPSIS
-
 Converts an object to a JSON-formatted string.
 
 ## SYNTAX
 
 ```
-ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress] [-EnumsAsStrings] [-AsArray] [<CommonParameters>]
+ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
+[-EnumsAsStrings] [-AsArray] [-EscapeHandling <StringEscapeHandling>]
+[<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **ConvertTo-Json** cmdlet converts any object to a string in JavaScript Object Notation (JSON) format.
-The properties are converted to field names, the field values are converted to property values, and the methods are removed.
+The `ConvertTo-Json` cmdlet converts any object to a string in JavaScript Object Notation (JSON)
+format. The properties are converted to field names, the field values are converted to property
+values, and the methods are removed.
 
-You can then use the **ConvertFrom-Json** cmdlet to convert a JSON-formatted string to a JSON object, which is easily managed in PowerShell.
+You can then use the `ConvertFrom-Json` cmdlet to convert a JSON-formatted string to a JSON
+object, which is easily managed in PowerShell.
 
-Many web sites use JSON instead of XML to serialize data for communication between servers and web-based apps.
+Many web sites use JSON instead of XML to serialize data for communication between servers and
+web-based apps.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -54,7 +57,8 @@ PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
 }
 ```
 
-This command uses the **ConvertTo-Json** cmdlet to convert a GregorianCalendar object to a JSON-formatted string.
+This command uses the `ConvertTo-Json` cmdlet to convert a GregorianCalendar object to a
+JSON-formatted string.
 
 ### Example 2
 
@@ -77,7 +81,8 @@ PS C:\> Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
 ]
 ```
 
-This example shows the output from **ConvertTo-Json** cmdlet with and without the `-AsArray` switch parameter. You can see the second portion of the output is wrapped in array brackets.
+This example shows the output from `ConvertTo-Json` cmdlet with and without the `-AsArray` switch
+parameter. You can see the second portion of the output is wrapped in array brackets.
 
 ### Example 3
 
@@ -89,8 +94,8 @@ PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Com
 {"Domain":"Domain01","Account":"User01","Admin":"True"}
 ```
 
-This command shows the effect of using the `-Compress` parameter of **ConvertTo-Json**.
-The compression affects only the appearance of the string, not its validity.
+This command shows the effect of using the `-Compress` parameter of `ConvertTo-Json`. The
+compression affects only the appearance of the string, not its validity.
 
 ### Example 4
 
@@ -130,7 +135,10 @@ PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 }
 ```
 
-This example uses the **ConvertTo-Json** cmdlet to convert a **System.DateTime** object from the **Get-Date** cmdlet to a JSON-formatted string. The command uses the **Select-Object** cmdlet to get all (`*`) of the properties of the **DateTime** object. The output shows the JSON string that **ConvertTo-Json** returned.
+This example uses the `ConvertTo-Json` cmdlet to convert a **System.DateTime** object from the
+`Get-Date` cmdlet to a JSON-formatted string. The command uses the `Select-Object` cmdlet to get
+all (`*`) of the properties of the **DateTime** object. The output shows the JSON string that
+`ConvertTo-Json` returned.
 
 ### Example 5
 
@@ -158,7 +166,8 @@ TimeOfDay   : @{Ticks=825527683372; Days=0; Hours=22; Milliseconds=768; Minutes=
 Year        : 2018
 ```
 
-This example shows how to use the **ConvertTo-Json** and **ConvertFrom-Json** cmdlets to convert an object to a JSON string and a JSON object.
+This example shows how to use the `ConvertTo-Json` and `ConvertFrom-Json` cmdlets to convert an
+object to a JSON string and a JSON object.
 
 ## PARAMETERS
 
@@ -196,8 +205,8 @@ Accept wildcard characters: False
 
 ### -Depth
 
-Specifies how many levels of contained objects are included in the JSON representation.
-The default value is 2.
+Specifies how many levels of contained objects are included in the JSON representation. The default
+value is 2.
 
 ```yaml
 Type: Int32
@@ -229,13 +238,12 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the objects to convert to JSON format.
-Enter a variable that contains the objects, or type a command or expression that gets the objects.
-You can also pipe an object to **ConvertTo-Json**.
+Specifies the objects to convert to JSON format. Enter a variable that contains the objects, or type
+a command or expression that gets the objects. You can also pipe an object to `ConvertTo-Json`.
 
 The *InputObject* parameter is required, but its value can be null (`$null`) or an empty string.
-When the input object is `$null`, **ConvertTo-Json** does not generate any output.
-When the input object is an empty string, **ConvertTo-Json** returns an empty string.
+When the input object is `$null`, `ConvertTo-Json` does not generate any output. When the input
+object is an empty string, `ConvertTo-Json` returns an empty string.
 
 ```yaml
 Type: Object
@@ -249,15 +257,34 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -EscapeHandling
+
+Controls how certain characters are escaped in the resulting JSON output. By default, only control
+characters (e.g. newline) are escaped.
+
+```yaml
+Type: NewtonSoft.Json.StringEscapeHandling
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Default
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.Object
 
-You can pipe any object to **ConvertTo-Json**.
+You can pipe any object to `ConvertTo-Json`.
 
 ## OUTPUTS
 
@@ -265,7 +292,8 @@ You can pipe any object to **ConvertTo-Json**.
 
 ## NOTES
 
-* The **ConvertTo-Json** cmdlet is implemented by using the [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
+* The `ConvertTo-Json` cmdlet is implemented by using the
+  [JavaScriptSerializer class](https://msdn.microsoft.com/library/system.web.script.serialization.javascriptserializer).
 
 ## RELATED LINKS
 
@@ -276,3 +304,5 @@ You can pipe any object to **ConvertTo-Json**.
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
+
+[NewtonSoft.Json.StringEscapeHandling](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_StringEscapeHandling.htm)
