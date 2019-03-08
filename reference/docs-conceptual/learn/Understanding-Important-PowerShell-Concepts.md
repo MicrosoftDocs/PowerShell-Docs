@@ -10,7 +10,7 @@ ms.assetid:  3e601e38-4520-4578-a48d-b6779f1d35ee
 The PowerShell design integrates concepts from many different environments. Several of the concepts
 will be familiar to people with experience in shells or programming environments. However, few
 people will know about all of them. Looking at some of these concepts provides a useful overview of
-the shell.
+the shell. 
 
 ## Output is object-based
 
