@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrereleaseVersions
-{{Fill AllowPrereleaseVersions Description}}
+Allows packages marked as Prerelease to be uninstalled.
 
 ```yaml
 Type: SwitchParameter
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 
 ### -Destination
 
-{{Fill Destination Description}}
+Specifies a string of the path to the input object.
 
 ```yaml
 Type: String
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 
 ### -ExcludeVersion
 
-{{Fill ExcludeVersion Description}}
+Switch to exclude the version number in the folder path.
 
 ```yaml
 Type: SwitchParameter
@@ -432,8 +432,8 @@ Accept wildcard characters: False
 ```
 
 ### -SkipDependencies
+Switch which specifies to skip checking any dependencies a package has.
 
-{{Fill SkipDependencies Description}}
 
 ```yaml
 Type: SwitchParameter

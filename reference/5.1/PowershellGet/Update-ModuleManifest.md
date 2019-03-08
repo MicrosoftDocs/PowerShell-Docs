@@ -519,7 +519,7 @@ Accept wildcard characters: False
 ```
 
 ### -Prerelease
-{{Fill Prerelease Description}}
+Indicates the module is prerelease.
 
 ```yaml
 Type: String
@@ -639,7 +639,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequireLicenseAcceptance
-{{Fill RequireLicenseAcceptance Description}}
+Specifies that a license acceptance is required for the module.
 
 ```yaml
 Type: SwitchParameter

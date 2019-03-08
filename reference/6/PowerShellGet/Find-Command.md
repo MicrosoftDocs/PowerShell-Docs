@@ -104,7 +104,7 @@ C:\temp folder.
 
 ### -AllowPrerelease
 
-{{Fill AllowPrerelease Description}}
+Includes in the results modules marked as a prerelease.
 
 ```yaml
 Type: SwitchParameter

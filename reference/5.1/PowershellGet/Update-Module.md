@@ -76,7 +76,7 @@ This example installs (or reinstalls) the newest version of ContosoModule from t
 ## PARAMETERS
 
 ### -AcceptLicense
-{{Fill AcceptLicense Description}}
+Automatically accept the license agreement during installation if the package requires it.
 
 ```yaml
 Type: SwitchParameter

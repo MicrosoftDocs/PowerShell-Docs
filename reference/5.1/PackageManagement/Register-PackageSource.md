@@ -56,7 +56,7 @@ If you do not add the *Trusted* parameter, by default, the package is not truste
 ## PARAMETERS
 
 ### -ConfigFile
-{{Fill ConfigFile Description}}
+Specifies a configuration file.
 
 ```yaml
 Type: String
@@ -252,7 +252,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipValidate
-{{Fill SkipValidate Description}}
+Switch that skips validating the credentials of a package soure.
 
 ```yaml
 Type: SwitchParameter
