@@ -96,7 +96,6 @@ In the following example, the `VersionInfo` property is added to the [System.IO.
 ## Property Sets
 
 A property set defines a group of extended properties that can be referenced by the name of the set. For example, the `Property` parameter of the [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet can specify a specific property set to be displayed. When a property set is specified, only those properties that belong to the set are displayed.
-A property set defines a group of extended properties that can be referenced by the name of the set. For example, the `Property` parameter of the [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet can specify a specific property set to be displayed. When a property set is specified, only those properties that belong to the set are displayed.
 
 There is no restriction on the number of property sets that can be defined for an object. However, the property sets used to define the default display properties of an object must be specified within the PSStandardMembers member set. In the Types.ps1xml types file, the default property set names include DefaultDisplayProperty, DefaultDisplayPropertySet, and DefaultKeyPropertySet. Any additional property sets that you add to the PSStandardMembers member set are ignored.
 
