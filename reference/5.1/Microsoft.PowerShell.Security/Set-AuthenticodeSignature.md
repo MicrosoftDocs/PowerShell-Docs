@@ -169,7 +169,7 @@ PowerShell 2.0, the default is SHA1. Files that are signed with a different hash
 not be recognized on other systems. Which algorithms are supported depends on the version of the
 operating system.
 
-For a list of possible values, see [HashAlgorithmName Struct ](/dotnet/api/system.security.cryptography.hashalgorithmname?view=netframework-4.7.2#properties).
+For a list of possible values, see [HashAlgorithmName Struct](/dotnet/api/system.security.cryptography.hashalgorithmname?view=netframework-4.7.2#properties).
 
 ```yaml
 Type: String
