@@ -183,7 +183,7 @@ The second command uses the Invoke-Command cmdlet to run the command in $command
 PS C:\> Invoke-Command -ComputerName Server01, Server02, TST-0143, localhost -ConfigurationName MySession.PowerShell -ScriptBlock {Get-EventLog "Windows PowerShell"}
 ```
 
-This example demonstrates how to use the** Invoke-Command** cmdlet to run a single command on multiple computers.
+This example demonstrates how to use the**Invoke-Command** cmdlet to run a single command on multiple computers.
 
 The command uses the **ComputerName** parameter to specify the computers.
 The computer names are presented in a comma-separated list.

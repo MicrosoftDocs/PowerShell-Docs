@@ -65,7 +65,7 @@ Get-History -Id 5 -Count 5 | add-history
 This command adds the first five commands in the history to the end of the history list.
 It uses the Get-History cmdlet to get the five commands ending in command 5.
 The pipeline operator (|) passes them to the **Add-History** cmdlet, which appends them to the current history.
-The **Add-History** command does not include any parameters, but Windows PowerShell associates the objects passed through the pipeline with the **InputObject** parameter of ** Add-History**.
+The **Add-History** command does not include any parameters, but Windows PowerShell associates the objects passed through the pipeline with the **InputObject** parameter of **Add-History**.
 
 ### Example 4
 
