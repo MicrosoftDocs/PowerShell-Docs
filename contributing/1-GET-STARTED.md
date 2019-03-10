@@ -14,7 +14,7 @@ You've already completed this step.
 
 ## Providing feedback on PowerShell documentation
 
-You can point out errors, suggest changes, or request new topics by [creating an issue][new-issue]
+Point out errors, suggest changes, or request new topics by [creating an issue][new-issue]
 on the [PowerShell-Docs repository issues page][doc-issues].
 
 Issues are reviewed regularly by members of the PowerShell documentation team.
@@ -22,18 +22,17 @@ The issues are triaged, assigned, and addressed accordingly.
 
 ## Making minor edits to existing topics
 
-To [edit an existing file][edit-file], simply navigate to it and click the "Edit" button.
+To [edit an existing file][edit-file], navigate to it and click the "Edit" button.
 GitHub will automatically create your own fork of our repository where you can make your changes.
-Once you're finished, save your edits and submit a [pull request][pull] to the *staging* branch
+Once you are finished, save your edits and submit a [pull request][pull] to the *staging* branch
 of the [PowerShell-Docs][docs-repo] repository.
 After your pull request is created, someone on the PowerShell documentation team reviews your changes
 before merging them into the *staging* branch.
 
 ## Making major edits to existing topics
 
-If you are making substantial changes to an existing article, adding or changing images,
-or contributing a new article, you will need to manually create your GitHub fork,
-then clone the fork down to your local computer.
+If you are making substantial changes or contributing a new article, you will need to create a GitHub fork
+and clone it to your computer.
 A fork is a GitHub-based replica of the main repository, under your GitHub account,
 that provides you with a working copy which you can use in isolation.
 You will create pull requests from your fork.
