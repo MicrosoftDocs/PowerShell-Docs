@@ -31,7 +31,7 @@ before merging them into the *staging* branch.
 
 ## Making major edits to existing topics
 
-If you are making substantial changes or contributing a new article, you will need to create a GitHub fork
+If you are making substantial changes, adding or changing images, or contributing a new article, you will need to create a GitHub fork
 and clone it to your computer.
 A fork is a GitHub-based replica of the main repository, under your GitHub account,
 that provides you with a working copy which you can use in isolation.
