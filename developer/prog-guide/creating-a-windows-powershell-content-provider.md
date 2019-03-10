@@ -47,7 +47,7 @@ The following list contains the sections in this topic. If you are unfamiliar wi
 
 - [Code Sample](#Code-Sample)
 
-- [Defining Object Types and Formatting]()
+- [Defining Object Types and Formatting](#defining-object-types-and-formatting)
 
 - [Building the Windows PowerShell provider](#Building-the-Windows-PowerShell-Provider)
 
