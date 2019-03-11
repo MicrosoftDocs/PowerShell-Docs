@@ -5,7 +5,7 @@ keywords:  wmf,powershell,setup
 title:  WMF 5.1 Release Notes
 ---
 
-# Windows Management Framework (WMF) 5.1 #
+# Windows Management Framework (WMF) 5.1
 
 WMF provides users with the ability to update existing Windows systems to the versions of PowerShell, WMI, WinRM, and Software Inventory Logging (SIL) components that were released with Windows Server 2016.
 

@@ -5,7 +5,7 @@ keywords:  wmf,powershell,setup
 title:  WMF 5.1 Release Notes
 ---
 
-# Windows Management Framework (WMF) 5.1 Release Notes #
+# Windows Management Framework (WMF) 5.1 Release Notes
 
 WMF 5.1 includes the PowerShell, WMI, WinRM, and Software Inventory Logging (SIL) components that were released with Windows Server 2016.
 WMF 5.1 can be installed on Windows 7, Windows 8.1, Windows Server 2008 R2, 2012, and 2012 R2, and provides a number of improvements over WMF 5.0 RTM including:

@@ -438,7 +438,7 @@ You can pipe a module object from the `Get-Module` cmdlet to  `Update-Help`.
 
   Only members of the "Administrators" group on the computer can update help for the for the PowerShell Core modules (the commands that are installed with Windows PowerShell) and for modules in the `$pshome\Modules` directory.
   If you do not have permission to update help files, you might be able to read the help topics online.
-  To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-name\> -Online `.
+  To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-name\> -Online`.
 
 - Modules are the smallest unit of updatable help. You cannot update help for a particular cmdlet; only for all cmdlets in module. To find the module that contains a particular cmdlet, use the **ModuleName** property of the `Get-Command` cmdlet, for example, `(Get-Command \<cmdlet-name\>).ModuleName`
 - Because help files are installed in the module directory, the `Update-Help` cmdlet can install updated help file only for modules that are installed on the computer. However, the `Save-Help` cmdlet can save help for modules that are not installed on the computer.
