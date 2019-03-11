@@ -12,7 +12,6 @@ caps.latest.revision: 13
 # Windows PowerShell Provider Overview
 
 A Windows PowerShell provider allows any data store to be exposed like a file system as if it were a mounted drive. For example, the built-in Registry provider allows you to navigate the registry like you would navigate the `c` drive of your computer. A provider can also override the `Item` cmdlets (for example, `Get-Item`, `Set-Item`, etc.) such that the data in your data store can be treated like files and directories are treated when navigating a file system. For more information about providers and drives, and the built-in providers in  Windows PowerShell, see [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
-A Windows PowerShell provider allows any data store to be exposed like a file system as if it were a mounted drive. For example, the built-in Registry provider allows you to navigate the registry like you would navigate the `c` drive of your computer. A provider can also override the `Item` cmdlets (for example, `Get-Item`, `Set-Item`, etc.) such that the data in your data store can be treated like files and directories are treated when navigating a file system. For more information about providers and drives, and the built-in providers in  Windows PowerShell, see [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
 ## Providers and Drives
 
