@@ -104,7 +104,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ## Making commands private
 
  You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private). The host application and other commands can call that command, but the user of the application cannot. In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.
- You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private). The host application and other commands can call that command, but the user of the application cannot. In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();

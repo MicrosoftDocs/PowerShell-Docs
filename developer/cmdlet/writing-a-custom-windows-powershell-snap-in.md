@@ -213,6 +213,4 @@ For more information about registering snap-ins, see [How to Register Cmdlets, P
 
 [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
-
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

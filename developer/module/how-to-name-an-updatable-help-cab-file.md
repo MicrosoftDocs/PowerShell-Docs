@@ -23,7 +23,6 @@ The elements of the name are as follows.
 
 ModuleName
 The value of the **Name** property of the **ModuleInfo** object that the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet returns.
-The value of the **Name** property of the **ModuleInfo** object that the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet returns.
 
 ModuleGUID
 The value of the **GUID** key in the module manifest.
