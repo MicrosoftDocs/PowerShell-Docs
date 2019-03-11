@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821638
 schema: 2.0.0
 title: Start-Process
 ---
-
 # Start-Process
 
 ## SYNOPSIS
@@ -17,6 +16,7 @@ Starts one or more processes on the local computer.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-Credential <PSCredential>]
  [-WorkingDirectory <String>] [-LoadUserProfile] [-NoNewWindow] [-PassThru] [-RedirectStandardError <String>]
@@ -25,12 +25,14 @@ Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-Credential <PS
 ```
 
 ### UseShellExecute
+
 ```
 Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-WorkingDirectory <String>] [-PassThru]
  [-Verb <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Start-Process** cmdlet starts one or more processes on the local computer.
 To specify the program that runs in the process, enter an executable file or script file, or a file that can be opened by using a program on the computer.
 If you specify a non-executable file, **Start-Process** starts the program that is associated with the file, similar to the Invoke-Item cmdlet.
@@ -40,6 +42,7 @@ You can use the parameters of **Start-Process** to specify options, such as load
 ## EXAMPLES
 
 ### Example 1: Start a process that uses default values
+
 ```
 PS C:\> Start-Process -FilePath "sort.exe"
 ```
@@ -48,6 +51,7 @@ This command starts a process that uses the Sort.exe file in the current folder.
 The command uses all of the default values, including the default window style, working folder, and credentials.
 
 ### Example 2: Print a text file
+
 ```
 PS C:\> Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test" -Verb Print
 ```
@@ -55,6 +59,7 @@ PS C:\> Start-Process -FilePath "myfile.txt" -WorkingDirectory "C:\PS-Test" -Ver
 This command starts a process that prints the C:\PS-Test\MyFile.txt file.
 
 ### Example 3: Start a process to sort items to a new file
+
 ```
 PS C:\> Start-Process -FilePath "Sort.exe" -RedirectStandardInput "Testsort.txt" -RedirectStandardOutput "Sorted.txt" -RedirectStandardError "SortError.txt" -UseNewEnvironment
 ```
@@ -65,6 +70,7 @@ Any errors are written to the SortError.txt file.
 The *UseNewEnvironment* parameter specifies that the process runs with its own environment variables.
 
 ### Example 4: Start a process in a maximized window
+
 ```
 PS C:\> Start-Process -FilePath "notepad" -Wait -WindowStyle Maximized
 ```
@@ -73,6 +79,7 @@ This command starts the Notepad process.
 It maximizes the window and retains the window until the process completes.
 
 ### Example 5: Start PowerShell as an administrator
+
 ```
 PS C:\> Start-Process -FilePath "powershell" -Verb RunAs
 ```
@@ -80,6 +87,7 @@ PS C:\> Start-Process -FilePath "powershell" -Verb RunAs
 This command starts PowerShell by using the Run as administrator option.
 
 ### Example 6: Using different verbs to start a process
+
 ```
 PS C:\> $startExe = New-Object System.Diagnostics.ProcessStartInfo -Args PowerShell.exe
 PS C:\> $startExe.verbs
@@ -115,6 +123,7 @@ The RunAs verb starts the process with permissions of a member of the Administra
 This is the same as starting PowerShell by using the Run as administrator option.
 
 ### Example 7: Specifying arguments to the process
+
 ```
 PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 PS C:\> Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
@@ -127,6 +136,7 @@ Note that the first command specifies a string as ArgumentList. The second comma
 ## PARAMETERS
 
 ### -ArgumentList
+
 Specifies parameters or parameter values to use when this cmdlet starts the process.
 If parameters or parameter values contain a space, they need surrounded with escaped double quotes.
 
@@ -143,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential** object, such as one from the Get-Credential cmdlet.
 By default, the cmdlet uses the credentials of the current user.
@@ -160,6 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilePath
+
 Specifies the optional path and file name of the program that runs in the process.
 Enter the name of an executable file or of a document, such as a .txt or .doc file, that is associated with a program on the computer.
 This parameter is required.
@@ -179,6 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -LoadUserProfile
+
 Indicates that this cmdlet loads the Windows user profile stored in the **HKEY_USERS** registry key for the current user.
 
 This parameter does not affect the PowerShell profiles.
@@ -197,6 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoNewWindow
+
 Start the new process in the current console window.
 By default PowerShell opens a new window.
 
@@ -215,6 +229,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns a process object for each process that the cmdlet started.
 By default, this cmdlet does not generate any output.
 
@@ -231,6 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectStandardError
+
 Specifies a file.
 This cmdlet sends any errors generated by the process to a file that you specify.
 Enter the path and file name.
@@ -249,6 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectStandardInput
+
 Specifies a file.
 This cmdlet reads input from the specified file.
 Enter the path and file name of the input file.
@@ -267,6 +284,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectStandardOutput
+
 Specifies a file.
 This cmdlet sends the output generated by the process to a file that you specify.
 Enter the path and file name.
@@ -285,6 +303,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseNewEnvironment
+
 Indicates that this cmdlet uses new environment variables specified for the process.
 By default, the started process runs with the environment variables specified for the computer and user.
 
@@ -301,6 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -Verb
+
 Specifies a verb to use when this cmdlet starts the process.
 The verbs that are available are determined by the file name extension of the file that runs in the process.
 
@@ -330,6 +350,7 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
+
 Indicates that this cmdlet waits for the specified process and its descendants to complete before accepting more input.
 This parameter suppresses the command prompt or retains the window until the processes finish.
 
@@ -346,6 +367,7 @@ Accept wildcard characters: False
 ```
 
 ### -WindowStyle
+
 Specifies the state of the window that is used for the new process.
 The acceptable values for this parameter are: Normal, Hidden, Minimized, and Maximized.
 The default value is Normal.
@@ -366,6 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkingDirectory
+
 Specifies the location of the executable file or document that runs in the process.
 The default is the folder for the new process.
 
@@ -382,6 +405,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -397,6 +421,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
@@ -412,20 +437,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.Diagnostics.Process
+
 This cmdlet generates a **System.Diagnostics.Process** object, if you specify the *PassThru* parameter.
 Otherwise, this cmdlet does not return any output.
 
 ## NOTES
+
 * This cmdlet is implemented by using the **Start** method of the **System.Diagnostics.Process** class. For more information about this method, see [Process.Start Method](https://msdn.microsoft.com/library/system.diagnostics.process.start) in the MSDN library.
 
 * When using PowerShell Core on Linux, to open a new process within a new window (similar to the default behavior when using Start-Process in Windows), run the cmdlet with the `-UseNewEnvironment -Wait` parameters.  This is done to prevent the new process from blocking PowerShell's control of keyboard input.

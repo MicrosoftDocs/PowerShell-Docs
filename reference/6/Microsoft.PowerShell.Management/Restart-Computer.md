@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821625
 schema: 2.0.0
 title: Restart-Computer
 ---
-
 # Restart-Computer
 
 ## SYNOPSIS
@@ -23,6 +22,7 @@ Restart-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>] [[
 ```
 
 ## DESCRIPTION
+
 The **Restart-Computer** cmdlet restarts the operating system on the local and remote computers.
 
 You can use the parameters of **Restart-Computer** to run the restart operations as a background job, to specify the authentication levels and alternate credentials, to limit the operations that run at the same time, and to force an immediate restart.
@@ -36,6 +36,7 @@ This cmdlet requires PowerShell remoting only when you use the *AsJob* parameter
 ## EXAMPLES
 
 ### Example 1: Restart the local computer
+
 ```
 PS C:\> Restart-Computer
 ```
@@ -43,6 +44,7 @@ PS C:\> Restart-Computer
 This command restarts the local computer.
 
 ### Example 2: Restart several computers including the local computer
+
 ```
 PS C:\> Restart-Computer -ComputerName "Server01", "Server02", "localhost"
 ```
@@ -50,6 +52,7 @@ PS C:\> Restart-Computer -ComputerName "Server01", "Server02", "localhost"
 This command restarts two remote computers, Server01 and Server02, and the local computer, identified as localhost.
 
 ### Example 3: Restart computers as a background job
+
 ```
 The first command uses the *AsJob* parameter to run the command as a background job. The command stores the resulting job object in the $j variable.
 PS C:\> $j = Restart-Computer -ComputerName "Server01", "Server02" -AsJob
@@ -64,6 +67,7 @@ PS C:\> $Results
 These commands run a **Restart-Computer** command as a background job on two remote computers, and then get the results.
 
 ### Example 4: Restart a remote computer
+
 ```
 PS C:\> Restart-Computer -ComputerName "Server01" -Impersonation Anonymous -Authentication PacketIntegrity
 ```
@@ -72,6 +76,7 @@ This command restarts the Server01 remote computer.
 The command uses customized impersonation and authentication settings.
 
 ### Example 5: Force restart of all computers in a domain
+
 ```
 The first command uses the Get-Content cmdlet to get a list of computers in the domain from the Domain01.txt file. It stores the list in the $s variable.
 PS C:\> $s = Get-Content Domain01.txt
@@ -86,6 +91,7 @@ PS C:\> Restart-Computer -ComputerName $s -Force -ThrottleLimit 10 -Credential $
 This example forces an immediate restart of all of the computers in Domain01.
 
 ### Example 6: Restart a remote computer and wait
+
 ```
 PS C:\> Restart-Computer -ComputerName "Server01" -Wait -For PowerShell -Timeout 300 -Delay 2
 ```
@@ -96,6 +102,7 @@ The command uses the *Wait*, *For*, and *Timeout* parameters to specify the cond
 It uses the *Delay* parameter to reduce the interval between queries to the remote computer that determine whether it is restarted.
 
 ### Example 7: Restart a computer by using WSMan
+
 ```
 PS C:\> Restart-Computer -ComputerName "Server01" -Protocol WSMan -WSManAuthentication Kerberos
 ```
@@ -108,6 +115,7 @@ These settings are designed for enterprises in which DCOM-based restarts fail be
 ## PARAMETERS
 
 ### -ComputerName
+
 Specifies one or more computers.
 The default is the local computer.
 
@@ -130,6 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -148,6 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -Delay
+
 Determines how often, in seconds, PowerShell queries the service that is specified by the *For* parameter to determine whether it is available after the computer is restarted.
 Specify a delay between queries, in seconds.
 The default value is 5 seconds.
@@ -169,6 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -For
+
 Specifies the behavior of PowerShell as it waits for the specified service or feature to become available after the computer restarts.
 This parameter is valid only with the *Wait* parameter.
 
@@ -199,6 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Forces an immediate restart of the computers.
 
 ```yaml
@@ -214,6 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
+
 Specifies the duration of the wait, in seconds.
 When the time-out elapses, **Restart-Computer** returns the command prompt, even if the computers are not restarted.
 The default value, -1, represents an indefinite time-out.
@@ -235,6 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -Wait
+
 Indicates that this cmdlet suppresses the PowerShell prompt and blocks the pipeline until all of the computers have restarted.
 You can use this parameter in a script to restart computers and then continue to process when the restart is finished.
 
@@ -258,6 +272,7 @@ Accept wildcard characters: False
 ```
 
 ### -WsmanAuthentication
+
 Specifies the mechanism that is used to authenticate the user credentials when you use the WSMan protocol.
 
 The acceptable values for this parameter are: Basic, CredSSP, Default, Digest, Kerberos, and Negotiate.
@@ -284,6 +299,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -299,6 +315,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -315,11 +332,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe computer names to this cmdlet..
 
 In Windows PowerShell 2.0, the *ComputerName* parameter takes input from the pipeline only by property name.
@@ -328,10 +347,12 @@ In Windows PowerShell 3.0, the *ComputerName* parameter takes input from the pip
 ## OUTPUTS
 
 ### None, System.Management.Automation.RemotingJob
+
 This cmdlet returns a job object, if you specify the *AsJob* parameter.
 Otherwise, it does not generate any output.
 
 ## NOTES
+
 * This cmdlet uses the **Win32Shutdown** method of the WMI **WIN32_OperatingSystem** class.
 * In Windows PowerShell 2.0, *AsJob* does not work reliably when you are restarting/stopping remote computers. In Windows PowerShell 3.0, the implementation is changed to resolve this problem.
 
