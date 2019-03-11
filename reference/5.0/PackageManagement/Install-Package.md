@@ -57,7 +57,7 @@ Install-Package [-Credential <PSCredential>] [-Force] [-ForceBootstrap] [-WhatIf
 Install-Package [-Credential <PSCredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
  [-PackageManagementProvider <String>] [-Scope <String>] [-PublishLocation <String>] [-AllVersions]
  [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-Command <String[]>]
- [-Location <String>] [-InstallUpdate] [-InstallationPolicy <String>] [-DestinationPath <String>]
+ [-Location <String>] [-InstallUpdate] [-InstallationPolicy <String>] [-Destination <String>]
  [<CommonParameters>]
 ```
 
@@ -66,7 +66,7 @@ Install-Package [-Credential <PSCredential>] [-Force] [-ForceBootstrap] [-WhatIf
 Install-Package [-Credential <PSCredential>] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
  [-PackageManagementProvider <String>] [-Scope <String>] [-PublishLocation <String>] [-AllVersions]
  [-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-Command <String[]>]
- [-Location <String>] [-InstallUpdate] [-InstallationPolicy <String>] [-DestinationPath <String>]
+ [-Location <String>] [-InstallUpdate] [-InstallationPolicy <String>] [-Destination <String>]
  [<CommonParameters>]
 ```
 
@@ -176,8 +176,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DestinationPath
-Specifies a string of the path where packages are installed from. 
+### -Destination
+Specifies a string of the path where packages are installed from.
 
 ```yaml
 Type: String
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Specifies a location for publishing the package. 
+Specifies a location for publishing the package.
 
 ```yaml
 Type: String
