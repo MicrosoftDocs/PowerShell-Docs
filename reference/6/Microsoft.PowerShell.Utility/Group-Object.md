@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821810
 schema: 2.0.0
 title: Group-Object
 ---
-
 # Group-Object
 
 ## SYNOPSIS
@@ -22,6 +21,7 @@ Group-Object [-NoElement] [-AsHashTable] [-AsString] [-InputObject <PSObject>] [
 ```
 
 ## DESCRIPTION
+
 The **Group-Object** cmdlet displays objects in groups based on the value of a specified property.
 **Group-Object** returns a table with one row for each property value and a column that displays the number of items with that value.
 
@@ -30,6 +30,7 @@ If you specify more than one property, **Group-Object** first groups them by the
 ## EXAMPLES
 
 ### Example 1: Group files by size
+
 ```
 PS C:\> Get-ChildItem *.doc | Group-Object -Property length
 ```
@@ -37,6 +38,7 @@ PS C:\> Get-ChildItem *.doc | Group-Object -Property length
 This command gets the files in the current location that have a .doc extension and groups them by size.
 
 ### Example 2: Group files by extension
+
 ```
 PS C:\> Get-ChildItem | Sort-Object -Property extension | Group-Object -Property extension
 ```
@@ -45,6 +47,7 @@ This command gets the files in the current location, sorts them by file name ext
 Note that the files are sorted before they are grouped.
 
 ### Example 3: Group integers by remainder
+
 ```
 PS C:\> 1..35 | Group-Object -Property {$_ % 2},{$_ % 3}
 ```
@@ -54,6 +57,7 @@ This example shows how to use script blocks as the value of the *Property* param
 This command displays the integers from 1 to 35, grouped by the remainder left when they are divided by 2 or 3.
 
 ### Example 4: Group event log events by ID
+
 ```
 PS C:\> $Events = Get-EventLog -LogName "system" -Newest 1000
 PS C:\> $Events | Group-Object -Property eventID
@@ -74,6 +78,7 @@ The command uses the *Property* parameter to specify that the events should be g
 In the output, the Count column represents the number of entries in each group, the Name column represents the EventID values that define a group, and the Group column represents the objects in each group.
 
 ### Example 5: Group processes by priority class
+
 ```powershell
 PS C:\> Get-Process | Group-Object -Property PriorityClass
 
@@ -108,6 +113,7 @@ The result is a table with only the count and property value name.
 The results are shown in the following sample output.
 
 ### Example 6: Group events by time
+
 ```
 PS C:\> Get-EventLog -LogName system -Newest 1000 | Group-Object -Property {$_.TimeWritten - $_.TimeGenerated}
 ```
@@ -123,6 +129,7 @@ The result of evaluating the script block is the time between when the log entry
 That value is used to group the 1,000 most recent events.
 
 ### Example 7: Group items by file name extension
+
 ```
 PS C:\> Get-ChildItem | Group-Object extension -NoElement
 Count Name
@@ -147,6 +154,7 @@ It uses the *NoElement* parameter to omit the members of the group.
 The results are shown in the following sample output.
 
 ### Example 8: Group objects by value
+
 ```
 PS C:\> "a", "b", "c", "c", "d" | Get-Unique
 a
@@ -178,6 +186,7 @@ It uses the same method to find processes on the computer that have the same pro
 The results are shown in the following sample output.
 
 ### Example 9: Group objects in a hash table
+
 ```
 PS C:\> $A = Get-Command get-*, set-* -Type cmdlet | Group-Object -Property verb -AsHashTable -AsString
 PS C:\> $A
@@ -210,6 +219,7 @@ The *AsString* parameter does not convert the objects in the groups to strings.
 ## PARAMETERS
 
 ### -AsHashTable
+
 Indicates that this cmdlet returns the group as a hash table.
 The keys of the hash table are the property values by which the objects are grouped.
 The values of the hash table are the objects that have that property value.
@@ -230,6 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsString
+
 Indicates that this cmdlet converts the hash table keys to strings.
 By default, the hash table keys are instances of the grouped object.
 This parameter is valid only when used with the *AsHashTable* parameter.
@@ -247,6 +258,7 @@ Accept wildcard characters: False
 ```
 
 ### -CaseSensitive
+
 Indicates that this cmdlet makes the grouping case-sensitive.
 Without this parameter, the property values of objects in a group might have different cases.
 
@@ -263,6 +275,7 @@ Accept wildcard characters: False
 ```
 
 ### -Culture
+
 Specifies the culture to use when comparing strings.
 
 ```yaml
@@ -278,6 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies the objects to group.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -299,6 +313,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoElement
+
 Indicates that this cmdlet omits the members of a group from the results.
 
 ```yaml
@@ -314,6 +329,7 @@ Accept wildcard characters: False
 ```
 
 ### -Property
+
 Specifies the properties for grouping.
 The objects are arranged into groups based on the value of the specified property.
 
@@ -333,20 +349,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
+
 You can pipe any object to **Group-Object**.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GroupInfo or System.Collections.Hashtable
+
 When you use the *AsHashTable* parameter, **Group-Object** returns a hash table.
 Otherwise, it returns a **GroupInfo** object.
 
 ## NOTES
+
 * You can also use the *GroupBy* parameter of the formatting cmdlets (such as Format-Table \[m2\] and Format-List \[m2\]) to group objects. Unlike **Group-Object**, which creates a single table with a row for each property value, the *GroupBy* parameters create a table for each property value with a row for each item that has the property value.
 
   **Group-Object** does not require that the objects being grouped be of the same Microsoft .NET Framework type.
