@@ -109,8 +109,6 @@ However, the host might display the objects that **Out-Host** sends to it.
 * The **Out** cmdlets do not have parameters for names or file paths. To send data to an **Out** cmdlet, use a pipeline operator (|) to send the output of a PowerShell command to the cmdlet. You can also store data in a variable and use the *InputObject* parameter to pass the data to the cmdlet. For help, see the examples.
 * **Out-Host** sends data, but it does not emit any output objects. If you pipe the output of **Out-Host** to the Get-Member cmdlet, **Get-Member** reports that no objects have been specified.
 
-*
-
 ## RELATED LINKS
 
 [Clear-Host](clear-host.md)
