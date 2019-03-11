@@ -1,7 +1,6 @@
 ---
 md.date: 2/27/2019
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Functions
 ---

@@ -1,7 +1,6 @@
 ---
 external help file: Microsoft.PowerShell.Operation.Validation-help.xml
 keywords: powershell,cmdlet
-locale: en-us
 Module Name: Microsoft.PowerShell.Operation.Validation
 ms.date: 06/09/2017
 online version: http://go.microsoft.com/fwlink/?LinkId=834966

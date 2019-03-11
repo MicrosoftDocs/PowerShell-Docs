@@ -1,7 +1,6 @@
 ---
 ms.date:  12/08/2018
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell
 title:  About PSReadLine
 ---

@@ -1,7 +1,6 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/09/2017
 schema: 2.0.0

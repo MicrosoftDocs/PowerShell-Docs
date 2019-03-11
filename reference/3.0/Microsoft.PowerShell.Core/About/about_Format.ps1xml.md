@@ -1,7 +1,6 @@
 ﻿---
 ms.date:  02/19/2019
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Format.ps1xml
 ---

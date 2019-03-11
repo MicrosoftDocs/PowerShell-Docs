@@ -1,7 +1,6 @@
 ---
 ms.date:  01/03/2018
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Requirements
 ---
@@ -101,7 +100,6 @@ Enable-PSRemoting cmdlet creates firewall rules that allow unrestricted remote
 access. It also creates a fir---
 ms.date:  01/03/2018
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Requirements
 ---

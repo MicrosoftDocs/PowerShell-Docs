@@ -1,7 +1,6 @@
 ---
 ms.date: 12/07/2018
 schema: 2.0.0
-locale: en-US
 keywords: powershell
 Help Version: 6.1.0.1
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=855966

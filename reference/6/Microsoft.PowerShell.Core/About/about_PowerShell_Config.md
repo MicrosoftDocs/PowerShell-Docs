@@ -1,7 +1,6 @@
 ---
 ms.date:  11/02/2018
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell
 title:  about_PowerShell_Config
 ---

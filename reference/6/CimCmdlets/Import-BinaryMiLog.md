@@ -1,7 +1,6 @@
 ---
 ms.date:  02/20/2019
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 online version:  http://go.microsoft.com/fwlink/?LinkId=301309
 external help file:  Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml

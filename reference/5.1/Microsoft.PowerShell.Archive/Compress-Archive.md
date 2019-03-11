@@ -1,7 +1,6 @@
 ---
 external help file: Microsoft.PowerShell.Archive-help.xml
 keywords: powershell,cmdlet
-locale: en-us
 Module Name: Microsoft.PowerShell.Archive
 ms.date: 02/12/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821654

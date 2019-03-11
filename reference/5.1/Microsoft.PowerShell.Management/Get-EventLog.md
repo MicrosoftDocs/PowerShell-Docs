@@ -1,7 +1,6 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
 Module Name: Microsoft.PowerShell.Management
 ms.date: 1/18/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821585

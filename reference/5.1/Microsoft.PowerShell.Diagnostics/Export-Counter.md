@@ -1,7 +1,6 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-help.xml
 keywords: powershell,cmdlet
-locale: en-us
 Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 06/09/2017
 online version: http://go.microsoft.com/fwlink/?LinkId=821527

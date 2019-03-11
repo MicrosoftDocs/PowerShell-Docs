@@ -1,7 +1,6 @@
 ---
 ms.date:  01/17/2018
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Windows_PowerShell_5.1
 ---

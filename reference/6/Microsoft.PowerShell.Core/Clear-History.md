@@ -1,7 +1,6 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
 Module Name: Microsoft.PowerShell.Core
 ms.date: 2/22/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821470

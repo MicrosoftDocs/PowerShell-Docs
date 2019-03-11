@@ -1,7 +1,6 @@
 ---
 ms.date:  01/15/2019
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Execution_Policies
 ---

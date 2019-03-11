@@ -1,7 +1,6 @@
 ---
 external help file: Microsoft.PowerShell.Utility-help.xml
 keywords: powershell,cmdlet
-locale: en-us
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/09/2017
 online version: http://go.microsoft.com/fwlink/?LinkId=821834

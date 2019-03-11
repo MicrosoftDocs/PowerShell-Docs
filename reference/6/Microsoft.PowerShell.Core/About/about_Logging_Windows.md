@@ -1,7 +1,6 @@
 ---
 ms.date:  12/14/2018
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell
 title:  about_Logging-Windows
 ---

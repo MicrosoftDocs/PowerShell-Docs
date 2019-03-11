@@ -1,7 +1,6 @@
 ---
 md.date: 3/4/2019
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_For
 ---

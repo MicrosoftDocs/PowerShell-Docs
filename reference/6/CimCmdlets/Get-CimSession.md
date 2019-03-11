@@ -1,7 +1,6 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 keywords: powershell,cmdlet
-locale: en-us
 Module Name: CimCmdlets
 ms.date: 06/09/2017
 schema: 2.0.0
