@@ -145,6 +145,6 @@ You cannot pipe input to this cmdlet.
 
 ## RELATED LINKS
 
-[Set-Culture]()
+[Set-Culture](/powershell/module/internationalcmdlets/set-culture)
 
 [Get-UICulture](Get-UICulture.md)

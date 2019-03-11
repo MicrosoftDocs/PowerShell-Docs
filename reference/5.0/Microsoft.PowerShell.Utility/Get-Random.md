@@ -288,7 +288,7 @@ Specifies a maximum value for the random number. `Get-Random` returns a value th
 maximum (not equal). Enter an integer, a double-precision floating-point number, or an object that
 can be converted to an integer or double, such as a numeric string ("100").
 
-The value of **Maximum** must be greater than (not equal to) the value of * Minimum*.
+The value of **Maximum** must be greater than (not equal to) the value of *Minimum*.
 
 If the value of **Maximum** or **Minimum** is a floating-point number, `Get-Random` returns a
 randomly selected floating-point number. If the value of **Minimum** is a double (a floating-point

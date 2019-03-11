@@ -463,7 +463,7 @@ This cmdlet does not generate any output.
 
   Only members of the Administrators group on the computer can update help for the for the Windows PowerShell Core modules, the commands that are installed together with Windows PowerShell, and for modules in the $pshome\Modules folder.
 If you do not have permission to update help files, you might be able to read the help topics online.
-To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-name\> -Online `.
+To open the online version of any cmdlet help topic, type `Get-Help \<cmdlet-name\> -Online`.
 
 * Modules are the smallest unit of updatable help. You cannot update help for a particular cmdlet. To find the module that contains a particular cmdlet, use the **ModuleName** property of the Get-Command cmdlet, for example, `(Get-Command \<cmdlet-name\>).ModuleName`
 * Because help files are installed in the module directory, the **Update-Help** cmdlet can install updated help file only for modules that are installed on the computer. However, the **Save-Help** cmdlet can save help for modules that are not installed on the computer.

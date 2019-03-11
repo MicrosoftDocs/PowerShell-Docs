@@ -34,7 +34,7 @@ Here is a list of the sections in this topic. If you are unfamiliar with writing
 
 - [Defining a Windows PowerShell Container Provider Class](#Defining-a-Windows-PowerShell-Container-Provider-Class)
 
-- [Defining Base Functionality]()
+- [Defining Base Functionality](#defining-base-functionality)
 
 - [Retrieving Child Items](#Retrieving-Child-Items)
 
@@ -63,8 +63,6 @@ Here is a list of the sections in this topic. If you are unfamiliar with writing
 - [Attaching Dynamic Parameters to the  `Copy-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
 
 - [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting]()
 
 - [Building the Windows PowerShell Provider](#Building-the-Windows-PowerShell-Provider)
 
