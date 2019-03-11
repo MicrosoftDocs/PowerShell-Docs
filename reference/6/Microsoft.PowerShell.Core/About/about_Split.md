@@ -152,7 +152,7 @@ Jupiter,Saturn,Uranus,Neptune
 
 ```powershell
 $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
-$c -split ",", 5
+$c -split ",", -5
 ```
 
 ```output
@@ -386,7 +386,7 @@ The following statement splits a string into three substrings
 starting from the end of the string.
 
 ```powershell
-"a,b,c,d,e,f,g,h" -split ",", 3
+"a,b,c,d,e,f,g,h" -split ",", -3
 ```
 
 ```output
