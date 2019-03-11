@@ -51,6 +51,4 @@ Required. Specifies the maximum number of arguments.
 
 [How to Declare Input Validation Rules](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)
 
-[How to Declare Input Validation Rules](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)
-
 [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

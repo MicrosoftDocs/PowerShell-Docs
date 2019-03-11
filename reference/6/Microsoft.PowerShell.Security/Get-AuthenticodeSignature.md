@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821711
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Get-AuthenticodeSignature
 ---
-
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
-
 Gets information about the digital signature for a file.
 
 ## SYNTAX

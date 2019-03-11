@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821764
 schema: 2.0.0
 title: Enable-PSBreakpoint
 ---
-
 # Enable-PSBreakpoint
 
 ## SYNOPSIS
@@ -17,16 +16,19 @@ Enables the breakpoints in the current console.
 ## SYNTAX
 
 ### Id (Default)
+
 ```
 Enable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Breakpoint
+
 ```
 Enable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Enable-PSBreakpoint** cmdlet re-enables disabled breakpoints.
 You can use it to enable all breakpoints, or you can specify breakpoints by submitting breakpoint objects or breakpoint IDs.
 
@@ -41,6 +43,7 @@ For more information about the PowerShell debugger, see about_Debuggers.
 ## EXAMPLES
 
 ### Example 1: Enable all breakpoints
+
 ```
 PS C:\> Get-PSBreakpoint | Enable-PSBreakpoint
 ```
@@ -49,6 +52,7 @@ This command enables all breakpoints in the current console.
 You can abbreviate the command as `gbp | ebp`.
 
 ### Example 2: Enable breakpoints by ID
+
 ```
 PS C:\> Enable-PSBreakpoint -Id 0, 1, 5
 ```
@@ -56,6 +60,7 @@ PS C:\> Enable-PSBreakpoint -Id 0, 1, 5
 This command enables breakpoints with breakpoint IDs 0, 1, and 5.
 
 ### Example 3: Enable a disabled breakpoint
+
 ```
 PS C:\> $B = Set-PSBreakpoint -Script "sample.ps1" -Variable Name
 PS C:\> $B | Disable-PSBreakpoint -PassThru
@@ -93,6 +98,7 @@ This lets you verify that the value of the Enabled property of the breakpoint ob
 The results are shown in the following sample output.
 
 ### Example 4: Enable breakpoints using a variable
+
 ```
 PS C:\> $B = Get-PSBreakpoint -Id 3, 5
 PS C:\> Enable-PSBreakpoint -Breakpoint $B
@@ -109,6 +115,7 @@ This command is the equivalent of `Enable-PSBreakpoint -Id 3, 5`.
 ## PARAMETERS
 
 ### -Breakpoint
+
 Specifies the breakpoints to enable.
 Enter a variable that contains breakpoint objects or a command that gets breakpoint objects, such as a Get-PSBreakpoint command.
 You can also pipe breakpoint objects to **Enable-PSBreakpoint**.
@@ -126,6 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies breakpoint IDs that this cmdlet enables.
 The default value is all breakpoints.
 Enter the IDs or a variable that contains the IDs.
@@ -145,6 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object representing the item with which you are working.
 By default, this cmdlet does not generate any output.
 
@@ -161,6 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -176,6 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -192,20 +203,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.Breakpoint
+
 You can pipe a breakpoint object to **Enable-PSBreakpoint**.
 
 ## OUTPUTS
 
 ### None or System.Management.Automation.Breakpoint
+
 When you use the *PassThru* parameter, **Enable-PSBreakpoint** returns a breakpoint object that represent that breakpoint that was enabled.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * The **Enable-PSBreakpoint** cmdlet does not generate an error if you try to enable a breakpoint that is already enabled. As such, you can enable all breakpoints without error, even when only a few are disabled.
 
   Breakpoints are enabled when you create them by using the Set-PSBreakpoint cmdlet.
