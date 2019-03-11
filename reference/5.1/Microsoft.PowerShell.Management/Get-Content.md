@@ -1,14 +1,12 @@
 ---
-external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
-locale: en-us
-Module Name: Microsoft.PowerShell.Management
-ms.date: 2/4/2019
-online version: http://go.microsoft.com/fwlink/?LinkId=821583
-schema: 2.0.0
-title: Get-Content
+md.date: 3/11/2019
+schema:  2.0.0
+locale:  en-us
+keywords:  powershell,cmdlet
+online version:  http://go.microsoft.com/fwlink/?LinkId=821583
+external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
+title:  Get-Content
 ---
-
 # Get-Content
 
 ## SYNOPSIS
@@ -51,31 +49,33 @@ If you need to create files or directories for the following examples, see [New-
 
 This example gets the content of a file in the current directory.
 
+> [!NOTE]
+> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
+> "This is Line X".
+
 ```powershell
-Set-Content -Path .\Test1.txt -Value 'Hello, World'
-Get-Content -Path .\Test1.txt
+Get-Content -Path .\LineNumbers.txt
 ```
 
 ```Output
-Hello, World
+This is Line 1
+This is Line 2
+This is Line 3
+This is Line 4
+...
 ```
 
-The `Set-Content` cmdlet uses the **Path** and **Value** parameters to create the **Test1.txt** file
-in the current directory. The **Value** parameter includes the text string **Hello, World**. The
-`Get-Content` cmdlet uses the **Path** parameter to specify the **Test1.txt** file and displays the
-content in the PowerShell console.
+### Example 2: Limit the number of lines Get-Conent returns
 
-### Example 2: Get content from a text file and write the content to another file
+This command gets the first five lines of a file. The **TotalCount** parameter is used to gets the
+first 5 lines of content
 
-This command gets the first five lines of a file, writes that content to a new file, and then
-displays the new file's contents.
-
-The **LineNumbers.txt** file in this example contains 100 lines of text in the following format,
-**This is Line X**.
+> [!NOTE]
+> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
+> "This is Line X".
 
 ```powershell
-Get-Content -Path .\LineNumbers.txt -TotalCount 5 | Set-Content -Path .\FiveLines.txt
-Get-Content -Path .\FiveLines.txt
+Get-Content -Path .\LineNumbers.txt -TotalCount 5
 ```
 
 ```Output
@@ -86,17 +86,21 @@ This is Line 4
 This is Line 5
 ```
 
-The `Get-Content` cmdlet uses the **Path** parameter to get content from the file
-**LineNumbers.txt**. The **TotalCount** parameter specifies that the first five lines are retrieved.
-The string is sent down the pipeline to the `Set-Content` cmdlet. `Set-Content` uses the **Path**
-parameter to create **FiveLines.txt**, a new file that contains the five lines of text. The
-`Get-Content` cmdlet uses the **Path** parameter to get content from **FiveLines.txt** and displays
-the content in the PowerShell console.
-
 ### Example 3: Get a specific line of content from a text file
 
 This command gets a specific number of lines from a file and then displays only the last line of
-that content.
+that content. The **TotalCount** parameter gets the first 25 lines of content.
+
+> [!NOTE]
+> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
+> "This is Line X".
+
+The `Get-Content` command is wrapped in parentheses so that the command completes before going to
+the next step.
+
+The `Get-Content` cmdlet returns an array of lines, this allows you to add the index notation after
+the parenthesis to retrieve a specific line number. In this case, the `[-1]` index specifies the
+last index in the returned array of 25 retrieved lines.
 
 ```powershell
 (Get-Content -Path .\LineNumbers.txt -TotalCount 25)[-1]
@@ -106,49 +110,49 @@ that content.
 This is Line 25
 ```
 
-The `Get-Content` cmdlet uses the **Path** parameter to get content from the file
-**LineNumbers.txt**. The **TotalCount** parameter gets the first 25 lines of content. The
-`Get-Content` command is wrapped in parentheses so that the command completes before going to the
-next step. The `[-1]` specifies the last line of content and displays that line in the PowerShell
-console.
+### Example 4: Get the last line of a text file
 
-To get content from the end of a file, you can adjust the array number. For example, `[-6]` will
-display **This is Line 20**.
+This command gets the first line and last line of content from a file.
 
-### Example 4: Get the first line and last line of a text file
+> [!NOTE]
+> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
+> "This is Line X".
 
-This command gets the first line and last line of content from each `*.txt` file in the current
-directory.
+This example uses the `Get-Item` cmdlet to demonstrate that you can pipe files into the
+`Get-Content` parameter.
+
+The **Tail** parameter gets the last line of the file. This method is faster than retrieving all of
+the lines and using the `[-1]` index notation.
 
 ```powershell
-Get-ChildItem -Path .\*.txt | ForEach-Object {Get-Content $_ -TotalCount 1; Get-Content $_ -Tail 1}
+Get-Item -Path .\LineNumbers.txt Get-Content -Tail 1
 ```
 
 ```Output
-This is Line 1
-This is Line 5
-This is Line 1
 This is Line 100
 ```
-
-The `Get-ChildItem` cmdlet uses the **Path** parameter to specify the text files in the current
-directory. For this example, the **FiveLines.txt** and **LineNumbers.txt** from the previous
-examples. The objects are sent down the pipeline to the `ForEach-Object` cmdlet. `ForEach-Object`
-uses a script block to process the `Get-Content` cmdlet. `Get-Content` uses the `$_` automatic
-variable to specify each object received from the pipeline. The **TotalCount** parameter gets the
-first line of each file and the **Tail** parameter gets the last line of each file. The output is
-displayed in the PowerShell console.
 
 ### Example 5: Get the content of an alternate data stream
 
 This example describes how to use the **Stream** parameter to get the content of an alternate data
 stream for files stored on a Windows NTFS volume.
 
+> [!NOTE]
+> The `Set-Content` cmdlet is used to create sample content for the example in a file called
+> `Stream.txt`.
+
+The **Stream** parameter is a dynamic parameter of the [FileSystem](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring)
+provider. By default `Get-Content` only retrieves data from the primary, or `$DATA` stream.
+
+**Streams** can be used to store hidden data such as attributes, security settings, or other data.
+
+```powershell
+Set-Content -Path .\Stream.txt -Value 'This is the content of the Stream.txt file'
+# Specify a wildcard to the Stream parameter to display all streams of the recently created file.
+Get-Item -Path .\Stream.txt -Stream *
 ```
-PS> Set-Content -Path .\Stream.txt -Value 'This is the content of the Stream.txt file'
 
-PS> Get-Item -Path .\Stream.txt -Stream *
-
+```Output
 PSPath        : Microsoft.PowerShell.Core\FileSystem::C:\Test\Stream.txt::$DATA
 PSParentPath  : Microsoft.PowerShell.Core\FileSystem::C:\Test
 PSChildName   : Stream.txt::$DATA
@@ -158,15 +162,25 @@ PSIsContainer : False
 FileName      : C:\Test\Stream.txt
 Stream        : :$DATA
 Length        : 44
+```
 
-PS> Get-Content -Path .\Stream.txt -Stream $DATA
+```powershell
+# Retrieve the content of the primary, or $DATA stream.
+Get-Content -Path .\Stream.txt -Stream $DATA
+```
 
+```Output
 This is the content of the Stream.txt file
+```
 
-PS> Add-Content -Path .\Stream.txt -Stream NewStream -Value 'Added a stream named NewStream to Stream.txt'
+```powershell
+# Use the Stream parameter of Add-Content to create a new Stream containing sample content.
+Add-Content -Path .\Stream.txt -Stream NewStream -Value 'Added a stream named NewStream to Stream.txt'
+# Use Get-Item to verify the stream was created.
+Get-Item -Path .\Stream.txt -Stream *
+```
 
-PS> Get-Item -Path .\Stream.txt -Stream *
-
+```Output
 PSPath        : Microsoft.PowerShell.Core\FileSystem::C:\Test\Stream.txt::$DATA
 PSParentPath  : Microsoft.PowerShell.Core\FileSystem::C:\Test
 PSChildName   : Stream.txt::$DATA
@@ -186,76 +200,38 @@ PSIsContainer : False
 FileName      : C:\Test\Stream.txt
 Stream        : NewStream
 Length        : 46
+```
 
-PS> Get-Content -Path .\Stream.txt -Stream NewStream
+```powershell
+# Retrieve the content of your newly created Stream.
+Get-Content -Path .\Stream.txt -Stream NewStream
+```
 
+```Output
 Added a stream named NewStream to Stream.txt
 ```
 
-The `Set-Content` cmdlet uses the **Path** and **Value** parameters to create a new file named
-**Stream.txt** in the current directory. The **Value** parameter inserts content into the file,
-**This is the content of the Stream.txt file**. The `Get-Item` cmdlet uses the **Stream** parameter
-with the asterisk (`*`) wildcard to display the existing streams for **Stream.txt**. The
-`Get-Content` cmdlet uses the **Stream** parameter to display the content stored in the `$DATA`
-stream, which is the file's content.
+### Example 6: Get raw content
 
-The `Add-Content` cmdlet uses the **Stream** parameter to create a new stream named, **NewStream**.
-The **Value** parameter adds content to the stream, **Added a stream named NewStream to
-Stream.txt**. The `Get-Item` cmdlet displays information about the **Stream.txt** file and the
-stream that was added, **NewStream**. The `Get-Content` cmdlet uses the **Stream** parameter to
-display the content stored in **NewStream**.
+The commands in this example get the contents of a file as one string, instead of an array of
+strings. By default, without the **Raw** dynamic parameter, content is returned as an array of
+newline-delimited strings.
 
+> [!NOTE]
+> The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
+> "This is Line X".
 
-### Example 6: Get file contents as a hashtable
-
-The commands in this example get the contents of a module manifest file (.psd1) as a hash table. The
-manifest file contains a hash table. If you get the contents without the **Raw** dynamic parameter,
-it is returned as an array of newline-delimited strings.
-
-For more information about PowerShell modules, see [Understanding a Windows PowerShell Module](/powershell/developer/module/understanding-a-windows-powershell-module).
-
-```
-PS> $Manifest = (Get-Module -ListAvailable PSDiagnostics).Path
-
-PS> $Manifest
-
-C:\WINDOWS\System32\WindowsPowerShell\v1.0\Modules\PSDiagnostics\PSDiagnostics.psd1
-
-PS> $Hash = Invoke-Expression -Command (Get-Content $Manifest -Raw)
-
-PS> $Hash
-
-Name                           Value
-----                           -----
-Copyright                      © Microsoft Corporation. All rights reserved.
-ModuleToProcess                PSDiagnostics.psm1
-CompatiblePSEditions           {Desktop}
-PowerShellVersion              5.1
-CompanyName                    Microsoft Corporation
-GUID                           c61d6278-02a3-4618-ae37-a524d40a7f44
-Author                         Microsoft Corporation
-FunctionsToExport              {Disable-PSTrace, Disable-PSWSManCombinedTrace, ...}
-CLRVersion                     2.0.50727
-CmdletsToExport                {}
-AliasesToExport                {}
-ModuleVersion                  1.0.0.0
-
-PS> $Hash.ModuleToProcess
-
-PSDiagnostics.psm1
+```powershell
+$raw = Get-Content -Path .\LineNumbers.txt -Raw
+$lines = Get-Content -Path .\LineNumbers.txt
+Write-Host "Raw contains $($raw.Count) lines."
+Write-Host "Lines contains $($lines.Count) lines."
 ```
 
-The `Get-Module` cmdlet uses the **ListAvailable** parameter and specifies the **PSDiagnostics**
-module. The command is wrapped with parentheses so that the object's path property is stored in the
-`$Manifest` variable. The `$Manifest` variable displays the path to the module manifest file on the
-local computer.
-
-The `Invoke-Expression` cmdlet evaluates the results of `Get-Content` that uses the `$Manifest`
-variable as input. The **Raw** parameter returns the value as one string. The string is stored in
-the `$Hash` variable.
-
-The contents of the `$Hash` variable are displayed in the PowerShell console. To get the value of
-the `ModuleToProcess` key in the module manifest, use the `$Hash.ModuleToProcess` property.
+```Output
+Raw contains 1 lines.
+Lines contains 100 lines.
+```
 
 ## PARAMETERS
 
@@ -607,7 +583,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
 `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
 `-Verbose`, `-WarningAction`, and `-WarningVariable`.
-For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
