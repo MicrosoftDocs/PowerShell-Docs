@@ -8,11 +8,9 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821759
 schema: 2.0.0
 title: ConvertTo-Json
 ---
-
 # ConvertTo-Json
 
 ## SYNOPSIS
-
 Converts an object to a JSON-formatted string.
 
 ## SYNTAX

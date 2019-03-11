@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821720
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Unprotect-CmsMessage
 ---
-
 # Unprotect-CmsMessage
 
 ## SYNOPSIS
-
 Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.
 
 ## SYNTAX

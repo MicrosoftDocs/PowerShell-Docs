@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821624
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Resolve-Path
 ---
-
 # Resolve-Path
 
 ## SYNOPSIS
-
 Resolves the wildcard characters in a path, and displays the path contents.
 
 ## SYNTAX

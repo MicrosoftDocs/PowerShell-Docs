@@ -8,11 +8,9 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821751
 schema: 2.0.0
 title: Compare-Object
 ---
-
 # Compare-Object
 
 ## SYNOPSIS
-
 Compares two sets of objects.
 
 ## SYNTAX
@@ -229,6 +227,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

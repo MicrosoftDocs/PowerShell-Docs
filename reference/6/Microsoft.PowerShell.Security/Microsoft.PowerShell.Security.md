@@ -9,11 +9,9 @@ Module Guid:  a94c8c7e-9810-47c0-b8af-65089c13a35a
 title:  Microsoft.PowerShell.Security
 Module Name:  Microsoft.PowerShell.Security
 ---
-
 # Microsoft.PowerShell.Security Module
 
 ## Description
-
 This section contains the help topics for the cmdlets that are installed with PowerShell Microsoft.PowerShell.Security module. The Security module contains cmdlets and providers that manage the basic security features of Windows.
 
 ## Microsoft.PowerShell.Security Cmdlets
