@@ -53,7 +53,9 @@
         ]
     },
     "no-bare-urls": true,
-    "hr-style": "---",
+    "hr-style": {
+        "style": "---"
+    },
     "no-emphasis-as-header": true,
     "no-space-in-emphasis": true,
     "no-space-in-code": true,

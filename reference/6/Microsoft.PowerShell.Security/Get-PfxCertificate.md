@@ -7,11 +7,9 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821715
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Get-PfxCertificate
 ---
-
 # Get-PfxCertificate
 
 ## SYNOPSIS
-
 Gets information about .pfx certificate files on the computer.
 
 ## SYNTAX

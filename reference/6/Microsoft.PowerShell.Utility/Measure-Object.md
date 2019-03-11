@@ -11,7 +11,6 @@ title: Measure-Object
 # Measure-Object
 
 ## SYNOPSIS
-
 Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.
 
 ## SYNTAX
