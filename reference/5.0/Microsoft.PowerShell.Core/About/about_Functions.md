@@ -86,8 +86,8 @@ function Start-PSAdmin {Start-Process PowerShell -Verb RunAs}
 
 To use the function, type: `Start-PSAdmin`
 
-To add statements to the function, use a semi-colon `;` to separate the
-statements, or type each statement on a separate line.
+To add statements to the function, type each statement on a separate line, or
+use a semi-colon `;` to separate the statements.
 
 For example, the following function finds all `.jpg` files in the current user's
 directories that were changed after the start date.
@@ -119,8 +119,8 @@ Functions should use the standard verbs that have been approved for all
 PowerShell commands. These verbs help us to keep our command names
 simple, consistent, and easy for users to understand.
 
-For more information about the standard PowerShell verbs, see
-[Approved Verbs](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands) in the Microsoft Docs.
+For more information about the standard PowerShell verbs, see [Approved Verbs](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands)
+in the Microsoft Docs.
 
 ### Functions with Parameters
 
@@ -153,8 +153,16 @@ function <name> [([type]$parameter1[,[type]$parameter2])] {
 }
 ```
 
-There is no difference between these two methods. Use the method that you
-prefer.
+Below is an example of this alternative syntax.
+
+```powershell
+Function Add-Numbers($one, $two) {
+    $one + $two
+}
+```
+
+While the first method is preferred, there is no difference between these two
+methods.
 
 When you run the function, the value you supply for a parameter is assigned to
 a variable that contains the parameter name. The value of that variable can be
@@ -215,9 +223,10 @@ description of your parameter, and specifying the **Help** property of
 ```powershell
 function Get-SmallFiles {
   param (
-  [PSDefaultValue(Help = '100')]
-  $size = 100
-  # )
+      [PSDefaultValue(Help = '100')]
+      $size = 100
+  )
+}
 ```
 
 For more information about the **PSDefaultValue** attribute class, see
@@ -272,10 +281,18 @@ When you type the `On` switch parameter after the function name, the function
 displays "Switch on". Without the switch parameter, it displays "Switch off".
 
 ```powershell
-PS> Switch-Item -on
-Switch on
+Switch-Item -on
+```
 
-PS> Switch-Item
+```Output
+Switch on
+```
+
+```powershell
+Switch-Item
+```
+
+```Output
 Switch off
 ```
 
@@ -283,10 +300,18 @@ You can also assign a **Boolean** value to a switch when you run the function, a
 shown in the following example:
 
 ```powershell
-PS> Switch-Item -on:$true
-Switch on
+Switch-Item -on:$true
+```
 
-PS> Switch-Item -on:$false
+```Output
+Switch on
+```
+
+```powershell
+Switch-Item -on:$false
+```
+
+```Output
 Switch off
 ```
 
@@ -311,7 +336,10 @@ You can use all of the parameters of `Get-Command` when you call the
 command using `@Args`.
 
 ```powershell
-PS> Get-MyCommand -Name Get-ChildItem
+Get-MyCommand -Name Get-ChildItem
+```
+
+```Output
 CommandType     Name                ModuleName
 -----------     ----                ----------
 Cmdlet          Get-ChildItem       Microsoft.PowerShell.Management
@@ -339,6 +367,10 @@ function <name> {
 The `Begin` statement list runs one time only, at the beginning of the
 function.
 
+> [!IMPORTANT]
+> If your function defines a `Begin`, `Process` or `End` block, all of your code
+> must reside inside one of the blocks.
+
 The `Process` statement list runs one time for each object in the pipeline.
 While the `Process` block is running, each pipeline object is assigned to the
 `$_` automatic variable, one pipeline object at a time.
@@ -361,7 +393,10 @@ To demonstrate this function, enter an list of numbers separated by commas, as
 shown in the following example:
 
 ```powershell
-PS> 1,2,4 | Get-Pipeline
+1,2,4 | Get-Pipeline
+```
+
+```Output
 The value is: 1
 The value is: 2
 The value is: 4
@@ -498,6 +533,12 @@ function that comes with PowerShell, type:
 
 ```powershell
 (Get-ChildItem function:help).Definition
+```
+
+You can also use the following syntax.
+
+```powershell
+$function:help
 ```
 
 For more information about the `Function:` drive, see the help topic
