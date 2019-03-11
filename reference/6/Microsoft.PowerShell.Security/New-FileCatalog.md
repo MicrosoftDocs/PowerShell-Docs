@@ -8,11 +8,9 @@ online version: http://go.microsoft.com/fwlink/?LinkId=822569
 schema: 2.0.0
 title: New-FileCatalog
 ---
-
 # New-FileCatalog
 
 ## SYNOPSIS
-
 `New-FileCatalog` creates a catalog file of file hashes that can be used to
 validate the authenticity of a file.
 
@@ -91,6 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 ```yaml
 Type: String[]
 Parameter Sets: (All)
@@ -155,6 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

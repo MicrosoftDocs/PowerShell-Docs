@@ -12,7 +12,6 @@ caps.latest.revision: 5
 # Naming Help Files
 
 This topic explains how to name an XML-based help file so that the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet can find it. The name requirements differ for each command type.
-This topic explains how to name an XML-based help file so that the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet can find it. The name requirements differ for each command type.
 
 ## Cmdlet Help Files
 
@@ -24,7 +23,6 @@ The help file for a C# cmdlet must be named for the assembly in which the cmdlet
 
 The assembly name format is required even when the assembly is a nested module.
 
-For example, the [Get-WinEvent;PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet is defined in the Microsoft.PowerShell.Diagnostics.dll assembly. The `Get-Help` cmdlet looks for a help topic for the `Get-WinEvent` cmdlet only in the Microsoft.PowerShell.Diagnostics.dll-help.xml file in the module directory.
 For example, the [Get-WinEvent;PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet is defined in the Microsoft.PowerShell.Diagnostics.dll assembly. The `Get-Help` cmdlet looks for a help topic for the `Get-WinEvent` cmdlet only in the Microsoft.PowerShell.Diagnostics.dll-help.xml file in the module directory.
 
 ## Provider Help files
@@ -41,7 +39,6 @@ For example, the Certificate provider is defined in the Microsoft.PowerShell.Sec
 
 ## Function Help Files
 
-Functions can be documented by using [comment-based help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) or documented in an XML help file. When the function is documented in an XML file, the function must have an `.ExternalHelp` comment keyword that associates the function with the XML file. Otherwise, the `Get-Help` cmdlet cannot find the help file.
 Functions can be documented by using [comment-based help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) or documented in an XML help file. When the function is documented in an XML file, the function must have an `.ExternalHelp` comment keyword that associates the function with the XML file. Otherwise, the `Get-Help` cmdlet cannot find the help file.
 
 There are no technical requirements for the name of a function help file. However, a best practice is to name the help file for the script module in which the function is defined. For example, the following function is defined in the MyModule.psm1 file.
