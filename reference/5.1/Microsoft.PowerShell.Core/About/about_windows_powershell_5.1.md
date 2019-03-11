@@ -44,7 +44,7 @@ You can also read about changes to Windows PowerShell 5.1 in
 [What's New in Windows PowerShell](/powershell/scripting/whats-new/what-s-new-with-powershell).
 
 
-## New Scenarios and Features in WMF 5.1 #
+## New Scenarios and Features in WMF 5.1
 
 > Note: This information is preliminary and subject to change.
 

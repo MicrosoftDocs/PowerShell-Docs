@@ -65,11 +65,13 @@ When these bytes are decoded as Windows-1252, they are interpreted as the charac
 
 Some strange character sequences that you might see include:
 
+<!-- markdownlint-disable MD038 -->
 - `â€“` instead of `–`
 - `â€”` instead of `—`
 - `Ã„2` instead of `Ä`
 - `Â` instead of ` `  (a non-breaking space)
 - `Ã©` instead of `é`
+<!-- markdownlint-enable MD038 -->
 
 This handy [reference](https://www.i18nqa.com/debug/utf8-debug.html) lists the common patterns that
 indicate a UTF-8/Windows-1252 encoding problem.
