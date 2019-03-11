@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821646
 external help file:  Microsoft.PowerShell.Commands.Management.dll-Help.xml
 title:  Test-Connection
 ---
-
 # Test-Connection
 
 ## SYNOPSIS
@@ -165,6 +164,7 @@ If the `Test-Connection` command returns a value of `$True`, the command uses th
 ## PARAMETERS
 
 ### -BufferSize
+
 Specifies the size, in bytes, of the buffer sent with this command.
 The default value is 32.
 
@@ -181,6 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -Continues
+
 Causes the cmdlet to send ping requests continuously. This parameter cannot be used with the
 **Count** parameter.
 
@@ -197,6 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -Count
+
 Specifies the number of echo requests to send.
 The default value is 4.
 
@@ -213,6 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -Delay
+
 Specifies the interval between pings, in seconds.
 
 ```yaml
@@ -228,6 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -DontFragment
+
 This parameter sets the "Don't Fragment" flag in the IP header. You can use this parameter with the
 **BufferSize** parameter to test the Path MTU size. For more information about Path MTU, see the
 [Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
@@ -245,6 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -IPv4
+
 Forces the cmdlet to use the IPv4 protocol for the test.
 
 ```yaml
@@ -260,6 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -IPv6
+
 Forces the cmdlet to use the IPv6 protocol for the test.
 
 ```yaml
@@ -275,6 +281,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxHops
+
 Sets the maximum number of hops that an ICMP request message can be sent. The default value is
 controlled by the operating system. The default value for Windows 10 is 128 hops.
 
@@ -291,6 +298,7 @@ Accept wildcard characters: False
 ```
 
 ### -MTUSizeDetect
+
 This parameter is used to discover the Path MTU size. The cmdlet returns a **PingReply#MTUSize**
 object that contains the Path MTU size to the target. For more information about Path MTU, see the
 [Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) article in wikipedia.
@@ -308,6 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -Ping
+
 Causes the cmdlet to do a ping test. This is the default action.
 
 ```yaml
@@ -323,6 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -Quiet
+
 Indicates that this cmdlet suppresses errors.
 If any ping succeeds, this cmdlet returns `$True`.
 If all pings fail, this cmdlet returns `$False`.
@@ -340,6 +350,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResolveDestination
+
 Causes the cmdlet to attempt to resolve the DNS name of the target.
 
 ```yaml
@@ -355,6 +366,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 The **Source** is not currently implemented.
 
 ```yaml
@@ -370,6 +382,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetName
+
 Specifies the computers to test. Type the computer names or type IP addresses in IPv4 or IPv6
 format. Wildcard characters are not permitted. This parameter is required.
 
@@ -386,6 +399,7 @@ Accept wildcard characters: False
 ```
 
 ### -TCPPort
+
 Specifies the TCP port number on the target to be used in the TCP connection test. The cmdlet will
 attempt to make a TCP connection to the specified port on the target.
 
@@ -402,6 +416,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeoutSeconds
+
 Sets the timeout value for the test. The test fails if a response is not received before the
 timeout expires.
 
@@ -418,6 +433,7 @@ Accept wildcard characters: False
 ```
 
 ### -Traceroute
+
 Causes the cmdlet to do a traceroute test. When this parameter is used, the cmdlet returns a
 `TestConnectionCommand+TraceRouteResult` object.
 
@@ -443,6 +459,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 You cannot pipe input to this cmdlet.
 
 ## OUTPUTS

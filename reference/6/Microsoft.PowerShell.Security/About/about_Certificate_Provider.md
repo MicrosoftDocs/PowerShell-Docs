@@ -9,7 +9,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=834968
 # Certificate Provider
 
 ## Provider name
-
 Certificate
 
 ## Drives

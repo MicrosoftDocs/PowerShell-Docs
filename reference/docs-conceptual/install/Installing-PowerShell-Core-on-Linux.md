@@ -693,7 +693,7 @@ you need to install the necessary dependencies for the target OS in separate ste
 For example, our [Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first,
 and then extracts the Linux `tar.gz` archive.
 
-[amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
+[amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
 ### Installation - Binary Archives
 
