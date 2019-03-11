@@ -124,7 +124,7 @@ in a configuration that sets up the web service.
    which should be `CERT:\LocalMachine\My`.
    - Make a note of the certificate thumbprint.
 4. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the
-   following at the PS prompt and press enter: ` [guid]::newGuid()` or `New-Guid`. This key will be
+   following at the PS prompt and press enter: `[guid]::newGuid()` or `New-Guid`. This key will be
    used by client nodes as a shared key to authenticate during registration. For more information,
    see the Registration Key section below.
 5. In the PowerShell ISE, start (F5) the following configuration script (included in the Examples

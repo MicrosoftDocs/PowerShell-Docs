@@ -75,7 +75,7 @@ These aliases are understandable when you know the shorthand names.
 
 | Cmdlet name    | Alias |
 |----------------|-------|
-| `Get-Item `    | gi    |
+| `Get-Item`     | gi    |
 | `Set-Item`     | si    |
 | `Get-Location` | gl    |
 | `Set-Location` | sl    |

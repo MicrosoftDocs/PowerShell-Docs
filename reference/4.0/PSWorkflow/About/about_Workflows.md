@@ -109,7 +109,9 @@ use of any command in the module.
 To find the workflows in modules installed on your computer, use the
 CommandType parameter of the Get-Command cmdlet.
 
+```
 PS C:> Get-Command -CommandType Workflow
+```
 
 # HOW TO RUN WORKFLOWS
 
@@ -118,7 +120,9 @@ To run a workflow, use the following procedure.
 1. On the client computer, start Windows PowerShell with the
 Run as administrator option.
 
+```
 PS C:> Start-Process PowerShell -Verb RunAs
+```
 
 This step is not required when the managed node is
 the local computer.
@@ -138,7 +142,9 @@ running Windows PowerShell 3.0.
 
 To enable remoting, use the Enable-PSRemoting cmdlet.
 
+```
 PS C:> Enable-PSRemoting -Force
+```
 
 You can also enable remoting by using the "Turn on Script
 Execution" Group Policy setting. For more information, see
@@ -158,12 +164,16 @@ and options that are designed for workflows.
 
 On the local computer:
 
+```
 PS C:> $ws = New-PSWorkflowSession
+```
 
 On a remote computer:
 
+```
 PS C:> $ws = New-PSWorkflowSession -ComputerName Server01 `
 -Credential Domain01\Admin01
+```
 
 Or, use the New-PSSession cmdlet. Use the ConfigurationName parameter
 to specify the Microsoft.PowerShell.Workflow session configuration.
@@ -175,12 +185,14 @@ cmdlet to create custom option settings for the workflow session
 configuration and use the Set-PSSessionConfiguration cmdlet to
 change the session configuration.
 
+```
 PS C:> $sto = New-PSWorkflowExecutionOption -MaxConnectedSessions 150
 PS C:> Invoke-Command -ComputerName Server01 `
 {Set-PSSessionConfiguration Microsoft.PowerShell.Workflow `
 -SessionTypeOption $Using:sto}
 PS C:> $ws = New-PSWorkflowSession -ComputerName Server01 `
 -Credential Domain01\Admin01
+```
 
 4. Run the workflow in the workflow session. To specify the
 names of the managed nodes (target computers), use the
@@ -191,12 +203,16 @@ The following commands run the Test-Workflow workflow.
 Where the managed node is the computer that hosts:
 the workflow session:
 
+```
 PS C:> Invoke-Command -Session $ws {Test-Workflow}
+```
 
 Where the managed nodes are remote computers.
 
+```
 PS C:> Invoke-Command -Session $ws{
 Test-Workflow -PSComputerName Server01, Server02 }
+```
 
 The following commands run the Test-Workflow workflow on hundreds
 of computers. The first command gets the computer names from a text
@@ -205,8 +221,10 @@ files and saves them in the $Servers variable on the local computer.
 The second command uses the Using scope modifier to indicate that
 the $Servers variable is defined in the local session.
 
+```
 PS C:> $Servers = Get-Content Servers.txt
 PS C:> Invoke-Command -Session $ws {Test-Workflow -PSComputerName $Using:Servers }
+```
 
 For more information about the Using scope modifier, see
 about_Remote_Variables at http://go.microsoft.com/fwlink/?LinkID=252653
@@ -223,43 +241,55 @@ For example, the following very simple workflow defines no
 parameters. However, when you run the workflow, it has both
 the CommonParameters and WorkflowCommonParameters.
 
+```
 PS C:> workflow Test-Workflow {Get-Process}
 PS C:> Get-Command Test-Workflow -Syntax
+```
 
+```
 Test-Workflow [<WorkflowCommonParameters>] [<CommonParameters>]
+```
 
 The workflow common parameters include several parameters that
 are essential to running workflows. For example, the PSComputerName
 common parameter specifies the managed nodes that the workflow affects.
 
+```
 PS C:> Invoke-Command -Session $ws `
 {Test-Workflow -PSComputerName Server01, Server02}
+```
 
 The PSPersist workflow common parameter determines when workflow
 data is persisted. It enables you to add persistence point between
 activities to workflows that do not define persistence points.
 
+```
 PS C:> Invoke-Command -Session $ws `
 {Test-Workflow -PSComputerName Server01, Server02 -PSPersist:$True}
+```
 
 Other workflow common parameters let you specify the
 characteristics of the remote connection to the managed nodes.
 Their names and functionality are very similar to the parameters
 of remoting cmdlets, including Invoke-Command.
 
+```
 PS C:> Invoke-Command -Session $ws `
 {Test-Workflow -PSComputerName Server01, Server02 -PSPort 443}
+```
 
 Take care to distinguish the remoting parameters that define the
 connection for the workflow session from the PS-prefixed workflow
 common parameters that define the connection to the managed nodes.
 
+```
 PS C:> $ws = New-PSSession -ComputerName Server01 `
 -ConfigurationName Microsoft.PowerShell.Workflow
 
 PS C:> Invoke-Command -Session $ws `
 {Test-Workflow -PSComputerName Server01, Server02 `
 -PSConfigurationName Microsoft.PowerShell.Workflow}
+```
 
 Some workflow common parameters are unique to workflows, such
 as the PSParameterCollection parameter that lets you specify
