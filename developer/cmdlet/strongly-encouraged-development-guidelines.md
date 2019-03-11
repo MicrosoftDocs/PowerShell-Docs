@@ -102,7 +102,6 @@ If your parameter needs to differentiate between 3 values: $true, $false and "un
 #### Support Arrays for Parameters
 
 Frequently, users must perform the same operation against multiple arguments. For these users, a cmdlet should accept an array as parameter input so that a user can pass the arguments into the parameter as a Windows PowerShell variable. For example, the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet uses an array for the strings that identify the names of the processes to retrieve.
-Frequently, users must perform the same operation against multiple arguments. For these users, a cmdlet should accept an array as parameter input so that a user can pass the arguments into the parameter as a Windows PowerShell variable. For example, the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet uses an array for the strings that identify the names of the processes to retrieve.
 
 #### Support the PassThru Parameter
 
