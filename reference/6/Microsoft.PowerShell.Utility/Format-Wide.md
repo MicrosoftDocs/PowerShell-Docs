@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821776
 schema: 2.0.0
 title: Format-Wide
 ---
-
 # Format-Wide
 
 ## SYNOPSIS
