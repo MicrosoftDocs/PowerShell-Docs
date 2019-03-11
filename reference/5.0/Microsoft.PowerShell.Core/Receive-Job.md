@@ -241,7 +241,7 @@ three job objects representing three jobs run locally on three different compute
 
 The `-Keep` parameter preserves the state of the aggregated streams of a job so that it
 can be viewed again. Without this parameter all aggregated stream data is erased when the job
-is received. For more information, see [about_Job_Details](about_Job_Details.md#child-jobs)
+is received. For more information, see [about_Job_Details](About/about_Job_Details.md#child-jobs)
 
 > [!NOTE]
 > The aggregated streams include the streams of all child jobs. You can still reach the individual
