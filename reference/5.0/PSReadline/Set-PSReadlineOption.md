@@ -202,7 +202,7 @@ Accept wildcard characters: False
 ### -ContinuationPrompt
 
 Specifies the string displayed at the beginning of the subsequent lines when multi-line input is
-entered. Defaults to `>> `. The empty string is valid.
+entered. Defaults to `>>`. The empty string is valid.
 
 ```yaml
 Type: String

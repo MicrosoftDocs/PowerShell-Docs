@@ -16,7 +16,6 @@ Cmdlets can perform their action internally or as a Windows PowerShell*backgroun
 ## Background Jobs, Child Jobs, and the Job Repository
 
 The job object that is returned by the cmdlets that support background jobs defines the job. (The [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet also returns a job object.) The name of the job, an identifier that is used to specify the job, the state information, and the child jobs are included in this definition. The job does not perform any of the work. Each background job has at least one child job because the child job performs the actual work. When you run a cmdlet so that the work is performed as a background job, the cmdlet must add the job and the child jobs to a common repository, referred to as the *job repository*.
-The job object that is returned by the cmdlets that support background jobs defines the job. (The [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet also returns a job object.) The name of the job, an identifier that is used to specify the job, the state information, and the child jobs are included in this definition. The job does not perform any of the work. Each background job has at least one child job because the child job performs the actual work. When you run a cmdlet so that the work is performed as a background job, the cmdlet must add the job and the child jobs to a common repository, referred to as the *job repository*.
 
 For more information about how background jobs are handled at the command line, see the following:
 

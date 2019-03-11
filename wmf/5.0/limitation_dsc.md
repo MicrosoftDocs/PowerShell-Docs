@@ -7,16 +7,14 @@ keywords:  wmf,powershell,setup
 
 # Desired State Configuration (DSC) Known Issues and Limitations
 
-Breaking Change: Certificates used to encrypt/decrypt passwords in DSC configurations may not work after installing WMF 5.0 RTM
---------------------------------------------------------------------------------------------------------------------------------
+## Breaking Change: Certificates used to encrypt/decrypt passwords in DSC configurations may not work after installing WMF 5.0 RTM
 
 In WMF 4.0 and WMF 5.0 Preview releases, DSC would not allow passwords in the configuration to be of length more than 121 characters. DSC was forcing to use short passwords even if lengthy and strong password was desired. This breaking change allows passwords to be of arbitrary length in the DSC configuration.
 
 **Resolution:** Re-create the certificate with Data Encipherment or Key Encipherment Key usage, and Document Encryption Enhanced Key usage (1.3.6.1.4.1.311.80.1). Technet article <https://technet.microsoft.com/library/dn807171.aspx> has more information.
 
+## DSC cmdlets may fail after installing WMF 5.0 RTM
 
-DSC cmdlets may fail after installing WMF 5.0 RTM
-------------------------------------------------------------------------------------
 Start-DscConfiguration and other DSC cmdlets may fail after installing WMF 5.0 RTM with the following error:
 ```powershell
 	LCM failed to retrieve the property PendingJobStep from the object of class dscInternalCache .
@@ -31,59 +29,51 @@ Start-DscConfiguration and other DSC cmdlets may fail after installing WMF 5.0 R
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
 
+## DSC cmdlets may not work if WMF 5.0 RTM is installed on top of WMF 5.0 Production Preview
 
-DSC cmdlets may not work if WMF 5.0 RTM is installed on top of WMF 5.0 Production Preview
-------------------------------------------------------
 **Resolution:** Run the following command in an elevated PowerShell session (run as administrator):
 ```powershell
 	mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ```
 
-
-LCM can go into an unstable state while using Get-DscConfiguration in DebugMode
--------------------------------------------------------------------------------
+## LCM can go into an unstable state while using Get-DscConfiguration in DebugMode
 
 If LCM is in DebugMode, pressing CTRL+C to stop the processing of Get-DscConfiguration can cause LCM to go into an unstable state such that majority of DSC cmdlets won’t work.
 
 **Resolution:** Don’t press CTRL+C while debugging Get-DscConfiguration cmdlet.
 
+## Stop-DscConfiguration may not respond in DebugMode
 
-Stop-DscConfiguration may not respond in DebugMode
-------------------------------------------------------------------------------------------------------------------------
 If LCM is in DebugMode, Stop-DscConfiguration may not respond while trying to stop an operation started by Get-DscConfiguration
 
 **Resolution:** Finish the debugging of the operation started by Get-DscConfiguration as outlined in section ‘[Debugging DSC resources](https://msdn.microsoft.com/powershell/dsc/debugresource)’.
 
+## No Verbose Error Messages are shown in DebugMode
 
-No Verbose Error Messages are shown in DebugMode
------------------------------------------------------------------------------------
 If LCM is in DebugMode, no verbose error messages are displayed from DSC Resources.
 
 **Resolution:** Disable *DebugMode* to see verbose messages from the resource
 
+## Invoke-DscResource operations cannot be retrieved by Get-DscConfigurationStatus cmdlet
 
-Invoke-DscResource operations cannot be retrieved by Get-DscConfigurationStatus cmdlet
---------------------------------------------------------------------------------------
 After using Invoke-DscResource cmdlet to directly invoke any resource’s methods, the records of such operation cannot be retrieved through Get-DscConfigurationStatus at a later time.
 
 **Resolution:** None.
 
+## Get-DscConfigurationStatus returns pull cycle operations as type *Consistency*
 
-Get-DscConfigurationStatus returns pull cycle operations as type *Consistency*
----------------------------------------------------------------------------------
 When a node is set to PULL refresh mode, for each pull operation performed, Get-DscConfigurationStatus cmdlet reports the operation type as *Consistency* instead of *Initial*
 
 **Resolution:** None.
 
-Invoke-DscResource cmdlet does not return message in the order they were produced
----------------------------------------------------------------------------------
+## Invoke-DscResource cmdlet does not return message in the order they were produced
+
 The Invoke-DscResource cmdlet does not return verbose, warning, and error messages in the order they were produced by LCM or the DSC resource.
 
 **Resolution:** None.
 
+## DSC Resources cannot be debugged easily when used with Invoke-DscResource
 
-DSC Resources cannot be debugged easily when used with Invoke-DscResource
------------------------------------------------------------------------
 When LCM is running in debug mode (see [Debugging DSC resources](https://msdn.microsoft.com/powershell/dsc/debugresource) for more details), Invoke-DscResource cmdlet does not give information about runspace to connect to for debugging.
 **Resolution:** Discover and attach to the runspace using cmdlets **Get-PSHostProcessInfo**, **Enter-PSHostProcess** , **Get-Runspace** and **Debug-Runspace** to debug the DSC resource.
 
@@ -112,17 +102,13 @@ Id Name ComputerName Type State Availability
 Debug-Runspace -Id 2
 ```
 
-
-Various Partial Configuration documents for same node cannot have identical resource names
-------------------------------------------------------------------------------------------
+## Various Partial Configuration documents for same node cannot have identical resource names
 
 For several partial configurations that are deployed onto a single node, identical names of resources cause run time error.
 
 **Resolution:** Use different names for even same resources in different partial configurations.
 
-
-Start-DscConfiguration –UseExisting does not work with -Credential
-------------------------------------------------------------------
+## Start-DscConfiguration –UseExisting does not work with -Credential
 
 When using Start-DscConfiguration with –UseExisting parameter, the –Credential parameter is ignored. DSC uses default process identity to proceed the operation. This causes error when a different credential is needed to proceed on remote node.
 
@@ -132,56 +118,46 @@ $session = New-CimSession -ComputerName $node -Credential $credential
 Start-DscConfiguration -UseExisting -CimSession $session
 ```
 
+## IPv6 Addresses as Node Names in DSC configurations
 
-IPv6 Addresses as Node Names in DSC configurations
---------------------------------------------------
 IPv6 addresses as node names in DSC configuration scripts are not supported in this release.
 
 **Resolution:** None.
 
+## Debugging of Class-Based DSC Resources
 
-Debugging of Class-Based DSC Resources
---------------------------------------
 Debugging of class-based DSC Resources is not supported in this release.
 
 **Resolution:** None.
 
-
-Variables & Functions defined in $script scope in DSC Class-Based Resource are not preserved across multiple calls to a DSC Resource
--------------------------------------------------------------------------------------------------------------------------------------
+## Variables & Functions defined in $script scope in DSC Class-Based Resource are not preserved across multiple calls to a DSC Resource
 
 Multiple consecutive calls to Start-DSCConfiguration will fail if configuration is using any class-based resource which has variables or functions defined in $script scope.
 
 **Resolution:** Define all variables and functions in DSC Resource class itself. No $script scope variables/functions.
 
+## DSC Resource Debugging when a resource is using PSDscRunAsCredential
 
-DSC Resource Debugging when a resource is using PSDscRunAsCredential
-----------------------------------------------------------------------
 DSC Resource debugging when a resource is using the *PSDscRunAsCredential* property in the configuration is not suported in this release.
 
 **Resolution:** None.
 
-
-PsDscRunAsCredential is not supported for DSC Composite Resources
-----------------------------------------------------------------
+## PsDscRunAsCredential is not supported for DSC Composite Resources
 
 **Resolution:** Use Credential property if available. Example ServiceSet and WindowsFeatureSet
 
+## *Get-DscResource -Syntax* does not reflect PsDscRunAsCredential correctly
 
-*Get-DscResource -Syntax* does not reflect PsDscRunAsCredential correctly
--------------------------------------------------------------------------
 Get-DscResource -Syntax does not reflect PsDscRunAsCredential correctly when resource marks it as mandatory or does not support it.
 
 **Resolution:** None. However, authoring configuration in ISE reflects correct metadata about PsDscRunAsCredential property when using IntelliSense.
 
-
-WindowsOptionalFeature is not available in Windows 7
------------------------------------------------------
+## WindowsOptionalFeature is not available in Windows 7
 
 The WindowsOptionalFeature DSC resource is not available in Windows 7. This resource requires the DISM module, and DISM cmdlets that are available starting in Windows 8 and newer releases of the Windows operating system.
 
-For Class-based DSC resources, Import-DscResource -ModuleVersion may not work as expected
-------------------------------------------------------------------------------------------
+## For Class-based DSC resources, Import-DscResource -ModuleVersion may not work as expected
+
 If the compilation node has multiple version of a class-based DSC resource module, `Import-DscResource -ModuleVersion` does not pick the specified version and results in following compilation error.
 
 ```
@@ -194,19 +170,21 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 ```
 
 **Resolution:** Import the required version by defining the *ModuleSpecification* object to the `-ModuleName` with `RequiredVersion` key specified as follows:
+
 ``` PowerShell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
 ```
 
-Some DSC resources like registry resource may start to take a long time to process the request.
---------------------------------------------------------------------------------------------------------------------------------
+## Some DSC resources like registry resource may start to take a long time to process the request.
 
 **Resolution1:** Create a schedule task that cleans up the following folder periodically.
+
 ``` PowerShell
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
 **Resolution2:** Change the DSC configuration to clean up the *CommandAnalysis* folder at the end of the configuration.
+
 ``` PowerShell
 Configuration $configName
 {

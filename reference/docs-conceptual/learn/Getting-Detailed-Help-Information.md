@@ -79,7 +79,7 @@ Get-Help Get-ChildItem -Parameter *
 ```
 
 To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.
-For example, to display only the examples in the Help article for the `Get-ChildItem `cmdlet, type:
+For example, to display only the examples in the Help article for the `Get-ChildItem` cmdlet, type:
 
 ```powershell
 Get-Help Get-ChildItem -Examples

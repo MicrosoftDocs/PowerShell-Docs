@@ -11,7 +11,6 @@ caps.latest.revision: 6
 ---
 # List View (Labels)
 
-This example shows how to implement a list view that displays a custom label for each row of the list. This list view displays the properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) object that is returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
 This example shows how to implement a list view that displays a custom label for each row of the list. This list view displays the properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) object that is returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ### To load this formatting file

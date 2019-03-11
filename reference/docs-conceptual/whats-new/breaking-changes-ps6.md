@@ -241,8 +241,8 @@ explicitly specify `-c` or `-Command` when trying to do things like `powershell.
 
 ### Implement Unicode escape parsing [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` or `` `u{####} `` is converted to the corresponding Unicode character. To output a
-literal `` `u ``, escape the backtick: ``` ``u ```.
+`` `u####`` or `` `u{####}`` is converted to the corresponding Unicode character. To output a
+literal `` `u``, escape the backtick: ``` ``u```.
 
 ### Change `New-ModuleManifest` encoding to `UTF8NoBOM` on non-Windows platforms [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
