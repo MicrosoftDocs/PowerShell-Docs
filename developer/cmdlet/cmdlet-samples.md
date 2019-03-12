@@ -43,7 +43,7 @@ This sample shows how to write a cmdlet whose parameters have aliases and that s
 This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object.
 
 [Events01 Sample](./events01-sample.md)
-This sample shows how to create a cmdlet that allows the user to register for events raised by [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). With this cmdlet users can, for example, register an action to execute when a file is created under a specific directory. This sample derives from the [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.
+This sample shows how to create a cmdlet that allows the user to register for events raised by [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). With this cmdlet users can, for example, register an action to execute when a file is created under a specific directory. This sample derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.
 
 ## See Also
 

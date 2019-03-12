@@ -48,7 +48,7 @@ This namespace is the root namespace for Windows PowerShell. It contains the cla
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider)
 This namespace contains the classes, enumerations, and interfaces required to implement a Windows PowerShell provider. In particular, the [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) class is the base class from which all Windows PowerShell provider classes must be derived.
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)
 This namespace contains the classes for the cmdlets and providers implemented by Windows PowerShell. Similarly, it is recommended that you create a *YourName*.Commands namespace for those cmdlets that you implement.
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host)
