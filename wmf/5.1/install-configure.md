@@ -29,7 +29,8 @@ Download the WMF 5.1 package for the operating system and architecture you wish 
 
 ## Install WMF 5.1 for Windows Server 2008 R2 and Windows 7
 
-> **Note:** Installation instructions for Windows Server 2008 R2 and Windows 7 have changed, and differ from
+> [!NOTE]
+> Installation instructions for Windows Server 2008 R2 and Windows 7 have changed, and differ from
 the instructions for the other packages. Installation instructions for Windows Server 2012 R2, Windows Server 2012,
 and Windows 8.1 are below.
 
