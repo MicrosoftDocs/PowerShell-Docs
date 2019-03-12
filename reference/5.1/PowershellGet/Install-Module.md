@@ -313,7 +313,7 @@ Accept wildcard characters: False
 Use the **Repository** parameter to specify which repository is used to download and install a
 module. Used when multiple repositories are registered. Specifies the name of a registered
 repository in the `Install-Module` command. To register a repository, use `Register-PSRepository`.
-To display registered repositories, se `Get-PSRepository`.
+To display registered repositories, use `Get-PSRepository`.
 
 ```yaml
 Type: String[]
