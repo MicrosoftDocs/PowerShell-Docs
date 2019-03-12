@@ -90,7 +90,7 @@ Group AddADUserToLocalAdminGroup {
 The following example shows how to ensure a local group, TigerTeamAdmins, on the server TigerTeamSource.Contoso.Com does not contain a particular domain account, Contoso\JerryG.
 
 ```powershell
-Configuration SecureTigerTeamSrouce {
+Configuration SecureTigerTeamSource {
   Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
   Node TigerTeamSource.Contoso.Com {
