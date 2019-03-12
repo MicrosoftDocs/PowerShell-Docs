@@ -108,7 +108,7 @@ include the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
-halloWorld = Hallo, Welt.
+helloWorld = Hallo, Welt.
 errorMsg1 = Das Feld Benutzername darf nicht leer sein.
 promptMsg = Geben Sie Ihren Benutzernamen ein.
 '@

@@ -55,7 +55,7 @@ You decide which identity JEA will use in the session configuration file.
 
 #### Local Virtual Account
 
-If the roles supported by this JEA endpoint are all used to manage the local machine, and a local administrator account is sufficient to run the commands succesfully, you should configure JEA to use a local virtual account.
+If the roles supported by this JEA endpoint are all used to manage the local machine, and a local administrator account is sufficient to run the commands successfully, you should configure JEA to use a local virtual account.
 Virtual accounts are temporary accounts that are unique to a specific user and only last for the duration of their PowerShell session.
 On a member server or workstation, virtual accounts belong to the local computer's **Administrators** group, and have access to most system resources.
 On an Active Directory Domain Controller, virtual accounts belong to the domain's **Domain Admins** group.
@@ -75,6 +75,7 @@ When one or more security groups is specified, the virtual account will no longe
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
 > Virtual accounts are temporarily granted the Logon as a service right in the local server security policy.  If one of the VirtualAccountGroups specified has already been granted this right in the policy, the individual virtual account will no longer be added and removed from the policy.  This can be useful in scenarios such as domain controllers where revisions to the domain controller security policy are closely audited.  This is only available in Windows Server 2016 with the November 2018 or later rollup and Windows Server 2019 with the January 2019 or later rollup.
 
@@ -99,7 +100,6 @@ gMSA accounts should only be used when access to network resources are required 
 
 > [!NOTE]
 > Group managed service accounts are only available in Windows PowerShell 5.1 or newer and on domain-joined machines.
-
 
 #### More information about run as users
 
@@ -174,6 +174,7 @@ RoleDefinitions = @{
 ```
 
 ### Role capability search order
+
 As shown in the example above, role capabilities are referenced by the flat name (filename without the extension) of the role capability file.
 If multiple role capabilities are available on the system with the same flat name, PowerShell will use its implicit search order to select the effective role capability file.
 It will **not** give access to all role capability files with the same name.
@@ -212,6 +213,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Conditional access rules are only available in Windows PowerShell 5.1 or newer.
 
 ### Other properties
+
 Session configuration files can also do everything a role capability file can do, just without the ability to give connecting users access to different commands.
 If you want to allow all users access to specific cmdlets, functions, or providers, you can do so right in the session configuration file.
 For a full list of supported properties in the session configuration file, run `Get-Help New-PSSessionConfigurationFile -Full`.

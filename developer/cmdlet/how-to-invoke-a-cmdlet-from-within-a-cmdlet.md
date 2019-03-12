@@ -30,7 +30,7 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. In the input processing method of the cmdlet, create a new instance of the cmdlet to be invoked. In this example, an object of type [Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) is created along with the string that contains the arguments that are used when the cmdlet is invoked.
+2. In the input processing method of the cmdlet, create a new instance of the cmdlet to be invoked. In this example, an object of type [Microsoft.PowerShell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) is created along with the string that contains the arguments that are used when the cmdlet is invoked.
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
