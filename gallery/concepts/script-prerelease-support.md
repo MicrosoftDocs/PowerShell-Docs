@@ -149,10 +149,10 @@ C:\windows\system32> Uninstall-Script TestPackage -RequiredVersion 1.9.0-alpha
 Uninstall-Script: The '-AllowPrerelease' parameter must be specified when using the Prerelease string in
 MinimumVersion, MaximumVersion, or RequiredVersion.
 At line:1 char:1
-+ Unnstall-Script TestPackage -RequiredVersion 1.9.0-beta
++ Uninstall-Script TestPackage -RequiredVersion 1.9.0-beta
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Uninstall-Script], ArgumentException
-    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninnstall-script
+    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninstall-script
 
 
 C:\windows\system32> Uninstall-Script TestPackage -RequiredVersion 1.9.0-alpha -AllowPrerelease

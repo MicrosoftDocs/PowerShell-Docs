@@ -212,10 +212,10 @@ C:\windows\system32> Uninstall-Module TestPackage -RequiredVersion 1.9.0-beta
 Uninstall-Module : The '-AllowPrerelease' parameter must be specified when using the Prerelease string in
 MinimumVersion, MaximumVersion, or RequiredVersion.
 At line:1 char:1
-+ Unnstall-Module TestPackage -RequiredVersion 1.9.0-beta
++ Uninstall-Module TestPackage -RequiredVersion 1.9.0-beta
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Uninstall-Module], ArgumentException
-    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninnstall-Module
+    + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninstall-Module
 
 C:\windows\system32> Uninstall-Module TestPackage -RequiredVersion 1.9.0-beta -AllowPrerelease
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
