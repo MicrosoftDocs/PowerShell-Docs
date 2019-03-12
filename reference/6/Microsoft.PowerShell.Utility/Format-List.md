@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821774
 schema: 2.0.0
 title: Format-List
 ---
-
 # Format-List
 
 ## SYNOPSIS

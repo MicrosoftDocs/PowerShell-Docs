@@ -30,7 +30,6 @@ Parameters appear in the Parameters section in the same order that they appear i
 
 **Common Parameters**
 The common parameters are added to the syntax and parameter list of the Help topic, even if they have no effect. For more information about the common parameters, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
-The common parameters are added to the syntax and parameter list of the Help topic, even if they have no effect. For more information about the common parameters, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
 **Parameter Attribute Table**
 `Get-Help` generates the table of parameter attributes that appears when you use the Full or Parameter parameter of `Get-Help`. The value of the Required, Position, and Default value attributes is taken from the function or script syntax.

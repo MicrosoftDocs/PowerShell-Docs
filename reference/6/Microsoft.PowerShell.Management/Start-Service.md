@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821639
 schema: 2.0.0
 title: Start-Service
 ---
-
 # Start-Service
 
 ## SYNOPSIS
@@ -17,24 +16,28 @@ Starts one or more stopped services.
 ## SYNTAX
 
 ### InputObject (Default)
+
 ```
 Start-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
+
 ```
 Start-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### DisplayName
+
 ```
 Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Start-Service** cmdlet sends a start message to the Windows Service Controller for each of the specified services.
 If a service is already running, the message is ignored without error.
 You can specify the services by their service names or display names, or you can use the *InputObject* parameter to supply a service object that represents the services that you want to start.
@@ -42,6 +45,7 @@ You can specify the services by their service names or display names, or you can
 ## EXAMPLES
 
 ### Example 1: Start a service by using its name
+
 ```
 PS C:\> Start-Service -Name "eventlog"
 ```
@@ -50,6 +54,7 @@ This command starts the EventLog service on the local computer.
 It uses the *Name* parameter to identify the service by its service name.
 
 ### Example 2: Display information without starting a service
+
 ```
 PS C:\> Start-Service -DisplayName *remote* -WhatIf
 ```
@@ -60,6 +65,7 @@ And, the command uses the *WhatIf* parameter.
 That parameter means that this command displays what would occur if you run the command without making changes.
 
 ### Example 3: Start a service and record the action in a text file
+
 ```
 PS C:\> $s = Get-Service wmi
 PS C:\> Start-Service -InputObject $s -PassThru | Format-List >> services.txt
@@ -77,6 +83,7 @@ The pipeline operator (|) passes the object that **Start-Service** creates to th
 The append redirection operator (\>\>) redirects the output to the services.txt file, where it is added to the end of the existing file.
 
 ### Example 4: Start a disabled service
+
 ```
 PS C:\> Start-Service tlntsvr
 Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the    following error: Cannot start service TlntSvr on computer '.'.
@@ -107,6 +114,7 @@ To verify that the command succeeded, run **Get-Service**.
 ## PARAMETERS
 
 ### -DisplayName
+
 Specifies the display names of the services to start.
 Wildcard characters are permitted.
 
@@ -123,6 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -Exclude
+
 Specifies services that this cmdlet omits.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as "s*".
@@ -141,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -Include
+
 Specifies services that this cmdlet starts.
 The value of this parameter qualifies the *Name* parameter.
 Enter a name element or pattern, such as "s*".
@@ -159,6 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies **ServiceController** objects representing the services to be started.
 Enter a variable that contains the objects, or type a command or expression that gets the objects.
 
@@ -175,6 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies the service names for the service to be started.
 
 The parameter name is optional.
@@ -193,6 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 Returns an object that represents the service.
 By default, this cmdlet does not generate any output.
 
@@ -209,6 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -224,6 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -240,20 +255,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.ServiceProcess.ServiceController, System.String
+
 You can pipe objects that represent the services or strings that contain the service names to this cmdlet.
 
 ## OUTPUTS
 
 ### None, System.ServiceProcess.ServiceController
+
 This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the service, if you specify *PassThru*.
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
 * You can also refer to **Start-Service** by its built-in alias, **sasv**. For more information, see about_Aliases.
 * **Start-Service** can control services only if the current user has permission to do this. If a command does not work correctly, you might not have the required permissions.
 * To find the service names and display names of the services on your system, type `Get-Service`. The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.
