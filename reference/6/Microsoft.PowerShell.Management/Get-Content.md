@@ -68,7 +68,7 @@ This is Line 4
 ### Example 2: Limit the number of lines Get-Conent returns
 
 This command gets the first five lines of a file. The **TotalCount** parameter is used to gets the
-first 5 lines of content
+first five lines of content
 
 > [!NOTE]
 > The `LineNumbers.txt` file in this example contains 100 lines of text in the following format,
