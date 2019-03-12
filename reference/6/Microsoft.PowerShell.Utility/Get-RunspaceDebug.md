@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821803
 schema: 2.0.0
 title: Get-RunspaceDebug
 ---
-
 # Get-RunspaceDebug
 
 ## SYNOPSIS
@@ -17,41 +16,49 @@ Shows runspace debugging options.
 ## SYNTAX
 
 ### RunspaceNameParameterSet (Default)
+
 ```
 Get-RunspaceDebug [[-RunspaceName] <String[]>] [<CommonParameters>]
 ```
 
 ### RunspaceParameterSet
+
 ```
 Get-RunspaceDebug [-Runspace] <Runspace[]> [<CommonParameters>]
 ```
 
 ### RunspaceIdParameterSet
+
 ```
 Get-RunspaceDebug [-RunspaceId] <Int32[]> [<CommonParameters>]
 ```
 
 ### RunspaceInstanceIdParameterSet
+
 ```
 Get-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
 ```
 
 ### ProcessNameParameterSet
+
 ```
 Get-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Get-RunspaceDebug** cmdlet shows runspace debugging options.
 
 ## EXAMPLES
 
 ### 1:
+
 ```
 
 ```
 
 ### 2:
+
 ```
 
 ```
@@ -143,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

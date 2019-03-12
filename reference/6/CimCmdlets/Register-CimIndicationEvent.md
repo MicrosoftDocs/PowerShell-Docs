@@ -91,7 +91,7 @@ from CIM.
 $action = {
   $name = $event.SourceEventArgs.NewEvent.ProcessName
   $id = $event.SourceEventArgs.NewEvent.ProcessId
- `Write-Host` -Object "New Process Started : Name = $name
+  Write-Host -Object "New Process Started : Name = $name
  ID = $id"
 }
 Register-CimIndicationEvent -ClassName 'Win32_ProcessStartTrace' -SourceIdentifier "ProcessStarted" -Action $action
@@ -120,8 +120,8 @@ The commands specified by this parameter run when an event is raised, instead of
 to the event queue. Enclose the commands in braces ( { } ) to create a script block.
 
 The script block specified with **Action** can include the `$Event`, `$EventSubscriber`, `$Sender`,
-`$SourceEventArgs`, and `$SourceArgs` automatic variables, which provide information about the event to
-the **Action** script block. For more information, see [About Automatic Variables](../microsoft.powershell.core/about/about_automatic_variables.md).
+`$SourceEventArgs`, and `$SourceArgs` automatic variables, which provide information about the event
+to the **Action** script block. For more information, see [About Automatic Variables](../microsoft.powershell.core/about/about_automatic_variables.md).
 
 ```yaml
 Type: ScriptBlock

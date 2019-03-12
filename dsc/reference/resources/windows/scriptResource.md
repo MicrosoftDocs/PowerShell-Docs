@@ -51,7 +51,7 @@ The [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-
 
 ### SetScript
 
-The `SetScript` modifies the node to enfore the desired state. It is called by DSC if the `TestScript` script block returns `$false`. The `SetScript` should have no return value.
+The `SetScript` modifies the node to enforce the desired state. It is called by DSC if the `TestScript` script block returns `$false`. The `SetScript` should have no return value.
 
 ## Examples
 

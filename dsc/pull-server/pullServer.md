@@ -93,7 +93,8 @@ Starting in release 17090 of
 SQL Server is a supported option for the Pull Service (Windows Feature *DSC-Service*). This provides
 a new option for scaling large DSC environments that have not migrated to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-> **Note**: SQL Server support will not be added to previous versions of WMF 5.1 (or earlier)
+> [!NOTE]
+> SQL Server support will not be added to previous versions of WMF 5.1 (or earlier)
 > and will only be available on Windows Server versions greater than or equal to 17090.
 
 To configure the pull server to use SQL Server, set **SqlProvider** to `$true` and
@@ -124,7 +125,7 @@ in a configuration that sets up the web service.
    which should be `CERT:\LocalMachine\My`.
    - Make a note of the certificate thumbprint.
 4. Select a GUID to be used as the Registration Key. To generate one using PowerShell enter the
-   following at the PS prompt and press enter: ` [guid]::newGuid()` or `New-Guid`. This key will be
+   following at the PS prompt and press enter: `[guid]::newGuid()` or `New-Guid`. This key will be
    used by client nodes as a shared key to authenticate during registration. For more information,
    see the Registration Key section below.
 5. In the PowerShell ISE, start (F5) the following configuration script (included in the Examples

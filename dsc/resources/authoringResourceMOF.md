@@ -64,7 +64,8 @@ Note the following about the previous code:
 
 The resource script implements the logic of the resource. In this module, you must include three functions called **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource**. All three functions must take a parameter set that is identical to the set of properties defined in the MOF schema that you created for your resource. In this document, this set of properties is referred to as the “resource properties.” Store these three functions in a file called <ResourceName>.psm1. In the following example, the functions are stored in a file called Demo_IISWebsite.psm1.
 
-> **Note**: When you run the same configuration script on your resource more than once, you should receive no errors and the resource should remain in the same state as running the script once. To accomplish this, ensure that your **Get-TargetResource** and **Test-TargetResource** functions leave the resource unchanged, and that invoking the **Set-TargetResource** function more than once in a sequence with the same parameter values is always equivalent to invoking it once.
+> [!NOTE]
+> When you run the same configuration script on your resource more than once, you should receive no errors and the resource should remain in the same state as running the script once. To accomplish this, ensure that your **Get-TargetResource** and **Test-TargetResource** functions leave the resource unchanged, and that invoking the **Set-TargetResource** function more than once in a sequence with the same parameter values is always equivalent to invoking it once.
 
 In the **Get-TargetResource** function implementation, use the key resource property values that are provided as parameters to check the status of the specified resource instance. This function must return a hash table that lists all the resource properties as keys and the actual values of these properties as the corresponding values. The following code provides an example.
 

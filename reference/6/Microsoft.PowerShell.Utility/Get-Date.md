@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821781
 schema: 2.0.0
 title: Get-Date
 ---
-
 # Get-Date
 
 ## SYNOPSIS
@@ -17,6 +16,7 @@ Gets the current date and time.
 ## SYNTAX
 
 ### net (Default)
+
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-Format <String>]
@@ -24,6 +24,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
 ```
 
 ### UFormat
+
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>] [-Minute <Int32>]
  [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>] [-UFormat <String>]
@@ -31,6 +32,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
 ```
 
 ## DESCRIPTION
+
 The `Get-Date` cmdlet gets a **DateTime** object that represents the current date or a date that you specify.
 It can format the date and time in several Windows and UNIX formats.
 You can use `Get-Date` to generate a date or time character string, and then send the string to other cmdlets or programs.
@@ -92,6 +94,7 @@ This command displays the day of the year for the current date. For example, Dec
 365th day of 2006, but it is the 366th day of 2000.
 
 ### Example 5
+
 ```powershell
 $a = Get-Date
 $a.IsDaylightSavingTime()
@@ -220,6 +223,7 @@ Then, when you send the string to `Add-Content`, it adds the string to the Test.
 changing it.
 
 ### Example 10
+
 ```powershell
 Get-Date -Format o
 ```
@@ -259,6 +263,9 @@ the timestamp in or as part of a directory name.
 
 ### -Date
 
+Specifies a date and time.
+By default, `Get-Date` gets the current system date and time.
+
 Specifies a date and time. By default, `Get-Date` gets the current system date and time.
 
 Type the date in a format that is standard for the system locale, such as dd-MM-yyyy (German \[Germany\])
@@ -277,6 +284,10 @@ Accept wildcard characters: False
 ```
 
 ### -Day
+
+Specifies the day of the month that is displayed.
+Enter a value from 1 to 31.
+The default is the current day.
 
 Specifies the day of the month that is displayed. Enter a value from 1 to 31. The default is the
 current day.
@@ -370,7 +381,9 @@ Accept wildcard characters: False
 
 ### -Hour
 
-Specifies the hour that is displayed. Enter a value from 0 to 23. The default is the current hour.
+Specifies the hour that is displayed.
+Enter a value from 0 to 23.
+The default is the current hour.
 
 ```yaml
 Type: Int32
@@ -386,8 +399,9 @@ Accept wildcard characters: False
 
 ### -Millisecond
 
-Specifies the milliseconds in the date. Enter a value from 0 to 999. The default is the current
-number of milliseconds.
+Specifies the milliseconds in the date.
+Enter a value from 0 to 999.
+The default is the current number of milliseconds.
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -405,8 +419,9 @@ Accept wildcard characters: False
 
 ### -Minute
 
-Specifies the minute that is displayed. Enter a value from 0 to 59. The default value is the current
-minutes.
+Specifies the minute that is displayed.
+Enter a value from 0 to 59.
+The default value is the current minutes.
 
 ```yaml
 Type: Int32
@@ -422,7 +437,9 @@ Accept wildcard characters: False
 
 ### -Month
 
-Specifies the month that is displayed. Enter a value from 1 to 12. The default is the current month.
+Specifies the month that is displayed.
+Enter a value from 1 to 12.
+The default is the current month.
 
 ```yaml
 Type: Int32
@@ -438,8 +455,9 @@ Accept wildcard characters: False
 
 ### -Second
 
-Specifies the second that is displayed. Enter a value from 0 to 59. The default is the current
-second.
+Specifies the second that is displayed.
+Enter a value from 0 to 59.
+The default is the current second.
 
 ```yaml
 Type: Int32
@@ -454,6 +472,9 @@ Accept wildcard characters: False
 ```
 
 ### -UFormat
+
+Displays the date and time in UNIX format.
+For a list of the format specifiers, see the Notes section.
 
 Displays the date and time in UNIX format. For a list of the format specifiers, see the Notes
 section.
@@ -476,7 +497,9 @@ Accept wildcard characters: False
 
 ### -Year
 
-Specifies the year that is displayed. Enter a value from 1 to 9999. The default is the current year.
+Specifies the year that is displayed.
+Enter a value from 1 to 9999.
+The default is the current year.
 
 ```yaml
 Type: Int32
@@ -492,10 +515,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -507,8 +527,8 @@ You cannot pipe input to this cmdlet.
 
 ### System.DateTime or System.String
 
-When you use the `-Format` or `-UFormat` parameters, `Get-Date` returns a string. Otherwise, it
-returns a **DateTime** object.
+When you use the `-Format` or `-UFormat` parameters, `Get-Date` returns a string.
+Otherwise, it returns a **DateTime** object.
 
 ## NOTES
 

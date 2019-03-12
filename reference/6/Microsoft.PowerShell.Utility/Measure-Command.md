@@ -8,11 +8,9 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821828
 schema: 2.0.0
 title: Measure-Command
 ---
-
 # Measure-Command
 
 ## SYNOPSIS
-
 Measures the time it takes to run script blocks and cmdlets.
 
 ## SYNTAX
@@ -169,6 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -20,8 +20,7 @@ Users must log in to the site they have chosen in order to share the PowerShell 
 
 Users are encouraged to do this if they find that a package is something they would recommend to others.
 The PowerShell Gallery will check each social media site for "shares" of the package, and display how many times that package has been shared in each of the social media sites.
-Since this shows only the count of times something has been shared, it will be intepreted other users as "liking" the package.
-
+Since this shows only the count of times something has been shared, it will be interpreted other users as "liking" the package.
 
 ## Comments
 

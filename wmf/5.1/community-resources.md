@@ -5,7 +5,7 @@ keywords:  wmf,powershell,setup
 title:  Community Resources
 ---
 
-# Community Resources #
+# Community Resources
 > Note: This information is preliminary and subject to change.
 
 The PowerShell team welcomes and encourages customer feedback on the product, and supports multiple approaches for users to contact us.

@@ -16,7 +16,6 @@ The PSStandardMembers member set is used by Windows PowerShell to define the def
 ## Member Set for System.Diagnostics.Process
 
 In the following example, the PSStandardMembers member set defines the DefaultDisplayPropertySet property set for [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects. This property set is used by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.
-In the following example, the PSStandardMembers member set defines the DefaultDisplayPropertySet property set for [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects. This property set is used by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.
 
 ```xml
 <Type>
@@ -38,7 +37,6 @@ In the following example, the PSStandardMembers member set defines the DefaultDi
   </MemberSet>
 ```
 
-The following output shows the default properties returned by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Only the `Id`, `Handles`, `CPU`, and `Name` properties are returned for each process object.
 The following output shows the default properties returned by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Only the `Id`, `Handles`, `CPU`, and `Name` properties are returned for each process object.
 
 ```powershell

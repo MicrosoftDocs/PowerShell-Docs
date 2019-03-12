@@ -6,8 +6,7 @@ contributor:  keithb
 title:  Install and configure WMF 5.1
 ---
 
-# Install and Configure WMF 5.1 #
-
+# Install and Configure WMF 5.1
 
 ## Download and install the WMF 5.1 package
 
@@ -30,7 +29,8 @@ Download the WMF 5.1 package for the operating system and architecture you wish 
 
 ## Install WMF 5.1 for Windows Server 2008 R2 and Windows 7
 
-> **Note:** Installation instructions for Windows Server 2008 R2 and Windows 7 have changed, and differ from
+> [!NOTE]
+> Installation instructions for Windows Server 2008 R2 and Windows 7 have changed, and differ from
 the instructions for the other packages. Installation instructions for Windows Server 2012 R2, Windows Server 2012,
 and Windows 8.1 are below.
 
@@ -68,8 +68,8 @@ Windows PowerShell Desired State Configuration (DSC) depends on WinRM.
 WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7.
 Run `Set-WSManQuickConfig`, in a Windows PowerShell elevated session, to enable WinRM.
 
-
 ## Install WMF 5.1 for Windows Server 2012 R2, Windows Server 2012, and Windows 8.1
+
 **Install from Windows Explorer (or File Explorer in Windows Server 2012 R2 or Windows 8.1)**
 
 1. Navigate to the folder into which you downloaded the MSU file.

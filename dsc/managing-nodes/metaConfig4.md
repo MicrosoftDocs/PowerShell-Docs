@@ -88,7 +88,8 @@ as shown in the following example.
 Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 ```
 
-> **Note**: For the **Path** parameter, you must specify the same path that you specified for the **OutputPath** parameter when you invoked the configuration in the previous example.
+> [!NOTE]
+> For the **Path** parameter, you must specify the same path that you specified for the **OutputPath** parameter when you invoked the configuration in the previous example.
 
 To see the current Local Configuration Manager settings,
 you can use the **Get-DscLocalConfigurationManager** cmdlet.

@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ### -Name
 Specifies the names of the processes to be debugged.
 If there is more than one process with the same name, this cmdlet attaches a debugger to all processes with that name.
-The *Name * parameter is optional.
+The *Name* parameter is optional.
 
 ```yaml
 Type: String[]

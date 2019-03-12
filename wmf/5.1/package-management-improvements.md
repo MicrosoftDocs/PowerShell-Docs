@@ -6,9 +6,10 @@ contributor:  jianyunt, quoctruong
 title:  Improvements to Package Management in WMF 5.1
 ---
 
-# Improvements to Package Management in WMF 5.1#
+# Improvements to Package Management in WMF 5.1
 
-## Improvements in PackageManagement ##
+## Improvements in PackageManagement
+
 The following are the fixes made in the WMF 5.1:
 
 ### Version Alias
@@ -57,6 +58,7 @@ In WMF 5.1, PackageManagement supports finding and installing packages from a re
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
+
 ### Support for using PackageManagement behind a proxy
 
 In WMF 5.1, PackageManagement now takes new proxy parameters `-ProxyCredential` and `-Proxy`. Using these parameters, you can specify the proxy URL and credentials to PackageManagement cmdlets. By default, system proxy settings are used. For example:

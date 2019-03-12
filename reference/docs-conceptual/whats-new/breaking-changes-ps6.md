@@ -12,20 +12,22 @@ title:  Breaking Changes for PowerShell 6.0
 
 [PowerShell Workflow][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] that enables the creation of robust runbooks for long-running or parallelized tasks.
 
-Due to the lack of support for Windows Workflow Foundation in .NET Core,
-we will not continue to support PowerShell Workflow in PowerShell Core.
+Due to the lack of support for Windows Workflow Foundation in .NET Core, we will not continue to
+support PowerShell Workflow in PowerShell Core.
 
-In the future, we would like to enable native parallelism/concurrency in the PowerShell language without the need for PowerShell Workflow.
+In the future, we would like to enable native parallelism/concurrency in the PowerShell language
+without the need for PowerShell Workflow.
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### Custom snap-ins
 
-[PowerShell snap-ins][snapin] are a predecessor to PowerShell modules that do not have widespread adoption in the PowerShell community.
+[PowerShell snap-ins][snapin] are a predecessor to PowerShell modules that do not have widespread
+adoption in the PowerShell community.
 
-Due to the complexity of supporting snap-ins and their lack of usage in the community,
-we no longer support custom snap-ins in PowerShell Core.
+Due to the complexity of supporting snap-ins and their lack of usage in the community, we no longer
+support custom snap-ins in PowerShell Core.
 
 Today, this breaks the `ActiveDirectory` and `DnsClient` modules in Windows and Windows Server.
 
@@ -33,15 +35,16 @@ Today, this breaks the `ActiveDirectory` and `DnsClient` modules in Windows and 
 
 ### WMI v1 cmdlets
 
-Due to the complexity of supporting two sets of WMI-based modules,
-we removed the WMI v1 cmdlets from PowerShell Core:
+Due to the complexity of supporting two sets of WMI-based modules, we removed the WMI v1 cmdlets
+from PowerShell Core:
 
 - `Get-WmiObject`
 - `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
 
-Instead, we recommend that you the use the CIM (aka WMI v2) cmdlets which provide the same functionality with new functionality and a redesigned syntax:
+Instead, we recommend that you the use the CIM (aka WMI v2) cmdlets which provide the same
+functionality with new functionality and a redesigned syntax:
 
 - `Get-CimAssociatedInstance`
 - `Get-CimClass`
@@ -66,6 +69,12 @@ PowerShell Core until a better solution is found.
 Due to the use of unsupported APIs, the `*-Counter` has been removed from PowerShell Core until a
 better solution is found.
 
+### `*-EventLog` cmdlets
+
+Due to the use of unsupported APIs, the `*-EventLog` has been removed from PowerShell Core. until a
+better solution is found. `Get-WinEvent` and `Create-WinEvent` are available to get and create
+events on Windows.
+
 ## Engine/language changes
 
 ### Rename `powershell.exe` to `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
@@ -80,8 +89,8 @@ The shortened name is also consistent with naming of shells on non-Windows platf
 
 Previously, output was aligned to the width of the console and line breaks were added at the end
 width of the console, meaning the output didn't get reformatted as expected if the terminal was
-resized. This change was not applied to tables, as the line breaks are necessary to keep the
-columns aligned.
+resized. This change was not applied to tables, as the line breaks are necessary to keep the columns
+aligned.
 
 ### Skip null-element check for collections with a value-type element type [#5432](https://github.com/PowerShell/PowerShell/issues/5432)
 
@@ -91,8 +100,8 @@ the null-element check if the collection's element type is value type.
 ### Change `$OutputEncoding` to use `UTF-8 NoBOM` encoding rather than ASCII [#5369](https://github.com/PowerShell/PowerShell/issues/5369)
 
 The previous encoding, ASCII (7-bit), would result in incorrect alteration of the output in some
-cases. This change is to make `UTF-8 NoBOM` default, which preserves Unicode output with an
-encoding supported by most tools and operating systems.
+cases. This change is to make `UTF-8 NoBOM` default, which preserves Unicode output with an encoding
+supported by most tools and operating systems.
 
 ### Remove `AllScope` from most default aliases [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
 
@@ -217,14 +226,15 @@ Change the exit codes of `pwsh.exe` to align with Unix conventions
 
 ### Removal of `LocalAccount` and cmdlets from  `Diagnostics` modules. [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
 
-Due to unsupported APIs, the `LocalAccounts` module and the `Counter` cmdlets in the `Diagnostics` module were removed until a better solution is found.
+Due to unsupported APIs, the `LocalAccounts` module and the `Counter` cmdlets in the `Diagnostics`
+module were removed until a better solution is found.
 
-### Executing powershell script with bool parameter does not work [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### Executing PowerShell script with bool parameter does not work [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Previously, using powershell.exe (now `pwsh.exe`) to execute a PowerShell script using `-File`
-provided no way to pass $true/$false as parameter values. Support for $true/$false as parsed values
-to parameters was added. Switch values are also supported as currently documented syntax doesn't
-work.
+Previously, using **powershell.exe** (now **pwsh.exe**) to execute a PowerShell script using `-File`
+provided no way to pass `$true`/`$false` as parameter values. Support for `$true`/`$false` as parsed
+values to parameters was added. Switch values are also supported as currently documented syntax
+doesn't work.
 
 ### Remove `ClrVersion` property from `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -233,22 +243,22 @@ using that value to determine compatibility.
 
 ### Change positional parameter for `powershell.exe` from `-Command` to `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
 
-Enable shebang use of PowerShell on non-Windows platforms. This means on Unix based systems, you
-can make a script executable that would invoke PowerShell automatically rather than explicitly
-invoking `pwsh`. This also means that you can now do things like `powershell foo.ps1` or
+Enable shebang use of PowerShell on non-Windows platforms. This means on Unix based systems, you can
+make a script executable that would invoke PowerShell automatically rather than explicitly invoking
+`pwsh`. This also means that you can now do things like `powershell foo.ps1` or
 `powershell fooScript` without specifying `-File`. However, this change now requires that you
 explicitly specify `-c` or `-Command` when trying to do things like `powershell.exe Get-Command`.
 
 ### Implement Unicode escape parsing [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` or `` `u{####} `` is converted to the corresponding Unicode character. To output a
-literal `` `u ``, escape the backtick: ``` ``u ```.
+`` `u####`` or `` `u{####}`` is converted to the corresponding Unicode character. To output a
+literal `` `u``, escape the backtick: ``` ``u```.
 
 ### Change `New-ModuleManifest` encoding to `UTF8NoBOM` on non-Windows platforms [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
 Previously, `New-ModuleManifest` creates psd1 manifests in UTF-16 with BOM, creating a problem for
-Linux tools. This breaking change changes the encoding of `New-ModuleManifest` to be UTF (no BOM)
-in non-Windows platforms.
+Linux tools. This breaking change changes the encoding of `New-ModuleManifest` to be UTF (no BOM) in
+non-Windows platforms.
 
 ### Prevent `Get-ChildItem` from recursing into symlinks (#1875). [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
 
@@ -344,4 +354,5 @@ Internet Explorer have resulted in several breaking changes within `Invoke-WebRe
 - There is currently no certificate based authentication available on macOS.
 - Use of `-Credential` over an `http://` URI will result in an error. Use an `https://` URI or
   supply the `-AllowUnencryptedAuthentication` parameter to suppress the error.
-- `-MaximumRedirection` now produces a terminating error when redirection attempts exceed the provided limit instead of returning the results of the last redirection.
+- `-MaximumRedirection` now produces a terminating error when redirection attempts exceed the
+  provided limit instead of returning the results of the last redirection.

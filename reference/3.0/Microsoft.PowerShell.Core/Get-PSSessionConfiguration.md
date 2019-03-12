@@ -316,7 +316,7 @@ PS> (Get-PSSessionConfiguration -Name CustomShell).resourceURI
 http://schemas.microsoft.com/powershell/microsoft.CustomShell
 ```
 
-The `$PSSessionConfiguationName` variable specifies the default configuration that is used when you
+The `$PSSessionConfigurationName` variable specifies the default configuration that is used when you
 create a session. This variable is set on the local computer, but it specifies a configuration on
 the remote computer. For more information about the `$PSSessionConfiguration` variable, see
 [about_Preference_Variables](About/about_Preference_Variables.md).

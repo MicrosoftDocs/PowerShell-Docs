@@ -115,7 +115,3 @@ You can pipe the results of a `Get-Runspace` command to `Debug-Runspace`.
 ## RELATED LINKS
 
 [Debug-Runspace](Debug-Runspace.md)
-
-[New-Runspace]()
-
-[Remove-Runspace]()
