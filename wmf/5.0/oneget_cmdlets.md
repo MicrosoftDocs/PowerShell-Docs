@@ -124,7 +124,7 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-## [ Install-Package Cmdlet](/powershell/module/PackageManagement/Install-Package)
+## [Install-Package Cmdlet](/powershell/module/PackageManagement/Install-Package)
 
 This cmdlet allows installation of software packages in available package sources using loaded package providers.
 

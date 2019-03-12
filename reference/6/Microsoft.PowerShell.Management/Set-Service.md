@@ -8,11 +8,9 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821633
 schema: 2.0.0
 title: Set-Service
 ---
-
 # Set-Service
 
 ## SYNOPSIS
-
 Starts, stops, and suspends a service, and changes its properties.
 
 ## SYNTAX
@@ -369,6 +367,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see

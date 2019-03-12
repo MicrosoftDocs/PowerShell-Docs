@@ -11,7 +11,6 @@ title: Get-Acl
 # Get-Acl
 
 ## SYNOPSIS
-
 Gets the security descriptor for a resource, such as a file or registry key.
 
 ## SYNTAX
@@ -268,6 +267,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies the path to a resource.
 **Get-Acl** gets the security descriptor of the resource indicated by the path.
 Wildcards are permitted.

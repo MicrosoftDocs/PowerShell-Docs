@@ -729,7 +729,7 @@ Only results that were not delivered to the original job object are available in
 
   Similarly, if you start a script in a session and then disconnect from the session, any results that the script delivers to the session before disconnecting are not available to another client that connects to the session.
 
-  To prevent data loss in sessions that you intend to disconnect, use the **InDisconnectedSession** parameter of the ** Invoke-Command** cmdlet.
+  To prevent data loss in sessions that you intend to disconnect, use the **InDisconnectedSession** parameter of the **Invoke-Command** cmdlet.
 Because this parameter prevents results from being returned to the current session, all results are available when the session is reconnected.
 
   You can also prevent data loss by using the **Invoke-Command** cmdlet to run a Start-Job command in the remote session.
