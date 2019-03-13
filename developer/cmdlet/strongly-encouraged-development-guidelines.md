@@ -137,7 +137,7 @@ The cmdlet should call the [System.Management.Automation.Cmdlet.WriteDebug](/dot
 
 #### Support WriteProgress for Operations that take a Long Time
 
-Cmdlet operations that take a long time to complete and that cannot run in the background should support progress reporting through periodic calls to the [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) method.
+Cmdlet operations that take a long time to complete and that cannot run in the background should support progress reporting through periodic calls to the [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) method.
 
 #### Use the Host Interfaces
 
