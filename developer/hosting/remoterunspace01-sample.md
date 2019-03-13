@@ -39,7 +39,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
   using System.Management.Automation.Runspaces;   // Windows PowerShell namespace.
 
   /// <summary>
-  /// This class contains the Main enrty point for the application.
+  /// This class contains the Main entry point for the application.
   /// </summary>
   internal class RemoteRunspace01
   {

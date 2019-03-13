@@ -76,7 +76,7 @@ For more information about other components of a list view, see [Creating a List
 
 [ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
 
-[SelectionSetName Element for EnrtySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName Element for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [TypeName Element for EntrySelectedBy for ListEntry (Format)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
 
