@@ -42,7 +42,7 @@ Use the following guidelines to generate error identifiers when you create error
 
 - Make error identifiers specific to an error condition. Target the error identifiers for diagnostic purposes and for scripts that handle specific error conditions with specific error handlers. A user should be able to use the error identifier to identify the error and its source. Error identifiers also enable reporting for specific error conditions from existing exceptions so that new exception subclasses are not required.
 
-- In general, assign different error identifiers to different code paths. The end-user benefits from specific identifiers. Often, each code path that calls [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) has its own identifier. As a rule, define a new identifier when you define a new template string for the error message, and vice-versa. Do not use the error message as an identifier.
+- In general, assign different error identifiers to different code paths. The end-user benefits from specific identifiers. Often, each code path that calls [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) has its own identifier. As a rule, define a new identifier when you define a new template string for the error message, and vice-versa. Do not use the error message as an identifier.
 
 - When you publish code using a particular error identifier, you establish the semantics of errors with that identifier for your complete product support lifecycle. Do not reuse it in a context that is semantically different from the original context. If the semantics of this error change, create and then use a new identifier.
 
@@ -88,7 +88,7 @@ The replacement message is provided by an [System.Management.Automation.Errordet
 
 The replacement message should conform to the .NET Framework design guidelines for writing exception messages with a small difference. The guidelines state that exception messages should be written for developers. These replacement messages should be written for the cmdlet user.
 
-The replacement error message must be added before the [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) methods are called. To add a replacement message, set the [System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails) property of the error record. When this property is set, Windows PowerShell displays the [System.Management.Automation.Errordetails.Message*](/dotnet/api/System.Management.Automation.ErrorDetails.Message) property instead of the default message text.
+The replacement error message must be added before the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) methods are called. To add a replacement message, set the [System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails) property of the error record. When this property is set, Windows PowerShell displays the [System.Management.Automation.Errordetails.Message*](/dotnet/api/System.Management.Automation.ErrorDetails.Message) property instead of the default message text.
 
 ## Recommended Action Information
 
@@ -96,11 +96,11 @@ The [System.Management.Automation.Errordetails](/dotnet/api/System.Management.Au
 
 ## Invocation information
 
-When a cmdlet uses [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) to report an error record, Windows PowerShell automatically adds information that describes the command that was invoked when the error occurred. This information is provided by a [System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) object that contains the name of the cmdlet that was invoked by the command, the command itself, and information about the pipeline or script. This property is read-only.
+When a cmdlet uses [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) to report an error record, Windows PowerShell automatically adds information that describes the command that was invoked when the error occurred. This information is provided by a [System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) object that contains the name of the cmdlet that was invoked by the command, the command itself, and information about the pipeline or script. This property is read-only.
 
 ## See Also
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
