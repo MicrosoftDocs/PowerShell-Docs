@@ -93,7 +93,7 @@ using Microsoft.PowerShell.ScheduledJob;        // Windows PowerShell ScheduledJ
 namespace Microsoft.Samples.PowerShell.ScheduledJob
 {
     /// <summary>
-    /// This class contains the Main enrty point for the application.
+    /// This class contains the Main entry point for the application.
     /// </summary>
     public class ScheduledJobSample
     {

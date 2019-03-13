@@ -19,7 +19,7 @@ View Element (Format)
 CustomControl Element (Format)
 CustomEntries Element for CustomControl for View (Format)
 CustomEntry Element for CustomEntries for View (Format)
-CustomItem Element for CustomEntry for CutomControlView (Format)
+CustomItem Element for CustomEntry for CustomControlView (Format)
 Frame Element for CustomItem for CustomControl for View (Format)
 
 ## Syntax

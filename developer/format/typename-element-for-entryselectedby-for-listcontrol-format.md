@@ -75,6 +75,6 @@ The following example shows how to specify a selection set for an entry of a lis
 
 [EntrySelectedBy Element for ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 
-[SelectionSetName Element for EnrtySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName Element for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

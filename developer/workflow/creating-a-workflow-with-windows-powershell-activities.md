@@ -27,9 +27,9 @@ The following procedures describe how to create a workflow that checks the domai
 
 2. Create an argument named `ComputerName` with an argument type of `String[]`. This argument represents the names of the computers to check and join.
 
-3. Create an argument named `DomainCred` of type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). This argument represents the domain credentials of a domain account that is authorized to join a computer to the domain.
+3. Create an argument named `DomainCred` of type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). This argument represents the domain credentials of a domain account that is authorized to join a computer to the domain.
 
-4. Create an argument named `MachineCred` of type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). This argument represents the credentials of an administrator on the computers to check and join.
+4. Create an argument named `MachineCred` of type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). This argument represents the credentials of an administrator on the computers to check and join.
 
 5. Add a **ParallelForEach** activity inside the **Sequence** activity. Enter `comp` and `ComputerName` in the text boxes so that the loop iterates through the elements of the `ComputerName` array.
 
