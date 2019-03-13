@@ -29,7 +29,7 @@ jobs and Task Scheduler tasks. Each scheduled job is registered
 in Task Scheduler and saved on disk in Microsoft .Net Framework
 Serialization XML format.
 
-When you create a scheduled job, Windows Powershell creates a
+When you create a scheduled job, Windows PowerShell creates a
 directory for the scheduled job in the
 $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
 directory on the local computer. The directory name is the same

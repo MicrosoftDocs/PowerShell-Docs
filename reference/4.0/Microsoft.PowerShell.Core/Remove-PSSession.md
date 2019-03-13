@@ -122,7 +122,7 @@ PS C:\> function EndPSS { get-pssession | remove-pssession }
 ```
 
 This function deletes all of the PSSessions in the current session.
-After you add this function to your Windows Powershell profile, to delete all sessions, just type "endpss".
+After you add this function to your Windows PowerShell profile, to delete all sessions, just type "endpss".
 
 ## PARAMETERS
 
