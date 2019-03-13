@@ -39,7 +39,7 @@ has the following characteristics:
 - It takes input from the pipeline.
 - It takes an array of strings as input.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true,
     ValueFromPipeline = $true)]
@@ -77,7 +77,7 @@ Use the following syntax to declare the Parameter attribute, an argument, and
 an argument value. The parentheses that enclose the argument and its value
 must follow "`Parameter`" with no intervening space.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Argument = value)]
     $ParameterName
@@ -87,7 +87,7 @@ Param(
 Use commas to separate arguments within the parentheses. Use the following
 syntax to declare two arguments of the `Parameter` attribute.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Argument1 = value1,
     Argument2 = value2)]
@@ -98,7 +98,7 @@ If you use the `Parameter` attribute without arguments (as an alternative to
 using the `CmdletBinding` attribute), the parentheses that follow the attribute
 name are still required.
 
-```PowerShell
+```powershell
 Param(
     [Parameter()]
     $ParameterName
@@ -113,7 +113,7 @@ argument is not specified, the parameter is an optional parameter.
 The following example declares the `ComputerName` parameter. It uses the
 `Mandatory` argument to make the parameter mandatory.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [String[]]
@@ -155,7 +155,7 @@ Position argument with a value of **"0"**. As a result, when `-ComputerName` is
 omitted from command, its value must be the first or only unnamed parameter
 value in the command.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Position = 0)]
     [String[]]
@@ -182,7 +182,7 @@ The following example declares a `ComputerName` parameter in the "Computer"
 parameter set, a `UserName` parameter in the "User" parameter set, and a
 `Summary` parameter in both parameter sets.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true,
     ParameterSetName = "Computer")]
@@ -209,7 +209,7 @@ The following example explicitly adds the `Summary` parameter to the Computer
 and User parameter sets. The `Summary` parameter is **Mandatory** in one
 parameter set and **Optional** in the other.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true,
     ParameterSetName = "Computer")]
@@ -240,7 +240,7 @@ object, not just a property of the object.
 The following example declares a `ComputerName` parameter that is mandatory
 and accepts an object that is passed to the function from the pipeline.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true,
     ValueFromPipeline = $true)]
@@ -272,7 +272,7 @@ The following example declares a `ComputerName` parameter that is mandatory
 and accepts input from the `ComputerName` property of the object that is
 passed to the function through the pipeline.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true,
     ValueFromPipelineByPropertyName = $true)]
@@ -291,7 +291,7 @@ The following example declares a `ComputerName` parameter that is **Mandatory**
 and accepts all the remaining parameter values that were submitted to the
 function.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true,
     ValueFromRemainingArguments = $true)]
@@ -310,7 +310,7 @@ command. This argument has no effect on optional parameters.
 The following example declares a mandatory `ComputerName` parameter and a
 help message that explains the expected parameter value.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true,
     HelpMessage = "Enter one or more computer names separated by commas.")]
@@ -327,7 +327,7 @@ no limit to the number of aliases that you can assign to a parameter.
 The following example shows a parameter declaration that adds the "CN" and
 "MachineName" aliases to the mandatory `ComputerName` parameter.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [Alias("CN", "MachineName")]
@@ -350,7 +350,7 @@ The `AllowNull` attribute allows the value of a **Mandatory** parameter to be
 `$null`. The following example declares a `ComputerName` parameter that can have
 a Null value.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [AllowNull()]
@@ -365,7 +365,7 @@ The `AllowEmptyString` attribute allows the value of a **Mandatory** parameter
 to be an empty string (""). The following example declares a `ComputerName`
 parameter that can have an empty string value.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [AllowEmptyString()]
@@ -380,7 +380,7 @@ The `AllowEmptyCollection` attribute allows the value of a mandatory parameter
 to be an empty collection `@()`. The following example declares a `ComputerName`
 parameter that can have a empty collection value.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [AllowEmptyCollection()]
@@ -399,7 +399,7 @@ outside that range.
 The following parameter declaration creates a ComputerName parameter that
 takes one to five parameter values.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateCount(1,5)]
@@ -417,7 +417,7 @@ the range.
 
 In the following example, each computer name must have one to ten characters.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateLength(1,10)]
@@ -429,7 +429,7 @@ Param(
 In the following example, the value of the variable `$number` must be a minimum
 of one character in length, and a maximum of ten characters.
 
-```PowerShell
+```powershell
 [Int32][ValidateLength(1,10)]$number = 01
 ```
 
@@ -442,7 +442,7 @@ does not match the regular expression pattern.
 In the following example, the parameter value must be a four-digit number, and
 each digit must be a number zero to nine.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [ValidatePattern("[0-9][0-9][0-9][0-9]")]
@@ -454,7 +454,7 @@ Param(
 In the following example, the value of the variable `$number` must be a
 four-digit number, and each digit must be a number zero to nine.
 
-```PowerShell
+```powershell
 [Int32][ValidatePattern("[0-9][0-9][0-9][0-9]")]$number = 1111
 ```
 
@@ -465,7 +465,7 @@ variable value. PowerShell generates an error if any value is outside that
 range. In the following example, the value of the `Attempts` parameter must be
 between zero and ten.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateRange(0,10)]
@@ -477,7 +477,7 @@ Param(
 In the following example, the value of the variable `$number` must be between
 zero and ten.
 
-```PowerShell
+```powershell
 [Int32][ValidateRange(0,10)]$number = 5
 ```
 
@@ -495,7 +495,7 @@ to the value in the script.
 In the following example, the value of the `EventDate` parameter must be
 greater than or equal to the current date.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateScript({$_ -ge (Get-Date)})]
@@ -507,7 +507,7 @@ Param(
 In the following example, the value of the variable `$date` must be greater than
 or equal to the current date and time.
 
-```PowerShell
+```powershell
 [DateTime][ValidateScript({$_ -ge (Get-Date)})]$date = (Get-Date)
 ```
 
@@ -518,7 +518,7 @@ variable. PowerShell generates an error if a parameter or variable value does
 not match a value in the set. In the following example, the value of the
 `Detail` parameter can only be "Low," "Average," or "High."
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateSet("Low", "Average", "High")]
@@ -530,7 +530,7 @@ Param(
 In the following example, the value of the variable `$flavor` must be either
 "Chocolate", "Strawberry", or "Vanilla".
 
-```PowerShell
+```powershell
 [ValidateSet("Chocolate", "Strawberry", "Vanilla")]
 [String]$flavor = "Strawberry"
 ```
@@ -538,7 +538,7 @@ In the following example, the value of the variable `$flavor` must be either
 Note that the validation occurs whenever that variable is assigned even within
 the script. For example, the following results in an error at runtime:
 
-```PowerShell
+```powershell
 Param(
     [ValidateSet("hello", "world")]
     [String]$Message
@@ -554,7 +554,7 @@ runtime. In the following example, the valid values for the variable `$Sound`
 are generated via a `Class` named `SoundNames` that checks three filesystem
 paths for available sound files:
 
-```PowerShell
+```powershell
 Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
     [String[]] GetValidValues() {
         $SoundPaths = '/System/Library/Sounds/',
@@ -572,7 +572,7 @@ Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
 The `[SoundNames]` class is then implemented as a dynamic `ValidateSet` value
 as follows:
 
-```PowerShell
+```powershell
 Param(
     [ValidateSet([SoundNames])]
     [String]$Sound
@@ -592,7 +592,7 @@ such as a string, the `$null` value is rejected without the
 
 In the following example, the value of the `ID` parameter cannot be `$null`.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNull()]
@@ -607,7 +607,7 @@ be `$null` and cannot be an empty string `""`. PowerShell generates an
 error if the parameter is used in a function call, but its value is `$null`,
 an empty string `""`, or an empty array `@()`.
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
@@ -625,7 +625,7 @@ Existence of the path, except for the drive itself, is not verified.
 
 If you use relative path, the current drive must be in the allowed drive list.
 
-```PowerShell
+```powershell
 Param(
     [ValidateDrive("C", "D", "Variable", "Function")]
     [String]$Path
@@ -644,7 +644,7 @@ If you use relative path, the current drive must be `User`.
 You can define `User` drive in Just Enough Administration (JEA)
 session configurations.
 
-```PowerShell
+```powershell
 Param(
     [ValidateUserDrive()]
     [String]$Path
@@ -696,7 +696,7 @@ The **DP1** parameter is available in the `Get-Sample` function
 only when the value of the **Path** parameter starts with "HKLM:",
 indicating that it is being used in the HKEY_LOCAL_MACHINE registry drive.
 
-```PowerShell
+```powershell
 function Get-Sample {
   [CmdletBinding()]
   Param([String]$Name, [String]$Path)
@@ -743,13 +743,13 @@ parameter definition.
 
 For example:
 
-```PowerShell
+```powershell
 Param([Switch]<ParameterName>)
 ```
 
 -or-
 
-```PowerShell
+```powershell
 Param(
     [Parameter(Mandatory = $false)]
     [Switch]
