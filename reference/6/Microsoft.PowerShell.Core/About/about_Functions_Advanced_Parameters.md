@@ -39,7 +39,7 @@ has the following characteristics:
 - It takes input from the pipeline.
 - It takes an array of strings as input.
 
-``PowerShell
+```PowerShell
 Param(
     [Parameter(Mandatory = $true,
     ValueFromPipeline = $true)]
