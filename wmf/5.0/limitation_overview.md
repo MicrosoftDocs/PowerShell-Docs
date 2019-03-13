@@ -49,7 +49,7 @@ There are two workarounds for this issue depending on the version of Windows Ser
 **Resolution:**
 
 - For systems running **Windows Server 2008 R2**
-  1. Open Powershell as an administrator
+  1. Open PowerShell as an administrator
   2. Run the following command
 
      ```powershell

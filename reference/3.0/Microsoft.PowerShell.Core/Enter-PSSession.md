@@ -86,7 +86,7 @@ The commands that you enter run in the new session, and the results are returned
 ```
 PS> Enter-PSSession -ComputerName Server01
 [Server01]: PS>
-[Server01]: PS> Get-Process Powershell > C:\ps-test\Process.txt
+[Server01]: PS> Get-Process PowerShell > C:\ps-test\Process.txt
 [Server01]: PS> exit
 PS>
 PS> dir C:\ps-test\process.txt

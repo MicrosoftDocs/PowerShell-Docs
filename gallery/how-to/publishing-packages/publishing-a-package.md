@@ -114,7 +114,7 @@ for every module prior to publishing it to the PowerShell Gallery.
 
 Likewise, [Test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) validates the
 metadata in a script, and must be run on every script (published separate from a module) prior to
-publishing it to the Powershell Gallery.
+publishing it to the PowerShell Gallery.
 
 
 ## Publishing Items
