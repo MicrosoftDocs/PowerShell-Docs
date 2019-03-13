@@ -532,7 +532,7 @@ In the following example, the value of the variable `$flavor` must be either
 
 ```PowerShell
 [ValidateSet("Chocolate", "Strawberry", "Vanilla")]
-[String]$Flavor = "Strawberry"
+[String]$flavor = "Strawberry"
 ```
 
 Note that the validation occurs whenever that variable is assigned even within
