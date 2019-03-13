@@ -176,7 +176,7 @@ message =
 WriteDebug(message);
 ```
 
-This debug message is written immediately before [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) is called.
+This debug message is written immediately before [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) is called.
 
 ```csharp
 message =

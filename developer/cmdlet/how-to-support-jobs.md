@@ -125,7 +125,7 @@ This example shows how to support jobs when you write cmdlets. If you want users
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline. If the work is performed as a job, add child job to the job.
+5. If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline. If the work is performed as a job, add child job to the job.
 
     ```csharp
     void DoProcessLogic(bool asJob)

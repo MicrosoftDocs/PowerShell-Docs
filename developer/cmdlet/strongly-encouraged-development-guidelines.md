@@ -105,7 +105,7 @@ Frequently, users must perform the same operation against multiple arguments. Fo
 
 #### Support the PassThru Parameter
 
-By default, many cmdlets that modify the system, such as the [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, act as "sinks" for objects and do not return a result. These cmdlet should implement the `PassThru` parameter to force the cmdlet to return an object. When the `PassThru` parameter is specified, the cmdlet returns an object by using a call to the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method. For example, the following command stops the Calc process and passes the resultant process to the pipeline.
+By default, many cmdlets that modify the system, such as the [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, act as "sinks" for objects and do not return a result. These cmdlet should implement the `PassThru` parameter to force the cmdlet to return an object. When the `PassThru` parameter is specified, the cmdlet returns an object by using a call to the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method. For example, the following command stops the Calc process and passes the resultant process to the pipeline.
 
 ```powershell
 Stop-Process calc -passthru
