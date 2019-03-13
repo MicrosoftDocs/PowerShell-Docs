@@ -41,7 +41,7 @@ This example shows how to support jobs when you write cmdlets. If you want users
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job. The following code uses the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
+3. In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job. The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
 
     ```csharp
     protected override void ProcessRecord()
@@ -125,7 +125,7 @@ This example shows how to support jobs when you write cmdlets. If you want users
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline. If the work is performed as a job, add child job to the job.
+5. If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline. If the work is performed as a job, add child job to the job.
 
     ```csharp
     void DoProcessLogic(bool asJob)

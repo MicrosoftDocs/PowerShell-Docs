@@ -105,7 +105,7 @@ Frequently, users must perform the same operation against multiple arguments. Fo
 
 #### Support the PassThru Parameter
 
-By default, many cmdlets that modify the system, such as the [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, act as "sinks" for objects and do not return a result. These cmdlet should implement the `PassThru` parameter to force the cmdlet to return an object. When the `PassThru` parameter is specified, the cmdlet returns an object by using a call to the [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method. For example, the following command stops the Calc process and passes the resultant process to the pipeline.
+By default, many cmdlets that modify the system, such as the [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, act as "sinks" for objects and do not return a result. These cmdlet should implement the `PassThru` parameter to force the cmdlet to return an object. When the `PassThru` parameter is specified, the cmdlet returns an object by using a call to the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method. For example, the following command stops the Calc process and passes the resultant process to the pipeline.
 
 ```powershell
 Stop-Process calc -passthru
@@ -129,15 +129,15 @@ The Windows PowerShell runtime allows a user to specify how to handle output fro
 
 #### Support the WriteWarning, WriteVerbose, and WriteDebug Methods
 
-A cmdlet should call the [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method when the cmdlet is about to perform an operation that might have an unintended result. For example, a cmdlet should call this method if the cmdlet is about to overwrite a read-only file.
+A cmdlet should call the [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method when the cmdlet is about to perform an operation that might have an unintended result. For example, a cmdlet should call this method if the cmdlet is about to overwrite a read-only file.
 
-A cmdlet should call the [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method when the user requires some detail about what the cmdlet is doing. For example, a cmdlet should call this information if the cmdlet author feels that there are scenarios that might require more information about what the cmdlet is doing.
+A cmdlet should call the [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method when the user requires some detail about what the cmdlet is doing. For example, a cmdlet should call this information if the cmdlet author feels that there are scenarios that might require more information about what the cmdlet is doing.
 
-The cmdlet should call the [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method when a developer or product support engineer must understand what has corrupted the cmdlet operation. It is not necessary for the cmdlet to call the [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method in the same code that calls the [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method because the `Debug` parameter presents both sets of information.
+The cmdlet should call the [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method when a developer or product support engineer must understand what has corrupted the cmdlet operation. It is not necessary for the cmdlet to call the [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method in the same code that calls the [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method because the `Debug` parameter presents both sets of information.
 
 #### Support WriteProgress for Operations that take a Long Time
 
-Cmdlet operations that take a long time to complete and that cannot run in the background should support progress reporting through periodic calls to the [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) method.
+Cmdlet operations that take a long time to complete and that cannot run in the background should support progress reporting through periodic calls to the [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) method.
 
 #### Use the Host Interfaces
 
@@ -224,7 +224,7 @@ A parameter accepts input from the pipeline if the **Parameter** attribute inclu
 
 #### Support the ProcessRecord Method
 
-To accept all the records from the preceding cmdlet in the pipeline, your cmdlet must implement the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. Windows PowerShell calls this method multiple times, once for every record that is sent to your cmdlet.
+To accept all the records from the preceding cmdlet in the pipeline, your cmdlet must implement the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. Windows PowerShell calls this method multiple times, once for every record that is sent to your cmdlet.
 
 ### Write Single Records to the Pipeline (SC03)
 
