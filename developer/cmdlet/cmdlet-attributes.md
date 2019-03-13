@@ -31,7 +31,7 @@ Describes how to define aliases for a cmdlet parameter name.
 Describes how to define a .NET Framework class as a cmdlet.
 
 [Credential Attribute Declaration](./credential-attribute-declaration.md)
-Describes how to add support for converting string input into a [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) object.
+Describes how to add support for converting string input into a [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) object.
 
 [OutputType attribute Declaration](./outputtype-attribute-declaration.md)
 Describes how to specify the .NET Framework types returned by the cmdlet.
