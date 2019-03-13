@@ -410,7 +410,7 @@ Accept wildcard characters: False
 
 ### -Depth
 
-This parameter was added in Powershell 5.0 and enables you to control the depth of recursion. By
+This parameter was added in PowerShell 5.0 and enables you to control the depth of recursion. By
 default, `Get-ChildItem` displays the contents of the parent directory. The **Depth** parameter
 determines the number of subdirectory levels that are included in the recursion and displays the
 contents.

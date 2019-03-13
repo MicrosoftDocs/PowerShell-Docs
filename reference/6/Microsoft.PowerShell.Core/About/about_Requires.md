@@ -99,7 +99,7 @@ following keys. The value can be a combination of strings and hash tables.
   - `RequiredVersion` - __[Required]__ Specifies an exact, required version of the module.
 
 > [!NOTE]
-> `RequiredVersion` was added in Windows Powershell 5.0.
+> `RequiredVersion` was added in Windows PowerShell 5.0.
 
 For example:
 

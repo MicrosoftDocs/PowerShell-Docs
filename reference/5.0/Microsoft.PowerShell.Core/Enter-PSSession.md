@@ -90,7 +90,7 @@ PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\>
 
 The second command gets the Windows PowerShell process and redirects the output to the Process.txt file. The command is submitted to the remote computer, and the file is saved on the remote computer.
-[Server01]: PS C:\> Get-Process Powershell > C:\ps-test\Process.txt
+[Server01]: PS C:\> Get-Process PowerShell > C:\ps-test\Process.txt
 
 The third command uses the **Exit** keyword to end the interactive session and close the connection.
 [Server01]: PS C:\> exit

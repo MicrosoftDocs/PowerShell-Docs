@@ -17,7 +17,7 @@ caps.latest.revision: 14
 A Microsoft .NET Framework class is declared as a cmdlet by specifying the **Cmdlet** attribute as metadata for the class. (The **Cmdlet** attribute is the only required attribute for all cmdlets). When you specify the **Cmdlet** attribute, you must specify the verb-and-noun pair that identifies the cmdlet to the user. And, you must describe the Windows PowerShell functionality that the cmdlet supports. For more information about the declaration syntax that is used to specify the **Cmdlet** attribute, see [Cmdlet Attribute Declaration](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
-> The **Cmdlet** attribute is defined by the [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) class. The properties of this class correspond to the declaration parameters that are used when you declare the attribute.
+> The **Cmdlet** attribute is defined by the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) class. The properties of this class correspond to the declaration parameters that are used when you declare the attribute.
 
 ## Nouns
 
@@ -51,7 +51,7 @@ When you name cmdlets, use Pascal casing. For example, the `Get-Item` and `Get-I
 
 ## See Also
 
-[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 
 [CmdletAttribute Declaration](./cmdlet-attribute-declaration.md)
 

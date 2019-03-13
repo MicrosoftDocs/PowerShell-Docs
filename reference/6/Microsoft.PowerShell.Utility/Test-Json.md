@@ -26,7 +26,7 @@ The verified string can then be used with the ConvertFrom-Json cmdlet convert a 
 
 Many web sites use JSON instead of XML to serialize data for communication between servers and web-based apps.
 
-This cmdlet was introduced in Windows Powershell 6.1
+This cmdlet was introduced in Windows PowerShell 6.1
 
 ## EXAMPLES
 

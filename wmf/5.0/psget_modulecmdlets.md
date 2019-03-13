@@ -1,7 +1,5 @@
 ---
 ms.date:  06/12/2017
-
-
 keywords:  wmf,powershell,setup
 ---
 
@@ -32,6 +30,7 @@ keywords:  wmf,powershell,setup
 - [Unregister-PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
 
 ## Module dependency installation support, Get-InstalledModule and Uninstall-Module cmdlets
+
 - Added module dependencies population in the Publish-Module cmdlet. The RequiredModules and NestedModules lists of PSModuleInfo are used in preparing the dependency list of a module to be published.
 - Added dependency installation support in the Install-Module and Update-Module cmdlets. Module dependencies are installed and updated by default.
 - Added an -IncludeDependencies parameter to the Find-Module cmdlet to include module dependencies in the results.
@@ -41,6 +40,7 @@ keywords:  wmf,powershell,setup
 ## PowerShellGet cmdlets demo with module dependencies support:
 
 ### Ensure that module dependencies are available on the repository:
+
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -55,6 +55,7 @@ Version    Name                     Repository    Des
 ```
 
 ### Create a module with dependencies that are specified in the RequiredModules and NestedModules properties of its module manifest.
+
 ```powershell
 $RequiredModules = @('RequiredModule1',
 					 @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -68,12 +69,14 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  Publish two versions (**“1.0”** and **“2.0”**) of the TestDepWithNestedRequiredModules1 module with dependencies to the repository.
+### Publish two versions (**“1.0”** and **“2.0”**) of the TestDepWithNestedRequiredModules1 module with dependencies to the repository.
+
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  Find the TestDepWithNestedRequiredModules1 module with its dependencies by specifying -IncludeDependencies.
+### Find the TestDepWithNestedRequiredModules1 module with its dependencies by specifying -IncludeDependencies.
+
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -89,6 +92,7 @@ Version    Name                               
 ```
 
 ### Use Find-Module metadata to find the module dependencies.
+
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -127,7 +131,8 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  Install the TestDepWithNestedRequiredModules1 module with dependencies.
+### Install the TestDepWithNestedRequiredModules1 module with dependencies.
+
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -143,7 +148,8 @@ Version    Name                    Repository   Descrip
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
-###  Update the TestDepWithNestedRequiredModules1 module with dependencies.
+### Update the TestDepWithNestedRequiredModules1 module with dependencies.
+
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -169,8 +175,10 @@ Version    Name                               
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  Run the Uninstall-Module cmdlet to uninstall a module that you installed by using PowerShellGet.
+### Run the Uninstall-Module cmdlet to uninstall a module that you installed by using PowerShellGet.
+
 If any other module depends on the module that you want to delete, PowerShellGet throws an error.
+
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -183,6 +191,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 ```
 
 ## Save-Module cmdlet
+
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -201,11 +210,13 @@ d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
 ## Update-ModuleManifest cmdlet
+
 This new cmdlet is used to help update manifest file with input property values. It takes all parameters that Test-ModuleManifest does.
 
 We notice that a lot of module authors would like to specify “\*” in exported values such as FunctionsToExport, CmdletsToExport, etc. During module publishing to PowerShell Gallery, unspecified functions and commands will not be populated properly onto the Gallery. Therefore, we suggest module authors update their manifests with proper values.
 
 If you have modules that have exported properties, Update-ModuleManifest will fill the specified manifest file with information from exported functions, cmdlets, variables etc:
+
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -230,6 +241,7 @@ AliasesToExport = '*'
 ```
 
 After Update-ModuleManifest:
+
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
@@ -255,10 +267,13 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 ```
 
 For each module, there are also metadata fields associated with it. In order to display metadata properly on PowerShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.
+
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
+
 PrivateData hashtable from the manifest file template has the following properties:
+
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -283,4 +298,6 @@ PrivateData = @{
 	} # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-***Note:*** DscResourcesToExport is only supported on the latest PowerShell version 5.0. We won’t be able to update the field if you are running on previous PowerShell version.
+
+> [!NOTE]
+> DscResourcesToExport is only supported on the latest PowerShell version 5.0. We won’t be able to update the field if you are running on previous PowerShell version.
