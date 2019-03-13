@@ -55,7 +55,7 @@ For example, the [Remove-Item](/powershell/module/microsoft.powershell.managemen
 
 ### Handle Credentials Through Windows PowerShell (AD03)
 
-A cmdlet should define a `Credential` parameter to represent credentials. This parameter must be of type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) and must be defined using a Credential attribute declaration. This support automatically prompts the user for the user name, for the password, or for both when a full credential is not supplied directly. For more information about the Credential attribute, see [Credential Attribute Declaration](./credential-attribute-declaration.md).
+A cmdlet should define a `Credential` parameter to represent credentials. This parameter must be of type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) and must be defined using a Credential attribute declaration. This support automatically prompts the user for the user name, for the password, or for both when a full credential is not supplied directly. For more information about the Credential attribute, see [Credential Attribute Declaration](./credential-attribute-declaration.md).
 
 ### Support Encoding Parameters (AD04)
 
