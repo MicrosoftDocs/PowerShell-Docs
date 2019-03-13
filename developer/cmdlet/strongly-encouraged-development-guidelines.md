@@ -141,9 +141,9 @@ Cmdlet operations that take a long time to complete and that cannot run in the b
 
 #### Use the Host Interfaces
 
-Occasionally, a cmdlet must communicate directly with the user instead of by using the various Write or Should methods supported by the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class. In this case, the cmdlet should derive from the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class and use the [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) property. This property supports different levels of communication type, including the PromptForChoice, Prompt, and WriteLine/ReadLine types. At the most specific level, it also provides ways to read and write individual keys and to deal with buffers.
+Occasionally, a cmdlet must communicate directly with the user instead of by using the various Write or Should methods supported by the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class. In this case, the cmdlet should derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class and use the [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) property. This property supports different levels of communication type, including the PromptForChoice, Prompt, and WriteLine/ReadLine types. At the most specific level, it also provides ways to read and write individual keys and to deal with buffers.
 
-Unless a cmdlet is specifically designed to generate a graphical user interface (GUI), it should not bypass the host by using the [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) property. An example of a cmdlet that is designed to generate a GUI is the [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
+Unless a cmdlet is specifically designed to generate a graphical user interface (GUI), it should not bypass the host by using the [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) property. An example of a cmdlet that is designed to generate a GUI is the [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
 
 > [!NOTE]
 > Cmdlets should not use the [System.Console](/dotnet/api/System.Console) API.
@@ -168,9 +168,9 @@ If your cmdlet allows the user to specify a file or a data source, it should def
 
 If the data that the cmdlet reads or writes has to be a file, the cmdlet should accept Windows PowerShell path input, and the cmdlet should use the [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) property to translate the Windows PowerShell paths into paths that the file system recognizes. The specific mechanisms include the following methods:
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
 - [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
