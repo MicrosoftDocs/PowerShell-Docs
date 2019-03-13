@@ -33,7 +33,7 @@ namespace SampleHost
   {
     static void Main(string[] args)
     {
-      // Call the InitailSessionState.CreateDefault method to create
+      // Call the InitialSessionState.CreateDefault method to create
       // an empty InitialSessionState object, and then add the
       // elements that will be available when the runspace is opened.
       InitialSessionState iss = InitialSessionState.CreateDefault();

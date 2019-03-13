@@ -43,7 +43,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableColumnHeader Element for TableHeaders for TbleControl (Format)](./tablecolumnheader-element-format.md)|Defines a label, width, and alignment of the data for a column of the table.|
+|[TableColumnHeader Element for TableHeaders for TableControl (Format)](./tablecolumnheader-element-format.md)|Defines a label, width, and alignment of the data for a column of the table.|
 
 ## Text Value
 

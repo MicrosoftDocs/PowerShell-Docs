@@ -21,9 +21,9 @@ Keep the following things in mind when implementing a base class.
 
 - Override the appropriate input processing method in the base class.
 
-- Declare the [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.
+- Declare the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.
 
-- Implement a [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.
+- Implement a [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.
 
 ## Example
 
@@ -37,7 +37,7 @@ using System.Management.Automation;             //Windows PowerShell namespace.
 namespace Microsoft.Samples.PowerShell.Commands
 {
 
-  #region ProccessCommands
+  #region ProcessCommands
 
   /// <summary>
   /// This class implements a Stop-Proc cmdlet. The parameters
@@ -117,7 +117,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     // </summary>
     protected override void ProcessRecord()
     {
-      // Set up the wildcard chracters used in resolving
+      // Set up the wildcard characters used in resolving
       // the process names.
       WildcardOptions options = WildcardOptions.IgnoreCase |
                                 WildcardOptions.Compiled;

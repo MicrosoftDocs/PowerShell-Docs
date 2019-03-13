@@ -514,7 +514,7 @@ and change the current loop iteration. For more information, see
 In a script block that defines a script property or script method, the
 `$This` variable refers to the object that is being extended.
 
-### $trie
+### $true
 
 Contains **TRUE**. You can use this variable to represent **TRUE** in commands
 and scripts.

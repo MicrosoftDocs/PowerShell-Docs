@@ -46,7 +46,7 @@ you use most often.
 
 **Merged Console pane**. In previous versions of the ISE there were separate Command and Output
 panes. They are now combined into a single pane that more directly mimics what you see in the
-Windows Powershell Console.
+Windows PowerShell Console.
 
 **Command-line switches**. Several new command-line switches give you more control over the way the
 ISE works. -NoProfile starts the ISE without running a profile script. -Help opens up a help window

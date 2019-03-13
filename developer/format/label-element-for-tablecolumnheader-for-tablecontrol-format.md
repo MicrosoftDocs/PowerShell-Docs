@@ -19,7 +19,7 @@ View Element (Format)
 TableControl Element (Format)
 TableHeaders Element for TableControl (Format)
 TableColumnHeader Element for TableHeaders for TableControl (Format)
-Label Element  for TableColumnHeader for TablControl (Format)
+Label Element  for TableColumnHeader for TableControl (Format)
 
 ## Syntax
 

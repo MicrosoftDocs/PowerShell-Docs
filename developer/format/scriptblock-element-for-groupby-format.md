@@ -22,7 +22,7 @@ ScriptBlock Element for GroupBy (Format)
 ## Syntax
 
 ```xml
-<ScriptBolck>ScriptToEvaluate</ScriptBlock>
+<ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
 ## Attributes and Elements

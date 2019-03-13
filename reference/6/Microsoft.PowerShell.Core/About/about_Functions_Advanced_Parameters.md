@@ -41,8 +41,8 @@ has the following characteristics:
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true,
-    ValueFromPipeline=$true)]
+    [Parameter(Mandatory = $true,
+    ValueFromPipeline = $true)]
     [String[]]
     $ComputerName
 )
@@ -79,7 +79,7 @@ must follow "`Parameter`" with no intervening space.
 
 ```powershell
 Param(
-    [parameter(Argument=value)]
+    [Parameter(Argument = value)]
     $ParameterName
 )
 ```
@@ -89,8 +89,8 @@ syntax to declare two arguments of the `Parameter` attribute.
 
 ```powershell
 Param(
-    [parameter(Argument1=value1,
-    Argument2=value2)]
+    [Parameter(Argument1 = value1,
+    Argument2 = value2)]
 )
 ```
 
@@ -100,7 +100,7 @@ name are still required.
 
 ```powershell
 Param(
-    [parameter()]
+    [Parameter()]
     $ParameterName
 )
 ```
@@ -115,7 +115,7 @@ The following example declares the `ComputerName` parameter. It uses the
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [String[]]
     $ComputerName
 )
@@ -157,7 +157,7 @@ value in the command.
 
 ```powershell
 Param(
-    [parameter(Position=0)]
+    [Parameter(Position = 0)]
     [String[]]
     $ComputerName
 )
@@ -184,17 +184,17 @@ parameter set, a `UserName` parameter in the "User" parameter set, and a
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true,
-    ParameterSetName="Computer")]
+    [Parameter(Mandatory = $true,
+    ParameterSetName = "Computer")]
     [String[]]
     $ComputerName,
 
-    [parameter(Mandatory=$true,
-    ParameterSetName="User")]
+    [Parameter(Mandatory = $true,
+    ParameterSetName = "User")]
     [String[]]
     $UserName,
 
-    [parameter(Mandatory=$false)]
+    [Parameter(Mandatory = $false)]
     [Switch]
     $Summary
 )
@@ -211,18 +211,18 @@ parameter set and **Optional** in the other.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true,
-    ParameterSetName="Computer")]
+    [Parameter(Mandatory = $true,
+    ParameterSetName = "Computer")]
     [String[]]
     $ComputerName,
 
-    [parameter(Mandatory=$true,
-    ParameterSetName="User")]
+    [Parameter(Mandatory = $true,
+    ParameterSetName = "User")]
     [String[]]
     $UserName,
 
-    [parameter(Mandatory=$false, ParameterSetName="Computer")]
-    [parameter(Mandatory=$true, ParameterSetName="User")]
+    [Parameter(Mandatory = $false, ParameterSetName = "Computer")]
+    [Parameter(Mandatory = $true, ParameterSetName = "User")]
     [Switch]
     $Summary
 )
@@ -242,8 +242,8 @@ and accepts an object that is passed to the function from the pipeline.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true,
-    ValueFromPipeline=$true)]
+    [Parameter(Mandatory = $true,
+    ValueFromPipeline = $true)]
     [String[]]
     $ComputerName
 )
@@ -274,8 +274,8 @@ passed to the function through the pipeline.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true,
-    ValueFromPipelineByPropertyName=$true)]
+    [Parameter(Mandatory = $true,
+    ValueFromPipelineByPropertyName = $true)]
     [String[]]
     $ComputerName
 )
@@ -293,8 +293,8 @@ function.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true,
-    ValueFromRemainingArguments=$true)]
+    [Parameter(Mandatory = $true,
+    ValueFromRemainingArguments = $true)]
     [String[]]
     $ComputerName
 )
@@ -312,8 +312,8 @@ help message that explains the expected parameter value.
 
 ```powershell
 Param(
-    [parameter(mandatory=$true,
-    HelpMessage="Enter one or more computer names separated by commas.")]
+    [Parameter(Mandatory = $true,
+    HelpMessage = "Enter one or more computer names separated by commas.")]
     [String[]]
     $ComputerName
 )
@@ -329,8 +329,8 @@ The following example shows a parameter declaration that adds the "CN" and
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
-    [alias("CN","MachineName")]
+    [Parameter(Mandatory = $true)]
+    [Alias("CN", "MachineName")]
     [String[]]
     $ComputerName
 )
@@ -352,7 +352,7 @@ a Null value.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [AllowNull()]
     [String]
     $ComputerName
@@ -367,7 +367,7 @@ parameter that can have an empty string value.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [AllowEmptyString()]
     [String]
     $ComputerName
@@ -382,7 +382,7 @@ parameter that can have a empty collection value.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [AllowEmptyCollection()]
     [String[]]
     $ComputerName
@@ -401,7 +401,7 @@ takes one to five parameter values.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [ValidateCount(1,5)]
     [String[]]
     $ComputerName
@@ -419,7 +419,7 @@ In the following example, each computer name must have one to ten characters.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [ValidateLength(1,10)]
     [String[]]
     $ComputerName
@@ -444,14 +444,14 @@ each digit must be a number zero to nine.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [ValidatePattern("[0-9][0-9][0-9][0-9]")]
     [String[]]
     $ComputerName
 )
 ```
 
-In the following example, the value of the variable $number must be a
+In the following example, the value of the variable `$number` must be a
 four-digit number, and each digit must be a number zero to nine.
 
 ```powershell
@@ -476,14 +476,14 @@ In the following example, the value of the
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [ValidateRange(0,10)]
     [Int]
     $Attempts
 )
 ```
 
-In the following example, the value of the variable $number must be between
+In the following example, the value of the variable `$number` must be between
 zero and ten.
 
 ```powershell
@@ -513,7 +513,7 @@ greater than or equal to the current date.
 
 ```powershell
 Param(
-    [parameter()]
+    [Parameter(Mandatory = $true)]
     [ValidateScript({$_ -ge (Get-Date)})]
     [DateTime]
     $EventDate
@@ -536,7 +536,7 @@ not match a value in the set. In the following example, the value of the
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [ValidateSet("Low", "Average", "High")]
     [String[]]
     $Detail
@@ -548,7 +548,7 @@ In the following example, the value of the variable `$flavor` must be either
 
 ```powershell
 [ValidateSet("Chocolate", "Strawberry", "Vanilla")]
-[String]$flavor = Strawberry
+[String]$flavor = "Strawberry"
 ```
 
 Note that the validation occurs whenever that variable is assigned even within
@@ -556,12 +556,13 @@ the script. For example, the following results in an error at runtime:
 
 ```powershell
 Param(
-    [ValidateSet("hello","world")]
+    [ValidateSet("hello", "world")]
     [String]$Message
 )
 
 $Message = "bye"
 ```
+
 #### Dynamic ValidateSet Values
 
 You can use a `Class` to dynamically generate the values for `ValidateSet` at
@@ -579,7 +580,7 @@ Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
                 (Get-ChildItem $SoundPath).BaseName
             }
         }
-        return [string[]] $SoundNames
+        return [String[]] $SoundNames
     }
 }
 ```
@@ -609,9 +610,9 @@ In the following example, the value of the `ID` parameter cannot be `$null`.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [ValidateNotNull()]
-    # $ID
+    $ID
 )
 ```
 
@@ -624,7 +625,7 @@ an empty string `""`, or an empty array `@()`.
 
 ```powershell
 Param(
-    [parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [String[]]
     $UserName
@@ -642,8 +643,8 @@ If you use relative path, the current drive must be in the allowed drive list.
 
 ```powershell
 Param(
-    [ValidateDrive("C","D","Variable","Function")]
-    [string]$Path
+    [ValidateDrive("C", "D", "Variable", "Function")]
+    [String]$Path
 )
 ```
 
@@ -659,11 +660,10 @@ If you use relative path, the current drive must be `User`.
 You can define `User` drive in Just Enough Administration (JEA)
 session configurations.
 
-
 ```powershell
 Param(
     [ValidateUserDrive()]
-    [string]$Path
+    [String]$Path
 )
 ```
 
@@ -767,7 +767,7 @@ Param([Switch]<ParameterName>)
 
 ```powershell
 Param(
-    [parameter(Mandatory=$false)]
+    [Parameter(Mandatory = $false)]
     [Switch]
     $<ParameterName>
 )

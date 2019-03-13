@@ -23,7 +23,7 @@ The following table lists the recommended names and functionality for parameters
 |**CertStoreLocation**<br>Data type: String|Implement this parameter so that the user can specify the location of the certificate store. The location is typically a file path.|
 |**CertSubjectName**<br>Data type: String|Implement this parameter so that the user can specify the issuer of a certificate or so that the user can specify a substring.|
 |**CertUsage**<br>Data type: String|Implement this parameter to specify the key usage or the enhanced key usage. The key can be represented as a bit mask, a bit, an object identifier (OID), or a string.|
-|**Credential**<br>Data type: [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Implement this parameter so that the cmdlet will automatically prompt the user for a user name or password. A prompt for both is displayed if a full credential is not supplied directly.|
+|**Credential**<br>Data type: [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Implement this parameter so that the cmdlet will automatically prompt the user for a user name or password. A prompt for both is displayed if a full credential is not supplied directly.|
 |**CSPName**<br>Data type: String|Implement this parameter so that the user can specify the name of the certificate service provider (CSP).|
 |**CSPType**<br>Data type: Integer|Implement this parameter so that the user can specify the type of CSP.|
 |**Group**<br>Data type: String|Implement this parameter so that the user can specify a collection of principals for access. For more information, see the description of the **Principal** parameter.|

@@ -319,7 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilterOnTag
-{{Fill FilterOnTag Description}}
+Specifies the tag to filter the results on. Excludes results not contianing the specified tag.
 
 ```yaml
 Type: String[]
@@ -681,7 +681,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipDependencies
-Switch which specifies to skip installing any dependencies a package has.
+Switch which specifies to skip installing any dependencies.
 
 ```yaml
 Type: SwitchParameter
