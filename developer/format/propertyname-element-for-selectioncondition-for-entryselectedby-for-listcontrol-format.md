@@ -21,7 +21,7 @@ ListEntries Element (Format)
 ListEntry Element (Format)
 EntrySelectedBy Element for ListEntry (Format)
 SelectionCondition Element for EntrySelectedBy for ListEntry (Format)
-PropertyName Element for SelectionCondition for EmtrySelectedBy for ListEntry (Format)
+PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)
 
 ## Syntax
 
