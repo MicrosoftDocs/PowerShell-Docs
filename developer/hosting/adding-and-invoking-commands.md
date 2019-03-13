@@ -151,7 +151,7 @@ namespace HostPS3
     {
       // Use the PowerShell.Create and PowerShell.AddCommand
       // methods to create a command pipeline that includes
-      // Get-Process cmdlet. Do not include spaces immediatly
+      // Get-Process cmdlet. Do not include spaces immediately
       // before or after the cmdlet name as that will cause
       // the command to fail.
       PowerShell ps = PowerShell.Create().AddCommand("Get-Process");
