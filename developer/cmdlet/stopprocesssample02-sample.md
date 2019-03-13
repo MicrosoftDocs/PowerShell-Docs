@@ -55,7 +55,7 @@ This sample demonstrates the following.
 
 - Declaring a cmdlet parameters by using the Parameter attribute.
 
-- Writing verbose messages. For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+- Writing verbose messages. For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
 
 - Writing error messages. For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).
 
