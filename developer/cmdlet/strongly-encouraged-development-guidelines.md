@@ -129,7 +129,7 @@ The Windows PowerShell runtime allows a user to specify how to handle output fro
 
 #### Support the WriteWarning, WriteVerbose, and WriteDebug Methods
 
-A cmdlet should call the [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method when the cmdlet is about to perform an operation that might have an unintended result. For example, a cmdlet should call this method if the cmdlet is about to overwrite a read-only file.
+A cmdlet should call the [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method when the cmdlet is about to perform an operation that might have an unintended result. For example, a cmdlet should call this method if the cmdlet is about to overwrite a read-only file.
 
 A cmdlet should call the [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method when the user requires some detail about what the cmdlet is doing. For example, a cmdlet should call this information if the cmdlet author feels that there are scenarios that might require more information about what the cmdlet is doing.
 

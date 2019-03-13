@@ -59,7 +59,7 @@ This sample demonstrates the following.
 
 - Writing error messages. For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).
 
-- Writing warning messages. For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).
+- Writing warning messages. For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).
 
 ## Example
 
