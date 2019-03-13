@@ -73,7 +73,7 @@ When naming the class of the cmdlet, it is a good practice to reflect the cmdlet
 
 > [!IMPORTANT]
 > If you want to define a cmdlet that accesses the Windows PowerShell runtime directly, your .NET class should derive from
-> the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)
+> the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)
 > base class. For more information about this class, see [Creating a Cmdlet that Defines Parameter Sets](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
