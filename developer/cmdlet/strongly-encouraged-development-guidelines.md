@@ -224,7 +224,7 @@ A parameter accepts input from the pipeline if the **Parameter** attribute inclu
 
 #### Support the ProcessRecord Method
 
-To accept all the records from the preceding cmdlet in the pipeline, your cmdlet must implement the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. Windows PowerShell calls this method multiple times, once for every record that is sent to your cmdlet.
+To accept all the records from the preceding cmdlet in the pipeline, your cmdlet must implement the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. Windows PowerShell calls this method multiple times, once for every record that is sent to your cmdlet.
 
 ### Write Single Records to the Pipeline (SC03)
 

@@ -95,7 +95,7 @@ All cmdlets must override at least one of the input processing methods provided 
 > [!NOTE]
 > Your cmdlet should handle each record as independently as possible.
 
-This Get-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to handle the `Name` parameter for input provided by the user or a script. This method will get the processes for each requested process name or all processes if no name is provided. Details of this override are given in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
+This Get-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to handle the `Name` parameter for input provided by the user or a script. This method will get the processes for each requested process name or all processes if no name is provided. Details of this override are given in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
 #### Things to Remember When Reporting Errors
 
@@ -129,7 +129,7 @@ Unhandled exceptions are not caught by Windows PowerShell in the following condi
 
 ## Reporting Nonterminating Errors
 
-Any one of the input processing methods can report a nonterminating error to the output stream using the [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method. Here is a code example from this Get-Proc cmdlet that illustrates the call to [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) from within the override of the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. In this case, the call is made if the cmdlet cannot find a process for a specified process identifier.
+Any one of the input processing methods can report a nonterminating error to the output stream using the [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method. Here is a code example from this Get-Proc cmdlet that illustrates the call to [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) from within the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. In this case, the call is made if the cmdlet cannot find a process for a specified process identifier.
 
 ```csharp
 protected override void ProcessRecord()

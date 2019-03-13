@@ -274,7 +274,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-This cmdlet also overrides the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to process the string selections that the user makes on the command line. It writes the results of string selection in the form of a custom object by calling a private **MatchString** method.
+This cmdlet also overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to process the string selections that the user makes on the command line. It writes the results of string selection in the form of a custom object by calling a private **MatchString** method.
 
 ```csharp
 protected override void ProcessRecord()
