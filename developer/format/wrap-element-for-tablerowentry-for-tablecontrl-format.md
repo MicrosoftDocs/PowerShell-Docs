@@ -43,7 +43,7 @@ None.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableRowEntry Element for TabbleRowEntries for TablControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Defines the data that is displayed in a row of the table.|
+|[TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Defines the data that is displayed in a row of the table.|
 
 ## Remarks
 
