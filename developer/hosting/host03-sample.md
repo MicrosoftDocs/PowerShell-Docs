@@ -224,7 +224,7 @@ namespace Microsoft.Samples.PowerShell.Host
             string str = result[0].BaseObject as string;
             if (!string.IsNullOrEmpty(str))
             {
-              // Remve \r\n that is added by Out-string.
+              // Remove \r\n that is added by Out-string.
               this.myHost.UI.WriteErrorLine(str.Substring(0, str.Length - 2));
             }
           }
@@ -335,7 +335,7 @@ namespace Microsoft.Samples.PowerShell.Host
   /// <summary>
   /// Simple PowerShell interactive console host listener implementation. This class
   /// implements a basic read-evaluate-print loop or 'listener' allowing you to
-  /// interactively work with the PowerShell runtimw.
+  /// interactively work with the PowerShell runtime.
   /// </summary>
   class PSListenerConsoleSample
   {
