@@ -1,5 +1,5 @@
 ---
-title: "Wrap Element for TableRowEntry for TableContrl  (Format) | Microsoft Docs"
+title: "Wrap Element for TableRowEntry for TableControl  (Format) | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/13/2016"
 ms.reviewer: ""
@@ -9,7 +9,7 @@ ms.topic: "article"
 ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
 caps.latest.revision: 11
 ---
-# Wrap Element for TableRowEntry for TableContrl  (Format)
+# Wrap Element for TableRowEntry for TableControl  (Format)
 
 Specifies that text that exceeds the column width is displayed on the next line. By default, text that exceeds the column width is truncated.
 

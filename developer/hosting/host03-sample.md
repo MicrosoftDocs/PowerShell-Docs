@@ -77,7 +77,7 @@ namespace Microsoft.Samples.PowerShell.Host
       this.myRunSpace.Open();
     }
 
-    /// Gets or sets a value indicating whether the host applcation
+    /// Gets or sets a value indicating whether the host application
     /// should exit.
     public bool ShouldExit
     {
@@ -224,7 +224,7 @@ namespace Microsoft.Samples.PowerShell.Host
             string str = result[0].BaseObject as string;
             if (!string.IsNullOrEmpty(str))
             {
-              // Remve \r\n that is added by Out-string.
+              // Remove \r\n that is added by Out-string.
               this.myHost.UI.WriteErrorLine(str.Substring(0, str.Length - 2));
             }
           }
@@ -335,7 +335,7 @@ namespace Microsoft.Samples.PowerShell.Host
   /// <summary>
   /// Simple PowerShell interactive console host listener implementation. This class
   /// implements a basic read-evaluate-print loop or 'listener' allowing you to
-  /// interactively work with the PowerShell runtimw.
+  /// interactively work with the PowerShell runtime.
   /// </summary>
   class PSListenerConsoleSample
   {
@@ -781,7 +781,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// foreground and background colors.
     /// </summary>
     /// <param name="foregroundColor">The color of the characters.</param>
-    /// <param name="backgroundColor">The backgound color to use.</param>
+    /// <param name="backgroundColor">The background color to use.</param>
     /// <param name="value">The characters to be written.</param>
     public override void Write(
                                ConsoleColor foregroundColor,
@@ -801,7 +801,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// Writes a line of characters to the output display of the host
     /// with foreground and background colors and appends a newline (carriage return).
     /// </summary>
-    /// <param name="foregroundColor">The forground color of the display. </param>
+    /// <param name="foregroundColor">The foreground color of the display. </param>
     /// <param name="backgroundColor">The background color of the display. </param>
     /// <param name="value">The line to be written.</param>
     public override void WriteLine(
@@ -1020,7 +1020,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
     /// <summary>
     /// Gets or sets the foreground color of the text to be written.
-    /// This maps to the corresponding Console.ForgroundColor property.
+    /// This maps to the corresponding Console.ForegroundColor property.
     /// </summary>
     public override ConsoleColor ForegroundColor
     {
