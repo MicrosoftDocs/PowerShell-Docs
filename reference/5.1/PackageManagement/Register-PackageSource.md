@@ -252,7 +252,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipValidate
-Switch that skips validating the credentials of a package soure.
+Switch that skips validating the credentials of a package source.
 
 ```yaml
 Type: SwitchParameter
