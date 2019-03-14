@@ -96,7 +96,7 @@ Accept wildcard characters: False
 
 ### -UseSSL
 
-Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connnection to the remote computer.
+Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connection to the remote computer.
 By default, SSL is not used.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the network.
