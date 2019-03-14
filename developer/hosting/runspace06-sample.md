@@ -33,7 +33,7 @@ This sample demonstrates the following.
 
 - Running the command synchronously.
 
-- Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.
+- Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.
 
 ## Example
 
