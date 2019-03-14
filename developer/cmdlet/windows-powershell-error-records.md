@@ -16,13 +16,13 @@ caps.latest.revision: 9
 ---
 # Windows PowerShell Error Records
 
-Cmdlets must pass an [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object that identifies the error condition for terminating and non-terminating errors.
+Cmdlets must pass an [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object that identifies the error condition for terminating and non-terminating errors.
 
-The [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object contains the following information:
+The [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object contains the following information:
 
 - The exception that describes the error. Often, this is an exception that the cmdlet caught and converted into an error record. Every error record must contain an exception.
 
-If the cmdlet did not catch an exception, it must create a new exception and choose the exception class that best describes the error condition. However, you do not need to throw the exception because it can be accessed through the [System.Management.Automation.Errorrecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) property of the [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object.
+If the cmdlet did not catch an exception, it must create a new exception and choose the exception class that best describes the error condition. However, you do not need to throw the exception because it can be accessed through the [System.Management.Automation.ErrorRecord.Exception](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) property of the [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object.
 
 - An error identifier that provides a targeted designator that can be used for diagnostic purposes and by Windows PowerShell scripts to handle specific error conditions with specific error handlers. Every error record must contain an error identifier (see Error Identifier).
 
@@ -36,7 +36,7 @@ If the cmdlet did not catch an exception, it must create a new exception and cho
 
 ## Error Identifier
 
-When you create an error record, specify an identifier that designates the error condition within your cmdlet. Windows PowerShell combines the targeted identifier with the name of your cmdlet to create a fully qualified error identifier. The fully qualified error identifier can be accessed through the [System.Management.Automation.Errorrecord.Fullyqualifiederrorid*](/dotnet/api/System.Management.Automation.ErrorRecord.FullyQualifiedErrorId) property of the [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object. The error identifier is not available by itself. It is available only as part of the fully qualified error identifier.
+When you create an error record, specify an identifier that designates the error condition within your cmdlet. Windows PowerShell combines the targeted identifier with the name of your cmdlet to create a fully qualified error identifier. The fully qualified error identifier can be accessed through the [System.Management.Automation.ErrorRecord.FullyQualifiedErrorId](/dotnet/api/System.Management.Automation.ErrorRecord.FullyQualifiedErrorId) property of the [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object. The error identifier is not available by itself. It is available only as part of the fully qualified error identifier.
 
 Use the following guidelines to generate error identifiers when you create error records:
 
@@ -58,7 +58,7 @@ When you create an error record, specify the category of the error using one of 
 
 Avoid using the [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) constant. If you have any information about the error or about the operation that caused the error, choose the category that best describes the error or the operation, even if the category is not a perfect match.
 
-The information displayed by Windows PowerShell is referred to as the category-view string and is built from the properties of the [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) class. (This class is accessed through the error [System.Management.Automation.Errorrecord.Categoryinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) property.)
+The information displayed by Windows PowerShell is referred to as the category-view string and is built from the properties of the [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) class. (This class is accessed through the error [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) property.)
 
 ```
 {Category}: ({TargetName}:{TargetType}):[{Activity}], {Reason}
@@ -80,19 +80,19 @@ The following list describes the information displayed:
 
 When you develop an error record for a cmdlet, the default error message for the error comes from the default message text in the [System.Exception.Message](/dotnet/api/System.Exception.Message) property. This is a read-only property whose message text is intended only for debugging purposes (according to the .NET Framework guidelines). We recommend that you create an error message that replaces or augments the default message text. Make the message more user-friendly and more specific to the cmdlet.
 
-The replacement message is provided by an [System.Management.Automation.Errordetails](/dotnet/api/System.Management.Automation.ErrorDetails) object. Use one of the following constructors of this object because they provide additional localization information that can be used by Windows PowerShell.
+The replacement message is provided by an [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) object. Use one of the following constructors of this object because they provide additional localization information that can be used by Windows PowerShell.
 
-- [ErrorDetails.ErrorDetails(Cmdlet, String, String, Object\[System.Management.Automation.Errordetails.%23Ctor%28System.Management.Automation.Cmdlet%2Csystem.String%2Csystem.String%2Csystem.Object%5B%5D%29?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Use this constructor if your template string is a resource string in the same assembly in which the cmdlet is implemented or if you want to load the template string through an override of the  [System.Management.Automation.Cmdlet.Getresourcestring*](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) method.
+- [ErrorDetails.ErrorDetails(Cmdlet, String, String, Object\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Use this constructor if your template string is a resource string in the same assembly in which the cmdlet is implemented or if you want to load the template string through an override of the  [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) method.
 
-- [ErrorDetails.ErrorDetails(Assembly, String, String, Object\[System.Management.Automation.Errordetails.%23Ctor%28System.Reflection.Assembly%2Csystem.String%2Csystem.String%2Csystem.Object%5B%5D%29?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Use this constructor if the template string is in another assembly and you do not load it through an override of [System.Management.Automation.Cmdlet.Getresourcestring*](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [ErrorDetails.ErrorDetails(Assembly, String, String, Object\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Use this constructor if the template string is in another assembly and you do not load it through an override of [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 The replacement message should conform to the .NET Framework design guidelines for writing exception messages with a small difference. The guidelines state that exception messages should be written for developers. These replacement messages should be written for the cmdlet user.
 
-The replacement error message must be added before the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) methods are called. To add a replacement message, set the [System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails) property of the error record. When this property is set, Windows PowerShell displays the [System.Management.Automation.Errordetails.Message*](/dotnet/api/System.Management.Automation.ErrorDetails.Message) property instead of the default message text.
+The replacement error message must be added before the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) methods are called. To add a replacement message, set the [System.Management.Automation.ErrorRecord.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails) property of the error record. When this property is set, Windows PowerShell displays the [System.Management.Automation.ErrorDetails.Message*](/dotnet/api/System.Management.Automation.ErrorDetails.Message) property instead of the default message text.
 
 ## Recommended Action Information
 
-The [System.Management.Automation.Errordetails](/dotnet/api/System.Management.Automation.ErrorDetails) object can also provide information about what actions are recommended when the error occurs.
+The [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) object can also provide information about what actions are recommended when the error occurs.
 
 ## Invocation information
 
@@ -108,9 +108,9 @@ When a cmdlet uses [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
 
-[System.Management.Automation.Errordetails](/dotnet/api/System.Management.Automation.ErrorDetails)
+[System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails)
 
 [System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)
 
