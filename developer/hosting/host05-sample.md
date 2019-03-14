@@ -63,7 +63,7 @@ namespace Microsoft.Samples.PowerShell.Host
   internal class PSListenerConsoleSample
   {
     /// <summary>
-    /// Holds a reference to the runspace for this interpeter.
+    /// Holds a reference to the runspace for this interpreter.
     /// </summary>
     internal Runspace myRunSpace;
 
@@ -1120,7 +1120,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// <summary>
     /// This is a private worker function splits out the
     /// accelerator keys from the menu and builds a two
-    /// dimentional array with the first access containing the
+    /// dimensional array with the first access containing the
     /// accelerator and the second containing the label string
     /// with the & removed.
     /// </summary>

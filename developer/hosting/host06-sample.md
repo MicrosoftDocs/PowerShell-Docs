@@ -70,7 +70,7 @@ namespace Microsoft.Samples.PowerShell.Host
         internal ConsoleReadLine consoleReadLine = new ConsoleReadLine();
 
     /// <summary>
-    /// Holds a reference to the runspace for this interpeter.
+    /// Holds a reference to the runspace for this interpreter.
     /// </summary>
     internal Runspace myRunSpace;
 
@@ -1119,7 +1119,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// <summary>
     /// This is a private worker function splits out the
     /// accelerator keys from the menu and builds a two
-    /// dimentional array with the first access containing the
+    /// dimensional array with the first access containing the
     /// accelerator and the second containing the label string
     /// with the & removed.
     /// </summary>
@@ -1522,7 +1522,7 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// The End key was enetered..
+    /// The End key was entered..
     /// </summary>
     private void OnEnd()
     {
@@ -1531,7 +1531,7 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// The Home key was eneterd.
+    /// The Home key was entered.
     /// </summary>
     private void OnHome()
     {
@@ -1540,7 +1540,7 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// The Escape key was enetered.
+    /// The Escape key was entered.
     /// </summary>
     private void OnEscape()
     {
@@ -1561,12 +1561,12 @@ namespace Microsoft.Samples.PowerShell.Host
         // Move back to the start of the previous word.
         if (this.buffer.Length > 0 && this.current != 0)
         {
-          bool nonLetter = IsSeperator(this.buffer[this.current - 1]);
+          bool nonLetter = IsSeparator(this.buffer[this.current - 1]);
           while (this.current > 0 && (this.current - 1 < this.buffer.Length))
           {
             this.MoveLeft();
 
-            if (IsSeperator(this.buffer[this.current]) != nonLetter)
+            if (IsSeparator(this.buffer[this.current]) != nonLetter)
             {
               if (!nonLetter)
               {
@@ -1586,12 +1586,12 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// Determines if a character is a seperator.
+    /// Determines if a character is a separator.
     /// </summary>
     /// <param name="ch">Character to investigate.</param>
     /// <returns>A value that indicates whether the character
-    /// is a seperator.</returns>
-    private static bool IsSeperator(char ch)
+    /// is a separator.</returns>
+    private static bool IsSeparator(char ch)
     {
       return !Char.IsLetter(ch);
     }
@@ -1608,7 +1608,7 @@ namespace Microsoft.Samples.PowerShell.Host
         // Move to the next word.
         if (this.buffer.Length != 0 && this.current < this.buffer.Length)
         {
-          bool nonLetter = IsSeperator(this.buffer[this.current]);
+          bool nonLetter = IsSeparator(this.buffer[this.current]);
           while (this.current < this.buffer.Length)
           {
             this.MoveRight();
@@ -1618,7 +1618,7 @@ namespace Microsoft.Samples.PowerShell.Host
               break;
             }
 
-            if (IsSeperator(this.buffer[this.current]) != nonLetter)
+            if (IsSeparator(this.buffer[this.current]) != nonLetter)
             {
               if (nonLetter)
               {
