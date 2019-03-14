@@ -7,7 +7,7 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords:
-  - "wildcards [PowerShell Programer's Guide]"
+  - "wildcards [PowerShell Programmer's Guide]"
   - "parameters [PowerShell Programmer's Guide], wildcards"
 ms.assetid: 9b26e1e9-9350-4a5a-aad5-ddcece658d93
 caps.latest.revision: 12
