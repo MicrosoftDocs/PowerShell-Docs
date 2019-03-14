@@ -70,7 +70,7 @@ namespace Microsoft.Samples.PowerShell.Host
         internal ConsoleReadLine consoleReadLine = new ConsoleReadLine();
 
     /// <summary>
-    /// Holds a reference to the runspace for this interpeter.
+    /// Holds a reference to the runspace for this interpreter.
     /// </summary>
     internal Runspace myRunSpace;
 
