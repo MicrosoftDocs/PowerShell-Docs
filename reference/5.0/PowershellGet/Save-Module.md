@@ -29,13 +29,13 @@ Save-Module [-Name] <String[]> [-MinimumVersion <Version>] [-MaximumVersion <Ver
  [<CommonParameters>]
 ```
 
-### InputOjectAndLiteralPathParameterSet
+### InputObjectAndLiteralPathParameterSet
 ```
 Save-Module [-InputObject] <PSObject[]> -LiteralPath <String> [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### InputOjectAndPathParameterSet
+### InputObjectAndPathParameterSet
 ```
 Save-Module [-InputObject] <PSObject[]> -Path <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -133,7 +133,7 @@ Specifies a package by using the module's SoftwareID object, which is shown in t
 
 ```yaml
 Type: PSObject[]
-Parameter Sets: InputOjectAndLiteralPathParameterSet, InputOjectAndPathParameterSet
+Parameter Sets: InputObjectAndLiteralPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
 Required: True
@@ -152,7 +152,7 @@ Windows PowerShell does not interpret any characters that are enclosed in single
 
 ```yaml
 Type: String
-Parameter Sets: NameAndLiteralPathParameterSet, InputOjectAndLiteralPathParameterSet
+Parameter Sets: NameAndLiteralPathParameterSet, InputObjectAndLiteralPathParameterSet
 Aliases:
 
 Required: True
@@ -217,7 +217,7 @@ The parameter accepts piped values from Get-Module.
 
 ```yaml
 Type: String
-Parameter Sets: NameAndPathParameterSet, InputOjectAndPathParameterSet
+Parameter Sets: NameAndPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
 Required: True

@@ -32,13 +32,13 @@ Save-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <Stri
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### InputOjectAndLiteralPathParameterSet
+### InputObjectAndLiteralPathParameterSet
 ```
 Save-Script [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### InputOjectAndPathParameterSet
+### InputObjectAndPathParameterSet
 ```
 Save-Script [-InputObject] <PSObject[]> -Path <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -128,7 +128,7 @@ Specifies a package by using the script's SoftwareID object, which is shown in t
 
 ```yaml
 Type: PSObject[]
-Parameter Sets: InputOjectAndLiteralPathParameterSet, InputOjectAndPathParameterSet
+Parameter Sets: InputObjectAndLiteralPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
 Required: True
@@ -147,7 +147,7 @@ Single quotation marks tell PowerShell not to interpret any characters as escape
 
 ```yaml
 Type: String
-Parameter Sets: NameAndLiteralPathParameterSet, InputOjectAndLiteralPathParameterSet
+Parameter Sets: NameAndLiteralPathParameterSet, InputObjectAndLiteralPathParameterSet
 Aliases:
 
 Required: True
@@ -211,7 +211,7 @@ The default location is the current directory (.).
 
 ```yaml
 Type: String
-Parameter Sets: NameAndPathParameterSet, InputOjectAndPathParameterSet
+Parameter Sets: NameAndPathParameterSet, InputObjectAndPathParameterSet
 Aliases:
 
 Required: True
