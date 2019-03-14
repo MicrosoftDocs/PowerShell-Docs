@@ -43,7 +43,7 @@ This command gets information about all the configurations that were run on the 
 
 ### Example 3: Get information on the configuration run on a remote computer
 ```
-PS C:\> Get-DscConfigurationStaus -CimSession "Server01"
+PS C:\> Get-DscConfigurationStatus -CimSession "Server01"
 ```
 
 This command gets the configuration run details of the remote computer named Server01.
