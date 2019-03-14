@@ -77,7 +77,7 @@ namespace Microsoft.Samples.PowerShell.Host
       this.myRunSpace.Open();
     }
 
-    /// Gets or sets a value indicating whether the host applcation
+    /// Gets or sets a value indicating whether the host application
     /// should exit.
     public bool ShouldExit
     {
