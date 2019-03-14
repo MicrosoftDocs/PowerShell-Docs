@@ -101,7 +101,7 @@ When you name cmdlets, do not use any of the following special characters.
 |%|percent sign|
 |+|plus sign|
 |=|equals sign|
-|~|tilda|
+|~|tilde|
 
 ### Parameters Names that cannot be Used (RD03)
 
