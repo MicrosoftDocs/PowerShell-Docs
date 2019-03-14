@@ -105,7 +105,7 @@ Defines what data is displayed by the custom control view and how it is displaye
 [DefaultSettings Element (Format)](./defaultsettings-element-format.md)
 Defines common settings that apply to all the views of the formatting file. Common settings include displaying errors, wrapping text in tables, defining how collections are expanded, and more.
 
-[DisplayError Element (Frmat)](./displayerror-element-format.md)
+[DisplayError Element (Format)](./displayerror-element-format.md)
 Specifies that the string #ERR is displayed when an error occurs displaying a piece of data.
 
 [EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
