@@ -33,7 +33,7 @@ PS C:\> Update-Script -Name "Fabrikam-Script" -RequiredVersion 1.5
 PS C:\> Get-InstalledScript -Name "Fabrikam-Script"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-1.5        Fabrikam-Script                     Script     local1               Description for the Fabrkiam-Script script
+1.5        Fabrikam-Script                     Script     local1               Description for the Fabrikam-Script script
 ```
 
 The first command updates the script Fabrikam-Script to version 1.5.
