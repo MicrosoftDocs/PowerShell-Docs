@@ -30,7 +30,7 @@ To get events in the event queue, use the Get-Event cmdlet.
 You can use the parameters of Register-ObjectEvent to specify property values of the events that can help you to identify the event in the queue.
 You can also use the Action parameter to specify actions to take when a subscribed event is raised and the Forward parameter to send remote events to the event queue in the local session.
 
-When you subscribe to an event, an event subcriber is added to your session.
+When you subscribe to an event, an event subscriber is added to your session.
 To get the event subscribers in the session, use the Get-EventSubscriber cmdlet.
 To cancel the subscription, use the Unregister-Event cmdlet, which deletes the event subscriber from the session.
 
@@ -246,7 +246,7 @@ Specifies a name that you select for the subscription.
 The name that you select must be unique in the current session.
 The default value is the GUID that Windows PowerShell assigns.
 
-The value of this parameter appears in the value of the SourceIdentifier property of the subcriber object and of all event objects associated with this subscription.
+The value of this parameter appears in the value of the SourceIdentifier property of the subscriber object and of all event objects associated with this subscription.
 
 ```yaml
 Type: String

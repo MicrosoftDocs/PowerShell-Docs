@@ -275,7 +275,7 @@ Specifies a name that you select for the subscription.
 The name that you select must be unique in the current session.
 The default value is the GUID that Windows PowerShell assigns.
 
-The value of this parameter appears in the value of the SourceIdentifier property of the subcriber object and of all event objects associated with this subscription.
+The value of this parameter appears in the value of the SourceIdentifier property of the subscriber object and of all event objects associated with this subscription.
 
 ```yaml
 Type: String
