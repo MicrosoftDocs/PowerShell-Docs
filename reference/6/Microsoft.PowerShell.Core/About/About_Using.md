@@ -30,7 +30,7 @@ Syntax #2, to reference PowerShell modules:
 using module <module-name>
 ```
 
-**Note**: The `using` statetement, for modules, is intended to surface the
+**Note**: The `using` statement, for modules, is intended to surface the
 classes in the module. If the module isn't loaded, the `using` fails.
 
 ## Examples
