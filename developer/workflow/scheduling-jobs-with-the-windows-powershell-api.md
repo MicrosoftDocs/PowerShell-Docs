@@ -190,7 +190,7 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // Wait for Task Scheduler to run the PowerShell job.
                 // This should happen in 20 seconds and then the job takes about 5 seconds to run.
                 // If PowerShell job task doesn't run try increasing the trigger time in the
-                // ScheduledJobTrigger object. 
+                // ScheduledJobTrigger object.
                 // You can run this task manually from the Task Scheduler UI.
                 for (int count = 1; count < 31; ++count)
                 {
@@ -207,8 +207,8 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // job store and the directory location is the current user local app
                 // data ($env:LOCALAPPDATA).
                 // This job store can be accessed through the ScheduledJobSourceAdapter class.
-                ScheduledJobSourceAdapter schedJobSourceAdpater = new ScheduledJobSourceAdapter();
-                IList<Job2> jobRuns = schedJobSourceAdpater.GetJobs();
+                ScheduledJobSourceAdapter schedJobSourceAdapter = new ScheduledJobSourceAdapter();
+                IList<Job2> jobRuns = schedJobSourceAdapter.GetJobs();
                 foreach (var jobRun in jobRuns)
                 {
                     // Check for jobs in finished state.

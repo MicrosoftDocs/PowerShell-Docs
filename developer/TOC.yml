@@ -877,8 +877,8 @@
         href: ./format/wideitem-element-for-widecontrol-format.md
       - name: Width Element for TableColumnHeader for TableControl (Format)
         href: ./format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
-      - name: Wrap Element for TableRowEntry for TableContrl  (Format)
-        href: ./format/wrap-element-for-tablerowentry-for-tablecontrl-format.md
+      - name: Wrap Element for TableRowEntry for TableControl  (Format)
+        href: ./format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
       - name: WrapTables Element (Format)
         href: ./format/wraptables-element-format.md
   - name: Writing Comment-Based Help Topics

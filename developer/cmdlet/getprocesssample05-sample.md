@@ -242,7 +242,7 @@ namespace Microsoft.Samples.PowerShell.Commands
                  WriteVerbose("Finding matches for process name \""
                     + pattern + "\".");
 
-                 // WildCard serach on the available processes
+                 // WildCard search on the available processes
                  WildcardPattern wildcard =
                     new WildcardPattern(
                         pattern,
@@ -367,7 +367,7 @@ namespace Microsoft.Samples.PowerShell.Commands
       /// <summary>
       /// Retrieves the list of all processes matching the Id
       /// parameter and generates a nonterminating error for
-      /// each specified process identofier which is not found.
+      /// each specified process identifier which is not found.
       /// </summary>
       /// <returns>
       /// An array of processes that match the given identifier.

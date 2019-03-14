@@ -105,7 +105,7 @@ Defines what data is displayed by the custom control view and how it is displaye
 [DefaultSettings Element (Format)](./defaultsettings-element-format.md)
 Defines common settings that apply to all the views of the formatting file. Common settings include displaying errors, wrapping text in tables, defining how collections are expanded, and more.
 
-[DisplayError Element (Frmat)](./displayerror-element-format.md)
+[DisplayError Element (Format)](./displayerror-element-format.md)
 Specifies that the string #ERR is displayed when an error occurs displaying a piece of data.
 
 [EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
@@ -624,7 +624,7 @@ Defines the property or script whose value is displayed.
 [Width Element (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)
 Defines the width (in characters) of a column.
 
-[Wrap Element (Format)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)
+[Wrap Element (Format)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)
 Specifies that text that exceeds the column width is displayed on the next line.
 
 [WrapTables Element (Format)](./wraptables-element-format.md)
