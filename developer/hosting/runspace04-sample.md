@@ -29,7 +29,7 @@ This sample demonstrates the following.
 
 - Invoking the commands synchronously.
 
-- Using [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the commands.
+- Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the commands.
 
 - Retrieving and displaying error records that were generated during the running of the commands.
 
