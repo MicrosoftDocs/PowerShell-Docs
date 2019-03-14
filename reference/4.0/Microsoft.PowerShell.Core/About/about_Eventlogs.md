@@ -65,7 +65,7 @@ Get-EventLog -List
 ```
 
 You can also use the `Get-WmiObject` cmdlet to use the event-related Windows
-Management Instumentation (WMI) classes to examine the event log. For example,
+Management Instrumentation (WMI) classes to examine the event log. For example,
 to view all the properties of the event log file, type:
 
 ```powershell
