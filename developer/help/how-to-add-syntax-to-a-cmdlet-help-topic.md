@@ -106,7 +106,7 @@ Typically, parameter values that are placeholders are required and parameter val
 
    Abbreviate types as long as their meaning is clear, such as "string" for System.String and "int" for System.Int32.
 
-   List all values of enumerations, such as the -type parameter in the previous example, wich can be set to "basic" or "advanced".
+   List all values of enumerations, such as the -type parameter in the previous example, which can be set to "basic" or "advanced".
 
    Switch parameters, such as -list in the previous example, do not have values.
 

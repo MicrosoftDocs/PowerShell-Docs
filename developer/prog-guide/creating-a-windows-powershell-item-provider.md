@@ -47,7 +47,7 @@ The following list contains the sections in this topic. If you are unfamiliar wi
 
 - [Clearing an Item](#Clearing-an-Item)
 
-- [Attaching Dynamic Parameters to the Cler-Item Cmdlet](#Retrieve-Dynamic-Parameters-for-ClearItem)
+- [Attaching Dynamic Parameters to the Clear-Item Cmdlet](#Retrieve-Dynamic-Parameters-for-ClearItem)
 
 - [Performing a Default Action for an Item](#Performing-a-Default-Action-for-an-Item)
 
