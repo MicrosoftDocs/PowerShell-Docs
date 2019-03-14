@@ -86,7 +86,7 @@ Id Name            ComputerName    Type          State         Availability
 
 In this example, we identify an available runspace using the `Name` parameter and we store the return object to a new
 variable named `$activeRunspace`.  The second example, we call `Get-Runspace` with the `InstanceId` parameter and pass
-in the `$activeRunspace` variable but we specify the `InstanceId` property on our reuturn object.
+in the `$activeRunspace` variable but we specify the `InstanceId` property on our return object.
 
 ## PARAMETERS
 
