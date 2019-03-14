@@ -520,7 +520,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// Writes a line of characters to the output display of the host
     /// with foreground and background colors and appends a newline (carriage return).
     /// </summary>
-    /// <param name="foregroundColor">The forground color of the display. </param>
+    /// <param name="foregroundColor">The foreground color of the display. </param>
     /// <param name="backgroundColor">The background color of the display. </param>
     /// <param name="value">The line to be written.</param>
     public override void WriteLine(ConsoleColor foregroundColor, ConsoleColor backgroundColor, string value)
@@ -623,7 +623,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
     /// <summary>
     /// Gets or sets the foreground color of the displayed text.
-    /// This maps to the corresponding Console.ForgroundColor property.
+    /// This maps to the corresponding Console.ForegroundColor property.
     /// </summary>
     public override ConsoleColor ForegroundColor
     {
