@@ -59,7 +59,7 @@ To run a Parallel script block on items in a collection, use the ForEach or ForE
 
 
 ## SEE ALSO
-"Writing a Script Workflow" (http:\/\/go.microsoft.com\/fwlink\/?LinkID\=262872)
+[Writing a Script Workflow](http://go.microsoft.com/fwlink/?LinkID=262872)
 
 about_ForEach
 
