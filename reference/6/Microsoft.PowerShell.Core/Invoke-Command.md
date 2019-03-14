@@ -472,7 +472,7 @@ PS C:\> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix 
 
 This example shows how to create and use a *SessionOption* parameter.
 
-The first command uses the **New-PSSessionOption** cmdlet to create session options. These options cause the remote end not to verify the Certificate Authority, Cannonical Name and Revocation Lists while evaluating the incoming HTTPS connection (disabling these checks is convenient for troubleshooting, but obviously not secure).
+The first command uses the **New-PSSessionOption** cmdlet to create session options. These options cause the remote end not to verify the Certificate Authority, Canonical Name and Revocation Lists while evaluating the incoming HTTPS connection (disabling these checks is convenient for troubleshooting, but obviously not secure).
 It saves the resulting SessionOption object in the $so parameter.
 
 The second command uses the **Invoke-Command** cmdlet to run a Get-HotFix command remotely.
