@@ -25,7 +25,7 @@ The **New-ISESnippet** cmdlet creates a reusable text "snippet" for Windows Powe
 You can use snippets to add text to the Script pane or Command pane in Windows PowerShell ISE.
 This cmdlet is available only in Windows PowerShell ISE.
 
-Beginning in Windows PowerShell 3.0, Windows PowerShell ISEincludes a collection of built-in snippets.
+Beginning in Windows PowerShell 3.0, Windows PowerShell ISE includes a collection of built-in snippets.
 The **New-ISESnippet** cmdlet lets you create your own snippets to add to the built-in collection.
 You can view, change, add, delete, and share snippet files and include them in Windows PowerShell modules.
 To see snippets in Windows PowerShell ISE, from the Edit menu, select Start Snippets or press CTRL+J.

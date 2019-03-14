@@ -1131,7 +1131,7 @@ command.
 
 Read a character and search forward for the next occurrence of that character.
 If an argument is specified, search forward (or backward if negative) for the
-nth occurence.
+nth occurrence.
 
 - Cmd: `<F3>`
 - Emacs: `<Ctrl+]>`
@@ -1142,7 +1142,7 @@ nth occurence.
 
 Read a character and search backward for the next occurrence of that character. If an
 argument is specified, search backward (or forward if negative) for the nth
-occurence.
+occurrence.
 
 - Cmd: `<Shift+F3>`
 - Emacs: `<Ctrl+Alt+]>`

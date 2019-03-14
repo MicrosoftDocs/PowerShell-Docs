@@ -124,7 +124,7 @@ This value allows the remote computer to act as a delegate.
 Specifies servers to which client credentials are delegated.
 Specify fully qualified domain names.
 
-If the *Role* parameter is Client, you must specify this paremter.
+If the *Role* parameter is Client, you must specify this parameter.
 
 If *Role* is Server, do not specify this parameter.
 

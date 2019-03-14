@@ -33,9 +33,9 @@ The **Find-Script** cmdlet finds a specified script in registered repositories.
 PS C:\> Find-Script
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-2.5        Fabrkiam-ClientScript               Script     LocalRepo1           Description for the Fabrkiam-ClientScript script
-2.5        Fabrkiam-Script                     Script     LocalRepo1           Description for the Fabrkiam-Script script
-2.5        Fabrkiam-ServerScript               Script     LocalRepo1           Description for the Fabrkiam-ServerScript script
+2.5        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
+2.5        Fabrikam-Script                     Script     LocalRepo1           Description for the Fabrikam-Script script
+2.5        Fabrikam-ServerScript               Script     LocalRepo1           Description for the Fabrikam-ServerScript script
 2.5        Required-Script1                    Script     LocalRepo1           Description for the Required-Script1 script
 2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
 2.5        Required-Script3                    Script     LocalRepo1           Description for the Required-Script3 script
@@ -133,7 +133,7 @@ This command finds a script and it dependencies.
 PS C:\> Find-Script -Tag "Tag1" -Repository "LocalRepo1"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-1.0        Fabrkiam-ClientScript               Script     LocalRepo1           Description for the Fabrkiam-ClientScript script
+1.0        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
 ```
 
 This command finds scripts that have the tag Tag1 in the LocalRepo1 repository
@@ -153,8 +153,8 @@ This command finds a script that contains the specified command name.
 PS C:\> Find-Script -Includes "Workflow" -Repository "LocalRepo1"
 Version    Name                                Type       Repository           Description
 -------    ----                                ----       ----------           -----------
-2.5        Fabrkiam-ClientScript               Script     LocalRepo1           Description for the Fabrkiam-ClientScript script
-1.0        Fabrkiam-Script                     Script     LocalRepo1           Description for the Fabrkiam-Script script
+2.5        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
+1.0        Fabrikam-Script                     Script     LocalRepo1           Description for the Fabrikam-Script script
 ```
 
 This command finds workflow scripts in the LocalRepo1 repository.
