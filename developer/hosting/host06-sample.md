@@ -709,7 +709,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// <param name="caption">Text that proceeds (a title) the choices.</param>
     /// <param name="message">A message that describes the choice.</param>
     /// <param name="choices">A collection of ChoiceDescription objects that
-    /// describ each choice.</param>
+    /// describe each choice.</param>
     /// <param name="defaultChoice">The index of the label in the Choices
     /// parameter collection. To indicate no default choice, set to -1.</param>
     /// <returns>The index of the Choices parameter collection element that
@@ -783,7 +783,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// <param name="caption">Text that proceeds (a title) the choices.</param>
     /// <param name="message">A message that describes the choice.</param>
     /// <param name="choices">A collection of ChoiceDescription objects that
-    /// describ each choice.</param>
+    /// describe each choice.</param>
     /// <param name="defaultChoices">The index of the label in the Choices
     /// parameter collection. To indicate no default choice, set to -1.</param>
     /// <returns>The index of the Choices parameter collection element that
