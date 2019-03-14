@@ -101,7 +101,7 @@ When you name cmdlets, do not use any of the following special characters.
 |%|percent sign|
 |+|plus sign|
 |=|equals sign|
-|~|tilda|
+|~|tilde|
 
 ### Parameters Names that cannot be Used (RD03)
 
@@ -209,7 +209,7 @@ Create a Windows PowerShell module to package and deploy your cmdlets. Support f
 
 ## See Also
 
-[Strongly Encouraged Developement Guidelines](./strongly-encouraged-development-guidelines.md)
+[Strongly Encouraged Development Guidelines](./strongly-encouraged-development-guidelines.md)
 
 [Advisory Development Guidelines](./advisory-development-guidelines.md)
 

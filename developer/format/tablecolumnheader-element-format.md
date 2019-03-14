@@ -81,7 +81,7 @@ The following example shows two `TableColumnHeader` elements. The first element 
 
 ## See Also
 
-[Alignment Element for TableColumnHeader for TableContrl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Alignment Element for TableColumnHeader for TableControl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [Creating a Table View](./creating-a-table-view.md)
 
