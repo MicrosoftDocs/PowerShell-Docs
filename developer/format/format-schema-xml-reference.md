@@ -624,7 +624,7 @@ Defines the property or script whose value is displayed.
 [Width Element (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)
 Defines the width (in characters) of a column.
 
-[Wrap Element (Format)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)
+[Wrap Element (Format)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)
 Specifies that text that exceeds the column width is displayed on the next line.
 
 [WrapTables Element (Format)](./wraptables-element-format.md)
