@@ -355,7 +355,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
            WriteVerbose(message);
 
-           // If the PassThru prameter is specified, return the terminated
+           // If the PassThru parameter is specified, return the terminated
            // process to the pipeline.
            if (passThru)
            {
