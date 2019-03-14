@@ -61,7 +61,7 @@ This sample demonstrates the following.
 
 This sample shows how to declare parameter aliases and support wildcards.
 
-```
+```csharp
 using System;
 using System.Diagnostics;
 using System.Collections;
@@ -152,7 +152,7 @@ namespace Microsoft.Samples.PowerShell.Commands
            catch (InvalidOperationException ioe)
            {
                base.ThrowTerminatingError(new ErrorRecord(ioe,
-                         "UnableToAcessProcessList",
+                         "UnableToAccessProcessList",
                              ErrorCategory.InvalidOperation,
                                  null));
            }
@@ -243,7 +243,7 @@ namespace Microsoft.Samples.PowerShell.Commands
            string message = null;
 
            // Confirm the operation first.
-           // This is always false if the WhatIf parametr is specified.
+           // This is always false if the WhatIf parameter is specified.
            if (!ShouldProcess(string.Format(CultureInfo.CurrentCulture,
                     "{0} ({1})", processName, process.Id)))
            {
