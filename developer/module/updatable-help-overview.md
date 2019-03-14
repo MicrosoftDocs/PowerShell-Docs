@@ -25,7 +25,9 @@ Updatable Help is fully supported by all Windows PowerShell modules in Windows®
 
 Updatable Help includes the following features.
 
-- The [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet, which determines whether users have the newest help files for a module and, if not, downloads the newest help files from the Internet, unpacks them, and installs them in the correct module subdirectories on the user's computer. Users can use the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet to view the newly-installed help topics immediately. They do not need to restart Windows PowerShell.
+- The [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet, which determines whether users have the newest help files for a module and, if not, downloads the newest help files from the Internet, unpacks them, and installs them in the correct module subdirectories on the user's computer.
+  Users can use the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet to view the newly-installed help topics immediately.
+  They do not need to restart PowerShell.
 
 - The [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlet, which downloads the newest help files from the Internet and saves them in a file system directory. Users can use the `Update-Help` cmdlet to get help files from the file system directory, and unpack and install them in the module subdirectories on the user's computer. The `Save-Help` cmdlet is designed for users who have limited or no Internet access and for enterprises who prefer to limit Internet access.
 
