@@ -89,7 +89,7 @@ The following XML elements are used to define a list view:
 
 2. The [TableColumnHeader](./tablecolumnheader-element-format.md) element defines what is displayed at the top of a column of the table. Specify these elements in the order that you want the headers displayed.
 
-   There is no limit to the number of these element that you can use, but the number of [TableColumnHeader](./tablecolumnheader-element-format.md) elements in your table view must equal the number of [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) elements that you use.
+   There is no limit to the number of these element that you can use, but the number of [TableColumnHeader](./tablecolumnheader-element-format.md) elements in your table view must equal the number of [TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) elements that you use.
 
 3. The [Label](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) element specifies the text that is displayed. This element is optional.
 
