@@ -42,7 +42,7 @@ on selected objects in a pipeline.
 
 Contains an array of values for undeclared parameters that are passed to a
 function, script, or script block. When you create a function, you can declare
-the parameters by using the `pararm` keyword or by adding a comma-separated list
+the parameters by using the `param` keyword or by adding a comma-separated list
 of parameters in parentheses after the function name.
 
 In an event action, the `$Args` variable contains objects that represent the
