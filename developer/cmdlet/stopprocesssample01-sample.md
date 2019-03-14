@@ -183,7 +183,7 @@ namespace Microsoft.Samples.PowerShell.Commands
                    }
 
                    // Make sure that the user really wants to stop a critical
-                   // process that culd possibly stop the computer.
+                   // process that could possibly stop the computer.
                    bool criticalProcess =
                        criticalProcessNames.Contains(processName.ToLower(CultureInfo.CurrentCulture));
 
