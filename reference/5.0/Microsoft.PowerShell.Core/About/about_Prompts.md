@@ -71,8 +71,7 @@ For example:
 ```powershell
 PS C:\> (Get-Command Prompt).ScriptBlock
 
-"PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPr
-omptLevel + 1)) "
+"PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) "
 # .Link
 # http://go.microsoft.com/fwlink/?LinkID=225750
 # .ExternalHelp System.Management.Automation.dll-help.xml
