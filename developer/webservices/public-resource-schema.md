@@ -15,7 +15,7 @@ Management OData uses MOF to define resources and their properties. The properti
 
 ## Defining a resource
 
-Each resource corresponds to an object returned by a Windows PowerShell cmdlet. In the publc resource MOF file, you define a resource by declaring a class. The class consists of properties that correspond to the properties of the object. For example, in the following example, the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) class is represented by the following MOF.
+Each resource corresponds to an object returned by a Windows PowerShell cmdlet. In the public resource MOF file, you define a resource by declaring a class. The class consists of properties that correspond to the properties of the object. For example, in the following example, the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) class is represented by the following MOF.
 
 ```csharp
 class PswsTest_Process
@@ -49,7 +49,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-To declare an entity property as a complex type, you declare it as a `string` type with the `EmbeddedInstance` qualifier, including the name of the complex type. The following example hshows the declaration of a property of the `PswsTest_ProcessModule` type declared in the previous example.
+To declare an entity property as a complex type, you declare it as a `string` type with the `EmbeddedInstance` qualifier, including the name of the complex type. The following example shows the declaration of a property of the `PswsTest_ProcessModule` type declared in the previous example.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -57,7 +57,7 @@ To declare an entity property as a complex type, you declare it as a `string` ty
 
 ### Associating entities
 
-You can associate two entities by using the Association and AssocationClass qualifiers. For more information, see [Associating Management OData Entities](./associating-management-odata-entities.md).
+You can associate two entities by using the Association and AssociationClass qualifiers. For more information, see [Associating Management OData Entities](./associating-management-odata-entities.md).
 
 ### Derived types
 
@@ -66,17 +66,16 @@ You can derive a type from another type. The derived type inherits all of the pr
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```
