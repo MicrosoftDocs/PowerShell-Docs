@@ -261,7 +261,7 @@ namespace Microsoft.Samples.PowerShell.Commands
                                 processName);
 
                // It is possible that ProcessRecord is called multiple
-               // when objects are recieved as inputs from a pipeline.
+               // when objects are received as inputs from a pipeline.
                // So, to retain YesToAll and NoToAll input that the
                // user may enter across mutilple calls to this
                // function, they are stored as private members of the
