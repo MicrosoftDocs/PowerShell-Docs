@@ -75,7 +75,7 @@ PS C:\> "{'name': 'Ashley', 'age': 25}" | Test-Json -schema $schema
 True
 ```
 
-This Command takes a string containing a JSON schema and compares it to an input string.  Since the input string conforms to the schema desribed in the -schema argument the cmdlet returns `$True`.
+This Command takes a string containing a JSON schema and compares it to an input string.  Since the input string conforms to the schema described in the -schema argument the cmdlet returns `$True`.
 
 For more information, see [JSON Schema](https://json-schema.org/)
 
