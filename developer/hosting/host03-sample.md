@@ -56,7 +56,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// Holds the instance of the PSHost implementation for this interpreter.
     private MyHost myHost;
 
-    /// Holds the runspace for this interpeter.
+    /// Holds the runspace for this interpreter.
     private Runspace myRunSpace;
 
     /// Holds a reference to the currently executing pipeline so it can be
@@ -366,7 +366,7 @@ namespace Microsoft.Samples.PowerShell.Host
     private MyHost myHost;
 
     /// <summary>
-    /// Holds the runspace for this interpeter.
+    /// Holds the runspace for this interpreter.
     /// </summary>
     private Runspace myRunSpace;
 
