@@ -285,7 +285,7 @@ Name                           Value
 ```
 
 It is important to note that the `$Matches` hashtable will only contain the
-first occurence of any matching pattern.
+first occurrence of any matching pattern.
 
 ```powershell
 PS> "Banana" -match "na"
