@@ -47,7 +47,7 @@ You can also define your own exceptions for issues specific to your situation, o
 
 ## Error Records
 
-Windows PowerShell describes a nonterminating error condition through the use of [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objects. Each [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object provides error category information, an optional target object, and details about the error condition.
+Windows PowerShell describes a nonterminating error condition through the use of [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objects. Each [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object provides error category information, an optional target object, and details about the error condition.
 
 ### Error Identifiers
 
