@@ -94,10 +94,10 @@ The **Force** parameter gets hidden files, which would otherwise be excluded.
 
 The pipeline operator (|) sends the objects representing the retrieved files to the `Set-Acl` cmdlet, which applies the security descriptor in the **AclObject** parameter to all of the files in the pipeline.
 
-In practice, it is best to use the **Whatif** parameter with all `Set-Acl` commands that can affect more than one item.
+In practice, it is best to use the **WhatIf** parameter with all `Set-Acl` commands that can affect more than one item.
 In this case, the second command in the pipeline would be "`Set-Acl -AclObject $NewAcl -WhatIf`".
 This command lists the files that would be affected by the command.
-After reviewing the result, you can run the command again without the **Whatif** parameter.
+After reviewing the result, you can run the command again without the **WhatIf** parameter.
 
 ## PARAMETERS
 
