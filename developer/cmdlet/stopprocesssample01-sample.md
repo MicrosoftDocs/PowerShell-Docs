@@ -204,7 +204,7 @@ namespace Microsoft.Samples.PowerShell.Commands
                        {
                            continue;
                        }
-                   } // if (cricicalProcess...
+                   } // if (criticalProcess...
 
                    // Stop the named process.
                    try
