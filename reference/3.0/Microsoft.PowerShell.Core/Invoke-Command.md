@@ -369,7 +369,7 @@ PS> Invoke-Command -ConnectionUri https://ps.exchangelabs.com/PowerShell -Script
 
 This command shows how to use the **AllowRedirection** and **SessionOption** parameters to manage URI redirection in a remote command.
 
-The first command uses the New-PSSessionOption cmdlet to create a **PSSessionOpption** object that it saves in the $Max variable.
+The first command uses the New-PSSessionOption cmdlet to create a **PSSessionOption** object that it saves in the $Max variable.
 The command uses the **MaximumRedirection** parameter to set the **MaximumConnectionRedirectionCount** property of the **PSSessionOption** object to 1.
 
 The second command uses the **Invoke-Command** cmdlet to run a **Get-Mailbox** command on a remote server running Microsoft Exchange Server.
@@ -387,7 +387,7 @@ PS> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-Hotfix } -S
 
 This example shows how to create and use a SessionOption parameter.
 
-The first command uses the New-PSSessionOption cmdlet to create session options. These options cause the remote end not to verify the Certificate Authority, Cannonical Name and Revocation Lists while evaluating the incoming HTTPS connection (disabling these checks is convenient for troubleshooting, but obviously not secure).
+The first command uses the New-PSSessionOption cmdlet to create session options. These options cause the remote end not to verify the Certificate Authority, Canonical Name and Revocation Lists while evaluating the incoming HTTPS connection (disabling these checks is convenient for troubleshooting, but obviously not secure).
 It saves the resulting **SessionOption** object in the $so parameter.
 
 The second command uses the **Invoke-Command** cmdlet to run a Get-HotFix command remotely.
