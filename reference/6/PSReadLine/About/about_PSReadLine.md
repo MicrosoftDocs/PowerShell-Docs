@@ -380,7 +380,7 @@ space as delimiters.
 
 ### ViDeleteBrace
 
-Find the matching brace, paren, or square bracket and delete all contents
+Find the matching brace, parenthesis, or square bracket and delete all contents
 within, including the brace.
 
 - Vi command mode: `<d,%>`
@@ -660,7 +660,7 @@ of characters.
 
 ### GotoBrace
 
-Go to the matching brace, paren, or square bracket.
+Go to the matching brace, parenthesis, or square bracket.
 
 - Cmd: `<Ctrl+]>`
 - Vi insert mode: `<Ctrl+]>`
