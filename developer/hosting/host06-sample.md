@@ -191,7 +191,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// A helper class that builds and executes a pipeline that writes
     /// to the default output path. Any exceptions that are thrown are
     /// just passed to the caller. Since all output goes to the default
-    /// outter, this method does not return anything.
+    /// outputter, this method does not return anything.
     /// </summary>
     /// <param name="cmd">The script to run.</param>
     /// <param name="input">Any input arguments to pass to the script.
