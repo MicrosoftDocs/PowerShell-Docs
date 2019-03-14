@@ -1,5 +1,5 @@
 ---
-title: "TableRowEntry Element for TableRowEntroes for TableControl (Format) | Microsoft Docs"
+title: "TableRowEntry Element for TableRowEntries for TableControl (Format) | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/13/2016"
 ms.reviewer: ""
@@ -9,7 +9,7 @@ ms.topic: "article"
 ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
 caps.latest.revision: 10
 ---
-# TableRowEntry Element for TableRowEntroes for TableControl (Format)
+# TableRowEntry Element for TableRowEntries for TableControl (Format)
 
 Defines the data that is displayed in a row of the table.
 
@@ -87,8 +87,6 @@ The following example shows a `TableRowEntry` element that defines a row that di
 [TableColumnItems Element for TableRowEntry for TableControl (Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
 
 [TableRowEntries Element for TableControl (Format)](./tablerowentries-element-for-tablecontrol-format.md)
-
-[TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
 
 [Wrap Element for TableRowEntry for TableControl (Format)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)
 
