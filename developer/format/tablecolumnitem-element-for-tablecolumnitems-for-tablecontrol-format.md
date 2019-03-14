@@ -28,7 +28,7 @@ TableColumnItem Element for TableColumnItems for TableControl (Format)
 <TableColumnItem>
   <Alignment>Left, Right, or Center</Alignment>
   <PropertyName>Nameof.NetProperty</PropertyName>
-  <SciptBlock>ScriptToEvaluate</ScriptBlock>
+  <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 </TableColumnItem>
 ```
 
