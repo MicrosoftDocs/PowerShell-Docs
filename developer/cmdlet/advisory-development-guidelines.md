@@ -111,7 +111,7 @@ Built-in rehydratable types:
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 
