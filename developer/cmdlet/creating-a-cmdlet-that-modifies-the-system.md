@@ -196,7 +196,7 @@ protected override void ProcessRecord()
           // It is possible that ProcessRecord is called multiple times
           // when the Name parameter reveives objects as input from the
           // pipeline. So to retain YesToAll and NoToAll input that the
-          // user may enter across mutilple calls to ProcessRecord, this
+          // user may enter across multiple calls to ProcessRecord, this
           // information is stored as private members of the cmdlet.
           if (!ShouldContinue(message, "Warning!",
                               ref yesToAll,
@@ -273,7 +273,7 @@ if (criticalProcess &&!force)
   // It is possible that ProcessRecord is called multiple times
   // when the Name parameter reveives objects as input from the
   // pipeline. So to retain YesToAll and NoToAll input that the
-  // user may enter across mutilple calls to ProcessRecord, this
+  // user may enter across multiple calls to ProcessRecord, this
   // information is stored as private members of the cmdlet.
   if (!ShouldContinue(message, "Warning!",
                       ref yesToAll,
