@@ -528,7 +528,7 @@ Defines the headers for the columns of a table.
 [TableRowEntries Element (Format)](./tablerowentries-element-for-tablecontrol-format.md)
 Defines the rows of the table.
 
-[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 Defines the data that is displayed in a row of the table.
 
 [Text Element for CustomItem for Controls for Configuration (Format)](./text-element-for-customitem-for-controls-for-configuration-format.md)
