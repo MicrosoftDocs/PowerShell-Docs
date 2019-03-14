@@ -77,7 +77,7 @@ For more information about the Parameter attribute, see [Parameter Attribute Dec
 
 ## How to Declare a Switch Parameter
 
-- Define a public property as type [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter), and then declare the Parameter attribute.
+- Define a public property as type [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter), and then declare the Parameter attribute.
 
     ```csharp
     [Parameter(Position = 1)]
@@ -110,7 +110,7 @@ For more information about the Alias attribute, see [Alias Attribute Declaration
 
 ## See Also
 
-[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)
+[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 
 [Parameter Attribute Declaration](./parameter-attribute-declaration.md)
 

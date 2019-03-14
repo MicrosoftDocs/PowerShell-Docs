@@ -95,7 +95,7 @@ When the same parameter is used by multiple cmdlets, always use the same paramet
 
 #### Parameters That Take True and False
 
-If your parameter takes only `true` and `false`, define the parameter as type [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). A switch parameter is treated as `true` when it is specified in a command. If the parameter is not included in a command, Windows PowerShell considers the value of the parameter to be `false`. Do not define Boolean parameters.
+If your parameter takes only `true` and `false`, define the parameter as type [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). A switch parameter is treated as `true` when it is specified in a command. If the parameter is not included in a command, Windows PowerShell considers the value of the parameter to be `false`. Do not define Boolean parameters.
 
 If your parameter needs to differentiate between 3 values: $true, $false and "unspecified", then define a parameter of type Nullable\<bool>.  The need for a 3rd, "unspecified" value typically occurs when the cmdlet can modify a Boolean property of an object. In this case "unspecified" means to not change the current value of the property.
 
@@ -168,15 +168,15 @@ If your cmdlet allows the user to specify a file or a data source, it should def
 
 If the data that the cmdlet reads or writes has to be a file, the cmdlet should accept Windows PowerShell path input, and the cmdlet should use the [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) property to translate the Windows PowerShell paths into paths that the file system recognizes. The specific mechanisms include the following methods:
 
-- [System.Management.Automation.PSCmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.PSCmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-If the data that the cmdlet reads or writes is only a set of strings instead of a file, the cmdlet should use the provider content information (`Content` member) to read and write. This information is obtained from the [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) property. These mechanisms allow other data stores to participate in the reading and writing of data.
+If the data that the cmdlet reads or writes is only a set of strings instead of a file, the cmdlet should use the provider content information (`Content` member) to read and write. This information is obtained from the [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) property. These mechanisms allow other data stores to participate in the reading and writing of data.
 
 #### Support Wildcard Characters
 
@@ -200,11 +200,11 @@ If you are designing an object for a cmdlet, ensure that its members map directl
 
 Preexisting .NET Framework objects that are returned by cmdlets are frequently missing some important or convenient members that are needed by the script developer or user. These missing members can be particularly important for display and for creating the correct member names so that the object can be correctly passed to the pipeline. Create a custom Types.ps1xml file to document these required members. When you create this file, we recommend the following naming convention: *<Your_Product_Name>*.Types.ps1xml.
 
-For example, you could add a `Mode` script property to the [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) type to display the attributes of a file more clearly. Additionally, you could add a `Count` alias property to the [System.Array](/dotnet/api/System.Array) type to allow the consistent use of that property name (instead of `Length`).
+For example, you could add a `Mode` script property to the [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) type to display the attributes of a file more clearly. Additionally, you could add a `Count` alias property to the [System.Array](/dotnet/api/System.Array) type to allow the consistent use of that property name (instead of `Length`).
 
 ##### Implement the IComparable Interface
 
-Implement a [System.Icomparable](/dotnet/api/System.IComparable) interface on all output objects. This allows the output objects to be easily piped to various sorting and analysis cmdlets.
+Implement a [System.IComparable](/dotnet/api/System.IComparable) interface on all output objects. This allows the output objects to be easily piped to various sorting and analysis cmdlets.
 
 ##### Update Display Information
 
