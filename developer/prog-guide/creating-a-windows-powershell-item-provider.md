@@ -247,7 +247,7 @@ The sample item provider defines a DatabaseTableInfo.GetTables method that retur
 
 ### DatabaseRowInfo Class
 
-This item provider defines the DatabaseRowInfo helper class that represents a row in a table of the database. This class is similar to the [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) class.
+This item provider defines the DatabaseRowInfo helper class that represents a row in a table of the database. This class is similar to the [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) class.
 
 The sample provider defines a DatabaseRowInfo.GetRows method to return a collection of row information objects for the specified table. This method includes a try/catch block to trap exceptions. Any errors will result in no row information.
 
