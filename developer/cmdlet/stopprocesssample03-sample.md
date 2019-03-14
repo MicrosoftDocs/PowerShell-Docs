@@ -263,7 +263,7 @@ namespace Microsoft.Samples.PowerShell.Commands
                // It is possible that ProcessRecord is called multiple
                // when objects are recieved as inputs from a pipeline.
                // So, to retain YesToAll and NoToAll input that the
-               // user may enter across mutilple calls to this
+               // user may enter across multiple calls to this
                // function, they are stored as private members of the
                // Cmdlet.
                if (!ShouldContinue(message, "Warning!",
