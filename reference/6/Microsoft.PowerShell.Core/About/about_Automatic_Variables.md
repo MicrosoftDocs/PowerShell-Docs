@@ -741,7 +741,7 @@ The following loop only executes twice. In the second iteration, the collection
 is moved to the 3rd element before the iteration is complete. After the second
 iteration, there are now no more values to iterate, and the loop terminates.
 
-The **MoveNext** propety does not affect the variable chosen to iterate through
+The **MoveNext** property does not affect the variable chosen to iterate through
 the collection (`$Num`).
 
 ```powershell
