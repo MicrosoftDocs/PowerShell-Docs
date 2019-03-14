@@ -47,7 +47,7 @@ myNuGetSource                            https://myget.c...                     
 
 The first command registers https://www.myget.org/F/powershellgetdemo/ as a repository for the current user.
 After myNuGetSource is registered, you can explicitly reference it when searching for, installing, and publishing modules.
-Because the *PackageManamentProvider* parameter isn't specified, the repository is not explicitly associated with a OneGet packkage provider, so PowerShellGet polls available package providers and associates it with the NuGet provider.
+Because the *PackageManamentProvider* parameter isn't specified, the repository is not explicitly associated with a OneGet package provider, so PowerShellGet polls available package providers and associates it with the NuGet provider.
 
 The second command gets registered repositories and displays the results.
 
