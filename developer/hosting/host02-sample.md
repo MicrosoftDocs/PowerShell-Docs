@@ -462,7 +462,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// ignores the colors.
     /// </summary>
     /// <param name="foregroundColor">The color of the characters.</param>
-    /// <param name="backgroundColor">The backgound color to use.</param>
+    /// <param name="backgroundColor">The background color to use.</param>
     /// <param name="value">The characters to be written.</param>
     public override void Write(
                                ConsoleColor foregroundColor,
