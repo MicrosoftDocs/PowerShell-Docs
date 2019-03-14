@@ -10,6 +10,11 @@
             "redirect_document_id": true
         },
         {
+            "source_path"         : "developer/format/wrap-element-for-tablerowentry-for-tablecontrl-format.md",
+            "redirect_url"        : "/powershell/developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format",
+            "redirect_document_id": true
+        },
+        {
             "source_path"         : "developer/workflow/extending-the-windows-powershell-workflow-activity-controller.md",
             "redirect_url"        : "/powershell/developer/workflow/writing-a-windows-powershell-workflow",
             "redirect_document_id": true
