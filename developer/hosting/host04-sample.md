@@ -69,7 +69,7 @@ namespace Microsoft.Samples.PowerShell.Host
     private MyHost myHost;
 
     /// <summary>
-    /// Holds a reference to the runspace for this interpeter.
+    /// Holds a reference to the runspace for this interpreter.
     /// </summary>
     private Runspace myRunSpace;
 

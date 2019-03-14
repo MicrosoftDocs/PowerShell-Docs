@@ -63,7 +63,7 @@ namespace Microsoft.Samples.PowerShell.Host
   internal class PSListenerConsoleSample
   {
     /// <summary>
-    /// Holds a reference to the runspace for this interpeter.
+    /// Holds a reference to the runspace for this interpreter.
     /// </summary>
     internal Runspace myRunSpace;
 
