@@ -131,16 +131,16 @@ RequiredVersion.
 Most of the other options in the command line should be in the manifest data for the item you are
 publishing, so you should not need to specify them in the command.
 
-To avoid errors, it is strongly recommended that you try the commands using -Whatif -Verbose,
+To avoid errors, it is strongly recommended that you try the commands using -WhatIf -Verbose,
 before publishing. This will save considerable time, since every time you publish to the PowerShell
 Gallery, you must update the version number in the manifest section of the item.
 
 Examples would be:
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-Review the output carefully, and if you see no errors or warnings, repeat the command without -Whatif.
+Review the output carefully, and if you see no errors or warnings, repeat the command without -WhatIf.
 
 All items that are published to the PowerShell Gallery will be scanned for viruses, and will be
 analyzed using the PowerShell Script Analyzer. Any issues that arise at that time will be sent back
