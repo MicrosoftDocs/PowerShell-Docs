@@ -21,7 +21,7 @@ With this type of snap-in, you do not select which cmdlets and providers you wan
 
 1. Add the RunInstallerAttribute attribute.
 
-2. Create a public class that derives from the [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) class.
+2. Create a public class that derives from the [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) class.
 
     In this example, the class name is "GetProcPSSnapIn01".
 

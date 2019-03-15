@@ -21,4 +21,5 @@ The following topics explain how to set up pull clients:
 * [Setting up a pull client using configuration names](pullClientConfigNames.md)
 * [Setting up a pull client using configuration ID](pullClientConfigID.md)
 
-> **Note**: These topics apply to PowerShell 5.0. To set up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md).
+> [!NOTE]
+> These topics apply to PowerShell 5.0. To set up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md).

@@ -203,7 +203,7 @@ the results of the job are saved on disk until you delete them or the
 maximum number of results are exceeded.
 
 The job results are no longer available in this session, but if you
-start a new session or open a new Windows Powershell window, the
+start a new session or open a new Windows PowerShell window, the
 results of the job are available again.
 
 The following command uses the DefinitionName parameter of the

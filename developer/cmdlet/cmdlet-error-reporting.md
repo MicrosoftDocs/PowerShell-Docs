@@ -37,7 +37,7 @@ The following guidelines can be used to determine if an error condition is a ter
 
 ## Reporting Nonterminating Errors
 
-The reporting of a nonterminating error should always be done within the cmdlet's implementation of the [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method, the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, or the [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. These types of errors are reported by calling the [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method that in turn sends an error record to the error stream.
+The reporting of a nonterminating error should always be done within the cmdlet's implementation of the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method, the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, or the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. These types of errors are reported by calling the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method that in turn sends an error record to the error stream.
 
 ## Reporting Terminating Errors
 
@@ -47,7 +47,7 @@ You can also define your own exceptions for issues specific to your situation, o
 
 ## Error Records
 
-Windows PowerShell describes a nonterminating error condition through the use of [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objects. Each [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object provides error category information, an optional target object, and details about the error condition.
+Windows PowerShell describes a nonterminating error condition through the use of [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objects. Each [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object provides error category information, an optional target object, and details about the error condition.
 
 ### Error Identifiers
 
@@ -55,7 +55,7 @@ The error identifier is a simple string that identifies the error condition with
 
 The following guidelines should be followed when specifying error identifiers.
 
-- Assign different, highly specific, error identifiers to different code paths. Each code path that calls [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) should have its own error identifier.
+- Assign different, highly specific, error identifiers to different code paths. Each code path that calls [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) or [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) should have its own error identifier.
 
 - Error identifiers should be unique to CLR exception types for both terminating and nonterminating errors.
 

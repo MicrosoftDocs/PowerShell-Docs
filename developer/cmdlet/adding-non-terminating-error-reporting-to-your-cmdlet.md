@@ -11,9 +11,9 @@ caps.latest.revision: 8
 ---
 # Adding Non-Terminating Error Reporting to Your Cmdlet
 
-Cmdlets can report nonterminating errors by calling the [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method and still continue to operate on the current input object or on further incoming pipeline objects. This section explains how to create a cmdlet that reports nonterminating errors from its input processing methods.
+Cmdlets can report nonterminating errors by calling the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method and still continue to operate on the current input object or on further incoming pipeline objects. This section explains how to create a cmdlet that reports nonterminating errors from its input processing methods.
 
-For nonterminating errors (as well as terminating errors), the cmdlet must pass an [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object identifying the error. Each error record is identified by a unique string called the "error identifier." In addition to the identifier, the category of each error is specified by constants defined by a [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumeration. The user can view errors based on their category by setting the `$ErrorView` variable to "CategoryView".
+For nonterminating errors (as well as terminating errors), the cmdlet must pass an [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object identifying the error. Each error record is identified by a unique string called the "error identifier." In addition to the identifier, the category of each error is specified by constants defined by a [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumeration. The user can view errors based on their category by setting the `$ErrorView` variable to "CategoryView".
 
 For more information about error records, see [Windows PowerShell Error Records](./windows-powershell-error-records.md).
 
@@ -95,11 +95,11 @@ All cmdlets must override at least one of the input processing methods provided 
 > [!NOTE]
 > Your cmdlet should handle each record as independently as possible.
 
-This Get-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to handle the `Name` parameter for input provided by the user or a script. This method will get the processes for each requested process name or all processes if no name is provided. Details of this override are given in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
+This Get-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to handle the `Name` parameter for input provided by the user or a script. This method will get the processes for each requested process name or all processes if no name is provided. Details of this override are given in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
 #### Things to Remember When Reporting Errors
 
-The [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object that the cmdlet passes when writing an error requires an exception at its core. Follow the .NET guidelines when determining the exception to use. Basically, if the error is semantically the same as an existing exception, the cmdlet should use or derive from that exception. Otherwise, it should derive a new exception or exception hierarchy directly from the [System.Exception](/dotnet/api/System.Exception) class.
+The [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object that the cmdlet passes when writing an error requires an exception at its core. Follow the .NET guidelines when determining the exception to use. Basically, if the error is semantically the same as an existing exception, the cmdlet should use or derive from that exception. Otherwise, it should derive a new exception or exception hierarchy directly from the [System.Exception](/dotnet/api/System.Exception) class.
 
 When creating error identifiers (accessed through the FullyQualifiedErrorId property of the ErrorRecord class) keep the following in mind.
 
@@ -129,7 +129,7 @@ Unhandled exceptions are not caught by Windows PowerShell in the following condi
 
 ## Reporting Nonterminating Errors
 
-Any one of the input processing methods can report a nonterminating error to the output stream using the [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method. Here is a code example from this Get-Proc cmdlet that illustrates the call to [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) from within the override of the [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. In this case, the call is made if the cmdlet cannot find a process for a specified process identifier.
+Any one of the input processing methods can report a nonterminating error to the output stream using the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method. Here is a code example from this Get-Proc cmdlet that illustrates the call to [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) from within the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. In this case, the call is made if the cmdlet cannot find a process for a specified process identifier.
 
 ```csharp
 protected override void ProcessRecord()

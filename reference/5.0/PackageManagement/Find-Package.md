@@ -10,7 +10,6 @@ title:  Find-Package
 # Find-Package
 
 ## SYNOPSIS
-
 Finds software packages in available package sources.
 
 ## SYNTAX
@@ -214,8 +213,8 @@ Accept wildcard characters: False
 
 ### -Includes
 
-Specifies whether **Find-Package** should find all packages with DSC resources, cmdlets, functions, or workflows.
-The acceptable values for this parameter are:
+Specifies whether **Find-Package** should find all packages with DSC resources, cmdlets, functions,
+or workflows. The acceptable values for this parameter are:
 
 - Cmdlet
 - DscResource
@@ -237,8 +236,8 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Specifies the maximum allowed version of the package that you want to find.
-If you do not add this parameter, **Find-Package** finds the highest available version of the package.
+Specifies the maximum allowed version of the package that you want to find. If you do not add this
+parameter, **Find-Package** finds the highest available version of the package.
 
 ```yaml
 Type: String
@@ -254,8 +253,9 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum allowed version of the package that you want to find.
-If you do not add this parameter, **Find-Package** finds the highest available version of the package that also satisfies any maximum specified version specified by the *MaximumVersion* parameter.
+Specifies the minimum allowed version of the package that you want to find. If you do not add this
+parameter, **Find-Package** finds the highest available version of the package that also satisfies
+any maximum specified version specified by the *MaximumVersion* parameter.
 
 ```yaml
 Type: String
@@ -355,13 +355,14 @@ Accept wildcard characters: False
 
 ### -Scope
 
-{{Fill Scope Description}}
+Specifies the scope to which to install the package. The acceptable values for this parameter are
+**CurrentUser** and **AllUsers**
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: CurrentUser, AllUsers
+Accepted values: AllUsers, CurrentUser
 
 Required: False
 Position: Named
@@ -372,8 +373,8 @@ Accept wildcard characters: False
 
 ### -Source
 
-Specifies one or more package sources.
-You can get a list of available package sources by using the Get-PackageSource cmdlet.
+Specifies one or more package sources. You can get a list of available package sources by using the
+Get-PackageSource cmdlet.
 
 ```yaml
 Type: String[]
@@ -405,7 +406,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

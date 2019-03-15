@@ -17,7 +17,7 @@ This topic lists and describes the keywords in comment-based help.
 
 The following are valid comment-based Help keywords. They are listed in the order in which they typically appear in a Help topic along with their intended use. These keywords can appear in any order in the comment-based Help, and they are not case-sensitive.
 
-Note that the `.ExternalHelp` keyword takes precedence over all other comment-based help keywords. When `.ExternalHelp` is present, the [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet does not display comment-based help, even when it cannot find a help file that matches the value of the keyword.
+Note that the `.ExternalHelp` keyword takes precedence over all other comment-based help keywords. When `.ExternalHelp` is present, the [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet does not display comment-based help, even when it cannot find a help file that matches the value of the keyword.
 
 `.Synopsis`
 A brief description of the function or script. This keyword can be used only once in each topic.
@@ -70,9 +70,9 @@ Specifies a session that contains the Help topic. Enter a variable that contains
 `.ExternalHelp` `<XML Help File>`
 Specifies the path and/or name of an XML-based Help file for the script or function.
 
-The `.ExternalHelp` keyword tells the [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet to get help for the script or function in an XML-based file. The **.ExternalHelp** keyword is required when using an XML-based help file for a script or function. Without it, `Get-Help` will not find a help file for the function or script.
+The `.ExternalHelp` keyword tells the [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet to get help for the script or function in an XML-based file. The **.ExternalHelp** keyword is required when using an XML-based help file for a script or function. Without it, `Get-Help` will not find a help file for the function or script.
 
-The `.ExternalHelp` keyword takes precedence over all other comment-based help keywords. When `.ExternalHelp` is present, the [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet does not display comment-based help, even when it cannot find a help file that matches the value of the keyword.
+The `.ExternalHelp` keyword takes precedence over all other comment-based help keywords. When `.ExternalHelp` is present, the [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet does not display comment-based help, even when it cannot find a help file that matches the value of the keyword.
 
 When the function is exported by a script module, the value of `.ExternalHelp` should be a file name without a path. `Get-Help` looks for the file in a locale-specific subdirectory of the module directory. There are no requirements for the file name, but a best practice is to use the following file name format: `<ScriptModule>.psm1-help.xml`.
 

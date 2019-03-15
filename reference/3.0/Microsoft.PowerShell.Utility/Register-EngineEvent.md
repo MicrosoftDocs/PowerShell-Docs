@@ -32,7 +32,7 @@ However, subscribing lets you forward the events, specify an action to respond t
 When the subscribed event is raised, it is added to the event queue in your session.
 To get events in the event queue, use the Get-Event cmdlet.
 
-When you subscribe to a event, an event subcriber is added to your session.
+When you subscribe to a event, an event subscriber is added to your session.
 To get the event subscribers in the session, use the Get-EventSubscriber cmdlet.
 To cancel the subscription, use the Unregister-Event cmdlet, which deletes the event subscriber from the session.
 

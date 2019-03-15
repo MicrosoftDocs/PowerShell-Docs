@@ -1,5 +1,10 @@
 {
     "redirections": [{
+            "source_path"         : "developer/format/tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md",
+            "redirect_url"        : "/powershell/developer/format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format",
+            "redirect_document_id": true
+        },
+        {
             "source_path"         : "developer/format/windows-powershell-formatting-files.md",
             "redirect_url"        : "/powershell/developer/format/powershell-formatting-files",
             "redirect_document_id": true
@@ -7,6 +12,11 @@
         {
             "source_path"         : "developer/format/writing-a-windows-powershell-formatting-file.md",
             "redirect_url"        : "/powershell/developer/format/writing-a-powershell-formatting-file",
+            "redirect_document_id": true
+        },
+        {
+            "source_path"         : "developer/format/wrap-element-for-tablerowentry-for-tablecontrl-format.md",
+            "redirect_url"        : "/powershell/developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format",
             "redirect_document_id": true
         },
         {

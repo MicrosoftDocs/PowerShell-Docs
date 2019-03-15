@@ -67,7 +67,7 @@ PowerShell processes arithmetic operators in the following order:
 |----------|---------------|---------------------------------------|
 |1         | `()`          |Parentheses                            |
 |2         | `-`           |For a negative number or unary operator|
-|3         | `*`, `/`, `%` |For muliplication and division         |
+|3         | `*`, `/`, `%` |For multiplication and division         |
 |4         | `+`, `-`      |For addition and subtraction           |
 
 PowerShell processes the expressions from left to right according to the

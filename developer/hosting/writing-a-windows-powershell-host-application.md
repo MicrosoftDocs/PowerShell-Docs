@@ -27,7 +27,7 @@ A set of topics that explain how to create runspaces to run Windows PowerShell c
 Explains how to create and run a command pipeline in your host application..
 
 [Creating remote runspaces](./creating-remote-runspaces.md)
-Expains how to connect a runspace to a remote computer.
+Explains how to connect a runspace to a remote computer.
 
 [Creating a custom user interface](./creating-a-custom-user-interface.md)
 Introduces custom user interfaces and provides links to examples.

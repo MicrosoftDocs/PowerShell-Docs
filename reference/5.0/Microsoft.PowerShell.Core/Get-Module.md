@@ -243,7 +243,7 @@ PS> Get-Content $m.Path
     CompanyName        = "Microsoft Corporation"
     Copyright          = "© Microsoft Corporation. All rights reserved."
     ModuleVersion      = "1.0.0.0"
-    Description        = "Windows Powershell File Transfer Module"
+    Description        = "Windows PowerShell File Transfer Module"
     PowerShellVersion  = "2.0"
     CLRVersion         = "2.0"
     NestedModules      = "Microsoft.BackgroundIntelligentTransfer.Management"

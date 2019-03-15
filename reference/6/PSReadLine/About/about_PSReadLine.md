@@ -380,7 +380,7 @@ space as delimiters.
 
 ### ViDeleteBrace
 
-Find the matching brace, paren, or square bracket and delete all contents
+Find the matching brace, parenthesis, or square bracket and delete all contents
 within, including the brace.
 
 - Vi command mode: `<d,%>`
@@ -660,7 +660,7 @@ of characters.
 
 ### GotoBrace
 
-Go to the matching brace, paren, or square bracket.
+Go to the matching brace, parenthesis, or square bracket.
 
 - Cmd: `<Ctrl+]>`
 - Vi insert mode: `<Ctrl+]>`
@@ -1131,7 +1131,7 @@ command.
 
 Read a character and search forward for the next occurrence of that character.
 If an argument is specified, search forward (or backward if negative) for the
-nth occurence.
+nth occurrence.
 
 - Cmd: `<F3>`
 - Emacs: `<Ctrl+]>`
@@ -1142,7 +1142,7 @@ nth occurence.
 
 Read a character and search backward for the next occurrence of that character. If an
 argument is specified, search backward (or forward if negative) for the nth
-occurence.
+occurrence.
 
 - Cmd: `<Shift+F3>`
 - Emacs: `<Ctrl+Alt+]>`

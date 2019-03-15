@@ -60,7 +60,7 @@ This command gets all package sources for the PSModule provider by piping the re
 ## PARAMETERS
 
 ### -ConfigFile
-Specififes a configuration file. 
+Specifies a configuration file.
 
 ```yaml
 Type: String

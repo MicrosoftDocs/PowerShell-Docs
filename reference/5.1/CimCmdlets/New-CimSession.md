@@ -20,7 +20,7 @@ New-CimSession [-Authentication <PasswordAuthenticationMechanism>] [[-Credential
  [-Port <UInt32>] [-SessionOption <CimSessionOptions>] [<CommonParameters>]
 ```
 
-### CertificatePrameterSet
+### CertificateParameterSet
 
 ```
 New-CimSession [-CertificateThumbprint <String>] [[-ComputerName] <String[]>] [-Name <String>]
@@ -152,7 +152,7 @@ For more information about using the PowerShell Certificate provider, type `Get-
 
 ```yaml
 Type: String
-Parameter Sets: CertificatePrameterSet
+Parameter Sets: CertificateParameterSet
 Aliases:
 
 Required: False

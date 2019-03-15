@@ -1,5 +1,5 @@
 ---
-title: "TableRowEntry Element for TableRowEntroes for TableControl (Format) | Microsoft Docs"
+title: "TableRowEntry Element for TableRowEntries for TableControl (Format) | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/13/2016"
 ms.reviewer: ""
@@ -9,7 +9,7 @@ ms.topic: "article"
 ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
 caps.latest.revision: 10
 ---
-# TableRowEntry Element for TableRowEntroes for TableControl (Format)
+# TableRowEntry Element for TableRowEntries for TableControl (Format)
 
 Defines the data that is displayed in a row of the table.
 
@@ -44,7 +44,7 @@ None.
 |-------------|-----------------|
 |[EntrySelectedBy Element for TableRowEntry for TableControl (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Required element.<br /><br /> Defines the objects whose property values are displayed in the row.|
 |[TableColumnItems Element for TableRowEntry for TableControl (Format)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|Required element.<br /><br /> Defines the properties or scripts whose values are displayed.|
-|[Wrap Element for TableRowEntry for TableCntrol (Format)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)|Optional element.<br /><br /> Specifies that text that exceeds the column width is displayed on the next line.|
+|[Wrap Element for TableRowEntry for TableControl (Format)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|Optional element.<br /><br /> Specifies that text that exceeds the column width is displayed on the next line.|
 
 ### Parent Elements
 
@@ -88,8 +88,6 @@ The following example shows a `TableRowEntry` element that defines a row that di
 
 [TableRowEntries Element for TableControl (Format)](./tablerowentries-element-for-tablecontrol-format.md)
 
-[TableRowEntry Element for TableRowEntries for TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
-
-[Wrap Element for TableRowEntry for TableCntrol (Format)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)
+[Wrap Element for TableRowEntry for TableControl (Format)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)
 
 [Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

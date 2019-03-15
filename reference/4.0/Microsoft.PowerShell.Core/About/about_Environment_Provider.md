@@ -34,7 +34,7 @@ and process execution. Unlike PowerShell variables, environment variables are no
 The **Environment** drive is a flat namespace containing the environment variables specific to the current user's session. The environment variables
 have no child items.
 
-The **Envrionment** provider supports the following cmdlets, which are covered
+The **Environment** provider supports the following cmdlets, which are covered
 in this article.
 
 - [Get-Location](../../Microsoft.PowerShell.Management/Get-Location.md)

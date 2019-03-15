@@ -93,7 +93,8 @@ Starting in release 17090 of
 SQL Server is a supported option for the Pull Service (Windows Feature *DSC-Service*). This provides
 a new option for scaling large DSC environments that have not migrated to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-> **Note**: SQL Server support will not be added to previous versions of WMF 5.1 (or earlier)
+> [!NOTE]
+> SQL Server support will not be added to previous versions of WMF 5.1 (or earlier)
 > and will only be available on Windows Server versions greater than or equal to 17090.
 
 To configure the pull server to use SQL Server, set **SqlProvider** to `$true` and

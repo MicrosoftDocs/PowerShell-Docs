@@ -79,7 +79,7 @@ In practice, you would use the *WhatIf* parameter to determine the effect of the
 ### -DisplayName
 
 Specifies the display names of services to restarted.
-Wildcard carachters are permitted.
+Wildcard characters are permitted.
 
 ```yaml
 Type: String[]

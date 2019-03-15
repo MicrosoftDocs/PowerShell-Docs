@@ -22,7 +22,8 @@ Before setting up a pull client, you should set up a pull server. Though this or
 
 Each target node can be configured to download configurations, resources, and even report its status. The sections below show you how to configure a pull client with an SMB share or HTTP DSC Pull Server. When the Node's LCM refreshes, it will reach out to the configured location to download any assigned configurations. If any required resources do not exist on the Node, it will automatically download them from the configured location. If the Node is configured with a [Report Server](reportServer.md), it will then report the status of the operation.
 
-> **Note**: This topic applies to PowerShell 5.0. For information on setting up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md)
+> [!NOTE]
+> This topic applies to PowerShell 5.0. For information on setting up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md)
 
 ## Configure the pull client LCM
 

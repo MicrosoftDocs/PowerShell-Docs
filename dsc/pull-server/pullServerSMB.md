@@ -58,7 +58,7 @@ Configuration SmbShare
         {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
-            FullAccess = 'admininstrator'
+            FullAccess = 'administrator'
             ReadAccess = 'myDomain\Contoso-Server$'
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'

@@ -44,7 +44,7 @@ None.
 |Element|Description|
 |-------------|-----------------|
 |[SelectionCondition Element for EntrySelectedBy for ListControl  (Format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Defines the condition that must exist for this list view definition to be used.|
-|[SelectionSetName Element for EnrtySelectedBy for ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a set of .NET types that use this list view definition.|
+|[SelectionSetName Element for EntrySelectedBy for ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a set of .NET types that use this list view definition.|
 |[TypeName Element for EntrySelectedBy for ListControl (Format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a .NET type that uses this list view definition.|
 
 ### Parent Elements
@@ -79,7 +79,7 @@ The following example shows how to define the objects for a list view using thei
 
 [SelectionCondition Element for EntrySelectedBy for ListControl (Format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[SelectionSetName Element for EnrtySelectedBy for ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName Element for EntrySelectedBy for ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [TypeName Element for EntrySelectedBy for ListControl (Format)](./typename-element-for-entryselectedby-for-listcontrol-format.md)
 

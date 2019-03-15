@@ -161,7 +161,7 @@ Namespace Microsoft.Samples.PowerShell.Commands
                     WriteVerbose(("Finding matches for process name """ & _
                         pattern & """."))
 
-                    ' WildCard serach on the available processes
+                    ' WildCard search on the available processes
                     Dim wildcard As New WildcardPattern(pattern, _
                         WildcardOptions.IgnoreCase)
 
@@ -180,7 +180,7 @@ Namespace Microsoft.Samples.PowerShell.Commands
                             End If
 
                             ' Perform a wildcard search on this particular
-                            ' process and check whehter this matches the
+                            ' process and check whether this matches the
                             ' pattern specified.
                             If Not wildcard.IsMatch(processName) Then
                                 GoTo ContinueForEach2

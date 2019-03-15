@@ -27,7 +27,7 @@ If you do not specify a target computer, the cmdlet restores the configuration o
 
 ## EXAMPLES
 
-### Example 1: Restore the configrugation for the local computer
+### Example 1: Restore the configuration for the local computer
 ```
 PS C:\> Restore-DscConfiguration
 ```

@@ -119,7 +119,7 @@ PS> remove-pssession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 
 These commands show how to close a PSSession based on its instance ID (RemoteRunspaceID).
 
-The first command uses the Get-PSsession cmdlet to get the PSSessions in the current session.
+The first command uses the Get-PSSession cmdlet to get the PSSessions in the current session.
 It uses a pipeline operator (|) to send the PSSessions to the Format-Table cmdlet (alias: ft), which formats their ComputerName and InstanceID properties in a table.
 The AutoSize parameter ("auto") compresses the columns for display.
 
@@ -134,7 +134,7 @@ PS> function EndPSS { get-pssession | remove-pssession }
 ```
 
 This function deletes all of the PSSessions in the current session.
-After you add this function to your Windows Powershell profile, to delete all sessions, just type "endpss".
+After you add this function to your Windows PowerShell profile, to delete all sessions, just type "endpss".
 
 ## PARAMETERS
 

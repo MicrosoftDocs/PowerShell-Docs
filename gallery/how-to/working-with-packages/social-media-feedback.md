@@ -6,7 +6,7 @@ title:  Providing Feedback via social media or comments
 ---
 # Providing Feedback via social media or comments
 
-The Powershell Gallery supports two approaches for users to provide public feedback on a package:
+The PowerShell Gallery supports two approaches for users to provide public feedback on a package:
 
 - Use the links on the left edge to "share" a package in Facebook, LinkedIn, or Twitter social media sites;
 - Use the Comment feature to post comments on a package, and to allow Authors to watch for comments on packages they publish.
@@ -20,8 +20,7 @@ Users must log in to the site they have chosen in order to share the PowerShell 
 
 Users are encouraged to do this if they find that a package is something they would recommend to others.
 The PowerShell Gallery will check each social media site for "shares" of the package, and display how many times that package has been shared in each of the social media sites.
-Since this shows only the count of times something has been shared, it will be intepreted other users as "liking" the package.
-
+Since this shows only the count of times something has been shared, it will be interpreted other users as "liking" the package.
 
 ## Comments
 

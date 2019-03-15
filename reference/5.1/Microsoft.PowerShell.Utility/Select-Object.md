@@ -156,7 +156,7 @@ $a = Get-EventLog -LogName "Windows PowerShell"
 $a | Select-Object -Index 0, ($A.count - 1)
 ```
 
-These commands gets the first (newest) and last (oldest) events in the Windows Powershell event log.
+These commands gets the first (newest) and last (oldest) events in the Windows PowerShell event log.
 
 The command uses the `Get-EventLog` cmdlet to get all events in the Windows PowerShell log.
 It saves them in the `$a` variable.

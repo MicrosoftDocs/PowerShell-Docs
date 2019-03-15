@@ -72,7 +72,7 @@ PS C:\> Start-Process -FilePath "notepad" -Wait -WindowStyle Maximized
 This command starts the Notepad process.
 It maximizes the window and retains the window until the process completes.
 
-### Example 5: Start Windows Powershell as an administrator
+### Example 5: Start Windows PowerShell as an administrator
 ```
 PS C:\> Start-Process -FilePath "powershell" -Verb runAs
 ```

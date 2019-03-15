@@ -55,7 +55,7 @@ End                   EndOfLine               Move the cursor to the end of the 
 Shift+Home            SelectBackwardsLine     Adjust the current selection to include from the cursor to the end of the line
 Shift+End             SelectLine              Adjust the current selection to include from the cursor to the start of the line
 Delete                DeleteChar              Delete the character under the cursor
-Backspace             BackwardDeleteChar      Delete the charcter before the cursor
+Backspace             BackwardDeleteChar      Delete the character before the cursor
 Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o...
 Tab                   TabCompleteNext         Complete the input using the next completion
 Shift+Tab             TabCompletePrevious     Complete the input using the previous completion
@@ -96,7 +96,7 @@ End                   EndOfLine               Move the cursor to the end of the 
 Shift+Home            SelectBackwardsLine     Adjust the current selection to include from the cursor to the end of the line
 Shift+End             SelectLine              Adjust the current selection to include from the cursor to the start of the line
 Delete                DeleteChar              Delete the character under the cursor
-Backspace             BackwardDeleteChar      Delete the charcter before the cursor
+Backspace             BackwardDeleteChar      Delete the character before the cursor
 Ctrl+Spacebar         MenuComplete            Complete the input if there is a single completion, otherwise complete the input by selecting from a menu o...
 Tab                   TabCompleteNext         Complete the input using the next completion
 ...

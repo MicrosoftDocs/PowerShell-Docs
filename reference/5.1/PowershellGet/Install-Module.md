@@ -3,7 +3,7 @@ external help file: PSModule-help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PowerShellGet
-ms.date: 06/09/2017
+ms.date: 3/7/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821663
 schema: 2.0.0
 title: Install-Module
@@ -12,7 +12,7 @@ title: Install-Module
 # Install-Module
 
 ## SYNOPSIS
-Downloads one or more modules from an online gallery, and installs them on the local computer.
+Downloads one or more modules from a repository, and installs them on the local computer.
 
 ## SYNTAX
 
@@ -20,84 +20,107 @@ Downloads one or more modules from an online gallery, and installs them on the l
 
 ```
 Install-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
- [-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
- [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
- [-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
+[-RequiredVersion <String>] [-Repository <String[]>] [-Credential <PSCredential>] [-Scope <String>]
+[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+[-AllowPrerelease] [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
-Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force] [-AcceptLicense] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Install-Module [-InputObject] <PSObject[]> [-Credential <PSCredential>] [-Scope <String>]
+[-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllowClobber] [-SkipPublisherCheck] [-Force]
+[-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 The `Install-Module` cmdlet gets one or more modules that meet specified criteria from an online
-gallery, verifies that search results are valid modules, and copies module folders to the
-installation location.
+repository. The cmdlet verifies that search results are valid modules and copies the module folders
+to the installation location. Installed modules are not automatically imported after installation.
+You can filter which module is installed based on the minimum, maximum, and exact versions of
+specified modules.
 
-You can filter your results based on minimum and exact versions of specified modules.
+If the module being installed has the same name or version, or contains commands in an existing
+module, warning messages are displayed. After you confirm that you want to install the module and
+override the warnings, use the `-Force` and `-AllowClobber` parameters. Dependent upon your
+repository settings, you might need to answer a prompt for the module installation to continue.
+
+These examples use the [PowerShell Gallery](https://www.powershellgallery.com/) as the only
+registered repository. `Get-PSRepository` displays the registered repositories. If you have multiple
+registered repositories, use the `-Repository` parameter to specify the repository's name.
 
 ## EXAMPLES
 
-### Example 1: Find a module and install it
+### Example 1: Find and install a module
 
-In this example, modules with a name that starts with MyDSC that are found by `Find-Module` in the
-online gallery are installed to the default folder, `C:\ProgramFiles\WindowsPowerShell\Modules`.
+This example finds a module in the repository and installs the module.
 
 ```powershell
-Find-Module -Name "MyDSC*" | Install-Module
+Find-Module -Name PowerShellGet | Install-Module
 ```
+
+The `Find-Module` uses the **Name** parameter to specify the **PowerShellGet** module. By default,
+the newest version of the module is downloaded from the repository. The object is sent down the
+pipeline to the `Install-Module` cmdlet. `Install-Module` installs the module for all users in
+`$env:ProgramFiles\WindowsPowerShell\Modules`.
 
 ### Example 2: Install a module by name
 
-In this example, the newest version of the module MyDscModule from the online gallery is installed
-to the default folder.
+In this example, the newest version of the **PowerShellGet** module is installed.
 
 ```powershell
-Install-Module -Name "MyDscModule"
+Install-Module -Name PowerShellGet
 ```
 
-If no module named MyDscModule exists, an error occurs.
+The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet** module. By
+default, the newest version of the module is downloaded from the repository and installed.
 
 ### Example 3: Install a module using its minimum version
 
-In this example, the most current version of the module ContosoServer is installed that matches the
-specified minimum version.
+In this example, the minimum version of the **PowerShellGet** module is installed. The
+**MinimumVersion** parameter specifies the lowest version of the module that should be installed. If
+a newer version of the module is available, that version is downloaded and installed for all users.
 
 ```powershell
-Install-Module -Name "ContosoServer" -MinimumVersion 1.0
+Install-Module -Name PowerShellGet -MinimumVersion 2.0.1
 ```
 
-If the most current version of the module is a lower number than 1.0, the command returns errors.
+The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet** module. The
+**MinimumVersion** parameter specifies that version **2.0.1** is downloaded from the repository and
+installed. Because version **2.0.4** is available, that version is downloaded and installed for all
+users.
 
 ### Example 4: Install a specific version of a module
 
-This example installs version 1.1.3 of the module ContosoServer to the Program Files folder.
+In this example, a specific version of the **PowerShellGet** module is installed.
 
 ```powershell
-Install-Module -Name "ContosoServer" -RequiredVersion 1.1.3
+Install-Module -Name PowerShellGet -RequiredVersion 2.0.0
 ```
 
-If version 1.1.3 is not available, an error occurs.
+The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet** module. The
+**RequiredVersion** parameter specifies that version **2.0.0** is downloaded and installed for all
+users.
 
-### Example 5: Install the current version of a module
+### Example 5: Install a module only for the current user
 
-This example installs the newest version of the module ContosoServer to
-`$home\Documents\WindowsPowerShell\Modules`.
+This example downloads and installs the newest version of a module, only for the current user.
 
 ```powershell
-Install-Module -Name "ContosoServer" -Scope "CurrentUser"
+Install-Module -Name PowerShellGet -Scope CurrentUser
 ```
+
+The `Install-Module` uses the **Name** parameter to specify the **PowerShellGet** module.
+`Install-Module` downloads and installs the newest version of **PowerShellGet** into the current
+user's directory, `$home\Documents\WindowsPowerShell\Modules`.
 
 ## PARAMETERS
 
 ### -AcceptLicense
 
-Automatically accept the license agreement during installation if the module requires it.
+For modules that require a license, **AcceptLicense** automatically accepts the license agreement
+during installation. For more information, see [Modules Requiring License Acceptance](/powershell/gallery/concepts/module-license-acceptance).
 
 ```yaml
 Type: SwitchParameter
@@ -113,7 +136,9 @@ Accept wildcard characters: False
 
 ### -AllowClobber
 
-Allows you install module that contains commands those have the same names as commands that already exists.
+Overrides warning messages about installation conflicts about existing commands on a computer.
+Overwrites existing commands that have the same name as commands being installed by a module.
+**AllowClobber** and **Force** can be used together in an `Install-Module` command.
 
 ```yaml
 Type: SwitchParameter
@@ -129,7 +154,7 @@ Accept wildcard characters: False
 
 ### -AllowPrerelease
 
-Allows you to install a module marked as a prerelease.
+Allows you to install a module marked as a pre-release.
 
 ```yaml
 Type: SwitchParameter
@@ -162,9 +187,10 @@ Accept wildcard characters: False
 
 ### -Force
 
-Forces the installation of modules. If a module of the same name and version already exists on the
-computer, this parameter overwrites the existing module with one of the same name that was found by
-the command.
+Installs a module and overrides warning messages about module installation conflicts. If a module
+with the same name already exists on the computer, **Force** allows for multiple versions to be
+installed. If there is an existing module with the same name and version, **Force** overwrites that
+version. **Force** and **AllowClobber** can be used together in an `Install-Module` command.
 
 ```yaml
 Type: SwitchParameter
@@ -196,9 +222,9 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Specifies the maximum version of a single module to install. You cannot add this parameter if you
-are attempting to install multiple modules. The **MaximumVersion** and the **RequiredVersion**
-parameters are mutually exclusive; you cannot use both parameters in the same command.
+Specifies the maximum version of a single module to install. If you want to install multiple
+modules, you cannot use **MaximumVersion**. **MaximumVersion** and **RequiredVersion** cannot be
+used in the same `Install-Module` command.
 
 ```yaml
 Type: String
@@ -214,16 +240,10 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Specifies the minimum version of a single module to install. You cannot add this parameter if you
-are attempting to install multiple modules. The **MinimumVersion** and the **RequiredVersion**
-parameters are mutually exclusive; you cannot use both parameters in the same command.
-
-If you are installing multiple modules in a single command, and a specified minimum version for a
-module is not available for installation, the `Install-Module` command silently continues without
-installing the unavailable module. For example, if you try to install the ContosoServer module with
-a minimum version of 2.0, but the latest version of the ContosoServer module is 1.5, the
-`Install-Module` command does not install the ContosoServer module; it goes to install the next
-specified module, and PowerShell display errors when the command is finished.
+Specifies the minimum version of a single module to install. If there is a newer version of the
+module available, the newer version is installed. If you want to install multiple modules, you
+cannot use **MinimumVersion**. **MinimumVersion** and **RequiredVersion** cannot be used in the same
+`Install-Module` command.
 
 ```yaml
 Type: String
@@ -239,11 +259,9 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies the exact names of modules to install from the online gallery. This parameter supports
-wildcard characters. If wildcard characters are not specified, only modules that exactly match the
-specified names are returned. If no matches are found, and you have not used any wildcard
-characters, the command returns an error. If you use wildcard characters, but do not find matching
-results, no error is returned.
+Specifies the exact names of modules to install from the online gallery. A comma-separated list of
+module names is accepted. The module name must match the module name in the repository. Use
+`Find-Module` to get a list of module names.
 
 ```yaml
 Type: String[]
@@ -292,8 +310,10 @@ Accept wildcard characters: False
 
 ### -Repository
 
-Specifies the friendly name of a repository that has been registered by running
-`Register-PSRepository`.
+Use the **Repository** parameter to specify which repository is used to download and install a
+module. Used when multiple repositories are registered. Specifies the name of a registered
+repository in the `Install-Module` command. To register a repository, use `Register-PSRepository`.
+To display registered repositories, use `Get-PSRepository`.
 
 ```yaml
 Type: String[]
@@ -309,9 +329,10 @@ Accept wildcard characters: False
 
 ### -RequiredVersion
 
-Specifies the exact version of a single module to install. You cannot add this parameter if you are
-attempting to install multiple modules. The **MinimumVersion** and the **RequiredVersion**
-parameters are mutually exclusive; you cannot use both parameters in the same command.
+Specifies the exact version of a single module to install. If there is no match in the repository
+for the specified version, an error is displayed. If you want to install multiple modules, you
+cannot use **RequiredVersion**. **RequiredVersion** cannot be used in the same `Install-Module`
+command as **MinimumVersion** or **MaximumVersion**.
 
 ```yaml
 Type: String
@@ -327,27 +348,32 @@ Accept wildcard characters: False
 
 ### -Scope
 
-Specifies the installation scope of the module. The acceptable values for this parameter are:
-AllUsers and CurrentUser.
+Specifies the installation scope of the module. The acceptable values for this parameter are
+**AllUsers** and **CurrentUser**.
 
-The AllUsers scope lets modules be installed in a location that is accessible to all users of the
-computer, that is, `$env:ProgramFiles\WindowsPowerShell\Modules`.
+The **AllUsers** scope installs modules in a location that is accessible to all users of the
+computer:
 
-The CurrentUser scope lets modules be installed only to `$home\Documents\WindowsPowerShell\Modules`,
-so that the module is available only to the current user.
+`$env:ProgramFiles\WindowsPowerShell\Modules`
 
-When no **Scope** is defined, the default will be set based on the current session:
-- For an elevated PowerShell session, **Scope** defaults to AllUsers;
+The **CurrentUser** installs modules in a location that is accessible only to the current user of
+the computer:
+
+`$home\Documents\WindowsPowerShell\Modules`
+
+When no **Scope** is defined, the default is set based on the current session:
+
+- For an elevated PowerShell session, **Scope** defaults to **AllUsers**.
 - For non-elevated PowerShell sessions in [PowerShellGet versions 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet)
-  and above, **Scope** is CurrentUser;
+  and above, the **Scope** is **CurrentUser**.
 - For non-elevated PowerShell sessions in PowerShellGet versions 1.6.7 and earlier, **Scope** is
-  undefined, and `Install-Module` will fail.
+  undefined, and `Install-Module` fails.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: CurrentUser, AllUsers
+Accepted values: AllUsers, CurrentUser
 
 Required: False
 Position: Named
@@ -358,8 +384,8 @@ Accept wildcard characters: False
 
 ### -SkipPublisherCheck
 
-Allows you to install a newer version of a module that already exists on your computer in the case
-when a newer one is not digitally signed by a trusted publisher and the newest existing module is
+Allows you to install a newer version of a module that already exists on your computer. For example,
+when an existing module is digitally signed by a trusted publisher but the new version is not
 digitally signed by a trusted publisher.
 
 ```yaml
@@ -376,7 +402,7 @@ Accept wildcard characters: False
 
 ### -Confirm
 
-Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the `Install-Module` cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -392,7 +418,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if an `Install-Module` command was run. The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -410,59 +436,66 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### PSGetItemInfo
+### PSRepositoryItemInfo
+
+`Find-Module` creates **PSRepositoryItemInfo** objects that can be sent down the pipeline to
+`Install-Module`.
 
 ## OUTPUTS
 
 ## NOTES
 
-This cmdlet runs on PowerShell 5.0 or later releases, on Windows 7 or Windows 2008 R2 and later
+`Install-Module` runs on PowerShell 5.0 or later releases, on Windows 7 or Windows 2008 R2 and later
 releases of Windows.
 
-If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of
-the same name within the folder), installation fails unless you add the *Force* parameter to your
-command.
+As a security best practice, evaluate a module's code before running any cmdlets or functions for
+the first time. To prevent running modules that contain malicious code, installed modules are not
+automatically imported after installation.
 
-If a version of the module on the computer matches the value specified for the **Name** parameter,
-and you have not added the **MinimumVersion** or **RequiredVersion** parameter, `Install-Module`
-silently continues without installing that module.
+If the module name specified by the **Name** parameter does not exist in the repository,
+`Install-Module` returns an error.
 
-If the **MinimumVersion** or **RequiredVersion** parameters are specified, and the existing module
-does not match the values in that parameter, then an error occurs. To be more specific: if the
-version of the currently-installed module is either lower than the value of the **MinimumVersion**
-parameter, or not equal to the value of the **RequiredVersion** parameter, an error occurs.
+To install multiple modules, use the **Name** parameter and specify a comma-separated array of
+module names. If you specify multiple module names, you cannot use **MinimumVersion**,
+**MaximumVersion**, or **RequiredVersion**. `Find-Module` creates **PSRepositoryItemInfo** objects
+that can be sent down the pipeline to `Install-Module`. The pipeline is another way to specify
+multiple modules to install in a single command.
 
-If the version of the installed module is greater than the value of the **MinimumVersion**
-parameter, or equal to the value of the **RequiredVersion** parameter, `Install-Module` silently
-continues without installing that module.
+By default, modules for the scope of **AllUsers** are installed in
+`$env:ProgramFiles\WindowsPowerShell\Modules`. The default prevents confusion when you install
+PowerShell Desired State Configuration (DSC) resources.
 
-`Install-Module` returns an error if no module exists in the online gallery that matches the
-specified name.
+A module installation fails and cannot be imported if it does not have a `.psm1`, `.psd1`, or `.dll`
+of the same name within the folder. Use the **Force** parameter to install the module.
 
-To install multiple modules, specify an array of the module names, separated by commas. You cannot
-add **MinimumVersion** or **RequiredVersion** if you specify multiple module names.
+If an existing module's version matches the name specified by the **Name** parameter, and the
+**MinimumVersion** or **RequiredVersion** parameter are not used, `Install-Module` silently
+continues but does not install the module.
 
-By default, modules are installed to the Program Files folder, to prevent confusion when you are
-installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple
-**PSGetItemInfo** objects to `Install-Module`; this is another way of specifying multiple modules
-to install in a single command.
+If an existing module's version is greater than the value of the **MinimumVersion** parameter, or
+equal to the value of the **RequiredVersion** parameter, `Install-Module` silently continues but
+does not install the module.
 
-To help prevent running modules that contain malicious code, installed modules are not
-automatically imported by installation.
-
-As a security best practice, evaluate module code before running any cmdlets or functions in a
-module for the first time.
+If the existing module does not match the values specified by the **MinimumVersion** or
+**RequiredVersion** parameters, an error occurs in the `Install-Module` command. For example, if the
+version of the existing installed module is lower than the **MinimumVersion** value or not equal to
+the **RequiredVersion** value.
 
 ## RELATED LINKS
 
 [Find-Module](Find-Module.md)
 
+[Get-PSRepository](Get-PSRepository.md)
+
+[Import-Module](../Microsoft.PowerShell.Core/Import-Module.md)
+
 [Publish-Module](Publish-Module.md)
+
+[Register-PSRepository](Register-PSRepository.md)
 
 [Uninstall-Module](Uninstall-Module.md)
 

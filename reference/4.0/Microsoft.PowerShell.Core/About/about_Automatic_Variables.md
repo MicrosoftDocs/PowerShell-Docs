@@ -42,7 +42,7 @@ on selected objects in a pipeline.
 
 Contains an array of values for undeclared parameters that are passed to a
 function, script, or script block. When you create a function, you can declare
-the parameters by using the `pararm` keyword or by adding a comma-separated list
+the parameters by using the `param` keyword or by adding a comma-separated list
 of parameters in parentheses after the function name.
 
 In an event action, the `$Args` variable contains objects that represent the
@@ -720,7 +720,7 @@ The following loop only executes twice. In the second iteration, the collection
 is moved to the 3rd element before the iteration is complete. After the second
 iteration, there are now no more values to iterate, and the loop terminates.
 
-The **MoveNext** propety does not affect the variable chosen to iterate through
+The **MoveNext** property does not affect the variable chosen to iterate through
 the collection (`$Num`).
 
 ```powershell

@@ -11,7 +11,7 @@ caps.latest.revision: 9
 ---
 # How to Invoke Scripts Within a Cmdlet
 
-This example shows how to invoke a script that is supplied to a cmdlet. The script is executed by the cmdlet, and its results are returned to the cmdlet as a collection of [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects.
+This example shows how to invoke a script that is supplied to a cmdlet. The script is executed by the cmdlet, and its results are returned to the cmdlet as a collection of [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects.
 
 ## To invoke a script block
 
@@ -31,7 +31,7 @@ This example shows how to invoke a script that is supplied to a cmdlet. The scri
                                   );
     ```
 
-2. Then, the script iterates through the returned collection of [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects and perform the necessary operations.
+2. Then, the script iterates through the returned collection of [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects and perform the necessary operations.
 
     ```c
     foreach (PSObject psObject in psObjects)

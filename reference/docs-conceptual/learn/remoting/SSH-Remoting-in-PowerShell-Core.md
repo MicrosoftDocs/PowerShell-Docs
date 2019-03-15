@@ -72,7 +72,7 @@ password or key-based authentication.
      > There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem
      > executable paths. For more information, see [this GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     One solution is to create a symlink to the Powershell installation directory that doesn't have spaces:
+     One solution is to create a symlink to the PowerShell installation directory that doesn't have spaces:
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"

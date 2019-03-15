@@ -55,11 +55,11 @@ This sample demonstrates the following.
 
 - Declaring a cmdlet parameters by using the Parameter attribute.
 
-- Writing verbose messages. For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+- Writing verbose messages. For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
 
-- Writing error messages. For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).
+- Writing error messages. For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).
 
-- Writing warning messages. For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).
+- Writing warning messages. For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).
 
 ## Example
 
@@ -218,9 +218,9 @@ namespace Microsoft.Samples.PowerShell.Commands
                                         processName);
 
                        // It is possible that the ProcessRecord method is called
-                       // multiple times when objects are recieved as inputs from
+                       // multiple times when objects are received as inputs from
                        // the pipeline. So to retain YesToAll and NoToAll input that
-                       // the user may enter across mutilple calls to this function,
+                       // the user may enter across multiple calls to this function,
                        // they are stored as private members of the cmdlet.
                        if (!ShouldContinue(message, "Warning!",
                                     ref yesToAll, ref noToAll))
