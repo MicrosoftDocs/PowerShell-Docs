@@ -570,7 +570,7 @@ Represents aliases.
 
 ### System.Management.Automation.ApplicationInfo
 
-Represents or applications and files.
+Represents applications and files.
 
 ### System.Management.Automation.CmdletInfo
 

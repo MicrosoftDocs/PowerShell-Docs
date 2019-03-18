@@ -43,10 +43,20 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 
 #### Controlling Format-Wide Display with Column
 
-With the **Format-Wide** cmdlet, you can only display a single property at a time. This makes it useful for displaying simple lists that show only one element per line. To get a simple listing, set the value of the **Column** parameter to 1 by typing:
+With the `Format-Wide` cmdlet, you can only display a single property at a time.
+This makes it useful for displaying simple lists that show only one element per line.
+To get a simple listing, set the value of the **Column** parameter to 1 by typing:
 
 ```powershell
-Get-Command Format-Wide -Property Name -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+```
+
+```output
+Custom
+Hex
+List
+Table
+Wide
 ```
 
 ### Using Format-List for a List View
