@@ -97,7 +97,7 @@ Gets the modules that have been imported or that can be imported into the curren
 
 ### [Get-PSSession](Get-PSSession.md)
 
-Gets the Windows PowerShell sessions on local and remote computers.
+Gets the PowerShell sessions on local and remote computers.
 
 ### [Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 

@@ -12,7 +12,9 @@ Module Name:  Microsoft.PowerShell.Diagnostics
 # Microsoft.PowerShell.Diagnostics Module
 
 ## Description
-This section contains the help topics for the cmdlets that are installed with the PowerShell Microsoft.PowerShell.Diagnostics module, which contains cmdlets that manage data from event logs.
+
+This section contains the help topics for the cmdlets that are installed with the PowerShell
+Microsoft.PowerShell.Diagnostics module, which contains cmdlets that manage data from event logs.
 
 ## Microsoft.PowerShell.Diagnostics Cmdlets
 

@@ -13,7 +13,8 @@ Module Name:  PSWorkflow
 
 ## Description
 
-This section contains the help topics for the cmdlets that are installed with Windows PowerShell PSWorkflow module, which contains cmdlets that support the Windows PowerShell Workflow feature.
+This section contains the help topics for the cmdlets that are installed with Windows PowerShell
+PSWorkflow module, which contains cmdlets that support the Windows PowerShell Workflow feature.
 
 ## PSWorkflow Cmdlets
 
