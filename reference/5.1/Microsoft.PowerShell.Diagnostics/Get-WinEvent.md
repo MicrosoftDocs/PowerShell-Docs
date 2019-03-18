@@ -431,7 +431,7 @@ The `Get-WinEvent` cmdlet gets log information from the computer. The **Path** p
 the directory and file name. The **MaxEvents** parameter specifies that 100 records are displayed,
 from newest to oldest.
 
-#### Event Tracing for Windows
+### Example 13: Event Tracing for Windows
 
 Event Tracing for Windows (ETW) writes events to the log as events occur. The events are stored in
 the order of oldest to newest. An archived ETW file is saved as an `.etl` such as **TraceLog.etl**.
@@ -449,7 +449,7 @@ order they are written, oldest to newest. The objects are sent down the pipeline
 **TimeCreated** property. The objects are sent down the pipeline to the `Select-Object` cmdlet that
 displays the 100 newest events.
 
-### Example 13: Get events from an event trace log
+### Example 14: Get events from an event trace log
 
 This example shows how to get the events from an event trace log file (`.etl`) and an archived
 Windows PowerShell log file (`.evtx`). You can combine multiple file types in a single command.
@@ -468,7 +468,7 @@ pipeline to the `Where-Object` cmdlet. `Where-Object` uses a script block to fin
 **Id** of **403**. The `$_` variable represents the current object in the pipeline and **Id** is the
 Event Id property.
 
-### Example 14: Filter event log results
+### Example 15: Filter event log results
 
 This example shows a variety of methods to filter and select events from an event log. All of these
 commands get events that occurred in the last 24-hours from the **Windows PowerShell** event log.
@@ -492,7 +492,7 @@ PS> Get-WinEvent -FilterXML "<QueryList><Query><Select Path='Windows PowerShell'
 PS> Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath "*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]"
 ```
 
-### Example 15: Use FilterHashtable to get events from the Application log
+### Example 16: Use FilterHashtable to get events from the Application log
 
 This example uses the **FilterHashtable** parameter to get events from the **Application** log. The
 hash table uses **key/value** pairs. For more information about the **FilterHashtable** parameter,
@@ -511,7 +511,7 @@ The `Get-WinEvent` cmdlet gets log information. The **FilterHashtable** paramete
 the output. The **LogName** key specifies the value as the **Application** log. The **StartTime**
 key uses the value stored in the `$Date` variable. The **Id** key uses an Event Id value, **1003**.
 
-### Example 16: Use FilterHashtable to get application errors
+### Example 17: Use FilterHashtable to get application errors
 
 This example uses the **FilterHashtable** parameter to find Internet Explorer application errors
 that occurred within the last week.
