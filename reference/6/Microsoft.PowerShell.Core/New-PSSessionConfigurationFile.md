@@ -15,7 +15,7 @@ Creates a file that defines a session configuration.
 
 ## SYNTAX
 
-```
+```powershell
 New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>] [-Author <String>]
  [-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-SessionType <SessionType>]
  [-TranscriptDirectory <String>] [-RunAsVirtualAccount] [-RunAsVirtualAccountGroups <String[]>]
@@ -68,7 +68,7 @@ Customized sessions that include the cmdlets, functions and scripts that technic
 
 ### Example 2: Restricting Language in a Session
 
-The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the *LanguageMode* parameter, the session configuration files are equivalent.
+The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the *LanguageMode* parameter, the session configuration files are equivalent. 
 
 ```powershell
 New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage ;
