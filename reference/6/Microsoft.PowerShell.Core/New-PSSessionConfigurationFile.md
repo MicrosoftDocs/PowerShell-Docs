@@ -55,8 +55,8 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Designing a specialized session
 
-```
-PS C:\> New-PSSessionConfigurationFile -ModulesToImport DMSCmdlets, *Microsoft* -ScriptsToProcess \\Server01\Scripts\Get-DMSServers.ps1
+```powershell
+New-PSSessionConfigurationFile -ModulesToImport DMSCmdlets, *Microsoft* -ScriptsToProcess \\Server01\Scripts\Get-DMSServers.ps1
 ```
 
 The following command creates a session configuration file for IT technical sessions on a cloud-based document management server.
@@ -68,46 +68,52 @@ Customized sessions that include the cmdlets, functions and scripts that technic
 
 ### Example 2: Restricting Language in a Session
 
-```
 The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the *LanguageMode* parameter, the session configuration files are equivalent.
-PS C:\> New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
-PS C:\> New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
-
+```powershell
+New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
+New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
+```
 The second pair of commands uses the configuration files to create session configurations on the local computer.
-PS C:\> Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
-PS C:\> Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
-
+```powershell
+Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
+Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
+```
 The third pair of commands creates two sessions, each of which uses one of the session configurations that were created in the previous command pair.
-PS C:\> $NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
-PS C:\> $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
+
+```powershell
+$NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
+$RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
+```
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
-PS C:\> Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+```powershell
+Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 The syntax is not supported by this runspace. This might be because it is in no-language mode.
     + CategoryInfo          : ParserError: (if ((Get-Date) ...") {"Before"}  :String) [], ParseException
     + FullyQualifiedErrorId : ScriptsNotAllowed
     + PSComputerName        : localhost
-
-
-The eighth command uses the **Invoke-Command** cmdlet to run the same If statement in the restricted-language session. Because these language elements are permitted in the restricted-language session, the command succeeds.
-PS C:\> Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
-Before
 ```
 
+The eighth command uses the **Invoke-Command** cmdlet to run the same If statement in the restricted-language session.
+Because these language elements are permitted in the restricted-language session, the command succeeds.
+```powershell
+Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+Before
+```
 The commands in this example compare a no-language session to a restricted-language session.
 The example shows the effect of using the *LanguageMode* parameter of **New-PSSessionConfigurationFile** to limit the types of commands and statements that users can run in a session that uses a custom session configuration.
 
-To run the commands in this example, start Windows PowerShell by using the Run as administrator option.
-This option is required to run the Register-PSSessionConfiguration cmdlet.
+To run the commands in this example, start Windows PowerShell by using the Run as administrator option. This option is required to run the Register-PSSessionConfiguration cmdlet.
 
 ### Example 3: Changing a Session Configuration File
 
+The first command uses the **New-PSSessionConfigurationFile** cmdlet to create a session configuration file that imports the required modules
+```powershell
+New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
 ```
-The first command uses the **New-PSSessionConfigurationFile** cmdlet to create a session configuration file that imports the required modules.
-PS C:\> New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
-
 The second command uses the **Set-PSSessionConfiguration** cmdlet to replace the current .pssc file with the new one. Changes to the session configuration affects all sessions created after the change is completed.
-PS C:\> Set-PSSessionConfiguration -Name ITTasks -Path .\New-ITTasks.pssc
+```powershell
+Set-PSSessionConfiguration -Name ITTasks -Path .\New-ITTasks.pssc
 ```
 
 This example shows how to change the session configuration file that is used in a session configuration.
@@ -116,16 +122,20 @@ Previously, these sessions had only the core modules and an internal "ITTasks" m
 
 ### Example 4: Editing a Session Configuration File
 
-```
-The first command uses the Get-PSSessionConfiguration command to get the path of the configuration file for the ITConfig session configuration. The path is stored in the **ConfigFilePath** property of the session configuration.
-PS C:\> (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
+The first command uses the Get-PSSessionConfiguration command 
+to get the path of the configuration file for the ITConfig session configuration. 
+The path is stored in the **ConfigFilePath** property of the session configuration.
+```powershell
+(Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\ITConfig_1e9cb265-dae0-4bd3-89a9-8338a47698a1.pssc
-
-To modify the session configuration copy of the configuration file, you might have to change the file permissions.In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click Properties. On the Security tab, click Edit, and then click Add. Add the user, and then, in the Full control column, click Allow.Now the user can modify the file. A new slst alias for the Select-String cmdlet is added to the file.
-PS C:\> AliasDefinitions = @(@{Name='slst';Value='Select-String'})
-
+```
+To modify the session configuration copy of the configuration file, you might have to change the file permissions. In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click Properties. On the Security tab, click Edit, and then click Add. Add the user, and then, in the Full control column, click Allow.Now the user can modify the file. A new slst alias for the Select-String cmdlet is added to the file.
+```powershell
+AliasDefinitions = @(@{Name='slst';Value='Select-String'})
+```
 The second command uses the Test-PSSessionConfigurationFile cmdlet to test the edited file. The command uses the *Verbose* parameter, which displays the file errors that the cmdlet detects, if any.In this case, the cmdlet returns $True, which indicates that it did not detect any errors in the file.
-PS C:\> Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
+```powershell
+Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 True
 ```
 
@@ -133,138 +143,147 @@ This example shows how to change a session configuration by editing the active s
 
 ### Example 5: Sample Configuration File
 
-```
-PS C:\> New-PSSessionConfigurationFile
--Path .\SampleFile.pssc
--Schema "1.0.0.0"
--Author "User01"
--Copyright "(c) Fabrikam Corporation. All rights reserved."
--CompanyName "Fabrikam Corporation"
--Description "This is a sample file."
--ExecutionPolicy AllSigned
--PowerShellVersion "3.0"
--LanguageMode FullLanguage
--SessionType Default
--EnvironmentVariables @{TESTSHARE="\\Test2\Test"}
--ModulesToImport @{ModuleName="PSScheduledJob"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"}, PSDiagnostics
--AssembliesToLoad "System.Web.Services","FSharp.Compiler.CodeDom.dll"
--TypesToProcess "Types1.ps1xml","Types2.ps1xml"
--FormatsToProcess "CustomFormats.ps1xml"
--ScriptsToProcess "Get-Inputs.ps1"
--AliasDefinitions @{Name="hlp";Value="Get-Help";Description="Gets help.";Options="AllScope"},@{Name="Update";Value="Update-Help";Description="Updates help";Options="ReadOnly"}
--FunctionDefinitions @{Name="Get-Function";ScriptBlock={Get-Command -CommandType Function};Options="ReadOnly"}
--VariableDefinitions @{Name="WarningPreference";Value="SilentlyContinue"}
--VisibleAliases "c*","g*","i*","s*"
--VisibleCmdlets "Get*"
--VisibleFunctions "Get*"
--VisibleProviders "FileSystem","Function","Variable"
--RunAsVirtualAccount
--RunAsVirtualAccountGroups "Backup Operators"
+The code below will create a sample PSSession Configuration File. 
+This example displays a **New-PSSessionConfigurationFile** command that uses all of the cmdlet parameters.
+It is included to show correct input format for each parameter.
 
-                       @{
-# Version number of the schema used for this configuration file
+```powershell
+$parameters = @{
+    Path = ".\SampleFile.pssc"
+    Schema = "1.0.0.0"
+    Author = "User01"
+    Copyright = "(c) Fabrikam Corporation. All rights reserved."
+    CompanyName = "Fabrikam Corporation"
+    Description = "This is a sample file."
+    ExecutionPolicy = "AllSigned"
+    PowerShellVersion = "3.0"
+    LanguageMode = "FullLanguage"
+    SessionType = "Default"
+    EnvironmentVariables = @{TESTSHARE="\\Test2\Test"}
+    ModulesToImport = $(@{ModuleName="PSScheduledJob"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"}, "PSDiagnostics")
+    AssembliesToLoad = "System.Web.Services","FSharp.Compiler.CodeDom.dll"
+    TypesToProcess = "Types1.ps1xml","Types2.ps1xml"
+    FormatsToProcess = "CustomFormats.ps1xml"
+    ScriptsToProcess = "Get-Inputs.ps1"
+    AliasDefinitions = @{Name="hlp";Value="Get-Help";Description="Gets help.";Options="AllScope"},@{Name="Update";Value="Update-Help";Description="Updates help";Options="ReadOnly"}
+    FunctionDefinitions = @{Name="Get-Function";ScriptBlock={Get-Command -CommandType Function};Options="ReadOnly"}
+    VariableDefinitions = @{Name="WarningPreference";Value="SilentlyContinue"}
+    VisibleAliases = "c*","g*","i*","s*"
+    VisibleCmdlets = "Get*"
+    VisibleFunctions = "Get*"
+    VisibleProviders = "FileSystem","Function","Variable"
+    RunAsVirtualAccount = $true
+    RunAsVirtualAccountGroups = "Backup Operators"
+}
+ New-PSSessionConfigurationFile @parameters
+ ```
+
+You may run **Get-Content** conmmand then to review configuration file:
+
+```powershell
+Get-Content .\SampleFile.pssc
+@{
+
+# Version number of the schema used for this document
 SchemaVersion = '1.0.0.0'
 
-# ID used to uniquely identify this session configuration
-GUID = 'f7039ffa-7e54-4382-b358-a393c75c30d3'
+# ID used to uniquely identify this document
+GUID = '519029e4-9c23-404d-9b44-cdfc3d501e69'
 
-# Specifies the execution policy for this session configuration
-ExecutionPolicy = 'AllSigned'
-
-# Specifies the language mode for this session configuration
-LanguageMode = 'FullLanguage'
-
-# Initial state of this session configuration
-SessionType = 'Default'
-
-# Environment variables defined in this session configuration
-EnvironmentVariables = @{
-    TESTSHARE='\\Test2\Test'
-}
-
-# Author of this session configuration
+# Author of this document
 Author = 'User01'
 
-# Company associated with this session configuration
-CompanyName = 'Fabrikam Corporation'
-
-# Copyright statement for this session configuration
-Copyright = '(c) Fabrikam Corporation. All rights reserved.'
-
-# Description of the functionality provided by this session configuration
+# Description of the functionality provided by these settings
 Description = 'This is a sample file.'
 
-# Version of the Windows PowerShell engine used by this session configuration
+# Company associated with this document
+CompanyName = 'Fabrikam Corporation'
+
+# Copyright statement for this document
+Copyright = '(c) Fabrikam Corporation. All rights reserved.'
+
+# Session type defaults to apply for this session configuration. Can be 'RestrictedRemoteServer' (recommended), 'Empty', or 'Default'
+SessionType = 'Default'
+
+# Directory to place session transcripts for this session configuration
+# TranscriptDirectory = 'C:\Transcripts\'
+
+# Whether to run this session configuration as the machine's (virtual) administrator account
+RunAsVirtualAccount = $true
+
+# Groups associated with machine's (virtual) administrator account
+RunAsVirtualAccountGroups = 'Backup Operators'
+
+# Scripts to run when applied to a session
+ScriptsToProcess = 'Get-Inputs.ps1'
+
+# User roles (security groups), and the role capabilities that should be applied to them when applied to a session
+# RoleDefinitions = @{ 'CONTOSO\SqlAdmins' = @{ RoleCapabilities = 'SqlAdministration' }; 'CONTOSO\SqlManaged' = @{ RoleCapabilityFiles = 'C:\RoleCapability\SqlManaged.psrc' }; 'CONTOSO\ServerMonitors' = @{ VisibleCmdlets = 'Get-Process' } }
+
+# Language mode to apply when applied to a session. Can be 'NoLanguage' (recommended), 'RestrictedLanguage', 'ConstrainedLanguage', or 'FullLanguage'
+LanguageMode = 'FullLanguage'
+
+# Execution policy to apply when applied to a session
+ExecutionPolicy = 'AllSigned'
+
+# Version of the PowerShell engine to use when applied to a session
 PowerShellVersion = '3.0'
 
-# Modules that will be imported
+# Modules to import when applied to a session
 ModulesToImport = @{
-    ModuleVersion='1.0.0.0'
-    ModuleName='PSScheduledJob'
-    GUID='50cdb55f-5ab7-489f-9e94-4ec21ff51e59'
-}, 'PSDiagnostics'
+    'GUID' = '50cdb55f-5ab7-489f-9e94-4ec21ff51e59'
+    'ModuleName' = 'PSScheduledJob'
+    'ModuleVersion' = '1.0.0.0' }, 'PSDiagnostics'
 
-# Assemblies that will be loaded in this session configuration
-AssembliesToLoad = 'System.Web.Services', 'FSharp.Compiler.CodeDom.dll'
-
-# Aliases visible in this session configuration
+# Aliases to make visible when applied to a session
 VisibleAliases = 'c*', 'g*', 'i*', 's*'
 
-# Cmdlets visible in this session configuration
+# Cmdlets to make visible when applied to a session
 VisibleCmdlets = 'Get*'
 
-# Functions visible in this session configuration
+# Functions to make visible when applied to a session
 VisibleFunctions = 'Get*'
 
-# Providers visible in this session configuration
+# Providers to make visible when applied to a session
 VisibleProviders = 'FileSystem', 'Function', 'Variable'
 
-# Aliases defined in this session configuration
-AliasDefinitions = @(
-@{
-    Description='Gets help.'
-    Name='hlp'
-    Options='AllScope'
-    Value='Get-Help'
-},
-@{
-    Description='Updates help'
-    Name='Update'
-    Options='ReadOnly'
-    Value='Update-Help'
-}
-)
+# Aliases to be defined when applied to a session
+AliasDefinitions = @{
+    'Description' = 'Gets help.'
+    'Name' = 'hlp'
+    'Options' = 'AllScope'
+    'Value' = 'Get-Help' }, @{
+    'Description' = 'Updates help'
+    'Name' = 'Update'
+    'Options' = 'ReadOnly'
+    'Value' = 'Update-Help' }
 
-# Functions defined in this session configuration
-FunctionDefinitions = @(
-@{
-    Name='Get-Function'
-    Options='ReadOnly'
-    ScriptBlock={Get-Command -CommandType Function}
-}
-)
+# Functions to define when applied to a session
+FunctionDefinitions = @{
+    'Name' = 'Get-Function'
+    'Options' = 'ReadOnly'
+    'ScriptBlock' = {Get-Command -CommandType Function} }
 
-# Variables defined in this session configuration
-VariableDefinitions = @(
-@{
-    Value='SilentlyContinue'
-    Name='WarningPreference'
+# Variables to define when applied to a session
+VariableDefinitions = @{
+    'Name' = 'WarningPreference'
+    'Value' = 'SilentlyContinue' }
 
-# Type files (.ps1xml) that will be loaded in this session configuration
-TypesToProcess = 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\Types1.ps1xml', 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\Types2.ps1xml'
+# Environment variables to define when applied to a session
+EnvironmentVariables = @{
+    'TESTSHARE' = '\\Test2\Test' }
 
-# Format files (.ps1xml) that will be loaded in this session configuration
-FormatsToProcess = 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\CustomFormats.ps1xml'
+# Type files (.ps1xml) to load when applied to a session
+TypesToProcess = 'Types1.ps1xml', 'Types2.ps1xml'
 
-# Specifies the scripts to execute after the session is configured
-ScriptsToProcess = 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\Get-Inputs.ps1'
+# Format files (.ps1xml) to load when applied to a session
+FormatsToProcess = 'CustomFormats.ps1xml'
+
+# Assemblies to load when applied to a session
+AssembliesToLoad = 'System.Web.Services', 'FSharp.Compiler.CodeDom.dll'
+
 }
 ```
-
-This example displays a **New-PSSessionConfigurationFile** command that uses all of the cmdlet parameters.
-It is included to show the correct input format for each parameter.
-
-The resulting SampleFile.pssc is displayed in the output.
 
 ## PARAMETERS
 
