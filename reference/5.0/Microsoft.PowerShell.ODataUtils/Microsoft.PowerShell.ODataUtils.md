@@ -12,7 +12,8 @@ Module Name:  Microsoft.PowerShell.ODataUtils
 # Microsoft.PowerShell.ODataUtils Module
 
 ## Description
-This section contains the help topics for the **Microsoft.PowerShell.ODataUtils** module. The **Microsoft.PowerShell.ODataUtils** module is installed with Windows PowerShell 5.0.
+
+This section contains the help topics for the Microsoft.PowerShell.ODataUtils module. The Microsoft.PowerShell.ODataUtils module is installed with Windows PowerShell 5.1.
 
 ## Microsoft.PowerShell.ODataUtils Cmdlets
 

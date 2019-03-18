@@ -9,14 +9,11 @@ Module Guid:  94b905ff-74b5-437e-89ed-7df44386533c
 title:  PSDesiredStateConfiguration
 Module Name:  PSDesiredStateConfiguration
 ---
-
 # PSDesiredStateConfiguration Module
 
 ## Description
 
-PowerShell is a task-based command-line shell and scripting language designed especially for system
-administration. This reference topic for the information technology (IT) professional provides
-assistance in utilizing the PowerShell cmdlets to script and automate tasks.
+This module contains cmdlets that designed to work with DSC Resources.
 
 ## PSDesiredStateConfiguration Cmdlets
 

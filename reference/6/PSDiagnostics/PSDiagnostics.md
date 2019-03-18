@@ -19,13 +19,17 @@ tracing in PowerShell on Windows.
 ## PSDiagnostics Cmdlets
 
 ### [Disable-PSTrace](Disable-PSTrace.md)
+
 Disables the Microsoft-Windows-PowerShell event provider logs.
 
 ### [Enable-PSTrace](Enable-PSTrace.md)
+
 Enables the Microsoft-Windows-PowerShell event provider logs.
 
 ### [Get-LogProperties](Get-LogProperties.md)
+
 Retrieves the properties of a Windows event log.
 
 ### [Set-LogProperties](Set-LogProperties.md)
+
 Changes the properties of a Windows event log.
