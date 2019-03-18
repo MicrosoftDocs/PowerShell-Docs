@@ -15,7 +15,7 @@ Creates a file that defines a session configuration.
 
 ## SYNTAX
 
-```powershell
+```
 New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>] [-Author <String>]
  [-Description <String>] [-CompanyName <String>] [-Copyright <String>] [-SessionType <SessionType>]
  [-TranscriptDirectory <String>] [-RunAsVirtualAccount] [-RunAsVirtualAccountGroups <String[]>]
@@ -80,6 +80,8 @@ The second pair of commands uses the configuration files to create session confi
 
 ```powershell
 Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
+```
+```powershell
 Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 ```
 
