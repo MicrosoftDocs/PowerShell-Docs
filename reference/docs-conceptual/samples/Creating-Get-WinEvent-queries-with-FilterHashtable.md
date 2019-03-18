@@ -5,13 +5,13 @@ title: Creating Get-WinEvent queries with FilterHashtable
 
 # Creating Get-WinEvent queries with FilterHashtable
 
-> [!NOTE] This document is an excerpt of the June 3, 2014 **Scripting Guy** blog post
-> [Use FilterHashTable to Filter Event Log with PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
+To read the original blog June 3, 2014 **Scripting Guy** blog post, see
+[Use FilterHashTable to Filter Event Log with PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
 
-This article explains how to use the `Get-WinEvent` cmdlet's **FilterHashtable** parameter to filter
-event logs. PowerShell's `Get-WinEvent` cmdlet is a powerful method to filter Windows event and
-diagnostic logs. Performance improves when a `Get-WinEvent` query uses the **FilterHashtable**
-parameter.
+This article is an excerpt of the original blog post and explains how to use the `Get-WinEvent`
+cmdlet's **FilterHashtable** parameter to filter event logs. PowerShell's `Get-WinEvent` cmdlet is a
+powerful method to filter Windows event and diagnostic logs. Performance improves when a
+`Get-WinEvent` query uses the **FilterHashtable** parameter.
 
 When you work with large event logs, it's not efficient to send objects down the pipeline to a
 `Where-Object` command. Prior to PowerShell 6, the `Get-EventLog` cmdlet was another option to get

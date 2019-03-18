@@ -303,6 +303,9 @@ and uses the **Events** property to get objects. The objects are sent down the p
 ### Example 9: Get log information from event object properties
 
 This example shows how to get information about a log's contents using event object properties.
+Event objects are stored in a variable and then grouped and counted by **Event Id** and **Level**.
+
+#### Store event objects in a variable
 
 ```
 PS> $Event = Get-WinEvent -LogName 'Windows PowerShell'
@@ -316,6 +319,8 @@ log. The event objects are stored in the `$Event` variable.
 
 `$Event.Count` uses the `$Event` variable's **Count** property to display the total number of logged
 events.
+
+#### Group and count event objects by Id
 
 ```
 PS> $Event | Group-Object -Property Id -NoElement | Sort-Object -Property Count -Descending
@@ -336,6 +341,8 @@ sent down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` uses the **Pro
 sort the objects by **Count**. The **Descending** parameter displays the output by count, from
 highest to lowest. In the output, the **Count** column contains the total number of each event. The
 **Name** column contains the grouped **Id** numbers.
+
+#### Group and count event objects by level
 
 ```
 PS> $Event | Group-Object -Property LevelDisplayName -NoElement
@@ -479,27 +486,27 @@ The filter methods are more efficient than using the `Where-Object` cmdlet. Filt
 the objects are retrieved. `Where-Object` retrieves all of the objects, then applies filters to all
 of the objects.
 
-Use the `Where-Object` cmdlet:
+#### Use the Where-Object cmdlet
 
 ```
 PS> $Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
 PS> Get-WinEvent -LogName 'Windows PowerShell' | Where-Object { $_.TimeCreated -ge $Yesterday }
 ```
 
-Use the **FilterHashtable** parameter:
+#### Use the FilterHashtable parameter
 
 ```
 PS> $Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
 PS> Get-WinEvent -FilterHashtable @{ LogName='Windows PowerShell'; Level=3; StartTime=$Yesterday }
 ```
 
-Use the **FilterXML** parameter:
+#### Use the FilterXML parameter
 
 ```
 PS> Get-WinEvent -FilterXML "<QueryList><Query><Select Path='Windows PowerShell'>*[System[Level=3 and TimeCreated[timediff(@SystemTime)&lt;= 86400000]]]</Select></Query></QueryList>"
 ```
 
-Use the **FilterXPath** parameter:
+#### Use the FilterXPath parameter
 
 ```
 PS> Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath "*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]"
