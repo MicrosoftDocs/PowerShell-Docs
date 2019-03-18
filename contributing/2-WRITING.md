@@ -34,8 +34,8 @@ see the [Markdown Specifics](4-MARKDOWN-SPECIFICS.md) article.
 To contribute new documentation, check for issues tagged as ["in progress"][labels] to make
 sure you're not duplicating efforts. If no one seems to be working on what you have planned:
 
-- Open a new issue and label it as "in progress". If you don't have rights to assign labels, add
-  "in progress" as a comment to tell others what you're working on.
+- Open a new issue and label it as "in progress". If you don't have rights to assign labels, add "in
+  progress" as a comment to tell others what you're working on.
 - Follow the same workflow as described above for making major edits to existing topics.
 - Add your new article to the `TOC.yml` file (located in the top-level folder of each
   documentation set).
@@ -44,10 +44,10 @@ sure you're not duplicating efforts. If no one seems to be working on what you h
 
 Most reference topics are duplicated across all versions of PowerShell. When reporting an issue
 about a cmdlet reference or an About_ article, you must specify which versions are affected by the
-issue. The default issue template in GitHub includes a [GFM task list][gfm-task]. Use the
-checkboxes in the task list to specify which versions of the content are affected. When you submit
-a change to a article for an issue that affects multiple versions of the content, you must apply the
-appropriate change to each version of the file.
+issue. The default issue template in GitHub includes a [GFM task list][gfm-task]. Use the checkboxes
+in the task list to specify which versions of the content are affected. When you submit a change to
+a article for an issue that affects multiple versions of the content, you must apply the appropriate
+change to each version of the file.
 
 ## Next Steps
 
