@@ -257,7 +257,7 @@ Note that this wouldn't be persisted between startups.
 ### Source control software
 
 Some source control tools, such as git, ignore encodings; git just tracks the bytes.
-Others, like TFS or Mercurial, may not. Even some git-based tools rely on decoding text.
+Others, like Azure DevOps or Mercurial, may not. Even some git-based tools rely on decoding text.
 
 When this is the case, make sure you:
 
