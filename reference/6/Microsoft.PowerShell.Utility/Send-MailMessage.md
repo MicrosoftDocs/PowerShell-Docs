@@ -324,7 +324,7 @@ Accept wildcard characters: False
 
 ### -Subject
 
-Th **Subject** parameter is not required. This parameter specifies the subject of the email message.
+The **Subject** parameter is not required. This parameter specifies the subject of the email message.
 
 ```yaml
 Type: String
