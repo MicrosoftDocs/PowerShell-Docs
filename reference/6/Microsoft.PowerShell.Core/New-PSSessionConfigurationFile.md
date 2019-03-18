@@ -69,15 +69,19 @@ Customized sessions that include the cmdlets, functions and scripts that technic
 ### Example 2: Restricting Language in a Session
 
 The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the *LanguageMode* parameter, the session configuration files are equivalent.
+
 ```powershell
 New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
 New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
 ```
+
 The second pair of commands uses the configuration files to create session configurations on the local computer.
+
 ```powershell
 Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
 Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 ```
+
 The third pair of commands creates two sessions, each of which uses one of the session configurations that were created in the previous command pair.
 
 ```powershell
@@ -86,6 +90,7 @@ $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName Restr
 ```
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
+
 ```powershell
 Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 The syntax is not supported by this runspace. This might be because it is in no-language mode.
@@ -96,10 +101,12 @@ The syntax is not supported by this runspace. This might be because it is in no-
 
 The eighth command uses the **Invoke-Command** cmdlet to run the same If statement in the restricted-language session.
 Because these language elements are permitted in the restricted-language session, the command succeeds.
+
 ```powershell
 Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
 Before
 ```
+
 The commands in this example compare a no-language session to a restricted-language session.
 The example shows the effect of using the *LanguageMode* parameter of **New-PSSessionConfigurationFile** to limit the types of commands and statements that users can run in a session that uses a custom session configuration.
 
@@ -108,10 +115,13 @@ To run the commands in this example, start Windows PowerShell by using the Run a
 ### Example 3: Changing a Session Configuration File
 
 The first command uses the **New-PSSessionConfigurationFile** cmdlet to create a session configuration file that imports the required modules
+
 ```powershell
 New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
 ```
+
 The second command uses the **Set-PSSessionConfiguration** cmdlet to replace the current .pssc file with the new one. Changes to the session configuration affects all sessions created after the change is completed.
+
 ```powershell
 Set-PSSessionConfiguration -Name ITTasks -Path .\New-ITTasks.pssc
 ```
@@ -125,15 +135,20 @@ Previously, these sessions had only the core modules and an internal "ITTasks" m
 The first command uses the Get-PSSessionConfiguration command 
 to get the path of the configuration file for the ITConfig session configuration. 
 The path is stored in the **ConfigFilePath** property of the session configuration.
+
 ```powershell
 (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\ITConfig_1e9cb265-dae0-4bd3-89a9-8338a47698a1.pssc
 ```
+
 To modify the session configuration copy of the configuration file, you might have to change the file permissions. In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click Properties. On the Security tab, click Edit, and then click Add. Add the user, and then, in the Full control column, click Allow.Now the user can modify the file. A new slst alias for the Select-String cmdlet is added to the file.
+
 ```powershell
 AliasDefinitions = @(@{Name='slst';Value='Select-String'})
 ```
+
 The second command uses the Test-PSSessionConfigurationFile cmdlet to test the edited file. The command uses the *Verbose* parameter, which displays the file errors that the cmdlet detects, if any.In this case, the cmdlet returns $True, which indicates that it did not detect any errors in the file.
+
 ```powershell
 Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 True
