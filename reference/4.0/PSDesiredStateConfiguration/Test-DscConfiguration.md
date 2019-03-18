@@ -24,8 +24,8 @@ The **Test-DscConfiguration** cmdlet tests whether the actual configuration on t
 Specify computers by using Common Information Model (CIM) sessions.
 If you do not specify a target computer, the cmdlet tests configuration of the local computer.
 
-If the desired and actual configurations match, the cmdlet returns a value of $True.
-Otherwise, it returns a value of $False.
+If the desired and actual configurations match, the cmdlet returns a string value of 'True'.
+Otherwise, it returns a string value of 'False'.
 
 ## EXAMPLES
 
