@@ -71,7 +71,7 @@ Customized sessions that include the cmdlets, functions and scripts that technic
 The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the *LanguageMode* parameter, the session configuration files are equivalent.
 
 ```powershell
-New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
+New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage ;
 New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
 ```
 
@@ -85,8 +85,8 @@ Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name Restricted
 The third pair of commands creates two sessions, each of which uses one of the session configurations that were created in the previous command pair.
 
 ```powershell
-$NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage
-$RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage
+$NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage ;
+$RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage ;
 ```
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
