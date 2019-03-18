@@ -538,7 +538,7 @@ The type of object that is returned depends on the type of command that **Get-Co
 Represents aliases.
 
 ### System.Management.Automation.ApplicationInfo
-Represents or applications and files.
+Represents applications and files.
 
 ### System.Management.Automation.CmdletInfo
 Represents cmdlets.
