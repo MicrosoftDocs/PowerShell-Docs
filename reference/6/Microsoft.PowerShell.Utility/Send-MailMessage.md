@@ -324,14 +324,14 @@ Accept wildcard characters: False
 
 ### -Subject
 
-Th **Subject** parameter is required. This parameter specifies the subject of the email message.
+Th **Subject** parameter is not required. This parameter specifies the subject of the email message.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases: sub
 
-Required: True
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False
