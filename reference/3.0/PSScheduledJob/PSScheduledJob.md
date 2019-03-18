@@ -13,29 +13,30 @@ Module Name:  PSScheduledJob
 
 ## Description
 
-This section contains the help topics for the cmdlets that are installed with Windows PowerShell PSScheduledJob module. The PSScheduledJob module contains cmdlets and providers that manage scheduled jobs in Windows PowerShell.
+The PSScheduledJob module contains cmdlets and providers that manage scheduled jobs in Windows
+PowerShell.
 
 ## PSScheduledJob Cmdlets
 
 ### [Add-JobTrigger](Add-JobTrigger.md)
 
-Adds job triggers to scheduled jobs
+Adds job triggers to scheduled jobs.
 
 ### [Disable-JobTrigger](Disable-JobTrigger.md)
 
-Disables the job triggers of scheduled jobs
+Disables the job triggers of scheduled jobs.
 
 ### [Disable-ScheduledJob](Disable-ScheduledJob.md)
 
-Disables a scheduled job
+Disables a scheduled job.
 
 ### [Enable-JobTrigger](Enable-JobTrigger.md)
 
-Enables the job triggers of scheduled jobs
+Enables the job triggers of scheduled jobs.
 
 ### [Enable-ScheduledJob](Enable-ScheduledJob.md)
 
-Enables a scheduled job
+Enables a scheduled job.
 
 ### [Get-JobTrigger](Get-JobTrigger.md)
 
@@ -51,7 +52,7 @@ Gets scheduled jobs on the local computer.
 
 ### [New-JobTrigger](New-JobTrigger.md)
 
-Creates a job trigger for a scheduled job
+Creates a job trigger for a scheduled job.
 
 ### [New-ScheduledJobOption](New-ScheduledJobOption.md)
 
@@ -59,11 +60,11 @@ Creates an object that contains advanced options for a scheduled job.
 
 ### [Register-ScheduledJob](Register-ScheduledJob.md)
 
-Creates a new scheduled job.
+Creates a scheduled job.
 
 ### [Remove-JobTrigger](Remove-JobTrigger.md)
 
-Delete job triggers from scheduled jobs
+Delete job triggers from scheduled jobs.
 
 ### [Set-JobTrigger](Set-JobTrigger.md)
 
@@ -75,7 +76,7 @@ Changes the job options of a scheduled job.
 
 ### [Set-ScheduledJob](Set-ScheduledJob.md)
 
-Changes scheduled jobs
+Changes scheduled jobs.
 
 ### [Unregister-ScheduledJob](Unregister-ScheduledJob.md)
 
