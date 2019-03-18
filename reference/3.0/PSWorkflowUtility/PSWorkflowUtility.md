@@ -13,7 +13,9 @@ Module Name:  PSWorkflowUtility
 
 ## Description
 
-This section contains the help topics for the commands that the Windows PowerShell PSWorkflowUtility module exports. This module contains a workflow that supports the Windows PowerShell Workflow feature.
+This section contains the help topics for the commands that the Windows PowerShell PSWorkflowUtility
+module exports. This module contains a workflow that supports the Windows PowerShell Workflow
+feature.
 
 ## PSWorkflowUtility Cmdlets
 

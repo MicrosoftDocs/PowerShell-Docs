@@ -19,31 +19,41 @@ tracing in PowerShell on Windows.
 ## PSDiagnostics Cmdlets
 
 ### [Disable-PSTrace](Disable-PSTrace.md)
+
 Disables the Microsoft-Windows-PowerShell event provider logs.
 
 ### [Disable-PSWSManCombinedTrace](Disable-PSWSManCombinedTrace.md)
+
 Stop the logging session started by Enable-PSWSManCombinedTrace.
 
 ### [Disable-WSManTrace](Disable-WSManTrace.md)
+
 Stop the WSMan logging session started by Enable-WSManTrace.
 
 ### [Enable-PSTrace](Enable-PSTrace.md)
+
 Enables the Microsoft-Windows-PowerShell event provider logs.
 
 ### [Enable-PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
+
 Start a logging session with the WSMan and PowerShell providers enabled.
 
 ### [Enable-WSManTrace](Enable-WSManTrace.md)
+
 Start a logging session with the WSMan providers enabled.
 
 ### [Get-LogProperties](Get-LogProperties.md)
+
 Retrieves the properties of a Windows event log.
 
 ### [Set-LogProperties](Set-LogProperties.md)
+
 Changes the properties of a Windows event log.
 
 ### [Start-Trace](Start-Trace.md)
+
 Start an Event Trace logging session.
 
 ### [Stop-Trace](Stop-Trace.md)
+
 Stop an Event Trace logging session.
