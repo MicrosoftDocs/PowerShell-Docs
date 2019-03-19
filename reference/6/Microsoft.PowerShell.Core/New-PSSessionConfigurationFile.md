@@ -55,11 +55,11 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Designing a specialized session
 
+The following command creates a session configuration file for IT technical sessions on a cloud-based document management server.
+
 ```powershell
 New-PSSessionConfigurationFile -ModulesToImport DMSCmdlets, *Microsoft* -ScriptsToProcess \\Server01\Scripts\Get-DMSServers.ps1
 ```
-
-The following command creates a session configuration file for IT technical sessions on a cloud-based document management server.
 
 You can use the resulting file to create a customized session configuration on the server.
 The ACLs on the session configuration determine who can use the session configuration to create a session on the server.
@@ -67,7 +67,6 @@ The ACLs on the session configuration determine who can use the session configur
 Customized sessions that include the cmdlets, functions and scripts that technical users need make it easier for those users to write scripts that automate common tasks.
 
 ### Example 2: Restricting Language in a Session
-
 
 The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the *LanguageMode* parameter, the session configuration files are equivalent. 
 
