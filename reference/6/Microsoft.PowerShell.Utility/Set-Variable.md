@@ -224,7 +224,7 @@ Specifies the scope of the variable.The acceptable values for this parameter are
 - Local
 - Script
 - Private
-- Numbered
+- A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 
 Local is the default.
 
