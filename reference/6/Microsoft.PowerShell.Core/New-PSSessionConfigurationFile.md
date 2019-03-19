@@ -176,6 +176,8 @@ AliasDefinitions = @(@{Name='slst';Value='Select-String'})
 
 The second command uses the Test-PSSessionConfigurationFile cmdlet to test the edited file. The command uses the *Verbose* parameter, which displays the file errors that the cmdlet detects, if any.In this case, the cmdlet returns $True, which indicates that it did not detect any errors in the file.
 
+### _____________________________________________
+
 ```powershell
 Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
 ```
