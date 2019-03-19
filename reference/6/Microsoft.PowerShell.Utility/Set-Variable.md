@@ -223,7 +223,8 @@ Specifies the scope of the variable.The acceptable values for this parameter are
 - Global
 - Local
 - Script
-- A number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
+- Private
+- Numbered
 
 Local is the default.
 
