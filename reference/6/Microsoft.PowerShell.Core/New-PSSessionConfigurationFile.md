@@ -168,7 +168,7 @@ C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\ITConfig_1e9cb265-dae0-
 
 ### _____________________________________________
 
-To modify the session configuration copy of the configuration file, you might have to change the file permissions. In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click Properties. On the Security tab, click Edit, and then click Add. Add the user, and then, in the Full control column, click Allow.Now the user can modify the file. A new ```slst``` alias for the Select-String cmdlet is added to the file.
+To modify the session configuration copy of the configuration file, you might have to change the file permissions. In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click Properties. On the Security tab, click Edit, and then click Add. Add the user, and then, in the Full control column, click Allow.Now the user can modify the file. A new *slst* alias for the Select-String cmdlet is added to the file.
 
 ```powershell
 AliasDefinitions = @(@{Name='slst';Value='Select-String'})
