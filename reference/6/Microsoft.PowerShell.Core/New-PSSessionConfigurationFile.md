@@ -68,7 +68,7 @@ Customized sessions that include the cmdlets, functions and scripts that technic
 
 ### Example 2: Restricting Language in a Session
 
-#### Creating resticted sessions with files
+###
 
 The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to create two session configuration files. The first command creates a no-language file. The second command creates a restricted-language file. Other than the value of the *LanguageMode* parameter, the session configuration files are equivalent. 
 
@@ -77,7 +77,7 @@ New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
 New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
 ```
 
-#### Registering sessions on a local computer
+###
 
 The second pair of commands uses the configuration files to create session configurations on the local computer.
 
@@ -86,12 +86,16 @@ Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force 
 Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 ```
 
+####
+
 The third pair of commands creates two sessions, which are using one of the session configurations that were created in the previous command pair.
 
 ```powershell
 $NoLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName NoLanguage ;
 $RestrictedLanguage = New-PSSession -ComputerName Srv01 -ConfigurationName RestrictedLanguage ;
 ```
+
+###
 
 The seventh command uses the Invoke-Command cmdlet to run an If statement in the no-Language session. The command fails, because the language elements in the command are not permitted in a no-language session.
 
@@ -105,6 +109,8 @@ The syntax is not supported by this runspace. This might be because it is in no-
     + FullyQualifiedErrorId : ScriptsNotAllowed
     + PSComputerName        : localhost
 ```
+
+####
 
 The eighth command uses the **Invoke-Command** cmdlet to run the same If statement in the restricted-language session.
 Because these language elements are permitted in the restricted-language session, the command succeeds.
