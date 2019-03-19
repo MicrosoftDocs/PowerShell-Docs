@@ -24,7 +24,12 @@ log data. For example, the following commands are inefficient to filter the
 
 The following command uses a hash table that improves the performance:
 
-`Get-WinEvent -FilterHashtable @{ LogName='Application'; ProviderName='*defrag' }`
+```powershell
+Get-WinEvent -FilterHashtable @{
+   LogName='Application'
+   ProviderName='*defrag'
+}
+```
 
 ### Blog posts about enumeration
 
@@ -40,6 +45,10 @@ For more information, see the
 To build efficient queries, use the `Get-WinEvent` cmdlet with the **FilterHashtable** parameter.
 **FilterHashtable** accepts a hash table as a filter to get specific information from Windows event
 logs. A hash table uses **key/value** pairs. For more information about hash tables, see [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+
+If the **key/value** pairs are on the same line, they must be separated by a semicolon. If each
+**key/value** pair is on a separate line, the semicolon isn't needed. For example, this article
+places **key/value** pairs on separate lines and doesn't use semicolons.
 
 This sample uses several of the **FilterHashtable** parameter's **key/value** pairs. The completed
 query includes **LogName**, **ProviderName**, **Keywords**, **ID**, and **Level**.
@@ -74,21 +83,26 @@ at a time. The query gets data from the **Application** log. The hash table is e
 To begin, create the `Get-WinEvent` query. Use the **FilterHashtable** parameter's **key/value**
 pair with the key, **LogName**, and the value, **Application**.
 
-```PowerShell
-Get-WinEvent -FilterHashtable @{ LogName='Application' }
+```powershell
+Get-WinEvent -FilterHashtable @{
+   LogName='Application'
+}
 ```
 
 Continue to build the hash table with the **ProviderName** key. The **ProviderName** is the name
 that appears in the **Source** field in the **Windows Event Viewer**. For example, **.NET Runtime**
 in the following screenshot:
 
-![Image of Windows Event Viewer sources.](/media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
+![Image of Windows Event Viewer sources.](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
 Update the hash table and include the **key/value** pair with the key, **ProviderName, and the
 value, **.NET Runtime**.
 
-```PowerShell
-Get-WinEvent -FilterHashtable @{ LogName='Application'; ProviderName='.NET Runtime' }
+```powershell
+Get-WinEvent -FilterHashtable @{
+   LogName='Application'
+   ProviderName='.NET Runtime'
+}
 ```
 
 If your query needs to get data from archived event logs, use the **Path** key. The **Path** value
@@ -100,7 +114,7 @@ specifies the full path to the log file. For more information, see the **Scripti
 **Keywords** is the next key in the hash table. The **Keywords** data type is an array of the `[long]`
 value type that holds a large number. Use the following command to find the maximum value of `[long]`:
 
-```PowerShell
+```powershell
 [long]::MaxValue
 ```
 
@@ -116,11 +130,11 @@ Open the **Windows Event Viewer** and from the **Actions** pane, click on **Filt
 The **Keywords** drop-down menu displays the available keywords, as shown in the following
 screenshot:
 
-![Image of Windows Event Viewer keywords.](/media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
+![Image of Windows Event Viewer keywords.](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
 Use the following command to display the `StandardEventKeywords` property names.
 
-```PowerShell
+```powershell
 [System.Diagnostics.Eventing.Reader.StandardEventKeywords] | Get-Member -Static -MemberType Property
 ```
 
@@ -160,8 +174,12 @@ The **Keywords** names and enumerated values are as follows:
 Update the hash table and include the **key/value** pair with the key, **Keywords**, and the
 **EventLogClassic** enumeration value, **36028797018963968**.
 
-```PowerShell
-Get-WinEvent -FilterHashtable @{ LogName='Application'; ProviderName='.NET Runtime'; Keywords=36028797018963968 }
+```powershell
+Get-WinEvent -FilterHashtable @{
+   LogName='Application'
+   ProviderName='.NET Runtime'
+   Keywords=36028797018963968
+}
 ```
 
 #### Keywords static property value (optional)
@@ -172,9 +190,13 @@ Rather than using the returned string, the property name must be converted to a 
 
 For example, the following script uses the **Value__** property.
 
-```PowerShell
+```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventKeywords]::EventLogClassic
-Get-WinEvent -FilterHashtable @{ LogName='Application'; ProviderName='.NET Runtime'; Keywords=$C.Value__ }
+Get-WinEvent -FilterHashtable @{
+   LogName='Application'
+   ProviderName='.NET Runtime'
+   Keywords=$C.Value__
+}
 ```
 
 ### Filtering by Event Id
@@ -186,8 +208,13 @@ referenced in the hash table as the key **ID** and the value is a specific **Eve
 Update the hash table and include the **key/value** pair with the key, **ID** and the value,
 **1023**.
 
-```PowerShell
-Get-WinEvent -FilterHashtable @{ LogName='Application'; ProviderName='.NET Runtime'; Keywords=36028797018963968; ID=1023 }
+```powershell
+Get-WinEvent -FilterHashtable @{
+   LogName='Application'
+   ProviderName='.NET Runtime'
+   Keywords=36028797018963968
+   ID=1023
+}
 ```
 
 ### Filtering by Level
@@ -199,7 +226,7 @@ the hash table, if you use the **Level** key with a string value, an error messa
 **Level** has values such as **Error**, **Warning**, or **Informational**. Use the following command
 to display the `StandardEventLevel` property names.
 
-```PowerShell
+```powershell
 [System.Diagnostics.Eventing.Reader.StandardEventLevel] | Get-Member -Static -MemberType Property
 ```
 
@@ -232,8 +259,14 @@ The **Level** key's names and enumerated values are as follows:
 
 The hash table for the completed query includes the key, **Level**, and the value, **2**.
 
-```PowerShell
-Get-WinEvent -FilterHashtable @{ LogName='Application'; ProviderName='.NET Runtime'; Keywords=36028797018963968; ID=1023; Level=2 }
+```powershell
+Get-WinEvent -FilterHashtable @{
+   LogName='Application'
+   ProviderName='.NET Runtime'
+   Keywords=36028797018963968
+   ID=1023
+   Level=2
+}
 ```
 
 #### Level static property in enumeration (optional)
@@ -244,7 +277,13 @@ Rather than using the returned string, the property name must be converted to a 
 
 For example, the following script uses the **Value__** property.
 
-```PowerShell
+```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventLevel]::Informational
-Get-WinEvent -FilterHashtable @{ LogName='Application'; ProviderName='.NET Runtime'; Keywords=36028797018963968; ID=1023; Level=$C.Value__ }
+Get-WinEvent -FilterHashtable @{
+   LogName='Application'
+   ProviderName='.NET Runtime'
+   Keywords=36028797018963968
+   ID=1023
+   Level=$C.Value__
+}
 ```
