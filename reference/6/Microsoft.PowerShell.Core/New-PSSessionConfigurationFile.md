@@ -86,7 +86,7 @@ Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force 
 Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 ```
 
-####
+###
 
 The third pair of commands creates two sessions, which are using one of the session configurations that were created in the previous command pair.
 
@@ -110,7 +110,7 @@ The syntax is not supported by this runspace. This might be because it is in no-
     + PSComputerName        : localhost
 ```
 
-####
+###
 
 The eighth command uses the **Invoke-Command** cmdlet to run the same If statement in the restricted-language session.
 Because these language elements are permitted in the restricted-language session, the command succeeds.
