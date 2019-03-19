@@ -5,7 +5,7 @@ title: Creating Get-WinEvent queries with FilterHashtable
 
 # Creating Get-WinEvent queries with FilterHashtable
 
-To read the original blog June 3, 2014 **Scripting Guy** blog post, see
+To read the original June 3, 2014 **Scripting Guy** blog post, see
 [Use FilterHashTable to Filter Event Log with PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
 
 This article is an excerpt of the original blog post and explains how to use the `Get-WinEvent`
