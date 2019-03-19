@@ -130,11 +130,15 @@ To run the commands in this example, start Windows PowerShell by using the Run a
 
 ### Example 3: Changing a Session Configuration File
 
+### _____________________________________________
+
 The first command uses the **New-PSSessionConfigurationFile** cmdlet to create a session configuration file that imports the required modules
 
 ```powershell
 New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
 ```
+
+### _____________________________________________
 
 The second command uses the **Set-PSSessionConfiguration** cmdlet to replace the current .pssc file with the new one. Changes to the session configuration affects all sessions created after the change is completed.
 
@@ -147,6 +151,8 @@ In this scenario, the administrator wants to add the **PSScheduledJob** module t
 Previously, these sessions had only the core modules and an internal "ITTasks" module.
 
 ### Example 4: Editing a Session Configuration File
+
+### _____________________________________________
 
 The first command uses the Get-PSSessionConfiguration command 
 to get the path of the configuration file for the ITConfig session configuration. 
@@ -161,6 +167,8 @@ C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\ITConfig_1e9cb265-dae0-
 ```
 
 To modify the session configuration copy of the configuration file, you might have to change the file permissions. In this case, the current user, who is a member of the Administrators group on the system, was explicitly granted full control of the file by using the following method: Right-click the file icon, and then click Properties. On the Security tab, click Edit, and then click Add. Add the user, and then, in the Full control column, click Allow.Now the user can modify the file. A new slst alias for the Select-String cmdlet is added to the file.
+
+### _____________________________________________
 
 ```powershell
 AliasDefinitions = @(@{Name='slst';Value='Select-String'})
@@ -183,6 +191,8 @@ This example shows how to change a session configuration by editing the active s
 The code below will create a sample PSSession Configuration File. 
 This example displays a **New-PSSessionConfigurationFile** command that uses all of the cmdlet parameters.
 It is included to show correct input format for each parameter.
+
+### _____________________________________________
 
 ```powershell
 $parameters = @{
@@ -216,6 +226,8 @@ $parameters = @{
  ```
 
 You may run **Get-Content** conmmand then to review configuration file:
+
+### _____________________________________________
 
 ```powershell
 Get-Content .\SampleFile.pssc
