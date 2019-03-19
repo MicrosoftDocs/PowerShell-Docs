@@ -73,6 +73,9 @@ The first pair of commands uses the **New-PSSessionConfigurationFile** cmdlet to
 
 ```powershell
 New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage ;
+```
+
+```powershell
 New-PSSessionConfigurationFile -Path .\RestrictedLanguage.pssc -LanguageMode RestrictedLanguage
 ```
 
@@ -81,6 +84,7 @@ The second pair of commands uses the configuration files to create session confi
 ```powershell
 Register-PSSessionConfiguration -Path .\NoLanguage.pssc -Name NoLanguage -Force
 ```
+
 ```powershell
 Register-PSSessionConfiguration -Path .\RestrictedLanguage.pssc -Name RestrictedLanguage -Force
 ```
@@ -96,6 +100,9 @@ The seventh command uses the Invoke-Command cmdlet to run an If statement in the
 
 ```powershell
 Invoke-Command -Session $NoLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+```
+
+```Output
 The syntax is not supported by this runspace. This might be because it is in no-language mode.
     + CategoryInfo          : ParserError: (if ((Get-Date) ...") {"Before"}  :String) [], ParseException
     + FullyQualifiedErrorId : ScriptsNotAllowed
@@ -107,6 +114,9 @@ Because these language elements are permitted in the restricted-language session
 
 ```powershell
 Invoke-Command -Session $RestrictedLanguage {if ((Get-Date) -lt "1January2014") {"Before"} else {"After"} }
+```
+
+```Output
 Before
 ```
 
@@ -141,6 +151,9 @@ The path is stored in the **ConfigFilePath** property of the session configurati
 
 ```powershell
 (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
+```
+
+```Output
 C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\ITConfig_1e9cb265-dae0-4bd3-89a9-8338a47698a1.pssc
 ```
 
@@ -154,6 +167,9 @@ The second command uses the Test-PSSessionConfigurationFile cmdlet to test the e
 
 ```powershell
 Test-PSSessionConfigurationFile -Path (Get-PSSessionConfiguration -Name ITConfig).ConfigFilePath
+```
+
+```Output
 True
 ```
 
@@ -200,6 +216,9 @@ You may run **Get-Content** conmmand then to review configuration file:
 
 ```powershell
 Get-Content .\SampleFile.pssc
+```
+
+```Output
 @{
 
 # Version number of the schema used for this document
