@@ -39,15 +39,15 @@ The session configuration file that `New-PSSessionConfigurationFile` creates is 
 text file that contains a hash table of the session configuration properties and values. The file
 has a `.pssc` file name extension.
 
-All parameters of `New-PSSessionConfigurationFile` are optional, except for the **Path** parameter. If
-you omit a parameter, the corresponding key in the session configuration file is commented-out,
+All parameters of `New-PSSessionConfigurationFile` are optional, except for the **Path** parameter.
+If you omit a parameter, the corresponding key in the session configuration file is commented-out,
 except where noted in the parameter description.
 
 A session configuration, also known as an endpoint, is a collection of settings on the local
-computer that define the environment for Windows PowerShell sessions (**PSSessions**) that connect
-to, or terminate at, the computer. All **PSSessions** use a session configuration. To specify a
-particular session configuration, use the **ConfigurationName** parameter of cmdlets that create a
-session, such as the `New-PSSession` cmdlet.
+computer that define the environment for PowerShell sessions (**PSSessions**) that connect to, or
+terminate at, the computer. All **PSSessions** use a session configuration. To specify a particular
+session configuration, use the **ConfigurationName** parameter of cmdlets that create a session,
+such as the `New-PSSession` cmdlet.
 
 A session configuration file makes it easy to define a session configuration without complex scripts
 or code assemblies. The settings in the file are used in addition to the optional startup script and
@@ -56,7 +56,7 @@ any assemblies in the session configuration.
 For more information about session configurations and session configuration files, see [about_Session_Configurations](About/about_Session_Configurations.md)
 and [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
-This cmdlet was introduced in Windows PowerShell 3.0.
+This cmdlet was introduced in PowerShell 3.0.
 
 ## EXAMPLES
 
@@ -71,7 +71,7 @@ The steps include:
 1. Create a new session that uses the configuration
 1. Run commands in that new session
 
-To run the commands in this example, start Windows PowerShell by using the Run as administrator
+To run the commands in this example, start PowerShell by using the Run as administrator
 option. This option is required to run the `Register-PSSessionConfiguration` cmdlet.
 
 ```powershell
@@ -101,7 +101,7 @@ The steps include:
 1. Create a new session that uses the configuration
 1. Run commands in that new session
 
-To run the commands in this example, start Windows PowerShell by using the Run as administrator
+To run the commands in this example, start PowerShell by using the Run as administrator
 option. This option is required to run the `Register-PSSessionConfiguration` cmdlet.
 
 ```powershell
@@ -448,7 +448,7 @@ Accept wildcard characters: False
 
 Specifies the execution policy of sessions that use the session configuration. If you omit this
 parameter, the value of the **ExecutionPolicy** key in the session configuration file is
-**Restricted**. For information about execution policies in Windows PowerShell, see [about_Execution_Policies](about/about_Execution_Policies.md).
+**Restricted**. For information about execution policies in PowerShell, see [about_Execution_Policies](about/about_Execution_Policies.md).
 
 ```yaml
 Type: ExecutionPolicy
@@ -560,9 +560,9 @@ Accept wildcard characters: False
 
 ### -LanguageMode
 
-Determines which elements of the Windows PowerShell language are permitted in sessions that use this
-session configuration. You can use this parameter to restrict the commands that particular users can
-run on the computer.
+Determines which elements of the PowerShell language are permitted in sessions that use this session
+configuration. You can use this parameter to restrict the commands that particular users can run on
+the computer.
 
 The acceptable values for this parameter are:
 
@@ -807,7 +807,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -SessionType
@@ -837,7 +837,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -TranscriptDirectory
@@ -920,12 +920,12 @@ Accept wildcard characters: False
 
 Limits the aliases in the session to those specified in the value of this parameter, plus any
 aliases that you define in the **AliasDefinition** parameter. Wildcard characters are supported. By
-default, all aliases that are defined by the Windows PowerShell engine and all aliases that modules
+default, all aliases that are defined by the PowerShell engine and all aliases that modules
 export are visible in the session.
 
 For example: `VisibleAliases='gcm', 'gp'`
 
-When any **Visible** parameter is included in the session configuration file, Windows PowerShell
+When any **Visible** parameter is included in the session configuration file, PowerShell
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
@@ -946,11 +946,11 @@ Limits the cmdlets in the session to those specified in the value of this parame
 characters and Module Qualified Names are supported.
 
 By default, all cmdlets that modules in the session export are visible in the session. Use the
-*SessionType* and **ModulesToImport** parameters to determine which modules and snap-ins are imported
+**SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are imported
 into the session. If no modules in **ModulesToImport** expose the cmdlet, the appropriate module will
 attempt to be autoloaded.
 
-When any **Visible** parameter is included in the session configuration file, Windows PowerShell
+When any **Visible** parameter is included in the session configuration file, PowerShell
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
@@ -962,7 +962,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -VisibleExternalCommands
@@ -972,7 +972,7 @@ specified in the value of this parameter. Wildcard characters are supported.
 
 By default, no external commands are visible in the session.
 
-When any **Visible** parameter is included in the session configuration file, Windows PowerShell,
+When any **Visible** parameter is included in the session configuration file, PowerShell,
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
@@ -984,7 +984,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -VisibleFunctions
@@ -993,10 +993,10 @@ Limits the functions in the session to those specified in the value of this para
 functions that you define in the **FunctionDefinition** parameter. Wildcard characters are supported.
 
 By default, all functions that modules in the session export are visible in the session. Use the
-*SessionType* and **ModulesToImport** parameters to determine which modules and snap-ins are imported
+**SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are imported
 into the session.
 
-When any **Visible** parameter is included in the session configuration file, Windows PowerShell
+When any **Visible** parameter is included in the session configuration file, PowerShell
 removes the `Import-Module` cmdlet and its ipmo alias from the session.
 
 ```yaml
@@ -1013,15 +1013,15 @@ Accept wildcard characters: True
 
 ### -VisibleProviders
 
-Limits the Windows PowerShell providers in the session to those specified in the value of this
-parameter. Wildcard characters are supported.
+Limits the PowerShell providers in the session to those specified in the value of this parameter.
+Wildcard characters are supported.
 
 By default, all providers that modules in the session export are visible in the session. Use the
-*SessionType* and **ModulesToImport** parameters to determine which modules and snap-ins are imported
-into the session.
+**SessionType** and **ModulesToImport** parameters to determine which modules are imported into the
+session.
 
-When any **Visible** parameter is included in the session configuration file, Windows PowerShell
-removes the `Import-Module` cmdlet and its ipmo alias from the session.
+When any **Visible** parameter is included in the session configuration file, PowerShell
+removes the `Import-Module` cmdlet and its `ipmo` alias from the session.
 
 ```yaml
 Type: String[]
@@ -1055,21 +1055,21 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
-* The **Visible** parameters, such as **VisibleCmdlets** and *VisibleProviders*, do not import items
+- The *Visible* parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items
   into the session. Instead, they select from among the items imported into the session. For
   example, if the value of the **VisibleProviders** parameter is the Certificate provider, but the
   **ModulesToImport** parameter does not specify the **Microsoft.PowerShell.Security** module that
   contains the Certificate provider, the Certificate provider is not visible in the session.
-* `New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name
+- `New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name
   extension in the path that you specify in the **Path** parameter. When you use the session
   configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet
   copies the configuration file and saves an active copy of the file in the **SessionConfig**
-  subdirectory of the $pshome directory.
+  subdirectory of the `$pshome` directory.
 
   The **ConfigFilePath** property of the session configuration contains the fully qualified path of
-  the active session configuration file. You can modify the active configuration file in the $pshome
-  directory at any time, either by using Windows PowerShell ISE or any text editor. The changes that
-  you make affect all new sessions that use the session configuration, but not existing sessions.
+  the active session configuration file. You can modify the active configuration file in the
+  `$pshome` directory at any time using any text editor. The changes that you make affect all new
+  sessions that use the session configuration, but not existing sessions.
 
   Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile`
   cmdlet to verify that the configuration file entries are valid.
@@ -1089,3 +1089,9 @@ This cmdlet does not generate any output.
 [Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
+
+[WSMan Provider](../Microsoft.WsMan.Management/Providers/WSMan-Provider.md)
+
+[about_Session_Configurations](About/about_Session_Configurations.md)
+
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
