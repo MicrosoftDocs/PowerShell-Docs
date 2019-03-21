@@ -132,9 +132,9 @@ https://docs.microsoft.com/en-us/powershell/azure/overview?view=azurermps-5.1.1
 
 ### Linking to content in the same Docset
 
-When the content is in the same Docset, the relative links are simple to calculate.
-The link target must be the path to the _Markdown file_ in the repo.
-For example, the following markdown links to the about_Arrays topic in this repo.
+When the content is in the same Docset, the relative links are simple to calculate. The link target
+must be the path to the _Markdown file_ in the repo. For example, the following markdown links to
+the about_Arrays topic in this repo.
 
 ```Markdown
 [about_Arrays](../reference/5.1/Microsoft.PowerShell.Core/About/about_Arrays.md)
@@ -150,8 +150,8 @@ Note that the live link works within the GitHub view of this content.
 
 When the content is in a different Docset, the relative links are more complicated. The link target
 must be the URL path to the _published article_ on **docs.microsoft.com**. The relative link starts
-with the **\<product-service>** portion of the URL as described above. You should omit the
-**[?view=\<view-name>]** portion unless you need to link to a specific version of the content.
+with the `<product-service>` portion of the URL as described above. You should omit the
+`?view=\<view-name>` portion unless you need to link to a specific version of the content.
 
 For example, the following Markdown links to the Overview topic for Azure PowerShell.
 

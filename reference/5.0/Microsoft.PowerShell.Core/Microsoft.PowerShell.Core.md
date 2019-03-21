@@ -35,6 +35,10 @@ Deletes entries from the PowerShell command history.
 
 Reconnects to disconnected sessions.
 
+### [Debug-Job](Debug-Job.md)
+
+Debugs a running background, remote, or Windows PowerShell Workflow job.
+
 ### [Disable-PSRemoting](Disable-PSRemoting.md)
 
 Prevents remote users from running commands on the local computer.
@@ -55,9 +59,17 @@ Configures the computer to receive remote commands.
 
 Enables the session configurations on the local computer.
 
+### [Enter-PSHostProcess](Enter-PSHostProcess.md)
+
+Connects to and enters into an interactive session with a local process.
+
 ### [Enter-PSSession](Enter-PSSession.md)
 
 Starts an interactive session with a remote computer.
+
+### [Exit-PSHostProcess](Exit-PSHostProcess.md)
+
+Closes an interactive session with a local process.
 
 ### [Exit-PSSession](Exit-PSSession.md)
 
@@ -95,9 +107,13 @@ Gets PowerShell background jobs that are running in the current session.
 
 Gets the modules that have been imported or that can be imported into the current session.
 
+### [Get-PSHostProcessInfo](Get-PSHostProcessInfo.md)
+
+Gets process information about the PowerShell host.
+
 ### [Get-PSSession](Get-PSSession.md)
 
-Gets the Windows PowerShell sessions on local and remote computers.
+Gets the PowerShell sessions on local and remote computers.
 
 ### [Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 
@@ -166,6 +182,10 @@ Gets the results of the PowerShell background jobs in the current session.
 ### [Receive-PSSession](Receive-PSSession.md)
 
 Gets results of commands in disconnected sessions.
+
+### [Register-ArgumentCompleter](Register-ArgumentCompleter.md)
+
+Registers a custom argument completer.
 
 ### [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 

@@ -9,7 +9,6 @@ Module Guid:  eefcb906-b326-4e99-9f54-8b4bb6ef3c6d
 title:  Microsoft.PowerShell.Management
 Module Name:  Microsoft.PowerShell.Management
 ---
-
 # Microsoft.PowerShell.Management Module
 
 ## Description
