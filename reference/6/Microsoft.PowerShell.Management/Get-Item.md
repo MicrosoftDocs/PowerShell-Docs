@@ -125,6 +125,14 @@ This command works only when the path includes a wildcard character ('*') to spe
 Get-Item c:\Windows\*.* -Exclude "w*"
 ```
 
+### Example 8: Getting hardlink information
+
+In 6.2, an alternate view was added to get hardlink information.
+To get the hardlink information, pipe the output to `Format-Table -View childrenWithHardlink`
+
+```powershell
+Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
+```
 
 ## PARAMETERS
 
