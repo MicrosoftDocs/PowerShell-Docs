@@ -8,6 +8,7 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821492
 schema: 2.0.0
 title: Import-Module
 ---
+
 # Import-Module
 
 ## SYNOPSIS
@@ -16,63 +17,57 @@ Adds modules to the current session.
 ## SYNTAX
 
 ### Name (Default)
-
 ```
 Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>] [-Cmdlet <String[]>]
- [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-MinimumVersion <Version>]
- [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>] [-DisableNameChecking]
- [-NoClobber] [-Scope <String>] [<CommonParameters>]
-```
-
-### PSSession
-
-```
-Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>] [-Cmdlet <String[]>]
- [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-MinimumVersion <Version>]
- [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>] [-DisableNameChecking]
- [-NoClobber] [-Scope <String>] -PSSession <PSSession> [<CommonParameters>]
-```
-
-### CimSession
-
-```
-Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>] [-Cmdlet <String[]>]
- [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-MinimumVersion <Version>]
- [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>] [-DisableNameChecking]
- [-NoClobber] [-Scope <String>] -CimSession <CimSession> [-CimResourceUri <Uri>] [-CimNamespace <String>]
- [<CommonParameters>]
-```
-
-### FullyQualifiedName
-
-```
-Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecification[]> [-Function <String[]>]
- [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject]
- [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>] [<CommonParameters>]
-```
-
-### FullyQualifiedNameAndPSSession
-
-```
-Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecification[]> [-Function <String[]>]
- [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject]
- [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>] -PSSession <PSSession>
- [<CommonParameters>]
-```
-
-### Assembly
-
-```
-Import-Module [-Global] [-Prefix <String>] [-Assembly] <Assembly[]> [-Function <String[]>] [-Cmdlet <String[]>]
- [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>]
+ [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject]
+ [-MinimumVersion <Version>] [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>]
  [-DisableNameChecking] [-NoClobber] [-Scope <String>] [<CommonParameters>]
 ```
 
-### ModuleInfo
+### PSSession
+```
+Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>] [-Cmdlet <String[]>]
+ [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject]
+ [-MinimumVersion <Version>] [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>]
+ [-DisableNameChecking] [-NoClobber] [-Scope <String>] -PSSession <PSSession> [<CommonParameters>]
+```
 
+### CimSession
+```
+Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>] [-Cmdlet <String[]>]
+ [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject]
+ [-MinimumVersion <Version>] [-MaximumVersion <String>] [-RequiredVersion <Version>] [-ArgumentList <Object[]>]
+ [-DisableNameChecking] [-NoClobber] [-Scope <String>] -CimSession <CimSession> [-CimResourceUri <Uri>]
+ [-CimNamespace <String>] [<CommonParameters>]
+```
+
+### FullyQualifiedName
+```
+Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecification[]> [-Function <String[]>]
+ [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru]
+ [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>]
+ [<CommonParameters>]
+```
+
+### FullyQualifiedNameAndPSSession
+```
+Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecification[]> [-Function <String[]>]
+ [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru]
+ [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>]
+ -PSSession <PSSession> [<CommonParameters>]
+```
+
+### Assembly
+```
+Import-Module [-Global] [-Prefix <String>] [-Assembly] <Assembly[]> [-Function <String[]>] [-Cmdlet <String[]>]
+ [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject]
+ [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>] [<CommonParameters>]
+```
+
+### ModuleInfo
 ```
 Import-Module [-Global] [-Prefix <String>] [-Function <String[]>] [-Cmdlet <String[]>] [-Variable <String[]>]
- [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject] [-ModuleInfo] <PSModuleInfo[]>
+ [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru] [-AsCustomObject] [-ModuleInfo] <PSModuleInfo[]>
  [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>] [<CommonParameters>]
 ```
 
@@ -722,24 +717,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MaximumVersion
-
-Specifies a maximum version.
-This cmdlet imports only a version of the module that is less than or equal to the specified value.
-If no version qualifies, **Import-Module** generates an error.
-
-```yaml
-Type: String
-Parameter Sets: Name, PSSession, CimSession
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -MinimumVersion
 
 Specifies a minimum version.
@@ -834,6 +811,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PSSession
+
+Specifies a Windows PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
+Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
+
+When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
+Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by Windows PowerShell.
+
+This parameter uses the Implicit Remoting feature of Windows PowerShell.
+It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
+
+**Import-Module** cannot import Windows PowerShell Core modules from another session.
+The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
+
+This parameter was introduced in Windows PowerShell 3.0.
+
+```yaml
+Type: PSSession
+Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PassThru
 
 Returns an object representing the item with which you are working.
@@ -870,34 +875,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PSSession
-
-Specifies a Windows PowerShell user-managed session (**PSSession**) from which this cmdlet import modules into the current session.
-Enter a variable that contains a **PSSession** or a command that gets a **PSSession**, such as a Get-PSSession command.
-
-When you import a module from a different session into the current session, you can use the cmdlets from the module in the current session, just as you would use cmdlets from a local module.
-Commands that use the remote cmdlets actually run in the remote session, but the remoting details are managed in the background by Windows PowerShell.
-
-This parameter uses the Implicit Remoting feature of Windows PowerShell.
-It is equivalent to using the Import-PSSession cmdlet to import particular modules from a session.
-
-**Import-Module** cannot import Windows PowerShell Core modules from another session.
-The Windows PowerShell Core modules have names that begin with Microsoft.PowerShell.
-
-This parameter was introduced in Windows PowerShell 3.0.
-
-```yaml
-Type: PSSession
-Parameter Sets: PSSession, FullyQualifiedNameAndPSSession
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -984,9 +961,75 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### -MaximumVersion
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Specifies a maximum version.
+This cmdlet imports only a version of the module that is less than or equal to the specified value.
+If no version qualifies, **Import-Module** generates an error.
+
+```yaml
+Type: String
+Parameter Sets: Name, PSSession, CimSession
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipEditionCheck
+
+Skips the check on the `CompatiblePSEditions` field.
+
+Allows loading a module from the `%windir%\System32\WindowsPowerShell\v1.0\Modules`
+module directory into PowerShell Core when that module does not specify `Core` in the
+`CompatiblePSEditions` manifest field.
+
+When importing a module from another path, this switch does nothing,
+since the check is not performed.
+On Linux and macOS, this switch does nothing.
+
+> [!NOTE]
+> The `CompatiblePSEditions` field for modules not in the `%windir%\System32\WindowsPowerShell\v1.0\Modules`
+> directory is for informational purposes only.
+> It is not checked by Import-Module.
+>
+> For modules that *are* in this directory, if a module does not have `Core` indicated in its
+> `CompatiblePSEditions` field, importing it will fail. If `-SkipEditionCheck` is specified,
+> this import check is bypassed.
+>
+> When a module from the `%windir%\System32\WindowsPowerShell\v1.0\Modules` directory not
+> specifying `Core` in `CompatiblePSEditions` is loaded using `Import-Module -SkipEditionCheck`,
+> the initial import may succeed but problems may occur during usage due to compatibility issues
+> between .NET Framework and .NET Core.
+
+> [!NOTE]
+> The `CompatiblePSEditions` manifest field refers to the .NET runtime PowerShell is built for:
+>
+> - Desktop: Runs on .NET Framework, applies to Windows PowerShell 5.1 and below,
+>   on most Windows editions.
+> - Core: Runs on .NET Core, applies to PowerShell Core 6.0 and above, as well as
+>   Windows PowerShell 5.1 running on reduced footprint Windows editions,
+>   like Windows IoT and Windows Nanoserver.
+>
+> The edition of a PowerShell session can be found with the `$PSEdition` automatic variable.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
