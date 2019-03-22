@@ -144,7 +144,10 @@ Use the following tags to demonstrate to users which packages will work well wit
 - Linux : Packages that are compatible with Linux Operating Systems
 - MacOS : Packages that are compatible with the Mac Operating System
 
-By tagging your package with the compatible platform(s) it will be included in the Gallery search filters on the left pane of the search results. If you host your package on GitHub you can also take advantage of our PowerShell Gallery [compatibility shield](https://img.shields.io/powershellgallery/p/:packageName.svg) when you tag your package.  
+By tagging your package with the compatible platform(s) it will be included in the Gallery search
+filters on the left pane of the search results. If you host your package on GitHub, when you tag your package, you can also
+take advantage of our [PowerShell Gallery compability shields](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![compatibility shield](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
 
 ## Include tests
 
