@@ -47,10 +47,12 @@ allows users of the local computer to create user-managed loopback sessions.
 
 To run this cmdlet, start PowerShell with the Run as administrator option.
 
-> [!NOTE] This command appears only on PowerShell running on the Windows platform. It is not
+> [!NOTE]
+> This command appears only on PowerShell running on the Windows platform. It is not
 > available on Linux or MacOS versions.
 
-> [!CAUTION] On systems that have both Windows PowerShell 3.0 and the Windows PowerShell 2.0 engine,
+> [!CAUTION]
+> On systems that have both Windows PowerShell 3.0 and the Windows PowerShell 2.0 engine,
 > do not use Windows PowerShell 2.0 to run the `Enable-PSRemoting` and `Disable-PSRemoting`
 > cmdlets. The commands might appear to succeed, but the remoting is not configured correctly.
 > Remote commands, and later attempts to enable and disable remoting, are likely to fail.
