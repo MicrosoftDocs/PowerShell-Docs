@@ -64,6 +64,16 @@ functionality with new functionality and a redesigned syntax:
 Due to the use of unsupported APIs, `Microsoft.PowerShell.LocalAccounts` has been removed from
 PowerShell Core until a better solution is found.
 
+### `*-Computer` cmdlets
+
+Due to the use of unsupported APIs, the following cmdlets been removed from PowerShell Core until a
+better solution is found.
+
+- Add-Computer
+- Checkpoint-Computer
+- Remove-Computer
+- Restore-Computer
+
 ### `*-Counter` cmdlets
 
 Due to the use of unsupported APIs, the `*-Counter` has been removed from PowerShell Core until a
