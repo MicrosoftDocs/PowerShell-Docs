@@ -1,5 +1,5 @@
 ---
-ms.date:  2/19/2019
+ms.date:  03/22/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -10,6 +10,7 @@ title:  Get-ChildItem
 # Get-ChildItem
 
 ## SYNOPSIS
+
 Gets the items and child items in one or more specified locations.
 
 ## SYNTAX

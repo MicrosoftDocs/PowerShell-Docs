@@ -1,5 +1,5 @@
 ---
-ms.date:  10/18/2018
+ms.date:  03/22/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -10,6 +10,7 @@ title:  Get-Item
 # Get-Item
 
 ## SYNOPSIS
+
 Gets the item at the specified location.
 
 ## SYNTAX
