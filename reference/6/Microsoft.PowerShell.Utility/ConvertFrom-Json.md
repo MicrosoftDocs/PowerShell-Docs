@@ -8,15 +8,17 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821753
 schema: 2.0.0
 title: ConvertFrom-Json
 ---
+
 # ConvertFrom-Json
 
 ## SYNOPSIS
+
 Converts a JSON-formatted string to a custom object or a hash table.
 
 ## SYNTAX
 
 ```
-ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [<CommonParameters>]
+ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,6 +127,23 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Depth
+
+Gets or sets the maximum depth the JSON input is allowed to have.
+By default, it is 1024.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
