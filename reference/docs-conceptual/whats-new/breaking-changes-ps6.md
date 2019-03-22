@@ -66,7 +66,7 @@ PowerShell Core until a better solution is found.
 
 ### `*-Computer` cmdlets
 
-Due to the use of unsupported APIs, the following cmdlets been removed from PowerShell Core until a
+Due to the use of unsupported APIs, the following cmdlets have been removed from PowerShell Core until a
 better solution is found.
 
 - Add-Computer
