@@ -48,7 +48,7 @@ If the standard string being converted was encrypted with **ConvertFrom-SecureSt
 
 > [!NOTE]
 > Note that per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks), the
-> contents of a SecureString are not encrypted.
+> contents of a SecureString are not encrypted on non-Windows systems.
 
 ## EXAMPLES
 
