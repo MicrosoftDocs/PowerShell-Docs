@@ -344,6 +344,14 @@ The `Get-ChildItem` cmdlet uses the **Path** parameter to specify **C:\Parent**.
 parameter specifies two levels of recursion. `Get-ChildItem` displays the contents of the directory
 specified by the **Path** parameter and the two levels of subdirectories.
 
+### Example 9: Getting hardlink information
+
+In 6.2, an alternate view was added to get hardlink information.
+
+```powershell
+Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardlink
+```
+
 ## Parameters
 
 ### -Attributes
