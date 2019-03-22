@@ -203,7 +203,7 @@ This is usually used in conjunction with
 
 ```yaml
 Type: String
-Parameter Sets: PipePipeNameParameterSet
+Parameter Sets: PipeNameParameterSet
 Aliases:
 
 Required: True
