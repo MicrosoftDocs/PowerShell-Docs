@@ -34,8 +34,9 @@ To list tasks running on DC01, you use the **/S** parameter and the computer nam
 backslashes. For example, `tasklist /S DC01`.
 
 > [!NOTE]
-> Prior to PowerShell v6, `sc` was an alias for the `Set-Content` cmdlet. To run the **sc.exe**
-> command, you must include the file extension.
+> Prior to PowerShell v6, `sc` was an alias for the `Set-Content` cmdlet. Therefore, to run 
+> the **sc.exe** command in a version of PowerShell prior to v6, you must include the 
+> full filename **sc.exe** including the file extension **exe**.
 
 Services and processes are examples of manageable elements on a computer that have well-defined
 life cycles. You may start or stop services and processes, or get a list of all currently
