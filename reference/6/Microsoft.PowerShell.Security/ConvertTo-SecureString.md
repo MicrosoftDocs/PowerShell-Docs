@@ -44,7 +44,7 @@ This enables it to be stored in a file for later use.
 If the standard string being converted was encrypted with **ConvertFrom-SecureString** using a specified key, that same key must be provided as the value of the *Key* or *SecureKey* parameter of the **ConvertTo-SecureString** cmdlet.
 
 > [!NOTE]
-> Note that per [DotNet](https://github.com/dotnet/platform-compat/blob/master/docs/DE0001.md), the
+> Note that per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks), the
 > contents of a SecureString are not encrypted.
 
 ## EXAMPLES
