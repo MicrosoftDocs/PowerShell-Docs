@@ -39,7 +39,7 @@ If no key is specified, the Windows Data Protection API (DPAPI) is used to encry
 
 > [!NOTE]
 > Note that per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks), the
-> contents of a SecureString are not encrypted.
+> contents of a SecureString are not encrypted on non-Windows systems.
 
 ## EXAMPLES
 
