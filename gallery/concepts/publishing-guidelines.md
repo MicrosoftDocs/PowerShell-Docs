@@ -134,6 +134,7 @@ Adding a link is done by including ProjectURI in the PSData section of the manif
 
 When a ProjectURI is provided, the PowerShell Gallery will include a link to the Project Site on the left side of the package page.
 
+
 ## Tag your package with the compatible PSEdition(s) and platforms
 
 Use the following tags to demonstrate to users which packages will work well with their environment:
@@ -143,6 +144,8 @@ Use the following tags to demonstrate to users which packages will work well wit
 - Windows : Packages that are compatible with the Windows Operating System
 - Linux : Packages that are compatible with Linux Operating Systems
 - MacOS : Packages that are compatible with the Mac Operating System
+
+By tagging your package with the compatible platform(s) it will be included in the Gallery search filters on the left pane of the search results. If you host your package on GitHub you can also take advantage of our PowerShell Gallery [compatibility shield](https://img.shields.io/powershellgallery/p/:packageName.svg) when you tag your package.  
 
 ## Include tests
 
