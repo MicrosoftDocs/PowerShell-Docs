@@ -159,6 +159,10 @@ True
 
 ### Example 7: Test a path with null as the value
 
+The error returned for `null`, array of `null` or empty array is a non-terminating error.
+It can be suppress by using `-ErrorAction SilentlyContinue`.
+The following example shows all cases which return the `NullPathNotPermitted` error.
+
 ```powershell
 Test-Path $null
 Test-Path $null, $null
@@ -175,9 +179,10 @@ At line:1 char:1
 + FullyQualifiedErrorId : NullPathNotPermitted,Microsoft.PowerShell.Commands.TestPathCommand
 ```
 
-The error returned for `null`, array of `null` or empty array is a non-terminating error and can be suppress by using `-ErrorAction SilentlyContinue`.
-
 ### Example 8: Test a path with whitespace as the value
+
+When a whitespace is or empty string in provided for the the `-Path` parameter, it returns false.
+The following example show whitespace and empty string.
 
 ```powershell
 Test-Path ' '
