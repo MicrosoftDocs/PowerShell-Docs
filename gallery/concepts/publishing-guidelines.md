@@ -134,7 +134,6 @@ Adding a link is done by including ProjectURI in the PSData section of the manif
 
 When a ProjectURI is provided, the PowerShell Gallery will include a link to the Project Site on the left side of the package page.
 
-
 ## Tag your package with the compatible PSEdition(s) and platforms
 
 Use the following tags to demonstrate to users which packages will work well with their environment:
