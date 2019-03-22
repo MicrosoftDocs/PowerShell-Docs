@@ -11,6 +11,7 @@ title: Enter-PSHostProcess
 # Enter-PSHostProcess
 
 ## SYNOPSIS
+
 Connects to and enters into an interactive session with a local process.
 
 ## SYNTAX
@@ -37,6 +38,12 @@ Enter-PSHostProcess [-Name] <String> [[-AppDomainName] <String>] [<CommonParamet
 
 ```
 Enter-PSHostProcess [-HostProcessInfo] <PSHostProcessInfo> [[-AppDomainName] <String>] [<CommonParameters>]
+```
+
+### PipeNameParameterSet
+
+```
+Enter-PSHostProcess -CustomPipeName <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -112,7 +119,7 @@ PS C:\>
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: ProcessIdParameterSet, ProcessParameterSet, ProcessNameParameterSet, PSHostProcessInfoParameterSet
 Aliases:
 
 Required: False
@@ -185,6 +192,24 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -CustomPipeName
+
+Gets or sets the custom named pipe name to connect to.
+This is usually used in conjunction with
+`pwsh -CustomPipeName`.
+
+```yaml
+Type: String
+Parameter Sets: PipePipeNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
