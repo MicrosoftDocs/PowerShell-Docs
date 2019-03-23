@@ -36,6 +36,15 @@ once every six months (examples: 6.0, 6.1, 6.2, etc.)
 For example, if PowerShell Core 6.1 is released on July 1, 2018,
 you would be expected to update to PowerShell Core 6.1 by January 1, 2019 to maintain support.
 
+> [!IMPORTANT]
+> You must update within 30 days after each new patch version release to continue receiving support.
+
+For example, If you are running PowerShell Core 6.1 and 6.1.3 was released on February 19, 2019,
+you would be expected to update to PowerShell Core 6.1.3 by March 21, 2019,
+which is 30 days after the release to maintain support.
+If any fixes are found to be required,
+the fixes will be released in our next cumulative update.
+
 ![PowerShell Core branch lifecycle][lifecycle-chart]
 
 The Modern Lifecycle Policy also requires that Microsoft give customers 12 months
