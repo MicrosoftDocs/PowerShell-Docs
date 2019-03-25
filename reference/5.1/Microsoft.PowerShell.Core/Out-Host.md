@@ -115,14 +115,14 @@ This cmdlet does not generate any output. However, the host might display the ob
 The **Paging** parameter is not supported by all PowerShell hosts. For example, when you try to
 use the **Paging** parameter in the PowerShell ISE, you see the following error:
 
-```Output
-out-lineoutput : The method or operation is not implemented.
-At line:1 char:1
-+ Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
-    + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
-```
+> ```Output
+> out-lineoutput : The method or operation is not implemented.
+> At line:1 char:1
+> + Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
+> + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>     + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
+>    + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
+> ```
 
 The cmdlets that contain the **Out** verb (the `Out-*` cmdlets) do not format objects. They just
 render objects and send them to the specified display destination. If you send an unformatted object
