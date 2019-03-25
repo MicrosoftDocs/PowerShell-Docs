@@ -165,4 +165,4 @@ Add-WindowsPSModulePath
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
-[Experimental features]: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures
+[Experimental features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures
