@@ -15,6 +15,8 @@ including [Premier][], [Microsoft Enterprise Agreements][enterprise-agreement],
 and [Microsoft Software Assurance][assurance].
 You can also pay for [assisted support][] for PowerShell Core by filing a support request for your problem.
 
+## Community Support
+
 We also offer [community support][] on GitHub where you can file an issue, bug, or feature request.
 Also, you may find help from other members of the community on the general
 [Microsoft Community][] or the Microsoft [PowerShell Tech Community][].
@@ -156,6 +158,10 @@ After installing this module, run the `Add-WindowsPSModulePath` cmdlet to add th
 Add-WindowsPSModulePath
 ```
 
+## Experimental features
+
+[Experimental features][] are limited to [community support](#community-support).
+
 [Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
@@ -168,3 +174,4 @@ Add-WindowsPSModulePath
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[Experimental features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures
