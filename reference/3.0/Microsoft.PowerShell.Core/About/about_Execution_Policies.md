@@ -357,7 +357,7 @@ and [Unblock-File](../../Microsoft.PowerShell.Utility/Unblock-File.md).
 
 [Get-Item](../../Microsoft.PowerShell.Management/Get-Item.md)
 
-[Pwsh Console Help](about_pwsh.md)
+[PowerShell.exe Command-Line Help](/powershell/scripting/components/console/powershell.exe-command-line-help)
 
 [Set-ExecutionPolicy](../../Microsoft.PowerShell.Security/Set-ExecutionPolicy.md)
 
