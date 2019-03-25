@@ -211,7 +211,7 @@ Accept wildcard characters: False
 
 ### -Scope
 Determines the scope of the variable.
-Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
+Valid values are "Global", "Local", "Script", or "Private", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
 For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_scopes.md).
 
