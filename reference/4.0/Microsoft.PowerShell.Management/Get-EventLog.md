@@ -1,5 +1,5 @@
 ---
-ms.date: 1/18/2019
+ms.date: 3/26/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -19,9 +19,10 @@ computers.
 ### LogName (Default)
 
 ```
-Get-EventLog [-LogName] <string> [[-InstanceId] <long[]>] [-ComputerName <string[]>] [-Newest
-<int>] [-After <datetime>] [-Before <datetime>] [-UserName <string[]>] [-Index <int[]>] [-EntryType
-<string[]>] [-Source <string[]>] [-Message <string>] [-AsBaseObject] [<CommonParameters>]
+Get-EventLog [-LogName] <string> [[-InstanceId] <long[]>] [-ComputerName <string[]>] [-Newest <int>]
+[-After <datetime>] [-Before <datetime>] [-UserName <string[]>] [-Index <int[]>]
+[-EntryType <string[]>] [-Source <string[]>] [-Message <string>] [-AsBaseObject]
+[<CommonParameters>]
 ```
 
 ### List
@@ -32,14 +33,16 @@ Get-EventLog [-ComputerName <string[]>] [-List] [-AsString] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Get-EventLog` cmdlet gets events and event logs on the local and remote computers.
+The `Get-EventLog` cmdlet gets events and event logs from local and remote computers. By default,
+`Get-EventLog` gets logs from the local computer. To get logs from remote computers, use the
+**ComputerName** parameter.
 
-You can use the cmdlet's parameters and property values to search for events. This cmdlet gets
+You can use the `Get-EventLog` parameters and property values to search for events. The cmdlet gets
 events that match the specified property values.
 
-The cmdlets that contain the EventLog noun work only on classic event logs. To get events from logs
-that use the Windows Event Log technology in Windows Vista and later Windows versions, use
-`Get-WinEvent`.
+PowerShell cmdlets that contain the `EventLog` noun work only on Windows classic event logs such as
+Application, System, or Security. To get logs that use the Windows Event Log technology in Windows
+Vista and later Windows versions, use `Get-WinEvent`.
 
 ## EXAMPLES
 
@@ -149,16 +152,16 @@ Index Time          EntryType  Source  InstanceID  Message
 ```
 
 The `Get-EventLog` cmdlet uses the **LogName** parameter to specify the System log. The
-**InstanceID** parameter selects the events with the specified Instance ID. The **Source**
-parameter specifies the event property.
+**InstanceID** parameter selects the events with the specified Instance ID. The **Source** parameter
+specifies the event property.
 
 ### Example 6: Get events from multiple computers
 
 This command gets the events from the System event log on three computers: Server01, Server02, and
-the local computer known as localhost.
+Server03.
 
 ```powershell
-Get-EventLog -LogName System -ComputerName Server01, Server02, localhost
+Get-EventLog -LogName System -ComputerName Server01, Server02, Server03
 ```
 
 The `Get-EventLog` cmdlet uses the **LogName** parameter to specify the System log. The
@@ -167,8 +170,8 @@ to get the event logs.
 
 ### Example 7: Get all events that include a specific word in the message
 
-This command gets all the events in the System event log that contain a specific word in the
-event's message. It's possible that your specified **Message** parameter's value is included in the
+This command gets all the events in the System event log that contain a specific word in the event's
+message. It's possible that your specified **Message** parameter's value is included in the
 message's content but isn't displayed on the PowerShell console.
 
 ```powershell
@@ -217,8 +220,8 @@ Container          :
 The `Get-EventLog` cmdlet uses the **LogName** parameter to specify the System event log. The
 **Newest** parameter selects the most recent event object. The object is stored in the `$A`
 variable. The object in the `$A` variable is sent down the pipeline to the `Select-Object` cmdlet.
-`Select-Object` uses the **Property** parameter with an asterisk (`*`) to select all of the
-object's properties.
+`Select-Object` uses the **Property** parameter with an asterisk (`*`) to select all of the object's
+properties.
 
 ### Example 9: Get events from an event log using a source and event ID
 
@@ -238,11 +241,11 @@ Outlook       63   1073741887   The Exchange web service request succeeded.
 ```
 
 The `Get-EventLog` cmdlet uses the **LogName** parameter to specify the Application event log. The
-**Source** parameter specifies the application name, Outlook. The objects are sent down the
-pipeline to the `Where-Object` cmdlet. For each object in the pipeline, the `Where-Object` cmdlet
-uses the variable `$_.EventID` to compare the Event ID property to the specified value. The objects
-are sent down the pipeline to the `Select-Object` cmdlet. `Select-Object` uses the **Property**
-parameter to select the properties to display in the PowerShell console.
+**Source** parameter specifies the application name, Outlook. The objects are sent down the pipeline
+to the `Where-Object` cmdlet. For each object in the pipeline, the `Where-Object` cmdlet uses the
+variable `$_.EventID` to compare the Event ID property to the specified value. The objects are sent
+down the pipeline to the `Select-Object` cmdlet. `Select-Object` uses the **Property** parameter to
+select the properties to display in the PowerShell console.
 
 ### Example 10: Get events and group by a property
 
@@ -259,9 +262,9 @@ Count  Name
    4   NT AUTHORITY\NETWORK SERVICE
 ```
 
-The `Get-EventLog` cmdlet uses the **LogName** parameter to specify the System log. The
-**UserName** parameter includes the asterisk (`*`) wildcard to specify a portion of the user name.
-The event objects are sent down the pipeline to the `Group-Object` cmdlet. `Group-Object` uses the
+The `Get-EventLog` cmdlet uses the **LogName** parameter to specify the System log. The **UserName**
+parameter includes the asterisk (`*`) wildcard to specify a portion of the user name. The event
+objects are sent down the pipeline to the `Group-Object` cmdlet. `Group-Object` uses the
 **Property** parameter to specify that the **UserName** property is used to group the objects and
 count the number of objects for each user name. The **NoElement** parameter removes the group
 members from the output. The objects are sent down the pipeline to the `Select-Object` cmdlet.
@@ -299,9 +302,9 @@ event type. The date and time range is set by the **After** parameter and `$Begi
 
 ### -After
 
-Gets events that occurred after a specified date and time. The **After** parameter date and time
-are excluded from the output. Enter a **DateTime** object, such as the value returned by the
-`Get-Date` cmdlet.
+Gets events that occurred after a specified date and time. The **After** parameter date and time are
+excluded from the output. Enter a **DateTime** object, such as the value returned by the `Get-Date`
+cmdlet.
 
 ```yaml
 Type: DateTime
@@ -372,15 +375,16 @@ Accept wildcard characters: False
 
 ### -ComputerName
 
-Specifies a remote computer. If a **ComputerName** is not specified, `Get-EventLog` uses the local
-computer.
+This parameter specifies a remote computer's NetBIOS name, Internet Protocol (IP) address, or a
+fully qualified domain name (FQDN).
 
-Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name (FQDN)
-of a remote computer. To specify the local computer, type the computer name, a dot (`.`), or
-localhost.
+If the **ComputerName** parameter isn't specified, `Get-EventLog` uses the default, which is the
+local computer. If you need to specify the local computer, the parameter accepts a dot (`.`), the
+loopback IP **127.0.0.1**, or **localhost**.
 
-This parameter does not rely on Windows PowerShell remoting. You can use the **ComputerName**
-parameter of `Get-EventLog` even if your computer is not configured to run remote commands.
+The **ComputerName** parameter doesn't rely on Windows PowerShell remoting. You can use
+`Get-EventLog` with the **ComputerName** parameter even if your computer is not configured to run
+remote commands.
 
 ```yaml
 Type: String[]
@@ -421,8 +425,8 @@ Accept wildcard characters: False
 
 ### -Index
 
-Specifies the index values to get from the event log. The parameter accepts a comma-separated
-string of values.
+Specifies the index values to get from the event log. The parameter accepts a comma-separated string
+of values.
 
 ```yaml
 Type: int[]
@@ -438,8 +442,8 @@ Accept wildcard characters: False
 
 ### -InstanceId
 
-Specifies the Instance IDs to get from the event log. The parameter accepts a comma-separated
-string of values.
+Specifies the Instance IDs to get from the event log. The parameter accepts a comma-separated string
+of values.
 
 ```yaml
 Type: long[]
@@ -540,7 +544,7 @@ Accept wildcard characters: True
 ### -UserName
 
 Specifies, as a string array, user names that are associated with events. Enter names or name
-patterns, such as User01, User*, or Domain01\User*. Wildcards are permitted.
+patterns, such as `User01`, `User*`, or `Domain01\User*`. Wildcards are permitted.
 
 ```yaml
 Type: String[]
@@ -558,8 +562,7 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
