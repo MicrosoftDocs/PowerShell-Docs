@@ -379,10 +379,8 @@ Accept wildcard characters: False
 This parameter specifies a remote computer's NetBIOS name, Internet Protocol (IP) address, or a
 fully qualified domain name (FQDN).
 
-If the **ComputerName** parameter isn't specified, `Get-EventLog` uses the default, which is the
-local computer, **localhost**. The parameter accepts a dot (`.`) to specify **localhost**. The
-**ComputerName** parameter doesn't' accept **localhost** or the loopback IP, **127.0.0.1**, and
-displays an error.
+If the **ComputerName** parameter isn't specified, `Get-EventLog` defaults to the local
+computer. The parameter also accepts a dot (`.`) to specify the local computer.
 
 The **ComputerName** parameter doesn't rely on Windows PowerShell remoting. You can use
 `Get-EventLog` with the **ComputerName** parameter even if your computer is not configured to run
@@ -395,7 +393,7 @@ Aliases: Cn
 
 Required: False
 Position: Named
-Default value: localhost
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
