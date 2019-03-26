@@ -124,7 +124,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### System.Diagnostics.Process
+
+You can pipe a **Process** object from `Get-Process` to this cmdlet.
 
 ## OUTPUTS
 

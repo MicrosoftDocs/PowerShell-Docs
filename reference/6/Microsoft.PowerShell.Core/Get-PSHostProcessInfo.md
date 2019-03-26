@@ -82,8 +82,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies a process by the process name. To get a process name, run the `Get-Process` cmdlet. You
-can also get process names from the Properties dialog box of a process in Task Manager.
+Specifies a process by the process name. To get a process name, run the `Get-Process` cmdlet.
 
 ```yaml
 Type: String[]
@@ -123,7 +122,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### System.Diagnostics.Process
+
+You can pipe a **Process** object from `Get-Process` to this cmdlet.
 
 ## OUTPUTS
 
