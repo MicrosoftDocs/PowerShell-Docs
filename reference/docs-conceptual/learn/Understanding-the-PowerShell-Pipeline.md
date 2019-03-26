@@ -73,6 +73,19 @@ You can see the difference Windows Task Manager to monitor CPU and memory used b
 the following command: `Get-ChildItem C:\Windows -Recurse`. Compare the CPU and memory usage to
 this command: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
 
+> [!NOTE]
+> The **Paging** parameter is not supported by all PowerShell hosts. For example, when you try to
+> use the **Paging** parameter in the PowerShell ISE, you see the following error:
+>
+> ```Output
+> out-lineoutput : The method or operation is not implemented.
+> At line:1 char:1
+> + Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
+> + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>     + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
+>     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
+> ```
+
 ## Objects in the pipeline
 
 When you run a cmdlet in PowerShell, you see text output because it is necessary to represent
@@ -97,7 +110,7 @@ When you pipe the output to the `Get-Member` cmdlet you get information about th
 `Get-Location`.
 
 ```powershell
-PS> Get-Location | Get-Member
+Get-Location | Get-Member
 ```
 
 ```Output
