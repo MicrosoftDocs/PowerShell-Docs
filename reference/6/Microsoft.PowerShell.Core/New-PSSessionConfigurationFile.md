@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 03/26/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821499
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
@@ -37,21 +37,21 @@ To use the file in a session configuration, use the **Path** parameter of the
 
 The session configuration file that `New-PSSessionConfigurationFile` creates is a human-readable
 text file that contains a hash table of the session configuration properties and values. The file
-has a `.pssc` file name extension.
+has a `.pssc` filename extension.
 
 All parameters of `New-PSSessionConfigurationFile` are optional, except for the **Path** parameter.
 If you omit a parameter, the corresponding key in the session configuration file is commented-out,
 except where noted in the parameter description.
 
 A session configuration, also known as an endpoint, is a collection of settings on the local
-computer that define the environment for PowerShell sessions (**PSSessions**) that connect to, or
-terminate at, the computer. All **PSSessions** use a session configuration. To specify a particular
-session configuration, use the **ConfigurationName** parameter of cmdlets that create a session,
-such as the `New-PSSession` cmdlet.
+computer that define the environment for PowerShell sessions (**PSSessions**) that connect to the
+computer. All **PSSessions** use a session configuration. To specify a particular session
+configuration, use the **ConfigurationName** parameter of cmdlets that create a session, such as the
+`New-PSSession` cmdlet.
 
 A session configuration file makes it easy to define a session configuration without complex scripts
-or code assemblies. The settings in the file are used in addition to the optional startup script and
-any assemblies in the session configuration.
+or code assemblies. The settings in the file are used with the optional startup script and any
+assemblies in the session configuration.
 
 For more information about session configurations and session configuration files, see [about_Session_Configurations](About/about_Session_Configurations.md)
 and [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
@@ -147,10 +147,10 @@ configuration file.
 
 The example code below performs the following steps to make this change:
 
-1. Get the configuration file path for the ITConfig session.
+1. Get the configuration file path for the ITConfig session
 1. The user edits the configuration file using **Notepad.exe** to change the **AliasDefinitions**
-   value as follows: `AliasDefinitions = @(@{Name='slst';Value='Select-String'})`.
-1. Test the updated configuration file.
+   value as follows: `AliasDefinitions = @(@{Name='slst';Value='Select-String'})`
+1. Test the updated configuration file
 
 ```powershell
 $ITConfig = Get-PSSessionConfiguration -Name ITConfig
@@ -167,8 +167,8 @@ detected. The cmdlet returns `$True` if no errors are detected in the file.
 
 ### Example 5: Create a sample configuration file
 
-This example shows a `New-PSSessionConfigurationFile` command that uses all of the cmdlet
-parameters. It is included to show the correct input format for each parameter.
+This example shows a `New-PSSessionConfigurationFile` command that uses all the cmdlet parameters.
+It is included to show the correct input format for each parameter.
 
 The resulting SampleFile.pssc is displayed in the output.
 
@@ -315,11 +315,11 @@ AssembliesToLoad = 'System.Web.Services', 'FSharp.Compiler.CodeDom.dll'
 Adds the specified aliases to sessions that use the session configuration. Enter a hash table with
 the following keys:
 
-- Name - Name of the alias. This key is required.
-- Value - The command that the alias represents. This key is required.
-- Description - A text string that describes the alias. This key is optional.
+- Name - Name of the alias. This key is required
+- Value - The command that the alias represents. This key is required
+- Description - A text string that describes the alias. This key is optional
 - Options - Alias options. This key is optional. The default value is **None**. The acceptable
-  values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
+  values for this parameter are: None, ReadOnly, Constant, Private, or AllScope
 
 For example: `@{Name='hlp';Value='Get-Help';Description='Gets help';Options='ReadOnly'}`
 
@@ -502,10 +502,10 @@ Accept wildcard characters: False
 Adds the specified functions to sessions that use the session configuration. Enter a hash table with
 the following keys:
 
-- Name - Name of the function. This key is required.
-- ScriptBlock - Function body. Enter a script block. This key is required.
+- Name - Name of the function. This key is required
+- ScriptBlock - Function body. Enter a script block. This key is required
 - Options - Function options. This key is optional. The default value is **None**. The acceptable
-  values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
+  values for this parameter are: None, ReadOnly, Constant, Private, or AllScope
 
 For example: `@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`
 
@@ -526,7 +526,7 @@ Accept wildcard characters: False
 Configures sessions using this session configuration to run under the context of the specified Group
 Managed Service Account. The machine where this session configuration is registered must have
 permission to request the gMSA password in order for sessions to be created successfully. This field
-cannot be used in conjunction with the **RunAsVirtualAccount** parameter.
+cannot be used with the **RunAsVirtualAccount** parameter.
 
 ```yaml
 Type: String
@@ -566,16 +566,16 @@ the computer.
 
 The acceptable values for this parameter are:
 
-- FullLanguage - All language elements are permitted.
+- FullLanguage - All language elements are permitted
 - ConstrainedLanguage - Commands that contain scripts to be evaluated are not allowed. The
   ConstrainedLanguage mode restricts user access to Microsoft .NET Framework types, objects, or
-  methods.
+  methods
 - NoLanguage - Users may run cmdlets and functions, but are not permitted to use any language
-  elements, such as script blocks, variables, or operators.
+  elements, such as script blocks, variables, or operators
 - RestrictedLanguage - Users may run cmdlets and functions, but are not permitted to use script
   blocks or variables except for the following permitted variables: `$PSCulture`, `$PSUICulture`,
   `$True`, `$False`, and `$Null`. Users may use only the basic comparison operators (`-eq`, `-gt`,
-  `-lt`). Assignment statements, property references, and method calls are not permitted.
+  `-lt`). Assignment statements, property references, and method calls are not permitted
 
 The default value of the **LanguageMode** parameter depends on the value of the **SessionType**
 parameter.
@@ -656,7 +656,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path and file name of the session configuration file. The file must have a `.pssc` file
+Specifies the path and filename of the session configuration file. The file must have a `.pssc` file
 name extension.
 
 ```yaml
@@ -743,8 +743,7 @@ Accept wildcard characters: False
 ### -RunAsVirtualAccount
 
 Configures sessions using this session configuration to be run as the computer's (virtual)
-administrator account. This field cannot be used in conjunction with the
-**GroupManagedServiceAccount** parameter.
+administrator account. This field cannot be used with the **GroupManagedServiceAccount** parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -818,14 +817,14 @@ is Default. The acceptable values for this parameter are:
 - Empty - No modules are added to session by default. Use the parameters of this cmdlet
   to add modules, functions, scripts, and other features to the session. This option is designed for
   you to create custom sessions by adding selected commands. If you do not add commands to an empty
-  session, the session is limited to expressions and might not be usable.
+  session, the session is limited to expressions and might not be usable
 - Default - Adds the Microsoft.PowerShell.Core module to the session. This module includes the
   `Import-Module` cmdlet that users can use to import other modules unless you explicitly prohibit
-  the use of the cmdlets.
+  this cmdlet
 - RestrictedRemoteServer. Includes only the following proxy functions: `Exit-PSSession`,
   `Get-Command`, `Get-FormatData`, `Get-Help`, `Measure-Object`, `Out-Default`, and `Select-Object`.
   Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the
-  session.
+  session
 
 ```yaml
 Type: SessionType
@@ -859,7 +858,7 @@ Accept wildcard characters: False
 ### -TypesToProcess
 
 Adds the specified `.ps1xml` type files to sessions that use the session configuration. Enter the
-type file names. The value of this parameter must be a full or absolute path of type file names.
+type filenames. The value of this parameter must be a full or absolute path to type filenames.
 
 ```yaml
 Type: String[]
@@ -878,7 +877,7 @@ Accept wildcard characters: False
 Specifies the maximum size for user drives exposed in sessions that use this session configuration.
 When omitted, the default size of each `User:` drive root is 50MB.
 
-This parameter should be used in conjunction with **MountUserDrive**.
+This parameter should be used with **MountUserDrive**.
 
 ```yaml
 Type: Int64
@@ -1059,7 +1058,7 @@ This cmdlet does not generate any output.
   into the session. Instead, they select from among the items imported into the session. For
   example, if the value of the **VisibleProviders** parameter is the Certificate provider, but the
   **ModulesToImport** parameter does not specify the **Microsoft.PowerShell.Security** module that
-  contains the Certificate provider, the Certificate provider is not visible in the session.
+  contains the Certificate provider, the Certificate provider is not visible in the session
 - `New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name
   extension in the path that you specify in the **Path** parameter. When you use the session
   configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet
@@ -1072,7 +1071,7 @@ This cmdlet does not generate any output.
   sessions that use the session configuration, but not existing sessions.
 
   Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile`
-  cmdlet to verify that the configuration file entries are valid.
+  cmdlet to verify that the configuration file entries are valid
 
 ## RELATED LINKS
 
