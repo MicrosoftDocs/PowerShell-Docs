@@ -735,8 +735,7 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 
-To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows
-operating system, start PowerShell by using the Run as administrator option.
+To run this cmdlet you must start PowerShell by using the **Run as administrator** option.
 
 This cmdlet generates XML that represents a Web Services for Management (WS-Management) plug-in
 configuration and sends the XML to WS-Management, which registers the plug-in on the local computer

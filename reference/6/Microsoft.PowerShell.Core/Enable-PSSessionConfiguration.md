@@ -33,22 +33,18 @@ configuration, which is the default configuration that is used for sessions.
 
 `Enable-PSSessionConfiguration` removes the **Deny_All** setting from the security descriptor of the
 affected session configurations, turns on the listener that accepts requests on any IP address, and
-restarts the WinRM service. Beginning in Windows PowerShell 3.0, `Enable-PSSessionConfiguration`
+restarts the WinRM service. Beginning in PowerShell 3.0, `Enable-PSSessionConfiguration`
 also sets the value of the **Enabled** property of the session configuration
 (`WSMan:\<computer>\PlugIn\<SessionConfigurationName>\Enabled`) to True. However,
 `Enable-PSSessionConfiguration` does not remove or change the **Network_Deny_All**
 (`AccessMode=Local`) security descriptor setting that allows only users of the local computer to use
 to the session configuration.
 
-The `Enable-PSSessionConfiguration` cmdlet calls the `Set-WSManQuickConfig` cmdlet. However, it
-should not be used to enable remoting on the computer. Instead, use the more comprehensive cmdlet,
-`Enable-PSRemoting`.
-
 ## EXAMPLES
 
 ### Example 1: Re-enable the default session
 
-This command re-enables the **Microsoft.PowerShell** default session configuration on the computer.
+This example re-enables the **Microsoft.PowerShell** default session configuration on the computer.
 
 ```powershell
 Enable-PSSessionConfiguration
@@ -56,7 +52,7 @@ Enable-PSSessionConfiguration
 
 ### Example 2: Re-enable specified sessions
 
-This command re-enables the **MaintenanceShell** and **AdminShell** session configurations on the
+This example re-enables the **MaintenanceShell** and **AdminShell** session configurations on the
 computer.
 
 ```powershell
@@ -65,7 +61,7 @@ Enable-PSSessionConfiguration -Name MaintenanceShell, AdminShell
 
 ### Example 3: Re-enable the all sessions
 
-These commands re-enable all session configurations on the computer. The commands are equivalent.
+This example re-enables all session configurations on the computer. These commands are equivalent.
 Therefore, you can use either.
 
 ```powershell
@@ -78,7 +74,7 @@ that is already enabled.
 
 ### Example 4: Re-enable a session and specify a new security descriptor
 
-This command re-enables the **MaintenanceShell** session configuration and specifies a new security
+This example re-enables the **MaintenanceShell** session configuration and specifies a new security
 descriptor for the configuration.
 
 ```powershell
@@ -173,16 +169,16 @@ network. This parameter enables a firewall rule for public networks that allows 
 from computers in the same local subnet. By default, `Enable-PSSessionConfiguration` fails on a
 public network.
 
-This parameter is designed for client versions of the Windows operating system. By default, server
-versions of the Windows operating system have a local subnet firewall rule for public networks.
-However, if the local subnet firewall rule is disabled on a server version of the Windows operating
-system, this parameter re-enables it.
+This parameter is designed for client versions of the Windows operating system. Server versions of
+the Windows operating system have a local subnet firewall rule for public networks. However, if the
+local subnet firewall rule is disabled on a server version of the Windows operating system, this
+parameter re-enables it.
 
 To remove the local subnet restriction and enable remote access from all locations on public
 networks, use the `Set-NetFirewallRule` cmdlet in the NetSecurity module. For more information, see
 `Enable-PSRemoting`.
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -249,8 +245,7 @@ This cmdlet does not return any objects.
 
 ## NOTES
 
-To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows
-operating system, you must start PowerShell by using the **Run as administrator** option.
+To use this cmdlet, you must start PowerShell by using the **Run as administrator** option.
 
 ## RELATED LINKS
 
