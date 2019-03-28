@@ -580,7 +580,7 @@ Windows PowerShell module path that are incompatible with PowerShell Core will b
 
 On macOS and Linux, this parameter does nothing.
 
-See [about_PowerShell_Editions][] for more information.
+See [about_PowerShell_Editions](About/about_PowerShell_Editions.md) for more information.
 
 ```yaml
 Type: SwitchParameter
@@ -645,6 +645,4 @@ When you create a CIM session on the local computer, PowerShell uses DCOM, inste
 
 [Remove-Module](Remove-Module.md)
 
-[about_PowerShell_Editions][]
-
-[about_PowerShell_Editions]: About/about_PowerShell_Editions.md
+[about_PowerShell_Editions](About/about_PowerShell_Editions.md)
