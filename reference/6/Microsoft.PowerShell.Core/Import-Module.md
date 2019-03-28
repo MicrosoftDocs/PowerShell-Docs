@@ -991,30 +991,7 @@ When importing a module from another path, this switch does nothing,
 since the check is not performed.
 On Linux and macOS, this switch does nothing.
 
-> [!NOTE]
-> The `CompatiblePSEditions` field for modules not in the `%windir%\System32\WindowsPowerShell\v1.0\Modules`
-> directory is for informational purposes only.
-> It is not checked by Import-Module.
->
-> For modules that *are* in this directory, if a module does not have `Core` indicated in its
-> `CompatiblePSEditions` field, importing it will fail. If `-SkipEditionCheck` is specified,
-> this import check is bypassed.
->
-> When a module from the `%windir%\System32\WindowsPowerShell\v1.0\Modules` directory not
-> specifying `Core` in `CompatiblePSEditions` is loaded using `Import-Module -SkipEditionCheck`,
-> the initial import may succeed but problems may occur during usage due to compatibility issues
-> between .NET Framework and .NET Core.
-
-> [!NOTE]
-> The `CompatiblePSEditions` manifest field refers to the .NET runtime PowerShell is built for:
->
-> - Desktop: Runs on .NET Framework, applies to Windows PowerShell 5.1 and below,
->   on most Windows editions.
-> - Core: Runs on .NET Core, applies to PowerShell Core 6.0 and above, as well as
->   Windows PowerShell 5.1 running on reduced footprint Windows editions,
->   like Windows IoT and Windows Nanoserver.
->
-> The edition of a PowerShell session can be found with the `$PSEdition` automatic variable.
+See [about_PowerShell_Editions] for more information.
 
 ```yaml
 Type: SwitchParameter
@@ -1087,3 +1064,7 @@ When you create a CIM session on the local computer, PowerShell uses DCOM, inste
 [New-Module](New-Module.md)
 
 [Remove-Module](Remove-Module.md)
+
+[about_PowerShell_Editions]
+
+[about_PowerShell_Editions]: About/about_PowerShell_Editions.md

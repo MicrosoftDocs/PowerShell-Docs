@@ -578,6 +578,10 @@ directory that do not specify `Core` in the `CompatiblePSEditions` field.
 When this switch is set, modules without `Core` will be included, so that modules under the
 Windows PowerShell module path that are incompatible with PowerShell Core will be returned.
 
+On macOS and Linux, this parameter does nothing.
+
+See [about_PowerShell_Editions][] for more information.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: Available, PsSession, CimSession
@@ -640,3 +644,7 @@ When you create a CIM session on the local computer, PowerShell uses DCOM, inste
 [New-PSSession](New-PSSession.md)
 
 [Remove-Module](Remove-Module.md)
+
+[about_PowerShell_Editions][]
+
+[about_PowerShell_Editions]: About/about_PowerShell_Editions.md

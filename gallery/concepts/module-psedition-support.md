@@ -16,35 +16,7 @@ feature sets and platform compatibility.
   Windows PowerShell 5.1 on reduced footprint Windows Editions such as Windows IoT and Windows
   Nanoserver.
 
-In PowerShell 5.1 and above, the edition of the running PowerShell session can be retrieved from the
-`$PSEdition` automatic variable:
-
-```powershell
-$PSEdition
-```
-
-```Output
-Core
-```
-
-Edition information is also present in the PSEdition property of `$PSVersionTable`:
-
-```powershell
-$PSVersionTable
-```
-
-```Output
-Name                           Value
-----                           -----
-PSVersion                      5.1.14300.1000
-PSEdition                      Desktop
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-CLRVersion                     4.0.30319.42000
-BuildVersion                   10.0.14300.1000
-WSManStackVersion              3.0
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-```
+For more information on PowerShell editions, see [about_PowerShell_Editions][].
 
 ## Declaring compatible editions
 
@@ -54,7 +26,7 @@ later.
 
 > [!NOTE]
 > Once a module manifest is specified with the CompatiblePSEditions key, it can not be imported on
-> lower versions of PowerShell.
+> PowerShell versions 4 and below.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -101,143 +73,6 @@ Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
 ```Output
 Desktop
 Core
-```
-
-## Edition-compatibility for PowerShell modules that ship as part of Windows
-
-For most modules, the `CompatiblePSEditions` field is purely informational;
-PowerShell module tooling allows users to filter on this field, but does not perform
-checks on it itself.
-
-In PowerShell 6.1 and above however, for modules that ship as part of Windows in the Windows
-PowerShell system module directory (`%windir%\System32\WindowsPowerShell\v1.0\Modules`),
-the `CompatiblePSEditions` field is checked by PowerShell. This is so that Windows PowerShell modules
-that have been validated as compatible with PowerShell Core will work normally, while modules
-that are not yet compatible will be ignored or stopped from importing
-(preventing unpredictable compatibility issues later).
-
-> [!NOTE]
-> Any module you write will not have the `CompatiblePSEditions` field checked.
-> Edition-checking only occurs on Windows PowerShell modules that ship as part of Windows
-> in the `%windir%\System32\WindowsPowerShell\v1.0\Modules` directory.
-
-For `Import-Module`, the `CompatiblePSEditions` check means a Core-incompatible module will fail
-to load in PowerShell Core 6.1 and above:
-
-```powershell
-Import-Module BitsTransfer
-```
-
-```Output
-Import-Module : Module 'C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\BitsTransfer\BitsTransfer.psd1' does not support current PowerShell edition 'Core'. Its supported editions are 'Desktop'. Use 'Import-Module -SkipEditionCheck' to ignore the compatibility of this module.
-At line:1 char:1
-+ Import-Module BitsTransfer
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo          : ResourceUnavailable: (C:\WINDOWS\system32\u2026r\BitsTransfer.psd1:String) [Import-Module], InvalidOperationException
-+ FullyQualifiedErrorId : Modules_PSEditionNotSupported,Microsoft.PowerShell.Commands.ImportModuleCommand
-```
-
-With `Get-Module`, the `CompatiblePSEditions` check means edition-incompatible modules are not
-returned or displayed by default:
-
-```powershell
-Get-Module -ListAvailable BitsTransfer
-```
-
-```Output
-```
-
-In both cases, you can bypass this with the `-SkipEditionCheck` switch parameter:
-
-```powershell
-Import-Module -SkipEditionCheck AppLocker -PassThru
-```
-
-```Output
-
-ModuleType Version    Name                                ExportedCommands
----------- -------    ----                                ----------------
-Manifest   2.0.0.0    AppLocker                           {Get-AppLockerFileInformation, Get-AppLockerPolicy, New-AppLocker…
-
-```
-
-```powershell
-Get-Module -ListAvailable BitsTransfer
-```
-
-```Output
-
-
-    Directory: C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
-
-ModuleType Version    Name                                PSEdition ExportedCommands
----------- -------    ----                                --------- ----------------
-Manifest   2.0.0.0    BitsTransfer                        Desk      {Add-BitsFile, Complete-BitsTransfer, Get-BitsTransfer,…
-
-```
-
-However, if you import a module that is not marked as compatible with PowerShell Core,
-be aware that errors due to an incompatibility could occur at a later stage
-(the module may even import successfully and only fail while executing a command):
-
-```powershell
-Import-Module -SkipEditionCheck BitsTransfer
-```
-
-```Output
-Import-Module : Could not load type 'System.Management.Automation.PSSnapIn' from assembly 'System.Management.Automation, Version=6.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.
-At line:1 char:1
-+ Import-Module -SkipEditionCheck BitsTransfer
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo          : NotSpecified: (:) [Import-Module], TypeLoadException
-+ FullyQualifiedErrorId : System.TypeLoadException,Microsoft.PowerShell.Commands.ImportModuleCommand
-```
-
-Changes to formatting in PowerShell Core 6.1 and above mean you will be informed about how
-PowerShell interprets the `CompatiblePSEditions` field under the `PSEdition` format table header:
-
-```powershell
-Get-Module -ListAvailable
-```
-
-```Output
-
-    Directory: C:\Users\me\Documents\PowerShell\Modules
-
-ModuleType Version    Name                                PSEdition ExportedCommands
----------- -------    ----                                --------- ----------------
-Script     1.3.1      Az.Accounts                         Core,Desk {Disable-AzDataCollection, Disable-AzContextAutosave, E…
-Script     4.4.0      Pester                              Desk      {Describe, Context, It, Should…}
-Script     1.0.0      WindowsCompatibility                Core      {Initialize-WinSession, Add-WinFunction, Invoke-WinComm…
-
-    Directory: C:\Program Files\PowerShell\Modules
-
-ModuleType Version    Name                                PSEdition ExportedCommands
----------- -------    ----                                --------- ----------------
-Script     1.2.2      PackageManagement                   Desk      {Find-Package, Get-Package, Get-PackageProvider, Get-Pa…
-Script     2.0.1      PowerShellGet                       Desk      {Find-Command, Find-DSCResource, Find-Module, Find-Role…
-
-...
-
-    Directory: C:\program files\powershell\6-preview\Modules
-
-ModuleType Version    Name                                PSEdition ExportedCommands
----------- -------    ----                                --------- ----------------
-Manifest   6.1.0.0    CimCmdlets                          Core      {Get-CimAssociatedInstance, Get-CimClass, Get-CimInstan…
-Manifest   1.2.2.0    Microsoft.PowerShell.Archive        Desk      {Compress-Archive, Expand-Archive}
-Manifest   6.1.0.0    Microsoft.PowerShell.Diagnostics    Core      {Get-WinEvent, New-WinEvent}
-
-...
-
-    Directory: C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
-
-ModuleType Version    Name                                PSEdition ExportedCommands
----------- -------    ----                                --------- ----------------
-Manifest   1.0.0.0    BitLocker                           Core,Desk {Unlock-BitLocker, Suspend-BitLocker, Resume-BitLocker,…
-Script     3.0        Dism                                Core,Desk {Add-AppxProvisionedPackage, Add-WindowsDriver, Add-Win…
-
-...
-
 ```
 
 ## Targeting multiple editions
@@ -422,3 +257,7 @@ Find-Module -Tag PSEdition_Core
 [PSEditions support on PowerShellGallery](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Update module manifest](/powershell/module/powershellget/update-modulemanifest)
+
+[about_PowerShell_Editions]
+
+[about_PowerShell_Editions]: ../../reference/6/Microsoft.PowerShell.Core/About/about_PowerShell_Editions.md

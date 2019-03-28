@@ -99,7 +99,18 @@ written for this edition.
 For modules not shipped as part of Windows (i.e. modules you write or install from the gallery),
 this field is informational only; PowerShell does not change behavior based on the
 `CompatiblePSEditions` field, but does expose it on the `PSModuleInfo` object (returned by
-`Get-Module`) for your own logic.
+`Get-Module`) for your own logic:
+
+```powershell
+New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion '5.1'
+$ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
+$ModuleInfo.CompatiblePSEditions
+```
+
+```Output
+Desktop
+Core
+```
 
 > [!NOTE]
 > The `CompatiblePSEditions` module field is only compatible with PowerShell 5.1 and above.
