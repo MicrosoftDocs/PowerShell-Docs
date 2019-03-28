@@ -11,7 +11,7 @@ title:  Disable-PSRemoting
 
 ## SYNOPSIS
 
-Prevents remote users from running commands in PowerShell Core (PSCore) on the local computer.
+Prevents remote users from running commands in PowerShell on the local computer.
 
 ## SYNTAX
 
@@ -21,50 +21,40 @@ Disable-PSRemoting [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Disable-PSRemoting` cmdlet prevents users on other computers from running PSCore commands on
-the local computer.
+The `Disable-PSRemoting` cmdlet prevents users on other computers from running PowerShell commands
+on the local computer.
 
-`Disable-PSRemoting` blocks remote access to all PSCore session configurations on the local
-computer. This prevents remote users from creating temporary or persistent PSCore sessions to the
-local computer. `Disable-PSRemoting` does not prevent remote users from creating Windows PowerShell
-sessions to the local computer. To disable all PowerShell session configurations, including Windows
-PowerShell configurations, run `Disable-PSRemoting` in Windows PowerShell on the local computer.
+`Disable-PSRemoting` blocks remote access to all PowerShell session configurations on the local
+computer. This prevents remote users from creating temporary or persistent PowerShell sessions to
+the local computer. `Disable-PSRemoting` does not prevent remote users from creating Windows
+PowerShell sessions to the local computer. To disable both PowerShell and Windows PowerShell session
+configurations run `Disable-PSRemoting` in Windows PowerShell on the local computer.
 `Disable-PSRemoting` does not prevent users of the local computer from creating sessions
 (**PSSessions**) on the local computer or remote computers.
 
-To re-enable remote access to all PSCore session configurations, use the `Enable-PSRemoting` cmdlet.
-To re-enable remote access to all session configurations, including Windows PowerShell
+To re-enable remote access to all PowerShell session configurations, use the `Enable-PSRemoting`
+cmdlet. To re-enable remote access to all session configurations, including Windows PowerShell
 configurations, run `Enable-PSRemoting` in Windows PowerShell on the local computer. To enable
-remote access to selected session configurations, use the *AccessMode* parameter of the
+remote access to selected session configurations, use the **AccessMode** parameter of the
 `Set-PSSessionConfiguration` cmdlet. You can also use the `Enable-PSSessionConfiguration` and
 `Disable-PSSessionConfiguration` cmdlets to enable and disable session configurations for all users.
 For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
-
-In Windows PowerShell 2.0, `Disable-PSRemoting` prevents all users from creating user-managed
-sessions to the local computer. In Windows PowerShell 3.0 - 5.1, and PSCore, `Disable-PSRemoting`
-prevents users on other computers from creating user-managed sessions on the local computer, but
-allows users of the local computer to create user-managed loopback sessions.
 
 To run this cmdlet, start PowerShell with the Run as administrator option.
 
 > [!NOTE] This command appears only on PowerShell running on the Windows platform. It is not
 > available on Linux or MacOS versions.
 
-> [!CAUTION] On systems that have both Windows PowerShell 3.0 and the Windows PowerShell 2.0 engine,
-> do not use Windows PowerShell 2.0 to run the `Enable-PSRemoting` and `Disable-PSRemoting`
-> cmdlets. The commands might appear to succeed, but the remoting is not configured correctly.
-> Remote commands, and later attempts to enable and disable remoting, are likely to fail.
-
 ## EXAMPLES
 
-### Example 1: Prevent remote access to all PSCore session configurations
+### Example 1: Prevent remote access to all PowerShell session configurations
 ```powershell
 Disable-PSRemoting
 ```
 
 This command prevents remote access to all session configurations on the computer.
 
-### Example 2: Prevent remote access to all PSCore session configurations without confirmation prompt
+### Example 2: Prevent remote access to all PowerShell session configurations without confirmation prompt
 ```powershell
 Disable-PSRemoting -Force
 ```
@@ -135,8 +125,8 @@ which displays only the Name and Permission properties of the configurations in 
 
 The output shows that only remote users are denied access to the configurations. Members of the
 Administrators group on the local computer are allowed to use the session configurations. The output
-also shows that the command affects all PSCore session configurations that includes the user-created
-WithProfile session configuration.
+also shows that the command affects all PowerShell session configurations that includes the
+user-created WithProfile session configuration.
 
 The third command uses the `Enable-PSRemoting` cmdlet to re-enable remote access to all session
 configurations on the computer. The command uses the **Force** parameter to suppress all user
@@ -344,21 +334,6 @@ This cmdlet does not generate any output.
   session that connects to the computer must use one of the session configurations that are
   registered on the computer. By denying remote access to all session configurations, you
   effectively prevent remote users from establishing sessions that connect to the computer.
-
-- In Windows PowerShell 2.0, `Disable-PSRemoting` adds a Deny_All entry to the security descriptors
-  of all session configurations. This setting prevents all users from creating user-managed sessions
-  to the local computer. In Windows PowerShell 3.0 - 5.1, and PSCore, `Disable-PSRemoting` adds a
-  Network_Deny_All entry to the security descriptors of all session configurations. This setting
-  prevents users on other computers from creating user-managed sessions on the local computer, but
-  allows users of the local computer to create user-managed loopback sessions.
-
-- In Windows PowerShell 2.0, `Disable-PSRemoting` is the equivalent of
-  `Disable-PSSessionConfiguration -Name *`. In Windows PowerShell 3.0 - 5.1, and PSCore,
-  `Disable-PSRemoting` is the equivalent of
-  `Set-PSSessionConfiguration -Name \<Configuration name\> -AccessMode Local`
-
-- In Windows PowerShell 2.0, `Disable-PSRemoting` is a function. Beginning in Windows PowerShell
-  3.0 - 5.1, and PSCore, it is a cmdlet.
 
 ## RELATED LINKS
 
