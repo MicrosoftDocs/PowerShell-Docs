@@ -233,10 +233,13 @@ to catch possible behavioral differences between editions. For this you must sti
 
 ## See also
 
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [Import-Module](../Import-Module.md)
-- [Get-Module](../Get-Module.md)
-- [Modules with compatible PowerShell Editions](../../../../gallery/concepts/module-psedition-support.md)
+[about_Automatic_Variables](about_Automatic_Variables.md)
+
+[Import-Module](../Import-Module.md)
+
+[Get-Module](../Get-Module.md)
+
+[Modules with compatible PowerShell Editions](../../../../gallery/concepts/module-psedition-support.md)
 
 [Pester]: https://github.com/pester/Pester/wiki/Pester
 [PSScriptAnalyzer]: https://github.com/PowerShell/PSScriptAnalyzer

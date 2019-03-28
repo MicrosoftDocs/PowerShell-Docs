@@ -993,6 +993,11 @@ On Linux and macOS, this switch does nothing.
 
 See [about_PowerShell_Editions] for more information.
 
+> [!WARNING]
+> `Import-Module -SkipEditionCheck` is still likely to fail to import a module. Even if it does
+> succeed, invoking a command from the module may later fail when it tries to use an
+> incompatible API.
+
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)

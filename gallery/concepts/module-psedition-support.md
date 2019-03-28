@@ -258,6 +258,6 @@ Find-Module -Tag PSEdition_Core
 
 [Update module manifest](/powershell/module/powershellget/update-modulemanifest)
 
-[about_PowerShell_Editions]
+[about_PowerShell_Editions][]
 
 [about_PowerShell_Editions]: ../../reference/6/Microsoft.PowerShell.Core/About/about_PowerShell_Editions.md
