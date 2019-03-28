@@ -19,10 +19,10 @@ they're automatically available to any cmdlet.
 
 You can use the common parameters with any cmdlet, but they might not have an
 effect on all cmdlets. For example, if a cmdlet doesn't generate any verbose
-output, using the `-Verbose` common parameter has no effect.
+output, using the **Verbose** common parameter has no effect.
 
 The common parameters are also available on advanced functions that use the
-`CmdletBinding` attribute or the `Parameter` attribute, and on all workflows.
+**CmdletBinding** attribute or the **Parameter** attribute.
 
 Several common parameters override system defaults or preferences that you set
 by using the PowerShell preference variables. Unlike the preference variables,
@@ -35,22 +35,22 @@ data usually offer these parameters.
 The following list displays the common parameters. Their aliases are listed in
 parentheses.
 
-* Debug (db)
-* ErrorAction (ea)
-* ErrorVariable (ev)
-* InformationAction (infa)
-* InformationVariable (iv)
-* OutVariable (ov)
-* OutBuffer (ob)
-* PipelineVariable (pv)
-* Verbose (vb)
-* WarningAction (wa)
-* WarningVariable (wv)
+- Debug (db)
+- ErrorAction (ea)
+- ErrorVariable (ev)
+- InformationAction (infa)
+- InformationVariable (iv)
+- OutVariable (ov)
+- OutBuffer (ob)
+- PipelineVariable (pv)
+- Verbose (vb)
+- WarningAction (wa)
+- WarningVariable (wv)
 
 The risk mitigation parameters are:
 
-* WhatIf (wi)
-* Confirm (cf)
+- WhatIf (wi)
+- Confirm (cf)
 
 For more information about preference variables, type: help [about_Preference_Variables](./about_Preference_Variables)
 
@@ -58,35 +58,36 @@ For more information about preference variables, type: help [about_Preference_Va
 
 #### Debug
 
-The alias for `-Debug` is `-db`.
+The alias for **Debug** is **db**.
 
-Displays programmer-level detail about the operation done by the command.
-This parameter works only when the command generates a debugging message. For
-example, this parameter works when a command contains the `Write-Debug` cmdlet.
+Displays programmer-level detail about the operation done by the command. This
+parameter works only when the command generates a debugging message. For
+example, this parameter works when a command contains the **Write-Debug**
+cmdlet.
 
-The `-Debug` parameter overrides the value of the `$DebugPreference` variable
-for the current command, setting the value of `$DebugPreference` to `Continue`.
-Because the default value of the `$DebugPreference` variable is
-`SilentlyContinue`, debugging messages aren't displayed by default.
+The **Debug** parameter overrides the value of the **$DebugPreference** variable
+for the current command, setting the value of **$DebugPreference** to
+**Continue**. Because the default value of the **$DebugPreference** variable is
+**SilentlyContinue**, debugging messages aren't displayed by default.
 
-`-Debug:$true` has the same effect as `-Debug`. Use `-Debug:$false` to suppress
-the display of debugging messages when `$DebugPreference` isn't
-`SilentlyContinue`, which is the default.
+`-Debug:$true` has the same effect as **-Debug**. Use `-Debug:$false` to
+suppress the display of debugging messages when **$DebugPreference** isn't
+**SilentlyContinue**, which is the default.
 
 #### ErrorAction
 
-The alias for `-ErrorAction` is `-ea`.
+The alias for **ErrorAction** is **ea**.
 
 Determines how the cmdlet responds to a non-terminating error from the command.
 This parameter works only when the command generates a non-terminating error,
 such as those from the `Write-Error` cmdlet.
 
-The `-ErrorAction` parameter overrides the value of the `$ErrorActionPreference`
+The **ErrorAction** parameter overrides the value of the **$ErrorActionPreference**
 variable for the current command. Because the default value of the
-`$ErrorActionPreference` variable is `Continue`, error messages are displayed
-and execution continues unless you use the `-ErrorAction` parameter.
+**$ErrorActionPreference** variable is **Continue**, error messages are displayed
+and execution continues unless you use the **ErrorAction** parameter.
 
-The `-ErrorAction` parameter has no effect on terminating errors (such as
+The **ErrorAction** parameter has no effect on terminating errors (such as
 missing data, parameters that aren't valid, or insufficient permissions) that
 prevent a command from completing successfully.
 
@@ -94,9 +95,9 @@ prevent a command from completing successfully.
 command. `Continue` is the default.
 
 `-ErrorAction:Ignore` suppresses the error message and continues executing the
-command. Unlike `SilentlyContinue`, `Ignore` doesn't add the error message to
-the `$Error` automatic variable. The `Ignore` value is introduced in PowerShell
-3.0.
+command. Unlike **SilentlyContinue**, **Ignore** doesn't add the error message
+to the **$Error** automatic variable. The **Ignore** value is introduced in
+PowerShell 3.0.
 
 `-ErrorAction:Inquire` displays the error message and prompts you for
 confirmation before continuing execution. This value is rarely used.
@@ -111,11 +112,11 @@ available for workflows.
 
 #### ErrorVariable
 
-The alias for `-ErrorVariable` is `-ev`.
+The alias for **ErrorVariable** is **ev**.
 
-`-ErrorVariable` stores error messages about the command in the specified
-variable and in the `$Error` automatic variable. For more information, type the
-following command:
+**ErrorVariable** stores error messages about the command in the specified
+variable and in the **$Error** automatic variable. For more information, type
+the following command:
 
 ```powershell
 get-help about_Automatic_Variables
@@ -125,7 +126,7 @@ By default, new error messages overwrite error messages that are already stored
 in the variable. To append the error message to the variable content, type a
 plus sign (+) before the variable name.
 
-For example, the following command creates the `$a` variable and then stores any
+For example, the following command creates the **$a** variable and then stores any
 errors in it:
 
 ```powershell
@@ -145,27 +146,27 @@ $a
 ```
 
 You can use this parameter to create a variable that contains only error
-messages from specific commands. The `$Error` automatic variable contains error
+messages from specific commands. The **$Error** automatic variable contains error
 messages from all the commands in the session. You can use array notation, such
 as `$a[0]` or `$error[1,2]` to refer to specific errors stored in the variables.
 
 #### InformationAction
 
-The alias for `-InformationAction` is `-ia`.
+The alias for **InformationAction** is **ia**.
 
 Introduced in PowerShell 5.0. Within the command or script in which it's used,
-the `-InformationAction` common parameter overrides the value of the
-`$InformationPreference` preference variable, which by default is set to
-`SilentlyContinue`. When you use `Write-Information` in a script with
-`-InformationAction`, `Write-Information` values are shown depending on the
-value of the `-InformationAction` parameter. For more information about
-`$InformationPreference`, see [about_Preference_Variables](./about_Preference_Variables.md).
+the **InformationAction** common parameter overrides the value of the
+**$InformationPreference** preference variable, which by default is set to
+**SilentlyContinue**. When you use `Write-Information` in a script with
+**InformationAction**, `Write-Information` values are shown depending on the
+value of the **InformationAction** parameter. For more information about
+**$InformationPreference**, see [about_Preference_Variables](./about_Preference_Variables.md).
 
 `-InformationAction:Stop` stops a command or script at an occurrence of the
 `Write-Information` command.
 
 `-InformationAction:Ignore` suppresses the informational message and continues
-running the command. Unlike `SilentlyContinue`, `Ignore` completely forgets the
+running the command. Unlike **SilentlyContinue**, **Ignore** completely forgets the
 informational message; it doesn't add the informational message to the
 information stream.
 
@@ -183,20 +184,20 @@ aren't (Default) displayed, and the script continues without interruption.
 
 #### InformationVariable
 
-The alias for `-InformationVariable` is `-iv`.
+The alias for **InformationVariable** is **iv**.
 
 Introduced in PowerShell 5.0. Within the command or script in which it's used,
-the `InformationVariable` common parameter stores in a variable a string that
+the **InformationVariable** common parameter stores in a variable a string that
 you specify by adding the `Write-Information` command. `Write-Information`
-values are shown depending on the value of the `-InformationAction` common
-parameter; if you don't add the `-InformationAction` common parameter,
+values are shown depending on the value of the **InformationAction** common
+parameter; if you don't add the **InformationAction** common parameter,
 `Write-Information` strings are shown depending on the value of the
-`$InformationPreference` preference variable. For more information about
-`$InformationPreference`, see [about_Preference_Variables](./about_Preference_Variables.md).
+**$InformationPreference** preference variable. For more information about
+**$InformationPreference**, see [about_Preference_Variables](./about_Preference_Variables.md).
 
 #### OutBuffer
 
-The alias for `-OutBuffer` is `-ob` and takes a `System.Int32` value.
+The alias for **OutBuffer** is **ob** and takes a **System.Int32** value.
 
 Determines the number of objects to accumulate in a buffer before any objects
 are sent through the pipeline. If you omit this parameter, objects are sent as
@@ -209,7 +210,7 @@ objects as they're generated.
 
 #### OutVariable
 
-The alias for `-OutVariable` is `-ov`.
+The alias for **OutVariable** is **ov**.
 
 Stores output objects from the command in the specified variable and displays it
 at the command line.
@@ -217,20 +218,20 @@ at the command line.
 To add the output to the variable, instead of replacing any output that might
 already be stored there, type a plus sign (+) before the variable name.
 
-For example, the following command creates the `$out` variable and stores the
+For example, the following command creates the **$out** variable and stores the
 process object in it:
 
 ```powershell
 Get-Process PowerShell -OutVariable out
 ```
 
-The following command adds the process object to the `$out` variable:
+The following command adds the process object to the **$out** variable:
 
 ```powershell
 Get-Process iexplore -OutVariable +out
 ```
 
-The following command displays the contents of the `$out` variable:
+The following command displays the contents of the **$out** variable:
 
 ```powershell
 $out
@@ -238,28 +239,28 @@ $out
 
 #### PipelineVariable
 
-The alias for `-PipelineVariable` is `-pv` and takes a `string` value.
+The alias for **PipelineVariable** is **pv** and takes a **string** value.
 
-`-PipelineVariable` stores the value of the current pipeline element as a
+**PipelineVariable** stores the value of the current pipeline element as a
 variable, for any named command as it flows through the pipeline.
 
 Valid values are strings, the same as for any variable names.
 
-The following is an example of how `-PipelineVariable` works. In this example,
-the `-PipelineVariable` parameter is added to a `Foreach-Object` command to
+The following is an example of how **PipelineVariable** works. In this example,
+the **PipelineVariable** parameter is added to a `Foreach-Object` command to
 store the results of the command in variables. A range of numbers, 1 to 10, are
 piped into the first `Foreach-Object` command, the results of which are stored
-in a variable named `Left`.
+in a variable named **Left**.
 
 The results of the first `Foreach-Object` command are piped into a second
 `Foreach-Object` command, which filters the objects returned by the first
 `Foreach-Object` command. The results of the second command are stored in a
-variable named `Right`.
+variable named **Right**.
 
 In the third `Foreach-Object` command, the results of the first two
-`Foreach-Object` piped commands, represented by the variables `Left` and
-`Right`, are processed by using a multiplication operator. The command instructs
-objects stored in the `Left` and `Right` variables to be multiplied, and
+`Foreach-Object` piped commands, represented by the variables **Left** and
+**Right**, are processed by using a multiplication operator. The command instructs
+objects stored in the **Left** and **Right** variables to be multiplied, and
 specifies that the results should be displayed as "Left range member * Right
 range member = product".
 
@@ -280,36 +281,38 @@ range member = product".
 
 #### Verbose
 
-The alias for `-Verbose` is `-vb`.
+The alias for **Verbose** is **vb**.
 
 Displays detailed information about the operation done by the command. This
 information resembles the information in a trace or in a transaction log. This
 parameter works only when the command generates a verbose message. For example,
 this parameter works when a command contains the `Write-Verbose` cmdlet.
 
-The `-Verbose` parameter overrides the value of the `$VerbosePreference`
+The **Verbose** parameter overrides the value of the **$VerbosePreference**
 variable for the current command. Because the default value of the
-`$VerbosePreference` variable is `SilentlyContinue`, verbose messages aren't
+**$VerbosePreference** variable is **SilentlyContinue**, verbose messages aren't
 displayed by default.
 
 `-Verbose:$true` has the same effect as `-Verbose`
 
 `-Verbose:$false` suppresses the display of verbose messages. Use this parameter
-when the value of `$VerbosePreference` isn't `SilentlyContinue` (the default).
+when the value of **$VerbosePreference** isn't **SilentlyContinue** (the
+default).
 
 #### WarningAction
 
-The alias for `-WarningAction` is `-wa`.
+The alias for **WarningAction** is **wa**.
 
-Determines how the cmdlet responds to a warning from the command. `Continue` is
-the default value. This parameter works only when the command generates a
+Determines how the cmdlet responds to a warning from the command. **Continue**
+is the default value. This parameter works only when the command generates a
 warning message. For example, this parameter works when a command contains the
 `Write-Warning` cmdlet.
 
-The `-WarningAction` parameter overrides the value of the `$WarningPreference`
-variable for the current command. Because the default value of the
-`$WarningPreference` variable is `Continue`, warnings are displayed and
-execution continues unless you use the `-WarningAction` parameter.
+The **WarningAction** parameter overrides the value of the
+**$WarningPreference** variable for the current command. Because the default
+value of the **$WarningPreference** variable is **Continue**, warnings are
+displayed and execution continues unless you use the **WarningAction**
+parameter.
 
 `-WarningAction:Continue` displays the warning messages and continues executing
 the command. `Continue` is the default.
@@ -330,7 +333,7 @@ command.
 
 #### WarningVariable
 
-The alias for `-WarningVariable` is `-wv`.
+The alias for **WarningVariable** is **wv**.
 
 Stores warnings about the command in the specified variable.
 
@@ -341,20 +344,20 @@ To append the warnings to the variable content, instead of replacing any
 warnings that might already be stored there, type a plus sign (+) before the
 variable name.
 
-For example, the following command creates the `$a` variable and then stores any
+For example, the following command creates the **$a** variable and then stores any
 warnings in it:
 
 ```powershell
 Get-Process -Id 6 -WarningVariable a
 ```
 
-The following command adds any warnings to the `$a` variable:
+The following command adds any warnings to the **$a** variable:
 
 ```powershell
 Get-Process -Id 2 -WarningVariable +a
 ```
 
-The following command displays the contents of `$a`:
+The following command displays the contents of **$a**:
 
 ```powershell
 $a
@@ -365,22 +368,22 @@ specific commands. You can use array notation, such as `$a[0]` or `$warning[1,2]
 to refer to specific warnings stored in the variable.
 
 > [!NOTE]
-> The `-WarningVariable` parameter does not capture warnings from nested
+> The **WarningVariable** parameter does not capture warnings from nested
 calls in functions or scripts.
 
 ### Risk Management Parameter Descriptions
 
 #### WhatIf
 
-The alias for `-WhatIf` is `-wi`.
+The alias for **WhatIf** is **wi**.
 
 Displays a message that describes the effect of the command, instead of
 executing the command.
 
-The `-WhatIf` parameter overrides the value of the `$WhatIfPreference` variable
-for the current command. Because the default value of the `$WhatIfPreference`
-variable is 0 (disabled), `-WhatIf` behavior isn't done without the
-`-WhatIf` parameter. For more information, type the following command:
+The **WhatIf** parameter overrides the value of the **$WhatIfPreference** variable
+for the current command. Because the default value of the **$WhatIfPreference**
+variable is 0 (disabled), **WhatIf** behavior isn't done without the
+**WhatIf** parameter. For more information, type the following command:
 
 ```powershell
 Get-Help about_Preference_Variables
@@ -409,13 +412,13 @@ Target "C:\ps-test\date.csv".
 
 #### Confirm
 
-The alias for `-Confirm` is `-cf`.
+The alias for **Confirm** is **cf**.
 
 Prompts you for confirmation before executing the command.
 
-The `-Confirm` parameter overrides the value of the `$ConfirmPreference` variable
-for the current command. The default value is true. For more information, type
-the following command:
+The **Confirm** parameter overrides the value of the **$ConfirmPreference**
+variable for the current command. The default value is true. For more
+information, type the following command:
 
 ```powershell
 Get-Help about_Preference_Variables
@@ -427,7 +430,7 @@ Get-Help about_Preference_Variables
 of `$ConfirmPreference` is less than or equal to the estimated risk of the
 cmdlet.
 
-For example, the following command uses the `Confirm` parameter with a
+For example, the following command uses the **Confirm** parameter with a
 `Remove-Item` command. Before removing the item, PowerShell lists the
 operations it would do and the items that would be affected, and asks for
 approval.
@@ -459,14 +462,14 @@ The Confirm response options are as follows:
 |Suspend (S):   |Pause the command and create a temporary session.          |
 |Help (?)       |Display help for these options.                            |
 
-The `Suspend` option places the command on hold and creates a temporary nested
+The **Suspend** option places the command on hold and creates a temporary nested
 session in which you can work until you're ready to choose a Confirm option. The
 command prompt for the nested session has two extra carets (>>) to indicate that
 it's a child operation of the original parent command. You can run commands and
 scripts in the nested session. To end the nested session and return to the
 Confirm options for the original command, type "exit".
 
-In the following example, the `Suspend` option (S) is used to halt a command
+In the following example, the **Suspend** option (S) is used to halt a command
 temporarily while the user checks the help for a command parameter. After
 obtaining the needed information, the user types "exit" to end the nested prompt
 and then selects the Yes (y) response to the Confirm query.
