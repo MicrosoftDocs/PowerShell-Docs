@@ -57,30 +57,27 @@ These packages are marked as `Community` in the table.
 Platforms listed as `Experimental` are not officially supported, but are available
 for experimentation and feedback.
 
-|                                                   | 6.0         | 6.1         |
+|                                                   | 6.1         | 6.2         |
 |---------------------------------------------------|:-----------:|:-----------:|
 | Windows 7, 8.1, and 10                            | Supported   | Supported   |
 | Windows Server 2008 R2, 2012 R2, 2016             | Supported   | Supported   |
 | [Windows Server Semi-Annual Channel][semi-annual] | Supported   | Supported   |
-| Ubuntu 14.04 and, 16.04                           | Supported   | Supported   |
-| Ubuntu 18.04                                      |             | Supported   |
-| Ubuntu 18.10 (via Snap Package)                   |             | Community   |
+| Ubuntu 16.04 and, 18.04                           | Supported   | Supported   |
+| Ubuntu 18.10 (via Snap Package)                   | Community   | Community   |
 | Debian 9                                          | Supported   | Supported   |
 | CentOS 7                                          | Supported   | Supported   |
 | Red Hat Enterprise Linux 7                        | Supported   | Supported   |
 | openSUSE 42.3                                     | Supported   | Supported   |
-| Fedora 28                                         |             | Supported   |
+| Fedora 28                                         | Supported   | Supported   |
 | macOS 10.12+                                      | Supported   | Supported   |
 | Arch                                              | Community   | Community   |
-| Raspbian                                          | Experimental| Community   |
+| Raspbian                                          | Community   | Community   |
 | Kali                                              | Community   | Community   |
 | AppImage  (works on multiple Linux platforms)     | Community   | Community   |
 | [Snap Package](https://snapcraft.io/powershell)   | See note    | See note    |
 
 > [!NOTE]
-> Snap packages will be experimental for a period.
-> After, we are confident that Snap does not introduce new support issues,
-> the support will follow the distribution you are running the package on.
+> Snap packages are supported the same as the distribution you are running the package on.
 
 ## PowerShell release end of life
 
