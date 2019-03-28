@@ -36,9 +36,9 @@ In Windows PowerShell 2.0, the `Disable-PSSessionConfiguration` cmdlet adds a **
 the security descriptor of one or more registered session configurations.
 
 Without parameters, `Disable-PSSessionConfiguration` disables the **Microsoft.PowerShell**
-configuration, which is the default configuration that is used for sessions. Unless the user
-specifies a different configuration, both local and remote users are effectively prevented from
-creating any sessions that connect to the computer.
+configuration, the default configuration used for sessions. Unless the user specifies a different
+configuration, both local and remote users are effectively prevented from creating any sessions that
+connect to the computer.
 
 To disable all session configurations on the computer, use `Disable-PSRemoting`.
 
@@ -81,11 +81,11 @@ Get-PSSessionConfiguration -Name MaintenanceShell, AdminShell | Disable-PSSessio
 
 ### Example 5: Effects of disabling a session configuration
 
-This example shows the permissions before and after running the `Disable-PSSessionConfiguration`
-cmdlet and the effect of disabling a session configuration.
+This example shows the permissions before and after running `Disable-PSSessionConfiguration` and the
+effect of disabling a session configuration.
 
 ```
-PS > Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+PS> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
 
 Name                   Permission
 ----                   ----------
@@ -93,8 +93,8 @@ MaintenanceShell       BUILTIN\Administrators AccessAllowed
 microsoft.powershell   BUILTIN\Administrators AccessAllowed
 microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 
-PS > Disable-PSSessionConfiguration -Name MaintenanceShell -Force
-PS > Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+PS> Disable-PSSessionConfiguration -Name MaintenanceShell -Force
+PS> Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
 
 Name                   Permission
 ----                   ----------
@@ -102,7 +102,7 @@ MaintenanceShell       Everyone AccessDenied, BUILTIN\Administrators AccessAllow
 microsoft.powershell   BUILTIN\Administrators AccessAllowed
 microsoft.powershell32 BUILTIN\Administrators AccessAllowed
 
-PS > New-PSSession -ComputerName localhost -ConfigurationName MaintenanceShell
+PS> New-PSSession -ComputerName localhost -ConfigurationName MaintenanceShell
 
 [localhost] Connecting to remote server failed with the following error message : Access is denied.
 For more information, see the about_Remote_Troubleshooting Help topic.

@@ -138,7 +138,7 @@ items in the **InitializationParameters** node for the **MaintenanceShell** plug
 information about the WSMan provider, type `Get-Help wsman`.
 
 ```
-PS C:\> Set-PSSessionConfiguration -Name "MaintenanceShell" -StartupScript "C:\ps-test\Maintenance.ps1"
+PS> Set-PSSessionConfiguration -Name "MaintenanceShell" -StartupScript "C:\ps-test\Maintenance.ps1"
 
 WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin\MaintenanceShell\InitializationParameters
 
@@ -151,7 +151,7 @@ WinRM service need to be restarted to make the changes effective. Do you want to
 the command "restart-service winrm"?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 
-PS C:\> Get-PSSessionConfiguration MaintenanceShell | Format-List -Property *
+PS> Get-PSSessionConfiguration MaintenanceShell | Format-List -Property *
 
 xmlns            : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
 Name             : MaintenanceShell
@@ -167,7 +167,7 @@ ExactMatch       : true
 Capability       : {Shell}
 Permission       :
 
-PS C:\> dir WSMan:\localhost\Plugin\MaintenanceShell\InitializationParameters
+PS> dir WSMan:\localhost\Plugin\MaintenanceShell\InitializationParameters
 
 ParamName     ParamValue
 ---------     ----------

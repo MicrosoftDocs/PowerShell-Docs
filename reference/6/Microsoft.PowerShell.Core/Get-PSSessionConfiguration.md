@@ -25,14 +25,14 @@ The `Get-PSSessionConfiguration` cmdlet gets the session configurations that hav
 the local computer. This is an advanced cmdlet that is designed to be used by system administrators
 to manage customized session configurations for their users.
 
-Beginning in Windows PowerShell 3.0, you can define the properties of a session configuration by
-using a session configuration (.pssc) file. This feature lets you create customized and restricted
-sessions without writing a computer program. For more information about session configuration files,
-see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
+Beginning in PowerShell 3.0, you can define the properties of a session configuration by using a
+session configuration (.pssc) file. This feature lets you create customized and restricted sessions
+without writing a computer program. For more information about session configuration files, see
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
-Also, beginning in Windows PowerShell 3.0, new note properties have been added to the session
-configuration object that `Get-PSSessionConfiguration` returns. These properties make it easier for
-users and session configuration authors to examine and compare session configurations.
+Also, beginning in PowerShell 3.0, new note properties have been added to the session configuration
+object that `Get-PSSessionConfiguration` returns. These properties make it easier for users and
+session configuration authors to examine and compare session configurations.
 
 To create and register a session configuration, use the `Register-PSSessionConfiguration` cmdlet.
 For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
@@ -111,23 +111,21 @@ MaxShellsPerUser              : 30
 Permission                    :
 ```
 
-The example uses the `Get-PSSessionConfiguration` cmdlet to get the full session configuration.
-A pipeline operator sends the Full session configuration to the `Format-List` cmdlet. The
-**Property** parameter with a value of `*` (all) directs `Format-List` to display all of the
-properties and property values of the object in a list.
+The example uses the `Get-PSSessionConfiguration` cmdlet to get the full session configuration. A
+pipeline operator sends the Full session configuration to the `Format-List` cmdlet. The **Property**
+parameter with a value of `*` (all) directs `Format-List` to display all the properties and values
+of the object in a list.
 
-The output of this command has useful information, including the author of the session
-configuration, the session type, language mode, and execution policy of sessions that are created
-with this session configuration, session quotas, and the full path to the session configuration
-file.
+The output includes useful information, including the author of the session configuration, the
+session type, language mode, and execution policy of sessions that are created with this session
+configuration, session quotas, and the full path to the session configuration file.
 
-This view of a session configuration is used for sessions that include a session configuration
-file. For more information about session configuration files, see
-[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
+This view of a session configuration is used for sessions that include a session configuration file.
+For more information about session configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 ### Example 4 - Another way to look at the session configurations
 
-This command uses the `Get-ChildItem` cmdlet (alias = dir) in the WSMan: provider drive to look at
+This example uses the `Get-ChildItem` cmdlet (alias `dir`) in the WSMan: provider drive to look at
 the content of the Plugin node. This is another way to look at the session configurations on the
 computer.
 
@@ -155,7 +153,7 @@ session configurations, along with other plug-ins for WS-Management.
 
 This example shows how to use the WSMan provider to view the session configurations on a remote
 computer. This method does not provide as much information as a `Get-PSSessionConfiguration`
-command, but the user does not need to be a member of the Administrators group to run this command.
+command, but the user does not need to be a member of the Administrators group to run this cmdlet.
 
 ```powershell
 Connect-WSMan -ComputerName Server01
@@ -224,7 +222,7 @@ remote computer.
 
 ### Example 8 - Get the resource URI of a session configuration
 
-This command is useful when setting the value of the `$PSSessionConfigurationName` preference
+This example is useful for setting the value of the `$PSSessionConfigurationName` preference
 variable, which takes a resource URI.
 
 ```
@@ -307,17 +305,17 @@ You cannot pipe input to this cmdlet.
 
 - The note properties of the object that `Get-PSSessionConfiguration` returns appear on the object
   only when they have a value. Only session configurations that were created by using a session
-  configuration file have all of the defined properties.
+  configuration file have all the defined properties.
 
 - The properties of a session configuration object vary with the options set for the session
   configuration and the values of those options. Also, session configurations that use a session
   configuration file have additional properties.
 
 - You can use commands in the WSMan: drive to change the properties of session configurations.
-  However, you cannot use the WSMan: drive in Windows PowerShell 2.0 to change session configuration
-  properties that are introduced in Windows PowerShell 3.0, such as **OutputBufferingMode**. Windows
-  PowerShell 2.0 commands do not generate an error, but they are ineffective. To change properties
-  introduced in PowerShell 3.0, use the WSMan: drive in PowerShell 3.0.
+  However, you cannot use the WSMan: drive in PowerShell 2.0 to change session configuration
+  properties that are introduced in PowerShell 3.0, such as **OutputBufferingMode**. PowerShell 2.0
+  commands do not generate an error, but they are ineffective. To change properties introduced in
+  PowerShell 3.0, use the WSMan: drive in PowerShell 3.0.
 
 ## RELATED LINKS
 

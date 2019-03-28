@@ -68,29 +68,29 @@ This example shows the effect of using the **NoServiceRestart** parameter to pre
 restart that would disrupt any sessions on the computer.
 
 ```
-PS > Unregister-PSSessionConfiguration -Name "MaintenanceShell" -NoServiceRestart
-PS > Get-PSSessionConfiguration -Name "MaintenanceShell"
+PS> Unregister-PSSessionConfiguration -Name "MaintenanceShell" -NoServiceRestart
+PS> Get-PSSessionConfiguration -Name "MaintenanceShell"
 
 Get-PSSessionConfiguration -Name MaintenanceShell : No Session Configuration matches criteria "MaintenanceShell".
 + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
 + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 
-PS > New-PSSession -ConfigurationName "MaintenanceShell"
+PS> New-PSSession -ConfigurationName "MaintenanceShell"
 
 Id Name      ComputerName    State    Configuration         Availability
 -- ----      ------------    -----    -------------         ------------
 1 Session1  localhost       Opened   MaintenanceShell      Available
 
-PS > Restart-Service winrm
-PS > New-PSSession -ConfigurationName MaintenanceShell
+PS> Restart-Service winrm
+PS> New-PSSession -ConfigurationName MaintenanceShell
 
 [localhost] Connecting to remote server failed with the following error message :
  The WS-Management service cannot process the request.
  The resource URI (http://schemas.microsoft.com/powershell/MaintenanceShell) was not found in the WS-Management catalog.
  The catalog contains the metadata that describes resources, or logical endpoints.
  For more information, see the about_Remote_Troubleshooting Help topic.
-+ CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException
-+ FullyQualifiedErrorId : PSSessionOpenFailed
+ + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [], PSRemotingTransportException
+ + FullyQualifiedErrorId : PSSessionOpenFailed
 ```
 
 The `Unregister-PSSessionConfiguration` deletes the **MaintenanceShell** session configuration.
@@ -226,8 +226,7 @@ This cmdlet does not return any objects.
 
 ## NOTES
 
-To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows
-operating system, you must start PowerShell by using the **Run as administrator** option.
+To run this cmdlet you must start PowerShell by using the **Run as administrator** option.
 
 ## RELATED LINKS
 
