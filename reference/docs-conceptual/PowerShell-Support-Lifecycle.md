@@ -90,7 +90,8 @@ the following table lists the dates when various release will no longer be suppo
 | Version | End Of Life                   |
 |---------|-------------------------------|
 | 6.0     | February 13, 2019             |
-| 6.1     | 6 Months after 6.2 releases   |
+| 6.1     | September 28, 2019            |
+| 6.2     | 6 months after 6.3 releases   |
 
 ## Platforms, which are out of support
 
@@ -113,6 +114,7 @@ So, the distribution owners ended support for the following versions and are not
 | Ubuntu   | 17.10   | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 | Debian   | 8       | [June 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
 | Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
+| Ubuntu   | 14.04   | [April 2018](https://wiki.ubuntu.com/Releases)                                              |
 
 ## Notes on licensing
 
