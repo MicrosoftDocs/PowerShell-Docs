@@ -3,11 +3,12 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/28/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821779
 schema: 2.0.0
 title: Get-Culture
 ---
+
 # Get-Culture
 
 ## SYNOPSIS
@@ -15,8 +16,22 @@ Gets the current culture set in the operating system.
 
 ## SYNTAX
 
+### CurrentCulture (Default)
+
 ```
-Get-Culture [<CommonParameters>]
+Get-Culture [-NoUserOverrides] [<CommonParameters>]
+```
+
+### Name
+
+```
+Get-Culture [-Name <String[]>] [-NoUserOverrides] [<CommonParameters>]
+```
+
+### ListAvailable
+
+```
+Get-Culture [-ListAvailable] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,11 +135,73 @@ The fourth command uses dot notation to display the value of the DataTimeFormat 
 Many object properties have properties.
 The fifth command uses dot notation to display the value of the FirstDayOfWeek property of the DateTimeFormat property.
 
+### Example 3: Get a specific culture
+
+Get the CultureInfo object for English in the United States.
+
+```powershell
+Get-Culture -Name en-US
+```
+
+```output
+LCID             Name             DisplayName
+----             ----             -----------
+1033             en-US            English (United States)
+```
+
 ## PARAMETERS
+
+### -ListAvailable
+
+Retrieves all cultures supported by the current operating system.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: ListAvailable
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+Retrieve a specific culture based on the name.
+
+```yaml
+Type: String[]
+Parameter Sets: Name
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -NoUserOverrides
+
+Ignore user changes for current culture.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: CurrentCulture, Name
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
