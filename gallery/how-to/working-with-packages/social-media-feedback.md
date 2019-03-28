@@ -24,9 +24,9 @@ Since this shows only the count of times something has been shared, it will be i
 
 ## Comments
 
-[!IMPORTANT]
-Livefyre commenting is provided by a third-party vendor and is no longer supported.
-Livefyre commenting will no longer be available on the PowerShell Gallery starting 05/01/2019. 
+> [!IMPORTANT]
+> Livefyre commenting is provided by a third-party vendor and is no longer supported.
+> Livefyre commenting will no longer be available on the PowerShell Gallery starting 05/01/2019. 
 
 The PowerShell Gallery uses the LiveFyre service to allow users to comment on packages.
 Users who have recommendations or feedback can use this feature to provide feedback that is visible to anyone who visits the package page.
