@@ -264,3 +264,9 @@ To use this cmdlet, you must start PowerShell by using the **Run as administrato
 [Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
+
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
+
+[about_Session_Configurations](About/about_Session_Configurations.md)
+
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)

@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 03/28/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821523
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
@@ -238,8 +238,18 @@ To run this cmdlet you must start PowerShell by using the **Run as administrator
 
 [New-PSSessionConfigurationFile](New-PSSessionConfigurationFile.md)
 
+[New-PSSessionOption](New-PSSessionOption.md)
+
 [Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
 
 [Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
 
 [Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
+
+[Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
+
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
+
+[about_Session_Configurations](About/about_Session_Configurations.md)
+
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)

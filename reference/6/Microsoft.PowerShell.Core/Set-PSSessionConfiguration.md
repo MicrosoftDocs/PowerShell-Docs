@@ -79,16 +79,7 @@ WSMan Provider. For more information about the WSMan Provider, type `Get-Help WS
 
 ## EXAMPLES
 
-### Example 1: Change the thread apartment state
-
-This example changes the thread apartment state in the **MaintenanceShell** configuration to
-**STA**. The change is effective when you restart the **WinRM** service.
-
-```powershell
-Set-PSSessionConfiguration -Name "MaintenanceShell" -ThreadApartmentState STA
-```
-
-### Example 2: Create and change a session configuration
+### Example 1: Create and change a session configuration
 
 This example shows how to add and remove a startup script from a configuration.
 
@@ -102,7 +93,7 @@ Set-PSSessionConfiguration -Name "AdminShell" -StartupScript "AdminConfig.ps1"
 Set-PSSessionConfiguration -Name "AdminShell" -StartupScript $Null
 ```
 
-### Example 3: Display results
+### Example 2: Display results
 
 This example increases the value of the **MaximumReceivedObjectSizeMB** property to 20. This command
 also prompts you to restart the **WinRM** service. The change is not effective until the **WinRM**
@@ -124,7 +115,7 @@ WinRM service need to be restarted to make the changes effective. Do you want to
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 ```
 
-### Example 4: Display results in different ways
+### Example 3: Display results in different ways
 
 In this example, `Set-PSSessionConfiguration` changes the startup script in the **MaintenanceShell**
 session configuration to `Maintenance.ps1`. The output shows the change and prompts you to restart
@@ -728,3 +719,9 @@ introduced in PowerShell 3.0, use the WSMan: drive in PowerShell 3.0.
 [Test-PSSessionConfigurationFile](Test-PSSessionConfigurationFile.md)
 
 [Unregister-PSSessionConfiguration](Unregister-PSSessionConfiguration.md)
+
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
+
+[about_Session_Configurations](About/about_Session_Configurations.md)
+
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
