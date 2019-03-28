@@ -18,7 +18,7 @@ Sends an email message.
 ```
 Send-MailMessage [-To] <string[]> [-Subject] <string> [[-Body] <string>] [[-SmtpServer] <string>]
 -From <string> [-Attachments <string[]>] [-Bcc <string[]>] [-BodyAsHtml] [-Encoding <Encoding>]
-[-Cc <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+[-Cc <string[]>] [-ReplyTo <string[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
 [-Priority <MailPriority>] [-Credential <pscredential>] [-UseSsl] [-Port <int>] [<CommonParameters>]
 ```
 
@@ -157,6 +157,23 @@ Accept wildcard characters: False
 
 Specifies the email addresses to which a carbon copy (CC) of the email message is sent. Enter names
 (optional) and the email address, such as `Name <someone@fabrikam.com>`.
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReplyTo
+
+Specifies additional email addresses (other than the From address) to use to reply to this message.
+Enter names (optional) and the email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
 Type: String[]
