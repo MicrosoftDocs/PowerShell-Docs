@@ -315,11 +315,11 @@ AssembliesToLoad = 'System.Web.Services', 'FSharp.Compiler.CodeDom.dll'
 Adds the specified aliases to sessions that use the session configuration. Enter a hash table with
 the following keys:
 
-- Name - Name of the alias. This key is required
-- Value - The command that the alias represents. This key is required
-- Description - A text string that describes the alias. This key is optional
+- Name - Name of the alias. This key is required.
+- Value - The command that the alias represents. This key is required.
+- Description - A text string that describes the alias. This key is optional.
 - Options - Alias options. This key is optional. The default value is **None**. The acceptable
-  values for this parameter are: None, ReadOnly, Constant, Private, or AllScope
+  values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
 For example: `@{Name='hlp';Value='Get-Help';Description='Gets help';Options='ReadOnly'}`
 
@@ -566,16 +566,16 @@ the computer.
 
 The acceptable values for this parameter are:
 
-- FullLanguage - All language elements are permitted
+- FullLanguage - All language elements are permitted.
 - ConstrainedLanguage - Commands that contain scripts to be evaluated are not allowed. The
   ConstrainedLanguage mode restricts user access to Microsoft .NET Framework types, objects, or
-  methods
+  methods.
 - NoLanguage - Users may run cmdlets and functions, but are not permitted to use any language
-  elements, such as script blocks, variables, or operators
+  elements, such as script blocks, variables, or operators.
 - RestrictedLanguage - Users may run cmdlets and functions, but are not permitted to use script
   blocks or variables except for the following permitted variables: `$PSCulture`, `$PSUICulture`,
   `$True`, `$False`, and `$Null`. Users may use only the basic comparison operators (`-eq`, `-gt`,
-  `-lt`). Assignment statements, property references, and method calls are not permitted
+  `-lt`). Assignment statements, property references, and method calls are not permitted.
 
 The default value of the **LanguageMode** parameter depends on the value of the **SessionType**
 parameter.
