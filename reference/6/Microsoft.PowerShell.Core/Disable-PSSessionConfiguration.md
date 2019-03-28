@@ -28,12 +28,11 @@ which prevents all users from using the session configurations to create a user-
 (**PSSessions**) on the local computer. This is an advanced cmdlet that is designed to be used by
 system administrators to manage customized session configurations for their users.
 
-Starting in Windows PowerShell 3.0, the `Disable-PSSessionConfiguration` cmdlet sets the
-**Enabled** setting of the session configuration
-(`WSMan:\localhost\Plugins\<SessionConfiguration>\Enabled`) to False.
+Starting in PowerShell 3.0, the `Disable-PSSessionConfiguration` cmdlet sets the **Enabled** setting
+of the session configuration (`WSMan:\localhost\Plugins\<SessionConfiguration>\Enabled`) to False.
 
-In Windows PowerShell 2.0, the `Disable-PSSessionConfiguration` cmdlet adds a **Deny_All** entry to
-the security descriptor of one or more registered session configurations.
+In PowerShell 2.0, the `Disable-PSSessionConfiguration` cmdlet adds a **Deny_All** entry to the
+security descriptor of one or more registered session configurations.
 
 Without parameters, `Disable-PSSessionConfiguration` disables the **Microsoft.PowerShell**
 configuration, the default configuration used for sessions. Unless the user specifies a different
@@ -223,8 +222,7 @@ This cmdlet does not return any objects.
 
 ## NOTES
 
-To run this cmdlet on Windows Vista, Windows Server 2008, and later versions of the Windows
-operating system, you must start PowerShell by using the Run as administrator option.
+To run this cmdlet you must start PowerShell by using the **Run as administrator** option.
 
 ## RELATED LINKS
 
