@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821499
-external help file:  System.Management.Automation.dll-Help.xml
-title:  New-PSSessionConfigurationFile
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Core
+ms.date: 03/26/2019
+online version: http://go.microsoft.com/fwlink/?LinkId=821499
+schema: 2.0.0
+title: New-PSSessionConfigurationFile
 ---
 # New-PSSessionConfigurationFile
 
@@ -34,21 +35,21 @@ To use the file in a session configuration, use the **Path** parameter of the
 
 The session configuration file that `New-PSSessionConfigurationFile` creates is a human-readable
 text file that contains a hash table of the session configuration properties and values. The file
-has a `.pssc` file name extension.
+has a `.pssc` filename extension.
 
 All parameters of `New-PSSessionConfigurationFile` are optional, except for the **Path** parameter.
 If you omit a parameter, the corresponding key in the session configuration file is commented-out,
 except where noted in the parameter description.
 
 A session configuration, also known as an endpoint, is a collection of settings on the local
-computer that define the environment for PowerShell sessions (**PSSessions**) that connect to, or
-terminate at, the computer. All **PSSessions** use a session configuration. To specify a particular
-session configuration, use the **ConfigurationName** parameter of cmdlets that create a session,
-such as the `New-PSSession` cmdlet.
+computer that define the environment for PowerShell sessions (**PSSessions**) that connect to the
+computer. All **PSSessions** use a session configuration. To specify a particular session
+configuration, use the **ConfigurationName** parameter of cmdlets that create a session, such as the
+`New-PSSession` cmdlet.
 
 A session configuration file makes it easy to define a session configuration without complex scripts
-or code assemblies. The settings in the file are used in addition to the optional startup script and
-any assemblies in the session configuration.
+or code assemblies. The settings in the file are used with the optional startup script and any
+assemblies in the session configuration.
 
 For more information about session configurations and session configuration files, see [about_Session_Configurations](About/about_Session_Configurations.md)
 and [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
@@ -63,10 +64,10 @@ This example show how to create and the effects of using a no-language session.
 
 The steps include:
 
-1. Create a new configuration file
-1. Register the configuration
-1. Create a new session that uses the configuration
-1. Run commands in that new session
+1. Create a new configuration file.
+1. Register the configuration.
+1. Create a new session that uses the configuration.
+1. Run commands in that new session.
 
 To run the commands in this example, start PowerShell by using the Run as administrator
 option. This option is required to run the `Register-PSSessionConfiguration` cmdlet.
@@ -93,10 +94,10 @@ This example show how to create and the effects of using a no-language session.
 
 The steps include:
 
-1. Create a new configuration file
-1. Register the configuration
-1. Create a new session that uses the configuration
-1. Run commands in that new session
+1. Create a new configuration file.
+1. Register the configuration.
+1. Create a new session that uses the configuration.
+1. Run commands in that new session.
 
 To run the commands in this example, start PowerShell by using the Run as administrator
 option. This option is required to run the `Register-PSSessionConfiguration` cmdlet.
@@ -164,8 +165,8 @@ detected. The cmdlet returns `$True` if no errors are detected in the file.
 
 ### Example 5: Create a sample configuration file
 
-This example shows a `New-PSSessionConfigurationFile` command that uses all of the cmdlet
-parameters. It is included to show the correct input format for each parameter.
+This example shows a `New-PSSessionConfigurationFile` command that uses all the cmdlet parameters.
+It is included to show the correct input format for each parameter.
 
 The resulting SampleFile.pssc is displayed in the output.
 ```powershell
@@ -379,7 +380,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: "Unknown"
+Default value: Unknown
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -504,8 +505,8 @@ Accept wildcard characters: False
 ### -Guid
 
 Specifies a unique identifier for the session configuration file. If you omit this parameter,
-`New-PSSessionConfigurationFile` generates a GUID for the file.To create a new GUID in Windows
-PowerShell, type `[guid]::NewGuid()`.
+`New-PSSessionConfigurationFile` generates a GUID for the file. To create a new GUID in PowerShell,
+type `New-Guid`.
 
 ```yaml
 Type: Guid
@@ -594,7 +595,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path and file name of the session configuration file. The file must have a `.pssc` file
+Specifies the path and filename of the session configuration file. The file must have a `.pssc` file
 name extension.
 
 ```yaml
@@ -675,7 +676,7 @@ is Default. The acceptable values for this parameter are:
   session, the session is limited to expressions and might not be usable.
 - Default - Adds the Microsoft.PowerShell.Core module to the session. This module includes the
   `Import-Module` cmdlet that users can use to import other modules unless you explicitly prohibit
-  the use of the cmdlets.
+  this cmdlet.
 - RestrictedRemoteServer. Includes only the following proxy functions: `Exit-PSSession`,
   `Get-Command`, `Get-FormatData`, `Get-Help`, `Measure-Object`, `Out-Default`, and `Select-Object`.
   Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the
@@ -697,7 +698,7 @@ Accept wildcard characters: False
 ### -TypesToProcess
 
 Adds the specified `.ps1xml` type files to sessions that use the session configuration. Enter the
-type file names. The value of this parameter must be a full or absolute path of type file names.
+type filenames. The value of this parameter must be a full or absolute path to type filenames.
 
 ```yaml
 Type: String[]
@@ -852,20 +853,20 @@ This cmdlet does not generate any output.
 
 ## NOTES
 
-- The *Visible* parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items
-  into the session. Instead, they select from among the items imported into the session. For
-  example, if the value of the **VisibleProviders** parameter is the Certificate provider, but the
+- Parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the
+  session. Instead, they select from among the items imported into the session. For example, if the
+  value of the **VisibleProviders** parameter is the Certificate provider, but the
   **ModulesToImport** parameter does not specify the **Microsoft.PowerShell.Security** module that
   contains the Certificate provider, the Certificate provider is not visible in the session.
 - `New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name
   extension in the path that you specify in the **Path** parameter. When you use the session
   configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet
   copies the configuration file and saves an active copy of the file in the **SessionConfig**
-  subdirectory of the `$pshome` directory.
+  subdirectory of the `$PSHOME` directory.
 
   The **ConfigFilePath** property of the session configuration contains the fully qualified path of
   the active session configuration file. You can modify the active configuration file in the
-  `$pshome` directory at any time using any text editor. The changes that you make affect all new
+  `$PSHOME` directory at any time using any text editor. The changes that you make affect all new
   sessions that use the session configuration, but not existing sessions.
 
   Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile`
