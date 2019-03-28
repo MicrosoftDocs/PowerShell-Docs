@@ -42,7 +42,8 @@ For more information about session configurations, see [about_Session_Configurat
 
 To run this cmdlet, start PowerShell with the Run as administrator option.
 
-> [!NOTE] This command appears only on PowerShell running on the Windows platform. It is not
+> [!NOTE]
+> This command appears only on PowerShell running on the Windows platform. It is not
 > available on Linux or MacOS versions.
 
 ## EXAMPLES
