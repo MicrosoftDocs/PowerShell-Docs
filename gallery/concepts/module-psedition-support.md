@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date:  03/22/2019
 contributor:  manikb
 keywords:  gallery,powershell,cmdlet,psget
 title:  Modules with compatible PowerShell Editions
@@ -23,7 +23,7 @@ In PowerShell 5.1 and above, the edition of the running PowerShell session can b
 $PSEdition
 ```
 
-```output
+```Output
 Core
 ```
 
@@ -33,7 +33,7 @@ Edition information is also present in the PSEdition property of `$PSVersionTabl
 $PSVersionTable
 ```
 
-```output
+```Output
 Name                           Value
 ----                           -----
 PSVersion                      5.1.14300.1000
@@ -62,7 +62,7 @@ $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -71,7 +71,7 @@ Core
 $ModuleInfo | Get-Member CompatiblePSEditions
 ```
 
-```output
+```Output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
@@ -85,7 +85,7 @@ When getting a list of available modules, you can filter the list by PowerShell 
 Get-Module -ListAvailable -PSEdition Desktop
 ```
 
-```output
+```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
@@ -98,7 +98,7 @@ Manifest   1.0        ModuleWithPSEditions
 Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -128,7 +128,7 @@ to load in PowerShell Core 6.1 and above:
 Import-Module BitsTransfer
 ```
 
-```output
+```Output
 Import-Module : Module 'C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\BitsTransfer\BitsTransfer.psd1' does not support current PowerShell edition 'Core'. Its supported editions are 'Desktop'. Use 'Import-Module -SkipEditionCheck' to ignore the compatibility of this module.
 At line:1 char:1
 + Import-Module BitsTransfer
@@ -144,7 +144,7 @@ returned or displayed by default:
 Get-Module -ListAvailable BitsTransfer
 ```
 
-```output
+```Output
 ```
 
 In both cases, you can bypass this with the `-SkipEditionCheck` switch parameter:
@@ -153,7 +153,7 @@ In both cases, you can bypass this with the `-SkipEditionCheck` switch parameter
 Import-Module -SkipEditionCheck AppLocker -PassThru
 ```
 
-```output
+```Output
 
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
@@ -165,7 +165,7 @@ Manifest   2.0.0.0    AppLocker                           {Get-AppLockerFileInfo
 Get-Module -ListAvailable BitsTransfer
 ```
 
-```output
+```Output
 
 
     Directory: C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
@@ -184,7 +184,7 @@ be aware that errors due to an incompatibility could occur at a later stage
 Import-Module -SkipEditionCheck BitsTransfer
 ```
 
-```output
+```Output
 Import-Module : Could not load type 'System.Management.Automation.PSSnapIn' from assembly 'System.Management.Automation, Version=6.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.
 At line:1 char:1
 + Import-Module -SkipEditionCheck BitsTransfer
@@ -200,7 +200,7 @@ PowerShell interprets the `CompatiblePSEditions` field under the `PSEdition` for
 Get-Module -ListAvailable
 ```
 
-```output
+```Output
 
     Directory: C:\Users\me\Documents\PowerShell\Modules
 
@@ -375,7 +375,7 @@ Sample module manifest file with CompatiblePSEditions key
 dir -Recurse
 ```
 
-```output
+```Output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode           LastWriteTime   Length Name

@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 03/22/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821486
 schema: 2.0.0
 title: Get-Module
@@ -112,7 +112,7 @@ PS> $FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVe
 PS> Get-Module -FullyQualifiedName | Format-Table -Property Name,Version
 ```
 
-```output
+```Output
 Name                             Version
 ----                             -------
 Microsoft.PowerShell.Management  3.1.0.0
@@ -127,7 +127,7 @@ The command then pipes the results into the `Format-Table` cmdlet to format the 
 PS> Get-Module | Get-Member -MemberType Property | Format-Table Name
 ```
 
-```output
+```Output
 Name
 ----
 AccessMode
@@ -184,7 +184,7 @@ The output includes the new properties, such as **Author** and **CompanyName**, 
 PS> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
 ```
 
-```output
+```Output
 Name: AppLocker
 
 Name      ModuleType Path
@@ -234,7 +234,7 @@ PS> $m = Get-Module -list -Name BitsTransfer
 PS> Get-Content $m.Path
 ```
 
-```output
+```Output
 @ {
     GUID               = "{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
     Author             = "Microsoft Corporation"
@@ -260,7 +260,7 @@ The second command uses the `Get-Content` cmdlet to get the content of the manif
 PS> dir (Get-Module -ListAvailable FileTransfer).ModuleBase
 ```
 
-```output
+```Output
 Directory: C:\Windows\system32\WindowsPowerShell\v1.0\Modules\FileTransfer
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----

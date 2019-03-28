@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 03/22/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821492
 schema: 2.0.0
 title: Import-Module
