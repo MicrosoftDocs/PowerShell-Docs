@@ -65,13 +65,13 @@ parameter works only when the command generates a debugging message. For
 example, this parameter works when a command contains the **Write-Debug**
 cmdlet.
 
-The **Debug** parameter overrides the value of the **$DebugPreference** variable
-for the current command, setting the value of **$DebugPreference** to
-**Continue**. Because the default value of the **$DebugPreference** variable is
+The **Debug** parameter overrides the value of the `$DebugPreference` variable
+for the current command, setting the value of `$DebugPreference` to
+**Continue**. Because the default value of the `$DebugPreference` variable is
 **SilentlyContinue**, debugging messages aren't displayed by default.
 
 `-Debug:$true` has the same effect as **-Debug**. Use `-Debug:$false` to
-suppress the display of debugging messages when **$DebugPreference** isn't
+suppress the display of debugging messages when `$DebugPreference` isn't
 **SilentlyContinue**, which is the default.
 
 #### ErrorAction
@@ -82,9 +82,9 @@ Determines how the cmdlet responds to a non-terminating error from the command.
 This parameter works only when the command generates a non-terminating error,
 such as those from the `Write-Error` cmdlet.
 
-The **ErrorAction** parameter overrides the value of the **$ErrorActionPreference**
+The **ErrorAction** parameter overrides the value of the `$ErrorActionPreference`
 variable for the current command. Because the default value of the
-**$ErrorActionPreference** variable is **Continue**, error messages are displayed
+`$ErrorActionPreference` variable is **Continue**, error messages are displayed
 and execution continues unless you use the **ErrorAction** parameter.
 
 The **ErrorAction** parameter has no effect on terminating errors (such as
@@ -96,7 +96,7 @@ command. `Continue` is the default.
 
 `-ErrorAction:Ignore` suppresses the error message and continues executing the
 command. Unlike **SilentlyContinue**, **Ignore** doesn't add the error message
-to the **$Error** automatic variable. The **Ignore** value is introduced in
+to the `$Error` automatic variable. The **Ignore** value is introduced in
 PowerShell 3.0.
 
 `-ErrorAction:Inquire` displays the error message and prompts you for
@@ -115,7 +115,7 @@ available for workflows.
 The alias for **ErrorVariable** is **ev**.
 
 **ErrorVariable** stores error messages about the command in the specified
-variable and in the **$Error** automatic variable. For more information, type
+variable and in the `$Error` automatic variable. For more information, type
 the following command:
 
 ```powershell
@@ -126,7 +126,7 @@ By default, new error messages overwrite error messages that are already stored
 in the variable. To append the error message to the variable content, type a
 plus sign (+) before the variable name.
 
-For example, the following command creates the **$a** variable and then stores any
+For example, the following command creates the `$a` variable and then stores any
 errors in it:
 
 ```powershell
@@ -146,7 +146,7 @@ $a
 ```
 
 You can use this parameter to create a variable that contains only error
-messages from specific commands. The **$Error** automatic variable contains error
+messages from specific commands. The `$Error` automatic variable contains error
 messages from all the commands in the session. You can use array notation, such
 as `$a[0]` or `$error[1,2]` to refer to specific errors stored in the variables.
 
@@ -156,11 +156,11 @@ The alias for **InformationAction** is **ia**.
 
 Introduced in PowerShell 5.0. Within the command or script in which it's used,
 the **InformationAction** common parameter overrides the value of the
-**$InformationPreference** preference variable, which by default is set to
+`$InformationPreference` preference variable, which by default is set to
 **SilentlyContinue**. When you use `Write-Information` in a script with
 **InformationAction**, `Write-Information` values are shown depending on the
 value of the **InformationAction** parameter. For more information about
-**$InformationPreference**, see [about_Preference_Variables](./about_Preference_Variables.md).
+`$InformationPreference`, see [about_Preference_Variables](./about_Preference_Variables.md).
 
 `-InformationAction:Stop` stops a command or script at an occurrence of the
 `Write-Information` command.
@@ -192,8 +192,8 @@ you specify by adding the `Write-Information` command. `Write-Information`
 values are shown depending on the value of the **InformationAction** common
 parameter; if you don't add the **InformationAction** common parameter,
 `Write-Information` strings are shown depending on the value of the
-**$InformationPreference** preference variable. For more information about
-**$InformationPreference**, see [about_Preference_Variables](./about_Preference_Variables.md).
+`$InformationPreference` preference variable. For more information about
+`$InformationPreference`, see [about_Preference_Variables](./about_Preference_Variables.md).
 
 #### OutBuffer
 
@@ -218,20 +218,20 @@ at the command line.
 To add the output to the variable, instead of replacing any output that might
 already be stored there, type a plus sign (+) before the variable name.
 
-For example, the following command creates the **$out** variable and stores the
+For example, the following command creates the `$out` variable and stores the
 process object in it:
 
 ```powershell
 Get-Process PowerShell -OutVariable out
 ```
 
-The following command adds the process object to the **$out** variable:
+The following command adds the process object to the `$out` variable:
 
 ```powershell
 Get-Process iexplore -OutVariable +out
 ```
 
-The following command displays the contents of the **$out** variable:
+The following command displays the contents of the `$out` variable:
 
 ```powershell
 $out
@@ -288,15 +288,15 @@ information resembles the information in a trace or in a transaction log. This
 parameter works only when the command generates a verbose message. For example,
 this parameter works when a command contains the `Write-Verbose` cmdlet.
 
-The **Verbose** parameter overrides the value of the **$VerbosePreference**
+The **Verbose** parameter overrides the value of the `$VerbosePreference`
 variable for the current command. Because the default value of the
-**$VerbosePreference** variable is **SilentlyContinue**, verbose messages aren't
+`$VerbosePreference` variable is **SilentlyContinue**, verbose messages aren't
 displayed by default.
 
 `-Verbose:$true` has the same effect as `-Verbose`
 
 `-Verbose:$false` suppresses the display of verbose messages. Use this parameter
-when the value of **$VerbosePreference** isn't **SilentlyContinue** (the
+when the value of `$VerbosePreference` isn't **SilentlyContinue** (the
 default).
 
 #### WarningAction
@@ -309,8 +309,8 @@ warning message. For example, this parameter works when a command contains the
 `Write-Warning` cmdlet.
 
 The **WarningAction** parameter overrides the value of the
-**$WarningPreference** variable for the current command. Because the default
-value of the **$WarningPreference** variable is **Continue**, warnings are
+`$WarningPreference` variable for the current command. Because the default
+value of the `$WarningPreference` variable is **Continue**, warnings are
 displayed and execution continues unless you use the **WarningAction**
 parameter.
 
@@ -344,20 +344,20 @@ To append the warnings to the variable content, instead of replacing any
 warnings that might already be stored there, type a plus sign (+) before the
 variable name.
 
-For example, the following command creates the **$a** variable and then stores any
+For example, the following command creates the `$a` variable and then stores any
 warnings in it:
 
 ```powershell
 Get-Process -Id 6 -WarningVariable a
 ```
 
-The following command adds any warnings to the **$a** variable:
+The following command adds any warnings to the `$a` variable:
 
 ```powershell
 Get-Process -Id 2 -WarningVariable +a
 ```
 
-The following command displays the contents of **$a**:
+The following command displays the contents of `$a`:
 
 ```powershell
 $a
@@ -380,8 +380,8 @@ The alias for **WhatIf** is **wi**.
 Displays a message that describes the effect of the command, instead of
 executing the command.
 
-The **WhatIf** parameter overrides the value of the **$WhatIfPreference** variable
-for the current command. Because the default value of the **$WhatIfPreference**
+The **WhatIf** parameter overrides the value of the `$WhatIfPreference` variable
+for the current command. Because the default value of the `$WhatIfPreference`
 variable is 0 (disabled), **WhatIf** behavior isn't done without the
 **WhatIf** parameter. For more information, type the following command:
 
@@ -416,7 +416,7 @@ The alias for **Confirm** is **cf**.
 
 Prompts you for confirmation before executing the command.
 
-The **Confirm** parameter overrides the value of the **$ConfirmPreference**
+The **Confirm** parameter overrides the value of the `$ConfirmPreference`
 variable for the current command. The default value is true. For more
 information, type the following command:
 
