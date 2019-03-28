@@ -66,10 +66,10 @@ This example show how to create and the effects of using a no-language session.
 
 The steps include:
 
-1. Create a new configuration file
-1. Register the configuration
-1. Create a new session that uses the configuration
-1. Run commands in that new session
+1. Create a new configuration file.
+1. Register the configuration.
+1. Create a new session that uses the configuration.
+1. Run commands in that new session.
 
 To run the commands in this example, start PowerShell by using the Run as administrator
 option. This option is required to run the `Register-PSSessionConfiguration` cmdlet.
@@ -96,10 +96,10 @@ This example show how to create and the effects of using a no-language session.
 
 The steps include:
 
-1. Create a new configuration file
-1. Register the configuration
-1. Create a new session that uses the configuration
-1. Run commands in that new session
+1. Create a new configuration file.
+1. Register the configuration.
+1. Create a new session that uses the configuration.
+1. Run commands in that new session.
 
 To run the commands in this example, start PowerShell by using the Run as administrator
 option. This option is required to run the `Register-PSSessionConfiguration` cmdlet.
@@ -147,10 +147,10 @@ configuration file.
 
 The example code below performs the following steps to make this change:
 
-1. Get the configuration file path for the ITConfig session
+1. Get the configuration file path for the ITConfig session.
 1. The user edits the configuration file using **Notepad.exe** to change the **AliasDefinitions**
-   value as follows: `AliasDefinitions = @(@{Name='slst';Value='Select-String'})`
-1. Test the updated configuration file
+   value as follows: `AliasDefinitions = @(@{Name='slst';Value='Select-String'})`.
+1. Test the updated configuration file.
 
 ```powershell
 $ITConfig = Get-PSSessionConfiguration -Name ITConfig
