@@ -991,7 +991,7 @@ When importing a module from another path, this switch does nothing,
 since the check is not performed.
 On Linux and macOS, this switch does nothing.
 
-See [about_PowerShell_Editions] for more information.
+See [about_PowerShell_Editions](About/about_PowerShell_Editions.md) for more information.
 
 > [!WARNING]
 > `Import-Module -SkipEditionCheck` is still likely to fail to import a module. Even if it does
@@ -1070,6 +1070,4 @@ When you create a CIM session on the local computer, PowerShell uses DCOM, inste
 
 [Remove-Module](Remove-Module.md)
 
-[about_PowerShell_Editions]
-
-[about_PowerShell_Editions]: About/about_PowerShell_Editions.md
+[about_PowerShell_Editions](About/about_PowerShell_Editions.md)
