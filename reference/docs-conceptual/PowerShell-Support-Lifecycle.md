@@ -62,7 +62,7 @@ for experimentation and feedback.
 | Windows 7, 8.1, and 10                            | Supported   | Supported   |
 | Windows Server 2008 R2, 2012 R2, 2016             | Supported   | Supported   |
 | [Windows Server Semi-Annual Channel][semi-annual] | Supported   | Supported   |
-| Ubuntu 16.04 and, 18.04                           | Supported   | Supported   |
+| Ubuntu 16.04 and 18.04                            | Supported   | Supported   |
 | Ubuntu 18.10 (via Snap Package)                   | Community   | Community   |
 | Debian 9                                          | Supported   | Supported   |
 | CentOS 7                                          | Supported   | Supported   |
@@ -111,7 +111,7 @@ So, the distribution owners ended support for the following versions and are not
 | Ubuntu   | 17.10   | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 | Debian   | 8       | [June 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
 | Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
-| Ubuntu   | 14.04   | [April 2018](https://wiki.ubuntu.com/Releases)                                              |
+| Ubuntu   | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
 
 ## Notes on licensing
 
