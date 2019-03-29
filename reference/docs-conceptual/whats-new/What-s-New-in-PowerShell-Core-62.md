@@ -1,10 +1,10 @@
 ---
 title: What's New in PowerShell Core 6.1
-description: New features and changes released in PowerShell Core 6.1
+description: New features and changes released in PowerShell Core 6.2
 ms.date: 03/28/2019
 ---
 
-# What's New in PowerShell Core 6.1
+# What's New in PowerShell Core 6.12
 
 Below is a selection of some of the major new features and changes that have been introduced
 in PowerShell Core 6.2.
