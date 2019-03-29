@@ -1,5 +1,5 @@
 ﻿---
-ms.date:  06/09/2017
+ms.date:  3/22/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -7,163 +7,275 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=113394
 external help file:  Microsoft.PowerShell.Security.dll-Help.xml
 title:  Set-ExecutionPolicy
 ---
+
 # Set-ExecutionPolicy
 
 ## SYNOPSIS
-
-Changes the user preference for the Windows PowerShell execution policy.
+Sets the PowerShell execution policies for Windows computers.
 
 ## SYNTAX
 
+### All
+
 ```
-Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPolicyScope>] [-Force] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPolicyScope>] [-Force]
+[-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The **Set-ExecutionPolicy** cmdlet changes the user preference for the Windows PowerShell execution policy.
+The `Set-ExecutionPolicy` cmdlet changes PowerShell execution policies for Windows computers. For
+more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
-The execution policy is part of the security strategy of Windows PowerShell.
-It determines whether you can load configuration files (including your Windows PowerShell profile) and run scripts, and it determines which scripts, if any, must be digitally signed before they will run.
-For more information, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
+An execution policy is part of the PowerShell security strategy. Execution policies determine
+whether you can load configuration files, such as your PowerShell profile, or run scripts. And,
+whether scripts must be digitally signed before they are run.
 
-NOTE:  To change the execution policy for the default (LocalMachine) scope, start Windows PowerShell with the "Run as administrator" option.
+The `Set-ExecutionPolicy` cmdlet's default scope is **LocalMachine**, which affects everyone who
+uses the computer. To change the execution policy for **LocalMachine**, start PowerShell with **Run
+as Administrator**.
+
+To display the execution policies for each scope in the order of precedence, use
+`Get-ExecutionPolicy -List`. To see the effective execution policy for your PowerShell session use
+`Get-ExecutionPolicy` with no parameters.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Set an execution policy
+
+This example shows how to set the execution policy for the local computer.
 
 ```powershell
-Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+Get-ExecutionPolicy -List
 ```
 
-This command sets the user preference for the shell execution policy to RemoteSigned.
+```Output
+        Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       Undefined
+  CurrentUser    RemoteSigned
+ LocalMachine    RemoteSigned
+```
 
-### Example 2
+The `Set-ExecutionPolicy` cmdlet uses the **ExecutionPolicy** parameter to specify the
+**RemoteSigned** policy. The **Scope** parameter specifies the default scope value,
+**LocalMachine**. To view the execution policy settings, use the `Get-ExecutionPolicy` cmdlet with
+the **List** parameter.
+
+### Example 2: Set an execution policy that conflicts with a Group Policy
+
+This command attempts to set the **LocalMachine** scope's execution policy to **Restricted**.
+**LocalMachine** is more restrictive, but isn't the effective policy because it conflicts with a
+Group Policy. The **Restricted** policy is written to the registry hive **HKEY_LOCAL_MACHINE**.
 
 ```
-PS> Set-ExecutionPolicy Restricted
-Set-ExecutionPolicy : Windows PowerShell updated your local preference successfully, but the setting is overridden by the group policy applied to your system. Due to the override, your shell will retain its current effective execution policy of "AllSigned". Contact your group policy administrator for more information.
-At line:1 char:20
-+ Set-ExecutionPolicy  <<<< restricted
+PS> Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope LocalMachine
+
+Set-ExecutionPolicy : PowerShell updated your local preference successfully, but the setting is
+overridden by the Group Policy applied to your system. Due to the override, your shell will retain
+its current effective execution policy of "AllSigned". Contact your Group Policy administrator for
+more information. At line:1 char:20 + Set-ExecutionPolicy <<<< restricted
+
+PS> Get-ChildItem -Path HKLM:\SOFTWARE\Microsoft\PowerShell\1\ShellIds
+
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds
+
+Name                    Property
+----                    --------
+Microsoft.PowerShell    Path            : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+                        ExecutionPolicy : Restricted
+ScriptedDiagnostics     ExecutionPolicy : Unrestricted
 ```
 
-This command attempts to set the execution policy for the shell to "Restricted." The "Restricted" setting is written to the registry, but because it conflicts with a Group Policy, it is not effective, even though it is more restrictive than the policy.
+The `Set-ExecutionPolicy` cmdlet uses the **ExecutionPolicy** parameter to specify the
+**Restricted** policy. The **Scope** parameter specifies the default scope value, **LocalMachine**.
+The `Get-ChildItem` cmdlet uses the **Path** parameter with the **HKLM** provider to specify
+registry location.
 
-### Example 3
+### Example 3: Apply the execution policy from a remote computer to a local computer
+
+This command gets the execution policy object from a remote computer and sets the policy on the
+local computer. `Get-ExecutionPolicy` sends a **Microsoft.PowerShell.ExecutionPolicy** object down
+the pipeline. `Set-ExecutionPolicy` accepts pipeline input and doesn't require the
+**ExecutionPolicy** parameter.
+
+```
+PS> Invoke-Command -ComputerName Server01 -ScriptBlock { Get-ExecutionPolicy } | Set-ExecutionPolicy
+```
+
+The `Invoke-Command` cmdlet is executed at the local computer and sends the **ScriptBlock** to the
+remote computer. The **ComputerName** parameter specifies the remote computer, **Server01**. The
+**ScriptBlock** parameter runs `Get-ExecutionPolicy` on the remote computer. The
+`Get-ExecutionPolicy` object is sent down the pipeline to the `Set-ExecutionPolicy`.
+`Set-ExecutionPolicy` applies the execution policy to the local computer's default scope,
+**LocalMachine**.
+
+### Example 4: Set the scope for an execution policy
+
+This example shows how to set an execution policy for a specified scope, **CurrentUser**. The
+**CurrentUser** scope only affects the user who sets this scope.
 
 ```powershell
-Invoke-Command -ComputerName Server01 -ScriptBlock {Get-ExecutionPolicy} | Set-ExecutionPolicy -Force
+Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser
+Get-ExecutionPolicy -List
 ```
 
-This command gets the execution policy from a remote computer and applies that execution policy to the local computer.
+```Output
+        Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       Undefined
+  CurrentUser       AllSigned
+ LocalMachine    RemoteSigned
+```
 
-The command uses the Invoke-Command cmdlet to send the command to the remote computer.
-Because you can pipe an ExecutionPolicy (Microsoft.PowerShell.ExecutionPolicy) object to **Set-ExecutionPolicy**, the **Set-ExecutionPolicy** command does not need an **ExecutionPolicy** parameter.
+`Set-ExecutionPolicy` uses the **ExecutionPolicy** parameter to specify the **AllSigned** policy.
+The **Scope** parameter specifies the **CurrentUser**. To view the execution policy settings, use
+the `Get-ExecutionPolicy` cmdlet with the **List** parameter.
 
-The command uses the **Force** parameter to suppress the user prompt.
+The effective execution policy for the user becomes **AllSigned**.
 
-### Example 4
+### Example 5: Remove the execution policy for the current user
+
+This example shows how use the **Undefined** execution policy to remove an execution policy for a
+specified scope.
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser
+Get-ExecutionPolicy -List
+```
+
+```Output
+        Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       Undefined
+  CurrentUser       Undefined
+ LocalMachine    RemoteSigned
+```
+
+`Set-ExecutionPolicy` uses the **ExecutionPolicy** parameter to specify the **Undefined** policy.
+The **Scope** parameter specifies the **CurrentUser**. To view the execution policy settings, use
+the `Get-ExecutionPolicy` cmdlet with the **List** parameter.
+
+### Example 6: Set the execution policy for the current PowerShell session
+
+The **Process** scope only affects the current PowerShell session. The execution policy is saved in
+the environment variable `$env:PSExecutionPolicyPreference` and is deleted when the session is
+closed.
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope Process
+```
+
+```Output
+        Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       AllSigned
+  CurrentUser    RemoteSigned
+ LocalMachine    RemoteSigned
+```
+
+The `Set-ExecutionPolicy` uses the **ExecutionPolicy** parameter to specify the **AllSigned**
+policy. The **Scope** parameter specifies the value **Process**. To view the execution policy
+settings, use the `Get-ExecutionPolicy` cmdlet with the **List** parameter.
+
+### Example 7: Unblock a script to run it without changing the execution policy
+
+This example shows how the **RemoteSigned** execution policy prevents you from running unsigned
+scripts.
+
+A best practice is to read the script's code and verify it's safe **before** using the
+`Unblock-File` cmdlet. The `Unblock-File` cmdlet unblocks scripts so they can run, but doesn't
+change the execution policy.
 
 ```
-The first command uses the **Set-ExecutionPolicy** cmdlet to set an execution policy of **AllSigned** for the current user. It uses the **Force** parameter to suppress the user prompts.
-PS> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy AllSigned -Force
-
-The second command uses the **List** parameter of the Get-ExecutionPolicy cmdlet to get the execution policies set in each scope. The results show that the execution policy that is set for the current user differs from the execution policy set for all users of the computer.
-PS> Get-ExecutionPolicy -List
-
-Scope   ExecutionPolicy
------   ---------------
-MachinePolicy         Undefined
-UserPolicy         Undefined
-Process         Undefined
-CurrentUser         AllSigned
-LocalMachine      RemoteSigned
-
+PS> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 
 PS> Get-ExecutionPolicy
-AllSigned
-```
 
-This example shows how to set an execution policy for a particular scope.
-
-### Example 5
-
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Undefined
-```
-
-This command uses an execution policy value of **Undefined** to effectively remove the execution policy that is set for the current user scope.
-As a result, the execution policy that is set in Group Policy or in the LocalMachine (all users) scope is effective.
-
-If you set the execution policy in all scopes to **Undefined** and the Group Policy is not set, the default execution policy, **Restricted**, is effective for all users of the computer.
-
-### Example 6
-
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy AllSigned
-```
-
-This command sets an execution policy of **AllSigned** for only the current Windows PowerShell session.
-This execution policy is saved in the **PSExecutionPolicyPreference** environment variable ($env:PSExecutionPolicyPreference), so it does not affect the value in the registry.
-The variable and its value are deleted when the current session is closed.
-
-### Example 7
-
-```
-The first command uses the **Set-ExecutionPolicy** cmdlet to change the execution policy to RemoteSigned.
-PS> Set-ExecutionPolicy RemoteSigned
-
-The second command uses the Get-ExecutionPolicy cmdlet to get the effective execution policy in the session. The output shows that it is **RemoteSigned**.
-PS> Get-ExecutionPolicy
 RemoteSigned
 
-The third command shows what happens when you run a blocked script in a Windows PowerShell session in which the execution policy is **RemoteSigned**. The **RemoteSigned** policy prevents you from running scripts that are downloaded from the Internet unless they are digitally signed.
 PS> .\Start-ActivityTracker.ps1
 
-.\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded. The file .\Start-ActivityTracker.ps1 is not digitally signed. The script will not execute on the system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
+.\Start-ActivityTracker.ps1 : File .\Start-ActivityTracker.ps1 cannot be loaded.
+The file .\Start-ActivityTracker.ps1 is not digitally signed.
+The script will not execute on the system.
+For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:1
 + .\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:) [], PSSecurityException
-    + FullyQualifiedErrorId : UnauthorizedAccess
++ CategoryInfo          : NotSpecified: (:) [], PSSecurityException
++ FullyQualifiedErrorId : UnauthorizedAccess
 
+PS> Unblock-File -Path .\Start-ActivityTracker.ps1
 
-The fourth command uses the Unblock-File cmdlet to unblock the script so it can run in the session.Before running an **Unblock-File** command, read the script contents and verify that it is safe.
-PS> Unblock-File -Path Start-ActivityTracker.ps1
-
-The fifth and sixth commands show the effect of the **Unblock-File** command. The **Unblock-File** command does not change the execution policy. However, it unblocks the script so it will run in Windows PowerShell.
 PS> Get-ExecutionPolicy
+
 RemoteSigned
-PS> Start-ActivityTracker.ps1
+
+PS> .\Start-ActivityTracker.ps1
+
 Task 1:
 ```
 
-This example shows the effect of the **RemoteSigned** execution policy, which prevents you from running unsigned scripts that were downloaded from the Internet.
-It also shows how to use the Unblock-File cmdlet to unblock scripts, so that you can run them without changing the execution policy.
+The `Set-ExecutionPolicy` uses the **ExecutionPolicy** parameter to specify the **RemoteSigned**
+policy. The policy is set for the default scope, **LocalMachine**.
+
+The `Get-ExecutionPolicy` cmdlet shows that **RemoteSigned** is the effective execution policy for
+the current PowerShell session.
+
+The **Start-ActivityTracker.ps1** script is executed from the current directory. The script is
+blocked by **RemoteSigned** because the script isn't digitally signed.
+
+For this example, the script's code was reviewed and verified as safe to run. The `Unblock-File`
+cmdlet uses the **Path** parameter to unblock the script.
+
+To verify that `Unblock-File` didn't change the execution policy, `Get-ExecutionPolicy` displays the
+effective execution policy, **RemoteSigned**.
+
+The script, **Start-ActivityTracker.ps1** is executed from the current directory. The script begins
+to run because it was unblocked by the `Unblock-File` cmdlet.
 
 ## PARAMETERS
 
 ### -ExecutionPolicy
 
-Specifies the new execution policy.
-Valid values are:
+Specifies the execution policy. If there are no Group Policies and each scope's execution policy is
+set to **Undefined**, then **Restricted** becomes the effective policy for all users.
 
-- Restricted: Does not load configuration files or run scripts. "Restricted" is the default execution policy.
-- AllSigned: Requires that all scripts and configuration files be signed by a trusted publisher, including scripts that you write on the local computer.
-- RemoteSigned: Requires that all scripts and configuration files downloaded from the Internet be signed by a trusted publisher.
-- Unrestricted: Loads all configuration files and runs all scripts. If you run an unsigned script that was downloaded from the Internet, you are prompted for permission before it runs.
-- Bypass: Nothing is blocked and there are no warnings or prompts.
-- Undefined: Removes the currently assigned execution policy from the current scope. This parameter will not remove an execution policy that is set in a Group Policy scope.
+The acceptable execution policy values are as follows:
+
+- **AllSigned**. Requires that all scripts and configuration files are signed by a trusted
+  publisher, including scripts written on the local computer.
+- **Bypass**. Nothing is blocked and there are no warnings or prompts.
+- **Default**. Sets the default execution policy. **Restricted** for Windows clients or
+  **RemoteSigned** for Windows servers.
+- **RemoteSigned**. Requires that all scripts and configuration files downloaded from the Internet
+  are signed by a trusted publisher. The default execution policy for Windows server computers.
+- **Restricted**. Doesn't load configuration files or run scripts. The default execution policy
+  Windows client computers.
+- **Undefined**. No execution policy is set for the scope. Removes an assigned execution policy from
+  a scope that is not set by a Group Policy. If the execution policy in all scopes is **Undefined**,
+  the effective execution policy is **Restricted**.
+- **Unrestricted**. Loads all configuration files and runs all scripts. If you run an unsigned
+  script that was downloaded from the Internet, you are prompted for permission before it runs.
 
 ```yaml
 Type: ExecutionPolicy
 Parameter Sets: (All)
 Aliases:
+Accepted values: AllSigned, Bypass, Default, RemoteSigned, Restricted, Undefined, Unrestricted
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -171,8 +283,8 @@ Accept wildcard characters: False
 
 ### -Force
 
-Suppresses all prompts.
-By default, **Set-ExecutionPolicy** displays a warning whenever you change the execution policy.
+Suppresses all the confirmation prompts. Use caution with this parameter to avoid unexpected
+results.
 
 ```yaml
 Type: SwitchParameter
@@ -188,27 +300,34 @@ Accept wildcard characters: False
 
 ### -Scope
 
-Specifies the scope of the execution policy.
-The default is LocalMachine.
+Specifies the scope that is affected by an execution policy. The default scope is **LocalMachine**.
 
-Valid values are:
+The effective execution policy is determined by the order of precedence as follows:
 
-- Process: The execution policy affects only the current Windows PowerShell process.
-- CurrentUser: The execution policy affects only the current user.
-- LocalMachine: The execution policy affects all users of the computer.
+- **MachinePolicy**. Set by a Group Policy for all users of the computer.
+- **UserPolicy**. Set by a Group Policy for the current user of the computer.
+- **Process**. Affects only the current PowerShell session.
+- **CurrentUser**. Affects only the current user.
+- **LocalMachine**. Default scope that affects all users of the computer.
 
-To remove an execution policy from a particular scope, set the execution policy for that scope to Undefined.
+The **Process** scope only affects the current PowerShell session. The execution policy is saved in
+the environment variable `$env:PSExecutionPolicyPreference`, rather than the registry. When the
+PowerShell session is closed, the variable and value are deleted.
 
-When the value of the **Scope** parameter is **Process**, the execution policy is saved in the **PSExecutionPolicyPreference** environment variable ($env:PSExecutionPolicyPreference), instead of the registry, and the variable is deleted when the process is closed.
-You cannot change the execution policy of the process by editing the variable.
+Execution policies for the **CurrentUser** scope are written to the registry hive
+**HKEY_LOCAL_USER**.
+
+Execution policies for the **LocalMachine** scope are written to the registry hive
+**HKEY_LOCAL_MACHINE**.
 
 ```yaml
 Type: ExecutionPolicyScope
 Parameter Sets: (All)
 Aliases:
+Accepted values: CurrentUser, LocalMachine, MachinePolicy, Process, UserPolicy
 
 Required: False
-Position: 2
+Position: 1
 Default value: LocalMachine
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -232,8 +351,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -249,37 +367,52 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ExecutionPolicy, System.String
 
-You can pipe an execution policy object or a string that contains the name of an execution policy to **Set-ExecutionPolicy**.
+You can pipe an execution policy object or a string that contains the name of an execution policy to
+`Set-ExecutionPolicy`.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any output.
+`Set-ExecutionPolicy` doesn't return any output.
 
 ## NOTES
 
-- When you use **Set-ExecutionPolicy** in any scope other than **Process**, the new user preference is saved in the registry and remains unchanged until you change it.  When the value of the **Scope** parameter is **Process**, the user preference is stored in the **PSExecutionPolicyPreference** environment variable ($env:PSExecutionPolicyPreference), instead of the registry, and it is deleted when the session in which it is effective is closed.
+`Set-ExecutionPolicy` doesn't change the **MachinePolicy** and **UserPolicy** scopes because they
+are set by Group Policies.
 
-  If the "**Turn on Script Execution**" Group Policy is enabled for the computer or user, the user preference is saved, but it is not effective, and Windows PowerShell displays a message explaining the conflict.
-You cannot use **Set-ExecutionPolicy** to override a Group Policy, even if the user preference is more restrictive than the policy.
+`Set-ExecutionPolicy` doesn't override a Group Policy, even if the user preference is more
+restrictive than the policy.
 
+If the Group Policy **Turn on Script Execution** is enabled for the computer or user, the user
+preference is saved, but it is not effective. PowerShell displays a message that explains the
+conflict.
 
 
 ## RELATED LINKS
 
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
+
+[about_Group_Policy_Settings](../Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
+
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
+
+[Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)
 
 [Get-ExecutionPolicy](Get-ExecutionPolicy.md)
 
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
+
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
-[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
-
-[about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
+[Unblock-File](../Microsoft.PowerShell.Utility/Unblock-File.md)

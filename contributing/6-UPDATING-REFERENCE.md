@@ -55,12 +55,12 @@ For example:
 
 ### Example 1: Get cmdlets, functions, and aliases
 
+This command gets the PowerShell cmdlets, functions, and aliases that are installed on the
+computer.
+
 ```powershell
 Get-Command
 ```
-
-This command gets the PowerShell cmdlets, functions, and aliases that are installed on the
-computer.
 
 ### Example 2: Get commands in the current session
 

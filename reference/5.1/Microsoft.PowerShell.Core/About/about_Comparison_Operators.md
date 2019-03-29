@@ -537,7 +537,7 @@ Where
 The `-replace` operator replaces all or part of a value with the specified
 value using regular expressions. You can use the `-replace` operator for many
 administrative tasks, such as renaming files. For example, the following
-command changes the file name extensions of all .gif files to .jpg:
+command changes the file name extensions of all .txt files to .log:
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }

@@ -183,6 +183,8 @@
       href: samples/changing-computer-state.md
     - name: Collecting information about computers
       href: samples/collecting-information-about-computers.md
+    - name: Creating Get-WinEvent queries with FilterHashtable
+      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
     - name: Creating UI elements
       href: ''
       items:
