@@ -18,9 +18,7 @@ This section has links to the Operation Validation Framework cmdlets.
 ## Microsoft.PowerShell.Operation.Validation Cmdlets
 
 ### [Get-OperationValidation](Get-OperationValidation.md)
-
 Gets Operation Validation Framework tests.
 
 ### [Invoke-OperationValidation](Invoke-OperationValidation.md)
-
 Invokes Operation Validation Framework tests.
