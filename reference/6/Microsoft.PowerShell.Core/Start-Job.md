@@ -45,12 +45,6 @@ Start-Job [-Name <String>] [-Credential <PSCredential>] -LiteralPath <String>
  [-PSVersion <Version>] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-### SSHHost
-
-```
-Start-Job [-HostName] <String[]> [<CommonParameters>]
-```
-
 ## DESCRIPTION
 
 The **Start-Job** cmdlet starts a PowerShell background job on the local computer.
@@ -63,11 +57,24 @@ The job object contains useful information about the job, but it does not contai
 When the job finishes, use the Receive-Job cmdlet to get the results of the job.
 For more information about background jobs, see about_Jobs.
 
-To run a background job on a remote computer, use the *AsJob* parameter that is available on many cmdlets, or use the Invoke-Command cmdlet to run a **Start-Job** command on the remote computer.
+To run a background job on a remote computer, use the *AsJob* parameter that is available on many cmdlets,
+or use the Invoke-Command cmdlet to run a **Start-Job** command on the remote computer.
 For more information, see about_Remote_Jobs.
 
 Starting in Windows PowerShell 3.0, **Start-Job** can start instances of custom job types, such as scheduled jobs.
 For information about how to use **Start-Job** to start jobs with custom types, see the help topics for the job type feature.
+
+> [!NOTE]
+> Creating an out-of-process background job with **Start-Job** is not supported
+> in the scenario where PowerShell is being hosted in other applications,
+> such as the PowerShell Azure Functions.
+>
+> This is by design because **Start-Job** depends on the `pwsh` executable to be available under `$PSHOME`
+> to start an out-of-process background job,
+> but when an application is hosting PowerShell,
+> it's directly using the PowerShell NuGet SDK packages and won't have `pwsh` shipped along.
+>
+> The substitute in that scenario is **Start-ThreadJob** from the module **ThreadJob**.
 
 ## EXAMPLES
 
@@ -316,22 +323,6 @@ When you use this parameter, PowerShell converts the contents of the specified s
 ```yaml
 Type: String
 Parameter Sets: FilePathComputerName
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -HostName
-
-The DNS name of the target SSH host of the job.
-
-```yaml
-Type: String[]
-Parameter Sets: SSHHost
 Aliases:
 
 Required: True

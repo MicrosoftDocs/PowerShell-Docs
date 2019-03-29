@@ -23,7 +23,7 @@ To the developer, the Windows PowerShell provider is the interface between the u
 
 Windows PowerShell provides several providers (such as the FileSystem provider, Registry provider, and Alias provider) that are used to access known data stores. For more information about the providers supplied by Windows PowerShell, use the following command to access online Help:
 
-**PS>get-help about_provider**
+**PS>get-help about_providers**
 
 ## Accessing the Stored Data Using Windows PowerShell Paths
 

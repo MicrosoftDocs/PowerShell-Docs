@@ -144,6 +144,11 @@ Use the following tags to demonstrate to users which packages will work well wit
 - Linux : Packages that are compatible with Linux Operating Systems
 - MacOS : Packages that are compatible with the Mac Operating System
 
+By tagging your package with the compatible platform(s) it will be included in the Gallery search
+filters on the left pane of the search results. If you host your package on GitHub, when you tag your package, you can also
+take advantage of our [PowerShell Gallery compability shields](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![compatibility shield](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
+
 ## Include tests
 
 Including tests with open-source code is important to users, as it gives them assurance about what you validate, and provides information on how your code works. It also allows users to ensure they do not break your original functionality if they modify your code to fit their environment.

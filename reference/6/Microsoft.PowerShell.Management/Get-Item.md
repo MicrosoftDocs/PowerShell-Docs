@@ -1,5 +1,5 @@
 ---
-ms.date:  10/18/2018
+ms.date:  03/22/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -10,6 +10,7 @@ title:  Get-Item
 # Get-Item
 
 ## SYNOPSIS
+
 Gets the item at the specified location.
 
 ## SYNTAX
@@ -125,6 +126,14 @@ This command works only when the path includes a wildcard character ('*') to spe
 Get-Item c:\Windows\*.* -Exclude "w*"
 ```
 
+### Example 8: Getting hardlink information
+
+In 6.2, an alternate view was added to get hardlink information.
+To get the hardlink information, pipe the output to `Format-Table -View childrenWithHardlink`
+
+```powershell
+Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
+```
 
 ## PARAMETERS
 

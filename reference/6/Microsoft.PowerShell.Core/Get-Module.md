@@ -3,11 +3,12 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 03/28/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821486
 schema: 2.0.0
 title: Get-Module
 ---
+
 # Get-Module
 
 ## SYNOPSIS
@@ -16,30 +17,27 @@ Gets the modules that have been imported or that can be imported into the curren
 ## SYNTAX
 
 ### Loaded (Default)
-
 ```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [<CommonParameters>]
 ```
 
 ### Available
-
 ```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [-ListAvailable]
- [-PSEdition <String>] [-Refresh] [<CommonParameters>]
+ [-PSEdition <String>] [-SkipEditionCheck] [-Refresh] [<CommonParameters>]
 ```
 
 ### PsSession
-
 ```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-ListAvailable]
- [-PSEdition <String>] [-Refresh] -PSSession <PSSession> [<CommonParameters>]
+ [-PSEdition <String>] [-SkipEditionCheck] [-Refresh] -PSSession <PSSession> [<CommonParameters>]
 ```
 
 ### CimSession
-
 ```
-Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-ListAvailable] [-Refresh]
- -CimSession <CimSession> [-CimResourceUri <Uri>] [-CimNamespace <String>] [<CommonParameters>]
+Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-ListAvailable]
+ [-SkipEditionCheck] [-Refresh] -CimSession <CimSession> [-CimResourceUri <Uri>] [-CimNamespace <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -114,7 +112,7 @@ PS> $FullyQualifedName = @{ModuleName="Microsoft.PowerShell.Management";ModuleVe
 PS> Get-Module -FullyQualifiedName | Format-Table -Property Name,Version
 ```
 
-```output
+```Output
 Name                             Version
 ----                             -------
 Microsoft.PowerShell.Management  3.1.0.0
@@ -129,7 +127,7 @@ The command then pipes the results into the `Format-Table` cmdlet to format the 
 PS> Get-Module | Get-Member -MemberType Property | Format-Table Name
 ```
 
-```output
+```Output
 Name
 ----
 AccessMode
@@ -186,7 +184,7 @@ The output includes the new properties, such as **Author** and **CompanyName**, 
 PS> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
 ```
 
-```output
+```Output
 Name: AppLocker
 
 Name      ModuleType Path
@@ -236,7 +234,7 @@ PS> $m = Get-Module -list -Name BitsTransfer
 PS> Get-Content $m.Path
 ```
 
-```output
+```Output
 @ {
     GUID               = "{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
     Author             = "Microsoft Corporation"
@@ -262,7 +260,7 @@ The second command uses the `Get-Content` cmdlet to get the content of the manif
 PS> dir (Get-Module -ListAvailable FileTransfer).ModuleBase
 ```
 
-```output
+```Output
 Directory: C:\Windows\system32\WindowsPowerShell\v1.0\Modules\FileTransfer
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -495,33 +493,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PSEdition
-
-Gets the modules that support specified edition of PowerShell.
-
-The acceptable values for this parameter are:
-
-- Desktop
-- Core
-
-The Get-Module cmdlet checks **CompatiblePSEditions** property of **PSModuleInfo** object for the specified value and returns only those modules that have it set.
-
-> [!NOTE]
-> - **Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.
-> - **Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.
-
-```yaml
-Type: String
-Parameter Sets: Available, PsSession
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PSSession
 
 Gets the modules in the specified user-managed PowerShell session (**PSSession**).
@@ -569,9 +540,62 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### CommonParameters
+### -PSEdition
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Gets the modules that support specified edition of PowerShell.
+
+The acceptable values for this parameter are:
+
+- Desktop
+- Core
+
+The Get-Module cmdlet checks **CompatiblePSEditions** property of **PSModuleInfo** object for the specified value and returns only those modules that have it set.
+
+> [!NOTE]
+> - **Desktop Edition:** Built on .NET Framework, applies to Windows PowerShell 5.1 and below on most Windows editions.
+> - **Core Edition:** Built on .NET Core, applies to PowerShell Core 6.0 and above, as well as some editions of Windows PowerShell 5.1 built for Windows IoT and Windows Nanoserver.
+>
+> The edition of the current PowerShell session can be found with the `$PSEdition` variable.
+
+```yaml
+Type: String
+Parameter Sets: Available, PsSession
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkipEditionCheck
+
+Skips the check of the `CompatiblePSEditions` field.
+
+By default, Get-Module will omit modules in the `%windir%\System32\WindowsPowerShell\v1.0\Modules`
+directory that do not specify `Core` in the `CompatiblePSEditions` field.
+When this switch is set, modules without `Core` will be included, so that modules under the
+Windows PowerShell module path that are incompatible with PowerShell Core will be returned.
+
+On macOS and Linux, this parameter does nothing.
+
+See [about_PowerShell_Editions](About/about_PowerShell_Editions.md) for more information.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Available, PsSession, CimSession
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -620,3 +644,5 @@ When you create a CIM session on the local computer, PowerShell uses DCOM, inste
 [New-PSSession](New-PSSession.md)
 
 [Remove-Module](Remove-Module.md)
+
+[about_PowerShell_Editions](About/about_PowerShell_Editions.md)

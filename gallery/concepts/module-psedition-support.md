@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2017
+ms.date:  03/28/2019
 contributor:  manikb
 keywords:  gallery,powershell,cmdlet,psget
 title:  Modules with compatible PowerShell Editions
@@ -9,31 +9,14 @@ title:  Modules with compatible PowerShell Editions
 Starting with version 5.1, PowerShell is available in different editions which denote varying
 feature sets and platform compatibility.
 
-- **Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules
-  targeting versions of PowerShell running on full footprint editions of Windows such as Server
-  Core and Windows Desktop.
-- **Core Edition:** Built on .NET Core and provides compatibility with scripts and modules
-  targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano
-  Server and Windows IoT.
+- **Desktop Edition:** Built on .NET Framework, applies to Windows PowerShell v4.0 and below as well
+  as Windows PowerShell 5.1 on Windows Desktop, Windows Server, Windows Server Core and most other
+  Windows editions.
+- **Core Edition:** Built on .NET Core, applies to PowerShell Core 6.0 and above as well as
+  Windows PowerShell 5.1 on reduced footprint Windows Editions such as Windows IoT and Windows
+  Nanoserver.
 
-The running edition of PowerShell is shown in the PSEdition property of `$PSVersionTable`.
-
-```powershell
-$PSVersionTable
-```
-
-```output
-Name                           Value
-----                           -----
-PSVersion                      5.1.14300.1000
-PSEdition                      Desktop
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-CLRVersion                     4.0.30319.42000
-BuildVersion                   10.0.14300.1000
-WSManStackVersion              3.0
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-```
+For more information on PowerShell editions, see [about_PowerShell_Editions][].
 
 ## Declaring compatible editions
 
@@ -43,7 +26,7 @@ later.
 
 > [!NOTE]
 > Once a module manifest is specified with the CompatiblePSEditions key, it can not be imported on
-> lower versions of PowerShell.
+> PowerShell versions 4 and below.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -51,7 +34,7 @@ $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -60,7 +43,7 @@ Core
 $ModuleInfo | Get-Member CompatiblePSEditions
 ```
 
-```output
+```Output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
@@ -74,7 +57,7 @@ When getting a list of available modules, you can filter the list by PowerShell 
 Get-Module -ListAvailable -PSEdition Desktop
 ```
 
-```output
+```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
@@ -87,7 +70,7 @@ Manifest   1.0        ModuleWithPSEditions
 Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -227,7 +210,7 @@ Sample module manifest file with CompatiblePSEditions key
 dir -Recurse
 ```
 
-```output
+```Output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode           LastWriteTime   Length Name
@@ -274,3 +257,7 @@ Find-Module -Tag PSEdition_Core
 [PSEditions support on PowerShellGallery](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Update module manifest](/powershell/module/powershellget/update-modulemanifest)
+
+[about_PowerShell_Editions][]
+
+[about_PowerShell_Editions]: /powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_Editions
