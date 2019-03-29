@@ -9,7 +9,7 @@ ms.date: 08/06/2018
 ## MSI
 
 To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2, and later), download the MSI package from
-our GitHub [releases][] page.  You will need to scroll down to the Assets section of the Release you want to install.  The Assets section is sometimes collapsed, so you may need to click to expand it.
+our GitHub [releases][] page.  Scroll down to the **Assets** section of the Release you want to install.  The Assets section may be collapsed, so you may need to click to expand it.
 
 The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
