@@ -106,10 +106,10 @@ Get-ChildItem
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a----         6/1/2018  12:19 PM           1362 myFile.txt
--a----         6/1/2018  12:30 PM           1132 myFile[1].txt
--a----         6/1/2018  12:19 PM           1283 myFile[2].txt
--a----         6/1/2018  12:19 PM           1432 myFile[3].txt
+-a---          6/1/2018  12:19 PM           1362 myFile.txt
+-a---          6/1/2018  12:30 PM           1132 myFile[1].txt
+-a---          6/1/2018  12:19 PM           1283 myFile[2].txt
+-a---          6/1/2018  12:19 PM           1432 myFile[3].txt
 
 ```
 
@@ -122,9 +122,9 @@ Get-ChildItem | Where-Object Name -Like '*`[*'
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a----         6/1/2018  12:30 PM           1132 myFile[1].txt
--a----         6/1/2018  12:19 PM           1283 myFile[2].txt
--a----         6/1/2018  12:19 PM           1432 myFile[3].txt
+-a---          6/1/2018  12:30 PM           1132 myFile[1].txt
+-a---          6/1/2018  12:19 PM           1283 myFile[2].txt
+-a---          6/1/2018  12:19 PM           1432 myFile[3].txt
 
 ```
 
@@ -138,7 +138,7 @@ Get-ChildItem
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a----         6/1/2018  12:19 PM           1362 myFile.txt
+-a---          6/1/2018  12:19 PM           1362 myFile.txt
 ```
 
 ### Example 7: Remove an alternate data stream

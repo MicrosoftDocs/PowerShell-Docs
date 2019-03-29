@@ -1,7 +1,6 @@
 ---
-ms.date:  06/09/2017
+ms.date:  03/22/2019
 schema:  2.0.0
-locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_PowerShell_exe
 ---
@@ -21,6 +20,7 @@ pwsh starts a PowerShell session.
 pwsh[.exe]
 [-Version]
 [-ConfigurationName]
+[-CustomPipeName <string>]
 [-EncodedCommand <Base64EncodedCommand>]
 [-ExecutionPolicy <ExecutionPolicy>]
 [-InputFormat {Text | XML}]
@@ -49,6 +49,17 @@ Displays the version of PowerShell. Additional parameters are ignored.
 Specifies a configuration endpoint in which PowerShell is run.
 This can be any endpoint registered on the local machine including the default PowerShell
 remoting endpoints or a custom endpoint having specific user role capabilities.
+
+#### -CustomPipeName <PipeName>
+
+Specifies the name to use for an additional IPC server
+(named pipe)
+used for debugging and other cross-process communication.
+This offers a predictable mechanism for connecting to other PowerShell instances.
+Typically used with the
+`CustomPipeName`
+parameter on
+`Enter-PSHostProcess`.
 
 #### -EncodedCommand <Base64EncodedCommand>
 
@@ -184,4 +195,10 @@ pwsh -SettingsFile ~/powershell.config.json
 
 # Example of specifying a configuration name
 pwsh -ConfigurationName AdminRoles
+
+# Example of specifying a custom pipe name
+# PowerShell instance 1
+pwsh -CustomPipeName mycustompipe
+# PowerShell instance 2
+Enter-PSHostProcess -CustomPipeName mycustompipe
 ```

@@ -138,7 +138,7 @@ Get-Content -Path .\IsReadOnlyTextFile.txt
 ```Output
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--ar---        1/28/2019     13:35              0 IsReadOnlyTextFile.txt
+-ar--         1/28/2019     13:35              0 IsReadOnlyTextFile.txt
 ```
 
 The `New-Item` cmdlet uses the **Path** and **ItemType** parameters to create the file

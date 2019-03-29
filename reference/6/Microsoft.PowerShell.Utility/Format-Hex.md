@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/4/2019
+ms.date: 03/01/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821773
 schema: 2.0.0
 title: Format-Hex
@@ -11,27 +11,26 @@ title: Format-Hex
 # Format-Hex
 
 ## SYNOPSIS
-Displays a file or input such as a string, as hexadecimal.
+Displays a file or other input as hexadecimal.
 
 ## SYNTAX
 
 ### Path (Default)
 
 ```
-Format-Hex [-Path] <string[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Format-Hex [-Path] <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Format-Hex -LiteralPath <string[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Format-Hex -LiteralPath <string[]> [-Count <long>] [-Offset <long>] [<CommonParameters>]
 ```
 
 ### ByInputObject
 
 ```
-Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Raw] [-WhatIf] [-Confirm]
-[<CommonParameters>]
+Format-Hex -InputObject <psobject> [-Encoding <Encoding>] [-Count <long>] [-Offset <long>] [-Raw] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -200,34 +199,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
+### -Offset
 
-Prompts you for confirmation before running the cmdlet.
+This represents the number of bytes to skip from being part of the hex output.
 
 ```yaml
-Type: SwitchParameter
+Type: Int64
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WhatIf
+### -Count
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+This represents the number of bytes to include in the hex output.
 
 ```yaml
-Type: SwitchParameter
+Type: Int64
 Parameter Sets: (All)
-Aliases: wi
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: Int64.MaxValue
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
