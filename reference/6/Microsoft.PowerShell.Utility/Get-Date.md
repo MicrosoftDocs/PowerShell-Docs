@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/01/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821781
 schema: 2.0.0
 title: Get-Date
@@ -62,8 +62,9 @@ Get-Date -Format g
 6/13/2006 12:43 PM
 ```
 
-This command gets the current date and time and formats it in short-date and short-time format.
-It uses the .NET Framework "`g`" format specifier (General \[short date and short time\]) to specify the format.
+This command gets the current date and time and formats it in short-date and short-time format. It
+uses the .NET Framework "`g`" format specifier (General \[short date and short time\]) to specify
+the format.
 
 ### Example 3
 
@@ -75,8 +76,9 @@ Get-Date -UFormat "%Y / %m / %d / %A / %Z"
 2006 / 06 / 13 / Tuesday / -07
 ```
 
-This command gets the current date and time and formats it as specified by the command.
-In this case, the format includes the full year (`%Y`), the two-digit numeric month (`%m`), the date (`%d`), the full day of the week (`%A`), and the offset from UTC ("Zulu").
+This command gets the current date and time and formats it as specified by the command. In this
+case, the format includes the full year (`%Y`), the two-digit numeric month (`%m`), the date (`%d`),
+the full day of the week (`%A`), and the offset from UTC ("Zulu").
 
 ### Example 4
 
@@ -88,8 +90,8 @@ In this case, the format includes the full year (`%Y`), the two-digit numeric mo
 366
 ```
 
-This command displays the day of the year for the current date.
-For example, December 31 is the 365th day of 2006, but it is the 366th day of 2000.
+This command displays the day of the year for the current date. For example, December 31 is the
+365th day of 2006, but it is the 366th day of 2000.
 
 ### Example 5
 
@@ -102,10 +104,11 @@ $a.IsDaylightSavingTime()
 True
 ```
 
-These commands tell you whether the current date and time are adjusted for daylight savings time in the current locale.
+These commands tell you whether the current date and time are adjusted for daylight savings time in
+the current locale.
 
-The first command creates a variable named $a and then assigns the object retrieved by `Get-Date` to the $a variable.
-Then, it uses the **IsDaylightSavingTime** method on the object in `$a`.
+The first command creates a variable named `$a` and then assigns the object retrieved by `Get-Date`
+to the `$a` variable. Then, it uses the **IsDaylightSavingTime** method on the object in `$a`.
 
 To see the properties and methods of the **DateTime** object, type: `Get-Date | Get-Member`
 
@@ -122,8 +125,8 @@ Tuesday, June 13, 2006 8:09:19 PM
 
 These commands convert the current date and time to UTC time.
 
-The first command creates a variable named $a and then assigns the object retrieved by `Get-Date` to the $a variable.
-Then, it uses the **ToUniversalTime** method on the object in $a.
+The first command creates a variable named `$a` and then assigns the object retrieved by `Get-Date`
+to the `$a` variable. Then, it uses the **ToUniversalTime** method on the object in `$a`.
 
 ### Example 7
 
@@ -137,19 +140,24 @@ Name     : Default System BIOS
 BIOS Age : 1345.17:31:07.1091047
 ```
 
-Windows Management Instrumentation (WMI) uses a different date-time object than the .NET Framework date-time object that `Get-Date` returns.
-To use date-time information from WMI in a command with date-time information from `Get-Date`, you have to use the **ConvertToDateTime** method to convert WMI **CIM_DATETIME** objects to .NET Framework **DateTime** objects.
+Windows Management Instrumentation (WMI) uses a different date-time object than the .NET Framework
+date-time object that `Get-Date` returns. To use date-time information from WMI in a command with
+date-time information from `Get-Date`, you have to use the **ConvertToDateTime** method to convert
+WMI **CIM_DATETIME** objects to .NET Framework **DateTime** objects.
 
 The commands in this example display the name and age of the BIOS on a remote computer, Server01.
 
-The first command uses the `Get-WmiObject` cmdlet to get an instance of the **Win32_BIOS** class on Server01 and then stores it in the `$a` variable.
+The first command uses the `Get-WmiObject` cmdlet to get an instance of the **Win32_BIOS** class on
+Server01 and then stores it in the `$a` variable.
 
-The second command uses the pipeline operator (`|`) to send the WMI object stored in $a to the Format-List cmdlet.
-The `-Property` parameter of `Format-List` specifies two properties to display in the list, "Name" and "BIOS Age".
-The "BIOS Age" property is specified in a hash table.
-The table includes the **Label** key, which specifies the name of the property, and the **Expression** key, which contains the expression that calculates the BIOS age.
-The expression uses the **ConvertToDateTime** method to convert each instance of ReleaseDate to a .NET Framework DateTime object.
-Then, the value is subtracted from the value of the `Get-Date` cmdlet, which, without parameters, gets the current date.
+The second command uses the pipeline operator (`|`) to send the WMI object stored in `$a` to the
+Format-List cmdlet. The `-Property` parameter of `Format-List` specifies two properties to display
+in the list, "Name" and "BIOS Age". The "BIOS Age" property is specified in a hash table. The table
+includes the **Label** key, which specifies the name of the property, and the **Expression** key,
+which contains the expression that calculates the BIOS age. The expression uses the
+**ConvertToDateTime** method to convert each instance of ReleaseDate to a .NET Framework DateTime
+object. Then, the value is subtracted from the value of the `Get-Date` cmdlet, which, without
+parameters, gets the current date.
 
 The backtick character (`` ` ``) is the line continuation character in PowerShell.
 
@@ -163,7 +171,8 @@ Get-Date
 Tuesday, June 13, 2006 12:43:42 PM
 ```
 
-This command gets a **DateTime** object and displays the current date and time in the long date and long time formats for the system locale, as though you typed "`Get-Date -Format F`".
+This command gets a **DateTime** object and displays the current date and time in the long date and
+long time formats for the system locale, as though you typed "`Get-Date -Format F`".
 
 ### Example 9
 
@@ -195,18 +204,23 @@ Get-Date -Format F | Add-Content Test.txt
 # Adds Tuesday, September 26, 2006 11:25:31 AM
 ```
 
-These commands demonstrate how to use `Get-Date` with `Add-Content` and other cmdlets that convert the **DateTime** object that `Get-Date` generates to a string.
+These commands demonstrate how to use `Get-Date` with `Add-Content` and other cmdlets that convert
+the **DateTime** object that `Get-Date` generates to a string.
 
-The first command shows that the default display from a "`Get-Date`" command is in long-date and long-time format.
+The first command shows that the default display from a "`Get-Date`" command is in long-date and
+long-time format.
 
-The second command shows that the default display from the `ToString()` method of the **DateTime** object is in short-date and short-time format.
+The second command shows that the default display from the `ToString()` method of the **DateTime**
+object is in short-date and short-time format.
 
-The third command uses a pipeline operator to send the **DateTime** object to the `Add-Content` cmdlet, which adds the content to the Test.txt file.
-Because `Add-Content` uses the ToString() method of the **DateTime** object, the date that is added is in short-date and short-time format.
+The third command uses a pipeline operator to send the **DateTime** object to the `Add-Content`
+cmdlet, which adds the content to the Test.txt file. Because `Add-Content` uses the ToString()
+method of the **DateTime** object, the date that is added is in short-date and short-time format.
 
-The fourth command uses the `-Format` parameter of `Get-Date` to specify the format.
-When you use the `-Format` or `-UFormat` parameters, `Get-Date` generates a string, not a **DateTime** object.
-Then, when you send the string to `Add-Content`, it adds the string to the Test.txt file without changing it.
+The fourth command uses the `-Format` parameter of `Get-Date` to specify the format. When you use
+the `-Format` or `-UFormat` parameters, `Get-Date` generates a string, not a **DateTime** object.
+Then, when you send the string to `Add-Content`, it adds the string to the Test.txt file without
+changing it.
 
 ### Example 10
 
@@ -236,10 +250,14 @@ d----          3/8/2012  11:01 AM            2012-03-08T11.00.24.4192623-08.00
 
 The first command uses the `-Format` parameter with a value of "`o`" to generate a timestamp string.
 
-The second command prepares the timestamp to be used in a directory name. The command replaces the colon characters (`:`) in the string with dots (`.`) and saves the result in the `$timestamp` variable. Replacing the colons prevents the characters that precede each colon from being interpreted as a drive name.
+The second command prepares the timestamp to be used in a directory name. The command replaces the
+colon characters (`:`) in the string with dots (`.`) and saves the result in the `$timestamp`
+variable. Replacing the colons prevents the characters that precede each colon from being
+interpreted as a drive name.
 
-The third command uses the Mkdir function to create a directory with the name in the `$timestamp` variable.
-This example shows how to use the `Get-Date` cmdlet to create a timestamp and how to use the timestamp in or as part of a directory name.
+The third command uses the Mkdir function to create a directory with the name in the `$timestamp`
+variable. This example shows how to use the `Get-Date` cmdlet to create a timestamp and how to use
+the timestamp in or as part of a directory name.
 
 ## PARAMETERS
 
@@ -248,7 +266,10 @@ This example shows how to use the `Get-Date` cmdlet to create a timestamp and ho
 Specifies a date and time.
 By default, `Get-Date` gets the current system date and time.
 
-Type the date in a format that is standard for the system locale, such as dd-MM-yyyy (German \[Germany\]) or MM/dd/yyyy (English \[United States\]).
+Specifies a date and time. By default, `Get-Date` gets the current system date and time.
+
+Type the date in a format that is standard for the system locale, such as dd-MM-yyyy (German \[Germany\])
+or MM/dd/yyyy (English \[United States\]).
 
 ```yaml
 Type: DateTime
@@ -268,8 +289,12 @@ Specifies the day of the month that is displayed.
 Enter a value from 1 to 31.
 The default is the current day.
 
-If you specify a value that is greater than the number of days in the month, PowerShell adds the number of days to the month and displays the result.
-For example, "`Get-Date -Month 2 -Day 31`" displays "March 3", not "February 31".
+Specifies the day of the month that is displayed. Enter a value from 1 to 31. The default is the
+current day.
+
+If you specify a value that is greater than the number of days in the month, PowerShell adds the
+number of days to the month and displays the result. For example, "`Get-Date -Month 2 -Day 31`"
+displays "March 3", not "February 31".
 
 ```yaml
 Type: Int32
@@ -293,8 +318,8 @@ Valid values are:
 - **Time**: displays only the time
 - **DateTime**: displays the date and time
 
-**DateTime** is the default.
-This parameter does not affect the **DateTime** object that `Get-Date` gets.
+**DateTime** is the default. This parameter does not affect the **DateTime** object that `Get-Date`
+gets.
 
 ```yaml
 Type: DisplayHintType
@@ -312,21 +337,35 @@ Accept wildcard characters: False
 ### -Format
 
 Displays the date and time in the Microsoft .NET Framework format indicated by the format specifier.
-Enter a format specifier.
-For a list of available format specifiers, see [DateTimeFormatInfo Class](/dotnet/api/system.globalization.datetimeformatinfo).
+Enter a format specifier. For a list of available format specifiers, see [DateTimeFormatInfo Class](/dotnet/api/system.globalization.datetimeformatinfo).
 
-When you use the `-Format` parameter, PowerShell gets only the properties of the **DateTime** object that it needs to display the date in the format that you specify.
-As a result, some of the properties and methods of **DateTime** objects might not be available.
+When you use the `-Format` parameter, PowerShell gets only the properties of the **DateTime** object
+that it needs to display the date in the format that you specify. As a result, some of the
+properties and methods of **DateTime** objects might not be available.
 
-Starting in Windows PowerShell 5.0, you can use the following additional formats as values for the `-Format` parameter.
+Starting in Windows PowerShell 5.0, you can use the following additional formats as values for the
+`-Format` parameter.
 
-- FileDate. A file or path-friendly representation of the current date in local time. It is in the form of yyyyMMdd (case-sensitive, using a 4-digit year, 2-digit month, and 2-digit day). An example of results when you use this format is 20150302.
+- FileDate. A file or path-friendly representation of the current date in local time. It is in the
+  form of yyyyMMdd (case-sensitive, using a 4-digit year, 2-digit month, and 2-digit day). An
+  example of results when you use this format is 20150302.
 
-- FileDateUniversal. A file or path-friendly representation of the current date in universal time (UTC). It is in the form of yyyyMMddZ (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, and the letter "Z" as the UTC indicator). An example of results when you use this format is 20150302Z.
+- FileDateUniversal. A file or path-friendly representation of the current date in universal time
+  (UTC). It is in the form of yyyyMMddZ (case-sensitive, using a 4-digit year, 2-digit month,
+  2-digit day, and the letter "Z" as the UTC indicator). An example of results when you use this
+  format is 20150302Z.
 
-- FileDateTime. A file or path-friendly representation of the current date and time in local time, in 24-hour format. It is in the form of yyyyMMddTHHmmssffff (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter "T" as a time separator, 2-digit hour, 2-digit minute, 2-digit second, and 4-digit millisecond). An example of results when you use this format is 20150302T1240514987.
+- FileDateTime. A file or path-friendly representation of the current date and time in local time,
+  in 24-hour format. It is in the form of yyyyMMddTHHmmssffff (case-sensitive, using a 4-digit year,
+  2-digit month, 2-digit day, the letter "T" as a time separator, 2-digit hour, 2-digit minute,
+  2-digit second, and 4-digit millisecond). An example of results when you use this format is
+  20150302T1240514987.
 
-- FileDateTimeUniversal. A file or path-friendly representation of the current date and time in universal time (UTC), in 24-hour format. It is in the form of yyyyMMddTHHmmssffffZ (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter "T" as a time separator, 2-digit hour, 2-digit minute, 2-digit second, 4-digit millisecond, and the letter "Z" as the UTC indicator). An example of results when you use this format is 20150302T0840539947Z.
+- FileDateTimeUniversal. A file or path-friendly representation of the current date and time in
+  universal time (UTC), in 24-hour format. It is in the form of yyyyMMddTHHmmssffffZ
+  (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter "T" as a time
+  separator, 2-digit hour, 2-digit minute, 2-digit second, 4-digit millisecond, and the letter "Z"
+  as the UTC indicator). An example of results when you use this format is 20150302T0840539947Z.
 
 ```yaml
 Type: String
@@ -437,8 +476,12 @@ Accept wildcard characters: False
 Displays the date and time in UNIX format.
 For a list of the format specifiers, see the Notes section.
 
-When you use the `-UFormat` parameter, PowerShell gets only the properties of the **DateTime** object that it needs to display the date in the format that you specify.
-As a result, some of the properties and methods of **DateTime** objects might not be available.
+Displays the date and time in UNIX format. For a list of the format specifiers, see the Notes
+section.
+
+When you use the `-UFormat` parameter, PowerShell gets only the properties of the **DateTime**
+object that it needs to display the date in the format that you specify. As a result, some of the
+properties and methods of **DateTime** objects might not be available.
 
 ```yaml
 Type: String
@@ -491,7 +534,10 @@ Otherwise, it returns a **DateTime** object.
 
 * By default, the date-time is displayed in long-date and long-time formats for the system locale.
 
-  When you pipe a date to cmdlets that expect string input, such as the Add-Content cmdlet, PowerShell converts the **DateTime** object to a string before adding it to the file. The default `ToString()` format is short date and long time. To specify an alternate format, use the `-Format` or `-UFormat` parameters of `Get-Date`.
+  When you pipe a date to cmdlets that expect string input, such as the Add-Content cmdlet,
+  PowerShell converts the **DateTime** object to a string before adding it to the file. The default
+  `ToString()` format is short date and long time. To specify an alternate format, use the `-Format`
+  or `-UFormat` parameters of `Get-Date`.
 
   * Uformat Values:
 
@@ -503,18 +549,20 @@ Otherwise, it returns a **DateTime** object.
 
     `Get-Date -UFormat %d`
 
+    * Date-Time:
 
-     * Date-Time:
+      Date and time - full
 
-       Date and time - full
+      (default) : (Friday, June 16, 2006 10:31:27 AM)
 
-       (default) : (Friday, June 16, 2006 10:31:27 AM)
-
-       `c` : Date and time - abbreviated (Fri Jun 16 10:31:27 2006)
+      `c` : Date and time - abbreviated (Fri Jun 16 10:31:27 2006)
 
       * Date:
 
         `D` : Date in mm/dd/yy format (06/14/06)
+
+        `F` : Date in YYYY-mm-dd format (2006-06-14) Equivalent to %Y-%m-%d (the ISO 8601 date
+        format).
 
         `x` : Date in standard format for locale (09/12/07 for English-US)
 

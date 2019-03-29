@@ -37,6 +37,10 @@ If an encryption key is specified by using the *Key* or *SecureKey* parameters, 
 The specified key must have a length of 128, 192, or 256 bits, because those are the key lengths supported by the AES encryption algorithm.
 If no key is specified, the Windows Data Protection API (DPAPI) is used to encrypt the standard string representation.
 
+> [!NOTE]
+> Note that per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks), the
+> contents of a SecureString are not encrypted on non-Windows systems.
+
 ## EXAMPLES
 
 ### Example 1: Create a secure string

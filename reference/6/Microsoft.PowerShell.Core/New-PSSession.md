@@ -92,6 +92,14 @@ The benefit of an SSH based PowerShell remote session is that it can work across
 For SSH based sessions you use the **HostName** or **SSHConnection** parameter set to specify the remote computer and relevant connection information.
 For more information about how to set up PowerShell SSH remoting, see [PowerShell Remoting Over SSH](/powershell/scripting/core-powershell/ssh-remoting-in-powershell-core).
 
+> [!NOTE]
+> When using WSMan remoting from a Linux or macOS client with a HTTPS endpoint where
+> the server certificate is not trusted (e.g., a self-signed certificate).  You must
+> provide a `PSSessionOption` that includes `-SkipCACheck` and `-SkipCNCheck` to
+> successfully establish the connection.  Only do this if you are in an environment
+> where you can be certain of the server certificate and the network connection to
+> the target system.
+
 ## EXAMPLES
 
 ### Example 1: Create a session on the local computer
