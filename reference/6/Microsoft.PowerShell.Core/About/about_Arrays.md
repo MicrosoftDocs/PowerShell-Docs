@@ -541,7 +541,7 @@ are returned from the filter.
 The following example shows how to select all odd numbers from the array.
 
 ```powershell
-(0..9).Where { $_ % 2 }
+(0..9).Where{ $_ % 2 }
 ```
 
 ```output
