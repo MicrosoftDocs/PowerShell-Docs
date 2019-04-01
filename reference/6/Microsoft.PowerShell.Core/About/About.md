@@ -80,7 +80,7 @@ The `enum` statement is used to declare an enumeration. An enumeration is a dist
 Describes the features of the Environment provider.
 
 ### [about_Environment_Variables](about_Environment_Variables.md)
-Describes how to access Windows environment variables in Windows PowerShell.
+Describes how to access Windows environment variables in PowerShell.
 
 ### [about_Execution_Policies](about_Execution_Policies.md)
 Describes the PowerShell execution policies and explains how to manage them.
@@ -173,7 +173,7 @@ Describes how to use methods to perform actions on objects in PowerShell.
 Explains how to install, import, and use PowerShell modules.
 
 ### [about_Object_Creation](about_Object_Creation.md)
-Explains how to create objects in  PowerShell.
+Explains how to create objects in PowerShell.
 
 ### [about_Objects](about_Objects.md)
 Provides essential information about objects in PowerShell.
@@ -248,7 +248,7 @@ Describes how to create and use a reference type variable. You can use reference
 Describes the features of the Registry provider.
 
 ### [about_Regular_Expressions](about_Regular_Expressions.md)
-Describes regular expressions in Windows PowerShell.
+Describes regular expressions in PowerShell.
 
 ### [about_Remote](about_Remote.md)
 Describes how to run remote commands in PowerShell.
@@ -257,7 +257,7 @@ Describes how to run remote commands in PowerShell.
 Explains how to disconnect from and reconnect to a PSSession
 
 ### [about_Remote_FAQ](about_Remote_FAQ.md)
-Contains questions and answers about running remote commands in Windows PowerShell.
+Contains questions and answers about running remote commands in PowerShell.
 
 ### [about_Remote_Jobs](about_Remote_Jobs.md)
 Describes how to run background jobs on remote computers.
@@ -311,7 +311,7 @@ Explains how to sign scripts so that they comply with the PowerShell execution p
 Describes easier, more natural-language ways of scripting filters for collections of objects.
 
 ### [about_Special_Characters](about_Special_Characters.md)
-Describes the special characters that you can use to control how Windows PowerShell interprets the next character in a command or parameter.
+Describes the special characters that you can use to control how PowerShell interprets the next character in a command or parameter.
 
 ### [about_Splatting](about_Splatting.md)
 Describes how to use splatting to pass parameters to commands in Windows PowerShell.

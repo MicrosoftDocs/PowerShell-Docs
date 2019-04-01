@@ -86,7 +86,7 @@ The `enum` statement is used to declare an enumeration. An enumeration is a dist
 Describes the features of the Environment provider.
 
 ### [about_Environment_Variables](about_Environment_Variables.md)
-Describes how to access Windows environment variables in Windows PowerShell.
+Describes how to access Windows environment variables in PowerShell.
 
 ### [about_Eventlogs](about_Eventlogs.md)
 Windows PowerShell creates a Windows event log that is named "Windows PowerShell" to record Windows PowerShell events.
@@ -176,7 +176,7 @@ Describes how to use methods to perform actions on objects in PowerShell.
 Explains how to install, import, and use PowerShell modules.
 
 ### [about_Object_Creation](about_Object_Creation.md)
-Explains how to create objects in  PowerShell.
+Explains how to create objects in PowerShell.
 
 ### [about_Objects](about_Objects.md)
 Provides essential information about objects in PowerShell.
@@ -236,7 +236,7 @@ Provides detailed information about PowerShell sessions and the role they play i
 Describes PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
 
 ### [about_PSSnapins](about_PSSnapins.md)
-Describes  Windows PowerShell┬« snap-ins and shows how to use and manage them.
+Describes PowerShell snap-ins and shows how to use and manage them.
 
 ### [about_Quoting_Rules](about_Quoting_Rules.md)
 Describes rules for using single and double quotation marks in PowerShell.
@@ -251,7 +251,7 @@ Describes how to create and use a reference type variable. You can use reference
 Describes the features of the Registry provider.
 
 ### [about_Regular_Expressions](about_Regular_Expressions.md)
-Describes regular expressions in Windows PowerShell.
+Describes regular expressions in PowerShell.
 
 ### [about_Remote](about_Remote.md)
 Describes how to run remote commands in PowerShell.
@@ -260,7 +260,7 @@ Describes how to run remote commands in PowerShell.
 Explains how to disconnect from and reconnect to a PSSession
 
 ### [about_Remote_FAQ](about_Remote_FAQ.md)
-Contains questions and answers about running remote commands in Windows PowerShell.
+Contains questions and answers about running remote commands in PowerShell.
 
 ### [about_Remote_Jobs](about_Remote_Jobs.md)
 Describes how to run background jobs on remote computers.
@@ -314,7 +314,7 @@ Explains how to sign scripts so that they comply with the PowerShell execution p
 Describes easier, more natural-language ways of scripting filters for collections of objects.
 
 ### [about_Special_Characters](about_Special_Characters.md)
-Describes the special characters that you can use to control how Windows PowerShell interprets the next character in a command or parameter.
+Describes the special characters that you can use to control how PowerShell interprets the next character in a command or parameter.
 
 ### [about_Splatting](about_Splatting.md)
 Describes how to use splatting to pass parameters to commands in Windows PowerShell.
@@ -368,7 +368,7 @@ Describes new features that are included in Windows PowerShell 5.1.
 Describes the features and system requirements of Windows PowerShell Integrated Scripting Environment (ISE).
 
 ### [about_Windows_RT](about_Windows_RT.md)
-Explains limitations of  Windows PowerShell┬« 4.0 on Windows RT 8.1.
+Explains limitations of PowerShell 4.0 on Windows RT 8.1.
 
 ### [about_WMI](about_WMI.md)
 Windows Management Instrumentation (WMI) uses the Common Information Model (CIM) to represent systems, applications, networks, devices, and other manageable components of the modern enterprise.
