@@ -129,14 +129,12 @@ This is Line 100
 ### Example 5: Get the content of an alternate data stream
 
 This example describes how to use the **Stream** parameter to get the content of an alternate data
-stream for files stored on a Windows NTFS volume.
+stream for files stored on a Windows NTFS volume. In this example, the `Set-Content` cmdlet is used
+to create sample content in a file named `Stream.txt`.
 
-> [!NOTE]
-> The `Set-Content` cmdlet is used to create sample content for the example in a file named
-> `Stream.txt`.
-
-The **Stream** parameter is a dynamic parameter of the [FileSystem](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring)
-provider. By default `Get-Content` only retrieves data from the primary, or `$DATA` stream.
+The **Stream** parameter is a dynamic parameter of the
+[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
+By default `Get-Content` only retrieves data from the primary, or `$DATA` stream.
 
 **Streams** can be used to store hidden data such as attributes, security settings, or other data.
 
