@@ -121,8 +121,9 @@
       - name: Set up a DSC HTTP Pull Server
         href: pull-server/pullServer.md
     - name: Register a Node with a Pull Server
-      href: pull-server/pullClient.md
       items:
+      - name: Setting up a DSC pull client
+        href: pull-server/pullClient.md
       - name: Setup a Pull Client using Configuration Names (v5)
         href: pull-server/pullClientConfigNames.md
       - name: Setup a Pull Client using Configuration IDs (v5)
@@ -238,8 +239,9 @@
     - name: PackageManagementSourceDsc Resource
       href: reference/resources/packagemanagement/PackageManagementSourceDscResource.md
   - name: MSFT_DSCLocalConfigurationManager class
-    href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
     items:
+    - name: Overview
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
     - name: ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class
       href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
     - name: DisableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class
