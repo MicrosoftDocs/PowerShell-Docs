@@ -16,7 +16,7 @@ Describes the PowerShell execution policies and explains how to manage them.
 
 PowerShell's execution policy is a safety feature that controls the conditions
 under which PowerShell loads configuration files and runs scripts. This feature
-help prevent the the loading and running of malicious scripts.
+helps prevent the the execution of malicious scripts.
 
 On a Windows computer you can set an execution policy for the local computer,
 for the current user, or for a particular session. You can also use a Group
