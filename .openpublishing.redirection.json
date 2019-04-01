@@ -740,9 +740,14 @@
             "redirect_document_id": false
         },
         {
-            "source_path"         : "dsc/lnxBuiltInResources.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources",
-            "redirect_document_id": false
+            "source_path"         : "dsc/reference/resources/builtInResource.md",
+            "redirect_url"        : "/powershell/dsc/reference/resources/windows/archiveresource",
+            "redirect_document_id": true
+        },
+        {
+            "source_path"         : "dsc/reference/resources/lnxBuiltInResources.md",
+            "redirect_url"        : "/powershell/dsc/reference/resources/linux/lnxarchiveresource",
+            "redirect_document_id": true
         },
         {
             "source_path"         : "dsc/lnxArchiveResource.md",
@@ -802,11 +807,6 @@
         {
             "source_path"         : "dsc/PackageManagementSourceDscResource.md",
             "redirect_url"        : "/powershell/dsc/reference/resources/packagemanagement/PackageManagementSourceDscResource",
-            "redirect_document_id": false
-        },
-        {
-            "source_path"         : "dsc/builtInResource.md",
-            "redirect_url"        : "/powershell/dsc/resources/resources",
             "redirect_document_id": false
         },
         {

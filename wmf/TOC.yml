@@ -1,11 +1,13 @@
 - name: Windows Management Framework (WMF) Overview
   href: overview.md
 - name: WMF 5.1
-  href: 5.1/release-notes.md
   items:
+  - name: WMF 5.1 Release Notes
+    href: 5.1/release-notes.md
   - name: New Scenarios and Features
-    href: 5.1/scenarios-features.md
     items:
+    - name: New Scenarios and Features
+      href: 5.1/scenarios-features.md
     - name: Improvements in Desired State Configuration (DSC)
       href: 5.1/DSC-improvements.md
     - name: Improvements in the PowerShell Console
@@ -29,30 +31,31 @@
   - name: Product Compatibility
     href: 5.1/productincompat.md
 - name: WMF 5.0
-  href: 5.0/releasenotes.md
   items:
+  - name: WMF 5.0 Release Notes
+    href: 5.0/releasenotes.md
   - name: Installation Details
     href: 5.0/requirements.md
   - name: Known Issues and Limitations
     href: 5.0/limitation_overview.md
-    items:
-    - name: Desired State Configuration (DSC) Known Issues
-      href: 5.0/limitation_dsc.md
+  - name: Desired State Configuration (DSC) Known Issues
+    href: 5.0/limitation_dsc.md
   - name: Product Compatibility Status
     href: 5.0/productincompat.md
   - name: Scenarios Enabled by WMF 5.0
-    href: ''
     items:
     - name: Just Enough Administration (JEA)
-      href: 5.0/jea_overview.md
       items:
+      - name: JEA Overview
+        href: 5.0/jea_overview.md
       - name: Creating and Connecting to a JEA Endpoint
         href: 5.0/jea_endpoint.md
       - name: Reporting on JEA
         href: 5.0/jea_report.md
     - name: Creating Custom Types using PowerShell Classes
-      href: 5.0/class_overview.md
       items:
+      - name: Overview
+        href: 5.0/class_overview.md
       - name: Define Custom Types
         href: 5.0/class_newtype.md
       - name: Declare Base Class
@@ -66,10 +69,10 @@
     - name: Improvements in PowerShell Script Debugging
       href: 5.0/debug_overview.md
     - name: Improvements in Desired State Configuration (DSC)
-      href: 5.0/dsc_improvements.md
       items:
+      - name: Overview of DSC Improvements
+        href: 5.0/dsc_improvements.md
       - name: Configurations
-        href: ''
         items:
         - name: Specifying Cross Node Dependencies
           href: 5.0/dsc_waitfor.md
@@ -86,7 +89,6 @@
         - name: WOW64 Support for Configuration Keyword
           href: 5.0/dsc_wow64.md
       - name: Resources
-        href: ''
         items:
         - name: Class-based DSC Resources
           href: 5.0/dsc_classbasedresource.md
@@ -99,13 +101,11 @@
         - name: New In-box Resources
           href: 5.0/dsc_newresources.md
       - name: Local Configuration Manager
-        href: ''
         items:
         - name: Configure Node with Multiple Configuration Fragments
           href: 5.0/dsc_partialconfig.md
-          items:
-          - name: Support for Mixed RefreshModes
-            href: 5.0/dsc_partialconfig_mixedmode.md
+        - name: Support for Mixed RefreshModes
+          href: 5.0/dsc_partialconfig_mixedmode.md
         - name: Configure DSC Engine with New Attribute
           href: 5.0/dsc_metaconfiguration.md
         - name: Detailed Information about LCM State
@@ -115,7 +115,6 @@
         - name: Additional Value for RefreshMode Property
           href: 5.0/dsc_refreshmode.md
       - name: Cmdlets
-        href: ''
         items:
         - name: Details about Configuration Status
           href: 5.0/dsc_getconfigurationstatus.md
@@ -132,7 +131,6 @@
         - name: Set-DscLocalConfigurationManager Cmdlet Supports -Force Parameter
           href: 5.0/dsc_setdsclcm.md
       - name: Pull Mode
-        href: ''
         items:
         - name: On-demand PULL of DSC Configurations
           href: 5.0/dsc_updateconfig.md
@@ -143,8 +141,9 @@
         - name: Report Configuration Status to Central Location
           href: 5.0/dsc_reporting.md
     - name: Audit PowerShell Usage using Transcript and Logging
-      href: 5.0/audit_overview.md
       items:
+      - name: Audit overview
+        href: 5.0/audit_overview.md
       - name: Enhanced Transcription Options
         href: 5.0/audit_transcript.md
       - name: Script Tracing and Logging
@@ -152,13 +151,15 @@
       - name: Cryptographic Message Syntax (CMS) Cmdlets
         href: 5.0/audit_cms.md
     - name: Software Discovery, Install, and Inventory with PackageManagement
-      href: 5.0/oneget_overview.md
       items:
+      - name: PackageManagement overview
+        href: 5.0/oneget_overview.md
       - name: PackageManagement Cmdlets
         href: 5.0/oneget_cmdlets.md
     - name: PowerShell Module Discovery, Install, and Inventory with PowerShellGet
-      href: 5.0/psget_module_overview.md
       items:
+      - name: PowerShellGet module overview
+        href: 5.0/psget_module_overview.md
       - name: Register a PowerShell Repository
         href: 5.0/psget_psrepository.md
       - name: Side-by-Side Version Support on PowerShell 5.0 or Newer
@@ -168,13 +169,14 @@
       - name: PowerShellGet Cmdlets for Module Management
         href: 5.0/psget_modulecmdlets.md
     - name: PowerShell Script Discovery, Install, and Management with PowerShellGet
-      href: 5.0/psget_script_overview.md
       items:
+      - name: PowerShellGet script overview
+        href: 5.0/psget_script_overview.md
       - name: PowerShellGet Cmdlets for Script Management
         href: 5.0/psget_scriptcmdlets.md
     - name: New and Updated Cmdlets based on Community Feedback
-      href: 5.0/feedback_cmdlets.md
       items:
+      - name: New and Updated Cmdlets based on Community Feedback
       - name: Symbolic Links using Item Cmdlets
         href: 5.0/feedback_symbolic.md
       - name: Archive Cmdlets
