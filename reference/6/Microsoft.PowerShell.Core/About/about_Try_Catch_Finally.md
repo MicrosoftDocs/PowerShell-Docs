@@ -22,11 +22,11 @@ handle a terminating error in some way, PowerShell also stops running the
 function or script using the current pipeline. In other languages, such as C\#,
 terminating errors are referred to as exceptions.
 
-Use the `Try` block to define a section of a script in which you want Windows
+Use the `Try` block to define a section of a script in which you want
 PowerShell to monitor for errors. When an error occurs within the `Try` block,
-the error is first saved to the $Error automatic variable. Windows PowerShell
-then searches for a `Catch` block to handle the error. If the `Try` statement
-does not have a matching `Catch` block, PowerShell continues to search for an
+the error is first saved to the `$Error` automatic variable. PowerShell then
+searches for a `Catch` block to handle the error. If the `Try` statement does
+not have a matching `Catch` block, PowerShell continues to search for an
 appropriate `Catch` block or `Trap` statement in the parent scopes. After a
 `Catch` block is completed or if no appropriate `Catch` block or `Trap`
 statement is found, the `Finally` block is run. If the error cannot be handled,
