@@ -1,5 +1,5 @@
 ---
-ms.date:  3/22/2019
+ms.date:  04/01/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -14,8 +14,9 @@ Describes the PowerShell execution policies and explains how to manage them.
 
 ## Long Description
 
-PowerShell execution policies let you determine the conditions under which
-PowerShell loads configuration files and runs scripts.
+PowerShell's execution policy is a safety feature that controls the conditions
+under which PowerShell loads configuration files and runs scripts. This feature
+help prevent the the loading and running of malicious scripts.
 
 On a Windows computer you can set an execution policy for the local computer,
 for the current user, or for a particular session. You can also use a Group
@@ -27,12 +28,12 @@ The execution policy for a particular session is stored only in memory and is
 lost when the session is closed.
 
 The execution policy isn't a security system that restricts user actions. For
-example, users can easily circumvent a policy by typing the script contents at
+example, users can easily bypass a policy by typing the script contents at
 the command line when they cannot run a script. Instead, the execution policy
 helps users to set basic rules and prevents them from violating them
 unintentionally.
 
-For non-Windows computers, the default execution policy is **Unrestricted** and
+On non-Windows computers, the default execution policy is **Unrestricted** and
 cannot be changed. The `Set-ExecutionPolicy` cmdlet is available, but
 PowerShell displays a console message that it's not supported.
 
