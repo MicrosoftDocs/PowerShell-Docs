@@ -65,7 +65,7 @@ This is Line 4
 ...
 ```
 
-### Example 2: Limit the number of lines Get-Conent returns
+### Example 2: Limit the number of lines Get-Content returns
 
 This command gets the first five lines of a file. The **TotalCount** parameter is used to gets the
 first five lines of content
