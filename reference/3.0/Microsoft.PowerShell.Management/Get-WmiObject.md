@@ -89,37 +89,23 @@ This command gets the WMI classes in the root or default namespace of the local 
 ### Example 4
 ```
 PS C:\> Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 | Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
+
 PSComputerName : SERVER01
-
 Name           : WinRM
-
 ExitCode       : 0
-
 Name           : WinRM
-
 ProcessID      : 844
-
 StartMode      : Auto
-
 State          : Running
-
 Status         : OK
 
-
 PSComputerName : SERVER02
-
 Name           : WinRM
-
 ExitCode       : 0
-
 Name           : WinRM
-
 ProcessID      : 932
-
 StartMode      : Auto
-
 State          : Running
-
 Status         : OK
 ```
 
@@ -145,94 +131,50 @@ This command is an alternative to using the Stop-Service cmdlet.
 PS C:\> Get-WmiObject -Class Win32_Bios | Format-List -Property
 
 Status                : OK
-
 Name                  : Phoenix ROM BIOS PLUS Version 1.10 A05
-
 Caption               : Phoenix ROM BIOS PLUS Version 1.10 A05
-
 SMBIOSPresent         : True
-
 __GENUS               : 2
-
 __CLASS               : Win32_BIOS
-
 __SUPERCLASS          : CIM_BIOSElement
-
 __DYNASTY             : CIM_ManagedSystemElement
-
-__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10 â€¦
-
+__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10
 __PROPERTY_COUNT      : 27
-
-__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,â€¦
-
+__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,
 __SERVER              : Server01
-
 __NAMESPACE           : root\cimv2
-
 __PATH                : \\SERVER01\root\cimv2:Win32_BIOS.Name="Phoenix ROM BIOS
-
 BiosCharacteristics   : {7, 9, 10, 11...}
-
 BIOSVersion           : {DELL   - 15, Phoenix ROM BIOS PLUS Version 1.10 A05}
-
 BuildNumber           :
-
 CodeSet               :
-
 CurrentLanguage       : en|US|iso8859-1
-
 Description           : Phoenix ROM BIOS PLUS Version 1.10 A05
-
 IdentificationCode    :
-
 InstallableLanguages  : 1
-
 InstallDate           :
-
 LanguageEdition       :
-
 ListOfLanguages       : {en|US|iso8859-1}
-
 Manufacturer          : Dell Inc.
-
 OtherTargetOS         :
-
 PrimaryBIOS           : True
-
 ReleaseDate           : 20101103000000.000000+000
-
 SerialNumber          : 8VDM9P1
-
 SMBIOSBIOSVersion     : A05
-
 SMBIOSMajorVersion    : 2
-
 SMBIOSMinorVersion    : 6
 SoftwareElementID     : Phoenix ROM BIOS PLUS Version 1.10 A05
-
 SoftwareElementState  : 3
-
 TargetOperatingSystem : 0
-
 Version               : DELL   - 15
-
 Scope                 : System.Management.ManagementScope
-
 Path                  : \\SERVER01\root\cimv2:Win32_BIOS.Name="Phoenix ROM BIOS
-
 Options               : System.Management.ObjectGetOptions
-
 ClassPath             : \\JUNE-PC\root\cimv2:Win32_BIOS
-
 Properties            : {BiosCharacteristics, BIOSVersion, BuildNumber, Caption...}
-
 SystemProperties      : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
-
 Qualifiers            : {dynamic, Locale, provider, UUID}
-
 Site                  :
-
 Container             :
 ```
 
@@ -297,21 +239,14 @@ Accept wildcard characters: False
 Specifies the authentication level to be used with the WMI connection.
 Valid values are:
 
--1: Unchanged
-
-0: Default
-
-1: None (No authentication in performed.)
-
-2: Connect (Authentication is performed only when the client establishes a relationship with the application.)
-
-3: Call (Authentication is performed only at the beginning of each call when the application receives the request.)
-
-4: Packet (Authentication is performed on all the data that is received from the client.)
-
-5: PacketIntegrity (All the data that is transferred between the client  and the application is authenticated and verified.)
-
-6: PacketPrivacy (The properties of the other authentication levels are used, and all the data is encrypted.)
+- -1: Unchanged
+- 0: Default
+- 1: None (No authentication in performed.)
+- 2: Connect (Authentication is performed only when the client establishes a relationship with the application.)
+- 3: Call (Authentication is performed only at the beginning of each call when the application receives the request.)
+- 4: Packet (Authentication is performed on all the data that is received from the client.)
+- 5: PacketIntegrity (All the data that is transferred between the client  and the application is authenticated and verified.)
+- 6: PacketPrivacy (The properties of the other authentication levels are used, and all the data is encrypted.)
 
 ```yaml
 Type: AuthenticationLevel
