@@ -191,7 +191,7 @@ Describes the full and relative path name formats in  PowerShell.
 Combining commands into pipelines in the PowerShell
 
 ### [about_PowerShell_exe](about_PowerShell_exe.md)
-Explains how to use the PowerShell.exe command-line tool. Displays the syntax and describes the command-line switches.  PowerShell.exe starts a Windows PowerShell session. You can use it in Cmd.exe and in Windows PowerShell.
+Explains how to use the PowerShell.exe command-line tool. Displays the syntax and describes the command-line switches.
 
 ### [about_PowerShell_Ise_exe](about_PowerShell_Ise_exe.md)
 Explains how to use the PowerShell_Ise.exe command-line tool.
@@ -299,7 +299,7 @@ Describes easier, more natural-language ways of scripting filters for collection
 Describes the special characters that you can use to control how PowerShell interprets the next character in a command or parameter.
 
 ### [about_Splatting](about_Splatting.md)
-Describes how to use splatting to pass parameters to commands in Windows PowerShell.
+Describes how to use splatting to pass parameters to commands in PowerShell.
 
 ### [about_Split](about_Split.md)
 Explains how to use the Split operator to split one or more strings into substrings.
@@ -350,10 +350,10 @@ Explains limitations of PowerShell 4.0 on Windows RT 8.1.
 Windows Management Instrumentation (WMI) uses the Common Information Model (CIM) to represent systems, applications, networks, devices, and other manageable components of the modern enterprise.
 
 ### [about_WMI_Cmdlets](about_WMI_Cmdlets.md)
-Provides background information about Windows Management Instrumentation (WMI) and Windows PowerShell.
+Provides background information about Windows Management Instrumentation (WMI) and PowerShell.
 
 ### [about_WQL](about_WQL.md)
-Describes WMI Query Language (WQL), which can be used to get WMI objects in Windows PowerShell.
+Describes WMI Query Language (WQL), which can be used to get WMI objects in PowerShell.
 
 ### [about_WS-Management_Cmdlets](about_WS-Management_Cmdlets.md)
-Provides an overview of Web Services for Management (WS-Management) as background for using the WS-Management cmdlets in Windows PowerShell.
+Provides an overview of Web Services for Management (WS-Management) as background for using the WS-Management cmdlets in PowerShell.

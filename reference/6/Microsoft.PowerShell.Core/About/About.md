@@ -314,7 +314,7 @@ Describes easier, more natural-language ways of scripting filters for collection
 Describes the special characters that you can use to control how PowerShell interprets the next character in a command or parameter.
 
 ### [about_Splatting](about_Splatting.md)
-Describes how to use splatting to pass parameters to commands in Windows PowerShell.
+Describes how to use splatting to pass parameters to commands in PowerShell.
 
 ### [about_Split](about_Split.md)
 Explains how to use the Split operator to split one or more strings into substrings.
