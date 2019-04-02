@@ -7,11 +7,11 @@ title:  about_Automatic_Variables
 ---
 # About Automatic Variables
 
-## SHORT DESCRIPTION
+## Short description
 Describes variables that store state information for PowerShell. These
 variables are created and maintained by PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Conceptually, these variables are considered to be read-only. Even though they
 **can** be written to, for backward compatibility they **should not** be
@@ -38,32 +38,31 @@ Same as `$PSItem`. Contains the current object in the pipeline object. You
 can use this variable in commands that perform an action on every object or
 on selected objects in a pipeline.
 
-### $ARGS
+### $args
 
-Contains an array of the undeclared parameters and\/or parameter values
-that are passed to a function, script, or script block. When you create a
-function, you can declare the parameters by using the param keyword or by
-adding a comma-separated list of parameters in parentheses after the
-function name.
+Contains an array of values for undeclared parameters that are passed to a
+function, script, or script block. When you create a function, you can declare
+the parameters by using the `param` keyword or by adding a comma-separated list
+of parameters in parentheses after the function name.
 
 In an event action, the `$Args` variable contains objects that represent the
 event arguments of the event that is being processed. This variable is
-populated only within the Action block of an event registration command.
-The value of this variable can also be found in the SourceArgs property of
+populated only within the `Action` block of an event registration command.
+The value of this variable can also be found in the **SourceArgs** property of
 the **PSEventArgs** object that `Get-Event` returns.
 
-### $CONSOLEFILENAME
+### $ConsoleFileName
 
-Contains the path of the console file (.psc1) that was most recently used
+Contains the path of the console file (`.psc1`) that was most recently used
 in the session. This variable is populated when you start PowerShell with
-the PSConsoleFile parameter or when you use the `Export-Console` cmdlet to
+the **PSConsoleFile** parameter or when you use the `Export-Console` cmdlet to
 export snap-in names to a console file.
 
 When you use the `Export-Console` cmdlet without parameters, it automatically
 updates the console file that was most recently used in the session. You
 can use this automatic variable to determine which file will be updated.
 
-### $ERROR
+### $Error
 
 Contains an array of error objects that represent the most recent errors.
 The most recent error is the first error object in the array `$Error[0]`.
@@ -72,44 +71,44 @@ To prevent an error from being added to the `$Error` array, use the
 **ErrorAction** common parameter with a value of **Ignore**. For more
 information, see [about_CommonParameters](about_CommonParameters.md).
 
-### $EVENT
+### $Event
 
 Contains a **PSEventArgs** object that represents the event that is being
-processed. This variable is populated only within the Action block of an
+processed. This variable is populated only within the `Action` block of an
 event registration command, such as `Register-ObjectEvent`. The value of this
 variable is the same object that the `Get-Event` cmdlet returns. Therefore,
 you can use the properties of the `Event` variable, such as
-`$Event.TimeGenerated`, in an Action script block.
+`$Event.TimeGenerated`, in an `Action` script block.
 
-### $EVENTARGS
+### $EventArgs
 
 Contains an object that represents the first event argument that derives
-from EventArgs of the event that is being processed. This variable is
-populated only within the Action block of an event registration command.
-The value of this variable can also be found in the SourceEventArgs
+from **EventArgs** of the event that is being processed. This variable is
+populated only within the `Action` block of an event registration command.
+The value of this variable can also be found in the **SourceEventArgs**
 property of the **PSEventArgs** object that `Get-Event` returns.
 
-### $EVENTSUBSCRIBER
+### $EventSubscriber
 
 Contains a **PSEventSubscriber** object that represents the event subscriber of
 the event that is being processed. This variable is populated only within
-the Action block of an event registration command. The value of this
+the `Action` block of an event registration command. The value of this
 variable is the same object that the `Get-EventSubscriber` cmdlet returns.
 
-### $EXECUTIONCONTEXT
+### $ExecutionContext
 
 Contains an **EngineIntrinsics** object that represents the execution context
 of the PowerShell host. You can use this variable to find the execution
 objects that are available to cmdlets.
 
-### $FALSE
+### $false
 
-Contains FALSE. You can use this variable to represent FALSE in commands
+Contains **FALSE**. You can use this variable to represent **FALSE** in commands
 and scripts instead of using the string "false". The string can be
-interpreted as TRUE if it is converted to a non-empty string or to a
+interpreted as **TRUE** if it is converted to a non-empty string or to a
 non-zero integer.
 
-### $FOREACH
+### $foreach
 
 Contains the enumerator (not the resulting values) of a
 [ForEach](about_ForEach.md) loop. The `$ForEach` variable exists only while
@@ -125,7 +124,7 @@ Contains the full path of the user's home directory. This variable is the
 equivalent of the `"$env:homedrive$env:homepath"` Windows environment variables,
 typically `C:\Users\<UserName>`.
 
-### $HOST
+### $Host
 
 Contains an object that represents the current host application for
 PowerShell. You can use this variable to represent the current host in
@@ -133,36 +132,36 @@ commands or to display or change the properties of the host, such as
 `$Host.version` or `$Host.CurrentCulture`, or
 `$host.ui.rawui.setbackgroundcolor("Red")`.
 
-### $INPUT
+### $input
 
 Contains an enumerator that enumerates all input that is passed to a
 function. The `$input` variable is available only to functions and script
 blocks (which are unnamed functions).
 
-- In a function without a Begin, Process, or End block, the `$input` variable enumerates the
-  collection of all input to the function.
+- In a function without a `Begin`, `Process`, or `End` block, the `$input`
+  variable enumerates the collection of all input to the function.
 
-- In the Process block of a function, the `$input` variable contains the object that is currently in
-  the pipeline.
+- In the `Begin` block, the `$input` variable contains no data.
 
-- In the End block, the `$input` variable enumerates the collection of all
+- In the `Process` block, the `$input` variable contains the
+  object that is currently in the pipeline.
+
+- In the `End` block, the `$input` variable enumerates the collection of all
   input to the function.
+
   > [!NOTE]
   > You cannot use the `$input` variable inside both the Process block and the
   > End block in the same function or script block.
-
-> [!NOTE]
-> The `$input` variable will contain no data inside of the Begin block.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
 [Using Enumerators](#using-enumerators).
 
-### $LASTEXITCODE
+### $LastExitCode
 
 Contains the exit code of the last Windows-based program that was run.
 
-### $MATCHES
+### $Matches
 
 The `Matches` variable works with the `-match` and `-notmatch` operators.
 When you submit scalar input to the `-match` or `-notmatch` operator, and
@@ -175,15 +174,15 @@ For more information about the `-match` operator, see
 [about_comparison_operators](about_comparison_operators.md). For more
 information on regular expressions, see [about_Regular_Expressions](about_Regular_Expressions.md).
 
-### $MYINVOCATION
+### $MyInvocation
 
 Contains an information about the current command, such as the name,
 parameters, parameter values, and information about how the command was
 started, called, or "invoked," such as the name of the script that called
 the current command.
 
-`$MyInvocation` is populated only for scripts, function, and script blocks.
-You can use the information in the System.Management.Automation.InvocationInfo
+`$MyInvocation` is populated only for scripts, function, and script blocks. You
+can use the information in the **System.Management.Automation.InvocationInfo**
 object that `$MyInvocation` returns in the current script, such as the path and
 file name of the script (`$MyInvocation.MyCommand.Path`) or the name of a
 function (`$MyInvocation.MyCommand.Name`) to identify the current command. This
@@ -194,10 +193,10 @@ properties.
 
 | Property      | Description                                         |
 | ------------- | --------------------------------------------------- |
-| PSScriptRoot  | Contains the full path to the script that invoked   |
+| **PSScriptRoot**  | Contains the full path to the script that invoked   |
 |               | the current command. The value of this property is  |
 |               | populated only when the caller is a script.         |
-| PSCommandPath | Contains the full path and file name of the script  |
+| **PSCommandPath** | Contains the full path and file name of the script  |
 |               | that invoked the current command. The value of this |
 |               | property is populated only when the caller is a     |
 |               | script.                                             |
@@ -207,7 +206,7 @@ Unlike the `$PSScriptRoot` and `$PSCommandPath` automatic variables, the
 automatic variable contain information about the invoker or calling script,
 not the current script.
 
-### $NESTEDPROMPTLEVEL
+### $NestedPromptLevel
 
 Contains the current prompt level. A value of 0 indicates the original
 prompt level. The value is incremented when you enter a nested level and
@@ -229,8 +228,8 @@ that it is always visible.
 
 ### $NULL
 
-`$null` is an automatic variable that contains a NULL or empty value. You can
-use this variable to represent an absent or undefined value in commands and
+`$null` is an automatic variable that contains a **NULL** or empty value. You
+can use this variable to represent an absent or undefined value in commands and
 scripts.
 
 PowerShell treats `$null` as an object with a value, that is, as an explicit
@@ -270,7 +269,7 @@ can use it in scripts like the following one, which would not work if `$null`
 were ignored.
 
 ```powershell
-$calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)
+$calendar = @($null, $null, "Meeting", $null, $null, "Team Lunch", $null)
 $days = "Sunday","Monday","Tuesday","Wednesday","Thursday",
         "Friday","Saturday"
 $currentDay = 0
@@ -314,11 +313,11 @@ New-Item -ItemType file -Path $PSHOME -Force
 
 You can also use it in a command to open the profile in Notepad:
 
-```
+```powershell
 notepad $profile
 ```
 
-### $PSBOUNDPARAMETERS
+### $PSBoundParameterValues
 
 Contains a dictionary of the parameters that are passed to a script or
 function and their current values. This variable has a value only in a
@@ -340,7 +339,7 @@ function Test {
 }
 ```
 
-### $PSCMDLET
+### $PSCmdlet
 
 Contains an object that represents the cmdlet or advanced function that is
 being run.
@@ -354,12 +353,12 @@ being used, and the **ShouldProcess** method adds the **WhatIf** and
 For more information about the `$PSCmdlet` automatic variable, see
 [about_Functions_Advanced](about_Functions_Advanced.md).
 
-### $PSCOMMANDPATH
+### $PSCommandPath
 
 Contains the full path and file name of the script that is being run. This
 variable is valid in all scripts.
 
-### $PSCULTURE
+### $PSCulture
 
 Contains the name of the culture currently in use in the operating system.
 The culture determines the display format of items such as numbers,
@@ -368,7 +367,7 @@ currency, and dates. This is the value of the
 system. To get the **System.Globalization.CultureInfo** object for the system,
 use the `Get-Culture` cmdlet.
 
-### $PSDEBUGCONTEXT
+### $PSDebugContext
 
 While debugging, this variable contains information about the debugging
 environment. Otherwise, it contains a NULL value. As a result, you can use it

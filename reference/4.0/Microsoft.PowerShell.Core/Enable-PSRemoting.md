@@ -54,7 +54,7 @@ Remote commands, and later attempts to enable and disable remoting, are likely t
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Configure a computer to receive remote commands
 
 ```powershell
 Enable-PSRemoting
@@ -62,16 +62,16 @@ Enable-PSRemoting
 
 This command configures the computer to receive remote commands.
 
-### Example 2
+### Example 2: Configure a computer to receive remote commands without a confirmation prompt
 
 ```powershell
 Enable-PSRemoting -Force
 ```
 
 This command configures the computer to receive remote commands.
-It uses the Force parameter to suppress the user prompts.
+It uses the *Force* parameter to suppress the user prompts.
 
-### Example 3
+## Example 3: Allow remote access on clients
 
 ```powershell
 Enable-PSRemoting -SkipNetworkProfileCheck -Force
@@ -90,7 +90,8 @@ The command uses the Force parameter to suppress confirmation messages.
 The **SkipNetworkProfileCheck** parameter has no effect on server version of Windows, which allow remote access from public networks in the same local subnet by default.
 
 The second command eliminates the subnet restriction.
-The command uses the **Set-NetFirewallRule** cmdlet in the **NetSecurity** module to add a firewall rule that allows remote access from public networks from any remote location, including locations in different subnets.
+The command uses the **Set-NetFirewallRule** cmdlet in the **NetSecurity** module to add a firewall rule that allows remote access from public networks from any remote location.
+This includes locations in different subnets.
 
 ## PARAMETERS
 
@@ -136,9 +137,8 @@ This parameter has no effect on server versions of Windows, which, by default, h
 If the local subnet firewall rule is disabled on a server version of Windows, **Enable-PSRemoting** re-enables it, regardless of the value of this parameter.
 
 To remove the local subnet restriction and enable remote access from all locations on public networks, use the **Set-NetFirewallRule** cmdlet in the **NetSecurity** module.
-For more information, see Notes and Examples.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -183,7 +183,7 @@ You cannot pipe input to this cmdlet.
 
 ### System.String
 
-Enable-PSRemoting returns strings that describe its results.
+This cmdlet returns strings that describe its results.
 
 ## NOTES
 

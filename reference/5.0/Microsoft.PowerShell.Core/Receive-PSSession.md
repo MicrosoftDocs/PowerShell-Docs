@@ -7,27 +7,30 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821506
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Receive-PSSession
 ---
-
 # Receive-PSSession
 
 ## SYNOPSIS
-Gets results of commands in disconnected sessions.
+
+Gets results of commands in disconnected sessions
 
 ## SYNTAX
 
 ### Session (Default)
+
 ```
 Receive-PSSession [-Session] <PSSession> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Id
+
 ```
 Receive-PSSession [-Id] <Int32> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### ComputerSessionName
+
 ```
 Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
  -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
@@ -36,6 +39,7 @@ Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-Configu
 ```
 
 ### ComputerInstanceId
+
 ```
 Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
  -InstanceId <Guid> [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
@@ -52,6 +56,7 @@ Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRe
 ```
 
 ### ConnectionUriSessionName
+
 ```
 Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRedirection] -Name <String>
  [-OutTarget <OutTarget>] [-JobName <String>] [-Credential <PSCredential>]
@@ -60,31 +65,34 @@ Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRe
 ```
 
 ### InstanceId
+
 ```
 Receive-PSSession -InstanceId <Guid> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### SessionName
+
 ```
 Receive-PSSession -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The **Receive-PSSession** cmdlet gets the results of commands running in Windows PowerShell sessions (**PSSession**) that were disconnected.
 If the session is currently connected, **Receive-PSSession** gets the results of commands that were running when the session was disconnected.
 If the session is still disconnected, **Receive-PSSession** connects to the session, resumes any commands that were suspended, and gets the results of commands running in the session.
 
 You can use a **Receive-PSSession** in addition to or instead of a Connect-PSSession command.
 **Receive-PSSession** can connect to any disconnected or reconnected session.
-These include those that were started in other sessions or on other computers.
+These includes those that were started in other sessions or on other computers.
 
 **Receive-PSSession** works on **PSSessions** that were disconnected intentionally, such as by using the Disconnect-PSSession cmdlet or the *InDisconnectedSession* parameter of the Invoke-Command cmdlet, or unintentionally, such as by a network interruption.
 
 If you use the **Receive-PSSession** cmdlet to connect to a session in which no commands are running or suspended, **Receive-PSSession** connects to the session, but returns no output or errors.
 
-For more information about the Disconnected Sessions feature, see about_Remote_Disconnected_Sessions.
+For more information about the Disconnected Sessions feature, see [about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -136,9 +144,9 @@ Id Name    ComputerName    State         ConfigurationName     Availability
  -- ----    ------------    -----         -----------------     ------------
   8 AD      Server01        Opened        ADEndpoint            Available
 
-The third command uses the Invoke-Command cmdlet to run a script in the session in the $s variable.The script starts to run and return data, but a network outage occurs that interrupts the session. The user has to exit the session and restart the local computer.
-PS C:\> Invoke-Command -Session $s -FilePath \\Server12\Scripts\SharedScripts\New-ADResolve.ps1
- Running "New-ADResolve.ps1" â€¦.exit
+The third command uses the Invoke-Command cmdlet to run a script in the session in the $s variable.The script begins to run and return data, but a network outage occurs that interrupts the session. The user has to exit the session and restart the local computer.
+PS> Invoke-Command -Session $s -FilePath \\Server12\Scripts\SharedScripts\New-ADResolve.ps1
+ Running "New-ADResolve.ps1"
 
 # Network outage
 # Restart local computer
@@ -203,7 +211,7 @@ Bug Report - Domain 01
 ----------------------
 ComputerName          BugCount          LastUpdated
 --------------        ---------         ------------
-Server01              121               Friday, December 30, 2011 5:03:34 PMâ€¦
+Server01              121               Friday, December 30, 2011 5:03:34 PM
 ```
 
 This example uses the **Receive-PSSession** cmdlet to reconnect to sessions that were intentionally disconnected and get the results of jobs that were running in the sessions.
@@ -235,7 +243,8 @@ Id     Name           State         HasMoreData     Location
 
 The sixth command runs a Receive-Job command on the job in the $j variable. The output shows that the job began to return output before the session and the job were disconnected.
 PS C:\> Receive-Job $j -Keep
-Return 1Return 2
+Return 1
+Return 2
 
 The seventh command is run in the same client session. The command uses the Connect-PSSession cmdlet to reconnect to the Test session on the Server01 computer and saves the session in the $s2 variable.
 PS C:\> $s2 = Connect-PSSession -ComputerName Server01 -Name Test
@@ -245,7 +254,7 @@ PS C:\> $j2 = Receive-PSSession -ComputerName Server01 -Name Test
 
 PS C:\> Receive-Job $j
 Return 3
-Return 4â€¦
+Return 4
 ```
 
 This example shows what happens to a job that is running in a disconnected session.
@@ -297,7 +306,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Authentication
+###
 Specifies the mechanism that is used to authenticate the credentials of the user in the command to reconnect to the disconnected session.
 The acceptable values for this parameter are:
 
@@ -374,11 +383,10 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationName
-Specifies the name of a session configuration.
-This cmdlet connects only to sessions that use the specified session configuration.
+Connects only to sessions that use the specified session configuration.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
-If you specify only the configuration name, the following schema URI is prepended: http://schemas.microsoft.com/powershell.
+If you specify only the configuration name, the following schema URI is prepended: `http://schemas.microsoft.com/powershell`.
 The configuration name of a session is stored in the **ConfigurationName** property of the session.
 
 The value of this parameter is used to select and filter sessions.
@@ -419,21 +427,19 @@ Specifies a URI that defines the connection endpoint that is used to reconnect t
 The URI must be fully qualified.
 The format of this string is as follows:
 
-\<Transport\>://\<ComputerName\>:\<Port\>/\<ApplicationName\>
+`<Transport>://<ComputerName>:<Port>/<ApplicationName>`
 
 The default value is as follows:
 
 `http://localhost:5985/WSMAN`
 
-`http://localhost:5985/WSMAN`
+If you do not specify a connection URI, you can use the **UseSSL**, **ComputerName**, **Port**, and **ApplicationName** parameters to specify the connection URI values.
 
-If you do not specify a connection URI, you can use the *UseSSL*, *ComputerName*, *Port*, and *ApplicationName* parameters to specify the connection URI values.
-
-Valid values for the Transport segment of the URI are HTTP and HTTPS.
+Valid values for the **Transport** segment of the URI are HTTP and HTTPS.
 If you specify a connection URI with a Transport segment, but do not specify a port, the session is created with standards ports: 80 for HTTP and 443 for HTTPS.
 To use the default ports for Windows PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.
 
-If the destination computer redirects the connection to a different URI, Windows PowerShell prevents the redirection unless you use the *AllowRedirection* parameter in the command.
+If the destination computer redirects the connection to a different URI, Windows PowerShell prevents the redirection unless you use the **AllowRedirection** parameter in the command.
 
 ```yaml
 Type: Uri
@@ -442,7 +448,7 @@ Aliases: URI, CU
 
 Required: True
 Position: 0
-Default value: None
+Default value: http://localhost:5985/WSMAN
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -468,6 +474,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Specifies the ID of the disconnected session.
 The *Id* parameter works only when the disconnected session was previously connected to the current session.
 

@@ -64,16 +64,6 @@ Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port 
 ```
 Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
  [[-ConnectionUri] <Uri[]>] [-AsJob] [-InDisconnectedSession] [-HideComputerName] [-JobName <String>]
- [-ScriptBlock] <ScriptBlock> [-AllowRedirection] [-SessionOption <PSSessionOption>]
- [-Authentication <AuthenticationMechanism>] [-EnableNetworkAccess] [-InputObject <PSObject>]
- [-ArgumentList <Object[]>] [-CertificateThumbprint <String>] [<CommonParameters>]
-```
-
-### Uri
-
-```
-Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
- [[-ConnectionUri] <Uri[]>] [-AsJob] [-InDisconnectedSession] [-HideComputerName] [-JobName <String>]
  [-FilePath] <String> [-AllowRedirection] [-SessionOption <PSSessionOption>]
  [-Authentication <AuthenticationMechanism>] [-EnableNetworkAccess] [-InputObject <PSObject>]
  [-ArgumentList <Object[]>] [<CommonParameters>]

@@ -120,7 +120,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -228,7 +228,7 @@ Enter the CAP ID or friendly name of a central access policy on the computer.
 Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
@@ -236,7 +236,7 @@ Parameter Sets: ByPath, ByLiteralPath
 Aliases:
 
 Required: False
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -249,7 +249,7 @@ Removes the central access policy from the specified item.
 Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
 For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -271,7 +271,7 @@ Enter a variable that contains the object or a command that gets the object.
 You cannot pipe the object to be changed to `Set-Acl`.
 Instead, use the **InputObject** parameter explicitly in the command.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: PSObject
@@ -293,7 +293,7 @@ No characters are interpreted as wildcards.
 If the path includes escape characters, enclose it in single quotation marks.
 Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String[]

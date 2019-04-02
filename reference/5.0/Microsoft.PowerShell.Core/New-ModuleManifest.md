@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821496
 external help file:  System.Management.Automation.dll-Help.xml
 title:  New-ModuleManifest
 ---
-
 # New-ModuleManifest
 
 ## SYNOPSIS
@@ -242,7 +241,7 @@ Author                      : Microsoft Corporation
 AccessMode                  : ReadWrite
 ClrVersion                  : 4.0
 CompanyName                 : Microsoft Corporation
-Copyright                   : © Microsoft Corporation. All rights reserved.
+Copyright                   :  Microsoft Corporation. All rights reserved.
 DotNetFrameworkVersion      :
 ExportedFunctions           : {}
 ExportedCmdlets             : {[Get-WinEvent, Get-WinEvent], [Get-Counter, Get-Counter], [Import-Counter,
