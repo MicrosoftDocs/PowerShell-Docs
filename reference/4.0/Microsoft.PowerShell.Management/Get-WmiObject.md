@@ -16,6 +16,7 @@ Gets instances of Windows Management Instrumentation (WMI) classes or informatio
 ## SYNTAX
 
 ### query (Default)
+
 ```
 Get-WmiObject [-Class] <String> [[-Property] <String[]>] [-Filter <String>] [-Amended] [-DirectRead] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
@@ -24,6 +25,7 @@ Get-WmiObject [-Class] <String> [[-Property] <String[]>] [-Filter <String>] [-Am
 ```
 
 ### list
+
 ```
 Get-WmiObject [[-Class] <String>] [-Recurse] [-Amended] [-List] [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -32,6 +34,7 @@ Get-WmiObject [[-Class] <String>] [-Recurse] [-Amended] [-List] [-AsJob] [-Imper
 ```
 
 ### WQLQuery
+
 ```
 Get-WmiObject [-Amended] [-DirectRead] -Query <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -40,6 +43,7 @@ Get-WmiObject [-Amended] [-DirectRead] -Query <String> [-AsJob] [-Impersonation 
 ```
 
 ### path
+
 ```
 Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -47,6 +51,7 @@ Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authen
 ```
 
 ### class
+
 ```
 Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -54,7 +59,8 @@ Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authen
 ```
 
 ## DESCRIPTION
-Starting in Windows PowerShell 3.0, this cmdlet has been superseded by Get-CimInstancehttp://technet.microsoft.com/library/jj590758(v=wps.630).aspx.
+
+Starting in PowerShell 3.0, this cmdlet has been superseded by `Get-CimInstance`.
 
 The **Get-WmiObject** cmdlet gets instances of WMI classes or information about the available WMI classes.
 To specify a remote computer, use the **ComputerName** parameter.
@@ -95,6 +101,7 @@ This command gets the WMI classes in the root or default namespace of the local 
 ### Example 4
 ```
 PS C:\> Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 | Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
+
 PSComputerName : SERVER01
 Name           : WinRM
 ExitCode       : 0
@@ -136,6 +143,7 @@ This command is an alternative to using the Stop-Service cmdlet.
 ### Example 6
 ```
 PS C:\> Get-WmiObject -Class Win32_Bios | Format-List -Property
+
 Status                : OK
 Name                  : Phoenix ROM BIOS PLUS Version 1.10 A05
 Caption               : Phoenix ROM BIOS PLUS Version 1.10 A05
@@ -144,13 +152,13 @@ __GENUS               : 2
 __CLASS               : Win32_BIOS
 __SUPERCLASS          : CIM_BIOSElement
 __DYNASTY             : CIM_ManagedSystemElement
-__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10 â€¦
+__RELPATH             : Win32_BIOS.Name="Phoenix ROM BIOS PLUS Version 1.10
 __PROPERTY_COUNT      : 27
-__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,â€¦
+__DERIVATION          : {CIM_BIOSElement, CIM_SoftwareElement, CIM_LogicalElement,
 __SERVER              : Server01
 __NAMESPACE           : root\cimv2
 __PATH                : \\SERVER01\root\cimv2:Win32_BIOS.Name="Phoenix ROM BIOS
- BiosCharacteristics   : {7, 9, 10, 11...}
+BiosCharacteristics   : {7, 9, 10, 11...}
 BIOSVersion           : {DELL   - 15, Phoenix ROM BIOS PLUS Version 1.10 A05}
 BuildNumber           :
 CodeSet               :
@@ -168,13 +176,14 @@ ReleaseDate           : 20101103000000.000000+000
 SerialNumber          : 8VDM9P1
 SMBIOSBIOSVersion     : A05
 SMBIOSMajorVersion    : 2
-SMBIOSMinorVersion    : 6SoftwareElementID     : Phoenix ROM BIOS PLUS Version 1.10 A05
+SMBIOSMinorVersion    : 6
+SoftwareElementID     : Phoenix ROM BIOS PLUS Version 1.10 A05
 SoftwareElementState  : 3
 TargetOperatingSystem : 0
 Version               : DELL   - 15
 Scope                 : System.Management.ManagementScope
 Path                  : \\SERVER01\root\cimv2:Win32_BIOS.Name="Phoenix ROM BIOS
- Options               : System.Management.ObjectGetOptions
+Options               : System.Management.ObjectGetOptions
 ClassPath             : \\JUNE-PC\root\cimv2:Win32_BIOS
 Properties            : {BiosCharacteristics, BIOSVersion, BuildNumber, Caption...}
 SystemProperties      : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
@@ -246,21 +255,14 @@ Accept wildcard characters: False
 Specifies the authentication level to be used with the WMI connection.
 Valid values are:
 
--1: Unchanged
-
-0: Default
-
-1: None (No authentication in performed.)
-
-2: Connect (Authentication is performed only when the client establishes a relationship with the application.)
-
-3: Call (Authentication is performed only at the beginning of each call when the application receives the request.)
-
-4: Packet (Authentication is performed on all the data that is received from the client.)
-
-5: PacketIntegrity (All the data that is transferred between the client  and the application is authenticated and verified.)
-
-6: PacketPrivacy (The properties of the other authentication levels are used, and all the data is encrypted.)
+- -1: Unchanged
+- 0: Default
+- 1: None (No authentication in performed.)
+- 2: Connect (Authentication is performed only when the client establishes a relationship with the application.)
+- 3: Call (Authentication is performed only at the beginning of each call when the application receives the request.)
+- 4: Packet (Authentication is performed on all the data that is received from the client.)
+- 5: PacketIntegrity (All the data that is transferred between the client  and the application is authenticated and verified.)
+- 6: PacketPrivacy (The properties of the other authentication levels are used, and all the data is encrypted.)
 
 ```yaml
 Type: AuthenticationLevel
@@ -586,6 +588,12 @@ To get all properties of a WMI object, use the Get-Member or Format-List   cmdle
 
 ## RELATED LINKS
 
+[Invoke-WmiMethod](Invoke-WmiMethod.md)
+
+[Remove-WmiObject](Remove-WmiObject.md)
+
+[Set-WmiInstance](Set-WmiInstance.md)
+
 [Get-WSManInstance](../Microsoft.WsMan.Management/Get-WSManInstance.md)
 
 [Invoke-WSManAction](../Microsoft.WsMan.Management/Invoke-WSManAction.md)
@@ -593,9 +601,3 @@ To get all properties of a WMI object, use the Get-Member or Format-List   cmdle
 [New-WSManInstance](../Microsoft.WsMan.Management/New-WSManInstance.md)
 
 [Remove-WSManInstance](../Microsoft.WsMan.Management/Remove-WSManInstance.md)
-
-[Invoke-WmiMethod](Invoke-WmiMethod.md)
-
-[Remove-WmiObject](Remove-WmiObject.md)
-
-[Set-WmiInstance](Set-WmiInstance.md)

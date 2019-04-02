@@ -227,6 +227,7 @@ ADCSAdministration                      en-US                                   
 ADCSDeployment                          en-US                                   3.0.0.0
 ADDSDeployment                          en-US                                   3.0.0.0
 ADFS                                    en-US                                   3.0.0.0
+...
 ```
 
 ## PARAMETERS
@@ -454,7 +455,7 @@ You can pipe a module object from the `Get-Module` cmdlet to  `Update-Help`.
 
 [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md)
 
-[Get-Culture](../microsoft.powershell.utility/get-culture.md)
+[Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
 
 [Get-Help](Get-Help.md)
 
@@ -462,7 +463,7 @@ You can pipe a module object from the `Get-Module` cmdlet to  `Update-Help`.
 
 [Get-Module](Get-Module.md)
 
-[Get-UICulture](../microsoft.powershell.utility/get-uiculture.md)
+[Get-UICulture](../Microsoft.PowerShell.Utility/Get-UICulture.md)
 
 [Start-Job](Start-Job.md)
 

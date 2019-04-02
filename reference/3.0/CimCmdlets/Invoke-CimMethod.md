@@ -104,8 +104,7 @@ If the InputObject parameter is specified, the cmdlet works in one of the follow
 
 ## EXAMPLES
 
-### Example 1: Invoke a method> [!NOTE]
-> Information the user should notice even if skimming
+### Example 1: Invoke a method
 
 ```powershell
 PS C:\>Invoke-CimMethod -Query 'select * from Win32_Process where name like "notepad%"' -MethodName "Terminate"

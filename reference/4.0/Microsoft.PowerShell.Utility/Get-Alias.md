@@ -7,27 +7,30 @@ online version:  http://go.microsoft.com/fwlink/p/?linkid=293964
 external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 title:  Get-Alias
 ---
-
 # Get-Alias
 
 ## SYNOPSIS
+
 Gets the aliases for the current session.
 
 ## SYNTAX
 
 ### Default (Default)
+
 ```powershell
 Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>]
  [<CommonParameters>]
 ```
 
 ### Definition
+
 ```powershell
 Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 The Get-Alias cmdlet gets the aliases (alternate names for commands and executable files) in the current session.
 This includes built-in aliases, aliases that you have set or imported, and aliases that you have added to your Windows PowerShell profile.
 
@@ -39,31 +42,23 @@ Beginning in Windows PowerShell 3.0, Get-Alias displays non-hyphenated alias nam
 ## EXAMPLES
 
 ### Example 1
+
 ```
 PS C:\> Get-Alias
+
 CommandType     Name
-
 -----------     ----
-
 Alias           % -> ForEach-Object
-
 Alias           ? -> Where-Object
-
 Alias           ac -> Add-Content
-
 Alias           asnp -> Add-PSSnapin
-
 Alias           cat -> Get-Content
-
 Alias           cd -> Set-Location
-
 Alias           chdir -> Set-Location
-
 Alias           clc -> Clear-Content
-
 Alias           clear -> Clear-Host
-
-Alias           clhy -> Clear-History …
+Alias           clhy -> Clear-History
+...
 ```
 
 This command gets all aliases in the current session.
@@ -72,6 +67,7 @@ The output shows the "\<alias\> -\> \<definition\>" format that was introduced i
 This format is used only for aliases that do not include hyphens, because aliases with hyphens are typically preferred names for cmdlets and functions, rather than nicknames.
 
 ### Example 2
+
 ```powershell
 Get-Alias -Name gp*, sp* -Exclude *ps
 ```
@@ -79,8 +75,9 @@ Get-Alias -Name gp*, sp* -Exclude *ps
 This command gets all aliases that begin with gp or sp, except for aliases that end with ps.
 
 ### Example 3
-```
-PS C:\> Get-Alias -Definition Get-ChildItem
+
+```powershell
+Get-Alias -Definition Get-ChildItem
 ```
 
 This command gets the aliases for the Get-ChildItem cmdlet.
@@ -89,8 +86,9 @@ By default, the Get-Alias cmdlet gets the item name when you know the alias.
 The Definition parameter gets the alias when you know the item name.
 
 ### Example 4
-```
-PS C:\> Get-Alias | Where-Object {$_.Options -Match "ReadOnly"}
+
+```powershell
+Get-Alias | Where-Object {$_.Options -Match "ReadOnly"}
 ```
 
 This command retrieves all aliases in which the value of the Options property is ReadOnly.
@@ -100,8 +98,9 @@ Options is just one property of the AliasInfo objects that Get-Alias gets.
 To find all properties and methods of AliasInfo objects, type "Get-Alias | get-member".
 
 ### Example 5
-```
-PS C:\> Get-Alias -Definition "*-PSSession" -Exclude e* -Scope Global
+
+```powershell
+Get-Alias -Definition "*-PSSession" -Exclude e* -Scope Global
 ```
 
 This example gets aliases for commands that have names that end in "-PSSession", except for those that begin with "e".
@@ -112,6 +111,7 @@ This is useful in scripts when you want to get the aliases in the session.
 ## PARAMETERS
 
 ### -Definition
+
 Gets the aliases for the specified item.
 Enter the name of a cmdlet, function, script, file, or executable file.
 
@@ -130,6 +130,7 @@ Accept wildcard characters: True
 ```
 
 ### -Exclude
+
 Omits the specified items.
 The value of this parameter qualifies the Name and Definition parameters.
 Enter a name, a definition, or a pattern, such as "s*".
@@ -148,6 +149,7 @@ Accept wildcard characters: True
 ```
 
 ### -Name
+
 Specifies the aliases that this cmdlet gets.
 Wildcards are permitted.
 By default, `Get-Alias` retrieves all aliases defined for the current session.
@@ -167,6 +169,7 @@ Accept wildcard characters: True
 ```
 
 ### -Scope
+
 Gets only the aliases in the specified scope.
 Valid values are "Global", "Local", or "Script", or a number relative to the current scope (0 through the number of scopes, where 0 is the current scope and 1 is its parent).
 "Local" is the default.
@@ -185,22 +188,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
+
 You can pipe alias names to Get-Alias.
 
 ## OUTPUTS
 
 ### System.Management.Automation.AliasInfo
+
 Get-Alias returns an object that represents each alias.
 Get-Alias returns the same object for every alias, but Windows PowerShell uses an arrow-based format to display the names of non-hyphenated aliases.
 
 ## NOTES
-* To create a new alias, use Set-Alias or New-Alias. To delete an alias, use Remove-Item.
-* The arrow-based alias name format is not used for aliases that include a hyphen. These are likely to be preferred substitute names for cmdlets and functions, instead of typical abbreviations or nicknames.
+
+- To create a new alias, use Set-Alias or New-Alias. To delete an alias, use Remove-Item.
+- The arrow-based alias name format is not used for aliases that include a hyphen. These are likely to be preferred substitute names for cmdlets and functions, instead of typical abbreviations or nicknames.
 
 ## RELATED LINKS
 

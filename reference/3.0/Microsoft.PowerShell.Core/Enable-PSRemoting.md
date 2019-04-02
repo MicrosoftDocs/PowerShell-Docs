@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkID=144300
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Enable-PSRemoting
 ---
-
 # Enable-PSRemoting
 
 ## SYNOPSIS
@@ -57,16 +56,16 @@ Remote commands, and later attempts to enable and disable remoting, are likely t
 
 ### Example 1
 
-```
-PS> Enable-PSRemoting
+```powershell
+Enable-PSRemoting
 ```
 
 This command configures the computer to receive remote commands.
 
 ### Example 2
 
-```
-PS> Enable-PSRemoting -Force
+```powershell
+Enable-PSRemoting -Force
 ```
 
 This command configures the computer to receive remote commands.
@@ -74,10 +73,10 @@ It uses the Force parameter to suppress the user prompts.
 
 ### Example 3
 
-```
-PS> Enable-PSRemoting -SkipNetworkProfileCheck -Force
+```powershell
+Enable-PSRemoting -SkipNetworkProfileCheck -Force
 
-PS> Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
+Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 ```
 
 This example shows how to allow remote access from public networks on client versions of Windows.

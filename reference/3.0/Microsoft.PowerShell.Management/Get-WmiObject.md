@@ -9,11 +9,14 @@ title:  Get-WmiObject
 ---
 
 # Get-WmiObject
+
 ## SYNOPSIS
 Gets instances of Windows Management Instrumentation (WMI) classes or information about the available classes.
+
 ## SYNTAX
 
 ### query (Default)
+
 ```
 Get-WmiObject [-Class] <String> [[-Property] <String[]>] [-Filter <String>] [-Amended] [-DirectRead] [-AsJob]
  [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>] [-Locale <String>]
@@ -22,6 +25,7 @@ Get-WmiObject [-Class] <String> [[-Property] <String[]>] [-Filter <String>] [-Am
 ```
 
 ### list
+
 ```
 Get-WmiObject [[-Class] <String>] [-Recurse] [-Amended] [-List] [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -30,6 +34,7 @@ Get-WmiObject [[-Class] <String>] [-Recurse] [-Amended] [-List] [-AsJob] [-Imper
 ```
 
 ### WQLQuery
+
 ```
 Get-WmiObject [-Amended] [-DirectRead] -Query <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
  [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
@@ -38,6 +43,7 @@ Get-WmiObject [-Amended] [-DirectRead] -Query <String> [-AsJob] [-Impersonation 
 ```
 
 ### path
+
 ```
 Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -45,6 +51,7 @@ Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authen
 ```
 
 ### class
+
 ```
 Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authentication <AuthenticationLevel>]
  [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>] [-Credential <PSCredential>]
@@ -52,7 +59,8 @@ Get-WmiObject [-Amended] [-AsJob] [-Impersonation <ImpersonationLevel>] [-Authen
 ```
 
 ## DESCRIPTION
-Starting in Windows PowerShell 3.0, this cmdlet has been superseded by Get-CimInstancehttp://technet.microsoft.com/library/jj590758.aspx.
+
+Starting in PowerShell 3.0, this cmdlet has been superseded by `Get-CimInstance`.
 
 The **Get-WmiObject** cmdlet gets instances of WMI classes or information about the available WMI classes.
 To specify a remote computer, use the **ComputerName** parameter.
@@ -64,6 +72,7 @@ You can use the **ComputerName** parameter of the **Get-WmiObject** cmdlet even 
 
 Beginning in Windows PowerShell 3.0, the **__Server** property of the object that **Get-WmiObject** returns has a **PSComputerName** alias.
 This makes it easier to include the source computer name in output and reports.
+
 ## EXAMPLES
 
 ### Example 1
@@ -72,6 +81,7 @@ PS C:\> Get-WmiObject -Class Win32_Process
 ```
 
 This command get the processes on the local computer.
+
 ### Example 2
 ```
 PS C:\> Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
@@ -80,12 +90,14 @@ PS C:\> Get-WmiObject -Class Win32_Service -ComputerName 127.0.0.1
 This command gets the services on a remote computer.
 It uses the ComputerName parameter to specify the Internet Protocol (IP) address, 127.0.0.1.
 By default, the current account must be a member of the Administrators group on the remote computer.
+
 ### Example 3
 ```
 PS C:\> Get-WmiObject -Namespace "root/default" -List
 ```
 
 This command gets the WMI classes in the root or default namespace of the local computer.
+
 ### Example 4
 ```
 PS C:\> Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 | Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
@@ -116,6 +128,7 @@ This makes it easy to see the computer on which the service resides.
 
 **PSComputerName** is an alias of the **__Server** property of the objects that **Get-WmiObject** returns.
 This alias is introduced in Windows PowerShell 3.0.
+
 ### Example 5
 ```
 PS C:\> (Get-WmiObject -Class Win32_Service -Filter "name='WinRM'" -ComputerName Server01).StopService()
@@ -126,6 +139,7 @@ The command uses a **Get-WmiObject** command to get the WinRM service on Server0
 Then, it invokes the **StopService** method of the Win32_Service WMI class on the object that the **Get-WmiObject** command returns.
 
 This command is an alternative to using the Stop-Service cmdlet.
+
 ### Example 6
 ```
 PS C:\> Get-WmiObject -Class Win32_Bios | Format-List -Property
@@ -181,6 +195,7 @@ Container             :
 This command gets the BIOS on the local computer.
 The command uses a value of all (*) for the Property parameter of the Format-List cmdlet to display all properties of the returned object in a list.
 By default, only a subset (defined in the Types.ps1xml configuration file) are displayed.
+
 ### Example 7
 ```
 PS C:\> Get-WmiObject Win32_Service -Credential FABRIKAM\administrator Computer Fabrikam
@@ -189,6 +204,7 @@ PS C:\> Get-WmiObject Win32_Service -Credential FABRIKAM\administrator Computer 
 This command uses the **Credential** parameter of the **Get-WmiObject** cmdlet to get the services on a remote computer.
 The value of the **Credential** parameter is a user account name.
 The user is prompted for a password.
+
 ## PARAMETERS
 
 ### -Amended
@@ -252,6 +268,7 @@ Valid values are:
 Type: AuthenticationLevel
 Parameter Sets: (All)
 Aliases:
+Accepted values: Default, None, Connect, Call, Packet, PacketIntegrity, PacketPrivacy, Unchanged
 
 Required: False
 Position: Named
@@ -426,6 +443,7 @@ Allows objects to permit other objects to use the credentials of the caller.
 Type: ImpersonationLevel
 Parameter Sets: (All)
 Aliases:
+Accepted values: Default, Anonymous, Identify, Impersonate, Delegate
 
 Required: False
 Position: Named
@@ -549,21 +567,25 @@ Accept wildcard characters: False
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
 You cannot pipe input to **Get-WmiObject**.
+
 ## OUTPUTS
 
 ### PSObject or System.Management.Automation.RemotingJob
 When you use the **AsJob** parameter, the cmdlet returns a job object.
 Otherwise, the object that **Get-WmiObject** returns depends on the value of the **Class** parameter.
+
 ## NOTES
 * To access WMI information on a remote computer, the cmdlet must run under an account that is a member of the local administrators group on the remote computer. Or, the default access control on the WMI namespace of the remote repository can be changed to give access rights to other accounts.
 
   Only some of the properties of each WMI class are displayed by default.
 The set of properties that is displayed for each WMI class is specified in the Types.ps1xml configuration file.
 To get all properties of a WMI object, use the Get-Member or Format-List   cmdlets.
+
 ## RELATED LINKS
 
 [Invoke-WmiMethod](Invoke-WmiMethod.md)

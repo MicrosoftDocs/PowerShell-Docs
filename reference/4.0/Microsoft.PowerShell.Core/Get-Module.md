@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/p/?linkid=289587
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Get-Module
 ---
-
 # Get-Module
 
 ## SYNOPSIS
@@ -173,7 +172,7 @@ This command gets the properties of the **PSModuleInfo** object that `Get-Module
 There is one object for each module file.
 
 You can use the properties to format and filter the module objects.
-For more information about the properties, see [PSModuleInfo Properties](http://go.microsoft.com/fwlink/?LinkId=143624) in the MSDN library.
+For more information about the properties, see [PSModuleInfo Properties](/dotnet/api/system.management.automation.psmoduleinfo).
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
 
@@ -238,7 +237,7 @@ PS> Get-Content $m.Path
     GUID               = "{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
     Author             = "Microsoft Corporation"
     CompanyName        = "Microsoft Corporation"
-    Copyright          = "© Microsoft Corporation. All rights reserved."
+    Copyright          = "Microsoft Corporation. All rights reserved."
     ModuleVersion      = "1.0.0.0"
     Description        = "Windows PowerShell File Transfer Module"
     PowerShellVersion  = "2.0"
@@ -559,7 +558,7 @@ When you use the **ListAvailable** parameter, `Get-Module` returns a **ModuleInf
 - Beginning in Windows PowerShell 3.0, the core commands that are included in Windows PowerShell are packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a snap-in (**PSSnapin**). By default, only the **Microsoft.PowerShell.Core** snap-in is added to the session. Modules are imported automatically on first use and you can use the `Import-Module` cmdlet to import them.
 - Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins (**PSSnapins**). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the `New-PSSession` cmdlet, are older-style sessions that include core snap-ins.
 
-  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
+  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
 
 - `Get-Module` only gets modules in locations that are stored in the value of the **PSModulePath** environment variable ($env:PSModulePath). You can use the **Path** parameter of the `Import-Module` cmdlet to import modules in other locations, but you cannot use the `Get-Module` cmdlet to get them.
 - Also, beginning in Windows PowerShell 3.0, new properties have been added to the object that `Get-Module` returns that make it easier to learn about modules even before they are imported. All properties are populated before importing, including the **ExportedCommands**, **ExportedCmdlets** and **ExportedFunctions** properties that list the commands that the module exports.

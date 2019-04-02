@@ -58,6 +58,7 @@ Alias           chdir -> Set-Location
 Alias           clc -> Clear-Content
 Alias           clear -> Clear-Host
 Alias           clhy -> Clear-History
+...
 ```
 
 This command gets all aliases in the current session.
@@ -218,6 +219,6 @@ Get-Alias returns the same object for every alias, but Windows PowerShell uses a
 
 [Set-Alias](Set-Alias.md)
 
-[Alias Provider](../microsoft.powershell.core/providers/alias-provider.md)
+[Alias Provider](../Microsoft.PowerShell.Core/Providers/Alias-Provider.md)
 
 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)
