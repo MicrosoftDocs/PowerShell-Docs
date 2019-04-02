@@ -26,9 +26,9 @@ The **Enable-PSRemoting** cmdlet configures the computer to receive Windows Powe
 On Windows Server 2012, Windows PowerShell remoting is enabled by default.
 You can use Enable-PSRemoting to enable Windows PowerShell remoting on other supported versions of Windows and to re-enable remoting on Windows Server 2012 if it becomes disabled.
 
-You need to run this command only once on each computer that will receive commands.
-You do not need to run it on computers that only send commands.
-Because the configuration activates listeners, it is prudent to run it only where it is needed.
+You have to run this command only one time on each computer that will receive commands.
+You do not have to run it on computers that only send commands.
+Because the configuration starts listeners, it is prudent to run it only where it is needed.
 
 Beginning in Windows PowerShell 3.0, the **Enable-PSRemoting** cmdlet can enable Windows PowerShell remoting on client versions of Windows when the computer is on a public network.
 For more information, see the description of the **SkipNetworkProfileCheck** parameter.

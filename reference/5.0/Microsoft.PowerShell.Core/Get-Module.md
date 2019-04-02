@@ -10,34 +10,33 @@ title:  Get-Module
 # Get-Module
 
 ## SYNOPSIS
-
 Gets the modules that have been imported or that can be imported into the current session.
 
 ## SYNTAX
 
 ### Loaded (Default)
 
-```powershell
+```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [<CommonParameters>]
 ```
 
 ### CimSession
 
-```powershell
+```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-ListAvailable] [-Refresh]
  -CimSession <CimSession> [-CimResourceUri <Uri>] [-CimNamespace <String>] [<CommonParameters>]
 ```
 
 ### PsSession
 
-```powershell
+```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-ListAvailable] [-Refresh]
  -PSSession <PSSession> [<CommonParameters>]
 ```
 
 ### Available
 
-```powershell
+```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [-ListAvailable]
  [-Refresh] [<CommonParameters>]
 ```
@@ -55,12 +54,13 @@ To get all installed modules, use the **ListAvailable** parameter.
 Beginning in Windows PowerShell 3.0, modules are automatically imported when you use a command in the module, but a `Get-Module` command does not trigger an automatic import.
 You can also import the modules into your session by using the `Import-Module` cmdlet.
 
-Beginning in Windows PowerShell 3.0, you can get (and then, import) modules from remote sessions into the local session.
+Starting in Windows PowerShell 3.0, you can get and then, import modules from remote sessions into the local session.
 This strategy uses the Implicit Remoting feature of Windows PowerShell and is equivalent to using the `Import-PSSession` cmdlet.
-When you use commands in modules imported from another session, the commands run implicitly in the remote session, allowing you to manage the remote computer from the local session.
+When you use commands in modules imported from another session, the commands run implicitly in the remote session.
+This feature lets you manage the remote computer from the local session.
 
-Also, beginning in Windows PowerShell 3.0, you can use `Get-Module` and `Import-Module` to get and import Common Information Model (CIM) modules, in which the cmdlets are defined in Cmdlet Definition XML (CDXML) files.
-This feature allows you to use cmdlets that are implemented in non-managed code assemblies, such as those written in C++.
+Also, starting in Windows PowerShell 3.0, you can use `Get-Module` and `Import-Module` to get and import Common Information Model (CIM) modules, in which the cmdlets are defined in Cmdlet Definition XML (CDXML) files.
+This feature lets you use cmdlets that are implemented in non-managed code assemblies, such as those written in C++.
 
 With these new features, the `Get-Module` and `Import-Module` cmdlets become primary tools for managing heterogeneous enterprises that include Windows computers and computers that are running other operating systems.
 
@@ -68,11 +68,13 @@ To manage remote Windows computers that have Windows PowerShell and Windows Powe
 When you import the modules, and then use the imported commands in the current session, the commands run implicitly in the **PSSession** on the remote computer.
 You can use this strategy to manage the remote computer.
 
-You can use a similar strategy to manage computers that do not have Windows PowerShell remoting enabled, including computers that are not running a Windows operating system, and Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
+You can use a similar strategy to manage computers that do not have Windows PowerShell remoting enabled.
+These include computers that are not running the Windows operating system, and computers that have Windows PowerShell but do not have Windows PowerShell remoting enabled.
 
-Begin by creating a "CIM session" on the remote computer; a connection to Windows Management Instrumentation (WMI) on the remote computer.
+Start by creating a CIM session on the remote computer.
+A CIM session is a connection to Windows Management Instrumentation (WMI) on the remote computer.
 Then use the **CIMSession** parameter of `Get-Module` to get CIM modules from the CIM session.
-When you import a CIM module (by using the `Import-Module` cmdlet) and then run the imported commands, the commands run implicitly on the remote computer.
+When you import a CIM module by using the `Import-Module` cmdlet and then run the imported commands, the commands run implicitly on the remote computer.
 You can use this WMI and CIM strategy to manage the remote computer.
 
 ## EXAMPLES
@@ -116,8 +118,8 @@ Name                             Version
 Microsoft.PowerShell.Management  3.1.0.0
 ```
 
-This command gets the **Microsoft.PowerShell.Management** module by specifying the module's fully qualified name, with the **FullyQualifiedName** parameter.
-The command then pipes the results into `Format-Table`, to format the results as a table with **Name** and **Version** as the column headings.
+This command gets the **Microsoft.PowerShell.Management** module by specifying the fully qualified name of the module by using the **FullyQualifiedName** parameter.
+The command then pipes the results into the `Format-Table` cmdlet to format the results as a table with **Name** and **Version** as the column headings.
 
 ### Example 5: Get properties of a module
 
@@ -174,7 +176,7 @@ There is one object for each module file.
 You can use the properties to format and filter the module objects.
 For more information about the properties, see [PSModuleInfo Properties](/dotnet/api/system.management.automation.psmoduleinfo).
 
-The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
+The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0.
 
 ### Example 6: Group all modules by name
 
@@ -183,7 +185,7 @@ PS> Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Pa
 ```
 
 ```output
-   Name: AppLocker
+Name: AppLocker
 
 Name      ModuleType Path
 ----      ---------- ----
@@ -351,7 +353,7 @@ Accept wildcard characters: False
 Specifies the namespace of an alternate CIM provider that exposes CIM modules.
 The default value is the namespace of the Module Discovery WMI provider.
 
-Use this parameter to get CIM modules from computers and devices that are not running a Windows operating system.
+Use this parameter to get CIM modules from computers and devices that are not running the Windows operating system.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -498,7 +500,7 @@ Enter a variable that contains the session, a command that gets the session, suc
 
 When the session is connected to a remote computer, the **ListAvailable** parameter is required.
 
-A `Get-Module` command with the **PSSession** parameter is equivalent to using the `Invoke-Command` cmdlet to run a `Get-Module -ListAvailable` command in a **PSSession**.
+A `Get-Module` command that uses the **PSSession** parameter is equivalent to using the `Invoke-Command` cmdlet to run a `Get-Module -ListAvailable` command in a **PSSession**.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

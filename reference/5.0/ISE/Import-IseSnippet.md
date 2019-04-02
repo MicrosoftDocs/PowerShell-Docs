@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Recurse
-Indicate that this cmdlet imports snippets from all subdirectories of the value of the *Path* parameter.
+Indicate that this cmdlet imports snippets from all subdirectories of the value of the **Path** parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -148,9 +148,9 @@ Accept wildcard characters: False
 
 ### -ListAvailable
 Indicates that this cmdlet gets snippets from modules that are installed on the computer, even if the modules are not imported into the current session.
-If this parameter is omitted, and the module that is specified by the *Module* parameter is not imported into the current session, the attempt to get the snippets from the module will fail.
+If this parameter is omitted, and the module that is specified by the **Module** parameter is not imported into the current session, the attempt to get the snippets from the module will fail.
 
-This parameter is valid only when the *Module* parameter is used in the command.
+This parameter is valid only when the **Module** parameter is used in the command.
 
 ```yaml
 Type: SwitchParameter

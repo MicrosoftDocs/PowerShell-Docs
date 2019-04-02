@@ -148,7 +148,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None (no value)
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
