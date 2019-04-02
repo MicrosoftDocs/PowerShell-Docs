@@ -27,14 +27,20 @@ Get-CimAssociatedInstance [[-Association] <String>] [-ResultClassName <String>] 
 ```
 
 ## DESCRIPTION
-The Get-CimAssociatedInstance cmdlet retrieves the CIM instances connected to a specific CIM instance, called the source instance, by an association.
+The Get-CimAssociatedInstance cmdlet retrieves the CIM instances connected to a specific CIM
+instance, called the source instance, by an association.
 
-In an association, each CIM instance has a named role and the same CIM instance can participate in an association in different roles.
+In an association, each CIM instance has a named role and the same CIM instance can participate in
+an association in different roles.
 
-If the InputObject parameter is not specified, the cmdlet works in one of the following ways: 
+If the InputObject parameter is not specified, the cmdlet works in one of the following ways:
 
---If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM) session. 
---If either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet works against the CIM server specified by either the ComputerName parameter or the CimSession parameter.
+- If neither the ComputerName parameter nor the CimSession parameter is specified, then this cmdlet
+  works on local Windows Management Instrumentation (WMI) using a Component Object Model (COM)
+  session.
+- If either the ComputerName parameter or the CimSession parameter is specified, then this cmdlet
+  works against the CIM server specified by either the ComputerName parameter or the CimSession
+  parameter.
 
 ## EXAMPLES
 
@@ -42,64 +48,58 @@ If the InputObject parameter is not specified, the cmdlet works in one of the fo
 ```
 PS C:\>$disk = Get-CimInstance -ClassName Win32_LogicalDisk -KeyOnly
 
-
 PS C:\>Get-CimAssociatedInstance -InputObject $disk[1]
 ```
 
-This set of commands retrieves the instances of the class named Win32_LogicalDisk and stores the information in a variable named $disk using the Get-CimInstance cmdlet.
-The first logical disk instance in the variable is then used as the input object for the Get-CimAssociatedInstance cmdlet to get all the associated CIM instances of the specified CIM instance.
+This set of commands retrieves the instances of the class named Win32_LogicalDisk and stores the
+information in a variable named $disk using the Get-CimInstance cmdlet. The first logical disk
+instance in the variable is then used as the input object for the Get-CimAssociatedInstance cmdlet
+to get all the associated CIM instances of the specified CIM instance.
 
 ### Example 2: Get all the associated instances of a specific type
 ```
 PS C:\>$disk = Get-CimInstance -ClassName Win32_LogicalDisk -KeyOnly
 
-
 PS C:\>Get-CimAssociatedInstance -InputObject $disk[1] -ResultClass Win32_DiskPartition
 ```
 
-This set of commands retrieves all of the instances of the class named Win32_LogicalDisk and stores them in a variable named $disk.
-The first logical disk instance in the variable is then used as the input object for the Get-CimAssociatedInstance cmdlet to get all the associated instances that are associated through the specified association class Win32_DiskPartition.
+This set of commands retrieves all of the instances of the class named Win32_LogicalDisk and stores
+them in a variable named $disk. The first logical disk instance in the variable is then used as the
+input object for the Get-CimAssociatedInstance cmdlet to get all the associated instances that are
+associated through the specified association class Win32_DiskPartition.
 
 ### Example 3: Get all the associated instances through qualifier of a specific class
 ```
-PS C:\>$s = Get-CimInstance -Query "Select * from Win32_Service where name like ꞌWinmgmtꞌ"
-
-
+PS C:\>$s = Get-CimInstance -Query "Select * from Win32_Service where name like 'Winmgmt'"
 
 PS C:\>Get-CimClass -ClassName *Service* -Qualifier "Association"
 
-
-
 PS C:\>$c.CimClasName
 Win32_LoadOrderGroupServiceDependencies
-
-
 Win32_DependentService
-
-
 Win32_SystemServices
-
-
 Win32_LoadOrderGroupServiceMembers
-
-
 Win32_ServiceSpecificationService
-
 
 PS C:\>Get-CimAssociatedInstance -InputObject $s -Association Win32_DependentService
 ```
 
-This set of commands retrieves the services that depend on Windows Management Instrumentation (WMI) service and stores them in a variable named $s.
-The association class name for the Win32_DependentService is retrieved using the Get-CimClass cmdlet by specifying Association as the qualifier and is then passed with $s to the Get-CimAssociatedInstance cmdlet to get all the associated instances of the retrieved association class.
+This set of commands retrieves the services that depend on Windows Management Instrumentation (WMI)
+service and stores them in a variable named $s. The association class name for the
+Win32_DependentService is retrieved using the Get-CimClass cmdlet by specifying Association as the
+qualifier and is then passed with $s to the Get-CimAssociatedInstance cmdlet to get all the
+associated instances of the retrieved association class.
 
 ## PARAMETERS
 
 ### -Association
 Specifies the name of the association class.
 
-If you do not specify this parameter, the cmdlet returns all existing association objects irrespective of their type.
+If you do not specify this parameter, the cmdlet returns all existing association objects
+irrespective of their type.
 
-For example, if class A is associated with class B through two associations, AB1 and AB2, then this parameter can be used to specify the type of association, either AB1 or AB2.
+For example, if class A is associated with class B through two associations, AB1 and AB2, then this
+parameter can be used to specify the type of association, either AB1 or AB2.
 
 ```yaml
 Type: String
@@ -114,9 +114,9 @@ Accept wildcard characters: False
 ```
 
 ### -CimSession
-Runs the command using the specified CIM session.
-Enter a variable that contains the CIM session, or a command that creates or gets the CIM session, such as New-CimSession or Get-CimSession.
-For more information, see about_CimSessions.
+Runs the command using the specified CIM session. Enter a variable that contains the CIM session, or
+a command that creates or gets the CIM session, such as New-CimSession or Get-CimSession. For more
+information, see about_CimSessions.
 
 ```yaml
 Type: CimSession[]
@@ -134,11 +134,14 @@ Accept wildcard characters: False
 Specifies the name of the computer on which you want to run the CIM operation.
 You can specify a fully qualified domain name (FQDN) or a NetBIOS name.
 
-If you specify this parameter, the cmdlet creates a temporary session to the specified computer using the WsMan protocol.
+If you specify this parameter, the cmdlet creates a temporary session to the specified computer
+using the WsMan protocol.
 
-If you do not specify this parameter, the cmdlet performs the operation on the local computer using Component Object Model (COM).
+If you do not specify this parameter, the cmdlet performs the operation on the local computer using
+Component Object Model (COM).
 
-If multiple operations are being performed on the same computer, connecting using a CIM session gives better performance.
+If multiple operations are being performed on the same computer, connecting using a CIM session
+gives better performance.
 
 ```yaml
 Type: String[]
@@ -189,7 +192,10 @@ Accept wildcard characters: False
 Specifies the namespace for the CIM operation.
 
 The default namespace is root/cimv2.
-NOTE: You can use tab completion to browse the list of namespaces, because Windows PowerShell gets a list of namespaces from the local WMI server to provide the list of namespaces.
+
+> [!NOTE]
+> You can use tab completion to browse the list of namespaces, because Windows PowerShell gets a
+> list of namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: String
@@ -206,9 +212,12 @@ Accept wildcard characters: False
 ### -OperationTimeoutSec
 Specifies the amount of time that the cmdlet waits for a response from the computer.
 
-By default, the value of this parameter is 0, which means that the cmdlet uses the default timeout value for the server.
+By default, the value of this parameter is 0, which means that the cmdlet uses the default timeout
+value for the server.
 
-If the OperationTimeoutSec parameter is set to a value less than the robust connection retry timeout of 3 minutes, network failures that last more than the value of the OperationTimeoutSec parameter are not recoverable, because the operation on the server times out before the client can reconnect.
+If the OperationTimeoutSec parameter is set to a value less than the robust connection retry timeout
+of 3 minutes, network failures that last more than the value of the OperationTimeoutSec parameter
+are not recoverable, because the operation on the server times out before the client can reconnect.
 
 ```yaml
 Type: UInt32
@@ -223,21 +232,26 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceUri
-Specifies the resource uniform resource identifier (URI) of the resource class or instance.
-The URI is used to identify a specific type of resource, such as disks or processes, on a computer.
+Specifies the resource uniform resource identifier (URI) of the resource class or instance. The URI
+is used to identify a specific type of resource, such as disks or processes, on a computer.
 
 A URI consists of a prefix and a path to a resource.
 For example:
 
-http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk
-http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings
+- `http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+- `http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
-By default, if you do not specify this parameter, the DMTF standard resource URI http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/ is used and the class name is appended to it.
+By default, if you do not specify this parameter, the DMTF standard resource URI
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
-ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying the ComputerName parameter, which creates a CIM session using WSMan.
-If you specify this parameter without specifying the ComputerName parameter, or if you specify a CIM session created using DCOM protocol, you will get an error, because the DCOM protocol does not support the ResourceURI parameter.
+ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying
+the ComputerName parameter, which creates a CIM session using WSMan. If you specify this parameter
+without specifying the ComputerName parameter, or if you specify a CIM session created using DCOM
+protocol, you will get an error, because the DCOM protocol does not support the ResourceURI
+parameter.
 
-If both the ResourceUri parameter and the Filter parameter are specified, the Filter parameter is ignored.
+If both the ResourceUri parameter and the Filter parameter are specified, the Filter parameter is
+ignored.
 
 ```yaml
 Type: Uri
@@ -276,8 +290,9 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

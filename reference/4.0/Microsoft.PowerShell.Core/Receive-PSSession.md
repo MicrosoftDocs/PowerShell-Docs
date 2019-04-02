@@ -81,20 +81,21 @@ Receive-PSSession [-Name] <String> [-OutTarget <OutTarget>] [-JobName <String>] 
 
 ## DESCRIPTION
 
-The **Receive-PSSession** cmdlet gets the results of commands running in Windows PowerShell sessions ("PSSession") that were disconnected.
+The **Receive-PSSession** cmdlet gets the results of commands running in Windows PowerShell sessions (**PSSession**) that were disconnected.
 If the session is currently connected, **Receive-PSSession** gets the results of commands that were running when the session was disconnected.
 If the session is still disconnected, **Receive-PSSession** connects to the session, resumes any commands that were suspended, and gets the results of commands running in the session.
 
-You can use a **Receive-PSSession** in addition to or in place of a Connect-PSSession command.
-**Receive-PSSession** can connect to any disconnected or reconnected session, including those that were started in other sessions or on other computers.
+You can use a **Receive-PSSession** in addition to or instead of a Connect-PSSession command.
+**Receive-PSSession** can connect to any disconnected or reconnected session.
+These includes those that were started in other sessions or on other computers.
 
-**Receive-PSSession** works on PSSessions that were disconnected intentionally, such as by using the Disconnect-PSSession cmdlet or the **InDisconnectedSession** parameter of the Invoke-Command cmdlet, or unintentionally, such as by a network interruption.
+**Receive-PSSession** works on **PSSessions** that were disconnected intentionally, such as by using the Disconnect-PSSession cmdlet or the *InDisconnectedSession* parameter of the Invoke-Command cmdlet, or unintentionally, such as by a network interruption.
 
 If you use the **Receive-PSSession** cmdlet to connect to a session in which no commands are running or suspended, **Receive-PSSession** connects to the session, but returns no output or errors.
 
 For more information about the Disconnected Sessions feature, see [about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md).
 
-This cmdlet is introduced in Windows PowerShell 3.0.
+This cmdlet was introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
@@ -384,7 +385,7 @@ Accept wildcard characters: False
 Connects only to sessions that use the specified session configuration.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
-If you specify only the configuration name, the following schema URI is prepended:  http://schemas.microsoft.com/powershell.
+If you specify only the configuration name, the following schema URI is prepended: `http://schemas.microsoft.com/powershell`.
 The configuration name of a session is stored in the **ConfigurationName** property of the session.
 
 The value of this parameter is used to select and filter sessions.
@@ -420,12 +421,12 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
-Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint that is used to reconnect to the disconnected session.
+Specifies a URI that defines the connection endpoint that is used to reconnect to the disconnected session.
 
 The URI must be fully qualified.
 The format of this string is as follows:
 
-`\<Transport\>://\<ComputerName\>:\<Port\>/\<ApplicationName\>`
+`<Transport>://<ComputerName>:<Port>/<ApplicationName>`
 
 The default value is as follows:
 
@@ -446,7 +447,7 @@ Aliases: URI, CU
 
 Required: True
 Position: 0
-Default value: Http://localhost:5985/WSMAN
+Default value: http://localhost:5985/WSMAN
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -475,7 +476,7 @@ Accept wildcard characters: False
 ### -Id
 
 Specifies the ID of the disconnected session.
-The ID parameter works only when the disconnected session was previously connected to the current session.
+The *Id* parameter works only when the disconnected session was previously connected to the current session.
 
 This parameter is valid, but not effective, when the session is stored on the local computer, but was not connected to the current session.
 

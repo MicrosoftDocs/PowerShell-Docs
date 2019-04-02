@@ -46,14 +46,14 @@ It puts the surname first in the output, followed by an initial.
 ### Example 2: Simplify format of a string
 
 ```powershell
-$composers = @("Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Frédéric François Chopin", "Johannes Brahms")
+$composers = @("Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Frederic Francois Chopin", "Johannes Brahms")
 $composers | Convert-String -Example "first middle last=last, first"
 ```
 
 ```output
 Bach, Johann
 Mozart, Wolfgang
-Chopin, Frédéric
+Chopin, Frederic
 Brahms, Johannes
 ```
 
@@ -67,14 +67,14 @@ All middle names removed; entry without middle name is handled correctly.
 ### Example 3: Output management when strings don't match example
 
 ```powershell
-$composers = @("Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Frédéric François Chopin", "Johannes Brahms")
+$composers = @("Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Frederic Francois Chopin", "Johannes Brahms")
 $composers | Convert-String -Example "first middle last=middle, first"
 ```
 
 ```output
 Sebastian, Johann
 Amadeus, Wolfgang
-François, Frédéric
+Francois, Frederic
 ```
 
 The first command creates an array that contains first, middle and last names.

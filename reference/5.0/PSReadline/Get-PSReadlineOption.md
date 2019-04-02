@@ -51,7 +51,7 @@ HistorySearchCursorMovesToEnd          : False
 ShowToolTips                           : False
 DingTone                               : 1221
 CompletionQueryItems                   : 100
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"–—―
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"
 DingDuration                           : 50
 BellStyle                              : Audible
 HistorySearchCaseSensitive             : False
