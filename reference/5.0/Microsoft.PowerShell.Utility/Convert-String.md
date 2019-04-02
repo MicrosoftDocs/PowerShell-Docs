@@ -14,7 +14,7 @@ Formats a string to match examples.
 
 ## SYNTAX
 
-```bnf
+```
 Convert-String [-Example <System.Collections.Generic.List`1[System.Management.Automation.PSObject]>]
  -InputObject <String> [<CommonParameters>]
 ```

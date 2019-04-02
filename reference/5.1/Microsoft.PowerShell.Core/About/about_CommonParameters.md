@@ -5,7 +5,6 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_CommonParameters
 ---
-
 # About CommonParameters
 
 ## SHORT DESCRIPTION
@@ -37,22 +36,22 @@ to user data usually offer these parameters.
 The following list displays the common parameters. Their aliases are listed in
 parentheses.
 
-* Debug (db)
-* ErrorAction (ea)
-* ErrorVariable (ev)
-* InformationAction (infa)
-* InformationVariable (iv)
-* OutVariable (ov)
-* OutBuffer (ob)
-* PipelineVariable (pv)
-* Verbose (vb)
-* WarningAction (wa)
-* WarningVariable (wv)
+- Debug (db)
+- ErrorAction (ea)
+- ErrorVariable (ev)
+- InformationAction (infa)
+- InformationVariable (iv)
+- OutVariable (ov)
+- OutBuffer (ob)
+- PipelineVariable (pv)
+- Verbose (vb)
+- WarningAction (wa)
+- WarningVariable (wv)
 
 The risk mitigation parameters are:
 
-* WhatIf (wi)
-* Confirm (cf)
+- WhatIf (wi)
+- Confirm (cf)
 
 For more information about preference variables, type: help
 about_Preference_Variables
@@ -127,7 +126,7 @@ Stores error messages about the command in the specified variable and in the
 $Error automatic variable. For more information, type the following command:
 
 ```powershell
-get-help about_Automatic_Variables
+Get-Help about_Automatic_Variables
 ```
 
 By default, new error messages overwrite error messages that are already
@@ -140,6 +139,7 @@ errors in it:
 ```powershell
 Get-Process -Id 6 -ErrorVariable a
 ```
+
 The following command adds any error messages to the $a variable:
 
 ```powershell
@@ -188,7 +188,7 @@ Valid values:
 
 - Suspend: Automatically suspends a workflow job after a Write-Information
   command is carried out, to allow users to see the messages before
-  continuing. The workflow can be resumed at the user’s discretion.
+  continuing. The workflow can be resumed at the user's discretion.
 
 - SilentlyContinue: No effect. The informational messages are not (Default)
   displayed, and the script continues without interruption.
@@ -275,9 +275,9 @@ that the results should be displayed as "Left range member * Right range
 member = product".
 
 ```powershell
-1..10 | Foreach-Object -PipelineVariable Left -Process { $_ } |
-  Foreach-Object -PV Right -Process { 1..10 } |
-  Foreach-Object -Process { "$Left * $Right = " + ($Left*$Right) }
+1..10 | ForEach-Object -PipelineVariable Left -Process { $_ } |
+  ForEach-Object -PipelineVariable Right -Process { 1..10 } |
+  ForEach-Object -Process { "$Left * $Right = " + ($Left*$Right) }
 ```
 
 ```output

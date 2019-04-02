@@ -17,14 +17,14 @@ Gets the aliases for the current session.
 
 ### Default (Default)
 
-```powershell
+```
 Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>]
  [<CommonParameters>]
 ```
 
 ### Definition
 
-```powershell
+```
 Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
  [<CommonParameters>]
 ```

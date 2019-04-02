@@ -87,7 +87,7 @@ If the session is still disconnected, **Receive-PSSession** connects to the sess
 
 You can use a **Receive-PSSession** in addition to or instead of a Connect-PSSession command.
 **Receive-PSSession** can connect to any disconnected or reconnected session.
-These includes those that were started in other sessions or on other computers.
+These include those that were started in other sessions or on other computers.
 
 **Receive-PSSession** works on **PSSessions** that were disconnected intentionally, such as by using the Disconnect-PSSession cmdlet or the *InDisconnectedSession* parameter of the Invoke-Command cmdlet, or unintentionally, such as by a network interruption.
 
@@ -317,7 +317,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### Authentication
+### -Authentication
 
 Specifies the mechanism that is used to authenticate the credentials of the user in the command to
 reconnect to the disconnected session. The acceptable values for this parameter are:
@@ -837,8 +837,7 @@ object. Otherwise, it returns objects that represent that command results.
   in the MSDN library.
 
   For more information about the values of the **Availability** property of sessions, see
-  [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability)
-  in the MSDN library.
+  [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability).
 
 ## RELATED LINKS
 

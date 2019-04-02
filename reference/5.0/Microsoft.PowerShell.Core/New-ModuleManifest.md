@@ -755,8 +755,8 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 
-Specifies the minimum version of Windows PowerShell that will work with this module. For example,
-you can enter 1.0, 2.0, or 3.0 as the value of this parameter.
+Specifies the minimum version of Windows PowerShell that works with this module.
+For example, you can enter 1.0, 2.0, or 3.0 as the value of this parameter.
 
 ```yaml
 Type: Version
