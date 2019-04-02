@@ -1,12 +1,12 @@
 ---
-ms.date:  02/25/2019
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-Help Version:  6.0
-Download Help Link:  http://Please-enter-FwLink-manually
-Module Guid:  00000000-0000-0000-0000-000000000000
-Module Name:  About
+ms.date: 02/25/2019
+schema: 2.0.0
+locale: en-us
+keywords: powershell,cmdlet
+Help Version: 6.0
+Download Help Link: http://Please-enter-FwLink-manually
+Module Guid: 00000000-0000-0000-0000-000000000000
+Module Name: About
 ---
 # About Module
 
@@ -104,7 +104,7 @@ Describes a language command you can use to run statements based on a conditiona
 Describes a language command you can use to traverse all the items in a collection of items.
 
 ### [about_Format.ps1xml](about_Format.ps1xml.md)
-The `Format.ps1xml` files in PowerShell define the default display of objects in the PowerShell console. You can create your own `Format.ps1xml` files to change the display of objects or to define default displays for new object types that you create in PowerShell.
+The `Format.ps1xml` files in PowerShell define the default display of objects in the PowerShell console.
 
 ### [about_Function_Provider](about_Function_Provider.md)
 Describes the features of the Function provider.
@@ -128,7 +128,7 @@ Describes the attribute that makes a function work like a compiled cmdlet.
 Describes an attribute that reports the type of object that the function returns.
 
 ### [about_Group_Policy_Settings](about_Group_Policy_Settings.md)
-Describes the Group Policy settings for PowerShell
+Describes the Group Policy settings for PowerShell.
 
 ### [about_Hash_Tables](about_Hash_Tables.md)
 Describes how to create, use, and sort hash tables in PowerShell.
@@ -182,7 +182,7 @@ Explains how to create objects in PowerShell.
 Provides essential information about objects in PowerShell.
 
 ### [about_Operator_Precedence](about_Operator_Precedence.md)
-Lists the PowerShell operators in precedence order.  [This topic was contributed by Kirk Munro, a PowerShell MVP from Ottawa, Ontario]
+Lists the PowerShell operators in precedence order.
 
 ### [about_Operators](about_Operators.md)
 Describes the operators that are supported by PowerShell.
@@ -200,7 +200,7 @@ Describes how to set custom default values for the parameters of cmdlets and adv
 Describes how PowerShell parses commands.
 
 ### [about_Path_Syntax](about_Path_Syntax.md)
-Describes the full and relative path name formats in  PowerShell.
+Describes the full and relative path name formats in PowerShell.
 
 ### [about_pipelines](about_pipelines.md)
 Combining commands into pipelines in the PowerShell
