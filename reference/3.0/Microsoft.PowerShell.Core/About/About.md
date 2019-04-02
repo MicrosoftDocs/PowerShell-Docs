@@ -191,7 +191,7 @@ Explains how to use the PowerShell.exe command-line tool. Displays the syntax an
 Explains how to use the PowerShell_Ise.exe command-line tool.
 
 ### [about_Preference_Variables](about_Preference_Variables.md)
-Variables that customize the behavior of PowerShell
+Variables that customize the behavior of PowerShell.
 
 ### [about_Profiles](about_Profiles.md)
 Describes how to create and use a PowerShell profile.
@@ -233,7 +233,7 @@ Describes regular expressions in PowerShell.
 Describes how to run remote commands in PowerShell.
 
 ### [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
-Explains how to disconnect from and reconnect to a PSSession
+Explains how to disconnect from and reconnect to a PSSession.
 
 ### [about_Remote_FAQ](about_Remote_FAQ.md)
 Contains questions and answers about running remote commands in PowerShell.

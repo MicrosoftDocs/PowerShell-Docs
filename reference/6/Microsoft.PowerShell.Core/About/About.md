@@ -200,7 +200,7 @@ Describes how PowerShell parses commands.
 Describes the full and relative path name formats in PowerShell.
 
 ### [about_pipelines](about_pipelines.md)
-Combining commands into pipelines in the PowerShell
+Combining commands into pipelines in the PowerShell.
 
 ### [about_PowerShell_Config](about_PowerShell_Config.md)
 Configuration files for PowerShell Core, replacing Registry configuration.
@@ -209,7 +209,7 @@ Configuration files for PowerShell Core, replacing Registry configuration.
 Different editions of PowerShell run on different underlying runtimes.
 
 ### [about_Preference_Variables](about_Preference_Variables.md)
-Variables that customize the behavior of PowerShell
+Variables that customize the behavior of PowerShell.
 
 ### [about_Profiles](about_Profiles.md)
 Describes how to create and use a PowerShell profile.
@@ -254,7 +254,7 @@ Describes regular expressions in PowerShell.
 Describes how to run remote commands in PowerShell.
 
 ### [about_Remote_Disconnected_Sessions](about_Remote_Disconnected_Sessions.md)
-Explains how to disconnect from and reconnect to a PSSession
+Explains how to disconnect from and reconnect to a PSSession.
 
 ### [about_Remote_FAQ](about_Remote_FAQ.md)
 Contains questions and answers about running remote commands in PowerShell.
