@@ -188,7 +188,7 @@ Describes how PowerShell parses commands.
 Describes the full and relative path name formats in PowerShell.
 
 ### [about_pipelines](about_pipelines.md)
-Combining commands into pipelines in the PowerShell
+Combining commands into pipelines in the PowerShell.
 
 ### [about_PowerShell_exe](about_PowerShell_exe.md)
 Explains how to use the PowerShell.exe command-line tool. Displays the syntax and describes the command-line switches.
