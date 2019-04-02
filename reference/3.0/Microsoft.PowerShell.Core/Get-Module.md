@@ -220,7 +220,7 @@ PS> Get-Content $m.Path
     GUID               = "{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
     Author             = "Microsoft Corporation"
     CompanyName        = "Microsoft Corporation"
-    Copyright          = "© Microsoft Corporation. All rights reserved."
+    Copyright          = "Microsoft Corporation. All rights reserved."
     ModuleVersion      = "1.0.0.0"
     Description        = "Windows PowerShell File Transfer Module"
     PowerShellVersion  = "2.0"

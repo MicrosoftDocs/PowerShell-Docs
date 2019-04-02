@@ -381,7 +381,7 @@ As a result, if the remote computer specified by the **ConnectionURI** parameter
 ### Example 14
 
 ```
-PS> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck –SkipRevocationCheck
+PS> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 PS> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-Hotfix } -SessionOption $so -Credential server01\user01
 ```
 

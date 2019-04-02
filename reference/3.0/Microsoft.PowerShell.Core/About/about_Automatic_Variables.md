@@ -270,7 +270,7 @@ can use it in scripts like the following one, which would not work if `$null`
 were ignored.
 
 ```powershell
-$calendar = @($null, $null, “Meeting”, $null, $null, “Team Lunch”, $null)
+$calendar = @($null, $null, "Meeting", $null, $null, "Team Lunch", $null)
 $days = "Sunday","Monday","Tuesday","Wednesday","Thursday",
         "Friday","Saturday"
 $currentDay = 0

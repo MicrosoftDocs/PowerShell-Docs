@@ -13,7 +13,7 @@ Describes the Parallel keyword, which runs the activities in a workflow in paral
 
 ## LONG DESCRIPTION
 
-The Parallel keyword runs workflow activities in parallel. This keyword is valid only in  Windows PowerShell® Workflow.
+The Parallel keyword runs workflow activities in parallel. This keyword is valid only in  Windows PowerShell  Workflow.
 
 ### SYNTAX
 

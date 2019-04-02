@@ -45,29 +45,19 @@ Beginning in Windows PowerShell 3.0, Get-Alias displays non-hyphenated alias nam
 
 ```
 PS C:\> Get-Alias
+
 CommandType     Name
-
 -----------     ----
-
 Alias           % -> ForEach-Object
-
 Alias           ? -> Where-Object
-
 Alias           ac -> Add-Content
-
 Alias           asnp -> Add-PSSnapin
-
 Alias           cat -> Get-Content
-
 Alias           cd -> Set-Location
-
 Alias           chdir -> Set-Location
-
 Alias           clc -> Clear-Content
-
 Alias           clear -> Clear-Host
-
-Alias           clhy -> Clear-History â€¦
+Alias           clhy -> Clear-History
 ```
 
 This command gets all aliases in the current session.
