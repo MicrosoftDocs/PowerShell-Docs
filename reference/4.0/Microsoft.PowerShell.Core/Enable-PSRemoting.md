@@ -48,9 +48,11 @@ The **Enable-PSRemoting** cmdlet performs the following operations:
 
 To run this cmdlet, start Windows PowerShell with the "Run as administrator" option.
 
-CAUTION: On systems that have both Windows PowerShell 3.0 and the Windows PowerShell 2.0 engine, do not use Windows PowerShell 2.0 to run the **Enable-PSRemoting** and Disable-PSRemoting cmdlets.
-The commands might appear to succeed, but the remoting is not configured correctly.
-Remote commands, and later attempts to enable and disable remoting, are likely to fail.
+> [!CAUTION]
+> On systems that have both Windows PowerShell 3.0 and the Windows PowerShell 2.0 engine, do not use
+> Windows PowerShell 2.0 to run the **Enable-PSRemoting** and Disable-PSRemoting cmdlets. The commands
+> might appear to succeed, but the remoting is not configured correctly. Remote commands, and later
+> attempts to enable and disable remoting, are likely to fail.
 
 ## EXAMPLES
 
@@ -71,7 +73,7 @@ Enable-PSRemoting -Force
 This command configures the computer to receive remote commands.
 It uses the *Force* parameter to suppress the user prompts.
 
-## Example 3: Allow remote access on clients
+### Example 3: Allow remote access on clients
 
 ```powershell
 Enable-PSRemoting -SkipNetworkProfileCheck -Force
