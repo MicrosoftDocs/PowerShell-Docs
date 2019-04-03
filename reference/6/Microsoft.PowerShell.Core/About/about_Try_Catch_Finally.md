@@ -175,7 +175,7 @@ block for the derived class before the `Catch` block for the general class.
 ### ACCESSING EXCEPTION INFORMATION
 
 Within a `Catch` block, the current error can be ascertained using `$_`, which
-is an alias for `$PSItem`, and the object is of type **ErrorRecord**.
+is also known as `$PSItem`, and the object is of type **ErrorRecord**.
 
 ```powershell
 try { NonsenseString }
@@ -194,8 +194,8 @@ script file, or operable program. Check the spelling of the name, or if a path
 was included, verify that the path is correct and try again.
 ```
 
-There are additional properties that can be accessed, such as `ScriptStackTrace`,
-`Exception`, and `ErrorDetails`.  For example, if we change the script to the
+There are additional properties that can be accessed, such as **ScriptStackTrace**,
+**Exception**, and **ErrorDetails**.  For example, if we change the script to the
 following:
 
 ```powershell
