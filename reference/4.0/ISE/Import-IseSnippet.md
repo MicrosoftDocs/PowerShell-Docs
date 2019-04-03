@@ -10,7 +10,6 @@ title:  Import-IseSnippet
 # Import-IseSnippet
 
 ## SYNOPSIS
-
 Imports ISE snippets into the current session
 
 ## SYNTAX
@@ -31,21 +30,21 @@ Import-IseSnippet [-Recurse] -Module <String> [-ListAvailable] [<CommonParameter
 
 The **Import-IseSnippet** cmdlet imports reusable text "snippets" from a module or a directory into the current session.
 The snippets are immediately available for use in Windows PowerShell ISE.
-This cmdlet works only in Windows PowerShell® Integrated Scripting Environment (ISE).
+This cmdlet works only in Windows PowerShell Integrated Scripting Environment (ISE).
 
 To view and use the imported snippets, from the Windows PowerShell ISEEdit menu, click Start Snippets or press Ctrl + J.
 
 Imported snippets are available only in the current session.
 To import the snippets into all Windows PowerShell ISE sessions, add an **Import-IseSnippet** command to your Windows PowerShell profile or copy the snippet files to your local snippets directory ($home\Documents\WindowsPowershell\Snippets).
 
-To be imported, the snippets must be properly formatted in the snippet XML for Windows PowerShell ISE snippets and saved in Snippet.ps1xml files.
+To import snippets, they must be properly formatted in the snippet XML for Windows PowerShell ISE snippets and saved in Snippet.ps1xml files.
 To create eligible snippets, use the New-IseSnippet cmdlet.
 New-IseSnippet creates a \<SnippetTitle\>.Snippets.ps1xml file in the $home\Documents\WindowsPowerShell\Snippets directory.
 You can move or copy the snippets to the Snippets directory of a Windows PowerShell module, or to any other directory.
 
-NOTE: The Get-IseSnippet cmdlet, which gets user-created snippets in the local snippets directory, does not get imported snippets.
+The Get-IseSnippet cmdlet, which gets user-created snippets in the local snippets directory, does not get imported snippets.
 
-This cmdlet is introduced in Windows PowerShell 3.0.
+This cmdlet was introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
@@ -200,3 +199,5 @@ This cmdlet does not generate output.
 [Get-IseSnippet](Get-IseSnippet.md)
 
 [New-IseSnippet](New-IseSnippet.md)
+
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)

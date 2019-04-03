@@ -90,9 +90,9 @@ You can also read about changes to Windows PowerShell 5.0 in
 - New cmdlets in the Microsoft.PowerShell.Utility module, Get-Runspace,
   Debug-Runspace, Get-RunspaceDebug, Enable-RunspaceDebug, and
   Disable-RunspaceDebug, let you set debug options on a runspace, and start
-  and stop debugging on a runspace. For debugging arbitrary runspaces—that is,
+  and stop debugging on a runspace. For debugging arbitrary runspaces - that is,
   runspaces that are not the default runspace for a Windows PowerShell console
-  or Windows PowerShell ISE session—Windows PowerShell lets you set
+  or Windows PowerShell ISE session - Windows PowerShell lets you set
   breakpoints in a script, and have added breakpoints stop the script from
   running until you can attach a debugger to debug the runspace script. Nested
   debugging support for arbitrary runspaces has been added to the Windows
@@ -175,7 +175,7 @@ You can also read about changes to Windows PowerShell 5.0 in
 - Windows PowerShell language enhancements let you define Windows PowerShell
   Desired State Configuration (DSC) resources by using classes.
   Import-DscResource is now a true dynamic keyword; Windows PowerShell parses
-  the specified module’s root module, searching for classes that contain the
+  the specified module's root module, searching for classes that contain the
   DscResource attribute. You can now use classes to define DSC resources, in
   which neither a MOF file nor a DSCResource subfolder in the module folder is
   required. A Windows PowerShell module file can contain multiple DSC resource
@@ -225,7 +225,7 @@ You can also read about changes to Windows PowerShell 5.0 in
 
 - Partial configurations are now allowed in Windows PowerShell 5.0. You can
   deliver configuration documents to a node in fragments. For a node to
-  receive multiple fragments of a configuration document, the node’s Local
+  receive multiple fragments of a configuration document, the node's Local
   Configuration Manager must be first set to specify the expected fragments.
 
 - Cross-computer synchronization is new in DSC in Windows PowerShell 5.0. By
@@ -233,7 +233,7 @@ You can also read about changes to Windows PowerShell 5.0 in
   WaitForSome), you can now specify dependencies across computers during
   configuration runs, without external orchestrations. These resources provide
   node-to-node synchronization by using CIM connections over the WS-Man
-  protocol. A configuration can wait for another computer’s specific resource
+  protocol. A configuration can wait for another computer's specific resource
   state to change.
 
 - Just Enough Administration (JEA), a new delegation security feature,
@@ -265,7 +265,7 @@ You can also read about changes to Windows PowerShell 5.0 in
 
 - You can now edit remote Windows PowerShell scripts and files in a local copy
   of Windows PowerShell ISE, by running Enter-PSSession to start a remote
-  session on the computer that’s storing the files you want to edit, and then
+  session on the computer that's storing the files you want to edit, and then
   running PSEdit <path and file name on the remote computer>. This feature eases
   editing Windows PowerShell files that are stored on the Server Core
   installation option of Windows Server, where Windows PowerShell ISE cannot

@@ -8,8 +8,7 @@ title:  about_Foreach Parallel
 # About Foreach-Parallel
 
 ## SHORT DESCRIPTION
-
-Describes the ForEach -Parallel language construct in  Windows PowerShell® Workflow
+Describes the ForEach -Parallel language construct in Windows PowerShell Workflow
 
 ## LONG DESCRIPTION
 
@@ -83,12 +82,12 @@ workflow Test-Workflow
 
 ## SEE ALSO
 
-Writing a Script Workflow (http://go.microsoft.com/fwlink/?LinkId=262872)
+[Writing a Script Workflow](http://go.microsoft.com/fwlink/?LinkId=262872)
 
-about_ForEach
+[about_ForEach](../../Microsoft.PowerShell.Core/About/about_ForEach.md)
 
-about_Language_Keywords
+[about_Language_Keywords](../../Microsoft.PowerShell.Core/About/about_Language_Keywords.md)
 
-about_Parallel
+[about_Parallel](about_Parallel.md)
 
-about_Workflows
+[about_Workflows](about_Workflows.md)

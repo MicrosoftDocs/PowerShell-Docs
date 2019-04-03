@@ -54,8 +54,8 @@ single command just so you pass no more than one value for each parameter.
 ## SPLATTING WITH HASH TABLES
 
 Use a hash table to splat parameter name and value pairs. You can use this
-format for all parameter types, including positional and switch parameters. 
-Positional parameters must be assigned by name. 
+format for all parameter types, including positional and switch parameters.
+Positional parameters must be assigned by name.
 
 The following examples compare two `Copy-Item` commands that copy the Test.txt
 file to the Test2.txt file in the same directory.
@@ -86,7 +86,7 @@ Copy-Item @HashArguments
 
 Note: In the first command, the At symbol (@) indicates a hash table, not a
 splatted value. The syntax for hash tables in PowerShell is:
-@{\<name\>=\<value\>; \<name\>=\<value\>; …}*
+`@{\<name\>=\<value\>; \<name\>=\<value\>; ...}*`
 
 ## SPLATTING WITH ARRAYS
 
@@ -271,7 +271,7 @@ FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell
                      OriginalFilename: PowerShell.EXE.MUI
                      FileVersion:      10.0.14393.0 (rs1_release.160715-1616
                      FileDescription:  Windows PowerShell
-                     Product:          Microsoft® Windows® Operating System
+                     Product:          Microsoft Windows Operating System
                      ProductVersion:   10.0.14393.0
                      Debug:            False
                      Patched:          False

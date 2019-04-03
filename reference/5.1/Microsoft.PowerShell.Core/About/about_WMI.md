@@ -16,11 +16,11 @@ manageable components of the modern enterprise.
 
 ## LONG DESCRIPTION
 
-Windows Management Instrumentation (WMI) is Microsoft’s implementation of
+Windows Management Instrumentation (WMI) is Microsoft's implementation of
 Web-Based Enterprise Management (WBEM), the industry standard.
 
 Classic WMI uses DCOM to communicate with networked devices to manage remote
-systems. Windows PowerShell® 3.0 introduces a CIM provider model that uses
+systems. Windows PowerShell 3.0 introduces a CIM provider model that uses
 WinRM to remove the dependency on DCOM. This CIM provider model also uses new
 WMI provider APIs that enable developers to write Windows PowerShell cmdlets
 in native code (C\+\+).

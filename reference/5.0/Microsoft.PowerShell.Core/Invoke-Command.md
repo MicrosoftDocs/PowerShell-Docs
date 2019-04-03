@@ -7,35 +7,39 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821493
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Invoke-Command
 ---
-
 # Invoke-Command
 
 ## SYNOPSIS
+
 Runs commands on local and remote computers.
 
 ## SYNTAX
 
 ### InProcess (Default)
+
 ```
 Invoke-Command [-ScriptBlock] <ScriptBlock> [-NoNewScope] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
  [<CommonParameters>]
 ```
 
-### Session
-```
-Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- [<CommonParameters>]
-```
-
 ### FilePathRunspace
+
 ```
 Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
  [-JobName <String>] [-FilePath] <String> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
  [<CommonParameters>]
 ```
 
+### Session
+
+```
+Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
+ [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
+ [<CommonParameters>]
+```
+
 ### ComputerName
+
 ```
 Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port <Int32>] [-UseSSL]
  [-ConfigurationName <String>] [-ApplicationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
@@ -46,6 +50,7 @@ Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port 
 ```
 
 ### FilePathComputerName
+
 ```
 Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port <Int32>] [-UseSSL]
  [-ConfigurationName <String>] [-ApplicationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
@@ -92,6 +97,7 @@ Invoke-Command -Credential <PSCredential> [-ThrottleLimit <Int32>] [-AsJob] [-Hi
 ```
 
 ### Uri
+
 ```
 Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
  [[-ConnectionUri] <Uri[]>] [-AsJob] [-InDisconnectedSession] [-HideComputerName] [-JobName <String>]
@@ -101,6 +107,7 @@ Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-Thro
 ```
 
 ## DESCRIPTION
+
 The **Invoke-Command** cmdlet runs commands on a local or remote computer and returns all output from the commands, including errors.
 By using a single **Invoke-Command** command, you can run commands on multiple computers.
 
@@ -387,8 +394,8 @@ As a result, if the remote computer specified by *ConnectionURI* returns a redir
 
 ### Example 14: Use a session option
 ```
-PS C:\> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck –SkipRevocationCheck
-PS C:\> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
+PS> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
+PS> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-Hotfix } -SessionOption $so -Credential server01\user01
 ```
 
 This example shows how to create and use a *SessionOption* parameter.

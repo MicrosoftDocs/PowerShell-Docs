@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/p/?linkid=289587
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Get-Module
 ---
-
 # Get-Module
 
 ## SYNOPSIS
@@ -173,7 +172,7 @@ This command gets the properties of the **PSModuleInfo** object that `Get-Module
 There is one object for each module file.
 
 You can use the properties to format and filter the module objects.
-For more information about the properties, see [PSModuleInfo Properties](http://go.microsoft.com/fwlink/?LinkId=143624) in the MSDN library.
+For more information about the properties, see [PSModuleInfo Properties](/dotnet/api/system.management.automation.psmoduleinfo).
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
 
@@ -214,7 +213,7 @@ Name         ModuleType Path
 BitsTransfer   Manifest C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsTransfer\BitsTransfer.psd1
 ```
 
-This command gets all module files (imported and available) and groups them by module name.
+This command gets all module files, both imported and available, and then groups them by module name.
 This lets you see the module files that each script is exporting.
 
 ### Example 7: Display the contents of a module manifest
@@ -238,7 +237,7 @@ PS> Get-Content $m.Path
     GUID               = "{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
     Author             = "Microsoft Corporation"
     CompanyName        = "Microsoft Corporation"
-    Copyright          = "© Microsoft Corporation. All rights reserved."
+    Copyright          = "Microsoft Corporation. All rights reserved."
     ModuleVersion      = "1.0.0.0"
     Description        = "Windows PowerShell File Transfer Module"
     PowerShellVersion  = "2.0"
@@ -354,7 +353,7 @@ The default value is the namespace of the Module Discovery WMI provider.
 
 Use this parameter to get CIM modules from computers and devices that are not running a Windows operating system.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: String
@@ -373,9 +372,9 @@ Accept wildcard characters: False
 Specifies an alternate location for CIM modules.
 The default value is the resource URI of the Module Discovery WMI provider on the remote computer.
 
-Use this parameter to get CIM modules from computers and devices that are not running a Windows operating system.
+Use this parameter to get CIM modules from computers and devices that are not running the Windows operating system.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: Uri
@@ -395,9 +394,9 @@ Specifies a CIM session on the remote computer.
 Enter a variable that contains the CIM session or a command that gets the CIM session, such as a [Get-CimSession](https://docs.microsoft.com/powershell/module/cimcmdlets/get-cimsession) command.
 
 `Get-Module` uses the CIM session connection to get modules from the remote computer.
-When you import the module (by using the `Import-Module` cmdlet) and use the commands from the imported module in the current session, the commands actually run on the remote computer.
+When you import the module by using the `Import-Module` cmdlet and use the commands from the imported module in the current session, the commands actually run on the remote computer.
 
-You can use this parameter to get modules from computers and devices that are not running a Windows operating system, and Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
+You can use this parameter to get modules from computers and devices that are not running the Windows operating system, and computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
 
 The **CimSession** parameter gets all modules in the **CIMSession**.
 However, you can import only CIM-based and Cmdlet Definition XML (CDXML)-based modules.
@@ -416,7 +415,8 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedName
 
-Gets modules with names that are specified in the form of **ModuleSpecification** objects (described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290) in the MSDN library).
+Specifies names of modules in the form of **ModuleSpecification** objects.
+These objects are described in the Remarks section of [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290) in the MSDN library.
 For example, the **FullyQualifiedName** parameter accepts a module name that is specified in the following formats:
 
 - @{ModuleName = "modulename"; ModuleVersion = "version_number"}
@@ -424,7 +424,7 @@ For example, the **FullyQualifiedName** parameter accepts a module name that is 
 
 **ModuleName** and **ModuleVersion** are required, but **Guid** is optional.
 
-You cannot specify the **FullyQualifiedName** parameter in the same command as a **Name** parameter; the two parameters are mutually exclusive.
+You cannot specify the **FullyQualifiedName** parameter in the same command as a **Name** parameter.
 
 ```yaml
 Type: ModuleSpecification[]
@@ -433,7 +433,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: All imported or available modules.
+Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -471,12 +471,13 @@ Accept wildcard characters: False
 
 ### -Name
 
-Gets only modules with the specified names or name patterns.
-Wildcards are permitted.
+Specifies names or name patterns of modules that this cmdlet gets.
+Wildcard characters are permitted.
 You can also pipe the names to `Get-Module`.
-You cannot specify the **FullyQualifiedName** parameter in the same command as a **Name** parameter; the two parameters are mutually exclusive.
+You cannot specify the **FullyQualifiedName** parameter in the same command as a **Name** parameter.
 
-The **Name** parameter cannot accept a module GUID as a value; to return modules by specifying a GUID, use the **FullyQualifiedName** parameter instead of the **Name** parameter.
+**Name** cannot accept a module GUID as a value.
+To return modules by specifying a GUID, use **FullyQualifiedName** instead.
 
 ```yaml
 Type: String[]
@@ -485,7 +486,7 @@ Aliases:
 
 Required: False
 Position: 0
-Default value: All imported or available modules.
+Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
@@ -499,7 +500,7 @@ When the session is connected to a remote computer, the **ListAvailable** parame
 
 A `Get-Module` command with the **PSSession** parameter is equivalent to using the `Invoke-Command` cmdlet to run a `Get-Module -ListAvailable` command in a **PSSession**.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: PSSession
@@ -523,7 +524,7 @@ This parameter is designed for development and testing scenarios in which the co
 
 When the **Refresh** parameter is used in a command, the **ListAvailable** parameter is required.
 
-This parameter is introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
 Type: SwitchParameter
@@ -545,21 +546,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe module names to `Get-Module`.
+You can pipe module names to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSModuleInfo
 
-`Get-Module` returns objects that represent modules.
-When you use the **ListAvailable** parameter, `Get-Module` returns a **ModuleInfoGrouping** object, which is a type of **PSModuleInfo** object that has the same properties and methods.
+This cmdlet returns objects that represent modules.
+When you specify the **ListAvailable** parameter, `Get-Module` returns a **ModuleInfoGrouping** object, which is a type of **PSModuleInfo** object that has the same properties and methods.
 
 ## NOTES
 
 - Beginning in Windows PowerShell 3.0, the core commands that are included in Windows PowerShell are packaged in modules. The exception is **Microsoft.PowerShell.Core**, which is a snap-in (**PSSnapin**). By default, only the **Microsoft.PowerShell.Core** snap-in is added to the session. Modules are imported automatically on first use and you can use the `Import-Module` cmdlet to import them.
 - Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins (**PSSnapins**). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote sessions, such as those started by the `New-PSSession` cmdlet, are older-style sessions that include core snap-ins.
 
-  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
+  For information about the **CreateDefault2** method that creates newer-style sessions with core modules, see [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2) in the MSDN library.
 
 - `Get-Module` only gets modules in locations that are stored in the value of the **PSModulePath** environment variable ($env:PSModulePath). You can use the **Path** parameter of the `Import-Module` cmdlet to import modules in other locations, but you cannot use the `Get-Module` cmdlet to get them.
 - Also, beginning in Windows PowerShell 3.0, new properties have been added to the object that `Get-Module` returns that make it easier to learn about modules even before they are imported. All properties are populated before importing, including the **ExportedCommands**, **ExportedCmdlets** and **ExportedFunctions** properties that list the commands that the module exports.
@@ -569,9 +570,10 @@ When you use the **ListAvailable** parameter, `Get-Module` returns a **ModuleInf
 
 - To use the CIM session feature, the remote computer must have WS-Management remoting and Windows Management Instrumentation (WMI), which is the Microsoft implementation of the Common Information Model (CIM) standard. The computer must also have the Module Discovery WMI provider or an alternate WMI provider that has the same basic features.
 
-  You can use the CIM session feature on computers that are not running a Windows operating system and on Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
+  You can use the CIM session feature on computers that are not running the Windows operating system and on Windows computers that have Windows PowerShell, but do not have Windows PowerShell remoting enabled.
 
-  You can also use the CIM parameters to get CIM modules from computers that have Windows PowerShell remoting enabled, including the local computer.
+  You can also use the CIM parameters to get CIM modules from computers that have Windows PowerShell remoting enabled.
+This includes the local computer.
 When you create a CIM session on the local computer, Windows PowerShell uses DCOM, instead of WMI, to create the session.
 
 ## RELATED LINKS

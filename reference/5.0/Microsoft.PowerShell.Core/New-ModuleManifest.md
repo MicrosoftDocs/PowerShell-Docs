@@ -7,7 +7,6 @@ online version:  http://go.microsoft.com/fwlink/?LinkId=821496
 external help file:  System.Management.Automation.dll-Help.xml
 title:  New-ModuleManifest
 ---
-
 # New-ModuleManifest
 
 ## SYNOPSIS
@@ -242,7 +241,7 @@ Author                      : Microsoft Corporation
 AccessMode                  : ReadWrite
 ClrVersion                  : 4.0
 CompanyName                 : Microsoft Corporation
-Copyright                   : © Microsoft Corporation. All rights reserved.
+Copyright                   :  Microsoft Corporation. All rights reserved.
 DotNetFrameworkVersion      :
 ExportedFunctions           : {}
 ExportedCmdlets             : {[Get-WinEvent, Get-WinEvent], [Get-Counter, Get-Counter], [Import-Counter,
@@ -756,8 +755,8 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 
-Specifies the minimum version of Windows PowerShell that will work with this module. For example,
-you can enter 1.0, 2.0, or 3.0 as the value of this parameter.
+Specifies the minimum version of Windows PowerShell that works with this module.
+For example, you can enter 1.0, 2.0, or 3.0 as the value of this parameter.
 
 ```yaml
 Type: Version

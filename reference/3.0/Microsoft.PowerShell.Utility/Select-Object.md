@@ -71,7 +71,7 @@ InternalName:     explorer
 OriginalFilename: EXPLORER.EXE.MUI
 FileVersion:      10.0.17134.1 (WinBuild.160101.0800)
 FileDescription:  Windows Explorer
-Product:          Microsoft® Windows® Operating System
+Product:          Microsoft Windows Operating System
 ProductVersion:   10.0.17134.1
 ...
 ```
