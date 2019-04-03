@@ -1,15 +1,13 @@
 ---
-ms.date:  12/01/2017
+ms.date:  01/18/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Remote_Troubleshooting
 ---
-
 # About Remote Troubleshooting
 
 ## SHORT DESCRIPTION
-
 Describes how to troubleshoot remote operations in PowerShell.
 
 ## LONG DESCRIPTION

@@ -1,11 +1,12 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821852
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Select-Object
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821852
+schema: 2.0.0
+title: Select-Object
 ---
 # Select-Object
 
@@ -46,7 +47,7 @@ To select object properties, use the **Property** parameter.
 When you select properties, `Select-Object` returns new objects that have only the specified properties.
 
 Beginning in Windows PowerShell 3.0, `Select-Object` includes an optimization feature that prevents commands from creating and processing objects that are not used.
-When you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, Windows PowerShell stops the command that generates the objects as soon as the selected number of objects is generated, even when the command that generates the objects appears before the `Select-Object` command in the pipeline.
+When you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, PowerShell stops the command that generates the objects as soon as the selected number of objects is generated, even when the command that generates the objects appears before the `Select-Object` command in the pipeline.
 To turn off this optimizing behavior, use the **Wait** parameter.
 
 ## EXAMPLES
@@ -190,7 +191,7 @@ The command uses the **ReadOnly** dynamic parameter of the `Get-ChildItem` for F
 It uses a pipeline operator (|) to send the files to the `Rename-Item` cmdlet, which renames the file.
 It uses the **Passthru** parameter of `Rename-Item` to send the renamed files to the `Select-Object` cmdlet, which selects the first 5 for display.
 
-The **Wait** parameter of `Select-Object` prevents Windows PowerShell from stopping the `Get-ChildItem` cmdlet after it gets the first five read-only text files.
+The **Wait** parameter of `Select-Object` prevents PowerShell from stopping the `Get-ChildItem` cmdlet after it gets the first five read-only text files.
 Without this parameter, only the first five read-only files would be renamed.
 
 ### Example 9: Demonstrate the intricacies of the -ExpandProperty parameter
@@ -455,8 +456,8 @@ Accept wildcard characters: False
 ### -Wait
 
 Indicates that the cmdlet turns off optimization.
-Windows PowerShell runs commands in the order that they appear in the command pipeline and lets them generate all objects.
-By default, if you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, Windows PowerShell stops the command that generates the objects as soon as the selected number of objects is generated.
+PowerShell runs commands in the order that they appear in the command pipeline and lets them generate all objects.
+By default, if you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, PowerShell stops the command that generates the objects as soon as the selected number of objects is generated.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

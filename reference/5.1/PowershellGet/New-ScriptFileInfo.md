@@ -388,7 +388,7 @@ Accept wildcard characters: False
 
 ### -RequiredModules
 Specifies modules that must be in the global session state.
-If the required modules are not in the global session state, Windows PowerShell imports them.
+If the required modules are not in the global session state, PowerShell imports them.
 
 ```yaml
 Type: Object[]

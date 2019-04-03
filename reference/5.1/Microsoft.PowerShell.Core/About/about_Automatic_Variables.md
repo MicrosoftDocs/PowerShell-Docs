@@ -389,20 +389,20 @@ following command searches the conceptual Help topics for the word
 Select-String -Pattern Variable -Path $pshome\*.txt
 ```
 
-### $PSITEM
+### $PSItem
 
 Same as `$_`. Contains the current object in the pipeline object. You can use
 this variable in commands that perform an action on every object or on
 selected objects in a pipeline.
 
-### $PSSCRIPTROOT
+### $PSScriptRoot
 
 Contains the directory from which a script is being run.
 
 In PowerShell 2.0, this variable is valid only in script modules (.psm1).
 Beginning in PowerShell 3.0, it is valid in all scripts.
 
-### $PSSENDERINFO
+### $PSSenderInfo
 
 Contains information about the user who started the PSSession, including
 the user identity and the time zone of the originating computer. This
@@ -414,7 +414,7 @@ The `$PSSenderInfo` variable includes a user-configurable property,
 **ApplicationArguments** property, use the **ApplicationArguments** parameter
 of the `New-PSSessionOption` cmdlet.
 
-### $PSUICULTURE
+### $PSUICulture
 
 Contains the name of the user interface (UI) culture that is currently in use
 in the operating system. The UI culture determines which text strings are used
@@ -423,7 +423,7 @@ the **System.Globalization.CultureInfo.CurrentUICulture.Name** property of the
 system. To get the **System.Globalization.CultureInfo** object for the system,
 use the `Get-UICulture` cmdlet.
 
-### $PSVERSIONTABLE
+### $PSVersionTable
 
 Contains a read-only hash table that displays details about the version of
 PowerShell that is running in the current session. The table includes the
@@ -458,27 +458,27 @@ Contains a path object that represents the full path of the current directory.
 The **ReportErrorShow** variables are defined in PowerShell, but they are not
 implemented. `Get-Variable` gets them, but they do not contain valid data.
 
-- $REPORTERRORSHOWEXCEPTIONCLASS
-- $REPORTERRORSHOWINNEREXCEPTION
-- $REPORTERRORSHOWSOURCE
-- $REPORTERRORSHOWSTACKTRACE
+- `$REPORTERRORSHOWEXCEPTIONCLASS`
+- `$REPORTERRORSHOWINNEREXCEPTION`
+- `$REPORTERRORSHOWSOURCE`
+- `$REPORTERRORSHOWSTACKTRACE`
 
 ### $SENDER
 
 Contains the object that generated this event. This variable is populated
-only within the Action block of an event registration command. The value of
-this variable can also be found in the Sender property of the **PSEventArgs**
+only within the `Action` block of an event registration command. The value of
+this variable can also be found in the **Sender** property of the **PSEventArgs**
 object that `Get-Event` returns.
 
-### $SHELLID
+### $ShellId
 
 Contains the identifier of the current shell.
 
-### $STACKTRACE
+### $StackTrace
 
 Contains a stack trace for the most recent error.
 
-### $SWITCH
+### $switch
 
 Contains the enumerator (not the resulting values) of a [Switch](about_Switch.md)
 statement. The `$Switch` variable exists only while the `switch` statement is
@@ -489,15 +489,15 @@ Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
 [Using Enumerators](#using-enumerators).
 
-### $THIS
+### $this
 
 In a script block that defines a script property or script method, the
 `$This` variable refers to the object that is being extended.
 
-### $TRUE
+### $true
 
-Contains TRUE. You can use this variable to represent TRUE in commands and
-scripts.
+Contains **TRUE**. You can use this variable to represent **TRUE** in commands
+and scripts.
 
 ## Using Enumerators
 
@@ -757,7 +757,7 @@ Num has not changed: two
 
 Using the **Reset** method resets the current element in the collection. The
 following example loops through the first two elements **twice** because the
-**Reset** method is called. After the first two loops, the `if` statement
+**Reset** method is called. After the first two loops, the `If` statement
 fails and the loop iterates through all three elements normally.
 
 > [!IMPORTANT]

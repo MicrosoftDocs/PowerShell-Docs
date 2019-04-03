@@ -8,7 +8,6 @@ title:  about_Preference_Variables
 # About Preference Variables
 
 ## SHORT DESCRIPTION
-
 Variables that customize the behavior of PowerShell
 
 ## LONG DESCRIPTION
@@ -86,7 +85,7 @@ PS> $ConfirmPreference = "Medium"
 ```
 
 Like all variables, the values that you set are specific to the current
-PowerShell session. To make them effective in all Windows PowerShell session,
+PowerShell session. To make them effective in all PowerShell session,
 add them to your PowerShell profile. For more information, see about_Profiles.
 
 ### WORKING REMOTELY
@@ -94,7 +93,7 @@ add them to your PowerShell profile. For more information, see about_Profiles.
 When you run commands on a remote computer, the remote commands are subject
 only to the preferences set in the PowerShell client on the remote computer.
 For example, when you run a remote command, the value of the \$DebugPreference
-variable on remote computer determines how Windows PowerShell responds to
+variable on remote computer determines how PowerShell responds to
 debugging messages.
 
 For more information about remote commands, see
@@ -1144,7 +1143,7 @@ $PSSessionOption = New-PSSessionOption -NoCompression
 
 To use the \$PSSessionOption preference variable in every PowerShell session,
 add a New-PSSessionOption command that creates the \$PSSessionOption variable
-to your Windows PowerShell profile.
+to your PowerShell profile.
 
 You can also set custom options for a particular remote session. The options
 that you set take precedence over the system defaults and the value of the
