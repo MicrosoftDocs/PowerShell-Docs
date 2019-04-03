@@ -174,8 +174,8 @@ block for the derived class before the `Catch` block for the general class.
 
 ### ACCESSING EXCEPTION INFORMATION
 
-Within a `Catch` block, the current error can be ascertained using `$_`, which
-is also known as `$PSItem`, and the object is of type **ErrorRecord**.
+Within a `Catch` block, the current error can be accessed using `$_`, which
+is also known as `$PSItem`. The object is of type **ErrorRecord**.
 
 ```powershell
 try { NonsenseString }
