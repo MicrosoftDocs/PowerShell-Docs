@@ -67,22 +67,23 @@ MyNuget              NuGet            False      https://www.nuget.org/api/v2
 `Get-PackageSource` uses the **ProviderName** parameter to get package sources that are registered
 for the **NuGet** provider.
 
-### Example 3: Get all package sources for a specific provider
+### Example 3: Get sources from a package provider
 
-This command gets all package sources for a provider.
+This command uses a package provider to get package sources.
 
 ```powershell
-Get-PackageProvider -Name PowerShellGet | Get-PackageSource
+Get-PackageProvider -Name NuGet | Get-PackageSource
 ```
 
 ```Output
-Name            ProviderName     IsTrusted  Location
-----            ------------     ---------  --------
-PSGallery       PowerShellGet    False      https://www.powershellgallery.com/api/v2
+Name                 ProviderName     IsTrusted  Location
+----                 ------------     ---------  --------
+LocalPackages        NuGet            False      C:\LocalPkg\
+MyNuget              NuGet            False      https://www.nuget.org/api/v2
 ```
 
-`Get-PackageProvider` uses the **Name** parameter specify the provider name, **PowerShellGet**. The
-object is sent down the pipeline to `Get-PackageSource`.
+`Get-PackageProvider` uses the **Name** parameter specify the provider name, **NuGet**. The object
+is sent down the pipeline to `Get-PackageSource`.
 
 ## PARAMETERS
 
