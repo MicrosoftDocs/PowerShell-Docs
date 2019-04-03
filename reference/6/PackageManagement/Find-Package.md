@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 3/29/2019
+ms.date: 4/3/2019
 online version: http://go.microsoft.com/fwlink/?LinkID=517132
 schema: 2.0.0
 title: Find-Package
@@ -51,20 +51,22 @@ and `Get-PackageSource` display details about your providers.
 This command finds all available PowerShell module packages in a registered gallery. Use
 `Get-PackageProvider` to get the provider name.
 
-```powershell
-Find-Package -ProviderName PowerShellGet
+```
+Find-Package -ProviderName NuGet
 ```
 
 ```Output
-Name                  Version   Source       Summary
-----                  -------   ------       -------
-SpeculationControl    1.0.12    PSGallery    This module provides the ability to query the...
-AzureRM.profile       5.8.3     PSGallery    Microsoft Azure PowerShell - Profile credential...
-Azure.Storage         4.6.1     PSGallery    Microsoft Azure PowerShell - Storage service cmdlets...
-AzureRM.KeyVault      5.2.1     PSGallery    Microsoft Azure PowerShell - KeyVault service...
+Name               Version   Source     Summary
+----               -------   ------     -------
+NUnit              3.11.0    MyNuGet    NUnit is a unit-testing framework for all .NET langua...
+Newtonsoft.Json    12.0.1    MyNuGet    Json.NET is a popular high-performance JSON framework...
+EntityFramework    6.2.0     MyNuGet    Entity Framework is Microsoft's recommended data acce...
+MySql.Data         8.0.15    MyNuGet    MySql.Data.MySqlClient .Net Core Class Library
+bootstrap          4.3.1     MyNuGet    Bootstrap framework in CSS. Includes fonts and JavaSc...
+NuGet.Core         2.14.0    MyNuGet    NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` uses the **Provider** parameter to specify the provider **PowerShellGet**.
+`Find-Package` uses the **Provider** parameter to specify the provider **NuGet**.
 
 ### Example 2: Find a package from a package source
 
@@ -72,94 +74,96 @@ This command finds the newest version of a package from a specified package sour
 source isn't provided, `Find-Package` searches each installed package provider and its package
 sources. Use `Get-PackageSource` to get the source name.
 
-```powershell
-Find-Package -Name StorageDSC -Source PSGallery
+```
+Find-Package -Name NuGet.Core -Source MyNuGet
 ```
 
 ```Output
-Name          Version  Source      Summary
-----          -------  ------      -------
-StorageDsc    4.5.0.0  PSGallery   This module contains all resources related to PowerShell Storage 
+Name         Version   Source    Summary
+----         -------   ------    -------
+NuGet.Core   2.14.0    MyNuGet   NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` uses the **Name** parameter to specify the package name **StorageDSC**. The
-**Source** parameter specifies to search for the package in **PSGallery**.
+`Find-Package` uses the **Name** parameter to specify the package name **NuGet.Core**. The
+**Source** parameter specifies to search for the package in **MyNuGet**.
 
 ### Example 3: Find all versions of a package
 
 This command finds all available package versions from a specified provider.
 
-```powershell
-Find-Package -Name StorageDSC -ProviderName PowerShellGet -AllVersions
+```
+Find-Package -Name NuGet.Core -Source MyNuGet -AllVersions
 ```
 
 ```Output
-Name         Version    Source      Summary
-----         -------    ------      -------
-StorageDsc   4.5.0.0    PSGallery   This module contains resources related to the PowerShell Storage
-StorageDsc   4.4.0.0    PSGallery   This module contains resources related to the PowerShell Storage
-StorageDsc   4.3.0.0    PSGallery   This module contains resources related to the PowerShell Storage
-StorageDsc   4.2.0.0    PSGallery   This module contains resources related to the PowerShell Storage
-StorageDsc   4.1.0.0    PSGallery   This module contains resources related to the PowerShell Storage
-StorageDsc   4.0.0.0    PSGallery   This module contains resources related to the PowerShell Storage
+Name          Version          Source       Summary
+----          -------          ------       -------
+NuGet.Core    2.14.0           MyNuGet      NuGet.Core is the core framework assembly for NuGet...
+NuGet.Core    2.14.0-rtm-832   MyNuGet      NuGet.Core is the core framework assembly for NuGet...
+NuGet.Core    2.13.0           MyNuGet      NuGet.Core is the core framework assembly for NuGet...
+...
+NuGet.Core    1.1.229.159      MyNuGet      NuGet.Core is the core framework assembly for NuGet...
+Nuget.Core    1.0.1120.104     MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` uses the **Name** parameter to specify the package **StorageDSC**. The
-**ProviderName** parameter specifies to search for the package in **PowerShellGet**. **AllVersions**
+`Find-Package` uses the **Name** parameter to specify the package **NuGet.Core**. The
+**ProviderName** parameter specifies to search for the package in **MyNuGet**. **AllVersions**
 specifies that all available versions are returned.
 
 ### Example 4: Find a package with a specific name and version
 
 This command finds a specific package version from a specified provider.
 
-```powershell
-Find-Package -Name StorageDSC -ProviderName PowerShellGet -RequiredVersion 4.4.0.0
+```
+Find-Package -Name NuGet.Core -ProviderName NuGet -RequiredVersion 2.9.0
 ```
 
 ```Output
-Name         Version    Source      Summary
-----         -------    ------      -------
-StorageDsc   4.4.0.0    PSGallery   This module contains resources related to the PowerShell Storage
+Name          Version          Source       Summary
+----          -------          ------       -------
+NuGet.Core    2.9.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` uses the **Name** parameter to specify the package name **StorageDSC**. The
-**ProviderName** parameter specifies to search for the package in **PowerShellGet**.
-**RequiredVersion** specifies that only version **4.4.0.0** is returned.
+`Find-Package` uses the **Name** parameter to specify the package name **NuGet.Core**. The
+**ProviderName** parameter specifies to search for the package in **NuGet**. **RequiredVersion**
+specifies that only version **2.9.0** is returned.
 
 ### Example 5: Find packages within a range of versions
 
 This command finds a range of versions for a specified package.
 
-```powershell
-Find-Package -Name StorageDSC -MinimumVersion 4.1.0.0 -MaximumVersion 4.3.0.0 -AllVersions
+```
+Find-Package -Name NuGet.Core -ProviderName NuGet -MinimumVersion 2.7.0 -MaximumVersion 2.9.0 -AllVersions
 ```
 
 ```Output
-StorageDsc   4.3.0.0    PSGallery   This module contains resources related to the PowerShell Storage
-StorageDsc   4.2.0.0    PSGallery   This module contains resources related to the PowerShell Storage
-StorageDsc   4.1.0.0    PSGallery   This module contains resources related to the PowerShell Storage
+Name          Version          Source       Summary
+----          -------          ------       -------
+NuGet.Core    2.9.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
+NuGet.Core    2.8.6            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
+NuGet.Core    2.8.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
+NuGet.Core    2.7.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` uses the **Name** parameter to specify the package name **StorageDSC**. The
-**ProviderName** parameter specifies to search for the package in **PowerShellGet**.
-**MinimumVersion** specifies the lowest version **4.1.0.0**. **MaximumVersion** specifies the
-highest version **4.3.0.0**. **AllVersions** determines the range is returned as specified by the
-minimum and maximum.
+`Find-Package` uses the **Name** parameter to specify the package name **NuGet.Core**. The
+**ProviderName** parameter specifies to search for the package in **NuGet**. **MinimumVersion**
+specifies the lowest version **2.7.0**. **MaximumVersion** specifies the highest version **2.9.0**.
+**AllVersions** determines the range is returned as specified by the minimum and maximum.
 
 ### Example 6: Find a package from a file system
 
-This command finds packages with the file extension .`nupkg` that are stored on the local computer.
-The files are packages downloaded from a gallery such as the PowerShell Gallery.
+This command finds packages with the file extension `.nupkg` that are stored on the local computer.
+The files are packages downloaded from a gallery such as the **NuGet**.
 
 ```
-PS> Find-Package -Source C:\Temp
+PS> Find-Package -Source C:\LocalPkg
 ```
 
 ```Output
-Name          Version Source                              Summary
-----          ------- ------                              -------
-PowerShellGet 2.1.2   C:\Temp\powershellget.2.1.2.nupkg   PowerShell module with commands for...
-NetworkingDsc 7.0.0   C:\Temp\networkingdsc.7.0.0.nupkg   Module with DSC Resources for Networking
+Name                 Version    Source           Summary
+----                 -------    ------           -------
+Microsoft.Web.Xdt    3.0.0      C:\LocalPkg\     Microsoft Xml Document Transformation (XDT)...
+NuGet.Core           2.14.0     C:\LocalPkg\     NuGet.Core is the core framework assembly...
 ```
 
 ## PARAMETERS
