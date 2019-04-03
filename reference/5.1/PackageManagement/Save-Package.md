@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: PackageManagement
-ms.date: 06/09/2017
+ms.date: 4/3/2019
 online version: http://go.microsoft.com/fwlink/?LinkID=517140
 schema: 2.0.0
 title: Save-Package
@@ -17,96 +17,140 @@ Saves packages to the local computer without installing them.
 ## SYNTAX
 
 ### PackageBySearch
+
 ```
 Save-Package [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
- [-MaximumVersion <String>] [-Source <String[]>] [-Path <String>] [-LiteralPath <String>]
- [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions] [-Force]
- [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String[]>] [<CommonParameters>]
+[-MaximumVersion <String>] [-Source <String[]>] [-Path <String>] [-LiteralPath <String>]
+[-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
+[-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [-ProviderName <String[]>] [<CommonParameters>]
 ```
 
 ### PackageByInputObject
+
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] -InputObject <SoftwareIdentity>
- [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions] [-Force]
- [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
+[-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-AllVersions]
+[-Force] [-ForceBootstrap] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NuGet:PackageByInputObject
+
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>] [-Contains <String>]
- [-AllowPrereleaseVersions] [<CommonParameters>]
+[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+[-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>]
+[-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
 ### NuGet
+
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>] [-Contains <String>]
- [-AllowPrereleaseVersions] [<CommonParameters>]
+[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+[-ConfigFile <String>] [-SkipValidate] [-Headers <String[]>] [-FilterOnTag <String[]>]
+[-Contains <String>] [-AllowPrereleaseVersions] [<CommonParameters>]
 ```
 
 ### PowerShellGet:PackageByInputObject
+
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
- [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
- [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
- [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
+[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+[-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
+[-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
+[-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ### PowerShellGet
+
 ```
 Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential>] [-Proxy <Uri>]
- [-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
- [-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
- [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>] [-Filter <String>]
- [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>] [-RoleCapability <String[]>]
- [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
+[-ProxyCredential <PSCredential>] [-AllVersions] [-Force] [-ForceBootstrap] [-WhatIf] [-Confirm]
+[-AllowPrereleaseVersions] [-PackageManagementProvider <String>] [-PublishLocation <String>]
+[-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [-Type <String>]
+[-Filter <String>] [-Tag <String[]>] [-Includes <String[]>] [-DscResource <String[]>]
+[-RoleCapability <String[]>] [-Command <String[]>] [-AcceptLicense] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Save-Package** cmdlet saves packages to the local computer without installing them.
-This cmdlet saves the newest version of a package unless you specify the *AllVersions* parameter.
-The *Path* and *LiteralPath* parameters are mutually exclusive, and cannot be added to the same command.
+
+The `Save-Package` cmdlet saves packages to the local computer but doesn't install the packages.
+This cmdlet saves the newest version of a package unless you specify a **RequiredVerion**. The
+**Path** and **LiteralPath** parameters are mutually exclusive, and cannot be added to the same
+command.
 
 ## EXAMPLES
 
 ### Example 1: Save a package to the local computer
+
+This example saves the newest version of the package to a directory on the local computer. The
+package's dependencies are download with the package.
+
 ```
-PS C:\> Save-Package -Name "DSCAccelerator" -Path "C:\Users\TestUser\Downloads"
+PS> Save-Package -Name NuGet.Core -ProviderName NuGet -Path C:\LocalPkg
 ```
 
-This example saves the newest version of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
-
-### Example 2: Save an exact version of a package
-```
-PS C:\> Save-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" -Path "C:\Users\TestUser\Downloads"
-```
-
-This example saves only version 2.1.2 of a package, DSCAccelerator, to the C:\Users\TestUser\Downloads folder.
-
-### Example 3: Save a package by piping results of Find-Package
-```
-PS C:\> Find-Package -Name "DSCAccelerator" -RequiredVersion "2.1.2" | Save-Package -Path "C:\Users\TestUser\Downloads"
+```Output
+Name                    Version    Source    Summary
+----                    -------    ------    -------
+Microsoft.Web.Xdt       3.0.0      Nuget     Microsoft Xml Document Transformation (XDT) enables...
+NuGet.Core              2.14.0     Nuget     NuGet.Core is the core framework assembly for NuGet...
 ```
 
-This command saves a package named DSCAccelerator by first locating the exact package with the **Find-Package** cmdlet, then piping the results of **Find-Package** to the **Save-Package** cmdlet.
+`Save-Package` uses the **Name** parameter to specify the package. The package is downloaded from
+the repository specified by the **ProviderName** parameter. The **Path** parameter determines where
+the package is saved.
 
-### Example 4: Save a package to a local folder, then install the package
+### Example 2: Save a specific package version
+
+This example specifies the package version and saves it to a directory on the local computer.
+
 ```
-PS C:\> Save-Package "notepad2" -Path "C:\temp"
-PS C:\> Install-Package "C:\temp\notepad2.4.2.25.3.nupkg"
+PS> Save-Package -Name NuGet.Core -RequiredVersion 2.9.0 -ProviderName NuGet -Path C:\LocalPkg
 ```
 
-The first command saves a package to C:\temp, a folder on the local computer.
-The second command installs the saved package from the C:\temp folder, instead of installing from the web.
+```Output
+Name                    Version    Source    Summary
+----                    -------    ------    -------
+Microsoft.Web.Xdt       3.0.0      Nuget     Microsoft Xml Document Transformation (XDT) enables...
+NuGet.Core              2.9.0      Nuget     NuGet.Core is the core framework assembly for NuGet...
+```
+
+`Save-Package` uses the **Name** parameter to specify the package. **RequiredVersion** indicates a
+specific package version. The package is downloaded from the repository specified by the
+**ProviderName** parameter. The **Path** parameter determines where the package is saved.
+
+### Example 3: Use Find-Package to save a package
+
+This command uses `Find-Package` to locate the newest version of the package and sends the object to
+`Save-Package`.
+
+```
+PS> Find-Package -Name NuGet.Core -ProviderName NuGet | Save-Package -Path C:\LocalPkg
+```
+
+`Find-Package` uses the **Name** parameter to specify the package. The package is downloaded from
+the repository specified by the **ProviderName** parameter. The object is sent down the pipeline to
+`Save-Package`. The **Path** parameter determines where the package is saved.
+
+### Example 4: Save and install the package
+
+The newest version of the package and its dependencies are downloaded and installed on the local
+computer.
+
+```
+PS> Save-Package -Name NuGet.Core -ProviderName NuGet -Path C:\LocalPkg
+PS> Install-Package C:\LocalPkg\NuGet.Core.2.14.0.nupkg
+```
+
+`Save-Package` downloads the package file and its dependencies to the local computer.
+`Install-Package` installs the package and dependencies from the specified directory.
 
 ## PARAMETERS
 
 ### -AcceptLicense
+
 Automatically accept the license agreement during installation if the package requires it.
 
 ```yaml
@@ -122,6 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowPrereleaseVersions
+
 Allows packages marked as Prerelease to be saved.
 
 ```yaml
@@ -137,8 +182,8 @@ Accept wildcard characters: False
 ```
 
 ### -AllVersions
+
 Indicates that this cmdlet saves all available versions of the package.
-By default, **Save-Package** only returns the newest available version.
 
 ```yaml
 Type: SwitchParameter
@@ -153,6 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -Command
+
 Specifies one or more commands included in the package.
 
 ```yaml
@@ -168,6 +214,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigFile
+
 Specifies a configuration File.
 
 ```yaml
@@ -183,7 +230,9 @@ Accept wildcard characters: False
 ```
 
 ### -Contains
-Indicates that this cmdlet gets objects if any item in the property value of the object is an exact match for the specified value.
+
+`Save-Package` gets objects if any item in the object's property values are an exact match for the
+specified value.
 
 ```yaml
 Type: String
@@ -198,7 +247,9 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-Specifies a user account that has rights to save a package from a specified package provider or source.
+
+Specifies a user account that has permission to save a package from a specified package provider or
+source.
 
 ```yaml
 Type: PSCredential
@@ -213,6 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -DscResource
+
 Specifies one or more Desired State Configuration (DSC) resources for the package.
 
 ```yaml
@@ -228,6 +280,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies a filter for the package.
 
 ```yaml
@@ -243,7 +296,8 @@ Accept wildcard characters: False
 ```
 
 ### -FilterOnTag
-Specifies the tag to filter the results on. Excludes results not contianing the specified tag.
+
+Specifies the tag that filters the results. Results that don't contain the specified tag are excluded.
 
 ```yaml
 Type: String[]
@@ -258,7 +312,8 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Indicates that this cmdlet overrides restrictions that prevent the command from succeeding, as long as running the command does not compromise security.
+
+Forces the command to run without asking for user confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -273,7 +328,9 @@ Accept wildcard characters: False
 ```
 
 ### -ForceBootstrap
-Indicates that this cmdlet forces Package Management to automatically install the package provider for the specified package.
+
+Indicates that `Save-Package` forces **PackageManagement** to automatically install the package
+provider for the specified package.
 
 ```yaml
 Type: SwitchParameter
@@ -288,6 +345,7 @@ Accept wildcard characters: False
 ```
 
 ### -Headers
+
 Specifies the headers for the package.
 
 ```yaml
@@ -303,6 +361,7 @@ Accept wildcard characters: False
 ```
 
 ### -Includes
+
 Indicates the resources that the package includes.
 
 ```yaml
@@ -319,8 +378,9 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A software ID object that represents the package that you want to save.
-Software IDs are part of the results of the Find-Package cmdlet.
+
+A software ID object that represents the package that you want to save. Software IDs are part of the
+results of the `Find-Package` cmdlet.
 
 ```yaml
 Type: SoftwareIdentity
@@ -335,8 +395,9 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
-Specifies the literal path to which you want to save the package.
-You cannot add both this parameter and the *Path* parameter to the same command.
+
+Specifies the literal path to which you want to save the package. You cannot add both this parameter
+and the **Path** parameter to the same command.
 
 ```yaml
 Type: String
@@ -351,8 +412,8 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumVersion
-Specifies the maximum allowed version of the package that you want to save.
-If you do not add this parameter, **Save-Package** saves the highest available version of the package.
+
+Specifies the maximum version of the package that you want to save.
 
 ```yaml
 Type: String
@@ -367,8 +428,8 @@ Accept wildcard characters: False
 ```
 
 ### -MinimumVersion
-Specifies the minimum allowed version of the package that you want to find.
-If you do not add this parameter, **Find-Package** finds the highest available version of the package that also satisfies any maximum specified version specified by the *MaximumVersion* parameter.
+
+Specifies the minimum version of the package that you want to find.
 
 ```yaml
 Type: String
@@ -383,6 +444,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Specifies one or more package names.
 
 ```yaml
@@ -398,7 +460,8 @@ Accept wildcard characters: False
 ```
 
 ### -PackageManagementProvider
-Specifies the Package Management provider.
+
+Specifies a package management provider.
 
 ```yaml
 Type: String
@@ -413,7 +476,8 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Specifies the path at which to save the package.
+
+Specifies the location on the local computer to store the package.
 
 ```yaml
 Type: String
@@ -428,13 +492,14 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderName
+
 Specifies one or more provider names.
 
 ```yaml
 Type: String[]
 Parameter Sets: PackageBySearch
 Aliases: Provider
-Accepted values: Programs, msi, msu, NuGet, PowerShellGet, psl, chocolatey
+Accepted values: Bootstrap, msi, msu, NuGet, PowerShellGet, Programs
 
 Required: False
 Position: Named
@@ -444,7 +509,8 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-Specifies a proxy server for the request, rather than connecting directly to the Internet resource.
+
+Specifies a proxy server for the request, rather than a direct connection to the internet resource.
 
 ```yaml
 Type: Uri
@@ -459,7 +525,9 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyCredential
-Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.
+
+Specifies a user account that has permission to use the proxy server that is specified by the
+**Proxy** parameter.
 
 ```yaml
 Type: PSCredential
@@ -474,6 +542,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishLocation
+
 Specifies the publish location.
 
 ```yaml
@@ -489,8 +558,8 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredVersion
+
 Specifies the exact version of the package to save.
-If you do not add this parameter, **Save-Package** finds the highest available version of the provider that also satisfies any maximum version specified by the *MaximumVersion* parameter.
 
 ```yaml
 Type: String
@@ -505,6 +574,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleCapability
+
 Specifies an array of role capabilities.
 
 ```yaml
@@ -520,6 +590,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptPublishLocation
+
 Specifies the script publish location.
 
 ```yaml
@@ -535,6 +606,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptSourceLocation
+
 Specifies the script source location.
 
 ```yaml
@@ -550,6 +622,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipValidate
+
 Switch that skips validating the credentials of a package.
 
 ```yaml
@@ -565,6 +638,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Specifies one or more package sources.
 
 ```yaml
@@ -580,6 +654,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
+
 Specifies a tag to search for within the package metadata.
 
 ```yaml
@@ -595,6 +670,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
+
 Specifies whether to search for packages with a module, a script, or either.
 
 ```yaml
@@ -611,6 +687,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -626,8 +703,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: SwitchParameter
@@ -642,15 +719,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### You cannot pipe input to this cmdlet.
+`Save-Package` accepts objects from the pipeline.
 
 ## OUTPUTS
-
-### This cmdlet does not generate any output.
 
 ## NOTES
 
