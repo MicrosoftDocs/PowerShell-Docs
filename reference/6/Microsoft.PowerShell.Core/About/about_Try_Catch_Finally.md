@@ -187,7 +187,7 @@ catch {
 
 Running this script returns the following result:
 
-```
+```Output
 An Error occurred:
 The term 'NonsenseString' is not recognized as the name of a cmdlet, function,
 script file, or operable program. Check the spelling of the name, or if a path
