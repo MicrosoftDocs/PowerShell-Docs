@@ -172,6 +172,47 @@ inherit from the **SystemException** type.
 If you specify an error class and one of its derived classes, place the `Catch`
 block for the derived class before the `Catch` block for the general class.
 
+### ACCESSING EXCEPTION INFORMATION
+
+Within a `Catch` block, the current error can be ascertained using `$_`, which
+is an alias for `$PSItem`, and the object is of type **ErrorRecord**.
+
+```powershell
+try { NonsenseString }
+catch {
+  Write-Host "An error occurred:"
+  Write-Host $_
+}
+```
+
+Running this script returns the following result:
+
+```
+An Error occurred:
+The term 'NonsenseString' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+```
+
+There are additional properties that can be accessed, such as `ScriptStackTrace`,
+`Exception`, and `ErrorDetails`.  For example, if we change the script to the
+following:
+
+```powershell
+try { NonsenseString }
+catch {
+  Write-Host "An error occurred:"
+  Write-Host $_.ScriptStackTrace
+}
+```
+
+The result will be similar to:
+
+```
+An Error occurred:
+at <ScriptBlock>, <No file>: line 2
+```
+
 ### FREEING RESOURCES BY USING FINALLY
 
 To free resources used by a script, add a `Finally` block after the `Try` and
