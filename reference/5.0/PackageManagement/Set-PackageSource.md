@@ -319,11 +319,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-`Set-PacakgeSource` doesn't accept pipeline input.
+### `Set-PackageSource` doesn't accept pipeline input.
 
 ## OUTPUTS
 
-This cmdlet does not generate any output.
+### This cmdlet does not generate any output.
 
 ## NOTES
 

@@ -508,9 +508,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-`Save-Package` accepts objects from the pipeline.
+### `Save-Package` accepts objects from the pipeline.
 
 ## OUTPUTS
+
+### This cmdlet does not generate any output.
 
 ## NOTES
 
