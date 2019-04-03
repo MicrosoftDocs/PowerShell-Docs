@@ -971,8 +971,6 @@ function Html ([HTML] $doc) { return $doc }
 
 ## See also
 
-[about_DesiredStateConfiguration](../../Microsoft.PowerShell.Core/About/about_desiredstateconfiguration.md)
-
 [about_Enum](../../Microsoft.PowerShell.Core/About/about_Enum.md)
 
 [about_Hidden](../../Microsoft.PowerShell.Core/About/about_hidden.md)
