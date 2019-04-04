@@ -74,6 +74,8 @@ function Test-Debug {
 
 ```
 PS C:\> Test-Debug
+$DebugPreference is SilentlyContinue
+PS C:\> Test-Debug -Debug
 DEBUG: $DebugPreference is Inquire
 
 Confirm
