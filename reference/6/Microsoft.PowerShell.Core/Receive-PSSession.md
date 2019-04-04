@@ -149,9 +149,9 @@ Id Name    ComputerName    State         ConfigurationName     Availability
  -- ----    ------------    -----         -----------------     ------------
   8 AD      Server01        Opened        ADEndpoint            Available
 
-The third command uses the Invoke-Command cmdlet to run a script in the session in the $s variable.The script starts to run and return data, but a network outage occurs that interrupts the session. The user has to exit the session and restart the local computer.
-PS C:\> Invoke-Command -Session $s -FilePath \\Server12\Scripts\SharedScripts\New-ADResolve.ps1
- Running "New-ADResolve.ps1" â€¦.exit
+The third command uses the Invoke-Command cmdlet to run a script in the session in the $s variable.The script begins to run and return data, but a network outage occurs that interrupts the session. The user has to exit the session and restart the local computer.
+PS> Invoke-Command -Session $s -FilePath \\Server12\Scripts\SharedScripts\New-ADResolve.ps1
+ Running "New-ADResolve.ps1"
 
 # Network outage
 # Restart local computer
@@ -217,7 +217,7 @@ Bug Report - Domain 01
 ----------------------
 ComputerName          BugCount          LastUpdated
 --------------        ---------         ------------
-Server01              121               Friday, December 30, 2011 5:03:34 PMâ€¦
+Server01              121               Friday, December 30, 2011 5:03:34 PM
 ```
 
 This example uses the **Receive-PSSession** cmdlet to reconnect to sessions that were intentionally disconnected and get the results of jobs that were running in the sessions.
@@ -250,7 +250,8 @@ Id     Name           State         HasMoreData     Location
 
 The sixth command runs a Receive-Job command on the job in the $j variable. The output shows that the job began to return output before the session and the job were disconnected.
 PS C:\> Receive-Job $j -Keep
-Return 1Return 2
+Return 1
+Return 2
 
 The seventh command is run in the same client session. The command uses the Connect-PSSession cmdlet to reconnect to the Test session on the Server01 computer and saves the session in the $s2 variable.
 PS C:\> $s2 = Connect-PSSession -ComputerName Server01 -Name Test
@@ -260,7 +261,7 @@ PS C:\> $j2 = Receive-PSSession -ComputerName Server01 -Name Test
 
 PS C:\> Receive-Job $j
 Return 3
-Return 4â€¦
+Return 4
 ```
 
 This example shows what happens to a job that is running in a disconnected session.
@@ -771,46 +772,80 @@ Otherwise, it returns objects that represent that command results.
 
 ## NOTES
 
-* **Receive-PSSession** gets results only from sessions that were disconnected. Only sessions that are connected to, or terminate at, computers that run Windows PowerShell 3.0 or later versions can be disconnected and reconnected.
-* If the commands that were running in the disconnected session did not generate results or if the results were already returned to another session, **Receive-PSSession** does not generate any output.
-* The output buffering mode of a session determines how commands in the session manage output when the session is disconnected. When the value of the **OutputBufferingMode** option of the session is Drop and the output buffer is full, the command starts to delete output. **Receive-PSSession** cannot recover this output. For more information about the output buffering mode option, see the help topics for the New-PSSessionOption and New-PSTransportOption cmdlets.
-* You cannot change the idle time-out value of a **PSSession** when you connect to the **PSSession** or receive results. The *SessionOption* parameter of **Receive-PSSession** takes a **SessionOption** object that has an **IdleTimeout** value. However, the **IdleTimeout** value of the **SessionOption** object and the **IdleTimeout** value of the $PSSessionOption variable are ignored when it connects to a **PSSession** or receiving results.
+- **Receive-PSSession** gets results only from sessions that were disconnected. Only sessions that
+  are connected to, or terminate at, computers that run Windows PowerShell 3.0 or later versions can
+  be disconnected and reconnected.
+- If the commands that were running in the disconnected session did not generate results or if the
+  results were already returned to another session, **Receive-PSSession** does not generate any
+  output.
+- The output buffering mode of a session determines how commands in the session manage output when
+  the session is disconnected. When the value of the **OutputBufferingMode** option of the session
+  is Drop and the output buffer is full, the command starts to delete output. **Receive-PSSession**
+  cannot recover this output. For more information about the output buffering mode option, see the
+  help topics for the New-PSSessionOption and New-PSTransportOption cmdlets.
+- You cannot change the idle time-out value of a **PSSession** when you connect to the **PSSession**
+  or receive results. The *SessionOption* parameter of **Receive-PSSession** takes a
+  **SessionOption** object that has an **IdleTimeout** value. However, the **IdleTimeout** value of
+  the **SessionOption** object and the **IdleTimeout** value of the $PSSessionOption variable are
+  ignored when it connects to a **PSSession** or receiving results.
 
-  You can set and change the idle time-out of a **PSSession** when you create the **PSSession**, by using the New-PSSession or **Invoke-Command** cmdlets, and when you disconnect from the **PSSession**.
+  You can set and change the idle time-out of a **PSSession** when you create the **PSSession**, by
+  using the New-PSSession or **Invoke-Command** cmdlets, and when you disconnect from the
+  **PSSession**.
 
-  The **IdleTimeout** property of a **PSSession** is critical to disconnected sessions, because it determines how long a disconnected session is maintained on the remote computer.
-Disconnected sessions are considered to be idle from the moment that they are disconnected, even if commands are running in the disconnected session.
+  The **IdleTimeout** property of a **PSSession** is critical to disconnected sessions, because it
+  determines how long a disconnected session is maintained on the remote computer. Disconnected
+  sessions are considered to be idle from the moment that they are disconnected, even if commands
+  are running in the disconnected session.
 
-* If you start a start a job in a remote session by using the *AsJob* parameter of the **Invoke-Command** cmdlet, the job object is created in the current session, even though the job runs in the remote session. If you disconnect the remote session, the job object in the current session is now disconnected from the job. The job object still contains any results that were returned to it, but it does not receive new results from the job in the disconnected session.
+- If you start a start a job in a remote session by using the *AsJob* parameter of the
+  **Invoke-Command** cmdlet, the job object is created in the current session, even though the job
+  runs in the remote session. If you disconnect the remote session, the job object in the current
+  session is now disconnected from the job. The job object still contains any results that were
+  returned to it, but it does not receive new results from the job in the disconnected session.
 
-  If a different client connects to the session that contains the running job, the results that were delivered to the original job object in the original session are not available in the newly connected session.
-Only results that were not delivered to the original job object are available in the reconnected session.
+  If a different client connects to the session that contains the running job, the results that were
+  delivered to the original job object in the original session are not available in the newly
+  connected session. Only results that were not delivered to the original job object are available
+  in the reconnected session.
 
-  Similarly, if you start a script in a session and then disconnect from the session, any results that the script delivers to the session before disconnecting are not available to another client that connects to the session.
+  Similarly, if you start a script in a session and then disconnect from the session, any results
+  that the script delivers to the session before disconnecting are not available to another client
+  that connects to the session.
 
-  To prevent data loss in sessions that you intend to disconnect, use the *InDisconnectedSession* parameter of the **Invoke-Command** cmdlet.
-Because this parameter prevents results from being returned to the current session, all results are available when the session is reconnected.
+  To prevent data loss in sessions that you intend to disconnect, use the *InDisconnectedSession*
+  parameter of the **Invoke-Command** cmdlet. Because this parameter prevents results from being
+  returned to the current session, all results are available when the session is reconnected.
 
-  You can also prevent data loss by using the **Invoke-Command** cmdlet to run a Start-Job command in the remote session.
-In this case, the job object is created in the remote session.
-You cannot use the **Receive-PSSession** cmdlet to get the job results.
-Instead, use the **Connect-PSSession** cmdlet to connect to the session and then use the **Invoke-Command** cmdlet to run a Receive-Job command in the session.
+  You can also prevent data loss by using the **Invoke-Command** cmdlet to run a Start-Job command
+  in the remote session. In this case, the job object is created in the remote session. You cannot
+  use the **Receive-PSSession** cmdlet to get the job results. Instead, use the
+  **Connect-PSSession** cmdlet to connect to the session and then use the **Invoke-Command** cmdlet
+  to run a Receive-Job command in the session.
 
-* When a session that contains a running job is disconnected and then reconnected, the original job object is reused only if the job is disconnected and reconnected to the same session, and the command to reconnect does not specify a new job name. If the session is reconnected to a different client session or a new job name is specified, PowerShell creates a new job object for the new session.
-* When you disconnect a **PSSession**, the session state is Disconnected and the availability is None.
+- When a session that contains a running job is disconnected and then reconnected, the original job
+  object is reused only if the job is disconnected and reconnected to the same session, and the
+  command to reconnect does not specify a new job name. If the session is reconnected to a different
+  client session or a new job name is specified, Windows PowerShell creates a new job object for the
+  new session.
+- When you disconnect a **PSSession**, the session state is Disconnected and the availability is
+  None.
 
-  The value of the **State** property is relative to the current session.
-Therefore, a value of Disconnected means that the **PSSession** is not connected to the current session.
-However, it does not mean that the **PSSession** is disconnected from all sessions.
-It might be connected to a different session.
-To determine whether you can connect or reconnect to the session, use the **Availability** property.
+  The value of the **State** property is relative to the current session. Therefore, a value of
+  Disconnected means that the **PSSession** is not connected to the current session. However, it
+  does not mean that the **PSSession** is disconnected from all sessions. It might be connected to a
+  different session. To determine whether you can connect or reconnect to the session, use the
+  **Availability** property.
 
-  An **Availability** value of None indicates that you can connect to the session.
-A value of Busy indicates that you cannot connect to the **PSSession** because it is connected to another session.
+  An **Availability** value of None indicates that you can connect to the session. A value of Busy
+  indicates that you cannot connect to the **PSSession** because it is connected to another session.
 
-  For more information about the values of the **State** property of sessions, see [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
+  For more information about the values of the **State** property of sessions, see
+  [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate)
+  in the MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
+  For more information about the values of the **Availability** property of sessions, see
+  [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability).
 
 ## RELATED LINKS
 

@@ -33,7 +33,7 @@ Get-CimSession -Name <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Get-CimSession cmdlet gets the CIM session objects created in the current Windows PowerShell® session.
+The Get-CimSession cmdlet gets the CIM session objects created in the current Windows PowerShell session.
 
 If used without any parameters, the cmdlet gets all of the CIM sessions created in the current Windows PowerShell session.
 You can use the parameters of Get-CimSession to get the sessions that are for particular computers, or you can identify sessions by their names, IDs, or instance IDs.
@@ -208,7 +208,7 @@ Accept wildcard characters: True
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

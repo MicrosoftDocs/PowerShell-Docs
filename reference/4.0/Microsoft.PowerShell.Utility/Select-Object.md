@@ -71,7 +71,7 @@ InternalName:     explorer
 OriginalFilename: EXPLORER.EXE.MUI
 FileVersion:      10.0.17134.1 (WinBuild.160101.0800)
 FileDescription:  Windows Explorer
-Product:          Microsoft� Windows� Operating System
+Product:          Microsoft Windows Operating System
 ProductVersion:   10.0.17134.1
 ...
 ```
@@ -267,6 +267,7 @@ Accept wildcard characters: True
 ### -ExpandProperty
 
 Specifies a property to select, and indicates that an attempt should be made to expand that property.
+Wildcards are permitted in the property name.
 
 - If the specified property is an array, each value of the array is included in the output.
 - If the specified property is an object, the objects properties are expanded for every `InputObject`

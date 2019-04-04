@@ -58,7 +58,7 @@ PSEdition                      Core           # <-- Edition information
 GitCommitId                    6.2.0-rc.1
 OS                             Microsoft Windows 10.0.18865
 Platform                       Win32NT
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 WSManStackVersion              3.0
@@ -131,14 +131,14 @@ Get-Module -ListAvailable
 ModuleType Version    Name                                PSEdition ExportedCommands
 ---------- -------    ----                                --------- ----------------
 Script     1.4.0      Az                                  Core,Desk
-Script     1.3.1      Az.Accounts                         Core,Desk {Disable-AzDataCollection, Disable-AzContextAutosave, E…
-Script     1.0.1      Az.Aks                              Core,Desk {Get-AzAks, New-AzAks, Remove-AzAks, Import-AzAksCreden…
+Script     1.3.1      Az.Accounts                         Core,Desk {Disable-AzDataCollection, Disable-AzContextAutosave, E...
+Script     1.0.1      Az.Aks                              Core,Desk {Get-AzAks, New-AzAks, Remove-AzAks, Import-AzAksCreden...
 
 ...
 
-Script     4.4.0      Pester                              Desk      {Describe, Context, It, Should…}
-Script     1.18.0     PSScriptAnalyzer                    Desk      {Get-ScriptAnalyzerRule, Invoke-ScriptAnalyzer, Invoke-…
-Script     1.0.0      WindowsCompatibility                Core      {Initialize-WinSession, Add-WinFunction, Invoke-WinComm…
+Script     4.4.0      Pester                              Desk      {Describe, Context, It, Should...}
+Script     1.18.0     PSScriptAnalyzer                    Desk      {Get-ScriptAnalyzerRule, Invoke-ScriptAnalyzer, Invoke-...
+Script     1.0.0      WindowsCompatibility                Core      {Initialize-WinSession, Add-WinFunction, Invoke-WinComm...
 
 ```
 
@@ -192,7 +192,7 @@ Get-Module -ListAvailable -SkipEditionCheck BitsTransfer
 
 ModuleType Version    Name                                PSEdition ExportedCommands
 ---------- -------    ----                                --------- ----------------
-Manifest   2.0.0.0    BitsTransfer                        Desk      {Add-BitsFile, Complete-BitsTransfer, Get-BitsTransfer,…
+Manifest   2.0.0.0    BitsTransfer                        Desk      {Add-BitsFile, Complete-BitsTransfer, Get-BitsTransfer,...
 
 ```
 

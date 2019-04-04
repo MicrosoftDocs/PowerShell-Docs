@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821852
 schema: 2.0.0
 title: Select-Object
 ---
-
 # Select-Object
 
 ## SYNOPSIS
@@ -18,6 +17,7 @@ Selects objects or object properties.
 ## SYNTAX
 
 ### DefaultParameter (Default)
+
 ```
 Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
  [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
@@ -25,12 +25,14 @@ Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProper
 ```
 
 ### SkipLastParameter
+
 ```
 Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
  [-ExpandProperty <String>] [-Unique] [-SkipLast <Int32>] [<CommonParameters>]
 ```
 
 ### IndexParameter
+
 ```
 Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
 ```
@@ -76,7 +78,7 @@ InternalName:     explorer
 OriginalFilename: EXPLORER.EXE.MUI
 FileVersion:      10.0.17134.1 (WinBuild.160101.0800)
 FileDescription:  Windows Explorer
-Product:          Microsoft� Windows� Operating System
+Product:          Microsoft Windows Operating System
 ProductVersion:   10.0.17134.1
 ...
 ```
@@ -216,7 +218,7 @@ $object | Select-Object -ExpandProperty Expand -Property Name | Get-Member
 ```
 
 ```output
-TypeName: System.Int32
+   TypeName: System.Int32
 
 Name        MemberType   Definition
 ----        ----------   ----------
@@ -266,12 +268,13 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ExpandProperty
 
 Specifies a property to select, and indicates that an attempt should be made to expand that property.
+Wildcards are permitted in the property name.
 
 - If the specified property is an array, each value of the array is included in the output.
 - If the specified property is an object, the objects properties are expanded for every `InputObject`
@@ -301,8 +304,7 @@ Accept wildcard characters: False
 
 ### -First
 
-Gets only the specified number of objects.
-Enter the number of objects to get.
+Specifies the number of objects to select from the beginning of an array of input objects.
 
 ```yaml
 Type: Int32
@@ -311,7 +313,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -392,7 +394,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Skip
@@ -472,7 +474,8 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

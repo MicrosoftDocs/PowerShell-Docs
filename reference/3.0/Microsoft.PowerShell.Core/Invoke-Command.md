@@ -381,7 +381,7 @@ As a result, if the remote computer specified by the **ConnectionURI** parameter
 ### Example 14
 
 ```
-PS> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck –SkipRevocationCheck
+PS> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 PS> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-Hotfix } -SessionOption $so -Credential server01\user01
 ```
 
@@ -556,7 +556,7 @@ The default value is **Default**.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.

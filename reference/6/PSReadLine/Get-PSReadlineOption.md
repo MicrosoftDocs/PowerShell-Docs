@@ -12,7 +12,7 @@ title: Get-PSReadLineOption
 # Get-PSReadLineOption
 
 ## SYNOPSIS
-Returns the values for the options that can be configured.
+Gets values for the options that can be configured.
 
 ## SYNTAX
 
@@ -57,7 +57,7 @@ CompletionQueryItems                   : 100
 MaximumKillRingCount                   : 10
 ShowToolTips                           : True
 ViModeIndicator                        : None
-WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"–—―
+WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"---
 CommandColor                           : "`e[93m"
 CommentColor                           : "`e[32m"
 ContinuationPromptColor                : "`e[37m"

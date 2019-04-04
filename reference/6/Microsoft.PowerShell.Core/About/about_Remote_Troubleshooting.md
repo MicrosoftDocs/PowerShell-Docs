@@ -822,7 +822,7 @@ the command again.
 1. Start PowerShell with the "Run as administrator" option.
 2. Run the following command:
 
-   `Start-Service WinRM`
+   `Start-Service WinRM`
 
 3. Re-run the command that generated the error.
 

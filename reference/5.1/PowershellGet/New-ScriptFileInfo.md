@@ -85,7 +85,7 @@ The second command uses the Get-Content cmdlet to get the contents of the script
 ```
 PS C:\> New-ScriptFileInfo -Path "C:\temp\temp_scripts\New-ScriptFile.ps1" -Verbose
 >> -Version 1.0 -Author pattif -Description "my new script file test" -CompanyName "Contoso Corporation" `
->> -Copyright "Â© 2015 Contoso Corporation. All rights reserved." -ExternalModuleDependencies 'ff','bb' `
+>> -Copyright "2015 Contoso Corporation. All rights reserved." -ExternalModuleDependencies 'ff','bb' `
 >> -RequiredScripts 'Start-WFContosoServer', 'Stop-ContosoServerScript' `
 >> -ExternalScriptDependencies Stop-ContosoServerScript -Tags @('Tag1', 'Tag2', 'Tag3') `
 >> -ProjectUri https://contoso.com -LicenseUri "https://contoso.com/License" -IconUri 'https://contoso.com/Icon' `
@@ -110,7 +110,7 @@ VERBOSE: Performing the operation "Creating the 'C:\temp\temp_scripts\New-Script
 
 .COMPANYNAME Microsoft Corporation
 
-.COPYRIGHT Â© 2015 Microsoft Corporation. All rights reserved.
+.COPYRIGHT 2015 Microsoft Corporation. All rights reserved.
 
 .TAGS Tag1 Tag2 Tag3
 
@@ -388,7 +388,7 @@ Accept wildcard characters: False
 
 ### -RequiredModules
 Specifies modules that must be in the global session state.
-If the required modules are not in the global session state, Windows PowerShell imports them.
+If the required modules are not in the global session state, PowerShell imports them.
 
 ```yaml
 Type: Object[]

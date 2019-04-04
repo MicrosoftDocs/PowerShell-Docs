@@ -7,21 +7,23 @@ online version:  http://go.microsoft.com/fwlink/p/?linkid=289592
 external help file:  System.Management.Automation.dll-Help.xml
 title:  Invoke-Command
 ---
-
 # Invoke-Command
 
 ## SYNOPSIS
+
 Runs commands on local and remote computers.
 
 ## SYNTAX
 
 ### InProcess (Default)
+
 ```
 Invoke-Command [-ScriptBlock] <ScriptBlock> [-NoNewScope] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
  [<CommonParameters>]
 ```
 
 ### FilePathRunspace
+
 ```
 Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
  [-JobName <String>] [-FilePath] <String> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
@@ -29,6 +31,7 @@ Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-Hi
 ```
 
 ### Session
+
 ```
 Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
  [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-InputObject <PSObject>] [-ArgumentList <Object[]>]
@@ -36,6 +39,7 @@ Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-Hi
 ```
 
 ### ComputerName
+
 ```
 Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port <Int32>] [-UseSSL]
  [-ConfigurationName <String>] [-ApplicationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
@@ -46,6 +50,7 @@ Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port 
 ```
 
 ### FilePathComputerName
+
 ```
 Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port <Int32>] [-UseSSL]
  [-ConfigurationName <String>] [-ApplicationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
@@ -55,15 +60,7 @@ Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port 
 ```
 
 ### Uri
-```
-Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
- [[-ConnectionUri] <Uri[]>] [-AsJob] [-InDisconnectedSession] [-HideComputerName] [-JobName <String>]
- [-ScriptBlock] <ScriptBlock> [-AllowRedirection] [-SessionOption <PSSessionOption>]
- [-Authentication <AuthenticationMechanism>] [-EnableNetworkAccess] [-InputObject <PSObject>]
- [-ArgumentList <Object[]>] [-CertificateThumbprint <String>] [<CommonParameters>]
-```
 
-### FilePathUri
 ```
 Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
  [[-ConnectionUri] <Uri[]>] [-AsJob] [-InDisconnectedSession] [-HideComputerName] [-JobName <String>]
@@ -73,6 +70,7 @@ Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-Thro
 ```
 
 ## DESCRIPTION
+
 The **Invoke-Command** cmdlet runs commands on a local or remote computer and returns all output from the commands, including errors.
 With a single **Invoke-Command** command, you can run commands on multiple computers.
 
@@ -92,6 +90,7 @@ Before using `Invoke-Command` to run commands on a remote computer, read [about_
 ## EXAMPLES
 
 ### Example 1
+
 ```
 PS C:\> Invoke-Command -FilePath c:\scripts\test.ps1 -ComputerName Server01
 ```
@@ -102,6 +101,7 @@ The command uses the **FilePath** parameter to specify a script that is located 
 The script runs on the remote computer and the results are returned to the local computer.
 
 ### Example 2
+
 ```
 PS C:\> Invoke-Command -ComputerName server01 -Credential domain01\user01 -ScriptBlock {Get-Culture}
 ```
@@ -115,6 +115,7 @@ In response, Windows PowerShell displays a dialog box that requests the password
 It then runs the command on the Server01 computer and returns the result.
 
 ### Example 3
+
 ```
 PS C:\> $s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
 PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-Culture}
@@ -132,6 +133,7 @@ It uses the **Session** parameter to specify the session  saved in the $s variab
 In response, Windows PowerShell runs the command in the session on the Server02 computer.
 
 ### Example 4
+
 ```
 PS C:\> Invoke-Command -ComputerName Server02 -ScriptBlock {$p = Get-Process PowerShell}
 PS C:\> Invoke-Command -ComputerName Server02 -ScriptBlock {$p.VirtualMemorySize}
@@ -163,6 +165,7 @@ The fourth and fifth commands repeat the series of commands used in the first se
 In this case, because both commands run in the same session, the commands succeed, and the $p value remains active in the $s session for later use.
 
 ### Example 5
+
 ```
 PS C:\> $command = { Get-EventLog -log "Windows PowerShell" | where {$_.Message -like "*certificate*"} }
 PS C:\> Invoke-Command -ComputerName S1, S2 -ScriptBlock $command
@@ -179,6 +182,7 @@ The command is formatted as a script block.
 The second command uses the Invoke-Command cmdlet to run the command in $command on the S1 and S2 remote computers.
 
 ### Example 6
+
 ```
 PS C:\> Invoke-Command -ComputerName Server01, Server02, TST-0143, localhost -ConfigurationName MySession.PowerShell -ScriptBlock {Get-EventLog "Windows PowerShell"}
 ```
@@ -194,6 +198,7 @@ The command uses the **ConfigurationName** parameter to specify an alternate ses
 In this example, the command in the script block gets the events in the Windows PowerShell event log on each remote computer.
 
 ### Example 7
+
 ```
 PS C:\> $version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {(Get-Host).Version}
 ```
@@ -213,6 +218,7 @@ When the commands complete, the output of the commands from all of the computers
 The output includes the name of the computer from which the data originated.
 
 ### Example 8
+
 ```
 PS C:\> $s = New-PSSession -ComputerName Server01, Server02
 PS C:\> Invoke-Command -Session $s -ScriptBlock {Get-EventLog system} -AsJob
@@ -263,6 +269,7 @@ The fifth command gets the results of the jobs.
 It pipes the job object in $j to the Receive-Job cmdlet and stores the results in the $results variable.
 
 ### Example 9
+
 ```
 PS C:\> $MWFO_Log = "Microsoft-Windows-Forwarding/Operational"
 PS C:\> Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog -LogName $Using:MWFO_Log -Newest 10}
@@ -280,6 +287,7 @@ The second command uses the **Invoke-Command** cmdlet to run a Get-EventLog comm
 The value of the **LogName** parameter is the $MWFO_Log variable, which is prefixed by the Using scope modifier to indicate that it was created in the local session, not in the remote session.
 
 ### Example 10
+
 ```
 PS C:\> Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
 
@@ -306,6 +314,7 @@ Using the **HideComputerName** parameter does not change the object; it just cha
 You can still use the Format cmdlets to display the **PsComputerName** property of any of the affected objects.
 
 ### Example 11
+
 ```
 PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) -FilePath C:\Scripts\Sample.ps1 -ArgumentList Process, Service
 ```
@@ -318,6 +327,7 @@ When you submit the command, the content of the Sample.ps1 file is copied into a
 This procedure is equivalent to using the **ScriptBlock** parameter to submit the contents of the script.
 
 ### Example 12
+
 ```
 PS C:\> $LiveCred = Get-Credential
 
@@ -340,6 +350,7 @@ The **AuthenticationMechanism** parameter specifies the use of basic authenticat
 The **ScriptBlock** parameter specifies a script block that contains the command.
 
 ### Example 13
+
 ```
 PS C:\> $max = New-PSSessionOption -MaximumRedirection 1
 
@@ -358,9 +369,10 @@ It also uses the **SessionOption** parameter to specify the session object in th
 As a result, if the remote computer specified by the **ConnectionURI** parameter returns a redirection message, Windows PowerShell will redirect the connection, but if the new destination returns another redirection message, the redirection count value of 1 is exceeded, and Invoke-Command returns a non-terminating error.
 
 ### Example 14
+
 ```
-PS C:\> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck –SkipRevocationCheck
-PS C:\> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-Hotfix } -SessionOption $so -Credential server01\user01
+PS> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
+PS> Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-Hotfix } -SessionOption $so -Credential server01\user01
 ```
 
 This example shows how to create and use a SessionOption parameter.
@@ -372,6 +384,7 @@ The second command uses the **Invoke-Command** cmdlet to run a Get-HotFix comman
 The value of the **SessionOption** parameter is the **SessionOption** object in the $so variable.
 
 ### Example 15
+
 ```
 PS C:\> Enable-WSManCredSSP -Delegate Server02
 PS C:\> Connect-WSMan Server02
@@ -401,6 +414,7 @@ The fifth command uses the **Invoke-Command** cmdlet to run a Get-Item command i
 The command uses the **Credential** parameter and it uses the **Authentication** parameter with a value of **CredSSP**.
 
 ### Example 16
+
 ```
 PS C:\> Invoke-Command -ComputerName (Get-Content Servers.txt) -InDisconnectedSession -FilePath \\Scripts\Public\ConfigInventory.ps1 -SessionOption @{OutputBufferingMode="Drop";IdleTimeout=43200000}
 ```
@@ -421,6 +435,7 @@ To get the results of commands and scripts that run in disconnected sessions, us
 ## PARAMETERS
 
 ### -AllowRedirection
+
 Allows redirection of this connection to an alternate Uniform Resource Identifier (URI).
 
 When you use the **ConnectionURI** parameter, the remote destination can return an instruction to redirect to a different URI.
@@ -443,6 +458,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationName
+
 Specifies the application name segment of the connection URI.
 Use this parameter to specify the application name when you are not using the **ConnectionURI** parameter in the command.
 
@@ -467,6 +483,7 @@ Accept wildcard characters: False
 ```
 
 ### -ArgumentList
+
 Supplies the values of local variables in the command.
 The variables in the command are replaced by these values before the command is run on the remote computer.
 Enter the values in a comma-separated list.
@@ -495,6 +512,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
+
 Runs the command as a background job on a remote computer.
 Use this parameter to run commands that take an extensive time to complete.
 
@@ -521,13 +539,14 @@ Accept wildcard characters: False
 ```
 
 ### -Authentication
+
 Specifies the mechanism that is used to authenticate the user's credentials.
 Valid values are **Default**, **Basic**, **Credssp**, **Digest**, **Kerberos**, **Negotiate**, and **NegotiateWithImplicitCredential**.
 The default value is **Default**.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions of Windows.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in the MSDN library.
+For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 CAUTION: Credential Security Support Provider (CredSSP) authentication, in which the user's credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
 This mechanism increases the security risk of the remote operation.
@@ -547,6 +566,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
+
 Specifies the digital public key certificate (X509) of a user account that has permission to perform this action.
 Enter the certificate thumbprint of the certificate.
 
@@ -568,6 +588,7 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
+
 Specifies the computers on which the command runs.
 The default is the local computer.
 
@@ -579,7 +600,7 @@ To specify the local computer, type the computer name, "localhost", or a dot (.)
 
 To use an IP address in the value of the ComputerName parameter, the command must include the Credential parameter.
 Also, the computer must be configured for HTTPS transport or the IP address of the remote computer must be included in the WinRM TrustedHosts list on the local computer.
-For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in about_Remote_Troubleshooting.
+For instructions for adding a computer name to the TrustedHosts list, see "How to Add  a Computer to the Trusted Host List" in [about_Remote_Troubleshooting](./About/about_Remote_Troubleshooting.md).
 
 Note:  On Windows Vista, and later versions of Windows, to include the local computer in the value of the ComputerName parameter, you must open Windows PowerShell with the "Run as administrator" option.
 
@@ -596,6 +617,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationName
+
 Specifies the session configuration that is used for the new PSSession.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
@@ -606,7 +628,7 @@ If the specified session configuration does not exist on the remote computer, th
 
 The default value is the value of the $PSSessionConfigurationName preference variable on the local computer.
 If this preference variable is not set, the default is Microsoft.PowerShell.
-For more information, see about_preference_variables.
+For more information, see [about_preference_variables](./About/about_Preference_Variables.md).
 
 ```yaml
 Type: String
@@ -621,6 +643,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionUri
+
 Specifies a Uniform Resource Identifier (URI) that defines the connection endpoint of the session.
 The URI must be fully qualified.
 
@@ -653,6 +676,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
@@ -672,6 +696,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableNetworkAccess
+
 Adds an interactive security token to loopback sessions.
 The interactive token lets you run commands in the loopback session that get data from other computers.
 For example, you can run a command in the session that copies XML files from a remote computer to the local computer.
@@ -705,6 +730,7 @@ Accept wildcard characters: False
 ```
 
 ### -FilePath
+
 Runs the specified local script on one or more remote computers.
 Enter the path and file name of the script, or pipe a script path to Invoke-Command.
 The script must reside on the local computer or in a directory that the local computer can access.
@@ -725,6 +751,7 @@ Accept wildcard characters: False
 ```
 
 ### -HideComputerName
+
 Omits the computer name of each object from the output display.
 By default, the name of the computer that generated the object appears in the display.
 
@@ -744,6 +771,7 @@ Accept wildcard characters: False
 ```
 
 ### -InDisconnectedSession
+
 Runs a command or script in a disconnected session.
 
 When you use the **InDisconnectedSession** parameter, **Invoke-Command** creates a persistent session on each remote computer, starts the command specified by the **ScriptBlock** or **FilePath** parameter, and then disconnects from the session.
@@ -761,7 +789,7 @@ If you intend to connect to the disconnected session, set the idle timeout in th
 You can set the output buffering mode and idle timeout in the **SessionOption** parameter or in the **$PSSessionOption** preference variable.
 For more information about session options, see **New-PSSessionOption** and **about_Preference_Variables**.
 
-For more information about the Disconnected Sessions feature, see about_Remote_Disconnected_Sessions.
+For more information about the Disconnected Sessions feature, see [about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md).
 
 This parameter is introduced in Windows PowerShell 3.0.
 
@@ -778,6 +806,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
+
 Specifies input to the command.
 Enter a variable that contains the objects or type a command or expression that gets the objects.
 
@@ -796,6 +825,7 @@ Accept wildcard characters: False
 ```
 
 ### -JobName
+
 Specifies a friendly name for the background job.
 By default, jobs are named "Job\<n\>", where \<n\> is an ordinal number.
 
@@ -836,6 +866,7 @@ Accept wildcard characters: False
 ```
 
 ### -Port
+
 Specifies the network port  on the remote computer used for this command.
 To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
 The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
@@ -864,6 +895,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptBlock
+
 Specifies the commands to run.
 Enclose the commands in braces ( { } ) to create a script block.
 This parameter is required.
@@ -884,6 +916,7 @@ Accept wildcard characters: False
 ```
 
 ### -Session
+
 Runs the command in the specified Windows PowerShell sessions (PSSessions).
 Enter a variable that contains the PSSessions or a command that creates or gets the PSSessions, such as a New-PSSession or Get-PSSession command.
 
@@ -895,7 +928,7 @@ Use a PSSession to run a series of related commands that share data.
 To run a single command or a series of unrelated commands, use the ComputerName parameter.
 
 To create a PSSession, use the New-PSSession cmdlet.
-For more information, see about_PSSessions.
+For more information, see [about_PSSessions](./About/about_PSSessions.md).
 
 ```yaml
 Type: PSSession[]
@@ -929,6 +962,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionOption
+
 Sets advanced options for the session.
 Enter a **SessionOption** object, such as one that you create by using the New-PSSessionOption cmdlet, or a hash table in which the keys are session option names and the values are session option values.
 
@@ -955,6 +989,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThrottleLimit
+
 Specifies the maximum number of concurrent connections that can be established to run this command.
 If you omit this parameter or enter a value of 0, the default value, 32, is used.
 
@@ -973,6 +1008,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSSL
+
 Uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer.
 By default, SSL is not used.
 
@@ -994,34 +1030,38 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.Management.Automation.ScriptBlock
+
 You can pipe a command in a script block to **Invoke-Command**.
 Use the $input automatic variable to represent the input objects in the command.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSRemotingJob, System.Management.Automation.Runspaces.PSSession, or the output of the invoked command
+
 When you use the **AsJob** parameter, **Invoke-Command** returns a job object.
 When you use the **InDisconnectedSession** parameter, **Invoke-Command** returns a PSSession object.
 Otherwise, it returns the output of the invoked command (the value of the **ScriptBlock** parameter).
 
 ## NOTES
-* On Windows Vista, and later versions of Windows, to use the **ComputerName** parameter of **Invoke-Command** to run a command on the local computer, you must open Windows PowerShell with the "Run as administrator" option.
-* When you run commands on multiple computers, Windows PowerShell connects to the computers in the order in which they appear in the list. However, the command output is displayed in the order that it is received from the remote computers, which might be different.
-* Errors that result from the command that **Invoke-Command** runs are included in the command results. Errors that would be terminating errors in a local command are treated as non-terminating errors in a remote command. This strategy ensures that terminating errors on one computer do not terminate the command on all computers on which it is run. This practice is used even when a remote command is run on a single computer.
-* If the remote computer is not in a domain that the local computer trusts, the computer might not be able to authenticate the user's credentials. To add the remote computer to the list of "trusted hosts" in WS-Management, use the following command in the WSMAN provider, where \<Remote-Computer-Name\> is the name of the remote computer:
+
+- On Windows Vista, and later versions of Windows, to use the **ComputerName** parameter of **Invoke-Command** to run a command on the local computer, you must open Windows PowerShell with the "Run as administrator" option.
+- When you run commands on multiple computers, Windows PowerShell connects to the computers in the order in which they appear in the list. However, the command output is displayed in the order that it is received from the remote computers, which might be different.
+- Errors that result from the command that **Invoke-Command** runs are included in the command results. Errors that would be terminating errors in a local command are treated as non-terminating errors in a remote command. This strategy ensures that terminating errors on one computer do not terminate the command on all computers on which it is run. This practice is used even when a remote command is run on a single computer.
+- If the remote computer is not in a domain that the local computer trusts, the computer might not be able to authenticate the user's credentials. To add the remote computer to the list of "trusted hosts" in WS-Management, use the following command in the WSMAN provider, where \<Remote-Computer-Name\> is the name of the remote computer:
 
   Set-Item -Path WSMan:\Localhost\Client\TrustedHosts -Value \<Remote-Computer-Name\>
 
-* In Windows PowerShell 2.0, you cannot use the Select-Object cmdlet to select the **PSComputerName** property of the object that **Invoke-Command** returns. Instead, to display the value of the **PSComputerName** property, use the dot method to get the **PSComputerName** property value ($result.PSComputerName), use a Format cmdlet, such as the Format-Table cmdlet, to display the value of the **PSComputerName** property, or use a Select-Object command where the value of the property parameter is a calculated property that has a label other than "PSComputerName".
+- In Windows PowerShell 2.0, you cannot use the Select-Object cmdlet to select the **PSComputerName** property of the object that **Invoke-Command** returns. Instead, to display the value of the **PSComputerName** property, use the dot method to get the **PSComputerName** property value ($result.PSComputerName), use a Format cmdlet, such as the Format-Table cmdlet, to display the value of the **PSComputerName** property, or use a Select-Object command where the value of the property parameter is a calculated property that has a label other than "PSComputerName".
 
   This limitation does not apply to Windows PowerShell 3.0 or later versions of Windows PowerShell.
 
-* When you disconnect a PSSession, such as by using the **InDisconnectedSession** parameter, the session state is **Disconnected** and the availability is **None**.
+- When you disconnect a PSSession, such as by using the **InDisconnectedSession** parameter, the session state is **Disconnected** and the availability is **None**.
 
   The value of the **State** property is relative to the current session.
 Therefore, a value of **Disconnected** means that the PSSession is not connected to the current session.
@@ -1032,9 +1072,9 @@ To determine whether you can connect or reconnect to the session, use the **Avai
   An **Availability** value of **None** indicates that you can connect to the session.
 A value of **Busy** indicates that you cannot connect to the PSSession because it is connected to another session.
 
-  For more information about the values of the **State** property of sessions, see [RunspaceState Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in the MSDN library.
+  For more information about the values of the **State** property of sessions, see [RunspaceState Enumeration](/dotnet/api/system.management.automation.runspaces.runspacestate) in the MSDN library.
 
-  For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
+  For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability Enumeration](/dotnet/api/system.management.automation.runspaces.runspaceavailability) in the MSDN library.
 
 ## RELATED LINKS
 
@@ -1050,7 +1090,7 @@ A value of **Busy** indicates that you cannot connect to the PSSession because i
 
 [Remove-PSSession](Remove-PSSession.md)
 
-[WSMan Provider](../microsoft.wsman.management/provider/wsman-provider.md)
+[WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
 
 [about_PSSessions](About/about_PSSessions.md)
 

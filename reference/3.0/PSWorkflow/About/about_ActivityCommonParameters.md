@@ -348,7 +348,7 @@ saved when a checkpoint is taken.
 
 Applies the equivalent of the PSDisableSerialization parameter to the entire
 workflow, not just the activity. Adding this parameter is generally not
-recommended, because a workflow that doesn’t serialize its objects cannot be
+recommended, because a workflow that doesn't serialize its objects cannot be
 resumed or persisted.
 
 Valid values:
@@ -357,7 +357,7 @@ Valid values:
   PSDisableSerialization parameter to an activity, objects are serialized.
 
 - `$True`. Directs all activities within a workflow to return
-  "live" (not serialized) objects. The resulting objects have methods, as well 
+  "live" (not serialized) objects. The resulting objects have methods, as well
   as properties, but they cannot be saved when a checkpoint is taken.
 - `$False`. Workflow objects are serialized.
 
@@ -406,10 +406,10 @@ Valid values:
   added. Checkpoints are taken based on the settings for the workflow.
 
 - `$True`. Takes a checkpoint after the activity completes.
-  This checkpoint is in addition to any checkpoints that are specified in 
+  This checkpoint is in addition to any checkpoints that are specified in
   the workflow.
 
-- `$False`. No checkpoints are added. Checkpoints are taken only when 
+- `$False`. No checkpoints are added. Checkpoints are taken only when
   specified in the workflow.
 
 #### PSPort \<Int32\>

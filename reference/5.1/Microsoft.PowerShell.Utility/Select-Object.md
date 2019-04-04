@@ -8,7 +8,6 @@ online version: http://go.microsoft.com/fwlink/?LinkId=821852
 schema: 2.0.0
 title: Select-Object
 ---
-
 # Select-Object
 
 ## SYNOPSIS
@@ -18,6 +17,7 @@ Selects objects or object properties.
 ## SYNTAX
 
 ### DefaultParameter (Default)
+
 ```
 Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
  [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
@@ -25,12 +25,14 @@ Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProper
 ```
 
 ### SkipLastParameter
+
 ```
 Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
  [-ExpandProperty <String>] [-Unique] [-SkipLast <Int32>] [<CommonParameters>]
 ```
 
 ### IndexParameter
+
 ```
 Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
 ```
@@ -45,7 +47,7 @@ To select object properties, use the **Property** parameter.
 When you select properties, `Select-Object` returns new objects that have only the specified properties.
 
 Beginning in Windows PowerShell 3.0, `Select-Object` includes an optimization feature that prevents commands from creating and processing objects that are not used.
-When you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, Windows PowerShell stops the command that generates the objects as soon as the selected number of objects is generated, even when the command that generates the objects appears before the `Select-Object` command in the pipeline.
+When you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, PowerShell stops the command that generates the objects as soon as the selected number of objects is generated, even when the command that generates the objects appears before the `Select-Object` command in the pipeline.
 To turn off this optimizing behavior, use the **Wait** parameter.
 
 ## EXAMPLES
@@ -76,7 +78,7 @@ InternalName:     explorer
 OriginalFilename: EXPLORER.EXE.MUI
 FileVersion:      10.0.17134.1 (WinBuild.160101.0800)
 FileDescription:  Windows Explorer
-Product:          Microsoft� Windows� Operating System
+Product:          Microsoft Windows Operating System
 ProductVersion:   10.0.17134.1
 ...
 ```
@@ -189,7 +191,7 @@ The command uses the **ReadOnly** dynamic parameter of the `Get-ChildItem` for F
 It uses a pipeline operator (|) to send the files to the `Rename-Item` cmdlet, which renames the file.
 It uses the **Passthru** parameter of `Rename-Item` to send the renamed files to the `Select-Object` cmdlet, which selects the first 5 for display.
 
-The **Wait** parameter of `Select-Object` prevents Windows PowerShell from stopping the `Get-ChildItem` cmdlet after it gets the first five read-only text files.
+The **Wait** parameter of `Select-Object` prevents PowerShell from stopping the `Get-ChildItem` cmdlet after it gets the first five read-only text files.
 Without this parameter, only the first five read-only files would be renamed.
 
 ### Example 9: Demonstrate the intricacies of the -ExpandProperty parameter
@@ -216,7 +218,7 @@ $object | Select-Object -ExpandProperty Expand -Property Name | Get-Member
 ```
 
 ```output
-TypeName: System.Int32
+   TypeName: System.Int32
 
 Name        MemberType   Definition
 ----        ----------   ----------
@@ -266,7 +268,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ExpandProperty
@@ -392,13 +394,15 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Skip
 
-Ignores the specified number of objects and then gets the remaining objects.
-Enter the number of objects to skip.
+Skips (does not select) the specified number of items.
+By default, the Skip parameter counts from the beginning of the array or list of objects, but if the command uses the Last parameter, it counts from the end of the list or array.
+
+Unlike the **Index** parameter, which starts counting at 0, the **Skip** parameter begins at 1.
 
 ```yaml
 Type: Int32
@@ -413,6 +417,10 @@ Accept wildcard characters: False
 ```
 
 ### -SkipLast
+
+Skips (does not select) the specified number of items from the end of the list or array. Works in the same way as using **Skip** together with **Last** parameter.
+
+Unlike the **Index** parameter, which starts counting at 0, the **SkipLast** parameter begins at 1.
 
 ```yaml
 Type: Int32
@@ -448,8 +456,8 @@ Accept wildcard characters: False
 ### -Wait
 
 Indicates that the cmdlet turns off optimization.
-Windows PowerShell runs commands in the order that they appear in the command pipeline and lets them generate all objects.
-By default, if you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, Windows PowerShell stops the command that generates the objects as soon as the selected number of objects is generated.
+PowerShell runs commands in the order that they appear in the command pipeline and lets them generate all objects.
+By default, if you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, PowerShell stops the command that generates the objects as soon as the selected number of objects is generated.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -466,7 +474,8 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

@@ -155,7 +155,7 @@ This command gets the properties of the **PSModuleInfo** object that `Get-Module
 There is one object for each module file.
 
 You can use the properties to format and filter the module objects.
-For more information about the properties, see [PSModuleInfo Properties](/dotnet/api/system.management.automation.psmoduleinfo) in the MSDN library.
+For more information about the properties, see [PSModuleInfo Properties](/dotnet/api/system.management.automation.psmoduleinfo).
 
 The output includes the new properties, such as **Author** and **CompanyName**, that were introduced in Windows PowerShell 3.0
 
@@ -220,7 +220,7 @@ PS> Get-Content $m.Path
     GUID               = "{8FA5064B-8479-4c5c-86EA-0D311FE48875}"
     Author             = "Microsoft Corporation"
     CompanyName        = "Microsoft Corporation"
-    Copyright          = "© Microsoft Corporation. All rights reserved."
+    Copyright          = "Microsoft Corporation. All rights reserved."
     ModuleVersion      = "1.0.0.0"
     Description        = "Windows PowerShell File Transfer Module"
     PowerShellVersion  = "2.0"

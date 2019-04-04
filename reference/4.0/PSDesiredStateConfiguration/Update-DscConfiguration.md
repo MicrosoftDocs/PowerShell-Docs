@@ -105,7 +105,7 @@ Accept wildcard characters: False
 Specifies a friendly name for a job.
 If you specify this parameter, the cmdlet runs as a job, and it returns a **Job** object.
 
-By default, Windows PowerShell® assigns the name JobN where N is an integer.
+By default, Windows PowerShell assigns the name JobN where N is an integer.
 
 If you specify the **Wait** parameter, do not specify this parameter.
 

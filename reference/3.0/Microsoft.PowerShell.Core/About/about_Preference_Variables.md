@@ -613,7 +613,7 @@ Valid values:
 - Continue: Displays the informational message, and continues running.
 - Suspend: Automatically suspends a workflow job after a Write-Information
   command is carried out, to allow users to see the messages before
-  continuing. The workflow can be resumed at the user’s discretion.
+  continuing. The workflow can be resumed at the user's discretion.
 - SilentlyContinue: No effect. The informational messages are not (Default)
   displayed, and the script continues without interruption.
 
