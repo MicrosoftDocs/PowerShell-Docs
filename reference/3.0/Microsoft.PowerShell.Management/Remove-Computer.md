@@ -18,16 +18,13 @@ Removes the local computer from its domain.
 ### Local (Default)
 
 ```
-Remove-Computer [[-UnjoinDomainCredential] <PSCredential>] [-Restart] [-Force] [-PassThru]
- [-WorkgroupName <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Computer [[-UnjoinDomainCredential] <PSCredential>] [-Restart] [-Force] [-PassThru] [-Workgroup <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Remote
 
 ```
-Remove-Computer -UnjoinDomainCredential <PSCredential> [-LocalCredential <PSCredential>] [-Restart]
- [-ComputerName <String[]>] [-Force] [-PassThru] [-WorkgroupName <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Remove-Computer -UnjoinDomainCredential <PSCredential> [-LocalCredential <PSCredential>] [-Restart] [-ComputerName <String[]>] [-Force] [-PassThru] [-Workgroup <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,7 +72,7 @@ This example removes all the computers listed in the `OldServers.txt` file from 
 domains and moves them into the **Legacy** workgroup.
 
 ```powershell
-Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -WorkgroupName "Legacy" -Force -Restart
+Remove-Computer -ComputerName (Get-Content OldServers.txt) -LocalCredential Domain01\Admin01 -UnJoinDomainCredential Domain01\Admin01 -Workgroup "Legacy" -Force -Restart
 ```
 
 The **LocalCredential** parameter provides the credentials of a user who has permission to connect
@@ -90,7 +87,7 @@ This example removes the remote computer, Server01, and the local computer from 
 adds them to the **Local** workgroup.
 
 ```powershell
-Remove-Computer -ComputerName "Server01", "localhost" -UnjoinDomainCredential Domain01\Admin01 -WorkgroupName "Local" -Restart -Force
+Remove-Computer -ComputerName "Server01", "localhost" -UnjoinDomainCredential Domain01\Admin01 -Workgroup "Local" -Restart -Force
 ```
 
 The **Force** parameter suppresses the confirmation prompt for each computer. The **Restart**
@@ -224,7 +221,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WorkgroupName
+### -Workgroup
 
 Specifies the name of a workgroup to which the computers are added when they are removed from their
 domains. The default value is **WORKGROUP**. When you remove a computer from a domain, you must add
