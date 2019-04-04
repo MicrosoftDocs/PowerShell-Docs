@@ -46,12 +46,12 @@ display the current value of `$DebugPreference` and attempt to write a debug mes
 the value of `$DebugPreference` to **Continue**, which allows debug messages to be displayed.
 
 ```
-PS C:\> $DebugPreference
+PS > $DebugPreference
 SilentlyContinue
-PS C:\> Write-Debug "Cannot open file."
-PS C:\>
-PS C:\> $DebugPreference = "Continue"
-PS C:\> Write-Debug "Cannot open file."
+PS > Write-Debug "Cannot open file."
+PS >
+PS > $DebugPreference = "Continue"
+PS > Write-Debug "Cannot open file."
 DEBUG: Cannot open file.
 ```
 
@@ -73,13 +73,13 @@ function Test-Debug {
 ```
 
 ```
-PS C:\> Test-Debug
+PS > Test-Debug
 $DebugPreference is SilentlyContinue
 
-PS C:\> Test-Debug -Debug
+PS > Test-Debug -Debug
 DEBUG: $DebugPreference is Continue
 $DebugPreference is Continue
-PS C:\> $DebugPreference
+PS > $DebugPreference
 SilentlyContinue
 ```
 
