@@ -122,7 +122,7 @@ These cmdlets are discussed later in this topic.
 ```powershell
 PS> Remove-Variable -name MyVariable
 
-PS> Remove-Item -path variable:\MyVariable
+PS> Remove-Item -path Variable:\MyVariable
 ```
 
 To get a list of all the variables in your  PowerShell session, type:
@@ -147,10 +147,10 @@ the variable.
 For example:
 
 ```powershell
-PS> $a = 12     (System.Int32)
-PS> $a = "Word" (System.String)
-PS> $a = 12, "Word" (System.Int32, System.String)
-PS> $a = dir C:\Windows\System32  (Files and folders)
+PS> $a = 12                         # System.Int32
+PS> $a = "Word"                     # System.String
+PS> $a = 12, "Word"                 # array of System.Int32, System.String
+PS> $a = dir C:\Windows\System32    # FileInfo and DirectoryInfo types
 ```
 
 You can use a type attribute and cast notation to ensure that a variable can
@@ -246,8 +246,8 @@ For example, the following command creates and then displays a variable named
 "save-items".
 
 ```powershell
-C:\PS> ${save-items} = "a", "b", "c"
-C:\PS> ${save-items}
+PS> ${save-items} = "a", "b", "c"
+PS> ${save-items}
 a
 b
 c
@@ -257,7 +257,7 @@ The following command gets the child items in the directory that is represented
 by the "ProgramFiles(x86)" environment variable.
 
 ```powershell
-C:\PS> Get-ChildItem ${env:ProgramFiles(x86)}
+PS> Get-ChildItem ${env:ProgramFiles(x86)}
 ```
 
 To reference a variable name that includes braces, enclose the variable name in
@@ -265,8 +265,8 @@ braces, and use the backtick (escape) character to escape the braces. For
 example, to create a variable named "this{value}is" with a value of 1, type:
 
 ```powershell
-C:\PS> ${this`{value`}is} = 1
-C:\PS> ${this`{value`}is}
+PS> ${this`{value`}is} = 1
+PS> ${this`{value`}is}
 1
 ```
 
@@ -314,19 +314,17 @@ PowerShell Variable provider creates a Variable: drive that looks and acts like
 a file system drive, but it contains the variables in your session and their
 values.
 
-To change to the variable: drive, type:
+To change to the Variable: drive, type:
 
 ```powershell
-Set-Location variable:
-
- (or "cd variable:")
+Set-Location Variable:
 ```
 
 To list the items (variables) in the Variable: drive, use the `Get-Item` or
 `Get-ChildItem` cmdlets. For example:
 
 ```powershell
-Get-ChildItem variable:
+Get-ChildItem Variable:
 ```
 
 To get the value of a particular variable, use file system notation to specify
@@ -334,7 +332,7 @@ the name of the drive and the name of the variable. For example, to get the
 `$PSCulture` automatic variable, use the following command.
 
 ```powershell
-Get-Item variable:\PSCulture
+Get-Item Variable:\PSCulture
 
 Name                           Value
 ----                           -----
