@@ -25,20 +25,29 @@ In the rest of this section, we will explore how to use **Format** cmdlets to ch
 
 ### Using Format-Wide for Single-Item Output
 
-The **Format-Wide** cmdlet, by default, displays only the default property of an object. The information associated with each object is displayed in a single column:
+The `Format-Wide` cmdlet, by default, displays only the default property of an object.
+The information associated with each object is displayed in a single column:
 
+```powershell
+Get-Command -Verb Format | Format-Wide
 ```
-PS> Get-Process -Name powershell | Format-Wide
 
-powershell                              powershell
+```output
+Format-Custom                          Format-Hex
+Format-List                            Format-Table
+Format-Wide
 ```
 
 You can also specify a non-default property:
 
+```powershell
+Get-Command -Verb Format | Format-Wide -Property Noun
 ```
-PS> Get-Process -Name powershell | Format-Wide -Property Id
 
-2760                                    3448
+```output
+Custom                                 Hex
+List                                   Table
+Wide
 ```
 
 #### Controlling Format-Wide Display with Column
