@@ -93,7 +93,7 @@ Specifies a path to one or more locations.
 Unlike the *Path* parameter, the value of the *LiteralPath* parameter is used exactly as it is entered.
 No characters are interpreted as wildcards.
 If the path includes escape characters, enclose them in single quotation marks.
-Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences.
+Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: String

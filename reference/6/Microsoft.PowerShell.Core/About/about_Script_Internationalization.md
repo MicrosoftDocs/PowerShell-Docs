@@ -209,7 +209,7 @@ $a = $Day.d0, $Day.d1, $Day.d2, $Day.d3, $Day.d4, $Day.d5, $Day.d6
 # Index into $a to get the name of the day.
 # Use string formatting to build a sentence.
 
-"{0} {1}" -f $Day.messageDate, $a[(Get-Date -uformat %u)] | Out-Host
+"{0} {1}" -f $Day.messageDate, $a[(Get-Date -UFormat %u)] | Out-Host
 ```
 
 The .psd1 files that support the script are saved in subdirectories of
@@ -240,9 +240,9 @@ Today is Friday (in German)
 
 ## See also
 
-* [about_Data_Sections](about_Data_Sections.md)
-* [about_Automatic_Variables](about_Automatic_Variables.md)
-* [about_Hash_Tables](about_Hash_Tables.md)
-* [about_Quoting_Rules](about_Quoting_Rules.md)
-* [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
-* [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)
+- [about_Data_Sections](about_Data_Sections.md)
+- [about_Automatic_Variables](about_Automatic_Variables.md)
+- [about_Hash_Tables](about_Hash_Tables.md)
+- [about_Quoting_Rules](about_Quoting_Rules.md)
+- [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md)
+- [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md)

@@ -8,14 +8,13 @@ title:  about_Script_Internationalization
 # About Script Internationalization
 
 ## Short Description
-
 Describes the script internationalization features that make it easy for
 scripts to display messages and instructions to users in their user interface
 (UI) language.
 
 ## Long Description
 
-The Windows PowerShell script internationalization features allow you to
+The PowerShell script internationalization features allow you to
 better serve users throughout the world by displaying Help and user messages
 for scripts and functions in the user's UI language.
 
@@ -26,27 +25,27 @@ separate from code so they are easily identified and extracted. A new cmdlet,
 `ConvertFrom-StringData`, converts text strings into dictionary-like hash
 tables to facilitate translation.
 
-To support international Help text, Windows PowerShell includes the following
+To support international Help text, PowerShell includes the following
 features:
 
-- A Data section that separates text strings from code instructions. For more
+* A Data section that separates text strings from code instructions. For more
   information about the Data section, see
   [about_Data_Sections](about_Data_Sections.md).
 
-- New automatic variables, \$PSCulture and \$PSUICulture. \$PSCulture stores the
+* New automatic variables, \$PSCulture and \$PSUICulture. \$PSCulture stores the
   name of the UI language used on the system for elements such as the date,
   time, and currency. The $PSUICulture variable stores the name of the UI
   language used on the system for user interface elements such as menus and text
   strings.
 
-- A cmdlet, `ConvertFrom-StringData`, that converts text strings into
+* A cmdlet, `ConvertFrom-StringData`, that converts text strings into
   dictionary-like hash tables to facilitate translation. For more information,
   see [ConvertFrom-StringData](../../Microsoft.PowerShell.Utility/ConvertFrom-StringData.md).
 
-- A new file type, .psd1, that stores translated text strings. The .psd1 files
+* A new file type, .psd1, that stores translated text strings. The .psd1 files
   are stored in language-specific subdirectories of the script directory.
 
-- A cmdlet, `Import-LocalizedData`, that imports translated text strings for a
+* A cmdlet, `Import-LocalizedData`, that imports translated text strings for a
   specified language into a script at runtime. This cmdlet recognizes and
   imports strings in any Windows-supported language. For more information see
   [Import-LocalizedData](../../Microsoft.PowerShell.Utility/Import-LocalizedData.md).
@@ -109,9 +108,9 @@ include the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
-helloWorld = Hello, World (in German).
-errorMsg1 = You cannot leave the user name field blank (in German).
-promptMsg = Please enter your user name (in German).
+helloWorld = Hallo, Welt.
+errorMsg1 = Das Feld Benutzername darf nicht leer sein.
+promptMsg = Geben Sie Ihren Benutzernamen ein.
 '@
 ```
 
@@ -120,9 +119,9 @@ directory might includes the following statement:
 
 ```powershell
 ConvertFrom-StringData -StringData @'
-helloWorld = Hello, World (in Arabic).
-errorMsg1 = You cannot leave the user name field blank (in Arabic).
-promptMsg = Please enter your user name (in Arabic).
+helloWorld = مرحبًا أيها العالَم
+errorMsg1 = لا يمكنك ترك حقل اسم المستخدم فارغًا
+promptMsg = يرجى إدخال اسم المستخدم الخاص بك
 '@
 ```
 
@@ -221,14 +220,14 @@ The following is a complete listing of .\de-DE\sample1.psd1:
 ```powershell
 # culture="de-DE"
 ConvertFrom-StringData @'
-    messageDate = Today is
-    d0 = Sunday (in German)
-    d1 = Monday (in German)
-    d2 = Tuesday (in German)
-    d3 = Wednesday (in German)
-    d4 = Thursday (in German)
-    d5 = Friday (in German)
-    d6 = Saturday (in German)
+    messageDate = Heute ist
+    d0 = Sonntag
+    d1 = Montag
+    d2 = Dienstag
+    d3 = Mittwoch
+    d4 = Donnerstag
+    d5 = Freitag
+    d6 = Samstag
 '@
 ```
 
