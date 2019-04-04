@@ -1,13 +1,13 @@
 ---
-ms.date:  06/09/2017
-schema:  2.0.0
-locale:  en-us
-keywords:  powershell,cmdlet
-online version:  http://go.microsoft.com/fwlink/?LinkId=821874
-external help file:  Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-title:  Write-Debug
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+keywords: powershell,cmdlet
+locale: en-us
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 06/09/2017
+online version: http://go.microsoft.com/fwlink/?LinkId=821874
+schema: 2.0.0
+title: Write-Debug
 ---
-
 # Write-Debug
 
 ## SYNOPSIS
@@ -20,44 +20,31 @@ Write-Debug [-Message] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Write-Debug** cmdlet writes debug messages to the console from a script or command.
 
-By default, debug messages are not displayed in the console, but you can display them by using the *Debug* parameter or the $DebugPreference variable.
+The `Write-Debug` cmdlet writes debug messages to the console from a script or command.
+
+By default, debug messages are not displayed in the console, but you can display them by using the
+**Debug** parameter or the `$DebugPreference` variable.
 
 ## EXAMPLES
 
 ### Example 1: Understand $DebugPreference
-```
-PS C:\> Write-Debug "Cannot open file."
-```
 
-This command writes a debug message.
-Because the value of $DebugPreference is SilentlyContinue, the message is not displayed in the console.
+This example writes a debug message.
 
-### Example 2: Use the Debug parameter to override $DebugPreference
-```
-PS C:\> $DebugPreference
-SilentlyContinue
-PS C:\> Write-Debug "Cannot open file."
-PS C:\>
-PS C:\> Write-Debug "Cannot open file." -Debug
-DEBUG: Cannot open file.
+```powershell
+Write-Debug "Cannot open file."
 ```
 
-This example shows how to use the *Debug* common parameter to override the value of the $DebugPreference variable for a particular command.
+The default value of `$DebugPreference` is **SilentlyContinue**. Therefore, the message is not
+displayed in the console.
 
-The first command displays the value of the $DebugPreference variable, which is SilentlyContinue, the default.
+### Example 2: Change the value of $DebugPreference
 
-The second command writes a debug message but, because of the value of $DebugPreference, the message does not appear.
+This example shows the effect of changing the value of the `$DebugPreference` variable. First, we
+display the current value of `$DebugPreference` and attempt to write a debug message. The we change
+the value of `$DebugPreference` to **Continue**, which allows debug messages to be displayed.
 
-The third command writes a debug message.
-It uses the *Debug* common parameter to override the value of $DebugPreference and to display the debug messages resulting from this command.
-
-As a result, even though the value of $DebugPreference is SilentlyContinue, the debug message appears.
-
-For more information about the *Debug* common parameter, see about_CommonParameters.
-
-### Example 3: Change the value of $DebugPreference
 ```
 PS C:\> $DebugPreference
 SilentlyContinue
@@ -68,21 +55,48 @@ PS C:\> Write-Debug "Cannot open file."
 DEBUG: Cannot open file.
 ```
 
-This command shows the effect of changing the value of the $DebugPreference variable on the display of debug messages.
+For more information about `$DebugPreference`, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
-The first command displays the value of the $DebugPreference variable, which is SilentlyContinue, the default.
+### Example 3: Use the Debug parameter to override $DebugPreference
 
-The second command writes a debug message but, because of the value of $DebugPreference, the message does not appear.
+The `Test-Debug` function writes the value of the `$DebugPreference` variable to the PowerShell host
+and to the Debug stream. In this example, we use the **Debug** parameter to override the
+`$DebugPreference` value.
 
-The third command assigns a value of Continue to the $DebugPreference variable.
+```powershell
+function Test-Debug {
+    [CmdletBinding()]
+    param()
+    Write-Debug ('$DebugPreference is ' + $DebugPreference)
+    Write-Host ('$DebugPreference is ' + $DebugPreference)
+}
+```
 
-The fourth command writes a debug message, which appears on the console.
+```
+PS C:\> Test-Debug
+DEBUG: $DebugPreference is Inquire
 
-For more information about $DebugPreference, see about_Preference_Variables.
+Confirm
+Continue with this operation?
+[Y] Yes  [A] Yes to All  [H] Halt Command  [?] Help (default is "Y"):
+$DebugPreference is Inquire
+PS C:\> $DebugPreference
+SilentlyContinue
+```
+
+Notice that the value of `$DebugPreference` changes when you use the **Debug** parameter. This
+change only affects the scope of the function. The value is not affected outside the function.
+
+> [!NOTE]
+> When the value of `$DebugPreference` is **Inquire**, PowerShell halts execution to ask if
+> execution should continue.
+
+For more information about the **Debug** common parameter, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## PARAMETERS
 
 ### -Message
+
 Specifies the debug message to send to the console.
 
 ```yaml
@@ -98,18 +112,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
-You can pipe a string that contains a debug message to **Write-Debug**.
+
+You can pipe a string that contains a debug message to `Write-Debug`.
 
 ## OUTPUTS
 
 ### None
-**Write-Debug** writes only to the debug stream.
-It does not return any output.
+
+`Write-Debug` only writes to the debug stream. It does not return any output.
 
 ## NOTES
 
