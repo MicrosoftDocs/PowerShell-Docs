@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/04/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=113424
 schema: 2.0.0
 title: Write-Debug
@@ -42,7 +42,7 @@ displayed in the console.
 ### Example 2: Change the value of $DebugPreference
 
 This example shows the effect of changing the value of the `$DebugPreference` variable. First, we
-display the current value of `$DebugPreference` and attempt to write a debug message. The we change
+display the current value of `$DebugPreference` and attempt to write a debug message. Then we change
 the value of `$DebugPreference` to **Continue**, which allows debug messages to be displayed.
 
 ```
