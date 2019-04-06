@@ -31,7 +31,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### Blog posts about enumeration
+## Blog posts about enumeration
 
 This article presents information about how to use enumerated values in a hash table. For more
 information about enumeration, read these **Scripting Guy** blog posts. To create a function that
@@ -40,7 +40,7 @@ returns the enumerated values, see
 For more information, see the
 [Scripting Guy series of blog posts about enumeration](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
 
-### Hash table key/value pairs
+## Hash table key/value pairs
 
 To build efficient queries, use the `Get-WinEvent` cmdlet with the **FilterHashtable** parameter.
 **FilterHashtable** accepts a hash table as a filter to get specific information from Windows event
@@ -74,7 +74,7 @@ for a data value.
 | Data         | `<String[]>`       | No  |
 | *            | `<String[]>`       | No  |
 
-### Building a query with a hash table
+## Building a query with a hash table
 
 To verify results and troubleshoot problems, it helps to build the hash table one **key/value** pair
 at a time. The query gets data from the **Application** log. The hash table is equivalent to
@@ -109,7 +109,7 @@ If your query needs to get data from archived event logs, use the **Path** key. 
 specifies the full path to the log file. For more information, see the **Scripting Guy** blog post,
 [Use PowerShell to Parse Saved Event Logs for Errors](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).
 
-### Using enumerated values in a hash table
+## Using enumerated values in a hash table
 
 **Keywords** is the next key in the hash table. The **Keywords** data type is an array of the `[long]`
 value type that holds a large number. Use the following command to find the maximum value of `[long]`:
@@ -182,7 +182,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### Keywords static property value (optional)
+### Keywords static property value (optional)
 
 The **Keywords** key is enumerated, but you can use a static property name in the hash table query.
 Rather than using the returned string, the property name must be converted to a value with the
@@ -199,7 +199,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### Filtering by Event Id
+## Filtering by Event Id
 
 To get more specific data, the query's results are filtered by **Event Id**. The **Event Id** is
 referenced in the hash table as the key **ID** and the value is a specific **Event Id**. The
@@ -217,7 +217,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### Filtering by Level
+## Filtering by Level
 
 To further refine the results and include only events that are errors, use the **Level** key.
 **Windows Event Viewer** displays the **Level** as string values, but they are enumerated values. In
@@ -269,7 +269,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### Level static property in enumeration (optional)
+### Level static property in enumeration (optional)
 
 The **Level** key is enumerated, but you can use a static property name in the hash table query.
 Rather than using the returned string, the property name must be converted to a value with the

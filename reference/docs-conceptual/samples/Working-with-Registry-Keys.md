@@ -8,7 +8,7 @@ ms.assetid:  91bfaecd-8684-48b4-ad86-065dfe6dc90a
 
 Because registry keys are items on Windows PowerShell drives, working with them is very similar to working with files and folders. One critical difference is that every item on a registry-based Windows PowerShell drive is a container, just like a folder on a file system drive. However, registry entries and their associated values are properties of the items, not distinct items.
 
-### Listing All Subkeys of a Registry Key
+## Listing All Subkeys of a Registry Key
 
 You can show all items directly within a registry key by using **Get-ChildItem**. Add the optional **Force** parameter to display hidden or system items. For example, this command displays the items directly within Windows PowerShell drive HKCU:, which corresponds to the HKEY_CURRENT_USER registry hive:
 
@@ -52,7 +52,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### Copying Keys
+## Copying Keys
 
 Copying is done with **Copy-Item**. The following command copies HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion and all of its properties to HKCU:\\, creating a new key named "CurrentVersion":
 
@@ -68,7 +68,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 You can still use other tools you already have available to perform filesystem copies. Any registry editing tools—including reg.exe, regini.exe, and regedit.exe—and COM objects that support registry editing (such as WScript.Shell and WMI's StdRegProv class) can be used from within Windows PowerShell.
 
-### Creating Keys
+## Creating Keys
 
 Creating new keys in the registry is simpler than creating a new item in a file system. Because all registry keys are containers, you do not need to specify the item type; you simply supply an explicit path, such as:
 
@@ -82,7 +82,7 @@ You can also use a provider-based path to specify a key:
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### Deleting Keys
+## Deleting Keys
 
 Deleting items is essentially the same for all providers. The following commands will silently remove items:
 
@@ -91,7 +91,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### Removing All Keys Under a Specific Key
+## Removing All Keys Under a Specific Key
 
 You can remove contained items by using **Remove-Item**, but you will be prompted to confirm the removal if the item contains anything else. For example, if we attempt to delete the HKCU:\\CurrentVersion subkey we created, we see this:
 
