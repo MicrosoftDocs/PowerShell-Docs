@@ -11,7 +11,7 @@ Applications that are designed to use Windows Installer can be accessed through 
 > [!NOTE]
 > Applications that are installed by copying the application files to the computer usually cannot be managed by using techniques discussed here. You can manage these applications as files and folders by using the techniques discussed in the "Working With Files and Folders" section.
 
-### Listing Windows Installer Applications
+## Listing Windows Installer Applications
 
 To list the applications installed with the Windows Installer on a local or remote system, use the following simple WMI query:
 
@@ -79,7 +79,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 Although we now have several ways to look at applications that used the Windows Installer for installation, we have not considered other applications. Because most standard applications register their uninstaller with Windows, we can work with those locally by finding them in the Windows registry.
 
-### Listing All Uninstallable Applications
+## Listing All Uninstallable Applications
 
 Although there is no guaranteed way to find every application on a system, it is possible to find all programs with listings displayed in the Add or Remove Programs dialog box. Add or Remove Programs finds these applications in the following registry key:
 
@@ -136,7 +136,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### Installing Applications
+## Installing Applications
 
 You can use the **Win32_Product** class to install Windows Installer packages, remotely or locally.
 
@@ -151,7 +151,7 @@ When installing remotely, use a Universal Naming Convention (UNC) network path t
 
 Applications that do not use Windows Installer technology may have application-specific methods available for automated deployment. To determine whether there is a method for deployment automation, check the documentation for the application or consult the application vendor's support system. In some cases, even if the application vendor did not specifically design the application for installation automation, the installer software manufacturer may have some techniques for automation.
 
-### Removing Applications
+## Removing Applications
 
 Removing a Windows Installer package by using Windows PowerShell works in approximately the same way as installing a package. Here is an example that selects the package to uninstall based on its name; in some cases it may be easier to filter with the **IdentifyingNumber**:
 
@@ -173,7 +173,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 However, these strings may not be directly usable from the Windows PowerShell prompt without some modification.
 
-### Upgrading Windows Installer Applications
+## Upgrading Windows Installer Applications
 
 To upgrade an application, you need to know the name of the application and the path to the application upgrade package. With that information, you can upgrade an application with a single Windows PowerShell command:
 
