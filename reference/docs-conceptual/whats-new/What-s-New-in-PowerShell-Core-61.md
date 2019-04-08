@@ -550,3 +550,12 @@ Visual Basic was rarely used with `Add-Type`. We removed this feature to reduce 
 ### Cleaned up uses of `CommandTypes.Workflow` and `WorkflowInfoCleaned`
 
 For more information on these changes, check out [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### Group-Object now sorts the groups
+
+As part of the performance improvement, `Group-Object` now returns a sorted listing of the groups.
+Although you should not rely on the order, you could be broken by this change if you wanted the
+first group. We decided that this performance improvement was worth the change since the impact of
+being dependent on previous behavior is low.
+
+For more information on this change, see [Issue #7409](https://github.com/PowerShell/PowerShell/issues/7409).
