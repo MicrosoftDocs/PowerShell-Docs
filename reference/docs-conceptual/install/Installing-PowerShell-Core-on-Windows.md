@@ -17,7 +17,7 @@ To enable PowerShell remoting over WSMan, the following prerequisites need to be
 - Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008
   R2.
 
-## Installing the MSI package
+## <a id="msi" />Installing the MSI package
 
 To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2,
 and later), download the MSI package from our GitHub [releases][] page. Scroll down to the
@@ -56,7 +56,7 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 For a full list of command line options for Msiexec.exe, see [Command line options](/windows/desktop/Msi/command-line-options).
 
-## Installing the ZIP package
+## <a id="zip" />Installing the ZIP package
 
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Be noted that
 when using the ZIP archive, you won't get the prerequisites check as in the MSI package. For
