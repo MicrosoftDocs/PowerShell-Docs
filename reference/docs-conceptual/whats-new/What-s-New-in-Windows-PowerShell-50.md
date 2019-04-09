@@ -205,7 +205,7 @@ Windows PowerShell 4.0 is installed by default on Windows 8.1 and Windows Server
 
 Windows PowerShell 4.0 includes the following new features.
 
-### New features in Windows PowerShell
+### <a name="new-features-in-windows-powershell-1" />New features in Windows PowerShell
 
 - **Windows PowerShell Desired State Configuration** (DSC) is a new management system in Windows PowerShell 4.0 that enables the deployment and management of configuration data for software services and the environment in which these services run. For more information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 - **Save-Help** now lets you save help for modules that are installed on remote computers. You can use Save-Help to download module Help from an Internet-connected client (on which not all of the modules for which you want help are necessarily installed), and then copy the saved Help to a remote shared folder or a remote computer that does not have Internet access.
