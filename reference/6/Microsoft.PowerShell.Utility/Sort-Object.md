@@ -349,7 +349,7 @@ PS> 1..20 |Sort-Object {$_ % 3}
 2
 20
 
-+PS> 1..20 |Sort-Object {$_ % 3} -Stable
+PS> 1..20 |Sort-Object {$_ % 3} -Stable
 3
 6
 9
