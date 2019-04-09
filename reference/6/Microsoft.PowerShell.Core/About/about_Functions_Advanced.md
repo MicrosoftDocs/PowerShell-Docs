@@ -21,22 +21,22 @@ compiled cmdlet or when you want to write a function that is similar to a
 compiled cmdlet.
 
 There is a difference between authoring a compiled cmdlet and an advanced
-function. Compiled cmdlets are .NET Framework classes that must be written in
-a .NET Framework language such as C#. In contrast, advanced functions are
-written in the PowerShell script language in the same way that other
-functions or script blocks are written.
+function. Compiled cmdlets are .NET Framework classes that must be written in a
+.NET Framework language such as C#. In contrast, advanced functions are written
+in the PowerShell script language in the same way that other functions or
+script blocks are written.
 
 Advanced functions use the CmdletBinding attribute to identify them as
 functions that act similar to cmdlets. The CmdletBinding attribute is similar
-to the Cmdlet attribute that is used in compiled cmdlet classes to identify
-the class as a cmdlet. For more information about this attribute, see
-about_Functions_CmdletBindingAttribute.
+to the Cmdlet attribute that is used in compiled cmdlet classes to identify the
+class as a cmdlet. For more information about this attribute, see
+[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
 
 The following example shows a function that accepts a name and then prints a
-greeting using the supplied name. Also notice that this function defines a
-name that includes a verb (Send) and noun (Greeting) pair similar to the
-verb-noun pair of a compiled cmdlet. However, functions are not required to
-have a verb-noun name.
+greeting using the supplied name. Also notice that this function defines a name
+that includes a verb (Send) and noun (Greeting) pair similar to the verb-noun
+pair of a compiled cmdlet. However, functions are not required to have a
+verb-noun name.
 
 ```powershell
 function Send-Greeting
@@ -58,23 +58,20 @@ The parameters of the function are declared by using the Parameter attribute.
 This attribute can be used alone, or it can be combined with the Alias
 attribute or with several other parameter validation attributes. For more
 information about how to declare parameters (including dynamic parameters that
-are added at runtime), see
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+are added at runtime), see [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
 
 The actual work of the previous function is performed in the Process block,
 which is equivalent to the ProcessingRecord method that is used by compiled
 cmdlets to process the data that is passed to the cmdlet. This block, along
-with the Begin and End blocks, is described in the
-[about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md) topic.
+with the Begin and End blocks, is described in the [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
+topic.
 
 Advanced functions differ from compiled cmdlets in the following ways:
 
-- Advanced function parameter binding does not throw an exception when an
-  array of strings is bound to a Boolean parameter.
-
-- The ValidateSet attribute and the ValidatePattern attribute cannot pass
-  named parameters.
-
+- Advanced function parameter binding does not throw an exception when an array
+  of strings is bound to a Boolean parameter.
+- The ValidateSet attribute and the ValidatePattern attribute cannot pass named
+  parameters.
 - Advanced functions cannot be used in transactions.
 
 ## SEE ALSO
