@@ -60,7 +60,7 @@ For more information, see [about_Scripts](/powershell/module/microsoft.powershel
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
+. C:\Scripts\HelloWorld.ps1
 HelloWorld
 ```
 
