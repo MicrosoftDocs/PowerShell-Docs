@@ -61,7 +61,7 @@ For more information, see [about_Scripts](/powershell/module/microsoft.powershel
 
 ```powershell
 . C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+HelloWorld
 ```
 
 This generates the following output:
