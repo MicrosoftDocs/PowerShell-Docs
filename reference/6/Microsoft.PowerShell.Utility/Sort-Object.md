@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 2/27/2019
+ms.date: 04/09/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821863
 schema: 2.0.0
 title: Sort-Object
@@ -19,15 +19,22 @@ Sorts objects by property values.
 ### Default (Default)
 
 ```
-Sort-Object [[-Property] <Object[]>] [-Descending] [-Unique] [-Top <int>] [-InputObject <psobject>]
-[-Culture <string>] [-CaseSensitive] [<CommonParameters>]
+Sort-Object [-Stable] [-Descending] [-Unique] [-InputObject <PSObject>] [[-Property] <Object[]>]
+ [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
+```
+
+### Top
+
+```
+Sort-Object [-Descending] [-Unique] -Top <Int32> [-InputObject <PSObject>] [[-Property] <Object[]>]
+ [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
 ### Bottom
 
 ```
-Sort-Object [[-Property] <Object[]>] -Bottom <int> [-Descending] [-Unique] [-InputObject <psobject>]
-[-Culture <string>] [-CaseSensitive] [<CommonParameters>]
+Sort-Object [-Descending] [-Unique] -Bottom <Int32> [-InputObject <PSObject>] [[-Property] <Object[]>]
+ [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,7 +51,7 @@ from the output.
 
 ### Example 1: Sort the current directory by name
 
-This command sorts the files and subdirectories in a directory.
+This example sorts the files and subdirectories in a directory.
 
 ```
 PS> Get-ChildItem -Path C:\Test | Sort-Object
@@ -146,7 +153,7 @@ newest to oldest.
 
 ### Example 5: Use a hash table to sort properties in ascending and descending order
 
-This command uses two properties to sort the objects, **Status** and **DisplayName**. **Status** is
+This example uses two properties to sort the objects, **Status** and **DisplayName**. **Status** is
 sorted in descending order and **DisplayName** is sorted in ascending order.
 
 A hash table is used to specify the **Property** parameter's value. The hash table uses an
@@ -210,7 +217,6 @@ CreationTime          LastWriteTime        FullName
 2/25/2019 18:25:11    2/26/2019 12:08:47   C:\Test\Zsystemlog.txt
 2/25/2019 18:25:11    2/26/2019 08:55:33   C:\Test\Bfile.txt
 2/26/2019 08:46:59    2/26/2019 12:12:19   C:\Test\LogFile3.txt
-
 ```
 
 The `Get-ChildItem` cmdlet uses the **Path** parameter to specify the directory **C:\Test** and all
@@ -285,7 +291,7 @@ PS> Get-Content -Path C:\Test\ProductId.txt | Sort-Object
 88
 99999
 
-PS> Get-Content -Path C:\Test\ProductId.txt | ForEach-Object -Process {[int]$_} | Sort-Object
+PS> Get-Content -Path C:\Test\ProductId.txt | Sort-Object {[int]$_}
 0
 1
 2
@@ -313,11 +319,69 @@ the strings to integers. In the sample code, `[int]` converts the string to an i
 represents each string as it comes down the pipeline. The integer objects are sent down the pipeline
 to the `Sort-Object` cmdlet. `Sort-Object` sorts the integer objects in numeric order.
 
+### Example 9: Using stable sorts
+
+When you use the **Top**, **Bottom**, or **Stable** parameters, the sorted objects are delivered in
+the order they were received by `Sort-Object` when the sort criteria are equal. In this example, we
+are sorting the numbers one through 20 by the their value 'modulo 3'. The modulo value ranges from
+zero to two.
+
+```powershell
+PS> 1..20 |Sort-Object {$_ % 3}
+18
+3
+15
+6
+12
+9
+1
+16
+13
+10
+7
+4
+19
+11
+8
+14
+5
+17
+2
+20
+
++PS> 1..20 |Sort-Object {$_ % 3} -Stable
+3
+6
+9
+12
+15
+18
+1
+4
+7
+10
+13
+16
+19
+2
+5
+8
+11
+14
+17
+20
+```
+
+The output from the first sort is correctly grouped by the modulus value but the individual items
+are not sorted within the modulus range. The second sort uses the **Stable** option to return a
+stable sort.
+
 ## PARAMETERS
 
 ### -Bottom
 
-Specifies the number of objects to get from the end of a sorted object array.
+Specifies the number of objects to get from the end of a sorted object array. This results in a
+stable sort.
 
 ```yaml
 Type: Int32
@@ -437,14 +501,15 @@ Accept wildcard characters: True
 
 ### -Top
 
-Specifies the number of objects to get from the start of a sorted object array.
+Specifies the number of objects to get from the start of a sorted object array. This results in a
+stable sort.
 
 ```yaml
 Type: Int32
-Parameter Sets: Default
+Parameter Sets: Top
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -471,11 +536,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Stable
+
+The sorted objects are delivered in the order they were received when the sort criteria are equal.
+
+This parameter was adding in PowerShell v6.2.0.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Default
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -503,6 +586,8 @@ for **System.String**. For more information, see [PSObject.CompareTo(Object) Met
 If you sort on an enumerated property such as **Status**, `Sort-Object` sorts by the enumeration
 values. **Stopped** has a value of **1** and **Running** has a value of **4**. **Stopped** is sorted
 before **Running** because of the enumerated values. For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
+
+The performance of the sorting algorithm is slower when doing a stable sort.
 
 ## RELATED LINKS
 
