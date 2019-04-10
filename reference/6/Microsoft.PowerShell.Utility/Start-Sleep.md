@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 locale: en-us
 Module Name: Microsoft.PowerShell.Utility
-md.date: 3/13/2019
+md.date: 04/10/2019
 online version: http://go.microsoft.com/fwlink/?LinkId=821864
 schema: 2.0.0
 title: Start-Sleep
@@ -12,6 +12,8 @@ title: Start-Sleep
 
 ## SYNOPSIS
 Suspends the activity in a script or session for the specified period of time.
+
+## SYNTAX
 
 ### Seconds (Default)
 
