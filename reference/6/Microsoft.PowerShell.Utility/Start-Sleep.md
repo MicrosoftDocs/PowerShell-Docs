@@ -18,7 +18,7 @@ Suspends the activity in a script or session for the specified period of time.
 ### Seconds (Default)
 
 ```
-Start-Sleep [-Seconds] <Double>
+Start-Sleep [-Seconds] <Double> [<CommonParameters>]
 ```
 
 ### Milliseconds
