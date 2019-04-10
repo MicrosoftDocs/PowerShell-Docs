@@ -87,14 +87,14 @@ the minimum supported, that literal is ill formed. If the value of
 exponent-part's digits in a `[double]` or `[decimal]` real literal is greater
 than the maximum supported, that literal is ill formed.
 
-> [!NOTE] The syntax permits what a double real literal to have a long-type
-> suffix. PowerShell treats this as an integer literal whose value is
-> represented by type `[long]`. This feature has been retained for backwards
-> compatibility with earlier versions of PowerShell. However, programmers are
-> discouraged from using integer literals of this form as they can easily
-> obscure the literal's actual value. For example, `1.2L` has value 1,
-> `1.2345e1L` has value 12, and `1.2345e-5L` has value 0, none of which is
-> immediately obvious.
+> [!NOTE]
+> The syntax permits what a double real literal to have a long-type suffix.
+> PowerShell treats this as an integer literal whose value is represented by
+> type `[long]`. This feature has been retained for backwards compatibility
+> with earlier versions of PowerShell. However, programmers are discouraged
+> from using integer literals of this form as they can easily obscure the
+> literal's actual value. For example, `1.2L` has value 1, `1.2345e1L` has
+> value 12, and `1.2345e-5L` has value 0, none of which is immediately obvious.
 
 ## Numeric multipliers
 
@@ -181,23 +181,23 @@ PS> [bigint]'111111111111111111111111111111111111111111111111111111'
 The following table contains several examples of numeric literals and lists
 their type and value.
 
-|  Number  |  Type   |    Value    |
-| -------: | ------- | ----------: |
-|      100 | Int32   |         100 |
-|     100D | Decimal |         100 |
-|     100l | Int64   |         100 |
-|    100uL | UInt64  |         100 |
-|    100us | UInt16  |         100 |
-|    100uy | Byte    |         100 |
-|     100y | SByte   |         100 |
-|      1e2 | Double  |         100 |
-|     1.e2 | Double  |         100 |
-|    0x1e2 | Int32   |         482 |
-|   0x1e2L | Int64   |         482 |
-|   0x1e2D | Int32   |        7725 |
-|     482D | Decimal |         482 |
-|    482gb | Int64   | 5.17544E+11 |
-| 0x1e2lgb | Int64   | 5.17544E+11 |
+|  Number  |  Type   |    Value     |
+| -------: | ------- | -----------: |
+|      100 | Int32   |          100 |
+|     100D | Decimal |          100 |
+|     100l | Int64   |          100 |
+|    100uL | UInt64  |          100 |
+|    100us | UInt16  |          100 |
+|    100uy | Byte    |          100 |
+|     100y | SByte   |          100 |
+|      1e2 | Double  |          100 |
+|     1.e2 | Double  |          100 |
+|    0x1e2 | Int32   |          482 |
+|   0x1e2L | Int64   |          482 |
+|   0x1e2D | Int32   |         7725 |
+|     482D | Decimal |          482 |
+|    482gb | Int64   | 517543559168 |
+| 0x1e2lgb | Int64   | 517543559168 |
 
 > [!NOTE]
 > Any commands that look like a numeric literal must be executed using the the
