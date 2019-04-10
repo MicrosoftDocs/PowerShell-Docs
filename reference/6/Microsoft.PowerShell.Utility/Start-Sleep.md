@@ -68,10 +68,10 @@ Accept wildcard characters: False
 ### -Seconds
 
 Specifies how long the resource sleeps in seconds. You can omit the parameter name or you can
-abbreviate it as **s**.
+abbreviate it as **s**. Beginning in PowerShell 6.2.0, this parameter now accepts fractional values.
 
 ```yaml
-Type: Int32
+Type: Double
 Parameter Sets: Seconds
 Aliases:
 
