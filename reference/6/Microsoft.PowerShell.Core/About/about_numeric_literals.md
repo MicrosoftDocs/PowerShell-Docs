@@ -13,7 +13,7 @@ and multiplier suffixes.
 ## Integer literals
 
 Integer literals can be written in decimal or hexadecimal notation. Hexadecimal
-literals are prefixed with "0x" to distinguish them from decimal numbers.
+literals are prefixed with `0x` to distinguish them from decimal numbers.
 
 Integer literals can have a type suffix and a multiplier suffix.
 
@@ -51,7 +51,7 @@ For an integer literal with a type suffix:
 - If the type suffix is `u` and the value can be represented by type `[long]`
   then its type is `[long]`.
 - If its value can be represented by type specified then that is its type.
-- Otherwise, that literal is ill formed.
+- Otherwise, that literal is malformed.
 
 ## Real literals
 
@@ -60,7 +60,7 @@ include fractional values following a decimal point and scientific notation
 using an exponential part.
 
 The exponential part includes an 'e' followed by an optional sign (+/-) and a
-number representing the exponent. For example, then literal value `1e2` equals
+number representing the exponent. For example, the literal value `1e2` equals
 the numeric value 100.
 
 Real literals can have a type suffix and a multiplier suffix.
@@ -83,18 +83,19 @@ Trailing zeros in the fraction part of a decimal real literal are significant.
 If the value of exponent-part's digits in a `[double]` real literal is less
 than the minimum supported, the value of that `[double]` real literal is 0. If
 the value of exponent-part's digits in a `[decimal]` real literal is less than
-the minimum supported, that literal is ill formed. If the value of
+the minimum supported, that literal is malformed. If the value of
 exponent-part's digits in a `[double]` or `[decimal]` real literal is greater
-than the maximum supported, that literal is ill formed.
+than the maximum supported, that literal is malformed.
 
 > [!NOTE]
-> The syntax permits what a double real literal to have a long-type suffix.
-> PowerShell treats this as an integer literal whose value is represented by
-> type `[long]`. This feature has been retained for backwards compatibility
+> The syntax permits a double real literal to have a long-type suffix.
+> PowerShell treats this case as an integer literal whose value is represented
+> by type `[long]`. This feature has been retained for backwards compatibility
 > with earlier versions of PowerShell. However, programmers are discouraged
 > from using integer literals of this form as they can easily obscure the
 > literal's actual value. For example, `1.2L` has value 1, `1.2345e1L` has
-> value 12, and `1.2345e-5L` has value 0, none of which is immediately obvious.
+> value 12, and `1.2345e-5L` has value 0, none of which are immediately
+> obvious.
 
 ## Numeric multipliers
 
@@ -126,9 +127,6 @@ PS> 0x12Lpb
 
 ## Numeric type accelerators
 
-To pair with the new suffixes that closely reflect C\# or F\# literal suffixes,
-I've also added a couple additional type accelerators that alias existing ones:
-
 PowerShell supports the following type accelerators:
 
 | Accelerator |         Note         |           Description            |
@@ -136,17 +134,17 @@ PowerShell supports the following type accelerators:
 | `[byte]`    |                      | Byte                             |
 | `[sbyte]`   |                      | Byte (unsigned)                  |
 | `[Int16]`   |                      | 16-bit integer                   |
-| `[UInt16]`  |                      | 16-bit integer (unsigned)        |
 | `[short]`   | alias for `[int16]`  | 16-bit integer                   |
+| `[UInt16]`  |                      | 16-bit integer (unsigned)        |
 | `[ushort]`  | alias for `[uint16]` | 16-bit integer (unsigned)        |
 | `[Int32]`   |                      | 32-bit integer                   |
+| `[int]`     | alias for `[int32]`  | 32-bit integer                   |
 | `[UInt32]`  |                      | 32-bit integer (unsigned)        |
 | `[uint]`    | alias for `[uint32]` | 32-bit integer                   |
-| `[int]`     | alias for `[int32]`  | 32-bit integer (unsigned)        |
 | `[Int64]`   |                      | 64-bit integer                   |
+| `[long]`    | alias for `[int64]`  | 64-bit integer (unsigned)        |
 | `[UInt64]`  |                      | 64-bit integer (unsigned)        |
 | `[ulong]`   | alias for `[uint64]` | 64-bit integer                   |
-| `[long]`    | alias for `[int64]`  | 64-bit integer (unsigned)        |
 | `[bigint]`  |                      | See [BigInteger Struct][bigint]  |
 | `[single]`  |                      | Single precision floating point  |
 | `[float]`   | alias for `[single]` | Single precision floating point  |
@@ -154,8 +152,9 @@ PowerShell supports the following type accelerators:
 | `[decimal]` |                      | 128-bit floating point           |
 
 > [!NOTE]
-> The following type accelerators were added in PowerShell 6.2: `[short]`, `[ushort]`,
-> `[uint]`, `[ulong]`.
+> The following type accelerators were added in PowerShell 6.2: `[short]`,
+> `[ushort]`, `[uint]`, `[ulong]` to pair suffixes that closely reflect C\# or
+> F\# literal suffixes.
 
 ### Working with other numeric types
 
@@ -179,7 +178,7 @@ PS> [bigint]'111111111111111111111111111111111111111111111111111111'
 ## Examples
 
 The following table contains several examples of numeric literals and lists
-their type and value.
+their type and value:
 
 |  Number  |  Type   |    Value     |
 | -------: | ------- | -----------: |
