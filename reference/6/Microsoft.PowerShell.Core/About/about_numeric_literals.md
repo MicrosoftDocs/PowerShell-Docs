@@ -153,8 +153,7 @@ PowerShell supports the following type accelerators:
 
 > [!NOTE]
 > The following type accelerators were added in PowerShell 6.2: `[short]`,
-> `[ushort]`, `[uint]`, `[ulong]` to pair suffixes that closely reflect C\# or
-> F\# literal suffixes.
+> `[ushort]`, `[uint]`, `[ulong]`.
 
 ### Working with other numeric types
 
@@ -198,10 +197,47 @@ their type and value:
 |    482gb | Int64   | 517543559168 |
 | 0x1e2lgb | Int64   | 517543559168 |
 
-> [!NOTE]
-> Any commands that look like a numeric literal must be executed using the the
-> call operator, otherwise they are interpreted as a number of the associated
-> type.
+### Commands that look like numeric literals
+
+Any command that looks like a numeric literal must be executed using the the
+call operator (`&`), otherwise it is interpreted as a number of the associated
+type.
+
+### Access properties and methods of numeric objects
+
+To access a member of a numeric literals, there are cases when you need to
+enclose the literal in parentheses.
+
+- The literal does not have a decimal point
+- The literal does not have any digits following the decimal point
+- The literal does not have a suffix
+
+For example, the following example fails:
+
+```
+PS> 2.GetType().Name
+At line:1 char:11
++ 2.GetType().Name
++           ~
+An expression was expected after '('.
++ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
++ FullyQualifiedErrorId : ExpectedExpression
+```
+
+The following examples work:
+
+```
+PS> 2ul.GetType().Name
+UInt64
+PS> 1.234.GetType().Name
+Double
+PS> (2).GetType().Name
+Int32
+```
+
+The first two examples work without enclosing the literal value in parentheses
+because the PowerShell parser can determine where the numeric literal ends and
+the **GetType** method starts.
 
 <!-- reference links -->
 [bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
