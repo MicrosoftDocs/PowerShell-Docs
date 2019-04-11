@@ -227,7 +227,7 @@ An expression was expected after '('.
 The following examples work:
 
 ```
-PS> 2ul.GetType().Name
+PS> 2uL.GetType().Name
 UInt64
 PS> 1.234.GetType().Name
 Double
