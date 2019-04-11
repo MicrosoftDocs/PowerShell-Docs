@@ -187,7 +187,7 @@ type.
 
 ### Access properties and methods of numeric objects
 
-To access a member of a numeric literals, there are cases when you need to
+To access a member of a numeric literal, there are cases when you need to
 enclose the literal in parentheses.
 
 - The literal does not have a decimal point
