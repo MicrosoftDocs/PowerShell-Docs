@@ -122,8 +122,8 @@ Get-Process | Select-Object -Property ProcessName,@{Name="Start Day"; Expression
 ```
 
 ```output
-ProcessName  StartDay
-----         --------
+ProcessName  Start Day
+----         ---------
 alg          Wednesday
 ati2evxx     Wednesday
 ati2evxx     Thursday

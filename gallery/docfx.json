@@ -4,6 +4,7 @@
             { "files": ["**/**.yml", "**/**.md"], "exclude": ["**/obj/**"] }
         ],
         "globalMetadata": {
+            "toc_preview": true,
             "breadcrumb_path": "bread/toc.yml",
             "ROBOTS": "INDEX, FOLLOW",
             "uhfHeaderId": "MSDocsHeader-Powershell",
