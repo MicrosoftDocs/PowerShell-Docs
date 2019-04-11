@@ -125,8 +125,8 @@ PowerShell supports the following type accelerators:
 
 | Accelerator |         Note         |           Description            |
 | ----------- | -------------------- | -------------------------------- |
-| `[byte]`    |                      | Byte                             |
-| `[sbyte]`   |                      | Byte (unsigned)                  |
+| `[byte]`    |                      | Byte (unsigned)                  |
+| `[sbyte]`   |                      | Byte (signed)                    |
 | `[Int16]`   |                      | 16-bit integer                   |
 | `[UInt16]`  |                      | 16-bit integer (unsigned)        |
 | `[Int32]`   |                      | 32-bit integer                   |
