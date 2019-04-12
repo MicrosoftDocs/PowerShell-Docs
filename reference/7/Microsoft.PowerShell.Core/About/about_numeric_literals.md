@@ -1,5 +1,5 @@
 ---
-ms.date:  04/09/2018
+ms.date:  04/12/2019
 schema:  2.0.0
 locale:  en-us
 keywords:  powershell,cmdlet
@@ -12,8 +12,9 @@ and multiplier suffixes.
 
 ## Integer literals
 
-Integer literals can be written in decimal or hexadecimal notation. Hexadecimal
-literals are prefixed with `0x` to distinguish them from decimal numbers.
+Integer literals can be written in decimal, hexadecimal, or binary notation.
+Hexadecimal literals are prefixed with `0x` and binary literals are prefixed
+with `0b` to distinguish them from decimal numbers.
 
 Integer literals can have a type suffix and a multiplier suffix.
 
@@ -26,6 +27,7 @@ Integer literals can have a type suffix and a multiplier suffix.
 | l      | long data type                 |                         |
 | u      | unsigned int or long data type | Added in PowerShell 6.2 |
 | ul     | unsigned long data type        | Added in PowerShell 6.2 |
+| n      | bigint data type               | Added in PowerShell 7.0 |
 | kb     | kilobyte multiplier            |                         |
 | mb     | megabyte multiplier            |                         |
 | gb     | gigabyte multiplier            |                         |
@@ -155,53 +157,58 @@ PowerShell supports the following type accelerators:
 > The following type accelerators were added in PowerShell 6.2: `[short]`,
 > `[ushort]`, `[uint]`, `[ulong]`.
 
-### Working with other numeric types
-
-To work with any other numeric types you must use type accelerators, which is
-not without some problems. For example, high integer values are always parsed
-as double before being cast to any other type.
-
-```
-PS> [bigint]111111111111111111111111111111111111111111111111111111
-111111111111111100905595216014112456735339620444667904
-```
-
-The value is parsed as a double first, losing precision in the higher ranges.
-To avoid this problem, enter values as strings and then convert them:
-
-```
-PS> [bigint]'111111111111111111111111111111111111111111111111111111'
-111111111111111111111111111111111111111111111111111111
-```
-
 ## Examples
 
 The following table contains several examples of numeric literals and lists
 their type and value:
 
-|  Number  |  Type   |    Value     |
-| -------: | ------- | -----------: |
-|      100 | Int32   |          100 |
-|     100D | Decimal |          100 |
-|     100l | Int64   |          100 |
-|    100uL | UInt64  |          100 |
-|    100us | UInt16  |          100 |
-|    100uy | Byte    |          100 |
-|     100y | SByte   |          100 |
-|      1e2 | Double  |          100 |
-|     1.e2 | Double  |          100 |
-|    0x1e2 | Int32   |          482 |
-|   0x1e2L | Int64   |          482 |
-|   0x1e2D | Int32   |         7725 |
-|     482D | Decimal |          482 |
-|    482gb | Int64   | 517543559168 |
-| 0x1e2lgb | Int64   | 517543559168 |
+|  Number   |  Type   |    Value     |
+| ---------:| ------- | -----------: |
+|       100 | Int32   |          100 |
+|      100D | Decimal |          100 |
+|      100l | Int64   |          100 |
+|     100uL | UInt64  |          100 |
+|     100us | UInt16  |          100 |
+|     100uy | Byte    |          100 |
+|      100y | SByte   |          100 |
+|       1e2 | Double  |          100 |
+|      1.e2 | Double  |          100 |
+|     0x1e2 | Int32   |          482 |
+|    0x1e2L | Int64   |          482 |
+|    0x1e2D | Int32   |         7725 |
+|      482D | Decimal |          482 |
+|     482gb | Int64   | 517543559168 |
+|  0x1e2lgb | Int64   | 517543559168 |
+| 0b1011011 | Int32   |           91 |
+
+### Working with binary or hexadecimal numbers
+
+Overly large binary or hexadecimal literals return as `[bigint]` rather than
+failing the parse. Sign bits are still respected above even `[decimal]` ranges,
+however:
+
+- If a binary string is some multiple of 8 bits long, the highest bit is
+  treated as the sign bit.
+- If a hex string, which has a length that is a multiple of 8, has the first
+  digit with 8 or higher, the numeral is treated as negative.
+
+Sign bits are accepted for bigint-suffixed numerals:
+
+- Bigint-suffixed hex treats the high bit of any literal with a length multiple
+  of 8 as the sign bit.
+- Bigint-suffixed binary accepts sign bits at 96 and 128 chars, and from there
+  on every 8 characters.
+- Prefixing the literal with a 0 will bypass this and be treated as unsigned.
+  For example: `0b011111111`.
+- Specifying an unsigned suffix ignores sign bits.
+
+You can also negate literals using `-` prefix. This may result in a positive
+number due to sign bits being permitted.
 
 ### Commands that look like numeric literals
 
 Any command that looks like a numeric literal must be executed using the the
-call operator (`&`), otherwise it is interpreted as a number of the associated
-type.
+call operator (`&`), otherwise it is interpreted as a number.
 
 ### Access properties and methods of numeric objects
 
@@ -238,6 +245,47 @@ Int32
 The first two examples work without enclosing the literal value in parentheses
 because the PowerShell parser can determine where the numeric literal ends and
 the **GetType** method starts.
+
+## How PowerShell parses numeric literals
+
+PowerShell v7.0 changed the way numeric literals are parsed to enable the new
+features.
+
+### Parsing real numeric literals
+
+If the literal contains a decimal point or the e-notation, the literal string is parsed a real number.
+
+- If the decimal-suffix is present then directly into `[decimal]`.
+- Else, parse as `[Double]` and apply multiplier to the value. Then check the
+  type suffixes and attempt to cast into appropriate type.
+- If the string has no type suffix, then parse as `[Double]`.
+
+### Paring integer numeric literals
+
+Integer type literals are parsed using the following steps:
+
+1. Determine the radix format
+   - For binary formats, parse into `[BigInteger]`.
+   - For hexidecimal formats, parse into `[BigInteger]` using special casies to
+     retain original behaviours when the value is in the `[int]` or `[long]`
+     range.
+   - If neither binary nor hex, parse normally as a `[BigInteger]`.
+2. Apply the multiplier value before attempting any casts to ensure type bounds
+   can be appropriately checked without overflows.
+3. Check type suffixes.
+   - Check type bounds and attempt to parse into that type.
+   - If no suffix is used, then the value is bounds-checked in the following
+     order, resulting in the first successful test determining the type of the
+     number.
+     - `[int]`
+     - `[long]`
+     - `[decimal]` (base-10 literals only)
+     - `[double]` (base-10 literals only)
+   - If the value is outside the `[long]` range for hex and binary numbers, the
+     parse fails.
+   - If the value is outside the `[double]` range for base 10 number, the parse
+     fails.
+   - Higher values must be explicitly written using the `n` bigint-suffix.
 
 <!-- reference links -->
 [bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
