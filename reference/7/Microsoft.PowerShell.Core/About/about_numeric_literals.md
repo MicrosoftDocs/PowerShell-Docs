@@ -27,7 +27,7 @@ Integer literals can have a type suffix and a multiplier suffix.
 | l      | long data type                 |                         |
 | u      | unsigned int or long data type | Added in PowerShell 6.2 |
 | ul     | unsigned long data type        | Added in PowerShell 6.2 |
-| n      | bigint data type               | Added in PowerShell 7.0 |
+| n      | BigInteger data type           | Added in PowerShell 7.0 |
 | kb     | kilobyte multiplier            |                         |
 | mb     | megabyte multiplier            |                         |
 | gb     | gigabyte multiplier            |                         |
@@ -131,27 +131,27 @@ PS> 0x12Lpb
 
 PowerShell supports the following type accelerators:
 
-| Accelerator |         Note         |           Description            |
-| ----------- | -------------------- | -------------------------------- |
-| `[byte]`    |                      | Byte (unsigned)                  |
-| `[sbyte]`   |                      | Byte (signed)                    |
-| `[Int16]`   |                      | 16-bit integer                   |
-| `[short]`   | alias for `[int16]`  | 16-bit integer                   |
-| `[UInt16]`  |                      | 16-bit integer (unsigned)        |
-| `[ushort]`  | alias for `[uint16]` | 16-bit integer (unsigned)        |
-| `[Int32]`   |                      | 32-bit integer                   |
-| `[int]`     | alias for `[int32]`  | 32-bit integer                   |
-| `[UInt32]`  |                      | 32-bit integer (unsigned)        |
-| `[uint]`    | alias for `[uint32]` | 32-bit integer (unsigned)        |
-| `[Int64]`   |                      | 64-bit integer                   |
-| `[long]`    | alias for `[int64]`  | 64-bit integer                   |
-| `[UInt64]`  |                      | 64-bit integer (unsigned)        |
-| `[ulong]`   | alias for `[uint64]` | 64-bit integer (unsigned)        |
-| `[bigint]`  |                      | See [BigInteger Struct][bigint]  |
-| `[single]`  |                      | Single precision floating point  |
-| `[float]`   | alias for `[single]` | Single precision floating point  |
-| `[double]`  |                      | Double precision floating point  |
-| `[decimal]` |                      | 128-bit floating point           |
+| Accelerator |         Note         |           Description           |
+| ----------- | -------------------- | ------------------------------- |
+| `[byte]`    |                      | Byte (unsigned)                 |
+| `[sbyte]`   |                      | Byte (signed)                   |
+| `[Int16]`   |                      | 16-bit integer                  |
+| `[short]`   | alias for `[int16]`  | 16-bit integer                  |
+| `[UInt16]`  |                      | 16-bit integer (unsigned)       |
+| `[ushort]`  | alias for `[uint16]` | 16-bit integer (unsigned)       |
+| `[Int32]`   |                      | 32-bit integer                  |
+| `[int]`     | alias for `[int32]`  | 32-bit integer                  |
+| `[UInt32]`  |                      | 32-bit integer (unsigned)       |
+| `[uint]`    | alias for `[uint32]` | 32-bit integer (unsigned)       |
+| `[Int64]`   |                      | 64-bit integer                  |
+| `[long]`    | alias for `[int64]`  | 64-bit integer                  |
+| `[UInt64]`  |                      | 64-bit integer (unsigned)       |
+| `[ulong]`   | alias for `[uint64]` | 64-bit integer (unsigned)       |
+| `[bigint]`  |                      | See [BigInteger Struct][bigint] |
+| `[single]`  |                      | Single precision floating point |
+| `[float]`   | alias for `[single]` | Single precision floating point |
+| `[double]`  |                      | Double precision floating point |
+| `[decimal]` |                      | 128-bit floating point          |
 
 > [!NOTE]
 > The following type accelerators were added in PowerShell 6.2: `[short]`,
@@ -162,24 +162,28 @@ PowerShell supports the following type accelerators:
 The following table contains several examples of numeric literals and lists
 their type and value:
 
-|  Number   |  Type   |    Value     |
-| ---------:| ------- | -----------: |
-|       100 | Int32   |          100 |
-|      100D | Decimal |          100 |
-|      100l | Int64   |          100 |
-|     100uL | UInt64  |          100 |
-|     100us | UInt16  |          100 |
-|     100uy | Byte    |          100 |
-|      100y | SByte   |          100 |
-|       1e2 | Double  |          100 |
-|      1.e2 | Double  |          100 |
-|     0x1e2 | Int32   |          482 |
-|    0x1e2L | Int64   |          482 |
-|    0x1e2D | Int32   |         7725 |
-|      482D | Decimal |          482 |
-|     482gb | Int64   | 517543559168 |
-|  0x1e2lgb | Int64   | 517543559168 |
-| 0b1011011 | Int32   |           91 |
+|   Number    |  Type   |    Value     |
+| ----------: | ------- | -----------: |
+|         100 | Int32   |          100 |
+|        100u | UInt32  |          100 |
+|        100D | Decimal |          100 |
+|        100l | Int64   |          100 |
+|       100uL | UInt64  |          100 |
+|       100us | UInt16  |          100 |
+|       100uy | Byte    |          100 |
+|        100y | SByte   |          100 |
+|         1e2 | Double  |          100 |
+|        1.e2 | Double  |          100 |
+|       0x1e2 | Int32   |          482 |
+|      0x1e2L | Int64   |          482 |
+|      0x1e2D | Int32   |         7725 |
+|        482D | Decimal |          482 |
+|       482gb | Int64   | 517543559168 |
+|    0x1e2lgb | Int64   | 517543559168 |
+|   0b1011011 | Int32   |           91 |
+|  0xFFFFFFFF | Int32   |           -1 |
+| -0xFFFFFFFF | Int32   |            1 |
+| 0xFFFFFFFFu | UInt32  |   4294967295 |
 
 ### Working with binary or hexadecimal numbers
 
@@ -192,18 +196,22 @@ however:
 - If a hex string, which has a length that is a multiple of 8, has the first
   digit with 8 or higher, the numeral is treated as negative.
 
-Sign bits are accepted for bigint-suffixed numerals:
+Specifying an unsigned suffix on binary and hex literals ignores sign bits. For
+example, `0xFFFFFFFF` returns `-1`, but `0xFFFFFFFFu` returns the
+`[uint]::MaxValue` of 4294967295.
 
-- Bigint-suffixed hex treats the high bit of any literal with a length multiple
-  of 8 as the sign bit.
-- Bigint-suffixed binary accepts sign bits at 96 and 128 chars, and from there
-  on every 8 characters.
-- Prefixing the literal with a 0 will bypass this and be treated as unsigned.
-  For example: `0b011111111`.
-- Specifying an unsigned suffix ignores sign bits.
+Prefixing the literal with a `0` will bypass this and be treated as unsigned.
+For example: `0b011111111`.
 
-You can also negate literals using `-` prefix. This may result in a positive
-number due to sign bits being permitted.
+You can also negate binary and hex literals using the `-` prefix. This can
+result in a positive number since sign bits are permitted.
+
+Sign bits are accepted for BigInteger-suffixed numerals:
+
+- BigInteger-suffixed hex treats the high bit of any literal with a length
+  multiple of 8 as the sign bit.
+- BigInteger-suffixed binary accepts sign bits at 96 and 128 characters, and at
+  every 8 characters after.
 
 ### Commands that look like numeric literals
 
@@ -285,7 +293,36 @@ Integer type literals are parsed using the following steps:
      parse fails.
    - If the value is outside the `[double]` range for base 10 number, the parse
      fails.
-   - Higher values must be explicitly written using the `n` bigint-suffix.
+   - Higher values must be explicitly written using the `n` suffix to parse the
+     literal as a `BigInteger`.
+
+### Parsing large value literals
+
+Previously, higher integer values were parsed as double before being cast to any
+other type. This results in a loss of precision in the higher ranges. For example:
+
+```
+PS> [bigint]111111111111111111111111111111111111111111111111111111
+111111111111111100905595216014112456735339620444667904
+```
+
+To avoid this problem you had to write values as strings and then convert them:
+
+```
+PS> [bigint]'111111111111111111111111111111111111111111111111111111'
+111111111111111111111111111111111111111111111111111111
+```
+
+In PowerShell 7.0 you must use the `N` suffix.
+
+```
+PS> 111111111111111111111111111111111111111111111111111111n
+111111111111111111111111111111111111111111111111111111
+```
+
+Also values between `[ulong]::MaxValue` and `[decimal]::MaxValue` should be
+denoted using the decimal-suffix `D` to maintain accuracy. Without the suffix,
+these values are parsed as `[Double]` using the real-parsing mode.
 
 <!-- reference links -->
 [bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
