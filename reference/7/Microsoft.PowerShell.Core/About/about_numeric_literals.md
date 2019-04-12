@@ -209,7 +209,8 @@ result in a positive number since sign bits are permitted.
 Sign bits are accepted for BigInteger-suffixed numerals:
 
 - BigInteger-suffixed hex treats the high bit of any literal with a length
-  multiple of 8 as the sign bit.
+  multiple of 8 characters as the sign bit. The length does not include the
+  `0x` prefix or any suffixes.
 - BigInteger-suffixed binary accepts sign bits at 96 and 128 characters, and at
   every 8 characters after.
 
