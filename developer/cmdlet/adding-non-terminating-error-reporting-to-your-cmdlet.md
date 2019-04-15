@@ -21,24 +21,6 @@ The user can view errors based on their category by setting the `$ErrorView` var
 
 For more information about error records, see [Windows PowerShell Error Records](./windows-powershell-error-records.md).
 
-Topics in this section include the following:
-
-- [Defining the Cmdlet](#Defining-the-Cmdlet)
-
-- [Defining Parameters](#Defining-Parameters)
-
-- [Overriding Input Processing Methods](#Overriding-Input-Processing-Methods)
-
-- [Reporting Nonterminating Errors](#Reporting-Nonterminating-Errors)
-
-- [Code Sample](#Code-Sample)
-
-- [Defining Object Types and Formatting](#Define-Object-Types-and-Formatting)
-
-- [Building the Cmdlet](#Building-the-Cmdlet)
-
-- [Testing the Cmdlet](#Testing-the-Cmdlet)
-
 ## Defining the Cmdlet
 
 The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet.
