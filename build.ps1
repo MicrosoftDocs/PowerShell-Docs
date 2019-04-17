@@ -5,37 +5,39 @@ param(
 
 # Turning off the progress display, by default
 $global:ProgressPreference = 'SilentlyContinue'
-if($ShowProgress){$ProgressPreference = 'Continue'}
+if ($ShowProgress) {$ProgressPreference = 'Continue'}
 
 function Get-ContentWithoutHeader {
     param(
-      $path
+        $path
     )
 
     $doc = Get-Content $path -Encoding UTF8
     $start = $end = -1
 
-   # search the first 30 lines for the Yaml header
-   # no yaml header in our docset will ever be that long
+    # search the first 30 lines for the Yaml header
+    # no yaml header in our docset will ever be that long
 
     for ($x = 0; $x -lt 30; $x++) {
-      if ($doc[$x] -eq '---') {
-        if ($start -eq -1) {
-          $start = $x
-        } else {
-          if ($end -eq -1) {
-            $end = $x+1
-            break
-          }
+        if ($doc[$x] -eq '---') {
+            if ($start -eq -1) {
+                $start = $x
+            }
+            else {
+                if ($end -eq -1) {
+                    $end = $x + 1
+                    break
+                }
+            }
         }
-      }
     }
     if ($end -gt $start) {
-      Write-Output ($doc[$end..$($doc.count)] -join "`r`n")
-    } else {
-      Write-Output ($doc -join "`r`n")
+        Write-Output ($doc[$end..$($doc.count)] -join "`r`n")
     }
-  }
+    else {
+        Write-Output ($doc -join "`r`n")
+    }
+}
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
@@ -53,83 +55,94 @@ $pandocExePath = Join-Path (Join-Path $pandocDestinationPath "pandoc-$panDocVers
 # Find the reference folder path w.r.t the script
 $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
 
-# Variable to collect any errors in during processing
-$allErrors = @()
-
 # Go through all the directories in the reference folder
+$jobs = [System.Collections.Generic.List[ThreadJob.ThreadJob]]::new()
 Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual', 'mapping', 'bread' | ForEach-Object -Process {
-    $Version = $_.Name
-    Write-Verbose -Verbose "Version = $Version"
+    $job = Start-ThreadJob -Name $_.Name -ScriptBlock {
+        $Version = $_.Name
+        Write-Verbose -Verbose "Version = $Version"
 
-    $VersionFolder = $_.FullName
-    Write-Verbose -Verbose "VersionFolder = $VersionFolder"
+        $VersionFolder = $_.FullName
+        Write-Verbose -Verbose "VersionFolder = $VersionFolder"
 
-    # For each of the directories, go through each module folder
-    Get-ChildItem $VersionFolder -Directory | ForEach-Object -Process {
-        $ModuleName = $_.Name
-        Write-Verbose -Verbose "ModuleName = $ModuleName"
+        # For each of the directories, go through each module folder
+        Get-ChildItem $VersionFolder -Directory | ForEach-Object -Process {
+            $ModuleName = $_.Name
+            Write-Verbose -Verbose "ModuleName = $ModuleName"
 
-        $ModulePath = Join-Path $VersionFolder $ModuleName
-        Write-Verbose -Verbose "ModulePath = $ModulePath"
+            $ModulePath = Join-Path $VersionFolder $ModuleName
+            Write-Verbose -Verbose "ModulePath = $ModulePath"
 
-        $LandingPage = Join-Path $ModulePath "$ModuleName.md"
-        Write-Verbose -Verbose "LandingPage = $LandingPage"
+            $LandingPage = Join-Path $ModulePath "$ModuleName.md"
+            Write-Verbose -Verbose "LandingPage = $LandingPage"
 
-        $MamlOutputFolder = Join-Path "$PSScriptRoot\maml" "$Version\$ModuleName"
-        Write-Verbose -Verbose "MamlOutputFolder = $MamlOutputFolder"
+            $MamlOutputFolder = Join-Path "$PSScriptRoot\maml" "$Version\$ModuleName"
+            Write-Verbose -Verbose "MamlOutputFolder = $MamlOutputFolder"
 
-        $CabOutputFolder = Join-Path "$PSScriptRoot\updatablehelp" "$Version\$ModuleName"
-        Write-Verbose -Verbose "CabOutputFolder = $CabOutputFolder"
+            $CabOutputFolder = Join-Path "$PSScriptRoot\updatablehelp" "$Version\$ModuleName"
+            Write-Verbose -Verbose "CabOutputFolder = $CabOutputFolder"
 
-        if (-not (Test-Path $MamlOutputFolder)) {
-            New-Item $MamlOutputFolder -ItemType Directory -Force > $null
-        }
-
-        # Process the about topics if any
-        $AboutFolder = Join-Path $ModulePath "About"
-
-        if (Test-Path $AboutFolder) {
-            Write-Verbose -Verbose "AboutFolder = $AboutFolder"
-            Get-ChildItem "$aboutfolder/about_*.md" | ForEach-Object {
-                $aboutFileFullName = $_.FullName
-                $aboutFileOutputName = "$($_.BaseName).help.txt"
-                $aboutFileOutputFullName = Join-Path $MamlOutputFolder $aboutFileOutputName
-
-                $pandocArgs = @(
-                    "--from=gfm",
-                    "--to=plain+multiline_tables+inline_code_attributes",
-                    "--columns=75",
-                    "--output=$aboutFileOutputFullName",
-                    "--quiet"
-                )
-
-                Get-ContentWithoutHeader $aboutFileFullName | & $pandocExePath $pandocArgs
+            if (-not (Test-Path $MamlOutputFolder)) {
+                New-Item $MamlOutputFolder -ItemType Directory -Force > $null
             }
-        }
 
-        try {
-            # For each module, create a single maml help file
-            # Adding warningaction=stop to throw errors for all warnings, erroraction=stop to make them terminating errors
-            New-ExternalHelp -Path $ModulePath -OutputPath $MamlOutputFolder -Force -WarningAction Stop -ErrorAction Stop
+            # Process the about topics if any
+            $AboutFolder = Join-Path $ModulePath "About"
 
-            # For each module, create update-help help files (cab and helpinfo.xml files)
-            if (-not $SkipCabs) {
-                $cabInfo = New-ExternalHelpCab -CabFilesFolder $MamlOutputFolder -LandingPagePath $LandingPage -OutputFolder $CabOutputFolder
+            if (Test-Path $AboutFolder) {
+                Write-Verbose -Verbose "AboutFolder = $AboutFolder"
+                Get-ChildItem "$aboutfolder/about_*.md" | ForEach-Object {
+                    $aboutFileFullName = $_.FullName
+                    $aboutFileOutputName = "$($_.BaseName).help.txt"
+                    $aboutFileOutputFullName = Join-Path $MamlOutputFolder $aboutFileOutputName
 
-                # Only output the cab fileinfo object
-                if ($cabInfo.Count -eq 8) {$cabInfo[-1].FullName}
+                    $pandocArgs = @(
+                        "--from=gfm",
+                        "--to=plain+multiline_tables+inline_code_attributes",
+                        "--columns=75",
+                        "--output=$aboutFileOutputFullName",
+                        "--quiet"
+                    )
+
+                    Get-ContentWithoutHeader $aboutFileFullName | & $pandocExePath $pandocArgs
+                }
             }
-        }
-        catch {
-            $allErrors += $_
-            Write-Error -Message "PlatyPS failure: $ModuleName -- $Version" -Exception $_
+
+            try {
+                # For each module, create a single maml help file
+                # Adding warningaction=stop to throw errors for all warnings, erroraction=stop to make them terminating errors
+                New-ExternalHelp -Path $ModulePath -OutputPath $MamlOutputFolder -Force -WarningAction Stop -ErrorAction Stop
+
+                # For each module, create update-help help files (cab and helpinfo.xml files)
+                if (-not $SkipCabs) {
+                    $cabInfo = New-ExternalHelpCab -CabFilesFolder $MamlOutputFolder -LandingPagePath $LandingPage -OutputFolder $CabOutputFolder
+
+                    # Only output the cab fileinfo object
+                    if ($cabInfo.Count -eq 8) {$cabInfo[-1].FullName}
+                }
+            }
+            catch {
+                Write-Error -Message "PlatyPS failure: $ModuleName -- $Version" -Exception $_
+            }
         }
     }
+    Write-Verbose -Verbose "Started job for $($_.Name)"
+    $jobs += $job
+}
 
+$null = $jobs | Wait-Job
+
+# Variable to collect any errors in during processing
+$allErrors = [System.Collections.Generic.List[string]]::new()
+foreach ($job in $jobs) {
+  if ($job.State -eq "Failed") {
+    $allErrors += "$($job.Name) failed due to unhandled exception"
+  }
+  $allErrors += $job.Error.ReadAll()
 }
 
 # If the above block, produced any errors, throw and fail the job
-if ($allErrors) {
+if ($allErrors.Count -gt 0) {
     $allErrors
     throw "There are errors during platyPS run!`nPlease fix your markdown to comply with the schema: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md"
 }
