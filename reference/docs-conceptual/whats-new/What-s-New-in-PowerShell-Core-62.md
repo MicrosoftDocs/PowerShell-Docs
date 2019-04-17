@@ -6,10 +6,9 @@ ms.date: 03/28/2019
 
 # What's New in PowerShell Core 6.2
 
-The PowerShell Core 6.2 release is focused primarily on performance improvements, bug fixes, and
-smaller cmdlet and language enhancements that improve the quality of life for users. To see a full
-list of improvements, check out our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases)
-on GitHub.
+The PowerShell Core 6.2 release focused on performance improvements, bug fixes, and smaller cmdlet
+and language enhancements that improve the quality. To see a full list of improvements, check out
+our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on GitHub.
 
 ## General Cmdlet Updates and Fixes
 
@@ -21,21 +20,19 @@ on GitHub.
 
 ## Experimental Features
 
-In the 6.1 release, we enabled support for [Experimental Features][] that allow contributors and
-PowerShell Team members to deliver new features and get feedback before we consider the design
-complete. This way we avoid making breaking changes as the design evolves.
+In the 6.1 release, we enabled support for [Experimental Features][]. This allows PowerShell
+developers to deliver new features and get feedback before the design is complete. This way we avoid
+making breaking changes as the design evolves.
 
-In the 6.2 release, we have four experimental features you can try out. We'd love it if you
-can provide us with feedback on these so we can make improvements and to decide whether it's worth
-promoting out of the experimental state.
+In the 6.2 release, we have four experimental features to try out. Please provide feedback so we can
+make improvements and to decide whether the feature is worth promoting to mainstream status.
 
-Use `Get-ExperimentalFeature` to get a list of available experimental features. You can can enable
+Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable
 or disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
 
 ### Command Not Found Suggestions
 
-This feature uses fuzzy matching to find suggestions for commands or cmdlets you may have meant to
-type if you made a typo.
+This feature uses fuzzy matching to find suggestions for commands or cmdlets you may have mistyped.
 
 ```powershell
 Enable-ExperimentalFeature -Name PSCommandNotFoundSuggestion
@@ -66,21 +63,21 @@ Suggestion [4,General]: The most similar commands are: Get-Command, Get-Content,
 ### Implicit Remoting Batching
 
 When using [implicit remoting](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/)
-in a pipeline, PowerShell treats each command in the pipeline independently. This results in objects
-being serialized and de-serialized between the client and target system repeatedly over the
-execution of the pipeline.
+in a pipeline, PowerShell treats each command in the pipeline independently. Objects are repeatedly
+serialized and de-serialized between the client and remote system over the execution of the
+pipeline.
 
-With this change, PowerShell analyzes the pipeline and determines that the command is safe to run
-and the command exists on the target system. When this is true, PowerShell is able to execute the
-entire pipeline remotely and only serialize and de-serialize the results back to the client.
+With this feature, PowerShell analyzes the pipeline to determine if the command is safe to run and
+it exists on the target system. When true, PowerShell executes the entire pipeline remotely and only
+serializes and de-serializes the results back to the client.
 
 ```powershell
 Enable-ExperimentalFeature -Name PSImplicitRemotingBatching
 ```
 
-This can result in significant performance gains. A real-world test of `Get-Process | Sort-Object`
-over localhost shows a decrease from 10-15 seconds to a 20-30 **milliseconds**, a speed increase of
-300-750x. The feature only needs to be enabled on the client. No changes are required on the server.
+A real-world test of `Get-Process | Sort-Object` over localhost decreases from 10-15 seconds to
+20-30 **milliseconds**. The feature only needs to be enabled on the client. No changes are required
+on the server.
 
 ### Temp Drive
 
@@ -106,9 +103,9 @@ Be aware that native file commands (like `ls` on Linux) are not aware of PSDrive
 
 ### Abbreviation Expansion
 
-PowerShell cmdlets are expected to have descriptive nouns. This can results in long names that can
-take time to type and make it easier to make typing mistakes. This feature allows you to just type
-the uppercase characters of the cmdlet and use tab-completion to find a match.
+PowerShell cmdlets are expected to have descriptive nouns. This results in long names that are more
+difficult to type. This feature allows you to just type the uppercase characters of the cmdlet and
+use tab-completion to find a match.
 
 ```powershell
 Enable-ExperimentalFeature -Name PSUseAbbreviationExpansion
@@ -127,8 +124,8 @@ module installed, it will autocomplete to:
 PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 ```
 
-Note that this feature is intended to be used interactively. Abbreviated forms of cmdlets don't work
-in scripts. This is not intended to be a replacement for aliases.
+This feature is intended to be used interactively. Abbreviated forms of cmdlets don't work in
+scripts. This feature is not a replacement for aliases.
 
 ## Breaking Changes
 
