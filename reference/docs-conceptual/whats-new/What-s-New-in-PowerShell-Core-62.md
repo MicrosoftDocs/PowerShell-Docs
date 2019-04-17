@@ -133,6 +133,7 @@ scripts. This feature is not a replacement for aliases.
   (Thanks @vexx32!)
 
 <!-- Link references -->
+[#9069]: https://github.com/PowerShell/PowerShell/pull/9069
 [#9128]: https://github.com/PowerShell/PowerShell/pull/9128
 [#9160]: https://github.com/PowerShell/PowerShell/pull/9160
 [#9178]: https://github.com/PowerShell/PowerShell/pull/9178
