@@ -20,12 +20,9 @@ our detailed [changelogs](https://github.com/PowerShell/PowerShell/releases) on 
 
 ## Experimental Features
 
-In the 6.1 release, we enabled support for [Experimental Features][]. This allows PowerShell
-developers to deliver new features and get feedback before the design is complete. This way we avoid
-making breaking changes as the design evolves.
-
-In the 6.2 release, we have four experimental features to try out. Please provide feedback so we can
-make improvements and to decide whether the feature is worth promoting to mainstream status.
+Previously, we enabled support for [Experimental Features][]. In the 6.2 release, we have four
+experimental features to try out. Please provide feedback so we can make improvements and to decide
+whether the feature is worth promoting to mainstream status.
 
 Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable
 or disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
@@ -40,8 +37,8 @@ Enable-ExperimentalFeature -Name PSCommandNotFoundSuggestion
 
 #### Example
 
-In this example, I mistyped `Get-Command` and it fuzzy matched to a number of suggestions from most
-likely to least likely.
+In this example, the misspelled cmdlet name is fuzzy matched to several suggestions from most likely
+to least likely.
 
 ```powershell
 Get-Commnd
@@ -124,8 +121,9 @@ module installed, it will autocomplete to:
 PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 ```
 
-This feature is intended to be used interactively. Abbreviated forms of cmdlets don't work in
-scripts. This feature is not a replacement for aliases.
+> [!NOTE]
+> This feature is intended to be used interactively. Abbreviated forms of cmdlets can't be executed.
+> This feature is not a replacement for aliases.
 
 ## Breaking Changes
 
