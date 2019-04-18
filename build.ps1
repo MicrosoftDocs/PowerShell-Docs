@@ -20,6 +20,12 @@ Invoke-WebRequest -Uri $pandocSourceURL -OutFile $pandocZipPath
 Expand-Archive -Path (Join-Path $pandocDestinationPath "pandoc-$panDocVersion-windows.zip") -DestinationPath $pandocDestinationPath -Force
 $pandocExePath = Join-Path (Join-Path $pandocDestinationPath "pandoc-$panDocVersion") "pandoc.exe"
 
+# Install ThreadJob if not available
+$threadJob = Get-Module ThreadJob -ListAvailable
+if ($null -eq $threadjob) {
+    Install-Module ThreadJob -RequiredVersion 1.1.2 -Scope CurrentUser -Force
+}
+
 # Find the reference folder path w.r.t the script
 $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
 
