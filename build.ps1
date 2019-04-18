@@ -5,39 +5,7 @@ param(
 
 # Turning off the progress display, by default
 $global:ProgressPreference = 'SilentlyContinue'
-if ($ShowProgress) {$ProgressPreference = 'Continue'}
-
-function Get-ContentWithoutHeader {
-    param(
-        $path
-    )
-
-    $doc = Get-Content $path -Encoding UTF8
-    $start = $end = -1
-
-    # search the first 30 lines for the Yaml header
-    # no yaml header in our docset will ever be that long
-
-    for ($x = 0; $x -lt 30; $x++) {
-        if ($doc[$x] -eq '---') {
-            if ($start -eq -1) {
-                $start = $x
-            }
-            else {
-                if ($end -eq -1) {
-                    $end = $x + 1
-                    break
-                }
-            }
-        }
-    }
-    if ($end -gt $start) {
-        Write-Output ($doc[$end..$($doc.count)] -join "`r`n")
-    }
-    else {
-        Write-Output ($doc -join "`r`n")
-    }
-}
+if ($ShowProgress) { $ProgressPreference = 'Continue' }
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
@@ -56,13 +24,52 @@ $pandocExePath = Join-Path (Join-Path $pandocDestinationPath "pandoc-$panDocVers
 $ReferenceDocset = Join-Path $PSScriptRoot 'reference'
 
 # Go through all the directories in the reference folder
-$jobs = [System.Collections.Generic.List[ThreadJob.ThreadJob]]::new()
+$jobs = [System.Collections.Generic.List[object]]::new()
 Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual', 'mapping', 'bread' | ForEach-Object -Process {
-    $job = Start-ThreadJob -Name $_.Name -ScriptBlock {
-        $Version = $_.Name
+    $job = Start-ThreadJob -Name $_.Name -ArgumentList @($SkipCabs,$pandocExePath,$PSScriptRoot,$_) -ScriptBlock {
+        param($SkipCabs, $pandocExePath, $WorkingDirectory, $DocSet)
+
+        $tempDir = [System.IO.Path]::GetTempPath()
+        $workingDir = Join-Path $tempDir $DocSet.Name
+        $workingDir = New-Item -ItemType Directory -Path $workingDir -Force
+        Set-Location $WorkingDir
+
+        function Get-ContentWithoutHeader {
+            param(
+                $path
+            )
+
+            $doc = Get-Content $path -Encoding UTF8
+            $start = $end = -1
+
+            # search the first 30 lines for the Yaml header
+            # no yaml header in our docset will ever be that long
+
+            for ($x = 0; $x -lt 30; $x++) {
+                if ($doc[$x] -eq '---') {
+                    if ($start -eq -1) {
+                        $start = $x
+                    }
+                    else {
+                        if ($end -eq -1) {
+                            $end = $x + 1
+                            break
+                        }
+                    }
+                }
+            }
+            if ($end -gt $start) {
+                Write-Output ($doc[$end..$($doc.count)] -join "`r`n")
+            }
+            else {
+                Write-Output ($doc -join "`r`n")
+            }
+        }
+
+        $Version = $DocSet.Name
         Write-Verbose -Verbose "Version = $Version"
 
-        $VersionFolder = $_.FullName
+        $VersionFolder = $DocSet.FullName
         Write-Verbose -Verbose "VersionFolder = $VersionFolder"
 
         # For each of the directories, go through each module folder
@@ -76,10 +83,10 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual', 'mapping',
             $LandingPage = Join-Path $ModulePath "$ModuleName.md"
             Write-Verbose -Verbose "LandingPage = $LandingPage"
 
-            $MamlOutputFolder = Join-Path "$PSScriptRoot\maml" "$Version\$ModuleName"
+            $MamlOutputFolder = Join-Path "$WorkingDirectory\maml" "$Version\$ModuleName"
             Write-Verbose -Verbose "MamlOutputFolder = $MamlOutputFolder"
 
-            $CabOutputFolder = Join-Path "$PSScriptRoot\updatablehelp" "$Version\$ModuleName"
+            $CabOutputFolder = Join-Path "$WorkingDirectory\updatablehelp" "$Version\$ModuleName"
             Write-Verbose -Verbose "CabOutputFolder = $CabOutputFolder"
 
             if (-not (Test-Path $MamlOutputFolder)) {
@@ -118,13 +125,15 @@ Get-ChildItem $ReferenceDocset -Directory -Exclude 'docs-conceptual', 'mapping',
                     $cabInfo = New-ExternalHelpCab -CabFilesFolder $MamlOutputFolder -LandingPagePath $LandingPage -OutputFolder $CabOutputFolder
 
                     # Only output the cab fileinfo object
-                    if ($cabInfo.Count -eq 8) {$cabInfo[-1].FullName}
+                    if ($cabInfo.Count -eq 8) { $cabInfo[-1].FullName }
                 }
             }
             catch {
                 Write-Error -Message "PlatyPS failure: $ModuleName -- $Version" -Exception $_
             }
         }
+
+        Remove-Item $workingDir -Force -ErrorAction SilentlyContinue
     }
     Write-Verbose -Verbose "Started job for $($_.Name)"
     $jobs += $job
@@ -135,10 +144,21 @@ $null = $jobs | Wait-Job
 # Variable to collect any errors in during processing
 $allErrors = [System.Collections.Generic.List[string]]::new()
 foreach ($job in $jobs) {
-  if ($job.State -eq "Failed") {
-    $allErrors += "$($job.Name) failed due to unhandled exception"
-  }
-  $allErrors += $job.Error.ReadAll()
+    Write-Verbose -Verbose "$($job.Name) output:"
+    if ($job.Verbose.Count -gt 0) {
+        foreach ($verboseMessage in $job.Verbose) {
+            Write-Verbose -Verbose $verboseMessage
+        }
+    }
+
+    if ($job.State -eq "Failed") {
+        $allErrors += "$($job.Name) failed due to unhandled exception"
+    }
+
+    if ($job.Error.Count -gt 0) {
+        $allErrors += "$($job.Name) failed with errors:"
+        $allErrors += $job.Error.ReadAll()
+    }
 }
 
 # If the above block, produced any errors, throw and fail the job
