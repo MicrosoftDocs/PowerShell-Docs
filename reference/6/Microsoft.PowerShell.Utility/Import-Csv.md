@@ -318,7 +318,7 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Specifies the encoding for the exported CSV file. The default value is **UTF8NoBOM**.
+Specifies the encoding for the imported CSV file. The default value is **UTF8NoBOM**.
 
 The acceptable values for this parameter are as follows:
 
@@ -335,6 +335,11 @@ The acceptable values for this parameter are as follows:
 - **UTF8NoBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - **UTF32**: Encodes in UTF-32 format.
 - **Unknown**: The encoding type is unknown or invalid; the data can be treated as binary.
+
+Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
+pages (like `-Encoding 1251`) or string names of registered code pages (like
+`-Encoding "windows-1251"`). For more information, see the .NET documentation for
+[Encoding.CodePage](https://docs.microsoft.com/en-us/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 ```yaml
 Type: Encoding
