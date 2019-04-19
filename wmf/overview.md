@@ -1,5 +1,5 @@
 ---
-ms.date:  06/12/2018
+ms.date:  04/19/2019
 keywords:  wmf,powershell,setup
 title:  Windows Management Framework (WMF)
 ---
@@ -34,27 +34,32 @@ to the links below to review the release notes:
 
 ## WMF Availability Across Windows Operating Systems
 
-|Operating System Version  |[WMF 5.1][] |[WMF 5.0][] |[WMF 4.0][] |[WMF 3.0][]  |[WMF 2.0][] |
-|--------------------------|------------|------------|------------|-------------|------------|
-|Windows Server 2019       |Ships in-box|            |            |             |            |
-|Windows Server 2016       |Ships in-box|            |            |             |            |
-|Windows 10                |Ships in-box|Ships in-box|            |             |            |
-|Windows Server 2012 R2    |Yes         |Yes         |Ships in-box|             |            |
-|Windows 8.1               |Yes         |Yes         |Ships in-box|             |            |
-|Windows Server 2012       |Yes         |Yes         |Yes         |Ships in-box |            |
-|Windows 8                 |            |            |            |Ships in-box |            |
-|Windows Server 2008 R2 SP1|Yes         |Yes         |Yes         |Yes          |Ships in-box|
-|Windows 7 SP1             |Yes         |Yes         |Yes         |Yes          |Ships in-box|
-|Windows Server 2008 SP2   |            |            |            |Yes          |Yes         |
-|Windows Vista             |            |            |            |             |Yes         |
-|Windows Server 2003       |            |            |            |             |Yes         |
-|Windows XP                |            |            |            |Yes          |            |
+|        Operating System Version         | [WMF 5.1][]  | WMF 5.0<br>*Out of support* | [WMF 4.0][]  | [WMF 3.0][]  | [WMF 2.0][]  |
+| --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
+| Windows Server 2019                     | Ships in-box |                             |              |              |              |
+| Windows Server 2016                     | Ships in-box |                             |              |              |              |
+| Windows 10                              | Ships in-box | Ships in-box                |              |              |              |
+| Windows Server 2012 R2                  | Yes          | Yes                         | Ships in-box |              |              |
+| Windows 8.1                             | Yes          | Yes                         | Ships in-box |              |              |
+| Windows Server 2012                     | Yes          | Yes                         | Yes          | Ships in-box |              |
+| Windows 8<br>*Out of support*           |              |                             |              | Ships in-box |              |
+| Windows Server 2008 R2 SP1              | Yes          | Yes                         | Yes          | Yes          | Ships in-box |
+| Windows 7 SP1                           | Yes          | Yes                         | Yes          | Yes          | Ships in-box |
+| Windows Server 2008 SP2                 |              |                             |              | Yes          | Yes          |
+| Windows Vista<br>*Out of support*       |              |                             |              |              | Yes          |
+| Windows Server 2003<br>*Out of support* |              |                             |              |              | Yes          |
+| Windows XP<br>*Out of support*          |              |                             |              | Yes          | Yes          |
 
-**Ships in-box**: The features of the specified version of WMF were shipped in the indicated version of
-Windows client or Windows Server.
+- **Ships in-box**: The features of the specified version of WMF were shipped in the indicated
+  version of Windows client or Windows Server.
+- **Out of support**: These products are no longer supported by Microsoft. You must upgrade to a new
+  version that is supported. For more information, see the [Microsoft Lifecycle Policy][] page.
 
+> [!NOTE]
+> The installer for WMF 5.0 is no longer available or supported. It has been replaced by WMF 5.1.
+
+[Microsoft Lifecycle Policy]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
-[WMF 5.0]: https://aka.ms/wmf5download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download
 [WMF 2.0]: https://aka.ms/wmf2download
