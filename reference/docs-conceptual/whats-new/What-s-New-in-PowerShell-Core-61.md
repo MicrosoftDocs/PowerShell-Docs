@@ -189,8 +189,12 @@ For more information about how these cmdlets work, check out
 
 ## Experimental feature flags
 
-Experimental feature flags enable users to turn on features that haven't been finalized.
-These experimental features aren't supported and may have bugs.
+We enabled support for [Experimental Features][]. This allows PowerShell developers to deliver new
+features and get feedback before the design is complete. This way we avoid making breaking changes
+as the design evolves.
+
+Use `Get-ExperimentalFeature` to get a list of available experimental features. You can enable
+or disable these features with `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature`.
 
 You can learn more about this feature in [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
@@ -559,3 +563,6 @@ first group. We decided that this performance improvement was worth the change s
 being dependent on previous behavior is low.
 
 For more information on this change, see [Issue #7409](https://github.com/PowerShell/PowerShell/issues/7409).
+
+<!-- URL references -->
+[Experimental Features]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
