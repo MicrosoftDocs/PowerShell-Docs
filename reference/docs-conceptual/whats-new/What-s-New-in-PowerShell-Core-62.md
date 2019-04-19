@@ -24,7 +24,7 @@ or disable these features with `Enable-ExperimentalFeature` and `Disable-Experim
 This feature uses fuzzy matching to find suggestions for commands or cmdlets you may have mistyped.
 
 ```powershell
-`Enable-ExperimentalFeature` -Name PSCommandNotFoundSuggestion
+Enable-ExperimentalFeature -Name PSCommandNotFoundSuggestion
 ```
 
 #### Example
@@ -33,20 +33,20 @@ In this example, the misspelled cmdlet name is fuzzy matched to several suggesti
 to least likely.
 
 ```powershell
-`Get-Commnd`
+Get-Commnd
 ```
 
 ```Output
-`Get-Commnd` : The term 'Get-Commnd' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Get-Commnd : The term 'Get-Commnd' is not recognized as the name of a cmdlet, function, script file, or operable program.
 Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
 At line:1 char:1
-+ `Get-Commnd`
++ Get-Commnd
 + ~~~~~~~~~~
 + CategoryInfo          : ObjectNotFound: (Get-Commnd:String) [], CommandNotFoundException
 + FullyQualifiedErrorId : CommandNotFoundException
 
 
-Suggestion [4,General]: The most similar commands are: `Get-Command`, `Get-Content`, `Get-Job`, `Get-Module`, `Get-Event`, `Get-Host`, `Get-Member`, `Get-Item`, `Set-Content`.
+Suggestion [4,General]: The most similar commands are: Get-Command, Get-Content, Get-Job, Get-Module, Get-Event, Get-Host, Get-Member, Get-Item, Set-Content.
 ```
 
 ### Implicit Remoting Batching
@@ -61,23 +61,23 @@ it exists on the target system. When true, PowerShell executes the entire pipeli
 serializes and `de-serializes` the results back to the client.
 
 ```powershell
-`Enable-ExperimentalFeature` -Name PSImplicitRemotingBatching
+Enable-ExperimentalFeature -Name PSImplicitRemotingBatching
 ```
 
-A `real-world` test of `Get-Process | Sort-Object` over localhost decreases from `10-15` seconds to
-`20-30` **milliseconds**. The feature only needs to be enabled on the client. No changes are required
+A real-world test of `Get-Process | Sort-Object` over localhost decreases from 10-15 seconds to
+20-30 **milliseconds**. The feature only needs to be enabled on the client. No changes are required
 on the server.
 
 ### Temp Drive
 
 ```powershell
-`Enable-ExperimentalFeature` -Name PSTempDrive
+Enable-ExperimentalFeature -Name PSTempDrive
 ```
 
 If you're using PowerShell Core on different operating systems, you'll discover that the environment
 variable for finding the temporary directory is different on Windows, macOS, and Linux! With this
-feature, you get a [PSDrive][] called `Temp:` that is automatically mapped to the temporary
-folder for the operating system you are using.
+feature, you get a [PSDrive][] called `Temp:` that is automatically mapped to the temporary folder
+for the operating system you are using.
 
 #### Example
 
@@ -94,23 +94,23 @@ Be aware that native file commands (like `ls` on Linux) are not aware of PSDrive
 
 PowerShell cmdlets are expected to have descriptive nouns. This results in long names that are more
 difficult to type. This feature allows you to just type the uppercase characters of the cmdlet and
-use `tab-completion` to find a match.
+use tab-completion to find a match.
 
 ```powershell
-`Enable-ExperimentalFeature` -Name PSUseAbbreviationExpansion
+Enable-ExperimentalFeature -Name PSUseAbbreviationExpansion
 ```
 
 #### Example
 
 ```powershell
-PS> `i-arsavsf`
+PS> i-arsavsf
 ```
 
 If you hit tab, and have the Azure PowerShell [Az](https://www.powershellgallery.com/packages/Az)
 module installed, it will autocomplete to:
 
 ```Output
-PS> `Import-AzRecoveryServicesAsrVaultSettingsFile`
+PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 ```
 
 > [!NOTE]
@@ -120,15 +120,19 @@ PS> `Import-AzRecoveryServicesAsrVaultSettingsFile`
 ## Breaking Changes
 
 - Fix `-NoEnumerate` behavior in `Write-Output` to be consistent with Windows PowerShell. (#9069)
-- Make `Join-String -InputObject 1,2,3` result equal to `1,2,3 | Join-String` result (#8611) (Thanks @sethvs!)
+- Make `Join-String -InputObject 1,2,3` result equal to `1,2,3 | Join-String` result (#8611) (Thanks
+  @sethvs!)
 - Add `-Stable` to `Sort-Object` and related tests (#7862) (Thanks @KirkMunro!)
 - Improve `Start-Sleep` cmdlet to accept fractional seconds (#8537) (Thanks @Prototyyppi!)
 - Change hashtable to use OrdinalIgnoreCase to be `case-insensitive` in all Cultures (#8566)
 - Fix **LiteralPath** in `Import-Csv` to bind to `Get-ChildItem` output (#8277) (Thanks @iSazonov!)
-- No longer skips a column without name if double quote delimiter is used in `Import-Csv` (#7899) (Thanks @Topping!)
+- No longer skips a column without name if double quote delimiter is used in `Import-Csv` (#7899)
+  (Thanks @Topping!)
 - `Get-ExperimentalFeature` no longer has `-ListAvailable` switch (#8318)
-- Debug parameter now sets `$DebugPreference` to **Continue** instead of **Inquire** (#8195) (Thanks @KirkMunro!)
-- Honor `-OutputFormat` if specified in `non-interactive`, redirected, encoded command used with pwsh (#8115)
+- Debug parameter now sets `$DebugPreference` to **Continue** instead of **Inquire** (#8195) (Thanks
+  @KirkMunro!)
+- Honor `-OutputFormat` if specified in non-interactive, redirected, encoded command used with pwsh
+  (#8115)
 - Load assembly from module base path before trying to load from the GAC (#8073)
 - Remove tilde from Linux preview packages (#8244)
 - Move processing of `-WorkingDirectory` before processing of profiles (#8079)
@@ -144,18 +148,22 @@ PS> `Import-AzRecoveryServicesAsrVaultSettingsFile`
 - Make PSVersionInfo.PSVersion and PSVersionInfo.PSEdition public (#8054) (Thanks @KirkMunro!)
 - Add Type Inference for `$_` / `$PSItem` in `catch{ }` blocks (#8020) (Thanks @vexx32!)
 - Fix static method invocation type inference (#8018) (Thanks @SeeminglyScience!)
-- Create inferred types for `Select-Object`, `Group-Object`, **PSObject** and **Hashtable** (#7231) (Thanks @powercode!)
+- Create inferred types for `Select-Object`, `Group-Object`, **PSObject** and **Hashtable** (#7231)
+  (Thanks @powercode!)
 - Support calling method with `ByRef-like` type parameters (#7721)
-- Handle the case where the Windows PowerShell module path is already in the environment's PSModulePath (#7727)
+- Handle the case where the Windows PowerShell module path is already in the environment's
+  PSModulePath (#7727)
 - Enable `SecureString` cmdlets for non-Windows by storing the plain text (#9199)
 - Improve error message on non-Windows when importing clixml with securestring (#7997)
 - Adding parameter ReplyTo to `Send-MailMessage` (#8727) (Thanks @replicaJunction!)
 - Add Obsolete message to `Send-MailMessage` (#9178)
 - Fix `Restart-Computer` to work on `localhost` when WinRM is not present (#9160)
 - Make `Start-Job` throw terminating error when PowerShell is being hosted (#9128)
-- Add C# style type accelerators and suffixes for ushort, uint, ulong, and short literals (#7813) (Thanks @vexx32!)
+- Add C# style type accelerators and suffixes for ushort, uint, ulong, and short literals (#7813)
+  (Thanks @vexx32!)
 - Added new suffixes for numeric literals - see [about_Numeric_Literals][] (#7901) (Thanks @vexx32!)
-- Correctly Report impact level when SupportsShouldProcess is not set to 'true' (#8209) (Thanks @vexx32!)
+- Correctly Report impact level when SupportsShouldProcess is not set to 'true' (#8209) (Thanks
+  @vexx32!)
 - Fix Request Charset Issues in Web Cmdlets (#8742) (Thanks @markekraus!)
 - Fix Expect `100-continue` issue with Web Cmdlets (#8679) (Thanks @markekraus!)
 - Fix file blocking issue with web cmdlets (#7676) (Thanks @Claustn!)
@@ -168,26 +176,34 @@ PS> `Import-AzRecoveryServicesAsrVaultSettingsFile`
 - Allow Windows users in developer mode to create symlinks without elevation (#8534)
 - Enable `Write-Information` to accept `$null` (#8774)
 - Fix `Get-Help` for advanced functions with MAML help content (#8353)
-- Fix `Get-Help` PSTypeName issue with -Parameter when only one parameter is declared (#8754) (Thanks @pougetat!)
-- Token calculation fix for `Get-Help` executed on ScriptBlock for comment help. (#8238) (Thanks @hubuk!)
-- Change `Get-Help` cmdlet -Parameter parameter so it accepts string arrays (#8454) (Thanks @sethvs!)
+- Fix `Get-Help` PSTypeName issue with -Parameter when only one parameter is declared (#8754)
+  (Thanks @pougetat!)
+- Token calculation fix for `Get-Help` executed on ScriptBlock for comment help. (#8238) (Thanks
+  @hubuk!)
+- Change `Get-Help` cmdlet -Parameter parameter so it accepts string arrays (#8454) (Thanks
+  @sethvs!)
 - Resolve PAGER if its path contains spaces (#8571) (Thanks @pougetat!)
 - Add prompt to the use of `less` in the function 'help' to instruct user how to quit (#7998)
 - Add support enum and char types in `Format-Hex` cmdlet (#8191) (Thanks @iSazonov!)
 - Remove ShouldProcess from `Format-Hex` (#8178)
-- Add new Offset and Count parameters to `Format-Hex` and refactor the cmdlet (#7877) (Thanks @iSazonov!)
-- Allow 'name' as an alias key for 'label' in `ConvertTo-Html`, allow the 'width' entry to be an integer (#8426) (Thanks @mklement0!)
-- Make scriptblock based calculated properties work again in `ConvertTo-Html` (#8427) (Thanks @mklement0!)
+- Add new Offset and Count parameters to `Format-Hex` and refactor the cmdlet (#7877) (Thanks
+  @iSazonov!)
+- Allow 'name' as an alias key for 'label' in `ConvertTo-Html`, allow the 'width' entry to be an
+  integer (#8426) (Thanks @mklement0!)
+- Make scriptblock based calculated properties work again in `ConvertTo-Html` (#8427) (Thanks
+  @mklement0!)
 - Add cmdlet `Join-String` for creating text from pipeline input (#7660) (Thanks @powercode!)
 - Fix `Join-String` cmdlet FormatString parameter logic (#8449) (Thanks @sethvs!)
 - Change `Clear-Host` back to using `$RAWUI` and clear to work over remoting (#8609)
 - Change `Clear-Host` to simply called `[console]::clear` and remove clear alias from Unix (#8603)
 - Fix LiteralPath in `Import-Csv` to bind to `Get-ChildItem` output (#8277) (Thanks @iSazonov!)
 - help function shouldn't use pager for AliasHelpInfo (#8552)
-- Add `-UseMinimalHeader` to `Start-Transcript` to minimize transcript header (#8402) (Thanks @lukexjeremy!)
+- Add `-UseMinimalHeader` to `Start-Transcript` to minimize transcript header (#8402) (Thanks
+  @lukexjeremy!)
 - Add `Enable-ExperimentalFeature` and `Disable-ExperimentalFeature` cmdlets (#8318)
 - Expose all cmdlets from **PSDiagnostics** if logman.exe is available (#8366)
-- Remove **Persist** parameter from `New-PSDrive` on `non-Windows` platform (#8291) (Thanks @lukexjeremy!)
+- Remove **Persist** parameter from `New-PSDrive` on `non-Windows` platform (#8291) (Thanks
+  @lukexjeremy!)
 - Add support for `cd +` (#7206) (Thanks @bergmeister!)
 - Enable `Set-Location -LiteralPath` to work with folders named - and + (#8089)
 - `Test-Path` returns `$false` when given an empty or `$null` path value (#8080) (Thanks @vexx32!)
@@ -196,12 +212,16 @@ PS> `Import-AzRecoveryServicesAsrVaultSettingsFile`
 - Reduce allocations in `Get-Content` cmdlet (#8103) (Thanks @iSazonov!)
 - Enable `Add-Content` to share read access with other tools while writing content (#8091)
 - `Get/Add-Content` throws improved error when targeting a container (#7823) (Thanks @kvprasoon!)
-- Add `-Name`, `-NoUserOverrides` and `-ListAvailable` parameters to `Get-Culture` cmdlet (#7702) (Thanks @iSazonov!)
+- Add `-Name`, `-NoUserOverrides` and `-ListAvailable` parameters to `Get-Culture` cmdlet (#7702)
+  (Thanks @iSazonov!)
 - Add unified attribute for completion for **Encoding** parameter. (#7732) (Thanks @ThreeFive-O!)
-- Allow numeric Ids and name of registered code pages in **Encoding** parameters (#7636) (Thanks @iSazonov!)
+- Allow numeric Ids and name of registered code pages in **Encoding** parameters (#7636) (Thanks
+  @iSazonov!)
 - Fix `Rename-Item -Path` with wildcard char (#7398) (Thanks @kwkam!)
-- When using `Start-Transcript` and file exists, empty file rather than deleting (#8131) (Thanks @paalbra!)
-- Make `Add-Type` open source files with **FileAccess.Read** and **FileShare.Read** explicitly (#7915) (Thanks @IISResetMe!)
+- When using `Start-Transcript` and file exists, empty file rather than deleting (#8131) (Thanks
+  @paalbra!)
+- Make `Add-Type` open source files with **FileAccess.Read** and **FileShare.Read** explicitly
+  (#7915) (Thanks @IISResetMe!)
 - Fix `Enter-PSSession -ContainerId` for the latest Windows (#7883)
 - Ensure **NestedModules** property gets populated by `Test-ModuleManifest` (#7859)
 - Add `%F` case to `Get-Date` -UFormat (#7630) (Thanks @britishben!)
